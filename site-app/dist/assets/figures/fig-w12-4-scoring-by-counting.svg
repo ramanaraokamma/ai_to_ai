@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Scoring one feature by counting</title>
+  <desc>A twelve row grid scoring the colour feature. Each row shows the colour, what the colour rule says, the true fruit, and a green tick or red cross. Eleven rows are ticks and row eleven, a green banana, is a cross. The total row reads eleven correct out of twelve, 91.7 percent, against a baseline of 33.3 percent.</desc>
+  <text x="250" y="34" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Scoring one feature by counting</text>
+
+  <rect x="40" y="52" width="420" height="30" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="250" y="67" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">baseline first: 4 of 12 = 33.3%</text>
+
+  <rect x="40" y="92" width="420" height="36" fill="#D9EAF9" stroke="none"/>
+  <rect x="40" y="560" width="420" height="46" fill="#E2F7ED" stroke="none"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="90" y1="92" x2="90" y2="606"/>
+    <line x1="190" y1="92" x2="190" y2="606"/>
+    <line x1="300" y1="92" x2="300" y2="560"/>
+    <line x1="400" y1="92" x2="400" y2="560"/>
+    <line x1="40" y1="164" x2="460" y2="164"/>
+    <line x1="40" y1="200" x2="460" y2="200"/>
+    <line x1="40" y1="236" x2="460" y2="236"/>
+    <line x1="40" y1="272" x2="460" y2="272"/>
+    <line x1="40" y1="308" x2="460" y2="308"/>
+    <line x1="40" y1="344" x2="460" y2="344"/>
+    <line x1="40" y1="380" x2="460" y2="380"/>
+    <line x1="40" y1="416" x2="460" y2="416"/>
+    <line x1="40" y1="452" x2="460" y2="452"/>
+    <line x1="40" y1="488" x2="460" y2="488"/>
+    <line x1="40" y1="524" x2="460" y2="524"/>
+  </g>
+  <line x1="40" y1="128" x2="460" y2="128" stroke="#1F6FB2" stroke-width="3"/>
+  <line x1="40" y1="560" x2="460" y2="560" stroke="#14202B" stroke-width="3"/>
+  <rect x="40" y="92" width="420" height="514" rx="10" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">
+    <text x="65" y="114">id</text>
+    <text x="140" y="114">colour</text>
+    <text x="245" y="114">rule says</text>
+    <text x="350" y="114">truth</text>
+    <text x="430" y="114">mark</text>
+  </g>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">
+    <text x="65" y="151">1</text><text x="140" y="151">red</text><text x="245" y="151">apple</text><text x="350" y="151">apple</text>
+    <text x="65" y="187">2</text><text x="140" y="187">green</text><text x="245" y="187">apple</text><text x="350" y="187">apple</text>
+    <text x="65" y="223">3</text><text x="140" y="223">red</text><text x="245" y="223">apple</text><text x="350" y="223">apple</text>
+    <text x="65" y="259">4</text><text x="140" y="259">red</text><text x="245" y="259">apple</text><text x="350" y="259">apple</text>
+    <text x="65" y="295">5</text><text x="140" y="295">orange</text><text x="245" y="295">orange</text><text x="350" y="295">orange</text>
+    <text x="65" y="331">6</text><text x="140" y="331">orange</text><text x="245" y="331">orange</text><text x="350" y="331">orange</text>
+    <text x="65" y="367">7</text><text x="140" y="367">orange</text><text x="245" y="367">orange</text><text x="350" y="367">orange</text>
+    <text x="65" y="403">8</text><text x="140" y="403">orange</text><text x="245" y="403">orange</text><text x="350" y="403">orange</text>
+    <text x="65" y="439">9</text><text x="140" y="439">yellow</text><text x="245" y="439">banana</text><text x="350" y="439">banana</text>
+    <text x="65" y="475">10</text><text x="140" y="475">yellow</text><text x="245" y="475">banana</text><text x="350" y="475">banana</text>
+    <text x="65" y="511">11</text><text x="140" y="511">green</text><text x="245" y="511">apple</text><text x="350" y="511">banana</text>
+    <text x="65" y="547">12</text><text x="140" y="547">yellow</text><text x="245" y="547">banana</text><text x="350" y="547">banana</text>
+  </g>
+
+  <g fill="none" stroke="#1B7A4B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="422,146 428,154 440,138"/>
+    <polyline points="422,182 428,190 440,174"/>
+    <polyline points="422,218 428,226 440,210"/>
+    <polyline points="422,254 428,262 440,246"/>
+    <polyline points="422,290 428,298 440,282"/>
+    <polyline points="422,326 428,334 440,318"/>
+    <polyline points="422,362 428,370 440,354"/>
+    <polyline points="422,398 428,406 440,390"/>
+    <polyline points="422,434 428,442 440,426"/>
+    <polyline points="422,470 428,478 440,462"/>
+    <polyline points="422,542 428,550 440,534"/>
+  </g>
+  <g stroke="#CC2B1D" stroke-width="4" stroke-linecap="round">
+    <line x1="422" y1="498" x2="438" y2="514"/>
+    <line x1="438" y1="498" x2="422" y2="514"/>
+  </g>
+
+  <text x="165" y="588" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">11 correct out of 12</text>
+  <text x="380" y="588" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">91.7%</text>
+
+  <text x="250" y="644" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The rule: red or green means apple, orange means orange, yellow means banana.</text>
+  <text x="250" y="668" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">91.7% beats the 33.3% baseline by a mile, so colour is a useful feature.</text>
+</svg>

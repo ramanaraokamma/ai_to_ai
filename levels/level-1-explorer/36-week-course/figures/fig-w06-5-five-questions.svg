@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The five provenance questions</title>
+  <desc>A three column table. The left column lists the five questions: who collected it, from whom, when, how, and with whose permission. The middle column shows a weak answer for each, marked with a cross. The right column shows a good answer for each, marked with a tick.</desc>
+  <text x="400" y="34" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The five questions, and what a real answer sounds like</text>
+
+  <rect x="270" y="92" width="250" height="220" fill="#F6AEA6" stroke="none"/>
+  <rect x="520" y="92" width="250" height="220" fill="#E2F7ED" stroke="none"/>
+  <path d="M30 64 A8 8 0 0 1 38 56 H762 A8 8 0 0 1 770 64 V92 H30 Z" fill="#D9EAF9" stroke="none"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="30" y1="136" x2="770" y2="136"/><line x1="30" y1="180" x2="770" y2="180"/>
+    <line x1="30" y1="224" x2="770" y2="224"/><line x1="30" y1="268" x2="770" y2="268"/>
+    <line x1="270" y1="92" x2="270" y2="312"/><line x1="520" y1="92" x2="520" y2="312"/>
+  </g>
+  <line x1="30" y1="92" x2="770" y2="92" stroke="#14202B" stroke-width="3"/>
+  <rect x="30" y="56" width="740" height="256" rx="8" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">
+    <text x="42" y="79" dominant-baseline="central">Ask this</text>
+    <text x="282" y="79" dominant-baseline="central">Weak answer &#8212; keep digging</text>
+    <text x="532" y="79" dominant-baseline="central">Good answer &#8212; write it down</text>
+  </g>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">
+    <text x="42" y="114" dominant-baseline="central">1. Who collected it?</text>
+    <text x="42" y="158" dominant-baseline="central">2. From whom?</text>
+    <text x="42" y="202" dominant-baseline="central">3. When?</text>
+    <text x="42" y="246" dominant-baseline="central">4. How, exactly?</text>
+    <text x="42" y="290" dominant-baseline="central">5. With whose permission?</text>
+  </g>
+
+  <g transform="translate(280,106) scale(0.24)"><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g></g>
+  <g transform="translate(280,150) scale(0.24)"><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g></g>
+  <g transform="translate(280,194) scale(0.24)"><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g></g>
+  <g transform="translate(280,238) scale(0.24)"><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g></g>
+  <g transform="translate(280,282) scale(0.24)"><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g></g>
+
+  <g transform="translate(530,106) scale(0.24)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <g transform="translate(530,150) scale(0.24)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <g transform="translate(530,194) scale(0.24)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <g transform="translate(530,238) scale(0.24)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <g transform="translate(530,282) scale(0.24)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">
+    <text x="302" y="114" dominant-baseline="central">&#8220;it was on the internet&#8221;</text>
+    <text x="302" y="158" dominant-baseline="central">&#8220;people&#8221;</text>
+    <text x="302" y="202" dominant-baseline="central">&#8220;recently&#8221;</text>
+    <text x="302" y="246" dominant-baseline="central">&#8220;somehow&#8221;</text>
+    <text x="302" y="290" dominant-baseline="central">page does not say anything</text>
+
+    <text x="552" y="114" dominant-baseline="central">&#8220;me, by hand, in a notebook&#8221;</text>
+    <text x="552" y="158" dominant-baseline="central">&#8220;one person, age 11&#8221;</text>
+    <text x="552" y="202" dominant-baseline="central">&#8220;3 to 28 August 2026&#8221;</text>
+    <text x="552" y="246" dominant-baseline="central">&#8220;written at 21:00 each night&#8221;</text>
+    <text x="552" y="290" dominant-baseline="central">&#8220;my own data, parent checked&#8221;</text>
+  </g>
+
+  <text x="400" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Ask all five out loud, of every dataset, every time. It takes about a minute.</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Write &#8220;unknown&#8221; whenever the page will not say. Unknown is an honest answer, and a common one.</text>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>More boxes, more memory</title>
+  <desc>Three stacked rows. A bigram shows one word box then a guess box, a trigram shows two words then a guess, a four-gram shows three words then a guess, with the words of memory written beside each.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">More boxes, more memory</text>
+  <text x="40" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" dominant-baseline="central">bigram</text>
+  <rect x="160" y="86" width="88" height="48" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="204" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">word</text>
+  <rect x="256" y="86" width="88" height="48" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="300" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">guess</text>
+  <text x="600" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">1 word of memory</text>
+  <text x="600" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F">39 groups from 40 tokens</text>
+  <line x1="40" y1="148" x2="760" y2="148" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="6 6"/>
+  <text x="40" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" dominant-baseline="central">trigram</text>
+  <rect x="160" y="166" width="88" height="48" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="204" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">word</text>
+  <rect x="256" y="166" width="88" height="48" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="300" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">word</text>
+  <rect x="352" y="166" width="88" height="48" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="396" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">guess</text>
+  <text x="600" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">2 words of memory</text>
+  <text x="600" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F">38 groups from 40 tokens</text>
+  <line x1="40" y1="228" x2="760" y2="228" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="6 6"/>
+  <text x="40" y="270" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" dominant-baseline="central">4-gram</text>
+  <rect x="160" y="246" width="88" height="48" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="204" y="270" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">word</text>
+  <rect x="256" y="246" width="88" height="48" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="300" y="270" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">word</text>
+  <rect x="352" y="246" width="88" height="48" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="396" y="270" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">word</text>
+  <rect x="448" y="246" width="88" height="48" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="492" y="270" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">guess</text>
+  <text x="600" y="264" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">3 words of memory</text>
+  <text x="600" y="284" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F">37 groups from 40 tokens</text>
+  <text x="400" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">40 tokens give 39 bigrams, 38 trigrams, 37 four-grams.</text>
+  <text x="400" y="368" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">More memory fixes forgetting. It does not fix truth.</text>
+</svg>

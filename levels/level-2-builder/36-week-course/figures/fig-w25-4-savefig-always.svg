@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A chart you never saved did not happen</title>
+  <desc>A blue box reading the chart exists in memory only forks two ways. The upper path asks for a window and ends in a red box marked with a cross: maybe a window, maybe not, and nothing on disk. The lower path asks for a file and ends in a green box with a tick: visits dot png appears every time.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A chart you never saved did not happen</text>
+  <rect x="24" y="168" width="176" height="68" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="112" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">The chart exists</text>
+  <text x="112" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">in memory only</text>
+  <line x1="204" y1="194" x2="250" y2="132" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(250 132) rotate(-53.4)"/>
+  <line x1="204" y1="212" x2="250" y2="272" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(250 272) rotate(52.5)"/>
+  <rect x="256" y="100" width="176" height="58" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="344" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Ask for a window</text>
+  <text x="344" y="142" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">plt.show()</text>
+  <line x1="438" y1="129" x2="470" y2="129" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(470 129) rotate(0.0)"/>
+  <rect x="476" y="88" width="300" height="84" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="496" y1="122" x2="512" y2="138"/><line x1="512" y1="122" x2="496" y2="138"/></g>
+  <text x="526" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Maybe a window. Maybe not.</text>
+  <text x="526" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Nothing on disk either way.</text>
+  <rect x="256" y="244" width="176" height="58" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="344" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Ask for a file</text>
+  <text x="344" y="286" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">fig.savefig(...)</text>
+  <line x1="438" y1="273" x2="470" y2="273" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(470 273) rotate(0.0)"/>
+  <rect x="476" y="232" width="300" height="84" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <polyline points="497.0,275.0 503.0,281.0 515.0,267.0" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="526" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">visits.png appears, every time.</text>
+  <text x="526" y="284" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Open it, print it, hand it in.</text>
+  <text x="400" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">A program that ends with no error and no picture has told you nothing.</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Always save. Show a window as well if you like.</text>
+</svg>

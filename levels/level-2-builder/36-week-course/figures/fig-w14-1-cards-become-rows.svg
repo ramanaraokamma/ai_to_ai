@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Stack the cards and you have a table</title>
+  <desc>On the left, one card showing three pairs, name to Asha, team to Falcons and runs to 48, with two more cards stacked behind it. An arrow labelled same data points right to a table whose first row is highlighted and holds Asha, Falcons and 48.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Stack the cards and you have a table</text>
+  <rect x="66" y="122" width="228" height="150" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="51" y="107" width="228" height="150" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="36" y="92" width="228" height="150" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="50" y="108" width="88" height="32" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="94" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">name</text>
+  <line x1="144" y1="124" x2="164" y2="124" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(166 124) rotate(0)"/>
+  <rect x="170" y="108" width="80" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="210" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Asha</text>
+  <rect x="50" y="150" width="88" height="32" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="94" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">team</text>
+  <line x1="144" y1="166" x2="164" y2="166" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(166 166) rotate(0)"/>
+  <rect x="170" y="150" width="80" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="210" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Falcons</text>
+  <rect x="50" y="192" width="88" height="32" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="94" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">runs</text>
+  <line x1="144" y1="208" x2="164" y2="208" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(166 208) rotate(0)"/>
+  <rect x="170" y="192" width="80" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="210" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">48</text>
+  <text x="150" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">one dict = one card</text>
+  <text x="150" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">three cards, all with the same labels</text>
+  <g transform="translate(300,150) scale(0.9)">
+  <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="342" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">same data</text>
+  <rect x="420" y="100" width="40" height="34" fill="#F5F8FA"/>
+  <rect x="460" y="100" width="100" height="34" fill="#D9EAF9"/>
+  <rect x="560" y="100" width="100" height="34" fill="#D9EAF9"/>
+  <rect x="660" y="100" width="100" height="34" fill="#D9EAF9"/>
+  <rect x="420" y="134" width="40" height="36" fill="#F5F8FA"/>
+  <rect x="420" y="170" width="40" height="36" fill="#F5F8FA"/>
+  <rect x="420" y="206" width="40" height="36" fill="#F5F8FA"/>
+  <rect x="460" y="134" width="300" height="36" fill="#F4D5E9"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="460" y1="100" x2="460" y2="242"/>
+    <line x1="560" y1="100" x2="560" y2="242"/>
+    <line x1="660" y1="100" x2="660" y2="242"/>
+    <line x1="420" y1="170" x2="760" y2="170"/>
+    <line x1="420" y1="206" x2="760" y2="206"/>
+  </g>
+  <line x1="420" y1="134" x2="760" y2="134" stroke="#14202B" stroke-width="2"/>
+  <text x="510" y="117" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">name</text>
+  <text x="610" y="117" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">team</text>
+  <text x="710" y="117" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">runs</text>
+  <text x="440" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="510" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Asha</text>
+  <text x="610" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Falcons</text>
+  <text x="710" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">48</text>
+  <text x="440" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="510" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Ravi</text>
+  <text x="610" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Falcons</text>
+  <text x="710" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">12</text>
+  <text x="440" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="510" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Nita</text>
+  <text x="610" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Falcons</text>
+  <text x="710" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">77</text>
+  <rect x="420" y="134" width="340" height="36" fill="none" stroke="#C42B8C" stroke-width="3"/>
+  <rect x="420" y="100" width="340" height="142" fill="none" stroke="#14202B" stroke-width="3"/>
+  <text x="590" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">one list of dicts = one table</text>
+  <text x="590" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the first card became row 0</text>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Nothing was converted. Fanning the cards out in a column IS the table.</text>
+</svg>

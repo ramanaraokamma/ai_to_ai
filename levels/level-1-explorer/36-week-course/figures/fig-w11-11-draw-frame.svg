@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Draw It frame for Week 11</title>
+  <desc>An empty framed drawing area titled Draw your own object with six leader lines, plus three reminder boxes along the bottom for the tool, the unit and the rounding.</desc>
+  <rect x="24" y="24" width="752" height="300" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="24" y="24" width="752" height="44" rx="12" fill="#F5F8FA" stroke="none"/>
+  <line x1="24" y1="68" x2="776" y2="68" stroke="#14202B" stroke-width="3"/>
+  <text x="400" y="53" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">DRAW: one object with six features called out</text>
+  <g stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="8 8" fill="none">
+    <circle cx="400" cy="196" r="76"/>
+    <line x1="330" y1="150" x2="150" y2="104"/>
+    <line x1="470" y1="150" x2="650" y2="104"/>
+    <line x1="324" y1="196" x2="120" y2="196"/>
+    <line x1="476" y1="196" x2="680" y2="196"/>
+    <line x1="336" y1="244" x2="160" y2="290"/>
+    <line x1="464" y1="244" x2="640" y2="290"/>
+  </g>
+  <text x="400" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">your object here</text>
+  <g fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round">
+    <rect x="60" y="342" width="200" height="36" rx="8"/>
+    <rect x="300" y="342" width="200" height="36" rx="8"/>
+    <rect x="540" y="342" width="200" height="36" rx="8"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">
+    <text x="60" y="338">the tool you would use</text>
+    <text x="300" y="338">the unit</text>
+    <text x="540" y="338">the rounding</text>
+  </g>
+</svg>

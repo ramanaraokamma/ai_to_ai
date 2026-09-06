@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Academy - Level 1 figure style system</title>
+<style>
+  :root { --ink:#14202B; --mut:#55636F; --grid:#C7CDD4; --panel:#F5F8FA; }
+  body { font-family:ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; color:var(--ink); background:#fff; margin:0; padding:32px; line-height:1.5; }
+  .wrap { max-width:1100px; margin:0 auto; }
+  h1 { font-size:28px; margin:0 0 4px; } h2 { font-size:20px; margin:40px 0 12px; border-bottom:2px solid var(--grid); padding-bottom:6px; }
+  h3 { font-size:15px; margin:0 0 4px; font-weight:600; } h3 span { color:var(--mut); font-weight:400; font-size:12px; }
+  p.lead { color:var(--mut); margin:0 0 8px; }
+  code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px; background:var(--panel); padding:1px 5px; border-radius:4px; }
+  .bar { position:sticky; top:0; background:#fff; border-bottom:2px solid var(--grid); padding:10px 0; margin-bottom:8px; z-index:9; }
+  .bar label { margin-right:20px; font-size:14px; cursor:pointer; }
+  .swatches { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px; }
+  .sw { display:grid; grid-template-columns:34px 1fr; gap:4px 10px; align-items:center; border:1.5px solid var(--grid); border-radius:8px; padding:10px; }
+  .sw .chip { grid-row:1/4; width:34px; height:34px; border-radius:8px; border:3px solid; }
+  .sw b { font-size:14px; } .sw span { font-size:11px; color:var(--mut); }
+  .motifs { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:12px; }
+  .motifs figure { margin:0; border:1.5px solid var(--grid); border-radius:10px; padding:10px; text-align:center; }
+  .motifs svg { width:100%; height:92px; }
+  figcaption { margin-top:6px; display:flex; flex-direction:column; gap:2px; }
+  figcaption span { font-size:10px; color:var(--mut); }
+  .pat { margin:0 0 26px; } .pat .frame { border:1.5px solid var(--grid); border-radius:10px; padding:8px; }
+  .pat svg { width:100%; height:auto; display:block; }
+  p.note { font-size:12px; color:var(--mut); margin:0 0 8px; }
+  body.grey { filter:grayscale(1); }
+  body.dark { background:#20262c; }
+</style></head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><symbol id="motif-robot" viewBox="0 0 100 100"><title>Friendly robot</title><desc>A friendly cartoon robot with an antenna, two eyes, a smile, and two arms.</desc><line x1="50" y1="16" x2="50" y2="7" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="50" cy="5" r="4" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+    <rect x="22" y="16" width="56" height="40" rx="12" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="38" cy="34" r="5" fill="#14202B"/>
+    <circle cx="62" cy="34" r="5" fill="#14202B"/>
+    <path d="M40 45 Q50 52 60 45" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <rect x="28" y="60" width="44" height="30" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <line x1="28" y1="68" x2="13" y2="78" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+    <line x1="72" y1="68" x2="87" y2="78" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="50" cy="75" r="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/></symbol><symbol id="motif-child" viewBox="0 0 100 100"><title>Child's face</title><desc>A smiling child's face with short hair.</desc><circle cx="50" cy="52" r="30" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+    <path d="M20 44 A30 30 0 0 1 80 44 A34 22 0 0 0 20 44 Z" fill="#845F00" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="40" cy="50" r="4" fill="#14202B"/>
+    <circle cx="60" cy="50" r="4" fill="#14202B"/>
+    <path d="M39 63 Q50 72 61 63" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/></symbol><symbol id="motif-lightbulb" viewBox="0 0 100 100"><title>Lightbulb (an idea)</title><desc>A glowing lightbulb with rays, meaning an idea.</desc><g stroke="#845F00" stroke-width="3" stroke-linecap="round">
+      <line x1="50" y1="8" x2="50" y2="2"/>
+      <line x1="22" y1="18" x2="17" y2="13"/>
+      <line x1="78" y1="18" x2="83" y2="13"/>
+      <line x1="14" y1="44" x2="7" y2="44"/>
+      <line x1="86" y1="44" x2="93" y2="44"/>
+    </g>
+    <circle cx="50" cy="44" r="26" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+    <path d="M42 56 L45 66 L55 66 L58 56" fill="none" stroke="#845F00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="41" y="66" width="18" height="10" rx="3" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="44" y="78" width="12" height="8" rx="3" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/></symbol><symbol id="motif-table" viewBox="0 0 100 100"><title>Data table</title><desc>A small data table with a shaded header row and six cells.</desc><rect x="8" y="16" width="84" height="68" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M8 24 A8 8 0 0 1 16 16 H84 A8 8 0 0 1 92 24 V38 H8 Z" fill="#D9EAF9" stroke="none"/>
+    <g stroke="#C7CDD4" stroke-width="1.5">
+      <line x1="8" y1="61" x2="92" y2="61"/>
+      <line x1="36" y1="38" x2="36" y2="84"/>
+      <line x1="64" y1="38" x2="64" y2="84"/>
+    </g>
+    <line x1="8" y1="38" x2="92" y2="38" stroke="#1F6FB2" stroke-width="3"/>
+    <rect x="8" y="16" width="84" height="68" rx="8" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <g fill="#55636F">
+      <rect x="15" y="24" width="14" height="5" rx="2.5"/>
+      <rect x="43" y="24" width="14" height="5" rx="2.5"/>
+      <rect x="71" y="24" width="14" height="5" rx="2.5"/>
+      <rect x="15" y="47" width="14" height="5" rx="2.5"/>
+      <rect x="43" y="47" width="14" height="5" rx="2.5"/>
+      <rect x="71" y="47" width="14" height="5" rx="2.5"/>
+      <rect x="15" y="70" width="14" height="5" rx="2.5"/>
+      <rect x="43" y="70" width="14" height="5" rx="2.5"/>
+      <rect x="71" y="70" width="14" height="5" rx="2.5"/>
+    </g></symbol><symbol id="motif-photos" viewBox="0 0 100 100"><title>Stack of photo cards</title><desc>Three photo cards in a stack, the top one showing a sun and a hill.</desc><g transform="rotate(-11 50 54) translate(-5 -7)">
+      <rect x="24" y="26" width="52" height="52" rx="7" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    </g>
+    <g transform="rotate(7 50 54) translate(6 -4)">
+      <rect x="24" y="26" width="52" height="52" rx="7" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    </g>
+    <rect x="24" y="26" width="52" height="52" rx="7" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="30" y="32" width="40" height="30" rx="4" fill="#D9EAF9" stroke="none"/>
+    <circle cx="42" cy="42" r="5" fill="#E8C671" stroke="#845F00" stroke-width="2"/>
+    <path d="M30 62 L44 50 L54 58 L62 52 L70 62 Z" fill="#1F6FB2" stroke="none"/>
+    <rect x="30" y="32" width="40" height="30" rx="4" fill="none" stroke="#1F6FB2" stroke-width="2"/>
+    <line x1="32" y1="70" x2="56" y2="70" stroke="#55636F" stroke-width="3" stroke-linecap="round"/></symbol><symbol id="motif-arrow" viewBox="0 0 100 40"><title>Arrow pointing right</title><desc>A straight arrow pointing to the right.</desc><line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="motif-arrow-curved" viewBox="0 0 100 60"><title>Curved arrow</title><desc>A curved arrow that loops up and over to the right.</desc><path d="M8 48 Q48 2 84 34" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(84 34) rotate(41)"/></symbol><symbol id="motif-magnifier" viewBox="0 0 100 100"><title>Magnifying glass</title><desc>A magnifying glass, meaning look closely or search.</desc><line x1="60" y1="60" x2="86" y2="86" stroke="#1F6FB2" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="42" cy="42" r="26" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+    <path d="M30 36 A14 14 0 0 1 42 28" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/></symbol><symbol id="motif-brain" viewBox="0 0 100 100"><title>Brain</title><desc>A cartoon brain with folds, meaning thinking or a model.</desc><path d="M50 14 C34 14 24 24 24 36 C13 41 12 55 22 62 C22 76 34 87 50 87 C66 87 78 76 78 62 C88 55 87 41 76 36 C76 24 66 14 50 14 Z"
+          fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+    <line x1="50" y1="15" x2="50" y2="86" stroke="#6D28D9" stroke-width="3" stroke-linecap="round"/>
+    <g fill="none" stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round">
+      <path d="M37 28 C45 33 45 43 37 47"/>
+      <path d="M63 28 C55 33 55 43 63 47"/>
+      <path d="M35 57 C45 61 45 71 37 75"/>
+      <path d="M65 57 C55 61 55 71 63 75"/>
+    </g></symbol><symbol id="motif-scale" viewBox="0 0 100 100"><title>Balance scale</title><desc>A balance scale with two level pans, meaning fairness or weighing two sides.</desc><line x1="50" y1="26" x2="50" y2="80" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <path d="M32 88 L38 80 H62 L68 88 Z" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <line x1="16" y1="26" x2="84" y2="26" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="50" cy="26" r="5" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <line x1="16" y1="26" x2="16" y2="44" stroke="#55636F" stroke-width="2" stroke-linecap="round"/>
+    <line x1="84" y1="26" x2="84" y2="44" stroke="#55636F" stroke-width="2" stroke-linecap="round"/>
+    <path d="M2 44 Q16 62 30 44 Z" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M70 44 Q84 62 98 44 Z" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/></symbol><symbol id="motif-badge-check" viewBox="0 0 100 100"><title>Correct badge</title><desc>A round badge with a tick inside, meaning correct.</desc><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="motif-badge-cross" viewBox="0 0 100 100"><title>Wrong badge</title><desc>A round badge with a cross inside, meaning wrong.</desc><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+      <line x1="38" y1="38" x2="62" y2="62"/>
+      <line x1="62" y1="38" x2="38" y2="62"/>
+    </g></symbol><symbol id="motif-box" viewBox="0 0 120 80"><title>Labelled box</title><desc>A rounded box with a label inside.</desc><rect x="6" y="10" width="108" height="60" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <text x="60" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">Label</text></symbol><symbol id="motif-note" viewBox="0 0 100 100"><title>Sticky note</title><desc>A sticky note with a folded corner and three lines of writing.</desc><path d="M12 12 H88 V68 L68 88 H12 Z" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M68 88 V68 H88 Z" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <g stroke="#55636F" stroke-width="3" stroke-linecap="round">
+      <line x1="24" y1="30" x2="76" y2="30"/>
+      <line x1="24" y1="43" x2="76" y2="43"/>
+      <line x1="24" y1="56" x2="60" y2="56"/>
+    </g></symbol><symbol id="motif-thought" viewBox="0 0 120 100"><title>Thought bubble</title><desc>A cloud-shaped thought bubble with two small trailing bubbles.</desc><circle cx="22" cy="88" r="5" fill="#FFFFFF" stroke="#14202B" stroke-width="2.5"/>
+    <circle cx="34" cy="76" r="7" fill="#FFFFFF" stroke="#14202B" stroke-width="2.5"/>
+    <path d="M40 66 C24 66 18 50 30 43 C24 27 44 16 56 25 C64 10 92 14 92 31 C108 34 106 58 90 60 C86 70 64 72 56 66 Z"
+          fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/></symbol><symbol id="motif-machine" viewBox="0 0 140 100"><title>Machine with input and output</title><desc>A machine box with a gear inside, an input slot on the left and an output slot on the right.</desc><line x1="2" y1="48" x2="14" y2="48" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="10,42 18,48 10,54" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="122" y1="48" x2="132" y2="48" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="128,42 136,48 128,54" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="28" y="14" width="84" height="72" rx="12" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="18" y="38" width="14" height="20" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="108" y="38" width="14" height="20" rx="4" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <g stroke="#14202B" stroke-width="3" stroke-linecap="round">
+      <line x1="84" y1="50" x2="89" y2="50"/>
+      <line x1="79.9" y1="59.9" x2="83.4" y2="63.4"/>
+      <line x1="70" y1="64" x2="70" y2="69"/>
+      <line x1="60.1" y1="59.9" x2="56.6" y2="63.4"/>
+      <line x1="56" y1="50" x2="51" y2="50"/>
+      <line x1="60.1" y1="40.1" x2="56.6" y2="36.6"/>
+      <line x1="70" y1="36" x2="70" y2="31"/>
+      <line x1="79.9" y1="40.1" x2="83.4" y2="36.6"/>
+    </g>
+    <circle cx="70" cy="50" r="14" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <circle cx="70" cy="50" r="5" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2.5"/></symbol></svg>
+<div class="wrap">
+<h1>AI Academy &mdash; Level 1 figure style system</h1>
+<p class="lead">Eyeball check for every motif and every composition pattern. Toggle greyscale to run the print check.</p>
+<div class="bar">
+  <label><input type="checkbox" onchange="document.body.classList.toggle('grey',this.checked)"> Greyscale (print check)</label>
+  <label><input type="checkbox" onchange="document.body.classList.toggle('dark',this.checked)"> Dark page (transparency check)</label>
+</div>
+<h2>Palette</h2><div class="swatches"><div class="sw"><div class="chip" style="background:#D9EAF9;border-color:#1F6FB2"></div>
+<b>data</b><code>#1F6FB2</code><span>AA 5.28:1 &middot; stroke grey 108 &middot; fill grey 232</span>
+<code>#D9EAF9</code></div><div class="sw"><div class="chip" style="background:#DBCEF3;border-color:#6D28D9"></div>
+<b>model</b><code>#6D28D9</code><span>AA 7.10:1 &middot; stroke grey 88 &middot; fill grey 212</span>
+<code>#DBCEF3</code></div><div class="sw"><div class="chip" style="background:#E8C671;border-color:#845F00"></div>
+<b>human</b><code>#845F00</code><span>AA 5.80:1 &middot; stroke grey 101 &middot; fill grey 202</span>
+<code>#E8C671</code></div><div class="sw"><div class="chip" style="background:#E2F7ED;border-color:#1B7A4B"></div>
+<b>correct</b><code>#1B7A4B</code><span>AA 5.34:1 &middot; stroke grey 107 &middot; fill grey 242</span>
+<code>#E2F7ED</code></div><div class="sw"><div class="chip" style="background:#F6AEA6;border-color:#CC2B1D"></div>
+<b>wrong</b><code>#CC2B1D</code><span>AA 5.34:1 &middot; stroke grey 107 &middot; fill grey 192</span>
+<code>#F6AEA6</code></div><div class="sw"><div class="chip" style="background:#F4D5E9;border-color:#C42B8C"></div>
+<b>accent</b><code>#C42B8C</code><span>AA 5.16:1 &middot; stroke grey 109 &middot; fill grey 222</span>
+<code>#F4D5E9</code></div><div class="sw"><div class="chip" style="background:#14202B;border-color:#14202B"></div>
+<b>ink</b><code>#14202B</code><span>AA 16.52:1 &middot; stroke grey 31</span>
+</div><div class="sw"><div class="chip" style="background:#FFFFFF;border-color:#FFFFFF"></div>
+<b>paper</b><code>#FFFFFF</code><span>AA 1.00:1 &middot; stroke grey 255</span>
+</div></div>
+<h2>Motifs (16)</h2>
+<p class="lead">Each rendered through <code>&lt;use href="#motif-id"/&gt;</code> from the inlined sprite.</p>
+<div class="motifs"><figure><svg viewBox="0 0 100 100" role="img" aria-label="Friendly robot"><use href="#motif-robot"/></svg>
+<figcaption><code>motif-robot</code><span>0 0 100 100</span></figcaption></figure><figure><svg viewBox="0 0 100 100" role="img" aria-label="Child's face"><use href="#motif-child"/></svg>
+<figcaption><code>motif-child</code><span>0 0 100 100</span></figcaption></figure><figure><svg viewBox="0 0 100 100" role="img" aria-label="Lightbulb (an idea)"><use href="#motif-lightbulb"/></svg>
+<figcaption><code>motif-lightbulb</code><span>0 0 100 100</span></figcaption></figure><figure><svg viewBox="0 0 100 100" role="img" aria-label="Data table"><use href="#motif-table"/></svg>
+<figcaption><code>motif-table</code><span>0 0 100 100</span></figcaption></figure><figure><svg viewBox="0 0 100 100" role="img" aria-label="Stack of photo cards"><use href="#motif-photos"/></svg>
+<figcaption><code>motif-photos</code><span>0 0 100 100</span></figcaption></figure><figure><svg viewBox="0 0 100 40" role="img" aria-label="Arrow pointing right"><use href="#motif-arrow"/></svg>
+<figcaption><code>motif-arrow</code><span>0 0 100 40</span></figcaption></figure><figure><svg viewBox="0 0 100 60" role="img" aria-label="Curved arrow"><use href="#motif-arrow-curved"/></svg>
+<figcaption><code>motif-arrow-curved</code><span>0 0 100 60</span></figcaption></figure><figure><svg viewBox="0 0 100 100" role="img" aria-label="Magnifying glass"><use href="#motif-magnifier"/></svg>
+<figcaption><code>motif-magnifier</code><span>0 0 100 100</span></figcaption></figure><figure><svg viewBox="0 0 100 100" role="img" aria-label="Brain"><use href="#motif-brain"/></svg>
+<figcaption><code>motif-brain</code><span>0 0 100 100</span></figcaption></figure><figure><svg viewBox="0 0 100 100" role="img" aria-label="Balance scale"><use href="#motif-scale"/></svg>
+<figcaption><code>motif-scale</code><span>0 0 100 100</span></figcaption></figure><figure><svg viewBox="0 0 100 100" role="img" aria-label="Correct badge"><use href="#motif-badge-check"/></svg>
+<figcaption><code>motif-badge-check</code><span>0 0 100 100</span></figcaption></figure><figure><svg viewBox="0 0 100 100" role="img" aria-label="Wrong badge"><use href="#motif-badge-cross"/></svg>
+<figcaption><code>motif-badge-cross</code><span>0 0 100 100</span></figcaption></figure><figure><svg viewBox="0 0 120 80" role="img" aria-label="Labelled box"><use href="#motif-box"/></svg>
+<figcaption><code>motif-box</code><span>0 0 120 80</span></figcaption></figure><figure><svg viewBox="0 0 100 100" role="img" aria-label="Sticky note"><use href="#motif-note"/></svg>
+<figcaption><code>motif-note</code><span>0 0 100 100</span></figcaption></figure><figure><svg viewBox="0 0 120 100" role="img" aria-label="Thought bubble"><use href="#motif-thought"/></svg>
+<figcaption><code>motif-thought</code><span>0 0 120 100</span></figcaption></figure><figure><svg viewBox="0 0 140 100" role="img" aria-label="Machine with input and output"><use href="#motif-machine"/></svg>
+<figcaption><code>motif-machine</code><span>0 0 140 100</span></figcaption></figure></div>
+<h2>Composition patterns (7)</h2>
+<section class="pat"><h3>pattern-pipeline <span>0 0 800 400</span></h3><p class="note">Three stages, equal boxes, arrows in the gaps. Number every stage so the order survives greyscale.</p>
+<div class="frame" style="max-width:800px"><svg viewBox="0 0 800 400" role="img"><title>Pipeline: photos in, machine, answer out</title><desc>Three stages left to right: a stack of photos goes into a machine, and the machine puts out a correct badge.</desc>
+<text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">How a trained model answers</text>
+  <rect x="40" y="100" width="180" height="190" rx="12" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <rect x="310" y="100" width="180" height="190" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+  <rect x="580" y="100" width="180" height="190" rx="12" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3"/>
+  <g transform="translate(80,125)">
+    <g transform="rotate(-11 50 54) translate(-5 -7)">
+    <rect x="24" y="26" width="52" height="52" rx="7" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    </g>
+    <g transform="rotate(7 50 54) translate(6 -4)">
+    <rect x="24" y="26" width="52" height="52" rx="7" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    </g>
+    <rect x="24" y="26" width="52" height="52" rx="7" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="30" y="32" width="40" height="30" rx="4" fill="#D9EAF9" stroke="none"/>
+    <circle cx="42" cy="42" r="5" fill="#E8C671" stroke="#845F00" stroke-width="2"/>
+    <path d="M30 62 L44 50 L54 58 L62 52 L70 62 Z" fill="#1F6FB2" stroke="none"/>
+    <rect x="30" y="32" width="40" height="30" rx="4" fill="none" stroke="#1F6FB2" stroke-width="2"/>
+    <line x1="32" y1="70" x2="56" y2="70" stroke="#55636F" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(330,130)">
+    <line x1="2" y1="48" x2="14" y2="48" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="10,42 18,48 10,54" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="122" y1="48" x2="132" y2="48" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="128,42 136,48 128,54" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="28" y="14" width="84" height="72" rx="12" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="18" y="38" width="14" height="20" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="108" y="38" width="14" height="20" rx="4" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <g stroke="#14202B" stroke-width="3" stroke-linecap="round">
+    <line x1="84" y1="50" x2="89" y2="50"/>
+    <line x1="79.9" y1="59.9" x2="83.4" y2="63.4"/>
+    <line x1="70" y1="64" x2="70" y2="69"/>
+    <line x1="60.1" y1="59.9" x2="56.6" y2="63.4"/>
+    <line x1="56" y1="50" x2="51" y2="50"/>
+    <line x1="60.1" y1="40.1" x2="56.6" y2="36.6"/>
+    <line x1="70" y1="36" x2="70" y2="31"/>
+    <line x1="79.9" y1="40.1" x2="83.4" y2="36.6"/>
+    </g>
+    <circle cx="70" cy="50" r="14" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <circle cx="70" cy="50" r="5" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2.5"/>
+  </g>
+  <g transform="translate(620,125)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="130" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">1. Input</text>
+  <text x="400" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">2. Model</text>
+  <text x="670" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">3. Output</text>
+  <g transform="translate(228,175) scale(0.62)">
+    <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(498,175) scale(0.62)">
+    <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="400" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The model never sees the answer - it only sees the photo and guesses.</text>
+</svg></div></section><section class="pat"><h3>pattern-comparison <span>0 0 800 400</span></h3><p class="note">Mirror the two panels exactly so only the content differs. The badge shape - not the colour - says which side is which.</p>
+<div class="frame" style="max-width:800px"><svg viewBox="0 0 800 400" role="img"><title>Comparison: before and after</title><desc>Two panels side by side. The left panel is labelled Before and marked wrong; the right is labelled After and marked correct.</desc>
+<text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Before and after we fixed the training data</text>
+  <line x1="400" y1="80" x2="400" y2="336" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <rect x="40" y="80" width="330" height="240" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <rect x="430" y="80" width="330" height="240" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <g transform="translate(62,96) scale(0.44)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+    <line x1="38" y1="38" x2="62" y2="62"/>
+    <line x1="62" y1="38" x2="38" y2="62"/>
+    </g>
+  </g>
+  <g transform="translate(452,96) scale(0.44)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="120" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">Before</text>
+  <text x="510" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">After</text>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">
+    <text x="70" y="186">60 photos, all in daylight</text>
+    <text x="70" y="222">0 photos of a held object</text>
+    <text x="70" y="258">Accuracy gap: 50 points</text>
+    <text x="460" y="186">80 photos, mixed light</text>
+    <text x="460" y="222">20 photos of a held object</text>
+    <text x="460" y="258">Accuracy gap: 9 points</text>
+  </g>
+  <text x="400" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Same model, same test. Only the training photos changed.</text>
+</svg></div></section><section class="pat"><h3>pattern-grid <span>0 0 500 500</span></h3><p class="note">Cells are 40x40 so a 12px number fits. Always print the number in the cell - the shade alone is not the message.</p>
+<div class="frame" style="max-width:500px"><svg viewBox="0 0 500 500" role="img"><title>Pixel grid showing the letter L</title><desc>An eight by eight grid of squares. Dark squares numbered 255 form the letter L; pale squares are numbered 0.</desc>
+<text x="250" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A letter is just a grid of numbers</text>
+    <rect x="90" y="80" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="130" y="80" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="170" y="80" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="210" y="80" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="250" y="80" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="290" y="80" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="330" y="80" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="370" y="80" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="90" y="120" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="130" y="120" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="170" y="120" width="40" height="40" fill="#1F6FB2" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="210" y="120" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="250" y="120" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="290" y="120" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="330" y="120" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="370" y="120" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="90" y="160" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="130" y="160" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="170" y="160" width="40" height="40" fill="#1F6FB2" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="210" y="160" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="250" y="160" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="290" y="160" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="330" y="160" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="370" y="160" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="90" y="200" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="130" y="200" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="170" y="200" width="40" height="40" fill="#1F6FB2" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="210" y="200" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="250" y="200" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="290" y="200" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="330" y="200" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="370" y="200" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="90" y="240" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="130" y="240" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="170" y="240" width="40" height="40" fill="#1F6FB2" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="210" y="240" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="250" y="240" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="290" y="240" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="330" y="240" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="370" y="240" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="90" y="280" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="130" y="280" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="170" y="280" width="40" height="40" fill="#1F6FB2" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="210" y="280" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="250" y="280" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="290" y="280" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="330" y="280" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="370" y="280" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="90" y="320" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="130" y="320" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="170" y="320" width="40" height="40" fill="#1F6FB2" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="210" y="320" width="40" height="40" fill="#1F6FB2" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="250" y="320" width="40" height="40" fill="#1F6FB2" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="290" y="320" width="40" height="40" fill="#1F6FB2" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="330" y="320" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="370" y="320" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="90" y="360" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="130" y="360" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="170" y="360" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="210" y="360" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="250" y="360" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="290" y="360" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="330" y="360" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="370" y="360" width="40" height="40" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <text x="110" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="150" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="190" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="230" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="270" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="310" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="350" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="390" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="110" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="150" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="190" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">255</text>
+    <text x="230" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="270" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="310" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="350" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="390" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="110" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="150" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="190" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">255</text>
+    <text x="230" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="270" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="310" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="350" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="390" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="110" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="150" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="190" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">255</text>
+    <text x="230" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="270" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="310" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="350" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="390" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="110" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="150" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="190" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">255</text>
+    <text x="230" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="270" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="310" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="350" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="390" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="110" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="150" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="190" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">255</text>
+    <text x="230" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="270" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="310" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="350" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="390" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="110" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="150" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="190" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">255</text>
+    <text x="230" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">255</text>
+    <text x="270" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">255</text>
+    <text x="310" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">255</text>
+    <text x="350" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="390" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="110" y="380" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="150" y="380" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="190" y="380" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="230" y="380" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="270" y="380" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="310" y="380" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="350" y="380" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+    <text x="390" y="380" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="90" y="80" width="320" height="320" fill="none" stroke="#14202B" stroke-width="3"/>
+  <text x="250" y="440" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">8 x 8 = 64 pixels. 0 means paper, 255 means ink.</text>
+</svg></div></section><section class="pat"><h3>pattern-tree <span>0 0 800 400</span></h3><p class="note">Draw edges FIRST so boxes sit on top. Label every branch in words - never rely on left-means-no.</p>
+<div class="frame" style="max-width:800px"><svg viewBox="0 0 800 400" role="img"><title>Decision tree for sorting an animal photo</title><desc>A decision tree. The top question asks if it has feathers, branching to further questions and then to three answers.</desc>
+<text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A rule-based system is a tree of questions</text>
+  <g stroke="#55636F" stroke-width="2" fill="none">
+    <path d="M400 118 V142 H190 V166"/>
+    <path d="M400 118 V142 H610 V166"/>
+    <path d="M190 222 V246 H100 V270"/>
+    <path d="M190 222 V246 H280 V270"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">
+    <text x="286" y="136" text-anchor="middle">no</text>
+    <text x="516" y="136" text-anchor="middle">yes</text>
+    <text x="136" y="240" text-anchor="middle">no</text>
+    <text x="244" y="240" text-anchor="middle">yes</text>
+  </g>
+  <rect x="300" y="62" width="200" height="56" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3"/>
+  <text x="400" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">Has feathers?</text>
+  <rect x="90" y="166" width="200" height="56" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3"/>
+  <text x="190" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">Has whiskers?</text>
+  <rect x="510" y="166" width="200" height="56" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="610" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">Bird</text>
+  <rect x="20" y="270" width="160" height="56" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="100" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">Not sure</text>
+  <rect x="200" y="270" width="160" height="56" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="280" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">Cat</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Questions are grey boxes. Answers are blue boxes. Every branch is labelled yes or no.</text>
+</svg></div></section><section class="pat"><h3>pattern-scene <span>0 0 800 400</span></h3><p class="note">Numbered pins on a tinted panel, all captions on one baseline. Numbers do the work, so the scene still reads in greyscale.</p>
+<div class="frame" style="max-width:800px"><svg viewBox="0 0 800 400" role="img"><title>Labelled scene: a child asking a chatbot a question</title><desc>A child and a robot face each other with a thought bubble between them. Three numbered callouts point to the parts.</desc>
+<text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">What happens when you ask a chatbot a question</text>
+  <rect x="30" y="70" width="740" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <g transform="translate(70,150) scale(1.2)">
+    <circle cx="50" cy="52" r="30" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+    <path d="M20 44 A30 30 0 0 1 80 44 A34 22 0 0 0 20 44 Z" fill="#845F00" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="40" cy="50" r="4" fill="#14202B"/>
+    <circle cx="60" cy="50" r="4" fill="#14202B"/>
+    <path d="M39 63 Q50 72 61 63" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(600,150) scale(1.2)">
+    <line x1="50" y1="16" x2="50" y2="7" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="50" cy="5" r="4" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+    <rect x="22" y="16" width="56" height="40" rx="12" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="38" cy="34" r="5" fill="#14202B"/>
+    <circle cx="62" cy="34" r="5" fill="#14202B"/>
+    <path d="M40 45 Q50 52 60 45" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <rect x="28" y="60" width="44" height="30" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <line x1="28" y1="68" x2="13" y2="78" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+    <line x1="72" y1="68" x2="87" y2="78" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="50" cy="75" r="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  </g>
+  <g transform="translate(300,110) scale(1.5)">
+    <circle cx="22" cy="88" r="5" fill="#FFFFFF" stroke="#14202B" stroke-width="2.5"/>
+    <circle cx="34" cy="76" r="7" fill="#FFFFFF" stroke="#14202B" stroke-width="2.5"/>
+    <path d="M40 66 C24 66 18 50 30 43 C24 27 44 16 56 25 C64 10 92 14 92 31 C108 34 106 58 90 60 C86 70 64 72 56 66 Z"
+    fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+  <text x="390" y="167" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">the next</text>
+  <text x="390" y="189" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">likely word</text>
+  <g stroke="#C42B8C" stroke-width="2" fill="none">
+    <path d="M116 268 V300"/>
+    <path d="M390 262 V300"/>
+    <path d="M646 268 V300"/>
+  </g>
+  <g>
+    <circle cx="116" cy="314" r="14" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <text x="116" y="315" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+    <circle cx="390" cy="314" r="14" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <text x="390" y="315" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+    <circle cx="646" cy="314" r="14" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <text x="646" y="315" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">
+    <text x="116" y="356" text-anchor="middle">You type a question</text>
+    <text x="390" y="356" text-anchor="middle">It predicts one word at a time</text>
+    <text x="646" y="356" text-anchor="middle">It never looked anything up</text>
+  </g>
+</svg></div></section><section class="pat"><h3>pattern-bar <span>0 0 500 500</span></h3><p class="note">One series = one colour + direct labels on every bar. Grid lines stay 1.5px grey and sit UNDER the bars.</p>
+<div class="frame" style="max-width:500px"><svg viewBox="0 0 500 500" role="img"><title>Bar chart of accuracy in four conditions</title><desc>A bar chart. Daylight 92 percent, lamp light 58 percent, held in hand 42 percent, patterned background 50 percent.</desc>
+<text x="250" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Accuracy by photo condition</text>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="100" y1="400" x2="470" y2="400"/>
+    <line x1="100" y1="322" x2="470" y2="322"/>
+    <line x1="100" y1="245" x2="470" y2="245"/>
+    <line x1="100" y1="167" x2="470" y2="167"/>
+    <line x1="100" y1="90" x2="470" y2="90"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">
+    <text x="90" y="404">0</text><text x="90" y="326">25</text><text x="90" y="249">50</text>
+    <text x="90" y="171">75</text><text x="90" y="94">100</text>
+  </g>
+    <path d="M117 400 V118.8 A4 4 0 0 1 121 114.8 H155 A4 4 0 0 1 159 118.8 V400 Z" fill="#1F6FB2"/>
+    <text x="138.0" y="102.8" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">92%</text>
+    <text x="138.0" y="422" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Daylight</text>
+    <path d="M205 400 V224.2 A4 4 0 0 1 209 220.2 H243 A4 4 0 0 1 247 224.2 V400 Z" fill="#1F6FB2"/>
+    <text x="226.0" y="208.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">58%</text>
+    <text x="226.0" y="422" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Lamp light</text>
+    <path d="M293 400 V273.8 A4 4 0 0 1 297 269.8 H331 A4 4 0 0 1 335 273.8 V400 Z" fill="#1F6FB2"/>
+    <text x="314.0" y="257.8" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">42%</text>
+    <text x="314.0" y="422" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Held in hand</text>
+    <path d="M381 400 V249.0 A4 4 0 0 1 385 245.0 H419 A4 4 0 0 1 423 249.0 V400 Z" fill="#1F6FB2"/>
+    <text x="402.0" y="233.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">50%</text>
+    <text x="402.0" y="422" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Patterned</text>
+  <line x1="100" y1="400" x2="470" y2="400" stroke="#14202B" stroke-width="2"/>
+  <text x="250" y="462" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">One series, so no legend - the title names it. Every bar is labelled.</text>
+</svg></div></section><section class="pat"><h3>pattern-scatter <span>0 0 500 500</span></h3><p class="note">Two series, so a legend is required - and the marker SHAPE differs too, so colour is never the only clue.</p>
+<div class="frame" style="max-width:500px"><svg viewBox="0 0 500 500" role="img"><title>Scatter chart comparing two training sets</title><desc>A scatter chart with two series: round blue dots for the small training set and green triangles for the big training set. Both rise to the right, the triangles higher.</desc>
+<text x="250" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">More examples, better guesses</text>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="110" y1="380" x2="450" y2="380"/>
+    <line x1="110" y1="300" x2="450" y2="300"/>
+    <line x1="110" y1="220" x2="450" y2="220"/>
+    <line x1="110" y1="140" x2="450" y2="140"/>
+  </g>
+    <circle cx="140" cy="340" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+    <circle cx="180" cy="300" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+    <circle cx="215" cy="315" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+    <circle cx="250" cy="265" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+    <circle cx="290" cy="240" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+    <circle cx="330" cy="205" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+    <circle cx="365" cy="180" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+    <path d="M150 247 L158 261 L142 261 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M195 217 L203 231 L187 231 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M235 187 L243 201 L227 201 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M275 222 L283 236 L267 236 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M315 142 L323 156 L307 156 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M350 127 L358 141 L342 141 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M390 112 L398 126 L382 126 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="110" y1="380" x2="450" y2="380" stroke="#14202B" stroke-width="2"/>
+  <line x1="110" y1="90" x2="110" y2="380" stroke="#14202B" stroke-width="2"/>
+  <text x="280" y="412" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Number of training photos</text>
+  <text x="66" y="235" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle" transform="rotate(-90 66 235)">Accuracy</text>
+  <circle cx="130" cy="446" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="146" y="451" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Small set (circles)</text>
+  <path d="M300 438 L308 452 L292 452 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <text x="316" y="451" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Big set (triangles)</text>
+</svg></div></section>
+</div></body></html>

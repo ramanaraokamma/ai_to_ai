@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Counts mislead, rates do not</title>
+  <desc>Two panels. The left panel, marked wrong, compares two counts of three late days and concludes Monday does not matter. The right panel, marked correct, divides each count by its group size to get one hundred percent against twenty-seven percent, a gap of seventy-three points.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The same three late Mondays, read two ways</text>
+  <line x1="400" y1="72" x2="400" y2="330" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <rect x="30" y="72" width="340" height="258" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="430" y="72" width="340" height="258" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(48,86) scale(0.42)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+      <line x1="38" y1="38" x2="62" y2="62"/>
+      <line x1="62" y1="38" x2="38" y2="62"/>
+    </g>
+  </g>
+  <g transform="translate(448,86) scale(0.42)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="98" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">Comparing COUNTS</text>
+  <text x="498" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">Comparing RATES</text>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">
+    <text x="52" y="164">Mondays late: 3</text>
+    <text x="52" y="196">Non-Mondays late: 3</text>
+    <text x="52" y="242">"Same number, so</text>
+    <text x="52" y="268">Monday doesn't matter."</text>
+    <text x="452" y="164">Monday: 3 out of 3</text>
+    <text x="452" y="196">Not Monday: 3 out of 11</text>
+    <text x="452" y="242">100% against 27%.</text>
+    <text x="452" y="268">A gap of 73 points.</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">
+    <text x="52" y="304">The bottom number is missing.</text>
+    <text x="452" y="304">3 divided by 3, and 3 divided by 11.</text>
+  </g>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Whenever somebody quotes you a count, ask the two words that fix it: out of how many?</text>
+</svg>

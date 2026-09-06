@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Draw it: two machines, two ways to fail</title>
+  <desc>A large empty dashed frame split down the middle into a rule bot half and a bigram generator half, left blank for the reader to draw in.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Draw it: two machines, two ways to fail</text>
+  <rect x="40" y="66" width="720" height="268" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="9 7"/>
+  <line x1="400" y1="80" x2="400" y2="320" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="6 6"/>
+  <line x1="40" y1="90" x2="40" y2="66" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <line x1="40" y1="66" x2="64" y2="66" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <line x1="736" y1="66" x2="760" y2="66" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <line x1="760" y1="66" x2="760" y2="90" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <line x1="40" y1="310" x2="40" y2="334" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <line x1="40" y1="334" x2="64" y2="334" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <line x1="736" y1="334" x2="760" y2="334" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <line x1="760" y1="310" x2="760" y2="334" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <text x="60" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" font-weight="600">RULE BOT</text>
+  <text x="420" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" font-weight="600">BIGRAM GENERATOR</text>
+  <text x="748" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C7CDD4" text-anchor="end">sketch here</text>
+  <text x="400" y="364" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Same question, both stuck. Draw what each one says and how you would know.</text>
+</svg>

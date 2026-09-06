@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Two scores. Only one of them is news.</title>
+  <desc>Two bars on the same scale from nought to one. The blue bar, the score on the 120 training rows the model studied, reaches nought point nine four one seven and is labelled flattering. The pink bar, the score on the 30 held-back rows, reaches nought point seven three three three and is labelled the honest one. A bracket between them is labelled the gap, nought point two nought eight three, or 21 percentage points.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Two scores. Only one of them is news.</text>
+  <line x1="140" y1="300.0" x2="560" y2="300.0" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <text x="130" y="304.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.0</text>
+  <line x1="140" y1="249.0" x2="560" y2="249.0" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <text x="130" y="253.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.25</text>
+  <line x1="140" y1="198.0" x2="560" y2="198.0" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <text x="130" y="202.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.5</text>
+  <line x1="140" y1="147.0" x2="560" y2="147.0" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <text x="130" y="151.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.75</text>
+  <line x1="140" y1="96.0" x2="560" y2="96.0" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <text x="130" y="100.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1.0</text>
+  <rect x="190" y="107.89320000000001" width="120" height="192.1068" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="250" y="93.89320000000001" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">0.9417</text>
+  <text x="250" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">training rows</text>
+  <text x="250" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">120 rows it studied</text>
+  <text x="250" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">flattering</text>
+  <rect x="390" y="150.4068" width="120" height="149.5932" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="450" y="136.4068" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">0.7333</text>
+  <text x="450" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">held-back rows</text>
+  <text x="450" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">30 rows it never saw</text>
+  <text x="450" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">the honest one</text>
+  <line x1="140" y1="300" x2="560" y2="300" stroke="#14202B" stroke-width="2" stroke-linecap="butt"/>
+  <line x1="540" y1="107.89320000000001" x2="564" y2="107.89320000000001" stroke="#55636F" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="540" y1="150.4068" x2="564" y2="150.4068" stroke="#55636F" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="564" y1="107.89320000000001" x2="564" y2="150.4068" stroke="#55636F" stroke-width="1.5" stroke-linecap="butt"/>
+  <rect x="576" y="116" width="200" height="84" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="676" y="144" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">THE GAP</text>
+  <text x="676" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">0.2083</text>
+  <text x="676" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">21 percentage points of</text>
+  <text x="676" y="234" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the score was memory,</text>
+  <text x="676" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">not understanding.</text>
+  <rect x="576" y="274" width="200" height="62" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="676" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">Quote the pink number.</text>
+  <text x="676" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">Always with its row count.</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">A big gap means the model learnt the rows rather than the pattern.</text>
+
+</svg>

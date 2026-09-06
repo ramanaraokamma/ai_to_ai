@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>Four group accuracies and the gap between best and worst</title>
+  <desc>A bar chart of accuracy by photo condition. Daylight 91.7 percent is the best, held in a hand 41.7 percent is the worst, lamplight 58.3 and patterned 50.0 sit between. A double arrow between the best and worst bar tops is labelled 50.0 percentage points.</desc>
+  <text x="250" y="40" font-size="24" fill="#14202B" text-anchor="middle">Accuracy by group, and the gap</text>
+
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="100" y1="400" x2="400" y2="400"/>
+    <line x1="100" y1="322.5" x2="400" y2="322.5"/>
+    <line x1="100" y1="245" x2="400" y2="245"/>
+    <line x1="100" y1="167.5" x2="400" y2="167.5"/>
+    <line x1="100" y1="90" x2="400" y2="90"/>
+  </g>
+  <g font-size="12" fill="#55636F" text-anchor="end">
+    <text x="90" y="404">0</text>
+    <text x="90" y="326">25</text>
+    <text x="90" y="249">50</text>
+    <text x="90" y="171">75</text>
+    <text x="90" y="94">100</text>
+  </g>
+
+  <g stroke="#C42B8C" stroke-width="1.5" stroke-dasharray="6 5">
+    <line x1="151" y1="115.7" x2="420" y2="115.7"/>
+    <line x1="291" y1="270.7" x2="420" y2="270.7"/>
+  </g>
+
+  <rect x="109" y="115.7" width="42" height="284.3" rx="4" fill="#1F6FB2"/>
+  <rect x="179" y="219.3" width="42" height="180.7" rx="4" fill="#1F6FB2"/>
+  <rect x="249" y="270.7" width="42" height="129.3" rx="4" fill="#1F6FB2"/>
+  <rect x="319" y="245" width="42" height="155" rx="4" fill="#1F6FB2"/>
+
+  <g font-size="14" fill="#14202B" text-anchor="middle">
+    <text x="130" y="108">91.7%</text>
+    <text x="200" y="211">58.3%</text>
+    <text x="270" y="263">41.7%</text>
+    <text x="340" y="237">50.0%</text>
+  </g>
+
+  <g stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <line x1="420" y1="115.7" x2="420" y2="270.7"/>
+    <polyline points="413,123 420,113 427,123"/>
+    <polyline points="413,263 420,273 427,263"/>
+  </g>
+  <g text-anchor="middle" fill="#14202B">
+    <text x="452" y="168" font-size="14">gap</text>
+    <text x="452" y="192" font-size="18">50.0</text>
+    <text x="452" y="212" font-size="14">points</text>
+  </g>
+
+  <line x1="100" y1="400" x2="400" y2="400" stroke="#14202B" stroke-width="2"/>
+
+  <g font-size="12" fill="#55636F" text-anchor="middle">
+    <text x="130" y="420">Daylight</text>
+    <text x="200" y="420">Lamplight</text>
+    <text x="270" y="420">In a hand</text>
+    <text x="340" y="420">Patterned</text>
+  </g>
+
+  <rect x="104" y="430" width="52" height="22" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="130" y="446" font-size="12" fill="#14202B" text-anchor="middle">best</text>
+  <rect x="242" y="430" width="56" height="22" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="270" y="446" font-size="12" fill="#14202B" text-anchor="middle">worst</text>
+
+  <text x="250" y="478" font-size="14" fill="#55636F" text-anchor="middle">91.7 minus 41.7 = 50.0. Subtracting percentages gives percentage points.</text>
+</svg>

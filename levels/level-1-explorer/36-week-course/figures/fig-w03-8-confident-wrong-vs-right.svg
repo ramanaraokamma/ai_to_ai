@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A confident tone is not evidence</title>
+  <desc>Two panels showing the same invented paragraph about a film that does not exist. On the left the reader believes it because it sounded certain. On the right the reader underlines the three checkable claims and looks them up first.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="40" font-size="24" fill="#14202B" text-anchor="middle">A confident tone is not evidence</text>
+    <rect x="30" y="62" width="350" height="262" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <rect x="420" y="62" width="350" height="262" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <g transform="translate(44,72) scale(0.44)">
+      <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+      <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+        <line x1="38" y1="38" x2="62" y2="62"/>
+        <line x1="62" y1="38" x2="38" y2="62"/>
+      </g>
+    </g>
+    <g transform="translate(434,72) scale(0.44)">
+      <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="96" y="100" font-size="18" fill="#14202B">Believing the tone</text>
+    <text x="486" y="100" font-size="18" fill="#14202B">Checking the claims</text>
+
+    <rect x="48" y="120" width="314" height="118" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <g font-size="12" fill="#14202B">
+      <text x="60" y="142">The Glass Kangaroo of Wollongong</text>
+      <text x="60" y="160">(1987) was directed by Marion Hollis.</text>
+      <text x="60" y="178">It won the Silver Boomerang at the</text>
+      <text x="60" y="196">Adelaide Film Festival, and The Age</text>
+      <text x="60" y="214">called it "completely honest".</text>
+    </g>
+    <g font-size="16" fill="#14202B">
+      <text x="48" y="266">"It sounded certain,</text>
+      <text x="48" y="288">so I believed it."</text>
+    </g>
+    <text x="48" y="312" font-size="12" fill="#55636F">The film does not exist. Not one detail is real.</text>
+
+    <rect x="438" y="120" width="314" height="118" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <g font-size="12" fill="#14202B">
+      <text x="450" y="142">The Glass Kangaroo of Wollongong</text>
+      <text x="450" y="160">(1987) was directed by Marion Hollis.</text>
+      <text x="450" y="178">It won the Silver Boomerang at the</text>
+      <text x="450" y="196">Adelaide Film Festival, and The Age</text>
+      <text x="450" y="214">called it "completely honest".</text>
+    </g>
+    <g stroke="#C42B8C" stroke-width="2.5" stroke-linecap="round">
+      <line x1="450" y1="147" x2="640" y2="147"/>
+      <line x1="586" y1="165" x2="712" y2="165"/>
+      <line x1="512" y1="183" x2="666" y2="183"/>
+    </g>
+    <g font-size="16" fill="#14202B">
+      <text x="438" y="266">"Three claims I could</text>
+      <text x="438" y="288">look up. Do that first."</text>
+    </g>
+    <text x="438" y="312" font-size="12" fill="#55636F">A name, an award, a quote. All checkable.</text>
+    <text x="400" y="364" font-size="14" fill="#55636F" text-anchor="middle">It sounds exactly the same when it is right. So the sound tells you nothing.</text>
+  </g>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Agree, then be more precise than they were</title>
+  <desc>Two mirrored panels answering the same question, is a hundred and twenty-six rows really quite small. The crossed answer begins with no, that is loads actually. The ticked answer begins with yes and then gives the test-set size, the worth of one row, and the ranking it therefore refuses to claim.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Agree, then be more precise than they were</text>
+  <rect x="20" y="62" width="760" height="40" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="400" y="84" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">“Isn't 126 rows really quite small?”</text>
+  <rect x="20" y="116" width="370" height="236" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <g transform="translate(34,130) scale(0.5294)">
+    <circle cx="34" cy="34" r="31" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="6"/>
+    <line x1="20" y1="20" x2="48" y2="48" stroke="#CC2B1D" stroke-width="10" stroke-linecap="round"/>
+    <line x1="48" y1="20" x2="20" y2="48" stroke="#CC2B1D" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  <text x="214" y="154" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the answer that loses the room</text>
+  <path d="M56 178 q0 -8 8 -8 H338 L356 188 V238 q0 8 -8 8 H64 q-8 0 -8 -8 Z" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M338 170 V188 H356 Z" fill="#F5F8FA" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="206" y="200" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">“No, that's loads actually.”</text>
+  <text x="206" y="226" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">starts with: no</text>
+  <text x="206" y="274" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">You have just told them</text>
+  <text x="206" y="292" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">you never thought about it.</text>
+  <text x="206" y="322" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#CC2B1D" text-anchor="middle">0 numbers</text>
+  <rect x="410" y="116" width="370" height="236" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <g transform="translate(424,130) scale(0.5294)">
+    <circle cx="34" cy="34" r="31" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="6"/>
+    <polyline points="18,36 30,49 52,20" fill="none" stroke="#1B7A4B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="604" y="154" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the answer that wins it</text>
+  <path d="M446 178 q0 -8 8 -8 H728 L746 188 V278 q0 8 -8 8 H454 q-8 0 -8 -8 Z" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M728 170 V188 H746 Z" fill="#F5F8FA" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="596" y="196" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">“Yes. 26 in the test set, so one</text>
+  <text x="596" y="216" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">row is worth 3.8%. I cannot tell</text>
+  <text x="596" y="236" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">apart two models less than about</text>
+  <text x="596" y="256" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">4 points apart — so no winner.”</text>
+  <text x="596" y="278" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle">starts with: yes</text>
+  <text x="596" y="322" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#1B7A4B" text-anchor="middle">3 numbers</text>
+  <text x="400" y="380" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The single most useful move in the whole subject, and it is a script you can learn.</text>
+</svg>

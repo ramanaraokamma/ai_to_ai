@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A fallback is a value you invented</title>
+  <desc>A signpost asks whether the card has a field called runs. The yes branch hands back the measured 48. The no branch hands back a zero that the programmer chose, and two boxes below show that the invented zero pulls the team average down from 45.67 to 34.25.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A fallback is a value you invented</text>
+  <path d="M400 148 L200 190" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <path d="M400 148 L600 190" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <line x1="400" y1="122" x2="400" y2="148" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <rect x="250" y="72" width="300" height="50" rx="8" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="400" y="97" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">is there a field called runs?</text>
+  <rect x="278" y="152" width="44" height="22" rx="11" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="300" y="163" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">yes</text>
+  <rect x="478" y="152" width="44" height="22" rx="11" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="500" y="163" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">no</text>
+  <rect x="110" y="190" width="180" height="70" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="200" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">48</text>
+  <text x="200" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">somebody measured this</text>
+  <rect x="510" y="190" width="180" height="70" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="600" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="600" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">you typed this yourself</text>
+  <rect x="110" y="286" width="280" height="62" rx="10" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="250" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Falcons average, Sam left out</text>
+  <text x="250" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">45.67 runs, from 3 players</text>
+  <rect x="410" y="286" width="280" height="62" rx="10" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="550" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Falcons average with the invented 0</text>
+  <text x="550" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">34.25 runs, from 4 players</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The made-up zero moved the answer by 11.42 runs, and nothing warned you.</text>
+</svg>

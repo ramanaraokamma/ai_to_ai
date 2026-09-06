@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The lazy read and the expert read</title>
+  <desc>Two panels showing the same readout of forty-five, forty-four and eleven. The left panel is marked wrong: it reads only the biggest number and says spoon. The right panel is marked correct: it checks the sum, computes a margin of one, and refuses to trust the answer.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="42" font-size="24" fill="#14202B" text-anchor="middle">Same readout. Two ways of reading it.</text>
+    <line x1="400" y1="76" x2="400" y2="336" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+    <rect x="40" y="76" width="330" height="252" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+    <g transform="translate(58,90) scale(0.44)">
+      <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+      <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+        <line x1="38" y1="38" x2="62" y2="62"/>
+        <line x1="62" y1="38" x2="38" y2="62"/>
+      </g>
+    </g>
+    <text x="112" y="120" font-size="18" fill="#14202B">The lazy read</text>
+    <text x="66" y="176" font-size="18" fill="#14202B">Readout: 45 / 44 / 11</text>
+    <text x="66" y="216" font-size="18" fill="#14202B">"45 is the biggest."</text>
+    <text x="66" y="252" font-size="18" fill="#14202B">"So it's a spoon."</text>
+    <text x="66" y="296" font-size="14" fill="#55636F">Two seconds. No idea how close it was.</text>
+
+    <rect x="430" y="76" width="330" height="252" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <g transform="translate(448,90) scale(0.44)">
+      <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="502" y="120" font-size="18" fill="#14202B">The expert read</text>
+    <text x="456" y="164" font-size="18" fill="#14202B">Readout: 45 / 44 / 11</text>
+    <text x="456" y="196" font-size="18" fill="#14202B">Sum: 45 + 44 + 11 = 100</text>
+    <text x="456" y="228" font-size="18" fill="#14202B">Winner: spoon</text>
+    <text x="456" y="260" font-size="18" fill="#14202B">Margin: 45 − 44 = 1</text>
+    <text x="456" y="296" font-size="14" fill="#55636F">One point is not a preference. Do not trust it.</text>
+
+    <text x="400" y="368" font-size="14" fill="#55636F" text-anchor="middle">Both readers saw the same three numbers. Only one of them knew it was a coin toss.</text>
+  </g>
+</svg>

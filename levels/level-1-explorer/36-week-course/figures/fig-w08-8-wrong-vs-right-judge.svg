@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>You are the computer, not the judge</title>
+  <desc>Two panels. The left panel, marked wrong, shows a student quietly writing ham because the rulebook's answer looked silly. The right panel, marked correct, shows the same student writing spam because that is what the rules actually say, then marking it as a false alarm.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">"I PASSED MY PIANO EXAM!!" — what do you write down?</text>
+  <line x1="400" y1="72" x2="400" y2="336" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <rect x="30" y="72" width="340" height="264" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="430" y="72" width="340" height="264" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(48,86) scale(0.42)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+      <line x1="38" y1="38" x2="62" y2="62"/>
+      <line x1="62" y1="38" x2="38" y2="62"/>
+    </g>
+  </g>
+  <g transform="translate(448,86) scale(0.42)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="98" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">Being the judge</text>
+  <text x="498" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">Being the computer</text>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">
+    <text x="52" y="152">"Obviously that's a real</text>
+    <text x="52" y="178">message, so I'll write ham."</text>
+    <text x="452" y="152">"Rule 1 sees the '!!', so my</text>
+    <text x="452" y="178">rulebook says SPAM."</text>
+  </g>
+
+  <rect x="52" y="196" width="296" height="42" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="200" y="223" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Wrote: ham — correct!</text>
+  <rect x="452" y="196" width="296" height="42" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="600" y="223" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Wrote: spam — FALSE ALARM</text>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">
+    <text x="52" y="266">You just measured yourself,</text>
+    <text x="52" y="288">not your rulebook. The score</text>
+    <text x="52" y="310">now says nothing at all.</text>
+    <text x="452" y="266">You just found a real fault in</text>
+    <text x="452" y="288">a real rule, and you know</text>
+    <text x="452" y="310">exactly which rule caused it.</text>
+  </g>
+
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The computer does not know it is being silly. That is precisely the thing you are measuring.</text>
+</svg>

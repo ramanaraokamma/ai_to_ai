@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Label it: what else is in the file?</title>
+  <desc>On the left a photo of a sun over a hill, labelled what you see. An arrow leads to a panel on the right headed hidden inside the same file, with five numbered blank lines for the student to fill in.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Label it: what else is in the file?</text>
+  <rect x="56" y="110" width="200" height="170" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="70" y="124" width="172" height="120" rx="6" fill="#D9EAF9" stroke="none"/>
+  <circle cx="106" cy="152" r="14" fill="#E8C671" stroke="#845F00" stroke-width="2"/>
+  <path d="M70 244 L128 196 L164 226 L196 202 L242 244 Z" fill="#1F6FB2" stroke="none"/>
+  <rect x="70" y="124" width="172" height="120" rx="6" fill="none" stroke="#1F6FB2" stroke-width="2"/>
+  <line x1="74" y1="264" x2="150" y2="264" stroke="#55636F" stroke-width="3" stroke-linecap="round"/>
+  <text x="156" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">What you see</text>
+  <g transform="translate(268,176) scale(0.66)">
+    <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <rect x="340" y="100" width="420" height="200" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M340 112 A12 12 0 0 1 352 100 H748 A12 12 0 0 1 760 112 V140 H340 Z" fill="#D9EAF9" stroke="none"/>
+  <line x1="340" y1="140" x2="760" y2="140" stroke="#14202B" stroke-width="3"/>
+  <text x="550" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Hidden inside the same file</text>
+  <g>
+    <circle cx="368" cy="166" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+    <circle cx="368" cy="194" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+    <circle cx="368" cy="222" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+    <circle cx="368" cy="250" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+    <circle cx="368" cy="278" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">
+    <text x="368" y="170">1</text>
+    <text x="368" y="198">2</text>
+    <text x="368" y="226">3</text>
+    <text x="368" y="254">4</text>
+    <text x="368" y="282">5</text>
+  </g>
+  <g stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round">
+    <line x1="390" y1="172" x2="740" y2="172"/>
+    <line x1="390" y1="200" x2="740" y2="200"/>
+    <line x1="390" y1="228" x2="740" y2="228"/>
+    <line x1="390" y1="256" x2="740" y2="256"/>
+    <line x1="390" y1="284" x2="740" y2="284"/>
+  </g>
+  <text x="400" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Five lines, five different kinds of hidden thing. None of them is in the picture.</text>
+</svg>

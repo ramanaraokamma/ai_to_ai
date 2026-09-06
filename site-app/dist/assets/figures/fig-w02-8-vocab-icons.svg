@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Week 2's four new words</title>
+  <desc>Four labelled tiles. Machine learning, drawn as photo cards feeding a brain. Example, drawn as a card with an answer tag attached. Label, drawn as the tag on its own. Model, drawn as a machine with an input and an output.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="44" font-size="24" fill="#14202B" text-anchor="middle">Week 2's four new words</text>
+
+    <rect x="30" y="80" width="170" height="220" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="220" y="80" width="170" height="220" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="410" y="80" width="170" height="220" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="600" y="80" width="170" height="220" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+
+    <g transform="translate(44,120) scale(0.5)">
+      <g transform="rotate(-11 50 54) translate(-5 -7)">
+        <rect x="24" y="26" width="52" height="52" rx="7" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      </g>
+      <g transform="rotate(7 50 54) translate(6 -4)">
+        <rect x="24" y="26" width="52" height="52" rx="7" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      </g>
+      <rect x="24" y="26" width="52" height="52" rx="7" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="30" y="32" width="40" height="30" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+      <line x1="32" y1="70" x2="56" y2="70" stroke="#55636F" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <g stroke="#14202B" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="96" y1="150" x2="110" y2="150"/>
+      <polyline points="105,145 113,150 105,155"/>
+    </g>
+    <g transform="translate(118,118) scale(0.62)">
+      <path d="M50 14 C34 14 24 24 24 36 C13 41 12 55 22 62 C22 76 34 87 50 87 C66 87 78 76 78 62 C88 55 87 41 76 36 C76 24 66 14 50 14 Z" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+      <line x1="50" y1="15" x2="50" y2="86" stroke="#6D28D9" stroke-width="3" stroke-linecap="round"/>
+      <g fill="none" stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round">
+        <path d="M37 28 C45 33 45 43 37 47"/>
+        <path d="M63 28 C55 33 55 43 63 47"/>
+      </g>
+    </g>
+    <text x="115" y="200" font-size="18" fill="#14202B" text-anchor="middle">machine</text>
+    <text x="115" y="218" font-size="18" fill="#14202B" text-anchor="middle">learning</text>
+    <g font-size="14" fill="#55636F" text-anchor="middle">
+      <text x="115" y="246">the machine finds the</text>
+      <text x="115" y="264">rule itself, by studying</text>
+      <text x="115" y="282">answered examples</text>
+    </g>
+
+    <rect x="240" y="122" width="80" height="56" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+    <g stroke="#55636F" stroke-width="3" stroke-linecap="round">
+      <line x1="252" y1="140" x2="308" y2="140"/>
+      <line x1="252" y1="152" x2="308" y2="152"/>
+      <line x1="252" y1="164" x2="288" y2="164"/>
+    </g>
+    <path d="M334 130 H372 V170 H334 L320 150 Z" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="334" cy="150" r="3.5" fill="#FFFFFF" stroke="#845F00" stroke-width="2"/>
+    <text x="352" y="151" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">RIPE</text>
+    <text x="305" y="209" font-size="18" fill="#14202B" text-anchor="middle">example</text>
+    <g font-size="14" fill="#55636F" text-anchor="middle">
+      <text x="305" y="246">one thing you show</text>
+      <text x="305" y="264">the machine, with the</text>
+      <text x="305" y="282">right answer attached</text>
+    </g>
+
+    <path d="M470 126 H540 V174 H470 L448 150 Z" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="464" cy="150" r="4.5" fill="#FFFFFF" stroke="#845F00" stroke-width="2"/>
+    <text x="500" y="151" font-size="16" fill="#14202B" text-anchor="middle" dominant-baseline="central">SPAM</text>
+    <text x="495" y="209" font-size="18" fill="#14202B" text-anchor="middle">label</text>
+    <g font-size="14" fill="#55636F" text-anchor="middle">
+      <text x="495" y="246">the right answer a</text>
+      <text x="495" y="264">person attaches,</text>
+      <text x="495" y="282">before training starts</text>
+    </g>
+
+    <g transform="translate(637,112) scale(0.68)">
+      <line x1="2" y1="48" x2="14" y2="48" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+      <polyline points="10,42 18,48 10,54" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="122" y1="48" x2="132" y2="48" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round"/>
+      <polyline points="128,42 136,48 128,54" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="28" y="14" width="84" height="72" rx="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="18" y="38" width="14" height="20" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="108" y="38" width="14" height="20" rx="4" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="70" cy="50" r="14" fill="#FFFFFF" stroke="#6D28D9" stroke-width="3"/>
+      <circle cx="70" cy="50" r="5" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2.5"/>
+    </g>
+    <text x="685" y="209" font-size="18" fill="#14202B" text-anchor="middle">model</text>
+    <g font-size="14" fill="#55636F" text-anchor="middle">
+      <text x="685" y="246">the guessing machine</text>
+      <text x="685" y="264">training leaves behind:</text>
+      <text x="685" y="282">new thing in, guess out</text>
+    </g>
+    <text x="400" y="340" font-size="14" fill="#55636F" text-anchor="middle">Learn them in this order. Each one needs the one before it.</text>
+  </g>
+</svg>

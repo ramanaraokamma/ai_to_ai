@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Label the four parts of this variable</title>
+  <desc>A tag reading pizza_price sits on top of a large box holding eight point five zero. Four leader lines marked A, B, C and D point at the tag, the inside of the box, the box itself and the equals sign in the line of code underneath. Blank write-in lines wait for each label.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Label the four parts of this variable</text>
+  <rect x="300" y="92" width="180" height="36" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="390" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">pizza_price</text>
+  <rect x="300" y="128" width="240" height="84" rx="12" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="420" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">8.50</text>
+  <line x1="300" y1="110" x2="240" y2="110" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="232" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#C42B8C" text-anchor="end">A</text>
+  <line x1="300" y1="170" x2="240" y2="170" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="232" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#C42B8C" text-anchor="end">B</text>
+  <line x1="540" y1="170" x2="600" y2="170" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="608" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#C42B8C">C</text>
+  <rect x="300" y="232" width="240" height="32" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="420" y="248" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">pizza_price  =  8.50</text>
+  <line x1="388" y1="264" x2="388" y2="290" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="388" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#C42B8C" text-anchor="middle">D</text>
+  <text x="60" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">A ______________________________</text>
+  <text x="60" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">B ______________________________</text>
+  <text x="440" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">C ______________________________</text>
+  <text x="440" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">D ______________________________</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Two of these are the same thing wearing different clothes. Say which.</text>
+</svg>

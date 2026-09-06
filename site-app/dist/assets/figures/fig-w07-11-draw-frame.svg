@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Draw It frame for Week 7</title>
+  <desc>An empty framed drawing area with a title strip reading Draw a pattern from your own week, and three small reminder boxes along the bottom for the two counts, the rate as a division, and the rule with its threshold.</desc>
+  <rect x="24" y="24" width="752" height="300" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="24" y="24" width="752" height="44" rx="12" fill="#F5F8FA" stroke="none"/>
+  <line x1="24" y1="68" x2="776" y2="68" stroke="#14202B" stroke-width="3"/>
+  <text x="400" y="53" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">DRAW: one real pattern from your own week</text>
+  <g stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="8 8">
+    <line x1="400" y1="88" x2="400" y2="304"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">
+    <text x="212" y="86">your group</text>
+    <text x="588" y="86">the other group</text>
+  </g>
+  <g fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round">
+    <rect x="60" y="342" width="200" height="36" rx="8"/>
+    <rect x="300" y="342" width="200" height="36" rx="8"/>
+    <rect x="540" y="342" width="200" height="36" rx="8"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">
+    <text x="60" y="338">both counts, out of how many</text>
+    <text x="300" y="338">the rate, written as a division</text>
+    <text x="540" y="338">your rule, with its threshold</text>
+  </g>
+</svg>

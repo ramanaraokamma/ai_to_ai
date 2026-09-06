@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Academy — from 6th grade to building real AI</title>
+<meta name="description" content="A single-page map of the AI Academy curriculum: 4 levels, 36 modules, 4 capstones, grade 6 to grade 12.">
+<style>
+/* ---------- design tokens ---------- */
+:root{
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --step--1: clamp(0.78rem, 0.76rem + 0.10vw, 0.84rem);
+  --step-0:  clamp(0.95rem, 0.92rem + 0.15vw, 1.03rem);
+  --step-1:  clamp(1.12rem, 1.06rem + 0.30vw, 1.30rem);
+  --step-2:  clamp(1.35rem, 1.24rem + 0.55vw, 1.70rem);
+  --step-3:  clamp(1.70rem, 1.45rem + 1.20vw, 2.40rem);
+  --step-4:  clamp(2.10rem, 1.60rem + 2.60vw, 3.60rem);
+
+  --r-sm: 8px; --r-md: 14px; --r-lg: 22px; --r-pill: 999px;
+  --pad: clamp(1rem, 0.6rem + 1.6vw, 1.9rem);
+  --maxw: 1180px;
+  --t: 180ms cubic-bezier(.2,.7,.3,1);
+}
+
+html[data-theme="light"]{
+  --bg:#f4f6f9;
+  --bg-2:#e9edf3;
+  --surface:#ffffff;
+  --surface-2:#f7f9fc;
+  --text:#131820;          /* 16.6:1 on surface */
+  --text-2:#4d5866;        /* 7.4:1 on surface  */
+  --text-3:#5c6672;        /* 5.8:1 on surface, 5.0:1 on --bg-2 */
+  --line:#dfe4ec;
+  --line-strong:#c6cede;
+  --shadow: 0 1px 2px rgba(16,24,40,.05), 0 8px 24px -12px rgba(16,24,40,.18);
+  --shadow-lg: 0 2px 4px rgba(16,24,40,.05), 0 24px 48px -24px rgba(16,24,40,.28);
+  --track:#e4e9f1;
+  --hero-1:#101828; --hero-2:#1f2a44;
+  --hero-text:#ffffff; --hero-text-2:#c9d3e4;
+  --focus:#1d4ed8;
+  --l1:#0e6f80; --l2:#9a5008; --l3:#5b28c4; --l4:#b01243;
+  --l1-soft:#e2f3f6; --l2-soft:#fdf0dd; --l3-soft:#eee9fd; --l4-soft:#fde8ee;
+}
+html[data-theme="dark"]{
+  --bg:#0c1015;
+  --bg-2:#0f141b;
+  --surface:#161c25;
+  --surface-2:#1c2430;
+  --text:#e9eef6;          /* 14.5:1 on surface */
+  --text-2:#b0bccd;        /* 8.4:1  */
+  --text-3:#98a5b8;        /* 6.4:1  */
+  --line:#27313f;
+  --line-strong:#38455a;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.7);
+  --shadow-lg: 0 2px 6px rgba(0,0,0,.45), 0 28px 56px -26px rgba(0,0,0,.85);
+  --track:#26303e;
+  --hero-1:#0a0e14; --hero-2:#141d2c;
+  --hero-text:#f3f6fb; --hero-text-2:#aebbcd;
+  --focus:#8ab4ff;
+  --l1:#4fd3e6; --l2:#f6bf5a; --l3:#b39bfb; --l4:#ff8aa3;
+  --l1-soft:#0f2a30; --l2-soft:#2e2210; --l3-soft:#221a3c; --l4-soft:#33121e;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; font-family:var(--font); font-size:var(--step-0); line-height:1.6;
+  color:var(--text); background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{line-height:1.2; margin:0; letter-spacing:-0.02em; font-weight:650}
+p{margin:0}
+a{color:inherit}
+img,svg{max-width:100%}
+.wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:var(--pad)}
+
+:focus-visible{outline:3px solid var(--focus); outline-offset:2px; border-radius:6px}
+.skip{
+  position:absolute; left:-9999px; top:0; z-index:100;
+  background:var(--surface); color:var(--text); padding:.7rem 1rem;
+  border-radius:0 0 var(--r-sm) 0; box-shadow:var(--shadow);
+}
+.skip:focus{left:0}
+
+/* ---------- hero ---------- */
+.hero{
+  background:linear-gradient(150deg, var(--hero-1) 0%, var(--hero-2) 100%);
+  color:var(--hero-text);
+  padding-block: clamp(2.6rem, 1.8rem + 4vw, 5rem) clamp(2.4rem, 1.6rem + 4vw, 4.2rem);
+  border-bottom:1px solid var(--line);
+  position:relative; overflow:hidden;
+}
+.hero::after{
+  content:""; position:absolute; inset:auto -10% -60% 40%;
+  height:120%; border-radius:50%;
+  background:radial-gradient(circle at 50% 50%, rgba(120,160,255,.18), transparent 62%);
+  pointer-events:none;
+}
+.hero .wrap{position:relative; z-index:1}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:.55rem;
+  font-size:var(--step--1); letter-spacing:.16em; text-transform:uppercase;
+  font-weight:600; color:var(--hero-text-2);
+  border:1px solid rgba(255,255,255,.22); border-radius:var(--r-pill);
+  padding:.32rem .8rem; margin-bottom:1.2rem;
+}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:#5eead4}
+.hero h1{font-size:var(--step-4); max-width:19ch; font-weight:680; letter-spacing:-0.035em}
+.hero h1 .accent{
+  background:linear-gradient(92deg,#7dd3fc,#c4b5fd 55%,#fda4af);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.lede{margin-top:1.1rem; max-width:62ch; color:var(--hero-text-2); font-size:var(--step-1); line-height:1.55}
+
+.stats{list-style:none; display:flex; flex-wrap:wrap; gap:.6rem 2.4rem; margin:2rem 0 0; padding:0}
+.stats li{display:flex; flex-direction:column}
+.stats .num{font-size:var(--step-2); font-weight:680; letter-spacing:-0.03em}
+.stats .cap{font-size:var(--step--1); color:var(--hero-text-2); text-transform:uppercase; letter-spacing:.1em}
+
+.overall{
+  margin-top:2.2rem; background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.16); border-radius:var(--r-md);
+  padding:1rem 1.1rem; max-width:560px; backdrop-filter:blur(6px);
+}
+.overall .row{display:flex; justify-content:space-between; align-items:baseline; gap:1rem; margin-bottom:.6rem}
+.overall .row strong{font-size:var(--step--1); letter-spacing:.1em; text-transform:uppercase; font-weight:600; color:var(--hero-text-2)}
+.overall .row span{font-variant-numeric:tabular-nums; font-weight:640}
+.bar{height:9px; border-radius:var(--r-pill); background:rgba(255,255,255,.16); overflow:hidden}
+.bar > i{display:block; height:100%; width:0%; border-radius:inherit;
+  background:linear-gradient(90deg,#5eead4,#a5b4fc); transition:width var(--t)}
+
+/* ---------- toolbar ---------- */
+.toolbar{
+  position:sticky; top:0; z-index:30;
+  background:var(--bg);
+  background:color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter:saturate(1.4) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+@supports not (backdrop-filter: blur(4px)){ .toolbar{background:var(--bg)} }
+.toolbar .wrap{display:flex; gap:.7rem; align-items:center; flex-wrap:wrap; padding-block:.75rem}
+.search{position:relative; flex:1 1 260px; min-width:0}
+.search input{
+  width:100%; font:inherit; color:var(--text); background:var(--surface);
+  border:1px solid var(--line-strong); border-radius:var(--r-pill);
+  padding:.62rem 2.4rem .62rem 2.5rem; transition:border-color var(--t), box-shadow var(--t);
+}
+.search input::placeholder{color:var(--text-3)}
+.search input:hover{border-color:var(--text-3)}
+.search svg{position:absolute; left:.85rem; top:50%; transform:translateY(-50%); color:var(--text-3)}
+.search .clear{
+  position:absolute; right:.35rem; top:50%; transform:translateY(-50%);
+  border:0; background:transparent; color:var(--text-2); cursor:pointer;
+  border-radius:50%; width:28px; height:28px; font-size:1rem; line-height:1;
+}
+.search .clear:hover{background:var(--bg-2); color:var(--text)}
+.btn{
+  font:inherit; font-size:var(--step--1); font-weight:560;
+  color:var(--text-2); background:var(--surface);
+  border:1px solid var(--line-strong); border-radius:var(--r-pill);
+  padding:.55rem .95rem; cursor:pointer; white-space:nowrap;
+  transition:background var(--t), color var(--t), border-color var(--t);
+}
+.btn:hover{background:var(--surface-2); color:var(--text); border-color:var(--text-3)}
+.btn[aria-pressed="true"]{background:var(--text); color:var(--surface); border-color:var(--text)}
+.toolbar .spacer{flex:1 1 0}
+.count{font-size:var(--step--1); color:var(--text-3); font-variant-numeric:tabular-nums}
+
+/* ---------- section headings ---------- */
+main{padding-block: clamp(2rem,1.4rem + 2vw,3.4rem) 0}
+.sec-head{max-width:64ch; margin-bottom:1.6rem}
+.sec-head .kicker{
+  font-size:var(--step--1); letter-spacing:.16em; text-transform:uppercase;
+  color:var(--text-3); font-weight:620; display:block; margin-bottom:.5rem;
+}
+.sec-head h2{font-size:var(--step-3)}
+.sec-head p{color:var(--text-2); margin-top:.7rem}
+
+/* ---------- level cards ---------- */
+.levels{display:grid; gap:clamp(1rem,.6rem + 1.4vw,1.6rem); grid-template-columns:repeat(auto-fit,minmax(430px,1fr))}
+@media (max-width:900px){ .levels{grid-template-columns:1fr} }
+
+.level{
+  --accent:var(--l1); --soft:var(--l1-soft);
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--r-lg); box-shadow:var(--shadow);
+  overflow:hidden; display:flex; flex-direction:column;
+  transition:box-shadow var(--t), transform var(--t);
+}
+.level:hover{box-shadow:var(--shadow-lg)}
+.level.l1{--accent:var(--l1); --soft:var(--l1-soft)}
+.level.l2{--accent:var(--l2); --soft:var(--l2-soft)}
+.level.l3{--accent:var(--l3); --soft:var(--l3-soft)}
+.level.l4{--accent:var(--l4); --soft:var(--l4-soft)}
+.level .stripe{height:5px; background:var(--accent)}
+.level .body{padding:clamp(1.1rem,.8rem + 1vw,1.7rem); display:flex; flex-direction:column; gap:1.05rem; flex:1}
+
+.lv-top{display:flex; align-items:flex-start; gap:1rem; justify-content:space-between}
+.lv-badge{
+  font-size:var(--step--1); font-weight:660; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--accent); background:var(--soft); border-radius:var(--r-pill);
+  padding:.3rem .75rem; white-space:nowrap;
+}
+.level h3{font-size:var(--step-2); margin-top:.55rem}
+.tagline{color:var(--text-2); font-style:italic; margin-top:.5rem; max-width:52ch}
+
+.meta{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:.7rem}
+.meta div{background:var(--surface-2); border:1px solid var(--line); border-radius:var(--r-md); padding:.6rem .75rem}
+.meta dt{font-size:var(--step--1); text-transform:uppercase; letter-spacing:.09em; color:var(--text-3); font-weight:620}
+.meta dd{margin:.2rem 0 0; font-weight:580; font-size:var(--step-0)}
+
+.tools{display:flex; flex-wrap:wrap; gap:.4rem; list-style:none; margin:0; padding:0}
+.tools li{
+  font-size:var(--step--1); color:var(--text-2);
+  border:1px solid var(--line-strong); border-radius:var(--r-sm);
+  padding:.2rem .55rem; background:var(--surface-2); font-family:var(--mono);
+}
+.label{font-size:var(--step--1); text-transform:uppercase; letter-spacing:.11em; color:var(--text-3); font-weight:620; margin-bottom:.5rem}
+
+.outcomes{margin:0; padding-left:1.15rem; color:var(--text-2); display:grid; gap:.32rem}
+.outcomes li::marker{color:var(--accent)}
+.outcomes b{color:var(--text); font-weight:620}
+
+/* progress */
+.lv-progress .row{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:.45rem; gap:1rem}
+.lv-progress .row .label{margin:0}
+.lv-progress .row span{font-size:var(--step--1); font-variant-numeric:tabular-nums; color:var(--text-2); font-weight:620}
+.lv-progress .bar{background:var(--track); height:8px}
+.lv-progress .bar > i{background:var(--accent)}
+
+/* details / module list */
+details{border-top:1px solid var(--line); padding-top:.9rem}
+summary{
+  cursor:pointer; list-style:none; display:flex; align-items:center; gap:.55rem;
+  font-weight:620; color:var(--text); border-radius:var(--r-sm); padding:.15rem 0;
+}
+summary::-webkit-details-marker{display:none}
+summary .chev{
+  width:1.05em; height:1.05em; flex:none; color:var(--text-3);
+  transition:transform var(--t);
+}
+details[open] > summary .chev{transform:rotate(90deg)}
+summary .hint{margin-left:auto; font-size:var(--step--1); font-weight:500; color:var(--text-3)}
+summary:hover{color:var(--accent)}
+
+.modules{list-style:none; margin:.85rem 0 0; padding:0; display:grid; gap:.45rem}
+.mod{
+  display:grid; grid-template-columns:auto 1fr; gap:.1rem .75rem;
+  background:var(--surface-2); border:1px solid var(--line);
+  border-radius:var(--r-md); padding:.7rem .85rem;
+  transition:border-color var(--t), background var(--t);
+}
+.mod:hover{border-color:var(--line-strong)}
+.mod.done{background:var(--soft); border-color:var(--line-strong); border-color:color-mix(in srgb, var(--accent) 32%, transparent)}
+.mod .check{grid-row:1 / span 3; padding-top:.15rem}
+.mod input[type=checkbox]{
+  width:1.15rem; height:1.15rem; accent-color:var(--accent); cursor:pointer; margin:0;
+}
+.mod .hd{display:flex; align-items:baseline; gap:.5rem; flex-wrap:wrap}
+.mod .num{
+  font-family:var(--mono); font-size:var(--step--1); color:var(--accent);
+  font-weight:640; min-width:1.6em;
+}
+.mod a.title{font-weight:620; text-decoration:none; color:var(--text); border-bottom:1px solid transparent}
+.mod a.title:hover{color:var(--accent); border-bottom-color:currentColor}
+.mod .time{
+  margin-left:auto; font-size:var(--step--1); color:var(--text-3);
+  font-variant-numeric:tabular-nums; white-space:nowrap;
+}
+.mod p{grid-column:2; color:var(--text-2); font-size:var(--step--1); margin-top:.25rem; line-height:1.5}
+.mod .proj{grid-column:2; font-size:var(--step--1); margin-top:.35rem; color:var(--text-2)}
+.mod .proj b{color:var(--text); font-weight:620}
+.mod .proj .tag{
+  display:inline-block; font-size:.72rem; letter-spacing:.09em; text-transform:uppercase;
+  font-weight:660; color:var(--accent); margin-right:.4rem;
+}
+.mod.done a.title{text-decoration:line-through; text-decoration-color:color-mix(in srgb, var(--accent) 60%, transparent)}
+.pending{
+  font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; font-weight:660;
+  color:var(--text-3); border:1px dashed var(--line-strong); border-radius:var(--r-sm); padding:0 .35rem;
+}
+
+/* capstone */
+.capstone{
+  border:1px solid var(--line-strong);
+  border-color:color-mix(in srgb, var(--accent) 34%, transparent);
+  background:var(--soft); border-radius:var(--r-md); padding:.9rem 1rem;
+  display:grid; grid-template-columns:auto 1fr; gap:.15rem .75rem; margin-top:auto;
+}
+.capstone .check{grid-row:1 / span 2; padding-top:.15rem}
+.capstone .hd{display:flex; align-items:baseline; gap:.5rem; flex-wrap:wrap}
+.capstone .kick{font-size:var(--step--1); text-transform:uppercase; letter-spacing:.11em; font-weight:660; color:var(--accent)}
+.capstone a{font-weight:660; color:var(--text); text-decoration:none; border-bottom:1px solid transparent}
+.capstone a:hover{color:var(--accent); border-bottom-color:currentColor}
+.capstone .time{margin-left:auto; font-size:var(--step--1); color:var(--text-2); font-variant-numeric:tabular-nums}
+.capstone p{grid-column:2; font-size:var(--step--1); color:var(--text-2); margin-top:.3rem}
+
+/* ---------- spiral ---------- */
+.spiral{margin-top:clamp(3rem,2rem + 3vw,5rem); padding-block:clamp(2.4rem,1.6rem + 3vw,4rem); background:var(--bg-2); border-top:1px solid var(--line)}
+.spiral-grid{display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.idea{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); box-shadow:var(--shadow); padding:1.2rem 1.3rem}
+.idea h3{font-size:var(--step-1); display:flex; align-items:baseline; gap:.6rem}
+.idea h3 .n{font-family:var(--mono); font-size:var(--step--1); color:var(--text-3)}
+.idea > p{color:var(--text-2); font-size:var(--step--1); margin-top:.4rem}
+.rungs{list-style:none; margin:1rem 0 0; padding:0; display:grid; gap:.55rem}
+.rungs li{display:grid; grid-template-columns:auto 1fr; gap:.7rem; align-items:start; font-size:var(--step--1)}
+.rungs .pill{
+  font-size:.7rem; font-weight:680; letter-spacing:.06em; text-transform:uppercase;
+  border-radius:var(--r-pill); padding:.18rem .5rem; white-space:nowrap; align-self:start;
+}
+.rungs .p1{color:var(--l1); background:var(--l1-soft)}
+.rungs .p2{color:var(--l2); background:var(--l2-soft)}
+.rungs .p3{color:var(--l3); background:var(--l3-soft)}
+.rungs .p4{color:var(--l4); background:var(--l4-soft)}
+.rungs b{color:var(--text); font-weight:620}
+.rungs span{color:var(--text-2)}
+
+.noresults{
+  text-align:center; padding:3rem 1rem; color:var(--text-2);
+  border:1px dashed var(--line-strong); border-radius:var(--r-lg); background:var(--surface);
+}
+.noresults b{color:var(--text)}
+
+/* ---------- footer ---------- */
+footer{padding-block:2.5rem 3.5rem; border-top:1px solid var(--line); background:var(--bg); color:var(--text-3); font-size:var(--step--1)}
+footer .wrap{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem; justify-content:space-between; align-items:center}
+footer a{color:var(--text-2); text-decoration:none; border-bottom:1px solid var(--line-strong)}
+footer a:hover{color:var(--text)}
+.links{display:flex; gap:1.2rem; flex-wrap:wrap}
+
+@media (max-width:560px){
+  .stats{gap:.9rem 1.6rem}
+  .mod{grid-template-columns:auto 1fr}
+  .mod .time{margin-left:0; width:100%}
+}
+
+/* ---------- motion ---------- */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms !important; animation-iteration-count:1 !important;
+    transition-duration:.001ms !important; scroll-behavior:auto !important;
+  }
+}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+
+/* ---------- print ---------- */
+@media print{
+  html[data-theme]{
+    --bg:#fff; --bg-2:#fff; --surface:#fff; --surface-2:#fff;
+    --text:#000; --text-2:#333; --text-3:#555;
+    --line:#bbb; --line-strong:#999; --track:#ddd;
+    --shadow:none; --shadow-lg:none;
+    --l1:#0b5c6b; --l2:#8a4708; --l3:#4b21a5; --l4:#98103a;
+    --l1-soft:#fff; --l2-soft:#fff; --l3-soft:#fff; --l4-soft:#fff;
+  }
+  @page{ margin:14mm; }
+  body{background:#fff; color:#000; font-size:10.5pt}
+  .toolbar,.skip,.overall,.hero::after,.lv-progress,.mod .check,.capstone .check,.noresults{display:none !important}
+  .hero{background:#fff !important; color:#000; padding-block:0 1.2rem; border-bottom:2px solid #000}
+  .hero h1{font-size:22pt} .hero h1 .accent{color:#000; -webkit-text-fill-color:#000}
+  .lede{color:#333; font-size:11pt}
+  .eyebrow{border-color:#999; color:#333}
+  .stats .cap{color:#555}
+  main{padding-top:1.2rem}
+  .levels,.spiral-grid{display:block}
+  .level,.idea{
+    break-inside:avoid; page-break-inside:avoid; box-shadow:none;
+    border:1px solid #999; margin-bottom:10mm;
+  }
+  .level{break-before:page; page-break-before:always}
+  .level:first-of-type{break-before:auto; page-break-before:auto}
+  .level .stripe{height:3px; background:#000}
+  .mod{break-inside:avoid; page-break-inside:avoid; border:0; border-bottom:1px solid #ddd; border-radius:0; padding:.35rem 0; background:#fff}
+  .mod.done{background:#fff}
+  .mod a.title{text-decoration:none; color:#000}
+  .mod a.title::after{content:" (" attr(href) ")"; font-family:var(--mono); font-size:8pt; font-weight:400; color:#666}
+  .capstone{background:#fff; border:1px solid #999}
+  .spiral{background:#fff; break-before:page; page-break-before:always}
+  details{border-top:1px solid #ccc}
+  summary .chev,summary .hint{display:none}
+  footer{border-top:1px solid #999}
+  .links{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow"><span class="dot" aria-hidden="true"></span>4 levels &middot; 36 modules &middot; 4 capstones</p>
+    <h1>AI Academy &mdash; from 6th grade to <span class="accent">building real AI</span></h1>
+    <p class="lede">One learner, grade&nbsp;6 to grade&nbsp;12. Every module is one week with one mini-project, and
+      depends only on modules before it. Six core ideas come back at every level, deeper each time. That is the spiral.</p>
+
+    <ul class="stats">
+      <li><span class="num">4</span><span class="cap">Levels</span></li>
+      <li><span class="num">36</span><span class="cap">Modules</span></li>
+      <li><span class="num">~216 h</span><span class="cap">Total time</span></li>
+      <li><span class="num">~84</span><span class="cap">Weeks</span></li>
+      <li><span class="num">6 &rarr; 12</span><span class="cap">Grade band</span></li>
+    </ul>
+
+    <div class="overall">
+      <div class="row">
+        <strong>Overall progress</strong>
+        <span id="overall-label">0 of 40 milestones</span>
+      </div>
+      <div class="bar" role="progressbar" aria-labelledby="overall-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="overall-bar"><i></i></div>
+    </div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="wrap">
+    <div class="search" role="search">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.6-3.6"></path></svg>
+      <label class="skip" for="q">Search modules</label>
+      <input id="q" type="search" placeholder="Search modules, projects, topics&hellip;" autocomplete="off" spellcheck="false">
+      <button class="clear" id="clear" type="button" title="Clear search" hidden>&times;</button>
+    </div>
+    <span class="count" id="count" aria-live="polite"></span>
+    <span class="spacer"></span>
+    <button class="btn" id="expand" type="button">Expand all</button>
+    <button class="btn" id="collapse" type="button">Collapse all</button>
+    <button class="btn" id="reset" type="button">Reset progress</button>
+    <button class="btn" id="theme" type="button" aria-pressed="false">Dark mode</button>
+  </div>
+</div>
+
+<main id="main">
+  <section class="wrap" aria-labelledby="journey-h">
+    <div class="sec-head">
+      <span class="kicker">The journey</span>
+      <h2 id="journey-h">Four levels, each one a complete course</h2>
+      <p>Tick a module as you finish it &mdash; progress is saved in this browser. Every title links to the module file
+        on disk, so this page works as the table of contents for the whole repo.</p>
+    </div>
+    <div class="levels" id="levels"></div>
+    <p class="noresults" id="noresults" hidden>No modules match <b id="noresults-q"></b>. Try &ldquo;pandas&rdquo;, &ldquo;attention&rdquo;, or &ldquo;bias&rdquo;.</p>
+  </section>
+
+  <section class="spiral" aria-labelledby="spiral-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">The spiral progression</span>
+        <h2 id="spiral-h">The same six ideas, four times, deeper each pass</h2>
+        <p>If you can fill in a row from memory, you own that idea. Nothing here is new at Level&nbsp;4 &mdash; it is the
+          Level&nbsp;1 poster with better instruments.</p>
+      </div>
+      <div class="spiral-grid" id="spiral"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>AI Academy &mdash; offline curriculum dashboard. Progress is stored locally in this browser only.</p>
+    <p class="links">
+      <a href="../START_HERE.md">Start here (day one)</a>
+      <a href="../README.md">Repo README</a>
+      <a href="../CURRICULUM_MAP.md">Full curriculum map</a>
+      <a href="../RESOURCES.md">Resources</a>
+      <a href="../teacher-guide/README.md">Teacher guide</a>
+      <a href="../levels/level-1-explorer/README.md">Start at Level 1</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ============================ DATA ============================ */
+  var LEVELS = [
+    {
+      id: "l1", n: 1, name: "Explorer", slug: "level-1-explorer",
+      tagline: "A machine can learn a rule from examples instead of being told the rule.",
+      grade: "Grade 6 (age ~11)",
+      duration: "~12 weeks &middot; ~32 h",
+      code: "Zero code",
+      math: "Fractions, percentages, reading a graph",
+      tools: ["paper + index cards", "Teachable Machine", "Scratch", "Quick, Draw!", "spreadsheets"],
+      outcomes: [
+        "Tell apart a rule-following system from one that learned from examples, and defend the hard calls.",
+        "Build a dataset by hand — rows, features, one label column — and write its data card.",
+        "Train an image classifier, hold out test examples, and compute accuracy by hand three ways.",
+        "Explain why testing on training examples is cheating, and memorizing vs generalizing.",
+        "Explain how a computer sees an image and how a chatbot guesses the next word.",
+        "Run a bias test on your own model and name a group of inputs it handles badly."
+      ],
+      modules: [
+        { n: 1, file: "module-01-what-ai-is-and-isnt.md",
+          title: "What AI Is, What It Isn't, and Where It's Hiding",
+          learn: "What artificial intelligence actually means; rules written by a human vs learned from examples; the three families (rules, learning, generating); why “smart” is the wrong word.",
+          proj: "AI Spotter's Log", projDesc: "hunt your own 24 hours, log 15 systems, sort each into rules vs learned, and defend the 3 hardest calls.",
+          time: "~2.5 h" },
+        { n: 2, file: "module-02-data-is-everywhere.md",
+          title: "Data Is Everywhere: Rows, Columns, and Honest Tables",
+          learn: "What data is; rows as examples and columns as attributes; numbers vs categories vs text vs images; missing and messy values; where data came from and who it came from.",
+          proj: "Your Life In 30 Rows", projDesc: "collect a real 30-row spreadsheet about your own week (sleep, screen time, mood) and write its data card.",
+          time: "~3 h" },
+        { n: 3, file: "module-03-patterns-and-rules.md",
+          title: "Patterns and Rules: When Writing Rules Stops Working",
+          learn: "Spotting patterns; writing if-then rules by hand; rule explosion; edge cases; the exact moment a human-written rulebook becomes impossible — and why that invented machine learning.",
+          proj: "Rulebook vs Reality", projDesc: "write a spam-detector rulebook for 20 texts, then watch it fail on 10 fresh ones and count the failures.",
+          time: "~2.5 h" },
+        { n: 4, file: "module-04-features-and-labels.md",
+          title: "Features and Labels: How a Machine Describes a Thing",
+          learn: "Features (what we measure) vs labels (what we predict); turning a real object into a row of numbers; good vs useless features; classification vs predicting a number.",
+          proj: "Feature Card Deck", projDesc: "turn 20 real objects into feature rows, hand the deck to someone else, and see if they can label using features alone.",
+          time: "~3 h" },
+        { n: 5, file: "module-05-learning-from-examples.md",
+          title: "Learning From Examples: Train Your First Model",
+          learn: "What training means; examples in, model out; how more and better examples change the result; confidence scores; a model as a learned guessing machine.",
+          proj: "Three-Class Classifier", projDesc: "train a Teachable Machine model to tell apart three things you own, and record how confidence changes.",
+          time: "~3 h" },
+        { n: 6, file: "module-06-train-test-trust.md",
+          title: "Train, Test, Trust: Why You Hide Some Examples",
+          learn: "Why testing on training examples is cheating; the train/test split; accuracy as a fraction and a percentage; memorizing vs generalizing; the first taste of overfitting.",
+          proj: "The Hidden Ten", projDesc: "split your photos 80/20, test on the hidden ones, and compute accuracy by hand on a scoring sheet.",
+          time: "~3 h" },
+        { n: 7, file: "module-07-how-computers-see.md",
+          title: "How Computers See: Pixels, Grids, and Edges",
+          learn: "An image as a grid of numbers; grayscale and RGB; resolution; what a filter does; edges as the first feature a vision system finds; why lighting and background fool models.",
+          proj: "Pixel Lab", projDesc: "draw on graph paper as numbers, then run a 3x3 edge filter by hand in a spreadsheet and watch the outline appear.",
+          time: "~3 h" },
+        { n: 8, file: "module-08-how-computers-read-and-chat.md",
+          title: "How Computers Read and Chat: Words, Guesses, Autocomplete",
+          learn: "Text as data; splitting sentences into tokens; counting word pairs; next-word prediction as the engine behind chatbots; why a chatbot can be confidently wrong.",
+          proj: "The Human Language Model", projDesc: "build a tally-mark next-word predictor from a paragraph, then wire a Scratch chatbot that uses it.",
+          time: "~3 h" },
+        { n: 9, file: "module-09-fair-private-honest-ai.md",
+          title: "Fair, Private, and Honest: The Human Side of AI",
+          learn: "Where bias sneaks in through data; who is missing from a dataset; personal data and why it leaks; deepfakes and misinformation; giving credit; when not to trust an AI.",
+          proj: "Fairness Audit Poster", projDesc: "audit a real AI product you use, then run a bias test on your own Module 5 model and publish both results.",
+          time: "~3 h" }
+      ],
+      capstone: {
+        file: "capstone.md", title: "The AI Fair Booth", time: "~6 h",
+        desc: "A booth you could set up at a school fair: a trained classifier that solves a real problem in your house, a Scratch app reacting to its predictions, a printed data card, a test sheet with honest held-out accuracy, and a bias report naming one group of inputs it handles badly. Present it to an adult for 5 minutes without using the word “magic”."
+      }
+    },
+
+    {
+      id: "l2", n: 2, name: "Builder", slug: "level-2-builder",
+      tagline: "If you can write code, you can turn a table of data into a model that predicts.",
+      grade: "Grades 7–8 (ages ~12–14)",
+      duration: "~20 weeks &middot; ~44 h",
+      code: "Python 3 — taught from print(\"hello\")",
+      math: "Arithmetic, fractions, percentages, y = mx + c",
+      tools: ["Python 3", "VS Code / JupyterLab", "numpy", "pandas", "matplotlib", "scikit-learn"],
+      outcomes: [
+        "Write a Python program from a blank file with variables, conditionals, loops, functions, lists and dicts — and read a traceback calmly.",
+        "Load, clean, filter and group a real table with pandas, with a written cleaning log that says why.",
+        "Do array math with numpy without writing a loop, including broadcasting and boolean masks.",
+        "Build five labelled matplotlib charts that answer a stated question — and spot the trick in a misleading one.",
+        "Train kNN, decision tree and linear regression models with scikit-learn on a proper train/test split.",
+        "Measure accuracy, MAE and R2, and demonstrate overfitting with your own train/test gap."
+      ],
+      modules: [
+        { n: 1, file: "module-01-python-from-zero.md",
+          title: "Python From Zero: Variables, Types, and Output",
+          learn: "Running Python; print; variables; strings, integers, floats, booleans; f-strings; input; type conversion; comments; reading an error message without panic.",
+          proj: "About-Me Bot", projDesc: "a program that asks 6 questions and prints a formatted profile card with two computed numbers.",
+          time: "~3 h" },
+        { n: 2, file: "module-02-decisions-and-loops.md",
+          title: "Decisions and Loops: Programs That Choose and Repeat",
+          learn: "if / elif / else; comparison and logical operators; for and while; range; accumulator variables; break and continue; off-by-one bugs.",
+          proj: "Guess and Grade", projDesc: "a number-guessing game with hints and an attempt limit, plus a looping grade calculator.",
+          time: "~3.5 h" },
+        { n: 3, file: "module-03-functions-and-lists.md",
+          title: "Functions and Lists: Building Your Own Tools",
+          learn: "Defining functions; parameters, arguments, return; scope; lists, indexing, slicing, append; iterating; list comprehensions; writing your first reusable module.",
+          proj: "Stats Toolkit", projDesc: "your own stats.py with mean, median, min, max and range, verified on typed-in cricket scores.",
+          time: "~3.5 h" },
+        { n: 4, file: "module-04-dictionaries-and-datasets.md",
+          title: "Dictionaries and Datasets: Your First Data in Code",
+          learn: "Dictionaries as labelled rows; list-of-dicts as a dataset; nesting; looping over records; filtering and grouping in plain Python; reading and writing CSV.",
+          proj: "Record Store", projDesc: "build a 30-record dataset in code, write filter_by and group_count, save to CSV and load it back.",
+          time: "~4 h" },
+        { n: 5, file: "module-05-numpy-arrays.md",
+          title: "NumPy: Thinking in Arrays",
+          learn: "Why loops are slow and arrays are fast; creating arrays; shape and dtype; elementwise math; broadcasting; axis-wise sums and means; boolean masks; a row of numbers as a vector.",
+          proj: "Vectorized Gradebook", projDesc: "compute per-student and per-test statistics and normalize every score, with zero for loops.",
+          time: "~4 h" },
+        { n: 6, file: "module-06-pandas-tables.md",
+          title: "Pandas: Loading, Cleaning, and Interrogating a Table",
+          learn: "Series and DataFrame; selecting rows and columns; loc vs iloc; filtering; missing values; fixing dtypes; dropping duplicates; new columns; sort_values, value_counts, groupby.",
+          proj: "Mess Detective", projDesc: "clean a deliberately broken 40-row DataFrame and answer 6 questions about it with groupby.",
+          time: "~4 h" },
+        { n: 7, file: "module-07-visualizing-data.md",
+          title: "Charts That Tell The Truth: Visualization",
+          learn: "Choosing a chart for a question; line, bar, scatter, histogram, box; axes, labels, titles, legends; distributions vs relationships; how axis tricks lie; correlation is not causation.",
+          proj: "Five-Chart Data Story", projDesc: "five labelled charts that answer one question, plus one deliberately misleading chart and its honest fix.",
+          time: "~3.5 h" },
+        { n: 8, file: "module-08-first-model-knn.md",
+          title: "Your First Real Model: kNN and the Train/Test Rule",
+          learn: "The ML mindset (features X, labels y, fit, predict); distance between rows; k-nearest neighbors; train_test_split; accuracy_score; why scaling matters for distance; choosing k.",
+          proj: "Classifier Lab", projDesc: "train a kNN classifier on a built-in sklearn dataset and plot accuracy against k from 1 to 25.",
+          time: "~4 h" },
+        { n: 9, file: "module-09-trees-lines-and-overfitting.md",
+          title: "Trees, Lines, and the Overfitting Trap",
+          learn: "Decision trees and how to read one; linear regression and the line of best fit; MAE and R2; regression vs classification; underfitting vs overfitting; the train/test score gap.",
+          proj: "Model Bake-Off", projDesc: "compare kNN, a decision tree and linear regression on the same split, and plot the tree-depth overfitting curve.",
+          time: "~4.5 h" }
+      ],
+      capstone: {
+        file: "capstone.md", title: "Data Detective", time: "~10 h",
+        desc: "Pick a question you actually care about. Build or collect 100+ rows, clean them in pandas, chart them five ways, then train and honestly compare three models on a proper split. Deliver one notebook that reads like a story: question, data, cleaning log, charts, models, results table, what I got wrong — plus a paragraph on whose data this is."
+      }
+    },
+
+    {
+      id: "l3", n: 3, name: "Engineer", slug: "level-3-engineer",
+      tagline: "A model is one component of a measured, engineered, shippable pipeline.",
+      grade: "Grades 9–10 (ages ~14–16)",
+      duration: "~24 weeks &middot; ~61 h",
+      code: "Fluent Python — loops, functions, dicts, numpy, pandas",
+      math: "Algebra and slope; calculus intuition built in-course",
+      tools: ["scikit-learn", "NumPy", "pandas", "matplotlib", "PyTorch", "torchvision", "joblib"],
+      outcomes: [
+        "Build a complete supervised pipeline from raw rows to a saved, loadable artifact with a model card attached.",
+        "Engineer features with scaling, encoding, binning and interactions in a ColumnTransformer — and detect data leakage.",
+        "Compute and interpret a confusion matrix, precision, recall, F1 and ROC-AUC, and tune a threshold to a stated cost.",
+        "Derive and implement gradient descent for logistic regression in NumPy, and plot it converging.",
+        "Implement a network's forward pass and backpropagation from scratch, then rebuild it in PyTorch.",
+        "Train a CNN with augmentation and transfer learning, and diagnose its errors from a confusion matrix.",
+        "Cluster unlabelled data with k-means, reduce dimensions with PCA, and build a TF-IDF text classifier."
+      ],
+      modules: [
+        { n: 1, file: "module-01-the-supervised-pipeline.md",
+          title: "The Supervised Pipeline, End to End",
+          learn: "Framing a problem as supervised learning; data audit; a three-way train/validation/test split; a dumb baseline you must beat; sklearn Pipeline; saving and loading with joblib; the model card.",
+          proj: "Pipeline v1", projDesc: "one script that goes raw rows, split, baseline, model, metrics, saved artifact, model card — and runs end to end.",
+          time: "~5 h" },
+        { n: 2, file: "module-02-feature-engineering.md",
+          title: "Feature Engineering: Turning Reality Into Numbers",
+          learn: "Standardization and min-max scaling; one-hot and ordinal encoding; binning; date and text-derived features; interaction features; imputation done correctly; data leakage and how to spot it.",
+          proj: "Beat The Baseline", projDesc: "improve Module 1's score using only new features inside a ColumnTransformer, and find the planted leakage bug.",
+          time: "~5 h" },
+        { n: 3, file: "module-03-evaluation-metrics.md",
+          title: "Beyond Accuracy: Confusion Matrix, Precision, Recall",
+          learn: "Why accuracy lies on imbalanced data; TP/FP/FN/TN; precision, recall, F1; the threshold dial; ROC and precision-recall curves; k-fold cross-validation; matching the metric to real-world cost.",
+          proj: "Fraud Bench", projDesc: "a full metric report on a 1%-positive dataset, threshold tuned to a stated cost of errors, with cross-validated error bars.",
+          time: "~5 h" },
+        { n: 4, file: "module-04-logistic-regression-gradient-descent.md",
+          title: "How Learning Happens: Loss and Gradient Descent",
+          learn: "The sigmoid; probabilities as outputs; log loss (cross-entropy); slope as a signal; the gradient descent update rule; learning rate; convergence and divergence; batch vs stochastic.",
+          proj: "Descent From Scratch", projDesc: "logistic regression trained by your own NumPy gradient descent, loss curve plotted, matched against scikit-learn.",
+          time: "~5.5 h" },
+        { n: 5, file: "module-05-neural-networks-from-scratch.md",
+          title: "Neural Networks From Scratch: Neurons and Backprop",
+          learn: "A neuron as weighted sum plus activation; layers and hidden units; ReLU, sigmoid, softmax; the forward pass by hand; the chain rule; backpropagation; weight initialization.",
+          proj: "NumPy Brain", projDesc: "a 2-layer MLP written entirely in NumPy that learns make_moons, verified with a numerical gradient check.",
+          time: "~6 h" },
+        { n: 6, file: "module-06-pytorch-deep-learning.md",
+          title: "PyTorch: Tensors, Autograd, and Real Training Loops",
+          learn: "Tensors vs arrays; requires_grad and autograd; nn.Module; loss functions and optimizers; the canonical training loop; Dataset and DataLoader; GPU/MPS devices; saving weights and shipping inference.",
+          proj: "Same Brain, Real Framework", projDesc: "rebuild Module 5's network in PyTorch, then train an MLP on FashionMNIST and ship an inference script.",
+          time: "~5.5 h" },
+        { n: 7, file: "module-07-cnns-for-images.md",
+          title: "Convolutional Networks: Teaching a Model to See",
+          learn: "Why dense layers waste pixels; convolution, kernels, stride, padding; feature maps; pooling; CNN architecture; data augmentation; transfer learning with a pretrained backbone.",
+          proj: "See It", projDesc: "a small CNN on CIFAR-10, then a fine-tuned pretrained resnet18, compared with a confusion matrix of its worst mistakes.",
+          time: "~6 h" },
+        { n: 8, file: "module-08-unsupervised-kmeans-pca.md",
+          title: "Learning Without Labels: k-Means and PCA",
+          learn: "Unsupervised vs supervised; k-means and its update loop; choosing k with elbow and silhouette; the curse of dimensionality; PCA and explained variance; clusters and components as features.",
+          proj: "Cluster Cartography", projDesc: "cluster an unlabelled dataset, defend your k, project it with PCA, and give every cluster a human name.",
+          time: "~5 h" },
+        { n: 9, file: "module-09-classic-nlp.md",
+          title: "Classic NLP: Tokens, Bag-of-Words, Embeddings",
+          learn: "Tokenization; normalization and stopwords; bag-of-words counts; TF-IDF weighting; sparse vs dense vectors; cosine similarity; what a word embedding is and why king minus man plus woman works.",
+          proj: "Sentiment Engine", projDesc: "a TF-IDF plus logistic regression review classifier, its most-influential words inspected, and embeddings visualized with PCA.",
+          time: "~5.5 h" }
+      ],
+      capstone: {
+        file: "capstone.md", title: "Ship It", time: "~12 h",
+        desc: "Deployment and ops basics, for real. Take your best model and make it something other people can use: freeze the preprocessing into the artifact, write a predict.py CLI and a tiny local HTTP service, version the model file, log every prediction with inputs and latency, write the model card, and finish with a one-page monitoring plan."
+      }
+    },
+
+    {
+      id: "l4", n: 4, name: "Innovator", slug: "level-4-innovator",
+      tagline: "Modern AI is attention plus scale plus a learning signal from humans — and you can build every piece.",
+      grade: "Grades 11–12 (ages ~16–18)",
+      duration: "~28 weeks &middot; ~79 h",
+      code: "Fluent PyTorch — a training loop from a blank file",
+      math: "Matrices, dot products, derivatives, basic probability",
+      tools: ["PyTorch", "Hugging Face transformers", "datasets", "tokenizers", "Claude API (claude-sonnet-5)", "numpy"],
+      outcomes: [
+        "Diagnose and tune deep-network training from its loss curves, choosing optimizers and regularization deliberately.",
+        "Implement scaled dot-product attention, multi-head attention and a full transformer block from scratch, and train a char-level GPT.",
+        "Explain pretraining, SFT, reward models and RLHF/DPO precisely, and implement a BPE tokenizer that round-trips exactly.",
+        "Treat prompting as engineering — versioned prompts, structured outputs, a frozen test set, a measured eval harness.",
+        "Build a complete RAG system with chunking, embeddings, vector search, citations and a refusal path.",
+        "Build a tool-using agent with real tool schemas, a bounded loop, a full trace log and guardrails.",
+        "Fine-tune a small model and prove both the win and the regression with an eval suite you froze first.",
+        "Red-team your own system, document each exploit, ship mitigations, re-test, and publish a system card."
+      ],
+      modules: [
+        { n: 1, file: "module-01-deep-learning-at-depth.md",
+          title: "Deep Learning at Depth: Optimizers and Debugging",
+          learn: "SGD to momentum to Adam/AdamW; learning-rate schedules and warmup; batch size effects; dropout, weight decay, early stopping; batch and layer normalization; residual connections; reading a loss curve like an X-ray.",
+          proj: "Training Diagnostics Lab", projDesc: "six controlled experiments on one network, each isolating one knob, distilled into your own tuning playbook.",
+          time: "~6 h" },
+        { n: 2, file: "module-02-sequence-models.md",
+          title: "Sequence Models: RNNs, LSTMs, and the Memory Problem",
+          learn: "Why order matters; the recurrent loop and hidden state; unrolling through time; backprop through time; vanishing and exploding gradients; gates, LSTM and GRU; teacher forcing; sampling with temperature.",
+          proj: "Name Generator", projDesc: "a char-level RNN that invents plausible names, plus a plotted demonstration of gradients vanishing over long sequences.",
+          time: "~6 h" },
+        { n: 3, file: "module-03-attention-and-transformers.md",
+          title: "Attention and Transformers: Build a Tiny GPT",
+          learn: "Attention as soft lookup; query, key, value; scaled dot-product; causal masking; multi-head attention; positional encodings; the transformer block; parallelism vs recurrence.",
+          proj: "Tiny GPT", projDesc: "attention, heads, blocks and a full char-level GPT written from scratch in PyTorch and trained until it generates readable text.",
+          time: "~8 h" },
+        { n: 4, file: "module-04-how-llms-are-trained.md",
+          title: "How LLMs Are Actually Trained",
+          learn: "BPE tokenizers; the pretraining objective and data pipeline; scaling laws and compute; supervised fine-tuning; preference data; reward models; RLHF and DPO; what “emergent” really means; base vs instruct models.",
+          proj: "Tokenizer + Life-of-an-LLM", projDesc: "implement BPE from scratch, run a hand-scored preference-ranking exercise, and write the full training-story explainer.",
+          time: "~6 h" },
+        { n: 5, file: "module-05-prompt-engineering.md",
+          title: "Prompt Engineering as a Real Engineering Skill",
+          learn: "The Claude messages API; system prompts and roles; zero-shot and few-shot; chain-of-thought and when it fails; structured JSON output; delimiters and grounding; temperature and max_tokens; token counting and cost; prompt evaluation instead of vibes.",
+          proj: "Prompt Bench", projDesc: "a 20-case test set scoring three prompt versions automatically, with a results table and a cost-per-call budget.",
+          time: "~6 h" },
+        { n: 6, file: "module-06-embeddings-vector-search-rag.md",
+          title: "Embeddings, Vector Search, and RAG",
+          learn: "Dense embeddings vs TF-IDF; cosine similarity and nearest neighbors; chunking strategies; building and querying a vector index; retrieve-then-generate; grounding, citations, and refusing when nothing is retrieved; why RAG beats fine-tuning for facts.",
+          proj: "Ask My Notes", projDesc: "a working RAG system over your own lab notebook that answers with citations and says “I don't know” when it should.",
+          time: "~7 h" },
+        { n: 7, file: "module-07-ai-agents.md",
+          title: "Tool-Using AI Agents: The Loop That Does Things",
+          learn: "Tool schemas and the tool-use protocol; the perceive, decide, act, observe loop; multi-step planning; state and memory; error recovery and retries; loop limits and budgets; sandboxing and permission boundaries; when an agent is the wrong answer.",
+          proj: "Three-Tool Agent", projDesc: "an agent with a calculator, a notes-search tool and a file writer, running a bounded, fully logged loop with guardrails.",
+          time: "~7 h" },
+        { n: 8, file: "module-08-finetuning-and-evaluating-llms.md",
+          title: "Fine-Tuning and Evaluating LLMs",
+          learn: "When to prompt vs retrieve vs fine-tune; building a training set; full fine-tuning vs LoRA/PEFT; catastrophic forgetting; benchmarks and their limits; exact-match, rubric and LLM-as-judge evals; inter-rater agreement; regression testing a model.",
+          proj: "Eval Suite + Fine-Tune", projDesc: "fine-tune a small Hugging Face model on a tiny task and prove the win — and the regressions — with your own eval harness.",
+          time: "~7 h" },
+        { n: 9, file: "module-09-responsible-and-safe-ai.md", pending: true,
+          title: "Responsible and Safe AI: Alignment and Red-Teaming",
+          learn: "Alignment in plain terms; hallucination and calibration; jailbreaks and prompt injection; data privacy and PII; copyright and attribution; measuring bias in generative systems; automation bias and over-trust; system cards and staged release.",
+          proj: "Red-Team Report", projDesc: "attack your own Module 7 agent, document every successful exploit, ship mitigations, and publish a system card.",
+          time: "~6 h" }
+      ],
+      capstone: {
+        file: "capstone.md", title: "Build an AI Product", time: "~20 h",
+        desc: "Ship something a stranger would actually use: a written design doc, a system combining at least two of RAG, a tool-using agent, or a fine-tuned model; an eval harness with 25+ cases; a measured cost and latency budget; safety guardrails with a documented red-team pass; a 5-minute demo and a system card — plus the honest section on what it fails at."
+      }
+    }
+  ];
+
+  var SPIRAL = [
+    { n: "Idea 1", name: "Data", sub: "What “data” means, and what you do with it",
+      rows: [
+        ["A table of examples you can hold in your hands", "collect 30 rows by hand; notice what's missing"],
+        ["Lists, dicts, CSVs, arrays, DataFrames", "load, clean, filter, group and chart it in code"],
+        ["Train/val/test splits with distributions and leakage risks", "audit it, split it correctly, engineer it, detect drift"],
+        ["Web-scale token corpora, preference pairs, eval sets", "build tokenizers, curate SFT data, construct benchmarks"]
+      ] },
+    { n: "Idea 2", name: "Representation", sub: "How the world becomes numbers",
+      rows: [
+        ["Features chosen by a human; images as pixel grids", "a feature card for a real object"],
+        ["A row of numbers is a vector; arrays and DataFrames", "a numeric feature matrix X"],
+        ["Scaling, encoding, convolutional feature maps, TF-IDF", "a ColumnTransformer and a CNN's learned filters"],
+        ["Learned dense embeddings and attention-mixed hidden states", "a vector index you can search"]
+      ] },
+    { n: "Idea 3", name: "Model", sub: "What a model is, and what you build",
+      rows: [
+        ["A box that takes an example and guesses a label", "a Teachable Machine classifier"],
+        ["Code with parameters that fits data", "kNN, decision tree, linear regression"],
+        ["A parameterized function composed into a pipeline", "logistic regression, MLP, CNN, k-means, PCA"],
+        ["Stacked transformer blocks, and systems around them", "Tiny GPT, a RAG system, a tool-using agent"]
+      ] },
+    { n: "Idea 4", name: "Learning signal", sub: "How the machine knows it is wrong",
+      rows: [
+        ["You show it correct and incorrect examples", "adding examples changes the guesses"],
+        ["It fits the training data better or worse", "fit(), distance, tree splits, best-fit line"],
+        ["A loss number with a slope", "cross-entropy plus gradient descent plus backprop"],
+        ["Next-token loss, then human preference", "pretraining, SFT, reward model, RLHF/DPO"]
+      ] },
+    { n: "Idea 5", name: "Evaluation", sub: "The question you are really asking",
+      rows: [
+        ["Does it work on examples it never saw?", "hidden test set, accuracy by hand"],
+        ["How accurate, and is it just memorizing?", "train_test_split, accuracy, MAE, R2, overfitting curves"],
+        ["Which errors, how often, at what cost?", "confusion matrix, precision/recall/F1, ROC-AUC, k-fold CV"],
+        ["Is it good, safe, and not secretly regressing?", "benchmarks, LLM-as-judge, rubric evals, red-team suites"]
+      ] },
+    { n: "Idea 6", name: "Human impact", sub: "The concern, and what you produce",
+      rows: [
+        ["Fairness, privacy, and not believing everything", "a fairness audit poster"],
+        ["Whose data is this, and who does the error hit?", "a data-provenance paragraph in every project"],
+        ["Cost of each error type; documenting limitations", "subgroup metrics plus a model card"],
+        ["Alignment, misuse, injection, over-trust, release", "a red-team report and a system card"]
+      ] }
+  ];
+
+  /* ============================ HELPERS ============================ */
+  var LEVEL_NAMES = ["Explorer", "Builder", "Engineer", "Innovator"];
+  var STORE_PROGRESS = "aiacademy.progress.v1";
+  var STORE_THEME = "aiacademy.theme.v1";
+
+  function esc(s) {
+    return String(s)
+      .replace(/&(?![a-zA-Z#0-9]+;)/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+  function safeGet(key) { try { return window.localStorage.getItem(key); } catch (e) { return null; } }
+  function safeSet(key, val) { try { window.localStorage.setItem(key, val); } catch (e) { /* private mode */ } }
+
+  var done = {};
+  (function loadProgress() {
+    var raw = safeGet(STORE_PROGRESS);
+    if (!raw) return;
+    try {
+      var parsed = JSON.parse(raw);
+      if (parsed && typeof parsed === "object") done = parsed;
+    } catch (e) { done = {}; }
+  })();
+  function saveProgress() { safeSet(STORE_PROGRESS, JSON.stringify(done)); }
+
+  /* ============================ RENDER ============================ */
+  var CHEV = '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>';
+
+  function moduleHTML(level, m) {
+    var id = level.id + "-m" + m.n;
+    var href = "../levels/" + level.slug + "/" + m.file;
+    var hay = (m.title + " " + m.learn + " " + m.proj + " " + m.projDesc + " " + level.name + " level " + level.n).toLowerCase();
+    return '' +
+      '<li class="mod' + (done[id] ? " done" : "") + '" data-id="' + id + '" data-search="' + esc(hay) + '">' +
+        '<span class="check">' +
+          '<input type="checkbox" id="' + id + '" data-track="' + id + '"' + (done[id] ? " checked" : "") +
+          ' aria-label="Mark module ' + m.n + ", " + esc(m.title) + ' as done">' +
+        '</span>' +
+        '<span class="hd">' +
+          '<span class="num" aria-hidden="true">' + level.n + "." + m.n + '</span>' +
+          '<a class="title" href="' + href + '">' + esc(m.title) + '</a>' +
+          (m.pending ? '<span class="pending" title="Linked, but this file is not in the repo yet">file pending</span>' : '') +
+          '<span class="time">' + esc(m.time) + '</span>' +
+        '</span>' +
+        '<p>' + esc(m.learn) + '</p>' +
+        '<p class="proj"><span class="tag">Mini-project</span><b>' + esc(m.proj) + '</b> &mdash; ' + esc(m.projDesc) + '</p>' +
+      '</li>';
+  }
+
+  function levelHTML(level) {
+    var capId = level.id + "-capstone";
+    var capHref = "../levels/" + level.slug + "/" + level.capstone.file;
+    var capHay = (level.capstone.title + " capstone " + level.capstone.desc + " " + level.name).toLowerCase();
+
+    var mods = level.modules.map(function (m) { return moduleHTML(level, m); }).join("");
+    var tools = level.tools.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
+    var outs = level.outcomes.map(function (o) { return "<li>" + esc(o) + "</li>"; }).join("");
+
+    return '' +
+      '<article class="level ' + level.id + '" id="' + level.id + '" data-level="' + level.id + '" aria-labelledby="' + level.id + '-h">' +
+        '<div class="stripe" aria-hidden="true"></div>' +
+        '<div class="body">' +
+          '<div>' +
+            '<div class="lv-top">' +
+              '<span class="lv-badge">Level ' + level.n + " &middot; " + esc(level.name) + '</span>' +
+              '<a class="btn" href="../levels/' + level.slug + '/README.md">Level README</a>' +
+            '</div>' +
+            '<h3 id="' + level.id + '-h">' + esc(level.name) + '</h3>' +
+            '<p class="tagline">' + esc(level.tagline) + '</p>' +
+          '</div>' +
+
+          '<dl class="meta">' +
+            '<div><dt>Grade band</dt><dd>' + esc(level.grade) + '</dd></div>' +
+            '<div><dt>Duration</dt><dd>' + level.duration + '</dd></div>' +
+            '<div><dt>Coding</dt><dd>' + esc(level.code) + '</dd></div>' +
+            '<div><dt>Math</dt><dd>' + esc(level.math) + '</dd></div>' +
+          '</dl>' +
+
+          '<div><p class="label">Tools</p><ul class="tools">' + tools + '</ul></div>' +
+
+          '<div class="lv-progress">' +
+            '<div class="row"><p class="label">Progress</p><span data-progress-label="' + level.id + '">0 / 10</span></div>' +
+            '<div class="bar" role="progressbar" aria-label="Level ' + level.n + ' progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-progress-bar="' + level.id + '"><i></i></div>' +
+          '</div>' +
+
+          '<details class="outcomes-d">' +
+            '<summary>' + CHEV + 'Level outcomes<span class="hint">' + level.outcomes.length + ' things you can do</span></summary>' +
+            '<ul class="outcomes" style="margin-top:.8rem">' + outs + '</ul>' +
+          '</details>' +
+
+          '<details class="modules-d" data-modules>' +
+            '<summary>' + CHEV + 'The nine modules<span class="hint">' + esc(level.duration.replace("&middot;", "|").replace(/\|/g, "·")) + '</span></summary>' +
+            '<ul class="modules">' + mods + '</ul>' +
+          '</details>' +
+
+          '<div class="capstone" data-id="' + capId + '" data-search="' + esc(capHay) + '">' +
+            '<span class="check">' +
+              '<input type="checkbox" id="' + capId + '" data-track="' + capId + '"' + (done[capId] ? " checked" : "") +
+              ' aria-label="Mark Level ' + level.n + ' capstone as done">' +
+            '</span>' +
+            '<span class="hd">' +
+              '<span class="kick">Capstone</span>' +
+              '<a href="' + capHref + '">' + esc(level.capstone.title) + '</a>' +
+              '<span class="time">' + esc(level.capstone.time) + '</span>' +
+            '</span>' +
+            '<p>' + esc(level.capstone.desc) + '</p>' +
+          '</div>' +
+        '</div>' +
+      '</article>';
+  }
+
+  function spiralHTML(idea) {
+    var rows = idea.rows.map(function (r, i) {
+      return '<li>' +
+        '<span class="pill p' + (i + 1) + '">L' + (i + 1) + " " + esc(LEVEL_NAMES[i]) + '</span>' +
+        '<span><b>' + esc(r[0]) + '</b><br><span>' + esc(r[1]) + '</span></span>' +
+      '</li>';
+    }).join("");
+    return '<article class="idea">' +
+      '<h3><span class="n">' + esc(idea.n) + '</span>' + esc(idea.name) + '</h3>' +
+      '<p>' + esc(idea.sub) + '</p>' +
+      '<ul class="rungs">' + rows + '</ul>' +
+    '</article>';
+  }
+
+  var levelsEl = document.getElementById("levels");
+  var spiralEl = document.getElementById("spiral");
+  levelsEl.innerHTML = LEVELS.map(levelHTML).join("");
+  spiralEl.innerHTML = SPIRAL.map(spiralHTML).join("");
+
+  /* ============================ PROGRESS ============================ */
+  function setBar(barEl, pct) {
+    barEl.setAttribute("aria-valuenow", String(pct));
+    barEl.firstElementChild.style.width = pct + "%";
+  }
+
+  function updateProgress() {
+    var totalDone = 0, total = 0;
+    LEVELS.forEach(function (lv) {
+      var ids = lv.modules.map(function (m) { return lv.id + "-m" + m.n; });
+      ids.push(lv.id + "-capstone");
+      var n = ids.filter(function (id) { return !!done[id]; }).length;
+      totalDone += n; total += ids.length;
+
+      var label = document.querySelector('[data-progress-label="' + lv.id + '"]');
+      var bar = document.querySelector('[data-progress-bar="' + lv.id + '"]');
+      var pct = Math.round((n / ids.length) * 100);
+      if (label) label.textContent = n + " / " + ids.length + (n === ids.length ? "  complete" : "");
+      if (bar) setBar(bar, pct);
+    });
+
+    var pctAll = total ? Math.round((totalDone / total) * 100) : 0;
+    document.getElementById("overall-label").textContent =
+      totalDone + " of " + total + " milestones" + (totalDone ? "  ·  " + pctAll + "%" : "");
+    setBar(document.getElementById("overall-bar"), pctAll);
+  }
+
+  levelsEl.addEventListener("change", function (ev) {
+    var t = ev.target;
+    if (!t || t.type !== "checkbox" || !t.getAttribute("data-track")) return;
+    var id = t.getAttribute("data-track");
+    if (t.checked) { done[id] = 1; } else { delete done[id]; }
+    var row = t.closest(".mod");
+    if (row) row.classList.toggle("done", t.checked);
+    saveProgress();
+    updateProgress();
+  });
+
+  document.getElementById("reset").addEventListener("click", function () {
+    if (!window.confirm("Clear all ticked modules and capstones?")) return;
+    done = {};
+    saveProgress();
+    Array.prototype.forEach.call(levelsEl.querySelectorAll('input[type="checkbox"]'), function (cb) { cb.checked = false; });
+    Array.prototype.forEach.call(levelsEl.querySelectorAll(".mod.done"), function (el) { el.classList.remove("done"); });
+    updateProgress();
+  });
+
+  updateProgress();
+
+  /* ============================ SEARCH ============================ */
+  var q = document.getElementById("q");
+  var clearBtn = document.getElementById("clear");
+  var countEl = document.getElementById("count");
+  var noResults = document.getElementById("noresults");
+  var noResultsQ = document.getElementById("noresults-q");
+  var searchables = Array.prototype.slice.call(levelsEl.querySelectorAll("[data-search]"));
+  var TOTAL_ITEMS = searchables.length;
+  var preSearchOpen = null;
+
+  function applyFilter() {
+    var term = q.value.trim().toLowerCase();
+    clearBtn.hidden = term.length === 0;
+
+    if (term && preSearchOpen === null) {
+      preSearchOpen = Array.prototype.map.call(levelsEl.querySelectorAll("details"), function (d) { return d.open; });
+    }
+
+    var shown = 0;
+    LEVELS.forEach(function (lv) {
+      var card = document.getElementById(lv.id);
+      var items = card.querySelectorAll("[data-search]");
+      var localShown = 0;
+      Array.prototype.forEach.call(items, function (el) {
+        var hit = !term || el.getAttribute("data-search").indexOf(term) !== -1;
+        el.hidden = !hit;
+        if (hit) localShown++;
+      });
+      shown += localShown;
+      card.hidden = term ? localShown === 0 : false;
+      var md = card.querySelector("[data-modules]");
+      if (md && term) md.open = true;
+    });
+
+    if (!term) {
+      if (preSearchOpen) {
+        Array.prototype.forEach.call(levelsEl.querySelectorAll("details"), function (d, i) { d.open = !!preSearchOpen[i]; });
+        preSearchOpen = null;
+      }
+      countEl.textContent = "";
+      noResults.hidden = true;
+    } else {
+      countEl.textContent = shown + " of " + TOTAL_ITEMS + " matching";
+      noResults.hidden = shown !== 0;
+      noResultsQ.textContent = '"' + q.value.trim() + '"';
+    }
+  }
+
+  q.addEventListener("input", applyFilter);
+  q.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { q.value = ""; applyFilter(); }
+  });
+  clearBtn.addEventListener("click", function () { q.value = ""; applyFilter(); q.focus(); });
+
+  document.addEventListener("keydown", function (e) {
+    var ae = document.activeElement;
+    var typing = ae && /^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName || "");
+    if (e.key === "/" && !typing && !e.metaKey && !e.ctrlKey) {
+      e.preventDefault();
+      q.focus();
+      q.select();
+    }
+  });
+
+  /* ============================ EXPAND / COLLAPSE ============================ */
+  function setAllOpen(open) {
+    Array.prototype.forEach.call(levelsEl.querySelectorAll("details"), function (d) { d.open = open; });
+    preSearchOpen = null;
+  }
+  document.getElementById("expand").addEventListener("click", function () { setAllOpen(true); });
+  document.getElementById("collapse").addEventListener("click", function () { setAllOpen(false); });
+
+  /* ============================ THEME ============================ */
+  var themeBtn = document.getElementById("theme");
+  var root = document.documentElement;
+
+  function applyTheme(mode) {
+    root.setAttribute("data-theme", mode);
+    var dark = mode === "dark";
+    themeBtn.textContent = dark ? "Light mode" : "Dark mode";
+    themeBtn.setAttribute("aria-pressed", dark ? "true" : "false");
+    themeBtn.setAttribute("title", dark ? "Switch to light mode" : "Switch to dark mode");
+  }
+
+  var stored = safeGet(STORE_THEME);
+  var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  applyTheme(stored === "dark" || stored === "light" ? stored : (prefersDark ? "dark" : "light"));
+
+  themeBtn.addEventListener("click", function () {
+    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    applyTheme(next);
+    safeSet(STORE_THEME, next);
+  });
+
+  if (window.matchMedia) {
+    var mq = window.matchMedia("(prefers-color-scheme: dark)");
+    var onChange = function (e) { if (!safeGet(STORE_THEME)) applyTheme(e.matches ? "dark" : "light"); };
+    if (mq.addEventListener) { mq.addEventListener("change", onChange); }
+    else if (mq.addListener) { mq.addListener(onChange); }
+  }
+
+  /* ============================ PRINT ============================ */
+  var printState = null;
+  function beforePrint() {
+    var ds = Array.prototype.slice.call(document.querySelectorAll("details"));
+    printState = ds.map(function (d) { return d.open; });
+    ds.forEach(function (d) { d.open = true; });
+  }
+  function afterPrint() {
+    if (!printState) return;
+    Array.prototype.forEach.call(document.querySelectorAll("details"), function (d, i) { d.open = !!printState[i]; });
+    printState = null;
+  }
+  window.addEventListener("beforeprint", beforePrint);
+  window.addEventListener("afterprint", afterPrint);
+  if (window.matchMedia) {
+    var pmq = window.matchMedia("print");
+    var onPrint = function (e) { if (e.matches) { beforePrint(); } else { afterPrint(); } };
+    if (pmq.addEventListener) { pmq.addEventListener("change", onPrint); }
+    else if (pmq.addListener) { pmq.addListener(onPrint); }
+  }
+
+  /* open Level 1 modules by default so the page is not a wall of closed rows */
+  var first = document.querySelector('#l1 [data-modules]');
+  if (first) first.open = true;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Three columns, and the middle one is the trap</title>
+  <desc>Three columns of examples. Clearly personal contains your full name, your face photo and your phone number. Personal in combination contains Year 7, postcode area 3, left-handed and plays cricket. Not personal on its own contains yesterday's weather and the rules of cricket.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Three columns, and the middle one is the trap</text>
+  <rect x="40" y="76" width="226" height="240" rx="12" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3"/>
+  <rect x="287" y="76" width="226" height="240" rx="12" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <rect x="534" y="76" width="226" height="240" rx="12" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3"/>
+  <path d="M40 88 A12 12 0 0 1 52 76 H254 A12 12 0 0 1 266 88 V138 H40 Z" fill="#F6AEA6" stroke="none"/>
+  <path d="M287 88 A12 12 0 0 1 299 76 H501 A12 12 0 0 1 513 88 V138 H287 Z" fill="#F4D5E9" stroke="none"/>
+  <path d="M534 88 A12 12 0 0 1 546 76 H748 A12 12 0 0 1 760 88 V138 H534 Z" fill="#E2F7ED" stroke="none"/>
+  <line x1="40" y1="138" x2="266" y2="138" stroke="#CC2B1D" stroke-width="3"/>
+  <line x1="287" y1="138" x2="513" y2="138" stroke="#C42B8C" stroke-width="3"/>
+  <line x1="534" y1="138" x2="760" y2="138" stroke="#1B7A4B" stroke-width="3"/>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">
+    <text x="153" y="104">Clearly</text>
+    <text x="153" y="128">personal</text>
+    <text x="400" y="104">Personal in</text>
+    <text x="400" y="128">combination</text>
+    <text x="647" y="104">Not personal</text>
+    <text x="647" y="128">on its own</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">
+    <text x="58" y="172">Your full name</text>
+    <text x="58" y="200">Your face photo</text>
+    <text x="58" y="228">Your phone number</text>
+    <text x="58" y="256">Your home address</text>
+    <text x="305" y="172">Year 7</text>
+    <text x="305" y="200">Postcode area 3</text>
+    <text x="305" y="228">Left-handed</text>
+    <text x="305" y="256">Plays cricket</text>
+    <text x="552" y="172">Yesterday's weather</text>
+    <text x="552" y="200">The rules of cricket</text>
+    <text x="552" y="228">The plot of a novel</text>
+  </g>
+  <text x="400" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="middle">any three of these = one person</text>
+  <text x="400" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Nothing in the middle column identifies anybody. Put three of them together and there is one person left.</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Chopping a sentence into tokens</title>
+  <desc>The sentence I don't want pizza tonight with dashed cut marks between the pieces, and six numbered token boxes underneath holding i, don't, want, pizza, tonight and a full stop.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Chopping a sentence into tokens</text>
+  <rect x="40" y="70" width="720" height="86" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="112" y="121.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">I</text>
+  <text x="196" y="121.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">don't</text>
+  <text x="316" y="121.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">want</text>
+  <text x="442" y="121.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">pizza</text>
+  <text x="578" y="121.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">tonight</text>
+  <text x="668" y="121.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">.</text>
+  <line x1="152" y1="80" x2="152" y2="146" stroke="#C42B8C" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 6"/>
+  <line x1="250" y1="80" x2="250" y2="146" stroke="#C42B8C" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 6"/>
+  <line x1="382" y1="80" x2="382" y2="146" stroke="#C42B8C" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 6"/>
+  <line x1="504" y1="80" x2="504" y2="146" stroke="#C42B8C" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 6"/>
+  <line x1="634" y1="80" x2="634" y2="146" stroke="#C42B8C" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 6"/>
+  <text x="720" y="117.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">cut here</text>
+  <circle cx="95.0" cy="203" r="15" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="95.0" y="207.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1</text>
+  <rect x="40" y="228" width="110" height="62" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="95.0" y="265.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">i</text>
+  <line x1="151" y1="259" x2="161" y2="259" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(161 259) rotate(0.0)"/>
+  <circle cx="217.0" cy="203" r="15" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="217.0" y="207.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">2</text>
+  <rect x="162" y="228" width="110" height="62" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="217.0" y="265.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">don't</text>
+  <line x1="273" y1="259" x2="283" y2="259" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(283 259) rotate(0.0)"/>
+  <circle cx="339.0" cy="203" r="15" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="339.0" y="207.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">3</text>
+  <rect x="284" y="228" width="110" height="62" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="339.0" y="265.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">want</text>
+  <line x1="395" y1="259" x2="405" y2="259" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(405 259) rotate(0.0)"/>
+  <circle cx="461.0" cy="203" r="15" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="461.0" y="207.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">4</text>
+  <rect x="406" y="228" width="110" height="62" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="461.0" y="265.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">pizza</text>
+  <line x1="517" y1="259" x2="527" y2="259" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(527 259) rotate(0.0)"/>
+  <circle cx="583.0" cy="203" r="15" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="583.0" y="207.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">5</text>
+  <rect x="528" y="228" width="110" height="62" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="583.0" y="265.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">tonight</text>
+  <line x1="639" y1="259" x2="649" y2="259" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(649 259) rotate(0.0)"/>
+  <circle cx="705.0" cy="203" r="15" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="705.0" y="207.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">6</text>
+  <rect x="650" y="228" width="110" height="62" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="705.0" y="265.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">.</text>
+  <text x="400" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">6 tokens.  5 words + 1 full stop.  Everything lower case.</text>
+  <text x="400" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The full stop gets its own box because 'a sentence ended here' is worth counting.</text>
+</svg>

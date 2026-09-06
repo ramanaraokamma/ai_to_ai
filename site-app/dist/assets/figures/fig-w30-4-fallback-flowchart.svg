@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Where the fallback fits</title>
+  <desc>A flowchart. The student types, the bot walks the trigger list, then a diamond asks whether a match was found. Yes leads to saying the matching reply; No leads to the highlighted fallback reply. Both paths return to asking again.</desc>
+<text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Where the fallback fits</text>
+<g stroke="#55636F" stroke-width="2" fill="none"><path d="M 400 106 V 132"/><path d="M 400 188 V 214"/><path d="M 250 242 H 150 V 276"/><path d="M 550 242 H 660 V 276"/><path d="M 150 332 V 356 H 400 V 372"/><path d="M 660 332 V 356 H 400"/></g>
+<rect x="300" y="70" width="200" height="36" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+<text x="400" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">the student types</text>
+<rect x="300" y="132" width="200" height="56" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+<text x="400" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">walk the trigger list:</text>
+<text x="400" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">does the answer contain it?</text>
+<path d="M 400 214 L 552 242 L 400 270 L 248 242 Z" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+<text x="400" y="243" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">match found?</text>
+<text x="196" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#CC2B1D" text-anchor="middle" font-weight="600">NO</text>
+<text x="608" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#1B7A4B" text-anchor="middle" font-weight="600">YES</text>
+<rect x="40" y="276" width="220" height="56" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+<text x="150" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#CC2B1D" text-anchor="middle" font-weight="600" dominant-baseline="central">FALLBACK</text>
+<text x="150" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">“I don't know that one...”</text>
+<rect x="550" y="276" width="220" height="56" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+<text x="660" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">say reply number i</text>
+<text x="660" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle" dominant-baseline="central">set matched to 1</text>
+<line x1="400" y1="362" x2="400" y2="384" stroke="#55636F" stroke-width="2" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(400 384) rotate(90.0)"/>
+<text x="400" y="398" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">ask again</text>
+<text x="150" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">the path everyone forgets to build</text>
+</svg>

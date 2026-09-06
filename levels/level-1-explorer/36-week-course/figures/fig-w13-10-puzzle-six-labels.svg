@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Six label cards, and two of them are lying</title>
+  <desc>Six cards laid out in two rows, each showing a column name and an example value: house number 14, weight 205 grams, shoe size 5, temperature 21 degrees, bus route 12, rainfall 4 point 2 millimetres. Two empty trays below are headed real number and category wearing digits.</desc>
+  <text x="400" y="38" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Six label cards. All six have digits.</text>
+
+  <rect x="30" y="62" width="228" height="66" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="286" y="62" width="228" height="66" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="542" y="62" width="228" height="66" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="30" y="144" width="228" height="66" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="286" y="144" width="228" height="66" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="542" y="144" width="228" height="66" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">
+    <text x="46" y="90">1. house_number</text>
+    <text x="302" y="90">2. weight_g</text>
+    <text x="558" y="90">3. shoe_size</text>
+    <text x="46" y="172">4. temperature_c</text>
+    <text x="302" y="172">5. bus_route</text>
+    <text x="558" y="172">6. rain_mm</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">
+    <text x="46" y="114">example value: 14</text>
+    <text x="302" y="114">example value: 205</text>
+    <text x="558" y="114">example value: 5</text>
+    <text x="46" y="196">example value: 21</text>
+    <text x="302" y="196">example value: 12</text>
+    <text x="558" y="196">example value: 4.2</text>
+  </g>
+
+  <rect x="60" y="240" width="300" height="86" rx="12" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="440" y="240" width="300" height="86" rx="12" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="210" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">REAL NUMBER</text>
+  <text x="590" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">CATEGORY IN DISGUISE</text>
+  <text x="210" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">adding two of them means something</text>
+  <text x="590" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">adding two of them means nothing</text>
+  <line x1="90" y1="314" x2="330" y2="314" stroke="#55636F" stroke-width="1.5"/>
+  <line x1="470" y1="314" x2="710" y2="314" stroke="#55636F" stroke-width="1.5"/>
+
+  <text x="400" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Write the card numbers in the trays. One card is genuinely hard and experts argue about it.</text>
+  <text x="400" y="378" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Which one, and why?</text>
+</svg>

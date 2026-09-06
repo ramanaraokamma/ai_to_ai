@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Numbers plus their arrangement</title>
+  <desc>Two four by four number grids side by side. The left grid has four dark squares on a diagonal and reads as a line. The right grid holds exactly the same sixteen numbers in a shuffled order and reads as nothing.</desc>
+<text x="400" y="36" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Numbers plus their arrangement</text>
+<rect x="30" y="56" width="290" height="290" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="480" y="56" width="290" height="290" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+<text x="175" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">1. In the right order</text>
+<text x="625" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">2. Same 16 numbers, shuffled</text>
+<rect x="71" y="100" width="52" height="52" fill="#14202B" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="123" y="100" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="175" y="100" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="227" y="100" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="71" y="152" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="123" y="152" width="52" height="52" fill="#14202B" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="175" y="152" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="227" y="152" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="71" y="204" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="123" y="204" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="175" y="204" width="52" height="52" fill="#14202B" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="227" y="204" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="71" y="256" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="123" y="256" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="175" y="256" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="227" y="256" width="52" height="52" fill="#14202B" stroke="#C7CDD4" stroke-width="1.5"/>
+<text x="97.0" y="130.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<text x="149.0" y="130.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="201.0" y="130.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="253.0" y="130.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="97.0" y="182.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="149.0" y="182.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<text x="201.0" y="182.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="253.0" y="182.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="97.0" y="234.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="149.0" y="234.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="201.0" y="234.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<text x="253.0" y="234.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="97.0" y="286.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="149.0" y="286.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="201.0" y="286.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="253.0" y="286.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="71" y="100" width="208" height="208" fill="none" stroke="#14202B" stroke-width="3"/>
+<rect x="521" y="100" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="573" y="100" width="52" height="52" fill="#14202B" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="625" y="100" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="677" y="100" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="521" y="152" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="573" y="152" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="625" y="152" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="677" y="152" width="52" height="52" fill="#14202B" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="521" y="204" width="52" height="52" fill="#14202B" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="573" y="204" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="625" y="204" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="677" y="204" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="521" y="256" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="573" y="256" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="625" y="256" width="52" height="52" fill="#14202B" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="677" y="256" width="52" height="52" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+<text x="547.0" y="130.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="599.0" y="130.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<text x="651.0" y="130.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="703.0" y="130.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="547.0" y="182.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="599.0" y="182.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="651.0" y="182.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="703.0" y="182.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<text x="547.0" y="234.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<text x="599.0" y="234.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="651.0" y="234.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="703.0" y="234.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="547.0" y="286.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="599.0" y="286.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<text x="651.0" y="286.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<text x="703.0" y="286.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">255</text>
+<rect x="521" y="100" width="208" height="208" fill="none" stroke="#14202B" stroke-width="3"/>
+<text x="175" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#1B7A4B" text-anchor="middle">a line</text>
+<text x="625" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#CC2B1D" text-anchor="middle">no picture at all</text>
+<line x1="336" y1="200" x2="464" y2="200" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+<polyline points="454,192 464,200 454,208" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="400" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="middle">shuffle</text>
+<text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">An image is numbers AND the order they arrive in. Lose the order and the picture is gone.</text>
+</svg>

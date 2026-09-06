@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A sentence with blanks, filled in for you</title>
+  <desc>Three numbered steps down the page. Step one is a sentence reading you scored blank runs in blank matches, with two empty slots. Step two shows two value boxes holding 347 and 9, arrowed up into the slots. Step three is the finished green sentence: you scored 347 runs in 9 matches.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A sentence with blanks, filled in for you</text>
+  <circle cx="44" cy="104" r="14" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="44" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <circle cx="44" cy="236" r="14" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="44" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <circle cx="44" cy="326" r="14" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="44" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <rect x="76" y="76" width="664" height="56" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="180" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">You scored</text>
+  <rect x="282" y="86" width="90" height="36" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="384" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">runs in</text>
+  <rect x="459" y="86" width="90" height="36" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="561" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">matches.</text>
+  <rect x="282" y="210" width="90" height="52" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="327" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">347</text>
+  <text x="327" y="284" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">runs</text>
+  <rect x="459" y="210" width="90" height="52" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="504" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">9</text>
+  <text x="504" y="284" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">matches</text>
+  <line x1="327" y1="204" x2="327" y2="138" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C42B8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(327 138) rotate(-90)"/>
+  <line x1="504" y1="204" x2="504" y2="138" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C42B8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(504 138) rotate(-90)"/>
+  <rect x="130" y="300" width="540" height="52" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="400" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">You scored 347 runs in 9 matches.</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Write the sentence once. Change a value, run it again, and the sentence updates itself.</text>
+</svg>

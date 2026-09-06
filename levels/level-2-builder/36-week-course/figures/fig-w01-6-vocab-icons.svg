@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>This week's five words as pictures</title>
+  <desc>Five icon cards. A program is a numbered list of lines done top to bottom. The interpreter is a machine that reads a dot py file and does it. Print is a screen showing one line of output. A comment is a sticky note that Python skips. Syntax is punctuation that must come in matching pairs, with one unmatched bracket marked wrong.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">This week's five words as pictures</text>
+  <rect x="20" y="64" width="144" height="256" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="174" y="64" width="144" height="256" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="328" y="64" width="144" height="256" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="482" y="64" width="144" height="256" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="636" y="64" width="144" height="256" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="50" y="90" width="84" height="110" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="60" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">1</text>
+  <line x1="72" y1="106" x2="124" y2="106" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="60" y="136" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">2</text>
+  <line x1="72" y1="132" x2="124" y2="132" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="60" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">3</text>
+  <line x1="72" y1="158" x2="124" y2="158" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="60" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">4</text>
+  <line x1="72" y1="184" x2="124" y2="184" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="92" y1="206" x2="92" y2="232" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(92 232) rotate(90.0)"/>
+  <text x="92" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">done in order,</text>
+  <text x="92" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">top to bottom</text>
+  <text x="92" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">program</text>
+  <rect x="192" y="96" width="44" height="60" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="214" y="126" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">.py</text>
+  <line x1="238" y1="126" x2="252" y2="126" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(252 126) rotate(0.0)"/>
+  <rect x="254" y="100" width="50" height="52" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="279" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">run</text>
+  <text x="248" y="182" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">python3</text>
+  <text x="246" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">reads your file</text>
+  <text x="246" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">and does it</text>
+  <text x="246" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">interpreter</text>
+  <rect x="350" y="100" width="100" height="72" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="350" y="100" width="100" height="20" rx="8" fill="#F5F8FA"/>
+  <line x1="350" y1="120" x2="450" y2="120" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="360" y="146" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">hello</text>
+  <line x1="400" y1="182" x2="400" y2="206" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(400 206) rotate(90.0)"/>
+  <text x="400" y="230" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">puts something</text>
+  <text x="400" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">on the screen</text>
+  <text x="400" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">print</text>
+  <path d="M516 96 H592 V152 L572 172 H516 Z" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M572 172 V152 H592 Z" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="526" y="120" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B"># why</text>
+  <line x1="526" y1="132" x2="578" y2="132" stroke="#55636F" stroke-width="3" stroke-linecap="round"/>
+  <line x1="526" y1="144" x2="562" y2="144" stroke="#55636F" stroke-width="3" stroke-linecap="round"/>
+  <text x="554" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">a note for humans</text>
+  <text x="554" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Python skips it</text>
+  <text x="554" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">comment</text>
+  <rect x="662" y="104" width="36" height="34" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="680" y="121" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">(</text>
+  <rect x="718" y="104" width="36" height="34" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="736" y="121" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">)</text>
+  <line x1="698" y1="121" x2="718" y2="121" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="662" y="148" width="36" height="34" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="680" y="165" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#34;</text>
+  <rect x="718" y="148" width="36" height="34" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="736" y="165" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#34;</text>
+  <line x1="698" y1="165" x2="718" y2="165" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="662" y="192" width="36" height="34" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="680" y="209" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">(</text>
+  <circle cx="736" cy="209" r="15" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+    <line x1="730.7" y1="203.7" x2="741.3" y2="214.3"/>
+    <line x1="741.3" y1="203.7" x2="730.7" y2="214.3"/>
+  </g>
+  <text x="708" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the punctuation rules.</text>
+  <text x="708" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Pairs must pair.</text>
+  <text x="708" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">syntax</text>
+  <text x="400" y="368" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Five words. Five pictures. No definitions to memorise.</text>
+</svg>

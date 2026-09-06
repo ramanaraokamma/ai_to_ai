@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Week 9 words as pictures</title>
+  <desc>Three icon cards in a row. Training examples is a stack of open message cards with the answers showing and a magnifying glass over them. Fresh examples is a sealed signed envelope with a single-use tally beside it. Accuracy is a division sum showing five over ten becoming nought point five becoming fifty percent.</desc>
+  <text x="400" y="34" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">This week's three words as pictures</text>
+  <rect x="24" y="58" width="240" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="280" y="58" width="240" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="536" y="58" width="240" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+
+  <!-- 1 training examples -->
+  <g transform="translate(56,88)">
+    <rect x="0" y="0" width="120" height="26" rx="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="0" y="34" width="120" height="26" rx="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="0" y="68" width="120" height="26" rx="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round"/>
+    <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">
+      <text x="8" y="18">"WIN a FREE..." spam</text>
+      <text x="8" y="52">"see you at..." ham</text>
+      <text x="8" y="86">"URGENT: ver..." spam</text>
+    </g>
+    <g transform="translate(112,44) scale(0.66)">
+      <line x1="60" y1="60" x2="86" y2="86" stroke="#1F6FB2" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="42" cy="42" r="26" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+      <path d="M30 36 A14 14 0 0 1 42 28" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+    </g>
+  </g>
+  <text x="144" y="234" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">training examples</text>
+  <text x="144" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">the ones you studied while</text>
+  <text x="144" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">writing your rules</text>
+
+  <!-- 2 fresh examples -->
+  <g transform="translate(312,96)">
+    <rect x="0" y="0" width="176" height="100" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M0 8 L88 64 L176 8" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="58" y="48" width="60" height="26" rx="5" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5" stroke-linejoin="round"/>
+    <text x="88" y="66" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">SEALED</text>
+    <path d="M22 90 Q36 80 48 90 Q60 100 74 88" fill="none" stroke="#845F00" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M102 90 Q116 80 128 90 Q140 100 152 88" fill="none" stroke="#845F00" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="88" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">opened once, scored once</text>
+  </g>
+  <text x="400" y="234" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">fresh examples</text>
+  <text x="400" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">set aside before any rule</text>
+  <text x="400" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">existed, and never fixed from</text>
+
+  <!-- 3 accuracy -->
+  <g transform="translate(576,92)">
+    <text x="24" y="30" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">5</text>
+    <line x1="6" y1="42" x2="42" y2="42" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <text x="24" y="70" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">10</text>
+    <g stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="52" y1="46" x2="76" y2="46"/>
+      <polyline points="70,40 80,46 70,52" fill="none"/>
+      <line x1="112" y1="46" x2="136" y2="46"/>
+      <polyline points="130,40 140,46 130,52" fill="none"/>
+    </g>
+    <text x="96" y="54" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">0.5</text>
+    <text x="168" y="54" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">50%</text>
+    <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">
+      <text x="24" y="98">correct</text>
+      <text x="24" y="114">over total</text>
+      <text x="96" y="98">divide</text>
+      <text x="168" y="98">times 100</text>
+    </g>
+    <text x="96" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">on a two-way choice, 50% is a coin</text>
+  </g>
+  <text x="656" y="234" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">accuracy</text>
+  <text x="656" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">correct answers divided</text>
+  <text x="656" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">by total answers</text>
+
+  <text x="400" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">You can always get 100% on a test you wrote after seeing the answers.</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">That number is not a lie. It is just not about the future.</text>
+</svg>

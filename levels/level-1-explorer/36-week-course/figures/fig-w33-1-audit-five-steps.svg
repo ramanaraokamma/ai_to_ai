@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>The five steps of a fairness audit</title>
+  <desc>Five numbered steps in a row: count the training data, write a sealed prediction, test four groups, trace the worst group to a count, and price the fix in photos. An arrow underneath says report it whether you were right or wrong.</desc>
+  <text x="400" y="36" font-size="24" fill="#14202B" text-anchor="middle">A fairness audit is five steps, in this order</text>
+
+  <g stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <line x1="164" y1="150" x2="176" y2="150"/><polyline points="171,144 180,150 171,156"/>
+    <line x1="312" y1="150" x2="324" y2="150"/><polyline points="319,144 328,150 319,156"/>
+    <line x1="460" y1="150" x2="472" y2="150"/><polyline points="467,144 476,150 467,156"/>
+    <line x1="608" y1="150" x2="620" y2="150"/><polyline points="615,144 624,150 615,156"/>
+  </g>
+
+  <rect x="30" y="76" width="130" height="148" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="184" y="76" width="130" height="148" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="332" y="76" width="130" height="148" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="480" y="76" width="130" height="148" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="628" y="76" width="130" height="148" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+
+  <g fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5">
+    <circle cx="56" cy="102" r="14"/><circle cx="210" cy="102" r="14"/><circle cx="358" cy="102" r="14"/>
+    <circle cx="506" cy="102" r="14"/><circle cx="654" cy="102" r="14"/>
+  </g>
+  <g font-size="14" fill="#14202B" text-anchor="middle">
+    <text x="56" y="107">1</text><text x="210" y="107">2</text><text x="358" y="107">3</text>
+    <text x="506" y="107">4</text><text x="654" y="107">5</text>
+  </g>
+
+  <g font-size="18" fill="#14202B" text-anchor="middle">
+    <text x="95" y="146">COUNT</text>
+    <text x="249" y="146">PREDICT</text>
+    <text x="397" y="146">TEST</text>
+    <text x="545" y="146">TRACE</text>
+    <text x="693" y="146">PRICE</text>
+  </g>
+  <g font-size="14" fill="#55636F" text-anchor="middle">
+    <text x="95" y="174">your training</text>
+    <text x="95" y="192">photos, by</text>
+    <text x="95" y="210">condition</text>
+    <text x="249" y="174">the worst</text>
+    <text x="249" y="192">group, and</text>
+    <text x="249" y="210">seal it</text>
+    <text x="397" y="174">12 photos in</text>
+    <text x="397" y="192">each of four</text>
+    <text x="397" y="210">conditions</text>
+    <text x="545" y="174">the worst</text>
+    <text x="545" y="192">group back to</text>
+    <text x="545" y="210">a count</text>
+    <text x="693" y="174">the fix, in</text>
+    <text x="693" y="192">actual photos,</text>
+    <text x="693" y="210">with algebra</text>
+  </g>
+
+  <path d="M249 240 V276 H545 V252" fill="none" stroke="#C42B8C" stroke-width="3" stroke-dasharray="8 6" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="538,259 545,248 552,259" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="290" y="288" width="220" height="34" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="311" font-size="18" fill="#14202B" text-anchor="middle">compare 2 with 4</text>
+
+  <text x="400" y="356" font-size="18" fill="#14202B" text-anchor="middle">Report the comparison whether you were right or wrong.</text>
+  <text x="400" y="382" font-size="14" fill="#55636F" text-anchor="middle">Reporting only your correct predictions is the exact habit this course exists to prevent.</text>
+</svg>

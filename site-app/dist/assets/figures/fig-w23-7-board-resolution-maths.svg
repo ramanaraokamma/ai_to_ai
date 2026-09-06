@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The board at the end of Week 23</title>
+  <desc>A whiteboard panel of resolution arithmetic: twelve by twelve is 144 pixels, 224 by 224 is 50,176 pixels, 4032 by 3024 is 12,192,768 pixels, and 12,192,768 divided by 50,176 is 243. A highlighted box reads: your model saw one pixel out of every 243 you took.</desc>
+<text x="400" y="36" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The board at the end of Week 23</text>
+<rect x="30" y="56" width="740" height="242" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+<text x="60" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="start">How many pixels? (across x down)</text>
+<text x="60" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start">your graph-paper grid</text>
+<text x="740" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="end">12 x 12 = 144</text>
+<text x="60" y="160" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start">what Teachable Machine sees</text>
+<text x="740" y="160" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="end">224 x 224 = 50,176</text>
+<text x="60" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start">what your phone camera shoots</text>
+<text x="740" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="end">4032 x 3024 = 12,192,768</text>
+<line x1="60" y1="220" x2="740" y2="220" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+<text x="60" y="246" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start">12,192,768 divided by 50,176</text>
+<text x="740" y="246" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="end">= 243</text>
+<rect x="56" y="258" width="688" height="32" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+<text x="400" y="279" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Your model saw 1 pixel out of every 243 you took.</text>
+<text x="400" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Writing them out by hand, one number per second:</text>
+<text x="400" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">144 numbers = 2 and a half minutes.   50,176 numbers = 14 hours.   12,192,768 numbers = 141 days.</text>
+</svg>

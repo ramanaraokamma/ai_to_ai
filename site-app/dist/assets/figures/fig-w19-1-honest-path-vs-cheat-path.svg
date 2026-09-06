@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The honest path and the cheat path</title>
+  <desc>Two rows of four steps. The top row collects thirty photos, splits them twenty-four and six, trains on the twenty-four and scores the six, ending in a correct badge. The bottom row collects thirty photos, trains on all thirty, scores the same thirty and reports one hundred percent, ending in a wrong badge.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+
+    <text x="400" y="34" font-size="24" fill="#14202B" text-anchor="middle">The same photos, two different orders</text>
+
+    <text x="40" y="76" font-size="18" fill="#14202B">Path A - split BEFORE training</text>
+
+    <g stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <g transform="translate(181,117) scale(0.33)"><line x1="6" y1="20" x2="84" y2="20"/><polyline points="76,10 92,20 76,30"/></g>
+      <g transform="translate(356,117) scale(0.33)"><line x1="6" y1="20" x2="84" y2="20"/><polyline points="76,10 92,20 76,30"/></g>
+      <g transform="translate(531,117) scale(0.33)"><line x1="6" y1="20" x2="84" y2="20"/><polyline points="76,10 92,20 76,30"/></g>
+      <g transform="translate(181,259) scale(0.33)"><line x1="6" y1="20" x2="84" y2="20"/><polyline points="76,10 92,20 76,30"/></g>
+      <g transform="translate(356,259) scale(0.33)"><line x1="6" y1="20" x2="84" y2="20"/><polyline points="76,10 92,20 76,30"/></g>
+      <g transform="translate(531,259) scale(0.33)"><line x1="6" y1="20" x2="84" y2="20"/><polyline points="76,10 92,20 76,30"/></g>
+    </g>
+
+    <rect x="40" y="88" width="140" height="72" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="215" y="88" width="140" height="72" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="390" y="88" width="140" height="72" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="565" y="88" width="140" height="72" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+
+    <g font-size="18" fill="#14202B" text-anchor="middle">
+      <text x="110" y="118">1. Collect</text><text x="110" y="142">30 photos</text>
+      <text x="285" y="118">2. Split</text><text x="285" y="142">24 / 6</text>
+      <text x="460" y="118">3. Train</text><text x="460" y="142">on the 24</text>
+      <text x="635" y="118">4. Score</text><text x="635" y="142">the 6</text>
+    </g>
+
+    <g transform="translate(715,93) scale(0.62)">
+      <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <text x="40" y="182" font-size="14" fill="#55636F">The 6 were never studied. Whatever they score is a real number.</text>
+
+    <line x1="40" y1="200" x2="760" y2="200" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+    <text x="40" y="222" font-size="18" fill="#14202B">Path B - test on the training photos</text>
+
+    <rect x="40" y="230" width="140" height="72" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="215" y="230" width="140" height="72" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="390" y="230" width="140" height="72" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="565" y="230" width="140" height="72" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+
+    <g font-size="18" fill="#14202B" text-anchor="middle">
+      <text x="110" y="260">1. Collect</text><text x="110" y="284">30 photos</text>
+      <text x="285" y="260">2. Train on</text><text x="285" y="284">all 30</text>
+      <text x="460" y="260">3. Score the</text><text x="460" y="284">same 30</text>
+      <text x="635" y="260">4. Report</text><text x="635" y="284">100%</text>
+    </g>
+
+    <g transform="translate(715,235) scale(0.62)">
+      <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+      <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+        <line x1="38" y1="38" x2="62" y2="62"/>
+        <line x1="62" y1="38" x2="38" y2="62"/>
+      </g>
+    </g>
+
+    <text x="40" y="324" font-size="14" fill="#55636F">Every photo was studied first. 100% is guaranteed - and it measures nothing.</text>
+
+    <text x="400" y="366" font-size="14" fill="#55636F" text-anchor="middle">Same photos. Same model. The only difference is WHEN the split happened.</text>
+  </g>
+</svg>

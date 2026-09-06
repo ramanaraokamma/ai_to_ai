@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The eight mango cards, front and back</title>
+  <desc>Eight training cards laid out in two rows of four. The front of each card lists three features: colour, feel and smell. Attached underneath each front is the back of the card, which carries the label ripe with a tick or unripe with a cross. Cards two, four, six and eight are ripe; cards one, three, five and seven are unripe.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="32" font-size="24" fill="#14202B" text-anchor="middle">The eight mango cards: front = clues, back = answer</text>
+    <text x="400" y="54" font-size="14" fill="#55636F" text-anchor="middle">FRONT (what you may look at)  ·  BACK (the label, written before class)</text>
+
+    <g stroke="#1F6FB2" stroke-width="3" fill="#FFFFFF" stroke-linejoin="round">
+      <rect x="30" y="66" width="170" height="102" rx="10"/>
+      <rect x="220" y="66" width="170" height="102" rx="10"/>
+      <rect x="410" y="66" width="170" height="102" rx="10"/>
+      <rect x="600" y="66" width="170" height="102" rx="10"/>
+      <rect x="30" y="228" width="170" height="102" rx="10"/>
+      <rect x="220" y="228" width="170" height="102" rx="10"/>
+      <rect x="410" y="228" width="170" height="102" rx="10"/>
+      <rect x="600" y="228" width="170" height="102" rx="10"/>
+    </g>
+    <g font-size="12" fill="#14202B">
+      <text x="42" y="86" fill="#1F6FB2">CARD 1</text>
+      <text x="42" y="108">colour: green</text><text x="42" y="128">feel: hard</text><text x="42" y="148">smell: none</text>
+      <text x="232" y="86" fill="#1F6FB2">CARD 2</text>
+      <text x="232" y="108">colour: yellow-green</text><text x="232" y="128">feel: gives a little</text><text x="232" y="148">smell: sweet</text>
+      <text x="422" y="86" fill="#1F6FB2">CARD 3</text>
+      <text x="422" y="108">colour: red-yellow</text><text x="422" y="128">feel: hard</text><text x="422" y="148">smell: none</text>
+      <text x="612" y="86" fill="#1F6FB2">CARD 4</text>
+      <text x="612" y="108">colour: green-yellow</text><text x="612" y="128">feel: gives a little</text><text x="612" y="148">smell: sweet</text>
+      <text x="42" y="248" fill="#1F6FB2">CARD 5</text>
+      <text x="42" y="270">colour: yellow</text><text x="42" y="290">feel: hard</text><text x="42" y="310">smell: none</text>
+      <text x="232" y="248" fill="#1F6FB2">CARD 6</text>
+      <text x="232" y="270">colour: green</text><text x="232" y="290">feel: soft</text><text x="232" y="310">smell: sweet</text>
+      <text x="422" y="248" fill="#1F6FB2">CARD 7</text>
+      <text x="422" y="270">colour: red</text><text x="422" y="290">feel: hard</text><text x="422" y="310">smell: faint</text>
+      <text x="612" y="248" fill="#1F6FB2">CARD 8</text>
+      <text x="612" y="270">colour: yellow-red</text><text x="612" y="290">feel: soft</text><text x="612" y="310">smell: sweet</text>
+    </g>
+
+    <g stroke-width="3" stroke-linejoin="round">
+      <rect x="30" y="172" width="170" height="32" rx="8" fill="#F6AEA6" stroke="#CC2B1D"/>
+      <rect x="220" y="172" width="170" height="32" rx="8" fill="#E2F7ED" stroke="#1B7A4B"/>
+      <rect x="410" y="172" width="170" height="32" rx="8" fill="#F6AEA6" stroke="#CC2B1D"/>
+      <rect x="600" y="172" width="170" height="32" rx="8" fill="#E2F7ED" stroke="#1B7A4B"/>
+      <rect x="30" y="334" width="170" height="32" rx="8" fill="#F6AEA6" stroke="#CC2B1D"/>
+      <rect x="220" y="334" width="170" height="32" rx="8" fill="#E2F7ED" stroke="#1B7A4B"/>
+      <rect x="410" y="334" width="170" height="32" rx="8" fill="#F6AEA6" stroke="#CC2B1D"/>
+      <rect x="600" y="334" width="170" height="32" rx="8" fill="#E2F7ED" stroke="#1B7A4B"/>
+    </g>
+    <g stroke="#CC2B1D" stroke-width="4" stroke-linecap="round">
+      <line x1="46" y1="182" x2="60" y2="196"/><line x1="60" y1="182" x2="46" y2="196"/>
+      <line x1="426" y1="182" x2="440" y2="196"/><line x1="440" y1="182" x2="426" y2="196"/>
+      <line x1="46" y1="344" x2="60" y2="358"/><line x1="60" y1="344" x2="46" y2="358"/>
+      <line x1="426" y1="344" x2="440" y2="358"/><line x1="440" y1="344" x2="426" y2="358"/>
+    </g>
+    <g stroke="#1B7A4B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <polyline points="236,190 243,197 254,182"/>
+      <polyline points="616,190 623,197 634,182"/>
+      <polyline points="236,352 243,359 254,344"/>
+      <polyline points="616,352 623,359 634,344"/>
+    </g>
+    <g font-size="14" fill="#14202B">
+      <text x="72" y="193">UNRIPE</text>
+      <text x="266" y="193">RIPE</text>
+      <text x="452" y="193">UNRIPE</text>
+      <text x="646" y="193">RIPE</text>
+      <text x="72" y="355">UNRIPE</text>
+      <text x="266" y="355">RIPE</text>
+      <text x="452" y="355">UNRIPE</text>
+      <text x="646" y="355">RIPE</text>
+    </g>
+
+    <text x="400" y="390" font-size="14" fill="#55636F" text-anchor="middle">Colour is all over the place. Feel and smell line up perfectly. That is the rule hiding here.</text>
+  </g>
+</svg>

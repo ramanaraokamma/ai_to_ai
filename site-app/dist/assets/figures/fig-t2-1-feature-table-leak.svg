@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>One of these columns is the answer in disguise</title>
+  <desc>A five-row homework table. Columns: subject, pages, minutes worked, diary note yes or no, and a tinted label column late yes or no. The diary note column matches the label column exactly in all five rows.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">One of these columns is the answer in disguise</text>
+  <path d="M60 88 A10 10 0 0 1 70 78 H730 A10 10 0 0 1 740 88 V118 H60 Z" fill="#D9EAF9" stroke="none"/>
+  <rect x="540" y="118" width="200" height="200" fill="#F4D5E9"/>
+  <g stroke="#C7CDD4" stroke-width="1.5" fill="none"><line x1="190" y1="78" x2="190" y2="318"/><line x1="270" y1="78" x2="270" y2="318"/><line x1="380" y1="78" x2="380" y2="318"/><line x1="540" y1="78" x2="540" y2="318"/><line x1="60" y1="158" x2="740" y2="158"/><line x1="60" y1="198" x2="740" y2="198"/><line x1="60" y1="238" x2="740" y2="238"/><line x1="60" y1="278" x2="740" y2="278"/><line x1="60" y1="318" x2="740" y2="318"/></g>
+  <line x1="60" y1="118" x2="740" y2="118" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+  <rect x="60" y="78" width="680" height="240" rx="10" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="76" y="103.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" font-weight="700">subject</text>
+  <text x="230.0" y="103.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle" font-weight="700">pages</text>
+  <text x="325.0" y="103.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle" font-weight="700">minutes</text>
+  <text x="460.0" y="103.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle" font-weight="700">diary note?</text>
+  <text x="640.0" y="103.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle" font-weight="700">LABEL: late?</text>
+  <text x="76" y="144.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">maths</text>
+  <text x="230.0" y="144.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">2</text>
+  <text x="325.0" y="144.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">25</text>
+  <text x="460.0" y="144.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">yes</text>
+  <text x="640.0" y="144.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">yes</text>
+  <text x="76" y="184.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">english</text>
+  <text x="230.0" y="184.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">1</text>
+  <text x="325.0" y="184.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">40</text>
+  <text x="460.0" y="184.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">no</text>
+  <text x="640.0" y="184.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">no</text>
+  <text x="76" y="224.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">maths</text>
+  <text x="230.0" y="224.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">3</text>
+  <text x="325.0" y="224.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">10</text>
+  <text x="460.0" y="224.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">yes</text>
+  <text x="640.0" y="224.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">yes</text>
+  <text x="76" y="264.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">science</text>
+  <text x="230.0" y="264.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">2</text>
+  <text x="325.0" y="264.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">30</text>
+  <text x="460.0" y="264.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">no</text>
+  <text x="640.0" y="264.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">no</text>
+  <text x="76" y="304.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">maths</text>
+  <text x="230.0" y="304.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">1</text>
+  <text x="325.0" y="304.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">35</text>
+  <text x="460.0" y="304.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">no</text>
+  <text x="640.0" y="304.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">no</text>
+  <text x="400" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Five rows of homework. Four feature columns, one label column.</text>
+</svg>

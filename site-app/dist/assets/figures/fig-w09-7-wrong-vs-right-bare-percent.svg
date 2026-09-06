@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Never write a percentage on its own</title>
+  <desc>Two panels. The left panel, marked wrong, shows a poster saying fifty percent accurate with nothing else. The right panel, marked correct, shows the same claim written as five out of ten equals nought point five equals fifty percent, with a note that fifty out of a hundred and five hundred out of a thousand are also fifty percent.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The percentage is the one that lies by leaving things out</text>
+  <line x1="400" y1="72" x2="400" y2="336" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <rect x="30" y="72" width="340" height="264" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="430" y="72" width="340" height="264" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(48,86) scale(0.42)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+      <line x1="38" y1="38" x2="62" y2="62"/>
+      <line x1="62" y1="38" x2="38" y2="62"/>
+    </g>
+  </g>
+  <g transform="translate(448,86) scale(0.42)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="98" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">A bare percentage</text>
+  <text x="498" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">All three, every time</text>
+
+  <rect x="60" y="132" width="280" height="66" rx="10" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="200" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">"50% accurate!"</text>
+  <rect x="460" y="132" width="280" height="66" rx="10" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="600" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">5 out of 10</text>
+  <text x="600" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">= 0.5 = 50%</text>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">
+    <text x="60" y="230">Could be 5 out of 10.</text>
+    <text x="60" y="254">Could be 50 out of 100.</text>
+    <text x="60" y="278">Could be 500 out of 1000.</text>
+    <text x="60" y="310">You cannot tell, and the</text>
+    <text x="452" y="230">You know it was only ten tries,</text>
+    <text x="452" y="254">so the number has real wobble</text>
+    <text x="452" y="278">in it — maybe 40%, maybe 60%.</text>
+    <text x="452" y="310">You can now argue about it</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">
+    <text x="60" y="330">three are not the same news.</text>
+    <text x="452" y="330">honestly, in either direction.</text>
+  </g>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The bottom number of the fraction is the only place the amount of evidence is written down.</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The one clever line, in its two cases</title>
+  <desc>Two panels. On the left, the first Falcon: an empty dashed bucket, dot get hands back 0, add one, and the bucket now holds 1. On the right, the fourth Falcon: the bucket already holds 3, dot get hands back 3, add one, and it holds 4.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The one clever line, in its two cases</text>
+  <rect x="24" y="94" width="364" height="210" rx="12" fill="none" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="206" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">the FIRST Falcon</text>
+  <text x="206" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">we have never seen this bucket</text>
+  <rect x="61" y="160" width="76" height="60" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="99" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle" dominant-baseline="central">empty</text>
+  <text x="99" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">bucket before</text>
+  <text x="184" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">.get(b, 0)</text>
+  <line x1="141" y1="190" x2="179" y2="190" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(179 190) rotate(0.0)"/>
+  <rect x="183" y="160" width="46" height="60" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="206" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="206" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">it hands back</text>
+  <text x="274" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">+ 1</text>
+  <line x1="233" y1="190" x2="271" y2="190" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(271 190) rotate(0.0)"/>
+  <rect x="275" y="160" width="76" height="60" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="313" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="313" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">bucket after</text>
+  <text x="206" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">0 + 1 = 1</text>
+  <rect x="412" y="94" width="364" height="210" rx="12" fill="none" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="594" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">the FOURTH Falcon</text>
+  <text x="594" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the bucket already holds 3</text>
+  <rect x="449" y="160" width="76" height="60" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="487" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="487" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">bucket before</text>
+  <text x="572" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">.get(b, 0)</text>
+  <line x1="529" y1="190" x2="567" y2="190" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(567 190) rotate(0.0)"/>
+  <rect x="571" y="160" width="46" height="60" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="594" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="594" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">it hands back</text>
+  <text x="662" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">+ 1</text>
+  <line x1="621" y1="190" x2="659" y2="190" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(659 190) rotate(0.0)"/>
+  <rect x="663" y="160" width="76" height="60" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="701" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="701" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">bucket after</text>
+  <text x="594" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">3 + 1 = 4</text>
+  <text x="400" y="344" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">counts[bucket] = counts.get(bucket, 0) + 1</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">One line covers both cases, which is exactly why no if is needed.</text>
+</svg>

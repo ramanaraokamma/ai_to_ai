@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>Automation bias: the satnav and the river</title>
+  <desc>A car drives down a road that ends in a river. A satnav screen beside it confidently says continue straight for 400 metres and reports 98 percent confidence. The driver can see the water.</desc>
+  <text x="400" y="36" font-size="24" fill="#14202B" text-anchor="middle">The screen was more convincing than the windscreen</text>
+
+  <rect x="30" y="56" width="740" height="256" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+
+  <path d="M420 292 Q450 282 480 292 Q510 302 540 292 Q570 282 600 292 Q630 302 660 292 Q690 282 720 292 Q738 297 756 292 V310 H420 Z" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M60 262 H400 L470 300" fill="none" stroke="#55636F" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M80 262 H392" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="18 16" stroke-linecap="round"/>
+
+  <path d="M470 232 Q520 236 552 268" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-dasharray="8 6" stroke-linecap="round"/>
+  <polyline points="543,261 556,274 543,278" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g transform="translate(346,208)">
+    <path d="M18 20 L30 2 H62 L74 20 Z" fill="#D9EAF9" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="0" y="18" width="92" height="26" rx="9" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="22" cy="46" r="9" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <circle cx="70" cy="46" r="9" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+  </g>
+
+  <rect x="58" y="82" width="270" height="132" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="72" y="96" width="242" height="76" rx="6" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <g stroke="#6D28D9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <line x1="104" y1="152" x2="104" y2="116"/>
+    <polyline points="93,126 104,113 115,126"/>
+  </g>
+  <text x="212" y="126" font-size="18" fill="#14202B" text-anchor="middle">Continue straight</text>
+  <text x="212" y="152" font-size="18" fill="#14202B" text-anchor="middle">for 400 m</text>
+  <text x="193" y="198" font-size="14" fill="#55636F" text-anchor="middle">confidence:</text>
+  <text x="272" y="198" font-size="18" fill="#14202B" text-anchor="middle">98%</text>
+
+  <rect x="520" y="96" width="220" height="70" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="630" y="124" font-size="18" fill="#14202B" text-anchor="middle">AUTOMATION BIAS</text>
+  <text x="630" y="150" font-size="14" fill="#55636F" text-anchor="middle">trusting the machine over</text>
+  <text x="630" y="166" font-size="14" fill="#55636F" text-anchor="middle">your own eyes</text>
+
+  <text x="590" y="272" font-size="14" fill="#55636F" text-anchor="middle">this is a river</text>
+
+  <text x="400" y="342" font-size="18" fill="#14202B" text-anchor="middle">The driver had eyes, headlights, and a whole life of knowing roads do not go underwater.</text>
+  <text x="400" y="376" font-size="14" fill="#55636F" text-anchor="middle">A usually-right machine is more dangerous than a useless one, because a useless one gets ignored.</text>
+</svg>

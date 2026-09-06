@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Elimination: which feature did the tester really use</title>
+  <desc>The four cards the tester got wrong. On every one, colour and weight point at the correct answer while length points at the wrong answer the tester gave. So the tester was reading length, not colour and not weight.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="38" font-size="24" fill="#14202B" text-anchor="middle">The four wrong cards all point the same way</text>
+    <g font-size="12" fill="#55636F">
+      <text x="400" y="62" text-anchor="middle">&#10003; = this feature agrees with the guess the tester gave &#183; &#10007; = it disagrees</text>
+    </g>
+
+    <g>
+      <rect x="20" y="76" width="175" height="196" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M20 86 A10 10 0 0 1 30 76 H185 A10 10 0 0 1 195 86 V108 H20 Z" fill="#D9EAF9" stroke="none"/>
+      <line x1="20" y1="108" x2="195" y2="108" stroke="#1F6FB2" stroke-width="3"/>
+      <text x="32" y="99" font-size="14" fill="#14202B">CARD 08</text>
+      <g font-size="12" fill="#55636F"><text x="32" y="134">colour</text><text x="32" y="166">weight</text><text x="32" y="198">length</text></g>
+      <g font-size="12" fill="#14202B" text-anchor="end"><text x="145" y="134">red</text><text x="145" y="166">38 g</text><text x="145" y="198">7.0 cm</text></g>
+      <circle cx="170" cy="130" r="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+      <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="166" y1="126" x2="174" y2="134"/><line x1="174" y1="126" x2="166" y2="134"/></g>
+      <circle cx="170" cy="162" r="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+      <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="166" y1="158" x2="174" y2="166"/><line x1="174" y1="158" x2="166" y2="166"/></g>
+      <circle cx="170" cy="194" r="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+      <polyline points="165,194 169,199 176,189" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="32" y1="216" x2="183" y2="216" stroke="#C7CDD4" stroke-width="1.5"/>
+      <text x="32" y="236" font-size="12" fill="#55636F">truth: toy car</text>
+      <text x="32" y="258" font-size="12" fill="#CC2B1D">said: rubber ball</text>
+    </g>
+
+    <g>
+      <rect x="215" y="76" width="175" height="196" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M215 86 A10 10 0 0 1 225 76 H380 A10 10 0 0 1 390 86 V108 H215 Z" fill="#D9EAF9" stroke="none"/>
+      <line x1="215" y1="108" x2="390" y2="108" stroke="#1F6FB2" stroke-width="3"/>
+      <text x="227" y="99" font-size="14" fill="#14202B">CARD 09</text>
+      <g font-size="12" fill="#55636F"><text x="227" y="134">colour</text><text x="227" y="166">weight</text><text x="227" y="198">length</text></g>
+      <g font-size="12" fill="#14202B" text-anchor="end"><text x="340" y="134">blue</text><text x="340" y="166">62 g</text><text x="340" y="198">6.0 cm</text></g>
+      <circle cx="365" cy="130" r="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+      <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="361" y1="126" x2="369" y2="134"/><line x1="369" y1="126" x2="361" y2="134"/></g>
+      <circle cx="365" cy="162" r="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+      <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="361" y1="158" x2="369" y2="166"/><line x1="369" y1="158" x2="361" y2="166"/></g>
+      <circle cx="365" cy="194" r="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+      <polyline points="360,194 364,199 371,189" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="227" y1="216" x2="378" y2="216" stroke="#C7CDD4" stroke-width="1.5"/>
+      <text x="227" y="236" font-size="12" fill="#55636F">truth: rubber ball</text>
+      <text x="227" y="258" font-size="12" fill="#CC2B1D">said: toy car</text>
+    </g>
+
+    <g>
+      <rect x="410" y="76" width="175" height="196" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M410 86 A10 10 0 0 1 420 76 H575 A10 10 0 0 1 585 86 V108 H410 Z" fill="#D9EAF9" stroke="none"/>
+      <line x1="410" y1="108" x2="585" y2="108" stroke="#1F6FB2" stroke-width="3"/>
+      <text x="422" y="99" font-size="14" fill="#14202B">CARD 10</text>
+      <g font-size="12" fill="#55636F"><text x="422" y="134">colour</text><text x="422" y="166">weight</text><text x="422" y="198">length</text></g>
+      <g font-size="12" fill="#14202B" text-anchor="end"><text x="535" y="134">red</text><text x="535" y="166">152 g</text><text x="535" y="198">8.0 cm</text></g>
+      <circle cx="560" cy="130" r="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+      <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="556" y1="126" x2="564" y2="134"/><line x1="564" y1="126" x2="556" y2="134"/></g>
+      <circle cx="560" cy="162" r="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+      <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="556" y1="158" x2="564" y2="166"/><line x1="564" y1="158" x2="556" y2="166"/></g>
+      <circle cx="560" cy="194" r="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+      <polyline points="555,194 559,199 566,189" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="422" y1="216" x2="573" y2="216" stroke="#C7CDD4" stroke-width="1.5"/>
+      <text x="422" y="236" font-size="12" fill="#55636F">truth: apple</text>
+      <text x="422" y="258" font-size="12" fill="#CC2B1D">said: lemon</text>
+    </g>
+
+    <g>
+      <rect x="605" y="76" width="175" height="196" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M605 86 A10 10 0 0 1 615 76 H770 A10 10 0 0 1 780 86 V108 H605 Z" fill="#D9EAF9" stroke="none"/>
+      <line x1="605" y1="108" x2="780" y2="108" stroke="#1F6FB2" stroke-width="3"/>
+      <text x="617" y="99" font-size="14" fill="#14202B">CARD 12</text>
+      <g font-size="12" fill="#55636F"><text x="617" y="134">colour</text><text x="617" y="166">weight</text><text x="617" y="198">length</text></g>
+      <g font-size="12" fill="#14202B" text-anchor="end"><text x="730" y="134">yellow</text><text x="730" y="166">96 g</text><text x="730" y="198">7.5 cm</text></g>
+      <circle cx="755" cy="130" r="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+      <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="751" y1="126" x2="759" y2="134"/><line x1="759" y1="126" x2="751" y2="134"/></g>
+      <circle cx="755" cy="162" r="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+      <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="751" y1="158" x2="759" y2="166"/><line x1="759" y1="158" x2="751" y2="166"/></g>
+      <circle cx="755" cy="194" r="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+      <polyline points="750,194 754,199 761,189" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="617" y1="216" x2="768" y2="216" stroke="#C7CDD4" stroke-width="1.5"/>
+      <text x="617" y="236" font-size="12" fill="#55636F">truth: lemon</text>
+      <text x="617" y="258" font-size="12" fill="#CC2B1D">said: apple</text>
+    </g>
+
+    <rect x="20" y="292" width="760" height="60" rx="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+    <text x="400" y="316" font-size="16" fill="#14202B" text-anchor="middle" dominant-baseline="central">colour would have been right 4 times &#183; weight would have been right 4 times &#183; length was wrong 4 times</text>
+    <text x="400" y="338" font-size="16" fill="#14202B" text-anchor="middle" dominant-baseline="central">So the tester was reading LENGTH and ignoring the other two.</text>
+
+    <text x="400" y="382" font-size="14" fill="#55636F" text-anchor="middle">You never had to ask them. The cards they got wrong tell you.</text>
+  </g>
+</svg>

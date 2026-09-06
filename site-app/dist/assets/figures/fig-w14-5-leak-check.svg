@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Three candidate features and the leak check</title>
+  <desc>Three candidate features side by side. A measured weight in grams is allowed. A bucketed weight band is allowed but loses detail. A feature saying what the object is used for is banned because it hands over the answer.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="40" font-size="24" fill="#14202B" text-anchor="middle">Allowed, allowed-but-blunt, and banned</text>
+
+    <rect x="20" y="70" width="240" height="200" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <g transform="translate(196,84) scale(0.44)">
+      <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="44" y="112" font-size="18" fill="#14202B">ALLOWED</text>
+    <rect x="44" y="132" width="192" height="46" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <text x="140" y="155" font-size="16" fill="#14202B" text-anchor="middle" dominant-baseline="central">weight_g : 38</text>
+    <g font-size="14" fill="#14202B">
+      <text x="44" y="204">A measurement.</text>
+      <text x="44" y="226">Anyone with a scale</text>
+      <text x="44" y="248">gets the same number.</text>
+    </g>
+
+    <rect x="280" y="70" width="240" height="200" rx="12" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <g transform="translate(456,84) scale(0.44)">
+      <circle cx="50" cy="50" r="34" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+      <line x1="50" y1="30" x2="50" y2="56" stroke="#845F00" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="50" cy="70" r="4" fill="#845F00"/>
+    </g>
+    <text x="304" y="112" font-size="18" fill="#14202B">ALLOWED, BLUNT</text>
+    <rect x="304" y="132" width="192" height="46" rx="8" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <text x="400" y="155" font-size="16" fill="#14202B" text-anchor="middle" dominant-baseline="central">weight_band : light</text>
+    <g font-size="14" fill="#14202B">
+      <text x="304" y="204">Bucketed. Easier to</text>
+      <text x="304" y="226">read, but 38 g and</text>
+      <text x="304" y="248">5 g now look the same.</text>
+    </g>
+
+    <rect x="540" y="70" width="240" height="200" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+    <g transform="translate(716,84) scale(0.44)">
+      <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+      <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+        <line x1="38" y1="38" x2="62" y2="62"/>
+        <line x1="62" y1="38" x2="38" y2="62"/>
+      </g>
+    </g>
+    <text x="564" y="112" font-size="18" fill="#14202B">BANNED</text>
+    <rect x="564" y="132" width="192" height="46" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+    <text x="660" y="148" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">used_for_writing</text>
+    <text x="660" y="166" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">: yes</text>
+    <g font-size="14" fill="#14202B">
+      <text x="564" y="204">This is the answer in</text>
+      <text x="564" y="226">disguise. It says what</text>
+      <text x="564" y="248">the object IS.</text>
+    </g>
+
+    <rect x="20" y="292" width="760" height="58" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+    <text x="400" y="313" font-size="16" fill="#14202B" text-anchor="middle" dominant-baseline="central">THE THREE-SECOND TEST: read the feature out loud.</text>
+    <text x="400" y="335" font-size="16" fill="#14202B" text-anchor="middle" dominant-baseline="central">If someone could name the object from that one line, it is banned.</text>
+
+    <text x="400" y="382" font-size="14" fill="#55636F" text-anchor="middle">A deck with one banned feature scores brilliantly and proves nothing.</text>
+  </g>
+</svg>

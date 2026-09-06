@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>A false reject at the school gate</title>
+  <desc>A student stands in front of a face scanner saying I am right here. The scanner screen shows a cross and the words no match. The class register beside it has marked that student absent.</desc>
+  <text x="400" y="36" font-size="24" fill="#14202B" text-anchor="middle">A false reject: present, and marked absent</text>
+
+  <rect x="30" y="58" width="740" height="242" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+
+  <path d="M120 116 L132 138 L146 116 Z" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="62" y="72" width="170" height="46" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="147" y="101" font-size="18" fill="#14202B" text-anchor="middle">I am right here.</text>
+
+  <g transform="translate(70,150) scale(1.2)">
+    <circle cx="50" cy="52" r="30" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+    <path d="M20 44 A30 30 0 0 1 80 44 A34 22 0 0 0 20 44 Z" fill="#845F00" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="40" cy="50" r="4" fill="#14202B"/>
+    <circle cx="60" cy="50" r="4" fill="#14202B"/>
+    <path d="M39 63 Q50 72 61 63" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <line x1="500" y1="180" x2="536" y2="180" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="530,173 542,180 530,187" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="330" y="106" width="160" height="152" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="346" y="122" width="128" height="90" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="410" cy="156" r="17" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3"/>
+  <g stroke="#CC2B1D" stroke-width="4" stroke-linecap="round">
+    <line x1="403" y1="149" x2="417" y2="163"/>
+    <line x1="417" y1="149" x2="403" y2="163"/>
+  </g>
+  <text x="410" y="200" font-size="14" fill="#14202B" text-anchor="middle">NO MATCH</text>
+  <circle cx="410" cy="234" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="410" y="280" font-size="14" fill="#55636F" text-anchor="middle">face scanner</text>
+
+  <rect x="566" y="100" width="192" height="172" rx="12" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M566 112 A12 12 0 0 1 578 100 H746 A12 12 0 0 1 758 112 V134 H566 Z" fill="#D9EAF9" stroke="none"/>
+  <line x1="566" y1="134" x2="758" y2="134" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="662" y="124" font-size="18" fill="#14202B" text-anchor="middle">Class register</text>
+  <rect x="574" y="196" width="176" height="32" rx="6" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <g font-size="18" fill="#14202B">
+    <text x="618" y="166">Arun</text>
+    <text x="618" y="218">Priya</text>
+    <text x="618" y="252">Sam</text>
+  </g>
+  <g stroke="#1B7A4B" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="590,160 596,167 606,153"/>
+    <polyline points="590,246 596,253 606,239"/>
+  </g>
+  <g stroke="#CC2B1D" stroke-width="4" stroke-linecap="round">
+    <line x1="590" y1="205" x2="604" y2="219"/>
+    <line x1="604" y1="205" x2="590" y2="219"/>
+  </g>
+  <text x="744" y="218" font-size="14" fill="#14202B" text-anchor="end">ABSENT</text>
+
+  <g stroke="#C42B8C" stroke-width="2" fill="none">
+    <path d="M130 268 V308"/>
+    <path d="M410 292 V308"/>
+    <path d="M662 280 V308"/>
+  </g>
+  <g>
+    <circle cx="130" cy="322" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <circle cx="410" cy="322" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <circle cx="662" cy="322" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  </g>
+  <g font-size="14" fill="#14202B" text-anchor="middle">
+    <text x="130" y="327">1</text>
+    <text x="410" y="327">2</text>
+    <text x="662" y="327">3</text>
+  </g>
+  <g font-size="14" fill="#55636F" text-anchor="middle">
+    <text x="130" y="358">She is standing right there</text>
+    <text x="410" y="358">The scanner fails to match her</text>
+    <text x="662" y="358">The register says absent</text>
+  </g>
+  <text x="400" y="386" font-size="14" fill="#55636F" text-anchor="middle">Now she has to prove she was present, to a machine that is right most of the time.</text>
+</svg>

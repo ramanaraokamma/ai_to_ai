@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>What a photo file carries besides the picture</title>
+  <desc>On the left a single photo of a sun over a hill. On the right a panel listing the hidden information stored inside the same file: the time it was taken, the device, the exact location, the camera settings and whether it was edited.</desc>
+  <text x="400" y="36" font-size="24" fill="#14202B" text-anchor="middle">You shared one thing. You gave away six.</text>
+
+  <path d="M258 176 H340" fill="none" stroke="#C42B8C" stroke-width="3" stroke-dasharray="8 6" stroke-linecap="round"/>
+  <polyline points="334,169 346,176 334,183" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="302" y="160" font-size="12" fill="#55636F" text-anchor="middle">open the</text>
+  <text x="302" y="204" font-size="12" fill="#55636F" text-anchor="middle">file details</text>
+
+  <rect x="46" y="90" width="212" height="212" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="64" y="108" width="176" height="132" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="106" cy="146" r="18" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+  <path d="M64 240 L112 190 L146 220 L176 196 L240 240 Z" fill="#1F6FB2" stroke="none"/>
+  <rect x="64" y="108" width="176" height="132" rx="6" fill="none" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="152" y="272" font-size="14" fill="#55636F" text-anchor="middle">beach.jpg</text>
+  <text x="152" y="292" font-size="12" fill="#55636F" text-anchor="middle">what you think you sent</text>
+
+  <rect x="356" y="66" width="414" height="256" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M356 78 A12 12 0 0 1 368 66 H758 A12 12 0 0 1 770 78 V104 H356 Z" fill="#F5F8FA" stroke="none"/>
+  <line x1="356" y1="104" x2="770" y2="104" stroke="#14202B" stroke-width="3"/>
+  <text x="563" y="93" font-size="18" fill="#14202B" text-anchor="middle">ALSO INSIDE THE SAME FILE</text>
+
+  <rect x="366" y="188" width="394" height="34" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <g font-size="18" fill="#14202B">
+    <text x="378" y="134">Taken: 14 August 2026, 4:12 pm</text>
+    <text x="378" y="170">Device: iPhone, rear camera</text>
+    <text x="378" y="211">Location: 12.9716 N, 77.5946 E</text>
+    <text x="378" y="248">Settings: flash off, zoom 1.0x</text>
+    <text x="378" y="282">Edited: yes, 15 August 2026</text>
+    <text x="378" y="312">Owner name: R. Kumar</text>
+  </g>
+
+  <text x="400" y="368" font-size="14" fill="#55636F" text-anchor="middle">Metadata: the hidden notes a file keeps about itself. The location line is a street address.</text>
+</svg>

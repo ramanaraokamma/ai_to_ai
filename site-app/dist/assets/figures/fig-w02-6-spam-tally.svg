@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Counting is the whole trick</title>
+  <desc>A table of three clues counted across six labelled text messages. The word FREE appears in three of three spam and none of the not-spam, and is useful. Three exclamation marks scores the same. The word you appears in one spam and two not-spam, and is not useful.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="44" font-size="24" fill="#14202B" text-anchor="middle">Counting is the whole trick</text>
+    <rect x="60" y="92" width="680" height="228" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <path d="M60 102 A10 10 0 0 1 70 92 H730 A10 10 0 0 1 740 102 V140 H60 Z" fill="#D9EAF9" stroke="none"/>
+    <g stroke="#C7CDD4" stroke-width="1.5">
+      <line x1="60" y1="200" x2="740" y2="200"/>
+      <line x1="60" y1="260" x2="740" y2="260"/>
+      <line x1="270" y1="140" x2="270" y2="320"/>
+      <line x1="470" y1="140" x2="470" y2="320"/>
+      <line x1="630" y1="140" x2="630" y2="320"/>
+    </g>
+    <line x1="60" y1="140" x2="740" y2="140" stroke="#14202B" stroke-width="3"/>
+    <g font-size="14" fill="#14202B" text-anchor="middle">
+      <text x="165" y="122">Clue we counted</text>
+      <text x="370" y="122">In the 3 spam</text>
+      <text x="550" y="122">In the 3 not-spam</text>
+      <text x="685" y="122">Useful?</text>
+    </g>
+
+    <text x="80" y="176" font-size="18" fill="#14202B">the word FREE</text>
+    <g>
+      <circle cx="320" cy="163" r="9" fill="#1F6FB2" stroke="#1F6FB2" stroke-width="2"/>
+      <circle cx="350" cy="163" r="9" fill="#1F6FB2" stroke="#1F6FB2" stroke-width="2"/>
+      <circle cx="380" cy="163" r="9" fill="#1F6FB2" stroke="#1F6FB2" stroke-width="2"/>
+      <text x="370" y="190" font-size="14" fill="#55636F" text-anchor="middle">3 of 3</text>
+      <circle cx="500" cy="163" r="9" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+      <circle cx="530" cy="163" r="9" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+      <circle cx="560" cy="163" r="9" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+      <text x="550" y="190" font-size="14" fill="#55636F" text-anchor="middle">0 of 3</text>
+    </g>
+    <g transform="translate(665,150) scale(0.4)">
+      <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <text x="80" y="236" font-size="18" fill="#14202B">three !!! in a row</text>
+    <g>
+      <circle cx="320" cy="223" r="9" fill="#1F6FB2" stroke="#1F6FB2" stroke-width="2"/>
+      <circle cx="350" cy="223" r="9" fill="#1F6FB2" stroke="#1F6FB2" stroke-width="2"/>
+      <circle cx="380" cy="223" r="9" fill="#1F6FB2" stroke="#1F6FB2" stroke-width="2"/>
+      <text x="370" y="250" font-size="14" fill="#55636F" text-anchor="middle">3 of 3</text>
+      <circle cx="500" cy="223" r="9" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+      <circle cx="530" cy="223" r="9" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+      <circle cx="560" cy="223" r="9" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+      <text x="550" y="250" font-size="14" fill="#55636F" text-anchor="middle">0 of 3</text>
+    </g>
+    <g transform="translate(665,210) scale(0.4)">
+      <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <text x="80" y="296" font-size="18" fill="#14202B">the word you</text>
+    <g>
+      <circle cx="320" cy="283" r="9" fill="#1F6FB2" stroke="#1F6FB2" stroke-width="2"/>
+      <circle cx="350" cy="283" r="9" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+      <circle cx="380" cy="283" r="9" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+      <text x="370" y="310" font-size="14" fill="#55636F" text-anchor="middle">1 of 3</text>
+      <circle cx="500" cy="283" r="9" fill="#1F6FB2" stroke="#1F6FB2" stroke-width="2"/>
+      <circle cx="530" cy="283" r="9" fill="#1F6FB2" stroke="#1F6FB2" stroke-width="2"/>
+      <circle cx="560" cy="283" r="9" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+      <text x="550" y="310" font-size="14" fill="#55636F" text-anchor="middle">2 of 3</text>
+    </g>
+    <g transform="translate(665,270) scale(0.4)">
+      <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+      <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+        <line x1="38" y1="38" x2="62" y2="62"/>
+        <line x1="62" y1="38" x2="38" y2="62"/>
+      </g>
+    </g>
+    <text x="400" y="358" font-size="14" fill="#55636F" text-anchor="middle">A filled dot means the clue was in that message. Nobody chose these clues. The counting chose them.</text>
+  </g>
+</svg>

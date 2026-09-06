@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Running the vending machine rulebook by hand</title>
+  <desc>The board at the end of the worked example. At the top is the vending machine price and stock list. In the middle are five numbered if-then rules. At the bottom, request number five, code B2 with sixty pence inserted, is traced down the rules: rules one to four do not fire and rule five fires, so the machine drops the juice and returns ten pence.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="250" y="34" font-size="24" fill="#14202B" text-anchor="middle">Be the computer: trace the rulebook</text>
+
+    <rect x="30" y="52" width="440" height="140" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M30 62 A10 10 0 0 1 40 52 H460 A10 10 0 0 1 470 62 V84 H30 Z" fill="#D9EAF9" stroke="none"/>
+    <line x1="30" y1="84" x2="470" y2="84" stroke="#1F6FB2" stroke-width="3"/>
+    <g stroke="#C7CDD4" stroke-width="1.5">
+      <line x1="30" y1="111" x2="470" y2="111"/>
+      <line x1="30" y1="138" x2="470" y2="138"/>
+      <line x1="30" y1="165" x2="470" y2="165"/>
+      <line x1="120" y1="84" x2="120" y2="192"/>
+      <line x1="290" y1="84" x2="290" y2="192"/>
+      <line x1="382" y1="84" x2="382" y2="192"/>
+    </g>
+    <g font-size="14" fill="#14202B">
+      <text x="46" y="74">CODE</text><text x="136" y="74">ITEM</text><text x="306" y="74">PRICE</text><text x="398" y="74">STOCK</text>
+      <text x="46" y="103">A1</text><text x="136" y="103">Crisps</text><text x="306" y="103">30p</text><text x="398" y="103">4</text>
+      <text x="46" y="130">A2</text><text x="136" y="130">Chocolate</text><text x="306" y="130">45p</text><text x="398" y="130">0</text>
+      <text x="46" y="157">B1</text><text x="136" y="157">Water</text><text x="306" y="157">25p</text><text x="398" y="157">6</text>
+      <text x="46" y="184">B2</text><text x="136" y="184">Juice</text><text x="306" y="184">50p</text><text x="398" y="184">2</text>
+    </g>
+
+    <rect x="30" y="212" width="440" height="176" rx="10" fill="#F5F8FA" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <text x="46" y="238" font-size="14" fill="#845F00">THE RULEBOOK — check in order, stop at the first that fires</text>
+    <g font-size="14" fill="#14202B">
+      <text x="46" y="266">R1  code not on the list  &#8594;  UNKNOWN CODE, return coins</text>
+      <text x="46" y="292">R2  stock is 0  &#8594;  SOLD OUT, return coins</text>
+      <text x="46" y="318">R3  coins &lt; price  &#8594;  ADD MORE, wait</text>
+      <text x="46" y="344">R4  coins = price  &#8594;  drop the item</text>
+      <text x="46" y="370">R5  coins &gt; price  &#8594;  drop the item, return the change</text>
+    </g>
+
+    <rect x="30" y="408" width="440" height="46" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+    <text x="250" y="431" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">Request 5:  code B2,  60p inserted</text>
+
+    <g font-size="14" fill="#14202B">
+      <g transform="translate(46,470)">
+        <circle cx="12" cy="12" r="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2.5"/>
+        <g stroke="#CC2B1D" stroke-width="4" stroke-linecap="round"><line x1="7" y1="7" x2="17" y2="17"/><line x1="17" y1="7" x2="7" y2="17"/></g>
+      </g>
+      <text x="82" y="487">R1  Is B2 on the list?  Yes  &#8594;  does not fire</text>
+      <g transform="translate(46,504)">
+        <circle cx="12" cy="12" r="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2.5"/>
+        <g stroke="#CC2B1D" stroke-width="4" stroke-linecap="round"><line x1="7" y1="7" x2="17" y2="17"/><line x1="17" y1="7" x2="7" y2="17"/></g>
+      </g>
+      <text x="82" y="521">R2  Stock of B2 is 2, not 0  &#8594;  does not fire</text>
+      <g transform="translate(46,538)">
+        <circle cx="12" cy="12" r="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2.5"/>
+        <g stroke="#CC2B1D" stroke-width="4" stroke-linecap="round"><line x1="7" y1="7" x2="17" y2="17"/><line x1="17" y1="7" x2="7" y2="17"/></g>
+      </g>
+      <text x="82" y="555">R3  Is 60 &lt; 50?  No  &#8594;  does not fire</text>
+      <g transform="translate(46,572)">
+        <circle cx="12" cy="12" r="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2.5"/>
+        <g stroke="#CC2B1D" stroke-width="4" stroke-linecap="round"><line x1="7" y1="7" x2="17" y2="17"/><line x1="17" y1="7" x2="7" y2="17"/></g>
+      </g>
+      <text x="82" y="589">R4  Is 60 = 50?  No  &#8594;  does not fire</text>
+      <g transform="translate(46,606)">
+        <circle cx="12" cy="12" r="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2.5"/>
+        <polyline points="6,12 10,17 18,7" fill="none" stroke="#1B7A4B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <text x="82" y="623">R5  Is 60 &gt; 50?  YES  &#8594;  FIRES</text>
+    </g>
+
+    <rect x="30" y="638" width="440" height="34" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <text x="250" y="655" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Output: drop the juice, return 10p change</text>
+    <text x="250" y="690" font-size="14" fill="#55636F" text-anchor="middle">You can always point at the exact line that caused the answer.</text>
+  </g>
+</svg>

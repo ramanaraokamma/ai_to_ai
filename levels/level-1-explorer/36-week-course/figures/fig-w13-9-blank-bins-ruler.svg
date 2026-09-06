@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Blank bins and ruler to label</title>
+  <desc>An unlabelled diagram to write on. On the left, three empty bins with an empty label box above them and a blank line beneath. On the right, a bare ruler with two pins on it, an empty label box above and two blank lines beneath for the gap and its name.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Label this diagram yourself</text>
+  <line x1="400" y1="66" x2="400" y2="340" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <rect x="60" y="72" width="280" height="40" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="70" y="97" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">A. name this kind of task</text>
+
+  <rect x="60" y="140" width="80" height="80" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="160" y="140" width="80" height="80" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="260" y="140" width="80" height="80" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="200" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">B. three or more boxes has its own name. Write it:</text>
+  <line x1="80" y1="284" x2="320" y2="284" stroke="#55636F" stroke-width="1.5"/>
+
+  <rect x="460" y="72" width="280" height="40" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="470" y="97" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">C. name this kind of task</text>
+
+  <line x1="470" y1="180" x2="740" y2="180" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <g stroke="#55636F" stroke-width="2" stroke-linecap="round">
+    <line x1="470" y1="173" x2="470" y2="187"/>
+    <line x1="537" y1="173" x2="537" y2="187"/>
+    <line x1="604" y1="173" x2="604" y2="187"/>
+    <line x1="671" y1="173" x2="671" y2="187"/>
+    <line x1="738" y1="173" x2="738" y2="187"/>
+  </g>
+  <circle cx="560" cy="180" r="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <circle cx="640" cy="180" r="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="560" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">guess</text>
+  <text x="640" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">truth</text>
+  <g stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="5 5">
+    <line x1="560" y1="192" x2="560" y2="222"/>
+    <line x1="640" y1="192" x2="640" y2="222"/>
+  </g>
+  <line x1="560" y1="222" x2="640" y2="222" stroke="#55636F" stroke-width="1.5"/>
+  <text x="600" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">D. this gap has a name. Write it:</text>
+  <line x1="480" y1="284" x2="720" y2="284" stroke="#55636F" stroke-width="1.5"/>
+
+  <text x="200" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">E. write one real task that belongs here:</text>
+  <text x="600" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">F. write one real task that belongs here:</text>
+  <line x1="60" y1="352" x2="340" y2="352" stroke="#55636F" stroke-width="1.5"/>
+  <line x1="460" y1="352" x2="740" y2="352" stroke="#55636F" stroke-width="1.5"/>
+</svg>

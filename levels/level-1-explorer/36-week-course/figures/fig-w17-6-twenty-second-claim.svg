@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Twenty seconds from photos to a working model</title>
+  <desc>Three stages left to right. A stack of one hundred and twenty photos, then a machine labelled Train Model taking about twenty seconds, then a screen showing three confidence bars. Below, a board with a line for your prediction and a line for the actual time.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="42" font-size="24" fill="#14202B" text-anchor="middle">Twenty seconds from photos to a working model</text>
+
+    <g transform="translate(250,160) scale(0.5)">
+      <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+      <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(505,160) scale(0.5)">
+      <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+      <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <rect x="40" y="72" width="200" height="200" rx="12" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <g transform="translate(90,96)">
+      <g transform="rotate(-11 50 54) translate(-5 -7)">
+        <rect x="24" y="26" width="52" height="52" rx="7" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      </g>
+      <g transform="rotate(7 50 54) translate(6 -4)">
+        <rect x="24" y="26" width="52" height="52" rx="7" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      </g>
+      <rect x="24" y="26" width="52" height="52" rx="7" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="30" y="32" width="40" height="30" rx="4" fill="#D9EAF9" stroke="none"/>
+      <circle cx="42" cy="42" r="5" fill="#E8C671" stroke="#845F00" stroke-width="2"/>
+      <path d="M30 62 L44 50 L54 58 L62 52 L70 62 Z" fill="#1F6FB2" stroke="none"/>
+      <rect x="30" y="32" width="40" height="30" rx="4" fill="none" stroke="#1F6FB2" stroke-width="2"/>
+      <line x1="32" y1="70" x2="56" y2="70" stroke="#55636F" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <text x="140" y="226" font-size="18" fill="#14202B" text-anchor="middle">your 120 photos</text>
+    <text x="140" y="252" font-size="14" fill="#55636F" text-anchor="middle">40 per class</text>
+
+    <rect x="300" y="72" width="200" height="200" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <g transform="translate(330,104)">
+      <line x1="2" y1="48" x2="14" y2="48" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+      <polyline points="10,42 18,48 10,54" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="122" y1="48" x2="132" y2="48" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round"/>
+      <polyline points="128,42 136,48 128,54" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="28" y="14" width="84" height="72" rx="12" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="18" y="38" width="14" height="20" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="108" y="38" width="14" height="20" rx="4" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="70" cy="50" r="14" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+      <circle cx="70" cy="50" r="5" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2.5"/>
+    </g>
+    <text x="400" y="226" font-size="18" fill="#14202B" text-anchor="middle">press Train Model</text>
+    <text x="400" y="252" font-size="14" fill="#55636F" text-anchor="middle">about 20 seconds</text>
+
+    <rect x="560" y="72" width="200" height="200" rx="12" fill="#FFFFFF" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="582" y="112" width="140" height="20" rx="6" fill="#6D28D9"/>
+    <rect x="582" y="144" width="34" height="20" rx="6" fill="#55636F"/>
+    <rect x="582" y="176" width="26" height="20" rx="6" fill="#55636F"/>
+    <g font-size="12" fill="#14202B">
+      <text x="728" y="127">91</text>
+      <text x="622" y="159">5</text>
+      <text x="614" y="191">4</text>
+    </g>
+    <text x="660" y="226" font-size="18" fill="#14202B" text-anchor="middle">a working model</text>
+    <text x="660" y="252" font-size="14" fill="#55636F" text-anchor="middle">no code, not one line</text>
+
+    <rect x="140" y="288" width="520" height="62" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <text x="162" y="312" font-size="18" fill="#14202B">MY PREDICTION:  ______ seconds</text>
+    <text x="162" y="340" font-size="18" fill="#14202B">ACTUAL:                ______ seconds</text>
+
+    <text x="400" y="378" font-size="14" fill="#55636F" text-anchor="middle">Write the prediction before you press the button. Always.</text>
+  </g>
+</svg>

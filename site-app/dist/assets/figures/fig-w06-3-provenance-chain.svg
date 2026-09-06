@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The provenance chain, with one link broken</title>
+  <desc>Five stages left to right: person, notebook, spreadsheet, model, decision. The link between person and notebook is broken and marked unknown with a red cross, so nobody can say who the data came from.</desc>
+  <text x="400" y="34" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Every number came from a person. Can you name them?</text>
+
+  <g stroke="#14202B" stroke-width="3" stroke-linecap="round">
+    <line x1="148" y1="180" x2="163" y2="180"/>
+    <line x1="193" y1="180" x2="204" y2="180"/>
+  </g>
+  <polyline points="198,174 206,180 198,186" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(161,163) scale(0.34)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+      <line x1="38" y1="38" x2="62" y2="62"/>
+      <line x1="62" y1="38" x2="38" y2="62"/>
+    </g>
+  </g>
+  <line x1="178" y1="152" x2="178" y2="160" stroke="#CC2B1D" stroke-width="1.5"/>
+  <text x="178" y="144" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D" text-anchor="middle">unknown</text>
+
+  <g transform="translate(336,176) scale(0.2)">
+    <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(484,176) scale(0.2)">
+    <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(632,176) scale(0.2)">
+    <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <rect x="20" y="108" width="128" height="144" rx="12" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="208" y="108" width="128" height="144" rx="12" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="356" y="108" width="128" height="144" rx="12" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="504" y="108" width="128" height="144" rx="12" fill="#FFFFFF" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="652" y="108" width="128" height="144" rx="12" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+
+  <g transform="translate(51,124) scale(0.66)">
+    <circle cx="50" cy="52" r="30" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+    <path d="M20 44 A30 30 0 0 1 80 44 A34 22 0 0 0 20 44 Z" fill="#845F00" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="40" cy="50" r="4" fill="#14202B"/>
+    <circle cx="60" cy="50" r="4" fill="#14202B"/>
+    <path d="M39 63 Q50 72 61 63" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(239,124) scale(0.66)">
+    <path d="M12 12 H88 V68 L68 88 H12 Z" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M68 88 V68 H88 Z" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <g stroke="#55636F" stroke-width="3" stroke-linecap="round">
+      <line x1="24" y1="30" x2="76" y2="30"/>
+      <line x1="24" y1="43" x2="76" y2="43"/>
+      <line x1="24" y1="56" x2="60" y2="56"/>
+    </g>
+  </g>
+  <g transform="translate(387,124) scale(0.66)">
+    <rect x="8" y="16" width="84" height="68" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M8 24 A8 8 0 0 1 16 16 H84 A8 8 0 0 1 92 24 V38 H8 Z" fill="#D9EAF9" stroke="none"/>
+    <g stroke="#C7CDD4" stroke-width="1.5">
+      <line x1="8" y1="61" x2="92" y2="61"/>
+      <line x1="36" y1="38" x2="36" y2="84"/>
+      <line x1="64" y1="38" x2="64" y2="84"/>
+    </g>
+    <line x1="8" y1="38" x2="92" y2="38" stroke="#1F6FB2" stroke-width="3"/>
+    <rect x="8" y="16" width="84" height="68" rx="8" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <g fill="#55636F">
+      <rect x="15" y="24" width="14" height="5" rx="2.5"/><rect x="43" y="24" width="14" height="5" rx="2.5"/><rect x="71" y="24" width="14" height="5" rx="2.5"/>
+      <rect x="15" y="47" width="14" height="5" rx="2.5"/><rect x="43" y="47" width="14" height="5" rx="2.5"/><rect x="71" y="47" width="14" height="5" rx="2.5"/>
+      <rect x="15" y="70" width="14" height="5" rx="2.5"/><rect x="43" y="70" width="14" height="5" rx="2.5"/><rect x="71" y="70" width="14" height="5" rx="2.5"/>
+    </g>
+  </g>
+  <g transform="translate(535,124) scale(0.66)">
+    <path d="M50 14 C34 14 24 24 24 36 C13 41 12 55 22 62 C22 76 34 87 50 87 C66 87 78 76 78 62 C88 55 87 41 76 36 C76 24 66 14 50 14 Z"
+          fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+    <line x1="50" y1="15" x2="50" y2="86" stroke="#6D28D9" stroke-width="3" stroke-linecap="round"/>
+    <g fill="none" stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round">
+      <path d="M37 28 C45 33 45 43 37 47"/>
+      <path d="M63 28 C55 33 55 43 63 47"/>
+      <path d="M35 57 C45 61 45 71 37 75"/>
+      <path d="M65 57 C55 61 55 71 63 75"/>
+    </g>
+  </g>
+  <g transform="translate(683,124) scale(0.66)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">
+    <text x="84" y="216">1. Person</text>
+    <text x="272" y="216">2. Notebook</text>
+    <text x="420" y="216">3. Spreadsheet</text>
+    <text x="568" y="216">4. Model</text>
+    <text x="716" y="216">5. Decision</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">
+    <text x="84" y="238">who were they?</text>
+    <text x="272" y="238">wrote it down</text>
+    <text x="420" y="238">typed it up</text>
+    <text x="568" y="238">learned from it</text>
+    <text x="716" y="238">changes a real life</text>
+  </g>
+
+  <rect x="20" y="278" width="760" height="66" rx="10" fill="#F5F8FA" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="400" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Break any link and every box to the right of it inherits the mystery.</text>
+  <text x="400" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The model is not broken. You simply cannot say who the answer is about.</text>
+
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Writing &#8220;unknown&#8221; on a data card is not failure. Pretending you know is.</text>
+</svg>

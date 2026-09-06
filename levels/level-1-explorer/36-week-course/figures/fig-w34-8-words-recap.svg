@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Week 34 words, drawn</title>
+  <desc>Five small tiles: a sealed envelope for held-out set, four boxes with one shaded for baseline, three forms of one score for accuracy three ways, a four by four grid for confusion matrix, and a sticky note for data card.</desc>
+  <text x="400" y="38" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Five old words doing today's work</text>
+  <rect x="24" y="60" width="240" height="150" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="280" y="60" width="240" height="150" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="536" y="60" width="240" height="150" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="152" y="228" width="240" height="150" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="408" y="228" width="240" height="150" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <g transform="translate(100,80)">
+    <rect x="0" y="0" width="88" height="60" rx="6" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <polyline points="0,0 44,34 88,0" fill="none" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="44" cy="40" r="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  </g>
+  <text x="144" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">held-out set</text>
+  <text x="144" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">hidden before training</text>
+  <g transform="translate(322,86)">
+    <rect x="0" y="0" width="38" height="38" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="48" y="0" width="38" height="38" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="96" y="0" width="38" height="38" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="144" y="0" width="38" height="38" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <text x="19" y="26" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">1</text>
+    <text x="91" y="62" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">1 in 4 = 25%</text>
+  </g>
+  <text x="400" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">baseline</text>
+  <text x="400" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">what guessing scores</text>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#1F6FB2" text-anchor="middle">
+    <text x="656" y="98">30 / 40</text>
+    <text x="656" y="124">0.75</text>
+    <text x="656" y="150">75%</text>
+  </g>
+  <text x="656" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">accuracy three ways</text>
+  <text x="656" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">fraction, decimal, percent</text>
+  <g transform="translate(236,246)">
+    <g stroke="#6D28D9" stroke-width="2" fill="#FFFFFF">
+      <rect x="0" y="0" width="19" height="19"/><rect x="19" y="0" width="19" height="19"/><rect x="38" y="0" width="19" height="19"/><rect x="57" y="0" width="19" height="19"/>
+      <rect x="0" y="19" width="19" height="19"/><rect x="19" y="19" width="19" height="19"/><rect x="38" y="19" width="19" height="19"/><rect x="57" y="19" width="19" height="19"/>
+      <rect x="0" y="38" width="19" height="19"/><rect x="19" y="38" width="19" height="19"/><rect x="38" y="38" width="19" height="19"/><rect x="57" y="38" width="19" height="19"/>
+      <rect x="0" y="57" width="19" height="19"/><rect x="19" y="57" width="19" height="19"/><rect x="38" y="57" width="19" height="19"/><rect x="57" y="57" width="19" height="19"/>
+    </g>
+    <g fill="#DBCEF3" stroke="#6D28D9" stroke-width="2">
+      <rect x="0" y="0" width="19" height="19"/><rect x="19" y="19" width="19" height="19"/><rect x="38" y="38" width="19" height="19"/><rect x="57" y="57" width="19" height="19"/>
+    </g>
+  </g>
+  <text x="272" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">confusion matrix</text>
+  <text x="272" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">shaded = it got it right</text>
+  <g transform="translate(492,242) scale(0.9)">
+    <path d="M12 12 H88 V68 L68 88 H12 Z" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M68 88 V68 H88 Z" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <g stroke="#55636F" stroke-width="3" stroke-linecap="round">
+      <line x1="24" y1="30" x2="76" y2="30"/>
+      <line x1="24" y1="43" x2="76" y2="43"/>
+      <line x1="24" y1="56" x2="60" y2="56"/>
+    </g>
+  </g>
+  <text x="528" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">data card</text>
+  <text x="528" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">where the photos came from</text>
+</svg>

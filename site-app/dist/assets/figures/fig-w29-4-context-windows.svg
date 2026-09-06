@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>How far back can it see?</title>
+  <desc>Two strips of word cells. The bigram model can see only the single cell before the guess. The big model can see a long unbroken bar of about one hundred thousand words. Two boxes below say more memory fixes forgetting and loops but does not fix truth.</desc>
+<text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">How far back can it see?</text>
+<text x="60" y="86" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B">Your tally table (a bigram)</text>
+<rect x="60" y="100" width="52" height="26" rx="5" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="118" y="100" width="52" height="26" rx="5" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="176" y="100" width="52" height="26" rx="5" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="234" y="100" width="52" height="26" rx="5" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="292" y="100" width="52" height="26" rx="5" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="350" y="100" width="52" height="26" rx="5" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="408" y="100" width="52" height="26" rx="5" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="466" y="100" width="52" height="26" rx="5" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="524" y="100" width="52" height="26" rx="5" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="582" y="100" width="52" height="26" rx="5" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="640" y="100" width="52" height="26" rx="5" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+<rect x="698" y="100" width="52" height="26" rx="5" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+<rect x="698" y="100" width="52" height="26" rx="5" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+<text x="724" y="113" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">?</text>
+<text x="666" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">1 word</text>
+<text x="60" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B">A big chatbot (thousands of tokens)</text>
+<rect x="60" y="192" width="632" height="26" rx="5" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
+<text x="376.0" y="205" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">about 100,000 words of memory</text>
+<rect x="698" y="192" width="52" height="26" rx="5" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+<text x="724" y="205" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">?</text>
+<rect x="60" y="248" width="320" height="96" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+<text x="220" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B" text-anchor="middle" font-weight="600" dominant-baseline="central">What more memory fixes</text>
+<text x="220" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">forgetting who the sentence</text>
+<text x="220" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">was about; silly loops</text>
+<rect x="420" y="248" width="320" height="96" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+<text x="580" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D" text-anchor="middle" font-weight="600" dominant-baseline="central">What it does NOT fix</text>
+<text x="580" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">whether the sentence is true.</text>
+<text x="580" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">The world is not in the window.</text>
+<text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Drawn to scale, your bigram window is the last little square before the guess.</text>
+</svg>

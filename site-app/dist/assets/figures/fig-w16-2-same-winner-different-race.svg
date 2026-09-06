@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Same winner, completely different race</title>
+  <desc>Two confidence readouts side by side. On the left, 62 21 17 with a margin of 41 and a tick badge marked trust it. On the right, 45 44 11 with a margin of 1 and a cross badge marked do not trust it. Both readouts pick spoon as the winner.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="44" font-size="24" fill="#14202B" text-anchor="middle">Same winner, completely different race</text>
+
+    <rect x="40" y="76" width="340" height="254" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="420" y="76" width="340" height="254" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+
+    <text x="210" y="106" font-size="18" fill="#14202B" text-anchor="middle">Reading 1:  62 / 21 / 17</text>
+    <text x="590" y="106" font-size="18" fill="#14202B" text-anchor="middle">Reading 2:  45 / 44 / 11</text>
+
+    <rect x="150" y="124" width="105.4" height="26" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="150" y="160" width="35.7" height="26" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="150" y="196" width="28.9" height="26" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round"/>
+    <g font-size="14" fill="#14202B" text-anchor="end">
+      <text x="140" y="142">spoon</text>
+      <text x="140" y="178">toothbrush</text>
+      <text x="140" y="214">comb</text>
+    </g>
+    <g font-size="14" fill="#14202B">
+      <text x="263" y="142">62%</text>
+      <text x="194" y="178">21%</text>
+      <text x="187" y="214">17%</text>
+    </g>
+
+    <rect x="530" y="124" width="76.5" height="26" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="530" y="160" width="74.8" height="26" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="530" y="196" width="18.7" height="26" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round"/>
+    <g font-size="14" fill="#14202B" text-anchor="end">
+      <text x="520" y="142">spoon</text>
+      <text x="520" y="178">toothbrush</text>
+      <text x="520" y="214">comb</text>
+    </g>
+    <g font-size="14" fill="#14202B">
+      <text x="615" y="142">45%</text>
+      <text x="613" y="178">44%</text>
+      <text x="557" y="214">11%</text>
+    </g>
+
+    <text x="210" y="250" font-size="16" fill="#14202B" text-anchor="middle">margin = 62 - 21 = 41</text>
+    <text x="590" y="250" font-size="16" fill="#14202B" text-anchor="middle">margin = 45 - 44 = 1</text>
+
+    <g transform="translate(112,262) scale(0.36)">
+      <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="158" y="286" font-size="16" fill="#14202B">Trust it</text>
+    <text x="210" y="314" font-size="14" fill="#55636F" text-anchor="middle">a clear preference</text>
+
+    <g transform="translate(486,262) scale(0.36)">
+      <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+      <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+        <line x1="38" y1="38" x2="62" y2="62"/>
+        <line x1="62" y1="38" x2="38" y2="62"/>
+      </g>
+    </g>
+    <text x="532" y="286" font-size="16" fill="#14202B">Do not trust it</text>
+    <text x="590" y="314" font-size="14" fill="#55636F" text-anchor="middle">basically a coin toss</text>
+
+    <text x="400" y="368" font-size="14" fill="#55636F" text-anchor="middle">Both readouts say spoon. Only the margin tells you whether it meant it.</text>
+  </g>
+</svg>

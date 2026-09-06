@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>Route A and Route B, the two ways to connect the model</title>
+  <desc>Two panels. Route A uploads the model to a Google link and Scratch reads predictions automatically. Route B keeps everything on the laptop: the child reads the prediction and types it into Scratch, and must say so at the booth.</desc>
+
+  <text x="400" y="38" font-size="24" fill="#14202B" text-anchor="middle">Two honest ways to wire the app</text>
+  <line x1="400" y1="60" x2="400" y2="352" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <!-- Route A -->
+  <rect x="30" y="66" width="340" height="286" rx="12" fill="#F5F8FA" stroke="#55636F" stroke-width="3"/>
+  <text x="200" y="94" font-size="18" fill="#14202B" text-anchor="middle">ROUTE A - upload the model</text>
+
+  <rect x="56" y="112" width="126" height="52" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
+  <text x="119" y="132" font-size="12" fill="#14202B" text-anchor="middle">Teachable</text>
+  <text x="119" y="150" font-size="12" fill="#14202B" text-anchor="middle">Machine</text>
+  <g transform="translate(190,124) scale(0.5)">
+    <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <rect x="242" y="112" width="112" height="52" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <text x="298" y="132" font-size="12" fill="#14202B" text-anchor="middle">a public link</text>
+  <text x="298" y="150" font-size="12" fill="#14202B" text-anchor="middle">on the internet</text>
+
+  <g transform="translate(286,168) rotate(90) scale(0.4)">
+    <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <rect x="180" y="206" width="174" height="52" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="267" y="226" font-size="12" fill="#14202B" text-anchor="middle">Stretch3 Scratch reads</text>
+  <text x="267" y="244" font-size="12" fill="#14202B" text-anchor="middle">the label by itself</text>
+
+  <text x="56" y="290" font-size="12" fill="#1B7A4B">+ fully automatic, feels like a product</text>
+  <text x="56" y="312" font-size="12" fill="#CC2B1D">- the model sits on a public link</text>
+  <text x="56" y="334" font-size="12" fill="#CC2B1D">- needs an adult's permission first</text>
+
+  <!-- Route B -->
+  <rect x="430" y="66" width="340" height="286" rx="12" fill="#F5F8FA" stroke="#55636F" stroke-width="3"/>
+  <text x="600" y="94" font-size="18" fill="#14202B" text-anchor="middle">ROUTE B - nothing is uploaded</text>
+
+  <rect x="456" y="112" width="126" height="52" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
+  <text x="519" y="132" font-size="12" fill="#14202B" text-anchor="middle">Teachable Machine</text>
+  <text x="519" y="150" font-size="12" fill="#14202B" text-anchor="middle">on this laptop</text>
+  <g transform="translate(590,124) scale(0.5)">
+    <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(650,102) scale(0.6)">
+    <circle cx="50" cy="52" r="30" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+    <path d="M20 44 A30 30 0 0 1 80 44 A34 22 0 0 0 20 44 Z" fill="#845F00" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="40" cy="50" r="4" fill="#14202B"/>
+    <circle cx="60" cy="50" r="4" fill="#14202B"/>
+    <path d="M39 63 Q50 72 61 63" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <text x="680" y="166" font-size="12" fill="#55636F" text-anchor="middle">you read it</text>
+
+  <g transform="translate(686,172) rotate(90) scale(0.4)">
+    <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <rect x="580" y="206" width="174" height="52" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="667" y="226" font-size="12" fill="#14202B" text-anchor="middle">you type 1, 2, 3 or 4</text>
+  <text x="667" y="244" font-size="12" fill="#14202B" text-anchor="middle">into plain Scratch</text>
+
+  <text x="456" y="290" font-size="12" fill="#1B7A4B">+ zero upload, works offline, 5 minutes</text>
+  <text x="456" y="312" font-size="12" fill="#845F00">- a human is inside the loop</text>
+  <text x="456" y="334" font-size="12" fill="#845F00">- so the honesty sign is compulsory</text>
+
+  <text x="400" y="384" font-size="14" fill="#55636F" text-anchor="middle">Default to Route B. The guess is still the machine's - only the typing is yours.</text>
+</svg>

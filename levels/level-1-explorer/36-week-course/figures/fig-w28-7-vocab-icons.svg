@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>This week’s four words</title>
+  <desc>Four labelled panels: word frequency drawn as three bars, bigram drawn as two joined word chips, next-word prediction drawn as a word chip pointing at a question mark, and language model drawn as a small data table.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">This week’s four words</text>
+  <rect x="30" y="68" width="174" height="254" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="222" y="68" width="174" height="254" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="414" y="68" width="174" height="254" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="606" y="68" width="174" height="254" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="52" y1="182" x2="182" y2="182" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="64" y="124" width="26" height="58" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="77" y="115" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">6</text>
+  <text x="77" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the</text>
+  <rect x="102" y="134" width="26" height="48" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="115" y="125" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">5</text>
+  <text x="115" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">bus</text>
+  <rect x="140" y="144" width="26" height="38" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="153" y="135" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4</text>
+  <text x="153" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">to</text>
+  <text x="117" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">word frequency</text>
+  <text x="117" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">how many times</text>
+  <text x="117" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">each word appears</text>
+  <rect x="238" y="132" width="58" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="267.0" y="152.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">the</text>
+  <line x1="300" y1="152" x2="316" y2="152" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="311,145 322,152 311,159" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="324" y="132" width="58" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="353.0" y="152.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">bus</text>
+  <text x="309" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">order matters</text>
+  <text x="309" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">bigram</text>
+  <text x="309" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">two words that came</text>
+  <text x="309" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">next to each other</text>
+  <rect x="430" y="132" width="58" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="459.0" y="152.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">the</text>
+  <line x1="492" y1="152" x2="508" y2="152" stroke="#C42B8C" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="503,145 514,152 503,159" fill="none" stroke="#C42B8C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="516" y="132" width="58" height="40" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="545.0" y="152.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">?</text>
+  <text x="501" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">guess the next one</text>
+  <text x="501" y="226" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">next-word</text>
+  <text x="501" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">prediction</text>
+  <text x="501" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">working out what</text>
+  <text x="501" y="294" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">probably comes next</text>
+  <g transform="translate(643,92) scale(1.0)">
+    <rect x="8" y="16" width="84" height="68" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M8 24 A8 8 0 0 1 16 16 H84 A8 8 0 0 1 92 24 V38 H8 Z" fill="#D9EAF9" stroke="none"/>
+    <g stroke="#C7CDD4" stroke-width="1.5"><line x1="8" y1="61" x2="92" y2="61"/><line x1="36" y1="38" x2="36" y2="84"/><line x1="64" y1="38" x2="64" y2="84"/></g>
+    <line x1="8" y1="38" x2="92" y2="38" stroke="#1F6FB2" stroke-width="3"/>
+    <rect x="8" y="16" width="84" height="68" rx="8" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <g fill="#55636F"><rect x="15" y="24" width="14" height="5" rx="2.5"/><rect x="43" y="24" width="14" height="5" rx="2.5"/><rect x="71" y="24" width="14" height="5" rx="2.5"/><rect x="15" y="47" width="14" height="5" rx="2.5"/><rect x="43" y="47" width="14" height="5" rx="2.5"/><rect x="71" y="47" width="14" height="5" rx="2.5"/><rect x="15" y="70" width="14" height="5" rx="2.5"/><rect x="43" y="70" width="14" height="5" rx="2.5"/><rect x="71" y="70" width="14" height="5" rx="2.5"/></g>
+  </g>
+  <text x="693" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">language model</text>
+  <text x="693" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">anything that predicts</text>
+  <text x="693" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">likely next words</text>
+  <text x="400" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Count the words. Count the pairs. Look one up. That is the whole machine.</text>
+</svg>

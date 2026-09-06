@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Draw It frame for Week 13</title>
+  <desc>An empty framed drawing area with a title strip reading Draw one table, two problems, and three reminder boxes along the bottom for the covered column, the shape of the answer, and how you would score a guess.</desc>
+  <rect x="24" y="24" width="752" height="300" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="24" y="24" width="752" height="44" rx="12" fill="#F5F8FA" stroke="none"/>
+  <line x1="24" y1="68" x2="776" y2="68" stroke="#14202B" stroke-width="3"/>
+  <text x="400" y="53" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">DRAW: one table, two different problems</text>
+  <line x1="400" y1="84" x2="400" y2="310" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="8 8"/>
+  <text x="212" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">cover this column</text>
+  <text x="588" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">now cover that one instead</text>
+  <g fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round">
+    <rect x="60" y="342" width="200" height="36" rx="8"/>
+    <rect x="300" y="342" width="200" height="36" rx="8"/>
+    <rect x="540" y="342" width="200" height="36" rx="8"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">
+    <text x="60" y="338">which column is covered</text>
+    <text x="300" y="338">shape of the answer</text>
+    <text x="540" y="338">how you would score a guess</text>
+  </g>
+</svg>

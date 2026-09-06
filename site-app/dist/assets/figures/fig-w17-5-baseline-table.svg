@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The baseline table filled in with nine readings</title>
+  <desc>A nine row table. Each row records an object, the position it was held in, the three confidence percentages, the sum and the margin. The weakest row, comb held far away with a margin of 26, is outlined in pink as the place the model will break first.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="40" font-size="24" fill="#14202B" text-anchor="middle">The baseline table, filled in - nine readings</text>
+
+    <rect x="40" y="60" width="690" height="40" fill="#D9EAF9" stroke="none"/>
+    <rect x="40" y="100" width="690" height="75" fill="#F5F8FA" stroke="none"/>
+    <rect x="40" y="250" width="690" height="75" fill="#F5F8FA" stroke="none"/>
+
+    <g font-size="14" fill="#14202B" text-anchor="middle">
+      <text x="100" y="85">object</text>
+      <text x="225" y="85">position</text>
+      <text x="335" y="85">spoon %</text>
+      <text x="425" y="85">tbrush %</text>
+      <text x="515" y="85">comb %</text>
+      <text x="595" y="85">sum</text>
+      <text x="680" y="85">margin</text>
+    </g>
+
+    <g font-size="12" fill="#14202B" text-anchor="middle">
+      <text x="100" y="117">spoon</text><text x="225" y="117">flat on</text><text x="335" y="117" font-weight="700">91</text><text x="425" y="117">5</text><text x="515" y="117">4</text><text x="595" y="117">100</text><text x="680" y="117">86</text>
+      <text x="100" y="142">spoon</text><text x="225" y="142">tilted</text><text x="335" y="142" font-weight="700">88</text><text x="425" y="142">7</text><text x="515" y="142">5</text><text x="595" y="142">100</text><text x="680" y="142">81</text>
+      <text x="100" y="167">spoon</text><text x="225" y="167">far away</text><text x="335" y="167" font-weight="700">79</text><text x="425" y="167">12</text><text x="515" y="167">9</text><text x="595" y="167">100</text><text x="680" y="167">67</text>
+      <text x="100" y="192">toothbrush</text><text x="225" y="192">flat on</text><text x="335" y="192">6</text><text x="425" y="192" font-weight="700">88</text><text x="515" y="192">6</text><text x="595" y="192">100</text><text x="680" y="192">82</text>
+      <text x="100" y="217">toothbrush</text><text x="225" y="217">tilted</text><text x="335" y="217">9</text><text x="425" y="217" font-weight="700">84</text><text x="515" y="217">7</text><text x="595" y="217">100</text><text x="680" y="217">75</text>
+      <text x="100" y="242">toothbrush</text><text x="225" y="242">far away</text><text x="335" y="242">14</text><text x="425" y="242" font-weight="700">71</text><text x="515" y="242">15</text><text x="595" y="242">100</text><text x="680" y="242">56</text>
+      <text x="100" y="267">comb</text><text x="225" y="267">flat on</text><text x="335" y="267">8</text><text x="425" y="267">13</text><text x="515" y="267" font-weight="700">79</text><text x="595" y="267">100</text><text x="680" y="267">66</text>
+      <text x="100" y="292">comb</text><text x="225" y="292">tilted</text><text x="335" y="292">11</text><text x="425" y="292">18</text><text x="515" y="292" font-weight="700">71</text><text x="595" y="292">100</text><text x="680" y="292">53</text>
+      <text x="100" y="317">comb</text><text x="225" y="317">far away</text><text x="335" y="317">16</text><text x="425" y="317">29</text><text x="515" y="317" font-weight="700">55</text><text x="595" y="317">100</text><text x="680" y="317">26</text>
+    </g>
+
+    <g stroke="#C7CDD4" stroke-width="1.5">
+      <line x1="40" y1="125" x2="730" y2="125"/>
+      <line x1="40" y1="150" x2="730" y2="150"/>
+      <line x1="40" y1="175" x2="730" y2="175"/>
+      <line x1="40" y1="200" x2="730" y2="200"/>
+      <line x1="40" y1="225" x2="730" y2="225"/>
+      <line x1="40" y1="250" x2="730" y2="250"/>
+      <line x1="40" y1="275" x2="730" y2="275"/>
+      <line x1="40" y1="300" x2="730" y2="300"/>
+      <line x1="160" y1="60" x2="160" y2="325"/>
+      <line x1="290" y1="60" x2="290" y2="325"/>
+      <line x1="380" y1="60" x2="380" y2="325"/>
+      <line x1="470" y1="60" x2="470" y2="325"/>
+      <line x1="560" y1="60" x2="560" y2="325"/>
+      <line x1="630" y1="60" x2="630" y2="325"/>
+    </g>
+    <line x1="40" y1="100" x2="730" y2="100" stroke="#1F6FB2" stroke-width="3"/>
+    <rect x="40" y="60" width="690" height="265" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="42" y="302" width="686" height="21" fill="none" stroke="#C42B8C" stroke-width="3" rx="6"/>
+
+    <text x="40" y="352" font-size="14" fill="#14202B">Every row: check the sum is 100, then work out the margin.</text>
+    <text x="40" y="374" font-size="14" fill="#55636F">The pink row is the weakest reading you have. That is where it will break first.</text>
+  </g>
+</svg>

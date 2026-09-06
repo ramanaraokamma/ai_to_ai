@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Two knobs turned, or one</title>
+  <desc>Two panels. On the left, two knobs are turned at once and the score falls twenty points, so you cannot tell which knob caused it. On the right, one knob is turned and the other three are taped down, so the same twenty point fall points straight at the background.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="42" font-size="24" fill="#14202B" text-anchor="middle">Turn two knobs and you learn nothing</text>
+    <line x1="400" y1="72" x2="400" y2="344" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+    <rect x="40" y="72" width="330" height="272" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+    <g transform="translate(58,84) scale(0.4)">
+      <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+      <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+        <line x1="38" y1="38" x2="62" y2="62"/>
+        <line x1="62" y1="38" x2="38" y2="62"/>
+      </g>
+    </g>
+    <text x="108" y="110" font-size="18" fill="#14202B">Two knobs turned</text>
+    <circle cx="100" cy="150" r="18" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <line x1="100" y1="150" x2="112" y2="138" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="170" cy="150" r="18" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <line x1="170" y1="150" x2="182" y2="138" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="240" cy="150" r="18" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <g stroke="#845F00" stroke-width="5" stroke-linecap="round">
+      <line x1="228" y1="140" x2="252" y2="160"/>
+      <line x1="252" y1="140" x2="228" y2="160"/>
+    </g>
+    <circle cx="310" cy="150" r="18" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <g stroke="#845F00" stroke-width="5" stroke-linecap="round">
+      <line x1="298" y1="140" x2="322" y2="160"/>
+      <line x1="322" y1="140" x2="298" y2="160"/>
+    </g>
+    <rect x="66" y="168" width="278" height="48" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <text x="205" y="196" font-size="14" fill="#55636F" text-anchor="middle">score fell 20 points</text>
+    <g font-size="12" fill="#55636F" text-anchor="middle">
+      <text x="100" y="238">photos</text>
+      <text x="170" y="238">background</text>
+      <text x="240" y="238">sharpness</text>
+      <text x="310" y="238">balance</text>
+    </g>
+    <text x="66" y="288" font-size="18" fill="#14202B">Which knob did it?</text>
+    <text x="66" y="316" font-size="18" fill="#14202B">You cannot ever find out.</text>
+
+    <rect x="430" y="72" width="330" height="272" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <g transform="translate(448,84) scale(0.4)">
+      <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="498" y="110" font-size="18" fill="#14202B">One knob turned</text>
+    <circle cx="490" cy="150" r="18" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <g stroke="#845F00" stroke-width="5" stroke-linecap="round">
+      <line x1="478" y1="140" x2="502" y2="160"/>
+      <line x1="502" y1="140" x2="478" y2="160"/>
+    </g>
+    <circle cx="560" cy="150" r="18" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <line x1="560" y1="150" x2="572" y2="138" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="630" cy="150" r="18" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <g stroke="#845F00" stroke-width="5" stroke-linecap="round">
+      <line x1="618" y1="140" x2="642" y2="160"/>
+      <line x1="642" y1="140" x2="618" y2="160"/>
+    </g>
+    <circle cx="700" cy="150" r="18" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <g stroke="#845F00" stroke-width="5" stroke-linecap="round">
+      <line x1="688" y1="140" x2="712" y2="160"/>
+      <line x1="712" y1="140" x2="688" y2="160"/>
+    </g>
+    <rect x="456" y="168" width="278" height="48" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <text x="595" y="196" font-size="14" fill="#55636F" text-anchor="middle">score fell 20 points</text>
+    <g font-size="12" fill="#55636F" text-anchor="middle">
+      <text x="490" y="238">photos</text>
+      <text x="560" y="238">background</text>
+      <text x="630" y="238">sharpness</text>
+      <text x="700" y="238">balance</text>
+    </g>
+    <text x="456" y="288" font-size="18" fill="#14202B">It was the background.</text>
+    <text x="456" y="316" font-size="18" fill="#14202B">Nothing else moved.</text>
+
+    <text x="400" y="374" font-size="14" fill="#55636F" text-anchor="middle">The ochre crosses are tape. A taped knob is a promise you did not touch it.</text>
+  </g>
+</svg>

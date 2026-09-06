@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>The Level 1 certificate, with the numbers written in</title>
+  <desc>A bordered certificate reading Level 1 Explorer, with a blank line for the name, a filled-in held-out accuracy of thirty out of forty equals seventy-five percent against a baseline of twenty-five percent, a measured bias gap of fifty percentage points, and lines for the date and a listener's signature.</desc>
+
+  <text x="400" y="34" font-size="24" fill="#14202B" text-anchor="middle">The certificate is a measurement, not a sticker</text>
+
+  <rect x="40" y="54" width="720" height="300" rx="12" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <rect x="52" y="66" width="696" height="276" rx="8" fill="none" stroke="#845F00" stroke-width="1.5"/>
+
+  <text x="400" y="104" font-size="24" fill="#14202B" text-anchor="middle">LEVEL 1 &#183; EXPLORER</text>
+  <text x="400" y="128" font-size="14" fill="#55636F" text-anchor="middle">awarded to a person who can prove every claim on this card</text>
+
+  <line x1="180" y1="168" x2="620" y2="168" stroke="#14202B" stroke-width="2"/>
+  <text x="400" y="188" font-size="12" fill="#55636F" text-anchor="middle">name</text>
+
+  <rect x="80" y="206" width="300" height="76" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="230" y="230" font-size="12" fill="#55636F" text-anchor="middle">held-out accuracy, measured by hand</text>
+  <text x="230" y="256" font-size="18" fill="#14202B" text-anchor="middle">30 / 40 = 0.75 = 75%</text>
+  <text x="230" y="274" font-size="12" fill="#55636F" text-anchor="middle">baseline 25% &#183; gain 50 points</text>
+
+  <rect x="420" y="206" width="300" height="76" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <text x="570" y="230" font-size="12" fill="#55636F" text-anchor="middle">measured bias gap, my own model</text>
+  <text x="570" y="256" font-size="18" fill="#14202B" text-anchor="middle">50 percentage points</text>
+  <text x="570" y="274" font-size="12" fill="#55636F" text-anchor="middle">daylight 90% &#183; lamplight 40%</text>
+
+  <line x1="80" y1="316" x2="300" y2="316" stroke="#14202B" stroke-width="2"/>
+  <text x="190" y="334" font-size="12" fill="#55636F" text-anchor="middle">date</text>
+  <line x1="500" y1="316" x2="720" y2="316" stroke="#14202B" stroke-width="2"/>
+  <text x="610" y="334" font-size="12" fill="#55636F" text-anchor="middle">listener who heard the 5-minute demo</text>
+
+  <text x="400" y="384" font-size="14" fill="#55636F" text-anchor="middle">If either box is blank, the certificate is not finished - and neither is the project.</text>
+</svg>

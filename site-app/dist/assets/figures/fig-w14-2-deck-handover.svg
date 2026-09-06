@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Handing the deck to a tester</title>
+  <desc>A scene across a table. On the left the student holds a scoring sheet with three rows already filled in. In the middle the deck of cards is being passed over. On the right the tester reads a card. Three numbered callouts label the deck, the silence rule and the scoring sheet.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="40" font-size="24" fill="#14202B" text-anchor="middle">The trial: you record, you do not react</text>
+    <rect x="24" y="60" width="752" height="240" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+
+    <g transform="translate(48,92)">
+      <circle cx="50" cy="52" r="30" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+      <path d="M20 44 A30 30 0 0 1 80 44 A34 22 0 0 0 20 44 Z" fill="#845F00" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="40" cy="50" r="4" fill="#14202B"/>
+      <circle cx="60" cy="50" r="4" fill="#14202B"/>
+      <path d="M39 66 H61" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <text x="98" y="206" font-size="14" fill="#14202B" text-anchor="middle">you</text>
+
+    <rect x="46" y="218" width="150" height="70" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <g stroke="#C7CDD4" stroke-width="1.5">
+      <line x1="46" y1="240" x2="196" y2="240"/>
+      <line x1="46" y1="258" x2="196" y2="258"/>
+      <line x1="46" y1="276" x2="196" y2="276"/>
+      <line x1="96" y1="218" x2="96" y2="288"/>
+      <line x1="156" y1="218" x2="156" y2="288"/>
+    </g>
+    <g font-size="12" fill="#55636F">
+      <text x="54" y="234">card</text>
+      <text x="102" y="234">guess</text>
+      <text x="162" y="234">ok?</text>
+      <text x="54" y="253">01</text>
+      <text x="102" y="253">spoon</text>
+      <text x="54" y="271">02</text>
+      <text x="102" y="271">fork</text>
+    </g>
+    <text x="166" y="253" font-size="14" fill="#1B7A4B">&#10003;</text>
+    <text x="166" y="271" font-size="14" fill="#1B7A4B">&#10003;</text>
+
+    <g transform="translate(300,120)">
+      <g transform="rotate(-11 50 54) translate(-5 -7)">
+        <rect x="24" y="26" width="52" height="52" rx="7" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      </g>
+      <g transform="rotate(7 50 54) translate(6 -4)">
+        <rect x="24" y="26" width="52" height="52" rx="7" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      </g>
+      <rect x="24" y="26" width="52" height="52" rx="7" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      <g stroke="#55636F" stroke-width="3" stroke-linecap="round">
+        <line x1="32" y1="40" x2="68" y2="40"/>
+        <line x1="32" y1="50" x2="68" y2="50"/>
+        <line x1="32" y1="60" x2="60" y2="60"/>
+      </g>
+    </g>
+    <g transform="translate(396,168) scale(0.7)">
+      <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+      <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <rect x="300" y="230" width="200" height="46" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+    <text x="400" y="248" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">NO TALKING</text>
+    <text x="400" y="266" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">no nodding, no faces, no &#8220;hmm&#8221;</text>
+
+    <g transform="translate(620,86) scale(1.15)">
+      <circle cx="50" cy="52" r="30" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+      <path d="M20 44 A30 30 0 0 1 80 44 A34 22 0 0 0 20 44 Z" fill="#845F00" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="40" cy="50" r="4" fill="#14202B"/>
+      <circle cx="60" cy="50" r="4" fill="#14202B"/>
+      <path d="M39 63 Q50 72 61 63" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <rect x="612" y="214" width="120" height="74" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <g stroke="#55636F" stroke-width="3" stroke-linecap="round">
+      <line x1="626" y1="234" x2="718" y2="234"/>
+      <line x1="626" y1="250" x2="718" y2="250"/>
+      <line x1="626" y1="266" x2="694" y2="266"/>
+    </g>
+    <text x="672" y="206" font-size="14" fill="#14202B" text-anchor="middle">the tester</text>
+
+    <g stroke="#C42B8C" stroke-width="2" fill="none">
+      <path d="M348 200 V314"/>
+      <path d="M400 282 V314"/>
+      <path d="M121 296 V314"/>
+    </g>
+    <g>
+      <circle cx="121" cy="330" r="14" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+      <text x="121" y="331" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+      <circle cx="348" cy="330" r="14" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+      <text x="348" y="331" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+      <circle cx="400" cy="330" r="14" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+      <text x="400" y="331" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+    </g>
+    <g font-size="14" fill="#55636F">
+      <text x="24" y="372">3. You fill the sheet</text>
+      <text x="290" y="372" text-anchor="middle">1. Fronts up, one at a time</text>
+      <text x="560" y="372" text-anchor="middle">2. Silence is the whole experiment</text>
+    </g>
+  </g>
+</svg>

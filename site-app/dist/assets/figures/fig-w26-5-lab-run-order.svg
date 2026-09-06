@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Pixel Lab run order</title>
+  <desc>Seven numbered steps stacked down the page with a time for each, from typing the grid through to breaking the Week 17 model on purpose.</desc>
+  <text x="250" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Pixel Lab run order</text>
+  <rect x="50" y="80" width="400" height="72" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="88" cy="116" r="20" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="88" y="122.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">1</text>
+  <text x="118" y="112.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Type the 12 x 12 grid into B2:M13</text>
+  <text x="118" y="134.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">10 min</text>
+  <rect x="50" y="164" width="400" height="72" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="88" cy="200" r="20" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="88" y="206.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">2</text>
+  <text x="118" y="196.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Shade it: colour scale, 0 black, 255 white</text>
+  <text x="118" y="218.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">4 min</text>
+  <rect x="50" y="248" width="400" height="72" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="88" cy="284" r="20" fill="#FFFFFF" stroke="#6D28D9" stroke-width="3"/>
+  <text x="88" y="290.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">3</text>
+  <text x="118" y="280.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Type ONE formula into C18</text>
+  <text x="118" y="302.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">5 min</text>
+  <rect x="50" y="332" width="400" height="72" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="88" cy="368" r="20" fill="#FFFFFF" stroke="#6D28D9" stroke-width="3"/>
+  <text x="88" y="374.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">4</text>
+  <text x="118" y="364.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Drag C18 across C18:L27 - 100 cells</text>
+  <text x="118" y="386.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">2 min</text>
+  <rect x="50" y="416" width="400" height="72" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="88" cy="452" r="20" fill="#FFFFFF" stroke="#6D28D9" stroke-width="3"/>
+  <text x="88" y="458.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">5</text>
+  <text x="118" y="448.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Shade the edge map with colours FLIPPED</text>
+  <text x="118" y="470.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">4 min</text>
+  <rect x="50" y="500" width="400" height="72" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="88" cy="536" r="20" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="88" y="542.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">6</text>
+  <text x="118" y="532.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Two lamps: 6 brightness, 3 edge readings</text>
+  <text x="118" y="554.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">10 min</text>
+  <rect x="50" y="584" width="400" height="72" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="88" cy="620" r="20" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <text x="88" y="626.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">7</text>
+  <text x="118" y="616.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Break the Week 17 model on purpose</text>
+  <text x="118" y="638.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">10 min</text>
+  <text x="250" y="676" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Stop at Step 5 if you are short of time. Steps 6 and 7 are the proof, not the build.</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Fakes do damage twice</title>
+  <desc>Two numbered panels. Harm one, false things become believable: a made-up video with ninety thousand shares from an account created last week. Harm two, true things become deniable: a genuine video that the person in it can simply call a deepfake.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Fakes do damage twice</text>
+  <rect x="40" y="72" width="330" height="256" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="430" y="72" width="330" height="256" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <circle cx="72" cy="102" r="16" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="72" y="107" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1</text>
+  <circle cx="462" cy="102" r="16" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="462" y="107" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">2</text>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">
+    <text x="100" y="98">False things become</text>
+    <text x="100" y="122">BELIEVABLE</text>
+    <text x="490" y="98">True things become</text>
+    <text x="490" y="122">DENIABLE</text>
+  </g>
+  <rect x="100" y="152" width="210" height="110" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="205" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">MADE-UP VIDEO</text>
+  <text x="205" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">90,000 shares in 11 minutes</text>
+  <text x="205" y="228" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">account made last week</text>
+  <text x="205" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">40 followers</text>
+  <g transform="translate(276,142) scale(0.34)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+      <line x1="38" y1="38" x2="62" y2="62"/>
+      <line x1="62" y1="38" x2="38" y2="62"/>
+    </g>
+  </g>
+  <rect x="490" y="152" width="210" height="110" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="595" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">GENUINE VIDEO</text>
+  <rect x="508" y="198" width="174" height="48" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <text x="595" y="228" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">&#8220;That's a deepfake!&#8221;</text>
+  <g transform="translate(666,142) scale(0.34)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="205" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Something that never happened,</text>
+  <text x="205" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">believed by thousands.</text>
+  <text x="595" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Something that did happen,</text>
+  <text x="595" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">now easy to shrug off.</text>
+  <text x="400" y="368" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Harm 2 reaches you even if you never see a single fake in your life.</text>
+</svg>

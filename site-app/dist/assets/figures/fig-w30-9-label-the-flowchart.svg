@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Label the bot’s flowchart</title>
+  <desc>A flowchart of four blank numbered boxes joined by arrows, with a yes branch on the left and a no branch on the right, and four numbered write-on lines below.</desc>
+  <text x="250" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Label the bot’s flowchart</text>
+  <text x="250" y="66" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Four blank boxes. Write what happens at each one.</text>
+  <rect x="150" y="94" width="200" height="58" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <circle cx="176" cy="123" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="176" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <line x1="250" y1="152" x2="250" y2="190" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="243,185 250,196 257,185" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="115" y="204" width="270" height="62" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <circle cx="143" cy="235" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="143" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <path d="M170 266 V296 H120 V326" fill="none" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="112,318 120,328 128,318" fill="none" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M330 266 V296 H380 V326" fill="none" stroke="#CC2B1D" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="372,318 380,328 388,318" fill="none" stroke="#CC2B1D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="104" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="end">yes</text>
+  <text x="396" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">no</text>
+  <rect x="36" y="330" width="168" height="58" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <circle cx="62" cy="359" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="62" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <rect x="296" y="330" width="168" height="58" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <circle cx="322" cy="359" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="322" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <rect x="36" y="414" width="428" height="242" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="250" y="442" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" font-weight="600">WRITE THE FOUR STEPS HERE</text>
+  <circle cx="70" cy="476" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="70" y="477" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <line x1="96" y1="482" x2="438" y2="482" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="70" cy="520" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="70" y="521" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <line x1="96" y1="526" x2="438" y2="526" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="70" cy="564" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="70" y="565" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <line x1="96" y1="570" x2="438" y2="570" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="70" cy="608" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="70" y="609" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <line x1="96" y1="614" x2="438" y2="614" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="250" y="690" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The no branch is the one everybody forgets to build.</text>
+</svg>

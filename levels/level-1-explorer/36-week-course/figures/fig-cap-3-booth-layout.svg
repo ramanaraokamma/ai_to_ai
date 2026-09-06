@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The booth, laid out on one table</title>
+  <desc>A plan view of a table with six numbered items: poster board with the gap in points and a do-not-use sign, laptop running the app, a tray of objects, the printed data card, the scoring sheet in pen, and an open break-it log with a pen. An arrow marks where visitors stand.</desc>
+  <text x="400" y="38" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The booth, laid out on one table</text>
+  <rect x="30" y="62" width="740" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="60" y="84" width="240" height="92" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="180.0" y="123.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle" font-weight="700">POSTER BOARD</text>
+  <text x="180.0" y="148.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">gap in points + DO NOT USE</text>
+  <text x="180.0" y="164.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle"> sign</text>
+  <circle cx="76" cy="100" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/><text x="76" y="104.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1</text>
+  <rect x="320" y="84" width="220" height="92" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="430.0" y="123.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle" font-weight="700">LAPTOP</text>
+  <text x="430.0" y="148.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the Scratch app, already r</text>
+  <text x="430.0" y="164.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">unning</text>
+  <circle cx="336" cy="100" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/><text x="336" y="104.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">2</text>
+  <rect x="560" y="84" width="190" height="92" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="655.0" y="123.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle" font-weight="700">OBJECTS TRAY</text>
+  <text x="655.0" y="148.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one item per class, plus a</text>
+  <text x="655.0" y="164.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle"> stranger</text>
+  <circle cx="576" cy="100" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/><text x="576" y="104.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">3</text>
+  <rect x="60" y="196" width="240" height="92" rx="10" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="180.0" y="235.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle" font-weight="700">DATA CARD</text>
+  <text x="180.0" y="260.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">8 boxes, printed, face up</text>
+  <text x="180.0" y="276.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle"></text>
+  <circle cx="76" cy="212" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/><text x="76" y="216.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">4</text>
+  <rect x="320" y="196" width="220" height="92" rx="10" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="430.0" y="235.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle" font-weight="700">SCORING SHEET</text>
+  <text x="430.0" y="260.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">every held-out photo, in p</text>
+  <text x="430.0" y="276.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">en</text>
+  <circle cx="336" cy="212" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/><text x="336" y="216.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">5</text>
+  <rect x="560" y="196" width="190" height="92" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="655.0" y="235.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle" font-weight="700">BREAK-IT LOG</text>
+  <text x="655.0" y="260.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">open, with a pen beside it</text>
+  <text x="655.0" y="276.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle"></text>
+  <circle cx="576" cy="212" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/><text x="576" y="216.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">6</text>
+  <polyline points="392,344 400,330 408,344" fill="none" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="400" y1="344" x2="400" y2="332" stroke="#55636F" stroke-width="2" stroke-linecap="round"/>
+  <text x="400" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">visitors stand here - so the sign faces them, not you</text>
+</svg>

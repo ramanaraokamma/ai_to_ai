@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>My audit results, with the worst group circled</title>
+  <desc>A bar chart of my own model. Bright daylight 91.7 percent from 84 training photos, held in a hand 66.7 percent from 22, odd background 58.3 percent from 14, and lamplight 33.3 percent from zero training photos. The lamplight bar is circled as the worst.</desc>
+  <text x="250" y="38" font-size="24" fill="#14202B" text-anchor="middle">My model, group by group</text>
+
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="100" y1="380" x2="400" y2="380"/>
+    <line x1="100" y1="305" x2="400" y2="305"/>
+    <line x1="100" y1="230" x2="400" y2="230"/>
+    <line x1="100" y1="155" x2="400" y2="155"/>
+    <line x1="100" y1="80" x2="400" y2="80"/>
+  </g>
+  <g font-size="12" fill="#55636F" text-anchor="end">
+    <text x="90" y="384">0</text>
+    <text x="90" y="309">25</text>
+    <text x="90" y="234">50</text>
+    <text x="90" y="159">75</text>
+    <text x="90" y="84">100</text>
+  </g>
+
+  <rect x="109" y="104.9" width="42" height="275.1" rx="4" fill="#1F6FB2"/>
+  <rect x="179" y="179.9" width="42" height="200.1" rx="4" fill="#1F6FB2"/>
+  <rect x="249" y="205.1" width="42" height="174.9" rx="4" fill="#1F6FB2"/>
+  <rect x="319" y="280.1" width="42" height="99.9" rx="4" fill="#1F6FB2"/>
+
+  <ellipse cx="340" cy="332" rx="36" ry="62" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-dasharray="9 6"/>
+
+  <g font-size="14" fill="#14202B" text-anchor="middle">
+    <text x="130" y="97">91.7%</text>
+    <text x="200" y="172">66.7%</text>
+    <text x="270" y="197">58.3%</text>
+    <text x="340" y="264">33.3%</text>
+  </g>
+
+  <line x1="100" y1="380" x2="400" y2="380" stroke="#14202B" stroke-width="2"/>
+
+  <g font-size="12" fill="#55636F" text-anchor="middle">
+    <text x="130" y="400">Daylight</text>
+    <text x="200" y="400">In a hand</text>
+    <text x="270" y="400">Odd b/g</text>
+    <text x="340" y="400">Lamplight</text>
+    <text x="130" y="418">84 trained</text>
+    <text x="200" y="418">22 trained</text>
+    <text x="270" y="418">14 trained</text>
+  </g>
+  <text x="340" y="418" font-size="12" fill="#CC2B1D" text-anchor="middle">0 trained</text>
+
+  <rect x="312" y="428" width="56" height="22" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="340" y="444" font-size="12" fill="#14202B" text-anchor="middle">worst</text>
+
+  <text x="250" y="470" font-size="14" fill="#55636F" text-anchor="middle">Accuracy follows the training count down the row: 84, 22, 14, 0.</text>
+  <text x="250" y="488" font-size="14" fill="#55636F" text-anchor="middle">Gap = 91.7 - 33.3 = 58.4 percentage points.</text>
+</svg>

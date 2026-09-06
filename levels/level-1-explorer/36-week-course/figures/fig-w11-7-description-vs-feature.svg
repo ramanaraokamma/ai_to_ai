@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A description is not a feature yet</title>
+  <desc>Two panels. The left panel is marked wrong: a bag described as quite big, nice blue, looks old. The right panel is marked correct: the same bag described as height 42 centimetres, colour blue from a fixed list, 3 separate parts.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A description is not a feature yet</text>
+  <line x1="400" y1="72" x2="400" y2="336" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <rect x="30" y="72" width="340" height="262" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="430" y="72" width="340" height="262" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(48,86) scale(0.42)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+      <line x1="38" y1="38" x2="62" y2="62"/>
+      <line x1="62" y1="38" x2="38" y2="62"/>
+    </g>
+  </g>
+  <g transform="translate(448,86) scale(0.42)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="102" y="115" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">NOT YET A FEATURE</text>
+  <text x="502" y="115" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">A FEATURE</text>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">
+    <text x="54" y="162">"it's quite big"</text>
+    <text x="54" y="196">"it's a nice blue"</text>
+    <text x="54" y="230">"it looks a bit old"</text>
+    <text x="454" y="162">height_cm = 42.0</text>
+    <text x="454" y="196">colour = blue</text>
+    <text x="454" y="230">parts_count = 3</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">
+    <text x="54" y="268">Two people give two</text>
+    <text x="54" y="288">different answers, and</text>
+    <text x="54" y="308">neither of them is wrong.</text>
+    <text x="454" y="268">Each one has a tool, a unit</text>
+    <text x="454" y="288">and a rounding, so two people</text>
+    <text x="454" y="308">write down the same thing.</text>
+  </g>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">If you cannot write the measuring instruction, it is not a feature yet.</text>
+</svg>

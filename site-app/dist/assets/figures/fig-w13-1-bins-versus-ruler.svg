@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Three bins beside a ruler</title>
+  <desc>Two panels. On the left, classification: one fruit is dropped into one of three labelled bins, apple, orange or banana. On the right, regression: the same fruit is placed at 197.5 on a ruler running from 0 to 250 grams.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="42" font-size="24" fill="#14202B" text-anchor="middle">Which one? or How much?</text>
+    <line x1="400" y1="66" x2="400" y2="344" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+    <text x="205" y="88" font-size="18" fill="#14202B" text-anchor="middle">1. CLASSIFICATION &#8212; pick a bin</text>
+    <text x="595" y="88" font-size="18" fill="#14202B" text-anchor="middle">2. REGRESSION &#8212; point at a spot</text>
+
+    <circle cx="205" cy="130" r="20" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+    <line x1="205" y1="112" x2="205" y2="104" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round"/>
+
+    <g stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="5 5" fill="none">
+      <path d="M196 148 L110 186"/>
+      <path d="M214 148 L300 186"/>
+    </g>
+    <line x1="205" y1="152" x2="205" y2="180" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="197,172 205,182 213,172" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="48" y="190" width="96" height="86" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="157" y="190" width="96" height="86" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="266" y="190" width="96" height="86" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <text x="96" y="238" font-size="16" fill="#14202B" text-anchor="middle" dominant-baseline="central">apple</text>
+    <text x="205" y="238" font-size="16" fill="#14202B" text-anchor="middle" dominant-baseline="central">orange</text>
+    <text x="314" y="238" font-size="16" fill="#14202B" text-anchor="middle" dominant-baseline="central">banana</text>
+    <text x="205" y="302" font-size="14" fill="#55636F" text-anchor="middle">3 bins. It lands in exactly one.</text>
+    <text x="205" y="322" font-size="14" fill="#55636F" text-anchor="middle">Right or wrong. Nothing in between.</text>
+
+    <circle cx="595" cy="130" r="20" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+    <line x1="595" y1="112" x2="595" y2="104" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round"/>
+    <line x1="595" y1="152" x2="661" y2="212" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+
+    <text x="693" y="196" font-size="16" fill="#14202B" text-anchor="middle">197.5 g</text>
+    <path d="M693 206 L701 220 L685 220 Z" fill="#C42B8C" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+
+    <line x1="440" y1="240" x2="760" y2="240" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <g stroke="#14202B" stroke-width="2" stroke-linecap="round">
+      <line x1="440" y1="240" x2="440" y2="254"/>
+      <line x1="504" y1="240" x2="504" y2="254"/>
+      <line x1="568" y1="240" x2="568" y2="254"/>
+      <line x1="632" y1="240" x2="632" y2="254"/>
+      <line x1="696" y1="240" x2="696" y2="254"/>
+      <line x1="760" y1="240" x2="760" y2="254"/>
+    </g>
+    <g font-size="12" fill="#55636F" text-anchor="middle">
+      <text x="440" y="272">0</text>
+      <text x="504" y="272">50</text>
+      <text x="568" y="272">100</text>
+      <text x="632" y="272">150</text>
+      <text x="696" y="272">200</text>
+      <text x="760" y="272">250</text>
+    </g>
+    <text x="595" y="302" font-size="14" fill="#55636F" text-anchor="middle">No bins. Any number is allowed.</text>
+    <text x="595" y="322" font-size="14" fill="#55636F" text-anchor="middle">Not right or wrong &#8212; off by an amount.</text>
+
+    <text x="400" y="372" font-size="14" fill="#55636F" text-anchor="middle">Look at the shape of the answer. Bins means classification. A ruler means regression.</text>
+  </g>
+</svg>

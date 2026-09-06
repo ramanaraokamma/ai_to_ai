@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The mystery threshold</title>
+  <desc>Eight ice cream sales days plotted on a temperature line. The four cool days from eighteen to twenty-four degrees are marked with crosses meaning sold out no, and the four warm days from twenty-eight to thirty-four degrees are marked with ticks meaning sold out yes. A dashed line can slide into the gap between twenty-four and twenty-eight.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Where can the line go?</text>
+  <text x="400" y="70" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Eight days at the ice cream van. Did it sell out?</text>
+
+  <line x1="70" y1="220" x2="740" y2="220" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="110" y1="212" x2="110" y2="228"/>
+    <line x1="190" y1="212" x2="190" y2="228"/>
+    <line x1="270" y1="212" x2="270" y2="228"/>
+    <line x1="350" y1="212" x2="350" y2="228"/>
+    <line x1="510" y1="212" x2="510" y2="228"/>
+    <line x1="590" y1="212" x2="590" y2="228"/>
+    <line x1="670" y1="212" x2="670" y2="228"/>
+    <line x1="430" y1="212" x2="430" y2="228"/>
+  </g>
+
+  <!-- gap band between 24 and 28 -->
+  <rect x="350" y="120" width="160" height="100" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-dasharray="8 6" stroke-linejoin="round"/>
+  <text x="430" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="middle">the gap</text>
+
+  <!-- cool days : crosses -->
+  <g transform="translate(94,148) scale(0.32)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g>
+  </g>
+  <g transform="translate(174,148) scale(0.32)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g>
+  </g>
+  <g transform="translate(254,148) scale(0.32)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g>
+  </g>
+  <g transform="translate(334,148) scale(0.32)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g>
+  </g>
+
+  <!-- warm days : ticks -->
+  <g transform="translate(494,148) scale(0.32)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(574,148) scale(0.32)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(654,148) scale(0.32)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(414,196) scale(0.32)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">
+    <text x="110" y="250">18</text>
+    <text x="190" y="250">21</text>
+    <text x="270" y="250">22</text>
+    <text x="350" y="250">24</text>
+    <text x="430" y="250">28</text>
+    <text x="510" y="250">30</text>
+    <text x="590" y="250">31</text>
+    <text x="670" y="250">34</text>
+  </g>
+  <text x="400" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">temperature in degrees</text>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">
+    <text x="70" y="318">Cross = did NOT sell out</text>
+    <text x="470" y="318">Tick = SOLD OUT</text>
+  </g>
+  <text x="400" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Your rule is: IF temperature &gt;= (your number) THEN predict "sells out".</text>
+  <text x="400" y="380" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">How many whole numbers score 8 out of 8? Count them. Then say which one you would ship.</text>
+</svg>

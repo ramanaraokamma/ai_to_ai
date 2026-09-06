@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Two routes through the same table</title>
+  <desc>Two panels side by side. On the left, greedy generation walks the same three words the bus to over and over in a loop. On the right, sampling produces the bus goes to town and stops at a full stop.</desc>
+<text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Two routes through the same table</text>
+<line x1="400" y1="66" x2="400" y2="340" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+<rect x="30" y="66" width="340" height="280" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+<rect x="430" y="66" width="340" height="280" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+<text x="200" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle">GREEDY: always the top count</text>
+<text x="600" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle">SAMPLING: draw a slip</text>
+<rect x="64" y="124" width="84" height="42" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="106" y="145" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">the</text>
+<rect x="168" y="124" width="84" height="42" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="210" y="145" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">bus</text>
+<rect x="272" y="124" width="84" height="42" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="314" y="145" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">to</text>
+<rect x="64" y="198" width="84" height="42" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="106" y="219" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">the</text>
+<rect x="168" y="198" width="84" height="42" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="210" y="219" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">bus</text>
+<rect x="272" y="198" width="84" height="42" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="314" y="219" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">to</text>
+<line x1="150" y1="145" x2="166" y2="145" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(166 145) rotate(0.0)"/>
+<line x1="254" y1="145" x2="270" y2="145" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(270 145) rotate(0.0)"/>
+<path d="M 356 145 V 178 H 50 V 199" fill="none" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+<line x1="50" y1="190" x2="50" y2="206" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(50 206) rotate(90.0)"/>
+<line x1="150" y1="219" x2="166" y2="219" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(166 219) rotate(0.0)"/>
+<line x1="254" y1="219" x2="270" y2="219" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(270 219) rotate(0.0)"/>
+<text x="200" y="278" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">the bus to the bus to the bus to ...</text>
+<text x="200" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">same 3 words for ever. 17 of the 20</text>
+<text x="200" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">words can never appear at all.</text>
+<rect x="464" y="124" width="84" height="42" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="506" y="145" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">the</text>
+<rect x="568" y="124" width="84" height="42" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="610" y="145" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">bus</text>
+<rect x="672" y="124" width="84" height="42" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="714" y="145" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">goes</text>
+<rect x="464" y="198" width="84" height="42" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="506" y="219" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">to</text>
+<rect x="568" y="198" width="84" height="42" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="610" y="219" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">town</text>
+<rect x="672" y="198" width="84" height="42" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="714" y="219" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">.</text>
+<line x1="550" y1="145" x2="566" y2="145" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(566 145) rotate(0.0)"/>
+<line x1="654" y1="145" x2="670" y2="145" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(670 145) rotate(0.0)"/>
+<path d="M 756 145 V 178 H 450 V 199" fill="none" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+<line x1="450" y1="190" x2="450" y2="206" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(450 206) rotate(90.0)"/>
+<line x1="550" y1="219" x2="566" y2="219" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(566 219) rotate(0.0)"/>
+<line x1="654" y1="219" x2="670" y2="219" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(670 219) rotate(0.0)"/>
+<text x="600" y="278" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">the bus goes to town .</text>
+<text x="600" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">different every run. Every word in the</text>
+<text x="600" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">table has some chance of turning up.</text>
+<text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Same table. Same start word. The only difference is how you pick.</text>
+</svg>

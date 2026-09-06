@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>Scoring the four fresh days</title>
+  <desc>A four row scorecard. For each fresh day it names the first rule that fired, what the rulebook said, the truth, and a tick or cross. Three of four are correct. The last row is a rainy Monday where rule one fires first.</desc>
+  <text x="400" y="42" font-size="24" fill="#14202B" text-anchor="middle">The four fresh days the teacher kept back</text>
+  <rect x="40" y="242" width="720" height="40" fill="#F4D5E9"/>
+  <path d="M40 96 A8 8 0 0 1 48 88 H752 A8 8 0 0 1 760 96 V122 H40 Z" fill="#D9EAF9"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="40" y1="162" x2="760" y2="162"/>
+    <line x1="40" y1="202" x2="760" y2="202"/>
+    <line x1="40" y1="242" x2="760" y2="242"/>
+    <line x1="72" y1="88" x2="72" y2="282"/>
+    <line x1="162" y1="88" x2="162" y2="282"/>
+    <line x1="238" y1="88" x2="238" y2="282"/>
+    <line x1="458" y1="88" x2="458" y2="282"/>
+    <line x1="558" y1="88" x2="558" y2="282"/>
+    <line x1="658" y1="88" x2="658" y2="282"/>
+  </g>
+  <line x1="40" y1="122" x2="760" y2="122" stroke="#1F6FB2" stroke-width="3"/>
+  <rect x="40" y="88" width="720" height="194" rx="8" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="56" y="112" font-size="14" fill="#14202B" text-anchor="middle">#</text>
+  <text x="117" y="112" font-size="14" fill="#14202B" text-anchor="middle">day</text>
+  <text x="200" y="112" font-size="14" fill="#14202B" text-anchor="middle">rain_mm</text>
+  <text x="348" y="112" font-size="14" fill="#14202B" text-anchor="middle">first rule that fires</text>
+  <text x="508" y="112" font-size="14" fill="#14202B" text-anchor="middle">says</text>
+  <text x="608" y="112" font-size="14" fill="#14202B" text-anchor="middle">truth</text>
+  <text x="709" y="112" font-size="14" fill="#14202B" text-anchor="middle">right?</text>
+  <text x="56" y="147" font-size="14" fill="#55636F" text-anchor="middle">F1</text>
+  <text x="117" y="147" font-size="14" fill="#14202B" text-anchor="middle">Wed</text>
+  <text x="200" y="147" font-size="14" fill="#14202B" text-anchor="middle">1</text>
+  <text x="348" y="147" font-size="14" fill="#14202B" text-anchor="middle">DEFAULT</text>
+  <text x="508" y="147" font-size="14" fill="#14202B" text-anchor="middle">on time</text>
+  <text x="608" y="147" font-size="14" fill="#CC2B1D" text-anchor="middle">LATE</text>
+  <g transform="translate(694,127) scale(0.3)"><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g></g>
+  <text x="56" y="187" font-size="14" fill="#55636F" text-anchor="middle">F2</text>
+  <text x="117" y="187" font-size="14" fill="#14202B" text-anchor="middle">Tue</text>
+  <text x="200" y="187" font-size="14" fill="#14202B" text-anchor="middle">7</text>
+  <text x="348" y="187" font-size="14" fill="#14202B" text-anchor="middle">RULE 2 (rain 3 mm or more)</text>
+  <text x="508" y="187" font-size="14" fill="#14202B" text-anchor="middle">late</text>
+  <text x="608" y="187" font-size="14" fill="#CC2B1D" text-anchor="middle">LATE</text>
+  <g transform="translate(694,167) scale(0.3)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="56" y="227" font-size="14" fill="#55636F" text-anchor="middle">F3</text>
+  <text x="117" y="227" font-size="14" fill="#14202B" text-anchor="middle">Fri</text>
+  <text x="200" y="227" font-size="14" fill="#14202B" text-anchor="middle">0</text>
+  <text x="348" y="227" font-size="14" fill="#14202B" text-anchor="middle">DEFAULT</text>
+  <text x="508" y="227" font-size="14" fill="#14202B" text-anchor="middle">on time</text>
+  <text x="608" y="227" font-size="14" fill="#55636F" text-anchor="middle">on time</text>
+  <g transform="translate(694,207) scale(0.3)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="56" y="267" font-size="14" fill="#55636F" text-anchor="middle">F4</text>
+  <text x="117" y="267" font-size="14" fill="#14202B" text-anchor="middle">Mon</text>
+  <text x="200" y="267" font-size="14" fill="#14202B" text-anchor="middle">8</text>
+  <text x="348" y="267" font-size="14" fill="#14202B" text-anchor="middle">RULE 1 (Monday) fires first</text>
+  <text x="508" y="267" font-size="14" fill="#14202B" text-anchor="middle">late</text>
+  <text x="608" y="267" font-size="14" fill="#CC2B1D" text-anchor="middle">LATE</text>
+  <g transform="translate(694,247) scale(0.3)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <rect x="40" y="300" width="350" height="56" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="215" y="334" font-size="20" fill="#14202B" text-anchor="middle">3 out of 4 = 0.75 = 75%</text>
+  <rect x="410" y="300" width="350" height="56" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="585" y="324" font-size="14" fill="#14202B" text-anchor="middle">F4 is a rainy Monday. BOTH rules fire.</text>
+  <text x="585" y="344" font-size="14" fill="#14202B" text-anchor="middle">This time they agree. What if they did not?</text>
+  <text x="400" y="384" font-size="14" fill="#55636F" text-anchor="middle">Four rows is far too few to trust. Week 9 does this properly with ten.</text>
+</svg>

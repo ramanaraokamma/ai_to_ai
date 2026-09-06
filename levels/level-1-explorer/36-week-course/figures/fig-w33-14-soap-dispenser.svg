@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The soap dispenser that only worked for some hands</title>
+  <desc>Three panels under the same automatic soap dispenser. In the first a hand gets soap and is marked correct. In the second another hand at the same angle gets nothing and is marked wrong. In the third the same hand covered with a white paper towel gets soap immediately.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">One dispenser, one sink, three tries</text>
+  <rect x="30" y="72" width="234" height="240" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <rect x="283" y="72" width="234" height="240" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <rect x="536" y="72" width="234" height="240" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <g fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round">
+    <rect x="102" y="96" width="90" height="54" rx="10"/>
+    <rect x="355" y="96" width="90" height="54" rx="10"/>
+    <rect x="608" y="96" width="90" height="54" rx="10"/>
+  </g>
+  <g fill="#DBCEF3" stroke="#6D28D9" stroke-width="2.5">
+    <circle cx="147" cy="123" r="10"/>
+    <circle cx="400" cy="123" r="10"/>
+    <circle cx="653" cy="123" r="10"/>
+  </g>
+  <g stroke="#6D28D9" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 5">
+    <line x1="147" y1="152" x2="147" y2="186"/>
+    <line x1="400" y1="152" x2="400" y2="186"/>
+    <line x1="653" y1="152" x2="653" y2="186"/>
+  </g>
+  <path d="M110 208 Q118 190 132 194 Q136 176 148 182 Q154 168 164 178 Q176 176 178 192 L182 226 Q150 240 118 230 Z" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M363 208 Q371 190 385 194 Q389 176 401 182 Q407 168 417 178 Q429 176 431 192 L435 226 Q403 240 371 230 Z" fill="#845F00" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M616 208 Q624 190 638 194 Q642 176 654 182 Q660 168 670 178 Q682 176 684 192 L688 226 Q656 240 624 230 Z" fill="#845F00" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M610 186 H700 V232 H610 Z" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="655" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">paper towel</text>
+  <g transform="translate(122,242) scale(0.42)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(375,242) scale(0.42)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+      <line x1="38" y1="38" x2="62" y2="62"/>
+      <line x1="62" y1="38" x2="38" y2="62"/>
+    </g>
+  </g>
+  <g transform="translate(628,242) scale(0.42)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">
+    <text x="166" y="270">SOAP</text>
+    <text x="419" y="270">NOTHING</text>
+    <text x="672" y="270">SOAP</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">
+    <text x="147" y="298">His hand. Worked first time.</text>
+    <text x="400" y="298">His friend's hand. Nothing, ever.</text>
+    <text x="653" y="298">Same hand, covered. Instantly.</text>
+  </g>
+  <text x="400" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Nobody wrote a rule to refuse him. The sensor had been checked against a narrow set of hands, and it passed.</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">It had an accuracy number. It never had a SECOND number for the hands it was bad at.</text>
+</svg>

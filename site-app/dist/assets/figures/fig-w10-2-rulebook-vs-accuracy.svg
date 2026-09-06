@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The rulebook gets fatter, the score does not</title>
+  <desc>Five panels left to right. In each one a rulebook drawn as a stack of pages grows taller, from 3 rules to 258 rules, while the blue accuracy bar beside it barely moves, from 70 percent to 82 percent. A dashed line marks where the score got stuck.</desc>
+  <text x="400" y="34" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The rulebook gets fatter. The score does not.</text>
+
+  <line x1="40" y1="300" x2="775" y2="300" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+
+  <rect x="44" y="276" width="56" height="24" rx="4" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="196" y="252" width="56" height="48" rx="4" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="348" y="216" width="56" height="84" rx="4" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="500" y="174" width="56" height="126" rx="4" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="652" y="130" width="56" height="170" rx="4" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+
+  <g stroke="#845F00" stroke-width="1.5" stroke-linecap="round">
+    <line x1="196" y1="276" x2="252" y2="276"/>
+    <line x1="348" y1="244" x2="404" y2="244"/>
+    <line x1="348" y1="272" x2="404" y2="272"/>
+    <line x1="500" y1="216" x2="556" y2="216"/>
+    <line x1="500" y1="250" x2="556" y2="250"/>
+    <line x1="500" y1="278" x2="556" y2="278"/>
+    <line x1="652" y1="170" x2="708" y2="170"/>
+    <line x1="652" y1="204" x2="708" y2="204"/>
+    <line x1="652" y1="238" x2="708" y2="238"/>
+    <line x1="652" y1="272" x2="708" y2="272"/>
+  </g>
+
+  <rect x="116" y="188" width="34" height="112" fill="#1F6FB2"/>
+  <rect x="268" y="175" width="34" height="125" fill="#1F6FB2"/>
+  <rect x="420" y="172" width="34" height="128" fill="#1F6FB2"/>
+  <rect x="572" y="170" width="34" height="130" fill="#1F6FB2"/>
+  <rect x="724" y="169" width="34" height="131" fill="#1F6FB2"/>
+
+  <line x1="110" y1="188" x2="770" y2="188" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <text x="430" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the score is stuck along this line</text>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">
+    <text x="133" y="180">70%</text>
+    <text x="285" y="167">78%</text>
+    <text x="437" y="164">80%</text>
+    <text x="589" y="162">81%</text>
+    <text x="741" y="161">82%</text>
+  </g>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">
+    <text x="100" y="326">3 rules</text>
+    <text x="252" y="326">8 rules</text>
+    <text x="404" y="326">20 rules</text>
+    <text x="556" y="326">60 rules</text>
+    <text x="708" y="326">258 rules</text>
+  </g>
+
+  <text x="400" y="380" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Rules 9 to 258 bought four percentage points between them. That is the wall.</text>
+</svg>

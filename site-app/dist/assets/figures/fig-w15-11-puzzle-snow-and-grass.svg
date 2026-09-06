@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Six photo cards and one thing they share</title>
+  <desc>Six labelled photo cards in two rows. The three wolf cards all show snow at the bottom. The three husky cards all show grass at the bottom. A question below asks what the machine will actually learn.</desc>
+  <text x="400" y="38" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Six training photos. What will it actually learn?</text>
+
+  <rect x="40" y="64" width="220" height="120" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="290" y="64" width="220" height="120" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="540" y="64" width="220" height="120" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="46" y="140" width="208" height="38" rx="6" fill="#E2F7ED" stroke="none"/>
+  <rect x="296" y="140" width="208" height="38" rx="6" fill="#E2F7ED" stroke="none"/>
+  <rect x="546" y="140" width="208" height="38" rx="6" fill="#E2F7ED" stroke="none"/>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">
+    <text x="150" y="96">label: WOLF</text>
+    <text x="400" y="96">label: WOLF</text>
+    <text x="650" y="96">label: WOLF</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">
+    <text x="150" y="124">side view, forest</text>
+    <text x="400" y="124">head only, close up</text>
+    <text x="650" y="124">running, far away</text>
+    <text x="150" y="165">ground: SNOW</text>
+    <text x="400" y="165">ground: SNOW</text>
+    <text x="650" y="165">ground: SNOW</text>
+  </g>
+
+  <rect x="40" y="200" width="220" height="120" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="290" y="200" width="220" height="120" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="540" y="200" width="220" height="120" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="46" y="276" width="208" height="38" rx="6" fill="#E8C671" stroke="none"/>
+  <rect x="296" y="276" width="208" height="38" rx="6" fill="#E8C671" stroke="none"/>
+  <rect x="546" y="276" width="208" height="38" rx="6" fill="#E8C671" stroke="none"/>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">
+    <text x="150" y="232">label: HUSKY</text>
+    <text x="400" y="232">label: HUSKY</text>
+    <text x="650" y="232">label: HUSKY</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">
+    <text x="150" y="260">side view, park</text>
+    <text x="400" y="260">head only, close up</text>
+    <text x="650" y="260">running, far away</text>
+    <text x="150" y="301">ground: GRASS</text>
+    <text x="400" y="301">ground: GRASS</text>
+    <text x="650" y="301">ground: GRASS</text>
+  </g>
+
+  <text x="400" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Now predict: what does it say about a husky standing in snow?</text>
+  <text x="400" y="380" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">And which single photo, added to the pile, would break the trick?</text>
+</svg>

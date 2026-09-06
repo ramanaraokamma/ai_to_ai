@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>The Fairness Audit Poster, block by block</title>
+  <desc>A poster layout. The left half is a data map of a real product flowing downward from data in, to what it predicts, to who is affected, to what goes wrong. The right half is the audit of your own model in six numbered items, including the accuracy gap of 58.4 percentage points and the fix of 30 more lamplight photos. A red strip across the bottom reads do not use this model for.</desc>
+  <text x="400" y="34" font-size="24" fill="#14202B" text-anchor="middle">The Fairness Audit Poster, block by block</text>
+
+  <g stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <line x1="210" y1="122" x2="210" y2="132"/><polyline points="204,127 210,135 216,127"/>
+    <line x1="210" y1="168" x2="210" y2="178"/><polyline points="204,173 210,181 216,173"/>
+    <line x1="210" y1="214" x2="210" y2="224"/><polyline points="204,219 210,227 216,219"/>
+  </g>
+
+  <rect x="30" y="52" width="360" height="240" rx="12" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="210" y="78" font-size="18" fill="#14202B" text-anchor="middle">DATA MAP — a real product</text>
+
+  <g fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round">
+    <rect x="52" y="90" width="316" height="32" rx="8"/>
+    <rect x="52" y="136" width="316" height="32" rx="8"/>
+    <rect x="52" y="182" width="316" height="32" rx="8"/>
+    <rect x="52" y="228" width="316" height="32" rx="8"/>
+  </g>
+  <g font-size="14" fill="#14202B" text-anchor="middle">
+    <text x="210" y="111">what data goes in, and who agreed</text>
+    <text x="210" y="157">what it predicts: input to output</text>
+    <text x="210" y="203">who is affected  ★</text>
+    <text x="210" y="249">what goes wrong when it is wrong</text>
+  </g>
+  <text x="210" y="278" font-size="12" fill="#55636F" text-anchor="middle">★ helped most · helped least · affected but never asked</text>
+
+  <rect x="406" y="52" width="364" height="240" rx="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="588" y="78" font-size="18" fill="#14202B" text-anchor="middle">MY MODEL'S AUDIT</text>
+
+  <g font-size="14" fill="#14202B">
+    <text x="422" y="103">1 · training counts: 84 / 22 / 14 / 0</text>
+    <text x="422" y="127">2 · sealed prediction, right or wrong</text>
+    <text x="422" y="151">3 · results table, 4 conditions, 48 photos</text>
+    <text x="422" y="225">4 · condition × class grid, worst cell circled</text>
+    <text x="422" y="249">5 · highest confidence while WRONG: 94%</text>
+  </g>
+
+  <rect x="420" y="162" width="336" height="46" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="588" y="182" font-size="18" fill="#14202B" text-anchor="middle">ACCURACY GAP: 58.4</text>
+  <text x="588" y="200" font-size="14" fill="#55636F" text-anchor="middle">percentage points (91.7 − 33.3)</text>
+
+  <rect x="420" y="258" width="336" height="26" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="588" y="276" font-size="14" fill="#14202B" text-anchor="middle">6 · THE FIX: 30 more lamplight photos</text>
+
+  <rect x="30" y="306" width="740" height="44" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="50" y="334" font-size="18" fill="#14202B">DO NOT USE THIS MODEL FOR...</text>
+  <text x="752" y="334" font-size="14" fill="#55636F" text-anchor="end">three limits, each carrying its own measured number</text>
+
+  <text x="400" y="374" font-size="14" fill="#55636F" text-anchor="middle">Six blocks. The red strip is the boldest thing on the page, and it is not optional.</text>
+</svg>

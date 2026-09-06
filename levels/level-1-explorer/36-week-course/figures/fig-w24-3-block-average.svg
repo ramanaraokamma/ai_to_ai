@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img">
+  <title>Averaging a two by two block into one pixel</title>
+  <desc>Four pixel values 128, 0, 192 and 0 in a two by two block. An arrow leads to a single pixel holding 80. Below, the division is written out: 128 plus 0 plus 192 plus 0 is 320, divided by 4 is 80.</desc>
+<text x="250" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Four pixels become one</text><rect x="52" y="100" width="80" height="80" fill="#8A9095" stroke="#C7CDD4" stroke-width="1"/>
+<text x="92.0" y="146.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#FFFFFF" text-anchor="middle">128</text>
+<rect x="132" y="100" width="80" height="80" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="172.0" y="146.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="52" y="180" width="80" height="80" fill="#C5C8CB" stroke="#C7CDD4" stroke-width="1"/>
+<text x="92.0" y="226.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">192</text>
+<rect x="132" y="180" width="80" height="80" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="172.0" y="226.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="52" y="100" width="160" height="160" fill="none" stroke="#14202B" stroke-width="3"/>
+<text x="132" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">from the 12 x 12</text><line x1="232" y1="180" x2="288" y2="180" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/><polyline points="282,172 296,180 282,188" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="320" y="140" width="80" height="80" fill="#5E666E" stroke="#C7CDD4" stroke-width="1"/>
+<text x="360.0" y="186.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#FFFFFF" text-anchor="middle">80</text>
+<rect x="320" y="140" width="80" height="80" fill="none" stroke="#14202B" stroke-width="3"/>
+<text x="360" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">in the 6 x 6</text><rect x="52" y="304" width="396" height="122" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+<text x="250" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">(128 + 0 + 192 + 0) / 4</text><text x="250" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">=  320 / 4</text><text x="250" y="412" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#1B7A4B" text-anchor="middle">=  80</text><text x="250" y="458" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Add the four. Divide by four. Write the one answer.</text></svg>

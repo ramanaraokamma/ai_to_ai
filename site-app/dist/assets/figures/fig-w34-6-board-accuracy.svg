@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>The finished board: accuracy three ways and the matrix</title>
+  <desc>A board in two halves. On the left the division is worked out: thirty out of forty, divided to zero point seven five, times one hundred is seventy-five percent, against a baseline of twenty-five percent, a gain of fifty points. On the right a four by four confusion matrix with the diagonal shaded green.</desc>
+
+  <text x="400" y="38" font-size="24" fill="#14202B" text-anchor="middle">The finished board</text>
+  <line x1="380" y1="60" x2="380" y2="356" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <!-- left: the arithmetic -->
+  <text x="40" y="88" font-size="18" fill="#845F00">ACCURACY, THREE WAYS</text>
+  <rect x="36" y="102" width="316" height="180" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <g font-size="18" fill="#14202B">
+    <text x="60" y="136">fraction:   30 / 40</text>
+    <text x="60" y="172">decimal:   30 &#247; 40 = 0.75</text>
+    <text x="60" y="208">percent:   0.75 x 100 = 75%</text>
+  </g>
+  <text x="60" y="248" font-size="14" fill="#55636F">check: 40 x 0.7 = 28, left over 2, 2 &#247; 40 = 0.05</text>
+  <text x="60" y="268" font-size="14" fill="#55636F">0.7 + 0.05 = 0.75</text>
+
+  <rect x="36" y="296" width="150" height="56" rx="10" fill="#F5F8FA" stroke="#55636F" stroke-width="3"/>
+  <text x="111" y="318" font-size="14" fill="#55636F" text-anchor="middle">baseline</text>
+  <text x="111" y="340" font-size="18" fill="#14202B" text-anchor="middle">25%</text>
+  <rect x="202" y="296" width="150" height="56" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="277" y="318" font-size="14" fill="#55636F" text-anchor="middle">gain</text>
+  <text x="277" y="340" font-size="18" fill="#14202B" text-anchor="middle">50 points</text>
+
+  <!-- right: confusion matrix -->
+  <text x="412" y="88" font-size="18" fill="#845F00">CONFUSION MATRIX</text>
+  <text x="620" y="112" font-size="12" fill="#55636F" text-anchor="middle">PREDICTED</text>
+  <g font-size="12" fill="#55636F" text-anchor="middle">
+    <text x="536" y="134">rec</text><text x="584" y="134">com</text><text x="632" y="134">lan</text><text x="680" y="134">oth</text>
+  </g>
+  <text x="420" y="240" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 420 240)">TRUE</text>
+  <g font-size="12" fill="#55636F" text-anchor="end">
+    <text x="504" y="170">rec</text><text x="504" y="218">com</text><text x="504" y="266">lan</text><text x="504" y="314">oth</text>
+  </g>
+
+  <g fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5">
+    <rect x="512" y="142" width="48" height="48"/><rect x="560" y="142" width="48" height="48"/><rect x="608" y="142" width="48" height="48"/><rect x="656" y="142" width="48" height="48"/>
+    <rect x="512" y="190" width="48" height="48"/><rect x="560" y="190" width="48" height="48"/><rect x="608" y="190" width="48" height="48"/><rect x="656" y="190" width="48" height="48"/>
+    <rect x="512" y="238" width="48" height="48"/><rect x="560" y="238" width="48" height="48"/><rect x="608" y="238" width="48" height="48"/><rect x="656" y="238" width="48" height="48"/>
+    <rect x="512" y="286" width="48" height="48"/><rect x="560" y="286" width="48" height="48"/><rect x="608" y="286" width="48" height="48"/><rect x="656" y="286" width="48" height="48"/>
+  </g>
+  <g fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3">
+    <rect x="512" y="142" width="48" height="48"/>
+    <rect x="560" y="190" width="48" height="48"/>
+    <rect x="608" y="238" width="48" height="48"/>
+    <rect x="656" y="286" width="48" height="48"/>
+  </g>
+  <g font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">
+    <text x="536" y="166">9</text><text x="584" y="166">0</text><text x="632" y="166">1</text><text x="680" y="166">0</text>
+    <text x="536" y="214">1</text><text x="584" y="214">8</text><text x="632" y="214">1</text><text x="680" y="214">0</text>
+    <text x="536" y="262">3</text><text x="584" y="262">1</text><text x="632" y="262">6</text><text x="680" y="262">0</text>
+    <text x="536" y="310">1</text><text x="584" y="310">0</text><text x="632" y="310">2</text><text x="680" y="310">7</text>
+  </g>
+  <rect x="512" y="142" width="192" height="192" fill="none" stroke="#14202B" stroke-width="3"/>
+  <text x="608" y="356" font-size="14" fill="#55636F" text-anchor="middle">green diagonal = 9+8+6+7 = 30 correct</text>
+
+  <text x="400" y="386" font-size="14" fill="#55636F" text-anchor="middle">Worst row: landfill, 6 out of 10 - and it loses 3 of them to recycling.</text>
+</svg>

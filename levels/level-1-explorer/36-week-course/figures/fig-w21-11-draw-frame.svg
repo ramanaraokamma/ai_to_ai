@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Draw It frame for Week 21</title>
+  <desc>An empty framed drawing area titled Draw your own confusion matrix, with a large blank square for the grid on the left and three blank sentence lines on the right.</desc>
+  <rect x="24" y="24" width="752" height="296" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="24" y="24" width="752" height="44" rx="12" fill="#F5F8FA" stroke="none"/>
+  <line x1="24" y1="68" x2="776" y2="68" stroke="#14202B" stroke-width="3"/>
+  <text x="400" y="53" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">DRAW: your own 3x3 grid, labelled, plus the mistakes as sentences</text>
+  <text x="56" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">rule your grid here — labels BEFORE numbers</text>
+  <g stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="8 8">
+    <rect x="56" y="106" width="330" height="192" rx="10" fill="none"/>
+  </g>
+  <text x="424" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">then say every off-diagonal cell out loud, and write it:</text>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="424" y1="136" x2="744" y2="136"/>
+    <line x1="424" y1="176" x2="744" y2="176"/>
+    <line x1="424" y1="216" x2="744" y2="216"/>
+  </g>
+  <rect x="424" y="238" width="320" height="60" rx="10" fill="#F5F8FA" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="438" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">the two checks:</text>
+  <line x1="438" y1="286" x2="730" y2="286" stroke="#C7CDD4" stroke-width="1.5"/>
+  <g fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round">
+    <rect x="60" y="342" width="200" height="36" rx="8"/>
+    <rect x="300" y="342" width="200" height="36" rx="8"/>
+    <rect x="540" y="342" width="200" height="36" rx="8"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">
+    <text x="60" y="338">shade the diagonal green</text>
+    <text x="300" y="338">circle the worst cell in red</text>
+    <text x="540" y="338">name 10 photos to fix it</text>
+  </g>
+</svg>

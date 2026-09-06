@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 260" role="img">
+  <title>You type one line. It answers underneath.</title>
+  <desc>A terminal window. One typed command is arrowed and labelled what you typed. The two lines of output below it are bracketed and labelled what it printed.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">You type one line. It answers underneath.</text>
+  <path d="M170 74 A10 10 0 0 1 180 64 H580 A10 10 0 0 1 590 74 V100 H170 Z" fill="#F5F8FA"/>
+  <circle cx="186" cy="82" r="4" fill="none" stroke="#55636F" stroke-width="2"/><circle cx="202" cy="82" r="4" fill="none" stroke="#55636F" stroke-width="2"/><circle cx="218" cy="82" r="4" fill="none" stroke="#55636F" stroke-width="2"/>
+  <text x="204" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">Terminal</text>
+  <line x1="170" y1="100" x2="590" y2="100" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="186" y="120" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#55636F">&gt;</text>
+  <text x="200" y="120" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">python3 hello.py</text>
+  <text x="186" y="146" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">Hello, world.</text>
+  <text x="186" y="172" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">My name is Ramana.</text>
+  <rect x="170" y="64" width="420" height="140" rx="10" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M160 134 H152 V184 H160" fill="none" stroke="#1B7A4B" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="146" y="163" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end">what it printed</text>
+  <line x1="770" y1="120" x2="600" y2="120" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(600 120) rotate(180)"/>
+  <text x="778" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end">what you typed</text>
+  <text x="400" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Two print lines in the file, two lines on the screen. Nothing else happens by itself.</text>
+</svg>

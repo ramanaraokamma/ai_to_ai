@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 260" role="img">
+  <title>A receipt a person would actually accept</title>
+  <desc>A terminal showing four receipt lines. The total, 17.00, is highlighted in pink and arrowed with a note that money always gets two decimals. The whole-slices and leftover lines are highlighted in green and arrowed with a note reading whole ones, then the leftover.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A receipt a person would actually accept</text>
+  <path d="M120 74 A10 10 0 0 1 130 64 H530 A10 10 0 0 1 540 74 V100 H120 Z" fill="#F5F8FA"/>
+  <circle cx="136" cy="82" r="4" fill="none" stroke="#55636F" stroke-width="2"/><circle cx="152" cy="82" r="4" fill="none" stroke="#55636F" stroke-width="2"/><circle cx="168" cy="82" r="4" fill="none" stroke="#55636F" stroke-width="2"/>
+  <text x="154" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">Terminal</text>
+  <line x1="120" y1="100" x2="540" y2="100" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="294" y="104" width="62" height="22" rx="4" fill="#F4D5E9"/>
+  <rect x="294" y="152" width="84" height="46" rx="4" fill="#E2F7ED"/>
+  <text x="136" y="118" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">Total</text>
+  <text x="276" y="118" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#55636F">:</text>
+  <text x="300" y="118" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">17.00</text>
+  <text x="136" y="142" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">Per slice</text>
+  <text x="276" y="142" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#55636F">:</text>
+  <text x="300" y="142" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">1.06</text>
+  <text x="136" y="166" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">Each gets</text>
+  <text x="276" y="166" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#55636F">:</text>
+  <text x="300" y="166" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">3 slices</text>
+  <text x="136" y="190" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">Left over</text>
+  <text x="276" y="190" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#55636F">:</text>
+  <text x="300" y="190" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">1 slice</text>
+  <rect x="120" y="64" width="420" height="150" rx="10" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="660" y1="115" x2="548" y2="115" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C42B8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(548 115) rotate(180)"/>
+  <text x="668" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">money gets two</text>
+  <text x="668" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">decimals, always</text>
+  <line x1="660" y1="190" x2="548" y2="190" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(548 190) rotate(180)"/>
+  <text x="668" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">whole ones, then</text>
+  <text x="668" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the leftover</text>
+  <text x="400" y="234" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Every number here was computed from four inputs. Not one of them was typed twice.</text>
+</svg>

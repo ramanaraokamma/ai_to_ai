@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>First match wins: a rainy Monday never reaches rule 3</title>
+  <desc>A rainy Monday enters a four step rulebook. Rule 1 matches and stops. Rule 2, rule 3 and the default are drawn faded with the words never ran. Rule 3 would have said on time, and it never gets a turn. The answer is late.</desc>
+  <text x="250" y="40" font-size="24" fill="#14202B" text-anchor="middle">First match wins</text>
+
+  <path d="M80 186 H44 V608 H162" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <polyline points="154,602 166,608 154,614" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g stroke="#C7CDD4" stroke-width="2" stroke-dasharray="7 5">
+    <line x1="250" y1="222" x2="250" y2="250"/>
+    <line x1="250" y1="322" x2="250" y2="350"/>
+    <line x1="250" y1="422" x2="250" y2="450"/>
+  </g>
+  <line x1="250" y1="124" x2="250" y2="146" stroke="#14202B" stroke-width="2"/>
+  <polyline points="244,138 250,150 256,138" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="140" y="66" width="220" height="58" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="250" y="90" font-size="12" fill="#55636F" text-anchor="middle">THE DAY COMING IN</text>
+  <text x="250" y="114" font-size="18" fill="#14202B" text-anchor="middle">Monday, rain 8 mm</text>
+
+  <rect x="80" y="150" width="340" height="72" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="98" y="176" font-size="12" fill="#55636F">RULE 1</text>
+  <text x="98" y="204" font-size="18" fill="#14202B">IF day = Monday</text>
+  <text x="402" y="204" font-size="18" fill="#14202B" text-anchor="end">LATE</text>
+  <text x="402" y="176" font-size="14" fill="#1B7A4B" text-anchor="end">MATCH - stop here</text>
+
+  <rect x="80" y="250" width="340" height="72" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="8 6" stroke-linejoin="round"/>
+  <text x="98" y="276" font-size="12" fill="#55636F">RULE 2</text>
+  <text x="98" y="304" font-size="18" fill="#55636F">IF rain_mm &gt;= 3</text>
+  <text x="402" y="304" font-size="18" fill="#55636F" text-anchor="end">LATE</text>
+  <text x="402" y="276" font-size="14" fill="#55636F" text-anchor="end">never ran</text>
+
+  <rect x="80" y="350" width="340" height="72" rx="10" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-dasharray="8 6" stroke-linejoin="round"/>
+  <text x="98" y="376" font-size="12" fill="#55636F">RULE 3</text>
+  <text x="98" y="404" font-size="18" fill="#55636F">IF day = Friday</text>
+  <text x="402" y="404" font-size="18" fill="#CC2B1D" text-anchor="end">ON TIME</text>
+  <text x="402" y="376" font-size="14" fill="#CC2B1D" text-anchor="end">never ran</text>
+
+  <rect x="80" y="450" width="340" height="72" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="8 6" stroke-linejoin="round"/>
+  <text x="98" y="476" font-size="12" fill="#55636F">DEFAULT</text>
+  <text x="98" y="504" font-size="18" fill="#55636F">OTHERWISE</text>
+  <text x="402" y="504" font-size="18" fill="#55636F" text-anchor="end">ON TIME</text>
+  <text x="402" y="476" font-size="14" fill="#55636F" text-anchor="end">never ran</text>
+
+  <rect x="166" y="578" width="200" height="58" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="266" y="614" font-size="20" fill="#14202B" text-anchor="middle">Answer: LATE</text>
+
+  <text x="250" y="666" font-size="14" fill="#55636F" text-anchor="middle">Three quarters of the rulebook never ran. Move rule 3 to the top</text>
+  <text x="250" y="684" font-size="14" fill="#55636F" text-anchor="middle">and the very same day gets the opposite answer.</text>
+</svg>

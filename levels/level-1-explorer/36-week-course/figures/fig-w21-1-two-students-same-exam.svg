@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Two students sitting the same exam</title>
+  <desc>Two mirrored panels. On the left Aisha scored one hundred percent on the practice sheet and ninety-five percent on the exam, a gap of five points, marked with a tick and labelled generalizing. On the right Ben scored one hundred percent on the practice sheet and forty percent on the exam, a gap of sixty points, marked with a cross and labelled memorizing, with a note that he had revised from the exam paper itself.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+
+    <text x="400" y="40" font-size="24" fill="#14202B" text-anchor="middle">Same practice score. Only the new questions told them apart.</text>
+
+    <line x1="400" y1="76" x2="400" y2="326" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+    <rect x="40" y="76" width="340" height="250" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="420" y="76" width="340" height="250" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+
+    <g transform="translate(60,92) scale(0.68)">
+      <circle cx="50" cy="52" r="30" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+      <path d="M20 44 A30 30 0 0 1 80 44 A34 22 0 0 0 20 44 Z" fill="#845F00" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="40" cy="50" r="4" fill="#14202B"/>
+      <circle cx="60" cy="50" r="4" fill="#14202B"/>
+      <path d="M39 63 Q50 72 61 63" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(440,92) scale(0.68)">
+      <circle cx="50" cy="52" r="30" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+      <path d="M20 44 A30 30 0 0 1 80 44 A34 22 0 0 0 20 44 Z" fill="#845F00" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="40" cy="50" r="4" fill="#14202B"/>
+      <circle cx="60" cy="50" r="4" fill="#14202B"/>
+      <path d="M39 63 Q50 72 61 63" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <g transform="translate(296,88) scale(0.46)">
+      <circle cx="50" cy="50" r="34" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="4"/>
+      <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(676,88) scale(0.46)">
+      <circle cx="50" cy="50" r="34" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="4"/>
+      <g stroke="#CC2B1D" stroke-width="8" stroke-linecap="round">
+        <line x1="38" y1="38" x2="62" y2="62"/>
+        <line x1="62" y1="38" x2="38" y2="62"/>
+      </g>
+    </g>
+
+    <g font-size="18" fill="#14202B">
+      <text x="132" y="118">Aisha</text>
+      <text x="512" y="118">Ben</text>
+    </g>
+    <g font-size="14" fill="#55636F">
+      <text x="132" y="140">learned the method</text>
+      <text x="512" y="140">learned the answers</text>
+    </g>
+
+    <g font-size="18" fill="#14202B">
+      <text x="60" y="196">practice sheet:&#160;&#160;100%</text>
+      <text x="60" y="226">the exam:&#160;&#160;95%</text>
+      <text x="440" y="196">practice sheet:&#160;&#160;100%</text>
+      <text x="440" y="226">the exam:&#160;&#160;40%</text>
+    </g>
+
+    <rect x="56" y="242" width="150" height="34" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <text x="131" y="265" font-size="16" fill="#14202B" text-anchor="middle">gap: 5 points</text>
+    <rect x="436" y="242" width="170" height="34" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+    <text x="521" y="265" font-size="16" fill="#14202B" text-anchor="middle">gap: 60 points</text>
+
+    <text x="210" y="314" font-size="18" fill="#14202B" text-anchor="middle">GENERALIZING</text>
+    <text x="590" y="314" font-size="18" fill="#14202B" text-anchor="middle">MEMORIZING</text>
+    <text x="590" y="292" font-size="12" fill="#55636F" text-anchor="middle">he had revised from the exam paper itself</text>
+
+    <text x="400" y="368" font-size="14" fill="#55636F" text-anchor="middle">Both worked hard. Both scored 100% on the sheet they had already seen.</text>
+    <text x="400" y="388" font-size="14" fill="#55636F" text-anchor="middle">The size of the gap is the only thing that told you which was which.</text>
+  </g>
+</svg>

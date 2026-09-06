@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Term 2 concept map</title>
+  <desc>Six boxes joined by arrows in a loop. Rules hit a wall leads to features and labels, which leads to training, which leads down to a model, then leftwards to confidence and margin, then to what it was actually relying on.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="40" font-size="24" fill="#14202B" text-anchor="middle">Term 2 in one picture</text>
+
+    <g stroke="#14202B" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="254" y1="109" x2="284" y2="109"/>
+      <polyline points="277,102 289,109 277,116"/>
+      <line x1="509" y1="109" x2="539" y2="109"/>
+      <polyline points="532,102 544,109 532,116"/>
+      <line x1="655" y1="146" x2="655" y2="202"/>
+      <polyline points="648,195 655,207 662,195"/>
+      <line x1="546" y1="247" x2="516" y2="247"/>
+      <polyline points="523,240 511,247 523,254"/>
+      <line x1="291" y1="247" x2="261" y2="247"/>
+      <polyline points="268,240 256,247 268,254"/>
+    </g>
+
+    <rect x="40" y="76" width="210" height="66" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+    <text x="145" y="104" font-size="18" fill="#14202B" text-anchor="middle">Rules hit a wall</text>
+    <text x="145" y="126" font-size="12" fill="#55636F" text-anchor="middle">week 10</text>
+
+    <rect x="295" y="76" width="210" height="66" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <text x="400" y="104" font-size="18" fill="#14202B" text-anchor="middle">Features + labels</text>
+    <text x="400" y="126" font-size="12" fill="#55636F" text-anchor="middle">weeks 11-14</text>
+
+    <rect x="550" y="76" width="210" height="66" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+    <text x="655" y="104" font-size="18" fill="#14202B" text-anchor="middle">Training</text>
+    <text x="655" y="126" font-size="12" fill="#55636F" text-anchor="middle">week 15</text>
+
+    <rect x="550" y="214" width="210" height="66" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+    <text x="655" y="242" font-size="18" fill="#14202B" text-anchor="middle">A model</text>
+    <text x="655" y="264" font-size="12" fill="#55636F" text-anchor="middle">week 17</text>
+
+    <rect x="295" y="214" width="210" height="66" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <text x="400" y="242" font-size="18" fill="#14202B" text-anchor="middle">Confidence + margin</text>
+    <text x="400" y="264" font-size="12" fill="#55636F" text-anchor="middle">week 16</text>
+
+    <rect x="40" y="214" width="210" height="66" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <text x="145" y="242" font-size="18" fill="#14202B" text-anchor="middle">What it relied on</text>
+    <text x="145" y="264" font-size="12" fill="#55636F" text-anchor="middle">week 18</text>
+
+    <text x="400" y="326" font-size="16" fill="#14202B" text-anchor="middle">Every arrow is a week you have already done.</text>
+    <text x="400" y="366" font-size="14" fill="#55636F" text-anchor="middle">The last box is the one that makes all the others trustworthy.</text>
+  </g>
+</svg>

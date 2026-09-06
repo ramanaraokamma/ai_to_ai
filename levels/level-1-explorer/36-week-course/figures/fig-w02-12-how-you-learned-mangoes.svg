@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>How you learned to pick a ripe mango</title>
+  <desc>Three stages left to right. Hundreds of mangoes each tagged ripe or not yet, then your brain finding a rule with nobody writing one down, then a brand new mango you can still judge correctly.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="44" font-size="24" fill="#14202B" text-anchor="middle">How you learned to pick a ripe mango</text>
+    <rect x="40" y="100" width="180" height="190" rx="12" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+    <rect x="310" y="100" width="180" height="190" rx="12" fill="#FFFFFF" stroke="#6D28D9" stroke-width="3"/>
+    <rect x="580" y="100" width="180" height="190" rx="12" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3"/>
+
+    <g>
+      <ellipse cx="85" cy="140" rx="24" ry="16" fill="#E8C671" stroke="#845F00" stroke-width="2.5" transform="rotate(-18 85 140)"/>
+      <ellipse cx="150" cy="148" rx="24" ry="16" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2.5" transform="rotate(12 150 148)"/>
+      <ellipse cx="95" cy="190" rx="24" ry="16" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2.5" transform="rotate(8 95 190)"/>
+      <ellipse cx="165" cy="196" rx="24" ry="16" fill="#E8C671" stroke="#845F00" stroke-width="2.5" transform="rotate(-14 165 196)"/>
+      <ellipse cx="80" cy="238" rx="24" ry="16" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2.5" transform="rotate(-6 80 238)"/>
+      <ellipse cx="146" cy="242" rx="24" ry="16" fill="#E8C671" stroke="#845F00" stroke-width="2.5" transform="rotate(16 146 242)"/>
+    </g>
+    <text x="130" y="272" font-size="12" fill="#55636F" text-anchor="middle">green = "ripe"  ochre = "not yet"</text>
+
+    <g transform="translate(350,135)">
+      <path d="M50 14 C34 14 24 24 24 36 C13 41 12 55 22 62 C22 76 34 87 50 87 C66 87 78 76 78 62 C88 55 87 41 76 36 C76 24 66 14 50 14 Z" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+      <line x1="50" y1="15" x2="50" y2="86" stroke="#6D28D9" stroke-width="3" stroke-linecap="round"/>
+      <g fill="none" stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round">
+        <path d="M37 28 C45 33 45 43 37 47"/>
+        <path d="M63 28 C55 33 55 43 63 47"/>
+        <path d="M35 57 C45 61 45 71 37 75"/>
+        <path d="M65 57 C55 61 55 71 63 75"/>
+      </g>
+    </g>
+    <text x="400" y="248" font-size="12" fill="#55636F" text-anchor="middle">nobody wrote a rule</text>
+    <text x="400" y="266" font-size="12" fill="#55636F" text-anchor="middle">but a rule is in there</text>
+
+    <ellipse cx="670" cy="160" rx="34" ry="23" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" transform="rotate(-12 670 160)"/>
+    <text x="670" y="205" font-size="14" fill="#14202B" text-anchor="middle">never seen before</text>
+    <g transform="translate(645,218) scale(0.5)">
+      <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="670" y="278" font-size="14" fill="#14202B" text-anchor="middle">"that one's ripe"</text>
+
+    <g transform="translate(228,175) scale(0.62)">
+      <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+      <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(498,175) scale(0.62)">
+      <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+      <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="130" y="322" font-size="18" fill="#14202B" text-anchor="middle">1. answered examples</text>
+    <text x="400" y="322" font-size="18" fill="#14202B" text-anchor="middle">2. you find a rule</text>
+    <text x="670" y="322" font-size="18" fill="#14202B" text-anchor="middle">3. a new mango</text>
+    <text x="400" y="366" font-size="14" fill="#55636F" text-anchor="middle">Machine learning is exactly this, done by a machine, in minutes instead of years.</text>
+  </g>
+</svg>

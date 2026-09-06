@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>One row is one what? The same drawer as three tables</title>
+  <desc>Three tables side by side built from the same drawer. The first has one row per object and four rows. The second has one row per pocket and three rows. The third has one row per owner and two rows. All three are correct; they answer different questions.</desc>
+  <text x="400" y="38" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">One row is one what?</text>
+  <text x="400" y="64" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">One drawer. Three honest tables. They are not the same table.</text>
+
+  <rect x="30" y="80" width="230" height="248" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="285" y="80" width="230" height="248" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="540" y="80" width="230" height="248" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">
+    <text x="145" y="106">one row = one OBJECT</text>
+    <text x="400" y="106">one row = one POCKET</text>
+    <text x="655" y="106">one row = one OWNER</text>
+  </g>
+
+  <rect x="48" y="120" width="194" height="144" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M48 128 A8 8 0 0 1 56 120 H234 A8 8 0 0 1 242 128 V148 H48 Z" fill="#D9EAF9" stroke="none"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="48" y1="177" x2="242" y2="177"/><line x1="48" y1="206" x2="242" y2="206"/><line x1="48" y1="235" x2="242" y2="235"/>
+    <line x1="138" y1="148" x2="138" y2="264"/><line x1="190" y1="148" x2="190" y2="264"/>
+  </g>
+  <line x1="48" y1="148" x2="242" y2="148" stroke="#1F6FB2" stroke-width="3"/>
+  <rect x="48" y="120" width="194" height="144" rx="8" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">
+    <text x="56" y="134" dominant-baseline="central" fill="#55636F">object</text>
+    <text x="146" y="134" dominant-baseline="central" fill="#55636F">grams</text>
+    <text x="198" y="134" dominant-baseline="central" fill="#55636F">cm</text>
+    <text x="56" y="162" dominant-baseline="central">pencil</text>
+    <text x="56" y="191" dominant-baseline="central">book</text>
+    <text x="56" y="220" dominant-baseline="central">bottle</text>
+    <text x="56" y="249" dominant-baseline="central">ball</text>
+  </g>
+  <g fill="#55636F">
+    <rect x="146" y="159" width="30" height="5" rx="2.5"/><rect x="198" y="159" width="30" height="5" rx="2.5"/>
+    <rect x="146" y="188" width="30" height="5" rx="2.5"/><rect x="198" y="188" width="30" height="5" rx="2.5"/>
+    <rect x="146" y="217" width="30" height="5" rx="2.5"/><rect x="198" y="217" width="30" height="5" rx="2.5"/>
+    <rect x="146" y="246" width="30" height="5" rx="2.5"/><rect x="198" y="246" width="30" height="5" rx="2.5"/>
+  </g>
+
+  <rect x="303" y="120" width="194" height="115" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M303 128 A8 8 0 0 1 311 120 H489 A8 8 0 0 1 497 128 V148 H303 Z" fill="#D9EAF9" stroke="none"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="303" y1="177" x2="497" y2="177"/><line x1="303" y1="206" x2="497" y2="206"/>
+    <line x1="405" y1="148" x2="405" y2="235"/><line x1="451" y1="148" x2="451" y2="235"/>
+  </g>
+  <line x1="303" y1="148" x2="497" y2="148" stroke="#1F6FB2" stroke-width="3"/>
+  <rect x="303" y="120" width="194" height="115" rx="8" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">
+    <text x="311" y="134" dominant-baseline="central" fill="#55636F">pocket</text>
+    <text x="413" y="134" dominant-baseline="central" fill="#55636F">items</text>
+    <text x="459" y="134" dominant-baseline="central" fill="#55636F">grams</text>
+    <text x="311" y="162" dominant-baseline="central">main</text>
+    <text x="311" y="191" dominant-baseline="central">front</text>
+    <text x="311" y="220" dominant-baseline="central">side</text>
+  </g>
+  <g fill="#55636F">
+    <rect x="413" y="159" width="24" height="5" rx="2.5"/><rect x="459" y="159" width="24" height="5" rx="2.5"/>
+    <rect x="413" y="188" width="24" height="5" rx="2.5"/><rect x="459" y="188" width="24" height="5" rx="2.5"/>
+    <rect x="413" y="217" width="24" height="5" rx="2.5"/><rect x="459" y="217" width="24" height="5" rx="2.5"/>
+  </g>
+
+  <rect x="558" y="120" width="194" height="86" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M558 128 A8 8 0 0 1 566 120 H744 A8 8 0 0 1 752 128 V148 H558 Z" fill="#D9EAF9" stroke="none"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="558" y1="177" x2="752" y2="177"/>
+    <line x1="660" y1="148" x2="660" y2="206"/><line x1="706" y1="148" x2="706" y2="206"/>
+  </g>
+  <line x1="558" y1="148" x2="752" y2="148" stroke="#1F6FB2" stroke-width="3"/>
+  <rect x="558" y="120" width="194" height="86" rx="8" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">
+    <text x="566" y="134" dominant-baseline="central" fill="#55636F">owner</text>
+    <text x="668" y="134" dominant-baseline="central" fill="#55636F">items</text>
+    <text x="714" y="134" dominant-baseline="central" fill="#55636F">grams</text>
+    <text x="566" y="162" dominant-baseline="central">Asha</text>
+    <text x="566" y="191" dominant-baseline="central">Ben</text>
+  </g>
+  <g fill="#55636F">
+    <rect x="668" y="159" width="24" height="5" rx="2.5"/><rect x="714" y="159" width="24" height="5" rx="2.5"/>
+    <rect x="668" y="188" width="24" height="5" rx="2.5"/><rect x="714" y="188" width="24" height="5" rx="2.5"/>
+  </g>
+
+  <g>
+    <circle cx="145" cy="290" r="14" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <text x="145" y="291" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+    <circle cx="400" cy="290" r="14" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <text x="400" y="291" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+    <circle cx="655" cy="290" r="14" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <text x="655" y="291" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">
+    <text x="145" y="318">rows</text>
+    <text x="400" y="318">rows</text>
+    <text x="655" y="318">rows</text>
+  </g>
+
+  <text x="400" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Pick the row unit that matches the question you want answered. Then never change it.</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Reporting one number versus reporting four</title>
+  <desc>Two panels. The left panel, marked wrong, reports only the words seventy three percent accurate. The right panel, marked correct, reports the fraction, the baseline, the three per class scores and the gap.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="40" font-size="24" fill="#14202B" text-anchor="middle">Reporting one number versus reporting four</text>
+
+    <line x1="400" y1="66" x2="400" y2="336" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+    <rect x="30" y="66" width="340" height="270" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+    <g transform="translate(48,80) scale(0.4)">
+      <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+      <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+        <line x1="38" y1="38" x2="62" y2="62"/>
+        <line x1="62" y1="38" x2="38" y2="62"/>
+      </g>
+    </g>
+    <text x="106" y="106" font-size="18" fill="#14202B">WRONG</text>
+    <rect x="52" y="132" width="296" height="70" rx="10" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+    <text x="200" y="174" font-size="24" fill="#14202B" text-anchor="middle">"It's 73% accurate."</text>
+    <g font-size="14" fill="#14202B">
+      <text x="56" y="234">Out of how many? Unknown.</text>
+      <text x="56" y="260">Better than guessing? Unknown.</text>
+      <text x="56" y="286">Which class is broken? Unknown.</text>
+      <text x="56" y="312">Did it memorise? Unknown.</text>
+    </g>
+
+    <rect x="430" y="66" width="340" height="270" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <g transform="translate(448,80) scale(0.4)">
+      <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="506" y="106" font-size="18" fill="#14202B">RIGHT</text>
+    <rect x="452" y="132" width="296" height="70" rx="10" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <text x="600" y="160" font-size="18" fill="#14202B" text-anchor="middle">11/15 = 0.7333 = 73.3%</text>
+    <text x="600" y="186" font-size="14" fill="#55636F" text-anchor="middle">on photos it had never seen</text>
+    <g font-size="14" fill="#14202B">
+      <text x="456" y="234">BASELINE   33.3%  (+40 points)</text>
+      <text x="456" y="260">PER CLASS  100% · 80% · 40%</text>
+      <text x="456" y="286">WORST      comb, 2/5 = 40%</text>
+      <text x="456" y="312">THE GAP    26.7 percentage points</text>
+    </g>
+
+    <text x="400" y="372" font-size="14" fill="#55636F" text-anchor="middle">Both describe the same model. Only one of them lets you do anything about it.</text>
+  </g>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The argument does not need the parameter's name</title>
+  <desc>Two panels. The left panel is marked wrong: a belief that the value passed in must be a variable with the same name as the parameter. The right panel is marked correct: three different calls with a number, a pizza price and a scores total, all of which are called number inside the function.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The argument does not need the parameter's name</text>
+  <line x1="400" y1="74" x2="400" y2="330" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <rect x="30" y="74" width="356" height="248" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="414" y="74" width="356" height="248" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(42,84) scale(0.4)"><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g></g>
+  <g transform="translate(426,84) scale(0.4)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="88" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B">same name required</text>
+  <text x="472" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B">any name, or none</text>
+  <rect x="56" y="140" width="150" height="30" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="131" y="155" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">def double(number):</text>
+  <rect x="56" y="190" width="150" height="30" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="131" y="205" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">double(number)</text>
+  <text x="131" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">“I must pass a variable</text>
+  <text x="131" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">that is also called number.”</text>
+  <text x="220" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">NameError</text>
+  <text x="220" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">if no such</text>
+  <text x="220" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">variable exists</text>
+  <rect x="430" y="140" width="168" height="30" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="514" y="155" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">def double(number):</text>
+  <rect x="430" y="186" width="168" height="26" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="514" y="199" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">double(6)</text>
+  <rect x="430" y="218" width="168" height="26" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="514" y="231" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">double(pizza_price)</text>
+  <rect x="430" y="250" width="168" height="26" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="514" y="263" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">double(scores_total)</text>
+  <rect x="612" y="186" width="146" height="46" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="685" y="205" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">inside, all three</text>
+  <text x="685" y="223" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">are called number</text>
+  <text x="685" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the caller's name</text>
+  <text x="685" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">never travels in</text>
+  <text x="400" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The parameter name is the function's private label for whatever arrives.</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">That is why one function works on a price, a step count and a cricket score.</text>
+</svg>

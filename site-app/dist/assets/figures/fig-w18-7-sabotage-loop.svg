@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>The experiment loop</title>
+  <desc>Seven numbered steps stacked top to bottom: predict, sabotage, retrain, test, record, explain, reload. An arrow on the right runs from step seven back up to step one, showing the loop repeats.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="250" y="44" font-size="24" fill="#14202B" text-anchor="middle">The experiment loop</text>
+
+    <path d="M430 572 H462 V116 H436" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="446,108 434,116 446,124" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="90" y="84" width="340" height="64" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="64" cy="116" r="17" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <text x="64" y="117" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+    <text x="108" y="112" font-size="18" fill="#14202B">PREDICT</text>
+    <text x="108" y="134" font-size="14" fill="#55636F">write it down before you touch anything</text>
+
+    <rect x="90" y="160" width="340" height="64" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="64" cy="192" r="17" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <text x="64" y="193" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+    <text x="108" y="188" font-size="18" fill="#14202B">SABOTAGE</text>
+    <text x="108" y="210" font-size="14" fill="#55636F">change ONE thing in the photos</text>
+
+    <rect x="90" y="236" width="340" height="64" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="64" cy="268" r="17" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <text x="64" y="269" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+    <text x="108" y="264" font-size="18" fill="#14202B">RETRAIN</text>
+    <text x="108" y="286" font-size="14" fill="#55636F">press Train Model — 6 to 20 seconds</text>
+
+    <rect x="90" y="312" width="340" height="64" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="64" cy="344" r="17" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <text x="64" y="345" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+    <text x="108" y="340" font-size="18" fill="#14202B">TEST</text>
+    <text x="108" y="362" font-size="14" fill="#55636F">the same five items, in the same order</text>
+
+    <rect x="90" y="388" width="340" height="64" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="64" cy="420" r="17" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <text x="64" y="421" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+    <text x="108" y="416" font-size="18" fill="#14202B">RECORD</text>
+    <text x="108" y="438" font-size="14" fill="#55636F">top score and margin for every item</text>
+
+    <rect x="90" y="464" width="340" height="64" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="64" cy="496" r="17" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <text x="64" y="497" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">6</text>
+    <text x="108" y="492" font-size="18" fill="#14202B">EXPLAIN</text>
+    <text x="108" y="514" font-size="14" fill="#55636F">"the margin fell from __ to __ because __"</text>
+
+    <rect x="90" y="540" width="340" height="64" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="64" cy="572" r="17" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <text x="64" y="573" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">7</text>
+    <text x="108" y="568" font-size="18" fill="#14202B">RELOAD</text>
+    <text x="108" y="590" font-size="14" fill="#55636F">open baseline-v1.tm before the next run</text>
+
+    <text x="250" y="644" font-size="14" fill="#55636F" text-anchor="middle">Seven steps, four times. Step 7 is the one everybody forgets,</text>
+    <text x="250" y="666" font-size="14" fill="#55636F" text-anchor="middle">and forgetting it ruins the experiment after it.</text>
+  </g>
+</svg>

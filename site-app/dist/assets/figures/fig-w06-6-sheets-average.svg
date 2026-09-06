@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Two averages in a spreadsheet</title>
+  <desc>A spreadsheet of a meals table. An empty cell below the last row holds the formula equals AVERAGE of D2 to D31, and a panel on the right shows the two answers it produces: 16.4 average minutes per meal and 2.9 average sleepiness.</desc>
+  <text x="400" y="34" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Two averages, one formula, ninety seconds</text>
+  <rect x="60" y="60" width="514" height="24" fill="#F5F8FA" stroke="none"/>
+  <rect x="60" y="84" width="34" height="194" fill="#F5F8FA" stroke="none"/>
+  <rect x="94" y="84" width="480" height="28" fill="#D9EAF9" stroke="none"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="94" y1="60" x2="94" y2="278"/>
+    <line x1="154" y1="60" x2="154" y2="278"/>
+    <line x1="264" y1="60" x2="264" y2="278"/>
+    <line x1="374" y1="60" x2="374" y2="278"/>
+    <line x1="474" y1="60" x2="474" y2="278"/>
+    <line x1="60" y1="140" x2="574" y2="140"/>
+    <line x1="60" y1="168" x2="574" y2="168"/>
+    <line x1="60" y1="196" x2="574" y2="196"/>
+    <line x1="60" y1="222" x2="574" y2="222"/>
+    <line x1="60" y1="250" x2="574" y2="250"/>
+  </g>
+  <line x1="60" y1="84" x2="574" y2="84" stroke="#14202B" stroke-width="2"/>
+  <line x1="60" y1="112" x2="574" y2="112" stroke="#1F6FB2" stroke-width="3"/>
+  <rect x="60" y="60" width="514" height="218" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="124.0" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">A</text>
+  <text x="209.0" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">B</text>
+  <text x="319.0" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">C</text>
+  <text x="424.0" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">D</text>
+  <text x="524.0" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">E</text>
+  <text x="77" y="102.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1</text>
+  <text x="77" y="130.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2</text>
+  <text x="77" y="158.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">3</text>
+  <text x="77" y="186.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4</text>
+  <text x="77" y="213.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">&#8942;</text>
+  <text x="77" y="240.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">31</text>
+  <text x="77" y="268.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">33</text>
+  <text x="102" y="102.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">row_id</text>
+  <text x="162" y="102.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">date</text>
+  <text x="272" y="102.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">main_food</text>
+  <text x="382" y="102.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">minutes</text>
+  <text x="482" y="102.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">sleepy_1to5</text>
+  <text x="102" y="130.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">1</text>
+  <text x="162" y="130.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">2026-09-03</text>
+  <text x="272" y="130.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">idli</text>
+  <text x="382" y="130.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">8</text>
+  <text x="482" y="130.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">2</text>
+  <text x="102" y="158.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">2</text>
+  <text x="162" y="158.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">2026-09-03</text>
+  <text x="272" y="158.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">rice_dal</text>
+  <text x="382" y="158.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">25</text>
+  <text x="482" y="158.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">5</text>
+  <text x="102" y="186.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">3</text>
+  <text x="162" y="186.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">2026-09-03</text>
+  <text x="272" y="186.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">roti_sabzi</text>
+  <text x="382" y="186.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">15</text>
+  <text x="482" y="186.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">2</text>
+  <text x="124.0" y="215.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">&#8942;</text>
+  <text x="209.0" y="215.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">&#8942;</text>
+  <text x="319.0" y="215.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">&#8942;</text>
+  <text x="424.0" y="215.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">&#8942;</text>
+  <text x="524.0" y="215.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">&#8942;</text>
+  <text x="102" y="240.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">30</text>
+  <text x="162" y="240.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">2026-09-14</text>
+  <text x="272" y="240.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">rice_curry</text>
+  <text x="382" y="240.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">18</text>
+  <text x="482" y="240.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">3</text>
+  <rect x="374" y="250" width="100" height="28" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="380" y="268.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">=AVERAGE(D2:D31)</text>
+  <line x1="424" y1="302" x2="424" y2="282" stroke="#C42B8C" stroke-width="1.5"/>
+  <polyline points="418,288 424,281 430,288" fill="none" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="424" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">click any empty cell, then type this</text>
+  <rect x="592" y="96" width="188" height="166" rx="12" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="686" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">What appears</text>
+  <text x="686" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#1F6FB2" text-anchor="middle">16.4</text>
+  <text x="686" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">avg minutes per meal</text>
+  <line x1="608" y1="204" x2="764" y2="204" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="686" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#1F6FB2" text-anchor="middle">2.9</text>
+  <text x="686" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">avg sleepy score, col E</text>
+  <line x1="480" y1="264" x2="560" y2="200" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round"/>
+  <polyline points="551,199 562,197 559,208" fill="none" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Type the = sign first. The colon in D2:D31 means &#8220;everything from here to there&#8221;.</text>
+  <text x="400" y="370" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The spreadsheet does the arithmetic. You still have to say what the number is evidence for.</text>
+</svg>

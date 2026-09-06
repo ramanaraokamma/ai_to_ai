@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>enumerate hands you two things at once</title>
+  <desc>A circular arrow with a counter reading position 2 sits on the left. Two output boxes in the middle show the position 2 and the record for Nita. On the right a four row table has row 2 highlighted, and its index cell also reads 2.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">enumerate hands you two things at once</text>
+  <path d="M144 122 A48 48 0 1 1 96 122" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(96 122) rotate(-30)"/>
+  <circle cx="120" cy="164" r="34" fill="#F5F8FA" stroke="#14202B" stroke-width="3"/>
+  <text x="120" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">position</text>
+  <text x="120" y="174" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="120" y="228" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">pass 3 of 4</text>
+  <text x="120" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">because it started at 0</text>
+  <line x1="182" y1="164" x2="216" y2="140" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(218 139) rotate(-35)"/>
+  <line x1="182" y1="176" x2="216" y2="208" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(218 210) rotate(43)"/>
+  <rect x="224" y="104" width="180" height="62" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="314" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">thing 1: the position</text>
+  <text x="314" y="150" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">2</text>
+  <rect x="224" y="186" width="180" height="86" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="314" y="206" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">thing 2: the whole record</text>
+  <text x="314" y="230" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Nita, Falcons, 77</text>
+  <text x="314" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">still a dict, still has its labels</text>
+  <line x1="418" y1="188" x2="446" y2="188" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(448 188) rotate(0)"/>
+  <rect x="460" y="104" width="40" height="34" fill="#F5F8FA"/>
+  <rect x="500" y="104" width="90" height="34" fill="#D9EAF9"/>
+  <rect x="590" y="104" width="100" height="34" fill="#D9EAF9"/>
+  <rect x="690" y="104" width="70" height="34" fill="#D9EAF9"/>
+  <rect x="460" y="138" width="40" height="34" fill="#F5F8FA"/>
+  <rect x="460" y="172" width="40" height="34" fill="#F5F8FA"/>
+  <rect x="460" y="206" width="40" height="34" fill="#F4D5E9"/>
+  <rect x="460" y="240" width="40" height="34" fill="#F5F8FA"/>
+  <rect x="500" y="206" width="260" height="34" fill="#F4D5E9"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="500" y1="104" x2="500" y2="274"/>
+    <line x1="590" y1="104" x2="590" y2="274"/>
+    <line x1="690" y1="104" x2="690" y2="274"/>
+    <line x1="460" y1="172" x2="760" y2="172"/>
+    <line x1="460" y1="206" x2="760" y2="206"/>
+    <line x1="460" y1="240" x2="760" y2="240"/>
+  </g>
+  <line x1="460" y1="138" x2="760" y2="138" stroke="#14202B" stroke-width="2"/>
+  <text x="545" y="121" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">name</text>
+  <text x="640" y="121" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">team</text>
+  <text x="725" y="121" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">runs</text>
+  <text x="480" y="155" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="545" y="155" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Asha</text>
+  <text x="640" y="155" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Falcons</text>
+  <text x="725" y="155" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">48</text>
+  <text x="480" y="189" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="545" y="189" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Ravi</text>
+  <text x="640" y="189" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Falcons</text>
+  <text x="725" y="189" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">12</text>
+  <text x="480" y="223" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="545" y="223" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Nita</text>
+  <text x="640" y="223" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Falcons</text>
+  <text x="725" y="223" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">77</text>
+  <text x="480" y="257" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="545" y="257" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Sam</text>
+  <text x="640" y="257" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Falcons</text>
+  <text x="725" y="257" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+  <rect x="460" y="206" width="300" height="34" fill="none" stroke="#C42B8C" stroke-width="3"/>
+  <rect x="460" y="104" width="300" height="170" fill="none" stroke="#14202B" stroke-width="3"/>
+  <text x="610" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the counter and the row always agree</text>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Two names on the for line, so two boxes. One name and every row becomes a pair you cannot read.</text>
+</svg>

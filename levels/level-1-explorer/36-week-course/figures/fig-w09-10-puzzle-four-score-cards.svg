@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Four score cards</title>
+  <desc>Four cards, each claiming an accuracy. Card A says one hundred percent tested on the eight examples it was built from. Card B says sixty percent, three out of five, on fresh examples. Card C says ninety percent, nine out of ten, but the ten were fixed against first. Card D says fifty-two percent, one hundred and four out of two hundred, on fresh examples. The reader must rank them by how much the number can be trusted.</desc>
+  <text x="400" y="38" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Four teams, four claims. Which number do you believe?</text>
+
+  <rect x="24" y="66" width="180" height="240" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="216" y="66" width="180" height="240" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="408" y="66" width="180" height="240" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="600" y="66" width="176" height="240" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">
+    <text x="114" y="98">TEAM A</text>
+    <text x="306" y="98">TEAM B</text>
+    <text x="498" y="98">TEAM C</text>
+    <text x="688" y="98">TEAM D</text>
+  </g>
+
+  <rect x="44" y="112" width="140" height="52" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="236" y="112" width="140" height="52" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="428" y="112" width="140" height="52" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="618" y="112" width="140" height="52" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">
+    <text x="114" y="146">100%</text>
+    <text x="306" y="146">60%</text>
+    <text x="498" y="146">90%</text>
+    <text x="688" y="146">52%</text>
+  </g>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">
+    <text x="114" y="192">8 out of 8</text>
+    <text x="306" y="192">3 out of 5</text>
+    <text x="498" y="192">9 out of 10</text>
+    <text x="688" y="192">104 out of 200</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">
+    <text x="114" y="228">tested on the very</text>
+    <text x="114" y="246">8 examples they</text>
+    <text x="114" y="264">wrote the rules from</text>
+    <text x="306" y="228">tested on 5 fresh</text>
+    <text x="306" y="246">examples, sealed</text>
+    <text x="306" y="264">before any rule existed</text>
+    <text x="498" y="228">tested on 10 fresh,</text>
+    <text x="498" y="246">then the rules were</text>
+    <text x="498" y="264">fixed and re-tested</text>
+    <text x="498" y="282">on the same 10</text>
+    <text x="688" y="228">tested on 200 fresh</text>
+    <text x="688" y="246">examples, sealed</text>
+    <text x="688" y="264">before any rule existed</text>
+  </g>
+
+  <text x="400" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Put them in order, most trustworthy measurement first. Notice: that is NOT the same as best score first.</text>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Then answer the harder one: which team would you rather had built the spam filter on your phone?</text>
+  <text x="400" y="390" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">All four choices are spam-or-ham, so remember what a coin scores.</text>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Three confidence bars with the margin arrowed</title>
+  <desc>Three horizontal bars: spoon 62 percent, toothbrush 21 percent, comb 17 percent. A pink double-headed arrow underneath measures the gap between the end of the longest bar and the end of the second longest, labelled margin equals 62 minus 21 equals 41.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="44" font-size="24" fill="#14202B" text-anchor="middle">The margin is the gap between first and second</text>
+
+    <rect x="200" y="80" width="279" height="44" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="200" y="140" width="94.5" height="44" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="200" y="200" width="76.5" height="44" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+
+    <text x="180" y="108" font-size="18" fill="#14202B" text-anchor="end">spoon</text>
+    <text x="180" y="168" font-size="18" fill="#14202B" text-anchor="end">toothbrush</text>
+    <text x="180" y="228" font-size="18" fill="#14202B" text-anchor="end">comb</text>
+
+    <text x="491" y="108" font-size="18" fill="#14202B">62%</text>
+    <text x="307" y="168" font-size="18" fill="#14202B">21%</text>
+    <text x="289" y="228" font-size="18" fill="#14202B">17%</text>
+
+    <text x="520" y="164" font-size="14" fill="#55636F">Check the sum first:</text>
+    <text x="520" y="184" font-size="14" fill="#55636F">62 + 21 + 17 = 100</text>
+
+    <g stroke="#C42B8C" stroke-width="1.5" stroke-dasharray="6 6">
+      <line x1="479" y1="124" x2="479" y2="312"/>
+      <line x1="294.5" y1="184" x2="294.5" y2="312"/>
+    </g>
+
+    <line x1="294.5" y1="318" x2="479" y2="318" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="306,310 296,318 306,326" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="467,310 477,318 467,326" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <text x="387" y="352" font-size="18" fill="#14202B" text-anchor="middle">margin = 62 - 21 = 41</text>
+    <text x="400" y="380" font-size="14" fill="#55636F" text-anchor="middle">A big margin means a clear winner. A tiny margin means a coin toss.</text>
+  </g>
+</svg>

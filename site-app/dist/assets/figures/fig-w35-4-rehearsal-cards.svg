@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>Six rehearsal cards from the question bank</title>
+  <desc>Six cards laid out in two rows of three. Each card carries one question a visitor asks, and underneath, in a tinted strip, the shape of a good answer with the numbers to quote.</desc>
+
+  <text x="400" y="34" font-size="24" fill="#14202B" text-anchor="middle">Six rehearsal cards</text>
+
+  <!-- card 1 -->
+  <rect x="30" y="56" width="240" height="150" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+  <circle cx="54" cy="80" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="54" y="81" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="76" y="78" font-size="14" fill="#14202B">"But how does it</text>
+  <text x="76" y="96" font-size="14" fill="#14202B">actually know?"</text>
+  <rect x="30" y="112" width="240" height="94" rx="10" fill="#E2F7ED" stroke="none"/>
+  <line x1="30" y1="112" x2="270" y2="112" stroke="#14202B" stroke-width="2"/>
+  <text x="46" y="134" font-size="12" fill="#55636F">shape of a good answer</text>
+  <text x="46" y="156" font-size="12" fill="#14202B">It knows nothing. It saw 160</text>
+  <text x="46" y="174" font-size="12" fill="#14202B">labelled photos and found a</text>
+  <text x="46" y="192" font-size="12" fill="#14202B">pattern. Say: training, model.</text>
+
+  <!-- card 2 -->
+  <rect x="280" y="56" width="240" height="150" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+  <circle cx="304" cy="80" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="304" y="81" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="326" y="78" font-size="14" fill="#14202B">"Why not just write</text>
+  <text x="326" y="96" font-size="14" fill="#14202B">an if-then rule?"</text>
+  <rect x="280" y="112" width="240" height="94" rx="10" fill="#E2F7ED" stroke="none"/>
+  <line x1="280" y1="112" x2="520" y2="112" stroke="#14202B" stroke-width="2"/>
+  <text x="296" y="134" font-size="12" fill="#55636F">shape of a good answer</text>
+  <text x="296" y="156" font-size="12" fill="#14202B">I tried. "Shiny" catches the can</text>
+  <text x="296" y="174" font-size="12" fill="#14202B">AND the crisp packet. Then you</text>
+  <text x="296" y="192" font-size="12" fill="#14202B">add 258 more. Rule explosion.</text>
+
+  <!-- card 3 -->
+  <rect x="530" y="56" width="240" height="150" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+  <circle cx="554" cy="80" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="554" y="81" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="576" y="78" font-size="14" fill="#14202B">"What happens if</text>
+  <text x="576" y="96" font-size="14" fill="#14202B">it gets it wrong?"</text>
+  <rect x="530" y="112" width="240" height="94" rx="10" fill="#E2F7ED" stroke="none"/>
+  <line x1="530" y1="112" x2="770" y2="112" stroke="#14202B" stroke-width="2"/>
+  <text x="546" y="134" font-size="12" fill="#55636F">shape of a good answer</text>
+  <text x="546" y="156" font-size="12" fill="#14202B">A pot goes in the wrong bin.</text>
+  <text x="546" y="174" font-size="12" fill="#14202B">Annoying, not dangerous - that</text>
+  <text x="546" y="192" font-size="12" fill="#14202B">is why I picked it. Point at sign.</text>
+
+  <!-- card 4 -->
+  <rect x="30" y="220" width="240" height="150" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+  <circle cx="54" cy="244" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="54" y="245" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="76" y="242" font-size="14" fill="#14202B">"Is my photo going</text>
+  <text x="76" y="260" font-size="14" fill="#14202B">to Google?"</text>
+  <rect x="30" y="276" width="240" height="94" rx="10" fill="#E2F7ED" stroke="none"/>
+  <line x1="30" y1="276" x2="270" y2="276" stroke="#14202B" stroke-width="2"/>
+  <text x="46" y="298" font-size="12" fill="#55636F">shape of a good answer</text>
+  <text x="46" y="320" font-size="12" fill="#14202B">Route B: nothing left this laptop.</text>
+  <text x="46" y="338" font-size="12" fill="#14202B">Route A: photos stayed, the</text>
+  <text x="46" y="356" font-size="12" fill="#14202B">finished model is on a link.</text>
+
+  <!-- card 5 -->
+  <rect x="280" y="220" width="240" height="150" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+  <circle cx="304" cy="244" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="304" y="245" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+  <text x="326" y="242" font-size="14" fill="#14202B">"How much better</text>
+  <text x="326" y="260" font-size="14" fill="#14202B">than guessing?"</text>
+  <rect x="280" y="276" width="240" height="94" rx="10" fill="#E2F7ED" stroke="none"/>
+  <line x1="280" y1="276" x2="520" y2="276" stroke="#14202B" stroke-width="2"/>
+  <text x="296" y="298" font-size="12" fill="#55636F">shape of a good answer</text>
+  <text x="296" y="320" font-size="12" fill="#14202B">Baseline 25%. Mine 75%. That is</text>
+  <text x="296" y="338" font-size="12" fill="#14202B">50 percentage points - and it</text>
+  <text x="296" y="356" font-size="12" fill="#14202B">was 30 out of 40, not 3000.</text>
+
+  <!-- card 6 -->
+  <rect x="530" y="220" width="240" height="150" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+  <circle cx="554" cy="244" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="554" y="245" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">6</text>
+  <text x="576" y="242" font-size="14" fill="#14202B">"Should a council</text>
+  <text x="576" y="260" font-size="14" fill="#14202B">use this?"</text>
+  <rect x="530" y="276" width="240" height="94" rx="10" fill="#E2F7ED" stroke="none"/>
+  <line x1="530" y1="276" x2="770" y2="276" stroke="#14202B" stroke-width="2"/>
+  <text x="546" y="298" font-size="12" fill="#55636F">shape of a good answer</text>
+  <text x="546" y="320" font-size="12" fill="#14202B">No. 40% under a lamp. I would</text>
+  <text x="546" y="338" font-size="12" fill="#14202B">need 47 more lamplight photos</text>
+  <text x="546" y="356" font-size="12" fill="#14202B">and a re-test first.</text>
+
+  <text x="400" y="392" font-size="14" fill="#55636F" text-anchor="middle">Cut them out. Someone reads the front; you answer before you turn it over.</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Label the two piles</title>
+  <desc>Two unlabelled boxes of messages with an arrow between them and two score boxes underneath. Six empty boxes must be filled in: the name of each pile, what happened to each pile, and which of the two scores is the honest one.</desc>
+  <text x="400" y="38" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Fill in every empty box</text>
+
+  <rect x="40" y="64" width="300" height="150" rx="12" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="460" y="64" width="300" height="150" rx="12" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- open cards, left -->
+  <g transform="translate(76,96)">
+    <rect x="0" y="0" width="130" height="24" rx="5" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+    <rect x="0" y="32" width="130" height="24" rx="5" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+    <rect x="0" y="64" width="130" height="24" rx="5" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  </g>
+  <!-- sealed envelope, right -->
+  <g transform="translate(526,102)">
+    <rect x="0" y="0" width="168" height="80" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M0 6 L84 54 L168 6" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+
+  <g stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="352" y1="140" x2="440" y2="140"/>
+    <polyline points="430,130 448,140 430,150" fill="none"/>
+  </g>
+
+  <g fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round">
+    <rect x="60" y="230" width="260" height="34" rx="8"/>
+    <rect x="480" y="230" width="260" height="34" rx="8"/>
+    <rect x="60" y="288" width="260" height="34" rx="8"/>
+    <rect x="480" y="288" width="260" height="34" rx="8"/>
+    <rect x="60" y="346" width="260" height="34" rx="8"/>
+    <rect x="480" y="346" width="260" height="34" rx="8"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">
+    <text x="60" y="226">this pile is called...</text>
+    <text x="480" y="226">this pile is called...</text>
+    <text x="60" y="284">the score on it was...</text>
+    <text x="480" y="284">the score on it was...</text>
+    <text x="60" y="342">is that score honest? why?</text>
+    <text x="480" y="342">is that score honest? why?</text>
+  </g>
+</svg>

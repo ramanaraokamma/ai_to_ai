@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>Term 1 concept map</title>
+  <desc>Seven ideas linked top to bottom by arrows: AI is judgement, then the two ways of getting an answer, then data arrives as a table, then tables are messy and have a source, then patterns found by counting, then rulebooks with defaults and edge cases, then honest scoring on fresh examples.</desc>
+  <text x="250" y="38" font-size="24" fill="#14202B" text-anchor="middle">Term 1 in seven boxes</text>
+  <rect x="70" y="70" width="390" height="58" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="42" cy="99" r="17" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="42" y="104" font-size="12" fill="#14202B" text-anchor="middle">W1</text>
+  <text x="86" y="95" font-size="14" fill="#14202B">AI is a machine doing a job that used to</text>
+  <text x="86" y="115" font-size="14" fill="#14202B">need a person's judgement.</text>
+  <line x1="250" y1="128" x2="250" y2="144" stroke="#14202B" stroke-width="2"/>
+  <polyline points="244,138 250,148 256,138" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="70" y="152" width="390" height="58" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="42" cy="181" r="17" fill="#FFFFFF" stroke="#6D28D9" stroke-width="3"/>
+  <text x="42" y="186" font-size="12" fill="#14202B" text-anchor="middle">W2</text>
+  <text x="86" y="177" font-size="14" fill="#14202B">Two ways to get an answer: a person writes</text>
+  <text x="86" y="197" font-size="14" fill="#14202B">the rule, or the machine finds it from examples.</text>
+  <line x1="250" y1="210" x2="250" y2="226" stroke="#14202B" stroke-width="2"/>
+  <polyline points="244,220 250,230 256,220" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="70" y="234" width="390" height="58" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="42" cy="263" r="17" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="42" y="268" font-size="12" fill="#14202B" text-anchor="middle">W4</text>
+  <text x="86" y="259" font-size="14" fill="#14202B">Whatever a machine knows arrived as a table.</text>
+  <text x="86" y="279" font-size="14" fill="#14202B">One row is one thing. One column is one measurement.</text>
+  <line x1="250" y1="292" x2="250" y2="308" stroke="#14202B" stroke-width="2"/>
+  <polyline points="244,302 250,312 256,302" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="70" y="316" width="390" height="58" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="42" cy="345" r="17" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="42" y="350" font-size="12" fill="#14202B" text-anchor="middle">W5-6</text>
+  <text x="86" y="341" font-size="14" fill="#14202B">Tables are messy and they came from somewhere.</text>
+  <text x="86" y="361" font-size="14" fill="#14202B">Count the mess. Write the data card.</text>
+  <line x1="250" y1="374" x2="250" y2="390" stroke="#14202B" stroke-width="2"/>
+  <polyline points="244,384 250,394 256,384" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="70" y="398" width="390" height="58" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="42" cy="427" r="17" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <text x="42" y="432" font-size="12" fill="#14202B" text-anchor="middle">W7</text>
+  <text x="86" y="423" font-size="14" fill="#14202B">A pattern repeats often enough that betting</text>
+  <text x="86" y="443" font-size="14" fill="#14202B">on it beats guessing. Find it by counting.</text>
+  <line x1="250" y1="456" x2="250" y2="472" stroke="#14202B" stroke-width="2"/>
+  <polyline points="244,466 250,476 256,466" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="70" y="480" width="390" height="58" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="42" cy="509" r="17" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <text x="42" y="514" font-size="12" fill="#14202B" text-anchor="middle">W7-8</text>
+  <text x="86" y="505" font-size="14" fill="#14202B">A rulebook is rules in order plus a default -</text>
+  <text x="86" y="525" font-size="14" fill="#14202B">and every rule has edge cases that break it.</text>
+  <line x1="250" y1="538" x2="250" y2="554" stroke="#14202B" stroke-width="2"/>
+  <polyline points="244,548 250,558 256,548" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="70" y="562" width="390" height="58" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="42" cy="591" r="17" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="42" y="596" font-size="12" fill="#14202B" text-anchor="middle">W9</text>
+  <text x="86" y="587" font-size="14" fill="#14202B">The only honest score comes from examples</text>
+  <text x="86" y="607" font-size="14" fill="#14202B">the rulebook has never seen.</text>
+  <text x="250" y="656" font-size="14" fill="#55636F" text-anchor="middle">Each box is a week. If a quiz answer went wrong, the box tells you</text>
+  <text x="250" y="676" font-size="14" fill="#55636F" text-anchor="middle">which week to go back to - not how clever you are.</text>
+</svg>

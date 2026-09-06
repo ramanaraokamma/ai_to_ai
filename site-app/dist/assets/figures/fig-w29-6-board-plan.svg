@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>What the board looks like at the end of Week 29</title>
+  <desc>Three zones left to right. Zone one is the bag for the word the, holding six numbered slips: four say bus, one says market, one says shop. Zone two is the trace table for sentence one, with a step, a word, the number of slips, the roll and the word drawn. Zone three is the two-column score sheet with a tick or cross for reads well and for true to the corpus.</desc>
+  <text x="400" y="36" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">What the board looks like at the end of Week 29</text>
+
+  <rect x="30" y="66" width="212" height="264" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="266" y="66" width="268" height="264" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="558" y="66" width="212" height="264" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+
+  <text x="46" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#845F00">1 &#183; THE BAG</text>
+  <text x="282" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#1F6FB2">2 &#183; THE TRACE</text>
+  <text x="574" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#6D28D9">3 &#183; THE SCORE</text>
+  <line x1="46" y1="104" x2="226" y2="104" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="282" y1="104" x2="518" y2="104" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="574" y1="104" x2="754" y2="104" stroke="#C7CDD4" stroke-width="1.5"/>
+
+  <text x="46" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">for the word &#8220;the&#8221; - 6 slips</text>
+  <g>
+    <rect x="46" y="134" width="80" height="28" rx="6" fill="#E8C671" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+    <rect x="46" y="168" width="80" height="28" rx="6" fill="#E8C671" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+    <rect x="46" y="202" width="80" height="28" rx="6" fill="#E8C671" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+    <rect x="46" y="236" width="80" height="28" rx="6" fill="#E8C671" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+    <rect x="140" y="134" width="80" height="28" rx="6" fill="#E8C671" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+    <rect x="140" y="168" width="80" height="28" rx="6" fill="#E8C671" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">
+    <text x="86" y="153">1 bus</text>
+    <text x="86" y="187">2 bus</text>
+    <text x="86" y="221">3 bus</text>
+    <text x="86" y="255">4 bus</text>
+    <text x="180" y="153">5 market</text>
+    <text x="180" y="187">6 shop</text>
+  </g>
+  <text x="46" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Roll a die. Take that slip.</text>
+  <text x="46" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Too big a number? Roll again.</text>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">
+    <text x="282" y="126">STEP</text>
+    <text x="326" y="126">AT WORD</text>
+    <text x="396" y="126">SLIPS</text>
+    <text x="440" y="126">ROLL</text>
+    <text x="480" y="126">GOT</text>
+  </g>
+  <line x1="282" y1="134" x2="518" y2="134" stroke="#1F6FB2" stroke-width="2"/>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">
+    <text x="282" y="158">1</text><text x="326" y="158">the</text><text x="396" y="158">6</text><text x="440" y="158">2</text><text x="480" y="158">bus</text>
+    <text x="282" y="186">2</text><text x="326" y="186">bus</text><text x="396" y="186">5</text><text x="440" y="186">3</text><text x="480" y="186">goes</text>
+    <text x="282" y="214">3</text><text x="326" y="214">goes</text><text x="396" y="214">1</text><text x="440" y="214">-</text><text x="480" y="214">to</text>
+    <text x="282" y="242">4</text><text x="326" y="242">to</text><text x="396" y="242">4</text><text x="440" y="242">4</text><text x="480" y="242">town</text>
+    <text x="282" y="270">5</text><text x="326" y="270">town</text><text x="396" y="270">1</text><text x="440" y="270">-</text><text x="480" y="270">.</text>
+  </g>
+  <rect x="282" y="284" width="236" height="34" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">the bus goes to town .</text>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">
+    <text x="574" y="126">#</text>
+    <text x="620" y="126">READS WELL</text>
+    <text x="710" y="126">TRUE</text>
+  </g>
+  <line x1="574" y1="134" x2="754" y2="134" stroke="#6D28D9" stroke-width="2"/>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">
+    <text x="574" y="164">1</text>
+    <text x="574" y="204">2</text>
+    <text x="574" y="244">3</text>
+    <text x="574" y="284">G</text>
+  </g>
+  <g stroke="#1B7A4B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <polyline points="648,160 656,168 670,150"/>
+    <polyline points="648,200 656,208 670,190"/>
+    <polyline points="734,160 742,168 756,150"/>
+  </g>
+  <g stroke="#CC2B1D" stroke-width="4" stroke-linecap="round">
+    <line x1="648" y1="234" x2="662" y2="248"/>
+    <line x1="662" y1="234" x2="648" y2="248"/>
+    <line x1="648" y1="274" x2="662" y2="288"/>
+    <line x1="662" y1="274" x2="648" y2="288"/>
+    <line x1="734" y1="196" x2="748" y2="210"/>
+    <line x1="748" y1="196" x2="734" y2="210"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">
+    <text x="710" y="248">n/a</text>
+    <text x="710" y="288">n/a</text>
+  </g>
+  <text x="574" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Row 2 is the whole lesson.</text>
+
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Zone 3 has two separate columns on purpose. Never let &#8220;reads well&#8221; answer the question &#8220;is it true&#8221;.</text>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>One object becomes one row</title>
+  <desc>Three objects on the left, a mug, a spoon and a book, each with an arrow pointing to its own row in a table on the right. The table columns are object, mass in grams, longest side in centimetres and material, so each measurement becomes one column.</desc>
+  <text x="400" y="32" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">One object becomes one row</text>
+
+  <line x1="410" y1="68" x2="768" y2="68" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="589" y="58" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">each measurement is one column</text>
+  <text x="115" y="58" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">each object is one row</text>
+
+  <rect x="70" y="120" width="60" height="48" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M130 132 Q152 144 130 156" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+  <ellipse cx="82" cy="190" rx="14" ry="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <line x1="93" y1="197" x2="132" y2="216" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+  <rect x="68" y="232" width="66" height="48" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="84" y1="232" x2="84" y2="280" stroke="#1F6FB2" stroke-width="2"/>
+
+  <g transform="translate(190,124) scale(0.96)">
+    <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(190,180) scale(0.96)">
+    <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(190,236) scale(0.96)">
+    <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <rect x="300" y="80" width="470" height="204" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="300" y="80" width="470" height="36" fill="#D9EAF9" stroke="none"/>
+  <line x1="300" y1="116" x2="770" y2="116" stroke="#1F6FB2" stroke-width="3"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="410" y1="80" x2="410" y2="284"/>
+    <line x1="505" y1="80" x2="505" y2="284"/>
+    <line x1="605" y1="80" x2="605" y2="284"/>
+    <line x1="300" y1="172" x2="770" y2="172"/>
+    <line x1="300" y1="228" x2="770" y2="228"/>
+  </g>
+  <rect x="300" y="80" width="470" height="204" rx="10" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">
+    <text x="355" y="103">object</text>
+    <text x="457" y="103">mass_g</text>
+    <text x="555" y="103">longest_cm</text>
+    <text x="687" y="103">material</text>
+    <text x="355" y="149">mug</text><text x="457" y="149">320</text><text x="555" y="149">12.0</text><text x="687" y="149">ceramic</text>
+    <text x="355" y="205">spoon</text><text x="457" y="205">42</text><text x="555" y="205">17.5</text><text x="687" y="205">steel</text>
+    <text x="355" y="261">book</text><text x="457" y="261">480</text><text x="555" y="261">24.0</text><text x="687" y="261">paper</text>
+  </g>
+
+  <rect x="300" y="300" width="470" height="54" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="535" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">The colour, the chip on the rim, whose mug it is &#8212;</text>
+  <text x="535" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">none of it is in the table, so none of it exists.</text>
+
+  <text x="400" y="382" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Three objects, three measurements each: nine values. That is the machine&#8217;s whole world.</text>
+</svg>

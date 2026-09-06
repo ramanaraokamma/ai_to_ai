@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A finished AI Spotter's Log board</title>
+  <desc>A board with three columns. The rules column holds five notes: alarm clock, microwave timer, traffic light, automatic shop doors and calculator app. The learned column holds seven notes: face unlock, spam folder, YouTube feed, Maps arrival time, photo app dog search, Spotify autoplay and voice dictation. The generating column holds three notes: chatbot poem, AI image maker and the keyboard next-word bar. Three notes are pinned as hard calls to defend.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="30" font-size="24" fill="#14202B" text-anchor="middle">Fifteen systems from one ordinary day</text>
+
+    <rect x="30" y="44" width="240" height="330" rx="12" fill="#F5F8FA" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="280" y="44" width="240" height="330" rx="12" fill="#F5F8FA" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="530" y="44" width="240" height="330" rx="12" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <text x="150" y="70" font-size="18" fill="#845F00" text-anchor="middle">RULES (5)</text>
+    <text x="400" y="70" font-size="18" fill="#6D28D9" text-anchor="middle">LEARNED (7)</text>
+    <text x="650" y="70" font-size="18" fill="#1F6FB2" text-anchor="middle">GENERATING (3)</text>
+    <g font-size="12" fill="#55636F" text-anchor="middle">
+      <text x="150" y="88">a person wrote the steps</text>
+      <text x="400" y="88">found the rule from examples</text>
+      <text x="650" y="88">makes new content</text>
+    </g>
+
+    <g stroke="#845F00" stroke-width="2" fill="#E8C671" stroke-linejoin="round">
+      <rect x="44" y="100" width="212" height="32" rx="6"/>
+      <rect x="44" y="138" width="212" height="32" rx="6"/>
+      <rect x="44" y="176" width="212" height="32" rx="6"/>
+      <rect x="44" y="214" width="212" height="32" rx="6"/>
+      <rect x="44" y="252" width="212" height="32" rx="6"/>
+    </g>
+    <g font-size="12" fill="#14202B">
+      <text x="56" y="120">1 Alarm clock rings at 07:00</text>
+      <text x="56" y="158">2 Microwave 90-second timer</text>
+      <text x="56" y="196">3 Traffic light on a timer</text>
+      <text x="56" y="234">4 Automatic shop doors</text>
+      <text x="56" y="272">5 Calculator app</text>
+    </g>
+
+    <g stroke="#6D28D9" stroke-width="2" fill="#DBCEF3" stroke-linejoin="round">
+      <rect x="294" y="100" width="212" height="32" rx="6"/>
+      <rect x="294" y="138" width="212" height="32" rx="6"/>
+      <rect x="294" y="176" width="212" height="32" rx="6"/>
+      <rect x="294" y="214" width="212" height="32" rx="6"/>
+      <rect x="294" y="252" width="212" height="32" rx="6"/>
+      <rect x="294" y="290" width="212" height="32" rx="6"/>
+      <rect x="294" y="328" width="212" height="32" rx="6"/>
+    </g>
+    <g font-size="12" fill="#14202B">
+      <text x="306" y="120">6 Phone face unlock</text>
+      <text x="306" y="158">7 Email spam folder</text>
+      <text x="306" y="196">8 YouTube home feed</text>
+      <text x="306" y="234">9 Maps arrival time</text>
+      <text x="306" y="272">10 Photo app &#8220;dog&#8221; search</text>
+      <text x="306" y="310">11 Spotify autoplay</text>
+      <text x="306" y="348">12 Voice dictation</text>
+    </g>
+
+    <g stroke="#1F6FB2" stroke-width="2" fill="#D9EAF9" stroke-linejoin="round">
+      <rect x="544" y="100" width="212" height="32" rx="6"/>
+      <rect x="544" y="138" width="212" height="32" rx="6"/>
+      <rect x="544" y="176" width="212" height="32" rx="6"/>
+    </g>
+    <g font-size="12" fill="#14202B">
+      <text x="556" y="120">13 Chatbot writing a poem</text>
+      <text x="556" y="158">14 AI image maker</text>
+      <text x="556" y="196">15 Keyboard next-word bar</text>
+    </g>
+
+    <g>
+      <circle cx="250" cy="230" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+      <text x="250" y="231" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">?</text>
+      <circle cx="500" cy="230" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+      <text x="500" y="231" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">?</text>
+      <circle cx="750" cy="192" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+      <text x="750" y="193" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">?</text>
+    </g>
+    <rect x="544" y="240" width="212" height="118" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+    <text x="650" y="262" font-size="14" fill="#14202B" text-anchor="middle">DEFEND THESE THREE</text>
+    <g font-size="12" fill="#14202B">
+      <text x="556" y="286">4  Automatic doors: rules, or not AI?</text>
+      <text x="556" y="308">9  Maps time: rules, or learned?</text>
+      <text x="556" y="330">15 Keyboard bar: learned, or</text>
+      <text x="556" y="348">    generating? It is both.</text>
+    </g>
+
+    <text x="400" y="394" font-size="14" fill="#55636F" text-anchor="middle">The three pinned notes are the valuable ones. A hard call you can defend beats an easy one you guessed.</text>
+  </g>
+</svg>

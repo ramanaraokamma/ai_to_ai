@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Same eight points. Three models.</title>
+  <desc>Three panels over the same eight data points. Panel one fits a flat line and underfits. Panel two fits a smooth curve and is just right. Panel three fits a jagged line through every point and overfits.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Same eight points. Three models.</text>
+  <text x="149" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">1. Underfit</text>
+  <rect x="32" y="76" width="234" height="240" rx="12" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(41,86) scale(1.35)">
+  <line x1="24" y1="18" x2="24" y2="126" stroke="#14202B" stroke-width="2"/>
+  <line x1="24" y1="126" x2="146" y2="126" stroke="#14202B" stroke-width="2"/>
+  <path d="M30 80 L142 80" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="36" cy="110" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="52" cy="96" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="66" cy="102" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="82" cy="80" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="96" cy="72" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="112" cy="58" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="126" cy="64" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="140" cy="40" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="85" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">too simple</text>
+  </g>
+  <text x="149" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">train low, test low</text>
+  <text x="400" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">2. Just right</text>
+  <rect x="283" y="76" width="234" height="240" rx="12" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(292,86) scale(1.35)">
+  <line x1="24" y1="18" x2="24" y2="126" stroke="#14202B" stroke-width="2"/>
+  <line x1="24" y1="126" x2="146" y2="126" stroke="#14202B" stroke-width="2"/>
+  <path d="M30 114 Q86 92 142 44" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="36" cy="110" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="52" cy="96" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="66" cy="102" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="82" cy="80" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="96" cy="72" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="112" cy="58" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="126" cy="64" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="140" cy="40" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="85" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">just right</text>
+  </g>
+  <text x="400" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">train good, test good</text>
+  <text x="651" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">3. Overfit</text>
+  <rect x="534" y="76" width="234" height="240" rx="12" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(543,86) scale(1.35)">
+  <line x1="24" y1="18" x2="24" y2="126" stroke="#14202B" stroke-width="2"/>
+  <line x1="24" y1="126" x2="146" y2="126" stroke="#14202B" stroke-width="2"/>
+  <path d="M30 118 L36 110 L44 120 L52 96 L59 110 L66 102 L74 84 L82 80 L89 88 L96 72 L104 68 L112 58 L119 74 L126 64 L133 50 L140 40 L145 50" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="36" cy="110" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="52" cy="96" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="66" cy="102" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="82" cy="80" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="96" cy="72" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="112" cy="58" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="126" cy="64" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="140" cy="40" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="85" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">memorised</text>
+  </g>
+  <text x="651" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">train perfect, test poor</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The dots never move. Only the line does — that is model complexity.</text>
+</svg>

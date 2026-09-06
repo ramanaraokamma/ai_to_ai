@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A Quick, Draw! score card for six rounds</title>
+  <desc>A filled-in score card with six rounds. Clock, sun, ladder, shoe and tree were all guessed correctly in two to six seconds, usually after one or two wrong guesses first. Kangaroo was never guessed: the machine said dog, horse and bear and then ran out of time.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="34" font-size="24" fill="#14202B" text-anchor="middle">Round 1 score card &#8212; what it guessed, and how fast</text>
+
+    <rect x="30" y="54" width="740" height="266" rx="12" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M30 64 A10 10 0 0 1 40 54 H760 A10 10 0 0 1 770 64 V90 H30 Z" fill="#D9EAF9" stroke="none"/>
+    <line x1="30" y1="90" x2="770" y2="90" stroke="#1F6FB2" stroke-width="3"/>
+    <g stroke="#C7CDD4" stroke-width="1.5">
+      <line x1="30" y1="128" x2="770" y2="128"/>
+      <line x1="30" y1="166" x2="770" y2="166"/>
+      <line x1="30" y1="204" x2="770" y2="204"/>
+      <line x1="30" y1="242" x2="770" y2="242"/>
+      <line x1="30" y1="280" x2="770" y2="280"/>
+      <line x1="106" y1="54" x2="106" y2="320"/>
+      <line x1="230" y1="54" x2="230" y2="320"/>
+      <line x1="560" y1="54" x2="560" y2="320"/>
+      <line x1="662" y1="54" x2="662" y2="320"/>
+    </g>
+    <g font-size="14" fill="#14202B">
+      <text x="46" y="78">ROUND</text>
+      <text x="122" y="78">ASKED FOR</text>
+      <text x="246" y="78">WHAT IT CALLED OUT, IN ORDER</text>
+      <text x="576" y="78">GOT IT?</text>
+      <text x="678" y="78">SECONDS</text>
+
+      <text x="46" y="115">1</text><text x="122" y="115">clock</text>
+      <text x="246" y="115">circle &#8230; wheel &#8230; clock</text><text x="700" y="115" text-anchor="middle">3</text>
+      <text x="46" y="153">2</text><text x="122" y="153">sun</text>
+      <text x="246" y="153">circle &#8230; donut &#8230; sun</text><text x="700" y="153" text-anchor="middle">5</text>
+      <text x="46" y="191">3</text><text x="122" y="191">ladder</text>
+      <text x="246" y="191">zigzag &#8230; ladder</text><text x="700" y="191" text-anchor="middle">2</text>
+      <text x="46" y="229">4</text><text x="122" y="229">shoe</text>
+      <text x="246" y="229">shoe</text><text x="700" y="229" text-anchor="middle">2</text>
+      <text x="46" y="267">5</text><text x="122" y="267">tree</text>
+      <text x="246" y="267">broccoli &#8230; bush &#8230; tree</text><text x="700" y="267" text-anchor="middle">6</text>
+      <text x="46" y="305">6</text><text x="122" y="305">kangaroo</text>
+      <text x="246" y="305">dog &#8230; horse &#8230; bear &#8230; (nothing)</text>
+      <text x="700" y="305" text-anchor="middle">20, ran out</text>
+    </g>
+    <g transform="translate(598,98) scale(0.36)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <g transform="translate(598,136) scale(0.36)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <g transform="translate(598,174) scale(0.36)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <g transform="translate(598,212) scale(0.36)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <g transform="translate(598,250) scale(0.36)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <g transform="translate(598,288) scale(0.36)"><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g></g>
+
+    <text x="400" y="352" font-size="14" fill="#55636F" text-anchor="middle">Clock, sun and tree: everybody draws those the same way, so it has seen thousands like yours.</text>
+    <text x="400" y="374" font-size="14" fill="#55636F" text-anchor="middle">Kangaroo: nobody agrees how to draw one, so it has never seen anything like yours.</text>
+  </g>
+</svg>

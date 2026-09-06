@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Doubling versus adding</title>
+  <desc>A line chart with two series. Red squares show the work of writing rules: flat along the bottom for a while, then rocketing upward. Green triangles show the work of collecting labelled examples: a straight line rising gently. The two cross near the right-hand side.</desc>
+  <text x="400" y="34" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Why rules lose: doubling versus adding</text>
+
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="100" y1="320" x2="760" y2="320"/>
+    <line x1="100" y1="260" x2="760" y2="260"/>
+    <line x1="100" y1="200" x2="760" y2="200"/>
+    <line x1="100" y1="140" x2="760" y2="140"/>
+    <line x1="100" y1="80" x2="760" y2="80"/>
+  </g>
+
+  <polyline points="164,319.5 228,319.1 292,318.1 356,316.3 420,312.5 484,305 548,290 612,260 676,200 740,80"
+            fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="164,302 228,284 292,266 356,248 420,230 484,212 548,194 612,176 676,158 740,140"
+            fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g fill="#CC2B1D" stroke="#FFFFFF" stroke-width="2">
+    <rect x="158" y="313.5" width="12" height="12"/>
+    <rect x="222" y="313.1" width="12" height="12"/>
+    <rect x="286" y="312.1" width="12" height="12"/>
+    <rect x="350" y="310.3" width="12" height="12"/>
+    <rect x="414" y="306.5" width="12" height="12"/>
+    <rect x="478" y="299" width="12" height="12"/>
+    <rect x="542" y="284" width="12" height="12"/>
+    <rect x="606" y="254" width="12" height="12"/>
+    <rect x="670" y="194" width="12" height="12"/>
+    <rect x="734" y="74" width="12" height="12"/>
+  </g>
+  <g fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round">
+    <path d="M164 295 L172 309 L156 309 Z"/>
+    <path d="M228 277 L236 291 L220 291 Z"/>
+    <path d="M292 259 L300 273 L284 273 Z"/>
+    <path d="M356 241 L364 255 L348 255 Z"/>
+    <path d="M420 223 L428 237 L412 237 Z"/>
+    <path d="M484 205 L492 219 L476 219 Z"/>
+    <path d="M548 187 L556 201 L540 201 Z"/>
+    <path d="M612 169 L620 183 L604 183 Z"/>
+    <path d="M676 151 L684 165 L668 165 Z"/>
+    <path d="M740 133 L748 147 L732 147 Z"/>
+  </g>
+
+  <line x1="100" y1="320" x2="760" y2="320" stroke="#14202B" stroke-width="2"/>
+  <line x1="100" y1="60" x2="100" y2="320" stroke="#14202B" stroke-width="2"/>
+  <text x="430" y="346" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">how big the job gets</text>
+  <text x="70" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle" transform="rotate(-90 70 190)">work you must do</text>
+
+  <rect x="152" y="364" width="14" height="14" fill="#CC2B1D" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="176" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Writing rules (squares) &#8212; doubles</text>
+  <path d="M492 364 L500 378 L484 378 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <text x="512" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Collecting examples (triangles) &#8212; adds</text>
+</svg>

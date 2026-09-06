@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>Tighten the rule and the errors move, they never vanish</title>
+  <desc>Three panels showing the same rule set loose, middle and tight. A loose rule gives 1 false alarm and 9 misses. A middle setting gives 4 and 4. A tight rule gives 9 false alarms and 1 miss. The total stays about the same.</desc>
+  <text x="400" y="40" font-size="24" fill="#14202B" text-anchor="middle">Tighten the rule and the errors move. They never vanish.</text>
+  <rect x="40" y="80" width="220" height="278" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="150" y="106" font-size="16" fill="#14202B" text-anchor="middle">LOOSE RULE</text>
+  <text x="150" y="126" font-size="12" fill="#55636F" text-anchor="middle">flags almost nothing</text>
+  <line x1="60" y1="300" x2="240" y2="300" stroke="#14202B" stroke-width="2"/>
+  <rect x="85" y="282" width="50" height="18" rx="4" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="110" y="274" font-size="16" fill="#14202B" text-anchor="middle">1</text>
+  <text x="110" y="318" font-size="12" fill="#55636F" text-anchor="middle">false</text>
+  <text x="110" y="333" font-size="12" fill="#55636F" text-anchor="middle">alarms</text>
+  <rect x="165" y="138" width="50" height="162" rx="4" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="190" y="130" font-size="16" fill="#14202B" text-anchor="middle">9</text>
+  <text x="190" y="318" font-size="12" fill="#55636F" text-anchor="middle">misses</text>
+  <text x="150" y="350" font-size="12" fill="#55636F" text-anchor="middle">total wrong: 10</text>
+  <rect x="290" y="80" width="220" height="278" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="400" y="106" font-size="16" fill="#14202B" text-anchor="middle">IN THE MIDDLE</text>
+  <text x="400" y="126" font-size="12" fill="#55636F" text-anchor="middle">the usual compromise</text>
+  <line x1="310" y1="300" x2="490" y2="300" stroke="#14202B" stroke-width="2"/>
+  <rect x="335" y="228" width="50" height="72" rx="4" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="360" y="220" font-size="16" fill="#14202B" text-anchor="middle">4</text>
+  <text x="360" y="318" font-size="12" fill="#55636F" text-anchor="middle">false</text>
+  <text x="360" y="333" font-size="12" fill="#55636F" text-anchor="middle">alarms</text>
+  <rect x="415" y="228" width="50" height="72" rx="4" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="440" y="220" font-size="16" fill="#14202B" text-anchor="middle">4</text>
+  <text x="440" y="318" font-size="12" fill="#55636F" text-anchor="middle">misses</text>
+  <text x="400" y="350" font-size="12" fill="#55636F" text-anchor="middle">total wrong: 8</text>
+  <rect x="540" y="80" width="220" height="278" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="650" y="106" font-size="16" fill="#14202B" text-anchor="middle">TIGHT RULE</text>
+  <text x="650" y="126" font-size="12" fill="#55636F" text-anchor="middle">flags almost everything</text>
+  <line x1="560" y1="300" x2="740" y2="300" stroke="#14202B" stroke-width="2"/>
+  <rect x="585" y="138" width="50" height="162" rx="4" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="610" y="130" font-size="16" fill="#14202B" text-anchor="middle">9</text>
+  <text x="610" y="318" font-size="12" fill="#55636F" text-anchor="middle">false</text>
+  <text x="610" y="333" font-size="12" fill="#55636F" text-anchor="middle">alarms</text>
+  <rect x="665" y="282" width="50" height="18" rx="4" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="690" y="274" font-size="16" fill="#14202B" text-anchor="middle">1</text>
+  <text x="690" y="318" font-size="12" fill="#55636F" text-anchor="middle">misses</text>
+  <text x="650" y="350" font-size="12" fill="#55636F" text-anchor="middle">total wrong: 10</text>
+  <text x="400" y="380" font-size="14" fill="#55636F" text-anchor="middle">You do not get to choose how many mistakes. You only get to choose which kind.</text>
+</svg>

@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>One colour image is three number grids stacked</title>
+  <desc>A small four by four colour image on the left. An arrow leads to three separate four by four number grids labelled red channel, green channel and blue channel, each holding one number per pixel.</desc>
+<text x="400" y="34" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">One colour image is three number grids</text><rect x="40" y="138" width="36" height="36" fill="#FF0000" stroke="#C7CDD4" stroke-width="1"/>
+<rect x="76" y="138" width="36" height="36" fill="#FF0000" stroke="#C7CDD4" stroke-width="1"/>
+<rect x="112" y="138" width="36" height="36" fill="#FFFF00" stroke="#C7CDD4" stroke-width="1"/>
+<rect x="148" y="138" width="36" height="36" fill="#FFFF00" stroke="#C7CDD4" stroke-width="1"/>
+<rect x="40" y="174" width="36" height="36" fill="#FF0000" stroke="#C7CDD4" stroke-width="1"/>
+<rect x="76" y="174" width="36" height="36" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<rect x="112" y="174" width="36" height="36" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<rect x="148" y="174" width="36" height="36" fill="#FFFF00" stroke="#C7CDD4" stroke-width="1"/>
+<rect x="40" y="210" width="36" height="36" fill="#0000FF" stroke="#C7CDD4" stroke-width="1"/>
+<rect x="76" y="210" width="36" height="36" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<rect x="112" y="210" width="36" height="36" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<rect x="148" y="210" width="36" height="36" fill="#00FF00" stroke="#C7CDD4" stroke-width="1"/>
+<rect x="40" y="246" width="36" height="36" fill="#0000FF" stroke="#C7CDD4" stroke-width="1"/>
+<rect x="76" y="246" width="36" height="36" fill="#0000FF" stroke="#C7CDD4" stroke-width="1"/>
+<rect x="112" y="246" width="36" height="36" fill="#00FF00" stroke="#C7CDD4" stroke-width="1"/>
+<rect x="148" y="246" width="36" height="36" fill="#00FF00" stroke="#C7CDD4" stroke-width="1"/>
+<rect x="40" y="138" width="144" height="144" fill="none" stroke="#14202B" stroke-width="3"/>
+<text x="112" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">the picture</text><text x="112" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4 x 4 = 16 pixels</text><text x="112" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">3 numbers each = 48</text><line x1="198" y1="210" x2="238" y2="210" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/><polyline points="232,202 246,210 232,218" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="276" y="96" width="128" height="24" rx="6" fill="#FF0000" stroke="#14202B" stroke-width="2"/>
+<text x="340" y="142" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">RED channel</text><rect x="276" y="158" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="292.0" y="178.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="308" y="158" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="324.0" y="178.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="340" y="158" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="356.0" y="178.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="372" y="158" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="388.0" y="178.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="276" y="190" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="292.0" y="210.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="308" y="190" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="324.0" y="210.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="340" y="190" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="356.0" y="210.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="372" y="190" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="388.0" y="210.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="276" y="222" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="292.0" y="242.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="308" y="222" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="324.0" y="242.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="340" y="222" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="356.0" y="242.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="372" y="222" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="388.0" y="242.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="276" y="254" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="292.0" y="274.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="308" y="254" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="324.0" y="274.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="340" y="254" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="356.0" y="274.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="372" y="254" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="388.0" y="274.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="276" y="158" width="128" height="128" fill="none" stroke="#14202B" stroke-width="3"/>
+<text x="340" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one number</text><text x="340" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">per pixel, 0-255</text><rect x="456" y="96" width="128" height="24" rx="6" fill="#00FF00" stroke="#14202B" stroke-width="2"/>
+<text x="520" y="142" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">GREEN channel</text><rect x="456" y="158" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="472.0" y="178.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="488" y="158" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="504.0" y="178.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="520" y="158" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="536.0" y="178.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="552" y="158" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="568.0" y="178.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="456" y="190" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="472.0" y="210.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="488" y="190" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="504.0" y="210.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="520" y="190" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="536.0" y="210.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="552" y="190" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="568.0" y="210.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="456" y="222" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="472.0" y="242.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="488" y="222" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="504.0" y="242.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="520" y="222" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="536.0" y="242.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="552" y="222" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="568.0" y="242.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="456" y="254" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="472.0" y="274.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="488" y="254" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="504.0" y="274.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="520" y="254" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="536.0" y="274.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="552" y="254" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="568.0" y="274.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="456" y="158" width="128" height="128" fill="none" stroke="#14202B" stroke-width="3"/>
+<text x="520" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one number</text><text x="520" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">per pixel, 0-255</text><rect x="636" y="96" width="128" height="24" rx="6" fill="#0000FF" stroke="#14202B" stroke-width="2"/>
+<text x="700" y="142" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">BLUE channel</text><rect x="636" y="158" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="652.0" y="178.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="668" y="158" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="684.0" y="178.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="700" y="158" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="716.0" y="178.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="732" y="158" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="748.0" y="178.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="636" y="190" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="652.0" y="210.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="668" y="190" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="684.0" y="210.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="700" y="190" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="716.0" y="210.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="732" y="190" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="748.0" y="210.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="636" y="222" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="652.0" y="242.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="668" y="222" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="684.0" y="242.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="700" y="222" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="716.0" y="242.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="732" y="222" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="748.0" y="242.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="636" y="254" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="652.0" y="274.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="668" y="254" width="32" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1"/>
+<text x="684.0" y="274.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">255</text>
+<rect x="700" y="254" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="716.0" y="274.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="732" y="254" width="32" height="32" fill="#14202B" stroke="#C7CDD4" stroke-width="1"/>
+<text x="748.0" y="274.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">0</text>
+<rect x="636" y="158" width="128" height="128" fill="none" stroke="#14202B" stroke-width="3"/>
+<text x="700" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one number</text><text x="700" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">per pixel, 0-255</text><text x="400" y="368" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Each channel on its own is just a grayscale grid. Stack all three and the colour appears.</text></svg>

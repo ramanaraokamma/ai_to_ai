@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>The ask / compare / say loop</title>
+  <desc>A stack of Scratch blocks: when green flag clicked, ask and wait, set the counter, then a repeat-until block containing an if-contains check that says the matching reply and sets matched to one, then change the counter, and finally an if-matched-is-zero block holding the fallback reply.</desc>
+<text x="250" y="38" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The ask / compare / say loop</text>
+<path d="M 60 92 a 44 26 0 0 1 88 0 H 254 a 6 6 0 0 1 6 6 V 108 a 6 6 0 0 1 -6 6 H 98 l -4 5 h -14 l -4 -5 H 66 a 6 6 0 0 1 -6 -6 Z" fill="#E8C671" stroke="#845F00" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="160" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">when green flag clicked</text>
+<path d="M 66 120 h 10 l 4 5 h 14 l 4 -5 H 434 a 6 6 0 0 1 6 6 V 152 a 6 6 0 0 1 -6 6 H 98 l -4 5 h -14 l -4 -5 H 66 a 6 6 0 0 1 -6 -6 V 126 a 6 6 0 0 1 6 -6 Z" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="72" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" dominant-baseline="central">ask [What do you want to know?] and wait</text>
+<path d="M 66 162 h 10 l 4 5 h 14 l 4 -5 H 434 a 6 6 0 0 1 6 6 V 194 a 6 6 0 0 1 -6 6 H 98 l -4 5 h -14 l -4 -5 H 66 a 6 6 0 0 1 -6 -6 V 168 a 6 6 0 0 1 6 -6 Z" fill="#E8C671" stroke="#845F00" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="72" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" dominant-baseline="central">set (i) to (1)     set (matched) to (0)</text>
+<rect x="52" y="204" width="396" height="152" rx="10" fill="#F5F8FA" stroke="#1B7A4B" stroke-width="2.5"/>
+<text x="64" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" dominant-baseline="central">repeat until &lt;(i) &gt; (length of triggers) or (matched = 1)&gt;</text>
+<path d="M 82 236 h 10 l 4 5 h 14 l 4 -5 H 426 a 6 6 0 0 1 6 6 V 266 a 6 6 0 0 1 -6 6 H 114 l -4 5 h -14 l -4 -5 H 82 a 6 6 0 0 1 -6 -6 V 242 a 6 6 0 0 1 6 -6 Z" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="88" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">if &lt;(answer) contains (item (i) of triggers)&gt;</text>
+<path d="M 100 278 h 10 l 4 5 h 14 l 4 -5 H 418 a 6 6 0 0 1 6 6 V 308 a 6 6 0 0 1 -6 6 H 132 l -4 5 h -14 l -4 -5 H 100 a 6 6 0 0 1 -6 -6 V 284 a 6 6 0 0 1 6 -6 Z" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="106" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">say (item (i) of replies) for (3) secs</text>
+<path d="M 100 316 h 10 l 4 5 h 14 l 4 -5 H 418 a 6 6 0 0 1 6 6 V 342 a 6 6 0 0 1 -6 6 H 132 l -4 5 h -14 l -4 -5 H 100 a 6 6 0 0 1 -6 -6 V 322 a 6 6 0 0 1 6 -6 Z" fill="#E8C671" stroke="#845F00" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="106" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">set (matched) to (1)</text>
+<path d="M 66 368 h 10 l 4 5 h 14 l 4 -5 H 434 a 6 6 0 0 1 6 6 V 396 a 6 6 0 0 1 -6 6 H 98 l -4 5 h -14 l -4 -5 H 66 a 6 6 0 0 1 -6 -6 V 374 a 6 6 0 0 1 6 -6 Z" fill="#E8C671" stroke="#845F00" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="72" y="385" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" dominant-baseline="central">change (i) by (1)</text>
+<rect x="52" y="410" width="396" height="92" rx="10" fill="#F5F8FA" stroke="#CC2B1D" stroke-width="2.5"/>
+<text x="64" y="428" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" dominant-baseline="central">if &lt;(matched) = (0)&gt;     -- the fallback path</text>
+<path d="M 82 442 h 10 l 4 5 h 14 l 4 -5 H 426 a 6 6 0 0 1 6 6 V 480 a 6 6 0 0 1 -6 6 H 114 l -4 5 h -14 l -4 -5 H 82 a 6 6 0 0 1 -6 -6 V 448 a 6 6 0 0 1 6 -6 Z" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="88" y="456" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">say [I don't know that one - try asking</text>
+<text x="88" y="474" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">about toppings] for (3) secs</text>
+<text x="250" y="534" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">Yellow = variables.  Blue = sensing.  Purple = say.</text>
+<text x="250" y="556" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">Grey and red outlines are control blocks that wrap what is inside.</text>
+<rect x="52" y="568" width="396" height="104" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+<text x="250" y="590" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#1B7A4B" text-anchor="middle" font-weight="600" dominant-baseline="central">TEST AFTER EVERY STAGE</text>
+<text x="70" y="618" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" dominant-baseline="central">type:  what toppings do you have</text>
+<text x="70" y="640" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" dominant-baseline="central">expect:  We do cheese, mushroom, paneer...</text>
+<text x="70" y="662" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" dominant-baseline="central">type:  what is the moon made of  -  fallback fires</text>
+</svg>

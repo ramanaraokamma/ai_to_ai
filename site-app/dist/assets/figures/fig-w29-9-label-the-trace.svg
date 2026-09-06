@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img">
+  <title>Label the trace row</title>
+  <desc>One row of a generation trace with five filled cells and five blank numbered header cells above, plus five numbered write-on lines below for the column names.</desc>
+  <text x="250" y="34" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Label the trace row</text>
+  <text x="250" y="56" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">Five blank header cells. Write what each column is called.</text>
+  <rect x="40" y="70" width="422" height="44" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="66.0" cy="92" r="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="66.0" y="93" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <line x1="92" y1="70" x2="92" y2="178" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="142.0" cy="92" r="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="142.0" y="93" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <line x1="192" y1="70" x2="192" y2="178" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="267.0" cy="92" r="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="267.0" y="93" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <line x1="342" y1="70" x2="342" y2="178" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="372.0" cy="92" r="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="372.0" y="93" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <line x1="402" y1="70" x2="402" y2="178" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="432.0" cy="92" r="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="432.0" y="93" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+  <rect x="40" y="114" width="422" height="64" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="92" y1="114" x2="92" y2="178" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="192" y1="114" x2="192" y2="178" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="342" y1="114" x2="342" y2="178" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="402" y1="114" x2="402" y2="178" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="66" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="142" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle" dominant-baseline="central">to</text>
+  <text x="267" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1 the · 2 the</text>
+  <text x="267" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3 the · 4 town</text>
+  <text x="372" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="432" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">town</text>
+  <rect x="40" y="200" width="422" height="214" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="250" y="226" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" font-weight="600">WRITE THE FIVE COLUMN NAMES HERE</text>
+  <circle cx="72" cy="253" r="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="72" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <line x1="96" y1="258" x2="436" y2="258" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="72" cy="285" r="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="72" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <line x1="96" y1="290" x2="436" y2="290" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="72" cy="317" r="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="72" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <line x1="96" y1="322" x2="436" y2="322" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="72" cy="349" r="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="72" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <line x1="96" y1="354" x2="436" y2="354" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="72" cy="381" r="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="72" y="382" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+  <line x1="96" y1="386" x2="436" y2="386" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="250" y="452" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">One row of a trace tells you everything that happened at one step.</text>
+</svg>

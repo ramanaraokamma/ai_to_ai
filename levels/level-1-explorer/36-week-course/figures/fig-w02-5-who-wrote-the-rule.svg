@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The board at the end: who wrote the rule?</title>
+  <desc>A two column board comparing last week's vending machine with this week's mango game. For each, four rows are filled in: what the job was, who wrote the rule, where the rule lives, and what happens with a brand new case. The final row shows the one question that separates them.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="34" font-size="24" fill="#14202B" text-anchor="middle">Who wrote the rule?</text>
+
+    <rect x="30" y="54" width="740" height="286" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M30 64 A10 10 0 0 1 40 54 H760 A10 10 0 0 1 770 64 V96 H30 Z" fill="#F5F8FA" stroke="none"/>
+    <line x1="30" y1="96" x2="770" y2="96" stroke="#14202B" stroke-width="3"/>
+    <g stroke="#C7CDD4" stroke-width="1.5">
+      <line x1="30" y1="146" x2="770" y2="146"/>
+      <line x1="30" y1="196" x2="770" y2="196"/>
+      <line x1="30" y1="246" x2="770" y2="246"/>
+      <line x1="240" y1="54" x2="240" y2="340"/>
+      <line x1="505" y1="54" x2="505" y2="340"/>
+    </g>
+    <line x1="30" y1="296" x2="770" y2="296" stroke="#14202B" stroke-width="3"/>
+
+    <g font-size="18" fill="#14202B">
+      <text x="46" y="82">Question</text>
+      <text x="256" y="82" fill="#845F00">Week 1: vending machine</text>
+      <text x="521" y="82" fill="#6D28D9">Week 2: mango game</text>
+    </g>
+    <g font-size="14" fill="#14202B">
+      <text x="46" y="126">What was the job?</text>
+      <text x="256" y="126">Serve the right item</text>
+      <text x="521" y="126">Say ripe or unripe</text>
+
+      <text x="46" y="176">Who wrote the rule?</text>
+      <text x="256" y="176">A person, in advance</text>
+      <text x="521" y="176">Nobody. You found it.</text>
+
+      <text x="46" y="226">Where does it live?</text>
+      <text x="256" y="226">On the rulebook sheet</text>
+      <text x="521" y="226">In your head, then on paper</text>
+
+      <text x="46" y="276">A brand new case?</text>
+      <text x="256" y="276">Silence. No rule fires.</text>
+      <text x="521" y="276">A guess, from the pattern</text>
+    </g>
+
+    <text x="46" y="322" font-size="18" fill="#14202B">The one difference</text>
+    <text x="256" y="322" font-size="18" fill="#845F00">rule written FIRST</text>
+    <text x="521" y="322" font-size="18" fill="#6D28D9">rule found FROM EXAMPLES</text>
+
+    <text x="400" y="376" font-size="14" fill="#55636F" text-anchor="middle">Everything else about the two is the same. This row is the whole of machine learning.</text>
+  </g>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>One row is one thing that happened</title>
+  <desc>On the left, a single real event: one journey from a front door to a school gate. On the right, that same event written as one row of a table whose five columns each carry a name and a unit, with the target column marked. Underneath, the measurement method for each column.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">One row is one thing that happened</text>
+  <rect x="20" y="64" width="300" height="150" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="170" y="90" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">one real event</text>
+  <circle cx="70" cy="140" r="18" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+  <text x="70" y="178" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">front door</text>
+  <line x1="96" y1="140" x2="244" y2="140" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(244 140) rotate(0.0)"/>
+  <rect x="248" y="118" width="52" height="44" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="274" y="141" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">gate</text>
+  <text x="274" y="178" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">school</text>
+  <text x="170" y="118" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">17.5 minutes on the phone clock</text>
+  <line x1="336" y1="140" x2="366" y2="140" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(366 140) rotate(0.0)"/>
+  <rect x="380" y="74" width="78" height="30" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="419" y="89" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">distance_km</text>
+  <rect x="380" y="106" width="78" height="40" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="419" y="126" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.2</text>
+  <text x="419" y="166" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">km</text>
+  <rect x="460" y="74" width="78" height="30" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="499" y="89" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">mode</text>
+  <rect x="460" y="106" width="78" height="40" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="499" y="126" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">walk</text>
+  <text x="499" y="166" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">—</text>
+  <rect x="540" y="74" width="78" height="30" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="579" y="89" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">rain</text>
+  <rect x="540" y="106" width="78" height="40" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="579" y="126" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="579" y="166" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0 or 1</text>
+  <rect x="620" y="74" width="78" height="30" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="659" y="89" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">depart_hour</text>
+  <rect x="620" y="106" width="78" height="40" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="659" y="126" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">8</text>
+  <text x="659" y="166" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">hour</text>
+  <rect x="700" y="74" width="78" height="30" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="739" y="89" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">minutes</text>
+  <rect x="700" y="106" width="78" height="40" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="739" y="126" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">17.5</text>
+  <text x="739" y="166" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">minutes</text>
+  <text x="580" y="196" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one row  ·  five columns  ·  every column has a unit</text>
+  <text x="770" y="62" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="end">← the target</text>
+  <rect x="20" y="224" width="760" height="132" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="400" y="250" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">and for every column, HOW you will measure it</text>
+  <text x="48" y="276" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F">distance_km  —  measured on a map, front door to school gate</text>
+  <text x="48" y="296" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F">mode  —  walk / cycle / bus, written down at the time, not remembered</text>
+  <text x="48" y="316" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F">rain  —  1 if it rained at all during the journey</text>
+  <text x="48" y="336" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F">minutes  —  phone clock, started at the door, stopped at the gate</text>
+  <text x="400" y="382" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">“Roughly how long it felt” is not a measurement.</text>
+</svg>

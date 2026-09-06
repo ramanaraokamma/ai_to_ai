@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Same question. Two very different silences.</title>
+  <desc>The question what is the moon made of at the top. Below, two panels: a rule bot drawn as a robot and a bigram generator drawn as a data table, each with an empty dashed box for the reader to write a prediction in.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Same question. Two very different silences.</text>
+  <rect x="180" y="64" width="440" height="48" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="400" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">“What is the moon made of?”</text>
+  <rect x="40" y="136" width="330" height="200" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="430" y="136" width="330" height="200" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="66" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="600">RULE BOT</text>
+  <text x="456" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="600">BIGRAM GENERATOR</text>
+  <g transform="translate(62,180) scale(0.7)">
+    <line x1="50" y1="16" x2="50" y2="7" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="50" cy="5" r="4" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+    <rect x="22" y="16" width="56" height="40" rx="12" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="38" cy="34" r="5" fill="#14202B"/><circle cx="62" cy="34" r="5" fill="#14202B"/>
+    <path d="M40 45 Q50 52 60 45" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <rect x="28" y="60" width="44" height="30" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <line x1="28" y1="68" x2="13" y2="78" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+    <line x1="72" y1="68" x2="87" y2="78" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="50" cy="75" r="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  </g>
+  <g transform="translate(456,180) scale(0.7)">
+    <rect x="8" y="16" width="84" height="68" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M8 24 A8 8 0 0 1 16 16 H84 A8 8 0 0 1 92 24 V38 H8 Z" fill="#D9EAF9" stroke="none"/>
+    <g stroke="#C7CDD4" stroke-width="1.5"><line x1="8" y1="61" x2="92" y2="61"/><line x1="36" y1="38" x2="36" y2="84"/><line x1="64" y1="38" x2="64" y2="84"/></g>
+    <line x1="8" y1="38" x2="92" y2="38" stroke="#1F6FB2" stroke-width="3"/>
+    <rect x="8" y="16" width="84" height="68" rx="8" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <g fill="#55636F"><rect x="15" y="24" width="14" height="5" rx="2.5"/><rect x="43" y="24" width="14" height="5" rx="2.5"/><rect x="71" y="24" width="14" height="5" rx="2.5"/><rect x="15" y="47" width="14" height="5" rx="2.5"/><rect x="43" y="47" width="14" height="5" rx="2.5"/><rect x="71" y="47" width="14" height="5" rx="2.5"/><rect x="15" y="70" width="14" height="5" rx="2.5"/><rect x="43" y="70" width="14" height="5" rx="2.5"/><rect x="71" y="70" width="14" height="5" rx="2.5"/></g>
+  </g>
+  <rect x="150" y="186" width="206" height="110" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <rect x="540" y="186" width="206" height="110" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <text x="253" y="246" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#C7CDD4" text-anchor="middle" dominant-baseline="central">your prediction</text>
+  <text x="643" y="246" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#C7CDD4" text-anchor="middle" dominant-baseline="central">your prediction</text>
+  <text x="400" y="368" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Neither machine knows the answer. Write what you think each one will say.</text>
+</svg>

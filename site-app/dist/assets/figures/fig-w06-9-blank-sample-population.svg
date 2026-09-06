@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Label the sample and the population</title>
+  <desc>A large outline containing many small dots, with a small shaded patch of filled dots inside it. Four empty answer boxes with leader lines point at the big outline, the small patch, the arrow between them, and the dots outside the patch, waiting to be named.</desc>
+  <text x="400" y="34" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Fill in the four boxes</text>
+
+  <!-- leader lines first -->
+  <g stroke="#C42B8C" stroke-width="1.5" fill="none">
+    <path d="M300 92 V72"/>
+    <path d="M182 214 H120"/>
+    <path d="M420 296 V320"/>
+    <path d="M540 132 H612"/>
+  </g>
+
+  <!-- big outline = population -->
+  <rect x="180" y="92" width="376" height="204" rx="24" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <!-- unmeasured dots -->
+  <g fill="none" stroke="#55636F" stroke-width="1.5">
+    <circle cx="214" cy="118" r="5"/><circle cx="248" cy="112" r="5"/><circle cx="284" cy="122" r="5"/>
+    <circle cx="322" cy="112" r="5"/><circle cx="360" cy="122" r="5"/><circle cx="398" cy="112" r="5"/>
+    <circle cx="436" cy="122" r="5"/><circle cx="474" cy="112" r="5"/><circle cx="512" cy="122" r="5"/>
+    <circle cx="214" cy="150" r="5"/><circle cx="248" cy="160" r="5"/><circle cx="284" cy="150" r="5"/>
+    <circle cx="398" cy="150" r="5"/><circle cx="436" cy="160" r="5"/><circle cx="474" cy="150" r="5"/>
+    <circle cx="512" cy="160" r="5"/>
+    <circle cx="398" cy="188" r="5"/><circle cx="436" cy="196" r="5"/><circle cx="474" cy="188" r="5"/>
+    <circle cx="512" cy="196" r="5"/>
+    <circle cx="214" cy="238" r="5"/><circle cx="248" cy="248" r="5"/><circle cx="284" cy="238" r="5"/>
+    <circle cx="322" cy="248" r="5"/><circle cx="360" cy="238" r="5"/><circle cx="398" cy="248" r="5"/>
+    <circle cx="436" cy="238" r="5"/><circle cx="474" cy="248" r="5"/><circle cx="512" cy="238" r="5"/>
+    <circle cx="214" cy="274" r="5"/><circle cx="248" cy="266" r="5"/><circle cx="284" cy="274" r="5"/>
+    <circle cx="322" cy="266" r="5"/><circle cx="360" cy="274" r="5"/><circle cx="398" cy="266" r="5"/>
+    <circle cx="436" cy="274" r="5"/><circle cx="474" cy="266" r="5"/><circle cx="512" cy="274" r="5"/>
+  </g>
+
+  <!-- small patch = sample -->
+  <rect x="298" y="138" width="112" height="72" rx="12" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <g fill="#1F6FB2">
+    <circle cx="316" cy="156" r="5"/><circle cx="340" cy="164" r="5"/><circle cx="364" cy="154" r="5"/>
+    <circle cx="390" cy="162" r="5"/><circle cx="316" cy="186" r="5"/><circle cx="340" cy="194" r="5"/>
+    <circle cx="364" cy="184" r="5"/><circle cx="390" cy="192" r="5"/>
+  </g>
+
+  <!-- arrow from patch out to the whole box -->
+  <g transform="translate(414,258) scale(0.62)">
+    <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="352" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#845F00">I want my answer to cover ALL of this</text>
+
+  <!-- empty answer boxes -->
+  <g fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round">
+    <rect x="190" y="34" width="220" height="38" rx="8"/>
+    <rect x="24" y="195" width="96" height="38" rx="8"/>
+    <rect x="310" y="320" width="220" height="38" rx="8"/>
+    <rect x="612" y="113" width="164" height="38" rx="8"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">
+    <text x="190" y="28">1. This whole big shape is the...</text>
+    <text x="24" y="189">2. This blue</text>
+    <text x="24" y="252">patch is the...</text>
+    <text x="310" y="314">3. This gap is the risk called...</text>
+    <text x="612" y="107">4. These hollow dots are...</text>
+  </g>
+
+  <text x="400" y="384" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Then count: 8 filled dots, 38 hollow ones. Write your sample as a fraction of the whole shape.</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The finished board for the confidence lesson</title>
+  <desc>A whiteboard showing three small confidence bars for spoon 62, toothbrush 21 and comb 17, the sum check 62 plus 21 plus 17 equals 100, the margin worked out as 62 minus 21 equals 41, a red warning that 62 percent does not mean a 62 percent chance of being right, and a class confidence policy.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="44" font-size="24" fill="#14202B" text-anchor="middle">What the board looks like at the end of the concept block</text>
+
+    <rect x="30" y="64" width="740" height="280" rx="12" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="80" y="344" width="640" height="12" rx="6" fill="#F5F8FA" stroke="#55636F" stroke-width="2" stroke-linejoin="round"/>
+
+    <text x="60" y="104" font-size="18" fill="#14202B">CONFIDENCE READOUT - three numbers that add to 100</text>
+
+    <rect x="112" y="122" width="99.2" height="20" rx="5" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="112" y="150" width="33.6" height="20" rx="5" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="112" y="178" width="27.2" height="20" rx="5" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round"/>
+    <g font-size="14" fill="#14202B" text-anchor="end">
+      <text x="104" y="137">spoon</text>
+      <text x="104" y="165">tbrush</text>
+      <text x="104" y="193">comb</text>
+    </g>
+    <g font-size="14" fill="#14202B">
+      <text x="219" y="137">62</text>
+      <text x="154" y="165">21</text>
+      <text x="147" y="193">17</text>
+    </g>
+
+    <g font-size="16" fill="#14202B">
+      <text x="330" y="140">sum = 62 + 21 + 17 = 100</text>
+      <text x="330" y="170">margin = top - second</text>
+      <text x="330" y="198">          = 62 - 21 = 41</text>
+    </g>
+
+    <rect x="60" y="222" width="680" height="52" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+    <text x="400" y="254" font-size="18" fill="#14202B" text-anchor="middle">62% does NOT mean "a 62% chance of being right"</text>
+
+    <text x="60" y="308" font-size="16" fill="#14202B">OUR POLICY:  if top is under 70%  OR  margin is under 20  -&gt;  say "not sure"</text>
+
+    <text x="400" y="380" font-size="14" fill="#55636F" text-anchor="middle">Build this live as you talk. Do not write it up before class.</text>
+  </g>
+</svg>

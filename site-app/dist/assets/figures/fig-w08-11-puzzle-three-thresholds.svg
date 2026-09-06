@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Three thresholds, one parcel belt</title>
+  <desc>Eight parcels plotted along a weight line from three point one to six point four kilograms. Ticks mark the four parcels that genuinely needed two people to lift, crosses mark the four that did not. Three dashed candidate lines are drawn at four kilograms, five kilograms and six kilograms.</desc>
+  <text x="400" y="38" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Which line would you draw?</text>
+  <text x="400" y="66" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Eight parcels. The tick means it really did need two people to lift it safely.</text>
+
+  <!-- candidate lines drawn first so parcels sit on top -->
+  <g stroke="#C42B8C" stroke-width="3" stroke-dasharray="8 6" stroke-linecap="round">
+    <line x1="266" y1="104" x2="266" y2="252"/>
+    <line x1="424" y1="104" x2="424" y2="252"/>
+    <line x1="582" y1="104" x2="582" y2="252"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="middle">
+    <text x="266" y="98">line A: 4.0 kg</text>
+    <text x="424" y="98">line B: 5.0 kg</text>
+    <text x="582" y="98">line C: 6.0 kg</text>
+  </g>
+
+  <line x1="70" y1="230" x2="740" y2="230" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- parcels : P1 3.1 no, P2 3.9 no, P3 4.4 no, P4 4.8 yes, P5 5.2 no, P6 5.6 yes, P7 6.1 yes, P8 6.4 yes -->
+  <g transform="translate(94,152) scale(0.3)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g>
+  </g>
+  <g transform="translate(174,152) scale(0.3)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g>
+  </g>
+  <g transform="translate(334,152) scale(0.3)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g>
+  </g>
+  <g transform="translate(494,152) scale(0.3)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g>
+  </g>
+  <g transform="translate(414,152) scale(0.3)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(554,152) scale(0.3)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(634,152) scale(0.3)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(694,152) scale(0.3)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="109" y1="222" x2="109" y2="238"/>
+    <line x1="189" y1="222" x2="189" y2="238"/>
+    <line x1="349" y1="222" x2="349" y2="238"/>
+    <line x1="429" y1="222" x2="429" y2="238"/>
+    <line x1="509" y1="222" x2="509" y2="238"/>
+    <line x1="569" y1="222" x2="569" y2="238"/>
+    <line x1="649" y1="222" x2="649" y2="238"/>
+    <line x1="709" y1="222" x2="709" y2="238"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">
+    <text x="109" y="258">P1</text><text x="189" y="258">P2</text><text x="349" y="258">P3</text><text x="429" y="258">P4</text>
+    <text x="509" y="258">P5</text><text x="569" y="258">P6</text><text x="649" y="258">P7</text><text x="709" y="258">P8</text>
+    <text x="109" y="278">3.1</text><text x="189" y="278">3.9</text><text x="349" y="278">4.4</text><text x="429" y="278">4.8</text>
+    <text x="509" y="278">5.2</text><text x="569" y="278">5.6</text><text x="649" y="278">6.1</text><text x="709" y="278">6.4</text>
+  </g>
+  <text x="400" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">weight in kilograms</text>
+  <text x="400" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The rule is: IF weight_kg &gt;= (the line) THEN flag it as a two-person lift.</text>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Count the false alarms and the misses for A, B and C. One line has zero misses. One has zero false alarms.</text>
+  <text x="400" y="390" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">No line gets both to zero. That is the whole puzzle.</text>
+</svg>

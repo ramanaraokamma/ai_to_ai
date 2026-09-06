@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>The door from Level 1 to Level 2</title>
+  <desc>A door in the middle of the picture. On the left, seven things the learner already owns, written in plain words. On the right, the same seven things written as Python, from pandas DataFrame to classification report. Not one new idea, only new spelling.</desc>
+
+  <text x="400" y="36" font-size="24" fill="#14202B" text-anchor="middle">Same ideas. New spelling.</text>
+
+  <text x="180" y="66" font-size="18" fill="#845F00" text-anchor="middle">WHAT YOU ALREADY OWN</text>
+  <text x="620" y="66" font-size="18" fill="#6D28D9" text-anchor="middle">HOW LEVEL 2 SPELLS IT</text>
+
+  <!-- door -->
+  <rect x="356" y="84" width="88" height="266" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+  <rect x="368" y="96" width="64" height="120" rx="6" fill="#FFFFFF" stroke="#845F00" stroke-width="2"/>
+  <circle cx="424" cy="240" r="6" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <text x="400" y="290" font-size="14" fill="#14202B" text-anchor="middle">LEVEL</text>
+  <text x="400" y="312" font-size="24" fill="#14202B" text-anchor="middle">2</text>
+  <g transform="translate(374,140) scale(0.6)">
+    <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g font-size="14" fill="#14202B" text-anchor="end">
+    <text x="336" y="106">a table of examples</text>
+    <text x="336" y="142">features and a label</text>
+    <text x="336" y="178">hide 20% before training</text>
+    <text x="336" y="214">correct divided by total</text>
+    <text x="336" y="250">your paper confusion matrix</text>
+    <text x="336" y="286">confidence scores</text>
+    <text x="336" y="322">"which class is it worst at?"</text>
+  </g>
+  <g font-size="14" fill="#6D28D9">
+    <text x="464" y="106">pandas.DataFrame</text>
+    <text x="464" y="142">X and y</text>
+    <text x="464" y="178">train_test_split(X, y, 0.2)</text>
+    <text x="464" y="214">accuracy_score(y, pred)</text>
+    <text x="464" y="250">confusion_matrix(y, pred)</text>
+    <text x="464" y="286">model.predict_proba(new)</text>
+    <text x="464" y="322">classification_report(...)</text>
+  </g>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="40" y1="118" x2="336" y2="118"/><line x1="464" y1="118" x2="770" y2="118"/>
+    <line x1="40" y1="154" x2="336" y2="154"/><line x1="464" y1="154" x2="770" y2="154"/>
+    <line x1="40" y1="190" x2="336" y2="190"/><line x1="464" y1="190" x2="770" y2="190"/>
+    <line x1="40" y1="226" x2="336" y2="226"/><line x1="464" y1="226" x2="770" y2="226"/>
+    <line x1="40" y1="262" x2="336" y2="262"/><line x1="464" y1="262" x2="770" y2="262"/>
+    <line x1="40" y1="298" x2="336" y2="298"/><line x1="464" y1="298" x2="770" y2="298"/>
+    <line x1="40" y1="334" x2="336" y2="334"/><line x1="464" y1="334" x2="770" y2="334"/>
+  </g>
+
+  <text x="400" y="374" font-size="14" fill="#55636F" text-anchor="middle">Not one new idea in the right-hand column. That is the reward for doing Level 1 slowly.</text>
+</svg>

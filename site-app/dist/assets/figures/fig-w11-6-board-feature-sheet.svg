@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The Week 11 board: a finished feature sheet</title>
+  <desc>A board showing a feature sheet. At the top the label question reads teaspoon, tablespoon or serving spoon. Below it five numbered features each with a written measuring instruction: length, bowl width, mass, material and handle shape. A panel on the right states the test: hand the sheet to someone else, and if their number differs the instruction is broken.</desc>
+  <text x="400" y="32" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The board at the end of the concept segment</text>
+
+  <rect x="40" y="60" width="470" height="272" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="40" y="60" width="470" height="34" rx="10" fill="#E8C671" stroke="none"/>
+  <line x1="40" y1="94" x2="510" y2="94" stroke="#845F00" stroke-width="3"/>
+  <rect x="40" y="60" width="470" height="272" rx="10" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="275" y="83" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle">FEATURE SHEET</text>
+  <text x="60" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">label question: teaspoon / tablespoon / serving spoon?</text>
+  <line x1="60" y1="132" x2="490" y2="132" stroke="#C7CDD4" stroke-width="1.5"/>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">
+    <text x="60" y="158">f1  length_cm</text>
+    <text x="60" y="196">f2  bowl_width_cm</text>
+    <text x="60" y="234">f3  mass_g</text>
+    <text x="60" y="272">f4  material</text>
+    <text x="60" y="310">f5  handle_shape</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">
+    <text x="76" y="176">ruler, tip of handle to tip of bowl, nearest 0.5 cm</text>
+    <text x="76" y="214">ruler, widest point of the scooping part, nearest 0.5 cm</text>
+    <text x="76" y="252">kitchen scale, dry and empty, nearest gram</text>
+    <text x="76" y="290">ONE of steel / plastic / wood</text>
+    <text x="76" y="328">ONE of straight / curved</text>
+  </g>
+
+  <rect x="530" y="60" width="240" height="272" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="650" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">THE TEST</text>
+  <line x1="550" y1="104" x2="750" y2="104" stroke="#1B7A4B" stroke-width="1.5"/>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">
+    <text x="550" y="134">1. Hand the sheet and</text>
+    <text x="550" y="154">one object to someone</text>
+    <text x="550" y="174">else.</text>
+    <text x="550" y="204">2. They measure.</text>
+    <text x="550" y="234">3. Same number?</text>
+    <text x="550" y="254">Keep the wording.</text>
+    <text x="550" y="284">4. Different number?</text>
+    <text x="550" y="304">Rewrite the wording,</text>
+    <text x="550" y="324">not the person.</text>
+  </g>
+
+  <text x="400" y="368" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The instruction lines in grey are the part everyone skips. They are the actual lesson.</text>
+</svg>

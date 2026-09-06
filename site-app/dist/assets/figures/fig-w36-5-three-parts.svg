@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>How Showcase Day actually runs</title>
+  <desc>Three panels in order. Part one is the paper, closed book, ninety minutes in full or forty-five in short form. Part two is the showcase, twenty minutes, with a real audience. Part three is the reckoning, twenty minutes, marking and the Level 2 gate. Underneath, the seventy-minute single-sitting version.</desc>
+
+  <text x="400" y="36" font-size="24" fill="#14202B" text-anchor="middle">How Showcase Day actually runs</text>
+
+  <rect x="30" y="60" width="235" height="176" rx="12" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="58" cy="88" r="16" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="58" y="89" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="86" y="94" font-size="18" fill="#14202B">THE PAPER</text>
+  <text x="52" y="126" font-size="14" fill="#14202B">32 items, closed book</text>
+  <text x="52" y="150" font-size="14" fill="#14202B">20 MCQ + 8 short + 4 debug</text>
+  <text x="52" y="174" font-size="14" fill="#14202B">calculator yes - but write</text>
+  <text x="52" y="194" font-size="14" fill="#14202B">the division down</text>
+  <text x="52" y="222" font-size="14" fill="#1F6FB2">90 min full &#183; 45 min short form</text>
+
+  <rect x="283" y="60" width="235" height="176" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <circle cx="311" cy="88" r="16" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="311" y="89" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="339" y="94" font-size="18" fill="#14202B">THE SHOWCASE</text>
+  <text x="305" y="126" font-size="14" fill="#14202B">2+ real adults, no notes</text>
+  <text x="305" y="150" font-size="14" fill="#14202B">5-minute demo, then the</text>
+  <text x="305" y="170" font-size="14" fill="#14202B">six questions, unrehearsed</text>
+  <text x="305" y="194" font-size="14" fill="#14202B">break-it log open on the table</text>
+  <text x="305" y="222" font-size="14" fill="#1B7A4B">20 min</text>
+
+  <rect x="536" y="60" width="234" height="176" rx="12" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+  <circle cx="564" cy="88" r="16" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <text x="564" y="89" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="592" y="94" font-size="18" fill="#14202B">THE RECKONING</text>
+  <text x="558" y="126" font-size="14" fill="#14202B">mark the paper together</text>
+  <text x="558" y="150" font-size="14" fill="#14202B">six outcomes, ticked honestly</text>
+  <text x="558" y="174" font-size="14" fill="#14202B">the six-point Level 2 gate,</text>
+  <text x="558" y="194" font-size="14" fill="#14202B">with "not yet" allowed</text>
+  <text x="558" y="222" font-size="14" fill="#845F00">20 min</text>
+
+  <rect x="30" y="256" width="740" height="96" rx="12" fill="#F5F8FA" stroke="#55636F" stroke-width="3"/>
+  <text x="52" y="284" font-size="18" fill="#14202B">If you only have the one 70-minute class</text>
+  <text x="52" y="312" font-size="14" fill="#55636F">Run the SHORT FORM paper (Part A + B1, B6, B8 + C3) as homework the night before, marked in Part 3.</text>
+  <text x="52" y="334" font-size="14" fill="#55636F">Then the class is: warm-up 40 min &#183; showcase 20 min &#183; reckoning 10 min. Nothing important is cut.</text>
+
+  <text x="400" y="384" font-size="14" fill="#55636F" text-anchor="middle">Order matters: paper first, while nobody has been applauded yet.</text>
+</svg>

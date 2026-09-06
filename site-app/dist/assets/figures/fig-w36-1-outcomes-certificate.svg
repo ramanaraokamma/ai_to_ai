@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>The six Level 1 outcomes, as a checklist</title>
+  <desc>A certificate-style checklist with six empty tick boxes, one for each Level 1 outcome: rules versus learned from examples, building a dataset by hand, training and honestly measuring a classifier, memorising versus generalising, how machines see and read, and fair private honest AI.</desc>
+
+  <text x="250" y="44" font-size="24" fill="#14202B" text-anchor="middle">The six outcomes. Tick them honestly.</text>
+
+  <rect x="30" y="66" width="440" height="580" rx="12" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <rect x="42" y="78" width="416" height="556" rx="8" fill="none" stroke="#845F00" stroke-width="1.5"/>
+
+  <g fill="#FFFFFF" stroke="#14202B" stroke-width="3">
+    <rect x="66" y="106" width="30" height="30" rx="6"/>
+    <rect x="66" y="196" width="30" height="30" rx="6"/>
+    <rect x="66" y="286" width="30" height="30" rx="6"/>
+    <rect x="66" y="376" width="30" height="30" rx="6"/>
+    <rect x="66" y="466" width="30" height="30" rx="6"/>
+    <rect x="66" y="556" width="30" height="30" rx="6"/>
+  </g>
+
+  <g font-size="18" fill="#14202B">
+    <text x="116" y="122">1. Rules, or learned from examples?</text>
+    <text x="116" y="212">2. Build a real dataset by hand</text>
+    <text x="116" y="302">3. Train it and measure it honestly</text>
+    <text x="116" y="392">4. Memorising, or generalising?</text>
+    <text x="116" y="482">5. How machines see and read</text>
+    <text x="116" y="572">6. Fair, private, honest</text>
+  </g>
+  <g font-size="14" fill="#55636F">
+    <text x="116" y="146">I can sort any system and defend my call,</text>
+    <text x="116" y="166">and say why every AI today is narrow.</text>
+
+    <text x="116" y="236">Rows, columns, missing and impossible values,</text>
+    <text x="116" y="256">features, labels, leaky features, a data card.</text>
+
+    <text x="116" y="326">Split before training. Accuracy as a fraction,</text>
+    <text x="116" y="346">a decimal and a percent, next to the baseline.</text>
+
+    <text x="116" y="416">I have personally built a model that aced its</text>
+    <text x="116" y="436">own photos and flopped on new ones.</text>
+
+    <text x="116" y="506">An image is a grid of numbers. A chatbot is a</text>
+    <text x="116" y="526">next-word guesser that can be fluent and wrong.</text>
+
+    <text x="116" y="596">I measured a gap on my own model, in points,</text>
+    <text x="116" y="616">and said it out loud to a real person.</text>
+  </g>
+
+  <text x="250" y="676" font-size="14" fill="#55636F" text-anchor="middle">"Not yet" is a legal answer here. It is the only one that helps you.</text>
+</svg>

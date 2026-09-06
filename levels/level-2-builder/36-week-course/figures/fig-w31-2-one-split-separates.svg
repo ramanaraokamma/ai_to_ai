@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img">
+  <title>One question, two tidy piles</title>
+  <desc>A scatter of circles on the left and triangles on the right, cut by a dashed vertical line labelled petal width less than or equal to 1.65. A tally under the left pile reads 13 circles and no triangles; under the right pile it reads 1 circle and 17 triangles.</desc>
+  <text x="250" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">One question, two tidy piles</text>
+  <line x1="90" y1="150" x2="450" y2="150" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="90" y1="210" x2="450" y2="210" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="90" y1="270" x2="450" y2="270" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="268" y1="96" x2="268" y2="330" stroke="#C42B8C" stroke-width="3" stroke-dasharray="8 5"/>
+  <circle cx="120" cy="300" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="146" cy="250" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="172" cy="288" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="198" cy="214" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="150" cy="180" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="204" cy="268" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="128" cy="224" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="176" cy="168" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="196" cy="302" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="122" cy="262" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="168" cy="232" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="200" cy="178" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="286" cy="306" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <path d="M300 260 L308 274.4 L292 274.4 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M326 192 L334 206.4 L318 206.4 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M352 242 L360 256.4 L344 256.4 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M378 160 L386 174.4 L370 174.4 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M404 206 L412 220.4 L396 220.4 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M312 164 L320 178.4 L304 178.4 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M338 288 L346 302.4 L330 302.4 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M364 200 L372 214.4 L356 214.4 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M392 254 L400 268.4 L384 268.4 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M416 174 L424 188.4 L408 188.4 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M296 216 L304 230.4 L288 230.4 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M350 150 L358 164.4 L342 164.4 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M378 292 L386 306.4 L370 306.4 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M410 236 L418 250.4 L402 250.4 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M322 236 L330 250.4 L314 250.4 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M398 144 L406 158.4 L390 158.4 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M430 200 L438 214.4 L422 214.4 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="90" y1="90" x2="90" y2="330" stroke="#14202B" stroke-width="2"/>
+  <line x1="90" y1="330" x2="450" y2="330" stroke="#14202B" stroke-width="2"/>
+  <text x="250" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">petal width  →</text>
+  <text x="48" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle" transform="rotate(-90 48 210)">how many flowers</text>
+  <text x="268" y="80" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">petal width &lt;= 1.65 ?</text>
+  <rect x="86" y="372" width="178" height="26" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="175" y="385" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">13 circles, 0 triangles</text>
+  <rect x="280" y="372" width="172" height="26" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="366" y="385" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1 circle, 17 triangles</text>
+  <text x="250" y="428" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Left pile: all one shape. Right pile: one stray.</text>
+  <text x="250" y="452" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The tree picks whichever line leaves the tidiest piles.</text>
+</svg>

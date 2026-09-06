@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The same confident voice, three times</title>
+  <desc>Three cards, one per country. France to Paris is ticked. Japan to Tokyo is ticked. Australia to Sydney is crossed. All three cards say the answer sounded one hundred per cent sure, so the voice never told you which one was wrong.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="42" font-size="24" fill="#14202B" text-anchor="middle">The same confident voice, three times</text>
+
+    <rect x="40" y="76" width="220" height="232" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+    <text x="150" y="110" font-size="18" fill="#14202B" text-anchor="middle">France</text>
+    <line x1="150" y1="124" x2="150" y2="144" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+    <polyline points="144,138 150,148 156,138" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="70" y="154" width="160" height="44" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <text x="150" y="182" font-size="18" fill="#14202B" text-anchor="middle">"Paris"</text>
+    <g transform="translate(120,212) scale(0.6)">
+      <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="150" y="294" font-size="14" fill="#55636F" text-anchor="middle">sounded 100% sure</text>
+
+    <rect x="290" y="76" width="220" height="232" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+    <text x="400" y="110" font-size="18" fill="#14202B" text-anchor="middle">Japan</text>
+    <line x1="400" y1="124" x2="400" y2="144" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+    <polyline points="394,138 400,148 406,138" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="320" y="154" width="160" height="44" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <text x="400" y="182" font-size="18" fill="#14202B" text-anchor="middle">"Tokyo"</text>
+    <g transform="translate(370,212) scale(0.6)">
+      <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="400" y="294" font-size="14" fill="#55636F" text-anchor="middle">sounded 100% sure</text>
+
+    <rect x="540" y="76" width="220" height="232" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+    <text x="650" y="110" font-size="18" fill="#14202B" text-anchor="middle">Australia</text>
+    <line x1="650" y1="124" x2="650" y2="144" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+    <polyline points="644,138 650,148 656,138" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="570" y="154" width="160" height="44" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+    <text x="650" y="182" font-size="18" fill="#14202B" text-anchor="middle">"Sydney"</text>
+    <g transform="translate(620,212) scale(0.6)">
+      <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+      <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+        <line x1="38" y1="38" x2="62" y2="62"/>
+        <line x1="62" y1="38" x2="38" y2="62"/>
+      </g>
+    </g>
+    <text x="650" y="294" font-size="14" fill="#55636F" text-anchor="middle">sounded 100% sure</text>
+
+    <text x="400" y="342" font-size="18" fill="#14202B" text-anchor="middle">Two were right. One was wrong. The voice was identical.</text>
+    <text x="400" y="370" font-size="14" fill="#55636F" text-anchor="middle">Australia's capital is Canberra. Sounding sure is not the same as being right.</text>
+  </g>
+</svg>

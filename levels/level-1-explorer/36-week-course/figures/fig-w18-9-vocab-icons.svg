@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The two new words of Week 18</title>
+  <desc>Two picture tiles. A controlled experiment is drawn as a machine with one knob turned and three taped down. A sabotage test is drawn as a stack of photos with some crossed out, feeding a model that wobbles, with the question what fell over.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="42" font-size="24" fill="#14202B" text-anchor="middle">The two new words of Week 18</text>
+
+    <rect x="60" y="80" width="300" height="220" rx="12" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="110" cy="150" r="16" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <line x1="110" y1="150" x2="121" y2="139" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="175" cy="150" r="16" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <g stroke="#845F00" stroke-width="5" stroke-linecap="round">
+      <line x1="164" y1="141" x2="186" y2="159"/>
+      <line x1="186" y1="141" x2="164" y2="159"/>
+    </g>
+    <circle cx="240" cy="150" r="16" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <g stroke="#845F00" stroke-width="5" stroke-linecap="round">
+      <line x1="229" y1="141" x2="251" y2="159"/>
+      <line x1="251" y1="141" x2="229" y2="159"/>
+    </g>
+    <circle cx="305" cy="150" r="16" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <g stroke="#845F00" stroke-width="5" stroke-linecap="round">
+      <line x1="294" y1="141" x2="316" y2="159"/>
+      <line x1="316" y1="141" x2="294" y2="159"/>
+    </g>
+    <rect x="86" y="166" width="248" height="48" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <text x="210" y="194" font-size="14" fill="#55636F" text-anchor="middle">one thing changed</text>
+    <text x="210" y="256" font-size="18" fill="#14202B" text-anchor="middle">controlled experiment</text>
+    <text x="210" y="282" font-size="14" fill="#55636F" text-anchor="middle">one knob turned, the rest taped down</text>
+
+    <rect x="440" y="80" width="300" height="220" rx="12" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+    <g transform="translate(468,116)">
+      <g transform="rotate(-11 50 54) translate(-5 -7)">
+        <rect x="24" y="26" width="52" height="52" rx="7" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      </g>
+      <rect x="24" y="26" width="52" height="52" rx="7" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="30" y="32" width="40" height="30" rx="4" fill="#D9EAF9" stroke="none"/>
+      <line x1="32" y1="70" x2="56" y2="70" stroke="#55636F" stroke-width="3" stroke-linecap="round"/>
+      <g stroke="#CC2B1D" stroke-width="5" stroke-linecap="round">
+        <line x1="30" y1="32" x2="70" y2="72"/>
+        <line x1="70" y1="32" x2="30" y2="72"/>
+      </g>
+    </g>
+    <g transform="translate(570,158) scale(0.4)">
+      <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+      <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <rect x="622" y="130" width="90" height="76" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+    <text x="667" y="172" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">?</text>
+    <g stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round">
+      <line x1="716" y1="140" x2="726" y2="134"/>
+      <line x1="716" y1="168" x2="728" y2="168"/>
+      <line x1="716" y1="196" x2="726" y2="202"/>
+    </g>
+    <text x="590" y="256" font-size="18" fill="#14202B" text-anchor="middle">sabotage test</text>
+    <text x="590" y="282" font-size="14" fill="#55636F" text-anchor="middle">break it to see what it had been using</text>
+
+    <text x="400" y="352" font-size="14" fill="#55636F" text-anchor="middle">You cannot look inside a model. So you take something away and watch what falls over.</text>
+  </g>
+</svg>

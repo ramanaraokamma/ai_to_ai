@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Label the parts of this rulebook</title>
+  <desc>An unlabelled two-rule rulebook with a default line. Four leader lines run to four empty boxes, one pointing at the part after IF, one at the number inside it, one at the answer the rule gives, and one at the bottom line that answers when nothing matches.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Write the right word in every empty box</text>
+
+  <g stroke="#C42B8C" stroke-width="2" fill="none">
+    <path d="M300 122 V90 H196 V78"/>
+    <path d="M366 122 V102 H540 V78"/>
+    <path d="M492 122 V90 H660 V102"/>
+    <path d="M300 236 V270 H196 V300"/>
+  </g>
+
+  <rect x="60" y="122" width="680" height="46" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="60" y="178" width="680" height="46" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="60" y="234" width="680" height="46" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">
+    <text x="80" y="151">RULE 1:</text>
+    <text x="170" y="151">IF day = "Monday"</text>
+    <text x="440" y="151">THEN predict "late"</text>
+    <text x="80" y="207">RULE 2:</text>
+    <text x="170" y="207">IF rain_mm &gt;= 3</text>
+    <text x="440" y="207">THEN predict "late"</text>
+    <text x="80" y="263">DEFAULT:</text>
+    <text x="200" y="263">OTHERWISE</text>
+    <text x="440" y="263">THEN predict "on time"</text>
+  </g>
+
+  <g fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round">
+    <rect x="96" y="42" width="200" height="36" rx="8"/>
+    <rect x="440" y="42" width="200" height="36" rx="8"/>
+    <rect x="600" y="102" width="180" height="36" rx="8"/>
+    <rect x="96" y="300" width="200" height="36" rx="8"/>
+  </g>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">
+    <text x="96" y="36">the part after IF is the...</text>
+    <text x="440" y="36">the answer it gives is the...</text>
+    <text x="600" y="96">the number in it is the...</text>
+    <text x="96" y="352">the bottom line is the...</text>
+  </g>
+
+  <text x="400" y="384" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">One of the two rules has no number in it at all. Notice which, and be ready to say why.</text>
+</svg>

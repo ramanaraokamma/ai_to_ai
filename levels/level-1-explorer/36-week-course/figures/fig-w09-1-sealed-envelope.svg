@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>The sealed envelope and the scoring sheet</title>
+  <desc>On the left, a sealed envelope signed across the flap with a folded sheet of ten hidden messages poking out. On the right, an empty ten row scoring sheet with columns for the message, the first rule that fires, what it says, the truth and a tick or cross.</desc>
+  <text x="400" y="40" font-size="24" fill="#14202B" text-anchor="middle">Sealed last week. Opened once. Scored once.</text>
+
+  <rect x="92" y="96" width="216" height="76" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-dasharray="7 5"/>
+  <g stroke="#C7CDD4" stroke-width="2" stroke-linecap="round">
+    <line x1="110" y1="116" x2="290" y2="116"/>
+    <line x1="110" y1="132" x2="290" y2="132"/>
+    <line x1="110" y1="148" x2="264" y2="148"/>
+  </g>
+  <text x="200" y="88" font-size="12" fill="#55636F" text-anchor="middle">10 messages nobody has looked at</text>
+
+  <rect x="60" y="150" width="280" height="180" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M60 158 L200 254 L340 158" fill="none" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M96 196 Q118 178 132 200 Q146 222 166 190 Q182 166 206 202 Q224 228 248 192 Q262 172 284 194"
+        fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <text x="200" y="286" font-size="18" fill="#14202B" text-anchor="middle">SEALED IN WEEK 8</text>
+  <text x="200" y="310" font-size="14" fill="#55636F" text-anchor="middle">signed across the flap - do not peek</text>
+
+  <rect x="420" y="80" width="350" height="272" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M420 88 A8 8 0 0 1 428 80 H762 A8 8 0 0 1 770 88 V110 H420 Z" fill="#D9EAF9"/>
+  <line x1="420" y1="110" x2="770" y2="110" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="430" y="102" font-size="12" fill="#14202B">#</text>
+  <text x="470" y="102" font-size="12" fill="#14202B">first rule that fires</text>
+  <text x="620" y="102" font-size="12" fill="#14202B">says</text>
+  <text x="675" y="102" font-size="12" fill="#14202B">truth</text>
+  <text x="732" y="102" font-size="12" fill="#14202B">right?</text>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="420" y1="134" x2="770" y2="134"/><line x1="420" y1="158" x2="770" y2="158"/>
+    <line x1="420" y1="182" x2="770" y2="182"/><line x1="420" y1="206" x2="770" y2="206"/>
+    <line x1="420" y1="230" x2="770" y2="230"/><line x1="420" y1="254" x2="770" y2="254"/>
+    <line x1="420" y1="278" x2="770" y2="278"/><line x1="420" y1="302" x2="770" y2="302"/>
+    <line x1="420" y1="326" x2="770" y2="326"/>
+    <line x1="460" y1="80" x2="460" y2="352"/><line x1="612" y1="80" x2="612" y2="352"/>
+    <line x1="667" y1="80" x2="667" y2="352"/><line x1="722" y1="80" x2="722" y2="352"/>
+  </g>
+  <g font-size="12" fill="#55636F" text-anchor="middle">
+    <text x="440" y="126">1</text><text x="440" y="150">2</text><text x="440" y="174">3</text>
+    <text x="440" y="198">4</text><text x="440" y="222">5</text><text x="440" y="246">6</text>
+    <text x="440" y="270">7</text><text x="440" y="294">8</text><text x="440" y="318">9</text>
+    <text x="440" y="342">10</text>
+  </g>
+
+  <text x="400" y="380" font-size="14" fill="#55636F" text-anchor="middle">One row at a time, in order, no skipping. Write the answer the rules give, not the answer you want.</text>
+</svg>

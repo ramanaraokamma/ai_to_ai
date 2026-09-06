@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The same twelve facts, as a pile and as a table</title>
+  <desc>Two panels. On the left, twelve facts scribbled on scattered sticky notes, marked wrong. On the right, exactly the same twelve facts arranged as a tidy table of four rows and three columns, marked correct.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Same twelve facts. Only one of these can be counted.</text>
+  <line x1="400" y1="72" x2="400" y2="330" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <rect x="40" y="72" width="330" height="258" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <rect x="430" y="72" width="330" height="258" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+
+  <g transform="translate(56,86) scale(0.4)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+      <line x1="38" y1="38" x2="62" y2="62"/>
+      <line x1="62" y1="38" x2="38" y2="62"/>
+    </g>
+  </g>
+  <g transform="translate(446,86) scale(0.4)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="102" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">A pile of notes</text>
+  <text x="492" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">A table</text>
+
+  <g transform="translate(58,132) rotate(-8 55 20)">
+    <rect x="0" y="0" width="110" height="40" rx="6" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+    <text x="55" y="20" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">pencil 6 g</text>
+  </g>
+  <g transform="translate(200,126) rotate(7 55 20)">
+    <rect x="0" y="0" width="110" height="40" rx="6" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+    <text x="55" y="20" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">book 340 g</text>
+  </g>
+  <g transform="translate(52,186) rotate(5 55 20)">
+    <rect x="0" y="0" width="110" height="40" rx="6" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+    <text x="55" y="20" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">bottle 500 g</text>
+  </g>
+  <g transform="translate(204,182) rotate(-6 55 20)">
+    <rect x="0" y="0" width="110" height="40" rx="6" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+    <text x="55" y="20" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">ball 22 cm</text>
+  </g>
+  <g transform="translate(62,240) rotate(-4 55 20)">
+    <rect x="0" y="0" width="110" height="40" rx="6" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+    <text x="55" y="20" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">pencil 18 cm</text>
+  </g>
+  <g transform="translate(200,238) rotate(8 55 20)">
+    <rect x="0" y="0" width="110" height="40" rx="6" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+    <text x="55" y="20" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">book 26 cm</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">
+    <text x="62" y="300">bottle 22cm &#183; ball 45 g &#183; book&#8230;</text>
+    <text x="62" y="318" fill="#55636F">&#8230;and six more written somewhere else</text>
+  </g>
+
+  <rect x="452" y="128" width="286" height="160" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M452 136 A8 8 0 0 1 460 128 H730 A8 8 0 0 1 738 136 V160 H452 Z" fill="#D9EAF9" stroke="none"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="452" y1="192" x2="738" y2="192"/><line x1="452" y1="224" x2="738" y2="224"/><line x1="452" y1="256" x2="738" y2="256"/>
+    <line x1="572" y1="160" x2="572" y2="288"/><line x1="655" y1="160" x2="655" y2="288"/>
+  </g>
+  <line x1="452" y1="160" x2="738" y2="160" stroke="#1B7A4B" stroke-width="3"/>
+  <rect x="452" y="128" width="286" height="160" rx="8" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">
+    <text x="462" y="144" dominant-baseline="central" fill="#55636F">object</text>
+    <text x="582" y="144" dominant-baseline="central" fill="#55636F">grams</text>
+    <text x="665" y="144" dominant-baseline="central" fill="#55636F">cm</text>
+    <text x="462" y="176" dominant-baseline="central">pencil</text><text x="582" y="176" dominant-baseline="central">6</text><text x="665" y="176" dominant-baseline="central">18</text>
+    <text x="462" y="208" dominant-baseline="central">book</text><text x="582" y="208" dominant-baseline="central">340</text><text x="665" y="208" dominant-baseline="central">26</text>
+    <text x="462" y="240" dominant-baseline="central">bottle</text><text x="582" y="240" dominant-baseline="central">500</text><text x="665" y="240" dominant-baseline="central">22</text>
+    <text x="462" y="272" dominant-baseline="central">ball</text><text x="582" y="272" dominant-baseline="central">45</text><text x="665" y="272" dominant-baseline="central">22</text>
+  </g>
+  <text x="595" y="312" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4 rows &#215; 3 columns = the same 12 facts</text>
+
+  <text x="400" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Nothing new was measured. The facts were just put where a machine can find them.</text>
+</svg>

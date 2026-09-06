@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Label the parts of this table</title>
+  <desc>A four column table of four animals with its top line shaded. Four empty answer boxes with leader lines point at the shaded top line, at one whole row, at one whole column and at a single value, waiting to be named.</desc>
+  <text x="400" y="36" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Write the right word in each box</text>
+
+  <!-- leader lines first, so the table sits on top of them -->
+  <g stroke="#C42B8C" stroke-width="1.5" fill="none">
+    <path d="M170 112 V92"/>
+    <path d="M330 254 V282"/>
+    <path d="M580 112 V92"/>
+    <path d="M448 224 L448 300"/>
+  </g>
+
+  <!-- the table -->
+  <rect x="130" y="112" width="540" height="142" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M130 120 A8 8 0 0 1 138 112 H662 A8 8 0 0 1 670 120 V142 H130 Z" fill="#D9EAF9" stroke="none"/>
+  <rect x="400" y="142" width="135" height="112" fill="#F4D5E9" stroke="none"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="130" y1="170" x2="670" y2="170"/>
+    <line x1="130" y1="198" x2="670" y2="198"/>
+    <line x1="130" y1="226" x2="670" y2="226"/>
+    <line x1="265" y1="112" x2="265" y2="254"/>
+    <line x1="400" y1="112" x2="400" y2="254"/>
+    <line x1="535" y1="112" x2="535" y2="254"/>
+  </g>
+  <line x1="130" y1="142" x2="670" y2="142" stroke="#1F6FB2" stroke-width="3"/>
+  <rect x="130" y="112" width="540" height="142" rx="8" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">
+    <text x="197" y="133">animal</text><text x="332" y="133">legs</text><text x="467" y="133">weight_kg</text><text x="602" y="133">can_fly</text>
+    <text x="197" y="163">dog</text><text x="332" y="163">4</text><text x="467" y="163">22</text><text x="602" y="163">no</text>
+    <text x="197" y="191">pigeon</text><text x="332" y="191">2</text><text x="467" y="191">0.3</text><text x="602" y="191">yes</text>
+    <text x="197" y="219">spider</text><text x="332" y="219">8</text><text x="467" y="219">0.001</text><text x="602" y="219">no</text>
+    <text x="197" y="247">bat</text><text x="332" y="247">2</text><text x="467" y="247">0.02</text><text x="602" y="247">yes</text>
+  </g>
+
+  <!-- empty answer boxes -->
+  <g fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round">
+    <rect x="60" y="54" width="220" height="38" rx="8"/>
+    <rect x="220" y="282" width="220" height="38" rx="8"/>
+    <rect x="470" y="54" width="250" height="38" rx="8"/>
+    <rect x="470" y="300" width="250" height="38" rx="8"/>
+  </g>
+  <g stroke="#C42B8C" stroke-width="1.5" fill="none">
+    <path d="M470 319 H448"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">
+    <text x="60" y="48">1. This shaded top line is the...</text>
+    <text x="220" y="276">2. This line across is one...</text>
+    <text x="470" y="48">3. This pink strip standing up is one...</text>
+    <text x="470" y="294">4. The single value 0.001 sits in one...</text>
+  </g>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Then answer underneath: how many rows, and how many boxes hold data?</text>
+</svg>

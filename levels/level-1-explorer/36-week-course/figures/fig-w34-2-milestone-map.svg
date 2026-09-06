@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>The seven milestones, with one to four ticked</title>
+  <desc>Seven stacked milestone boxes joined by a rail. Milestones one to four - brief, collect and split, train and save, and score the held-out photos - carry green ticks for this week. Milestone five, the Scratch app, is flagged as the hardest. Milestones six and seven are still to come.</desc>
+
+  <text x="250" y="42" font-size="24" fill="#14202B" text-anchor="middle">Seven milestones. This week: 1 to 4.</text>
+
+  <line x1="70" y1="80" x2="70" y2="640" stroke="#C7CDD4" stroke-width="1.5"/>
+
+  <!-- 1 -->
+  <rect x="96" y="70" width="384" height="74" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <circle cx="70" cy="107" r="18" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="70" y="108" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="116" y="99" font-size="18" fill="#14202B">The brief: annoyance, 4 classes, bar</text>
+  <text x="116" y="124" font-size="14" fill="#55636F">20 min - you end up holding one filled-in page</text>
+  <polyline points="432,105 442,116 462,92" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 2 -->
+  <rect x="96" y="156" width="384" height="74" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <circle cx="70" cy="193" r="18" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="70" y="194" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="116" y="185" font-size="18" fill="#14202B">Collect, then SPLIT before training</text>
+  <text x="116" y="210" font-size="14" fill="#55636F">60 min - 20% into a sealed envelope</text>
+  <polyline points="432,191 442,202 462,178" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 3 -->
+  <rect x="96" y="242" width="384" height="74" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <circle cx="70" cy="279" r="18" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="70" y="280" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="116" y="271" font-size="18" fill="#14202B">Train, save, find the file on disk</text>
+  <text x="116" y="296" font-size="14" fill="#55636F">45 min - booth-v1.tm exists, or you stop</text>
+  <polyline points="432,277 442,288 462,264" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 4 -->
+  <rect x="96" y="328" width="384" height="74" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <circle cx="70" cy="365" r="18" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="70" y="366" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="116" y="357" font-size="18" fill="#14202B">Open the envelope. Score every photo.</text>
+  <text x="116" y="382" font-size="14" fill="#55636F">40 min - accuracy 3 ways + confusion matrix</text>
+  <polyline points="432,363 442,374 462,350" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 5 hardest -->
+  <rect x="96" y="414" width="384" height="74" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <circle cx="70" cy="451" r="18" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <text x="70" y="452" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+  <text x="116" y="443" font-size="18" fill="#14202B">The Scratch app - HARDEST</text>
+  <text x="116" y="468" font-size="14" fill="#55636F">75 min - 4 behaviours and a "not sure"</text>
+  <rect x="358" y="428" width="108" height="30" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="412" y="444" font-size="12" fill="#CC2B1D" text-anchor="middle" dominant-baseline="central">next week</text>
+
+  <!-- 6 -->
+  <rect x="96" y="500" width="384" height="74" rx="10" fill="#F5F8FA" stroke="#55636F" stroke-width="3"/>
+  <circle cx="70" cy="537" r="18" fill="#F5F8FA" stroke="#55636F" stroke-width="3"/>
+  <text x="70" y="538" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">6</text>
+  <text x="116" y="529" font-size="18" fill="#14202B">Bias report, data card, warning sign</text>
+  <text x="116" y="554" font-size="14" fill="#55636F">45 min - the gap, in percentage points</text>
+
+  <!-- 7 -->
+  <rect x="96" y="586" width="384" height="74" rx="10" fill="#F5F8FA" stroke="#55636F" stroke-width="3"/>
+  <circle cx="70" cy="623" r="18" fill="#F5F8FA" stroke="#55636F" stroke-width="3"/>
+  <text x="70" y="624" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">7</text>
+  <text x="116" y="615" font-size="18" fill="#14202B">Build the booth, rehearse it 3 times</text>
+  <text x="116" y="640" font-size="14" fill="#55636F">45 min - out loud, timed, no notes</text>
+
+  <text x="250" y="684" font-size="14" fill="#55636F" text-anchor="middle">Order matters: you cannot hold photos back after you have trained on them.</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Showcase run-sheet (teacher)</title>
+  <desc>A seven-step vertical run-sheet with times down the left: minus twenty minutes set up, zero brief the visitors, two minutes the demo, seven minutes questions, thirteen minutes try to break it, eighteen minutes closing line, twenty minutes the reckoning.</desc>
+  <text x="250" y="36" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Showcase run-sheet (teacher)</text>
+  <text x="250" y="60" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Your three jobs: keep time, stay quiet, log everything</text>
+  <line x1="158" y1="88" x2="158" y2="620" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="132" y="118.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" font-weight="700">-20 min</text>
+  <circle cx="158" cy="114" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <rect x="178" y="84" width="292" height="62" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="192" y="110.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="700">SET UP</text>
+  <text x="192" y="132.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Table, poster, sheets, pens. Test the we</text>
+  <text x="132" y="196.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" font-weight="700">0:00</text>
+  <circle cx="158" cy="192" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <rect x="178" y="162" width="292" height="62" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="192" y="188.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="700">BRIEF THE VISITORS</text>
+  <text x="192" y="210.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Real questions. Please try to break it.</text>
+  <text x="132" y="274.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" font-weight="700">0:02</text>
+  <circle cx="158" cy="270" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <rect x="178" y="240" width="292" height="62" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="192" y="266.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="700">THE DEMO</text>
+  <text x="192" y="288.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Five minutes, no notes. Time it silently</text>
+  <text x="132" y="352.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" font-weight="700">0:07</text>
+  <circle cx="158" cy="348" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <rect x="178" y="318" width="292" height="62" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="192" y="344.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="700">QUESTIONS</text>
+  <text x="192" y="366.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Say nothing yourself. Let the silences r</text>
+  <text x="132" y="430.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" font-weight="700">0:13</text>
+  <circle cx="158" cy="426" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <rect x="178" y="396" width="292" height="62" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="192" y="422.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="700">TRY TO BREAK IT</text>
+  <text x="192" y="444.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Every attempt gets written down, fooled </text>
+  <text x="132" y="508.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" font-weight="700">0:18</text>
+  <circle cx="158" cy="504" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <rect x="178" y="474" width="292" height="62" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="192" y="500.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="700">CLOSING LINE</text>
+  <text x="192" y="522.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">What they would build next, and fix firs</text>
+  <text x="132" y="586.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" font-weight="700">0:20</text>
+  <circle cx="158" cy="582" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <rect x="178" y="552" width="292" height="62" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="192" y="578.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="700">THE RECKONING</text>
+  <text x="192" y="600.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Mark the paper together, out loud, quest</text>
+  <text x="250" y="660" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">If it overruns, cut the questions - never the demo.</text>
+</svg>

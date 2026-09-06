@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img">
+  <title>Tester accuracy against the deck baseline</title>
+  <desc>A bar chart with two bars. The tester scored 67 percent. Random matching would score 8 percent. A double arrow between the two bar tops is labelled plus 58 percentage points.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="250" y="40" font-size="24" fill="#14202B" text-anchor="middle">Did the deck actually work?</text>
+    <g stroke="#C7CDD4" stroke-width="1.5">
+      <line x1="80" y1="400" x2="470" y2="400"/>
+      <line x1="80" y1="322" x2="470" y2="322"/>
+      <line x1="80" y1="245" x2="470" y2="245"/>
+      <line x1="80" y1="167" x2="470" y2="167"/>
+      <line x1="80" y1="90" x2="470" y2="90"/>
+    </g>
+    <g font-size="12" fill="#55636F" text-anchor="end">
+      <text x="70" y="404">0</text>
+      <text x="70" y="326">25</text>
+      <text x="70" y="249">50</text>
+      <text x="70" y="171">75</text>
+      <text x="70" y="94">100</text>
+    </g>
+    <text x="40" y="245" font-size="14" fill="#55636F" text-anchor="middle" transform="rotate(-90 40 245)">percent correct</text>
+
+    <path d="M120 400 V197 A4 4 0 0 1 124 193 H206 A4 4 0 0 1 210 197 V400 Z" fill="#1B7A4B"/>
+    <text x="165" y="181" font-size="14" fill="#14202B" text-anchor="middle">67%</text>
+    <text x="165" y="422" font-size="12" fill="#55636F" text-anchor="middle">Tester</text>
+    <text x="165" y="440" font-size="12" fill="#55636F" text-anchor="middle">8 of 12 cards</text>
+
+    <path d="M260 400 V378 A4 4 0 0 1 264 374 H346 A4 4 0 0 1 350 378 V400 Z" fill="#55636F"/>
+    <text x="305" y="362" font-size="14" fill="#14202B" text-anchor="middle">8%</text>
+    <text x="305" y="422" font-size="12" fill="#55636F" text-anchor="middle">Baseline</text>
+    <text x="305" y="440" font-size="12" fill="#55636F" text-anchor="middle">matching at random</text>
+
+    <g stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="5 5">
+      <line x1="210" y1="193" x2="420" y2="193"/>
+      <line x1="350" y1="374" x2="420" y2="374"/>
+    </g>
+    <g stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <line x1="420" y1="199" x2="420" y2="368"/>
+      <polyline points="412,207 420,195 428,207"/>
+      <polyline points="412,360 420,372 428,360"/>
+    </g>
+    <rect x="386" y="264" width="68" height="40" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+    <text x="420" y="279" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">+58</text>
+    <text x="420" y="295" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">points</text>
+
+    <line x1="80" y1="400" x2="470" y2="400" stroke="#14202B" stroke-width="2"/>
+    <text x="250" y="472" font-size="14" fill="#55636F" text-anchor="middle">A score means nothing on its own. It only means something next to the baseline.</text>
+  </g>
+</svg>

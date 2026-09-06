@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Two kinds of being wrong about the bag</title>
+  <desc>Two panels. On the left, question one asks which of three objects is in the bag, and the only marks available are a tick and a cross. On the right, question two asks how many grams, and a number line shows a guess of 30 grams against a true weight of 42 grams with the twelve gram gap arrowed.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">One bag. Two questions. Two kinds of wrong.</text>
+  <line x1="400" y1="70" x2="400" y2="340" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <rect x="30" y="70" width="340" height="252" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="430" y="70" width="340" height="252" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+
+  <text x="200" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Question 1: which one is it?</text>
+  <text x="600" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Question 2: how many grams?</text>
+
+  <rect x="52" y="118" width="92" height="58" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="154" y="118" width="92" height="58" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="256" y="118" width="92" height="58" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="98" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">pencil</text>
+  <text x="200" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">rubber</text>
+  <text x="302" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">battery</text>
+
+  <g transform="translate(112,196) scale(0.5)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(212,196) scale(0.5)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+      <line x1="38" y1="38" x2="62" y2="62"/>
+      <line x1="62" y1="38" x2="38" y2="62"/>
+    </g>
+  </g>
+  <text x="200" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">These two marks are all there is.</text>
+  <text x="200" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">There is no half tick.</text>
+
+  <line x1="460" y1="180" x2="740" y2="180" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <g stroke="#55636F" stroke-width="2" stroke-linecap="round">
+    <line x1="460" y1="174" x2="460" y2="188"/>
+    <line x1="530" y1="174" x2="530" y2="188"/>
+    <line x1="600" y1="174" x2="600" y2="188"/>
+    <line x1="670" y1="174" x2="670" y2="188"/>
+    <line x1="740" y1="174" x2="740" y2="188"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">
+    <text x="460" y="206">0 g</text>
+    <text x="530" y="206">20 g</text>
+    <text x="600" y="206">40 g</text>
+    <text x="670" y="206">60 g</text>
+    <text x="740" y="206">80 g</text>
+  </g>
+  <circle cx="565" cy="180" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <circle cx="607" cy="180" r="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="565" y="136" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">you said</text>
+  <text x="565" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">30 g</text>
+  <text x="646" y="136" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">true</text>
+  <text x="646" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">42 g</text>
+  <g stroke="#14202B" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="565" y1="244" x2="607" y2="244"/>
+    <polyline points="572,237 565,244 572,251"/>
+    <polyline points="600,237 607,244 600,251"/>
+    <line x1="565" y1="192" x2="565" y2="240"/>
+    <line x1="607" y1="192" x2="607" y2="240"/>
+  </g>
+  <text x="586" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">off by 12 g</text>
+  <text x="600" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Not right. Not "wrong" either. Off by an amount.</text>
+
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Left: classification, and there is no partial credit. Right: regression, and the gap is the answer.</text>
+</svg>

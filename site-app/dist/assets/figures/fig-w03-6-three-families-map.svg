@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The three families of AI</title>
+  <desc>A big box labelled artificial intelligence holds two boxes. On the left, rule-based systems, where a person wrote the steps, with a thermostat, a vending machine and an alarm clock. On the right, machine learning, where the machine found the rule from examples, and inside it a smaller box for generative AI, holding a chatbot and an image maker.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <rect x="30" y="68" width="740" height="252" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <text x="400" y="94" font-size="18" fill="#14202B" text-anchor="middle">ARTIFICIAL INTELLIGENCE</text>
+
+    <rect x="55" y="110" width="300" height="190" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+    <text x="205" y="136" font-size="18" fill="#14202B" text-anchor="middle">RULE-BASED</text>
+    <text x="205" y="158" font-size="12" fill="#55636F" text-anchor="middle">a person wrote the if-then steps</text>
+    <g font-size="14" fill="#14202B" text-anchor="middle">
+      <text x="205" y="192">thermostat</text>
+      <text x="205" y="218">vending machine</text>
+      <text x="205" y="244">alarm clock</text>
+    </g>
+    <text x="205" y="276" font-size="12" fill="#55636F" text-anchor="middle">Week 1</text>
+
+    <rect x="385" y="110" width="360" height="190" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
+    <text x="565" y="136" font-size="18" fill="#14202B" text-anchor="middle">MACHINE LEARNING</text>
+    <text x="565" y="158" font-size="12" fill="#55636F" text-anchor="middle">the machine found the rule from examples</text>
+    <text x="565" y="184" font-size="14" fill="#14202B" text-anchor="middle">spam filter &#183; face unlock &#183; translate</text>
+
+    <rect x="405" y="200" width="320" height="86" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+    <text x="565" y="224" font-size="16" fill="#14202B" text-anchor="middle">GENERATIVE AI</text>
+    <text x="565" y="246" font-size="12" fill="#55636F" text-anchor="middle">makes new content instead of picking a label</text>
+    <text x="565" y="270" font-size="14" fill="#14202B" text-anchor="middle">chatbot &#183; image maker</text>
+
+    <text x="400" y="356" font-size="14" fill="#55636F" text-anchor="middle">Generative AI sits inside machine learning. It is not a separate family.</text>
+  </g>
+</svg>

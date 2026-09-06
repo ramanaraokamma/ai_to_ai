@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>This week's five words as pictures</title>
+  <desc>Five icon cards. A record is one card of two labelled pairs. A list-of-dicts is four table rows with the same labels. A field is one highlighted cell of a grid. A list comprehension is one highlighted column being lifted out of a grid into a plain row of three boxes. Enumerate is a counter reading 0 next to a whole row. A sixth cell lists four sentences to remember.</desc>
+  <text x="400" y="38" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">This week's five words as pictures</text>
+  <rect x="20" y="56" width="240" height="160" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="280" y="56" width="240" height="160" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="540" y="56" width="240" height="160" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="20" y="224" width="240" height="156" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="280" y="224" width="240" height="156" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="66" y="70" width="148" height="68" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="78" y="80" width="56" height="22" rx="5" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="106" y="91" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">name</text>
+  <rect x="142" y="80" width="60" height="22" rx="5" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="172" y="91" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Asha</text>
+  <rect x="78" y="108" width="56" height="22" rx="5" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="106" y="119" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">runs</text>
+  <rect x="142" y="108" width="60" height="22" rx="5" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="172" y="119" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">48</text>
+  <text x="140" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">record</text>
+  <text x="140" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one dictionary = one row</text>
+  <rect x="325" y="72" width="46" height="15" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="371" y="72" width="60" height="15" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="431" y="72" width="44" height="15" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="325" y="72" width="150" height="15" fill="none" stroke="#14202B" stroke-width="2"/>
+  <rect x="325" y="91" width="46" height="15" fill="#F4D5E9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="371" y="91" width="60" height="15" fill="#F4D5E9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="431" y="91" width="44" height="15" fill="#F4D5E9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="325" y="91" width="150" height="15" fill="none" stroke="#C42B8C" stroke-width="3"/>
+  <rect x="325" y="110" width="46" height="15" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="371" y="110" width="60" height="15" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="431" y="110" width="44" height="15" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="325" y="110" width="150" height="15" fill="none" stroke="#14202B" stroke-width="2"/>
+  <rect x="325" y="129" width="46" height="15" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="371" y="129" width="60" height="15" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="431" y="129" width="44" height="15" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="325" y="129" width="150" height="15" fill="none" stroke="#14202B" stroke-width="2"/>
+  <text x="400" y="160" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">four rows, same labels</text>
+  <text x="400" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">list-of-dicts</text>
+  <text x="400" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">records in a list = a table</text>
+  <rect x="585" y="78" width="46" height="20" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="631" y="78" width="60" height="20" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="691" y="78" width="44" height="20" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="585" y="98" width="46" height="20" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="631" y="98" width="60" height="20" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="691" y="98" width="44" height="20" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <rect x="585" y="118" width="46" height="20" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="631" y="118" width="60" height="20" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="691" y="118" width="44" height="20" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="585" y="78" width="150" height="60" rx="0" fill="none" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="660" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one cell of the table</text>
+  <text x="660" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">field</text>
+  <text x="660" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one labelled piece of a row</text>
+  <rect x="36" y="242" width="30" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="66" y="242" width="30" height="22" fill="#F4D5E9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="96" y="242" width="30" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="36" y="264" width="30" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="66" y="264" width="30" height="22" fill="#F4D5E9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="96" y="264" width="30" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="36" y="286" width="30" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="66" y="286" width="30" height="22" fill="#F4D5E9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="96" y="286" width="30" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="66" y="242" width="30" height="66" rx="0" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="36" y="242" width="90" height="66" rx="0" fill="none" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="132" y1="275" x2="152" y2="275" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(152 275) rotate(0.0)"/>
+  <rect x="160" y="264" width="26" height="22" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="188" y="264" width="26" height="22" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="216" y="264" width="26" height="22" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="202" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">a plain list</text>
+  <text x="140" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">list comprehension</text>
+  <text x="140" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one line takes one thing</text>
+  <text x="140" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">out of every row</text>
+  <circle cx="316" cy="274" r="26" fill="#F5F8FA" stroke="#14202B" stroke-width="3"/>
+  <text x="316" y="264" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">position</text>
+  <text x="316" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="376" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">+</text>
+  <rect x="404" y="246" width="104" height="56" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="414" y="256" width="40" height="18" rx="4" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="458" y="256" width="40" height="18" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="456" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the row itself</text>
+  <text x="410" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">both, every turn</text>
+  <text x="400" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">enumerate</text>
+  <text x="400" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">hands you the position</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">and the row together</text>
+  <text x="660" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">the sentence to keep</text>
+  <text x="660" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">One dictionary is one row.</text>
+  <text x="660" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">The keys are the column names.</text>
+  <text x="660" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">There is no header row anywhere.</text>
+  <text x="660" y="354" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Row 0 is the first row.</text>
+</svg>

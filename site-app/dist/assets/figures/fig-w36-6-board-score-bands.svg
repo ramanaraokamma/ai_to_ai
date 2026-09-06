@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>The finished board: how the 60 marks add up</title>
+  <desc>On the left, the marks arithmetic: twenty multiple choice at one mark, eight short answers at three marks, four debug problems at four marks, totalling sixty. On the right, four score bands with what to do at each one.</desc>
+
+  <text x="400" y="38" font-size="24" fill="#14202B" text-anchor="middle">The finished board: what the score means</text>
+  <line x1="366" y1="60" x2="366" y2="352" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <text x="36" y="88" font-size="18" fill="#845F00">HOW 60 MARKS ADD UP</text>
+  <rect x="32" y="102" width="304" height="164" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <g font-size="18" fill="#14202B">
+    <text x="56" y="136">Part A</text><text x="180" y="136">20 x 1</text><text x="300" y="136" text-anchor="end">20</text>
+    <text x="56" y="176">Part B</text><text x="180" y="176">8 x 3</text><text x="300" y="176" text-anchor="end">24</text>
+    <text x="56" y="216">Part C</text><text x="180" y="216">4 x 4</text><text x="300" y="216" text-anchor="end">16</text>
+  </g>
+  <line x1="56" y1="232" x2="300" y2="232" stroke="#14202B" stroke-width="2"/>
+  <text x="56" y="256" font-size="18" fill="#14202B">TOTAL</text>
+  <text x="300" y="256" font-size="18" fill="#14202B" text-anchor="end">60</text>
+
+  <rect x="32" y="282" width="304" height="70" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="184" y="306" font-size="14" fill="#14202B" text-anchor="middle">Write "not sure" beside any guess.</text>
+  <text x="184" y="330" font-size="14" fill="#55636F" text-anchor="middle">Those matter even when they are right.</text>
+
+  <text x="396" y="88" font-size="18" fill="#845F00">WHAT THE SCORE MEANS</text>
+
+  <rect x="392" y="102" width="376" height="52" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <text x="412" y="124" font-size="18" fill="#14202B">0 - 29</text>
+  <text x="500" y="124" font-size="14" fill="#14202B">the core ideas have not landed yet</text>
+  <text x="500" y="144" font-size="12" fill="#55636F">go back to weeks 1 to 12 and redo the projects</text>
+
+  <rect x="392" y="164" width="376" height="52" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+  <text x="412" y="186" font-size="18" fill="#14202B">30 - 41</text>
+  <text x="500" y="186" font-size="14" fill="#14202B">vocabulary yes, reasoning not yet</text>
+  <text x="500" y="206" font-size="12" fill="#55636F">redo the weeks you lost marks in, then retake Part B</text>
+
+  <rect x="392" y="226" width="376" height="52" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="412" y="248" font-size="18" fill="#14202B">42 - 52</text>
+  <text x="500" y="248" font-size="14" fill="#14202B">solid - the gate is open</text>
+  <text x="500" y="268" font-size="12" fill="#55636F">finish the booth, then Level 2</text>
+
+  <rect x="392" y="288" width="376" height="52" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
+  <text x="412" y="310" font-size="18" fill="#14202B">53 - 60</text>
+  <text x="500" y="310" font-size="14" fill="#14202B">you could teach this</text>
+  <text x="500" y="330" font-size="12" fill="#55636F">take a stretch direction before you move on</text>
+
+  <text x="400" y="382" font-size="14" fill="#55636F" text-anchor="middle">The score is a mirror, not a verdict. What you do next is the actual result.</text>
+</svg>

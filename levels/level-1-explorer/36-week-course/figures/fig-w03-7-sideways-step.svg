@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>One small step sideways</title>
+  <desc>A circle showing the one job a system can do, ringed by a dashed line marking one small step sideways. Three chips outside the ring show tasks that fail: drawing two things at once, drawing upside down, and drawing a cat when it asked for a dog.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="40" font-size="24" fill="#14202B" text-anchor="middle">One small step sideways</text>
+    <g stroke="#C7CDD4" stroke-width="1.5">
+      <line x1="405" y1="129" x2="500" y2="129"/>
+      <line x1="405" y1="214" x2="500" y2="214"/>
+      <line x1="405" y1="299" x2="500" y2="299"/>
+    </g>
+    <circle cx="250" cy="214" r="150" fill="none" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="8 8"/>
+    <circle cx="250" cy="214" r="95" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
+    <text x="250" y="188" font-size="18" fill="#14202B" text-anchor="middle">the ONE job</text>
+    <text x="250" y="210" font-size="18" fill="#14202B" text-anchor="middle">it can do</text>
+    <text x="250" y="238" font-size="12" fill="#55636F" text-anchor="middle">match my strokes to</text>
+    <text x="250" y="254" font-size="12" fill="#55636F" text-anchor="middle">the one target word</text>
+    <text x="250" y="342" font-size="12" fill="#55636F" text-anchor="middle">one small step sideways &#8212; and it is blank</text>
+
+    <rect x="500" y="95" width="270" height="68" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+    <g transform="translate(508,109) scale(0.4)">
+      <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+      <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+        <line x1="38" y1="38" x2="62" y2="62"/>
+        <line x1="62" y1="38" x2="38" y2="62"/>
+      </g>
+    </g>
+    <text x="548" y="124" font-size="15" fill="#14202B">Draw two things at once</text>
+    <text x="548" y="146" font-size="12" fill="#55636F">It ignores the second one completely.</text>
+
+    <rect x="500" y="180" width="270" height="68" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+    <g transform="translate(508,194) scale(0.4)">
+      <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+      <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+        <line x1="38" y1="38" x2="62" y2="62"/>
+        <line x1="62" y1="38" x2="38" y2="62"/>
+      </g>
+    </g>
+    <text x="548" y="209" font-size="15" fill="#14202B">Draw it upside down</text>
+    <text x="548" y="231" font-size="12" fill="#55636F">Same good drawing. Total blank.</text>
+
+    <rect x="500" y="265" width="270" height="68" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+    <g transform="translate(508,279) scale(0.4)">
+      <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+      <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+        <line x1="38" y1="38" x2="62" y2="62"/>
+        <line x1="62" y1="38" x2="38" y2="62"/>
+      </g>
+    </g>
+    <text x="548" y="294" font-size="15" fill="#14202B">Draw a cat when it says dog</text>
+    <text x="548" y="316" font-size="12" fill="#55636F">It never once says "cat".</text>
+
+    <text x="400" y="380" font-size="14" fill="#55636F" text-anchor="middle">A good test is close to the job, not miles away. Close failures are the proof.</text>
+  </g>
+</svg>

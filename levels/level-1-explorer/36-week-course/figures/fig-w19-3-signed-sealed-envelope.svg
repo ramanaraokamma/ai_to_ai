@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A signed and sealed test envelope</title>
+  <desc>An envelope with its flap folded down and closed. A handwritten signature runs across the edge of the flap so the flap cannot be opened without breaking the signature. Six hidden photos are drawn inside with dashed outlines, and the envelope is labelled test set, do not open until week twenty-two, with a date.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+
+    <text x="400" y="34" font-size="24" fill="#14202B" text-anchor="middle">Sign across the flap, not on the front</text>
+
+    <rect x="180" y="80" width="440" height="256" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+
+    <g stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="5 5" fill="none">
+      <rect x="200" y="252" width="58" height="46" rx="5"/>
+      <rect x="266" y="252" width="58" height="46" rx="5"/>
+      <rect x="332" y="252" width="58" height="46" rx="5"/>
+      <rect x="398" y="252" width="58" height="46" rx="5"/>
+      <rect x="464" y="252" width="58" height="46" rx="5"/>
+      <rect x="530" y="252" width="58" height="46" rx="5"/>
+    </g>
+    <text x="394" y="318" font-size="14" fill="#55636F" text-anchor="middle">6 hidden photos - nobody has looked at these</text>
+
+    <path d="M180 80 L400 236 L620 80 Z" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+
+    <text x="400" y="126" font-size="18" fill="#14202B" text-anchor="middle">TEST SET</text>
+    <text x="400" y="152" font-size="14" fill="#55636F" text-anchor="middle">DO NOT OPEN until Week 22</text>
+    <text x="400" y="176" font-size="14" fill="#55636F" text-anchor="middle">Sealed: Mon 12 Jan</text>
+
+    <path d="M312 268 C336 234 348 262 366 240 C382 220 392 252 412 226 C428 206 442 232 460 212 C470 201 480 204 488 198"
+          fill="none" stroke="#845F00" stroke-width="3" stroke-linecap="round"/>
+    <line x1="300" y1="276" x2="500" y2="192" stroke="#845F00" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+    <g stroke="#C42B8C" stroke-width="2" fill="none">
+      <path d="M636 210 H520"/>
+    </g>
+    <circle cx="650" cy="210" r="14" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <text x="650" y="211" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+    <text x="672" y="196" font-size="14" fill="#55636F">The signature crosses</text>
+    <text x="672" y="216" font-size="14" fill="#55636F">the edge of the flap.</text>
+    <text x="672" y="236" font-size="14" fill="#55636F">Open it and you tear it.</text>
+
+    <text x="400" y="372" font-size="14" fill="#55636F" text-anchor="middle">The signature is not decoration. It turns "peeking" into a thing you can see happened.</text>
+  </g>
+</svg>

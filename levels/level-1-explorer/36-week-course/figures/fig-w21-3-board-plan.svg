@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Week 21 finished board</title>
+  <desc>A whiteboard showing what the teacher should have written by the end of the concept segment: the gap formula with one hundred minus seventy-three point three equals twenty-six point seven points, a boxed plain-words definition of overfitting, notes that the diagonal is the correct answers and every other cell is one nameable mistake, and an empty three by three grid with the diagonal cells shaded.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+
+    <text x="400" y="34" font-size="24" fill="#14202B" text-anchor="middle">What the board should look like at minute 26</text>
+
+    <rect x="30" y="54" width="740" height="300" rx="12" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+
+    <g font-size="18" fill="#14202B">
+      <text x="56" y="92">gap&#160;&#160;=&#160;&#160;training %&#160;&#160;-&#160;&#160;test %</text>
+      <text x="56" y="122">100 - 73.3 = 26.7 points</text>
+    </g>
+    <line x1="56" y1="140" x2="430" y2="140" stroke="#C7CDD4" stroke-width="1.5"/>
+
+    <rect x="48" y="152" width="390" height="86" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+    <text x="68" y="182" font-size="18" fill="#14202B">OVERFITTING =</text>
+    <text x="68" y="212" font-size="18" fill="#14202B">it learned the photos,</text>
+    <text x="68" y="232" font-size="18" fill="#14202B">not the object</text>
+
+    <g font-size="18" fill="#14202B">
+      <text x="56" y="278">diagonal = the correct answers</text>
+      <text x="56" y="308">every other cell = one mistake you can name</text>
+    </g>
+
+    <g fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5">
+      <rect x="570" y="130" width="60" height="40"/><rect x="630" y="130" width="60" height="40"/><rect x="690" y="130" width="60" height="40"/>
+      <rect x="570" y="170" width="60" height="40"/><rect x="630" y="170" width="60" height="40"/><rect x="690" y="170" width="60" height="40"/>
+      <rect x="570" y="210" width="60" height="40"/><rect x="630" y="210" width="60" height="40"/><rect x="690" y="210" width="60" height="40"/>
+    </g>
+    <g fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round">
+      <rect x="570" y="130" width="60" height="40"/>
+      <rect x="630" y="170" width="60" height="40"/>
+      <rect x="690" y="210" width="60" height="40"/>
+    </g>
+    <rect x="570" y="130" width="180" height="120" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+
+    <g font-size="12" fill="#55636F" text-anchor="middle">
+      <text x="600" y="122">sp</text><text x="660" y="122">tb</text><text x="720" y="122">cb</text>
+    </g>
+    <g font-size="12" fill="#55636F" text-anchor="end">
+      <text x="562" y="154">true sp</text>
+      <text x="562" y="194">true tb</text>
+      <text x="562" y="234">true cb</text>
+    </g>
+    <text x="660" y="102" font-size="14" fill="#55636F" text-anchor="middle">what it SAID</text>
+    <text x="660" y="278" font-size="14" fill="#55636F" text-anchor="middle">rows = truth, columns = what it said</text>
+    <text x="660" y="300" font-size="14" fill="#55636F" text-anchor="middle">shade the diagonal, then add it up</text>
+
+    <text x="400" y="380" font-size="14" fill="#55636F" text-anchor="middle">Leave the empty grid up. The student rules their own copy of it in the activity.</text>
+  </g>
+</svg>

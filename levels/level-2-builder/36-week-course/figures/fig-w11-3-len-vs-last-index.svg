@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>len is a count. The last slot number is one less.</title>
+  <desc>The same four slots. Above them the slots are counted 1, 2, 3, 4 in blue. Below them the same slots are numbered 0, 1, 2, 3 in pink. Three boxes underneath read len of scores equals 4, last slot number equals 3, and scores of 4 does not exist so it gives an IndexError.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">len is a count. The last slot number is one less.</text>
+  <text x="400" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1F6FB2" text-anchor="middle">counting the slots</text>
+  <text x="181" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#1F6FB2" text-anchor="middle">1</text>
+  <text x="327" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#1F6FB2" text-anchor="middle">2</text>
+  <text x="473" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#1F6FB2" text-anchor="middle">3</text>
+  <text x="619" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#1F6FB2" text-anchor="middle">4</text>
+  <path d="M116 142 V132 H684 V142" fill="none" stroke="#1F6FB2" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="116" y="150" width="130" height="64" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="181" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">45</text>
+  <rect x="262" y="150" width="130" height="64" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="327" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="408" y="150" width="130" height="64" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="473" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">112</text>
+  <rect x="554" y="150" width="130" height="64" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="619" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">67</text>
+  <text x="102" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="end" dominant-baseline="central">scores</text>
+  <text x="181" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#C42B8C" text-anchor="middle">0</text>
+  <text x="327" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#C42B8C" text-anchor="middle">1</text>
+  <text x="473" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#C42B8C" text-anchor="middle">2</text>
+  <text x="619" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#C42B8C" text-anchor="middle">3</text>
+  <text x="400" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="middle">numbering the slots</text>
+  <rect x="30" y="292" width="236" height="54" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="148" y="319" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">len(scores) = 4</text>
+  <rect x="282" y="292" width="236" height="54" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="400" y="319" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">last slot number = 3</text>
+  <rect x="534" y="292" width="236" height="54" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="652" y="312" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">scores[4] does not exist:</text>
+  <text x="652" y="336" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#CC2B1D" text-anchor="middle" font-weight="600">IndexError</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Four fence panels need four posts numbered 0 to 3. There is no post number 4.</text>
+</svg>

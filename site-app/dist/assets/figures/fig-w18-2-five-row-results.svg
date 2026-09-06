@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Five runs with an accuracy bar beside each</title>
+  <desc>A five row results table. The baseline scores 5 out of 5. Five photos per class scores 3 out of 5. One background only scores 2 out of 5 and is drawn in red as the worst. Blurry photos score 3 out of 5. A 40 40 5 imbalance scores 3 out of 5. Each row has a horizontal bar showing the score.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="40" font-size="24" fill="#14202B" text-anchor="middle">Five runs, one table, one bar each</text>
+
+    <rect x="40" y="60" width="720" height="36" fill="#D9EAF9" stroke="none"/>
+    <g font-size="14" fill="#14202B">
+      <text x="52" y="84">what I changed</text>
+      <text x="330" y="84" text-anchor="middle">score</text>
+      <text x="430" y="84">how it scored on the same five test objects</text>
+    </g>
+
+    <g font-size="14" fill="#14202B">
+      <text x="52" y="126">0  baseline: 40 each, full variety</text>
+      <text x="52" y="176">1  five photos per class</text>
+      <text x="52" y="226">2  one background only (tested at the sink)</text>
+      <text x="52" y="276">3  blurry training photos</text>
+      <text x="52" y="326">4  imbalance 40 / 40 / 5</text>
+    </g>
+    <g font-size="14" fill="#14202B" text-anchor="middle">
+      <text x="330" y="126">5 / 5</text>
+      <text x="330" y="176">3 / 5</text>
+      <text x="330" y="226">2 / 5</text>
+      <text x="330" y="276">3 / 5</text>
+      <text x="330" y="326">3 / 5</text>
+    </g>
+
+    <rect x="400" y="110" width="300" height="20" rx="6" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="400" y="160" width="180" height="20" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="400" y="210" width="120" height="20" rx="6" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="400" y="260" width="180" height="20" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="400" y="310" width="180" height="20" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round"/>
+
+    <g font-size="12" fill="#55636F">
+      <text x="708" y="125">100%</text>
+      <text x="588" y="175">60%</text>
+      <text x="528" y="225">40%</text>
+      <text x="588" y="275">60%</text>
+      <text x="588" y="325">60%</text>
+    </g>
+
+    <g stroke="#C7CDD4" stroke-width="1.5">
+      <line x1="40" y1="146" x2="760" y2="146"/>
+      <line x1="40" y1="196" x2="760" y2="196"/>
+      <line x1="40" y1="246" x2="760" y2="246"/>
+      <line x1="40" y1="296" x2="760" y2="296"/>
+      <line x1="290" y1="60" x2="290" y2="346"/>
+      <line x1="380" y1="60" x2="380" y2="346"/>
+    </g>
+    <line x1="40" y1="96" x2="760" y2="96" stroke="#1F6FB2" stroke-width="3"/>
+    <rect x="40" y="60" width="720" height="286" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+
+    <text x="400" y="378" font-size="14" fill="#55636F" text-anchor="middle">Run 2 also scored 5 out of 5 on its own table. That is the whole lesson.</text>
+  </g>
+</svg>

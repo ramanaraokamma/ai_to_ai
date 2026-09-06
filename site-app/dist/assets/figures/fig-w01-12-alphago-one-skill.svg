@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>One skill, and blank everywhere else</title>
+  <desc>On the left a Go board marked as won, labelled beat the world champion in 2016. On the right three crossed-out chips: play checkers, say what a Go board is made of, and answer are you tired, which it replies to with a Go move.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="40" font-size="24" fill="#14202B" text-anchor="middle">One skill, and blank everywhere else</text>
+    <rect x="50" y="90" width="200" height="200" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <g stroke="#C7CDD4" stroke-width="1.5">
+      <line x1="75" y1="115" x2="225" y2="115"/>
+      <line x1="75" y1="140" x2="225" y2="140"/>
+      <line x1="75" y1="165" x2="225" y2="165"/>
+      <line x1="75" y1="190" x2="225" y2="190"/>
+      <line x1="75" y1="215" x2="225" y2="215"/>
+      <line x1="75" y1="240" x2="225" y2="240"/>
+      <line x1="75" y1="265" x2="225" y2="265"/>
+      <line x1="75" y1="115" x2="75" y2="265"/>
+      <line x1="100" y1="115" x2="100" y2="265"/>
+      <line x1="125" y1="115" x2="125" y2="265"/>
+      <line x1="150" y1="115" x2="150" y2="265"/>
+      <line x1="175" y1="115" x2="175" y2="265"/>
+      <line x1="200" y1="115" x2="200" y2="265"/>
+      <line x1="225" y1="115" x2="225" y2="265"/>
+    </g>
+    <circle cx="100" cy="140" r="9" fill="#14202B"/>
+    <circle cx="125" cy="165" r="9" fill="#FFFFFF" stroke="#14202B" stroke-width="2.5"/>
+    <circle cx="150" cy="140" r="9" fill="#14202B"/>
+    <circle cx="175" cy="190" r="9" fill="#FFFFFF" stroke="#14202B" stroke-width="2.5"/>
+    <circle cx="125" cy="215" r="9" fill="#14202B"/>
+    <circle cx="200" cy="240" r="9" fill="#FFFFFF" stroke="#14202B" stroke-width="2.5"/>
+    <circle cx="150" cy="240" r="9" fill="#14202B"/>
+    <g transform="translate(210,240) scale(0.44)">
+      <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="150" y="312" font-size="14" fill="#14202B" text-anchor="middle">Beat the world champion</text>
+    <text x="150" y="332" font-size="14" fill="#55636F" text-anchor="middle">at Go, in 2016</text>
+
+    <rect x="300" y="95" width="470" height="64" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+    <g transform="translate(310,111) scale(0.4)">
+      <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+      <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+        <line x1="38" y1="38" x2="62" y2="62"/>
+        <line x1="62" y1="38" x2="38" y2="62"/>
+      </g>
+    </g>
+    <text x="352" y="122" font-size="15" fill="#14202B">Play checkers</text>
+    <text x="352" y="144" font-size="12" fill="#55636F">Not badly. At all. It cannot do it.</text>
+
+    <rect x="300" y="180" width="470" height="64" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+    <g transform="translate(310,196) scale(0.4)">
+      <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+      <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+        <line x1="38" y1="38" x2="62" y2="62"/>
+        <line x1="62" y1="38" x2="38" y2="62"/>
+      </g>
+    </g>
+    <text x="352" y="207" font-size="15" fill="#14202B">Say what a Go board is made of</text>
+    <text x="352" y="229" font-size="12" fill="#55636F">Wood? Plastic? It has no idea. It has never seen one.</text>
+
+    <rect x="300" y="265" width="470" height="64" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+    <g transform="translate(310,281) scale(0.4)">
+      <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+      <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+        <line x1="38" y1="38" x2="62" y2="62"/>
+        <line x1="62" y1="38" x2="38" y2="62"/>
+      </g>
+    </g>
+    <text x="352" y="292" font-size="15" fill="#14202B">Answer "are you tired?"</text>
+    <text x="352" y="314" font-size="12" fill="#55636F">It replies with a Go move. A Go move is all it can produce.</text>
+
+    <text x="400" y="372" font-size="14" fill="#55636F" text-anchor="middle">The newspapers printed the left-hand box only. This is the whole picture.</text>
+  </g>
+</svg>

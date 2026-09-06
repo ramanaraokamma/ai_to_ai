@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The judgement spectrum</title>
+  <desc>A horizontal line running from no judgement on the left to all judgement on the right. Six jobs are placed along it, from adding 47 plus 88 at the far left to deciding whether a photo is blurry enough to delete at the far right.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="42" font-size="24" fill="#14202B" text-anchor="middle">Does this job need judgement?</text>
+
+    <line x1="60" y1="200" x2="740" y2="200" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="726,190 742,200 726,210" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <text x="60" y="248" font-size="18" fill="#1B7A4B">NO judgement</text>
+    <text x="60" y="270" font-size="14" fill="#55636F">one right answer, no argument</text>
+    <text x="740" y="248" font-size="18" fill="#CC2B1D" text-anchor="end">ALL judgement</text>
+    <text x="740" y="270" font-size="14" fill="#55636F" text-anchor="end">two fair people would disagree</text>
+
+    <g stroke="#55636F" stroke-width="1.5">
+      <line x1="90" y1="200" x2="90" y2="172"/>
+      <line x1="220" y1="200" x2="220" y2="152"/>
+      <line x1="350" y1="200" x2="350" y2="172"/>
+      <line x1="470" y1="200" x2="470" y2="152"/>
+      <line x1="600" y1="200" x2="600" y2="172"/>
+      <line x1="716" y1="200" x2="716" y2="152"/>
+    </g>
+    <g fill="#14202B">
+      <circle cx="90" cy="200" r="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <circle cx="220" cy="200" r="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <circle cx="350" cy="200" r="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <path d="M470 190 L479 206 L461 206 Z" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M600 190 L609 206 L591 206 Z" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M716 190 L725 206 L707 206 Z" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+    </g>
+
+    <g font-size="14" fill="#14202B" text-anchor="middle">
+      <text x="90" y="164">Add</text>
+      <text x="90" y="146">47 + 88</text>
+
+      <text x="220" y="144">Is the traffic</text>
+      <text x="220" y="126">light red?</text>
+
+      <text x="350" y="164">Is this word in</text>
+      <text x="350" y="146">the dictionary?</text>
+
+      <text x="470" y="144">Is this text</text>
+      <text x="470" y="126">message spam?</text>
+
+      <text x="600" y="164">Dog or wolf</text>
+      <text x="600" y="146">in this photo?</text>
+
+      <text x="700" y="144">Is this photo blurry</text>
+      <text x="700" y="126">enough to delete?</text>
+    </g>
+
+    <g font-size="12" fill="#55636F" text-anchor="middle">
+      <text x="90" y="222">circle</text>
+      <text x="220" y="222">circle</text>
+      <text x="350" y="222">circle</text>
+      <text x="470" y="224">triangle</text>
+      <text x="600" y="224">triangle</text>
+      <text x="716" y="224">triangle</text>
+    </g>
+
+    <rect x="230" y="300" width="340" height="46" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+    <text x="400" y="323" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">Only triangles are candidates for AI</text>
+    <text x="400" y="374" font-size="14" fill="#55636F" text-anchor="middle">The test: could two sensible people look at the same case and answer differently?</text>
+  </g>
+</svg>

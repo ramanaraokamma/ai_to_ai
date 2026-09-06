@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>The booth app: four behaviours and a not-sure state</title>
+  <desc>On the left a Scratch stage showing a sprite saying recycling, blue bin, at ninety-four percent. On the right a list of five states: recycling, compost, landfill, other, and not sure, each with the backdrop, the sentence the sprite says and whether the counter goes up.</desc>
+
+  <text x="400" y="38" font-size="24" fill="#14202B" text-anchor="middle">The booth app: four behaviours, plus "not sure"</text>
+
+  <!-- stage -->
+  <rect x="36" y="70" width="330" height="248" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+  <rect x="36" y="70" width="330" height="40" rx="10" fill="#D9EAF9" stroke="none"/>
+  <line x1="36" y1="110" x2="366" y2="110" stroke="#14202B" stroke-width="3"/>
+  <text x="56" y="96" font-size="14" fill="#14202B">backdrop: blue</text>
+  <text x="350" y="96" font-size="14" fill="#14202B" text-anchor="end">count: 3</text>
+
+  <g transform="translate(70,190) scale(1.0)">
+    <line x1="50" y1="16" x2="50" y2="7" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="50" cy="5" r="4" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+    <rect x="22" y="16" width="56" height="40" rx="12" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="38" cy="34" r="5" fill="#14202B"/>
+    <circle cx="62" cy="34" r="5" fill="#14202B"/>
+    <path d="M40 45 Q50 52 60 45" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <rect x="28" y="60" width="44" height="30" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <line x1="28" y1="68" x2="13" y2="78" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+    <line x1="72" y1="68" x2="87" y2="78" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="50" cy="75" r="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  </g>
+  <rect x="176" y="140" width="176" height="76" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+  <path d="M176 190 L152 210 L178 206 Z" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="264" y="170" font-size="14" fill="#14202B" text-anchor="middle">RECYCLING -</text>
+  <text x="264" y="194" font-size="14" fill="#14202B" text-anchor="middle">blue bin, please.</text>
+  <text x="200" y="300" font-size="12" fill="#55636F">webcam says: recycling, 94%</text>
+
+  <!-- table of states -->
+  <g font-size="12" fill="#55636F">
+    <text x="396" y="86">STATE</text>
+    <text x="500" y="86">WHAT THE SPRITE SAYS</text>
+    <text x="726" y="86">count?</text>
+  </g>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="392" y1="94" x2="770" y2="94"/>
+  </g>
+
+  <rect x="392" y="102" width="378" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="404" y="127" font-size="14" fill="#14202B">recycling</text>
+  <text x="500" y="127" font-size="14" fill="#14202B">"blue bin, please."</text>
+  <text x="740" y="127" font-size="14" fill="#14202B" text-anchor="middle">+1</text>
+
+  <rect x="392" y="150" width="378" height="40" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="404" y="175" font-size="14" fill="#14202B">compost</text>
+  <text x="500" y="175" font-size="14" fill="#14202B">"green bin."</text>
+  <text x="740" y="175" font-size="14" fill="#14202B" text-anchor="middle">+1</text>
+
+  <rect x="392" y="198" width="378" height="40" rx="8" fill="#F5F8FA" stroke="#55636F" stroke-width="2"/>
+  <text x="404" y="223" font-size="14" fill="#14202B">landfill</text>
+  <text x="500" y="223" font-size="14" fill="#14202B">"black bin. Could you reuse it?"</text>
+  <text x="740" y="223" font-size="14" fill="#14202B" text-anchor="middle">+1</text>
+
+  <rect x="392" y="246" width="378" height="40" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="404" y="271" font-size="14" fill="#14202B">other</text>
+  <text x="500" y="271" font-size="14" fill="#14202B">"I only know 3 kinds of rubbish."</text>
+  <text x="740" y="271" font-size="14" fill="#14202B" text-anchor="middle">no</text>
+
+  <rect x="392" y="294" width="378" height="44" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <text x="404" y="311" font-size="14" fill="#14202B">not sure</text>
+  <text x="404" y="331" font-size="12" fill="#55636F">under 70%</text>
+  <text x="500" y="311" font-size="14" fill="#14202B">"Not sure - only 61%"</text>
+  <text x="500" y="331" font-size="12" fill="#55636F">refuses to guess. Demo this on purpose.</text>
+  <text x="740" y="321" font-size="14" fill="#14202B" text-anchor="middle">no</text>
+
+  <text x="400" y="376" font-size="14" fill="#55636F" text-anchor="middle">Five states, five different things on screen. A visitor can see which one fired without asking.</text>
+</svg>

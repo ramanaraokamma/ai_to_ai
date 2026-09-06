@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>The completed fifteen row test scoring sheet</title>
+  <desc>A scoring sheet with fifteen rows. Each row lists the true class, what the model predicted, the top confidence and whether it was correct. Eleven rows are marked Y and four rows, shaded red, are marked N. The summary underneath reads eleven out of fifteen, zero point seven three three three, seventy-three point three percent.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="250" y="34" font-size="24" fill="#14202B" text-anchor="middle">TEST SCORING SHEET</text>
+    <text x="250" y="60" font-size="14" fill="#55636F" text-anchor="middle">spoon / toothbrush / comb - 15 hidden photos, opened once</text>
+    <rect x="40" y="378" width="420" height="30" fill="#F6AEA6"/>
+    <rect x="40" y="468" width="420" height="30" fill="#F6AEA6"/>
+    <rect x="40" y="498" width="420" height="30" fill="#F6AEA6"/>
+    <rect x="40" y="528" width="420" height="30" fill="#F6AEA6"/>
+    <rect x="40" y="76" width="420" height="32" fill="#D9EAF9"/>
+    <g stroke="#C7CDD4" stroke-width="1.5">
+      <line x1="40" y1="138" x2="460" y2="138"/>
+      <line x1="40" y1="168" x2="460" y2="168"/>
+      <line x1="40" y1="198" x2="460" y2="198"/>
+      <line x1="40" y1="228" x2="460" y2="228"/>
+      <line x1="40" y1="258" x2="460" y2="258"/>
+      <line x1="40" y1="288" x2="460" y2="288"/>
+      <line x1="40" y1="318" x2="460" y2="318"/>
+      <line x1="40" y1="348" x2="460" y2="348"/>
+      <line x1="40" y1="378" x2="460" y2="378"/>
+      <line x1="40" y1="408" x2="460" y2="408"/>
+      <line x1="40" y1="438" x2="460" y2="438"/>
+      <line x1="40" y1="468" x2="460" y2="468"/>
+      <line x1="40" y1="498" x2="460" y2="498"/>
+      <line x1="40" y1="528" x2="460" y2="528"/>
+      <line x1="80" y1="76" x2="80" y2="558"/>
+      <line x1="190" y1="76" x2="190" y2="558"/>
+      <line x1="320" y1="76" x2="320" y2="558"/>
+      <line x1="395" y1="76" x2="395" y2="558"/>
+    </g>
+    <g stroke="#1F6FB2" stroke-width="3">
+      <line x1="40" y1="108" x2="460" y2="108"/>
+    </g>
+    <rect x="40" y="76" width="420" height="482" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <g font-size="14" fill="#14202B" text-anchor="middle">
+      <text x="60" y="97">#</text>
+      <text x="135" y="97">TRUE class</text>
+      <text x="255" y="97">PREDICTED</text>
+      <text x="357" y="97">conf.</text>
+      <text x="427" y="97">OK?</text>
+    </g>
+    <g font-size="14" fill="#14202B" text-anchor="middle">
+      <text x="60" y="128">1</text>
+      <text x="135" y="128">spoon</text>
+      <text x="255" y="128">spoon</text>
+      <text x="357" y="128">94%</text>
+      <text x="427" y="128">Y</text>
+      <text x="60" y="158">2</text>
+      <text x="135" y="158">spoon</text>
+      <text x="255" y="158">spoon</text>
+      <text x="357" y="158">88%</text>
+      <text x="427" y="158">Y</text>
+      <text x="60" y="188">3</text>
+      <text x="135" y="188">spoon</text>
+      <text x="255" y="188">spoon</text>
+      <text x="357" y="188">91%</text>
+      <text x="427" y="188">Y</text>
+      <text x="60" y="218">4</text>
+      <text x="135" y="218">spoon</text>
+      <text x="255" y="218">spoon</text>
+      <text x="357" y="218">76%</text>
+      <text x="427" y="218">Y</text>
+      <text x="60" y="248">5</text>
+      <text x="135" y="248">spoon</text>
+      <text x="255" y="248">spoon</text>
+      <text x="357" y="248">82%</text>
+      <text x="427" y="248">Y</text>
+      <text x="60" y="278">6</text>
+      <text x="135" y="278">toothbrush</text>
+      <text x="255" y="278">toothbrush</text>
+      <text x="357" y="278">90%</text>
+      <text x="427" y="278">Y</text>
+      <text x="60" y="308">7</text>
+      <text x="135" y="308">toothbrush</text>
+      <text x="255" y="308">toothbrush</text>
+      <text x="357" y="308">85%</text>
+      <text x="427" y="308">Y</text>
+      <text x="60" y="338">8</text>
+      <text x="135" y="338">toothbrush</text>
+      <text x="255" y="338">toothbrush</text>
+      <text x="357" y="338">71%</text>
+      <text x="427" y="338">Y</text>
+      <text x="60" y="368">9</text>
+      <text x="135" y="368">toothbrush</text>
+      <text x="255" y="368">toothbrush</text>
+      <text x="357" y="368">68%</text>
+      <text x="427" y="368">Y</text>
+      <text x="60" y="398">10</text>
+      <text x="135" y="398">toothbrush</text>
+      <text x="255" y="398">comb</text>
+      <text x="357" y="398">54%</text>
+      <text x="427" y="398">N</text>
+      <text x="60" y="428">11</text>
+      <text x="135" y="428">comb</text>
+      <text x="255" y="428">comb</text>
+      <text x="357" y="428">79%</text>
+      <text x="427" y="428">Y</text>
+      <text x="60" y="458">12</text>
+      <text x="135" y="458">comb</text>
+      <text x="255" y="458">comb</text>
+      <text x="357" y="458">63%</text>
+      <text x="427" y="458">Y</text>
+      <text x="60" y="488">13</text>
+      <text x="135" y="488">comb</text>
+      <text x="255" y="488">toothbrush</text>
+      <text x="357" y="488">58%</text>
+      <text x="427" y="488">N</text>
+      <text x="60" y="518">14</text>
+      <text x="135" y="518">comb</text>
+      <text x="255" y="518">toothbrush</text>
+      <text x="357" y="518">66%</text>
+      <text x="427" y="518">N</text>
+      <text x="60" y="548">15</text>
+      <text x="135" y="548">comb</text>
+      <text x="255" y="548">spoon</text>
+      <text x="357" y="548">49%</text>
+      <text x="427" y="548">N</text>
+    </g>
+    <rect x="40" y="574" width="420" height="80" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <text x="250" y="604" font-size="18" fill="#14202B" text-anchor="middle">correct: 11 out of 15</text>
+    <text x="250" y="634" font-size="18" fill="#14202B" text-anchor="middle">11 / 15  =  0.7333  =  73.3%</text>
+    <text x="250" y="682" font-size="14" fill="#55636F" text-anchor="middle">Write the TRUE column in BEFORE you test. Then your brain cannot help you.</text>
+  </g>
+</svg>

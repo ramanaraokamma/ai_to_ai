@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Level 1 Explorer &middot; The 36-Week Course</title>
+<meta name="description" content="A classroom-ready 36-week AI course for one 6th grader and a teacher who does not know AI. One class a week, 60-75 minutes, zero coding.">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --data:#1F6FB2; --model:#6D28D9; --human:#845F00; --correct:#1B7A4B;
+  --wrong:#CC2B1D; --accent:#C42B8C;
+  --data-fill:#D9EAF9; --model-fill:#DBCEF3; --human-fill:#E8C671;
+  --correct-fill:#E2F7ED; --wrong-fill:#F6AEA6; --accent-fill:#F4D5E9;
+  --ink:#14202B; --muted:#55636F; --grid:#C7CDD4; --panel:#F5F8FA;
+  --bg:#FFFFFF; --surface:#FFFFFF; --surface-2:#F5F8FA;
+  --chip-ink:#14202B;
+  --shadow-1:0 1px 2px rgba(20,32,43,.06), 0 2px 8px rgba(20,32,43,.05);
+  --shadow-2:0 2px 4px rgba(20,32,43,.07), 0 12px 28px rgba(20,32,43,.09);
+  --r-sm:8px; --r-md:12px; --r-lg:18px; --r-xl:26px; --r-pill:999px;
+  --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:24px;
+  --sp-6:32px; --sp-7:48px; --sp-8:72px;
+  --maxw:1180px;
+  --font:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;
+}
+html[data-theme=dark]{
+  --data:#74B7EA; --model:#B79DF2; --human:#DCAF4B; --correct:#5CC28D;
+  --wrong:#F28D80; --accent:#F08FC6;
+  --data-fill:#1E2B38; --model-fill:#1E2B38; --human-fill:#1E2B38;
+  --correct-fill:#1E2B38; --wrong-fill:#1E2B38; --accent-fill:#1E2B38;
+  --ink:#E7EEF4; --muted:#A6B4C2; --grid:#2C3B4A; --panel:#16212C;
+  --bg:#0E1620; --surface:#16212C; --surface-2:#1E2B38;
+  --chip-ink:#E7EEF4;
+  --shadow-1:0 1px 2px rgba(0,0,0,.5); --shadow-2:0 10px 30px rgba(0,0,0,.55);
+}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{line-height:1.2;margin:0;letter-spacing:-.012em;font-weight:750}
+p{margin:0}
+a{color:var(--data);text-decoration:none}
+a:hover{text-decoration:underline}
+img,svg{max-width:100%}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+html[data-theme=dark] :focus-visible{outline-color:var(--human)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--sp-5)}
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--surface);
+  color:var(--ink);padding:12px 18px;border-radius:var(--r-md);box-shadow:var(--shadow-2);
+  border:1px solid var(--grid);font-weight:700}
+.skip:focus{left:12px;top:12px}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ---------- top bar ---------- */
+.topbar{position:sticky;top:0;z-index:60;background:var(--bg);
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(160%) blur(12px);border-bottom:1px solid var(--grid)}
+@supports not (backdrop-filter:blur(2px)){.topbar{background:var(--bg)}}
+.topbar-in{display:flex;align-items:center;gap:var(--sp-4);
+  padding:var(--sp-3) var(--sp-5);max-width:var(--maxw);margin:0 auto;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;
+  font-size:15px;color:var(--ink);white-space:nowrap}
+.brand:hover{text-decoration:none}
+.brand .dot{width:22px;height:22px;border-radius:7px;flex:none;
+  background:linear-gradient(135deg,var(--data),var(--model) 55%,var(--accent))}
+.brand small{display:block;font-weight:600;font-size:11px;color:var(--muted);
+  letter-spacing:.06em;text-transform:uppercase;line-height:1.3}
+.tb-spacer{flex:1 1 24px}
+.searchbox{position:relative;flex:1 1 260px;max-width:400px;min-width:190px}
+.searchbox svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);
+  width:16px;height:16px;color:var(--muted);pointer-events:none}
+input[type=search]{width:100%;font:inherit;font-size:14px;color:var(--ink);
+  background:var(--surface-2);border:1px solid var(--grid);border-radius:var(--r-pill);
+  padding:9px 38px 9px 36px;-webkit-appearance:none;appearance:none}
+input[type=search]::-webkit-search-cancel-button{display:none}
+input[type=search]::placeholder{color:var(--muted)}
+.clearbtn{position:absolute;right:5px;top:50%;transform:translateY(-50%);border:0;
+  background:transparent;color:var(--muted);cursor:pointer;font-size:17px;line-height:1;
+  padding:6px 8px;border-radius:var(--r-pill)}
+.clearbtn:hover{color:var(--ink);background:var(--grid)}
+.iconbtn{display:inline-flex;align-items:center;gap:7px;font:inherit;font-size:13px;
+  font-weight:650;color:var(--ink);background:var(--surface-2);border:1px solid var(--grid);
+  border-radius:var(--r-pill);padding:8px 14px;cursor:pointer;white-space:nowrap}
+.iconbtn:hover{border-color:var(--muted);box-shadow:var(--shadow-1)}
+.iconbtn svg{width:15px;height:15px;flex:none}
+.iconbtn .lbl{display:inline}
+@media (max-width:820px){.iconbtn .lbl{display:none}.iconbtn{padding:8px 10px}}
+
+/* ---------- hero ---------- */
+.hero{padding:var(--sp-8) 0 var(--sp-7);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-40% -10% auto -10%;height:520px;z-index:0;
+  background:radial-gradient(46% 60% at 22% 34%,color-mix(in srgb,var(--data) 15%,transparent),transparent 70%),
+             radial-gradient(40% 56% at 78% 22%,color-mix(in srgb,var(--accent) 13%,transparent),transparent 70%);
+  pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:750;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--model);
+  background:var(--model-fill);border:1px solid color-mix(in srgb,var(--model) 34%,transparent);
+  padding:6px 13px;border-radius:var(--r-pill)}
+.hero h1{font-size:clamp(2.1rem,5.4vw,3.9rem);margin:var(--sp-5) 0 0;max-width:22ch;
+  letter-spacing:-.032em}
+.hero h1 em{font-style:normal;
+  background:linear-gradient(100deg,var(--data),var(--model) 48%,var(--accent));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+@supports not (background-clip:text){.hero h1 em{color:var(--model)}}
+.lede{font-size:clamp(1.02rem,1.9vw,1.24rem);color:var(--muted);max-width:60ch;
+  margin:var(--sp-5) 0 0}
+.quote{margin:var(--sp-6) 0 0;padding:var(--sp-4) var(--sp-5);border-left:4px solid var(--accent);
+  background:var(--surface-2);border-radius:0 var(--r-md) var(--r-md) 0;max-width:62ch;
+  font-size:1.04rem;font-weight:600}
+.herolinks{display:flex;flex-wrap:wrap;gap:var(--sp-3);margin-top:var(--sp-6)}
+.btn{display:inline-flex;align-items:center;gap:9px;font-size:14.5px;font-weight:700;
+  padding:12px 20px;border-radius:var(--r-pill);border:1px solid var(--grid);
+  background:var(--surface);color:var(--ink);cursor:pointer;font-family:inherit}
+.btn:hover{text-decoration:none;box-shadow:var(--shadow-2);transform:translateY(-1px)}
+.btn-primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+html[data-theme=dark] .btn-primary{background:var(--data);color:#0E1620;border-color:var(--data)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));
+  gap:var(--sp-3);margin-top:var(--sp-7);max-width:820px}
+.stat{background:var(--surface);border:1px solid var(--grid);border-radius:var(--r-lg);
+  padding:var(--sp-4) var(--sp-4);box-shadow:var(--shadow-1)}
+.stat b{display:block;font-size:1.65rem;letter-spacing:-.03em;line-height:1.1}
+.stat span{font-size:11.5px;color:var(--muted);font-weight:650;letter-spacing:.05em;
+  text-transform:uppercase}
+
+/* ---------- section furniture ---------- */
+section{scroll-margin-top:92px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--sp-4);
+  flex-wrap:wrap;margin-bottom:var(--sp-5)}
+.sec-head h2{font-size:clamp(1.4rem,2.6vw,1.95rem);letter-spacing:-.028em}
+.sec-head p{color:var(--muted);font-size:14.5px;margin-top:6px;max-width:62ch}
+.rule{height:1px;background:var(--grid);border:0;margin:var(--sp-8) 0}
+
+/* ---------- toolbar ---------- */
+.toolbar{position:sticky;top:57px;z-index:50;padding:var(--sp-4) 0;background:var(--bg);
+  background:color-mix(in srgb,var(--bg) 90%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--grid)}
+@supports not (backdrop-filter:blur(2px)){.toolbar{background:var(--bg)}}
+.toolbar-in{display:flex;gap:var(--sp-4);align-items:center;flex-wrap:wrap}
+.chipset{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.fchip{font:inherit;font-size:12.5px;font-weight:700;padding:6px 13px;cursor:pointer;
+  border-radius:var(--r-pill);border:1px solid var(--grid);background:var(--surface);
+  color:var(--muted);display:inline-flex;align-items:center;gap:7px}
+.fchip:hover{color:var(--ink);border-color:var(--muted)}
+.fchip .cnt{font-size:11px;opacity:.75;font-variant-numeric:tabular-nums}
+.fchip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+html[data-theme=dark] .fchip[aria-pressed=true]{background:var(--ink);color:#0E1620}
+.fchip .swatch{width:9px;height:9px;border-radius:3px;flex:none;background:currentColor}
+.fchip[data-type=teach] .swatch{background:var(--data)}
+.fchip[data-type=lab] .swatch{background:var(--correct)}
+.fchip[data-type=project] .swatch{background:var(--human)}
+.fchip[data-type=review] .swatch{background:var(--model)}
+.fchip[data-type=assessment] .swatch{background:var(--wrong)}
+.fchip[data-type=capstone] .swatch{background:var(--accent)}
+.overall{margin-left:auto;display:flex;align-items:center;gap:var(--sp-3);
+  font-size:12.5px;font-weight:700;color:var(--muted);white-space:nowrap}
+.bar{width:150px;height:8px;border-radius:var(--r-pill);background:var(--surface-2);
+  border:1px solid var(--grid);overflow:hidden;flex:none}
+.bar i{display:block;height:100%;width:0%;border-radius:var(--r-pill);
+  background:linear-gradient(90deg,var(--data),var(--correct));transition:width .35s ease}
+.hits{font-size:13px;color:var(--muted);font-weight:650}
+
+/* ---------- term bands ---------- */
+.band{margin:var(--sp-8) 0;border-radius:var(--r-xl);border:1px solid var(--grid);
+  background:var(--surface);box-shadow:var(--shadow-1);overflow:hidden}
+.band[data-role=data]{--role:var(--data);--role-fill:var(--data-fill)}
+.band[data-role=model]{--role:var(--model);--role-fill:var(--model-fill)}
+.band[data-role=correct]{--role:var(--correct);--role-fill:var(--correct-fill)}
+.band[data-role=accent]{--role:var(--accent);--role-fill:var(--accent-fill)}
+.band-head{padding:var(--sp-6) var(--sp-6) var(--sp-5);border-top:5px solid var(--role);
+  background:var(--surface);
+  background:linear-gradient(180deg,color-mix(in srgb,var(--role) 8%,var(--surface)),var(--surface))}
+.band-kicker{display:flex;align-items:center;gap:var(--sp-3);flex-wrap:wrap;
+  font-size:11.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--role)}
+.band-kicker .wk{color:var(--muted);letter-spacing:.06em}
+.band-head h3{font-size:clamp(1.3rem,3vw,1.8rem);margin-top:var(--sp-3);letter-spacing:-.028em}
+.bigq{margin-top:var(--sp-4);font-size:1.02rem;font-weight:650;max-width:66ch}
+.bigq b{color:var(--role)}
+.ends{margin-top:var(--sp-3);font-size:14px;color:var(--muted);max-width:74ch}
+.ends b{color:var(--ink)}
+.band-prog{display:flex;align-items:center;gap:var(--sp-3);margin-top:var(--sp-5);
+  font-size:12.5px;font-weight:700;color:var(--muted)}
+.band-prog .bar i{background:var(--role)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));
+  gap:var(--sp-4);padding:var(--sp-5) var(--sp-6) var(--sp-6)}
+
+/* ---------- week card ---------- */
+.card{position:relative;display:flex;flex-direction:column;gap:var(--sp-3);
+  background:var(--surface);border:1px solid var(--grid);border-radius:var(--r-lg);
+  padding:var(--sp-5);box-shadow:var(--shadow-1);transition:box-shadow .22s ease,transform .22s ease}
+.card:hover{box-shadow:var(--shadow-2);transform:translateY(-2px);border-color:var(--role)}
+.card:focus-within{border-color:var(--role)}
+.card[data-done=true]{background:var(--surface-2)}
+.card[data-done=true]::after{content:"";position:absolute;inset:0;border-radius:inherit;
+  border:2px solid var(--correct);pointer-events:none}
+.card-top{display:flex;align-items:center;gap:var(--sp-3);flex-wrap:wrap}
+.wknum{font-size:11px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--muted);font-variant-numeric:tabular-nums}
+.badge{font-size:10.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+  padding:3.5px 9px;border-radius:var(--r-pill);border:1px solid currentColor;margin-left:auto}
+.badge[data-type=teach]{color:var(--data);background:var(--data-fill)}
+.badge[data-type=lab]{color:var(--correct);background:var(--correct-fill)}
+.badge[data-type=project]{color:var(--human);background:var(--human-fill)}
+.badge[data-type=review]{color:var(--model);background:var(--model-fill)}
+.badge[data-type=assessment]{color:var(--wrong);background:var(--wrong-fill)}
+.badge[data-type=capstone]{color:var(--accent);background:var(--accent-fill)}
+html[data-theme=dark] .badge[data-type=project]{background:var(--surface-2)}
+html[data-theme=dark] .badge[data-type=assessment]{background:var(--surface-2)}
+.card h4{font-size:1.06rem;letter-spacing:-.02em;line-height:1.3}
+.big{font-size:14px;color:var(--muted);line-height:1.55}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:var(--sp-1)}
+.chip{font-size:11.5px;font-weight:650;padding:3.5px 10px;border-radius:var(--r-pill);
+  background:var(--surface-2);border:1px solid var(--grid);color:var(--chip-ink);
+  white-space:nowrap}
+.chip.is-recap{border-style:dashed;color:var(--muted)}
+.vocab-note{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--muted)}
+.links{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:var(--sp-3)}
+.lnk{display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center;
+  font-size:11.5px;font-weight:750;padding:9px 5px;border-radius:var(--r-md);
+  border:1px solid var(--grid);background:var(--surface-2);color:var(--ink);line-height:1.25}
+.lnk:hover{text-decoration:none;border-color:var(--role);color:var(--role);
+  background:var(--surface);
+  background:color-mix(in srgb,var(--role) 9%,var(--surface))}
+.lnk b{font-size:15px;line-height:1}
+.donerow{display:flex;align-items:center;gap:9px;margin-top:var(--sp-3);
+  padding-top:var(--sp-3);border-top:1px dashed var(--grid);font-size:12.5px;
+  font-weight:650;color:var(--muted);cursor:pointer;user-select:none}
+.donerow input{width:17px;height:17px;accent-color:var(--correct);cursor:pointer;flex:none;margin:0}
+.card[data-done=true] .donerow{color:var(--correct)}
+.hw{font-size:12.5px;color:var(--muted);line-height:1.5;
+  border-left:2px solid var(--grid);padding-left:10px}
+.hw b{color:var(--ink);font-weight:750}
+
+/* ---------- figures ---------- */
+.figtools{display:flex;gap:var(--sp-3);align-items:center;flex-wrap:wrap;margin-bottom:var(--sp-5)}
+select{font:inherit;font-size:13px;font-weight:650;color:var(--ink);background:var(--surface-2);
+  border:1px solid var(--grid);border-radius:var(--r-pill);padding:8px 13px;cursor:pointer}
+.figgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:var(--sp-4)}
+figure{margin:0;background:var(--surface);border:1px solid var(--grid);
+  border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-1);
+  display:flex;flex-direction:column}
+figure:hover{box-shadow:var(--shadow-2)}
+.figbox{aspect-ratio:4/3;background:var(--panel);display:flex;align-items:center;
+  justify-content:center;padding:10px;border-bottom:1px solid var(--grid);overflow:hidden}
+.figbox img{width:100%;height:100%;object-fit:contain;display:block}
+html[data-theme=dark] .figbox{background:#F5F8FA}
+figcaption{padding:10px 12px;font-family:var(--mono);font-size:11px;color:var(--muted);
+  word-break:break-all;line-height:1.45}
+figcaption b{display:block;font-family:var(--font);font-size:11px;font-weight:800;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin-bottom:3px}
+.figbox.ph::after{content:"";width:26px;height:26px;border-radius:50%;
+  border:2.5px solid var(--grid);border-top-color:var(--muted);animation:sp .8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* ---------- year plan (print view) ---------- */
+#yearplan{display:none}
+body.plan-view #yearplan{display:block}
+body.plan-view .no-plan{display:none}
+.plan-head{display:flex;justify-content:space-between;align-items:flex-end;gap:var(--sp-4);
+  flex-wrap:wrap;margin-bottom:var(--sp-5)}
+table.plan{width:100%;border-collapse:collapse;font-size:12.5px}
+table.plan caption{text-align:left;font-weight:800;font-size:1.1rem;padding-bottom:10px}
+table.plan th,table.plan td{border:1px solid var(--grid);padding:7px 9px;
+  text-align:left;vertical-align:top}
+table.plan thead th{background:var(--surface-2);font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--muted)}
+table.plan tbody tr.t1 td:first-child{border-left:4px solid var(--data)}
+table.plan tbody tr.t2 td:first-child{border-left:4px solid var(--model)}
+table.plan tbody tr.t3 td:first-child{border-left:4px solid var(--correct)}
+table.plan tbody tr.t4 td:first-child{border-left:4px solid var(--accent)}
+table.plan tr.termrow td{background:var(--surface-2);font-weight:800;font-size:11.5px;
+  letter-spacing:.08em;text-transform:uppercase}
+.plan-note{font-size:12px;color:var(--muted);margin-top:var(--sp-4);max-width:80ch}
+
+.empty{display:none;padding:var(--sp-8) var(--sp-5);text-align:center;border:1px dashed var(--grid);
+  border-radius:var(--r-lg);color:var(--muted)}
+.empty b{display:block;color:var(--ink);font-size:1.1rem;margin-bottom:6px}
+body.searching .band[data-hidden=true],.card[hidden],figure[hidden]{display:none!important}
+.band[data-hidden=true]{display:none}
+
+footer{border-top:1px solid var(--grid);margin-top:var(--sp-8);padding:var(--sp-7) 0 var(--sp-8);
+  font-size:13px;color:var(--muted)}
+footer .flinks{display:flex;flex-wrap:wrap;gap:var(--sp-4);margin-bottom:var(--sp-4);
+  font-weight:650}
+.totop{position:fixed;right:18px;bottom:18px;z-index:70;width:42px;height:42px;
+  border-radius:50%;display:none;align-items:center;justify-content:center;
+  background:var(--surface);border:1px solid var(--grid);box-shadow:var(--shadow-2);
+  cursor:pointer;color:var(--ink);font-size:16px}
+.totop.show{display:flex}
+
+@media (max-width:640px){
+  .wrap{padding:0 var(--sp-4)}
+  .band-head,.grid{padding-left:var(--sp-4);padding-right:var(--sp-4)}
+  .band{border-radius:var(--r-lg)}
+  .grid{grid-template-columns:1fr}
+  .hero{padding:var(--sp-7) 0 var(--sp-6)}
+  .overall{margin-left:0;width:100%}
+  .bar{flex:1}
+  .figgrid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important}
+  .card:hover,.btn:hover{transform:none}
+}
+@media print{
+  :root{--bg:#fff;--surface:#fff;--surface-2:#fff;--ink:#14202B;--muted:#55636F;--grid:#C7CDD4}
+  html[data-theme=dark]{--bg:#fff;--surface:#fff;--surface-2:#fff;--ink:#14202B;
+    --muted:#55636F;--grid:#C7CDD4;--data:#1F6FB2;--model:#6D28D9;--human:#845F00;
+    --correct:#1B7A4B;--wrong:#CC2B1D;--accent:#C42B8C}
+  .topbar,.toolbar,.totop,.skip,.herolinks,.figtools,.donerow,.plan-actions{display:none!important}
+  body{font-size:10.5pt}
+  .band,.card,figure{box-shadow:none;break-inside:avoid}
+  a{color:var(--ink);text-decoration:none}
+  .hero::before{display:none}
+  #yearplan{display:block!important}
+  body.plan-view #hero,body.plan-view #figures,body.plan-view .terms,
+  body.plan-view footer,body.plan-view .rule{display:none!important}
+  table.plan{font-size:8.5pt}
+  table.plan thead{display:table-header-group}
+  tr{break-inside:avoid}
+  @page{margin:14mm}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to course content</a>
+<header class="topbar">
+<div class="topbar-in">
+<a class="brand" href="#top"><span class="dot" aria-hidden="true"></span><span>AI Academy<small>Level 1 &middot; 36 weeks</small></span></a>
+<div class="tb-spacer" aria-hidden="true"></div>
+<div class="searchbox">
+<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="6.8" cy="6.8" r="4.6"/><path d="M10.3 10.3 14 14" stroke-linecap="round"/></svg>
+<input type="search" id="q" placeholder="Search weeks, ideas, vocabulary…" aria-label="Search week titles, big ideas and vocabulary" autocomplete="off" spellcheck="false">
+<button type="button" class="clearbtn" id="clearQ" hidden aria-label="Clear the search box">&times;</button>
+</div>
+<button type="button" class="iconbtn" id="planBtn" aria-pressed="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M4 6V2h8v4"/><rect x="2" y="6" width="12" height="5" rx="1"/><path d="M4 11h8v3H4z"/></svg><span class="lbl" id="planLbl">Year plan</span></button>
+<button type="button" class="iconbtn" id="themeBtn" aria-pressed="false" aria-label="Switch to dark theme (currently light)"><svg id="themeIcon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"></svg><span class="lbl" id="themeLbl">Dark</span></button>
+</div>
+</header>
+<main id="main">
+<section class="hero no-plan" id="top">
+<div class="wrap">
+<span class="eyebrow">Level 1 &middot; Explorer &middot; The 36-Week Course</span>
+<h1>One school year to build <em>a real AI</em> &mdash; and prove how good it isn’t.</h1>
+<p class="lede">Thirty-six classes of 60&ndash;75 minutes for <b>one 6th grader</b>, taught by <b>an adult who knows nothing about AI</b>. No coding, no maths beyond fractions and percentages, no preparation beyond the twenty minutes before class.</p>
+<blockquote class="quote">&ldquo;AI is a system that turns examples into a guessing machine.&rdquo;</blockquote>
+<div class="herolinks">
+<a class="btn btn-primary" href="../teacher-guide/00-orientation.md">&#128213; Teachers: start here (orientation)</a>
+<a class="btn" href="#term-1">&#128213; Jump to Week 1</a>
+<a class="btn" href="#figures">&#127912; Figures gallery</a>
+<a class="btn" href="../README.md">&#128196; Course README</a>
+</div>
+<div class="stats">
+<div class="stat"><b>36</b><span>weekly classes</span></div>
+<div class="stat"><b>4</b><span>terms of 9 weeks</span></div>
+<div class="stat"><b>108</b><span>guide &amp; workbook files</span></div>
+<div class="stat"><b>430</b><span>SVG figures</span></div>
+<div class="stat"><b>156</b><span>vocabulary entries</span></div>
+<div class="stat"><b>0</b><span>lines of code</span></div>
+</div>
+</div>
+</section>
+<section class="toolbar no-plan" aria-label="Filter and progress">
+<div class="wrap toolbar-in">
+<div class="chipset" role="group" aria-label="Filter weeks by lesson type">
+<button type="button" class="fchip" data-type="all" aria-pressed="true">All weeks <span class="cnt">36</span></button>
+<button type="button" class="fchip" data-type="teach" aria-pressed="false" title="New idea, worked examples, discussion"><span class="swatch" aria-hidden="true"></span>teach <span class="cnt">21</span></button>
+<button type="button" class="fchip" data-type="lab" aria-pressed="false" title="Hands-on build: Teachable Machine, Scratch, spreadsheet or unplugged"><span class="swatch" aria-hidden="true"></span>lab <span class="cnt">7</span></button>
+<button type="button" class="fchip" data-type="project" aria-pressed="false" title="A thing gets finished and handed in"><span class="swatch" aria-hidden="true"></span>project <span class="cnt">2</span></button>
+<button type="button" class="fchip" data-type="review" aria-pressed="false" title="Term checkpoint: quiz + consolidation + a hands-on piece"><span class="swatch" aria-hidden="true"></span>review <span class="cnt">3</span></button>
+<button type="button" class="fchip" data-type="capstone" aria-pressed="false" title="The AI Fair Booth build"><span class="swatch" aria-hidden="true"></span>capstone <span class="cnt">2</span></button>
+<button type="button" class="fchip" data-type="assessment" aria-pressed="false" title="The final assessment"><span class="swatch" aria-hidden="true"></span>assessment <span class="cnt">1</span></button>
+</div>
+<p class="hits" id="hits" role="status" aria-live="polite" hidden></p>
+<div class="overall">
+<span id="overallTxt">0 / 36 weeks complete</span>
+<div class="bar" id="overallBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Overall course progress"><i></i></div>
+<button type="button" class="iconbtn" id="resetBtn" aria-label="Reset all week progress ticks">Reset</button>
+</div>
+</div>
+</section>
+<div class="terms">
+<div class="wrap">
+<section class="band" id="term-1" data-role="data" aria-labelledby="th-1">
+<div class="band-head">
+<p class="band-kicker">Term 1 <span class="wk">&middot; Weeks 1&ndash;9</span></p>
+<h3 id="th-1">Spotting AI in the Wild</h3>
+<p class="bigq"><b>Big question:</b> What is AI really, and what is it made of?</p>
+<p class="ends"><b>Ends with:</b> The student can sort any system into “a human wrote the rules” vs “it learned from examples”, has a 30-row dataset about their own life, and has watched a hand-written rulebook fail on fresh data.</p>
+<div class="band-prog"><span class="txt">0 / 9 weeks done</span><div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Term 1 progress"><i></i></div></div>
+</div>
+<div class="grid">
+<article class="card" data-week="1" data-type="teach" data-search="1 week 1 week 01 is it smart, or is it just following orders? ai is a machine doing a job that used to need a person&#x27;s judgement — not a brain, not magic. teach artificial intelligence judgement rule-based system if-then rule" data-done="false">
+<div class="card-top"><span class="wknum">Week 01</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>Is It Smart, or Is It Just Following Orders?</h4>
+<p class="big">AI is a machine doing a job that used to need a person&#x27;s judgement — not a brain, not magic.</p>
+<p class="hw"><b>Homework:</b> AI Spotter&#x27;s Log part 1 — 8 systems you touched in 24 hours, each with one sentence on who wrote the rules</p>
+<div class="chips">
+<span class="chip">artificial intelligence</span>
+<span class="chip">judgement</span>
+<span class="chip">rule-based system</span>
+<span class="chip">if-then rule</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-01.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 1: Is It Smart, or Is It Just Following Orders?</span></a>
+<a class="lnk" href="../student-guide/week-01.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 1: Is It Smart, or Is It Just Following Orders?</span></a>
+<a class="lnk" href="../workbook/week-01.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 1: Is It Smart, or Is It Just Following Orders?</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 1, Is It Smart, or Is It Just Following Orders?, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="2" data-type="teach" data-search="2 week 2 week 02 the machine that learns the rule by itself in machine learning nobody writes the rule; the machine finds it by studying labelled examples. teach machine learning example label model" data-done="false">
+<div class="card-top"><span class="wknum">Week 02</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>The Machine That Learns the Rule By Itself</h4>
+<p class="big">In machine learning nobody writes the rule; the machine finds it by studying labelled examples.</p>
+<p class="hw"><b>Homework:</b> Rewrite five &quot;magic&quot; sentences about AI into honest ones, and write the one-sentence definition from memory</p>
+<div class="chips">
+<span class="chip">machine learning</span>
+<span class="chip">example</span>
+<span class="chip">label</span>
+<span class="chip">model</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-02.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 2: The Machine That Learns the Rule By Itself</span></a>
+<a class="lnk" href="../student-guide/week-02.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 2: The Machine That Learns the Rule By Itself</span></a>
+<a class="lnk" href="../workbook/week-02.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 2: The Machine That Learns the Rule By Itself</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 2, The Machine That Learns the Rule By Itself, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="3" data-type="lab" data-search="3 week 3 week 03 ai detective: find 15 in your own day almost every ai you meet is narrow — brilliant at one job, blank at everything else. lab generative ai narrow ai general ai (agi) confidence score" data-done="false">
+<div class="card-top"><span class="wknum">Week 03</span><span class="badge" data-type="lab" title="Hands-on build: Teachable Machine, Scratch, spreadsheet or unplugged">lab</span></div>
+<h4>AI Detective: Find 15 in Your Own Day</h4>
+<p class="big">Almost every AI you meet is narrow — brilliant at one job, blank at everything else.</p>
+<p class="hw"><b>Homework:</b> Finish the AI Spotter&#x27;s Log: 15 rows sorted into rules / learned / generating, plus 3 hard calls defended in writing</p>
+<div class="chips">
+<span class="chip">generative AI</span>
+<span class="chip">narrow AI</span>
+<span class="chip">general AI (AGI)</span>
+<span class="chip">confidence score</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-03.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 3: AI Detective: Find 15 in Your Own Day</span></a>
+<a class="lnk" href="../student-guide/week-03.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 3: AI Detective: Find 15 in Your Own Day</span></a>
+<a class="lnk" href="../workbook/week-03.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 3: AI Detective: Find 15 in Your Own Day</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 3, AI Detective: Find 15 in Your Own Day, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="4" data-type="teach" data-search="4 week 4 week 04 everything a machine knows arrived as a table whatever an ai knows arrived as rows and columns — one row is one thing, one column is one measurement. teach data table row column header" data-done="false">
+<div class="card-top"><span class="wknum">Week 04</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>Everything a Machine Knows Arrived as a Table</h4>
+<p class="big">Whatever an AI knows arrived as rows and columns — one row is one thing, one column is one measurement.</p>
+<p class="hw"><b>Homework:</b> Start &quot;Your Life In 30 Rows&quot;: choose the row unit, write 4 column headers, collect the first 7 rows</p>
+<div class="chips">
+<span class="chip">data</span>
+<span class="chip">table</span>
+<span class="chip">row</span>
+<span class="chip">column</span>
+<span class="chip">header</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-04.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 4: Everything a Machine Knows Arrived as a Table</span></a>
+<a class="lnk" href="../student-guide/week-04.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 4: Everything a Machine Knows Arrived as a Table</span></a>
+<a class="lnk" href="../workbook/week-04.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 4: Everything a Machine Knows Arrived as a Table</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 4, Everything a Machine Knows Arrived as a Table, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="5" data-type="teach" data-search="5 week 5 week 05 numbers, names, and broken boxes every column has a type, and the four kinds of mess — missing, duplicate, impossible, typo — are findable if you look. teach data type missing value duplicate impossible value controlled vocabulary" data-done="false">
+<div class="card-top"><span class="wknum">Week 05</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>Numbers, Names, and Broken Boxes</h4>
+<p class="big">Every column has a type, and the four kinds of mess — missing, duplicate, impossible, typo — are findable if you look.</p>
+<p class="hw"><b>Homework:</b> Run all four checks on your own 30-row table; log every fault you find and the fix you made</p>
+<div class="chips">
+<span class="chip">data type</span>
+<span class="chip">missing value</span>
+<span class="chip">duplicate</span>
+<span class="chip">impossible value</span>
+<span class="chip">controlled vocabulary</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-05.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 5: Numbers, Names, and Broken Boxes</span></a>
+<a class="lnk" href="../student-guide/week-05.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 5: Numbers, Names, and Broken Boxes</span></a>
+<a class="lnk" href="../workbook/week-05.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 5: Numbers, Names, and Broken Boxes</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 5, Numbers, Names, and Broken Boxes, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="6" data-type="lab" data-search="6 week 6 week 06 where did this data come from? thirty rows about you are a sample, not the world — and a data card is how you stay honest about that. lab provenance sample population data card outlier" data-done="false">
+<div class="card-top"><span class="wknum">Week 06</span><span class="badge" data-type="lab" title="Hands-on build: Teachable Machine, Scratch, spreadsheet or unplugged">lab</span></div>
+<h4>Where Did This Data Come From?</h4>
+<p class="big">Thirty rows about you are a sample, not the world — and a data card is how you stay honest about that.</p>
+<p class="hw"><b>Homework:</b> Finish &quot;Your Life In 30 Rows&quot; plus the 7-line data card, and write 3 sentences your data does NOT prove</p>
+<div class="chips">
+<span class="chip">provenance</span>
+<span class="chip">sample</span>
+<span class="chip">population</span>
+<span class="chip">data card</span>
+<span class="chip">outlier</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-06.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 6: Where Did This Data Come From?</span></a>
+<a class="lnk" href="../student-guide/week-06.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 6: Where Did This Data Come From?</span></a>
+<a class="lnk" href="../workbook/week-06.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 6: Where Did This Data Come From?</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 6, Where Did This Data Come From?, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="7" data-type="teach" data-search="7 week 7 week 07 patterns: things that repeat enough to bet on a pattern repeats often enough that betting on it beats guessing; a rule is a pattern written down for a computer. teach pattern condition threshold rulebook default" data-done="false">
+<div class="card-top"><span class="wknum">Week 07</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>Patterns: Things That Repeat Enough to Bet On</h4>
+<p class="big">A pattern repeats often enough that betting on it beats guessing; a rule is a pattern written down for a computer.</p>
+<p class="hw"><b>Homework:</b> Find one real pattern in your own week-6 table by counting, and write it as an if-then rule with a threshold</p>
+<div class="chips">
+<span class="chip">pattern</span>
+<span class="chip">condition</span>
+<span class="chip">threshold</span>
+<span class="chip">rulebook</span>
+<span class="chip">default</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-07.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 7: Patterns: Things That Repeat Enough to Bet On</span></a>
+<a class="lnk" href="../student-guide/week-07.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 7: Patterns: Things That Repeat Enough to Bet On</span></a>
+<a class="lnk" href="../workbook/week-07.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 7: Patterns: Things That Repeat Enough to Bet On</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 7, Patterns: Things That Repeat Enough to Bet On, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="8" data-type="teach" data-search="8 week 8 week 08 where rules break: edge cases and false alarms every rule has edge cases, and the two ways to be wrong — false alarms and misses — hurt different people. teach edge case false alarm miss first match wins labelled example" data-done="false">
+<div class="card-top"><span class="wknum">Week 08</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>Where Rules Break: Edge Cases and False Alarms</h4>
+<p class="big">Every rule has edge cases, and the two ways to be wrong — false alarms and misses — hurt different people.</p>
+<p class="hw"><b>Homework:</b> Write the 138cm-at-a-140cm-ride edge case both ways, then sharpen five vague rules into testable conditions</p>
+<div class="chips">
+<span class="chip">edge case</span>
+<span class="chip">false alarm</span>
+<span class="chip">miss</span>
+<span class="chip">first match wins</span>
+<span class="chip">labelled example</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-08.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 8: Where Rules Break: Edge Cases and False Alarms</span></a>
+<a class="lnk" href="../student-guide/week-08.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 8: Where Rules Break: Edge Cases and False Alarms</span></a>
+<a class="lnk" href="../workbook/week-08.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 8: Where Rules Break: Edge Cases and False Alarms</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 8, Where Rules Break: Edge Cases and False Alarms, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="9" data-type="review" data-search="9 week 9 week 09 term 1 checkpoint — rules on trial a rulebook scored on the messages you wrote it from tells you nothing; the honest score is on messages it has never seen. review training examples fresh examples accuracy" data-done="false">
+<div class="card-top"><span class="wknum">Week 09</span><span class="badge" data-type="review" title="Term checkpoint: quiz + consolidation + a hands-on piece">review</span></div>
+<h4>Term 1 Checkpoint — Rules on Trial</h4>
+<p class="big">A rulebook scored on the messages you wrote it from tells you nothing; the honest score is on messages it has never seen.</p>
+<p class="hw"><b>Homework:</b> Term 1 reflection sheet; fix your rulebook, re-score on 5 more fresh messages, and say which fix broke something else</p>
+<div class="chips">
+<span class="chip">training examples</span>
+<span class="chip">fresh examples</span>
+<span class="chip">accuracy</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-09.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 9: Term 1 Checkpoint — Rules on Trial</span></a>
+<a class="lnk" href="../student-guide/week-09.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 9: Term 1 Checkpoint — Rules on Trial</span></a>
+<a class="lnk" href="../workbook/week-09.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 9: Term 1 Checkpoint — Rules on Trial</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 9, Term 1 Checkpoint — Rules on Trial, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+</div>
+</section>
+<section class="band" id="term-2" data-role="model" aria-labelledby="th-2">
+<div class="band-head">
+<p class="band-kicker">Term 2 <span class="wk">&middot; Weeks 10&ndash;18</span></p>
+<h3 id="th-2">Teaching a Machine to Guess</h3>
+<p class="bigq"><b>Big question:</b> How do you turn the world into examples a machine can learn from?</p>
+<p class="ends"><b>Ends with:</b> A real trained image classifier, plus a controlled-experiment table showing exactly what the model was relying on.</p>
+<div class="band-prog"><span class="txt">0 / 9 weeks done</span><div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Term 2 progress"><i></i></div></div>
+</div>
+<div class="grid">
+<article class="card" data-week="10" data-type="project" data-search="10 week 10 week 10 the rule explosion: why nobody writes 258 rules adding rules to cover exceptions grows faster than the exceptions do — that wall is why machine learning was invented. project check exponential growth rule explosion the machine learning trade labelled example" data-done="false">
+<div class="card-top"><span class="wknum">Week 10</span><span class="badge" data-type="project" title="A thing gets finished and handed in">project</span></div>
+<h4>The Rule Explosion: Why Nobody Writes 258 Rules</h4>
+<p class="big">Adding rules to cover exceptions grows faster than the exceptions do — that wall is why machine learning was invented.</p>
+<p class="hw"><b>Homework:</b> Finish &quot;Rulebook vs Reality&quot;: 5-rule spam detector, scored on 10 fresh messages, plus a page on why you stopped adding rules</p>
+<div class="chips">
+<span class="chip">check</span>
+<span class="chip">exponential growth</span>
+<span class="chip">rule explosion</span>
+<span class="chip">the machine learning trade</span>
+<span class="chip">labelled example</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-10.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 10: The Rule Explosion: Why Nobody Writes 258 Rules</span></a>
+<a class="lnk" href="../student-guide/week-10.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 10: The Rule Explosion: Why Nobody Writes 258 Rules</span></a>
+<a class="lnk" href="../workbook/week-10.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 10: The Rule Explosion: Why Nobody Writes 258 Rules</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 10, The Rule Explosion: Why Nobody Writes 258 Rules, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="11" data-type="teach" data-search="11 week 11 week 11 how a machine describes your dog a feature is one measured description of one example; the label is the answer you want back. teach feature feature table measuring instruction class label" data-done="false">
+<div class="card-top"><span class="wknum">Week 11</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>How a Machine Describes Your Dog</h4>
+<p class="big">A feature is one measured description of one example; the label is the answer you want back.</p>
+<p class="hw"><b>Homework:</b> Measure 5 kitchen objects into a 5-column feature table, with a written measuring instruction for every column</p>
+<div class="chips">
+<span class="chip">feature</span>
+<span class="chip">feature table</span>
+<span class="chip">measuring instruction</span>
+<span class="chip">class</span>
+<span class="chip">label</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-11.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 11: How a Machine Describes Your Dog</span></a>
+<a class="lnk" href="../student-guide/week-11.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 11: How a Machine Describes Your Dog</span></a>
+<a class="lnk" href="../workbook/week-11.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 11: How a Machine Describes Your Dog</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 11, How a Machine Describes Your Dog, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="12" data-type="teach" data-search="12 week 12 week 12 useful, useless, and sneaky features a feature is only useful if it beats guessing — and a leaky feature already contains the answer. teach baseline useful feature useless feature leaky feature leak" data-done="false">
+<div class="card-top"><span class="wknum">Week 12</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>Useful, Useless, and Sneaky Features</h4>
+<p class="big">A feature is only useful if it beats guessing — and a leaky feature already contains the answer.</p>
+<p class="hw"><b>Homework:</b> The leak hunt: 6 scenarios, mark the leaky feature and say why it won&#x27;t exist at prediction time; score your own features against baseline</p>
+<div class="chips">
+<span class="chip">baseline</span>
+<span class="chip">useful feature</span>
+<span class="chip">useless feature</span>
+<span class="chip">leaky feature</span>
+<span class="chip">leak</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-12.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 12: Useful, Useless, and Sneaky Features</span></a>
+<a class="lnk" href="../student-guide/week-12.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 12: Useful, Useless, and Sneaky Features</span></a>
+<a class="lnk" href="../workbook/week-12.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 12: Useful, Useless, and Sneaky Features</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 12, Useful, Useless, and Sneaky Features, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="13" data-type="teach" data-search="13 week 13 week 13 which one? or how much? classification picks from a short list; regression predicts a number — the same table does either, depending on which column you cover. teach classification binary classification multi-class classification regression error bucketing" data-done="false">
+<div class="card-top"><span class="wknum">Week 13</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>Which One? or How Much?</h4>
+<p class="big">Classification picks from a short list; regression predicts a number — the same table does either, depending on which column you cover.</p>
+<p class="hw"><b>Homework:</b> Flip all ten tasks from classification to regression and back; bucket one number label into three named ranges</p>
+<div class="chips">
+<span class="chip">classification</span>
+<span class="chip">binary classification</span>
+<span class="chip">multi-class classification</span>
+<span class="chip">regression</span>
+<span class="chip">error</span>
+<span class="chip">bucketing</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-13.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 13: Which One? or How Much?</span></a>
+<a class="lnk" href="../student-guide/week-13.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 13: Which One? or How Much?</span></a>
+<a class="lnk" href="../workbook/week-13.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 13: Which One? or How Much?</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 13, Which One? or How Much?, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="14" data-type="lab" data-search="14 week 14 week 14 feature card deck: make a human be the model if your features are good enough, a stranger who has never seen the thing can guess its label from the numbers alone. lab bucketing baseline leaky feature" data-done="false">
+<div class="card-top"><span class="wknum">Week 14</span><span class="badge" data-type="lab" title="Hands-on build: Teachable Machine, Scratch, spreadsheet or unplugged">lab</span></div>
+<h4>Feature Card Deck: Make a Human Be the Model</h4>
+<p class="big">If your features are good enough, a stranger who has never seen the thing can guess its label from the numbers alone.</p>
+<p class="hw"><b>Homework:</b> Finish the 20-card deck, test it on a second human, and write which feature the testers actually used and how you know</p>
+<div class="chips">
+<span class="chip">bucketing</span>
+<span class="chip">baseline</span>
+<span class="chip">leaky feature</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-14.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 14: Feature Card Deck: Make a Human Be the Model</span></a>
+<a class="lnk" href="../student-guide/week-14.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 14: Feature Card Deck: Make a Human Be the Model</span></a>
+<a class="lnk" href="../workbook/week-14.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 14: Feature Card Deck: Make a Human Be the Model</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 14, Feature Card Deck: Make a Human Be the Model, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="15" data-type="teach" data-search="15 week 15 week 15 training: turning 120 photos into a guessing machine training reads labelled examples once and produces a model; after that the examples are gone and only the model remains. teach training epoch variety baseline model" data-done="false">
+<div class="card-top"><span class="wknum">Week 15</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>Training: Turning 120 Photos Into a Guessing Machine</h4>
+<p class="big">Training reads labelled examples once and produces a model; after that the examples are gone and only the model remains.</p>
+<p class="hw"><b>Homework:</b> Take and sort 40 photos each of 3 objects following the variety checklist, and log the counts per background and lighting</p>
+<div class="chips">
+<span class="chip">training</span>
+<span class="chip">epoch</span>
+<span class="chip">variety</span>
+<span class="chip">baseline model</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-15.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 15: Training: Turning 120 Photos Into a Guessing Machine</span></a>
+<a class="lnk" href="../student-guide/week-15.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 15: Training: Turning 120 Photos Into a Guessing Machine</span></a>
+<a class="lnk" href="../workbook/week-15.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 15: Training: Turning 120 Photos Into a Guessing Machine</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 15, Training: Turning 120 Photos Into a Guessing Machine, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="16" data-type="teach" data-search="16 week 16 week 16 confidence is not correctness a confidence score is guess strength, not a promise, and the margin tells you how close the race was. teach confidence score margin class balance other class" data-done="false">
+<div class="card-top"><span class="wknum">Week 16</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>Confidence Is Not Correctness</h4>
+<p class="big">A confidence score is guess strength, not a promise, and the margin tells you how close the race was.</p>
+<p class="hw"><b>Homework:</b> Read eight confidence readouts and compute every margin; then write your own confidence policy with a threshold you can justify</p>
+<div class="chips">
+<span class="chip">confidence score</span>
+<span class="chip">margin</span>
+<span class="chip">class balance</span>
+<span class="chip">other class</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-16.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 16: Confidence Is Not Correctness</span></a>
+<a class="lnk" href="../student-guide/week-16.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 16: Confidence Is Not Correctness</span></a>
+<a class="lnk" href="../workbook/week-16.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 16: Confidence Is Not Correctness</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 16, Confidence Is Not Correctness, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="17" data-type="lab" data-search="17 week 17 week 17 train your first real model you can build a working image classifier in twenty minutes without code — and it will be exactly as good as the photos you gave it. lab training epoch baseline confidence score margin class balance" data-done="false">
+<div class="card-top"><span class="wknum">Week 17</span><span class="badge" data-type="lab" title="Hands-on build: Teachable Machine, Scratch, spreadsheet or unplugged">lab</span></div>
+<h4>Train Your First Real Model</h4>
+<p class="big">You can build a working image classifier in twenty minutes without code — and it will be exactly as good as the photos you gave it.</p>
+<p class="hw"><b>Homework:</b> Re-test your model on 5 objects it has never seen, log every prediction, and explain the one that surprised you most</p>
+<div class="chips">
+<span class="vocab-note">No new words &middot; recap</span>
+<span class="chip is-recap">training</span>
+<span class="chip is-recap">epoch</span>
+<span class="chip is-recap">baseline</span>
+<span class="chip is-recap">confidence score</span>
+<span class="chip is-recap">margin</span>
+<span class="chip is-recap">class balance</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-17.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 17: Train Your First Real Model</span></a>
+<a class="lnk" href="../student-guide/week-17.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 17: Train Your First Real Model</span></a>
+<a class="lnk" href="../workbook/week-17.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 17: Train Your First Real Model</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 17, Train Your First Real Model, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="18" data-type="review" data-search="18 week 18 week 18 term 2 checkpoint — break your own model on purpose change one thing at a time and the model will tell you exactly what it was relying on. review controlled experiment sabotage test" data-done="false">
+<div class="card-top"><span class="wknum">Week 18</span><span class="badge" data-type="review" title="Term checkpoint: quiz + consolidation + a hands-on piece">review</span></div>
+<h4>Term 2 Checkpoint — Break Your Own Model on Purpose</h4>
+<p class="big">Change one thing at a time and the model will tell you exactly what it was relying on.</p>
+<p class="hw"><b>Homework:</b> Complete the 5-row controlled-experiment table with a written explanation of every row; Term 2 reflection sheet</p>
+<div class="chips">
+<span class="chip">controlled experiment</span>
+<span class="chip">sabotage test</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-18.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 18: Term 2 Checkpoint — Break Your Own Model on Purpose</span></a>
+<a class="lnk" href="../student-guide/week-18.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 18: Term 2 Checkpoint — Break Your Own Model on Purpose</span></a>
+<a class="lnk" href="../workbook/week-18.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 18: Term 2 Checkpoint — Break Your Own Model on Purpose</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 18, Term 2 Checkpoint — Break Your Own Model on Purpose, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+</div>
+</section>
+<section class="band" id="term-3" data-role="correct" aria-labelledby="th-3">
+<div class="band-head">
+<p class="band-kicker">Term 3 <span class="wk">&middot; Weeks 19&ndash;27</span></p>
+<h3 id="th-3">Trust, Proof, and Pixels</h3>
+<p class="bigq"><b>Big question:</b> How do you prove a model is any good — and what is it actually looking at?</p>
+<p class="ends"><b>Ends with:</b> An honest accuracy number from a sealed envelope of photos, a hand-built confusion matrix, and an edge map made in a spreadsheet. This is the most important term in the course.</p>
+<div class="band-prog"><span class="txt">0 / 9 weeks done</span><div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Term 3 progress"><i></i></div></div>
+</div>
+<div class="grid">
+<article class="card" data-week="19" data-type="teach" data-search="19 week 19 week 19 the test you can&#x27;t study for testing a model on the examples it trained on is cheating; you must hide examples before training and never let it see them. teach training set test set hold out split ratio" data-done="false">
+<div class="card-top"><span class="wknum">Week 19</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>The Test You Can&#x27;t Study For</h4>
+<p class="big">Testing a model on the examples it trained on is cheating; you must hide examples before training and never let it see them.</p>
+<p class="hw"><b>Homework:</b> Take 25 photos per class across two different days, seal day 2 in a signed envelope, and do not open it</p>
+<div class="chips">
+<span class="chip">training set</span>
+<span class="chip">test set</span>
+<span class="chip">hold out</span>
+<span class="chip">split ratio</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-19.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 19: The Test You Can&#x27;t Study For</span></a>
+<a class="lnk" href="../student-guide/week-19.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 19: The Test You Can&#x27;t Study For</span></a>
+<a class="lnk" href="../workbook/week-19.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 19: The Test You Can&#x27;t Study For</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 19, The Test You Can&#x27;t Study For, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="20" data-type="teach" data-search="20 week 20 week 20 accuracy, three ways — and the number that lies accuracy is correct ÷ total, and one accuracy number can hide a class that is completely broken. teach generalizing memorizing the gap per-class accuracy percentage point" data-done="false">
+<div class="card-top"><span class="wknum">Week 20</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>Accuracy, Three Ways — and the Number That Lies</h4>
+<p class="big">Accuracy is correct ÷ total, and one accuracy number can hide a class that is completely broken.</p>
+<p class="hw"><b>Homework:</b> Five accuracy problems shown as fraction, decimal and percentage with the division written out; then find the body the average was hiding</p>
+<div class="chips">
+<span class="chip">generalizing</span>
+<span class="chip">memorizing</span>
+<span class="chip">the gap</span>
+<span class="chip">per-class accuracy</span>
+<span class="chip">percentage point</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-20.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 20: Accuracy, Three Ways — and the Number That Lies</span></a>
+<a class="lnk" href="../student-guide/week-20.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 20: Accuracy, Three Ways — and the Number That Lies</span></a>
+<a class="lnk" href="../workbook/week-20.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 20: Accuracy, Three Ways — and the Number That Lies</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 20, Accuracy, Three Ways — and the Number That Lies, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="21" data-type="teach" data-search="21 week 21 week 21 memorizing vs generalizing a model scoring 100% on its own photos and 40% on new ones didn&#x27;t learn the object — it learned the photos. teach overfitting confusion matrix diagonal off-diagonal cell" data-done="false">
+<div class="card-top"><span class="wknum">Week 21</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>Memorizing vs Generalizing</h4>
+<p class="big">A model scoring 100% on its own photos and 40% on new ones didn&#x27;t learn the object — it learned the photos.</p>
+<p class="hw"><b>Homework:</b> Score somebody else&#x27;s 15-photo test sheet and draw its confusion matrix, then name what got confused with what</p>
+<div class="chips">
+<span class="chip">overfitting</span>
+<span class="chip">confusion matrix</span>
+<span class="chip">diagonal</span>
+<span class="chip">off-diagonal cell</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-21.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 21: Memorizing vs Generalizing</span></a>
+<a class="lnk" href="../student-guide/week-21.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 21: Memorizing vs Generalizing</span></a>
+<a class="lnk" href="../workbook/week-21.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 21: Memorizing vs Generalizing</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 21, Memorizing vs Generalizing, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="22" data-type="project" data-search="22 week 22 week 22 the hidden ten: test your own model honestly the only number worth reporting is the one you got on examples the model had never seen. project held-out test set baseline per-class accuracy confusion matrix the gap" data-done="false">
+<div class="card-top"><span class="wknum">Week 22</span><span class="badge" data-type="project" title="A thing gets finished and handed in">project</span></div>
+<h4>The Hidden Ten: Test Your Own Model Honestly</h4>
+<p class="big">The only number worth reporting is the one you got on examples the model had never seen.</p>
+<p class="hw"><b>Homework:</b> Finish &quot;The Hidden Ten&quot;: scoring sheet, accuracy three ways, hand-drawn confusion matrix, and a 3-sentence verdict naming your worst class</p>
+<div class="chips">
+<span class="vocab-note">No new words &middot; recap</span>
+<span class="chip is-recap">held-out test set</span>
+<span class="chip is-recap">baseline</span>
+<span class="chip is-recap">per-class accuracy</span>
+<span class="chip is-recap">confusion matrix</span>
+<span class="chip is-recap">the gap</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-22.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 22: The Hidden Ten: Test Your Own Model Honestly</span></a>
+<a class="lnk" href="../student-guide/week-22.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 22: The Hidden Ten: Test Your Own Model Honestly</span></a>
+<a class="lnk" href="../workbook/week-22.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 22: The Hidden Ten: Test Your Own Model Honestly</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 22, The Hidden Ten: Test Your Own Model Honestly, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="23" data-type="teach" data-search="23 week 23 week 23 a photo is just a grid of numbers to a computer a picture is nothing but a grid of brightness numbers from 0 to 255. teach pixel grayscale resolution megapixel" data-done="false">
+<div class="card-top"><span class="wknum">Week 23</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>A Photo Is Just a Grid of Numbers</h4>
+<p class="big">To a computer a picture is nothing but a grid of brightness numbers from 0 to 255.</p>
+<p class="hw"><b>Homework:</b> Convert a second 12×12 drawing to numbers, then answer six questions about a number grid without ever seeing the picture</p>
+<div class="chips">
+<span class="chip">pixel</span>
+<span class="chip">grayscale</span>
+<span class="chip">resolution</span>
+<span class="chip">megapixel</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-23.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 23: A Photo Is Just a Grid of Numbers</span></a>
+<a class="lnk" href="../student-guide/week-23.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 23: A Photo Is Just a Grid of Numbers</span></a>
+<a class="lnk" href="../workbook/week-23.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 23: A Photo Is Just a Grid of Numbers</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 23, A Photo Is Just a Grid of Numbers, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="24" data-type="teach" data-search="24 week 24 week 24 colour is three grids stacked a colour picture is three number grids — red, green, blue — and shrinking an image throws information away forever. teach rgb channel downsampling anti-aliasing" data-done="false">
+<div class="card-top"><span class="wknum">Week 24</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>Colour Is Three Grids Stacked</h4>
+<p class="big">A colour picture is three number grids — red, green, blue — and shrinking an image throws information away forever.</p>
+<p class="hw"><b>Homework:</b> Colour by numbers both directions; then shrink a 12×12 grid to 6×6 to 3×3 and list exactly what was lost</p>
+<div class="chips">
+<span class="chip">RGB</span>
+<span class="chip">channel</span>
+<span class="chip">downsampling</span>
+<span class="chip">anti-aliasing</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-24.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 24: Colour Is Three Grids Stacked</span></a>
+<a class="lnk" href="../student-guide/week-24.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 24: Colour Is Three Grids Stacked</span></a>
+<a class="lnk" href="../workbook/week-24.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 24: Colour Is Three Grids Stacked</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 24, Colour Is Three Grids Stacked, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="25" data-type="teach" data-search="25 week 25 week 25 filters: the little grid that finds edges slide a tiny grid of numbers over an image and it highlights one thing; an edge is a sudden change in brightness. teach filter edge absolute value clipping" data-done="false">
+<div class="card-top"><span class="wknum">Week 25</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>Filters: The Little Grid That Finds Edges</h4>
+<p class="big">Slide a tiny grid of numbers over an image and it highlights one thing; an edge is a sudden change in brightness.</p>
+<p class="hw"><b>Homework:</b> Compute six cells of the horizontal filter by hand, combine with the vertical result, and shade the combined edge map</p>
+<div class="chips">
+<span class="chip">filter</span>
+<span class="chip">edge</span>
+<span class="chip">absolute value</span>
+<span class="chip">clipping</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-25.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 25: Filters: The Little Grid That Finds Edges</span></a>
+<a class="lnk" href="../student-guide/week-25.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 25: Filters: The Little Grid That Finds Edges</span></a>
+<a class="lnk" href="../workbook/week-25.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 25: Filters: The Little Grid That Finds Edges</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 25, Filters: The Little Grid That Finds Edges, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="26" data-type="lab" data-search="26 week 26 week 26 pixel lab: make the outline appear edges survive a change of lighting and raw brightness does not — that is why vision models look for edges first. lab edge map filter absolute value clipping" data-done="false">
+<div class="card-top"><span class="wknum">Week 26</span><span class="badge" data-type="lab" title="Hands-on build: Teachable Machine, Scratch, spreadsheet or unplugged">lab</span></div>
+<h4>Pixel Lab: Make the Outline Appear</h4>
+<p class="big">Edges survive a change of lighting and raw brightness does not — that is why vision models look for edges first.</p>
+<p class="hw"><b>Homework:</b> Finish Pixel Lab: two shaded 12×12 grids and one cell&#x27;s arithmetic in full; prove edges beat brightness under two lamps</p>
+<div class="chips">
+<span class="chip">edge map</span>
+<span class="chip">filter</span>
+<span class="chip">absolute value</span>
+<span class="chip">clipping</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-26.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 26: Pixel Lab: Make the Outline Appear</span></a>
+<a class="lnk" href="../student-guide/week-26.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 26: Pixel Lab: Make the Outline Appear</span></a>
+<a class="lnk" href="../workbook/week-26.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 26: Pixel Lab: Make the Outline Appear</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 26, Pixel Lab: Make the Outline Appear, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="27" data-type="review" data-search="27 week 27 week 27 term 3 checkpoint — from pixels to words everything a machine handles first becomes numbers in a table; text is no different from a photo. review corpus token tokenize" data-done="false">
+<div class="card-top"><span class="wknum">Week 27</span><span class="badge" data-type="review" title="Term checkpoint: quiz + consolidation + a hands-on piece">review</span></div>
+<h4>Term 3 Checkpoint — From Pixels to Words</h4>
+<p class="big">Everything a machine handles first becomes numbers in a table; text is no different from a photo.</p>
+<p class="hw"><b>Homework:</b> Term 3 reflection sheet; tokenize a 60-word paragraph from a real book and count its word frequencies</p>
+<div class="chips">
+<span class="chip">corpus</span>
+<span class="chip">token</span>
+<span class="chip">tokenize</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-27.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 27: Term 3 Checkpoint — From Pixels to Words</span></a>
+<a class="lnk" href="../student-guide/week-27.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 27: Term 3 Checkpoint — From Pixels to Words</span></a>
+<a class="lnk" href="../workbook/week-27.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 27: Term 3 Checkpoint — From Pixels to Words</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 27, Term 3 Checkpoint — From Pixels to Words, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+</div>
+</section>
+<section class="band" id="term-4" data-role="accent" aria-labelledby="th-4">
+<div class="band-head">
+<p class="band-kicker">Term 4 <span class="wk">&middot; Weeks 28&ndash;36</span></p>
+<h3 id="th-4">Words, Fairness, and Your Own AI</h3>
+<p class="bigq"><b>Big question:</b> How do machines handle language, who does AI let down, and can you build one and defend it honestly?</p>
+<p class="ends"><b>Ends with:</b> The AI Fair Booth — model, app, data card, honest test sheet, bias report, and a five-minute demo to a real audience.</p>
+<div class="band-prog"><span class="txt">0 / 9 weeks done</span><div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Term 4 progress"><i></i></div></div>
+</div>
+<div class="grid">
+<article class="card" data-week="28" data-type="teach" data-search="28 week 28 week 28 counting word pairs: the whole engine a language model is a giant tally of which word tends to follow which — nothing more mysterious than that. teach word frequency bigram next-word prediction language model" data-done="false">
+<div class="card-top"><span class="wknum">Week 28</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>Counting Word Pairs: The Whole Engine</h4>
+<p class="big">A language model is a giant tally of which word tends to follow which — nothing more mysterious than that.</p>
+<p class="hw"><b>Homework:</b> Build a next-word table from a 60-word corpus you choose yourself, then read four questions off it</p>
+<div class="chips">
+<span class="chip">word frequency</span>
+<span class="chip">bigram</span>
+<span class="chip">next-word prediction</span>
+<span class="chip">language model</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-28.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 28: Counting Word Pairs: The Whole Engine</span></a>
+<a class="lnk" href="../student-guide/week-28.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 28: Counting Word Pairs: The Whole Engine</span></a>
+<a class="lnk" href="../workbook/week-28.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 28: Counting Word Pairs: The Whole Engine</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 28, Counting Word Pairs: The Whole Engine, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="29" data-type="teach" data-search="29 week 29 week 29 dice, fluency, and making things up randomness is why the same prompt gives different answers — and a sentence can be perfectly fluent and completely false. teach sampling greedy prompt context hallucination" data-done="false">
+<div class="card-top"><span class="wknum">Week 29</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>Dice, Fluency, and Making Things Up</h4>
+<p class="big">Randomness is why the same prompt gives different answers — and a sentence can be perfectly fluent and completely false.</p>
+<p class="hw"><b>Homework:</b> Generate three sentences with fixed dice rolls and one greedily; find the hallucination and explain where the falseness came from</p>
+<div class="chips">
+<span class="chip">sampling</span>
+<span class="chip">greedy</span>
+<span class="chip">prompt</span>
+<span class="chip">context</span>
+<span class="chip">hallucination</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-29.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 29: Dice, Fluency, and Making Things Up</span></a>
+<a class="lnk" href="../student-guide/week-29.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 29: Dice, Fluency, and Making Things Up</span></a>
+<a class="lnk" href="../workbook/week-29.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 29: Dice, Fluency, and Making Things Up</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 29, Dice, Fluency, and Making Things Up, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="30" data-type="lab" data-search="30 week 30 week 30 build a chatbot in scratch a rule-based bot and a learned language model fail in completely different ways, and knowing which you&#x27;re talking to changes your trust. lab n-gram trigram fallback" data-done="false">
+<div class="card-top"><span class="wknum">Week 30</span><span class="badge" data-type="lab" title="Hands-on build: Teachable Machine, Scratch, spreadsheet or unplugged">lab</span></div>
+<h4>Build a Chatbot in Scratch</h4>
+<p class="big">A rule-based bot and a learned language model fail in completely different ways, and knowing which you&#x27;re talking to changes your trust.</p>
+<p class="hw"><b>Homework:</b> Finish &quot;The Human Language Model&quot;: tally sheet, 3 generated sentences, running Scratch bot, and 3 sentences comparing how each fails</p>
+<div class="chips">
+<span class="chip">n-gram</span>
+<span class="chip">trigram</span>
+<span class="chip">fallback</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-30.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 30: Build a Chatbot in Scratch</span></a>
+<a class="lnk" href="../student-guide/week-30.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 30: Build a Chatbot in Scratch</span></a>
+<a class="lnk" href="../workbook/week-30.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 30: Build a Chatbot in Scratch</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 30, Build a Chatbot in Scratch, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="31" data-type="teach" data-search="31 week 31 week 31 who is missing from the photos? bias is not the machine being mean — it is a gap in who was in the training data, showing up as a gap in accuracy. teach bias accuracy gap fairness audit false reject" data-done="false">
+<div class="card-top"><span class="wknum">Week 31</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>Who Is Missing From the Photos?</h4>
+<p class="big">Bias is not the machine being mean — it is a gap in who was in the training data, showing up as a gap in accuracy.</p>
+<p class="hw"><b>Homework:</b> Compute a fairness gap from a given 48-photo audit; then predict which group YOUR model will fail on, in writing, before testing</p>
+<div class="chips">
+<span class="chip">bias</span>
+<span class="chip">accuracy gap</span>
+<span class="chip">fairness audit</span>
+<span class="chip">false reject</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-31.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 31: Who Is Missing From the Photos?</span></a>
+<a class="lnk" href="../student-guide/week-31.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 31: Who Is Missing From the Photos?</span></a>
+<a class="lnk" href="../workbook/week-31.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 31: Who Is Missing From the Photos?</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 31, Who Is Missing From the Photos?, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="32" data-type="teach" data-search="32 week 32 week 32 your data, fakes, and trusting too much a photo carries more than a picture, a confident answer is not a correct one, and something real-looking can be made in ten minutes. teach personal data metadata deepfake over-trust automation bias" data-done="false">
+<div class="card-top"><span class="wknum">Week 32</span><span class="badge" data-type="teach" title="New idea, worked examples, discussion">teach</span></div>
+<h4>Your Data, Fakes, and Trusting Too Much</h4>
+<p class="big">A photo carries more than a picture, a confident answer is not a correct one, and something real-looking can be made in ten minutes.</p>
+<p class="hw"><b>Homework:</b> Audit a real product&#x27;s data map with five questions; then fact-check three confident AI answers against a real source</p>
+<div class="chips">
+<span class="chip">personal data</span>
+<span class="chip">metadata</span>
+<span class="chip">deepfake</span>
+<span class="chip">over-trust</span>
+<span class="chip">automation bias</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-32.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 32: Your Data, Fakes, and Trusting Too Much</span></a>
+<a class="lnk" href="../student-guide/week-32.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 32: Your Data, Fakes, and Trusting Too Much</span></a>
+<a class="lnk" href="../workbook/week-32.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 32: Your Data, Fakes, and Trusting Too Much</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 32, Your Data, Fakes, and Trusting Too Much, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="33" data-type="lab" data-search="33 week 33 week 33 audit your own model the most trustworthy thing you can do with your own model is show, with numbers, the group it fails on. lab attribution misinformation disinformation" data-done="false">
+<div class="card-top"><span class="wknum">Week 33</span><span class="badge" data-type="lab" title="Hands-on build: Teachable Machine, Scratch, spreadsheet or unplugged">lab</span></div>
+<h4>Audit Your Own Model</h4>
+<p class="big">The most trustworthy thing you can do with your own model is show, with numbers, the group it fails on.</p>
+<p class="hw"><b>Homework:</b> Finish the Fairness Audit Poster: data map, measured gap in percentage points, the fix priced in photos, and a warning sign for a real user</p>
+<div class="chips">
+<span class="chip">attribution</span>
+<span class="chip">misinformation</span>
+<span class="chip">disinformation</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-33.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 33: Audit Your Own Model</span></a>
+<a class="lnk" href="../student-guide/week-33.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 33: Audit Your Own Model</span></a>
+<a class="lnk" href="../workbook/week-33.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 33: Audit Your Own Model</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 33, Audit Your Own Model, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="34" data-type="capstone" data-search="34 week 34 week 34 the ai fair booth, part 1: build it and test it honestly a real ai project is not the model — it is the model plus the honest paperwork saying what it can and cannot do. capstone held-out set baseline accuracy three ways confusion matrix data card" data-done="false">
+<div class="card-top"><span class="wknum">Week 34</span><span class="badge" data-type="capstone" title="The AI Fair Booth build">capstone</span></div>
+<h4>The AI Fair Booth, Part 1: Build It and Test It Honestly</h4>
+<p class="big">A real AI project is not the model — it is the model plus the honest paperwork saying what it can and cannot do.</p>
+<p class="hw"><b>Homework:</b> Capstone milestones 1–4 evidence: brief, data card draft, saved model file, sealed-envelope scoring sheet with accuracy and matrix</p>
+<div class="chips">
+<span class="vocab-note">No new words &middot; recap</span>
+<span class="chip is-recap">held-out set</span>
+<span class="chip is-recap">baseline</span>
+<span class="chip is-recap">accuracy three ways</span>
+<span class="chip is-recap">confusion matrix</span>
+<span class="chip is-recap">data card</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-34.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 34: The AI Fair Booth, Part 1: Build It and Test It Honestly</span></a>
+<a class="lnk" href="../student-guide/week-34.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 34: The AI Fair Booth, Part 1: Build It and Test It Honestly</span></a>
+<a class="lnk" href="../workbook/week-34.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 34: The AI Fair Booth, Part 1: Build It and Test It Honestly</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 34, The AI Fair Booth, Part 1: Build It and Test It Honestly, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="35" data-type="capstone" data-search="35 week 35 week 35 the ai fair booth, part 2: the app, the report, the demo if you can show your model failing and explain why, you understand it — anyone can show it working. capstone confidence threshold not sure the other class the gap priced fix" data-done="false">
+<div class="card-top"><span class="wknum">Week 35</span><span class="badge" data-type="capstone" title="The AI Fair Booth build">capstone</span></div>
+<h4>The AI Fair Booth, Part 2: The App, the Report, the Demo</h4>
+<p class="big">If you can show your model failing and explain why, you understand it — anyone can show it working.</p>
+<p class="hw"><b>Homework:</b> Rehearse the 5-minute demo three times, twice to a real human; prepare answers to all six question-bank questions; print the booth signs</p>
+<div class="chips">
+<span class="vocab-note">No new words &middot; recap</span>
+<span class="chip is-recap">confidence threshold</span>
+<span class="chip is-recap">not sure</span>
+<span class="chip is-recap">the other class</span>
+<span class="chip is-recap">the gap</span>
+<span class="chip is-recap">priced fix</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-35.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 35: The AI Fair Booth, Part 2: The App, the Report, the Demo</span></a>
+<a class="lnk" href="../student-guide/week-35.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 35: The AI Fair Booth, Part 2: The App, the Report, the Demo</span></a>
+<a class="lnk" href="../workbook/week-35.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 35: The AI Fair Booth, Part 2: The App, the Report, the Demo</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 35, The AI Fair Booth, Part 2: The App, the Report, the Demo, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+<article class="card" data-week="36" data-type="assessment" data-search="36 week 36 week 36 showcase day: prove it, present it, celebrate it you can build a guessing machine, measure it honestly, find who it fails, and explain all of it without saying &quot;magic&quot;. assessment the assessment band not yet the break-it log the level 2 gate" data-done="false">
+<div class="card-top"><span class="wknum">Week 36</span><span class="badge" data-type="assessment" title="The final assessment">assessment</span></div>
+<h4>Showcase Day: Prove It, Present It, Celebrate It</h4>
+<p class="big">You can build a guessing machine, measure it honestly, find who it fails, and explain all of it without saying &quot;magic&quot;.</p>
+<p class="hw"><b>Homework:</b> No new homework — complete the Level 2 gate self-check and write a letter to yourself about what you want to build next</p>
+<div class="chips">
+<span class="vocab-note">No new words &middot; recap</span>
+<span class="chip is-recap">the assessment</span>
+<span class="chip is-recap">band</span>
+<span class="chip is-recap">not yet</span>
+<span class="chip is-recap">the break-it log</span>
+<span class="chip is-recap">the Level 2 gate</span>
+</div>
+<div class="links">
+<a class="lnk" href="../teacher-guide/week-36.md"><b aria-hidden="true">&#128213;</b>Teacher<span class="sr"> guide for week 36: Showcase Day: Prove It, Present It, Celebrate It</span></a>
+<a class="lnk" href="../student-guide/week-36.md"><b aria-hidden="true">&#128215;</b>Student<span class="sr"> guide for week 36: Showcase Day: Prove It, Present It, Celebrate It</span></a>
+<a class="lnk" href="../workbook/week-36.md"><b aria-hidden="true">&#128216;</b>Workbook<span class="sr"> for week 36: Showcase Day: Prove It, Present It, Celebrate It</span></a>
+</div>
+<label class="donerow"><input type="checkbox" aria-label="Mark week 36, Showcase Day: Prove It, Present It, Celebrate It, as complete"><span class="donetxt">Mark complete</span></label>
+</article>
+</div>
+</section>
+<p class="empty" id="empty" role="status"><b>No weeks match that</b>Try a different word, or clear the search and the type filter.</p>
+</div>
+</div>
+<hr class="rule no-plan">
+<section id="figures" class="no-plan">
+<div class="wrap">
+<div class="sec-head">
+<div><h2>Figures gallery</h2><p>Every one of the 430 SVG figures in <code>../figures/</code>, drawn to one palette so the artwork and this site read as a single system. Images load as you scroll.</p></div>
+</div>
+<div class="figtools">
+<label for="figWeek" class="wknum">Filter by week</label>
+<select id="figWeek" aria-label="Filter figures by week">
+<option value="all">All weeks</option>
+<option value="1">Week 01 &mdash; 12 figures</option>
+<option value="2">Week 02 &mdash; 12 figures</option>
+<option value="3">Week 03 &mdash; 13 figures</option>
+<option value="4">Week 04 &mdash; 11 figures</option>
+<option value="5">Week 05 &mdash; 10 figures</option>
+<option value="6">Week 06 &mdash; 11 figures</option>
+<option value="7">Week 07 &mdash; 11 figures</option>
+<option value="8">Week 08 &mdash; 12 figures</option>
+<option value="9">Week 09 &mdash; 11 figures</option>
+<option value="10">Week 10 &mdash; 11 figures</option>
+<option value="11">Week 11 &mdash; 11 figures</option>
+<option value="12">Week 12 &mdash; 11 figures</option>
+<option value="13">Week 13 &mdash; 11 figures</option>
+<option value="14">Week 14 &mdash; 11 figures</option>
+<option value="15">Week 15 &mdash; 12 figures</option>
+<option value="16">Week 16 &mdash; 13 figures</option>
+<option value="17">Week 17 &mdash; 12 figures</option>
+<option value="18">Week 18 &mdash; 12 figures</option>
+<option value="19">Week 19 &mdash; 12 figures</option>
+<option value="20">Week 20 &mdash; 12 figures</option>
+<option value="21">Week 21 &mdash; 11 figures</option>
+<option value="22">Week 22 &mdash; 10 figures</option>
+<option value="23">Week 23 &mdash; 12 figures</option>
+<option value="24">Week 24 &mdash; 12 figures</option>
+<option value="25">Week 25 &mdash; 12 figures</option>
+<option value="26">Week 26 &mdash; 12 figures</option>
+<option value="27">Week 27 &mdash; 12 figures</option>
+<option value="28">Week 28 &mdash; 13 figures</option>
+<option value="29">Week 29 &mdash; 13 figures</option>
+<option value="30">Week 30 &mdash; 13 figures</option>
+<option value="31">Week 31 &mdash; 14 figures</option>
+<option value="32">Week 32 &mdash; 12 figures</option>
+<option value="33">Week 33 &mdash; 14 figures</option>
+<option value="34">Week 34 &mdash; 12 figures</option>
+<option value="35">Week 35 &mdash; 13 figures</option>
+<option value="36">Week 36 &mdash; 13 figures</option>
+<option value="0">Shared assets &mdash; 1</option>
+</select>
+<p class="hits" id="figCount" role="status" aria-live="polite"></p>
+</div>
+<div class="figgrid" id="figgrid">
+<figure data-file="fig-w01-1-not-a-brain.svg" data-wk="1"><div class="figbox ph"></div><figcaption><b>Week 01</b>fig-w01-1-not-a-brain.svg</figcaption></figure>
+<figure data-file="fig-w01-2-judgement-spectrum.svg" data-wk="1"><div class="figbox ph"></div><figcaption><b>Week 01</b>fig-w01-2-judgement-spectrum.svg</figcaption></figure>
+<figure data-file="fig-w01-3-thermostat-flowchart.svg" data-wk="1"><div class="figbox ph"></div><figcaption><b>Week 01</b>fig-w01-3-thermostat-flowchart.svg</figcaption></figure>
+<figure data-file="fig-w01-4-three-bin-mat.svg" data-wk="1"><div class="figbox ph"></div><figcaption><b>Week 01</b>fig-w01-4-three-bin-mat.svg</figcaption></figure>
+<figure data-file="fig-w01-5-vending-trace.svg" data-wk="1"><div class="figbox ph"></div><figcaption><b>Week 01</b>fig-w01-5-vending-trace.svg</figcaption></figure>
+<figure data-file="fig-w01-6-two-people-test.svg" data-wk="1"><div class="figbox ph"></div><figcaption><b>Week 01</b>fig-w01-6-two-people-test.svg</figcaption></figure>
+<figure data-file="fig-w01-7-robot-wrong-vs-right.svg" data-wk="1"><div class="figbox ph"></div><figcaption><b>Week 01</b>fig-w01-7-robot-wrong-vs-right.svg</figcaption></figure>
+<figure data-file="fig-w01-8-vocab-icons.svg" data-wk="1"><div class="figbox ph"></div><figcaption><b>Week 01</b>fig-w01-8-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w01-9-blank-thermostat-loop.svg" data-wk="1"><div class="figbox ph"></div><figcaption><b>Week 01</b>fig-w01-9-blank-thermostat-loop.svg</figcaption></figure>
+<figure data-file="fig-w01-10-puzzle-ice-cream-rules.svg" data-wk="1"><div class="figbox ph"></div><figcaption><b>Week 01</b>fig-w01-10-puzzle-ice-cream-rules.svg</figcaption></figure>
+<figure data-file="fig-w01-11-draw-frame.svg" data-wk="1"><div class="figbox ph"></div><figcaption><b>Week 01</b>fig-w01-11-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w01-12-alphago-one-skill.svg" data-wk="1"><div class="figbox ph"></div><figcaption><b>Week 01</b>fig-w01-12-alphago-one-skill.svg</figcaption></figure>
+<figure data-file="fig-w02-1-two-pipelines.svg" data-wk="2"><div class="figbox ph"></div><figcaption><b>Week 02</b>fig-w02-1-two-pipelines.svg</figcaption></figure>
+<figure data-file="fig-w02-2-mango-cards.svg" data-wk="2"><div class="figbox ph"></div><figcaption><b>Week 02</b>fig-w02-2-mango-cards.svg</figcaption></figure>
+<figure data-file="fig-w02-3-labelled-example-anatomy.svg" data-wk="2"><div class="figbox ph"></div><figcaption><b>Week 02</b>fig-w02-3-labelled-example-anatomy.svg</figcaption></figure>
+<figure data-file="fig-w02-4-cards-in-rule-out.svg" data-wk="2"><div class="figbox ph"></div><figcaption><b>Week 02</b>fig-w02-4-cards-in-rule-out.svg</figcaption></figure>
+<figure data-file="fig-w02-5-who-wrote-the-rule.svg" data-wk="2"><div class="figbox ph"></div><figcaption><b>Week 02</b>fig-w02-5-who-wrote-the-rule.svg</figcaption></figure>
+<figure data-file="fig-w02-6-spam-tally.svg" data-wk="2"><div class="figbox ph"></div><figcaption><b>Week 02</b>fig-w02-6-spam-tally.svg</figcaption></figure>
+<figure data-file="fig-w02-7-frozen-model.svg" data-wk="2"><div class="figbox ph"></div><figcaption><b>Week 02</b>fig-w02-7-frozen-model.svg</figcaption></figure>
+<figure data-file="fig-w02-8-vocab-icons.svg" data-wk="2"><div class="figbox ph"></div><figcaption><b>Week 02</b>fig-w02-8-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w02-9-blank-two-pipelines.svg" data-wk="2"><div class="figbox ph"></div><figcaption><b>Week 02</b>fig-w02-9-blank-two-pipelines.svg</figcaption></figure>
+<figure data-file="fig-w02-10-puzzle-practice-cards.svg" data-wk="2"><div class="figbox ph"></div><figcaption><b>Week 02</b>fig-w02-10-puzzle-practice-cards.svg</figcaption></figure>
+<figure data-file="fig-w02-11-draw-frame.svg" data-wk="2"><div class="figbox ph"></div><figcaption><b>Week 02</b>fig-w02-11-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w02-12-how-you-learned-mangoes.svg" data-wk="2"><div class="figbox ph"></div><figcaption><b>Week 02</b>fig-w02-12-how-you-learned-mangoes.svg</figcaption></figure>
+<figure data-file="fig-w03-1-quickdraw-scorecard.svg" data-wk="3"><div class="figbox ph"></div><figcaption><b>Week 03</b>fig-w03-1-quickdraw-scorecard.svg</figcaption></figure>
+<figure data-file="fig-w03-2-narrow-vs-general.svg" data-wk="3"><div class="figbox ph"></div><figcaption><b>Week 03</b>fig-w03-2-narrow-vs-general.svg</figcaption></figure>
+<figure data-file="fig-w03-3-spotters-log-board.svg" data-wk="3"><div class="figbox ph"></div><figcaption><b>Week 03</b>fig-w03-3-spotters-log-board.svg</figcaption></figure>
+<figure data-file="fig-w03-4-menu-vs-blank-page.svg" data-wk="3"><div class="figbox ph"></div><figcaption><b>Week 03</b>fig-w03-4-menu-vs-blank-page.svg</figcaption></figure>
+<figure data-file="fig-w03-5-confidence-not-correctness.svg" data-wk="3"><div class="figbox ph"></div><figcaption><b>Week 03</b>fig-w03-5-confidence-not-correctness.svg</figcaption></figure>
+<figure data-file="fig-w03-6-three-families-map.svg" data-wk="3"><div class="figbox ph"></div><figcaption><b>Week 03</b>fig-w03-6-three-families-map.svg</figcaption></figure>
+<figure data-file="fig-w03-7-sideways-step.svg" data-wk="3"><div class="figbox ph"></div><figcaption><b>Week 03</b>fig-w03-7-sideways-step.svg</figcaption></figure>
+<figure data-file="fig-w03-8-confident-wrong-vs-right.svg" data-wk="3"><div class="figbox ph"></div><figcaption><b>Week 03</b>fig-w03-8-confident-wrong-vs-right.svg</figcaption></figure>
+<figure data-file="fig-w03-9-vocab-icons.svg" data-wk="3"><div class="figbox ph"></div><figcaption><b>Week 03</b>fig-w03-9-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w03-10-blank-families-map.svg" data-wk="3"><div class="figbox ph"></div><figcaption><b>Week 03</b>fig-w03-10-blank-families-map.svg</figcaption></figure>
+<figure data-file="fig-w03-11-puzzle-count-outputs.svg" data-wk="3"><div class="figbox ph"></div><figcaption><b>Week 03</b>fig-w03-11-puzzle-count-outputs.svg</figcaption></figure>
+<figure data-file="fig-w03-12-draw-frame.svg" data-wk="3"><div class="figbox ph"></div><figcaption><b>Week 03</b>fig-w03-12-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w03-13-outside-the-menu.svg" data-wk="3"><div class="figbox ph"></div><figcaption><b>Week 03</b>fig-w03-13-outside-the-menu.svg</figcaption></figure>
+<figure data-file="fig-w04-1-backpack-to-table.svg" data-wk="4"><div class="figbox ph"></div><figcaption><b>Week 04</b>fig-w04-1-backpack-to-table.svg</figcaption></figure>
+<figure data-file="fig-w04-2-anatomy-of-a-table.svg" data-wk="4"><div class="figbox ph"></div><figcaption><b>Week 04</b>fig-w04-2-anatomy-of-a-table.svg</figcaption></figure>
+<figure data-file="fig-w04-3-one-row-is-one-what.svg" data-wk="4"><div class="figbox ph"></div><figcaption><b>Week 04</b>fig-w04-3-one-row-is-one-what.svg</figcaption></figure>
+<figure data-file="fig-w04-4-pile-vs-table.svg" data-wk="4"><div class="figbox ph"></div><figcaption><b>Week 04</b>fig-w04-4-pile-vs-table.svg</figcaption></figure>
+<figure data-file="fig-w04-5-board-plan.svg" data-wk="4"><div class="figbox ph"></div><figcaption><b>Week 04</b>fig-w04-5-board-plan.svg</figcaption></figure>
+<figure data-file="fig-w04-6-activity-setup.svg" data-wk="4"><div class="figbox ph"></div><figcaption><b>Week 04</b>fig-w04-6-activity-setup.svg</figcaption></figure>
+<figure data-file="fig-w04-7-header-not-data.svg" data-wk="4"><div class="figbox ph"></div><figcaption><b>Week 04</b>fig-w04-7-header-not-data.svg</figcaption></figure>
+<figure data-file="fig-w04-8-vocab-icons.svg" data-wk="4"><div class="figbox ph"></div><figcaption><b>Week 04</b>fig-w04-8-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w04-9-blank-table-label.svg" data-wk="4"><div class="figbox ph"></div><figcaption><b>Week 04</b>fig-w04-9-blank-table-label.svg</figcaption></figure>
+<figure data-file="fig-w04-10-puzzle-squashed-table.svg" data-wk="4"><div class="figbox ph"></div><figcaption><b>Week 04</b>fig-w04-10-puzzle-squashed-table.svg</figcaption></figure>
+<figure data-file="fig-w04-11-draw-frame.svg" data-wk="4"><div class="figbox ph"></div><figcaption><b>Week 04</b>fig-w04-11-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w05-1-four-kinds-of-mess.svg" data-wk="5"><div class="figbox ph"></div><figcaption><b>Week 05</b>fig-w05-1-four-kinds-of-mess.svg</figcaption></figure>
+<figure data-file="fig-w05-2-column-type-tree.svg" data-wk="5"><div class="figbox ph"></div><figcaption><b>Week 05</b>fig-w05-2-column-type-tree.svg</figcaption></figure>
+<figure data-file="fig-w05-3-crime-scene-table.svg" data-wk="5"><div class="figbox ph"></div><figcaption><b>Week 05</b>fig-w05-3-crime-scene-table.svg</figcaption></figure>
+<figure data-file="fig-w05-4-before-after-clean.svg" data-wk="5"><div class="figbox ph"></div><figcaption><b>Week 05</b>fig-w05-4-before-after-clean.svg</figcaption></figure>
+<figure data-file="fig-w05-5-outlier-vs-impossible.svg" data-wk="5"><div class="figbox ph"></div><figcaption><b>Week 05</b>fig-w05-5-outlier-vs-impossible.svg</figcaption></figure>
+<figure data-file="fig-w05-6-blank-versus-zero.svg" data-wk="5"><div class="figbox ph"></div><figcaption><b>Week 05</b>fig-w05-6-blank-versus-zero.svg</figcaption></figure>
+<figure data-file="fig-w05-7-vocab-icons.svg" data-wk="5"><div class="figbox ph"></div><figcaption><b>Week 05</b>fig-w05-7-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w05-8-blank-fault-label.svg" data-wk="5"><div class="figbox ph"></div><figcaption><b>Week 05</b>fig-w05-8-blank-fault-label.svg</figcaption></figure>
+<figure data-file="fig-w05-9-puzzle-pizza-orders.svg" data-wk="5"><div class="figbox ph"></div><figcaption><b>Week 05</b>fig-w05-9-puzzle-pizza-orders.svg</figcaption></figure>
+<figure data-file="fig-w05-10-draw-frame.svg" data-wk="5"><div class="figbox ph"></div><figcaption><b>Week 05</b>fig-w05-10-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w06-1-sample-vs-population.svg" data-wk="6"><div class="figbox ph"></div><figcaption><b>Week 06</b>fig-w06-1-sample-vs-population.svg</figcaption></figure>
+<figure data-file="fig-w06-2-data-card.svg" data-wk="6"><div class="figbox ph"></div><figcaption><b>Week 06</b>fig-w06-2-data-card.svg</figcaption></figure>
+<figure data-file="fig-w06-3-provenance-chain.svg" data-wk="6"><div class="figbox ph"></div><figcaption><b>Week 06</b>fig-w06-3-provenance-chain.svg</figcaption></figure>
+<figure data-file="fig-w06-4-cannot-tell-you.svg" data-wk="6"><div class="figbox ph"></div><figcaption><b>Week 06</b>fig-w06-4-cannot-tell-you.svg</figcaption></figure>
+<figure data-file="fig-w06-5-five-questions.svg" data-wk="6"><div class="figbox ph"></div><figcaption><b>Week 06</b>fig-w06-5-five-questions.svg</figcaption></figure>
+<figure data-file="fig-w06-6-sheets-average.svg" data-wk="6"><div class="figbox ph"></div><figcaption><b>Week 06</b>fig-w06-6-sheets-average.svg</figcaption></figure>
+<figure data-file="fig-w06-7-more-data-wrong-vs-right.svg" data-wk="6"><div class="figbox ph"></div><figcaption><b>Week 06</b>fig-w06-7-more-data-wrong-vs-right.svg</figcaption></figure>
+<figure data-file="fig-w06-8-vocab-icons.svg" data-wk="6"><div class="figbox ph"></div><figcaption><b>Week 06</b>fig-w06-8-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w06-9-blank-sample-population.svg" data-wk="6"><div class="figbox ph"></div><figcaption><b>Week 06</b>fig-w06-9-blank-sample-population.svg</figcaption></figure>
+<figure data-file="fig-w06-10-puzzle-four-surveys.svg" data-wk="6"><div class="figbox ph"></div><figcaption><b>Week 06</b>fig-w06-10-puzzle-four-surveys.svg</figcaption></figure>
+<figure data-file="fig-w06-11-draw-frame.svg" data-wk="6"><div class="figbox ph"></div><figcaption><b>Week 06</b>fig-w06-11-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w07-1-pattern-vs-coincidence.svg" data-wk="7"><div class="figbox ph"></div><figcaption><b>Week 07</b>fig-w07-1-pattern-vs-coincidence.svg</figcaption></figure>
+<figure data-file="fig-w07-2-anatomy-of-a-rule.svg" data-wk="7"><div class="figbox ph"></div><figcaption><b>Week 07</b>fig-w07-2-anatomy-of-a-rule.svg</figcaption></figure>
+<figure data-file="fig-w07-3-rulebook-ladder.svg" data-wk="7"><div class="figbox ph"></div><figcaption><b>Week 07</b>fig-w07-3-rulebook-ladder.svg</figcaption></figure>
+<figure data-file="fig-w07-4-bus-table-counting-grid.svg" data-wk="7"><div class="figbox ph"></div><figcaption><b>Week 07</b>fig-w07-4-bus-table-counting-grid.svg</figcaption></figure>
+<figure data-file="fig-w07-5-beats-guessing.svg" data-wk="7"><div class="figbox ph"></div><figcaption><b>Week 07</b>fig-w07-5-beats-guessing.svg</figcaption></figure>
+<figure data-file="fig-w07-6-fresh-four-scorecard.svg" data-wk="7"><div class="figbox ph"></div><figcaption><b>Week 07</b>fig-w07-6-fresh-four-scorecard.svg</figcaption></figure>
+<figure data-file="fig-w07-7-counts-vs-rates.svg" data-wk="7"><div class="figbox ph"></div><figcaption><b>Week 07</b>fig-w07-7-counts-vs-rates.svg</figcaption></figure>
+<figure data-file="fig-w07-8-vocab-icons.svg" data-wk="7"><div class="figbox ph"></div><figcaption><b>Week 07</b>fig-w07-8-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w07-9-blank-rule-label.svg" data-wk="7"><div class="figbox ph"></div><figcaption><b>Week 07</b>fig-w07-9-blank-rule-label.svg</figcaption></figure>
+<figure data-file="fig-w07-10-puzzle-mystery-threshold.svg" data-wk="7"><div class="figbox ph"></div><figcaption><b>Week 07</b>fig-w07-10-puzzle-mystery-threshold.svg</figcaption></figure>
+<figure data-file="fig-w07-11-draw-frame.svg" data-wk="7"><div class="figbox ph"></div><figcaption><b>Week 07</b>fig-w07-11-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w08-1-false-alarm-miss-grid.svg" data-wk="8"><div class="figbox ph"></div><figcaption><b>Week 08</b>fig-w08-1-false-alarm-miss-grid.svg</figcaption></figure>
+<figure data-file="fig-w08-2-height-sign-138.svg" data-wk="8"><div class="figbox ph"></div><figcaption><b>Week 08</b>fig-w08-2-height-sign-138.svg</figcaption></figure>
+<figure data-file="fig-w08-3-rule-boundary-number-line.svg" data-wk="8"><div class="figbox ph"></div><figcaption><b>Week 08</b>fig-w08-3-rule-boundary-number-line.svg</figcaption></figure>
+<figure data-file="fig-w08-4-first-match-wins-ladder.svg" data-wk="8"><div class="figbox ph"></div><figcaption><b>Week 08</b>fig-w08-4-first-match-wins-ladder.svg</figcaption></figure>
+<figure data-file="fig-w08-5-tighten-loosen-tradeoff.svg" data-wk="8"><div class="figbox ph"></div><figcaption><b>Week 08</b>fig-w08-5-tighten-loosen-tradeoff.svg</figcaption></figure>
+<figure data-file="fig-w08-6-breaker-scorecard.svg" data-wk="8"><div class="figbox ph"></div><figcaption><b>Week 08</b>fig-w08-6-breaker-scorecard.svg</figcaption></figure>
+<figure data-file="fig-w08-7-stand-in.svg" data-wk="8"><div class="figbox ph"></div><figcaption><b>Week 08</b>fig-w08-7-stand-in.svg</figcaption></figure>
+<figure data-file="fig-w08-8-wrong-vs-right-judge.svg" data-wk="8"><div class="figbox ph"></div><figcaption><b>Week 08</b>fig-w08-8-wrong-vs-right-judge.svg</figcaption></figure>
+<figure data-file="fig-w08-9-vocab-icons.svg" data-wk="8"><div class="figbox ph"></div><figcaption><b>Week 08</b>fig-w08-9-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w08-10-blank-grid-label.svg" data-wk="8"><div class="figbox ph"></div><figcaption><b>Week 08</b>fig-w08-10-blank-grid-label.svg</figcaption></figure>
+<figure data-file="fig-w08-11-puzzle-three-thresholds.svg" data-wk="8"><div class="figbox ph"></div><figcaption><b>Week 08</b>fig-w08-11-puzzle-three-thresholds.svg</figcaption></figure>
+<figure data-file="fig-w08-12-draw-frame.svg" data-wk="8"><div class="figbox ph"></div><figcaption><b>Week 08</b>fig-w08-12-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w09-1-sealed-envelope.svg" data-wk="9"><div class="figbox ph"></div><figcaption><b>Week 09</b>fig-w09-1-sealed-envelope.svg</figcaption></figure>
+<figure data-file="fig-w09-2-training-vs-fresh-bars.svg" data-wk="9"><div class="figbox ph"></div><figcaption><b>Week 09</b>fig-w09-2-training-vs-fresh-bars.svg</figcaption></figure>
+<figure data-file="fig-w09-3-accuracy-three-ways.svg" data-wk="9"><div class="figbox ph"></div><figcaption><b>Week 09</b>fig-w09-3-accuracy-three-ways.svg</figcaption></figure>
+<figure data-file="fig-w09-4-term1-concept-map.svg" data-wk="9"><div class="figbox ph"></div><figcaption><b>Week 09</b>fig-w09-4-term1-concept-map.svg</figcaption></figure>
+<figure data-file="fig-w09-5-training-score-lies.svg" data-wk="9"><div class="figbox ph"></div><figcaption><b>Week 09</b>fig-w09-5-training-score-lies.svg</figcaption></figure>
+<figure data-file="fig-w09-6-two-piles.svg" data-wk="9"><div class="figbox ph"></div><figcaption><b>Week 09</b>fig-w09-6-two-piles.svg</figcaption></figure>
+<figure data-file="fig-w09-7-wrong-vs-right-bare-percent.svg" data-wk="9"><div class="figbox ph"></div><figcaption><b>Week 09</b>fig-w09-7-wrong-vs-right-bare-percent.svg</figcaption></figure>
+<figure data-file="fig-w09-8-vocab-icons.svg" data-wk="9"><div class="figbox ph"></div><figcaption><b>Week 09</b>fig-w09-8-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w09-9-blank-two-piles-label.svg" data-wk="9"><div class="figbox ph"></div><figcaption><b>Week 09</b>fig-w09-9-blank-two-piles-label.svg</figcaption></figure>
+<figure data-file="fig-w09-10-puzzle-four-score-cards.svg" data-wk="9"><div class="figbox ph"></div><figcaption><b>Week 09</b>fig-w09-10-puzzle-four-score-cards.svg</figcaption></figure>
+<figure data-file="fig-w09-11-draw-frame.svg" data-wk="9"><div class="figbox ph"></div><figcaption><b>Week 09</b>fig-w09-11-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w10-1-doubling-staircase.svg" data-wk="10"><div class="figbox ph"></div><figcaption><b>Week 10</b>fig-w10-1-doubling-staircase.svg</figcaption></figure>
+<figure data-file="fig-w10-2-rulebook-vs-accuracy.svg" data-wk="10"><div class="figbox ph"></div><figcaption><b>Week 10</b>fig-w10-2-rulebook-vs-accuracy.svg</figcaption></figure>
+<figure data-file="fig-w10-3-machine-learning-trade.svg" data-wk="10"><div class="figbox ph"></div><figcaption><b>Week 10</b>fig-w10-3-machine-learning-trade.svg</figcaption></figure>
+<figure data-file="fig-w10-4-paper-folds.svg" data-wk="10"><div class="figbox ph"></div><figcaption><b>Week 10</b>fig-w10-4-paper-folds.svg</figcaption></figure>
+<figure data-file="fig-w10-5-effort-curves.svg" data-wk="10"><div class="figbox ph"></div><figcaption><b>Week 10</b>fig-w10-5-effort-curves.svg</figcaption></figure>
+<figure data-file="fig-w10-6-board-doubling-table.svg" data-wk="10"><div class="figbox ph"></div><figcaption><b>Week 10</b>fig-w10-6-board-doubling-table.svg</figcaption></figure>
+<figure data-file="fig-w10-7-doubling-not-adding.svg" data-wk="10"><div class="figbox ph"></div><figcaption><b>Week 10</b>fig-w10-7-doubling-not-adding.svg</figcaption></figure>
+<figure data-file="fig-w10-8-vocab-icons.svg" data-wk="10"><div class="figbox ph"></div><figcaption><b>Week 10</b>fig-w10-8-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w10-9-blank-doubling-ladder.svg" data-wk="10"><div class="figbox ph"></div><figcaption><b>Week 10</b>fig-w10-9-blank-doubling-ladder.svg</figcaption></figure>
+<figure data-file="fig-w10-10-two-pocket-money-plans.svg" data-wk="10"><div class="figbox ph"></div><figcaption><b>Week 10</b>fig-w10-10-two-pocket-money-plans.svg</figcaption></figure>
+<figure data-file="fig-w10-11-draw-frame.svg" data-wk="10"><div class="figbox ph"></div><figcaption><b>Week 10</b>fig-w10-11-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w11-1-dog-six-features.svg" data-wk="11"><div class="figbox ph"></div><figcaption><b>Week 11</b>fig-w11-1-dog-six-features.svg</figcaption></figure>
+<figure data-file="fig-w11-2-feature-table-label-flap.svg" data-wk="11"><div class="figbox ph"></div><figcaption><b>Week 11</b>fig-w11-2-feature-table-label-flap.svg</figcaption></figure>
+<figure data-file="fig-w11-3-measuring-instruction.svg" data-wk="11"><div class="figbox ph"></div><figcaption><b>Week 11</b>fig-w11-3-measuring-instruction.svg</figcaption></figure>
+<figure data-file="fig-w11-4-objects-to-rows.svg" data-wk="11"><div class="figbox ph"></div><figcaption><b>Week 11</b>fig-w11-4-objects-to-rows.svg</figcaption></figure>
+<figure data-file="fig-w11-5-real-thing-vs-row.svg" data-wk="11"><div class="figbox ph"></div><figcaption><b>Week 11</b>fig-w11-5-real-thing-vs-row.svg</figcaption></figure>
+<figure data-file="fig-w11-6-board-feature-sheet.svg" data-wk="11"><div class="figbox ph"></div><figcaption><b>Week 11</b>fig-w11-6-board-feature-sheet.svg</figcaption></figure>
+<figure data-file="fig-w11-7-description-vs-feature.svg" data-wk="11"><div class="figbox ph"></div><figcaption><b>Week 11</b>fig-w11-7-description-vs-feature.svg</figcaption></figure>
+<figure data-file="fig-w11-8-vocab-icons.svg" data-wk="11"><div class="figbox ph"></div><figcaption><b>Week 11</b>fig-w11-8-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w11-9-blank-table-label.svg" data-wk="11"><div class="figbox ph"></div><figcaption><b>Week 11</b>fig-w11-9-blank-table-label.svg</figcaption></figure>
+<figure data-file="fig-w11-10-puzzle-four-spoons.svg" data-wk="11"><div class="figbox ph"></div><figcaption><b>Week 11</b>fig-w11-10-puzzle-four-spoons.svg</figcaption></figure>
+<figure data-file="fig-w11-11-draw-frame.svg" data-wk="11"><div class="figbox ph"></div><figcaption><b>Week 11</b>fig-w11-11-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w12-1-three-feature-cards.svg" data-wk="12"><div class="figbox ph"></div><figcaption><b>Week 12</b>fig-w12-1-three-feature-cards.svg</figcaption></figure>
+<figure data-file="fig-w12-2-baseline-scoreboard.svg" data-wk="12"><div class="figbox ph"></div><figcaption><b>Week 12</b>fig-w12-2-baseline-scoreboard.svg</figcaption></figure>
+<figure data-file="fig-w12-3-apple-sticker-leak.svg" data-wk="12"><div class="figbox ph"></div><figcaption><b>Week 12</b>fig-w12-3-apple-sticker-leak.svg</figcaption></figure>
+<figure data-file="fig-w12-4-scoring-by-counting.svg" data-wk="12"><div class="figbox ph"></div><figcaption><b>Week 12</b>fig-w12-4-scoring-by-counting.svg</figcaption></figure>
+<figure data-file="fig-w12-5-three-second-test.svg" data-wk="12"><div class="figbox ph"></div><figcaption><b>Week 12</b>fig-w12-5-three-second-test.svg</figcaption></figure>
+<figure data-file="fig-w12-6-fruit-bowl-setup.svg" data-wk="12"><div class="figbox ph"></div><figcaption><b>Week 12</b>fig-w12-6-fruit-bowl-setup.svg</figcaption></figure>
+<figure data-file="fig-w12-7-hundred-percent-two-ways.svg" data-wk="12"><div class="figbox ph"></div><figcaption><b>Week 12</b>fig-w12-7-hundred-percent-two-ways.svg</figcaption></figure>
+<figure data-file="fig-w12-8-vocab-icons.svg" data-wk="12"><div class="figbox ph"></div><figcaption><b>Week 12</b>fig-w12-8-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w12-9-blank-scoreboard.svg" data-wk="12"><div class="figbox ph"></div><figcaption><b>Week 12</b>fig-w12-9-blank-scoreboard.svg</figcaption></figure>
+<figure data-file="fig-w12-10-puzzle-bakeoff-lineup.svg" data-wk="12"><div class="figbox ph"></div><figcaption><b>Week 12</b>fig-w12-10-puzzle-bakeoff-lineup.svg</figcaption></figure>
+<figure data-file="fig-w12-11-draw-frame.svg" data-wk="12"><div class="figbox ph"></div><figcaption><b>Week 12</b>fig-w12-11-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w13-1-bins-versus-ruler.svg" data-wk="13"><div class="figbox ph"></div><figcaption><b>Week 13</b>fig-w13-1-bins-versus-ruler.svg</figcaption></figure>
+<figure data-file="fig-w13-2-two-flaps-one-table.svg" data-wk="13"><div class="figbox ph"></div><figcaption><b>Week 13</b>fig-w13-2-two-flaps-one-table.svg</figcaption></figure>
+<figure data-file="fig-w13-3-error-number-line.svg" data-wk="13"><div class="figbox ph"></div><figcaption><b>Week 13</b>fig-w13-3-error-number-line.svg</figcaption></figure>
+<figure data-file="fig-w13-4-bucketing-number-line.svg" data-wk="13"><div class="figbox ph"></div><figcaption><b>Week 13</b>fig-w13-4-bucketing-number-line.svg</figcaption></figure>
+<figure data-file="fig-w13-5-board-mean-error.svg" data-wk="13"><div class="figbox ph"></div><figcaption><b>Week 13</b>fig-w13-5-board-mean-error.svg</figcaption></figure>
+<figure data-file="fig-w13-6-two-kinds-of-wrong.svg" data-wk="13"><div class="figbox ph"></div><figcaption><b>Week 13</b>fig-w13-6-two-kinds-of-wrong.svg</figcaption></figure>
+<figure data-file="fig-w13-7-number-shaped-categories.svg" data-wk="13"><div class="figbox ph"></div><figcaption><b>Week 13</b>fig-w13-7-number-shaped-categories.svg</figcaption></figure>
+<figure data-file="fig-w13-8-vocab-icons.svg" data-wk="13"><div class="figbox ph"></div><figcaption><b>Week 13</b>fig-w13-8-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w13-9-blank-bins-ruler.svg" data-wk="13"><div class="figbox ph"></div><figcaption><b>Week 13</b>fig-w13-9-blank-bins-ruler.svg</figcaption></figure>
+<figure data-file="fig-w13-10-puzzle-six-labels.svg" data-wk="13"><div class="figbox ph"></div><figcaption><b>Week 13</b>fig-w13-10-puzzle-six-labels.svg</figcaption></figure>
+<figure data-file="fig-w13-11-draw-frame.svg" data-wk="13"><div class="figbox ph"></div><figcaption><b>Week 13</b>fig-w13-11-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w14-1-card-front-and-back.svg" data-wk="14"><div class="figbox ph"></div><figcaption><b>Week 14</b>fig-w14-1-card-front-and-back.svg</figcaption></figure>
+<figure data-file="fig-w14-2-deck-handover.svg" data-wk="14"><div class="figbox ph"></div><figcaption><b>Week 14</b>fig-w14-2-deck-handover.svg</figcaption></figure>
+<figure data-file="fig-w14-3-accuracy-vs-baseline.svg" data-wk="14"><div class="figbox ph"></div><figcaption><b>Week 14</b>fig-w14-3-accuracy-vs-baseline.svg</figcaption></figure>
+<figure data-file="fig-w14-4-elimination-hunt.svg" data-wk="14"><div class="figbox ph"></div><figcaption><b>Week 14</b>fig-w14-4-elimination-hunt.svg</figcaption></figure>
+<figure data-file="fig-w14-5-leak-check.svg" data-wk="14"><div class="figbox ph"></div><figcaption><b>Week 14</b>fig-w14-5-leak-check.svg</figcaption></figure>
+<figure data-file="fig-w14-6-five-numbers-hook.svg" data-wk="14"><div class="figbox ph"></div><figcaption><b>Week 14</b>fig-w14-6-five-numbers-hook.svg</figcaption></figure>
+<figure data-file="fig-w14-7-score-without-baseline.svg" data-wk="14"><div class="figbox ph"></div><figcaption><b>Week 14</b>fig-w14-7-score-without-baseline.svg</figcaption></figure>
+<figure data-file="fig-w14-8-vocab-icons.svg" data-wk="14"><div class="figbox ph"></div><figcaption><b>Week 14</b>fig-w14-8-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w14-9-blank-card-front.svg" data-wk="14"><div class="figbox ph"></div><figcaption><b>Week 14</b>fig-w14-9-blank-card-front.svg</figcaption></figure>
+<figure data-file="fig-w14-10-puzzle-identical-twins.svg" data-wk="14"><div class="figbox ph"></div><figcaption><b>Week 14</b>fig-w14-10-puzzle-identical-twins.svg</figcaption></figure>
+<figure data-file="fig-w14-11-draw-frame.svg" data-wk="14"><div class="figbox ph"></div><figcaption><b>Week 14</b>fig-w14-11-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w15-1-training-pipeline.svg" data-wk="15"><div class="figbox ph"></div><figcaption><b>Week 15</b>fig-w15-1-training-pipeline.svg</figcaption></figure>
+<figure data-file="fig-w15-2-epoch-loop.svg" data-wk="15"><div class="figbox ph"></div><figcaption><b>Week 15</b>fig-w15-2-epoch-loop.svg</figcaption></figure>
+<figure data-file="fig-w15-3-variety-checklist.svg" data-wk="15"><div class="figbox ph"></div><figcaption><b>Week 15</b>fig-w15-3-variety-checklist.svg</figcaption></figure>
+<figure data-file="fig-w15-4-same-versus-varied.svg" data-wk="15"><div class="figbox ph"></div><figcaption><b>Week 15</b>fig-w15-4-same-versus-varied.svg</figcaption></figure>
+<figure data-file="fig-w15-5-creature-cards.svg" data-wk="15"><div class="figbox ph"></div><figcaption><b>Week 15</b>fig-w15-5-creature-cards.svg</figcaption></figure>
+<figure data-file="fig-w15-6-board-shot-list.svg" data-wk="15"><div class="figbox ph"></div><figcaption><b>Week 15</b>fig-w15-6-board-shot-list.svg</figcaption></figure>
+<figure data-file="fig-w15-7-show-me-the-photos.svg" data-wk="15"><div class="figbox ph"></div><figcaption><b>Week 15</b>fig-w15-7-show-me-the-photos.svg</figcaption></figure>
+<figure data-file="fig-w15-8-photos-not-inside.svg" data-wk="15"><div class="figbox ph"></div><figcaption><b>Week 15</b>fig-w15-8-photos-not-inside.svg</figcaption></figure>
+<figure data-file="fig-w15-9-vocab-icons.svg" data-wk="15"><div class="figbox ph"></div><figcaption><b>Week 15</b>fig-w15-9-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w15-10-blank-pipeline.svg" data-wk="15"><div class="figbox ph"></div><figcaption><b>Week 15</b>fig-w15-10-blank-pipeline.svg</figcaption></figure>
+<figure data-file="fig-w15-11-puzzle-snow-and-grass.svg" data-wk="15"><div class="figbox ph"></div><figcaption><b>Week 15</b>fig-w15-11-puzzle-snow-and-grass.svg</figcaption></figure>
+<figure data-file="fig-w15-12-draw-frame.svg" data-wk="15"><div class="figbox ph"></div><figcaption><b>Week 15</b>fig-w15-12-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w16-1-margin-bars.svg" data-wk="16"><div class="figbox ph"></div><figcaption><b>Week 16</b>fig-w16-1-margin-bars.svg</figcaption></figure>
+<figure data-file="fig-w16-2-same-winner-different-race.svg" data-wk="16"><div class="figbox ph"></div><figcaption><b>Week 16</b>fig-w16-2-same-winner-different-race.svg</figcaption></figure>
+<figure data-file="fig-w16-3-other-class-bin.svg" data-wk="16"><div class="figbox ph"></div><figcaption><b>Week 16</b>fig-w16-3-other-class-bin.svg</figcaption></figure>
+<figure data-file="fig-w16-4-imbalance-scale.svg" data-wk="16"><div class="figbox ph"></div><figcaption><b>Week 16</b>fig-w16-4-imbalance-scale.svg</figcaption></figure>
+<figure data-file="fig-w16-5-board-plan.svg" data-wk="16"><div class="figbox ph"></div><figcaption><b>Week 16</b>fig-w16-5-board-plan.svg</figcaption></figure>
+<figure data-file="fig-w16-6-activity-cards.svg" data-wk="16"><div class="figbox ph"></div><figcaption><b>Week 16</b>fig-w16-6-activity-cards.svg</figcaption></figure>
+<figure data-file="fig-w16-7-vocab-icons.svg" data-wk="16"><div class="figbox ph"></div><figcaption><b>Week 16</b>fig-w16-7-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w16-8-wrong-vs-right-reading.svg" data-wk="16"><div class="figbox ph"></div><figcaption><b>Week 16</b>fig-w16-8-wrong-vs-right-reading.svg</figcaption></figure>
+<figure data-file="fig-w16-9-confident-voice-three-answers.svg" data-wk="16"><div class="figbox ph"></div><figcaption><b>Week 16</b>fig-w16-9-confident-voice-three-answers.svg</figcaption></figure>
+<figure data-file="fig-w16-10-margin-bands.svg" data-wk="16"><div class="figbox ph"></div><figcaption><b>Week 16</b>fig-w16-10-margin-bands.svg</figcaption></figure>
+<figure data-file="fig-w16-11-label-the-readout-blank.svg" data-wk="16"><div class="figbox ph"></div><figcaption><b>Week 16</b>fig-w16-11-label-the-readout-blank.svg</figcaption></figure>
+<figure data-file="fig-w16-12-puzzle-missing-scores.svg" data-wk="16"><div class="figbox ph"></div><figcaption><b>Week 16</b>fig-w16-12-puzzle-missing-scores.svg</figcaption></figure>
+<figure data-file="fig-w16-13-draw-frame.svg" data-wk="16"><div class="figbox ph"></div><figcaption><b>Week 16</b>fig-w16-13-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w17-1-tm-screen-map.svg" data-wk="17"><div class="figbox ph"></div><figcaption><b>Week 17</b>fig-w17-1-tm-screen-map.svg</figcaption></figure>
+<figure data-file="fig-w17-2-save-it-or-lose-it.svg" data-wk="17"><div class="figbox ph"></div><figcaption><b>Week 17</b>fig-w17-2-save-it-or-lose-it.svg</figcaption></figure>
+<figure data-file="fig-w17-3-three-class-setup.svg" data-wk="17"><div class="figbox ph"></div><figcaption><b>Week 17</b>fig-w17-3-three-class-setup.svg</figcaption></figure>
+<figure data-file="fig-w17-4-live-preview-bars.svg" data-wk="17"><div class="figbox ph"></div><figcaption><b>Week 17</b>fig-w17-4-live-preview-bars.svg</figcaption></figure>
+<figure data-file="fig-w17-5-baseline-table.svg" data-wk="17"><div class="figbox ph"></div><figcaption><b>Week 17</b>fig-w17-5-baseline-table.svg</figcaption></figure>
+<figure data-file="fig-w17-6-twenty-second-claim.svg" data-wk="17"><div class="figbox ph"></div><figcaption><b>Week 17</b>fig-w17-6-twenty-second-claim.svg</figcaption></figure>
+<figure data-file="fig-w17-7-ingredients-to-cake.svg" data-wk="17"><div class="figbox ph"></div><figcaption><b>Week 17</b>fig-w17-7-ingredients-to-cake.svg</figcaption></figure>
+<figure data-file="fig-w17-8-wrong-vs-right-record-button.svg" data-wk="17"><div class="figbox ph"></div><figcaption><b>Week 17</b>fig-w17-8-wrong-vs-right-record-button.svg</figcaption></figure>
+<figure data-file="fig-w17-9-vocab-recap-icons.svg" data-wk="17"><div class="figbox ph"></div><figcaption><b>Week 17</b>fig-w17-9-vocab-recap-icons.svg</figcaption></figure>
+<figure data-file="fig-w17-10-label-the-tm-screen-blank.svg" data-wk="17"><div class="figbox ph"></div><figcaption><b>Week 17</b>fig-w17-10-label-the-tm-screen-blank.svg</figcaption></figure>
+<figure data-file="fig-w17-11-puzzle-whose-bar.svg" data-wk="17"><div class="figbox ph"></div><figcaption><b>Week 17</b>fig-w17-11-puzzle-whose-bar.svg</figcaption></figure>
+<figure data-file="fig-w17-12-draw-frame.svg" data-wk="17"><div class="figbox ph"></div><figcaption><b>Week 17</b>fig-w17-12-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w18-1-one-knob-turned.svg" data-wk="18"><div class="figbox ph"></div><figcaption><b>Week 18</b>fig-w18-1-one-knob-turned.svg</figcaption></figure>
+<figure data-file="fig-w18-2-five-row-results.svg" data-wk="18"><div class="figbox ph"></div><figcaption><b>Week 18</b>fig-w18-2-five-row-results.svg</figcaption></figure>
+<figure data-file="fig-w18-3-background-sabotage.svg" data-wk="18"><div class="figbox ph"></div><figcaption><b>Week 18</b>fig-w18-3-background-sabotage.svg</figcaption></figure>
+<figure data-file="fig-w18-4-term2-concept-map.svg" data-wk="18"><div class="figbox ph"></div><figcaption><b>Week 18</b>fig-w18-4-term2-concept-map.svg</figcaption></figure>
+<figure data-file="fig-w18-5-prediction-slip.svg" data-wk="18"><div class="figbox ph"></div><figcaption><b>Week 18</b>fig-w18-5-prediction-slip.svg</figcaption></figure>
+<figure data-file="fig-w18-6-husky-in-snow.svg" data-wk="18"><div class="figbox ph"></div><figcaption><b>Week 18</b>fig-w18-6-husky-in-snow.svg</figcaption></figure>
+<figure data-file="fig-w18-7-sabotage-loop.svg" data-wk="18"><div class="figbox ph"></div><figcaption><b>Week 18</b>fig-w18-7-sabotage-loop.svg</figcaption></figure>
+<figure data-file="fig-w18-8-wrong-vs-right-two-knobs.svg" data-wk="18"><div class="figbox ph"></div><figcaption><b>Week 18</b>fig-w18-8-wrong-vs-right-two-knobs.svg</figcaption></figure>
+<figure data-file="fig-w18-9-vocab-icons.svg" data-wk="18"><div class="figbox ph"></div><figcaption><b>Week 18</b>fig-w18-9-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w18-10-label-the-knobs-blank.svg" data-wk="18"><div class="figbox ph"></div><figcaption><b>Week 18</b>fig-w18-10-label-the-knobs-blank.svg</figcaption></figure>
+<figure data-file="fig-w18-11-puzzle-whodunnit.svg" data-wk="18"><div class="figbox ph"></div><figcaption><b>Week 18</b>fig-w18-11-puzzle-whodunnit.svg</figcaption></figure>
+<figure data-file="fig-w18-12-draw-frame.svg" data-wk="18"><div class="figbox ph"></div><figcaption><b>Week 18</b>fig-w18-12-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w19-1-honest-path-vs-cheat-path.svg" data-wk="19"><div class="figbox ph"></div><figcaption><b>Week 19</b>fig-w19-1-honest-path-vs-cheat-path.svg</figcaption></figure>
+<figure data-file="fig-w19-2-deal-24-and-6.svg" data-wk="19"><div class="figbox ph"></div><figcaption><b>Week 19</b>fig-w19-2-deal-24-and-6.svg</figcaption></figure>
+<figure data-file="fig-w19-3-signed-sealed-envelope.svg" data-wk="19"><div class="figbox ph"></div><figcaption><b>Week 19</b>fig-w19-3-signed-sealed-envelope.svg</figcaption></figure>
+<figure data-file="fig-w19-4-four-cheating-splits.svg" data-wk="19"><div class="figbox ph"></div><figcaption><b>Week 19</b>fig-w19-4-four-cheating-splits.svg</figcaption></figure>
+<figure data-file="fig-w19-5-seal-timeline.svg" data-wk="19"><div class="figbox ph"></div><figcaption><b>Week 19</b>fig-w19-5-seal-timeline.svg</figcaption></figure>
+<figure data-file="fig-w19-6-board-plan.svg" data-wk="19"><div class="figbox ph"></div><figcaption><b>Week 19</b>fig-w19-6-board-plan.svg</figcaption></figure>
+<figure data-file="fig-w19-7-questions-on-the-board.svg" data-wk="19"><div class="figbox ph"></div><figcaption><b>Week 19</b>fig-w19-7-questions-on-the-board.svg</figcaption></figure>
+<figure data-file="fig-w19-8-wrong-vs-right-split-order.svg" data-wk="19"><div class="figbox ph"></div><figcaption><b>Week 19</b>fig-w19-8-wrong-vs-right-split-order.svg</figcaption></figure>
+<figure data-file="fig-w19-9-vocab-icons.svg" data-wk="19"><div class="figbox ph"></div><figcaption><b>Week 19</b>fig-w19-9-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w19-10-label-the-timeline-blank.svg" data-wk="19"><div class="figbox ph"></div><figcaption><b>Week 19</b>fig-w19-10-label-the-timeline-blank.svg</figcaption></figure>
+<figure data-file="fig-w19-11-puzzle-envelope-lineup.svg" data-wk="19"><div class="figbox ph"></div><figcaption><b>Week 19</b>fig-w19-11-puzzle-envelope-lineup.svg</figcaption></figure>
+<figure data-file="fig-w19-12-draw-frame.svg" data-wk="19"><div class="figbox ph"></div><figcaption><b>Week 19</b>fig-w19-12-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w20-1-accuracy-worked-11-over-15.svg" data-wk="20"><div class="figbox ph"></div><figcaption><b>Week 20</b>fig-w20-1-accuracy-worked-11-over-15.svg</figcaption></figure>
+<figure data-file="fig-w20-2-three-ways-strip.svg" data-wk="20"><div class="figbox ph"></div><figcaption><b>Week 20</b>fig-w20-2-three-ways-strip.svg</figcaption></figure>
+<figure data-file="fig-w20-3-hidden-class-bars.svg" data-wk="20"><div class="figbox ph"></div><figcaption><b>Week 20</b>fig-w20-3-hidden-class-bars.svg</figcaption></figure>
+<figure data-file="fig-w20-4-percent-vs-point.svg" data-wk="20"><div class="figbox ph"></div><figcaption><b>Week 20</b>fig-w20-4-percent-vs-point.svg</figcaption></figure>
+<figure data-file="fig-w20-5-scoring-sheet-filled.svg" data-wk="20"><div class="figbox ph"></div><figcaption><b>Week 20</b>fig-w20-5-scoring-sheet-filled.svg</figcaption></figure>
+<figure data-file="fig-w20-6-board-plan.svg" data-wk="20"><div class="figbox ph"></div><figcaption><b>Week 20</b>fig-w20-6-board-plan.svg</figcaption></figure>
+<figure data-file="fig-w20-7-spam-filter-ninety-percent.svg" data-wk="20"><div class="figbox ph"></div><figcaption><b>Week 20</b>fig-w20-7-spam-filter-ninety-percent.svg</figcaption></figure>
+<figure data-file="fig-w20-8-wrong-vs-right-one-number.svg" data-wk="20"><div class="figbox ph"></div><figcaption><b>Week 20</b>fig-w20-8-wrong-vs-right-one-number.svg</figcaption></figure>
+<figure data-file="fig-w20-9-vocab-icons.svg" data-wk="20"><div class="figbox ph"></div><figcaption><b>Week 20</b>fig-w20-9-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w20-10-label-the-bars-blank.svg" data-wk="20"><div class="figbox ph"></div><figcaption><b>Week 20</b>fig-w20-10-label-the-bars-blank.svg</figcaption></figure>
+<figure data-file="fig-w20-11-puzzle-three-adverts.svg" data-wk="20"><div class="figbox ph"></div><figcaption><b>Week 20</b>fig-w20-11-puzzle-three-adverts.svg</figcaption></figure>
+<figure data-file="fig-w20-12-draw-frame.svg" data-wk="20"><div class="figbox ph"></div><figcaption><b>Week 20</b>fig-w20-12-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w21-1-two-students-same-exam.svg" data-wk="21"><div class="figbox ph"></div><figcaption><b>Week 21</b>fig-w21-1-two-students-same-exam.svg</figcaption></figure>
+<figure data-file="fig-w21-2-train-test-gap-bars.svg" data-wk="21"><div class="figbox ph"></div><figcaption><b>Week 21</b>fig-w21-2-train-test-gap-bars.svg</figcaption></figure>
+<figure data-file="fig-w21-3-board-plan.svg" data-wk="21"><div class="figbox ph"></div><figcaption><b>Week 21</b>fig-w21-3-board-plan.svg</figcaption></figure>
+<figure data-file="fig-w21-4-empty-matrix-template.svg" data-wk="21"><div class="figbox ph"></div><figcaption><b>Week 21</b>fig-w21-4-empty-matrix-template.svg</figcaption></figure>
+<figure data-file="fig-w21-5-filled-matrix-diagonal.svg" data-wk="21"><div class="figbox ph"></div><figcaption><b>Week 21</b>fig-w21-5-filled-matrix-diagonal.svg</figcaption></figure>
+<figure data-file="fig-w21-6-route-to-school.svg" data-wk="21"><div class="figbox ph"></div><figcaption><b>Week 21</b>fig-w21-6-route-to-school.svg</figcaption></figure>
+<figure data-file="fig-w21-7-wrong-vs-right-matrix-labels.svg" data-wk="21"><div class="figbox ph"></div><figcaption><b>Week 21</b>fig-w21-7-wrong-vs-right-matrix-labels.svg</figcaption></figure>
+<figure data-file="fig-w21-8-vocab-icons.svg" data-wk="21"><div class="figbox ph"></div><figcaption><b>Week 21</b>fig-w21-8-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w21-9-label-the-matrix-blank.svg" data-wk="21"><div class="figbox ph"></div><figcaption><b>Week 21</b>fig-w21-9-label-the-matrix-blank.svg</figcaption></figure>
+<figure data-file="fig-w21-10-puzzle-mystery-matrix.svg" data-wk="21"><div class="figbox ph"></div><figcaption><b>Week 21</b>fig-w21-10-puzzle-mystery-matrix.svg</figcaption></figure>
+<figure data-file="fig-w21-11-draw-frame.svg" data-wk="21"><div class="figbox ph"></div><figcaption><b>Week 21</b>fig-w21-11-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w22-1-honest-vs-hype.svg" data-wk="22"><div class="figbox ph"></div><figcaption><b>Week 22</b>fig-w22-1-honest-vs-hype.svg</figcaption></figure>
+<figure data-file="fig-w22-2-opening-the-envelope.svg" data-wk="22"><div class="figbox ph"></div><figcaption><b>Week 22</b>fig-w22-2-opening-the-envelope.svg</figcaption></figure>
+<figure data-file="fig-w22-3-scoring-sheet-filled.svg" data-wk="22"><div class="figbox ph"></div><figcaption><b>Week 22</b>fig-w22-3-scoring-sheet-filled.svg</figcaption></figure>
+<figure data-file="fig-w22-4-confusion-matrix-verdict.svg" data-wk="22"><div class="figbox ph"></div><figcaption><b>Week 22</b>fig-w22-4-confusion-matrix-verdict.svg</figcaption></figure>
+<figure data-file="fig-w22-5-train-test-gap.svg" data-wk="22"><div class="figbox ph"></div><figcaption><b>Week 22</b>fig-w22-5-train-test-gap.svg</figcaption></figure>
+<figure data-file="fig-w22-6-wrong-vs-right-retest.svg" data-wk="22"><div class="figbox ph"></div><figcaption><b>Week 22</b>fig-w22-6-wrong-vs-right-retest.svg</figcaption></figure>
+<figure data-file="fig-w22-7-vocab-recap-icons.svg" data-wk="22"><div class="figbox ph"></div><figcaption><b>Week 22</b>fig-w22-7-vocab-recap-icons.svg</figcaption></figure>
+<figure data-file="fig-w22-8-blank-matrix-label.svg" data-wk="22"><div class="figbox ph"></div><figcaption><b>Week 22</b>fig-w22-8-blank-matrix-label.svg</figcaption></figure>
+<figure data-file="fig-w22-9-puzzle-missing-cells.svg" data-wk="22"><div class="figbox ph"></div><figcaption><b>Week 22</b>fig-w22-9-puzzle-missing-cells.svg</figcaption></figure>
+<figure data-file="fig-w22-10-draw-frame.svg" data-wk="22"><div class="figbox ph"></div><figcaption><b>Week 22</b>fig-w22-10-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w23-1-zoom-to-numbers.svg" data-wk="23"><div class="figbox ph"></div><figcaption><b>Week 23</b>fig-w23-1-zoom-to-numbers.svg</figcaption></figure>
+<figure data-file="fig-w23-2-grayscale-ramp.svg" data-wk="23"><div class="figbox ph"></div><figcaption><b>Week 23</b>fig-w23-2-grayscale-ramp.svg</figcaption></figure>
+<figure data-file="fig-w23-3-shading-key.svg" data-wk="23"><div class="figbox ph"></div><figcaption><b>Week 23</b>fig-w23-3-shading-key.svg</figcaption></figure>
+<figure data-file="fig-w23-4-letter-grid-and-numbers.svg" data-wk="23"><div class="figbox ph"></div><figcaption><b>Week 23</b>fig-w23-4-letter-grid-and-numbers.svg</figcaption></figure>
+<figure data-file="fig-w23-5-resolution-ladder.svg" data-wk="23"><div class="figbox ph"></div><figcaption><b>Week 23</b>fig-w23-5-resolution-ladder.svg</figcaption></figure>
+<figure data-file="fig-w23-6-order-matters.svg" data-wk="23"><div class="figbox ph"></div><figcaption><b>Week 23</b>fig-w23-6-order-matters.svg</figcaption></figure>
+<figure data-file="fig-w23-7-board-resolution-maths.svg" data-wk="23"><div class="figbox ph"></div><figcaption><b>Week 23</b>fig-w23-7-board-resolution-maths.svg</figcaption></figure>
+<figure data-file="fig-w23-8-vocab-icons.svg" data-wk="23"><div class="figbox ph"></div><figcaption><b>Week 23</b>fig-w23-8-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w23-9-wrong-vs-right-inverted.svg" data-wk="23"><div class="figbox ph"></div><figcaption><b>Week 23</b>fig-w23-9-wrong-vs-right-inverted.svg</figcaption></figure>
+<figure data-file="fig-w23-10-blank-ramp-label.svg" data-wk="23"><div class="figbox ph"></div><figcaption><b>Week 23</b>fig-w23-10-blank-ramp-label.svg</figcaption></figure>
+<figure data-file="fig-w23-11-puzzle-same-average.svg" data-wk="23"><div class="figbox ph"></div><figcaption><b>Week 23</b>fig-w23-11-puzzle-same-average.svg</figcaption></figure>
+<figure data-file="fig-w23-12-draw-frame.svg" data-wk="23"><div class="figbox ph"></div><figcaption><b>Week 23</b>fig-w23-12-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w24-1-three-channels-stacked.svg" data-wk="24"><div class="figbox ph"></div><figcaption><b>Week 24</b>fig-w24-1-three-channels-stacked.svg</figcaption></figure>
+<figure data-file="fig-w24-2-rgb-mixing.svg" data-wk="24"><div class="figbox ph"></div><figcaption><b>Week 24</b>fig-w24-2-rgb-mixing.svg</figcaption></figure>
+<figure data-file="fig-w24-3-block-average.svg" data-wk="24"><div class="figbox ph"></div><figcaption><b>Week 24</b>fig-w24-3-block-average.svg</figcaption></figure>
+<figure data-file="fig-w24-4-face-three-resolutions.svg" data-wk="24"><div class="figbox ph"></div><figcaption><b>Week 24</b>fig-w24-4-face-three-resolutions.svg</figcaption></figure>
+<figure data-file="fig-w24-5-cannot-go-back.svg" data-wk="24"><div class="figbox ph"></div><figcaption><b>Week 24</b>fig-w24-5-cannot-go-back.svg</figcaption></figure>
+<figure data-file="fig-w24-6-light-not-paint.svg" data-wk="24"><div class="figbox ph"></div><figcaption><b>Week 24</b>fig-w24-6-light-not-paint.svg</figcaption></figure>
+<figure data-file="fig-w24-7-board-downsample.svg" data-wk="24"><div class="figbox ph"></div><figcaption><b>Week 24</b>fig-w24-7-board-downsample.svg</figcaption></figure>
+<figure data-file="fig-w24-8-vocab-icons.svg" data-wk="24"><div class="figbox ph"></div><figcaption><b>Week 24</b>fig-w24-8-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w24-9-wrong-vs-right-enhance.svg" data-wk="24"><div class="figbox ph"></div><figcaption><b>Week 24</b>fig-w24-9-wrong-vs-right-enhance.svg</figcaption></figure>
+<figure data-file="fig-w24-10-blank-channels-label.svg" data-wk="24"><div class="figbox ph"></div><figcaption><b>Week 24</b>fig-w24-10-blank-channels-label.svg</figcaption></figure>
+<figure data-file="fig-w24-11-puzzle-secret-colour.svg" data-wk="24"><div class="figbox ph"></div><figcaption><b>Week 24</b>fig-w24-11-puzzle-secret-colour.svg</figcaption></figure>
+<figure data-file="fig-w24-12-draw-frame.svg" data-wk="24"><div class="figbox ph"></div><figcaption><b>Week 24</b>fig-w24-12-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w25-1-filter-slides-three-stops.svg" data-wk="25"><div class="figbox ph"></div><figcaption><b>Week 25</b>fig-w25-1-filter-slides-three-stops.svg</figcaption></figure>
+<figure data-file="fig-w25-2-one-cell-arithmetic.svg" data-wk="25"><div class="figbox ph"></div><figcaption><b>Week 25</b>fig-w25-2-one-cell-arithmetic.svg</figcaption></figure>
+<figure data-file="fig-w25-3-clipping-number-line.svg" data-wk="25"><div class="figbox ph"></div><figcaption><b>Week 25</b>fig-w25-3-clipping-number-line.svg</figcaption></figure>
+<figure data-file="fig-w25-4-grid-and-edge-map.svg" data-wk="25"><div class="figbox ph"></div><figcaption><b>Week 25</b>fig-w25-4-grid-and-edge-map.svg</figcaption></figure>
+<figure data-file="fig-w25-5-six-cells-board.svg" data-wk="25"><div class="figbox ph"></div><figcaption><b>Week 25</b>fig-w25-5-six-cells-board.svg</figcaption></figure>
+<figure data-file="fig-w25-6-jump-survives-lamp.svg" data-wk="25"><div class="figbox ph"></div><figcaption><b>Week 25</b>fig-w25-6-jump-survives-lamp.svg</figcaption></figure>
+<figure data-file="fig-w25-7-two-kinds-of-zero.svg" data-wk="25"><div class="figbox ph"></div><figcaption><b>Week 25</b>fig-w25-7-two-kinds-of-zero.svg</figcaption></figure>
+<figure data-file="fig-w25-8-two-filters.svg" data-wk="25"><div class="figbox ph"></div><figcaption><b>Week 25</b>fig-w25-8-two-filters.svg</figcaption></figure>
+<figure data-file="fig-w25-9-vocab-icons.svg" data-wk="25"><div class="figbox ph"></div><figcaption><b>Week 25</b>fig-w25-9-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w25-10-label-the-parts.svg" data-wk="25"><div class="figbox ph"></div><figcaption><b>Week 25</b>fig-w25-10-label-the-parts.svg</figcaption></figure>
+<figure data-file="fig-w25-11-puzzle-mystery-filters.svg" data-wk="25"><div class="figbox ph"></div><figcaption><b>Week 25</b>fig-w25-11-puzzle-mystery-filters.svg</figcaption></figure>
+<figure data-file="fig-w25-12-draw-frame.svg" data-wk="25"><div class="figbox ph"></div><figcaption><b>Week 25</b>fig-w25-12-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w26-1-one-formula-drag.svg" data-wk="26"><div class="figbox ph"></div><figcaption><b>Week 26</b>fig-w26-1-one-formula-drag.svg</figcaption></figure>
+<figure data-file="fig-w26-2-conditional-formatting.svg" data-wk="26"><div class="figbox ph"></div><figcaption><b>Week 26</b>fig-w26-2-conditional-formatting.svg</figcaption></figure>
+<figure data-file="fig-w26-3-two-lamps.svg" data-wk="26"><div class="figbox ph"></div><figcaption><b>Week 26</b>fig-w26-3-two-lamps.svg</figcaption></figure>
+<figure data-file="fig-w26-4-background-trap.svg" data-wk="26"><div class="figbox ph"></div><figcaption><b>Week 26</b>fig-w26-4-background-trap.svg</figcaption></figure>
+<figure data-file="fig-w26-5-lab-run-order.svg" data-wk="26"><div class="figbox ph"></div><figcaption><b>Week 26</b>fig-w26-5-lab-run-order.svg</figcaption></figure>
+<figure data-file="fig-w26-6-time-cost-of-one-filter.svg" data-wk="26"><div class="figbox ph"></div><figcaption><b>Week 26</b>fig-w26-6-time-cost-of-one-filter.svg</figcaption></figure>
+<figure data-file="fig-w26-7-formula-three-pieces.svg" data-wk="26"><div class="figbox ph"></div><figcaption><b>Week 26</b>fig-w26-7-formula-three-pieces.svg</figcaption></figure>
+<figure data-file="fig-w26-8-fast-wrong-answer.svg" data-wk="26"><div class="figbox ph"></div><figcaption><b>Week 26</b>fig-w26-8-fast-wrong-answer.svg</figcaption></figure>
+<figure data-file="fig-w26-9-vocab-edge-map.svg" data-wk="26"><div class="figbox ph"></div><figcaption><b>Week 26</b>fig-w26-9-vocab-edge-map.svg</figcaption></figure>
+<figure data-file="fig-w26-10-label-the-spreadsheet.svg" data-wk="26"><div class="figbox ph"></div><figcaption><b>Week 26</b>fig-w26-10-label-the-spreadsheet.svg</figcaption></figure>
+<figure data-file="fig-w26-11-puzzle-lamp-detective.svg" data-wk="26"><div class="figbox ph"></div><figcaption><b>Week 26</b>fig-w26-11-puzzle-lamp-detective.svg</figcaption></figure>
+<figure data-file="fig-w26-12-draw-frame.svg" data-wk="26"><div class="figbox ph"></div><figcaption><b>Week 26</b>fig-w26-12-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w27-1-term3-concept-map.svg" data-wk="27"><div class="figbox ph"></div><figcaption><b>Week 27</b>fig-w27-1-term3-concept-map.svg</figcaption></figure>
+<figure data-file="fig-w27-2-chop-the-sentence.svg" data-wk="27"><div class="figbox ph"></div><figcaption><b>Week 27</b>fig-w27-2-chop-the-sentence.svg</figcaption></figure>
+<figure data-file="fig-w27-3-four-tricky-tokens.svg" data-wk="27"><div class="figbox ph"></div><figcaption><b>Week 27</b>fig-w27-3-four-tricky-tokens.svg</figcaption></figure>
+<figure data-file="fig-w27-4-pixels-and-tokens.svg" data-wk="27"><div class="figbox ph"></div><figcaption><b>Week 27</b>fig-w27-4-pixels-and-tokens.svg</figcaption></figure>
+<figure data-file="fig-w27-5-checkpoint-bands.svg" data-wk="27"><div class="figbox ph"></div><figcaption><b>Week 27</b>fig-w27-5-checkpoint-bands.svg</figcaption></figure>
+<figure data-file="fig-w27-6-pizza-slice-choice.svg" data-wk="27"><div class="figbox ph"></div><figcaption><b>Week 27</b>fig-w27-6-pizza-slice-choice.svg</figcaption></figure>
+<figure data-file="fig-w27-7-tokens-vs-unique.svg" data-wk="27"><div class="figbox ph"></div><figcaption><b>Week 27</b>fig-w27-7-tokens-vs-unique.svg</figcaption></figure>
+<figure data-file="fig-w27-8-glued-vs-split.svg" data-wk="27"><div class="figbox ph"></div><figcaption><b>Week 27</b>fig-w27-8-glued-vs-split.svg</figcaption></figure>
+<figure data-file="fig-w27-9-vocab-icons.svg" data-wk="27"><div class="figbox ph"></div><figcaption><b>Week 27</b>fig-w27-9-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w27-10-chop-it-yourself.svg" data-wk="27"><div class="figbox ph"></div><figcaption><b>Week 27</b>fig-w27-10-chop-it-yourself.svg</figcaption></figure>
+<figure data-file="fig-w27-11-puzzle-rule-detective.svg" data-wk="27"><div class="figbox ph"></div><figcaption><b>Week 27</b>fig-w27-11-puzzle-rule-detective.svg</figcaption></figure>
+<figure data-file="fig-w27-12-draw-frame.svg" data-wk="27"><div class="figbox ph"></div><figcaption><b>Week 27</b>fig-w27-12-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w28-1-tokens-to-pairs.svg" data-wk="28"><div class="figbox ph"></div><figcaption><b>Week 28</b>fig-w28-1-tokens-to-pairs.svg</figcaption></figure>
+<figure data-file="fig-w28-2-tally-sheet-midfill.svg" data-wk="28"><div class="figbox ph"></div><figcaption><b>Week 28</b>fig-w28-2-tally-sheet-midfill.svg</figcaption></figure>
+<figure data-file="fig-w28-3-next-word-table.svg" data-wk="28"><div class="figbox ph"></div><figcaption><b>Week 28</b>fig-w28-3-next-word-table.svg</figcaption></figure>
+<figure data-file="fig-w28-4-keyboard-to-table.svg" data-wk="28"><div class="figbox ph"></div><figcaption><b>Week 28</b>fig-w28-4-keyboard-to-table.svg</figcaption></figure>
+<figure data-file="fig-w28-5-bag-of-slips.svg" data-wk="28"><div class="figbox ph"></div><figcaption><b>Week 28</b>fig-w28-5-bag-of-slips.svg</figcaption></figure>
+<figure data-file="fig-w28-6-board-plan.svg" data-wk="28"><div class="figbox ph"></div><figcaption><b>Week 28</b>fig-w28-6-board-plan.svg</figcaption></figure>
+<figure data-file="fig-w28-7-vocab-icons.svg" data-wk="28"><div class="figbox ph"></div><figcaption><b>Week 28</b>fig-w28-7-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w28-8-frequency-vs-pairs.svg" data-wk="28"><div class="figbox ph"></div><figcaption><b>Week 28</b>fig-w28-8-frequency-vs-pairs.svg</figcaption></figure>
+<figure data-file="fig-w28-9-label-the-table.svg" data-wk="28"><div class="figbox ph"></div><figcaption><b>Week 28</b>fig-w28-9-label-the-table.svg</figcaption></figure>
+<figure data-file="fig-w28-10-draw-frame.svg" data-wk="28"><div class="figbox ph"></div><figcaption><b>Week 28</b>fig-w28-10-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w28-11-puzzle-mystery-corpus.svg" data-wk="28"><div class="figbox ph"></div><figcaption><b>Week 28</b>fig-w28-11-puzzle-mystery-corpus.svg</figcaption></figure>
+<figure data-file="fig-w28-12-once-upon-a.svg" data-wk="28"><div class="figbox ph"></div><figcaption><b>Week 28</b>fig-w28-12-once-upon-a.svg</figcaption></figure>
+<figure data-file="fig-w28-13-more-marks-not-better.svg" data-wk="28"><div class="figbox ph"></div><figcaption><b>Week 28</b>fig-w28-13-more-marks-not-better.svg</figcaption></figure>
+<figure data-file="fig-w29-1-weighted-bag.svg" data-wk="29"><div class="figbox ph"></div><figcaption><b>Week 29</b>fig-w29-1-weighted-bag.svg</figcaption></figure>
+<figure data-file="fig-w29-2-greedy-vs-sampled.svg" data-wk="29"><div class="figbox ph"></div><figcaption><b>Week 29</b>fig-w29-2-greedy-vs-sampled.svg</figcaption></figure>
+<figure data-file="fig-w29-3-false-stamp.svg" data-wk="29"><div class="figbox ph"></div><figcaption><b>Week 29</b>fig-w29-3-false-stamp.svg</figcaption></figure>
+<figure data-file="fig-w29-4-context-windows.svg" data-wk="29"><div class="figbox ph"></div><figcaption><b>Week 29</b>fig-w29-4-context-windows.svg</figcaption></figure>
+<figure data-file="fig-w29-5-score-sheet.svg" data-wk="29"><div class="figbox ph"></div><figcaption><b>Week 29</b>fig-w29-5-score-sheet.svg</figcaption></figure>
+<figure data-file="fig-w29-6-board-plan.svg" data-wk="29"><div class="figbox ph"></div><figcaption><b>Week 29</b>fig-w29-6-board-plan.svg</figcaption></figure>
+<figure data-file="fig-w29-7-vocab-icons.svg" data-wk="29"><div class="figbox ph"></div><figcaption><b>Week 29</b>fig-w29-7-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w29-8-two-axes-wrong-right.svg" data-wk="29"><div class="figbox ph"></div><figcaption><b>Week 29</b>fig-w29-8-two-axes-wrong-right.svg</figcaption></figure>
+<figure data-file="fig-w29-9-label-the-trace.svg" data-wk="29"><div class="figbox ph"></div><figcaption><b>Week 29</b>fig-w29-9-label-the-trace.svg</figcaption></figure>
+<figure data-file="fig-w29-10-draw-frame.svg" data-wk="29"><div class="figbox ph"></div><figcaption><b>Week 29</b>fig-w29-10-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w29-11-puzzle-escape-the-loop.svg" data-wk="29"><div class="figbox ph"></div><figcaption><b>Week 29</b>fig-w29-11-puzzle-escape-the-loop.svg</figcaption></figure>
+<figure data-file="fig-w29-12-same-question-two-answers.svg" data-wk="29"><div class="figbox ph"></div><figcaption><b>Week 29</b>fig-w29-12-same-question-two-answers.svg</figcaption></figure>
+<figure data-file="fig-w29-13-generation-loop.svg" data-wk="29"><div class="figbox ph"></div><figcaption><b>Week 29</b>fig-w29-13-generation-loop.svg</figcaption></figure>
+<figure data-file="fig-w30-1-told-vs-counted.svg" data-wk="30"><div class="figbox ph"></div><figcaption><b>Week 30</b>fig-w30-1-told-vs-counted.svg</figcaption></figure>
+<figure data-file="fig-w30-2-scratch-blocks.svg" data-wk="30"><div class="figbox ph"></div><figcaption><b>Week 30</b>fig-w30-2-scratch-blocks.svg</figcaption></figure>
+<figure data-file="fig-w30-3-two-lists-index.svg" data-wk="30"><div class="figbox ph"></div><figcaption><b>Week 30</b>fig-w30-3-two-lists-index.svg</figcaption></figure>
+<figure data-file="fig-w30-4-fallback-flowchart.svg" data-wk="30"><div class="figbox ph"></div><figcaption><b>Week 30</b>fig-w30-4-fallback-flowchart.svg</figcaption></figure>
+<figure data-file="fig-w30-5-two-failures.svg" data-wk="30"><div class="figbox ph"></div><figcaption><b>Week 30</b>fig-w30-5-two-failures.svg</figcaption></figure>
+<figure data-file="fig-w30-6-board-plan.svg" data-wk="30"><div class="figbox ph"></div><figcaption><b>Week 30</b>fig-w30-6-board-plan.svg</figcaption></figure>
+<figure data-file="fig-w30-7-vocab-icons.svg" data-wk="30"><div class="figbox ph"></div><figcaption><b>Week 30</b>fig-w30-7-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w30-8-ngram-ladder.svg" data-wk="30"><div class="figbox ph"></div><figcaption><b>Week 30</b>fig-w30-8-ngram-ladder.svg</figcaption></figure>
+<figure data-file="fig-w30-9-label-the-flowchart.svg" data-wk="30"><div class="figbox ph"></div><figcaption><b>Week 30</b>fig-w30-9-label-the-flowchart.svg</figcaption></figure>
+<figure data-file="fig-w30-10-draw-frame.svg" data-wk="30"><div class="figbox ph"></div><figcaption><b>Week 30</b>fig-w30-10-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w30-11-puzzle-dead-reply.svg" data-wk="30"><div class="figbox ph"></div><figcaption><b>Week 30</b>fig-w30-11-puzzle-dead-reply.svg</figcaption></figure>
+<figure data-file="fig-w30-12-fallback-wrong-right.svg" data-wk="30"><div class="figbox ph"></div><figcaption><b>Week 30</b>fig-w30-12-fallback-wrong-right.svg</figcaption></figure>
+<figure data-file="fig-w30-13-moon-question.svg" data-wk="30"><div class="figbox ph"></div><figcaption><b>Week 30</b>fig-w30-13-moon-question.svg</figcaption></figure>
+<figure data-file="fig-w31-1-bias-chain.svg" data-wk="31"><div class="figbox ph"></div><figcaption><b>Week 31</b>fig-w31-1-bias-chain.svg</figcaption></figure>
+<figure data-file="fig-w31-2-training-pie-missing-slice.svg" data-wk="31"><div class="figbox ph"></div><figcaption><b>Week 31</b>fig-w31-2-training-pie-missing-slice.svg</figcaption></figure>
+<figure data-file="fig-w31-3-accuracy-gap-bars.svg" data-wk="31"><div class="figbox ph"></div><figcaption><b>Week 31</b>fig-w31-3-accuracy-gap-bars.svg</figcaption></figure>
+<figure data-file="fig-w31-4-trace-gap-to-count.svg" data-wk="31"><div class="figbox ph"></div><figcaption><b>Week 31</b>fig-w31-4-trace-gap-to-count.svg</figcaption></figure>
+<figure data-file="fig-w31-5-false-reject-scanner.svg" data-wk="31"><div class="figbox ph"></div><figcaption><b>Week 31</b>fig-w31-5-false-reject-scanner.svg</figcaption></figure>
+<figure data-file="fig-w31-6-sealed-prediction.svg" data-wk="31"><div class="figbox ph"></div><figcaption><b>Week 31</b>fig-w31-6-sealed-prediction.svg</figcaption></figure>
+<figure data-file="fig-w31-7-mask-and-the-camera.svg" data-wk="31"><div class="figbox ph"></div><figcaption><b>Week 31</b>fig-w31-7-mask-and-the-camera.svg</figcaption></figure>
+<figure data-file="fig-w31-8-average-hides-somebody.svg" data-wk="31"><div class="figbox ph"></div><figcaption><b>Week 31</b>fig-w31-8-average-hides-somebody.svg</figcaption></figure>
+<figure data-file="fig-w31-9-percentage-points.svg" data-wk="31"><div class="figbox ph"></div><figcaption><b>Week 31</b>fig-w31-9-percentage-points.svg</figcaption></figure>
+<figure data-file="fig-w31-10-blame-vs-counts.svg" data-wk="31"><div class="figbox ph"></div><figcaption><b>Week 31</b>fig-w31-10-blame-vs-counts.svg</figcaption></figure>
+<figure data-file="fig-w31-11-vocab-icons.svg" data-wk="31"><div class="figbox ph"></div><figcaption><b>Week 31</b>fig-w31-11-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w31-12-label-the-bias-chain.svg" data-wk="31"><div class="figbox ph"></div><figcaption><b>Week 31</b>fig-w31-12-label-the-bias-chain.svg</figcaption></figure>
+<figure data-file="fig-w31-13-draw-frame.svg" data-wk="31"><div class="figbox ph"></div><figcaption><b>Week 31</b>fig-w31-13-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w31-14-puzzle-move-the-photos.svg" data-wk="31"><div class="figbox ph"></div><figcaption><b>Week 31</b>fig-w31-14-puzzle-move-the-photos.svg</figcaption></figure>
+<figure data-file="fig-w32-1-when-not-to-trust.svg" data-wk="32"><div class="figbox ph"></div><figcaption><b>Week 32</b>fig-w32-1-when-not-to-trust.svg</figcaption></figure>
+<figure data-file="fig-w32-2-eight-hundred-to-one.svg" data-wk="32"><div class="figbox ph"></div><figcaption><b>Week 32</b>fig-w32-2-eight-hundred-to-one.svg</figcaption></figure>
+<figure data-file="fig-w32-3-photo-metadata.svg" data-wk="32"><div class="figbox ph"></div><figcaption><b>Week 32</b>fig-w32-3-photo-metadata.svg</figcaption></figure>
+<figure data-file="fig-w32-4-provenance-checks.svg" data-wk="32"><div class="figbox ph"></div><figcaption><b>Week 32</b>fig-w32-4-provenance-checks.svg</figcaption></figure>
+<figure data-file="fig-w32-5-satnav-river.svg" data-wk="32"><div class="figbox ph"></div><figcaption><b>Week 32</b>fig-w32-5-satnav-river.svg</figcaption></figure>
+<figure data-file="fig-w32-6-three-columns-personal-data.svg" data-wk="32"><div class="figbox ph"></div><figcaption><b>Week 32</b>fig-w32-6-three-columns-personal-data.svg</figcaption></figure>
+<figure data-file="fig-w32-7-two-harms-of-fakes.svg" data-wk="32"><div class="figbox ph"></div><figcaption><b>Week 32</b>fig-w32-7-two-harms-of-fakes.svg</figcaption></figure>
+<figure data-file="fig-w32-8-pixels-vs-provenance.svg" data-wk="32"><div class="figbox ph"></div><figcaption><b>Week 32</b>fig-w32-8-pixels-vs-provenance.svg</figcaption></figure>
+<figure data-file="fig-w32-9-vocab-icons.svg" data-wk="32"><div class="figbox ph"></div><figcaption><b>Week 32</b>fig-w32-9-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w32-10-label-the-photo-file.svg" data-wk="32"><div class="figbox ph"></div><figcaption><b>Week 32</b>fig-w32-10-label-the-photo-file.svg</figcaption></figure>
+<figure data-file="fig-w32-11-draw-frame.svg" data-wk="32"><div class="figbox ph"></div><figcaption><b>Week 32</b>fig-w32-11-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w32-12-puzzle-eight-students.svg" data-wk="32"><div class="figbox ph"></div><figcaption><b>Week 32</b>fig-w32-12-puzzle-eight-students.svg</figcaption></figure>
+<figure data-file="fig-w33-1-audit-five-steps.svg" data-wk="33"><div class="figbox ph"></div><figcaption><b>Week 33</b>fig-w33-1-audit-five-steps.svg</figcaption></figure>
+<figure data-file="fig-w33-2-four-test-batches.svg" data-wk="33"><div class="figbox ph"></div><figcaption><b>Week 33</b>fig-w33-2-four-test-batches.svg</figcaption></figure>
+<figure data-file="fig-w33-3-audit-results-bars.svg" data-wk="33"><div class="figbox ph"></div><figcaption><b>Week 33</b>fig-w33-3-audit-results-bars.svg</figcaption></figure>
+<figure data-file="fig-w33-4-fix-priced.svg" data-wk="33"><div class="figbox ph"></div><figcaption><b>Week 33</b>fig-w33-4-fix-priced.svg</figcaption></figure>
+<figure data-file="fig-w33-5-warning-sign.svg" data-wk="33"><div class="figbox ph"></div><figcaption><b>Week 33</b>fig-w33-5-warning-sign.svg</figcaption></figure>
+<figure data-file="fig-w33-6-poster-layout.svg" data-wk="33"><div class="figbox ph"></div><figcaption><b>Week 33</b>fig-w33-6-poster-layout.svg</figcaption></figure>
+<figure data-file="fig-w33-7-one-attempt-in-pen.svg" data-wk="33"><div class="figbox ph"></div><figcaption><b>Week 33</b>fig-w33-7-one-attempt-in-pen.svg</figcaption></figure>
+<figure data-file="fig-w33-8-misinformation-from-true-sentences.svg" data-wk="33"><div class="figbox ph"></div><figcaption><b>Week 33</b>fig-w33-8-misinformation-from-true-sentences.svg</figcaption></figure>
+<figure data-file="fig-w33-9-report-both-or-neither.svg" data-wk="33"><div class="figbox ph"></div><figcaption><b>Week 33</b>fig-w33-9-report-both-or-neither.svg</figcaption></figure>
+<figure data-file="fig-w33-10-vocab-icons.svg" data-wk="33"><div class="figbox ph"></div><figcaption><b>Week 33</b>fig-w33-10-vocab-icons.svg</figcaption></figure>
+<figure data-file="fig-w33-11-label-the-five-steps.svg" data-wk="33"><div class="figbox ph"></div><figcaption><b>Week 33</b>fig-w33-11-label-the-five-steps.svg</figcaption></figure>
+<figure data-file="fig-w33-12-draw-frame.svg" data-wk="33"><div class="figbox ph"></div><figcaption><b>Week 33</b>fig-w33-12-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w33-13-puzzle-snowball.svg" data-wk="33"><div class="figbox ph"></div><figcaption><b>Week 33</b>fig-w33-13-puzzle-snowball.svg</figcaption></figure>
+<figure data-file="fig-w33-14-soap-dispenser.svg" data-wk="33"><div class="figbox ph"></div><figcaption><b>Week 33</b>fig-w33-14-soap-dispenser.svg</figcaption></figure>
+<figure data-file="fig-w34-1-booth-layout.svg" data-wk="34"><div class="figbox ph"></div><figcaption><b>Week 34</b>fig-w34-1-booth-layout.svg</figcaption></figure>
+<figure data-file="fig-w34-2-milestone-map.svg" data-wk="34"><div class="figbox ph"></div><figcaption><b>Week 34</b>fig-w34-2-milestone-map.svg</figcaption></figure>
+<figure data-file="fig-w34-3-capstone-brief.svg" data-wk="34"><div class="figbox ph"></div><figcaption><b>Week 34</b>fig-w34-3-capstone-brief.svg</figcaption></figure>
+<figure data-file="fig-w34-4-booth-folder.svg" data-wk="34"><div class="figbox ph"></div><figcaption><b>Week 34</b>fig-w34-4-booth-folder.svg</figcaption></figure>
+<figure data-file="fig-w34-5-three-envelopes.svg" data-wk="34"><div class="figbox ph"></div><figcaption><b>Week 34</b>fig-w34-5-three-envelopes.svg</figcaption></figure>
+<figure data-file="fig-w34-6-board-accuracy.svg" data-wk="34"><div class="figbox ph"></div><figcaption><b>Week 34</b>fig-w34-6-board-accuracy.svg</figcaption></figure>
+<figure data-file="fig-w34-7-split-wrong-and-right.svg" data-wk="34"><div class="figbox ph"></div><figcaption><b>Week 34</b>fig-w34-7-split-wrong-and-right.svg</figcaption></figure>
+<figure data-file="fig-w34-8-words-recap.svg" data-wk="34"><div class="figbox ph"></div><figcaption><b>Week 34</b>fig-w34-8-words-recap.svg</figcaption></figure>
+<figure data-file="fig-w34-9-blank-matrix-to-label.svg" data-wk="34"><div class="figbox ph"></div><figcaption><b>Week 34</b>fig-w34-9-blank-matrix-to-label.svg</figcaption></figure>
+<figure data-file="fig-w34-10-puzzle-missing-matrix.svg" data-wk="34"><div class="figbox ph"></div><figcaption><b>Week 34</b>fig-w34-10-puzzle-missing-matrix.svg</figcaption></figure>
+<figure data-file="fig-w34-11-draw-frame.svg" data-wk="34"><div class="figbox ph"></div><figcaption><b>Week 34</b>fig-w34-11-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w34-12-sprint-timeline.svg" data-wk="34"><div class="figbox ph"></div><figcaption><b>Week 34</b>fig-w34-12-sprint-timeline.svg</figcaption></figure>
+<figure data-file="fig-w35-1-scratch-app-layout.svg" data-wk="35"><div class="figbox ph"></div><figcaption><b>Week 35</b>fig-w35-1-scratch-app-layout.svg</figcaption></figure>
+<figure data-file="fig-w35-2-demo-timeline.svg" data-wk="35"><div class="figbox ph"></div><figcaption><b>Week 35</b>fig-w35-2-demo-timeline.svg</figcaption></figure>
+<figure data-file="fig-w35-3-banned-words-sign.svg" data-wk="35"><div class="figbox ph"></div><figcaption><b>Week 35</b>fig-w35-3-banned-words-sign.svg</figcaption></figure>
+<figure data-file="fig-w35-4-rehearsal-cards.svg" data-wk="35"><div class="figbox ph"></div><figcaption><b>Week 35</b>fig-w35-4-rehearsal-cards.svg</figcaption></figure>
+<figure data-file="fig-w35-5-route-a-b.svg" data-wk="35"><div class="figbox ph"></div><figcaption><b>Week 35</b>fig-w35-5-route-a-b.svg</figcaption></figure>
+<figure data-file="fig-w35-6-board-threshold.svg" data-wk="35"><div class="figbox ph"></div><figcaption><b>Week 35</b>fig-w35-6-board-threshold.svg</figcaption></figure>
+<figure data-file="fig-w35-7-threshold-wrong-and-right.svg" data-wk="35"><div class="figbox ph"></div><figcaption><b>Week 35</b>fig-w35-7-threshold-wrong-and-right.svg</figcaption></figure>
+<figure data-file="fig-w35-8-words-recap.svg" data-wk="35"><div class="figbox ph"></div><figcaption><b>Week 35</b>fig-w35-8-words-recap.svg</figcaption></figure>
+<figure data-file="fig-w35-9-blank-flow-to-label.svg" data-wk="35"><div class="figbox ph"></div><figcaption><b>Week 35</b>fig-w35-9-blank-flow-to-label.svg</figcaption></figure>
+<figure data-file="fig-w35-10-puzzle-threshold-detective.svg" data-wk="35"><div class="figbox ph"></div><figcaption><b>Week 35</b>fig-w35-10-puzzle-threshold-detective.svg</figcaption></figure>
+<figure data-file="fig-w35-11-draw-frame.svg" data-wk="35"><div class="figbox ph"></div><figcaption><b>Week 35</b>fig-w35-11-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w35-12-ambiguous-item.svg" data-wk="35"><div class="figbox ph"></div><figcaption><b>Week 35</b>fig-w35-12-ambiguous-item.svg</figcaption></figure>
+<figure data-file="fig-w35-13-bias-chain.svg" data-wk="35"><div class="figbox ph"></div><figcaption><b>Week 35</b>fig-w35-13-bias-chain.svg</figcaption></figure>
+<figure data-file="fig-w36-1-outcomes-certificate.svg" data-wk="36"><div class="figbox ph"></div><figcaption><b>Week 36</b>fig-w36-1-outcomes-certificate.svg</figcaption></figure>
+<figure data-file="fig-w36-2-showcase-scene.svg" data-wk="36"><div class="figbox ph"></div><figcaption><b>Week 36</b>fig-w36-2-showcase-scene.svg</figcaption></figure>
+<figure data-file="fig-w36-3-level-door.svg" data-wk="36"><div class="figbox ph"></div><figcaption><b>Week 36</b>fig-w36-3-level-door.svg</figcaption></figure>
+<figure data-file="fig-w36-4-certificate.svg" data-wk="36"><div class="figbox ph"></div><figcaption><b>Week 36</b>fig-w36-4-certificate.svg</figcaption></figure>
+<figure data-file="fig-w36-5-three-parts.svg" data-wk="36"><div class="figbox ph"></div><figcaption><b>Week 36</b>fig-w36-5-three-parts.svg</figcaption></figure>
+<figure data-file="fig-w36-6-board-score-bands.svg" data-wk="36"><div class="figbox ph"></div><figcaption><b>Week 36</b>fig-w36-6-board-score-bands.svg</figcaption></figure>
+<figure data-file="fig-w36-7-claim-wrong-and-right.svg" data-wk="36"><div class="figbox ph"></div><figcaption><b>Week 36</b>fig-w36-7-claim-wrong-and-right.svg</figcaption></figure>
+<figure data-file="fig-w36-8-words-recap.svg" data-wk="36"><div class="figbox ph"></div><figcaption><b>Week 36</b>fig-w36-8-words-recap.svg</figcaption></figure>
+<figure data-file="fig-w36-9-blank-door-to-label.svg" data-wk="36"><div class="figbox ph"></div><figcaption><b>Week 36</b>fig-w36-9-blank-door-to-label.svg</figcaption></figure>
+<figure data-file="fig-w36-10-puzzle-bigram-repair.svg" data-wk="36"><div class="figbox ph"></div><figcaption><b>Week 36</b>fig-w36-10-puzzle-bigram-repair.svg</figcaption></figure>
+<figure data-file="fig-w36-11-draw-frame.svg" data-wk="36"><div class="figbox ph"></div><figcaption><b>Week 36</b>fig-w36-11-draw-frame.svg</figcaption></figure>
+<figure data-file="fig-w36-12-september-and-now.svg" data-wk="36"><div class="figbox ph"></div><figcaption><b>Week 36</b>fig-w36-12-september-and-now.svg</figcaption></figure>
+<figure data-file="fig-w36-13-booth-table-layout.svg" data-wk="36"><div class="figbox ph"></div><figcaption><b>Week 36</b>fig-w36-13-booth-table-layout.svg</figcaption></figure>
+<figure data-file="_motifs.svg" data-wk="0"><div class="figbox ph"></div><figcaption><b>Shared</b>_motifs.svg</figcaption></figure>
+</div>
+</div>
+</section>
+<section id="yearplan">
+<div class="wrap">
+<div class="plan-head">
+<div><h2>The year plan &mdash; all 36 weeks</h2><p class="hits">One page. Print it, pin it above the kitchen table.</p></div>
+<div class="plan-actions herolinks" style="margin-top:0"><button type="button" class="btn btn-primary" id="planPrint">&#128424; Print this plan</button><button type="button" class="btn" id="planExit">Back to the course</button></div>
+</div>
+<table class="plan">
+<caption>Level 1 Explorer &middot; 36-Week Course &middot; one class a week, 60&ndash;75 minutes</caption>
+<thead><tr><th scope="col" style="width:3.2em">Wk</th><th scope="col">Title</th><th scope="col">Big idea</th><th scope="col" style="width:5.4em">Type</th><th scope="col">New vocabulary</th></tr></thead>
+<tbody>
+<tr class="termrow"><td colspan="5">Term 1 &middot; Weeks 1&ndash;9 &middot; Spotting AI in the Wild &mdash; What is AI really, and what is it made of?</td></tr>
+<tr class="t1"><td><b>01</b></td><td>Is It Smart, or Is It Just Following Orders?</td><td>AI is a machine doing a job that used to need a person&#x27;s judgement — not a brain, not magic.</td><td>teach</td><td>artificial intelligence, judgement, rule-based system, if-then rule</td></tr>
+<tr class="t1"><td><b>02</b></td><td>The Machine That Learns the Rule By Itself</td><td>In machine learning nobody writes the rule; the machine finds it by studying labelled examples.</td><td>teach</td><td>machine learning, example, label, model</td></tr>
+<tr class="t1"><td><b>03</b></td><td>AI Detective: Find 15 in Your Own Day</td><td>Almost every AI you meet is narrow — brilliant at one job, blank at everything else.</td><td>lab</td><td>generative AI, narrow AI, general AI (AGI), confidence score</td></tr>
+<tr class="t1"><td><b>04</b></td><td>Everything a Machine Knows Arrived as a Table</td><td>Whatever an AI knows arrived as rows and columns — one row is one thing, one column is one measurement.</td><td>teach</td><td>data, table, row, column, header</td></tr>
+<tr class="t1"><td><b>05</b></td><td>Numbers, Names, and Broken Boxes</td><td>Every column has a type, and the four kinds of mess — missing, duplicate, impossible, typo — are findable if you look.</td><td>teach</td><td>data type, missing value, duplicate, impossible value, controlled vocabulary</td></tr>
+<tr class="t1"><td><b>06</b></td><td>Where Did This Data Come From?</td><td>Thirty rows about you are a sample, not the world — and a data card is how you stay honest about that.</td><td>lab</td><td>provenance, sample, population, data card, outlier</td></tr>
+<tr class="t1"><td><b>07</b></td><td>Patterns: Things That Repeat Enough to Bet On</td><td>A pattern repeats often enough that betting on it beats guessing; a rule is a pattern written down for a computer.</td><td>teach</td><td>pattern, condition, threshold, rulebook, default</td></tr>
+<tr class="t1"><td><b>08</b></td><td>Where Rules Break: Edge Cases and False Alarms</td><td>Every rule has edge cases, and the two ways to be wrong — false alarms and misses — hurt different people.</td><td>teach</td><td>edge case, false alarm, miss, first match wins, labelled example</td></tr>
+<tr class="t1"><td><b>09</b></td><td>Term 1 Checkpoint — Rules on Trial</td><td>A rulebook scored on the messages you wrote it from tells you nothing; the honest score is on messages it has never seen.</td><td>review</td><td>training examples, fresh examples, accuracy</td></tr>
+<tr class="termrow"><td colspan="5">Term 2 &middot; Weeks 10&ndash;18 &middot; Teaching a Machine to Guess &mdash; How do you turn the world into examples a machine can learn from?</td></tr>
+<tr class="t2"><td><b>10</b></td><td>The Rule Explosion: Why Nobody Writes 258 Rules</td><td>Adding rules to cover exceptions grows faster than the exceptions do — that wall is why machine learning was invented.</td><td>project</td><td>check, exponential growth, rule explosion, the machine learning trade, labelled example</td></tr>
+<tr class="t2"><td><b>11</b></td><td>How a Machine Describes Your Dog</td><td>A feature is one measured description of one example; the label is the answer you want back.</td><td>teach</td><td>feature, feature table, measuring instruction, class, label</td></tr>
+<tr class="t2"><td><b>12</b></td><td>Useful, Useless, and Sneaky Features</td><td>A feature is only useful if it beats guessing — and a leaky feature already contains the answer.</td><td>teach</td><td>baseline, useful feature, useless feature, leaky feature, leak</td></tr>
+<tr class="t2"><td><b>13</b></td><td>Which One? or How Much?</td><td>Classification picks from a short list; regression predicts a number — the same table does either, depending on which column you cover.</td><td>teach</td><td>classification, binary classification, multi-class classification, regression, error, bucketing</td></tr>
+<tr class="t2"><td><b>14</b></td><td>Feature Card Deck: Make a Human Be the Model</td><td>If your features are good enough, a stranger who has never seen the thing can guess its label from the numbers alone.</td><td>lab</td><td>bucketing, baseline, leaky feature</td></tr>
+<tr class="t2"><td><b>15</b></td><td>Training: Turning 120 Photos Into a Guessing Machine</td><td>Training reads labelled examples once and produces a model; after that the examples are gone and only the model remains.</td><td>teach</td><td>training, epoch, variety, baseline model</td></tr>
+<tr class="t2"><td><b>16</b></td><td>Confidence Is Not Correctness</td><td>A confidence score is guess strength, not a promise, and the margin tells you how close the race was.</td><td>teach</td><td>confidence score, margin, class balance, other class</td></tr>
+<tr class="t2"><td><b>17</b></td><td>Train Your First Real Model</td><td>You can build a working image classifier in twenty minutes without code — and it will be exactly as good as the photos you gave it.</td><td>lab</td><td>(no new words — recap: training, epoch, baseline, confidence score, margin, class balance)</td></tr>
+<tr class="t2"><td><b>18</b></td><td>Term 2 Checkpoint — Break Your Own Model on Purpose</td><td>Change one thing at a time and the model will tell you exactly what it was relying on.</td><td>review</td><td>controlled experiment, sabotage test</td></tr>
+<tr class="termrow"><td colspan="5">Term 3 &middot; Weeks 19&ndash;27 &middot; Trust, Proof, and Pixels &mdash; How do you prove a model is any good — and what is it actually looking at?</td></tr>
+<tr class="t3"><td><b>19</b></td><td>The Test You Can&#x27;t Study For</td><td>Testing a model on the examples it trained on is cheating; you must hide examples before training and never let it see them.</td><td>teach</td><td>training set, test set, hold out, split ratio</td></tr>
+<tr class="t3"><td><b>20</b></td><td>Accuracy, Three Ways — and the Number That Lies</td><td>Accuracy is correct ÷ total, and one accuracy number can hide a class that is completely broken.</td><td>teach</td><td>generalizing, memorizing, the gap, per-class accuracy, percentage point</td></tr>
+<tr class="t3"><td><b>21</b></td><td>Memorizing vs Generalizing</td><td>A model scoring 100% on its own photos and 40% on new ones didn&#x27;t learn the object — it learned the photos.</td><td>teach</td><td>overfitting, confusion matrix, diagonal, off-diagonal cell</td></tr>
+<tr class="t3"><td><b>22</b></td><td>The Hidden Ten: Test Your Own Model Honestly</td><td>The only number worth reporting is the one you got on examples the model had never seen.</td><td>project</td><td>(no new words — recap: held-out test set, baseline, per-class accuracy, confusion matrix, the gap)</td></tr>
+<tr class="t3"><td><b>23</b></td><td>A Photo Is Just a Grid of Numbers</td><td>To a computer a picture is nothing but a grid of brightness numbers from 0 to 255.</td><td>teach</td><td>pixel, grayscale, resolution, megapixel</td></tr>
+<tr class="t3"><td><b>24</b></td><td>Colour Is Three Grids Stacked</td><td>A colour picture is three number grids — red, green, blue — and shrinking an image throws information away forever.</td><td>teach</td><td>RGB, channel, downsampling, anti-aliasing</td></tr>
+<tr class="t3"><td><b>25</b></td><td>Filters: The Little Grid That Finds Edges</td><td>Slide a tiny grid of numbers over an image and it highlights one thing; an edge is a sudden change in brightness.</td><td>teach</td><td>filter, edge, absolute value, clipping</td></tr>
+<tr class="t3"><td><b>26</b></td><td>Pixel Lab: Make the Outline Appear</td><td>Edges survive a change of lighting and raw brightness does not — that is why vision models look for edges first.</td><td>lab</td><td>edge map, filter, absolute value, clipping</td></tr>
+<tr class="t3"><td><b>27</b></td><td>Term 3 Checkpoint — From Pixels to Words</td><td>Everything a machine handles first becomes numbers in a table; text is no different from a photo.</td><td>review</td><td>corpus, token, tokenize</td></tr>
+<tr class="termrow"><td colspan="5">Term 4 &middot; Weeks 28&ndash;36 &middot; Words, Fairness, and Your Own AI &mdash; How do machines handle language, who does AI let down, and can you build one and defend it honestly?</td></tr>
+<tr class="t4"><td><b>28</b></td><td>Counting Word Pairs: The Whole Engine</td><td>A language model is a giant tally of which word tends to follow which — nothing more mysterious than that.</td><td>teach</td><td>word frequency, bigram, next-word prediction, language model</td></tr>
+<tr class="t4"><td><b>29</b></td><td>Dice, Fluency, and Making Things Up</td><td>Randomness is why the same prompt gives different answers — and a sentence can be perfectly fluent and completely false.</td><td>teach</td><td>sampling, greedy, prompt, context, hallucination</td></tr>
+<tr class="t4"><td><b>30</b></td><td>Build a Chatbot in Scratch</td><td>A rule-based bot and a learned language model fail in completely different ways, and knowing which you&#x27;re talking to changes your trust.</td><td>lab</td><td>n-gram, trigram, fallback</td></tr>
+<tr class="t4"><td><b>31</b></td><td>Who Is Missing From the Photos?</td><td>Bias is not the machine being mean — it is a gap in who was in the training data, showing up as a gap in accuracy.</td><td>teach</td><td>bias, accuracy gap, fairness audit, false reject</td></tr>
+<tr class="t4"><td><b>32</b></td><td>Your Data, Fakes, and Trusting Too Much</td><td>A photo carries more than a picture, a confident answer is not a correct one, and something real-looking can be made in ten minutes.</td><td>teach</td><td>personal data, metadata, deepfake, over-trust, automation bias</td></tr>
+<tr class="t4"><td><b>33</b></td><td>Audit Your Own Model</td><td>The most trustworthy thing you can do with your own model is show, with numbers, the group it fails on.</td><td>lab</td><td>attribution, misinformation, disinformation</td></tr>
+<tr class="t4"><td><b>34</b></td><td>The AI Fair Booth, Part 1: Build It and Test It Honestly</td><td>A real AI project is not the model — it is the model plus the honest paperwork saying what it can and cannot do.</td><td>capstone</td><td>(no new words — recap: held-out set, baseline, accuracy three ways, confusion matrix, data card)</td></tr>
+<tr class="t4"><td><b>35</b></td><td>The AI Fair Booth, Part 2: The App, the Report, the Demo</td><td>If you can show your model failing and explain why, you understand it — anyone can show it working.</td><td>capstone</td><td>(no new words — recap: confidence threshold, not sure, the other class, the gap, priced fix)</td></tr>
+<tr class="t4"><td><b>36</b></td><td>Showcase Day: Prove It, Present It, Celebrate It</td><td>You can build a guessing machine, measure it honestly, find who it fails, and explain all of it without saying &quot;magic&quot;.</td><td>assessment</td><td>(no new words — recap: the assessment, band, not yet, the break-it log, the Level 2 gate)</td></tr>
+</tbody>
+</table>
+<p class="plan-note"><b>Type key:</b> teach &mdash; new idea, worked examples, discussion. lab &mdash; hands-on build. project &mdash; a thing gets finished and handed in. review &mdash; term checkpoint. capstone &mdash; the AI Fair Booth. assessment &mdash; the final. <br><b>Watch out:</b> never teach Week 17 and Weeks 19&ndash;22 in the same fortnight &mdash; Week 17 ends with pride in a model that looks brilliant, and Weeks 19&ndash;22 exist to show the number might have been a lie.</p>
+</div>
+</section>
+</main>
+<footer class="no-plan">
+<div class="wrap">
+<p class="flinks">
+<a href="../README.md">Course README</a><a href="../teacher-guide/00-orientation.md">Teacher orientation</a><a href="../student-guide/week-01.md">Week 1 student guide</a><a href="../workbook/week-01.md">Week 1 workbook</a><a href="../figures/STYLE.md">Figure style guide</a><a href="../../README.md">Level 1 modules</a><a href="../../glossary.md">Glossary</a>
+</p>
+<p>Fully offline &mdash; no internet, no fonts, no frameworks, no build step. Your progress ticks and theme choice live in this browser only. Press <kbd>/</kbd> to jump to search.</p>
+</div>
+</footer>
+<button type="button" class="totop" id="toTop" aria-label="Back to top">&#8593;</button>
+<script>(function(){try{var t=localStorage.getItem("ai36.theme");if(!t)t=window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
+<script>
+(function(){
+  'use strict';
+  var LS_THEME='ai36.theme', LS_PROG='ai36.progress';
+  var $=function(s,r){return (r||document).querySelector(s)};
+  var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+
+  /* ---------- theme ---------- */
+  var root=document.documentElement, tbtn=$('#themeBtn');
+  function paintTheme(t){
+    root.setAttribute('data-theme',t);
+    tbtn.setAttribute('aria-pressed', t==='dark'?'true':'false');
+    tbtn.setAttribute('aria-label', t==='dark'
+      ? 'Switch to light theme (currently dark)'
+      : 'Switch to dark theme (currently light)');
+    $('#themeLbl').textContent = t==='dark' ? 'Light' : 'Dark';
+    $('#themeIcon').innerHTML = t==='dark'
+      ? '<circle cx="8" cy="8" r="3.4"/><g stroke-linecap="round"><path d="M8 .9v2.2M8 12.9v2.2M.9 8h2.2M12.9 8h2.2M2.9 2.9l1.6 1.6M11.5 11.5l1.6 1.6M13.1 2.9l-1.6 1.6M4.5 11.5l-1.6 1.6"/></g>'
+      : '<path d="M13.4 9.6A5.9 5.9 0 0 1 6.4 2.6a5.9 5.9 0 1 0 7 7Z"/>';
+  }
+  tbtn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='dark' ? 'light':'dark';
+    try{localStorage.setItem(LS_THEME,next)}catch(e){}
+    paintTheme(next);
+  });
+  paintTheme(root.getAttribute('data-theme')||'light');
+
+  /* ---------- progress ---------- */
+  var cards=$$('.card'), done={};
+  try{
+    var raw=localStorage.getItem(LS_PROG);
+    if(raw){ (JSON.parse(raw)||[]).forEach(function(n){ done[n]=true }) }
+  }catch(e){}
+  function saveProg(){
+    var a=Object.keys(done).filter(function(k){return done[k]}).map(Number)
+            .sort(function(x,y){return x-y});
+    try{localStorage.setItem(LS_PROG,JSON.stringify(a))}catch(e){}
+  }
+  function setBar(el,d,t){
+    var pct = t ? Math.round(d/t*100) : 0;
+    $('i',el).style.width = pct+'%';
+    el.setAttribute('aria-valuenow',String(pct));
+    el.setAttribute('aria-valuetext', d+' of '+t+' weeks complete, '+pct+'%');
+  }
+  function renderProg(){
+    var total=0, allDone=0;
+    $$('.band').forEach(function(b){
+      var cs=$$('.card',b), d=cs.filter(function(c){return done[c.dataset.week]}).length;
+      total+=cs.length; allDone+=d;
+      setBar($('.bar',b), d, cs.length);
+      $('.band-prog .txt',b).textContent = d+' / '+cs.length+' weeks done';
+    });
+    setBar($('#overallBar'), allDone, total);
+    $('#overallTxt').textContent = allDone+' / '+total+' weeks complete';
+    $('#resetBtn').disabled = allDone===0;
+    cards.forEach(function(c){
+      var on=!!done[c.dataset.week];
+      c.dataset.done = on?'true':'false';
+      var cb=$('input',c); if(cb.checked!==on) cb.checked=on;
+      $('.donetxt',c).textContent = on?'Completed':'Mark complete';
+    });
+  }
+  cards.forEach(function(c){
+    $('input',c).addEventListener('change',function(){
+      done[c.dataset.week]=this.checked; saveProg(); renderProg();
+    });
+  });
+  $('#resetBtn').addEventListener('click',function(){
+    if(!window.confirm('Clear the completed tick for all 36 weeks? This cannot be undone.')) return;
+    done={}; saveProg(); renderProg();
+  });
+  renderProg();
+
+  /* ---------- search + type filter ---------- */
+  var q=$('#q'), clearBtn=$('#clearQ'), hits=$('#hits'), empty=$('#empty');
+  var typeFilter='all', term='';
+  function norm(s){return s.toLowerCase().replace(/[‘’“”]/g,"'")}
+  function apply(){
+    term=norm(q.value.trim());
+    var shown=0;
+    cards.forEach(function(c){
+      var okType = typeFilter==='all' || c.dataset.type===typeFilter;
+      var okText = !term || c.dataset.search.indexOf(term)>-1;
+      var vis = okType && okText;
+      c.hidden = !vis;
+      if(vis) shown++;
+    });
+    $$('.band').forEach(function(b){
+      var any=$$('.card',b).some(function(c){return !c.hidden});
+      b.dataset.hidden = any?'false':'true';
+    });
+    document.body.classList.toggle('searching', !!term || typeFilter!=='all');
+    clearBtn.hidden = !q.value;
+    empty.style.display = shown?'none':'block';
+    if(term || typeFilter!=='all'){
+      hits.textContent = shown+' of 36 weeks';
+      hits.hidden=false;
+    } else { hits.hidden=true }
+    filterFigs();
+  }
+  q.addEventListener('input',apply);
+  q.addEventListener('keydown',function(e){ if(e.key==='Escape'){ q.value=''; apply() } });
+  clearBtn.addEventListener('click',function(){ q.value=''; apply(); q.focus() });
+  $$('.fchip').forEach(function(ch){
+    ch.addEventListener('click',function(){
+      typeFilter = ch.dataset.type;
+      $$('.fchip').forEach(function(o){
+        o.setAttribute('aria-pressed', o===ch ? 'true':'false');
+      });
+      apply();
+    });
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/' && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault(); q.focus(); q.select();
+    }
+  });
+
+  /* ---------- lazy figures ---------- */
+  var figs=$$('#figgrid figure'), sel=$('#figWeek');
+  function loadFig(fg){
+    if(fg.dataset.loaded) return;
+    fg.dataset.loaded='1';
+    var box=$('.figbox',fg), im=document.createElement('img');
+    im.loading='lazy'; im.decoding='async';
+    im.alt='Figure '+fg.dataset.file;
+    im.addEventListener('load',function(){ box.classList.remove('ph') });
+    im.addEventListener('error',function(){
+      box.classList.remove('ph');
+      box.textContent='Could not load '+fg.dataset.file;
+      box.style.fontSize='11px'; box.style.color='#55636F';
+    });
+    im.src='../figures/'+fg.dataset.file;
+    box.appendChild(im);
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){ if(en.isIntersecting){ loadFig(en.target); io.unobserve(en.target) } });
+    },{rootMargin:'400px 0px'});
+    figs.forEach(function(f){ io.observe(f) });
+  } else { figs.forEach(loadFig) }
+
+  function filterFigs(){
+    var w=sel.value, n=0;
+    figs.forEach(function(f){
+      var okW = w==='all' || f.dataset.wk===w;
+      var okT = !term || f.dataset.file.toLowerCase().indexOf(term)>-1
+                      || (f.dataset.wk!=='0' && ('week '+f.dataset.wk).indexOf(term)>-1);
+      var vis = okW && okT;
+      f.hidden=!vis; if(vis) n++;
+    });
+    $('#figCount').textContent = n+(n===1?' figure':' figures');
+  }
+  sel.addEventListener('change',filterFigs);
+  filterFigs();
+
+  /* ---------- year plan view ---------- */
+  var planBtn=$('#planBtn');
+  function setPlan(on){
+    document.body.classList.toggle('plan-view',on);
+    planBtn.setAttribute('aria-pressed',on?'true':'false');
+    $('#planLbl').textContent = on?'Course view':'Year plan';
+    if(on){ location.hash='#yearplan' }
+    else if(location.hash==='#yearplan'){ history.replaceState(null,'',location.pathname) }
+    window.scrollTo(0, on?0:0);
+  }
+  planBtn.addEventListener('click',function(){
+    setPlan(!document.body.classList.contains('plan-view'));
+  });
+  $('#planExit').addEventListener('click',function(){ setPlan(false) });
+  $('#planPrint').addEventListener('click',function(){ window.print() });
+  if(location.hash==='#yearplan') setPlan(true);
+
+  /* ---------- to top ---------- */
+  var tt=$('#toTop');
+  tt.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches
+      ?'auto':'smooth'});
+  });
+  var tick=false;
+  window.addEventListener('scroll',function(){
+    if(tick) return; tick=true;
+    requestAnimationFrame(function(){ tt.classList.toggle('show', window.scrollY>700); tick=false });
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

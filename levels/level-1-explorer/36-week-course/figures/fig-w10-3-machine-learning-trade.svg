@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The machine learning trade</title>
+  <desc>A shop counter. A child stands on the left and a robot on the right. Along the top a rulebook slides to the right, labelled out: you stop supplying the rules. Along the bottom a crate of labelled example cards slides to the left, labelled in: you start supplying labelled examples.</desc>
+  <text x="400" y="34" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The machine learning trade</text>
+
+  <text x="440" y="86" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">OUT &#8212; you stop supplying the rules</text>
+  <rect x="200" y="100" width="72" height="54" rx="6" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <g stroke="#845F00" stroke-width="2" stroke-linecap="round">
+    <line x1="214" y1="116" x2="258" y2="116"/>
+    <line x1="214" y1="128" x2="258" y2="128"/>
+    <line x1="214" y1="140" x2="244" y2="140"/>
+  </g>
+  <text x="236" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">your rulebook</text>
+  <line x1="292" y1="127" x2="576" y2="127" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="566,117 584,127 566,137" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="520" y="182" width="86" height="62" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <g stroke="#1F6FB2" stroke-width="2" stroke-linecap="round">
+    <line x1="520" y1="202" x2="606" y2="202"/>
+    <line x1="549" y1="182" x2="549" y2="244"/>
+    <line x1="577" y1="182" x2="577" y2="244"/>
+  </g>
+  <text x="563" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">labelled examples</text>
+  <text x="378" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">IN &#8212; you start supplying labelled examples</text>
+  <line x1="500" y1="222" x2="256" y2="222" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="266,212 248,222 266,232" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g transform="translate(60,170) scale(1.1)">
+    <circle cx="50" cy="52" r="30" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+    <path d="M20 44 A30 30 0 0 1 80 44 A34 22 0 0 0 20 44 Z" fill="#845F00" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="40" cy="50" r="4" fill="#14202B"/>
+    <circle cx="60" cy="50" r="4" fill="#14202B"/>
+    <path d="M39 63 Q50 72 61 63" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(625,160) scale(1.15)">
+    <line x1="50" y1="16" x2="50" y2="7" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="50" cy="5" r="4" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+    <rect x="22" y="16" width="56" height="40" rx="12" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="38" cy="34" r="5" fill="#14202B"/>
+    <circle cx="62" cy="34" r="5" fill="#14202B"/>
+    <path d="M40 45 Q50 52 60 45" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <rect x="28" y="60" width="44" height="30" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <line x1="28" y1="68" x2="13" y2="78" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+    <line x1="72" y1="68" x2="87" y2="78" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="50" cy="75" r="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  </g>
+
+  <rect x="40" y="270" width="720" height="22" rx="8" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="40" y="292" width="720" height="48" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="120" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">You</text>
+  <text x="686" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">The machine</text>
+
+  <text x="400" y="378" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">You give up writing rules. You take on collecting labelled examples. That is the whole trade.</text>
+</svg>

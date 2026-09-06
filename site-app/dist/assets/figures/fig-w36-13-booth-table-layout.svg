@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>How to lay the booth table out</title>
+  <desc>A top-down plan of the booth table: the do not use sign at the back and biggest, three headline number cards below it, then the laptop, the data card, the scoring sheet and matrix, and the break-it log with a pen, and a line of items in front.</desc>
+  <text x="400" y="34" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The table, seen from above</text>
+  <rect x="24" y="52" width="752" height="292" rx="12" fill="#F5F8FA" stroke="#55636F" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="150" y="68" width="500" height="52" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="400" y="101" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#CC2B1D" text-anchor="middle">DO NOT USE THIS FOR ...</text>
+  <text x="666" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">biggest thing</text>
+  <text x="666" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">on the table</text>
+  <g fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2.5" stroke-linejoin="round">
+    <rect x="150" y="134" width="156" height="40" rx="8"/>
+    <rect x="322" y="134" width="156" height="40" rx="8"/>
+    <rect x="494" y="134" width="156" height="40" rx="8"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">
+    <text x="228" y="160">30/40 = 75%</text>
+    <text x="400" y="160">baseline 25%</text>
+    <text x="572" y="160">gap: 50 points</text>
+  </g>
+  <rect x="44" y="196" width="170" height="112" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="60" y="212" width="138" height="66" rx="4" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="129" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">laptop: the app</text>
+  <rect x="232" y="196" width="136" height="112" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="300" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">data card</text>
+  <text x="300" y="270" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">8 boxes</text>
+  <rect x="386" y="196" width="164" height="112" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="468" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">scoring sheet</text>
+  <text x="468" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">+ confusion matrix</text>
+  <text x="468" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">40 rows, all of them</text>
+  <rect x="568" y="196" width="188" height="112" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="662" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">BREAK-IT LOG</text>
+  <text x="662" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">open, with the pen ON it</text>
+  <line x1="600" y1="284" x2="724" y2="276" stroke="#C42B8C" stroke-width="4" stroke-linecap="round"/>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">
+    <text x="44" y="336">items in a line, facing the visitor:</text>
+  </g>
+  <g fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2.5">
+    <circle cx="330" cy="330" r="12"/><circle cx="374" cy="330" r="12"/><circle cx="418" cy="330" r="12"/><circle cx="462" cy="330" r="12"/>
+  </g>
+  <circle cx="510" cy="330" r="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  <text x="510" y="335" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="middle">?</text>
+  <text x="536" y="335" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">one object with no class at all</text>
+  <text x="400" y="378" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">A closed log on a shelf gets nothing written in it. An open log with a pen resting on it invites strangers to try.</text>
+</svg>

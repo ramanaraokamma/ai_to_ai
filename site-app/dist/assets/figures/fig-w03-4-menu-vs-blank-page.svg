@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Picking from a menu versus writing a new dish</title>
+  <desc>Two panels. On the left, a classifying system picks one item off a short fixed menu of four labels, and the number of possible answers is four. On the right, a generating system writes a brand new dish on a blank page, and the number of possible answers is unlimited.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="34" font-size="24" fill="#14202B" text-anchor="middle">Ticking a menu, or filling a blank page?</text>
+    <line x1="400" y1="60" x2="400" y2="330" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+    <text x="200" y="86" font-size="18" fill="#14202B" text-anchor="middle">CLASSIFYING &#8212; pick a label</text>
+    <rect x="90" y="100" width="220" height="176" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <text x="200" y="126" font-size="14" fill="#1F6FB2" text-anchor="middle">TODAY&#8217;S MENU</text>
+    <line x1="106" y1="136" x2="294" y2="136" stroke="#1F6FB2" stroke-width="2"/>
+    <g font-size="14" fill="#14202B">
+      <text x="140" y="164">cat</text>
+      <text x="140" y="196">dog</text>
+      <text x="140" y="228">bird</text>
+      <text x="140" y="260">horse</text>
+    </g>
+    <g fill="none" stroke="#55636F" stroke-width="2" stroke-linejoin="round">
+      <rect x="110" y="150" width="18" height="18" rx="4"/>
+      <rect x="110" y="182" width="18" height="18" rx="4"/>
+      <rect x="110" y="214" width="18" height="18" rx="4"/>
+      <rect x="110" y="246" width="18" height="18" rx="4"/>
+    </g>
+    <rect x="110" y="182" width="18" height="18" rx="4" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+    <polyline points="114,191 118,196 125,186" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="200" y="300" font-size="14" fill="#14202B" text-anchor="middle">Possible answers: 4</text>
+    <text x="200" y="322" font-size="14" fill="#55636F" text-anchor="middle">It can never invent a fifth one.</text>
+
+    <text x="600" y="86" font-size="18" fill="#14202B" text-anchor="middle">GENERATING &#8212; make new content</text>
+    <rect x="490" y="100" width="220" height="176" rx="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+    <text x="600" y="126" font-size="14" fill="#C42B8C" text-anchor="middle">BLANK PAGE</text>
+    <line x1="506" y1="136" x2="694" y2="136" stroke="#C42B8C" stroke-width="2"/>
+    <g stroke="#C7CDD4" stroke-width="1.5">
+      <line x1="506" y1="164" x2="694" y2="164"/>
+      <line x1="506" y1="192" x2="694" y2="192"/>
+      <line x1="506" y1="220" x2="694" y2="220"/>
+      <line x1="506" y1="248" x2="694" y2="248"/>
+    </g>
+    <g font-size="14" fill="#14202B">
+      <text x="512" y="160">Mango-and-pepper</text>
+      <text x="512" y="188">samosa with a lime</text>
+      <text x="512" y="216">yoghurt dip, served</text>
+      <text x="512" y="244">warm. Serves four.</text>
+    </g>
+    <g stroke="#845F00" stroke-width="3" stroke-linecap="round" fill="none">
+      <path d="M672 258 L700 230"/>
+      <path d="M700 230 L708 238 L680 266 L668 268 L672 258 Z" fill="#E8C671" stroke-linejoin="round"/>
+    </g>
+    <text x="600" y="300" font-size="14" fill="#14202B" text-anchor="middle">Possible answers: unlimited</text>
+    <text x="600" y="322" font-size="14" fill="#55636F" text-anchor="middle">This sentence never existed before.</text>
+
+    <text x="400" y="374" font-size="14" fill="#55636F" text-anchor="middle">The test: count the possible outputs. A short fixed list = classifying. A blank page = generating.</text>
+  </g>
+</svg>

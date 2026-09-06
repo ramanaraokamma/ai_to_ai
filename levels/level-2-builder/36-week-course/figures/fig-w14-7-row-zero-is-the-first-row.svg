@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Row 0 is the first row, and that is the whole point</title>
+  <desc>Two panels. On the left, outlined red, counters reading 1, 2 and 3 sit beside Asha, Ravi and Nita, and a dashed red line shows that asking for squad bracket 1 lands on Ravi instead of Asha, with no error. On the right, outlined green, counters reading 0, 1 and 2 line up with the same three rows and every counter matches its slot.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Row 0 is the first row, and that is the whole point</text>
+  <rect x="24" y="70" width="364" height="274" rx="12" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M24 82 A12 12 0 0 1 36 70 H376 A12 12 0 0 1 388 82 V104 H24 Z" fill="#F6AEA6"/>
+  <line x1="24" y1="104" x2="388" y2="104" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="46" cy="87" r="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="37.6" y1="78.6" x2="54.4" y2="95.4"/><line x1="54.4" y1="78.6" x2="37.6" y2="95.4"/></g>
+  <text x="66" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Wrong: count the rows from 1</text>
+  <circle cx="70" cy="146" r="19" fill="#F5F8FA" stroke="#14202B" stroke-width="3"/>
+  <text x="70" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="102" y="126" width="128" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="166" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Asha</text>
+  <text x="242" y="151" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">squad[1]</text>
+  <circle cx="70" cy="198" r="19" fill="#F5F8FA" stroke="#14202B" stroke-width="3"/>
+  <text x="70" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <rect x="102" y="178" width="128" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="166" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Ravi</text>
+  <text x="242" y="203" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">squad[2]</text>
+  <circle cx="70" cy="250" r="19" fill="#F5F8FA" stroke="#14202B" stroke-width="3"/>
+  <text x="70" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <rect x="102" y="230" width="128" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="166" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Nita</text>
+  <text x="242" y="255" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">squad[3]</text>
+  <text x="206" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">you wanted Asha and got Ravi</text>
+  <text x="206" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">no error message, ever</text>
+  <line x1="70" y1="146" x2="210" y2="146" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 4"/>
+  <line x1="212" y1="148" x2="246" y2="190" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(246 190) rotate(51.0)"/>
+  <rect x="216" y="118" width="100" height="24" rx="6" fill="none" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 4"/>
+  <text x="266" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle" dominant-baseline="central">not Asha</text>
+  <rect x="412" y="70" width="364" height="274" rx="12" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M412 82 A12 12 0 0 1 424 70 H764 A12 12 0 0 1 776 82 V104 H412 Z" fill="#E2F7ED"/>
+  <line x1="412" y1="104" x2="776" y2="104" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="434" cy="87" r="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="422.7,88.4 430.5,96.9 446.7,78.5" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="454" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Right: count the rows from 0</text>
+  <circle cx="458" cy="146" r="19" fill="#F5F8FA" stroke="#14202B" stroke-width="3"/>
+  <text x="458" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="490" y="126" width="128" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="554" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Asha</text>
+  <text x="630" y="151" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">squad[0]</text>
+  <circle cx="458" cy="198" r="19" fill="#F5F8FA" stroke="#14202B" stroke-width="3"/>
+  <text x="458" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="490" y="178" width="128" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="554" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Ravi</text>
+  <text x="630" y="203" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">squad[1]</text>
+  <circle cx="458" cy="250" r="19" fill="#F5F8FA" stroke="#14202B" stroke-width="3"/>
+  <text x="458" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <rect x="490" y="230" width="128" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="554" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Nita</text>
+  <text x="630" y="255" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">squad[2]</text>
+  <text x="594" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">the counter and the slot agree</text>
+  <text x="594" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle">and they cannot drift apart</text>
+  <line x1="458" y1="146" x2="486" y2="146" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="458" y1="198" x2="486" y2="198" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="458" y1="250" x2="486" y2="250" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round"/>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">enumerate starts at 0 because the list does. Let it do the counting and they can never disagree.</text>
+</svg>

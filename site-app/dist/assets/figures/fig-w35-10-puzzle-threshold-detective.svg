@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>The threshold detective puzzle</title>
+  <desc>Ten photo results listed as a ladder from ninety-six percent down to forty-one percent, each marked with a tick or a cross, and three dashed lines showing where a threshold of fifty, seventy or eighty-five would cut.</desc>
+  <text x="250" y="36" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Where do you cut?</text>
+  <text x="250" y="60" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Ten held-out photos, sorted by confidence. Tick = the model was right.</text>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">
+    <text x="40" y="102">1</text><text x="80" y="102">96%</text>
+    <text x="40" y="146">2</text><text x="80" y="146">91%</text>
+    <text x="40" y="190">3</text><text x="80" y="190">88%</text>
+    <text x="40" y="234">4</text><text x="80" y="234">84%</text>
+    <text x="40" y="278">5</text><text x="80" y="278">79%</text>
+    <text x="40" y="322">6</text><text x="80" y="322">72%</text>
+    <text x="40" y="366">7</text><text x="80" y="366">68%</text>
+    <text x="40" y="410">8</text><text x="80" y="410">61%</text>
+    <text x="40" y="454">9</text><text x="80" y="454">55%</text>
+    <text x="40" y="498">10</text><text x="80" y="498">41%</text>
+  </g>
+  <g transform="translate(148,84) scale(0.28)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <g transform="translate(148,128) scale(0.28)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <g transform="translate(148,172) scale(0.28)"><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g></g>
+  <g transform="translate(148,216) scale(0.28)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <g transform="translate(148,260) scale(0.28)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <g transform="translate(148,304) scale(0.28)"><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g></g>
+  <g transform="translate(148,348) scale(0.28)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <g transform="translate(148,392) scale(0.28)"><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g></g>
+  <g transform="translate(148,436) scale(0.28)"><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g></g>
+  <g transform="translate(148,480) scale(0.28)"><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g></g>
+  <g stroke="#C42B8C" stroke-width="2" stroke-dasharray="7 5">
+    <line x1="200" y1="164" x2="460" y2="164"/>
+    <line x1="200" y1="296" x2="460" y2="296"/>
+    <line x1="200" y1="472" x2="460" y2="472"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C">
+    <text x="208" y="158">cut here = threshold 85</text>
+    <text x="208" y="290">cut here = threshold 70</text>
+    <text x="208" y="466">cut here = threshold 50</text>
+  </g>
+  <text x="250" y="540" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Anything ABOVE the line gets answered.</text>
+  <text x="250" y="564" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Anything BELOW gets "not sure".</text>
+  <g stroke="#55636F" stroke-width="1.5">
+    <line x1="40" y1="618" x2="460" y2="618"/>
+    <line x1="40" y1="654" x2="460" y2="654"/>
+    <line x1="40" y1="690" x2="460" y2="690"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">
+    <text x="40" y="600">Threshold 50: answers ___, correct ___, wrong answers let through ___</text>
+    <text x="40" y="638">Threshold 70: answers ___, correct ___, wrong answers let through ___</text>
+    <text x="40" y="674">Threshold 85: answers ___, correct ___, wrong answers let through ___</text>
+  </g>
+</svg>

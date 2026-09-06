@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The pizza order pad puzzle</title>
+  <desc>A handwritten pizza order pad with eight orders. The topping is spelled several different ways. Beside it, three question boxes ask how many toppings a person sees, how many a computer sees, and which two orders are an exact duplicate.</desc>
+  <text x="400" y="32" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Eight orders. How many toppings does the computer see?</text>
+
+  <!-- order pad -->
+  <path d="M40 56 H366 V318 L342 342 H40 Z" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M342 342 V318 H366 Z" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="40" y="56" width="326" height="34" fill="#E8C671" stroke="none"/>
+  <line x1="40" y1="90" x2="366" y2="90" stroke="#845F00" stroke-width="3"/>
+  <text x="203" y="79" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">ORDER PAD — topping · inches · how many</text>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="56" y1="118" x2="350" y2="118"/>
+    <line x1="56" y1="148" x2="350" y2="148"/>
+    <line x1="56" y1="178" x2="350" y2="178"/>
+    <line x1="56" y1="208" x2="350" y2="208"/>
+    <line x1="56" y1="238" x2="350" y2="238"/>
+    <line x1="56" y1="268" x2="350" y2="268"/>
+    <line x1="56" y1="298" x2="350" y2="298"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="end">
+    <text x="72" y="112">1</text><text x="72" y="142">2</text><text x="72" y="172">3</text><text x="72" y="202">4</text>
+    <text x="72" y="232">5</text><text x="72" y="262">6</text><text x="72" y="292">7</text><text x="72" y="316">8</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">
+    <text x="86" y="112">Margherita · 12 · 1</text>
+    <text x="86" y="142">margherita · 12 · 1</text>
+    <text x="86" y="172">MARGHERITA · 9 · 2</text>
+    <text x="86" y="202">Paneer · 12 · 1</text>
+    <text x="86" y="232">paneer · 9 · 1</text>
+    <text x="86" y="262">Veggie · 12 · 3</text>
+    <text x="86" y="292">veggie · 12 · 3</text>
+    <text x="86" y="316">Margherita · 12 · 1</text>
+  </g>
+
+  <!-- question boxes -->
+  <g fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round">
+    <rect x="404" y="70" width="372" height="72" rx="10"/>
+    <rect x="404" y="158" width="372" height="72" rx="10"/>
+    <rect x="404" y="246" width="372" height="96" rx="10"/>
+  </g>
+  <g>
+    <circle cx="432" cy="98" r="14" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <text x="432" y="103" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">A</text>
+    <circle cx="432" cy="186" r="14" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <text x="432" y="191" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">B</text>
+    <circle cx="432" cy="274" r="14" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <text x="432" y="279" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">C</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">
+    <text x="458" y="94">How many different toppings</text>
+    <text x="458" y="118">does a PERSON see?</text>
+    <text x="458" y="182">How many different toppings</text>
+    <text x="458" y="206">does the COMPUTER see?</text>
+    <text x="458" y="270">Exactly ONE pair of orders is an</text>
+    <text x="458" y="294">exact duplicate. Which two?</text>
+  </g>
+  <text x="458" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">Careful — one pair looks like a duplicate and isn't.</text>
+
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Finish by writing the controlled vocabulary that would have stopped all of this.</text>
+</svg>

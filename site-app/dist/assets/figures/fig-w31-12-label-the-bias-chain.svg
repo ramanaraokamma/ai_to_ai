@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Label the four links of the bias chain</title>
+  <desc>Four empty numbered boxes in a row with blank writing lines inside, joined by arrows. A dashed arrow loops back from the fourth box to the first, passing through a fifth empty box for the student to say where the fix happens.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Label it: the four links of a bias chain</text>
+  <path d="M685 220 V300 H115 V232" fill="none" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="7 6"/>
+  <polyline points="108,240 115,228 122,240" fill="none" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g stroke="#14202B" stroke-width="3" stroke-linecap="round" fill="none">
+    <line x1="196" y1="165" x2="216" y2="165"/>
+    <polyline points="212,159 222,165 212,171" stroke-linejoin="round"/>
+    <line x1="386" y1="165" x2="406" y2="165"/>
+    <polyline points="402,159 412,165 402,171" stroke-linejoin="round"/>
+    <line x1="576" y1="165" x2="596" y2="165"/>
+    <polyline points="592,159 602,165 592,171" stroke-linejoin="round"/>
+  </g>
+  <g fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round">
+    <rect x="40" y="110" width="150" height="110" rx="10"/>
+    <rect x="230" y="110" width="150" height="110" rx="10"/>
+    <rect x="420" y="110" width="150" height="110" rx="10"/>
+    <rect x="610" y="110" width="150" height="110" rx="10"/>
+  </g>
+  <g>
+    <circle cx="62" cy="132" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <circle cx="252" cy="132" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <circle cx="442" cy="132" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <circle cx="632" cy="132" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">
+    <text x="62" y="137">1</text>
+    <text x="252" y="137">2</text>
+    <text x="442" y="137">3</text>
+    <text x="632" y="137">4</text>
+  </g>
+  <g stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round">
+    <line x1="54" y1="176" x2="176" y2="176"/>
+    <line x1="54" y1="202" x2="176" y2="202"/>
+    <line x1="244" y1="176" x2="366" y2="176"/>
+    <line x1="244" y1="202" x2="366" y2="202"/>
+    <line x1="434" y1="176" x2="556" y2="176"/>
+    <line x1="434" y1="202" x2="556" y2="202"/>
+    <line x1="624" y1="176" x2="746" y2="176"/>
+    <line x1="624" y1="202" x2="746" y2="202"/>
+  </g>
+  <rect x="310" y="282" width="180" height="36" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2"/>
+  <line x1="322" y1="308" x2="478" y2="308" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="400" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">which link does the fix happen at?</text>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Write one link in each box. Then fill the pink box: where does the repair actually happen?</text>
+</svg>

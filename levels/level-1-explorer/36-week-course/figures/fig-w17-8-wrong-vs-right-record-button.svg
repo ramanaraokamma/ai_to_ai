@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Two hundred copies or forty different photos</title>
+  <desc>Two panels. The left panel is marked wrong: holding the record button down gives two hundred nearly identical photos, all showing the same thing in the same place. The right panel is marked correct: two second bursts with the object moved between each one give forty genuinely different photos.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="42" font-size="24" fill="#14202B" text-anchor="middle">Two hundred copies, or forty different photos?</text>
+    <line x1="400" y1="76" x2="400" y2="336" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+    <rect x="40" y="76" width="330" height="252" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+    <g transform="translate(58,88) scale(0.4)">
+      <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+      <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+        <line x1="38" y1="38" x2="62" y2="62"/>
+        <line x1="62" y1="38" x2="38" y2="62"/>
+      </g>
+    </g>
+    <text x="108" y="114" font-size="18" fill="#14202B">Held the button down</text>
+    <text x="66" y="142" font-size="14" fill="#55636F">200 photos. 1 situation.</text>
+    <g>
+      <rect x="70" y="156" width="44" height="44" rx="6" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
+      <circle cx="92" cy="178" r="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+      <rect x="124" y="156" width="44" height="44" rx="6" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
+      <circle cx="146" cy="178" r="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+      <rect x="178" y="156" width="44" height="44" rx="6" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
+      <circle cx="200" cy="178" r="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+      <rect x="70" y="210" width="44" height="44" rx="6" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
+      <circle cx="92" cy="232" r="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+      <rect x="124" y="210" width="44" height="44" rx="6" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
+      <circle cx="146" cy="232" r="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+      <rect x="178" y="210" width="44" height="44" rx="6" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
+      <circle cx="200" cy="232" r="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+      <rect x="70" y="264" width="44" height="44" rx="6" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
+      <circle cx="92" cy="286" r="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+      <rect x="124" y="264" width="44" height="44" rx="6" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
+      <circle cx="146" cy="286" r="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+      <rect x="178" y="264" width="44" height="44" rx="6" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
+      <circle cx="200" cy="286" r="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+    </g>
+    <text x="240" y="238" font-size="14" fill="#14202B">every frame</text>
+    <text x="240" y="258" font-size="14" fill="#14202B">the same</text>
+
+    <rect x="430" y="76" width="330" height="252" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <g transform="translate(448,88) scale(0.4)">
+      <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="498" y="114" font-size="18" fill="#14202B">Two-second bursts</text>
+    <text x="456" y="142" font-size="14" fill="#55636F">40 photos. 12 situations.</text>
+    <g>
+      <rect x="460" y="156" width="44" height="44" rx="6" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+      <circle cx="474" cy="170" r="7" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+      <rect x="514" y="156" width="44" height="44" rx="6" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+      <rect x="526" y="172" width="22" height="14" rx="4" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+      <rect x="568" y="156" width="44" height="44" rx="6" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+      <circle cx="596" cy="186" r="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+      <rect x="460" y="210" width="44" height="44" rx="6" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+      <path d="M468 244 L482 218 L496 244 Z" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+      <rect x="514" y="210" width="44" height="44" rx="6" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+      <circle cx="536" cy="232" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+      <rect x="568" y="210" width="44" height="44" rx="6" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+      <rect x="576" y="220" width="14" height="26" rx="4" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+      <rect x="460" y="264" width="44" height="44" rx="6" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+      <rect x="470" y="290" width="26" height="12" rx="4" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+      <rect x="514" y="264" width="44" height="44" rx="6" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+      <circle cx="546" cy="276" r="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+      <rect x="568" y="264" width="44" height="44" rx="6" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+      <path d="M576 302 L590 272 L604 302" fill="none" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+    </g>
+    <text x="630" y="238" font-size="14" fill="#14202B">every frame</text>
+    <text x="630" y="258" font-size="14" fill="#14202B">different</text>
+
+    <text x="400" y="368" font-size="14" fill="#55636F" text-anchor="middle">200 near-identical photos teach the model about as much as one photo does.</text>
+  </g>
+</svg>

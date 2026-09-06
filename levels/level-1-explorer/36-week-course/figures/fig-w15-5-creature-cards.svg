@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The three creature cards and the hidden size trap</title>
+  <desc>Three panels showing the three made-up creatures. A Blorb is a blob with three legs, a Zunk is a blob with three spikes on top, a Fip is a blob with a tail. A strip underneath warns that in the twelve training cards every Blorb is drawn large and every Zunk small, which is the trap the test cards spring.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="42" font-size="24" fill="#14202B" text-anchor="middle">The three creatures you draw the night before</text>
+
+    <rect x="20" y="62" width="240" height="188" rx="12" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <text x="140" y="88" font-size="18" fill="#14202B" text-anchor="middle">BLORB</text>
+    <g transform="translate(140,168)">
+      <ellipse cx="0" cy="0" rx="34" ry="26" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+      <circle cx="-12" cy="-6" r="3" fill="#14202B"/>
+      <circle cx="12" cy="-6" r="3" fill="#14202B"/>
+      <g stroke="#14202B" stroke-width="3" stroke-linecap="round">
+        <line x1="-16" y1="24" x2="-18" y2="44"/>
+        <line x1="0" y1="26" x2="0" y2="46"/>
+        <line x1="16" y1="24" x2="18" y2="44"/>
+      </g>
+    </g>
+    <text x="140" y="238" font-size="14" fill="#55636F" text-anchor="middle">exactly 3 legs, no spikes, no tail</text>
+
+    <rect x="280" y="62" width="240" height="188" rx="12" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <text x="400" y="88" font-size="18" fill="#14202B" text-anchor="middle">ZUNK</text>
+    <g transform="translate(400,176)">
+      <g stroke="#14202B" stroke-width="3" stroke-linecap="round">
+        <line x1="-16" y1="-22" x2="-20" y2="-44"/>
+        <line x1="0" y1="-26" x2="0" y2="-48"/>
+        <line x1="16" y1="-22" x2="20" y2="-44"/>
+      </g>
+      <ellipse cx="0" cy="0" rx="34" ry="26" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
+      <circle cx="-12" cy="-6" r="3" fill="#14202B"/>
+      <circle cx="12" cy="-6" r="3" fill="#14202B"/>
+    </g>
+    <text x="400" y="238" font-size="14" fill="#55636F" text-anchor="middle">exactly 3 spikes, no legs, no tail</text>
+
+    <rect x="540" y="62" width="240" height="188" rx="12" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <text x="660" y="88" font-size="18" fill="#14202B" text-anchor="middle">FIP</text>
+    <g transform="translate(648,162)">
+      <path d="M32 6 Q64 16 56 44" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+      <ellipse cx="0" cy="0" rx="34" ry="26" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <circle cx="-12" cy="-6" r="3" fill="#14202B"/>
+      <circle cx="12" cy="-6" r="3" fill="#14202B"/>
+    </g>
+    <text x="660" y="238" font-size="14" fill="#55636F" text-anchor="middle">one tail, no legs, no spikes</text>
+
+    <rect x="20" y="266" width="760" height="92" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+    <text x="44" y="294" font-size="18" fill="#14202B">THE TRAP, ON PURPOSE</text>
+    <text x="44" y="318" font-size="14" fill="#14202B">In your 12 training cards, draw every Blorb LARGE and every Zunk SMALL.</text>
+    <text x="44" y="340" font-size="14" fill="#14202B">Test cards 4 and 5 then break the pattern. That moment is the whole lesson.</text>
+    <g transform="translate(618,308) scale(0.5)">
+      <ellipse cx="0" cy="0" rx="34" ry="26" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+      <circle cx="-12" cy="-6" r="3" fill="#14202B"/>
+      <circle cx="12" cy="-6" r="3" fill="#14202B"/>
+      <g stroke="#14202B" stroke-width="3" stroke-linecap="round">
+        <line x1="-16" y1="24" x2="-18" y2="44"/>
+        <line x1="0" y1="26" x2="0" y2="46"/>
+        <line x1="16" y1="24" x2="18" y2="44"/>
+      </g>
+    </g>
+    <text x="618" y="348" font-size="12" fill="#14202B" text-anchor="middle">small Blorb</text>
+    <g transform="translate(716,310) scale(0.7)">
+      <g stroke="#14202B" stroke-width="3" stroke-linecap="round">
+        <line x1="-16" y1="-22" x2="-20" y2="-44"/>
+        <line x1="0" y1="-26" x2="0" y2="-48"/>
+        <line x1="16" y1="-22" x2="20" y2="-44"/>
+      </g>
+      <ellipse cx="0" cy="0" rx="34" ry="26" fill="#FFFFFF" stroke="#6D28D9" stroke-width="3"/>
+      <circle cx="-12" cy="-6" r="3" fill="#14202B"/>
+      <circle cx="12" cy="-6" r="3" fill="#14202B"/>
+    </g>
+    <text x="716" y="348" font-size="12" fill="#14202B" text-anchor="middle">big Zunk</text>
+
+    <text x="400" y="386" font-size="14" fill="#55636F" text-anchor="middle">Eighteen index cards, a black pen, fifteen minutes. No printer needed.</text>
+  </g>
+</svg>

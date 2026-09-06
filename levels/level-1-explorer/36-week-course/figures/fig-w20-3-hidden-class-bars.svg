@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img">
+  <title>One overall bar hiding a broken class</title>
+  <desc>A bar chart. The overall accuracy bar reads seventy-three point three percent. Beside it three per-class bars read one hundred percent for spoon, eighty percent for toothbrush and forty percent for comb. The forty percent bar is circled in red and sits only just above the dotted blind-guessing line at thirty-three point three percent.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+
+    <text x="250" y="34" font-size="24" fill="#14202B" text-anchor="middle">The average was hiding a body</text>
+
+    <g stroke="#C7CDD4" stroke-width="1.5">
+      <line x1="70" y1="380" x2="460" y2="380"/>
+      <line x1="70" y1="312" x2="460" y2="312"/>
+      <line x1="70" y1="245" x2="460" y2="245"/>
+      <line x1="70" y1="177" x2="460" y2="177"/>
+      <line x1="70" y1="110" x2="460" y2="110"/>
+    </g>
+    <g font-size="12" fill="#55636F" text-anchor="end">
+      <text x="62" y="384">0</text><text x="62" y="316">25</text><text x="62" y="249">50</text>
+      <text x="62" y="181">75</text><text x="62" y="114">100</text>
+    </g>
+
+    <rect x="80" y="182" width="70" height="198" fill="#1F6FB2"/>
+    <rect x="210" y="110" width="60" height="270" fill="#1F6FB2"/>
+    <rect x="290" y="164" width="60" height="216" fill="#1F6FB2"/>
+    <rect x="370" y="272" width="60" height="108" fill="#1F6FB2"/>
+
+    <line x1="70" y1="290" x2="460" y2="290" stroke="#14202B" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="460" y="284" font-size="12" fill="#55636F" text-anchor="end">blind guessing = 33.3%</text>
+
+    <ellipse cx="400" cy="326" rx="46" ry="64" fill="none" stroke="#CC2B1D" stroke-width="3"/>
+
+    <line x1="180" y1="96" x2="180" y2="392" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+    <g font-size="14" fill="#14202B" text-anchor="middle">
+      <text x="115" y="174">73.3%</text>
+      <text x="240" y="102">100%</text>
+      <text x="320" y="156">80%</text>
+      <text x="400" y="252">40%</text>
+    </g>
+
+    <g font-size="12" fill="#55636F" text-anchor="middle">
+      <text x="115" y="402">overall</text>
+      <text x="240" y="402">spoon</text>
+      <text x="320" y="402">toothbrush</text>
+      <text x="400" y="402">comb</text>
+    </g>
+
+    <g font-size="14" fill="#14202B" text-anchor="middle">
+      <text x="115" y="88">ONE NUMBER</text>
+      <text x="320" y="88">PER-CLASS</text>
+    </g>
+
+    <line x1="70" y1="380" x2="460" y2="380" stroke="#14202B" stroke-width="2"/>
+
+    <text x="250" y="440" font-size="14" fill="#55636F" text-anchor="middle">73.3% describes no class in this model. Spoon is solved; comb barely</text>
+    <text x="250" y="460" font-size="14" fill="#55636F" text-anchor="middle">beats a coin toss. The red circle is what one number was covering up.</text>
+  </g>
+</svg>

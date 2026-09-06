@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Two sets of four numbers, one voice</title>
+  <desc>Two panels. On the left a clear tin can gives confidences of ninety-six, two, one and one. On the right a squashed carton gives twenty-six, twenty-five, twenty-five and twenty-four. Both make the app say recycling in exactly the same way.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Same answer. Completely different situation.</text>
+  <line x1="400" y1="66" x2="400" y2="330" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <rect x="30" y="66" width="342" height="184" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="428" y="66" width="342" height="184" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="52" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">A clean tin can</text>
+  <text x="450" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">A squashed carton with a foil lid</text>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">
+    <text x="52" y="130">recycling</text><text x="200" y="130">96%</text>
+    <text x="52" y="158">compost</text><text x="200" y="158">2%</text>
+    <text x="52" y="186">landfill</text><text x="200" y="186">1%</text>
+    <text x="52" y="214">other</text><text x="200" y="214">1%</text>
+    <text x="450" y="130">recycling</text><text x="598" y="130">26%</text>
+    <text x="450" y="158">compost</text><text x="598" y="158">25%</text>
+    <text x="450" y="186">landfill</text><text x="598" y="186">25%</text>
+    <text x="450" y="214">other</text><text x="598" y="214">24%</text>
+  </g>
+  <g stroke="#1B7A4B" stroke-width="10" stroke-linecap="round">
+    <line x1="248" y1="124" x2="344" y2="124"/>
+    <line x1="248" y1="152" x2="250" y2="152"/>
+    <line x1="248" y1="180" x2="249" y2="180"/>
+    <line x1="248" y1="208" x2="249" y2="208"/>
+  </g>
+  <g stroke="#CC2B1D" stroke-width="10" stroke-linecap="round">
+    <line x1="646" y1="124" x2="672" y2="124"/>
+    <line x1="646" y1="152" x2="671" y2="152"/>
+    <line x1="646" y1="180" x2="671" y2="180"/>
+    <line x1="646" y1="208" x2="670" y2="208"/>
+  </g>
+  <text x="201" y="284" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">App says: RECYCLING</text>
+  <text x="599" y="284" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">App says: RECYCLING</text>
+  <text x="201" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B" text-anchor="middle">and it really does know</text>
+  <text x="599" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D" text-anchor="middle">and it has no idea at all</text>
+  <text x="400" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">The four numbers always add to 100, so something always wins.</text>
+  <text x="400" y="382" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">A model with no threshold cannot hesitate. Adding one line of arithmetic gives it the ability to say nothing.</text>
+</svg>

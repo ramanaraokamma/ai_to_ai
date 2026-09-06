@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>One formula, three ideas you already know</title>
+  <desc>The spreadsheet formula split onto four lines. The first line is MIN with 255, labelled clipping. The second boxed line is the vertical filter, right column minus left column. The third boxed line is the horizontal filter, bottom row minus top row. ABS is labelled rub out the minus sign.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">One formula, three ideas you already know</text>
+  <text x="60" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" dominant-baseline="central">=MIN( 255 ,</text>
+  <text x="216" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" dominant-baseline="central">MIN = give me the smaller of the two  →  clipping</text>
+  <rect x="80" y="118" width="360" height="52" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="96" y="144" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" dominant-baseline="central">ABS( (D2+D3+D4) − (B2+B3+B4) )</text>
+  <text x="462" y="136" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" dominant-baseline="central">the vertical filter</text>
+  <text x="462" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" dominant-baseline="central">right column − left column</text>
+  <rect x="80" y="186" width="360" height="52" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="96" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" dominant-baseline="central">+ ABS( (B4+C4+D4) − (B2+C2+D2) )</text>
+  <text x="462" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" dominant-baseline="central">the horizontal filter</text>
+  <text x="462" y="226" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" dominant-baseline="central">bottom row − top row</text>
+  <text x="60" y="264" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" dominant-baseline="central">)</text>
+  <text x="96" y="264" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#845F00" dominant-baseline="central">ABS( ) = rub out the minus sign</text>
+  <text x="400" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle" dominant-baseline="central">Five closing brackets. Count them before you press Enter.</text>
+  <text x="400" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Exactly what you did on paper for homework, written on one line.</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>Accuracy written three ways</title>
+  <desc>The same score shown three ways. First as the fraction five over ten. Then the long division of five by ten giving nought point five. Then the percentage fifty per cent. Arrows lead from one to the next.</desc>
+  <text x="400" y="40" font-size="24" fill="#14202B" text-anchor="middle">One score, written three ways</text>
+
+  <rect x="30" y="76" width="220" height="230" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="140" y="102" font-size="14" fill="#55636F" text-anchor="middle">1. THE FRACTION</text>
+  <text x="140" y="168" font-size="44" fill="#1F6FB2" text-anchor="middle">5</text>
+  <line x1="106" y1="184" x2="174" y2="184" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <text x="140" y="232" font-size="44" fill="#1F6FB2" text-anchor="middle">10</text>
+  <text x="140" y="266" font-size="14" fill="#55636F" text-anchor="middle">correct, out of how many</text>
+  <text x="140" y="288" font-size="14" fill="#55636F" text-anchor="middle">you actually tried</text>
+
+  <rect x="290" y="76" width="220" height="230" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="400" y="102" font-size="14" fill="#55636F" text-anchor="middle">2. DO THE DIVISION</text>
+  <text x="446" y="146" font-size="24" fill="#1B7A4B" text-anchor="end">0.5</text>
+  <line x1="378" y1="158" x2="450" y2="158" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <path d="M378 158 A26 26 0 0 1 378 196" fill="none" stroke="#14202B" stroke-width="2"/>
+  <text x="370" y="186" font-size="24" fill="#14202B" text-anchor="end">10</text>
+  <text x="446" y="186" font-size="24" fill="#14202B" text-anchor="end">5.0</text>
+  <text x="446" y="222" font-size="24" fill="#14202B" text-anchor="end">5 0</text>
+  <line x1="400" y1="232" x2="450" y2="232" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="446" y="262" font-size="24" fill="#14202B" text-anchor="end">0</text>
+  <text x="400" y="290" font-size="14" fill="#55636F" text-anchor="middle">5 divided by 10 is 0.5</text>
+
+  <rect x="550" y="76" width="220" height="230" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="660" y="102" font-size="14" fill="#55636F" text-anchor="middle">3. THE PERCENTAGE</text>
+  <text x="660" y="180" font-size="44" fill="#C42B8C" text-anchor="middle">50%</text>
+  <text x="660" y="222" font-size="16" fill="#14202B" text-anchor="middle">0.5 x 100 = 50</text>
+  <text x="660" y="256" font-size="14" fill="#55636F" text-anchor="middle">"out of every hundred</text>
+  <text x="660" y="274" font-size="14" fill="#55636F" text-anchor="middle">it would get 50 right"</text>
+
+  <g transform="translate(252,175) scale(0.36)">
+    <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(512,175) scale(0.36)">
+    <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <rect x="30" y="326" width="740" height="46" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="400" y="355" font-size="16" fill="#14202B" text-anchor="middle">Never write only "50%". The fraction is the honest bit: it tells you there were just ten tries.</text>
+</svg>

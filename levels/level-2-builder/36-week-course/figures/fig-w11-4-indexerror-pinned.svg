@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>There is no card at slot 4</title>
+  <desc>On the left, four solid slots numbered 0 to 3 sit beside a fifth dashed empty slot numbered 4 that is marked with a cross. An arrow leads from that empty slot to a red traceback panel on the right showing the resulting IndexError, with the failing line highlighted.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">There is no card at slot 4</text>
+  <rect x="40" y="138" width="62" height="58" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="71" y="167" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">45</text>
+  <text x="71" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">0</text>
+  <rect x="110" y="138" width="62" height="58" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="141" y="167" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="141" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">1</text>
+  <rect x="180" y="138" width="62" height="58" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="211" y="167" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">112</text>
+  <text x="211" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">2</text>
+  <rect x="250" y="138" width="62" height="58" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="281" y="167" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">67</text>
+  <text x="281" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">3</text>
+  <rect x="320" y="138" width="62" height="58" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round" stroke-dasharray="7 5"/>
+  <text x="351" y="167" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#CC2B1D" text-anchor="middle" dominant-baseline="central">?</text>
+  <text x="351" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D" text-anchor="middle">4</text>
+  <g transform="translate(336,89) scale(0.3)"><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g></g>
+  <text x="211" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">four cards on the table,</text>
+  <text x="211" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">numbered 0 to 3</text>
+  <text x="211" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">scores[4] reaches past the end</text>
+  <path d="M424 106 A10 10 0 0 1 434 96 H746 A10 10 0 0 1 756 106 V126 H424 Z" fill="#F6AEA6"/>
+  <g stroke="#CC2B1D" stroke-width="2.5" stroke-linecap="round"><line x1="436" y1="106" x2="446" y2="116"/><line x1="446" y1="106" x2="436" y2="116"/></g>
+  <text x="456" y="115" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">Traceback</text>
+  <line x1="424" y1="126" x2="766" y2="126" stroke="#14202B" stroke-width="2"/>
+  <rect x="432" y="170" width="320" height="22" rx="4" fill="#F6AEA6"/>
+  <text x="436" y="148" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">Traceback (most recent call last):</text>
+  <text x="436" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">  File "list_surgery.py", line 6</text>
+  <text x="436" y="186" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">    print(scores[4])</text>
+  <text x="436" y="214" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#CC2B1D" font-weight="600">IndexError: list index</text>
+  <text x="436" y="232" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#CC2B1D" font-weight="600">out of range</text>
+  <rect x="424" y="96" width="342" height="158" rx="10" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="388" y1="167" x2="418" y2="181" stroke="#CC2B1D" stroke-width="2.5" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#CC2B1D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(418 181) rotate(25)"/>
+  <text x="595" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Read the last line first:</text>
+  <text x="595" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">out of range means past the end.</text>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The fix is not a bigger number. It is scores[3], or scores[-1], or one more append.</text>
+</svg>

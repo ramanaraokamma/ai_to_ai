@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Tokenizing is choosing your slice size</title>
+  <desc>Two identical pizzas. The left one is cut into eight big wedges and labelled chop into words, with three token boxes reading i, love, pizza. The right one is cut into a grid of small squares and labelled chop into letters, with five one-letter token boxes.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Tokenizing is choosing your slice size</text>
+  <circle cx="200" cy="176" r="78" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+  <circle cx="170" cy="152" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <circle cx="226" cy="146" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <circle cx="234" cy="198" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <circle cx="178" cy="206" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <circle cx="202" cy="176" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <line x1="122.0" y1="176.0" x2="278.0" y2="176.0" stroke="#845F00" stroke-width="2" stroke-linecap="round"/>
+  <line x1="144.8" y1="120.8" x2="255.2" y2="231.2" stroke="#845F00" stroke-width="2" stroke-linecap="round"/>
+  <line x1="200.0" y1="98.0" x2="200.0" y2="254.0" stroke="#845F00" stroke-width="2" stroke-linecap="round"/>
+  <line x1="255.2" y1="120.8" x2="144.8" y2="231.2" stroke="#845F00" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="600" cy="176" r="78" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+  <circle cx="570" cy="152" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <circle cx="626" cy="146" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <circle cx="634" cy="198" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <circle cx="578" cy="206" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <circle cx="602" cy="176" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <line x1="548" y1="117.9" x2="548" y2="234.1" stroke="#845F00" stroke-width="2" stroke-linecap="round"/>
+  <line x1="541.9" y1="124" x2="658.1" y2="124" stroke="#845F00" stroke-width="2" stroke-linecap="round"/>
+  <line x1="574" y1="102.5" x2="574" y2="249.5" stroke="#845F00" stroke-width="2" stroke-linecap="round"/>
+  <line x1="526.5" y1="150" x2="673.5" y2="150" stroke="#845F00" stroke-width="2" stroke-linecap="round"/>
+  <line x1="600" y1="98.0" x2="600" y2="254.0" stroke="#845F00" stroke-width="2" stroke-linecap="round"/>
+  <line x1="522.0" y1="176" x2="678.0" y2="176" stroke="#845F00" stroke-width="2" stroke-linecap="round"/>
+  <line x1="626" y1="102.5" x2="626" y2="249.5" stroke="#845F00" stroke-width="2" stroke-linecap="round"/>
+  <line x1="526.5" y1="202" x2="673.5" y2="202" stroke="#845F00" stroke-width="2" stroke-linecap="round"/>
+  <line x1="652" y1="117.9" x2="652" y2="234.1" stroke="#845F00" stroke-width="2" stroke-linecap="round"/>
+  <line x1="541.9" y1="228" x2="658.1" y2="228" stroke="#845F00" stroke-width="2" stroke-linecap="round"/>
+  <text x="200" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">chop into words</text>
+  <text x="200" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">few pieces, lots on each</text>
+  <text x="600" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">chop into letters</text>
+  <text x="600" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">many pieces, almost nothing on each</text>
+  <rect x="118" y="314" width="30" height="28" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/><text x="133.0" y="328.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">i</text>
+  <rect x="156" y="314" width="54" height="28" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/><text x="183.0" y="328.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">love</text>
+  <rect x="218" y="314" width="64" height="28" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/><text x="250.0" y="328.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">pizza</text>
+  <rect x="528" y="314" width="24" height="28" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/><text x="540.0" y="328.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">i</text>
+  <rect x="558" y="314" width="24" height="28" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/><text x="570.0" y="328.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">l</text>
+  <rect x="588" y="314" width="24" height="28" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/><text x="600.0" y="328.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">o</text>
+  <rect x="618" y="314" width="24" height="28" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/><text x="630.0" y="328.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">v</text>
+  <rect x="648" y="314" width="24" height="28" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/><text x="660.0" y="328.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">e</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Same pizza. You decide what a piece is - and then you stick to it.</text>
+</svg>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The same table with a different column covered</title>
+  <desc>The same three-row fruit table is shown twice. On the left the fruit column is covered by a flap, making a classification problem. On the right the weight column is covered instead, making a regression problem.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="40" font-size="24" fill="#14202B" text-anchor="middle">One table. Two different problems.</text>
+    <line x1="400" y1="62" x2="400" y2="352" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+    <text x="196" y="86" font-size="18" fill="#14202B" text-anchor="middle">1. Cover &#8220;fruit&#8221;</text>
+    <text x="604" y="86" font-size="18" fill="#14202B" text-anchor="middle">2. Cover &#8220;weight_g&#8221;</text>
+
+    <rect x="30" y="100" width="332" height="152" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M30 110 A10 10 0 0 1 40 100 H352 A10 10 0 0 1 362 110 V138 H30 Z" fill="#D9EAF9" stroke="none"/>
+    <line x1="30" y1="138" x2="362" y2="138" stroke="#1F6FB2" stroke-width="3"/>
+    <g stroke="#C7CDD4" stroke-width="1.5">
+      <line x1="30" y1="176" x2="362" y2="176"/>
+      <line x1="30" y1="214" x2="362" y2="214"/>
+      <line x1="140" y1="100" x2="140" y2="252"/>
+      <line x1="250" y1="100" x2="250" y2="252"/>
+    </g>
+    <g font-size="12" fill="#14202B" text-anchor="middle">
+      <text x="85" y="123" fill="#55636F">weight_g</text>
+      <text x="195" y="123" fill="#55636F">skin</text>
+      <text x="306" y="123" fill="#55636F">fruit</text>
+      <text x="85" y="161">150</text><text x="195" y="161">smooth</text>
+      <text x="85" y="199">200</text><text x="195" y="199">bumpy</text>
+      <text x="85" y="237">120</text><text x="195" y="237">smooth</text>
+    </g>
+    <rect x="252" y="140" width="108" height="110" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <text x="306" y="188" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">FLAP</text>
+    <text x="306" y="208" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">guess this</text>
+    <text x="196" y="286" font-size="16" fill="#14202B" text-anchor="middle">Answer is a word from a list</text>
+    <text x="196" y="310" font-size="16" fill="#14202B" text-anchor="middle">apple / orange / banana</text>
+    <rect x="76" y="326" width="240" height="34" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <text x="196" y="343" font-size="16" fill="#14202B" text-anchor="middle" dominant-baseline="central">CLASSIFICATION</text>
+
+    <rect x="438" y="100" width="332" height="152" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M438 110 A10 10 0 0 1 448 100 H760 A10 10 0 0 1 770 110 V138 H438 Z" fill="#D9EAF9" stroke="none"/>
+    <line x1="438" y1="138" x2="770" y2="138" stroke="#1F6FB2" stroke-width="3"/>
+    <g stroke="#C7CDD4" stroke-width="1.5">
+      <line x1="438" y1="176" x2="770" y2="176"/>
+      <line x1="438" y1="214" x2="770" y2="214"/>
+      <line x1="548" y1="100" x2="548" y2="252"/>
+      <line x1="658" y1="100" x2="658" y2="252"/>
+    </g>
+    <g font-size="12" fill="#14202B" text-anchor="middle">
+      <text x="493" y="123" fill="#55636F">weight_g</text>
+      <text x="603" y="123" fill="#55636F">skin</text>
+      <text x="714" y="123" fill="#55636F">fruit</text>
+      <text x="603" y="161">smooth</text><text x="714" y="161">apple</text>
+      <text x="603" y="199">bumpy</text><text x="714" y="199">orange</text>
+      <text x="603" y="237">smooth</text><text x="714" y="237">banana</text>
+    </g>
+    <rect x="440" y="140" width="106" height="110" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <text x="493" y="188" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">FLAP</text>
+    <text x="493" y="208" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">guess this</text>
+    <text x="604" y="286" font-size="16" fill="#14202B" text-anchor="middle">Answer is a number on a scale</text>
+    <text x="604" y="310" font-size="16" fill="#14202B" text-anchor="middle">110 &#8230; 161.25 &#8230; 210</text>
+    <rect x="484" y="326" width="240" height="34" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+    <text x="604" y="343" font-size="16" fill="#14202B" text-anchor="middle" dominant-baseline="central">REGRESSION</text>
+
+    <text x="400" y="384" font-size="14" fill="#55636F" text-anchor="middle">Nothing about the data changed. Only the column you decided to hide.</text>
+  </g>
+</svg>

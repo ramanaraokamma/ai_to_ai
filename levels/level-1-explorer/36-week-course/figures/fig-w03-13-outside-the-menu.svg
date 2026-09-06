@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>There is no option for outside my world</title>
+  <desc>A model whose whole menu is cat or dog. A cat photo gets cat ninety-six percent and is correct. A Pomeranian photo gets dog ninety-four percent and is correct. A photo of a chair still gets dog seventy-one percent, which is wrong, because chair is not on the menu.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="40" font-size="24" fill="#14202B" text-anchor="middle">There is no option for "outside my world"</text>
+
+    <g stroke="#14202B" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="252" y1="132" x2="272" y2="132"/>
+      <polyline points="266,126 276,132 266,138"/>
+      <line x1="252" y1="222" x2="272" y2="222"/>
+      <polyline points="266,216 276,222 266,228"/>
+      <line x1="252" y1="312" x2="272" y2="312"/>
+      <polyline points="266,306 276,312 266,318"/>
+      <line x1="432" y1="132" x2="462" y2="132"/>
+      <polyline points="456,126 466,132 456,138"/>
+      <line x1="432" y1="222" x2="462" y2="222"/>
+      <polyline points="456,216 466,222 456,228"/>
+      <line x1="432" y1="312" x2="462" y2="312"/>
+      <polyline points="456,306 466,312 456,318"/>
+    </g>
+
+    <rect x="40" y="100" width="210" height="64" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+    <text x="145" y="132" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">a photo of a cat</text>
+    <rect x="40" y="190" width="210" height="64" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+    <text x="145" y="222" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">a photo of a Pomeranian</text>
+    <rect x="40" y="280" width="210" height="64" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+    <text x="145" y="312" font-size="15" fill="#14202B" text-anchor="middle" dominant-baseline="central">a photo of a CHAIR</text>
+
+    <rect x="280" y="92" width="150" height="260" rx="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
+    <text x="355" y="116" font-size="12" fill="#55636F" text-anchor="middle">the model's whole menu</text>
+    <rect x="300" y="132" width="110" height="38" rx="8" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2.5"/>
+    <text x="355" y="151" font-size="16" fill="#14202B" text-anchor="middle" dominant-baseline="central">cat</text>
+    <rect x="300" y="184" width="110" height="38" rx="8" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2.5"/>
+    <text x="355" y="203" font-size="16" fill="#14202B" text-anchor="middle" dominant-baseline="central">dog</text>
+    <text x="355" y="252" font-size="12" fill="#55636F" text-anchor="middle">and nothing else,</text>
+    <text x="355" y="270" font-size="12" fill="#55636F" text-anchor="middle">ever</text>
+    <text x="355" y="308" font-size="12" fill="#55636F" text-anchor="middle">no "not sure"</text>
+    <text x="355" y="326" font-size="12" fill="#55636F" text-anchor="middle">no "something else"</text>
+
+    <rect x="466" y="100" width="304" height="64" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <g transform="translate(474,113) scale(0.38)">
+      <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="516" y="126" font-size="15" fill="#14202B">"cat &#8212; 96%"</text>
+    <text x="516" y="148" font-size="12" fill="#55636F">Correct. Easy case.</text>
+
+    <rect x="466" y="190" width="304" height="64" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <g transform="translate(474,203) scale(0.38)">
+      <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="516" y="216" font-size="15" fill="#14202B">"dog &#8212; 94%"</text>
+    <text x="516" y="238" font-size="12" fill="#55636F">Correct, but it never saw this breed.</text>
+
+    <rect x="466" y="280" width="304" height="64" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g transform="translate(474,293) scale(0.38)">
+      <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+      <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+        <line x1="38" y1="38" x2="62" y2="62"/>
+        <line x1="62" y1="38" x2="38" y2="62"/>
+      </g>
+    </g>
+    <text x="516" y="306" font-size="15" fill="#14202B">"dog &#8212; 71%"</text>
+    <text x="516" y="328" font-size="12" fill="#55636F">A chair. It had nothing else to say.</text>
+
+    <text x="400" y="380" font-size="14" fill="#55636F" text-anchor="middle">A person would say "I don't know what that is". This machine has no way to.</text>
+  </g>
+</svg>

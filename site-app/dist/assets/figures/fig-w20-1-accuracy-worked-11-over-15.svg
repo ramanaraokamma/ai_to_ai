@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Accuracy worked all the way from 11 over 15 to 73.3 percent</title>
+  <desc>Four stacked steps. First the formula, correct guesses over total guesses. Then eleven over fifteen. Then the long division written out in four lines giving zero point seven three three three. Then multiplying by one hundred to get seventy-three point three percent.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+
+    <text x="250" y="38" font-size="24" fill="#14202B" text-anchor="middle">Accuracy, shown all the way down</text>
+
+    <rect x="50" y="60" width="400" height="112" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <text x="250" y="98" font-size="18" fill="#14202B" text-anchor="middle">number of correct guesses</text>
+    <line x1="130" y1="114" x2="370" y2="114" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <text x="250" y="148" font-size="18" fill="#14202B" text-anchor="middle">total number of guesses</text>
+
+    <g stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <line x1="250" y1="176" x2="250" y2="196"/>
+      <polyline points="242,190 250,200 258,190"/>
+    </g>
+
+    <rect x="140" y="206" width="220" height="104" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <text x="250" y="248" font-size="24" fill="#14202B" text-anchor="middle">11</text>
+    <line x1="200" y1="258" x2="300" y2="258" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <text x="250" y="292" font-size="24" fill="#14202B" text-anchor="middle">15</text>
+
+    <g stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <line x1="250" y1="314" x2="250" y2="334"/>
+      <polyline points="242,328 250,338 258,328"/>
+    </g>
+
+    <rect x="40" y="344" width="420" height="184" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <text x="60" y="372" font-size="14" fill="#55636F">11 divided by 15, one line at a time</text>
+    <g font-size="18" fill="#14202B">
+      <text x="60" y="404">15 x 0.7 = 10.5</text>
+      <text x="60" y="436">11 - 10.5 = 0.5 left over</text>
+      <text x="60" y="468">0.5 / 15 = 0.0333</text>
+      <text x="60" y="500">0.7 + 0.0333 = 0.7333</text>
+    </g>
+
+    <g stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <line x1="250" y1="532" x2="250" y2="552"/>
+      <polyline points="242,546 250,556 258,546"/>
+    </g>
+
+    <rect x="110" y="562" width="280" height="76" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <text x="250" y="608" font-size="20" fill="#14202B" text-anchor="middle">0.7333 x 100 = 73.3%</text>
+
+    <text x="250" y="668" font-size="14" fill="#55636F" text-anchor="middle">The fraction tells you there were 15 tries. The percentage hides that.</text>
+  </g>
+</svg>

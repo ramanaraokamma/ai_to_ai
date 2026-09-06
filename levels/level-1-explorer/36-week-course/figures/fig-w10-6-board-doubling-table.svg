@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The Week 10 board at the end of the concept segment</title>
+  <desc>The left half of the board holds a two column table of checks against situations: 1 gives 2, 2 gives 4, 3 gives 8, 5 gives 32, 10 gives 1024, 20 gives 1048576 and 30 gives 1073741824. The right half holds a panel headed THE TRADE listing what you give up and what you supply instead, with a boxed question: why did I stop adding rules?</desc>
+  <text x="400" y="32" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The board at the end of the concept segment</text>
+
+  <rect x="40" y="60" width="350" height="272" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="40" y="60" width="350" height="34" fill="#D9EAF9" stroke="none"/>
+  <line x1="40" y1="94" x2="390" y2="94" stroke="#1F6FB2" stroke-width="3"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="160" y1="60" x2="160" y2="332"/>
+    <line x1="40" y1="128" x2="390" y2="128"/>
+    <line x1="40" y1="162" x2="390" y2="162"/>
+    <line x1="40" y1="196" x2="390" y2="196"/>
+    <line x1="40" y1="230" x2="390" y2="230"/>
+    <line x1="40" y1="264" x2="390" y2="264"/>
+    <line x1="40" y1="298" x2="390" y2="298"/>
+  </g>
+  <rect x="40" y="60" width="350" height="272" rx="10" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">
+    <text x="100" y="82">checks</text>
+    <text x="275" y="82">situations</text>
+    <text x="100" y="116">1</text><text x="275" y="116">2</text>
+    <text x="100" y="150">2</text><text x="275" y="150">4</text>
+    <text x="100" y="184">3</text><text x="275" y="184">8</text>
+    <text x="100" y="218">5</text><text x="275" y="218">32</text>
+    <text x="100" y="252">10</text><text x="275" y="252">1,024</text>
+    <text x="100" y="286">20</text><text x="275" y="286">1,048,576</text>
+    <text x="100" y="320">30</text><text x="275" y="320">1,073,741,824</text>
+  </g>
+
+  <rect x="420" y="60" width="350" height="272" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="595" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">THE TRADE</text>
+  <line x1="440" y1="102" x2="750" y2="102" stroke="#C7CDD4" stroke-width="1.5"/>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">
+    <text x="440" y="130">You give up: writing the rules</text>
+    <text x="440" y="158">You give up: being able to read them</text>
+    <text x="440" y="186">You supply: labelled examples</text>
+    <text x="440" y="214">The price: you need a lot of them</text>
+  </g>
+  <rect x="440" y="236" width="310" height="72" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="595" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle">Homework question:</text>
+  <text x="595" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle">why did I stop adding rules?</text>
+
+  <text x="400" y="368" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Leave both halves up for the whole lesson. The student will point at them again during the activity.</text>
+</svg>

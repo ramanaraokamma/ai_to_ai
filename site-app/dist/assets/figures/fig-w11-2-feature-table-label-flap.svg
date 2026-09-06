@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Features, and the one column we cover up</title>
+  <desc>A five row feature table with columns id, mass in grams, ear length in centimetres, coat and paws. The last column, animal, is shaded green and marked as the label, and a yellow paper flap is drawn over its five data cells saying cover this column and ask the machine to guess it.</desc>
+  <text x="400" y="34" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Features, and the one column we cover up</text>
+
+  <line x1="106" y1="74" x2="530" y2="74" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="318" y="64" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">features &#8212; what we show it</text>
+  <line x1="530" y1="74" x2="680" y2="74" stroke="#C42B8C" stroke-width="2"/>
+  <text x="605" y="64" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="middle">the label</text>
+
+  <rect x="530" y="90" width="150" height="218" fill="#E2F7ED" stroke="none"/>
+  <rect x="50" y="90" width="630" height="218" rx="10" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="50" y1="128" x2="680" y2="128" stroke="#14202B" stroke-width="3"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="106" y1="90" x2="106" y2="308"/>
+    <line x1="216" y1="90" x2="216" y2="308"/>
+    <line x1="316" y1="90" x2="316" y2="308"/>
+    <line x1="426" y1="90" x2="426" y2="308"/>
+    <line x1="50" y1="164" x2="680" y2="164"/>
+    <line x1="50" y1="200" x2="680" y2="200"/>
+    <line x1="50" y1="236" x2="680" y2="236"/>
+    <line x1="50" y1="272" x2="680" y2="272"/>
+  </g>
+  <line x1="530" y1="90" x2="530" y2="308" stroke="#1B7A4B" stroke-width="3"/>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">
+    <text x="78" y="114">id</text>
+    <text x="161" y="114">mass_g</text>
+    <text x="266" y="114">ear_cm</text>
+    <text x="371" y="114">coat</text>
+    <text x="478" y="114">paws</text>
+    <text x="605" y="114">animal</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">
+    <text x="78" y="150">1</text><text x="161" y="150">12400</text><text x="266" y="150">14</text><text x="371" y="150">brown</text><text x="478" y="150">2</text>
+    <text x="78" y="186">2</text><text x="161" y="186">4200</text><text x="266" y="186">6</text><text x="371" y="186">grey</text><text x="478" y="186">0</text>
+    <text x="78" y="222">3</text><text x="161" y="222">26000</text><text x="266" y="222">19</text><text x="371" y="222">black</text><text x="478" y="222">4</text>
+    <text x="78" y="258">4</text><text x="161" y="258">3800</text><text x="266" y="258">5</text><text x="371" y="258">white</text><text x="478" y="258">4</text>
+    <text x="78" y="294">5</text><text x="161" y="294">8100</text><text x="266" y="294">11</text><text x="371" y="294">brown</text><text x="478" y="294">1</text>
+  </g>
+
+  <g transform="rotate(-3 605 220)">
+    <path d="M524 132 H686 V286 L664 308 H524 Z" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M664 308 V286 H686 Z" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <text x="601" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">cover this</text>
+    <text x="601" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">column and</text>
+    <text x="601" y="228" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">ask the machine</text>
+    <text x="601" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">to guess it</text>
+  </g>
+
+  <text x="400" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">One row is one animal. Every column but the last is a feature. The last column is the answer.</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Which column is the label is a choice you make, not a fact about the table.</text>
+</svg>

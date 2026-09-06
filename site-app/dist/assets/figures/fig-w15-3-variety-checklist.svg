@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>The variety checklist</title>
+  <desc>Four rows of four small photo thumbnails of the same spoon. Row one varies the background, row two the lighting, row three the angle and row four the distance. A note says whatever you vary for one object you must vary for all of them.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="250" y="42" font-size="24" fill="#14202B" text-anchor="middle">Vary all four. Every time.</text>
+    <text x="250" y="68" font-size="14" fill="#55636F" text-anchor="middle">The same spoon, photographed sixteen genuinely different ways.</text>
+
+    <text x="20" y="94" font-size="18" fill="#14202B">1 &#183; BACKGROUND &#8212; at least 5 surfaces</text>
+    <rect x="20" y="104" width="100" height="100" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="140" y="104" width="100" height="100" rx="8" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <g stroke="#C7CDD4" stroke-width="1.5">
+      <line x1="140" y1="128" x2="240" y2="128"/><line x1="140" y1="152" x2="240" y2="152"/>
+      <line x1="140" y1="176" x2="240" y2="176"/>
+    </g>
+    <rect x="260" y="104" width="100" height="100" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="380" y="104" width="100" height="100" rx="8" fill="#E8C671" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <g fill="#FFFFFF" stroke="#14202B" stroke-width="3">
+      <ellipse cx="70" cy="140" rx="8" ry="12"/>
+      <ellipse cx="190" cy="140" rx="8" ry="12"/>
+      <ellipse cx="310" cy="140" rx="8" ry="12"/>
+      <ellipse cx="430" cy="140" rx="8" ry="12"/>
+    </g>
+    <g stroke="#14202B" stroke-width="3" stroke-linecap="round">
+      <line x1="70" y1="152" x2="70" y2="180"/>
+      <line x1="190" y1="152" x2="190" y2="180"/>
+      <line x1="310" y1="152" x2="310" y2="180"/>
+      <line x1="430" y1="152" x2="430" y2="180"/>
+    </g>
+    <g font-size="12" fill="#55636F" text-anchor="middle">
+      <text x="70" y="222">plain desk</text>
+      <text x="190" y="222">carpet</text>
+      <text x="310" y="222">tiles</text>
+      <text x="430" y="222">wood</text>
+    </g>
+
+    <text x="20" y="266" font-size="18" fill="#14202B">2 &#183; LIGHTING &#8212; at least 3 kinds</text>
+    <g>
+      <rect x="20" y="276" width="100" height="100" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="140" y="276" width="100" height="100" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="260" y="276" width="100" height="100" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="380" y="276" width="100" height="100" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    </g>
+    <g fill="#E8C671" stroke="#845F00" stroke-width="2">
+      <circle cx="38" cy="294" r="8"/>
+      <circle cx="222" cy="294" r="8"/>
+      <circle cx="278" cy="294" r="6"/>
+      <circle cx="462" cy="294" r="5"/>
+    </g>
+    <g fill="#C7CDD4" stroke="none">
+      <ellipse cx="86" cy="356" rx="26" ry="7"/>
+      <ellipse cx="176" cy="356" rx="26" ry="7"/>
+      <ellipse cx="310" cy="356" rx="14" ry="6"/>
+      <ellipse cx="446" cy="356" rx="34" ry="8"/>
+    </g>
+    <g fill="#FFFFFF" stroke="#14202B" stroke-width="3">
+      <ellipse cx="70" cy="312" rx="8" ry="12"/>
+      <ellipse cx="190" cy="312" rx="8" ry="12"/>
+      <ellipse cx="310" cy="312" rx="8" ry="12"/>
+      <ellipse cx="430" cy="312" rx="8" ry="12"/>
+    </g>
+    <g stroke="#14202B" stroke-width="3" stroke-linecap="round">
+      <line x1="70" y1="324" x2="70" y2="352"/>
+      <line x1="190" y1="324" x2="190" y2="352"/>
+      <line x1="310" y1="324" x2="310" y2="352"/>
+      <line x1="430" y1="324" x2="430" y2="352"/>
+    </g>
+    <g font-size="12" fill="#55636F" text-anchor="middle">
+      <text x="70" y="394">window left</text>
+      <text x="190" y="394">window right</text>
+      <text x="310" y="394">ceiling light</text>
+      <text x="430" y="394">low lamp</text>
+    </g>
+
+    <text x="20" y="438" font-size="18" fill="#14202B">3 &#183; ANGLE &#8212; at least 8 turns</text>
+    <g>
+      <rect x="20" y="448" width="100" height="100" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="140" y="448" width="100" height="100" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="260" y="448" width="100" height="100" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="380" y="448" width="100" height="100" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    </g>
+    <g transform="rotate(0 70 498)">
+      <ellipse cx="70" cy="484" rx="8" ry="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+      <line x1="70" y1="496" x2="70" y2="524" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <g transform="rotate(35 190 498)">
+      <ellipse cx="190" cy="484" rx="8" ry="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+      <line x1="190" y1="496" x2="190" y2="524" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <g transform="rotate(72 310 498)">
+      <ellipse cx="310" cy="484" rx="8" ry="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+      <line x1="310" y1="496" x2="310" y2="524" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <g transform="rotate(160 430 498)">
+      <ellipse cx="430" cy="484" rx="8" ry="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+      <line x1="430" y1="496" x2="430" y2="524" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <g font-size="12" fill="#55636F" text-anchor="middle">
+      <text x="70" y="566">upright</text>
+      <text x="190" y="566">tilted</text>
+      <text x="310" y="566">sideways</text>
+      <text x="430" y="566">upside down</text>
+    </g>
+
+    <text x="20" y="602" font-size="18" fill="#14202B">4 &#183; DISTANCE &#8212; at least 2, close and far</text>
+    <g>
+      <rect x="20" y="612" width="100" height="64" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="140" y="612" width="100" height="64" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="260" y="612" width="100" height="64" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="380" y="612" width="100" height="64" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(70 644) scale(0.45)">
+      <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+      <line x1="0" y1="-2" x2="0" y2="26" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(190 644) scale(0.75)">
+      <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+      <line x1="0" y1="-2" x2="0" y2="26" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(310 644) scale(1.05)">
+      <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+      <line x1="0" y1="-2" x2="0" y2="26" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(430 644) scale(1.35)">
+      <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+      <line x1="0" y1="-2" x2="0" y2="26" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <text x="250" y="694" font-size="14" fill="#55636F" text-anchor="middle">Whatever you vary for one object, vary for all three. Otherwise you are labelling the room.</text>
+  </g>
+</svg>

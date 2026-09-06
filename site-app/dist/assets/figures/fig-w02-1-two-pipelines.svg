@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Two pipelines: who writes the rule?</title>
+  <desc>Two pipelines stacked. The top one shows a person writing a rule, which goes into a computer, which produces an answer. The bottom one shows labelled examples going into training, which produces a model, which produces an answer. In both, the person's position is circled, and in the bottom pipeline the person is at the examples, not at the rule.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="32" font-size="24" fill="#14202B" text-anchor="middle">Where is the person standing?</text>
+
+    <text x="30" y="66" font-size="18" fill="#845F00">1. RULE-BASED — a human writes the rule</text>
+    <g stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <line x1="150" y1="112" x2="222" y2="112"/><polyline points="214,105 228,112 214,119"/>
+      <line x1="366" y1="112" x2="438" y2="112"/><polyline points="430,105 444,112 430,119"/>
+      <line x1="582" y1="112" x2="654" y2="112"/><polyline points="646,105 660,112 646,119"/>
+    </g>
+    <rect x="30" y="80" width="120" height="64" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <text x="90" y="112" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">A person</text>
+    <rect x="228" y="80" width="138" height="64" rx="10" fill="#F5F8FA" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <text x="297" y="103" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">writes the</text>
+    <text x="297" y="125" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">IF-THEN rule</text>
+    <rect x="444" y="80" width="138" height="64" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <text x="513" y="112" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">Computer</text>
+    <rect x="660" y="80" width="110" height="64" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <text x="715" y="112" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">Answer</text>
+    <ellipse cx="90" cy="112" rx="72" ry="44" fill="none" stroke="#C42B8C" stroke-width="3" stroke-dasharray="8 6"/>
+    <text x="90" y="172" font-size="14" fill="#C42B8C" text-anchor="middle">the person is HERE</text>
+
+    <line x1="30" y1="196" x2="770" y2="196" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+    <text x="30" y="228" font-size="18" fill="#6D28D9">2. MACHINE LEARNING — the machine finds the rule</text>
+    <g stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <line x1="196" y1="288" x2="248" y2="288"/><polyline points="240,281 254,288 240,295"/>
+      <line x1="392" y1="288" x2="444" y2="288"/><polyline points="436,281 450,288 436,295"/>
+      <line x1="588" y1="288" x2="640" y2="288"/><polyline points="632,281 646,288 632,295"/>
+    </g>
+    <rect x="30" y="252" width="166" height="72" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <text x="113" y="278" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">A person collects</text>
+    <text x="113" y="300" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">labelled examples</text>
+    <rect x="254" y="252" width="138" height="72" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <text x="323" y="288" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">Training</text>
+    <rect x="450" y="252" width="138" height="72" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+    <text x="519" y="278" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">MODEL</text>
+    <text x="519" y="302" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">the found rule</text>
+    <rect x="646" y="252" width="124" height="72" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <text x="708" y="288" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">Answer</text>
+    <ellipse cx="113" cy="288" rx="95" ry="48" fill="none" stroke="#C42B8C" stroke-width="3" stroke-dasharray="8 6"/>
+    <text x="113" y="352" font-size="14" fill="#C42B8C" text-anchor="middle">the person is HERE — and nowhere else</text>
+
+    <text x="400" y="386" font-size="14" fill="#55636F" text-anchor="middle">Same shape, one difference: in row 2 nobody ever writes the rule down.</text>
+  </g>
+</svg>

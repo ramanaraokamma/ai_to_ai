@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>The next-word table for a 24-word corpus</title>
+  <desc>A four-column tally table: current word, next word, count, out of. The word the was followed seven times: dog twice, park twice, cat twice, bone once. Dog was followed twice: ran once, ate once. Cat was followed twice: ran once, sat once. A full stop was followed three times, always by the. A note says count divided by out of gives how likely the model is to pick that word.</desc>
+  <text x="250" y="38" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The next-word table for a 24-word corpus</text>
+  <path d="M40 84 A10 10 0 0 1 50 74 H450 A10 10 0 0 1 460 84 V118 H40 Z" fill="#D9EAF9" stroke="none"/>
+  <g stroke="#C7CDD4" stroke-width="1.5" fill="none"><line x1="170" y1="74" x2="170" y2="514"/><line x1="300" y1="74" x2="300" y2="514"/><line x1="380" y1="74" x2="380" y2="514"/><line x1="40" y1="162" x2="460" y2="162"/><line x1="40" y1="206" x2="460" y2="206"/><line x1="40" y1="250" x2="460" y2="250"/><line x1="40" y1="294" x2="460" y2="294"/><line x1="40" y1="338" x2="460" y2="338"/><line x1="40" y1="382" x2="460" y2="382"/><line x1="40" y1="426" x2="460" y2="426"/><line x1="40" y1="470" x2="460" y2="470"/><line x1="40" y1="514" x2="460" y2="514"/></g>
+  <line x1="40" y1="118" x2="460" y2="118" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+  <rect x="40" y="74" width="420" height="440" rx="10" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="56" y="100.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="700">CURRENT</text>
+  <text x="186" y="100.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="700">NEXT</text>
+  <text x="340.0" y="100.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" font-weight="700">COUNT</text>
+  <text x="420.0" y="100.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" font-weight="700">OUT OF</text>
+  <text x="56" y="146.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">the</text>
+  <text x="186" y="146.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">dog</text>
+  <text x="340.0" y="146.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">2</text>
+  <text x="420.0" y="146.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">7</text>
+  <text x="186" y="190.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">park</text>
+  <text x="340.0" y="190.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">2</text>
+  <text x="420.0" y="190.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">7</text>
+  <text x="186" y="234.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">cat</text>
+  <text x="340.0" y="234.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">2</text>
+  <text x="420.0" y="234.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">7</text>
+  <text x="186" y="278.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">bone</text>
+  <text x="340.0" y="278.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">1</text>
+  <text x="420.0" y="278.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">7</text>
+  <text x="56" y="322.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">dog</text>
+  <text x="186" y="322.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">ran</text>
+  <text x="340.0" y="322.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">1</text>
+  <text x="420.0" y="322.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">2</text>
+  <text x="186" y="366.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">ate</text>
+  <text x="340.0" y="366.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">1</text>
+  <text x="420.0" y="366.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">2</text>
+  <text x="56" y="410.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">cat</text>
+  <text x="186" y="410.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">ran</text>
+  <text x="340.0" y="410.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">1</text>
+  <text x="420.0" y="410.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">2</text>
+  <text x="186" y="454.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">sat</text>
+  <text x="340.0" y="454.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">1</text>
+  <text x="420.0" y="454.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">2</text>
+  <text x="56" y="498.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">.</text>
+  <text x="186" y="498.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">the</text>
+  <text x="340.0" y="498.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">3</text>
+  <text x="420.0" y="498.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">3</text>
+  <line x1="40" y1="294" x2="460" y2="294" stroke="#1F6FB2" stroke-width="2" stroke-linecap="round"/>
+  <line x1="40" y1="382" x2="460" y2="382" stroke="#1F6FB2" stroke-width="2" stroke-linecap="round"/>
+  <line x1="40" y1="470" x2="460" y2="470" stroke="#1F6FB2" stroke-width="2" stroke-linecap="round"/>
+  <rect x="40" y="526" width="420" height="106" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="64" y="558" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" font-weight="700">COUNT divided by OUT OF</text>
+  <text x="64" y="584" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B">= how likely the model is to pick that word.</text>
+  <text x="64" y="610" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#55636F">the -&gt; dog  is  2 out of 7</text>
+  <text x="250" y="664" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">A language model is this table, only much bigger.</text>
+</svg>

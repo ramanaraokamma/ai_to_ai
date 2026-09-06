@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Narrow AI versus general AI</title>
+  <desc>Two pocket knives side by side. The left knife has exactly one blade out and is labelled every AI you have ever met, one job only. The right knife is drawn as a dashed outline with five ghost blades, marked with a cross and labelled general AI, which does not exist.</desc>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="400" y="36" font-size="24" fill="#14202B" text-anchor="middle">One blade, or all of them?</text>
+    <line x1="400" y1="66" x2="400" y2="320" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+    <text x="200" y="96" font-size="18" fill="#14202B" text-anchor="middle">NARROW AI</text>
+    <g transform="translate(230,210) rotate(-20)">
+      <path d="M4 -12 L120 -28 L134 -16 L128 -2 L4 12 Z" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    </g>
+    <rect x="60" y="182" width="180" height="58" rx="16" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="224" cy="211" r="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/>
+    <text x="150" y="212" font-size="14" fill="#55636F" text-anchor="middle" dominant-baseline="central">one job</text>
+    <g transform="translate(120,246) scale(0.5)">
+      <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+      <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="200" y="300" font-size="14" fill="#14202B" text-anchor="middle">Every AI you have ever met.</text>
+    <text x="200" y="322" font-size="14" fill="#55636F" text-anchor="middle">Brilliant at one thing. Blank at everything else.</text>
+
+    <text x="600" y="96" font-size="18" fill="#14202B" text-anchor="middle">GENERAL AI (AGI)</text>
+    <g fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="7 6" stroke-linejoin="round">
+      <g transform="translate(630,210) rotate(-52)"><path d="M4 -12 L120 -28 L134 -16 L128 -2 L4 12 Z"/></g>
+      <g transform="translate(630,210) rotate(-28)"><path d="M4 -12 L120 -28 L134 -16 L128 -2 L4 12 Z"/></g>
+      <g transform="translate(630,210) rotate(-6)"><path d="M4 -12 L120 -28 L134 -16 L128 -2 L4 12 Z"/></g>
+      <g transform="translate(630,210) rotate(16)"><path d="M4 -12 L120 -28 L134 -16 L128 -2 L4 12 Z"/></g>
+    </g>
+    <rect x="460" y="182" width="180" height="58" rx="16" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="7 6" stroke-linejoin="round"/>
+    <text x="550" y="212" font-size="14" fill="#55636F" text-anchor="middle" dominant-baseline="central">any job at all</text>
+    <g transform="translate(520,246) scale(0.5)">
+      <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+      <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+        <line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/>
+      </g>
+    </g>
+    <text x="600" y="300" font-size="14" fill="#14202B" text-anchor="middle">Does not exist. Not one, anywhere.</text>
+    <text x="600" y="322" font-size="14" fill="#55636F" text-anchor="middle">Films only. Drawn dashed because it is imaginary.</text>
+
+    <text x="400" y="374" font-size="14" fill="#55636F" text-anchor="middle">Proof test: ask a system to do something one small step sideways. If it cannot, it is narrow.</text>
+  </g>
+</svg>

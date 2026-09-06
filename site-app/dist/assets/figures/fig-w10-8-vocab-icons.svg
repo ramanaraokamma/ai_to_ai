@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1052 400" role="img">
+  <title>Week 10 words as pictures</title>
+  <desc>Four icon cards. A check is a question card with exactly two exits, yes and no. Rule explosion is a rulebook bursting open. Exponential growth is a small staircase whose steps double in height. The machine learning trade is a shop counter with rules going one way and labelled examples coming back.</desc>
+  <text x="526" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">This week's four words as pictures</text>
+  <rect x="30" y="70" width="235" height="260" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="282" y="70" width="235" height="260" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="534" y="70" width="236" height="260" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="786" y="70" width="235" height="260" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+
+  <!-- 1. rule explosion : a fat rulebook with pages bursting -->
+  <g transform="translate(88,110)">
+    <path d="M6 24 H90 V116 H6 Z" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <line x1="24" y1="24" x2="24" y2="116" stroke="#845F00" stroke-width="2"/>
+    <g stroke="#55636F" stroke-width="2" stroke-linecap="round">
+      <line x1="36" y1="44" x2="80" y2="44"/>
+      <line x1="36" y1="58" x2="80" y2="58"/>
+      <line x1="36" y1="72" x2="80" y2="72"/>
+      <line x1="36" y1="86" x2="72" y2="86"/>
+    </g>
+    <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round">
+      <line x1="48" y1="18" x2="44" y2="2"/>
+      <line x1="70" y1="20" x2="80" y2="6"/>
+      <line x1="26" y1="20" x2="14" y2="8"/>
+    </g>
+    <rect x="16" y="120" width="70" height="14" rx="6" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  </g>
+  <text x="147" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">rule explosion</text>
+  <text x="147" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">the rulebook outgrows you</text>
+
+  <!-- 2. exponential growth : doubling steps -->
+  <g transform="translate(310,120)">
+    <rect x="4" y="100" width="34" height="16" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="42" y="84" width="34" height="32" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="80" y="52" width="34" height="64" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="118" y="-12" width="34" height="128" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">
+      <text x="21" y="132">2</text>
+      <text x="59" y="132">4</text>
+      <text x="97" y="132">8</text>
+      <text x="135" y="132">16</text>
+    </g>
+  </g>
+  <text x="399" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">exponential growth</text>
+  <text x="399" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">each step doubles the last</text>
+
+  <!-- 3. the machine learning trade : counter -->
+  <g transform="translate(560,112)">
+    <line x1="6" y1="70" x2="184" y2="70" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+    <rect x="14" y="34" width="56" height="30" rx="6" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+    <text x="42" y="54" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">rules</text>
+    <rect x="120" y="34" width="60" height="30" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+    <text x="150" y="54" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">examples</text>
+    <g stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <line x1="78" y1="20" x2="112" y2="20"/>
+      <polyline points="104,13 113,20 104,27"/>
+      <line x1="112" y1="88" x2="78" y2="88"/>
+      <polyline points="86,81 77,88 86,95"/>
+    </g>
+    <text x="95" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">you swap one for the other</text>
+  </g>
+  <text x="652" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">the ML trade</text>
+  <text x="652" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">stop writing, start collecting</text>
+
+  <!-- 4. check : a question card with exactly two exits -->
+  <g transform="translate(830,110)">
+    <rect x="0" y="8" width="146" height="46" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+    <text x="73" y="30" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">Does it say</text>
+    <text x="73" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" font-weight="bold">&#8220;free&#8221;?</text>
+    <g stroke="#14202B" stroke-width="3" stroke-linecap="round" fill="none">
+      <line x1="40" y1="54" x2="40" y2="76"/>
+      <line x1="106" y1="54" x2="106" y2="76"/>
+    </g>
+    <rect x="6" y="76" width="68" height="34" rx="6" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+    <text x="40" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">YES</text>
+    <rect x="76" y="76" width="68" height="34" rx="6" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+    <text x="110" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">NO</text>
+    <text x="73" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">two exits, never three</text>
+  </g>
+  <text x="903" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">check</text>
+  <text x="903" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">one yes/no question</text>
+
+  <text x="526" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Four words. One arithmetic fact underneath all of them.</text>
+</svg>

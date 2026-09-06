@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A row is a point</title>
+  <desc>A graph of petal length across the bottom against petal width up the side. Flower A, written as the row one point four and nought point two, sits low and left as a circle with dashed guide lines to both axes. Flower B, four point four and one point four, sits high and right as a triangle. On the right the same two numbers are drawn as two labelled boxes with an arrow down to a single dot, showing that two numbers become one point.</desc>
+  <text x="250" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A row is a point</text>
+  <line x1="104" y1="270.0" x2="450" y2="270.0" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <text x="94" y="274.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.5</text>
+  <line x1="104" y1="210.0" x2="450" y2="210.0" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <text x="94" y="214.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1.0</text>
+  <line x1="104" y1="150.0" x2="450" y2="150.0" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <text x="94" y="154.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1.5</text>
+  <line x1="104" y1="90.0" x2="450" y2="90.0" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <text x="94" y="94.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">2.0</text>
+  <line x1="161.66666666666666" y1="330" x2="161.66666666666666" y2="90" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <text x="161.66666666666666" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1</text>
+  <line x1="219.33333333333331" y1="330" x2="219.33333333333331" y2="90" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <text x="219.33333333333331" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2</text>
+  <line x1="277.0" y1="330" x2="277.0" y2="90" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <text x="277.0" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">3</text>
+  <line x1="334.66666666666663" y1="330" x2="334.66666666666663" y2="90" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <text x="334.66666666666663" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4</text>
+  <line x1="392.33333333333337" y1="330" x2="392.33333333333337" y2="90" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <text x="392.33333333333337" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">5</text>
+  <line x1="450.0" y1="330" x2="450.0" y2="90" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <text x="450.0" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">6</text>
+  <line x1="104" y1="330" x2="450" y2="330" stroke="#14202B" stroke-width="2" stroke-linecap="butt"/>
+  <line x1="104" y1="330" x2="104" y2="90" stroke="#14202B" stroke-width="2" stroke-linecap="butt"/>
+  <text x="277" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">petal length (cm)</text>
+  <text x="60" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle" transform="rotate(-90 60 210)">petal width (cm)</text>
+  <line x1="184.73333333333332" y1="306.0" x2="184.73333333333332" y2="330" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="5 4"/>
+  <line x1="184.73333333333332" y1="306.0" x2="104" y2="306.0" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="5 4"/>
+  <circle cx="184.73333333333332" cy="306.0" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <path d="M357.73333333333335 152.0 L367.73333333333335 172.0 L347.73333333333335 172.0 Z" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="200.73333333333332" y="311.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">flower A  (1.4, 0.2)</text>
+  <text x="341.73333333333335" y="148.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end">flower B  (4.4, 1.4)</text>
+  <text x="640" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">the same flower,</text>
+  <text x="640" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">written as a row</text>
+  <rect x="560" y="128" width="80" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="640" y="128" width="80" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="600" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">length</text>
+  <text x="680" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">width</text>
+  <text x="600" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.4</text>
+  <text x="680" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.2</text>
+  <line x1="640" y1="182" x2="640" y2="226" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(640 226) rotate(90.0)"/>
+  <circle cx="640" cy="254" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="640" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">one dot</text>
+  <text x="640" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Two numbers, two</text>
+  <text x="640" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">directions, one dot.</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Four measurements would still be one point. You just cannot draw it.</text>
+
+</svg>
