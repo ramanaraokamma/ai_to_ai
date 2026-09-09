@@ -12,7 +12,7 @@
 | **Type** | 🟦 Teach — one idea (a list of dicts is a table) and four small tools to work it |
 | **Big idea** | A list of dictionaries **is** a table: one dict is a row, and the keys are the column names. |
 | **New vocabulary** | record · list-of-dicts · field · list comprehension · `enumerate` |
-| **New syntax** | `player.items()` · `"age" in player` · `[r["score"] for r in rows]` · `enumerate(rows)` |
+| **New syntax** | `player.items()` · `"age" in player` · `[r["score"] for r in rows]` · `enumerate(rows)` · `sum(numbers)` / `max(numbers)` |
 | **Materials** | Last week's five index cards · **seven more blank cards** · a pen · printed workbook pages 14.1–14.6 · the Bug Log · the Level 1 "one row is one thing" sheet if you still have it |
 | **Tech needed** | Laptop with Python 3 and the editor. Still nothing installed — no numpy, no pandas. Paper fallback in the Prep Checklist. |
 | **Prep time** | 15 minutes the night before · 5 minutes on the day |
@@ -36,6 +36,8 @@ Observable evidence: a twelve-row table on screen with a numbered header that li
 ---
 
 ## 🧑‍🏫 What YOU Need to Know First
+
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
 **No Python needed to start.** Read this once and type the Prep code once.
 
@@ -1150,7 +1152,7 @@ playlist = [
     {"title": "Static",        "artist": "Kabir", "genre": "rock", "minutes": 3.1, "plays": 130},
     {"title": "Corner Shop",   "artist": "Ravi",  "genre": "pop",  "minutes": 3.7, "plays": 220},
     {"title": "Long Way Home", "artist": "Meera", "genre": "folk", "minutes": 5.4, "plays": 40},
-    {"title": "Kite Season",   "artist": "Nova",  "genre": "pop",  "minutes": 4.0, "plays": 65},
+    {"title": "Kite Season",   "artist": "Nova",  "genre": "indie", "minutes": 4.0, "plays": 65},
 ]
 
 FIELDS = ["title", "artist", "genre", "minutes", "plays"]
@@ -1161,7 +1163,7 @@ FIELDS = ["title", "artist", "genre", "minutes", "plays"]
 1. **Exactly twelve records.** `print(len(playlist))` must say 12.
 2. **All five keys on every record, spelled identically.** This is the one to check properly — read down the keys of all twelve. A stray capital or plural here will cost them twenty minutes next week.
 3. **At least two numeric columns.** Here, `minutes` and `plays`.
-4. **A repeating category with 3–5 distinct values.** Here, `genre` — pop, rock, folk. **If every value in that column is unique, send it back tonight.** Next week's lab has nothing to do otherwise.
+4. **A repeating category with 3–5 distinct values.** Here, `genre` — pop, rock, folk, indie. **If every value in that column is unique, send it back tonight.** Next week's lab has nothing to do otherwise. **And make sure exactly one value appears only once** — `indie` here, with a single song. Next week's whole punchline is an average computed from one row, and this column is where it comes from.
 5. **Plausible, varied numbers**, with a couple of extremes on purpose. `plays` runs from 40 to 300 here, and that spread is what makes next week's averages interesting.
 
 ### Page 14.5 — Print it as a numbered table
@@ -1192,7 +1194,7 @@ Real output:
  8  Static         Kabir   rock    3.1    130
  9  Corner Shop    Ravi    pop     3.7    220
 10  Long Way Home  Meera   folk    5.4     40
-11  Kite Season    Nova    pop     4.0     65
+11  Kite Season    Nova    indie   4.0     65
 ---------------------------------------------
 12 rows x 5 columns
 ```

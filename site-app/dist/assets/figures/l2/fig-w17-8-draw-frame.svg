@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Draw It frame for Week 17</title>
+  <desc>An empty framed drawing area titled draw your table then rub out the words. On the left an empty ruled grid of five columns with a tinted header row, labelled with the labels. An arrow marked rub out points right to a second empty ruled grid with no header row, labelled numbers only, this is the array. Three reminder boxes underneath for the shape, the dtype, and what was lost.</desc>
+  <rect x="24" y="24" width="752" height="290" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="24" y="24" width="752" height="44" rx="12" fill="#F5F8FA"/>
+  <line x1="24" y1="68" x2="776" y2="68" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <text x="400" y="53" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">DRAW: your table, then rub out the words</text>
+  <text x="400" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">left: the table with its labels   -   right: the block of numbers that is left</text>
+  <rect x="56" y="106" width="300" height="190" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="56" y="106" width="300" height="26" rx="10" fill="#D9EAF9"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="116" y1="106" x2="116" y2="296"/>
+    <line x1="176" y1="106" x2="176" y2="296"/>
+    <line x1="236" y1="106" x2="236" y2="296"/>
+    <line x1="296" y1="106" x2="296" y2="296"/>
+    <line x1="56" y1="152.5" x2="356" y2="152.5"/>
+    <line x1="56" y1="173.0" x2="356" y2="173.0"/>
+    <line x1="56" y1="193.5" x2="356" y2="193.5"/>
+    <line x1="56" y1="214.0" x2="356" y2="214.0"/>
+    <line x1="56" y1="234.5" x2="356" y2="234.5"/>
+    <line x1="56" y1="255.0" x2="356" y2="255.0"/>
+    <line x1="56" y1="275.5" x2="356" y2="275.5"/>
+  </g>
+  <line x1="56" y1="132" x2="356" y2="132" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="206" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">with the labels</text>
+  <rect x="444" y="106" width="300" height="190" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="504" y1="106" x2="504" y2="296"/>
+    <line x1="564" y1="106" x2="564" y2="296"/>
+    <line x1="624" y1="106" x2="624" y2="296"/>
+    <line x1="684" y1="106" x2="684" y2="296"/>
+    <line x1="444" y1="127.1" x2="744" y2="127.1"/>
+    <line x1="444" y1="148.2" x2="744" y2="148.2"/>
+    <line x1="444" y1="169.3" x2="744" y2="169.3"/>
+    <line x1="444" y1="190.4" x2="744" y2="190.4"/>
+    <line x1="444" y1="211.5" x2="744" y2="211.5"/>
+    <line x1="444" y1="232.60000000000002" x2="744" y2="232.60000000000002"/>
+    <line x1="444" y1="253.70000000000002" x2="744" y2="253.70000000000002"/>
+    <line x1="444" y1="274.8" x2="744" y2="274.8"/>
+  </g>
+  <text x="594" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">numbers only - this is the array</text>
+  <line x1="370" y1="200" x2="430" y2="200" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(430 200) rotate(0.0)"/>
+  <text x="400" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">rub out</text>
+  <text x="60" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">my shape</text>
+  <rect x="60" y="338" width="200" height="36" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="300" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">my dtype</text>
+  <rect x="300" y="338" width="200" height="36" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="540" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">what I lost</text>
+  <rect x="540" y="338" width="200" height="36" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+</svg>

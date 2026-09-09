@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The three tables you have to know</title>
+  <desc>Three truth tables side by side. The and table has four rows and is True only when both A and B are True. The or table has four rows and is True whenever at least one is True. The not table has two rows and flips its input. Each result cell carries a filled dot for True or a hollow ring for False as well as the word.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The three tables you have to know</text>
+  <rect x="40" y="92" width="244" height="32" fill="#D9EAF9"/>
+  <text x="72.0" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">A</text>
+  <text x="136.0" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">B</text>
+  <text x="226.0" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">A and B</text>
+  <rect x="168" y="124" width="116" height="34" fill="#E2F7ED"/>
+  <text x="72.0" y="141" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">True</text>
+  <text x="136.0" y="141" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">True</text>
+  <circle cx="198.0" cy="141" r="5" fill="#1B7A4B"/>
+  <text x="234.0" y="141" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">True</text>
+  <line x1="40" y1="124" x2="284" y2="124" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="168" y="158" width="116" height="34" fill="#F5F8FA"/>
+  <text x="72.0" y="175" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">True</text>
+  <text x="136.0" y="175" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">False</text>
+  <circle cx="198.0" cy="175" r="5" fill="none" stroke="#55636F" stroke-width="2"/>
+  <text x="234.0" y="175" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">False</text>
+  <line x1="40" y1="158" x2="284" y2="158" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="168" y="192" width="116" height="34" fill="#F5F8FA"/>
+  <text x="72.0" y="209" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">False</text>
+  <text x="136.0" y="209" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">True</text>
+  <circle cx="198.0" cy="209" r="5" fill="none" stroke="#55636F" stroke-width="2"/>
+  <text x="234.0" y="209" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">False</text>
+  <line x1="40" y1="192" x2="284" y2="192" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="168" y="226" width="116" height="34" fill="#F5F8FA"/>
+  <text x="72.0" y="243" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">False</text>
+  <text x="136.0" y="243" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">False</text>
+  <circle cx="198.0" cy="243" r="5" fill="none" stroke="#55636F" stroke-width="2"/>
+  <text x="234.0" y="243" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">False</text>
+  <line x1="40" y1="226" x2="284" y2="226" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="40" y1="124" x2="284" y2="124" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="104" y1="92" x2="104" y2="260" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="168" y1="92" x2="168" y2="260" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="40" y="92" width="244" height="168" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="162" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">and  -  strict</text>
+  <text x="162" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">one False sinks it</text>
+  <rect x="300" y="92" width="244" height="32" fill="#D9EAF9"/>
+  <text x="332.0" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">A</text>
+  <text x="396.0" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">B</text>
+  <text x="486.0" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">A or B</text>
+  <rect x="428" y="124" width="116" height="34" fill="#E2F7ED"/>
+  <text x="332.0" y="141" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">True</text>
+  <text x="396.0" y="141" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">True</text>
+  <circle cx="458.0" cy="141" r="5" fill="#1B7A4B"/>
+  <text x="494.0" y="141" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">True</text>
+  <line x1="300" y1="124" x2="544" y2="124" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="428" y="158" width="116" height="34" fill="#E2F7ED"/>
+  <text x="332.0" y="175" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">True</text>
+  <text x="396.0" y="175" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">False</text>
+  <circle cx="458.0" cy="175" r="5" fill="#1B7A4B"/>
+  <text x="494.0" y="175" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">True</text>
+  <line x1="300" y1="158" x2="544" y2="158" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="428" y="192" width="116" height="34" fill="#E2F7ED"/>
+  <text x="332.0" y="209" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">False</text>
+  <text x="396.0" y="209" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">True</text>
+  <circle cx="458.0" cy="209" r="5" fill="#1B7A4B"/>
+  <text x="494.0" y="209" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">True</text>
+  <line x1="300" y1="192" x2="544" y2="192" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="428" y="226" width="116" height="34" fill="#F5F8FA"/>
+  <text x="332.0" y="243" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">False</text>
+  <text x="396.0" y="243" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">False</text>
+  <circle cx="458.0" cy="243" r="5" fill="none" stroke="#55636F" stroke-width="2"/>
+  <text x="494.0" y="243" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">False</text>
+  <line x1="300" y1="226" x2="544" y2="226" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="300" y1="124" x2="544" y2="124" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="364" y1="92" x2="364" y2="260" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="428" y1="92" x2="428" y2="260" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="300" y="92" width="244" height="168" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="422" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">or  -  generous</text>
+  <text x="422" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">one True carries it</text>
+  <rect x="560" y="92" width="186" height="32" fill="#D9EAF9"/>
+  <text x="595.0" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">A</text>
+  <text x="688.0" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">not A</text>
+  <rect x="630" y="124" width="116" height="34" fill="#F5F8FA"/>
+  <text x="595.0" y="141" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">True</text>
+  <circle cx="660.0" cy="141" r="5" fill="none" stroke="#55636F" stroke-width="2"/>
+  <text x="696.0" y="141" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">False</text>
+  <line x1="560" y1="124" x2="746" y2="124" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="630" y="158" width="116" height="34" fill="#E2F7ED"/>
+  <text x="595.0" y="175" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">False</text>
+  <circle cx="660.0" cy="175" r="5" fill="#1B7A4B"/>
+  <text x="696.0" y="175" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">True</text>
+  <line x1="560" y1="158" x2="746" y2="158" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="560" y1="124" x2="746" y2="124" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="630" y1="92" x2="630" y2="192" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="560" y="92" width="186" height="100" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="653" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">not  -  a mirror</text>
+  <text x="653" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">it just flips</text>
+  <text x="400" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">A filled dot means True, a hollow ring means False - and the word says it too.</text>
+  <text x="400" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">In English, tea or coffee means one of them. In Python, or means</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">at least one, and both is perfectly fine.</text>
+</svg>

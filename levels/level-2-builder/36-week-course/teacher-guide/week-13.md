@@ -37,6 +37,8 @@ Observable evidence: a file on screen that prints five player cards; a `KeyError
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
+
 **You do not need to know any Python to teach this lesson.** Everything below is written for somebody who has never programmed. Read it once, type the code in the Prep Checklist once, and you will be ahead of the student.
 
 ### 1. The problem this week solves
@@ -211,7 +213,7 @@ KeyError: 'Runs'
 Teach the student to read it **from the bottom up**, exactly as in Week 1:
 
 1. **Last line first.** `KeyError: 'Runs'` — the word in quotes is the key Python could not find. Python is not being vague. It is naming the exact thing you asked for.
-2. **Then the line number.** `line 6` — that is where you asked.
+2. **Then the line number.** `line 8` — that is where you asked.
 3. **Then the `~~~^^^` marks**, if your Python is 3.11 or newer. The `^` marks sit under the exact part of the line that failed. On Python 3.10 or older you get the same message without them; nothing is missing that matters.
 
 There are three causes, and between them they account for almost every `KeyError` a beginner ever sees:
@@ -229,6 +231,10 @@ Make the student say the three out loud. In the activity they will produce a rea
 Sometimes a missing key means your data is broken and you *want* the program to stop. Sometimes a missing key is completely normal and you have a sensible answer ready. For the second case there is `.get()`:
 
 ```python
+# the card, fresh again — earlier in the lesson you changed runs to 51,
+# so re-make it here and this block stands on its own
+asha = {"name": "Asha", "runs": 48, "balls": 32, "team": "Falcons", "out": True}
+
 print(asha.get("runs", 0))       # the key IS there -> you get the real value
 print(asha.get("catches", 0))    # the key is NOT there -> you get your fallback, 0
 print(asha.get("catches"))       # no fallback given -> Python hands back None
@@ -264,6 +270,11 @@ Sam did not score zero. Nobody knows what Sam scored. Those are different facts 
 # The four Falcons: Asha 48, Ravi 12, Nita 77, Sam ???
 average_if_sam_scored_zero = (48 + 12 + 77 + 0) / 4    # we INVENTED a 0 for Sam
 average_leaving_sam_out    = (48 + 12 + 77) / 3        # we said "we don't know"
+
+print(f"Falcons average if Sam 'scored 0': {average_if_sam_scored_zero:.2f}")
+print(f"Falcons average leaving Sam out  : {average_leaving_sam_out:.2f}")
+print(f"The 0 we made up moved the answer by "
+      f"{average_leaving_sam_out - average_if_sam_scored_zero:.2f} runs")
 ```
 
 ```text
@@ -736,12 +747,10 @@ nita  = {"name": "Nita",  "runs": 77, "balls": 55, "team": "Falcons", "out": Fal
 kabir = {"name": "Kabir", "runs": 63, "balls": 41, "team": "Tigers",  "out": True}
 meera = {"name": "Meera", "runs": 30, "balls": 28, "team": "Tigers",  "out": False}
 
-
 def card_line(player):
     """Turn one player dictionary into one tidy line of text."""
     strike_rate = player["runs"] / player["balls"] * 100   # runs per 100 balls
     return f"{player['name']:<6}{player['team']:<9}{player['runs']:>4} runs  SR {strike_rate:6.1f}"
-
 
 print("=" * 44)
 print(card_line(asha))

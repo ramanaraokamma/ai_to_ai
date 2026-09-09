@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Label this truncated bar chart</title>
+  <desc>A bar chart of two classes whose y axis starts at 48.6, so the left bar is a stub and the right bar is six times taller. A grey block sits below the axis showing the length that was cut off both bars. Five empty dashed boxes lettered A to E are joined by leader lines to the bottom tick number, to the grey block, to the short bar, to the tall bar, and to a blank sum on the right. Nothing is filled in.</desc>
+  <text x="400" y="38" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Label this truncated bar chart</text>
+
+  <!-- leader lines first -->
+  <line x1="188" y1="288" x2="150" y2="304" stroke="#C42B8C" stroke-width="1.5"/>
+  <line x1="264" y1="322" x2="264" y2="348" stroke="#C42B8C" stroke-width="1.5"/>
+  <line x1="240" y1="266" x2="180" y2="228" stroke="#C42B8C" stroke-width="1.5"/>
+  <line x1="352" y1="128" x2="420" y2="112" stroke="#C42B8C" stroke-width="1.5"/>
+  <line x1="420" y1="220" x2="470" y2="220" stroke="#C42B8C" stroke-width="1.5"/>
+
+  <!-- the chart -->
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="200" y1="240" x2="404" y2="240"/>
+    <line x1="200" y1="180" x2="404" y2="180"/>
+    <line x1="200" y1="120" x2="404" y2="120"/>
+  </g>
+  <rect x="216" y="266" width="60" height="22" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="328" y="128" width="60" height="160" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="200" y1="100" x2="200" y2="288" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="200" y1="288" x2="404" y2="288" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="194" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">48.6</text>
+  <text x="194" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">49</text>
+  <text x="194" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">50</text>
+  <text x="194" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">51</text>
+  <text x="246" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">7A</text>
+  <text x="358" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">7B</text>
+
+  <!-- the deleted block -->
+  <rect x="200" y="312" width="204" height="20" fill="#C7CDD4"/>
+  <text x="302" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">the part nobody can see</text>
+
+  <!-- A: the bottom tick -->
+  <rect x="24" y="290" width="124" height="30" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="86" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="middle">A</text>
+
+  <!-- B: the grey block -->
+  <rect x="200" y="348" width="204" height="30" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="190" y="363" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="end" dominant-baseline="central">B</text>
+
+  <!-- C: the short bar -->
+  <rect x="24" y="212" width="152" height="30" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="100" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="middle">C</text>
+
+  <!-- D: the tall bar -->
+  <rect x="424" y="96" width="152" height="30" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="500" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="middle">D</text>
+
+  <!-- E: the ratio -->
+  <rect x="474" y="164" width="290" height="112" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="619" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">now do the arithmetic</text>
+  <rect x="492" y="196" width="254" height="26" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="619" y="209" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C7CDD4" text-anchor="middle" dominant-baseline="central">D divided by C = ?</text>
+  <rect x="492" y="232" width="254" height="26" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="619" y="245" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C7CDD4" text-anchor="middle" dominant-baseline="central">51 divided by 49 = ?</text>
+  <text x="470" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="end">E</text>
+
+  <text x="400" y="392" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Every number printed on this chart is true. Write down which one line of code did the lying.</text>
+</svg>

@@ -37,6 +37,8 @@ Observable evidence: `receipt.py`, running, with a per-slice cost shown to exact
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
+
 Four new pieces of syntax, and every one of them is small. Read this with the laptop open and type the examples; the whole section takes about twenty-five minutes and it is the entire prep.
 
 ### 1. The problem f-strings solve

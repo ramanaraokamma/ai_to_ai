@@ -37,6 +37,8 @@ Observable evidence: a hand-drawn line on graph paper with a slope read off by c
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
+
 Everything below is arithmetic you can do with a pencil, plus four lines of code. There is no new mathematics here beyond "how steep is this line", which the student has met in beginning algebra. What is new is **insisting on units**, and that is the habit the whole week is for.
 
 ### 1. The only new idea: the answer is a number now
@@ -214,7 +216,7 @@ Why? Because R² is not a measure of how good you are. It is a measure of **how 
 
 The third column is the whole explanation, so make sure the student's script prints it. **"Mean-guess MAE" is how far off you would be if you ignored the other three measurements entirely and just said the average every time.** That is the thing R² measures you against.
 
-*(Those mean-guess numbers are computed on the 30 held-back flowers. Across all 150 they come out at 0.688, 0.295, 1.563 and 0.658 cm — near enough identical, and the story does not change.)*
+*(Those mean-guess numbers are computed on the 30 held-back flowers. Across all 150 they come out at 0.688, 0.337, 1.563 and 0.658 cm — close enough, and the story does not change: sepal width is still by far the least varying of the four, which is exactly why its R² is the lowest.)*
 
 ![Same MAE, very different R²](../figures/fig-w32-5-same-mae-different-r2.svg)
 *Figure 32.4 — Same MAE, very different R². R² asks how much better you are than guessing the mean.*

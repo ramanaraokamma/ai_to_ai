@@ -56,6 +56,8 @@ And here is the genuinely good news buried inside that. Because it is literal, i
 
 ## 🧠 The Big Idea
 
+> **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
+
 ### 1. A program is a list of instructions in a file
 
 **The plain explanation.** A **program** is a list of instructions, written down in a file, that a computer performs one after another from the top of the file to the bottom.

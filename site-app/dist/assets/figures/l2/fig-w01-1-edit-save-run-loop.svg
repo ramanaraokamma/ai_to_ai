@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Type it, save it, run it, then go round again</title>
+  <desc>Three numbered stages left to right: you type instructions into a file, the file is saved to disk, and running it makes the computer print your words. A red arrow loops back from the end to the start, labelled: it broke, read the last line, change one thing, go round again.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Type it, save it, run it, then go round again</text>
+  <rect x="40" y="100" width="200" height="170" rx="12" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="300" y="100" width="200" height="170" rx="12" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="560" y="100" width="200" height="170" rx="12" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(245,175) scale(0.5)">
+  <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(505,175) scale(0.5)">
+  <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <rect x="96" y="126" width="88" height="118" rx="8" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="110" y="150" width="52" height="6" rx="3" fill="#55636F"/>
+  <rect x="110" y="168" width="52" height="6" rx="3" fill="#55636F"/>
+  <rect x="110" y="186" width="52" height="6" rx="3" fill="#55636F"/>
+  <rect x="110" y="204" width="52" height="6" rx="3" fill="#55636F"/>
+  <rect x="110" y="222" width="30" height="6" rx="3" fill="#55636F"/>
+  <path d="M196 214 L214 196 L226 208 L208 226 Z" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M196 214 L192 230 L208 226 Z" fill="#845F00" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="356" y="126" width="88" height="62" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="370" y="144" width="52" height="6" rx="3" fill="#55636F"/>
+  <rect x="370" y="160" width="52" height="6" rx="3" fill="#55636F"/>
+  <line x1="400" y1="192" x2="400" y2="218" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(400 218) rotate(90)"/>
+  <rect x="346" y="224" width="108" height="30" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="400" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">disk</text>
+  <path d="M616 138 A8 8 0 0 1 624 130 H736 A8 8 0 0 1 744 138 V152 H616 Z" fill="#F5F8FA"/>
+  <line x1="616" y1="152" x2="744" y2="152" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="626" cy="141" r="3.5" fill="none" stroke="#55636F" stroke-width="1.5"/>
+  <circle cx="640" cy="141" r="3.5" fill="none" stroke="#55636F" stroke-width="1.5"/>
+  <circle cx="654" cy="141" r="3.5" fill="none" stroke="#55636F" stroke-width="1.5"/>
+  <rect x="628" y="168" width="86" height="7" rx="3.5" fill="#14202B"/>
+  <rect x="628" y="188" width="62" height="7" rx="3.5" fill="#55636F"/>
+  <rect x="628" y="208" width="74" height="7" rx="3.5" fill="#55636F"/>
+  <rect x="616" y="130" width="128" height="110" rx="8" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="140" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">1. Type it</text>
+  <text x="140" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">into a file called hello.py</text>
+  <text x="400" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">2. Save it</text>
+  <text x="400" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">now it exists on the disk</text>
+  <text x="660" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">3. Run it</text>
+  <text x="660" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the computer prints your words</text>
+  <path d="M660 330 V352 H140 V334" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(140 330) rotate(-90)"/>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">It broke? Read the last line, change one thing, go round again.</text>
+</svg>

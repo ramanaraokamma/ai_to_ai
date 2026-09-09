@@ -35,6 +35,19 @@ Her daughter explained it for four minutes. Somewhere in minute three she stoppe
 
 That is the job. **You are not the answer key. You are the person the learner has to explain it to.** The course carries the content — 36 modules, every one with a worked example, six practice exercises, and a full answer key. What the course cannot do is sit in a chair and look mildly confused at the right moment.
 
+> ### ⚠️ Which edition are you teaching?
+>
+> This guide supports the **self-study module track**, where the learner drives and you support.
+>
+> If you are running **Levels 1 or 2 as weekly classes**, use the taught edition instead — it has a
+> dedicated teacher file for every single week with a minute-by-minute script, and it assumes you
+> know no AI (and, in Level 2, no Python):
+>
+> - [Level 1 · 36-week teacher guide](../levels/level-1-explorer/36-week-course/teacher-guide/00-orientation.md)
+> - [Level 2 · 36-week teacher guide](../levels/level-2-builder/36-week-course/teacher-guide/00-orientation.md)
+>
+> Come back here for Levels 3 and 4, which have no taught edition yet.
+
 If you read nothing else in this file, read this:
 
 ```

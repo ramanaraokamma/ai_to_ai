@@ -56,6 +56,8 @@ And I want to be honest about how small this week is, because it looks bigger th
 
 ## 🧠 The Big Idea
 
+> **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
+
 ### 1. Two pieces. Not one, not three. Two.
 
 **The plain explanation.** A **model** is a machine you show a pile of examples with the answers filled in, and which then gives you an answer for an example it has never seen. Every single one of them — and there are hundreds — wants your data handed over in exactly two pieces.
@@ -801,7 +803,7 @@ Tara vs Ben
 step 1  subtract   : [ 3.5 70. ]
 step 2  square     : [  12.25 4900.  ]
 step 3  add up     : 4912.25
-step 4  square root: 70.09
+step 4  square root: 70.08744538075275
 2 dp               : 70.09
 
 hours_slept's share  : 0.2494 %

@@ -37,6 +37,8 @@ Observable evidence: a file that prints the same list eight different ways; a Bu
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
+
 **You do not need to have programmed before to teach this.** Read this once — about 20 minutes — then do the Prep Checklist.
 
 ### 1. The problem a list solves
@@ -212,7 +214,7 @@ print(scores[4])                       # there is no slot 4
 4
 67
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/week11_indexerror.py", line 6, in <module>
+  File "/Users/you/ai-academy/level2/week11_indexerror.py", line 6, in <module>
     print(scores[4])                       # there is no slot 4
 IndexError: list index out of range
 ```
@@ -239,7 +241,7 @@ print(scores[0])
 ```text
 0
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/k5.py", line 3, in <module>
+  File "/Users/you/ai-academy/level2/week11_empty.py", line 3, in <module>
     print(scores[0])
 IndexError: list index out of range
 ```
@@ -280,7 +282,7 @@ print(scores[len(scores)])
 
 ```text
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/f8.py", line 2, in <module>
+  File "/Users/you/ai-academy/level2/week11_lastindex.py", line 2, in <module>
     print(scores[len(scores)])
 IndexError: list index out of range
 ```
@@ -295,7 +297,7 @@ print(len(scores))
 
 ```text
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/f3.py", line 3, in <module>
+  File "/Users/you/ai-academy/level2/week11_append.py", line 3, in <module>
     print(len(scores))
 TypeError: object of type 'NoneType' has no len()
 ```
@@ -387,7 +389,7 @@ print(scores[5])                       # there is no slot 5
 
 ```text
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/m3.py", line 30, in <module>
+  File "/Users/you/ai-academy/level2/week11_list_surgery.py", line 30, in <module>
     print(scores[5])                       # there is no slot 5
 IndexError: list index out of range
 ```
@@ -606,7 +608,7 @@ scores = [45, 0, 112, 67              # four values, one name, square brackets
 ```
 
 ```text
-  File "/private/tmp/ai-academy/level2/m1.py", line 5
+  File "/Users/you/ai-academy/level2/week11_list_surgery.py", line 5
     scores = [45, 0, 112, 67              # four values, one name, square brackets
              ^
 SyntaxError: '[' was never closed
@@ -720,7 +722,7 @@ Predict first — most students expect the same output. **Run.**
 3
 None
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/m2.py", line 25, in <module>
+  File "/Users/you/ai-academy/level2/week11_list_surgery.py", line 25, in <module>
     print(len(scores))
 TypeError: object of type 'NoneType' has no len()
 ```
@@ -898,7 +900,7 @@ print("12.", steps[8])
 11. average 8323.75
 11. average to 1 dp 8323.8
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/week11_drills.py", line 46, in <module>
+  File "/Users/you/ai-academy/level2/week11_drills.py", line 46, in <module>
     print("12.", steps[8])
 IndexError: list index out of range
 ```
@@ -1218,7 +1220,7 @@ print(scores[0])
 ```text
 0
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/k5.py", line 3, in <module>
+  File "/Users/you/ai-academy/level2/week11_empty.py", line 3, in <module>
     print(scores[0])
 IndexError: list index out of range
 ```
@@ -1235,7 +1237,7 @@ Because `len` is the count and the last index is one less than the count. `len(s
 
 ```text
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/week11_drills.py", line 46, in <module>
+  File "/Users/you/ai-academy/level2/week11_drills.py", line 46, in <module>
     print("12.", steps[8])
 IndexError: list index out of range
 ```
@@ -1294,7 +1296,7 @@ All three give `IndexError: list index out of range`. Full marks for a second on
 
 ```text
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/k1.py", line 4, in <module>
+  File "/Users/you/ai-academy/level2/hw11_predict.py", line 4, in <module>
     print(scores[-5])
 IndexError: list index out of range
 ```
@@ -1308,7 +1310,7 @@ Negative indexes run out too. This is the first of the two designed to catch peo
 
 ```text
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/f3.py", line 3, in <module>
+  File "/Users/you/ai-academy/level2/week11_append.py", line 3, in <module>
     print(len(scores))
 TypeError: object of type 'NoneType' has no len()
 ```

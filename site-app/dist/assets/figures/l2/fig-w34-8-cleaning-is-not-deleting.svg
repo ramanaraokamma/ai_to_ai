@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Cleaning is not deleting the weird rows</title>
+  <desc>Two mirrored panels. The crossed panel tips five unusual rows into a bin with the note just dropped the odd ones. The ticked panel keeps the unusual rows, removes only three unusable ones, and prints a count and a reason for each removal.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Cleaning is not deleting the weird rows</text>
+  <rect x="20" y="62" width="370" height="300" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <g transform="translate(34,76) scale(0.5294)">
+    <circle cx="34" cy="34" r="31" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="6"/>
+    <line x1="20" y1="20" x2="48" y2="48" stroke="#CC2B1D" stroke-width="10" stroke-linecap="round"/>
+    <line x1="48" y1="20" x2="20" y2="48" stroke="#CC2B1D" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  <text x="205" y="100" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#CC2B1D" text-anchor="middle">❌   what most people do</text>
+  <rect x="56" y="128" width="150" height="22" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="131" y="139" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">17.5 min</text>
+  <rect x="56" y="154" width="150" height="22" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="131" y="165" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">58.6 min</text>
+  <rect x="56" y="180" width="150" height="22" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="131" y="191" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">9.0 min</text>
+  <rect x="56" y="206" width="150" height="22" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="131" y="217" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0 min</text>
+  <rect x="56" y="232" width="150" height="22" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="131" y="243" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">26.0 min</text>
+  <line x1="216" y1="190" x2="262" y2="190" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(262 190) rotate(0.0)"/>
+  <path d="M272 168 h76 l-8 92 h-60 Z" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="266" y1="168" x2="354" y2="168" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  <text x="310" y="282" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">bin</text>
+  <path d="M56 276 q0 -8 8 -8 H228 L246 286 V336 q0 8 -8 8 H64 q-8 0 -8 -8 Z" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M228 268 V286 H246 Z" fill="#F5F8FA" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="70" y="296" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B">“I just dropped the</text>
+  <text x="70" y="316" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B">odd ones.”</text>
+  <text x="205" y="356" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">The long walk in the rain is gone. It was real.</text>
+  <rect x="410" y="62" width="370" height="300" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <g transform="translate(424,76) scale(0.5294)">
+    <circle cx="34" cy="34" r="31" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="6"/>
+    <polyline points="18,36 30,49 52,20" fill="none" stroke="#1B7A4B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="595" y="100" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#1B7A4B" text-anchor="middle">✅   what cleaning actually is</text>
+  <rect x="446" y="128" width="150" height="22" rx="6" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="521" y="139" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">17.5 min</text>
+  <rect x="446" y="154" width="150" height="22" rx="6" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="521" y="165" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">58.6 min</text>
+  <rect x="446" y="180" width="150" height="22" rx="6" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="521" y="191" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">9.0 min</text>
+  <rect x="446" y="206" width="150" height="22" rx="6" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="521" y="217" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0 min</text>
+  <rect x="446" y="232" width="150" height="22" rx="6" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="521" y="243" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">about 20</text>
+  <text x="700" y="140" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle">kept — a long</text>
+  <text x="700" y="158" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle">walk is a fact</text>
+  <text x="700" y="236" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">removed — and</text>
+  <text x="700" y="254" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">counted, with why</text>
+  <path d="M446 276 q0 -8 8 -8 H728 L746 286 V336 q0 8 -8 8 H454 q-8 0 -8 -8 Z" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M728 268 V286 H746 Z" fill="#F5F8FA" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="462" y="292" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B">4. Marked 1 row with minutes outside</text>
+  <text x="462" y="310" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B">0–90 as empty  -  a 0-minute journey to a</text>
+  <text x="462" y="328" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B">school 3.4 km away is a typo, not a journey.</text>
+  <text x="595" y="356" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Unusable rows go. Unusual rows stay.</text>
+</svg>

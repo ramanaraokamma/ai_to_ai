@@ -32,15 +32,14 @@ reference text alongside the weekly classes.
 | **Shape** | 36 weekly classes of 60–75 min | 36 modules, ~3.5 h/week |
 | **Adult needs to know AI?** | **No** — every class is scripted | n/a |
 | **Books per week** | Three: teacher guide · student guide · workbook | One: the module file |
-| **Illustrated** | 451 hand-drawn SVG figures, ~12 per week | ASCII diagrams |
+| **Illustrated** | 808 hand-drawn SVG figures across two levels | ASCII diagrams |
 | **Extras** | 4 term tests · 50 project ideas · worked exemplar · offline site | Capstone · assessment · glossary |
-| **Available for** | **Level 1 only, today** | **All four levels** |
+| **Available for** | **Levels 1 and 2** | **All four levels** |
 | **Enter at** | [`levels/level-1-explorer/36-week-course/`](levels/level-1-explorer/36-week-course/) | [`levels/level-1-explorer/README.md`](levels/level-1-explorer/README.md) |
 
-> ⚠️ **Honest status:** the 36-week taught edition covers **Level 1**. Levels 2–4 are complete as
-> self-study modules but have not been expanded into weekly classes yet. A learner who does Level 1 as
-> a taught year continues into Level 2 on the module track, with [teacher-guide/](teacher-guide/README.md)
-> for adult support.
+> ⚠️ **Honest status:** the 36-week taught edition covers **Levels 1 and 2** — two full school
+> years, 72 weekly classes. Levels 3 and 4 are complete as self-study modules but have not been
+> expanded into weekly classes yet.
 
 **New here? → [START_HERE.md](START_HERE.md)** picks your track in one page.
 
@@ -71,7 +70,7 @@ grows with the material over roughly **2–3 years**.
 | Level | Name | Grade | Big Idea | Modules | Time | You end up able to... |
 |:--:|---|:--:|---|:--:|:--:|---|
 | **1** | 🧭 **Explorer** | 6 | *Machines can learn from examples instead of being told rules* | 9 | **36 weeks taught** · ~12 weeks solo | Train an image classifier with no code, and explain training, testing, features, labels, and bias to an adult |
-| **2** | 🔨 **Builder** | 7–8 | *If you can write code, you can turn data into predictions* | 9 | ~20 weeks | Write Python, wrangle data with pandas, plot it, and train + honestly test real scikit-learn models |
+| **2** | 🔨 **Builder** | 7–8 | *If you can write code, you can turn data into predictions* | 9 | **36 weeks taught** · ~20 weeks solo | Write Python, wrangle data with pandas, plot it, and train + honestly test real scikit-learn models |
 | **3** | ⚙️ **Engineer** | 9–10 | *A model is one part of a pipeline that must be measured and shipped* | 9 | ~24 weeks | Build the full supervised pipeline, code backprop from scratch, train CNNs in PyTorch, and ship a model |
 | **4** | 🚀 **Innovator** | 11–12 | *Modern AI is attention + scale + a learning signal from humans* | 9 | ~28 weeks | Build a tiny GPT from scratch, and ship a RAG-grounded, tool-using, evaluated AI agent |
 
@@ -87,8 +86,8 @@ grows with the material over roughly **2–3 years**.
                                           ▼
                               ┌──────────────────────────┐
                               │   LEVEL 2 · BUILDER      │   grades 7-8 · Python
-                              │   "Code + data = model"  │   ~20 weeks
-                              └───────────┬──────────────┘
+                              │   "Code + data = model"  │   36 weeks taught
+                              └───────────┬──────────────┘   (or ~20 weeks solo)
                                           │  python · numpy · pandas
                                           │  matplotlib · scikit-learn
                                           ▼
@@ -358,16 +357,18 @@ claude_AI_Academy/
     │       ├── workbook/         ← week-01..36.md  (the write-in homework)
     │       ├── assessments/      ← four 45-min term tests + marking & remediation
     │       ├── projects/         ← 50 project ideas · worked exemplar · capstone
-    │       ├── figures/          ← 451 hand-drawn SVGs + STYLE.md + _preview.html
+    │       ├── figures/          ← 450 hand-drawn SVGs + STYLE.md + _preview.html
     │       └── site/index.html   ← offline browsable course, per-week progress tracking
     ├── level-2-builder/          ← same 13-file module shape
+    │   └── 36-week-course/       ★ THE TAUGHT EDITION — Python, a full school year
+    │       (same layout as Level 1: 3 books x 36 weeks, tests, projects, 359 figures)
     ├── level-3-engineer/         ← same 13-file module shape
     └── level-4-innovator/        ← same 13-file module shape
 ```
 
 **Every level folder has the same 13 files:** a README, 9 modules, a capstone, an assessment, and a
-glossary. **Level 1 additionally has `36-week-course/`** — the taught edition, 120 markdown files
-covering the same 9 modules across a full school year.
+glossary. **Levels 1 and 2 additionally have `36-week-course/`** — the taught edition: 120 markdown
+files per level, covering that level's 9 modules across a full school year.
 
 | Level | Intro | Capstone | Exit exam | Glossary |
 |---|---|---|---|---|
@@ -407,9 +408,9 @@ The whole Level 1 course renders as a local site with **two passcodes**:
 
 | | Passcode | Opens |
 |---|---|---|
-| 🎒 Student | `student1234` | chapters · workbooks · projects · glossary · gallery |
+| 🎒 Student | `student1234` | chapters · workbooks · projects · glossary · gallery, **both levels** |
 | 🧑‍🏫 Teacher | `teacher1234` | all of the above **plus** lesson scripts · orientation · term tests · answer keys |
-| 🔓 No passcode | — | the home page only |
+| 🔓 No passcode | — | the level picker only |
 
 Every page except the home page is **encrypted at build time with AES-256-GCM** — the words aren't in
 the page source, so there's nothing to peek at. Local only; nothing is published. Details and how to

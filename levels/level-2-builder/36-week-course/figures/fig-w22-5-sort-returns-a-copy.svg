@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" role="img">
+  <title>Sorting hands you a new sheet. The old one never moves.</title>
+  <desc>A one-column table of step counts in the order it was typed sits on the left, labelled week. An arrow leads into a purple copier labelled sort_values, and two arrows come out. The upper one reaches a second table with the same five step counts in increasing order, labelled by_steps and ticked; its row labels 2, 0, 3, 1, 4 travelled with the rows. The lower one reaches a red panel showing the copy crossed out and thrown away because nothing caught it, with a note that week still prints in its original order and nothing warns you.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Sorting hands you a new sheet. The old one never moves.</text>
+  <text x="400" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The copier gives back both. Only one of them has a name on it.</text>
+  <rect x="30" y="92" width="140" height="156" fill="#FFFFFF"/>
+  <rect x="30" y="92" width="44" height="26" fill="#F5F8FA"/>
+  <rect x="74" y="92" width="96" height="26" fill="#D9EAF9"/>
+  <rect x="30" y="118" width="44" height="26" fill="#F5F8FA"/>
+  <rect x="30" y="144" width="44" height="26" fill="#F5F8FA"/>
+  <rect x="30" y="170" width="44" height="26" fill="#F5F8FA"/>
+  <rect x="30" y="196" width="44" height="26" fill="#F5F8FA"/>
+  <rect x="30" y="222" width="44" height="26" fill="#F5F8FA"/>
+  <line x1="74" y1="92" x2="74" y2="248" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="30" y1="144" x2="170" y2="144" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="30" y1="170" x2="170" y2="170" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="30" y1="196" x2="170" y2="196" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="30" y1="222" x2="170" y2="222" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="30" y1="248" x2="170" y2="248" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="30" y1="118" x2="170" y2="118" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="122.0" y="105.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600" dominant-baseline="central">steps</text>
+  <text x="52.0" y="131.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="122.0" y="131.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">8200</text>
+  <text x="52.0" y="157.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="122.0" y="157.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">11050</text>
+  <text x="52.0" y="183.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="122.0" y="183.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">6400</text>
+  <text x="52.0" y="209.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="122.0" y="209.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">9800</text>
+  <text x="52.0" y="235.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="122.0" y="235.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">12300</text>
+  <rect x="30" y="92" width="140" height="156" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="100.0" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">week</text>
+  <text x="100.0" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the order you typed it in</text>
+  <line x1="178" y1="170" x2="208" y2="170" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(208 170) rotate(0.0)"/>
+  <rect x="212" y="130" width="124" height="80" rx="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="274" y="158" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">sort_values</text>
+  <text x="274" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">makes a copy</text>
+  <text x="274" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">reads the old sheet,</text>
+  <text x="274" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">writes a new one</text>
+  <line x1="340" y1="150" x2="372" y2="128" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(372 128) rotate(-34.5)"/>
+  <rect x="382" y="92" width="140" height="156" fill="#FFFFFF"/>
+  <rect x="382" y="92" width="44" height="26" fill="#F5F8FA"/>
+  <rect x="426" y="92" width="96" height="26" fill="#D9EAF9"/>
+  <rect x="382" y="118" width="44" height="26" fill="#F5F8FA"/>
+  <rect x="382" y="144" width="44" height="26" fill="#F5F8FA"/>
+  <rect x="382" y="170" width="44" height="26" fill="#F5F8FA"/>
+  <rect x="382" y="196" width="44" height="26" fill="#F5F8FA"/>
+  <rect x="382" y="222" width="44" height="26" fill="#F5F8FA"/>
+  <line x1="426" y1="92" x2="426" y2="248" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="382" y1="144" x2="522" y2="144" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="382" y1="170" x2="522" y2="170" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="382" y1="196" x2="522" y2="196" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="382" y1="222" x2="522" y2="222" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="382" y1="248" x2="522" y2="248" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="382" y1="118" x2="522" y2="118" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="474.0" y="105.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600" dominant-baseline="central">steps</text>
+  <text x="404.0" y="131.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="474.0" y="131.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">6400</text>
+  <text x="404.0" y="157.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="474.0" y="157.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">8200</text>
+  <text x="404.0" y="183.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="474.0" y="183.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">9800</text>
+  <text x="404.0" y="209.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="474.0" y="209.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">11050</text>
+  <text x="404.0" y="235.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="474.0" y="235.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">12300</text>
+  <rect x="382" y="92" width="140" height="156" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="536" cy="108" r="15" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="528.9411764705883,108.88235294117646 533.7941176470588,114.17647058823529 543.9411764705883,102.70588235294117" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="452.0" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">by_steps</text>
+  <text x="452.0" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">smallest first, labels came too</text>
+  <line x1="340" y1="192" x2="372" y2="214" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(372 214) rotate(34.5)"/>
+  <rect x="556" y="92" width="216" height="156" rx="12" fill="#F5F8FA" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="664" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">If you forget the name</text>
+  <rect x="578" y="134" width="72" height="68" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="586" y1="152" x2="642" y2="152" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round"/>
+  <line x1="586" y1="168" x2="642" y2="168" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round"/>
+  <line x1="586" y1="184" x2="642" y2="184" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="650" cy="200" r="15" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="644.7058823529412" y1="194.7058823529412" x2="655.2941176470588" y2="205.2941176470588"/><line x1="655.2941176470588" y1="194.7058823529412" x2="644.7058823529412" y2="205.2941176470588"/></g>
+  <text x="714" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the copy is</text>
+  <text x="714" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">thrown away</text>
+  <text x="714" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the moment it</text>
+  <text x="714" y="206" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">is printed</text>
+  <text x="664" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">and week still prints in the old order</text>
+  <text x="664" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">No error. No warning.</text>
+  <text x="664" y="294" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">You have to check for yourself.</text>
+  <text x="400" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Give the copy a name, or you have not sorted anything.</text>
+  <text x="400" y="354" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Print week again straight afterwards, every time. That is the whole check.</text>
+</svg>

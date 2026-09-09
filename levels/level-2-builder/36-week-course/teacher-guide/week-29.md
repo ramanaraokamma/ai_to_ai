@@ -37,6 +37,8 @@ Observable evidence: a signed, sealed envelope on the table; a terminal showing 
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
+
 This is the most important section in the file. Read all of it. There is one genuinely hard idea in this week and it is not the code.
 
 ### 1. What kNN actually is — the whole algorithm, in four lines

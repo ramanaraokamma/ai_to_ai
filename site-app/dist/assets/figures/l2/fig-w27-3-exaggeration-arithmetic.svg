@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Measure it with a ruler, then divide</title>
+  <desc>Two bars from the truncated chart measured against a millimetre ruler: eleven millimetres and sixty-seven. A panel on the right works out that the eye sees a ratio of 6.1 while the true ratio is 1.04, an exaggeration factor of about 5.8 times.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Measure it with a ruler, then divide</text>
+  <rect x="90" y="267" width="50" height="33" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="180" y="99" width="50" height="201" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="115" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">11 mm</text>
+  <text x="205" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">67 mm</text>
+  <line x1="80" y1="90" x2="80" y2="300" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="80" y1="300" x2="300" y2="300" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="115" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">7A</text>
+  <text x="205" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">7B</text>
+  <rect x="252" y="90" width="22" height="210" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="252" y1="300" x2="274" y2="300" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="280" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">0</text>
+  <line x1="252" y1="270" x2="266" y2="270" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="252" y1="240" x2="274" y2="240" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="280" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">20</text>
+  <line x1="252" y1="210" x2="266" y2="210" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="252" y1="180" x2="274" y2="180" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="280" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">40</text>
+  <line x1="252" y1="150" x2="266" y2="150" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="252" y1="120" x2="274" y2="120" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="280" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">60</text>
+  <line x1="252" y1="90" x2="266" y2="90" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="263" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">mm</text>
+  <rect x="330" y="92" width="446" height="214" rx="12" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="352" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">what your eye sees</text>
+  <text x="352" y="148" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">67 mm / 11 mm = 6.1</text>
+  <text x="352" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">what is actually true</text>
+  <text x="352" y="212" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">51 / 49 = 1.04</text>
+  <line x1="346" y1="234" x2="760" y2="234" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="352" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">exaggeration factor</text>
+  <text x="352" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">6.1 divided by 1.04 = 5.8x</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The bars are honest to the millimetre. The axis was not.</text>
+</svg>

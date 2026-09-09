@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>This week's five words as pictures</title>
+  <desc>Six icon cards. Bar chart is three separated rectangles with names underneath. Histogram is five touching rectangles with numbers at their edges. Bin is one of those number ranges with three dots falling into it. Scatter plot is a cloud of dots tilting up to the right. Distribution is the outline drawn around a pile of values. A sixth card states the rule of the week: the question picks the chart.</desc>
+  <text x="400" y="38" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">This week's five words as pictures</text>
+
+  <rect x="20" y="56" width="240" height="160" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="280" y="56" width="240" height="160" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="540" y="56" width="240" height="160" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="20" y="224" width="240" height="156" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="280" y="224" width="240" height="156" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="540" y="224" width="240" height="156" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- 1. bar chart: gaps, names -->
+  <text x="140" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">bar chart</text>
+  <line x1="62" y1="104" x2="62" y2="176" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="62" y1="176" x2="222" y2="176" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="80" y="112" width="34" height="64" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="132" y="126" width="34" height="50" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="184" y="126" width="34" height="50" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="97" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">chess</text>
+  <text x="149" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">music</text>
+  <text x="201" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">art</text>
+  <text x="140" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one bar per NAME, with gaps</text>
+
+  <!-- 2. histogram: touching, numbers -->
+  <text x="400" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">histogram</text>
+  <line x1="316" y1="104" x2="316" y2="176" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="316" y1="176" x2="486" y2="176" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="326" y="152" width="32" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="358" y="130" width="32" height="46" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="390" y="112" width="32" height="64" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="422" y="134" width="32" height="42" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="454" y="156" width="32" height="20" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="326" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">40</text>
+  <text x="390" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">60</text>
+  <text x="454" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">80</text>
+  <text x="400" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one bar per RANGE, touching</text>
+
+  <!-- 3. bin: one range, three dots -->
+  <text x="660" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">bin</text>
+  <line x1="576" y1="112" x2="744" y2="112" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="620" cy="112" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="660" cy="112" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="694" cy="112" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <g stroke="#C42B8C" stroke-width="1.5" stroke-dasharray="5 4">
+    <line x1="620" y1="120" x2="620" y2="144"/>
+    <line x1="660" y1="120" x2="660" y2="144"/>
+    <line x1="694" y1="120" x2="694" y2="144"/>
+  </g>
+  <rect x="602" y="146" width="116" height="30" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="660" y="161" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="602" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">60</text>
+  <text x="718" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">70</text>
+  <text x="660" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one range, and its count</text>
+
+  <!-- 4. scatter plot -->
+  <text x="140" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">scatter plot</text>
+  <line x1="62" y1="270" x2="62" y2="344" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="62" y1="344" x2="222" y2="344" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="82" cy="330" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="104" cy="318" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="122" cy="322" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="142" cy="302" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="162" cy="292" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="182" cy="296" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="204" cy="278" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="140" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one dot per ROW, and no line</text>
+
+  <!-- 5. distribution -->
+  <text x="400" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">distribution</text>
+  <line x1="316" y1="270" x2="316" y2="344" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="316" y1="344" x2="486" y2="344" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="326" y="326" width="26" height="18" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="352" y="306" width="26" height="38" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="378" y="286" width="26" height="58" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="404" y="298" width="26" height="46" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="430" y="318" width="26" height="26" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="456" y="332" width="26" height="12" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <path d="M326 328 Q352 316 378 286 Q404 292 430 318 Q456 330 482 334" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the SHAPE of the whole pile</text>
+
+  <!-- 6. the rule -->
+  <rect x="560" y="248" width="200" height="52" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="660" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">pick a chart, then</text>
+  <text x="660" y="284" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">find data for it</text>
+  <rect x="560" y="308" width="200" height="52" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="660" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">ask the question, then</text>
+  <text x="660" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">the chart is obvious</text>
+  <text x="660" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the rule of the week</text>
+</svg>

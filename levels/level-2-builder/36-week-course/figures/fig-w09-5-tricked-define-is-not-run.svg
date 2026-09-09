@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Writing the recipe is not cooking it</title>
+  <desc>Two mirrored panels. On the left, marked wrong, a recipe card lies face down on a table with an empty plate beside it and a note saying the reader expected dinner; the output panel below is empty and there is no error message. On the right, marked correct, the same card is turned over three times by three button presses and three identical plates of food come out; the output panel below shows three banners. A band underneath says a recipe nobody cooks makes no dinner, and Python will not tell you.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Writing the recipe is not cooking it</text>
+
+  <rect x="20" y="60" width="372" height="270" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <g transform="translate(36,70) scale(0.34)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+      <line x1="38" y1="38" x2="62" y2="62"/>
+      <line x1="62" y1="38" x2="38" y2="62"/>
+    </g>
+  </g>
+  <text x="76" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">def, and no call</text>
+
+  <rect x="44" y="114" width="140" height="82" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="60" y1="140" x2="168" y2="140" stroke="#845F00" stroke-width="1.5"/>
+  <line x1="60" y1="158" x2="168" y2="158" stroke="#845F00" stroke-width="1.5"/>
+  <line x1="60" y1="176" x2="140" y2="176" stroke="#845F00" stroke-width="1.5"/>
+  <text x="114" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">the recipe card</text>
+  <text x="114" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">written. Filed. Perfect.</text>
+
+  <ellipse cx="290" cy="152" rx="52" ry="20" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="3"/>
+  <ellipse cx="290" cy="152" rx="30" ry="11" fill="none" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="290" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">nothing on the plate</text>
+
+  <rect x="44" y="236" width="326" height="56" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="207" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">what the screen shows:</text>
+  <text x="207" y="278" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">(nothing at all, and no error either)</text>
+  <text x="206" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D" text-anchor="middle">The function is not broken. Nobody ran it.</text>
+
+  <rect x="408" y="60" width="372" height="270" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <g transform="translate(424,70) scale(0.34)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="464" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">def, and three calls</text>
+
+  <rect x="432" y="114" width="140" height="82" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="448" y1="140" x2="556" y2="140" stroke="#845F00" stroke-width="1.5"/>
+  <line x1="448" y1="158" x2="556" y2="158" stroke="#845F00" stroke-width="1.5"/>
+  <line x1="448" y1="176" x2="528" y2="176" stroke="#845F00" stroke-width="1.5"/>
+  <text x="502" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">the same one card</text>
+  <text x="502" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">turned over three times</text>
+
+  <g stroke="#1B7A4B" stroke-width="3">
+    <line x1="576" y1="126" x2="606" y2="126" stroke-linecap="round"/>
+    <line x1="576" y1="152" x2="606" y2="152" stroke-linecap="round"/>
+    <line x1="576" y1="178" x2="606" y2="178" stroke-linecap="round"/>
+  </g>
+  <ellipse cx="660" cy="126" rx="46" ry="16" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <ellipse cx="660" cy="152" rx="46" ry="16" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <ellipse cx="660" cy="178" rx="46" ry="16" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="660" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">banner</text>
+  <text x="660" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">banner</text>
+  <text x="660" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">banner</text>
+  <text x="660" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle">three plates, one recipe</text>
+
+  <rect x="432" y="236" width="326" height="56" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="595" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">what the screen shows:</text>
+  <text x="595" y="278" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">the banner, three times over</text>
+  <text x="594" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B" text-anchor="middle">One definition. Three calls. Zero retyping.</text>
+
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">A recipe nobody cooks makes no dinner &#8212; and Python will not mention it.</text>
+</svg>

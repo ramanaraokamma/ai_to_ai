@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Five new words for Week 33</title>
+  <desc>Five small icons in a row. A flat straight line ignoring eight climbing dots, labelled underfitting, too simple for the pattern. A jagged line detouring through every one of the same eight dots, labelled overfitting, memorised the rows. Two bars, a tall one for the score on studied rows and a short one for the score on unseen rows, with the difference bracketed, labelled train slash test gap. Two piles of squared misses, one made of many small squares and one made of a single huge square, labelled RMSE, punishes big misses harder. And a dial turning from one leaf to many leaves, labelled model complexity, how much room the model has to bend.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Five new words for Week 33</text>
+  <line x1="44" y1="96" x2="44" y2="186" stroke="#14202B" stroke-width="2"/>
+  <line x1="44" y1="186" x2="152" y2="186" stroke="#14202B" stroke-width="2"/>
+  <path d="M50 146 L146 146" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="56" cy="172" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="70" cy="160" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="82" cy="165" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="96" cy="146" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="108" cy="139" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="122" cy="127" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="134" cy="132" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="146" cy="112" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="98" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#CC2B1D" text-anchor="middle">underfitting</text>
+  <text x="98" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">too simple. Bad on</text>
+  <text x="98" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">studied rows too.</text>
+  <line x1="186" y1="96" x2="186" y2="186" stroke="#14202B" stroke-width="2"/>
+  <line x1="186" y1="186" x2="294" y2="186" stroke="#14202B" stroke-width="2"/>
+  <path d="M192 180 L198 172 L206 182 L212 160 L219 172 L224 165 L232 148 L238 146 L245 154 L250 139 L258 135 L264 127 L271 143 L276 132 L283 118 L288 112" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="198" cy="172" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="212" cy="160" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="224" cy="165" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="238" cy="146" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="250" cy="139" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="264" cy="127" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="276" cy="132" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="288" cy="112" r="4.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="240" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#CC2B1D" text-anchor="middle">overfitting</text>
+  <text x="240" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">memorised the rows,</text>
+  <text x="240" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">noise and all.</text>
+  <line x1="330" y1="186" x2="440" y2="186" stroke="#14202B" stroke-width="2"/>
+  <rect x="344" y="100" width="34" height="86" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="398" y="152" width="34" height="34" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="386" y1="100" x2="386" y2="152" stroke="#14202B" stroke-width="2"/>
+  <line x1="380" y1="100" x2="392" y2="100" stroke="#14202B" stroke-width="2"/>
+  <line x1="380" y1="152" x2="392" y2="152" stroke="#14202B" stroke-width="2"/>
+  <text x="361" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#6D28D9" text-anchor="middle">train</text>
+  <text x="415" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">test</text>
+  <text x="386" y="226" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">train/test gap</text>
+  <text x="386" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">train minus test. The</text>
+  <text x="386" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">size of the memorising.</text>
+  <line x1="476" y1="186" x2="606" y2="186" stroke="#14202B" stroke-width="2"/>
+  <rect x="484" y="176" width="10" height="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="498" y="176" width="10" height="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="512" y="176" width="10" height="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="526" y="176" width="10" height="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="540" y="176" width="10" height="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="562" y="120" width="42" height="66" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="512" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle">five misses of 1</text>
+  <text x="583" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">one miss of 10</text>
+  <text x="541" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#CC2B1D" text-anchor="middle">RMSE</text>
+  <text x="541" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">squares first, so one big</text>
+  <text x="541" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">miss counts far more.</text>
+  <path d="M646 176 A56 56 0 0 1 758 176" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <line x1="702" y1="176" x2="740" y2="146" stroke="#845F00" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="702" cy="176" r="7" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+  <text x="642" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2 leaves</text>
+  <text x="762" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">329</text>
+  <text x="702" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#845F00" text-anchor="middle">max_depth</text>
+  <text x="702" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#845F00" text-anchor="middle">model complexity</text>
+  <text x="702" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">how much room it has</text>
+  <text x="702" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">to bend round the rows.</text>
+  <text x="400" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The eight dots never move. Only the drawn model changes &#8212; and both ends of the dial are wrong.</text>
+  <text x="400" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">One score tells you nothing. Two scores are a diagnosis.</text>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The question picks the chart</title>
+  <desc>Four amber question cards, each with an arrow to a small chart glyph and its name: change over time goes to line, which category is biggest goes to bar, how spread out goes to histogram, and do two numbers go together goes to scatter.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The question picks the chart</text>
+  <rect x="24" y="74" width="330" height="56" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="44" y="107" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">How did homework time change day by day?</text>
+  <line x1="360" y1="102" x2="392" y2="102" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(392 102) rotate(0.0)"/>
+  <line x1="404" y1="82" x2="404" y2="122" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="404" y1="122" x2="466" y2="122" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="412,114 428,104 444,108 460,90" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="412" cy="114" r="3.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="428" cy="104" r="3.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="444" cy="108" r="3.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="460" cy="90" r="3.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="486" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">line</text>
+  <text x="486" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">read the slope</text>
+  <rect x="24" y="142" width="330" height="56" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="44" y="175" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Which club has the most members?</text>
+  <line x1="360" y1="170" x2="392" y2="170" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(392 170) rotate(0.0)"/>
+  <line x1="404" y1="150" x2="404" y2="190" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="404" y1="190" x2="466" y2="190" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="414" y="172" width="12" height="18" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="432" y="160" width="12" height="30" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="450" y="166" width="12" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="486" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">bar</text>
+  <text x="486" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">read the heights</text>
+  <rect x="24" y="210" width="330" height="56" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="44" y="243" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">How spread out are all 38 scores?</text>
+  <line x1="360" y1="238" x2="392" y2="238" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(392 238) rotate(0.0)"/>
+  <line x1="404" y1="218" x2="404" y2="258" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="404" y1="258" x2="466" y2="258" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="412" y="250" width="10" height="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="422" y="238" width="10" height="20" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="432" y="226" width="10" height="32" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="442" y="234" width="10" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="452" y="246" width="10" height="12" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="486" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">histogram</text>
+  <text x="486" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">read the shape of the pile</text>
+  <rect x="24" y="278" width="330" height="56" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="44" y="311" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Do students who study more score higher?</text>
+  <line x1="360" y1="306" x2="392" y2="306" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(392 306) rotate(0.0)"/>
+  <line x1="404" y1="286" x2="404" y2="326" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="404" y1="326" x2="466" y2="326" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="414" cy="318" r="3.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="422" cy="310" r="3.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="430" cy="314" r="3.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="438" cy="302" r="3.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="446" cy="304" r="3.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="454" cy="294" r="3.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="460" cy="298" r="3.5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="486" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">scatter</text>
+  <text x="486" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">read the tilt of the cloud</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Decide the shape before you type. Never pick a chart and hunt for data.</text>
+</svg>

@@ -9,7 +9,9 @@
   var NAV = window.AIA_NAV || { weeks: [], flat: [], terms: [] };
   var ROUTE = window.AIA_ROUTE || '';
   var UP = window.AIA_UP || '';
-  var LS = { mode: 'aia-mode', theme: 'aia-theme', done: 'aia-done' };
+  var LVL = (NAV.level && NAV.level.key) || 'l1';
+  // progress is per level — L1 week 5 and L2 week 5 are different weeks
+  var LS = { mode: 'aia-mode', theme: 'aia-theme', done: 'aia-done-' + LVL };
   var SS = { role: 'aia-role', ks: 'aia-ks', kt: 'aia-kt' };
 
   function get(k, d) { try { return localStorage.getItem(k) || d; } catch (e) { return d; } }

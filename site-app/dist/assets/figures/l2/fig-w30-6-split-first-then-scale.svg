@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Split first, then scale. Never the other way round.</title>
+  <desc>Two panels. On the left, marked wrong, all 178 wines go into the scaler first so it learns its means and spreads from every row, and only afterwards is the table cut into 142 training rows and 36 test rows; the 36 helped prepare the 142, so the score goes up and gets less true. On the right, marked right, the table is cut first into 142 training rows and 36 sealed test rows, the scaler learns only from the 142, and the same two numbers are then applied to both piles.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Split first, then scale. Never the other way round.</text>
+  <line x1="400" y1="76" x2="400" y2="372" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="6 5"/>
+  <circle cx="62" cy="100" r="14" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><line x1="55" y1="93" x2="69" y2="107" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/><line x1="69" y1="93" x2="55" y2="107" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  <text x="86" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#CC2B1D" text-anchor="start" dominant-baseline="central">WRONG</text>
+  <text x="210" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">scale everything, then cut</text>
+  <rect x="96" y="146" width="228" height="44" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="210" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">all 178 wines</text>
+  <line x1="210" y1="194" x2="210" y2="218" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/><polyline points="204.2,207.5 210,218 215.8,207.5" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="96" y="222" width="228" height="44" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="210" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">scaler learns mean + spread</text>
+  <text x="210" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle" dominant-baseline="central">from all 178</text>
+  <line x1="210" y1="270" x2="210" y2="294" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/><polyline points="204.2,283.5 210,294 215.8,283.5" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="96" y="298" width="140" height="34" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="166" y="315" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">142 train</text>
+  <rect x="244" y="298" width="80" height="34" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="284" y="315" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">36 test</text>
+  <text x="210" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The 36 helped prepare the 142.</text>
+  <text x="210" y="370" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Score goes UP and gets less true.</text>
+  <circle cx="442" cy="100" r="14" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="435,100 440,106 450,93" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="466" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#1B7A4B" text-anchor="start" dominant-baseline="central">RIGHT</text>
+  <text x="590" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">cut first, then scale</text>
+  <rect x="476" y="146" width="228" height="44" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="590" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">all 178 wines</text>
+  <line x1="590" y1="194" x2="590" y2="218" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round"/><polyline points="584.2,207.5 590,218 595.8,207.5" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="476" y="222" width="140" height="44" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="546" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">142 train</text>
+  <text x="546" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1F6FB2" text-anchor="middle" dominant-baseline="central">scaler learns here</text>
+  <rect x="624" y="222" width="80" height="44" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="664" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">36 test</text>
+  <text x="664" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle" dominant-baseline="central">sealed</text>
+  <line x1="546" y1="270" x2="590" y2="294" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round"/><polyline points="578.0,294.0 590,294 583.5,283.9" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="664" y1="270" x2="620" y2="294" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round"/><polyline points="626.5,283.9 620,294 632.0,294.0" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="476" y="298" width="228" height="34" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="590" y="315" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">the SAME two numbers applied to both</text>
+  <text x="590" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The 36 contributed nothing.</text>
+  <text x="590" y="370" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The score is an honest estimate.</text>
+</svg>

@@ -36,6 +36,8 @@ Observable evidence: two `.py` files that the student typed by hand and ran succ
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
+
 **You do not need to know Python to teach this lesson.** You need to know four things, and this section teaches you all four from scratch. Read it once, slowly, with the laptop open, and type the examples yourself. That is the whole prep.
 
 ### 1. What a program actually is

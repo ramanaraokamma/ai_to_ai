@@ -56,6 +56,8 @@ That's half of today. The other half is stranger, and it is about the *slip of p
 
 ## 🧠 The Big Idea
 
+> **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
+
 ### 1. A variable is a name stuck on a value
 
 **The plain explanation.**

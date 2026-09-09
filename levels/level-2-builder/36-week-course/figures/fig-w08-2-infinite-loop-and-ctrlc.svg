@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>No change line, so the answer never changes</title>
+  <desc>On the left, a cycle whose check diamond always answers yes because the body has no change line; the no exit is crossed out and labelled nothing ever reaches it. On the right, a terminal window printing the same value three times, then a caret C marked Ctrl and C together, then the word KeyboardInterrupt marked means you stopped me. A band underneath says every while loop needs a line that moves it towards its no.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">No change line, so the answer never changes</text>
+  <rect x="40" y="76" width="330" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <polygon points="205,104 300,152 205,200 110,152" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="205" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">still true?</text>
+  <text x="316" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">always</text>
+  <text x="316" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">yes</text>
+  <line x1="205" y1="200" x2="205" y2="236" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(205 236) rotate(90.0)"/>
+  <rect x="96" y="236" width="218" height="48" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="205" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">do the body</text>
+  <text x="205" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle" dominant-baseline="central">no CHANGE line here</text>
+  <line x1="96" y1="260" x2="62" y2="260" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <line x1="62" y1="260" x2="62" y2="152" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <line x1="62" y1="152" x2="98" y2="152" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(110 152) rotate(0)"/>
+  <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+    <line x1="197.3" y1="290.3" x2="212.7" y2="305.7"/>
+    <line x1="212.7" y1="290.3" x2="197.3" y2="305.7"/>
+  </g>
+  <text x="205" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">nothing ever reaches the no exit</text>
+  <rect x="430" y="76" width="330" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="430" y1="112" x2="760" y2="112" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="452" cy="94" r="6" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <circle cx="472" cy="94" r="6" fill="#E8C671" stroke="#845F00" stroke-width="2"/>
+  <circle cx="492" cy="94" r="6" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="456" y="142" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">3</text>
+  <text x="456" y="168" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">3</text>
+  <text x="456" y="194" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">3</text>
+  <text x="456" y="220" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#C42B8C">^C</text>
+  <text x="456" y="246" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" font-weight="600">KeyboardInterrupt</text>
+  <line x1="486" y1="214" x2="600" y2="196" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="744" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">Ctrl and C together</text>
+  <line x1="596" y1="240" x2="612" y2="256" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="744" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">means: you stopped me.</text>
+  <text x="595" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">thousands of identical lines, then your rescue</text>
+  <rect x="40" y="336" width="720" height="40" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="400" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Every while loop needs a line that moves it towards its no.</text>
+</svg>

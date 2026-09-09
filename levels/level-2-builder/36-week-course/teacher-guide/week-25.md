@@ -37,6 +37,8 @@ Observable evidence: three `.png` files on disk that the student can open, each 
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
+
 You do not need to have drawn a chart in code before. Everything in this section is explained from zero, and by the end of it you will be able to answer "why?" as well as "what do I type?".
 
 ### 1. What matplotlib actually is, and why the name is odd
@@ -970,7 +972,6 @@ Marked on structure, not on whose week it is. If the student's Week 21 table is 
 # myweek.py -- the Week 21 DataFrame: ten days of my own life, typed in by hand.
 import pandas as pd
 
-
 def build_my_week():
     """Return the 10-row 'my own week' table from Week 21."""
     return pd.DataFrame({
@@ -982,7 +983,6 @@ def build_my_week():
         "sleep_hours":  [8.0, 7.5, 8.5, 7.0, 9.0, 9.5, 8.0, 7.5, 8.0, 8.5],
         "steps":        [6200, 7100, 5800, 8400, 6900, 11200, 4300, 7600, 8100, 6500],
     })
-
 
 if __name__ == "__main__":
     df = build_my_week()
@@ -1015,7 +1015,6 @@ from myweek import build_my_week            # my own 10-row table, from Week 21
 df = build_my_week()
 print(df.shape)
 
-
 def line_chart(x, y, title, xlabel, ylabel, filename):
     """Draw ONE fully labelled line chart and save it to filename."""
     fig, ax = plt.subplots(figsize=(6, 4))
@@ -1025,7 +1024,6 @@ def line_chart(x, y, title, xlabel, ylabel, filename):
     ax.set_ylabel(ylabel)
     fig.savefig(filename, dpi=120, bbox_inches="tight")
     print("saved", filename)
-
 
 DAY_LABEL = "Day of the fortnight (day 1 = first Monday)"
 

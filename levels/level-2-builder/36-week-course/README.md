@@ -28,7 +28,7 @@
 **Coding:** every single week · **Maths:** fractions, percentages, negative numbers, `y = mx + c`
 **Rhythm:** 36 weeks × one 60–75 minute class + ~60 min of workbook homework
 
-[⬅ Back to Level 2 modules](../README.md) · [**Start here: Teacher Orientation**](teacher-guide/00-orientation.md) · [Week 1 student guide](student-guide/week-01.md) · [Week 1 workbook](workbook/week-01.md) · [Figure style guide](figures/STYLE.md)
+[⬅ Back to Level 2 modules](../README.md) · [**Start here: How To Use This Course**](HOW-TO-USE.md) · [Teacher Orientation](teacher-guide/00-orientation.md) · [Week 1 student guide](student-guide/week-01.md) · [Week 1 workbook](workbook/week-01.md) · [Figure style guide](figures/STYLE.md)
 
 ---
 
@@ -173,6 +173,21 @@ is the most common way this course goes wrong.
    brackets go. This costs about 15 extra minutes a week and is the highest-return 15 minutes in
    the level.
 
+### And two folders that are not weekly
+
+The three books above are the weekly rhythm. Two more folders sit alongside them and are used a
+handful of times a year.
+
+| Folder | What is in it | When you open it |
+|---|---|---|
+| 📝 [**`assessments/`**](assessments/README.md) | Four practice papers — one per term. 60 minutes, 60 marks, **no computer**. Twelve multiple choice, six "what does this print?", four "find and fix the bug", three "write the code", one extended question. Every paper carries its own marking scheme and a full answer key with every code block's **real** output | After weeks 9, 18 and 27, and once in week 36 — plus [`assessments/README.md`](assessments/README.md) for the marking rules and the per-week remediation table |
+| 🛠️ [**`projects/`**](projects/project-ideas.md) | [Fifty project ideas](projects/project-ideas.md) in five categories · [one worked example](projects/worked-example-project.md) taken all the way through by a real student, mistakes and tracebacks included · [the three-week capstone](projects/capstone.md) with templates, a planning worksheet, a build checklist and the showcase run-sheet | Any time from week 12 for a project; weeks 34–36 for the capstone |
+
+> **🧑‍🏫 If you read only one page in either folder, read
+> [`assessments/README.md`](assessments/README.md).** It contains the marking rule that matters most in
+> this level — how much credit to give code that nearly works — and a remediation table that names one
+> **activity** for every one of the 36 weeks.
+
 ---
 
 ## 🗓️ The Four Terms
@@ -243,15 +258,15 @@ at the end — while showing you a file that runs.
 | 4 | 1 | The About-Me Bot | `input()` always hands you text, so you must convert it yourself — and Python tells you exactly where you forgot. | `input("...")` · `int(input(...))` · `str(x)` · `round(x, 2)` | 🟨 project | Finish the About-Me Bot: 6 questions, 2 derived numbers, a formatted card, every line commented, 3 real tracebacks pasted into the Bug Log |
 | 5 | 1 | Questions With Yes/No Answers | A comparison is a question whose answer is `True` or `False`; `if` runs a block only when the answer is `True`. | `==` `!=` · `<` `>` `<=` `>=` · `if ...:` · `else:` | 🟦 teach | Predict eight booleans before running them, then build `ticket_price.py` version 1 and test it on 5 ages |
 | 6 | 1 | More Than Two Doors: elif, and, or, not | An `if/elif/else` chain checks in order and stops at the first `True` — which is exactly how a correct-looking chain hides a wrong answer. | `elif ...:` · `and` · `or` · `not` | 🟦 teach | Find why a grade chain gives everyone an A, reorder it, and prove the fix with a 5-value test table |
-| 7 | 1 | Doing It 100 Times Without Typing It 100 Times | A `for` loop repeats a block once per item, and an accumulator variable carries a running total across the repeats. | `for i in range(n):` · `range(start, stop, step)` · `+=` · `"=" * 20` | 🟩 lab | Print a times-table grid with `range`, then total and average 12 scores with an accumulator — and hand-check the average |
+| 7 | 1 | Doing It 100 Times Without Typing It 100 Times | A `for` loop repeats a block once per item, and an accumulator variable carries a running total across the repeats. | `for i in range(n):` · `range(start, stop, step)` · `+=` · `"=" * 20` · `print(x, end=" ")` | 🟩 lab | Print a times-table grid with `range`, then total and average 12 scores with an accumulator — and hand-check the average |
 | 8 | 1 | Guess & Grade | A `while` loop repeats until its condition goes False, which is how a program waits for a human to get it right. | `while ...:` · `break` · `continue` · `random.randint(a, b)` | 🟨 project | Finish `guess.py` (hints, 7-attempt limit, replay) and `grade.py` (total, average, highest, letter); both must survive `"banana"` as input |
 | 9 | 1 | Term 1 Checkpoint — You Keep Typing the Same Five Lines | When the same block appears three times, give it a name. A function is a named block you can run whenever you want. | `def name():` · `name()` · `return value` | 🟪 review | Term 1 reflection sheet; find three repeated blocks in your weeks 1–8 files and turn each into a function that gives the same output |
 | 10 | 2 | Functions That Take Something and Give Something Back | A parameter is a box the function fills from whoever called it, and `return` is the only way a value gets back out. | `def f(a, b):` parameters · `def f(a, b=0):` default · `f(b=3)` keyword arg · `None` | 🟦 teach | Write five tiny functions from a spec sheet, then find the missing-`return` bug that makes a function print the right answer and hand back `None` |
 | 11 | 2 | Many Values, One Name: Lists | A list is a row of numbered slots — and the first slot is number 0, not 1. | `[1, 2, 3]` · `scores[0]` / `scores[-1]` · `len(scores)` · `scores.append(x)` | 🟦 teach | Twelve list-surgery drills, then cause an `IndexError` on purpose, paste the traceback, and write the one-line fix |
 | 12 | 2 | Your Own Stats Toolkit | Once your functions live in their own file you can `import` them into any program you write, forever. | `scores[1:4]` slicing · `sorted(scores)` · `for score in scores:` · `import stats` / `from stats import mean` | 🟩 lab | Finish `stats.py` + `main.py` on 20 cricket scores; prove `median()` is right for an odd-length AND an even-length list |
 | 13 | 2 | Labels Instead of Numbers: Dictionaries | A dictionary looks things up by name instead of by position, which is what you want the moment a thing has fields. | `{"key": value}` · `d["key"]` · `d["new"] = v` · `d.get("k", 0)` | 🟦 teach | Build five player dictionaries with the same five keys, then cause a `KeyError`, read it, and fix it two different ways |
-| 14 | 2 | One Dict Per Row: Your First Dataset in Code | A list of dictionaries **is** a table: one dict is a row, and the keys are the column names. | `d.items()` · `"key" in d` · `[r["x"] for r in rows]` · `enumerate(rows)` | 🟦 teach | Type a 12-record dataset with 5 keys and print it as an aligned table with a numbered header row |
-| 15 | 2 | Filter It, Group It, Count It | Filtering keeps the rows that pass a test; grouping counts how many rows share a value. | `[r for r in rows if ...]` · `sorted(rows, key=...)` · `sum(numbers)` · `max(d, key=d.get)` | 🟩 lab | Write `filter_by()` and `group_count()`, run them on your 12 records, and answer six questions — each answer with its row count |
+| 14 | 2 | One Dict Per Row: Your First Dataset in Code | A list of dictionaries **is** a table: one dict is a row, and the keys are the column names. | `d.items()` · `"key" in d` · `[r["x"] for r in rows]` · `enumerate(rows)` · `sum()` / `max()` | 🟦 teach | Type a 12-record dataset with 5 keys and print it as an aligned table with a numbered header row |
+| 15 | 2 | Filter It, Group It, Count It | Filtering keeps the rows that pass a test; grouping counts how many rows share a value. | `[r for r in rows if ...]` · `sorted(rows, key=...)` · `max(d, key=d.get)` | 🟩 lab | Write `filter_by()` and `group_count()`, run them on your 12 records, and answer six questions — each answer with its row count |
 | 16 | 2 | The Record Store: Save It and Load It Back | A CSV is your dataset written out as plain text — and everything read back from one is a string until you convert it. | `import csv` · `with open(p, "w", newline="") as f:` · `csv.DictWriter` · `csv.DictReader` | 🟨 project | Finish the Record Store: 30 records, 5 keys, written to CSV and loaded back, with the round trip proved field by field on row 1 |
 | 17 | 2 | One Number for Every Score: NumPy Arrays | An array is a list that knows its shape and does maths to all of its numbers at once. | `import numpy as np` (aliasing) · `np.array([...])` · `.shape` · `.dtype` | 🟦 teach | Predict the shape and dtype of six arrays *before* running anything, then check all six and explain every miss |
 | 18 | 2 | Term 2 Checkpoint — Eight Loops You Never Have to Write Again | Array maths replaces a whole `for` loop with one line, and the one line is easier to read *and* harder to get wrong. | `arr * 2` elementwise · `arr1 + arr2` · `np.arange(n)` · `np.zeros((r, c))` | 🟪 review | Term 2 reflection sheet; rewrite eight loops from weeks 7–15 as array one-liners and prove each output is byte-identical |
@@ -260,9 +275,9 @@ at the end — while showing you a file that runs.
 | 21 | 3 | Tables With Names On: Meet the DataFrame | A DataFrame is a table where the columns have names and the rows have an index, so you never again have to remember "column 3". | `pd.DataFrame({...})` · `df.head()` · `df.info()` · `df["col"]` | 🟦 teach | Build a 10-row DataFrame about your own week, then write out what every line of `df.info()` is telling you |
 | 22 | 3 | Picking Rows and Columns Without Guessing | `loc` picks by name, `iloc` picks by position, and a boolean filter picks by asking a question. | `df.loc[row, col]` · `df.iloc[i, j]` · `df[df["age"] > 12]` · `df.sort_values("col")` | 🟦 teach | Ten selection drills, then the `loc`/`iloc` trap: the same call on a custom index returns two different rows — explain why |
 | 23 | 3 | Holes, Text-That-Should-Be-Numbers, and Duplicates | Real data arrives broken in four predictable ways, and each one has a named fix that you must write down. | `pd.read_csv()` / `df.to_csv()` · `df.isna().sum()` · `df["c"].fillna(v)` · `df["c"].astype(int)` | 🟦 teach | Repair a 12-row broken table and produce a numbered cleaning log: one line per repair, each with a *reason*, not just a *what* |
-| 24 | 3 | Mess Detective | `groupby` answers "what's the average per house?" in one line — and hides how many rows each answer came from. | `df.drop_duplicates()` · `df["c"].str.strip().str.title()` · `df["new"] = ...` · `df.groupby("c")["v"].mean()` | 🟩 lab | Finish Mess Detective on the broken 40-row table: before/after shape, full cleaning log, six `groupby` answers each reported **with its row count** |
+| 24 | 3 | Mess Detective | `groupby` answers "what's the average per house?" in one line — and hides how many rows each answer came from. | `df.drop_duplicates()` · `df["c"].value_counts()` · `df["c"].str.strip().str.title()` · `df["new"] = ...` · `df.groupby("c")["v"].mean()` | 🟩 lab | Finish Mess Detective on the broken 40-row table: before/after shape, full cleaning log, six `groupby` answers each reported **with its row count** |
 | 25 | 3 | Drawing the Table: Your First Chart | A chart with no axis labels is a decoration. The labels are what turn it into evidence. | `fig, ax = plt.subplots(figsize=(6,4))` · `ax.plot(x, y, marker="o")` · `ax.set_title()` / `set_xlabel()` / `set_ylabel()` · `fig.savefig(...)` | 🟦 teach | Three fully labelled line charts from your week-21 DataFrame, saved as PNGs, each with a one-sentence caption saying what it shows |
-| 26 | 3 | Five Questions, Five Chart Shapes | The question decides the chart: comparison → bar, spread → histogram, relationship → scatter. | `ax.bar()` · `ax.hist(values, bins=n)` · `ax.scatter(x, y)` · `df["c"].value_counts()` | 🟦 teach | Match eight questions to chart shapes, build four of them, and write one sentence per chart naming what it *hides* |
+| 26 | 3 | Five Questions, Five Chart Shapes | The question decides the chart: comparison → bar, spread → histogram, relationship → scatter. | `ax.bar()` · `ax.hist(values, bins=n)` · `ax.scatter(x, y)` (`value_counts()` returns, from week 24) | 🟦 teach | Match eight questions to chart shapes, build four of them, and write one sentence per chart naming what it *hides* |
 | 27 | 3 | Term 3 Checkpoint — Build a Lie, Then Confess | You can make a 2% difference look enormous without changing a single number — just by starting the y-axis somewhere else. | `ax.legend()` · `ax.set_ylim(bottom, top)` · `plt.subplots(1, 2)` · `df["a"].corr(df["b"])` | 🟪 review | Term 3 reflection sheet; the Five-Chart Data Story in narrative order, plus the lie-and-fix pair side by side with the arithmetic of the exaggeration |
 | 28 | 4 | X and y: Turning Your Table Into a Question | Every model needs the table split into `X` (what you measured) and `y` (what you want back) — Level 1's features and label, finally spelled out in code. | `from sklearn.datasets import load_iris` · `X = df[["a","b"]]` double brackets · `np.sqrt(x)` · `((a - b) ** 2).sum()` | 🟦 teach | Build `X` and `y` from your own table with the right shapes stated; compute one distance by hand on paper, then in numpy, and match to 2 dp |
 | 29 | 4 | Nearest Neighbours, and the 20% You Must Hide | kNN guesses by letting the k closest examples vote — and the score only means anything on rows the model never saw. | `KNeighborsClassifier(n_neighbors=k)` · `model.fit(X_train, y_train)` · `model.predict(X_test)` · `train_test_split(X, y, test_size=0.2, random_state=42)` | 🟦 teach | Run the full cycle on iris; report the score on the training rows AND the held-back rows, and explain the gap in two sentences |
@@ -390,6 +405,7 @@ Use it two ways:
 | 7 | `range(start, stop, step)` | The same counting, but you choose where it starts, stops and how it steps |
 | 7 | `total += x` | Short for `total = total + x`. The accumulator move |
 | 7 | `"=" * 20` | Twenty equals signs. Multiplying a string repeats it |
+| 7 | `print(x, end=" ")` | Print without starting a new line, so a loop builds one row |
 | 8 | `while condition:` | Keep repeating for as long as the condition stays `True` |
 | 8 | `break` | Leave the loop right now |
 | 8 | `continue` | Skip the rest of this trip round the loop and start the next one |
@@ -417,9 +433,10 @@ Use it two ways:
 | 14 | `"age" in player` | Is there a key called `age`? `True` or `False` |
 | 14 | `[r["score"] for r in rows]` | A list comprehension — build a new list in one line |
 | 14 | `enumerate(rows)` | Loop and get the position number at the same time |
+| 14 | `sum(numbers)` | Add a whole list up. You wrote this by hand in week 7 |
+| 14 | `max(numbers)` / `min(numbers)` | Biggest and smallest in a list. You wrote these by hand in week 11 |
 | 15 | `[r for r in rows if r["age"] > 12]` | A comprehension with a filter — keep only the rows that pass |
 | 15 | `sorted(rows, key=...)` | Sort a list of records by one field |
-| 15 | `sum(numbers)` | Add a whole list up. You wrote this by hand in week 7 |
 | 15 | `max(counts, key=counts.get)` | The key with the biggest value |
 | 16 | `import csv` | The standard-library tool for CSV files |
 | 16 | `with open(path, "w", newline="") as f:` | Open a file, and close it automatically when the block ends |
@@ -456,6 +473,7 @@ Use it two ways:
 | 24 | `df.drop_duplicates()` | Remove repeated rows |
 | 24 | `df["house"].str.strip().str.title()` | Tidy text: trim spaces, fix capitals. Four spellings become one |
 | 24 | `df["rate"] = df["runs"] / df["balls"]` | A derived column, computed from the ones you have |
+| 24 | `df["house"].value_counts()` | How many rows per value. The count that beats your eyes |
 | 24 | `df.groupby("house")["runs"].mean()` | One number per group. **Always report the group sizes too** |
 | 25 | `fig, ax = plt.subplots(figsize=(6, 4))` | Make one figure with one drawing box |
 | 25 | `ax.plot(x, y, marker="o")` | A line chart with a dot on every real data point |
@@ -464,7 +482,6 @@ Use it two ways:
 | 26 | `ax.bar(names, values)` | Bar chart — comparing separate things |
 | 26 | `ax.hist(values, bins=8)` | Histogram — the shape of one column's spread |
 | 26 | `ax.scatter(x, y)` | Scatter — is there a relationship between two numbers? |
-| 26 | `df["house"].value_counts()` | How many rows per value. The bar chart's raw material |
 | 27 | `ax.legend()` | Names the series. Required the moment there are two |
 | 27 | `ax.set_ylim(0, 100)` | Set the y-axis by hand. The honest use, and the dishonest one |
 | 27 | `fig, axes = plt.subplots(1, 2)` | Two charts side by side, so the lie sits next to the fix |
@@ -683,4 +700,10 @@ That sentence is the whole level. It started with `print("hello")` in week 1.
 
 ---
 
-[⬅ Level 2 modules](../README.md) · [Teacher Orientation](teacher-guide/00-orientation.md) · [Week 1 student guide](student-guide/week-01.md) · [Week 1 workbook](workbook/week-01.md) · [Figure style guide](figures/STYLE.md) · [Glossary](../glossary.md) · [Capstone](../capstone.md) · [Assessment pack](../assessment.md) · [Level 1 course](../../level-1-explorer/36-week-course/README.md)
+[⬅ Level 2 modules](../README.md) · [Teacher Orientation](teacher-guide/00-orientation.md) · [Week 1 student guide](student-guide/week-01.md) · [Week 1 workbook](workbook/week-01.md) · [Figure style guide](figures/STYLE.md) · [Glossary](../glossary.md) · [Level 1 course](../../level-1-explorer/36-week-course/README.md)
+
+**The four term tests:** [Assessments home](assessments/README.md) · [Term 1](assessments/term-1-test.md) · [Term 2](assessments/term-2-test.md) · [Term 3](assessments/term-3-test.md) · [Term 4](assessments/term-4-test.md)
+
+**Projects:** [Fifty ideas](projects/project-ideas.md) · [The worked example](projects/worked-example-project.md) · [The capstone](projects/capstone.md)
+
+**The reference module set this course was built from:** [Modules](../README.md) · [Module capstone](../capstone.md) · [Module assessment](../assessment.md)

@@ -13,6 +13,12 @@
 
 **Companion to:** [`README.md`](README.md) (teaching guide) · [`progress-tracker.md`](progress-tracker.md) · [`rubrics.md`](rubrics.md)
 
+> **⚠️ This calendar paces the self-study module track** (2 sessions/week over 84 weeks).
+> The taught edition of Levels 1 and 2 uses a different rhythm — **1 class a week for 36 weeks per
+> level**, with its own week-by-week plan. If you are teaching weekly classes, use that instead:
+> [Level 1 plan](../levels/level-1-explorer/36-week-course/README.md) ·
+> [Level 2 plan](../levels/level-2-builder/36-week-course/README.md).
+
 [⬅ Teacher guide](README.md) · [Back to AI Academy](../README.md) · [Curriculum map](../CURRICULUM_MAP.md)
 
 ---

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Draw It frame for Week 12</title>
+  <desc>An empty framed drawing area titled draw your own toolbox and the program that opens it, split into two dashed halves for the tin and the job file, with three blank reminder boxes underneath for the file name, one tool to add and the import line.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Draw It frame for Week 12</text>
+  <rect x="24" y="60" width="752" height="250" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="24" y="60" width="752" height="40" rx="12" fill="#F5F8FA"/>
+  <line x1="24" y1="100" x2="776" y2="100" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <text x="400" y="86" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">DRAW: your own toolbox and the program that opens it</text>
+  <text x="214" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">the tin: its file name and the tools inside</text>
+  <rect x="36" y="140" width="356" height="152" rx="10" fill="none" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="8 8"/>
+  <text x="586" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">the job file: what it asks for and prints</text>
+  <rect x="408" y="140" width="356" height="152" rx="10" fill="none" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="8 8"/>
+  <text x="400" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Draw the one line that joins them, and write it out in full.</text>
+  <rect x="40.0" y="340" width="229" height="40" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="154.5" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">the tin's file name</text>
+  <rect x="285.3" y="340" width="229" height="40" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="399.8" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">one tool I would add</text>
+  <rect x="530.6" y="340" width="229" height="40" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="645.1" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">the import line</text>
+</svg>

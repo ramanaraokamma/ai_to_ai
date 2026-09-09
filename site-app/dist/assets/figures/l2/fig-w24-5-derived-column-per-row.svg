@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A new column, worked out once per row</title>
+  <desc>A five-row table of names with a score column and an hours column feeds into a purple machine labelled score divided by hours, and out of it comes a single new column called points_per_hour holding 15.83, 16.91, 96.00, 90.00 and 84.00. Sami Aden's row is highlighted in both tables. Leader lines point out that the row with the top score has the worst rate and the row with the worst score has the best rate, so the new column reverses the ranking.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A new column, worked out once per row</text>
+  <text x="400" y="70" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Nothing new arrived. The table divided two columns it already had.</text>
+  <rect x="40" y="96" width="238" height="166" fill="#FFFFFF"/>
+  <rect x="40" y="96" width="34" height="26" fill="#F5F8FA"/>
+  <rect x="74" y="96" width="104" height="26" fill="#D9EAF9"/>
+  <rect x="178" y="96" width="50" height="26" fill="#D9EAF9"/>
+  <rect x="228" y="96" width="50" height="26" fill="#D9EAF9"/>
+  <rect x="40" y="122" width="34" height="28" fill="#F5F8FA"/>
+  <rect x="40" y="150" width="34" height="28" fill="#F5F8FA"/>
+  <rect x="40" y="178" width="34" height="28" fill="#F5F8FA"/>
+  <rect x="40" y="206" width="34" height="28" fill="#F5F8FA"/>
+  <rect x="40" y="234" width="34" height="28" fill="#F5F8FA"/>
+  <rect x="74" y="178" width="204" height="28" fill="#F4D5E9"/>
+  <line x1="74" y1="96" x2="74" y2="262" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="178" y1="96" x2="178" y2="262" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="228" y1="96" x2="228" y2="262" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="40" y1="150" x2="278" y2="150" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="40" y1="178" x2="278" y2="178" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="40" y1="206" x2="278" y2="206" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="40" y1="234" x2="278" y2="234" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="40" y1="262" x2="278" y2="262" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="40" y1="122" x2="278" y2="122" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="126.0" y="109.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600" dominant-baseline="central">name</text>
+  <text x="203.0" y="109.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600" dominant-baseline="central">score</text>
+  <text x="253.0" y="109.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600" dominant-baseline="central">hours</text>
+  <text x="57.0" y="136.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">37</text>
+  <text x="126.0" y="136.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Farah Aziz</text>
+  <text x="203.0" y="136.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">95</text>
+  <text x="253.0" y="136.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">6.0</text>
+  <text x="57.0" y="164.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">33</text>
+  <text x="126.0" y="164.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Hana Sato</text>
+  <text x="203.0" y="164.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">93</text>
+  <text x="253.0" y="164.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">5.5</text>
+  <text x="57.0" y="192.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">18</text>
+  <text x="126.0" y="192.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Sami Aden</text>
+  <text x="203.0" y="192.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">48</text>
+  <text x="253.0" y="192.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.5</text>
+  <text x="57.0" y="220.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">7</text>
+  <text x="126.0" y="220.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Hugo Silva</text>
+  <text x="203.0" y="220.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">45</text>
+  <text x="253.0" y="220.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.5</text>
+  <text x="57.0" y="248.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">32</text>
+  <text x="126.0" y="248.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Greta Hahn</text>
+  <text x="203.0" y="248.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">42</text>
+  <text x="253.0" y="248.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.5</text>
+  <rect x="74" y="178" width="204" height="28" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="40" y="96" width="238" height="166" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="159.0" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the columns you already had</text>
+  <line x1="280" y1="178" x2="304" y2="178" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(304 178) rotate(0.0)"/>
+  <rect x="308" y="146" width="124" height="68" rx="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="370" y="172" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">score / hours</text>
+  <text x="370" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">once per row</text>
+  <text x="370" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">five rows in,</text>
+  <text x="370" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">five answers out</text>
+  <rect x="470" y="96" width="160" height="166" fill="#FFFFFF"/>
+  <rect x="470" y="96" width="34" height="26" fill="#F5F8FA"/>
+  <rect x="504" y="96" width="126" height="26" fill="#D9EAF9"/>
+  <rect x="470" y="122" width="34" height="28" fill="#F5F8FA"/>
+  <rect x="470" y="150" width="34" height="28" fill="#F5F8FA"/>
+  <rect x="470" y="178" width="34" height="28" fill="#F5F8FA"/>
+  <rect x="470" y="206" width="34" height="28" fill="#F5F8FA"/>
+  <rect x="470" y="234" width="34" height="28" fill="#F5F8FA"/>
+  <rect x="504" y="178" width="126" height="28" fill="#F4D5E9"/>
+  <line x1="504" y1="96" x2="504" y2="262" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="470" y1="150" x2="630" y2="150" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="470" y1="178" x2="630" y2="178" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="470" y1="206" x2="630" y2="206" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="470" y1="234" x2="630" y2="234" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="470" y1="262" x2="630" y2="262" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="470" y1="122" x2="630" y2="122" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="567.0" y="109.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600" dominant-baseline="central">points_per_hour</text>
+  <text x="487.0" y="136.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">37</text>
+  <text x="567.0" y="136.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">15.83</text>
+  <text x="487.0" y="164.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">33</text>
+  <text x="567.0" y="164.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">16.91</text>
+  <text x="487.0" y="192.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">18</text>
+  <text x="567.0" y="192.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">96.00</text>
+  <text x="487.0" y="220.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">7</text>
+  <text x="567.0" y="220.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">90.00</text>
+  <text x="487.0" y="248.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">32</text>
+  <text x="567.0" y="248.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">84.00</text>
+  <rect x="504" y="178" width="126" height="28" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="470" y="96" width="160" height="166" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="438" y1="178" x2="464" y2="178" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(464 178) rotate(0.0)"/>
+  <text x="550.0" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the column you made</text>
+  <line x1="634" y1="136" x2="650" y2="136" stroke="#1F6FB2" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="656" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">top score,</text>
+  <text x="656" y="150" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">worst rate</text>
+  <line x1="634" y1="192" x2="650" y2="192" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="656" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">worst score,</text>
+  <text x="656" y="206" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">best rate</text>
+  <text x="400" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Hand-check one row out loud: 48 divided by 0.5 is 96.0.</text>
+  <text x="400" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">A derived column can turn the ranking upside down.</text>
+  <text x="400" y="368" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">So choose it on purpose, and say which column you ranked by.</text>
+</svg>

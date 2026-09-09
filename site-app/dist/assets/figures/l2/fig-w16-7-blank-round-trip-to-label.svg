@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Label the four stages of the round trip</title>
+  <desc>Four boxes in a row joined by arrows, holding forty-eight as a number, then the two separate characters four and eight, then forty-eight in quote marks, then forty-eight as a number again. Each box has an empty dashed label box lettered A to D underneath it, and a fifth empty box lettered E with a leader line pointing at the gap between the first two stages.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Label the four stages of the round trip</text>
+  <line x1="190" y1="178" x2="246" y2="178" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(246 178) rotate(0.0)"/>
+  <line x1="370" y1="178" x2="426" y2="178" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(426 178) rotate(0.0)"/>
+  <line x1="550" y1="178" x2="606" y2="178" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(606 178) rotate(0.0)"/>
+  <rect x="70" y="132" width="120" height="92" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="130" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">in memory</text>
+  <text x="130" y="182" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">48</text>
+  <text x="130" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">stage 1</text>
+  <rect x="70" y="244" width="120" height="34" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <circle cx="82" cy="238" r="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="82" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">A</text>
+  <rect x="250" y="132" width="120" height="92" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="310" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">in the file</text>
+  <text x="310" y="182" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">4 8</text>
+  <text x="310" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">stage 2</text>
+  <rect x="250" y="244" width="120" height="34" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <circle cx="262" cy="238" r="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="262" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">B</text>
+  <rect x="430" y="132" width="120" height="92" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="490" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">read back</text>
+  <text x="490" y="182" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8217;48&#8217;</text>
+  <text x="490" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">stage 3</text>
+  <rect x="430" y="244" width="120" height="34" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <circle cx="442" cy="238" r="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="442" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">C</text>
+  <rect x="610" y="132" width="120" height="92" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="670" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">converted</text>
+  <text x="670" y="182" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">48</text>
+  <text x="670" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">stage 4</text>
+  <rect x="610" y="244" width="120" height="34" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <circle cx="622" cy="238" r="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="622" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">D</text>
+  <text x="400" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">and one more:</text>
+  <rect x="280" y="314" width="240" height="34" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <circle cx="292" cy="308" r="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="292" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">E</text>
+  <line x1="286" y1="314" x2="224" y2="196" stroke="#55636F" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(224 196) rotate(-117.7)"/>
+  <text x="560" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">E: between which two stages</text>
+  <text x="560" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">was the KIND of thing lost?</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">One word per box: whole number, characters on a disk, text, whole number again.</text>
+</svg>

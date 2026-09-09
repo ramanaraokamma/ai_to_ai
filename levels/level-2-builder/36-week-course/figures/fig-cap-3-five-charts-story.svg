@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Five charts that read as one paragraph</title>
+  <desc>Five numbered cards in order with an arrow between each. One, how big is the thing I predict, a histogram. Two, what is actually in my data, a bar of counts. Three, the relationship I expected, a scatter. Four, the question chart three raised, a groupby bar with the counts. Five, the one that surprised me, two series with a legend. A panel gives the test: read your five captions aloud in order, and if it sounds like a paragraph you have a story.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Five charts that read as one paragraph</text>
+  <text x="400" y="64" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Not five charts. A story with five pictures in it.</text>
+  <rect x="40" y="88" width="138" height="176" rx="12" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="109.0" cy="114" r="15" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="109.0" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="109.0" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">How big is the</text>
+  <text x="109.0" y="171" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">thing I predict?</text>
+  <line x1="58" y1="198" x2="160" y2="198" stroke="#1F6FB2" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="109.0" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">histogram</text>
+  <line x1="178.5" y1="176" x2="182.5" y2="176" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(182.5 176) rotate(0.00)"/>
+  <rect x="183" y="88" width="138" height="176" rx="12" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="252.0" cy="114" r="15" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="252.0" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="252.0" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">What is actually</text>
+  <text x="252.0" y="171" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">in my data?</text>
+  <line x1="201" y1="198" x2="303" y2="198" stroke="#1F6FB2" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="252.0" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">bar of counts</text>
+  <line x1="321.5" y1="176" x2="325.5" y2="176" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(325.5 176) rotate(0.00)"/>
+  <rect x="326" y="88" width="138" height="176" rx="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="395.0" cy="114" r="15" fill="#FFFFFF" stroke="#6D28D9" stroke-width="3"/>
+  <text x="395.0" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="395.0" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">The relationship</text>
+  <text x="395.0" y="171" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">I expected</text>
+  <line x1="344" y1="198" x2="446" y2="198" stroke="#6D28D9" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="395.0" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">scatter</text>
+  <line x1="464.5" y1="176" x2="468.5" y2="176" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(468.5 176) rotate(0.00)"/>
+  <rect x="469" y="88" width="138" height="176" rx="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="538.0" cy="114" r="15" fill="#FFFFFF" stroke="#6D28D9" stroke-width="3"/>
+  <text x="538.0" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="538.0" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">The question</text>
+  <text x="538.0" y="171" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">chart 3 raised</text>
+  <line x1="487" y1="198" x2="589" y2="198" stroke="#6D28D9" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="538.0" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">groupby bar</text>
+  <text x="538.0" y="237" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">+ the counts</text>
+  <line x1="607.5" y1="176" x2="611.5" y2="176" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(611.5 176) rotate(0.00)"/>
+  <rect x="612" y="88" width="138" height="176" rx="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="681.0" cy="114" r="15" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <text x="681.0" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+  <text x="681.0" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">The one that</text>
+  <text x="681.0" y="171" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">surprised me</text>
+  <line x1="630" y1="198" x2="732" y2="198" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="681.0" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">two series</text>
+  <text x="681.0" y="237" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">+ a legend</text>
+  <rect x="40" y="284" width="720" height="62" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="400" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">THE TEST: read your five captions aloud, in order, with nothing in between.</text>
+  <text x="400" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">If it sounds like a paragraph, you have a story. If it sounds like a list, reorder them.</text>
+  <text x="400" y="380" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Every title states a FINDING. Every axis label carries its UNITS. Bars start at zero.</text>
+</svg>

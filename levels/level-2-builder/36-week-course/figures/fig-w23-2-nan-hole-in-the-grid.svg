@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 384" role="img">
+  <title>A hole is a void, not a zero</title>
+  <desc>A short hours column holding 3.5, 5.0, a dashed empty cell labelled NaN, and 4.5. Three claim boxes state that NaN is not zero and not empty text, but does mean nobody told us. Below, two boxes show that mean skips the hole and returns 4.33 while astype int refuses. A rule panel says deal with the hole first, then change the type.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A hole is a void, not a zero</text>
+  <text x="400" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The hours column: one club member never handed the form in</text>
+  <rect x="120" y="100" width="110" height="34" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="175.0" y="117.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3.5</text>
+  <rect x="120" y="140" width="110" height="34" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="175.0" y="157.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">5.0</text>
+  <rect x="120" y="180" width="110" height="34" rx="4" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="175" y="197" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D" text-anchor="middle" dominant-baseline="central">NaN</text>
+  <line x1="96" y1="197" x2="114" y2="197" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(114 197) rotate(0.0)"/>
+  <text x="30" y="201" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">the hole</text>
+  <rect x="120" y="220" width="110" height="34" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="175.0" y="237.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">4.5</text>
+  <text x="175" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">hours</text>
+  <rect x="272" y="104" width="246" height="34" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="293" cy="121" r="11" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="288" y1="116" x2="298" y2="126"/><line x1="298" y1="116" x2="288" y2="126"/></g>
+  <text x="312" y="121" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">NaN is not 0</text>
+  <rect x="272" y="148" width="246" height="34" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="293" cy="165" r="11" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="288" y1="160" x2="298" y2="170"/><line x1="298" y1="160" x2="288" y2="170"/></g>
+  <text x="312" y="165" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">NaN is not ""</text>
+  <rect x="272" y="192" width="246" height="34" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="293" cy="209" r="11" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <polyline points="287,210 291,214 299,204" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="312" y="209" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">NaN is: nobody told us</text>
+  <text x="395" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">So two commands treat it two different ways</text>
+  <rect x="272" y="278" width="246" height="50" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="284" y="298" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">mean()</text>
+  <text x="284" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">steps over the hole: 4.33</text>
+  <rect x="534" y="278" width="246" height="50" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="546" y="298" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">astype(int)</text>
+  <text x="546" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">refuses: there is nothing there</text>
+  <rect x="534" y="104" width="246" height="122" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="657" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">The rule</text>
+  <text x="548" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Deal with the hole first.</text>
+  <text x="548" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Then change the type.</text>
+  <text x="548" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Never the other way round.</text>
+  <text x="400" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">pandas will average around a hole quietly. It will not pretend a hole is a whole number.</text>
+</svg>

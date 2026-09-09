@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A perfect training score is not good news</title>
+  <desc>Two panels. On the left, marked wrong, a report shows a train score of one point zero zero zero being celebrated as perfect, with the test column covered by a card reading did not look. On the right, marked right, both columns are shown together: train one point zero zero zero beside test minus nought point nought nought three, which is below the lazy always-guess-the-average line, so the row is labelled memorised and not shipped.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A perfect training score is not good news</text>
+  <line x1="400" y1="70" x2="400" y2="372" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <circle cx="62" cy="92" r="14" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><line x1="55" y1="85" x2="69" y2="99" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/><line x1="69" y1="85" x2="55" y2="99" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  <text x="86" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#CC2B1D" text-anchor="start" dominant-baseline="central">WRONG</text>
+  <text x="206" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">one column, read and celebrated</text>
+  <rect x="60" y="142" width="140" height="76" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="130" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">train R&#178;</text>
+  <text x="130" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">1.000</text>
+  <text x="130" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#6D28D9" text-anchor="middle">353 rows it studied</text>
+  <rect x="216" y="142" width="136" height="76" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="284" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">test R&#178;</text>
+  <text x="284" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D" text-anchor="middle">did not look</text>
+  <rect x="60" y="238" width="292" height="48" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="206" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8220;perfect &#8212; ship it&#8221;</text>
+  <text x="206" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Sam scored 200 out of 200 on the</text>
+  <text x="206" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">practice booklet. That number was</text>
+  <text x="206" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">true, and it was not evidence.</text>
+  <circle cx="442" cy="92" r="14" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="435,92 440,98 450,85" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="466" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#1B7A4B" text-anchor="start" dominant-baseline="central">RIGHT</text>
+  <text x="588" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">both columns, side by side</text>
+  <rect x="442" y="142" width="140" height="76" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="512" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">train R&#178;</text>
+  <text x="512" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">1.000</text>
+  <text x="512" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#6D28D9" text-anchor="middle">353 rows it studied</text>
+  <rect x="598" y="142" width="140" height="76" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="668" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">test R&#178;</text>
+  <text x="668" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">-0.003</text>
+  <text x="668" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">89 rows it never saw</text>
+  <line x1="598" y1="232" x2="738" y2="232" stroke="#845F00" stroke-width="3" stroke-dasharray="7 5"/>
+  <text x="668" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#845F00" text-anchor="middle">lazy always-guess-the-average line: 0.0</text>
+  <rect x="442" y="262" width="296" height="48" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="590" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8220;memorised &#8212; do not ship&#8221;</text>
+  <text x="590" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Below the lazy line means worse than</text>
+  <text x="590" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">ignoring every measurement. Gap: 1.003.</text>
+</svg>

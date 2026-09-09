@@ -12,7 +12,7 @@
 | **Type** | 🟦 Teach — three new chart shapes and one new discipline (the question chooses the chart) |
 | **Big idea** | The question decides the chart: comparison to bar, spread to histogram, relationship to scatter. |
 | **New vocabulary** | bar chart · histogram · bin · scatter plot · distribution |
-| **New syntax** | `ax.bar(names, values)` · `ax.hist(values, bins=8)` · `ax.scatter(x, y)` · `df["c"].value_counts()` |
+| **New syntax** | `ax.bar(names, values)` · `ax.hist(values, bins=8)` · `ax.scatter(x, y)` · `df["c"].value_counts()` (back from Week 24) |
 | **Materials** | Printed workbook pages 26.1–26.6 · **the eight question cards, cut out** (page 26.1) · **the five shape cards, cut out** (page 26.2) · **one printed copy of the broken line chart** (see Prep) · a pencil |
 | **Tech needed** | The `level2` folder, venv active, matplotlib and pandas. The cleaned 38-row table from Week 24. |
 | **Prep time** | 15 minutes the night before, 5 minutes on the day |
@@ -36,6 +36,8 @@ Observable evidence: eight question cards correctly matched to shapes with a wri
 ---
 
 ## 🧑‍🏫 What YOU Need to Know First
+
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
 Week 25 taught the machinery: figure, axes, labels, save. This week is about **judgement**, and judgement is harder to teach than syntax. Read this whole section — the "what it hides" idea in §6 is the part most likely to catch you out, and it is the most valuable thing in the week.
 
@@ -869,7 +871,7 @@ Every message below came from running a genuinely broken version of this week's 
 | **No error. `edges: [0. 0.25 0.5 0.75 1. 1.25 1.5 1.75 2.]`** | "I turned your three words into 0, 1 and 2 and binned those." | `ax.hist(df["club"], bins=8)` — a histogram of a text column. | A histogram needs numbers. Use a bar chart of `value_counts()` for text. |
 | `ValueError: 'bins' must be positive, when an integer` | "Zero bins is not a number of bins." | `bins=0`, usually a typo for `bins=8` or a variable that was never set. | Pass a positive whole number, or a list of edges. |
 | **No error. A scatter that looks like a scribble.** | Nothing. You joined the dots. | `ax.plot(x, y, marker="o")` instead of `ax.scatter(x, y)` — last week's habit. | `ax.scatter(x, y)`. There is no order to join. |
-| `AttributeError: 'DataFrame' object has no attribute 'value_counts'` | "The whole table hasn't got that; one column has." | `df.value_counts()` instead of `df["club"].value_counts()`. | Pick the column first, then count it. |
+| **No error. Thirty-eight lines of names, and every count is `1`.** Starts `name age house club hours score` and ends `dtype: int64` | "You asked me to count *whole rows*, not clubs. Every row is different, so every count is one." | `df.value_counts()` instead of `df["club"].value_counts()`. The whole table *does* have `value_counts` — it just counts something you did not want. | Pick the column first, then count it: `df["club"].value_counts()`. Three lines out, not thirty-eight. |
 | Printed output ends `Name: club, dtype: object>` with rows of club names | Nothing broke. You printed the *method*, not the result of calling it. | `print(df["club"].value_counts)` — no brackets. | Add `()`. Brackets mean "do it". |
 | `ValueError: x and y must have same first dimension, but have shapes (38,) and (3,)` | "38 of one thing, 3 of the other." | Mixing a raw column with a summarised one — e.g. `df["score"]` against `house_mean.values`. | Decide which level you are at: 38 rows, or 3 groups. Never both in one call. |
 
@@ -877,7 +879,7 @@ Every message below came from running a genuinely broken version of this week's 
 
 Same ladder as Week 25 — **read the last line, name the line number, say what you expected, print the thing just before** — with one addition that is specific to this week and matters more than the ladder:
 
-**Three of the eleven rows above produce no error at all.** So the first question is not "what does the error say?" — it is:
+**Five of the eleven rows above produce no error at all.** So the first question is not "what does the error say?" — it is:
 
 > **"Describe your chart to me, out loud, in one sentence."**
 
@@ -1070,7 +1072,6 @@ If `students.py` has gone missing, this is it. Drop it in `~/ai-academy/level2`.
 # 40 rows came in; 2 were duplicates; 38 rows came out.
 import pandas as pd
 
-
 def build_students():
     """Return the cleaned 38-row student table as a DataFrame."""
     rows = [
@@ -1117,7 +1118,6 @@ def build_students():
     return pd.DataFrame(
         rows, columns=["name", "age", "house", "club", "hours", "score"]
     )
-
 
 if __name__ == "__main__":
     df = build_students()

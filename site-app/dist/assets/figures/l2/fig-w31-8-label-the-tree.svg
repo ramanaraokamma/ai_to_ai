@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Label the tree yourself</title>
+  <desc>An unlabelled decision tree with five boxes and empty dashed name slots beside them. One slot points at the top box, one at a line leaving a box, one at an end box, one at the whole shape, and one asks for the number of questions on the longest path from the top to an end box. Underneath, an empty dashed row asks how many end boxes a three-question tree could have at most.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Label the tree yourself</text>
+  <text x="400" y="72" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Five words go in the five dashed slots. One of them is a number.</text>
+  <g stroke="#55636F" stroke-width="2" fill="none">
+    <path d="M250 122 V138 H150 V156"/>
+    <path d="M250 122 V138 H350 V156"/>
+    <path d="M350 190 V206 H290 V224"/>
+    <path d="M350 190 V206 H410 V224"/>
+  </g>
+  <text x="196" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">no</text>
+  <text x="304" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">yes</text>
+  <text x="264" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">no</text>
+  <text x="436" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">yes</text>
+  <rect x="184" y="88" width="132" height="34" rx="8" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="250" y="105" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">width &#8804; 0.80</text>
+  <rect x="96" y="156" width="108" height="34" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="150" y="173" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">setosa</text>
+  <rect x="284" y="156" width="132" height="34" rx="8" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="350" y="173" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">width &#8804; 1.65</text>
+  <rect x="236" y="224" width="108" height="34" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="290" y="241" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">versicolor</text>
+  <rect x="356" y="224" width="108" height="34" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="410" y="241" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">virginica</text>
+  <line x1="322" y1="105" x2="500" y2="105" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="506" y="88" width="150" height="34" rx="8" fill="none" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="668" y="105" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start" dominant-baseline="central">A  this box</text>
+  <line x1="470" y1="173" x2="500" y2="173" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="506" y="156" width="150" height="34" rx="8" fill="none" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="668" y="173" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start" dominant-baseline="central">B  a shaded box</text>
+  <line x1="470" y1="241" x2="500" y2="241" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="506" y="224" width="150" height="34" rx="8" fill="none" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="668" y="241" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start" dominant-baseline="central">C  the whole shape</text>
+  <rect x="60" y="292" width="150" height="34" rx="8" fill="none" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="222" y="309" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start" dominant-baseline="central">D  longest path, in questions</text>
+  <rect x="440" y="292" width="150" height="34" rx="8" fill="none" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="602" y="309" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start" dominant-baseline="central">E  shaded boxes here</text>
+  <text x="400" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Then answer this: a tree allowed three questions could have how many shaded boxes at most?</text>
+  <text x="400" y="378" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">And why does this one have fewer?</text>
+</svg>

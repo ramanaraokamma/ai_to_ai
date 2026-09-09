@@ -37,6 +37,8 @@ Observable evidence: a file with five working functions, a test line for each sh
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
+
 **You do not need to have programmed before to teach this.** Everything below is written for an adult who has never written a line of code, and it is written in the order you will need it. Read it once, then do the Prep Checklist. About 25 minutes.
 
 ### 1. What Week 9 gave them, and the one hole in it
@@ -138,7 +140,7 @@ print(total * 2)                       # and now try to use it
 5
 total is: None
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/week10_bug.py", line 7, in <module>
+  File "/Users/you/ai-academy/level2/week10_bug.py", line 7, in <module>
     print(total * 2)                       # and now try to use it
 TypeError: unsupported operand type(s) for *: 'NoneType' and 'int'
 ```
@@ -231,7 +233,7 @@ def slice_cost(slices=8, pizza_price):
 ```
 
 ```text
-  File "/private/tmp/ai-academy/level2/e3.py", line 1
+  File "/Users/you/ai-academy/level2/week10_defaults.py", line 1
     def slice_cost(slices=8, pizza_price):
                              ^^^^^^^^^^^
 SyntaxError: non-default argument follows default argument
@@ -271,7 +273,7 @@ print(fare)                            # this line will fail
 30
 10
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/week10_scope.py", line 18, in <module>
+  File "/Users/you/ai-academy/level2/week10_scope.py", line 18, in <module>
     print(fare)                            # this line will fail
 NameError: name 'fare' is not defined
 ```
@@ -388,7 +390,7 @@ You must see exactly this, ending in a crash:
 5
 total is: None
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/week10_bug.py", line 12, in <module>
+  File "/Users/you/ai-academy/level2/week10_bug.py", line 12, in <module>
     print(total * 2)                       # and now try to use it
 TypeError: unsupported operand type(s) for *: 'NoneType' and 'int'
 ```
@@ -601,14 +603,14 @@ They predict 12, 0, −6. **Run it.**
 **Do this, at about minute 8.** Say: "I want to show you something. Go up to the `def` line and delete the colon at the end. Just the colon. Then run it."
 
 ```python
-def double(number)
-    return number * 2
+def double(number)                 # `number` is the PARAMETER
+    return number * 2               # hand the answer back out
 ```
 
 ```text
-  File "/private/tmp/ai-academy/level2/e6.py", line 1
-    def double(number)
-                      ^
+  File "/Users/you/ai-academy/level2/week10_functions.py", line 5
+    def double(number)                 # `number` is the PARAMETER
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 SyntaxError: expected ':'
 ```
 
@@ -803,21 +805,17 @@ def double(number):
     # Give back the number multiplied by two.
     return number * 2
 
-
 def change_left(paid, cost):
     # Give back how much money is left after paying.
     return paid - cost
-
 
 def slice_cost(pizza_price, slices=8):
     # Give back the cost of one slice. A whole pizza is 8 slices unless told otherwise.
     return pizza_price / slices
 
-
 def is_even(number):
     # Give back True if the number divides by 2 with nothing left over.
     return number % 2 == 0
-
 
 def bus_fare(age):
     # Give back the fare in rupees for someone of this age.
@@ -829,7 +827,6 @@ def bus_fare(age):
         return 30                  # adult fare
     else:
         return 10                  # senior fare
-
 
 # ---- three tests each, and one of the three is awkward on purpose ----
 print("double        :", double(6), double(0), double(-3))
@@ -862,16 +859,13 @@ def weekly_saving(pocket_money, spent):
     # Should give back how much is left over each week.
     print(pocket_money - spent)
 
-
 def yearly_saving(weekly, weeks=52):
     # Should give back the saving for a whole year.
     return weekly * weeks
 
-
 def rupees(amount):
     # Should give back the amount as a tidy piece of text.
     return f"Rs {amount:.2f}"
-
 
 # ---- the report ----
 left_each_week = weekly_saving(200, 145)
@@ -882,9 +876,9 @@ print("saved in a year:", rupees(yearly_saving(left_each_week)))
 ```text
 55
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/week10_broken.py", line 22, in <module>
+  File "/Users/you/ai-academy/level2/week10_broken.py", line 22, in <module>
     print("left each week:", rupees(left_each_week))
-  File "/private/tmp/ai-academy/level2/week10_broken.py", line 17, in rupees
+  File "/Users/you/ai-academy/level2/week10_broken.py", line 17, in rupees
     return f"Rs {amount:.2f}"
 TypeError: unsupported format string passed to NoneType.__format__
 ```
@@ -1007,7 +1001,6 @@ The second one wins, silently, and the first one is gone — no error, no warnin
 def ________(________):
     # Give back ____________________
     return ________
-
 
 print(________(____))       # test 1
 print(________(____))       # test 2
@@ -1136,21 +1129,17 @@ def double(number):
     # Give back the number multiplied by two.
     return number * 2
 
-
 def change_left(paid, cost):
     # Give back how much money is left after paying.
     return paid - cost
-
 
 def slice_cost(pizza_price, slices=8):
     # Give back the cost of one slice. A whole pizza is 8 slices unless told otherwise.
     return pizza_price / slices
 
-
 def is_even(number):
     # Give back True if the number divides by 2 with nothing left over.
     return number % 2 == 0
-
 
 def bus_fare(age):
     # Give back the fare in rupees for someone of this age.
@@ -1162,7 +1151,6 @@ def bus_fare(age):
         return 30                  # adult fare
     else:
         return 10                  # senior fare
-
 
 # ---- three tests each, and one of the three is awkward on purpose ----
 print("double        :", double(6), double(0), double(-3))
@@ -1213,9 +1201,9 @@ No. Dividing with `/` in Python always produces a decimal number, even when the 
 ```text
 55
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/week10_broken.py", line 22, in <module>
+  File "/Users/you/ai-academy/level2/week10_broken.py", line 22, in <module>
     print("left each week:", rupees(left_each_week))
-  File "/private/tmp/ai-academy/level2/week10_broken.py", line 17, in rupees
+  File "/Users/you/ai-academy/level2/week10_broken.py", line 17, in rupees
     return f"Rs {amount:.2f}"
 TypeError: unsupported format string passed to NoneType.__format__
 ```
@@ -1299,7 +1287,7 @@ print(fare)
 ```text
 15
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/week10_scope.py", line 6, in <module>
+  File "/Users/you/ai-academy/level2/week10_scope.py", line 6, in <module>
     print(fare)
 NameError: name 'fare' is not defined
 ```
@@ -1359,9 +1347,9 @@ print(add_one())
 
 ```text
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/e8.py", line 7, in <module>
+  File "/Users/you/ai-academy/level2/hw10_scope.py", line 7, in <module>
     print(add_one())
-  File "/private/tmp/ai-academy/level2/e8.py", line 4, in add_one
+  File "/Users/you/ai-academy/level2/hw10_scope.py", line 4, in add_one
     score_total = score_total + 1
 UnboundLocalError: local variable 'score_total' referenced before assignment
 ```

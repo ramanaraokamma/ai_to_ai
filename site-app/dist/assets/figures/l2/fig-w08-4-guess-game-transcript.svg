@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Every hint halves what is left</title>
+  <desc>Five stacked number lines from 1 to 100. On each line the still-possible window is a tinted bar and the guess is a pin: 50 gives lower and leaves 49 numbers, 25 gives higher and leaves 24, 37 gives higher and leaves 12, 43 gives lower and leaves 5, and 40 is correct. A panel underneath reads five guesses used, two still in hand, and shows the halving chain from 100 down to 1 in seven steps.</desc>
+  <text x="250" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Every hint halves what is left</text>
+  <text x="56" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">1</text>
+  <line x1="70" y1="112" x2="400" y2="112" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="70.0" y="96" width="330.0" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="233.3" y1="88" x2="233.3" y2="136" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="233.3" cy="80" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="233.3" y="80" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">50</text>
+  <text x="416" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" dominant-baseline="central">lower</text>
+  <text x="70" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">100 numbers still possible</text>
+  <text x="56" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">2</text>
+  <line x1="70" y1="208" x2="400" y2="208" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="70.0" y="192" width="160.0" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="150.0" y1="184" x2="150.0" y2="232" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="150.0" cy="176" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="150.0" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">25</text>
+  <text x="416" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" dominant-baseline="central">higher</text>
+  <text x="70" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">49 numbers still possible</text>
+  <text x="56" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">3</text>
+  <line x1="70" y1="304" x2="400" y2="304" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="153.3" y="288" width="76.69999999999999" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="190.0" y1="280" x2="190.0" y2="328" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="190.0" cy="272" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="190.0" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">37</text>
+  <text x="416" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" dominant-baseline="central">higher</text>
+  <text x="70" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">24 numbers still possible</text>
+  <text x="56" y="400" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">4</text>
+  <line x1="70" y1="400" x2="400" y2="400" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="193.3" y="384" width="36.69999999999999" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="210.0" y1="376" x2="210.0" y2="424" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="210.0" cy="368" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="210.0" y="368" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">43</text>
+  <text x="416" y="400" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" dominant-baseline="central">lower</text>
+  <text x="70" y="444" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">12 numbers still possible</text>
+  <text x="56" y="496" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">5</text>
+  <line x1="70" y1="496" x2="400" y2="496" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="193.3" y="480" width="13.399999999999977" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="200.0" y1="472" x2="200.0" y2="520" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="200.0" cy="464" r="13" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="200.0" y="464" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">40</text>
+  <text x="416" y="496" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B" dominant-baseline="central">correct</text>
+  <text x="70" y="540" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">5 numbers still possible</text>
+  <text x="200.0" y="556" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the secret was 40</text>
+  <rect x="40" y="580" width="420" height="76" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="250" y="606" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">5 guesses used, 2 still in hand</text>
+  <text x="250" y="634" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">100 → 50 → 25 → 13 → 7 → 4 → 2 → 1 — seven halvings is enough</text>
+</svg>

@@ -65,6 +65,8 @@ Not because nobody trusts you. Because in three weeks, when your best feature tu
 
 ## 🧠 The Big Idea
 
+> **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
+
 ### 1. A research question, and the four gates it has to pass
 
 **The plain explanation.**
@@ -179,7 +181,7 @@ And here is the rule, which is absolute, and which you will want to break within
 
 **The concrete version — make the computer enforce it.** One line in the terminal:
 
-```text
+```bash
 chmod 444 data/raw.csv
 ```
 
@@ -292,7 +294,7 @@ You are going to build three small files, in order. Everything from here works o
 
 In the terminal:
 
-```text
+```bash
 mkdir -p week34-demo/data
 cd week34-demo
 ```
@@ -355,7 +357,7 @@ print(len(rows), "rows written to data/raw.csv")
 
 Run it:
 
-```text
+```bash
 python3 make_raw.py
 ```
 
@@ -371,7 +373,7 @@ Every one of those was in the paper log. So every one of those goes in the file.
 
 ### Step 3 — lock the raw file
 
-```text
+```bash
 chmod 444 data/raw.csv
 ```
 
@@ -379,7 +381,7 @@ That means: everyone can read this, nobody can write to it. Including you, at el
 
 Watch what happens if you try to write to it now:
 
-```text
+```bash
 python3 make_raw.py
 ```
 
@@ -413,7 +415,7 @@ print()
 print(df.describe())                  # the numbers, summarised
 ```
 
-```text
+```bash
 python3 look.py
 ```
 
@@ -875,7 +877,7 @@ FileNotFoundError: [Errno 2] No such file or directory: 'data/raw.csv'
 
 **The fix:**
 
-```text
+```bash
 mkdir data
 ls
 python3 make_raw.py
@@ -982,7 +984,7 @@ Then sign it and date it. Properly. This is a ritual and rituals work.
 
 ### Part 2 — the folders (5 minutes)
 
-```text
+```bash
 mkdir -p data-detective/data data-detective/notes
 cd data-detective
 ```
@@ -1130,7 +1132,7 @@ print(df["mode"].value_counts())     # count a text column - never eyeball it
 df.to_csv("data/clean.csv", index=False)
 ```
 
-```text
+```bash
 chmod 444 data/raw.csv     # read-only: everyone can read, nobody can write
 chmod 644 data/raw.csv     # writable again, if you must rebuild it
 ```

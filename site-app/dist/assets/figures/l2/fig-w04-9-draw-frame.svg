@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Draw It frame for Week 4</title>
+  <desc>An empty framed drawing area titled draw your own bot, split by a dashed line into a left half for the questions the human answers and a right half for the facts the program works out. Three blank reminder boxes underneath ask for the conversions used, the derived values, and the one line that would break without a conversion.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Draw It frame for Week 4</text>
+  <rect x="24" y="60" width="752" height="262" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="24" y="60" width="752" height="40" rx="12" fill="#F5F8FA"/>
+  <line x1="24" y1="100" x2="776" y2="100" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <text x="400" y="86" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">DRAW: what went in, and what came out that nobody typed</text>
+  <g stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="8 8">
+    <rect x="36" y="152" width="356" height="152" rx="10" fill="none"/>
+  </g>
+  <text x="214" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">in: the answers a human typed</text>
+  <g stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="8 8">
+    <rect x="408" y="152" width="356" height="152" rx="10" fill="none"/>
+  </g>
+  <text x="586" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">out: the facts the program worked out</text>
+  <rect x="40" y="336" width="229" height="40" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="154" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">which answers needed int or float</text>
+  <rect x="285" y="336" width="229" height="40" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">your two derived values</text>
+  <rect x="531" y="336" width="229" height="40" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="645" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">the line that breaks without one</text>
+</svg>

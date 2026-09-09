@@ -36,6 +36,8 @@ Observable evidence: a file in which every number appears exactly once and is us
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
+
 Read this with the laptop open and type the examples. There are two ideas this week — one easy, one deceptive — and it is worth knowing which is which before you walk in.
 
 ### 1. The easy idea: a variable is a name stuck on a value

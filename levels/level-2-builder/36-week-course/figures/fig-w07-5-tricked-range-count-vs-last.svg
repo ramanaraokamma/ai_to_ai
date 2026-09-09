@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>range(10) does not count to ten</title>
+  <desc>Two mirrored panels. On the left, marked wrong, ten value boxes are drawn running from one to ten, badged last value 10, with a note that this is what the word range makes people expect. On the right, marked correct, ten value boxes run from zero to nine, badged ten values and last value 9, with a dashed fence post marked 10 standing just past the last box and labelled the stop, never handed out. A band underneath says both facts are true at once: ten values, and the last one is nine.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">range(10) does not count to ten</text>
+
+  <rect x="20" y="60" width="372" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <g transform="translate(36,70) scale(0.34)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+      <line x1="38" y1="38" x2="62" y2="62"/>
+      <line x1="62" y1="38" x2="38" y2="62"/>
+    </g>
+  </g>
+  <text x="76" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">what people expect</text>
+
+  <g stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round">
+    <rect x="40" y="120" width="62" height="44" rx="8" fill="#FFFFFF"/>
+    <rect x="108" y="120" width="62" height="44" rx="8" fill="#FFFFFF"/>
+    <rect x="176" y="120" width="62" height="44" rx="8" fill="#FFFFFF"/>
+    <rect x="244" y="120" width="62" height="44" rx="8" fill="#FFFFFF"/>
+  </g>
+  <text x="71" y="142" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="139" y="142" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="207" y="142" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="275" y="142" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#55636F" text-anchor="middle" dominant-baseline="central">...</text>
+  <rect x="312" y="120" width="62" height="44" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="343" y="142" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">10</text>
+  <text x="343" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">this one is not there</text>
+
+  <text x="206" y="226" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">&#8220;the word range means up to and</text>
+  <text x="206" y="246" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">including, so the last one is ten&#8221;</text>
+  <text x="206" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D" text-anchor="middle">Nine numbers printed. No error at all.</text>
+
+  <rect x="408" y="60" width="372" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <g transform="translate(424,70) scale(0.34)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="464" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">what really comes out</text>
+
+  <g stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round">
+    <rect x="428" y="120" width="62" height="44" rx="8" fill="#D9EAF9"/>
+    <rect x="496" y="120" width="62" height="44" rx="8" fill="#D9EAF9"/>
+    <rect x="564" y="120" width="62" height="44" rx="8" fill="#D9EAF9"/>
+    <rect x="632" y="120" width="62" height="44" rx="8" fill="#D9EAF9"/>
+  </g>
+  <text x="459" y="142" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="527" y="142" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="595" y="142" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#55636F" text-anchor="middle" dominant-baseline="central">...</text>
+  <text x="663" y="142" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">9</text>
+  <line x1="716" y1="112" x2="716" y2="172" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 7"/>
+  <text x="716" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">10</text>
+  <text x="716" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">the stop.</text>
+  <text x="716" y="206" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">never handed out</text>
+
+  <rect x="428" y="228" width="150" height="34" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="503" y="245" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">10 values</text>
+  <rect x="592" y="228" width="150" height="34" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="667" y="245" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">last one is 9</text>
+  <text x="594" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B" text-anchor="middle">Both true at once. That is what makes it hard.</text>
+
+  <text x="400" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">How many? stop minus start. What is the last one? one less than the stop.</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Two different questions. Two different answers. Ask them separately, every time.</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Normalizing squashes one row onto 0 to 1</title>
+  <desc>Two parallel rulers. The top one runs from 58 to 88 and carries five blue dots at Aarav's five scores. Dashed lines drop each dot onto a second pink ruler underneath, where the same five points read 0.00, 0.23, 0.40, 0.47 and 1.00. Pills note that the smallest goes to 0 and the largest goes to 1.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Normalizing squashes one row onto 0 to 1</text>
+  <line x1="80" y1="120" x2="720" y2="120" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <text x="80" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">lowest = 58</text>
+  <text x="720" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">highest = 88</text>
+  <circle cx="80" cy="120" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="80.0" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">58</text>
+  <circle cx="229" cy="120" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="229.33333333333334" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">65</text>
+  <circle cx="336" cy="120" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="336.0" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">70</text>
+  <circle cx="379" cy="120" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="378.6666666666667" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">72</text>
+  <circle cx="720" cy="120" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="720.0" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">88</text>
+  <text x="400" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">each score keeps its place in the line;</text>
+  <text x="400" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">only the numbers on the ruler change</text>
+  <line x1="80.0" y1="132" x2="80.0" y2="258" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <line x1="229.33333333333334" y1="132" x2="229.33333333333334" y2="258" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <line x1="336.0" y1="132" x2="336.0" y2="258" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <line x1="378.6666666666667" y1="132" x2="378.6666666666667" y2="258" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <line x1="720.0" y1="132" x2="720.0" y2="258" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <line x1="80" y1="270" x2="720" y2="270" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="80" cy="270" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="80.0" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.00</text>
+  <circle cx="229" cy="270" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="229.33333333333334" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.23</text>
+  <circle cx="336" cy="270" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="336.0" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.40</text>
+  <circle cx="379" cy="270" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="378.6666666666667" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.47</text>
+  <circle cx="720" cy="270" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="720.0" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1.00</text>
+  <rect x="20.0" y="316.0" width="128" height="24" rx="12" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="84" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">smallest goes to 0</text>
+  <rect x="300" y="312" width="200" height="34" rx="8" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="312" y="329" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">(score - 58) / 30</text>
+  <rect x="652.0" y="316.0" width="128" height="24" rx="12" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="716" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">largest goes to 1</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Subtract the smallest, then divide by the gap between smallest and largest.</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 390" role="img">
+  <title>The repair did not make the holes. It made them visible.</title>
+  <desc>Two mirrored panels. On the left, marked wrong, the age column holds 13, 14, unknown and 13 all in quote marks with a badge reading object and a count saying holes found zero. On the right, marked correct, the same column after to_numeric holds 13.0, 14.0, a dashed empty cell reading NaN, and 13.0, with a badge reading float64 and a count saying holes found three.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The repair did not make the holes. It made them visible.</text>
+  <line x1="400" y1="78" x2="400" y2="336" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="6 6"/>
+  <rect x="28" y="78" width="352" height="258" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="420" y="78" width="352" height="258" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="60" cy="110" r="15" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="55" y1="105" x2="65" y2="115"/><line x1="65" y1="105" x2="55" y2="115"/></g>
+  <circle cx="452" cy="110" r="15" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <polyline points="446,111 450,115 458,105" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="84" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">As it arrived</text>
+  <text x="476" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">After to_numeric</text>
+  <rect x="74" y="142" width="146" height="30" rx="4" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="147.0" y="157.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">"13"</text>
+  <rect x="466" y="142" width="146" height="30" rx="4" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="539.0" y="157.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">13.0</text>
+  <rect x="74" y="178" width="146" height="30" rx="4" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="147.0" y="193.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">"14"</text>
+  <rect x="466" y="178" width="146" height="30" rx="4" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="539.0" y="193.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">14.0</text>
+  <rect x="74" y="214" width="146" height="30" rx="4" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="147.0" y="229.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">"unknown"</text>
+  <rect x="466" y="214" width="146" height="30" rx="4" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="539" y="229" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle" dominant-baseline="central">NaN</text>
+  <rect x="74" y="250" width="146" height="30" rx="4" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="147.0" y="265.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">"13"</text>
+  <rect x="466" y="250" width="146" height="30" rx="4" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="539.0" y="265.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">13.0</text>
+  <text x="147" y="136" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">age</text>
+  <text x="539" y="136" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">age</text>
+  <rect x="240" y="142" width="124" height="28" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <text x="302" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">object</text>
+  <rect x="632" y="142" width="124" height="28" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="694" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">float64</text>
+  <rect x="240" y="190" width="124" height="52" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="302" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">holes found</text>
+  <text x="302" y="230" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#CC2B1D" text-anchor="middle">0</text>
+  <rect x="632" y="190" width="124" height="52" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="694" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">holes found</text>
+  <text x="694" y="230" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#1B7A4B" text-anchor="middle">3</text>
+  <text x="204" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Every value is writing, even the</text>
+  <text x="204" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">real numbers. Writing is never</text>
+  <text x="204" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">missing, so nothing is reported.</text>
+  <text x="596" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">The three that were never numbers</text>
+  <text x="596" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">are now holes you can count,</text>
+  <text x="596" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">and decide about, out loud.</text>
+  <text x="400" y="368" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Same twelve rows. Same three unknowns. The only thing that changed is what you can see.</text>
+</svg>

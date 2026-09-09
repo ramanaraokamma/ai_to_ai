@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Sort into piles, then one number per pile</title>
+  <desc>Four rows show the same three-stage journey. On the left a labelled pile for Blue with 14 rows, Red with 12, Green with 10 and Gold with 2. Each pile passes through a purple mean machine and comes out as one green line of the result: Blue 74.36, Red 74.25, Green 65.20, Gold 95.00. A side panel notes 38 rows went in and 4 rows came out, and that 14 plus 12 plus 10 plus 2 is 38.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Sort into piles, then one number per pile</text>
+  <text x="126" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">1. SPLIT</text>
+  <text x="396" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">2. APPLY</text>
+  <text x="664" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">3. COMBINE</text>
+  <rect x="40" y="110" width="172" height="48" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="56" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Blue</text>
+  <text x="196" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">14 rows</text>
+  <rect x="104" y="122" width="20" height="24" rx="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="130" y="122" width="20" height="24" rx="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="156" y="122" width="20" height="24" rx="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="220" y1="134" x2="272" y2="134" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(272 134) rotate(0.0)"/>
+  <rect x="276" y="118" width="110" height="32" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="331" y="134" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">mean()</text>
+  <line x1="394" y1="134" x2="446" y2="134" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(446 134) rotate(0.0)"/>
+  <rect x="450" y="118" width="150" height="32" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="464" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">Blue</text>
+  <text x="586" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">74.36</text>
+  <rect x="40" y="172" width="172" height="48" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="56" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Red</text>
+  <text x="196" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">12 rows</text>
+  <rect x="104" y="184" width="20" height="24" rx="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="130" y="184" width="20" height="24" rx="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="156" y="184" width="20" height="24" rx="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="220" y1="196" x2="272" y2="196" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(272 196) rotate(0.0)"/>
+  <rect x="276" y="180" width="110" height="32" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="331" y="196" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">mean()</text>
+  <line x1="394" y1="196" x2="446" y2="196" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(446 196) rotate(0.0)"/>
+  <rect x="450" y="180" width="150" height="32" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="464" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">Red</text>
+  <text x="586" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">74.25</text>
+  <rect x="40" y="234" width="172" height="48" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="56" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Green</text>
+  <text x="196" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">10 rows</text>
+  <rect x="104" y="246" width="20" height="24" rx="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="130" y="246" width="20" height="24" rx="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="156" y="246" width="20" height="24" rx="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="220" y1="258" x2="272" y2="258" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(272 258) rotate(0.0)"/>
+  <rect x="276" y="242" width="110" height="32" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="331" y="258" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">mean()</text>
+  <line x1="394" y1="258" x2="446" y2="258" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(446 258) rotate(0.0)"/>
+  <rect x="450" y="242" width="150" height="32" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="464" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">Green</text>
+  <text x="586" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">65.20</text>
+  <rect x="40" y="296" width="172" height="48" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="56" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Gold</text>
+  <text x="196" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">2 rows</text>
+  <rect x="104" y="308" width="20" height="24" rx="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="130" y="308" width="20" height="24" rx="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="156" y="308" width="20" height="24" rx="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="220" y1="320" x2="272" y2="320" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(272 320) rotate(0.0)"/>
+  <rect x="276" y="304" width="110" height="32" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="331" y="320" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">mean()</text>
+  <line x1="394" y1="320" x2="446" y2="320" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(446 320) rotate(0.0)"/>
+  <rect x="450" y="304" width="150" height="32" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="464" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">Gold</text>
+  <text x="586" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">95.00</text>
+  <line x1="624" y1="118" x2="624" y2="346" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="6 6"/>
+  <rect x="636" y="124" width="148" height="214" rx="12" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="710" y="150" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">the result</text>
+  <text x="710" y="174" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">is a small table:</text>
+  <text x="710" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">one row per pile,</text>
+  <text x="710" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">one number per row.</text>
+  <text x="710" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">38 rows in.</text>
+  <text x="710" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4 rows out.</text>
+  <text x="710" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">14+12+10+2 = 38</text>
+  <text x="400" y="384" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Hand-check one pile every time. Gold: 97 + 93 = 190, and 190 divided by 2 is 95.00.</text>
+</svg>

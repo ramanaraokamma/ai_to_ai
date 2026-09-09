@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Label this histogram</title>
+  <desc>Eighteen values sit as dots on a number line from ten to sixty. Dashed lines drop them into five touching bars whose heights are three, four, five, three and three. Five empty dashed boxes lettered A to E are joined by leader lines to one bar, to one bin edge, to the height of a bar, to the row of dots, and to a blank total under the bars. Nothing is filled in.</desc>
+  <text x="400" y="38" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Label this histogram</text>
+
+  <!-- leader lines first -->
+  <line x1="150" y1="86" x2="182" y2="112" stroke="#C42B8C" stroke-width="1.5"/>
+  <line x1="306" y1="150" x2="306" y2="196" stroke="#C42B8C" stroke-width="1.5"/>
+  <line x1="524" y1="228" x2="586" y2="212" stroke="#C42B8C" stroke-width="1.5"/>
+  <line x1="238" y1="336" x2="238" y2="352" stroke="#C42B8C" stroke-width="1.5"/>
+  <line x1="524" y1="292" x2="586" y2="300" stroke="#C42B8C" stroke-width="1.5"/>
+
+  <!-- the number line with 18 dots -->
+  <line x1="180" y1="112" x2="524" y2="112" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <g fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2">
+    <circle cx="194" cy="112" r="5"/>
+    <circle cx="215" cy="112" r="5"/>
+    <circle cx="235" cy="112" r="5"/>
+    <circle cx="256" cy="112" r="5"/>
+    <circle cx="277" cy="112" r="5"/>
+    <circle cx="284" cy="112" r="5"/>
+    <circle cx="297" cy="112" r="5"/>
+    <circle cx="325" cy="112" r="5"/>
+    <circle cx="339" cy="112" r="5"/>
+    <circle cx="346" cy="112" r="5"/>
+    <circle cx="360" cy="112" r="5"/>
+    <circle cx="373" cy="112" r="5"/>
+    <circle cx="394" cy="112" r="5"/>
+    <circle cx="415" cy="112" r="5"/>
+    <circle cx="435" cy="112" r="5"/>
+    <circle cx="470" cy="112" r="5"/>
+    <circle cx="490" cy="112" r="5"/>
+    <circle cx="511" cy="112" r="5"/>
+  </g>
+
+  <!-- bin dividers -->
+  <g stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="5 4">
+    <line x1="180" y1="120" x2="180" y2="196"/>
+    <line x1="249" y1="120" x2="249" y2="196"/>
+    <line x1="318" y1="120" x2="318" y2="196"/>
+    <line x1="387" y1="120" x2="387" y2="196"/>
+    <line x1="456" y1="120" x2="456" y2="196"/>
+    <line x1="524" y1="120" x2="524" y2="196"/>
+  </g>
+
+  <!-- the bars, touching -->
+  <line x1="180" y1="196" x2="180" y2="308" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="180" y1="308" x2="540" y2="308" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="180" y="248" width="69" height="60" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="249" y="228" width="69" height="80" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="318" y="208" width="69" height="100" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="387" y="248" width="69" height="60" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="456" y="248" width="68" height="60" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="214" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">3</text>
+  <text x="283" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">4</text>
+  <text x="352" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">5</text>
+  <text x="421" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">3</text>
+  <text x="490" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">3</text>
+  <text x="180" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">10</text>
+  <text x="249" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">20</text>
+  <text x="318" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">30</text>
+  <text x="387" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">40</text>
+  <text x="456" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">50</text>
+  <text x="524" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">60</text>
+
+  <!-- A: the dots -->
+  <rect x="24" y="70" width="128" height="30" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="88" y="60" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="middle">A</text>
+
+  <!-- B: one bin -->
+  <rect x="242" y="166" width="128" height="30" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="306" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="middle">B</text>
+
+  <!-- C: the bar height -->
+  <rect x="590" y="198" width="180" height="30" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="680" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="middle">C</text>
+
+  <!-- D: the edge -->
+  <rect x="150" y="352" width="176" height="30" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="136" y="367" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="end" dominant-baseline="central">D</text>
+
+  <!-- E: the check -->
+  <rect x="590" y="286" width="180" height="30" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="680" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="middle">E</text>
+
+  <text x="400" y="392" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">One of the five boxes is a check you should do every time you draw one of these.</text>
+</svg>

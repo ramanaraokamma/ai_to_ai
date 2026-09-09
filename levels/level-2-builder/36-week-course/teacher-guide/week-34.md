@@ -38,6 +38,8 @@ Observable evidence: a signed and dated question in the notebook; `data/raw.csv`
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
+
 You do not need to know anything new about Python for this week. You need to know one small function and one large idea.
 
 ### 1. What this week actually is
@@ -103,7 +105,7 @@ Why so strict? Because the moment you "just fix that typo in the spreadsheet", t
 
 The physical enforcement is one terminal command:
 
-```text
+```bash
 chmod 444 data/raw.csv
 ```
 
@@ -232,7 +234,7 @@ Watch for the phrase *"I just dropped the odd ones"*. Every "just" is a decision
 - [ ] Print workbook pages 34.1–34.6. Page 34.2 (the plan template) will be written on, signed, and kept — print it on the nicest paper you have. That matters more than it sounds.
 - [ ] **Run the three demo files yourself.** This is the non-negotiable prep. Make a scratch folder, create a `data` folder inside it, and type all three files below. Confirm you get the exact outputs shown. It takes twelve minutes and it is what lets you teach with your hands in your pockets.
 
-```text
+```bash
 mkdir -p week34-demo/data
 cd week34-demo
 ```
@@ -257,7 +259,7 @@ shape before: (26, 5)   after: (21, 5)
 
 - [ ] **Run the read-only command and then deliberately break it**, so you have seen the error before a student does:
 
-```text
+```bash
 chmod 444 data/raw.csv
 python3 make_raw.py
 ```
@@ -401,7 +403,7 @@ We use a small demo log — twenty-six journeys — so that everyone has the sam
 
 **Step 1 — make the folders (1 minute).** In the terminal:
 
-```text
+```bash
 mkdir -p week34-demo/data
 cd week34-demo
 ```
@@ -457,7 +459,7 @@ print(len(rows), "rows written to data/raw.csv")
 
 Run it:
 
-```text
+```bash
 python3 make_raw.py
 ```
 
@@ -484,7 +486,7 @@ python3 make_raw.py
 
 **Step 3 — lock the raw file (2 minutes).**
 
-```text
+```bash
 chmod 444 data/raw.csv
 ```
 
@@ -494,7 +496,7 @@ chmod 444 data/raw.csv
 >
 > Watch what happens now if I try to write to it again."
 
-```text
+```bash
 python3 make_raw.py
 ```
 
@@ -524,7 +526,7 @@ print()
 print(df.describe())                  # the numbers, summarised
 ```
 
-```text
+```bash
 python3 look.py
 ```
 
@@ -558,7 +560,7 @@ std       0.998699   0.452344
 min       1.200000   0.000000
 25%       1.200000   0.000000
 50%       2.100000   0.000000
-75%       3.400000   1.000000
+75%       3.400000   0.750000
 max       3.400000   1.000000
 ```
 
@@ -729,7 +731,7 @@ Signed ____________________   Date ____________
 
 ### Step 2 — the folders (5 minutes)
 
-```text
+```bash
 mkdir -p data-detective/data data-detective/notes
 cd data-detective
 ```
@@ -1166,7 +1168,9 @@ First: `minutes` is now **in** `describe()`. That is the check from section 6 pa
 
 Second: 26 rows went in and 21 came out. Five rows were lost, every one of them counted and justified. A student whose before-and-after shapes are identical either had immaculate data or did not look.
 
-**Supporting output worth showing them — `df["mode"].value_counts()` before step 2 reads `bus 13 / walk 6 / cycle 5 / Walk 1 / walk 1`.** Point at the last two lines: `walk` and `walk ` look identical on screen, because the difference is a trailing space. **That is why you cannot eyeball a column; you have to count it.** After step 2 there are three groups — `bus 13 / walk 8 / cycle 5` — not five.
+**Supporting output worth showing them — `df["mode"].value_counts()` before step 2 reads `bus 13 / walk 6 / cycle 5 / Walk 1 / walk 1`.** Point at the last two lines: `walk` and `walk ` look identical on screen, because the difference is a trailing space. **That is why you cannot eyeball a column; you have to count it.** After step 2 there are three groups — `bus 12 / walk 7 / cycle 5` — not five.
+
+> **🧑‍🏫 If a student does the arithmetic and objects:** they are right to. Merging the five raw groups by hand gives 13 bus and 8 walk, totalling 26. The printed numbers are 12 and 7, totalling 24. Nothing is wrong — **step 1 ran before step 2.** Dropping the two duplicate rows removed one bus journey and one walk journey, so both counts arrive at step 2 already one lower. This is worth thirty seconds out loud, because it is the first time they see that **the order of the cleaning steps changes the numbers**, which is exactly why the log is numbered.
 
 ### Lesson questions posed in the Say-this scripts
 

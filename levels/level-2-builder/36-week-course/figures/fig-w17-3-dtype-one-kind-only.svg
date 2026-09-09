@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>An array is all one flavour, and one word decides which</title>
+  <desc>Two panels. On the left, marked correct, three cells hold 1, 2 and 3 as whole numbers and the label reads dtype int64. On the right, marked wrong, the same three cells hold the characters one, two and three in quotation marks because the word three was typed in instead of the digit; the label reads dtype less than U twenty one and a note says every number turned into writing.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">An array is all one flavour</text>
+  <line x1="400" y1="76" x2="400" y2="332" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="6 6"/>
+  <rect x="30" y="76" width="360" height="246" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="410" y="76" width="360" height="246" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(48,90) scale(0.42)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(428,90) scale(0.42)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+      <line x1="38" y1="38" x2="62" y2="62"/>
+      <line x1="62" y1="38" x2="38" y2="62"/>
+    </g>
+  </g>
+  <text x="104" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">all three are numbers</text>
+  <text x="484" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">one of them is a word</text>
+  <rect x="88" y="152" width="76" height="60" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="126" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="164" y="152" width="76" height="60" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="202" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <rect x="240" y="152" width="76" height="60" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="278" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <rect x="88" y="152" width="228" height="60" fill="none" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="202" y="240" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#55636F" text-anchor="middle">shape (3,)</text>
+  <text x="202" y="264" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">dtype int64</text>
+  <text x="202" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one flavour: whole numbers</text>
+  <rect x="456" y="152" width="76" height="60" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="494" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">'1'</text>
+  <rect x="532" y="152" width="76" height="60" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="570" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">'2'</text>
+  <rect x="608" y="152" width="76" height="60" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="646" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">'three'</text>
+  <rect x="456" y="152" width="228" height="60" fill="none" stroke="#CC2B1D" stroke-width="3"/>
+  <text x="570" y="240" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#55636F" text-anchor="middle">shape (3,)</text>
+  <text x="570" y="264" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#CC2B1D" text-anchor="middle">dtype &lt;U21</text>
+  <text x="570" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one flavour: writing, up to 21 characters</text>
+  <text x="400" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">One word in a list of numbers converts every number in it to writing. No error, no warning.</text>
+  <text x="400" y="380" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Read the dtype. It is the only thing that will tell you.</text>
+</svg>

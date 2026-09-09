@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The four messes, and why the ORDER of the fixes matters</title>
+  <desc>Four numbered repairs. One: the mood column had four spellings, hype, Hype, chill and space-chill, fixed to two with strip and title, and this must come first. Two: an energy value of 44 on a one-to-five scale, corrected to 4. Three: two blank loudness cells, filled with the median 3, which invents two values that were really 4 and 5. Four: two whole rows typed twice, removed with drop_duplicates, which must come last because Hype and hype are different strings.</desc>
+  <text x="400" y="38" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The four messes, and why the ORDER of the fixes matters</text>
+  <text x="400" y="62" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">102 raw rows in. 100 clean rows out. Every change has a reason.</text>
+  <circle cx="44" cy="114" r="15" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="44" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="70" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="600">mood</text>
+  <rect x="146" y="92" width="210" height="44" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="151" y="114" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">hype · Hype · chill ·  chill</text>
+  <line x1="360" y1="114" x2="386" y2="114" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(386 114) rotate(0.00)"/>
+  <rect x="392" y="92" width="150" height="44" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="398" y="114" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">hype · chill</text>
+  <text x="556" y="108" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">.str.strip().str.title()</text>
+  <text x="556" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">4 spellings → 2. MUST be first</text>
+  <circle cx="44" cy="182" r="15" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="44" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="70" y="174" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="600">energy</text>
+  <rect x="146" y="160" width="210" height="44" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="151" y="182" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">44   on a 1-5 scale</text>
+  <line x1="360" y1="182" x2="386" y2="182" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(386 182) rotate(0.00)"/>
+  <rect x="392" y="160" width="150" height="44" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="398" y="182" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">4</text>
+  <text x="556" y="176" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">df.loc[df["energy"] &gt; 5]</text>
+  <text x="556" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Typo, 1 row. I chose 4, not a mean</text>
+  <circle cx="44" cy="250" r="15" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="44" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="70" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="600">loudness</text>
+  <rect x="146" y="228" width="210" height="44" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="151" y="250" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">two blank cells</text>
+  <line x1="360" y1="250" x2="386" y2="250" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(386 250) rotate(0.00)"/>
+  <rect x="392" y="228" width="150" height="44" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="398" y="250" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">3   (the median)</text>
+  <text x="556" y="244" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">fillna(median), astype(int)</text>
+  <text x="556" y="264" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Invents 2 values (really 4 and 5)</text>
+  <circle cx="44" cy="318" r="15" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="44" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="70" y="310" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="600">whole rows</text>
+  <rect x="146" y="296" width="210" height="44" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="151" y="318" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">2 rows typed twice</text>
+  <line x1="360" y1="318" x2="386" y2="318" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(386 318) rotate(0.00)"/>
+  <rect x="392" y="296" width="150" height="44" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="398" y="318" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">gone</text>
+  <text x="556" y="312" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">drop_duplicates()</text>
+  <text x="556" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">MUST be last — see note</text>
+  <rect x="32" y="366" width="736" height="0.1" rx="0" fill="none" stroke="none"/>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Mess 4 last: "Hype" and "hype" are different strings, so duplicates are invisible until mess 1 is fixed.</text>
+</svg>

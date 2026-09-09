@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A CSV file is genuinely just text with commas in it</title>
+  <desc>On the left, a neat table of three players with a header row. On the right, the same information as four lines of plain writing, with the commas ringed and a small return arrow at the end of every line. A caption states there are no colours, no fonts and no boxes in the file, only characters.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A CSV file is genuinely just text</text>
+  <text x="190" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">what it looks like in your head</text>
+  <rect x="60" y="112" width="86" height="30" fill="#D9EAF9"/>
+  <rect x="146" y="112" width="86" height="30" fill="#D9EAF9"/>
+  <rect x="232" y="112" width="86" height="30" fill="#D9EAF9"/>
+  <rect x="60" y="142" width="86" height="30" fill="#FFFFFF"/>
+  <rect x="146" y="142" width="86" height="30" fill="#FFFFFF"/>
+  <rect x="232" y="142" width="86" height="30" fill="#FFFFFF"/>
+  <rect x="60" y="172" width="86" height="30" fill="#FFFFFF"/>
+  <rect x="146" y="172" width="86" height="30" fill="#FFFFFF"/>
+  <rect x="232" y="172" width="86" height="30" fill="#FFFFFF"/>
+  <rect x="60" y="202" width="86" height="30" fill="#FFFFFF"/>
+  <rect x="146" y="202" width="86" height="30" fill="#FFFFFF"/>
+  <rect x="232" y="202" width="86" height="30" fill="#FFFFFF"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="146" y1="112" x2="146" y2="232"/>
+    <line x1="232" y1="112" x2="232" y2="232"/>
+    <line x1="60" y1="172" x2="318" y2="172"/>
+    <line x1="60" y1="202" x2="318" y2="202"/>
+  </g>
+  <line x1="60" y1="142" x2="318" y2="142" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="103.0" y="127.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">name</text>
+  <text x="189.0" y="127.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">team</text>
+  <text x="275.0" y="127.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">runs</text>
+  <text x="103.0" y="157.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Asha</text>
+  <text x="189.0" y="157.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Falcons</text>
+  <text x="275.0" y="157.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">48</text>
+  <text x="103.0" y="187.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Ravi</text>
+  <text x="189.0" y="187.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Falcons</text>
+  <text x="275.0" y="187.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">12</text>
+  <text x="103.0" y="217.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Nita</text>
+  <text x="189.0" y="217.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Falcons</text>
+  <text x="275.0" y="217.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">77</text>
+  <rect x="60" y="112" width="258" height="120" rx="0" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="190" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">boxes, lines, a bold header row</text>
+  <text x="190" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">none of that is in the file</text>
+  <line x1="340" y1="178" x2="400" y2="178" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(400 178) rotate(0.0)"/>
+  <text x="370" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">saved</text>
+  <text x="600" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">what is actually in the file</text>
+  <rect x="432" y="112" width="336" height="138" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="448" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">name,team,runs</text>
+  <circle cx="485.8" cy="132" r="6" fill="none" stroke="#C42B8C" stroke-width="2"/>
+  <circle cx="527.8" cy="132" r="6" fill="none" stroke="#C42B8C" stroke-width="2"/>
+  <path d="M740 126 v10 h-10" fill="none" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="-7,-5 0,0 -7,5" fill="none" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(722 136) rotate(180)"/>
+  <text x="448" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">Asha,Falcons,48</text>
+  <circle cx="485.8" cy="160" r="6" fill="none" stroke="#C42B8C" stroke-width="2"/>
+  <circle cx="553.0" cy="160" r="6" fill="none" stroke="#C42B8C" stroke-width="2"/>
+  <path d="M740 154 v10 h-10" fill="none" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="-7,-5 0,0 -7,5" fill="none" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(722 164) rotate(180)"/>
+  <text x="448" y="192" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">Ravi,Falcons,12</text>
+  <circle cx="485.8" cy="188" r="6" fill="none" stroke="#C42B8C" stroke-width="2"/>
+  <circle cx="553.0" cy="188" r="6" fill="none" stroke="#C42B8C" stroke-width="2"/>
+  <path d="M740 182 v10 h-10" fill="none" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="-7,-5 0,0 -7,5" fill="none" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(722 192) rotate(180)"/>
+  <text x="448" y="220" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">Nita,Falcons,77</text>
+  <circle cx="485.8" cy="216" r="6" fill="none" stroke="#C42B8C" stroke-width="2"/>
+  <circle cx="553.0" cy="216" r="6" fill="none" stroke="#C42B8C" stroke-width="2"/>
+  <path d="M740 210 v10 h-10" fill="none" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="-7,-5 0,0 -7,5" fill="none" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(722 220) rotate(180)"/>
+  <text x="600" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">ringed pink: a comma ends a column</text>
+  <text x="600" y="284" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle">green hook: a new line ends a row</text>
+  <text x="400" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Four lines of writing. 63 characters. That is the whole file.</text>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Header row first, then one line per record. No fonts, no colours, no formulas.</text>
+</svg>

@@ -3,7 +3,8 @@
 (function () {
   'use strict';
   var Auth = window.AIA_auth;
-  var LS = { mode: 'aia-mode', done: 'aia-done' };
+  var LVL = (window.AIA_NAV.level && window.AIA_NAV.level.key) || 'l1';
+  var LS = { mode: 'aia-mode', done: 'aia-done-' + LVL };
   function get(k, d) { try { return localStorage.getItem(k) || d; } catch (e) { return d; } }
   function set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
 

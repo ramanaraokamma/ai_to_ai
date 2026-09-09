@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>One split. Made once. Used by everything.</title>
+  <desc>Two panels. The left, framed in red and headed what goes wrong, shows three models each doing their own split, fit and score, producing three different test sets so the results table compares nothing, with no error and no warning. The right, framed in green, shows one split made in a single cell near the top, then a baseline and three models all scored on the same X_test. A note underneath says: search your own file for train_test_split, and if it appears twice that is the bug.</desc>
+  <text x="400" y="38" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">One split. Made once. Used by everything.</text>
+  <rect x="32" y="72" width="344" height="250" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="204" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" font-weight="600">✗   WHAT GOES WRONG</text>
+  <rect x="52" y="116" width="304" height="36" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="64" y="134" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">model A: split ... fit ... score</text>
+  <rect x="52" y="162" width="304" height="36" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="64" y="180" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">model B: split ... fit ... score</text>
+  <rect x="52" y="208" width="304" height="36" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="64" y="226" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">model C: split ... fit ... score</text>
+  <text x="204" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">Three different test sets.</text>
+  <text x="204" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">The table compares nothing.</text>
+  <text x="204" y="310" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">No error. No warning.</text>
+  <rect x="424" y="72" width="344" height="250" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="596" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" font-weight="600">✓   WHAT TO DO</text>
+  <rect x="444" y="116" width="304" height="36" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="456" y="134" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">X_train, X_test, y_train, y_test =</text>
+  <text x="596" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">ONE cell. Near the top. Never again.</text>
+  <text x="462" y="194" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">baseline  -&gt;  scored on X_test</text>
+  <text x="462" y="216" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">model A   -&gt;  scored on X_test</text>
+  <text x="462" y="238" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">model B   -&gt;  scored on X_test</text>
+  <text x="462" y="260" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">model C   -&gt;  scored on X_test</text>
+  <text x="596" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle">One test set. The table is a comparison.</text>
+  <rect x="32" y="336" width="736" height="44" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="400" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Ctrl-F your own file for train_test_split. If it appears twice, that is the bug.</text>
+</svg>

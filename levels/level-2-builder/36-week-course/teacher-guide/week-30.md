@@ -37,6 +37,8 @@ Observable evidence: a saved PNG with two labelled lines and a y-axis starting a
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
+
 Four ideas. The first two are arithmetic, the third is a habit, and the fourth is a trap.
 
 ### 1. Accuracy, and the number you must put next to it
@@ -1460,7 +1462,7 @@ for k in range(1, 26):
 
 best = max(scaled_scores)
 print("k values that reach the best scaled score", round(best, 4), ":",
-      [k for k, s in zip(ks, scaled_scores) if s == best])
+      [ks[i] for i in range(len(ks)) if scaled_scores[i] == best])
 print()
 
 fig, ax = plt.subplots(figsize=(8, 5))

@@ -37,6 +37,8 @@ Observable evidence: a workbook page with `X.shape` and `y.shape` written in ink
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
+
 **Read this section even if you skip everything else.** It is written for somebody who has never programmed and has never met machine learning. It takes about twenty minutes and it will make you genuinely able to answer "but why?" in class.
 
 ### 1. What this term is actually about, in one paragraph

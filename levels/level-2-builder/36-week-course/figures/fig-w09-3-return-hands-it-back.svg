@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Shouting it across the room, or handing over the plate</title>
+  <desc>Two panels. In the top panel a block prints 75 to the screen and hands its caller a dashed empty box marked nothing, noted as meaning 75 cannot be added, saved or reused. In the bottom panel a block hands 75 back along an arrow, and the caller stores it in a box labelled average, ticked as usable.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Shouting it across the room, or handing over the plate</text>
+  <rect x="40" y="76" width="720" height="138" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="60" y="102" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">a block that prints</text>
+  <rect x="60" y="118" width="168" height="74" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="144" y="155" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">the block</text>
+  <line x1="236" y1="130" x2="320" y2="116" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(320 116) rotate(-9.46)"/>
+  <rect x="326" y="96" width="150" height="44" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="401" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">75</text>
+  <text x="401" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">on the screen</text>
+  <line x1="236" y1="178" x2="320" y2="178" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(320 178) rotate(0.0)"/>
+  <rect x="326" y="156" width="150" height="44" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="401" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle" dominant-baseline="central">nothing</text>
+  <text x="500" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">the caller's box stays empty, so 75</text>
+  <text x="500" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">cannot be added, saved or reused</text>
+  <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+    <line x1="481.4" y1="171.4" x2="494.6" y2="184.6"/>
+    <line x1="494.6" y1="171.4" x2="481.4" y2="184.6"/>
+  </g>
+  <rect x="40" y="230" width="720" height="138" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="60" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">a block that returns</text>
+  <rect x="60" y="272" width="168" height="74" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="144" y="309" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">the block</text>
+  <line x1="236" y1="309" x2="320" y2="309" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(320 309) rotate(0.0)"/>
+  <rect x="326" y="286" width="150" height="46" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="401" y="309" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">75</text>
+  <text x="401" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">handed back</text>
+  <line x1="482" y1="309" x2="552" y2="309" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(552 309) rotate(0.0)"/>
+  <rect x="558" y="286" width="172" height="46" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="644" y="309" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">average</text>
+  <text x="630" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">now it is in a box with a name on it</text>
+  <polyline points="507.6,289.4 513.9,296.4 525.8,279.6" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

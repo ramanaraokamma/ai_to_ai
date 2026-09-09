@@ -1,7 +1,8 @@
 # 🖥️ AI Academy — the website
 
-A local, self-contained website for the Level 1 Explorer 36-week course, with **two passcodes**:
-one for the student, one for the teacher. Without a passcode you see the home page and nothing else.
+A local, self-contained website for the AI Academy 36-week courses — **Level 1 Explorer and Level 2
+Builder** — with **two passcodes**: one for the student, one for the teacher. Without a passcode you
+see the level picker and nothing else.
 
 ```
 site-app/
@@ -22,9 +23,25 @@ site-app/
 
 | | Passcode | Opens |
 |---|---|---|
-| 🎒 **Student** | `student1234` | 36 chapters · 36 workbooks · projects · glossary · reference modules · figure gallery |
+| 🎒 **Student** | `student1234` | per level: 36 chapters · 36 workbooks · projects · glossary · reference modules · figure gallery |
 | 🧑‍🏫 **Teacher** | `teacher1234` | everything above **plus** 36 lesson scripts · orientation · 4 term tests · marking guide · exit exam · style guide |
-| 🔓 **No passcode** | — | the home page only |
+| 🔓 **No passcode** | — | the root level picker only |
+
+One passcode pair covers **both levels** — unlock once, browse either year.
+
+### Routes
+
+```
+/                     level picker (public)
+/l1/index.html        Level 1 Explorer — year plan, passcode gate
+/l2/index.html        Level 2 Builder  — year plan, passcode gate
+/l2/chapter/week-07.html   /l2/workbook/week-07.html   /l2/lesson/week-07.html
+/l2/tests/term-2.html      /l2/projects/ideas.html     /l2/gallery.html
+```
+
+A level chip in the header switches years from any page. Add a level by appending to
+`ALL_LEVELS` in `build.py`; a level whose `36-week-course/` folder doesn't exist yet is skipped
+automatically and listed as "not built yet" on the root page.
 
 The server binds to `127.0.0.1` only — **nothing is published**, nothing leaves your machine, and no
 internet is needed after the build.
@@ -38,11 +55,11 @@ internet is needed after the build.
 
 ## What "locked" means here
 
-**Only `index.html` is readable without a passcode.** Every other page — 133 of them plus the
-gallery — ships as a ~19 KB shell containing navigation and a passcode form, with an **empty content
-element**. The words live in a separate encrypted file.
+**Only the root `index.html` is readable without a passcode.** Every other page — 266 of them plus
+two galleries and two level homes — ships as a ~20 KB shell containing navigation and a passcode
+form, with an **empty content element**. The words live in a separate encrypted file.
 
-On the home page:
+On each level's home page:
 
 - The year plan, week titles, big ideas and type badges **are** public. That's the syllabus; it's
   also in the printed plan. Nothing worth hiding.
@@ -64,8 +81,8 @@ Real encryption, not a hidden `<div>`.
 ```
         passcode                    key                    what it opens
    ────────────────────      ─────────────────    ──────────────────────────────
-   "student1234"  ──PBKDF2──►  K_student  ────────►  89 student-tier pages
-   "teacher1234"  ──PBKDF2──►  K_teacher  ────────►  44 teacher-tier pages
+   "student1234"  ──PBKDF2──►  K_student  ────────►  178 student-tier pages (both levels)
+   "teacher1234"  ──PBKDF2──►  K_teacher  ────────►   88 teacher-tier pages (both levels)
                                    │
                                    └── decrypts ──►  wrapped K_student
                                                      (one unlock opens both tiers)
@@ -85,15 +102,16 @@ Real encryption, not a hidden `<div>`.
 
 | Test | Result |
 |---|---|
-| `student1234` on a chapter | opens, 40,866 bytes ✅ |
-| `student1234` on a lesson script | blocked, `InvalidTag` ✅ |
-| `student1234` on a term test | blocked, `InvalidTag` ✅ |
-| `teacher1234` on lesson script / term test | opens, 84,708 / 51,775 bytes ✅ |
+| `student1234` on an L1 or L2 chapter | opens ✅ |
+| `student1234` on an L1 or L2 lesson script | blocked, `InvalidTag` ✅ |
+| `student1234` on an L2 term test | blocked, `InvalidTag` ✅ |
+| `teacher1234` on lesson scripts and term tests, both levels | opens ✅ |
 | `teacher1234` → unwrapped student key | matches the derived student key bit-for-bit ✅ |
 | `student1234` → unwrap the wrapper | blocked, `InvalidTag` ✅ |
 | wrong passcode on anything | blocked, `InvalidTag` ✅ |
-| 24 distinctive sentences from both tiers, searched across all 273 generated text files | **0 found in plaintext** ✅ |
+| 11 distinctive sentences from both tiers of both levels, searched across all 543 generated text files | **0 found in plaintext** ✅ |
 | Un-authenticated fetch of any content page | content element is empty (`0` bytes of body) ✅ |
+| All 17 routes over HTTP | 200 ✅ |
 
 AES-GCM *authenticates*, so a wrong key fails loudly rather than returning garbage that looks like
 text.
@@ -119,7 +137,7 @@ passcode requires a rebuild.
 |---|---|
 | ✅ Stops a student reading lesson scripts or answer keys | The bytes are unreadable without the teacher passcode |
 | ✅ Stops "view source" | There is no plaintext in the source to view |
-| ✅ Stops a passer-by reading anything | Only the home page renders without a passcode |
+| ✅ Stops a passer-by reading anything | Only the root level picker renders without a passcode |
 | ✅ Survives copying the `dist/` folder | The encryption travels with the files |
 | ⚠️ `student1234` / `teacher1234` are weak | A dictionary word plus four digits. Fine for a kitchen table, not for the internet |
 | ⚠️ Does not stop someone reading the markdown | The source `.md` files are unencrypted on your disk. The gate protects the *website*, not the repo |
@@ -131,14 +149,20 @@ and tests are gated.
 
 ## What gets built
 
+| | Level 1 | Level 2 | Total |
+|---|--:|--:|--:|
+| Weeks | 36 | 36 | 72 |
+| Pages | 133 | 133 | 266 |
+| SVG figures | 450 | 358 | 808 |
+
 | | |
 |---|---|
-| Public pages | 1 (`index.html`) |
-| Student-tier encrypted pages | 89 + gallery |
-| Teacher-tier encrypted pages | 44 |
-| SVG figures | 450 |
-| Total files / size | ~636 / ~16 MB |
-| Broken internal references | **0** (2,487 checked) |
+| Public pages | 1 (the root level picker) |
+| Student-tier encrypted pages | 178 + 2 galleries |
+| Teacher-tier encrypted pages | 88 |
+| Total files / size | 1,353 / ~41 MB |
+| Broken internal references | **0** (7,352 checked, including inside decrypted bodies) |
+| Build time | ~3 s |
 
 **Features:** sidebar tree grouped by term that reacts to role and mode · `/` focuses search · live
 nav filter · per-page table of contents with scroll-spy · prev/next pager that follows the current

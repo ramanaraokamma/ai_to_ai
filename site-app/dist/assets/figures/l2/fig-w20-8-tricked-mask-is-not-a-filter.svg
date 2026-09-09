@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A mask is not a shorter list. It is the same shape.</title>
+  <desc>Two panels over Chen's five scores. The left one, outlined red with a cross, shows only three surviving values and notes that you can no longer count passes per test because the tests went with the shape. The right one, outlined green with a tick, shows five cells holding T, F, F, T and T, the same shape as the row, and notes that you can add it up to three passes and only then select.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A mask is not a shorter list. It is the same shape.</text>
+  <path d="M24 82 A12 12 0 0 1 36 70 H376 A12 12 0 0 1 388 82 V104 H24 Z" fill="#F6AEA6"/>
+  <line x1="24" y1="104" x2="388" y2="104" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="206.0" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">“the mask IS the good scores”</text>
+  <rect x="24" y="70" width="364" height="274" rx="12" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="206" y="124" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">Chen: 55  48  40  70  61</text>
+  <rect x="122" y="146" width="48" height="40" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="146" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">55</text>
+  <rect x="178" y="146" width="48" height="40" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="202" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">70</text>
+  <rect x="234" y="146" width="48" height="40" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="258" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">61</text>
+  <text x="206" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D" text-anchor="middle">3 things. The grid is gone.</text>
+  <circle cx="206" cy="240" r="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="197.6" y1="231.6" x2="214.4" y2="248.4"/><line x1="214.4" y1="231.6" x2="197.6" y2="248.4"/></g>
+  <text x="206" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Now count Chen's passes per test.</text>
+  <text x="206" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">You cannot. The tests went with it.</text>
+  <text x="206" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">This is the SELECTION, not the mask.</text>
+  <path d="M412 82 A12 12 0 0 1 424 70 H764 A12 12 0 0 1 776 82 V104 H412 Z" fill="#E2F7ED"/>
+  <line x1="412" y1="104" x2="776" y2="104" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="594.0" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">“the mask is one yes/no per cell”</text>
+  <rect x="412" y="70" width="364" height="274" rx="12" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="594" y="124" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">Chen: 55  48  40  70  61</text>
+  <rect x="452" y="146" width="50" height="40" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="477" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">T</text>
+  <rect x="510" y="146" width="50" height="40" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="535" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">F</text>
+  <rect x="568" y="146" width="50" height="40" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="593" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">F</text>
+  <rect x="626" y="146" width="50" height="40" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="651" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">T</text>
+  <rect x="684" y="146" width="50" height="40" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="709" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">T</text>
+  <text x="594" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B" text-anchor="middle">5 things. Same shape as the row.</text>
+  <circle cx="594" cy="240" r="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="585.6,241.2 591.6,248.4 602.4,231.6" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="594" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Now you can add it up: 3 passes.</text>
+  <text x="594" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">And THEN select, if you want to.</text>
+  <text x="594" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle">Selecting is the second step, and it loses the shape.</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Five cells in means five answers. Anything shorter has already thrown the rows and columns away.</text>
+</svg>

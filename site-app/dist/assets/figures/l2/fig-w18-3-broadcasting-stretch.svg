@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Broadcasting stretched it, and nothing complained</title>
+  <desc>A row of three cells and a column of three cells are added together. Faint dashed copies show the row being repeated downwards three times and the column being repeated sideways three times, and the answer is a three by three block of nine numbers. The three numbers that were actually wanted sit on the diagonal and are ringed. A note reads three plus three should give three, not nine, and a cross marks the result.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Broadcasting stretched it, and nothing complained</text>
+  <text x="122" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">scores, shape (3,)</text>
+  <rect x="44" y="106" width="52" height="42" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="70" y="127" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">48</text>
+  <rect x="96" y="106" width="52" height="42" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="122" y="127" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">12</text>
+  <rect x="148" y="106" width="52" height="42" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="174" y="127" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">77</text>
+  <rect x="44" y="106" width="156" height="42" fill="none" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="122" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">+</text>
+  <text x="122" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">bonus, shape (3, 1)</text>
+  <rect x="96" y="218" width="52" height="42" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="122" y="239" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="96" y="260" width="52" height="42" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="122" y="281" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <rect x="96" y="302" width="52" height="42" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="122" y="323" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <rect x="96" y="218" width="52" height="126" fill="none" stroke="#C42B8C" stroke-width="3"/>
+  <line x1="256" y1="226" x2="316" y2="226" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(316 226) rotate(0.0)"/>
+  <text x="286" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">numpy</text>
+  <text x="286" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">stretches</text>
+  <rect x="344" y="132" width="68" height="52" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="378" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">49</text>
+  <rect x="412" y="132" width="68" height="52" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="446" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">13</text>
+  <rect x="480" y="132" width="68" height="52" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="514" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">78</text>
+  <rect x="344" y="184" width="68" height="52" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="378" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">50</text>
+  <rect x="412" y="184" width="68" height="52" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="446" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">14</text>
+  <rect x="480" y="184" width="68" height="52" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="514" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">79</text>
+  <rect x="344" y="236" width="68" height="52" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="378" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">51</text>
+  <rect x="412" y="236" width="68" height="52" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="446" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">15</text>
+  <rect x="480" y="236" width="68" height="52" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="514" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">80</text>
+  <rect x="344" y="132" width="68" height="52" fill="none" stroke="#1B7A4B" stroke-width="3"/>
+  <rect x="412" y="184" width="68" height="52" fill="none" stroke="#1B7A4B" stroke-width="3"/>
+  <rect x="480" y="236" width="68" height="52" fill="none" stroke="#1B7A4B" stroke-width="3"/>
+  <rect x="344" y="132" width="204" height="156" fill="none" stroke="#CC2B1D" stroke-width="3"/>
+  <text x="446" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">answer, shape (3, 3)</text>
+  <text x="446" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">nine numbers came out</text>
+  <text x="446" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle">green outlines: the three we wanted</text>
+  <g transform="translate(566,106) scale(0.34)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+      <line x1="38" y1="38" x2="62" y2="62"/>
+      <line x1="62" y1="38" x2="38" y2="62"/>
+    </g>
+  </g>
+  <rect x="608" y="148" width="120" height="92" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="668" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">3 numbers</text>
+  <text x="668" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">+ 3 numbers</text>
+  <text x="668" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">should give 3,</text>
+  <text x="668" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">not 9.</text>
+  <text x="400" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The extra brackets made a column, not a row, and broadcasting was happy to stretch both.</text>
+  <text x="400" y="382" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Nothing crashed. Print the answer's shape - that is the only thing that catches this.</text>
+</svg>

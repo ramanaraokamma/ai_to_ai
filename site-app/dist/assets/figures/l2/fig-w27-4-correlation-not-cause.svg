@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>One correlation, four possible worlds</title>
+  <desc>A blue box printing r equals 0.93 for study hours against marks points to four cards. In the first, hours causes marks. In the second, marks causes hours. In the third an amber node, a quiet room, causes both. In the fourth the link is dashed and marked with a question mark: pure luck.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">One correlation, four possible worlds</text>
+  <rect x="24" y="140" width="210" height="120" rx="12" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="129" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">study hours vs marks</text>
+  <text x="129" y="206" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">r = 0.93</text>
+  <text x="129" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">a very strong link</text>
+  <line x1="240" y1="200" x2="274" y2="200" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(274 200) rotate(0.0)"/>
+  <rect x="282" y="84" width="494" height="58" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="310" cy="113" r="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="310" y="113" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">H</text>
+  <circle cx="376" cy="113" r="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="376" y="113" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">M</text>
+  <line x1="324" y1="113" x2="362" y2="113" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(362 113) rotate(0.0)"/>
+  <text x="410" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">hours causes marks</text>
+  <text x="410" y="129" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Studying really does raise marks.</text>
+  <rect x="282" y="150" width="494" height="58" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="310" cy="179" r="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="310" y="179" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">H</text>
+  <circle cx="376" cy="179" r="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="376" y="179" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">M</text>
+  <line x1="362" y1="179" x2="324" y2="179" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(324 179) rotate(180.0)"/>
+  <text x="410" y="174" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">marks causes hours</text>
+  <text x="410" y="195" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Good marks make studying feel great.</text>
+  <rect x="282" y="216" width="494" height="58" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="343" cy="231" r="12" fill="#E8C671" stroke="#845F00" stroke-width="2"/>
+  <text x="343" y="231" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Q</text>
+  <circle cx="310" cy="260" r="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="310" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">H</text>
+  <circle cx="376" cy="260" r="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="376" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">M</text>
+  <line x1="336" y1="241" x2="318" y2="252" stroke="#845F00" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#845F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(318 252) rotate(148.6)"/>
+  <line x1="350" y1="241" x2="368" y2="252" stroke="#845F00" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#845F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(368 252) rotate(31.4)"/>
+  <text x="410" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">something causes both</text>
+  <text x="410" y="261" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">A quiet room with a desk does both.</text>
+  <rect x="282" y="282" width="494" height="58" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="310" cy="311" r="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="310" y="311" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">H</text>
+  <circle cx="376" cy="311" r="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="376" y="311" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">M</text>
+  <line x1="324" y1="311" x2="362" y2="311" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <text x="343" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">?</text>
+  <text x="410" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">pure luck</text>
+  <text x="410" y="327" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Line up enough columns and some pair fits.</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The scatter plot cannot tell you which world you are in.</text>
+</svg>

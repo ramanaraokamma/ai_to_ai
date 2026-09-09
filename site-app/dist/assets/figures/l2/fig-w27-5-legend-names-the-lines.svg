@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Two lines need a legend. Always.</title>
+  <desc>Two identical two-line charts. The red-outlined left one has no legend and carries a red note asking which line is which. The green-outlined right one has a legend box naming the round-marker line Homework and the square-marker line Screen time.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Two lines need a legend. Always.</text>
+  <rect x="24" y="70" width="362" height="250" rx="12" fill="None" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="62" y="284" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0</text>
+  <line x1="70" y1="190" x2="360" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="62" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">100</text>
+  <line x1="70" y1="100" x2="360" y2="100" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="62" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">200</text>
+  <polyline points="90,239.5 118,226.0 146,253.0 174,212.5 202,262.0 230,280.0 258,199.0 286,230.5 314,221.5 342,244.0" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="90,226.0 118,239.5 146,199.0 174,253.0 202,172.0 230,118.0 258,212.5 286,235.0 314,244.0 342,203.5" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="90" cy="239.5" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="118" cy="226.0" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="146" cy="253.0" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="174" cy="212.5" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="202" cy="262.0" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="230" cy="280.0" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="258" cy="199.0" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="286" cy="230.5" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="314" cy="221.5" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="342" cy="244.0" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <rect x="85.5" y="221.5" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="113.5" y="235.0" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="141.5" y="194.5" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="169.5" y="248.5" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="197.5" y="167.5" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="225.5" y="113.5" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="253.5" y="208.0" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="281.5" y="230.5" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="309.5" y="239.5" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="337.5" y="199.0" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="70" y1="100" x2="70" y2="280" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="70" y1="280" x2="360" y2="280" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="214" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Day of the fortnight</text>
+  <rect x="414" y="70" width="362" height="250" rx="12" fill="None" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="452" y="284" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0</text>
+  <line x1="460" y1="190" x2="750" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="452" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">100</text>
+  <line x1="460" y1="100" x2="750" y2="100" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="452" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">200</text>
+  <polyline points="480,239.5 508,226.0 536,253.0 564,212.5 592,262.0 620,280.0 648,199.0 676,230.5 704,221.5 732,244.0" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="480,226.0 508,239.5 536,199.0 564,253.0 592,172.0 620,118.0 648,212.5 676,235.0 704,244.0 732,203.5" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="480" cy="239.5" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="508" cy="226.0" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="536" cy="253.0" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="564" cy="212.5" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="592" cy="262.0" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="620" cy="280.0" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="648" cy="199.0" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="676" cy="230.5" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="704" cy="221.5" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="732" cy="244.0" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <rect x="475.5" y="221.5" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="503.5" y="235.0" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="531.5" y="194.5" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="559.5" y="248.5" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="587.5" y="167.5" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="615.5" y="113.5" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="643.5" y="208.0" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="671.5" y="230.5" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="699.5" y="239.5" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="727.5" y="199.0" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="460" y1="100" x2="460" y2="280" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="460" y1="280" x2="750" y2="280" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="604" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Day of the fortnight</text>
+  <rect x="86" y="104" width="160" height="46" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="166" y="131" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">which one is which?</text>
+  <rect x="470" y="104" width="136" height="52" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="480" y1="120" x2="502" y2="120" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="491" cy="120" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="510" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">Homework</text>
+  <line x1="480" y1="142" x2="502" y2="142" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round"/>
+  <rect x="486.5" y="137.5" width="9" height="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="510" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">Screen time</text>
+  <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="39" y1="337" x2="53" y2="351"/><line x1="53" y1="337" x2="39" y2="351"/></g>
+  <text x="66" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">You have to guess, so you stop reading.</text>
+  <polyline points="431.0,345.0 437.0,351.0 449.0,337.0" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="458" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">One call, and the chart explains itself.</text>
+  <text x="400" y="378" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Round markers as well as colour, so it survives a photocopier.</text>
+</svg>

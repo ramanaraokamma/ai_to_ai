@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Retire each loop: write the one line beside it</title>
+  <desc>A three column worksheet headed the loop did this, the one line, and identical question mark. Six rows name a job a loop used to do: double every score, add five to every score, runs plus balls pair by pair, the numbers nought to nine, a blank three by four grid, and keep only the scores above fifty. The second and third columns are empty dashed boxes waiting to be filled in.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Retire each loop: write the one line beside it</text>
+  <rect x="48" y="78" width="300" height="30" rx="8" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="198" y="93" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">the loop did this</text>
+  <rect x="360" y="78" width="260" height="30" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="490" y="93" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">the one line</text>
+  <rect x="632" y="78" width="120" height="30" rx="8" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="692" y="93" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">identical?</text>
+  <rect x="48" y="116" width="300" height="32" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="60" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">double every score</text>
+  <rect x="360" y="116" width="260" height="32" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <rect x="632" y="116" width="120" height="32" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <rect x="48" y="156" width="300" height="32" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="60" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">add 5 to every score</text>
+  <rect x="360" y="156" width="260" height="32" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <rect x="632" y="156" width="120" height="32" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <rect x="48" y="196" width="300" height="32" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="60" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">runs + balls, pair by pair</text>
+  <rect x="360" y="196" width="260" height="32" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <rect x="632" y="196" width="120" height="32" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <rect x="48" y="236" width="300" height="32" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="60" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">the numbers 0 to 9</text>
+  <rect x="360" y="236" width="260" height="32" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <rect x="632" y="236" width="120" height="32" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <rect x="48" y="276" width="300" height="32" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="60" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">a blank 3 by 4 grid</text>
+  <rect x="360" y="276" width="260" height="32" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <rect x="632" y="276" width="120" height="32" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <rect x="48" y="316" width="300" height="32" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="60" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">keep only the scores above 50</text>
+  <rect x="360" y="316" width="260" height="32" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <rect x="632" y="316" width="120" height="32" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">One of these six does not retire this week. Write why in its box instead of a one-liner.</text>
+</svg>

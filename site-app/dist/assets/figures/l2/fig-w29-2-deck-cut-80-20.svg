@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>One cut of the deck, then never mix them</title>
+  <desc>A deck of 150 flower rows is cut once by a dashed line into a blue train pile of 120 rows, which the model studies, and a pink test pile of 30 rows, sealed until the very end. A note says 120 plus 30 equals 150, so nothing is thrown away and nothing is in both piles, and that the only score worth quoting comes from the pink pile.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">One cut of the deck, then never mix them</text>
+  <rect x="70" y="84" width="120" height="232" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="70" y1="99.5" x2="190" y2="99.5" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="70" y1="115.0" x2="190" y2="115.0" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="70" y1="130.5" x2="190" y2="130.5" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="70" y1="146.0" x2="190" y2="146.0" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="70" y1="161.5" x2="190" y2="161.5" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="70" y1="177.0" x2="190" y2="177.0" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="70" y1="192.5" x2="190" y2="192.5" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="70" y1="208.0" x2="190" y2="208.0" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="70" y1="223.5" x2="190" y2="223.5" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="70" y1="239.0" x2="190" y2="239.0" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="70" y1="254.5" x2="190" y2="254.5" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="70" y1="270.0" x2="190" y2="270.0" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="70" y1="285.5" x2="190" y2="285.5" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="70" y1="301.0" x2="190" y2="301.0" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <text x="130.0" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">150</text>
+  <text x="130.0" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">flowers</text>
+  <text x="130.0" y="70" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">the whole table</text>
+  <line x1="56" y1="270" x2="204" y2="270" stroke="#C42B8C" stroke-width="2" stroke-linecap="butt" stroke-dasharray="6 4"/>
+  <text x="130.0" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">cut here, 80 / 20</text>
+  <line x1="210" y1="168" x2="320" y2="146" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(320 146) rotate(-11.3)"/>
+  <line x1="210" y1="284" x2="320" y2="298" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(320 298) rotate(7.3)"/>
+  <rect x="326" y="96" width="224" height="96" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="438" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">train</text>
+  <text x="438" y="150" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">120 rows</text>
+  <text x="438" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the model studies these</text>
+  <rect x="326" y="226" width="224" height="96" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="438" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">test</text>
+  <text x="438" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">30 rows</text>
+  <text x="438" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">sealed until the very end</text>
+  <line x1="326" y1="274" x2="550" y2="274" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="5 4"/>
+  <text x="660" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">120 + 30 = 150</text>
+  <rect x="576" y="118" width="168" height="88" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="660" y="142" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Nothing is thrown</text>
+  <text x="660" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">away and nothing is</text>
+  <text x="660" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">in both piles.</text>
+  <rect x="576" y="226" width="168" height="96" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="660" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">The only score</text>
+  <text x="660" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">worth quoting comes</text>
+  <text x="660" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">from the pink pile.</text>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">The pink pile is 30 rows, so one flower is worth 3.3 percentage points.</text>
+
+</svg>

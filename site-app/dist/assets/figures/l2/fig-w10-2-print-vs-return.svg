@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Printing shouts it. Returning hands it over.</title>
+  <desc>Two mirrored panels. The left panel is marked wrong: a function sends 5 to the screen and the caller is handed None. The right panel is marked correct: the same function hands 5 back, the caller keeps it in a box named total, and 5 times 2 gives 10.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Printing shouts it. Returning hands it over.</text>
+  <line x1="400" y1="74" x2="400" y2="330" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <rect x="30" y="74" width="356" height="248" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="414" y="74" width="356" height="248" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(42,84) scale(0.4)"><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g></g>
+  <g transform="translate(426,84) scale(0.4)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="88" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">print inside the function</text>
+  <text x="472" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">return inside it</text>
+  <rect x="56" y="140" width="128" height="74" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="120" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">add_scores</text>
+  <text x="120" y="194" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">print(a + b)</text>
+  <line x1="190" y1="164" x2="244" y2="164" stroke="#55636F" stroke-width="2.5" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#55636F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(244 164) rotate(0)"/>
+  <rect x="250" y="138" width="120" height="54" rx="8" fill="#F5F8FA" stroke="#55636F" stroke-width="2" stroke-linejoin="round"/>
+  <text x="310" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">screen</text>
+  <text x="310" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">5</text>
+  <text x="310" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the 5 is on the glass</text>
+  <text x="310" y="230" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">and it is gone</text>
+  <line x1="120" y1="220" x2="120" y2="250" stroke="#55636F" stroke-width="2.5" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#55636F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(120 250) rotate(90)"/>
+  <rect x="74" y="254" width="92" height="44" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="120" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">None</text>
+  <text x="208" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the caller is handed None</text>
+  <rect x="440" y="140" width="128" height="74" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="504" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">add_scores</text>
+  <text x="504" y="194" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">return a + b</text>
+  <line x1="574" y1="164" x2="628" y2="164" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(628 164) rotate(0)"/>
+  <rect x="634" y="138" width="120" height="54" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="694" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">total</text>
+  <text x="694" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">5</text>
+  <text x="694" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the 5 is in your hand</text>
+  <text x="694" y="230" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">so you can use it</text>
+  <line x1="694" y1="220" x2="694" y2="250" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(694 250) rotate(90)"/>
+  <rect x="644" y="254" width="100" height="44" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="694" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">5 * 2 = 10</text>
+  <text x="592" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the caller is handed 5</text>
+  <text x="400" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">You can always print a returned value. You can never get a printed value back.</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">So: return inside every function, and print once, at the very edge.</text>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Four gates a question has to pass</title>
+  <desc>A question card travels left to right through four gates labelled care, one hundred rows, one target column and honest features. Each gate carries the test it applies. A question that fails any gate is turned back before any data is collected.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Four gates a question has to pass</text>
+  <rect x="20" y="150" width="92" height="92" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="66" y="182" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">my</text>
+  <text x="66" y="200" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">question</text>
+  <text x="66" y="220" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">?</text>
+  <line x1="128" y1="196" x2="150" y2="196" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(150 196) rotate(0.0)"/>
+  <rect x="158" y="96" width="126" height="200" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="166" y="106" width="110" height="34" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="221" y="123" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">care</text>
+  <text x="221" y="172" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Will I still want</text>
+  <text x="221" y="190" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the answer in 4 weeks?</text>
+  <g transform="translate(205,220) scale(0.4706)">
+    <circle cx="34" cy="34" r="31" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="6"/>
+    <polyline points="18,36 30,49 52,20" fill="none" stroke="#1B7A4B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="221" y="276" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">gate 1</text>
+  <line x1="284" y1="196" x2="306" y2="196" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(306 196) rotate(0.0)"/>
+  <rect x="314" y="96" width="126" height="200" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="322" y="106" width="110" height="34" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="377" y="123" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">100 rows</text>
+  <text x="377" y="172" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Can I get 100+ rows</text>
+  <text x="377" y="190" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">in about two hours?</text>
+  <g transform="translate(361,220) scale(0.4706)">
+    <circle cx="34" cy="34" r="31" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="6"/>
+    <polyline points="18,36 30,49 52,20" fill="none" stroke="#1B7A4B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="377" y="276" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">gate 2</text>
+  <line x1="440" y1="196" x2="462" y2="196" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(462 196) rotate(0.0)"/>
+  <rect x="470" y="96" width="126" height="200" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="478" y="106" width="110" height="34" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="533" y="123" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">one target</text>
+  <text x="533" y="172" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Is there exactly ONE</text>
+  <text x="533" y="190" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">column to predict?</text>
+  <g transform="translate(517,220) scale(0.4706)">
+    <circle cx="34" cy="34" r="31" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="6"/>
+    <polyline points="18,36 30,49 52,20" fill="none" stroke="#1B7A4B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="533" y="276" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">gate 3</text>
+  <line x1="596" y1="196" x2="618" y2="196" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(618 196) rotate(0.0)"/>
+  <rect x="626" y="96" width="126" height="200" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="634" y="106" width="110" height="34" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="689" y="123" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">honest</text>
+  <text x="689" y="172" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Do I know every other</text>
+  <text x="689" y="190" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">column BEFORE it?</text>
+  <g transform="translate(673,220) scale(0.4706)">
+    <circle cx="34" cy="34" r="31" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="6"/>
+    <polyline points="18,36 30,49 52,20" fill="none" stroke="#1B7A4B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="689" y="276" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">gate 4</text>
+  <line x1="752" y1="196" x2="774" y2="196" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(774 196) rotate(0.0)"/>
+  <text x="400" y="340" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Fail any one gate and the question goes back — before you collect a single row.</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Gate 4 is the one that sinks projects. It is leakage, from Week 29.</text>
+</svg>

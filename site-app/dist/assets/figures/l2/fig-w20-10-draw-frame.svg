@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Draw It frame for Week 20</title>
+  <desc>An empty framed drawing area headed draw your own grid with the mask drawn on top of it. Inside, a large dashed box waits for a grid and its shading, a dashed margin column on the right labelled marks per row, a dashed margin row underneath labelled marks per column, and a dashed corner box asking whether both agree. A note beside them asks for the shading rule, one cell exactly on the boundary, and how many cells got a decision. Three write-in boxes underneath ask for the rule, how many cells were shaded, and what would break it.</desc>
+  <rect x="24" y="24" width="752" height="290" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="24" y="24" width="752" height="44" rx="12" fill="#F5F8FA"/>
+  <line x1="24" y1="68" x2="776" y2="68" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <text x="400" y="53" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">DRAW: your own grid, with the mask drawn ON TOP of it</text>
+  <text x="400" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">shade the cells that pass — do not rub out the ones that fail, because the mask is the same shape as the data</text>
+  <rect x="110" y="108" width="320" height="140" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <text x="270" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle" dominant-baseline="central">your grid + your shading</text>
+  <rect x="440" y="108" width="88" height="140" rx="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <text x="484" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle" dominant-baseline="central">marks</text>
+  <text x="484" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle" dominant-baseline="central">per row</text>
+  <rect x="110" y="256" width="320" height="30" rx="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <text x="270" y="271" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle" dominant-baseline="central">marks per column</text>
+  <rect x="440" y="256" width="88" height="30" rx="10" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <text x="484" y="271" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle" dominant-baseline="central">both agree?</text>
+  <text x="552" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">write beside the picture:</text>
+  <text x="552" y="150" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">• the rule you shaded with</text>
+  <text x="552" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">• one cell that is exactly on</text>
+  <text x="552" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">   the boundary, and why</text>
+  <text x="552" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">• how many cells got a decision</text>
+  <text x="552" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C">and ring the smallest number:</text>
+  <text x="552" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C">that is the one that becomes 0.00</text>
+  <text x="60" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">my rule (e.g. &gt; 50)</text>
+  <rect x="60" y="338" width="200" height="36" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="300" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">how many shaded?</text>
+  <rect x="300" y="338" width="200" height="36" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="540" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">what would break it</text>
+  <rect x="540" y="338" width="200" height="36" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+</svg>

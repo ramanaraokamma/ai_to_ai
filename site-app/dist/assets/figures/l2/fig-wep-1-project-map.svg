@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>11 hours of project. The model was 40 minutes of it.</title>
+  <desc>Seven numbered stages left to right with the hours each took: question 1 hour, collect 3 hours, clean 2 hours, look 1.5 hours, model 40 minutes, test it 1.5 hours, write up 1.5 hours. A bracket under the model stage is labelled the bit everybody thinks is the project. Brackets either side cover 10 hours 20 minutes of everything else.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">11 hours of project. The model was 40 minutes of it.</text>
+  <rect x="32" y="88" width="100" height="148" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="82.0" cy="112" r="15" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <text x="82.0" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="82.0" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" font-weight="600">QUESTION</text>
+  <text x="82.0" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1 h</text>
+  <text x="82.0" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">write it down,</text>
+  <text x="82.0" y="211" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">signed and dated</text>
+  <line x1="133" y1="162" x2="137" y2="162" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(137 162) rotate(0.00)"/>
+  <rect x="138" y="88" width="100" height="148" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="188.0" cy="112" r="15" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="188.0" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="188.0" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" font-weight="600">COLLECT</text>
+  <text x="188.0" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">3 h</text>
+  <text x="188.0" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">102 rows, typed</text>
+  <text x="188.0" y="211" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">by hand</text>
+  <line x1="239" y1="162" x2="243" y2="162" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(243 162) rotate(0.00)"/>
+  <rect x="244" y="88" width="100" height="148" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="294.0" cy="112" r="15" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="294.0" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="294.0" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" font-weight="600">CLEAN</text>
+  <text x="294.0" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">2 h</text>
+  <text x="294.0" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4 messes,</text>
+  <text x="294.0" y="211" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4 logged reasons</text>
+  <line x1="345" y1="162" x2="349" y2="162" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(349 162) rotate(0.00)"/>
+  <rect x="350" y="88" width="100" height="148" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="400.0" cy="112" r="15" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="400.0" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="400.0" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" font-weight="600">LOOK</text>
+  <text x="400.0" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1.5 h</text>
+  <text x="400.0" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">describe(),</text>
+  <text x="400.0" y="211" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one scatter</text>
+  <line x1="451" y1="162" x2="455" y2="162" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(455 162) rotate(0.00)"/>
+  <rect x="456" y="88" width="100" height="148" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="506.0" cy="112" r="15" fill="#FFFFFF" stroke="#6D28D9" stroke-width="3"/>
+  <text x="506.0" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+  <text x="506.0" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" font-weight="600">MODEL</text>
+  <text x="506.0" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">40 min</text>
+  <text x="506.0" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">three models,</text>
+  <text x="506.0" y="211" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one split</text>
+  <line x1="557" y1="162" x2="561" y2="162" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(561 162) rotate(0.00)"/>
+  <rect x="562" y="88" width="100" height="148" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="612.0" cy="112" r="15" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <text x="612.0" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">6</text>
+  <text x="612.0" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" font-weight="600">TEST IT</text>
+  <text x="612.0" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1.5 h</text>
+  <text x="612.0" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">k sweep,</text>
+  <text x="612.0" y="211" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">seed lottery</text>
+  <line x1="663" y1="162" x2="667" y2="162" stroke="#14202B" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(667 162) rotate(0.00)"/>
+  <rect x="668" y="88" width="100" height="148" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="718.0" cy="112" r="15" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <text x="718.0" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">7</text>
+  <text x="718.0" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" font-weight="600">WRITE UP</text>
+  <text x="718.0" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1.5 h</text>
+  <text x="718.0" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">including what</text>
+  <text x="718.0" y="211" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">I got wrong</text>
+  <path d="M456 254 V264 H556 V254" fill="none" stroke="#6D28D9" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="506.0" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#6D28D9" text-anchor="middle">the bit everybody</text>
+  <text x="506.0" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#6D28D9" text-anchor="middle">thinks is the project</text>
+  <path d="M32 254 V270 H450 V254" fill="none" stroke="#845F00" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M562 254 V270 H768 V254" fill="none" stroke="#845F00" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="240" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">10 hours 20 minutes of this</text>
+  <text x="672" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">and this</text>
+  <text x="400" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Every hour Nila spent on stages 1, 2 and 3 made stage 5 shorter.</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Every hour she skipped there would have shown up in stage 7, where it hurts.</text>
+</svg>

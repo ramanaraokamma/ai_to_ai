@@ -38,6 +38,8 @@ Observable evidence: five captions that read as a paragraph; exactly one `train_
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
+
 There is no new Python this week. There are three ideas, and the third one is the one that matters.
 
 ### 1. Narrative order — five charts that argue
@@ -245,7 +247,7 @@ The opposite, and this is worth saying flatly: it is the section that earns the 
 - [ ] **Find a red pen.** Genuinely. The audit does not work in pencil.
 - [ ] **Run the four demo files yourself, in this order.** All four are in the Answer Key, complete. Make a folder, put `data/` and `figures/` inside it, and run:
 
-```text
+```bash
 python3 make_stand_in.py     ->  126 rows written to data/clean.csv
 python3 charts.py            ->  five PNGs in figures/, plus printed findings
 python3 models.py            ->  the results table

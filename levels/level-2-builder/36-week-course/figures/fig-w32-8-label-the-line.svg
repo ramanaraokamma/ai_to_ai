@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Label the line yourself</title>
+  <desc>An unlabelled scatter of six crosses climbing to the right with one straight line drawn through the middle of them. A small step triangle sits on the line, a short vertical bar joins the lowest cross up to the line, and the line crosses the vertical axis at a marked height. Five empty dashed slots on the right wait for the names of the height where the line meets the axis, the steepness of the line, the short vertical bar, the average of all six vertical bars, and the two units the steepness must be stated in.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Label the line yourself</text>
+  <text x="400" y="72" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Six classmates. Hours revised across, marks up. Five slots, five names.</text>
+  <line x1="90" y1="90" x2="90" y2="290" stroke="#14202B" stroke-width="2"/>
+  <line x1="90" y1="290" x2="410" y2="290" stroke="#14202B" stroke-width="2"/>
+  <path d="M105 234 L405 126" fill="none" stroke="#6D28D9" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="90" cy="240" r="6" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
+  <line x1="130" y1="225" x2="130" y2="250" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="230,189 280,189 280,171" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g stroke="#1F6FB2" stroke-width="3" stroke-linecap="round">
+    <line x1="124" y1="244" x2="136" y2="256"/><line x1="136" y1="244" x2="124" y2="256"/>
+    <line x1="174" y1="184" x2="186" y2="196"/><line x1="186" y1="184" x2="174" y2="196"/>
+    <line x1="224" y1="169" x2="236" y2="181"/><line x1="236" y1="169" x2="224" y2="181"/>
+    <line x1="274" y1="159" x2="286" y2="171"/><line x1="286" y1="159" x2="274" y2="171"/>
+    <line x1="324" y1="144" x2="336" y2="156"/><line x1="336" y1="144" x2="324" y2="156"/>
+    <line x1="374" y1="144" x2="386" y2="156"/><line x1="386" y1="144" x2="374" y2="156"/>
+  </g>
+  <text x="130" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1</text>
+  <text x="180" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2</text>
+  <text x="230" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">3</text>
+  <text x="280" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4</text>
+  <text x="330" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">5</text>
+  <text x="380" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">6</text>
+  <text x="84" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">40</text>
+  <text x="84" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">60</text>
+  <text x="84" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">80</text>
+  <text x="112" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#6D28D9" text-anchor="start" dominant-baseline="central">A</text>
+  <text x="256" y="203" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">B</text>
+  <text x="142" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="start" dominant-baseline="central">C</text>
+  <text x="250" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">A is a height. B is a step. C is a gap.</text>
+  <rect x="450" y="90" width="160" height="32" rx="8" fill="none" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="620" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start" dominant-baseline="central">A  the height at x = 0</text>
+  <rect x="450" y="134" width="160" height="32" rx="8" fill="none" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="620" y="150" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start" dominant-baseline="central">B  up per one across</text>
+  <rect x="450" y="178" width="160" height="32" rx="8" fill="none" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="620" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start" dominant-baseline="central">C  cross to line, one gap</text>
+  <rect x="450" y="222" width="160" height="32" rx="8" fill="none" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="620" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start" dominant-baseline="central">D  average of all six gaps</text>
+  <rect x="450" y="266" width="160" height="32" rx="8" fill="none" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="620" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start" dominant-baseline="central">E  B&#8217;s two units</text>
+  <text x="400" y="368" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Then count: how many crosses sit above the line, and how many below?</text>
+</svg>

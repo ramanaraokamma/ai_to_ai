@@ -37,6 +37,8 @@ Observable evidence: two files, `stats.py` and `main.py`; `python3 main.py` prin
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
+
 **You do not need to have programmed before to teach this.** Read this once — about 25 minutes, including running the code — then do the Prep Checklist. This is a lab week, so most of the class is building; your job is to be confident about four small ideas.
 
 ### 1. Where this week sits, and why it matters more than it looks
@@ -133,7 +135,7 @@ print(ordered[0])
 ```text
 None
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/w12/h1.py", line 4, in <module>
+  File "/Users/you/ai-academy/level2/week12_sort_trap.py", line 4, in <module>
     print(ordered[0])
 TypeError: 'NoneType' object is not subscriptable
 ```
@@ -193,7 +195,7 @@ The word `score` is a name you chose, exactly like a parameter name. `for s in s
 >
 > ```text
 > Traceback (most recent call last):
->   File "/private/tmp/ai-academy/level2/w12/h3.py", line 3, in <module>
+>   File "/Users/you/ai-academy/level2/week12_loop_trap.py", line 3, in <module>
 >     print(scores[score])
 > IndexError: list index out of range
 > ```
@@ -252,7 +254,7 @@ Teach `import stats` as the default and show `from stats import mean` once, beca
 
 ```text
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/lonely_main.py", line 3, in <module>
+  File "/Users/you/ai-academy/level2/lonely_main.py", line 3, in <module>
     import stats                           # my own file, sitting right next to this one
 ModuleNotFoundError: No module named 'stats'
 ```
@@ -290,7 +292,7 @@ print(statistics.median([1, 2, 3]))
 ```text
 2.0
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/shadow/uses_stats.py", line 3, in <module>
+  File "/Users/you/ai-academy/level2/uses_stats.py", line 4, in <module>
     print(statistics.median([1, 2, 3]))
 AttributeError: module 'statistics' has no attribute 'median'. Did you mean: 'mean'?
 ```
@@ -346,7 +348,7 @@ The algorithm, in four steps:
 - **`assert`.** A lovely way to write tests. New construct, and print-and-look does the job today.
 - **The step in a slice** (`scores[::2]`, `scores[::-1]`). Delightful and it is a third number in the brackets. If a student finds `[::-1]` and reverses a list, be pleased and move on.
 - **`.sort(key=...)` and `sorted(rows, key=...)`.** Week 15.
-- **`sum()`, `min()`, `max()` as built-ins.** This is the important one. **They exist, and they do in one word what the student is about to write in five lines.** Do not use them this week — Week 15 and Week 20 introduce them on purpose, *after* the student has built their own. If a student finds `sum(scores)`, the honest answer is: "Yes. That's real and it works, and the reason we're writing it out by hand is that in about eight weeks you'll meet a thing there is no built-in for — and you'll know what to do, because you built this one."
+- **`sum()`, `min()`, `max()` as built-ins.** This is the important one. **They exist, and they do in one word what the student is about to write in five lines.** Do not use them this week — Week 14 and Week 20 introduce them on purpose, *after* the student has built their own. If a student finds `sum(scores)`, the honest answer is: "Yes. That's real and it works, and the reason we're writing it out by hand is that in about six weeks you'll meet a thing there is no built-in for — and you'll know what to do, because you built this one."
 - **`b = a` putting a second label on the same list.** This *does* belong this week if there is time, because it is the same idea as `sorted()` versus `.sort()`. It is in the harder variation, not the main lesson.
 - **Docstrings and type hints.** Still no.
 
@@ -375,7 +377,6 @@ You should see the student's earlier files. **Both of this week's files go here.
 # Every function in here RETURNS a number. Not one of them prints.
 # This file is a TOOLBOX. Running it on its own does nothing, and that is correct.
 
-
 def mean(scores):
     # Give back the average: the total shared out equally.
     if len(scores) == 0:               # guard: there is no average of nothing
@@ -384,7 +385,6 @@ def mean(scores):
     for score in scores:               # walk through the items themselves
         total += score                 # add this one onto the total
     return total / len(scores)         # share the total between all of them
-
 
 def minimum(scores):
     # Give back the smallest value in the list.
@@ -396,7 +396,6 @@ def minimum(scores):
             smallest = score           # it is the new champion
     return smallest
 
-
 def maximum(scores):
     # Give back the largest value in the list.
     if len(scores) == 0:
@@ -407,13 +406,11 @@ def maximum(scores):
             largest = score
     return largest
 
-
 def value_range(scores):
     # Give back the spread: largest minus smallest.
     if len(scores) == 0:
         return None
     return maximum(scores) - minimum(scores)      # reuse our own two functions
-
 
 def median(scores):
     # Give back the middle value once the numbers are put in order.
@@ -528,7 +525,7 @@ Run `python3 main.py`. You must see **exactly** this:
 
 ```text
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/w12/main.py", line 19, in <module>
+  File "/Users/you/ai-academy/level2/main.py", line 19, in <module>
     print("  Median    :", stats.median(SCORES))
 AttributeError: module 'stats' has no attribute 'median'. Did you mean: 'mean'?
 ```
@@ -771,7 +768,6 @@ def minimum(scores):
             smallest = score           # it is the new champion
     return smallest
 
-
 def maximum(scores):
     # Give back the largest value in the list.
     if len(scores) == 0:
@@ -781,7 +777,6 @@ def maximum(scores):
         if score > largest:
             largest = score
     return largest
-
 
 def value_range(scores):
     # Give back the spread: largest minus smallest.
@@ -833,8 +828,8 @@ print("  Range     :", stats.value_range(SCORES))
 
 ```text
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/w12/g3.py", line 1, in <module>
-    import stats.py
+  File "/Users/you/ai-academy/level2/main.py", line 3, in <module>
+    import stats.py                             # my own file, sitting right next to this one
 ModuleNotFoundError: No module named 'stats.py'; 'stats' is not a package
 ```
 
@@ -1398,7 +1393,7 @@ Exactly what was there before: `[45, 0, 112, 67, 8]`. `sorted()` built a second 
 ```text
 None
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/w12/h1.py", line 4, in <module>
+  File "/Users/you/ai-academy/level2/week12_sort_trap.py", line 4, in <module>
     print(ordered[0])
 TypeError: 'NoneType' object is not subscriptable
 ```
@@ -1435,18 +1430,18 @@ Because every one of them fails on an empty list, and each fails differently: `m
 
 ```text
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/w12/g4.py", line 3, in <module>
+  File "/Users/you/ai-academy/level2/hw12_empty.py", line 3, in <module>
     print(stats.mean([]))
-  File "/private/tmp/ai-academy/level2/w12/stats.py", line 11, in mean
+  File "/Users/you/ai-academy/level2/stats.py", line 11, in mean
     return total / len(scores)         # share the total between all of them
 ZeroDivisionError: division by zero
 ```
 
 ```text
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/w12/g5.py", line 3, in <module>
+  File "/Users/you/ai-academy/level2/hw12_empty.py", line 3, in <module>
     print(stats.minimum([]))
-  File "/private/tmp/ai-academy/level2/w12/stats.py", line 16, in minimum
+  File "/Users/you/ai-academy/level2/stats.py", line 16, in minimum
     smallest = scores[0]               # assume the first one is the smallest
 IndexError: list index out of range
 ```
@@ -1663,7 +1658,7 @@ Deleting the whole `median` function from `stats.py` and running `main.py` uncha
 
 ```text
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/w12/main.py", line 19, in <module>
+  File "/Users/you/ai-academy/level2/main.py", line 19, in <module>
     print("  Median    :", stats.median(SCORES))
 AttributeError: module 'stats' has no attribute 'median'. Did you mean: 'mean'?
 ```
@@ -1688,9 +1683,9 @@ And the distinction is the point: `ModuleNotFoundError` means **the file** is mi
 
 ```text
 Traceback (most recent call last):
-  File "/private/tmp/ai-academy/level2/w12/g7.py", line 1, in <module>
-    from stats_tmp import mean, median
-ImportError: cannot import name 'median' from 'stats_tmp' (/private/tmp/ai-academy/level2/w12/stats_tmp.py)
+  File "/Users/you/ai-academy/level2/hw12_import.py", line 1, in <module>
+    from stats import mean, median         # take just these two, by name
+ImportError: cannot import name 'median' from 'stats' (/Users/you/ai-academy/level2/stats.py)
 ```
 
 An `ImportError`, and it happens on **line 1**, before any of your program runs. That is arguably better than the `AttributeError`, which waits until the moment you use it — a real argument in favour of the `from ... import` style.

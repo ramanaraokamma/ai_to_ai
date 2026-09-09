@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Three tests every project idea must pass</title>
+  <desc>Three cards. Card one, the annoyance test: can you name a real moment last month when this bothered somebody? Good example, Dad puts the milk in the wrong bin. Bad example, it would be cool to predict stuff. Card two, the hundred-row test: can you honestly get 100 rows in about two hours? Good, 100 songs from your own playlist. Bad, 100 classmates' exam marks. Card three, the target test: is there one column you would like to predict? Good, minutes or late. Bad, I just want to explore.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Three tests every project idea must pass</text>
+  <text x="400" y="64" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">A project that fails one of these cannot be rescued by working harder later.</text>
+  <rect x="32" y="92" width="236" height="250" rx="12" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="66" cy="124" r="18" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="66" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="94" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="600">THE ANNOYANCE TEST</text>
+  <text x="50" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">Name a real moment last month</text>
+  <text x="50" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">when this bothered somebody.</text>
+  <rect x="46" y="202" width="208" height="60" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <g transform="translate(55,219) scale(0.3824)"><circle cx="34" cy="34" r="32" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="4"/><polyline points="18,36 29,48 52,22" fill="none" stroke="#1B7A4B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="90" y="226" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">"Dad puts the milk in the </text>
+  <text x="90" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">wrong bin"</text>
+  <rect x="46" y="270" width="208" height="60" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <g transform="translate(55,287) scale(0.3824)"><circle cx="34" cy="34" r="32" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="4"/><line x1="22" y1="22" x2="46" y2="46" stroke="#CC2B1D" stroke-width="7" stroke-linecap="round"/><line x1="46" y1="22" x2="22" y2="46" stroke="#CC2B1D" stroke-width="7" stroke-linecap="round"/></g>
+  <text x="90" y="294" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">"It would be cool to predi</text>
+  <text x="90" y="312" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">ct stuff"</text>
+  <rect x="282" y="92" width="236" height="250" rx="12" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="316" cy="124" r="18" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="316" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="344" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="600">THE 100-ROW TEST</text>
+  <text x="300" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">Can you get 100 rows in about two</text>
+  <text x="300" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">hours, from where you are?</text>
+  <rect x="296" y="202" width="208" height="60" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <g transform="translate(305,219) scale(0.3824)"><circle cx="34" cy="34" r="32" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="4"/><polyline points="18,36 29,48 52,22" fill="none" stroke="#1B7A4B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="340" y="226" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">100 songs from your own pl</text>
+  <text x="340" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">aylist</text>
+  <rect x="296" y="270" width="208" height="60" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <g transform="translate(305,287) scale(0.3824)"><circle cx="34" cy="34" r="32" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="4"/><line x1="22" y1="22" x2="46" y2="46" stroke="#CC2B1D" stroke-width="7" stroke-linecap="round"/><line x1="46" y1="22" x2="22" y2="46" stroke="#CC2B1D" stroke-width="7" stroke-linecap="round"/></g>
+  <text x="340" y="294" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">100 classmates' exam marks</text>
+  <rect x="532" y="92" width="236" height="250" rx="12" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="566" cy="124" r="18" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="566" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="594" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="600">THE TARGET TEST</text>
+  <text x="550" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">Is there ONE column you want to</text>
+  <text x="550" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">predict from the others?</text>
+  <rect x="546" y="202" width="208" height="60" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <g transform="translate(555,219) scale(0.3824)"><circle cx="34" cy="34" r="32" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="4"/><polyline points="18,36 29,48 52,22" fill="none" stroke="#1B7A4B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="590" y="226" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">minutes (a number) or late</text>
+  <text x="590" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B"> (a category)</text>
+  <rect x="546" y="270" width="208" height="60" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <g transform="translate(555,287) scale(0.3824)"><circle cx="34" cy="34" r="32" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="4"/><line x1="22" y1="22" x2="46" y2="46" stroke="#CC2B1D" stroke-width="7" stroke-linecap="round"/><line x1="46" y1="22" x2="22" y2="46" stroke="#CC2B1D" stroke-width="7" stroke-linecap="round"/></g>
+  <text x="590" y="294" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">"I just want to explore"</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Fails one? Swap the idea NOW, while it costs you five minutes.</text>
+</svg>

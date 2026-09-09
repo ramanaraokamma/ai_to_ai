@@ -37,6 +37,8 @@ Observable evidence: a working four-branch chain; the `and` and `or` truth table
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
+
 Read this twice and type the code. This week has one keyword and three small words in it, and a bug that is far more important than any of them.
 
 ### 1. `elif` — the chain
@@ -350,8 +352,6 @@ The real output:
 
 ```text
 y
-```
-```text
 False
 ```
 

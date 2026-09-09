@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A list is a cloakroom. An array is an egg box.</title>
+  <desc>Two panels. On the left a list: five separated slots, each holding a small ticket, with arrows running off to five scattered boxes holding the actual numbers and the words its own kind written on each. On the right an array: five cells butted together with the numbers themselves inside, all one kind, and the annotation shape open bracket five comma close bracket underneath.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A list is a cloakroom. An array is an egg box.</text>
+  <rect x="24" y="76" width="366" height="250" rx="12" fill="none" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="410" y="76" width="366" height="250" rx="12" fill="none" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="207" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">a Python list</text>
+  <text x="593" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">a numpy array</text>
+  <rect x="54" y="124" width="52" height="44" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="70" y="138" width="20" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5"/>
+  <text x="80" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <line x1="80" y1="172" x2="80" y2="208" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#55636F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(80 208) rotate(90.0)"/>
+  <rect x="116" y="124" width="52" height="44" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="132" y="138" width="20" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5"/>
+  <text x="142" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1</text>
+  <line x1="142" y1="172" x2="142" y2="208" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#55636F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(142 208) rotate(90.0)"/>
+  <rect x="178" y="124" width="52" height="44" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="194" y="138" width="20" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5"/>
+  <text x="204" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2</text>
+  <line x1="204" y1="172" x2="204" y2="208" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#55636F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(204 208) rotate(90.0)"/>
+  <rect x="240" y="124" width="52" height="44" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="256" y="138" width="20" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5"/>
+  <text x="266" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">3</text>
+  <line x1="266" y1="172" x2="266" y2="208" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#55636F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(266 208) rotate(90.0)"/>
+  <rect x="302" y="124" width="52" height="44" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="318" y="138" width="20" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5"/>
+  <text x="328" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4</text>
+  <line x1="328" y1="172" x2="328" y2="208" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#55636F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(328 208) rotate(90.0)"/>
+  <rect x="48" y="214" width="56" height="40" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="76" y="230" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">48</text>
+  <text x="76" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">int</text>
+  <rect x="110" y="214" width="56" height="40" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="138" y="230" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">12</text>
+  <text x="138" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">int</text>
+  <rect x="172" y="214" width="56" height="40" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="200" y="230" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">77</text>
+  <text x="200" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">int</text>
+  <rect x="234" y="214" width="56" height="40" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="262" y="230" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+  <text x="262" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">int</text>
+  <rect x="296" y="214" width="56" height="40" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="324" y="230" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">63</text>
+  <text x="324" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">int</text>
+  <text x="207" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">five tickets, five separate boxes elsewhere</text>
+  <text x="207" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">each box knows its own kind, and can be a different kind</text>
+  <text x="207" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">len(...) tells you 5. Nothing tells you the shape.</text>
+  <rect x="452" y="150" width="58" height="58" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="481" y="179" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">48</text>
+  <rect x="510" y="150" width="58" height="58" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="539" y="179" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">12</text>
+  <rect x="568" y="150" width="58" height="58" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="597" y="179" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">77</text>
+  <rect x="626" y="150" width="58" height="58" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="655" y="179" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+  <rect x="684" y="150" width="58" height="58" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="713" y="179" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">63</text>
+  <rect x="452" y="150" width="290" height="58" fill="none" stroke="#1F6FB2" stroke-width="3"/>
+  <path d="M452 142 V134 H742 V142" fill="none" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="597" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one block, nothing in between</text>
+  <text x="597" y="232" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">shape (5,)</text>
+  <text x="597" y="252" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">dtype int64</text>
+  <text x="593" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the numbers themselves, side by side</text>
+  <text x="593" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">all one kind, so numpy never has to ask</text>
+  <text x="593" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">and the block knows its own shape</text>
+  <text x="400" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The list is more flexible. The array knows more about itself, and that is what buys the speed.</text>
+  <text x="400" y="380" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Same five numbers on the page. Two completely different things underneath.</text>
+</svg>

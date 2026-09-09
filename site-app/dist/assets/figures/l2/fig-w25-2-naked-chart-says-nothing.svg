@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>An unlabelled chart does not mean anything</title>
+  <desc>On the left, a rising line inside a red-outlined box with no title, no axis labels and no numbers, marked with a red cross. On the right, three note cards each giving a completely different meaning for that same line: pizzas sold, rainfall, and flu cases.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">An unlabelled chart does not mean anything</text>
+  <rect x="24" y="74" width="352" height="216" rx="12" fill="None" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="76" y1="100" x2="76" y2="260" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="76" y1="260" x2="344" y2="260" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="96,236 130,222 164,228 198,204 232,188 266,192 300,166 334,130" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="96" cy="236" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="130" cy="222" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="164" cy="228" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="198" cy="204" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="232" cy="188" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="266" cy="192" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="300" cy="166" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="334" cy="130" r="4.5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="302" x2="54" y2="318"/><line x1="54" y1="302" x2="38" y2="318"/></g>
+  <text x="66" y="305" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">No title. No axis labels. No numbers.</text>
+  <text x="66" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">It rises. That is everything it tells you.</text>
+  <rect x="412" y="86" width="364" height="58" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="432" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Pizzas sold each week</text>
+  <text x="432" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">up 60% - the shop is booming</text>
+  <rect x="412" y="156" width="364" height="58" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="432" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Rainfall each week, in mm</text>
+  <text x="432" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">up 60% - the monsoon arrived</text>
+  <rect x="412" y="226" width="364" height="58" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="432" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Flu cases each week</text>
+  <text x="432" y="270" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">up 60% - shut the school</text>
+  <text x="594" y="310" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">All three fit that line exactly.</text>
+  <text x="594" y="329" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">So the line, on its own, is a decoration.</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The labels are not decoration. The labels are the whole claim.</text>
+</svg>

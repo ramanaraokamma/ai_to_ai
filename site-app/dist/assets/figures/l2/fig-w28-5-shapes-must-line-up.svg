@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The two shapes have to agree</title>
+  <desc>Two pairs of blocks. On the left, a feature block X with four rows sits beside an answer column y with four rows; dashed lines join them row for row and a tick says four rows and four rows is fine. On the right the same X has four rows but y has only three, leaving the last song with a question mark and no answer, marked with a cross.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The two shapes have to agree</text>
+  <rect x="72" y="106" width="132" height="30" fill="#D9EAF9"/>
+  <rect x="72" y="136" width="132" height="30" fill="#FFFFFF"/>
+  <rect x="72" y="166" width="132" height="30" fill="#FFFFFF"/>
+  <rect x="72" y="196" width="132" height="30" fill="#FFFFFF"/>
+  <rect x="72" y="226" width="132" height="30" fill="#FFFFFF"/>
+  <line x1="72" y1="136" x2="204" y2="136" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="72" y1="166" x2="204" y2="166" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="72" y1="196" x2="204" y2="196" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="72" y1="226" x2="204" y2="226" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="138" y1="106" x2="138" y2="256" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="72" y1="136" x2="204" y2="136" stroke="#14202B" stroke-width="2" stroke-linecap="butt"/>
+  <rect x="72" y="106" width="132" height="150" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="105.0" y="121.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">bpm</text>
+  <text x="171.0" y="121.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">mins</text>
+  <text x="105.0" y="151.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">68</text>
+  <text x="171.0" y="151.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">4.2</text>
+  <text x="105.0" y="181.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">148</text>
+  <text x="171.0" y="181.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3.1</text>
+  <text x="105.0" y="211.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">80</text>
+  <text x="171.0" y="211.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3.8</text>
+  <text x="105.0" y="241.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">160</text>
+  <text x="171.0" y="241.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2.8</text>
+  <text x="138.0" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">X</text>
+  <text x="138.0" y="278" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">shape (4, 2)</text>
+  <rect x="258" y="106" width="66" height="30" fill="#F4D5E9"/>
+  <rect x="258" y="136" width="66" height="30" fill="#FFFFFF"/>
+  <rect x="258" y="166" width="66" height="30" fill="#FFFFFF"/>
+  <rect x="258" y="196" width="66" height="30" fill="#FFFFFF"/>
+  <rect x="258" y="226" width="66" height="30" fill="#FFFFFF"/>
+  <line x1="258" y1="136" x2="324" y2="136" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="258" y1="166" x2="324" y2="166" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="258" y1="196" x2="324" y2="196" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="258" y1="226" x2="324" y2="226" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="258" y1="136" x2="324" y2="136" stroke="#14202B" stroke-width="2" stroke-linecap="butt"/>
+  <rect x="258" y="106" width="66" height="150" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="291.0" y="121.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">mood</text>
+  <text x="291.0" y="151.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">chill</text>
+  <text x="291.0" y="181.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">hype</text>
+  <text x="291.0" y="211.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">chill</text>
+  <text x="291.0" y="241.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">hype</text>
+  <text x="291.0" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">y</text>
+  <text x="291.0" y="278" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">shape (4,)</text>
+  <line x1="208" y1="151" x2="256" y2="151" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="5 4"/>
+  <line x1="208" y1="181" x2="256" y2="181" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="5 4"/>
+  <line x1="208" y1="211" x2="256" y2="211" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="5 4"/>
+  <line x1="208" y1="241" x2="256" y2="241" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="5 4"/>
+  <polyline points="185.0,300 193.0,308.0 207.0,289.0" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="218" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">4 rows and 4 rows. Fine.</text>
+  <line x1="420" y1="70" x2="420" y2="344" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="6 5"/>
+  <rect x="470" y="106" width="132" height="30" fill="#D9EAF9"/>
+  <rect x="470" y="136" width="132" height="30" fill="#FFFFFF"/>
+  <rect x="470" y="166" width="132" height="30" fill="#FFFFFF"/>
+  <rect x="470" y="196" width="132" height="30" fill="#FFFFFF"/>
+  <rect x="470" y="226" width="132" height="30" fill="#FFFFFF"/>
+  <line x1="470" y1="136" x2="602" y2="136" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="470" y1="166" x2="602" y2="166" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="470" y1="196" x2="602" y2="196" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="470" y1="226" x2="602" y2="226" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="536" y1="106" x2="536" y2="256" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="470" y1="136" x2="602" y2="136" stroke="#14202B" stroke-width="2" stroke-linecap="butt"/>
+  <rect x="470" y="106" width="132" height="150" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="503.0" y="121.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">bpm</text>
+  <text x="569.0" y="121.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">mins</text>
+  <text x="503.0" y="151.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">68</text>
+  <text x="569.0" y="151.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">4.2</text>
+  <text x="503.0" y="181.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">148</text>
+  <text x="569.0" y="181.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3.1</text>
+  <text x="503.0" y="211.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">80</text>
+  <text x="569.0" y="211.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3.8</text>
+  <text x="503.0" y="241.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">160</text>
+  <text x="569.0" y="241.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2.8</text>
+  <text x="536.0" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">X</text>
+  <text x="536.0" y="278" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">shape (4, 2)</text>
+  <rect x="656" y="106" width="66" height="30" fill="#F6AEA6"/>
+  <rect x="656" y="136" width="66" height="30" fill="#FFFFFF"/>
+  <rect x="656" y="166" width="66" height="30" fill="#FFFFFF"/>
+  <rect x="656" y="196" width="66" height="30" fill="#FFFFFF"/>
+  <line x1="656" y1="136" x2="722" y2="136" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="656" y1="166" x2="722" y2="166" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="656" y1="196" x2="722" y2="196" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="656" y1="136" x2="722" y2="136" stroke="#14202B" stroke-width="2" stroke-linecap="butt"/>
+  <rect x="656" y="106" width="66" height="120" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="689.0" y="121.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">mood</text>
+  <text x="689.0" y="151.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">chill</text>
+  <text x="689.0" y="181.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">hype</text>
+  <text x="689.0" y="211.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">chill</text>
+  <text x="689.0" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">y</text>
+  <text x="689.0" y="284" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">shape (3,)</text>
+  <line x1="606" y1="151" x2="654" y2="151" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="5 4"/>
+  <line x1="606" y1="181" x2="654" y2="181" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="5 4"/>
+  <line x1="606" y1="211" x2="654" y2="211" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="5 4"/>
+  <rect x="656" y="226" width="66" height="30" rx="6" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="689" y="241" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">?</text>
+  <line x1="606" y1="241" x2="654" y2="241" stroke="#CC2B1D" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="5 4"/>
+  <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+    <line x1="586" y1="290" x2="606" y2="310"/>
+    <line x1="606" y1="290" x2="586" y2="310"/>
+  </g>
+  <text x="618" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">4 rows, 3 answers.</text>
+  <text x="618" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">One song has no answer.</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Count the rows in both, out loud, every single time.</text>
+
+</svg>

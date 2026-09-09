@@ -37,6 +37,8 @@ Observable evidence: a hand-drawn question tree from the Hook; a file that diffe
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
+
 You do not need to know any machine learning to teach this week. You need to know four things: what a tree *is*, what the printout *says*, why the word `depth` matters, and what to do when Python shouts. All four are below, in full, with every line of this week's code explained.
 
 ### 1. The one-sentence version
@@ -122,7 +124,8 @@ print("THE RULES THE TREE LEARNED")
 print(export_text(model, feature_names=list(iris.feature_names)))
 
 print("WHICH FEATURES DID IT ACTUALLY USE?")
-for name, importance in zip(iris.feature_names, model.feature_importances_):
+for i, name in enumerate(iris.feature_names):      # enumerate, from Week 14
+    importance = model.feature_importances_[i]
     print(f"  {name:20s} {importance:.3f}")
 
 print()
@@ -149,7 +152,7 @@ for i in range(len(y_test)):                 # walk the 30 hidden flowers
 - `model.score(X_train, y_train)` — the fraction it gets right on the flowers it learned from.
 - `accuracy_score(y_test, guesses)` — the fraction it gets right on the flowers it never saw. **This is the number that counts.** Truth first, guess second — that order matters for some metrics, so build the habit now.
 - `export_text(model, feature_names=list(iris.feature_names))` — print the whole tree as indented text. `feature_names` replaces "column 3" with "petal width (cm)", which is the difference between a printout you can read aloud and one you cannot. `list(...)` is there because `export_text` insists on a plain list.
-- `zip(iris.feature_names, model.feature_importances_)` — pair each name with its importance number, so the loop can print them side by side. `zip` is from Week 14.
+- `for i, name in enumerate(iris.feature_names):` — `enumerate` from Week 14 gives you the position **and** the name, so `model.feature_importances_[i]` fetches the matching number. Two lists walked side by side with nothing new to learn.
 - `model.feature_importances_` — the trailing underscore is scikit-learn's way of saying *"this only exists after `fit` has run"*. Forgetting the underscore is the single most common typo of the week and Python is helpful about it.
 - `f"  {name:20s} {importance:.3f}"` — an f-string from Week 3. `:20s` pads the name to 20 characters so the numbers line up; `:.3f` shows three decimal places.
 - `for i in range(len(y_test)):` … `if guesses[i] != y_test[i]:` — walk the 30 test flowers by position, and print only the ones where the guess and the truth disagree. `!=` means "is not equal to", from Week 5.
@@ -592,7 +595,8 @@ Let them look. Let it take a moment.
 
 ```python
 print("WHICH FEATURES DID IT ACTUALLY USE?")
-for name, importance in zip(iris.feature_names, model.feature_importances_):
+for i, name in enumerate(iris.feature_names):      # enumerate, from Week 14
+    importance = model.feature_importances_[i]
     print(f"  {name:20s} {importance:.3f}")
 ```
 

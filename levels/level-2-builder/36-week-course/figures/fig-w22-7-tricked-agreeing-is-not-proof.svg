@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Agreeing is not proof that you used the right one</title>
+  <desc>Two panels. On the left, marked wrong, a table whose row labels are zero to four: loc of two and iloc of two both hand back Nova, so the reader concludes the two commands are the same. On the right, marked correct, the same five children re-labelled with register numbers four, two, five, one and three: loc of two hands back Kabir while iloc of two hands back Meera, and neither command reported an error.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Agreeing is not proof that you used the right one</text>
+  <line x1="400" y1="66" x2="400" y2="344" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="6 6"/>
+
+  <rect x="24" y="66" width="352" height="278" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="424" y="66" width="352" height="278" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+
+  <circle cx="56" cy="98" r="15" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="51" y1="93" x2="61" y2="103"/><line x1="61" y1="93" x2="51" y2="103"/></g>
+  <text x="80" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">"They're the same command"</text>
+
+  <circle cx="456" cy="98" r="15" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <polyline points="450,99 454,103 462,93" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="480" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">Two questions, two answers</text>
+
+  <!-- left: default labels -->
+  <text x="48" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">labels pandas invented</text>
+  <rect x="48" y="140" width="116" height="132" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="48" y="140" width="26" height="132" fill="#F5F8FA"/>
+  <g stroke="#C7CDD4" stroke-width="1.5"><line x1="48" y1="162" x2="164" y2="162"/><line x1="48" y1="184" x2="164" y2="184"/><line x1="48" y1="206" x2="164" y2="206"/><line x1="48" y1="228" x2="164" y2="228"/><line x1="48" y1="250" x2="164" y2="250"/><line x1="74" y1="140" x2="74" y2="272"/></g>
+  <rect x="48" y="184" width="116" height="22" fill="#F4D5E9"/>
+  <text x="61" y="151" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="61" y="173" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="61" y="195" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="61" y="217" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="61" y="239" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="119" y="151" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Meera</text>
+  <text x="119" y="173" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Kabir</text>
+  <text x="119" y="195" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Nova</text>
+  <text x="119" y="217" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Arjun</text>
+  <text x="119" y="239" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Zoya</text>
+
+  <rect x="188" y="150" width="168" height="40" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="272" y="170" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">loc[2]  &#8594;  Nova</text>
+  <rect x="188" y="202" width="168" height="40" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="272" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">iloc[2] &#8594;  Nova</text>
+  <text x="272" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Same answer &#8212; because here</text>
+  <text x="272" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">every label happens to equal</text>
+  <text x="272" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">its position.</text>
+  <text x="200" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Nothing has been tested.</text>
+
+  <!-- right: register numbers -->
+  <text x="448" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">labels from the register</text>
+  <rect x="448" y="140" width="116" height="132" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="448" y="140" width="26" height="132" fill="#F5F8FA"/>
+  <g stroke="#C7CDD4" stroke-width="1.5"><line x1="448" y1="162" x2="564" y2="162"/><line x1="448" y1="184" x2="564" y2="184"/><line x1="448" y1="206" x2="564" y2="206"/><line x1="448" y1="228" x2="564" y2="228"/><line x1="448" y1="250" x2="564" y2="250"/><line x1="474" y1="140" x2="474" y2="272"/></g>
+  <rect x="448" y="162" width="116" height="22" fill="#DBCEF3"/>
+  <rect x="448" y="184" width="116" height="22" fill="#F4D5E9"/>
+  <text x="461" y="151" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="461" y="173" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#6D28D9" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="461" y="195" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">5</text>
+  <text x="461" y="217" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="461" y="239" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="519" y="151" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Arjun</text>
+  <text x="519" y="173" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Kabir</text>
+  <text x="519" y="195" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Meera</text>
+  <text x="519" y="217" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Nova</text>
+  <text x="519" y="239" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Zoya</text>
+
+  <rect x="588" y="150" width="168" height="40" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="672" y="170" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">loc[2]  &#8594;  Kabir</text>
+  <rect x="588" y="202" width="168" height="40" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="672" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">iloc[2] &#8594;  Meera</text>
+  <text x="672" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">loc hunted for the row NAMED 2.</text>
+  <text x="672" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">iloc COUNTED two rows down.</text>
+  <text x="672" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Both are correct code.</text>
+  <text x="600" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">And neither one errored.</text>
+
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Two commands, one letter apart, two different children, no error message.</text>
+</svg>

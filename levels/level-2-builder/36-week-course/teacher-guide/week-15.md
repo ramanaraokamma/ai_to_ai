@@ -12,7 +12,7 @@
 | **Type** | 🟩 Lab — two reusable functions written, then six questions answered with them |
 | **Big idea** | Filtering keeps the rows that pass a test; grouping counts how many rows share a value. And **every group answer must be reported with its row count.** |
 | **New vocabulary** | filter · group · counting dictionary · key function · row count |
-| **New syntax** | `[r for r in rows if r["age"] > 12]` · `sorted(rows, key=...)` · `sum(numbers)` · `max(counts, key=counts.get)` |
+| **New syntax** | `[r for r in rows if r["age"] > 12]` · `sorted(rows, key=...)` · `max(counts, key=counts.get)` |
 | **Materials** | The twelve index cards from Week 14 · **four sheets of paper as bucket labels** · a pen · printed workbook pages 15.1–15.6 · the Bug Log · a calculator |
 | **Tech needed** | Laptop with Python 3 and the editor. `squad.py` from Week 14 must exist and run. Still nothing installed. |
 | **Prep time** | 15 minutes the night before · 5 minutes on the day |
@@ -36,6 +36,8 @@ Observable evidence: `records.py` containing `filter_by()` and `group_count()` t
 ---
 
 ## 🧑‍🏫 What YOU Need to Know First
+
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
 **No Python needed to start.** There are exactly two ideas this week and they are both things you already do with your hands.
 
@@ -186,7 +188,6 @@ def runs_of(player):
     """The key function: given one player, hand back the number to sort on."""
     return player["runs"]
 
-
 ranked = sorted(squad, key=runs_of, reverse=True)
 ```
 
@@ -323,16 +324,13 @@ squad = [
 ```python
 """records.py - tools that work on ANY list of dictionaries, not just cricketers."""
 
-
 def filter_by(rows, key, value):
     """Keep only the rows where rows[key] equals value."""
     return [r for r in rows if r[key] == value]
 
-
 def column(rows, key):
     """Pull one column out of the rows as a plain list of values."""
     return [r[key] for r in rows]
-
 
 def group_count(rows, key):
     """Count how many rows share each value of key. One bucket per value."""
@@ -579,11 +577,9 @@ Let them get there. That the Owls are much better.
 ```python
 """records.py - tools that work on ANY list of dictionaries, not just cricketers."""
 
-
 def filter_by(rows, key, value):
     """Keep only the rows where rows[key] equals value."""
     return [r for r in rows if r[key] == value]
-
 
 def column(rows, key):
     """Pull one column out of the rows as a plain list of values."""
@@ -632,7 +628,13 @@ def group_count(rows, key):
     return counts
 ```
 
-Add the call in `lab15.py`:
+Add the call in `lab15.py`. **Two edits, and the first one is easy to forget:** put `group_count` on the import line as well, or you will get `NameError: name 'group_count' is not defined` instead of the error we are here for.
+
+```python
+from records import filter_by, column, group_count      # <-- group_count added
+```
+
+Then, at the bottom of the file:
 
 ```python
 print(group_count(squad, "team"))
@@ -730,7 +732,6 @@ def runs_of(player):
     """Key function: given one player, hand back the number to sort on."""
     return player["runs"]
 
-
 ranked = sorted(squad, key=runs_of, reverse=True)
 for position, player in enumerate(ranked[:3], start=1):
     print(f"{position}. {player['name']:<7}{player['runs']:>4} runs")
@@ -785,11 +786,9 @@ The complete file. Add to `lab15.py`.
 from records import filter_by, group_count, column
 from squad_data import squad
 
-
 def runs_of(player):
     """The key function: given one player, hand back the number to sort on."""
     return player["runs"]
-
 
 print("=" * 46)
 print(f"{len(squad)} rows, {len(squad[0])} columns")
@@ -1101,7 +1100,6 @@ People who do statistics for a living argue about thresholds constantly, and the
 def filter_by(rows, key, value):
     return [r for r in rows if r[key] == value]
 
-
 def group_count(rows, key):
     counts = {}
     for r in rows:
@@ -1332,16 +1330,13 @@ Because a rule chosen afterwards is a rule chosen to produce the answer you alre
 ```python
 """records.py - tools that work on ANY list of dictionaries."""
 
-
 def filter_by(rows, key, value):
     """Keep only the rows where rows[key] equals value."""
     return [r for r in rows if r[key] == value]
 
-
 def column(rows, key):
     """Pull one column out of the rows as a plain list of values."""
     return [r[key] for r in rows]
-
 
 def group_count(rows, key):
     """Count how many rows share each value of key. One bucket per value."""
@@ -1369,11 +1364,9 @@ The student's dataset is theirs. Model answer on the twelve-song playlist from W
 from records import filter_by, group_count, column
 from playlist_data import playlist
 
-
 def plays_of(song):
     """Key function: given one song, hand back the number to sort on."""
     return song["plays"]
-
 
 print(f"{len(playlist)} rows, {len(playlist[0])} columns\n")
 

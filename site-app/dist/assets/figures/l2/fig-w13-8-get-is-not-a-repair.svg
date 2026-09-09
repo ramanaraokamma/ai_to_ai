@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A fallback decides what to say. It does not repair anything.</title>
+  <desc>Two panels. On the left, outlined red, Sam's card has an empty runs field; a fallback of zero comes out of it looking like a real measurement, and the team average drops from 45.67 to 34.25 with no warning. On the right, outlined green, the same card is left out of the sum and the answer is printed as 45.67 from 3 of the 4 players.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A fallback decides what to say. It does not repair anything.</text>
+  <rect x="24" y="70" width="364" height="274" rx="12" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M24 82 A12 12 0 0 1 36 70 H376 A12 12 0 0 1 388 82 V104 H24 Z" fill="#F6AEA6"/>
+  <line x1="24" y1="104" x2="388" y2="104" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="46" cy="87" r="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="37.6" y1="78.6" x2="54.4" y2="95.4"/><line x1="54.4" y1="78.6" x2="37.6" y2="95.4"/></g>
+  <text x="66" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Wrong: fill the hole with 0</text>
+  <rect x="48" y="122" width="148" height="92" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="122" y="142" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Sam's card</text>
+  <rect x="60" y="152" width="58" height="26" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="89" y="165" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">runs</text>
+  <line x1="122" y1="165" x2="132" y2="165" stroke="#14202B" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="138" y="152" width="46" height="26" rx="6" fill="none" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 4"/>
+  <text x="161" y="165" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle" dominant-baseline="central">?</text>
+  <text x="122" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">nobody wrote it down</text>
+  <line x1="180" y1="165" x2="202" y2="165" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(202 165) rotate(0.0)"/>
+  <rect x="208" y="140" width="158" height="50" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="287" y="165" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">.get('runs', 0)</text>
+  <line x1="287" y1="194" x2="287" y2="210" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(287 210) rotate(90.0)"/>
+  <rect x="252" y="216" width="70" height="40" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="287" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="287" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">looks like a measurement</text>
+  <text x="206" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">average 34.25 instead of 45.67</text>
+  <text x="206" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">11.42 runs invented, no warning</text>
+  <rect x="412" y="70" width="364" height="274" rx="12" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M412 82 A12 12 0 0 1 424 70 H764 A12 12 0 0 1 776 82 V104 H412 Z" fill="#E2F7ED"/>
+  <line x1="412" y1="104" x2="776" y2="104" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="434" cy="87" r="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="422.7,88.4 430.5,96.9 446.7,78.5" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="454" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Right: say what you do not know</text>
+  <rect x="436" y="122" width="148" height="92" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="510" y="142" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Sam's card</text>
+  <rect x="448" y="152" width="58" height="26" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="477" y="165" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">runs</text>
+  <line x1="510" y1="165" x2="520" y2="165" stroke="#14202B" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="526" y="152" width="46" height="26" rx="6" fill="none" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 4"/>
+  <text x="549" y="165" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle" dominant-baseline="central">?</text>
+  <text x="510" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">nobody wrote it down</text>
+  <line x1="568" y1="165" x2="590" y2="165" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(590 165) rotate(0.0)"/>
+  <rect x="596" y="140" width="158" height="50" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="675" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">leave the row out</text>
+  <text x="675" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">and count what you left</text>
+  <line x1="675" y1="194" x2="675" y2="210" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(675 210) rotate(90.0)"/>
+  <rect x="628" y="216" width="94" height="40" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="675" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">45.67</text>
+  <text x="675" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">from 3 of the 4 players</text>
+  <text x="594" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">the number, and how many rows</text>
+  <text x="594" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle">nothing invented, and it says so</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Both programs run. Only one of them tells the reader what it did.</text>
+</svg>

@@ -37,6 +37,8 @@ Observable evidence: a five-row results table with MAE, RMSE, test R² and train
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
+
 There are two ideas this week and one of them is the whole point of the year. Take the twenty-five minutes; you will teach it far better for having felt the numbers once yourself.
 
 ### 1. The idea, in one table
@@ -161,7 +163,6 @@ X_train, X_test, y_train, y_test = train_test_split(
 print("train rows:", len(X_train), " test rows:", len(X_test))
 print()
 
-
 def report(name, model):
     """Fit a model on the SAME train rows, score it on the SAME test rows."""
     model.fit(X_train, y_train)
@@ -170,7 +171,6 @@ def report(name, model):
     rmse = np.sqrt(mean_squared_error(y_test, guesses))   # NEW: root of the mean square
     print(f"{name:22s} {mae:7.2f} {rmse:7.2f} "
           f"{r2_score(y_test, guesses):9.3f} {model.score(X_train, y_train):10.3f}")
-
 
 print(f"{'model':22s} {'MAE':>7s} {'RMSE':>7s} {'test R2':>9s} {'train R2':>10s}")
 

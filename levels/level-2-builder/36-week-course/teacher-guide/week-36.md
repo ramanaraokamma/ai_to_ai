@@ -38,6 +38,8 @@ Observable evidence: an eight-minute walkthrough delivered to a person who is no
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
+
 You are not teaching anything new today. You are running four things, and each has a trick to it.
 
 ### 1. What a showcase actually is, and what it is not
@@ -439,9 +441,11 @@ print(df.dtypes)
 
 ```text
 name     object
-score    object          <- this is the bug
+score    object
 dtype: object
 ```
+
+**`score` says `object`, and that is the bug** — a column of numbers that pandas is holding as text.
 
 Then the fix, and the check. **Replace the three print lines in `d2.py` with these five** — everything above them stays exactly as it was:
 
@@ -585,7 +589,9 @@ ax.set_title("Green averages 7.3 points below Red - the houses are close")  # FI
 ax.set_xlabel("house")                                                      # FIX 2
 ax.set_ylabel("mean end-of-term score (points out of 100)")                  # FIX 2, with units
 
-for bar, mean, n in zip(bars, means, counts):
+for i, bar in enumerate(bars):
+    mean = means[i]
+    n = counts[i]
     ax.text(bar.get_x() + bar.get_width() / 2, mean + 2,
             f"{mean:.1f} (n={n})", ha="center", fontsize=9)                  # FIX 4
 
@@ -1093,9 +1099,11 @@ print(df.dtypes)
 ```
 ```text
 name     object
-score    object          <- this is the bug
+score    object
 dtype: object
 ```
+
+**`score` says `object`, and that is the bug** — a column of numbers that pandas is holding as text.
 
 **(b) What the broken code prints**
 
@@ -1292,7 +1300,9 @@ ax.set_xlabel("house")                                                      # FI
 ax.set_ylabel("mean end-of-term score (points out of 100)")                  # FIX 2, with units
 
 # print the value and the group size on each bar
-for bar, mean, n in zip(bars, means, counts):
+for i, bar in enumerate(bars):
+    mean = means[i]
+    n = counts[i]
     ax.text(bar.get_x() + bar.get_width() / 2, mean + 2,
             f"{mean:.1f} (n={n})", ha="center", fontsize=9)                  # FIX 4
 

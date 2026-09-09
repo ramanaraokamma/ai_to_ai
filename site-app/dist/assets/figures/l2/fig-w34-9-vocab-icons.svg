@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Week 34 words, drawn</title>
+  <desc>Five icon cards. A question mark on a signed card for research question. A padlocked file for raw data. Five fence posts for describe. A luggage label listing who, when and how for provenance. A small scoop taken from a large jar for sample.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Week 34 words, drawn</text>
+  <rect x="22" y="64" width="144" height="290" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M46 96 q0 -8 8 -8 H128 L146 106 V158 q0 8 -8 8 H54 q-8 0 -8 -8 Z" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M128 88 V106 H146 Z" fill="#F5F8FA" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <text x="94" y="132" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">?</text>
+  <line x1="58" y1="152" x2="134" y2="152" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="94" y="226" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">research question</text>
+  <text x="94" y="254" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one sentence you</text>
+  <text x="94" y="272" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">could be wrong about</text>
+  <rect x="174" y="64" width="144" height="290" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="200" y="92" width="96" height="74" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="246" y="126" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">raw.csv</text>
+  <path d="M235 152 v-10 a11 11 0 0 1 22 0 v10" fill="none" stroke="#14202B" stroke-width="3"/>
+  <rect x="229" y="152" width="34" height="22" rx="5" fill="#E8C671" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="246" y="226" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">raw data</text>
+  <text x="246" y="254" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the file as you first</text>
+  <text x="246" y="272" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">wrote it, then locked</text>
+  <rect x="326" y="64" width="144" height="290" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="348" y1="150" x2="452" y2="150" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <line x1="348" y1="150" x2="348" y2="124" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+  <line x1="374" y1="150" x2="374" y2="134" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+  <line x1="400" y1="150" x2="400" y2="120" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <line x1="426" y1="150" x2="426" y2="134" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+  <line x1="452" y1="150" x2="452" y2="124" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+  <text x="398" y="182" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">min 25% 50% 75% max</text>
+  <text x="398" y="226" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">describe</text>
+  <text x="398" y="254" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">count, mean, and the</text>
+  <text x="398" y="272" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">five fence posts</text>
+  <rect x="478" y="64" width="144" height="290" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="500" y="92" width="104" height="82" rx="8" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="510" y="110" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F">who</text>
+  <text x="510" y="127" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F">when</text>
+  <text x="510" y="144" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F">how</text>
+  <text x="510" y="161" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F">who is in it</text>
+  <line x1="552" y1="84" x2="552" y2="92" stroke="#845F00" stroke-width="2" stroke-linecap="round"/>
+  <text x="550" y="226" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">provenance</text>
+  <text x="550" y="254" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">who collected it,</text>
+  <text x="550" y="272" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">when, how, who is in it</text>
+  <rect x="630" y="64" width="144" height="290" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M664 96 h80 v52 a40 26 0 0 1 -80 0 Z" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="684" y="108" width="40" height="30" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="702" y="124" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">100</text>
+  <text x="702" y="182" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">a scoop, not the jar</text>
+  <text x="702" y="226" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">sample</text>
+  <text x="702" y="254" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the rows you actually</text>
+  <text x="702" y="272" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">got, not the whole world</text>
+  <text x="400" y="384" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Five words. Four of them are about honesty, not code.</text>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Five new words for Week 31</title>
+  <desc>Five small icons in a row. A branching shape of boxes ending in two names, labelled decision tree, yes-no questions the computer wrote itself. A single question box with two lines leaving it into a small pile of circles and a small pile of triangles, labelled split, one question, two tidier piles. A ladder of three rungs numbered one two three beside a stack of branching levels, labelled depth, how many questions deep it may go. A shaded end box with no lines leaving it, labelled leaf, the answer lives here and nothing follows. And four bars of very different lengths adding up to one, labelled feature importance, who did the work.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Five new words for Week 31</text>
+  <g stroke="#55636F" stroke-width="2" fill="none">
+    <path d="M96 128 V142 H62 V156"/>
+    <path d="M96 128 V142 H130 V156"/>
+  </g>
+  <rect x="60" y="104" width="72" height="24" rx="8" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="36" y="156" width="52" height="24" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="104" y="156" width="52" height="24" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="96" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">decision tree</text>
+  <text x="96" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">yes/no questions the</text>
+  <text x="96" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">computer wrote itself</text>
+  <g stroke="#55636F" stroke-width="2" fill="none">
+    <path d="M250 128 V142 H216 V152"/>
+    <path d="M250 128 V142 H284 V152"/>
+  </g>
+  <rect x="212" y="104" width="76" height="24" rx="8" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="250" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8804; 1.65 ?</text>
+  <circle cx="206" cy="164" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="222" cy="164" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="214" cy="180" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <polygon points="284,158 291,171 277,171" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="284,175 291,188 277,188" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="250" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">split</text>
+  <text x="250" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">one question,</text>
+  <text x="250" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">two tidier piles</text>
+  <line x1="360" y1="102" x2="360" y2="190" stroke="#845F00" stroke-width="3" stroke-linecap="round"/>
+  <line x1="418" y1="102" x2="418" y2="190" stroke="#845F00" stroke-width="3" stroke-linecap="round"/>
+  <line x1="360" y1="118" x2="418" y2="118" stroke="#845F00" stroke-width="3" stroke-linecap="round"/>
+  <line x1="360" y1="148" x2="418" y2="148" stroke="#845F00" stroke-width="3" stroke-linecap="round"/>
+  <line x1="360" y1="178" x2="418" y2="178" stroke="#845F00" stroke-width="3" stroke-linecap="round"/>
+  <text x="389" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#845F00" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="389" y="133" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#845F00" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="389" y="163" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#845F00" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="389" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#845F00" text-anchor="middle">depth</text>
+  <text x="389" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">how many questions</text>
+  <text x="389" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">deep it MAY go</text>
+  <line x1="530" y1="102" x2="530" y2="132" stroke="#55636F" stroke-width="2"/>
+  <rect x="490" y="132" width="80" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="530" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">setosa</text>
+  <line x1="500" y1="186" x2="560" y2="186" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="530" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#1F6FB2" text-anchor="middle">leaf</text>
+  <text x="530" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">the answer lives here.</text>
+  <text x="530" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Nothing follows a leaf.</text>
+  <line x1="630" y1="190" x2="770" y2="190" stroke="#14202B" stroke-width="2"/>
+  <rect x="638" y="188" width="26" height="2" rx="1" fill="#C7CDD4" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="670" y="188" width="26" height="2" rx="1" fill="#C7CDD4" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="702" y="180" width="26" height="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="734" y="104" width="26" height="86" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="651" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.00</text>
+  <text x="683" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.00</text>
+  <text x="715" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.06</text>
+  <text x="747" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">0.94</text>
+  <text x="700" y="230" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#C42B8C" text-anchor="middle">feature importance</text>
+  <text x="700" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">who did the work.</text>
+  <text x="700" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The four add to 1.</text>
+  <text x="400" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">A split is a question. A leaf is an answer. Depth is the number of questions on the longest path.</text>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Nobody typed the numbers in the questions. The tree found them.</text>
+</svg>

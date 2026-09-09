@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Label the split yourself</title>
+  <desc>An unlabelled version of the splitting diagram. A four column table named song, bpm, minutes and mood sits on the left with two arrows leading to two empty dashed boxes on the right. Each empty box has an empty dashed name slot beside it, and one long empty slot underneath is for writing both shapes. The learner fills in the labels.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Label the split yourself</text>
+  <rect x="60" y="120" width="312" height="30" fill="#F5F8FA"/>
+  <line x1="138" y1="120" x2="138" y2="240" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="216" y1="120" x2="216" y2="240" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="294" y1="120" x2="294" y2="240" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="60" y1="180" x2="372" y2="180" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="60" y1="210" x2="372" y2="210" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt"/>
+  <line x1="60" y1="150" x2="372" y2="150" stroke="#14202B" stroke-width="2" stroke-linecap="butt"/>
+  <rect x="60" y="120" width="312" height="120" rx="10" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="99.0" y="135" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">song</text>
+  <text x="177.0" y="135" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">bpm</text>
+  <text x="255.0" y="135" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">minutes</text>
+  <text x="333.0" y="135" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">mood</text>
+  <text x="99.0" y="165.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Monsoon</text>
+  <text x="177.0" y="165.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">68</text>
+  <text x="255.0" y="165.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">4.2</text>
+  <text x="333.0" y="165.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">chill</text>
+  <text x="99.0" y="195.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Rocket</text>
+  <text x="177.0" y="195.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">148</text>
+  <text x="255.0" y="195.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3.1</text>
+  <text x="333.0" y="195.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">hype</text>
+  <text x="99.0" y="225.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Lantern</text>
+  <text x="177.0" y="225.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">80</text>
+  <text x="255.0" y="225.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3.8</text>
+  <text x="333.0" y="225.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">chill</text>
+  <text x="216" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">one table, ten rows</text>
+  <line x1="380" y1="150" x2="456" y2="132" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="447.1,140.0 456,132 444.4,128.8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="380" y1="210" x2="456" y2="246" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="444.0,246.7 456,246 448.9,236.3" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="470" y="96" width="200" height="72" rx="10" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <text x="570" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">which columns go here?</text>
+  <rect x="470" y="210" width="200" height="72" rx="10" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8 6"/>
+  <text x="570" y="226" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">which column goes here?</text>
+  <rect x="690" y="108" width="84" height="34" rx="8" fill="none" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="732" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">name it</text>
+  <rect x="690" y="222" width="84" height="34" rx="8" fill="none" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="732" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">name it</text>
+  <rect x="470" y="300" width="304" height="34" rx="8" fill="none" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="622" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">write both shapes in here</text>
+  <text x="216" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">and cross out the column that goes nowhere</text>
+</svg>

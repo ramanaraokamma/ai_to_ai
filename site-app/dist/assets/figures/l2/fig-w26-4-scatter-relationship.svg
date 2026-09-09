@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img">
+  <title>Read the tilt, spot the exception</title>
+  <desc>A scatter plot of twelve students with study hours on the x axis and score on the y axis. The dots rise to the right in a fairly tight band. One dot at one and a half hours and a score of 78 sits well above the band and is ringed and labelled.</desc>
+  <text x="250" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Read the tilt, spot the exception</text>
+  <line x1="90" y1="380" x2="452" y2="380" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="90" y1="305" x2="452" y2="305" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="90" y1="230" x2="452" y2="230" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="90" y1="155" x2="452" y2="155" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="90" y1="80" x2="452" y2="80" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="82" y="384" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">40</text>
+  <text x="82" y="309" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">55</text>
+  <text x="82" y="234" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">70</text>
+  <text x="82" y="159" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">85</text>
+  <text x="82" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">100</text>
+  <line x1="90" y1="380" x2="90" y2="386" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="90" y="402" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <line x1="145" y1="380" x2="145" y2="386" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="145" y="402" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1</text>
+  <line x1="200" y1="380" x2="200" y2="386" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="200" y="402" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2</text>
+  <line x1="255" y1="380" x2="255" y2="386" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="255" y="402" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">3</text>
+  <line x1="310" y1="380" x2="310" y2="386" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="310" y="402" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4</text>
+  <line x1="365" y1="380" x2="365" y2="386" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="365" y="402" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">5</text>
+  <line x1="420" y1="380" x2="420" y2="386" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="420" y="402" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">6</text>
+  <circle cx="282.5" cy="220" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="365" cy="130" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="200" cy="305" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="337.5" cy="165" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="255" cy="275" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="420" cy="105" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="310" cy="140" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="227.5" cy="245" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="392.5" cy="175" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="145" cy="320" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="117.5" cy="355" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="172.5" cy="190" r="7" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="172.5" cy="190" r="16" fill="none" stroke="#C42B8C" stroke-width="2" stroke-dasharray="5 4"/>
+  <rect x="110" y="100" width="190" height="58" rx="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="205" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1.5 hours, and 78.</text>
+  <text x="205" y="144" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">Every cloud has one.</text>
+  <line x1="200" y1="160" x2="184" y2="176" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C42B8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(184 176) rotate(135.0)"/>
+  <line x1="90" y1="70" x2="90" y2="380" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="90" y1="380" x2="452" y2="380" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="255" y="428" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Study hours per week</text>
+  <text x="48" y="230" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle" transform="rotate(-90 48 230)">Score (points out of 100)</text>
+  <text x="250" y="462" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Up and to the right, fairly tight, with one dot that argues.</text>
+</svg>

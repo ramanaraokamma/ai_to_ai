@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img">
+  <title>Why we hard-code the answers first</title>
+  <desc>A circular arrow with three stations - change one thing, run it, read the last line - showing one lap of the debugging loop. Below, two proportional bars on a seconds axis: a short two-second bar labelled hard-coded, and a bar sixteen times longer labelled forty seconds, typed by hand.</desc>
+  <text x="250" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Why we hard-code the answers first</text>
+  <path d="M294 74 A88 88 0 1 1 206 74" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(206 74) rotate(-30)"/>
+  <rect x="177.8" y="22" width="144.4" height="32" rx="8" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="250" y="38" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">change one thing</text>
+  <rect x="314.8" y="186" width="70.4" height="32" rx="8" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="350" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">run it</text>
+  <rect x="70.39999999999999" y="186" width="159.20000000000002" height="32" rx="8" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="150" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">read the last line</text>
+  <text x="250" y="144" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">one lap</text>
+  <text x="250" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">of the loop</text>
+  <line x1="120" y1="322" x2="442" y2="322" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="120" y1="322" x2="120" y2="328" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="120" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <line x1="200" y1="322" x2="200" y2="328" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="200" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">10</text>
+  <line x1="280" y1="322" x2="280" y2="328" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="280" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">20</text>
+  <line x1="360" y1="322" x2="360" y2="328" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="360" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">30</text>
+  <line x1="440" y1="322" x2="440" y2="328" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="440" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">40</text>
+  <rect x="120" y="246" width="16" height="28" fill="#1B7A4B"/>
+  <text x="144" y="264" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">2 s</text>
+  <text x="112" y="264" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end">hard-coded</text>
+  <rect x="120" y="284" width="320" height="28" fill="#CC2B1D"/>
+  <text x="448" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">40 s</text>
+  <text x="112" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end">typed by hand</text>
+  <text x="281" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">seconds to do one lap</text>
+  <text x="250" y="412" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">You go round this loop thirty times in one lesson.</text>
+  <text x="250" y="436" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Hard-coding the six answers is not laziness. It is twenty minutes saved.</text>
+  <text x="250" y="468" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Swap in input() last, once the arithmetic already works.</text>
+</svg>

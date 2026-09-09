@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Marking code that nearly works</title>
+  <desc>A five-rung ladder of marks out of four. Four out of four, green with a tick: it runs, it is correct and it reports honestly. Three out of four, green: correct but the number has no label or row count. Two out of four, amber: one idea right, one missing. One out of four, amber: the right shape on the page but wrong logic. Zero out of four, red with a cross: blank, or English where code was asked for.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Marking code that nearly works</text>
+  <text x="400" y="64" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">A program is not right or wrong. It is right in parts, and you mark the parts.</text>
+  <rect x="40" y="92" width="96" height="46" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="88" y="115" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">4 / 4</text>
+  <rect x="148" y="92" width="612" height="46" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="166" y="115" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">It runs, it is correct, and it reports honestly</text>
+  <g transform="translate(722,101) scale(0.4118)"><circle cx="34" cy="34" r="32" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="4"/><polyline points="18,36 29,48 52,22" fill="none" stroke="#1B7A4B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <rect x="40" y="148" width="96" height="46" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="88" y="171" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">3 / 4</text>
+  <rect x="148" y="148" width="612" height="46" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="166" y="171" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">It runs and is correct, but the number has no label or no row count</text>
+  <g transform="translate(722,157) scale(0.4118)"><circle cx="34" cy="34" r="32" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="4"/><polyline points="18,36 29,48 52,22" fill="none" stroke="#1B7A4B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <rect x="40" y="204" width="96" height="46" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="88" y="227" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">2 / 4</text>
+  <rect x="148" y="204" width="612" height="46" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="166" y="227" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">One idea right, one missing: off-by-one, wrong axis, print for return</text>
+  <rect x="40" y="260" width="96" height="46" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="88" y="283" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1 / 4</text>
+  <rect x="148" y="260" width="612" height="46" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="166" y="283" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Right shape on the page: correct keywords and indenting, wrong logic</text>
+  <rect x="40" y="316" width="96" height="46" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="88" y="339" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">0 / 4</text>
+  <rect x="148" y="316" width="612" height="46" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="166" y="339" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Blank, or English sentences where code was asked for</text>
+  <g transform="translate(722,325) scale(0.4118)"><circle cx="34" cy="34" r="32" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="4"/><line x1="22" y1="22" x2="46" y2="46" stroke="#CC2B1D" stroke-width="7" stroke-linecap="round"/><line x1="46" y1="22" x2="22" y2="46" stroke="#CC2B1D" stroke-width="7" stroke-linecap="round"/></g>
+  <text x="400" y="382" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">A wrong answer with a correct trace table has shown you the thinking. Pay for it.</text>
+</svg>

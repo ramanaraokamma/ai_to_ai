@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img">
+  <title>The lie lives below the axis</title>
+  <desc>A bar chart of two classes at 49 and 51 per cent whose y axis starts at 48.6, so the 7A bar is a stub and the 7B bar is three times taller. Below the axis a broken-axis mark and a grey block state that 48.6 units were cut off both bars.</desc>
+  <text x="250" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The lie lives below the axis</text>
+  <line x1="120" y1="268" x2="400" y2="268" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="112" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">49</text>
+  <line x1="120" y1="198" x2="400" y2="198" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="112" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">50</text>
+  <line x1="120" y1="128" x2="400" y2="128" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="112" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">51</text>
+  <rect x="140" y="268" width="70" height="72" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="270" y="128" width="70" height="212" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="175" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">49%</text>
+  <text x="305" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">51%</text>
+  <line x1="120" y1="90" x2="120" y2="340" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="120" y1="340" x2="400" y2="340" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="175" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">7A</text>
+  <text x="305" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">7B</text>
+  <line x1="112" y1="352" x2="128" y2="340" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round"/>
+  <line x1="112" y1="360" x2="128" y2="348" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round"/>
+  <rect x="120" y="376" width="280" height="66" rx="8" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="260" y="402" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">48.6 units cut off both bars</text>
+  <text x="260" y="424" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">99% of 7A's real bar is missing</text>
+  <rect x="132" y="96" width="190" height="60" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="227" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">7A looks tiny here.</text>
+  <text x="227" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">7A is 49 out of 100.</text>
+  <line x1="180" y1="160" x2="180" y2="258" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C42B8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(180 258) rotate(90.0)"/>
+  <text x="250" y="470" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Nothing was faked. Most of both bars is simply gone.</text>
+</svg>

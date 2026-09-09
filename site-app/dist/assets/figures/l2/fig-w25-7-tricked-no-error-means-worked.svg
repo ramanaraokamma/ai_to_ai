@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A program that ran is not a chart that exists</title>
+  <desc>Two panels. On the left, outlined red, a terminal prints two seatbelt lines and nothing else, the folder beside it is empty, and a cross marks the result: no error, and no picture anywhere. On the right, outlined green, the same program with one extra savefig line prints the word saved, and the folder now holds a file called visits dot png, marked with a tick.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A program that ran is not a chart that exists</text>
+
+  <rect x="24" y="70" width="364" height="274" rx="12" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M24 82 A12 12 0 0 1 36 70 H376 A12 12 0 0 1 388 82 V104 H24 Z" fill="#F6AEA6"/>
+  <line x1="24" y1="104" x2="388" y2="104" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="206" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">no savefig line</text>
+
+  <rect x="42" y="118" width="196" height="94" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="54" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Terminal</text>
+  <text x="54" y="162" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">weeks : 12</text>
+  <text x="54" y="182" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">visits: 12</text>
+  <text x="54" y="202" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">&gt;</text>
+
+  <rect x="254" y="118" width="118" height="94" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="313" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the folder</text>
+  <text x="313" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D" text-anchor="middle">empty</text>
+
+  <text x="206" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">No error. No warning. No file.</text>
+  <text x="206" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">The chart was built and left in memory.</text>
+  <circle cx="206" cy="298" r="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="197.6" y1="289.6" x2="214.4" y2="306.4"/><line x1="214.4" y1="289.6" x2="197.6" y2="306.4"/></g>
+  <text x="206" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">A silent success is not a success.</text>
+
+  <rect x="412" y="70" width="364" height="274" rx="12" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M412 82 A12 12 0 0 1 424 70 H764 A12 12 0 0 1 776 82 V104 H412 Z" fill="#E2F7ED"/>
+  <line x1="412" y1="104" x2="776" y2="104" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="594" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">one savefig line added</text>
+
+  <rect x="430" y="118" width="196" height="94" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="442" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Terminal</text>
+  <text x="442" y="162" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">weeks : 12</text>
+  <text x="442" y="182" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">visits: 12</text>
+  <text x="442" y="202" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#1B7A4B">saved visits.png</text>
+
+  <rect x="642" y="118" width="118" height="94" rx="10" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="701" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the folder</text>
+  <path d="M672 152 H716 L730 166 V194 A5 5 0 0 1 725 199 H677 A5 5 0 0 1 672 194 Z" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="701" y="180" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">visits</text>
+
+  <text x="594" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">A file you can open, print and hand in.</text>
+  <text x="594" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Same code, plus sixteen more characters.</text>
+  <circle cx="594" cy="298" r="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <polyline points="587.4,299.2 592.8,304.6 601.2,290.8" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="594" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Look in the folder, not at the terminal.</text>
+
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The question is never "did it error?" It is "where is the file?"</text>
+</svg>

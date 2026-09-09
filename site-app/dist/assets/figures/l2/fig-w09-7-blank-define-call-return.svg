@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Label the definition, the calls and what comes back</title>
+  <desc>An unlabelled diagram to fill in. On the left a blank recipe card with a blank name plate above it and a blank box asking what happens when it is written. In the middle three blank buttons with arrows pointing at the card. On the right two blank boxes, one for what a returning block hands over and one for what a printing block hands over. Four empty pink caption boxes underneath ask for the word for writing it, the word for running it, what empty brackets mean, and what a block with no return hands back.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Label the definition, the calls and what comes back</text>
+
+  <rect x="20" y="60" width="760" height="232" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <rect x="44" y="86" width="150" height="28" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="119" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">what goes on the name plate?</text>
+  <rect x="44" y="142" width="150" height="94" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="3" stroke-linejoin="round"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="62" y1="174" x2="176" y2="174"/>
+    <line x1="62" y1="196" x2="176" y2="196"/>
+    <line x1="62" y1="218" x2="150" y2="218"/>
+  </g>
+  <text x="119" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">how many times does this run</text>
+  <text x="119" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">when you write it?</text>
+
+  <g stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round">
+    <rect x="248" y="128" width="76" height="30" rx="8" fill="#FFFFFF"/>
+    <rect x="248" y="172" width="76" height="30" rx="8" fill="#FFFFFF"/>
+    <rect x="248" y="216" width="76" height="30" rx="8" fill="#FFFFFF"/>
+  </g>
+  <g stroke="#14202B" stroke-width="2" stroke-linecap="round">
+    <line x1="246" y1="143" x2="200" y2="170"/>
+    <line x1="246" y1="187" x2="200" y2="189"/>
+    <line x1="246" y1="231" x2="200" y2="208"/>
+  </g>
+  <text x="286" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">what are these three?</text>
+
+  <rect x="392" y="118" width="180" height="44" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="3" stroke-linejoin="round"/>
+  <text x="482" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">a block that RETURNS 75.0 hands over...</text>
+  <line x1="572" y1="140" x2="612" y2="140" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(612 140)"/>
+  <rect x="614" y="118" width="140" height="44" rx="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="684" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">so this box holds...</text>
+
+  <rect x="392" y="208" width="180" height="44" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="3" stroke-linejoin="round"/>
+  <text x="482" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">a block that PRINTS 75.0 hands over...</text>
+  <line x1="572" y1="230" x2="612" y2="230" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 5"/>
+  <rect x="614" y="208" width="140" height="44" rx="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="684" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">so this box holds...</text>
+
+  <rect x="24" y="326" width="176" height="46" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="112" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">writing it is called...</text>
+  <rect x="212" y="326" width="176" height="46" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="300" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">running it is called...</text>
+  <rect x="400" y="326" width="176" height="46" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="488" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the brackets mean...</text>
+  <rect x="588" y="326" width="176" height="46" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="676" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">no return hands back...</text>
+</svg>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Five kinds of project, and when you are ready for each</title>
+  <desc>Five coloured cards side by side. Data Detective, collect it clean it find something, after week 24. Build a Tool, a program somebody actually uses, after week 16. Teach a Machine, X y split fit honest score, after week 30. Test It Honestly, break it measure it admit it, after week 33. Creative Code, make a thing that did not exist, after week 12. A week ruler underneath runs from week 1 to week 36.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Five kinds of project, and when you are ready for each</text>
+  <rect x="40" y="82" width="140" height="210" rx="12" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="110.0" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Data</text>
+  <text x="110.0" y="136" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Detective</text>
+  <line x1="60" y1="170" x2="160" y2="170" stroke="#1F6FB2" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="110.0" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">collect it,</text>
+  <text x="110.0" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">clean it,</text>
+  <text x="110.0" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">find something</text>
+  <rect x="56" y="254" width="108" height="30" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="110.0" y="269" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">after W24</text>
+  <rect x="185" y="82" width="140" height="210" rx="12" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="255.0" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Build a</text>
+  <text x="255.0" y="136" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Tool</text>
+  <line x1="205" y1="170" x2="305" y2="170" stroke="#845F00" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="255.0" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">a program</text>
+  <text x="255.0" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">somebody</text>
+  <text x="255.0" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">actually uses</text>
+  <rect x="201" y="254" width="108" height="30" rx="8" fill="#FFFFFF" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <text x="255.0" y="269" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">after W16</text>
+  <rect x="330" y="82" width="140" height="210" rx="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="400.0" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Teach a</text>
+  <text x="400.0" y="136" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Machine</text>
+  <line x1="350" y1="170" x2="450" y2="170" stroke="#6D28D9" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="400.0" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">X, y, split,</text>
+  <text x="400.0" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">fit, honest</text>
+  <text x="400.0" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">score</text>
+  <rect x="346" y="254" width="108" height="30" rx="8" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400.0" y="269" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">after W30</text>
+  <rect x="475" y="82" width="140" height="210" rx="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="545.0" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Test It</text>
+  <text x="545.0" y="136" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Honestly</text>
+  <line x1="495" y1="170" x2="595" y2="170" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="545.0" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">break it,</text>
+  <text x="545.0" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">measure it,</text>
+  <text x="545.0" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">admit it</text>
+  <rect x="491" y="254" width="108" height="30" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="545.0" y="269" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">after W33</text>
+  <rect x="620" y="82" width="140" height="210" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="690.0" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Creative</text>
+  <text x="690.0" y="136" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Code</text>
+  <line x1="640" y1="170" x2="740" y2="170" stroke="#1B7A4B" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="690.0" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">make a thing</text>
+  <text x="690.0" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">that did not</text>
+  <text x="690.0" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">exist</text>
+  <rect x="636" y="254" width="108" height="30" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="690.0" y="269" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">after W12</text>
+  <line x1="40" y1="322" x2="760" y2="322" stroke="#C7CDD4" stroke-width="3" stroke-linecap="round"/>
+  <line x1="40.0" y1="314" x2="40.0" y2="330" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="40.0" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">W1</text>
+  <line x1="266.2857142857143" y1="314" x2="266.2857142857143" y2="330" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="266.2857142857143" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">W12</text>
+  <line x1="348.57142857142856" y1="314" x2="348.57142857142856" y2="330" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="348.57142857142856" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">W16</text>
+  <line x1="513.1428571428571" y1="314" x2="513.1428571428571" y2="330" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="513.1428571428571" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">W24</text>
+  <line x1="636.5714285714286" y1="314" x2="636.5714285714286" y2="330" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="636.5714285714286" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">W30</text>
+  <line x1="698.2857142857142" y1="314" x2="698.2857142857142" y2="330" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="698.2857142857142" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">W33</text>
+  <line x1="760.0" y1="314" x2="760.0" y2="330" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="760.0" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">W36</text>
+  <text x="400" y="382" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Pick one because you want to know the answer. Not because it sounds impressive.</text>
+</svg>

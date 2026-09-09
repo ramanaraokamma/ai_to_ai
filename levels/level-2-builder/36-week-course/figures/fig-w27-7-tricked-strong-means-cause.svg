@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A stronger correlation is not a better reason</title>
+  <desc>Two panels. On the left, outlined red, a card reading r equals 0.997 has one arrow from ice creams to drownings and is marked with a cross, with a note that this is the strongest of the three numbers and the silliest. On the right, outlined green, an amber box reading hot weather has two arrows, one to ice creams and one to swimming and drownings, and is marked with a tick, with the two supporting correlations printed underneath.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A stronger correlation is not a better reason</text>
+
+  <rect x="24" y="70" width="364" height="274" rx="12" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M24 82 A12 12 0 0 1 36 70 H376 A12 12 0 0 1 388 82 V104 H24 Z" fill="#F6AEA6"/>
+  <line x1="24" y1="104" x2="388" y2="104" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="206" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">"0.997, so it must be a cause"</text>
+
+  <line x1="150" y1="164" x2="228" y2="164" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(232 164) rotate(0)"/>
+  <rect x="46" y="140" width="104" height="48" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="98" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">ice creams</text>
+  <rect x="238" y="140" width="112" height="48" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="294" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">drownings</text>
+  <text x="191" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">r = 0.997</text>
+
+  <text x="206" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D" text-anchor="middle">"Ban ice cream and nobody drowns."</text>
+  <text x="206" y="246" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">The strongest of the three numbers,</text>
+  <text x="206" y="264" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">and the only one that is nonsense.</text>
+  <circle cx="206" cy="300" r="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="197.6" y1="291.6" x2="214.4" y2="308.4"/><line x1="214.4" y1="291.6" x2="197.6" y2="308.4"/></g>
+  <text x="206" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Strength says nothing about direction.</text>
+
+  <rect x="412" y="70" width="364" height="274" rx="12" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M412 82 A12 12 0 0 1 424 70 H764 A12 12 0 0 1 776 82 V104 H412 Z" fill="#E2F7ED"/>
+  <line x1="412" y1="104" x2="776" y2="104" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="594" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">a third thing causes both</text>
+
+  <path d="M594 168 V196 H502 V214" fill="none" stroke="#845F00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M594 168 V196 H686 V214" fill="none" stroke="#845F00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#845F00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(502 218) rotate(90)"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#845F00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(686 218) rotate(90)"/>
+  <rect x="522" y="126" width="144" height="42" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="594" y="147" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">hot weather</text>
+  <rect x="448" y="222" width="108" height="46" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="502" y="245" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">ice creams</text>
+  <rect x="632" y="222" width="108" height="46" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="686" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">swimming,</text>
+  <text x="686" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">then drownings</text>
+  <text x="472" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#845F00" text-anchor="middle">r = 0.987</text>
+  <text x="716" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#845F00" text-anchor="middle">r = 0.989</text>
+
+  <circle cx="594" cy="300" r="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <polyline points="587.4,301.2 592.8,306.6 601.2,292.8" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="594" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Name the third thing. That is the whole skill.</text>
+
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The picture is identical in both worlds. Only what you know about the world tells them apart.</text>
+</svg>

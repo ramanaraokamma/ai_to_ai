@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>R-squared is not accuracy</title>
+  <desc>Two panels. On the left, marked wrong, an R-squared of 0.804 is read out as eighty per cent accurate, next to a reminder that not one of the six predictions was exactly right. On the right, marked right, the same result is reported two ways: a mean absolute error of 2.67 marks, which is the number you say to a person, and an R-squared of 0.804 described as how much better than guessing the average, with no units and no per cent sign.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">R&#178; is not accuracy</text>
+  <line x1="400" y1="70" x2="400" y2="372" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <circle cx="62" cy="92" r="14" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><line x1="55" y1="85" x2="69" y2="99" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/><line x1="69" y1="85" x2="55" y2="99" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  <text x="86" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#CC2B1D" text-anchor="start" dominant-baseline="central">WRONG</text>
+  <rect x="60" y="122" width="292" height="72" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="206" y="150" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">&#8220;80% accurate&#8221;</text>
+  <text x="206" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D" text-anchor="middle">from R&#178; = 0.804</text>
+  <text x="206" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">80% of what?</text>
+  <rect x="86" y="240" width="240" height="94" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="206" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">predictions that were</text>
+  <text x="206" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">exactly right:</text>
+  <text x="206" y="312" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#CC2B1D" text-anchor="middle">0 out of 6</text>
+  <text x="206" y="364" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">A percentage of nothing.</text>
+  <circle cx="442" cy="92" r="14" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="435,92 440,98 450,85" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="466" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#1B7A4B" text-anchor="start" dominant-baseline="central">RIGHT</text>
+  <rect x="440" y="122" width="292" height="88" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="586" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">for a person &#8212; has units</text>
+  <text x="586" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">off by 2.67 marks</text>
+  <text x="586" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle">MAE, in the units of the thing itself</text>
+  <rect x="440" y="226" width="292" height="88" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="586" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">for comparing models &#8212; no units</text>
+  <text x="586" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">R&#178; = 0.804</text>
+  <text x="586" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1F6FB2" text-anchor="middle">how much better than guessing the average</text>
+  <text x="586" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Print both. Put the units on the MAE.</text>
+  <text x="586" y="364" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Never put a per cent sign on R&#178;.</text>
+</svg>

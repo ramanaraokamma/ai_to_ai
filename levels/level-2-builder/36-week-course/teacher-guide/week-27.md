@@ -37,6 +37,8 @@ Observable evidence: a saved two-panel PNG with the lie on the left and the fix 
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+> **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
+
 This is a review week, and review weeks are the easiest ones to teach badly. The temptation is to go back over weeks 19 to 26 in order. Do not. **The whole of Term 3 gets revised by being used**, inside one 70-minute build, and the build is deliberately dishonest, which is why students remember it.
 
 Read all of this section. §2 is arithmetic you must be able to do at the whiteboard, and §5 is the bit that will get you asked a hard question.
@@ -511,7 +513,7 @@ that is 27.9 mm per percentage point
 
 > "Eleven millimetres and sixty-seven millimetres. **That's what you measured with a ruler, twenty minutes ago, before I told you anything.** The program predicted your ruler.
 >
-> Those last four lines are doing something clever, by the way, and you can just copy them: they ask matplotlib how tall the drawing frame actually is in inches, turn that into millimetres, and divide by how many percentage points the axis covers. That gives millimetres per point. Then the bar lengths fall out."
+> Those last four lines are doing something clever, by the way, and they are worth reading once even if you type them straight in: they ask matplotlib how tall the drawing frame actually is in inches, turn that into millimetres, and divide by how many percentage points the axis covers. That gives millimetres per point. Then the bar lengths fall out."
 
 #### Step 2 — the honest version beside it, and 🐞 mistake #2 (10 min)
 
@@ -1212,7 +1214,6 @@ from students import build_students
 
 df = build_students()
 
-
 def chart1_club_sizes():
     """CONTEXT -- how many people would each choice affect?"""
     counts = df["club"].value_counts()
@@ -1226,7 +1227,6 @@ def chart1_club_sizes():
     fig.savefig("story_1_sizes.png", dpi=120, bbox_inches="tight")
     plt.close(fig)
 
-
 def chart2_all_scores():
     """BASELINE -- what does the whole school look like before we split it up?"""
     print("2) mean", round(df["score"].mean(), 1), "median", df["score"].median())
@@ -1238,7 +1238,6 @@ def chart2_all_scores():
     ax.set_ylabel("Number of students (count)")
     fig.savefig("story_2_all_scores.png", dpi=120, bbox_inches="tight")
     plt.close(fig)
-
 
 def chart3_score_by_club():
     """THE FINDING -- the chart the argument rests on."""
@@ -1254,7 +1253,6 @@ def chart3_score_by_club():
     plt.close(fig)
     return means
 
-
 def chart4_hours_vs_score():
     """THE CHALLENGE -- maybe it is not the club at all."""
     r = df["hours"].corr(df["score"])
@@ -1267,7 +1265,6 @@ def chart4_hours_vs_score():
     fig.savefig("story_4_hours_vs_score.png", dpi=120, bbox_inches="tight")
     plt.close(fig)
     return r
-
 
 def chart5_hours_by_club():
     """THE CAVEAT -- the thing that might be doing the real work."""
@@ -1282,7 +1279,6 @@ def chart5_hours_by_club():
     fig.savefig("story_5_hours_by_club.png", dpi=120, bbox_inches="tight")
     plt.close(fig)
     return means
-
 
 chart1_club_sizes()
 chart2_all_scores()

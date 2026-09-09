@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Which score are you allowed to quote?</title>
+  <desc>Two panels. On the left, marked wrong, a score of 0.9417 measured on the 120 training rows is quoted as ninety four percent accurate with no row count; the note says the model had already seen every one of those rows with the answers, so it is a memory test. On the right, marked right, a score of 0.7333 measured on the 30 held-back rows is quoted with its row count attached, because it is the only number that says anything about a row that has not happened yet.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Which score are you allowed to quote?</text>
+  <line x1="400" y1="70" x2="400" y2="372" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="6 5"/>
+  <circle cx="62" cy="92" r="14" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><line x1="55" y1="85" x2="69" y2="99" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/><line x1="69" y1="85" x2="55" y2="99" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  <text x="86" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#CC2B1D" text-anchor="start" dominant-baseline="central">WRONG</text>
+  <text x="210" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">scored on the rows it studied</text>
+  <rect x="96" y="140" width="228" height="76" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="210" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">0.9417</text>
+  <text x="210" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">the 120 training rows</text>
+  <rect x="96" y="236" width="228" height="58" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="210" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">"my model is 94% accurate"</text>
+  <text x="210" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">no row count, no honesty</text>
+  <text x="210" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">It had already seen every one of</text>
+  <text x="210" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">those rows, with the answers.</text>
+  <text x="210" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">This is a memory test, not a score.</text>
+  <circle cx="442" cy="92" r="14" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="435,92 440,98 450,85" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="466" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#1B7A4B" text-anchor="start" dominant-baseline="central">RIGHT</text>
+  <text x="590" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">scored on the rows it never saw</text>
+  <rect x="476" y="140" width="228" height="76" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="590" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">0.7333</text>
+  <text x="590" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">the 30 held-back rows</text>
+  <rect x="476" y="236" width="228" height="58" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="590" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">"0.7333 on 30 held-back rows"</text>
+  <text x="590" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle">number and denominator, together</text>
+  <text x="590" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">This is the only number that says</text>
+  <text x="590" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">anything about a row that has not</text>
+  <text x="590" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">happened yet.</text>
+</svg>

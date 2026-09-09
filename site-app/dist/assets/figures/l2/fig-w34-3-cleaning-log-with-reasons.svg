@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A log line without a reason is only a receipt</title>
+  <desc>Two mirrored panels each holding a sticky note. The crossed panel's note says only dropped 3 rows. The ticked panel's note says the same thing plus the reason, that you cannot learn from a row whose answer is unknown.</desc>
+<text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A log line without a reason is only a receipt</text>
+<rect x="30" y="76" width="360" height="250" rx="12" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+<rect x="410" y="76" width="360" height="250" rx="12" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="62" cy="108" r="15" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+<g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+  <line x1="56.705882352941174" y1="102.70588235294117" x2="67.29411764705883" y2="113.29411764705883"/>
+  <line x1="67.29411764705883" y1="102.70588235294117" x2="56.705882352941174" y2="113.29411764705883"/>
+</g>
+<circle cx="442" cy="108" r="15" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+<polyline points="434.94117647058823,108.88235294117646 439.79411764705884,114.17647058823529 449.94117647058823,102.70588235294117" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="88" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">action only</text>
+<text x="468" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">action and reason</text>
+<path d="M54 150 H364 V232 L342 254 H54 Z" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+<path d="M342 254 V232 H364 Z" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+<text x="200" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">5. Dropped 3 rows.</text>
+<text x="210" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">A fact. Nobody can agree or disagree</text>
+<text x="210" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">with a fact, so nobody can check it.</text>
+<path d="M434 150 H744 V232 L722 254 H434 Z" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+<path d="M722 254 V232 H744 Z" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+<text x="452" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">5. Dropped 3 rows with no minutes</text>
+<text x="452" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">value - you cannot learn from a row</text>
+<text x="452" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">whose answer is unknown, and</text>
+<text x="452" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">inventing one would be making it up.</text>
+<text x="590" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">An argument. A stranger can follow it,</text>
+<text x="590" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">check it, and tell you they disagree.</text>
+<text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Same change, same row count. The reason is the whole difference.</text>
+</svg>
