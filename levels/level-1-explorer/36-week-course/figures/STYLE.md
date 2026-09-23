@@ -1074,7 +1074,9 @@ grep -nE '<svg[^>]+(width|height)=' fig-w07-1-my-figure.svg && echo "REMOVE widt
 
 Then, by eye:
 
-- [ ] `<title>` matches the markdown alt text word for word.
+- [ ] `<title>` states the figure's takeaway; the markdown alt text describes what a sighted
+      reader sees. They may differ — alt says *what is drawn*, `<title>` says *what it means*.
+      Both must be accurate and non-empty. Identical is acceptable but not required.
 - [ ] Every colour is from &sect;1, used in its role.
 - [ ] Nothing within 20px of the canvas edge.
 - [ ] Every meaningful distinction has a shape or label as well as a colour.

@@ -1,8 +1,8 @@
 # 🖥️ AI Academy — the website
 
-A local, self-contained website for the AI Academy 36-week courses — **Level 1 Explorer and Level 2
-Builder** — with **two passcodes**: one for the student, one for the teacher. Without a passcode you
-see the level picker and nothing else.
+A local, self-contained website for the AI Academy 36-week courses — **Level 1 Explorer, Level 2
+Builder and Level 3 Engineer** — with **two passcodes**: one for the student, one for the teacher.
+Without a passcode you see the level picker and nothing else.
 
 ```
 site-app/
@@ -27,7 +27,7 @@ site-app/
 | 🧑‍🏫 **Teacher** | `teacher1234` | everything above **plus** 36 lesson scripts · orientation · 4 term tests · marking guide · exit exam · style guide |
 | 🔓 **No passcode** | — | the root level picker only |
 
-One passcode pair covers **both levels** — unlock once, browse either year.
+One passcode pair covers **all three levels** — unlock once, browse any year.
 
 ### Routes
 
@@ -35,13 +35,25 @@ One passcode pair covers **both levels** — unlock once, browse either year.
 /                     level picker (public)
 /l1/index.html        Level 1 Explorer — year plan, passcode gate
 /l2/index.html        Level 2 Builder  — year plan, passcode gate
-/l2/chapter/week-07.html   /l2/workbook/week-07.html   /l2/lesson/week-07.html
-/l2/tests/term-2.html      /l2/projects/ideas.html     /l2/gallery.html
+/l3/index.html        Level 3 Engineer — year plan, passcode gate
+/l3/chapter/week-07.html   /l3/workbook/week-07.html   /l3/lesson/week-07.html
+/l3/tests/term-2.html      /l3/projects/ideas.html     /l3/gallery.html
 ```
 
-A level chip in the header switches years from any page. Add a level by appending to
-`ALL_LEVELS` in `build.py`; a level whose `36-week-course/` folder doesn't exist yet is skipped
-automatically and listed as "not built yet" on the root page.
+A level chip in the header switches years from any page. Add a level by appending to `ALL_LEVELS` in
+`build.py`.
+
+**A level ships only when it is finished.** `_level_is_complete()` requires the README plus all 36
+weeks in all three books; otherwise the build prints exactly what is short and the level is listed as
+"not built yet" on the root page:
+
+```
+skipping L4 Innovator: incomplete: teacher-guide 36 week(s) short, ...
+```
+
+A half-built level on the site reads as broken links rather than as work in progress, which is why
+the gate is strict — and why Level 3 appeared automatically, with no code change, the moment its last
+workbook landed.
 
 The server binds to `127.0.0.1` only — **nothing is published**, nothing leaves your machine, and no
 internet is needed after the build.
@@ -55,8 +67,8 @@ internet is needed after the build.
 
 ## What "locked" means here
 
-**Only the root `index.html` is readable without a passcode.** Every other page — 266 of them plus
-two galleries and two level homes — ships as a ~20 KB shell containing navigation and a passcode
+**Only the root `index.html` is readable without a passcode.** Every other page — 399 of them plus
+three galleries and three level homes — ships as a ~20 KB shell containing navigation and a passcode
 form, with an **empty content element**. The words live in a separate encrypted file.
 
 On each level's home page:
@@ -81,8 +93,8 @@ Real encryption, not a hidden `<div>`.
 ```
         passcode                    key                    what it opens
    ────────────────────      ─────────────────    ──────────────────────────────
-   "student1234"  ──PBKDF2──►  K_student  ────────►  178 student-tier pages (both levels)
-   "teacher1234"  ──PBKDF2──►  K_teacher  ────────►   88 teacher-tier pages (both levels)
+   "student1234"  ──PBKDF2──►  K_student  ────────►  267 student-tier pages (all levels)
+   "teacher1234"  ──PBKDF2──►  K_teacher  ────────►  132 teacher-tier pages (all levels)
                                    │
                                    └── decrypts ──►  wrapped K_student
                                                      (one unlock opens both tiers)
@@ -102,14 +114,14 @@ Real encryption, not a hidden `<div>`.
 
 | Test | Result |
 |---|---|
-| `student1234` on an L1 or L2 chapter | opens ✅ |
-| `student1234` on an L1 or L2 lesson script | blocked, `InvalidTag` ✅ |
-| `student1234` on an L2 term test | blocked, `InvalidTag` ✅ |
-| `teacher1234` on lesson scripts and term tests, both levels | opens ✅ |
+| `student1234` on an L1/L2/L3 chapter | opens ✅ |
+| `student1234` on an L1/L2/L3 lesson script | blocked, `InvalidTag` ✅ |
+| `student1234` on an L2 or L3 term test | blocked, `InvalidTag` ✅ |
+| `teacher1234` on lesson scripts and term tests, all three levels | opens ✅ |
 | `teacher1234` → unwrapped student key | matches the derived student key bit-for-bit ✅ |
 | `student1234` → unwrap the wrapper | blocked, `InvalidTag` ✅ |
 | wrong passcode on anything | blocked, `InvalidTag` ✅ |
-| 11 distinctive sentences from both tiers of both levels, searched across all 543 generated text files | **0 found in plaintext** ✅ |
+| Distinctive sentences from both tiers of every level, searched across all generated text files | **0 found in plaintext** ✅ |
 | Un-authenticated fetch of any content page | content element is empty (`0` bytes of body) ✅ |
 | All 17 routes over HTTP | 200 ✅ |
 
@@ -149,19 +161,19 @@ and tests are gated.
 
 ## What gets built
 
-| | Level 1 | Level 2 | Total |
-|---|--:|--:|--:|
-| Weeks | 36 | 36 | 72 |
-| Pages | 133 | 133 | 266 |
-| SVG figures | 450 | 358 | 808 |
+| | Level 1 | Level 2 | Level 3 | Total |
+|---|--:|--:|--:|--:|
+| Weeks | 36 | 36 | 36 | 108 |
+| Pages | 133 | 133 | 133 | 399 |
+| SVG figures | 450 | 358 | 329 | 1,137 |
 
 | | |
 |---|---|
 | Public pages | 1 (the root level picker) |
-| Student-tier encrypted pages | 178 + 2 galleries |
-| Teacher-tier encrypted pages | 88 |
-| Total files / size | 1,353 / ~41 MB |
-| Broken internal references | **0** (7,352 checked, including inside decrypted bodies) |
+| Student-tier encrypted pages | 267 + 3 galleries |
+| Teacher-tier encrypted pages | 132 |
+| Total files / size | 1,952 / ~67 MB |
+| Broken internal references | **0** (10,960 checked, including inside decrypted bodies) |
 | Build time | ~3 s |
 
 **Features:** sidebar tree grouped by term that reacts to role and mode · `/` focuses search · live

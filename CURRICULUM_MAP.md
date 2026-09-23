@@ -4,15 +4,16 @@
 
 > ### 📚 This map covers the **self-study module track**
 >
-> Levels 1 and 2 also exist as a **36-week taught course** — the same content re-cut into weekly
-> classes, with three books a week (teacher guide · student guide · workbook), 808 illustrations,
+> Levels 1, 2 and 3 also exist as a **36-week taught course** — the same content re-cut into weekly
+> classes, with three books a week (teacher guide · student guide · workbook), 1,140 illustrations,
 > term tests and project banks. If an adult is teaching the learner, that is the edition to use.
 >
 > → [Level 1, 36 weeks](levels/level-1-explorer/36-week-course/README.md) ·
 > [Level 2, 36 weeks](levels/level-2-builder/36-week-course/README.md) ·
+> [Level 3, 36 weeks](levels/level-3-engineer/36-week-course/README.md) ·
 > [how the two editions differ](README.md#-two-ways-through-this-course)
 >
-> Levels 3 and 4 are self-study only for now, so this map is the plan for them.
+> Level 4 is self-study only for now, so this map is the plan for it.
 
 > **How to read this map.** Every module is one week (~3–5 hours). Every module has one mini-project.
 > Every module depends **only** on modules before it — there are no forward references anywhere in

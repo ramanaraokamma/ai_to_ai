@@ -45,8 +45,9 @@ That is the job. **You are not the answer key. You are the person the learner ha
 >
 > - [Level 1 · 36-week teacher guide](../levels/level-1-explorer/36-week-course/teacher-guide/00-orientation.md)
 > - [Level 2 · 36-week teacher guide](../levels/level-2-builder/36-week-course/teacher-guide/00-orientation.md)
+> - [Level 3 · 36-week teacher guide](../levels/level-3-engineer/36-week-course/teacher-guide/00-orientation.md) — assumes you know no calculus
 >
-> Come back here for Levels 3 and 4, which have no taught edition yet.
+> Come back here for Level 4, which has no taught edition yet.
 
 If you read nothing else in this file, read this:
 

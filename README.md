@@ -32,14 +32,18 @@ reference text alongside the weekly classes.
 | **Shape** | 36 weekly classes of 60–75 min | 36 modules, ~3.5 h/week |
 | **Adult needs to know AI?** | **No** — every class is scripted | n/a |
 | **Books per week** | Three: teacher guide · student guide · workbook | One: the module file |
-| **Illustrated** | 808 hand-drawn SVG figures across two levels | ASCII diagrams |
+| **Illustrated** | 1,140 hand-drawn SVG figures across three levels | ASCII diagrams |
 | **Extras** | 4 term tests · 50 project ideas · worked exemplar · offline site | Capstone · assessment · glossary |
-| **Available for** | **Levels 1 and 2** | **All four levels** |
+| **Available for** | **Levels 1, 2 and 3** | **All four levels** |
 | **Enter at** | [`levels/level-1-explorer/36-week-course/`](levels/level-1-explorer/36-week-course/) | [`levels/level-1-explorer/README.md`](levels/level-1-explorer/README.md) |
 
-> ⚠️ **Honest status:** the 36-week taught edition covers **Levels 1 and 2** — two full school
-> years, 72 weekly classes. Levels 3 and 4 are complete as self-study modules but have not been
-> expanded into weekly classes yet.
+> ⚠️ **Honest status:** the 36-week taught edition covers **Levels 1, 2 and 3** — three full school
+> years, 108 weekly classes, ~452,000 lines. Level 4 is complete as self-study modules but has not
+> been expanded into weekly classes yet.
+>
+> **Level 3 is offline by design.** `torchvision` is not required and no dataset downloads: image work
+> uses `load_digits()` (ships with scikit-learn) and numpy-generated images. CIFAR-10 appears only as
+> an optional "when you have internet" extension.
 
 **New here? → [START_HERE.md](START_HERE.md)** picks your track in one page.
 
@@ -71,7 +75,7 @@ grows with the material over roughly **2–3 years**.
 |:--:|---|:--:|---|:--:|:--:|---|
 | **1** | 🧭 **Explorer** | 6 | *Machines can learn from examples instead of being told rules* | 9 | **36 weeks taught** · ~12 weeks solo | Train an image classifier with no code, and explain training, testing, features, labels, and bias to an adult |
 | **2** | 🔨 **Builder** | 7–8 | *If you can write code, you can turn data into predictions* | 9 | **36 weeks taught** · ~20 weeks solo | Write Python, wrangle data with pandas, plot it, and train + honestly test real scikit-learn models |
-| **3** | ⚙️ **Engineer** | 9–10 | *A model is one part of a pipeline that must be measured and shipped* | 9 | ~24 weeks | Build the full supervised pipeline, code backprop from scratch, train CNNs in PyTorch, and ship a model |
+| **3** | ⚙️ **Engineer** | 9–10 | *A model is one part of a pipeline that must be measured and shipped* | 9 | **36 weeks taught** · ~24 weeks solo | Build the full supervised pipeline, code backprop from scratch, train CNNs in PyTorch, and ship a model |
 | **4** | 🚀 **Innovator** | 11–12 | *Modern AI is attention + scale + a learning signal from humans* | 9 | ~28 weeks | Build a tiny GPT from scratch, and ship a RAG-grounded, tool-using, evaluated AI agent |
 
 ### ASCII Roadmap
@@ -93,8 +97,8 @@ grows with the material over roughly **2–3 years**.
                                           ▼
                               ┌──────────────────────────┐
                               │   LEVEL 3 · ENGINEER     │   grades 9-10 · pipelines
-                              │   "Measure it. Ship it." │   ~24 weeks
-                              └───────────┬──────────────┘
+                              │   "Measure it. Ship it." │   36 weeks taught
+                              └───────────┬──────────────┘   (or ~24 weeks solo)
                                           │  gradient descent · backprop
                                           │  PyTorch · CNNs · NLP
                                           ▼
@@ -363,11 +367,14 @@ claude_AI_Academy/
     │   └── 36-week-course/       ★ THE TAUGHT EDITION — Python, a full school year
     │       (same layout as Level 1: 3 books x 36 weeks, tests, projects, 359 figures)
     ├── level-3-engineer/         ← same 13-file module shape
+    │   └── 36-week-course/       ★ THE TAUGHT EDITION — PyTorch, offline, a full school year
+    │       (3 books x 36 weeks, a maths ladder as well as a syntax ladder, 330 figures)
+    ├── level-3-engineer/         ← same 13-file module shape
     └── level-4-innovator/        ← same 13-file module shape
 ```
 
 **Every level folder has the same 13 files:** a README, 9 modules, a capstone, an assessment, and a
-glossary. **Levels 1 and 2 additionally have `36-week-course/`** — the taught edition: 120 markdown
+glossary. **Levels 1, 2 and 3 additionally have `36-week-course/`** — the taught edition: 120 markdown
 files per level, covering that level's 9 modules across a full school year.
 
 | Level | Intro | Capstone | Exit exam | Glossary |
@@ -408,7 +415,7 @@ The whole Level 1 course renders as a local site with **two passcodes**:
 
 | | Passcode | Opens |
 |---|---|---|
-| 🎒 Student | `student1234` | chapters · workbooks · projects · glossary · gallery, **both levels** |
+| 🎒 Student | `student1234` | chapters · workbooks · projects · glossary · gallery, **all three levels** |
 | 🧑‍🏫 Teacher | `teacher1234` | all of the above **plus** lesson scripts · orientation · term tests · answer keys |
 | 🔓 No passcode | — | the level picker only |
 

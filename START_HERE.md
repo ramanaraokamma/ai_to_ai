@@ -18,21 +18,21 @@ open every week.
 | **Shape** | 36 weekly classes, one class a week | 36 modules, one module a week |
 | **Adult needs to know AI?** | **No.** The teacher guide scripts every class | n/a |
 | **Books** | Three: teacher guide · student guide · workbook | One: the module file |
-| **Available for** | **Levels 1 and 2** | **All 4 levels** |
+| **Available for** | **Levels 1, 2 and 3** | **All 4 levels** |
 | **Start at** | [`levels/level-1-explorer/36-week-course/`](levels/level-1-explorer/36-week-course/) | [`levels/level-1-explorer/module-01-what-ai-is-and-isnt.md`](levels/level-1-explorer/module-01-what-ai-is-and-isnt.md) |
 
 > **Which should you choose?** If there is *any* adult who will sit with the learner for an hour a
-> week, choose the **Taught Course**. It is more thorough, it is illustrated with 808 drawings, and it
+> week, choose the **Taught Course**. It is more thorough, it is illustrated with 1,140 drawings, and it
 > does the adult's preparation for them. Choose Self-Study only if the learner is genuinely on their own.
 
 **They are not a fork in the road.** Same concepts, same order, same vocabulary. The 36-week course was
 built *from* the modules, so you can switch tracks or use the modules as the reference text alongside the
 weekly classes.
 
-> ⚠️ **Honest note:** the 36-week taught edition exists for **Levels 1 and 2** — two full school
-> years. Levels 3 and 4 are complete as self-study modules and have not been expanded into weekly
-> classes yet. When Level 2 ends (~2 years in), Level 3 continues on the module track, with the
-> [teacher guide](teacher-guide/README.md) for adult support.
+> ⚠️ **Honest note:** the 36-week taught edition exists for **Levels 1, 2 and 3** — three full
+> school years, 108 weekly classes. Level 4 is complete as self-study modules and has not been
+> expanded into weekly classes yet. When Level 3 ends (~3 years in), Level 4 continues on the module
+> track, with the [teacher guide](teacher-guide/README.md) for adult support.
 
 ---
 
@@ -106,7 +106,7 @@ One module per week, **four sittings, not one marathon.** Marathons feel product
 Start at [`levels/level-1-explorer/module-01-what-ai-is-and-isnt.md`](levels/level-1-explorer/module-01-what-ai-is-and-isnt.md)
 — read the 🪝 Hook and stop there today.
 
-**This is also the track for Levels 3–4**, whichever track you used earlier.
+**This is also the track for Level 4**, whichever track you used earlier.
 
 ---
 

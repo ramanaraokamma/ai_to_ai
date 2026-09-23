@@ -213,14 +213,17 @@ font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-s
   &ldquo;a curve with a tangent line&rdquo; but &ldquo;at the point where w is 3 and the loss is 9, a
   straight line just touches the curve, and a callout says 3.0 divided by 0.5 gives a slope of
   6&rdquo;. A blind reader must be able to check the arithmetic too.
-- **The markdown alt text must agree with `<title>`, word for word.** Every markdown file in
+- **The alt text and `<title>` play different roles.** The markdown alt text describes what a
+  sighted reader *sees*; `<title>` states what the figure *means*. They may differ, and usefully
+  differing is better for screen-reader users than repeating the same sentence twice. Both must be
+  accurate and non-empty. Every markdown file in
   `teacher-guide/`, `student-guide/` and `workbook/` sits one directory below `figures/`, so the link
   always starts `../figures/`, and every embed gets an italic caption line numbered
   `Figure <week>.<n>`:
 
 ```markdown
-![The slope at one point on a curve](../figures/fig-w11-1-slope-as-a-division.svg)
-*Figure 11.1 — The slope at one point on a curve. The slope is a division, not a symbol.*
+![The slope at one point is a rise over a run](../figures/fig-w12-2-tangent-line-with-numeric-slope.svg)
+*Figure 12.2 — The slope at one point on a curve. The slope is a division, not a symbol.*
 ```
 
   If a teacher reads the alt text aloud, the class should still follow.
@@ -2616,7 +2619,7 @@ Then, by eye:
       answered yes.
 - [ ] **There is a sum on the canvas, and you have checked it against the module.** (&sect;2.1)
 - [ ] Every tensor block carries its shape; every wire bundle carries its weight shape. (&sect;2.2)
-- [ ] `<title>` matches the markdown alt text word for word, and `<desc>` describes the *idea* **and
+- [ ] `<title>` states the takeaway, the alt text describes what is drawn, and `<desc>` the *idea* **and
       contains the numbers**.
 - [ ] Every colour is from &sect;1.1, used in its role (&sect;2.5).
 - [ ] Nothing within 20px of the canvas edge &mdash; including the far end of a long caption.

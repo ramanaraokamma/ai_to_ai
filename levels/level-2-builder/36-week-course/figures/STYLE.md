@@ -1777,7 +1777,9 @@ cd _generator && python3 _gen_audit.py     # must print "--- 0 finding(s)"
 Then, by eye:
 
 - [ ] **It is not a picture of code.** All three questions in &sect;3.2 answered yes.
-- [ ] `<title>` matches the markdown alt text word for word, and `<desc>` describes the *idea*.
+- [ ] `<title>` states the figure's takeaway, the markdown alt text describes what a sighted
+      reader sees, and `<desc>` describes the *idea*. Alt and `<title>` may differ — alt says
+      *what is drawn*, `<title>` says *what it means*. Both must be accurate and non-empty.
 - [ ] Every colour is from &sect;1.1, used in its role.
 - [ ] Nothing within 20px of the canvas edge &mdash; including the far end of a long caption.
 - [ ] Every meaningful distinction has a shape, label or number as well as a colour.
