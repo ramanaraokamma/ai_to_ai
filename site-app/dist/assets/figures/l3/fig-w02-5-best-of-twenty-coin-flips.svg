@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Twenty coin flips, and the best of them</title>
+  <desc>Twenty dots scattered around an AUC of 0.5 on the 400 validation rows, all of them produced by random numbers rather than any model. The highest, ringed in pink, reaches 0.5853. An arrow leads to a box showing that same winner scored on the sealed test pile: 0.5125. The difference, 0.5853 minus 0.5125, is 0.0728 of pure luck, and 0.5853 minus 0.5000 is 0.0853 above the true zero.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Twenty coin flips, and the best of them</text>
+  <text x="400" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">no model at all &#8212; just random numbers, scored on the 400 validation rows</text>
+  <line x1="90" y1="96" x2="90" y2="276" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="90" y1="276" x2="620" y2="276" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="84" y1="264.75" x2="90" y2="264.75" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="78" y="268.75" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.45</text>
+  <line x1="84" y1="208.5" x2="90" y2="208.5" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="78" y="212.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.50</text>
+  <line x1="84" y1="152.24999999999994" x2="90" y2="152.24999999999994" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="78" y="156.24999999999994" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.55</text>
+  <line x1="84" y1="96.0" x2="90" y2="96.0" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="78" y="100.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.60</text>
+  <line x1="90" y1="208.5" x2="620" y2="208.5" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="6 4"/>
+  <text x="620" y="200.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">true zero: AUC 0.5000</text>
+  <circle cx="112.0" cy="205.6" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="138.1" cy="231.0" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="164.2" cy="255.1" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="190.3" cy="225.5" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="216.4" cy="204.9" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="242.5" cy="185.8" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="268.6" cy="141.7" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="294.7" cy="250.6" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="320.8" cy="112.5" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <circle cx="346.9" cy="204.4" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="373.1" cy="242.1" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="399.2" cy="197.6" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="425.3" cy="241.2" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="451.4" cy="191.2" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="477.5" cy="181.4" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="503.6" cy="199.3" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="529.7" cy="231.4" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="555.8" cy="259.2" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="581.9" cy="237.5" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="608.0" cy="163.7" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="360" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">20 random guesses, ranked on validation</text>
+  <text x="74" y="185.99999999999994" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 74 186.0 74 185.99999999999994)">AUC</text>
+  <line x1="320.8421052631579" y1="100.53749999999994" x2="320.8421052631579" y2="88" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <text x="320.8421052631579" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">best of the 20: 0.5853</text>
+  <rect x="640" y="96" width="140" height="180" rx="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="710" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">the winner,</text>
+  <text x="710" y="142" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">on the sealed</text>
+  <text x="710" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">test pile</text>
+  <text x="710" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">0.5125</text>
+  <text x="710" y="228" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.5853 &#8722; 0.5125</text>
+  <text x="710" y="246" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">= 0.0728</text>
+  <text x="710" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">of pure luck</text>
+  <line x1="600" y1="200" x2="634" y2="200" stroke="#C42B8C" stroke-width="2.5" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#C42B8C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(634 200) rotate(0.0)"/>
+  <rect x="30" y="312" width="740" height="68" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="400" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Nothing here learned anything. Picking the best of twenty still bought 0.0853 above 0.5000.</text>
+  <text x="400" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">That is why the pile you CHOOSE with can never be the pile you REPORT from.</text>
+</svg>

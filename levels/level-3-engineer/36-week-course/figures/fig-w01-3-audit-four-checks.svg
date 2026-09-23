@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>The four-check audit, in numbers</title>
+  <desc>Four stacked bands. Check one, duplicate rows: 20 exact copies, and 2020 minus 20 equals 2000. Check two, ID-like columns: order_id has 2000 different values in 2020 rows, and 2000 divided by 2020 is 0.9901. Check three, missing values: 108 holes, and 108 divided by 2020 is 0.0535. Check four, class balance: 28.81 percent late, so always saying never late is right 1438 divided by 2020, which is 0.7119.</desc>
+  <text x="250" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The four-check audit, in numbers</text>
+  <text x="250" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">run on the 2020-row delivery table, seed 0</text>
+  <rect x="30" y="92" width="440" height="132" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="58" cy="122" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="58" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="78" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" dominant-baseline="central">Duplicate rows</text>
+  <text x="452" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">20 exact copies</text>
+  <line x1="46" y1="144" x2="454" y2="144" stroke="#55636F" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <text x="50" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">2020 rows for a 2000-row table:</text>
+  <rect x="50" y="178" width="200" height="30" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="150" y="193" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2020 &#8722; 20 = 2000</text>
+  <rect x="30" y="236" width="440" height="132" rx="12" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="58" cy="266" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="58" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="78" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" dominant-baseline="central">ID-like columns</text>
+  <text x="452" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">order_id</text>
+  <line x1="46" y1="288" x2="454" y2="288" stroke="#55636F" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <text x="50" y="310" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">2000 different values in 2020 rows:</text>
+  <rect x="50" y="322" width="200" height="30" rx="8" fill="#FFFFFF" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <text x="150" y="337" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2000 &#247; 2020 = 0.9901</text>
+  <rect x="30" y="380" width="440" height="132" rx="12" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="58" cy="410" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="58" y="410" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="78" y="410" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" dominant-baseline="central">Missing values</text>
+  <text x="452" y="410" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">108 holes</text>
+  <line x1="46" y1="432" x2="454" y2="432" stroke="#55636F" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <text x="50" y="454" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">all of them in one column:</text>
+  <rect x="50" y="466" width="200" height="30" rx="8" fill="#FFFFFF" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <text x="150" y="481" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">108 &#247; 2020 = 0.0535</text>
+  <rect x="30" y="524" width="440" height="132" rx="12" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="58" cy="554" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="58" y="554" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="78" y="554" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" dominant-baseline="central">Class balance</text>
+  <text x="452" y="554" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">28.81% late</text>
+  <line x1="46" y1="576" x2="454" y2="576" stroke="#55636F" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <text x="50" y="598" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">so &#8220;never late&#8221; is right:</text>
+  <rect x="50" y="610" width="200" height="30" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="150" y="625" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1438 &#247; 2020 = 0.7119</text>
+  <text x="250" y="672" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Four numbers. Five minutes. They save six weeks.</text>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Wrong and right: is a zero the same as no column?</title>
+  <desc>Two panels. On the left, marked wrong, review d1, The pizza was great, is shown as a row of eight counts: and 0, cold 0, food 0, great 1, pizza 1, service 0, the 1, was 1, with the cold cell ringed in red, and the wrong conclusion that because d1 has 0 for cold the word cold is unknown to the model and not in the vocabulary. Underneath, the facts: the vocabulary built from all four reviews has 8 words and cold is column 1 of those 8. On the right, marked right, cold got a column because d2 and d4 used it, an arrow runs from the cold column to d1 colon 0, and 0 means this review did not say cold, which is a number and real evidence. A green box states the difference: a column with 0 in it is in the sum multiplied by 0, whereas no column at all is never in the sum, and both print plus 0.0000 even though they are not the same thing. Week 33 is built on that difference.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Wrong and right: is a zero the same as no column?</text>
+  <rect x="30" y="64" width="350" height="308" rx="12" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="30" y="64" width="350" height="36" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(40,69) scale(0.36)"><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><line x1="38" y1="38" x2="62" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/><line x1="62" y1="38" x2="38" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/></g>
+  <text x="232" y="89" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">a 0 means cold is unknown</text>
+  <text x="56" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">d1: &#8220;The pizza was great!&#8221;</text>
+  <rect x="56" y="140" width="38" height="32" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="75" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="75" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">and</text>
+  <rect x="94" y="140" width="38" height="32" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="113" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="113" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">cold</text>
+  <rect x="132" y="140" width="38" height="32" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="151" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="151" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">food</text>
+  <rect x="170" y="140" width="38" height="32" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="189" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="189" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">grea</text>
+  <rect x="208" y="140" width="38" height="32" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="227" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="227" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">pizz</text>
+  <rect x="246" y="140" width="38" height="32" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="265" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="265" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">serv</text>
+  <rect x="284" y="140" width="38" height="32" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="303" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="303" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the</text>
+  <rect x="322" y="140" width="38" height="32" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="341" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="341" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">was</text>
+  <text x="56" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D">&#8220;There is no cold in this model,</text>
+  <text x="56" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D">so the word is not in the vocabulary.&#8221;</text>
+  <rect x="56" y="262" width="298" height="62" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="70" y="284" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">vocabulary (4 reviews): 8 words</text>
+  <text x="70" y="306" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#CC2B1D" dominant-baseline="central">cold IS column 1 of those 8</text>
+  <text x="56" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D">Two different things have been confused.</text>
+  <rect x="420" y="64" width="350" height="308" rx="12" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="420" y="64" width="350" height="36" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(430,69) scale(0.36)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="622" y="89" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">the column exists; count is 0</text>
+  <text x="446" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">cold got a column because d2 and d4 used it</text>
+  <rect x="446" y="140" width="150" height="32" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="521" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">cold</text>
+  <line x1="600" y1="156" x2="628" y2="156" stroke="#1F6FB2" stroke-width="2" stroke-linecap="round"/><polygon points="636,156 625,150 625,162" fill="#1F6FB2" stroke="#1F6FB2" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="640" y="140" width="114" height="32" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="697" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">d1: 0</text>
+  <text x="446" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">0 means &#8220;this review did not say cold&#8221;.</text>
+  <text x="446" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">It is a number, and it is real evidence.</text>
+  <rect x="446" y="236" width="308" height="88" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="460" y="258" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">a column with 0 in it   &#8594;  in the sum, &#215; 0</text>
+  <text x="460" y="280" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">NO column at all        &#8594;  never in the sum</text>
+  <text x="460" y="304" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#C42B8C" dominant-baseline="central">both print +0.0000. They are not the same.</text>
+  <text x="446" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B">Week 33 is built on that difference.</text>
+</svg>

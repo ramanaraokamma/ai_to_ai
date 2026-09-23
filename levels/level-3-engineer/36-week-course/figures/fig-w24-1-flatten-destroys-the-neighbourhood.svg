@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Flattening throws the neighbourhood away</title>
+  <desc>On the left an 8 by 8 picture with three pixels ringed: A, the pixel B directly below it, and the pixel C directly to its right. On the right the same 64 numbers laid out as one long row of 64 slots. A sits in slot 19, C in slot 20 right next door, but B has landed in slot 27, eight slots away. Underneath: a dense layer on the flat row needs 16 times 64 plus 16 which is 1040 numbers, a 3 by 3 convolution needs 9 plus 1 which is 10, and 1040 divided by 10 is 104.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The pixel below is not the number next door</text>
+  <rect x="40" y="74" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="61" y="74" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="82" y="74" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="103" y="74" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="124" y="74" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="145" y="74" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="166" y="74" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="187" y="74" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="40" y="95" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="61" y="95" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="82" y="95" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="103" y="95" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="124" y="95" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="145" y="95" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="166" y="95" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="187" y="95" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="40" y="116" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="61" y="116" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="82" y="116" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="103" y="116" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="124" y="116" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="145" y="116" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="166" y="116" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="187" y="116" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="40" y="137" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="61" y="137" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="82" y="137" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="103" y="137" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="124" y="137" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="145" y="137" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="166" y="137" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="187" y="137" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="40" y="158" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="61" y="158" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="82" y="158" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="103" y="158" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="124" y="158" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="145" y="158" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="166" y="158" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="187" y="158" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="40" y="179" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="61" y="179" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="82" y="179" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="103" y="179" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="124" y="179" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="145" y="179" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="166" y="179" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="187" y="179" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="40" y="200" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="61" y="200" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="82" y="200" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="103" y="200" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="124" y="200" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="145" y="200" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="166" y="200" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="187" y="200" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="40" y="221" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="61" y="221" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="82" y="221" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="103" y="221" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="124" y="221" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="145" y="221" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="166" y="221" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="187" y="221" width="21" height="21" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="124" y="66" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the picture (8 &#215; 8)</text>
+  <rect x="103" y="116" width="21" height="21" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <text x="113.5" y="126.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">A</text>
+  <rect x="103" y="137" width="21" height="21" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="113.5" y="147.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">B</text>
+  <rect x="124" y="116" width="21" height="21" fill="#FFFFFF" stroke="#6D28D9" stroke-width="3"/>
+  <text x="134.5" y="126.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">C</text>
+  <text x="124" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">A and B touch. A and C touch.</text>
+  <rect x="366" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="372.2" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="378.4" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="384.6" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="390.8" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="397" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="403.2" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="409.4" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="415.6" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="421.8" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="428" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="434.2" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="440.4" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="446.6" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="452.8" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="459" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="465.2" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="471.4" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="477.6" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="483.8" y="130" width="6.2" height="34" fill="#F4D5E9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="490" y="130" width="6.2" height="34" fill="#DBCEF3" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="496.2" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="502.4" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="508.6" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="514.8" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="521" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="527.2" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="533.4" y="130" width="6.2" height="34" fill="#E2F7ED" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="539.6" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="545.8" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="552" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="558.2" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="564.4" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="570.6" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="576.8" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="583" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="589.2" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="595.4" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="601.6" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="607.8" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="614" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="620.2" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="626.4" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="632.6" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="638.8" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="645" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="651.2" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="657.4" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="663.6" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="669.8" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="676" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="682.2" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="688.4" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="694.6" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="700.8" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="707" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="713.2" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="719.4" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="725.6" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="731.8" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="738" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="744.2" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="750.4" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="756.6" y="130" width="6.2" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="366" y="130" width="396.8" height="34" rx="0" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="564.4" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the same 64 numbers, flattened into one row</text>
+  <line x1="486.8" y1="124" x2="486.8" y2="108" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <text x="486.8" y="102" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">A</text>
+  <line x1="493" y1="170" x2="378" y2="192" stroke="#6D28D9" stroke-width="2" stroke-linecap="round"/>
+  <text x="372" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#6D28D9">C: slot 20, right next door</text>
+  <line x1="536.4" y1="170" x2="563.4" y2="230" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round"/>
+  <text x="569.4" y="246" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B">B: slot 27, eight slots away</text>
+  <text x="366" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">a dense layer sees 64 unrelated slots. It cannot tell</text>
+  <text x="366" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">that 8 apart means &#8220;one row down&#8221;, because nothing</text>
+  <text x="366" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">in a flat row says so.</text>
+  <rect x="40" y="296" width="300" height="84" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="190" y="322" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">nn.Linear(64, 16)</text>
+  <text x="190" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">16 &#215; 64 + 16 = 1040 numbers</text>
+  <text x="190" y="370" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">and it still cannot see a neighbourhood</text>
+</svg>

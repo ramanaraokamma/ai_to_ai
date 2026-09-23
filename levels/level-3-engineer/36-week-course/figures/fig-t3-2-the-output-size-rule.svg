@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The output-size rule, counted on paper</title>
+  <desc>A row of eight numbered cells, positions 0 to 7, with six three-wide windows drawn underneath it, starting at positions 0, 1, 2, 3, 4 and 5. The first and last windows are outlined in pink. A note says the last window starts at 5, not 6, because it would hang off the end, and that is what the plus one in the rule is. A pink box prints 8 plus 0 minus 3, divided by 1, plus 1, equals 6. A green box prints the check that catches a flipped formula: 8 plus 2 times 1 minus 3, divided by 1, plus 1 equals 8, so padding 1 with a 3-wide window gives the size back unchanged.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The output-size rule, counted on paper</text>
+  <text x="400" y="72" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">an 8-wide row, a 3-wide window, no padding, stride 1</text>
+  <rect x="60" y="100" width="40" height="40" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="80" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="100" y="100" width="40" height="40" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="120" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="140" y="100" width="40" height="40" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="160" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <rect x="180" y="100" width="40" height="40" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="200" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <rect x="220" y="100" width="40" height="40" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="240" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <rect x="260" y="100" width="40" height="40" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="280" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+  <rect x="300" y="100" width="40" height="40" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="320" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">6</text>
+  <rect x="340" y="100" width="40" height="40" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="360" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">7</text>
+  <text x="60" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">positions 0 to 7</text>
+  <rect x="60" y="154" width="120" height="22" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="394" y="165" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">window 1 starts at 0</text>
+  <rect x="100" y="182" width="120" height="22" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="394" y="193" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">window 2 starts at 1</text>
+  <rect x="140" y="210" width="120" height="22" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="394" y="221" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">window 3 starts at 2</text>
+  <rect x="180" y="238" width="120" height="22" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="394" y="249" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">window 4 starts at 3</text>
+  <rect x="220" y="266" width="120" height="22" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="394" y="277" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">window 5 starts at 4</text>
+  <rect x="260" y="294" width="120" height="22" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="394" y="305" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">window 6 starts at 5</text>
+  <rect x="60" y="306" width="320" height="74" rx="12" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="76" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">six windows fit, so the answer is 6</text>
+  <text x="76" y="356" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">(8 + 0 &#8722; 3) &#247; 1 + 1 = 6</text>
+  <rect x="412" y="306" width="348" height="74" rx="12" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="428" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the check that catches a flipped formula</text>
+  <text x="428" y="356" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">(8 + 2 &#215; 1 &#8722; 3) &#247; 1 + 1 = 8</text>
+  <text x="620" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The last window starts at 5,</text>
+  <text x="620" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">not at 6 &#8212; it would hang off</text>
+  <text x="620" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">the end. That is the &#8220;+ 1&#8221;.</text>
+</svg>

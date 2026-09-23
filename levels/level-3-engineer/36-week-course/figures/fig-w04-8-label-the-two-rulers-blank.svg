@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Fill in the two rulers</title>
+  <desc>The five numbers 2, 4, 6, 8 and 100 with every answer removed. The first block asks for the sum, which is 120, and the mean, which is 120 divided by 5 equals 24. The second block asks for all five steps of the standard deviation: subtract 24 to get minus 22, minus 20, minus 18, minus 16 and plus 76; square them to get 484, 400, 324, 256 and 5776; add them to get 7240; divide by 5 to get 1448; take the square root to get 38.0526. The third block asks for the z-score of 8, which is 8 minus 24 divided by 38.0526 and equals minus 0.4205, and the min-max value of 8, which is 8 minus 2 divided by 98 and equals 0.0612. The last block asks three more: a new value of 150 gives a z of 3.3112 and a min-max of 1.5102, which is outside the box; four of the five min-max values sit below 0.10; and one-hot encoding restaurant, day of week and weather gives 5 plus 7 plus 3 equals 15 columns.</desc>
+  <text x="250" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Fill in the two rulers</text>
+  <text x="250" y="64" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">In pen, on paper, before you run anything.</text>
+  <rect x="30" y="82" width="440" height="100" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="46" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">The five numbers, all week</text>
+  <text x="46" y="134" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">2      4      6      8      100</text>
+  <text x="46" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">add them up, then divide by 5.  mean =</text>
+  <rect x="312" y="150" width="70" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="30" y="198" width="440" height="200" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="46" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">The standard deviation, five steps</text>
+  <text x="46" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">1  subtract the mean from each</text>
+  <rect x="268" y="234" width="186" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="46" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">2  square each answer</text>
+  <rect x="268" y="264" width="186" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="46" y="310" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">3  add the squares up</text>
+  <rect x="268" y="294" width="186" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="46" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">4  divide by how many there are</text>
+  <rect x="268" y="324" width="186" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="46" y="370" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">5  take the square root</text>
+  <rect x="268" y="354" width="186" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="30" y="414" width="215" height="96" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="46" y="440" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">the z-score of 8</text>
+  <text x="46" y="466" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">( 8 &#8722; ___ ) &#247; ___ =</text>
+  <rect x="46" y="476" width="120" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="255" y="414" width="215" height="96" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="271" y="440" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">the min-max of 8</text>
+  <text x="271" y="466" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">( 8 &#8722; ___ ) &#247; ___ =</text>
+  <rect x="271" y="476" width="120" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="30" y="526" width="440" height="150" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="250" y="552" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Three more, same arithmetic</text>
+  <text x="46" y="582" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">a new value of 150:   z =</text>
+  <rect x="228" y="566" width="70" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="310" y="582" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">min-max =</text>
+  <rect x="380" y="566" width="70" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="46" y="618" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">how many of the five min-max values are under 0.10?</text>
+  <rect x="402" y="602" width="56" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="46" y="654" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">one-hot restaurant + day_of_week + weather:</text>
+  <rect x="352" y="638" width="56" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="416" y="654" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">columns</text>
+</svg>

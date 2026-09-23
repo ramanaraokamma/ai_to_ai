@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Fill in the four audit numbers</title>
+  <desc>The four checks of the data audit listed down the page with their answers removed. Check 1 counts duplicate rows and the answer is 20. Check 2 divides different values by rows, 2000 divided by 2020, and the answer is 0.9901. Check 3 counts empty cells and the answer is 108, all of them in driver experience months. Check 4 divides not-late rows by all rows, 1438 divided by 2020, and the answer is 0.7119, with the other class 582 divided by 2020 giving 0.2881. Underneath, three blank boxes ask for the shape of the table, which is 2020 rows by 10 columns, the number of features left after removing one target and one ID, which is 8, and the fake marks the copies would buy, which is 20 times 0.2 equals 4.</desc>
+  <text x="250" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Fill in the four audit numbers</text>
+  <text x="250" y="66" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">No looking at the chapter. Then run it and tick each one.</text>
+
+  <rect x="30" y="84" width="440" height="96" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="46" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">Check 1 &#8212; copies</text>
+  <text x="46" y="132" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">df.duplicated().sum()</text>
+  <text x="46" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">how many rows are exact copies?</text>
+  <rect x="316" y="140" width="138" height="28" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+
+  <rect x="30" y="192" width="440" height="112" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="46" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">Check 2 &#8212; is it a name?</text>
+  <text x="46" y="240" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">df["order_id"].nunique() / len(df)</text>
+  <text x="46" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">write the division out:</text>
+  <rect x="180" y="250" width="90" height="24" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="278" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">&#247;</text>
+  <rect x="292" y="250" width="90" height="24" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="46" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">so the answer is</text>
+  <rect x="180" y="276" width="90" height="24" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="288" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">above 0.95? tick a box</text>
+
+  <rect x="30" y="316" width="440" height="96" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="46" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">Check 3 &#8212; holes</text>
+  <text x="46" y="364" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">df.isna().sum()</text>
+  <text x="46" y="396" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">how many empty cells, and in which column?</text>
+  <rect x="316" y="372" width="138" height="28" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+
+  <rect x="30" y="424" width="440" height="112" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="46" y="448" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">Check 4 &#8212; how lopsided?</text>
+  <text x="46" y="472" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">df["late"].value_counts(normalize=True)</text>
+  <text x="46" y="498" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">not late</text>
+  <rect x="120" y="482" width="90" height="24" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="228" y="498" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">late</text>
+  <rect x="270" y="482" width="90" height="24" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="46" y="524" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">do your two answers add up to 1.0000?</text>
+
+  <rect x="30" y="552" width="440" height="124" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="250" y="576" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">And three more, from the same table</text>
+  <text x="46" y="606" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the shape, as (rows, columns)</text>
+  <rect x="320" y="590" width="134" height="24" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="46" y="636" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">features left: 10 &#8722; 1 target &#8722; 1 ID</text>
+  <rect x="320" y="620" width="134" height="24" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="46" y="666" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">fake marks the copies buy: 20 &#215; 0.2</text>
+  <rect x="320" y="650" width="134" height="24" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+</svg>

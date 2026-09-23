@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Wrong and right: can inertia choose k?</title>
+  <desc>Two panels. On the left, marked wrong, six points each sit inside their own dashed ring, labelled k equals 6, every point is its own cluster, and the inertia is 0.0000 &#8212; the best score there is, and useless, because six groups of one have grouped nothing. Inertia always falls as k grows. On the right, marked right, a four-row table gives the inertia at k equals 1, 2, 3 and 4 as 120.8333, 6.6667, 3.6667 and 2.0000, with the drops alongside as 114.1667, 3.0000 and 1.6667. The highlighted division 114.1667 divided by 3.0000 equals 38.1 says the second cluster bought thirty-eight times what the third did, so k is 2. A ratio is a number; a bend is an opinion.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Wrong and right: can inertia choose k?</text>
+  <rect x="30" y="66" width="350" height="306" rx="12" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="30" y="66" width="350" height="36" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(40,71) scale(0.36)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <line x1="38" y1="38" x2="62" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+    <line x1="62" y1="38" x2="38" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <text x="228" y="91" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">pick the k with the smallest inertia</text>
+  <circle cx="72" cy="150" r="19" fill="none" stroke="#CC2B1D" stroke-width="2" stroke-dasharray="5 4"/>
+  <circle cx="72" cy="150" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="104" cy="178" r="19" fill="none" stroke="#CC2B1D" stroke-width="2" stroke-dasharray="5 4"/>
+  <circle cx="104" cy="178" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="104" cy="134" r="19" fill="none" stroke="#CC2B1D" stroke-width="2" stroke-dasharray="5 4"/>
+  <circle cx="104" cy="134" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="300" cy="134" r="19" fill="none" stroke="#CC2B1D" stroke-width="2" stroke-dasharray="5 4"/>
+  <circle cx="300" cy="134" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="332" cy="162" r="19" fill="none" stroke="#CC2B1D" stroke-width="2" stroke-dasharray="5 4"/>
+  <circle cx="332" cy="162" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="268" cy="162" r="19" fill="none" stroke="#CC2B1D" stroke-width="2" stroke-dasharray="5 4"/>
+  <circle cx="268" cy="162" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="205" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">k = 6: every point is its own cluster</text>
+  <rect x="56" y="222" width="298" height="74" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="205" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#CC2B1D" text-anchor="middle">inertia = 0.0000</text>
+  <text x="205" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the best score there is, and useless</text>
+  <text x="70" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Six groups of one. Nothing has been</text>
+  <text x="70" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">grouped and nothing has been learned.</text>
+  <text x="70" y="364" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">Inertia always falls as k grows.</text>
+  <rect x="420" y="66" width="350" height="306" rx="12" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="420" y="66" width="350" height="36" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(430,71) scale(0.36)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="618" y="91" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">read the drops, not the total</text>
+  <rect x="446" y="118" width="298" height="110" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="462" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">k</text>
+  <text x="560" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">inertia</text>
+  <text x="700" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">drop</text>
+  <text x="462" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">1</text>
+  <text x="560" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="end">120.8333</text>
+  <text x="700" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="end">&#8212;</text>
+  <text x="462" y="184" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#C42B8C">2</text>
+  <text x="560" y="184" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#C42B8C" text-anchor="end">6.6667</text>
+  <text x="700" y="184" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#C42B8C" text-anchor="end">114.1667</text>
+  <text x="462" y="204" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">3</text>
+  <text x="560" y="204" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="end">3.6667</text>
+  <text x="700" y="204" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="end">3.0000</text>
+  <text x="462" y="224" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">4</text>
+  <text x="560" y="224" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="end">2.0000</text>
+  <text x="700" y="224" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="end">1.6667</text>
+  <rect x="446" y="242" width="298" height="46" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="595" y="265" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">114.1667 &#247; 3.0000 = 38.1</text>
+  <text x="446" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">The second cluster bought 38 times</text>
+  <text x="446" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">what the third did. So k = 2.</text>
+  <text x="446" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B">A ratio is a number. A bend is an opinion.</text>
+</svg>

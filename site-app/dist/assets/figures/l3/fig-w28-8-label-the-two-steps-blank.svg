@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Label the two steps</title>
+  <desc>Two panels showing the same five points Q1 to Q5 with two cluster centres. In the top panel the centres sit at 1 comma 1 and 7 comma 5 and a dashed line runs from every point to the centre it was given to, with an empty dashed box for the name of that step. In the bottom panel the centres have moved to the middle of what they got, with an empty dashed box for the name of that step. A third panel has four empty dashed boxes: the coordinates of the new left centre, the sigma sum for inertia written out, the inertia total, and the condition that stops the loop.</desc>
+  <text x="250" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Label the two steps</text>
+  <text x="250" y="68" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">Q1(0,0)  Q2(0,2)  Q3(2,0)  Q4(6,6)  Q5(8,6)   and k = 2</text>
+  <rect x="30" y="84" width="250" height="216" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="44" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#C42B8C" text-anchor="start">panel 1</text>
+  <line x1="70" y1="275" x2="95" y2="250" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <line x1="70" y1="225" x2="95" y2="250" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <line x1="120" y1="275" x2="95" y2="250" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <line x1="220" y1="125" x2="245" y2="150" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <line x1="270" y1="125" x2="245" y2="150" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <circle cx="70" cy="275" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="83" y="280" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#1F6FB2" text-anchor="start">Q1</text>
+  <circle cx="70" cy="225" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="83" y="230" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#1F6FB2" text-anchor="start">Q2</text>
+  <circle cx="120" cy="275" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="133" y="280" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#1F6FB2" text-anchor="start">Q3</text>
+  <circle cx="220" cy="125" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="233" y="130" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#1F6FB2" text-anchor="start">Q4</text>
+  <circle cx="270" cy="125" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="283" y="130" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#1F6FB2" text-anchor="start">Q5</text>
+  <line x1="86" y1="241" x2="104" y2="259" stroke="#C42B8C" stroke-width="4" stroke-linecap="round"/>
+  <line x1="86" y1="259" x2="104" y2="241" stroke="#C42B8C" stroke-width="4" stroke-linecap="round"/>
+  <line x1="236" y1="141" x2="254" y2="159" stroke="#C42B8C" stroke-width="4" stroke-linecap="round"/>
+  <line x1="236" y1="159" x2="254" y2="141" stroke="#C42B8C" stroke-width="4" stroke-linecap="round"/>
+  <text x="44" y="292" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="start">centres at (1,1) and (7,5)</text>
+  <text x="300" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">this step is called</text>
+  <rect x="300" y="142" width="170" height="30" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="300" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">how many distances</text>
+  <text x="300" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">get measured here?</text>
+  <rect x="300" y="230" width="170" height="30" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="30" y="314" width="250" height="216" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="44" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#C42B8C" text-anchor="start">panel 2</text>
+  <line x1="70" y1="505" x2="86.6667" y2="488.333" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <line x1="70" y1="455" x2="86.6667" y2="488.333" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <line x1="120" y1="505" x2="86.6667" y2="488.333" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <line x1="220" y1="355" x2="245" y2="355" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <line x1="270" y1="355" x2="245" y2="355" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <circle cx="70" cy="505" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="83" y="510" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#1F6FB2" text-anchor="start">Q1</text>
+  <circle cx="70" cy="455" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="83" y="460" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#1F6FB2" text-anchor="start">Q2</text>
+  <circle cx="120" cy="505" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="133" y="510" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#1F6FB2" text-anchor="start">Q3</text>
+  <circle cx="220" cy="355" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="233" y="360" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#1F6FB2" text-anchor="start">Q4</text>
+  <circle cx="270" cy="355" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="283" y="360" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#1F6FB2" text-anchor="start">Q5</text>
+  <line x1="77.6667" y1="479.333" x2="95.6667" y2="497.333" stroke="#C42B8C" stroke-width="4" stroke-linecap="round"/>
+  <line x1="77.6667" y1="497.333" x2="95.6667" y2="479.333" stroke="#C42B8C" stroke-width="4" stroke-linecap="round"/>
+  <line x1="236" y1="346" x2="254" y2="364" stroke="#C42B8C" stroke-width="4" stroke-linecap="round"/>
+  <line x1="236" y1="364" x2="254" y2="346" stroke="#C42B8C" stroke-width="4" stroke-linecap="round"/>
+  <text x="44" y="522" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="start">centres at (0.6667,0.6667) and (7,6)</text>
+  <text x="300" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">this step is called</text>
+  <rect x="300" y="372" width="170" height="30" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="300" y="430" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">which things moved,</text>
+  <text x="300" y="448" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">the points or centres?</text>
+  <rect x="300" y="460" width="170" height="30" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="30" y="548" width="440" height="128" rx="10" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="250" y="572" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B" text-anchor="middle">Now finish the arithmetic</text>
+  <text x="44" y="600" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start">centroid of {Q1,Q2,Q3} = (</text>
+  <rect x="238" y="586" width="72" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="316" y="600" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start">,</text>
+  <rect x="330" y="586" width="72" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="408" y="600" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start">)</text>
+  <text x="44" y="634" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start">&#931; (distance to own centre)&#178; =</text>
+  <rect x="266" y="620" width="196" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="44" y="664" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start">so the inertia is</text>
+  <rect x="160" y="650" width="110" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="282" y="664" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="start">and the loop stops when</text>
+</svg>

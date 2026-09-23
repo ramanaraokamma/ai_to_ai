@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Dropout switches units off, one step at a time</title>
+  <desc>The same row of ten hidden units drawn twice. On the left, during a training step, three of the ten are crossed out and their wires are dashed, because 0.3 times 10 equals 3. On the right, after model.eval(), all ten are on and every wire is solid. The caption says the real network has 64 units, so about 19 of them go off each step.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#14202B" text-anchor="middle">Dropout 0.3: three of ten, and a different three each step</text>
+  <rect x="40" y="80" width="340" height="200" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="210" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">during a training step</text>
+  <circle cx="70" cy="190" r="16" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="70" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">in</text>
+  <circle cx="350" cy="190" r="16" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="350" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">out</text>
+  <line x1="86" y1="190" x2="116" y2="159" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="116" y1="141" x2="334" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="86" y1="190" x2="133" y2="159" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="133" y1="141" x2="334" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="86" y1="190" x2="150" y2="159" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 3"/>
+  <line x1="150" y1="141" x2="334" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 3"/>
+  <line x1="86" y1="190" x2="167" y2="159" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="167" y1="141" x2="334" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="86" y1="190" x2="184" y2="159" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="184" y1="141" x2="334" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="86" y1="190" x2="201" y2="159" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 3"/>
+  <line x1="201" y1="141" x2="334" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 3"/>
+  <line x1="86" y1="190" x2="218" y2="159" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="218" y1="141" x2="334" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="86" y1="190" x2="235" y2="159" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="235" y1="141" x2="334" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="86" y1="190" x2="252" y2="159" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 3"/>
+  <line x1="252" y1="141" x2="334" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 3"/>
+  <line x1="86" y1="190" x2="269" y2="159" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="269" y1="141" x2="334" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="116" cy="150" r="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <circle cx="133" cy="150" r="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <circle cx="150" cy="150" r="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <line x1="146" y1="146" x2="154" y2="154" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round"/>
+  <line x1="154" y1="146" x2="146" y2="154" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="167" cy="150" r="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <circle cx="184" cy="150" r="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <circle cx="201" cy="150" r="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <line x1="197" y1="146" x2="205" y2="154" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round"/>
+  <line x1="205" y1="146" x2="197" y2="154" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="218" cy="150" r="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <circle cx="235" cy="150" r="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <circle cx="252" cy="150" r="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <line x1="248" y1="146" x2="256" y2="154" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round"/>
+  <line x1="256" y1="146" x2="248" y2="154" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="269" cy="150" r="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="210" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">0.3 &#215; 10 = 3 units switched off</text>
+  <rect x="420" y="80" width="340" height="200" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="590" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">after model.eval()</text>
+  <circle cx="450" cy="190" r="16" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="450" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">in</text>
+  <circle cx="730" cy="190" r="16" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="730" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">out</text>
+  <line x1="466" y1="190" x2="496" y2="159" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="496" y1="141" x2="714" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="466" y1="190" x2="513" y2="159" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="513" y1="141" x2="714" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="466" y1="190" x2="530" y2="159" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="530" y1="141" x2="714" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="466" y1="190" x2="547" y2="159" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="547" y1="141" x2="714" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="466" y1="190" x2="564" y2="159" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="564" y1="141" x2="714" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="466" y1="190" x2="581" y2="159" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="581" y1="141" x2="714" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="466" y1="190" x2="598" y2="159" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="598" y1="141" x2="714" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="466" y1="190" x2="615" y2="159" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="615" y1="141" x2="714" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="466" y1="190" x2="632" y2="159" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="632" y1="141" x2="714" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="466" y1="190" x2="649" y2="159" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="649" y1="141" x2="714" y2="190" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="496" cy="150" r="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <circle cx="513" cy="150" r="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <circle cx="530" cy="150" r="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <circle cx="547" cy="150" r="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <circle cx="564" cy="150" r="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <circle cx="581" cy="150" r="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <circle cx="598" cy="150" r="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <circle cx="615" cy="150" r="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <circle cx="632" cy="150" r="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <circle cx="649" cy="150" r="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="590" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle">0 switched off &#8212; all 10 are back</text>
+  <rect x="40" y="300" width="720" height="76" rx="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">a crossed-out unit sends nothing forward and gets no blame back &#8212; for that one step only</text>
+  <text x="400" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">our real hidden layer has 64 units, so 0.3 &#215; 64 &#8776; 19 go off each step, and a different 19 next step</text>
+</svg>

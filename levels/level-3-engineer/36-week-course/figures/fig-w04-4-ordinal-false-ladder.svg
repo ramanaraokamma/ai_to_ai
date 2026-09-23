@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The ladder that is not there</title>
+  <desc>A chart of how often each of five restaurants is late, against the alphabetical code 0 to 4 that an ordinal encoder would invent. The five true rates, numbered 1 to 5, zig-zag: 0.3715, 0.2787, 0.2336, 0.2899 and 0.2835. A single straight line shows what one weight on the code can produce: 0.3260, 0.3070, 0.2886, 0.2710 and 0.2540. A matching table on the right lists the truth, what the straight line says, and what one-hot encoding says, which is 0.3705, 0.2789, 0.2341, 0.2899 and 0.2837. For Napoli the line says 0.2886 while the truth is 0.2336, out by 0.0550.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The ladder that is not there</text>
+  <line x1="90" y1="300" x2="430" y2="300" stroke="#14202B" stroke-width="2"/>
+  <line x1="90" y1="110" x2="90" y2="300" stroke="#14202B" stroke-width="2"/>
+  <line x1="84" y1="300.0" x2="90" y2="300.0" stroke="#55636F" stroke-width="1.5"/>
+  <text x="80" y="300.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">0.20</text>
+  <line x1="84" y1="255.0" x2="90" y2="255.0" stroke="#55636F" stroke-width="1.5"/>
+  <text x="80" y="255.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">0.25</text>
+  <line x1="84" y1="210.0" x2="90" y2="210.0" stroke="#55636F" stroke-width="1.5"/>
+  <text x="80" y="210.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">0.30</text>
+  <line x1="84" y1="165.00000000000003" x2="90" y2="165.00000000000003" stroke="#55636F" stroke-width="1.5"/>
+  <text x="80" y="165.00000000000003" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">0.35</text>
+  <line x1="84" y1="120.0" x2="90" y2="120.0" stroke="#55636F" stroke-width="1.5"/>
+  <text x="80" y="120.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">0.40</text>
+  <text x="56" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 56 200)">late rate</text>
+  <line x1="122" y1="300" x2="122" y2="306" stroke="#55636F" stroke-width="1.5"/>
+  <text x="122" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <line x1="194" y1="300" x2="194" y2="306" stroke="#55636F" stroke-width="1.5"/>
+  <text x="194" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1</text>
+  <line x1="266" y1="300" x2="266" y2="306" stroke="#55636F" stroke-width="1.5"/>
+  <text x="266" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2</text>
+  <line x1="338" y1="300" x2="338" y2="306" stroke="#55636F" stroke-width="1.5"/>
+  <text x="338" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">3</text>
+  <line x1="410" y1="300" x2="410" y2="306" stroke="#55636F" stroke-width="1.5"/>
+  <text x="410" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4</text>
+  <text x="260" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the alphabetical code OrdinalEncoder invents (0&#8211;4)</text>
+  <polyline points="122,186.6 194,203.7 266,220.3 338,236.1 410,251.4" fill="none" stroke="#6D28D9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="122" cy="145.7" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="122" y="145.7" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <circle cx="194" cy="229.2" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="194" y="229.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <circle cx="266" cy="269.8" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="266" y="269.8" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <circle cx="338" cy="219.1" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="338" y="219.1" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <circle cx="410" cy="224.9" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="410" y="224.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+  <rect x="96" y="118" width="190" height="44" rx="8" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="191" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">one weight, one straight line</text>
+  <text x="191" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#6D28D9" text-anchor="middle">it cannot bend</text>
+  <rect x="456" y="62" width="314" height="262" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="486" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" font-weight="600">restaurant</text>
+  <text x="622" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600">truth</text>
+  <text x="682" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600">ordinal</text>
+  <text x="742" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600">one-hot</text>
+  <line x1="466" y1="96" x2="760" y2="96" stroke="#14202B" stroke-width="2"/>
+  <circle cx="478" cy="122" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="478" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="496" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">CrustyBros</text>
+  <text x="622" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.3715</text>
+  <text x="682" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#6D28D9" text-anchor="middle" dominant-baseline="central">0.3260</text>
+  <text x="742" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle" dominant-baseline="central">0.3705</text>
+  <circle cx="478" cy="156" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="478" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="496" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">GreenLeaf</text>
+  <text x="622" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.2787</text>
+  <text x="682" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#6D28D9" text-anchor="middle" dominant-baseline="central">0.3070</text>
+  <text x="742" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle" dominant-baseline="central">0.2789</text>
+  <circle cx="478" cy="190" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="478" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="496" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">Napoli</text>
+  <text x="622" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.2336</text>
+  <text x="682" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#6D28D9" text-anchor="middle" dominant-baseline="central">0.2886</text>
+  <text x="742" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle" dominant-baseline="central">0.2341</text>
+  <circle cx="478" cy="224" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="478" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="496" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">SliceHouse</text>
+  <text x="622" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.2899</text>
+  <text x="682" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#6D28D9" text-anchor="middle" dominant-baseline="central">0.2710</text>
+  <text x="742" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle" dominant-baseline="central">0.2899</text>
+  <circle cx="478" cy="258" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="478" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+  <text x="496" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">TandooriPizza</text>
+  <text x="622" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.2835</text>
+  <text x="682" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#6D28D9" text-anchor="middle" dominant-baseline="central">0.2540</text>
+  <text x="742" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle" dominant-baseline="central">0.2837</text>
+  <line x1="466" y1="292" x2="760" y2="292" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="478" y="310" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">Napoli: 0.2886 vs truth 0.2336 &#8212; out 0.0550</text>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Five restaurants are not a ladder. One weight draws one line; five weights hit every point.</text>
+</svg>

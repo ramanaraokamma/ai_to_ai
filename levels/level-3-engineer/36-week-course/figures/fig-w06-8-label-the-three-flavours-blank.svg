@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Fill in the three flavours</title>
+  <desc>Three panels, one per flavour of leakage, with every number and every tell removed. Target leakage: the tell is whether the value is filled in yet, the fake score is 0.9762, the honest score is 0.7752 and the gap is 0.2011. Temporal leakage: the tell is whether the rows have a date on them, the fake score is 0.8139, the honest score is 0.5249 and the gap is 0.2890. Preprocessing leakage: the tell is whether the statistic was worked out before the cut, the fake score is 0.765, the honest score is 0.520 and the gap is 0.245. A fourth panel asks for the one question no computer can answer, written out in full: at the moment I need the prediction, does this value exist? For customer_called_support the answer is no.</desc>
+  <text x="250" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Fill in the three flavours</text>
+  <text x="250" y="64" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Three bugs. Three tells. All three push the number the same way.</text>
+  <rect x="30" y="82" width="440" height="136" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="46" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">target leakage</text>
+  <text x="46" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">a column that hands you the answer</text>
+  <text x="46" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the tell:</text>
+  <line x1="110" y1="160" x2="454" y2="160" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="46" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">fake score</text>
+  <text x="190" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">honest score</text>
+  <text x="340" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the gap</text>
+  <rect x="46" y="188" width="90" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="190" y="188" width="90" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="340" y="188" width="90" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="30" y="234" width="440" height="136" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="46" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">temporal leakage</text>
+  <text x="46" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">a shuffle across a time boundary</text>
+  <text x="46" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the tell:</text>
+  <line x1="110" y1="312" x2="454" y2="312" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="46" y="334" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">fake score</text>
+  <text x="190" y="334" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">honest score</text>
+  <text x="340" y="334" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the gap</text>
+  <rect x="46" y="340" width="90" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="190" y="340" width="90" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="340" y="340" width="90" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="30" y="386" width="440" height="136" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="46" y="412" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">preprocessing leakage</text>
+  <text x="46" y="434" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">a statistic worked out too early</text>
+  <text x="46" y="460" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the tell:</text>
+  <line x1="110" y1="464" x2="454" y2="464" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="46" y="486" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">fake score</text>
+  <text x="190" y="486" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">honest score</text>
+  <text x="340" y="486" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the gap</text>
+  <rect x="46" y="492" width="90" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="190" y="492" width="90" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="340" y="492" width="90" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="30" y="538" width="440" height="138" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="250" y="564" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">And the alarm no computer can ring</text>
+  <text x="46" y="592" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">write the question out in full, then answer it:</text>
+  <line x1="46" y1="620" x2="454" y2="620" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="46" y1="652" x2="454" y2="652" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

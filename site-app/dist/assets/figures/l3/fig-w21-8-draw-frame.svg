@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Draw one trip round the loop</title>
+  <desc>A large empty frame with a faint circle inside it and the words start here at the top, for drawing the five stations of the training loop. A panel underneath lists what a good answer looks like: five numbered stations round the circle, arrows going one way only, w.grad as a box emptied at station 1, w as a box only station 5 touches, the step-0 numbers loss 1786.6666, slope minus 326.6667 and w moving from 0 to 16.3333, and a label saying which station can be dropped silently.</desc>
+  <text x="250" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Draw one trip round the loop</text>
+  <text x="250" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Two knobs, one step, and the numbers written on it.</text>
+  <rect x="30" y="86" width="440" height="380" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="250" cy="276" r="130" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="250" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">start here</text>
+  <rect x="30" y="480" width="440" height="196" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="250" y="504" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">What a good answer looks like</text>
+  <text x="48" y="530" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; five stations round the circle, numbered 1 to 5</text>
+  <text x="48" y="552" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; the arrows going one way only</text>
+  <text x="48" y="574" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; w.grad drawn as a box that is emptied at station 1</text>
+  <text x="48" y="596" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; w drawn as a box that only station 5 touches</text>
+  <text x="48" y="618" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; the step-0 numbers on it: loss 1786.6666, slope</text>
+  <text x="60" y="640" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#8722;326.6667, and w moving 0 &#8594; 16.3333</text>
+  <text x="48" y="662" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; and a label saying which station can be dropped silently</text>
+</svg>

@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>The words it learned to trust</title>
+  <desc>Two columns of fifteen words each with their learned coefficient and the number of the 60 training reviews containing them. The most negative are cold at minus 3.2388 in 9, rude at minus 3.2033 in 11, slow at minus 2.3327 in 7 reviews, then mean, terrible, awful, limp, stale, greasy, wrong, bitter, soggy, lumpy, poor, torn. The most positive are hot at plus 2.9625 in 7, fresh at plus 2.8648 in 8, generous at plus 2.4595 in 6 reviews, then quick, delicious, tasty, excellent, lovely, friendly, polite, crisp, perfect, warm, great, fluffy. Three entries are ringed in pink because they rest on a single training review: lumpy, torn, fluffy. rude is in 11 of 60 reviews, which is 18 percent; the ringed words are in 1 of 60, which is 2 percent.</desc>
+  <text x="250" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The words it learned to trust</text>
+  <text x="130" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D" text-anchor="middle">15 most negative</text>
+  <text x="370" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B" text-anchor="middle">15 most positive</text>
+  <text x="130" y="96" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">coef   word      in</text>
+  <text x="370" y="96" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">coef   word      in</text>
+  <rect x="30" y="122" width="200" height="24" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="38" y="134" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">&#8722;3.24</text>
+  <text x="96" y="134" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">cold</text>
+  <text x="222" y="134" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">9</text>
+  <rect x="270" y="122" width="200" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="278" y="134" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">+2.96</text>
+  <text x="336" y="134" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">hot</text>
+  <text x="462" y="134" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">7</text>
+  <rect x="30" y="152" width="200" height="24" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="38" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">&#8722;3.20</text>
+  <text x="96" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">rude</text>
+  <text x="222" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">11</text>
+  <rect x="270" y="152" width="200" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="278" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">+2.86</text>
+  <text x="336" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">fresh</text>
+  <text x="462" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">8</text>
+  <rect x="30" y="182" width="200" height="24" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="38" y="194" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">&#8722;2.33</text>
+  <text x="96" y="194" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">slow</text>
+  <text x="222" y="194" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">7</text>
+  <rect x="270" y="182" width="200" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="278" y="194" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">+2.46</text>
+  <text x="336" y="194" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">generous</text>
+  <text x="462" y="194" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">6</text>
+  <rect x="30" y="212" width="200" height="24" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="38" y="224" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">&#8722;2.30</text>
+  <text x="96" y="224" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">mean</text>
+  <text x="222" y="224" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">7</text>
+  <rect x="270" y="212" width="200" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="278" y="224" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">+2.28</text>
+  <text x="336" y="224" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">quick</text>
+  <text x="462" y="224" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">6</text>
+  <rect x="30" y="242" width="200" height="24" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="38" y="254" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">&#8722;2.26</text>
+  <text x="96" y="254" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">terrible</text>
+  <text x="222" y="254" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">5</text>
+  <rect x="270" y="242" width="200" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="278" y="254" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">+2.28</text>
+  <text x="336" y="254" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">delicious</text>
+  <text x="462" y="254" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">5</text>
+  <rect x="30" y="272" width="200" height="24" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="38" y="284" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">&#8722;2.14</text>
+  <text x="96" y="284" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">awful</text>
+  <text x="222" y="284" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">5</text>
+  <rect x="270" y="272" width="200" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="278" y="284" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">+2.19</text>
+  <text x="336" y="284" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">tasty</text>
+  <text x="462" y="284" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">5</text>
+  <rect x="30" y="302" width="200" height="24" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="38" y="314" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">&#8722;2.04</text>
+  <text x="96" y="314" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">limp</text>
+  <text x="222" y="314" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">4</text>
+  <rect x="270" y="302" width="200" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="278" y="314" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">+2.11</text>
+  <text x="336" y="314" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">excellent</text>
+  <text x="462" y="314" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">5</text>
+  <rect x="30" y="332" width="200" height="24" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="38" y="344" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">&#8722;2.02</text>
+  <text x="96" y="344" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">stale</text>
+  <text x="222" y="344" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">5</text>
+  <rect x="270" y="332" width="200" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="278" y="344" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">+2.07</text>
+  <text x="336" y="344" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">lovely</text>
+  <text x="462" y="344" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">4</text>
+  <rect x="30" y="362" width="200" height="24" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="38" y="374" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">&#8722;1.87</text>
+  <text x="96" y="374" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">greasy</text>
+  <text x="222" y="374" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">3</text>
+  <rect x="270" y="362" width="200" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="278" y="374" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">+1.76</text>
+  <text x="336" y="374" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">friendly</text>
+  <text x="462" y="374" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">4</text>
+  <rect x="30" y="392" width="200" height="24" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="38" y="404" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">&#8722;1.70</text>
+  <text x="96" y="404" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">wrong</text>
+  <text x="222" y="404" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">3</text>
+  <rect x="270" y="392" width="200" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="278" y="404" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">+1.69</text>
+  <text x="336" y="404" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">polite</text>
+  <text x="462" y="404" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">4</text>
+  <rect x="30" y="422" width="200" height="24" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="38" y="434" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">&#8722;1.49</text>
+  <text x="96" y="434" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">bitter</text>
+  <text x="222" y="434" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">2</text>
+  <rect x="270" y="422" width="200" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="278" y="434" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">+1.68</text>
+  <text x="336" y="434" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">crisp</text>
+  <text x="462" y="434" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">4</text>
+  <rect x="30" y="452" width="200" height="24" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="38" y="464" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">&#8722;1.20</text>
+  <text x="96" y="464" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">soggy</text>
+  <text x="222" y="464" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">3</text>
+  <rect x="270" y="452" width="200" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="278" y="464" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">+1.57</text>
+  <text x="336" y="464" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">perfect</text>
+  <text x="462" y="464" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">3</text>
+  <rect x="30" y="482" width="200" height="24" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="38" y="494" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">&#8722;0.96</text>
+  <text x="96" y="494" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">lumpy</text>
+  <text x="222" y="494" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">1</text>
+  <rect x="270" y="482" width="200" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="278" y="494" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">+1.20</text>
+  <text x="336" y="494" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">warm</text>
+  <text x="462" y="494" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">2</text>
+  <rect x="30" y="512" width="200" height="24" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="38" y="524" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">&#8722;0.83</text>
+  <text x="96" y="524" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">poor</text>
+  <text x="222" y="524" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">2</text>
+  <rect x="270" y="512" width="200" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="278" y="524" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">+1.00</text>
+  <text x="336" y="524" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">great</text>
+  <text x="462" y="524" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">2</text>
+  <rect x="30" y="542" width="200" height="24" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="38" y="554" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">&#8722;0.76</text>
+  <text x="96" y="554" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">torn</text>
+  <text x="222" y="554" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">1</text>
+  <rect x="270" y="542" width="200" height="24" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="278" y="554" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">+0.91</text>
+  <text x="336" y="554" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">fluffy</text>
+  <text x="462" y="554" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">1</text>
+  <rect x="30" y="584" width="440" height="92" rx="10" fill="#F5F8FA" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="46" y="606" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the third column is how many of the 60 training</text>
+  <text x="46" y="624" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">reviews contained that word. rude is in 11 of 60,</text>
+  <text x="46" y="642" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">which is 18%. The ringed words are in 1 of 60, 2%.</text>
+  <text x="46" y="664" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C">A weight learned from one review is a coincidence.</text>
+</svg>

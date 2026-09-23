@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Four words from Week 7, drawn</title>
+  <desc>Four labelled tiles. Feature set: four named column boxes, distance_km, items, prep_minutes, is_rush, with the note 5 kept on purpose. Ablation table: eight rows, two green marked keep and six red marked drop, with the note one change per row. Regression: a line of four dots stepping downwards with a red cross, labelled minus 0.0051 it got worse, and the note not linear regression. Leak hunt: a red box holding 0.9240 with an arrow down to a green box holding 0.7535, and the question does this value exist when I need it, answered no.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Four words from Week 7, drawn</text>
+  <rect x="30" y="66" width="149" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="44" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="start">feature set</text>
+  <rect x="46" y="112" width="117" height="24" rx="5" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="104.5" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">distance_km</text>
+  <rect x="46" y="142" width="117" height="24" rx="5" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="104.5" y="154" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">items</text>
+  <rect x="46" y="172" width="117" height="24" rx="5" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="104.5" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">prep_minutes</text>
+  <rect x="46" y="202" width="117" height="24" rx="5" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="104.5" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">is_rush</text>
+  <text x="44" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">5 kept, on purpose</text>
+  <rect x="227" y="66" width="149" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="241" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="start">ablation table</text>
+  <rect x="243" y="110" width="89" height="16" rx="4" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="338" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="start" dominant-baseline="central">drop</text>
+  <rect x="243" y="130" width="89" height="16" rx="4" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="338" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="start" dominant-baseline="central">keep</text>
+  <rect x="243" y="150" width="89" height="16" rx="4" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="338" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="start" dominant-baseline="central">drop</text>
+  <rect x="243" y="170" width="89" height="16" rx="4" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="338" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="start" dominant-baseline="central">drop</text>
+  <rect x="243" y="190" width="89" height="16" rx="4" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="338" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="start" dominant-baseline="central">drop</text>
+  <rect x="243" y="210" width="89" height="16" rx="4" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="338" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="start" dominant-baseline="central">drop</text>
+  <rect x="243" y="230" width="89" height="16" rx="4" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="338" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="start" dominant-baseline="central">keep</text>
+  <rect x="243" y="250" width="89" height="16" rx="4" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="338" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="start" dominant-baseline="central">drop</text>
+  <text x="241" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">one change per row</text>
+  <rect x="424" y="66" width="149" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="438" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="start">regression</text>
+  <polyline points="448,140 482,168 516,196 550,236" fill="none" stroke="#CC2B1D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="448" cy="140" r="5" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <circle cx="482" cy="168" r="5" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <circle cx="516" cy="196" r="5" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <circle cx="550" cy="236" r="5" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <line x1="486.5" y1="256" x2="510.5" y2="280" stroke="#CC2B1D" stroke-width="5" stroke-linecap="round"/>
+  <line x1="510.5" y1="256" x2="486.5" y2="280" stroke="#CC2B1D" stroke-width="5" stroke-linecap="round"/>
+  <text x="438" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">not 'linear regression'</text>
+  <rect x="621" y="66" width="149" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="635" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="start">leak hunt</text>
+  <rect x="637" y="112" width="117" height="44" rx="6" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="695.5" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" font-weight="bold" dominant-baseline="central">0.9240</text>
+  <text x="695.5" y="174" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#55636F" text-anchor="middle" dominant-baseline="central">&#8595;</text>
+  <rect x="637" y="190" width="117" height="44" rx="6" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="695.5" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" font-weight="bold" dominant-baseline="central">0.7535</text>
+  <text x="635" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">does the value exist</text>
+  <text x="635" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">when I need it? No.</text>
+  <text x="400" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Every tile is a number from your own bench.py run.</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Six of eight rows were regressions. That is normal.</text>
+</svg>

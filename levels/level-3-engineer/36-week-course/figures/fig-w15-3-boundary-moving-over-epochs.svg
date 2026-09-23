@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img">
+  <title>The line walking into place</title>
+  <desc>A scatter of 36 standardised delivery rows: circles for on time, triangles for late. Four straight decision boundaries are drawn over them. Line 1, at epoch 0 with weights 2.0 and minus 2.0 and bias 1.0, cuts steeply across the wrong way and its training loss is 2.0454. By line 2 at epoch 50 the loss is 0.3590, by line 3 at epoch 150 it is 0.3423, and line 4 at epoch 300 has a loss of 0.3416 and lies almost flat, separating most circles below from most triangles above. A note reads 2.0454 becomes 0.3416 in 300 small steps.</desc>
+  <rect x="20" y="20" width="460" height="460" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="250" y="48" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The line walking into place</text>
+  <line x1="74" y1="418" x2="468" y2="418" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="74" y1="418" x2="74" y2="100" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="271" y="448" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">feature 1 (standardised)</text>
+  <text x="48" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 48 262)">feature 2 (standardised)</text>
+  <line x1="128.4" y1="418" x2="128.4" y2="424" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="128.4" y="440" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">&#8722;2</text>
+  <line x1="68" y1="360.0" x2="74" y2="360.0" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="64" y="364.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">&#8722;2</text>
+  <line x1="196.4" y1="418" x2="196.4" y2="424" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="196.4" y="440" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">&#8722;1</text>
+  <line x1="68" y1="302.0" x2="74" y2="302.0" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="64" y="306.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">&#8722;1</text>
+  <line x1="264.4" y1="418" x2="264.4" y2="424" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="264.4" y="440" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <line x1="68" y1="244.0" x2="74" y2="244.0" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="64" y="248.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0</text>
+  <line x1="332.4" y1="418" x2="332.4" y2="424" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="332.4" y="440" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1</text>
+  <line x1="68" y1="186.0" x2="74" y2="186.0" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="64" y="190.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1</text>
+  <line x1="400.4" y1="418" x2="400.4" y2="424" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="400.4" y="440" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2</text>
+  <line x1="68" y1="128.0" x2="74" y2="128.0" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="64" y="132.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">2</text>
+  <circle cx="184.1" cy="315.1" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <path d="M452.7 309.8 L458.7 321.2 L446.7 321.2 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M321.1 187.4 L327.1 198.8 L315.1 198.8 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="333.3" cy="245.0" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="143.4" cy="293.4" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="301.7" cy="328.1" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <path d="M389.5 241.8 L395.5 253.20000000000002 L383.5 253.20000000000002 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M218.2 201.2 L224.2 212.6 L212.2 212.6 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="318.9" cy="286.4" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="343.5" cy="228.1" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="198.0" cy="286.5" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <path d="M396.1 261.9 L402.1 273.29999999999995 L390.1 273.29999999999995 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="166.0" cy="257.5" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="328.3" cy="272.0" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="203.5" cy="276.2" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="324.5" cy="283.6" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="273.6" cy="280.8" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <path d="M278.4 149.1 L284.4 160.5 L272.4 160.5 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="331.1" cy="259.6" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <path d="M225.9 117.8 L231.9 129.2 L219.9 129.2 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M200.5 236.8 L206.5 248.20000000000002 L194.5 248.20000000000002 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M205.5 248.8 L211.5 260.2 L199.5 260.2 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="147.5" cy="343.0" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="329.5" cy="259.9" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <path d="M192.9 285.9 L198.9 297.29999999999995 L186.9 297.29999999999995 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M368.5 238.0 L374.5 249.4 L362.5 249.4 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M337.8 215.4 L343.8 226.8 L331.8 226.8 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="378.1" cy="193.7" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <path d="M298.9 163.8 L304.9 175.20000000000002 L292.9 175.20000000000002 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="218.6" cy="254.0" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="301.3" cy="323.6" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <path d="M251.7 123.1 L257.7 134.5 L245.7 134.5 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="280.6" cy="390.3" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="307.4" cy="304.9" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <path d="M189.9 238.1 L195.9 249.5 L183.9 249.5 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="341.1" cy="251.0" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <line x1="74.0" y1="377.4" x2="399.4" y2="99.9" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <line x1="74.0" y1="268.0" x2="468.4" y2="223.4" stroke="#6D28D9" stroke-width="2" stroke-linecap="round"/>
+  <line x1="74.0" y1="278.8" x2="468.4" y2="214.6" stroke="#6D28D9" stroke-width="2" stroke-linecap="round"/>
+  <line x1="74.0" y1="280.6" x2="468.4" y2="213.4" stroke="#6D28D9" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="172.6" cy="293.3" r="9" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <text x="172.6" y="297.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1</text>
+  <circle cx="437.8" cy="218.6" r="9" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <text x="437.8" y="222.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">4</text>
+  <rect x="214" y="100" width="254" height="116" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="228" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">epoch     training loss</text>
+  <circle cx="240" cy="142" r="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <text x="240" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1</text>
+  <text x="258" y="146" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">0</text>
+  <text x="360" y="146" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">2.0454</text>
+  <circle cx="240" cy="164" r="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <text x="240" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">2</text>
+  <text x="258" y="168" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">50</text>
+  <text x="360" y="168" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">0.3590</text>
+  <circle cx="240" cy="186" r="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <text x="240" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">3</text>
+  <text x="258" y="190" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">150</text>
+  <text x="360" y="190" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">0.3423</text>
+  <circle cx="240" cy="208" r="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <text x="240" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">4</text>
+  <text x="258" y="212" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">300</text>
+  <text x="360" y="212" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">0.3416</text>
+  <rect x="214" y="232" width="254" height="60" rx="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="228" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">2.0454 &#8594; 0.3416</text>
+  <text x="228" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">in 300 small steps</text>
+  <rect x="74" y="452" width="190" height="26" rx="8" fill="#FFFFFF" stroke="#F5F8FA" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="88" cy="465" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="98" y="469" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">on time</text>
+  <path d="M164 459 L170 470.4 L158 470.4 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="176" y="469" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">late</text>
+</svg>

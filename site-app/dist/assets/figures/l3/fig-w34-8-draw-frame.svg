@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Draw it: from a stranger's terminal to an answer</title>
+  <desc>A large empty dashed frame for the student to draw in, with three instructions underneath: draw the one command a stranger types and the one line that comes back with all five contract fields labelled, draw the three files in the artifacts folder with their byte sizes and an arrow from LATEST to the live one, and draw the two stopwatches as two bars of very different lengths with their numbers written on and the words paid once and paid every time.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Draw it: from a stranger's terminal to an answer</text>
+  <rect x="30" y="66" width="740" height="222" rx="12" fill="none" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="10 8"/>
+  <text x="400" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#55636F" text-anchor="middle">your drawing goes here</text>
+  <text x="40" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start">1.  the one command a stranger types, the line that comes back — label five fields</text>
+  <text x="40" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start">2.  the three files in model/artifacts/ with byte sizes, and LATEST arrowed to the live one</text>
+  <text x="40" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start">3.  two stopwatch bars, very different lengths, each with 'paid once' / 'paid every time'</text>
+</svg>

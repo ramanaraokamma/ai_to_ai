@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>One word column becomes five yes-or-no columns</title>
+  <desc>On the left a single column of five restaurant names with the shape 5 by 1. An arrow labelled one-hot leads to a grid on the right with five named columns and the shape 5 by 5, where every row holds exactly one 1 and four 0s. Underneath, a sixth restaurant called PopUpPizza, never seen in training, is turned into a row of five zeros rather than an error, because handle unknown is set to ignore. A closing line counts 5 restaurants plus 7 weekdays plus 3 kinds of weather as 15 new columns replacing 3 old ones.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">One word column becomes five yes-or-no columns</text>
+  <text x="40" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="600">restaurant</text>
+  <rect x="30" y="96" width="160" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="110" y="113" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Napoli</text>
+  <rect x="30" y="130" width="160" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="110" y="147" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">SliceHouse</text>
+  <rect x="30" y="164" width="160" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="110" y="181" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">CrustyBros</text>
+  <rect x="30" y="198" width="160" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="110" y="215" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">TandooriPizza</text>
+  <rect x="30" y="232" width="160" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="110" y="249" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">GreenLeaf</text>
+  <rect x="30" y="96" width="160" height="170" fill="none" stroke="#1F6FB2" stroke-width="3"/>
+  <rect x="34" y="274" width="100" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/><text x="84.0" y="287.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">shape (5, 1)</text>
+  <line x1="200" y1="180" x2="246" y2="180" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(246 180) rotate(0.0)"/>
+  <text x="223" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one-hot</text>
+  <rect x="262" y="62" width="96" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="310.0" y="72" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600">Crusty</text>
+  <text x="310.0" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600">Bros</text>
+  <rect x="358" y="62" width="96" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="406.0" y="72" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600">GreenL</text>
+  <text x="406.0" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600">eaf</text>
+  <rect x="454" y="62" width="96" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="502.0" y="72" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600">Napoli</text>
+  <text x="502.0" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600"></text>
+  <rect x="550" y="62" width="96" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="598.0" y="72" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600">SliceH</text>
+  <text x="598.0" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600">ouse</text>
+  <rect x="646" y="62" width="96" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="694.0" y="72" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600">Tandoo</text>
+  <text x="694.0" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600">riPizza</text>
+  <rect x="262" y="96" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="310.0" y="113" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="358" y="96" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="406.0" y="113" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="454" y="96" width="96" height="34" fill="#E2F7ED" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="502.0" y="113" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="550" y="96" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="598.0" y="113" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="646" y="96" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="694.0" y="113" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="262" y="130" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="310.0" y="147" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="358" y="130" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="406.0" y="147" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="454" y="130" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="502.0" y="147" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="550" y="130" width="96" height="34" fill="#E2F7ED" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="598.0" y="147" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="646" y="130" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="694.0" y="147" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="262" y="164" width="96" height="34" fill="#E2F7ED" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="310.0" y="181" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="358" y="164" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="406.0" y="181" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="454" y="164" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="502.0" y="181" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="550" y="164" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="598.0" y="181" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="646" y="164" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="694.0" y="181" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="262" y="198" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="310.0" y="215" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="358" y="198" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="406.0" y="215" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="454" y="198" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="502.0" y="215" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="550" y="198" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="598.0" y="215" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="646" y="198" width="96" height="34" fill="#E2F7ED" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="694.0" y="215" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="262" y="232" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="310.0" y="249" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="358" y="232" width="96" height="34" fill="#E2F7ED" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="406.0" y="249" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="454" y="232" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="502.0" y="249" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="550" y="232" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="598.0" y="249" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="646" y="232" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="694.0" y="249" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="262" y="62" width="480" height="204" fill="none" stroke="#1F6FB2" stroke-width="3"/>
+  <rect x="262" y="274" width="116" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/><text x="320.0" y="287.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">shape (5, 5)</text>
+  <text x="400" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">exactly one 1 in every row &#8212; that is the whole idea</text>
+  <rect x="30" y="296" width="160" height="34" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="110" y="313" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">PopUpPizza</text>
+  <text x="30" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">a 6th restaurant opens:</text>
+  <line x1="200" y1="313" x2="246" y2="313" stroke="#845F00" stroke-width="2.5" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#845F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(246 313) rotate(0.0)"/>
+  <rect x="262" y="296" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="310.0" y="313" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="358" y="296" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="406.0" y="313" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="454" y="296" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="502.0" y="313" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="550" y="296" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="598.0" y="313" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="646" y="296" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="694.0" y="313" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="262" y="296" width="480" height="34" fill="none" stroke="#845F00" stroke-width="3"/>
+  <text x="400" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#845F00" text-anchor="middle">handle_unknown="ignore" turns the stranger into five zeros instead of a crash</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">5 restaurants + 7 weekdays + 3 kinds of weather = 15 new columns, and 3 old ones go away</text>
+</svg>

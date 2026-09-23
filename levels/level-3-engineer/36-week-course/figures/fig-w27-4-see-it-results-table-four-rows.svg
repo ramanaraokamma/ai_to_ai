@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The See It table</title>
+  <desc>A four-row results table. Plain: 540 all-digit held-out rows, 1,898 weights trained, 3.3 seconds, test accuracy 0.9796. Augmented: the same 540 rows, 1,898 weights, 14.6 seconds, 0.9926. Frozen-transfer: 269 rows of digits 5 to 9, only 650 weights trained, 0.3 seconds, 0.9257. Fine-tuned: the same 269 rows, 1,898 weights, 1.6 seconds, 0.9665. The held-out-pile cells of the last two rows are outlined in red, because 0.9926 minus 0.9796 equals plus 0.0130 is a fair comparison while 0.9926 against 0.9665 is not.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The See It table</text>
+  <text x="400" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">every row names its own held-out pile, because two of them are different piles</text>
+  <rect x="40" y="96" width="720" height="40" fill="#F5F8FA" stroke="#14202B" stroke-width="2"/>
+  <text x="317" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600">held-out pile</text>
+  <text x="467" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600">weights trained</text>
+  <text x="592" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600">seconds</text>
+  <text x="706" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600">test accuracy</text>
+  <rect x="40" y="136" width="720" height="40" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="52" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">plain</text>
+  <text x="317" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">540 all-digit rows</text>
+  <text x="467" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1,898</text>
+  <text x="592" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">3.3</text>
+  <text x="706" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0.9796</text>
+  <rect x="40" y="176" width="720" height="40" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="52" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">augmented</text>
+  <text x="317" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">540 all-digit rows</text>
+  <text x="467" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1,898</text>
+  <text x="592" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">14.6</text>
+  <text x="706" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0.9926</text>
+  <rect x="40" y="216" width="720" height="40" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="52" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">frozen-transfer</text>
+  <text x="317" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">269 rows of 5&#8211;9</text>
+  <text x="467" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">650</text>
+  <text x="592" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0.3</text>
+  <text x="706" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0.9257</text>
+  <rect x="40" y="256" width="720" height="40" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="52" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">fine-tuned</text>
+  <text x="317" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">269 rows of 5&#8211;9</text>
+  <text x="467" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1,898</text>
+  <text x="592" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1.6</text>
+  <text x="706" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0.9665</text>
+  <line x1="232" y1="96" x2="232" y2="296" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="402" y1="96" x2="402" y2="296" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="532" y1="96" x2="532" y2="296" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="652" y1="96" x2="652" y2="296" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="232" y="216" width="170" height="80" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-dasharray="6 4"/>
+  <text x="40" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Rows 1 and 2 are judged on 540 rows. Rows 3 and 4 on 269 different rows.</text>
+  <text x="40" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">0.9926 &#8722; 0.9796 = +0.0130 is a fair comparison. 0.9926 against 0.9665 is not.</text>
+  <text x="40" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">A table without the pile named on every row is a table that can lie to you.</text>
+</svg>

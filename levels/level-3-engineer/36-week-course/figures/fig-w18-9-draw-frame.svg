@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Draw the blame coming back</title>
+  <desc>A large empty frame split by a dashed horizontal line, labelled forward with an arrow above the line and backward with a reversed arrow below it, for the learner to draw one network's forward and backward passes into. A panel underneath lists what a good answer looks like: four blocks for Z1, A1, Z2 and A2 each carrying its shape, forward arrows above the line in one colour, backward arrows dashed and reversed below it, one backward rule written on each arrow, the ReLU valve drawn shut on the units that did not fire, at least one real number on the backward path such as dZ2 equals minus 0.05146759, the nine knobs marked with where their blame arrives, and the multiplication 3 times 14 equals 42 written in a corner.</desc>
+  <text x="250" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Draw the blame coming back</text>
+  <text x="250" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">One network, two directions, real numbers on the backward path.</text>
+  <rect x="30" y="86" width="440" height="368" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="30" y1="270" x2="470" y2="270" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="8 6"/>
+  <text x="46" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">forward &#8594;</text>
+  <text x="46" y="294" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">&#8592; backward</text>
+  <rect x="30" y="468" width="440" height="208" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="250" y="492" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">What a good answer looks like</text>
+  <text x="48" y="518" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; four blocks &#8212; Z1, A1, Z2, A2 &#8212; each carrying its shape</text>
+  <text x="48" y="540" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; forward arrows above the dashed line, one colour</text>
+  <text x="48" y="562" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; backward arrows dashed and reversed, below it</text>
+  <text x="48" y="584" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; one backward rule written on each backward arrow</text>
+  <text x="48" y="606" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; the ReLU valve drawn SHUT on the units that did not fire</text>
+  <text x="48" y="628" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; one real number on the way back, e.g. &#8722;0.05146759</text>
+  <text x="48" y="650" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; the nine knobs marked, with where each one's blame lands</text>
+  <text x="48" y="672" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; and 3 &#215; 14 = 42 written in a corner</text>
+</svg>

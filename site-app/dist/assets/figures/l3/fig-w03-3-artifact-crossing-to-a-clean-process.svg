@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The artifact crosses; the training code does not</title>
+  <desc>On the left a box for train_pipeline.py which loads the data, splits three ways, fits, measures and saves. A dashed wall marks a brand-new process. Crossing it is the artifact, a file of 5002 bytes. On the right predict.py loads that artifact, types three raw orders and prints three probabilities: 0.968, 0.022 and 0.291. A counted check reads occurrences of fit is 0 and imports of make_data is 0, and that count is the test.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The artifact crosses; the training code does not</text>
+  <rect x="30" y="82" width="240" height="232" rx="12" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="150" y="106" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">train_pipeline.py</text>
+  <text x="48" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">&#183; loads make_data</text>
+  <text x="48" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">&#183; splits three ways</text>
+  <text x="48" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">&#183; fits the pipeline</text>
+  <text x="48" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">&#183; measures on validation</text>
+  <text x="48" y="234" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">&#183; saves the artifact</text>
+  <text x="150" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">it may run once, ever</text>
+  <line x1="340" y1="82" x2="340" y2="314" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 8"/>
+  <text x="340" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">a brand-new process</text>
+  <rect x="286" y="168" width="108" height="62" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="340" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">the artifact</text>
+  <text x="340" y="210" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">5002 bytes</text>
+  <line x1="274" y1="199" x2="282" y2="199" stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(282 199) rotate(0.0)"/>
+  <line x1="398" y1="199" x2="426" y2="199" stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(426 199) rotate(0.0)"/>
+  <rect x="432" y="82" width="240" height="232" rx="12" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="552" y="106" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">predict.py</text>
+  <text x="450" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">&#183; loads the artifact</text>
+  <text x="450" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">&#183; types 3 raw orders</text>
+  <text x="450" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">&#183; prints 3 probabilities</text>
+  <rect x="450" y="214" width="204" height="62" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="552" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">occurrences of fit( : 0</text>
+  <text x="552" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">imports of make_data: 0</text>
+  <text x="552" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">that count is the test</text>
+  <rect x="686" y="140" width="84" height="116" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="728" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0.968</text>
+  <text x="728" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0.022</text>
+  <text x="728" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0.291</text>
+  <text x="728" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">P(late)</text>
+  <line x1="676" y1="198" x2="682" y2="198" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(682 198) rotate(0.0)"/>
+  <text x="400" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Everything the model needs travelled inside those 5002 bytes.</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">If predict.py contains one fit( , the artifact was not the deliverable.</text>
+</svg>

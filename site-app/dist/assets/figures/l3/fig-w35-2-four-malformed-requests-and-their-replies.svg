@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Four kinds of rubbish, four clear refusals, still alive</title>
+  <desc>Five rows, each showing what was sent and what came back. Row 1: an empty body gets 400 and the message empty body, expected a text field. Row 2: the broken JSON open-brace quote text quote colon gets 400 and invalid JSON, Expecting value, line 1 column 10, character 9. Row 3: the object with the field called review instead of text gets 400, the message expected a JSON object with a text field, and a worked example. Row 4: text set to the number 42 gets 400 and the message text must be a non-empty string, got_type int. Row 5 is the actual test: GET slash health afterwards still returns 200 with model_version sentiment_v1 and threshold 0.55. Four refusals, zero crashes, and the service answered a fifth time.</desc>
+
+  <text x="250" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Four kinds of rubbish,</text>
+  <text x="250" y="66" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">four clear refusals</text>
+
+  <!-- row 1 -->
+  <rect x="30" y="88" width="440" height="94" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="54" cy="112" r="14" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="54" y="117" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1</text>
+  <text x="78" y="117" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">empty body</text>
+  <text x="440" y="117" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#CC2B1D" text-anchor="end">400</text>
+  <text x="46" y="141" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">sent:  (nothing at all)</text>
+  <text x="46" y="163" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">back:  empty body; expected {"text": "..."}</text>
+
+  <!-- row 2 -->
+  <rect x="30" y="192" width="440" height="94" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="54" cy="216" r="14" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="54" y="221" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">2</text>
+  <text x="78" y="221" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">broken JSON</text>
+  <text x="440" y="221" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#CC2B1D" text-anchor="end">400</text>
+  <text x="46" y="245" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">sent:  {"text":</text>
+  <text x="46" y="267" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">back:  invalid JSON: Expecting value:</text>
+  <text x="97" y="281" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">line 1 column 10 (char 9)</text>
+
+  <!-- row 3 -->
+  <rect x="30" y="296" width="440" height="94" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="54" cy="320" r="14" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="54" y="325" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">3</text>
+  <text x="78" y="325" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">wrong field name</text>
+  <text x="440" y="325" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#CC2B1D" text-anchor="end">400</text>
+  <text x="46" y="349" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">sent:  {"review": "great pizza"}</text>
+  <text x="46" y="371" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">back:  expected a JSON object with a</text>
+  <text x="97" y="385" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">'text' field, plus an example</text>
+
+  <!-- row 4 -->
+  <rect x="30" y="400" width="440" height="94" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="54" cy="424" r="14" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="54" y="429" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">4</text>
+  <text x="78" y="429" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">right field, wrong type</text>
+  <text x="440" y="429" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#CC2B1D" text-anchor="end">400</text>
+  <text x="46" y="453" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">sent:  {"text": 42}</text>
+  <text x="46" y="475" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">back:  'text' must be a non-empty</text>
+  <text x="97" y="489" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">string, got_type: int</text>
+
+  <!-- row 5, the real test -->
+  <rect x="30" y="510" width="440" height="94" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <g stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" fill="none">
+    <polyline points="46,530 54,540 70,522"/>
+  </g>
+  <text x="84" y="536" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">and this is the actual test</text>
+  <text x="440" y="536" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#1B7A4B" text-anchor="end">200</text>
+  <text x="46" y="562" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">sent:  GET /health, afterwards</text>
+  <text x="46" y="584" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">back:  status ok, sentiment_v1, 0.55</text>
+
+  <text x="250" y="634" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">4 refusals &#183; 0 crashes &#183; answered a 5th time</text>
+  <text x="250" y="658" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">A service that dies on bad input is not a service.</text>
+  <text x="250" y="676" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Every message names what was wrong AND what to send instead.</text>
+</svg>

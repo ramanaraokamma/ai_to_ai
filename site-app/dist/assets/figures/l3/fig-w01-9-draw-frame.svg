@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Draw the five decision cards</title>
+  <desc>Five empty card frames stacked down the page, each with a front line and a back line to write on, for the five decisions hidden inside one fit call: the unit of prediction, the target y, the features X, the split, and the metric. Underneath, a panel says what a good answer contains: card one is the sentence one row is one pizza order with 2020 rows on the back, card two is late equals 1 if the order arrived after the promised time with 0.2881 on the back, card three is 8 feature columns with 10 minus 1 minus 1 equals 8 on the back, card four is three piles and its back stays blank until Week 2, and card five is ROC-AUC with 0.5 meaning learned nothing on the back.</desc>
+  <text x="250" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Draw the five decision cards</text>
+  <text x="250" y="64" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Front is the decision. Back is the real number from the table.</text>
+
+  <rect x="30" y="80" width="440" height="72" rx="10" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="44" y="102" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">1. unit of prediction</text>
+  <line x1="44" y1="126" x2="456" y2="126" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="44" y1="144" x2="456" y2="144" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+
+  <rect x="30" y="164" width="440" height="72" rx="10" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="44" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">2. the target y</text>
+  <line x1="44" y1="210" x2="456" y2="210" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="44" y1="228" x2="456" y2="228" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+
+  <rect x="30" y="248" width="440" height="72" rx="10" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="44" y="270" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">3. the features X</text>
+  <line x1="44" y1="294" x2="456" y2="294" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="44" y1="312" x2="456" y2="312" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+
+  <rect x="30" y="332" width="440" height="72" rx="10" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="44" y="354" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">4. the split</text>
+  <line x1="44" y1="378" x2="456" y2="378" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="44" y1="396" x2="456" y2="396" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+
+  <rect x="30" y="416" width="440" height="72" rx="10" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="44" y="438" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">5. the metric</text>
+  <line x1="44" y1="462" x2="456" y2="462" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="44" y1="480" x2="456" y2="480" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+
+  <rect x="30" y="508" width="440" height="168" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="250" y="532" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">What a good answer looks like</text>
+  <text x="48" y="558" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; card 1 is a sentence, not a word, and 2020 on the back</text>
+  <text x="48" y="580" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; card 2 says which of three meanings of late, plus 0.2881</text>
+  <text x="48" y="602" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; card 3 names all eight columns, and 10 &#8722; 1 &#8722; 1 = 8</text>
+  <text x="48" y="624" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; card 4's back is blank on purpose until Week 2</text>
+  <text x="48" y="646" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; card 5 is in pen, and 0.5 means learned nothing</text>
+  <text x="48" y="668" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">&#183; every back holds a number, never an adjective</text>
+</svg>

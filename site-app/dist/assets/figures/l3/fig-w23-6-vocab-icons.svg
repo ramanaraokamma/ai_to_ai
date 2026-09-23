@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 260" role="img">
+  <title>This week&#8217;s five words, drawn</title>
+  <desc>Five small pictures. A DataLoader is a bar cut into five pieces, the last one narrower. A batch is one of those pieces, labelled 32 rows. Epoch versus step is two bars: one epoch is one lap, one step is one nudge, and 15 laps of 40 groups is 600 nudges. A state_dict is a file holding the four names fc1.weight, fc1.bias, fc2.weight and fc2.bias with 4810 numbers in them. model.eval() is five units with none of them switched off, so the answer repeats.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">This week&#8217;s five words, drawn</text>
+  <rect x="22" y="58" width="148" height="150" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="174" y="58" width="148" height="150" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="326" y="58" width="148" height="150" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="478" y="58" width="148" height="150" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="630" y="58" width="148" height="150" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="36" y="88" width="22" height="26" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="60" y="88" width="22" height="26" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="84" y="88" width="22" height="26" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="108" y="88" width="22" height="26" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="132" y="88" width="10" height="26" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="96" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">cut into groups</text>
+  <text x="96" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">DataLoader</text>
+  <text x="96" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">hands you the rows</text>
+  <text x="96" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">a group at a time</text>
+  <rect x="212" y="84" width="72" height="34" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="248" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">32 rows</text>
+  <text x="248" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one group</text>
+  <text x="248" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">batch</text>
+  <text x="248" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">rows pushed through</text>
+  <text x="248" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">together, as one</text>
+  <rect x="336" y="78" width="128" height="26" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1 epoch = 1 lap</text>
+  <rect x="336" y="108" width="128" height="26" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1 step = 1 nudge</text>
+  <text x="400" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">epoch versus step</text>
+  <text x="400" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">15 laps of 40 groups</text>
+  <text x="400" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">is 600 nudges</text>
+  <rect x="496" y="74" width="112" height="66" rx="8" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="552" y="90" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">fc1.weight</text>
+  <text x="552" y="105" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">fc1.bias</text>
+  <text x="552" y="120" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">fc2.weight</text>
+  <text x="552" y="135" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">fc2.bias</text>
+  <text x="552" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">state_dict</text>
+  <text x="552" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">four names and their</text>
+  <text x="552" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4810 numbers</text>
+  <circle cx="654" cy="92" r="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="678" cy="92" r="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="702" cy="92" r="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="726" cy="92" r="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="750" cy="92" r="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="702" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">all five units on</text>
+  <text x="702" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">model.eval()</text>
+  <text x="702" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">dropout stops, so the</text>
+  <text x="702" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">answer repeats</text>
+  <text x="400" y="234" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1257 rows, 32 at a time, is 40 groups &#8212; and 15 laps of that is 600 nudges</text>
+</svg>

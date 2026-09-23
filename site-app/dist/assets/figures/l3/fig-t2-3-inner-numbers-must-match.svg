@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The inner two numbers must match</title>
+  <desc>Three blocks of cells. The first, a blue batch, is labelled 4 comma 2. The second, a purple weight grid, is labelled 2 comma 3. Both 2s are boxed in pink and joined by a dashed bracket reading these two must match. An at-sign sits between them and an equals sign after, and the green answer block is labelled 4 comma 3. A green box prints one output cell in full: 1 times 10 plus 2 times 50 equals 110.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The inner two numbers must match</text>
+  <text x="112" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">X &#183; a batch of 4 rows</text>
+  <text x="330" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">W1 &#183; the weights</text>
+  <text x="632" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">X @ W1</text>
+  <rect x="48" y="100" width="128" height="124" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="56" y1="131" x2="168" y2="131" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="56" y1="162" x2="168" y2="162" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="56" y1="193" x2="168" y2="193" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="112" y1="108" x2="112" y2="216" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="256" y="100" width="148" height="124" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="264" y1="162" x2="396" y2="162" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="305.3" y1="108" x2="305.3" y2="216" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="354.6" y1="108" x2="354.6" y2="216" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="556" y="100" width="152" height="124" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="564" y1="131" x2="700" y2="131" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="564" y1="162" x2="700" y2="162" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="564" y1="193" x2="700" y2="193" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="606.6" y1="108" x2="606.6" y2="216" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="657.2" y1="108" x2="657.2" y2="216" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="212" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">@</text>
+  <text x="478" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">=</text>
+  <text x="66" y="256" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">(4,</text>
+  <rect x="92.2" y="240" width="14.4" height="22" rx="4" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="95.2" y="256" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">2</text>
+  <text x="107.6" y="256" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">)</text>
+  <text x="286" y="256" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">(</text>
+  <rect x="295.4" y="240" width="14.4" height="22" rx="4" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="298.4" y="256" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">2</text>
+  <text x="310.8" y="256" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">, 3)</text>
+  <text x="600" y="256" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">(4, 3)</text>
+  <path d="M99 264 V292 H302 V264" fill="none" stroke="#C42B8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="112" y="298" width="214" height="26" rx="12" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/><text x="219" y="311" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">these two must match</text>
+  <rect x="430" y="284" width="340" height="48" rx="12" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="446" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">row 0 column 0, in full:</text>
+  <text x="446" y="324" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">1 &#215; 10 + 2 &#215; 50 = 110</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Say it out loud: &#8220;four by two, times two by three, gives four by three.&#8221;</text>
+</svg>

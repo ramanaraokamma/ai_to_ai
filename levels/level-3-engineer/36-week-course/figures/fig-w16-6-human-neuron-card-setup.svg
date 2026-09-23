@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Human Neuron: who holds which card</title>
+  <desc>Three students hold input cards reading x1 equals 2.0, x2 equals 1.0 and x3 equals 0.5. A fourth holds the three weight cards 0.4, minus 0.7 and 1.2, and a bias card of minus 0.5. Each pair multiplies to a product card: 0.8, then minus 0.7, then 0.6, and the bias contributes minus 0.5. The Adder reads them out: 0.8 minus 0.7 plus 0.6 minus 0.5 gives z equals 0.20. The Squasher applies ReLU, which turns negatives into zero, and the output card reads a equals 0.20. A panel underneath says that if the Squasher leaves the room, the two layer version collapses to the single straight line 1.1 x1 plus 0.4 x2 plus 0.3.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Human Neuron: who holds which card</text>
+  <text x="400" y="62" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">three inputs &#183; three weights &#183; one bias &#183; one Adder &#183; one Squasher &#8212; six people, one neuron</text>
+
+  <text x="70" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">inputs (blue)</text>
+  <text x="180" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">weights (purple)</text>
+  <text x="292" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">product</text>
+
+  <rect x="30" y="90" width="80" height="44" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="70" y="112" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">x1 = 2.0</text>
+  <text x="120" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#215;</text>
+  <rect x="132" y="90" width="96" height="44" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="180" y="112" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">w1 = 0.4</text>
+  <text x="240" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8594;</text>
+  <rect x="252" y="90" width="80" height="44" rx="8" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="292" y="112" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.8</text>
+
+  <rect x="30" y="146" width="80" height="44" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="70" y="168" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">x2 = 1.0</text>
+  <text x="120" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#215;</text>
+  <rect x="132" y="146" width="96" height="44" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="180" y="168" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">w2 = &#8722;0.7</text>
+  <text x="240" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8594;</text>
+  <rect x="252" y="146" width="80" height="44" rx="8" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="292" y="168" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8722;0.7</text>
+
+  <rect x="30" y="202" width="80" height="44" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="70" y="224" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">x3 = 0.5</text>
+  <text x="120" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#215;</text>
+  <rect x="132" y="202" width="96" height="44" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="180" y="224" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">w3 = 1.2</text>
+  <text x="240" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8594;</text>
+  <rect x="252" y="202" width="80" height="44" rx="8" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="292" y="224" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.6</text>
+
+  <rect x="132" y="258" width="96" height="44" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="180" y="280" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">b = &#8722;0.5</text>
+  <text x="240" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8594;</text>
+  <rect x="252" y="258" width="80" height="44" rx="8" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="292" y="280" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8722;0.5</text>
+  <text x="70" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">no input,</text>
+  <text x="70" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">it just adds</text>
+
+  <line x1="336" y1="196" x2="356" y2="196" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/><polyline points="-9,-6 0,0 -9,6" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(356 196)"/>
+  <rect x="360" y="140" width="164" height="112" rx="12" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="442" y="160" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">the Adder</text>
+  <text x="442" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">reads all four aloud</text>
+  <text x="442" y="204" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0.8 &#8722; 0.7 + 0.6</text>
+  <text x="442" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">&#8722; 0.5</text>
+  <text x="442" y="242" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#C42B8C" text-anchor="middle">z = 0.20</text>
+
+  <line x1="528" y1="196" x2="544" y2="196" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/><polyline points="-9,-6 0,0 -9,6" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(544 196)"/>
+  <rect x="548" y="140" width="152" height="112" rx="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="624" y="160" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">the Squasher</text>
+  <text x="624" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">ReLU: &#8220;if it is</text>
+  <text x="624" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">negative, I say zero;</text>
+  <text x="624" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">otherwise I repeat it&#8221;</text>
+  <text x="624" y="240" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">0.20 stays 0.20</text>
+
+  <line x1="704" y1="196" x2="712" y2="196" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/><polyline points="-9,-6 0,0 -9,6" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(712 196)"/>
+  <circle cx="746" cy="196" r="30" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="746" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">a = 0.20</text>
+
+  <rect x="360" y="266" width="420" height="52" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="570" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">send the Squasher out of the room and two layers collapse:</text>
+  <text x="570" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">out = 1.1x1 + 0.4x2 + 0.3</text>
+  <text x="400" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The four rows give z = 0.20, then &#8722;2.30, then 0.70, then 0.40</text>
+  <text x="400" y="368" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The Squasher is the only person in the room who makes the second layer worth having.</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>The seven headings of a card</title>
+  <desc>Seven numbered bands. One, intended use: flag a risky order at order time. Two, out-of-scope use: not for driver pay decisions. Three, unit of prediction: one order. Four, training data: 2000 rows, 8 features, seed 0. Five, splits: 1200 slash 400 slash 400 with the test pile unopened. Six, metrics: AUC 0.7541 against a baseline of 0.5000. Seven, known limitations: a new restaurant becomes all zeros.</desc>
+  <text x="250" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The seven headings of a card</text>
+  <text x="250" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">what goes under each, and ours</text>
+  <rect x="30" y="92" width="440" height="74" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="56" cy="116" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="56" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="78" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Intended use</text>
+  <text x="50" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">what it is FOR</text>
+  <text x="50" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">ours: flag a risky order at order time</text>
+  <rect x="30" y="176" width="440" height="74" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="56" cy="200" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="56" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="78" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Out-of-scope use</text>
+  <text x="50" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">what it must NOT be used for</text>
+  <text x="50" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">ours: not for driver pay decisions</text>
+  <rect x="30" y="260" width="440" height="74" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="56" cy="284" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="56" y="284" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="78" y="284" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Unit of prediction</text>
+  <text x="50" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">what one row stands for</text>
+  <text x="50" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">ours: one order</text>
+  <rect x="30" y="344" width="440" height="74" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="56" cy="368" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="56" y="368" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="78" y="368" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Training data</text>
+  <text x="50" y="392" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">how many rows, which columns, where from</text>
+  <text x="50" y="410" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">ours: 2000 rows, 8 features, seed 0</text>
+  <rect x="30" y="428" width="440" height="74" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="56" cy="452" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="56" y="452" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+  <text x="78" y="452" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Splits</text>
+  <text x="50" y="476" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">the three counts and whether test was opened</text>
+  <text x="50" y="494" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">ours: 1200 / 400 / 400, test unopened</text>
+  <rect x="30" y="512" width="440" height="74" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="56" cy="536" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="56" y="536" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">6</text>
+  <text x="78" y="536" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Metrics</text>
+  <text x="50" y="560" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">the number, the pile, and the baseline</text>
+  <text x="50" y="578" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">ours: AUC 0.7541 vs baseline 0.5000</text>
+  <rect x="30" y="596" width="440" height="74" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="56" cy="620" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="56" y="620" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">7</text>
+  <text x="78" y="620" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Known limitations</text>
+  <text x="50" y="644" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">where it breaks, in your own words</text>
+  <text x="50" y="662" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">ours: a new restaurant becomes all zeros</text>
+  <text x="250" y="676" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Seven headings. Twenty minutes. It is the box.</text>
+</svg>

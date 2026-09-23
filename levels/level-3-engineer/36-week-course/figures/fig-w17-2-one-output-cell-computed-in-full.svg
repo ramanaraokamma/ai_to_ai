@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>One output cell, multiplied out in full</title>
+  <desc>A three by two block holding 1, 2, 3, 4, 5, 6, times a two by four block holding 10, 20, 30, 40 and 50, 60, 70, 80, equals a three by four block whose first row is 110, 140, 170, 200. The first row of A, the first column of B and the top-left answer cell are outlined in pink, and a callout works the cell out: 1 times 10 is 10, 2 times 50 is 100, and 10 plus 100 gives 110. Two more cells are given underneath: 3 times 30 plus 4 times 70 is 370, and 5 times 40 plus 6 times 80 is 680.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">One output cell, multiplied out in full</text>
+  <text x="84" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">A</text>
+  <rect x="44" y="96" width="40" height="38" fill="#D9EAF9" stroke="#14202B" stroke-width="2"/>
+  <text x="64.0" y="115.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="84" y="96" width="40" height="38" fill="#D9EAF9" stroke="#14202B" stroke-width="2"/>
+  <text x="104.0" y="115.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <rect x="44" y="134" width="40" height="38" fill="#D9EAF9" stroke="#14202B" stroke-width="2"/>
+  <text x="64.0" y="153.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <rect x="84" y="134" width="40" height="38" fill="#D9EAF9" stroke="#14202B" stroke-width="2"/>
+  <text x="104.0" y="153.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <rect x="44" y="172" width="40" height="38" fill="#D9EAF9" stroke="#14202B" stroke-width="2"/>
+  <text x="64.0" y="191.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+  <rect x="84" y="172" width="40" height="38" fill="#D9EAF9" stroke="#14202B" stroke-width="2"/>
+  <text x="104.0" y="191.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">6</text>
+  <rect x="47.0" y="219.0" width="74" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/><text x="84" y="232" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(3, 2)</text>
+  <text x="148" y="154" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">&#215;</text>
+  <text x="268" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">B</text>
+  <rect x="176" y="115" width="46" height="38" fill="#DBCEF3" stroke="#14202B" stroke-width="2"/>
+  <text x="199.0" y="134.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">10</text>
+  <rect x="222" y="115" width="46" height="38" fill="#DBCEF3" stroke="#14202B" stroke-width="2"/>
+  <text x="245.0" y="134.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">20</text>
+  <rect x="268" y="115" width="46" height="38" fill="#DBCEF3" stroke="#14202B" stroke-width="2"/>
+  <text x="291.0" y="134.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">30</text>
+  <rect x="314" y="115" width="46" height="38" fill="#DBCEF3" stroke="#14202B" stroke-width="2"/>
+  <text x="337.0" y="134.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">40</text>
+  <rect x="176" y="153" width="46" height="38" fill="#DBCEF3" stroke="#14202B" stroke-width="2"/>
+  <text x="199.0" y="172.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">50</text>
+  <rect x="222" y="153" width="46" height="38" fill="#DBCEF3" stroke="#14202B" stroke-width="2"/>
+  <text x="245.0" y="172.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">60</text>
+  <rect x="268" y="153" width="46" height="38" fill="#DBCEF3" stroke="#14202B" stroke-width="2"/>
+  <text x="291.0" y="172.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">70</text>
+  <rect x="314" y="153" width="46" height="38" fill="#DBCEF3" stroke="#14202B" stroke-width="2"/>
+  <text x="337.0" y="172.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">80</text>
+  <rect x="231.0" y="219.0" width="74" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/><text x="268" y="232" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(2, 4)</text>
+  <text x="384" y="154" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">=</text>
+  <text x="508" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">A @ B</text>
+  <rect x="416" y="96" width="46" height="38" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="439.0" y="115.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">110</text>
+  <rect x="462" y="96" width="46" height="38" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="485.0" y="115.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">140</text>
+  <rect x="508" y="96" width="46" height="38" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="531.0" y="115.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">170</text>
+  <rect x="554" y="96" width="46" height="38" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="577.0" y="115.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">200</text>
+  <rect x="416" y="134" width="46" height="38" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="439.0" y="153.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">230</text>
+  <rect x="462" y="134" width="46" height="38" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="485.0" y="153.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">300</text>
+  <rect x="508" y="134" width="46" height="38" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="531.0" y="153.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">370</text>
+  <rect x="554" y="134" width="46" height="38" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="577.0" y="153.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">440</text>
+  <rect x="416" y="172" width="46" height="38" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="439.0" y="191.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">350</text>
+  <rect x="462" y="172" width="46" height="38" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="485.0" y="191.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">460</text>
+  <rect x="508" y="172" width="46" height="38" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="531.0" y="191.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">570</text>
+  <rect x="554" y="172" width="46" height="38" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="577.0" y="191.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">680</text>
+  <rect x="471.0" y="219.0" width="74" height="26" rx="6" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/><text x="508" y="232" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(3, 4)</text>
+  <rect x="44" y="96" width="80" height="38" rx="0" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="176" y="115" width="46" height="76" rx="0" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="416" y="96" width="46" height="38" rx="0" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="608" y="96" width="172" height="132" rx="12" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="694" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">row 0 &#215; column 0</text>
+  <line x1="618" y1="130" x2="770" y2="130" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="694" y="154" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1 &#215; 10 = 10</text>
+  <text x="694" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">2 &#215; 50 = 100</text>
+  <line x1="618" y1="188" x2="770" y2="188" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="694" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">10 + 100 = 110</text>
+  <line x1="604" y1="130" x2="468" y2="118" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <text x="400" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The pink row times the pink column lands in the pink cell.</text>
+  <text x="400" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Row 1, column 2:  3 &#215; 30 + 4 &#215; 70 = 90 + 280 = 370.</text>
+  <text x="400" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Row 2, column 3:  5 &#215; 40 + 6 &#215; 80 = 200 + 480 = 680.</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Twelve cells, twelve of these sums. That is all a matrix multiply is.</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The closest pair in the corpus is one happy and one sad</title>
+  <desc>Two reviews from the student's own 60-review corpus. Review 18 is positive: the coffee was hot and the cake was fresh. Review 48 is negative: the coffee was cold and the cake was stale. Their cosine similarity is the highest in the whole corpus. The panel multiplies out the five words they share: and gives 0.1156 times 0.1166 equals 0.0135, cake gives 0.4274 times 0.4310 equals 0.1842, coffee the same, the gives 0.4209 times 0.4244 equals 0.1786, and was gives 0.4853 times 0.4894 equals 0.2375, for a total of 0.7981, which is 37.1 degrees apart. The two words that carry the meaning, hot and fresh against cold and stale, contribute nothing at all.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The closest pair: one happy, one sad</text>
+  <rect x="24" y="68" width="470" height="42" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="40" y="89" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">the coffee was hot   and the cake was fresh</text>
+  <text x="510" y="89" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" dominant-baseline="central">review 18, positive</text>
+  <rect x="24" y="124" width="470" height="42" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="40" y="145" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">the coffee was cold  and the cake was stale</text>
+  <text x="510" y="145" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" dominant-baseline="central">review 48, negative</text>
+  <rect x="24" y="190" width="470" height="152" rx="10" fill="#F5F8FA" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="40" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C">the five words they share, multiplied out:</text>
+  <text x="46" y="234" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">and     0.1156 &#215; 0.1166 = 0.0135</text>
+  <text x="46" y="253" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">cake    0.4274 &#215; 0.4310 = 0.1842</text>
+  <text x="46" y="272" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">coffee  0.4274 &#215; 0.4310 = 0.1842</text>
+  <text x="46" y="291" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">the     0.4209 &#215; 0.4244 = 0.1786</text>
+  <text x="46" y="310" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">was     0.4853 &#215; 0.4894 = 0.2375</text>
+  <line x1="46" y1="334" x2="300" y2="334" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="46" y="330" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#C42B8C">        total  = 0.7981</text>
+  <rect x="516" y="190" width="260" height="152" rx="12" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="646" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">cosine 0.7981</text>
+  <text x="646" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">= 37.1 degrees apart</text>
+  <text x="646" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the two words that</text>
+  <text x="646" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">carry the meaning,</text>
+  <text x="646" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">hot/fresh against</text>
+  <text x="646" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">cold/stale, add 0.</text>
+  <text x="400" y="371" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">TF-IDF measures what a review is ABOUT. It does not measure how the writer FELT.</text>
+</svg>

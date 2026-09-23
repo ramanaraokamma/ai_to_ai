@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The columns that were not in the file</title>
+  <desc>On the left the eight raw columns of the delivery table with the shape 2000 by 8. An arrow labelled your arithmetic leads to four invented columns worked out for one order whose distance is 2.78 kilometres, prep time 15.0 minutes, hour 12 and weather clear. The flag is_rush asks whether 18 is less than or equal to 12 which is less than or equal to 20, answers no, and gives 0. The bin hour_band puts 12 in the interval 9 to 14 and gives morning. The ratio min_per_km computes 15.0 divided by 2.78 plus 0.5, that is 15.0 divided by 3.28, and gives 4.5732. The interaction dist_x_weather computes 2.78 times 0, because clear counts as 0, and gives 0.00. The result has the shape 2000 by 12: eight old columns plus four new.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The columns that were not in the file</text>
+  <text x="40" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">what the file gave you</text>
+  <rect x="30" y="84" width="210" height="28" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="40" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">restaurant</text>
+  <rect x="30" y="112" width="210" height="28" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="40" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">distance_km</text>
+  <rect x="30" y="140" width="210" height="28" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="40" y="154" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">items</text>
+  <rect x="30" y="168" width="210" height="28" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="40" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">prep_minutes</text>
+  <rect x="30" y="196" width="210" height="28" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="40" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">order_hour</text>
+  <rect x="30" y="224" width="210" height="28" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="40" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">day_of_week</text>
+  <rect x="30" y="252" width="210" height="28" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="40" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">weather</text>
+  <rect x="30" y="280" width="210" height="28" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="40" y="294" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">driver_experience_months</text>
+  <rect x="30" y="84" width="210" height="224" fill="none" stroke="#1F6FB2" stroke-width="3"/>
+  <rect x="30" y="316" width="116" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/><text x="88.0" y="329.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">shape (2000, 8)</text>
+  <line x1="252" y1="196" x2="296" y2="196" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(296 196) rotate(0.0)"/>
+  <text x="274" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">your</text>
+  <text x="274" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">arithmetic</text>
+  <text x="320" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">one order: distance 2.78 km, prep 15.0 min, hour 12, weather clear</text>
+  <rect x="320" y="88" width="450" height="50" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="334" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">is_rush</text>
+  <text x="334" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">is 18 &#8804; 12 &#8804; 20?  no</text>
+  <text x="760" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="end">the FLAG</text>
+  <text x="760" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="end">0</text>
+  <rect x="320" y="146" width="450" height="50" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="334" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">hour_band</text>
+  <text x="334" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">12 falls in (9, 14]</text>
+  <text x="760" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#845F00" text-anchor="end">the BIN</text>
+  <text x="760" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="end">morning</text>
+  <rect x="320" y="204" width="450" height="50" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="334" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">min_per_km</text>
+  <text x="334" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">15.0 &#247; (2.78 + 0.5) = 15.0 &#247; 3.28</text>
+  <text x="760" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#6D28D9" text-anchor="end">the RATIO</text>
+  <text x="760" y="246" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="end">4.5732</text>
+  <rect x="320" y="262" width="450" height="50" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="334" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">dist_x_weather</text>
+  <text x="334" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">2.78 &#215; 0  (clear = 0)</text>
+  <text x="760" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="end">the INTERACTION</text>
+  <text x="760" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="end">0.00</text>
+  <rect x="320" y="322" width="132" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/><text x="386.0" y="335.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">shape (2000, 12)</text>
+  <text x="470" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">8 old columns + 4 new ones = 12</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Every one is arithmetic on that row alone. No other row is read, so nothing can leak.</text>
+</svg>

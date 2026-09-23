@@ -116,10 +116,56 @@ ALL_LEVELS = [
              "of learning?"),
         ],
     ),
+    Level(
+        number=3, key="l3", slug="level-3-engineer", name="Engineer",
+        tagline="A model is one component of a measured, engineered, shippable pipeline.",
+        grade="Grades 9–10 · age ~14 · PyTorch",
+        blurb="Splits, leakage, metrics, gradient descent by hand, a neural network in numpy, "
+              "then PyTorch and CNNs. Fully offline — no dataset downloads.",
+        accent="var(--correct)",
+        terms=[
+            (1, "Build It Honestly", 1, 9,
+             "How do you turn a messy table into a model somebody else can load and use — without "
+             "lying to yourself about the score?"),
+            (2, "Inside the Box", 10, 18,
+             "What is the machine actually doing when it learns — and can I do it myself, with a pen "
+             "and twenty-five lines of numpy?"),
+            (3, "Real Networks, Real Framework", 19, 27,
+             "Once you have built a brain by hand, how do you hand the boring part to PyTorch — and "
+             "teach it to see?"),
+            (4, "No Labels, Words, and Ship It", 28, 36,
+             "What can you learn with no answer key, how do you turn words into numbers, and how do "
+             "you hand the finished thing to a stranger?"),
+        ],
+    ),
 ]
 
-# only build levels whose 36-week course actually exists
-LEVELS = [lv for lv in ALL_LEVELS if lv.dir.exists()]
+
+def _level_is_complete(lv: Level) -> tuple[bool, str]:
+    """A level ships only when all three books are finished. A half-built level on the site is
+    worse than an absent one — the gaps read as broken links, not as work in progress."""
+    if not lv.dir.exists():
+        return False, "no 36-week-course/ folder"
+    if not (lv.dir / "README.md").exists():
+        return False, "no README.md (the week table drives every page)"
+    counts = {}
+    for book in ("teacher-guide", "student-guide", "workbook"):
+        counts[book] = sum(1 for w in range(1, 37)
+                           if (lv.dir / book / f"week-{w:02d}.md").exists())
+    missing = {b: 36 - n for b, n in counts.items() if n < 36}
+    if missing:
+        return False, "incomplete: " + ", ".join(f"{b} {n} week(s) short" for b, n in missing.items())
+    return True, "complete"
+
+
+# only build levels whose 36-week course is finished
+LEVELS = []
+for _lv in ALL_LEVELS:
+    _ok, _why = _level_is_complete(_lv)
+    if _ok:
+        LEVELS.append(_lv)
+    elif _lv.dir.exists():
+        print(f"  skipping L{_lv.number} {_lv.name}: {_why}")
 
 
 

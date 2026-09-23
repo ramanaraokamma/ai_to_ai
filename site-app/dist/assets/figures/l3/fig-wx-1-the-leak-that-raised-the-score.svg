@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The leak that raised the score</title>
+  <desc>Two panels comparing the order of two steps. The red panel, what she wrote first: smudge all 1,797 pictures, glue the copies on to make 8,985 rows, then split 70 30, then test on 2,696 rows &#8212; test accuracy 0.9967, and 2,681 of those 2,696 test rows are a smudged twin of a training picture, which is 99.44 per cent. The green panel, what she wrote second: split 70 30 first, giving 1,257 train and 540 held out, smudge the train pile only, then test on the same 540 rows &#8212; test accuracy 0.9833, with no test picture having a twin in training. A pink box says the lie was worth 0.9967 minus 0.9833 equals plus 0.0133, about 7.2 held-out rows, with no error message anywhere.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The leak that raised the score</text>
+  <text x="210" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">what she wrote first</text>
+  <text x="590" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle">what she wrote second</text>
+  <rect x="30" y="88" width="360" height="196" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="46" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">1. smudge all 1,797 pictures</text>
+  <text x="46" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">2. glue the copies on: 8,985 rows</text>
+  <text x="46" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">3. THEN split 70 / 30</text>
+  <text x="46" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">4. test on 2,696 rows</text>
+  <text x="46" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B">test accuracy 0.9967</text>
+  <text x="46" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">2,681 of those 2,696 test rows are a</text>
+  <text x="46" y="270" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">smudged twin of a TRAINING picture &#8212; 99.44%</text>
+  <rect x="410" y="88" width="360" height="196" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="426" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">1. split 70 / 30 FIRST</text>
+  <text x="426" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">2. 1,257 train &#183; 540 held out</text>
+  <text x="426" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">3. smudge the TRAIN pile only</text>
+  <text x="426" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">4. test on the same 540 rows</text>
+  <text x="426" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B">test accuracy 0.9833</text>
+  <text x="426" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B">no test picture has a twin anywhere</text>
+  <text x="426" y="270" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B">in the training pile. Zero. Checked.</text>
+  <rect x="160" y="300" width="480" height="58" rx="12" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="176" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the lie was worth</text>
+  <text x="300" y="327" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">0.9967 &#8722; 0.9833 = +0.0133</text>
+  <text x="176" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">= 7.2 held-out rows &#183; and no error message anywhere</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Splitting last is the whole bug. It ran perfectly.</text>
+</svg>

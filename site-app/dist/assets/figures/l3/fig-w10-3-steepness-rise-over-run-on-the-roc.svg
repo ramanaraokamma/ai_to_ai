@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img">
+  <title>How steep is the curve between these two points?</title>
+  <desc>The same twenty-card ROC curve with two of its own segments measured by rise over run. From threshold 0.90 at the point 0.00, 0.20 to threshold 0.80 at the point 0.10, 0.40 the rise is 0.20 and the run is 0.10, and a callout says 0.20 divided by 0.10 equals 2.0, so two frauds are caught for every innocent card blocked. From threshold 0.60 at 0.20, 0.80 to threshold 0.50 at 0.30, 0.80 the rise is 0.00 and the run is 0.10, and a callout says 0.00 divided by 0.10 equals 0.0: one more innocent card and not one extra fraud.</desc>
+  <text x="250" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">How steep is the curve</text>
+  <text x="250" y="66" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">between these two points?</text>
+  <polyline points="104,392 104,392 104,332 134,332 134,272 134,272 134,212 164,212 164,152 194,152 194,152 224,152 224,122 254,122 254,92 314,92 314,92 374,92 374,92 404,92 404,92" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="104" y1="76" x2="104" y2="392" stroke="#14202B" stroke-width="2"/>
+  <line x1="104" y1="392" x2="418" y2="392" stroke="#14202B" stroke-width="2"/>
+  <line x1="104" y1="392" x2="404" y2="92" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <line x1="104" y1="392" x2="104" y2="398" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="104" y="412" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <line x1="98" y1="392" x2="104" y2="392" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="94" y="396" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0</text>
+  <line x1="254" y1="392" x2="254" y2="398" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="254" y="412" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.5</text>
+  <line x1="98" y1="242" x2="104" y2="242" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="94" y="246" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.5</text>
+  <line x1="404" y1="392" x2="404" y2="398" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="404" y="412" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1</text>
+  <line x1="98" y1="92" x2="104" y2="92" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="94" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1</text>
+  <text x="254" y="430" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">false positive rate</text>
+  <text x="60" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 60 242)">true positive rate</text>
+  <line x1="104" y1="332" x2="134" y2="332" stroke="#55636F" stroke-width="1.5" stroke-dasharray="5 4" stroke-linecap="round"/>
+  <line x1="134" y1="332" x2="134" y2="272" stroke="#55636F" stroke-width="1.5" stroke-dasharray="5 4" stroke-linecap="round"/>
+  <text x="119" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">run 0.10</text>
+  <text x="140" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">rise 0.20</text>
+  <circle cx="104" cy="332" r="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <circle cx="134" cy="272" r="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="114" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">t = 0.90</text>
+  <text x="144" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">t = 0.80</text>
+  <line x1="164" y1="152" x2="194" y2="152" stroke="#55636F" stroke-width="1.5" stroke-dasharray="5 4" stroke-linecap="round"/>
+  <text x="179" y="142" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">run 0.10, rise 0.00</text>
+  <circle cx="164" cy="152" r="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <circle cx="194" cy="152" r="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="200" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">t = 0.60 &#8594; 0.50</text>
+  <rect x="222" y="148" width="250" height="62" rx="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="347" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0.20 &#247; 0.10 = 2.0</text>
+  <text x="347" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2 frauds per false alarm</text>
+  <line x1="222" y1="179" x2="120.5" y2="302" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="222" y="250" width="250" height="62" rx="10" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="347" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0.00 &#247; 0.10 = 0.0</text>
+  <text x="347" y="294" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one alarm, no extra fraud</text>
+  <line x1="222" y1="268" x2="180.5" y2="156" stroke="#CC2B1D" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="250" y="462" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Steep is cheap recall. Flat is pure cost.</text>
+</svg>

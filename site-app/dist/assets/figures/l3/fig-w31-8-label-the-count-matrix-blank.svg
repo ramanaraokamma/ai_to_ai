@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Label the count matrix</title>
+  <desc>Four short reviews on the left and a four by eight grid of word counts on the right, with four cells left empty as dashed boxes: d1's great cell, d2's cold cell, d3's great cell and d4's cold cell. The four row totals are empty too. The filled cells show d1 as 0 0 0 blank 1 0 1 1, d2 as 0 blank 0 0 1 0 1 1, d3 as 0 0 0 blank 1 1 0 0 and d4 as 1 blank 1 0 0 1 0 0, so the missing values are 1, 1, 2 and 2 and the row totals are 4, 4, 4 and 5. A panel underneath has empty boxes for the shape, which is 4 by 8, the number of cells, which is 32, the stored non-zero cells, which is 15, and the percentage empty, which is 53, and asks which two cells hold a 2.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Label the count matrix</text>
+  <text x="400" y="62" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">4 reviews, 8 words, and CountVectorizer chose the column order</text>
+  <rect x="24" y="84" width="260" height="28" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="34" y="98" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" dominant-baseline="central">d1</text>
+  <text x="58" y="98" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">The pizza was great!</text>
+  <rect x="24" y="118" width="260" height="28" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="34" y="132" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" dominant-baseline="central">d2</text>
+  <text x="58" y="132" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">The pizza was cold.</text>
+  <rect x="24" y="152" width="260" height="28" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="34" y="166" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" dominant-baseline="central">d3</text>
+  <text x="58" y="166" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">Great pizza, great service.</text>
+  <rect x="24" y="186" width="260" height="28" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="34" y="200" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" dominant-baseline="central">d4</text>
+  <text x="58" y="200" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">Cold service and cold food.</text>
+  <line x1="292" y1="132" x2="308" y2="132" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(308 132) rotate(0)"/>
+  <text x="346.0" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">and</text>
+  <text x="394.0" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">cold</text>
+  <text x="442.0" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">food</text>
+  <text x="490.0" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">great</text>
+  <text x="538.0" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">pizza</text>
+  <text x="586.0" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">service</text>
+  <text x="634.0" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the</text>
+  <text x="682.0" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">was</text>
+  <text x="730" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">total</text>
+  <text x="308" y="112.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">d1</text>
+  <rect x="322" y="96" width="48" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="346.0" y="112.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="370" y="96" width="48" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="394.0" y="112.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="418" y="96" width="48" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="442.0" y="112.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="466" y="96" width="48" height="32" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-dasharray="6 5"/>
+  <rect x="514" y="96" width="48" height="32" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="538.0" y="112.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="562" y="96" width="48" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="586.0" y="112.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="610" y="96" width="48" height="32" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="634.0" y="112.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="658" y="96" width="48" height="32" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="682.0" y="112.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="706" y="96" width="48" height="32" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="308" y="144.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">d2</text>
+  <rect x="322" y="128" width="48" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="346.0" y="144.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="370" y="128" width="48" height="32" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-dasharray="6 5"/>
+  <rect x="418" y="128" width="48" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="442.0" y="144.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="466" y="128" width="48" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="490.0" y="144.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="514" y="128" width="48" height="32" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="538.0" y="144.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="562" y="128" width="48" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="586.0" y="144.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="610" y="128" width="48" height="32" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="634.0" y="144.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="658" y="128" width="48" height="32" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="682.0" y="144.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="706" y="128" width="48" height="32" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="308" y="176.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">d3</text>
+  <rect x="322" y="160" width="48" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="346.0" y="176.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="370" y="160" width="48" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="394.0" y="176.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="418" y="160" width="48" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="442.0" y="176.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="466" y="160" width="48" height="32" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-dasharray="6 5"/>
+  <rect x="514" y="160" width="48" height="32" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="538.0" y="176.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="562" y="160" width="48" height="32" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="586.0" y="176.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="610" y="160" width="48" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="634.0" y="176.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="658" y="160" width="48" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="682.0" y="176.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="706" y="160" width="48" height="32" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="308" y="208.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">d4</text>
+  <rect x="322" y="192" width="48" height="32" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="346.0" y="208.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="370" y="192" width="48" height="32" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-dasharray="6 5"/>
+  <rect x="418" y="192" width="48" height="32" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="442.0" y="208.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="466" y="192" width="48" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="490.0" y="208.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="514" y="192" width="48" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="538.0" y="208.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="562" y="192" width="48" height="32" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="586.0" y="208.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="610" y="192" width="48" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="634.0" y="208.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="658" y="192" width="48" height="32" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="682.0" y="208.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="706" y="192" width="48" height="32" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="514" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">four cells and four row totals are missing. Fill in all eight.</text>
+  <rect x="24" y="260" width="752" height="76" rx="10" fill="#F5F8FA" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="40" y="286" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">shape = (</text>
+  <rect x="104" y="276" width="34" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="146" y="286" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">,</text>
+  <rect x="156" y="276" width="34" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="196" y="286" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">)</text>
+  <text x="226" y="286" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">cells =</text>
+  <rect x="280" y="276" width="44" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="342" y="286" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">stored (nnz) =</text>
+  <rect x="446" y="276" width="44" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="508" y="286" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">so empty =</text>
+  <rect x="588" y="276" width="44" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="638" y="286" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">%</text>
+  <text x="40" y="322" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">the two cells that hold a 2 are</text>
+  <rect x="258" y="312" width="90" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="356" y="322" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">and</text>
+  <rect x="388" y="312" width="90" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="490" y="322" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">because</text>
+  <rect x="556" y="312" width="200" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="400" y="364" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Every cell answers one question: how many times does this word appear in this review?</text>
+</svg>

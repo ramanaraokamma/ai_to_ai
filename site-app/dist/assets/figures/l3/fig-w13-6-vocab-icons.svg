@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Seven words from Week 13, drawn</title>
+  <desc>Eight labelled tiles. Weight: 0.6 times oven, how much one fact pushes the answer. Bias: minus 3, added to every row. Raw score z: minus 3.00 up to 4.40, any number at all, also called the logit. Sigmoid: 1.4 goes in and 0.8022 comes out, and sigmoid of 0 is exactly 0.5000. Odds: 0.90 divided by 0.10 equals 9, nine to one on. Log-odds: ln of 9 equals 2.197225, which is the raw score again. Overflow: e to the 1000 becomes inf, because that number has 435 digits and a float64 holds 309. The last tile is the three calculator presses for z equals 1.4: e to the minus 1.4 is 0.246597, plus 1 is 1.246597, and 1 divided by that is 0.8022.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Seven words from Week 13, drawn</text>
+  <rect x="30" y="66" width="170" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="42" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">weight</text>
+  <text x="42" y="128" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">0.6 &#215; oven</text>
+  <text x="42" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">how much one fact pushes</text>
+  <text x="42" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">0.6 and 0.4 today</text>
+  <rect x="220" y="66" width="170" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="232" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">bias</text>
+  <text x="232" y="128" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">&#8722; 3</text>
+  <text x="232" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">added to every row</text>
+  <text x="232" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">slides the model up</text>
+  <rect x="410" y="66" width="170" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="422" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">raw score z</text>
+  <text x="422" y="128" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">&#8722;3.00 &#8230; 4.40</text>
+  <text x="422" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">any number at all</text>
+  <text x="422" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">also called the logit</text>
+  <rect x="600" y="66" width="170" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="612" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">sigmoid</text>
+  <text x="612" y="128" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">1.4 &#8594; 0.8022</text>
+  <text x="612" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">any number in, 0&#8211;1 out</text>
+  <text x="612" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">sigmoid(0) = 0.5000</text>
+  <rect x="30" y="224" width="170" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="42" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">odds</text>
+  <text x="42" y="286" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">0.90 &#247; 0.10 = 9</text>
+  <text x="42" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#8220;nine to one on&#8221;</text>
+  <text x="42" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">does &#247; does not happen</text>
+  <rect x="220" y="224" width="170" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="232" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">log-odds</text>
+  <text x="232" y="286" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">ln(9) = 2.197225</text>
+  <text x="232" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the raw score, back</text>
+  <text x="232" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">so z is called the logit</text>
+  <rect x="410" y="224" width="170" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="422" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">overflow</text>
+  <text x="422" y="286" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">e^(1000) &#8594; inf</text>
+  <text x="422" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">too big to store</text>
+  <text x="422" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">435 digits, room for 309</text>
+  <rect x="600" y="224" width="170" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="612" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">three presses</text>
+  <text x="612" y="278" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">e^(&#8722;1.4) = 0.246597</text>
+  <text x="612" y="300" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">1 + that  = 1.246597</text>
+  <text x="612" y="322" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">1 &#247; that  = 0.8022</text>
+  <text x="612" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">z = 1.4, on a calculator</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Every number on these tiles comes off a calculator or this week's code.</text>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Wrong and right: answering &#8220;is it any good?&#8221;</title>
+  <desc>Two panels answering the same question. On the left, marked wrong, four banned phrases: production-ready, robust, real-time and 99% accurate, with the note that none of them can be checked by the person listening. On the right, marked right, the same answer made of facts: 0.875 accuracy on 16 held-out rows, a most-frequent baseline of 0.500, one row worth 100 divided by 16 equals 6.25 percentage points, and the worst subgroup at 0.385 on 13 rows with recall 0 of 6. Four facts in one breath, and every one of them is in a file somebody else can open.</desc>
+
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Wrong and right: answering &#8220;is it any good?&#8221;</text>
+
+  <rect x="30" y="66" width="350" height="306" rx="12" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="30" y="66" width="350" height="36" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(40,71) scale(0.36)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <line x1="38" y1="38" x2="62" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+    <line x1="62" y1="38" x2="38" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <text x="222" y="91" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">number-shaped holes</text>
+
+  <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+    <line x1="56" y1="130" x2="70" y2="144"/>
+    <line x1="70" y1="130" x2="56" y2="144"/>
+    <line x1="56" y1="178" x2="70" y2="192"/>
+    <line x1="70" y1="178" x2="56" y2="192"/>
+    <line x1="56" y1="226" x2="70" y2="240"/>
+    <line x1="70" y1="226" x2="56" y2="240"/>
+    <line x1="56" y1="274" x2="70" y2="288"/>
+    <line x1="70" y1="274" x2="56" y2="288"/>
+  </g>
+  <text x="86" y="142" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">&#8220;production-ready&#8221;</text>
+  <text x="86" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">&#8220;robust&#8221;</text>
+  <text x="86" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">&#8220;real-time&#8221;</text>
+  <text x="86" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">&#8220;99% accurate&#8221;</text>
+  <text x="86" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">ready for what, measured how?</text>
+  <text x="86" y="206" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">it survived four things: say four</text>
+  <text x="86" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">the p95 is 0.28 ms: say that</text>
+  <text x="86" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">on a 1% table that is doing nothing</text>
+
+  <text x="52" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D">not one of these can be checked</text>
+  <text x="52" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">by the person who is listening</text>
+
+  <rect x="420" y="66" width="350" height="306" rx="12" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="420" y="66" width="350" height="36" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(430,71) scale(0.36)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 46,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="612" y="91" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">four facts in one breath</text>
+
+  <rect x="442" y="122" width="306" height="30" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="454" y="137" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">0.875 on 16 held-out rows</text>
+  <rect x="442" y="158" width="306" height="30" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="454" y="173" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">baseline 0.500 (most frequent)</text>
+  <rect x="442" y="194" width="306" height="30" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="454" y="209" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">100 &#247; 16 = 6.25 points a row</text>
+  <rect x="442" y="230" width="306" height="30" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="454" y="245" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">worst group 0.385, n = 13</text>
+
+  <rect x="442" y="274" width="306" height="46" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="456" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">recall there is 0 of 6, so it must not</text>
+  <text x="456" y="310" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">decide who gets banned or muted</text>
+
+  <text x="442" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B">every one is in a file you can open</text>
+  <text x="442" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">which is what makes it an answer</text>
+</svg>

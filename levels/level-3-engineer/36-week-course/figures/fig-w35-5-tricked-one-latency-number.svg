@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Wrong and right: is one latency number enough?</title>
+  <desc>Two panels. On the left, marked wrong, a single reported figure, a mean of 0.23 milliseconds, described as fast, with the note that the one request a person actually noticed took 1.06 milliseconds and is invisible in a mean. On the right, marked right, four numbers from the same 111 log lines: mean 0.23, p50 0.21, p95 0.28 and max 1.06 milliseconds, with the arithmetic 1.06 divided by 0.28 is about 3.8, so the worst request was nearly four times the p95, and it was request number one, before anything was warm.</desc>
+
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Wrong and right: is one latency number enough?</text>
+
+  <rect x="30" y="66" width="350" height="306" rx="12" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="30" y="66" width="350" height="36" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(40,71) scale(0.36)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <line x1="38" y1="38" x2="62" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+    <line x1="62" y1="38" x2="38" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <text x="222" y="91" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">one number: the mean</text>
+
+  <rect x="52" y="128" width="280" height="52" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="192" y="154" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">mean 0.23 ms</text>
+  <text x="52" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D">&#8220;so it is fast.&#8221;</text>
+
+  <text x="52" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">111 requests, drawn small:</text>
+  <g stroke="#1F6FB2" stroke-width="3" stroke-linecap="round">
+    <line x1="62" y1="286" x2="62" y2="272"/>
+    <line x1="80" y1="286" x2="80" y2="276"/>
+    <line x1="98" y1="286" x2="98" y2="274"/>
+    <line x1="116" y1="286" x2="116" y2="277"/>
+    <line x1="134" y1="286" x2="134" y2="273"/>
+    <line x1="152" y1="286" x2="152" y2="276"/>
+    <line x1="170" y1="286" x2="170" y2="275"/>
+    <line x1="188" y1="286" x2="188" y2="274"/>
+    <line x1="206" y1="286" x2="206" y2="277"/>
+    <line x1="224" y1="286" x2="224" y2="272"/>
+  </g>
+  <line x1="248" y1="286" x2="248" y2="250" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <line x1="52" y1="286" x2="332" y2="286" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="266" y="256" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#C42B8C">1.06 ms</text>
+
+  <text x="52" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D">the tall one is the only one</text>
+  <text x="52" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D">anybody would have felt</text>
+  <text x="52" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">and the mean does not mention it</text>
+
+  <rect x="420" y="66" width="350" height="306" rx="12" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="420" y="66" width="350" height="36" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(430,71) scale(0.36)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 46,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="612" y="91" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">four numbers, four jobs</text>
+
+  <text x="442" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">the same 111 log lines</text>
+  <rect x="442" y="138" width="306" height="28" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="454" y="152" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">mean  0.23 ms</text>
+  <text x="736" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">pulled by the tail</text>
+  <rect x="442" y="170" width="306" height="28" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="454" y="184" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">p50   0.21 ms</text>
+  <text x="736" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">blind to the tail</text>
+  <rect x="442" y="202" width="306" height="28" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="454" y="216" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">p95   0.28 ms</text>
+  <text x="736" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="end" dominant-baseline="central">nearly everybody</text>
+  <rect x="442" y="234" width="306" height="28" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="454" y="248" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">max   1.06 ms</text>
+  <text x="736" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="end" dominant-baseline="central">the worst thing</text>
+
+  <rect x="442" y="278" width="306" height="42" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="456" y="304" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">1.06 &#247; 0.28 &#8776; 3.8 times the p95</text>
+
+  <text x="442" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B">and the max was request number 1</text>
+  <text x="442" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">before anything at all was warm</text>
+</svg>

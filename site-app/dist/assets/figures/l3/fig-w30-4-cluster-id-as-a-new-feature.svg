@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Five new columns, made without ever looking at the answers</title>
+  <desc>A block of thirteen data columns with shape 30 by 13 gains three columns of distance-to-each-centre and two columns of principal-component score, becoming shape 30 by 18. All five new columns were fitted on the thirty training rows only. On the 148 held-out wines the thirteen raw columns read 141 correctly and the eighteen columns read 145, a gain of 4 wines or 2.70 accuracy points; the five new columns on their own read 146.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Five columns that never saw a label.</text>
+  <rect x="46" y="78" width="168" height="104" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="130" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">the measurements</text>
+  <text x="130" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">13 columns</text>
+  <text x="130" y="166" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">shape (30, 13)</text>
+  <text x="130" y="62" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">what you started with</text>
+  <rect x="266" y="68" width="176" height="58" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="354" y="92" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#14202B" text-anchor="middle">km.transform(X)</text>
+  <text x="354" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">3 distance columns</text>
+  <rect x="266" y="138" width="176" height="58" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="354" y="162" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#14202B" text-anchor="middle">pca.transform(X)</text>
+  <text x="354" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2 score columns</text>
+  <line x1="218.00" y1="130.00" x2="262.00" y2="100.00" stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(262.00 100.00) rotate(-34.29)"/>
+  <line x1="218.00" y1="132.00" x2="262.00" y2="166.00" stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(262.00 166.00) rotate(37.69)"/>
+  <rect x="494" y="78" width="176" height="104" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="582" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">13 + 3 + 2</text>
+  <text x="582" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">= 18 columns</text>
+  <text x="582" y="166" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">shape (30, 18)</text>
+  <line x1="446.00" y1="130.00" x2="490.00" y2="130.00" stroke="#C42B8C" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#C42B8C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(490.00 130.00) rotate(0.00)"/>
+  <rect x="40" y="208" width="720" height="96" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="60" y="234" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">held out: 148 wines that no fitting ever touched</text>
+  <text x="60" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">13 raw columns        141 of 148   0.9527</text>
+  <text x="60" y="288" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#C42B8C">18 columns            145 of 148   0.9797   &#8594; +2.70 points</text>
+  <rect x="40" y="316" width="720" height="46" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="400" y="339" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">both fitted on the 30 TRAINING rows only &#8212; fit on all 178 and it is a leak</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4 wines out of 148. Say the count, not just the percentage.</text>
+</svg>

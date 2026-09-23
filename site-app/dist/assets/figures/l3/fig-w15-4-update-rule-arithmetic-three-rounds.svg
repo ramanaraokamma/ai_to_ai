@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Three rounds of the same line</title>
+  <desc>Three stacked blocks, one per round of gradient descent on four delivery rows with a learning rate of 1.0. Each block shows the training loss and the same subtraction applied to all three knobs. Round 0 has loss 0.693147 and takes w1 from 0.000000 to 0.375000, w2 from 0.000000 to minus 0.125000, and b stays at 0.000000 because its slope is exactly zero. Round 1 has loss 0.581375 and takes w1 to 0.477682, w2 to minus 0.376752 and b to minus 0.118950. Round 2 has loss 0.504824 and takes w1 to 0.657777, w2 to minus 0.534785 and b to minus 0.176340. A footer shows the losses falling: 0.693147, 0.581375, 0.504824, 0.448421 &#8212; down every single round.</desc>
+  <rect x="20" y="20" width="460" height="660" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="250" y="50" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Three rounds of the same line</text>
+  <text x="250" y="72" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">new = old &#8722; 1.0 &#215; (that knob's slope)</text>
+  <rect x="40" y="100" width="420" height="148" rx="10" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="56" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">round 0</text>
+  <rect x="280" y="108" width="166" height="28" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="363" y="127" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">loss 0.693147</text>
+  <text x="56" y="158" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#6D28D9">w1</text>
+  <text x="90" y="158" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">0.000000 &#8722; 1.0 &#215; (&#8722;0.375000) = 0.375000</text>
+  <text x="56" y="186" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#6D28D9">w2</text>
+  <text x="90" y="186" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">0.000000 &#8722; 1.0 &#215; 0.125000 = &#8722;0.125000</text>
+  <text x="56" y="214" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#6D28D9">b </text>
+  <text x="90" y="214" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">0.000000 &#8722; 1.0 &#215; 0.000000 = 0.000000</text>
+  <line x1="250" y1="252" x2="250" y2="272" stroke="#55636F" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(250 272) rotate(90)"/>
+  <rect x="40" y="286" width="420" height="148" rx="10" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="56" y="312" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">round 1</text>
+  <rect x="280" y="294" width="166" height="28" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="363" y="313" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">loss 0.581375</text>
+  <text x="56" y="344" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#6D28D9">w1</text>
+  <text x="90" y="344" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">0.375000 &#8722; 1.0 &#215; (&#8722;0.102682) = 0.477682</text>
+  <text x="56" y="372" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#6D28D9">w2</text>
+  <text x="90" y="372" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">&#8722;0.125000 &#8722; 1.0 &#215; 0.251752 = &#8722;0.376752</text>
+  <text x="56" y="400" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#6D28D9">b </text>
+  <text x="90" y="400" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">0.000000 &#8722; 1.0 &#215; 0.118950 = &#8722;0.118950</text>
+  <line x1="250" y1="438" x2="250" y2="458" stroke="#55636F" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(250 458) rotate(90)"/>
+  <rect x="40" y="472" width="420" height="148" rx="10" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="56" y="498" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">round 2</text>
+  <rect x="280" y="480" width="166" height="28" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="363" y="499" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">loss 0.504824</text>
+  <text x="56" y="530" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#6D28D9">w1</text>
+  <text x="90" y="530" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">0.477682 &#8722; 1.0 &#215; (&#8722;0.180095) = 0.657777</text>
+  <text x="56" y="558" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#6D28D9">w2</text>
+  <text x="90" y="558" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">&#8722;0.376752 &#8722; 1.0 &#215; 0.158033 = &#8722;0.534785</text>
+  <text x="56" y="586" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#6D28D9">b </text>
+  <text x="90" y="586" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">&#8722;0.118950 &#8722; 1.0 &#215; 0.057390 = &#8722;0.176340</text>
+  <rect x="40" y="620" width="420" height="52" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="56" y="646" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">0.693147 &#8594; 0.581375 &#8594; 0.504824 &#8594; 0.448421</text>
+  <text x="56" y="664" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">down every single round</text>
+</svg>

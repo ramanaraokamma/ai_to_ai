@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 260" role="img">
+  <title>Variance is the average squared distance from the mean</title>
+  <desc>Five numbers on a line: 4, 6, 8, 10 and 12, with the mean marked at 8. Under each number its distance from the mean is written: minus 4, minus 2, 0, plus 2 and plus 4. Under that each distance squared: 16, 4, 0, 4 and 16, which add to 40. Forty divided by 5 is 8.0, and forty divided by 4 is 10.0, which is the number scikit-learn prints.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Variance is only four steps.</text>
+  <line x1="100.00" y1="96.00" x2="650.00" y2="96.00" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="130.00" y1="89.00" x2="130.00" y2="103.00" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="130.00" cy="96.00" r="6" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="130.0" y="78" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">4</text>
+  <text x="130.0" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">&#8722;4</text>
+  <text x="130.0" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">16</text>
+  <line x1="252.50" y1="89.00" x2="252.50" y2="103.00" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="252.50" cy="96.00" r="6" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="252.5" y="78" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">6</text>
+  <text x="252.5" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">&#8722;2</text>
+  <text x="252.5" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">4</text>
+  <line x1="375.00" y1="89.00" x2="375.00" y2="103.00" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="375.00" cy="96.00" r="6" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="375.0" y="78" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">8</text>
+  <text x="375.0" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">0</text>
+  <text x="375.0" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0</text>
+  <line x1="497.50" y1="89.00" x2="497.50" y2="103.00" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="497.50" cy="96.00" r="6" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="497.5" y="78" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">10</text>
+  <text x="497.5" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">+2</text>
+  <text x="497.5" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">4</text>
+  <line x1="620.00" y1="89.00" x2="620.00" y2="103.00" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="620.00" cy="96.00" r="6" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="620.0" y="78" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">12</text>
+  <text x="620.0" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">+4</text>
+  <text x="620.0" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">16</text>
+  <line x1="375.00" y1="108.00" x2="375.00" y2="122.00" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <text x="383.0" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C">mean = 8</text>
+  <text x="86" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">step 1</text>
+  <text x="86" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">step 2</text>
+  <text x="666" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">how far off</text>
+  <text x="666" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">squared</text>
+  <rect x="130" y="184" width="540" height="48" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="148" y="213" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#14202B">step 3:  16+4+0+4+16 = 40     step 4:  40 &#247; 4 = 10.0</text>
+</svg>

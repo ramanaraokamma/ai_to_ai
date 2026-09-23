@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 260" role="img">
+  <title>This week&#8217;s five words, drawn</title>
+  <desc>Five small pictures. nn.Linear is a three by two grid of weights beside a column of three biases. nn.Sequential is three boxes stacked with arrows running down. A logit is a wide block labelled any number above a narrow block labelled 0 to 1. BCEWithLogitsLoss is a box holding two steps inside it, a sigmoid and minus the natural log of p. Dropout is five units in a row with 2 of the 5 crossed out.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">This week&#8217;s five words, drawn</text>
+  <rect x="22" y="58" width="148" height="150" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="174" y="58" width="148" height="150" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="326" y="58" width="148" height="150" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="478" y="58" width="148" height="150" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="630" y="58" width="148" height="150" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="62" y="74" width="18" height="18" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <rect x="80" y="74" width="18" height="18" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <rect x="62" y="92" width="18" height="18" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <rect x="80" y="92" width="18" height="18" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <rect x="62" y="110" width="18" height="18" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <rect x="80" y="110" width="18" height="18" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <rect x="108" y="74" width="18" height="18" fill="#E8C671" stroke="#845F00" stroke-width="2"/>
+  <rect x="108" y="92" width="18" height="18" fill="#E8C671" stroke="#845F00" stroke-width="2"/>
+  <rect x="108" y="110" width="18" height="18" fill="#E8C671" stroke="#845F00" stroke-width="2"/>
+  <text x="96" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">nn.Linear</text>
+  <text x="96" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">a grid of weights</text>
+  <text x="96" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">and one bias each</text>
+  <rect x="206" y="72" width="84" height="16" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="206" y="98" width="84" height="16" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="206" y="124" width="84" height="16" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="248" y1="88" x2="248" y2="88" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="248,98 242,86 254,86" fill="#14202B" stroke="#14202B" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="248" y1="114" x2="248" y2="114" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="248,124 242,112 254,112" fill="#14202B" stroke="#14202B" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="248" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">nn.Sequential</text>
+  <text x="248" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">parts in a list,</text>
+  <text x="248" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">top to bottom</text>
+  <rect x="336" y="74" width="128" height="24" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="400" y="91" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">any number</text>
+  <line x1="400" y1="98" x2="400" y2="106" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="400,116 394,104 406,104" fill="#14202B" stroke="#14202B" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="376" y="116" width="48" height="24" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="400" y="133" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0 to 1</text>
+  <text x="400" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">logit</text>
+  <text x="400" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the raw score,</text>
+  <text x="400" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">before any squash</text>
+  <rect x="490" y="70" width="124" height="72" rx="10" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="498" y="76" width="108" height="26" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="552" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">sigmoid</text>
+  <rect x="498" y="110" width="108" height="26" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="552" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">&#8722;ln(p)</text>
+  <text x="552" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">BCEWithLogitsLoss</text>
+  <text x="552" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">does the squash</text>
+  <text x="552" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">itself, inside</text>
+  <circle cx="654" cy="100" r="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="678" cy="100" r="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <line x1="671" y1="93" x2="685" y2="107" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  <line x1="685" y1="93" x2="671" y2="107" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="702" cy="100" r="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="726" cy="100" r="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <line x1="719" y1="93" x2="733" y2="107" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  <line x1="733" y1="93" x2="719" y2="107" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="750" cy="100" r="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="702" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2 of 5 switched off</text>
+  <text x="702" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">dropout</text>
+  <text x="702" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">units off at random,</text>
+  <text x="702" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">only while training</text>
+  <text x="400" y="234" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the whole week in five pictures &#8212; the loss does the squash, so the model must not</text>
+</svg>

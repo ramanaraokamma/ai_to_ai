@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Tidy is not the same as usable</title>
+  <desc>Two panels comparing the two rulers on the five numbers 2, 4, 6, 8 and 100. Left, marked wrong with a red cross: a ruler from 0 to 1 with four dots crammed into a dashed pink box at the left end, at 0.0000, 0.0204, 0.0408 and 0.0612, and one dot at 1.0000; the arithmetic 8 minus 2 divided by 98 equals 0.0612 is printed, and a red box shows that a new value of 150 gives 150 minus 2 divided by 98 equals 1.5102, outside the 0 to 1 box with no error. Right, marked right with a green tick: a ruler from minus 1 to plus 2 with four dots spread between minus 0.5781 and minus 0.4205 and one at plus 1.9972; the arithmetic 8 minus 24 divided by 38.0526 equals minus 0.4205 is printed, and a green box shows 150 minus 24 divided by 38.0526 equals 3.3112, which breaks no promise.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Tidy is not the same as usable</text>
+  <rect x="24" y="62" width="372" height="300" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="43.0" y1="83.0" x2="53.0" y2="93.0" stroke="#CC2B1D" stroke-width="5" stroke-linecap="round"/><line x1="53.0" y1="83.0" x2="43.0" y2="93.0" stroke="#CC2B1D" stroke-width="5" stroke-linecap="round"/>
+  <text x="70" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#CC2B1D" text-anchor="start" font-weight="bold" dominant-baseline="central">WRONG</text>
+  <text x="70" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="start">&quot;0 to 1 is neater, so use min-max&quot;</text>
+  <line x1="60" y1="190" x2="360" y2="190" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <line x1="60.0" y1="184" x2="60.0" y2="196" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="60.0" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <line x1="210.0" y1="184" x2="210.0" y2="196" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="210.0" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.5</text>
+  <line x1="360.0" y1="184" x2="360.0" y2="196" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="360.0" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1</text>
+  <circle cx="60.0" cy="190" r="7" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="66.1" cy="190" r="7" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="72.2" cy="190" r="7" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="78.4" cy="190" r="7" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="360.0" cy="190" r="7" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <rect x="52" y="168" width="40" height="44" rx="6" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8 5"/>
+  <text x="72" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">all four</text>
+  <text x="72" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">2 4 6 8</text>
+  <text x="210" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">(8 &#8722; 2) &#247; 98 = 0.0612</text>
+  <text x="210" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">2 and 8 are now 0.0000 and 0.0612</text>
+  <rect x="60" y="286" width="300" height="58" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="210" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle">a 150 km order arrives</text>
+  <text x="210" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D" text-anchor="middle" font-weight="bold">(150 &#8722; 2) &#247; 98 = 1.5102</text>
+  <text x="210" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#CC2B1D" text-anchor="middle">outside the 0&#8211;1 box, with no error</text>
+  <rect x="408" y="62" width="372" height="300" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <polyline points="422,88 429,95 440,80" fill="none" stroke="#1B7A4B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="454" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#1B7A4B" text-anchor="start" font-weight="bold" dominant-baseline="central">RIGHT</text>
+  <text x="454" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="start">&quot;how many typical steps from average?&quot;</text>
+  <line x1="444" y1="190" x2="744" y2="190" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <line x1="444.0" y1="184" x2="444.0" y2="196" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="444.0" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">&#8722;1</text>
+  <line x1="544.0" y1="184" x2="544.0" y2="196" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="544.0" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <line x1="644.0" y1="184" x2="644.0" y2="196" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="644.0" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">+1</text>
+  <line x1="744.0" y1="184" x2="744.0" y2="196" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="744.0" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">+2</text>
+  <circle cx="486.2" cy="190" r="7" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="491.4" cy="190" r="7" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="496.7" cy="190" r="7" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="501.9" cy="190" r="7" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="743.7" cy="190" r="7" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <rect x="472.2" y="168" width="34" height="44" rx="6" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8 5"/>
+  <text x="495.0" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">still spread out</text>
+  <text x="594" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">(8 &#8722; 24) &#247; 38.0526 = &#8722;0.4205</text>
+  <text x="594" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">&quot;8 sits 0.42 typical steps below average&quot;</text>
+  <rect x="444" y="286" width="300" height="58" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="594" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle">the same 150 km order</text>
+  <text x="594" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B" text-anchor="middle" font-weight="bold">(150 &#8722; 24) &#247; 38.0526 = 3.3112</text>
+  <text x="594" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#1B7A4B" text-anchor="middle">no limit was ever promised, so none is broken</text>
+</svg>

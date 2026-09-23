@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Precision and recall pull against each other</title>
+  <desc>Three seesaws on the same 1000 validation orders with 14 frauds. The model that never says yes: precision is 0 divided by 0, because it flagged nothing at all, so precision is undefined, and recall is 0 divided by 14, which is zero, so F1 is 2 times 0 divided by 14, which is 0.0000. The decision tree: precision 3 divided by 10 equals 0.3000 and recall 3 divided by 14 equals 0.2143, F1 2 times 3 divided by 24 equals 0.2500, and its beam is nearly level. The model that flags everything: precision 14 divided by 1000 equals 0.0140 and recall 14 divided by 14 equals 1.0000, so the beam tips right hard, and F1 is only 0.0276.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Precision and recall pull against each other</text>
+  <rect x="30" y="66" width="236" height="244" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="148" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">never says yes</text>
+  <line x1="72" y1="186.0" x2="224" y2="186.0" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="148,192 132,226 164,226" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="72" cy="186.0" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="224" cy="186.0" r="9" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+  <text x="72" y="166.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#1F6FB2" text-anchor="middle">P</text>
+  <text x="224" y="166.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#845F00" text-anchor="middle">R</text>
+  <text x="70" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1F6FB2">P = 0 &#247; 0</text>
+  <text x="170" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#845F00">R = 0 &#247; 14</text>
+  <text x="148" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">F1 = 0.0000</text>
+  <text x="148" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2 &#215; 0 &#247; (0 + 0 + 14) = 0</text>
+  <text x="148" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">P undefined &#183; R = 0.0000</text>
+  <rect x="284" y="66" width="236" height="244" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="402" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">the decision tree</text>
+  <line x1="326" y1="189.428" x2="478" y2="182.572" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="402,192 386,226 418,226" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="326" cy="189.428" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="478" cy="182.572" r="9" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+  <text x="326" y="169.428" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#1F6FB2" text-anchor="middle">P</text>
+  <text x="478" y="162.572" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#845F00" text-anchor="middle">R</text>
+  <text x="324" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1F6FB2">P = 3 &#247; 10</text>
+  <text x="424" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#845F00">R = 3 &#247; 14</text>
+  <text x="402" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">F1 = 0.2500</text>
+  <text x="402" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2 &#215; 3 &#247; (6 + 7 + 11) = 0.2500</text>
+  <text x="402" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">P = 0.3000 &#183; R = 0.2143</text>
+  <rect x="538" y="66" width="236" height="244" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="656" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">flags everything</text>
+  <line x1="580" y1="146.56" x2="732" y2="225.44" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="656,192 640,226 672,226" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="580" cy="146.56" r="9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="732" cy="225.44" r="9" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+  <text x="580" y="126.56" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#1F6FB2" text-anchor="middle">P</text>
+  <text x="732" y="205.44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#845F00" text-anchor="middle">R</text>
+  <text x="578" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1F6FB2">P = 14 &#247; 1000</text>
+  <text x="678" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#845F00">R = 14 &#247; 14</text>
+  <text x="656" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">F1 = 0.0276</text>
+  <text x="656" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2 &#215; 14 &#247; (28 + 986) = 0.0276</text>
+  <text x="656" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">P = 0.0140 &#183; R = 1.0000</text>
+  <text x="400" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">You can max out either one by wrecking the other. F1 refuses to be fooled by both stunts.</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Same 1000 orders, same 14 frauds, three different models.</text>
+</svg>

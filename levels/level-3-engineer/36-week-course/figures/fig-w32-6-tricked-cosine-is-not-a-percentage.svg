@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Wrong and right: is 0.8 eighty per cent similar?</title>
+  <desc>Two panels. On the left, marked wrong, the claim that 0.8 means 80 per cent alike and that 0.4 is half of it, supported by the division 0.8 divided by 0.4 equals 2. Underneath, the two real angles: a cosine of 0.8 is 36.9 degrees and a cosine of 0.4 is 66.4 degrees, and 66.4 is not twice 36.9, so the number does not behave like a percentage; 0.8 is a cosine, not a share of anything, and arithmetic on cosines is not allowed. On the right, marked right, a six-row table of landmarks: cosine 1.0 is 0.0 degrees, same words in the same proportions; 0.9 is 25.8 degrees, very close; 0.8 is 36.9 degrees, highlighted in pink, close but not the same; 0.5 is 60.0 degrees, some overlap; 0.1 is 84.3 degrees, almost nothing shared; 0.0 is 90.0 degrees, not one word in common. The closing note: going from 0.9 to 0.5 costs 34 degrees while going from 0.5 to 0.1 costs only 24, so the scale is uneven.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Wrong and right: is 0.8 eighty per cent similar?</text>
+  <rect x="30" y="64" width="350" height="308" rx="12" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="30" y="64" width="350" height="36" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(40,69) scale(0.36)"><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><line x1="38" y1="38" x2="62" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/><line x1="62" y1="38" x2="38" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/></g>
+  <text x="232" y="89" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.8 means 80% alike, 0.4 is half that</text>
+  <text x="56" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D">&#8220;0.8 is twice as similar as 0.4.&#8221;</text>
+  <rect x="56" y="144" width="298" height="30" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="70" y="159" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">0.8 &#247; 0.4 = 2, so twice as close</text>
+  <text x="56" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">But the two angles are:</text>
+  <rect x="56" y="212" width="140" height="34" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="126" y="229" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.8 &#8594; 36.9&#176;</text>
+  <rect x="214" y="212" width="140" height="34" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="284" y="229" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.4 &#8594; 66.4&#176;</text>
+  <text x="56" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D">66.4 is not twice 36.9, so the number</text>
+  <text x="56" y="294" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D">does not behave like a percentage at all.</text>
+  <rect x="56" y="310" width="298" height="30" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="70" y="325" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">0.8 is a cosine. Not a share of anything.</text>
+  <text x="56" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D">Arithmetic on cosines is not allowed.</text>
+  <rect x="420" y="64" width="350" height="308" rx="12" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="420" y="64" width="350" height="36" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(430,69) scale(0.36)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="622" y="89" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">say the angle, every time</text>
+  <rect x="446" y="122" width="56" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="474" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.0</text>
+  <rect x="502" y="122" width="66" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="535" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.0&#176;</text>
+  <text x="578" y="136" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" dominant-baseline="central">same words, same proportions</text>
+  <rect x="446" y="154" width="56" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="474" y="168" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.9</text>
+  <rect x="502" y="154" width="66" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="535" y="168" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">25.8&#176;</text>
+  <text x="578" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" dominant-baseline="central">very close</text>
+  <rect x="446" y="186" width="56" height="28" fill="#F4D5E9" stroke="#C42B8C" stroke-width="1.5"/>
+  <text x="474" y="200" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.8</text>
+  <rect x="502" y="186" width="66" height="28" fill="#F4D5E9" stroke="#C42B8C" stroke-width="1.5"/>
+  <text x="535" y="200" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">36.9&#176;</text>
+  <text x="578" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" dominant-baseline="central">close, not the same</text>
+  <rect x="446" y="218" width="56" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="474" y="232" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.5</text>
+  <rect x="502" y="218" width="66" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="535" y="232" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">60.0&#176;</text>
+  <text x="578" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" dominant-baseline="central">some overlap</text>
+  <rect x="446" y="250" width="56" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="474" y="264" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.1</text>
+  <rect x="502" y="250" width="66" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="535" y="264" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">84.3&#176;</text>
+  <text x="578" y="264" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" dominant-baseline="central">almost nothing shared</text>
+  <rect x="446" y="282" width="56" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="474" y="296" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.0</text>
+  <rect x="502" y="282" width="66" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="535" y="296" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">90.0&#176;</text>
+  <text x="578" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" dominant-baseline="central">not one word in common</text>
+  <text x="446" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B">0.9 to 0.5 costs 34 degrees.</text>
+  <text x="446" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B">0.5 to 0.1 costs only 24. Uneven.</text>
+</svg>

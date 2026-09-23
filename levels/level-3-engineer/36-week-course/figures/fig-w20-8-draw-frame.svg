@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Draw the receipt</title>
+  <desc>A large empty frame split by a dashed horizontal line, labelled forward with an arrow above the line and backward with a reversed arrow below it. A panel underneath lists what a good answer looks like: one block per value with its shape written on, forward arrows in one colour above the line, backward arrows dashed and reversed below it, the grad_fn name on each arrow such as MmBackward0, one real number on the backward path such as minus 0.09975049, .item() drawn as a door out with the receipt left behind, and a note that .grad adds so 6 plus 27 equals 33.</desc>
+  <text x="250" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Draw the receipt</text>
+  <text x="250" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">One tensor, the operations done to it, and the slope coming back.</text>
+  <rect x="30" y="86" width="440" height="380" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="30" y1="276" x2="470" y2="276" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="8 6"/>
+  <text x="46" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">forward &#8594;</text>
+  <text x="46" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">&#8592; backward</text>
+  <rect x="30" y="480" width="440" height="196" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="250" y="504" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">What a good answer looks like</text>
+  <text x="48" y="530" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; one block per value, each with its shape written on</text>
+  <text x="48" y="552" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; forward arrows in one colour, above the dashed line</text>
+  <text x="48" y="574" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; backward arrows dashed and reversed, below it</text>
+  <text x="48" y="596" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; the grad_fn name on each arrow: MmBackward0, and so on</text>
+  <text x="48" y="618" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; one real number on the backward path, e.g. &#8722;0.09975049</text>
+  <text x="48" y="640" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; .item() drawn as a door out, with the receipt left behind</text>
+  <text x="48" y="662" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; and a note that .grad ADDS: 6 + 27 = 33</text>
+</svg>

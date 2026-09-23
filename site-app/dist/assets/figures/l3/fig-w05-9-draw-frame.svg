@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Draw the hump, and the flag</title>
+  <desc>Three empty framed panels. The first is for drawing the fourteen hourly late rates as a shape, with the flat straight line a single weight is forced to draw through them, and the numbers 0.374 at hour 18 and 0.196 at hour 22 marked. The second is for drawing the same information as one yes-or-no column, with the two group rates 0.3682 for rush and 0.2424 for everything else and the subtraction 0.1258 written between them. The third is for drawing one row of an ablation table with the two scores and the subtraction on it. A panel at the bottom says what a good answer contains: a hump and not a slope, the flat line labelled with the fitted weight of minus 0.121 against is_rush's 0.436, the gap of 0.1258 written as a subtraction, and a verdict of keep or delete with a number beside it.</desc>
+  <text x="250" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Draw the hump, and the flag</text>
+  <text x="250" y="64" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">The hour matters enormously. The hour as a number does not.</text>
+  <rect x="30" y="80" width="440" height="130" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="46" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">Panel 1 &#8212; the fourteen hourly rates</text>
+  <text x="46" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">draw the shape, then the best straight line through it</text>
+  <line x1="46" y1="192" x2="454" y2="192" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="30" y="226" width="440" height="130" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="46" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">Panel 2 &#8212; the same thing as one column</text>
+  <text x="46" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">two groups, two rates, one subtraction</text>
+  <line x1="46" y1="338" x2="454" y2="338" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="30" y="372" width="440" height="130" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="46" y="398" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">Panel 3 &#8212; one row of your ablation table</text>
+  <text x="46" y="420" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">variant, columns, AUC, and the delta to four places</text>
+  <line x1="46" y1="484" x2="454" y2="484" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="30" y="518" width="440" height="158" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="250" y="544" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">What a good answer looks like</text>
+  <text x="48" y="570" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; panel 1 is a hump, not a slope, and the line is nearly flat</text>
+  <text x="48" y="592" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; the flat line is labelled &#8722;0.121, the flag 0.436</text>
+  <text x="48" y="614" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; panel 2 has 0.3682, 0.2424 and the gap 0.1258 on it</text>
+  <text x="48" y="636" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; panel 3's delta has four decimal places and a sign</text>
+  <text x="48" y="658" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">&#183; a verdict word, with the number that justified it</text>
+</svg>

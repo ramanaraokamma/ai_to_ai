@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Fill in the four invented columns</title>
+  <desc>One real order from the delivery table with all four invented columns removed. The order is hour 12, prep 15.0 minutes, distance 2.78 km, weather clear. The four blanks are is_rush, which is 0 because 12 is not between 18 and 20; hour_band, which is morning because 12 falls in the range above 9 and up to 14; min_per_km, which is 15.0 divided by 2.78 plus 0.5, so 15.0 divided by 3.28, giving 4.5732; and dist_x_weather, which is 2.78 times 0 because clear maps to 0, giving 0.00. The next block asks for the column count: 5 base numeric columns plus is_rush plus min_per_km gives 7 numeric, and 5 restaurants plus 7 weekdays plus 3 weathers gives 15 one-hot, so 7 plus 15 gives 22. The last block asks for two deltas and their verdicts: 0.7843 minus 0.7825 is plus 0.0018, so keep, and 0.7829 minus 0.7843 is minus 0.0014, so delete. A final blank asks how many hour_band values go missing if the first bin edge is 10 instead of 9, and the answer is 47 out of 2000.</desc>
+  <text x="250" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Fill in the four invented columns</text>
+  <text x="250" y="64" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">One row. Four blanks. All of it is arithmetic.</text>
+  <rect x="30" y="82" width="440" height="92" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="46" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">One real order &#8212; row one</text>
+  <text x="46" y="134" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">order_hour 12   prep_minutes 15.0</text>
+  <text x="46" y="158" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">distance_km 2.78   weather clear</text>
+  <rect x="30" y="190" width="440" height="176" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="46" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">The four columns that are not in the file</text>
+  <text x="46" y="244" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">is_rush</text>
+  <text x="150" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">1 if the hour is 18, 19 or 20</text>
+  <rect x="396" y="228" width="58" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="46" y="274" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">hour_band</text>
+  <text x="150" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">which of the four ranges 12 is in</text>
+  <rect x="396" y="258" width="58" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="46" y="304" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">min_per_km</text>
+  <text x="150" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">15.0 &#247; ( 2.78 + 0.5 )</text>
+  <rect x="396" y="288" width="58" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="46" y="334" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">dist_x_weather</text>
+  <text x="150" y="334" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">2.78 &#215; severity( clear )</text>
+  <rect x="396" y="318" width="58" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="30" y="382" width="440" height="122" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="46" y="408" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">How wide is the block the model sees?</text>
+  <text x="46" y="438" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">5 base numeric + is_rush + min_per_km =</text>
+  <rect x="332" y="422" width="56" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="396" y="438" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">numeric</text>
+  <text x="46" y="468" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">5 restaurants + 7 weekdays + 3 weathers =</text>
+  <rect x="332" y="452" width="56" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="396" y="468" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">one-hot</text>
+  <text x="46" y="494" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">so the total going into the model is</text>
+  <rect x="300" y="478" width="56" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="30" y="520" width="440" height="156" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="250" y="546" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">The subtraction decides, not you</text>
+  <text x="46" y="578" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">0.7843 &#8722; 0.7825 =</text>
+  <rect x="172" y="562" width="80" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="262" y="578" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">verdict:</text>
+  <rect x="326" y="562" width="114" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="46" y="614" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">0.7829 &#8722; 0.7843 =</text>
+  <rect x="172" y="598" width="80" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="262" y="614" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">verdict:</text>
+  <rect x="326" y="598" width="114" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <text x="46" y="654" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">bins=[10, 14, 17, 20, 23] leaves how many blanks?</text>
+  <rect x="396" y="638" width="58" height="22" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+</svg>

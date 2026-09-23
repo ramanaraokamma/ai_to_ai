@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Three golden answers, frozen on the probability line</title>
+  <desc>A probability line from 0.0 to 1.0 with the shipped threshold marked at 0.55. Three frozen test cases sit on it. Case 1, delicious fresh pizza and kind friendly staff, sits at 0.7724, right of the threshold, so its answer is positive. Case 2, cold food and a rude driver, sits at 0.2896, left of it, so negative. Case 3, stale bread and awful coffee, sits at 0.2044, also negative. The nearest case is 0.7724, which is 0.7724 minus 0.55 equals 0.2224 clear of the line, so a small change in the model cannot flip it by accident. A fourth greyed case, not boring for a single minute, sits at 0.1984 and is wrong &#8212; it is a known failure, not a golden test. The run prints 3 of 3 passed.</desc>
+
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Three golden answers, frozen on the probability line</text>
+
+  <!-- axis -->
+  <line x1="80" y1="176" x2="720" y2="176" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="80" y1="170" x2="80" y2="184"/>
+    <line x1="240" y1="170" x2="240" y2="184"/>
+    <line x1="400" y1="170" x2="400" y2="184"/>
+    <line x1="560" y1="170" x2="560" y2="184"/>
+    <line x1="720" y1="170" x2="720" y2="184"/>
+  </g>
+  <text x="80" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.00</text>
+  <text x="240" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.25</text>
+  <text x="400" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.50</text>
+  <text x="560" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.75</text>
+  <text x="720" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1.00</text>
+  <text x="400" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">probability that this review is positive</text>
+
+  <!-- threshold -->
+  <line x1="432" y1="86" x2="432" y2="192" stroke="#C42B8C" stroke-width="3" stroke-dasharray="7 5" stroke-linecap="round"/>
+  <rect x="380" y="66" width="104" height="24" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="432" y="83" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">threshold 0.55</text>
+  <text x="500" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">right of the line &#8594; positive</text>
+  <text x="364" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">left of the line &#8594; negative</text>
+
+  <!-- the three golden dots -->
+  <circle cx="211" cy="176" r="11" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="211" y="181" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">3</text>
+  <circle cx="265" cy="146" r="11" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="265" y="151" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">2</text>
+  <line x1="265" y1="157" x2="265" y2="176" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="574" cy="176" r="11" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="574" y="181" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1</text>
+
+  <!-- the known failure -->
+  <polygon points="207,150 215,164 199,164" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="196" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="end">0.1984 known failure</text>
+
+  <!-- table -->
+  <rect x="40" y="238" width="700" height="104" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="58" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#14202B">#</text>
+  <text x="82" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#14202B">the frozen input</text>
+  <text x="520" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#14202B">p</text>
+  <text x="600" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#14202B">frozen answer</text>
+  <text x="58" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">1</text>
+  <text x="82" y="282" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">delicious fresh pizza and kind friendly staff</text>
+  <text x="520" y="282" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">0.7724</text>
+  <text x="600" y="282" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#1B7A4B">positive</text>
+  <text x="58" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">2</text>
+  <text x="82" y="304" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">cold food and a rude driver</text>
+  <text x="520" y="304" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">0.2896</text>
+  <text x="600" y="304" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#1B7A4B">negative</text>
+  <text x="58" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">3</text>
+  <text x="82" y="326" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">stale bread and awful coffee</text>
+  <text x="520" y="326" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">0.2044</text>
+  <text x="600" y="326" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#1B7A4B">negative</text>
+
+  <text x="40" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Case 1 is the closest: <tspan font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">0.7724 &#8722; 0.55 = 0.2224</tspan> clear of the line.</text>
+  <text x="40" y="377" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">A golden answer is one you have decided must never change without your knowing.</text>
+</svg>

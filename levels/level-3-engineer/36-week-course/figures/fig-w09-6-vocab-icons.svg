@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Four words from Week 9, drawn</title>
+  <desc>Four labelled tiles. Harmonic mean: three lines of arithmetic, 2 times 0.9 times 0.1 equals 0.180, 0.9 plus 0.1 equals 1.000, 0.180 divided by 1.000 equals 0.1800, beside the drive at 90 and 10 kilometres per hour where the clock says 18.0, not 50. F1 score: 2 times 3 equals 6, 6 plus 7 plus 11 equals 24, 6 divided by 24 equals 0.2500, noted as having no true negatives in it anywhere, with a green box confirming 0.2500 lies between 0.2143 and 0.4286. Macro average: legit F1 0.9909 and fraud F1 0.2500 averaged to 0.6204, with a yellow band reading equal vote, 986 rows equals 14 rows. Support: a wide blue bar of 986 legit rows beside a five-pixel pink sliver of 14 fraud rows, drawn to scale, labelled a count, never a score.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Four words from Week 9, drawn</text>
+  <rect x="30" y="66" width="359" height="138" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="44" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="start">harmonic mean</text>
+  <text x="44" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">2 &#215; 0.9 &#215; 0.1 = 0.180</text>
+  <text x="44" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">0.9 + 0.1 = 1.000</text>
+  <text x="44" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">0.180 &#247; 1.000 = 0.1800</text>
+  <text x="44" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">flip, average, flip back</text>
+  <line x1="232" y1="108" x2="232" y2="190" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <text x="250" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="start">90 and 10 km/h</text>
+  <text x="250" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">clock says 18.0</text>
+  <text x="250" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#CC2B1D" text-anchor="start">not 50</text>
+  <rect x="401" y="66" width="369" height="138" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="415" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="start">F1 score</text>
+  <text x="415" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">2 &#215; 3 = 6</text>
+  <text x="415" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">6 + 7 + 11 = 24</text>
+  <text x="415" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">6 &#247; 24 = 0.2500</text>
+  <text x="415" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">no TN in it anywhere</text>
+  <rect x="598" y="108" width="156" height="62" rx="6" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="676" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" text-anchor="middle" font-weight="bold" dominant-baseline="central">0.2500</text>
+  <text x="676" y="154" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">between 0.2143</text>
+  <text x="676" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">and 0.4286</text>
+  <rect x="30" y="218" width="359" height="158" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="44" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="start">macro average</text>
+  <text x="44" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">legit F1  0.9909      fraud F1  0.2500</text>
+  <text x="44" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">(0.9909 + 0.2500) &#247; 2 = 0.6204</text>
+  <rect x="44" y="306" width="331" height="30" rx="6" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="210" y="321" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">equal vote: 986 rows = 14 rows</text>
+  <text x="44" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">the accuracy paradox in a new costume</text>
+  <rect x="401" y="218" width="369" height="158" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="415" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="start">support</text>
+  <rect x="415" y="258" width="300" height="34" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="565" y="275" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">986 legit rows</text>
+  <rect x="415" y="300" width="5" height="34" rx="2" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="432" y="317" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">14 fraud rows</text>
+  <text x="415" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">a count, never a score. The bars are to scale.</text>
+</svg>

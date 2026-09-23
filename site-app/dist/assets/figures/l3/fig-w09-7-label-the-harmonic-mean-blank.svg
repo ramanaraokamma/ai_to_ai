@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Label the harmonic mean</title>
+  <desc>Four numbered rows with empty dashed pink answer boxes: multiply two times 0.667 times 0.070, add 0.667 and 0.070, divide line one by line two, and separately the plain mean of the two numbers. Then a green panel for the range check with write-in lines for the smaller number, twice the smaller number, and whether the answer lies between them. A final panel asks for one sentence on why the harmonic mean is not near 0.37.</desc>
+  <text x="250" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Label the harmonic mean</text>
+  <text x="250" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">precision 0.667, recall 0.070. Three lines, then the check.</text>
+  <rect x="30" y="92" width="440" height="76" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="56" cy="118" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="56" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="80" y="123" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">2 &#215; 0.667 &#215; 0.070</text>
+  <text x="80" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">multiply</text>
+  <rect x="330" y="126" width="126" height="28" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="30" y="182" width="440" height="76" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="56" cy="208" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="56" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="80" y="213" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">0.667 + 0.070</text>
+  <text x="80" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">add</text>
+  <rect x="330" y="216" width="126" height="28" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="30" y="272" width="440" height="76" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="56" cy="298" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="56" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="80" y="303" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">line 1 &#247; line 2</text>
+  <text x="80" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">divide</text>
+  <rect x="330" y="306" width="126" height="28" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="30" y="362" width="440" height="76" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="56" cy="388" r="13" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="56" y="388" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="80" y="393" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">plain mean: (0.667 + 0.070) &#247; 2</text>
+  <text x="80" y="418" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">the average that covers it up</text>
+  <rect x="330" y="396" width="126" height="28" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+  <rect x="30" y="452" width="440" height="108" rx="10" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="46" y="478" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#1B7A4B">the range check, and it needs no formula</text>
+  <text x="46" y="504" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">smaller of the two   = ____________</text>
+  <text x="46" y="528" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">twice the smaller    = ____________</text>
+  <text x="46" y="550" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">is my answer between them?  ______</text>
+  <rect x="30" y="574" width="440" height="66" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="250" y="600" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">One sentence: why is line 3 not near 0.37?</text>
+  <text x="250" y="624" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">____________________________</text>
+</svg>

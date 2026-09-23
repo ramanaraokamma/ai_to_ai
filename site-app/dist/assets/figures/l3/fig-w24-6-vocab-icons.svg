@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 260" role="img">
+  <title>This week&#8217;s five words, drawn</title>
+  <desc>Five small pictures. A convolution is a four by four picture with a two by two window outlined on it, an arrow, and one output cell. A kernel or filter is a three by three grid holding 1, 0 and minus 1 in every row. A feature map is a four by four grid whose middle two columns hold 24 and whose outer columns hold 0. Weight sharing is one kernel with lines running out to four window outlines: nine numbers used at all sixteen positions. A channel is three stacked squares seen edge on, and four filters out means four feature maps.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">This week&#8217;s five words, drawn</text>
+  <rect x="22" y="58" width="148" height="150" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="174" y="58" width="148" height="150" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="326" y="58" width="148" height="150" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="478" y="58" width="148" height="150" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="630" y="58" width="148" height="150" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="44" y="78" width="13" height="13" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="57" y="78" width="13" height="13" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="70" y="78" width="13" height="13" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="83" y="78" width="13" height="13" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="44" y="91" width="13" height="13" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="57" y="91" width="13" height="13" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="70" y="91" width="13" height="13" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="83" y="91" width="13" height="13" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="44" y="104" width="13" height="13" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="57" y="104" width="13" height="13" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="70" y="104" width="13" height="13" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="83" y="104" width="13" height="13" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="44" y="117" width="13" height="13" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="57" y="117" width="13" height="13" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="70" y="117" width="13" height="13" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="83" y="117" width="13" height="13" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="44" y="78" width="26" height="26" rx="0" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="100" y1="104" x2="112" y2="104" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="122,104 110,98 110,110" fill="#14202B" stroke="#14202B" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="126" y="97" width="14" height="14" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="96" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">slide, then add up</text>
+  <text x="96" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">convolution</text>
+  <text x="96" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">multiply nine, add</text>
+  <rect x="215" y="74" width="22" height="22" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="226" y="90" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">1</text>
+  <rect x="237" y="74" width="22" height="22" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="248" y="90" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0</text>
+  <rect x="259" y="74" width="22" height="22" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="270" y="90" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">&#8722;1</text>
+  <rect x="215" y="96" width="22" height="22" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="226" y="112" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">1</text>
+  <rect x="237" y="96" width="22" height="22" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="248" y="112" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0</text>
+  <rect x="259" y="96" width="22" height="22" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="270" y="112" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">&#8722;1</text>
+  <rect x="215" y="118" width="22" height="22" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="226" y="134" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">1</text>
+  <rect x="237" y="118" width="22" height="22" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="248" y="134" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0</text>
+  <rect x="259" y="118" width="22" height="22" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="270" y="134" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">&#8722;1</text>
+  <text x="248" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">nine chosen numbers</text>
+  <text x="248" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">kernel / filter</text>
+  <text x="248" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">two words, one grid</text>
+  <rect x="368" y="74" width="16" height="16" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="376" y="87" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0</text>
+  <rect x="384" y="74" width="16" height="16" fill="#F4D5E9" stroke="#C42B8C" stroke-width="1.5"/>
+  <text x="392" y="87" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">24</text>
+  <rect x="400" y="74" width="16" height="16" fill="#F4D5E9" stroke="#C42B8C" stroke-width="1.5"/>
+  <text x="408" y="87" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">24</text>
+  <rect x="416" y="74" width="16" height="16" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="424" y="87" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0</text>
+  <rect x="368" y="90" width="16" height="16" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="376" y="103" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0</text>
+  <rect x="384" y="90" width="16" height="16" fill="#F4D5E9" stroke="#C42B8C" stroke-width="1.5"/>
+  <text x="392" y="103" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">24</text>
+  <rect x="400" y="90" width="16" height="16" fill="#F4D5E9" stroke="#C42B8C" stroke-width="1.5"/>
+  <text x="408" y="103" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">24</text>
+  <rect x="416" y="90" width="16" height="16" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="424" y="103" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0</text>
+  <rect x="368" y="106" width="16" height="16" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="376" y="119" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0</text>
+  <rect x="384" y="106" width="16" height="16" fill="#F4D5E9" stroke="#C42B8C" stroke-width="1.5"/>
+  <text x="392" y="119" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">24</text>
+  <rect x="400" y="106" width="16" height="16" fill="#F4D5E9" stroke="#C42B8C" stroke-width="1.5"/>
+  <text x="408" y="119" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">24</text>
+  <rect x="416" y="106" width="16" height="16" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="424" y="119" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0</text>
+  <rect x="368" y="122" width="16" height="16" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="376" y="135" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0</text>
+  <rect x="384" y="122" width="16" height="16" fill="#F4D5E9" stroke="#C42B8C" stroke-width="1.5"/>
+  <text x="392" y="135" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">24</text>
+  <rect x="400" y="122" width="16" height="16" fill="#F4D5E9" stroke="#C42B8C" stroke-width="1.5"/>
+  <text x="408" y="135" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">24</text>
+  <rect x="416" y="122" width="16" height="16" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="424" y="135" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0</text>
+  <text x="400" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0 where it is flat</text>
+  <text x="400" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">feature map</text>
+  <text x="400" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one number per place</text>
+  <rect x="531" y="74" width="14" height="14" fill="#DBCEF3" stroke="#6D28D9" stroke-width="1.5"/>
+  <rect x="545" y="74" width="14" height="14" fill="#DBCEF3" stroke="#6D28D9" stroke-width="1.5"/>
+  <rect x="559" y="74" width="14" height="14" fill="#DBCEF3" stroke="#6D28D9" stroke-width="1.5"/>
+  <rect x="531" y="88" width="14" height="14" fill="#DBCEF3" stroke="#6D28D9" stroke-width="1.5"/>
+  <rect x="545" y="88" width="14" height="14" fill="#DBCEF3" stroke="#6D28D9" stroke-width="1.5"/>
+  <rect x="559" y="88" width="14" height="14" fill="#DBCEF3" stroke="#6D28D9" stroke-width="1.5"/>
+  <rect x="531" y="102" width="14" height="14" fill="#DBCEF3" stroke="#6D28D9" stroke-width="1.5"/>
+  <rect x="545" y="102" width="14" height="14" fill="#DBCEF3" stroke="#6D28D9" stroke-width="1.5"/>
+  <rect x="559" y="102" width="14" height="14" fill="#DBCEF3" stroke="#6D28D9" stroke-width="1.5"/>
+  <rect x="498" y="78" width="12" height="12" fill="none" stroke="#C42B8C" stroke-width="2"/>
+  <line x1="504" y1="84" x2="552" y2="95" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="600" y="78" width="12" height="12" fill="none" stroke="#C42B8C" stroke-width="2"/>
+  <line x1="606" y1="84" x2="552" y2="95" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="498" y="106" width="12" height="12" fill="none" stroke="#C42B8C" stroke-width="2"/>
+  <line x1="504" y1="112" x2="552" y2="95" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="600" y="106" width="12" height="12" fill="none" stroke="#C42B8C" stroke-width="2"/>
+  <line x1="606" y1="112" x2="552" y2="95" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="552" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">used at all 16 spots</text>
+  <text x="552" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">weight sharing</text>
+  <text x="552" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">learn the rule once</text>
+  <rect x="660" y="70" width="44" height="44" rx="0" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="672" y="82" width="44" height="44" rx="0" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="684" y="94" width="44" height="44" rx="0" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="704" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one slice of depth</text>
+  <text x="704" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">channel</text>
+  <text x="704" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">four filters out</text>
+  <text x="400" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one 3 &#215; 3 kernel is 9 weights and 1 bias &#8212; ten numbers, whatever the picture&#8217;s size</text>
+</svg>

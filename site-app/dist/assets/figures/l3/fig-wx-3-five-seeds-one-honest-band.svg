@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Five seeds, one honest band</title>
+  <desc>A single accuracy axis from 0.950 to 0.990. The plain CNN's five seeds are drawn as blue dots spread from 0.9574 to 0.9815, labelled 0.9689 plus or minus 0.0089. The smudged CNN's five seeds are green dots bunched from 0.9833 to 0.9852, labelled 0.9848 plus or minus 0.0008. A dashed gold line at 0.9722 marks the logistic regression baseline, which sits inside the plain CNN's band. A pink note points out that the two bands do not overlap, because 0.9815 is less than 0.9833, so the gain survives the dice.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Five seeds, one honest band</text>
+  <line x1="130" y1="300" x2="690" y2="300" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="130" y1="300" x2="130" y2="307" stroke="#14202B" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="130" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.950</text>
+  <line x1="270" y1="300" x2="270" y2="307" stroke="#14202B" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="270" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.960</text>
+  <line x1="410" y1="300" x2="410" y2="307" stroke="#14202B" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="410" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.970</text>
+  <line x1="550" y1="300" x2="550" y2="307" stroke="#14202B" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="550" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.980</text>
+  <line x1="690" y1="300" x2="690" y2="307" stroke="#14202B" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="690" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.990</text>
+  <text x="410" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">test accuracy on the SAME 540 held-out digits</text>
+  <text x="120" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">plain CNN</text>
+  <line x1="233.6" y1="104" x2="571" y2="104" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="337.2" cy="104" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="440.8" cy="104" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="571" cy="104" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="389" cy="104" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="233.6" cy="104" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="585" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">0.9689 &#177; 0.0089</text>
+  <text x="120" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">smudged CNN</text>
+  <line x1="596.2" y1="168" x2="622.8" y2="168" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="596.2" cy="168" r="6" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <circle cx="622.8" cy="168" r="6" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <circle cx="622.8" cy="168" r="6" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <circle cx="622.8" cy="168" r="6" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <circle cx="622.8" cy="168" r="6" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="636.8" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">0.9848 &#177; 0.0008</text>
+  <line x1="440.8" y1="76" x2="440.8" y2="240" stroke="#845F00" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 4"/>
+  <text x="440.8" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#845F00" text-anchor="middle">logistic regression 0.9722</text>
+  <line x1="571" y1="196" x2="571" y2="228" stroke="#55636F" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <line x1="596.2" y1="196" x2="596.2" y2="228" stroke="#55636F" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <text x="583.6" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">the bands do not overlap</text>
+  <text x="583.6" y="270" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">0.9815 &lt; 0.9833</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Five seeds, one change, and the gain survives the dice. That is the claim.</text>
+</svg>

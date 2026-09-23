@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The shape error, and its fix</title>
+  <desc>A red-outlined panel holds the real error: RuntimeError, mat1 and mat2 shapes cannot be multiplied, 32 by 64 and 256 by 10, with the 64 and the 256 boxed in pink. A note says the first number is what arrived and the second is what you asked for. A green panel underneath counts the picture down the stack: 8, pool, 4, pool, 2, so 16 channels times 2 times 2 equals 64, and the layer should be nn dot Linear open bracket 64 comma 10. On the right, what she had written, nn dot Linear of 16 times 4 times 4 comma 10, which is 256 because she used the size after one pool instead of two, marked with a cross. A pink box gives the output-size rule, n plus 2p minus k divided by s plus 1, applied three times: conv keeps 8, the first pool gives 4, the second gives 2.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The shape error, and its fix</text>
+  <rect x="30" y="76" width="372" height="128" rx="10" fill="#F5F8FA" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="46" y="100" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">RuntimeError: mat1 and mat2</text>
+  <text x="46" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">shapes cannot be multiplied</text>
+  <rect x="80" y="128" width="22.8" height="22" rx="4" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="146" y="128" width="31.2" height="22" rx="4" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="46" y="144" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">(32x</text>
+  <text x="83" y="144" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">64</text>
+  <text x="103" y="144" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B"> and </text>
+  <text x="149" y="144" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">256</text>
+  <text x="178" y="144" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">x10)</text>
+  <text x="46" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the first is what ARRIVED. the second is what you ASKED for.</text>
+  <rect x="30" y="222" width="372" height="128" rx="10" fill="#F5F8FA" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="46" y="246" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">so count the picture down the stack:</text>
+  <text x="46" y="274" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">8 &#8594; pool &#8594; 4 &#8594; pool &#8594; 2</text>
+  <text x="46" y="300" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">16 channels &#215; 2 &#215; 2 = 64</text>
+  <text x="46" y="326" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">nn.Linear(64, 10)</text>
+  <text x="440" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">she had written</text>
+  <text x="440" y="128" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">nn.Linear(16*4*4, 10)</text>
+  <text x="440" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">which is 256, because she used the</text>
+  <text x="440" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">size after ONE pool, not two.</text>
+  <path d="M720 110 L740 130" fill="none" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M740 110 L720 130" fill="none" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="430" y="210" width="346" height="140" rx="12" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="446" y="234" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the rule that finds this in ten seconds</text>
+  <text x="446" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">(n + 2p &#8722; k) &#247; s + 1</text>
+  <text x="446" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">conv, k=3, p=1, s=1:  8 &#8594; 8</text>
+  <text x="446" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">pool, k=2, p=0, s=2:  8 &#8594; 4</text>
+  <text x="446" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">pool again:           4 &#8594; 2</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Two numbers in the message. One of them is yours: always the second.</text>
+</svg>

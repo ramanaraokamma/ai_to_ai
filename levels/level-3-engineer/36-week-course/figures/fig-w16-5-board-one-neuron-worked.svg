@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The finished board: four rows through one neuron</title>
+  <desc>A five column table with a header row reading row x, z, ReLU, sigmoid and tanh. Four rows follow: 2, 1, 0.5 gives z of 0.20 and outputs 0.200, 0.550 and 0.197; minus 1, 2, 0 gives z of minus 2.30 and outputs 0.000, 0.091 and minus 0.980; 0, 0, 1 gives 0.70 and 0.700, 0.668, 0.604; 1, 1, 1 gives 0.40 and 0.400, 0.599, 0.380. Beside it a box says print the shape first, with w.shape being 3 comma and rows.shape being 4 comma 3. Along the bottom, substituting the two no-squash layers gives 1.1x1 plus 0.4x2 plus 0.3.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The finished board: four rows through one neuron</text>
+  <text x="400" y="70" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">w = [0.4, &#8722;0.7, 1.2]  &#183;  b = &#8722;0.5</text>
+  <rect x="40" y="90" width="150" height="34" fill="#E8C671" stroke="#14202B" stroke-width="2"/>
+  <text x="115.0" y="107.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600" dominant-baseline="central">row x</text>
+  <rect x="190" y="90" width="80" height="34" fill="#E8C671" stroke="#14202B" stroke-width="2"/>
+  <text x="230.0" y="107.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600" dominant-baseline="central">z</text>
+  <rect x="270" y="90" width="80" height="34" fill="#E8C671" stroke="#14202B" stroke-width="2"/>
+  <text x="310.0" y="107.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600" dominant-baseline="central">ReLU</text>
+  <rect x="350" y="90" width="90" height="34" fill="#E8C671" stroke="#14202B" stroke-width="2"/>
+  <text x="395.0" y="107.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600" dominant-baseline="central">sigmoid</text>
+  <rect x="440" y="90" width="90" height="34" fill="#E8C671" stroke="#14202B" stroke-width="2"/>
+  <text x="485.0" y="107.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600" dominant-baseline="central">tanh</text>
+  <rect x="40" y="124" width="150" height="34" fill="#D9EAF9" stroke="#14202B" stroke-width="2"/>
+  <text x="115.0" y="141.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">[2, 1, 0.5]</text>
+  <rect x="190" y="124" width="80" height="34" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="230.0" y="141.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.20</text>
+  <rect x="270" y="124" width="80" height="34" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="310.0" y="141.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.200</text>
+  <rect x="350" y="124" width="90" height="34" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="395.0" y="141.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.550</text>
+  <rect x="440" y="124" width="90" height="34" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="485.0" y="141.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.197</text>
+  <rect x="40" y="158" width="150" height="34" fill="#D9EAF9" stroke="#14202B" stroke-width="2"/>
+  <text x="115.0" y="175.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">[&#8722;1, 2, 0]</text>
+  <rect x="190" y="158" width="80" height="34" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="230.0" y="175.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8722;2.30</text>
+  <rect x="270" y="158" width="80" height="34" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="310.0" y="175.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.000</text>
+  <rect x="350" y="158" width="90" height="34" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="395.0" y="175.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.091</text>
+  <rect x="440" y="158" width="90" height="34" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="485.0" y="175.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8722;0.980</text>
+  <rect x="40" y="192" width="150" height="34" fill="#D9EAF9" stroke="#14202B" stroke-width="2"/>
+  <text x="115.0" y="209.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">[0, 0, 1]</text>
+  <rect x="190" y="192" width="80" height="34" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="230.0" y="209.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.70</text>
+  <rect x="270" y="192" width="80" height="34" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="310.0" y="209.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.700</text>
+  <rect x="350" y="192" width="90" height="34" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="395.0" y="209.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.668</text>
+  <rect x="440" y="192" width="90" height="34" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="485.0" y="209.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.604</text>
+  <rect x="40" y="226" width="150" height="34" fill="#D9EAF9" stroke="#14202B" stroke-width="2"/>
+  <text x="115.0" y="243.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">[1, 1, 1]</text>
+  <rect x="190" y="226" width="80" height="34" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="230.0" y="243.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.40</text>
+  <rect x="270" y="226" width="80" height="34" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="310.0" y="243.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.400</text>
+  <rect x="350" y="226" width="90" height="34" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="395.0" y="243.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.599</text>
+  <rect x="440" y="226" width="90" height="34" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <text x="485.0" y="243.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.380</text>
+  <rect x="40" y="90" width="490" height="170" rx="8" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="285" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the same z, squashed three different ways</text>
+  <rect x="556" y="90" width="224" height="76" rx="12" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="668" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">the rule of the week</text>
+  <line x1="568" y1="124" x2="768" y2="124" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="668" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">print the shape first</text>
+  <rect x="556" y="180" width="224" height="90" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="668" y="202" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">w.shape</text>
+  <text x="668" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">(3,)  &#8212;  three numbers, one row</text>
+  <text x="668" y="244" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">rows.shape</text>
+  <text x="668" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">(4, 3): four rows, three columns</text>
+  <rect x="40" y="292" width="740" height="40" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="410" y="312" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">no squash:  1.0(0.5x&#8321;+0.8x&#8322;+0.1) &#8722; 2.0(&#8722;0.3x&#8321;+0.2x&#8322;+0.05) + 0.3  =  1.1x&#8321; + 0.4x&#8322; + 0.3</text>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Two layers, no squash, one straight line &#8212; which is why the squash is not decoration.</text>
+</svg>

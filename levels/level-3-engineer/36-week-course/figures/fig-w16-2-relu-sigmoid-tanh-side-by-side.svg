@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Three squashes, on the same two numbers</title>
+  <desc>Three small charts side by side inside one panel, each with a labelled vertical scale and the z axis drawn through the value zero. Two points are marked on each curve, at z equals 0.2 and z equals minus 2.3. ReLU is flat then a straight rise and gives 0.200 and 0.000. Sigmoid is an S curve from 0 to 1 and gives 0.550 and 0.091. Tanh is an S curve from minus 1 to 1 and gives 0.197 and minus 0.980. Only tanh returns a negative number.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Three squashes, on the same two numbers</text>
+  <rect x="20" y="60" width="760" height="216" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="148" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">ReLU</text>
+  <line x1="64" y1="108" x2="64" y2="240" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="64" y1="212.37209302325581" x2="232" y2="212.37209302325581" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="238" y="204.37209302325581" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">z</text>
+  <line x1="59" y1="212.37209302325581" x2="64" y2="212.37209302325581" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="55" y="216.37209302325581" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0</text>
+  <line x1="59" y1="181.67441860465115" x2="64" y2="181.67441860465115" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="55" y="185.67441860465115" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1</text>
+  <line x1="59" y1="120.27906976744185" x2="64" y2="120.27906976744185" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="55" y="124.27906976744185" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">3</text>
+  <polyline points="64.0,212.4 66.6,212.4 69.2,212.4 71.9,212.4 74.5,212.4 77.1,212.4 79.8,212.4 82.4,212.4 85.0,212.4 87.6,212.4 90.2,212.4 92.9,212.4 95.5,212.4 98.1,212.4 100.8,212.4 103.4,212.4 106.0,212.4 108.6,212.4 111.2,212.4 113.9,212.4 116.5,212.4 119.1,212.4 121.8,212.4 124.4,212.4 127.0,212.4 129.6,212.4 132.2,212.4 134.9,212.4 137.5,212.4 140.1,212.4 142.8,212.4 145.4,212.4 148.0,212.4 150.6,209.3 153.2,206.2 155.9,203.2 158.5,200.1 161.1,197.0 163.8,194.0 166.4,190.9 169.0,187.8 171.6,184.7 174.2,181.7 176.9,178.6 179.5,175.5 182.1,172.5 184.8,169.4 187.4,166.3 190.0,163.3 192.6,160.2 195.2,157.1 197.9,154.0 200.5,151.0 203.1,147.9 205.8,144.8 208.4,141.8 211.0,138.7 213.6,135.6 216.3,132.6 218.9,129.5 221.5,126.4 224.1,123.3 226.8,120.3 229.4,117.2 232.0,114.1" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="153.25" y1="212.37209302325581" x2="153.25" y2="206.2325581395349" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <circle cx="153.25" cy="206.2325581395349" r="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="152" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.200</text>
+  <line x1="87.62500000000001" y1="212.37209302325581" x2="87.62500000000001" y2="212.37209302325581" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <circle cx="87.62500000000001" cy="212.37209302325581" r="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="66" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.000</text>
+  <line x1="87.62500000000001" y1="240" x2="87.62500000000001" y2="246" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="87.62500000000001" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">&#8722;2.3</text>
+  <line x1="153.25" y1="240" x2="153.25" y2="246" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="153.25" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.2</text>
+  <text x="400" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">sigmoid</text>
+  <line x1="316" y1="108" x2="316" y2="240" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="316" y1="223.5" x2="484" y2="223.5" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="490" y="215.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">z</text>
+  <line x1="311" y1="223.5" x2="316" y2="223.5" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="307" y="227.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0</text>
+  <line x1="311" y1="171.9375" x2="316" y2="171.9375" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="307" y="175.9375" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.5</text>
+  <line x1="311" y1="120.37500000000001" x2="316" y2="120.37500000000001" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="307" y="124.37500000000001" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1</text>
+  <polyline points="316.0,219.5 318.6,219.1 321.2,218.6 323.9,218.1 326.5,217.6 329.1,217.0 331.8,216.4 334.4,215.7 337.0,214.9 339.6,214.1 342.2,213.2 344.9,212.2 347.5,211.2 350.1,210.1 352.8,208.9 355.4,207.6 358.0,206.2 360.6,204.7 363.2,203.1 365.9,201.4 368.5,199.6 371.1,197.7 373.8,195.8 376.4,193.7 379.0,191.5 381.6,189.3 384.2,187.0 386.9,184.6 389.5,182.1 392.1,179.6 394.8,177.1 397.4,174.5 400.0,171.9 402.6,169.4 405.2,166.8 407.9,164.3 410.5,161.8 413.1,159.3 415.8,156.9 418.4,154.6 421.0,152.3 423.6,150.2 426.2,148.1 428.9,146.1 431.5,144.2 434.1,142.5 436.8,140.8 439.4,139.2 442.0,137.7 444.6,136.3 447.2,135.0 449.9,133.8 452.5,132.7 455.1,131.6 457.8,130.7 460.4,129.8 463.0,129.0 465.6,128.2 468.2,127.5 470.9,126.9 473.5,126.3 476.1,125.8 478.8,125.3 481.4,124.8 484.0,124.4" fill="none" stroke="#6D28D9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="405.25" y1="223.5" x2="405.25" y2="166.7983690271507" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <circle cx="405.25" cy="166.7983690271507" r="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="400" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.550</text>
+  <line x1="339.625" y1="223.5" x2="339.625" y2="214.10294464534297" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <circle cx="339.625" cy="214.10294464534297" r="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="322" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.091</text>
+  <line x1="339.625" y1="240" x2="339.625" y2="246" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="339.625" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">&#8722;2.3</text>
+  <line x1="405.25" y1="240" x2="405.25" y2="246" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="405.25" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.2</text>
+  <text x="652" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">tanh</text>
+  <line x1="568" y1="108" x2="568" y2="240" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="568" y1="174.0" x2="736" y2="174.0" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="742" y="166.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">z</text>
+  <line x1="563" y1="226.8" x2="568" y2="226.8" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="559" y="230.8" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">&#8722;1</text>
+  <line x1="563" y1="174.0" x2="568" y2="174.0" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="559" y="178.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0</text>
+  <line x1="563" y1="121.2" x2="568" y2="121.2" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="559" y="125.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1</text>
+  <polyline points="568.0,226.6 570.6,226.6 573.2,226.5 575.9,226.5 578.5,226.4 581.1,226.3 583.8,226.2 586.4,226.1 589.0,225.9 591.6,225.7 594.2,225.5 596.9,225.2 599.5,224.9 602.1,224.5 604.8,224.0 607.4,223.4 610.0,222.7 612.6,221.8 615.2,220.7 617.9,219.5 620.5,218.0 623.1,216.3 625.8,214.2 628.4,211.8 631.0,209.1 633.6,205.9 636.2,202.4 638.9,198.4 641.5,194.1 644.1,189.4 646.8,184.4 649.4,179.3 652.0,174.0 654.6,168.7 657.2,163.6 659.9,158.6 662.5,153.9 665.1,149.6 667.8,145.6 670.4,142.1 673.0,138.9 675.6,136.2 678.2,133.8 680.9,131.7 683.5,130.0 686.1,128.5 688.8,127.3 691.4,126.2 694.0,125.3 696.6,124.6 699.2,124.0 701.9,123.5 704.5,123.1 707.1,122.8 709.8,122.5 712.4,122.3 715.0,122.1 717.6,121.9 720.2,121.8 722.9,121.7 725.5,121.6 728.1,121.5 730.8,121.5 733.4,121.4 736.0,121.4" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="657.25" y1="174.0" x2="657.25" y2="163.5785830921251" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <circle cx="657.25" cy="163.5785830921251" r="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="652" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.197</text>
+  <line x1="591.625" y1="174.0" x2="591.625" y2="225.7490897228549" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <circle cx="591.625" cy="225.7490897228549" r="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="588" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">&#8722;0.980</text>
+  <line x1="591.625" y1="240" x2="591.625" y2="246" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="591.625" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">&#8722;2.3</text>
+  <line x1="657.25" y1="240" x2="657.25" y2="246" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="657.25" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.2</text>
+  <text x="400" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">At z = 0.2 all three agree it is a small yes: 0.200, 0.550 and 0.197.</text>
+  <text x="400" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">At z = &#8722;2.3 they part company: 0.000, 0.091 and &#8722;0.980.</text>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Only tanh can pass a negative number onward &#8212; a way of saying “strongly not this”.</text>
+</svg>

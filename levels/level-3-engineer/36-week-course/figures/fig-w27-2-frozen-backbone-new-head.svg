@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Keep the eyes, replace the answer sheet</title>
+  <desc>Two bands. In stage 1 a network of two convolution blocks and a head is trained on 630 rows of digits 0 to 4, and all 1,898 weights move. In stage 2 the two convolution blocks are greyed out and labelled frozen, the head is replaced with a new one, and only 650 of the 1,898 weights move while training on 627 rows of digits 5 to 9. The frozen version reaches a test accuracy of 0.9257, the unfrozen version 0.9665, and training from nothing on the same 627 rows reaches 0.9814, so on 8 by 8 digits the borrowed eyes bought speed rather than accuracy.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Keep the eyes, replace the answer sheet</text>
+  <text x="40" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">stage 1 &#183; digits 0 to 4 &#183; train everything</text>
+  <rect x="50" y="98" width="150" height="62" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="125" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">conv 1</text>
+  <text x="125" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">learning</text>
+  <line x1="204" y1="129" x2="224" y2="129" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(224 129) rotate(0)"/>
+  <rect x="228" y="98" width="150" height="62" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="303" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">conv 2</text>
+  <text x="303" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">learning</text>
+  <line x1="382" y1="129" x2="402" y2="129" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(402 129) rotate(0)"/>
+  <rect x="406" y="98" width="150" height="62" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="481" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">the head</text>
+  <text x="481" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">learning</text>
+  <text x="620" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">630 training rows</text>
+  <text x="620" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">1,898 weights move</text>
+  <text x="40" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">stage 2 &#183; digits 5 to 9 &#183; freeze the convs, fit a new head</text>
+  <rect x="50" y="214" width="150" height="62" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="3" stroke-linejoin="round"/>
+  <text x="125" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">conv 1</text>
+  <text x="125" y="264" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">frozen</text>
+  <line x1="204" y1="245" x2="224" y2="245" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(224 245) rotate(0)"/>
+  <rect x="228" y="214" width="150" height="62" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="3" stroke-linejoin="round"/>
+  <text x="303" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">conv 2</text>
+  <text x="303" y="264" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">frozen</text>
+  <line x1="382" y1="245" x2="402" y2="245" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(402 245) rotate(0)"/>
+  <rect x="406" y="214" width="150" height="62" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="481" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">a NEW head</text>
+  <text x="481" y="264" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">learning</text>
+  <text x="620" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">627 training rows</text>
+  <text x="620" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">650 weights move</text>
+  <rect x="40" y="292" width="720" height="86" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="56" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">frozen: 650 of the 1,898 weights may move &#183; test 0.9257</text>
+  <text x="56" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">unfrozen: all 1,898 may move &#183; test 0.9665</text>
+  <text x="56" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">and starting from nothing on the same 627 rows reaches 0.9814 &#183;</text>
+  <text x="56" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">on 8&#215;8 digits the borrowed eyes bought speed, not accuracy</text>
+</svg>

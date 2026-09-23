@@ -1,0 +1,1160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AI Academy - Level 3 (Engineer) - motif sprite sheet.
+     Use:  <use href="_motifs.svg#motif-confusion" x="40" y="40" width="380" height="260"/>
+     Or open this file and copy the contents of a <symbol> inline into your figure.
+     Every motif is drawn to its own viewBox with the origin at the top-left,
+     so translate(x,y) puts its top-left corner at exactly (x,y).
+     Motifs marked INHERITED are copied verbatim from Level 2 - do not redraw them. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" role="img" aria-hidden="true" style="display:none">
+  <title>AI Academy Level 3 motif sprite sheet</title>
+  <desc>A hidden library of reusable motif symbols for Level 3 figures: slopes and descent, tensors and shapes, neurons and networks, model evaluation, convolution, clustering and text.</desc>
+  <!-- motif-tangent -->
+  <symbol id="motif-tangent" viewBox="0 0 320 240">
+    <title>The slope at one point on a curve</title>
+    <desc>A curve rising to the right. At the point where w is 3 and the loss is 9, a straight line just touches the curve. A small step of plus 0.5 across and plus 3.0 up is marked on that line, and a callout says 3.0 divided by 0.5 gives a slope of 6.</desc>
+  <line x1="40" y1="36" x2="40" y2="196" stroke="#14202B" stroke-width="2"/>
+  <line x1="40" y1="196" x2="286" y2="196" stroke="#14202B" stroke-width="2"/>
+  <line x1="167.6" y1="155.7" x2="260.4" y2="63.5" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="40.0,196.0 69.0,193.6 98.0,186.4 127.0,174.4 156.0,157.6 185.0,136.0 214.0,109.6 243.0,78.4 272.0,42.4" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="214" y1="109.6" x2="243" y2="109.6" stroke="#55636F" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="243" y1="109.6" x2="243" y2="80.8" stroke="#55636F" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="228.5" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">+0.5</text>
+  <text x="249" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">+3.0</text>
+  <circle cx="214" cy="109.6" r="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="206" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end">(3, 9)</text>
+  <rect x="46" y="40" width="150" height="44" rx="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="121" y="58" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">3.0 &#247; 0.5 = 6</text>
+  <text x="121" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">so the slope here is 6</text>
+  <line x1="196" y1="66" x2="206" y2="100" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C42B8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(206 100) rotate(73.6)"/>
+  <line x1="214" y1="196" x2="214" y2="202" stroke="#55636F" stroke-width="1.5"/>
+  <text x="214" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">w = 3</text>
+  <text x="96" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">w (the weight)</text>
+  <text x="24" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 24 116)">loss</text>
+  <text x="300" y="34" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">loss = w &#215; w</text>
+  </symbol>
+  <!-- motif-loss-bowl -->
+  <symbol id="motif-loss-bowl" viewBox="0 0 420 250">
+    <title>Four steps down the loss bowl</title>
+    <desc>A bowl-shaped curve. Four numbered points walk down the right-hand wall towards the bottom, each one labelled with its own w and loss: 3.00 and 9.00, then 2.40 and 5.76, then 1.92 and 3.69, then 1.54 and 2.36. The bottom of the bowl is marked as the place where the slope is zero.</desc>
+  <line x1="24" y1="200" x2="296" y2="200" stroke="#C7CDD4" stroke-width="1.5"/>
+  <polyline points="24.0,40.5 40.0,75.8 56.0,106.7 72.0,133.2 88.0,155.3 104.0,173.0 120.0,186.2 136.0,195.0 152.0,199.4 168.0,199.4 184.0,195.0 200.0,186.2 216.0,173.0 232.0,155.3 248.0,133.2 264.0,106.7 280.0,75.8 296.0,40.5" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="210" y="24" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">each step moves 0.1 &#215; slope downhill</text>
+  <line x1="277.0" y1="79.8" x2="261.0" y2="117.5" stroke="#C42B8C" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C42B8C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(261.0 117.5) rotate(113)"/>
+  <line x1="253.0" y1="124.5" x2="241.8" y2="146.1" stroke="#C42B8C" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C42B8C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(241.8 146.1) rotate(117.4)"/>
+  <line x1="233.8" y1="153.1" x2="226.6" y2="164.4" stroke="#C42B8C" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C42B8C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(226.6 164.4) rotate(122.5)"/>
+  <line x1="290.0" y1="75.8" x2="302" y2="80" stroke="#C7CDD4" stroke-width="1.5"/>
+  <circle cx="280.0" cy="75.8" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="280.0" y="75.8" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="306" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">(3.00, 9.00)</text>
+  <line x1="266.0" y1="120.5" x2="302" y2="116" stroke="#C7CDD4" stroke-width="1.5"/>
+  <circle cx="256.0" cy="120.5" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="256.0" y="120.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="306" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">(2.40, 5.76)</text>
+  <line x1="246.8" y1="149.1" x2="302" y2="152" stroke="#C7CDD4" stroke-width="1.5"/>
+  <circle cx="236.8" cy="149.1" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="236.8" y="149.1" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="306" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">(1.92, 3.69)</text>
+  <line x1="231.6" y1="167.4" x2="302" y2="188" stroke="#C7CDD4" stroke-width="1.5"/>
+  <circle cx="221.6" cy="167.4" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="221.6" y="167.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="306" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">(1.54, 2.36)</text>
+  <text x="160" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">w = 0</text>
+  <text x="160" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the bottom: slope 0, nowhere left to go</text>
+  </symbol>
+  <!-- motif-lr-too-small -->
+  <symbol id="motif-lr-too-small" viewBox="0 0 180 175">
+    <title>A learning rate that is too small</title>
+    <desc>The same bowl-shaped curve. Four dots sit almost on top of each other high on the right-hand wall, joined by arrows so short they are hard to see. The caption reads lr = 0.01, barely moves.</desc>
+  <line x1="20" y1="36" x2="20" y2="130" stroke="#14202B" stroke-width="2"/>
+  <line x1="20" y1="130" x2="160" y2="130" stroke="#14202B" stroke-width="2"/>
+  <polyline points="20.1,43.2 37.6,81.2 55.0,108.3 72.5,124.6 90.0,130.0 107.5,124.6 125.0,108.3 142.4,81.2 159.9,43.2" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="12" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 12 84)">loss</text>
+  <text x="155" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">w</text>
+  <line x1="135.6" y1="93.1" x2="134.7" y2="94.6" stroke="#1F6FB2" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#1F6FB2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(134.7 94.6) rotate(121)"/>
+  <line x1="134.7" y1="94.6" x2="133.8" y2="96.0" stroke="#1F6FB2" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#1F6FB2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(133.8 96.0) rotate(122.7)"/>
+  <line x1="133.8" y1="96.0" x2="132.9" y2="97.3" stroke="#1F6FB2" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#1F6FB2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(132.9 97.3) rotate(124.7)"/>
+  <circle cx="135.6" cy="93.1" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="134.7" cy="94.6" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="133.8" cy="96.0" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="132.9" cy="97.3" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="90" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">lr = 0.01</text>
+  <text x="90" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">barely moves</text>
+  </symbol>
+  <!-- motif-lr-right -->
+  <symbol id="motif-lr-right" viewBox="0 0 180 175">
+    <title>A learning rate that works</title>
+    <desc>The same bowl-shaped curve. Five dots step steadily down the right-hand wall towards the bottom, each step a little shorter than the last. The caption reads lr = 0.1, walks down.</desc>
+  <line x1="20" y1="36" x2="20" y2="130" stroke="#14202B" stroke-width="2"/>
+  <line x1="20" y1="130" x2="160" y2="130" stroke="#14202B" stroke-width="2"/>
+  <polyline points="20.1,43.2 37.6,81.2 55.0,108.3 72.5,124.6 90.0,130.0 107.5,124.6 125.0,108.3 142.4,81.2 159.9,43.2" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="12" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 12 84)">loss</text>
+  <text x="155" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">w</text>
+  <line x1="135.6" y1="93.1" x2="126.5" y2="106.4" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(126.5 106.4) rotate(124.4)"/>
+  <line x1="126.5" y1="106.4" x2="119.2" y2="114.9" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(119.2 114.9) rotate(130.7)"/>
+  <line x1="119.2" y1="114.9" x2="113.3" y2="120.3" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(113.3 120.3) rotate(137.5)"/>
+  <line x1="113.3" y1="120.3" x2="108.7" y2="123.8" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(108.7 123.8) rotate(142.7)"/>
+  <circle cx="135.6" cy="93.1" r="5" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="126.5" cy="106.4" r="5" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="119.2" cy="114.9" r="5" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="113.3" cy="120.3" r="5" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="108.7" cy="123.8" r="5" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="90" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">lr = 0.1</text>
+  <text x="90" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">walks down</text>
+  </symbol>
+  <!-- motif-lr-diverging -->
+  <symbol id="motif-lr-diverging" viewBox="0 0 180 175">
+    <title>A learning rate that diverges</title>
+    <desc>The same bowl-shaped curve. A dot high on the right wall leaps across the bowl to the far wall, then leaps back even higher, each jump landing further up than the last. The caption reads lr = 1.1, leaps and climbs.</desc>
+  <line x1="20" y1="36" x2="20" y2="130" stroke="#14202B" stroke-width="2"/>
+  <line x1="20" y1="130" x2="160" y2="130" stroke="#14202B" stroke-width="2"/>
+  <polyline points="20.1,43.2 37.6,81.2 55.0,108.3 72.5,124.6 90.0,130.0 107.5,124.6 125.0,108.3 142.4,81.2 159.9,43.2" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="12" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 12 84)">loss</text>
+  <text x="155" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">w</text>
+  <line x1="135.6" y1="93.1" x2="35.3" y2="76.9" stroke="#CC2B1D" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#CC2B1D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(35.3 76.9) rotate(-170.8)"/>
+  <line x1="35.3" y1="76.9" x2="155.7" y2="53.5" stroke="#CC2B1D" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#CC2B1D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(155.7 53.5) rotate(-11)"/>
+  <circle cx="135.6" cy="93.1" r="5" fill="#CC2B1D" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="35.3" cy="76.9" r="5" fill="#CC2B1D" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="155.7" cy="53.5" r="5" fill="#CC2B1D" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="90" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">lr = 1.1</text>
+  <text x="90" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">leaps and climbs</text>
+  </symbol>
+  <!-- motif-tensor-1d -->
+  <symbol id="motif-tensor-1d" viewBox="0 0 300 160">
+    <title>A 1-D tensor is one row of numbers</title>
+    <desc>A single wide bar divided into five equal cells, with a mono label reading shape open bracket 5 comma close bracket pinned to its top-right corner, and a bracket underneath labelled 5 numbers.</desc>
+  <text x="20" y="26" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">1-D &#8212; a vector</text>
+  <rect x="20" y="58" width="200" height="44" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="60" y1="58" x2="60" y2="102" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="100" y1="58" x2="100" y2="102" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="140" y1="58" x2="140" y2="102" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="180" y1="58" x2="180" y2="102" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="150" y="44" width="110" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="205.0" y="57.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">shape (5,)</text>
+  <path d="M20 110 V118 H220 V110" fill="none" stroke="#55636F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="120" y="136" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">5 numbers</text>
+  <text x="20" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">one row: 5 features for one delivery</text>
+  </symbol>
+  <!-- motif-tensor-2d -->
+  <symbol id="motif-tensor-2d" viewBox="0 0 300 200">
+    <title>A 2-D tensor is rows and columns</title>
+    <desc>A block divided into three rows and four columns, with a mono label reading shape 3 comma 4 pinned to its top-right corner. The left edge is labelled 3 rows and the bottom edge 4 columns.</desc>
+  <text x="20" y="26" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">2-D &#8212; rows and columns</text>
+  <rect x="20" y="58" width="200" height="96" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="20" y1="90" x2="220" y2="90" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="20" y1="122" x2="220" y2="122" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="70" y1="58" x2="70" y2="154" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="120" y1="58" x2="120" y2="154" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="170" y1="58" x2="170" y2="154" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="150" y="44" width="120" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="210.0" y="57.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">shape (3, 4)</text>
+  <text x="14" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 14 106)">3 rows</text>
+  <text x="120" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4 columns</text>
+  <text x="150" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">rows are examples &#183; columns are features</text>
+  </symbol>
+  <!-- motif-tensor-3d -->
+  <symbol id="motif-tensor-3d" viewBox="0 0 320 210">
+    <title>A 3-D tensor is a stack of tables</title>
+    <desc>A shallow three-dimensional box drawn with a front face, a top face and a right face. A mono label reads shape 3 comma 32 comma 32. The depth is labelled 3 channels, the width 32 wide and the height 32 high.</desc>
+  <text x="20" y="26" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">3-D &#8212; a stack of tables</text>
+  <path d="M30 70 L58 46 H238 L210 70 Z" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M210 70 L238 46 V136 L210 160 Z" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="30" y="70" width="180" height="90" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <line x1="30" y1="100" x2="210" y2="100" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="30" y1="130" x2="210" y2="130" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="90" y1="70" x2="90" y2="160" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="150" y1="70" x2="150" y2="160" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="236" y1="52" x2="246" y2="45" stroke="#55636F" stroke-width="1.5"/>
+  <text x="310" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">3 channels</text>
+  <text x="120" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">32 wide</text>
+  <text x="18" y="115" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 18 115)">32 high</text>
+  <rect x="160" y="168" width="140" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="230.0" y="181.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">shape (3, 32, 32)</text>
+  <text x="160" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one colour image: 3 channels of 32 by 32</text>
+  </symbol>
+  <!-- motif-tensor-4d -->
+  <symbol id="motif-tensor-4d" viewBox="0 0 360 230">
+    <title>A 4-D tensor is a batch of 3-D tensors</title>
+    <desc>Three shallow three-dimensional boxes stacked one behind the other going up and to the right. A mono label reads shape 64 comma 3 comma 32 comma 32, the depth of the stack is labelled 64 images, and a note says the first number is always the batch size.</desc>
+  <text x="20" y="24" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">4-D &#8212; a batch of 3-D tensors</text>
+  <path d="M62 74 L86 52 H236 52 L212 74 Z" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M212 74 L236 52 V126 L212 148 Z" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="62" y="74" width="150" height="74" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <path d="M46 87 L70 65 H220 65 L196 87 Z" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M196 87 L220 65 V139 L196 161 Z" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="46" y="87" width="150" height="74" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <path d="M30 100 L54 78 H204 78 L180 100 Z" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M180 100 L204 78 V152 L180 174 Z" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="30" y="100" width="150" height="74" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <line x1="240" y1="54" x2="276" y2="53" stroke="#55636F" stroke-width="1.5"/>
+  <text x="344" y="52" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">64 images</text>
+  <text x="88" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">each image: 3 &#215; 32 &#215; 32</text>
+  <rect x="170" y="176" width="170" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="255.0" y="189.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">shape (64, 3, 32, 32)</text>
+  <text x="180" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the first number is always the batch size</text>
+  </symbol>
+  <!-- motif-matmul -->
+  <symbol id="motif-matmul" viewBox="0 0 420 220">
+    <title>A matrix multiply cancels the inner numbers</title>
+    <desc>Two blocks side by side with a multiplication sign between them and an equals sign after. The first is labelled 750 by 2, the second 2 by 16, and the two 2s are boxed in pink and joined to a callout reading the inner numbers must match. The answer block is labelled 750 by 16.</desc>
+  <text x="79" y="48" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">X</text>
+  <text x="225" y="48" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">W1</text>
+  <text x="358" y="48" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Z1</text>
+  <rect x="24" y="56" width="110" height="120" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="32" y1="112" x2="126" y2="112" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="32" y1="136" x2="126" y2="136" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="32" y1="160" x2="126" y2="160" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="170" y="56" width="110" height="120" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="178" y1="112" x2="272" y2="112" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="178" y1="136" x2="272" y2="136" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="178" y1="160" x2="272" y2="160" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="310" y="56" width="96" height="120" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="318" y1="112" x2="398" y2="112" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="318" y1="136" x2="398" y2="136" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="318" y1="160" x2="398" y2="160" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="40" y="84" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">(750,</text>
+  <rect x="83.0" y="68" width="14.4" height="22" rx="4" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="86.0" y="84" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">2</text>
+  <text x="98.4" y="84" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">)</text>
+  <text x="186" y="84" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">(</text>
+  <rect x="195.4" y="68" width="14.4" height="22" rx="4" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="198.4" y="84" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">2</text>
+  <text x="210.8" y="84" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">, 16)</text>
+  <text x="318" y="84" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">(750, 16)</text>
+  <text x="152" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">&#215;</text>
+  <text x="300" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">=</text>
+  <line x1="90" y1="90" x2="90" y2="96" stroke="#C42B8C" stroke-width="2"/>
+  <line x1="202" y1="90" x2="202" y2="96" stroke="#C42B8C" stroke-width="2"/>
+  <rect x="46" y="96" width="196" height="24" rx="12" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="144" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">the inner numbers must match</text>
+  <text x="210" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the two 2s must match, and then they vanish</text>
+  <text x="210" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">what is left is (750, 16): X's rows, W1's columns</text>
+  </symbol>
+  <!-- motif-shape-mismatch -->
+  <symbol id="motif-shape-mismatch" viewBox="0 0 420 240">
+    <title>A shape mismatch, and where to look</title>
+    <desc>The same two blocks with a multiplication sign, but the second is labelled 16 by 2. The inner numbers, 2 and 16, are boxed in red and joined to a callout reading 2 and 16 do not match. Where the answer should be there is a red box with a cross in it and the words no result.</desc>
+  <text x="79" y="48" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">X</text>
+  <text x="225" y="48" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">W1</text>
+  <rect x="24" y="56" width="110" height="120" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="32" y1="112" x2="126" y2="112" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="32" y1="136" x2="126" y2="136" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="32" y1="160" x2="126" y2="160" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="170" y="56" width="110" height="120" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="178" y1="112" x2="272" y2="112" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="178" y1="136" x2="272" y2="136" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="178" y1="160" x2="272" y2="160" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="310" y="56" width="96" height="120" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="40" y="84" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">(750,</text>
+  <rect x="83.0" y="68" width="14.4" height="22" rx="4" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="86.0" y="84" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">2</text>
+  <text x="98.4" y="84" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">)</text>
+  <text x="186" y="84" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">(</text>
+  <rect x="195.4" y="68" width="22.8" height="22" rx="4" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="198.4" y="84" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">16</text>
+  <text x="219.20000000000002" y="84" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">, 2)</text>
+  <text x="358" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">no result</text>
+  <text x="152" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">&#215;</text>
+  <text x="300" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">=</text>
+  <g transform="translate(338,100) scale(0.4)">
+  <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+    <line x1="38" y1="38" x2="62" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+    <line x1="62" y1="38" x2="38" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  </g>
+  <line x1="90" y1="90" x2="90" y2="96" stroke="#CC2B1D" stroke-width="2"/>
+  <line x1="206" y1="90" x2="206" y2="96" stroke="#CC2B1D" stroke-width="2"/>
+  <rect x="46" y="96" width="200" height="26" rx="12" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="146" y="109" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2 and 16 do not match</text>
+  <text x="210" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">a shape error is a wiring error, not a maths error</text>
+  <text x="210" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the fix: build W1 as (2, 16), or transpose it</text>
+  <text x="210" y="230" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">print every shape before you multiply</text>
+  </symbol>
+  <!-- motif-neuron -->
+  <symbol id="motif-neuron" viewBox="0 0 360 200">
+    <title>One neuron: multiply, add, squash</title>
+    <desc>Two input circles holding 1.0 and 2.0 feed into a circle labelled sum, along wires labelled times 0.5 and times 0.8. A third wire brings in a bias of 0.1. The sum, 2.20, passes into a box labelled ReLU and out to an output circle holding 2.20. Underneath, the whole calculation is written out as 1.0 times 0.5 plus 2.0 times 0.8 plus 0.1 equals 2.20.</desc>
+  <line x1="52" y1="60" x2="126" y2="84" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="52" y1="120" x2="126" y2="96" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="34" y="32" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">inputs</text>
+  <circle cx="34" cy="60" r="18" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="34" y="60" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.0</text>
+  <circle cx="34" cy="120" r="18" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="34" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2.0</text>
+  <text x="84" y="62" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">&#215; 0.5</text>
+  <text x="88" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">&#215; 0.8</text>
+  <text x="146" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">weighted sum</text>
+  <circle cx="146" cy="90" r="26" fill="#F5F8FA" stroke="#14202B" stroke-width="3"/>
+  <text x="146" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">sum</text>
+  <line x1="146" y1="146" x2="146" y2="120" stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(146 120) rotate(-90)"/>
+  <text x="146" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">bias 0.1</text>
+  <line x1="174" y1="90" x2="206" y2="90" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(206 90) rotate(0)"/>
+  <text x="190" y="78" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">2.20</text>
+  <text x="245" y="50" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">activation</text>
+  <rect x="208" y="64" width="74" height="52" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="245" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">ReLU</text>
+  <line x1="284" y1="90" x2="304" y2="90" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(304 90) rotate(0)"/>
+  <text x="324" y="50" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">output</text>
+  <circle cx="324" cy="90" r="20" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="324" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2.20</text>
+  <text x="180" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1.0 &#215; 0.5  +  2.0 &#215; 0.8  +  0.1  =  2.20</text>
+  </symbol>
+  <!-- motif-network-shapes -->
+  <symbol id="motif-network-shapes" viewBox="0 0 420 270">
+    <title>A network with the shapes written between the layers</title>
+    <desc>Two input circles on the left connect to five hidden circles in the middle, which connect to one output circle on the right. Above the wires, mono labels read W1 2 by 16 and W2 16 by 1. Below each column, mono labels read 750 by 2, then 750 by 16, then 750 by 1.</desc>
+  <text x="210" y="18" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the batch size 750 never changes; the last number does</text>
+  <rect x="75" y="30" width="90" height="26" rx="6" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="120.0" y="43.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">W1 (2, 16)</text>
+  <rect x="215" y="30" width="90" height="26" rx="6" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="260.0" y="43.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">W2 (16, 1)</text>
+  <line x1="66" y1="110" x2="177" y2="70" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="66" y1="110" x2="177" y2="100" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="66" y1="110" x2="177" y2="130" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="66" y1="110" x2="177" y2="160" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="66" y1="110" x2="177" y2="190" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="66" y1="150" x2="177" y2="70" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="66" y1="150" x2="177" y2="100" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="66" y1="150" x2="177" y2="130" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="66" y1="150" x2="177" y2="160" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="66" y1="150" x2="177" y2="190" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="203" y1="70" x2="312" y2="130" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="203" y1="100" x2="312" y2="130" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="203" y1="130" x2="312" y2="130" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="203" y1="160" x2="312" y2="130" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="203" y1="190" x2="312" y2="130" stroke="#C7CDD4" stroke-width="1.5"/>
+  <circle cx="50" cy="110" r="16" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="50" cy="150" r="16" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="190" cy="70" r="13" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
+  <circle cx="190" cy="100" r="13" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
+  <circle cx="190" cy="130" r="13" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
+  <circle cx="190" cy="160" r="13" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
+  <circle cx="190" cy="190" r="13" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
+  <circle cx="330" cy="130" r="18" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="240" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">5 of the 16 drawn</text>
+  <rect x="13" y="214" width="74" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="50.0" y="227.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(750, 2)</text>
+  <rect x="149" y="214" width="82" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="190.0" y="227.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(750, 16)</text>
+  <rect x="293" y="214" width="74" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="330.0" y="227.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(750, 1)</text>
+  <text x="50" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2 inputs</text>
+  <text x="190" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">16 hidden units</text>
+  <text x="330" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1 output</text>
+  </symbol>
+  <!-- motif-forward-backward -->
+  <symbol id="motif-forward-backward" viewBox="0 0 420 240">
+    <title>Forward and backward over the same wires</title>
+    <desc>A small network with two inputs, four hidden units and one output. A solid blue arrow runs left to right above it, labelled forward, numbers flow right, ending at the word output. A dashed pink arrow runs right to left below it, labelled backward, blame flows left, ending at the word blame.</desc>
+  <text x="200" y="24" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1F6FB2" text-anchor="middle">FORWARD &#8212; numbers flow right</text>
+  <line x1="60" y1="42" x2="340" y2="42" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(340 42) rotate(0)"/>
+  <text x="348" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1F6FB2">output</text>
+  <line x1="76" y1="102" x2="188" y2="72" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="76" y1="102" x2="188" y2="106" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="76" y1="102" x2="188" y2="140" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="76" y1="102" x2="188" y2="174" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="76" y1="142" x2="188" y2="72" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="76" y1="142" x2="188" y2="106" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="76" y1="142" x2="188" y2="140" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="76" y1="142" x2="188" y2="174" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="212" y1="72" x2="322" y2="122" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="212" y1="106" x2="322" y2="122" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="212" y1="140" x2="322" y2="122" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="212" y1="174" x2="322" y2="122" stroke="#C7CDD4" stroke-width="1.5"/>
+  <circle cx="60" cy="102" r="16" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="60" cy="142" r="16" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="200" cy="72" r="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
+  <circle cx="200" cy="106" r="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
+  <circle cx="200" cy="140" r="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
+  <circle cx="200" cy="174" r="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
+  <circle cx="340" cy="122" r="18" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <line x1="340" y1="196" x2="60" y2="196" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 5"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(60 196) rotate(180)"/>
+  <text x="50" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="end">blame</text>
+  <text x="200" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">BACKWARD &#8212; blame flows left</text>
+  <text x="200" y="230" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the same weights, used twice: forwards, then backwards</text>
+  </symbol>
+  <!-- motif-confusion -->
+  <symbol id="motif-confusion" viewBox="0 0 380 260">
+    <title>The confusion matrix: all four numbers named</title>
+    <desc>A two by two table. Rows are what actually happened, columns are what the model said. Top left, True Negative, 75, with a tick. Top right, False Positive, 5, with a cross. Bottom left, False Negative, 4, with a cross. Bottom right, True Positive, 16, with a tick.</desc>
+  <text x="240" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">100 emails: 80 ham, 20 spam</text>
+  <text x="180" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">predicted ham</text>
+  <text x="300" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">predicted spam</text>
+  <text x="114" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">actual ham</text>
+  <text x="114" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">actual spam</text>
+  <rect x="120" y="96" width="120" height="64" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <rect x="240" y="96" width="120" height="64" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <rect x="120" y="160" width="120" height="64" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <rect x="240" y="160" width="120" height="64" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <polyline points="128,110 134,116 146,104" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round">
+  <line x1="248" y1="104" x2="262" y2="116" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  <line x1="262" y1="104" x2="248" y2="116" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round">
+  <line x1="128" y1="168" x2="142" y2="180" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  <line x1="142" y1="168" x2="128" y2="180" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <polyline points="248,174 254,180 266,168" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="180" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">True Negative</text>
+  <text x="300" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">False Positive</text>
+  <text x="180" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">False Negative</text>
+  <text x="300" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">True Positive</text>
+  <text x="180" y="150" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">75</text>
+  <text x="300" y="150" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">5</text>
+  <text x="180" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">4</text>
+  <text x="300" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">16</text>
+  <rect x="120" y="96" width="240" height="128" rx="0" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="190" y="246" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one accuracy number hides three of these</text>
+  </symbol>
+  <!-- motif-precision-overlay -->
+  <symbol id="motif-precision-overlay" viewBox="0 0 380 280">
+    <title>Precision reads down the predicted-spam column</title>
+    <desc>The same two by two table of 75, 5, 4 and 16. A pink outline surrounds the whole predicted-spam column, whose header now reads predicted spam, 21. Underneath: of the 21 I flagged, 16 were spam, and 16 divided by 21 equals 0.7619.</desc>
+  <text x="240" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">100 emails &#183; threshold 0.50</text>
+  <text x="180" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">predicted ham</text>
+  <text x="300" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">predicted spam (21)</text>
+  <text x="114" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">actual ham</text>
+  <text x="114" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">actual spam</text>
+  <rect x="120" y="96" width="120" height="64" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <rect x="240" y="96" width="120" height="64" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <rect x="120" y="160" width="120" height="64" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <rect x="240" y="160" width="120" height="64" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <polyline points="128,110 134,116 146,104" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round">
+  <line x1="248" y1="104" x2="262" y2="116" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  <line x1="262" y1="104" x2="248" y2="116" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round">
+  <line x1="128" y1="168" x2="142" y2="180" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  <line x1="142" y1="168" x2="128" y2="180" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <polyline points="248,174 254,180 266,168" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="180" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">TN</text>
+  <text x="300" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">FP</text>
+  <text x="180" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">FN</text>
+  <text x="300" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">TP</text>
+  <text x="180" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">75</text>
+  <text x="300" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">5</text>
+  <text x="180" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">4</text>
+  <text x="300" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">16</text>
+  <rect x="120" y="96" width="240" height="128" rx="0" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="240" y="96" width="120" height="128" rx="0" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="190" y="246" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">precision: of the 21 I flagged, 16 were spam</text>
+  <text x="190" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">16 &#247; 21 = 0.7619</text>
+  </symbol>
+  <!-- motif-recall-overlay -->
+  <symbol id="motif-recall-overlay" viewBox="0 0 380 280">
+    <title>Recall reads across the actual-spam row</title>
+    <desc>The same two by two table of 75, 5, 4 and 16. A pink outline surrounds the whole actual-spam row, whose label now reads actual spam, 20. Underneath: of the 20 real spam, I caught 16, and 16 divided by 20 equals 0.8000.</desc>
+  <text x="240" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">100 emails &#183; threshold 0.50</text>
+  <text x="180" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">predicted ham</text>
+  <text x="300" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">predicted spam</text>
+  <text x="114" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">actual ham</text>
+  <text x="114" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="end">actual spam (20)</text>
+  <rect x="120" y="96" width="120" height="64" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <rect x="240" y="96" width="120" height="64" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <rect x="120" y="160" width="120" height="64" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <rect x="240" y="160" width="120" height="64" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <polyline points="128,110 134,116 146,104" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round">
+  <line x1="248" y1="104" x2="262" y2="116" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  <line x1="262" y1="104" x2="248" y2="116" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round">
+  <line x1="128" y1="168" x2="142" y2="180" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  <line x1="142" y1="168" x2="128" y2="180" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <polyline points="248,174 254,180 266,168" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="180" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">TN</text>
+  <text x="300" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">FP</text>
+  <text x="180" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">FN</text>
+  <text x="300" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">TP</text>
+  <text x="180" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">75</text>
+  <text x="300" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">5</text>
+  <text x="180" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">4</text>
+  <text x="300" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">16</text>
+  <rect x="120" y="96" width="240" height="128" rx="0" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="120" y="160" width="240" height="64" rx="0" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="190" y="246" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">recall: of the 20 real spam, I caught 16</text>
+  <text x="190" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">16 &#247; 20 = 0.8000</text>
+  </symbol>
+  <!-- motif-roc -->
+  <symbol id="motif-roc" viewBox="0 0 300 300">
+    <title>One ROC curve, three thresholds marked</title>
+    <desc>A staircase curve climbing from the bottom-left corner to the top-right of a square, well above the dashed diagonal marked chance. Three points on it are ringed and numbered 1, 2 and 3, labelled t = 0.90, t = 0.50 and t = 0.20. The axes are false positive rate and true positive rate.</desc>
+  <line x1="60" y1="250" x2="260" y2="50" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="206" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">chance</text>
+  <polyline points="60.0,250.0 60.0,210.0 60.0,170.0 100.0,170.0 100.0,130.0 100.0,90.0 140.0,90.0 140.0,50.0 180.0,50.0 220.0,50.0 260.0,50.0" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="60" y1="40" x2="60" y2="250" stroke="#14202B" stroke-width="2"/>
+  <line x1="60" y1="250" x2="270" y2="250" stroke="#14202B" stroke-width="2"/>
+  <text x="52" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0</text>
+  <text x="52" y="154" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.5</text>
+  <text x="52" y="54" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1</text>
+  <text x="60" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <text x="160" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.5</text>
+  <text x="260" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1</text>
+  <circle cx="60.0" cy="170.0" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <circle cx="100.0" cy="90.0" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <circle cx="220.0" cy="50.0" r="9" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="60.0" y="170.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="100.0" y="90.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="220.0" y="50.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="76" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">t = 0.90</text>
+  <text x="116" y="86" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">t = 0.50</text>
+  <text x="232" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">t = 0.20</text>
+  <text x="165" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">false positive rate</text>
+  <text x="26" y="145" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 26 145)">true positive rate</text>
+  </symbol>
+  <!-- motif-split-three -->
+  <symbol id="motif-split-three" viewBox="0 0 400 240">
+    <title>One split, three piles, three jobs</title>
+    <desc>A single wide bar cut into three: a large train segment holding 1200, then a validation segment holding 400, then a test segment holding 400, labelled 60 percent, 20 percent and 20 percent. Below, three colour-keyed lines give each pile its one job.</desc>
+  <text x="132" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">train</text>
+  <text x="268" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">validation</text>
+  <text x="336" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">test</text>
+  <line x1="132" y1="46" x2="132" y2="58" stroke="#55636F" stroke-width="1.5"/>
+  <line x1="268" y1="46" x2="268" y2="58" stroke="#55636F" stroke-width="1.5"/>
+  <line x1="336" y1="46" x2="336" y2="58" stroke="#55636F" stroke-width="1.5"/>
+  <rect x="30" y="60" width="204" height="44" fill="#D9EAF9" stroke="#14202B" stroke-width="2"/>
+  <rect x="234" y="60" width="68" height="44" fill="#E8C671" stroke="#14202B" stroke-width="2"/>
+  <rect x="302" y="60" width="68" height="44" fill="#F4D5E9" stroke="#14202B" stroke-width="2"/>
+  <rect x="30" y="60" width="340" height="44" rx="8" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="132" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1200</text>
+  <text x="268" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">400</text>
+  <text x="336" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">400</text>
+  <text x="132" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">60%</text>
+  <text x="268" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">20%</text>
+  <text x="336" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">20%</text>
+  <path d="M30 136 V144 H370 V136" fill="none" stroke="#55636F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="200" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2000 rows in all</text>
+  <rect x="30" y="176" width="12" height="12" rx="3" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="48" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">train &#8212; fit the model on this</text>
+  <rect x="30" y="194" width="12" height="12" rx="3" fill="#E8C671" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <text x="48" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">validation &#8212; choose options, again and again</text>
+  <rect x="30" y="212" width="12" height="12" rx="3" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="48" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">test &#8212; open once, at the very end</text>
+  </symbol>
+  <!-- motif-leakage-wrong -->
+  <symbol id="motif-leakage-wrong" viewBox="0 0 300 250">
+    <title>The leaking pipeline: scale first, split second</title>
+    <desc>A column of three boxes. All 2000 rows flow into a red box reading fit the scaler on all 2000 rows, and split afterwards, which then flows into a train pile of 1600 and a test pile of 400. The note underneath reads the mean has already seen the test rows.</desc>
+  <g transform="translate(20,14) scale(0.28)">
+  <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+    <line x1="38" y1="38" x2="62" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+    <line x1="62" y1="38" x2="38" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  </g>
+  <text x="56" y="32" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">the wrong order</text>
+  <rect x="40" y="52" width="220" height="34" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="150" y="69" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">all 2000 rows</text>
+  <line x1="150" y1="86" x2="150" y2="106" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(150 106) rotate(90)"/>
+  <rect x="40" y="110" width="220" height="52" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="150" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">fit the scaler on all 2000</text>
+  <text x="150" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">rows, and split afterwards</text>
+  <line x1="150" y1="162" x2="150" y2="182" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(150 182) rotate(90)"/>
+  <rect x="40" y="186" width="130" height="34" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="105" y="203" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">train 1600</text>
+  <rect x="180" y="186" width="80" height="34" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="220" y="203" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">test 400</text>
+  <text x="150" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the mean has already seen the test rows</text>
+  </symbol>
+  <!-- motif-leakage-right -->
+  <symbol id="motif-leakage-right" viewBox="0 0 300 250">
+    <title>The clean pipeline: split first, fit second</title>
+    <desc>The same column of three boxes. All 2000 rows flow into a green box reading split first, then fit the scaler on the train rows only, which then flows into a train pile of 1600 and a test pile of 400. The note underneath reads the test rows never touched the mean.</desc>
+  <g transform="translate(20,14) scale(0.28)">
+  <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="56" y="32" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">the right order</text>
+  <rect x="40" y="52" width="220" height="34" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="150" y="69" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">all 2000 rows</text>
+  <line x1="150" y1="86" x2="150" y2="106" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(150 106) rotate(90)"/>
+  <rect x="40" y="110" width="220" height="52" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="150" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">split first, then fit the scaler</text>
+  <text x="150" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">on the train rows only</text>
+  <line x1="150" y1="162" x2="150" y2="182" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(150 182) rotate(90)"/>
+  <rect x="40" y="186" width="130" height="34" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="105" y="203" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">train 1600</text>
+  <rect x="180" y="186" width="80" height="34" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="220" y="203" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">test 400</text>
+  <text x="150" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the test rows never touched the mean</text>
+  </symbol>
+  <!-- motif-conv -->
+  <symbol id="motif-conv" viewBox="0 0 440 260">
+    <title>One cell of a feature map, worked out in full</title>
+    <desc>A six by six grid of pixels, bright 10s on the left and dark 2s on the right, with a pink outline round the top-left three by three window. A multiplication sign, then the three by three kernel of 1, 0 and minus 1. An arrow points to a four by four feature map whose second cell, outlined in pink, holds 24. A callout shows one row giving 1 times 10 plus 0 times 10 plus minus 1 times 2 equals 8, and three rows giving 8 plus 8 plus 8 equals 24.</desc>
+  <text x="92" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">image (6 &#215; 6)</text>
+  <rect x="20" y="56" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="44" y="56" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="68" y="56" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="92" y="56" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="116" y="56" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="140" y="56" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="20" y="80" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="44" y="80" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="68" y="80" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="92" y="80" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="116" y="80" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="140" y="80" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="20" y="104" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="44" y="104" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="68" y="104" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="92" y="104" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="116" y="104" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="140" y="104" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="20" y="128" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="44" y="128" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="68" y="128" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="92" y="128" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="116" y="128" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="140" y="128" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="20" y="152" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="44" y="152" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="68" y="152" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="92" y="152" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="116" y="152" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="140" y="152" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="20" y="176" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="44" y="176" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="68" y="176" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="92" y="176" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="116" y="176" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="140" y="176" width="24" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="32.0" y="68.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">10</text>
+  <text x="56.0" y="68.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">10</text>
+  <text x="80.0" y="68.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">10</text>
+  <text x="104.0" y="68.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="128.0" y="68.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="152.0" y="68.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="32.0" y="92.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">10</text>
+  <text x="56.0" y="92.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">10</text>
+  <text x="80.0" y="92.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">10</text>
+  <text x="104.0" y="92.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="128.0" y="92.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="152.0" y="92.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="32.0" y="116.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">10</text>
+  <text x="56.0" y="116.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">10</text>
+  <text x="80.0" y="116.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">10</text>
+  <text x="104.0" y="116.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="128.0" y="116.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="152.0" y="116.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="32.0" y="140.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">10</text>
+  <text x="56.0" y="140.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">10</text>
+  <text x="80.0" y="140.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">10</text>
+  <text x="104.0" y="140.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="128.0" y="140.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="152.0" y="140.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="32.0" y="164.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">10</text>
+  <text x="56.0" y="164.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">10</text>
+  <text x="80.0" y="164.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">10</text>
+  <text x="104.0" y="164.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="128.0" y="164.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="152.0" y="164.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="32.0" y="188.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">10</text>
+  <text x="56.0" y="188.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">10</text>
+  <text x="80.0" y="188.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">10</text>
+  <text x="104.0" y="188.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="128.0" y="188.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="152.0" y="188.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <rect x="44" y="56" width="72" height="72" rx="0" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="182" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">&#215;</text>
+  <text x="236" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">kernel (3 &#215; 3)</text>
+  <rect x="200" y="80" width="24" height="24" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <rect x="224" y="80" width="24" height="24" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <rect x="248" y="80" width="24" height="24" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <rect x="200" y="104" width="24" height="24" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <rect x="224" y="104" width="24" height="24" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <rect x="248" y="104" width="24" height="24" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <rect x="200" y="128" width="24" height="24" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <rect x="224" y="128" width="24" height="24" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <rect x="248" y="128" width="24" height="24" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="212.0" y="92.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="236.0" y="92.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="260.0" y="92.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8722;1</text>
+  <text x="212.0" y="116.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="236.0" y="116.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="260.0" y="116.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8722;1</text>
+  <text x="212.0" y="140.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="236.0" y="140.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="260.0" y="140.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8722;1</text>
+  <line x1="276" y1="116" x2="306" y2="102" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(306 102) rotate(-25)"/>
+  <text x="358" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">feature map (4 &#215; 4)</text>
+  <rect x="310" y="80" width="24" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <rect x="334" y="80" width="24" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <rect x="358" y="80" width="24" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <rect x="382" y="80" width="24" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <rect x="310" y="104" width="24" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <rect x="334" y="104" width="24" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <rect x="358" y="104" width="24" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <rect x="382" y="104" width="24" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <rect x="310" y="128" width="24" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <rect x="334" y="128" width="24" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <rect x="358" y="128" width="24" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <rect x="382" y="128" width="24" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <rect x="310" y="152" width="24" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <rect x="334" y="152" width="24" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <rect x="358" y="152" width="24" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <rect x="382" y="152" width="24" height="24" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="322.0" y="92.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="346.0" y="92.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">24</text>
+  <text x="370.0" y="92.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">24</text>
+  <text x="394.0" y="92.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="322.0" y="116.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="346.0" y="116.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">24</text>
+  <text x="370.0" y="116.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">24</text>
+  <text x="394.0" y="116.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="322.0" y="140.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="346.0" y="140.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">24</text>
+  <text x="370.0" y="140.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">24</text>
+  <text x="394.0" y="140.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="322.0" y="164.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="346.0" y="164.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">24</text>
+  <text x="370.0" y="164.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">24</text>
+  <text x="394.0" y="164.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="334" y="80" width="24" height="24" rx="0" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="20" y="212" width="400" height="40" rx="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="220" y="228" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">one row: (1 &#215; 10) + (0 &#215; 10) + (&#8722;1 &#215; 2) = 8</text>
+  <text x="220" y="246" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">three rows: 8 + 8 + 8 = 24, so this output cell is 24</text>
+  </symbol>
+  <!-- motif-featuremap-stack -->
+  <symbol id="motif-featuremap-stack" viewBox="0 0 320 220">
+    <title>A feature-map stack is one map per filter</title>
+    <desc>Four square maps drawn one behind the other, going up and to the right, so they read as a shallow three-dimensional block. The depth is labelled 32 channels, a mono label reads shape 32 comma 32 comma 32, and a note says each map is 32 by 32.</desc>
+  <text x="20" y="28" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">a feature-map stack: one map per filter</text>
+  <rect x="78" y="44" width="110" height="110" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="62" y="58" width="110" height="110" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="46" y="72" width="110" height="110" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <line x1="30" y1="86" x2="78" y2="44" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="140" y1="196" x2="188" y2="154" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="30" y="86" width="110" height="110" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <line x1="30" y1="122" x2="140" y2="122" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="30" y1="158" x2="140" y2="158" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="66" y1="86" x2="66" y2="196" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="102" y1="86" x2="102" y2="196" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="190" y1="46" x2="206" y2="42" stroke="#55636F" stroke-width="1.5"/>
+  <text x="210" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">32 channels</text>
+  <rect x="170" y="168" width="140" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="240.0" y="181.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">shape (32, 32, 32)</text>
+  <text x="85" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">each map is 32 &#215; 32</text>
+  </symbol>
+  <!-- motif-kmeans-1 -->
+  <symbol id="motif-kmeans-1" viewBox="0 0 190 210">
+    <title>k-means, the start: two centroids in one blob</title>
+    <desc>Six hollow points, three bunched at the bottom left and three at the top right. Two ringed cross-hair centroid markers both sit inside the bottom-left bunch, one of them right on top of a point. The caption reads Start, both centroids sit left.</desc>
+  <line x1="24" y1="20" x2="24" y2="166" stroke="#14202B" stroke-width="2"/>
+  <line x1="24" y1="166" x2="179" y2="166" stroke="#14202B" stroke-width="2"/>
+  <circle cx="34" cy="28" r="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <line x1="29" y1="28" x2="39" y2="28" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <line x1="34" y1="23" x2="34" y2="33" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <text x="46" y="32" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">= centroid</text>
+  <circle cx="39.5" cy="136.8" r="5" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <circle cx="55.0" cy="151.4" r="5" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <circle cx="55.0" cy="122.2" r="5" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <circle cx="148.0" cy="49.2" r="5" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <circle cx="163.5" cy="63.8" r="5" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <circle cx="132.5" cy="34.6" r="5" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <circle cx="39.5" cy="136.8" r="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <line x1="32.5" y1="136.8" x2="46.5" y2="136.8" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <line x1="39.5" y1="129.8" x2="39.5" y2="143.8" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="55.0" cy="122.2" r="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <line x1="48.0" y1="122.2" x2="62.0" y2="122.2" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <line x1="55.0" y1="115.2" x2="55.0" y2="129.2" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <text x="95" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Start</text>
+  <text x="95" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">both centroids sit left</text>
+  </symbol>
+  <!-- motif-kmeans-2 -->
+  <symbol id="motif-kmeans-2" viewBox="0 0 190 210">
+    <title>k-means, after one round: one point in the wrong cluster</title>
+    <desc>The same six points. Two at the bottom left are now filled circles; the other four, including the third bottom-left point, are triangles. The two centroid markers have moved apart. The caption reads After iteration 1, 2 and 4, C went right.</desc>
+  <line x1="24" y1="20" x2="24" y2="166" stroke="#14202B" stroke-width="2"/>
+  <line x1="24" y1="166" x2="179" y2="166" stroke="#14202B" stroke-width="2"/>
+  <circle cx="34" cy="28" r="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <line x1="29" y1="28" x2="39" y2="28" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <line x1="34" y1="23" x2="34" y2="33" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <text x="46" y="32" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">= centroid</text>
+  <circle cx="39.5" cy="136.8" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="55.0" cy="151.4" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <path d="M55.0 116.2 L61.0 127.60000000000001 L49.0 127.60000000000001 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M148.0 43.2 L154.0 54.6 L142.0 54.6 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M163.5 57.8 L169.5 69.2 L157.5 69.2 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M132.5 28.6 L138.5 40.0 L126.5 40.0 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="47.2" cy="144.1" r="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <line x1="40.2" y1="144.1" x2="54.2" y2="144.1" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <line x1="47.2" y1="137.1" x2="47.2" y2="151.1" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="124.8" cy="67.5" r="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <line x1="117.8" y1="67.5" x2="131.8" y2="67.5" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <line x1="124.8" y1="60.5" x2="124.8" y2="74.5" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <text x="95" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">After iteration 1</text>
+  <text x="95" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2 and 4 &#8212; C went right</text>
+  </symbol>
+  <!-- motif-kmeans-3 -->
+  <symbol id="motif-kmeans-3" viewBox="0 0 190 210">
+    <title>k-means, settled: three and three</title>
+    <desc>The same six points. All three bottom-left points are now filled circles and all three top-right points are triangles. Each centroid marker sits in the middle of its own group. The caption reads After iteration 2, 3 and 3, settled.</desc>
+  <line x1="24" y1="20" x2="24" y2="166" stroke="#14202B" stroke-width="2"/>
+  <line x1="24" y1="166" x2="179" y2="166" stroke="#14202B" stroke-width="2"/>
+  <circle cx="34" cy="28" r="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <line x1="29" y1="28" x2="39" y2="28" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <line x1="34" y1="23" x2="34" y2="33" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <text x="46" y="32" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">= centroid</text>
+  <circle cx="39.5" cy="136.8" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="55.0" cy="151.4" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="55.0" cy="122.2" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <path d="M148.0 43.2 L154.0 54.6 L142.0 54.6 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M163.5 57.8 L169.5 69.2 L157.5 69.2 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M132.5 28.6 L138.5 40.0 L126.5 40.0 Z" fill="#1B7A4B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="49.8" cy="136.8" r="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <line x1="42.8" y1="136.8" x2="56.8" y2="136.8" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <line x1="49.8" y1="129.8" x2="49.8" y2="143.8" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="148.0" cy="49.2" r="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <line x1="141.0" y1="49.2" x2="155.0" y2="49.2" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <line x1="148.0" y1="42.2" x2="148.0" y2="56.2" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <text x="95" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">After iteration 2</text>
+  <text x="95" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">3 and 3 &#8212; settled</text>
+  </symbol>
+  <!-- motif-pca -->
+  <symbol id="motif-pca" viewBox="0 0 320 270">
+    <title>PCA draws new axes along the spread</title>
+    <desc>A long thin cloud of twelve points leaning up to the right. Two straight purple lines cross at the middle of the cloud: a long one along the cloud's length labelled PC1, the direction of most spread, and a short one across it labelled PC2, what is left over. One point has a short dashed line dropped onto the long axis, and the place it lands is ringed and labelled its PC1 value.</desc>
+  <line x1="40" y1="40" x2="40" y2="220" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="40" y1="220" x2="280" y2="220" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="20" y="26" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">PCA: new axes, chosen by spread</text>
+  <line x1="75" y1="190" x2="235" y2="70" stroke="#6D28D9" stroke-width="3" stroke-linecap="round"/>
+  <line x1="128" y1="94" x2="182" y2="166" stroke="#6D28D9" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="91.4" cy="195.2" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="91.4" cy="165.2" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="112.2" cy="169.6" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="112.2" cy="139.6" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="138.6" cy="154.8" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="144.6" cy="132.8" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="168.6" cy="139.8" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="163.8" cy="108.4" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="190.2" cy="113.6" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="187" cy="86" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="213.4" cy="91.2" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="231.4" cy="85.2" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
+  <line x1="187" y1="86" x2="196.6" y2="98.8" stroke="#C42B8C" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/>
+  <circle cx="196.6" cy="98.8" r="7" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3"/>
+  <text x="250" y="64" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#6D28D9" text-anchor="end">PC1 &#8212; the direction of most spread</text>
+  <text x="296" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#6D28D9" text-anchor="end">PC2 &#8212; what is left over</text>
+  <text x="172" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end">one point</text>
+  <line x1="226" y1="128" x2="204" y2="106" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(204 106) rotate(-135)"/>
+  <text x="290" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="end">its PC1 value</text>
+  <text x="160" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">feature 1</text>
+  <text x="26" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 26 130)">feature 2</text>
+  <text x="160" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">every point gets a PC1 value and a PC2 value</text>
+  </symbol>
+  <!-- motif-bow-vector -->
+  <symbol id="motif-bow-vector" viewBox="0 0 420 200">
+    <title>One sentence becomes one sparse row</title>
+    <desc>A box holding the sentence Great pizza, great service. An arrow labelled count leads to a row of eight narrow cells, one per vocabulary word, with the words written vertically above them. Five cells hold 0 in grey; the great cell holds 2 and the pizza and service cells hold 1, all outlined in pink. A note says five of eight cells are zero, so we store only the other three.</desc>
+  <rect x="14" y="80" width="200" height="36" rx="8" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="114" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Great pizza, great service.</text>
+  <line x1="222" y1="98" x2="254" y2="98" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(254 98) rotate(0)"/>
+  <text x="238" y="86" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">count</text>
+  <rect x="266" y="80" width="18" height="36" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="275" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="275" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" transform="rotate(-90 275 74)">and</text>
+  <rect x="284" y="80" width="18" height="36" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="293" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="293" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" transform="rotate(-90 293 74)">cold</text>
+  <rect x="302" y="80" width="18" height="36" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="311" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="311" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" transform="rotate(-90 311 74)">food</text>
+  <rect x="320" y="80" width="18" height="36" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="329" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="329" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" transform="rotate(-90 329 74)">great</text>
+  <rect x="338" y="80" width="18" height="36" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="347" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="347" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" transform="rotate(-90 347 74)">pizza</text>
+  <rect x="356" y="80" width="18" height="36" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="365" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="365" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" transform="rotate(-90 365 74)">service</text>
+  <rect x="374" y="80" width="18" height="36" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="383" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="383" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" transform="rotate(-90 383 74)">the</text>
+  <rect x="392" y="80" width="18" height="36" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="401" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="401" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" transform="rotate(-90 401 74)">was</text>
+  <text x="410" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">8 words in the vocabulary</text>
+  <line x1="329" y1="118" x2="329" y2="132" stroke="#C42B8C" stroke-width="1.5"/>
+  <text x="329" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">great: 2</text>
+  <text x="210" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">5 of 8 cells are zero, so we store only the other 3</text>
+  <text x="210" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">TF-IDF replaces each count with count &#215; rarity</text>
+  </symbol>
+  <!-- motif-traceback-shape -->
+  <symbol id="motif-traceback-shape" viewBox="0 0 400 205">
+    <title>A shape error, with the offending line marked</title>
+    <desc>A console panel outlined in red shows a five-line Python traceback. The line that failed, Z1 equals X at W1, is highlighted and an arrow points at it from the right. The last two lines, printed in red, are a ValueError naming the two shapes 750 by 2 and 16 by 2 as not aligned.</desc>
+  <path d="M14 26 A10 10 0 0 1 24 16 H296 A10 10 0 0 1 306 26 V46 H14 Z" fill="#F6AEA6"/>
+  <g stroke="#CC2B1D" stroke-width="2.5" stroke-linecap="round">
+    <line x1="26" y1="26" x2="36" y2="36"/>
+    <line x1="36" y1="26" x2="26" y2="36"/>
+  </g>
+  <text x="46" y="35" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">Traceback</text>
+  <line x1="14" y1="46" x2="306" y2="46" stroke="#14202B" stroke-width="2"/>
+  <rect x="22" y="98" width="272" height="22" rx="4" fill="#F6AEA6"/>
+  <text x="26" y="68" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">Traceback (most recent call last):</text>
+  <text x="26" y="90" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">  File "net.py", line 12, in forward</text>
+  <text x="26" y="112" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">    Z1 = X @ W1</text>
+  <text x="26" y="140" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#CC2B1D" font-weight="600">ValueError: matmul: shapes</text>
+  <text x="26" y="158" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#CC2B1D" font-weight="600">(750,2) and (16,2) not aligned</text>
+  <rect x="14" y="16" width="292" height="160" rx="10" fill="none" stroke="#CC2B1D" stroke-width="3"/>
+  <line x1="390" y1="109" x2="314" y2="109" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(314 109) rotate(180)"/>
+  <text x="312" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">this line</text>
+  <text x="160" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Two shapes are printed. Compare them.</text>
+  </symbol>
+  <!-- motif-terminal INHERITED from Level 2 -->
+  <symbol id="motif-terminal" viewBox="0 0 300 176">
+    <title>A terminal window frame</title>
+    <desc>A console window with a title bar reading Terminal. Inside, a prompt runs python hello.py, the output line reads hello, world, and a fresh prompt waits with a block cursor.</desc>
+  <path d="M14 26 A10 10 0 0 1 24 16 H276 A10 10 0 0 1 286 26 V46 H14 Z" fill="#F5F8FA"/>
+  <g fill="none" stroke="#55636F" stroke-width="2">
+    <circle cx="32" cy="31" r="4"/>
+    <circle cx="48" cy="31" r="4"/>
+    <circle cx="64" cy="31" r="4"/>
+  </g>
+  <text x="84" y="35" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Terminal</text>
+  <line x1="14" y1="46" x2="286" y2="46" stroke="#14202B" stroke-width="2"/>
+  <text x="30" y="72" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#55636F">&gt;</text>
+  <text x="44" y="72" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">python hello.py</text>
+  <text x="30" y="100" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">hello, world</text>
+  <text x="30" y="130" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#55636F">&gt;</text>
+  <rect x="44" y="118" width="9" height="14" fill="#14202B"/>
+  <rect x="14" y="16" width="272" height="148" rx="10" fill="none" stroke="#14202B" stroke-width="3"/>
+  </symbol>
+  <!-- motif-traceback INHERITED from Level 2 -->
+  <symbol id="motif-traceback" viewBox="0 0 400 205">
+    <title>A traceback, with the offending line marked</title>
+    <desc>A console panel outlined in red shows a four-line Python traceback. The line that failed is highlighted and an arrow points at it from the right. The last line, a NameError, is printed in red.</desc>
+  <path d="M14 26 A10 10 0 0 1 24 16 H296 A10 10 0 0 1 306 26 V46 H14 Z" fill="#F6AEA6"/>
+  <g stroke="#CC2B1D" stroke-width="2.5" stroke-linecap="round">
+    <line x1="26" y1="26" x2="36" y2="36"/>
+    <line x1="36" y1="26" x2="26" y2="36"/>
+  </g>
+  <text x="46" y="35" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">Traceback</text>
+  <line x1="14" y1="46" x2="306" y2="46" stroke="#14202B" stroke-width="2"/>
+  <rect x="22" y="98" width="272" height="22" rx="4" fill="#F6AEA6"/>
+  <text x="26" y="68" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">Traceback (most recent call last):</text>
+  <text x="26" y="90" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">  File "pay.py", line 4, in &lt;module&gt;</text>
+  <text x="26" y="112" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">    total = price * quantity</text>
+  <text x="26" y="140" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#CC2B1D" font-weight="600">NameError: name 'quantity'</text>
+  <text x="26" y="158" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#CC2B1D" font-weight="600">is not defined</text>
+  <rect x="14" y="16" width="292" height="160" rx="10" fill="none" stroke="#CC2B1D" stroke-width="3"/>
+  <line x1="390" y1="109" x2="314" y2="109" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(314 109) rotate(180)"/>
+  <text x="312" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">this line</text>
+  <text x="160" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Read the last line first.</text>
+  </symbol>
+  <!-- motif-arrow INHERITED from Level 2 -->
+  <symbol id="motif-arrow" viewBox="0 0 100 40">
+    <title>Arrow pointing right</title>
+    <desc>A straight arrow pointing to the right.</desc>
+  <line x1="6" y1="20" x2="84" y2="20" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="76,10 92,20 76,30" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <!-- motif-arrow-curved INHERITED from Level 2 -->
+  <symbol id="motif-arrow-curved" viewBox="0 0 100 60">
+    <title>Curved arrow</title>
+    <desc>A curved arrow that loops up and over to the right.</desc>
+  <path d="M8 48 Q48 2 84 34" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(84 34) rotate(41)"/>
+  </symbol>
+  <!-- motif-badge-check INHERITED from Level 2 -->
+  <symbol id="motif-badge-check" viewBox="0 0 100 100">
+    <title>Correct badge</title>
+    <desc>A round badge with a tick inside, meaning correct.</desc>
+  <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <!-- motif-badge-cross INHERITED from Level 2 -->
+  <symbol id="motif-badge-cross" viewBox="0 0 100 100">
+    <title>Wrong badge</title>
+    <desc>A round badge with a cross inside, meaning wrong.</desc>
+  <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+    <line x1="38" y1="38" x2="62" y2="62"/>
+    <line x1="62" y1="38" x2="38" y2="62"/>
+  </g>
+  </symbol>
+  <!-- motif-box INHERITED from Level 2 -->
+  <symbol id="motif-box" viewBox="0 0 120 80">
+    <title>Labelled box</title>
+    <desc>A rounded box with a label inside.</desc>
+  <rect x="6" y="10" width="108" height="60" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="60" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">Label</text>
+  </symbol>
+  <!-- motif-note INHERITED from Level 2 -->
+  <symbol id="motif-note" viewBox="0 0 100 100">
+    <title>Sticky note</title>
+    <desc>A sticky note with a folded corner and three lines of writing.</desc>
+  <path d="M12 12 H88 V68 L68 88 H12 Z" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M68 88 V68 H88 Z" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <g stroke="#55636F" stroke-width="3" stroke-linecap="round">
+    <line x1="24" y1="30" x2="76" y2="30"/>
+    <line x1="24" y1="43" x2="76" y2="43"/>
+    <line x1="24" y1="56" x2="60" y2="56"/>
+  </g>
+  </symbol>
+  <!-- motif-table INHERITED from Level 2 -->
+  <symbol id="motif-table" viewBox="0 0 100 100">
+    <title>Data table</title>
+    <desc>A small data table with a shaded header row and six cells.</desc>
+  <rect x="8" y="16" width="84" height="68" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M8 24 A8 8 0 0 1 16 16 H84 A8 8 0 0 1 92 24 V38 H8 Z" fill="#D9EAF9" stroke="none"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="8" y1="61" x2="92" y2="61"/>
+    <line x1="36" y1="38" x2="36" y2="84"/>
+    <line x1="64" y1="38" x2="64" y2="84"/>
+  </g>
+  <line x1="8" y1="38" x2="92" y2="38" stroke="#1F6FB2" stroke-width="3"/>
+  <rect x="8" y="16" width="84" height="68" rx="8" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <g fill="#55636F">
+    <rect x="15" y="24" width="14" height="5" rx="2.5"/>
+    <rect x="43" y="24" width="14" height="5" rx="2.5"/>
+    <rect x="71" y="24" width="14" height="5" rx="2.5"/>
+    <rect x="15" y="47" width="14" height="5" rx="2.5"/>
+    <rect x="43" y="47" width="14" height="5" rx="2.5"/>
+    <rect x="71" y="47" width="14" height="5" rx="2.5"/>
+    <rect x="15" y="70" width="14" height="5" rx="2.5"/>
+    <rect x="43" y="70" width="14" height="5" rx="2.5"/>
+    <rect x="71" y="70" width="14" height="5" rx="2.5"/>
+  </g>
+  </symbol>
+  <!-- motif-dataframe INHERITED from Level 2 -->
+  <symbol id="motif-dataframe" viewBox="0 0 272 180">
+    <title>A DataFrame as a grid with a header row and an index</title>
+    <desc>A three-row table with a bold header row reading player, runs, over, a grey index column numbered 0 to 2, and the runs column outlined and tinted as the current selection.</desc>
+  <rect x="22" y="26" width="36" height="32" fill="#F5F8FA"/>
+  <rect x="58" y="26" width="64" height="32" fill="#D9EAF9"/>
+  <rect x="122" y="26" width="64" height="32" fill="#D9EAF9"/>
+  <rect x="186" y="26" width="64" height="32" fill="#D9EAF9"/>
+  <rect x="22" y="58" width="36" height="32" fill="#F5F8FA"/>
+  <rect x="122" y="58" width="64" height="32" fill="#F4D5E9"/>
+  <rect x="22" y="90" width="36" height="32" fill="#F5F8FA"/>
+  <rect x="122" y="90" width="64" height="32" fill="#F4D5E9"/>
+  <rect x="22" y="122" width="36" height="32" fill="#F5F8FA"/>
+  <rect x="122" y="122" width="64" height="32" fill="#F4D5E9"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="58" y1="26" x2="58" y2="154"/>
+    <line x1="122" y1="26" x2="122" y2="154"/>
+    <line x1="186" y1="26" x2="186" y2="154"/>
+    <line x1="22" y1="90" x2="250" y2="90"/>
+    <line x1="22" y1="122" x2="250" y2="122"/>
+  </g>
+  <line x1="22" y1="58" x2="250" y2="58" stroke="#14202B" stroke-width="2"/>
+  <text x="90" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">player</text>
+  <text x="154" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">runs</text>
+  <text x="218" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="600">over</text>
+  <text x="40" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="90" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Meera</text>
+  <text x="154" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">48</text>
+  <text x="218" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">12</text>
+  <text x="40" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="90" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Kabir</text>
+  <text x="154" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">31</text>
+  <text x="218" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">9</text>
+  <text x="40" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="90" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Nova</text>
+  <text x="154" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">57</text>
+  <text x="218" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">15</text>
+  <rect x="122" y="26" width="64" height="128" fill="none" stroke="#C42B8C" stroke-width="3"/>
+  <rect x="22" y="26" width="228" height="128" fill="none" stroke="#14202B" stroke-width="3"/>
+  <text x="154" y="18" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">selected</text>
+  <text x="40" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">index</text>
+  </symbol>
+  <!-- motif-array-2d INHERITED from Level 2 -->
+  <symbol id="motif-array-2d" viewBox="0 0 240 172">
+    <title>A 2-D numpy array as a shaped block</title>
+    <desc>A block of three rows by four columns of numbers, with axis 0 arrowed downwards, axis 1 arrowed across, and the annotation shape 3 comma 4 below.</desc>
+  <line x1="32" y1="34" x2="32" y2="126" stroke="#55636F" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(32 132) rotate(90)"/>
+  <line x1="50" y1="20" x2="204" y2="20" stroke="#55636F" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(210 20) rotate(0)"/>
+  <text x="130" y="12" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">axis 1</text>
+  <text x="16" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 16 84)">axis 0</text>
+  <rect x="48" y="30" width="42" height="36" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="69" y="48" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="90" y="30" width="42" height="36" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="111" y="48" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <rect x="132" y="30" width="42" height="36" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="153" y="48" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <rect x="174" y="30" width="42" height="36" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="195" y="48" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <rect x="48" y="66" width="42" height="36" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="69" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+  <rect x="90" y="66" width="42" height="36" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="111" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">6</text>
+  <rect x="132" y="66" width="42" height="36" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="153" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">7</text>
+  <rect x="174" y="66" width="42" height="36" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="195" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">8</text>
+  <rect x="48" y="102" width="42" height="36" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="69" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">9</text>
+  <rect x="90" y="102" width="42" height="36" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="111" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="132" y="102" width="42" height="36" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="153" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="174" y="102" width="42" height="36" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="195" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <rect x="48" y="30" width="168" height="108" fill="none" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="132" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">shape (3, 4)</text>
+  </symbol>
+  <!-- motif-split INHERITED from Level 2 -->
+  <symbol id="motif-split" viewBox="0 0 290 175">
+    <title>A train/test split as one cut of the deck</title>
+    <desc>A deck of 100 rows is cut by a dashed line into a train pile of 80 rows and a test pile of 20 rows.</desc>
+  <rect x="24" y="30" width="76" height="110" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <g stroke="#C7CDD4" stroke-width="1.5">
+    <line x1="24" y1="46" x2="100" y2="46"/>
+    <line x1="24" y1="62" x2="100" y2="62"/>
+    <line x1="24" y1="78" x2="100" y2="78"/>
+    <line x1="24" y1="94" x2="100" y2="94"/>
+    <line x1="24" y1="110" x2="100" y2="110"/>
+    <line x1="24" y1="126" x2="100" y2="126"/>
+  </g>
+  <text x="62" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">80</text>
+  <text x="62" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">20</text>
+  <line x1="14" y1="118" x2="110" y2="118" stroke="#C42B8C" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="104" y1="74" x2="150" y2="60" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(150 60) rotate(-16.9)"/>
+  <line x1="104" y1="128" x2="150" y2="124" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(150 124) rotate(-5)"/>
+  <rect x="154" y="34" width="124" height="54" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="216" y="56" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">train</text>
+  <text x="216" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">80 rows</text>
+  <rect x="154" y="102" width="124" height="46" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="216" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">test</text>
+  <text x="216" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">20 rows</text>
+  <text x="150" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one cut, then never mix them</text>
+  </symbol>
+</svg>

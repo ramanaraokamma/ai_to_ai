@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Draw the two deals</title>
+  <desc>Two empty framed panels for drawing twenty playing cards dealt into piles of twelve, four and four, once off a real shuffle and once with the five red cards placed on purpose. Each panel has three labelled pile areas and a line underneath for the three red counts and the three divisions. A panel at the bottom says what a good answer contains: in deal one the reds fell 4, 0 and 1 so the piles read 4 divided by 12 equals 0.3333, 0 divided by 4 equals 0.0000 and 1 divided by 4 equals 0.25, with a widest gap of 0.3333; in deal two the reds were placed 3, 1 and 1 so every pile reads 0.25, the same as the whole deck's 5 divided by 20 equals 0.25.</desc>
+  <text x="250" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Draw the two deals</text>
+  <text x="250" y="64" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Twenty cards, five of them red. Mark every red card you draw.</text>
+
+  <rect x="30" y="80" width="440" height="200" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="46" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">Deal 1 &#8212; straight off a shuffle</text>
+  <rect x="46" y="118" width="252" height="72" rx="8" fill="none" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="52" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">train, 12 cards</text>
+  <rect x="308" y="118" width="70" height="72" rx="8" fill="none" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="314" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">val, 4</text>
+  <rect x="386" y="118" width="70" height="72" rx="8" fill="none" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="392" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">test, 4</text>
+  <text x="46" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">reds in each pile, then the division:</text>
+  <line x1="46" y1="244" x2="456" y2="244" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="46" y1="268" x2="456" y2="268" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+
+  <rect x="30" y="296" width="440" height="200" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="46" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">Deal 2 &#8212; reds placed on purpose</text>
+  <rect x="46" y="334" width="252" height="72" rx="8" fill="none" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="52" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">train, 12 cards</text>
+  <rect x="308" y="334" width="70" height="72" rx="8" fill="none" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="314" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">val, 4</text>
+  <rect x="386" y="334" width="70" height="72" rx="8" fill="none" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="392" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">test, 4</text>
+  <text x="46" y="434" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">reds in each pile, then the division:</text>
+  <line x1="46" y1="460" x2="456" y2="460" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="46" y1="484" x2="456" y2="484" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+
+  <rect x="30" y="520" width="440" height="156" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="250" y="544" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">What a good answer looks like</text>
+  <text x="48" y="570" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; the whole deck first: 5 &#247; 20 = 0.25</text>
+  <text x="48" y="592" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; deal 1 came out 4, 0, 1: 0.3333, 0.0000, 0.25</text>
+  <text x="48" y="614" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; deal 2 came out 3, 1, 1: 0.25, 0.25, 0.25</text>
+  <text x="48" y="636" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; widest gap: 0.3333 against 0.0000</text>
+  <text x="48" y="658" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">&#183; and both deals used the same five red cards</text>
+</svg>

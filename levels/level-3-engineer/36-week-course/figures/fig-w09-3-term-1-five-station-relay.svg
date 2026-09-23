@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Term 1 in five stations</title>
+  <desc>Five boxes in a row, numbered 1 to 5, 8 minutes each, so 5 times 8 equals 40 minutes of the 45 available. Station 1, Audit: rows, duplicates, missing and class rate, hand over 4 numbers on paper. Station 2, Split: train, validation and test with stratify, hand over 1200 slash 400 slash 400. Station 3, Baseline: DummyClassifier most_frequent, hand over the number to beat. Station 4, Pipeline: ColumnTransformer plus LogisticRegression, hand over one fitted pipe. Station 5, Metrics: the two by two, precision, recall and F1, hand over one saved artifact. A green bar underneath reads: one joblib file on disk, and a validation AUC you can say out loud.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Term 1 in five stations</text>
+  <text x="400" y="70" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">8 minutes each &#183; 5 &#215; 8 = 40 minutes of the 45 you have</text>
+  <rect x="30" y="92" width="132" height="172" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="52" cy="116" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="52" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="74" y="121" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Audit</text>
+  <text x="96" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">8 min</text>
+  <text x="96" y="174" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">rows, duplicates,</text>
+  <text x="96" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">missing, class rate</text>
+  <line x1="42" y1="210" x2="150" y2="210" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="96" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">hand over:</text>
+  <text x="96" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">4 numbers on paper</text>
+  <line x1="164" y1="178" x2="180" y2="178" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(180 178) rotate(0.0)"/>
+  <rect x="182" y="92" width="132" height="172" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="204" cy="116" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="204" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="226" y="121" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Split</text>
+  <text x="248" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">8 min</text>
+  <text x="248" y="174" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">train / val / test</text>
+  <text x="248" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">with stratify</text>
+  <line x1="194" y1="210" x2="302" y2="210" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="248" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">hand over:</text>
+  <text x="248" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1200 / 400 / 400</text>
+  <line x1="316" y1="178" x2="332" y2="178" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(332 178) rotate(0.0)"/>
+  <rect x="334" y="92" width="132" height="172" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="356" cy="116" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="356" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="378" y="121" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Baseline</text>
+  <text x="400" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">8 min</text>
+  <text x="400" y="174" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">DummyClassifier,</text>
+  <text x="400" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">most_frequent</text>
+  <line x1="346" y1="210" x2="454" y2="210" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="400" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">hand over:</text>
+  <text x="400" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">the number to beat</text>
+  <line x1="468" y1="178" x2="484" y2="178" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(484 178) rotate(0.0)"/>
+  <rect x="486" y="92" width="132" height="172" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="508" cy="116" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="508" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="530" y="121" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Pipeline</text>
+  <text x="552" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">8 min</text>
+  <text x="552" y="174" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">ColumnTransformer</text>
+  <text x="552" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">+ LogisticRegression</text>
+  <line x1="498" y1="210" x2="606" y2="210" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="552" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">hand over:</text>
+  <text x="552" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">one fitted pipe</text>
+  <line x1="620" y1="178" x2="636" y2="178" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(636 178) rotate(0.0)"/>
+  <rect x="638" y="92" width="132" height="172" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="660" cy="116" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="660" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+  <text x="682" y="121" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">Metrics</text>
+  <text x="704" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">8 min</text>
+  <text x="704" y="174" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2&#215;2, precision,</text>
+  <text x="704" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">recall, F1</text>
+  <line x1="650" y1="210" x2="758" y2="210" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="704" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">hand over:</text>
+  <text x="704" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">one saved artifact</text>
+  <rect x="30" y="286" width="740" height="44" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="400" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">one .joblib file on disk, and a val AUC you can say out loud</text>
+  <text x="400" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Nothing new here. Every station is a week you have already done, from memory, with the clock running.</text>
+</svg>

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Five words you must define with no notes</title>
+  <desc>Five revision tiles, each a word with its number. Baseline: a table that is 28.8 percent late gives a most-frequent score of 0.712, and the 80 reviews give 0.500, so a score is only a comparison. Leakage: a reported ROC-AUC of 0.978 against a real 0.78, because a column existed only after the outcome did. The gradient is one slope per knob, and slopes multiply along a chain, 3 times 14 equals 42. Shapes: a 3 by 2 grid times a 2 by 4 grid gives 3 by 4, and row 0 column 0 is 1 times 10 plus 2 times 50 equals 110. The p95: 0.28 milliseconds over 111 requests, printed beside a max of 1.06 milliseconds, because the p95 cannot see above itself.</desc>
+
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Five words you must define with no notes</text>
+
+  <rect x="26" y="58" width="236" height="150" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="282" y="58" width="236" height="150" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="538" y="58" width="236" height="150" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="154" y="220" width="236" height="150" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="410" y="220" width="236" height="150" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+
+  <line x1="44" y1="140" x2="244" y2="140" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="56" y="98" width="52" height="42" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="82" y="90" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#845F00" text-anchor="middle">0.712</text>
+  <rect x="126" y="110" width="52" height="30" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="152" y="102" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#1F6FB2" text-anchor="middle">0.500</text>
+  <rect x="196" y="122" width="40" height="18" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="216" y="114" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">?</text>
+  <text x="144" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">pizza 0.712 &#183; reviews 0.500</text>
+  <text x="144" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">baseline</text>
+  <text x="144" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">a score is a comparison</text>
+
+  <rect x="300" y="80" width="90" height="30" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="345" y="95" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.978</text>
+  <line x1="396" y1="95" x2="418" y2="95" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="426,95 414,89 414,101" fill="#14202B"/>
+  <rect x="430" y="80" width="80" height="30" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="470" y="95" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.78</text>
+  <text x="400" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">a column that only exists</text>
+  <text x="400" y="150" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">after the outcome did</text>
+  <text x="400" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">leakage</text>
+  <text x="400" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">split first, always</text>
+
+  <rect x="556" y="78" width="46" height="30" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="579" y="93" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">w</text>
+  <line x1="606" y1="93" x2="626" y2="93" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <text x="616" y="80" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#C42B8C" text-anchor="middle">3</text>
+  <rect x="630" y="78" width="46" height="30" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="653" y="93" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">z</text>
+  <line x1="680" y1="93" x2="700" y2="93" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <text x="690" y="80" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#C42B8C" text-anchor="middle">14</text>
+  <rect x="704" y="78" width="46" height="30" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="727" y="93" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">L</text>
+  <text x="656" y="134" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">3 &#215; 14 = 42</text>
+  <text x="656" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one slope per knob</text>
+  <text x="656" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">the gradient</text>
+  <text x="656" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">slopes multiply along a chain</text>
+
+  <rect x="172" y="248" width="52" height="40" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="198" y="240" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#1F6FB2" text-anchor="middle">(3, 2)</text>
+  <text x="238" y="272" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">@</text>
+  <rect x="252" y="248" width="52" height="40" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="278" y="240" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6D28D9" text-anchor="middle">(2, 4)</text>
+  <text x="318" y="272" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">=</text>
+  <rect x="332" y="248" width="52" height="40" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="358" y="240" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#C42B8C" text-anchor="middle">(3, 4)</text>
+  <text x="272" y="312" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">1 &#215; 10 + 2 &#215; 50 = 110</text>
+  <text x="272" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">shapes</text>
+  <text x="272" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the inner numbers must match</text>
+
+  <line x1="430" y1="300" x2="626" y2="300" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <g stroke="#1F6FB2" stroke-width="3" stroke-linecap="round">
+    <line x1="440" y1="300" x2="440" y2="288"/>
+    <line x1="456" y1="300" x2="456" y2="290"/>
+    <line x1="472" y1="300" x2="472" y2="287"/>
+    <line x1="488" y1="300" x2="488" y2="289"/>
+    <line x1="504" y1="300" x2="504" y2="288"/>
+  </g>
+  <line x1="530" y1="300" x2="530" y2="264" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <text x="566" y="258" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#C42B8C">max 1.06</text>
+  <text x="430" y="326" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#1F6FB2">p95 0.28 ms of 111</text>
+  <text x="528" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">the p95</text>
+  <text x="528" y="364" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">it cannot see above itself</text>
+</svg>

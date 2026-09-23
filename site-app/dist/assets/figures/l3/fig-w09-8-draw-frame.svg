@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Draw the see-saw</title>
+  <desc>One large empty framed panel for the student's own drawing, with a dashed baseline underneath labelled flag almost nothing at the left and flag everything at the right. A panel below lists what a good answer contains: a plank on a pivot with precision at one end and recall at the other, the left end down at precision 1.0000 and recall 0.0100 giving F1 0.0198, the right end down at precision 0.0140 and recall 1.0000 giving F1 0.0276, level in the middle at 0.6000 both ways, F1 written under the pivot and low at both ends, the decision tree marked at 0.3000 and 0.2143 with F1 0.2500, a note that the plain mean of the two extremes is about 0.505, and an arrow labelled the threshold.</desc>
+  <text x="250" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Draw the see-saw</text>
+  <text x="250" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Precision one end, recall the other. F1 balances.</text>
+  <rect x="30" y="86" width="440" height="300" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="46" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">your drawing goes here</text>
+  <line x1="60" y1="356" x2="440" y2="356" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="6 5"/>
+  <text x="60" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">flag almost nothing</text>
+  <text x="440" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">flag everything</text>
+  <rect x="30" y="396" width="440" height="280" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="250" y="420" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">What a good answer looks like</text>
+  <text x="48" y="448" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; a plank on a pivot, precision one end, recall the other</text>
+  <text x="48" y="471" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; left end down: p 1.0000, r 0.0100, F1 0.0198</text>
+  <text x="48" y="494" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; right end down: p 0.0140, r 1.0000, F1 0.0276</text>
+  <text x="48" y="517" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; level in the middle: 0.6000, 0.6000, F1 0.6000</text>
+  <text x="48" y="540" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; F1 written under the pivot, and it is LOW at both ends</text>
+  <text x="48" y="563" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; the tree marked on: 0.3000 / 0.2143, F1 0.2500</text>
+  <text x="48" y="586" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; a note: the plain mean of the ends is 0.505,</text>
+  <text x="48" y="609" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">   which is why it is the wrong average</text>
+  <text x="48" y="632" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; one arrow labelled &#8216;the threshold&#8217;, because that</text>
+  <text x="48" y="655" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">   is the thing that tips it &#8212; next week</text>
+</svg>

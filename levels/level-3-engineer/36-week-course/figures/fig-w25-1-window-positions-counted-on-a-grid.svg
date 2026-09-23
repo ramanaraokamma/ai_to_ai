@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Count the places a 3-wide window fits</title>
+  <desc>A row of eight numbers, 10 10 10 10 2 2 2 2, with six copies of a three-cell window drawn underneath it starting at columns 0, 1, 2, 3, 4 and 5. A panel counts six positions and works the rule out: 8 plus 0 minus 3, divided by 1, plus 1, equals 5 plus 1 equals 6.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Count the places a 3-wide window fits</text>
+  <rect x="120" y="80" width="368" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="166" y1="80" x2="166" y2="120" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="212" y1="80" x2="212" y2="120" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="258" y1="80" x2="258" y2="120" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="304" y1="80" x2="304" y2="120" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="350" y1="80" x2="350" y2="120" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="396" y1="80" x2="396" y2="120" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="442" y1="80" x2="442" y2="120" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="143" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">10</text>
+  <text x="189" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">10</text>
+  <text x="235" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">10</text>
+  <text x="281" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">10</text>
+  <text x="327" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">2</text>
+  <text x="373" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">2</text>
+  <text x="419" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">2</text>
+  <text x="465" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">2</text>
+  <text x="110" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="end">one row:</text>
+  <text x="304" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">8 numbers along this row</text>
+  <line x1="120" y1="183" x2="488" y2="183" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="120" y="172" width="138" height="22" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="110" y="187" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">start 0</text>
+  <line x1="120" y1="215" x2="488" y2="215" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="166" y="204" width="138" height="22" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="110" y="219" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">start 1</text>
+  <line x1="120" y1="247" x2="488" y2="247" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="212" y="236" width="138" height="22" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="110" y="251" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">start 2</text>
+  <line x1="120" y1="279" x2="488" y2="279" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="258" y="268" width="138" height="22" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="110" y="283" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">start 3</text>
+  <line x1="120" y1="311" x2="488" y2="311" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="304" y="300" width="138" height="22" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="110" y="315" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">start 4</text>
+  <line x1="120" y1="343" x2="488" y2="343" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="350" y="332" width="138" height="22" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="110" y="347" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">start 5</text>
+  <rect x="520" y="80" width="260" height="176" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="536" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">a 3-wide window,</text>
+  <text x="536" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">8 numbers to slide along</text>
+  <text x="536" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">starts: 0, 1, 2, 3, 4, 5</text>
+  <text x="536" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">that is 6 positions</text>
+  <line x1="534" y1="188" x2="766" y2="188" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="536" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">(8 + 0 &#8722; 3) &#247; 1 + 1</text>
+  <text x="536" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B">= 5 + 1 = 6</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Six windows fit, so the output row is 6 long. The rule only counts what you just counted.</text>
+</svg>

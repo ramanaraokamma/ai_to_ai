@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Twenty cards, dealt twice</title>
+  <desc>Twenty cards, five red and fifteen black, dealt into piles of twelve, four and four. On the left, dealt straight off a shuffled deck, all five red cards land in the train pile: 5 divided by 12 is 0.4167, and 0 divided by 4 is 0.0000 in both other piles, so the test pile cannot measure anything about red. On the right, dealt red by red on purpose, the reds go 3, 1 and 1: 3 divided by 12 is 0.2500 and 1 divided by 4 is 0.2500 twice, matching the whole deck's 5 divided by 20 equals 0.2500.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Twenty cards, dealt twice</text>
+  <text x="400" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">5 red and 15 black, into piles of 12, 4 and 4</text>
+  <rect x="30" y="92" width="350" height="150" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="205" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">dealt straight off the deck</text>
+  <rect x="50" y="132" width="150" height="52" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="125.0" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">train 12</text>
+  <rect x="58" y="140" width="16" height="16" rx="3" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="80" y="140" width="16" height="16" rx="3" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="102" y="140" width="16" height="16" rx="3" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="124" y="140" width="16" height="16" rx="3" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="146" y="140" width="16" height="16" rx="3" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="168" y="140" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="58" y="162" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="80" y="162" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="102" y="162" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="124" y="162" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="146" y="162" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="168" y="162" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="125.0" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">5 red</text>
+  <rect x="210" y="132" width="70" height="52" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="245.0" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">val 4</text>
+  <rect x="218" y="140" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="240" y="140" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="262" y="140" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="284" y="140" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="245.0" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">0 red</text>
+  <rect x="290" y="132" width="70" height="52" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="325.0" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">test 4</text>
+  <rect x="298" y="140" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="320" y="140" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="342" y="140" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="364" y="140" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="325.0" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">0 red</text>
+  <text x="205" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">5 &#247; 12 = 0.4167, then 0 &#247; 4 = 0.0000 twice</text>
+  <g transform="translate(346,100) scale(0.32)"><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g></g>
+  <rect x="420" y="92" width="350" height="150" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="595" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">dealt red-by-red, on purpose</text>
+  <rect x="440" y="132" width="150" height="52" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="515.0" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">train 12</text>
+  <rect x="448" y="140" width="16" height="16" rx="3" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="470" y="140" width="16" height="16" rx="3" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="492" y="140" width="16" height="16" rx="3" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="514" y="140" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="536" y="140" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="558" y="140" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="448" y="162" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="470" y="162" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="492" y="162" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="514" y="162" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="536" y="162" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="558" y="162" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="515.0" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">3 red</text>
+  <rect x="600" y="132" width="70" height="52" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="635.0" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">val 4</text>
+  <rect x="608" y="140" width="16" height="16" rx="3" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="630" y="140" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="652" y="140" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="674" y="140" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="635.0" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">1 red</text>
+  <rect x="680" y="132" width="70" height="52" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="715.0" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">test 4</text>
+  <rect x="688" y="140" width="16" height="16" rx="3" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="710" y="140" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="732" y="140" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="754" y="140" width="16" height="16" rx="3" fill="#F5F8FA" stroke="#55636F" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="715.0" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">1 red</text>
+  <text x="595" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">3 &#247; 12 = 0.2500 &#183; 1 &#247; 4 = 0.2500 &#183; 1 &#247; 4 = 0.2500</text>
+  <g transform="translate(736,100) scale(0.32)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <rect x="30" y="262" width="740" height="74" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="400" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Five red cards both times. 5 &#247; 20 = 0.2500 in the whole deck.</text>
+  <text x="400" y="310" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">On the left the test pile has no red cards at all, so it cannot measure anything about red.</text>
+  <text x="400" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">On the right every pile is a quarter red, which is what stratify=y does.</text>
+  <text x="400" y="364" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">This is the whole activity, and it takes forty seconds with real cards.</text>
+</svg>

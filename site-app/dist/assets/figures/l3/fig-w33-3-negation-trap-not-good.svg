@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The trap: a word it cannot see</title>
+  <desc>The held-out review not fresh and not hot, whose true label is negative. The regex finds five tokens: not, fresh, and, not, hot. The two nots have no column in the vocabulary and contribute nothing. The evidence the model actually adds up is hot plus 2.0701, fresh plus 1.9241, and plus 0.0155, not zero twice, and a bias of plus 0.0124, giving a total of plus 4.0222. That comes out as a probability of positive of 0.9824, so the model predicts positive and is 98 percent sure, which is wrong. The word not is in the sentence twice and contributes exactly zero, because it never appeared in a training review so the vocabulary has no column for it.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The trap: a word it cannot see</text>
+  <rect x="24" y="66" width="300" height="40" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="174" y="86" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">not fresh and not hot</text>
+  <text x="174" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">true label: NEGATIVE</text>
+  <rect x="360" y="66" width="78" height="40" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="1.5"/>
+  <text x="399" y="86" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">not</text>
+  <text x="399" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#CC2B1D" text-anchor="middle">no column</text>
+  <rect x="442" y="66" width="78" height="40" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="481" y="86" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">fresh</text>
+  <text x="481" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">+1.9241</text>
+  <rect x="524" y="66" width="78" height="40" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="563" y="86" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">and</text>
+  <text x="563" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">+0.0155</text>
+  <rect x="606" y="66" width="78" height="40" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="1.5"/>
+  <text x="645" y="86" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">not</text>
+  <text x="645" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#CC2B1D" text-anchor="middle">no column</text>
+  <rect x="688" y="66" width="78" height="40" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="727" y="86" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">hot</text>
+  <text x="727" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">+2.0701</text>
+  <text x="560" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the 5 tokens the regex finds</text>
+  <rect x="24" y="152" width="470" height="164" rx="10" fill="#F5F8FA" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="40" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C">add up the evidence the model actually has:</text>
+  <text x="48" y="202" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">hot</text>
+  <text x="140" y="202" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">+2.0701</text>
+  <text x="48" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">fresh</text>
+  <text x="140" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">+1.9241</text>
+  <text x="48" y="242" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">and</text>
+  <text x="140" y="242" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">+0.0155</text>
+  <text x="48" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#CC2B1D">not</text>
+  <text x="140" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#CC2B1D">0.0000 &#215; 2</text>
+  <text x="48" y="282" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">bias</text>
+  <text x="140" y="282" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">+0.0124</text>
+  <line x1="48" y1="292" x2="260" y2="292" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="48" y="312" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#C42B8C">total</text>
+  <text x="140" y="312" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#C42B8C">+4.0222</text>
+  <rect x="516" y="152" width="260" height="164" rx="12" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="646" y="180" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">p(positive) = 0.9824</text>
+  <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="635.6" y1="207.6" x2="656.4" y2="228.4"/><line x1="656.4" y1="207.6" x2="635.6" y2="228.4"/></g>
+  <text x="646" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">predicted POSITIVE,</text>
+  <text x="646" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">and 98% sure of it</text>
+  <text x="400" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">The word not is in the sentence twice and contributes exactly 0.0000, because it</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">never appeared in a training review, so there is no column for it.</text>
+</svg>

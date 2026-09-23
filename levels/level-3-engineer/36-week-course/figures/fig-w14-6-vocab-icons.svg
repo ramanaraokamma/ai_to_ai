@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Five words from Week 14, drawn</title>
+  <desc>Six labelled tiles. Surprise: minus ln of 0.02 equals 3.912023 and minus ln of 0.90 equals 0.105361, astonished and then barely surprised. Log loss: 3.962275 divided by 6 equals 0.660379, BOLD's average surprise over six days, with no ceiling. Squared error: one minus 0.02, squared, equals 0.960400, and the worst it can ever be is 1.0. Confidently wrong: said 0.02 and it happened, which costs 3.9120 under log loss and 0.9604 under squared error. Clipping: 0.0 becomes 0.000000000001 and 1.0 becomes 0.999999999999, so that ln never sees a zero. The last tile is 0.6931, which is minus ln of 0.5 and also ln of 2, the score of a model that answers 0.50 to everything, and it is the same on any dataset at all.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Five words from Week 14, drawn</text>
+  <rect x="30" y="66" width="230" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="42" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">surprise</text>
+  <text x="42" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">&#8722;ln(0.02) = 3.912023</text>
+  <text x="42" y="144" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">&#8722;ln(0.90) = 0.105361</text>
+  <text x="42" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">how astonished to be</text>
+  <text x="42" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">astonished, then barely</text>
+  <rect x="285" y="66" width="230" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="297" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">log loss</text>
+  <text x="297" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">3.962275 &#247; 6 = 0.660379</text>
+  <text x="297" y="144" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">BOLD, over six days</text>
+  <text x="297" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the average surprise</text>
+  <text x="297" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">no ceiling, ever</text>
+  <rect x="540" y="66" width="230" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="552" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">squared error</text>
+  <text x="552" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">(1 &#8722; 0.02)&#178; = 0.960400</text>
+  <text x="552" y="144" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">worst it can be: 1.0</text>
+  <text x="552" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the gap, squared</text>
+  <text x="552" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">right for marks and prices</text>
+  <rect x="30" y="224" width="230" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="42" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">confidently wrong</text>
+  <text x="42" y="280" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">said 0.02, it happened</text>
+  <text x="42" y="302" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">log loss    3.9120</text>
+  <text x="42" y="322" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">squared err 0.9604</text>
+  <text x="42" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">one ruler noticed, one did not</text>
+  <rect x="285" y="224" width="230" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="297" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">clipping</text>
+  <text x="297" y="280" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">0.0 &#8594; 0.000000000001</text>
+  <text x="297" y="302" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">1.0 &#8594; 0.999999999999</text>
+  <text x="297" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">a guard before the fragile bit</text>
+  <text x="297" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">so ln never sees a zero</text>
+  <rect x="540" y="224" width="230" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="552" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">0.6931</text>
+  <text x="552" y="286" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">= &#8722;ln(0.5) = ln(2)</text>
+  <text x="552" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the score of a shrug</text>
+  <text x="552" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">same on any dataset at all</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Every number on these tiles is printed by this week's code.</text>
+</svg>

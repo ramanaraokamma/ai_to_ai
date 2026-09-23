@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>One ranking, three places to cut</title>
+  <desc>Twenty transaction cards laid along a probability axis from 0 to 1: ten circles are really fraud and ten squares are really legitimate. Three dashed cut lines numbered 1, 2 and 3 stand at 0.90, 0.60 and 0.30. Panel 1 says flagged 2, caught 2 of 10, 0 false alarms, recall 2 divided by 10 is 0.20. Panel 2 says flagged 10, caught 8 of 10, 2 false alarms, recall 8 divided by 10 is 0.80. Panel 3 says flagged 15, caught 10 of 10, 5 false alarms, recall 10 divided by 10 is 1.00.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">One ranking, three places to cut</text>
+  <text x="400" y="70" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">20 transactions, laid out by the probability the model gave each one</text>
+  <circle cx="238" cy="96" r="7" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="252" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">really fraud (10 cards)</text>
+  <rect x="440" y="89" width="14" height="14" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="462" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">really legitimate (10 cards)</text>
+  <line x1="676" y1="148" x2="676" y2="206" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <circle cx="676" cy="132" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="676" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <line x1="468" y1="148" x2="468" y2="206" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <circle cx="468" cy="132" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="468" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <line x1="276" y1="148" x2="276" y2="206" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <circle cx="276" cy="132" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="276" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <line x1="100" y1="206" x2="744" y2="206" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="100" y1="206" x2="100" y2="212" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="420" y1="206" x2="420" y2="212" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="740" y1="206" x2="740" y2="212" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="100" y="226" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <text x="420" y="226" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.5</text>
+  <text x="740" y="226" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1</text>
+  <text x="420" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">probability the model gave</text>
+  <circle cx="714.4" cy="178" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <circle cx="688.8" cy="178" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <circle cx="663.2" cy="178" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <rect x="630.6" y="171" width="14" height="14" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="612" cy="178" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <circle cx="586.4" cy="178" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <circle cx="560.8" cy="178" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <rect x="528.2" y="171" width="14" height="14" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="509.6" cy="178" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <circle cx="484" cy="178" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <rect x="445" y="171" width="14" height="14" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="407.2" cy="178" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <rect x="361.8" y="171" width="14" height="14" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="323.4" y="171" width="14" height="14" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="292" cy="178" r="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <rect x="253" y="171" width="14" height="14" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="221" y="171" width="14" height="14" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="189" y="171" width="14" height="14" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="157" y="171" width="14" height="14" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="125" y="171" width="14" height="14" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="422" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">everything to the RIGHT of a cut is flagged</text>
+  <rect x="30" y="262" width="233" height="94" rx="12" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="56" cy="284" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="56" y="284" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="78" y="289" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">t = 0.90</text>
+  <text x="46" y="310" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">flagged 2, caught 2 of 10</text>
+  <text x="46" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">false alarms: 0</text>
+  <text x="46" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B">recall 2 &#247; 10 = 0.20</text>
+  <rect x="284" y="262" width="233" height="94" rx="12" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="310" cy="284" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="310" y="284" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="332" y="289" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">t = 0.60</text>
+  <text x="300" y="310" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">flagged 10, caught 8 of 10</text>
+  <text x="300" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">false alarms: 2</text>
+  <text x="300" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B">recall 8 &#247; 10 = 0.80</text>
+  <rect x="538" y="262" width="233" height="94" rx="12" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="564" cy="284" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/><text x="564" y="284" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="586" y="289" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">t = 0.30</text>
+  <text x="554" y="310" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">flagged 15, caught 10 of 10</text>
+  <text x="554" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">false alarms: 5</text>
+  <text x="554" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B">recall 10 &#247; 10 = 1.00</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Nothing about the model changed. Only where you cut.</text>
+</svg>

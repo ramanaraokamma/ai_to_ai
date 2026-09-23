@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Wrong and right: where does the squash live?</title>
+  <desc>Two panels. On the left, marked wrong, a Linear layer with ten outputs feeds a softmax box, which feeds CrossEntropyLoss, which squashes again; on the very same correct digit the model was 97.6 per cent sure about, the loss comes out 1.4818, close to the 2.3026 that a guessing model scores, and nothing goes red. On the right, marked right, the same Linear layer hands its ten raw scores, minus 10.94 up to 4.46, straight to CrossEntropyLoss, which squashes once, and the loss comes out 0.0244, the same number as minus the natural log of 0.9759 worked out by hand.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Wrong and right: where does the squash live?</text>
+  <rect x="30" y="66" width="350" height="306" rx="12" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="30" y="66" width="350" height="36" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(40,71) scale(0.36)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <line x1="38" y1="38" x2="62" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+    <line x1="62" y1="38" x2="38" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <text x="224" y="91" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">squash first, then hand it to the loss</text>
+  <rect x="56" y="118" width="140" height="36" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="126" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Linear(64, 10)</text>
+  <line x1="198" y1="136" x2="216" y2="136" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="224,136 213,130 213,142" fill="#14202B" stroke="#14202B" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="226" y="118" width="128" height="36" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="290" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">softmax</text>
+  <line x1="205" y1="156" x2="205" y2="174" stroke="#CC2B1D" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="205,182 199,171 211,171" fill="#CC2B1D" stroke="#CC2B1D" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="56" y="184" width="298" height="36" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="205" y="202" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">CrossEntropyLoss &#8212; squashes again</text>
+  <rect x="56" y="236" width="298" height="116" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="70" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">same digit, model 97.6% sure, and right</text>
+  <text x="70" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#CC2B1D">loss = 1.4818</text>
+  <text x="70" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">a guessing model scores &#8722;ln(0.1) = 2.3026</text>
+  <text x="70" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">and nothing goes red. No error at all.</text>
+  <rect x="420" y="66" width="350" height="306" rx="12" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="420" y="66" width="350" height="36" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(430,71) scale(0.36)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="614" y="91" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">hand the loss the raw scores</text>
+  <rect x="446" y="118" width="140" height="36" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="516" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Linear(64, 10)</text>
+  <line x1="588" y1="136" x2="606" y2="136" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="614,136 603,130 603,142" fill="#14202B" stroke="#14202B" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="616" y="118" width="138" height="36" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="685" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8722;10.94 ... 4.46</text>
+  <line x1="595" y1="156" x2="595" y2="174" stroke="#1B7A4B" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="595,182 589,171 601,171" fill="#1B7A4B" stroke="#1B7A4B" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="446" y="184" width="298" height="36" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="595" y="202" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">CrossEntropyLoss &#8212; squashes once</text>
+  <rect x="446" y="236" width="298" height="116" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="460" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">same digit, model 97.6% sure, and right</text>
+  <text x="460" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#1B7A4B">loss = 0.0244</text>
+  <text x="460" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">and &#8722;ln(0.9759) = 0.0244 by hand</text>
+  <text x="460" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B">the loss gets logits. Humans get chances.</text>
+</svg>

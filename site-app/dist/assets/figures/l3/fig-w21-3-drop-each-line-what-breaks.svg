@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Delete one line. Three of the five make no noise.</title>
+  <desc>Five rows, one per deleted line. Deleting optimizer.zero_grad gives no error but the loss goes from 1786.6666 to 2907.9082 after 400 steps and w ends at 5.3946. Deleting the forward line, or the loss line, crashes with RuntimeError: backward through the graph a second time. Deleting loss.backward gives no error: w.grad is None, w stays 0.0000 and the loss stays 1786.6666. Deleting optimizer.step gives no error: dL by dw is minus 326.6667 every step and w stays 0.0000.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Delete one line. Three of the five make no noise.</text>
+  <rect x="30" y="86" width="750" height="44" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="46" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">no error</text>
+  <text x="148" y="104" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">optimizer.zero_grad()</text>
+  <text x="148" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">loss 1786.6666 &#8594; 2907.9082 after 400 steps, and w = 5.3946</text>
+  <rect x="30" y="138" width="750" height="44" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <g stroke="#CC2B1D" stroke-width="4" stroke-linecap="round"><line x1="46" y1="153" x2="60" y2="167"/><line x1="60" y1="153" x2="46" y2="167"/></g>
+  <text x="78" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">crashed</text>
+  <text x="148" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">pred = hours @ w + b</text>
+  <text x="148" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">RuntimeError: backward through the graph a second time</text>
+  <rect x="30" y="190" width="750" height="44" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <g stroke="#CC2B1D" stroke-width="4" stroke-linecap="round"><line x1="46" y1="205" x2="60" y2="219"/><line x1="60" y1="205" x2="46" y2="219"/></g>
+  <text x="78" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">crashed</text>
+  <text x="148" y="208" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">loss = ((pred &#8722; marks) ** 2).mean()</text>
+  <text x="148" y="228" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">RuntimeError: backward through the graph a second time</text>
+  <rect x="30" y="242" width="750" height="44" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="46" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">no error</text>
+  <text x="148" y="260" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">loss.backward()</text>
+  <text x="148" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">w.grad is None, w stays 0.0000, loss stuck at 1786.6666</text>
+  <rect x="30" y="294" width="750" height="44" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="46" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">no error</text>
+  <text x="148" y="312" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">optimizer.step()</text>
+  <text x="148" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">dL/dw = &#8722;326.6667 every step, w stays 0.0000</text>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The three silent ones are the dangerous ones: read the loss, not the console.</text>
+</svg>

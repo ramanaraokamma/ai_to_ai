@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Seven words from Week 20, drawn</title>
+  <desc>Eight labelled tiles. Tensor: a blue block holding 1, 2, 3, 4, labelled a grid plus two extras. Dtype: float32 with 7 digits and float64 with 16 digits, and the printed value 2.0999999046325684. Device: a filled cpu box beside an empty cuda box, labelled we say cpu all year. requires_grad: a green ON circle with an arrow to the word rec, labelled start recording. Graph: three purple nodes joined in a line, labelled Mm then Add then Relu, the receipt in order. Autograd: a dashed pink arrow pointing back the other way, labelled read it backwards, one rule per operation. .grad: a pink box printing 6 plus 27 equals 33, labelled it adds and never replaces, and None until backward. .item(): a blue box holding 4.0 with an arrow to a bare 4.0, labelled the number with no receipt, type becomes float.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Seven words from Week 20, drawn</text>
+  <rect x="30" y="66" width="170" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="42" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">tensor</text>
+  <rect x="50" y="104" width="128" height="56" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="60" y="126" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">1. 2.</text>
+  <text x="60" y="148" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">3. 4.</text>
+  <text x="42" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">a grid, plus two extras</text>
+  <rect x="220" y="66" width="170" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="232" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">dtype</text>
+  <text x="236" y="120" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">float32</text>
+  <text x="316" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">7 digits</text>
+  <text x="236" y="146" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">float64</text>
+  <text x="316" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">16 digits</text>
+  <text x="232" y="184" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">2.0999999046325684</text>
+  <rect x="410" y="66" width="170" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="422" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">device</text>
+  <rect x="434" y="106" width="60" height="52" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="464" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">cpu</text>
+  <rect x="506" y="106" width="60" height="52" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="536" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">cuda</text>
+  <text x="422" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">we say cpu all year</text>
+  <rect x="600" y="66" width="170" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="612" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">requires_grad</text>
+  <circle cx="644" cy="132" r="22" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="644" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">ON</text>
+  <line x1="674" y1="132" x2="710" y2="132" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(710 132)"/>
+  <text x="718" y="137" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">rec</text>
+  <text x="612" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">start recording</text>
+  <rect x="30" y="224" width="170" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="42" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">graph</text>
+  <circle cx="62" cy="286" r="14" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <line x1="76" y1="286" x2="100" y2="286" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="114" cy="286" r="14" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <line x1="128" y1="286" x2="152" y2="286" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="166" cy="286" r="14" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="42" y="320" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">Mm &#8594; Add &#8594; Relu</text>
+  <text x="42" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">the receipt, in order</text>
+  <rect x="220" y="224" width="170" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="232" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">autograd</text>
+  <polyline points="360,284 250,284" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 5"/>
+  <polyline points="264,276 250,284 264,292" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="232" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">read it backwards</text>
+  <text x="232" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">one rule per operation</text>
+  <rect x="410" y="224" width="170" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="422" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">.grad</text>
+  <rect x="430" y="264" width="128" height="34" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="440" y="286" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">6 + 27 = 33</text>
+  <text x="422" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">it ADDS, never replaces</text>
+  <text x="422" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">None until backward()</text>
+  <rect x="600" y="224" width="170" height="140" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="612" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">.item()</text>
+  <rect x="620" y="264" width="60" height="34" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="650" y="281" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">4.0</text>
+  <line x1="686" y1="281" x2="712" y2="281" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(712 281)"/>
+  <text x="718" y="286" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">4.0</text>
+  <text x="612" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the number, no receipt</text>
+  <text x="612" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">type becomes float</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Every number on these tiles is printed by this week's code.</text>
+</svg>

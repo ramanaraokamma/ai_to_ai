@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A wide band is a noisy measurement, not a bad model</title>
+  <desc>Two panels. Left, marked wrong with a red cross: the belief that plus or minus 0.087 means the model is unstable and should be replaced, with a red box reading AUC 0.628 plus or minus 0.087, therefore get a better model. Right, marked right with a green tick: the same five fold scores 0.6183, 0.5909, 0.6873, 0.7504 and 0.4954 listed as coming from the same model, the same code and the same seed, with only the held-out rows differing. The mean is worked out as 3.1423 divided by 5 equals 0.6285 and the band is 0.541 to 0.715. Underneath, the real cause: 14 or 15 frauds in every held-out chunk, so every score is coarse, and the fix is more positive examples, not a different model.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A wide band is a noisy measurement, not a bad model</text>
+  <rect x="24" y="62" width="372" height="300" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="38" y1="78" x2="58" y2="98" stroke="#CC2B1D" stroke-width="5" stroke-linecap="round"/>
+  <line x1="58" y1="78" x2="38" y2="98" stroke="#CC2B1D" stroke-width="5" stroke-linecap="round"/>
+  <text x="70" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#CC2B1D" text-anchor="start" font-weight="bold" dominant-baseline="central">WRONG</text>
+  <text x="70" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="start">"a big plus-or-minus means a bad model"</text>
+  <rect x="44" y="130" width="332" height="70" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="60" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#14202B" text-anchor="start">AUC = 0.628 &#177; 0.087</text>
+  <text x="60" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">"unstable &#8212; get a different model"</text>
+  <text x="44" y="228" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">So the plan becomes: change the model,</text>
+  <text x="44" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">add features, try a deeper tree.</text>
+  <rect x="44" y="264" width="332" height="30" rx="6" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="210" y="279" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">none of that makes the band narrower</text>
+  <text x="44" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#CC2B1D" text-anchor="start">You have diagnosed the wrong patient.</text>
+  <rect x="408" y="62" width="372" height="300" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <polyline points="422,88 429.5,95.0 442,80.0" fill="none" stroke="#1B7A4B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="454" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#1B7A4B" text-anchor="start" font-weight="bold" dominant-baseline="central">RIGHT</text>
+  <text x="454" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="start">read where the five numbers came from</text>
+  <rect x="428" y="130" width="332" height="90" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="444" y="150" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#14202B" text-anchor="start">0.6183  0.5909  0.6873  0.7504  0.4954</text>
+  <text x="444" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">same model. Same code. Same seed.</text>
+  <text x="444" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">Only the held-out 1000 rows differ.</text>
+  <text x="444" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">3.1423 &#247; 5 = 0.6285,  band 0.541&#8211;0.715</text>
+  <rect x="428" y="236" width="332" height="60" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="444" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">frauds per held-out chunk: 14 14 14 15 15</text>
+  <text x="444" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">one fraud crossing a line moves the score</text>
+  <text x="444" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">The band is about the measuring equipment.</text>
+  <text x="444" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#1B7A4B" text-anchor="start">The fix is more frauds, not a new model.</text>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A name you can defend from the table</title>
+  <desc>A table of five feature means in the original units for the three wine clusters and an overall column. Cluster 1's column is highlighted: flavanoids 0.82 against an overall 2.03, colour intensity 7.23 against 5.06, hue 0.69 against 0.96, alcohol 13.13 against 13.00 and proline 619 against 747. Three of those five are far from the overall mean and they are the ones the name rests on, so the cluster is called Dark and Tannic, with 51 wines and a silhouette of 0.3506.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A cluster is not a result until it has a name.</text>
+  <rect x="40" y="74" width="470" height="216" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="248" y="82" width="74" height="200" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="58" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" font-weight="600">original units</text>
+  <text x="214" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600">cluster 0</text>
+  <text x="285" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600">cluster 1</text>
+  <text x="360" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600">cluster 2</text>
+  <text x="452" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" font-weight="600">overall</text>
+  <line x1="54.00" y1="114.00" x2="496.00" y2="114.00" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="58" y="142" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#14202B">flavanoids</text>
+  <text x="214" y="142" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#55636F" text-anchor="middle">2.05</text>
+  <text x="285" y="142" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#C42B8C" text-anchor="middle">0.82</text>
+  <text x="360" y="142" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#55636F" text-anchor="middle">3.00</text>
+  <text x="452" y="142" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#14202B" text-anchor="middle">2.03</text>
+  <text x="58" y="172" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#14202B">color_intensity</text>
+  <text x="214" y="172" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#55636F" text-anchor="middle">2.97</text>
+  <text x="285" y="172" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#C42B8C" text-anchor="middle">7.23</text>
+  <text x="360" y="172" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#55636F" text-anchor="middle">5.45</text>
+  <text x="452" y="172" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#14202B" text-anchor="middle">5.06</text>
+  <text x="58" y="202" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#14202B">hue</text>
+  <text x="214" y="202" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#55636F" text-anchor="middle">1.06</text>
+  <text x="285" y="202" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#C42B8C" text-anchor="middle">0.69</text>
+  <text x="360" y="202" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#55636F" text-anchor="middle">1.07</text>
+  <text x="452" y="202" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#14202B" text-anchor="middle">0.96</text>
+  <text x="58" y="232" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#14202B">alcohol</text>
+  <text x="214" y="232" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#55636F" text-anchor="middle">12.25</text>
+  <text x="285" y="232" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#14202B" text-anchor="middle">13.13</text>
+  <text x="360" y="232" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#55636F" text-anchor="middle">13.68</text>
+  <text x="452" y="232" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#14202B" text-anchor="middle">13.00</text>
+  <text x="58" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#14202B">proline</text>
+  <text x="214" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#55636F" text-anchor="middle">510</text>
+  <text x="285" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#14202B" text-anchor="middle">619</text>
+  <text x="360" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#55636F" text-anchor="middle">1100</text>
+  <text x="452" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#14202B" text-anchor="middle">747</text>
+  <rect x="534" y="74" width="226" height="216" rx="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="647" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">cluster 1</text>
+  <text x="647" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Dark &amp; Tannic</text>
+  <line x1="552.00" y1="146.00" x2="742.00" y2="146.00" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="552" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">defended by three numbers:</text>
+  <text x="552" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">flavanoids 0.82 vs 2.03</text>
+  <text x="552" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">colour 7.23 vs 5.06</text>
+  <text x="552" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">hue 0.69 vs 0.96</text>
+  <text x="552" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">n = 51, silhouette 0.3506</text>
+  <line x1="514.00" y1="182.00" x2="530.00" y2="182.00" stroke="#C42B8C" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#C42B8C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(530.00 182.00) rotate(0.00)"/>
+  <rect x="40" y="306" width="720" height="52" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="60" y="332" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#14202B">alcohol 13.13 against 13.00 defends nothing &#8212; 0.13 apart. Leave it out of the name.</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">A name nobody can point at a number for gets torn up.</text>
+</svg>

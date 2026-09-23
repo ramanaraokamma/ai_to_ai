@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>This week&#8217;s seven words, drawn</title>
+  <desc>Seven stacked rows. Variance is five squared distances 16, 4, 0, 4 and 16, adding to 40, with 40 divided by 4 equals 10.0. Projection is a point dropping at right angles onto a slanted line, with 4 times 0.8660 plus 4 times 0.5000 equals 5.4641, one number. Principal component is five dots climbing to the right with a line through them at 42.62 degrees, spread 18.2812, where the best of six hand-tried angles was 17.4192. Explained variance ratio is one long bar for PC1 and one tiny one for PC2, with 18.2812 divided by 18.5000 equals 0.9882. Loading is the column flavanoids arrowed into PC1 with a pull of 0.423, while nonflavanoid_phenols pulls minus 0.299 the other way. Reconstruction error is the real point 12, 11 beside the rebuilt point 12.1592, 10.8270, a miss of 0.2351 and an average of 0.3414 hours. Curse of dimensionality is three boxes: at 2 columns the furthest pair is 533.86 times further apart than the nearest, at 20 columns 1.96 times, and at 500 columns only 0.21 times, so nothing is near anything.</desc>
+  <text x="250" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">This week&#8217;s seven words, drawn</text>
+  <rect x="26" y="58" width="448" height="80" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="26" y="148" width="448" height="80" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="26" y="238" width="448" height="80" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="26" y="328" width="448" height="80" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="26" y="418" width="448" height="80" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="26" y="508" width="448" height="80" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="26" y="598" width="448" height="80" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="46" y="70" width="30" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="61" y="82" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">16</text>
+  <rect x="82" y="70" width="30" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="97" y="82" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <rect x="118" y="70" width="30" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="133" y="82" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="154" y="70" width="30" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="169" y="82" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <rect x="190" y="70" width="30" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="205" y="82" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">16</text>
+  <text x="240" y="84" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">16+4+0+4+16 = 40</text>
+  <text x="46" y="116" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">and 40 &#247; 4 = 10.0</text>
+  <text x="240" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">variance</text>
+  <text x="340" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">spread, squared</text>
+  <line x1="50" y1="210" x2="180" y2="160" stroke="#6D28D9" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="150" cy="164" r="7" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <line x1="150" y1="164" x2="124" y2="179" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <circle cx="124" cy="179" r="5" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="196" y="174" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">4 &#215; 0.8660 + 4 &#215; 0.5000</text>
+  <text x="196" y="194" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#C42B8C">= 5.4641, one number</text>
+  <text x="46" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">projection</text>
+  <text x="150" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">drop onto the line at right angles</text>
+  <circle cx="56" cy="296" r="5" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="74" cy="286" r="5" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="92" cy="278" r="5" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="110" cy="268" r="5" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="128" cy="256" r="5" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <line x1="48" y1="302" x2="140" y2="250" stroke="#6D28D9" stroke-width="3" stroke-linecap="round"/>
+  <text x="160" y="264" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">the widest direction: 42.62&#176;</text>
+  <text x="160" y="284" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">spread 18.2812, our best six 17.4192</text>
+  <text x="46" y="310" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">principal component</text>
+  <text x="250" y="310" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">a new axis, not a column</text>
+  <rect x="46" y="342" width="300" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="46" y="342" width="296" height="24" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="194" y="354" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">PC1: 0.9882</text>
+  <rect x="346" y="342" width="26" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="384" y="354" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">PC2</text>
+  <text x="46" y="384" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">18.2812 &#247; 18.5000 = 0.9882</text>
+  <text x="46" y="402" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">explained variance ratio</text>
+  <text x="250" y="402" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">its share of the spread</text>
+  <rect x="46" y="432" width="150" height="26" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="121" y="445" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">flavanoids</text>
+  <line x1="200" y1="445" x2="220" y2="445" stroke="#6D28D9" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="228,445 217,439 217,451" fill="#6D28D9" stroke="#6D28D9" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="248" y="432" width="60" height="26" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="278" y="445" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">PC1</text>
+  <text x="322" y="445" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#C42B8C">pull = 0.423</text>
+  <text x="46" y="478" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">nonflav_phenols pulls &#8722;0.299, the other way</text>
+  <text x="46" y="496" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">loading</text>
+  <text x="126" y="496" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">how hard a column pulls on an axis</text>
+  <circle cx="66" cy="538" r="7" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="80" y="532" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">real (12, 11)</text>
+  <circle cx="66" cy="560" r="7" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
+  <text x="80" y="554" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6D28D9">rebuilt (12.1592, 10.8270)</text>
+  <rect x="300" y="524" width="160" height="44" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="380" y="538" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">miss 0.2351</text>
+  <text x="380" y="556" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">average 0.3414</text>
+  <text x="46" y="584" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">reconstruction error</text>
+  <text x="216" y="584" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">the bill, in real units</text>
+  <text x="46" y="616" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">columns</text>
+  <text x="210" y="616" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">furthest &#247; nearest</text>
+  <rect x="46" y="624" width="110" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="101" y="636" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2 &#8594; 533.86</text>
+  <rect x="172" y="624" width="110" height="24" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="227" y="636" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">20 &#8594; 1.96</text>
+  <rect x="298" y="624" width="110" height="24" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="353" y="636" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">500 &#8594; 0.21</text>
+  <text x="46" y="666" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">curse of dimensionality</text>
+  <text x="240" y="666" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">nothing is near anything</text>
+</svg>

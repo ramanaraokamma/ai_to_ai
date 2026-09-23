@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Splitting the table into X and y</title>
+  <desc>A ten-column block labelled the raw table with shape 2020 by 10. Its first column, order_id, is highlighted in pink and its last column, late, in amber. Arrows lead to two blocks: X, the features, with shape 2000 by 8, and y, the answer, with shape 2000. The arithmetic reads ten columns minus one target minus one ID equals eight features, and order_id is dropped because 2000 divided by 2020 equals 0.9901 of its values are unique.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Splitting the table into X and y</text>
+  <rect x="40" y="84" width="260" height="180" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="40" y="84" width="26" height="180" fill="#F4D5E9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="66" y="84" width="26" height="180" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="92" y="84" width="26" height="180" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="118" y="84" width="26" height="180" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="144" y="84" width="26" height="180" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="170" y="84" width="26" height="180" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="196" y="84" width="26" height="180" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="222" y="84" width="26" height="180" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="248" y="84" width="26" height="180" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="274" y="84" width="26" height="180" fill="#E8C671" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="40" y="84" width="260" height="180" rx="10" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="170" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the raw table, shape (2020, 10)</text>
+  <text x="53" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" transform="rotate(-90 53 274 53 274)">order_id</text>
+  <text x="287" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#845F00" transform="rotate(-90 287 274 287 274)">late</text>
+  <text x="40" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">10 columns &#8722; 1 target &#8722; 1 ID = 8 features</text>
+  <line x1="310" y1="130" x2="380" y2="130" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(380 130) rotate(0.0)"/>
+  <line x1="310" y1="220" x2="380" y2="220" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(380 220) rotate(0.0)"/>
+  <rect x="390" y="96" width="240" height="78" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="510" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">X &#8212; the features</text>
+  <text x="510" y="148" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">shape (2000, 8)</text>
+  <rect x="390" y="190" width="240" height="78" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="510" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">y &#8212; the answer</text>
+  <text x="510" y="242" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">shape (2000,)</text>
+  <text x="660" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">8 columns</text>
+  <text x="660" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">the model</text>
+  <text x="660" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">may see</text>
+  <text x="660" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">1 column,</text>
+  <text x="660" y="234" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">which is what</text>
+  <text x="660" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">you predict</text>
+  <text x="400" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">2000 rows in X, 2000 in y, and they must line up row for row.</text>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">order_id is dropped because 2000 &#247; 2020 = 0.9901 of its values are unique.</text>
+</svg>

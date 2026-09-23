@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Draw it: two steps, and the column that took over</title>
+  <desc>A large empty dashed frame for the student to draw in, with three instructions underneath: draw the assign step and the move step on the same eight points with one squared distance written out in full, write the sigma sum beside the symbol with all eight terms and the total, and draw the unscaled wine clustering as three non-overlapping proline bands with the spread 314.91 labelled on it.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Draw it: two steps, and the column that took over</text>
+  <rect x="30" y="66" width="740" height="234" rx="12" fill="none" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="10 8"/>
+  <text x="400" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#55636F" text-anchor="middle">your drawing goes here</text>
+  <text x="40" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start">1.  ASSIGN and MOVE on the eight points, with one squared distance written out in full</text>
+  <text x="40" y="346" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start">2.  the sigma symbol with all eight terms beside it, and the total 12.5000</text>
+  <text x="40" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start">3.  the unscaled wine clusters as proline bands 278&#8211;590, 600&#8211;937, 970&#8211;1680, spread 314.91</text>
+</svg>

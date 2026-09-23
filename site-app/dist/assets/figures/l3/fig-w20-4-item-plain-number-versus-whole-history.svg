@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Two hundred losses, with and without .item()</title>
+  <desc>On the left, marked with a red cross, losses.append(loss) stores three stacked cards each reading tensor 4. with grad_fn SumBackward0, and a note that 200 of them means 200 live recordings; a red panel shows ax.plot(losses) failing with RuntimeError: Can't call numpy() on Tensor that requires grad, and type(losses[0]) is torch.Tensor. On the right, marked with a green tick, losses.append(loss.item()) stores one card reading 4.0, a note that 200 of them means 200 plain numbers, and a green panel showing the same plot call writing loss_curve.png, with type(losses[0]) being float.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Two hundred losses, with and without .item()</text>
+  <rect x="30" y="74" width="360" height="250" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="48" y1="89" x2="62" y2="103"/><line x1="62" y1="89" x2="48" y2="103"/></g>
+  <text x="78" y="100" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">losses.append(loss)</text>
+  <rect x="56" y="126" width="280" height="34" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="70" y="134" width="280" height="34" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="84" y="142" width="280" height="34" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="92" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">tensor(4., grad_fn=&lt;SumBackward0&gt;)</text>
+  <text x="200" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">each one still holds its whole recording</text>
+  <text x="200" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">200 of them = 200 recordings, all alive</text>
+  <rect x="56" y="228" width="300" height="76" rx="10" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="70" y="250" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">&gt; ax.plot(losses)</text>
+  <text x="70" y="274" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#CC2B1D" font-weight="600">RuntimeError: Can't call numpy()</text>
+  <text x="70" y="292" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#CC2B1D" font-weight="600">on Tensor that requires grad</text>
+  <text x="210" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">type(losses[0]) is torch.Tensor</text>
+  <line x1="400" y1="200" x2="428" y2="200" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(428 200) rotate(0.0)"/>
+  <text x="414" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">.item()</text>
+  <rect x="440" y="74" width="340" height="250" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <polyline points="458,94 464,100 476,84" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="496" y="100" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">losses.append(loss.item())</text>
+  <rect x="466" y="134" width="288" height="34" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="610" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">4.0</text>
+  <text x="610" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">one plain number, no recording</text>
+  <text x="610" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">200 of them = 200 numbers</text>
+  <rect x="466" y="228" width="288" height="76" rx="10" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="480" y="250" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">&gt; ax.plot(losses)</text>
+  <text x="480" y="274" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">wrote loss_curve.png</text>
+  <text x="480" y="296" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">(and it plotted 200 points)</text>
+  <text x="610" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">type(losses[0]) is float</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">.item() means: give me the number, throw the history away. Do it for every number you keep.</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Draw the grid multiply</title>
+  <desc>A large empty frame with a dashed vertical line splitting it into a left area for the two grids meeting and a right area for the answer grid, for the learner to draw a matrix multiply into. A panel underneath lists what a good answer looks like: two blocks with their shapes written on them, 3 by 2 and 2 by 4, the two inner 2s ringed and joined, the answer block labelled 3 by 4, one row of the left grid and one column of the right grid highlighted, and that same output cell computed in full as 1 times 10 equals 10 plus 2 times 50 equals 100 giving 110, plus a note that the two inner numbers must match and the two outer numbers survive.</desc>
+  <text x="250" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Draw the grid multiply</text>
+  <text x="250" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Two grids meeting, and one output cell worked out in full.</text>
+  <rect x="30" y="86" width="440" height="360" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="320" y1="86" x2="320" y2="446" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="8 6"/>
+  <text x="46" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">the two grids meeting</text>
+  <text x="336" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">the answer</text>
+  <rect x="30" y="460" width="440" height="216" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="250" y="484" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">What a good answer looks like</text>
+  <text x="48" y="510" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; two blocks with their shapes written on: (3, 2) and (2, 4)</text>
+  <text x="48" y="532" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; the two inner 2s ringed, and a line joining them</text>
+  <text x="48" y="554" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; the answer block on the right, labelled (3, 4)</text>
+  <text x="48" y="576" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; one row of the left grid shaded, one column of the right</text>
+  <text x="48" y="598" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; the cell they produce ringed in the answer block</text>
+  <text x="48" y="620" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; that cell in full: 1 &#215; 10 = 10, 2 &#215; 50 = 100, 10 + 100 = 110</text>
+  <text x="48" y="642" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#183; the eight words written somewhere: inner two must match,</text>
+  <text x="60" y="664" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">outer two survive</text>
+</svg>

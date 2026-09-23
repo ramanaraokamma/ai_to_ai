@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img">
+  <title>Eighty reviews, flattened onto two axes</title>
+  <desc>A scatter plot of all 80 reviews after their TF-IDF rows are squashed from 97 columns down to two. Green circles are the 40 positive reviews and red squares the 40 negative ones, and they are thoroughly mixed with no visible boundary. The first axis holds 10.58 percent of the spread and the second 4.49 percent: 10.58 plus 4.49 is 15.07 percent kept, so 84.93 percent of the structure was thrown away to make the picture. The mixing is a property of the picture, not of the data, because the classifier separates the same reviews perfectly using all 97 columns.</desc>
+  <text x="250" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Eighty reviews, flattened</text>
+  <rect x="92" y="82" width="370" height="310" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <circle cx="360.3" cy="304.7" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="136.1" cy="304.8" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="147.3" cy="335.6" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="365.7" cy="318.6" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="151.7" cy="331.3" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="117.7" cy="292.2" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="258.3" cy="301.3" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="161.0" cy="315.5" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="196.7" cy="365.3" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="399.4" cy="279.7" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="147.3" cy="338.3" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="136.2" cy="344.3" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="389.6" cy="314.4" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="126.5" cy="321.6" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="429.8" cy="301.6" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="204.4" cy="331.5" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="201.0" cy="334.9" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="173.0" cy="313.8" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="421.5" cy="304.0" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="147.4" cy="313.5" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="159.1" cy="353.2" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="163.4" cy="358.4" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="128.1" cy="376.0" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="446.0" cy="300.1" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="183.0" cy="326.8" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="155.1" cy="346.0" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="320.2" cy="321.6" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="138.2" cy="326.9" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="185.0" cy="352.1" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="142.5" cy="313.7" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="169.2" cy="293.9" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="386.6" cy="329.5" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="116.1" cy="327.4" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="162.7" cy="325.7" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="180.4" cy="349.0" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="179.0" cy="323.6" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="405.0" cy="280.1" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="127.0" cy="322.3" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="176.2" cy="368.1" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <circle cx="161.5" cy="343.4" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <rect x="367.2" y="221.1" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="121.2" y="136.3" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="139.1" y="218.5" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="359.2" y="260.9" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="144.8" y="193.3" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="104.9" y="204.1" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="252.7" y="219.9" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="150.8" y="232.0" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="206.6" y="288.8" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="395.1" y="181.5" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="122.8" y="234.7" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="132.2" y="157.1" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="387.1" y="280.2" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="120.5" y="231.9" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="418.0" y="245.3" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="196.2" y="230.1" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="192.4" y="253.1" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="186.8" y="225.0" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="422.1" y="230.5" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="155.0" y="171.6" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="150.6" y="312.4" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="140.1" y="284.5" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="107.4" y="93.5" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="440.4" y="232.7" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="178.1" y="212.6" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="169.5" y="291.4" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="364.1" y="209.7" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="125.5" y="179.6" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="183.1" y="197.4" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="140.5" y="180.9" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="379.1" y="234.0" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="401.8" y="273.7" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="103.5" y="182.0" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="167.6" y="198.2" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="180.4" y="273.5" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="179.9" y="287.0" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="402.1" y="235.4" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="113.7" y="191.8" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="176.0" y="315.7" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <rect x="150.8" y="142.3" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <text x="277" y="414" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">axis 1 &#183; 10.58% of the spread</text>
+  <text x="58" y="237" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 58 237)">axis 2 &#183; 4.49%</text>
+  <circle cx="112" cy="440" r="5" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="1.5"/>
+  <text x="126" y="444" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B">40 positive</text>
+  <rect x="235.5" y="435.5" width="9" height="9" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <text x="254" y="444" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">40 negative</text>
+  <rect x="24" y="458" width="452" height="22" rx="8" fill="none" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="250" y="469" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">10.58% + 4.49% = 15.07% kept, 84.93% thrown away</text>
+</svg>

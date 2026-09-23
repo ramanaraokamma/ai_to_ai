@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Wrong and right: where does the ink that falls off go?</title>
+  <desc>Two panels, each showing a six by six handwritten 6 with a stroke down the middle and a loop at the bottom. On the left, marked wrong, np.roll slides the rows down by one and the bottom row of the loop reappears at the top, outlined in red; the label still says 6 but the picture is not a 6, and five times 1,257 training rows bought plus 0.00 accuracy points. On the right, marked right, the same roll is followed by out colon comma 0 comma colon equals 0.0, which blanks the wrapped top row, outlined in green; it is still a 6 one pixel lower down, and 529 of 540 becomes 536 of 540, a gain of 1.30 points.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Wrong and right: where does the ink that falls off go?</text>
+  <rect x="30" y="66" width="350" height="306" rx="12" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="30" y="66" width="350" height="36" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(40,71) scale(0.36)">
+    <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+    <line x1="38" y1="38" x2="62" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+    <line x1="62" y1="38" x2="38" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <text x="224" y="91" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">np.roll alone: still the same digit</text>
+  <text x="52" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">the original 6</text>
+  <rect x="52" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="74" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="96" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="118" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="140" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="162" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="52" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="74" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="96" y="156" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="118" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="140" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="162" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="52" y="178" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="74" y="178" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="96" y="178" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="118" y="178" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="140" y="178" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="162" y="178" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="52" y="200" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="74" y="200" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="96" y="200" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="118" y="200" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="140" y="200" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="162" y="200" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="52" y="222" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="74" y="222" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="96" y="222" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="118" y="222" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="140" y="222" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="162" y="222" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="52" y="244" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="74" y="244" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="96" y="244" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="118" y="244" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="140" y="244" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="162" y="244" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="196" y1="200" x2="216" y2="200" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="224,200 213,194 213,206" fill="#14202B" stroke="#14202B" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="232" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">rolled down 1</text>
+  <rect x="232" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="254" y="134" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="276" y="134" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="298" y="134" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="320" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="342" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="232" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="254" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="276" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="298" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="320" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="342" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="232" y="178" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="254" y="178" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="276" y="178" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="298" y="178" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="320" y="178" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="342" y="178" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="232" y="200" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="254" y="200" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="276" y="200" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="298" y="200" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="320" y="200" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="342" y="200" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="232" y="222" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="254" y="222" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="276" y="222" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="298" y="222" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="320" y="222" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="342" y="222" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="232" y="244" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="254" y="244" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="276" y="244" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="298" y="244" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="320" y="244" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="342" y="244" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="232" y="134" width="132" height="22" rx="0" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="232" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">the bottom of the 6 is now on top</text>
+  <rect x="52" y="300" width="302" height="56" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="66" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">label still says 6, but that is not a 6</text>
+  <text x="66" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">5 &#215; 1,257 rows bought +0.00 points</text>
+  <rect x="420" y="66" width="350" height="306" rx="12" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="420" y="66" width="350" height="36" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(430,71) scale(0.36)">
+    <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+    <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="600" y="91" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle">roll, then blank the row it rolled off</text>
+  <text x="442" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">the original 6</text>
+  <rect x="442" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="464" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="486" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="508" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="530" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="552" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="442" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="464" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="486" y="156" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="508" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="530" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="552" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="442" y="178" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="464" y="178" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="486" y="178" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="508" y="178" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="530" y="178" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="552" y="178" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="442" y="200" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="464" y="200" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="486" y="200" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="508" y="200" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="530" y="200" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="552" y="200" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="442" y="222" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="464" y="222" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="486" y="222" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="508" y="222" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="530" y="222" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="552" y="222" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="442" y="244" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="464" y="244" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="486" y="244" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="508" y="244" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="530" y="244" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="552" y="244" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <line x1="586" y1="200" x2="606" y2="200" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="614,200 603,194 603,206" fill="#14202B" stroke="#14202B" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="622" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">rolled, then blanked</text>
+  <rect x="622" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="644" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="666" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="688" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="710" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="732" y="134" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="622" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="644" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="666" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="688" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="710" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="732" y="156" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="622" y="178" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="644" y="178" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="666" y="178" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="688" y="178" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="710" y="178" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="732" y="178" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="622" y="200" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="644" y="200" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="666" y="200" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="688" y="200" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="710" y="200" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="732" y="200" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="622" y="222" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="644" y="222" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="666" y="222" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="688" y="222" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="710" y="222" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="732" y="222" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="622" y="244" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="644" y="244" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="666" y="244" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="688" y="244" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="1.5"/>
+  <rect x="710" y="244" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="732" y="244" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="622" y="134" width="132" height="22" rx="0" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="470" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B">row 0 blanked with out[:, 0, :] = 0.0</text>
+  <rect x="442" y="300" width="302" height="56" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="456" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">still a 6, one pixel lower down</text>
+  <text x="456" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B">529 of 540 &#8594; 536 of 540, +1.30 points</text>
+</svg>

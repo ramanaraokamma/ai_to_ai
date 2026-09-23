@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
+  <title>Put the five lines in order</title>
+  <desc>Five boxes in a deliberately wrong order, each with an empty pink circle to write a number 1 to 5 in and a write-in line for the job of that line. The lines are loss.backward, optimizer.step, pred equals hours at w plus b, optimizer.zero_grad, and loss equals the mean of pred minus marks squared. A panel underneath asks, for each line deleted, error or no error, notes that three of the five make no noise at all, and gives the start loss 1786.6666 and one of the end losses, 2907.9082.</desc>
+  <text x="250" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Put the five lines in order</text>
+  <text x="250" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Write 1 to 5 in the circles, then the job of each line.</text>
+  <rect x="30" y="92" width="440" height="70" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="58" cy="116" r="14" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2"/>
+  <text x="84" y="121" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">loss.backward()</text>
+  <text x="84" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">job: ____________________________</text>
+  <rect x="30" y="176" width="440" height="70" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="58" cy="200" r="14" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2"/>
+  <text x="84" y="205" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">optimizer.step()</text>
+  <text x="84" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">job: ____________________________</text>
+  <rect x="30" y="260" width="440" height="70" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="58" cy="284" r="14" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2"/>
+  <text x="84" y="289" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">pred = hours @ w + b</text>
+  <text x="84" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">job: ____________________________</text>
+  <rect x="30" y="344" width="440" height="70" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="58" cy="368" r="14" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2"/>
+  <text x="84" y="373" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">optimizer.zero_grad()</text>
+  <text x="84" y="400" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">job: ____________________________</text>
+  <rect x="30" y="428" width="440" height="70" rx="10" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="58" cy="452" r="14" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2"/>
+  <text x="84" y="457" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">loss = ((pred &#8722; marks) ** 2).mean()</text>
+  <text x="84" y="484" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">job: ____________________________</text>
+  <rect x="30" y="526" width="440" height="150" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="250" y="550" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Then, for each line: delete it. Error, or no error?</text>
+  <text x="48" y="578" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">1 ______   2 ______   3 ______   4 ______   5 ______</text>
+  <text x="250" y="610" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Three of the five make no noise at all.</text>
+  <text x="250" y="636" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Start loss 1786.6666. End loss with one line gone: ____________</text>
+  <text x="250" y="660" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">(the answer for one of them is 2907.9082)</text>
+</svg>

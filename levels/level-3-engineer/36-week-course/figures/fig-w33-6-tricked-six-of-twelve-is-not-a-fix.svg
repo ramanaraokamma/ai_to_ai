@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Wrong and right: did gluing negators on fix the traps?</title>
+  <desc>Two panels. On the left, marked wrong, a three-row table: single words score 0 of 12, adding pairs of words scores 0 of 12, and gluing negators scores 6 of 12, highlighted in red, reported as a success and written up. Two facts underneath: a coin also scores 6 of 12, and nobody asked why the six went right. The number went up and nothing got better. On the right, marked right, trap 7, not cold and not soggy with a true label of 1, becomes not_cold and not_soggy after gluing, and the only word that still has a column at all is and. A green box gives the arithmetic: the bias is plus 0.0124, the probability of positive is 0.5188, and traps 1, 2, 3, 7, 8 and 9 all come out at exactly 0.5188. Six sentences, one surviving word and one identical sum: the model abstained and landed right way up three times.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Wrong and right: did gluing negators on fix the traps?</text>
+  <rect x="30" y="64" width="350" height="308" rx="12" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="30" y="64" width="350" height="36" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(40,69) scale(0.36)"><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><line x1="38" y1="38" x2="62" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/><line x1="62" y1="38" x2="38" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/></g>
+  <text x="232" y="89" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">0 of 12 became 6 of 12, so it works</text>
+  <text x="56" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">&#8220;Negation marking doubled nothing into six.&#8221;</text>
+  <rect x="56" y="142" width="200" height="30" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="66" y="157" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">single words</text>
+  <rect x="256" y="142" width="98" height="30" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="305" y="157" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0 / 12</text>
+  <rect x="56" y="176" width="200" height="30" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="66" y="191" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">+ pairs of words</text>
+  <rect x="256" y="176" width="98" height="30" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="305" y="191" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0 / 12</text>
+  <rect x="56" y="210" width="200" height="30" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <text x="66" y="225" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">glued negators</text>
+  <rect x="256" y="210" width="98" height="30" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="1.5"/>
+  <text x="305" y="225" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">6 / 12</text>
+  <text x="56" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D">Reported as a success and written up.</text>
+  <rect x="56" y="282" width="298" height="58" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="70" y="302" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">a coin also scores 6 of 12</text>
+  <text x="70" y="324" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#CC2B1D" dominant-baseline="central">nobody asked WHY the six went right</text>
+  <text x="56" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D">The number went up. Nothing got better.</text>
+  <rect x="420" y="64" width="350" height="308" rx="12" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="420" y="64" width="350" height="36" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="translate(430,69) scale(0.36)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="622" y="89" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">print what survived first</text>
+  <text x="446" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">trap 7: &#8220;not cold and not soggy&#8221;, true = 1</text>
+  <text x="446" y="140" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">after gluing: not_cold and not_soggy</text>
+  <text x="446" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">words that still have a column:</text>
+  <rect x="446" y="174" width="90" height="30" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="491" y="189" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">and</text>
+  <text x="548" y="189" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" dominant-baseline="central">&#8212; that is all of it</text>
+  <rect x="446" y="216" width="308" height="80" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="460" y="236" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">bias                    = +0.0124</text>
+  <text x="460" y="258" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">p(positive)             =  0.5188</text>
+  <text x="460" y="280" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#C42B8C" dominant-baseline="central">traps 1,2,3,7,8,9 all   =  0.5188</text>
+  <text x="446" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B">Six sentences, one surviving word, one</text>
+  <text x="446" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B">identical sum. The model abstained and</text>
+  <text x="446" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B">landed right way up three times.</text>
+</svg>

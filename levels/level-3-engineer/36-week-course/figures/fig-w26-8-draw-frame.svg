@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Draw it: one digit becoming ten scores</title>
+  <desc>A large empty dashed frame for the student to draw in, with three instructions underneath: draw the picture and every block of the stack with its shape written on it; write the weight count under each block and mark the three that hold zero; and draw the ten scores at the end with an arrow from the biggest one to the answer.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Draw it: one digit becoming ten scores</text>
+  <rect x="30" y="66" width="740" height="234" rx="12" fill="none" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="10 8"/>
+  <text x="400" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#55636F" text-anchor="middle">your drawing goes here</text>
+  <text x="40" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">1.  the picture, then every block of the stack, with its shape written on it</text>
+  <text x="40" y="346" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">2.  the weight count written under each block, and the three that hold zero</text>
+  <text x="40" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">3.  the ten scores at the end, with an arrow from the biggest one to the answer</text>
+</svg>

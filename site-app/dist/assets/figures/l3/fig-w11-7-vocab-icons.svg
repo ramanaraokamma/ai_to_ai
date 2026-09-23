@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Four words from Week 11, drawn</title>
+  <desc>Four labelled tiles. Cost matrix and expected cost: the two prices, a false alarm 10 pounds and a miss 500 pounds, with 500 divided by 10 equals 50 so one miss is worth fifty false alarms, and the winning row worked out as 500 times 11 equals 5500 plus 10 times 5 equals 50, total 5550 pounds against the default 0.5 threshold's 7000. AUC: four trapezoid strips 0.0750, 0.1750, 0.2125 and 0.2375 adding to 0.7000, matched by np.trapz at 0.7000, with a note that a coin's curve is the diagonal whose area is 0.5000. k-fold and stratified k-fold: stratified giving 14, 14, 14, 15, 15 frauds per fold against plain k-fold's 11, 17, 14, 17, 13, a 55 percent difference. Error bar: the five AUCs summed to 3.1423, divided by 5 to give 0.6285, a standard deviation of 0.0867, and a band from 0.541 to 0.715 with 0.65 shown inside it and 0.85 shown outside it.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Four words from Week 11, drawn</text>
+  <rect x="30" y="66" width="359" height="138" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="44" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="start">cost matrix &amp; expected cost</text>
+  <rect x="44" y="104" width="150" height="30" rx="6" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="119" y="119" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">false alarm &#163;10</text>
+  <rect x="204" y="104" width="150" height="30" rx="6" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="279" y="119" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">a miss &#163;500</text>
+  <text x="44" y="154" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">500 &#247; 10 = 50, so one miss = 50 false alarms</text>
+  <text x="44" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">500 &#215; 11 = 5500,  10 &#215; 5 = 50,  total &#163;5550</text>
+  <text x="44" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">the default 0.5 costs &#163;7000, so this saves &#163;1450</text>
+  <rect x="401" y="66" width="369" height="138" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="415" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="start">AUC</text>
+  <text x="415" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">the area underneath, in four strips</text>
+  <text x="415" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#14202B" text-anchor="start">0.0750 + 0.1750 + 0.2125 + 0.2375</text>
+  <rect x="415" y="148" width="170" height="32" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="500" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">by hand  0.7000</text>
+  <rect x="595" y="148" width="160" height="32" rx="6" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="675" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">np.trapz  0.7000</text>
+  <text x="415" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">a coin's diagonal is half a square: 0.5000</text>
+  <rect x="30" y="218" width="359" height="158" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="44" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="start">k-fold &amp; stratified k-fold</text>
+  <text x="44" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">frauds in each held-out chunk</text>
+  <rect x="44" y="278" width="331" height="30" rx="6" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="209" y="293" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">stratified:  14  14  14  15  15</text>
+  <rect x="44" y="314" width="331" height="30" rx="6" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="209" y="329" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">plain:  11  17  14  17  13</text>
+  <text x="44" y="364" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">11 against 17 is a 55% difference in how many there were to find</text>
+  <rect x="401" y="218" width="369" height="158" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="415" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="start">error bar</text>
+  <text x="415" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">3.1423 &#247; 5 = 0.6285      sd 0.0867</text>
+  <line x1="425" y1="292" x2="745" y2="292" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round"/>
+  <rect x="470" y="280" width="140" height="24" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="540" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.541 &#8211; 0.715</text>
+  <text x="425" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">0.65 lands inside the band &#8212; cannot tell</text>
+  <text x="425" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#14202B" text-anchor="start">0.85 lands well outside &#8212; now we can talk</text>
+  <text x="415" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">it tells you which differences to believe</text>
+</svg>

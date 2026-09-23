@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The plain mean is too kind</title>
+  <desc>Three panels, each holding one pair of precision and recall with both averages worked out. Precision 0.900 and recall 0.100: the plain mean is 0.5000, the harmonic mean is 2 times 0.9 times 0.1 equals 0.180, divided by 1.000, which is 0.1800. Precision 0.600 and recall 0.600: both averages are 0.6000. Precision 0.667 and recall 0.070: the plain mean is 0.3685, the harmonic mean is 0.0934 divided by 0.737, which is 0.1267. The harmonic mean always lands near the smaller of the two.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The plain mean is too kind</text>
+  <rect x="30" y="66" width="236" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="148" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">precision 0.900</text>
+  <text x="148" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">recall    0.100</text>
+  <line x1="50" y1="130" x2="246" y2="130" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="50" y="142" width="196" height="44" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <text x="110" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">plain mean</text>
+  <text x="202" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.5000</text>
+  <rect x="50" y="196" width="196" height="44" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="110" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">harmonic</text>
+  <text x="202" y="218" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.1800</text>
+  <text x="148" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2 &#215; 0.9 &#215; 0.1 = 0.180</text>
+  <text x="148" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.9 + 0.1 = 1.000</text>
+  <text x="148" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.180 &#247; 1.000 = 0.1800</text>
+  <rect x="284" y="66" width="236" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="402" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">precision 0.600</text>
+  <text x="402" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">recall    0.600</text>
+  <line x1="304" y1="130" x2="500" y2="130" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="304" y="142" width="196" height="44" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <text x="364" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">plain mean</text>
+  <text x="456" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.6000</text>
+  <rect x="304" y="196" width="196" height="44" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="364" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">harmonic</text>
+  <text x="456" y="218" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.6000</text>
+  <text x="402" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2 &#215; 0.6 &#215; 0.6 = 0.720</text>
+  <text x="402" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.6 + 0.6 = 1.200</text>
+  <text x="402" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.720 &#247; 1.200 = 0.6000</text>
+  <rect x="538" y="66" width="236" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="656" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">precision 0.667</text>
+  <text x="656" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">recall    0.070</text>
+  <line x1="558" y1="130" x2="754" y2="130" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="558" y="142" width="196" height="44" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <text x="618" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">plain mean</text>
+  <text x="710" y="164" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.3685</text>
+  <rect x="558" y="196" width="196" height="44" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="618" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">harmonic</text>
+  <text x="710" y="218" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.1267</text>
+  <text x="656" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2 &#215; 0.667 &#215; 0.07 = 0.0934</text>
+  <text x="656" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.667 + 0.07 = 0.737</text>
+  <text x="656" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.0934 &#247; 0.737 = 0.1267</text>
+  <text x="400" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">A pair of 0.9 and 0.1 averages to a comfortable 0.5000. The harmonic mean says 0.1800.</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">It always lands near the SMALLER of the two. That is the whole point of F1.</text>
+</svg>

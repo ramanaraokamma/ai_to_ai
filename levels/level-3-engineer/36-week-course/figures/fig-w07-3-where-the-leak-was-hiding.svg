@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Where the leak was hiding</title>
+  <desc>Three panels. On the left, a red box: the lookup, built from all 2000 rows including the late column, 820 groups, 360 of them holding exactly one order. In the middle, one of those groups: one order whose late value is 1, so its rate is 1 divided by 1 equals 1.0, and the rate IS the answer. On the right, the two scores: fake 0.9240 and honest 0.7535, with 0.9240 minus 0.7535 equals 0.1705. Underneath, rebuilding the same lookup from the 1200 training rows only scores 0.6115, which is worse than not having the feature at all. The flavour is target leakage.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Where the leak was hiding</text>
+  <rect x="30" y="66" width="236" height="176" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="148" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">the lookup</text>
+  <text x="148" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">built from all 2000 rows</text>
+  <text x="148" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">including the late column</text>
+  <text x="148" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">820 groups</text>
+  <text x="148" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">360 of them hold</text>
+  <text x="148" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">exactly ONE order</text>
+  <line x1="272" y1="154" x2="316" y2="154" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(316 154) rotate(0.0)"/>
+  <rect x="324" y="66" width="216" height="176" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="432" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">one of those groups</text>
+  <rect x="344" y="106" width="176" height="30" fill="#D9EAF9" stroke="#14202B" stroke-width="2"/>
+  <text x="432" y="121" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1 order &#183; late = 1</text>
+  <line x1="432" y1="144" x2="432" y2="168" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(432 168) rotate(90.0)"/>
+  <rect x="344" y="176" width="176" height="30" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="432" y="191" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1 &#247; 1 = 1.0</text>
+  <text x="432" y="228" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">the &quot;rate&quot; IS the answer</text>
+  <line x1="546" y1="154" x2="590" y2="154" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(590 154) rotate(0.0)"/>
+  <rect x="598" y="66" width="172" height="176" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="684" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">the two scores</text>
+  <rect x="614" y="106" width="140" height="40" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="684" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">fake</text>
+  <text x="684" y="138" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.9240</text>
+  <rect x="614" y="158" width="140" height="40" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="684" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">honest</text>
+  <text x="684" y="190" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.7535</text>
+  <text x="684" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.9240 &#8722; 0.7535</text>
+  <text x="684" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">= 0.1705</text>
+  <text x="400" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Rebuild the same lookup from the 1200 training rows only: val AUC 0.6115.</text>
+  <text x="400" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">That is WORSE than not having the feature at all (0.7535).</text>
+  <text x="400" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D" text-anchor="middle">Flavour: target leakage. The feature was computed from the answer column.</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">At the moment an order is placed, nobody knows whether it will be late.</text>
+</svg>

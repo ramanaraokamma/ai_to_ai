@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Choosing the bottom of the fraction</title>
+  <desc>Two panels, each showing the same confusion matrix: true negatives 979, false positives 7, false negatives 11, true positives 3. Left, marked wrong with a red cross: the denominator is chosen because 14 is bigger than 10, giving 3 divided by 14 equals 0.2143, which is recall, not precision. Right, marked right with a green tick: the predicted-fraud column is outlined with a pink dashed box, the sentence three out of the ten I flagged is written out, and 7 plus 3 equals 10 so 3 divided by 10 equals 0.3000.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Choosing the bottom of the fraction</text>
+  <rect x="24" y="62" width="372" height="300" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="38" y1="78" x2="58" y2="98" stroke="#CC2B1D" stroke-width="5" stroke-linecap="round"/>
+  <line x1="58" y1="78" x2="38" y2="98" stroke="#CC2B1D" stroke-width="5" stroke-linecap="round"/>
+  <text x="70" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#CC2B1D" text-anchor="start" font-weight="bold" dominant-baseline="central">WRONG</text>
+  <text x="70" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="start">pick the bottom by size</text>
+  <text x="202" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">PREDICTED</text>
+  <text x="161.0" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">legit</text>
+  <text x="243.0" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">fraud</text>
+  <text x="108" y="218.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="end" dominant-baseline="central">legit</text>
+  <text x="108" y="274.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="end" dominant-baseline="central">fraud</text>
+  <rect x="120" y="190" width="82" height="56" rx="0" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="161.0" y="210.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" text-anchor="middle" font-weight="bold" dominant-baseline="central">979</text>
+  <text x="161.0" y="232.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">TN</text>
+  <rect x="202" y="190" width="82" height="56" rx="0" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="243.0" y="210.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" text-anchor="middle" font-weight="bold" dominant-baseline="central">7</text>
+  <text x="243.0" y="232.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">FP</text>
+  <rect x="120" y="246" width="82" height="56" rx="0" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="161.0" y="266.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" text-anchor="middle" font-weight="bold" dominant-baseline="central">11</text>
+  <text x="161.0" y="288.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">FN</text>
+  <rect x="202" y="246" width="82" height="56" rx="0" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="243.0" y="266.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" text-anchor="middle" font-weight="bold" dominant-baseline="central">3</text>
+  <text x="243.0" y="288.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">TP</text>
+  <text x="210" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">"14 is bigger than 10,</text>
+  <text x="210" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">so 3 &#247; 14 must be precision"</text>
+  <text x="210" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#CC2B1D" text-anchor="middle">3 &#247; 14 = 0.2143 &#8594; that is RECALL</text>
+  <rect x="408" y="62" width="372" height="300" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <polyline points="422,88 429.5,95.0 442,80.0" fill="none" stroke="#1B7A4B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="454" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#1B7A4B" text-anchor="start" font-weight="bold" dominant-baseline="central">RIGHT</text>
+  <text x="454" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="start">say the sentence, then divide</text>
+  <text x="586" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">PREDICTED</text>
+  <text x="545.0" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">legit</text>
+  <text x="627.0" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="middle">fraud</text>
+  <text x="492" y="218.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="end" dominant-baseline="central">legit</text>
+  <text x="492" y="274.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F" text-anchor="end" dominant-baseline="central">fraud</text>
+  <rect x="504" y="190" width="82" height="56" rx="0" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="545.0" y="210.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" text-anchor="middle" font-weight="bold" dominant-baseline="central">979</text>
+  <text x="545.0" y="232.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">TN</text>
+  <rect x="586" y="190" width="82" height="56" rx="0" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="627.0" y="210.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" text-anchor="middle" font-weight="bold" dominant-baseline="central">7</text>
+  <text x="627.0" y="232.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">FP</text>
+  <rect x="504" y="246" width="82" height="56" rx="0" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="545.0" y="266.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" text-anchor="middle" font-weight="bold" dominant-baseline="central">11</text>
+  <text x="545.0" y="288.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">FN</text>
+  <rect x="586" y="246" width="82" height="56" rx="0" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="627.0" y="266.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" text-anchor="middle" font-weight="bold" dominant-baseline="central">3</text>
+  <text x="627.0" y="288.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">TP</text>
+  <rect x="582" y="186" width="90" height="120" rx="4" fill="none" stroke="#C42B8C" stroke-width="5" stroke-linejoin="round" stroke-dasharray="9 5"/>
+  <text x="594" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">"three out of the ten I FLAGGED"</text>
+  <text x="594" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">7 + 3 = 10      3 &#247; 10 = 0.3000</text>
+  <text x="594" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#1B7A4B" text-anchor="middle">the dashed column is the denominator</text>
+</svg>

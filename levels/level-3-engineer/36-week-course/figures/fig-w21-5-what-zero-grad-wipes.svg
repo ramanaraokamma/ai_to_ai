@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Wrong and right: what does zero_grad() wipe?</title>
+  <desc>Two panels. On the left, crossed out, two red boxes claiming zero_grad sets both w from 8.0014 to 0 and w.grad from minus 326.7 to 0, with a note that if this were true no loop could ever work. On the right, ticked, a purple box showing w stays at 8.0014 and a green box showing w.grad goes from minus 326.7 to 0, with the rule that zero_grad wipes slopes and never touches weights while step moves weights and never touches slopes. The caption says to print w before and after zero_grad and watch it not move.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Wrong and right: what does zero_grad() wipe?</text>
+  <rect x="30" y="62" width="350" height="288" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="48" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">&#10007; &#8220;it resets the model&#8221;</text>
+  <rect x="60" y="106" width="130" height="62" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="125" y="128" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">w</text>
+  <text x="125" y="152" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">8.0014 &#8594; 0</text>
+  <rect x="214" y="106" width="136" height="62" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="282" y="128" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">w.grad</text>
+  <text x="282" y="152" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">&#8722;326.7 &#8594; 0</text>
+  <text x="60" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">If this were true, every step would throw</text>
+  <text x="60" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">away everything learned, and no loop</text>
+  <text x="60" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">could ever work. Sensible reasoning,</text>
+  <text x="60" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">wrong premise.</text>
+  <line x1="322" y1="284" x2="338" y2="300" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  <line x1="338" y1="284" x2="322" y2="300" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  <rect x="420" y="62" width="350" height="288" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="438" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">&#10003; it wipes only the slopes</text>
+  <rect x="450" y="106" width="130" height="62" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="515" y="128" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">w</text>
+  <text x="515" y="152" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">8.0014 stays</text>
+  <rect x="604" y="106" width="136" height="62" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="672" y="128" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">w.grad</text>
+  <text x="672" y="152" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">&#8722;326.7 &#8594; 0</text>
+  <text x="450" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">zero_grad wipes slopes and never</text>
+  <text x="450" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">touches weights. step() moves weights</text>
+  <text x="450" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">and never touches slopes. Two jobs,</text>
+  <text x="450" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">two objects.</text>
+  <polyline points="714,292 719.6,298.4 730.8,284" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Test it: print w before and after zero_grad(). It does not move.</text>
+</svg>

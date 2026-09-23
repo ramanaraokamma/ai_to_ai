@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>98.6% accurate, nothing caught</title>
+  <desc>Two confusion matrices side by side on the same 1000 validation orders. On the left, the model that never says yes: 986 true negatives, 0 false positives, 14 false negatives, 0 true positives, accuracy 986 divided by 1000 equals 0.9860, frauds caught 0 of 14. On the right, a real decision tree: 979, 7, 11 and 3, accuracy 982 divided by 1000 equals 0.9820, frauds caught 3 of 14. The caption says accuracy went down by 0.0040 and the model got better.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">98.6% accurate, nothing caught</text>
+  <rect x="30" y="66" width="350" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="420" y="66" width="350" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="205" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">the model that never says yes</text>
+  <text x="595" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">a real decision tree</text>
+  <text x="150" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">said legit</text>
+  <text x="270" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">said fraud</text>
+  <text x="540" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">said legit</text>
+  <text x="660" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">said fraud</text>
+  <rect x="90" y="126" width="120" height="60" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <rect x="210" y="126" width="120" height="60" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <rect x="90" y="186" width="120" height="60" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <rect x="210" y="186" width="120" height="60" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <rect x="90" y="126" width="240" height="120" fill="none" stroke="#14202B" stroke-width="3"/>
+  <text x="150.0" y="151.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">TN</text>
+  <text x="150.0" y="176.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">986</text>
+  <text x="270.0" y="151.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">FP</text>
+  <text x="270.0" y="176.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">0</text>
+  <text x="150.0" y="211.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">FN</text>
+  <text x="150.0" y="236.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">14</text>
+  <text x="270.0" y="211.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">TP</text>
+  <text x="270.0" y="236.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">0</text>
+  <rect x="480" y="126" width="120" height="60" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <rect x="600" y="126" width="120" height="60" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <rect x="480" y="186" width="120" height="60" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <rect x="600" y="186" width="120" height="60" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <rect x="480" y="126" width="240" height="120" fill="none" stroke="#14202B" stroke-width="3"/>
+  <text x="540.0" y="151.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">TN</text>
+  <text x="540.0" y="176.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">979</text>
+  <text x="660.0" y="151.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">FP</text>
+  <text x="660.0" y="176.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">7</text>
+  <text x="540.0" y="211.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">FN</text>
+  <text x="540.0" y="236.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">11</text>
+  <text x="660.0" y="211.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">TP</text>
+  <text x="660.0" y="236.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">3</text>
+  <text x="84" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">legit</text>
+  <text x="84" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">fraud</text>
+  <text x="474" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">legit</text>
+  <text x="474" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">fraud</text>
+  <text x="205" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">accuracy 986 &#247; 1000 = 0.9860</text>
+  <text x="205" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D" text-anchor="middle">frauds caught: 0 of 14</text>
+  <text x="595" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">accuracy 982 &#247; 1000 = 0.9820</text>
+  <text x="595" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B" text-anchor="middle">frauds caught: 3 of 14</text>
+  <line x1="390" y1="200" x2="410" y2="200" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(410 200) rotate(0.0)"/>
+  <text x="400" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Accuracy went DOWN by 0.0040 and the model got BETTER.</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.9860 &#8722; 0.9820 = 0.0040 &#183; caught 0 &#8594; caught 3</text>
+</svg>

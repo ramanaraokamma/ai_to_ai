@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Wrong and right: can a loss be negative?</title>
+  <desc>Two panels. On the left, crossed out, a red box printing COIN scores minus 0.693147 and the claim that the lowest number wins so COIN wins, with notes that every score came out negative and the ranking flipped so the forecaster who owns no instruments is champion. On the right, ticked, a green box printing COIN scores 0.693147, the price of a permanent shrug, with the note that zero is perfect and nothing beats perfect so a loss can never go below zero, and that minus ln of 0.5 equals 0.693147. A strip underneath gives the one-line test for any loss function: score an all-0.5 forecaster and it must be 0.693147, where 0.301030 means base 10 and minus 0.693147 means the minus sign is gone. The caption lists the real scoreboard: CAREFUL 0.56883, BOLD 0.66038, COIN 0.69315.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Wrong and right: can a loss be negative?</text>
+  <rect x="30" y="62" width="350" height="292" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="48" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">&#10007; &#8220;&#8722;0.6931 wins the contest&#8221;</text>
+  <rect x="60" y="108" width="290" height="76" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="76" y="138" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">COIN &#8594; &#8722;0.693147</text>
+  <text x="76" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#8220;lowest number wins, so COIN wins&#8221;</text>
+  <text x="60" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">No error. Every score came out</text>
+  <text x="60" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">negative, and the ranking flipped:</text>
+  <text x="60" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the forecaster who owns no</text>
+  <text x="60" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">instruments is now the champion.</text>
+  <line x1="322" y1="122" x2="338" y2="138" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/><line x1="338" y1="122" x2="322" y2="138" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  <rect x="420" y="62" width="350" height="292" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="438" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">&#10003; A loss measures badness</text>
+  <rect x="450" y="108" width="290" height="76" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="466" y="138" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">COIN &#8594; 0.693147</text>
+  <text x="466" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">&#8220;the price of a permanent shrug&#8221;</text>
+  <text x="450" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">Zero is perfect, and nothing beats</text>
+  <text x="450" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">perfect &#8212; so a loss can never go</text>
+  <text x="450" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">below zero. &#8722;ln(0.5) = 0.693147.</text>
+  <text x="450" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">One missing character did all that.</text>
+  <polyline points="711,130 717,136 729,122" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="30" y="292" width="740" height="62" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">The one-line test for any loss function: score an all-0.5 forecaster.</text>
+  <text x="400" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">It must be 0.693147. If it says 0.301030 you are in base 10; if it says &#8722;0.693147 the minus is gone.</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The real scoreboard: CAREFUL 0.56883 &#183; BOLD 0.66038 &#183; COIN 0.69315. Lower is better.</text>
+</svg>

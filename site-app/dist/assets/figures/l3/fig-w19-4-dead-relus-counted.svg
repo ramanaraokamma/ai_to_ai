@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Thirteen dead units out of sixteen, counted</title>
+  <desc>A four by four grid of the sixteen hidden units after 500 epochs at learning rate 20. Thirteen cells are red with a cross, three are green with a tick, and 13 plus 3 is 16. A callout follows unit 0: its bias ended at minus 14.113, so z is below zero for all 200 rows, so the ReLU output is 0 and its slope is 0, and zero slope times any learning rate is zero change. A second panel compares test accuracy 0.9350 with all sixteen alive against 0.8100 with thirteen dead, and 0.8050 after 2000 further gentle epochs.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Thirteen dead units out of sixteen, counted</text>
+  <text x="196" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">after 500 epochs at learning rate 20</text>
+  <rect x="44" y="96" width="56" height="56" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="65" y1="115" x2="79" y2="129"/><line x1="79" y1="115" x2="65" y2="129"/></g>
+  <text x="50" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">0</text>
+  <rect x="100" y="96" width="56" height="56" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="121" y1="115" x2="135" y2="129"/><line x1="135" y1="115" x2="121" y2="129"/></g>
+  <text x="106" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">1</text>
+  <rect x="156" y="96" width="56" height="56" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="177" y1="115" x2="191" y2="129"/><line x1="191" y1="115" x2="177" y2="129"/></g>
+  <text x="162" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">2</text>
+  <rect x="212" y="96" width="56" height="56" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="233" y1="115" x2="247" y2="129"/><line x1="247" y1="115" x2="233" y2="129"/></g>
+  <text x="218" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">3</text>
+  <rect x="44" y="152" width="56" height="56" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <polyline points="62,180 68,186 80,170" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="50" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">4</text>
+  <rect x="100" y="152" width="56" height="56" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <polyline points="118,180 124,186 136,170" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="106" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">5</text>
+  <rect x="156" y="152" width="56" height="56" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="177" y1="171" x2="191" y2="185"/><line x1="191" y1="171" x2="177" y2="185"/></g>
+  <text x="162" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">6</text>
+  <rect x="212" y="152" width="56" height="56" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="233" y1="171" x2="247" y2="185"/><line x1="247" y1="171" x2="233" y2="185"/></g>
+  <text x="218" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">7</text>
+  <rect x="44" y="208" width="56" height="56" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="65" y1="227" x2="79" y2="241"/><line x1="79" y1="227" x2="65" y2="241"/></g>
+  <text x="50" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">8</text>
+  <rect x="100" y="208" width="56" height="56" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="121" y1="227" x2="135" y2="241"/><line x1="135" y1="227" x2="121" y2="241"/></g>
+  <text x="106" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">9</text>
+  <rect x="156" y="208" width="56" height="56" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="177" y1="227" x2="191" y2="241"/><line x1="191" y1="227" x2="177" y2="241"/></g>
+  <text x="162" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">10</text>
+  <rect x="212" y="208" width="56" height="56" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="233" y1="227" x2="247" y2="241"/><line x1="247" y1="227" x2="233" y2="241"/></g>
+  <text x="218" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">11</text>
+  <rect x="44" y="264" width="56" height="56" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <polyline points="62,292 68,298 80,282" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="50" y="278" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">12</text>
+  <rect x="100" y="264" width="56" height="56" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="121" y1="283" x2="135" y2="297"/><line x1="135" y1="283" x2="121" y2="297"/></g>
+  <text x="106" y="278" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">13</text>
+  <rect x="156" y="264" width="56" height="56" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="177" y1="283" x2="191" y2="297"/><line x1="191" y1="283" x2="177" y2="297"/></g>
+  <text x="162" y="278" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">14</text>
+  <rect x="212" y="264" width="56" height="56" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <g stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"><line x1="233" y1="283" x2="247" y2="297"/><line x1="247" y1="283" x2="233" y2="297"/></g>
+  <text x="218" y="278" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">15</text>
+  <rect x="44" y="96" width="224" height="224" fill="none" stroke="#14202B" stroke-width="3"/>
+  <text x="156" y="348" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">13 crossed &#183; 3 ticked &#183; 13 + 3 = 16</text>
+  <rect x="376" y="92" width="404" height="128" rx="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="392" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">unit 0 after the run:  bias &#8722;14.113</text>
+  <text x="392" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">every one of the 200 rows gives z below 0</text>
+  <text x="392" y="160" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">so ReLU output = 0, for every row</text>
+  <text x="392" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">so its slope = 0, for every row</text>
+  <text x="392" y="206" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">0 slope &#215; any learning rate = 0 change. Ever.</text>
+  <rect x="376" y="236" width="404" height="106" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="392" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">all 16 alive, lr 0.5:   test accuracy 0.9350</text>
+  <text x="392" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">13 dead, lr 20:         test accuracy 0.8100</text>
+  <text x="392" y="310" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">2000 more epochs at lr 0.5:  still 13 dead,</text>
+  <text x="392" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">test accuracy 0.8050 &#8212; they never came back</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">A dead unit is not resting. It is a knob the loss can no longer feel.</text>
+</svg>

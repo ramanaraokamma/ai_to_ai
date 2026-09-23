@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Wrong and right: which way does the step go?</title>
+  <desc>Two panels. On the left, crossed out, a red box showing 0 plus 1.0 times minus 0.375 equals minus 0.375, with a loss column climbing 0.693147, 0.759960, 0.844350 and no error message at all. On the right, ticked, a green box showing 0 minus 1.0 times minus 0.375 equals plus 0.375, with a loss column falling 0.693147, 0.581375, 0.504824, and the note that the gradient points uphill so you step the other way. A strip underneath says to print the loss every epoch and read the column: it should fall every single epoch, climbing means the sign and wobbling means the stride. The caption says a negative slope means the weight goes up, and that is the entire job of the minus sign.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Wrong and right: which way does the step go?</text>
+  <rect x="30" y="62" width="350" height="292" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="48" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">&#10007; w &#8592; w + lr &#215; slope</text>
+  <rect x="60" y="108" width="290" height="76" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="76" y="138" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">0 + 1.0 &#215; (&#8722;0.375) = &#8722;0.375</text>
+  <text x="76" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the loss climbs, and nothing complains</text>
+  <text x="60" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">0.693147 &#8594; 0.759960 &#8594; 0.844350</text>
+  <text x="60" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">No error. No warning. It is running</text>
+  <text x="60" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">perfectly &#8212; straight up the hill,</text>
+  <text x="60" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">five hundred times in a row.</text>
+  <line x1="322" y1="122" x2="338" y2="138" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/><line x1="338" y1="122" x2="322" y2="138" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  <rect x="420" y="62" width="350" height="292" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="438" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">&#10003; w &#8592; w &#8722; lr &#215; slope</text>
+  <rect x="450" y="108" width="290" height="76" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="466" y="138" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">0 &#8722; 1.0 &#215; (&#8722;0.375) = +0.375</text>
+  <text x="466" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the loss falls, every single epoch</text>
+  <text x="450" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">0.693147 &#8594; 0.581375 &#8594; 0.504824</text>
+  <text x="450" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">The gradient points UPHILL, and the</text>
+  <text x="450" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">loss is a thing you want small, so</text>
+  <text x="450" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">you step the other way.</text>
+  <polyline points="711,130 717,136 729,122" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="30" y="292" width="740" height="62" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">The test: print the loss every epoch and read the column.</text>
+  <text x="400" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">It should fall every single epoch. Climbing means the sign; wobbling means the stride.</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">A negative slope means the weight goes UP. That is the entire job of the minus sign.</text>
+</svg>

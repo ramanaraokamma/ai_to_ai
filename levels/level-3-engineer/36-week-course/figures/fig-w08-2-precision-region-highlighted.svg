@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img">
+  <title>Precision reads down one column</title>
+  <desc>The same two by two table of 979, 7, 11 and 3, with a pink outline around the whole predicted-fraud column, whose header now reads predicted fraud, 10. Underneath: 7 plus 3 equals 10 flagged; of the 10 I flagged, 3 were really fraud; and 3 divided by 10 equals 0.3000. A note says 7 of the 10 people flagged did nothing wrong, which is 7 blocked cards in one afternoon.</desc>
+  <text x="250" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Precision reads down one column</text>
+  <text x="250" y="72" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">of everything I flagged, how much was really fraud?</text>
+  <text x="200" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">predicted legit</text>
+  <text x="340" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">predicted fraud (10)</text>
+  <text x="122" y="160" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">actual legit</text>
+  <text x="122" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">actual fraud</text>
+  <rect x="130" y="120" width="140" height="80" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <rect x="270" y="120" width="140" height="80" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <rect x="130" y="200" width="140" height="80" fill="#F6AEA6" stroke="#14202B" stroke-width="2"/>
+  <rect x="270" y="200" width="140" height="80" fill="#E2F7ED" stroke="#14202B" stroke-width="2"/>
+  <rect x="130" y="120" width="280" height="160" fill="none" stroke="#14202B" stroke-width="3"/>
+  <polyline points="138,132 144,138 156,126" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="200.0" y="153.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">TN</text>
+  <text x="200.0" y="187.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">979</text>
+  <line x1="278" y1="128" x2="292" y2="140" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  <line x1="292" y1="128" x2="278" y2="140" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  <text x="340.0" y="153.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">FP</text>
+  <text x="340.0" y="187.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">7</text>
+  <line x1="138" y1="208" x2="152" y2="220" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  <line x1="152" y1="208" x2="138" y2="220" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  <text x="200.0" y="233.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">FN</text>
+  <text x="200.0" y="267.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">11</text>
+  <polyline points="278,212 284,218 296,206" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="340.0" y="233.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">TP</text>
+  <text x="340.0" y="267.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">3</text>
+  <rect x="270" y="120" width="140" height="160" rx="0" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="340" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">7 + 3 = 10 flagged</text>
+  <text x="250" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">of the 10 I flagged, 3 were really fraud</text>
+  <text x="250" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">3 &#247; 10 = 0.3000</text>
+  <text x="60" y="414" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">7 of the 10 people I flagged did nothing wrong.</text>
+  <text x="60" y="440" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">That is 7 blocked cards in one afternoon.</text>
+  <text x="250" y="470" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Precision is the outlined COLUMN. Only the column.</text>
+</svg>

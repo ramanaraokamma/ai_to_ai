@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img">
+  <title>Two averages, one column</title>
+  <desc>A block of twenty cells standing for the driver experience column, two of them marked as empty. Below, two boxes. The green box is what pandas gives you: 56693 divided by 1912 equals 29.6512, because it skipped the holes. The pink box is what you probably meant: 56693 divided by 2020 equals 28.0658, one value per row. The difference, 29.6512 minus 28.0658, is 1.5854 months of experience invented by a division nobody chose, with no error and no warning.</desc>
+  <text x="250" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Two averages, one column</text>
+  <text x="250" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">driver_experience_months, 2020 rows</text>
+  <rect x="50" y="92" width="40" height="40" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="70" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="90" y="92" width="40" height="40" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="110" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="130" y="92" width="40" height="40" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="150" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="170" y="92" width="40" height="40" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="190" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="210" y="92" width="40" height="40" fill="#F6AEA6" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="230" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle" dominant-baseline="central">&#8212;</text>
+  <rect x="250" y="92" width="40" height="40" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="270" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="290" y="92" width="40" height="40" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="310" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="330" y="92" width="40" height="40" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="350" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="370" y="92" width="40" height="40" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="390" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="410" y="92" width="40" height="40" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="430" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="50" y="132" width="40" height="40" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="70" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="90" y="132" width="40" height="40" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="110" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="130" y="132" width="40" height="40" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="150" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="170" y="132" width="40" height="40" fill="#F6AEA6" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="190" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle" dominant-baseline="central">&#8212;</text>
+  <rect x="210" y="132" width="40" height="40" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="230" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="250" y="132" width="40" height="40" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="270" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="290" y="132" width="40" height="40" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="310" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="330" y="132" width="40" height="40" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="350" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="370" y="132" width="40" height="40" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="390" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="410" y="132" width="40" height="40" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="430" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="50" y="92" width="400" height="80" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="250" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1912 cells hold a number &#183; 108 hold nothing</text>
+  <rect x="40" y="212" width="200" height="120" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="140" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">what pandas gives you</text>
+  <text x="140" y="264" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">56693 &#247; 1912</text>
+  <text x="140" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">= 29.6512</text>
+  <text x="140" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">it skipped the holes</text>
+  <rect x="260" y="212" width="200" height="120" rx="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="360" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">what you probably meant</text>
+  <text x="360" y="264" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">56693 &#247; 2020</text>
+  <text x="360" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">= 28.0658</text>
+  <text x="360" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one per row</text>
+  <text x="250" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Same column, same sum on top, different answer.</text>
+  <text x="250" y="392" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">29.6512 &#8722; 28.0658 = 1.5854 months of experience,</text>
+  <text x="250" y="410" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">invented by a division you did not choose.</text>
+  <rect x="40" y="434" width="420" height="44" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="250" y="452" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">Nothing crashed. Nothing warned. This is why check 3 exists:</text>
+  <text x="250" y="468" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">count the holes BEFORE you average anything.</text>
+</svg>

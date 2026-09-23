@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Shape Dominoes: the card, and the two piles</title>
+  <desc>On the left, one index card shown twice. Its front reads a shape pair, 3 by 2 times 2 by 4, with the two 2s boxed in pink and a bracket underneath reading these two must match. Its back reads the answer shape, 3 by 4, with a note that 3 came from the left card and 4 from the right. On the right, two labelled piles: a green pile of eight cards headed these multiply, listing 3 by 2 times 2 by 4 gives 3 by 4, then 4 by 2 times 2 by 3 gives 4 by 3, then 4 by 3 times 3 by 1 gives 4 by 1; and a red pile of four cards headed these do not, listing 2 by 4 times 3 by 2 where 4 is set against 3, then 2 by 3 times 1 by 4 where 3 is set against 1, then 3 by 1 times 5 by 2 where 1 is set against 5. Along the bottom the rule is printed: the inner two must match, the outer two survive.</desc>
+  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Shape Dominoes: the card, and the two piles</text>
+  <text x="400" y="62" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">sort the twelve cards first, then write the answer shape on the back of each one that works</text>
+
+  <text x="196" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">one card, both sides</text>
+
+  <rect x="26" y="94" width="164" height="120" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="108" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">FRONT</text>
+  <rect x="74" y="130" width="14" height="22" rx="4" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="135" y="130" width="14" height="22" rx="4" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="48" y="146" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">(3,</text>
+  <text x="77" y="146" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">2</text>
+  <text x="92" y="146" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">) &#215; (</text>
+  <text x="138" y="146" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">2</text>
+  <text x="153" y="146" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">,4)</text>
+  <polyline points="81,158 81,170 142,170 142,158" fill="none" stroke="#C42B8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="108" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">these two must match</text>
+  <text x="108" y="206" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2 and 2 &#8212; they do</text>
+
+  <rect x="204" y="94" width="164" height="120" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="286" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">BACK</text>
+  <rect x="240" y="126" width="92" height="34" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="286" y="143" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">(3, 4)</text>
+  <text x="286" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">3 from the left card,</text>
+  <text x="286" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4 from the right card</text>
+
+  <line x1="196" y1="228" x2="286" y2="228" stroke="#55636F" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="196" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">turn it over only if the front works</text>
+
+  <rect x="392" y="90" width="186" height="200" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="485" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">these multiply</text>
+  <text x="485" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">8 cards land here</text>
+  <rect x="408" y="144" width="154" height="30" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="485" y="159" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(3,2)&#215;(2,4) &#8594; (3,4)</text>
+  <rect x="408" y="180" width="154" height="30" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="485" y="195" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(4,2)&#215;(2,3) &#8594; (4,3)</text>
+  <rect x="408" y="216" width="154" height="30" rx="8" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="485" y="231" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(4,3)&#215;(3,1) &#8594; (4,1)</text>
+  <text x="485" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">&#8230; and five more, each</text>
+  <text x="485" y="284" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">answered on the back</text>
+
+  <rect x="594" y="90" width="186" height="200" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="687" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">these do not</text>
+  <text x="687" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4 cards land here</text>
+  <rect x="610" y="144" width="154" height="30" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="687" y="159" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(2,4)&#215;(3,2): 4 vs 3</text>
+  <rect x="610" y="180" width="154" height="30" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="687" y="195" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(2,3)&#215;(1,4): 3 vs 1</text>
+  <rect x="610" y="216" width="154" height="30" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="687" y="231" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(3,1)&#215;(5,2): 1 vs 5</text>
+  <text x="687" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the back stays blank:</text>
+  <text x="687" y="284" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">just the two bad numbers</text>
+
+  <rect x="26" y="306" width="754" height="72" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="403" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">The only rule: the inner two must match, the outer two survive.</text>
+  <text x="403" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Say it out loud: &#8220;three by two, times two by four, gives three by four.&#8221;</text>
+</svg>
