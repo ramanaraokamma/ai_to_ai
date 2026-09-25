@@ -47,11 +47,21 @@ validate the SVGs, and crawl the links.** See "Verifying content".
 
 ## Other artefacts
 
-- **`presentations/for-parents.html`** — a 16-slide parent-evening deck, self-contained (no CDN, no
-  webfonts), with speaker notes (`N`), dark mode (`T`), keyboard navigation and a print stylesheet
-  that gives one slide per page. Its palette is copied from the course `figures/STYLE.md` so slides
-  and figures match. **Every number in it is cross-checked against the repo** — if you change figure
-  counts, week counts or test counts, re-check the deck's stats slide.
+Two self-contained slide decks (no CDN, no webfonts), sharing the same shell: speaker notes (`N`),
+dark mode (`T`), keyboard navigation, `#sN` deep links, and a print stylesheet giving one slide per
+page with notes. Palettes are copied from the course `figures/STYLE.md` so slides and figures match.
+
+- **`presentations/for-parents.html`** — 16 slides for a parent evening.
+- **`presentations/for-investors.html`** — 18 slides for an investor conversation.
+
+**Every number in both decks is cross-checked against the repo.** If you change figure, week or test
+counts, re-check the stats slides. Note the two figure conventions: `fig-*.svg` files total **1,137**
+(what the decks cite as "diagrams"), while all `*.svg` including each level's `_motifs.svg` sprite
+sheet totals **1,140**. Keep a deck internally consistent with one convention.
+
+The investor deck deliberately contains **no invented metrics** — market size, pricing, unit economics
+and the raise are dashed-border placeholders marked "fill before presenting", and slide 1 states there
+are no users, no pilot and no revenue. Do not "helpfully" populate those with plausible numbers.
 
 ## The website generator (`site-app/`)
 

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Academy — investor deck</title>
+<style>
+/* AI Academy — investor deck. Self-contained: no CDN, no webfonts, offline.
+   Palette from the course's own figures/STYLE.md. */
+:root{
+  --data:#2563a8; --model:#7a4fbd; --human:#c2571a;
+  --correct:#1f7a4d; --wrong:#b3261e; --accent:#b8860b;
+  --ink:#1b1f24; --ink-2:#495260; --muted:#6b7480;
+  --line:#dde2e8; --pane:#fff; --bg:#f6f7f9; --code:#f1f3f6;
+  --font:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+html[data-theme="dark"]{
+  --data:#7fb3f0; --model:#c3a3f0; --human:#f0a875; --correct:#6ed49b; --wrong:#f08a82; --accent:#e8c25e;
+  --ink:#e9edf2; --ink-2:#b6c0cc; --muted:#8b95a3; --line:#2b323b; --pane:#161a1f; --bg:#0f1216; --code:#1c2128;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.58;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.deck{height:100vh;display:grid;grid-template-rows:auto 1fr auto}
+.bar{display:flex;align-items:center;gap:1rem;padding:.55rem 1.2rem;background:var(--pane);
+     border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:.5rem;font-weight:750;letter-spacing:-.02em;font-size:.95rem}
+.logo{display:grid;place-items:center;width:27px;height:27px;border-radius:8px;color:#fff;
+      background:linear-gradient(140deg,var(--data),var(--model));font-size:.7rem;font-weight:800}
+.bar .sp{margin-left:auto;display:flex;gap:.4rem;align-items:center}
+.btn{width:33px;height:33px;border-radius:9px;border:1px solid var(--line);background:var(--pane);
+     color:var(--ink-2);cursor:pointer;font-size:.95rem}
+.btn:hover{color:var(--ink);border-color:var(--ink-2)}
+.count{font-variant-numeric:tabular-nums;font-size:.85rem;color:var(--muted);min-width:4.4rem;text-align:center}
+.progress{height:3px;background:var(--line)}
+.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--data),var(--model));transition:width .25s}
+
+.stage{overflow-y:auto;display:grid;place-items:center;padding:clamp(1rem,3vw,2.3rem)}
+.slide{display:none;width:100%;max-width:61rem}
+.slide.on{display:block;animation:in .28s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+
+.eyebrow{font-size:.73rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--model);margin:0 0 .5rem}
+h1{font-size:clamp(1.85rem,4.4vw,3rem);line-height:1.08;letter-spacing:-.035em;margin:0 0 .7rem}
+h2{font-size:clamp(1.4rem,3.1vw,2.05rem);line-height:1.15;letter-spacing:-.028em;margin:0 0 .75rem}
+h3{font-size:1.02rem;margin:0 0 .3rem;letter-spacing:-.01em}
+.lede{font-size:clamp(.98rem,1.8vw,1.15rem);color:var(--ink-2);max-width:47rem;margin:0 0 1.2rem}
+p{margin:0 0 .8rem}
+.small{font-size:.86rem;color:var(--muted)}
+.q{font-size:clamp(1.1rem,2.4vw,1.5rem);font-style:italic;color:var(--ink-2);
+   border-left:4px solid var(--accent);padding-left:1rem;margin:0 0 1.1rem;max-width:45rem}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(13.5rem,1fr));gap:.85rem}
+.card{background:var(--pane);border:1px solid var(--line);border-radius:13px;padding:1rem 1.1rem;
+      box-shadow:0 1px 2px rgba(16,24,40,.05),0 6px 18px rgba(16,24,40,.05)}
+.card.t{border-top:4px solid var(--tc,var(--data))}
+.card .ic{font-size:1.4rem;line-height:1;margin-bottom:.35rem}
+.card p{margin:0;font-size:.88rem;color:var(--ink-2)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(7.5rem,1fr));gap:1rem;margin:1.1rem 0}
+.stat .n{font-size:clamp(1.5rem,3.4vw,2.3rem);font-weight:780;letter-spacing:-.035em;line-height:1}
+.stat .n.sm{font-size:clamp(1.1rem,2.2vw,1.5rem)}
+.stat .l{font-size:.76rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-top:.15rem}
+table{border-collapse:collapse;width:100%;font-size:.9rem;background:var(--pane);border:1px solid var(--line);
+      border-radius:11px;overflow:hidden}
+th,td{padding:.5rem .7rem;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--bg);font-size:.81rem;font-weight:700}
+tbody tr:last-child td{border-bottom:0}
+ul{margin:0 0 .85rem;padding-left:1.3rem}li{margin:.24rem 0}
+.callout{background:var(--pane);border:1px solid var(--line);border-left:4px solid var(--data);
+         border-radius:0 11px 11px 0;padding:.85rem 1.05rem;margin:0 0 .95rem}
+.callout.warn{border-left-color:var(--accent)}
+.callout.good{border-left-color:var(--correct)}
+.callout.bad{border-left-color:var(--wrong)}
+.callout p:last-child{margin:0}
+.fill{background:repeating-linear-gradient(45deg,transparent,transparent 9px,var(--code) 9px,var(--code) 18px);
+      border:2px dashed var(--accent);border-radius:11px;padding:.9rem 1.05rem;margin:0 0 .95rem}
+.fill p:last-child{margin:0}
+.fill .tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+           color:var(--accent);margin-bottom:.3rem}
+code{font-family:var(--mono);font-size:.86em;background:var(--code);border:1px solid var(--line);
+     border-radius:5px;padding:.08em .35em}
+figure{margin:.9rem 0}figcaption{font-size:.82rem;color:var(--muted);font-style:italic;margin-top:.4rem;text-align:center}
+svg{display:block;max-width:100%;height:auto;margin:0 auto}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;align-items:start}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:start}
+.notes{margin-top:1rem;padding-top:.75rem;border-top:1px dashed var(--line);font-size:.84rem;color:var(--muted)}
+.notes b{color:var(--ink-2)}
+.notes[hidden]{display:none}
+.pill{display:inline-block;padding:.16rem .55rem;border-radius:999px;font-size:.74rem;font-weight:700;
+      border:1px solid var(--line);background:var(--bg);color:var(--ink-2)}
+.pill.ok{color:var(--correct);border-color:var(--correct)}
+.pill.no{color:var(--wrong);border-color:var(--wrong)}
+
+@media (max-width:820px){.two,.three{grid-template-columns:1fr}}
+
+@media print{
+  @page{size:landscape;margin:11mm}
+  .bar,.progress{display:none!important}
+  .deck{height:auto;display:block}
+  .stage{display:block;padding:0;overflow:visible}
+  .slide{display:block!important;break-after:page;max-width:none;padding-bottom:5mm}
+  .slide:last-child{break-after:auto}
+  .notes{display:block!important}
+  body{background:#fff}
+  .card,table,.callout,.fill{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="deck">
+  <header class="bar">
+    <span class="brand"><span class="logo">AI</span> AI Academy</span>
+    <span class="small">Investor deck · pre-launch</span>
+    <span class="sp">
+      <button class="btn" id="notes" title="Speaker notes (N)" aria-label="Toggle speaker notes">🗒</button>
+      <button class="btn" id="theme" title="Light / dark (T)" aria-label="Toggle dark mode">◐</button>
+      <button class="btn" id="prev" title="Previous (←)" aria-label="Previous slide">‹</button>
+      <span class="count" id="count">1 / 18</span>
+      <button class="btn" id="next" title="Next (→)" aria-label="Next slide">›</button>
+    </span>
+  </header>
+  <div class="stage" id="stage">
+
+  <!-- 1 ───────────────────────────────────────────────── -->
+  <section class="slide on">
+    <p class="eyebrow">K-12 AI literacy · pre-launch, asset-complete</p>
+    <h1>The bottleneck in teaching kids AI<br>isn't curriculum. It's teachers.</h1>
+    <p class="lede">Every AI course for children assumes an adult who already understands AI. Almost
+      no school has one. <strong>We built the course so the course teaches the teacher</strong> —
+      minute by minute, week by week, for three full school years.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">3</div><div class="l">years built &amp; verified</div></div>
+      <div class="stat"><div class="n">108</div><div class="l">scripted weekly classes</div></div>
+      <div class="stat"><div class="n">1,137</div><div class="l">original diagrams</div></div>
+      <div class="stat"><div class="n sm">0</div><div class="l">users yet</div></div>
+    </div>
+    <div class="callout warn"><p><strong>Read this deck as an asset review, not a traction review.</strong>
+      The curriculum is finished and machine-verified. There is no pilot, no revenue and no user data.
+      Every number here is counted from the repository; nothing is projected.</p></div>
+    <div class="notes" hidden><b>Open with the honesty.</b> Sophisticated investors discount decks that
+      blur build-stage and traction-stage. Saying "0 users" on slide 1 buys credibility for the next 17.</div>
+  </section>
+
+  <!-- 2 ───────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">The problem</p>
+    <h2>A generation is being handed AI with no instruction manual</h2>
+    <div class="two">
+      <div>
+        <p>Children now use systems that make consequential guesses about them — and are told nothing
+          about how those guesses are produced. The result is a specific, observable failure mode:</p>
+        <ul>
+          <li>They treat a confident answer as a correct one</li>
+          <li>They have no vocabulary for "this was trained on data that didn't include you"</li>
+          <li>They cannot tell a demo that works from a system that works</li>
+        </ul>
+        <p>The gap isn't awareness — awareness is saturated. <strong>The gap is mechanism.</strong>
+          Almost nobody under 18 can explain what a model actually does.</p>
+      </div>
+      <div>
+        <div class="callout bad"><p><strong>What schools try, and why it stalls:</strong> a one-off
+          assembly, a coding club that teaches syntax and never reaches learning, or a tool tutorial
+          that expires when the tool updates.</p></div>
+        <div class="callout"><p>All three fail for the same reason — they need a teacher who can
+          answer <em>"but why does it get that wrong?"</em>, and that teacher usually isn't in the
+          building.</p></div>
+      </div>
+    </div>
+    <div class="notes" hidden><b>Don't over-claim the crisis.</b> The defensible claim is the
+      mechanism gap, not "kids are in danger". Stay on what you can evidence.</div>
+  </section>
+
+  <!-- 3 ───────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">Why now</p>
+    <h2>Three things changed at once</h2>
+    <div class="three">
+      <div class="card t" style="--tc:var(--data)"><div class="ic">📈</div>
+        <h3>Demand went vertical</h3><p>AI moved from a specialism to a household word in under three
+        years. Parents and school boards are now actively shopping for this.</p></div>
+      <div class="card t" style="--tc:var(--wrong)"><div class="ic">🧑‍🏫</div>
+        <h3>Supply didn't follow</h3><p>Teacher training pipelines take years. You cannot hire your
+        way out of an AI-literate-teacher shortage this decade.</p></div>
+      <div class="card t" style="--tc:var(--correct)"><div class="ic">💻</div>
+        <h3>The hardware barrier fell</h3><p>Everything through year three now runs on an ordinary
+        laptop, offline, with free libraries. No GPU, no cloud bill, no subscription.</p></div>
+    </div>
+    <div class="callout warn"><p><strong>The window:</strong> demand is here, qualified teachers are
+      not, and the technical prerequisites just collapsed. A product that removes the teacher
+      prerequisite is timely in a way it would not have been five years ago.</p></div>
+    <div class="fill"><span class="tag">fill before presenting</span>
+      <p>Insert your own researched figures here: national AI-in-curriculum mandates, teacher-shortage
+      statistics, and parent-spend data for your target geography. <strong>I have deliberately not
+      invented any.</strong></p></div>
+    <div class="notes" hidden><b>The placeholder is not laziness.</b> Made-up market numbers are the
+      fastest way to lose a room that knows the sector. Source them, cite them, date them.</div>
+  </section>
+
+  <!-- 4 ───────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">The insight</p>
+    <h2>Every competitor optimises the student experience.<br>We optimised the adult's.</h2>
+    <p class="lede">If the adult in the room can deliver a confident, correct lesson with 20 minutes
+      of preparation and no prior knowledge, the addressable supply of teachers goes from
+      <em>"specialists"</em> to <em>"any competent adult"</em>. That is the whole thesis.</p>
+    <figure>
+      <svg viewBox="0 0 820 200" role="img" aria-labelledby="ti4 di4">
+        <title id="ti4">Removing the teacher prerequisite widens who can deliver the course</title>
+        <desc id="di4">A narrow funnel of AI-specialist teachers becomes a wide funnel of any
+        competent adult once the course carries the subject knowledge.</desc>
+        <g font-family="ui-sans-serif,system-ui,sans-serif">
+          <text x="20" y="24" font-size="14" fill="#6b7480">CONVENTIONAL AI CURRICULUM</text>
+          <rect x="20" y="36" width="340" height="52" rx="10" fill="none" stroke="#b3261e" stroke-width="3"/>
+          <text x="190" y="60" text-anchor="middle" font-size="16" fill="#1b1f24">needs a teacher who already</text>
+          <text x="190" y="79" text-anchor="middle" font-size="16" font-weight="700" fill="#b3261e">understands AI</text>
+          <text x="190" y="112" text-anchor="middle" font-size="15" fill="#6b7480">deliverable by: a small minority</text>
+          <text x="460" y="24" font-size="14" fill="#6b7480">AI ACADEMY</text>
+          <rect x="460" y="36" width="340" height="52" rx="10" fill="none" stroke="#1f7a4d" stroke-width="3"/>
+          <text x="630" y="60" text-anchor="middle" font-size="16" fill="#1b1f24">needs an adult who can</text>
+          <text x="630" y="79" text-anchor="middle" font-size="16" font-weight="700" fill="#1f7a4d">read aloud and ask questions</text>
+          <text x="630" y="112" text-anchor="middle" font-size="15" fill="#6b7480">deliverable by: parents, tutors, any teacher</text>
+          <g stroke="#6b7480" stroke-width="2.5" fill="none" stroke-linecap="round">
+            <path d="M372 62 L448 62"/><path d="M441 56 l8 6 -8 6"/>
+          </g>
+          <text x="410" y="150" text-anchor="middle" font-size="14" fill="#7a4fbd" font-weight="700">the product is the teacher training</text>
+          <text x="410" y="176" text-anchor="middle" font-size="15" fill="#495260">Same student outcomes. Vastly larger pool of people who can deliver them.</text>
+        </g>
+      </svg>
+      <figcaption>Figure 1 — The constraint we removed.</figcaption>
+    </figure>
+    <div class="notes" hidden><b>This is the slide to land.</b> Everything else is evidence for it.
+      If they only remember one sentence, make it "the product is the teacher training."</div>
+  </section>
+
+  <!-- 5 ───────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">How it works</p>
+    <h2>Three books a week, and the adult's book comes first</h2>
+    <table>
+      <thead><tr><th>Book</th><th>Who reads it</th><th>Per week</th><th>What makes it unusual</th></tr></thead>
+      <tbody>
+        <tr><td><strong style="color:var(--human)">Teacher guide</strong></td><td>The adult</td>
+          <td>~1,100–1,800 lines</td>
+          <td>A section that <em>teaches the adult the topic first</em>, then a minute-by-minute script
+            with sentences in quotation marks, the questions to ask and what to do when the answer is
+            unexpected, the errors the class will hit, and a full answer key.</td></tr>
+        <tr><td><strong style="color:var(--model)">Student guide</strong></td><td>The child</td>
+          <td>~600–1,200 lines</td>
+          <td>The illustrated chapter. Written so a child who <em>missed the class entirely</em> can
+            still learn the week alone.</td></tr>
+        <tr><td><strong style="color:var(--correct)">Workbook</strong></td><td>The child, with a pencil</td>
+          <td>~700–1,500 lines</td>
+          <td>Homework with a complete answer key. Self-marked by design, opening each week with
+            spaced-repetition recall of the week before.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout good"><p><strong>Adult time: about 1 hour 40 minutes a week</strong>, including
+      preparation. Plus a one-off orientation of roughly an hour before week one — a plain-English
+      crash course in the subject, written for someone who knows none of it.</p></div>
+    <div class="notes" hidden><b>Hand them a printed teacher week here.</b> The script with the actual
+      words in quotation marks does more than any slide.</div>
+  </section>
+
+  <!-- 6 ───────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">What exists today</p>
+    <h2>The asset, counted — not estimated</h2>
+    <div class="stats">
+      <div class="stat"><div class="n">412</div><div class="l">source documents</div></div>
+      <div class="stat"><div class="n">518k</div><div class="l">lines of material</div></div>
+      <div class="stat"><div class="n">1,137</div><div class="l">original SVG figures</div></div>
+      <div class="stat"><div class="n">12</div><div class="l">term exams with keys</div></div>
+      <div class="stat"><div class="n">150</div><div class="l">specified projects</div></div>
+    </div>
+    <table>
+      <thead><tr><th>Year</th><th>Ages</th><th>Stack</th><th>Status</th><th>Scale</th></tr></thead>
+      <tbody>
+        <tr><td><strong style="color:var(--data)">1 · Explorer</strong></td><td>~11</td>
+          <td>No code. Unplugged, browser tools, spreadsheets</td>
+          <td><span class="pill ok">complete</span></td><td>120 files · 450 figures</td></tr>
+        <tr><td><strong style="color:var(--model)">2 · Builder</strong></td><td>~12–13</td>
+          <td>Python, pandas, scikit-learn</td>
+          <td><span class="pill ok">complete</span></td><td>120 files · 358 figures</td></tr>
+        <tr><td><strong style="color:var(--correct)">3 · Engineer</strong></td><td>~14–15</td>
+          <td>Metrics, gradient descent, PyTorch, CNNs — fully offline</td>
+          <td><span class="pill ok">complete</span></td><td>120 files · 329 figures</td></tr>
+        <tr><td><strong>4 · Innovator</strong></td><td>~16–17</td>
+          <td>Transformers, LLMs, RAG, agents</td>
+          <td><span class="pill no">not built</span></td><td>reference modules only</td></tr>
+      </tbody>
+    </table>
+    <p class="small" style="margin-top:.8rem">Each complete year = 36 weekly classes × 3 books, plus
+      4 term exams, 50 specified projects, a worked exemplar project, a capstone, and a glossary.</p>
+    <div class="notes" hidden><b>"Counted, not estimated"</b> is the phrase. Offer the verification
+      script — the willingness to be audited is itself the signal.</div>
+  </section>
+
+  <!-- 7 ───────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">Quality is engineered, not asserted</p>
+    <h2>The curriculum is machine-verified</h2>
+    <p class="lede">Educational content is usually quality-assured by review. This is quality-assured
+      by <em>execution</em> — a genuinely unusual property, and the hardest part to replicate.</p>
+    <div class="cards">
+      <div class="card t" style="--tc:var(--correct)"><div class="ic">▶️</div>
+        <h3>5,171 code blocks executed</h3><p>Every Python block in years 2 and 3 is run. Printed
+        outputs are diffed against real stdout, so a documented result cannot be invented.</p></div>
+      <div class="card t" style="--tc:var(--data)"><div class="ic">🪜</div>
+        <h3>Pacing enforced mechanically</h3><p>Max 4 new code constructs and 1 new mathematical idea
+        per week, logged per week — and scanned for use before the week that teaches it.</p></div>
+      <div class="card t" style="--tc:var(--model)"><div class="ic">🖼️</div>
+        <h3>1,137 figures contract-checked</h3><p>Every figure validated for structure, accessibility
+        attributes, a 12px type floor, and legibility in greyscale for printing.</p></div>
+      <div class="card t" style="--tc:var(--accent)"><div class="ic">🔗</div>
+        <h3>Zero broken references</h3><p>5,001 internal links and 1,747 figure embeds, all resolving.
+        Navigation intact across all nine book-by-year combinations.</p></div>
+    </div>
+    <div class="callout good"><p>This is the moat. A competitor can copy a syllabus in a week. Copying
+      <em>500,000 lines where every number has been executed and every dependency ordered</em> is a
+      multi-year exercise — and it is invisible from the outside, so it is rarely attempted.</p></div>
+    <div class="notes" hidden><b>Verification as differentiation</b> is a genuinely novel pitch in
+      edtech. Most content simply has never been run.</div>
+  </section>
+
+  <!-- 8 ───────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">Why kids need it — the mechanism</p>
+    <h2>What we actually teach, on one slide</h2>
+    <figure>
+      <svg viewBox="0 0 800 176" role="img" aria-labelledby="ti8 di8">
+        <title id="ti8">Learning from examples rather than from a written rule</title>
+        <desc id="di8">Labelled examples feed a model that finds the pattern, which then predicts a
+        label for something it has never seen.</desc>
+        <g font-family="ui-sans-serif,system-ui,sans-serif">
+          <rect x="16" y="40" width="200" height="76" rx="10" fill="none" stroke="#2563a8" stroke-width="3"/>
+          <text x="116" y="28" text-anchor="middle" font-size="13" fill="#6b7480">LABELLED EXAMPLES</text>
+          <text x="116" y="72" text-anchor="middle" font-size="16" fill="#1b1f24">thousands of things</text>
+          <text x="116" y="95" text-anchor="middle" font-size="16" fill="#1b1f24">already sorted</text>
+          <rect x="300" y="40" width="200" height="76" rx="10" fill="none" stroke="#7a4fbd" stroke-width="3"/>
+          <text x="400" y="28" text-anchor="middle" font-size="13" fill="#6b7480">THE MODEL</text>
+          <text x="400" y="72" text-anchor="middle" font-size="16" font-weight="700" fill="#7a4fbd">finds the rule itself</text>
+          <text x="400" y="95" text-anchor="middle" font-size="15" fill="#495260">nobody wrote it down</text>
+          <rect x="584" y="40" width="200" height="76" rx="10" fill="none" stroke="#1f7a4d" stroke-width="3"/>
+          <text x="684" y="28" text-anchor="middle" font-size="13" fill="#6b7480">SOMETHING NEW</text>
+          <text x="684" y="72" text-anchor="middle" font-size="16" fill="#1b1f24">a guess, and how</text>
+          <text x="684" y="95" text-anchor="middle" font-size="16" fill="#1b1f24">confident it is</text>
+          <g stroke="#6b7480" stroke-width="2.5" fill="none" stroke-linecap="round">
+            <path d="M226 78 L290 78"/><path d="M283 72 l8 6 -8 6"/>
+            <path d="M510 78 L574 78"/><path d="M567 72 l8 6 -8 6"/>
+          </g>
+          <text x="400" y="152" text-anchor="middle" font-size="15" fill="#495260">
+            Which means its mistakes come from its examples — and that is the transferable insight.</text>
+        </g>
+      </svg>
+      <figcaption>Figure 2 — Taught in week two of year one, with index cards.</figcaption>
+    </figure>
+    <div class="callout"><p>From that single idea the whole course follows: <strong>which examples?
+      who is missing from them? how would you check?</strong> Those questions outlive any model,
+      framework or vendor — which is why this is literacy rather than tool training.</p></div>
+    <div class="notes" hidden><b>Investors need to feel the content is substantive.</b> Showing the
+      actual mechanism for 40 seconds does that better than listing topics.</div>
+  </section>
+
+  <!-- 9 ───────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">Why kids need it — the outcomes</p>
+    <h2>What a graduate can do that a peer cannot</h2>
+    <div class="cards">
+      <div class="card t" style="--tc:var(--data)"><div class="ic">🧠</div>
+        <h3>Interrogate a claim</h3><p>Asks what a system was trained on before believing its output.
+        Directly transferable to every subject and every news feed.</p></div>
+      <div class="card t" style="--tc:var(--correct)"><div class="ic">📐</div>
+        <h3>Maths with a purpose</h3><p>Averages, percentages, slopes, graphs — encountered as tools
+        they needed, not exercises they were set.</p></div>
+      <div class="card t" style="--tc:var(--model)"><div class="ic">🛠️</div>
+        <h3>A portfolio that exists</h3><p>100+ mini-projects and three defended showcase builds.
+        Artefacts, not a certificate.</p></div>
+      <div class="card t" style="--tc:var(--human)"><div class="ic">🗣️</div>
+        <h3>Explain and defend</h3><p>Every showcase is presented to a room and questioned. The
+        compounding skill.</p></div>
+      <div class="card t" style="--tc:var(--accent)"><div class="ic">🔧</div>
+        <h3>Tolerance for being stuck</h3><p>Errors taught as the normal texture of technical work,
+        with real messages and how to read them.</p></div>
+      <div class="card t" style="--tc:var(--wrong)"><div class="ic">🧾</div>
+        <h3>Graded on honesty</h3><p>Marks for reporting the disappointing result and naming who the
+        data left out. Rare, and it lasts.</p></div>
+    </div>
+    <div class="notes" hidden><b>Resist "future-proof careers".</b> Unevidenced, and it invites the
+      question you can't answer. These six are defensible from the material itself.</div>
+  </section>
+
+  <!-- 10 ──────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">Proof</p>
+    <h2>One week, as evidence of method</h2>
+    <p class="q">Year 3, week 12 — "How steep is the hill right here?"</p>
+    <div class="two">
+      <div>
+        <h3>The hour</h3>
+        <ul>
+          <li>A curve on squared paper; pick one point</li>
+          <li>Measure how far up, how far along, over a tiny step — divide</li>
+          <li>Repeat elsewhere; notice the number changes</li>
+          <li>Notice the sign says which way is downhill</li>
+        </ul>
+        <p class="small">No symbols. No rules to memorise. A division they performed themselves.</p>
+      </div>
+      <div>
+        <div class="callout good"><p>That division <strong>is</strong> how every AI model learns:
+          find which way is downhill, step, repeat. The mechanism arrives before the vocabulary — and
+          arrives as arithmetic a 14-year-old can check.</p></div>
+        <div class="callout"><p>The word <em>gradient</em> appears weeks later, as a label for
+          something already familiar. That sequencing is what the pacing ladder exists to guarantee.</p></div>
+      </div>
+    </div>
+    <div class="notes" hidden><b>This is the "show, don't tell" slide.</b> It demonstrates pedagogical
+      craft, which is what a specialist edtech investor is actually evaluating.</div>
+  </section>
+
+  <!-- 11 ──────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">The product surface</p>
+    <h2>Shipping today: print, or a private site</h2>
+    <div class="two">
+      <div>
+        <h3>Already working</h3>
+        <ul>
+          <li><strong>A static site generator</strong> that renders all three years into one browsable
+            site in about three seconds</li>
+          <li><strong>Two access tiers</strong> — student and teacher — where teacher content is
+            <em>encrypted at build time</em> (AES-256-GCM). The answers are not merely hidden in the
+            interface; they are not present in readable form</li>
+          <li><strong>Runs offline</strong>, bound to localhost. No cloud dependency, no per-seat
+            infrastructure cost</li>
+          <li><strong>Print-first</strong> — every page prints cleanly, answer keys separable</li>
+        </ul>
+      </div>
+      <div>
+        <div class="callout"><p><strong>Why the encryption matters commercially:</strong> the same
+          mechanism that stops a student reading the answer key is the mechanism that would gate paid
+          content. The licensing primitive already exists.</p></div>
+        <div class="callout warn"><p><strong>Not built:</strong> accounts, cohorts, a teacher
+          dashboard, progress reporting to a school, payments. Deliberately — those follow a pilot,
+          not precede it.</p></div>
+      </div>
+    </div>
+    <div class="notes" hidden><b>Frame the missing LMS as sequencing, not absence.</b> Building
+      dashboards before you know how a real cohort behaves is the classic edtech waste.</div>
+  </section>
+
+  <!-- 12 ──────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">Who it reaches</p>
+    <h2>Four routes to market, one asset</h2>
+    <table>
+      <thead><tr><th>Segment</th><th>Why they buy</th><th>Sales motion</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Homeschool &amp; after-school</strong></td>
+          <td>A complete three-year spine, no expertise required</td>
+          <td>Direct to parent, low friction</td>
+          <td>Fastest to test. Lowest price point.</td></tr>
+        <tr><td><strong>Schools &amp; academy trusts</strong></td>
+          <td>Meets an AI-literacy mandate without hiring a specialist</td>
+          <td>Per-site licence; long cycle</td>
+          <td>Highest value, slowest. Needs a pilot and a case study first.</td></tr>
+        <tr><td><strong>Tutoring networks</strong></td>
+          <td>A differentiated three-year product their tutors can deliver on day one</td>
+          <td>B2B2C, revenue share</td>
+          <td>Their tutors are exactly the "competent adult, non-specialist" profile.</td></tr>
+        <tr><td><strong>Teacher CPD</strong></td>
+          <td>The orientation files are already a standalone AI course for adults</td>
+          <td>Sell the training, upsell the curriculum</td>
+          <td>Interesting wedge — the asset does double duty unchanged.</td></tr>
+      </tbody>
+    </table>
+    <div class="fill"><span class="tag">fill before presenting</span>
+      <p>Pricing, unit economics and CAC belong here and <strong>must come from your own research and
+        a pilot</strong> — not from this deck. I have not invented them.</p></div>
+    <div class="notes" hidden><b>If pressed on price, say you don't know yet</b> and that the pilot is
+      designed to find out. Inventing a number here is worse than not having one.</div>
+  </section>
+
+  <!-- 13 ──────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">Competition</p>
+    <h2>Where we sit, honestly</h2>
+    <table>
+      <thead><tr><th>Category</th><th>What they do well</th><th>Where they leave a gap</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Block-coding platforms</strong></td>
+          <td>Superb onboarding, huge reach, genuinely fun</td>
+          <td>Rarely reach <em>how learning works</em>; the child builds with AI without understanding it</td></tr>
+        <tr><td><strong>Online course marketplaces</strong></td>
+          <td>Breadth, low price, instant access</td>
+          <td>Self-paced video suits motivated teenagers; an 11-year-old needs a person and a rhythm</td></tr>
+        <tr><td><strong>School AI-literacy packs</strong></td>
+          <td>Standards-aligned, credible, classroom-ready</td>
+          <td>Usually weeks, not years — and almost all assume a teacher who knows the subject</td></tr>
+        <tr><td><strong>Tutoring &amp; bootcamps</strong></td>
+          <td>Accountability, real human attention</td>
+          <td>Cost scales with expert hours; expert supply is the binding constraint</td></tr>
+      </tbody>
+    </table>
+    <div class="callout good"><p><strong>Our position:</strong> the long, sequenced, teacher-independent
+      option — three years rather than three weeks, and deliverable by a non-specialist. We are not
+      competing on reach or price; we are competing on <em>depth an ordinary adult can actually deliver</em>.</p></div>
+    <div class="notes" hidden><b>Naming no competitor</b> is deliberate — I won't assert specifics
+      about named companies I can't verify. Add named comparisons once you've checked them yourself.</div>
+  </section>
+
+  <!-- 14 ──────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">The honest part</p>
+    <h2>What is missing, and what could go wrong</h2>
+    <div class="two">
+      <div>
+        <h3>Missing today</h3>
+        <ul>
+          <li><strong>No pilot, no users, no revenue.</strong> Zero evidence any child has learned
+            anything from this</li>
+          <li><strong>Year 4 is unbuilt</strong> — and its subject matter (LLMs, agents) needs API
+            access, so it requires a design rethink, not just authoring time</li>
+          <li><strong>No accreditation</strong> or standards mapping</li>
+          <li><strong>No accounts, cohorts, dashboards or payments</strong></li>
+          <li><strong>Single-author content</strong> — no independent pedagogical review, no
+            classroom-tested revision cycle</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Principal risks</h3>
+        <ul>
+          <li><strong>Delivery risk.</strong> "20 minutes of prep" is a design target that has never
+            been tested on a real, tired adult on a Tuesday night</li>
+          <li><strong>Obsolescence.</strong> Years 1–3 teach durable fundamentals, which ages well.
+            Year 4 would age fast and need maintenance</li>
+          <li><strong>Distribution.</strong> School sales cycles are long and this has no reference
+            customer</li>
+          <li><strong>Commoditisation.</strong> A well-funded incumbent could fund three years of
+            authoring — though not cheaply, and not quickly</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout warn"><p>Stating these is not hedging. <strong>The single most valuable next
+      dollar goes to a pilot</strong>, because delivery risk is the one that cannot be reasoned
+      about — only measured.</p></div>
+    <div class="notes" hidden><b>Do not soften this slide.</b> An investor who discovers these
+      themselves discounts everything else you said. One who hears it from you trusts the rest.</div>
+  </section>
+
+  <!-- 15 ──────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">What would de-risk it</p>
+    <h2>The next 90 days</h2>
+    <table>
+      <thead><tr><th>#</th><th>Do this</th><th>Answers</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><strong>Run 8–12 weeks of year one with 5–10 real families</strong>, adults
+          with no AI background</td>
+          <td>Is the prep time real? Does the script survive contact with a live child?</td></tr>
+        <tr><td>2</td><td><strong>Instrument the one number that matters:</strong> weekly completion</td>
+          <td>Does a family still turn up in week eight? Everything else is downstream of that.</td></tr>
+        <tr><td>3</td><td><strong>One classroom pilot</strong> with a non-specialist teacher</td>
+          <td>Does it work with 25 children, not one? Produces the reference case study.</td></tr>
+        <tr><td>4</td><td><strong>Independent pedagogical review</strong> of one term</td>
+          <td>Converts "machine-verified" into "expert-endorsed" — different, and both needed.</td></tr>
+        <tr><td>5</td><td><strong>Decide Year 4's offline design</strong></td>
+          <td>Unblocks the fourth year and the 16–17 age band.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout good"><p>None of this requires new curriculum. <strong>The asset is built;
+      what's unproven is delivery.</strong> That is an unusually cheap thing to find out.</p></div>
+    <div class="notes" hidden><b>This is the strongest slide for a builder-founder.</b> It shows you
+      know the difference between what you've proven and what you've assumed.</div>
+  </section>
+
+  <!-- 16 ──────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">Roadmap</p>
+    <h2>Sequenced by risk, not by ambition</h2>
+    <div class="three">
+      <div class="card t" style="--tc:var(--correct)"><div class="ic">1️⃣</div>
+        <h3>Prove delivery</h3>
+        <p>Family pilot, then one classroom. Weekly completion as the single metric. Revise year one
+        from what breaks.</p></div>
+      <div class="card t" style="--tc:var(--data)"><div class="ic">2️⃣</div>
+        <h3>Make it sellable</h3>
+        <p>Cohort accounts on the existing encryption primitive, a light teacher dashboard, payments.
+        Only what a paying pilot demanded.</p></div>
+      <div class="card t" style="--tc:var(--model)"><div class="ic">3️⃣</div>
+        <h3>Extend and localise</h3>
+        <p>Year 4 once its offline design is settled. Standards mapping per territory. Translation —
+        the artwork is text-light and already vector.</p></div>
+    </div>
+    <div class="callout"><p><strong>Deliberately not on this roadmap:</strong> a mobile app, an
+      AI tutor, video production, or a marketplace. Each would consume the capital that should be
+      buying evidence.</p></div>
+    <div class="notes" hidden><b>The "not doing" list earns as much credit as the doing list.</b>
+      It signals you won't spend their money on surface area.</div>
+  </section>
+
+  <!-- 17 ──────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">The ask</p>
+    <h2>What we're asking for</h2>
+    <div class="fill"><span class="tag">you must complete this slide</span>
+      <p><strong>Amount, instrument, valuation and use of funds are yours to set.</strong> I have not
+        invented a raise size, a valuation, or a runway figure — those depend on your circumstances,
+        geography and appetite, and a fabricated number here would be actively harmful.</p></div>
+    <p class="lede">What the deck supports you asking for is <strong>the cost of proving delivery</strong>:
+      a pilot, a classroom, an independent review. Frame the round against those milestones rather
+      than against a revenue projection you cannot yet justify.</p>
+    <div class="two">
+      <div>
+        <h3>Defensible framing</h3>
+        <ul>
+          <li>"Three years of curriculum are built and verified"</li>
+          <li>"We need to establish that a non-specialist adult can deliver it"</li>
+          <li>"That is a pilot, not a build"</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Avoid claiming</h3>
+        <ul>
+          <li>Market size you haven't sourced</li>
+          <li>Conversion or retention rates — there is no data</li>
+          <li>Learning-outcome gains — no study has been run</li>
+          <li>Career or salary outcomes for graduates</li>
+        </ul>
+      </div>
+    </div>
+    <div class="notes" hidden><b>Milestone-based asks suit pre-traction assets.</b> Revenue
+      projections invite scrutiny you cannot survive at this stage.</div>
+  </section>
+
+  <!-- 18 ──────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">Close</p>
+    <h1>The curriculum problem is solved.<br>The delivery question is open.</h1>
+    <p class="lede">Three complete school years of AI education exist, machine-verified, and designed
+      so the adult delivering it needs no prior knowledge. <strong>What nobody has yet shown is that a
+      real family on a real Tuesday will keep turning up.</strong></p>
+    <p class="lede">That is a cheap question to answer, and it is the next thing we intend to do.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">108</div><div class="l">classes ready</div></div>
+      <div class="stat"><div class="n">5,171</div><div class="l">code blocks executed</div></div>
+      <div class="stat"><div class="n">0</div><div class="l">users — yet</div></div>
+    </div>
+    <div class="callout good"><p><strong>Happy to be audited.</strong> Every number in this deck is
+      counted from the repository and the verification is reproducible on request — including the
+      script that executes all 5,171 code blocks.</p></div>
+    <div class="notes" hidden><b>Ending on the open question, not a projection,</b> is the right note
+      for an asset-stage pitch. Then offer the live walkthrough of a real week.</div>
+  </section>
+
+  </div>
+  <div class="progress"><i id="bar" style="width:5.55%"></i></div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var i=0, notesOn=false;
+  var count=document.getElementById('count'), bar=document.getElementById('bar');
+  function show(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach(function(s,k){s.classList.toggle('on',k===i)});
+    count.textContent=(i+1)+' / '+slides.length;
+    bar.style.width=((i+1)/slides.length*100)+'%';
+    document.getElementById('stage').scrollTop=0;
+    try{location.hash='s'+(i+1)}catch(e){}
+  }
+  document.getElementById('next').onclick=function(){show(i+1)};
+  document.getElementById('prev').onclick=function(){show(i-1)};
+  document.getElementById('theme').onclick=function(){
+    var d=document.documentElement;
+    d.dataset.theme = d.dataset.theme==='dark' ? 'light' : 'dark';
+    try{localStorage.setItem('aia-deck-theme',d.dataset.theme)}catch(e){}
+  };
+  document.getElementById('notes').onclick=function(){
+    notesOn=!notesOn;
+    document.querySelectorAll('.notes').forEach(function(n){n.hidden=!notesOn});
+  };
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();show(i+1)}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(i-1)}
+    else if(e.key==='Home'){show(0)} else if(e.key==='End'){show(slides.length-1)}
+    else if(e.key==='n'||e.key==='N'){document.getElementById('notes').click()}
+    else if(e.key==='t'||e.key==='T'){document.getElementById('theme').click()}
+  });
+  try{
+    var t=localStorage.getItem('aia-deck-theme');
+    document.documentElement.dataset.theme = t || (matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  }catch(e){}
+  var m=(location.hash||'').match(/^#s(\d+)$/);
+  show(m?parseInt(m[1],10)-1:0);
+})();
+</script>
+</body>
+</html>

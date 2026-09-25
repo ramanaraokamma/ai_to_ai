@@ -407,11 +407,18 @@ files per level, covering that level's 9 modules across a full school year.
 
 ### 🎤 Explaining this to someone else
 
-A ready-to-present slide deck for a parent evening lives at
-**[`presentations/for-parents.html`](presentations/for-parents.html)** — 16 slides, opens by
-double-clicking, works offline. It explains how the teaching model works *and* how an AI model
-actually learns, in plain language. Press `N` for speaker notes, `T` for dark mode, and print to PDF
+Two ready-to-present decks live in [`presentations/`](presentations/). Both are single files that
+open by double-clicking and work offline. Press `N` for speaker notes, `T` for dark mode; print to PDF
 for one slide per page with the notes included.
+
+| Deck | For | Covers |
+|---|---|---|
+| [`for-parents.html`](presentations/for-parents.html) | A parent evening · 16 slides | How the teaching model works, how an AI model actually learns, cost and time, what it is *not* |
+| [`for-investors.html`](presentations/for-investors.html) | An investor conversation · 18 slides | The teacher-supply bottleneck, the verified asset, routes to market, risks, the next 90 days |
+
+> **The investor deck contains no invented figures.** Market size, pricing and the raise are left as
+> clearly-marked placeholders for you to fill from your own research — and it states plainly on slide 1
+> that there are no users, no pilot and no revenue.
 
 ### 🖥️ Or run it as a website
 
