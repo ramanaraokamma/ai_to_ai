@@ -405,6 +405,14 @@ files per level, covering that level's 9 modules across a full school year.
 | A learner working alone | [`levels/level-1-explorer/module-01-what-ai-is-and-isnt.md`](levels/level-1-explorer/module-01-what-ai-is-and-isnt.md) — the 🪝 Hook only |
 | Just browsing | [`36-week-course/site/index.html`](levels/level-1-explorer/36-week-course/site/index.html) — double-click it |
 
+### 🎤 Explaining this to someone else
+
+A ready-to-present slide deck for a parent evening lives at
+**[`presentations/for-parents.html`](presentations/for-parents.html)** — 16 slides, opens by
+double-clicking, works offline. It explains how the teaching model works *and* how an AI model
+actually learns, in plain language. Press `N` for speaker notes, `T` for dark mode, and print to PDF
+for one slide per page with the notes included.
+
 ### 🖥️ Or run it as a website
 
 The whole Level 1 course renders as a local site with **two passcodes**:

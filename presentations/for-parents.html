@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Academy — a talk for parents</title>
+<style>
+/* AI Academy — parent evening deck. Self-contained: no CDN, no webfonts, works offline.
+   Palette is lifted from the course's own figures/STYLE.md so the slides and the
+   1,137 drawings in the books read as one thing. */
+:root{
+  --data:#2563a8; --model:#7a4fbd; --human:#c2571a;
+  --correct:#1f7a4d; --wrong:#b3261e; --accent:#b8860b;
+  --ink:#1b1f24; --ink-2:#495260; --muted:#6b7480;
+  --line:#dde2e8; --pane:#fff; --bg:#f6f7f9; --code:#f1f3f6;
+  --font:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+html[data-theme="dark"]{
+  --data:#7fb3f0; --model:#c3a3f0; --human:#f0a875; --correct:#6ed49b; --wrong:#f08a82; --accent:#e8c25e;
+  --ink:#e9edf2; --ink-2:#b6c0cc; --muted:#8b95a3; --line:#2b323b; --pane:#161a1f; --bg:#0f1216; --code:#1c2128;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.6;
+     -webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ── deck chrome ───────────────────────────────────────────── */
+.deck{height:100vh;display:grid;grid-template-rows:auto 1fr auto}
+.bar{display:flex;align-items:center;gap:1rem;padding:.55rem 1.2rem;
+     background:var(--pane);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:.5rem;font-weight:750;letter-spacing:-.02em;font-size:.95rem}
+.logo{display:grid;place-items:center;width:27px;height:27px;border-radius:8px;color:#fff;
+      background:linear-gradient(140deg,var(--data),var(--model));font-size:.7rem;font-weight:800}
+.bar .sp{margin-left:auto;display:flex;gap:.4rem;align-items:center}
+.btn{width:33px;height:33px;border-radius:9px;border:1px solid var(--line);background:var(--pane);
+     color:var(--ink-2);cursor:pointer;font-size:.95rem}
+.btn:hover{color:var(--ink);border-color:var(--ink-2)}
+.count{font-variant-numeric:tabular-nums;font-size:.85rem;color:var(--muted);min-width:4.2rem;text-align:center}
+.progress{height:3px;background:var(--line)}
+.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--data),var(--model));transition:width .25s}
+
+.stage{overflow-y:auto;display:grid;place-items:center;padding:clamp(1rem,3vw,2.4rem)}
+.slide{display:none;width:100%;max-width:60rem}
+.slide.on{display:block;animation:in .28s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+
+/* ── slide type ────────────────────────────────────────────── */
+.eyebrow{font-size:.74rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;
+         color:var(--model);margin:0 0 .5rem}
+h1{font-size:clamp(1.9rem,4.6vw,3.1rem);line-height:1.08;letter-spacing:-.035em;margin:0 0 .7rem}
+h2{font-size:clamp(1.45rem,3.2vw,2.15rem);line-height:1.15;letter-spacing:-.028em;margin:0 0 .8rem}
+h3{font-size:1.05rem;margin:0 0 .35rem;letter-spacing:-.01em}
+.lede{font-size:clamp(1rem,1.9vw,1.2rem);color:var(--ink-2);max-width:46rem;margin:0 0 1.3rem}
+p{margin:0 0 .85rem}
+.small{font-size:.87rem;color:var(--muted)}
+strong{font-weight:700}
+.q{font-size:clamp(1.15rem,2.6vw,1.6rem);font-style:italic;color:var(--ink-2);
+   border-left:4px solid var(--accent);padding-left:1rem;margin:0 0 1.2rem;max-width:44rem}
+
+/* ── building blocks ───────────────────────────────────────── */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:.9rem}
+.card{background:var(--pane);border:1px solid var(--line);border-radius:13px;padding:1.1rem 1.2rem;
+      box-shadow:0 1px 2px rgba(16,24,40,.05),0 6px 18px rgba(16,24,40,.05)}
+.card.t{border-top:4px solid var(--tc,var(--data))}
+.card .ic{font-size:1.5rem;line-height:1;margin-bottom:.4rem}
+.card p{margin:0;font-size:.9rem;color:var(--ink-2)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(8rem,1fr));gap:1rem;margin:1.2rem 0}
+.stat .n{font-size:clamp(1.6rem,3.6vw,2.4rem);font-weight:780;letter-spacing:-.035em;line-height:1}
+.stat .l{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-top:.15rem}
+table{border-collapse:collapse;width:100%;font-size:.92rem;background:var(--pane);
+      border:1px solid var(--line);border-radius:11px;overflow:hidden}
+th,td{padding:.55rem .75rem;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--bg);font-size:.82rem;font-weight:700}
+tbody tr:last-child td{border-bottom:0}
+ul{margin:0 0 .9rem;padding-left:1.35rem}li{margin:.28rem 0}
+.callout{background:var(--pane);border:1px solid var(--line);border-left:4px solid var(--data);
+         border-radius:0 11px 11px 0;padding:.9rem 1.1rem;margin:0 0 1rem}
+.callout.warn{border-left-color:var(--accent)}
+.callout.good{border-left-color:var(--correct)}
+.callout p:last-child{margin:0}
+code{font-family:var(--mono);font-size:.87em;background:var(--code);border:1px solid var(--line);
+     border-radius:5px;padding:.08em .35em}
+figure{margin:1rem 0}figcaption{font-size:.83rem;color:var(--muted);font-style:italic;margin-top:.45rem;text-align:center}
+svg{display:block;max-width:100%;height:auto;margin:0 auto}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem;align-items:start}
+.notes{margin-top:1.1rem;padding-top:.8rem;border-top:1px dashed var(--line);font-size:.85rem;color:var(--muted)}
+.notes b{color:var(--ink-2)}
+.notes[hidden]{display:none}
+
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+
+/* ── print: one slide per page ─────────────────────────────── */
+@media print{
+  @page{size:landscape;margin:12mm}
+  .bar,.progress{display:none!important}
+  .deck{height:auto;display:block}
+  .stage{display:block;padding:0;overflow:visible}
+  .slide{display:block!important;break-after:page;max-width:none;padding-bottom:6mm}
+  .slide:last-child{break-after:auto}
+  .notes{display:block!important}
+  body{background:#fff}
+  .card,table,.callout{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="deck">
+  <header class="bar">
+    <span class="brand"><span class="logo">AI</span> AI Academy</span>
+    <span class="small">A talk for parents</span>
+    <span class="sp">
+      <button class="btn" id="notes" title="Toggle speaker notes (N)" aria-label="Toggle speaker notes">🗒</button>
+      <button class="btn" id="theme" title="Light / dark (T)" aria-label="Toggle dark mode">◐</button>
+      <button class="btn" id="prev" title="Previous (←)" aria-label="Previous slide">‹</button>
+      <span class="count" id="count">1 / 16</span>
+      <button class="btn" id="next" title="Next (→)" aria-label="Next slide">›</button>
+    </span>
+  </header>
+  <div class="stage" id="stage">
+
+  <!-- 1 ─────────────────────────────────────────────────── -->
+  <section class="slide on">
+    <p class="eyebrow">Grade 6 to grade 10 · three school years</p>
+    <h1>Your child is going to grow up<br>alongside AI.</h1>
+    <p class="lede">They can meet it as a consumer who trusts whatever the screen says — or as someone
+       who knows how it works, where it breaks, and when not to believe it.</p>
+    <p class="lede"><strong>This is a plan for the second one.</strong> One class a week. No coding
+       experience needed — from you or from them.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">108</div><div class="l">weekly classes</div></div>
+      <div class="stat"><div class="n">3</div><div class="l">school years</div></div>
+      <div class="stat"><div class="n">1,137</div><div class="l">hand-drawn diagrams</div></div>
+      <div class="stat"><div class="n">£0</div><div class="l">software to buy</div></div>
+    </div>
+    <div class="notes" hidden><b>Opening:</b> don't sell AI. Sell judgement. Most parents in the room
+      already feel behind; the promise is that their child won't.</div>
+  </section>
+
+  <!-- 2 ─────────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">The worry</p>
+    <h2>What parents actually ask</h2>
+    <div class="cards">
+      <div class="card t" style="--tc:var(--wrong)"><div class="ic">🤷</div>
+        <h3>"I don't understand AI myself."</h3><p>You don't need to. Handled on the next slide —
+        it's the single biggest design decision in this whole course.</p></div>
+      <div class="card t" style="--tc:var(--human)"><div class="ic">⌛</div>
+        <h3>"Is this more screen time?"</h3><p>Year 1 is mostly paper, card and conversation.
+        23 of the 36 weeks need no technology at all.</p></div>
+      <div class="card t" style="--tc:var(--accent)"><div class="ic">🎓</div>
+        <h3>"Is my child too young?"</h3><p>It starts at 11 with zero code. The first year has no
+        programming in it whatsoever — that's enforced, not aspirational.</p></div>
+      <div class="card t" style="--tc:var(--model)"><div class="ic">🧾</div>
+        <h3>"Will they just use it to cheat?"</h3><p>Hard to cheat at something when you've built it.
+        Honesty is a graded criterion, not a lecture.</p></div>
+    </div>
+    <div class="notes" hidden><b>Let them raise these first if they will.</b> Answering a question
+      they asked lands far better than pre-empting it.</div>
+  </section>
+
+  <!-- 3 ─────────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">The part that makes it work</p>
+    <h2>The teacher is assumed to know nothing</h2>
+    <p class="lede">Not "a little rusty". <strong>Nothing.</strong> No AI, no Python, and from year
+       three, no calculus either. That assumption shaped every page.</p>
+    <div class="two">
+      <div>
+        <h3>Every single week, the adult gets:</h3>
+        <ul>
+          <li>A section that <strong>teaches you the topic first</strong> — before it asks you to teach it</li>
+          <li>A <strong>minute-by-minute script</strong>, with sentences you can read aloud</li>
+          <li>The exact questions to ask — <em>and what to do when the answer isn't what you hoped</em></li>
+          <li>The errors the class will hit, with the real message and the fix</li>
+          <li>A complete answer key</li>
+        </ul>
+      </div>
+      <div>
+        <div class="callout good"><p><strong>Preparation is 15–20 minutes</strong> the night before.
+          That's the design target, and the guide tells you exactly what to read.</p></div>
+        <div class="callout warn"><p>There is also a one-off orientation — a plain-English crash
+          course in AI for the adult. Roughly an hour, once, before week one.</p></div>
+      </div>
+    </div>
+    <div class="notes" hidden><b>This is the slide that decides the room.</b> If a parent believes
+      this, they'll try it. Offer to show them a real week's teacher file afterwards.</div>
+  </section>
+
+  <!-- 4 ─────────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">How the week runs</p>
+    <h2>Three books, one hour, every week</h2>
+    <figure>
+      <svg viewBox="0 0 840 250" role="img" aria-labelledby="t4 d4">
+        <title id="t4">The weekly rhythm: prepare, teach, read, practise</title>
+        <desc id="d4">Four stages across a week — the adult prepares for 15 to 20 minutes, a 60 to 75
+        minute class, the student reads the chapter for 20 minutes, then an hour of workbook.</desc>
+        <g font-family="ui-sans-serif,system-ui,sans-serif">
+          <!-- stage boxes -->
+          <g>
+            <rect x="20" y="58" width="176" height="96" rx="12" fill="none" stroke="#c2571a" stroke-width="3"/>
+            <text x="108" y="44" text-anchor="middle" font-size="14" fill="#6b7480">NIGHT BEFORE</text>
+            <text x="108" y="94" text-anchor="middle" font-size="19" font-weight="700" fill="#1b1f24">Adult reads</text>
+            <text x="108" y="118" text-anchor="middle" font-size="16" fill="#495260">the lesson script</text>
+            <text x="108" y="140" text-anchor="middle" font-size="15" font-weight="700" fill="#c2571a">15–20 min</text>
+          </g>
+          <g>
+            <rect x="228" y="58" width="176" height="96" rx="12" fill="none" stroke="#2563a8" stroke-width="3"/>
+            <text x="316" y="44" text-anchor="middle" font-size="14" fill="#6b7480">THE CLASS</text>
+            <text x="316" y="94" text-anchor="middle" font-size="19" font-weight="700" fill="#1b1f24">Together</text>
+            <text x="316" y="118" text-anchor="middle" font-size="16" fill="#495260">talk, build, argue</text>
+            <text x="316" y="140" text-anchor="middle" font-size="15" font-weight="700" fill="#2563a8">60–75 min</text>
+          </g>
+          <g>
+            <rect x="436" y="58" width="176" height="96" rx="12" fill="none" stroke="#7a4fbd" stroke-width="3"/>
+            <text x="524" y="44" text-anchor="middle" font-size="14" fill="#6b7480">AFTER CLASS</text>
+            <text x="524" y="94" text-anchor="middle" font-size="19" font-weight="700" fill="#1b1f24">Child reads</text>
+            <text x="524" y="118" text-anchor="middle" font-size="16" fill="#495260">the chapter</text>
+            <text x="524" y="140" text-anchor="middle" font-size="15" font-weight="700" fill="#7a4fbd">20 min</text>
+          </g>
+          <g>
+            <rect x="644" y="58" width="176" height="96" rx="12" fill="none" stroke="#1f7a4d" stroke-width="3"/>
+            <text x="732" y="44" text-anchor="middle" font-size="14" fill="#6b7480">HOMEWORK</text>
+            <text x="732" y="94" text-anchor="middle" font-size="19" font-weight="700" fill="#1b1f24">Workbook</text>
+            <text x="732" y="118" text-anchor="middle" font-size="16" fill="#495260">self-marked</text>
+            <text x="732" y="140" text-anchor="middle" font-size="15" font-weight="700" fill="#1f7a4d">~60 min</text>
+          </g>
+          <!-- arrows -->
+          <g stroke="#6b7480" stroke-width="2.5" fill="none" stroke-linecap="round">
+            <path d="M200 106 L222 106"/><path d="M216 100 l7 6 -7 6"/>
+            <path d="M408 106 L430 106"/><path d="M424 100 l7 6 -7 6"/>
+            <path d="M616 106 L638 106"/><path d="M632 100 l7 6 -7 6"/>
+          </g>
+          <text x="420" y="205" text-anchor="middle" font-size="17" fill="#495260">
+            Total adult time: about <tspan font-weight="700">1 hour 40 minutes</tspan> a week.</text>
+          <text x="420" y="230" text-anchor="middle" font-size="15" fill="#6b7480">
+            The child never sees the teacher book — it holds every answer.</text>
+        </g>
+      </svg>
+      <figcaption>Figure 1 — One class a week, and the homework marks itself.</figcaption>
+    </figure>
+    <div class="notes" hidden><b>Say the total out loud.</b> "An hour and forty minutes of your week"
+      is the number parents are actually deciding about.</div>
+  </section>
+
+  <!-- 5 ─────────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">The subject itself</p>
+    <h2>So — how does an AI model actually work?</h2>
+    <p class="lede">Here is the whole idea, in the form your child meets it in week two. You can
+       explain this at dinner tonight.</p>
+    <div class="callout"><p><strong>Old way:</strong> a person writes the rule.
+      &nbsp;“If the message contains <em>free money</em>, call it spam.”<br>
+      <strong>Machine learning:</strong> nobody writes the rule. You show the machine thousands of
+      messages already labelled <em>spam</em> or <em>not spam</em>, and it <strong>works the rule out
+      itself</strong>.</p></div>
+    <figure>
+      <svg viewBox="0 0 800 226" role="img" aria-labelledby="t5 d5">
+        <title id="t5">Learning from examples: labelled examples go in, a rule comes out</title>
+        <desc id="d5">Labelled examples feed a box that finds the pattern; the box then predicts a
+        label for a message it has never seen.</desc>
+        <g font-family="ui-sans-serif,system-ui,sans-serif">
+          <text x="18" y="26" font-size="14" fill="#6b7480">EXAMPLES YOU ALREADY HAVE</text>
+          <g font-size="15">
+            <rect x="18" y="38" width="196" height="30" rx="7" fill="none" stroke="#dde2e8" stroke-width="2"/>
+            <text x="30" y="58" fill="#1b1f24">“win a free phone”</text>
+            <text x="200" y="58" text-anchor="end" fill="#b3261e" font-weight="700">spam</text>
+            <rect x="18" y="74" width="196" height="30" rx="7" fill="none" stroke="#dde2e8" stroke-width="2"/>
+            <text x="30" y="94" fill="#1b1f24">“practice at six”</text>
+            <text x="200" y="94" text-anchor="end" fill="#1f7a4d" font-weight="700">not spam</text>
+            <rect x="18" y="110" width="196" height="30" rx="7" fill="none" stroke="#dde2e8" stroke-width="2"/>
+            <text x="30" y="130" fill="#1b1f24">“claim your prize”</text>
+            <text x="200" y="130" text-anchor="end" fill="#b3261e" font-weight="700">spam</text>
+            <text x="30" y="163" fill="#6b7480">…thousands more</text>
+          </g>
+          <g stroke="#6b7480" stroke-width="2.5" fill="none" stroke-linecap="round">
+            <path d="M222 90 L282 90"/><path d="M275 84 l8 6 -8 6"/>
+          </g>
+          <g>
+            <rect x="292" y="46" width="188" height="88" rx="12" fill="none" stroke="#7a4fbd" stroke-width="3"/>
+            <text x="386" y="80" text-anchor="middle" font-size="18" font-weight="700" fill="#7a4fbd">THE MODEL</text>
+            <text x="386" y="104" text-anchor="middle" font-size="15" fill="#495260">finds the pattern</text>
+            <text x="386" y="158" text-anchor="middle" font-size="14" fill="#6b7480">no human wrote a rule</text>
+          </g>
+          <g stroke="#6b7480" stroke-width="2.5" fill="none" stroke-linecap="round">
+            <path d="M488 90 L548 90"/><path d="M541 84 l8 6 -8 6"/>
+          </g>
+          <text x="560" y="26" font-size="14" fill="#6b7480">A MESSAGE IT HAS NEVER SEEN</text>
+          <rect x="560" y="38" width="222" height="34" rx="7" fill="none" stroke="#2563a8" stroke-width="2.5"/>
+          <text x="572" y="60" font-size="15" fill="#1b1f24">“free prize, claim now”</text>
+          <g stroke="#6b7480" stroke-width="2.5" fill="none" stroke-linecap="round">
+            <path d="M671 78 L671 100"/><path d="M665 93 l6 8 6 -8"/>
+          </g>
+          <rect x="560" y="106" width="222" height="40" rx="7" fill="none" stroke="#b3261e" stroke-width="3"/>
+          <text x="671" y="132" text-anchor="middle" font-size="17" font-weight="700" fill="#b3261e">probably spam</text>
+          <text x="671" y="170" text-anchor="middle" font-size="14" fill="#6b7480">a guess, with a confidence —</text>
+          <text x="671" y="190" text-anchor="middle" font-size="14" fill="#6b7480">never a certainty</text>
+        </g>
+      </svg>
+      <figcaption>Figure 2 — Examples in, a rule out, then a guess about something new.</figcaption>
+    </figure>
+    <div class="notes" hidden><b>If you only land one thing:</b> nobody wrote the rule. That single
+      sentence is the whole shift, and it's what makes AI feel like magic until you see it.</div>
+  </section>
+
+  <!-- 6 ─────────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">The subject itself</p>
+    <h2>And that's exactly why it gets things wrong</h2>
+    <p class="lede">A model only ever knows the examples it was shown. Your child learns to ask
+      <em>which examples?</em> before trusting any answer — the most transferable habit in the course.</p>
+    <div class="cards">
+      <div class="card t" style="--tc:var(--wrong)"><div class="ic">📸</div>
+        <h3>Shown only sunny photos</h3><p>…it fails in the rain. It never learned what rain looks
+        like, so it guesses confidently and wrongly.</p></div>
+      <div class="card t" style="--tc:var(--accent)"><div class="ic">⚖️</div>
+        <h3>Shown mostly one kind of person</h3><p>…it works worse for everyone else. This is what
+        "bias" means in practice — not malice, just a lopsided pile of examples.</p></div>
+      <div class="card t" style="--tc:var(--data)"><div class="ic">🎯</div>
+        <h3>Tested on what it studied</h3><p>…the score is a lie. So we hide some examples and test
+        on those. Your child does this in year one, with index cards.</p></div>
+    </div>
+    <div class="callout warn"><p><strong>The habit this builds:</strong> "How do you know?" and
+      "Who's missing from the data?" Those questions outlast any particular technology.</p></div>
+    <div class="notes" hidden><b>The sunny-photos example is the keeper.</b> Parents remember it and
+      repeat it, which is how the idea gets into the household.</div>
+  </section>
+
+  <!-- 7 ─────────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">The three years</p>
+    <h2>What changes, year by year</h2>
+    <table>
+      <thead><tr><th>Year</th><th>Age</th><th>What they do</th><th>What they can say at the end</th></tr></thead>
+      <tbody>
+        <tr><td><strong style="color:var(--data)">1 · Explorer</strong></td><td>~11</td>
+          <td><strong>No code at all.</strong> Card games, spreadsheets, and free browser tools that
+            train a model from your webcam.</td>
+          <td>"I trained a model, then I broke it on purpose, and I can tell you why it failed."</td></tr>
+        <tr><td><strong style="color:var(--model)">2 · Builder</strong></td><td>~12–13</td>
+          <td>Their first programming, from <code>print("hello")</code> to real data tables and
+            their first genuine models.</td>
+          <td>"I wrote the program, I cleaned the data, and I can show you the chart that answers my
+            question."</td></tr>
+        <tr><td><strong style="color:var(--correct)">3 · Engineer</strong></td><td>~14–15</td>
+          <td>How learning works underneath — then building a small neural network by hand, and one
+            that reads handwritten digits.</td>
+          <td>"I built a brain out of arithmetic, and I can prove my score is honest."</td></tr>
+      </tbody>
+    </table>
+    <p class="small" style="margin-top:.9rem">Each year is a full school year and ends with a
+      showcase: something built, presented, and defended out loud.</p>
+    <div class="notes" hidden><b>Read the right-hand column aloud.</b> Those are the sentences a
+      parent wants to hear their kid say — that's the product.</div>
+  </section>
+
+  <!-- 8 ─────────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">Why this order</p>
+    <h2>Nothing arrives before it's needed</h2>
+    <p class="lede">The commonest way a young person is lost to this subject is being shown maths or
+      syntax they had no preparation for. So the course counts what it introduces, week by week.</p>
+    <div class="two">
+      <div>
+        <div class="callout"><p><strong>At most 4 new pieces of code a week.</strong> Every command is
+          logged against the week it first appears, and it is never used earlier.</p></div>
+        <div class="callout good"><p><strong>At most one new mathematical idea a week</strong> — and
+          it is always <em>counted on paper first, named second</em>.</p></div>
+      </div>
+      <div>
+        <h3>What that looks like in practice</h3>
+        <p>Year 3 needs the idea of a slope — that's calculus territory. So weeks earlier, your child
+          measures steepness the way you'd measure a hill: <em>how far up, divided by how far along</em>,
+          with actual numbers, on squared paper.</p>
+        <p>By the time the word <strong>gradient</strong> appears, they've already done the thing it
+          names. The word is a label for something familiar, not a new mountain.</p>
+      </div>
+    </div>
+    <div class="callout warn"><p>This is checked mechanically, not just intended — a term used before
+      the week that teaches it is treated as a fault in the course.</p></div>
+    <div class="notes" hidden><b>For the sceptical parent</b> — often one who found maths cold at
+      school. This is the slide that says "it won't happen to your kid the way it happened to you."</div>
+  </section>
+
+  <!-- 9 ─────────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">The benefit, plainly</p>
+    <h2>What your child actually gets</h2>
+    <div class="cards">
+      <div class="card t" style="--tc:var(--data)"><div class="ic">🧠</div>
+        <h3>Scepticism that works</h3><p>They stop asking "what did the AI say" and start asking
+        "what was it trained on, and how would I check?"</p></div>
+      <div class="card t" style="--tc:var(--model)"><div class="ic">🛠️</div>
+        <h3>Things that exist</h3><p>Over 100 mini-projects and 3 showcase builds. A portfolio, not a
+        certificate — work you can look at.</p></div>
+      <div class="card t" style="--tc:var(--correct)"><div class="ic">📐</div>
+        <h3>Maths with a reason</h3><p>Averages, percentages, slopes and graphs stop being exercises
+        and become tools they needed for something.</p></div>
+      <div class="card t" style="--tc:var(--human)"><div class="ic">🗣️</div>
+        <h3>Explaining out loud</h3><p>Every showcase is presented and defended. The skill that
+        compounds for the rest of their life, honestly.</p></div>
+      <div class="card t" style="--tc:var(--accent)"><div class="ic">🔍</div>
+        <h3>Comfort with being stuck</h3><p>Errors are taught as the normal texture of the work, with
+        real error messages and how to read them.</p></div>
+      <div class="card t" style="--tc:var(--wrong)"><div class="ic">🧾</div>
+        <h3>Intellectual honesty</h3><p>They're graded on reporting the disappointing result. That's
+        an unusual thing to be taught, and it lasts.</p></div>
+    </div>
+    <div class="notes" hidden><b>Don't claim careers or salaries.</b> These six are defensible from
+      the material; job promises aren't, and a sharp parent will catch it.</div>
+  </section>
+
+  <!-- 10 ────────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">The unusual bit</p>
+    <h2>They're marked on telling the truth</h2>
+    <p class="lede">Most courses reward the demo that works. This one repeatedly asks your child to
+      try to break their own work and report what they find.</p>
+    <div class="two">
+      <div>
+        <h3>Written into the assignments</h3>
+        <ul>
+          <li>Hide some examples; test on those, not on what you studied</li>
+          <li>Report the score that embarrasses you</li>
+          <li>Say who your data left out</li>
+          <li>Ask who gets hurt when this is wrong</li>
+        </ul>
+      </div>
+      <div>
+        <div class="callout good"><p>In the worked example a student is shown deliberately: their
+          first accuracy was <strong>0.99</strong>. It was wrong — the test had leaked into the
+          practice. The honest number was lower. <strong>Finding that earns the marks.</strong></p></div>
+      </div>
+    </div>
+    <div class="callout"><p>The same thread runs from year one — fairness, privacy, and not
+      over-trusting a confident machine — as concrete scenarios to argue about, never as a lecture.</p></div>
+    <div class="notes" hidden><b>This is the slide that separates it from a coding club.</b> It's
+      also the one teachers tend to like most.</div>
+  </section>
+
+  <!-- 11 ────────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">How you'll know it's working</p>
+    <h2>You don't have to take anyone's word for it</h2>
+    <table>
+      <thead><tr><th>Every…</th><th>You see</th><th>What it tells you</th></tr></thead>
+      <tbody>
+        <tr><td>week</td><td>A completed workbook, self-marked against a full answer key</td>
+          <td>Whether last week actually stuck — each one opens with recall questions on it</td></tr>
+        <tr><td>week</td><td>Their own "I can…" self-check, ticked honestly</td>
+          <td>Where they think they are, in their words</td></tr>
+        <tr><td>9 weeks</td><td>A 45–75 minute written test, with a marking scheme</td>
+          <td>A real score, plus a table saying exactly which week to revisit for each wrong answer</td></tr>
+        <tr><td>year</td><td>A showcase project, marked against a published rubric</td>
+          <td>Whether they can do the thing unaided, and explain it to a stranger</td></tr>
+      </tbody>
+    </table>
+    <div class="callout warn"><p><strong>12 tests across the three years, and the remediation is
+      specific:</strong> not "revise harder" but "lost question 7 → go back to week 12 and redo that
+      activity."</p></div>
+    <div class="notes" hidden><b>Parents fear the invisible year</b> where nothing is handed in.
+      Four different visible artefacts, on four different clocks.</div>
+  </section>
+
+  <!-- 12 ────────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">Practicalities</p>
+    <h2>What it costs and what you need</h2>
+    <div class="two">
+      <div>
+        <h3>Year 1 — nothing to install</h3>
+        <ul>
+          <li>A computer with a browser, and a webcam for two or three weeks</li>
+          <li>Index cards, squared paper, coloured pens, poster paper — <strong>about the price of a pizza</strong></li>
+          <li>Three free websites, no payment ever, no account needed for two of them</li>
+          <li><strong>23 of the 36 weeks need no technology at all</strong></li>
+        </ul>
+        <h3>Years 2 and 3 — free software</h3>
+        <ul>
+          <li>Python and its free libraries. One evening of setup, with a step-by-step guide and a
+            troubleshooting table for the dozen things that usually go wrong</li>
+          <li><strong>No internet needed during lessons</strong>, and nothing to download mid-class</li>
+        </ul>
+      </div>
+      <div>
+        <div class="callout good"><p><strong>No subscription. No licence. No cloud account. No GPU.</strong>
+          Everything runs on an ordinary laptop.</p></div>
+        <div class="callout"><p><strong>Privacy:</strong> the model-training tool runs inside the
+          browser — pictures needn't be uploaded anywhere. Your child never has to give a site a real
+          name, face or email. The rules for this are written down for the adult before week one.</p></div>
+        <div class="callout warn"><p><strong>Your time:</strong> about 1 hour 40 minutes a week,
+          including preparation. Plus one hour, once, to read the orientation.</p></div>
+      </div>
+    </div>
+    <div class="notes" hidden><b>Be concrete about money.</b> "A pizza" is memorable and true for
+      year one.</div>
+  </section>
+
+  <!-- 13 ────────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">Honesty</p>
+    <h2>What this is <em>not</em></h2>
+    <div class="cards">
+      <div class="card"><div class="ic">🚫</div><h3>Not a shortcut into a job</h3>
+        <p>It's an education in how a technology works. Nobody here is promising your 14-year-old a
+        salary.</p></div>
+      <div class="card"><div class="ic">🚫</div><h3>Not a certificate</h3>
+        <p>There's no accreditation. What they have at the end is work, and the ability to explain it.</p></div>
+      <div class="card"><div class="ic">🚫</div><h3>Not self-running</h3>
+        <p>An adult has to show up for an hour a week. The guide does the preparation, not the
+        turning up.</p></div>
+      <div class="card"><div class="ic">🚫</div><h3>Not about ChatGPT</h3>
+        <p>Chatbots appear, but the subject is the machinery underneath. Year 4 — the one that builds
+        toward today's large systems — <strong>isn't written yet</strong>.</p></div>
+    </div>
+    <div class="callout warn"><p>Three of the four years are complete. <strong>Year 4 is planned but
+      not built.</strong> You should know that before you start, not in two years' time.</p></div>
+    <div class="notes" hidden><b>Say the year-4 gap out loud.</b> Volunteering the limitation is what
+      makes the rest of the deck believable.</div>
+  </section>
+
+  <!-- 14 ────────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">A real week</p>
+    <h2>Week 12, year three, as an example</h2>
+    <p class="q">"How steep is the hill right here?"</p>
+    <div class="two">
+      <div>
+        <h3>What happens in the hour</h3>
+        <ul>
+          <li>They draw a curve and pick one point on it</li>
+          <li>They measure how far up and how far along, over a tiny step — and divide</li>
+          <li>They do it again at a different point and notice the number changes</li>
+          <li>They realise the sign tells them <em>which way is downhill</em></li>
+        </ul>
+        <p class="small">No symbols. No rules to memorise. A division, on paper, that they did
+          themselves.</p>
+      </div>
+      <div>
+        <div class="callout good"><p>That division <strong>is</strong> how every AI model in the world
+          learns: work out which way is downhill, take a small step, repeat a few thousand times.</p>
+          <p>Your child meets the mechanism before they meet the vocabulary — and they meet it as
+          arithmetic they can check.</p></div>
+      </div>
+    </div>
+    <div class="notes" hidden><b>Pick this week deliberately.</b> It's the moment the course either
+      works or loses them, and it shows the method better than any abstract claim.</div>
+  </section>
+
+  <!-- 15 ────────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">Questions you might still have</p>
+    <h2>Straight answers</h2>
+    <table>
+      <tbody>
+        <tr><td style="width:42%"><strong>"What if we fall behind?"</strong></td>
+          <td>Nothing breaks. There are no deadlines, and no week depends on a week after it. Restart
+            the same week from the beginning.</td></tr>
+        <tr><td><strong>"My child is older than 11."</strong></td>
+          <td>Start further in. Each year opens with a check of what you'd need already; if they can
+            do it, skip ahead.</td></tr>
+        <tr><td><strong>"Can two or three children do it together?"</strong></td>
+          <td>Yes. Every activity carries a note for small groups. Above eight, split into pairs and
+            double the activity time.</td></tr>
+        <tr><td><strong>"What if I can't answer their question?"</strong></td>
+          <td>Each week lists the questions students actually ask, with honest answers — including
+            ones where the honest answer is "nobody knows for sure."</td></tr>
+        <tr><td><strong>"Do they need to be good at maths?"</strong></td>
+          <td>They need fractions, percentages and reading a graph. Everything beyond that is built
+            from scratch when it's needed.</td></tr>
+      </tbody>
+    </table>
+    <div class="notes" hidden><b>Keep a blank slide after this</b> for the question you didn't
+      anticipate. There's always one.</div>
+  </section>
+
+  <!-- 16 ────────────────────────────────────────────────── -->
+  <section class="slide">
+    <p class="eyebrow">If you want to start</p>
+    <h1>Day one is thirty minutes.</h1>
+    <div class="two">
+      <div>
+        <h3>You, once</h3>
+        <ul>
+          <li>Read the orientation — about an hour, and you'll know more about AI than most adults</li>
+          <li>Read week one's script — 15 minutes</li>
+        </ul>
+        <h3>Together, this week</h3>
+        <ul>
+          <li>Put one hour a week in a real calendar and name it</li>
+          <li>Bookmark three free sites; buy the index cards</li>
+          <li>Get a paper notebook and write the date on page one</li>
+        </ul>
+      </div>
+      <div>
+        <div class="callout good"><p><strong>Week one's question:</strong> <em>"Is it smart, or is it
+          just following orders?"</em></p>
+          <p>Your child spends a week hunting fifteen examples of AI in their own day and arguing
+          about which is which. No screens required.</p></div>
+        <div class="callout"><p>The single most useful thing you can do is pick the time and put it in
+          the calendar. People who choose a slot finish. People who wait to find time don't.</p></div>
+      </div>
+    </div>
+    <p class="lede" style="margin-top:1.2rem"><strong>Questions?</strong> And if you'd like to see a
+      real week — the script, the chapter, the workbook — I'll show you one now.</p>
+    <div class="notes" hidden><b>Close by opening a real file.</b> Nothing persuades like the actual
+      minute-by-minute script with the words in quotation marks.</div>
+  </section>
+
+  </div>
+  <div class="progress"><i id="bar" style="width:6.25%"></i></div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var i=0, notesOn=false;
+  var count=document.getElementById('count'), bar=document.getElementById('bar');
+
+  function show(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach(function(s,k){s.classList.toggle('on',k===i)});
+    count.textContent=(i+1)+' / '+slides.length;
+    bar.style.width=((i+1)/slides.length*100)+'%';
+    document.getElementById('stage').scrollTop=0;
+    try{location.hash='s'+(i+1)}catch(e){}
+  }
+  document.getElementById('next').onclick=function(){show(i+1)};
+  document.getElementById('prev').onclick=function(){show(i-1)};
+  document.getElementById('theme').onclick=function(){
+    var d=document.documentElement;
+    d.dataset.theme = d.dataset.theme==='dark' ? 'light' : 'dark';
+    try{localStorage.setItem('aia-deck-theme',d.dataset.theme)}catch(e){}
+  };
+  document.getElementById('notes').onclick=function(){
+    notesOn=!notesOn;
+    document.querySelectorAll('.notes').forEach(function(n){n.hidden=!notesOn});
+  };
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();show(i+1)}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(i-1)}
+    else if(e.key==='Home'){show(0)} else if(e.key==='End'){show(slides.length-1)}
+    else if(e.key==='n'||e.key==='N'){document.getElementById('notes').click()}
+    else if(e.key==='t'||e.key==='T'){document.getElementById('theme').click()}
+  });
+  try{
+    var t=localStorage.getItem('aia-deck-theme');
+    document.documentElement.dataset.theme = t || (matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  }catch(e){}
+  var m=(location.hash||'').match(/^#s(\d+)$/);
+  show(m?parseInt(m[1],10)-1:0);
+})();
+</script>
+</body>
+</html>

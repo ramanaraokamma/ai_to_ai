@@ -45,6 +45,14 @@ cd levels/level-3-engineer/36-week-course/figures/_generator && python3 _gen_aud
 There is no lint or test command. Verification here means: **execute the Python in the markdown,
 validate the SVGs, and crawl the links.** See "Verifying content".
 
+## Other artefacts
+
+- **`presentations/for-parents.html`** — a 16-slide parent-evening deck, self-contained (no CDN, no
+  webfonts), with speaker notes (`N`), dark mode (`T`), keyboard navigation and a print stylesheet
+  that gives one slide per page. Its palette is copied from the course `figures/STYLE.md` so slides
+  and figures match. **Every number in it is cross-checked against the repo** — if you change figure
+  counts, week counts or test counts, re-check the deck's stats slide.
+
 ## The website generator (`site-app/`)
 
 `site-app/build.py` renders every complete level into one static site with **passcode-gated two-tier
