@@ -419,6 +419,29 @@ Training has a bit of randomness, so the numbers wobble a point or two and it is
 
 ---
 
+## 🔁 Go and Look at Your Slip
+
+Before you read anything else: find the slip you initialled and dated at the start of this chapter.
+The one that answers **"does your model have a snow?"**
+
+Read your own answer. Then say which of these three happened:
+
+| What you wrote | What you found | What that means |
+|---|---|---|
+| **No** | …and there was no snow | You were right — and now you can *prove* it, which you couldn't this morning |
+| **No** | …and there was a snow | **The most valuable outcome of the week.** Your model was quietly relying on something you had not noticed. You found it before it embarrassed you |
+| **Yes** | …and you found it | Good instincts. Now name the exact thing, in one sentence: *"my model is using ___ instead of ___"* |
+
+Cross out nothing. If you were wrong, write **"wrong — it was \_\_\_"** underneath and leave both
+visible. That slip is now the most honest page in your notebook.
+
+> **🔑 And remember why the researchers' husky model was so dangerous.** It was not dangerous because
+> it was bad. It was dangerous because it was **good** — right most of the time, on new photos, in
+> front of experts. The snow only showed up when somebody deliberately went looking for it. Nobody
+> finds their model's snow by accident, and nobody finds it by trusting the accuracy number.
+
+---
+
 ## 🔑 Remember This
 
 - A **controlled experiment** changes exactly one thing and tapes everything else down, so anything that changes *must* have been caused by that one thing.

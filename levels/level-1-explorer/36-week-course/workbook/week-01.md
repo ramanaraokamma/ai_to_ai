@@ -430,6 +430,7 @@ if-then rule with a star.
 | Decide if a job needs judgement by asking "could two sensible people disagree?" | ☐ | ☐ | ☐ |
 | Take a rulebook, run one case through it, and name the rule that fired | ☐ | ☐ | ☐ |
 | Explain why the **order** of the rules changes the answer | ☐ | ☐ | ☐ |
+| Say which of AlphaGo and the thermostat is doing the interesting thing — **and why** | ☐ | ☐ | ☐ |
 | Use "not sure" properly — and say what fact would settle it | ☐ | ☐ | ☐ |
 
 One thing I'd like explained again:

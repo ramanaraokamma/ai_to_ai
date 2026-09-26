@@ -598,6 +598,37 @@ This one is exactly backwards, and you have already seen the proof: the overall 
 
 ---
 
+## 🔁 Back to the Mask
+
+Remember how this chapter opened. A researcher called **Joy Buolamwini** sat in front of a camera
+that would not see her, picked up a white plastic Halloween mask, and held it over her own face.
+Face found, instantly.
+
+Now look at what you did this week and notice that **you did the same thing she did.**
+
+| Joy Buolamwini, 2017 | You, this week |
+|---|---|
+| Noticed the software failed on *her* and not on her lab-mates | Noticed your model was worse on one group than another |
+| Did not shrug, and did not just complain | Did not shrug either |
+| **Built a test set** — 1,270 photos, sorted into groups | **Built a test set** — your photos, sorted into groups |
+| Reported the result split by group, not as one number | Split your accuracy by group, not as one number |
+| Found 0.8% wrong for lighter-skinned men, **34.7%** for darker-skinned women | Found your own gap, in percentage points |
+
+That is the whole method, and it is not complicated. **Count who is in your data. Split your results
+by group. Report the gap.** You now know how to do the thing that made three companies change their
+products.
+
+> **🔑 And here is the sentence to keep.** When she found that gap, nothing inside those products was
+> broken. There was no bug. Every one of them had a headline accuracy number that looked great — and
+> that single number was **hiding** the 34.7%. A model does not need a fault to fail somebody. It only
+> needs a lopsided pile of examples and one number that nobody split up.
+
+One more thing worth knowing. Those results were published, the companies were told, and within
+months the worst gaps in some of those products had shrunk by a lot. **The measurement is what forced
+the fix.** Nobody argued their way to it and nobody was shamed into it — somebody counted.
+
+---
+
 ## 🔑 Remember This
 
 - **Bias is a count, not an attitude.** A model has no opinions. It gets good at what it saw a lot of and stays bad at what it barely saw.
@@ -607,6 +638,7 @@ This one is exactly backwards, and you have already seen the proof: the overall 
 - **Every gap has a count behind it.** The finished sentence is always *"[group] scored [x]% because only [n] of the [total] training examples were [that group]."*
 - **Choose the groups before you look at the results, and write your guess down first.** A guess made afterwards is worth nothing. A wrong guess made beforehand is worth a lot.
 - **Twelve photos per group can spot a big gap, not a small one.** Fifty points is real. Three points is probably luck — go and take more photos before you claim it.
+- **The measurement is what forces the fix.** Joy Buolamwini did not win that argument by arguing. She counted 1,270 photos, split the result by group, and published the gap — 0.8% against 34.7%. That is the move, and you now know how to make it.
 
 ---
 

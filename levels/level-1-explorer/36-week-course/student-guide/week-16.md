@@ -510,6 +510,38 @@ It's a race for first. Only second place can threaten the winner. The bar in las
 
 ---
 
+## 🔁 Back to Your Line
+
+Find the line you wrote at the start of this chapter — the time you were **completely sure** about
+something and turned out to be wrong. The test answer, the person's name, the cupboard the cereal was
+in.
+
+Read it again, and now answer one question about it:
+
+> **When you were wrong — did it feel any different from the times you were right?**
+
+It didn't. That is the entire lesson, and you already had the evidence in your own handwriting before
+I explained anything.
+
+Your brain gave that wrong belief a **high confidence score**. It did not put a wobble in your voice,
+or a question mark in your head, or a little warning that this one was different. It felt exactly as
+solid as the things you were right about. **Confidence and correctness are separate.** You have known
+that about yourself for years; this week you learned that machines have the same problem, and that on
+a machine you can at least *read the number*.
+
+| | You, about the cereal cupboard | A model, about a photo |
+|---|---|---|
+| How sure did it feel/score? | Completely | 94% |
+| Was it right? | No | Maybe not |
+| Was there a warning? | None | **None — the number is not a warning** |
+
+> **🔑 So the number on the screen is not a promise.** It is the machine telling you *which box it
+> prefers*, in the same voice it uses when it is right and when it is wrong. That is why you learned
+> the **margin** today, and why a confidence policy needs **two** numbers — because one confident
+> number, on its own, tells you almost nothing.
+
+---
+
 ## 🔑 Remember This
 
 - A model has **100 points of belief** and must give every point to one of the boxes you gave it. The scores always add up to 100.
@@ -518,6 +550,7 @@ It's a race for first. Only second place can threaten the winner. The bar in las
 - A model shown something that is in **none** of its classes will still answer, often with a big margin. That is not a fault — it has no way to say "none of these" unless you give it an **`other` class**.
 - **Class balance** decides what the model bothers to learn. 200 / 200 / 8 scores 98.0% and is 0% right on combs.
 - A **confidence policy** needs **two** numbers (a top-score threshold and a margin threshold) and you must be able to defend both with a real example.
+- **You already knew this about yourself.** The time you were certain and wrong felt exactly like the times you were certain and right. A model's number works the same way — it is a preference, not a promise.
 
 ---
 

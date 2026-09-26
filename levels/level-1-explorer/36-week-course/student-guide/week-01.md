@@ -53,6 +53,13 @@ One of those two things is doing something genuinely interesting, and one of the
 orders. By the end of this chapter you will be able to say which — and prove it. You are going to
 build a test. It takes about thirty seconds to run and it works on anything.
 
+> **✏️ Commit before you read on.** Write these two words down, right now, before you turn the page —
+> whichever you think is doing the more interesting thing: **ALPHAGO** or **THERMOSTAT**. Don't
+> hedge. Don't write both.
+>
+> You will check your answer at the end of this chapter, and being wrong now is genuinely more useful
+> than being right. A guess you committed to is much harder to forget than an answer you were handed.
+
 ---
 
 ## 🧠 The Big Idea
@@ -156,12 +163,28 @@ Judgement is not an on/off switch. It is a slider. Some jobs sit right in the mi
 
 Two of those six could be AI jobs. The other four never will be, no matter how modern the box looks.
 
+> **✅ Stop. Cover this page with your hand.**
+>
+> Say out loud, from memory: **the one question that tests for judgement.** Then say why *"find the
+> tiny bird in this forest photo"* fails that test even though it is difficult.
+>
+> If either one wouldn't come, read section 2 again before you go on. This is the most useful thirty
+> seconds in the chapter — not because the test is hard, but because saying it out loud now is worth
+> more than reading it three more times.
+
 ---
 
 ### 3. Way one: a human writes every single step
 
-So how do you actually get a machine to make a decision? There are exactly **two** ways. This week
-we do the first one. Next week we do the second one, and the second one is genuinely strange.
+So how do you actually get a machine to make a decision? For everything you will meet this year there
+are **two** ways. This week we do the first one. Next week we do the second one, and the second one is
+genuinely strange.
+
+> **⚠️ Watch out — this is a simplification, and you should know that it is one.** Real engineers have
+> a few more tricks than two, and some systems mix them together. But almost everything you will meet
+> in the wild is one of these two, or a blend of them, so two is the right number of boxes to think in
+> for now. When you meet the third thing, you will be ready for it. *This course will always tell you
+> when it is simplifying.*
 
 **Way one:** a person sits down, thinks hard, and writes every step down in advance, in the form
 **if this, then that.** The machine just follows the list. Forever. Exactly.
@@ -257,6 +280,48 @@ PRICE LIST
 
 A person chose that order. If they had put Rule 2 lower down, the machine would give a different
 answer to the same customer — forever — and it would never notice.
+
+---
+
+### 5. Back to the beginning: AlphaGo or the thermostat?
+
+Go and find the word you wrote down at the start of this chapter. Read it. Now let's settle it
+properly, using nothing but the test you just learned.
+
+**Step one — does the job need judgement?**
+
+| The job | Could two sensible people disagree? | Judgement? |
+|---|---|---|
+| Thermostat: *is 19 lower than 20?* | No. Never. Not once in ten years. | ❌ |
+| AlphaGo: *what is the best move here?* | Yes — the best players in the world argued about its moves for weeks | ✅ |
+
+So the thermostat's job is not even the *kind* of job AI is for. That settles half of it.
+
+**Step two — who wrote the steps?**
+
+The thermostat is four if-then boxes. A person wrote all four, in about ten minutes, and you have
+seen the whole flowchart. Nothing is hidden.
+
+Now try to do that for AlphaGo. Sit down and write the if-then rules for *"what is the best move on
+this Go board?"* — for a game with more possible positions than there are atoms in everything.
+
+You can't. Nobody can. **And that is the actual answer to the question in the hook.**
+
+> **🔑 So here it is:** the thermostat is **just following orders** — a person's orders, written in
+> advance, and you can read every one of them. AlphaGo is doing the genuinely interesting thing,
+> **because nobody wrote its rules.** It worked them out from examples. That is the second way, and it
+> is next week.
+
+**Now check your word.** If you wrote ALPHAGO — good instinct, and now you can say *why*, which is
+the part that counts. If you wrote THERMOSTAT — you were in excellent company, because "it decides
+without anyone there" is the single most reasonable wrong answer in this whole subject. You have just
+learned the difference between *nobody is there now* and *nobody ever wrote it down*. That
+distinction is worth more than getting it right first time.
+
+And notice what the newspapers got wrong. They said *machines are thinking now*. What actually
+happened was narrower and stranger: one machine got extraordinarily good at exactly one job, by
+studying examples, and stayed completely blank one step outside it. **Narrow, not thinking.** Hold on
+to that phrase — it is the honest version of almost every AI headline you will ever read.
 
 ---
 
@@ -551,6 +616,15 @@ That last pair should be bugging you. Good. That is the sound of Week 2 arriving
 
 ## 🔑 Remember This
 
+> **✅ Before you read the list — close the book and try to say it.**
+>
+> Four things, out loud, from memory: (1) what AI is, in one sentence with no banned words; (2) the
+> one test question; (3) what a rule-based system is; (4) the way rulebooks fail. Then open up and
+> check.
+>
+> You will get two or three of the four. That is normal and it is not a problem — the gap you just
+> found is exactly what your workbook is for, and now you know which bit to look at first.
+
 - **Artificial intelligence** is a machine doing a job that used to need a person's **judgement**.
   No *smart*, no *brain*, no *magic*.
 - **The test is one question:** could two sensible people disagree about the answer? Yes → judgement.
@@ -561,6 +635,8 @@ That last pair should be bugging you. Good. That is the sound of Week 2 arriving
   predictable, explainable, and only knows what somebody put in it.
 - **Rulebooks fail quietly.** When a case arrives that nobody imagined, no rule fires — or the wrong
   rule fires first — and the machine reports a confident, useless answer.
+- **Narrow, not thinking.** AlphaGo beat the best Go player alive and could not play checkers. When a
+  headline says a machine "thinks", ask what the *one* job is, and what happens one step outside it.
 - **"Not sure, and here's what I'd need to look up"** is a real answer and a good one. Use it.
 
 ---

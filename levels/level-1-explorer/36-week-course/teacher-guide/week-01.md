@@ -8,7 +8,7 @@
 
 | | |
 |---|---|
-| **Duration** | 70 minutes (60-minute and 75-minute versions given in §The Lesson) |
+| **Duration** | 73 minutes (60-minute and 75-minute versions given in §The Lesson) |
 | **Type** | Teach — first lesson of the year, first lesson of Term 1 |
 | **Big idea** | AI is a machine doing a job that used to need a person's judgement — not a brain, not magic. |
 | **New vocabulary** | artificial intelligence · judgement · rule-based system · if-then rule |
@@ -36,9 +36,15 @@ By the end of this lesson the student can:
    case through it in order, and correctly predict what the machine will output.
 4. **Sort ten everyday systems** into *a human wrote the steps* and *not sure yet*, and say out loud
    what would settle each uncertain case.
+5. **Settle the opening question with evidence** — say which of AlphaGo and the thermostat is doing
+   the interesting thing, and justify it with *both* halves: whose job needs judgement, and who wrote
+   the rules.
 
 You will know they hit objective 3 if they can point at the exact numbered rule that produced the
 answer. That is the observable behaviour to look for.
+
+You will know they hit objective 5 if the justification contains *nobody could write the rules* in
+some form. "It's cleverer" does not count — send it back once.
 
 ---
 
@@ -178,6 +184,39 @@ in a basement.
 > the correct teacher response is: *"Nobody did. And that is so strange that it gets a whole lesson
 > to itself. Write the question down; we open with it next week."* Then actually do that.
 
+### Two questions you may get about "there are two ways"
+
+The student guide now says plainly that "two ways" is a simplification, so a sharp learner may push.
+Both of these have short honest answers, and you do **not** need to go further than these sentences.
+
+| They ask | Say |
+|---|---|
+| *"What's the third way then?"* | *"Some machines try thousands of options very fast and pick the best one — that's how chess computers work. It's a bit of both: a person wrote the rule for what 'best' means, and the machine does the searching. We'll meet it properly later."* |
+| *"So which is a chess computer?"* | *"Honestly, a blend — and that's a great answer, not a cop-out. Put it in the not-sure bin and say why. That's exactly the skill we're practising."* |
+
+> **💡 Try this:** if you don't know, say *"I don't know — let's write it on the Questions We Owe page
+> and I'll look it up."* Doing that once in week one gives you permission for the whole year, and it
+> models the behaviour you want from them. Pretending is the only wrong move available to you here.
+
+### Close the loop you opened — do not skip this
+
+The chapter opens with AlphaGo versus the thermostat, asks the learner to **write down one of the two
+words**, and promises an answer. **Section 5 of the student guide delivers it, and you must deliver it
+in the Wrap.** An opened loop that never closes teaches the learner that the questions in this course
+are decoration.
+
+The answer, in the order to give it: the thermostat's job needs **no judgement** (is 19 lower than
+20 — nobody ever disagreed), and a person wrote all four of its boxes. AlphaGo's job needs judgement
+(the best players in the world argued about its moves), and **nobody could write those rules** — which
+is why it had to work them out from examples. Then the honest correction to the headline: *narrow, not
+thinking.* One machine, extraordinarily good at one job, blank one step outside it.
+
+> **🧑‍🏫 If a student wrote THERMOSTAT:** say so warmly and specifically — *"that is the single most
+> reasonable wrong answer in this whole subject, because 'it decides with nobody there' is a genuinely
+> good observation."* Then give them the distinction they have just earned: **nobody is there now** is
+> not the same as **nobody ever wrote it down**. A learner who gets that sentence from their own wrong
+> answer remembers it far longer than one who was simply told.
+
 ### The one thing to be relaxed about
 
 Some of the twelve cards in today's activity have no clean answer, on purpose. Autocorrect is
@@ -238,8 +277,16 @@ settle each, that is a very good lesson.
 | 0:08–0:26 | 18 | 🧠 **Concept** | The definition · the judgement test · rule-based systems · the thermostat flowchart on the board |
 | 0:26–0:40 | 14 | 🔍 **Worked Example Together** | The vending-machine rulebook. You trace one request out loud; the student traces two. |
 | 0:40–1:00 | 20 | 🎲 **Activity** | The Thermostat Trial: 12-card sort, then the student runs the remaining six requests plus the one that breaks it. |
-| 1:00–1:10 | 10 | 🔑 **Wrap & Assign** | One-sentence definition in their words · vocabulary into the notebook · homework, step one only |
-| | **70** | | |
+| 1:00–1:13 | 13 | 🔑 **Wrap & Assign** | One-sentence definition in their words · vocabulary into the notebook · **unfold the AlphaGo/thermostat word and settle it** · homework, step one only |
+| | **73** | | |
+
+> **⏱️ This runs 73 minutes, not 70** — the extra three are the closing moment where the learner
+> unfolds their own guess and finds out. That moment is the lesson, so it is the last thing to cut.
+>
+> **If you are genuinely short of time:** drop the third vending request in Segment 3 (saves ~3 min)
+> or run the card sort with 8 cards instead of 12 (saves ~4 min). **Do not** shorten the Wrap. A
+> lesson that opens a question and runs out of time before answering it teaches the learner that the
+> questions here are decoration.
 
 **For 60 minutes:** cut the worked example to 8 minutes (you trace request 5, student traces one not
 two) and cut the card sort to 12 minutes by using only 8 of the 12 cards — drop calculator, alarm
@@ -282,6 +329,19 @@ Pause. Let that sit for a beat. Then pick up the thermostat.
 **Ask this:**
 
 > **"Which one do you think is doing something interesting — the Go program or the thermostat?"**
+
+**Do this first — before anyone answers out loud.** Hand out a scrap of paper or point at the top of
+their notebook page and say:
+
+> "Don't tell me yet. **Write one word: ALPHAGO or THERMOSTAT.** No hedging, no 'both'. Then fold it
+> over. We come back to it at the end of the lesson."
+
+This takes fifteen seconds and it is worth much more than it costs. A learner who has *committed in
+writing* is measurably more likely to remember the correction — and a spoken guess is easy to quietly
+revise once they hear which way the room is going. Written, folded, theirs. The student guide asks
+them to do the same thing, so the habit is reinforced at home.
+
+Then take answers out loud:
 
 - **Hoping for:** anything with a reason attached. Most students say the Go program. Good.
 - **If they say "the thermostat, because it works without a person there":** excellent — that is a
@@ -383,9 +443,13 @@ left end and "all judgement" at the right end.
 
 **Say this:**
 
-> "Okay. Now: how do you actually get a machine to make a decision? There are exactly two ways, and
-> today we're only doing the first one. Next week we do the second one, and the second one is
-> genuinely weird, so I'm saving it.
+> "Okay. Now: how do you actually get a machine to make a decision? For everything we'll meet this
+> year there are two ways, and today we're only doing the first one. Next week we do the second one,
+> and the second one is genuinely weird, so I'm saving it.
+>
+> And I'll be straight with you — two is a simplification. Real engineers have a few more tricks than
+> that, and some systems mix them. But nearly everything you'll meet is one of these two or a blend,
+> so two is the right number of boxes for now. **I'll always tell you when I'm simplifying.**
 >
 > Way one: a person sits down, thinks hard, and writes every single step down in advance. **If this,
 > then that.** The machine just follows the list. Forever. Exactly.
@@ -566,7 +630,7 @@ Then say nothing. Let them look for it. The silence is the lesson.
 
 ---
 
-### 🔑 Segment 5 — Wrap & Assign (1:00–1:10)
+### 🔑 Segment 5 — Wrap & Assign (1:00–1:13)
 
 **Do this:** Put the pencil down. Everything away except the notebook.
 
@@ -592,6 +656,34 @@ yours. Give them three minutes and do not hover.
 | **judgement** | a choice where two sensible people could disagree |
 | **rule-based system** | a system where a human wrote the if-then steps by hand, in advance |
 | **if-then rule** | one instruction shaped like "if this is true, do that" |
+
+**Do this — unfold the paper. This is the moment the lesson has been building to, so give it two
+minutes, not twenty seconds.**
+
+> "Right. Unfold the word you wrote at the start. Nobody has to say what it was.
+>
+> Let's settle it with the test we built. The thermostat's job is *is 19 lower than 20* — could two
+> sensible people ever disagree about that? No. Not once, in ten years. So it isn't even the *kind* of
+> job AI is for. And a person wrote all four of its boxes; you've seen the whole flowchart.
+>
+> Now try to write the if-then rules for *the best move on a Go board*. Go on — start. You can't.
+> Nobody can. **And that's the answer.** The thermostat is following orders. AlphaGo is doing the
+> interesting thing, because nobody wrote its rules — it worked them out from examples. That's next
+> week."
+
+- **If they wrote THERMOSTAT:** say — *"that's the most reasonable wrong answer in this whole
+  subject."* Then hand them the distinction they earned: **nobody is there now** is not the same as
+  **nobody ever wrote it down**. Do not rush past this; it is the most valuable sentence in the lesson
+  and it only works on someone who guessed wrong.
+- **If they wrote ALPHAGO:** *"Good instinct. Now tell me why — and 'it's cleverer' doesn't count."*
+  Push until the reason is *nobody could write the rules*.
+
+**Say this — the honest version of the headline:**
+
+> "One more thing, and then we're done. The newspapers said *machines are thinking now*. What actually
+> happened was narrower and stranger: one machine got extraordinarily good at exactly one job, and
+> stayed completely blank one step outside it. **Narrow, not thinking.** Remember that phrase. It's the
+> honest version of nearly every AI headline you'll ever read."
 
 **Do this:** Read the homework aloud together. Check they know **step one only** — which is: get out
 their phone or look around the room and write down the very first system they touched today.
