@@ -183,6 +183,35 @@ light/dark theme with no flash-on-load · figure gallery with lazy loading · pr
 drops the chrome and auto-expands `<details>` so answer keys print · keyboard navigable with visible
 focus rings · double-click a code block to copy it.
 
+### Reading layout
+
+The prose column is capped at a **68-character measure** (`--measure`), because the original 62rem
+card ran body text to ~110 characters a line against a 60–75 target — the worst thing about the old
+layout for a chapter a child reads for twenty minutes.
+
+Content that is *not* prose breaks out of that measure to the full card width: tables, code blocks,
+figures and the `<details>` answer keys. A nine-column marking table or an 800×400 diagram is not
+prose and should not be squeezed to a paragraph's width.
+
+| Variable | Value | What it controls |
+|---|---|---|
+| `--measure` | `68ch` | Line length for paragraphs, lists, blockquotes, h3–h6 |
+| `--maxw` | `76ch` | The card itself — measure plus padding |
+| `--doc-pad` | `clamp(1.1rem, 3vw, 2.2rem)` | Card padding, and the breakout distance |
+
+Other layout decisions worth knowing:
+
+- **The reading column is centred** in whatever space the middle column gets, so a wide screen doesn't
+  leave dead space beside the card.
+- **The TOC appears at ≥1260px**, not 1180 — three columns genuinely need `282 + 646 + 210` plus gaps
+  and padding. Below that it hides and the card still fits a 1024px laptop.
+- **Table headers are not sticky.** `.table-wrap` must scroll horizontally, and a scroll container
+  kills page-level `position: sticky` — the old rule was dead CSS. Zebra striping does the
+  row-tracking job instead.
+- **Figures are capped at `62vh`** so one tall diagram cannot own the whole screen.
+- **The mobile nav drawer has a scrim** and dismisses on outside tap, `Esc`, or tapping any nav link.
+- Heading anchor links appear on **keyboard focus**, not hover only.
+
 ---
 
 ## Editing

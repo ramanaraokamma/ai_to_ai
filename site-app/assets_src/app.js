@@ -426,12 +426,29 @@
   var navToggle = document.getElementById('nav-toggle');
   var side = document.getElementById('side');
   if (navToggle && side) {
-    function fit() { if (window.innerWidth <= 860) side.hidden = true; else side.hidden = false; }
+    var scrim = document.createElement('div');
+    scrim.className = 'scrim';
+    scrim.hidden = true;
+    document.body.appendChild(scrim);
+
+    function isMobile() { return window.innerWidth <= 860; }
+    function setNav(open) {
+      side.hidden = !open;
+      scrim.hidden = !open || !isMobile();
+      navToggle.setAttribute('aria-expanded', String(open));
+      document.body.classList.toggle('nav-open', open && isMobile());
+    }
+    function fit() { setNav(!isMobile()); }
     fit();
     window.addEventListener('resize', fit);
-    navToggle.addEventListener('click', function () {
-      side.hidden = !side.hidden;
-      navToggle.setAttribute('aria-expanded', String(!side.hidden));
+    navToggle.addEventListener('click', function () { setNav(side.hidden); });
+    scrim.addEventListener('click', function () { setNav(false); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && isMobile() && !side.hidden) { setNav(false); navToggle.focus(); }
+    });
+    // a tap on any nav link should close the drawer, not leave it covering the page
+    side.addEventListener('click', function (e) {
+      if (isMobile() && e.target.closest('a')) setNav(false);
     });
   }
 
