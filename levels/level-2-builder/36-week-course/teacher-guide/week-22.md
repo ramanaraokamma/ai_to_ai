@@ -377,6 +377,42 @@ This is a *good* question and deserves a real answer, not "that's just how you w
 
 ---
 
+### 12. 🧭 The Growing Map — the fourth week on one tile
+
+The student guide carries a figure called **Where This Fits**. It is the same picture every week with
+one more piece filled in, and it is the only page in the course that shows the learner the *shape* of
+what they are building rather than this week's content.
+
+![The Level 2 pipeline in Week 22: still the numpy and DataFrames tile, now reaching into a table by name, by position or by question](../figures/fig-w22-0-where-this-fits.svg)
+
+*Figure 22.0 — Week 22's version. Stage three is solid and its first tile has been gold since Week 19.
+Along the bottom, only **data** is lit.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it, then ask a Week 22 question:** *"`loc`, `iloc` and the filter — which of these ten boxes
+   do those three live in?"* They point at the gold tile. Follow it with the one that teaches
+   something: *"that box has been gold since Week 19 — what else is in it?"* You want `numpy` and
+   `DataFrame` said out loud. The point is that today added **tools to a box they already own**, not a
+   new box.
+2. **Then the dashes:** *"we have had a real table for four weeks now — so why is `SEE IT` still
+   dashed?"* The honest answer, *"because we have not drawn anything yet"*, lands harder in Week 22
+   than the same question would have landed in Week 2.
+3. **Have them add to their own copy** — the one in the inside cover of their notebook. Three words
+   under the *numpy · DataFrames* tile: **name**, **position**, **question**. Their handwriting, in
+   pencil.
+
+> **🧑‍🏫 Why this is worth two minutes.** "I don't get it" is two completely different problems wearing
+> one sentence. *"I don't understand `iloc`"* needs more drills. *"I don't know why we're doing `iloc`"*
+> needs the map. A learner who can point at the box can tell you which one they have, and that saves
+> you ten minutes of guessing.
+
+> **⚠️ Watch out:** the same tile has been gold for four weeks and a few students read that as *"we have
+> made no progress since Christmas."* Say the opposite out loud. The box is wide because everything in
+> the last two stages is built on what is inside it.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes the night before

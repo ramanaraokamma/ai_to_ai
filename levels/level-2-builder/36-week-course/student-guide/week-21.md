@@ -1387,6 +1387,31 @@ And there are still jobs where you want the plain array: a photo, a big grid of 
 
 ---
 
+## 🧭 Where This Fits
+
+Third week in the same gold tile — and this is the week it earns its second word. Look at
+`numpy · DataFrames` on the map: everything since Week 17 has been the first word. Today the columns get
+**names**, the rows get an index, and you stop counting across to column 3 and hoping.
+
+![The Level 2 pipeline in Week 21: still stage three's numpy and DataFrames tile, now the table has names on its columns](../figures/fig-w21-0-where-this-fits.svg)
+
+*Figure 21.0 — The pipeline in Week 21. Still the `numpy · DataFrames` tile, and this is the week its
+second word arrives. Every dashed box to the right of it is built on this one container.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A **DataFrame** is a table whose columns have **names** and whose rows have an **index**, so you ask for `df["steps"]` and never count to column 3 again. `df.info()` shows the shape, the types and the holes in one look. |
+| **The one question it answers** | *"What is actually inside this table I just loaded?"* — `df.head()` for a look, `df.info()` for the truth, and in that order. |
+| **What it plugs into** | Week 14's list of dicts and Week 17's array. The names come from one and the shape-aware maths from the other, and a DataFrame is both things at once. |
+| **What carries forward** | Week 22 selects from it, Week 23 cleans it, Week 25 charts it, and Week 28 splits it into `X` and `y`. Nearly every line of code you write after today is a line about a DataFrame. |
+| **Spiral thread** | 🏷️ **Representation**, on its own — the same twelve rows, in a container that remembers what each column is *called*, is a genuinely different thing to be holding. |
+
+> **💡 Try this:** circle the word `DataFrames` on your own copy of the map and write beside it
+> **head() then info(), every time**. Then look right along the row: chart, model, bake-off, capstone.
+> Every dashed box between here and Week 36 is a box you will walk into holding one of these tables.
+
+---
+
 ## 🔑 Remember This
 
 - **A DataFrame is a numpy array with the labels put back on** — and each column is allowed to be a different kind of thing. That last part is what no array can do.

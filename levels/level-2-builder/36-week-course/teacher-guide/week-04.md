@@ -338,6 +338,39 @@ So: **Stages 1–3 hard-code all six answers. `input()` goes in at Stage 4, when
 
 ---
 
+### 10. 🧭 The Growing Map — closing the first tile
+
+Same figure as every week, one more piece filled in. Week 4 is a milestone on it: this is the last week
+of the first tile, so the gold is about to move for the first time all year. Say that out loud — it is
+worth something to them.
+
+![The Level 2 pipeline in Week 4: the first tile of the first stage is finished](../figures/fig-w04-0-where-this-fits.svg)
+
+*Figure 4.0 — Week 4's version. Still the first tile, but the last week of it. From Week 5 this tile goes
+plain white and the one below it turns gold.*
+
+**Two minutes, at the end:**
+
+1. **Ask the week's own question:** *"the About-Me Bot used a file, named boxes, f-strings **and**
+   `int()` — how many boxes on this map did we need for that?"* The answer is one, and it surprises them.
+   Four weeks of tools, one tile.
+2. **Then the milestone:** *"next week the gold moves down to the box underneath. What do you reckon
+   `choices` means?"* Take any guess, agree it is interesting, and stop. Do not teach Week 5 today.
+3. **Then the dashes**, in the usual words: *"why is the rest dotted?"* — *"we haven't got there yet."*
+4. **Pencil copies.** A tick in the corner of the first tile. Four weeks, one box, finished — and a
+   program that talks to a human and survives is a genuinely fair thing to be pleased about.
+
+> **🧑‍🏫 Why this is worth two minutes.** Week 4 is the first week a student might privately think *"is
+> this going anywhere?"* The map answers that without you having to make promises: they can see the
+> fourteen boxes still to come, and they can see that the four weeks behind them added up to exactly one
+> of them.
+
+> **⚠️ Watch out:** if a student's bot still has a bug in it, do not use the map to imply they have
+> "finished" the tile. Point at the gold and say *"this is where we all are"* — the map describes the
+> class, not the individual.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

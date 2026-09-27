@@ -1303,6 +1303,33 @@ The second one is longer, more uncomfortable, and worth about ten times as much.
 
 ---
 
+## 🧭 Where This Fits
+
+Fourth week in the last tile, and this is the week every box on the map does something at once. Your
+own rows get held, cleaned, charted, modelled and scored, in that order. And there is no new syntax
+anywhere in it — which is not a gap in the lesson, it *is* the lesson.
+
+![The Level 2 pipeline in Week 35: still the bake-off and capstone tile, now the whole pipeline run on rows you collected](../figures/fig-w35-0-where-this-fits.svg)
+
+*Figure 35.0 — The pipeline in Week 35. Read the five stage names left to right: that is the running
+order of your notebook. Every one of them is solid, and every one of them is working on data you
+collected yourself.*
+
+| | |
+|---|---|
+| **The mental model you now own** | The whole pipeline, end to end, on data you collected: **five captioned charts in narrative order**, where each caption raises the question the next chart answers; **three models plus a baseline on one split**; **one results table** with the test-row count in it — and a page titled **"what I got wrong"**, which is where the learning actually is. |
+| **The one question it answers** | *"What did I get wrong, and how would I know if I had?"* |
+| **What it plugs into** | Week 34's question and rows. Week 27's chart story and honest axes. Week 33's one-split bake-off, lifted almost unchanged. **No new syntax at all** — every line in this week's notebook is a line you have typed before. |
+| **What carries forward** | Week 36, where you read these pages out loud to somebody who has never seen them. And Level 3, which reopens every one of them and asks harder questions about the same five stages. |
+| **Spiral thread** | ⚖️ **Evaluation** — the Score Audit, where you trace one number back to the exact rows that produced it — and 🎯 **Learning signal**, because *"the best score"* and *"the model I should actually use"* turn out to be two different sentences. |
+
+> **💡 Try this:** on your own copy of the map, write one line from your notebook under each of the five
+> stage boxes — your question, your row count, one log line with its reason, one chart caption, one
+> score with its units. Five short lines. If you can read those five aloud in order and they sound like
+> a paragraph, next week's showcase is already written.
+
+---
+
 ## 🔑 Remember This
 
 - **Five charts in narrative order are one paragraph.** Copy the five captions into a plain text file, read it aloud, and if it is not a paragraph, reorder the charts.

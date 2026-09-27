@@ -298,6 +298,38 @@ Reframe it every time it appears, in the same words: **"it refused because both 
 
 ---
 
+### 7. 🧭 The Growing Map — two minutes at the end of the lesson
+
+The student guide carries the same figure every week — **Where This Fits** — with one more piece filled
+in. It is the only thing in the course that shows the learner the *shape* of what they are building
+instead of this week's content, and Week 2 is where the habit gets established.
+
+![The Level 2 pipeline in Week 2: still inside the first tile, now with names on the boxes](../figures/fig-w02-0-where-this-fits.svg)
+
+*Figure 2.0 — Week 2's version. Identical to Week 1's, because Week 2 lives in the same tile. That
+sameness is the message, not a mistake.*
+
+**What to do with it, in about two minutes:**
+
+1. **Show it before you explain it.** Ask: *"we just put `pocket_money` and `pizza_price` into boxes with
+   names on — which box on this map was that?"* They point at the gold tile. Pointing is the exercise.
+2. **Then ask why it is the same gold tile as last week.** You want something like *"because it's still
+   just Python, we haven't got to the data yet."* That is exactly right, and it tells them a tile is a
+   few weeks of work rather than one lesson.
+3. **Then the dashes:** *"why is nearly all of it dotted?"* Answer wanted: *"because we haven't been there
+   yet."* Quietly this says the year has a shape and they are standing inside it.
+4. **Have them add to their own pencil copy** in the inside cover of the notebook — the one they started
+   in Week 1. Two words under the first tile is plenty: *name* and *kind*.
+
+> **🧑‍🏫 Why this is worth two minutes.** A learner who can see the map can tell the difference between
+> *"I don't understand this week"* and *"I don't know where this week goes"* — and those two need
+> completely different help from you. Without the map, both come out of their mouth as "I don't get it."
+
+> **⚠️ Watch out:** do not let this become a quiz, and do not let a student who says "we did the yellow
+> one" be corrected. The map is orientation, not assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

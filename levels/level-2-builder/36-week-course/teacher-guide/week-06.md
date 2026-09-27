@@ -402,6 +402,38 @@ You said yes!
 
 ---
 
+### 10. 🧭 The Growing Map — two minutes, and one forward pointer
+
+**Where This Fits** is unchanged from last week: first tile white and done, second tile gold, everything
+else dotted. That stillness is honest — *choices · loops* is a five-week tile and you are two weeks into
+it. This week the map earns its keep by pointing at one specific box a long way to the right.
+
+![The Level 2 pipeline in Week 6: still in the second tile of stage one, asking questions in order](../figures/fig-w06-0-where-this-fits.svg)
+
+*Figure 6.0 — Week 6's version. Same as Week 5's, which is the point: one tile, several weeks.*
+
+**Two minutes:**
+
+1. **Start with today's bug.** *"The grade chain gave a 42 an A. Which box on this map did we break, and
+   which box did we fix it in?"* Same box both times — the gold one. The lesson lands better when they
+   notice that the bug and the fix live in the same tile.
+2. **Then the forward pointer, and only this one:** *"PREDICT & CHECK, weeks 28 to 31, has something in it
+   called a decision **tree**. Today we built a stack of yes/no questions asked in order. Anyone want to
+   guess what a decision tree is?"* Somebody will get it. Let that land and move on.
+3. **Then the dashes**, in the usual words: *"why is the rest dotted?"* — *"we haven't got there yet."*
+4. **Pencil copies.** Under the gold tile they write *order matters* and underline it. It is the first bug
+   this year that Python does not warn them about, and that deserves ink.
+
+> **🧑‍🏫 Why this is worth two minutes.** Week 6 teaches a bug with **no error message**, which is a
+> genuinely unsettling step up. The map reframes it as progress rather than as the course getting harder:
+> silent wrongness is what the second half of the year is entirely about, and they have just met their
+> first one.
+
+> **⚠️ Watch out:** having made the decision-tree connection, do not extend it. "So machine learning is
+> just if-statements" is a half-truth that costs you Week 30. Make the link, enjoy it, close it.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

@@ -1067,6 +1067,31 @@ A test that passes on both the broken and the correct version has told you nothi
 
 ---
 
+## 🧭 Where This Fits
+
+Same box as last week, and the gold will stay there for a while: *choices and loops* is a big tile. Week
+5 gave you one question with two answers. Week 6 gives you a **queue** of questions — and the order you
+put them in turns out to be part of the answer.
+
+![The Level 2 pipeline in Week 6: still in the second tile of stage one, asking questions in order](../figures/fig-w06-0-where-this-fits.svg)
+
+*Figure 6.0 — The pipeline after Week 6. Gold is where you are, white-and-solid is done, dashed is not
+yet. The strip along the bottom is the seven threads this course keeps returning to.*
+
+| | |
+|---|---|
+| **The mental model you now own** | An `if`/`elif`/`else` chain is checked **in order** and stops at the **first** `True`. So the order you ask the questions in is part of the answer — and a wrong order still runs perfectly happily, with no error at all. |
+| **The one question it answers** | *"Why does my grade chain give everybody an A?"* Because the first question was too easy to pass, and nothing below it ever got asked. |
+| **What it plugs into** | Week 5's single `if`/`else`, stretched into a chain that can now be **wrong quietly** — which is a new and more grown-up kind of bug than a traceback. |
+| **What carries forward** | Week 8's loop conditions. Week 15's row filters. And Week 31's **decision tree**, which is nothing more mysterious than a stack of yes/no questions asked in a particular order. |
+| **Spiral thread** | 🧰 **Toolcraft** — lit alone still. Keep the phrase *"most restrictive first"* somewhere safe; you will want it again in Week 31. |
+
+> **💡 Try this:** under the gold tile on your map, write **order matters** and underline it twice. It is
+> the first bug this year that Python will not warn you about, and spotting those yourself is the skill
+> the rest of the map is built on.
+
+---
+
 ## 🔑 Remember This
 
 - **`elif` is short for "else, if".** One word, no space, its own condition, its own colon.

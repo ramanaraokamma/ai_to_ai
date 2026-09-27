@@ -932,6 +932,31 @@ Three pairs typed, two pairs stored. **A dictionary cannot hold the same label t
 
 ---
 
+## 🧭 Where This Fits
+
+Same pipeline, and the gold box has moved one step down: `dicts · rows · files`, weeks 13 to 18. It is
+the longest tile in the whole map, because holding data properly takes six weeks — and this is the
+first of them. Everything you do for the next month and a half happens inside that one box.
+
+![The Level 2 pipeline in Week 13: the dicts, rows and files tile of stage two is this week's box](../figures/fig-w13-0-where-this-fits.svg)
+
+*Figure 13.0 — The pipeline in Week 13. The tile above is finished and white. The gold one has just
+opened, and you will be standing in it until Week 18. Dashed still means not yet.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A dictionary looks a value up **by name** instead of by position, so your code says `player["score"]` and stops depending on the order you happened to type things in. |
+| **The one question it answers** | *"Which one was column 3 again?"* — a question you now never have to ask, because every box has its label written on the outside. |
+| **What it plugs into** | Week 11's list: the same idea of one container holding many things, with a completely different address system. Numbers there, names here. |
+| **What carries forward** | Week 14 turns a list of these into a table. Week 21's `DataFrame` is this same idea scaled up to thousands of rows, with the labels written once along the top. |
+| **Spiral thread** | 🏷️ **Representation**, on its own — one thread, because this whole week is a single decision about *how you write a thing down*, not about what you do with it afterwards. |
+
+> **💡 Try this:** under the gold tile on your own copy of the map, write four words in pencil: **names,
+> not positions.** That is the entire week, and you will be leaning on it in Week 21 when a real
+> dataset arrives with forty columns you did not choose the order of.
+
+---
+
 ## 🔑 Remember This
 
 - **A dictionary looks things up by name, not by position.** Curly braces, a colon in every pair, a comma between pairs.

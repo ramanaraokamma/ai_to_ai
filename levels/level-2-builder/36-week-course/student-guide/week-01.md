@@ -722,6 +722,31 @@ Editing and saving are two different actions, and only one of them the computer 
 
 ---
 
+## 🧭 Where This Fits
+
+Everything you do this year is one pipeline: a question goes in one end, and an answer you can
+**defend** comes out the other. Here it is after one week. Almost all of it is dashed, which is the
+honest picture — and by Week 36 every box will be solid.
+
+![The Level 2 pipeline in Week 1: the first tile of the first stage is filled in](../figures/fig-w01-0-where-this-fits.svg)
+
+*Figure 1.0 — The pipeline after Week 1. Gold is where you are. Dashed is not yet. The strip along the
+bottom is the seven threads this course keeps returning to.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A program is **a list of instructions in a file, run top to bottom.** The computer does exactly what you typed — including the part you did not mean. There is no cleverness in the middle. |
+| **The one question it answers** | *"Why did it do that?"* — because you can now read your own file from the top and follow it, line by line, the way Python does. |
+| **What it plugs into** | Nothing yet — this is the first tile. But it plugs into everything: every table, chart and model later this year is a file of instructions run top to bottom. |
+| **What carries forward** | Week 2 puts **names on boxes** so you can keep a value. Week 3 makes printing readable. By Week 21 the same top-to-bottom file is loading a real table of data. |
+| **Spiral thread** | 🧰 **Toolcraft** — the seventh thread, and the only one lit for the next nine weeks. Weeks 1–9 build the tool. The six AI threads restart in Week 10, when you first hold a dataset. |
+
+> **💡 Try this:** copy the five stage names onto the inside cover of your notebook, in pencil, with
+> lots of space under each. You will fill them in all year, and the version you draw yourself is worth
+> far more than the one I drew for you.
+
+---
+
 ## 🔑 Remember This
 
 - **A program is a list of instructions in a file, done top to bottom.** No exceptions until Week 5.

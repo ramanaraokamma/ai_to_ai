@@ -201,6 +201,40 @@ Two rules, and they are the whole point of the week.
 
 ---
 
+### 9. 🧭 The Growing Map — stage four opens
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one
+more piece filled in. It is the only page that shows the learner the *shape* of the year rather than
+this week's content — and this week it moves further than it has moved since Week 19.
+
+![The Level 2 pipeline in Week 25: stage three is finished and stage four opens with your first chart](../figures/fig-w25-0-where-this-fits.svg)
+
+*Figure 25.0 — Week 25's version. Stage three is finished, so all six of its boxes are plain white.
+Stage four is solid for the first time and its first tile is gold. Only **representation** is lit.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask where today went.** *"`fig, ax`, the three labels, `savefig` — is that a new box,
+   or a whole new stage?"* A new stage, and it is the fourth of five. Let them find `SEE IT`
+   themselves; the jump is large enough to be visible from across the room.
+2. **Then read a dashed label out loud:** *"the box next to ours says **honest axes**. What do you
+   think a *dishonest* axis would look like?"* Take a guess or two and then **stop** — do not answer.
+   That is Week 27, it is the best lesson of the term, and a two-week wait is what makes it land.
+3. **Have them update their own copy.** Three whole stages go solid today — that is a satisfying thing
+   to do in pencil, and it is the first time the left half of their map is finished.
+
+> **🧑‍🏫 Why this is worth two minutes.** Charts feel like the fun bit after a month of admin, and that
+> framing is a trap: it invites learners to treat labelling as optional decoration. The map fixes the
+> framing without a lecture — `SEE IT` is a *stage of the pipeline*, sitting between cleaning and
+> predicting, doing a job. Not a reward.
+
+> **⚠️ Watch out:** **data** is not lit this week and **representation** is lit alone. If a student
+> notices, the answer is good and short: *"we didn't change the numbers today, we only changed how they
+> are shown."* That is exactly what the representation thread is for, and it is the cleanest example of
+> it in the whole level.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes the night before

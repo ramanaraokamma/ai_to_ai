@@ -1528,6 +1528,32 @@ And the term in a sentence: **two weeks ago, two commands one letter apart gave 
 
 ---
 
+## 🧭 Where This Fits
+
+Everything you do this year is one pipeline: a question goes in one end, and an answer you can
+**defend** comes out the other. The gold has not moved since last week — this is the second half of
+the same tile, and the last box of stage three. After today, three of the five stages are solid and
+you still have not drawn a single chart. That changes next week.
+
+![The Level 2 pipeline in Week 24: still the holes and duplicates tile, the last box of stage three](../figures/fig-w24-0-where-this-fits.svg)
+
+*Figure 24.0 — The pipeline in Week 24. Gold is the same box as last week, and it is the last one in
+stage three to turn solid.*
+
+| | |
+|---|---|
+| **The mental model you now own** | **Split, apply, combine.** `groupby` splits the table into groups, works out one number for each group, and hands you the answers in a single line — and it quietly hides **how many rows each number came from**. So you print the group sizes beside every mean, every time. |
+| **The one question it answers** | *"What is the average per house — and how many rows is each average made of?"* Both halves, or neither. |
+| **What it plugs into** | Week 15's hand-written filter loop and `group_count`, which took a dozen lines each. They are one line each now — sitting on top of last week's repairs. |
+| **What carries forward** | Week 26's bar charts are drawn straight from these counts. And in Week 34 you clean your own 100 rows the same way, with the same `n` printed next to every number. |
+| **Spiral thread** | 📊 **Data** and ⚖️ **Evaluation** — because *"Gold is the best house"* and *"Gold has two rows"* are both true, and only one of them is evidence. |
+
+> **💡 Try this:** Gold's average was the biggest number in the whole table and it meant nothing at
+> all. Write **`n = 2`** in the margin of your own map, next to this tile. It is the smallest note in
+> this book and it will save you the most trouble.
+
+---
+
 ## 🔑 Remember This
 
 - **Your eyes are not the evidence. The count is the evidence.** Forty rows is past the point where looking works.

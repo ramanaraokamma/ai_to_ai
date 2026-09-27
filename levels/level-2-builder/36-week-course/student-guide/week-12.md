@@ -1377,6 +1377,32 @@ The legitimate version is `median_proof.py`: a separate file that imports `stats
 
 ---
 
+## 🧭 Where This Fits
+
+The whole year is one pipeline: a question goes in one end, and an answer you can **defend** comes out
+the other. Stage one is behind you now — you can speak Python. This week you are standing inside the
+first tile of stage two, and the moment you save `stats.py` and import it, that tile is finished.
+
+![The Level 2 pipeline in Week 12: stage two is open and its functions and lists tile is this week's box](../figures/fig-w12-0-where-this-fits.svg)
+
+*Figure 12.0 — The pipeline after Week 12. Gold is where you are, white is finished, and dashed still
+means not yet — seven tiles of it. The strip along the bottom is the seven threads this course keeps
+coming back to.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Functions you wrote can live in **their own file** — `stats.py` — and `import` pulls them into any program you write, for as long as you keep the file. A module is just a file. The only difference between yours and `pandas` is who typed it. |
+| **The one question it answers** | *"How do I reuse what I wrote last month instead of typing it all out again?"* — you move it into a file once, and import it from then on. |
+| **What it plugs into** | Weeks 9 and 10 gave you named blocks with parameters. Week 11 gave you a list of real numbers to run them over. This week those blocks move out of your program and into a toolkit of their own. |
+| **What carries forward** | Week 17's `import numpy as np`, and every `import` for the rest of the year. Your `stats.py` is the pattern all of them follow — same one line, different author. |
+| **Spiral thread** | 🧰 **Toolcraft** — you built a tool you can pick up again next month — and 📊 **Data**, because every function in the tin answers a question about a list of real numbers. |
+
+> **💡 Try this:** on your own copy of the map, write `stats.py` in pencil inside the gold tile. When you
+> type `import numpy as np` in Week 17, come back and notice it is the same one line — you just did not
+> write the file that time.
+
+---
+
 ## 🔑 Remember This
 
 - **A module is any `.py` file.** `import stats` gives you everything defined inside `stats.py`. **No `.py`, no quotes, same folder.**

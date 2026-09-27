@@ -1156,6 +1156,31 @@ The hand-check is not a proof; it is an **independent source of truth**, and tha
 
 ---
 
+## 🧭 Where This Fits
+
+Everything you do this year is one pipeline: a question goes in one end, and an answer you can
+**defend** comes out the other. Something changed on the map this week. The first tile of stage one has
+gone plain white — printing, variables and maths are behind you now — and you are standing in the
+second tile, the one where loops live.
+
+![The Level 2 pipeline in Week 7: stage one's first tile is done and its second tile, choices and loops, is where you are](../figures/fig-w07-0-where-this-fits.svg)
+
+*Figure 7.0 — The pipeline after Week 7. White means done, gold means you are standing in it, dashed
+means not yet. The strip along the bottom is the seven threads this course keeps returning to.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A `for` loop **repeats one block of code once per item**. And an **accumulator** is how a value survives the repeats: you set it up *before* the loop, add to it *inside* the loop, and read it *after* the loop has finished. Three places, in that order, every single time. |
+| **The one question it answers** | *"How do I total twelve numbers without writing twelve lines?"* — one accumulator and one loop. Three lines that work for twelve numbers, and the same three lines for twelve thousand. |
+| **What it plugs into** | Week 2 gave you the variable you accumulate *into* — the loop would have nowhere to put the running total without it. Week 5 gave you a condition you can test *inside* the loop, so a loop can count only the items that pass. |
+| **What carries forward** | Week 12 points this same loop at a **list**. Week 14 points it at the **rows of a table**. Week 18 deletes about eight of these loops and replaces them with one line of array maths — and you will only appreciate that trade because you wrote the eight yourself first. |
+| **Spiral thread** | 🧰 **Toolcraft** — still the only pill lit, and it stays that way until Week 10. Weeks 1–9 build the tool. The six AI threads restart the moment you are holding real data. |
+
+> **💡 Try this:** on your own pencil copy of the map, write **set · add · read** underneath the loops
+> tile. That is the accumulator, in three words, and you will still be using it in Week 32.
+
+---
+
 ## 🔑 Remember This
 
 - **A `for` loop repeats the indented block once per value.** The indent *is* the loop's body — move a line out of it and it stops repeating.

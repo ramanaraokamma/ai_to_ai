@@ -397,6 +397,40 @@ Compute it always. It is useless *on its own*, as evidence of quality. It is ess
 
 ---
 
+### 12. 🧭 The Growing Map — two minutes on the curve, and a map that does not move
+
+Each week the student guide carries the same pipeline with one more piece filled in, so the learner can
+see the year's shape rather than only this week's content. This week the picture is unchanged from last
+week's, which is useful: the thing that moved today was not the map, it was what they can now *see*
+inside one box.
+
+![The Level 2 pipeline in Week 33: still the bake-off and capstone tile, now two scores and the overfitting curve](../figures/fig-w33-0-where-this-fits.svg)
+
+*Figure 33.0 — Week 33's version. Second week inside `bake-off · capstone`, weeks 32 to 36, and nothing
+has moved. Two threads lit: learning signal and evaluation.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask what today added, given that the map is identical:** *"same box as last week — so
+   what have we got now that we did not have at four o'clock yesterday?"* You want **a second score**,
+   or **the training score as well as the test score**. Then the harder half: *"and which of the two
+   numbers in the 1.000 / −0.003 row was the honest one?"* They will point at the negative. Let it land.
+2. **Then the dial question, with a finger on the peak:** *"the two lines split apart after depth 4.
+   Which way do you turn the dial — up or down?"* **Down.** This is the counter-intuitive instinct of
+   the whole level, and a learner who can say *turn it down* while pointing at a picture has it in a way
+   that no definition of overfitting supplies.
+3. **Have them ink the tile again and draw the curve thumb-sized beside it** — two lines, peak circled,
+   the word *memorising* after the peak. Small on purpose. Gate 6 of the Level 3 check in Week 36 is
+   exactly this drawing, on a napkin, from memory.
+
+> **🧑‍🏫 Why this is worth two minutes.** The bake-off produces a lot of numbers, and the risk of today
+> is that they remember "kNN won" instead of "one score is not a result". The map is where you make the
+> *method* the memory: same box, same four steps, two numbers instead of one. It also sets up the honest
+> caveat so it does not feel like a technicality — 329 leaves for 353 patients is a phone book, and the
+> next three weeks are graded on whether they can say something that plain about their own model.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes the night before

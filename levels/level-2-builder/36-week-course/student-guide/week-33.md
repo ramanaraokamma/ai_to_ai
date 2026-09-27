@@ -1172,6 +1172,33 @@ Two things to do rather than despair:
 
 ---
 
+## 🧭 Where This Fits
+
+The gold tile has not moved, and the map looks identical to last week's — but this is the week the
+picture at the heart of the whole level finally gets drawn. Two lines on one chart: one that climbs
+forever, and one that turns round and heads down. Thirty-three weeks of work were needed before you
+could read it.
+
+![The Level 2 pipeline in Week 33: still the bake-off and capstone tile, now two scores and the overfitting curve](../figures/fig-w33-0-where-this-fits.svg)
+
+*Figure 33.0 — The pipeline in Week 33. Still the last tile, and this is the `bake-off` half of its
+name: four models, one split, one table — and one curve with a peak in it.*
+
+| | |
+|---|---|
+| **The mental model you now own** | **One score tells you nothing; two are a diagnosis.** When the training score climbs while the test score falls, the model is not learning, it is **memorising** the rows it was shown — so you turn the dial *down*, not up. And the split is made **once, above the loop**, or you are measuring shuffling luck instead of measuring depth. |
+| **The one question it answers** | *"Is it learning, or just memorising what it has already seen?"* |
+| **What it plugs into** | Week 29's held-back rows and the envelope with your signature across the flap. Week 31's `max_depth` — a dial you already knew how to turn, but not yet what to turn it *to*. And Weeks 25–27's charting, which is what turns fifteen pairs of numbers into one shape you can point at. |
+| **What carries forward** | Week 35 runs three models plus a baseline on one split and writes the honesty sentence underneath the winner. Week 36 asks you to draw this curve from memory — both lines, both axes labelled — and say what the gap means. |
+| **Spiral thread** | 🎯 **Learning signal** — a score is what a model gets *tuned by*, and the wrong score tunes you straight into memorising — and ⚖️ **Evaluation**, because the whole week comes down to one habit: a number means nothing until you say which rows it was measured on. |
+
+> **💡 Try this:** sketch today's curve small, thumb-sized, in the white space beside the gold tile on
+> your own map. Two lines, the peak circled, and one word written after the peak: *memorising*. This is
+> the one drawing in the course you should be able to do on a napkin — and in Week 36 somebody is going
+> to hand you a napkin.
+
+---
+
 ## 🔑 Remember This
 
 - **The training score always goes up when you give a model more room.** Always, with mathematical certainty. So it is **arithmetic, not evidence.**

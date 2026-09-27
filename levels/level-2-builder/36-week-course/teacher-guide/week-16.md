@@ -299,6 +299,36 @@ The line to hold in your head all lesson: **today is the week the student learns
 
 ---
 
+### 10. 🧭 The Growing Map — two minutes on the word `files`
+
+The student guide carries one figure that is not about this week's content: the same pipeline every
+week, one more piece filled in. It is the only place either book shows the learner the *shape* of what
+they are building rather than this week's topic.
+
+![The Level 2 pipeline in Week 16: still the dicts, rows and files tile, now writing rows to a file and reading them back](../figures/fig-w16-0-where-this-fits.svg)
+
+*Figure 16.0 — Week 16's version. Fourth week inside the `dicts · rows · files` tile, weeks 13 to 18 —
+and this is the week that earns its third word. Two threads lit: data and toolcraft.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and point at the gold tile's three words.** Ask *"which of those three did we do today?"*
+   You want a finger on **files**. Follow it with the sentence that matters: *and what came back out of
+   the file — numbers, or text?* **Text.** Say it, do not explain it again.
+2. **Then the better question:** *"the box did not move — but something changed that the picture cannot
+   show. What?"* You are fishing for *"the data is still there when the program stops"*. That is worth
+   the whole two minutes on its own.
+3. **Have them add the round trip to their own copy**: a small arrow out of the gold tile and straight
+   back in, labelled *out as text, back as text.* It is the only annotation this term that is a loop.
+
+> **🧑‍🏫 Why this is worth two minutes.** From Week 23 every dataset in this course arrives as a file
+> somebody else wrote, and the learners who cope with that are the ones who already know what is
+> physically in a file. The map makes today feel like a small step inside a familiar box rather than a
+> new topic — which is honest, and it is also why the `90 > 104` surprise lands as a rule about files
+> instead of a weird Python quirk.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes the night before

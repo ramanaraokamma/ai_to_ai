@@ -770,6 +770,31 @@ And the practical version of the same point: an unlabelled chart is not "80% fin
 
 ---
 
+## 🧭 Where This Fits
+
+Everything you do this year is one pipeline: a question goes in one end, and an answer you can
+**defend** comes out the other. Look at the map: **three whole stages are solid.** You can speak
+Python, you can hold a table, and you can clean it. Stage four opens today — and this is the first
+week of the year where the answer comes out as a picture instead of as text.
+
+![The Level 2 pipeline in Week 25: stage three is finished and stage four opens with your first chart](../figures/fig-w25-0-where-this-fits.svg)
+
+*Figure 25.0 — The pipeline in Week 25. Stage three is finished, stage four has just opened, and the
+gold has jumped a whole stage to the right for the first time since Week 19.*
+
+| | |
+|---|---|
+| **The mental model you now own** | **One figure, one axes, three labels.** `fig, ax = plt.subplots()` hands you a sheet of paper and one frame ruled onto it. You draw on `ax`, then set the title, the x-label and the y-label — then `savefig`. A chart without labels is a decoration, not evidence. |
+| **The one question it answers** | *"What does this table actually look like?"* |
+| **What it plugs into** | Week 21's DataFrame, which supplies the x values and the y values; and Week 12's import habit, which is how `pyplot` gets into your file in the first place. |
+| **What carries forward** | Week 26 chooses the **shape**. Week 27 makes the axes **honest**. Week 30 plots accuracy against *k*, and Week 33 draws the overfitting curve. Every one of those is this week's five lines with different numbers in them. |
+| **Spiral thread** | 🏷️ **Representation**, on its own — one thread, because nothing changed about the data this week. Only how it is **shown** changed, and that is what representation means. |
+
+> **💡 Try this:** find a chart in a newspaper, on a poster or on a cereal box, and check it has all
+> three labels — title, x-axis, y-axis. Most do not. From now on you will notice every time.
+
+---
+
 ## 🔑 Remember This
 
 - **A chart with no labels is a decoration.** The title and the two axis labels are what turn it into evidence.

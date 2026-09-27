@@ -236,6 +236,42 @@ There is a third thing that is not a misconception but a habit: some students wi
 
 ---
 
+### 10. 🧭 The Growing Map — how to use it, this week and every week
+
+The student guide carries a figure called **Where This Fits**. It is the same picture every week with
+one more piece filled in, and it is the only thing in this course that shows the learner the *shape* of
+what they are building rather than this week's content.
+
+![The Level 2 pipeline in Week 1: the first tile of the first stage is filled in](../figures/fig-w01-0-where-this-fits.svg)
+
+*Figure 1.0 — Week 1's version. Five stages, ten tiles, and only the first tile gold. The seven-thread
+strip along the bottom has **toolcraft** lit and nothing else.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it, don't explain it.** Ask *"which box did we do today?"* They will point at the gold tile.
+   Pointing is the exercise.
+2. **Then the better question:** *"why is nearly all of it dashed?"* You want *"because we haven't got
+   there yet"* — which quietly tells them the year has a shape and they are standing inside it.
+3. **Have them copy the five stage names into the inside cover of their notebook**, in pencil, with room
+   underneath. They add to their own copy every week. By March it is the best revision aid they own.
+
+> **🧑‍🏫 Why this is worth two minutes.** A learner who can see the map can tell the difference between
+> *"I don't understand this week"* and *"I don't know where this week goes"* — and those need completely
+> different help from you. Without the map, both come out of their mouth as "I don't get it."
+
+**A note on the seventh thread.** The strip has **seven** pills, not six. Levels 1 and 3 use six — data,
+representation, model, learning signal, evaluation, impact — and Level 2 adds **toolcraft** at the
+front. That is deliberate and honest: weeks 1–9 teach programming as a craft and genuinely do not
+advance any AI idea. Pretending `print()` is about "representation" would be a lie the learner would
+eventually catch. Toolcraft is lit alone until Week 10, when they first hold a dataset and the six
+restart.
+
+> **⚠️ Watch out:** do not turn this into a quiz. The map is orientation, not assessment. If they cannot
+> remember which thread this week was, that is fine and costs nothing.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

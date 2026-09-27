@@ -319,6 +319,40 @@ The line to hold in your head all lesson: **today is the week the student learns
 
 ---
 
+### 10. 🧭 The Growing Map — two minutes on the box that did not move
+
+The student guide carries one figure that is not about this week's content: the same pipeline every
+week, with one more piece filled in. It is the only place either book shows the learner the *shape* of
+what they are building rather than this week's topic.
+
+![The Level 2 pipeline in Week 17: still the dicts, rows and files tile, now holding every score in one array that knows its shape](../figures/fig-w17-0-where-this-fits.svg)
+
+*Figure 17.0 — Week 17's version. Fifth week inside the `dicts · rows · files` tile, weeks 13 to 18 —
+the box is unchanged and what sits inside it is not. One thread lit: representation.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask the honest question first:** *"we are in the same box as last week — so what did we
+   swap out inside it?"* You want *"the list became an array."* Then get the two words said out loud:
+   **shape** and **dtype**. If a student can name those two, this lesson landed, whatever else the
+   install did to your morning.
+2. **Then the better question:** *"the word `numpy` is printed over there in stage three — so why is our
+   gold box still in stage two?"* Let them argue. The answer worth arriving at is *because today numpy is
+   only holding the numbers; using it to fix a real dataset starts in Week 19.* That sentence is the
+   whole reason the map is worth drawing.
+3. **Have them annotate their own copy:** `.shape` and `.dtype` written inside the gold tile. Two words,
+   five seconds, and they will point at them again in Weeks 19, 20 and 28.
+
+> **🧑‍🏫 Why this is worth two minutes.** An install week feels like a new subject — new command, new
+> import, something downloaded off the internet — and a student who thinks today was a new subject will
+> treat `.shape` as trivia. The map says the opposite: same stage, same job, better container. That is
+> the framing that makes *predict the shape, then check it* feel like a habit rather than a hoop.
+
+> **⚠️ Watch out:** do not use the map to explain what an array is. It cannot, and it is not trying to.
+> It answers *where are we*, and nothing else.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

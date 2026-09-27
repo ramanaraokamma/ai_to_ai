@@ -227,6 +227,40 @@ Watch for the phrase *"I just dropped the odd ones"*. Every "just" is a decision
 
 ---
 
+### 10. 🧭 The Growing Map — two minutes on a gold tile that no longer tells you where the work is
+
+The student guide carries one figure a week that is not about the week's content: the five-stage
+pipeline, one more piece inked in. This week it earns its keep in an unusual way — the gold tile sits in
+`PREDICT & CHECK`, and almost nothing you did today happened there.
+
+![The Level 2 pipeline in Week 34: still the bake-off and capstone tile, now your own question and your own 100 rows](../figures/fig-w34-0-where-this-fits.svg)
+
+*Figure 34.0 — Week 34's version. Third week inside `bake-off · capstone`, weeks 32 to 36. The capstone
+sits in the last tile but re-walks every earlier stage. Two threads lit: data and impact.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask the honest question:** *"the gold box is over on the right, under `PREDICT &
+   CHECK`. Which boxes did we actually work in today?"* You want fingers on **HOLD THE DATA** and
+   **CLEAN IT** — collecting rows, `info()`, `describe()`, the log. Then say the thing out loud: a
+   capstone does not live in one box, it walks the whole row, which is why it takes three weeks.
+2. **Then the question that is really today's lesson:** *"we wrote no model, no chart and no new
+   function. So what did we make?"* You are listening for **a question**, **a raw file** and **a log
+   with reasons in it**. If somebody says "we didn't really do anything", that is the moment to point at
+   the four gates the question had to pass — a question is a deliverable, and theirs is signed.
+3. **Have them ink the tile and write their research question inside it**, one sentence, signed and
+   dated. Nothing else in the tile. If they cannot fit it on one line, the question is still too big and
+   you have just diagnosed that for free.
+
+> **🧑‍🏫 Why this is worth two minutes.** Weeks with no new syntax feel to a twelve-year-old like weeks
+> where nothing happened, and this one has the most fragile deliverable of the year: a question narrow
+> enough to answer and a raw file nobody has edited. Putting the question *on the map* makes it a piece
+> of work rather than admin. It also quietly buys you next week — the learner who can see that their
+> hundred rows have to travel through three more boxes will not arrive in Week 35 expecting to be
+> finished by the bell.
+
+---
+
 ## 🧰 Prep Checklist
 
 **20 minutes the night before**

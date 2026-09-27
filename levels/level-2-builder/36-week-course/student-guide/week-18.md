@@ -1294,6 +1294,34 @@ total of the right answer: 143
 
 ---
 
+## 🧭 Where This Fits
+
+Sixth week in the same gold box, and the last one — nothing on the map moves today. That is exactly
+what a checkpoint week should look like. You did not go somewhere new this week; you went back to eight
+loops you had already written and made each of them one line long.
+
+![The Level 2 pipeline in Week 18: the last week inside the dicts, rows and files tile, and Term 2 closes with eight loops retired](../figures/fig-w18-0-where-this-fits.svg)
+
+*Figure 18.0 — The pipeline at the end of Week 18, and the end of Term 2. Six weeks in the
+`dicts · rows · files` tile, and this is the last of them. Next week the gold moves into stage three for
+the first time since Week 13.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Whole-array maths replaces a `for` loop with **one line**: the shape does the repeating for you, so there is less to read and fewer places to be wrong. |
+| **The one question it answers** | *"Can I say that in one line instead of five?"* — and when the answer is yes, you prove it by checking the new output against the old, not by trusting it. |
+| **What it plugs into** | The loops you wrote in Weeks 7 to 15. Eight of them get rewritten this week, and each one prints `identical? True` beside it — no loop is retired on faith. |
+| **What carries forward** | Week 20's boolean masks and Week 24's derived columns. From here on you never hand-write a loop that does arithmetic on numbers. |
+| **Spiral thread** | 🧰 **Toolcraft** — shorter code with fewer places to hide a mistake is a craft result — and 🏷️ **Representation**, because the reason one line can do the work of five is the **shape**, not cleverness. |
+
+> **💡 Try this:** count the solid boxes. Two stages out of five, four tiles out of ten — and you are
+> eighteen weeks into thirty-six. You are exactly half way through the year and not half way across the
+> map, and that is not you being slow: stages three, four and five move faster *because* Term 2 happened.
+> Write the number **8** in the corner of the gold tile, for the eight loops you never have to write
+> again.
+
+---
+
 ## 🔑 Remember This
 
 - **`arr * 2` replaces a four-line loop**, and the reason is not mainly that it is shorter: the loop has **five** places to go wrong and the one-liner has **one**.

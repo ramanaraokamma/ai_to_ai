@@ -1101,6 +1101,31 @@ And its evil twin: **the same word inside and outside is two different boxes.** 
 
 ---
 
+## 🧭 Where This Fits
+
+Two things changed on the map this week, and both are big. Stage one is finished — solid white, both
+tiles — and you have crossed the first arrow into **stage two**. Look at the bottom of the figure too:
+there is a second pill lit for the first time all year.
+
+![The Level 2 pipeline in Week 10: stage one is finished and the first tile of stage two, functions and lists, is where you are](../figures/fig-w10-0-where-this-fits.svg)
+
+*Figure 10.0 — The pipeline after Week 10. Stage one is done and never gets re-tinted. Gold is the
+first tile of stage two, and the thread strip now has two pills lit instead of one.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A function is a **machine with an inlet and an outlet**. Parameters are labelled boxes the caller fills in; `return` is the only way a value comes back out. **Printing is not returning** — printing puts characters on the screen, where no other line of code can ever reach them again. |
+| **The one question it answers** | *"Why does my function print the right answer but hand back `None`?"* — because a `print` at the bottom of a function is a message to a human, and `return` is a message to the rest of your program. You needed the second one. |
+| **What it plugs into** | Week 9's named block. It ran, and it always did exactly the same thing. Now it takes something in and gives something back, which is what makes one function useful in twenty different places. |
+| **What carries forward** | Week 12 imports your functions from another file. Week 15 has you write `filter_by()` and `group_count()`. Week 29 calls `model.fit()` and `model.predict()` — and those are the *same in-and-out shape* you are learning today, written by somebody else. |
+| **Spiral thread** | 🧰 **Toolcraft** + 🧩 **Representation** — the first AI thread of the year. A parameter list is a decision about *how you represent a job to the computer*: what varies, what stays the same, what has a name. Every AI system starts with that decision. |
+
+> **💡 Try this:** draw one box on your pencil map with an arrow going in and an arrow coming out. Label
+> the in-arrow **parameters** and the out-arrow **return**. That little picture explains about a third
+> of everything left in this course.
+
+---
+
 ## 🔑 Remember This
 
 - **A parameter is a name in the definition — an empty box with a label.** An argument is a value at the call — what goes in the box. Same box, two moments.

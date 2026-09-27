@@ -1078,6 +1078,31 @@ This is the single most-missed prediction of the week. **Print the inner part on
 
 ---
 
+## 🧭 Where This Fits
+
+Everything you do this year is one pipeline: a question goes in one end, and an answer you can
+**defend** comes out the other. You are still in stage three, and still on the same tile you have been
+on since Week 19 — but that tile just changed shape. Up to now you looked at whole tables. From this
+week you can reach into one and pull out exactly the part you meant.
+
+![The Level 2 pipeline in Week 22: still the numpy and DataFrames tile, now reaching into a table by name, by position or by question](../figures/fig-w22-0-where-this-fits.svg)
+
+*Figure 22.0 — The pipeline in Week 22. Gold is where you are, for the fourth week on the same box.
+Dashed is not yet. Two stages still to open.*
+
+| | |
+|---|---|
+| **The mental model you now own** | There are **three ways to reach into a table, and you choose one on purpose.** `loc` goes by the **name** printed on the edge. `iloc` goes by **position**, counting from zero. A boolean filter asks **one question of every row** and keeps the rows that answer yes. |
+| **The one question it answers** | *"Do I want the row called `1`, or the row in position `1`?"* — you can now tell those two apart, and telling them apart is the whole week. |
+| **What it plugs into** | Week 13's lookup-by-name and Week 11's lookup-by-number. It is the same split you already know from dicts and lists — only now it happens on a whole table at once, in both directions. |
+| **What carries forward** | Week 24's cleaning, which **selects before it repairs**. And Week 28, where the very first line of machine learning is `X = df[["a", "b"]]` — a column selection, exactly this. |
+| **Spiral thread** | 📊 **Data**, on its own — one thread, because choosing rows and columns never touches a chart, a model or a score. It only decides which part of the data you are talking about. |
+
+> **💡 Try this:** on your own copy of the map, write three words under the *numpy · DataFrames* tile —
+> **name**, **position**, **question**. That is the entire week, and it fits in three words.
+
+---
+
 ## 🔑 Remember This
 
 - **`loc` reads. `iloc` counts.** `loc` takes **l**abels; `iloc` takes **i**ntegers. The single letter is the whole difference.

@@ -357,6 +357,42 @@ The line to hold in your head all lesson: **today the student learns that a mask
 
 ---
 
+### 12. 🧭 The Growing Map — two minutes on the highlighter
+
+The student guide carries one figure that is not about this week's content: the same pipeline every
+week, with one more piece filled in. It is the only place either book shows the learner the *shape* of
+the year rather than the week.
+
+![The Level 2 pipeline in Week 20: still stage three's numpy and DataFrames tile, now asking a question of a thousand numbers at once](../figures/fig-w20-0-where-this-fits.svg)
+
+*Figure 20.0 — Week 20's version. Second week inside the `numpy · DataFrames` tile, weeks 19 to 22. Two
+threads lit: representation and data.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and anchor on the Hook.** Ask *"we are in the same box as last week — so what did the
+   highlighter do that `axis=0` could not?"* You want something like *"it picked out the actual scores,
+   not an average of them."* That is the whole distinction between summarising a grid and selecting from
+   it, and they found it with a pen before they typed anything.
+2. **Then the question the `950` sets up:** *"find me the box on this map whose job is catching a typo
+   like 950."* They will land on `holes · duplicates`, weeks 23 to 24 — **dashed**. So who caught it
+   today? They did, with a range check they wrote themselves. A dashed box doing useful work in a
+   discussion is the map earning its keep.
+3. **Have them draw one arrow on their own copy:** from the gold tile to that dashed `holes · duplicates`
+   box, labelled *the 950*. In three weeks they will be standing in that box and the arrow will already
+   be there waiting.
+
+> **🧑‍🏫 Why this is worth two minutes.** Lab weeks are where learners most easily mistake *typing a lot*
+> for *learning something*. Two minutes on the map turns a two-hundred-line gradebook into one
+> transferable sentence — **a mask is a question you can look at** — and it puts the `950` where it
+> belongs: not a silly slip they made, but a category of problem this course has a whole tile reserved
+> for.
+
+> **⚠️ Watch out:** do not let that arrow become a promise that Week 23 makes bad data somebody else's
+> problem. The range check they wrote today is the habit; pandas only makes it shorter.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

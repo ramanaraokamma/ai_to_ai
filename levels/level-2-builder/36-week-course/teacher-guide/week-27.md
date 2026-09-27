@@ -248,6 +248,38 @@ Then ask the question that matters: **why might a 14-year-old be studying half a
 
 ---
 
+### 11. 🧭 The Growing Map — two minutes on the word `honest`
+
+One figure in the student guide is not about this week's topic. It is the same pipeline every week with
+one more piece filled in, and it is the only place either book shows the learner the *shape* of the
+year rather than the content of the lesson. This week it is also a Term 3 full stop.
+
+![The Level 2 pipeline in Week 27: still the honest axes tile, now building a misleading chart on purpose and confessing it](../figures/fig-w27-0-where-this-fits.svg)
+
+*Figure 27.0 — Week 27's version. Second and final week inside the `honest axes` tile, weeks 26 to 27 —
+and stage four is now solid all the way across. Two threads lit: impact and evaluation.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and point at the two words in the gold tile.** Ask *"we spent today breaking the second
+   word — so which chart was the honest one, the left panel or the right?"* You want a finger on the
+   **right-hand** panel of their own saved PNG, and the reason said out loud: *its axis starts at zero.*
+   Then the follow-up that does the real work: *and what number did the ruler give you?* Their own
+   exaggeration factor, from their own page. Do not improve their wording.
+2. **Then the map question:** *"stage four is solid now and the last stage is still dashed — what do
+   you think a computer could do with a chart that we cannot?"* You are fishing for something in the
+   region of *guess the next one*. Anything close is a win; this is a hook for next week, not a test.
+3. **Have them fill in their own copy** — ink the `honest axes` tile in, and write their exaggeration
+   factor beside it. It is the only number on their map that they measured rather than computed.
+
+> **🧑‍🏫 Why this is worth two minutes.** Term 3 was three months of pandas, charts and cleaning, and
+> from the inside it can feel like a long unrelated list. The map makes it one stage of five, finished.
+> It also does something specific for this week: seeing `PREDICT & CHECK` still dashed while their
+> ruler measurement sits on the page next to it plants the right suspicion for Term 4 — a model's
+> output is another picture somebody can lean on, and it will need checking the same way.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

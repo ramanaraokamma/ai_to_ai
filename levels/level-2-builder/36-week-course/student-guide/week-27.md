@@ -1091,6 +1091,32 @@ The way to stop making this mistake: draw a rectangle on paper, rule it down the
 
 ---
 
+## 🧭 Where This Fits
+
+Same gold tile as last week, and this is the second and last week inside it. Term 3 ends here, and it
+ends with you doing something slightly wicked on purpose: drawing a chart that tells a lie, measuring
+exactly how big the lie is, and then writing the confession underneath it.
+
+![The Level 2 pipeline in Week 27: still the honest axes tile, now building a misleading chart on purpose and confessing it](../figures/fig-w27-0-where-this-fits.svg)
+
+*Figure 27.0 — The pipeline in Week 27. Still the `honest axes` tile — and this is the week that earns
+the word **honest**, because you build the dishonest version first. Stage four is solid right across
+now; only `PREDICT & CHECK` is still dashed.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A chart can mislead **without a single wrong number in it.** Cut the y-axis and a 2% gap turns into a cliff. So before you believe any chart — including the one you just drew — you find the bottom of the axis and read it. |
+| **The one question it answers** | *"Is this difference real, or is it just where the axis starts?"* |
+| **What it plugs into** | Week 25's labelled axes and Week 26's choice of chart shape. This week you take those same tools and aim them the wrong way deliberately, then do the arithmetic: two bars, a ruler, and how many times bigger you made the gap look. |
+| **What carries forward** | Week 33's overfitting curve, which you will read with exactly this suspicion, and Week 36, where you stand up and defend every picture you drew this year. |
+| **Spiral thread** | ⚖️ **Evaluation** — checking where the axis starts is a measurement, not an opinion — and 🌍 **Impact**, because somebody decides something because of the chart you published. Neither thread is about typing any more. |
+
+> **💡 Try this:** in the corner of the gold tile on your own copy of the map, write the two bar
+> heights you measured in millimetres, then **×** and your exaggeration factor. That number came off a
+> real ruler you held in your hand, which makes it the most convincing thing in this whole book.
+
+---
+
 ## 🔑 Remember This
 
 - **A truncated axis deletes length from the bottom of every bar, and the reader cannot put it back.** That is where the lie lives.

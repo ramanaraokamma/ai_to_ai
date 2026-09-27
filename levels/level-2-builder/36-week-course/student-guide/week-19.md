@@ -1009,6 +1009,32 @@ If it helps: the grid is a chocolate bar and `rain[:, 0]` snaps off one strip. O
 
 ---
 
+## 🧭 Where This Fits
+
+The gold box has moved — first time since Week 13 — and it has moved into a whole new stage. **CLEAN
+IT** goes solid today. That matters more than it looks: until now the question was *can I hold this
+data?* From here it is *am I asking it the right question?* — and `axis` is the first place where asking
+the wrong one still hands you a tidy, confident answer.
+
+![The Level 2 pipeline in Week 19: stage three opens and its numpy and DataFrames tile is this week's box](../figures/fig-w19-0-where-this-fits.svg)
+
+*Figure 19.0 — The pipeline in Week 19. Stage three opens, and its first tile — `numpy · DataFrames`,
+weeks 19 to 22 — is where you now stand. Stage two is plain white and finished behind you.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A grid has **two directions**. `axis=0` walks **down** a column; `axis=1` walks **across** a row. Say which one the question wants out loud before you type it, because the wrong one still runs. |
+| **The one question it answers** | *"Do I want one number per city, or one number per month?"* — decide how many answers you expect first, and the count tells you which axis you needed. |
+| **What it plugs into** | Week 17's `.shape`. The word `axis` means nothing at all until you know which of those two numbers is the rows. |
+| **What carries forward** | Week 21's named columns, which make this choice far safer, and Week 24's `groupby`, which is this same question asked with labels instead of numbers. |
+| **Spiral thread** | 🏷️ **Representation**, on its own — a table is not just a bag of numbers, it has **directions**, and knowing which direction means what is the difference between a real answer and a plausible one. |
+
+> **💡 Try this:** on your own copy of the map, write `axis=0 ↓` and `axis=1 →` inside the gold tile, with
+> the arrows actually pointing. You have just opened a stage you will live in for six weeks, and those
+> two arrows are the whole of its first lesson.
+
+---
+
 ## 🔑 Remember This
 
 - **An axis is a direction.** `axis=0` runs **down** the rows. `axis=1` runs **across** the columns. The number is the position in the shape, so you can always read it off the screen.

@@ -325,6 +325,41 @@ The line to hold in your head all lesson: **today is the week the student learns
 
 ---
 
+### 11. 🧭 The Growing Map — two minutes to close Term 2
+
+The student guide carries one figure that is not about this week's content: the same pipeline every
+week, with one more piece filled in. On a checkpoint week it does a second job as well — it is the only
+honest picture of how far through the year the student actually is.
+
+![The Level 2 pipeline in Week 18: the last week inside the dicts, rows and files tile, and Term 2 closes with eight loops retired](../figures/fig-w18-0-where-this-fits.svg)
+
+*Figure 18.0 — Week 18's version. Sixth and last week inside the `dicts · rows · files` tile, weeks 13
+to 18. Two threads lit: toolcraft and representation.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask this week's question:** *"the picture is identical to last week's. Name the thing
+   that changed, that a picture cannot show."* You want something close to *"the same job now takes one
+   line instead of five."* Follow it with the count — *how many loops did we retire?* **Eight.** Have
+   them say the number; it is the deliverable and it deserves saying out loud.
+2. **Then the arithmetic that makes a checkpoint honest:** *"we are eighteen weeks into thirty-six —
+   count the solid boxes."* Two stages of five, four tiles of ten. They will spot that they are half way
+   through the year and not half way across the map, and they should hear from you why that is fine:
+   stages three to five move faster *because* Term 2 was slow. Said now, it prevents a term of quiet
+   worry.
+3. **Have them add the retirement list to their own copy** — the eight loops in the margin beside the
+   gold tile, crossed out. It is the most satisfying annotation of the year and it takes thirty seconds.
+
+> **🧑‍🏫 Why this is worth two minutes.** Review weeks feel like nothing happened, because no new box
+> lights up. The map lets you show progress that is real but invisible: the box is the same, the code
+> inside it is a fifth of the length, and their own "revisit" list is the other half of the checkpoint. A
+> learner who ends Term 2 believing they stood still starts Term 3 defensive.
+
+> **⚠️ Watch out:** the "half way through the year, not half way across the map" line is reassurance, not
+> a target. Do not let it turn into a pace warning.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes the night before

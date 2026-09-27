@@ -321,6 +321,36 @@ That traceback is a gift, and Week 10 has already taught them how to read it: **
 
 ---
 
+### 10. 🧭 The Growing Map — same tile, different thread
+
+**Where This Fits** is the student guide's one structural figure: the whole pipeline, with one more
+piece filled in each week. The box has not moved since last week, but the bottom strip has.
+
+![The Level 2 pipeline in Week 11: still in stage two's first tile, now holding many values under one name](../figures/fig-w11-0-where-this-fits.svg)
+
+*Figure 11.0 — Week 11's version. Stage one stays white, `functions · lists` stays gold, and the single
+lit pill at the bottom is **representation** — toolcraft has gone dark.*
+
+**How to run it, in about two minutes:**
+
+1. **Show it and ask:** *"we put twenty scores under one name today — which box are we in, and which
+   stage is that box in?"* You want `functions · lists`, inside **hold the data**. Then the follow-up
+   worth having: *"why is a list a 'holding the data' idea rather than a 'speak Python' one?"*
+2. **Point at the strip.** Only representation is lit. Say why in one sentence: choosing one list over
+   twenty variable names is a decision about **how the data is shaped**, not a new piece of syntax —
+   and that is the thread that runs all the way to Week 21's columns.
+3. **Copy time.** On their own map, five numbered boxes and `len = 5` under the gold tile. That drawing
+   is the fix for almost every list bug they will hit between now and March.
+
+> **🧑‍🏫 Why this is worth two minutes.** Lists feel like syntax to a learner — brackets, commas,
+> square-bracket numbers — and the reason they are on the map at all is that they are the first
+> *structure*. Showing it inside "hold the data" is what makes the next ten weeks make sense.
+
+> **⚠️ Watch out:** the dashed boxes are a promise, not a syllabus to preview. If somebody asks what
+> `numpy · DataFrames` means, "a table you can do maths on, in February" is the right length of answer.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes the night before

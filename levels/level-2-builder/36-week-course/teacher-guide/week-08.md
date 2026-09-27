@@ -347,6 +347,35 @@ Say this to a student who asks why not just use `break`: **you could, and `break
 
 ---
 
+### 11. 🧭 The Growing Map — and why it has not moved
+
+The student guide's **Where This Fits** figure appears every week with one more piece filled in. This
+week it is *deliberately identical to last week's*, and that is the teaching point.
+
+![The Level 2 pipeline in Week 8: the second tile of stage one is still the live one, now with loops that wait for a person](../figures/fig-w08-0-where-this-fits.svg)
+
+*Figure 8.0 — Week 8's version. Same gold tile as Week 7, because `choices · loops` covers Weeks 5–9.
+Stage one's first tile stays white; everything from stage two onwards is still dashed.*
+
+**How to run it, in about two minutes:**
+
+1. **Show it and let someone notice.** Ask *"what's different from last week?"* The answer is
+   **nothing**, and when somebody says so, agree loudly. Then: *"so what did we actually add today, if
+   the box didn't move?"* — a loop that waits for a person instead of counting.
+2. **Draw the distinction on the board in four words:** `for` counts · `while` waits. Ask which of the
+   two the guessing game needed and why. That is the only thing from today worth checking.
+3. **Two minutes of copying.** They add "waits" to their own pencil map. A five-week tile means five
+   weeks of small additions to the same box, which is exactly how the year really feels.
+
+> **🧑‍🏫 Why this is worth two minutes.** A map that sometimes does not change is more honest than one
+> that always does, and it pre-empts the complaint that the course is "going slowly". One tile, five
+> weeks, four genuinely different skills inside it. Saying that out loud once is worth a lot.
+
+> **⚠️ Watch out:** resist the temptation to tint or badge anything extra to make the week feel
+> productive. Dashed means **not yet** and nothing else, and the map only works because it never lies.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

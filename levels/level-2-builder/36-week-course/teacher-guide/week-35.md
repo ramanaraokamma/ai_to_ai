@@ -239,6 +239,41 @@ The opposite, and this is worth saying flatly: it is the section that earns the 
 
 ---
 
+### 9. 🧭 The Growing Map — two minutes on the week the whole map runs at once
+
+Each week's student guide carries the same pipeline with one more piece filled in. For thirty-four weeks
+it has been showing them where one lesson sits. Today it does something different: it is the
+**contents page of their own notebook**, in order, left to right.
+
+![The Level 2 pipeline in Week 35: still the bake-off and capstone tile, now the whole pipeline run on rows you collected](../figures/fig-w35-0-where-this-fits.svg)
+
+*Figure 35.0 — Week 35's version. Fourth week inside `bake-off · capstone`, weeks 32 to 36, with every
+stage solid and all five of them working on the learner's own rows. Two threads lit: evaluation and
+learning signal.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and walk the row with them:** *"point at the box each part of today came from."* Rows and
+   `head()` → HOLD THE DATA. The log and the text-to-numbers conversion → CLEAN IT. The five charts →
+   SEE IT. The split, the four models, the table → PREDICT & CHECK. Then the punchline: *"and how many
+   new things did you learn today?"* **None.** That is the answer you want, said with some pride.
+2. **Then the question that separates the good projects from the tidy ones:** *"which box does 'what I
+   got wrong' belong in?"* There is no single right answer, and the argument is the point — most land on
+   `PREDICT & CHECK`, some on `CLEAN IT`, the sharpest say *all of them*, because an admission about
+   your rows is as valuable as one about your model. Accept any answer they can justify with a number.
+3. **Have them ink the tile and write one line under each stage box** on their own copy — question, row
+   count, one log line, one chart caption, one score with units. Five lines. Read one learner's five out
+   loud. That is their showcase, drafted, a week early.
+
+> **🧑‍🏫 Why this is worth two minutes.** This is the week the course's structure and the learner's own
+> project become the same object, and saying so costs nothing while the map is on screen. It also
+> defuses the most common Week 35 complaint — *"we didn't learn anything new"* — by turning it into the
+> claim it actually is: every box on this map is now something you can do on data nobody prepared for
+> you. Keep the five-line exercise; students who write those lines arrive at the showcase with an
+> argument instead of a scroll.
+
+---
+
 ## 🧰 Prep Checklist
 
 **25 minutes the night before**

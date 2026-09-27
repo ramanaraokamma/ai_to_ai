@@ -372,6 +372,38 @@ Produces exactly the missing-`f` bug. The cure is not explanation, it is the rit
 
 ---
 
+### 8. 🧭 The Growing Map — the two-minute close
+
+**Where This Fits** is in the student guide again, and it will be every week for thirty-six weeks. Same
+picture, one more piece filled in. It is the only page in the course that shows the *shape* of the year
+rather than the content of the week.
+
+![The Level 2 pipeline in Week 3: still inside the first tile, now printing like a pro](../figures/fig-w03-0-where-this-fits.svg)
+
+*Figure 3.0 — Week 3's version. The gold tile has not moved since Week 1. **Toolcraft** is still the only
+pill lit along the bottom.*
+
+**How to spend the two minutes:**
+
+1. **Point, don't lecture.** Ask: *"`receipt.py` printed `£3.50` instead of `3.5` — which box on the map
+   were we in when we did that?"* A finger on the gold tile is the whole answer you need.
+2. **Then a Week-3-specific one:** *"the map has a box called SEE IT, right over there, weeks 25 to 27.
+   What do you think `:.2f` has to do with a chart?"* You are not after a correct answer. You are
+   planting the idea that formatting numbers for a reader is a thing that comes back.
+3. **Then the dashes:** *"why is most of this dotted?"* — *"because we haven't got there yet."* Thirty
+   seconds, every week, in the same words.
+4. **Pencil copies out.** They add one word under the first tile: *reader*. If a student has lost their
+   copy, redrawing the five stage names takes ninety seconds and is not a punishment.
+
+> **🧑‍🏫 Why this is worth two minutes.** Week 3 is the week the course can start to feel like an
+> unconnected string of tricks — f-strings, `//`, `%`, `**`. The map is the antidote: it shows that all
+> four of those live in one box, and that the box has a job.
+
+> **⚠️ Watch out:** resist filling in the later tiles verbally. "Week 28 is where we do machine learning"
+> sounds encouraging and reliably produces a student who decides weeks 4 to 27 are the boring bit.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

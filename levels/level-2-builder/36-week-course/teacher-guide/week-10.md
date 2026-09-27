@@ -320,6 +320,36 @@ And a fourth thing that is not a misconception but will happen: a student define
 
 ---
 
+### 10. 🧭 The Growing Map — a new stage and a second thread
+
+The student guide's **Where This Fits** figure shows the same pipeline every week with one more piece
+filled in. Two things change on it this week, and both are worth naming out loud.
+
+![The Level 2 pipeline in Week 10: stage one is finished and the first tile of stage two, functions and lists, is where you are](../figures/fig-w10-0-where-this-fits.svg)
+
+*Figure 10.0 — Week 10's version. Stage one is complete: both tiles plain white, never re-tinted. The
+gold badge has crossed into `HOLD THE DATA`, and the thread strip has two pills lit for the first time.*
+
+**How to run it, in about two minutes:**
+
+1. **Show it and ask:** *"your function took a number in and handed one back today — which box did that
+   open?"* They point at the gold `functions · lists` tile in the second stage. Then point at the arrow
+   they just crossed, and at the two white boxes behind it.
+2. **Ask about the bottom strip:** *"there are two lit now — why?"* The honest answer is the one to
+   give: Weeks 1–9 were craft, and deciding what a function's parameters are is the first genuinely AI
+   idea of the year, because it is a decision about **how you represent a job**.
+3. **Then the dashed question, and the copy.** Three stages and six tiles still dotted; they update
+   their pencil map, and this week they get to fill in a new stage heading.
+
+> **🧑‍🏫 Why this is worth two minutes.** Week 10 is the hinge of Level 2 and it is easy for it to pass
+> unremarked, because `def double(number):` looks like a small edit to Week 9. The map is what makes the
+> size of the change visible: new stage, new thread, and everything from here needs both.
+
+> **⚠️ Watch out:** do not let the thread strip become a vocabulary test. "Representation" is a label on
+> a thread they will meet twenty more times, not a word they need to define today.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes the night before

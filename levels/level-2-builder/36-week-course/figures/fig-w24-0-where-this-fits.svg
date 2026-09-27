@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img"
+     aria-labelledby="t d" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title id="t">The Level 2 pipeline in Week 24: still the holes and duplicates tile, the last box of stage three</title>
+  <desc id="d">A left-to-right pipeline turns a question into an answer you can defend, through five stages: speak Python, hold the data, clean it, see it, predict and check. Stage one, speak Python, is solid and both of its tiles are finished in plain white: print, variables and maths, weeks 1 to 4, and choices and loops, weeks 5 to 9. Stage two, hold the data, is solid and finished too: functions and lists, weeks 10 to 12, and dicts, rows and files, weeks 13 to 18. Stage three, clean it, is solid because we are standing inside it, and its first tile — numpy and DataFrames, weeks 19 to 22 — is finished in plain white. Its second tile, holes and duplicates, weeks 23 to 24, is tinted gold and badged “you are here” for the second week running: this week the repaired table is split into groups, one number is worked out per group, and the size of each group is printed beside every average. The last two stages — see it, and predict and check — are still dashed, meaning not yet, and so are all four of their tiles: your first chart, week 25; honest axes, weeks 26 to 27; X, y, kNN and trees, weeks 28 to 31; and bake-off and capstone, weeks 32 to 36. Between the stage boxes, small arrows and the line: each stage feeds the next — you cannot clean data you cannot hold. Along the bottom, seven threads: data and evaluation are lit; toolcraft, representation, model, learning signal and impact stay white. The footer line reads: Week 24 closes stage three: your eyes are not the evidence — the count is.</desc>
+
+  <!-- ── banner ───────────────────────────────────────────────────── -->
+  <text x="400" y="42" text-anchor="middle" font-size="17" font-weight="700" fill="#14202B">
+    A QUESTION  →  AN ANSWER YOU CAN DEFEND</text>
+  <text x="400" y="62" text-anchor="middle" font-size="13" fill="#55636F">
+    thirty-six weeks, five stages, one pipeline</text>
+
+  <!-- ── stage 1: SPEAK PYTHON ─────────────────────────────────────────── -->
+  <g>
+    <rect x="26" y="82" width="140" height="52" rx="11" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <text x="96" y="104" text-anchor="middle" font-size="14" font-weight="700" fill="#14202B">SPEAK</text>
+    <text x="96" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#14202B">PYTHON</text>
+    <rect x="26" y="146" width="140" height="58" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+    <text x="96" y="167" text-anchor="middle" font-size="12" fill="#14202B">print · variables</text>
+    <text x="96" y="184" text-anchor="middle" font-size="12" fill="#14202B">· maths</text>
+    <text x="96" y="199" text-anchor="middle" font-size="12" fill="#55636F">wk 1–4</text>
+    <rect x="26" y="244" width="140" height="48" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+    <text x="96" y="266" text-anchor="middle" font-size="12" fill="#14202B">choices · loops</text>
+    <text x="96" y="283" text-anchor="middle" font-size="12" fill="#55636F">wk 5–9</text>
+  </g>
+
+  <!-- ── stage 2: HOLD THE DATA ────────────────────────────────────────── -->
+  <g>
+    <rect x="178" y="82" width="140" height="52" rx="11" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <text x="248" y="104" text-anchor="middle" font-size="14" font-weight="700" fill="#14202B">HOLD</text>
+    <text x="248" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#14202B">THE DATA</text>
+    <rect x="178" y="146" width="140" height="58" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+    <text x="248" y="172" text-anchor="middle" font-size="12" fill="#14202B">functions · lists</text>
+    <text x="248" y="194" text-anchor="middle" font-size="12" fill="#55636F">wk 10–12</text>
+    <rect x="178" y="244" width="140" height="48" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+    <text x="248" y="266" text-anchor="middle" font-size="12" fill="#14202B">dicts · rows · files</text>
+    <text x="248" y="283" text-anchor="middle" font-size="12" fill="#55636F">wk 13–18</text>
+  </g>
+
+  <!-- ── stage 3: CLEAN IT — we are inside it ──────────────────────────── -->
+  <g>
+    <rect x="330" y="82" width="140" height="52" rx="11" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <text x="400" y="113" text-anchor="middle" font-size="14" font-weight="700" fill="#14202B">CLEAN IT</text>
+    <rect x="330" y="146" width="140" height="58" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+    <text x="400" y="172" text-anchor="middle" font-size="12" fill="#14202B">numpy · DataFrames</text>
+    <text x="400" y="194" text-anchor="middle" font-size="12" fill="#55636F">wk 19–22</text>
+    <rect x="330" y="244" width="140" height="48" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+    <text x="400" y="261" text-anchor="middle" font-size="12" fill="#14202B">holes · duplicates</text>
+    <rect x="338" y="266" width="124" height="22" rx="11" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2.5"/>
+    <path d="M349 277 l4 4.5 l8 -9" fill="none" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="407" y="282" text-anchor="middle" font-size="12" font-weight="700" fill="#1B7A4B">YOU ARE HERE</text>
+  </g>
+
+  <!-- ── stage 4: SEE IT ───────────────────────────────────────────────── -->
+  <g>
+    <rect x="482" y="82" width="140" height="52" rx="11" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="552" y="113" text-anchor="middle" font-size="14" font-weight="700" fill="#55636F">SEE IT</text>
+    <rect x="482" y="146" width="140" height="58" rx="10" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="552" y="172" text-anchor="middle" font-size="12" fill="#55636F">your first chart</text>
+    <text x="552" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="#55636F">wk 25</text>
+    <rect x="482" y="244" width="140" height="48" rx="10" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="552" y="266" text-anchor="middle" font-size="12" fill="#55636F">honest axes</text>
+    <text x="552" y="283" text-anchor="middle" font-size="12" font-weight="700" fill="#55636F">wk 26–27</text>
+  </g>
+
+  <!-- ── stage 5: PREDICT &amp; CHECK ──────────────────────────────────── -->
+  <g>
+    <rect x="634" y="82" width="140" height="52" rx="11" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="704" y="104" text-anchor="middle" font-size="14" font-weight="700" fill="#55636F">PREDICT</text>
+    <text x="704" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#55636F">&amp; CHECK</text>
+    <rect x="634" y="146" width="140" height="58" rx="10" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="704" y="172" text-anchor="middle" font-size="12" fill="#55636F">X, y · kNN · trees</text>
+    <text x="704" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="#55636F">wk 28–31</text>
+    <rect x="634" y="244" width="140" height="48" rx="10" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="704" y="266" text-anchor="middle" font-size="12" fill="#55636F">bake-off · capstone</text>
+    <text x="704" y="283" text-anchor="middle" font-size="12" font-weight="700" fill="#55636F">wk 32–36</text>
+  </g>
+
+  <!-- ── flow arrows between stages ───────────────────────────────── -->
+  <g stroke="#55636F" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M168 108 L174 108"/><path d="M169 103 l6 5 -6 5"/>
+    <path d="M320 108 L326 108"/><path d="M321 103 l6 5 -6 5"/>
+    <path d="M472 108 L478 108"/><path d="M473 103 l6 5 -6 5"/>
+    <path d="M624 108 L630 108"/><path d="M625 103 l6 5 -6 5"/>
+  </g>
+  <text x="400" y="312" text-anchor="middle" font-size="12" fill="#55636F">
+    each stage feeds the next — you cannot clean data you cannot hold</text>
+
+  <!-- ── seven threads, data and evaluation lit ───────────────── -->
+  <g font-size="12" text-anchor="middle">
+    <rect x="20" y="336" width="103" height="24" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <text x="71" y="352" fill="#55636F">toolcraft</text>
+    <rect x="129" y="336" width="103" height="24" rx="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2.5"/>
+    <text x="180" y="352" font-weight="700" fill="#14202B">data</text>
+    <rect x="238" y="336" width="103" height="24" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <text x="289" y="352" fill="#55636F">representation</text>
+    <rect x="347" y="336" width="103" height="24" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <text x="398" y="352" fill="#55636F">model</text>
+    <rect x="456" y="336" width="103" height="24" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <text x="507" y="352" fill="#55636F">learning signal</text>
+    <rect x="565" y="336" width="103" height="24" rx="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2.5"/>
+    <text x="616" y="352" font-weight="700" fill="#14202B">evaluation</text>
+    <rect x="674" y="336" width="103" height="24" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <text x="725" y="352" fill="#55636F">impact</text>
+  </g>
+  <text x="400" y="378" text-anchor="middle" font-size="13" fill="#55636F">
+    Week 24 closes stage three: your eyes are not the evidence — the count is.</text>
+</svg>

@@ -383,6 +383,42 @@ The line to hold in your head all lesson: **today the student learns to run two 
 
 ---
 
+### 11. 🧭 The Growing Map — two minutes on the second word
+
+The student guide carries one figure that is not about this week's content: the same pipeline every
+week, with one more piece filled in. Today it does one job particularly well — it shows a learner that
+the container they just met is the one every remaining box needs.
+
+![The Level 2 pipeline in Week 21: still stage three's numpy and DataFrames tile, now the table has names on its columns](../figures/fig-w21-0-where-this-fits.svg)
+
+*Figure 21.0 — Week 21's version. Third week inside the `numpy · DataFrames` tile, weeks 19 to 22, and
+the week its second word finally arrives. One thread lit: representation.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and put a finger on the second word.** Ask *"which of the two words in the gold tile did we
+   meet today?"* You want **DataFrames** — and then the follow-up that matters: *"what did it give back
+   that the array had taken away?"* The **names**. Say the shape of the answer out loud: Week 14's
+   labels, Week 17's whole-grid maths, one container.
+2. **Then the question that makes the picture pay:** *"point at every box on this map that will need a
+   DataFrame."* Let them travel right — clean it, see it, predict and check, capstone. It is all of them.
+   **That** is why two commands on a new table is worth a whole lesson, and a finger moving across a
+   picture argues it better than any sentence from you.
+3. **Have them annotate their own copy:** circle `DataFrames`, and write **head() then info(), every
+   time** beside it. It is the habit the next fifteen weeks assume they already have.
+
+> **🧑‍🏫 Why this is worth two minutes.** After an install and two new commands, a student can easily
+> file today under "more library stuff". The map reframes it as the container the rest of the course runs
+> on, which is both true and motivating. It also quietly answers the question they will ask in Week 23 —
+> *why did we bother with numpy at all?* — because the gold tile holds both words, in that order, and
+> they can see the order was chosen.
+
+> **⚠️ Watch out:** the box has not moved, and some students read a still box as a wasted week. Say
+> plainly that today was the biggest change of the term and the map cannot show it, because swapping the
+> container happens *inside* a box.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes the night before

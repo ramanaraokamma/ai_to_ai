@@ -326,6 +326,38 @@ This is the habit that Week 6 is built on and the reason Week 6's planted bug is
 
 ---
 
+### 9. 🧭 The Growing Map — the week the gold moves
+
+The weekly **Where This Fits** figure changes shape properly for the first time today. The first tile
+goes plain white with a solid outline — the course's symbol for *done* — and the gold drops to the tile
+below it. Give it thirty extra seconds this week; the vocabulary is new.
+
+![The Level 2 pipeline in Week 5: the first tile is done and we have moved into the second](../figures/fig-w05-0-where-this-fits.svg)
+
+*Figure 5.0 — Week 5's version. Three states now, not two: gold for this week, white-and-solid for
+finished, dotted for not yet.*
+
+**Two minutes:**
+
+1. **Ask what moved.** *"Something on this picture is different from last week's. Who can find it?"* Let
+   them hunt. Then name the states: gold is now, white is done, dotted is not yet.
+2. **Anchor it in today:** *"`ticket_price.py` charged a 12-year-old and a 40-year-old different prices —
+   which box was that?"* They point at the newly gold tile, *choices · loops*. If someone points at the
+   white one, that is a useful mistake: today used Week 4's `int(input(...))`, so both boxes were involved.
+3. **Then the dashes**, same words as always: *"why is the rest dotted?"* — *"we haven't got there yet."*
+4. **Pencil copies.** They go over the first tile in pen, write *done* beside it, and start a fresh gold
+   patch on the one below. Watching the pen travel is the entire value of them owning a copy.
+
+> **🧑‍🏫 Why this is worth two minutes.** "Done" is the most motivating word on the page and this is the
+> first week you get to use it. A learner who has seen one tile close believes the other nine can close
+> too — which is a different kind of confidence from having enjoyed a lesson.
+
+> **⚠️ Watch out:** do not let "done" be heard as "we will never mention `print()` again". Say plainly
+> that a finished tile is a tool you now *carry*, not a topic you have left behind — Week 20 will ask this
+> exact `>=` question of a thousand numbers at once.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

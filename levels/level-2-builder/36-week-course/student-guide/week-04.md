@@ -1014,6 +1014,31 @@ The student who gets caught by this converts `age` correctly on line 11 and then
 
 ---
 
+## 🧭 Where This Fits
+
+Same pipeline, same five stages, and the gold tile has not moved for four weeks. That is because this
+week is the one that **finishes** it. Weeks 1, 2 and 3 each handed you one tool; today all three turn
+up in the same program, and a real person types into it.
+
+![The Level 2 pipeline in Week 4: the first tile of the first stage is finished](../figures/fig-w04-0-where-this-fits.svg)
+
+*Figure 4.0 — The pipeline after Week 4. Gold is where you are. Dashed is not yet. The strip along the
+bottom is the seven threads this course keeps returning to.*
+
+| | |
+|---|---|
+| **The mental model you now own** | `input()` **always** hands back text — even when the human typed `12`. So you convert it the moment you receive it: **ask, convert, then use.** When you forget, the traceback tells you the exact line you forgot on. |
+| **The one question it answers** | *"Why did my two numbers glue together instead of adding up?"* Because they were never numbers. They were text wearing a number costume. |
+| **What it plugs into** | Weeks 1–3 all at once — a file that runs top to bottom, named boxes to keep answers in, f-strings to print them nicely — plus Week 2's type rule, which is suddenly not theoretical at all. |
+| **What carries forward** | Week 5 starts asking questions *of* the converted value. Week 16 meets the identical rule when a CSV file hands back text. Week 23 converts a whole column in one line with `astype`. |
+| **Spiral thread** | 🧰 **Toolcraft** — the last tile of the toolcraft-only run is now behind you in spirit, though five more weeks of craft come first. The six AI threads wake up in Week 10. |
+
+> **💡 Try this:** on your notebook map, put a small tick in the corner of the first tile. Four weeks,
+> one box, and you can now write a program that talks to a human and does not fall over. Next week the
+> gold jumps down to the box underneath.
+
+---
+
 ## 🔑 Remember This
 
 - **`input()` always hands back text.** Always. Even when the human types `12`.

@@ -1048,6 +1048,30 @@ Test it. **Change the heading to `LEVEL 2` in the pasted version:** three edits,
 
 ---
 
+## 🧭 Where This Fits
+
+Look at the map carefully this week, because a whole stage is about to close. Everything in the gold
+tile is now yours, and next week you step sideways into a stage you have never been in — the one where
+you stop typing the data yourself and start **holding** it.
+
+![The Level 2 pipeline in Week 9: the second tile of stage one closes, and all of speak Python is filled in](../figures/fig-w09-0-where-this-fits.svg)
+
+*Figure 9.0 — The pipeline after Week 9. The gold tile finishes here, so from next week the whole of
+stage one is white. Dashed is still not yet — but there is much less of it than there was in Week 1.*
+
+| | |
+|---|---|
+| **The mental model you now own** | When the same block of code shows up for the third time, **give it a name**. A function is a named block you can run whenever you like, as many times as you like — and `return` is how a value gets back *out* of it to whoever called it. |
+| **The one question it answers** | *"I have written this same block three times — what do I do about it?"* — you write it once, name it, and call the name. Then when it is wrong, it is wrong in exactly one place. |
+| **What it plugs into** | Every file you wrote in Weeks 1–8. The blocks you already typed out twice and three times are not practice you are throwing away; they are the **raw material** for your first functions. |
+| **What carries forward** | Week 10 gives your functions parameters, so they can take something in. Week 12 puts them in a file called `stats.py` and imports them. And every library you will ever use — pandas, matplotlib, scikit-learn — is somebody else's Week 9. |
+| **Spiral thread** | 🧰 **Toolcraft** — for the last time on its own. This is the ninth and final week of pure craft. Next week the pipeline moves on and the first AI thread lights up beside it. |
+
+> **💡 Try this:** turn to your pencil map and go over the whole of stage one in ink. Nine weeks, two
+> tiles, one stage: you can now write a program that decides, repeats, and names its own blocks.
+
+---
+
 ## 🔑 Remember This
 
 - **A function is a named block you write once and run whenever you like.** You have been calling other people's since Week 1.

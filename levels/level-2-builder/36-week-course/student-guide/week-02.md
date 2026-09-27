@@ -829,6 +829,31 @@ print(a, b)
 
 ---
 
+## 🧭 Where This Fits
+
+The whole year is one pipeline: a question goes in at the left, and an answer you can **defend** comes
+out at the right. You are still standing in the very first box — Week 2 does not move you along it.
+What it does is give that box a **memory**, and nothing else in the pipeline works without one.
+
+![The Level 2 pipeline in Week 2: still inside the first tile, now with names on the boxes](../figures/fig-w02-0-where-this-fits.svg)
+
+*Figure 2.0 — The pipeline after Week 2. Gold is where you are. Dashed is not yet. The strip along the
+bottom is the seven threads this course keeps returning to.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A variable is **a named box holding one value** — name on the left of the `=`, value on the right, always that way round. And every value has a **kind**. The kind decides what `+` even means, so `"5" + 5` is a completely different question from `5 + 5`. |
+| **The one question it answers** | *"What kind of thing is in this box, and what will `+` do to it?"* Ask it **before** you press run, and most of this year's error messages never get the chance to happen. |
+| **What it plugs into** | Week 1's top-to-bottom file. It ran perfectly well, but it forgot everything the instant a line finished. Now it has somewhere to **keep** a value between one line and the next. |
+| **What carries forward** | Week 3 drops these names into sentences. Week 4 converts whatever `input()` hands back — which is always text, every single time. Week 11 puts *many* values under one name. |
+| **Spiral thread** | 🧰 **Toolcraft** — still the only pill lit, and it stays that way for seven more weeks. Naming a thing well is a craft, not a theory. |
+
+> **💡 Try this:** on your own pencil copy of the map, write two words underneath the gold tile:
+> **name** and **kind**. That is the whole of Week 2, and they are the first two things you will check
+> every time something goes wrong from now until Week 36.
+
+---
+
 ## 🔑 Remember This
 
 - **A variable is a name stuck on a value.** The name is the label; the value is what's inside. Two different things.

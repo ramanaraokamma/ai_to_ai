@@ -1335,6 +1335,30 @@ Take your own keyboard and type `banana` at your own prompt. The traceback makes
 
 ---
 
+## 🧭 Where This Fits
+
+Here is the map again — and nothing on it has moved since last week. That is not a mistake, and it is
+worth two minutes of your attention: one tile can take five weeks. Last week your loop **counted**.
+This week the same tile learns to **wait**.
+
+![The Level 2 pipeline in Week 8: the second tile of stage one is still the live one, now with loops that wait for a person](../figures/fig-w08-0-where-this-fits.svg)
+
+*Figure 8.0 — The pipeline after Week 8. Same gold tile as last week, because loops are a big tile.
+White is finished, dashed is not yet, and the pills along the bottom are the course's seven threads.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A `while` loop repeats **until its condition goes `False`** — which is how a program waits for a human instead of counting to a number it already knows. Two extra words steer it: `break` leaves the loop *right now*, and `continue` skips the rest of *one* trip round and goes back to the check. |
+| **The one question it answers** | *"How do I keep asking until they get it right, without looping forever?"* — you make the condition the design decision, and you make sure something inside the loop can change it. |
+| **What it plugs into** | Week 5's `True`/`False` questions, which are now doing real work as the loop's condition, and Week 7's loop body, which you already know how to write. The new part is that here the **condition**, not the count, is what you have to get right. |
+| **What carries forward** | Week 9 takes the blocks you keep retyping and gives them names. Much later, Week 30 runs a loop over `k = 1, 2, 3 … 25`, keeping the best answer it finds along the way — a `while`-shaped habit of mind, pointed at a model instead of a guessing game. |
+| **Spiral thread** | 🧰 **Toolcraft** — one more week of craft. Two working programs that a human cannot break by typing `banana` is a genuine engineering result, and it is not an AI idea at all. Pretending otherwise would be dishonest. |
+
+> **💡 Try this:** add one word to your pencil map, under the loops tile: **waits**. Next to it write
+> **counts**, for last week. If you can say which of the two a problem needs, you have got this week.
+
+---
+
 ## 🔑 Remember This
 
 - **A `for` loop counts; a `while` loop waits.** One question decides which: can you say the number of repeats out loud before you start?

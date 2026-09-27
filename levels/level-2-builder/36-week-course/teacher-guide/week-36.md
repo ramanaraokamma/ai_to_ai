@@ -191,6 +191,43 @@ No. They should *describe* it, including the parts that do not work. The student
 
 ---
 
+### 9. 🧭 The Growing Map — two minutes to close it, and it is the last figure of the level
+
+Thirty-six weeks ago this figure was one gold tile in a field of dashed boxes. Today it is finished, and
+for once the map is not a footnote to the lesson — it is the lesson's structure, because the five stage
+names are the running order of the showcase they have just given.
+
+![The Level 2 pipeline in Week 36: the last tile closes and every box on the map is solid](../figures/fig-w36-0-where-this-fits.svg)
+
+*Figure 36.0 — Week 36's version. Every box solid, nothing dashed, the last tile closed. Two threads
+lit: impact and evaluation.*
+
+**What to do with it, in about two minutes — and do it after the showcases, not before:**
+
+1. **Show it and ask which box today was:** *"which one did we do this morning?"* Let the wrong answers
+   run for a moment, then take the right one — **all five**. Today they walked the whole row out loud in
+   eight minutes: the question, the rows, the log, the captions, the baseline before the models. Point
+   at each stage box as you name the stop it corresponds to; that is the two minutes, and it is the
+   cleanest summary of the year available to you.
+2. **Then the only question left worth asking:** *"nothing is dashed. So what is Level 3?"* You want
+   *the same boxes, harder* — not *more boxes*. Say it plainly: same five stages, the maths underneath
+   the models, and questions that are harder to defend. And point at gate 6 on the sheet they have just
+   filled in — the napkin drawing from Week 33 lives in the box on the far right, and it is the one
+   picture Level 3 assumes you already own.
+3. **Have them finish their own copy** — ink the last tile, write the date across the bottom, and put it
+   inside the front cover of whatever notebook they will use next. The map they inked themselves, week
+   by week, is the single most durable artefact of this course; make sure it does not end up in a bin
+   with the worksheets.
+
+> **🧑‍🏫 Why this is worth two minutes.** A year ends badly when it ends with a mark. Ending it with a
+> finished picture, in their own handwriting, is the difference between *"I did Python"* and *"I can take
+> a question, a messy table and a keyboard and defend an answer"* — and the second sentence is the one
+> that gets them through the first hard week of Level 3. Say the five stage names out loud one last
+> time, in order, and let the last thing they hear this year be the thing they can do rather than the
+> thing they scored.
+
+---
+
 ## 🧰 Prep Checklist
 
 **30 minutes the night before**

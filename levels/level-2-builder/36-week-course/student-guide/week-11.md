@@ -1071,6 +1071,31 @@ Test it on your cards. Put the fifth card on the end and look at the first four:
 
 ---
 
+## 🧭 Where This Fits
+
+Same gold tile as last week — stage two, first tile — but the thread strip along the bottom has
+changed, and it is worth noticing. Toolcraft has gone quiet. This week is not really about craft at
+all: it is about **how you represent many things at once**, which is an idea, not a technique.
+
+![The Level 2 pipeline in Week 11: still in stage two's first tile, now holding many values under one name](../figures/fig-w11-0-where-this-fits.svg)
+
+*Figure 11.0 — The pipeline after Week 11. Stage one is white and finished, the first tile of stage two
+is gold, and the one lit pill at the bottom is representation.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A list is **a row of numbered slots under one name**. The first slot is `0`, so the last one is `len − 1`, and slot number `len` does not exist at all. That last sentence is exactly what an `IndexError` is trying to tell you. |
+| **The one question it answers** | *"How do I hold twenty scores without inventing twenty variable names?"* — one name, twenty slots, and a number to say which slot you mean. |
+| **What it plugs into** | Week 2's box that held **one** value now holds many. And Week 7's loop finally has something real to walk along, instead of counting to a number you typed in by hand. |
+| **What carries forward** | Week 12 takes **slices** of a list and calls `sorted()` on it. Week 14 has a list where every slot is a whole **row** of a table. Week 17 has an **array** — a list that also knows its own shape, and is the thing every machine-learning library actually eats. |
+| **Spiral thread** | 🧩 **Representation** — on its own this week. Choosing to store twenty scores as one list rather than twenty names is a *representation* decision, and it is the same kind of decision as choosing what the columns of a dataset should be in Week 21. |
+
+> **💡 Try this:** on your pencil map, draw five little boxes in a row under the functions-and-lists
+> tile and number them **0 1 2 3 4**. Write `len = 5` above them. Everything that goes wrong with lists
+> for the rest of the year is fixed by looking at that drawing.
+
+---
+
 ## 🔑 Remember This
 
 - **A list is many values under one name, in order, in square brackets.** `[45, 0, 112, 67]`

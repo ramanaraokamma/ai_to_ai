@@ -880,6 +880,30 @@ Neither version errors. Both run happily. The only thing that catches it is look
 
 ---
 
+## 🧭 Where This Fits
+
+Here is the year again: one pipeline, a question at the left, an answer you can **defend** at the
+right. Week 3 keeps you in the same gold box as last week — and that is deliberate. This box is worth
+four weeks, because everything later in the pipeline gets **read by a human** at the end.
+
+![The Level 2 pipeline in Week 3: still inside the first tile, now printing like a pro](../figures/fig-w03-0-where-this-fits.svg)
+
+*Figure 3.0 — The pipeline after Week 3. Gold is where you are. Dashed is not yet. The strip along the
+bottom is the seven threads this course keeps returning to.*
+
+| | |
+|---|---|
+| **The mental model you now own** | An f-string is **a sentence with holes in it** that you drop values into. A format spec like `:.2f` is a dial on the hole: it decides how many decimals a reader is allowed to see. It changes the **display**, never the value. |
+| **The one question it answers** | *"How do I make my output read like a sentence instead of a pile of numbers?"* — plus its grown-up twin, *"how many decimals is it honest to show?"* |
+| **What it plugs into** | Weeks 1 and 2 together: `print()` from Week 1, and the named boxes from Week 2 that it now reads its values out of. Without names there would be nothing to put in the holes. |
+| **What carries forward** | Week 4's formatted About-Me card. Week 20's `np.round` doing this to a whole array at once. And every chart caption from Week 25 to the end of the year. |
+| **Spiral thread** | 🧰 **Toolcraft** — still lit alone. Rounding for a reader will *become* an honesty question later, in the 📊 evaluation weeks. This week it is just craft. |
+
+> **💡 Try this:** add one word under the gold tile on your notebook map: **reader**. From Week 3 on,
+> every program you write has an audience, and `:.2f` is the first tool you own for being kind to them.
+
+---
+
 ## 🔑 Remember This
 
 - **An f-string is a fill-in-the-blanks form.** Write the sentence once with gaps; Python drops the values in.

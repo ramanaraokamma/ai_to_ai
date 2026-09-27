@@ -289,6 +289,35 @@ The line to hold in your head all lesson: **today is the week the student learns
 
 ---
 
+### 10. 🧭 The Growing Map — two minutes, and one honest question
+
+The student guide carries one figure that is not about this week's content: the same five-stage pipeline
+every week, with one more piece filled in. It is the only place either book shows the learner the
+*shape* of the year rather than today's topic.
+
+![The Level 2 pipeline in Week 15: still the dicts, rows and files tile, now filtering and grouping rows](../figures/fig-w15-0-where-this-fits.svg)
+
+*Figure 15.0 — Week 15's version. Third week inside the `dicts · rows · files` tile, weeks 13 to 18.
+One thread lit: data.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it, then ask a doing question, not a naming one:** *"we are in the same box as last week — so
+   what did we do to the rows today?"* You want two verbs: **kept some** and **counted them into
+   groups**. If they say "filter and group", make them say what each one does to a row.
+2. **Then the better question:** *"what does every answer we wrote today have printed next to it?"* The
+   row count. Then point along the dashed stages and say it once: **that habit is the reason the last
+   box on this map says *check*.** Sixteen weeks early, and they will meet it again.
+3. **Have them write one line on their own copy**, under the gold tile: *filter, group, and always the
+   count.* Nothing else changes on their map this week — which is itself worth them seeing.
+
+> **🧑‍🏫 Why this is worth two minutes.** The denominator habit is the single most transferable thing in
+> this term, and it is also the easiest to hear as nagging. Putting it on the map makes it structural
+> instead of personal: it is not that you keep asking them for row counts, it is that the last stage of
+> the year is called PREDICT **& CHECK** and this is where checking starts.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes the night before

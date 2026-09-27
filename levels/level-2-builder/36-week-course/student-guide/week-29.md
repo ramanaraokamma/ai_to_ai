@@ -1181,6 +1181,33 @@ And if the score *does* change between runs, that is not improvement — that is
 
 ---
 
+## 🧭 Where This Fits
+
+The gold tile has not moved, and that is a little bit funny, because this is the week you trained a
+real machine learning model for the first time in your life. The map stays still because splitting,
+fitting, predicting and scoring all happen inside that one box.
+
+![The Level 2 pipeline in Week 29: still the X, y, kNN and trees tile, now splitting, fitting, predicting and scoring](../figures/fig-w29-0-where-this-fits.svg)
+
+*Figure 29.0 — The pipeline in Week 29. Same tile as last week, second word: `kNN`. Nothing moves,
+because the whole four-step cycle lives in this single box — and it will still be living there in
+Week 31.*
+
+| | |
+|---|---|
+| **The mental model you now own** | The whole cycle is four steps, in one fixed order: **split, fit, predict, score.** The split comes *first*, every single time, because a score measured on rows the model has already seen is not a score at all. |
+| **The one question it answers** | *"Would it still be right on a row it has never seen?"* |
+| **What it plugs into** | Week 28's `X` and `y`, Week 20's distance arithmetic — kNN is that same subtract-square-add-root, done a few thousand times — and Week 10's functions with something going in and something coming out: `fit` takes, `predict` returns. |
+| **What carries forward** | Week 30's scaling and confusion matrix, Week 33's one-split bake-off, and Week 35, where three different capstone models all march through these same four steps in this same order. |
+| **Spiral thread** | 📦 **Model** — you have built one, it works, and it is three lines long — and ⚖️ **Evaluation**, because the envelope with your own signature across the flap is the entire reason the second number means anything. |
+
+> **💡 Try this:** on your own copy of the map, write **THE GAP** in the white space under the gold
+> tile, with today's two scores either side of it — the training score on the left, the held-back score
+> on the right. Leave room underneath. You will be adding to that spot in Week 30, and again in
+> Week 33, when the gap finally gets its proper name.
+
+---
+
 ## 🔑 Remember This
 
 - **kNN is a vote of the `k` nearest examples you already know the answer for.** There is no equation, nothing to solve. The whole model is your table plus a counting habit.

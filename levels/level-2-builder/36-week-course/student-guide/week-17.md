@@ -1123,6 +1123,33 @@ typo  shape: (5, 3)  dtype: <U21   <-- TEXT
 
 ---
 
+## 🧭 Where This Fits
+
+Fifth week in the same gold box — and it is still the right box, because an array is a way of
+**holding** data. What changed today is not the job, it is the container. A list will hold your twelve
+scores; an array holds them, knows it is shaped `(12,)`, knows they are all whole numbers, and doubles
+every one of them in a single line.
+
+![The Level 2 pipeline in Week 17: still the dicts, rows and files tile, now holding every score in one array that knows its shape](../figures/fig-w17-0-where-this-fits.svg)
+
+*Figure 17.0 — The pipeline in Week 17. Still the `dicts · rows · files` tile: the container got
+smarter, the job did not change. Stage three is dashed because cleaning a real dataset is the job
+arrays were built for, and that starts in two weeks.*
+
+| | |
+|---|---|
+| **The mental model you now own** | An **array** is a list that knows its **shape** and its **dtype**, and does maths to all of its numbers at once. Predict `.shape` before you run the line, then check it — that habit is the whole skill. |
+| **The one question it answers** | *"What shape is this thing I am holding?"* — and there is now a command that answers it, `arr.shape`, printed before you believe anything else the program says. |
+| **What it plugs into** | Week 11's list — an array is the same numbers in a stricter box — and Week 12's `import` habit, now pointed at a library somebody else wrote instead of one of your own. |
+| **What carries forward** | Week 18's eight deleted loops, Week 19's choice of direction, and Week 28's `X` and `y`, which a model judges by their shapes before it looks at a single value. |
+| **Spiral thread** | 🏷️ **Representation**, on its own — the question this week is not *what does my data say* but *what form is it in*, and `shape` and `dtype` are the two words for that form. |
+
+> **💡 Try this:** on your own copy of the map, write `.shape` and `.dtype` inside the gold tile, in the
+> smallest letters you can manage. You will print those two things in front of every new pile of numbers
+> you meet for the rest of the year — including, in Week 28, the pile you hand to a model.
+
+---
+
 ## 🔑 Remember This
 
 - **An array is a block of values, all the same kind, laid out end to end.** A list is a row of tickets pointing at things somewhere else.

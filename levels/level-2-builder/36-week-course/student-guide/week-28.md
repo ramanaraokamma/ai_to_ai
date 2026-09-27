@@ -1093,6 +1093,31 @@ The other half of this trick is skipping step 2. **You cannot leave the squaring
 
 ---
 
+## 🧭 Where This Fits
+
+Look at the right-hand end of the map. For twenty-seven weeks that last stage has been dashed, sitting
+there like a locked door. This week it opens, and you walk into it — and there is exactly one dashed
+box left on the whole picture.
+
+![The Level 2 pipeline in Week 28: the last stage opens at the X, y, kNN and trees tile](../figures/fig-w28-0-where-this-fits.svg)
+
+*Figure 28.0 — The pipeline in Week 28. `PREDICT & CHECK` goes solid, and you are standing in its first
+tile, on the `X, y` word of it. Four whole stages behind you, one dashed box ahead.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Every model wants your table cut two ways. **`X` is what you measured** — rows × features, still a table, which is why it needs two sets of brackets. **`y` is the one thing you want back** — a single column, one bracket. You state both shapes out loud before you fit anything. |
+| **The one question it answers** | *"What am I giving the model, and what am I asking it for?"* |
+| **What it plugs into** | Week 21's DataFrame and Week 22's column selection, and the two words *feature* and *label* you wrote down back in Level 1 — this is the week they stop being vocabulary and become code that runs. |
+| **What carries forward** | Week 29 fits on `X_train`. Week 30 scales `X`. Week 32 asks for a `y` that is a number instead of a name. And in Week 34 you build `X` and `y` out of a hundred rows you collected yourself. |
+| **Spiral thread** | 🏷️ **Representation** — choosing which columns go into `X` is deciding what the model is allowed to know about the world — and 📦 **Model**, because `X` and `y` is the shape every model in this course, and every model you will ever meet, expects to be handed. |
+
+> **💡 Try this:** write today's two shapes inside the gold tile on your own copy of the map —
+> `X.shape` and `y.shape`, with the real numbers. Next week those two shapes become four, and if
+> today's pair is written down you will see at a glance exactly where the hidden 20% went.
+
+---
+
 ## 🔑 Remember This
 
 - **`X` is what you measured. `y` is what you want back.** Capital X because it is a table; small y because it is one column. They are the only two single-letter names allowed in this course.

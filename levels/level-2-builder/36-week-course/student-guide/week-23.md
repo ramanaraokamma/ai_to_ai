@@ -1349,6 +1349,31 @@ Look at the numbers again: filling gave 70.0 from seven pupils, three of whom ar
 
 ---
 
+## 🧭 Where This Fits
+
+Everything you do this year is one pipeline: a question goes in one end, and an answer you can
+**defend** comes out the other. Stage three has two tiles, and you finished the first one last week —
+so on the map it has gone plain white and the gold has moved down a box. This is the box where the
+data stops being tidy and starts being real.
+
+![The Level 2 pipeline in Week 23: the numpy and DataFrames tile is finished and the holes and duplicates tile opens](../figures/fig-w23-0-where-this-fits.svg)
+
+*Figure 23.0 — The pipeline in Week 23. The first CLEAN tile is white now: done. Gold is the second
+one, and its label is literally this week's lesson.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Real data arrives broken in **four predictable ways** — holes, numbers stored as text, duplicated rows, and untidy labels. And every fix is **a decision a person made**, so it goes into a numbered cleaning log with the reason written beside it. |
+| **The one question it answers** | *"What did I change about this data, and why should anyone believe me?"* |
+| **What it plugs into** | Week 16's CSV round trip — read it in, write it out — and Week 21's `df.info()`, which is exactly where the holes show up, as a count that does not match the number of rows. |
+| **What carries forward** | Week 24, where all 40 rows get repaired properly. And Week 34, where **your own cleaning log is a graded part of the capstone** — so the habit you start this week is marked later. |
+| **Spiral thread** | 📊 **Data** and 🌍 **Impact** — two threads, because a cleaning decision is never only technical. Somebody's row gets dropped or filled in, and somebody else has to be able to check why. |
+
+> **💡 Try this:** beside your own copy of the *holes · duplicates* tile, list the four kinds of broken
+> in a column. You will meet all four again in Week 34, on data you collected yourself.
+
+---
+
 ## 🔑 Remember This
 
 - **Four kinds of broken: a hole · text pretending to be numbers · the same row twice · several spellings of one thing.** Know all four from memory. This week fixes the first two.

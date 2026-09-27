@@ -221,6 +221,41 @@ It does not. A distance of 12.01 between two songs sounds big; a distance of 3.2
 
 ---
 
+### 9. 🧭 The Growing Map — two minutes on the stage that just opened
+
+The student guide carries one figure each week that is deliberately not about the week's topic: the
+same five-stage pipeline, one more piece filled in. It is the only place either book shows the learner
+the shape of the whole year. This week's is the biggest single change it has made since Week 10.
+
+![The Level 2 pipeline in Week 28: the last stage opens at the X, y, kNN and trees tile](../figures/fig-w28-0-where-this-fits.svg)
+
+*Figure 28.0 — Week 28's version. The last stage, `PREDICT & CHECK`, goes solid and the gold badge
+lands on its first tile, weeks 28 to 31. One dashed box left on the map. Two threads lit:
+representation and model.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and read the three things written in the gold tile — `X, y`, `kNN`, `trees`.** Ask
+   *"which of those three did we actually do today?"* You want a finger on **`X, y`** and nothing else.
+   Then push once: *"and what is X?"* The answer you are listening for is **the measurements**, or
+   the four flower columns, or *the table without the answer column* — any of those is right. If they
+   say "the data", ask which part.
+2. **Then the question about the shape of the map:** *"count the solid stages — four and a bit out of
+   five. So why are we not nearly finished?"* Let it sit. The honest answer is that the last box is
+   five weeks long and holds the whole of the capstone, and hearing that now prevents the
+   *"we've basically done it"* slump that arrives around Week 32.
+3. **Have them ink their own copy** and write their two shapes — `(150, 4)` and `(150,)` — inside the
+   tile. Insist on the trailing comma in the second one. It is the entire difference between a table
+   and a column, and they have now met it in three different notations.
+
+> **🧑‍🏫 Why this is worth two minutes.** This is a week of two letters and some brackets, and from the
+> inside it can feel like the smallest lesson of the term. The map is what tells them otherwise: a
+> stage that has been dashed since September is now solid, and it went solid because they can name what
+> goes in and what comes out. That is genuinely the whole of the term's setup, and a learner who sees
+> it as an arrival rather than a bracket rule types `df[["a", "b"]]` with intent next week.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

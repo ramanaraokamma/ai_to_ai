@@ -255,6 +255,40 @@ It sounds like throwing away learning material. Two answers. First, 120 rows and
 
 ---
 
+### 9. 🧭 The Growing Map — two minutes on a box that does not move
+
+Every week the student guide carries the same pipeline figure with one more piece filled in. It is the
+only place either book shows the learner the shape of the year instead of the content of the lesson,
+and this week the useful thing about it is precisely that **nothing on it changed.**
+
+![The Level 2 pipeline in Week 29: still the X, y, kNN and trees tile, now splitting, fitting, predicting and scoring](../figures/fig-w29-0-where-this-fits.svg)
+
+*Figure 29.0 — Week 29's version. Still the `X, y · kNN · trees` tile, weeks 28 to 31 — second week
+inside it, and this is the one that earns the middle word. Two threads lit: model and evaluation.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and put a finger on the middle word of the gold tile.** Ask *"we did `kNN` today — so how
+   many of the four steps happened before the model ever saw a single row?"* The answer is **one**, and
+   it is the split. Make them say the four words in order, out loud, in the right order: *split, fit,
+   predict, score.* If the order comes out wrong, that is the most useful thing you will learn all
+   lesson, and it takes ten seconds to catch here.
+2. **Then the question the picture is actually good for:** *"the box did not move this week — but you
+   trained a model. Why has the map not changed?"* You are fishing for *because it is the same tile*
+   or *because it takes four weeks*. Either is fine. What you are teaching is that this last stage is
+   wide, not that the day was small.
+3. **Have them copy the map and add THE GAP** in the space under the gold tile, with today's two
+   scores on either side of it. Tell them to leave room: the same spot gets a second entry next week
+   and a name in Week 33.
+
+> **🧑‍🏫 Why this is worth two minutes.** The temptation this week is to treat training a model as the
+> finish line, and the map quietly refuses to agree — three tiles of this stage are still ahead, and
+> one whole box is still dashed. That framing is what keeps the held-back 20% feeling like a
+> permanent habit rather than a one-off exercise. It also gives you somewhere physical to put the gap,
+> which matters: Week 33 needs them to have *felt* a gap before it hands over the word overfitting.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes the night before

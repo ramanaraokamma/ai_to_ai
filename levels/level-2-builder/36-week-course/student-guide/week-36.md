@@ -999,6 +999,32 @@ Every one of today's four debug problems ran perfectly. **A crash is help; a pla
 
 ---
 
+## 🧭 Where This Fits
+
+Last week. Look at the map properly: there is not one dashed box left on it anywhere. Five solid
+stages, ten solid tiles, and the gold one is the tile you are standing in right now. Thirty-six weeks
+ago almost the whole picture was dotted lines and week numbers.
+
+![The Level 2 pipeline in Week 36: the last tile closes and every box on the map is solid](../figures/fig-w36-0-where-this-fits.svg)
+
+*Figure 36.0 — The pipeline in Week 36. Every box solid, nothing dashed. The five stage names, read
+left to right, are the running order of your showcase. This is the picture you finished.*
+
+| | |
+|---|---|
+| **The mental model you now own** | **Speak it, hold it, clean it, see it, predict and check.** Hand you a question, a messy table and a keyboard, and you can walk a stranger the whole way along that pipeline and defend every step of it — including the steps you got wrong, which you now say out loud *first*. |
+| **The one question it answers** | *"Why should anyone believe my answer?"* |
+| **What it plugs into** | All thirty-five weeks behind it. The five stage names are the spine of your eight minutes: the question and the rows, the cleaning log read out with its reasons, the five captions as one paragraph, the baseline before the models — and then what you got wrong, and who would pay for it. |
+| **What carries forward** | Level 3: the same five stages, with the maths underneath the models and questions that are much harder to defend. Every box on this map gets opened again. |
+| **Spiral thread** | 🌍 **Impact** — you finish by naming who is in your data and who would pay for a wrong answer, by role, not "users" — and ⚖️ **Evaluation**, because the last thing this level teaches you is that a number you cannot trace back to its rows is not evidence. |
+
+> **💡 Try this:** take your own copy of the map — the one you have been inking in since Week 1 — and
+> fill in the last tile. Then write today's date across the bottom and put it inside the front cover of
+> your Level 3 notebook. You will want it there in about three weeks, the first time somebody asks you
+> what a held-back set is actually for.
+
+---
+
 ## 🔑 Remember This
 
 - **Eight minutes, seven stops, one notebook, out loud.** Start with the bit you got wrong; it buys trust and costs nothing.

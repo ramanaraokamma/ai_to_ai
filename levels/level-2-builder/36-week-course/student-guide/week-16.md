@@ -1199,6 +1199,32 @@ Look at that last line. **`1000` comes first and `9` comes third.** That is not 
 
 ---
 
+## 🧭 Where This Fits
+
+Same gold box, fourth week running — and look at the third word written in it. Everything you have
+built so far has quietly vanished the moment you closed the program. This is the week that stops, and
+the map does not move, because saving a file is still *holding the data*.
+
+![The Level 2 pipeline in Week 16: still the dicts, rows and files tile, now writing rows to a file and reading them back](../figures/fig-w16-0-where-this-fits.svg)
+
+*Figure 16.0 — The pipeline in Week 16. Still the `dicts · rows · files` tile — this week is the
+`files` word in it. Stage three is dashed because a real dataset is a file, and you are only now
+learning to open one.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A CSV is your table written out as **plain text**. The round trip is: write it, read it back, compare field by field — and everything that comes back is a **string** until you convert it yourself. |
+| **The one question it answers** | *"Where does my data go when I close the program?"* — into a file you can open and read with your own eyes, and then back into your program next lesson. |
+| **What it plugs into** | Week 4's rule that typed-in text is text no matter what it looks like, and Week 14's rows — which now leave the program entirely and come home again. |
+| **What carries forward** | Week 23's `pd.read_csv()`, and every real dataset after it. In Week 34 you save the raw capstone file exactly this way and then never touch it again. |
+| **Spiral thread** | 📊 **Data** — data that outlives the program that made it is a different kind of thing — and 🧰 **Toolcraft**, because `with open(...)` and the read-it-back check are habits you will use every week from here on. |
+
+> **💡 Try this:** on your own copy of the map, draw a small arrow leaving the gold tile and coming
+> straight back into it, and label it **out as text, back as text**. That loop is what the rest of this
+> course runs on: every dataset you meet from Week 23 onwards arrives as a file somebody else wrote.
+
+---
+
 ## 🔑 Remember This
 
 - **A CSV is plain text and nothing else.** One header line, then one line per record, commas between the fields. No colours, no boxes, and **no note anywhere saying which columns are numbers**.

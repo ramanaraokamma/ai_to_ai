@@ -1106,6 +1106,33 @@ If `mode` is always `walk`, no model can learn anything about mode. If every dis
 
 ---
 
+## 🧭 Where This Fits
+
+Third week in the same last tile, so the map holds still again — but something has changed underneath
+it that the picture cannot show you. Up to now, every row of data in this course arrived ready-made.
+From today the rows are **yours**: your question, your hundred rows, your handwriting in the log.
+
+![The Level 2 pipeline in Week 34: still the bake-off and capstone tile, now your own question and your own 100 rows](../figures/fig-w34-0-where-this-fits.svg)
+
+*Figure 34.0 — The pipeline in Week 34. Still the last tile, and now it is the `capstone` half of its
+name starting up. The boxes are exactly the same as last week; the data about to go through them is
+not.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A project starts with a **question you could be wrong about** and **100 rows you collected yourself** — one row per thing that happened, every column with a unit. The raw file is saved and then never touched again, and every repair after that is **numbered, dated and given a reason** in the cleaning log. |
+| **The one question it answers** | *"Is my question one the data could actually answer — or disagree with?"* |
+| **What it plugs into** | Weeks 23–24's cleaning log, now kept for a mess you made rather than one I handed you. Week 16's CSV round trip — write it, read it back, check it survived. And Week 21's `df.info()` and `df.describe()`, which are how you look at a table *before* you touch it. |
+| **What carries forward** | Week 35 charts and models these exact rows and nothing else. Week 36 defends them out loud, in front of people, starting with the prediction you signed today. |
+| **Spiral thread** | 📊 **Data** — the first dataset of the year whose problems are ones you caused yourself — and 🌍 **Impact**, because deciding which rows to drop is deciding whose rows count, and the log is the only reason anybody should believe you did it fairly. |
+
+> **💡 Try this:** write your research question inside the gold tile on your own copy of the map, in one
+> sentence, and sign and date it underneath. If the answer turns out in Week 35 to be the opposite of
+> what you expected, that signed sentence becomes the best thing in your whole project: it is the proof
+> you *found it out* rather than knew it all along.
+
+---
+
 ## 🔑 Remember This
 
 - **A research question ends in a question mark and could turn out to be wrong.** If no result could prove you wrong, it is a topic, and topics quietly become whatever the data says.

@@ -328,6 +328,35 @@ If a student asks "could I put all five players in one thing?" — that is exact
 
 ---
 
+### 11. 🧭 The Growing Map — two minutes at the end of the lesson
+
+The student guide carries one figure that is not about this week's content: the same pipeline every
+week, one more piece filled in. It is the only thing in either book that shows the learner the *shape*
+of the year instead of the topic in front of them.
+
+![The Level 2 pipeline in Week 13: the dicts, rows and files tile of stage two is this week's box](../figures/fig-w13-0-where-this-fits.svg)
+
+*Figure 13.0 — Week 13's version. The `functions · lists` tile is finished and white; the gold box has
+moved down to `dicts · rows · files`, weeks 13 to 18. One thread lit: representation.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it, don't explain it.** The tile has three words on it. Ask *"which of those three words did
+   we start today?"* — you want a finger on **dicts**. Pointing is the exercise; do not turn it into a
+   discussion.
+2. **Then the better question:** *"this box lasts six weeks — why do you think it needs six?"* You are
+   not after a correct answer. You want them to notice the tile is wide on purpose, and to hear
+   somebody say *"because there is more than one way to hold things"*, which is next week.
+3. **Have them shade the previous tile and outline the new one** on the copy in the inside cover of
+   their notebook, and write today's sentence under it: *a label instead of a number.*
+
+> **🧑‍🏫 Why this is worth two minutes.** A learner who has just met `player["score"]` often thinks
+> dictionaries have replaced lists. The map quietly corrects that without an argument: the list tile is
+> solid and finished, it has not been erased, and the new box sits *next to* it in the same stage. Ten
+> seconds of picture does a job that three sentences of explanation does badly.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes the night before

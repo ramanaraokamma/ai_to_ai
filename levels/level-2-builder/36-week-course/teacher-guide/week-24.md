@@ -491,6 +491,40 @@ age
 
 ---
 
+### 13. 🧭 The Growing Map — stage three closes
+
+The student guide carries a figure called **Where This Fits** — the same picture every week with one
+more piece filled in. It is the only page that shows the learner the *shape* of the year rather than
+the week. Today is the last lesson in stage three, which makes it a better-than-usual two minutes.
+
+![The Level 2 pipeline in Week 24: still the holes and duplicates tile, the last box of stage three](../figures/fig-w24-0-where-this-fits.svg)
+
+*Figure 24.0 — Week 24's version. The gold is on the same tile as last week, "holes · duplicates" —
+and it is the last box in stage three. **Data** and **evaluation** are lit.*
+
+**What to do with it, in about two minutes at the end of the lab:**
+
+1. **Show it and ask a Week 24 question:** *"`groupby`, and the count you printed beside every mean —
+   which box was that?"* The honest answer is *"the same one as last week"*, and that is the answer you
+   want: today was the second half of one tile, not a new idea bolted on. Then the good one: *"what
+   happens to this box next week?"* It goes white, and the gold jumps a whole stage right.
+2. **Then count with them:** *"how many stages are solid now?"* Three of five. *"And we still have not
+   drawn a single chart."* That sentence does more for motivation than any promise about next week.
+3. **Have them update their own copy** — and write **`n = 2`** next to this tile. That is the Gold
+   house. It is the smallest note in their notebook and the one most likely to stop them believing a
+   number later.
+
+> **🧑‍🏫 Why this is worth two minutes.** Labs feel like tidying up. The map is what turns forty
+> repaired rows into a *stage you finished*, and end-of-stage is the only moment in the term where a
+> learner can see a month of work as one shape. Do not skip it today of all days.
+
+> **⚠️ Watch out:** **evaluation** is lit this week and some teachers assume that is a mistake, because
+> nothing was scored. It is not. Printing the group size beside the mean *is* evaluation — it is asking
+> how much a number is worth before you believe it, which is the same question Week 32 asks about
+> accuracy. If a student asks why the pill is on, that is the sentence.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

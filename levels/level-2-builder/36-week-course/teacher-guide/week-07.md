@@ -398,6 +398,37 @@ Then check it against the formula a mathematician would use: 100 × 101 ÷ 2 = 5
 
 ---
 
+### 12. 🧭 The Growing Map — two minutes at the end of the lesson
+
+The student guide carries a figure called **Where This Fits**. It is the same picture every week with one
+more piece filled in, and it is the only thing in this course that shows the learner the *shape* of what
+they are building rather than this week's content.
+
+![The Level 2 pipeline in Week 7: stage one's first tile is done and its second tile, choices and loops, is where you are](../figures/fig-w07-0-where-this-fits.svg)
+
+*Figure 7.0 — Week 7's version. The first tile of stage one has turned plain white — done, and never
+tinted again — and the gold badge has moved down to `choices · loops`, where it stays until Week 9.*
+
+**How to run it, in about two minutes:**
+
+1. **Show it before you say anything.** Then: *"we added a hundred numbers today in three lines — which
+   box on this map was that?"* They should point at the gold `choices · loops` tile. Pointing is the
+   whole exercise; do not ask them to explain it.
+2. **Then the better question:** *"the box above it went white this week — what's in it?"* You want
+   "print and variables and maths, that's finished". A learner who can name what is behind them has a
+   sense of progress that no mark out of ten gives them.
+3. **Then the dashed question:** *"why is most of this still dotted?"* — "because we haven't got there
+   yet". Finish by having them update their own pencil copy in the inside cover of their notebook.
+
+> **🧑‍🏫 Why this is worth two minutes.** Week 7 is the first week where the new thing is genuinely
+> *harder* than the last thing, and some of the class will privately conclude they are falling behind.
+> Two white boxes on a map is evidence against that conclusion, and it is evidence they can see.
+
+> **⚠️ Watch out:** do not turn it into a quiz. The map is orientation, not assessment. If nobody
+> remembers which thread is lit, that costs you nothing at all.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes the night before

@@ -958,6 +958,32 @@ No single number can separate two things that overlap. That is not a flaw in the
 
 ---
 
+## 🧭 Where This Fits
+
+Fourth and last week in this tile, and it is the week the third word in it finally shows up. You
+changed **one line** of last week's file and got an entirely different kind of model — which is why the
+map looks identical. Models are interchangeable parts, and the box around them does not care.
+
+![The Level 2 pipeline in Week 31: still the X, y, kNN and trees tile, now a tree whose rules you can read out loud](../figures/fig-w31-0-where-this-fits.svg)
+
+*Figure 31.0 — The pipeline in Week 31. The last of the tile's three words: `trees`. One line of last
+week's file changed, and the map does not move at all — which is precisely the point.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A decision tree is a **stack of yes/no questions asked in order** — Week 6's `if`/`elif` chain, except the data wrote it instead of you. And unlike almost anything else in AI, you can print the rules it learned and read them out loud in English. |
+| **The one question it answers** | *"Why did it say that about this particular row?"* |
+| **What it plugs into** | Week 6's `if`/`elif` chains, now written by the computer; Week 29's fit-and-predict cycle, which survived a whole change of model with one line edited; and `feature_importances_`, which rewards the counting instinct you built in Week 24 — the columns that do nothing get a zero. |
+| **What carries forward** | Week 33's depth dial and the overfitting curve it draws, Week 35's model comparison, and Week 36, where *read it out loud* turns out to be how you defend the thing you built. |
+| **Spiral thread** | 📦 **Model** — a second kind of model, swapped in through a single line — and 🌍 **Impact**, because a model whose reasons you can say in plain English is a model an ordinary person is allowed to argue with. |
+
+> **💡 Try this:** pick the shortest rule `export_text` printed today, write it in English inside the
+> gold tile on your own copy of the map, and put your initials after it. In Week 36 somebody is going
+> to ask you *why did it say that?* — and a model you can answer that question about is worth more than
+> a model that scores one point higher and cannot be explained.
+
+---
+
 ## 🔑 Remember This
 
 - **A decision tree is a stack of yes/no questions the computer wrote itself.** It is the only model this year that you can print out and read to somebody who has never seen a computer.

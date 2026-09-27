@@ -1373,6 +1373,32 @@ And notice how much more useful that is than 680. `−0.21` says *slightly below
 
 ---
 
+## 🧭 Where This Fits
+
+Third week in the same gold tile, and today was a lab rather than a new idea: one experiment, run from
+one end to the other, saved before the bell. The map does not move — but the thing inside the box got
+considerably more honest.
+
+![The Level 2 pipeline in Week 30: still the X, y, kNN and trees tile, now scaling features and reading a confusion matrix](../figures/fig-w30-0-where-this-fits.svg)
+
+*Figure 30.0 — The pipeline in Week 30. Still the same tile. This week is the lab: one dial turned
+twenty-five times, one habit fixed for life, and one grid read out loud instead of one number.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Features measured in different units have to be put on **one scale** first, or the column with the biggest numbers decides everything — and the scaler is fitted on the **training rows only**. And a single accuracy number hides *which* answers are being mixed up with which. The confusion matrix does not hide it. |
+| **The one question it answers** | *"Which answers is it getting wrong, and is one feature drowning out the rest?"* |
+| **What it plugs into** | Week 29's four-step cycle, straight through unchanged; Week 20's array maths, because subtract-the-mean-and-divide-by-the-spread is something you have already done by hand; and Week 26's chart shapes, which is how accuracy-against-`k` becomes a line you can look at. |
+| **What carries forward** | Week 33's bake-off, where you turn a dial exactly this way and plot what happens, and Week 35's capstone results table, which has a column for every number you printed today. |
+| **Spiral thread** | 🏷️ **Representation** — scaling changes nothing about the data except the units it is written in, and it changes the answer anyway — and ⚖️ **Evaluation**, because a grid is what you reach for the moment one number stops being enough. |
+
+> **💡 Try this:** copy the worst row of today's confusion matrix onto your own map, beside the gold
+> tile — just the two class names and the count, in the form **"6 × class 1 called class 2"**. It is
+> one short line of writing, and it is the whole difference between *"88% accurate"* and knowing what
+> your model is actually bad at.
+
+---
+
 ## 🔑 Remember This
 
 - **Distance is squares added up, so a column with big numbers wins.** `proline` was 99.999956% of one distance and `hue` was 0.000044%. That is squaring, not importance.

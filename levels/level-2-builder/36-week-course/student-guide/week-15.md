@@ -1183,6 +1183,31 @@ Tigers bucket says: 3
 
 ---
 
+## 🧭 Where This Fits
+
+Still the same gold box — third week inside it. You already have a table; this week you learn the two
+moves that get answers out of one, and the rule that comes with them: say how many rows every answer is
+built on, every single time.
+
+![The Level 2 pipeline in Week 15: still the dicts, rows and files tile, now filtering and grouping rows](../figures/fig-w15-0-where-this-fits.svg)
+
+*Figure 15.0 — The pipeline in Week 15. The gold tile is halfway through. Everything to its right is
+still dashed, and the line across the middle says why: each stage feeds the next.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Two moves answer most questions about a table: **filtering** keeps the rows that pass a test, and **grouping** counts how many rows share a value — and every answer is reported with its row count. |
+| **The one question it answers** | *"How many rows is that answer actually based on?"* — the question that turns a number into a claim you can defend instead of one you just typed. |
+| **What it plugs into** | Week 14's rows, Week 6's conditions and Week 10's functions with parameters, all in one place: `filter_by()` takes the test itself as an argument. |
+| **What carries forward** | Week 22's `df[df["age"] > 12]` and Week 24's `groupby` are these exact two moves, one line each. You are learning what they *do* before you learn what they look like. |
+| **Spiral thread** | 📊 **Data**, on its own — one thread, because filtering and grouping never touch the model, the chart or the score. They change which rows you are talking about, and nothing else. |
+
+> **💡 Try this:** write **"out of how many?"** across the bottom of your own copy of the map, in pen, not
+> pencil. It is the one question in this book you will still be asking in Week 36, when the thing being
+> reported is a model's accuracy instead of a group's average.
+
+---
+
 ## 🔑 Remember This
 
 - **A filter keeps rows that pass a test.** What comes out is still records with all their labels — **fewer rows, same shape.** And it never touches the original.

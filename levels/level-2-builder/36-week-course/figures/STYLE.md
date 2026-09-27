@@ -1806,3 +1806,96 @@ python3 _gen_emit.py     # rewrites _motifs.svg and _preview.html
 python3 _gen_style.py    # rewrites STYLE.md
 python3 _gen_audit.py    # bounds, 12px floor, scale(), banned constructs, label collisions
 ```
+
+---
+
+## The Growing Map — `fig-wNN-0-where-this-fits.svg`
+
+Every week carries **one** figure that is not about this week's content. It shows the learner the shape
+of the whole level with one more piece filled in, and it appears in **both** books — the student guide
+(`## 🧭 Where This Fits`) and the teacher guide (`### 🧭 The Growing Map`).
+
+**Reference implementation: `fig-w01-0-where-this-fits.svg`.** Open it before drawing another.
+Level 1 carries the same device with the same rules; see its `STYLE.md` for the full rationale.
+
+### Index `0`
+
+Content figures number from 1. The map is always `-0-`, so it sorts first and is instantly
+identifiable as structural rather than topical. Caption is `Figure <week>.0`.
+
+### Fixed zones — canvas `0 0 800 400`, no exceptions
+
+| Zone | y | Holds |
+|---|---|---|
+| Banner | 42–62 | `A QUESTION → AN ANSWER YOU CAN DEFEND` + subtitle |
+| Pipeline | 82–134 | Five stage boxes, `140 × 52`, at x **26 · 178 · 330 · 482 · 634**, arrows between |
+| Tiles | 146–292 | Two tiles per stage: row A `140 × 58` at y 146, row B `140 × 48` at y 244 |
+| Flow note | 312 | One line, 12px, `muted` |
+| Thread strip | 336–360 | **Seven** pills, `103 × 24`, at x **20 · 129 · 238 · 347 · 456 · 565 · 674** |
+| Footer | 378 | One sentence, 13px, `muted`, centred |
+
+**Never move a box between weeks.** Week 4's figure and week 33's figure must put every box at the
+same coordinates — the set is frames of one animation.
+
+### The L2 spine — five stages, ten tiles, fixed forever
+
+| Stage | x | Tile A (y 146) | Tile B (y 244) |
+|---|--:|---|---|
+| **SPEAK PYTHON** | 26 | print · variables · maths — wk 1–4 | choices · loops — wk 5–9 |
+| **HOLD THE DATA** | 178 | functions · lists — wk 10–12 | dicts · rows · files — wk 13–18 |
+| **CLEAN IT** | 330 | numpy · DataFrames — wk 19–22 | holes · duplicates — wk 23–24 |
+| **SEE IT** | 482 | your first chart — wk 25 | honest axes — wk 26–27 |
+| **PREDICT & CHECK** | 634 | X, y · kNN · trees — wk 28–31 | bake-off · capstone — wk 32–36 |
+
+### State vocabulary — read progress from shape alone, never colour alone
+
+| State | Stroke | Fill | Dash | Badge |
+|---|---|---|---|---|
+| **This week** | `#845F00` w3 | `#E8C671` | solid | white pill, `#1B7A4B` border, tick + `YOU ARE HERE` |
+| **Already done** | `#14202B` w2 | white | solid | small `wk N–M` in `muted` |
+| **Not yet** | `#C7CDD4` w3 | none | `stroke-dasharray="10 8"` | `wk N–M` in `muted` |
+| **Stage containing this week** | `#14202B` w3 | white | solid | — (the badge lives on the tile, not the stage) |
+
+Rules, not suggestions:
+
+1. **Dashed means "not yet" and nothing else, ever.**
+2. **Exactly one `YOU ARE HERE` badge**, belonging to the current tile — never to a stage box. It sits
+   in that row's **fixed badge slot**: row A at `y=212` (immediately beneath the tile), row B at `y=266`
+   (inside the tile). Both slots are inside the 146–292 tile zone. The difference is forced by geometry,
+   not taste: row-A labels need two lines, and two lines plus a 22px badge do not fit in 58px. A badge
+   must never appear at any other y.
+3. **Done tiles are never re-tinted.** Done is done; only the current week is gold.
+4. A stage box goes solid as soon as *any* of its tiles is reached, and stays solid.
+
+### The seventh thread — an L2 extension
+
+Level 1 and Level 3 use six threads. **Level 2 adds `toolcraft` at the front**, because weeks 1–9
+teach programming as a craft and genuinely extend none of the six AI threads. Forcing them onto
+`representation` would be dishonest.
+
+- Weeks 1–9 light **`toolcraft` only**, and the footer says so.
+- From week 10, light **at most two** of the seven. A week claiming three has not decided what it is about.
+- Every thread must be lit at least twice across the 36 weeks.
+
+### Accessibility
+
+- `<title>` states what is filled in this week.
+- `<desc>` describes **every zone** in words, including which threads are lit — a screen-reader user
+  must get the same progress information a sighted reader gets from the dashes.
+- Markdown alt text is **byte-identical** to `<title>`, in both books.
+
+### Checklist before shipping one
+
+- [ ] `viewBox="0 0 800 400"`, no `width`/`height`, transparent background
+- [ ] Nothing outside x 20–780, y 20–380
+- [ ] All `font-size` ≥ 12
+- [ ] Only palette hexes from §1.1
+- [ ] Exactly one `YOU ARE HERE`, in its row's badge slot (row A `y=212`, row B `y=266`)
+- [ ] Dashed only on not-yet boxes
+- [ ] ≤ 2 threads lit (weeks 1–9: `toolcraft` only)
+- [ ] Every box at its spine coordinates, unmoved
+- [ ] Parses as XML
+
+> **⚠️ Do not run `_generator/_gen_audit.py` against these files.** It reports false positives on the
+> map (and on the reference `fig-w01`) because it does not inherit `font-size`/`text-anchor` from a
+> parent `<g>`, and it reads relative `l dx dy` path commands as absolute. Work the checklist by hand.

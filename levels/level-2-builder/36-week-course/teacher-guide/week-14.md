@@ -278,6 +278,35 @@ If a student writes a filter today because they worked out the shape themselves 
 
 ---
 
+### 12. 🧭 The Growing Map — the two minutes that place the week
+
+The student guide carries one figure that is not about this week's content: the whole pipeline, with one
+more piece filled in each week. It is the only place either book shows the learner the *shape* of what
+they are building rather than the thing in front of them today.
+
+![The Level 2 pipeline in Week 14: still the dicts, rows and files tile, now holding a whole table](../figures/fig-w14-0-where-this-fits.svg)
+
+*Figure 14.0 — Week 14's version. The gold tile has deliberately not moved: `dicts · rows · files`,
+weeks 13 to 18, second week in. Two threads lit: data and representation.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask the odd question:** *"the gold box did not move this week — why not?"* You want
+   *"because we are still holding data"* or *"because a row is still a dictionary"*. Then name it
+   yourself: **twelve dictionaries in a list is a dataset, and the box is called `rows` for a reason.**
+2. **Then the better question:** point at CLEAN IT and ask *"what do you think is in there, and why
+   could we not have done it first?"* Accept anything. Then say the line in the figure out loud: you
+   cannot clean data you cannot hold — and they held some today.
+3. **Have them add one thing to their own copy**: the two numbers from their squad table, *12 rows, 5
+   columns*, written under the gold tile. Week 17 calls that pair the shape, and they will recognise it.
+
+> **🧑‍🏫 Why this is worth two minutes.** This is the week the course stops being about Python and starts
+> being about data, and almost no learner notices at the time. The map is where they can see it: the
+> **data** pill lights up beside representation, three weeks before anyone says the word "pandas". When
+> a student asks in March *"when did we first make a dataset?"*, this figure is the answer.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes the night before

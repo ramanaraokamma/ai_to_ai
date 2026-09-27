@@ -379,6 +379,36 @@ The repair round works because of a sorting idea, and it is worth having in your
 
 ---
 
+### 10. 🧭 The Growing Map — the week a whole stage closes
+
+**Where This Fits** is the one figure in the student guide that is not about this week's content. It
+shows the shape of the year with one more piece filled in, and this week it marks the end of a stage.
+
+![The Level 2 pipeline in Week 9: the second tile of stage one closes, and all of speak Python is filled in](../figures/fig-w09-0-where-this-fits.svg)
+
+*Figure 9.0 — Week 9's version. The gold tile, `choices · loops`, finishes here. From Week 10 the whole
+of stage one is plain white and the badge crosses the first arrow into stage two.*
+
+**How to run it, in about two minutes:**
+
+1. **Show it and ask the checkpoint question:** *"we gave a name to a block we had already typed three
+   times — which tile did that just finish?"* They point at the gold tile. Then tell them plainly: that
+   tile closes today, and the whole of stage one is now behind them.
+2. **Ask why the rest is dashed** and take "we haven't done it yet" as a complete answer — then add the
+   one sentence they will remember: *"next week we stop typing the data in ourselves and start holding
+   it."* The arrow between stage one and stage two is worth pointing at while you say it.
+3. **Have them ink in stage one on their own pencil copy.** Nine weeks, one stage, in pen. Term 1's
+   product is not a program; it is a learner who can read their own file and fix it.
+
+> **🧑‍🏫 Why this is worth two minutes.** This is a checkpoint week and some of the class will arrive
+> at it feeling like they have learned an assortment of unrelated tricks. The map is the argument that
+> they have not: printing, variables, decisions, loops and functions are one stage of one pipeline.
+
+> **⚠️ Watch out:** there is no assessment in this. A learner who cannot name the five stages has lost
+> nothing this week. The point is that they have seen the whole year has a shape and an end.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

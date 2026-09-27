@@ -490,6 +490,40 @@ dtype: object
 
 ---
 
+### 13. 🧭 The Growing Map — the gold moves down a box
+
+The student guide carries a figure called **Where This Fits**. Same picture every week, one more piece
+filled in. It is the only page that shows the learner the *shape* of the year instead of this week's
+content, and this is the first week since Week 19 where the gold has actually moved.
+
+![The Level 2 pipeline in Week 23: the numpy and DataFrames tile is finished and the holes and duplicates tile opens](../figures/fig-w23-0-where-this-fits.svg)
+
+*Figure 23.0 — Week 23's version. The "numpy · DataFrames" tile has turned plain white and the gold has
+dropped to "holes · duplicates". Two pills are lit: **data** and **impact**.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask what changed.** *"Something on this picture is different from last week — what?"*
+   The first CLEAN tile went white. That moment of noticing is worth more than any explanation you
+   could give, because it means they are reading the map rather than looking at it.
+2. **Then anchor today:** *"we spent the whole lesson on holes, wrong types, duplicates and messy
+   text — which box is that?"* The gold tile is labelled *holes · duplicates*, so the label reads
+   itself back at them. Follow up with *"we have a clean table now — why is `SEE IT` still dashed?"*
+3. **Have them update their own copy** and write the four kinds of broken underneath the tile, in a
+   column. Four words. That list is the spine of both this week and next.
+
+> **🧑‍🏫 Why this is worth two minutes.** This is the week learners most often feel they are doing
+> admin rather than learning — typing `fillna` is not exciting. The map is the antidote: it shows that
+> cleaning is one of ten boxes in the year, not a detour from it, and that the two stages on the right
+> are sitting on top of it.
+
+> **⚠️ Watch out:** **impact** lights up for the first time in a while, and it is worth thirty seconds.
+> Ask *"why would a thread called impact be lit in a lesson about missing numbers?"* The answer you are
+> fishing for is that a fill or a drop changes somebody's row, and somebody outside the room has to be
+> able to check why. Do not turn this into a quiz — if nobody gets it, say it yourself and move on.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

@@ -1038,6 +1038,31 @@ On a squad where row 2 has `Team` and row 3 is missing `balls`:
 
 ---
 
+## 🧭 Where This Fits
+
+The gold box has not moved this week, and that is the point — you are still inside
+`dicts · rows · files`. Last week you built one labelled card. This week twelve of them line up in a
+list and turn into something that has a name: a **table**.
+
+![The Level 2 pipeline in Week 14: still the dicts, rows and files tile, now holding a whole table](../figures/fig-w14-0-where-this-fits.svg)
+
+*Figure 14.0 — The pipeline in Week 14. Same gold tile as last week, filling up. Notice that CLEAN IT
+is still dashed, and read the line in the middle of the picture: you cannot clean data you cannot hold.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A **list of dictionaries is a table**: one dict is one row, the shared keys are the column names, and a one-line comprehension pulls any single column back out of it. |
+| **The one question it answers** | *"Where does my dataset actually live inside the program?"* — in one list, with one dict per row, and nothing else. |
+| **What it plugs into** | Weeks 11 and 13 together at last. The list gives you rows in order; the dictionary gives every field in a row a name you can say out loud. |
+| **What carries forward** | Week 15 filters and groups these rows. Week 16 writes them out to a file. Week 21 hands this very same table to `pandas` without changing its shape at all. |
+| **Spiral thread** | 📊 **Data** — this is your first real dataset — and 🏷️ **Representation**, because *one dict per row* is a choice about shape that every later week depends on. |
+
+> **💡 Try this:** count the rows in your squad out loud — "twelve rows, five columns" — and write those
+> two numbers under the gold tile on your own map. In Week 17 a computer starts telling you the same two
+> numbers automatically, and calls them the **shape**.
+
+---
+
 ## 🔑 Remember This
 
 - **A list of dictionaries is a table.** One dict is a row; the keys are the column names. Nothing was converted — it just *is* one.

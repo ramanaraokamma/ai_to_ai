@@ -1054,6 +1054,32 @@ There is no error. The tell is that **you cannot describe your own chart.** A sc
 
 ---
 
+## 🧭 Where This Fits
+
+Everything you do this year is one pipeline: a question goes in one end, and an answer you can
+**defend** comes out the other. Last week you learned to draw a chart. This week is the harder half:
+deciding **which** chart, and then admitting what it leaves out. The gold has moved to the last tile
+of stage four, and there are only three dashed boxes left on the whole map.
+
+![The Level 2 pipeline in Week 26: your first chart is finished and the honest axes tile opens](../figures/fig-w26-0-where-this-fits.svg)
+
+*Figure 26.0 — The pipeline in Week 26. Your first chart is white and done. Gold is the "honest axes"
+tile, which covers two weeks — you are in it this week and next.*
+
+| | |
+|---|---|
+| **The mental model you now own** | **The question chooses the chart.** Comparing things → bar. How spread out they are → histogram. Whether two things go together → scatter. Changing over time → line. And then you name, in one sentence, **what that shape hides**. |
+| **The one question it answers** | *"Which picture answers the question I actually asked?"* |
+| **What it plugs into** | Week 25's labelled axes — the five lines are identical, only the drawing command changes — and Week 24's `value_counts()`, which is what feeds the bars. |
+| **What carries forward** | Week 27's five-chart data story, Week 30's accuracy-against-*k* plot, and Week 35's captioned capstone charts, where *"what does it hide?"* is a question somebody marks. |
+| **Spiral thread** | 🏷️ **Representation** and ⚖️ **Evaluation** — picking the shape is representation; saying out loud what the shape hides is evaluation, and that second sentence is the part that is actually hard. |
+
+> **💡 Try this:** write the four question-words on your own map beside the *honest axes* tile —
+> **compare**, **spread**, **together**, **over time**. Once the question is one of those four, the
+> chart chooses itself.
+
+---
+
 ## 🔑 Remember This
 
 - **The question picks the chart.** Over time → line. Which category is biggest → bar. How are the values spread → histogram. Do two numbers go together → scatter.

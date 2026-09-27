@@ -883,6 +883,32 @@ A straight line has no concept of a maximum, a minimum, or reality. The professi
 
 ---
 
+## 🧭 Where This Fits
+
+For four weeks the gold tile did not move. Today it drops one box down, into the very last tile on the
+map — and look at what is *not* in the picture any more. No dashes. Nowhere. Every box is solid, and
+the five weeks in front of you are five weeks of using what you already own.
+
+![The Level 2 pipeline in Week 32: the last tile opens with a fitted line and the miss measured in marks](../figures/fig-w32-0-where-this-fits.svg)
+
+*Figure 32.0 — The pipeline in Week 32. The last tile, `bake-off · capstone`, weeks 32 to 36, and the
+last dashed box on the map has gone. The tile opens with a line drawn through six dots.*
+
+| | |
+|---|---|
+| **The mental model you now own** | When the answer is a **number** instead of a name, you fit a **line** — and a line is exactly two numbers. The **slope** is a rate, and you say it out loud with its units: *"each extra hour of revision a week goes with about 3.6 more marks."* The score you report is **MAE**, the average size of the misses, measured in the units of the thing itself. Marks. Minutes. Rupees. |
+| **The one question it answers** | *"How far off is it — in marks?"* |
+| **What it plugs into** | `y = mx + c` from maths class — the same line with new labels: `m` is `.coef_`, `c` is `.intercept_`. Week 26's scatter plot, which is the picture you lay the line through. And Week 29's split, fit, predict, score cycle, which does not change by a single line just because `y` became a number. |
+| **What carries forward** | Week 33 puts RMSE next to MAE, adds a lazy baseline worth beating, and draws the depth curve. And Week 35 needs every bit of this the moment the thing you chose to predict back in Week 34 turns out to be a number rather than a name. |
+| **Spiral thread** | 🎯 **Learning signal** — the misses are what the line is *chosen by*: out of every line you could draw, the fitted one is the one that makes them smallest — and ⚖️ **Evaluation**, because a score in marks is the only kind of score you can hand to somebody who has never heard of Python and have them argue back. |
+
+> **💡 Try this:** write today's slope inside the gold tile on your own copy of the map, as a full
+> English sentence with its units in it, and put your MAE underneath — *"off by about 2.67 marks"*. Two
+> lines. In Week 35 you will be defending a number exactly like that out loud, and the one you wrote by
+> hand in Week 32 is the one you will remember.
+
+---
+
 ## 🔑 Remember This
 
 - **Look at the answer column first.** Short fixed list → classification. Any number → regression. It is the first question to ask about any table from now until Week 36.

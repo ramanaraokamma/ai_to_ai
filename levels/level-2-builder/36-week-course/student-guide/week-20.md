@@ -1362,6 +1362,33 @@ Last week the wrong answer was **plausible**. This week the wrong answer is **be
 
 ---
 
+## 🧭 Where This Fits
+
+Same gold tile as last week, and nothing on the map moves — but what you can do inside that tile got
+noticeably sharper. Last week you asked a grid for a **summary**: one number per row, or one per column.
+This week you ask it a **question** — *which of these are above fifty?* — and it answers with a grid of
+yes and no exactly the same shape as the data.
+
+![The Level 2 pipeline in Week 20: still stage three's numpy and DataFrames tile, now asking a question of a thousand numbers at once](../figures/fig-w20-0-where-this-fits.svg)
+
+*Figure 20.0 — The pipeline in Week 20. Second week inside the `numpy · DataFrames` tile. Stage four,
+`SEE IT`, is still dashed: this week you pick the numbers out, and you draw them in Week 25.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A comparison on an array gives you a **mask** — a True/False array of the same shape — and `arr[mask]` hands back only the values where it said True. Ask once, select once, no loop. |
+| **The one question it answers** | *"How many of these are above fifty, and which ones are they?"* — `mask.sum()` answers the first half, `arr[mask]` answers the second, and neither needs a `for`. |
+| **What it plugs into** | Week 5's booleans and Week 18's whole-array maths, working together as a single move for the first time. |
+| **What carries forward** | Week 22's `df[df["age"] > 12]` is this exact mask with a named table behind it, and in Week 30 you rescale a whole feature the same way. |
+| **Spiral thread** | 🏷️ **Representation** — a yes/no array is a thing you can look at, count and reuse — and 📊 **Data**, because one score typed as `950` quietly squashes everybody else's marks, and nothing but a range check notices. |
+
+> **💡 Try this:** find the dashed box labelled `holes · duplicates`, weeks 23 to 24. That is the box
+> whose whole job is catching a `950` before it wrecks your results — and it has not arrived yet, which
+> is why *you* had to catch it today, with a range check you wrote in the last three minutes. Draw a
+> small arrow from the gold tile to that dashed box and label it **the 950**.
+
+---
+
 ## 🔑 Remember This
 
 - **A mask is a thing you can look at.** It is an array of `True` and `False`, **the same shape as your data**, made by comparing your data with something. Print it before you use it.

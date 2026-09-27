@@ -352,6 +352,40 @@ Only if you believe the line where you have no data. Nobody in the six revised z
 
 ---
 
+### 9. 🧭 The Growing Map — two minutes on the tile that finally moved
+
+The student guide carries one figure a week that is not about the week's topic: the same five-stage
+pipeline with one more piece inked in. It is the only place either book shows the learner the shape of
+the whole year. This week the gold tile moves for the first time since Week 28, and the last dashed box
+on the map disappears — both of those are worth thirty seconds each.
+
+![The Level 2 pipeline in Week 32: the last tile opens with a fitted line and the miss measured in marks](../figures/fig-w32-0-where-this-fits.svg)
+
+*Figure 32.0 — Week 32's version. The gold tile drops into `bake-off · capstone`, weeks 32 to 36, and
+there is nothing dashed left anywhere on the picture. Two threads lit: learning signal and evaluation.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it, then ask the question that names today:** *"the gold tile moved down a box. What changed
+   about the thing we asked the model for?"* You want **it's a number now, not a name** — marks instead
+   of `"setosa"`. Follow it with the sentence of the week, from them, not you: *"and say the slope out
+   loud."* If anyone answers *"3.6"* and stops, the whole class should hear **3.6 what, per what?**
+2. **Then the map question:** *"there is not a single dashed box left. So what are the next four weeks
+   for?"* You are fishing for *using what we already have* rather than *new stuff* — which is exactly
+   true, and it lowers the temperature going into the capstone. Nothing after today is new syntax; it
+   is the same tools pointed at their own data.
+3. **Have them ink the tile on their own copy** and write two lines inside it: their slope as an
+   English sentence with units, and their MAE in marks. Two lines only. The discipline is the units.
+
+> **🧑‍🏫 Why this is worth two minutes.** Today is the first time this course has changed the *type of
+> the answer* rather than the method, and learners tend to file it as "a new topic" when it is really
+> the same four steps with a different `y`. Two identical-looking maps, four weeks apart, with the tile
+> moved by one box, say that better than a paragraph does. It also gives you somewhere to put the
+> MAE-versus-R² rule so it survives the week: **MAE goes to a person, R² goes between two models** —
+> written on the map, in their own handwriting, in their own units.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

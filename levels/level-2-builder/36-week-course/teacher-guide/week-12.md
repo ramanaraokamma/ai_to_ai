@@ -354,6 +354,36 @@ The algorithm, in four steps:
 
 ---
 
+### 9. 🧭 The Growing Map — how to use it, this week and every week
+
+The student guide carries one figure that is not about this week's content. It is the same pipeline
+every week with one more piece filled in, and it is the only place either book shows the learner the
+*shape* of what they are building rather than the topic in front of them.
+
+![The Level 2 pipeline in Week 12: stage two is open and its functions and lists tile is this week's box](../figures/fig-w12-0-where-this-fits.svg)
+
+*Figure 12.0 — Week 12's version. Stage two, HOLD THE DATA, is solid for the first time, and its
+`functions · lists` tile is gold — the tile this week closes. Two threads lit: toolcraft and data.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it, don't explain it.** Ask *"which box did we shut today?"* You want a finger on the gold
+   `functions · lists` tile. If someone says *"the import one"* — accept it warmly and say the sentence
+   back: **`stats.py` is what finished that tile.** Pointing is the whole exercise.
+2. **Then the better question:** *"why is everything from CLEAN IT rightwards still dashed?"* Anything
+   that means *we have not got there yet* is right. Then push once: *"what would you need before you
+   could clean a table?"* — you are fishing for **a table**, which is exactly the next six weeks.
+3. **Have them update their own copy** in the inside cover of their notebook: shade the tile they just
+   finished, and write `stats.py` underneath it in pencil. The copy they draw is worth more than mine.
+
+> **🧑‍🏫 Why this is worth two minutes.** Week 12 is the first week a learner can honestly say *"I have a
+> library"*, and that sentence is a large part of why anyone sticks with programming. The map is what
+> turns it from *"we did some list stuff"* into *"we finished a box."* It also separates two very
+> different problems for you: *"I don't understand this week"* and *"I don't know where this week
+> goes."* Without the map, both arrive at your desk as "I don't get it."
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

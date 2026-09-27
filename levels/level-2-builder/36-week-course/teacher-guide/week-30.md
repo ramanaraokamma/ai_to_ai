@@ -289,6 +289,40 @@ The one new keyword is `stratify=y`. It is the **labels** you stratify on, never
 
 ---
 
+### 9. 🧭 The Growing Map — two minutes on the difference between a number and a grid
+
+The student guide carries one figure a week that is not about the week's topic: the same five-stage
+pipeline, one more piece inked in. It is the only place either book shows the learner the shape of the
+whole year. Today it is worth showing at the very end, after the PNG is saved.
+
+![The Level 2 pipeline in Week 30: still the X, y, kNN and trees tile, now scaling features and reading a confusion matrix](../figures/fig-w30-0-where-this-fits.svg)
+
+*Figure 30.0 — Week 30's version. Third week inside the `X, y · kNN · trees` tile, weeks 28 to 31.
+Nothing moves; the lab happens inside the box. Two threads lit: representation and evaluation.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it, then ask the question that sorts this lesson out:** *"today's two jobs were scaling and
+   the grid. Which one made the model better, and which one made you better?"* Scaling changed the
+   model; the confusion matrix changed nothing except what they can see. That distinction is the whole
+   lesson, and most students get it in one go when it is put as a choice between two things they both
+   did. Follow it with *"and which rows did the scaler get to look at?"* — **training only**, said fast.
+2. **Then the map question:** *"the gold box says `kNN` and we did not change the model at all today.
+   So what did we change?"* You want *the features* or *the units*. It is the first time this course
+   has improved a result without touching the model, and naming that is worth the time on its own.
+3. **Have them ink their own copy** and write one line from their confusion matrix next to the tile —
+   the worst off-diagonal cell, as *"6 × class 1 called class 2"*. One line only. The discipline of
+   choosing the worst cell is the skill.
+
+> **🧑‍🏫 Why this is worth two minutes.** Lab weeks are the easiest weeks to remember as *"we ran a
+> thing"*, and the map is the cheapest available defence against that. It also sets up the leakage
+> lesson to last: they can see that `PREDICT & CHECK` is a stage with four tiles behind it and one
+> ahead, so *fit the scaler on the training rows only* reads as a rule that will be in force for the
+> rest of the course, not a detail of today's file. Expect the honest question *"does it matter that
+> much?"* — the answer is that it is the bug whose only symptom is a better score.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

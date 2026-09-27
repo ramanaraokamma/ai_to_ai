@@ -305,6 +305,41 @@ The line to hold in your head all lesson: **today is the week the student learns
 
 ---
 
+### 11. 🧭 The Growing Map — two minutes on a box that finally moved
+
+The student guide carries one figure that is not about this week's content: the same pipeline every
+week, with one more piece filled in. This is the first week since Week 13 that the gold has actually
+moved, and it has moved into a new stage — so today the map is worth slightly more than usual.
+
+![The Level 2 pipeline in Week 19: stage three opens and its numpy and DataFrames tile is this week's box](../figures/fig-w19-0-where-this-fits.svg)
+
+*Figure 19.0 — Week 19's version. Stage three, clean it, goes solid for the first time, and its first
+tile — `numpy · DataFrames`, weeks 19 to 22 — is this week's box. One thread lit: representation.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and read the gold tile's two words aloud.** Ask *"which of those two are we living in
+   today, and which one is still two weeks off?"* You want a finger on **numpy**, and **DataFrames**
+   named as Week 21. Then the today question: *"and what is the new word inside numpy this week?"* —
+   **axis**, with one hand going down and one going across as they say it.
+2. **Then the better question:** *"the wrong axis did not crash. Which box on this map would have caught
+   it?"* The answer is **none of them** — what caught it today was a pencil, a calculator and counting
+   the answers. Sit in that for a moment. It is the argument for the hand-check, and it is far more
+   convincing coming from the picture than from you.
+3. **Have them update their own copy:** `axis=0 ↓` and `axis=1 →` written inside the newly gold tile,
+   arrows drawn properly. They will point at that annotation again in Week 24.
+
+> **🧑‍🏫 Why this is worth two minutes.** Changing stage is the clearest progress signal the course has,
+> and it lands today for the first time in six weeks. It also frames the lesson correctly: `axis` is not
+> more numpy trivia, it is the first skill in *cleaning*, where the failure mode stops being a traceback
+> and becomes a confident wrong answer. Learners who see that shift stop reading "it ran" as "it
+> worked" — the single most valuable habit in Term 3.
+
+> **⚠️ Watch out:** resist ticking stage two off out loud as "done for ever". Week 21 builds a table and
+> Week 23 opens a real CSV. Stage two is white, not gone.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

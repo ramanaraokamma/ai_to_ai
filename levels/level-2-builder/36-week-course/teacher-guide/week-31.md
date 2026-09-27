@@ -284,6 +284,42 @@ It means **this tree, at this depth, on this training data, did not need it.** S
 
 ---
 
+### 11. 🧭 The Growing Map — two minutes on the third word in the tile
+
+The student guide carries one figure a week that is not about the week's content: the same pipeline,
+one more piece filled in, so the learner can see the shape of the year. This week it closes a tile —
+and the fact that it looks unchanged from last week is exactly the thing to point at.
+
+![The Level 2 pipeline in Week 31: still the X, y, kNN and trees tile, now a tree whose rules you can read out loud](../figures/fig-w31-0-where-this-fits.svg)
+
+*Figure 31.0 — Week 31's version. Fourth and final week inside the `X, y · kNN · trees` tile, weeks 28
+to 31 — this is the week that earns its last word. Two threads lit: model and impact.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and put a finger on the three words in the gold tile.** Ask *"we have now done all
+   three — so which one did today add, and how many lines of the file did it take?"* You want
+   **`trees`** and **one**. Then the sentence that is really the lesson: *and what can this model do
+   that last week's could not?* You are listening for **tell you why** or **print its rules** — not
+   *"be more accurate"*, which is not reliably true and is not the point.
+2. **Then the map question:** *"the picture is identical to last week's. Two different models, same
+   box. What does that tell you about the box?"* You want something like *the steps are the same
+   whatever model you put in.* That sentence is the whole of Week 33 in advance, and hearing it from
+   them now is worth more than hearing it from you then.
+3. **Have them ink the tile in on their own copy** — all four weeks of it — and write one of their own
+   `export_text` rules, in English, underneath. Initials after it. It is the only line on anybody's
+   map that a stranger could check.
+
+> **🧑‍🏫 Why this is worth two minutes.** The emotional payload of this week is *models are
+> interchangeable parts*, and no amount of explaining lands it as well as two identical maps side by
+> side. It also quietly prepares the one thing Term 4 needs: from Week 33 onwards they will be choosing
+> between models, and a learner who already knows that the surrounding four steps do not change will
+> compare the models rather than restarting from scratch each time. The impact thread is lit for a
+> real reason, not a tidy one — explainability is a legal requirement in several of the places these
+> models get used, and a twelve-year-old can understand why.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

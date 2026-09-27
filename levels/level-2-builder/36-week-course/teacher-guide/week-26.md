@@ -246,6 +246,40 @@ That last one is a genuine, professional-grade observation and it is checkable i
 
 ---
 
+### 9. 🧭 The Growing Map — the last tile before the models
+
+The student guide carries a figure called **Where This Fits** — the same picture every week with one
+more piece filled in, and the only page that shows the learner the *shape* of the year instead of the
+week. There are three dashed boxes left on it. In Week 1 there were thirteen.
+
+![The Level 2 pipeline in Week 26: your first chart is finished and the honest axes tile opens](../figures/fig-w26-0-where-this-fits.svg)
+
+*Figure 26.0 — Week 26's version. "Your first chart" has turned plain white; the gold has moved to
+"honest axes", a tile that covers two weeks. **Representation** and **evaluation** are both lit.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask a Week 26 question:** *"bar, histogram, scatter, line — plus the sentence about
+   what each one hides. Which box?"* Then the question that is really worth asking: *"why is **what
+   does it hide** filed in a box called **honest axes**?"* You want something close to *"because
+   leaving something out is a way of not being honest"* — and that is next week, pre-loaded, without
+   you having to say a word about `set_ylim`.
+2. **Then count the dashes with them.** Three boxes left: the two tiles of `PREDICT & CHECK` and the
+   stage box above them. Ask *"so how much of the year is left on this picture?"* Seeing it as
+   *nearly finished* matters in a term where the work is getting harder.
+3. **Have them update their own copy** and write the four question-words beside the *honest axes*
+   tile — **compare**, **spread**, **together**, **over time**.
+
+> **🧑‍🏫 Why this is worth two minutes.** The failure mode of this week is a learner who can produce
+> four correct charts and still has no idea how you pick one. The map puts the choosing, not the
+> drawing, in the box — so the thing on the picture is the thing you actually assessed.
+
+> **⚠️ Watch out:** do not let the two-week tile read as *"we are stuck."* Say what is coming: this box
+> has two halves, the shapes this week and the honesty next week, and the second half is the one they
+> will still remember in five years.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes the night before

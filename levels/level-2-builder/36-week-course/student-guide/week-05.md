@@ -941,6 +941,31 @@ Here is the real argument for it: if you *had* to write a condition on the `else
 
 ---
 
+## 🧭 Where This Fits
+
+Look carefully at the map this week — something has changed for the first time. The top box of stage
+one has gone plain white with a solid outline. That is what **finished** looks like: no longer gold,
+never dashed again. The gold has dropped to the box underneath it, and you are standing in it.
+
+![The Level 2 pipeline in Week 5: the first tile is done and we have moved into the second](../figures/fig-w05-0-where-this-fits.svg)
+
+*Figure 5.0 — The pipeline after Week 5. Gold is where you are, white-and-solid is done, dashed is not
+yet. The strip along the bottom is the seven threads this course keeps returning to.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A comparison is **a question whose answer is `True` or `False`**, and `if` runs the indented block only when the answer is `True`. One equals sign **stores** a value; two equals signs **ask about** it. |
+| **The one question it answers** | *"How can one program give different answers to different people?"* Until today, your programs did the same thing every run. Now they look at what they were given first. |
+| **What it plugs into** | Week 2's types and Week 4's converted input, directly. You can only compare a number to a number — so `int(input(...))` is not a chore, it is what makes `>=` mean anything. |
+| **What carries forward** | Week 6 chains the questions up. Week 8 repeats one until it goes `False`. Week 20 asks the same question of a thousand numbers at once with a **mask** — and it is still this `>=`. |
+| **Spiral thread** | 🧰 **Toolcraft** — still alone, for four more weeks. A decision is craft today; from Week 28 a stack of these decisions becomes a **model**. |
+
+> **💡 Try this:** on your notebook map, go over the first tile in pen and write **done** beside it, then
+> start a fresh gold patch on the one below. Watching the pen march down and across the page is the
+> point of keeping your own copy.
+
+---
+
 ## 🔑 Remember This
 
 - **A boolean is a value with only two possibilities:** `True` or `False`, capitalised.
