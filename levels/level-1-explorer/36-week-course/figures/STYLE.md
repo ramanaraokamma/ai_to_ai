@@ -1181,3 +1181,23 @@ badged. The figures should feel like frames of one animation, because that is ex
 > reference `fig-w01`) because it does not inherit `font-size`/`text-anchor` from a parent `<g>`, and it
 > reads relative `l dx dy` path commands as absolute coordinates. Changing a figure to satisfy that
 > estimator would break it against the reference.
+
+### Thread icons — canonical, identical in all three levels
+
+One icon per thread, never shared. Normalised across all 108 student sections on 2026-09-26; a
+collision (`📊` served both `data` and `evaluation`) was resolved in favour of each thread's own
+dominant form.
+
+| Thread | Icon |
+|---|:--:|
+| data | 📊 |
+| representation | 🏷️ |
+| model | 📦 |
+| learning signal | 🎯 |
+| evaluation | ⚖️ |
+| impact | 🌍 |
+| toolcraft *(Level 2 only)* | 🧰 |
+
+Use these in the student guide's **Spiral thread** row and nowhere else. If you add a thread, give it a
+new icon and check it against this table first — two threads sharing an icon defeats the point of
+having them.

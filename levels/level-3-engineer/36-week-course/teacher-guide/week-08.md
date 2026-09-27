@@ -312,6 +312,50 @@ The line to hold in your head all lesson: **today the student learns that one nu
 
 ---
 
+### 9. 🧭 The Growing Map — where Week 8 sits
+
+The student guide carries the same figure every week with one more piece filled in. **This week nothing
+moves**, and that is the thing to point out rather than apologise for.
+
+![The Level 3 pipeline in Week 8: still the baseline and four numbers tile, now the four cells of the confusion matrix](../figures/fig-w08-0-where-this-fits.svg)
+
+*Figure 8.0 — Week 8's version. The gold tile is the same one as last week; baseline · four numbers is
+labelled wk 7–9, so it is three lessons wide. The ↻ on stage three is drawn grey because the training
+loop stays closed until Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it, don't explain it.** Ask *"which box did we do today?"* They point at the gold tile and
+   somebody will notice it is the same box as last week. Good — that is the observation you want.
+2. **Then the question that belongs to this week.** Stand beside the 2×2 on the wall and ask: *"same box
+   as last week, so what did we actually add to it today?"* The answer you are steering towards is
+   *"the same score, broken into four counts"*. Then make it concrete with the second half: *"which
+   single cell on that grid is the reason the 98.6% model was rubbish?"* They point at the empty
+   **caught** cell. That is the whole lesson, in their own handwriting, on the wall.
+3. **Read the label on the tile out loud: wk 7–9.** Measuring honestly is not a one-lesson job, and the
+   map says so in print. Next week finishes this box; the week after, the gold drops to the tile
+   underneath.
+
+> **🧑‍🏫 Why this is worth two minutes.** A learner who can see the map can distinguish *"I don't
+> understand this week"* from *"I don't know where this week goes"* — and those two need completely
+> different help from you. It also stops the "are we behind?" anxiety that a week with no new maths and
+> no new model can otherwise produce.
+
+**Two things to notice, so you can answer if asked.**
+
+- **Evaluation is lit alone.** Last week had two threads; this week has one, and it is the right one. We
+  built a model on purpose to be useless and then never improved it. Nothing about the model, the data
+  or the features got better today — only the **looking** did.
+- **The ↻ on stage three is still grey.** It is the training loop, closed until Week 12, when the symbol
+  turns black. If asked: *"that's the bit that does the learning, and we spend six weeks on it in the
+  spring."*
+
+> **⚠️ Watch out:** the map is orientation, not assessment. Never quiz them on it. And do not let a
+> student read "same box as last week" as "we wasted a week" — say plainly that the three biggest
+> stages in this level are all multi-week boxes.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes the night before

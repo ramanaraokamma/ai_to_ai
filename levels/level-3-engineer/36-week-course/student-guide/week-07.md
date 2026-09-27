@@ -1021,6 +1021,33 @@ It is a measurement on 400 particular rows, taken with one particular shuffle. I
 
 ---
 
+## 🧭 Where This Fits
+
+Stage one is finished. Look at the map: both of its tiles are plain white and solid now — done, and
+never coloured in again — and a whole new stage has gone solid, because this week you crossed into it.
+It is called **MEASURE IT**, and today was its first day.
+
+![The Level 3 pipeline in Week 7: stage two opens and its baseline and four numbers tile is this week's box](../figures/fig-w07-0-where-this-fits.svg)
+
+*Figure 7.0 — The pipeline in Week 7. Stage one is done and white; stage two has opened and its first
+tile, baseline · four numbers, is gold. The ↻ on stage three is the training loop, still grey — you open
+it in Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | **One change, one measurement, one row in the table, no exceptions.** If two things changed between two rows, you learned nothing from either of them — you just have a number you cannot explain. And the baseline row stays at the top of the table all year, because "better" means nothing without a "better than what". |
+| **The one question it answers** | *"What exactly changed between these two rows?"* — ask it of your own table first, and then of every result anybody ever shows you. |
+| **What it plugs into** | Weeks 4–6. Every row you wrote today is one scaling, encoding, feature or imputation decision from those three weeks, finally carrying a number. Until this week those were opinions. Now each one has a price. |
+| **What carries forward** | Week 11 re-scores your best model on five folds instead of one lucky split. Week 26 compares a CNN against a dense net in exactly this four-row format. Week 30 adds cluster IDs as features and runs this same ablation again — and by then you will know the drill without being told. |
+| **Spiral thread** | ⚖️ **Evaluation** and 📦 **Model** — the first week two threads are lit at once. Evaluation, because a row without a measurement is a rumour. Model, because the whole discipline today was **holding the model completely still** while only the features moved. |
+
+> **💡 Try this:** on the inside cover of your notebook, tick stage one and write today's date beside
+> stage two. Underneath it, copy one line: *one change, one measurement, one row.* You will want it again
+> in Week 30, when you are bolting new features onto a table and the urge to change three things at once
+> comes straight back.
+
+---
+
 ## 🔑 Remember This
 
 - **One change, one measurement, one row.** If a row has two changes in it, throw the row away — it cannot tell you which change did what. There are four worlds and your one number cannot tell them apart.

@@ -321,6 +321,46 @@ The line to hold in your head all lesson: **today the student turns words into c
 
 ---
 
+### 11. 🧭 The Growing Map — the same box, and the "words" half of it finally arrives
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. The tile does not move this week, but the second word on it comes into play for the
+first time.
+
+![The Level 3 pipeline in Week 31: still the no labels and words tile, now words turned into columns](../figures/fig-w31-0-where-this-fits.svg)
+
+*Figure 31.0 — Week 31's version. Fourth week inside the gold `no labels · words` tile. The ↻ on stage
+three is black, as it has been since Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" and then "which word on it?"** Same gold tile — but point at the
+   word **words**, which has been sitting unused on that map since Week 1. *"Weeks 28 to 30 were the no
+   labels half. From today it is the words half, and Weeks 32 and 33 finish it."*
+2. **Anchor it on the thirty-two cells and on `True`.** Hold up a completed page 31.2. *"This box turned
+   four sentences into thirty-two numbers, and every one of them was checked against the library by
+   hand."* Then the printed line `are the two rows identical? True` for `"the dog bit the man"` and
+   `"the man bit the dog"`. **The cost is the lesson, not the method** — ask them to say in one sentence
+   what the box threw away, and insist on the word *order*.
+3. **Point at stage one, twice.** Once for `Pipeline`: the vectorizer is a **fitted transformer**, so the
+   vocabulary is learned on the training reviews only, and a vocabulary built on everything is leakage
+   wearing a friendly face. And once for the decisions: dropping `not` is a preprocessing choice, exactly
+   the kind Week 1 made them write down in pen. *"Which box does 'we decided to lowercase everything'
+   belong to?"* — the answer is stage one, not stage five.
+
+> **🧑‍🏫 Why this is worth two minutes.** After eighteen weeks of gradients and tensors, a lesson spent
+> counting words by hand can feel like a step backwards, and the map is the cheapest correction: **this
+> is the fourth week of the final stage.** Nothing has regressed; the data changed shape, and the
+> pipeline did not have to. That is the actual point of having had a fixed picture since Week 1.
+
+**One thing to notice, so you can answer if asked.** No thread for "language" ever appears on that
+strip, and a sharp student may ask why text does not get its own. It is the right question and the answer
+is the best thing you can tell them this week: **text is not a new kind of problem, it is a new
+representation of an old one.** `92` words, `5,520` cells, `363` stored — that is a table, and every box
+to the left of the gold one already knows what to do with a table.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes the night before

@@ -1041,6 +1041,32 @@ If your answer is "it's faster" or "it works on GPUs", both are true and neither
 
 ---
 
+## 🧭 Where This Fits
+
+Same gold box as last week — `numpy brain · PyTorch` is a five-week tile and this is the second of the
+five. Last week you wrote the brain. This week you meet the machine that does the hardest part of it
+for you, and the only reason you are allowed to trust that machine is that **you already know the
+answers it is supposed to give.**
+
+![The Level 3 pipeline in Week 20: still the numpy and PyTorch tile, now a machine that does the slopes for you](../figures/fig-w20-0-where-this-fits.svg)
+
+*Figure 20.0 — The pipeline in Week 20. Second week inside the same gold tile. Stage three behind it
+stays white: you are not replacing what you built there, you are checking a tool against it.*
+
+| | |
+|---|---|
+| **The mental model you now own** | **A tensor is an array that remembers what was done to it.** Build the forward pass, call `backward()` once, read `.grad` — and the numbers that come back are the ones you computed by hand in Week 18, agreeing to **eight decimal places**. `grad_fn` is that memory made visible: `MmBackward0`, `AddBackward0`, `ReluBackward0`. |
+| **The one question it answers** | *"Where did it get my gradients from?"* — from a receipt it kept while you were doing the arithmetic, read backwards. Not from magic, and not from anything you cannot check. |
+| **What it plugs into** | Week 18's four hand-computed gradient arrays and Week 12's nudge. This is the week a machine agrees with **both** of them, which is the only order in which learning PyTorch is honest: your numbers first, on the wall, and then the library. |
+| **What carries forward** | Week 21 wraps the update in an optimizer. Week 22 wraps the layers in `nn.Sequential`. Week 23 saves the weights. Every PyTorch line for the rest of the year — and the rest of your life with this stuff — rests on the one idea on this page. |
+| **Spiral thread** | 🎯 **Learning signal** — lit alone. Nothing about the model changed today and nothing was measured: the *only* subject was where the signal comes from and how to get it without deriving it yourself. One thread, because this week has decided exactly what it is about. |
+
+> **💡 Try this:** write `.grad ADDS` on a sticky note and put it on your laptop lid. `6 + 27 = 33` was
+> a curiosity today; next week it is line 1 of the five-line loop, and it is the one missing line that
+> produces **no error message at all**. You have been warned a week early — use it.
+
+---
+
 ## 🔑 Remember This
 
 - **A tensor is a numpy array with two things stapled on:** a **device** (where the numbers live) and a **computation graph** (a receipt of everything done to it).

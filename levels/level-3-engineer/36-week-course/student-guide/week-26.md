@@ -939,6 +939,33 @@ The check that catches it every time: **count the answers.** 540 pictures went i
 
 ---
 
+## 🧭 Where This Fits
+
+Still the same gold tile — *images · CNNs*, third of its four weeks. Week 24 gave you the convolution,
+Week 25 gave you the sizes, and today the two go together into the shortest real network in this course:
+one that reads handwriting.
+
+![The Level 3 pipeline in Week 26: still the images and CNNs tile, now a network that reads handwritten digits](../figures/fig-w26-0-where-this-fits.svg)
+
+*Figure 26.0 — The pipeline in Week 26. Third week inside the same gold tile, and the first week it
+produces something that works. The ↻ on stage three is black, as it has been since Week 12 — and today
+that loop runs 1,600 times in about three seconds.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A CNN is a **short stack**: conv, squash, pool, repeat, flatten, classify. **Nothing in it is new** — every line came from Weeks 14, 21, 22, 23 and 25. And because the first layer looks straight at the pixels, **its filters are pictures**, so you can look at what the network decided to notice. Nobody drew them. |
+| **The one question it answers** | *"What is that filter looking for?"* — and the honest answer has a number in it: "+2.830 to a bright-left edge, −1.219 to a bright-top one", not "it looks edgy". |
+| **What it plugs into** | Weeks 24–25's convolutions and size rule, Week 21's five-line training loop, Week 14's log loss (now cross-entropy, over ten scores instead of one), and Week 23's `DataLoader` and saved artifact. |
+| **What carries forward** | Week 27 augments this network's data and transfers its frozen filters to digits it has never seen. And Week 23's dense MLP is the row you compare against: 1,898 parameters against 4,810, with one of those four comparisons being the only one you would put in a report. |
+| **Spiral thread** | 📦 **Model** and ⚖️ **Evaluation** — two threads. Model, because the stack and its 1,898 numbers are the model. Evaluation, because `0.9796 on 540 held-out rows, trained on 1,257` is a score with its pile named, and the four-row comparison against Week 23 is you deciding which number actually means something. |
+
+> **💡 Try this:** before you look at `filters.png`, sketch on paper the eight 3 × 3 grids you *expect* a
+> digit reader to have learned. Then compare. You will be wrong about most of them, and being wrong here is
+> the most interesting thing that happens all week — it is what "the network invented its own features"
+> actually feels like.
+
+---
+
 ## 🔑 Remember This
 
 - **A conv layer costs `(in × k × k × out) + out`.** The `+ out` is one bias per filter and it is the bit everybody forgets. `1 × 3 × 3 × 8 + 8 = 80`; `8 × 3 × 3 × 16 + 16 = 1168`; `64 × 10 + 10 = 650`; **total 1,898.**

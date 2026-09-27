@@ -1049,6 +1049,32 @@ A rule is easier to remember than an idea, which is why this one is so tempting.
 
 ---
 
+## 🧭 Where This Fits
+
+Look at the map: the first tile has gone **white**. It is not grey and not gold any more — it is plain
+ink, which on this map means *finished*. Weeks 1, 2 and 3 were one job and that job is done. The gold has
+moved down to the second tile, and you are in it for the next three weeks.
+
+![The Level 3 pipeline in Week 4: the scaling and features tile of SPLIT HONESTLY opens](../figures/fig-w04-0-where-this-fits.svg)
+
+*Figure 4.0 — The pipeline in Week 4. The first tile is drawn solid because it is behind you; the second
+one — scaling · features — is gold because it opens today. The ↻ on stage three is the training loop,
+still grey — you open it in Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Before you compare two columns, ask **what units they are in.** `(x − mean) ÷ sd` puts every column on the same ruler, and the two numbers in that formula — the mean and the sd — are **learned from the training rows only**. A ruler measured off the test set is not a ruler, it is a peek. |
+| **The one question it answers** | *"Are these two columns even in the same units?"* — and the answer is almost always no, which is why the big one shouts. |
+| **What it plugs into** | Week 3's `Pipeline`. The scaler is a **step inside it**, not a thing you run first, and that is precisely why it cannot see the test rows even if you wanted it to. |
+| **What carries forward** | Week 15 shows the same descent either converging or crawling depending only on this. Week 28 watches one unscaled column take over every distance in the dataset. Week 32 rescales whole rows of word counts. Scaling never stops mattering; it just changes what it wrecks. |
+| **Spiral thread** | 🏷️ **Representation**, on its own — one thread, because nothing changed today about which rows you have or which score you trust. Only the **form the numbers are written in** changed, and that is exactly what representation means. |
+
+> **💡 Try this:** take the five numbers **2, 4, 6, 8, 100** and z-score them by hand one more time, then
+> write the five answers on a sticky note. Every time this year a model behaves strangely, ask whether one
+> column is the 100 in somebody else's list of five.
+
+---
+
 ## 🔑 Remember This
 
 - **A model multiplies each column by one weight and adds up, so the size of your numbers is not neutral.** A column measured in months shouts over a column measured in kilometres for no better reason than the unit somebody picked.

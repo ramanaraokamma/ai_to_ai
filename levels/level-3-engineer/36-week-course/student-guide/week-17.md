@@ -1009,6 +1009,33 @@ divide:          0.659001  0.242433  0.098566     total  1.000000
 
 ---
 
+## 🧭 Where This Fits
+
+Third week in the same gold box, and that is not a mistake in the drawing. *descent · neuron · layer*
+is a four-week tile: Week 15 was the **descent**, Week 16 was the **neuron**, and this week is the
+**layer** — the very same multiply, add and squash, done for every neuron and every row at once, with
+one symbol.
+
+![The Level 3 pipeline in Week 17: still the descent, neuron and layer tile, now a layer as a grid times a grid](../figures/fig-w17-0-where-this-fits.svg)
+
+*Figure 17.0 — The pipeline in Week 17. Third week inside the same gold tile, and nothing else on the
+map has moved. Stage four, REAL NETWORKS, is still dashed: you have a layer now, not yet a network.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A whole layer, for a whole batch, is **one** grid multiply: `(rows, in) @ (in, out)` gives `(rows, out)`. Write both shapes down, put a finger on the **inner two numbers**, check they match — and only then run it. The batch size rides through untouched, which is why the `4` in `(4, 2)` is still the first number at the far end of the ladder: `(4,2) → (4,3) → (4,1)`. |
+| **The one question it answers** | *"Why won't these two shapes multiply?"* — and you now answer it in about four seconds: last line of the traceback, last bracket, two numbers, turn one grid round. |
+| **What it plugs into** | Week 16's shapes and its single neuron. This is the same arithmetic you did with a calculator — nothing new happens to any individual number today. It just happens twelve times where last week it happened once, and `@` is the one keystroke that says so. |
+| **What carries forward** | Week 18's whole backward pass is `A.T @ dZ` — this same multiply wearing a transpose. Week 19 wires two of these layers together into something that learns a curve. Week 22 hands you the whole line back as `nn.Linear`. And in Week 25 you do this exact shape arithmetic for pictures. |
+| **Spiral thread** | 🏷️ **Representation** and 📦 **Model** — two threads. The weights and biases are the model; `(4,2) → (4,3) → (4,1)` is your four rows being **re-described twice**, first in the hidden layer's three numbers and then as one probability each. Nothing trained today, so `learning signal` stays dark for one more week. |
+
+> **💡 Try this:** cover up the middle of your shape ladder with your thumb — the `(2, 3)` — and see
+> whether you can rebuild it from its two neighbours alone: `(4,2)` on the left, `(4,3)` on the right,
+> so the hidden weights can only be `(2, 3)`. Being able to reconstruct a weight shape from the shapes
+> either side of it is the skill that makes Weeks 18 to 27 feel easy instead of frightening.
+
+---
+
 ## 🔑 Remember This
 
 - **`@` means grid times grid.** A row from the left, a column from the right, multiply position by position, add. You did three of the twelve cells by hand and numpy agreed with all three.

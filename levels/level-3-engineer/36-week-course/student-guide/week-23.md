@@ -1192,6 +1192,31 @@ with torch.no_grad():
 
 ---
 
+## 🧭 Where This Fits
+
+This is the **last** week inside the gold tile. *numpy brain · PyTorch* has taken five weeks — the maths,
+the brain by hand, the tensors, the layers — and it closes today, with the same brain coming back to life
+in a terminal that knows nothing about how it was trained.
+
+![The Level 3 pipeline in Week 23: the numpy and PyTorch tile closes with the same brain reloaded in a fresh process](../figures/fig-w23-0-where-this-fits.svg)
+
+*Figure 23.0 — The pipeline in Week 23. Fifth and final week in the gold tile; next week the box below it
+opens. The ↻ on stage three is black, as it has been since Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | **A model you cannot reload in a fresh process is not finished.** The architecture lives in a module that *both* scripts import, the weights live in a file, and `predict.py` contains **no training code at all** — you can prove that with a grep. |
+| **The one question it answers** | *"Where do the weights actually live?"* — in a `state_dict`, in a file on disk, and they are useless without the class that knows their shape. |
+| **What it plugs into** | Week 3's rule that **the artifact is the deliverable**, now applied to a network instead of a pipeline. And Week 22's `nn.Sequential` model, which today gets a name, a class, and a save format. |
+| **What carries forward** | Week 26 loads digits through this same `DataLoader` and compares its CNN against this MLP on parameters, seconds and accuracy. Week 27 freezes part of a saved network and reuses it. Week 34 does this whole ritual one more time, as a capstone milestone with your name on it. |
+| **Spiral thread** | 📦 **Model** and 🌍 **Impact** — two threads. Model, because today the network stops being a variable in your session and becomes a file with a life of its own. Impact, because `FINAL: test accuracy 0.9667 on 540 held-out digits` is written for somebody else to read, and a score without its pile named is not a result. |
+
+> **💡 Try this:** open a brand-new terminal, run `predict_digits.py`, and then delete your training script
+> entirely. If the prediction still works, you have shipped something. If it does not, you have not — and
+> finding that out now is the cheapest it will ever be.
+
+---
+
 ## 🔑 Remember This
 
 - **A class has two halves.** `__init__` declares the parts and runs once. `forward` says how a batch flows and runs every call. **`super().__init__()` is the first line of `__init__`, always.**

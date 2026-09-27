@@ -1476,6 +1476,33 @@ Then the three words on the vocabulary sheet: **distributional hypothesis**, **c
 
 ---
 
+## 🧭 Where This Fits
+
+This is the sixth week inside the same gold box, and the week it **closes**. Weeks 28 to 30 were the *no
+labels* half; Weeks 31 to 33 were the *words* half. Today the vectorizer you built finally gets a
+classifier bolted onto it — and then you spend the rest of the lesson finding out exactly where it breaks,
+and being able to name why.
+
+![The Level 3 pipeline in Week 33: the no labels and words tile closes with the sentiment engine](../figures/fig-w33-0-where-this-fits.svg)
+
+*Figure 33.0 — The pipeline in Week 33. Last week inside the gold tile, and one box left dashed: shipping.
+The ↻ on stage three is black, as it has been since Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | **A linear model on TF-IDF is readable.** Sort its coefficients and it hands you its own mind: `cold −3.2388`, `rude −3.2033`, `hot +2.9625`, `fresh +2.8648`. And the reviews it gets wrong are the ones where **word order was the whole meaning** — `0 out of 12` traps, the worst of them wrong at `0.9824` — which you can trace to one fact: `is 'not' in the vocabulary? False`. |
+| **The one question it answers** | *"Why did it get that review wrong?"* — not *"is it any good?"* You answer it with arithmetic: `not` has no column, so it contributed `+0.0000`, the model added `+1.9241 + 2.0701` and said positive. **"Has no column" is the sentence.** |
+| **What it plugs into** | Weeks 31 and 32's vectorizers, which become step one of the pipeline. Week 9's per-class precision and recall, now on text. Week 29's PCA scatter, used to look at 97 columns on a flat page. And Week 2's dummy baseline — because `1.0000` on 20 held-out reviews means nothing until you know what a coin scores. |
+| **What carries forward** | Weeks 34 and 35 ship a model shaped **exactly like this one**: a contract, a frozen artifact, a service, a log and a card. Your twelve traps and their `0/12` are not a failure to hide — they are the "known limitations" section of a document you are about to write. |
+| **Spiral thread** | ⚖️ **Evaluation** and 🌍 **Impact** — evaluation, because the whole week is about not believing a `1.0000`. Impact, because the ticket routed to the wrong queue and the flagged quoted insult are this exact arithmetic, running on somebody's real messages. |
+
+> **💡 Try this:** write one sentence under stage five that a stranger could understand: *"it gets 100% on
+> reviews that look like its training reviews, and 0 out of 12 on sentences containing `not`."* Learn it.
+> In Week 36 somebody asks you where your model breaks, and that sentence — with both numbers in it — is
+> the answer.
+
+---
+
 ## 🔑 Remember This
 
 - **A sentiment engine is `make_pipeline(TfidfVectorizer(), LogisticRegression(...))`, and you already owned every part of it.** `(60, 97)` in, `97 + 1 = 98` learned numbers out. **The vocabulary may come from the training rows and nowhere else.**

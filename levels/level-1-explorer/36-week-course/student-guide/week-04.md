@@ -571,7 +571,7 @@ is tinted with the tick, and it is yours for the next three weeks.*
 | **The one question it answers** | *"What is one row of this machine's table?"* |
 | **What it plugs into** | Week 2's labelled examples. A labelled example is exactly **one row** — and now you know what a row is made of. |
 | **What carries forward** | The row unit you chose this week is the thing you measure in Week 11 and photograph in Week 15. And in Week 23 you find out that a photo is a table too. |
-| **Spiral thread** | 📊 **Data** and 🗂️ **Representation** — what the machine is given, and the shape somebody had to squeeze it into first. Two threads lighting up at once for the first time. |
+| **Spiral thread** | 📊 **Data** and 🏷️ **Representation** — what the machine is given, and the shape somebody had to squeeze it into first. Two threads lighting up at once for the first time. |
 
 > **💡 Try this:** on your own map, write your backpack table's row unit in tiny letters inside THE
 > TABLE tile — "one row = one object in my bag". When that tile finally goes white in three weeks, you

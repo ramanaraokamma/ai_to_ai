@@ -466,6 +466,41 @@ The line to hold all lab: **today you write the thing you have been importing.**
 
 ---
 
+### 12. 🧭 The Growing Map — the badge moves down a row
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. This week the badge changes row for the first time since Week 12, which makes it easy
+to show and easy to remember.
+
+![The Level 3 pipeline in Week 15: the descent, neuron and layer tile opens with your own gradient descent loop](../figures/fig-w15-0-where-this-fits.svg)
+
+*Figure 15.0 — Week 15's version. The first tile of INSIDE THE LOOP is finished in plain white; the
+second, `descent · neuron · layer`, is gold. The ↻ has been black since Week 12.*
+
+**What to do with it, in about two minutes at the end of the lab:**
+
+1. **Ask "which box did we do today?"** They should notice the badge **moved down a row**: the top tile
+   of stage three is plain white and finished, and the gold one is now *descent · neuron · layer*. Then
+   the sharper question: *"which word?"* — **descent**. Neuron is next week, layer is Week 17.
+2. **Point at the white tile above it and say what it was for.** Slope, chance and loss were three
+   separate weeks that looked like three separate ideas. *"Today all three of them went into one loop.
+   That is why they were in the same box."* This is the single best payoff moment the map gives you all
+   term — do not skip it.
+3. **Then the sentence to end the lab on.** Hold up the side-by-side weight comparison — their numbers
+   and scikit-learn's, agreeing to three decimal places — and point at the dashed `numpy brain ·
+   PyTorch` tile. *"You just wrote `fit()`. In Week 21 two of your four lines become
+   `optimizer.step()`, and you will know exactly what it is doing."*
+
+> **🧑‍🏫 Why this is worth two minutes.** This is the week the level's promise gets paid. A student who
+> can see that the box they just closed contained the three tools they are using today understands the
+> curriculum has a plan — which is worth more to their persistence than any individual result in the lab.
+
+**One thing to notice, so you can answer if asked.** Done tiles are never re-tinted: `slope · chance ·
+loss` is plain white now and stays plain white for the remaining twenty-one weeks. The gold tint means
+*this week* and nothing else, so exactly one box is gold in every figure of the set.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes the night before

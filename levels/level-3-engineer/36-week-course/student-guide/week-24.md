@@ -1072,6 +1072,32 @@ Same for the input: `(1, 1, 6, 6)` is **"one picture, one channel, six high, six
 
 ---
 
+## 🧭 Where This Fits
+
+The map moves this week. *numpy brain · PyTorch* is finished and plain white, and the box underneath it —
+*images · CNNs* — turns gold for the first time. Four weeks in here, and they all start from one
+complaint about `Flatten`.
+
+![The Level 3 pipeline in Week 24: the images and CNNs tile opens on the convolution that keeps the neighbourhood](../figures/fig-w24-0-where-this-fits.svg)
+
+*Figure 24.0 — The pipeline in Week 24. A tile finished, and the one below it opened. The ↻ on stage three
+is black, as it has been since Week 12; you are still inside the same training loop, just feeding it a
+different kind of layer.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Flattening a picture tells the model that **the pixel directly above and a pixel across the room are equally related** — it throws the neighbourhood away before learning starts. A small grid of weights that **slides** keeps the neighbourhood, and uses far fewer numbers to do it: 1,040 against 10, on the same 8 × 8 picture. |
+| **The one question it answers** | *"Why is flattening a picture a bad idea?"* — because `row[0]` and `row[8]` were touching, and after the flatten nothing in the model can ever know that. |
+| **What it plugs into** | Week 17's grid multiply — a convolution **is** a grid multiply, on a sliding window. And Week 5's invented features, except now the network invents them for itself and does not tell you their names. |
+| **What carries forward** | Week 25 sizes these layers on paper before running them. Week 26 stacks them into a digit reader and then renders the filters it learned. Week 27 freezes those filters and reuses them on digits they have never seen. |
+| **Spiral thread** | 🏷️ **Representation** and 📦 **Model** — two threads. Representation, because a feature map is a **new description of the picture**, written in the kernel's own language. Model, because those nine numbers are weights: exactly the kind of thing gradient descent has been moving since Week 15. |
+
+> **💡 Try this:** take your vertical-edge kernel and turn it 90°. Write down, before you run it, which of
+> your four test pictures it should now go quiet on. Being able to predict a kernel's behaviour from its
+> nine numbers is the whole skill of this tile, and it is much easier in pencil than in code.
+
+---
+
 ## 🔑 Remember This
 
 - **Flattening throws away which pixels are next to which.** The evidence: shuffle the 64 columns of `load_digits` and the same model still scores 0.9704 against 0.9667. **It was never using the arrangement.**

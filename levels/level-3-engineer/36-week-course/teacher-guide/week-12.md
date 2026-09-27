@@ -443,6 +443,44 @@ best w = 7.9900   loss 8.9106
 
 ---
 
+### 11. 🧭 The Growing Map — the week the loop symbol turns black
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. This week it changes in three ways at once, so it is worth the full two minutes.
+
+![The Level 3 pipeline in Week 12: stage three opens, the loop symbol turns black, and the slope tile is this week's box](../figures/fig-w12-0-where-this-fits.svg)
+
+*Figure 12.0 — Week 12's version. Two stages finished in plain white, stage three solid because we are
+now inside it, and its first tile gold. The ↻ on stage three is black for the first time.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask "which box did we do today?"** They point at the gold tile, *slope · chance ·
+   loss*. Then ask the sharper version: *"which of those three words did we actually do?"* The answer
+   is **slope, and only slope** — chance is next week, loss is the week after. Being able to say *"one
+   third of a tile"* is exactly the kind of orientation the map exists to give.
+2. **Make them find the thing that changed colour.** The ↻ on stage three has been grey in every
+   figure since Week 1, and it is black from today. Somebody will spot it; let them say what it means
+   before you do. *"We are inside the training loop now — it used to be a closed box."* It is the only
+   mark in the whole set that changes colour for a reason other than progress, and this is the week.
+3. **Tie it to the number on the board.** Point at `6.000` — the slope of `x × x` at `x = 3`, which
+   the class measured by nudging — and then at the gold tile. *"That number is what filling in that box
+   looked like. Everything in the three dashed stages to the right is built out of numbers like it."*
+
+> **🧑‍🏫 Why this is worth two minutes.** Today is the most abstract lesson in Level 3 and the one most
+> likely to produce *"but why are we doing this?"* The map answers that question geometrically: the
+> three dashed stages to the right of the gold tile **all stand on today's division.** A learner who has
+> seen that will forgive a lesson about the slope of `x × x`.
+
+**Two things to notice, so you can answer if asked.**
+
+- **Stage three went solid this week, not next.** A stage box goes solid the moment any one of its tiles
+  is reached, and stays solid for the rest of the year. Nothing on the map ever un-fills.
+- **One thread lit, and it is the new one.** `learning signal` has not been lit on its own before. From
+  here to Week 23 it is the busiest thread in the level, which is the honest shape of the spring term.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 30 minutes the night before — and spend all thirty on this one

@@ -338,6 +338,50 @@ Write the picture to a file. **Never `plt.show()`** — on a headless machine it
 
 ---
 
+### 12. 🧭 The Growing Map — where Week 10 sits
+
+The student guide carries the same figure every week with one more piece filled in. **This week the gold
+finally moves**, for the first time since Week 7, and that is worth pointing at.
+
+![The Level 3 pipeline in Week 10: the threshold and cost tile of MEASURE IT opens on the threshold dial](../figures/fig-w10-0-where-this-fits.svg)
+
+*Figure 10.0 — Week 10's version. The top tile of MEASURE IT is white and solid, three weeks of work
+finished. The tile underneath it, threshold · cost, is gold. The ↻ on stage three is drawn grey because
+the training loop stays closed until Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it, don't explain it.** Ask *"which box did we do today?"* They point at the new gold tile —
+   *threshold · cost* — and somebody should notice that the box above it has turned white. Pointing is
+   the exercise.
+2. **Then the question that belongs to this week.** Read the tile's label out loud and stop halfway:
+   *"the box is called 'threshold and cost'. We did the threshold today — nine of them. So what do you
+   think the cost half is going to be?"* Take guesses and write them on the board unedited. Somebody
+   will say money, and next week's price-list card — `a miss costs £500 · a false alarm costs £10` —
+   makes them right in front of the class. This is the cheapest possible hook into Week 11.
+3. **Then the sentence that connects the two tiles.** Point at the white tile above: *"up there we
+   learned that 98.6% could be useless. Down here we learned that the same model, at a different
+   threshold, is a completely different classifier. Same model. Nothing refitted."* That is what the
+   0.1774 ceiling bought you today.
+
+> **🧑‍🏫 Why this is worth two minutes.** A learner who can see the map can distinguish *"I don't
+> understand this week"* from *"I don't know where this week goes"* — and those two need completely
+> different help from you. Without the map, both arrive at your desk as "I don't get it."
+
+**Two things to notice, so you can answer if asked.**
+
+- **Evaluation is lit alone.** No new model was fitted this week; the dial was already in the box and we
+  simply took it out. If a student objects that curves feel like model work, the honest reply is that
+  the ROC curve is a picture of a **measurement procedure**, not of the model's insides.
+- **The ↻ on stage three is still grey — but only for one more week.** It is the training loop, and the
+  symbol turns black in Week 12. You can safely promise that now: *"two weeks from now we stop measuring
+  models and start building the thing that learns."*
+
+> **⚠️ Watch out:** the map is orientation, not assessment. Never quiz them on it. And do not let step 2
+> slide into actually costing the thresholds — that is next week's 70 minutes and it needs all of them.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes the night before

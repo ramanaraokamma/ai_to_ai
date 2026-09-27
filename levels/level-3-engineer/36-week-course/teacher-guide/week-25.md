@@ -249,6 +249,45 @@ The line to hold in your head all lesson: **today the student learns that shapes
 
 ---
 
+### 9. 🧭 The Growing Map — the same box, and the quietest week in it
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. This week nothing moves and nothing trains, and the two minutes are spent defending that.
+
+![The Level 3 pipeline in Week 25: still the images and CNNs tile, now the output-size rule done on paper](../figures/fig-w25-0-where-this-fits.svg)
+
+*Figure 25.0 — Week 25's version. Second week inside the gold `images · CNNs` tile. The ↻ on stage three is
+black, as it has been since Week 12 — though nothing went round it today.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" and then "what is on the ladder?"** The box is the same gold tile as
+   last week, *images · CNNs*. The answer to the second question is on the wall: **THE SHAPE LADDER**, six
+   rows, filled in **in pen before anything ran**. *"That sheet is today. Six shapes, predicted, then
+   checked."*
+2. **Anchor it on the two circled numbers in the Bug Log.** Somebody's traceback has **64** and **32** in
+   it, labelled *"picture"* and *"mine"*. Hold it up. *"One of those two numbers was typed by a person and
+   one was worked out by the computer. Knowing which is which took us seventy minutes and one division,
+   and it will save every one of you an afternoon before June."*
+3. **Point at the ↻ and say why it is idle.** It is black — the loop has been open since Week 12 — but
+   nothing went round it today, and that is deliberate. *"No weights moved today. We were measuring the
+   pipe before we put water in it. Next week the same stack trains in three seconds, and it only trains
+   because the number after `Flatten` is right."*
+
+> **🧑‍🏫 Why this is worth two minutes.** A week with no training and no accuracy number feels to a student
+> like a week that did not count, and the map is the fastest rebuttal there is: the gold box has not
+> moved, so this was *inside* the work, not beside it. It is also worth saying plainly that the commonest
+> error in the whole level is a shape error, and that professionals still get it — Figure 25.1 is somebody
+> at work, weekly.
+
+**One thing to notice, so you can answer if asked.** Only **one** thread is lit — `representation`, alone.
+Say why if asked, because it is precise: nothing was modelled, nothing was measured, nothing was steered.
+The only thing that changed today is **the shape the picture is written in** as it moves down the stack,
+and that is exactly what the representation thread tracks. A single lit pill is not a thin week; it is a
+week that knows what it is about.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes the night before

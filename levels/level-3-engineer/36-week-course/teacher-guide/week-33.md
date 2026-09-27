@@ -411,6 +411,47 @@ The line to hold in your head all lesson: **today the student builds something t
 
 ---
 
+### 13. 🧭 The Growing Map — the tile closes, and only shipping is left
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. Today the gold tile it has been sitting in since Week 28 **finishes**, and exactly one
+dashed box remains on the whole page.
+
+![The Level 3 pipeline in Week 33: the no labels and words tile closes with the sentiment engine](../figures/fig-w33-0-where-this-fits.svg)
+
+*Figure 33.0 — Week 33's version. Last week inside the gold `no labels · words` tile; one dashed box left,
+`ship it · showcase`. The ↻ on stage three is black, as it has been since Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" and then "how many dashed boxes are left?"** Same gold tile, and the
+   answer to the second question is **one**. *"Weeks 28 to 30 were the no-labels half; 31, 32 and 33 were
+   the words half. That tile is done. Everything left on this map is handing it over."* Six weeks in one
+   box, closed — say it, because they have never had a tile last that long.
+2. **Anchor it on `1.0000` and on `0/12`, together, in one breath.** Point at THE TWELVE TRAPS sheet.
+   *"This box built something that scores perfectly on twenty held-out reviews and zero out of twelve on
+   sentences with `not` in them, and the worst one was wrong at `0.9824`."* Then make somebody say the
+   mechanism out loud, and insist on the phrase **"has no column"**. **The two numbers belong to the same
+   model, and that is the lesson — not the second number on its own.**
+3. **Point forward at the last dashed box, and make the link explicit.** *"Next week you write a page that
+   says what your model must never be used for. What goes on it?"* The answer is already on the wall:
+   twelve traps, `0/12`, and a sentence naming word order. **Their limitations section is finished before
+   the week that asks for it** — tell them so, because it turns today's bad news into next week's
+   deliverable.
+
+> **🧑‍🏫 Why this is worth two minutes.** Today ends on a failure, and that is deliberate — but a lesson
+> that *ends* on `0/12` can read to a fourteen-year-old as "we wasted six weeks". The map is the antidote:
+> **the tile is gold and finished, not crossed out.** The engine works, it is readable, and you found its
+> edge on purpose using your own twelve sentences. That is what a closed tile looks like in this course.
+
+**One thing to notice, so you can answer if asked.** `impact` is lit alongside `evaluation`, and a student
+may reasonably ask what impact a toy sentiment model has. Take the question seriously and answer it with
+the routing example: a support ticket saying *"I have never had a worse delivery"* contains `delivery` and
+nothing negative with a column, and a real system routes it to the wrong queue. **The model is a toy; the
+mechanism is not.** That is why the thread is lit today rather than in Week 35.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 35 minutes the night before

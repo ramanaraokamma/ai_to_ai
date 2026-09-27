@@ -383,6 +383,46 @@ The line to hold all lesson: **say the shape sentence out loud before you type t
 
 ---
 
+### 10. 🧭 The Growing Map — the same box, the third of four weeks
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one
+more piece filled in. This week nothing moves again, and that is the point worth making out loud — the
+tile is four weeks long and they are three weeks into it.
+
+![The Level 3 pipeline in Week 17: still the descent, neuron and layer tile, now a layer as a grid times a grid](../figures/fig-w17-0-where-this-fits.svg)
+
+*Figure 17.0 — Week 17's version. Third week inside the gold `descent · neuron · layer` tile. The ↻ on
+stage three is black, as it has been since Week 12, because the training loop is open.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" and then "which word?"** Same gold tile as the last two weeks,
+   *descent · neuron · layer*; the word is **layer**. Then the one-sentence history: *"Week 15 was one
+   step downhill, Week 16 was one neuron, today was a whole layer of them for four rows at once. Next
+   week is the thing that holds all three together."*
+2. **Anchor it on the blue trace still on the board.** Point at `(4,2) → (4,3) → (4,1)` and ask *"which
+   number never changes down that ladder, and why?"* The answer is the `4`: **the batch rides through
+   untouched**, because a matrix multiply only ever consumes the inner dimension. A student who can say
+   that has understood today's box better than one who can recite "inner must match."
+3. **Point at stage four and say what today was not.** `REAL NETWORKS` is still dashed. *"We can now
+   push four rows through two layers. Nothing learned today — no gradients, no update. That is next
+   week, and then Week 19 is when it becomes a network that trains."* The dash is the honest answer to
+   *"have we built a neural network yet?"*, which somebody will ask today.
+
+> **🧑‍🏫 Why this is worth two minutes.** Today is the week a student most easily believes they have
+> fallen behind: the code is short, nothing trains, and the error they spent twenty minutes on was
+> about a bracket full of numbers. The map reframes that. The shape rule they practised today is the
+> single most-used debugging tool in the eight weeks on the right-hand side of this picture — the two
+> dashed stages are made of `@`, thousands of times over.
+
+**One thing to notice, so you can answer if asked.** The threads are unchanged from last week —
+`representation` and `model` — and `learning signal` is still dark. That is deliberate and worth saying:
+**nothing learned today.** The forward pass is the model *describing* the batch, and the description
+`(4, 3)` is a representation exactly as Week 4's scaling was. The signal comes back on next week, and
+it does not switch off again for the rest of the level.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

@@ -917,6 +917,31 @@ Card 4 is blank on purpose. Card 5 is in pen on purpose.
 
 ---
 
+## 🧭 Where This Fits
+
+Level 3 is one pipeline: a table goes in, and a model **somebody else can trust** comes out. Here it is
+after one week. Almost everything is dashed, which is the honest picture — and notice that the very
+first stage is about *honesty*, not about models.
+
+![The Level 3 pipeline in Week 1: the first tile of SPLIT HONESTLY is filled in](../figures/fig-w01-0-where-this-fits.svg)
+
+*Figure 1.0 — The pipeline in Week 1. Gold is where you are; dashed is not yet. The ↻ on stage three is
+the training loop, still closed — you open it in Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | `model.fit(X, y)` is **one line hiding five decisions**: the unit of prediction, X, y, the split, and the one metric you commit to. Somebody made all five last year and did not tell you. This year you make them yourself, in writing, before anything trains. |
+| **The one question it answers** | *"Whose decisions am I looking at?"* — ask it of any result, including your own from Level 2. |
+| **What it plugs into** | Everything you did in Level 2 weeks 28–33. Those models were real; the five decisions behind them were somebody else's defaults. |
+| **What carries forward** | Week 2 turns the split into three parts. Week 7 gives you a baseline to beat. Week 9 proves one number is never enough. And every honest score you report for the rest of the level depends on the split you decide here. |
+| **Spiral thread** | ⚖️ **Evaluation** — lit alone this week. There are six threads in Level 3, not the seven you had in Level 2: `toolcraft` is gone, because you can already program. Every week from here advances a real AI idea. |
+
+> **💡 Try this:** copy the five stage names onto the inside cover of your notebook, in pencil, with room
+> under each. You fill them in all year. And put a question mark next to stage one — *"what does
+> dishonest even look like?"* is the question this whole term answers.
+
+---
+
 ## 🔑 Remember This
 
 - **`model.fit(X, y)` hides five decisions:** the unit of prediction · y · X · the split · the metric. None of the five is visible in the line, and every one of them changes the answer.

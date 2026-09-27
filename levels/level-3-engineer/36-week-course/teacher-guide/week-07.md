@@ -232,6 +232,51 @@ The line to hold in your head all lesson: **today the student learns to write a 
 
 ---
 
+### 9. 🧭 The Growing Map — where Week 7 sits
+
+The student guide carries the same figure every week with one more piece filled in. It is the only thing
+in this course that shows the learner the *shape* of the year rather than this week's content. This week
+it changes in two places at once, which is worth thirty seconds of pointing.
+
+![The Level 3 pipeline in Week 7: stage two opens and its baseline and four numbers tile is this week's box](../figures/fig-w07-0-where-this-fits.svg)
+
+*Figure 7.0 — Week 7's version. Stage one is white and solid, both tiles done. Stage two, MEASURE IT,
+has gone solid because we have crossed into it, and its first tile is gold. The ↻ on stage three is
+drawn grey because the training loop stays closed until Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it, don't explain it.** Ask *"which box did we do today?"* They point at the gold tile —
+   *baseline · four numbers*. Pointing is the exercise.
+2. **Then the question that belongs to this week.** Stand next to the ablation table on the wall and
+   ask: *"we have six rows up there — which one is the baseline, and why does it stay at the top?"* The
+   answer you want is that every other row only means anything **as a difference from it**, so it never
+   gets deleted and it is still there in Week 36. If somebody says the best row should go on top, that
+   is the §7 misconception surfacing, and this is a cheap and cheerful place to correct it.
+3. **Point at the two tiles that just went white.** Weeks 4 to 6 are finished work now. Every single row
+   in today's table is one decision from those three weeks, finally carrying a number instead of an
+   opinion. Say that out loud — it is the whole reason stage one had to come before stage two.
+
+> **🧑‍🏫 Why this is worth two minutes.** A learner who can see the map can distinguish *"I don't
+> understand this week"* from *"I don't know where this week goes"* — and those two need completely
+> different help from you. Without the map, both arrive at your desk as "I don't get it."
+
+**Two things to notice, so you can answer if asked.**
+
+- **Two threads are lit for the first time: evaluation and model.** A sharp student may object that we
+  never touched the model today. That *is* the point — the model is lit because it was pinned
+  deliberately still, same `LogisticRegression`, same settings, while only the features moved. Holding
+  one thing fixed on purpose is a move on the model thread, and it is the move that makes the table
+  readable.
+- **The ↻ on stage three is still grey.** It is the training loop and it stays shut until Week 12, when
+  the symbol turns black. Do not preview it. *"That's the bit that does the learning, and we take it
+  apart in the spring"* is plenty.
+
+> **⚠️ Watch out:** the map is orientation, not assessment. Never quiz them on it. If a student cannot
+> remember which thread this week was, that costs nothing at all.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes the night before

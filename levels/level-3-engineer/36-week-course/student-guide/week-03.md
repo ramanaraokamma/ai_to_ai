@@ -1058,6 +1058,32 @@ If you missed it, here is the whole lesson. You need a laptop, a pen, and two en
 
 ---
 
+## 🧭 Where This Fits
+
+Level 3 is one pipeline: a table goes in, and a model **somebody else can trust** comes out. This is the
+third and last week inside that first gold tile, and it is the week the tile earns its name. You trained a
+real model today — and the thing you are handing over is **not the score it got.** It is a file.
+
+![The Level 3 pipeline in Week 3: the decisions and split tile closes with the model saved as a file](../figures/fig-w03-0-where-this-fits.svg)
+
+*Figure 3.0 — The pipeline in Week 3. Last week in the gold tile: weeks 1, 2 and 3 were one job, and it
+finishes with something on disk. The ↻ on stage three is the training loop, still grey — you open it in
+Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | **A result is not a score, it is an artifact.** Fit one `Pipeline`, `joblib.dump` it, load it in a process that contains **zero training code**, and hand it over with a card that says what it is and where it breaks. If the second process needs anything you did not put in the file, the file was not finished. |
+| **The one question it answers** | *"Could somebody else run this without me in the room?"* — the clean room test, and it is a yes-or-no question, not an opinion. |
+| **What it plugs into** | Week 1's written contract, which becomes headings on the card, and Week 2's three piles. The `Pipeline` is fitted on **train only** — that is the entire reason for welding the steps together instead of carrying two objects around. |
+| **What carries forward** | Week 5 drops your own invented function **inside** this `Pipeline`. Week 7 tunes it from the outside through `set_params`. Week 23 does exactly this job for a neural network. Week 34 freezes it, versions it and ships it. |
+| **Spiral thread** | 📦 **Model** and 🌍 **Impact**, lit together. Model, because a fitted estimator has stopped being a variable in your session and become a 5,002-byte object with a life of its own. Impact, because the card is written for the person who has to decide whether to trust it — and heading seven is where you tell them what it gets wrong. |
+
+> **💡 Try this:** email yourself the `.joblib` file and the card, and nothing else. In a month, download
+> them into an empty folder and try to make a prediction. Whatever you find yourself wishing you had also
+> sent is a missing heading on your model card.
+
+---
+
 ## 🔑 Remember This
 
 - **The deliverable is a file and a page, not a number.** A score is a claim; **5002 bytes** of fitted pipeline is a thing somebody can use.

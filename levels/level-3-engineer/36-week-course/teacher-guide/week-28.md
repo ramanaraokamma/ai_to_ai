@@ -402,6 +402,46 @@ The line to hold in your head all lesson: **today the student runs an algorithm 
 
 ---
 
+### 10. 🧭 The Growing Map — the last stage opens
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. This week the gold jumps two stages to the right, and there is exactly **one** dashed
+box left on the whole map.
+
+![The Level 3 pipeline in Week 28: the last stage opens and the no labels and words tile is this week's box](../figures/fig-w28-0-where-this-fits.svg)
+
+*Figure 28.0 — Week 28's version. Every stage box is solid; the gold is on `no labels · words`, weeks 28
+to 33. The ↻ on stage three is black, as it has been since Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" and then "what is missing from it?"** The box is *no labels ·
+   words* — and the first two words of the tile's own label are the answer to the second question.
+   **There was no `y` today.** Point at the six taped crosses still on the floor: nobody wrote a group
+   number next to any of them, and the class still found the groups. That is the tile, in one gesture.
+2. **Anchor it on point C.** *"C was in the left group in round one and the right group in round two.
+   Which of the two steps moved it?"* The answer is neither — **the centres moved, and C's nearest centre
+   changed as a consequence.** That is the whole algorithm and it is worth being able to say out loud
+   while pointing at the floor.
+3. **Point at stage one, then at the one dashed box.** Stage one, because `proline` with a spread of
+   **314.91** ate the unscaled clustering — *"which box did we go back to when the answer came out
+   wrong?"* And the dashed box, because `ship it · showcase` is now the only thing on the map that has
+   not happened. *"Six more weeks of new shapes, then you ship something."*
+
+> **🧑‍🏫 Why this is worth two minutes.** This is the week the subject changes underneath the student, and
+> a number of them will not notice. Everything since Week 1 has had an answer column, and the map is the
+> cheapest way to say *"we have moved"* — the gold is visibly in a different part of the picture. It also
+> defuses the most common Term 4 anxiety, which is *"how do I know if I got it right?"* You did not get
+> it right. **There is no right, which is what the tile says.**
+
+**One thing to notice, so you can answer if asked.** `learning signal` is lit alongside `model`, in a
+week with no gradients anywhere. That is correct and worth defending: **inertia is a learning signal.**
+It is the quantity that tells the centres where to move, it only ever goes down, and it stops the
+algorithm — the same three sentences the class learned about loss in Week 14, with no `y` in sight. If a
+student spots that a "learning signal" with no labels sounds contradictory, that is an excellent spot.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes the night before

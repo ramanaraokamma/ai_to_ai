@@ -478,6 +478,46 @@ The line to hold all lesson: **measure both, then multiply, then check they agre
 
 ---
 
+### 11. 🧭 The Growing Map — the week a whole stage closes
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one
+more piece filled in. Today it does something it has only done once before — **a whole stage finishes.**
+Given this is also the Term 2 checkpoint, this is the week to give the map its full two minutes.
+
+![The Level 3 pipeline in Week 18: the descent, neuron and layer tile closes with backpropagation and the Term 2 checkpoint](../figures/fig-w18-0-where-this-fits.svg)
+
+*Figure 18.0 — Week 18's version. The gold `descent · neuron · layer` tile closes and stage three is
+complete. The ↻ on stage three is black, as it has been since Week 12 — and now everything behind it
+has been taken apart.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" and then "what just finished?"** The tile is *descent · neuron ·
+   layer*, fourth of four weeks, and with it **stage three is done**. Say the sentence: *"the loop is
+   the thing everybody calls the magic. You have now built every part of it by hand and checked the
+   hardest part against a ruler."*
+2. **Anchor it on the two forty-twos.** They are still on the board — `3 × 14 = 42` on one side,
+   `0.084 ÷ 0.002 = 42` on the other. *"That is today's box in two numbers. One is the chain rule, the
+   other is a measurement, and they agreed."* Then point at the ↻ and say it has been black since Week
+   12 for a reason: today is the week the inside of it ran out of parts.
+3. **Point right and set up the next three weeks honestly.** `REAL NETWORKS` is dashed for one more
+   week. *"Next week you put Weeks 15 to 18 in one file and press go, and it draws a curve. The week
+   after, PyTorch gives you today's four arrays in one line — and you will check them against your own
+   handwriting, which is why we did it by hand first."*
+
+> **🧑‍🏫 Why this is worth two minutes.** Term 2 is the hardest stretch of the level and it ends with
+> its hardest idea. A learner who can see three of five stages solid, with the loop opened and
+> emptied, reads their own year as *"I am two thirds of the way through the maths"* rather than *"the
+> maths keeps getting worse."* That single reframe is worth more in Week 18 than in any other week.
+
+**One thing to notice, so you can answer if asked.** `learning signal` is lit beside `model`, and
+`evaluation` is dark even though the whole lesson was a check. That is the right call and the
+distinction is worth a sentence if a sharp student queries it: **a gradient check tests your
+arithmetic, not your model.** Nobody measured how good the network is today. Evaluation comes back in
+Week 19, when there is finally a test accuracy to report.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes the night before

@@ -1178,37 +1178,27 @@ at w = 14, slope +12:   14 − 0.3 × (+12)  = 14 − 3.6   =  10.4    moved LEF
 
 ## 🧭 Where This Fits
 
-This is the week the black box comes apart. Here is the training loop you have been *using* since
-Level 2 without being allowed to see inside it — and the one box you just filled in.
+Look at the map. Two whole stages are behind you now, and a **third one has just gone solid** — you are
+standing inside the training loop for the first time. And look at the little ↻ on stage three: it has
+been grey since Week 1, and this is the week it turns black. That symbol is the loop, and the loop is
+now open.
 
-```
-        THE TRAINING LOOP        (what .fit() has been doing all along)
+![The Level 3 pipeline in Week 12: stage three opens, the loop symbol turns black, and the slope tile is this week's box](../figures/fig-w12-0-where-this-fits.svg)
 
-        ┌──────────────────────────────────────────────┐
-        │                                              │
-        ▼                                              │
-   ① make a guess          ② how wrong is it?          │
-   at the weights   ───►   measure the LOSS      ───►  ③ WHICH WAY IS DOWNHILL?
-   ▢ week 20               ✅ week 14                   ✅ ═══ THIS WEEK ═══
-   (torch does it)         (you built it)                two subtractions
-                                                         and a division
-                                                              │
-                                    ④ take a small step ◄─────┘
-                                    ✅ this week too
-                                    (the learning rate)
-```
+*Figure 12.0 — The pipeline in Week 12. Stage three is solid and its first tile — slope · chance ·
+loss — is gold. The ↻ that has been grey for eleven weeks is black from today.*
 
 | | |
 |---|---|
-| **The mental model you now own** | Learning is not magic and not search. It is: *stand on a hillside, measure which way is down, step, repeat.* **"Which way is down" is a subtraction.** |
-| **The one question it answers** | *"How does a model improve, mechanically, without anyone telling it the answer?"* |
-| **What it plugs into** | Week 14's **loss** — the number that says how wrong you are. Without a loss there is no hill to stand on. And Week 11's cost table, which is why you cared what "wrong" meant in the first place. |
-| **What carries forward** | Everything. Week 16's single neuron, Week 17's layers, Week 18's backpropagation and Week 20's PyTorch are all **this loop with more weights**. When `loss.backward()` appears in Week 20, it is doing exactly what you did by hand today — just for thousands of numbers at once. |
-| **Spiral thread** | 🎯 **Learning signal** — the fourth of the six. You met data, representation and model earlier; this is the week the *signal* that drives improvement stops being a mystery. |
+| **The mental model you now own** | To find downhill, **nudge**: `(f(w + h) − f(w − h)) ÷ 2h`. Two things come out of that one division. The **sign** says which way to step, and the **size** says how steep the hill is right here. Then `w ← w − lr × slope` walks you to the bottom, one small step at a time. That is it. That is the engine. |
+| **The one question it answers** | *"Which way is downhill from here?"* — and you can now answer it with a calculator, for any curve, at any point. |
+| **What it plugs into** | Week 10's rise over run between **two** points on a curve. Shrink the gap between those two points to a hair — 0.001 — and what you have left is the slope at **one** point. Same division, smaller gap. |
+| **What carries forward** | Week 15 takes a **step** with this slope. Weeks 16 and 17 build the thing the slope steers. Week 18 multiplies slopes along a chain. And in Week 20, PyTorch prints the identical number — which is how you will know `.backward()` is not magic. |
+| **Spiral thread** | 🎯 **Learning signal** — lit alone, and it will be the loudest thread of the spring. Everything else about a model is decoration until something tells it which way to move; this week you built the something. |
 
-> **🔑 If you remember one thing from Level 3, make it this.** Every AI system in the world — every
-> one, including the ones that write essays — improves by measuring which way is downhill and taking
-> a small step. The rest is scale. You can now do the part that matters on paper.
+> **🔑 If you remember one thing from Level 3, make it this.** Every AI system in the world — including
+> the ones that write essays — improves by measuring which way is downhill and taking a small step. The
+> rest is scale. You can now do the part that matters on paper.
 
 ---
 

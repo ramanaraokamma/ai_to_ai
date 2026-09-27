@@ -255,6 +255,48 @@ And the level-5 move, which one or two students will find: **freeze a known fail
 
 ---
 
+### 8. 🧭 The Growing Map — the last box opens, and nothing is dashed any more
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. Today the gold moves to the tenth and final tile, and for the first time since Week 1
+**there is not a single dashed box on the page.**
+
+![The Level 3 pipeline in Week 34: the last tile opens with the contract and the frozen artifact](../figures/fig-w34-0-where-this-fits.svg)
+
+*Figure 34.0 — Week 34's version. The gold has moved to `ship it · showcase`, and every other box is solid.
+The ↻ on stage three is black, as it has been since Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" — then "what is different about this picture?"** The gold has moved
+   for the last time, and somebody in the room will spot the real change: **no dashes.** Let them say it.
+   *"Every box on this map is now something you have actually done. The one you are standing in is the
+   tenth of ten."*
+2. **Anchor it on the contract sheet and the three files.** Hold up a completed A4 contract. *"Today's box
+   produced this, and it has no score on it anywhere."* Then the folder listing: `sentiment_v1.joblib`,
+   `sentiment_v1.metadata.json`, and a `LATEST` file that is **thirteen bytes**. Then `tests.py` printing
+   `3/3 passed`, and `grep -rnE "\.fit\(" serve/` printing nothing. **Four pieces of evidence, no
+   accuracy figure among them — that is what makes this week different from the other thirty-three.**
+3. **Point back at stage one, and make them find the overlap themselves.** *"Boxes 1, 2 and 3 of your
+   contract — which tile did you first write those in?"* The answer is `decisions · the split`, Week 1, and
+   the wording is almost identical. Then box 5: *"and which tile is `10 × 1 + 1 × 1 = 11` against
+   `10 × 0 + 1 × 5 = 5` from?"* — `threshold · cost`, Weeks 10–11. **The contract is not new work; it is
+   the map, written out as prose.** That realisation is worth more than anything else you can say today.
+
+> **🧑‍🏫 Why this is worth two minutes.** This is the week most likely to be dismissed as admin, and the
+> map answers that better than an argument does: **the course was always heading at this box, and the
+> writing you did today is quoting Weeks 1, 10 and 11 back at you.** A student who sees the contract as the
+> *consequence* of the first stage rather than as paperwork bolted on at the end will actually fill in box
+> 6, which is the one that matters and the one they skip.
+
+**One thing to notice, so you can answer if asked.** A student may point out that `ship it · showcase` is
+gold while its own weeks say `wk 34–36`, and ask why the week label has disappeared from the tile. It has
+been replaced by the badge — the badge lives *inside* the row-B tiles, because there is no room beneath
+them. Nothing has moved; the label is the same size in the same box. **If they noticed, tell them that is
+exactly the kind of attention Part C of the Week 36 paper rewards.**
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 30 minutes the night before

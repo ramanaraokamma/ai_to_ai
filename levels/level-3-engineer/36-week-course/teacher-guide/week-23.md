@@ -326,6 +326,45 @@ The sentence to keep in your head: **today the model becomes a file, and the fil
 
 ---
 
+### 7. 🧭 The Growing Map — the tile closes today
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. This week is the **last** week in the gold tile, so the two minutes are a closing-off
+rather than an orientation.
+
+![The Level 3 pipeline in Week 23: the numpy and PyTorch tile closes with the same brain reloaded in a fresh process](../figures/fig-w23-0-where-this-fits.svg)
+
+*Figure 23.0 — Week 23's version. Fifth and final week in the gold `numpy brain · PyTorch` tile; next week
+the box underneath it opens. The ↻ on stage three is black, as it has been since Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" and then "what closed it?"** The box is the same gold tile it has
+   been for five weeks. What closed it is the thing in their hands: **the Clean Room checklist with seven
+   ticks**, a `.pt` file on disk, and a `predict_digits.py` that survived the grep. *"Five weeks ago a
+   network was maths on a whiteboard. Now it is a file you can email."*
+2. **Count the five weeks out loud, pointing at the one gold box.** Week 19 the brain by hand, Week 20
+   tensors, Week 21 the five-line loop, Week 22 layers and the overfitting curve, Week 23 the artifact.
+   *"One box. Five weeks. That is what a box on this map costs."* This is the moment the map stops being
+   decoration and starts being a measure of effort.
+3. **Then point at `images · CNNs` and say what is coming.** Still dashed today, gold next week. *"Next
+   week we stop pretending a picture is a row of sixty-four numbers."* If you want one sentence to plant
+   it: the digits they just classified at 96% were **flattened**, and that is about to be treated as a
+   mistake.
+
+> **🧑‍🏫 Why this is worth two minutes.** This is a lab week, and lab weeks end with everybody's head
+> inside their own terminal. Two minutes on the map is what turns three files on a laptop into "we
+> finished something that took five weeks" — and it is the frame you will want again in Week 34, when the
+> same ritual comes back with their own project attached.
+
+**One thing to notice, so you can answer if asked.** The threads are `model` and `impact`, and `impact` is
+lit for only the fourth time in the level. It is lit because of one line: `FINAL: test accuracy 0.9667 on
+540 held-out digits`. That line is written for a reader, not for the author — which is the same reason
+Week 3's model card lit `impact`. If a student asks why saving a file counts as impact, that is the
+answer: a saved model is the first thing in this course that somebody else can use without you in the room.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 30 minutes the night before

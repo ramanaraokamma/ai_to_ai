@@ -1342,6 +1342,31 @@ This matters for the tone of the whole week, and it matters practically: **if yo
 
 ---
 
+## 🧭 Where This Fits
+
+This is the last week of the gold tile, and the last week of the **whole first stage**. Six weeks on one
+question — how do you cut a table up honestly — and today you found out why it took six. Next week the gold
+moves to a new stage for the first time all year.
+
+![The Level 3 pipeline in Week 6: the scaling and features tile closes on the three kinds of leakage](../figures/fig-w06-0-where-this-fits.svg)
+
+*Figure 6.0 — The pipeline in Week 6. Both tiles of stage one are accounted for and the stage closes here.
+The ↻ on stage three is the training loop, still grey — you open it in Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Ask of **every** feature: *will this value exist, filled in, at the moment I have to predict?* If not, it is leakage. And the symptom is not an error message — it is a **suspiciously good score.** Leakage is the only bug that gets applauded, which is why you have to go looking for it on the days things go well. |
+| **The one question it answers** | *"Will I really have this column when I need to predict?"* — asked of every column, out loud, before you are pleased about anything. |
+| **What it plugs into** | Week 5's invented columns, which is exactly where leakage sneaks in, because a column you built yourself has no history to warn you. And Week 3's fit-on-train-only `Pipeline`, which prevents one of the three kinds by construction — that is the one you never have to remember. |
+| **What carries forward** | Week 7 hides a planted leak in an ablation table for you to find. Week 11's five folds each have to stay honest on their own. Week 27's validation set must never be augmented. Week 35 watches for leakage on a live system, where it arrives as a score that quietly decays. |
+| **Spiral thread** | 📊 **Data** and ⚖️ **Evaluation**, lit together. Data, because target, temporal and preprocessing leakage are all facts about **where a number came from**, not about the model. Evaluation, because `0.9762` against `0.7752` is the entire lesson: **+0.2011 from one column, when four honest features bought +0.0091 between them.** That ratio is an alarm. |
+
+> **💡 Try this:** rule a line under stage one in your notebook and write the six week titles above it.
+> Then write one sentence underneath: *"none of this was about models."* Everything from Week 7 onwards is
+> measuring, and you cannot measure honestly on a table you cut dishonestly.
+
+---
+
 ## 🔑 Remember This
 
 - **Leakage is a value that will not exist at the moment you have to predict — and it always makes your score go up.** That makes it the only kind of bug that gets applauded, and it is why **good news gets audited harder than bad news.**

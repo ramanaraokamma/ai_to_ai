@@ -1102,6 +1102,32 @@ The habit: **report the ratio and the reconstruction error together, always.** O
 
 ---
 
+## 🧭 Where This Fits
+
+Same gold box as last week — *no labels · words* is a six-week tile and this is the second of the six.
+Last week you sorted rows into groups with no answer key. This week you deal with the opposite problem:
+**thirteen columns is too many to look at**, and you want two you can draw.
+
+![The Level 3 pipeline in Week 29: still the no labels and words tile, now a new pair of axes](../figures/fig-w29-0-where-this-fits.svg)
+
+*Figure 29.0 — The pipeline in Week 29. Second week inside the same gold tile; nothing on the map moves,
+because one tile is six weeks wide. The ↻ on stage three is black, as it has been since Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | **PCA deletes no columns.** It draws a *new* axis along the direction the data is most spread out, measures everything against that instead, and then tells you what fraction of the total spread each new axis kept. Thirteen columns become two numbers per row — and the price of that is measurable, in the original units. |
+| **The one question it answers** | *"Which way is the data most spread out?"* — and you answered it the honest way, by trying six directions 30° apart and keeping the widest. Your grid got **17.4192**; PCA's exact answer was **18.2812**, so the grid was about twelve degrees short. |
+| **What it plugs into** | Week 4's standard deviation, which turns up here as **variance** — the same quantity before you take the square root, and the thing PCA is maximising. And Week 28's problem of never quite knowing whether the clusters were real, because now you can look at them. |
+| **What carries forward** | Week 30 plots clusters on these axes *and* feeds two components back in as features. Week 33 plots reviews on them. And the **loadings** are how an axis gets a human name — which is the skill the whole of next week rests on. |
+| **Spiral thread** | 🏷️ **Representation** and 📊 **Data** — representation, because a row got re-described in two numbers that were not in the file. Data, because the honest half of this week is the **invoice**: two components keep 55.4% of the spread and miss a typical wine by `2.2550`, when a typical wine sits only `3.5180` from the middle. |
+
+> **💡 Try this:** write `PC1` and `PC2` in the margin next to stage five, and under each one write the
+> two or three original columns with the biggest loadings. Now try to give each axis a name in **three
+> words of English**. If you cannot, that is not a failure — it is the honest state of the axis, and next
+> week you will meet a table that makes naming possible.
+
+---
+
 ## 🔑 Remember This
 
 - **Variance is the average squared distance from the mean**, in four steps: distances, squares, total, divide. `16 + 4 + 0 + 4 + 16 = 40`, and `40 ÷ 4 = 10.0`. **You square because otherwise the distances add to exactly zero, every time.**

@@ -1203,6 +1203,33 @@ And the sentence the whole of next week is built on:
 
 ---
 
+## 🧭 Where This Fits
+
+Same gold box as last week — *no labels · words* — and this is the fifth of its six weeks. Last week a
+review became a row of counts, and the biggest number in the whole corpus was `and`, 55 times. This week
+you fix that twice over: once by weighting each word by how rare it is, and once by comparing two
+documents by the **angle** between their rows instead of by how long they are.
+
+![The Level 3 pipeline in Week 32: still the no labels and words tile, now rare words and the angle between documents](../figures/fig-w32-0-where-this-fits.svg)
+
+*Figure 32.0 — The pipeline in Week 32. Fifth week inside the same gold tile, and one box left dashed. The
+↻ on stage three is black, as it has been since Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Weight every word by **how often it appears here times how rare it is everywhere else**, then divide the row by its own length. `tf = 2`, `idf = 1.510826`, product `3.021651`, ÷ `3.592917` = **`0.841002`**. After that division every row has length exactly 1, so two documents can be compared by the **angle** between them rather than by their size — and **a long document stops winning just for being long**. |
+| **The one question it answers** | *"Which words actually carry the meaning?"* — the rare ones. `and` is in every review and tells you nothing; a word in 1 review of 20 tells you a lot, and `ln` is what keeps that from turning into a weight of 20. |
+| **What it plugs into** | Week 31's count matrix, which is exactly what TF-IDF starts from — the counts are the `tf`. And Week 4's habit of putting rows and columns on a comparable scale **before** comparing them: the L2 divide is a z-score's cousin, doing the same job for the same reason. |
+| **What carries forward** | Week 33 trains a real classifier on these weights and then reads out its **fifteen most-trusted words** — which is only possible because each column is one word. And Week 30's "how far apart are two rows" thinking now has a text-shaped version: cosine, in degrees. |
+| **Spiral thread** | 🏷️ **Representation** — lit alone. Nothing was trained and nothing was scored this week. The only thing that changed is the **form** of the numbers, and `A: 2, B: 4` flipping to `A: 1.0000, B: 0.4216` is what a change of form can do to an answer. |
+
+> **💡 Try this:** in the margin next to stage five, write the chain — **count · × rarity · ÷ length ·
+> compare by angle** — and beside it the one pair from your own corpus with the highest cosine. Keep that
+> pair. Next week your classifier reads a sentence like it and gets it wrong, and the reason will be
+> sitting in your margin already.
+
+---
+
 ## 🔑 Remember This
 
 - **TF-IDF is one multiplication and one division: how often the word appears *here*, times how rare it is *everywhere*, then divided by the row's length.** `tf = 2`, `idf = 1.510826`, product `3.021651`, ÷ `3.592917` = **`0.841002`**, and `TfidfVectorizer` prints `0.841002`.

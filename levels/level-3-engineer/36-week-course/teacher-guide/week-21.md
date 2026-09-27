@@ -400,6 +400,47 @@ The line to hold all lesson: **five lines, in that order, and each one has its o
 
 ---
 
+### 11. 🧭 The Growing Map — the same box, and the five lines that live in it
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one
+more piece filled in. Nothing moves this week either — and the two minutes are best spent pointing out
+that the five lines they just learned are what all the dashed boxes on the right are made of.
+
+![The Level 3 pipeline in Week 21: still the numpy and PyTorch tile, now the five-line training loop](../figures/fig-w21-0-where-this-fits.svg)
+
+*Figure 21.0 — Week 21's version. Third week inside the gold `numpy brain · PyTorch` tile. The ↻ on
+stage three is black, as it has been since Week 12 — and today it got its five-line spelling.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" and then "which of today's five lines is the ↻?"** Same gold
+   tile, third of five weeks. The answer is: **all of them.** Point at the loop symbol on stage three
+   and then at the five index cards on the wall. *"That symbol has been black since Week 12. Those five
+   cards are what is inside it, in the order you will type for the rest of your life."*
+2. **Anchor it on the card that produced no error.** Hold up `optimizer.zero_grad()` and the result it
+   was paired with: `1786.6666 → 2907.9082`, no traceback, loss going **up**. *"Three of these five
+   break silently. That is the whole reason this got a lesson of its own instead of being a footnote
+   in Week 22."* Then the gradient column: growing means the pile, `None` means no `backward()`,
+   right-but-frozen means no `step()`.
+3. **Point right and make the promise concrete.** `images · CNNs`, `no labels · words`, `ship it`.
+   *"Every one of those boxes runs these exact five lines. From Week 22 on we stop explaining them and
+   just type them — so if one of them is still fuzzy, this is the week to ask."* That invitation is
+   worth more than another explanation.
+
+> **🧑‍🏫 Why this is worth two minutes.** This is the last week the training loop is the *subject*
+> rather than the scaffolding. From Week 22 the five lines appear in every file without comment, and a
+> student who has not internalised them will spend the rest of the level unable to debug their own
+> runs. Showing them on the map, inside a stage that is already finished and black, says the thing you
+> want them to take away: **this is not new material, it is the permanent furniture.**
+
+**One thing to notice, so you can answer if asked.** `learning signal` and `model` are lit, and
+`evaluation` is dark — even though the lesson ended with `w = 8.0014` against a hidden `8x + 12`. The
+distinction is real and worth one sentence: **checking that a fit recovered a line you hid is a test of
+the loop, not an evaluation of a model.** No split, no held-out data, nothing reported to anybody. That
+is why the thread stays off.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes the night before

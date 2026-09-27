@@ -1068,6 +1068,31 @@ So the staleness number has to come from **inputs and outputs alone** — the un
 
 ---
 
+## 🧭 Where This Fits
+
+Same gold box as last week — the last one on the map, and still nothing dashed anywhere on the page. Last
+week the model became a file with a version number. This week it becomes a **thing that answers**, and
+then, far more importantly, a thing that **writes down what it did** so somebody can read it back.
+
+![The Level 3 pipeline in Week 35: still the ship it and showcase tile, now the service, the log and the card](../figures/fig-w35-0-where-this-fits.svg)
+
+*Figure 35.0 — The pipeline in Week 35. Second week inside the last tile, and the whole map solid. The ↻ on
+stage three is black, as it has been since Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | **The interesting part is after the prediction.** Log the input, the output, the probability, the threshold, the version and the latency — one line per prediction. Then read the log back for the four numbers (mean, p50, **p95**, max) and for the subgroup where it is worse. Then write the card, and the monitoring plan that says **who looks at what, how often, and what they do when it moves.** |
+| **The one question it answers** | *"What happens after the prediction?"* — a question nobody asked you all year, because until Week 34 nothing you built ever ran twice. **A model with no log cannot be debugged, defended or trusted.** |
+| **What it plugs into** | Week 34's artifact and CLI, which the service loads **once** at start-up. Week 8's four counts, now computed per subgroup with `n` printed on every row. Week 11's cost table, which is what makes a `recall 0 of 6` row matter rather than merely exist. And Week 6's leakage instinct, turned outward into a monitoring check: **drift is leakage arriving late.** |
+| **What carries forward** | Week 36 is the demo, and every number in this log is a number you will be asked to defend out loud — the p95 **and** the max, the subgroup row **and** its `n`. Nothing new gets taught after this. |
+| **Spiral thread** | 🌍 **Impact** and ⚖️ **Evaluation** — impact, because a card that names a group the model fails on is the most useful page in the folder. Evaluation, because `0.385 on 13 rows with recall 0 of 6` is a measurement, and *"may contain bias"* is a shrug. |
+
+> **💡 Try this:** in the margin next to stage five, write your own four latency numbers and circle two of
+> them: the **p95** — nearly everybody — and the **max** — the one person who noticed and complained. With
+> only 111 requests the p95 cannot see the max, which is exactly why you print both.
+
+---
+
 ## 🔑 Remember This
 
 - **An HTTP request is four things** — a method, a path, some headers, a body. A response is a status code, some headers and a body. **`400` means you sent it wrong; `500` means I broke, and today's goal is never to return one.**

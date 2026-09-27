@@ -329,6 +329,47 @@ The sentence to keep in your head: **today the student finds out that the model 
 
 ---
 
+### 7. 🧭 The Growing Map — a new box opens
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. This week the map actually moves — a tile goes white and the one below it goes gold — so
+the two minutes are worth taking properly.
+
+![The Level 3 pipeline in Week 24: the images and CNNs tile opens on the convolution that keeps the neighbourhood](../figures/fig-w24-0-where-this-fits.svg)
+
+*Figure 24.0 — Week 24's version. `numpy brain · PyTorch` is finished in plain white; `images · CNNs` is
+gold for the first time. The ↻ on stage three is black, as it has been since Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" and expect a wrong answer first.** Several will point at the tile
+   that just went white, because that is where they have been living for five weeks. The gold box is the
+   new one, *images · CNNs*. Then the anchoring question: **"what is the first thing this box threw out?"**
+   The answer is on the wall — **1,040 against 10** — and in their pencilled grid: `0 24 24 0`, four times.
+   *"A flatten costs a thousand and forty weights and still cannot tell that two pixels were touching.
+   Nine numbers can."*
+2. **Point at the ↻ on stage three and say what has not changed.** It is still black, still open, still the
+   same loop. *"We have a new kind of layer. We have not got a new kind of learning. Next month's network
+   trains with exactly the five lines from Week 21."* This matters because "CNN" sounds to a 14-year-old
+   like a different subject.
+3. **Say how long this box takes and what is in it.** Four weeks: today the convolution, Week 25 the sizes
+   on paper, Week 26 a network that reads handwriting, Week 27 augmentation and transfer. *"Today was the
+   pencil. In three weeks you will have something that reads digits better than you can read other
+   people's."*
+
+> **🧑‍🏫 Why this is worth two minutes.** The hook shuffled the pixels of a digit and the MLP did not care.
+> That is an unsettling demonstration, and a couple of students will leave thinking everything they built
+> in the last five weeks was wrong. The map is the correction: the tile above went **white**, not grey. It
+> was finished, it was correct, and it is what makes today possible — a convolution is Week 17's grid
+> multiply on a sliding window, and they could not have seen that a month ago.
+
+**One thing to notice, so you can answer if asked.** The threads are `representation` and `model`, and
+`representation` is the lead. Say it in one line if it comes up: *"a feature map is the picture rewritten
+in the kernel's language"* — the same idea as Week 4's scaling and Week 16's squashed activation, third
+time around. The spiral is doing its job here, and naming it out loud is free.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 30 minutes the night before

@@ -963,6 +963,32 @@ The bar for a real explanation: **did you name a column, quote its spread, and s
 
 ---
 
+## 🧭 Where This Fits
+
+Term 4 opens, and so does the last stage on the map. The gold has jumped all the way across into *no
+labels · words* — a six-week tile, of which this is week one. And the thing that changes today is not the
+algorithm, it is that **the answer column is gone**, so nothing you do can be marked right or wrong.
+
+![The Level 3 pipeline in Week 28: the last stage opens and the no labels and words tile is this week's box](../figures/fig-w28-0-where-this-fits.svg)
+
+*Figure 28.0 — The pipeline in Week 28. Every stage is solid now and there is exactly **one** dashed box
+left on the whole map. The ↻ on stage three is black, as it has been since Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Two steps, repeated: **give every point to its nearest centre, then move every centre to the middle of what it got.** The total squared distance can only ever go down, which is why the thing stops on its own — and there is no answer key anywhere in that description. |
+| **The one question it answers** | *"How can it learn anything with no answers?"* — because "nearest" is a fact about the numbers, not about a label. Nobody had to tell the six points on the floor which group they were in. |
+| **What it plugs into** | Week 4's scaling, and this is the week it stops being hygiene and becomes the whole answer: on unscaled wine, `proline` with a spread of **314.91** simply takes over every distance, and the clustering becomes a report on one column. And Week 12's picture of a quantity that only ever goes downhill — inertia is one of those. |
+| **What carries forward** | Week 29 gives you two axes to actually *draw* the clusters on. Week 30 makes you name them and defend the names from a table. Week 32 measures distances between pieces of text with the same instinct — different ruler, identical idea. |
+| **Spiral thread** | 📦 **Model** and 🎯 **Learning signal** — model, because the `k` centres *are* the fitted model, the same way weights were. Learning signal, because inertia is what tells the centres where to move, and it does that with no `y` anywhere in the room. |
+
+> **💡 Try this:** write `6.6667` in the margin beside stage five, and next to it the six squared
+> distances you added up to get there. In every week from Week 12 onwards there has been one number the
+> algorithm was pushing downhill. Today's is that one — and unlike a loss, **you can never use it to
+> choose `k`**, because it always falls. Add that second sentence too.
+
+---
+
 ## 🔑 Remember This
 
 - **The whole algorithm is two steps, repeated.** Assign every point to its nearest centre; move every centre to the middle of what it got. Stop when nobody switches. **On six points it converged in two rounds, from a deliberately terrible start.**

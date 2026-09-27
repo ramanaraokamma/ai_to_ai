@@ -311,6 +311,42 @@ Twenty-two of them, prefixed by which branch they came from. **You need this to 
 
 ---
 
+### 7. 🧭 The Growing Map
+
+The student guide carries **Where This Fits** — the same picture every week with one more piece filled in.
+Today the map has not moved at all, and after the emotional weight of deleting two columns that is a
+genuinely useful thing to show.
+
+![The Level 3 pipeline in Week 5: still the scaling and features tile, now with columns you invented yourself](../figures/fig-w05-0-where-this-fits.svg)
+
+*Figure 5.0 — Week 5's version. Same gold tile as last week, because scaling and inventing columns are two
+halves of one job. The ↻ on stage three is the training loop, still grey until Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask *"which box did we do today?"*** Same tile as last week — *scaling · features*. Then
+   the distinction that matters: *"last week we put columns we were **given** on one ruler. What did we do
+   to columns today?"* **We made ones that were not in the file.** Same tile, because both are decisions
+   about what the columns of the table should be.
+2. **Then point at the six-row table still on the whiteboard and ask *"which stage of the map decided that
+   `dist_x_weather` had to go?"*** Not this one. It was the **validation pile**, built in stage one three
+   weeks ago, reading out `−0.0014`. Two boxes of the map cooperated to kill a column, and neither of them
+   was a model. That is the sentence to end on.
+3. **Then one pointer forward, briefly:** *"find the tile where the computer invents its own columns and
+   refuses to tell you their names."* Stage four, bottom tile, Week 24. Say nothing else about it. Having
+   spent a lesson naming four columns by hand is what makes that week land in the spring.
+
+> **🧑‍🏫 Why this is worth two minutes.** A student who has just deleted work they were proud of needs to
+> see that the deletion was **the deliverable**, not a setback — and the map is a neutral way to say it.
+> Nothing regressed; the tile is exactly where it was at the start of the lesson, and it has a four-decimal
+> table under it that it did not have this morning.
+
+**If a student asks why the gold has not moved when the score finally did:** the map tracks the *job*, not
+the score. Weeks 4, 5 and 6 are one job — deciding what the columns are — and it closes next week, when they
+find out that some of the most exciting columns are the ones you are not allowed to have.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

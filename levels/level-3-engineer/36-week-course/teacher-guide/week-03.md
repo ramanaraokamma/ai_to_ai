@@ -343,6 +343,42 @@ The line to keep in your head all lesson: **the deliverable is a file and a page
 
 ---
 
+### 10. 🧭 The Growing Map
+
+The student guide carries **Where This Fits** — the same picture every week with one more piece filled in.
+This is the third and final week of the first tile, so today the map is about **closing** something.
+
+![The Level 3 pipeline in Week 3: the decisions and split tile closes with the model saved as a file](../figures/fig-w03-0-where-this-fits.svg)
+
+*Figure 3.0 — Week 3's version. Last week in the gold tile. The ↻ on stage three is the training loop, still
+grey until Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask *"which box did we do today?"*** Same gold tile, third week running — *decisions and
+   the split*. Then the real question: *"we finally trained a model today. Does that mean we have reached
+   stage five?"* **No.** Point at the eight lines out of forty-five. The model was the cheap part; the tile
+   closes because there is now a **file** and a **card**, not because something got fitted.
+2. **Then hold up the `.joblib` file on screen — 5,002 bytes — and ask *"what is missing from this file?"***
+   The answer is **nothing**, and that is the whole week: the scaler, the encoder, the column routing and
+   the fitted model are all in there. That is why the tile can close. Ask what would be missing if they had
+   saved the model without the `Pipeline`, and let them list it.
+3. **Then look forward, on the map:** *"find the tile where we do this again for a neural network."*
+   Stage four, first tile, Week 23. And *"find the tile where we ship one for real."* Stage five, bottom,
+   Week 34. Today's habit is the one that gets reused at both.
+
+> **🧑‍🏫 Why this is worth two minutes.** A student who thinks "we built a model" has learned the wrong
+> thing from today, and the map is the cheapest correction you have: the gold tile is labelled *decisions
+> and the split*, not *models*. It is still stage **one**. If the artifact is what closes stage one, then
+> the artifact — not the AUC — is what they should be proud of.
+
+**One thing to notice, so you can answer if asked.** The tile is still gold, not white, even though the
+work is finished. White arrives next week, when the gold moves down to *scaling · features*. The rule on
+this map is simple and worth stating once: **gold is where you are standing, white is what is behind you,
+dashed is not yet.**
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 30 minutes the night before

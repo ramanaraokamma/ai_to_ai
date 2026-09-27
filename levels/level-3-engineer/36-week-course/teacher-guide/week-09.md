@@ -432,6 +432,51 @@ The line to hold in your head all lesson: **today the student learns that a sing
 
 ---
 
+### 14. 🧭 The Growing Map — where Week 9 sits
+
+The student guide carries the same figure every week with one more piece filled in. Today it is doing a
+second job: this is the **Term 1 checkpoint**, and the map is the cheapest possible way to show a class
+what they have actually built since September.
+
+![The Level 3 pipeline in Week 9: the baseline and four numbers tile closes with F1 and the Term 1 checkpoint](../figures/fig-w09-0-where-this-fits.svg)
+
+*Figure 9.0 — Week 9's version. Third and final week in the gold tile; from Week 10 the box beneath it
+lights up. The ↻ on stage three is drawn grey because the training loop stays closed until Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it, don't explain it.** Ask *"which box did we do today?"* They point at the gold tile —
+   *baseline · four numbers*, for the third and last time. Pointing is the exercise.
+2. **Then the question that belongs to this week.** The five relay stations are still on the desks, so
+   ask: *"which box on this map does each station live in?"* Stations 1 to 3 — raw table, honest split,
+   fitted pipeline — are stage one. Stations 4 and 5 — the metrics report and the saved artifact — are
+   the gold tile. Let them argue about where the `.joblib` file belongs; the answer is that saving it is
+   stage five's business and reporting on it is stage two's, and noticing that distinction is worth more
+   than getting it right.
+3. **Count the filled tiles out loud: three of ten.** Then point at stage three and say that in nine
+   weeks they have learned to measure, and in the spring they learn to **train**. The term ends on that
+   sentence.
+
+> **🧑‍🏫 Why this is worth two minutes.** A learner who can see the map can distinguish *"I don't
+> understand this week"* from *"I don't know where this week goes"* — and at the end of a term, the map
+> is also the difference between "we did some metrics" and "we finished a stage and a half of a real
+> pipeline". One of those is worth telling a parent about.
+
+**Two things to notice, so you can answer if asked.**
+
+- **Evaluation and impact are lit together.** F1 is a measurement, so evaluation is obvious. Impact is
+  lit because *deciding which number to publish* is a decision about whose mistakes are tolerable — and
+  §9's honest criticism of F1 is exactly that conversation. If a student asks why impact is on, that
+  paragraph is your answer.
+- **The ↻ on stage three is still grey.** Three weeks to go. It is the training loop, and the symbol
+  turns black in Week 12 when it opens. This is a good place to promise it and a bad place to explain
+  it.
+
+> **⚠️ Watch out:** the map is orientation, not assessment. It is tempting at a checkpoint to turn it
+> into a quiz on the year so far. Don't. The relay was the assessment; the map is the victory lap.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 30 minutes the night before

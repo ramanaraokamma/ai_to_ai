@@ -328,6 +328,40 @@ The line to hold all lesson: **today you build the scoreboard. Next week the mod
 
 ---
 
+### 10. 🧭 The Growing Map — the tile closes
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. Today is a closing week, and closing weeks are the ones worth showing properly.
+
+![The Level 3 pipeline in Week 14: the slope, chance and loss tile closes on log loss](../figures/fig-w14-0-where-this-fits.svg)
+
+*Figure 14.0 — Week 14's version. Third and last week in the same gold tile. The ↻ on stage three is
+black, as it has been since Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" and then "is it finished?"** They point at *slope · chance ·
+   loss*, and this time the answer to the second question is **yes**. Walk the three words out loud with
+   the room: Week 12 **slope**, Week 13 **chance**, Week 14 **loss**. Three weeks, one tile, done.
+2. **Anchor it on the twist.** The two ratios are still on the board: log loss rates a confident
+   disaster **4.3×** worse than a near miss and keeps climbing; squared error stops at **2.7×** and
+   crowned the wrong forecaster. *"That difference is what finishing this box was for."*
+3. **Then point at the tile below it and say what happens next.** `descent · neuron · layer`, weeks 15
+   to 18, still dashed. *"Next week the badge moves down there, and the first thing we do is take the
+   slope of the loss you built today."* Naming the next box is a two-second job that buys you the first
+   five minutes of next week's lesson.
+
+> **🧑‍🏫 Why this is worth two minutes.** Log loss is the week students most often file under *"a formula
+> we had to learn"*. The map makes it structural instead: a loss is the thing the entire right-hand side
+> of the pipeline is steered by, and a completed tile is visible proof that three weeks added up to one
+> component.
+
+**One thing to notice, so you can answer if asked.** Two threads are lit — `learning signal` **and**
+`evaluation` — and it is the only pairing of those two in the term. A loss is both at once: the number
+you report and the number the model is trained by. If a student spots that, it is a very good spot.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

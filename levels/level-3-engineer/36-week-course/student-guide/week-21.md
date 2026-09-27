@@ -1004,6 +1004,31 @@ The only way it can hurt you is if you accidentally wrap your **training** step 
 
 ---
 
+## 🧭 Where This Fits
+
+Still the same gold box — third of the five weeks in `numpy brain · PyTorch`. Week 19 was the brain you
+wrote by hand, Week 20 was the machine that produces the slopes, and this week is the **shape of every
+training run you will ever write**: five lines, in one order, each with its own way of going wrong.
+
+![The Level 3 pipeline in Week 21: still the numpy and PyTorch tile, now the five-line training loop](../figures/fig-w21-0-where-this-fits.svg)
+
+*Figure 21.0 — The pipeline in Week 21. Third week inside the same gold tile. Nothing moves, because
+nothing new was invented today — the loop you built in Week 15 just got its final spelling.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Every training run in every framework is **the same five lines in the same order**: `zero_grad`, forward, loss, `backward`, `step`. The order is forced, not stylistic — 4 needs 3, 3 needs 2, 5 needs 4, and 1 goes first because 4 **adds**. Each line has a specific failure when you drop it, and **three of the five fail silently**. |
+| **The one question it answers** | *"What happens if I delete this line?"* — and you can now answer it for all five, including the one whose answer is *"no error at all, and the loss ends higher than it started."* |
+| **What it plugs into** | Week 15's `w -= lr * grad`, which is now `optimizer.step()`, and Week 20's `backward()`, which is now line four of five. Read the loop you wrote in Week 19 beside today's and it is line for line the same thing — that is the point. |
+| **What carries forward** | Weeks 22, 23 and 26 all run these five lines completely unchanged, on real models and real images. For the rest of the year, when a training run misbehaves, **you check them in order** — and you look at the gradient column, not the loss column. |
+| **Spiral thread** | 🎯 **Learning signal** and 📦 **Model** — two threads, because the five lines are precisely where the signal touches the model. Four of them compute; exactly one of them, `step()`, changes a weight. Knowing which one is which is how you debug a silent failure. |
+
+> **💡 Try this:** write the five lines on the inside cover of your notebook, next to the five stage
+> names you copied down in Week 1. You will type them from memory for the rest of the level, and in
+> Week 36 the thing you ship will still have them in it, in this order.
+
+---
+
 ## 🔑 Remember This
 
 - **Five lines, in this order, for every model in this course and every model you will ever use:** `optimizer.zero_grad()` · forward · loss · `loss.backward()` · `optimizer.step()`.

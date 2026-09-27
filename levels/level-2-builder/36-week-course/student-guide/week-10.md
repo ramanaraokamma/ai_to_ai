@@ -1118,7 +1118,7 @@ first tile of stage two, and the thread strip now has two pills lit instead of o
 | **The one question it answers** | *"Why does my function print the right answer but hand back `None`?"* — because a `print` at the bottom of a function is a message to a human, and `return` is a message to the rest of your program. You needed the second one. |
 | **What it plugs into** | Week 9's named block. It ran, and it always did exactly the same thing. Now it takes something in and gives something back, which is what makes one function useful in twenty different places. |
 | **What carries forward** | Week 12 imports your functions from another file. Week 15 has you write `filter_by()` and `group_count()`. Week 29 calls `model.fit()` and `model.predict()` — and those are the *same in-and-out shape* you are learning today, written by somebody else. |
-| **Spiral thread** | 🧰 **Toolcraft** + 🧩 **Representation** — the first AI thread of the year. A parameter list is a decision about *how you represent a job to the computer*: what varies, what stays the same, what has a name. Every AI system starts with that decision. |
+| **Spiral thread** | 🧰 **Toolcraft** + 🏷️ **Representation** — the first AI thread of the year. A parameter list is a decision about *how you represent a job to the computer*: what varies, what stays the same, what has a name. Every AI system starts with that decision. |
 
 > **💡 Try this:** draw one box on your pencil map with an arrow going in and an arrow coming out. Label
 > the in-arrow **parameters** and the out-arrow **return**. That little picture explains about a third

@@ -296,6 +296,49 @@ in the 0.45-0.65 uncertainty band: 30 of 111 (27.0%)
 
 ---
 
+### 9. 🧭 The Growing Map — the same last box, and what happens after the prediction
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. The gold stays on the last tile, and the page still has no dashes anywhere on it.
+
+![The Level 3 pipeline in Week 35: still the ship it and showcase tile, now the service, the log and the card](../figures/fig-w35-0-where-this-fits.svg)
+
+*Figure 35.0 — Week 35's version. Second week inside the last tile, `ship it · showcase`, and the whole map
+solid. The ↻ on stage three is black, as it has been since Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" and then "which arrow is the log on?"** Same gold tile — and the
+   second question has no answer on the map, which is the point. *"Every arrow on this picture points
+   left to right, into a prediction. Today you built the thing that happens **after** the last arrow."*
+   Have somebody draw the missing arrow, curving back from stage five to stage two. **That loop is
+   monitoring, and it is the honest shape of a shipped model.**
+2. **Anchor it on the four numbers and on one subgroup row.** Point at the FINDINGS sheet. *"This box
+   produced mean, p50, p95 and max — and with 111 requests the p95 cannot see the max, so both get
+   printed."* Then read one subgroup row aloud exactly as written, `n` included: **`contains a negation
+   word · n = 13 · accuracy 0.385 · recall 0.000`.** Then ask what the overall `0.875` was hiding. **The
+   answer is a group of rows, not a percentage.**
+3. **Point at stage two, then at stage one.** *"Which tile does `p95` belong to?"* — `threshold · cost`,
+   Weeks 10–11, because a latency you promise is a threshold you chose. And then the harder one: *"which
+   tile does 'the words people type next month will not look like the words in my training set' belong
+   to?"* — stage one, `scaling · features`, Week 6. **Drift is leakage arriving late**, and saying that out
+   loud connects the last week of the year to the sixth.
+
+> **🧑‍🏫 Why this is worth two minutes.** A student finishing today thinks the work is over because the
+> thing answers. The map, plus the arrow they just drew, says otherwise: **everything they built today
+> feeds measurement back into a box they finished in November.** That is the difference between a model
+> that ran once and a model somebody trusts — and it is the sentence the banner at the top of the figure
+> has been making since Week 1.
+
+**One thing to notice, so you can answer if asked.** Latency is the only number in Level 3 that will not
+reproduce, and a sharp student may ask how that squares with *"a number you cannot reproduce is not a
+result"*. The answer is precise and worth giving: **you cannot reproduce the value, but you can reproduce
+the measurement** — same script, same 111 requests, same four statistics, and you state the machine. That
+is what makes it a result rather than an impression, and it is exactly what a model card's performance
+section has to say.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 35 minutes the night before

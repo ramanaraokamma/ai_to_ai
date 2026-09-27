@@ -1136,6 +1136,34 @@ And the arithmetic that tells you 650 is the right number: `80 + 1,168 = 1,248` 
 
 ---
 
+## 🧭 Where This Fits
+
+Fourth week in the same box, and the last one. The tile marked *images · CNNs* covers Weeks 24 to 27, and
+today closes it — and it closes on a question you can ask about any model you will ever build: **can I
+get better without collecting more data?** Next week the gold jumps into the final stage.
+
+![The Level 3 pipeline in Week 27: the images and CNNs tile closes with augmentation, transfer and the Term 3 checkpoint](../figures/fig-w27-0-where-this-fits.svg)
+
+*Figure 27.0 — The pipeline in Week 27. Stage four closes: four stages solid, seven tiles black and the
+eighth one gold. Only stage five is still dashed, and it opens next week. The ↻ on stage three is black,
+as it has been since Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | There are two ways to buy accuracy **without collecting one new image**: manufacture more training examples out of the ones you already have, or reuse a network that already learned to see. Both of them are **training-set moves**, and neither of them may touch validation. |
+| **The one question it answers** | *"Can I get better without more data?"* — and the honest answer today was *sometimes*. Blanked-edge augmentation bought **+1.30** points, naive `np.roll` bought **+0.00**, and the frozen backbone (`0.9257`) and the fine-tuned one (`0.9665`) both came out **behind the from-scratch control** at `0.9814`. |
+| **What it plugs into** | Week 6's leakage rules, which is exactly why **only the training set gets augmented** — five copies of a validation picture would be five chances to memorise the same answer. And Week 26's CNN, which today is both the **baseline** you are trying to beat and the **donor** whose eyes you borrow. |
+| **What carries forward** | Weeks 30 and 33 read grids with the same instinct you used on the confusion matrix: go straight for the **worst pair** and ask what it is about those two things physically. Week 35 reports subgroup numbers for exactly the same reason — one average always hides the pair that is failing. |
+| **Spiral thread** | 📊 **Data** and ⚖️ **Evaluation** — data, because for the first time you *manufactured* rows rather than collecting them. Evaluation, because every single claim today came with a control beside it and a denominator underneath it. |
+
+> **💡 Try this:** count the tiles on the map. Seven are black, the eighth turns black tonight, and
+> everything black on that picture is work you can do yourself. Write the four numbers from today's
+> results table in the
+> margin next to stage four — `plain`, `augmented`, `frozen`, `fine-tuned` — and beside them write which
+> two rows may honestly be compared. That one note is Term 3 in a sentence.
+
+---
+
 ## 🔑 Remember This
 
 - **Augmentation works only while the label stays true.** `np.roll` wraps, so the ink that falls off one edge reappears on the other. Blank the edge and it buys **+1.30 points, 529 → 536 of 540**. Leave the wrap in and it buys **+0.00**, five times over.

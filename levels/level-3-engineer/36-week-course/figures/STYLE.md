@@ -2665,3 +2665,119 @@ Generator layout, in dependency order &mdash; each module imports the one before
 | `_gen_emit.py` | writes `_motifs.svg` and `_preview.html` |
 | `_gen_style.py` | writes this file |
 | `_gen_audit.py` | the check that must print `--- 0 finding(s)` |
+
+---
+
+## The Growing Map — `fig-wNN-0-where-this-fits.svg`
+
+Every week carries **one** figure that is not about this week's content. It shows the shape of the whole
+level with one more piece filled in, and appears in **both** books — student guide
+(`## 🧭 Where This Fits`) and teacher guide (`### N. 🧭 The Growing Map`).
+
+**Reference: `fig-w01-0-where-this-fits.svg`.** Open it before drawing another. Levels 1 and 2 carry
+the same device; L2 uses the identical coordinate grid, so a learner moving up a level sees the same
+geometry with a different spine.
+
+### Index `0`
+
+Content figures number from 1; the map is always `-0-`, so it sorts first and reads as structural
+rather than topical. Caption is `Figure <week>.0`.
+
+### Fixed zones — canvas `0 0 800 400`
+
+| Zone | y | Holds |
+|---|---|---|
+| Banner | 42–62 | `A TABLE → A MODEL SOMEBODY ELSE CAN TRUST` + subtitle |
+| Pipeline | 82–134 | Five stage boxes, `140 × 52`, at x **26 · 178 · 330 · 482 · 634** |
+| Tiles | 146–292 | Row A `140 × 58` at y 146; row B `140 × 48` at y 244 |
+| Flow note | 312 | One line, 12px, `muted` |
+| Thread strip | 336–360 | **Six** pills, `118 × 24`, at x **26 · 152 · 278 · 404 · 530 · 656** |
+| Footer | 378 | One sentence, 13px, `muted`, centred |
+
+**Never move a box between weeks.** Week 4 and week 33 must put every box at the same coordinates.
+
+### The L3 spine — five stages, ten tiles, fixed forever
+
+| Stage | x | Tile A (y 146) | Tile B (y 244) |
+|---|--:|---|---|
+| **SPLIT HONESTLY** | 26 | decisions · the split — wk 1–3 | scaling · features — wk 4–6 |
+| **MEASURE IT** | 178 | baseline · four numbers — wk 7–9 | threshold · cost — wk 10–11 |
+| **INSIDE THE LOOP** ↻ | 330 | slope · chance · loss — wk 12–14 | descent · neuron · layer — wk 15–18 |
+| **REAL NETWORKS** | 482 | numpy brain · PyTorch — wk 19–23 | images · CNNs — wk 24–27 |
+| **NEW SHAPES & SHIP** | 634 | no labels · words — wk 28–33 | ship it · showcase — wk 34–36 |
+
+**The loop glyph.** Stage 3 carries a small cycle arrow at (411–424, 96–125), because the training loop
+is what gets opened up there. It is `grid` `#C7CDD4` while the stage is dashed and switches to `ink`
+`#14202B` from **week 12**, when the loop is first entered. That is the only element in the set whose
+colour changes for a reason other than state — say so in the `<desc>`.
+
+### State vocabulary — progress readable from shape alone
+
+| State | Stroke | Fill | Dash | Badge |
+|---|---|---|---|---|
+| **This week** | `#845F00` w3 | `#E8C671` | solid | white pill, `#1B7A4B` border, tick + `YOU ARE HERE` |
+| **Already done** | `#14202B` w2 | white | solid | small `wk N–M` in `muted` |
+| **Not yet** | `#C7CDD4` w3 | none | `stroke-dasharray="10 8"` | `wk N–M` in `muted` |
+| **Stage holding this week** | `#14202B` w3 | white | solid | — badge lives on the tile |
+
+1. **Dashed means "not yet" and nothing else, ever.**
+2. **Exactly one `YOU ARE HERE`**, belonging to the current tile, in that row's **fixed badge slot**:
+   row A at `y=212` (immediately beneath the tile), row B at `y=266` (inside it). Both sit inside the
+   146–292 tile zone. The difference is forced by geometry — row-A labels need two lines, and two
+   lines plus a 22px badge do not fit in 58px. A badge must never appear at any other y.
+3. **Done tiles are never re-tinted.** Done is done; only the current week is gold.
+4. A stage box goes solid once any of its tiles is reached, and stays solid.
+
+### Threads — six, as in Level 1
+
+Level 2 adds a seventh (`toolcraft`) because its first nine weeks are pure craft. **Level 3 does not** —
+the learner can already program, so every week here genuinely advances an AI idea.
+
+- **At most two lit per week.** A week claiming three has not decided what it is about.
+- Every thread lit at least twice across the 36 weeks. `learning signal` should be well represented in
+  weeks 12–23; if it is thin, the state table is wrong.
+
+### Accessibility
+
+- `<title>`: what is filled in this week. Use the voice **"The Level 3 pipeline in Week N: …"** — one
+  voice across all 36, no "after Week N" variants.
+- `<desc>`: describe **every** zone including which threads are lit and the state of the loop glyph, so
+  a screen-reader user gets the same progress information the dashes give a sighted reader.
+- Markdown alt text **byte-identical** to `<title>`, in both books.
+
+### Checklist before shipping one
+
+- [ ] `viewBox="0 0 800 400"`, no `width`/`height`, transparent background
+- [ ] Nothing outside x 20–780, y 20–380
+- [ ] All `font-size` ≥ 12
+- [ ] Only §1.1 palette hexes
+- [ ] Exactly one `YOU ARE HERE`, in its row's badge slot
+- [ ] Dashed only on not-yet boxes
+- [ ] ≤ 2 threads lit
+- [ ] Loop glyph `ink` from week 12, `grid` before
+- [ ] Every box at its spine coordinates, unmoved — **and every label baseline unmoved too**
+- [ ] Parses as XML
+
+> **⚠️ Do not run `_generator/_gen_audit.py` against these files.** It reports false positives on the map
+> (and on the reference) because it does not inherit `font-size`/`text-anchor` from a parent `<g>`, and
+> reads relative `l dx dy` path commands as absolute. Work the checklist by hand.
+
+### Thread icons — canonical, identical in all three levels
+
+One icon per thread, never shared. Normalised across all 108 student sections on 2026-09-26; a
+collision (`📊` served both `data` and `evaluation`) was resolved in favour of each thread's own
+dominant form.
+
+| Thread | Icon |
+|---|:--:|
+| data | 📊 |
+| representation | 🏷️ |
+| model | 📦 |
+| learning signal | 🎯 |
+| evaluation | ⚖️ |
+| impact | 🌍 |
+| toolcraft *(Level 2 only)* | 🧰 |
+
+Use these in the student guide's **Spiral thread** row and nowhere else. If you add a thread, give it a
+new icon and check it against this table first — two threads sharing an icon defeats the point of
+having them.

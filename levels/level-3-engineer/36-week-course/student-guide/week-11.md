@@ -1048,6 +1048,31 @@ And here is why it matters. Since Week 3 you have typed `LogisticRegression().fi
 
 ---
 
+## 🧭 Where This Fits
+
+Last box of stage two. After today, **two whole stages of the map are behind you** — everything from
+"here is a table" to "here is a number I can defend, with a price list behind it and a plus-or-minus
+attached". Look at stages one and two on the figure: not a dashed line left in either of them.
+
+![The Level 3 pipeline in Week 11: the threshold and cost tile closes with a price list and five folds](../figures/fig-w11-0-where-this-fits.svg)
+
+*Figure 11.0 — The pipeline in Week 11. The last unfinished box in stages one and two is gold today. The
+↻ on stage three is still grey — it turns black next week, when the loop opens.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Write down what a miss costs and what a false alarm costs. Multiply those two prices through the four counts at every threshold, and **the cheapest row picks the threshold for you** — no arguing, no taste, no vibes. Then stop trusting one lucky split: score on five folds and report the mean **and the wobble**. |
+| **The one question it answers** | *"What does this mistake actually cost?"* — and if nobody will tell you, that is itself the finding, and you write it down. |
+| **What it plugs into** | Week 10's curves and Week 8's four counts, now with money attached. And Week 2's single validation split, which five folds quietly replace — the same measurement five times over, so you can finally see how much of your one number was luck. |
+| **What carries forward** | Week 12 turns "area under" and "steepness" into the derivative: area is adding strips up, slope is dividing two differences, and they are mirror images of each other. Week 26 reports seconds as well as accuracy, because compute is a cost too. Week 35 revisits the price list with real logged predictions, when the costs stop being made up. |
+| **Spiral thread** | ⚖️ **Evaluation** and 🌍 **Impact** — evaluation for the five folds and the `±`, impact for the price list. A cost matrix is the most honest document in this course: it is you writing down, in pounds, whose bad day matters more. |
+
+> **💡 Try this:** look hard at the map before next week, because it is about to change character. Stages
+> one and two were about being honest with numbers you were given. From Week 12 the little ↻ on stage
+> three turns black, and you spend six weeks taking apart the thing that actually does the learning.
+
+---
+
 ## 🔑 Remember This
 
 - **A threshold without a price list is an opinion.** Write down what a miss costs and what a false alarm costs, and the arithmetic decides — and can be argued with.

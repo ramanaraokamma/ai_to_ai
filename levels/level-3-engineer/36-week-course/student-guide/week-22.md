@@ -1074,6 +1074,33 @@ The test: **cover the training curve with your hand.** Can you still find the ep
 
 ---
 
+## 🧭 Where This Fits
+
+Same gold tile as the last three weeks — *numpy brain · PyTorch* is a five-week tile and this is the
+fourth of the five. Nothing on the map moves, and that is the honest picture: you are still building the
+same brain you built by hand in Week 19, except today the library hands you the parts you have already
+proved you can write yourself.
+
+![The Level 3 pipeline in Week 22: still the numpy and PyTorch tile, now real layers and a validation curve](../figures/fig-w22-0-where-this-fits.svg)
+
+*Figure 22.0 — The pipeline in Week 22. Fourth week inside the same gold tile. The ↻ on stage three is
+black, as it has been since Week 12 — and this week you watch that loop run 1,500 times and learn where
+to stop it.*
+
+| | |
+|---|---|
+| **The mental model you now own** | `nn.Linear` is **your grid multiply plus the bias**, already initialised for you — the same four grids as Week 19's NumPy brain, one of them transposed. And a loss with **`WithLogits`** in its name does the squash **inside itself**, safely, which is why your model must hand it raw scores and never sigmoid first. Then: plot train and validation loss on one axis, and **the epoch where validation turns up is where you stop.** |
+| **The one question it answers** | *"Is `nn.Linear` the same thing I wrote by hand?"* — yes, exactly, and you proved it by printing both parameter lists side by side and counting to 65 twice. |
+| **What it plugs into** | Week 19's architecture, Week 17's grid multiply, and Weeks 13–14's sigmoid and log loss. All four now arrive as **objects you stack** instead of lines you type — and you can only tell that they are the same thing because you typed them once. |
+| **What carries forward** | Week 23 puts this model in a class and saves it to a file. Week 26 stacks convolution layers exactly the same way. Week 27 watches this same curve again, this time under augmentation and a real early-stopping rule. The dashed vertical line you drew at epoch 39 is a habit, not a one-off. |
+| **Spiral thread** | 📦 **Model** and 🎯 **Learning signal** — two threads. Model, because `nn.Sequential` is the architecture, written down as a thing. Learning signal, because `BCEWithLogitsLoss` is where the squash now lives, and the validation curve is the signal telling you the training loss has started lying. |
+
+> **💡 Try this:** cover up the training-loss line on `overfit.png` with a strip of paper and look only at the
+> validation line. That is the only curve that was ever about the future. Everything to the right of its
+> lowest point is the model memorising 320 rows it has already seen.
+
+---
+
 ## 🔑 Remember This
 
 - **`nn.Linear` is the grid multiply plus the bias.** Nothing else is inside it. `nn.ReLU()` has no numbers at all. `nn.Sequential(...)` is a list of parts, top to bottom.

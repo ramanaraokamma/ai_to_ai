@@ -289,6 +289,41 @@ The line to keep in your head all lesson: **today the student builds the zero on
 
 ---
 
+### 10. 🧭 The Growing Map
+
+The student guide carries **Where This Fits** — the same picture every week with one more piece filled in.
+This week it deliberately looks almost identical to last week's, and that is the teaching point.
+
+![The Level 3 pipeline in Week 2: still the decisions and split tile, now three piles instead of two](../figures/fig-w02-0-where-this-fits.svg)
+
+*Figure 2.0 — Week 2's version. Same gold tile as Week 1, because weeks 1 to 3 are one job. The ↻ on stage
+three is the training loop, still grey until Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask *"which box did we do today?"*** They will hunt for a new gold tile. There isn't one —
+   it is the **same** tile, *decisions and the split*, and noticing that is the exercise. Follow with
+   *"so what changed inside the box?"* The answer you want is **"the split went from two piles to three."**
+2. **Then the question of the week, pointed at the map:** *"we just built three piles and two baselines,
+   and we still have no real model. Which stage does the model live in?"* They will point at stage five,
+   which is 28 weeks away. Let that sit. It is the clearest possible demonstration that Level 3 spends its
+   effort on the parts either side of `fit`.
+3. **One more, if there is time:** *"the test pile opens in Week 34. Find Week 34 on the map."* It is the
+   bottom tile of stage five. Thirty-two weeks of not touching something is much more real once they have
+   seen how far away it is on a picture.
+
+> **🧑‍🏫 Why this is worth two minutes.** The commonest Week 2 complaint is *"why are we still not building
+> anything?"* The map answers it without you having to defend the syllabus: stage one has two tiles and six
+> weeks, and everything downstream is measured on the cut they are making now. A student who can see that
+> stops reading the first six weeks as a delay.
+
+**If a student asks why nothing has gone white yet:** plain white with a solid outline means *finished*, and
+this tile is not finished until Week 3 puts the model in a file. So it stays gold next week too, and turns
+white in **Week 4** — tell them to watch for it, because that is the first time all year the map records
+completed work.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes the night before

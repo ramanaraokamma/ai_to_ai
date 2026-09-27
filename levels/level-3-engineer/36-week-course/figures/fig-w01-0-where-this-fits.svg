@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img"
+     aria-labelledby="t d" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title id="t">The Level 3 pipeline in Week 1: the first tile of SPLIT HONESTLY is filled in</title>
+  <desc id="d">Five stages run left to right — split honestly, measure it, inside the loop, real
+  networks, new shapes and ship — turning a table into a model somebody else can trust. Stage one,
+  split honestly, is solid because we are inside it; its first tile, decisions and the split, weeks 1
+  to 3, is gold and badged "you are here". Stage three carries a loop symbol, still grey because the
+  training loop is not opened until week 12. Every other stage and tile is dashed with the week it
+  arrives. Along the bottom, six threads: evaluation is lit, and nothing else.</desc>
+
+  <!-- ── banner ───────────────────────────────────────────────────── -->
+  <text x="400" y="42" text-anchor="middle" font-size="17" font-weight="700" fill="#14202B">
+    A TABLE  →  A MODEL SOMEBODY ELSE CAN TRUST</text>
+  <text x="400" y="62" text-anchor="middle" font-size="13" fill="#55636F">
+    thirty-six weeks, five stages, and one loop opened up in the middle</text>
+
+  <!-- ── stage 1: SPLIT HONESTLY — we are inside it ───────────────── -->
+  <g>
+    <rect x="26" y="82" width="140" height="52" rx="11" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <text x="96" y="104" text-anchor="middle" font-size="14" font-weight="700" fill="#14202B">SPLIT</text>
+    <text x="96" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#14202B">HONESTLY</text>
+    <rect x="26" y="146" width="140" height="58" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+    <text x="96" y="172" text-anchor="middle" font-size="12" fill="#14202B">decisions · the split</text>
+    <text x="96" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="#845F00">wk 1–3</text>
+    <rect x="34" y="212" width="124" height="22" rx="11" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2.5"/>
+    <path d="M45 223 l4 4.5 l8 -9" fill="none" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="103" y="228" text-anchor="middle" font-size="12" font-weight="700" fill="#1B7A4B">YOU ARE HERE</text>
+    <rect x="26" y="244" width="140" height="48" rx="10" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="96" y="266" text-anchor="middle" font-size="12" fill="#55636F">scaling · features</text>
+    <text x="96" y="283" text-anchor="middle" font-size="12" font-weight="700" fill="#55636F">wk 4–6</text>
+  </g>
+
+  <!-- ── stage 2: MEASURE IT ──────────────────────────────────────── -->
+  <g>
+    <rect x="178" y="82" width="140" height="52" rx="11" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="248" y="113" text-anchor="middle" font-size="14" font-weight="700" fill="#55636F">MEASURE IT</text>
+    <rect x="178" y="146" width="140" height="58" rx="10" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="248" y="172" text-anchor="middle" font-size="12" fill="#55636F">baseline · four numbers</text>
+    <text x="248" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="#55636F">wk 7–9</text>
+    <rect x="178" y="244" width="140" height="48" rx="10" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="248" y="266" text-anchor="middle" font-size="12" fill="#55636F">threshold · cost</text>
+    <text x="248" y="283" text-anchor="middle" font-size="12" font-weight="700" fill="#55636F">wk 10–11</text>
+  </g>
+
+  <!-- ── stage 3: INSIDE THE LOOP — carries the cycle symbol ─────── -->
+  <g>
+    <rect x="330" y="82" width="140" height="52" rx="11" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="400" y="104" text-anchor="middle" font-size="14" font-weight="700" fill="#55636F">INSIDE</text>
+    <text x="400" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#55636F">THE LOOP</text>
+    <!-- the loop glyph: a cycle arrow, greyed until week 12 -->
+    <path d="M424 112 a 13 13 0 1 1 -9 -12" fill="none" stroke="#C7CDD4" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M412 96 l4 4 -5 4" fill="none" stroke="#C7CDD4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="330" y="146" width="140" height="58" rx="10" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="400" y="172" text-anchor="middle" font-size="12" fill="#55636F">slope · chance · loss</text>
+    <text x="400" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="#55636F">wk 12–14</text>
+    <rect x="330" y="244" width="140" height="48" rx="10" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="400" y="266" text-anchor="middle" font-size="12" fill="#55636F">descent · neuron · layer</text>
+    <text x="400" y="283" text-anchor="middle" font-size="12" font-weight="700" fill="#55636F">wk 15–18</text>
+  </g>
+
+  <!-- ── stage 4: REAL NETWORKS ───────────────────────────────────── -->
+  <g>
+    <rect x="482" y="82" width="140" height="52" rx="11" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="552" y="104" text-anchor="middle" font-size="14" font-weight="700" fill="#55636F">REAL</text>
+    <text x="552" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#55636F">NETWORKS</text>
+    <rect x="482" y="146" width="140" height="58" rx="10" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="552" y="172" text-anchor="middle" font-size="12" fill="#55636F">numpy brain · PyTorch</text>
+    <text x="552" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="#55636F">wk 19–23</text>
+    <rect x="482" y="244" width="140" height="48" rx="10" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="552" y="266" text-anchor="middle" font-size="12" fill="#55636F">images · CNNs</text>
+    <text x="552" y="283" text-anchor="middle" font-size="12" font-weight="700" fill="#55636F">wk 24–27</text>
+  </g>
+
+  <!-- ── stage 5: NEW SHAPES & SHIP ──────────────────────────────── -->
+  <g>
+    <rect x="634" y="82" width="140" height="52" rx="11" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="704" y="104" text-anchor="middle" font-size="14" font-weight="700" fill="#55636F">NEW SHAPES</text>
+    <text x="704" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#55636F">&amp; SHIP</text>
+    <rect x="634" y="146" width="140" height="58" rx="10" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="704" y="172" text-anchor="middle" font-size="12" fill="#55636F">no labels · words</text>
+    <text x="704" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="#55636F">wk 28–33</text>
+    <rect x="634" y="244" width="140" height="48" rx="10" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="704" y="266" text-anchor="middle" font-size="12" fill="#55636F">ship it · showcase</text>
+    <text x="704" y="283" text-anchor="middle" font-size="12" font-weight="700" fill="#55636F">wk 34–36</text>
+  </g>
+
+  <!-- ── flow arrows ─────────────────────────────────────────────── -->
+  <g stroke="#55636F" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M168 108 L174 108"/><path d="M169 103 l6 5 -6 5"/>
+    <path d="M320 108 L326 108"/><path d="M321 103 l6 5 -6 5"/>
+    <path d="M472 108 L478 108"/><path d="M473 103 l6 5 -6 5"/>
+    <path d="M624 108 L630 108"/><path d="M625 103 l6 5 -6 5"/>
+  </g>
+  <text x="400" y="312" text-anchor="middle" font-size="12" fill="#55636F">
+    every stage can be done dishonestly — that is what makes this the engineering year</text>
+
+  <!-- ── six threads, only evaluation lit ────────────────────────── -->
+  <g font-size="12" text-anchor="middle">
+    <rect x="26" y="336" width="118" height="24" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <text x="85" y="352" fill="#55636F">data</text>
+    <rect x="152" y="336" width="118" height="24" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <text x="211" y="352" fill="#55636F">representation</text>
+    <rect x="278" y="336" width="118" height="24" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <text x="337" y="352" fill="#55636F">model</text>
+    <rect x="404" y="336" width="118" height="24" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <text x="463" y="352" fill="#55636F">learning signal</text>
+    <rect x="530" y="336" width="118" height="24" rx="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2.5"/>
+    <text x="589" y="352" font-weight="700" fill="#14202B">evaluation</text>
+    <rect x="656" y="336" width="118" height="24" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <text x="715" y="352" fill="#55636F">impact</text>
+  </g>
+  <text x="400" y="378" text-anchor="middle" font-size="13" fill="#55636F">
+    Week 1 is all evaluation: five decisions made in writing, before anything is trained.</text>
+</svg>

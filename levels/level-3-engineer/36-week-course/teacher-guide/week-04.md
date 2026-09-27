@@ -293,6 +293,40 @@ That is fine. **The reason the word exists** is what happens at cardinality 41,0
 
 ---
 
+### 10. 🧭 The Growing Map
+
+The student guide carries **Where This Fits** — the same picture every week with one more piece filled in.
+This week the map changes in a way it has not changed before: a tile goes **white**.
+
+![The Level 3 pipeline in Week 4: the scaling and features tile of SPLIT HONESTLY opens](../figures/fig-w04-0-where-this-fits.svg)
+
+*Figure 4.0 — Week 4's version. The first tile is solid white, meaning finished; the gold has moved down to
+the scaling and features tile. The ↻ on stage three is the training loop, still grey until Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask *"what is different about this picture?"*** before you ask anything else. The answer
+   is **two** things: the top tile is white now, and the gold has moved. Make them say both. This is the
+   first week of the year the map records finished work, and it is worth the extra fifteen seconds.
+2. **Then *"which box did we do today?"*** — the second tile, *scaling · features*. Follow with the
+   week's actual question: *"we put `2, 4, 6, 8, 100` on one ruler today. Which stage of this pipeline
+   was that, and which stage was it **not**?"* It was stage one. It was **not** stage two, measuring, and
+   it was **not** the model. Scaling is a decision about the table, which is why it lives up here.
+3. **Then one pointer forward:** *"find the tile where a badly scaled column stops a model learning
+   altogether."* Stage three, bottom tile, Week 15. Say only that the thing they did on graph paper today
+   is what decides whether that week works, and leave it there.
+
+> **🧑‍🏫 Why this is worth two minutes.** Week 4 is the first week that feels like arithmetic homework
+> rather than AI, and the honest reason it is not is structural: scaling sits inside stage one, so every
+> number stages two through five ever produce is measured on a table this week's decisions shaped. The map
+> shows that in one glance. Without it, "standard deviation" reads as a detour.
+
+**If a student asks why the white tile has no tick or badge:** finished tiles are deliberately plain — done
+is done, and only the tile you are standing in is coloured. By March most of the map is white, and the
+value of the picture is entirely in how much of it still is not.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

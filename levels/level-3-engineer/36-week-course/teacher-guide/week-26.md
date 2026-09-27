@@ -298,6 +298,47 @@ The line to hold in your head all lesson: **today the student trains a thing tha
 
 ---
 
+### 9. 🧭 The Growing Map — the same box, and the week it pays out
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. This week the gold box does not move, but for the first time in this tile it produces
+something that works, and the two minutes should say so.
+
+![The Level 3 pipeline in Week 26: still the images and CNNs tile, now a network that reads handwritten digits](../figures/fig-w26-0-where-this-fits.svg)
+
+*Figure 26.0 — Week 26's version. Third week inside the gold `images · CNNs` tile. The ↻ on stage three is
+black, as it has been since Week 12 — and today that loop ran 1,600 times in about three seconds.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" and then "what did the last two weeks buy us?"** The box is the same
+   gold tile, *images · CNNs*, third of four weeks. The answer to the second question is on two wall
+   sheets: **THE SHAPE LADDER** from Week 25 gave them the number after `Flatten`, and **PARAMETER COUNT**
+   now has its last row filled in — **1,898** against Week 23's **4,810**. *"Two weeks of pencil work, and
+   today it assembled into ninety-eight per cent on handwriting."*
+2. **Anchor it on the FILTER VOTE sheet.** Hold up the eight numbered boxes. *"Nobody in this room drew any
+   of those. They are the only part of a neural network you can look at directly, and you looked at them
+   the same way a researcher does."* Then the one honest caveat, which they should hear from you and not
+   from the internet: layer 1 renders, layer 2 onwards does not.
+3. **Point at the ↻ on stage three and then at stage five.** The ↻ has been black since Week 12, and today
+   it turned a network with 1,898 weights into a digit reader using the **same five lines from Week 21**.
+   Stage five is still dashed: *"nothing today was about shipping. That is Weeks 34 to 36, and by then this
+   will be the easy part of your project."*
+
+> **🧑‍🏫 Why this is worth two minutes.** This is the most satisfying week of the term and the easiest one
+> to mis-remember as magic. The map is the antidote: point at the two white tiles to the left and name what
+> came from where — the loop from stage three, the loss from Week 14, the `DataLoader` from Week 23, the
+> sizes from last week. *"There is nothing in today's file that we have not built. That is why it worked
+> the first time."*
+
+**One thing to notice, so you can answer if asked.** `evaluation` is lit again, for the first time since
+Term 1, alongside `model`. It is lit because of the four-row comparison table against Week 23 — parameters,
+seconds, train accuracy, test accuracy — and specifically because objective 4 asks them to say **which of
+the four actually matters**. That judgement, not the 0.9796, is the evaluation work this week. If a student
+puts *seconds* in their report, ask them who the report is for.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes the night before

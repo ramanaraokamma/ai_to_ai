@@ -462,6 +462,47 @@ The line to hold in your head all lesson: **today the student makes a library's 
 
 ---
 
+### 11. 🧭 The Growing Map — the same box, and the arithmetic that fixed `and`
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. The gold tile has not moved since Week 28, and this is the fifth of its six weeks.
+
+![The Level 3 pipeline in Week 32: still the no labels and words tile, now rare words and the angle between documents](../figures/fig-w32-0-where-this-fits.svg)
+
+*Figure 32.0 — Week 32's version. Fifth week inside the gold `no labels · words` tile, with one box left
+dashed. The ↻ on stage three is black, as it has been since Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" and then "what did we fix in it?"** Same gold tile — and the answer
+   to the second question must be a number, not a word. *"Last week the biggest number in the corpus was
+   `and`, 55 times. What is `and` worth now?"* Point at the IDF wall sheet: `and` is in every review, so
+   its idf is the smallest one up there, and a word in one review of four scores `1.9163`. **The box did
+   not change; the arithmetic inside it did.**
+2. **Anchor it on `0.841002` and on `36.87 degrees`.** Hold up a completed page 32.2 with the number
+   written twice — once by hand and once copied off the screen. *"This box now produces that, and you
+   produced it with a calculator before the library did."* Then the graph paper: two arrows, and a
+   measured angle between them. **The angle is the new object of the week; make them say the word.**
+3. **Point at stage one, and at Week 4.** *"Which box does 'divide every row by its own length' belong
+   to?"* It belongs to stage one, not stage five — it is the same move as the z-score, for the same
+   reason: **put things on a comparable scale before comparing them.** And the query `cold pizza` ranking
+   `A: 2, B: 4` by counts but `A: 1.0000, B: 0.4216` by cosine is the proof that skipping it changes the
+   answer, silently.
+
+> **🧑‍🏫 Why this is worth two minutes.** This is the week a student is most likely to feel they did
+> "just maths" and learned nothing about AI. The map is the correction, and it is a geometric one: **the
+> tile did not move, so nothing new was added — the same box got better at its job.** A student who sees
+> that stops asking "why are we doing logarithms" and starts asking "what does this buy the classifier",
+> which is next week's question.
+
+**One thing to notice, so you can answer if asked.** `representation` is the only thread lit, and a sharp
+student may ask why `evaluation` is not — after all, there were scores. There were not: **there is not a
+single fitted model in this week's code.** Nothing was trained, nothing was predicted, nothing was
+measured against a baseline. Only the *form* of the numbers changed, and the flip from `2, 4` to
+`1.0000, 0.4216` is what a change of form can do on its own. Next week is the one with the scores in it.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 30 minutes the night before

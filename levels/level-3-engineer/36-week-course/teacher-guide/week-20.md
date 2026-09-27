@@ -425,6 +425,46 @@ The line to hold all lesson: **today you check the machine's homework against yo
 
 ---
 
+### 10. 🧭 The Growing Map — the same box, and why the map does not jump
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one
+more piece filled in. This week nothing moves, and for once that is the most interesting thing about
+it — a framework arrived and the map did not react.
+
+![The Level 3 pipeline in Week 20: still the numpy and PyTorch tile, now a machine that does the slopes for you](../figures/fig-w20-0-where-this-fits.svg)
+
+*Figure 20.0 — Week 20's version. Second week inside the gold `numpy brain · PyTorch` tile. The ↻ on
+stage three is black, as it has been since Week 12, and stage three stays plain white behind you.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" and then the better question: "why didn't the map change?"** Same
+   gold tile, second of five weeks. *"PyTorch is not a new stage. It is a faster way of doing stage
+   three, and stage three is already finished and white behind us."* That sentence is the whole
+   relationship between this week and the eight before it.
+2. **Anchor it on the two columns still on the board.** Nine rows, and every difference column reading
+   `0.00000000`. *"Autograd did not teach us anything new today. It agreed with us."* Then the
+   follow-up worth asking aloud: *"if it had disagreed, who would have been wrong?"* — and the honest
+   answer, which they will enjoy: *"almost certainly us, and we would have found it, because we can
+   check."*
+3. **Point at the tile's remaining three weeks, not at the dashes.** `numpy brain · PyTorch` runs to
+   Week 23. *"Next week five lines replace your update loop, Week 22 replaces your layers, Week 23
+   saves the weights to a file. Nothing new gets invented in those three weeks either — things you
+   built get shorter."*
+
+> **🧑‍🏫 Why this is worth two minutes.** The risk this week is not confusion, it is **deflation**:
+> eight lines of hard-won calculus reduced to one method call can feel like the last two months were
+> wasted. The map answers that without you having to argue. Stage three is solid and finished, and the
+> reason today's lesson was a *check* rather than a lecture is that they had numbers worth checking
+> against. Learners who skip Weeks 12–18 and start here cannot do what your class did today.
+
+**One thing to notice, so you can answer if asked.** Only **one** thread is lit — `learning signal`,
+alone. Say why if asked: the model did not change, nothing was measured, and no new representation
+appeared. The single lit pill is the map's way of saying *this week has exactly one subject*, and weeks
+like that are the ones worth being strict about.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes the night before

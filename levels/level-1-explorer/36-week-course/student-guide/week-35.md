@@ -614,7 +614,7 @@ to 36 and this is the middle of it. No dashed boxes anywhere. The lit threads ar
 | **The one question it answers** | *"What does my app do when the model is not sure?"* If the answer is "it guesses anyway", you have not finished building it. |
 | **What it plugs into** | Week 16's margin and threshold, which is where the number came from. Week 30's Scratch blocks, which is how the model and the app finally speak to each other. And Week 33's measured gap, which is what your bias report is actually made of. |
 | **What carries forward** | Every single thing you rehearse today gets delivered live in Week 36 — including the failure you demonstrate on purpose. You are not preparing a presentation; you are packing a booth. |
-| **Spiral thread** | 🧠 **Model** — wrapped in an app that knows the difference between an answer and a guess — and 🌍 **Impact** — because a refusal, a warning sign and a priced fix are all decisions about somebody else. |
+| **Spiral thread** | 📦 **Model** — wrapped in an app that knows the difference between an answer and a guess — and 🌍 **Impact** — because a refusal, a warning sign and a priced fix are all decisions about somebody else. |
 
 > **💡 Try this:** set your threshold deliberately too high for one minute, so the app refuses almost
 > everything, then deliberately too low, so it commits to nonsense. Both extremes are wrong, and

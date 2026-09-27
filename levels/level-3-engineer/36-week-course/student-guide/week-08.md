@@ -952,6 +952,32 @@ The cure is physical. Put figures 8.3 and 8.4 side by side and trace the outline
 
 ---
 
+## 🧭 Where This Fits
+
+Nothing moves on the map this week, and that is on purpose. Week 8 lives in the **same gold box** as
+Week 7 — the tile is labelled *wk 7–9*, so it is three weeks wide. Last week you learned to measure one
+number honestly. This week you found out that the one number was hiding three.
+
+![The Level 3 pipeline in Week 8: still the baseline and four numbers tile, now the four cells of the confusion matrix](../figures/fig-w08-0-where-this-fits.svg)
+
+*Figure 8.0 — The pipeline in Week 8. The same gold tile as last week: baseline · four numbers runs
+Weeks 7 to 9. The ↻ on stage three is the training loop, still grey until Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Every single prediction lands in **one of four cells**: caught, false alarm, miss, correctly left alone. Precision and recall are two different fractions built from those same four counts — read once down a column, once across a row. Accuracy adds all four together and quietly averages both of them away. |
+| **The one question it answers** | *"What kind of wrong was it?"* — because "it was 98.6% right" does not answer it, and today you proved that. |
+| **What it plugs into** | Week 2's `predict_proba` and Week 7's best model: the four cells are built out of that model's own predictions. And the 99/1 table you generated today is the proof that an accuracy of 0.99 can mean absolutely nothing. |
+| **What carries forward** | Week 9 folds precision and recall into one number. Week 10 slides the threshold that moves all four counts at once. Week 27 reads a ten-class version of this grid for handwritten digits. Week 35 reports it separately for each subgroup — which is where it stops being arithmetic and starts being fairness. |
+| **Spiral thread** | ⚖️ **Evaluation** — lit alone. You did not improve a model today; the model you spent the lesson on was deliberately useless and you never touched it. The entire week is about how you **look** at a result. |
+
+> **💡 Try this:** pick one automatic yes/no decision that happens to you — spam filtering, autocorrect,
+> your phone unlocking with your face — and write two sentences: what its false alarm feels like, and
+> what its miss feels like. Then say which one the people who built it clearly decided to tolerate. You
+> can now read their priorities straight off your own experience.
+
+---
+
 ## 🔑 Remember This
 
 - **Accuracy adds together two kinds of correct and two kinds of wrong, and the result cannot be taken apart again.** So keep all four counts instead. There is no fifth box.

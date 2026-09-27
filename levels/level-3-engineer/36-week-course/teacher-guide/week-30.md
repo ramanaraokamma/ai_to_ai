@@ -416,6 +416,46 @@ The line to hold in your head all lesson: **today the student produces the first
 
 ---
 
+### 10. 🧭 The Growing Map — the same box, and the first deliverable that is an argument
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. Nothing moves this week either; what the two minutes buy is the point that today's
+output is not a score.
+
+![The Level 3 pipeline in Week 30: still the no labels and words tile, now clusters with names they can defend](../figures/fig-w30-0-where-this-fits.svg)
+
+*Figure 30.0 — Week 30's version. Third week inside the gold `no labels · words` tile. The ↻ on stage
+three is black, as it has been since Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" and then hold up an index card.** Same gold tile, third week — and
+   the deliverable is in your hand. *"Week 28 produced cluster 0, cluster 1 and cluster 2. Today this box
+   produced a **name**, and three numbers underneath it that a stranger could argue with."* If a card got
+   torn up in the ceremony, that is the best thing to point at.
+2. **Anchor it on the two votes.** `381.1 ÷ 97.2 = 3.9` from the elbow, `0.2849` at `k = 3` from the
+   silhouette, and `0.1774` from pure noise. *"Which of those three numbers made the other two mean
+   anything?"* — the noise floor. That is the sentence to end the week on, and it is the same "compared
+   to what?" move as Weeks 9, 11 and 27, three boxes to the left on the map.
+3. **Point at stage one and at stage two, and make them earn it.** Adding five new columns is an
+   ablation: one change, one measurement, one row, and the held-out pile named — `54 of 54` on 124
+   training rows, `141 → 145 of 148` on 30. *"Same features, opposite verdict, and the reason is in
+   stage one, not stage five."* They should be pointing left while they say it.
+
+> **🧑‍🏫 Why this is worth two minutes.** Every previous lab in this course ended with a number that was
+> either better or worse than another number. This one ends with three names on card and a table, and
+> some students will genuinely not believe that counts as work. The map is where you say it does: **the
+> tile has not moved, the stage is solid, and this is what this part of the pipeline produces.** Use the
+> torn-up card as the proof that it is still assessable.
+
+**One thing to notice, so you can answer if asked.** `evaluation` is lit in a week with no `y` for most
+of the lesson, which looks wrong and is not. **The negative control is evaluation in its purest form**:
+run the whole pipeline on data you know is meaningless and whatever it reports is your floor. If a
+student asks how you can evaluate something with no answer key, that is the best question of the term —
+the answer is that you cannot score it, but you can absolutely measure whether it beats noise.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 30 minutes the night before

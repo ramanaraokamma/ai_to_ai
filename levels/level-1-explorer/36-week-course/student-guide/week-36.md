@@ -597,7 +597,7 @@ asks you to do is report a number honestly to somebody who did not have to belie
 | **The one question it answers** | *"Out of how many, and what is the baseline?"* Two questions, seven seconds, and they defuse most of the confident nonsense you will ever be shown. |
 | **What it plugs into** | All thirty-five weeks behind you. There is no dashed line left on the map: both branches and all nine tiles are solid, and today you get asked about them by somebody who was not in the room when you learned them. |
 | **What carries forward** | Level 2 adds new **spelling**, not new ideas: the same six threads, with code underneath them. Everything on this map is still true when it is written in Python — it just gets shorter to say. |
-| **Spiral thread** | 📏 **Evaluation** — a number, with its fraction and its baseline, in front of a stranger — and 🌍 **Impact** — the warning sign, the named group, and the failure you show on purpose. |
+| **Spiral thread** | ⚖️ **Evaluation** — a number, with its fraction and its baseline, in front of a stranger — and 🌍 **Impact** — the warning sign, the named group, and the failure you show on purpose. |
 
 > **💡 Try this:** draw the map from memory, on one page, with no reference. Fourteen boxes. Then write
 > one sentence inside each. That page is the best thing you own going into Level 2, and it took you a

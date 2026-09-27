@@ -1178,6 +1178,31 @@ If your sentence does not contain the word **slope** and the word **zero**, you 
 
 ---
 
+## 🧭 Where This Fits
+
+The gold box **moves** this week, for the first time since Week 15 — right, into **stage four**. Stage
+three is finished and plain white: seven weeks of slopes, chances, losses, steps, neurons and layers,
+all of them yours. Today those parts go in one file, and the file draws a boundary that **curves**.
+
+![The Level 3 pipeline in Week 19: stage four opens with NumPy Brain in the numpy and PyTorch tile](../figures/fig-w19-0-where-this-fits.svg)
+
+*Figure 19.0 — The pipeline in Week 19. Stage three is complete and REAL NETWORKS goes solid with the
+badge inside it. It is a five-week tile and this is week one of the five.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Forward pass, loss, backward pass, update, repeat. **Forty lines of numpy**, with nothing underneath them but arithmetic you have already done on paper — plus a gradient check that proves you were right before you let it train. Sixty-five knobs, 500 epochs, 32,500 slopes, and a boundary that bends where a straight line could never win. |
+| **The one question it answers** | *"Did I really just build a neural network?"* — yes, and you can point at every one of the 65 numbers in it and say what it is for. |
+| **What it plugs into** | Weeks 15 to 18, entirely and without remainder. The update rule from Week 15, the neuron from Week 16, the layer from Week 17, the four gradient arrays from Week 18. **Not one new idea today** — the whole week is assembly, and that is why it fits in one lesson. |
+| **What carries forward** | Week 22 rebuilds this exact architecture in `nn.Sequential` and proves the parameter shapes are identical, number for number. Week 26 scales the same idea up until it reads handwriting. And the three ways you broke it today — all-zero weights, `lr = 20`, one hidden unit — are three of the commonest real failures you will ever meet. |
+| **Spiral thread** | 📦 **Model** and 🎯 **Learning signal** — two threads, wired together at last. The model is 65 numbers you initialised yourself; the signal is what moved every one of them 500 times. Neither is any use without the other, and today is the first week you have held both in one file. |
+
+> **💡 Try this:** look at the two dashed stages on the right of the map and notice what they are made
+> of. Images, CNNs, clustering, word vectors, the project you ship in Week 36 — **all of it is the file
+> you wrote today, bigger.** Nothing in the rest of this level has a part in it you have not built.
+
+---
+
 ## 🔑 Remember This
 
 - **Sixty-five knobs.** `2 × 16 + 16 + 16 × 1 + 1 = 65`. Every one gets its own slope, every epoch, 500 times: **32,500 slopes.**

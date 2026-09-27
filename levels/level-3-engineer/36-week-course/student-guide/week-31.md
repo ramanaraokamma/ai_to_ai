@@ -1039,6 +1039,34 @@ The honest version of the rule: **stopword removal is right for topic and search
 
 ---
 
+## 🧭 Where This Fits
+
+Still the same gold box — *no labels · words*, and this is the week the **words** half of that label
+finally arrives. A model only ever eats numbers, so before anything can read a review, the review has to
+become a row. Today you do that by hand, thirty-two cells of it, and then check the library's arithmetic
+against your own.
+
+![The Level 3 pipeline in Week 31: still the no labels and words tile, now words turned into columns](../figures/fig-w31-0-where-this-fits.svg)
+
+*Figure 31.0 — The pipeline in Week 31. Fourth week inside the same gold tile, and a new kind of data
+enters a map that has not changed shape since Week 1. The ↻ on stage three is black, as it has been since
+Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A document becomes a row of numbers in three moves: **choose the token rule, build the vocabulary, count.** And the moment you do that, **word order is gone** — `"the dog bit the man"` and `"the man bit the dog"` come out as the identical row, and your own code printed `True` to prove it. That was your choice, not an accident. |
+| **The one question it answers** | *"How does a model read a sentence?"* — it does not. It reads a row of counts that somebody, namely you, decided how to produce. Four different tokenizers on one sentence gave four different answers, and none of them was wrong by accident. |
+| **What it plugs into** | Week 4's one-hot encoder — this is the same idea for language, except the categories are *learned from the text* rather than listed. And Week 3's `Pipeline`, which the vectorizer joins as a step, so the vocabulary is built on the **training reviews only**. A vocabulary fitted on everything is leakage with a friendly face. |
+| **What carries forward** | Week 32 weights these counts by how rare each word is. Week 33 trains a real classifier on them — and the review Week 33 gets wrong is wrong **because of exactly what you threw away today**. |
+| **Spiral thread** | 🏷️ **Representation** and 📊 **Data** — representation, because nothing was modelled or scored today; only the **form** of the data changed. Data, because `92` words, `5,520` cells and `363` actually stored is a fact about your dataset, and it is why a sparse matrix has to exist. |
+
+> **💡 Try this:** write the three moves in the margin next to stage five — **chop · tidy · count** — and
+> under them the one sentence pair from your own corpus where a normalization choice destroyed a real
+> difference. Keep that pair. In Week 33 you will find a misclassified review with exactly that shape,
+> and you will already know why.
+
+---
+
 ## 🔑 Remember This
 
 - **A model eats numbers, so a document becomes a row of word counts.** That is bag-of-words, and it is from the 1950s, and it still works. **`the pizza was cold` → `the 1, pizza 1, was 1, cold 1`, and everything else 0.**

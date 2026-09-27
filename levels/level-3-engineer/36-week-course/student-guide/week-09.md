@@ -1130,6 +1130,32 @@ Comparing F1 across two datasets is comparing a maths mark with a history mark. 
 
 ---
 
+## 🧭 Where This Fits
+
+Third week in the same box, and the last one. The tile marked *baseline · four numbers* covers Weeks 7
+to 9, and today closes it: one honest score, then four counts, and now a single number that refuses to
+be fooled by either of them. Next week the gold moves down to the box underneath.
+
+![The Level 3 pipeline in Week 9: the baseline and four numbers tile closes with F1 and the Term 1 checkpoint](../figures/fig-w09-0-where-this-fits.svg)
+
+*Figure 9.0 — The pipeline in Week 9. The last week in this gold tile; from Week 10 the box beneath it
+lights up. The ↻ on stage three is still grey — the training loop opens in Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | When two numbers pull against each other, do not average them the friendly way. Average them the way that **punishes a lopsided pair**: `2pr ÷ (p + r)` always lands nearer the **smaller** of the two. That is why you cannot buy a good F1 by abandoning precision or by abandoning recall — the arithmetic simply will not let you. |
+| **The one question it answers** | *"Is one number ever enough?"* — and the honest answer is: sometimes, if you named it before you trained anything and you can say out loud what it ignores. |
+| **What it plugs into** | Week 8's precision and recall, which are the two numbers going in. And Week 1's promise to name one metric in advance and then live with it — this is the week you finally have a metric worth naming. |
+| **What carries forward** | Week 10 picks the threshold that F1 prefers. Week 11 prices the alternatives in pounds. Week 33 reports per-class precision and recall on text. Week 35 puts the whole report into a model card that a stranger will read without you in the room. |
+| **Spiral thread** | ⚖️ **Evaluation** and 🌍 **Impact** — evaluation because F1 is a measurement, impact because *choosing which number to publish* is a decision about whose bad day counts. That is why Term 1 closes here and not on a leaderboard. |
+
+> **💡 Try this:** count the tiles. Nine weeks in, three of the ten boxes are filled and everything
+> black on that map is work you can now do **from memory** — you proved exactly that at five stations
+> today. Write the five station names in the margin beside stage one and stage two. That is your Term 1
+> in ten words.
+
+---
+
 ## 🔑 Remember This
 
 - **One box on the form, and both single numbers can be faked.** Flag one thing: precision 1.0000. Flag everything: recall 1.0000. **Both stunts are one line of code.** F1 is the number neither stunt fools.

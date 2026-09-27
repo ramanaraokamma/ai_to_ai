@@ -328,6 +328,48 @@ The line to hold in your head all lesson: **today the student runs two experimen
 
 ---
 
+### 8. 🧭 The Growing Map — stage four closes
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. This week a whole stage finishes, and that is worth the two minutes on its own.
+
+![The Level 3 pipeline in Week 27: the images and CNNs tile closes with augmentation, transfer and the Term 3 checkpoint](../figures/fig-w27-0-where-this-fits.svg)
+
+*Figure 27.0 — Week 27's version. The last week in the gold `images · CNNs` tile; seven tiles are already
+black and this one joins them. The ↻ on stage three is black, as it has been since Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" and then "and what did it cost us?"** The box is the same gold
+   tile as the last three weeks, *images · CNNs* — and today it closes. The second half of the question
+   is this week's specific one: **the two things they tried today were both free of new data, and one of
+   them bought nothing.** `+1.30` from blanked-edge augmentation, `+0.00` from naive `np.roll`, and
+   transfer at `0.9257` frozen and `0.9665` fine-tuned against a from-scratch control of `0.9814`.
+   Pointing at the tile and saying *"that box is finished and two of our four rows were bad news"* is the
+   whole checkpoint.
+2. **Point at stage one and make them say why only the training set got augmented.** The rule is from
+   Week 6 and the box is still on the map: five shifted copies of a **validation** picture would be five
+   chances to memorise the same answer. *"Which stage did we obey when we augmented?"* — they should
+   point left, at `SPLIT HONESTLY`, not at stage four.
+3. **Then point at stage five and say what next week is.** *"Everything we have done for twenty-seven
+   weeks had a `y` column. Next week the answer column goes away."* That is the honest headline for Term
+   4, and one sentence of it today saves five minutes next lesson.
+
+> **🧑‍🏫 Why this is worth two minutes.** Today's results table contains two disappointments, and a class
+> that only sees the table goes home thinking the lesson failed. The map reframes it: **the tile went
+> black anyway.** Closing a stage is about being able to run the experiment and report it, not about the
+> experiment coming out the way the textbook promised. That distinction is the entire difference between
+> Level 2 and Level 3, and the picture is where it lands.
+
+**One thing to notice, so you can answer if asked.** The threads this week are `data` and `evaluation` —
+the same pair as Week 6, and that is deliberate. This is the first week the class **manufactured** rows
+rather than collecting them, which is a data move, and every claim they made about those rows came with a
+control beside it, which is an evaluation move. If somebody asks why `model` is dark in a week that
+trained six networks, the answer is good: **nothing new about the model changed today.** They reused Week
+26's architecture four times over.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 30 minutes the night before

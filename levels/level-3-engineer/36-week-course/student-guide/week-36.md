@@ -760,6 +760,32 @@ predict.py: error: unrecognized arguments: food and a rude driver
 
 ---
 
+## 🧭 Where This Fits
+
+Look at it properly this time. **There is not one dashed box left on the page.** Thirty-six weeks ago
+almost every box on this map was a grey outline with a week number in it, and the only solid thing was
+stage one. This is the only week of the whole level where the picture is finished.
+
+![The Level 3 pipeline in Week 36: the last tile closes and every box on the map is solid](../figures/fig-w36-0-where-this-fits.svg)
+
+*Figure 36.0 — The pipeline in Week 36. Ten tiles, five stages, nothing dashed. The ↻ on stage three is
+black, as it has been since Week 12 — the week you opened the loop.*
+
+| | |
+|---|---|
+| **The mental model you now own** | You can hand a stranger **three things** — the artifact, the card that says where it breaks, and the log that proves it ran — and **defend every number in all three.** That is the whole level in one sentence. Its companion is the one you learned in Week 1 and have not been allowed to forget since: **a number you cannot reproduce is still not a result.** |
+| **The one question it answers** | *"Can I defend every number on this page?"* — with a number in every answer, no banned words, and the caveat volunteered before anybody has to ask for it. |
+| **What it plugs into** | All thirty-six weeks, and most sharply three of them: Week 1's five decisions, which became the contract; Week 18's gradients worked out by hand, which is why nothing in a training loop is magic to you; and Weeks 34–35's shipped service, which is the thing sitting on your laptop right now. |
+| **What carries forward** | **Level 4** — the same discipline pointed at models you did **not** train yourself, and at systems where the loop is somebody else's. The map changes. The question *"where is the baseline, and what is the `n`?"* does not. |
+| **Spiral thread** | 🌍 **Impact** and ⚖️ **Evaluation** — the two lit on the last day, which is the right pair to finish on. Every other thread on that strip exists to make these two answerable. |
+
+> **💡 Try this:** turn to the inside cover of your notebook, where in Week 1 you copied the five stage
+> names in pencil with room underneath. Fill in the last gap. Then, underneath the lot, write the eight
+> questions — **and the number you would answer each of them with today.** That page is what you take into
+> Level 4.
+
+---
+
 ## 🔑 Remember This
 
 - **Two rules today: a new terminal, and a number in every answer.** Both are mechanical, and the second one is the whole of Level 3.

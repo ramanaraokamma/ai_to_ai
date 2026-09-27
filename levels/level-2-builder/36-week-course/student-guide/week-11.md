@@ -1088,7 +1088,7 @@ is gold, and the one lit pill at the bottom is representation.*
 | **The one question it answers** | *"How do I hold twenty scores without inventing twenty variable names?"* — one name, twenty slots, and a number to say which slot you mean. |
 | **What it plugs into** | Week 2's box that held **one** value now holds many. And Week 7's loop finally has something real to walk along, instead of counting to a number you typed in by hand. |
 | **What carries forward** | Week 12 takes **slices** of a list and calls `sorted()` on it. Week 14 has a list where every slot is a whole **row** of a table. Week 17 has an **array** — a list that also knows its own shape, and is the thing every machine-learning library actually eats. |
-| **Spiral thread** | 🧩 **Representation** — on its own this week. Choosing to store twenty scores as one list rather than twenty names is a *representation* decision, and it is the same kind of decision as choosing what the columns of a dataset should be in Week 21. |
+| **Spiral thread** | 🏷️ **Representation** — on its own this week. Choosing to store twenty scores as one list rather than twenty names is a *representation* decision, and it is the same kind of decision as choosing what the columns of a dataset should be in Week 21. |
 
 > **💡 Try this:** on your pencil map, draw five little boxes in a row under the functions-and-lists
 > tile and number them **0 1 2 3 4**. Write `len = 5` above them. Everything that goes wrong with lists

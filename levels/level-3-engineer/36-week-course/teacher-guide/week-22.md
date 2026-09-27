@@ -309,6 +309,47 @@ The sentence to keep in your head: **today the student stops writing the layer a
 
 ---
 
+### 7. 🧭 The Growing Map — the same box, the fourth of five weeks
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. This week nothing moves, and the two minutes are spent saying why a week that wrote less
+code than any week since January is not a small week.
+
+![The Level 3 pipeline in Week 22: still the numpy and PyTorch tile, now real layers and a validation curve](../figures/fig-w22-0-where-this-fits.svg)
+
+*Figure 22.0 — Week 22's version. Fourth week inside the gold `numpy brain · PyTorch` tile. The ↻ on stage
+three is black, as it has been since Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" and then "what did we replace?"** The box is the same gold tile as
+   the last three weeks, *numpy brain · PyTorch*. The thing they replaced is on the wall: the
+   **PARAMETER COUNT** sheet says **65** in both columns, `by hand` and `PyTorch`. *"Same four grids, same
+   sixty-five numbers, one of them transposed. `nn.Linear` did not give us anything new — it gave us
+   Week 19 in one line."*
+2. **Point at the ↻ on stage three and connect it to `overfit.png`.** It has been black since Week 12
+   because the loop is open. *"That symbol is the loop we opened in the spring. Today we ran it fifteen
+   hundred times and learned that the last fourteen hundred and sixty of those were making the model
+   worse."* Then the dashed line at **epoch 39** on the screen is the whole point of the map this week:
+   knowing when to stop is a thing you can only see from outside the loop.
+3. **Point at stage five and say what is not coming yet.** `NEW SHAPES & SHIP` is still dashed. Somebody
+   will ask whether this is "real deep learning now". *"This is real PyTorch, on four hundred rows, with
+   sixty-five weights. It is exactly the real thing, small. What is behind the dashed boxes is not more
+   real — it is different problems."*
+
+> **🧑‍🏫 Why this is worth two minutes.** Week 22 feels like a step backwards to a certain kind of
+> student — forty lines became four, and "we didn't build anything". The map fixes that framing in one
+> glance: the gold box has not moved, so nothing was skipped, and the four lines *contain* the forty.
+> A learner who sees that stops equating typing with learning.
+
+**One thing to notice, so you can answer if asked.** The threads are `model` and `learning signal`, and
+`learning signal` is lit because of `BCEWithLogitsLoss`, not because of the optimiser. If a student asks
+why `evaluation` is dark in a week that plotted a validation curve, that is a genuinely good question —
+the answer is that the curve was used to **choose when to stop training**, which is steering, not
+reporting. Evaluation lights up again in Week 26 when there is a test score to publish.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes the night before

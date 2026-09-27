@@ -1329,6 +1329,32 @@ The room got the `0.002492` first and was slightly disappointed. Then `tol=1e-8`
 
 ---
 
+## 🧭 Where This Fits
+
+Look for the badge — it has **moved down a row**. The first tile of stage three is plain white now,
+finished, and *descent · neuron · layer* is the gold one. That tile is four weeks long, and it starts
+with the biggest reveal of the year: today you write `fit()`.
+
+![The Level 3 pipeline in Week 15: the descent, neuron and layer tile opens with your own gradient descent loop](../figures/fig-w15-0-where-this-fits.svg)
+
+*Figure 15.0 — The pipeline in Week 15. The first tile of INSIDE THE LOOP is done; the second one opens.
+The ↻ has been black since Week 12, and this week you finally run it yourself.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Training is **four lines in a loop**: predict, measure the loss, get one slope per knob, step every knob against its slope. Repeat. That is the whole algorithm, and **that loop is what `fit()` was doing all along** — for every model you have used since Level 2. |
+| **The one question it answers** | *"So this is what `fit()` was doing?"* — and the answer is yes, exactly this, just with more knobs and faster arithmetic. |
+| **What it plugs into** | Week 12's slope, Week 13's sigmoid and Week 14's log loss. Three weeks that each looked like a separate idea, and this is the week they turn out to be three parts of one machine. Take any one of them away and the loop does not run. |
+| **What carries forward** | Weeks 16, 17 and 18 put a **network** where the straight line was — the loop does not change, only the thing inside it. Week 19 runs this loop on a real brain built from scratch. And in Week 21, two of your four lines collapse into `optimizer.step()`, which you will not be impressed by, because you know what it does. |
+| **Spiral thread** | 🎯 **Learning signal** and 📦 **Model** — two threads, because this is the week the signal and the model are wired together. Up to now the weights sat still while you measured things. Today the measurement **moves the weights**. |
+
+> **💡 Try this:** find any model you fitted in Level 2 — the kNN, the tree, the linear regression — and
+> write next to it, in pencil, the four lines of your loop. Most of them do not train this way. That is
+> worth knowing too: gradient descent is not how *every* model learns, it is how **every neural network**
+> learns, and that is where the rest of this level goes.
+
+---
+
 ## 🔑 Remember This
 
 - **The gradient is one slope per knob, kept in a list.** Three knobs, three numbers: `[−0.375, +0.125, 0.000]`. Not one number — that is the mental shift of the week.

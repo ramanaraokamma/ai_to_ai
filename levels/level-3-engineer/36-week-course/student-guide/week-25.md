@@ -798,6 +798,31 @@ The same is true of every squash — sigmoid, tanh, ReLU. They are **element-by-
 
 ---
 
+## 🧭 Where This Fits
+
+Same gold tile as last week — *images · CNNs* is a four-week tile and this is the second of the four.
+Nothing on the map moves, because nothing trains today. This is the week you learn to work out, in pen,
+what shape comes out of a layer before you let a computer tell you.
+
+![The Level 3 pipeline in Week 25: still the images and CNNs tile, now the output-size rule done on paper](../figures/fig-w25-0-where-this-fits.svg)
+
+*Figure 25.0 — The pipeline in Week 25. Second week inside the same gold tile, and the quietest week in
+the stage: no training, one division. The ↻ on stage three is black, as it has been since Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Work the size out **before** you run it: **`(n + 2p − k) ÷ s + 1`, rounded down**, layer by layer, until you reach the one number the `Linear` after `Flatten` needs. If you cannot do it on paper, the shape error will do it for you — and it will print two numbers, one of which you typed yourself. |
+| **The one question it answers** | *"What number does the `Linear` layer want?"* — channels × height × width, after every conv and every pool has had its turn. |
+| **What it plugs into** | Weeks 16–17's shape discipline — **print the shape first, every time** — and Week 24's kernel, which is the `k` in the rule. The rule is not new maths; it is the count you already did with a card on squared paper, written shorter. |
+| **What carries forward** | Week 26 cannot build its classifier head without this number. Week 27's frozen backbone reuses exactly these sizes, layer for layer. And for the rest of the level, "predict the shape, then check it" is how you read any architecture diagram you meet. |
+| **Spiral thread** | 🏷️ **Representation** — lit alone. One thread, because the only thing that changed today is **the shape the picture is written in** as it moves down the stack. No weights moved, no score was measured, nothing was trained. |
+
+> **💡 Try this:** write your favourite six-layer stack on one side of a card and the six shapes it produces
+> on the other. Test yourself on it next week before `digits_cnn.py` runs. Getting all six right from
+> memory means the commonest error in this whole level can no longer stop you for more than a minute.
+
+---
+
 ## 🔑 Remember This
 
 - **A window's count, not its size, is what the rule gives you.** `out = (n + 2p − k) ÷ s + 1`, rounded down, applied to height and width **separately**, and it is the same rule for a conv and for a pool.

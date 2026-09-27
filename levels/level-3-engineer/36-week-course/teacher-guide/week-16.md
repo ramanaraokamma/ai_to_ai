@@ -354,6 +354,41 @@ The line to hold all lesson: **one neuron, three inputs, three squashes, and the
 
 ---
 
+### 10. 🧭 The Growing Map — the same box, the second of four weeks
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. This week nothing moves, and the two minutes are spent explaining why that is fine.
+
+![The Level 3 pipeline in Week 16: still the descent, neuron and layer tile, now one neuron by hand](../figures/fig-w16-0-where-this-fits.svg)
+
+*Figure 16.0 — Week 16's version. Second week inside the gold `descent · neuron · layer` tile. The ↻ on
+stage three is black, as it has been since Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" and then "which word?"** The box is the same gold tile as last
+   week, *descent · neuron · layer*. The word is **neuron** — the second of four weeks in a four-week
+   tile. Week 15 was descent, Week 17 is the layer, Week 18 is what holds them together.
+2. **Anchor it on the three lines of substitution.** `out = 1.1x₁ + 0.4x₂ + 0.3` is still on the board:
+   two layers with no squash between them, collapsed into one straight line. *"That is why the word in
+   this box is neuron and not just weighted sum. The squash is the difference, and without it this box
+   would not need to exist."*
+3. **Point at stage four and say what it is not.** `REAL NETWORKS` is still dashed. *"We built what a
+   network is made of, not a network. The twenty-circle picture is Week 19."* Students who have seen
+   neural networks online often assume they are behind; the dashed box is the honest answer.
+
+> **🧑‍🏫 Why this is worth two minutes.** The temptation this week is to feel small — one neuron, three
+> inputs, done by hand. The map reframes the scale: everything in the two dashed stages on the right is
+> made of the thing they built today, thousands of times over. That is not a small week, it is the
+> smallest possible complete unit.
+
+**One thing to notice, so you can answer if asked.** The threads changed: `representation` is lit
+alongside `model`, and `learning signal` went dark for one week. That is deliberate — nothing trained
+today. The squashed activation is a **new description of the row**, which is representation, and it is
+the same idea as Week 4's scaling wearing different clothes.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

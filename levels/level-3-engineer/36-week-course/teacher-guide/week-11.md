@@ -348,6 +348,49 @@ The average and the wobble. **`.std()` on a numpy array gives the *population* s
 
 ---
 
+### 10. 🧭 The Growing Map — where Week 11 sits
+
+The student guide carries the same figure every week with one more piece filled in. Today it earns its
+keep twice: **stage two finishes**, and the figure is about to change character next week.
+
+![The Level 3 pipeline in Week 11: the threshold and cost tile closes with a price list and five folds](../figures/fig-w11-0-where-this-fits.svg)
+
+*Figure 11.0 — Week 11's version. The last unfinished box in stages one and two is gold. After today
+there is not a dashed line left in either stage. The ↻ on stage three is drawn grey for the last time —
+it turns black next week.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it, don't explain it.** Ask *"which box did we do today?"* They point at the gold tile —
+   *threshold · cost* — and it is the same box as last week, now being closed. Pointing is the exercise.
+2. **Then the question that belongs to this week.** Hold up the price-list card —
+   `a miss costs £500 · a false alarm costs £10` — and ask *"which box on the map was that card for?"*
+   The one that just went gold, and it is the only card all term with money on it. Then the second half,
+   pointing at `AUC = 0.628 ± 0.087` on the board: *"and the plus-or-minus — same box, or a different
+   one?"* Same box. Stage two is where a number stops being **a** number.
+3. **Then count the dashes.** Ask them to find a dashed line inside stage one or stage two. There isn't
+   one. *"Everything left on this map is about building the thing that learns."* That is the last thing
+   you say about Term 1.
+
+> **🧑‍🏫 Why this is worth two minutes.** A learner who can see the map can distinguish *"I don't
+> understand this week"* from *"I don't know where this week goes"* — and at a stage boundary it also
+> gives the class a real sense of having finished something, which is hard to manufacture any other way.
+
+**Two things to notice, so you can answer if asked.**
+
+- **Evaluation and impact are lit together.** Evaluation for the five folds and the `±`. Impact for the
+  cost matrix, which is the most honest document in this course: somebody writing down in pounds whose
+  bad day matters more. §2 is where that lands, and this is where you name it.
+- **The ↻ on stage three is grey for the last time.** It is the training loop, and **next week the symbol
+  turns black** and stays black. Promise it out loud — it is a genuinely good cliffhanger, and it costs
+  you nothing to give away because the *how* takes six weeks.
+
+> **⚠️ Watch out:** the map is orientation, not assessment. Never quiz them on it. And resist finishing
+> the lesson on the AUC number — finish it on the price list, which is the only idea in the week that
+> nobody can look up.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes the night before

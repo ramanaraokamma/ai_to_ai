@@ -923,6 +923,32 @@ If you missed it, here is the whole lesson. You need a laptop, a pen, and twenty
 
 ---
 
+## 🧭 Where This Fits
+
+Level 3 is one pipeline: a table goes in, and a model **somebody else can trust** comes out. Look at the
+map and notice what has **not** moved — you are standing in the same gold box as last week. Deciding how
+to cut a table up is a three-week job, not a five-minute one, and this is week two of it.
+
+![The Level 3 pipeline in Week 2: still the decisions and split tile, now three piles instead of two](../figures/fig-w02-0-where-this-fits.svg)
+
+*Figure 2.0 — The pipeline in Week 2. The gold tile has not moved: Week 1 decided the split, Week 2 makes
+it three piles instead of two. The ↻ on stage three is the training loop, still grey — you open it in
+Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | **Three piles, three jobs.** Train is what the model **learns** from, validation is what you **choose** with, and test is opened **exactly once**. And here is the sharp edge of it: *any number you tuned against is a number you have partly fitted* — so **choosing counts as fitting**. That single sentence is the whole reason a third pile has to exist. |
+| **The one question it answers** | *"Which pile did this number come from?"* — ask it of every score anybody shows you, starting with the ones you printed yourself today. |
+| **What it plugs into** | Week 1's chosen metric, which now has somewhere honest to be measured, and the audit's class balance — **0.7119 not late**. `stratify` is the thing that keeps that balance in all three piles, and not just in the table you started with. |
+| **What carries forward** | Week 7 scores every ablation on the validation pile. Week 11 throws away one split and uses five folds instead. And the test pile stays **shut** until the capstone in Week 34 — thirty-two weeks of not touching it. |
+| **Spiral thread** | 📊 **Data** and ⚖️ **Evaluation**, lit together. Data, because you cut 2000 rows into **1200 / 400 / 400** and then printed the late-rate inside each piece to check nothing went lopsided. Evaluation, because a baseline is the zero on the ruler every score you report for the rest of the year is measured against. |
+
+> **💡 Try this:** on the inside cover of your notebook, under stage one, write **"3 piles"**, and under
+> that **"test pile: opens Week 34"** with today's date beside it. When you finally open that pile in the
+> spring, the date is your proof that you kept it shut.
+
+---
+
 ## 🔑 Remember This
 
 - **Choosing is a kind of fitting.** Twenty models that were pure dice rolls; the best scored **0.5853** on the pile it was chosen with, **0.5125** on the pile that had no say. **0.0853 of fake score, bought by looking.**

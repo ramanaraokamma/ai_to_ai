@@ -1218,6 +1218,33 @@ And the version that actually matters: **if these were people rather than bottle
 
 ---
 
+## 🧭 Where This Fits
+
+Third week in the same gold box. Week 28 gave you clusters, Week 29 gave you axes to draw them on, and
+this week the two get pointed at one job: **deciding whether the groups are real, and then saying what
+they are** in words a person can argue with.
+
+![The Level 3 pipeline in Week 30: still the no labels and words tile, now clusters with names they can defend](../figures/fig-w30-0-where-this-fits.svg)
+
+*Figure 30.0 — The pipeline in Week 30. Third week inside the same gold tile. Look how much of the map is
+black now: everything today's argument leans on, you built yourself. The ↻ on stage three is black, as it
+has been since Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | **A cluster is a claim, not a result.** Before it counts, it needs three things: two *independent* pieces of evidence for how many clusters there are, a feature-means table in the original units, and a human name you can say out loud and defend from that table. A cluster number is not a name. |
+| **The one question it answers** | *"How do I know there are three clusters and not four?"* — you do not know from one number. The elbow said `381.1 ÷ 97.2 = 3.9` and the silhouette peaked at `0.2849` at `k = 3`: two votes, agreeing, and the modest score is the honest one — the clusters are real **and** they touch. |
+| **What it plugs into** | Weeks 28 and 29's k-means and PCA, both doing a job today instead of a demonstration. And Week 7's ablation discipline: adding the cluster ID as a feature is **one change, one measurement, one row** — which is how you found out it bought `54 of 54` (nothing) on 124 training rows and `141 → 145 of 148` on 30. |
+| **What carries forward** | Week 33 reuses the PCA scatter on reviews instead of wines. And Week 34's contract has to state, in writing, what a cluster label may and may not be used for — because by then somebody else is reading your names. |
+| **Spiral thread** | ⚖️ **Evaluation** and 🏷️ **Representation** — evaluation, because the negative control on pure noise (`0.1774`) is the only reason `0.2849` means anything at all. Representation, because a cluster ID and two components are **five new columns**, and this week you made them earn their place. |
+
+> **💡 Try this:** write your three cluster names in the margin beside stage five, and under each one the
+> three numbers from the feature-means table that justify it. Then cover the names and read only the
+> numbers to somebody. If they can guess the name, it was a good name. If they cannot, the name was
+> decoration — and this week's rule is that a name nobody can defend from the table gets torn up.
+
+---
+
 ## 🔑 Remember This
 
 - **The silhouette for one point is two averages and a subtraction, with real distances.** `a = 1.7071`, `b = 7.8943`, `(7.8943 − 1.7071) ÷ 7.8943 = 0.7838` — and `silhouette_samples` prints exactly 0.7838. **Use squared distances instead and you get a plausible-looking 0.9519, which is wrong.**

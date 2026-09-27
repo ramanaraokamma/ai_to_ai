@@ -338,6 +338,46 @@ The line to keep in your head all lesson: **today the student writes a contract,
 
 ---
 
+### 8. 🧭 The Growing Map — how to use it, this week and every week
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. It is the only thing in this course that shows the learner the *shape* of the year
+rather than this week's content.
+
+![The Level 3 pipeline in Week 1: the first tile of SPLIT HONESTLY is filled in](../figures/fig-w01-0-where-this-fits.svg)
+
+*Figure 1.0 — Week 1's version. Five stages, ten tiles, one gold. The ↻ on stage three is the training
+loop, drawn grey because it stays closed until Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it, don't explain it.** Ask *"which box did we do today?"* They point at the gold tile —
+   *decisions and the split*. Pointing is the exercise.
+2. **Then the question that sets up the whole term:** *"why is the first stage called SPLIT **HONESTLY**?
+   What would dishonestly look like?"* You are not looking for a right answer today. You are planting
+   the idea that every stage in this pipeline can be done in a way that produces a number you cannot
+   defend — which is the difference between Level 2 and Level 3.
+3. **Have them copy the five stage names into the inside cover of their notebook**, in pencil, with room
+   underneath. They add to it every week. By March it is the best revision aid they own.
+
+> **🧑‍🏫 Why this is worth two minutes.** A learner who can see the map can distinguish *"I don't
+> understand this week"* from *"I don't know where this week goes"* — and those need completely different
+> help from you. Without the map, both arrive as "I don't get it."
+
+**Two things to notice, so you can answer if asked.**
+
+- **Six threads, not seven.** Level 2's strip had a seventh, `toolcraft`, because its first nine weeks
+  taught programming rather than any AI idea. It is gone now: the learner can already program, so every
+  week here advances one of the six. If a student spots the change, that is a good spot — tell them why.
+- **The loop symbol is grey on purpose.** Stage three is the training loop, and it stays closed until
+  Week 12. When it opens, the symbol turns black. Do not explain the loop today; if asked, *"that's the
+  bit that does the learning, and we spend six weeks taking it apart in the spring"* is enough.
+
+> **⚠️ Watch out:** the map is orientation, not assessment. Do not quiz them on it. If they cannot
+> remember which thread this week was, that costs nothing.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes the night before

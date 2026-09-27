@@ -1096,6 +1096,31 @@ A delta of **exactly** 0.0000 is almost never a feature that does nothing. **It 
 
 ---
 
+## 🧭 Where This Fits
+
+You are still in the same gold tile as last week — *scaling · features* — because this is the half of it
+called **features**. Last week you put the columns you were given on one ruler. This week you make columns
+nobody gave you, and then you prove whether they were worth making.
+
+![The Level 3 pipeline in Week 5: still the scaling and features tile, now with columns you invented yourself](../figures/fig-w05-0-where-this-fits.svg)
+
+*Figure 5.0 — The pipeline in Week 5. Same gold tile, second week in it: the columns being scaled are now
+ones you invented. The ↻ on stage three is the training loop, still grey — you open it in Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | The column you need is usually **not in the file.** It is a ratio, a bin, or two columns multiplied together. So invent it — then measure the score **with it and without it**, change nothing else, and **delete it** if the difference is noise. Two of your four inventions bought nothing today, and the table is what told you which two. |
+| **The one question it answers** | *"Did that new column actually buy anything?"* — and the only acceptable answer is a delta to four decimal places, because `0.7843` and `0.7829` both round to `0.78`. |
+| **What it plugs into** | Week 3's `Pipeline`, which your own function now joins as a step via `FunctionTransformer`, and Week 2's validation pile, which is the only place a delta is allowed to be measured. |
+| **What carries forward** | Week 7 turns today's four rows into a full **six-row ablation table** with a planted leak hiding in it. Week 24 introduces the exact opposite idea — a network that invents its own features and never tells you their names. Knowing what a good invented column feels like is how you will judge those. |
+| **Spiral thread** | 🏷️ **Representation** and ⚖️ **Evaluation**, lit together — and they have to be. Inventing `min_per_km` is representation; **reading the delta and deleting `dist_x_weather` anyway** is evaluation. One thread without the other is either a hunch or a spreadsheet. |
+
+> **💡 Try this:** write your four invented columns on one line of your notebook and put a tick or a cross
+> and the delta next to each. **Keep the crosses.** A list of things you tried and killed, with the number
+> that killed them, is the most convincing page in any project you will ever hand in.
+
+---
+
 ## 🔑 Remember This
 
 - **Four shapes cover nearly every column you will ever invent: a FLAG, a BIN, a RATIO and an INTERACTION.** A flag answers one yes-or-no question about the row. A bin chops a number into ranges. A ratio divides one column by another. An interaction multiplies two.

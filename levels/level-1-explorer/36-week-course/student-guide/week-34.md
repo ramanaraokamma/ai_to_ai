@@ -577,7 +577,7 @@ and **evaluation**.*
 | **The one question it answers** | *"Where is the paperwork that proves what this model can and cannot do?"* Ask it of your own booth first, and then of everything else for the rest of your life. |
 | **What it plugs into** | Weeks 15 to 22, end to end — collecting, training, splitting, testing, and reporting a number honestly. Plus the Week 6 data card and the Week 33 audit, which stop being exercises today and become two of the things on your table. |
 | **What carries forward** | Week 35 builds the app and the bias report on top of exactly this, and in Week 36 a stranger who has never seen your booth asks you about all of it. Everything you write down today is something you will not have to remember later. |
-| **Spiral thread** | 🧠 **Model** — you finally build one of your own, on purpose, with a written plan — and 📏 **Evaluation** — because the split you make before you train is what makes the number at the end mean anything. |
+| **Spiral thread** | 📦 **Model** — you finally build one of your own, on purpose, with a written plan — and ⚖️ **Evaluation** — because the split you make before you train is what makes the number at the end mean anything. |
 
 > **💡 Try this:** count the dashed boxes on the map. There are none. Then count the boxes you could
 > explain out loud to somebody in your family, in one sentence each. That second number is the real

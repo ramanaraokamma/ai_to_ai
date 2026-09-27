@@ -348,6 +348,43 @@ The line to hold in your head all lesson: **today the student learns that a numb
 
 ---
 
+### 9. 🧭 The Growing Map
+
+The student guide carries **Where This Fits** — the same picture every week with one more piece filled in.
+This is the last week of stage one, so today the map is doing a bigger job than usual: it closes a stage.
+
+![The Level 3 pipeline in Week 6: the scaling and features tile closes on the three kinds of leakage](../figures/fig-w06-0-where-this-fits.svg)
+
+*Figure 6.0 — Week 6's version. Both tiles of stage one are accounted for and the stage closes here. The ↻
+on stage three is the training loop, still grey until Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask *"which box did we do today?"*** — *scaling · features*, third week in it. Then the
+   question this lesson has earned: *"we found the leak in a column. Which box did the leak actually get
+   **into** the project through?"* Trace it with a finger: `customer_called_support` was a **column
+   decision**, made in stage one, and it produced `0.9762` in stage two. **The bug and the symptom are in
+   different boxes.** That is why leakage is hard to find and why it belongs at the end of stage one.
+2. **Then close the stage out loud.** *"Count the boxes we have finished. Six weeks, two tiles, one stage —
+   and not one of them was about choosing a model."* Ask what stage one was actually about. You want some
+   version of **"deciding what the data is, honestly."** Then point at stage two and say next week the gold
+   moves for the first time since September.
+3. **Then the three forward pointers, ten seconds each:** Week 11's five folds, each of which has to stay
+   honest on its own; Week 27, where the validation images must not be augmented; Week 35, where leakage
+   shows up in production as a score that quietly decays. All three are dashed boxes on the map today. The
+   point is that this week is not a topic they are finishing, it is a check they now run forever.
+
+> **🧑‍🏫 Why this is worth two minutes.** Six weeks without a serious model is the hardest stretch of the
+> year to justify, and today is the day it justifies itself: `+0.2011` from one dishonest column against
+> `+0.0091` from four honest ones. The map is what turns that into a structural claim rather than a war
+> story — the whole of stage one exists because stages two to five inherit whatever it got wrong.
+
+**If a student asks whether the whole stage goes white next week:** yes. Both tiles solid, and the gold
+moves to *baseline · four numbers*. Worth flagging today, because a stage changing state is the clearest
+signal of progress the picture ever gives, and they should be looking for it.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes the night before

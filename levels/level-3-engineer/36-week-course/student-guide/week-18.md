@@ -1221,6 +1221,32 @@ every hidden column different?  True
 
 ---
 
+## 🧭 Where This Fits
+
+Last week in the gold box — and the box that closes is the whole of **stage three**. Six weeks ago the
+training loop was a grey ↻ you were not allowed to look inside. You have now measured a slope, turned a
+number into a chance, scored a guess, walked downhill, built a neuron, run a layer, and today you work
+out **whose fault the error was**. That is the loop, open, on the table, in pieces you made yourself.
+
+![The Level 3 pipeline in Week 18: the descent, neuron and layer tile closes with backpropagation and the Term 2 checkpoint](../figures/fig-w18-0-where-this-fits.svg)
+
+*Figure 18.0 — The pipeline in Week 18. The gold tile closes and stage three is finished: both its
+tiles are plain white. Stage four is dashed for one more week, and then the gold moves right.*
+
+| | |
+|---|---|
+| **The mental model you now own** | **Backpropagation is blame assignment.** Slopes **multiply** along a path — nudge `w` and `z` moves 3× as much, nudge `z` and the loss moves 14× as much, so nudging `w` moves the loss 42× as much. One sweep backwards therefore tells you how much each of a hundred knobs contributed to the error. And you never have to trust it: **nudge the knob and check**, which is how nine relative errors all came out below `1e-6`. |
+| **The one question it answers** | *"How much of the error was my fault, knob by knob?"* — asked of every weight and bias in the network, and answered in one pass instead of a hundred. |
+| **What it plugs into** | Week 12's measured slope and Week 17's grid multiply — blame flows back through exactly those two ideas and nothing else. The gradient check is Week 12's nudge, promoted from a way of understanding a slope to a **test you run on your own arithmetic**. |
+| **What carries forward** | Week 19 codes all four gradient arrays into a brain that runs and learns a curve. Week 20 gets the same four arrays free from `loss.backward()` and you check them against today's handwriting. And every framework you ever touch does exactly this underneath — `torch.autograd.gradcheck` is a real shipped function that does what you did today. |
+| **Spiral thread** | 🎯 **Learning signal** and 📦 **Model** — two threads. The signal, because a gradient is the only thing in this course that tells a weight which way to move. The model, because after today you know the *shape* of every gradient without thinking: it is the shape of the thing it belongs to. |
+
+> **💡 Try this:** it is the **Term 2 checkpoint**, so use the map as a revision sheet. Cover the labels
+> on stage three and say what happened in each of its seven weeks from memory. If one of the seven is
+> blank, that is your revision list — and page 18.1 is where to write it down.
+
+---
+
 ## 🔑 Remember This
 
 - **`3 × 14 = 42`.** Slopes **multiply** along a chain. Measured stage by stage and measured straight through, and the difference printed to ten decimal places was `0.0000000000`.

@@ -425,6 +425,46 @@ The line to hold in your head all lesson: **today the student turns thirteen col
 
 ---
 
+### 12. 🧭 The Growing Map — the same box, the second of six weeks
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. This week nothing on it moves, and the two minutes are spent on why a tile six weeks
+wide is a tile and not six tiles.
+
+![The Level 3 pipeline in Week 29: still the no labels and words tile, now a new pair of axes](../figures/fig-w29-0-where-this-fits.svg)
+
+*Figure 29.0 — Week 29's version. Second week inside the gold `no labels · words` tile. The ↻ on stage
+three is black, as it has been since Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" and then "which half of its name?"** Same gold tile as last week.
+   The tile says *no labels · words*, and this week is still firmly in **no labels** — PCA never saw a
+   `y` either. Words start in Week 31. Naming which half they are in stops the tile feeling like a
+   six-week blur.
+2. **Anchor it on the two spreads on the board.** The class's 30° grid found **17.4192**; PCA found
+   **18.2812**. *"Our answer was twelve degrees short and we can say by how much. That is what the box is
+   for — not a formula, a direction and a price."* Then the price itself: two components keep 55.4% of
+   the spread and miss a typical wine by `2.2550`. **A student who can quote the brochure and the invoice
+   has understood this week.**
+3. **Point at stage one and at Week 28's box.** Stage one, because unscaled PCA gave `0.9981` on the
+   first component and meant nothing at all — the same `proline` problem as last week, one box to the
+   left. And at Week 28's tile, because *"last week we could not see whether the clusters were real.
+   Now we can draw them, and next week we decide."*
+
+> **🧑‍🏫 Why this is worth two minutes.** PCA is the week where a student most easily believes they have
+> fallen behind, because the name sounds like university mathematics and the lesson was a protractor.
+> The map answers that without argument: **this is one tile, in the same row as everything else, and you
+> are inside it.** It also sets up Week 30 honestly — nothing was scored today, so nothing could be
+> judged, and next week is where the scoring arrives.
+
+**One thing to notice, so you can answer if asked.** `data` is lit beside `representation`, and the
+reason is the reconstruction error rather than the projection. Re-describing a row in two numbers is
+representation. **Measuring what the re-description destroyed, in the original units, is a fact about the
+data** — and it is the half of PCA that nearly every tutorial leaves out.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes the night before

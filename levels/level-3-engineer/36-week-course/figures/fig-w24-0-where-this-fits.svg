@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img"
+     aria-labelledby="t d" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title id="t">The Level 3 pipeline in Week 24: the images and CNNs tile opens on the convolution that keeps the neighbourhood</title>
+  <desc id="d">Five stages run left to right — split honestly, measure it, inside the loop, real networks, new
+  shapes and ship — turning a table into a model somebody else can trust. Stage one, split honestly,
+  is solid and both its tiles are finished in plain white: decisions and the split, weeks 1 to 3, and
+  scaling and features, weeks 4 to 6. Stage two, measure it, is solid with both tiles finished too:
+  baseline and four numbers, weeks 7 to 9, and threshold and cost, weeks 10 to 11. Stage three, inside
+  the loop, is solid and both of its tiles are finished as well: slope and chance and loss, weeks 12
+  to 14, and descent and neuron and layer, weeks 15 to 18. The cycle symbol on stage three is drawn in
+  black ink, as it has been since week 12, because the training loop is open. Stage four, real
+  networks, is solid because we are standing inside it, and its first tile is now finished in plain
+  white too: numpy brain and PyTorch, weeks 19 to 23. Its second tile, images and CNNs, weeks 24 to
+  27, is tinted gold and badged "you are here" — this is the week the sliding grid of weights arrives
+  and flattening is shown up for what it throws away. The whole of stage five, new shapes and ship, is
+  still dashed, meaning not yet, and so are both of its tiles: no labels and words, weeks 28 to 33,
+  and ship it and showcase, weeks 34 to 36. Between the stages, small arrows and the line: every stage
+  can be done dishonestly. Along the bottom, six threads: representation and model are both lit, and
+  data, learning signal, evaluation and impact stay white. The footer reads: Week 24 opens the second
+  tile — flattening said every pixel is an equal stranger.</desc>
+
+  <!-- ── banner ───────────────────────────── -->
+  <text x="400" y="42" text-anchor="middle" font-size="17" font-weight="700" fill="#14202B">
+    A TABLE  →  A MODEL SOMEBODY ELSE CAN TRUST</text>
+  <text x="400" y="62" text-anchor="middle" font-size="13" fill="#55636F">
+    thirty-six weeks, five stages, and one loop opened up in the middle</text>
+
+  <!-- ── stage 1: SPLIT HONESTLY ──────── -->
+  <g>
+    <rect x="26" y="82" width="140" height="52" rx="11" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <text x="96" y="104" text-anchor="middle" font-size="14" font-weight="700" fill="#14202B">SPLIT</text>
+    <text x="96" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#14202B">HONESTLY</text>
+    <rect x="26" y="146" width="140" height="58" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+    <text x="96" y="172" text-anchor="middle" font-size="12" fill="#14202B">decisions · the split</text>
+    <text x="96" y="194" text-anchor="middle" font-size="12" fill="#55636F">wk 1–3</text>
+    <rect x="26" y="244" width="140" height="48" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+    <text x="96" y="266" text-anchor="middle" font-size="12" fill="#14202B">scaling · features</text>
+    <text x="96" y="283" text-anchor="middle" font-size="12" fill="#55636F">wk 4–6</text>
+  </g>
+
+  <!-- ── stage 2: MEASURE IT ──────── -->
+  <g>
+    <rect x="178" y="82" width="140" height="52" rx="11" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <text x="248" y="113" text-anchor="middle" font-size="14" font-weight="700" fill="#14202B">MEASURE IT</text>
+    <rect x="178" y="146" width="140" height="58" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+    <text x="248" y="172" text-anchor="middle" font-size="12" fill="#14202B">baseline · four numbers</text>
+    <text x="248" y="194" text-anchor="middle" font-size="12" fill="#55636F">wk 7–9</text>
+    <rect x="178" y="244" width="140" height="48" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+    <text x="248" y="266" text-anchor="middle" font-size="12" fill="#14202B">threshold · cost</text>
+    <text x="248" y="283" text-anchor="middle" font-size="12" fill="#55636F">wk 10–11</text>
+  </g>
+
+  <!-- ── stage 3: INSIDE THE LOOP — finished, symbol still black ──────── -->
+  <g>
+    <rect x="330" y="82" width="140" height="52" rx="11" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <text x="400" y="104" text-anchor="middle" font-size="14" font-weight="700" fill="#14202B">INSIDE</text>
+    <text x="400" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#14202B">THE LOOP</text>
+    <!-- the loop glyph: a cycle arrow, black from week 12, because the loop is open now -->
+    <path d="M424 112 a 13 13 0 1 1 -9 -12" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M412 96 l4 4 -5 4" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="330" y="146" width="140" height="58" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+    <text x="400" y="172" text-anchor="middle" font-size="12" fill="#14202B">slope · chance · loss</text>
+    <text x="400" y="194" text-anchor="middle" font-size="12" fill="#55636F">wk 12–14</text>
+    <rect x="330" y="244" width="140" height="48" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+    <text x="400" y="266" text-anchor="middle" font-size="12" fill="#14202B">descent · neuron · layer</text>
+    <text x="400" y="283" text-anchor="middle" font-size="12" fill="#55636F">wk 15–18</text>
+  </g>
+
+  <!-- ── stage 4: REAL NETWORKS — we are inside it ──────── -->
+  <g>
+    <rect x="482" y="82" width="140" height="52" rx="11" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <text x="552" y="104" text-anchor="middle" font-size="14" font-weight="700" fill="#14202B">REAL</text>
+    <text x="552" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#14202B">NETWORKS</text>
+    <!-- tile A: done -->
+    <rect x="482" y="146" width="140" height="58" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+    <text x="552" y="172" text-anchor="middle" font-size="12" fill="#14202B">numpy brain · PyTorch</text>
+    <text x="552" y="194" text-anchor="middle" font-size="12" fill="#55636F">wk 19–23</text>
+    <!-- tile B: this week -->
+    <rect x="482" y="244" width="140" height="48" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+    <text x="552" y="261" text-anchor="middle" font-size="12" fill="#14202B">images · CNNs</text>
+    <rect x="490" y="266" width="124" height="22" rx="11" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2.5"/>
+    <path d="M501 277 l4 4.5 l8 -9" fill="none" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="559" y="282" text-anchor="middle" font-size="12" font-weight="700" fill="#1B7A4B">YOU ARE HERE</text>
+  </g>
+
+  <!-- ── stage 5: NEW SHAPES &amp; SHIP ──────── -->
+  <g>
+    <rect x="634" y="82" width="140" height="52" rx="11" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="704" y="104" text-anchor="middle" font-size="14" font-weight="700" fill="#55636F">NEW SHAPES</text>
+    <text x="704" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#55636F">&amp; SHIP</text>
+    <rect x="634" y="146" width="140" height="58" rx="10" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="704" y="172" text-anchor="middle" font-size="12" fill="#55636F">no labels · words</text>
+    <text x="704" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="#55636F">wk 28–33</text>
+    <rect x="634" y="244" width="140" height="48" rx="10" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="704" y="266" text-anchor="middle" font-size="12" fill="#55636F">ship it · showcase</text>
+    <text x="704" y="283" text-anchor="middle" font-size="12" font-weight="700" fill="#55636F">wk 34–36</text>
+  </g>
+
+  <!-- ── flow arrows ──────────────────────── -->
+  <g stroke="#55636F" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M168 108 L174 108"/><path d="M169 103 l6 5 -6 5"/>
+    <path d="M320 108 L326 108"/><path d="M321 103 l6 5 -6 5"/>
+    <path d="M472 108 L478 108"/><path d="M473 103 l6 5 -6 5"/>
+    <path d="M624 108 L630 108"/><path d="M625 103 l6 5 -6 5"/>
+  </g>
+  <text x="400" y="312" text-anchor="middle" font-size="12" fill="#55636F">
+    every stage can be done dishonestly — that is what makes this the engineering year</text>
+
+  <!-- ── six threads, representation and model lit ──────────── -->
+  <g font-size="12" text-anchor="middle">
+    <rect x="26" y="336" width="118" height="24" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <text x="85" y="352" fill="#55636F">data</text>
+    <rect x="152" y="336" width="118" height="24" rx="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2.5"/>
+    <text x="211" y="352" font-weight="700" fill="#14202B">representation</text>
+    <rect x="278" y="336" width="118" height="24" rx="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2.5"/>
+    <text x="337" y="352" font-weight="700" fill="#14202B">model</text>
+    <rect x="404" y="336" width="118" height="24" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <text x="463" y="352" fill="#55636F">learning signal</text>
+    <rect x="530" y="336" width="118" height="24" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <text x="589" y="352" fill="#55636F">evaluation</text>
+    <rect x="656" y="336" width="118" height="24" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+    <text x="715" y="352" fill="#55636F">impact</text>
+  </g>
+  <text x="400" y="378" text-anchor="middle" font-size="13" fill="#55636F">
+    Week 24 opens the second tile: flattening said every pixel is an equal stranger.</text>
+</svg>

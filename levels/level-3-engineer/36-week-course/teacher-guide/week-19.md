@@ -425,6 +425,45 @@ The line to hold all lesson: **today you finish the thing. It is 65 numbers, you
 
 ---
 
+### 10. 🧭 The Growing Map — the week the gold box finally moves
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one
+more piece filled in. Today it moves for the first time since Week 15, and it moves into a new stage.
+On a project week the map is also your wrap-up, so it is worth the full two minutes.
+
+![The Level 3 pipeline in Week 19: stage four opens with NumPy Brain in the numpy and PyTorch tile](../figures/fig-w19-0-where-this-fits.svg)
+
+*Figure 19.0 — Week 19's version. Stage three is finished in plain white; `REAL NETWORKS` goes solid
+and the gold badge is inside it. The ↻ on stage three stays black, as it has since Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" — and let them notice it moved.** After four weeks of pointing at
+   the same tile, somebody will spot it: the gold is now `numpy brain · PyTorch`, weeks 19 to 23, and
+   stage three behind it has gone plain white. *"You finished a stage last week. Today you started a
+   new one — and you started it with a network you wrote yourself."*
+2. **Anchor it on the two numbers on their screens.** `4.792e-08` and `0.9350`. *"The first says your
+   backward pass is right. The second says the model works. In that order, always — the gradient check
+   comes before the accuracy, because a wrong backward pass still trains and never tells you."* Then
+   point at the three-panel `boundary.png`: *"panel three is why stage three had to come first."*
+3. **Point at the tile's own name and at the two stages still dashed.** The tile reads `numpy brain ·
+   PyTorch`: half of it is done today, and PyTorch is the other four weeks. *"Everything in the two
+   dashed stages — pictures, clusters, words, your showcase project — is what you built today, bigger.
+   There is no part of it you have not now written from scratch."*
+
+> **🧑‍🏫 Why this is worth two minutes.** On a project week students judge themselves by how much
+> typing they did, and today's file is forty lines. The map converts forty lines into eight weeks: the
+> gold box moving is the visible receipt for Weeks 12 to 18. Learners who have quietly been wondering
+> whether the maths was going anywhere get their answer here, and it is the answer that carries them
+> into PyTorch next week willing to believe there is nothing magic in it.
+
+**One thing to notice, so you can answer if asked.** `learning signal` is lit beside `model` — the
+first week since Week 15 that it has been on — and `evaluation` is dark despite a test accuracy being
+printed. That is defensible in one sentence: *"we reported one number on one split, which is Week 7
+work, not new evaluation."* If a student argues the other way, they are arguing well; tell them so.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 30 minutes the night before

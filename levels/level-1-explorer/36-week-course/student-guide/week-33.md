@@ -649,7 +649,7 @@ plain with its full range, weeks 31 to 33. One dashed box is left: YOUR OWN AI. 
 | **The one question it answers** | *"Which group does my model let down, and what would fixing it cost?"* — and the honest answer has a number in both halves. |
 | **What it plugs into** | Week 31's four links, which you now run on your own data instead of somebody else's story. Week 22's four numbers, which is where you learned that one figure describes nobody. And Week 18's written-down-first prediction, which is why the envelope is sealed before you count. |
 | **What carries forward** | This poster is a capstone deliverable — it goes on the wall at the fair. Week 34 seals a fresh envelope for a brand-new model, and Week 35 turns this gap into the bias report you hand a stranger. |
-| **Spiral thread** | 📏 **Evaluation** — because a gap is a measurement, with the subtraction visible — and 🌍 **Impact** — because the last link in the chain is somebody's bad afternoon, not a percentage. |
+| **Spiral thread** | ⚖️ **Evaluation** — because a gap is a measurement, with the subtraction visible — and 🌍 **Impact** — because the last link in the chain is somebody's bad afternoon, not a percentage. |
 
 > **💡 Try this:** look at the map and notice that WHO IT FAILS sits in the same row and the same
 > branch as THE TABLE and HONEST TESTING. That is not decoration. Fairness got measured today with the

@@ -346,6 +346,41 @@ The line to hold all lesson: **today you learn what `predict_proba` was doing.**
 
 ---
 
+### 10. 🧭 The Growing Map — the same box, the middle week
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. This week, deliberately, almost nothing moves — and saying so out loud is the whole
+two minutes.
+
+![The Level 3 pipeline in Week 13: still the slope, chance and loss tile, now the sigmoid squasher](../figures/fig-w13-0-where-this-fits.svg)
+
+*Figure 13.0 — Week 13's version. The same gold tile as last week, second of its three weeks. The ↻ on
+stage three stays black, as it has been since Week 12.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Ask "which box did we do today?" and then "did it move?"** They point at the same gold tile,
+   *slope · chance · loss*, and the honest answer to the second question is **no**. Then the useful
+   question: *"which of the three words was today?"* — **chance**. Week 12 was slope, next week is loss.
+   Three weeks, one tile, one word each.
+2. **Hold up the shared S-curve.** The eight calculator answers plotted on graph paper *are* the middle
+   third of that gold box. *"Eight of you each did one point, and between you you drew the thing that
+   turns a score into a chance."* Then the detail worth repeating: `sigmoid(0)` is **exactly** 0.5.
+3. **Point out that two threads are lit now, not one.** `model` joined `learning signal`. Ask why. The
+   answer you are fishing for: the weights and the bias are the model, the chance is what the signal
+   will judge next week. If nobody gets it, say it and move on — it costs nothing.
+
+> **🧑‍🏫 Why this is worth two minutes.** A week that does not advance the map feels to a student like a
+> week that did not count. Showing them that the tile is **three weeks wide** reframes it: they are
+> two-thirds of the way through a box, not stuck. That is the difference between *"this is going
+> nowhere"* and *"this is going somewhere in three steps."*
+
+**One thing to notice, so you can answer if asked.** The ↻ is black, and stays black for the rest of the
+level. If a student asks why it changed last week, *"that is the week we opened the training loop and we
+are still inside it"* is the whole answer.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

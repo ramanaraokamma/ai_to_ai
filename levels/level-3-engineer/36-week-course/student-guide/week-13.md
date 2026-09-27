@@ -956,6 +956,32 @@ Write `p = 0.9999` and `truth = no` on a piece of paper and leave it where you c
 
 ---
 
+## 🧭 Where This Fits
+
+Nothing on the map moves this week, and that is the point. You are in the **same gold box** as last
+week — *slope · chance · loss* is a three-week tile, and this is the middle week. Last week you did the
+slope. This week you do the chance. The ↻ on stage three stays black: the loop is open and you are
+working inside it.
+
+![The Level 3 pipeline in Week 13: still the slope, chance and loss tile, now the sigmoid squasher](../figures/fig-w13-0-where-this-fits.svg)
+
+*Figure 13.0 — The pipeline in Week 13. Same gold tile as last week, second of its three weeks. Two
+threads lit now: the model and the signal that trains it.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A weighted sum can come out as **any number at all** — −7.2, 0, 413. A probability cannot; it has to sit between 0 and 1. **Sigmoid squashes a score into a chance**, and `ln` of the odds takes you straight back the other way. So a score and a chance are not two different things. They are two views of one thing, and you can move between them in either direction. |
+| **The one question it answers** | *"How does a score turn into a chance?"* |
+| **What it plugs into** | Week 2's `predict_proba`, which always came out between 0 and 1 and never said why. Now you know why. And Week 12's habit of reading a curve **one point at a time** — that is exactly how you built the S-curve today, one calculator answer at a time. |
+| **What carries forward** | Week 14 feeds this chance straight into log loss — the `p` in `−ln(p)` is the number you produced today. Week 15 trains logistic regression *through* it. Week 16 stacks it as one of three squashes. And in Week 22 you hand it to `BCEWithLogitsLoss`, which does the squash and the loss in one go. |
+| **Spiral thread** | 📦 **Model** and 🎯 **Learning signal** — two threads, because the weights and the bias are the *model*, and the chance they produce is what the *signal* will be measured against next week. |
+
+> **💡 Try this:** on the inside cover of your notebook, under stage three, write **`z → p`** and
+> **`p → z`** with the two formulas beside them. You will use that pair of arrows every week until
+> Christmas, and once in Week 22 to check that PyTorch agrees with you.
+
+---
+
 ## 🔑 Remember This
 
 - **A weighted sum can be any number at all.** `0.6 × oven + 0.4 × km − 3` gave `−3.00` for one order and `4.40` for another, and neither is a probability. The raw score has three names: **raw score**, **`z`**, **logit**.

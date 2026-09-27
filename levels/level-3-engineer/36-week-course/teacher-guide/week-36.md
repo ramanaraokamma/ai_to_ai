@@ -204,6 +204,49 @@ The seven gates, and the honest standard for each. **"I could do it with the not
 
 ---
 
+### 9. 🧭 The Growing Map — the last box closes, and the picture is finished
+
+The student guide carries a figure called **Where This Fits**: the same picture every week with one more
+piece filled in. This is the thirty-sixth and final frame, and the only one in which **every box on the
+page is solid.**
+
+![The Level 3 pipeline in Week 36: the last tile closes and every box on the map is solid](../figures/fig-w36-0-where-this-fits.svg)
+
+*Figure 36.0 — Week 36's version. Ten tiles, five stages, nothing dashed. The ↻ on stage three is black, as
+it has been since Week 12 — the week the loop was opened.*
+
+**What to do with it, in about two minutes, at the very end of the day:**
+
+1. **Ask "which box did we do today?" and then "what is not on this map any more?"** Gold on the last
+   tile — and the thing that is gone is **every single dash.** Put Figure 1.0 up beside it if you can; in
+   Week 1 there were nine dashed tiles and four dashed stages, and the only solid box was `SPLIT
+   HONESTLY`. *"That is the same picture. You filled it in."*
+2. **Anchor it on the eight questions, one box at a time.** This is today's version of "which box did we do
+   today", and it is the best use of the map all year. Take three of the eight from the wall and ask the
+   room which tile each one lives in: *"what is your baseline?"* → `baseline · four numbers`, Weeks 7–9.
+   *"How did you pick the threshold?"* → `threshold · cost`, Weeks 10–11. *"Where does it break?"* →
+   `no labels · words`, Week 33, and the card from Week 35. **Every question in the cross-examination has
+   an address on this map** — say that, because it reframes the paper as revision rather than an ambush.
+3. **Then the closing line, pointing at stage three.** *"That symbol has been black since Week 12. Before
+   that it was grey, and it meant 'there is a loop in there and you have not been inside it yet.' You have
+   now — you computed a gradient by hand in Week 18 and it agreed with autograd in Week 20."* Then the
+   handover: **Level 4 is the same discipline pointed at models you did not train, where the loop is
+   somebody else's** — and the questions on the wall do not change.
+
+> **🧑‍🏫 Why this is worth two minutes.** A year that ends with a marked paper ends on a number. This
+> ends it on a picture instead, and the picture is the actual achievement: ten boxes, thirty-six weeks, and
+> a shipped thing at the end of it. **It also does the one job you cannot do with a grade — it shows a
+> student who scored badly today exactly how much of that map they still built.** Do this last, after the
+> papers are collected, and let them keep looking at it.
+
+**One thing to notice, so you can answer if asked.** A student may ask why `impact` and `evaluation` are
+the two threads lit on the final day. The answer is the level's thesis in one line: **the other four
+threads are how you build the thing, and these two are how you can be trusted with it.** Every box to the
+left of the gold one exists to make today's eight answers containable in a number — which is why the
+figure's banner says *a model somebody else can trust* rather than *a model that works*.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 45 minutes, spread across the week before — not the night before

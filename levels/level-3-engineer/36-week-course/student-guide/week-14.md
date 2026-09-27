@@ -1122,6 +1122,31 @@ Print the weights, then the features, then `np.unique(y)`. **In that order.**
 
 ---
 
+## 🧭 Where This Fits
+
+This closes the tile. *Slope · chance · loss* was three weeks and three words: you measured the slope in
+Week 12, turned a score into a chance in Week 13, and today you built the **loss** — so the gold box is
+finished, and next week the badge drops down a row.
+
+![The Level 3 pipeline in Week 14: the slope, chance and loss tile closes on log loss](../figures/fig-w14-0-where-this-fits.svg)
+
+*Figure 14.0 — The pipeline in Week 14. Last of three weeks in the same gold tile; the loop symbol on
+stage three is black, as it has been since Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A **loss** turns being wrong into **one number you can take the slope of** — and that is the whole reason it exists. `−ln(p)` barely notices a near miss and **screams** at a confident disaster: 4.3 times louder than squared error does, and still climbing after that. Which is why every classifier in the world trains on log loss and not on squared error. |
+| **The one question it answers** | *"How wrong is wrong?"* — not "was I wrong", which you already had in Week 8. How wrong, as a number. |
+| **What it plugs into** | Week 13's sigmoid output, which is literally the `p` in `−ln(p)`. And Week 9's rule that you choose the number you are judged by **on purpose**, before you see any scores — today you chose it again, and this time you can defend the choice with the ratio. |
+| **What carries forward** | Week 15 takes the **slope of this loss** and that slope is the gradient. Week 22 replaces your hand-written version with `nn.BCEWithLogitsLoss`. Week 26 introduces its many-class cousin, cross-entropy. And `0.6931` goes on the wall, because a loss stuck there is a model that has learned nothing. |
+| **Spiral thread** | 🎯 **Learning signal** and ⚖️ **Evaluation** — two threads, and this is the week they meet. A loss is both at once: it is the number you *report* and the number the model is *steered by*, and knowing that a single number does both jobs is most of what Level 3 is about. |
+
+> **💡 Try this:** write `0.6931` in large digits somewhere you will see it. It is `−ln(0.5)`: the loss
+> of a model that answers "fifty-fifty" to everything. From Week 15 to Week 27, any loss curve of yours
+> that flattens out at that number means the model never learned anything at all.
+
+---
+
 ## 🔑 Remember This
 
 - **`−ln(p)` is surprise, and `p` is the chance you gave the thing that *actually happened*.** `0.9` → `0.105361`, `0.5` → `0.693147`, `0.1` → `2.302585`, `0.02` → `3.912023`.

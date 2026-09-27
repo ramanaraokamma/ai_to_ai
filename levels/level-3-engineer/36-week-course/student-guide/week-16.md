@@ -949,6 +949,31 @@ If you leave this week believing the squash is cosmetic, the week has failed eve
 
 ---
 
+## 🧭 Where This Fits
+
+Same gold box as last week — *descent · neuron · layer* is a four-week tile and this is the second of
+the four. Last week you built the **descent**. This week you build the **neuron**, and it turns out to
+be three things you could already do.
+
+![The Level 3 pipeline in Week 16: still the descent, neuron and layer tile, now one neuron by hand](../figures/fig-w16-0-where-this-fits.svg)
+
+*Figure 16.0 — The pipeline in Week 16. Second week inside the same gold tile. Stage four, REAL
+NETWORKS, is still dashed — you are building the part a network is made of, not the network.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A neuron is **three things**: multiply each input by a weight, add them up with a bias, **squash**. Stacking neurons is only interesting *because* of the squash — take it away and ten layers collapse back into one straight line, and you can prove that on paper in three lines. And print the **shape** first, every single time. |
+| **The one question it answers** | *"What is actually inside one neuron?"* — answer: nothing you have not already done with a calculator. |
+| **What it plugs into** | Week 15's weighted sum, which is a neuron **minus the squash**. And Week 13's sigmoid, which turns up today as one of the three squashes you try — this time not to make a probability, but to bend a line. |
+| **What carries forward** | Week 17 runs a whole **layer** of these at once, with one matrix multiply. Week 18 differentiates *through* the squash. Week 19 wires two layers together into something that can learn a curve. And in Week 22 your hand-written `np.maximum(0, z)` becomes `nn.ReLU()`. |
+| **Spiral thread** | 🏷️ **Representation** and 📦 **Model** — two threads, because the weights and bias are the model, and the squashed activation is a **new representation** of the row: the same delivery, re-described in the neuron's own numbers. |
+
+> **💡 Try this:** before you run anything next week, write the shape you expect on paper first — `(3,)`,
+> `(3, 2)`, `(400, 2)`. Eight out of eight is the target. Getting a shape wrong is the single most common
+> way a neural network breaks, for the whole rest of the level, and the cure is a habit you start today.
+
+---
+
 ## 🔑 Remember This
 
 - **A neuron is multiply, add, squash.** `z` is multiply-and-add and can be any number at all. `a` is the squash and it is what the neuron says.

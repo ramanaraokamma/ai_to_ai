@@ -910,6 +910,31 @@ You will read everywhere that loading inside the request handler turns a 2 ms pr
 
 ---
 
+## 🧭 Where This Fits
+
+The gold box has moved for the last time. **Look at the map: nothing on it is dashed any more.** Every
+other box is finished, and the one you are standing in is the tenth of ten. It is also the first week all
+year where the thing you hand in is **not a score** — it is a contract on paper and an artifact on disk.
+
+![The Level 3 pipeline in Week 34: the last tile opens with the contract and the frozen artifact](../figures/fig-w34-0-where-this-fits.svg)
+
+*Figure 34.0 — The pipeline in Week 34. The last tile, `ship it · showcase`, and not one dashed box left on
+the page. The ↻ on stage three is black, as it has been since Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | **Shipping starts in writing.** Six boxes, before any serving code: what one prediction is about, what goes in, what comes out, what each of the two errors costs, where the threshold came from — `10 × 1 + 1 × 1 = 11` against `10 × 0 + 1 × 5 = 5` — and what this must never be used for. **Then** the artifact is frozen, given a version in its filename and a metadata file beside it, and put behind a CLI that runs from a cold terminal with three golden tests passing. |
+| **The one question it answers** | *"What am I actually handing over?"* — and the honest answer is never "the model". It is three files, a command, and a page of writing that says where it breaks. |
+| **What it plugs into** | Week 1's five decisions, which become boxes 1, 2 and 3 of the contract almost word for word — you wrote this page in September without knowing it. Week 11's cost table, which is box 5. And Week 3's `joblib` artifact and Week 23's `state_dict`, which are the same trick as `sentiment_v1.joblib`, except now versioned, documented and tested. |
+| **What carries forward** | Week 35 puts a service, a log and a card in front of this artifact. Week 36 hands the whole thing to a stranger, from a terminal opened in front of the room — and `grep -rnE "\.fit\(" serve/` printing nothing is the evidence you will be asked for. |
+| **Spiral thread** | 📦 **Model** and 🌍 **Impact** — model, because the artifact *is* the model now, frozen and named. Impact, because box 6 is the first thing in this course whose whole content is **what you refuse to let it be used for**. |
+
+> **💡 Try this:** on the inside cover, under stage five, write the two times separately: how long the
+> model took to **load** and how long one **prediction** took. Never add them. Anybody who reports one
+> number for both has hidden something, and in Week 36 somebody will ask you for both.
+
+---
+
 ## 🔑 Remember This
 
 - **The contract comes first, and box 5 is a sum.** Where the threshold came from is a *comparison*, not a number: `10 × 1 + 1 × 1 = 11` against `10 × 0 + 1 × 5 = 5`.

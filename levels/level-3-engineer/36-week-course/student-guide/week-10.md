@@ -1045,6 +1045,32 @@ t = 0.02   for the customer whose money is actually gone:
 
 ---
 
+## 🧭 Where This Fits
+
+The box moves. The tile marked *baseline · four numbers* is plain white and solid now — three weeks of
+work, finished — and the tile underneath it has gone gold: *threshold · cost*, Weeks 10 and 11. Stage
+two has exactly one box left in it.
+
+![The Level 3 pipeline in Week 10: the threshold and cost tile of MEASURE IT opens on the threshold dial](../figures/fig-w10-0-where-this-fits.svg)
+
+*Figure 10.0 — The pipeline in Week 10. The top tile of MEASURE IT is done; the bottom one,
+threshold · cost, is where you are. The ↻ on stage three is the training loop, still grey — it opens in
+Week 12.*
+
+| | |
+|---|---|
+| **The mental model you now own** | The model hands you a **ranking**; the threshold turns that ranking into a **decision**. Slide the threshold and you trade misses for false alarms, one for the other, all the way along. The curve that trade traces out is the model's whole personality — and 0.5 was never a law, only a default somebody picked for you. |
+| **The one question it answers** | *"Why is 0.5 the cutoff?"* — and your model, whose largest probability all day was 0.1774, is the reason that question has teeth. |
+| **What it plugs into** | Week 8's four counts, which every threshold rearranges, and Week 2's `predict_proba` — the only reason you have a dial to turn at all. Take that hidden number away and there is no lesson this week. |
+| **What carries forward** | Week 11 puts a price on each threshold so the arithmetic can choose for you. Week 12 takes today's rise over run, shrinks the gap between the two points to a hair, and calls what is left a **derivative**. Week 34 writes the threshold you chose into the contract you ship. |
+| **Spiral thread** | ⚖️ **Evaluation** — lit alone again. You did not fit a single new model today. The one you already had turned out to know considerably more than it had been telling you. |
+
+> **💡 Try this:** the next time something automatic says no to you — a card declined, an email in spam,
+> a form rejected — say to yourself *"somebody chose that threshold"*. Then guess which way they leaned
+> and why. You are now one of the very few people who knows there was a dial at all.
+
+---
+
 ## 🔑 Remember This
 
 - **`predict()` is `predict_proba()` followed by `>= 0.5`.** The model produces a number between 0 and 1. The yes/no comes from a comparison that nobody chose.
