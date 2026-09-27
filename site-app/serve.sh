@@ -36,8 +36,7 @@ echo "    🎒 student passcode     ${AIA_STUDENT_PASS:-student1234}"
 echo "    🧑‍🏫 teacher passcode     ${AIA_TEACHER_PASS:-teacher1234}"
 echo
 echo "  Only the home page opens without a passcode."
-echo "  Stop with Ctrl-C. Local only — nothing is published."
-echo
 
-cd "$HERE/dist"
-exec python3 -m http.server "$PORT" --bind 127.0.0.1
+# serve.py resolves extensionless URLs the way Cloudflare Workers does; plain
+# `http.server` would 404 on every generated link.
+exec python3 "$HERE/serve.py" "$PORT"

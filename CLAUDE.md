@@ -26,6 +26,8 @@ see "Building a level" below.
 
 ```bash
 # Build + serve the website (all complete levels). Binds 127.0.0.1 only — nothing is published.
+# serve.sh runs serve.py, which resolves extensionless URLs the way Cloudflare Workers does —
+# plain `python3 -m http.server` will 404 on every generated link.
 ./site-app/serve.sh                  # → http://localhost:8000/
 ./site-app/serve.sh 9000             # different port
 ./site-app/serve.sh --rebuild        # regenerate first, after editing course markdown

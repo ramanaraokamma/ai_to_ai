@@ -175,6 +175,18 @@ for _lv in ALL_LEVELS:
 
 RAW_HTML_PREFIXES = ("<details", "</details", "<summary", "</summary", "<a id=", "</a>")
 
+# A leading emoji cluster: emoji codepoints plus variation selectors and ZWJ joiners,
+# so "⚠️" (emoji + VS16) and "🧑‍🏫" (ZWJ sequence) are captured whole.
+EMOJI_RUN = re.compile(
+    r"^((?:[\U0001F300-\U0001FAFF\u2190-\u2BFF\u2600-\u27BF\uFE0F\u200D\u20E3\u2B50]"
+    r"|[\U0001F1E6-\U0001F1FF])+)\s*")
+
+
+def split_icon(text: str) -> tuple[str, str]:
+    """('🧠 The Concept') -> ('🧠', 'The Concept'). Returns ('', text) if no leading emoji."""
+    m = EMOJI_RUN.match(text)
+    return (m.group(1), text[m.end():]) if m else ("", text)
+
 
 def slugify(text: str) -> str:
     text = re.sub(r"<[^>]+>", "", text)
@@ -319,7 +331,14 @@ class MarkdownRenderer:
                     k += 1
                 self.headings.append(Heading(level, re.sub(r"[*`]", "", raw), anchor))
                 self.plain.append(raw)
-                out.append(f'<h{level} id="{anchor}">{self.inline.render(raw)}'
+                icon, rest = split_icon(raw)
+                if icon:
+                    body = (f'<span class="sec-ic" aria-hidden="true">{icon}</span>'
+                            f'<span class="sec-tx">{self.inline.render(rest)}</span>')
+                    attrs = f' class="sec" data-ic="{html.escape(icon)}"'
+                else:
+                    body, attrs = self.inline.render(raw), ""
+                out.append(f'<h{level} id="{anchor}"{attrs}>{body}'
                             f'<a class="anchor" href="#{anchor}" aria-label="Link to this section">#</a></h{level}>')
                 i += 1
                 continue
@@ -352,7 +371,12 @@ class MarkdownRenderer:
                 inner = MarkdownRenderer(self.inline.resolve)
                 body = inner.render("\n".join(buf))
                 self.plain.extend(inner.plain)
-                out.append(f"<blockquote>{body}</blockquote>")
+                first = next((ln.strip() for ln in buf if ln.strip()), "")
+                icon, _ = split_icon(re.sub(r"^[*_#>\s]+", "", first))
+                if icon:
+                    out.append(f'<blockquote class="callout" data-ic="{html.escape(icon)}">{body}</blockquote>')
+                else:
+                    out.append(f"<blockquote>{body}</blockquote>")
                 continue
 
             # list
@@ -558,6 +582,24 @@ def build_route_map(all_docs: list[Doc]) -> dict[Path, str]:
     return m
 
 
+def clean_url(path: str) -> str:
+    """Internal routes keep `.html` on disk; links drop it.
+
+    `foo/bar.html` -> `foo/bar`, and `.../index.html` -> `.../` so the level home is a
+    directory URL. Cloudflare Workers resolves both against the real files automatically;
+    `serve.sh` installs a matching fallback so local serving behaves the same way.
+    """
+    frag = ""
+    if "#" in path:
+        path, frag = path.split("#", 1)
+        frag = "#" + frag
+    if path.endswith("index.html"):
+        path = path[: -len("index.html")]
+    elif path.endswith(".html"):
+        path = path[: -len(".html")]
+    return (path or "./") + frag
+
+
 def make_resolver(doc: Doc, routes: dict[Path, str]):
     here = Path(doc.route).parent
     lv_key = doc.level
@@ -576,17 +618,17 @@ def make_resolver(doc: Doc, routes: dict[Path, str]):
             return frag
         target = (doc.src.parent / link).resolve()
         if target in routes:
-            return rel(routes[target]) + frag
+            return clean_url(rel(routes[target])) + frag
         if target.is_dir():
             for cand in ("README.md", "index.md"):
                 if (target / cand).resolve() in routes:
-                    return rel(routes[(target / cand).resolve()]) + frag
+                    return clean_url(rel(routes[(target / cand).resolve()])) + frag
             if target.name in DIR_ALIASES:
-                return rel(f"{lv_key}/{DIR_ALIASES[target.name]}") + frag
+                return clean_url(rel(f"{lv_key}/{DIR_ALIASES[target.name]}")) + frag
             # a link to a whole level folder, e.g. ../level-2-builder/
             for lv in LEVELS:
                 if target == lv.level_dir.resolve() or target == lv.dir.resolve():
-                    return rel(f"{lv.key}/index.html") + frag
+                    return clean_url(rel(f"{lv.key}/index.html")) + frag
         # outside the generated site — flagged by the build and rendered inert
         return "unavailable:" + link + frag
 
@@ -630,7 +672,7 @@ def shell(*, doc: Doc, depth: int, nav_json: str, body: str, encrypted: bool,
     lvl_chip = ""
     if lv:
         opts = "".join(
-            f'<a href="{up}{x.key}/index.html" class="lvl-opt'
+            f'<a href="{up}{x.key}/" class="lvl-opt'
             f'{" on" if x.key == lv.key else ""}">L{x.number} · {html.escape(x.name)}</a>'
             for x in LEVELS)
         lvl_chip = (f'<div class="lvl-switch" role="group" aria-label="Level">'
@@ -653,9 +695,9 @@ def shell(*, doc: Doc, depth: int, nav_json: str, body: str, encrypted: bool,
             f'placeholder="Passcode" required></input>'
             f'<button type="submit">Unlock</button></form>'
             f'<p id="lock-msg" class="lock-msg" role="status"></p>'
-            f'<p class="lock-foot"><a href="{up}{doc.level}/index.html">← Back to '
+            f'<p class="lock-foot"><a href="{up}{doc.level}/">← Back to '
             f'Level {lv.number if lv else ""} home</a> · '
-            f'<a href="{up}index.html">All levels</a></p>'
+            f'<a href="{up}">All levels</a></p>'
             f'</div></div>'
             f'<article id="content" class="doc" hidden data-tier="{doc.mode}" '
             f'data-enc="{up}assets/enc/{doc.route.replace("/", "__")}.json"></article>')
@@ -674,11 +716,11 @@ def shell(*, doc: Doc, depth: int, nav_json: str, body: str, encrypted: bool,
 <body data-depth="{depth}">
 <a class="skip" href="#content">Skip to content</a>
 <header class="top">
-  <a class="brand" href="{up}index.html"><span class="logo">AI</span> Academy</a>
+  <a class="brand" href="{up}"><span class="logo">AI</span> Academy</a>
   {lvl_chip}
   <div class="modes" role="group" aria-label="Navigation mode">
-    <a href="{up}{doc.level}/index.html#student" class="mode-btn" data-mode-btn="student">🎒 Student</a>
-    <a href="{up}{doc.level}/index.html#teacher" class="mode-btn" data-mode-btn="teacher">🧑‍🏫 Teacher <span class="lk" aria-hidden="true">🔒</span></a>
+    <a href="{up}{doc.level}/#student" class="mode-btn" data-mode-btn="student">🎒 Student</a>
+    <a href="{up}{doc.level}/#teacher" class="mode-btn" data-mode-btn="teacher">🧑‍🏫 Teacher <span class="lk" aria-hidden="true">🔒</span></a>
   </div>
   <div class="top-right">
     <span id="who" class="who-chip" hidden></span>
@@ -793,7 +835,8 @@ def home_page(lv: Level, weeks: list[Week], docs: list[Doc], nav_json: str, coun
 
     # routes are site-absolute ("l1/chapter/…"); this page sits inside l1/, so drop the prefix
     def here(route: str) -> str:
-        return route[len(lv.key) + 1:] if route.startswith(lv.key + "/") else "../" + route
+        r = route[len(lv.key) + 1:] if route.startswith(lv.key + "/") else "../" + route
+        return clean_url(r)
 
     terms_html = []
     for idx, (num, name, lo, hi, question) in enumerate(lv.terms):
@@ -840,9 +883,9 @@ def home_page(lv: Level, weeks: list[Week], docs: list[Doc], nav_json: str, coun
 
     other = [x for x in LEVELS if x.key != lv.key]
     other_links = " · ".join(
-        f'<a href="../{x.key}/index.html">Level {x.number} {html.escape(x.name)}</a>' for x in other)
+        f'<a href="../{x.key}/">Level {x.number} {html.escape(x.name)}</a>' for x in other)
     lvl_opts = "".join(
-        f'<a href="../{x.key}/index.html" class="lvl-opt{" on" if x.key == lv.key else ""}">'
+        f'<a href="../{x.key}/" class="lvl-opt{" on" if x.key == lv.key else ""}">'
         f'L{x.number} · {html.escape(x.name)}</a>' for x in LEVELS)
 
     first_chapter = here(by_week.get(1, {}).get("chapter", "chapter/week-01.html"))
@@ -861,7 +904,7 @@ def home_page(lv: Level, weeks: list[Week], docs: list[Doc], nav_json: str, coun
 <body data-depth="1" class="home">
 <a class="skip" href="#year">Skip to the year plan</a>
 <header class="top">
-  <a class="brand" href="../index.html"><span class="logo">AI</span> Academy</a>
+  <a class="brand" href="../"><span class="logo">AI</span> Academy</a>
   <div class="lvl-switch" role="group" aria-label="Level">
     <span class="lvl-cur">L{lv.number}</span>
     <div class="lvl-menu">{lvl_opts}</div>
@@ -953,7 +996,7 @@ def root_page(level_stats: dict) -> str:
     for lv in LEVELS:
         s = level_stats[lv.key]
         cards.append(
-            f'<a class="lvl-card" href="{lv.key}/index.html" style="--lvl:{lv.accent}">'
+            f'<a class="lvl-card" href="{lv.key}/" style="--lvl:{lv.accent}">'
             f'<div class="lvl-num">Level {lv.number}</div>'
             f'<h2>{html.escape(lv.name)}</h2>'
             f'<p class="lvl-grade">{html.escape(lv.grade)}</p>'
@@ -994,7 +1037,7 @@ def root_page(level_stats: dict) -> str:
 </head>
 <body data-depth="0" class="root">
 <header class="top">
-  <a class="brand" href="index.html"><span class="logo">AI</span> Academy</a>
+  <a class="brand" href="./"><span class="logo">AI</span> Academy</a>
 
   <div class="top-right">
     <span id="who" class="who-chip" hidden></span>

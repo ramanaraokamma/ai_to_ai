@@ -514,3 +514,113 @@ body.locked-out .wk-card .done { opacity: .4; pointer-events: none; }
 .scrim[hidden] { display: none; }
 body.nav-open { overflow: hidden; }
 @media (min-width: 861px) { .scrim { display: none !important; } }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION BADGES AND CALLOUTS
+
+   The course uses a fixed vocabulary of emoji section markers (4,463 of them
+   across 42 types) and blockquote callouts (1,692 across 14 types). Before
+   this they all rendered identically — one heading style, one blue quote.
+   Colour-coding them by meaning is what makes a page scannable: a learner
+   looking for "the practice bit" finds green, the teacher finds purple.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── section headings: emoji lifted into a tinted badge ─────────────── */
+.doc h2.sec, .doc h3.sec {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: .6rem;
+  --sec: var(--muted);              /* overridden per marker below */
+}
+.doc h2.sec { border-bottom: 0; padding-bottom: 0; margin-top: 2.4em; }
+.doc h2.sec::after {                /* a hairline that starts after the badge */
+  content: ""; grid-column: 2; grid-row: 2;
+  height: 2px; border-radius: 2px; margin-top: .45rem;
+  background: linear-gradient(90deg,
+    color-mix(in srgb, var(--sec) 55%, transparent), transparent 70%);
+}
+.doc .sec-ic {
+  display: grid; place-items: center;
+  width: 2.1em; height: 2.1em; border-radius: 12px;
+  font-size: .62em; line-height: 1;
+  background: color-mix(in srgb, var(--sec) 14%, var(--pane));
+  border: 1.5px solid color-mix(in srgb, var(--sec) 42%, transparent);
+}
+.doc h3.sec .sec-ic { width: 1.9em; height: 1.9em; border-radius: 10px; font-size: .78em; }
+.doc .sec-tx { grid-column: 2; }
+
+/* the six roles, mapped by meaning */
+.doc [data-ic="🪝"], .doc [data-ic="🧩"], .doc [data-ic="🎨"],
+.doc [data-ic="🤔"]                          { --sec: var(--accent); }
+.doc [data-ic="🧠"], .doc [data-ic="🧭"],
+.doc [data-ic="🧑‍🏫"]                         { --sec: var(--model); }
+.doc [data-ic="🔍"], .doc [data-ic="🔢"],
+.doc [data-ic="📊"], .doc [data-ic="💻"]      { --sec: var(--data); }
+.doc [data-ic="🎲"], .doc [data-ic="🛠️"],
+.doc [data-ic="💬"], .doc [data-ic="📤"]      { --sec: var(--human); }
+.doc [data-ic="✍️"], .doc [data-ic="✅"],
+.doc [data-ic="🔑"], .doc [data-ic="🌍"],
+.doc [data-ic="🎯"]                           { --sec: var(--correct); }
+.doc [data-ic="⚠️"], .doc [data-ic="🐞"]      { --sec: var(--wrong); }
+
+/* ── callouts: same vocabulary, quieter treatment ───────────────────── */
+.doc blockquote.callout {
+  --sec: var(--data);
+  position: relative;
+  border: 1px solid color-mix(in srgb, var(--sec) 26%, var(--line));
+  border-left: 4px solid var(--sec);
+  background: color-mix(in srgb, var(--sec) 5%, var(--pane));
+  padding-left: 1.05em;
+}
+.doc blockquote.callout[data-ic="⚠️"]   { --sec: var(--accent); }
+.doc blockquote.callout[data-ic="💡"]   { --sec: var(--data); }
+.doc blockquote.callout[data-ic="🐞"]   { --sec: var(--wrong); }
+.doc blockquote.callout[data-ic="🧑‍🏫"]  { --sec: var(--model); }
+.doc blockquote.callout[data-ic="🔢"]   { --sec: var(--correct); }
+.doc blockquote.callout[data-ic="🔑"]   { --sec: var(--correct); }
+.doc blockquote.callout[data-ic="📌"]   { --sec: var(--muted); }
+.doc blockquote.callout[data-ic="🤔"]   { --sec: var(--accent); }
+.doc blockquote.callout[data-ic="✅"]   { --sec: var(--correct); }
+
+/* ── answer keys read as a deliberate reveal, not a stray box ───────── */
+.doc details {
+  border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--line));
+  border-left: 4px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 4%, var(--pane));
+  border-style: solid;
+}
+.doc summary { display: flex; align-items: center; gap: .5rem; }
+.doc summary::marker, .doc summary::-webkit-details-marker { content: ""; display: none; }
+.doc summary::before {
+  content: "▸"; color: var(--accent); font-size: .9em;
+  transition: transform .15s;
+}
+.doc details[open] > summary::before { transform: rotate(90deg); }
+
+/* ── code blocks get a quiet language chip ──────────────────────────── */
+.doc pre { position: relative; padding-top: 1.5em; }
+.doc pre[class="lang-python"]::before { content: "python"; }
+.doc pre[class="lang-text"]::before   { content: "output"; }
+.doc pre[class="lang-bash"]::before   { content: "terminal"; }
+.doc pre[class="lang-svg"]::before    { content: "svg"; }
+.doc pre[class*="lang-"]::before {
+  position: absolute; top: .45em; right: .8em;
+  font-family: var(--mono); font-size: .68rem; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--muted);
+}
+
+/* the next 26 markers by frequency — takes colour coverage from 84% to 98%.
+   The long tail beyond these deliberately falls back to --muted. */
+.doc [data-ic="🔮"], .doc [data-ic="🍕"], .doc [data-ic="🚀"],
+.doc [data-ic="🎤"], .doc [data-ic="🎓"]      { --sec: var(--accent); }
+.doc [data-ic="❓"], .doc [data-ic="🔁"],
+.doc [data-ic="🗺️"], .doc [data-ic="📚"]      { --sec: var(--model); }
+.doc [data-ic="🔎"], .doc [data-ic="👉"],
+.doc [data-ic="📐"], .doc [data-ic="📝"]      { --sec: var(--data); }
+.doc [data-ic="🧰"], .doc [data-ic="⏱️"],
+.doc [data-ic="🔧"], .doc [data-ic="📅"],
+.doc [data-ic="🗓️"], .doc [data-ic="🕐"]      { --sec: var(--human); }
+.doc [data-ic="🛟"], .doc [data-ic="🧾"]      { --sec: var(--correct); }
+.doc [data-ic="⛔"], .doc [data-ic="🚫"]      { --sec: var(--wrong); }
+/* 📓 vocabulary · 📋 at-a-glance · ☐ checkbox stay neutral on purpose */

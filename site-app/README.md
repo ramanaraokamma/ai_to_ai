@@ -8,6 +8,7 @@ Without a passcode you see the level picker and nothing else.
 site-app/
 ├── build.py            the generator (Python 3, stdlib + cryptography)
 ├── serve.sh            build if needed, then serve on localhost
+├── serve.py            dev server with Workers-style extensionless routing
 ├── assets_src/         app.css · app.js  (edit these, not dist/)
 └── dist/               generated output — safe to delete, rebuilt in seconds
 ```
@@ -32,13 +33,23 @@ One passcode pair covers **all three levels** — unlock once, browse any year.
 ### Routes
 
 ```
-/                     level picker (public)
-/l1/index.html        Level 1 Explorer — year plan, passcode gate
-/l2/index.html        Level 2 Builder  — year plan, passcode gate
-/l3/index.html        Level 3 Engineer — year plan, passcode gate
-/l3/chapter/week-07.html   /l3/workbook/week-07.html   /l3/lesson/week-07.html
-/l3/tests/term-2.html      /l3/projects/ideas.html     /l3/gallery.html
+/                       level picker (public)
+/l1/                    Level 1 Explorer — year plan, passcode gate
+/l2/                    Level 2 Builder
+/l3/                    Level 3 Engineer
+/l3/chapter/week-07     /l3/workbook/week-07     /l3/lesson/week-07
+/l3/tests/term-2        /l3/projects/ideas       /l3/gallery
 ```
+
+**Links are extensionless.** Files on disk keep `.html`; every generated href drops it, and
+`.../index.html` becomes a directory URL. Cloudflare Workers resolves that automatically. Locally,
+`serve.py` installs the same fallback — for a request `P` it tries `P`, then `P.html`, then
+`P/index.html`, and still 404s on something genuinely absent.
+
+Two details if you touch this: `clean_url()` in `build.py` and `href()` in `app.js` are the only two
+places that strip the extension. Routes stay canonical with `.html` internally so the `AIA_ROUTE`
+comparisons that drive `aria-current` keep working, and `url()` in `app.js` is deliberately *not*
+stripped because it fetches real files (`assets/enc/*.json`).
 
 A level chip in the header switches years from any page. Add a level by appending to `ALL_LEVELS` in
 `build.py`.

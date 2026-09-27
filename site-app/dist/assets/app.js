@@ -19,7 +19,15 @@
   function sget(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }
   function sset(k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} }
   function sdel(k) { try { sessionStorage.removeItem(k); } catch (e) {} }
-  function url(route) { return UP + route; }
+  function url(route) { return UP + route; }          // for fetching real files (…​.json)
+  // For links only: routes keep `.html` internally so AIA_ROUTE comparisons stay exact,
+  // but hrefs drop it — `.../index.html` becomes a directory URL.
+  function href(route) {
+    var r = String(route);
+    if (r.slice(-10) === 'index.html') r = r.slice(0, -10);
+    else if (r.slice(-5) === '.html') r = r.slice(0, -5);
+    return (UP + r) || './';
+  }
 
   /* ── auth ─────────────────────────────────────────────────────────────
      Two passcodes derive two AES keys from the same salt. Student content is
@@ -154,7 +162,7 @@
   if (signout) {
     signout.addEventListener('click', function () {
       Auth.signOut();
-      location.href = url('index.html');
+      location.href = UP || './';
     });
   }
 
@@ -290,7 +298,7 @@
         kinds.forEach(function (k) {
           if (!w.docs[k]) return;
           var a = document.createElement('a');
-          a.href = url(w.docs[k]);
+          a.href = href(w.docs[k]);
           a.innerHTML = '<span class="ic">' + ICON[k] + '</span>' + LABEL[k];
           if (w.docs[k] === ROUTE) a.setAttribute('aria-current', 'page');
           box.appendChild(a);
@@ -310,7 +318,7 @@
       flat.className = 'nav-flat';
       extras.forEach(function (f) {
         var a = document.createElement('a');
-        a.href = url(f.route);
+        a.href = href(f.route);
         a.innerHTML = '<span class="ic">' + ICON[f.kind] + '</span> ' + escapeHtml(f.label);
         if (f.route === ROUTE) a.setAttribute('aria-current', 'page');
         flat.appendChild(a);
@@ -373,8 +381,8 @@
     var i = seq.findIndex(function (s) { return s.route === ROUTE; });
     if (i === -1) return;
     var out = '';
-    if (i > 0) out += '<a class="prev" href="' + url(seq[i - 1].route) + '"><span>← Previous</span>' + escapeHtml(seq[i - 1].label) + '</a>';
-    if (i < seq.length - 1) out += '<a class="next" href="' + url(seq[i + 1].route) + '"><span>Next →</span>' + escapeHtml(seq[i + 1].label) + '</a>';
+    if (i > 0) out += '<a class="prev" href="' + href(seq[i - 1].route) + '"><span>← Previous</span>' + escapeHtml(seq[i - 1].label) + '</a>';
+    if (i < seq.length - 1) out += '<a class="next" href="' + href(seq[i + 1].route) + '"><span>Next →</span>' + escapeHtml(seq[i + 1].label) + '</a>';
     el.innerHTML = out;
   }
 
