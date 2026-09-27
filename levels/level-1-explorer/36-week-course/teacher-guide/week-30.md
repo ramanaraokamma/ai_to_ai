@@ -219,6 +219,39 @@ side-by-side comparison of the two failure modes.
 
 ---
 
+### 🧭 The Growing Map
+
+This is the week the map stops growing in one direction. **WORDS** is tinted for the last time and it
+finishes the tile — but the real thing to point at is the **left-hand branch**, which today's lesson
+reaches back across to for the first time since Week 10.
+
+![The course map in Week 30: the words tile is this week's box, and it reaches back across to the left branch](../figures/fig-w30-0-where-this-fits.svg)
+
+*Figure 30.0 — Week 30's version. WORDS tinted and badged for the last time, with **model** and
+**evaluation** lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today?"* Most will point at WORDS. Accept it, then say
+   *"half right — point at the other one too."* The Scratch bot lives on the left, in **rules written
+   by A PERSON**, and they built one of each today. Two boxes, one lesson, opposite sides of the fork.
+2. **Then the better question:** *"which of our two bots could ever surprise us, and why?"* The tally
+   can produce a sentence nobody wrote; the Scratch bot can only ever say what they typed. That is the
+   fork on the map, restated by two things sitting on their own screens.
+3. **Have them draw one arrow** on their own map, from WORDS back across to the left-hand room, labelled
+   *"my two bots"*. It is the only backwards arrow in the whole year, and it means the tour is complete.
+
+> **🧑‍🏫 Why this is worth two minutes.** Weeks 1 to 10 are a long way back for an eleven-year-old, and
+> without the map today reads as "we made a chatbot in Scratch, which was fun". With the map it reads as
+> the closing of the fork that opened in Week 1 — and the ten-question log stops being a worksheet and
+> becomes evidence about two different kinds of machine.
+
+**The six threads** along the bottom are the spine of all four levels. **Model** and **evaluation** are
+lit this week — two kinds of insides, and a log that measures how each one breaks. Do not quiz them on
+the threads; the map is orientation, never assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 25 minutes, the night before

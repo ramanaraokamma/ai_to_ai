@@ -173,6 +173,40 @@ The proof from this very table: after deleting the useless column and the leaky 
 
 ---
 
+### 🧭 The Growing Map
+
+The student guide carries the same structural figure every week, with one more piece filled in. This
+week the tinted box has **not moved** — FEATURES is still the current box, its second week of four —
+and that is worth saying out loud, because it tells them the map grows in chunks, not in weekly hops.
+
+![The course map in Week 12: the features tile is this week's box, where features are weighed against a baseline](../figures/fig-w12-0-where-this-fits.svg)
+
+*Figure 12.0 — Week 12's version. FEATURES still tinted and badged; **representation** and
+**evaluation** lit along the bottom; everything from TRAINING onward still dashed.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask the week's version of the question:** *"which bit of today is on this map?"*
+   Expect a pause — the box says FEATURES and today felt like counting and dividing. The answer you
+   want is *"we were testing the columns"*, and the baseline is how we tested them.
+2. **Then the better question:** *"why is HONEST TESTING still dashed?"* Someone will already have
+   noticed we scored the same twelve rows we looked at. Say plainly: *"you're right, and that's Week
+   19 — the dashes are the bits we know we haven't fixed yet."* That answer buys you enormous
+   credibility.
+3. **Have them add it to their own copy** on the inside cover, in pencil, and shade the FEATURES box
+   again. Two weeks shading the same box is the point.
+
+> **🧑‍🏫 Why this is worth two minutes.** After a lesson built entirely on arithmetic, some learners
+> come away thinking the subject *is* arithmetic. Ten seconds of map fixes that: the sums were a tool
+> for deciding which columns survive. A learner who can see the map can tell you *"I don't know where
+> this week goes"* instead of just *"I don't get it"*.
+
+**The six threads** along the bottom are the spine of all four levels. This week **representation**
+and **evaluation** are lit and the other four are white. Do not teach or test the threads — they are
+shelves, and the only thing that matters is that by week 36 every week has landed on one.
+
+---
+
 ## 🧰 Prep Checklist
 
 **12 minutes the night before**

@@ -151,6 +151,39 @@ If you understood *"the machine only ever gets the row, and the row is only as g
 
 ---
 
+### 🧭 The Growing Map
+
+This is the frame where the year changes sides. The whole left-hand room is white and finished, and the
+tinted tile has appeared on the right: FEATURES, first of its four weeks. If you only show the map once
+this term, show it today — the geometry is doing the teaching for you.
+
+![The course map after Week 11: the features tile, third of nine on the examples branch, is filled in](../figures/fig-w11-0-where-this-fits.svg)
+
+*Figure 11.0 — Week 11's version. Nothing on the left is tinted any more. FEATURES is tinted and badged,
+third of the nine tiles, with **representation** and **learning signal** lit below.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit of today is on this map?"* The dog row — the features, and the one
+   column you covered up. Then point at the left-hand room and say: *"and notice nothing over here is
+   lit any more."*
+2. **Then the better question:** *"why did we move to this side?"* They answered this last week, so make
+   them say it again: because eight checks is 258 rules. A learner who can connect the tile they are
+   standing on to the wall they hit ten days ago is doing exactly what this figure exists for.
+3. **Have them add it to their own copy** and shade FEATURES, copying the wk 11-14 range underneath it.
+   Four weeks on one tile means nothing needs redrawing until Week 15, and telling them that now stops
+   the "nothing changed" complaint in Weeks 12, 13 and 14.
+
+> **🧑‍🏫 Why this is worth two minutes.** Feature and label are abstract words, and today they are
+> attached to a dog and a missing-backpack poster. The map gives them somewhere permanent to live: they
+> are the first thing you need once you have given up writing the rules yourself.
+
+**The six threads** along the bottom are the spine of all four levels. **Representation** is lit because
+a row is a *choice* about how to write the world down, and **learning signal** because the label column
+is the only thing that tells a machine what "right" means. Shelves, not content — do not test them.
+
+---
+
 ## 🧰 Prep Checklist
 
 **12 minutes the night before**

@@ -199,6 +199,41 @@ Level 1 depth, and it is enough.
 
 ---
 
+### 🧭 The Growing Map
+
+The map is unchanged from last week, deliberately. **YOUR OWN AI** covers weeks 34 to 36, so it stays
+shaded through the middle of the build — the model got made last week, and this week it gets a front
+door, a report and five rehearsed minutes.
+
+![The course map in Week 35: the same your own AI tile, as the model becomes an app, a report and a demo](../figures/fig-w35-0-where-this-fits.svg)
+
+*Figure 35.0 — Week 35's version. The same tinted, badged final tile, no dashed tiles anywhere, and
+**model** and **impact** lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today?"* Same box as last week — then the question that
+   does the work: *"we wired Scratch to the model, picked a threshold, and wrote the bias report. Which
+   of those three was the AI?"* None of them. The threshold is one `if` and one number they chose, and
+   naming that out loud is the most Level-3 idea in the year delivered at Level-1 depth.
+2. **Then the better question:** *"why is **impact** lit and not evaluation?"* Because today's decisions
+   were about the person in front of the booth: when the app refuses, what the warning sign says, and
+   which failure they will show on purpose. Measuring happened last week; choosing happened today.
+3. **Have them copy it** and write their threshold number, plus the five states the app can be in,
+   inside the YOUR OWN AI box. If they cannot defend the number as a trade, they have found tomorrow's
+   revision.
+
+> **🧑‍🏫 Why this is worth two minutes.** Build weeks are where the year's ideas quietly turn back into
+> button-clicking. The map is the cheapest available antidote: it puts the app they just made on the
+> same branch as the table they filled in in October, so the booth reads as the end of a chain rather
+> than a craft activity.
+
+**The six threads** along the bottom are the spine of all four levels. **Model** and **impact** are lit:
+the model gets wrapped in an app, and every choice in that wrapper is a choice about somebody else. Do
+not quiz them on the threads; the map is orientation, never assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 🗓️ Earlier in the week — the pre-class session (45 minutes, with the student)

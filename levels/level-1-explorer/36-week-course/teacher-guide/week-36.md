@@ -155,6 +155,43 @@ Today's job is to close Level 1 cleanly.
 
 ---
 
+### 🧭 The Growing Map
+
+This is the last time you will show this figure, and today it is not orientation — it is the syllabus,
+finished. **Every box is solid.** Both branches, all nine tiles, nothing dashed, nothing outstanding.
+Show it before the showcase, not after, because it is also the best possible prompt sheet for the
+five-minute demo.
+
+![The course map in Week 36: all fourteen boxes are solid and the level is complete](../figures/fig-w36-0-where-this-fits.svg)
+
+*Figure 36.0 — Week 36's version. Fourteen solid boxes, no dashed line left on the map, and
+**evaluation** and **impact** lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask the year's version of the question:** *"which bit did we do today?"* The honest
+   answer is *all of it*, and that is the first time that has ever been true. Then: *"a stranger asked
+   you about your booth today — point at the boxes your answers came from."* Watch the finger travel
+   the whole right-hand branch. That is the assessment, and it takes twenty seconds.
+2. **Then the better question, and it is the closing question of Level 1:** *"there are no dashed boxes
+   left — so what is next?"* The answer you want is **not** "harder AI". It is *"the same six threads,
+   with code underneath"*. New spelling, not new ideas.
+3. **Have them copy it one final time — from memory, no reference.** Fourteen boxes, one sentence
+   inside each. Anything they cannot fill in is a genuinely useful gap, it has a week number attached,
+   and it is a far better summer task than any worksheet.
+
+> **🧑‍🏫 Why this is worth two minutes.** A learner who can draw this map can explain their whole year
+> to a grandparent in three minutes. That is the single most durable outcome of Level 1 — more durable
+> than any individual model, poster or accuracy figure — and today is the day it becomes visible to
+> them. Let them notice that the picture used to be almost entirely dashes.
+
+**The six threads** along the bottom are the spine of all four levels, and they are the thing that
+actually carries into Level 2. **Evaluation** and **impact** are lit today: an honest number, and a
+stranger it was told to. Do not quiz them on the threads, not even now; the map is orientation, never
+assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 🗓️ Earlier in the week

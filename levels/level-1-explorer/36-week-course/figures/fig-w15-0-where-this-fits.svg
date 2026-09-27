@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img"
+     aria-labelledby="t d" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title id="t">The course map after Week 15: features is finished and the training tile opens</title>
+  <desc id="d">A machine that decides forks into two branches under the question “where did its rules come from?”. The left branch, rules written by a person, is a solid white room finished in week 1, and inside it sit two solid tiles: patterns and rules, weeks 7 to 8, and too many rules, weeks 9 to 10. The right branch is a solid header band, rules worked out from examples, finished in week 2, above a fixed three-by-three grid of nine tiles that fills left to right and top to bottom. Solid and finished: one job each, week 3; the table, weeks 4 to 6; and features, weeks 11 to 14, which turned white this week. This week's box is the tinted training tile, first on the middle row, badged you are here: week 15 feeds labelled photographs in and takes a trained model out. Still dashed, meaning not yet: honest testing, weeks 19 to 22; pixels, 23 to 26; words, 27 to 30; who it fails, 31 to 33; and your own AI, 34 to 36. In the six-thread strip along the bottom, model and learning signal are lit; data, representation, evaluation and impact are white. The footer line reads: A new tile: examples go in, a model comes out, and the examples are put away.</desc>
+
+  <!-- ── root: the anchor, solid since week 1 ─────────────────────── -->
+  <g>
+    <rect x="290" y="28" width="220" height="52" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3"/>
+    <text x="400" y="52" text-anchor="middle" font-size="18" font-weight="700" fill="#14202B">A MACHINE</text>
+    <text x="400" y="71" text-anchor="middle" font-size="18" font-weight="700" fill="#14202B">THAT DECIDES</text>
+  </g>
+
+  <!-- ── the fork ─────────────────────────────────────────────────── -->
+  <g stroke="#14202B" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M400 80 L400 100"/>
+    <path d="M180 100 L620 100"/>
+    <path d="M180 100 L180 124"/>
+    <path d="M620 100 L620 124"/>
+  </g>
+  <text x="400" y="118" text-anchor="middle" font-size="14" fill="#55636F">where did its rules come from?</text>
+
+  <!-- ── LEFT: the person branch, done, subdivided since week 7 ──── -->
+  <g>
+    <rect x="40" y="124" width="280" height="196" rx="14" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+    <text x="52" y="143" font-size="12" fill="#55636F">wk 1</text>
+    <text x="180" y="152" text-anchor="middle" font-size="17" font-weight="700" fill="#14202B">rules written by</text>
+    <text x="180" y="173" text-anchor="middle" font-size="17" font-weight="700" fill="#14202B">A PERSON</text>
+    <line x1="72" y1="188" x2="288" y2="188" stroke="#14202B" stroke-width="1.5"/>
+    <rect x="72" y="196" width="216" height="54" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+    <text x="180" y="222" text-anchor="middle" font-size="15" font-weight="700" fill="#14202B">PATTERNS AND RULES</text>
+    <text x="180" y="240" text-anchor="middle" font-size="12" fill="#55636F">wk 7-8</text>
+    <rect x="72" y="256" width="216" height="54" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+    <text x="180" y="282" text-anchor="middle" font-size="15" font-weight="700" fill="#14202B">TOO MANY RULES</text>
+    <text x="180" y="300" text-anchor="middle" font-size="12" fill="#55636F">wk 9-10</text>
+  </g>
+
+  <!-- ── RIGHT: the learned branch, header band + the nine tiles ─── -->
+  <g>
+    <rect x="332" y="124" width="440" height="44" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+    <text x="344" y="150" font-size="12" fill="#55636F">wk 2</text>
+    <text x="620" y="144" text-anchor="middle" font-size="15" font-weight="700" fill="#14202B">rules worked out</text>
+    <text x="620" y="161" text-anchor="middle" font-size="15" font-weight="700" fill="#14202B">FROM EXAMPLES</text>
+  </g>
+  <g>
+    <rect x="332" y="176" width="140" height="44" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+    <text x="402" y="199" text-anchor="middle" font-size="13" font-weight="700" fill="#14202B">ONE JOB EACH</text>
+    <text x="402" y="215" text-anchor="middle" font-size="12" fill="#55636F">wk 3</text>
+    <rect x="482" y="176" width="140" height="44" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+    <text x="552" y="199" text-anchor="middle" font-size="13" font-weight="700" fill="#14202B">THE TABLE</text>
+    <text x="552" y="215" text-anchor="middle" font-size="12" fill="#55636F">wk 4-6</text>
+    <rect x="632" y="176" width="140" height="44" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+    <text x="702" y="199" text-anchor="middle" font-size="13" font-weight="700" fill="#14202B">FEATURES</text>
+    <text x="702" y="215" text-anchor="middle" font-size="12" fill="#55636F">wk 11-14</text>
+    <rect x="332" y="226" width="140" height="44" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+    <text x="402" y="245" text-anchor="middle" font-size="13" font-weight="700" fill="#14202B">TRAINING</text>
+    <rect x="338" y="248" width="128" height="18" rx="9" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2.5"/>
+    <path d="M345 257 l 4 4.5 l 8 -9" fill="none" stroke="#1B7A4B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="412" y="261" text-anchor="middle" font-size="12" font-weight="700" fill="#1B7A4B">YOU ARE HERE</text>
+    <rect x="482" y="226" width="140" height="44" rx="10" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="552" y="249" text-anchor="middle" font-size="13" font-weight="700" fill="#55636F">HONEST TESTING</text>
+    <text x="552" y="265" text-anchor="middle" font-size="12" fill="#55636F">wk 19-22</text>
+    <rect x="632" y="226" width="140" height="44" rx="10" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="702" y="249" text-anchor="middle" font-size="13" font-weight="700" fill="#55636F">PIXELS</text>
+    <text x="702" y="265" text-anchor="middle" font-size="12" fill="#55636F">wk 23-26</text>
+    <rect x="332" y="276" width="140" height="44" rx="10" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="402" y="299" text-anchor="middle" font-size="13" font-weight="700" fill="#55636F">WORDS</text>
+    <text x="402" y="315" text-anchor="middle" font-size="12" fill="#55636F">wk 27-30</text>
+    <rect x="482" y="276" width="140" height="44" rx="10" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="552" y="299" text-anchor="middle" font-size="13" font-weight="700" fill="#55636F">WHO IT FAILS</text>
+    <text x="552" y="315" text-anchor="middle" font-size="12" fill="#55636F">wk 31-33</text>
+    <rect x="632" y="276" width="140" height="44" rx="10" fill="none" stroke="#C7CDD4" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="702" y="299" text-anchor="middle" font-size="13" font-weight="700" fill="#55636F">YOUR OWN AI</text>
+    <text x="702" y="315" text-anchor="middle" font-size="12" fill="#55636F">wk 34-36</text>
+  </g>
+
+  <!-- ── the six threads ─────────────────────────────────────────── -->
+  <g>
+    <text x="40" y="350" font-size="13" font-weight="700" fill="#55636F">THE SIX THREADS</text>
+    <g font-size="12" text-anchor="middle">
+      <rect x="168" y="336" width="86" height="24" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+      <text x="211" y="352" fill="#55636F">data</text>
+      <rect x="262" y="336" width="112" height="24" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+      <text x="318" y="352" fill="#55636F">representation</text>
+      <rect x="382" y="336" width="72" height="24" rx="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2.5"/>
+      <text x="418" y="352" font-weight="700" fill="#14202B">model</text>
+      <rect x="462" y="336" width="112" height="24" rx="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2.5"/>
+      <text x="518" y="352" font-weight="700" fill="#14202B">learning signal</text>
+      <rect x="582" y="336" width="88" height="24" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+      <text x="626" y="352" fill="#55636F">evaluation</text>
+      <rect x="678" y="336" width="82" height="24" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+      <text x="719" y="352" fill="#55636F">impact</text>
+    </g>
+    <text x="400" y="380" text-anchor="middle" font-size="13" fill="#55636F">A new tile: examples go in, a model comes out, and the examples are put away.</text>
+  </g>
+</svg>

@@ -490,6 +490,32 @@ It will confirm itself in the same confident voice, using the same machinery tha
 
 ---
 
+## 🧭 Where This Fits
+
+Nothing moved on the map this week, and that is the point. **WHO IT FAILS** is still the shaded box,
+because this week is still about the people on the other side of a machine — only now the machine is
+the one doing the fooling, and the person being let down might be you. Same box, new question: not
+*who does it get wrong?* but *where did this thing come from in the first place?*
+
+![The course map in Week 32: the same who it fails tile, now asking where a file came from and who gains if you pass it on](../figures/fig-w32-0-where-this-fits.svg)
+
+*Figure 32.0 — The map in Week 32. The same shaded box as last week, WHO IT FAILS, because your data,
+fakes and over-trust all live on the same shelf as bias. One dashed box is left: YOUR OWN AI, weeks 34
+to 36. Only **impact** is lit along the bottom.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A file carries far, far more than its picture — the time, the device, often the exact spot it was taken. **"Anonymous" usually isn't**, because the boring facts do the identifying. And something that looks completely real can be made in about ten minutes. So you **check the provenance, not the pixels**. |
+| **The one question it answers** | *"Where did this come from, and who benefits if I pass it on?"* — two questions in one breath, and the second one is the sharper of the two. |
+| **What it plugs into** | Week 6's five provenance questions, which you have been asking about spreadsheets since October and can now ask about a video. And Week 29's fluent falsehood: a sentence can be beautifully written and completely untrue, and nothing about the writing warns you. |
+| **What carries forward** | It is the reason your Week 33 poster carries a warning sign at all, and the reason the Week 34 data card has to say what your model **is not to be used for**. A machine with no stated limits is exactly the machine people over-trust. |
+| **Spiral thread** | 🌍 **Impact** — on its own this week. Nothing here is about building a better model. It is about what happens to a real person when a file, a fake or a confident answer moves through the world. |
+
+> **💡 Try this:** open the photo details on any picture on your own phone and read what the file knows
+> about you. Then decide, before you send the next one, whether you meant to send all of that too.
+
+---
+
 ## 🔑 Remember This
 
 - **"Anonymous" usually is not.** Names are the easy part. The boring facts — year group, postcode area, bus route — do most of the identifying, and nobody protects them.

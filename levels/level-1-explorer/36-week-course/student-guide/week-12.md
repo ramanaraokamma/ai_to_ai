@@ -527,6 +527,32 @@ Two real costs to keeping junk columns. They **hide** the good features, because
 
 ---
 
+## 🧭 Where This Fits
+
+Every week this year fills in one more piece of the same picture. You are still standing in the same
+box as last week — **FEATURES** — and that is deliberate: four whole weeks live in that one box,
+because choosing your columns is the biggest decision you make all year. What Week 12 adds is the
+ruler you hold every column up against.
+
+![The course map in Week 12: the features tile is this week's box, where features are weighed against a baseline](../figures/fig-w12-0-where-this-fits.svg)
+
+*Figure 12.0 — The map in Week 12. The tinted box with the tick is where you are: still FEATURES,
+week two of four. White boxes are finished, with the weeks written under the name. Dashed boxes
+have not happened yet. Only two of the six threads at the bottom are lit this week.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A feature has to **earn** its place. Work out the baseline first — the commonest label divided by the number of rows — and any column that cannot beat that number is not helping you. And a column that scores 100% is almost never brilliant: it is nearly always a **leak**, which means it already contains the answer, or you will not have it yet at the moment you actually need to guess. |
+| **The one question it answers** | *"Does this feature beat the baseline, and do I have its value before I need the answer?"* |
+| **What it plugs into** | Week 11's feature table — the columns you invented — and Week 9's habit of refusing to believe a score until there is a baseline written next to it. |
+| **What carries forward** | The baseline box you draw first, before you score anything, is the same box you will write beside every accuracy number in Weeks 20, 22, 33 and 34. |
+| **Spiral thread** | 🏷️ **Representation** — which columns you choose to write down — and ⚖️ **Evaluation** — how you judge whether a column is worth keeping. Two threads, one box. |
+
+> **💡 Try this:** on your own copy of the map, write the word *baseline* next to the FEATURES box in
+> pencil. It is the one word from this week you will still be using in March.
+
+---
+
 ## 🔑 Remember This
 
 - **Compute the baseline first, in a box, before you score anything.** Most common label ÷ total rows. That is your ruler.

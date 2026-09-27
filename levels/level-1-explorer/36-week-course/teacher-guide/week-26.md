@@ -210,6 +210,41 @@ cell against their own hand calculation — that single check is worth more than
 
 ---
 
+### 🧭 The Growing Map
+
+**PIXELS** is tinted for the fourth and final time, and the thread strip pairs **representation** with
+**evaluation**. That pairing is the whole reason this lesson exists: the claim *edges beat brightness*
+was made in Week 25 and today it gets measured, by them, with two lamps and two columns of numbers.
+
+![The course map after Week 26: the pixels tile closes with edges that survive a change of light](../figures/fig-w26-0-where-this-fits.svg)
+
+*Figure 26.0 — Week 26's version. PIXELS tinted and badged for the last week of its run, with
+**representation** and **evaluation** lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today — and what did the spreadsheet actually add that
+   your pencil could not?"* The answer you want is not *speed*, it is **enough cells to prove
+   something**. Six cells is a demonstration; a hundred cells, twice, under two lamps, is evidence.
+2. **Then the better question:** *"why is **evaluation** lit today, when we never scored a model?"*
+   Because they tested a claim they had been given, and it could have come out the other way. That is
+   evaluation in its purest form, and it is the same instinct as Week 22's envelope.
+3. **Have them copy their two lamp numbers onto their map** beside PIXELS — the brightness change and
+   the edge change, side by side. Then ask them to look across at WHO IT FAILS, still dashed, and say
+   what those two numbers predict about a model trained in one room. That sentence is the bridge into
+   Weeks 31 to 33.
+
+> **🧑‍🏫 Why this is worth two minutes.** This is the week the pixels run pays its debts. The map lets
+> you point backwards at Week 22 — the lamplight failure they measured on their own model — and forwards
+> at Week 31, and show that both are the same fact about light. Without the map this lesson reads as a
+> spreadsheet exercise; with it, it reads as the explanation for something that already annoyed them.
+
+**The six threads** along the bottom are the spine of all four levels. **Representation** and
+**evaluation** are lit this week. Do not quiz them on the threads; the map is orientation, never
+assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes, the night before

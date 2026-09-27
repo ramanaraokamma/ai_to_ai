@@ -559,6 +559,31 @@ This is the deep one and it survives most explanations, because the shrunk photo
 
 ---
 
+## 🧭 Where This Fits
+
+Same box as last week, because colour does not need a new idea — it needs last week's idea three times
+over. What has changed is the strip at the bottom: **data** has joined representation, because today is
+also about information you can destroy in one click and never get back.
+
+![The course map in Week 24: the pixels tile is this week's box, where colour becomes three stacked grids](../figures/fig-w24-0-where-this-fits.svg)
+
+*Figure 24.0 — The map in Week 24. Still the tinted PIXELS box, because this is the same tile as last
+week, with data and representation lit along the bottom.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A colour picture is **three grids stacked** — red, green and blue — with one number each per pixel. And shrinking a picture **throws information away forever**: the numbers that went into an average do not come back, no matter what button anybody presses. |
+| **The one question it answers** | *"How many numbers is this picture, and what did shrinking it destroy?"* |
+| **What it plugs into** | Week 23's single grid, now three deep. There is genuinely nothing new to learn — it is the same 0-to-255 square, counted three times. |
+| **What carries forward** | Teachable Machine had already shrunk your Week 17 photos to 224 × 224 × 3 before it ever looked at them, so you now know exactly what it threw away before it started. Next week goes back to working on one grid at a time. |
+| **Spiral thread** | 📊 **Data** — how much of it there really is, and what quietly gets binned — and 🏷️ **Representation**, the three-stacked-grids shape itself. |
+
+> **💡 Try this:** work out how many numbers your favourite photo is — width × height × 3 — and write
+> the answer next to PIXELS on your map. You are now one of very few people who could say that number
+> out loud and be right.
+
+---
+
 ## 🔑 Remember This
 
 - A colour picture is **three grids stacked**: red, green and blue, one number each per pixel, 0 to 255.

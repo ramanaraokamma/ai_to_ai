@@ -515,6 +515,31 @@ The instant cure, and it takes three seconds: `pizza pizza pizza`. **Three token
 
 ---
 
+## 🧭 Where This Fits
+
+A brand-new box lights up on the map this week, and look where it is: on the **right-hand** branch,
+one row underneath PIXELS. The course has not changed subject. It has taken the move you already know
+— chop it up, count it — and pointed it at words instead of photographs.
+
+![The course map in Week 27: the words tile opens, and a sentence is chopped into tokens and counted](../figures/fig-w27-0-where-this-fits.svg)
+
+*Figure 27.0 — The map in Week 27. WORDS is the newly shaded box, sitting directly below PIXELS, and
+the two lit threads along the bottom are **data** and **representation** — the same pair that lit up
+the first time you turned a picture into numbers.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A machine cannot handle "a sentence" any more than it can handle "a dog". Both have to become **numbers in a table** first. A **tokenizer** is the thing that chops text into pieces and counts them: a photo becomes a **grid** of numbers, a sentence becomes a **strip** of them. |
+| **The one question it answers** | *"How many tokens, and how many different tokens?"* — two numbers, never one. |
+| **What it plugs into** | Week 23's pixel grid and Week 4's table. Chopping a photo into squares and chopping a sentence into tokens are **the same move on new material**, which is exactly why everything you built in Terms 1 and 2 still applies to words. |
+| **What carries forward** | Those counts are the raw material of next week's next-word table, and they turn up again as the tally sheet you score in Week 30. |
+| **Spiral thread** | 📊 **Data** — the tokens are the stuff going in — and 🏷️ **Representation** — because *how* you chop is a decision you made, and a different decision gives different numbers. |
+
+> **💡 Try this:** on your own copy of the map, draw one arrow from PIXELS down to WORDS and write four
+> words on it: **same door, new material**. That arrow is the whole reason this term holds together.
+
+---
+
 ## 🔑 Remember This
 
 - **A machine cannot handle "a sentence" any more than it can handle "a dog".** It needs numbers in a table. So the very first thing anybody does with text — before any of the impressive stuff — is chop it into pieces and count them.

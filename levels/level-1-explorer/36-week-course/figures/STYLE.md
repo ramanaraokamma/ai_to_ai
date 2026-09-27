@@ -1092,3 +1092,92 @@ Then, by eye:
 | `STYLE.md` | This contract. |
 | `_motifs.svg` | Sprite sheet: all 16 motifs as `<symbol>`. Reference with `<use>` or copy inline. |
 | `_preview.html` | Open in any browser. Renders the palette, every motif and every pattern, with a greyscale toggle for the print check. |
+
+---
+
+## 12. The Growing Map — `fig-wNN-0-where-this-fits.svg`
+
+Every week carries **one** figure that is not about this week's content. It shows the learner the
+*shape of the whole level* with one more piece filled in. It appears in **both** the student guide
+(in the `## 🧭 Where This Fits` section) and the teacher guide (in `### 🧭 The Growing Map`).
+
+**Reference implementation: `fig-w01-0-where-this-fits.svg`.** Open it before drawing another one.
+
+### 12.1 Why index `0`
+
+Content figures are numbered from 1. The map is always `-0-`, so it sorts first in the folder and is
+instantly identifiable as structural rather than topical. Its caption is `Figure <week>.0`.
+
+### 12.2 The three fixed zones
+
+Always the **wide** canvas, `0 0 800 400`, and always these three zones:
+
+| Zone | y range | Holds |
+|---|---|---|
+| **Spine** | 28–320 | The level's structure, with this week's piece solid and future pieces dashed |
+| **Thread strip** | 336–360 | Six pills: data · representation · model · learning signal · evaluation · impact |
+| **Footer line** | ~380 | One sentence of orientation, 13px, `muted`, centred |
+
+### 12.3 The state vocabulary — this is the load-bearing part
+
+The learner must be able to read progress at a glance, from **shape alone**, without relying on colour:
+
+| State | Stroke | Fill | Dash | Badge |
+|---|---|---|---|---|
+| **This week** | `human` `#845F00`, width 3 | `human` fill `#E8C671` | solid | white pill, `correct` border, tick + `YOU ARE HERE` |
+| **Already done** | `ink` `#14202B`, width 2 | `paper` | solid | small `muted` week number, e.g. `wk 4` |
+| **Not yet** | `grid` `#C7CDD4`, width 3 | none | `stroke-dasharray="10 8"` | dashed pill, `WEEK n` |
+
+Three rules that follow from this, and they are not negotiable:
+
+1. **Dashed always means "not yet".** Never use a dashed stroke for anything else in this figure.
+2. **Exactly one box may carry the `YOU ARE HERE` badge.** If a week genuinely fills two boxes, badge
+   the more important one and give the other the `wk NN` treatment.
+3. **Never re-colour a done box to show recency.** Done is done. Only the current week is tinted.
+
+### 12.4 The thread strip
+
+Six pills, fixed order, fixed x positions (see the reference file). The thread(s) this week extends
+are filled `model` `#DBCEF3` with a `#6D28D9` 2.5-width stroke and bold `ink` text; the rest are white
+with a `grid` 1.5 stroke and `muted` text. **At most two lit per week** — a week that claims to extend
+four threads has not decided what it is about.
+
+### 12.5 What the spine looks like per level
+
+The spine is the level's own backbone, so it differs by level but is identical *within* a level:
+
+| Level | Spine |
+|---|---|
+| **1 Explorer** | The two-branch fork: *rules written by a person* vs *rules worked out from examples*, then the branches subdivide as the year goes on |
+| **2 Builder** | The data-to-answer pipeline: *collect → store → clean → look → model → check* |
+| **3 Engineer** | The training loop: *guess weights → measure loss → which way is downhill → step*, wrapped by *split → train → evaluate → ship* |
+
+Draw the level's full spine **once**, then per week change only which pieces are solid, dashed, or
+badged. The figures should feel like frames of one animation, because that is exactly what they are.
+
+### 12.6 Accessibility
+
+- `<title>`: states what is filled in this week, e.g. *"The course map after Week 1: one branch of two
+  is filled in"*.
+- `<desc>`: describes the state of **every** zone in words, including which threads are lit — a screen
+  reader user must get the same progress information a sighted reader gets from the dashes.
+- The markdown alt text describes what is drawn; `<title>` states what it means (see §on alt text).
+
+### 12.7 Checklist before you ship one
+
+- [ ] `viewBox="0 0 800 400"`, no `width`/`height`, transparent background
+- [ ] Nothing outside x 20–780, y 20–380
+- [ ] All `font-size` ≥ 12
+- [ ] Only §1.1 palette hexes
+- [ ] Exactly one `YOU ARE HERE` badge
+- [ ] Dashed used **only** for "not yet"
+- [ ] ≤ 2 threads lit
+- [ ] Spine matches the other weeks in this level, piece-for-piece
+- [ ] Parses as XML
+
+> **⚠️ Note on tooling.** Levels 2 and 3 ship a `figures/_generator/_gen_audit.py`; **Level 1 does
+> not**, so there is no automated checker for this level — work the checklist above by hand. Do **not**
+> borrow the Level 3 auditor for these files: it reports false positives on them (including on the
+> reference `fig-w01`) because it does not inherit `font-size`/`text-anchor` from a parent `<g>`, and it
+> reads relative `l dx dy` path commands as absolute coordinates. Changing a figure to satisfy that
+> estimator would break it against the reference.

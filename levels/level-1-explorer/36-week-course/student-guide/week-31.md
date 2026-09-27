@@ -629,6 +629,32 @@ the fix.** Nobody argued their way to it and nobody was shamed into it — someb
 
 ---
 
+## 🧭 Where This Fits
+
+WORDS is done, so it goes plain like every other finished box, and a new one shades in beside it:
+**WHO IT FAILS**. Everything you have built this year has been a machine. This is the first week the
+map asks about the *people on the other side of it*.
+
+![The course map in Week 31: the who it fails tile opens, where a gap in the photos comes back as a gap in accuracy](../figures/fig-w31-0-where-this-fits.svg)
+
+*Figure 31.0 — The map in Week 31. WORDS has turned plain with its full range, weeks 27 to 30, and WHO
+IT FAILS is the newly shaded box. Only one dashed box is left on the whole map. The lit threads are
+**data** and **impact** — a count on one end, a person on the other.*
+
+| | |
+|---|---|
+| **The mental model you now own** | **Bias is a count, not an attitude.** There are four links in the chain: who got photographed → the data comes out lopsided → the model copies the lopsidedness → **a real person gets bad answers**. The fix is at link one, and nowhere else. |
+| **The one question it answers** | *"Accurate for whom — and how many training examples did that group actually get?"* |
+| **What it plugs into** | Week 6's *"who is missing from this table?"*, and Week 20's rule that one number on its own describes nobody. Neither of those was really about tables or averages. They were both about this. |
+| **What carries forward** | Next week's trust questions, and Week 33's audit of **your own** model — where this stops being somebody else's story and becomes your own gap, written in percentage points, about a machine you made. |
+| **Spiral thread** | 📊 **Data** — a gap always starts as a missing pile of examples — and 🌍 **Impact** — because the last link in the chain is a person, not a percentage. |
+
+> **💡 Try this:** count the dashed boxes left on the map. There is one. Write the number **1** next to
+> it, and then notice that the last thing this year does, after teaching you to find a gap, is hand you
+> the tools to build something anyway.
+
+---
+
 ## 🔑 Remember This
 
 - **Bias is a count, not an attitude.** A model has no opinions. It gets good at what it saw a lot of and stays bad at what it barely saw.

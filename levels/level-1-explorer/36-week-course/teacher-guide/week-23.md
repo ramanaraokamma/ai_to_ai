@@ -235,6 +235,41 @@ behaviour better than a confident guess does.
 
 ---
 
+### 🧭 The Growing Map
+
+A new box lights up today — **PIXELS** — and only **representation** is lit at the bottom. That is
+deliberate. This is a one-idea week, and the idea is about the *form* a picture takes, not about models,
+training or scores. If a learner notices that only one pill is lit, you can tell them honestly: some
+weeks are one idea done properly.
+
+![The course map after Week 23: the pixels tile opens and a photo becomes a grid of numbers](../figures/fig-w23-0-where-this-fits.svg)
+
+*Figure 23.0 — Week 23's version. PIXELS newly tinted and badged, HONEST TESTING now finished in white
+with its full range, and a single lit thread along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today?"* They will point at the new box. Follow it
+   straight away with *"and what is a picture, in six words?"* — you are listening for **one number per
+   square, in order**. If the words *in order* are missing, the second half of the lesson has not
+   landed and it is worth thirty more seconds.
+2. **Then the better question:** *"why is PIXELS a new box instead of just part of THE TABLE?"* This is
+   a genuinely good thing to wonder and the honest answer is small: it *is* a table, one number per
+   cell — but it is the first table where the **arrangement** of the cells carries meaning. Every table
+   before this one could have its columns shuffled without harm.
+3. **Have them add PIXELS to their own map** and write *0 = black, 255 = white* underneath it. That one
+   line gets used in every one of the next three lessons, so it is worth having in their handwriting.
+
+> **🧑‍🏫 Why this is worth two minutes.** Weeks 15 to 22 were about a tool doing something invisible to
+> their photographs. The map makes today read as a lid coming off rather than a change of subject: same
+> photos, now readable. Learners who make that connection stop treating image AI as magic, which is
+> most of the work of the next three weeks already done.
+
+**The six threads** along the bottom are the spine of all four levels. Only **representation** is lit
+this week. Do not quiz them on the threads; the map is orientation, never assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 **15 minutes the night before**

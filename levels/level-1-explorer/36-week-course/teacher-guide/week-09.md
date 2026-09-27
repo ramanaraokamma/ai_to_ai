@@ -186,6 +186,40 @@ Score the ten sealed messages yourself against the student's rulebook, so you kn
 
 ---
 
+### 🧭 The Growing Map
+
+This week the tinted tile moves **down** rather than across: the person's room holds two tiles and the
+learner now occupies the second, TOO MANY RULES. The tile above it has turned white and carries its
+finished range, wk 7-8. A tile going from tinted to white is the only reward this figure ever hands
+out, and it is the first time all year it happens — children do notice.
+
+![The course map after Week 9: the too many rules tile inside the person branch is filled in](../figures/fig-w09-0-where-this-fits.svg)
+
+*Figure 9.0 — Week 9's version. PATTERNS AND RULES has gone white and done (wk 7-8); TOO MANY RULES is
+tinted and badged; only **evaluation** is lit, because a checkpoint week has one job.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit of today is on this map?"* You want the trial, not the quiz — the
+   sealed envelope and the five fresh messages. If a learner says "the quiz", accept it warmly and then
+   redirect: *"the quiz told me what to reteach; the envelope told you what your rulebook is worth."*
+2. **Then the better question:** *"why has the box above us turned white?"* Because Weeks 7 and 8 are
+   finished, and finished boxes never get coloured in again. Give them a few seconds to look at it;
+   that is the entire payoff of using the same picture thirty-six times.
+3. **Have them add it to their own copy** and write their two scores in the margin beside the tile —
+   the training score and the fresh score. The gap between those two numbers is what they will still
+   remember in March.
+
+> **🧑‍🏫 Why this is worth two minutes.** Checkpoint weeks feel like a pause to a learner, and a pause
+> feels like nothing happened. The map flatly contradicts that: a new tile went tinted today. Pointing
+> at it beats anything you could say about the value of assessment.
+
+**The six threads** along the bottom are the spine of all four levels, and this week **only
+evaluation** is lit. If a learner notices that one lonely pill and asks why, that is the best outcome
+available: *"because today was about nothing except scoring things honestly."*
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes the night before

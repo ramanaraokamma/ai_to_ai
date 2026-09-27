@@ -554,6 +554,31 @@ The test again: *what colour is the total? Which pocket did it come out of?* If 
 
 ---
 
+## 🧭 Where This Fits
+
+Same map, next tile along. You have stepped into the learned branch and opened the second box — and
+it turns out those mysterious "examples" from Week 2 are something completely ordinary: **rows in a
+table**. This tile stays lit for three weeks, so you will be looking at this picture again.
+
+![The course map after Week 4: the table tile opens under the learned branch](../figures/fig-w04-0-where-this-fits.svg)
+
+*Figure 4.0 — The map after Week 4. ONE JOB EACH has gone white with "wk 3" on it — done. THE TABLE
+is tinted with the tick, and it is yours for the next three weeks.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A machine's whole world is a **table**. One row is one example, one column is one measurement — and anything nobody wrote down **does not exist** for it. |
+| **The one question it answers** | *"What is one row of this machine's table?"* |
+| **What it plugs into** | Week 2's labelled examples. A labelled example is exactly **one row** — and now you know what a row is made of. |
+| **What carries forward** | The row unit you chose this week is the thing you measure in Week 11 and photograph in Week 15. And in Week 23 you find out that a photo is a table too. |
+| **Spiral thread** | 📊 **Data** and 🗂️ **Representation** — what the machine is given, and the shape somebody had to squeeze it into first. Two threads lighting up at once for the first time. |
+
+> **💡 Try this:** on your own map, write your backpack table's row unit in tiny letters inside THE
+> TABLE tile — "one row = one object in my bag". When that tile finally goes white in three weeks, you
+> will have your own example sitting inside it.
+
+---
+
 ## 🔑 Remember This
 
 - **A machine's entire world is a table.** It cannot see your bag. It can only read what somebody wrote down.

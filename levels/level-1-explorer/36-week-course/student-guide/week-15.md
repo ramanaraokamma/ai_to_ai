@@ -554,6 +554,31 @@ The wolves were snow. Your Blorbs were size. And when your own model fails next 
 
 ---
 
+## 🧭 Where This Fits
+
+A new box lights up this week. The FEATURES box is finished and white now, with all four of its
+weeks written under it, and the shading has moved down to the middle row of the map for the first
+time. You have stopped describing things and started building one.
+
+![The course map after Week 15: features is finished and the training tile opens](../figures/fig-w15-0-where-this-fits.svg)
+
+*Figure 15.0 — The map after Week 15. FEATURES has turned white and kept its weeks. The tinted box
+with the tick is TRAINING, and it is the first box on the middle row of nine.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Training is a **one-off process**, not a conversation: labelled examples go in, a model comes out, and then the examples are put away. You cannot explain anything to a model afterwards, and you cannot tell it off. If it is wrong you change the examples and bake it again. |
+| **The one question it answers** | *"How many different situations are in my examples — not how many photos?"* |
+| **What it plugs into** | Week 11's features and labels, exactly the same idea, except the examples now arrive as photographs instead of numbers you measured by hand. The machine finds its own columns; you choose what you point the camera at. |
+| **What carries forward** | These are the photos you train on in Week 17, sabotage one thing at a time in Week 18, and discover were lopsided all along in Week 31. Take them properly and three future weeks get easier. |
+| **Spiral thread** | 📦 **Model** — the thing that comes out of the oven — and 🎯 **Learning signal** — the labels that told it what "right" looked like. |
+
+> **💡 Try this:** on your own map, shade the TRAINING box and write *in: examples · out: model* under
+> it. Then look at how much of the middle and bottom rows is still dashed. Everything down there
+> exists because a trained model is not automatically a good one.
+
+---
+
 ## 🔑 Remember This
 
 - **Training is a one-off process, and the model is what it leaves behind.** Examples in, model out, examples put away.

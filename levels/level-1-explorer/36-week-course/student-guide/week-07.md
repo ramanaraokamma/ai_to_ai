@@ -670,6 +670,33 @@ Finding a pattern and writing a rule are **two separate steps**, and the second 
 
 ---
 
+## 🧭 Where This Fits
+
+Every week this year adds one more piece to the same picture, and this week the picture grew a new
+room. The left-hand branch — the one where a **person** writes the rules — has just split in two, and
+the top half is yours. Notice that the bottom half is still dashed. That is a wall, and you walk
+straight into it in two weeks' time.
+
+![The course map after Week 7: the patterns and rules tile inside the person branch is filled in](../figures/fig-w07-0-where-this-fits.svg)
+
+*Figure 7.0 — The map after Week 7. The tinted tile with the tick is where you are. White tiles are
+finished, with their weeks written underneath. Dashed tiles have not happened yet — including the one
+directly below you.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A **pattern** is something that repeats often enough that betting on it beats guessing — and you find it by **counting**, not by looking. A **rule** is that pattern written down with the vagueness taken out: a condition, a threshold inside it, and an action. |
+| **The one question it answers** | *"Does betting on this pattern beat guessing — and out of how many?"* |
+| **What it plugs into** | The left branch you met in Week 1, now fed by the table you built in Week 6. Your own counted data is where a hand-written rule actually comes from. |
+| **What carries forward** | The threshold you invented this week is exactly what Week 8 attacks on purpose, and it is what your Week 9 rulebook gets scored on. |
+| **Spiral thread** | 📊 **Data** — the counting grid — and 📦 **Model**, because a rulebook *is* the decision-maker. Two threads lit, four still waiting. |
+
+> **💡 Try this:** on your own copy of the map, write your strongest rule inside the tinted tile, in
+> pencil, threshold and all. Next week you are going to try to break it — and breaking a rule you
+> wrote yourself teaches you about ten times more than reading that rules break.
+
+---
+
 ## 🔑 Remember This
 
 - **A pattern is something that repeats often enough that betting on it beats guessing.** Work out what guessing scores *first*, or the good-looking number means nothing.

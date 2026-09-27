@@ -160,6 +160,38 @@ If the student asks whether computers do this elimination thing too: yes, and it
 
 ---
 
+### 🧭 The Growing Map
+
+Fourth and final week in the FEATURES box, so this is the week to point out that the box is about to
+close: next week it turns white, keeps the label **wk 11-14**, and never gets shaded again.
+
+![The course map in Week 14: the features tile closes with a human playing the model](../figures/fig-w14-0-where-this-fits.svg)
+
+*Figure 14.0 — Week 14's version. FEATURES tinted and badged for the last time, with
+**representation** and **model** lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today?"* Today they will answer confidently, because
+   they built the cards themselves. Follow with the closing line: *"that's the fourth week in that
+   box, and the box is now finished."*
+2. **Then the better question:** *"why is TRAINING still dashed, when a human just learned our cards
+   in about a minute?"* The answer you want: *"because a person did it, not a machine."* That is the
+   exact gap Week 15 walks into, and a learner who has felt the gap arrives next week already curious.
+3. **Have them shade FEATURES one final time, then draw a light arrow down to TRAINING.** Tell them
+   next week they will fill in the box the arrow points at.
+
+> **🧑‍🏫 Why this is worth two minutes.** Today was a game, and games are the easiest lessons to file
+> under "fun, but not the real subject". Thirty seconds of map re-files it: the trial was the proof
+> that four weeks of column-building worked. It also closes a chunk cleanly, and a visible finished
+> chunk does more for motivation than any amount of encouragement.
+
+**The six threads** along the bottom are the spine of all four levels. **Representation** and
+**model** are lit this week — representation because the columns carry the whole message, model
+because a person played the model. No need to name them in class.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### ⚠️ One week before — the message that saves the lesson

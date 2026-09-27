@@ -188,6 +188,40 @@ mean it. That sentence is on the syllabus.
 
 ---
 
+### 🧭 The Growing Map
+
+Two changes today, and the second one is a milestone. **WHO IT FAILS** goes plain with its full range,
+weeks 31 to 33, and **YOUR OWN AI** shades in — the ninth and final tile. When you put this on the desk,
+the thing to point at is what is *absent*: there is no dashed box left anywhere on the map.
+
+![The course map in Week 34: the last tile opens and the final dashed box on the map is gone](../figures/fig-w34-0-where-this-fits.svg)
+
+*Figure 34.0 — Week 34's version. WHO IT FAILS turned plain and done, YOUR OWN AI newly tinted and
+badged, and not one dashed tile remaining. **Model** and **evaluation** are lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today?"* They will find the new tile immediately. Then
+   the question that matters: *"we trained a model **and** filled in four pieces of paper — which half
+   is the project?"* Both, and the paperwork is the half that makes the model mean anything. A model
+   with no data card, envelope, scoring sheet or matrix is a rumour.
+2. **Then the better question:** *"how many dashed boxes are left?"* None. Let that sit. Then ask what
+   the tile says — weeks 34 to 36 — so they understand the box stays shaded for three weeks and the
+   booth is one third built, not finished.
+3. **Have them copy it** and list, inside the YOUR OWN AI box, the four pieces of paper they produced
+   today. If any of the four is missing, the map has just generated their homework for them.
+
+> **🧑‍🏫 Why this is worth two minutes.** Today's real risk is a student who thinks the model *is* the
+> work and treats the paperwork as tidying up. The map counters it geometrically: this tile hangs off
+> the same branch as THE TABLE, HONEST TESTING and WHO IT FAILS, so building your own AI is visibly the
+> place where all that bookkeeping gets used, not a break from it.
+
+**The six threads** along the bottom are the spine of all four levels. **Model** and **evaluation** are
+lit: they built the thing, and they wrote down in advance how they would judge it. Do not quiz them on
+the threads; the map is orientation, never assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 🗓️ Earlier in the week — the photo shoot (40 minutes, with the student)

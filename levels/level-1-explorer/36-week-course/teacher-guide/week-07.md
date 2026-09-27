@@ -186,6 +186,43 @@ Count something in your own life. How many of the last ten times you went to the
 
 ---
 
+### 🧭 The Growing Map
+
+The student guide carries the same structural figure every week, with one more piece filled in. This
+week it does something it has not done since Week 1: the left-hand room **subdivides**. Until today
+*rules written by a person* was one big box; from now on it holds two tiles, and the top one —
+PATTERNS AND RULES — is this week's.
+
+![The course map after Week 7: the patterns and rules tile inside the person branch is filled in](../figures/fig-w07-0-where-this-fits.svg)
+
+*Figure 7.0 — Week 7's version. The person's room is white and finished (wk 1); inside it, PATTERNS
+AND RULES is tinted and badged, and TOO MANY RULES is dashed until Week 9. **Data** and **model** are
+lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask this week's version of the question:** *"which bit of today is on this map?"* The
+   answer you want is *"the counting grid **and** the bus rule"* — both, because counting produced the
+   pattern and the pattern became the rule. If they name only one, ask for the other.
+2. **Then the better question:** *"why is TOO MANY RULES dashed, and why is it sitting directly
+   underneath us?"* Do **not** answer it. Say: *"because we haven't hit it yet — write the question
+   down, it's Weeks 9 and 10."* Their own rulebook is going to walk them into that wall, which is
+   worth far more than your explanation of it.
+3. **Have them add it to their own copy** on the inside cover, in pencil, and shade the new top tile.
+   The fact that their Week 1 box has just grown a wall inside it is the best thing about this week's
+   map — let them notice it themselves.
+
+> **🧑‍🏫 Why this is worth two minutes.** Today looks like arithmetic: tallies, fractions, a threshold.
+> The map says what the arithmetic was *for* — it is how a person gets a rule out of data. A learner
+> who can see that does not ask you why an AI course is doing tally charts.
+
+**The six threads** along the bottom are the spine of all four levels. This week **data** and
+**model** are lit, because you counted real data and then turned the count into the thing that
+decides. Do not teach or test the threads — they are shelves, and the only thing that matters is that
+by Week 36 every week has landed on one.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes the night before

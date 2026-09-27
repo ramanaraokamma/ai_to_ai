@@ -215,6 +215,40 @@ If your student remembers only one sentence in a year's time, make it this one:
 
 ---
 
+### 🧭 The Growing Map
+
+Third week on **PIXELS**, and this is the week the box earns the word *model*: the strip at the bottom
+has **model** lit beside **representation**. Nine numbers on squared paper are not an analogy for what
+a vision model does first — they are the thing itself, at a size a pencil can manage.
+
+![The course map in Week 25: the pixels tile is this week's box, where nine numbers find the edges](../figures/fig-w25-0-where-this-fits.svg)
+
+*Figure 25.0 — Week 25's version. PIXELS still tinted and badged, with **representation** and
+**model** lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today — and what did we do to the grid that we have never
+   done before?"* The answer you want is *arithmetic*: Weeks 23 and 24 read grids, today they changed
+   one and an outline appeared that nobody drew.
+2. **Then the better question:** *"why is **model** lit today, when we did not train anything and did
+   not touch a computer?"* Because a filter is a real first step inside an image model. Nothing was
+   learned today — somebody chose the nine numbers by hand — and that is exactly the distinction worth
+   making out loud, with a pointed finger at the left-hand branch of the map.
+3. **Have them write six words, not nine numbers**, on their own map: *right column minus left column*.
+   Words survive; a remembered grid gets rotated by accident within a fortnight.
+
+> **🧑‍🏫 Why this is worth two minutes.** This is the lesson most likely to be mistaken for a maths
+> drill — sixty multiplications and a lot of arguing about minus signs. The map is what stops that. It
+> tells the learner that the tedious cell they just finished is the first thing every camera, every
+> scanner and every photo app in their house does, and that it sits on the *examples* branch of the
+> year, not off to one side.
+
+**The six threads** along the bottom are the spine of all four levels. **Representation** and **model**
+are lit this week. Do not quiz them on the threads; the map is orientation, never assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 10 minutes, the night before

@@ -442,6 +442,31 @@ visible. That slip is now the most honest page in your notebook.
 
 ---
 
+## 🧭 Where This Fits
+
+Still **TRAINING** — and this is the week that finishes it off. You did not build anything new today.
+You took last week's model apart one ingredient at a time to find out what had been holding it up.
+
+![The course map in Week 18: the training tile is finished, broken on purpose to show what was holding it up](../figures/fig-w18-0-where-this-fits.svg)
+
+*Figure 18.0 — The map in Week 18. TRAINING is the tinted box for the last time, and the lit threads
+are **data** and **evaluation**: you changed the ingredients, and you judged what happened.*
+
+| | |
+|---|---|
+| **The mental model you now own** | You cannot look inside a model. So you find out what it was leaning on by **taking one thing away at a time**, with your prediction written down *first*, and watching what moves. And you cannot fix a model at all — you can only fix its **ingredients** and bake a new one. |
+| **The one question it answers** | *"If I change exactly one thing, what moves?"* |
+| **What it plugs into** | Week 17's model, which is the thing you are breaking, and Week 12's trick of scoring something by taking it away and seeing what you lose. |
+| **What carries forward** | Change-one-thing is now your method for the rest of the course. It is how Week 26 proves that edges beat brightness, and how Week 31 lets you *predict*, before you test, which group your model is about to let down. |
+| **Spiral thread** | 📊 **Data** — every sabotage is a change to the data and nothing else — and ⚖️ **Evaluation**, because a sabotage means nothing unless you measured carefully before and after. |
+
+> **💡 Try this:** write one sentence on your map next to **TRAINING**: *"my model was using \_\_\_
+> instead of \_\_\_."* If you genuinely found nothing, write *"nothing found — and here is how I
+> looked"* and list the four experiments. Both of those are real results, and only one of them is a
+> guess.
+
+---
+
 ## 🔑 Remember This
 
 - A **controlled experiment** changes exactly one thing and tapes everything else down, so anything that changes *must* have been caused by that one thing.

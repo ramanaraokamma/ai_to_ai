@@ -579,6 +579,32 @@ That answer is in the **top band** of the rubric on purpose. A confident wrong a
 
 ---
 
+## 🧭 Where This Fits
+
+Here is the map for the last time, and here is the sentence that goes with it: **every single box is
+solid.** Thirty-six weeks ago there was one box and a question mark. Today there are fourteen, and you
+can explain all of them.
+
+![The course map in Week 36: all fourteen boxes are solid and the level is complete](../figures/fig-w36-0-where-this-fits.svg)
+
+*Figure 36.0 — The map in Week 36. Both branches, all nine tiles, nothing dashed, nothing left over.
+The lit threads are **evaluation** and **impact** — which is fitting, because the last thing this year
+asks you to do is report a number honestly to somebody who did not have to believe you.*
+
+| | |
+|---|---|
+| **The mental model you now own** | The whole map in one breath: rules come **from a person** or **from examples**; examples become a **table**, then **features**, then a **model**, then an **honest number**, then a **named group it fails**. You can say all of that without once using the word *magic* — and you can say it to an adult who has never heard any of it. |
+| **The one question it answers** | *"Out of how many, and what is the baseline?"* Two questions, seven seconds, and they defuse most of the confident nonsense you will ever be shown. |
+| **What it plugs into** | All thirty-five weeks behind you. There is no dashed line left on the map: both branches and all nine tiles are solid, and today you get asked about them by somebody who was not in the room when you learned them. |
+| **What carries forward** | Level 2 adds new **spelling**, not new ideas: the same six threads, with code underneath them. Everything on this map is still true when it is written in Python — it just gets shorter to say. |
+| **Spiral thread** | 📏 **Evaluation** — a number, with its fraction and its baseline, in front of a stranger — and 🌍 **Impact** — the warning sign, the named group, and the failure you show on purpose. |
+
+> **💡 Try this:** draw the map from memory, on one page, with no reference. Fourteen boxes. Then write
+> one sentence inside each. That page is the best thing you own going into Level 2, and it took you a
+> year to be able to write it.
+
+---
+
 ## 🔑 Remember This
 
 - **The paper is a mirror, not a verdict.** Its job is to find the holes so they don't walk into Level 2 with you. What you do next is the actual result.

@@ -176,6 +176,38 @@ because Week 18 is going to challenge it with evidence, and evidence needs a bas
 
 ---
 
+### 🧭 The Growing Map
+
+The tinted box has not moved — **TRAINING**, for a third week — but the thread strip has: **data** has
+come back and joined **model**. That is precisely today's shape. They fed it photos, and a model came
+out the other side.
+
+![The course map in Week 17: the training tile is this week's box, where your own photographs become a real trained model](../figures/fig-w17-0-where-this-fits.svg)
+
+*Figure 17.0 — Week 17's version. TRAINING still tinted and badged, with **data** and **model** lit
+along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today?"* They will point at TRAINING and say "we trained
+   it" — take that, then push once: *"and what did we hand it?"* You want the word **photos** out loud,
+   because it is the only ingredient there was. Nobody wrote a rule today.
+2. **Then the better question:** *"why is HONEST TESTING still dashed, when we held all three objects
+   up to the camera and got them right?"* Because they held them up **in the room they trained in**.
+   That is a demonstration, not a test. Say that sentence and stop — it is the hook for Week 19.
+3. **Have them shade TRAINING on their own map** and write their **saved filename** beside it. That is
+   a thirty-second job that pays back in Weeks 18, 22, 33 and 34, when the file has to still exist.
+
+> **🧑‍🏫 Why this is worth two minutes.** Today is the loudest lesson of the term and the one most
+> likely to be remembered as *"the day we used the Google website"*. The map is what stops that. It puts
+> a name on what happened — a model was produced from data — and it shows that the exciting part sits
+> on a branch that began in Week 2 with a question about where rules come from.
+
+**The six threads** along the bottom are the spine of all four levels. **Data** and **model** are lit
+this week. Do not quiz them on the threads; the map is orientation, never assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes the night before — the smoke test is not optional

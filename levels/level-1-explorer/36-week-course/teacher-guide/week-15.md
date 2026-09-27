@@ -203,6 +203,39 @@ If a student asks what a dial *is*: "a number inside the model that gets adjuste
 
 ---
 
+### 🧭 The Growing Map
+
+This is a chunk boundary, and the figure shows it better than you can say it: FEATURES has turned
+white and kept the label **wk 11-14**, and the shading has dropped to **TRAINING**, the first box on
+the middle row. Four weeks of hand-built tables are behind them; the machine builds the next one.
+
+![The course map after Week 15: features is finished and the training tile opens](../figures/fig-w15-0-where-this-fits.svg)
+
+*Figure 15.0 — Week 15's version. A new tinted box for the first time in four weeks, with **model**
+and **learning signal** lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today — and what's changed about the picture?"* Somebody
+   will spot that the shading moved. Let them say it. *"Four weeks in one box, and today we finished
+   it and moved on"* is a genuinely satisfying sentence for an eleven-year-old.
+2. **Then the better question:** *"why is HONEST TESTING still dashed, when we've just trained a
+   model?"* The answer: *"because so far we've only tested it on the photos it already saw."* If that
+   bothers them, say so — being bothered in Week 15 is exactly the right preparation for Week 19.
+3. **Have them shade TRAINING on their own copy** and write *examples in → model out, examples put
+   away* underneath. That sentence is the misconception-killer for the whole term.
+
+> **🧑‍🏫 Why this is worth two minutes.** Training is the week learners are most likely to over-read
+> — they come out of it believing the machine is now "clever". The map's dashed middle and bottom rows
+> are the cheapest available antidote: five boxes still to go, every one of them about a way a trained
+> model can be wrong, unfair, or confidently useless.
+
+**The six threads** along the bottom are the spine of all four levels. **Model** and **learning
+signal** are lit this week. You do not have to name them; they are shelves, so that by week 36 the
+year reads as six ideas rather than thirty-six topics.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### ⚠️ 12 minutes the night before — draw the eighteen cards

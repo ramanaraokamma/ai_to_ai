@@ -559,6 +559,32 @@ The same 75% is excellent against a 25% baseline and almost worthless against a 
 
 ---
 
+## 🧭 Where This Fits
+
+Two things change on the map today, and one of them is the last of its kind. **WHO IT FAILS** goes
+plain with its full range, weeks 31 to 33, because it is finished — and **YOUR OWN AI** shades in
+beside it. Look along the bottom row: there is **no dashed box left anywhere on the map**.
+
+![The course map in Week 34: the last tile opens and the final dashed box on the map is gone](../figures/fig-w34-0-where-this-fits.svg)
+
+*Figure 34.0 — The map in Week 34. WHO IT FAILS turned plain and done; YOUR OWN AI is the newly shaded
+box, and it is the last one. Nothing on the map says "not yet" any more. The lit threads are **model**
+and **evaluation**.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A real AI project **is not the model**. It is the model *plus the paperwork*: a data card, a sealed envelope, a scoring sheet and a confusion matrix. A model with no paperwork is a rumour — it might be brilliant, and nobody can tell, including you. |
+| **The one question it answers** | *"Where is the paperwork that proves what this model can and cannot do?"* Ask it of your own booth first, and then of everything else for the rest of your life. |
+| **What it plugs into** | Weeks 15 to 22, end to end — collecting, training, splitting, testing, and reporting a number honestly. Plus the Week 6 data card and the Week 33 audit, which stop being exercises today and become two of the things on your table. |
+| **What carries forward** | Week 35 builds the app and the bias report on top of exactly this, and in Week 36 a stranger who has never seen your booth asks you about all of it. Everything you write down today is something you will not have to remember later. |
+| **Spiral thread** | 🧠 **Model** — you finally build one of your own, on purpose, with a written plan — and 📏 **Evaluation** — because the split you make before you train is what makes the number at the end mean anything. |
+
+> **💡 Try this:** count the dashed boxes on the map. There are none. Then count the boxes you could
+> explain out loud to somebody in your family, in one sentence each. That second number is the real
+> measure of the year, and it is probably higher than you expect.
+
+---
+
 ## 🔑 Remember This
 
 - **A model is a rumour until three pieces of paper exist:** the scoring sheet, the sealed envelope, and the confusion matrix.

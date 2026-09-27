@@ -580,6 +580,31 @@ Five subtractions, each read out loud with the unit attached:
 
 ---
 
+## 🧭 Where This Fits
+
+Same box as last week — **HONEST TESTING** — because a hidden pile of examples is only half of the job.
+This week is the other half: turning *"how many did it get right"* into a number that cannot mislead
+anybody, including you.
+
+![The course map in Week 20: honest testing is this week's box, where one accuracy number is written three ways](../figures/fig-w20-0-where-this-fits.svg)
+
+*Figure 20.0 — The map in Week 20. HONEST TESTING stays the tinted box, and only **one** thread is lit:
+evaluation. One idea, done thoroughly, is what this week is.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Accuracy is **correct ÷ total**, and you write it three ways — as a fraction, as a decimal with the division shown, and as a percentage — **always with the baseline beside it**. And one overall number can hide a class that is completely broken, so you open the average up class by class. |
+| **The one question it answers** | *"Out of how many, what is the baseline, and what does it look like per class?"* |
+| **What it plugs into** | Week 19's sealed pile gives you something honest to score, and Week 12's baseline box is the thing that stops a big percentage from impressing you before you have thought about it. |
+| **What carries forward** | Every number you report for the rest of the year is written this way: Week 22 on your own model, Weeks 31 and 33 on who it fails, Week 34 on the capstone, and Week 36 in front of an audience at the showcase. |
+| **Spiral thread** | ⚖️ **Evaluation**, on its own this week — one thread, because the whole week is one skill: reporting a score that does not lie, even a little, even by accident. |
+
+> **💡 Try this:** write one accuracy on your map in all three costumes, with the baseline next to it.
+> If the baseline is close to the accuracy, draw a small arrow to it and the words **"earned nothing"**.
+> That arrow is worth more than the percentage.
+
+---
+
 ## 🔑 Remember This
 
 - **Accuracy = correct ÷ total.** That is the whole formula. Write the division down; a number with no working is not an answer.

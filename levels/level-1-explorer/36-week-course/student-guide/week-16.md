@@ -542,6 +542,31 @@ a machine you can at least *read the number*.
 
 ---
 
+## 🧭 Where This Fits
+
+Same box as last week — **TRAINING** — because a model is not finished the moment it exists. You
+still have to learn to read what it tells you, and what it tells you is not what most people think
+it is telling them.
+
+![The course map in Week 16: the training tile is this week's box, where confidence is read as a preference](../figures/fig-w16-0-where-this-fits.svg)
+
+*Figure 16.0 — The map in Week 16. Still the tinted TRAINING box, but the lit threads at the bottom
+have changed: evaluation has joined model. Judging what comes out is a different job from making it.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A model shares **100 points of belief** out across the classes you gave it, so something always wins — even when you show it something ridiculous. Confidence is a **preference, not a promise**. The number actually worth looking at is the **margin**: the gap between first place and second. |
+| **The one question it answers** | *"What was the margin, and does it clear the threshold I chose?"* |
+| **What it plugs into** | Week 15's trained model, plus Week 3's narrowness. Show it something that is not on its menu and it answers anyway, with a big friendly percentage — because it has no way to say "that isn't one of my three things". |
+| **What carries forward** | You read live margins straight off the screen in Week 17, and the threshold you argue for this week becomes the **"not sure"** answer your Week 35 app gives when it should not commit. |
+| **Spiral thread** | 📦 **Model** — what it actually outputs — and ⚖️ **Evaluation** — deciding whether that output is good enough to act on. |
+
+> **💡 Try this:** write two numbers on your map next to TRAINING: a high confidence with a tiny
+> margin, and a lower confidence with a huge margin. Then write which one you would trust. That is
+> the whole week in one line of your own handwriting.
+
+---
+
 ## 🔑 Remember This
 
 - A model has **100 points of belief** and must give every point to one of the boxes you gave it. The scores always add up to 100.

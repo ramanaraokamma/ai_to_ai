@@ -188,6 +188,39 @@ A **1-to-5 star rating**: is that a number or a category? Genuinely: **experts d
 
 ---
 
+### 🧭 The Growing Map
+
+Same tinted box as last week, third of four. The figure is the place where that stops being confusing:
+the box has not moved, but the two lit threads underneath it have, and *that* is what tells you which
+week you are in.
+
+![The course map in Week 13: the features tile is this week's box, where the shape of the answer is decided](../figures/fig-w13-0-where-this-fits.svg)
+
+*Figure 13.0 — Week 13's version. FEATURES still tinted and badged; this week **model** and
+**learning signal** are lit instead of representation and evaluation.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today — and why has the shaded box not moved?"* The
+   answer you are fishing for: *"we were still working on the table, but on the answer column."*
+2. **Then the better question:** *"why is TRAINING still dashed, when we spent all lesson talking
+   about what the machine will predict?"* Because we have decided the *kind* of machine, and not yet
+   built one. Deciding classification versus regression is a choice a person makes before any machine
+   exists — that is the sentence to leave hanging in the air.
+3. **Have them shade FEATURES on their own copy for the third time**, and write *which one? / how
+   much?* beside it. Their own handwriting on their own map beats anything printed.
+
+> **🧑‍🏫 Why this is worth two minutes.** Today's lesson is a sorting distinction, and sorting
+> distinctions feel arbitrary unless the learner can see what hangs off them. The map shows what hangs
+> off it: everything to the right. Picking the wrong shape of answer spoils the training week, the
+> testing week and the evaluation weeks all at once.
+
+**The six threads** along the bottom are the spine of all four levels. **Model** and **learning
+signal** are lit this week. You need neither name them nor assess them; they exist so that by week 36
+the learner has seen 36 weeks land on six shelves rather than 36 unrelated topics.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

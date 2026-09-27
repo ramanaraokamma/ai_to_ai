@@ -228,6 +228,38 @@ Percentages arrive naturally next week when they start rolling dice.
 
 ---
 
+### 🧭 The Growing Map
+
+The tinted tile stays on **WORDS** for a second week, and the change is entirely in the thread strip:
+**model** has joined **data**. That is a precise description of today — last week they collected, today
+they build, and the thing they build turns out to be a table.
+
+![The course map in Week 28: the words tile is this week's box, where word pairs are tallied into a next-word table](../figures/fig-w28-0-where-this-fits.svg)
+
+*Figure 28.0 — Week 28's version. WORDS still tinted and badged, with **data** and **model** lit along
+the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today — we're still in the same shaded box, so what
+   changed?"* Point at the strip. **Model** is new. Then the payoff question: *"so where is the model
+   in what we made today?"* The answer is *the table is the model*, and it is worth waiting for.
+2. **Then the better question:** *"why is TRAINING already finished and plain, when we just made
+   something that predicts?"* Because nobody trained this one — you **counted** it. Tallying and
+   training are two different ways to end up with a model, and they have now met both.
+3. **Have them shade WORDS again** and write one bigram from their own tally, with its count, in the
+   margin of their map. A pair plus a number is the entire week in six characters.
+
+> **🧑‍🏫 Why this is worth two minutes.** This is the week the word "model" stops being mystical, and
+> that only lands if they can see the tally sheet sitting on the same branch as TRAINING and FEATURES
+> rather than in a world of its own. Students who miss this connection spend the rest of the year
+> believing language models are a separate kind of magic.
+
+**The six threads** along the bottom are the spine of all four levels. **Data** and **model** are lit
+this week. Do not quiz them on the threads; the map is orientation, never assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes, the night before

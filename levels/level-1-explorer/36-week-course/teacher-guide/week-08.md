@@ -182,6 +182,39 @@ Open your own spam or junk folder and look for a real message that shouldn't be 
 
 ---
 
+### 🧭 The Growing Map
+
+Same figure, and this week the tinted tile has **not moved** — PATTERNS AND RULES is lit for the second
+of its two weeks. Say that out loud, because it teaches them the map grows in chunks rather than weekly
+hops, and because it is exactly what happened: Week 7 built the rule, Week 8 took it apart.
+
+![The course map after Week 8: the same patterns and rules tile, now with its edges tested](../figures/fig-w08-0-where-this-fits.svg)
+
+*Figure 8.0 — Week 8's version. Identical geometry to last week. What changed is the thread strip —
+**model** and **evaluation** are both lit now — and the footer line underneath it.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit of today is on this map?"* Expect *"we broke the rules"*, which is
+   right. Then push once: *"and what did we do to the rulebook **before** we broke it?"* The answer is
+   *we scored it* — and that is why a second thread lit up.
+2. **Then the better question:** *"the box didn't move, so did we learn nothing today?"* Let somebody
+   argue it out. The answer you want is that one tile can take two weeks, and that a rule you can
+   write is not the same thing as a rule you can trust.
+3. **Have them add nothing to their copy — have them say what changed instead**, in one sentence, while
+   pointing at the bottom strip: *"same tile, week two, and evaluation lit up."* Then re-shade the same
+   tile in pencil if they want it to look busier.
+
+> **🧑‍🏫 Why this is worth two minutes.** False alarm and miss are two of the words this whole course
+> hangs on, and today they arrive attached to a rule the learner wrote themselves. The map is what
+> stops the lesson being filed away as "the day we argued about a ride queue".
+
+**The six threads** along the bottom are the spine of all four levels. This week **model** and
+**evaluation** are lit: the rulebook is the model, and counting the two kinds of wrong is evaluation.
+They are shelves, not content — do not teach or test them.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

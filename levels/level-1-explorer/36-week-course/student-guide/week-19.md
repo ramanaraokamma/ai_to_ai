@@ -499,6 +499,31 @@ Here are the four cards, and the answers.
 
 ---
 
+## 🧭 Where This Fits
+
+A **brand-new box** opens on the map this week: **HONEST TESTING**. TRAINING is finished behind you and
+turns plain white. Everything from here to Week 22 rests on one idea — a score only counts if the model
+had never seen the questions.
+
+![The course map in Week 19: honest testing is the new box, filled in by sealing examples away before training](../figures/fig-w19-0-where-this-fits.svg)
+
+*Figure 19.0 — The map in Week 19. TRAINING goes white and finished (weeks 15–18), and HONEST TESTING
+is the new tinted, badged box, with **data** and **evaluation** lit along the bottom.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A score only means something if the model **never saw the questions**. So you split your examples **before** you train, one class at a time, and then you *seal* the test pile. **Sealing beats intending** — "I'll remember not to train on those ones" is not a plan, it is a hope. |
+| **The one question it answers** | *"Was this pile hidden before training — or am I marking my own homework?"* |
+| **What it plugs into** | Week 9's fresh-message trial, which was exactly this instinct done roughly, with a handful of messages. This week you do it properly, on the actual photographs sitting behind your Week 17 model. |
+| **What carries forward** | That envelope gets opened **exactly once**, in Week 22. Then you seal a brand-new one for the capstone in Week 34 and leave it completely alone until the booth is built. |
+| **Spiral thread** | 📊 **Data** — the split is a decision about data, made before anything else happens — and ⚖️ **Evaluation**, because the seal is the only thing that makes any later number mean anything. |
+
+> **💡 Try this:** draw a tiny envelope on your own map next to **HONEST TESTING**, and write on it the
+> date you sealed it and how many photos are inside. You will want both of those numbers in Week 22,
+> and you will not remember them.
+
+---
+
 ## 🔑 Remember This
 
 - A score only means something if the thing being scored **had never seen the questions.**

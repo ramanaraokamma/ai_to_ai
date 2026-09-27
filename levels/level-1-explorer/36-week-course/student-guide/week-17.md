@@ -467,6 +467,31 @@ Holding an object up to the camera where you trained is the loosest possible che
 
 ---
 
+## 🧭 Where This Fits
+
+Same box as the last two weeks — **TRAINING** — but this is the week it stops being a story and turns
+into a file on a laptop. Everything sitting to the left of that tile on the map was preparation for
+the twenty seconds you just timed.
+
+![The course map in Week 17: the training tile is this week's box, where your own photographs become a real trained model](../figures/fig-w17-0-where-this-fits.svg)
+
+*Figure 17.0 — The map in Week 17. TRAINING is still the tinted, badged box, and the lit threads have
+moved back to **data** and **model**: you handed over photos, and a model came out.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Twenty minutes and **no code at all** gets you a working image classifier — and it is exactly as good as the photos you gave it, never better. The strangest part: your photos are **not inside it**. The saved model is smaller than the photos were, because what it kept was the pattern, not the pictures. |
+| **The one question it answers** | *"What did I actually give it — and what will it therefore get wrong?"* |
+| **What it plugs into** | Week 15's photo set is the raw material. Week 16's **margin** is how you read the bars that appear. And Week 13's three-class shape is why you made exactly three boxes and named them so carefully. |
+| **What carries forward** | This model is the **one object you keep all year**. Week 18 breaks it on purpose, Week 22 measures it honestly, Week 33 audits who it fails, and Week 34 ships it to a real visitor. Save the file, and save it somewhere you will find it in March. |
+| **Spiral thread** | 📊 **Data** — the photos are the entire ingredient list — and 📦 **Model**, because this is the week you made one, for real, with your own hands. |
+
+> **💡 Try this:** on your own copy of the map, shade **TRAINING** and write the name of your saved
+> file next to it — `baseline-v1.tm`, or whatever you called it. That filename is going to reappear
+> in your notebook four more times before the year is out.
+
+---
+
 ## 🔑 Remember This
 
 - Teachable Machine trains an image classifier **in your browser tab, on your own laptop.** Your photos are never uploaded anywhere.

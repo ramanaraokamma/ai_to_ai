@@ -1176,6 +1176,42 @@ at w = 14, slope +12:   14 − 0.3 × (+12)  = 14 − 3.6   =  10.4    moved LEF
 
 ---
 
+## 🧭 Where This Fits
+
+This is the week the black box comes apart. Here is the training loop you have been *using* since
+Level 2 without being allowed to see inside it — and the one box you just filled in.
+
+```
+        THE TRAINING LOOP        (what .fit() has been doing all along)
+
+        ┌──────────────────────────────────────────────┐
+        │                                              │
+        ▼                                              │
+   ① make a guess          ② how wrong is it?          │
+   at the weights   ───►   measure the LOSS      ───►  ③ WHICH WAY IS DOWNHILL?
+   ▢ week 20               ✅ week 14                   ✅ ═══ THIS WEEK ═══
+   (torch does it)         (you built it)                two subtractions
+                                                         and a division
+                                                              │
+                                    ④ take a small step ◄─────┘
+                                    ✅ this week too
+                                    (the learning rate)
+```
+
+| | |
+|---|---|
+| **The mental model you now own** | Learning is not magic and not search. It is: *stand on a hillside, measure which way is down, step, repeat.* **"Which way is down" is a subtraction.** |
+| **The one question it answers** | *"How does a model improve, mechanically, without anyone telling it the answer?"* |
+| **What it plugs into** | Week 14's **loss** — the number that says how wrong you are. Without a loss there is no hill to stand on. And Week 11's cost table, which is why you cared what "wrong" meant in the first place. |
+| **What carries forward** | Everything. Week 16's single neuron, Week 17's layers, Week 18's backpropagation and Week 20's PyTorch are all **this loop with more weights**. When `loss.backward()` appears in Week 20, it is doing exactly what you did by hand today — just for thousands of numbers at once. |
+| **Spiral thread** | 🎯 **Learning signal** — the fourth of the six. You met data, representation and model earlier; this is the week the *signal* that drives improvement stops being a mystery. |
+
+> **🔑 If you remember one thing from Level 3, make it this.** Every AI system in the world — every
+> one, including the ones that write essays — improves by measuring which way is downhill and taking
+> a small step. The rest is scale. You can now do the part that matters on paper.
+
+---
+
 ## 🔑 Remember This
 
 - **A loss is one number for how wrong you are.** Big is bad, zero is perfect. Ours is the average of ten squared errors, and at `w = 6` it is `1540 ÷ 10 = 154`.

@@ -236,6 +236,40 @@ loop; score two axes separately; trace the falseness to a join between two real 
 
 ---
 
+### 🧭 The Growing Map
+
+Third week in the same tinted tile, and the thread strip does something worth pointing at: **impact**
+lights up next to **model**. Not evaluation. The lesson is half mechanism and half consequence, and the
+strip says so before you do.
+
+![The course map in Week 29: the words tile is this week's box, where a die walks the tally table and fluent is not true](../figures/fig-w29-0-where-this-fits.svg)
+
+*Figure 29.0 — Week 29's version. WORDS still tinted and badged, with **model** and **impact** lit
+along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today — same box again, so what's new down the bottom?"*
+   They will spot **impact**. Then ask *"why would rolling a die count as impact?"* and let them get to
+   it: because the sentence it produced was smooth, confident, and not true, and somebody could believe
+   it.
+2. **Then the better question:** *"why is WHO IT FAILS still dashed when today was about a machine
+   being wrong?"* Because today the machine was wrong about a **fact**. Weeks 31 to 33 are about it
+   being wrong about a **group of people**. Wrong-for-everyone and worse-for-some are different
+   problems, and saying that sentence out loud is the door into Term 3's last block.
+3. **Have them shade WORDS a third time** and write their own fluent-and-false sentence beside it,
+   underlined. Their own made-up sentence is stickier than any example you give them.
+
+> **🧑‍🏫 Why this is worth two minutes.** This is the week that explains every headline they will ever
+> read about chatbots making things up, and it is easy for it to land as "the AI is broken". The map
+> puts it on the **impact** thread instead, which frames it correctly: the machine did exactly what it
+> was built to do, and the problem is what a person does with the output.
+
+**The six threads** along the bottom are the spine of all four levels. **Model** and **impact** are lit
+this week. Do not quiz them on the threads; the map is orientation, never assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes, the night before

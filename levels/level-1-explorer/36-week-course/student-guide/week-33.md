@@ -631,6 +631,32 @@ Somebody reads only the biggest number on your poster and walks away thinking yo
 
 ---
 
+## 🧭 Where This Fits
+
+Still the same shaded box — and this week you close it. **WHO IT FAILS** has been about other people's
+machines for two weeks. Today the gap belongs to a model **you** made, written in percentage points,
+next to the count that caused it.
+
+![The course map in Week 33: the who it fails tile closes with a gap measured on your own model, in percentage points](../figures/fig-w33-0-where-this-fits.svg)
+
+*Figure 33.0 — The map in Week 33. WHO IT FAILS is shaded for the last time; from next week it goes
+plain with its full range, weeks 31 to 33. One dashed box is left: YOUR OWN AI. The lit threads are
+**evaluation** and **impact** — the number, and the person the number is about.*
+
+| | |
+|---|---|
+| **The mental model you now own** | The most trustworthy thing you can do with your own model is **show, with numbers, the group it fails on**. Not admit it, not apologise for it — measure it: a gap in **percentage points**, traced back to a count of training photos, with the fix priced in photographs. |
+| **The one question it answers** | *"Which group does my model let down, and what would fixing it cost?"* — and the honest answer has a number in both halves. |
+| **What it plugs into** | Week 31's four links, which you now run on your own data instead of somebody else's story. Week 22's four numbers, which is where you learned that one figure describes nobody. And Week 18's written-down-first prediction, which is why the envelope is sealed before you count. |
+| **What carries forward** | This poster is a capstone deliverable — it goes on the wall at the fair. Week 34 seals a fresh envelope for a brand-new model, and Week 35 turns this gap into the bias report you hand a stranger. |
+| **Spiral thread** | 📏 **Evaluation** — because a gap is a measurement, with the subtraction visible — and 🌍 **Impact** — because the last link in the chain is somebody's bad afternoon, not a percentage. |
+
+> **💡 Try this:** look at the map and notice that WHO IT FAILS sits in the same row and the same
+> branch as THE TABLE and HONEST TESTING. That is not decoration. Fairness got measured today with the
+> same arithmetic you have been doing since October.
+
+---
+
 ## 🔑 Remember This
 
 - **You are not marked on your model's accuracy. You are marked on whether the number you report is true.**

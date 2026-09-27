@@ -236,6 +236,38 @@ computed, one sentence about photos and text being the same problem.
 
 ---
 
+### 🧭 The Growing Map
+
+The student guide carries **Where This Fits** every week: the same picture, one more piece filled in.
+This week a new tile shades in — **WORDS** — and it sits directly below **PIXELS**, which is the whole
+argument of Term 3 made visible without a single word of explanation.
+
+![The course map in Week 27: the words tile opens, and a sentence is chopped into tokens and counted](../figures/fig-w27-0-where-this-fits.svg)
+
+*Figure 27.0 — Week 27's version. WORDS newly tinted and badged on the bottom row, with **data** and
+**representation** lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today?"* Let them point. When they land on WORDS, ask the
+   follow-up that does the real work: *"and why is it drawn underneath PIXELS rather than somewhere
+   new?"* The answer you want is **same move, different material** — chop it up, count it.
+2. **Then ask:** *"why is WHO IT FAILS still dashed, when we spent today looking at counts?"* Because
+   nothing today asked *who* the sentences came from. Counting is not yet auditing. Leave it there.
+3. **Have them shade WORDS on their own map** and write the two numbers from their best sentence next
+   to it — total tokens and unique tokens. Two numbers, in their own handwriting, in the right box.
+
+> **🧑‍🏫 Why this is worth two minutes.** A tokenizing lesson can feel like clerical work, and a
+> student who cannot see where it sits will file it under "the boring week". The map shows them it is
+> the same door they walked through in Week 23, which reframes two hours of chopping as the opening move
+> of a language model rather than a spelling exercise.
+
+**The six threads** along the bottom are the spine of all four levels. **Data** and **representation**
+are lit this week — the tokens are the data, and the four chopping rules are the representation
+decision. Do not quiz them on the threads; the map is orientation, never assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes, the night before

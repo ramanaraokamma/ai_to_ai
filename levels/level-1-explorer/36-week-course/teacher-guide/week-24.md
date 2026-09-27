@@ -247,6 +247,41 @@ AND a blue number. Always three. Every pixel, always."*
 
 ---
 
+### 🧭 The Growing Map
+
+The tinted box has not moved — **PIXELS**, second week — and that is the message. Colour is not a new
+topic, it is last week's grid three times over. What has changed is the thread strip: **data** has
+joined **representation**, because the second half of the lesson is about how many numbers there
+actually are and which of them get thrown in the bin.
+
+![The course map in Week 24: the pixels tile is this week's box, where colour becomes three stacked grids](../figures/fig-w24-0-where-this-fits.svg)
+
+*Figure 24.0 — Week 24's version. PIXELS still tinted and badged, with **data** and **representation**
+lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today — we did colour and shrinking, so why is it the
+   same shaded box as last week?"* The answer you want is *"because colour is just three of last week's
+   grids."* If they say that, the whole lesson has landed in one sentence.
+2. **Then the better question:** *"why has a second pill lit up at the bottom today?"* Point at
+   **data**. Downsampling is the first time this year they have watched information be destroyed and
+   been able to prove it is gone. That is a data fact, not a picture fact.
+3. **Have them write one sum on their map** next to PIXELS: `224 × 224 × 3 = 150,528`. It is the number
+   their own Week 17 model actually saw, and putting it in their handwriting makes Week 22's failures
+   look a lot less mysterious.
+
+> **🧑‍🏫 Why this is worth two minutes.** Two weeks on the same box can feel like standing still, and a
+> learner who thinks nothing happened stops paying attention. The map shows movement in the right
+> place — the box holds, the threads change — which teaches the useful idea that depth and novelty are
+> not the same thing. It also parks "zoom and enhance" permanently: the information is gone, and they
+> proved it with three blocks averaging to 80.
+
+**The six threads** along the bottom are the spine of all four levels. **Data** and **representation**
+are lit this week. Do not quiz them on the threads; the map is orientation, never assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 **15 minutes the night before**

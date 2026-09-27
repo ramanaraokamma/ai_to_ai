@@ -223,6 +223,38 @@ and confidence-as-preference.
 
 ---
 
+### 🧭 The Growing Map — Week 3's frame
+
+The map picture changes shape this week, and it is the only structural change until Week 7. Last
+week's right-hand room becomes a heading with a three-by-three grid of nine tiles under it — the
+remaining shape of the whole year, laid out in reading order.
+
+![The course map after Week 3: the learned branch gets its first tile](../figures/fig-w03-0-where-this-fits.svg)
+
+*Figure 3.0 — Week 3's version. ONE JOB EACH tinted and badged, eight dashed tiles each carrying the
+weeks it arrives in, and **model** plus **impact** lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it, then ask** *"which bit did we do today?"* They will point at ONE JOB EACH — the fifteen
+   notes on the board, Quick, Draw! failing on a chair. Let them point; resist explaining the grid.
+2. **Then ask about the dashes:** *"there are eight dashed tiles now. What does dashed mean?"* You
+   want *"we haven't done it yet"* and nothing more. If somebody asks what WHO IT FAILS means, say
+   *"March"* and move on — the guessing is doing useful work.
+3. **Have them redraw their own map with the nine tiles**, dashed, in pencil, and no bigger than a
+   matchbox each. This one takes closer to three minutes and it is the one redraw of the year that
+   is genuinely worth the time.
+
+> **🧑‍🏫 Why this is worth two minutes.** A learner who has seen the nine tiles once knows the year is
+> finite. That matters more than it sounds: "AI" as a topic feels bottomless to an 11-year-old, and a
+> grid of nine boxes with week numbers on them is a promise that it is not.
+
+**The six threads** along the bottom: **data · representation · model · learning signal · evaluation
+· impact.** This week lights **model** (three families, all of them narrow) and **impact** (fifteen
+real systems in a real day). Orientation only — never assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 10 minutes the night before

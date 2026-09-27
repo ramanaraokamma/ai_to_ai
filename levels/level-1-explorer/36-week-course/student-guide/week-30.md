@@ -610,6 +610,31 @@ The rule bot can say five things. The generator can answer questions nobody ever
 
 ---
 
+## 🧭 Where This Fits
+
+Look at the map differently this week. Up to now every week has added to **one** box. This week the
+shaded box on the right reaches all the way back across the fork to the left-hand branch, because you
+end the lesson owning one machine from each side.
+
+![The course map in Week 30: the words tile is this week's box, and it reaches back across to the left branch](../figures/fig-w30-0-where-this-fits.svg)
+
+*Figure 30.0 — The map in Week 30. WORDS is shaded for the last time, and it finishes the tile. The
+lit threads are **model** and **evaluation** — you build a machine, and then you judge how it breaks.*
+
+| | |
+|---|---|
+| **The mental model you now own** | You now own **one machine from each branch**: a tally sheet nobody wrote the rules for, and a Scratch bot where **you typed every single word it can say**. They fail in completely different ways, and knowing which kind you are talking to tells you which failure to expect. |
+| **The one question it answers** | *"Which branch am I talking to, and how will this one fail?"* |
+| **What it plugs into** | Both branches at once, for the first time all year: Week 1's first-match-wins rulebook on the left, Week 28's tally on the right. That is why the year walked left, hit the rule-explosion wall, and came back across. |
+| **What carries forward** | The honest fallback you build into the bot — the reply it gives when it does not know — becomes the **"not sure"** answer in Week 33 and the warning sign on your Week 35 booth. |
+| **Spiral thread** | 📦 **Model** — two kinds of insides — and ⚖️ **Evaluation**, because the ten-question log is a measurement, not a demo. |
+
+> **💡 Try this:** draw one long arrow on your own map from WORDS all the way across to **rules written
+> by A PERSON**, and label it *"my two bots"*. It is the only arrow on the map that goes backwards, and
+> it means you have finished the tour.
+
+---
+
 ## 🔑 Remember This
 
 - **A rule-based bot is two lists joined by a position number.** Ask, walk the trigger list from the top, take the **first** match, say the reply at that position, stop.

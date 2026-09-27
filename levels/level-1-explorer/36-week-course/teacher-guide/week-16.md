@@ -229,6 +229,39 @@ complete enough, and it closes the loop.
 
 ---
 
+### 🧭 The Growing Map
+
+The tinted box stays on **TRAINING** for a second week, and the change is in the thread strip:
+**evaluation** has joined **model**. That is the shape of this week — the model is built, and today
+is about not being fooled by what it prints.
+
+![The course map in Week 16: the training tile is this week's box, where confidence is read as a preference](../figures/fig-w16-0-where-this-fits.svg)
+
+*Figure 16.0 — Week 16's version. TRAINING still tinted and badged, with **model** and
+**evaluation** lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today — we didn't train anything, so why is TRAINING
+   still the shaded box?"* The answer you want: *"we were reading what the trained model says."*
+   Building it and trusting it are two halves of the same box.
+2. **Then the better question:** *"why is HONEST TESTING still dashed, when we spent the lesson
+   looking at numbers?"* Because confidence is the model's opinion of itself, and every number today
+   came out of the model's own mouth. Nothing today was measured against an answer we held back. Say
+   that sentence exactly — it is the door into Week 19.
+3. **Have them shade TRAINING again** and write *margin*, plus the threshold their group chose, in the
+   margin of their own map. Thresholds they picked themselves get remembered.
+
+> **🧑‍🏫 Why this is worth two minutes.** This is one of the two or three most transferable weeks in
+> the year — every AI product an adult meets shows a confident number — and it can easily feel like a
+> fussy detail about bar charts. The map puts it where it belongs: on the evaluation thread, next to
+> Weeks 19 to 22 and Week 33, which are all the same instinct applied to bigger things.
+
+**The six threads** along the bottom are the spine of all four levels. **Model** and **evaluation**
+are lit this week. Do not quiz them on the threads; the map is orientation, never assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 10 minutes the night before

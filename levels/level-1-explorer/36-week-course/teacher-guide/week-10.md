@@ -169,6 +169,37 @@ If you genuinely understood the sentence *"each new check doubles the situations
 
 ---
 
+### 🧭 The Growing Map
+
+Same tile as last week — TOO MANY RULES, second of its two weeks — and this is the frame of the
+animation that explains the entire right-hand side of the picture. Today the learner counts the wall.
+Next week the map crosses over it.
+
+![The course map after Week 10: the same too many rules tile, and the wall it explains](../figures/fig-w10-0-where-this-fits.svg)
+
+*Figure 10.0 — Week 10's version. Geometry identical to Week 9. **Model** is the single lit thread, and
+the seven dashed tiles on the right are the part of the year that this wall pays for.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit of today is on this map?"* The doubling staircase and the 258 lines.
+   Then ask them to read the name of the tile out loud — TOO MANY RULES — and let it land.
+2. **Then the better question, and it is the best one in Term 1:** *"why does the right-hand branch
+   exist at all?"* The answer is on the screen in front of them: because this tile is a wall. Nobody
+   would go and collect thousands of labelled examples if writing 258 rules worked.
+3. **Have them draw one arrow** on their own copy, from this tile across to the dashed FEATURES tile,
+   and label it *the trade*. That arrow is the hinge of the whole year, and next week they walk along it.
+
+> **🧑‍🏫 Why this is worth two minutes.** Without the map, Week 10 is a lesson about powers of two. With
+> it, Week 10 is the reason the other twenty-six weeks exist at all. Same lesson, completely different
+> memory of it a month later.
+
+**The six threads** along the bottom are the spine of all four levels. Only **model** is lit this week,
+because the entire lesson is one claim about what a hand-written rulebook can and cannot ever be. Do
+not teach or test the threads.
+
+---
+
 ## 🧰 Prep Checklist
 
 **15 minutes the night before**

@@ -637,6 +637,31 @@ Written down, dated, initialled: **which cell of *your* grid will be worst next 
 
 ---
 
+## 🧭 Where This Fits
+
+Still **HONEST TESTING** — the last week inside that box before you turn all of it on your own model.
+You now have the two numbers and the one grid that, together, tell you whether a model *understood* or
+merely *remembered*.
+
+![The course map in Week 21: honest testing is this week's box, where two scores tell memorizing from generalizing](../figures/fig-w21-0-where-this-fits.svg)
+
+*Figure 21.0 — The map in Week 21. HONEST TESTING is the tinted box for a third week, with **model**
+and **evaluation** lit: what the model turned into, and how you judge it.*
+
+| | |
+|---|---|
+| **The mental model you now own** | You cannot tell **memorizing** from **generalizing** by looking at the model. You need two numbers — the training score and the test score — and you read both the **gap** and the **level**. And a confusion matrix is nothing fancy: it is a tally chart, with the truth down the side and what the model *said* across the top. |
+| **The one question it answers** | *"What is the gap between the training score and the test score?"* |
+| **What it plugs into** | Weeks 19 and 20 — the sealed pile and the arithmetic — plus Week 8's two ways of being wrong, which turn out to be exactly the off-diagonal boxes of the grid you drew today. |
+| **What carries forward** | You draw this matrix for your **own** model in Week 22, and again for the capstone booth in Week 34, where a visitor will be able to stand there and read it. |
+| **Spiral thread** | 📦 **Model** — whether it learned the objects or just the photographs — and ⚖️ **Evaluation**, because the gap is a measurement, not an opinion you can argue with. |
+
+> **💡 Try this:** next to **HONEST TESTING** on your map, write your two scores with a minus sign
+> between them and circle the answer. That circled number is what the word **overfitting** means, and
+> as of today you can measure it instead of just saying it.
+
+---
+
 ## 🔑 Remember This
 
 - You **cannot** tell memorizing from generalizing by looking at the model. You need two numbers: the training score and the test score.

@@ -517,6 +517,31 @@ This is the most useful trick in the chapter, because it is really about you and
 
 ---
 
+## 🧭 Where This Fits
+
+This is the last week of the PIXELS box, and you finished it with a measurement rather than an
+explanation. Two lamps, two sets of numbers, and a result you can point at: the brightness moved and
+the edges hardly did.
+
+![The course map after Week 26: the pixels tile closes with edges that survive a change of light](../figures/fig-w26-0-where-this-fits.svg)
+
+*Figure 26.0 — The map after Week 26. PIXELS is tinted for the last time, and the lit threads are
+representation and evaluation, because today you tested a claim instead of being told it.*
+
+| | |
+|---|---|
+| **The mental model you now own** | **Brightness is a fact about the room; an edge is a fact about the object.** That is the reason vision models hunt for edges before anything else — and your own two-lamp numbers are the proof, not somebody's opinion. |
+| **The one question it answers** | *"Would this number survive somebody turning a different lamp on?"* |
+| **What it plugs into** | Week 25's filter, Week 24's three channels, and the change-one-thing experiment you learned to run in Week 18. |
+| **What carries forward** | It explains the lamplight failure you actually measured in Week 22, and it predicts the lighting gap you will measure again in Weeks 31 and 33. |
+| **Spiral thread** | 🏷️ **Representation** — a grid of changes instead of a grid of brightnesses — and ⚖️ **Evaluation**, because you proved the claim with two columns of your own numbers. |
+
+> **💡 Try this:** write your two lamp numbers next to PIXELS on your map — the brightness change and
+> the edge change — side by side. That pair of numbers is the shortest honest answer to "why do vision
+> models look for edges?" that exists.
+
+---
+
 ## 🔑 Remember This
 
 - **A spreadsheet remembers directions, not addresses.** That is why one formula dragged over a hundred cells does a hundred different sums.

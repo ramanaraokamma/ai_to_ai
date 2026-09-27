@@ -597,6 +597,31 @@ Think about which booth you'd believe. And remember the chain: **nothing broke**
 
 ---
 
+## 🧭 Where This Fits
+
+Same box as last week. **YOUR OWN AI** stays shaded because the booth is not finished — you have a
+model and some paperwork, and this week it becomes something a stranger can walk up to and use.
+
+![The course map in Week 35: the same your own AI tile, as the model becomes an app, a report and a demo](../figures/fig-w35-0-where-this-fits.svg)
+
+*Figure 35.0 — The map in Week 35. Still the last box, still shaded, because the tile covers weeks 34
+to 36 and this is the middle of it. No dashed boxes anywhere. The lit threads are **model** and
+**impact** — the model gets a front door, and the front door faces a real person.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A **threshold** is one `if` and one number **you** chose — arithmetic, not AI — and you have to be able to defend it as a trade rather than a fact. **"Not sure" is your app refusing**, not the model guessing. And showing your model fail **on purpose** is the thing that makes everything else you say believable. |
+| **The one question it answers** | *"What does my app do when the model is not sure?"* If the answer is "it guesses anyway", you have not finished building it. |
+| **What it plugs into** | Week 16's margin and threshold, which is where the number came from. Week 30's Scratch blocks, which is how the model and the app finally speak to each other. And Week 33's measured gap, which is what your bias report is actually made of. |
+| **What carries forward** | Every single thing you rehearse today gets delivered live in Week 36 — including the failure you demonstrate on purpose. You are not preparing a presentation; you are packing a booth. |
+| **Spiral thread** | 🧠 **Model** — wrapped in an app that knows the difference between an answer and a guess — and 🌍 **Impact** — because a refusal, a warning sign and a priced fix are all decisions about somebody else. |
+
+> **💡 Try this:** set your threshold deliberately too high for one minute, so the app refuses almost
+> everything, then deliberately too low, so it commits to nonsense. Both extremes are wrong, and
+> feeling *why* they are wrong is how you defend the number you actually picked.
+
+---
+
 ## 🔑 Remember This
 
 - **The four confidences always add to 100, so something always wins** — even when the model has no opinion at all. That's why a threshold exists.

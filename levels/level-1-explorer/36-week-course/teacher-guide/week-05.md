@@ -161,6 +161,38 @@ Take your own phone's screen-time numbers for the last seven days and compute th
 
 ---
 
+### 🧭 The Growing Map — Week 5's frame
+
+Nothing moves on the map this week, and that is the teaching point. Same band, same nine tiles, same
+badge on THE TABLE — week two of a three-week tile.
+
+![The course map after Week 5: still the table tile, now checked for mess](../figures/fig-w05-0-where-this-fits.svg)
+
+*Figure 5.0 — Week 5's version. Geometrically identical to Week 4. The only differences are the
+thread strip — **data** alone this week — and the line at the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Put it up next to last week's and ask** *"what's different?"* Let them hunt. The honest answer
+   is *"almost nothing"*, and a learner who gets there has understood that the map tracks the
+   *course*, not the *lesson*.
+2. **Then ask** *"which bit did we do today, then?"* They will point at THE TABLE again — the crime
+   scene table, the nine faults, the fifteen-hour sleeper. Follow with *"and what does dashed still
+   mean?"* Same answer as always: not yet.
+3. **No redraw this week.** Have them look at the copy they already have and say one sentence out
+   loud: *"same tile, second of three, and this time it was the four kinds of mess."* Saying it is
+   the whole exercise.
+
+> **🧑‍🏫 Why this is worth two minutes.** "We didn't move" is reassuring in a way that is easy to
+> underestimate. A learner who cannot see the map reads a second week on the same material as *"I must
+> be behind"*. One glance at an unchanged picture kills that idea for free.
+
+**The six threads** along the bottom: **data · representation · model · learning signal · evaluation
+· impact.** Only **data** is lit — one thread, because the whole lesson was about the stuff going in.
+If they cannot remember which thread it was, that costs nothing.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes the night before

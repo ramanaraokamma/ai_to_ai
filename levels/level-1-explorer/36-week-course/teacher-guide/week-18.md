@@ -183,6 +183,41 @@ wrong way, because of *where* it was measured.
 
 ---
 
+### 🧭 The Growing Map
+
+**TRAINING** is tinted for the last time today, and the threads have shifted to **data** and
+**evaluation**. Nothing new was built this lesson; the ingredients were changed and the consequences
+measured. That is the honest description of a sabotage lab.
+
+![The course map in Week 18: the training tile is finished, broken on purpose to show what was holding it up](../figures/fig-w18-0-where-this-fits.svg)
+
+*Figure 18.0 — Week 18's version. TRAINING tinted and badged for the final week, with **data** and
+**evaluation** lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today — we didn't make a new model, so why is TRAINING
+   still the shaded box?"* The answer you want: *"we retrained it four times with different photos."*
+   Every experiment today was a training run. Breaking it is part of building it.
+2. **Then the better question:** *"why is HONEST TESTING still dashed, when we spent all lesson finding
+   out how bad our models were?"* Because every score today came from photos they had chosen and seen.
+   They compared models to each other, never to anything held back. Leave that sitting there; Week 19
+   opens with it.
+3. **Have them shade TRAINING for the last time** and write next to it the sentence *"my model was using
+   \_\_\_ instead of \_\_\_"* — or, if they found nothing, *"nothing found, here is how I looked"*. Both
+   are legitimate, and writing the second one honestly is the harder skill.
+
+> **🧑‍🏫 Why this is worth two minutes.** Today can feel to a student like an afternoon of deliberately
+> making things worse, which is not obviously progress. The map reframes it: the TRAINING box is now
+> *finished*, and it took two weeks — one to build, one to find out what the build was standing on. That
+> is also the moment to point right along the middle row at Weeks 19 to 22 and say "and now we measure it
+> properly", because Term 2 ends here.
+
+**The six threads** along the bottom are the spine of all four levels. **Data** and **evaluation** are
+lit this week. Do not quiz them on the threads; the map is orientation, never assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

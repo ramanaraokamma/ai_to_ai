@@ -544,6 +544,31 @@ The leak test is not *"is this measurable?"* — it is *"could a stranger name t
 
 ---
 
+## 🧭 Where This Fits
+
+This is the last week inside the **FEATURES** box, and you get to close it yourself — not by being
+told the columns work, but by handing your numbers to a person who has never seen your objects and
+watching what happens.
+
+![The course map in Week 14: the features tile closes with a human playing the model](../figures/fig-w14-0-where-this-fits.svg)
+
+*Figure 14.0 — The map in Week 14. Fourth and final week in the tinted FEATURES box. Next week the
+box turns white with "wk 11-14" written under it, and the shading moves down to TRAINING.*
+
+| | |
+|---|---|
+| **The mental model you now own** | If your features carry enough, a stranger who has never seen the objects can name them **from the numbers alone**. If the stranger cannot, no machine could have either — so the problem was never the machine. A model is never cleverer than its columns. |
+| **The one question it answers** | *"Could somebody who has never seen this thing name it from my numbers alone?"* |
+| **What it plugs into** | All three weeks behind you at once: five features in a fixed order on the front of the card (Week 11), no leaks allowed (Week 12), one label on the back whose shape you chose on purpose (Week 13), and a score that only counts next to the random baseline. |
+| **What carries forward** | Asking your tester *which feature did you actually use?* is precisely the move you make in Week 18 when you sabotage photos one thing at a time — and the question Week 25 finally answers with edges. |
+| **Spiral thread** | 🏷️ **Representation** — the columns are the whole message — and 📦 **Model**, because this week the model is a human being sitting opposite you. |
+
+> **💡 Try this:** before you turn the page, write on your map the score your tester got and the
+> baseline they had to beat, as two numbers side by side. Everything after this week is that same pair
+> of numbers, over and over.
+
+---
+
 ## 🔑 Remember This
 
 - **Five features on the front, in the same order on every card. The label on the back, one word.** Fixed order isn't tidiness; it's what stops your test measuring the tester's patience.

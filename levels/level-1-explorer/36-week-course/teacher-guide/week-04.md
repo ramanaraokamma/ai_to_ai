@@ -157,6 +157,38 @@ Do the backpack activity yourself, quickly, with your own bag. Weigh four things
 
 ---
 
+### 🧭 The Growing Map — Week 4's frame
+
+No structural change this week: the same band, the same nine tiles. What moves is the badge, from
+ONE JOB EACH to THE TABLE, and ONE JOB EACH goes white with "wk 3" printed on it.
+
+![The course map after Week 4: the table tile opens under the learned branch](../figures/fig-w04-0-where-this-fits.svg)
+
+*Figure 4.0 — Week 4's version. One tile done, one tile tinted and badged, seven still dashed, and
+**data** plus **representation** lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it, then ask** *"which bit did we do today?"* They will point at THE TABLE — the backpack, the
+   row unit argument, the eight rows they filled. Good. Pointing is the exercise.
+2. **Then point at ONE JOB EACH and ask** *"why has that one gone white?"* You want *"because we
+   finished it."* Follow with *"and why is FEATURES still dashed?"* — *"we haven't got there yet."*
+   Those two questions together teach the whole colour scheme in fifteen seconds.
+3. **Have them update their own map** — colour THE TABLE, un-colour nothing, write "wk 3" on the
+   first tile. Thirty seconds. Then tell them it stays on this tile for three weeks, so there is no
+   redraw next week.
+
+> **🧑‍🏫 Why this is worth two minutes.** Week 4 is where a few learners quietly decide this course has
+> stopped being about AI and started being about spreadsheets. The map is the cheapest available
+> answer: the tile they are standing in is *inside* the learned branch, three boxes down from "a
+> machine that decides". Show it rather than argue it.
+
+**The six threads** along the bottom: **data · representation · model · learning signal · evaluation
+· impact.** Two lit — **data** (what got written down) and **representation** (the shape it got
+written down *in*). Do not name them for the learner today.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes the night before

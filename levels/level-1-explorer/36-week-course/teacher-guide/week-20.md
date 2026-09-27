@@ -216,6 +216,41 @@ starts correcting themselves. It is the single most transferable habit in the we
 
 ---
 
+### 🧭 The Growing Map
+
+Same box as last week — **HONEST TESTING** — and this is the only week of the term with a **single**
+thread lit. That is deliberate and it is worth saying out loud: today is one skill, practised until it
+is automatic, not a tour of new ideas.
+
+![The course map in Week 20: honest testing is this week's box, where one accuracy number is written three ways](../figures/fig-w20-0-where-this-fits.svg)
+
+*Figure 20.0 — Week 20's version. HONEST TESTING still tinted and badged, with **evaluation** the only
+lit thread along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today — and why is it the same box as last week?"* The
+   answer you want: last week we **hid** the photos, this week we **scored** them. Sealing and scoring are
+   two halves of one box, and doing either without the other is worthless.
+2. **Then the better question:** *"only one thread is lit today. Which one, and why only one?"*
+   **Evaluation.** We touched no new data, changed no model, trained nothing. We took a pile of results
+   and learned to report it in a way that cannot flatter us — and the baseline is the part that does the
+   work.
+3. **Have them write one accuracy on their own map** in all three costumes, with the baseline beside it.
+   If those two numbers are close, they add the words **"earned nothing"** and an arrow. That phrase, in
+   their own handwriting, is the week.
+
+> **🧑‍🏫 Why this is worth two minutes.** Accuracy arithmetic looks to a student like a maths lesson that
+> wandered into the wrong room. The map tells them why it is here: it sits on the evaluation thread, in the
+> same box as the envelope they sealed last week, two tiles along from WHO IT FAILS in Week 31 — which is
+> the same trick at higher stakes. A single lit thread is the clearest signal in this figure's whole
+> vocabulary, so point at it and let it mean something.
+
+**The six threads** along the bottom are the spine of all four levels. **Evaluation** is lit on its own
+this week. Do not quiz them on the threads; the map is orientation, never assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes the night before

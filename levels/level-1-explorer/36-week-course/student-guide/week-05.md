@@ -648,6 +648,31 @@ Not by being clever, not by being modern. To a machine, `Monday` and `monday` ar
 
 ---
 
+## 🧭 Where This Fits
+
+Nothing moved on the map this week, and that is on purpose. THE TABLE tile is lit for **three weeks
+running**, because there is that much worth knowing about it. Week 4 read a table across, left to
+right. This week you went down it, column by column, looking for trouble.
+
+![The course map after Week 5: still the table tile, now checked for mess](../figures/fig-w05-0-where-this-fits.svg)
+
+*Figure 5.0 — The map after Week 5. Every box is exactly where it was last week. Same tile, second
+week — what changed is the thread strip at the bottom and the line underneath it.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Every column has a **type**, and the test is arithmetic: if adding two values means nothing, it is a **category**. And mess comes in exactly **four kinds** — missing, duplicate, impossible, inconsistent — each with its own fix. |
+| **The one question it answers** | *"Is this column a number or a name, and which of the four kinds of mess is hiding in it?"* |
+| **What it plugs into** | Week 4's table. The same table — now inspected column by column instead of read left to right. |
+| **What carries forward** | **Blank-plus-a-note** is the habit that keeps your Week 6 data card honest, and **category-in-disguise** is the very same trap waiting for you again in Week 13. |
+| **Spiral thread** | 📊 **Data**, on its own this week — one thread, because the whole lesson was about the stuff going in and nothing else. |
+
+> **💡 Try this:** do not redraw your map this week. Instead, look at the one you already have and say
+> out loud what changed. "Same tile, week two of three, and this time it was about the four kinds of
+> mess." Being able to say that is exactly what the map is for.
+
+---
+
 ## 🔑 Remember This
 
 - **Every column has a type, and the test is arithmetic.** If adding two values does not mean anything, it is a **category**, no matter how many digits it is made of.

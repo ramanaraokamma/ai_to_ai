@@ -197,6 +197,41 @@ in a better place than one who leaves anxious.
 
 ---
 
+### 🧭 The Growing Map
+
+Nothing moves on the map this week, and saying so out loud is worth ten seconds. **WHO IT FAILS** stays
+shaded, because metadata, deepfakes and over-trust are not a fourth topic bolted on the end — they are
+the same tile as bias, seen from the side where the person is the one being got wrong.
+
+![The course map in Week 32: the same who it fails tile, now asking where a file came from and who gains if you pass it on](../figures/fig-w32-0-where-this-fits.svg)
+
+*Figure 32.0 — Week 32's version. The same tinted, badged tile as last week, one dashed tile left, and
+only **impact** lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today?"* They will look for a new box, not find one, and
+   that hesitation is the teaching moment. Then ask the question that lands it: *"we opened a photo
+   file, re-identified three classmates from boring facts, and spotted an invented video — why is that
+   the same box as last week?"* Because all four things end with a real person believing something
+   false about themselves or the world.
+2. **Then the better question:** *"why is the other box still dashed?"* Because you have not built
+   anything yet. YOUR OWN AI is weeks 34 to 36, and it is now the only thing on the map marked *not
+   yet* — which is a quietly motivating thing for a student to notice in early summer.
+3. **Have them copy it** and write their own four provenance checks — who posted it first, when, who
+   else has it, what was around it — down the side of the WHO IT FAILS box, in their own words.
+
+> **🧑‍🏫 Why this is worth two minutes.** This is the week most likely to be remembered as "the scary
+> internet lesson". The map refuses that framing: the tile sits on the same branch as THE TABLE and
+> HONEST TESTING, which says these are checkable, countable habits, not fears. Competent, not
+> frightened — and the picture does half that work for you.
+
+**The six threads** along the bottom are the spine of all four levels. Only **impact** is lit this week,
+and deliberately so: nothing today improved a model. If a student asks why *model* is dark, that is the
+best question of the wrap. Do not quiz them on the threads; the map is orientation, never assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 **10 minutes, the night before — this is the part that cannot be improvised**

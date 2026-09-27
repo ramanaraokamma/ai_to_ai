@@ -523,6 +523,32 @@ Labelling five thousand messages is hours of dull work, and every mistake in it 
 
 ---
 
+## 🧭 Where This Fits
+
+Same tile as last week, and this is the week the left-hand branch runs out of road. You have spent ten
+weeks in the room where a person writes the rules; today you counted how big that room would have to
+get, and the answer is *too big*. Now look at all those dashed tiles on the right-hand side. By the
+end of today you know exactly why every one of them has to exist.
+
+![The course map after Week 10: the same too many rules tile, and the wall it explains](../figures/fig-w10-0-where-this-fits.svg)
+
+*Figure 10.0 — The map after Week 10. The tinted tile is the wall: **too many rules**. It is the only
+reason the nine tiles on the right-hand branch exist, and next week the year crosses over to them.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A check is a yes/no question, and **n** checks make **2ⁿ** situations — so a rulebook grows faster than the exceptions it is chasing. Eight checks, which is nothing at all, is 256 situations and **258** rulebook lines. That wall is the *only* reason the right-hand branch of this map exists. |
+| **The one question it answers** | *"How many different situations would I have to write a line for?"* |
+| **What it plugs into** | Week 9's repaired rulebook. You stopped adding rules that week; this week proves that was arithmetic, not laziness. |
+| **What carries forward** | It hands the year straight back to the branch on the right. Week 11 begins the trade: stop writing rules, start collecting labelled examples. |
+| **Spiral thread** | 📦 **Model**, on its own — one thread, because this week is one single idea about what a rulebook can and cannot ever be. |
+
+> **💡 Try this:** on your copy of the map, draw a short arrow from the tinted tile across to the
+> dashed FEATURES tile on the right, and write **the trade** along it. That arrow is the shape of the
+> rest of your year.
+
+---
+
 ## 🔑 Remember This
 
 - **A check is a yes/no question. n checks give 2ⁿ situations.** That is the whole arithmetic of the week.

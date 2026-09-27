@@ -587,6 +587,32 @@ That is a real and general idea, and it is not only about words. Always taking t
 
 ---
 
+## 🧭 Where This Fits
+
+Still **WORDS**, still the same tally table — and this week you run it. Notice which thread lights up
+next to model on the strip below: not evaluation, not data. **Impact.** That is a clue about what this
+week is really for.
+
+![The course map in Week 29: the words tile is this week's box, where a die walks the tally table and fluent is not true](../figures/fig-w29-0-where-this-fits.svg)
+
+*Figure 29.0 — The map in Week 29. WORDS stays shaded, with **model** and **impact** lit. The model
+half is the die and the loop; the impact half is what happens when a machine says something fluent and
+wrong to a real person.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Generation is a four-step loop: **where am I → look up the group → pick one → say it.** Because the pick is a roll of a die — **sampling** — the same prompt can give you different answers every time. And a sentence can be perfectly **fluent** and completely **false**. |
+| **The one question it answers** | *"Where did this sentence's confidence come from — evidence, or fluency?"* |
+| **What it plugs into** | Week 28's next-word table, which is the thing the die walks across, and Week 16's hard-won point that confidence is a **preference, not a promise**. |
+| **What carries forward** | Fluent-and-false is exactly what you have to warn a real user about in Weeks 32 and 33, and it is the reason the booth you build in Week 35 needs a warning sign at all. |
+| **Spiral thread** | 📦 **Model** — how a sentence actually gets produced — and 🌍 **Impact** — because smooth, confident, wrong is the single most expensive failure this subject has. |
+
+> **💡 Try this:** on your map, write one sentence next to WORDS that sounds completely convincing and
+> is completely made up. Underline it. That underlined sentence is the best revision note you will make
+> all term.
+
+---
+
 ## 🔑 Remember This
 
 - **Generation is a four-step loop:** where am I, look up the group, pick one, say it. Repeat. That is the entire engine.

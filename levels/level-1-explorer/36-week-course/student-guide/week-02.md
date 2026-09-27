@@ -521,6 +521,31 @@ Every single one of those had a person attaching answers to examples, somewhere 
 
 ---
 
+## 🧭 Where This Fits
+
+Last week the map had one room filled in and one room left deliberately empty. This week you filled
+in the empty one. Look at it now — the fork is finished, and *everything* you do between here and
+Week 36 hangs off that right-hand branch.
+
+![The course map after Week 2: both branches of the fork now have a name](../figures/fig-w02-0-where-this-fits.svg)
+
+*Figure 2.0 — The map after Week 2. Both rooms of the fork have a name now. The white room with
+"wk 1" on it was last week's; the tinted one with the tick is this week's.*
+
+| | |
+|---|---|
+| **The mental model you now own** | The other branch of the fork: **nobody writes the rule.** The machine works it out from labelled examples. Training happens **once**, and afterwards the examples are put away and only the model answers. |
+| **The one question it answers** | *"If nobody wrote the rule, what did the machine study instead?"* |
+| **What it plugs into** | Week 1's fork. This is the dashed box Week 1 left empty on purpose — and now both branches have a name. |
+| **What carries forward** | Everything from Week 3 to Week 36 hangs off this branch. The labelled example you met today becomes one **row** in Week 4 and a whole **feature table** in Week 11. |
+| **Spiral thread** | 📦 **Model** and 🎯 **Learning signal** — what the decision-maker *is*, and what it learned from. Data, representation, evaluation and impact all start in the weeks ahead. |
+
+> **💡 Try this:** on your own copy of the map, fill in the right-hand room and write today's date
+> next to it. Nothing on the map is dashed this week, which will not happen again all year — from next
+> week on there is always something waiting.
+
+---
+
 ## 🔑 Remember This
 
 - **Machine learning:** nobody writes the rule. The machine finds it by studying examples that

@@ -214,6 +214,41 @@ end of the lesson, that is the moment. Make a small fuss of it.
 
 ---
 
+### 🧭 The Growing Map
+
+This is a closing week and the map says so: **HONEST TESTING** is tinted for the last time in its run,
+and the thread strip has **impact** lit next to **evaluation**. That pairing is the point of the
+lesson — the moment you report per-class accuracy, you have stopped asking *is it good?* and started
+asking *good for whom?*
+
+![The course map in Week 22: the honest-testing tile closes with a score you can defend](../figures/fig-w22-0-where-this-fits.svg)
+
+*Figure 22.0 — Week 22's version. HONEST TESTING tinted and badged for the final week of its run, with
+**evaluation** and **impact** lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today — and why is it the same shaded box as three weeks
+   ago?"* The answer you want: holding photos back, counting them, drawing the matrix and finally
+   *judging* were four parts of one job, and today was the judging. Pointing at the box is the whole
+   exercise; do not let it become a speech.
+2. **Then the better question:** *"why is PIXELS still dashed, when we spent the whole lesson looking
+   at photographs?"* Because nothing today cared what was *inside* a photo — a photo was a row with a
+   right answer attached. Opening the photo up is next week. Say that sentence out loud; it is the
+   hook for Week 23.
+3. **Have them write their own four numbers** on their notebook map beside HONEST TESTING, and circle
+   their worst class. Numbers they measured themselves are the numbers they will defend.
+
+> **🧑‍🏫 Why this is worth two minutes.** Today can feel like an ending — the project is scored, the
+> envelope is used up. The map reframes it as a foundation: those four numbers are exactly what Weeks
+> 31 to 34 stand on. A learner who sees that treats the Week 33 audit as a bigger version of something
+> they already own, instead of as a brand-new topic they have to learn from zero.
+
+**The six threads** along the bottom are the spine of all four levels. **Evaluation** and **impact**
+are lit this week. Do not quiz them on the threads; the map is orientation, never assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

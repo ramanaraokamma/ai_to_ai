@@ -552,6 +552,32 @@ biggest systems have every reason to *announce* progress, not hide it.
 
 ---
 
+## 🧭 Where This Fits
+
+The right-hand branch of the fork was one big empty room last week. This week it became a heading
+with **nine tiles** underneath it, and you filled in the first one. From here the branch fills up
+like a page — left to right, top to bottom — and the dashed tiles tell you exactly which weeks the
+rest are coming in.
+
+![The course map after Week 3: the learned branch gets its first tile](../figures/fig-w03-0-where-this-fits.svg)
+
+*Figure 3.0 — The map after Week 3. The learned branch is now a heading over nine tiles. The tinted
+tile with the tick is yours. Every dashed tile is a "not yet", and it says which weeks it belongs to.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Under the learned branch sit three families — machines that **decide**, machines that **generate**, and machines that were **told the rules**. And every real one is **narrow**: brilliant at one job, blank one small step sideways from it. |
+| **The one question it answers** | *"What is this machine's one job, and what happens one small step outside it?"* |
+| **What it plugs into** | Weeks 1 and 2. You can now sort any machine into told-the-rules or learned-from-examples — and this week you did it fifteen times, on your own ordinary day. |
+| **What carries forward** | Narrowness is why your own model in Week 17 will know only three objects — and why it will still answer a confident 94% about a fourth one in Week 16. |
+| **Spiral thread** | 📦 **Model** and 🌍 **Impact** — what the decision-maker *is*, and what it does to the people who use it. Data, representation, learning signal and evaluation come later. |
+
+> **💡 Try this:** copy the nine tiles onto your own map, dashed ones and all, but do not read ahead
+> about them. Guessing what "WHO IT FAILS" might mean in Week 31 is far more useful to you than being
+> told, and you get to find out in March whether you were right.
+
+---
+
 ## 🔑 Remember This
 
 - **Count the possible outputs.** Short fixed list → picking a label. Blank page → **generating**.

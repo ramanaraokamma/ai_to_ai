@@ -197,6 +197,39 @@ from examples and then applying it with the examples gone.
 
 ---
 
+### 🧭 The Growing Map — Week 2's frame
+
+The student guide carries the same picture every week with one more piece filled in. This week it
+completes the fork you opened last week: the box that was dashed and labelled WEEK 2 is now the
+tinted, badged one.
+
+![The course map after Week 2: both branches of the fork now have a name](../figures/fig-w02-0-where-this-fits.svg)
+
+*Figure 2.0 — Week 2's version. Left room white with "wk 1" on it, right room tinted with the tick,
+and **model** plus **learning signal** lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it, don't explain it.** Ask *"which bit did we do today?"* They will point at the
+   right-hand room — the mango cards, the rule falling out of the counting. Pointing is the whole
+   exercise; do not add commentary.
+2. **Then ask the question that actually lands:** *"last week this box was dashed. Why isn't it
+   now?"* The answer you want is *"because we've done it"* — that is a learner noticing the map moved
+   because of work they did.
+3. **Have them fill in the right-hand room on their own copy**, in pencil, on the inside cover. Ten
+   seconds of colouring. Worth ten times the version printed here.
+
+> **🧑‍🏫 Why this is worth two minutes.** This is the one week where nothing on the map is dashed, and
+> that is worth saying out loud: *"the fork is finished — everything from now on goes inside the
+> right-hand room."* A learner who hears that has a container for the next thirty-four weeks instead
+> of a queue of unrelated topics.
+
+**The six threads** along the bottom: **data · representation · model · learning signal · evaluation
+· impact.** Two are lit this week — **model** (what the trained thing *is*) and **learning signal**
+(the labels it studied). You do not need to name them for the learner. Do not quiz them on it.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes the night before

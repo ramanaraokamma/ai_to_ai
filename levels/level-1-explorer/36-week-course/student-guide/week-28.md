@@ -597,6 +597,30 @@ Write a pair backwards and the total is still 39 — one mark went down either w
 
 ---
 
+## 🧭 Where This Fits
+
+Same box as last week — **WORDS** — because chopping a sentence up was only the setting-out. This week
+you do something with the counts, and the something is small enough to fit on one sheet of paper and
+big enough to be an actual language model.
+
+![The course map in Week 28: the words tile is this week's box, where word pairs are tallied into a next-word table](../figures/fig-w28-0-where-this-fits.svg)
+
+*Figure 28.0 — The map in Week 28. WORDS is still the shaded box, but the lit threads have shifted:
+**model** has joined **data**. That shift is the week. Last week you collected; this week you build.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A language model is a **tally of which word tends to follow which**. A **bigram** is two tokens standing next to each other *in that order* — and the order is the half of the information that makes the whole thing work. |
+| **The one question it answers** | *"After this word, what came next, and how often?"* |
+| **What it plugs into** | Week 27's tokens and counts, unchanged. Same tokens, same tally marks, same discipline — you simply count them **in pairs instead of one at a time**. |
+| **What carries forward** | Week 29 walks this table with a die to make sentences, and Week 30 stands it next to a rule-based bot from the left-hand branch so you can watch two machines fail in two different ways. |
+| **Spiral thread** | 📊 **Data** — a tally is data and nothing but — and 📦 **Model**, because a table you can read forwards to predict something *is* a model, with no magic left over. |
+
+> **💡 Try this:** write the word **model** next to WORDS on your own map, then underneath it write
+> *"= a tally"*. When someone next tells you AI is unknowable, that is the two-word answer you own.
+
+---
+
 ## 🔑 Remember This
 
 - **Word frequency knows how much. It never knows where.** All the right words in the right amounts is still nonsense without an order.

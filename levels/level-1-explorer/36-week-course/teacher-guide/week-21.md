@@ -226,6 +226,42 @@ questions.
 
 ---
 
+### 🧭 The Growing Map
+
+**HONEST TESTING** for a third week, and **model** has joined **evaluation** in the strip. That pairing is
+exactly today's content: the gap between two scores is a statement about what the model *became*, not just
+about how well it did.
+
+![The course map in Week 21: honest testing is this week's box, where two scores tell memorizing from generalizing](../figures/fig-w21-0-where-this-fits.svg)
+
+*Figure 21.0 — Week 21's version. HONEST TESTING still tinted and badged, with **model** and
+**evaluation** lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today — third week in the same box, so what did this week
+   add?"* The answer you want: Week 19 hid the photos, Week 20 turned them into one number, and today we
+   needed **two** numbers plus a grid, because one number could never have told Aisha from Ben.
+2. **Then the better question:** *"why has model lit up as well as evaluation this week?"* Because the gap
+   is telling you what kind of thing the model is — one that learned the objects, or one that learned the
+   photographs. Follow it with the practical one: *"why is WHO IT FAILS still dashed, when the matrix is
+   full of mistakes?"* Because a matrix counts mistakes; it does not ask **whose** they are. That is
+   Week 31.
+3. **Have them write their two scores on their own map** next to HONEST TESTING, with a minus sign between
+   them and the answer circled. Label the circle **overfitting**. A word they can now compute is a word
+   they will not misuse.
+
+> **🧑‍🏫 Why this is worth two minutes.** This week's two ideas — the gap, and the matrix — are the ones
+> most often remembered as unconnected: one is a subtraction and the other is a grid. The map holds them
+> together by putting both in the same box, and it sets up next week honestly: Week 22 is where this whole
+> box gets pointed at their own model, and the Week 19 envelope is finally opened. Say so, and say that it
+> only happens once.
+
+**The six threads** along the bottom are the spine of all four levels. **Model** and **evaluation** are
+lit this week. Do not quiz them on the threads; the map is orientation, never assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes the night before

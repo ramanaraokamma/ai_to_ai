@@ -513,6 +513,30 @@ This matters more than it sounds. Next week your finished edge map will look fla
 
 ---
 
+## 🧭 Where This Fits
+
+Still the PIXELS box — third week running — but something new happened today. Up to now you have been
+*reading* a grid of numbers. Today you did arithmetic on one, and an outline appeared that nobody drew.
+
+![The course map in Week 25: the pixels tile is this week's box, where nine numbers find the edges](../figures/fig-w25-0-where-this-fits.svg)
+
+*Figure 25.0 — The map in Week 25. Still the tinted PIXELS box, with representation and model lit at
+the bottom: nine numbers on a page are a real piece of a real vision model.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A **filter** is nine numbers you multiply and add as it slides across the grid. Say what it does **in words** — *right column minus left column* — and you will never forget it, because words do not rotate. And remember what a result of zero means: **nothing changed here**, not *nothing is here*. |
+| **The one question it answers** | *"What one thing does this little grid highlight?"* |
+| **What it plugs into** | Week 23's grid arithmetic, plus the habit you built in Week 5 of checking one cell by hand instead of trusting a whole sheet you never looked at. |
+| **What carries forward** | Next week a spreadsheet runs a hundred of these cells in two seconds, and you use it to prove that edges survive somebody turning a different lamp on. |
+| **Spiral thread** | 🏷️ **Representation** — turning a grid of brightnesses into a grid of *changes* — and 📦 **Model**, because this is the actual first step inside an image model, shrunk down until a pencil can do it. |
+
+> **💡 Try this:** write *right column minus left column* next to PIXELS on your map, in words, with
+> no numbers at all. If you can say the sentence in six months you can rebuild the nine numbers from
+> scratch; if you only memorised the nine numbers, you will have rotated them by accident.
+
+---
+
 ## 🔑 Remember This
 
 - **A filter is nine numbers you multiply and add.** Where the picture is boring, it gives you zero. Where something changes, it gives you a big number.

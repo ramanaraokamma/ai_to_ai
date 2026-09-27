@@ -689,6 +689,32 @@ Whenever anybody quotes you a percentage, ask the two words: **out of how many?*
 
 ---
 
+## 🧭 Where This Fits
+
+This week the map moves **down**, not across. The room where a person writes the rules holds two
+tiles, and you have just moved into the second one — the tile that ends with your own rulebook
+standing in front of a judge. Look up while you are there: the tile above has turned white, because
+Weeks 7 and 8 are finished.
+
+![The course map after Week 9: the too many rules tile inside the person branch is filled in](../figures/fig-w09-0-where-this-fits.svg)
+
+*Figure 9.0 — The map after Week 9. One tile finished and gone white, one tile tinted and yours, and
+only **one** thread lit along the bottom — because this week had one job.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A score on the very examples you built your rules from is not a score at all. **Accuracy = correct ÷ total**, written three ways every time — the fraction, the division, the percentage — and the honest one is measured on examples the rulebook has **never seen**. |
+| **The one question it answers** | *"Out of how many — and had it seen them before?"* |
+| **What it plugs into** | Weeks 7 and 8: your own rulebook, put on trial on five fresh messages nobody let it look at first. |
+| **What carries forward** | This week is the whole of Term 3 in miniature. Week 19 hides photos *before* training; Week 20 writes accuracy three ways; Week 22 does all of it to a model you built yourself. |
+| **Spiral thread** | ⚖️ **Evaluation**, on its own this week — one thread, because a checkpoint has exactly one job: find out what is true. |
+
+> **💡 Try this:** write two numbers on your notebook map, right beside the tinted tile — your score
+> on the ten you practised with, and your score on the five you had never seen. The gap between them
+> is the most useful number you have written down all year.
+
+---
+
 ## 🔑 Remember This
 
 - **Training examples** are the ones you studied while building your rules. **Fresh examples** are ones the rulebook has never seen, set aside first and scored once.

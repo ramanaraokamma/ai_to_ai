@@ -208,6 +208,41 @@ think", not by knowing it in advance.
 
 ---
 
+### 🧭 The Growing Map
+
+Two changes on the map this week, and both are worth ten seconds each. **WORDS** has gone plain with
+its full range, weeks 27 to 30, because it is finished — and **WHO IT FAILS** shades in beside it. It
+is the first tile on the whole map that is about people rather than machinery.
+
+![The course map in Week 31: the who it fails tile opens, where a gap in the photos comes back as a gap in accuracy](../figures/fig-w31-0-where-this-fits.svg)
+
+*Figure 31.0 — Week 31's version. WORDS turned plain and done, WHO IT FAILS newly tinted and badged,
+and only one dashed tile left. **Data** and **impact** are lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today?"* They will find the new tile. Then the question
+   that carries the lesson: *"we didn't build anything today, so why is this a box of its own?"* Because
+   the four-link chain — who got photographed, lopsided data, the model copies it, a person gets bad
+   answers — runs through every box on the right-hand branch at once.
+2. **Then the better question:** *"why are **data** and **impact** lit, and not model?"* Because nothing
+   was wrong with the model. The gap arrived in the photographs and came out the far end as somebody
+   else's bad afternoon. If a student says "we need a better model", this is the picture that answers
+   them.
+3. **Have them shade WHO IT FAILS** and write their own gap from the activity next to it, in percentage
+   **points**, with the count that caused it underneath. Their number, their units, their box.
+
+> **🧑‍🏫 Why this is worth two minutes.** This is the week most at risk of being heard as a lecture
+> about being nice. The map refuses that reading: the tile sits on the same branch as THE TABLE, HONEST
+> TESTING and FEATURES, which tells them fairness is measured with the same arithmetic they have been
+> doing since October, not with an opinion.
+
+**The six threads** along the bottom are the spine of all four levels. **Data** and **impact** are lit
+this week — a count at one end of the chain, a person at the other. Do not quiz them on the threads; the
+map is orientation, never assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 **10 minutes, the night before**

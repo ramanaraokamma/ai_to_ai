@@ -528,6 +528,31 @@ When there is no honest way to produce the number, regression is not on the menu
 
 ---
 
+## 🧭 Where This Fits
+
+Same box again — **FEATURES**, week three of four. Week 11 gave you the columns, Week 12 taught you
+to test them, and this week you turn round and look at the very last column: the label. Its *shape*
+turns out to decide what kind of machine you are building.
+
+![The course map in Week 13: the features tile is this week's box, where the shape of the answer is decided](../figures/fig-w13-0-where-this-fits.svg)
+
+*Figure 13.0 — The map in Week 13. The tinted box with the tick is still FEATURES. Notice that the
+two lit threads at the bottom have changed even though the box has not: that is how you tell this
+week apart from last week.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Look at the **shape of the answer**. One word out of a short list — cat, dog, rabbit — and you are building a **classifier**. A number on a scale — 24 degrees, 6 minutes, 310 grams — and you are building a **regressor**. The genuinely strange part is that the *same table* does either one. It depends entirely on which column you covered up. |
+| **The one question it answers** | *"Is the answer one of a short list, or a number on a scale?"* |
+| **What it plugs into** | Week 11's label column. Cover a different column and you have changed which kind of machine you are building, without collecting a single new row. |
+| **What carries forward** | The model you train in Week 17 is a three-class classifier, and the confidence scores you read in Week 16 only exist *because* the answer comes from a short list. A number on a scale has no percentages to show you. |
+| **Spiral thread** | 📦 **Model** — which kind of guessing machine you end up with — and 🎯 **Learning signal** — because "nearly right" means something for a number and nothing at all for a word. |
+
+> **💡 Try this:** on your own map, draw two tiny sketches beside the FEATURES box — a short list of
+> words, and a ruler. That is this whole week in two pictures.
+
+---
+
 ## 🔑 Remember This
 
 - **Look at the shape of the answer.** A short list of words means **classification**. A number on a scale means **regression**. That is the only test you need.

@@ -462,6 +462,33 @@ Every professional who builds these systems will tell you the same thing: **the 
 
 ---
 
+## 🧭 Where This Fits
+
+The year crosses over. For ten weeks you have been in the left-hand room writing rules by hand, and
+the wall you hit last week is the reason you are now standing on the right-hand branch, where the
+rules get worked out from examples instead. Everything on the left is white now — finished. This is
+the third of nine tiles over here, and those nine tiles are what the rest of your year is made of.
+
+![The course map after Week 11: the features tile, third of nine on the examples branch, is filled in](../figures/fig-w11-0-where-this-fits.svg)
+
+*Figure 11.0 — The map after Week 11. The whole left-hand room is white and done. The tinted tile is
+on the learned branch — week one of four on FEATURES — and the six dashed tiles below it are the rest
+of the year.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A machine never meets the thing; it only ever meets the **row**. A **feature** is one *measured* description with a repeatable instruction behind it, and the **label** is the column you cover up and ask the machine to hand back. |
+| **The one question it answers** | *"What did I actually measure, and which column am I asking the machine for?"* |
+| **What it plugs into** | Week 4's rows and columns, plus the trade you agreed to in Week 10. This is what "collect labelled examples" looks like when somebody actually has to do it. |
+| **What carries forward** | These are the features a total stranger has to work from in Week 14, and the ones you hold up against a baseline in Week 12. |
+| **Spiral thread** | 🏷️ **Representation** — the shape somebody squeezes the world into — and 🎯 **Learning signal**, because the label column is the only thing telling a machine what "right" means. |
+
+> **💡 Try this:** on your own copy of the map, find the tile you are standing on and then say out loud
+> where you came from: *"I'm on the right-hand branch now, and I came here because eight checks is 258
+> rules."* That one sentence is the first ten weeks of this course.
+
+---
+
 ## 🔑 Remember This
 
 - **A machine never meets the real thing. It only ever meets the row.** Everything you didn't measure does not exist for it.

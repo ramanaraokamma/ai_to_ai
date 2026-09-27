@@ -207,6 +207,37 @@ Open any news story with a statistic in it and ask the five questions out loud, 
 
 ---
 
+### 🧭 The Growing Map — Week 6's frame
+
+Last week on this tile. The picture is the same as Weeks 4 and 5 — THE TABLE tinted and badged — and
+this is the frame where you can say the tile is finished and tell them where the map moves next.
+
+![The course map after Week 6: the table tile is finished](../figures/fig-w06-0-where-this-fits.svg)
+
+*Figure 6.0 — Week 6's version. Third and final week on THE TABLE, its full run being "wk 4-6", with
+**data** and **impact** lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it, then ask** *"which bit did we do today?"* THE TABLE, for the third time — the two averages,
+   the five provenance questions, the card they wrote. Then ask the better version: *"what were the
+   three weeks on this one tile about?"* Row, mess, origin. That is the tile, complete.
+2. **Then ask** *"what's still dashed?"* Seven tiles, and the nearest is FEATURES in Week 11. Tell them
+   plainly that next week the map changes on the **left** side of the fork for the first time since
+   Week 1 — the person's room finally subdivides. A promised change is a reason to come back.
+3. **Have them finish the tile on their own map** — colour it and write "wk 4-6" under it. First tile
+   they have watched fill over more than one week, and it is worth pausing on for ten seconds.
+
+> **🧑‍🏫 Why this is worth two minutes.** Weeks 4 to 6 are the driest stretch in Level 1, and this is
+> the frame where the learner gets to see them add up to one finished box. Closing a tile out loud is
+> what stops three weeks of spreadsheets feeling like an unexplained detour.
+
+**The six threads** along the bottom: **data · representation · model · learning signal · evaluation
+· impact.** Two lit — **data** (where the rows came from) and **impact** (who is missing from them).
+Orientation, not assessment: no marks, no quiz.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 20 minutes the night before

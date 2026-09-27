@@ -190,6 +190,42 @@ bags, and — genuinely — on the data used in some medical trials.
 
 ---
 
+### 🧭 The Growing Map
+
+The tinted box **moves** today, for the first time since Week 15. TRAINING turns plain white and gets its
+finished label, `wk 15-18`, and **HONEST TESTING** lights up as the new box. Point at that move; it is
+visible from across the room and it marks the start of Term 3.
+
+![The course map in Week 19: honest testing is the new box, filled in by sealing examples away before training](../figures/fig-w19-0-where-this-fits.svg)
+
+*Figure 19.0 — Week 19's version. TRAINING now white and finished, HONEST TESTING newly tinted and
+badged, with **data** and **evaluation** lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today — and notice the shaded box has jumped. Why?"* The
+   answer you want is that they did not train anything at all today; they **split the photos and sealed
+   an envelope**. Splitting happens *before* training, so the new box had to open before the next model
+   is ever built.
+2. **Then the better question:** *"why is TRAINING white now, and why is it behind us?"* Because a model
+   you cannot score is just a toy. Then ask the sharper one: *"we didn't work out a single percentage
+   today — why not?"* Because the split is the thing that makes a percentage worth having, and Week 20
+   is where the arithmetic lives.
+3. **Have them copy the move onto their own map:** shade HONEST TESTING, write `wk 15-18` under TRAINING,
+   and draw a small envelope with the seal date and the number of photos inside it. They will need both
+   of those figures in Week 22.
+
+> **🧑‍🏫 Why this is worth two minutes.** Today's idea is completely unglamorous — you put photos in an
+> envelope — and it is the single most important habit in the whole level. Seeing the map's shaded box
+> physically move because of an envelope is the strongest argument available that this counts as real
+> work. It also quietly warns them that three more weeks sit inside this box, so they should not expect
+> to be finished with testing by Friday.
+
+**The six threads** along the bottom are the spine of all four levels. **Data** and **evaluation** are
+lit this week. Do not quiz them on the threads; the map is orientation, never assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### 15 minutes the night before

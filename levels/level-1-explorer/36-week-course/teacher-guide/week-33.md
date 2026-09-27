@@ -246,6 +246,41 @@ saying so is a better lesson than a number would be.
 
 ---
 
+### 🧭 The Growing Map
+
+The map looks identical to last week's, and that is the honest picture: **WHO IT FAILS** is shaded for
+the third and last time. What changed is not the geometry but the ownership — the gap on the poster
+came out of a model the student built, not a case study.
+
+![The course map in Week 33: the who it fails tile closes with a gap measured on your own model, in percentage points](../figures/fig-w33-0-where-this-fits.svg)
+
+*Figure 33.0 — Week 33's version. The same tinted, badged tile, closing its run; one dashed tile left;
+**evaluation** and **impact** lit along the bottom.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it and ask:** *"which bit did we do today?"* They will point at the shaded tile. Then the
+   question that carries the whole lesson: *"we scored 36 photos, divided twice, subtracted, and opened
+   an envelope — which of those four made the poster trustworthy?"* The answer is *all four, in that
+   order*, and the envelope is the one people would skip.
+2. **Then the better question:** *"why is **evaluation** lit today when it wasn't last week?"* Because
+   last week the gap was a story about someone else's data, and this week it is a measurement with a
+   subtraction you can check. That distinction is the entire step from Week 31 to Week 33.
+3. **Have them copy it** and write their own gap — in **percentage points**, with the count underneath
+   — inside the WHO IT FAILS box. Then write *"done"* beside it, because from next week that tile goes
+   plain and their number is what finished it.
+
+> **🧑‍🏫 Why this is worth two minutes.** Today can feel like a bad-news lesson: the student measures
+> their own model failing. The map reframes it as completion — a tile closing, with their arithmetic in
+> it. That is the difference between *"my model is biased"* and *"I am the person who found and priced
+> the bias in my model"*, and the second sentence is the one you want them carrying to the fair.
+
+**The six threads** along the bottom are the spine of all four levels. **Evaluation** and **impact** are
+lit this week: a measured gap at one end, a named person at the other. Do not quiz them on the threads;
+the map is orientation, never assessment.
+
+---
+
 ## 🧰 Prep Checklist
 
 ### Earlier in the week — the photo shoot (25 minutes, non-negotiable)

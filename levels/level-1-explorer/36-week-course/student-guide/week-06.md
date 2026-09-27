@@ -511,6 +511,31 @@ There genuinely are well-documented sources: a national census, your school's ow
 
 ---
 
+## 🧭 Where This Fits
+
+Third and last week on the same tile. You built a table in Week 4, cleaned it in Week 5, and this
+week you wrote down **where it came from** — which is what finishes the job. THE TABLE tile has now
+had everything it needs, and next week the map changes over on the *other* side of the fork.
+
+![The course map after Week 6: the table tile is finished](../figures/fig-w06-0-where-this-fits.svg)
+
+*Figure 6.0 — The map after Week 6. Same tile, third and final week — the full run is "wk 4-6". After
+this the tile goes white like ONE JOB EACH, and the left-hand room is where the action moves.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Thirty rows are a **sample**, not the world. **Provenance** — who collected it, from whom, when, how, and with whose permission — is part of the data, and it is completely **invisible in the numbers**. |
+| **The one question it answers** | *"Who is missing from this table?"* |
+| **What it plugs into** | Weeks 4 and 5. You built the table and you cleaned it; this week you wrote down what it does and does not cover. |
+| **What carries forward** | This is the seed of Week 31's **fairness gap** and Week 33's **audit**, where "who is missing" stops being a worry and becomes a measured number in percentage points. |
+| **Spiral thread** | 📊 **Data** and 🌍 **Impact** — where the numbers came from, and who gets left out when nobody asks. |
+
+> **💡 Try this:** colour THE TABLE tile in on your own map and write "wk 4-6" under it, then read the
+> three things you now know about a table: what a row is, what is wrong with it, and where it came
+> from. Three weeks, three questions, one tile. That is how the rest of the year works too.
+
+---
+
 ## 🔑 Remember This
 
 - **Provenance is part of the data.** Who collected it, from whom, when, how, and with what permission changes what the numbers mean — and **nothing in the numbers reveals it.**

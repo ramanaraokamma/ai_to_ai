@@ -603,6 +603,33 @@ Four numbers, always together. A single accuracy figure is an average, and an av
 
 ---
 
+## 🧭 Where This Fits
+
+Three weeks ago you sealed an envelope and promised not to peek. Today you opened it, and the number
+that came out is the first score in your life that you can actually defend to somebody who doubts you.
+That finishes a whole box on the map — and it is the last thing you do before you go and find out what
+a photograph really is.
+
+![The course map in Week 22: the honest-testing tile closes with a score you can defend](../figures/fig-w22-0-where-this-fits.svg)
+
+*Figure 22.0 — The map in Week 22. HONEST TESTING is the tinted box, and this is the last week it
+stays tinted. The two lit threads at the bottom are evaluation and impact: working out what is true,
+and caring who the answer is true for.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Four numbers always travel together, and any one of them on its own is not a report: **overall accuracy**, the **baseline** you have to beat, **per-class accuracy**, and **the gap** between your training score and your test score, in percentage points. And the envelope is single-use — the moment you use it to decide something, it has leaked, and the next score needs a brand-new envelope of photos nobody has looked at. |
+| **The one question it answers** | *"Which class is my worst, and by how many percentage points?"* |
+| **What it plugs into** | Week 19's sealed envelope, opened exactly once, on the model you trained in Week 17 — counted the Week 20 way and drawn the Week 21 way. Four weeks of work land in one verdict. |
+| **What carries forward** | This was the rehearsal. In Weeks 33 and 34 these same four numbers go on a poster, in front of a real audience who are allowed to ask you awkward questions about every one of them. |
+| **Spiral thread** | ⚖️ **Evaluation** — how you find out what is actually true — and 🌍 **Impact**, because a per-class number is really a question about *who* the model lets down. |
+
+> **💡 Try this:** on your own copy of the map, write your four numbers in the margin beside HONEST
+> TESTING and circle your worst class. In eleven weeks you will put that circle on a poster, and you
+> will be glad you already know what it says.
+
+---
+
 ## 🔑 Remember This
 
 - **The only score worth reporting is the one from examples the model had never seen.** Everything else is a rehearsal.

@@ -609,6 +609,32 @@ So whenever you score a rulebook, always write down **which rule fired**, not ju
 
 ---
 
+## 🧭 Where This Fits
+
+Nothing moved on the map this week, and that is the point. You are standing on the same tile as last
+week: Week 7 wrote the rules, Week 8 went hunting for the places they break. One tile, two weeks —
+some tiles are worth it.
+
+![The course map after Week 8: the same patterns and rules tile, now with its edges tested](../figures/fig-w08-0-where-this-fits.svg)
+
+*Figure 8.0 — The map after Week 8. Every box is exactly where it was last week. What changed is the
+strip along the bottom, where **evaluation** is lit beside **model** — because this week you did not
+just write rules, you counted how they were wrong.*
+
+| | |
+|---|---|
+| **The mental model you now own** | Every rule has an **edge**, and edges are guaranteed, because a rule always measures a stand-in for something it cannot see. There are exactly two ways to be wrong: a **false alarm** (yes when the truth was no) and a **miss** (no when the truth was yes). They hurt different people by different amounts, so somebody has to choose which one they would rather have. |
+| **The one question it answers** | *"Which kind of wrong is this — a false alarm or a miss — and who pays for it?"* |
+| **What it plugs into** | Week 7's rule, and the threshold sitting inside it. The 140 cm ride rule is a number **you** made up, and this week it met somebody who is 138 cm. |
+| **What carries forward** | False alarm and miss are the two off-diagonal boxes of the confusion matrix you meet in Week 21, and they are the reason Week 16 makes you pick a confidence threshold. |
+| **Spiral thread** | 📦 **Model** — the rulebook itself — and ⚖️ **Evaluation**, because asking *how* a thing is wrong is the whole of evaluation. |
+
+> **💡 Try this:** do not redraw the map this week. Instead, find a rule in your own house or school,
+> find its 138 cm, and say out loud who pays when it fires wrongly. If you can do that, this tile is
+> finished.
+
+---
+
 ## 🔑 Remember This
 
 - **Every rule has edge cases, and they are guaranteed** — not because the rule is sloppy, but because every rule measures a **stand-in** for something it cannot see.

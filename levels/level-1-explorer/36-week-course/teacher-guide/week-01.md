@@ -198,8 +198,42 @@ Both of these have short honest answers, and you do **not** need to go further t
 > and I'll look it up."* Doing that once in week one gives you permission for the whole year, and it
 > models the behaviour you want from them. Pretending is the only wrong move available to you here.
 
-### Close the loop you opened — do not skip this
+### 🧭 The Growing Map — how to use it, this week and every week
 
+The student guide carries a figure called **Where This Fits**. It is the same picture every week, with
+one more piece filled in, and it is the only thing in this course that shows the learner the *shape* of
+what they are building rather than this week's content.
+
+![The course map after Week 1: one branch of two is filled in](../figures/fig-w01-0-where-this-fits.svg)
+
+*Figure 1.0 — Week 1's version. One branch solid, one dashed, and the six-thread strip along the
+bottom with only **model** lit.*
+
+**What to do with it, in about two minutes at the end of the lesson:**
+
+1. **Show it, don't explain it.** Put it in front of them and ask *"which bit did we do today?"* Let
+   them point. They will point at the solid box, and pointing is the whole exercise.
+2. **Then ask the better question:** *"why is the other box dashed?"* The answer you want is *"because
+   we haven't done it yet"* — which quietly tells them the year has a shape and they are inside it.
+3. **Have them copy it into the inside cover of their notebook, in pencil, leaving lots of room.**
+   Every week they add to their own copy. The version they draw is worth roughly ten times the version
+   I drew, and by March their notebook cover is the best revision aid they own.
+
+> **🧑‍🏫 Why this is worth two minutes.** A learner who can see the map can tell the difference between
+> *"I don't understand this week"* and *"I don't know where this week goes"* — and those need completely
+> different help from you. Without the map, both come out of their mouth as "I don't get it."
+
+**The six threads** along the bottom are the spine of all four levels: **data · representation · model
+· learning signal · evaluation · human impact.** You do not need to teach them or name them today.
+They exist so that by week 36 the learner has seen every week land on one of six shelves, rather than
+36 unrelated topics. Only **model** is lit this week.
+
+> **⚠️ Watch out:** do not turn this into a quiz. The map is orientation, not assessment. If they
+> cannot remember which thread this week belonged to, that is fine and it costs nothing.
+
+---
+
+### Close the loop you opened — do not skip this
 The chapter opens with AlphaGo versus the thermostat, asks the learner to **write down one of the two
 words**, and promises an answer. **Section 5 of the student guide delivers it, and you must deliver it
 in the Wrap.** An opened loop that never closes teaches the learner that the questions in this course

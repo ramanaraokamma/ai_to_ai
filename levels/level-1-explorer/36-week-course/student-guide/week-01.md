@@ -614,6 +614,30 @@ That last pair should be bugging you. Good. That is the sound of Week 2 arriving
 
 ---
 
+## 🧭 Where This Fits
+
+Every week this year adds one piece to a single picture. By week 36 you will have built the whole
+thing. Here it is after one week — and notice how much of it is still empty, on purpose.
+
+![The course map after Week 1: one branch of two is filled in](../figures/fig-w01-0-where-this-fits.svg)
+
+*Figure 1.0 — The map after Week 1. The solid box is yours. The dashed box is next week. The strip
+along the bottom is the six threads every week of this course adds to.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A decision-maker has its rules from one of exactly two places: **a person wrote them**, or **the machine worked them out**. This week you learned the whole left-hand branch. |
+| **The one question it answers** | *"Who wrote this rule?"* — ask it of any machine, forever. |
+| **What it plugs into** | Nothing yet. This is the first piece. |
+| **What carries forward** | The left branch never goes away. In Week 8 you will break your own rulebook on purpose; in Week 30 you will build one in Scratch and watch it fail next to a machine that learned. |
+| **Spiral thread** | 📦 **Model** — what the decision-maker *is*. The other five threads (data, representation, learning signal, evaluation, human impact) all start in the weeks ahead. |
+
+> **💡 Try this:** copy that diagram onto the inside cover of your notebook, in pencil, leaving lots
+> of space. You will add to it almost every week, and the version you draw yourself is worth about
+> ten times the version I drew for you.
+
+---
+
 ## 🔑 Remember This
 
 > **✅ Before you read the list — close the book and try to say it.**

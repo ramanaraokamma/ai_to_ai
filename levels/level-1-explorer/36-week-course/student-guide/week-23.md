@@ -477,6 +477,32 @@ Averages destroy arrangement. That comes back in two weeks when you start huntin
 
 ---
 
+## 🧭 Where This Fits
+
+A brand-new box opens on the map today, and it is the one that finally looks *inside* a photograph.
+Until now a picture was just a thing you handed to a machine. From today it is a grid of numbers you
+can read, write and argue about with a pencil.
+
+![The course map after Week 23: the pixels tile opens and a photo becomes a grid of numbers](../figures/fig-w23-0-where-this-fits.svg)
+
+*Figure 23.0 — The map after Week 23. PIXELS is the new tinted box; HONEST TESTING has turned white
+with its full range, finished. Only one thread is lit at the bottom, because this week is one single
+idea.*
+
+| | |
+|---|---|
+| **The mental model you now own** | A **pixel** is one square holding **one number from 0 to 255** — how much light comes out of that square. A picture is those numbers **plus their arrangement**: shuffle the order and every single number survives while the picture dies. |
+| **The one question it answers** | *"What is this picture as numbers, and how wide is the grid?"* |
+| **What it plugs into** | Week 4's table, pointed at a photograph. The pictures you took for Week 15 were rows of numbers the whole time — you just could not see the row. |
+| **What carries forward** | These grids are the thing the Week 25 filter slides across. And the very same move — turn it into a strip of numbers first — is how a *sentence* gets handled in Week 27. |
+| **Spiral thread** | 🏷️ **Representation**, on its own this week — one thread, because the whole lesson is about the shape a picture has to be squeezed into before any machine can touch it. |
+
+> **💡 Try this:** shade a small letter on squared paper and write the number in every square. Then
+> hand somebody **only the numbers**, in a jumbled order, and ask them which letter it was. They
+> cannot do it, and that failure is the second half of the idea.
+
+---
+
 ## 🔑 Remember This
 
 - A **pixel** is one square holding one number. In grayscale, that number is **how much light comes out of that square**.
