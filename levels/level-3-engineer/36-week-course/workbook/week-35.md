@@ -20,7 +20,7 @@ ______ + ______ = ______   command: ________________________________________
 
 last line: ________________________________________________  fix: ______________________
 
-**W3.** A golden test sits at `p = 0.5502` and your threshold is `0.55`. **Why is that not a test?**
+**W3.** A golden test sits at `p = 0.6502` and your threshold is `0.65`. **Why is that not a test?**
 
 ________________________________________________________________
 
@@ -103,9 +103,9 @@ Here are **28 labelled rows** — your 16 held-out reviews followed by the 12 ne
 
 ```
 row       1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 | 17 18 19 20 21 22 23 24 25 26 27 28
-truth     1  1  1  1  1  1  1  1  0  0  0  0  0  0  0  0 |  1  1  1  1  1  1  0  0  0  0  0  0
-model     1  1  1  1  1  1  1  0  1  0  0  0  0  0  0  0 |  0  0  0  0  0  0  1  1  0  0  0  0
-negation  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  N |  N  N  N  N  N  N  N  N  N  N  N  N
+truth     1  1  0  0  0  1  1  1  1  1  0  0  0  0  1  0 |  0  0  0  0  0  0  1  1  1  1  1  1
+model     1  0  0  0  0  1  1  1  1  0  0  0  0  0  0  0 |  0  1  0  0  0  0  0  0  0  0  0  0
+negation  .  .  .  .  .  .  .  .  .  .  .  N  .  .  .  . |  N  N  N  N  N  N  N  N  N  N  N  N
 ```
 
 **(a) The 16 test reviews (rows 1–16). Count the four cells.**
@@ -148,7 +148,7 @@ accuracy = ______ ÷ 15 = ________      precision = ______ ÷ ______ = ________ 
 
 **(c) One flip.** Suppose one more of the 13 negation rows had come out right. The accuracy goes from ______ ÷ 13 = ________ to ______ ÷ 13 = ________.
 
-**(d) So write the one-sentence caveat that belongs on the page beside `0.385`:**
+**(d) So write the one-sentence caveat that belongs on the page beside `0.462`:**
 
 ________________________________________________________________
 
@@ -301,7 +301,7 @@ ______________  ________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
-**Everything in this set uses one 12-line log file.** Copy it into `logs/demo.jsonl` exactly as printed, or take it from your teacher.
+**Everything in this set uses one 12-line log file.** Copy it into `logs/demo.jsonl` exactly as printed, or take it from your teacher. (`tiny_v1` and `tiny_v2` are small toy models with their own threshold of `0.55`. They are not `sentiment_v1`, whose shipped threshold from Week 34 is `0.65`.)
 
 ```text
 {"model_version": "tiny_v1", "input": "hot delicious pizza", "label": "positive", "probability": 0.6857, "threshold": 0.55, "latency_ms": 3.27, "input_chars": 19}
@@ -372,14 +372,14 @@ ________________________________________________________________
 
 ```text
 subgroup                     n   accuracy  precision  recall
-ALL 28 labelled rows        28    0.643      0.700     0.500
-the 16 test reviews         16    0.875      0.875     0.875
-the 12 negation traps       12    0.333      0.000     0.000
-contains a negation word    13    0.385      0.000     0.000
-no negation word            15    0.867      0.875     0.875
+ALL 28 labelled rows        28    0.643      0.833     0.357
+the 16 test reviews         16    0.812      1.000     0.625
+the 12 negation traps       12    0.417      0.000     0.000
+contains a negation word    13    0.462      0.000     0.000
+no negation word            15    0.800      1.000     0.625
 ```
 
-**(a)** The card says `0.875`. **Which row is that, and how many rows was it measured on?** ______________  ______
+**(a)** The card says `0.812`. **Which row is that, and how many rows was it measured on?** ______________  ______
 
 **(b)** Which row shows the failure? ______________________  **and the recall there is** ________ **, meaning it found** ______ **of the** ______ **positive ones.**
 
@@ -387,7 +387,7 @@ no negation word            15    0.867      0.875     0.875
 
 **(d)** Precision is `0.000` on the negation row. **With TP = 0, what must FP be for precision to be a number at all rather than a division by zero?** ______  **and what does `zero_division=0` actually do?** ______________________
 
-**(e)** **One sentence that a careful reader would add before believing the `0.333`:**
+**(e)** **One sentence that a careful reader would add before believing the `0.417`:**
 
 ________________________________________________________________
 
@@ -791,7 +791,7 @@ ________________________________________________________________
 
 **What a good answer looks like:** across the top, **one axis with all twelve latencies as dots on it**, and here is the thing that makes the drawing work — **draw it to scale.** Eleven dots huddle between 0.22 and 0.41, and one sits miles away at 3.27. Then mark and **name** four positions: the mean at `0.5225` (which lands in the empty space where **no request actually was**), the p50 at `0.2650`, the p95 at `1.6970`, and the max at `3.2700`. A drawing where the mean sits inside the huddle is a drawing of the wrong data.
 
-Underneath, **two bars for the two subgroups**: `0.867` tall on 15 rows, `0.385` short on 13 rows, **with the `n` written inside each bar**, not beside it. Then the row that earns the marks: **`recall 0 of 6`** written under the short bar in large figures.
+Underneath, **two bars for the two subgroups**: `0.800` tall on 15 rows, `0.462` short on 13 rows, **with the `n` written inside each bar**, not beside it. Then the row that earns the marks: **`recall 0 of 6`** written under the short bar in large figures.
 
 **And one sentence in your own handwriting**, containing both numbers, saying what the overall figure was hiding.
 
@@ -896,52 +896,52 @@ p95  =  0.38 + 0.80 × 2.89  =  0.38 + 2.312  =  2.692
 
 **M3 — the three subgroups by hand.**
 
-**(a) the 16 test reviews.** Rows 1–8 are truth 1; row 8 was called 0. Rows 9–16 are truth 0; row 9 was called 1.
+**(a) the 16 test reviews.** Eight rows are truth 1 (rows 1, 2, 6, 7, 8, 9, 10, 15) and the other eight are truth 0. The model's row differs from the truth row in exactly three places: rows 2, 10 and 15, all truth 1 and all called 0.
 
 ```
-TP = 7   FP = 1   FN = 1   TN = 7        check: 7 + 1 + 1 + 7 = 16 ✅
+TP = 5   FP = 0   FN = 3   TN = 8        check: 5 + 0 + 3 + 8 = 16 ✅
 
-accuracy  = (7 + 7) ÷ 16 = 14 ÷ 16 = 0.875
-precision = 7 ÷ (7 + 1) = 7 ÷ 8 = 0.875
-recall    = 7 ÷ (7 + 1) = 7 ÷ 8 = 0.875
+accuracy  = (5 + 8) ÷ 16 = 13 ÷ 16 = 0.8125 → 0.812
+precision = 5 ÷ (5 + 0) = 5 ÷ 5 = 1.000
+recall    = 5 ÷ (5 + 3) = 5 ÷ 8 = 0.625
 ```
 
-**All three come out the same here, and that is a coincidence of this particular table** — it happens because FP and FN are both 1. Do not learn it as a rule.
+**Accuracy comes out at 0.812 here, and that is exactly the headline the card prints.** It looks respectable, and it is not a certificate; the next two groups are where it stops being true.
 
-**(b) the 12 traps.** Rows 17–22 are truth 1 and all were called 0. Rows 23–28 are truth 0; rows 23 and 24 were called 1.
+**(b) the 12 traps.** Rows 17–22 are truth 0; row 18 was called 1 and the other five were called 0. Rows 23–28 are truth 1 and all six were called 0.
 
 ```
-TP = 0   FP = 2   FN = 6   TN = 4
+TP = 0   FP = 1   FN = 6   TN = 5
 
-accuracy  = 4 ÷ 12 = 0.3333 → 0.333
-precision = 0 ÷ (0 + 2) = 0 ÷ 2 = 0.000
+accuracy  = 5 ÷ 12 = 0.4167 → 0.417
+precision = 0 ÷ (0 + 1) = 0 ÷ 1 = 0.000
 recall    = 0 ÷ (0 + 6) = 0 ÷ 6 = 0.000
 ```
 
-**(c) the 13 negation rows** = the 12 traps plus row 16, which is truth 0 and was called 0 — one more correct answer and nothing else.
+**(c) the 13 negation rows** = the 12 traps plus row 12 (`i would not order from here again`), which is truth 0 and was called 0 — one more correct answer and nothing else.
 
 ```
-accuracy = 5 ÷ 13 = 0.3846 → 0.385
+accuracy = 6 ÷ 13 = 0.4615 → 0.462
 recall   = 0 ÷ 6  = 0.000
 ```
 
-**(d) the 15 rows with no negation word** = rows 1–15. Row 16 was a TN, so removing it changes the correct count and nothing else.
+**(d) the 15 rows with no negation word** = the 16 test rows except row 12. Row 12 was a TN, so removing it changes the correct count and nothing else.
 
 ```
-accuracy  = 13 ÷ 15 = 0.8667 → 0.867
-precision = 7 ÷ 8 = 0.875
-recall    = 7 ÷ 8 = 0.875
+accuracy  = 12 ÷ 15 = 0.8000 → 0.800
+precision = 5 ÷ 5 = 1.000
+recall    = 5 ÷ 8 = 0.625
 ```
 
 **M4.**
 
-**(a)** `13 + 15 = 28` ✅ and `5 + 13 = 18` correct out of 28.
+**(a)** `13 + 15 = 28` ✅ and `6 + 12 = 18` correct out of 28.
 
 **(b)** `18 ÷ 28 = 0.6429 → 0.643`, **which is exactly the ALL row.** If it were not, one of your groups has a row in it twice or none at all — and that is the single commonest silent error in a report like this.
 
-**(c)** From `5 ÷ 13 = 0.385` to `6 ÷ 13 = 0.4615 → 0.462`.
+**(c)** From `6 ÷ 13 = 0.462` to `7 ÷ 13 = 0.5385 → 0.538`.
 
-**(d) The caveat:** *"Both the 13-row and the 15-row groups are only just above the ten-row line, and **one row flipping moves the negation group from 0.385 to 0.462** — so these numbers show that the mechanism exists, they do not estimate how often it bites."*
+**(d) The caveat:** *"Both the 13-row and the 15-row groups are only just above the ten-row line, and **one row flipping moves the negation group from 0.462 to 0.538** — so these numbers show that the mechanism exists, they do not estimate how often it bites."*
 
 ---
 
@@ -1072,21 +1072,21 @@ json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 
 Fix: `.splitlines()`, or skip lines where `line.strip() == ""`.
 
-**(2) Silent, and it is a lie.** The divisor is hard-coded as `115` — the number of **requests** — while `rows` holds **predictions**. With 30 band rows out of 111 predictions the honest rate is `30 ÷ 111 = 27.0%`, and this program prints `30 ÷ 115 = 26.1%` — nearly a whole percentage point low, against an alarm level of 40%, and nothing anywhere says so. **Divide by `len(rows)`, every time.** Hard-coding a count you could compute is how a report gets out of date without changing.
+**(2) Silent, and it is a lie.** The divisor is hard-coded as `115` — the number of **requests** — while `rows` holds **predictions**. With 16 band rows out of 111 predictions the honest rate is `16 ÷ 111 = 14.4%`, and this program prints `16 ÷ 115 = 13.9%` — about half a percentage point low, against an alarm level of 40%, and nothing anywhere says so. **Divide by `len(rows)`, every time.** Hard-coding a count you could compute is how a report gets out of date without changing.
 
 **(3) Silent, and prints `n = 0`.** `"Not"` with a capital never matches `not`, and the log's inputs are lowercase. **A subgroup of zero is a filter bug, not a finding** — which is why you print `n` on every row: a zero jumps out, a wrong number does not. Fix: `r["input"].lower().split()`.
 
 **A4.**
 
-**(a)** `the 16 test reviews`, measured on **16** rows.
+**(a)** `the 16 test reviews`, measured on **16** rows — a respectable `0.812`.
 
 **(b)** `contains a negation word`. Recall there is `0.000`, meaning it found **0** of the **6** positive ones.
 
 **(c)** `13 + 15 = 28` ✅ and `0.643 × 28 = 18.0` correct answers. **Both agree** — `18 ÷ 28 = 0.643`.
 
-**(d)** FP must be **at least 1** (here it is 2). With TP = 0 **and** FP = 0, precision is `0 ÷ 0`, which is undefined — and `zero_division=0` tells scikit-learn to **report 0 instead of raising**. Worth knowing exactly what it does: it is a *choice about how to present an undefined number*, not a calculation. A `0.000` precision could mean "it got every positive prediction wrong" or "it never predicted positive at all", **and those are very different models.** Print the counts beside the metric.
+**(d)** FP must be **at least 1** (here it is 1). With TP = 0 **and** FP = 0, precision is `0 ÷ 0`, which is undefined — and `zero_division=0` tells scikit-learn to **report 0 instead of raising**. Worth knowing exactly what it does: it is a *choice about how to present an undefined number*, not a calculation. A `0.000` precision could mean "it got every positive prediction wrong" or "it never predicted positive at all", **and those are very different models.** Print the counts beside the metric.
 
-**(e)** *"Twelve of those twelve trap rows were written by me on purpose to be hard, so `0.333` shows the mechanism exists — it does not estimate how often this happens on real traffic."*
+**(e)** *"Twelve of those twelve trap rows were written by me on purpose to be hard, so `0.417` shows the mechanism exists — it does not estimate how often this happens on real traffic."*
 
 **A5.**
 
@@ -1199,9 +1199,9 @@ for raw in BODIES:
 """subgroups.py - one model, measured separately per group."""
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 
-TRUTH = [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0,  1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
-PRED = [1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0,  0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
-NEGATION = [False] * 15 + [True] + [True] * 12
+TRUTH = [1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0,  0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1]
+PRED = [1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0,  0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+NEGATION = [False] * 11 + [True] + [False] * 4 + [True] * 12
 GROUP = ["test"] * 16 + ["trap"] * 12
 
 
@@ -1226,11 +1226,11 @@ report("no negation word", [not n for n in NEGATION])
 
 ```text
 subgroup                     n   accuracy  precision  recall
-ALL 28 labelled rows        28    0.643      0.700     0.500
-the 16 test reviews         16    0.875      0.875     0.875
-the 12 negation traps       12    0.333      0.000     0.000
-contains a negation word    13    0.385      0.000     0.000
-no negation word            15    0.867      0.875     0.875
+ALL 28 labelled rows        28    0.643      0.833     0.357
+the 16 test reviews         16    0.812      1.000     0.625
+the 12 negation traps       12    0.417      0.000     0.000
+contains a negation word    13    0.462      0.000     0.000
+no negation word            15    0.800      1.000     0.625
 ```
 
 **Every number matches your hand-worked M3 and M4 exactly.** The four lines that print the caveat are the `if len(yt) == 0: return`, the `note = ...` line, and the `%s` at the end of the format string. **Four lines, and they are the most honest thing in the file** — because `n = 4` with an accuracy of `1.000` will otherwise sit in your table looking like your best result.
@@ -1400,50 +1400,50 @@ $ wc -l logs/predictions.jsonl
 $ python3 eval/read_logs.py
 requests        : 111
 by version      : {'sentiment_v1': 111}
-by label        : {'negative': 65, 'positive': 46}
+by label        : {'negative': 76, 'positive': 35}
 latency mean    : 0.26 ms
 latency p50     : 0.23 ms
 latency p95     : 0.27 ms
 latency max     : 3.27 ms
-mean probability: 0.4978
-in the 0.45-0.65 uncertainty band: 30 of 111 (27.0%)
+mean probability: 0.4546
+in the 0.45-0.65 uncertainty band: 16 of 111 (14.4%)
 ```
 
-`65 + 46 = 111` ✅. **The sentence:** *"A user would notice the `3.27 ms` — it was request number one, before anything was warm, and it is twelve times the p95. I would report the p95 of `0.27 ms` as the headline with the max beside it, because with only 111 requests a single slow one sits above the 95th percentile and the p95 cannot see it."*
+`76 + 35 = 111` ✅. **The sentence:** *"A user would notice the `3.27 ms` — it was request number one, before anything was warm, and it is twelve times the p95. I would report the p95 of `0.27 ms` as the headline with the max beside it, because with only 111 requests a single slow one sits above the 95th percentile and the p95 cannot see it."*
 
 **A student who reports only a mean has not met the objective.**
 
 **35.5 — the reference project's table** is the one in A4, with two more rows:
 
 ```text
-short (5 words or fewer)    13    0.538      0.667     0.500
-longer (6 words or more)    15    0.733      0.750     0.500
+short (5 words or fewer)     9    0.556      0.667     0.400   <- too small to conclude from
+longer (6 words or more)    19    0.684      1.000     0.333
 ```
 
-**The sentence:** *"The `0.875` on my card was measured on the 16 held-out reviews only. Split by whether a review contains one of seven negation words, the model scores `0.867` on the 15 rows without one and **`0.385` on the 13 rows with one, where its recall on the positive class is `0.000` — it found none of the six positive ones.** The mechanism is the one Week 31 predicted: bag-of-words throws away word order, so `not` cannot flip `delicious`. And 12 of those 13 rows are traps I wrote on purpose to be hard, so `0.385` demonstrates that the mechanism exists rather than estimating how often it bites."*
+**The sentence:** *"The `0.812` on my card was measured on the 16 held-out reviews only. Split by whether a review contains one of seven negation words, the model scores `0.800` on the 15 rows without one and **`0.462` on the 13 rows with one, where its recall on the positive class is `0.000` — it found none of the six positive ones.** The mechanism is the one Week 31 predicted: bag-of-words throws away word order, so `not` cannot flip `delicious`. And 12 of those 13 rows are traps I wrote on purpose to be hard, so `0.462` demonstrates that the mechanism exists rather than estimating how often it bites."*
 
 **`n` on every row, or the page does not pass.**
 
 **35.6 — the model card.** **Section 5 is the whole card.** The bar for a failure mode:
 
-> **(a)** `not boring for a single minute` → `negative` at `p = 0.1984`. It is a positive review. `boring` is a strong negative feature and `not` is nearly weightless, so the negation cannot flip it.
-> **(b)** `far from delicious` → `positive` at `p = 0.7163`. It is negative. `delicious` is one of the strongest positive features; `far from` only exists as a bigram if that exact pair was in the training data, and it was not.
-> **(c)** Anything in language it has not seen. `the biryani was absolutely banging fam no cap` has an OOV rate of `0.8000` — four fifths invisible, so the answer comes from the remaining fifth.
+> **(a)** `not boring for a single minute` → `negative` at `p = 0.4887`. It is a positive review. Not one of its words is in the model's vocabulary, so nothing reaches the classifier and `0.4887` is just the model's starting prior, which is under the `0.65` threshold. A word the model cannot see cannot be flipped by a negation either.
+> **(b)** `not fresh and not hot` → `positive` at `p = 0.7992`. It is a negative review. `fresh` (weight `+1.200`) and `hot` (weight `+1.198`) are two of the strongest positive features, and `not` is not in the vocabulary at all, so it cannot flip either of them.
+> **(c)** Anything in language it has not seen. `the biryani was absolutely banging fam no cap` has an OOV rate of `0.8667` — 13 of 15 tokens invisible, so the answer comes from the remaining two.
 
-**A card whose section 5 says "struggles with negation and sarcasm" scores nothing on section 5.** Section 6's *tempting* use — "not for measuring whether the forum's mood is improving week to week, because 27% of its answers sit within a whisker of the fence" — is the second-hardest mark on the page.
+**A card whose section 5 says "struggles with negation and sarcasm" scores nothing on section 5.** Section 6's *tempting* use — "not for measuring whether the forum's mood is improving week to week, because 14% of its answers sit in the uncertain middle band" — is the second-hardest mark on the page.
 
 **35.7 — the monitoring plan.** Three things, and the first is pass/fail.
 
 > **The number:** the uncertainty-band rate — the share of predictions between 0.45 and 0.65.
 > **Measured with no labels:** straight out of `logs/predictions.jsonl`; `read_logs.py` already prints it. **No truth ever has to arrive.**
-> **Baseline, measured:** **30 of 111 = 27.0%.** (On the 16 test reviews it is 10 of 16 = **62.5%** — wildly different, because that is different traffic. **A baseline has to come from the traffic you are going to watch**, which is why this number could not be written until the service had run.)
+> **Baseline, measured:** **16 of 111 = 14.4%.** (On the 16 test reviews it is 3 of 16 = **18.8%** — different, because that is different traffic. **A baseline has to come from the traffic you are going to watch**, which is why this number could not be written until the service had run.)
 > **Alarm:** a weekly mean above **40%**, or any week more than **10 points** above the week before.
 > **Why it degrades for this model:** it is TF-IDF, so a word the vectorizer has never seen contributes exactly nothing and is silently dropped. Unfamiliar language becomes a vector that is mostly zeros, which pushes the probability toward the middle. **A rising band rate means a rising share of every input is invisible to me.**
-> **Action:** (1) pull the 30 requests closest to 0.55 out of the log; (2) read them — fifteen minutes usually explains everything; (3) if they are a genuine new subject, hand-label 40 and train a `v3`, keeping `v1` live until the new model beats it **on the same test set**; (4) if they are rubbish or an attack, add input validation instead of retraining.
+> **Action:** (1) pull the 16 requests inside the band out of the log; (2) read them — fifteen minutes usually explains everything; (3) if they are a genuine new subject, hand-label 40 and train a `v3`, keeping `v1` live until the new model beats it **on the same test set**; (4) if they are rubbish or an attack, add input validation instead of retraining.
 > **What I would deliberately NOT do:** retrain on my own predictions. Those log lines are the model's opinions, not labels, **and a model trained on its own opinions learns its own mistakes and gets more confident about them — which looks exactly like improvement.**
 > **What would retire it:** a band rate that settled above 50% and stayed there. It would be guessing on half its traffic, and a coin flip with a confident number attached is worse than no model.
 
-**The equally good alternative** is the **out-of-vocabulary rate** — `0.1111` for normal traffic, `0.8000` for a different world, `1.0000` for Latin, mean `0.3808` over the 111 logged requests. Same mechanism, same actions, and it spots a new subject **one step earlier**, because the words go missing before the probability drifts.
+**The equally good alternative** is the **out-of-vocabulary rate** — `0.1111` for normal traffic, `0.8667` for a different world, `1.0000` for Latin, mean `0.1795` over the 111 logged requests. Same mechanism, same actions, and it spots a new subject **one step earlier**, because the words go missing before the probability drifts.
 
 **If a plan says "watch the accuracy", hand it straight back with one question: who tells you the right answer in production?**
 

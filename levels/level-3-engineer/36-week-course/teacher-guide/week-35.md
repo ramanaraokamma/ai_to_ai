@@ -33,7 +33,7 @@ By the end of the lesson the student can:
 3. **Log every prediction** with its input, its output, its probability, its threshold, its version and its latency, generate **100+ lines**, then read their own log back and report **four numbers: mean, p50, p95 and max** — having worked a p95 by hand on five of them first.
 4. **Produce a subgroup metrics table** with `n` on every row, and write one sentence naming **what the overall number was hiding**; then a one-page monitoring plan naming **one number computable without labels**, its measured baseline, its alarm level, and the action.
 
-Observable evidence: `curl -s http://127.0.0.1:8000/health` returning a version and a threshold; a transcript of four refusals followed by a `200`; `wc -l logs/predictions.jsonl` printing a number over 100; a printed p95 with the by-hand arithmetic beside it; a subgroup table where a row reads `contains a negation word · n = 13 · accuracy 0.385 · recall 0.000`; and a FINDINGS sheet in the students' own handwriting.
+Observable evidence: `curl -s http://127.0.0.1:8000/health` returning a version and a threshold; a transcript of four refusals followed by a `200`; `wc -l logs/predictions.jsonl` printing a number over 100; a printed p95 with the by-hand arithmetic beside it; a subgroup table where a row reads `contains a negation word · n = 13 · accuracy 0.462 · recall 0.000`; and a FINDINGS sheet in the students' own handwriting.
 
 ---
 
@@ -215,37 +215,37 @@ This is the part of the week that matters most and takes the least code.
 
 > **Subgroup metrics** — the same metric, computed separately for groups of rows you chose on purpose, with the size of each group printed beside it.
 
-The reference model's headline is `0.875` on 16 held-out reviews. Now split 28 labelled rows — those 16 plus the 12 negation traps from Week 33 — by whether the review contains one of seven negation words (`not`, `never`, `hardly`, `cannot`, `no`, `nothing`, `far`):
+The reference model's headline is `0.8125` on 16 held-out reviews (13 right, 3 wrong, at the shipped threshold of 0.65) — respectable against a baseline of 0.500. Now split 28 labelled rows — those 16 plus the 12 negation traps from Week 33 — by whether the review contains one of seven negation words (`not`, `never`, `hardly`, `cannot`, `no`, `nothing`, `far`):
 
 ```text
 subgroup                     n   accuracy  precision  recall
-ALL 28 labelled rows        28    0.643      0.700     0.500
-the 16 test reviews         16    0.875      0.875     0.875
-the 12 negation traps       12    0.333      0.000     0.000
-contains a negation word    13    0.385      0.000     0.000
-no negation word            15    0.867      0.875     0.875
-short (5 words or fewer)    13    0.538      0.667     0.500
-longer (6 words or more)    15    0.733      0.750     0.500
+ALL 28 labelled rows        28    0.643      0.833     0.357
+the 16 test reviews         16    0.812      1.000     0.625
+the 12 negation traps       12    0.417      0.000     0.000
+contains a negation word    13    0.462      0.000     0.000
+no negation word            15    0.800      1.000     0.625
+short (5 words or fewer)     9    0.556      0.667     0.400   <- too small to conclude from
+longer (6 words or more)    19    0.684      1.000     0.333
 ```
 
-**Read row four out loud, slowly.** On the 13 rows containing a negation word, accuracy is `0.385` and **recall on the positive class is `0.000`.** Not "lower". Not "worse". **Zero.** There were six genuinely positive reviews in that group and the model found none of them.
+**Read row four out loud, slowly.** On the 13 rows containing a negation word, accuracy is `0.462` and **recall on the positive class is `0.000`.** Not "lower". Not "worse". **Zero.** There were six genuinely positive reviews in that group and the model found none of them.
 
 And the counts check out, which is how you know you have not miscounted:
 
 ```
 13 + 15 = 28    ✅ every row is in exactly one of the two groups
- 5 + 13 = 18    ✅ five right in the negation group, thirteen in the other
+ 6 + 12 = 18    ✅ six right in the negation group, twelve right in the other
 18 ÷ 28 = 0.643 ✅ which is the ALL row
 ```
 
 ![What the one number was hiding](../figures/fig-w35-4-subgroup-metrics-hiding-behind-one-number.svg)
-*Figure 35.4 — What the one number was hiding. `0.875` on the 16 held-out reviews, and `0.385` on the 13 rows that contain a negation word, where recall on the positive class is `0 ÷ 6 = 0.000`.*
+*Figure 35.4 — What the one number was hiding. `0.8125` on the 16 held-out reviews, and `0.462` on the 13 rows that contain a negation word, where recall on the positive class is `0 ÷ 6 = 0.000`.*
 
 **Two pieces of honesty you must insist on, because they are what separate a real card from a school exercise.**
 
 **One — every group carries its `n`, and anything under about 10 carries the words "too small to conclude from".** `1.000` on four rows is not "perfect"; it is four rows, and one flip takes it to 0.750.
 
-**Two — the negation traps were written on purpose to break the model, so `0.333` is not an estimate of anything.** It is a demonstration that a mechanism exists. **The honest claim is about the mechanism, not the rate:** *"bag-of-words throws away word order, so `not` is a weak feature that cannot flip `delicious`; here are 13 rows where that is visible, and I chose them to be visible."* A student who says that is doing better science than one who reports 0.385 as if it were a population statistic.
+**Two — the negation traps were written on purpose to break the model, so `0.417` is not an estimate of anything.** It is a demonstration that a mechanism exists. **The honest claim is about the mechanism, not the rate:** *"bag-of-words throws away word order, so `not` — which this model has no weight for at all — cannot flip `delicious`; here are 13 rows where that is visible, and I chose them to be visible."* A student who says that is doing better science than one who reports 0.462 as if it were a population statistic.
 
 And notice **why** this failure is satisfying rather than depressing: Week 31 and Week 32 *predicted* it from theory, and Week 35 measured it in their own service. **That coincidence between a prediction made from theory and evidence found in your own log is the strongest thing you can put in a model card.**
 
@@ -262,23 +262,23 @@ A comment goes through your classifier, gets a label, and then… nothing. No tr
 
 Two that work for this model, both with real measured baselines:
 
-**The uncertainty-band rate.** The share of predictions whose probability falls between 0.45 and 0.65 — near the fence, where the model is least sure. Straight from the log, no labels:
+**The uncertainty-band rate.** The share of predictions whose probability falls between 0.45 and 0.65 — the stretch just under the 0.65 fence, where the model is least sure whether to call something positive. Straight from the log, no labels:
 
 ```text
-in the 0.45-0.65 uncertainty band: 30 of 111 (27.0%)
+in the 0.45-0.65 uncertainty band: 16 of 111 (14.4%)
 ```
 
-**The out-of-vocabulary rate.** The share of an input's tokens the vectorizer has never seen. The vocabulary is 271 items, and here is what it does:
+**The out-of-vocabulary rate.** The share of an input's tokens the vectorizer has never seen. The vocabulary is 287 items (single words and adjacent pairs together), and here is what it does:
 
 ```text
 0.1111  cold food and a rude driver
-0.8000  the biryani was absolutely banging fam no cap
+0.8667  the biryani was absolutely banging fam no cap
 1.0000  lorem ipsum dolor sit amet
 ```
 
 **Why this number degrades for *this* model, specifically.** It is TF-IDF. A word the vectorizer has never seen contributes *exactly nothing* — it is silently dropped. So a rising OOV rate means a rising share of every input is invisible to the model, and the probability drifts toward the middle. **That is a mechanism, not a vibe, and naming the mechanism is what lifts a monitoring plan a whole rubric level.**
 
-**And one honest wrinkle worth saying out loud.** The band rate over our 111 logged requests is `27.0%`. On the 16 test reviews it is `10 of 16 = 62.5%`. **Wildly different, and neither is wrong** — they are different traffic. **A baseline has to come from the traffic you are actually going to watch**, which means you cannot write the alarm level until you have logged some real requests. That is a genuinely useful thing to have learned at fourteen.
+**And one honest wrinkle worth saying out loud.** The band rate over our 111 logged requests is `14.4%`. On the 16 test reviews it is `3 of 16 = 18.8%`. **Different, and neither is wrong** — they are different traffic. **A baseline has to come from the traffic you are actually going to watch**, which means you cannot write the alarm level until you have logged some real requests. That is a genuinely useful thing to have learned at fourteen.
 
 ### 7. The three misconceptions you will actually meet
 
@@ -286,7 +286,7 @@ in the 0.45-0.65 uncertainty band: 30 of 111 (27.0%)
 
 **"My mean latency is 0.26 ms, so it's fast."** The mean is fine and the *tail* is the user experience. Our max was `3.27 ms` — twelve times the p95 — and it was request number one. **If you only report a mean you have hidden the only request that anybody would have noticed.**
 
-**"0.875 accuracy, so it works."** It works on 15 of the 28 rows and finds nothing at all on 13 of them. **"Works" is not a property of a model; it is a property of a model on a group of rows.**
+**"0.8125 accuracy, so it works."** It scores 0.800 on the 15 rows with no negation word, and on the 13 rows that have one it finds none of the positives among the 13 rows that have one. **"Works" is not a property of a model; it is a property of a model on a group of rows.**
 
 ### 8. How deep to go, and where to stop
 
@@ -316,7 +316,7 @@ solid. The ↻ on stage three is black, as it has been since Week 12.*
 2. **Anchor it on the four numbers and on one subgroup row.** Point at the FINDINGS sheet. *"This box
    produced mean, p50, p95 and max — and with 111 requests the p95 cannot see the max, so both get
    printed."* Then read one subgroup row aloud exactly as written, `n` included: **`contains a negation
-   word · n = 13 · accuracy 0.385 · recall 0.000`.** Then ask what the overall `0.875` was hiding. **The
+   word · n = 13 · accuracy 0.462 · recall 0.000`.** Then ask what the overall `0.8125` was hiding. **The
    answer is a group of rows, not a percentage.**
 3. **Point at stage two, then at stage one.** *"Which tile does `p95` belong to?"* — `threshold · cost`,
    Weeks 10–11, because a latency you promise is a threshold you chose. And then the harder one: *"which
@@ -500,7 +500,7 @@ if __name__ == "__main__":
 **Start it (terminal 1):**
 
 ```text
-loaded sentiment_v1 in 772 ms (threshold 0.55)
+loaded sentiment_v1 in 772 ms (threshold 0.65)
 serving on http://127.0.0.1:8000   (Ctrl+C to stop)
 ```
 
@@ -508,12 +508,12 @@ serving on http://127.0.0.1:8000   (Ctrl+C to stop)
 
 ```bash
 $ curl -s http://127.0.0.1:8000/health
-{"status": "ok", "model_version": "sentiment_v1", "threshold": 0.55, "classes": ["negative", "positive"], "load_ms": 772.2}
+{"status": "ok", "model_version": "sentiment_v1", "threshold": 0.65, "classes": ["negative", "positive"], "load_ms": 772.2}
 
 $ curl -s -X POST http://127.0.0.1:8000/predict \
      -H 'Content-Type: application/json' \
      -d '{"text": "delicious fresh pizza and kind friendly staff"}'
-{"model_version": "sentiment_v1", "input": "delicious fresh pizza and kind friendly staff", "label": "positive", "probability": 0.7724, "threshold": 0.55, "latency_ms": 3.27}
+{"model_version": "sentiment_v1", "input": "delicious fresh pizza and kind friendly staff", "label": "positive", "probability": 0.7661, "threshold": 0.65, "latency_ms": 3.27}
 ```
 
 **Break it. All five, then check it is alive:**
@@ -541,17 +541,17 @@ $ curl -s -X POST http://127.0.0.1:8000/predict --data-binary @big.json
 
 # 6. STILL ALIVE? ← this is the actual test
 $ curl -s http://127.0.0.1:8000/health
-{"status": "ok", "model_version": "sentiment_v1", "threshold": 0.55, "classes": ["negative", "positive"], "load_ms": 772.2}
+{"status": "ok", "model_version": "sentiment_v1", "threshold": 0.65, "classes": ["negative", "positive"], "load_ms": 772.2}
 ```
 
-**Generate 110 more requests** with a shell loop over a list of 22 reviews, five times round. Then:
+**Generate 110 more requests** with a shell loop over a list of 22 reviews, five times round. The reference list is the 16 held-out test reviews plus six more: `the biryani was absolutely banging fam no cap`, `lorem ipsum dolor sit amet`, `it was fine i suppose`, `not cold not rude`, `cold food and a rude driver` and `stale bread and awful coffee`. Then:
 
 ```bash
 $ wc -l logs/predictions.jsonl
      111 logs/predictions.jsonl
 
 $ head -1 logs/predictions.jsonl
-{"model_version": "sentiment_v1", "input": "delicious fresh pizza and kind friendly staff", "label": "positive", "probability": 0.7724, "threshold": 0.55, "latency_ms": 3.27, "input_chars": 45}
+{"model_version": "sentiment_v1", "input": "delicious fresh pizza and kind friendly staff", "label": "positive", "probability": 0.7661, "threshold": 0.65, "latency_ms": 3.27, "input_chars": 45}
 ```
 
 **`eval/read_logs.py`:**
@@ -591,26 +591,26 @@ print("in the 0.45-0.65 uncertainty band: %d of %d (%.1f%%)"
 ```text
 requests        : 111
 by version      : {'sentiment_v1': 111}
-by label        : {'negative': 65, 'positive': 46}
+by label        : {'negative': 76, 'positive': 35}
 latency mean    : 0.26 ms
 latency p50     : 0.23 ms
 latency p95     : 0.27 ms
 latency max     : 3.27 ms
-mean probability: 0.4978
-in the 0.45-0.65 uncertainty band: 30 of 111 (27.0%)
+mean probability: 0.4546
+in the 0.45-0.65 uncertainty band: 16 of 111 (14.4%)
 ```
 
 **`eval/subgroup_report.py`** — rebuilds exactly the pile `train.py` measured (same seeds, same sizes), adds the 12 traps, and reports seven groups. The full file is in the Answer Key. Its output:
 
 ```text
 subgroup                     n   accuracy  precision  recall
-ALL 28 labelled rows        28    0.643      0.700     0.500
-the 16 test reviews         16    0.875      0.875     0.875
-the 12 negation traps       12    0.333      0.000     0.000
-contains a negation word    13    0.385      0.000     0.000
-no negation word            15    0.867      0.875     0.875
-short (5 words or fewer)    13    0.538      0.667     0.500
-longer (6 words or more)    15    0.733      0.750     0.500
+ALL 28 labelled rows        28    0.643      0.833     0.357
+the 16 test reviews         16    0.812      1.000     0.625
+the 12 negation traps       12    0.417      0.000     0.000
+contains a negation word    13    0.462      0.000     0.000
+no negation word            15    0.800      1.000     0.625
+short (5 words or fewer)     9    0.556      0.667     0.400   <- too small to conclude from
+longer (6 words or more)    19    0.684      1.000     0.333
 ```
 
 ### 10 minutes on the day
@@ -626,7 +626,7 @@ longer (6 words or more)    15    0.733      0.750     0.500
 
 **Two of the four objectives survive whole, and they are the two the rubric weights highest.**
 
-1. **The subgroup table, from this file's numbers.** Print the seven-row output. Then the whole of objective 4 on paper: find the worst group, check `13 + 15 = 28`, check `5 + 13 = 18`, check `18 ÷ 28 = 0.643`, and write the sentence about what `0.875` was hiding. **This is the best twenty minutes of the paper version and it needs no electricity.**
+1. **The subgroup table, from this file's numbers.** Print the seven-row output. Then the whole of objective 4 on paper: find the worst group, check `13 + 15 = 28`, check `6 + 12 = 18`, check `18 ÷ 28 = 0.643`, and write the sentence about what `0.8125` was hiding. **This is the best twenty minutes of the paper version and it needs no electricity.**
 2. **The p95 by hand.** `0.95 × 4 = 3.8`, `0.38 + 0.80 × 2.89 = 2.692`. Then the good question: *"we have 111 requests and the p95 is 0.27, but the max is 3.27. Why didn't the p95 catch it?"* — because one request in 111 is at the 99th percentile, and the p95 cannot see above itself. **That conversation is better than the code.**
 3. **Break Each Other's Service, on paper.** Genuinely works: each student writes the four malformed bodies on a card and swaps with their partner, who writes the status code and the exact error message they would return. **Then compare with the real transcript in this file.** Objective 2's *thinking*, without objective 2's typing.
 4. **The model card and the monitoring plan.** Both are writing. Both are homework anyway.
@@ -661,7 +661,7 @@ longer (6 words or more)    15    0.733      0.750     0.500
 **Do this:** Two terminals already side by side. In the left one, start the service, and read the output aloud.
 
 ```text
-loaded sentiment_v1 in 772 ms (threshold 0.55)
+loaded sentiment_v1 in 772 ms (threshold 0.65)
 serving on http://127.0.0.1:8000   (Ctrl+C to stop)
 ```
 
@@ -677,7 +677,7 @@ serving on http://127.0.0.1:8000   (Ctrl+C to stop)
 $ curl -s -X POST http://127.0.0.1:8000/predict \
      -H 'Content-Type: application/json' \
      -d '{"text": "delicious fresh pizza and kind friendly staff"}'
-{"model_version": "sentiment_v1", "input": "delicious fresh pizza and kind friendly staff", "label": "positive", "probability": 0.7724, "threshold": 0.55, "latency_ms": 3.27}
+{"model_version": "sentiment_v1", "input": "delicious fresh pizza and kind friendly staff", "label": "positive", "probability": 0.7661, "threshold": 0.65, "latency_ms": 3.27}
 ```
 
 **Say this:**
@@ -855,7 +855,7 @@ They type `do_GET`. Then start it and hit it.
 
 ```bash
 $ curl -s http://127.0.0.1:8000/health
-{"status": "ok", "model_version": "sentiment_v1", "threshold": 0.55, "classes": ["negative", "positive"], "load_ms": 772.2}
+{"status": "ok", "model_version": "sentiment_v1", "threshold": 0.65, "classes": ["negative", "positive"], "load_ms": 772.2}
 ```
 
 > **Say this:** "A health endpoint costs six lines and it is the first thing anybody checks. **Notice what it returns: which model, which threshold, and how long it took to load.** Those three facts are what a person needs before they trust a single answer."
@@ -934,20 +934,20 @@ $ wc -l logs/predictions.jsonl
 $ python3 eval/read_logs.py
 requests        : 111
 by version      : {'sentiment_v1': 111}
-by label        : {'negative': 65, 'positive': 46}
+by label        : {'negative': 76, 'positive': 35}
 latency mean    : 0.26 ms
 latency p50     : 0.23 ms
 latency p95     : 0.27 ms
 latency max     : 3.27 ms
-mean probability: 0.4978
-in the 0.45-0.65 uncertainty band: 30 of 111 (27.0%)
+mean probability: 0.4546
+in the 0.45-0.65 uncertainty band: 16 of 111 (14.4%)
 ```
 
 **Ask this:** "p95 is 0.27 and max is 3.27. Why didn't the p95 catch the slow one?"
 
 *Because one request out of 111 sits above the 99th percentile, and the p95 cannot see above itself.*
 
-> **Say this:** "**So you print the max as well.** The mean hides the tail, the p95 describes most of the tail, and the max is the one request somebody actually noticed. **Three numbers, three different jobs.** And the last line — 27 percent of my answers sat within a whisker of the fence — is the number this whole thing is monitored on, and we come back to it in the wrap."
+> **Say this:** "**So you print the max as well.** The mean hides the tail, the p95 describes most of the tail, and the max is the one request somebody actually noticed. **Three numbers, three different jobs.** And the last line — 27 percent of my answers sat in the stretch just under the fence — is the number this whole thing is monitored on, and we come back to it in the wrap."
 
 ---
 
@@ -963,18 +963,18 @@ See **🎲 The Activity, In Full** below. In brief: laptops swap by the pairing 
 
 ```text
 subgroup                     n   accuracy  precision  recall
-ALL 28 labelled rows        28    0.643      0.700     0.500
-the 16 test reviews         16    0.875      0.875     0.875
-the 12 negation traps       12    0.333      0.000     0.000
-contains a negation word    13    0.385      0.000     0.000
-no negation word            15    0.867      0.875     0.875
-short (5 words or fewer)    13    0.538      0.667     0.500
-longer (6 words or more)    15    0.733      0.750     0.500
+ALL 28 labelled rows        28    0.643      0.833     0.357
+the 16 test reviews         16    0.812      1.000     0.625
+the 12 negation traps       12    0.417      0.000     0.000
+contains a negation word    13    0.462      0.000     0.000
+no negation word            15    0.800      1.000     0.625
+short (5 words or fewer)     9    0.556      0.667     0.400   <- too small to conclude from
+longer (6 words or more)    19    0.684      1.000     0.333
 ```
 
-**Ask this:** "The number on your model card is 0.875. Point at the row that shows what it was hiding."
+**Ask this:** "The number on your model card is 0.8125. Point at the row that shows what it was hiding."
 
-*Row four: `contains a negation word · n = 13 · accuracy 0.385`.*
+*Row four: `contains a negation word · n = 13 · accuracy 0.462`.*
 
 **Ask this:** "Read me the recall on that row."
 
@@ -984,9 +984,9 @@ longer (6 words or more)    15    0.733      0.750     0.500
 
 > "**Zero.** There were six genuinely positive reviews in that group and it found none of them. Not 'worse'. None.
 >
-> And here is why this is the best number in your whole project. **Week 31 told you bag-of-words throws away word order. Week 32 told you `not` is a weak feature. That was theory.** This is your own service, on your own held-out rows, showing you the exact failure the theory predicted. **A prediction from theory, confirmed by evidence in your own log, is the strongest thing you can put in a model card**, and almost no professional card contains one."
+> And here is why this is the best number in your whole project. **Week 31 told you bag-of-words throws away word order. Week 32 told you `not` carries almost no signal. That was theory.** This is your own service, on your own held-out rows, showing you the exact failure the theory predicted. **A prediction from theory, confirmed by evidence in your own log, is the strongest thing you can put in a model card**, and almost no professional card contains one."
 
-**Ask this:** "One honesty check: the 12 traps were written on purpose to break it. So is 0.333 a real estimate of how it does on negations?"
+**Ask this:** "One honesty check: the 12 traps were written on purpose to break it. So is 0.417 a real estimate of how it does on negations?"
 
 *No — they were chosen to be hard.*
 
@@ -1104,7 +1104,7 @@ Give them the four attacks **pre-typed in a text file** so no typing is needed �
 Four extra attacks, all real, all worth finding:
 
 1. **`{"text": "   "}`** — three spaces. A string, non-empty by length, empty in every way that matters. Check 4's `.strip()` is what catches it, and a student who spots *why* `.strip()` is there has read the code properly.
-2. **A 200,000-character body.** Should be a `413` naming the limit. **Then ask the good question: is 100,000 the right limit? Justify it.** The reference answer: the longest training review is 55 characters, so 100,000 is more than 1,800 times longer than anything real — generous, and small enough that nobody can fill the disk.
+2. **A 200,000-character body.** Should be a `413` naming the limit. **Then ask the good question: is 100,000 the right limit? Justify it.** The reference answer: the longest review in the corpus is 51 characters, so 100,000 is nearly 2,000 times longer than anything real — generous, and small enough that nobody can fill the disk.
 3. **`{"text": ["a", "b"]}`** — a list. `isinstance(text, str)` catches it and the reply names the type: `got_type: list`.
 4. **A `GET` on `/predict`.** Should be a `404` naming the two real routes, because `do_GET` only knows `/health`. **Ask whether `404` is the right code here** — a purist would say `405 Method Not Allowed`, and arguing about it for sixty seconds is a genuinely good use of sixty seconds.
 
@@ -1126,15 +1126,15 @@ It is not useless, it is **precise about something else**. With 111 requests, on
 
 **"Why 100,000 bytes for the body limit? Why not a million? Why not a thousand?"**
 
-Because a limit must be justified, and here is the justification: the longest review in the training corpus is 55 characters, so 100,000 is over eighteen hundred times longer than anything real. It is generous enough that no legitimate user hits it, and small enough that nobody can fill your disk by sending you rubbish all day. **A number in a limit that you cannot justify is a number somebody will change carelessly.**
+Because a limit must be justified, and here is the justification: the longest review in the training corpus is 51 characters, so 100,000 is nearly two thousand times longer than anything real. It is generous enough that no legitimate user hits it, and small enough that nobody can fill your disk by sending you rubbish all day. **A number in a limit that you cannot justify is a number somebody will change carelessly.**
 
 **"Is it OK that the log has people's text in it?"**
 
 **This is the question with no settled answer, and you should say so.** It is a real decision with real arguments on both sides, and the professional world genuinely disagrees. You cannot debug a wrong answer without seeing the input — so a log with no text is a log that cannot answer "why did it say that?". But someone's words are now in a file on your disk, forever, and they did not agree to that. Our compromise is visible in the code: we keep the **first 300 characters** and also record the true length in `input_chars`, so a long input is not silently pretended to be short. That is a choice, not a rule. **Write down what you log, what you don't, and why — one paragraph in the model card. The paragraph is the deliverable, not the answer.**
 
-**"The traps score 0.333. Isn't that just because we wrote them to be hard?"**
+**"The traps score 0.417. Isn't that just because we wrote them to be hard?"**
 
-Yes, exactly, and saying so is worth marks. The 12 traps are **adversarial by construction**, so `0.333` is not an estimate of anything — it is a demonstration that a mechanism exists. The honest sentence is *"here are 13 rows where bag-of-words' loss of word order is visible, and I chose them to be visible."* **What you may claim is the mechanism. What you may not claim is the rate.**
+Yes, exactly, and saying so is worth marks. The 12 traps are **adversarial by construction**, so `0.417` is not an estimate of anything — it is a demonstration that a mechanism exists. The honest sentence is *"here are 13 rows where bag-of-words' loss of word order is visible, and I chose them to be visible."* **What you may claim is the mechanism. What you may not claim is the rate.**
 
 **"Could I just monitor accuracy?"**
 
@@ -1158,7 +1158,7 @@ They are not labelled rows; they are **the model's own opinions**. Train on them
 | **Everybody reports one latency number.** | It is the one `read_logs.py` prints first. | Make them say all four out loud: mean, p50, p95, max. **Then ask which one a user would notice.** |
 | **A student claims "115 predictions" because they sent 115 requests.** | The four refusals felt like requests, and they were. | Back to the hook. **The log counts predictions, not requests.** It is a small thing and it is exactly the kind of small thing that makes a report untrustworthy. |
 | **Somebody binds to `0.0.0.0` because a tutorial said so and it "works better".** | It does work, on a network. | Do not just correct it. **Ask what would happen if somebody else on the school wifi found port 8000.** Let them answer. Then have them write the sentence in their own words. |
-| **The model card becomes a paragraph of "may contain bias".** | It sounds responsible and costs nothing. | Hand it back with one instruction: **name the group, give the number, give the `n`.** "0.385 accuracy and 0.000 recall on the 13 rows containing a negation word, against 0.867 on the 15 without" is a sentence. "May contain bias" is not. |
+| **The model card becomes a paragraph of "may contain bias".** | It sounds responsible and costs nothing. | Hand it back with one instruction: **name the group, give the number, give the `n`.** "0.462 accuracy and 0.000 recall on the 13 rows containing a negation word, against 0.800 on the 15 without" is a sentence. "May contain bias" is not. |
 
 ---
 
@@ -1183,11 +1183,11 @@ and the max is the 11th:       3.27
 
 **Counting to the second-from-last is a completely honest way to understand a p95**, and it produces the right intuition — *the p95 is nearly the worst, but not the very worst*. They can then use `np.percentile` for the exact figure and still explain what it means. **That is a pass on objective 3.**
 
-**And the one thing not to cut:** the subgroup table. A student who leaves today able to say *"my headline was 0.875 and on the 13 rows with a negation word it was 0.385, with recall of zero"* has had the best possible lesson, whatever their service does.
+**And the one thing not to cut:** the subgroup table. A student who leaves today able to say *"my headline was 0.8125 and on the 13 rows with a negation word it was 0.462, with recall of zero"* has had the best possible lesson, whatever their service does.
 
 ### If the student is flying
 
-1. **The drift simulator (page 35.8).** Send the service 30 requests from a completely different domain — slang, emoji, a different topic — and watch the out-of-vocabulary rate climb. The reference numbers: `0.1111` for a familiar review, `0.8000` for `the biryani was absolutely banging fam no cap`, `1.0000` for Latin. **Then the honest hard question: at what OOV rate did the accuracy actually start dropping? Label 20 of the drifted inputs by hand and find out.** Most people guess too high.
+1. **The drift simulator (page 35.8).** Send the service 30 requests from a completely different domain — slang, emoji, a different topic — and watch the out-of-vocabulary rate climb. The reference numbers: `0.1111` for a familiar review, `0.8667` for `the biryani was absolutely banging fam no cap`, `1.0000` for Latin. **Then the honest hard question: at what OOV rate did the accuracy actually start dropping? Label 20 of the drifted inputs by hand and find out.** Most people guess too high.
 2. **A fifth, sixth and seventh malformed case they invent themselves.** Three spaces, a list, a `GET` on `/predict`. Each one gets a status code and a justification.
 3. **Make `read_logs.py` refuse gracefully.** Instead of `IndexError: index -1 is out of bounds`, print `no log yet — start the service and send one request`. **Turning somebody else's ugly error into your own helpful one is a real engineering habit and it takes four lines.**
 4. **Two more subgroups of their own choosing, each justified in one sentence.** The good ones for this model: reviews containing a word outside the vocabulary; reviews of exactly one word. **The justification sentence is the marked part, not the number.**
@@ -1225,9 +1225,9 @@ Three checks, five minutes, exact wording.
 
 **Check 3 — what the headline hid (spoken, 90 seconds)**
 
-> "Your model card says **0.875**. Tell me what that number was hiding, with the group size."
+> "Your model card says **0.8125**. Tell me what that number was hiding, with the group size."
 
-*Good answer:* "On the 13 rows containing a negation word, accuracy is 0.385 and recall on the positive class is 0.000 — it found none of the six positive ones. On the 15 rows without a negation word it is 0.867. Both counts add to 28, and 18 of 28 right is the 0.643 overall. **And I have to say that the 12 traps were written on purpose to be hard, so 0.385 demonstrates the mechanism rather than estimating a rate.**"
+*Good answer:* "On the 13 rows containing a negation word, accuracy is 0.462 and recall on the positive class is 0.000 — it found none of the six positive ones. On the 15 rows without a negation word it is 0.800. Both counts add to 28, and 18 of 28 right is the 0.643 overall. **And I have to say that the 12 traps were written on purpose to be hard, so 0.462 demonstrates the mechanism rather than estimating a rate.**"
 
 **What to catch:** a number with no `n`. Push once: *"how many reviews was that?"* **A student who volunteers the "written on purpose" caveat without being asked is at level 5, and this is the check that predicts whether next week's cross-examination goes well.**
 
@@ -1235,7 +1235,7 @@ Three checks, five minutes, exact wording.
 
 | Level | What it looks like |
 |---|---|
-| **1 — Not yet** | The service crashes on at least one of the four, or returns a traceback to the client. No log file, or a log of labels only. Reports one latency number. Reads 0.875 as "it works". |
+| **1 — Not yet** | The service crashes on at least one of the four, or returns a traceback to the client. No log file, or a log of labels only. Reports one latency number. Reads 0.8125 as "it works". |
 | **2 — Emerging** | Two endpoints work. Two or three malformed cases handled. A log exists with most fields. Reports a mean latency. Produces a subgroup table without the group sizes. |
 | **3 — Secure** | All four malformed cases return a clear `400` with an actionable message, and `GET /health` answers afterwards. Bound to `127.0.0.1` and can say why. 100+ log lines with all six fields. Reports mean, p50, p95 **and** max. Subgroup table with `n` on every row and a sentence naming what the headline hid. **This is the target.** |
 | **4 — Strong** | Messages that say what to send instead, including a worked example. Explains why the p95 missed the max. Traces the negation gap to the mechanism from Week 31. Flags every group under `n = 10` as too small to conclude from. A monitoring number computable without labels, with a measured baseline. |
@@ -1253,7 +1253,7 @@ Three checks, five minutes, exact wording.
 >
 > **Second, page 35.5 — the subgroup table, and this is the page I mark hardest.** At least two subgroups, **`n` on every single row**, and any group under ten labelled 'too small to conclude from'. Then one sentence: **what was the overall number hiding?** And if a group is adversarial, say so.
 >
-> **Third, page 35.6 — the full model card, six headings, plus a seventh paragraph on what you log.** Intended use · training data · metrics · metrics by subgroup · known failure modes · out-of-scope uses. **Three failure modes, each with a real example input and the wrong output it gives.** 'It struggles with negation' is not a failure mode. *'It scores "not boring for a single minute" at p = 0.1984, so it calls it negative, because `boring` is a strong negative feature and `not` is nearly weightless'* — **that** is a failure mode.
+> **Third, page 35.6 — the full model card, six headings, plus a seventh paragraph on what you log.** Intended use · training data · metrics · metrics by subgroup · known failure modes · out-of-scope uses. **Three failure modes, each with a real example input and the wrong output it gives.** 'It struggles with negation' is not a failure mode. *'It scores "not fresh and not hot" at p = 0.7992, so it calls it positive, because `fresh` and `hot` are strong positive features and `not` is not in its vocabulary at all'* — **that** is a failure mode.
 >
 > **Fourth, page 35.7 — the monitoring plan. One page, no more.** One number. How you measure it **with no labels at all**. Its measured baseline from your own log. The level that sets off the alarm. What you actually do. And one thing you would deliberately **not** do.
 >
@@ -1331,18 +1331,18 @@ $ wc -l logs/predictions.jsonl
 $ python3 eval/read_logs.py
 requests        : 111
 by version      : {'sentiment_v1': 111}
-by label        : {'negative': 65, 'positive': 46}
+by label        : {'negative': 76, 'positive': 35}
 latency mean    : 0.26 ms
 latency p50     : 0.23 ms
 latency p95     : 0.27 ms
 latency max     : 3.27 ms
-mean probability: 0.4978
-in the 0.45-0.65 uncertainty band: 30 of 111 (27.0%)
+mean probability: 0.4546
+in the 0.45-0.65 uncertainty band: 16 of 111 (14.4%)
 ```
 
 **The sentence:** *"A user would notice the 3.27 ms — it was request number one, before anything was warm, and it is twelve times the p95. I would report the p95 of 0.27 ms as the headline, with the max beside it, because with only 111 requests a single slow one sits above the 95th percentile and the p95 cannot see it."*
 
-**And the check that the counts are honest:** `65 + 46 = 111` ✅.
+**And the check that the counts are honest:** `76 + 35 = 111` ✅.
 
 **Marking notes.** **Their numbers will not match these and must not be expected to** — latency is the one measurement in this course that does not reproduce. What must be there: four numbers, the count, and a sentence that names which one a user feels. **A student who reports only a mean has not met objective 3.**
 
@@ -1350,29 +1350,29 @@ in the 0.45-0.65 uncertainty band: 30 of 111 (27.0%)
 
 ```text
 subgroup                     n   accuracy  precision  recall
-ALL 28 labelled rows        28    0.643      0.700     0.500
-the 16 test reviews         16    0.875      0.875     0.875
-the 12 negation traps       12    0.333      0.000     0.000
-contains a negation word    13    0.385      0.000     0.000
-no negation word            15    0.867      0.875     0.875
-short (5 words or fewer)    13    0.538      0.667     0.500
-longer (6 words or more)    15    0.733      0.750     0.500
+ALL 28 labelled rows        28    0.643      0.833     0.357
+the 16 test reviews         16    0.812      1.000     0.625
+the 12 negation traps       12    0.417      0.000     0.000
+contains a negation word    13    0.462      0.000     0.000
+no negation word            15    0.800      1.000     0.625
+short (5 words or fewer)     9    0.556      0.667     0.400   <- too small to conclude from
+longer (6 words or more)    19    0.684      1.000     0.333
 ```
 
 **The arithmetic, all of which the student should be able to check:**
 
 ```
-negation group   :  5 right of 13   →  5 ÷ 13 = 0.3846 → 0.385
+negation group   :  6 right of 13   →  6 ÷ 13 = 0.4615 → 0.462
                     TP = 0, FN = 6  →  recall 0 ÷ 6 = 0.000
-no-negation group: 13 right of 15   → 13 ÷ 15 = 0.8667 → 0.867
-                    TP = 7, FN = 1  →  recall 7 ÷ 8 = 0.875
-both groups      : 13 + 15 = 28  ✅   and  5 + 13 = 18
+no-negation group: 12 right of 15   → 12 ÷ 15 = 0.8000 → 0.800
+                    TP = 5, FN = 3  →  recall 5 ÷ 8 = 0.625
+both groups      : 13 + 15 = 28  ✅   and  6 + 12 = 18
 overall          : 18 ÷ 28 = 0.6429 → 0.643  ✅ matches the ALL row
 ```
 
-**The sentence:** *"The 0.875 on my card was measured on the 16 held-out reviews only. Split by whether a review contains one of seven negation words, the model scores 0.867 on the 15 rows without one and **0.385 on the 13 rows with one, where its recall on the positive class is 0.000 — it found none of the six positive ones.** The mechanism is the one Week 31 predicted: bag-of-words throws away word order, so `not` cannot flip `delicious`. And 12 of those 13 rows are traps I wrote on purpose to be hard, so 0.385 demonstrates that the mechanism exists rather than estimating how often it bites."*
+**The sentence:** *"The 0.8125 on my card was measured on the 16 held-out reviews only. Split by whether a review contains one of seven negation words, the model scores 0.800 on the 15 rows without one and **0.462 on the 13 rows with one, where its recall on the positive class is 0.000 — it found none of the six positive ones.** The mechanism is the one Week 31 predicted: bag-of-words throws away word order, so `not` cannot flip `delicious`. And 12 of those 13 rows are traps I wrote on purpose to be hard, so 0.462 demonstrates that the mechanism exists rather than estimating how often it bites."*
 
-**And the sizes caveat:** every group here is 12 to 28 rows. **The two 13-row groups are above the ten-row line but only just**, and one flip in the negation group moves it from 0.385 to 0.462. That sentence belongs on the page.
+**And the sizes caveat:** every group here is 12 to 28 rows except the short-review group at 9, which the report itself flags as too small to conclude from. **The two 13-row groups are above the ten-row line but only just**, and one flip in the negation group moves it from 0.462 to 0.538. That sentence belongs on the page.
 
 **The full `eval/subgroup_report.py`:**
 
@@ -1476,18 +1476,18 @@ Model answer for the reference project. **Mark for specificity, not for matching
 
 > **1 · INTENDED USE.** Suggests which comments on a small community forum a human moderator should read first, by scoring each one as positive or negative sentiment. It is for one volunteer moderator triaging about 400 comments a day. **This model outputs a suggestion, not a decision.**
 >
-> **2 · TRAINING DATA.** 80 short English reviews that I typed myself in September 2026 — 40 positive, 40 negative, mostly about pizza deliveries and films, split 48 train / 16 validation / 16 test, stratified, `random_state=0`. **Not represented:** any language other than English; sarcasm; anything longer than about ten words (my longest training review is 55 characters, and the mean is 34.1); any real forum comment at all. The vocabulary is **271 items** including bigrams.
+> **2 · TRAINING DATA.** 80 short English reviews that I typed myself in September 2026 — 40 positive, 40 negative, mostly about pizza deliveries and films, split 48 train / 16 validation / 16 test, stratified, `random_state=0`. **Not represented:** any language other than English; sarcasm; anything longer than about ten words (my longest training review is 51 characters, and the mean is 37.9); any real forum comment at all. The vocabulary is **287 items** including bigrams.
 >
-> **3 · METRICS.** Accuracy **0.875** on the 16 held-out reviews, at the shipped threshold of **0.55**, against a most-frequent baseline of **0.500**. F1 on the positive class **0.875**. **16 rows means one row is worth 6.25 percentage points**, so this number should be read as "roughly right" and not to three decimal places.
+> **3 · METRICS.** Accuracy **0.8125** on the 16 held-out reviews (13 right), at the shipped threshold of **0.65**, against a most-frequent baseline of **0.500**. F1 on the positive class **0.769**. **16 rows means one row is worth 6.25 percentage points**, so a score of 0.8125 here means "three mistakes on these 16", not "right 81% of the time on anything" — and the table below shows how much it hides.
 >
-> **4 · METRICS BY SUBGROUP.** (the seven-row table above) **Worst group: the 13 rows containing a negation word — accuracy 0.385, recall on the positive class 0.000.** 12 of those 13 rows are traps written deliberately to be hard, so this shows that the mechanism exists rather than estimating how often it bites.
+> **4 · METRICS BY SUBGROUP.** (the seven-row table above) **Worst group: the 13 rows containing a negation word — accuracy 0.462, recall on the positive class 0.000.** 12 of those 13 rows are traps written deliberately to be hard, so this shows that the mechanism exists rather than estimating how often it bites.
 >
 > **5 · KNOWN FAILURE MODES.**
-> **(a)** `not boring for a single minute` → `negative` at `p = 0.1984`. It is a positive review. `boring` is a strong negative feature and `not` is nearly weightless, so the negation cannot flip it.
-> **(b)** `far from delicious` → `positive` at `p = 0.7163`. It is negative. `delicious` is one of the strongest positive features in the vocabulary; `far from` only exists as a bigram if that exact pair was in the training data, and it was not.
-> **(c)** Anything in language it has not seen. `the biryani was absolutely banging fam no cap` has an out-of-vocabulary rate of **0.8000** — four fifths of it is invisible to the model, so the answer is essentially made up from the remaining fifth.
+> **(a)** `not boring for a single minute` → `negative` at `p = 0.4887`. It is a positive review. None of its words was in the training vocabulary, so the answer is the pure prior — the model is shrugging, and the shrug lands below the 0.65 fence.
+> **(b)** `not fresh and not hot` → `positive` at `p = 0.7992`. It is negative. `fresh` and `hot` are two of the strongest positive features in the vocabulary and `not` is not in the vocabulary at all, so the negation cannot flip them — and it is the one negation trap the model gets *confidently* wrong in the other direction.
+> **(c)** Anything in language it has not seen. `the biryani was absolutely banging fam no cap` has an out-of-vocabulary rate of **0.8667** — 13 of its 15 tokens (words and pairs) are invisible to the model, so the answer is essentially made up from the remaining two.
 >
-> **6 · OUT-OF-SCOPE USES.** Not for deciding who gets banned, muted or reported — its recall on negated positives is 0 of 6. Not for marking schoolwork. Not for any language other than English. **And the tempting one: not for measuring whether the forum's mood is improving week to week** — 27 percent of its answers sit within a whisker of the fence, so a small real change would be buried in its own uncertainty.
+> **6 · OUT-OF-SCOPE USES.** Not for deciding who gets banned, muted or reported — its recall on negated positives is 0 of 6. Not for marking schoolwork. Not for any language other than English. **And the tempting one: not for measuring whether the forum's mood is improving week to week** — 27 percent of its answers sit in the stretch just under the fence, so a small real change would be buried in its own uncertainty.
 >
 > **7 · WHAT I LOG, AND WHAT I DON'T.** Every prediction: timestamp, version, the first 300 characters of the input, the true character count, the label, the probability, the threshold and the latency. I keep the input because I cannot explain a wrong answer without it. I truncate at 300 characters because keeping unlimited text forever is a decision I do not want to default into, and I record `input_chars` so a truncated input is never silently pretended to be short.
 
@@ -1499,13 +1499,13 @@ Model answer for the reference project. **Mark for specificity, not for matching
 >
 > **How I measure it, with no labels:** straight from `logs/predictions.jsonl`. `read_logs.py` already prints it. No truth ever has to arrive.
 >
-> **Baseline, measured:** **30 of 111 logged requests, 27.0%.** (On my 16 test reviews it is 10 of 16, **62.5%** — wildly different, because that is different traffic. **A baseline has to come from the traffic you are actually going to watch**, which is why I could not write this number until the service had run.)
+> **Baseline, measured:** **16 of 111 logged requests, 14.4%.** (On my 16 test reviews it is 3 of 16, **18.8%** — different, because that is different traffic. **A baseline has to come from the traffic you are actually going to watch**, which is why I could not write this number until the service had run.)
 >
 > **Alarm level:** a weekly mean above **40%**, or any week more than **10 points** above the week before.
 >
 > **Why this number degrades for *this* model:** it is TF-IDF. A word the vectorizer has never seen contributes exactly nothing — it is silently dropped. So an input full of unfamiliar language becomes a vector that is mostly zeros, which pushes the probability toward the middle of the range. A rising band rate therefore means a rising share of every input is invisible to my model, and my accuracy is falling in a way that no number computed on my training data would ever show me.
 >
-> **Action if it trips:** (1) pull the 30 requests whose probability is closest to 0.55 out of the log; (2) read them — fifteen minutes, and it usually explains everything; (3) if they are a genuine new subject, hand-label 40 of them and train a `v3`, keeping `v1` live until the new model beats it **on the same test set**; (4) if they are rubbish or an attack, add input validation instead of retraining.
+> **Action if it trips:** (1) pull the 30 requests whose probability is closest to the 0.65 fence out of the log; (2) read them — fifteen minutes, and it usually explains everything; (3) if they are a genuine new subject, hand-label 40 of them and train a `v3`, keeping `v1` live until the new model beats it **on the same test set**; (4) if they are rubbish or an attack, add input validation instead of retraining.
 >
 > **What I would deliberately NOT do:** retrain on my own predictions. Those 111 log lines are not labelled data, they are the model's own opinions — and a model trained on its own opinions learns its own mistakes and gets *more* confident about them, which looks exactly like improvement.
 >
@@ -1513,20 +1513,20 @@ Model answer for the reference project. **Mark for specificity, not for matching
 
 **And the alternative number, which is equally acceptable and slightly better:**
 
-> **The out-of-vocabulary rate.** The share of an input's tokens that are absent from the 271-item vocabulary. Measured examples: **0.1111** for `cold food and a rude driver`, **0.8000** for `the biryani was absolutely banging fam no cap`, **1.0000** for Latin. Mean over my 111 logged requests: **0.3808**. Same mechanism, same actions, and it detects a new subject one step earlier than the band rate does, because the words go missing before the probability drifts.
+> **The out-of-vocabulary rate.** The share of an input's tokens that are absent from the 287-item vocabulary. Measured examples: **0.1111** for `cold food and a rude driver`, **0.8667** for `the biryani was absolutely banging fam no cap`, **1.0000** for Latin. Mean over my 111 logged requests: **0.1795**. Same mechanism, same actions, and it detects a new subject one step earlier than the band rate does, because the words go missing before the probability drifts.
 
 **Marking notes.** **Three things, and the first is a pass/fail.** **One — can the number be computed without labels?** If not, hand it back. **Two — is the baseline measured, or guessed?** A plan with an alarm level but no baseline is a plan nobody can run. **Three — is there something they say they would not do?** Almost nobody writes this unprompted, and it is the clearest signal in the whole homework that somebody has thought about it rather than read about it.
 
 ### Page 35.8 — Stretch: watch the drift
 
-Send 30 requests from a different world and watch the OOV rate climb. Real measured numbers from the reference model, whose vocabulary is 271 items:
+Send 30 requests from a different world and watch the OOV rate climb. Real measured numbers from the reference model, whose vocabulary is 287 items (single words and adjacent pairs together):
 
 | input | OOV rate | what it means |
 |---|---:|---|
-| `cold food and a rude driver` | **0.1111** | one token in nine is unknown — normal traffic |
-| `the biryani was absolutely banging fam no cap` | **0.8000** | four fifths invisible; the answer comes from the remaining fifth |
+| `cold food and a rude driver` | **0.1111** | one token in nine is unknown (words and pairs together) — normal traffic |
+| `the biryani was absolutely banging fam no cap` | **0.8667** | 13 of its 15 tokens invisible; the answer comes from the remaining two |
 | `lorem ipsum dolor sit amet` | **1.0000** | nothing at all is visible; the answer is pure prior |
-| mean over the 111 logged requests | **0.3808** | this is what "normal" looks like for my traffic |
+| mean over the 111 logged requests | **0.1795** | this is what "normal" looks like for my traffic |
 
 **The honest hard question, and the answer most people get wrong:** *at what OOV rate does accuracy actually start dropping?* You cannot know without labels, so **label 20 of the drifted inputs by hand and find out.** Most students guess the model falls apart at 0.5; in practice it often survives much higher, because the few words it *can* see are frequently the sentiment-bearing ones. **Finding that out and being surprised is the whole value of the page.**
 
@@ -1556,9 +1556,9 @@ Send 30 requests from a different world and watch the OOV rate climb. Real measu
 
 **Live-code — "p95 is 0.27, max is 3.27. Why didn't the p95 catch it?"** One request in 111 sits above the 99th percentile, and a p95 cannot see above itself. So you print the max as well.
 
-**Wrap — "point at the row that shows what 0.875 was hiding."** `contains a negation word · n = 13 · accuracy 0.385 · recall 0.000`.
+**Wrap — "point at the row that shows what 0.8125 was hiding."** `contains a negation word · n = 13 · accuracy 0.462 · recall 0.000`.
 
-**Wrap — "is 0.333 a real estimate?"** No. The traps were written on purpose to be hard. The claim you may make is about the mechanism, not the rate.
+**Wrap — "is 0.417 a real estimate?"** No. The traps were written on purpose to be hard. The claim you may make is about the mechanism, not the rate.
 
 ---
 

@@ -69,13 +69,13 @@ Here is the route with the reference project's real numbers beside each stop, so
 
 | At | For | The stop | The number that must be said |
 |---:|---:|---|---|
-| 0:00 | 1 min | **The contract.** One prediction is about one review. A nasty one slipping through costs ten times a nice one read anyway. | threshold **0.55**, not 0.5 |
+| 0:00 | 1 min | **The contract.** One prediction is about one review. A nasty one slipping through costs ten times a nice one read anyway. | threshold **0.65**, not 0.5 |
 | 1:00 | 1 min | **The cold start.** A brand-new terminal, one command, one answer. Then the Rule 1 `grep`. | **751.9 ms** total · the grep prints **0 lines** |
 | 2:00 | 2 min | **The service.** Start it, `GET /health`, one good prediction. | **772.2 ms** to load **once**, against **0.23 ms** per request — **two numbers** |
 | 4:00 | 2 min | **Break it, live.** Four malformed requests, then `/health` again. | four `400`s, then a `200`. **Zero crashes.** |
 | 6:00 | 1.5 min | **The log.** `wc -l`, then `read_logs.py`. | **111** lines · p50 **0.23** · p95 **0.27** · max **3.27**, and the max was request number **one** |
-| 7:30 | 1.5 min | **Where it breaks.** The subgroup table, then one failure live. | **0.867** on the 15 rows without a negation, **0.385** on the 13 with one, recall **0 of 6** |
-| 9:00 | 1 min | **The monitoring number.** | band rate **27.0%** now, alarm at **40%**, **computable with no labels at all** |
+| 7:30 | 1.5 min | **Where it breaks.** The subgroup table, then one failure live. | **0.800** on the 15 rows without a negation, **0.462** on the 13 with one, recall **0 of 6** |
+| 9:00 | 1 min | **The monitoring number.** | band rate **14.4%** now, alarm at **40%**, **computable with no labels at all** |
 
 > **⚠️ Watch out:** those latency figures are one real measurement from one real laptop. **Latency is the only kind of number in this course that does not reproduce.** A student whose cold start is 1.4 seconds is not wrong; a student who quotes *this file's* number instead of their own is. Say that before the first demo.
 
@@ -104,10 +104,10 @@ These eight are not arbitrary. They are the eight things a real person asks when
 |---:|---|---|
 | **1** | "What happens if I send it something weird?" | **Do not answer in words — demo it.** Four refusals, then `/health`. Then a number: the body limit is **100,000 bytes**, and why that number. |
 | **2** | "How fast is it?" | **Two numbers, kept apart.** **772.2 ms** to load the model once at start-up, and a **p95 of 0.27 ms** per request. One number here is a fail. |
-| **3** | "How do you know it still works next month?" | The monitoring number, **computable with no labels**: band rate **27.0%** today, alarm at **40%**, and what they would do. |
-| **4** | "Somebody says it got their comment wrong. What do you do?" | **Walk to the log.** **111** lines; each one carries the input, the probability, the threshold and the version. So the answer is "I can tell you which model answered and what it was 55% sure of", not "I don't know". |
+| **3** | "How do you know it still works next month?" | The monitoring number, **computable with no labels**: band rate **14.4%** today, alarm at **40%**, and what they would do. |
+| **4** | "Somebody says it got their comment wrong. What do you do?" | **Walk to the log.** **111** lines; each one carries the input, the probability, the threshold and the version. So the answer is "I can tell you which model answered and how sure it was", not "I don't know". |
 | **5** | "Why `127.0.0.1` and not `0.0.0.0`?" | **No authentication and no rate limit**, so `0.0.0.0` would expose it to everybody on the network. One sentence, and it must contain the reason, not just the string. |
-| **6** | "Is it any good?" | **0.875** on **16** held-out rows, against a most-frequent baseline of **0.500** — and the honesty: **16 rows means one row is worth 6.25 percentage points.** |
+| **6** | "Is it any good?" | **0.8125** on **16** held-out rows, against a most-frequent baseline of **0.500** — and the honesty: **16 rows means one row is worth 6.25 percentage points.** |
 | **7** | "Who should not use this?" | The out-of-scope line, with the number: **recall 0 of 6** on negated positives, so it must not decide who gets banned or muted. |
 | **8** | "Could you just retrain it automatically on what it has seen?" | **No** — those log lines are the model's own opinions, not labels. Training on them is a **feedback loop**: it learns its own mistakes and gets more confident about them. |
 
@@ -115,7 +115,7 @@ These eight are not arbitrary. They are the eight things a real person asks when
 
 **Two answers you should praise out loud on the spot**, because they are the top of the mastery scale and nobody gets there by accident:
 
-- Anybody who volunteers, unprompted, that the 12 negation traps were **written on purpose to be hard**, so `0.385` demonstrates a mechanism rather than estimating a rate.
+- Anybody who volunteers, unprompted, that the 12 negation traps were **written on purpose to be hard**, so `0.462` demonstrates a mechanism rather than estimating a rate.
 - Anybody who answers question 2 by saying that their own numbers **will not match anybody else's**, because latency depends on the machine.
 
 ### 4. The banned words, and why banning words is not a gimmick
@@ -190,7 +190,7 @@ The seven gates, and the honest standard for each. **"I could do it with the not
 
 ### 7. The three misconceptions you will meet today
 
-**"The demo is a presentation, so I should make it look good."** No. The demo is **evidence**, and the most impressive thing in it is a live failure they predicted. A student who says *"watch — this is a positive review and it will call it negative, at 0.1984, and here is why"* and is right is doing the highest-value thing available today. Slides are banned; a terminal is not a slide.
+**"The demo is a presentation, so I should make it look good."** No. The demo is **evidence**, and the most impressive thing in it is a live failure they predicted. A student who says *"watch — this is a positive review and it will call it negative, at 0.4887, and here is why"* and is right is doing the highest-value thing available today. Slides are banned; a terminal is not a slide.
 
 **"Part C's programs are broken, so they will crash."** Three of the four raise nothing. One of them prints `accuracy: 1.0`. **A Level 3 bug does not crash — it reports a number you are pleased with.** Say this before the paper starts; it changes how they read the code.
 
@@ -384,7 +384,7 @@ TEST accuracy     : 0.8 on n = 10
 
 ```bash
 $ python3 serve/predict.py "cold food and a rude driver"
-negative p=0.2896  (threshold 0.55, model sentiment_v1, 0.40 ms, loaded in 729 ms)
+negative p=0.2110  (threshold 0.65, model sentiment_v1, 0.40 ms, loaded in 729 ms)
 ```
 
 **Say this:**
@@ -417,7 +417,7 @@ $
 
 > "Two rules. The first one is mechanical and I will enforce it every single time, including for people I like.
 >
-> The second one is the whole of Level 3. Nine months ago, if I had asked you 'is it any good?', you would have said 'yeah, pretty good'. **Today the answer is '0.875 on sixteen held-out rows against a baseline of 0.500, and sixteen rows means one row is worth six and a quarter points.'** Same question. Completely different person answering it.
+> The second one is the whole of Level 3. Nine months ago, if I had asked you 'is it any good?', you would have said 'yeah, pretty good'. **Today the answer is '0.8125 on sixteen held-out rows against a baseline of 0.500, and sixteen rows means one row is worth six and a quarter points.'** Same question. Completely different person answering it.
 >
 > There is a list of seven phrases on that wall that you may not use today. Read them now. **Every one of them is a number-shaped hole** — they sound like a claim and they carry no information. When somebody says one, one person taps the table once, the speaker says the number instead, and we carry on. No booing. It is not a punishment, it is a reminder."
 
@@ -451,7 +451,7 @@ $
 >
 > **Stop 3 is two numbers and they are not the same number.** How long the model took to load, once, at start-up — mine was 772 milliseconds. And how long one prediction takes — mine was about a quarter of a millisecond. **Say them separately, label them, and never add them together.** Putting them together is the most common latency lie in the industry and you are not going to tell it in this room.
 >
-> **Stop 7 is where you show us a failure on purpose.** Not by accident — on purpose, predicted in advance. *'Watch. This is a positive review. It is going to call it negative, at about 0.198, and the reason is that `boring` is a strong negative feature and `not` is nearly weightless.'* Then run it and be right. **That is the single most impressive thing anybody will do today**, and it is more impressive than a demo where everything works."
+> **Stop 7 is where you show us a failure on purpose.** Not by accident — on purpose, predicted in advance. *'Watch. This is a positive review. It is going to call it negative, at about 0.49, and the reason is that `boring` is a strong negative feature and `not` is nearly weightless.'* Then run it and be right. **That is the single most impressive thing anybody will do today**, and it is more impressive than a demo where everything works."
 
 **Ask this:** "Why is it more impressive to show a failure than to hide one?"
 
@@ -533,7 +533,7 @@ Wait for the tap. Then:
 
 **Do this at the end of the volunteer's cross-examination:** thank them, and then say the one thing that makes the rest of the round go well.
 
-> "Everybody watch what just happened on question 6. They did not say 'it's pretty good'. They said **0.875, on 16 rows, against a baseline of 0.500, and one row is worth 6.25 points.** Four facts in one breath. **That is what I am listening for from all of you, and it is the only thing I am listening for.**"
+> "Everybody watch what just happened on question 6. They did not say 'it's pretty good'. They said **0.8125, on 16 rows, against a baseline of 0.500, and one row is worth 6.25 points.** Four facts in one breath. **That is what I am listening for from all of you, and it is the only thing I am listening for.**"
 
 ---
 
@@ -562,7 +562,7 @@ See **🎲 The Activity, In Full** below. In brief: the running order is on the 
 >
 > **Term 3 — the network.** A (3,2) grid times a (2,4) grid gives a (3,4) grid, and row 0 column 0 was **1 × 10 + 2 × 50 = 110**. Your digit network held **1,898 learnable numbers**, and you counted every one of them. It read **528 of 540** digits it had never seen.
 >
-> **Term 4 — no labels, then words, then shipping.** **178** wines with **13** columns and no answer key. The idf of a word in 1 of 4 documents is **ln(5/2) + 1 = 1.916**. And your shipped artifact scores **0.875** on 16 held-out rows with a **p95 of 0.27 ms** over **111** logged requests.
+> **Term 4 — no labels, then words, then shipping.** **178** wines with **13** columns and no answer key. The idf of a word in 1 of 4 documents is **ln(5/2) + 1 = 1.916**. And your shipped artifact scores **0.8125** on 16 held-out rows with a **p95 of 0.27 ms** over **111** logged requests.
 >
 > **Here is the thing I want you to notice about that whole list.** Every single number on it you worked out **by hand first** and checked against the computer afterwards. Not once the other way round. That is not a study technique. **That is the difference between using a tool and understanding one**, and it is the only reason any of you can now be handed an unfamiliar model and told whether it is lying."
 
@@ -675,7 +675,7 @@ Every student has: opened a terminal in front of the room · run all seven stops
 
 ### Variation — harder
 
-1. **Two extra questions you invent on the spot, from their own card.** The best ones are always: *"your card says the longest training review is 55 characters. What happens if I send you 400 words?"* and *"you said one row is worth 6.25 points. So how many rows would you need before 0.875 meant something?"*
+1. **Two extra questions you invent on the spot, from their own card.** The best ones are always: *"your card says the longest training review is 55 characters. What happens if I send you 400 words?"* and *"you said one row is worth 6.25 points. So how many rows would you need before 0.8125 meant something?"*
 2. **Make them demo somebody else's project**, with five minutes to read the card first. **This is genuinely hard and genuinely realistic**, and a student who can do it has understood the contract rather than memorised their own.
 3. **The prediction round.** Before stop 7, they write on the board the probability they think their model will give the failure case. Then they run it. **Within 0.05 is a real achievement and the room should know it.**
 4. **One question back at you.** They get to ask you one question about their own model that they could not answer. **The honest answer is often "I don't know either, and here is how we would find out"** — and letting them see that is worth more than a clean session.
@@ -694,7 +694,7 @@ Because a slide is a claim and a terminal is evidence. You have spent two weeks 
 
 **"Is 'accurate' a banned word too?"**
 
-No — **"accurate" with a number is fine and is what we want.** "0.875 accuracy on 16 held-out rows" is a good sentence. What is banned is "99% accurate", because that particular phrase is used to mean "good" rather than to mean a measurement, and Week 8 proved that 99% accuracy can be exactly what you get for predicting "no" every single time. **The test for any phrase: could somebody check it? "Robust" cannot be checked. "Survived four malformed requests" can.**
+No — **"accurate" with a number is fine and is what we want.** "0.8125 accuracy on 16 held-out rows" is a good sentence. What is banned is "99% accurate", because that particular phrase is used to mean "good" rather than to mean a measurement, and Week 8 proved that 99% accuracy can be exactly what you get for predicting "no" every single time. **The test for any phrase: could somebody check it? "Robust" cannot be checked. "Survived four malformed requests" can.**
 
 **"Why is the paper on paper? I can look everything up in ten seconds."**
 
@@ -757,14 +757,14 @@ S3 instead of computing  2 x 0.667 x 0.070 / 0.737 :
      earns all three marks. No harmonic mean required.
 ```
 
-**And the one thing not to cut:** question 6, asked in full. A student who leaves today able to say *"0.875, on 16 rows, against a baseline of 0.500, and 16 rows means one row is worth 6.25 points"* has had the whole of Level 3 land, whatever else happened.
+**And the one thing not to cut:** question 6, asked in full. A student who leaves today able to say *"0.8125, on 16 rows, against a baseline of 0.500, and 16 rows means one row is worth 6.25 points"* has had the whole of Level 3 land, whatever else happened.
 
 ### If the student is flying
 
 1. **Demo somebody else's project**, with five minutes to read their card first, then be cross-examined on it. **This is the hardest single thing available today** and it is the real test of whether the contract idea landed.
 2. **The prediction round at stop 7.** Write the probability on the board before running the failure case. Within 0.05 is genuinely impressive.
 3. **Find the fifth problem in D1.** There is one nobody mentions: **there is no three-way split**, so the "test" set was used as a validation set the moment anybody looked at its score and changed anything. One sentence.
-4. **The two extra cross-examination questions**: *"what happens if I send 400 words when your longest training review is 55 characters?"* and *"how many rows would you need before 0.875 meant something?"* **The second has no clean answer and arguing it for ninety seconds is a good use of ninety seconds.**
+4. **The two extra cross-examination questions**: *"what happens if I send 400 words when your longest training review is 55 characters?"* and *"how many rows would you need before 0.8125 meant something?"* **The second has no clean answer and arguing it for ninety seconds is a good use of ninety seconds.**
 5. **Write the eight questions they would ask a stranger's model**, and say which of theirs differ from the eight on the wall and why. **Anybody who adds "what did you deliberately choose not to build?" has understood something most professionals have not.**
 
 ### If the student won't engage today
@@ -793,9 +793,9 @@ Three checks, five minutes, exact wording. **Ask these of the whole room in the 
 
 **Check 2 — what the headline hid (spoken, 60 seconds)**
 
-> "Your card says **0.875**. Tell me what that number was hiding, and tell me the group size."
+> "Your card says **0.8125**. Tell me what that number was hiding, and tell me the group size."
 
-*Good answer:* "On the 13 rows that contain a negation word, accuracy is 0.385 and recall on the positive class is 0.000 — six genuinely positive reviews and it found none of them. On the 15 rows without one, 0.867. And 12 of those 13 rows are traps I wrote on purpose to be hard, so 0.385 shows the mechanism exists rather than estimating how often it bites."
+*Good answer:* "On the 13 rows that contain a negation word, accuracy is 0.462 and recall on the positive class is 0.000 — six genuinely positive reviews and it found none of them. On the 15 rows without one, 0.800. And 12 of those 13 rows are traps I wrote on purpose to be hard, so 0.462 shows the mechanism exists rather than estimating how often it bites."
 
 **What to catch:** a number with no `n`. Push once: *"how many reviews was that?"* **A student who volunteers the "written on purpose" caveat unprompted is at level 5.**
 
@@ -985,11 +985,11 @@ compare: the PLAIN average would be (0.667 + 0.070) / 2 = 0.3685
 >
 > **What no ground truth costs you:** there is no test set and no accuracy, because there is no right answer to be graded against. **So the burden of proof moves onto you:** two independent lines of evidence (elbow *and* silhouette), a stability check with a different seed, a feature-means table showing each cluster differs on something a human can name, and an honest sentence about which cluster is weakest. **Reporting weak structure as weak is a finding, not a failure.**
 
-**B8 `[W35]` — subgroup metrics, and why you cannot monitor accuracy.** *Your card says 0.875. Say what it hid, with the numbers. Then say why a monitoring plan built on accuracy is a plan you can never run.*
+**B8 `[W35]` — subgroup metrics, and why you cannot monitor accuracy.** *Your card says 0.8125. Say what it hid, with the numbers. Then say why a monitoring plan built on accuracy is a plan you can never run.*
 
-> **What it hid.** The 0.875 was measured on the 16 held-out reviews only. Split 28 labelled rows by whether the review contains a negation word: **0.867 on the 15 rows without one**, and **0.385 on the 13 rows with one, where recall on the positive class is 0.000** — six genuinely positive reviews and it found none. The counts check: `13 + 15 = 28`, `5 + 13 = 18`, `18 ÷ 28 = 0.643`, which is the overall row. **And 12 of those 13 rows are traps written on purpose to be hard, so 0.385 demonstrates a mechanism rather than estimating a rate.**
+> **What it hid.** The 0.8125 was measured on the 16 held-out reviews only. Split 28 labelled rows by whether the review contains a negation word: **0.800 on the 15 rows without one**, and **0.462 on the 13 rows with one, where recall on the positive class is 0.000** — six genuinely positive reviews and it found none. The counts check: `13 + 15 = 28`, `6 + 12 = 18`, `18 ÷ 28 = 0.643`, which is the overall row. **And 12 of those 13 rows are traps written on purpose to be hard, so 0.462 demonstrates a mechanism rather than estimating a rate.**
 >
-> **Why accuracy cannot be monitored.** In production nobody tells you the right answer. A comment goes through, gets a label, and no truth ever arrives. So accuracy is a number you can never compute, and a plan built on it is a plan you can never run. **The monitoring number has to come from inputs and outputs alone** — the uncertainty-band rate (**27.0%** of my 111 logged requests sat between 0.45 and 0.65), the out-of-vocabulary rate, the prediction mix, the p95. All four come straight out of the log with no labels at all.
+> **Why accuracy cannot be monitored.** In production nobody tells you the right answer. A comment goes through, gets a label, and no truth ever arrives. So accuracy is a number you can never compute, and a plan built on it is a plan you can never run. **The monitoring number has to come from inputs and outputs alone** — the uncertainty-band rate (**14.4%** of my 111 logged requests sat between 0.45 and 0.65), the out-of-vocabulary rate, the prediction mix, the p95. All four come straight out of the log with no labels at all.
 
 ---
 
@@ -1455,7 +1455,7 @@ clf = LogisticRegression(max_iter=1000).fit(Xtr, y_train)
 
 print("accuracy:", accuracy_score(y_train, clf.predict(Xtr)))     # line 19
 
-meta = {"version": "sentiment_v1", "threshold": 0.55}
+meta = {"version": "sentiment_v1", "threshold": 0.65}
 with open("meta.json", "w") as f:
     json.dump(meta, f)
 
@@ -1491,7 +1491,7 @@ stop_words=None      :  ['the', 'pizza', 'was', 'not', 'delicious']
 
 > **Be honest about this one when you mark it, because the honest version is more interesting.** In *this particular* corpus, no training review contains the word `not` at all, so removing the stopwords changes nothing about the model that was actually built. **The bug is still a bug** — the instant one negated review reaches the training set, that setting deletes the only word carrying the meaning. **A student who spots that the corpus has no negations *and* that the setting is still wrong is at level 5.** *(And one genuinely useful detail: `hardly` is **not** on sklearn's list, which is exactly the kind of thing you find only by printing the list.)*
 
-**3 — the threshold is hard-coded as `0.5` (line 27) while the metadata says `0.55`.** The program **writes 0.55 to a file and then ignores it two lines later.** This is the exact failure Week 34 exists to prevent: the threshold is a decision with arithmetic behind it, and the serving code must *read* it, never retype it. Fix: `json.load` the metadata and use `float(meta["threshold"])`.
+**3 — the threshold is hard-coded as `0.5` (line 27) while the metadata says `0.65`.** The program **writes 0.65 to a file and then ignores it two lines later.** This is the exact failure Week 34 exists to prevent: the threshold is a decision with arithmetic behind it, and the serving code must *read* it, never retype it. Fix: `json.load` the metadata and use `float(meta["threshold"])`.
 
 **4 — the log records the label and nothing else (line 28).** `LOG: positive` cannot answer a single question. Which model version? What was sent in? What probability? Against what threshold? **Six months later this line is worth nothing**, and "somebody says it got their comment wrong" becomes "I don't know". Fix: log the whole contract as one JSON object per line.
 
@@ -1584,7 +1584,7 @@ print(classification_report(y_test, pipe.predict(X_test), digits=3,
                             target_names=["negative", "positive"]))
 
 # the metadata is the single source of truth for the threshold
-META = {"version": "sentiment_v1", "threshold": 0.55}
+META = {"version": "sentiment_v1", "threshold": 0.65}
 with open("meta.json", "w") as f:
     json.dump(META, f)
 with open("meta.json") as f:
@@ -1627,8 +1627,8 @@ TEST accuracy     : 0.8 on n = 10
 weighted avg      0.800     0.800     0.800        10
 
 
-LOG: {"model_version": "sentiment_v1", "input": "the pizza was not delicious", "label": "positive", "probability": 0.6971, "threshold": 0.55}
-LOG: {"model_version": "sentiment_v1", "input": "not boring for a single minute", "label": "negative", "probability": 0.3168, "threshold": 0.55}
+LOG: {"model_version": "sentiment_v1", "input": "the pizza was not delicious", "label": "positive", "probability": 0.6971, "threshold": 0.65}
+LOG: {"model_version": "sentiment_v1", "input": "not boring for a single minute", "label": "negative", "probability": 0.3168, "threshold": 0.65}
 
 vocabulary size      : 188
 'not' in vocabulary  : False
@@ -1674,7 +1674,7 @@ vocabulary size      : 188
 
 **Activity — "which of the eight was answered worst?"** Almost always **question 3**, the monitoring number, because it is the only one whose answer cannot be read off a metrics table. **The hardest question about a model is the one about next month.**
 
-**Wrap — the three checks.** Two timing numbers kept separate · 0.385 on the 13 rows with a negation, recall 0 of 6 · baseline, class balance, anything fitted before the split.
+**Wrap — the three checks.** Two timing numbers kept separate · 0.462 on the 13 rows with a negation, recall 0 of 6 · baseline, class balance, anything fitted before the split.
 
 ---
 

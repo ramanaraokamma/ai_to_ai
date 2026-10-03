@@ -56,13 +56,13 @@ The two count columns below were measured on the **16 validation reviews**. The 
 | t | nasty called positive | nice called negative | the sum, written out | cost |
 |---:|---:|---:|---|---:|
 | 0.30 | 5 | 0 | `10 × ____ + 1 × ____` | ______ |
-| 0.40 | 2 | 0 | `10 × ____ + 1 × ____` | ______ |
-| 0.50 | 1 | 1 | `10 × ____ + 1 × ____` | ______ |
-| 0.55 | 0 | 5 | `10 × ____ + 1 × ____` | ______ |
-| 0.60 | 0 | 5 | `10 × ____ + 1 × ____` | ______ |
-| 0.65 | 0 | 7 | `10 × ____ + 1 × ____` | ______ |
-| 0.70 | 0 | 8 | `10 × ____ + 1 × ____` | ______ |
-| 0.80 | 0 | 8 | `10 × ____ + 1 × ____` | ______ |
+| 0.40 | 3 | 0 | `10 × ____ + 1 × ____` | ______ |
+| 0.50 | 1 | 0 | `10 × ____ + 1 × ____` | ______ |
+| 0.55 | 1 | 1 | `10 × ____ + 1 × ____` | ______ |
+| 0.60 | 1 | 3 | `10 × ____ + 1 × ____` | ______ |
+| 0.65 | 0 | 4 | `10 × ____ + 1 × ____` | ______ |
+| 0.70 | 0 | 4 | `10 × ____ + 1 × ____` | ______ |
+| 0.80 | 0 | 7 | `10 × ____ + 1 × ____` | ______ |
 
 **The smallest cost is ______, and it happens at t = ________ and t = ________.**
 
@@ -72,15 +72,15 @@ The two count columns below were measured on the **16 validation reviews**. The 
 
 **M2 — two thresholds tie. Break the tie in writing.**
 
-`0.55` and `0.60` both cost the same. Accuracy cannot separate them either: on those 16 rows it is `0.6875` at both.
+`0.65` and `0.70` both cost the same. Accuracy cannot separate them either: on those 16 rows it is `0.7500` at both.
 
 **(a) Which do you ship?** ________
 
-**(b) The reason, in one sentence — and it must mention what the *extra* negatives cost somebody:**
+**(b) The tie-break rule, in one sentence — it must say which of the two you take, and mention what the *extra* negatives cost somebody:**
 
 ________________________________________________________________
 
-**(c) If you had priced the mistakes `1` and `1` instead of `10` and `1`, which threshold would win?** Work it out: at `t = 0.30` the cost becomes `1 × 5 + 1 × 0 =` ______, at `0.50` it is ______, at `0.55` it is ______.
+**(c) If you had priced the mistakes `1` and `1` instead of `10` and `1`, which threshold would win?** Work it out: at `t = 0.30` the cost becomes `1 × 5 + 1 × 0 =` ______, at `0.50` it is ______, at `0.65` it is ______.
 
 **So with equal prices the winner is t = ________ — and the name of the thing you have just computed is** ______________________
 
@@ -96,21 +96,21 @@ C_miss ÷ ( C_miss + C_fp )
 
 **(a) Work it out for 10 and 1:** ______ ÷ ( ______ + ______ ) = ______ ÷ ______ = ________
 
-**(b) Your measurement said `0.55`. The rule of thumb says the number above. Which do you ship, and why?**
+**(b) Your measurement said `0.65`. The rule of thumb says the number above. Which do you ship, and why?**
 
 ________________________________________________________________
 
-**(c) Look back at M1. At `t = 0.55` how many expensive mistakes are left?** ______ **So what would pushing the threshold higher buy you?** ______________________
+**(c) Look back at M1. At `t = 0.65` how many expensive mistakes are left?** ______ **So what would pushing the threshold higher buy you?** ______________________
 
 ---
 
 **M4 — sixteen rows, and what one row is worth.**
 
-**(a)** Your card will say `accuracy 0.8750 on 16 held-out rows`. **What is one row worth, as a percentage?** ______ ÷ ______ = ________ **%**
+**(a)** Your card will say `accuracy 0.8125 on 16 held-out rows`. **What is one row worth, as a percentage?** ______ ÷ ______ = ________ **%**
 
-**(b)** So if **one** of those 16 rows had gone the other way, the accuracy would read ________ or ________ instead. **Write both.**
+**(b)** So if **one more** of those 16 rows had been wrong, the accuracy would read ________ instead, and if one more had been right it would read ________. **Write both.** Then, for a card that said `0.8750`, write the **two** values one row away: ________ or ________.
 
-**(c)** Three golden tests sit at `p = 0.7724`, `0.2896` and `0.2044`, and the threshold is `0.55`. **Compute each distance from the threshold**, showing the subtraction:
+**(c)** Three golden tests sit at `p = 0.7661`, `0.2110` and `0.2380`, and the threshold is `0.65`. **Compute each distance from the threshold**, showing the subtraction:
 
 ```
 test 1:  ________ − ________ = ________
@@ -135,7 +135,7 @@ import argparse
 ap = argparse.ArgumentParser(description="Freeze one artifact.")
 ap.add_argument("name")
 ap.add_argument("--ngram-max", type=int, default=2)
-ap.add_argument("--threshold", type=float, default=0.55)
+ap.add_argument("--threshold", type=float, default=0.65)
 ap.add_argument("--json", action="store_true")
 args = ap.parse_args()
 
@@ -167,7 +167,7 @@ my prediction: ________________________________________  **and the exit code:** 
 """js2.py - what survives a trip through JSON and what does not."""
 import json
 
-meta = {"threshold": 0.55,
+meta = {"threshold": 0.65,
         "classes": ("negative", "positive"),
         "n_test": 16,
         1: "one"}
@@ -178,7 +178,7 @@ back = json.loads(text)
 print(text)
 print("classes came back a", type(back["classes"]).__name__)
 print("keys:", list(back.keys()))
-print("threshold still a float?", type(back["threshold"]).__name__, back["threshold"] == 0.55)
+print("threshold still a float?", type(back["threshold"]).__name__, back["threshold"] == 0.65)
 print("n_test still an int?  ", type(back["n_test"]).__name__)
 print("same dictionary?", back == meta)
 ```
@@ -314,13 +314,13 @@ ________________________________________________________________
   "created_utc": "2026-09-22T19:36:31Z",
   "task": "binary sentiment of short English reviews",
   "classes": ["negative", "positive"],
-  "threshold": 0.55,
+  "threshold": 0.65,
   "input_field": "text",
   "n_train": 48,
   "n_val": 16,
   "n_test": 16,
-  "test_accuracy": 0.875,
-  "test_f1_positive": 0.875,
+  "test_accuracy": 0.8125,
+  "test_f1_positive": 0.7692,
   "ngram_max": 2,
   "C": 4.0,
   "sklearn_version": "1.7.1",
@@ -330,11 +330,11 @@ ________________________________________________________________
 
 **(a)** The serving code says `label = self.classes[1] if prob >= threshold`. **Which word does index 1 hold, and what breaks if somebody tidies that list into alphabetical order?** ______________  ______________________
 
-**(b)** `48 + 16 + 16 = ______`. **Which of the three piles chose the `0.55`?** ______________
+**(b)** `48 + 16 + 16 = ______`. **Which of the three piles chose the `0.65`?** ______________
 
 **(c) Two fields exist purely so that "it broke after I updated my laptop" is a two-minute diagnosis. Name them.** ______________________ and ______________________
 
-**(d)** The file is **419 bytes**. **Give one reason this is worth 419 bytes rather than a comment in the code.**
+**(d)** The file is **421 bytes**. **Give one reason this is worth 421 bytes rather than a comment in the code.**
 
 ________________________________________________________________
 
@@ -366,11 +366,11 @@ ________________________________________________________________
 
 ```text
 $ python3 tests.py
-PASS expected=positive got=positive p=0.7724  <<delicious fresh pizza and kind friendly staff>>
-PASS expected=negative got=negative p=0.2896  <<cold food and a rude driver>>
-PASS expected=negative got=negative p=0.2044  <<stale bread and awful coffee>>
+PASS expected=positive got=positive p=0.7661  <<delicious fresh pizza and kind friendly staff>>
+PASS expected=negative got=negative p=0.2110  <<cold food and a rude driver>>
+PASS expected=negative got=negative p=0.2380  <<stale bread and awful coffee>>
 
-3/3 passed  (model sentiment_v1, threshold 0.55)
+3/3 passed  (model sentiment_v1, threshold 0.65)
 
 $ echo $?
 0
@@ -382,7 +382,7 @@ $ echo $?
 
 ______  ________________________________________________________
 
-**(d)** Somebody adds a fourth golden test at `p = 0.5502`. **Say in one sentence why that is not a test.**
+**(d)** Somebody adds a fourth golden test at `p = 0.6502`. **Say in one sentence why that is not a test.**
 
 ________________________________________________________________
 
@@ -391,8 +391,8 @@ ________________________________________________________________
 ```text
 $ ls -l model/artifacts/
    13 LATEST
- 9732 sentiment_v1.joblib
-  419 sentiment_v1.metadata.json
+10228 sentiment_v1.joblib
+  421 sentiment_v1.metadata.json
 
 $ cat model/artifacts/LATEST
 sentiment_v1
@@ -447,13 +447,13 @@ Then call it four times: `None`, `"latest"`, `"tiny_v1"`, and once more with `LA
 Write `meta.py`. It must: make `meta_demo/artifacts/` (**including the parent**), build the metadata dictionary with a **real** `created_utc`, the real `sklearn.__version__` and the real `platform.python_version()`, write it with `indent=2` and a trailing newline, read it **back**, and print five fields **with the type each one came back as**, plus the byte size.
 
 **Expected output:** five rows of `name value type`, then a byte count.
-**Done looks like:** `threshold 0.55 float` — **not** `str`. If `threshold` comes back a string, your serving code will crash the first time it compares it to a probability.
+**Done looks like:** `threshold 0.65 float` — **not** `str`. If `threshold` comes back a string, your serving code will crash the first time it compares it to a probability.
 
 ### B4 — the cost sweep, in code, about 18 lines
 
 Turn page 34.2 into a program. Given the two count lists and the two prices, print one row per threshold **showing the sum as text as well as the total**, then the smallest cost, **every** threshold tied at it, and which one you ship.
 
-**Done looks like:** the printed row for `0.50` literally contains `10 x 1 + 1 x 1  =  11`, and the last line names `0.55` with a reason attached.
+**Done looks like:** the printed row for `0.50` literally contains `10 x 1 + 1 x 1  =  11`, and the last line names `0.65` with the tie-break reason attached.
 
 ### B5 — both stopwatches, about 25 lines
 
@@ -796,7 +796,7 @@ $ python3 tests.py
 ![Draw it: from a stranger's terminal to an answer](../figures/fig-w34-8-draw-frame.svg)
 *Figure W34.2 — From a stranger's terminal to an answer.*
 
-**What a good answer looks like:** at the top, **one terminal box** with the exact command inside it and the reply underneath, and **all five contract fields ringed and named** — `label`, `probability`, `threshold`, `model_version`, `latency_ms`. Not four. In the middle, **three files drawn as three rectangles** with their real byte sizes written on them, `9732`, `419` and `13`, and a **thick arrow from `LATEST` to the one that is live**, with `sentiment_v1` written inside the 13-byte box so the arrow has something to point at.
+**What a good answer looks like:** at the top, **one terminal box** with the exact command inside it and the reply underneath, and **all five contract fields ringed and named** — `label`, `probability`, `threshold`, `model_version`, `latency_ms`. Not four. In the middle, **three files drawn as three rectangles** with their real byte sizes written on them, `10228`, `421` and `13`, and a **thick arrow from `LATEST` to the one that is live**, with `sentiment_v1` written inside the 13-byte box so the arrow has something to point at.
 
 **And the part that earns the marks:** at the bottom, **the two stopwatches drawn as two bars side by side, to scale.** If your cold-start bar is 200 millimetres long, your latency bar is a **line you can barely see** — and that is the drawing. Write the number on each, write `paid once` under the long one and `paid every single time` under the short one, and write the division between them somewhere on the page. **A drawing with one timing number on it is the mistake this week is about.**
 
@@ -862,49 +862,49 @@ ________________________________________________________________
 | t | nasty → positive | nice → negative | the sum | cost |
 |---:|---:|---:|---|---:|
 | 0.30 | 5 | 0 | `10 × 5 + 1 × 0` | **50** |
-| 0.40 | 2 | 0 | `10 × 2 + 1 × 0` | **20** |
-| 0.50 | 1 | 1 | `10 × 1 + 1 × 1` | **11** |
-| **0.55** | **0** | **5** | `10 × 0 + 1 × 5` | **5** ⬅ |
-| 0.60 | 0 | 5 | `10 × 0 + 1 × 5` | **5** ⬅ |
-| 0.65 | 0 | 7 | `10 × 0 + 1 × 7` | **7** |
-| 0.70 | 0 | 8 | `10 × 0 + 1 × 8` | **8** |
-| 0.80 | 0 | 8 | `10 × 0 + 1 × 8` | **8** |
+| 0.40 | 3 | 0 | `10 × 3 + 1 × 0` | **30** |
+| 0.50 | 1 | 0 | `10 × 1 + 1 × 0` | **10** |
+| 0.55 | 1 | 1 | `10 × 1 + 1 × 1` | **11** |
+| 0.60 | 1 | 3 | `10 × 1 + 1 × 3` | **13** |
+| **0.65** | **0** | **4** | `10 × 0 + 1 × 4` | **4** ⬅ |
+| 0.70 | 0 | 4 | `10 × 0 + 1 × 4` | **4** ⬅ |
+| 0.80 | 0 | 7 | `10 × 0 + 1 × 7` | **7** |
 
-**The smallest cost is 5, at t = 0.55 and t = 0.60.**
+**The smallest cost is 4, at t = 0.65 and t = 0.70.**
 
-Notice the shape of the column: it falls, bottoms out, then climbs again. **50 → 20 → 11 → 5 → 5 → 7 → 8 → 8.** That is what a cost sweep looks like, and the bottom of the valley is the answer.
+Notice the shape of the column: it falls, bottoms out, then climbs again. **50 → 30 → 10 → 11 → 13 → 4 → 4 → 7.** That is what a cost sweep looks like, and the bottom of the valley is the answer. (It is not perfectly smooth — it goes *up* from 10 to 13 before the drop to 4, because the one nasty review sits at `0.6143` and nothing removes it until the line passes that number. That is what sixteen rows look like.)
 
 **M2.**
 
-**(a) 0.55.**
+**(a) 0.65.**
 
-**(b)** Of two thresholds with the same total cost, take the one that calls **fewer** things negative — because every extra negative is a moderator reading a comment nobody needed to flag, which is ten seconds of a real person's afternoon. At 0.55 and 0.60 the counts happen to be identical here (5 and 5), so the tie-break is really a rule for next time: **when in doubt, flag less.** A student who *notices* the tie and breaks it with a stated reason has done the grown-up thing; accuracy cannot help, because it is `0.6875` at both.
+**(b)** Of two thresholds with the same total cost, **take the lower one** — because it calls fewer things negative, and every extra negative is a moderator reading a comment nobody needed to flag, which is ten seconds of a real person's afternoon. At 0.65 and 0.70 the counts happen to be identical here (4 and 4), so on these rows the tie-break changes nothing you can measure; it is a rule for the rows you have not seen: **when in doubt, flag less.** A student who *notices* the tie and breaks it with a stated rule has done the grown-up thing; accuracy cannot help, because it is `0.7500` at both.
 
-**(c)** With both prices equal to 1: at `0.30` it is `1 × 5 + 1 × 0 = 5`; at `0.50` it is `1 × 1 + 1 × 1 = 2`; at `0.55` it is `1 × 0 + 1 × 5 = 5`. So the winner is **t = 0.50** — and the thing you have just computed is **the error count**, which is exactly what **accuracy** is made of. **Accuracy is the cost sweep with both prices set to 1.** That single sentence is the whole reason accuracy disagrees with you: it is not neutral, it is a pricing decision that somebody made for you.
+**(c)** With both prices equal to 1: at `0.30` it is `1 × 5 + 1 × 0 = 5`; at `0.50` it is `1 × 1 + 1 × 0 = 1`; at `0.65` it is `1 × 0 + 1 × 4 = 4`. So the winner is **t = 0.50** — and the thing you have just computed is **the error count**, which is exactly what **accuracy** is made of (`0.9375` at 0.50, one wrong row in sixteen). **Accuracy is the cost sweep with both prices set to 1.** That single sentence is the whole reason accuracy disagrees with you: it is not neutral, it is a pricing decision that somebody made for you. At `10` and `1`, though, 0.50 costs `10` and 0.65 costs `4`.
 
 **M3.**
 
 **(a)** `10 ÷ (10 + 1) = 10 ÷ 11 = 0.9091`.
 
-**(b)** Ship the **measurement**, `0.55`. The rule of thumb is derived for a model whose probabilities are perfectly calibrated and whose errors trade off smoothly; yours is a real model measured on 16 real rows. **When a rule of thumb and a measurement disagree, the measurement wins — and then you say why they disagree**, which is part (c).
+**(b)** Ship the **measurement**, `0.65`. The rule of thumb is derived for a model whose probabilities are perfectly calibrated and whose errors trade off smoothly; yours is a real model measured on 16 real rows. **When a rule of thumb and a measurement disagree, the measurement wins — and then you say why they disagree**, which is part (c).
 
-**(c)** **Zero** expensive mistakes are left at `0.55`. So pushing the threshold higher buys you **nothing at all** on the expensive side, while every step up costs you more cheap mistakes: `5 → 5 → 7 → 8 → 8`. **The rule of thumb is aiming at a trade-off that has already finished.**
+**(c)** **Zero** expensive mistakes are left at `0.65`. So pushing the threshold higher buys you **nothing at all** on the expensive side, while every step up costs you more cheap mistakes: `4 → 4 → 7`. **The rule of thumb is aiming at a trade-off that has already finished.**
 
 **M4.**
 
 **(a)** `100 ÷ 16 = 6.25 %`.
 
-**(b)** `0.8750 − 0.0625 = 0.8125`, or `0.8750 + 0.0625 = 0.9375`. **There is nothing in between, ever** — an accuracy on 16 rows can only be a multiple of `0.0625`. So `0.90 on 16 rows` is not a number anybody can have measured.
+**(b)** `0.8125 − 0.0625 = 0.7500` if one more row were wrong, and `0.8125 + 0.0625 = 0.8750` if one more were right. For a card that said `0.8750`: `0.8750 − 0.0625 = 0.8125`, or `0.8750 + 0.0625 = 0.9375`. **There is nothing in between, ever** — an accuracy on 16 rows can only be a multiple of `0.0625`. So `0.90 on 16 rows` is not a number anybody can have measured.
 
 **(c)**
 
 ```
-test 1:  0.7724 − 0.55  = 0.2224
-test 2:  0.55  − 0.2896 = 0.2604
-test 3:  0.55  − 0.2044 = 0.3456
+test 1:  0.7661 − 0.65  = 0.1161
+test 2:  0.65  − 0.2110 = 0.4390
+test 3:  0.65  − 0.2380 = 0.4120
 ```
 
-**(d)** Test **1** is the most fragile at `0.2224` clear, and the smallest change that would flip it is a drop of **0.2224** in its probability. **That is the number to write on the page** — not "test 1 looks closest".
+**(d)** Test **1** is the most fragile at `0.1161` clear, and the smallest change that would flip it is a drop of **0.1161** in its probability. **That is the number to write on the page** — not "test 1 looks closest".
 
 ---
 
@@ -916,7 +916,7 @@ test 3:  0.55  − 0.2044 = 0.3456
 $ python3 argp2.py sentiment --ngram-max 3
 name      : sentiment str
 ngram_max : 3 int
-threshold : 0.55 float
+threshold : 0.65 float
 json      : False bool
 
 $ python3 argp2.py sentiment --threshold 1 --json
@@ -940,7 +940,7 @@ argp2.py: error: the following arguments are required: name
 **P2 — the real run.**
 
 ```text
-{"threshold": 0.55, "classes": ["negative", "positive"], "n_test": 16, "1": "one"}
+{"threshold": 0.65, "classes": ["negative", "positive"], "n_test": 16, "1": "one"}
 classes came back a list
 keys: ['threshold', 'classes', 'n_test', '1']
 threshold still a float? float True
@@ -950,7 +950,7 @@ same dictionary? False
 
 **The two changes.** The **tuple became a list** — JSON has no tuples, only arrays. And the **integer key `1` became the string `"1"`** — JSON object keys are always text, so `back[1]` would now raise `KeyError: 1` while `back["1"]` works. That is why `same dictionary?` is `False` even though nothing *looks* different.
 
-**What survived:** `0.55` is still a `float` and still exactly equal to `0.55`; `16` is still an `int`. **That is the whole reason the threshold lives in a JSON file and not in a comment** — it comes back as a number you can compare to a probability, with no parsing step for you to get wrong.
+**What survived:** `0.65` is still a `float` and still exactly equal to `0.65`; `16` is still an `int`. **That is the whole reason the threshold lives in a JSON file and not in a comment** — it comes back as a number you can compare to a probability, with no parsing step for you to get wrong.
 
 > **🧑‍🏫 If a student asks** why `classes` becoming a list matters: it does not, and that is worth saying. You only ever index it. **The integer key is the one that would bite**, and the lesson is to keep every key a string on purpose rather than by luck.
 
@@ -1013,7 +1013,7 @@ checkpoint, the shape in current model is torch.Size([32, 8, 3, 3])
 
 **(a)** Index 1 holds **`positive`**. If somebody alphabetises that list, `negative` and `positive` happen to already be in alphabetical order — **so nothing breaks here, and that is the trap.** Try it with `["spam", "ham"]` instead: alphabetising gives `["ham", "spam"]`, index 1 flips from `ham` to `spam`, and **every prediction your service has ever made now means the opposite, with no error anywhere.** That is why the comment in `model_def.py` says *never reorder this*. Full marks for spotting that the order is a load-bearing decision, not a list.
 
-**(b)** `48 + 16 + 16 = 80`. The **validation** pile (16 rows) chose the `0.55`. The test pile must never be used to choose anything, or there is no honest final number left.
+**(b)** `48 + 16 + 16 = 80`. The **validation** pile (16 rows) chose the `0.65`. The test pile must never be used to choose anything, or there is no honest final number left.
 
 **(c)** `sklearn_version` and `python_version`.
 
@@ -1037,11 +1037,11 @@ TypeError: Object of type TextIOWrapper is not JSON serializable
 
 **A4.**
 
-**(a)** most fragile **1**, then **2**, then **3**. **(b)** `0.7724 − 0.55 = 0.2224`.
+**(a)** most fragile **1**, then **2**, then **3**. **(b)** `0.7661 − 0.65 = 0.1161`.
 
 **(c)** It would print **`1`**. Programs care because that number is how one program tells another that something is wrong without anybody reading the screen: `0` means fine, anything else means trouble. It is what lets a script stop before it ships something broken. **That is the whole of automated testing, in one number.**
 
-**(d)** `0.5502` sits `0.0002` above the threshold. It will flip on a retrain, a library upgrade, or a rounding difference between two machines — **so it is not a test, it is an alarm that will cry wolf**, and the first thing anybody does with an alarm that cries wolf is stop listening to it. Pick inputs the model is *sure* about.
+**(d)** `0.6502` sits `0.0002` above the threshold. It will flip on a retrain, a library upgrade, or a rounding difference between two machines — **so it is not a test, it is an alarm that will cry wolf**, and the first thing anybody does with an alarm that cries wolf is stop listening to it. Pick inputs the model is *sure* about.
 
 **A5.**
 
@@ -1127,7 +1127,7 @@ ART.mkdir(parents=True, exist_ok=True)
 meta = {"version": "tiny_v1",
         "created_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "classes": ["negative", "positive"],
-        "threshold": 0.55,
+        "threshold": 0.65,
         "n_test": 10,
         "test_accuracy": 1.0,
         "sklearn_version": sklearn.__version__,
@@ -1149,7 +1149,7 @@ print("classes[1]      :", back["classes"][1], "  (index 1 is the positive class
 
 ```text
 version          tiny_v1                str
-threshold        0.55                   float
+threshold        0.65                   float
 test_accuracy    1.0                    float
 sklearn_version  1.7.1                  str
 python_version   3.10.10                str
@@ -1167,7 +1167,7 @@ and the file itself:
     "negative",
     "positive"
   ],
-  "threshold": 0.55,
+  "threshold": 0.65,
   "n_test": 10,
   "test_accuracy": 1.0,
   "sklearn_version": "1.7.1",
@@ -1182,8 +1182,8 @@ and the file itself:
 ```python
 """sweep.py - the cost sweep, in code. The counts are the ones from page 34.2."""
 THRESHOLDS = [0.30, 0.40, 0.50, 0.55, 0.60, 0.65, 0.70, 0.80]
-NASTY_CALLED_POSITIVE = [5, 2, 1, 0, 0, 0, 0, 0]
-NICE_CALLED_NEGATIVE = [0, 0, 1, 5, 5, 7, 8, 8]
+NASTY_CALLED_POSITIVE = [5, 3, 1, 1, 1, 0, 0, 0]
+NICE_CALLED_NEGATIVE = [0, 0, 0, 1, 3, 4, 4, 7]
 PRICE_EXPENSIVE = 10
 PRICE_CHEAP = 1
 
@@ -1202,27 +1202,27 @@ winners = [THRESHOLDS[i] for i in range(len(costs)) if costs[i] == best]
 print()
 print("smallest cost   : %d" % best)
 print("thresholds tied : %s" % winners)
-print("ship            : %.2f  (of two equal costs, take the one that calls fewer things negative)"
+print("ship            : %.2f  (of tied thresholds, take the LOWER one: it keeps the most nice reviews flowing)"
       % min(winners))
 ```
 
 ```text
  t     expensive  cheap   the sum                cost
 0.30       5        0     10 x 5 + 1 x 0  =  50
-0.40       2        0     10 x 2 + 1 x 0  =  20
-0.50       1        1     10 x 1 + 1 x 1  =  11
-0.55       0        5     10 x 0 + 1 x 5  =   5
-0.60       0        5     10 x 0 + 1 x 5  =   5
-0.65       0        7     10 x 0 + 1 x 7  =   7
-0.70       0        8     10 x 0 + 1 x 8  =   8
-0.80       0        8     10 x 0 + 1 x 8  =   8
+0.40       3        0     10 x 3 + 1 x 0  =  30
+0.50       1        0     10 x 1 + 1 x 0  =  10
+0.55       1        1     10 x 1 + 1 x 1  =  11
+0.60       1        3     10 x 1 + 1 x 3  =  13
+0.65       0        4     10 x 0 + 1 x 4  =   4
+0.70       0        4     10 x 0 + 1 x 4  =   4
+0.80       0        7     10 x 0 + 1 x 7  =   7
 
-smallest cost   : 5
-thresholds tied : [0.55, 0.6]
-ship            : 0.55  (of two equal costs, take the one that calls fewer things negative)
+smallest cost   : 4
+thresholds tied : [0.65, 0.7]
+ship            : 0.65  (of tied thresholds, take the LOWER one: it keeps the most nice reviews flowing)
 ```
 
-**Every number agrees with your hand-worked table.** Note `[0.55, 0.6]` — Python prints `0.6`, not `0.60`, because a float has no idea how many decimal places you meant. **Printing the sum as text as well as the total is the point of the program:** anybody can argue with `10 x 5 + 1 x 0 = 50`, and nobody can argue with a bare `50`.
+**Every number agrees with your hand-worked table.** Note `[0.65, 0.7]` — Python prints `0.7`, not `0.70`, because a float has no idea how many decimal places you meant. **Printing the sum as text as well as the total is the point of the program:** anybody can argue with `10 x 5 + 1 x 0 = 50`, and nobody can argue with a bare `50`.
 
 **B5 — `coldstart.py`.** The program is printed in P3 above, and the real output is in the P3 answer. The three things a marker looks for: **five separate timings**, the **ratio in the thousands**, and the SECOND load being **thousands of times faster than the first**. If your ratio is under 10, both `perf_counter()` calls are on the same side of the work.
 
@@ -1336,7 +1336,7 @@ and 0.6331 < 0.6857, so there is no number t that satisfies both
 
 **T1 — model answer.**
 
-> "Box 6 is not about covering myself; it is about the one thing my measurements cannot do. My model scores `0.875` on 16 held-out reviews, which sounds fine until you notice that **16 rows means one row is worth 6.25 percentage points** — so what I actually know is 'roughly right on reviews that look like my training reviews'. Nothing I have measured tells me what happens to a review written in a way I never typed. A ban is how you write down the *limit of the evidence*, and evidence has limits no matter how good the model is.
+> "Box 6 is not about covering myself; it is about the one thing my measurements cannot do. My model scores `0.8125` on 16 held-out reviews, which sounds respectable until you notice that **16 rows means one row is worth 6.25 percentage points** — so what I actually know is 'roughly right on reviews that look like my training reviews'. Nothing I have measured tells me what happens to a review written in a way I never typed. A ban is how you write down the *limit of the evidence*, and evidence has limits no matter how good the model is.
 >
 > The tempting use is **counting**: using it to tell the forum owner whether the mood is improving week to week. Nobody would call that a decision about a person, and it feels harmless. It is the worst thing you could do with this model, because a few percent of real change would be completely buried in its own uncertainty, and the owner would act on a graph made of noise. **And unlike a wrong label, nobody would ever find out.**"
 
@@ -1344,11 +1344,11 @@ Full marks needs: a number from their own results, a use that is genuinely tempt
 
 **T2 — model answer.**
 
-> "`C` is the dial that controls how strongly the model is allowed to hold an opinion. A smaller `C` presses all of its probabilities in towards `0.5` — it still ranks the reviews in the same order, it is just less **sure** about all of them. So the same review that was `0.6991` under v1 comes out `0.5806` under v2. Nothing about the model's judgement got worse. Its **scale** changed.
+> "`C` is the dial that controls how strongly the model is allowed to hold an opinion. A smaller `C` presses all of its probabilities in towards `0.5` — it still ranks the reviews in the same order, it is just less **sure** about all of them. So the same review that was `0.7450` under v1 comes out `0.6134` under v2, and v2's single highest probability on the whole validation pile is `0.6453`, where v1's is `0.8186`. Nothing about the model's judgement got worse. Its **scale** changed.
 >
-> And that is the problem: my threshold of `0.55` was chosen by measuring costs on v1's probabilities. It is not a fact about sentiment, it is **a fact about v1's number line.** Move the scale and the threshold now cuts through the middle of v2's positives, so accuracy collapses even though the ranking is unchanged.
+> And that is the problem: my threshold of `0.65` was chosen by measuring costs on v1's probabilities. It is not a fact about sentiment, it is **a fact about v1's number line.** Move the scale and the threshold now sits above everything v2 says, so it calls every review negative and accuracy drops to `0.5000` even though the ranking is unchanged.
 >
-> What else went silently out of date: **my three golden tests' margins** — all three still pass, but the closest falls from `0.2224` to `0.0667`, so every one of them is three or four times more fragile than it was. My **monitoring baseline** too: if I watch how many predictions land between 0.45 and 0.65, squashing every probability toward 0.5 pushes that rate up on its own, and I would read a change of model as a change of traffic."
+> What else went silently out of date: **my three golden tests' margins** — test 1 goes from `0.1161` clear of the line under v1 to `0.0302` on the wrong side of it under v2, so it fails, and the other two lose about a third of their margin. My **monitoring baseline** too: if I watch how many predictions land between 0.45 and 0.65, squashing every probability toward 0.5 pushes that rate up on its own, and I would read a change of model as a change of traffic."
 
 **The level-5 sentence to look for:** *a threshold belongs to a probability scale, so a new model invalidates the old threshold even when the new model is better.* Say so out loud to any student who writes it.
 
@@ -1364,7 +1364,7 @@ Full marks needs: a number from their own results, a use that is genuinely tempt
 | **2 · input** | field `text`, a non-empty string, at most 100,000 bytes |
 | **3 · output** | `label` (`negative` / `positive`) · `probability` 0–1 · `threshold` · `model_version` · `latency_ms` |
 | **4 · the two errors, priced** | a nasty review marked positive is a nasty review nobody reads → **10**. A nice review marked negative is a moderator's ten seconds → **1**. So the expensive error is **10×** the cheap one, and I chose 10 by judgement, not measurement. |
-| **5 · the threshold** | `0.55`, from the sweep on the 16 validation rows: `10 × 1 + 1 × 1 = 11` at 0.50, `10 × 0 + 1 × 5 = 5` at 0.55, `10 × 0 + 1 × 7 = 7` at 0.65. Smallest at 0.55. **16 rows, so one row is worth 6.25 points — this is a decision on thin evidence and the card will say so.** |
+| **5 · the threshold** | `0.65`, from the sweep on the 16 validation rows: `10 × 1 + 1 × 0 = 10` at 0.50, `10 × 1 + 1 × 1 = 11` at 0.55, `10 × 0 + 1 × 4 = 4` at 0.65, `10 × 0 + 1 × 4 = 4` at 0.70. Smallest is 4, tied at 0.65 and 0.70, and the tie-break is *take the lower*, so 0.65. **16 rows, so one row is worth 6.25 points — this is a decision on thin evidence and the card will say so.** |
 | **6 · never used for** | (1) deciding who gets banned or muted — it outputs a suggestion, not a decision. (2) marking anybody's schoolwork. |
 
 **Box 1 must be a countable noun.** *A review* is countable. *Sentiment* is not, and neither is *a person* — because two reviews by the same person would then have to agree, and the model has never seen a person, only strings.
@@ -1374,15 +1374,15 @@ Full marks needs: a number from their own results, a use that is genuinely tempt
 ```text
 $ ls -l model/artifacts/
 -rw-r--r--   13 LATEST
--rw-r--r-- 9732 sentiment_v1.joblib
--rw-r--r--  419 sentiment_v1.metadata.json
+-rw-r--r-- 10228 sentiment_v1.joblib
+-rw-r--r--  421 sentiment_v1.metadata.json
 ```
 
 | field | value | why it is in the file |
 |---|---|---|
 | `version` | `sentiment_v1` | so every prediction can name which model answered |
-| `threshold` | `0.55` | so the serving side never guesses and never hard-codes 0.5 |
-| `test_accuracy` | `0.875` | the headline number, measured once, on 16 rows |
+| `threshold` | `0.65` | so the serving side never guesses and never hard-codes 0.5 |
+| `test_accuracy` | `0.8125` | the headline number, measured once, on 16 rows |
 | `sklearn_version` | `1.7.1` | so "it broke after I updated my laptop" is a two-minute diagnosis |
 | `python_version` | `3.10.10` | same reason |
 | `created_utc` | e.g. `2026-09-22T19:36:31Z` | the only field meant to differ from anybody else's |
@@ -1391,13 +1391,13 @@ $ ls -l model/artifacts/
 
 **34.5 — the reference project's three golden tests.**
 
-| # | input | frozen answer | p | distance from 0.55 |
+| # | input | frozen answer | p | distance from 0.65 |
 |---|---|---|---:|---:|
-| 1 | `delicious fresh pizza and kind friendly staff` | positive | 0.7724 | `0.7724 − 0.55 = 0.2224` |
-| 2 | `cold food and a rude driver` | negative | 0.2896 | `0.55 − 0.2896 = 0.2604` |
-| 3 | `stale bread and awful coffee` | negative | 0.2044 | `0.55 − 0.2044 = 0.3456` |
+| 1 | `delicious fresh pizza and kind friendly staff` | positive | 0.7661 | `0.7661 − 0.65 = 0.1161` |
+| 2 | `cold food and a rude driver` | negative | 0.2110 | `0.65 − 0.2110 = 0.4390` |
+| 3 | `stale bread and awful coffee` | negative | 0.2380 | `0.65 − 0.2380 = 0.4120` |
 
-**Most fragile:** number 1, `0.2224` clear. **If it flipped:** the vocabulary changed (a retrain on different reviews), or the preparation broke (something stopped lowercasing, or the bigrams got switched off), or the threshold moved. **All three are things you want to hear about within five seconds.**
+**Most fragile:** number 1, `0.1161` clear. **If it flipped:** the vocabulary changed (a retrain on different reviews), or the preparation broke (something stopped lowercasing, or the bigrams got switched off), or the threshold moved. **All three are things you want to hear about within five seconds.**
 
 **34.6 — the one line.**
 
@@ -1406,7 +1406,7 @@ python3 serve/predict.py "the pizza was hot and delicious"
 ```
 
 ```text
-positive p=0.6991  (threshold 0.55, model sentiment_v1, 0.38 ms, loaded in 650 ms)
+positive p=0.7450  (threshold 0.65, model sentiment_v1, 0.38 ms, loaded in 650 ms)
 ```
 
 **Three things get checked.** Is the sentence in quotes? Does it work from the project root **and** from `/`? And did you actually open a fresh terminal? The commonest real failure is `python predict.py` — wrong interpreter name, or wrong folder — **and it is invisible until a stranger tries it.**
@@ -1415,25 +1415,27 @@ positive p=0.6991  (threshold 0.55, model sentiment_v1, 0.38 ms, loaded in 650 m
 
 | version | change | val accuracy | test accuracy | test F1 (pos) | cost on val |
 |---|---|---:|---:|---:|---:|
-| `sentiment_v1` | `C = 4.0` | **0.6875** | **0.8750** | **0.8750** | **5** |
-| `sentiment_v2` | `C = 1.0` | 0.5625 | 0.5625 | 0.2222 | 7 |
+| `sentiment_v1` | `C = 4.0` | **0.7500** | **0.8125** | **0.7692** | **4** |
+| `sentiment_v2` | `C = 1.0` | 0.5000 | 0.5000 | 0.0000 | 8 |
 
 | # | p under v1 | margin | p under v2 | margin |
 |---|---:|---:|---:|---:|
-| 1 | 0.7724 | 0.2224 | 0.6167 | **0.0667** |
-| 2 | 0.2896 | 0.2604 | 0.4089 | 0.1411 |
-| 3 | 0.2044 | 0.3456 | 0.3627 | 0.1873 |
+| 1 | 0.7661 | 0.1161 | 0.6198 | **−0.0302 (wrong side)** |
+| 2 | 0.2110 | 0.4390 | 0.3635 | 0.2865 |
+| 3 | 0.2380 | 0.4120 | 0.3818 | 0.2682 |
 
-**All three still pass. All three got three to four times closer to the line.** A test that passes by `0.0667` is a test about to become an alarm.
+**Golden test 1 fails under v2** (`2/3 passed`, exit code `1`): `0.6198` is `0.0302` short of the line. And v2 says "positive" to **nothing** — its highest probability on either pile is `0.6453` — which is why its F1 is exactly `0.0000`.
+
+**The fair second look.** Give v2 its own sweep on the 16 validation rows with the same rule: `0.50` costs `10`, `0.55` costs `14`, **`0.60` costs `5`**, `0.65` costs `8`. v2's best is 5 at `0.60` (a single minimum, so no tie), and at that threshold it scores `0.6250` on test with F1 `0.4000`. v1's best is 4. **v2 loses even when it is allowed to choose its own line.**
 
 **The rejection paragraph:**
 
-> "I reject `sentiment_v2` (`C = 1.0`). On the same 16 test rows, at my shipped threshold of `0.55`, it scores `0.5625` against v1's `0.8750`, and its positive-class F1 collapses from `0.8750` to `0.2222`. The cause is not that it learned less — at a `0.50` cut both score `0.9375` — but that a smaller `C` squashes the probabilities toward 0.5, so my threshold now cuts through its positives. Re-choosing the threshold on v2's own validation probabilities still lands on `0.55`, and its cost there is **7 against v1's 5**, so it loses on its own terms too. My three golden tests still pass, but the closest margin falls from `0.2224` to `0.0667`, which means every future decision would be more fragile. **`LATEST` goes back to `sentiment_v1`, and this paragraph is why.**"
+> "I reject `sentiment_v2` (`C = 1.0`). On the same 16 test rows, at my shipped threshold of `0.65`, it scores `0.5000` against v1's `0.8125`, and its positive-class F1 falls from `0.7692` to `0.0000`: it calls every review negative, because its highest probability anywhere is `0.6453`. The cause is not that it learned less — at a `0.50` cut both score `1.0000` — but that a smaller `C` squashes the probabilities toward 0.5, so my threshold now sits above all of them. At `0.65` its cost on the validation rows is **8 against v1's 4**, and even at its own best threshold, `0.60`, its cost is **5**, which still loses. Golden test 1 fails (`0.6198`, `0.0302` short of the line). All of this rests on 16 validation rows and 16 test rows, so I would not trust the exact numbers — I would trust that the gap is large. **`LATEST` goes back to `sentiment_v1`, and this paragraph is why.**"
 
 ```bash
 $ echo "sentiment_v1" > model/artifacts/LATEST
 $ python3 tests.py
-3/3 passed  (model sentiment_v1, threshold 0.55)
+3/3 passed  (model sentiment_v1, threshold 0.65)
 ```
 
 **Path B, for whoever chose the digits CNN.** Everything holds with three differences. **Box 3 loses the threshold and gains ten classes** — `argmax` has no dial, and the honest replacement is a **confidence floor** (refuse to answer below, say, 0.60). **`model_def.py` matters more, not less**, because the architecture must be rebuilt *identically* before `load_state_dict`, and the error names both shapes and the layer's position number. And **the timings come out the other way round**: `load_state_dict` takes about 4 ms — far less than joblib's 658 — but the whole command still takes about half a second, **because `import torch` dominates and no stopwatch inside your program can see it.** Say that out loud: `load_ms` measures loading the weights, not starting Python. **The only honest cold-start number is the whole command's wall clock.**
@@ -1442,7 +1444,7 @@ $ python3 tests.py
 
 ### Draw It
 
-A full-mark drawing has three things. **One terminal box** with the real command and the real reply, and **five** fields ringed and named — people routinely ring four and forget `model_version`, which is the one that makes a complaint answerable. **Three file rectangles** with `9732`, `419` and `13` written on them and an arrow from the 13-byte one to the live artifact. And **two bars drawn to scale**: if the cold-start bar is the width of the page, the latency bar is barely a line. Write `658.62 ÷ 0.147 = 4484` beside them, and the words `paid once` and `paid every single time`.
+A full-mark drawing has three things. **One terminal box** with the real command and the real reply, and **five** fields ringed and named — people routinely ring four and forget `model_version`, which is the one that makes a complaint answerable. **Three file rectangles** with `10228`, `421` and `13` written on them and an arrow from the 13-byte one to the live artifact. And **two bars drawn to scale**: if the cold-start bar is the width of the page, the latency bar is barely a line. Write `658.62 ÷ 0.147 = 4484` beside them, and the words `paid once` and `paid every single time`.
 
 **The commonest mistake in this drawing is drawing the two bars the same size, or drawing one bar.** Both are the mistake this week exists to fix.
 

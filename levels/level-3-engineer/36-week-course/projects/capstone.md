@@ -125,7 +125,7 @@ You have two candidates. **Pick one. You are not shipping both.**
 
 | # | It must have | What "done" looks like, exactly |
 |:--:|---|---|
-| **1** | **A baseline** | `DummyClassifier(strategy="most_frequent")` — or whatever the equivalent dumb rule is — **fitted on your training rows and scored on your held-out rows**, with the number printed in the same run as your model's number. `0.5000` next to `0.8125` |
+| **1** | **A baseline** | `DummyClassifier(strategy="most_frequent")` — or whatever the equivalent dumb rule is — **fitted on your training rows and scored on your held-out rows**, with the number printed in the same run as your model's number. `0.5000` next to `1.0000` |
 | **2** | **A proper split** | Three piles — train, validation, test — made **once**, in **one place**, with `stratify=`. The validation pile chooses your threshold. The test pile is opened **once**, at the end, and never again |
 | **3** | **A reproducible seed** | `SEED = 0` at the top, used in every split, every shuffle and every model. `python3 run.py` twice into two folders gives byte-identical output files |
 | **4** | **One artifact a fresh process can load** | Three files — the model, a `VERSION`, and a `.json` of metadata — and a `predict.py` in a **cold terminal** that loads them and answers. Rule 1's grep prints nothing |
@@ -299,7 +299,7 @@ and that sentence belongs in the card.
 
 ## 5. The threshold
 `cost = 10 × FN + 1 × FP`, swept on the **validation** pile. See `model/train.py`.
-The winner is **t = 0.45**, at a cost of **1**.
+The winner is **t = 0.50**, at a cost of **1**.
 
 ## 6. This model must NEVER be used for
 - ✗ deciding who gets banned or muted
@@ -402,19 +402,19 @@ print("VERSION file is %d bytes" % (out / "VERSION").stat().st_size)
 
 ```text
 train 48   validation 16   test 16
-vocabulary learned from the 48 training reviews: 66 words
+vocabulary learned from the 48 training reviews: 93 words
 
   t     FN   FP   cost = 10 x FN + 1 x FP    accuracy
-0.35     0    5      5                       0.6875
-0.45     0    1      1                       0.9375
-0.50     1    0     10                       0.9375
-0.55     3    0     30                       0.8125
-0.65     8    0     80                       0.5000
+0.35     0    6      6                       0.6250
+0.45     0    2      2                       0.8750
+0.50     0    1      1                       0.9375
+0.55     2    0     20                       0.8750
+0.65     6    0     60                       0.6250
 0.75     8    0     80                       0.5000
-the price list chooses t = 0.45, at a cost of 1
+the price list chooses t = 0.50, at a cost of 1
 
 HELD-OUT TEST, opened once, n = 16
-  TN 5  FP 3  FN 0  TP 8   accuracy 0.8125
+  TN 8  FP 0  FN 0  TP 8   accuracy 1.0000
   baseline, always the most frequent class: 0.5000
   one held-out row is worth 1 / 16 = 0.0625
 
@@ -422,21 +422,22 @@ wrote: ['VERSION', 'sentiment_v1.joblib', 'sentiment_v1.json']
 VERSION file is 3 bytes
 ```
 
-> **🔢 The maths, slowly:** look at the two rows `0.45` and `0.50`. **They have the same accuracy,
-> `0.9375`** — and one of them costs **1** and the other costs **10**.
+> **🔢 The maths, slowly:** look at the two rows `0.45` and `0.55`. **They have the same accuracy,
+> `0.8750`** — and one of them costs **2** and the other costs **20**.
 >
 > ```
-> at t = 0.45 :  cost = 10 × 0 + 1 × 1 = 0 + 1 = 1
-> at t = 0.50 :  cost = 10 × 1 + 1 × 0 = 10 + 0 = 10
+> at t = 0.45 :  cost = 10 × 0 + 1 × 2 = 0 + 2 = 2
+> at t = 0.55 :  cost = 10 × 2 + 1 × 0 = 20 + 0 = 20
 > ```
 >
 > Accuracy cannot tell those two apart, because accuracy prices both errors at 1. **You wrote down that
 > they are not both worth 1.** So use the number that knows that. This is Week 11's whole lesson arriving
 > in a real decision, and it is worth saying out loud in the showcase.
 
-**And the honesty on the last three lines.** The held-out accuracy is `0.8125` against a baseline of
-`0.5000` — so the model buys **31 percentage points**, which on 16 rows is **5 reviews**. And one row is
-worth `0.0625`, so `0.8125` should be spoken as *"13 of 16"*, not as *"81.25%"*.
+**And the honesty on the last three lines.** The held-out accuracy is `1.0000` against a baseline of
+`0.5000` — so the model buys **50 percentage points**, which on 16 rows is **8 reviews**. And one row is
+worth `0.0625`, so `1.0000` should be spoken as *"16 of 16"*, not as *"100%"* — and a perfect score on
+sixteen rows is a reason to go looking for what it is hiding, which is exactly what Week 35 does.
 
 **Evidence this milestone is done:** `artifacts/` contains three files, the threshold came out of the cost
 table, and the baseline is printed in the same run.
@@ -525,9 +526,9 @@ else:
 ```
 
 ```text
-model      : v1   threshold 0.45
+model      : v1   threshold 0.50
 cold start : 645.1 ms  (once)
-prediction : negative  probability 0.2918  (0.444 ms)
+prediction : negative  probability 0.3268  (0.444 ms)
 unseen words: 0.0000 of the tokens
 ```
 
@@ -569,16 +570,16 @@ sys.exit(1 if fails else 0)
 ```
 
 ```text
-threshold 0.45
-PASS  positive want positive  p=0.6305  margin 0.1805  the pizza was hot and the staff were lovely
-PASS  negative want negative  p=0.2918  margin 0.1582  cold food and a rude driver
-PASS  negative want negative  p=0.2532  margin 0.1968  stale greasy and awful
+threshold 0.50
+PASS  positive want positive  p=0.6253  margin 0.1253  the pizza was hot and the staff were lovely
+PASS  negative want negative  p=0.3268  margin 0.1732  cold food and a rude driver
+PASS  negative want negative  p=0.3166  margin 0.1834  stale greasy and awful
 3 of 3 passed
 ```
 
 > **💡 Why the `margin` column is there, and it is the point of the whole file.** A golden test is only
-> useful if it will **stay** passing. `0.2532` against a threshold of `0.45` has a margin of `0.1968` —
-> comfortably clear, so it tells you something real if it ever fails. A case at `0.4501` against `0.45`
+> useful if it will **stay** passing. `0.3166` against a threshold of `0.50` has a margin of `0.1834` —
+> comfortably clear, so it tells you something real if it ever fails. A case at `0.5001` against `0.50`
 > has a margin of `0.0001`, and it will flip on the next retrain for no reason at all. **Pick golden
 > tests by their distance from the fence, not by how interesting the sentence is.**
 
@@ -736,7 +737,7 @@ empty body         400  {"error": "empty body", "example": {"text": "the pizza w
 not JSON           400  {"error": "invalid JSON: Expecting property name enclosed in double quotes", "example": {"text": "the pizza was hot"}}
 no text field      400  {"error": "expected a JSON object with a 'text' field", "example": {"text": "the pizza was hot"}}
 text is a number   400  {"error": "'text' must be a non-empty string", "got_type": "int", "example": {"text": "the pizza was hot"}}
-GET /health after  200  {"ok": true, "model_version": "v1", "threshold": 0.45}
+GET /health after  200  {"ok": true, "model_version": "v1", "threshold": 0.5}
 ```
 
 **Four refusals, zero crashes, and the service answered a fifth time.** That last line is the whole test —
@@ -788,7 +789,7 @@ print("sent %d good requests" % sent)
 `read_logs.py` reports below.)*
 
 ```text
-{"text": "the pizza was hot and the crust was crisp", "label": "positive", "probability": 0.5987, "threshold": 0.45, "model_version": "v1", "oov_rate": 0.0, "latency_ms": 0.49}
+{"text": "the pizza was hot and the crust was crisp", "label": "positive", "probability": 0.6404, "threshold": 0.5, "model_version": "v1", "oov_rate": 0.1111, "latency_ms": 0.49}
 ```
 
 **`read_logs.py` — the log is a DATA FILE. Read it like one.**
@@ -833,20 +834,20 @@ machine, not to your code):*
 ```text
 log lines (= PREDICTIONS, not requests) : 120
 model versions seen                     : {'v1': 120}
-labels                                  : {'positive': 83, 'negative': 37}
+labels                                  : {'positive': 79, 'negative': 41}
 
 LATENCY, per request, in milliseconds
   median 0.158   mean 0.167   p95 0.214   max 0.490
   (the p95 is over 120 requests, so it cannot see the max. Print both.)
 
 THE MONITORING NUMBER -- computable with NO LABELS
-  uncertainty band 0.35-0.55 : 32 of 120 = 26.7%
-  out-of-vocabulary rate     : mean 0.0474   max 1.0000
+  uncertainty band 0.35-0.55 : 28 of 120 = 23.3%
+  out-of-vocabulary rate     : mean 0.0611   max 1.0000
 
 the three inputs with the most unseen words:
   1.0000  lorem ipsum dolor sit amet
   0.7500  the biryani was absolutely banging fam no cap
-  0.5000  it was fine i suppose
+  0.7500  it was fine i suppose
 ```
 
 **Four things in that output you must be able to say out loud in the showcase:**
@@ -931,41 +932,42 @@ print("  score on the traps: %d of %d.  A coin would get %d."
 ```
 
 ```text
-subgroup metrics on the 16 held-out reviews, threshold 0.45
-ALL                    n = 16   acc 0.812   recall(pos) 8 of 8   precision(pos) 0.727
-short (<= 6 words)     n =  4   acc 1.000   recall(pos) 4 of 4   precision(pos) 1.000
-long (7+ words)        n = 12   acc 0.750   recall(pos) 4 of 4   precision(pos) 0.571
+subgroup metrics on the 16 held-out reviews, threshold 0.50
+ALL                    n = 16   acc 1.000   recall(pos) 8 of 8   precision(pos) 1.000
+short (<= 6 words)     n =  8   acc 1.000   recall(pos) 5 of 5   precision(pos) 1.000
+long (7+ words)        n =  8   acc 1.000   recall(pos) 3 of 3   precision(pos) 1.000
 really positive        n =  8   acc 1.000   recall(pos) 8 of 8   precision(pos) 1.000
-really negative        n =  8   acc 0.625   recall(pos)   n/a    precision(pos) 0.000
+really negative        n =  8   acc 1.000   recall(pos)   n/a    precision(pos)  n/a 
 
 THE NEGATION TEST -- 12 sentences written on purpose to be hard
-  truth 1  said 0 at 0.3782  WRONG  the pizza was not cold
-  truth 0  said 1 at 0.6211  WRONG  the pizza was not hot
-  truth 1  said 0 at 0.2919  WRONG  not a stale crust anywhere
-  truth 0  said 1 at 0.6758  WRONG  not fresh at all
-  truth 1  said 0 at 0.3894  WRONG  i would not call this awful
-  truth 0  said 1 at 0.5795  WRONG  i would not call this lovely
-  truth 1  said 0 at 0.2819  WRONG  never rude never slow
-  truth 0  said 1 at 0.6484  WRONG  never warm never friendly
-  truth 1  said 0 at 0.3859  WRONG  the crust was hardly burnt
-  truth 0  said 1 at 0.5370  WRONG  the crust was hardly crisp
-  truth 1  said 0 at 0.4257  WRONG  nothing greasy about it
-  truth 0  said 1 at 0.6343  WRONG  nothing tasty about it
-  score on the traps: 0 of 12.  A coin would get 6.
+  truth 1  said 0 at 0.4206  WRONG  the pizza was not cold
+  truth 0  said 1 at 0.6268  WRONG  the pizza was not hot
+  truth 1  said 0 at 0.3710  WRONG  not a stale crust anywhere
+  truth 0  said 1 at 0.6599  WRONG  not fresh at all
+  truth 1  said 0 at 0.3666  WRONG  i would not call this awful
+  truth 0  said 1 at 0.5915  WRONG  i would not call this lovely
+  truth 1  said 0 at 0.2356  WRONG  never rude never slow
+  truth 0  said 1 at 0.6426  WRONG  never warm never friendly
+  truth 1  said 1 at 0.5628  ok     the crust was hardly burnt
+  truth 0  said 1 at 0.5995  WRONG  the crust was hardly crisp
+  truth 1  said 0 at 0.4038  WRONG  nothing greasy about it
+  truth 0  said 1 at 0.6369  WRONG  nothing tasty about it
+  score on the traps: 1 of 12.  A coin would get 6.
 ```
 
 **Read that table with three things in mind, and every one of them is a mark:**
 
-1. **`n = 4` on the short reviews.** `acc 1.000` on four rows is **not** evidence that it is better at
-   short reviews. One row there is worth 25 percentage points. Say the `n` out loud or say nothing.
-2. **`acc 0.625` on the really-negative subgroup against `1.000` on the really-positive one.** That is the
-   real finding: **the model leans positive.** All three of its mistakes are calling a negative review
-   positive, which is exactly the expensive error your price list charged 10 for. *(And the
-   `precision(pos) 0.000` on that row is a definitional artefact — inside a subgroup with no true
-   positives in it, every positive call is wrong by construction. The number to read on that row is the
-   accuracy.)*
-3. **`0 of 12` on the traps, where a coin gets `6`.** The model is not noisy; it is **reliably wrong**
-   about negation, always in the direction of the one strong word in the sentence. Because `not` was never
+1. **`n = 8` on every row, and every row says `1.000`.** A perfect score on eight rows is **not** evidence
+   that the model is equally good at short and long reviews. One row there is worth 12.5 percentage
+   points. Say the `n` out loud or say nothing.
+2. **Every held-out row is right, and that is the trap.** `acc 1.000` on all 16 is the number that goes on
+   a poster, and the held-out pile contains **no negation at all** — so it cannot see the one thing the
+   model cannot do. *(And the `n/a` on the really-negative row is a definitional artefact — inside a
+   subgroup with no true positives in it, there is no recall to compute and no positive call to be
+   right about. Read the accuracy there.)*
+3. **`1 of 12` on the traps, where a coin gets `6`.** The model is not noisy; it is **reliably wrong**
+   about negation, always in the direction of the one strong word in the sentence — and its one right
+   answer, `the crust was hardly burnt`, scraped over the line at `0.5628`, a margin of `0.0628`. Because `not` was never
    in the 48 training reviews, it has **no column at all** — its contribution is not small, it is exactly
    zero.
 
@@ -983,30 +985,32 @@ One comment, scored once, at the moment it is posted.
 
 ## 3. Training data
 80 short restaurant reviews I typed myself. Split 48 train / 16 validation / 16 test
-with `stratify`, seed 0. Vocabulary: 66 words, learned from the 48 training reviews only.
+with `stratify`, seed 0. Vocabulary: 93 words, learned from the 48 training reviews only.
 Python 3.10.10, scikit-learn 1.7.1.
 
 ## 4. Metrics
-`13 of 16 = 0.8125` accuracy on the held-out 16, against a most-frequent baseline of
-`0.5000`. One held-out row is worth `1 / 16 = 0.0625`, so only the first decimal place
-of that number is real. Threshold `0.45`, chosen by a cost sum with FN priced at 10 and
+`16 of 16 = 1.0000` accuracy on the held-out 16, against a most-frequent baseline of
+`0.5000`. One held-out row is worth `1 / 16 = 0.0625`, so a perfect score here means
+"no mistakes in sixteen tries", not "no mistakes". Threshold `0.50`, chosen by a cost sum with FN priced at 10 and
 FP at 1 — prices I chose by **judgement, not measurement**.
 
 ## 5. Metrics by subgroup — every row with its n
 | subgroup | n | accuracy |
 |---|:--:|:--:|
-| all | 16 | 0.812 |
-| short, ≤ 6 words | 4 | 1.000 |
-| long, 7+ words | 12 | 0.750 |
+| all held-out | 16 | 1.000 |
+| short, ≤ 6 words | 8 | 1.000 |
+| long, 7+ words | 8 | 1.000 |
 | really positive | 8 | 1.000 |
-| really negative | 8 | **0.625** |
+| really negative | 8 | 1.000 |
+| the 12 negation traps | 12 | **0.083** |
 
-The `n = 4` row is too small to conclude anything from. The finding that matters is the
-last row: **this model leans positive**, and all three of its mistakes are the expensive
-kind.
+Eight rows per group is too few to tell the groups apart. The finding that matters is
+the last row: a perfect score on the held-out pile, and `1 of 12` on the sentences the
+pile never contained. Six of the eleven mistakes are the expensive kind (a negative
+review called positive).
 
 ## 6. Known failure modes
-**Negation. `0 of 12` on sentences containing `not`, `never`, `hardly` or `nothing`,
+**Negation. `1 of 12` on sentences containing `not`, `never`, `hardly` or `nothing`,
 where a coin would get 6.** The mechanism: `not` never appeared in the 48 training
 reviews, so it has no column in the matrix and contributes exactly zero. The model sees
 only `hot` or `cold` and answers accordingly. The smallest fix is forty more reviews
@@ -1022,7 +1026,7 @@ the model answers from its bias alone. `lorem ipsum dolor sit amet` is in the lo
 
 **This model must never hide, delete or block anything automatically. It scores
 sentiment in restaurant-review language, it has no feature for negation, and it scores
-0 of 12 on sentences containing `not`. Its only sanctioned use is ordering a queue that
+1 of 12 on sentences containing `not`. Its only sanctioned use is ordering a queue that
 a person then reads.**
 ```
 
@@ -1046,7 +1050,7 @@ never seen. Computable from the input alone. No labels, ever.
 It is already in every log line as `oov_rate`. `read_logs.py` prints the mean and the max.
 
 ## The baseline, from MY OWN traffic
-Over 120 logged predictions: **mean 0.0474, max 1.0000.**
+Over 120 logged predictions: **mean 0.0611, max 1.0000.**
 I could not have written this number before logging real requests, and I am not going
 to pretend I could.
 
@@ -1061,7 +1065,7 @@ mechanism, not a feeling.
 
 ## The second number, as a cross-check
 The **uncertainty-band rate**: predictions with a probability between 0.35 and 0.55.
-Baseline on my traffic: **32 of 120 = 26.7%.** Alarm at 40%.
+Baseline on my traffic: **28 of 120 = 23.3%.** Alarm at 40%.
 
 ## What I would DO when it fires
 Stop trusting the queue order, pull the 50 highest-OOV inputs out of the log, read them
@@ -1101,17 +1105,17 @@ stranger — and the four minutes in which they take it apart.*
 | **1:30** | `python3 predict.py "..."` on something obviously positive, then obviously negative | Two right answers, with probabilities |
 | **2:30** | Start the service. **Then run `break_it.py`** | Four `400`s, then a `200` on `/health`. **Do not describe this. Run it.** |
 | **4:00** | `python3 read_logs.py` | The numbers: log lines, p95, max, the band rate |
-| **5:00** | **One wrong answer, on purpose.** A negation trap | *"it says positive at `0.6211`, and here is why"* |
-| **6:00** | The subgroup table, and the row with the small `n` | *"`n = 4`, so I am not concluding anything from that row"* |
+| **5:00** | **One wrong answer, on purpose.** A negation trap | *"it says positive at `0.6268`, and here is why"* |
+| **6:00** | The subgroup table, and the row with the small `n` | *"`n = 8`, so I am not concluding anything from the difference between those rows"* |
 | **7:00** | **Read out-of-scope uses out loud, word for word, from the card** | The room hears you refuse a use of your own model |
-| **7:45** | One sentence: the number you are proudest of, with the arithmetic | *"`13 of 16` against a baseline of `8 of 16`"* |
+| **7:45** | One sentence: the number you are proudest of, with the arithmetic | *"`16 of 16` against a baseline of `8 of 16`, and `1 of 12` on the negation traps"* |
 
 ### Three ways every demo dies, and the fix
 
 | It dies like this | The fix, which you do **before** you present |
 |---|---|
 | **The warm terminal.** You demo in the terminal you have been working in, so half the audience assumes it only works there | New terminal, every time. Say the word "cold" out loud |
-| **The number with no `n`.** *"It's 81% accurate"* → *"out of how many?"* → silence | Write `13 of 16` on your hand. Really |
+| **The number with no `n`.** *"It's 100% accurate"* → *"out of how many?"* → silence | Write `16 of 16` on your hand. Really |
 | **The thing you did not rehearse.** The service was already running on port 8000 from an hour ago, so it looks like it started and it is the old version | Before you present: kill it, start it, watch the version line print |
 
 ### The eight questions you will be asked
@@ -1127,7 +1131,7 @@ out loud, to a wall. **An answer with no number in it is not an answer.**
 | **4** | *"Somebody says it got their comment wrong. What do you do?"* | **Walk to the log.** N lines, each carrying the input, the probability, the threshold and the version |
 | **5** | *"Why `127.0.0.1` and not `0.0.0.0`?"* | **No authentication and no rate limit.** The reason, not the string |
 | **6** | *"Is it any good?"* | The score, its `n`, **and the baseline**. Plus what one row is worth |
-| **7** | *"Who should not use this?"* | The out-of-scope line, **with a number** — `0 of 12` on negation |
+| **7** | *"Who should not use this?"* | The out-of-scope line, **with a number** — `1 of 12` on negation |
 | **8** | *"Could you just retrain it on what it has seen?"* | **No.** Those log lines are the model's own opinions, not labels. It is a feedback loop |
 
 ### The banned words
@@ -1212,7 +1216,7 @@ a project that is 4 on everything technical and 1 on the card is not a good proj
 | **5 · The log, read as data** | No log, or a log of labels only | A log, never read | **100+ lines**, one JSON object each carrying input, output, probability, threshold, version and latency — **and** four latency numbers reported together | Explains why the log count is **smaller** than the request count, and why the p95 cannot see the max |
 | **6 · Honest metrics** | A bare score | A score with its `n` | Score with its `n`, **its baseline**, what one row is worth, **and** a subgroup table with `n` on every row | Names the subgroup row that is **too small to conclude from**, and names the leaning the table reveals — with the counts |
 | **7 · The card and the failure mode** | No card | Card with the easy headings filled | Seven headings, all filled; **known failure modes** names a real one **with a number**; out-of-scope names a misuse somebody would attempt | The failure mode comes with a **mechanism** (a missing column, word order thrown away) and the **smallest fix** — and the smallest fix is *more data*, not *a bigger model* |
-| **8 · The showcase** | Read from notes, warm terminal | Demo works, answers have no numbers in them | **Cold terminal**, live run, a number in every one of the eight answers, out-of-scope read aloud | Volunteers a caveat **nobody asked for** — e.g. *"the traps were written on purpose to be hard, so `0 of 12` shows a mechanism, not a rate"* — and says their latency **will not match anybody else's** |
+| **8 · The showcase** | Read from notes, warm terminal | Demo works, answers have no numbers in them | **Cold terminal**, live run, a number in every one of the eight answers, out-of-scope read aloud | Volunteers a caveat **nobody asked for** — e.g. *"the traps were written on purpose to be hard, so `1 of 12` shows a mechanism, not a rate"* — and says their latency **will not match anybody else's** |
 
 ## Converting to a grade, if you must
 
@@ -1280,15 +1284,15 @@ a project that is 4 on everything technical and 1 on the card is not a good proj
 
 ## ⚠️ Eight mistakes that cost the most marks
 
-**1. A score with no baseline.** `0.8125` means nothing until `0.5000` is next to it. This is the single
+**1. A score with no baseline.** `1.0000` means nothing until `0.5000` is next to it. This is the single
 commonest lost mark and it takes two lines to fix.
 
 **2. Reporting one timing number.** Cold start and per-request latency are different kinds of thing.
 Anybody who says *"about a second"* has hidden one of them, even when it is true.
 
-**3. Four decimal places on 16 rows.** One row is `0.0625`. Say `13 of 16`.
+**3. Four decimal places on 16 rows.** One row is `0.0625`. Say `16 of 16`.
 
-**4. A subgroup table with no `n`.** `acc 1.000` on four rows is not a finding. It is four rows.
+**4. A subgroup table with no `n`.** `acc 1.000` on eight rows is not a finding. It is eight rows.
 
 **5. Training code in `serve/`.** Usually an innocent `from train import something`. The grep exists
 because promising is not proving.
@@ -1319,15 +1323,15 @@ feedback loop, and noticing that unprompted is a level-4 answer in row 7.
    name — the last mile — and it is where most projects quietly die.
 2. **Evidence, not promises.** A grep that prints nothing. A log with 120 lines in it. A `VERSION` file
    three bytes long.
-3. **A threshold is a sum, not a default.** `10 × 0 + 1 × 1 = 1` against `10 × 1 + 1 × 0 = 10`, at the
+3. **A threshold is a sum, not a default.** `10 × 0 + 1 × 2 = 2` against `10 × 2 + 1 × 0 = 20`, at the
    same accuracy.
-4. **One number hides two.** `0.812` overall hides `0.625` on the reviews that were really negative.
+4. **One number hides two.** `1.000` on the held-out pile hides `1 of 12` on the negation traps.
 5. **Monitoring means finding out with no labels**, because in production nobody ever tells you the right
    answer.
 6. **The card's hardest heading is the one nobody asked for.** Out-of-scope uses is where you refuse a use
    of your own work, in writing, before anyone tries it.
-7. **Every number you say has a sum behind it.** `10 × 0 + 1 × 1 = 1` chose your threshold. `1 ÷ 16 =
-   0.0625` is what one row is worth. `0 of 12` against a coin's `6` is your failure mode. **That is the
+7. **Every number you say has a sum behind it.** `10 × 0 + 1 × 1 = 1` chose your threshold at `0.50`. `1 ÷ 16 =
+   0.0625` is what one row is worth. `1 of 12` against a coin's `6` is your failure mode. **That is the
    whole of Level 3, and you can now say it to a stranger in eight minutes.**
 
 ---

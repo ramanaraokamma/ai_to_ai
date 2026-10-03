@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
   <title>This week&#8217;s five words, drawn</title>
-  <desc>Five small pictures. Prediction contract is six numbered boxes, all filled in before any serving code is written, with boxes 4 and 6 named as the hard ones. Artifact versioning is three file bars, sentiment_v1.joblib, sentiment_v2.joblib and a 13-byte LATEST, where 13 bytes say which one is live and the version cost six characters. Golden test is a probability line from 0 to 1 with the threshold marked at 0.55 and three frozen answers at 0.2044, 0.2896 and 0.7724, the closest being 0.7724 minus 0.55 equals 0.2224 clear. Cold start is four measured times, import joblib 84.3 milliseconds plus the first load 616.8 plus the prediction 0.4, adding to 701.5 milliseconds, paid once when the program starts. Latency is one prediction at 0.36 milliseconds, paid every single time, and 701.5 divided by 0.4 is about 1,754.</desc>
+  <desc>Five small pictures. Prediction contract is six numbered boxes, all filled in before any serving code is written, with boxes 4 and 6 named as the hard ones. Artifact versioning is three file bars, sentiment_v1.joblib, sentiment_v2.joblib and a 13-byte LATEST, where 13 bytes say which one is live and the version cost six characters. Golden test is a probability line from 0 to 1 with the threshold marked at 0.65 and three frozen answers at 0.2110, 0.2380 and 0.7661, the closest being 0.7661 minus 0.65 equals 0.1161 clear. Cold start is four measured times, import joblib 84.3 milliseconds plus the first load 616.8 plus the prediction 0.4, adding to 701.5 milliseconds, paid once when the program starts. Latency is one prediction at 0.36 milliseconds, paid every single time, and 701.5 divided by 0.4 is about 1,754.</desc>
 
   <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">This week&#8217;s five words, drawn</text>
 
@@ -38,12 +38,12 @@
   <line x1="558" y1="112" x2="754" y2="112" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
   <text x="558" y="132" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">0</text>
   <text x="754" y="132" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">1</text>
-  <line x1="666" y1="88" x2="666" y2="124" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
-  <text x="666" y="80" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#C42B8C" text-anchor="middle">0.55</text>
-  <circle cx="598" cy="112" r="7" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
-  <circle cx="615" cy="112" r="7" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
-  <circle cx="710" cy="112" r="7" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
-  <text x="656" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0.7724 &#8722; 0.55 = 0.2224</text>
+  <line x1="685" y1="88" x2="685" y2="124" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <text x="685" y="80" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#C42B8C" text-anchor="middle">0.65</text>
+  <circle cx="599" cy="112" r="5" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="605" cy="112" r="5" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <circle cx="708" cy="112" r="7" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="656" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0.7661 &#8722; 0.65 = 0.1161</text>
   <text x="656" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">golden test</text>
   <text x="656" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">answers frozen on purpose</text>
 

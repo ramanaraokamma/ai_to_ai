@@ -27,7 +27,7 @@ Somebody walks up to a laptop, **closes every terminal window that is open**, op
 
 ```text
 $ python3 serve/predict.py "cold food and a rude driver"
-negative p=0.2896  (threshold 0.55, model sentiment_v1, 0.36 ms, loaded in 620 ms)
+negative p=0.2110  (threshold 0.65, model sentiment_v1, 0.36 ms, loaded in 620 ms)
 ```
 
 That terminal is nine seconds old. **The only cold start worth showing is one that starts cold.**
@@ -35,8 +35,8 @@ That terminal is nine seconds old. **The only cold start worth showing is one th
 Now look at what came out of it, word by word.
 
 - **A label.** `negative`.
-- **A probability.** `0.2896` — not a yes/no, a *number*, and it was not 0.5.
-- **A threshold that is not 0.5**, and you can say the arithmetic that chose it: `10 × 0 + 1 × 5 = 5` against `10 × 1 + 1 × 1 = 11`.
+- **A probability.** `0.2110` — not a yes/no, a *number*, and it was not 0.5.
+- **A threshold that is not 0.5**, and you can say the arithmetic that chose it: `10 × 0 + 1 × 4 = 4` against `10 × 1 + 1 × 0 = 10`.
 - **The name of the model that answered.** `sentiment_v1`, because somewhere there is also a `v2` you rejected in writing.
 - **Two different times**, never added together.
 
@@ -60,7 +60,7 @@ Today there are exactly two rules, and they are the whole of Level 3 compressed:
 
 Nine months ago, if somebody asked *"is it any good?"*, the answer would have been *"yeah, pretty good."* Today the answer is:
 
-> **"0.875 on sixteen held-out rows, against a most-frequent baseline of 0.500 — and sixteen rows means one row is worth 6.25 percentage points."**
+> **"0.8125 on sixteen held-out rows — 13 right — against a most-frequent baseline of 0.500, and sixteen rows means one row is worth 6.25 percentage points."**
 
 **Same question. Completely different person answering it.**
 
@@ -77,13 +77,13 @@ Without a route you will spend six of your ten minutes opening folders and apolo
 
 | At | For | The stop | The number you must say |
 |---:|---:|---|---|
-| 0:00 | 1 min | **The contract.** One prediction is about one review. A nasty one slipping through costs ten times a nice one read anyway. | threshold **0.55**, not 0.5 |
+| 0:00 | 1 min | **The contract.** One prediction is about one review. A nasty one slipping through costs ten times a nice one read anyway. | threshold **0.65**, not 0.5 |
 | 1:00 | 1 min | **The cold start.** A brand-new terminal, one command, one answer. Then the Rule 1 `grep`. | the whole command's wall clock · the grep prints **0 lines** |
 | 2:00 | 2 min | **The service.** Start it, `GET /health`, one good prediction. | how long it took to load **once**, against the per-request time — **two numbers** |
 | 4:00 | 2 min | **Break it, live.** Four malformed requests, then `/health` again. | four `400`s, then a `200`. **Zero crashes.** |
 | 6:00 | 1.5 min | **The log.** `wc -l`, then `read_logs.py`. | **111** lines · p50 · p95 · max — and *which request* the max was |
-| 7:30 | 1.5 min | **Where it breaks.** The subgroup table, then one failure **live**. | **0.867** on the 15 rows without a negation, **0.385** on the 13 with one, recall **0 of 6** |
-| 9:00 | 1 min | **The monitoring number.** | band rate **27.0%** now, alarm at **40%**, **computable with no labels at all** |
+| 7:30 | 1.5 min | **Where it breaks.** The subgroup table, then one failure **live**. | **0.800** on the 15 rows without a negation, **0.462** on the 13 with one, recall **0 of 6** |
+| 9:00 | 1 min | **The monitoring number.** | band rate **14.4%** now, alarm at **40%**, **computable with no labels at all** |
 
 **Three ways a demo dies, and the fix for each.**
 
@@ -93,7 +93,7 @@ Without a route you will spend six of your ten minutes opening folders and apolo
 
 **Three — the six-minute apology.** *"So, um, it's not really finished, but…"* **Fix: ban the preamble.** Your first words are the first line of your contract.
 
-> **⚠️ Watch out:** **stop 7 is where you show a failure on purpose** — predicted in advance. *"Watch. This is a positive review. It will call it negative, at about 0.198, because `boring` is a strong negative feature and `not` is nearly weightless."* Then run it and be right. **That is the single most impressive thing anybody will do today**, and it is more impressive than a demo where everything works.
+> **⚠️ Watch out:** **stop 7 is where you show a failure on purpose** — predicted in advance. *"Watch. This is a positive review. It will call it negative, at about 0.49, because `boring` is a strong negative feature and `not` is nearly weightless."* Then run it and be right. **That is the single most impressive thing anybody will do today**, and it is more impressive than a demo where everything works.
 
 ### 2. The eight questions, and the number each answer needs
 
@@ -106,10 +106,10 @@ These eight are not arbitrary. **They are the eight things a real person asks wh
 |---:|---|---|
 | **1** | "What happens if I send it something weird?" | **Do not answer in words — demo it.** Four refusals, then `/health`. Then a number: the body limit is **100,000 bytes**, and *why* that number. |
 | **2** | "How fast is it?" | **Two numbers, kept apart.** The load, paid once at start-up; the **p95**, paid per request. **One number here is a fail.** |
-| **3** | "How do you know it still works next month?" | The monitoring number, **computable with no labels**: band rate **27.0%** today, alarm at **40%**, and what you would do. |
-| **4** | "Somebody says it got their comment wrong. What do you do?" | **Walk to the log.** 111 lines, each carrying the input, the probability, the threshold and the version. So the answer is *"I can tell you which model answered and what it was 29% sure of"*, not *"I don't know"*. |
+| **3** | "How do you know it still works next month?" | The monitoring number, **computable with no labels**: band rate **14.4%** today, alarm at **40%**, and what you would do. |
+| **4** | "Somebody says it got their comment wrong. What do you do?" | **Walk to the log.** 111 lines, each carrying the input, the probability, the threshold and the version. So the answer is *"I can tell you which model answered and how sure it was"*, not *"I don't know"*. |
 | **5** | "Why `127.0.0.1` and not `0.0.0.0`?" | **No authentication and no rate limit**, so `0.0.0.0` would expose it to everybody on the network. **The reason, not just the string.** |
-| **6** | "Is it any good?" | **0.875** on **16** held-out rows against a baseline of **0.500** — and the honesty: **16 rows means one row is worth 6.25 percentage points.** |
+| **6** | "Is it any good?" | **0.8125** on **16** held-out rows against a baseline of **0.500** — and the honesty: **16 rows means one row is worth 6.25 percentage points.** |
 | **7** | "Who should not use this?" | The out-of-scope line, with its number: **recall 0 of 6** on negated positives, so it must not decide who gets banned or muted. |
 | **8** | "Could you just retrain it automatically on what it has seen?" | **No** — those log lines are the model's own opinions, not labels. Training on them is a **feedback loop**: it learns its own mistakes and grows more confident about them. |
 
@@ -139,7 +139,7 @@ These eight are not arbitrary. **They are the eight things a real person asks wh
 
 > **🧑‍🏫 If a student asks:** *"but real engineers say 'production-ready' all the time."* **They do, and that is the point.** The phrase is a shortcut between people who already share a written checklist. **You do not share a checklist with the person asking**, so the shortcut is just a noise you make while they wait for the number. When you can point at the checklist, use the shortcut. Until then, the number.
 >
-> And note: **"accurate" with a number is fine and is exactly what we want.** "0.875 accuracy on 16 held-out rows" is a good sentence. **The test for any phrase: could somebody check it?** "Robust" cannot be checked. "Survived four malformed requests" can.
+> And note: **"accurate" with a number is fine and is exactly what we want.** "0.8125 accuracy on 16 held-out rows" is a good sentence. **The test for any phrase: could somebody check it?** "Robust" cannot be checked. "Survived four malformed requests" can.
 
 ### 4. A Level 3 bug does not crash. It prints a number you are pleased with.
 
@@ -198,7 +198,7 @@ And the thing to be honest about: **five of seven is not a fail. It is a map.** 
 
 **Term 3 — the network.** A `(3,2)` grid times a `(2,4)` grid gives a `(3,4)` grid, and row 0 column 0 was **1 × 10 + 2 × 50 = 110**. Your digit network held **1,898** learnable numbers — `80 + 1,168 + 650` — and you counted every one. It read **528 of 540** digits it had never seen.
 
-**Term 4 — no labels, then words, then shipping.** **178** wines with **13** columns and no answer key. The idf of a word in 1 of 4 documents is **ln(5 ÷ 2) + 1 = 1.916**. And your shipped artifact scores **0.875** on 16 held-out rows with a **p95 of 0.28 ms** over **111** logged requests.
+**Term 4 — no labels, then words, then shipping.** **178** wines with **13** columns and no answer key. The idf of a word in 1 of 4 documents is **ln(5 ÷ 2) + 1 = 1.916**. And your shipped artifact scores **0.8125** on 16 held-out rows with a **p95 of 0.28 ms** over **111** logged requests.
 
 **Here is the thing to notice about that whole list.** Every single number on it you worked out **by hand first** and checked against the computer afterwards. **Not once the other way round.** That is not a study technique — **it is the difference between using a tool and understanding one**, and it is the only reason you can now be handed an unfamiliar model and a confident number and tell whether to believe it.
 
@@ -226,7 +226,7 @@ RIGHT   "about 620 ms to load the model once at start-up,
 
 Question 7 has a number in it, and the number is not your headline:
 
-> *"On the 13 rows containing a negation word, accuracy is 0.385 and recall on the positive class is 0.000 — six genuinely positive reviews and it found none of them. On the 15 rows without one, 0.867. And 12 of those 13 rows are traps I wrote on purpose to be hard, so 0.385 demonstrates that a mechanism exists rather than estimating how often it bites."*
+> *"On the 13 rows containing a negation word, accuracy is 0.462 and recall on the positive class is 0.000 — six genuinely positive reviews and it found none of them. On the 15 rows without one, 0.800. And 12 of those 13 rows are traps I wrote on purpose to be hard, so 0.462 demonstrates that a mechanism exists rather than estimating how often it bites."*
 
 **That last sentence is the one nobody is asked for and everybody should say.** Volunteering a caveat you were not asked about is the clearest signal there is that you understand your own numbers.
 
@@ -265,7 +265,7 @@ Close every terminal. Open one. Then run your own tool **with a full path, from 
 ```text
 $ cd /
 $ time python3 /path/to/ship-it/serve/predict.py "cold food and a rude driver"
-negative p=0.2896  (threshold 0.55, model sentiment_v1, 0.36 ms, loaded in 620 ms)
+negative p=0.2110  (threshold 0.65, model sentiment_v1, 0.36 ms, loaded in 620 ms)
 
 real	0m0.769s
 user	0m1.037s
@@ -334,11 +334,11 @@ print("Q6 any good      : %.3f on %d held-out rows, baseline %.3f, 1 row = %.2f 
 
 ```text
 $ python3 answers.py
-model            : sentiment_v1   (threshold 0.55)
+model            : sentiment_v1   (threshold 0.65)
 Q2 how fast      : loads once at start-up; p95 0.28 ms, max 1.06 ms over 111 requests
-Q3 still working : band rate 30 of 111 = 27.0%, alarm at 40%, no labels needed
+Q3 still working : band rate 16 of 111 = 14.4%, alarm at 40%, no labels needed
 Q4 got it wrong  : 111 log lines, each with input, probability, threshold, version
-Q6 any good      : 0.875 on 16 held-out rows, baseline 0.500, 1 row = 6.25 points
+Q6 any good      : 0.812 on 16 held-out rows, baseline 0.500, 1 row = 6.25 points
 ```
 
 **Notice which four questions are missing: 1, 5, 7 and 8.** Those four have no number in a file — **they are sentences you have to be able to say**, and that is why they are the ones people fluff. Write them on the back of the sheet in your own handwriting.
@@ -445,13 +445,13 @@ Here is what the seven stops actually sound like, with the commands and the real
 
 **Stop 1 — the contract (1 min). No laptop. Say it.**
 
-> *"One prediction is about one review, written by one person, at one time — not a person, not an account. In goes one field called `text`, a non-empty string, at most 100,000 bytes. Out come five fields: label, probability, threshold, model version and latency. A nasty review called positive means a nasty review nobody reads; I priced that at 10. A nice review called negative costs a moderator ten seconds; I priced that at 1. So my threshold is 0.55, not 0.5, from the cost sweep on my 16 validation rows: `10 × 1 + 1 × 1 = 11` at 0.50 against `10 × 0 + 1 × 5 = 5` at 0.55. And it must never decide who gets banned, and never mark anybody's schoolwork."*
+> *"One prediction is about one review, written by one person, at one time — not a person, not an account. In goes one field called `text`, a non-empty string, at most 100,000 bytes. Out come five fields: label, probability, threshold, model version and latency. A nasty review called positive means a nasty review nobody reads; I priced that at 10. A nice review called negative costs a moderator ten seconds; I priced that at 1. So my threshold is 0.65, not 0.5, from the cost sweep on my 16 validation rows: `10 × 1 + 1 × 0 = 10` at 0.50 against `10 × 0 + 1 × 4 = 4` at 0.65. 0.70 costs 4 as well, and when two thresholds tie I take the lower one, because it lets more nice reviews through. Accuracy alone would have picked 0.50, and 0.50 is the one that costs 10. And it must never decide who gets banned, and never mark anybody's schoolwork."*
 
 **Stop 2 — the cold start (1 min).** New window, opened in front of the room.
 
 ```text
 $ python3 serve/predict.py "the pizza was hot and delicious"
-positive p=0.6991  (threshold 0.55, model sentiment_v1, 0.39 ms, loaded in 613 ms)
+positive p=0.7450  (threshold 0.65, model sentiment_v1, 0.39 ms, loaded in 613 ms)
 
 $ grep -rnE "\.fit\(|train_test_split|DummyClassifier|optimizer" serve/
 $
@@ -461,11 +461,11 @@ $
 
 ```text
 $ python3 serve/service.py --port 8010
-loaded sentiment_v1 in 610 ms (threshold 0.55)
+loaded sentiment_v1 in 610 ms (threshold 0.65)
 serving on http://127.0.0.1:8010   (Ctrl+C to stop)
 
 $ curl -s http://127.0.0.1:8010/health
-{"status": "ok", "model_version": "sentiment_v1", "threshold": 0.55, "classes": ["negative", "positive"], "load_ms": 609.7}
+{"status": "ok", "model_version": "sentiment_v1", "threshold": 0.65, "classes": ["negative", "positive"], "load_ms": 609.7}
 ```
 
 > *"610 milliseconds to load the model — once, when the service starts. And a quarter of a millisecond per prediction. Two numbers, and I will never add them together."*
@@ -489,29 +489,29 @@ $ wc -l logs/predictions.jsonl
      111 logs/predictions.jsonl
 $ python3 eval/read_logs.py
 requests        : 111
-by label        : {'negative': 65, 'positive': 46}
+by label        : {'negative': 76, 'positive': 35}
 latency mean    : 0.23 ms
 latency p50     : 0.21 ms
 latency p95     : 0.28 ms
 latency max     : 1.06 ms
 ```
 
-> *"`65 + 46 = 111`. The p95 is 0.28 and the max is 1.06 — and the max was request number one, before anything was warm. With only 111 requests the p95 cannot see a single outlier, so I print both."*
+> *"`76 + 35 = 111`. The p95 is 0.28 and the max is 1.06 — and the max was request number one, before anything was warm. With only 111 requests the p95 cannot see a single outlier, so I print both."*
 
 **Stop 6 — where it breaks (1.5 min). The table, then a live failure you predicted.**
 
-> *"Watch. This is a positive review and my model is going to call it negative, at about 0.198."*
+> *"Watch. This is a positive review and my model is going to call it negative, at about 0.49."*
 
 ```text
 $ python3 serve/predict.py "not boring for a single minute"
-negative p=0.1984  (threshold 0.55, model sentiment_v1, 0.36 ms, loaded in 630 ms)
+negative p=0.4887  (threshold 0.65, model sentiment_v1, 0.36 ms, loaded in 630 ms)
 ```
 
-> *"0.1984. `boring` is one of my strongest negative features and `not` is nearly weightless, because a bag of words throws away word order. On the 13 rows with a negation word my accuracy is 0.385 and my recall is 0 of 6. Twelve of those 13 are traps I wrote on purpose, so that number shows the mechanism, not the rate."*
+> *"0.4887. `boring` is one of my strongest negative features and `not` is nearly weightless, because a bag of words throws away word order. On the 13 rows with a negation word my accuracy is 0.462 and my recall is 0 of 6. Twelve of those 13 are traps I wrote on purpose, so that number shows the mechanism, not the rate."*
 
 **Stop 7 — monitoring (1 min).**
 
-> *"I watch the share of predictions landing between 0.45 and 0.65. Today that is 30 of 111, which is 27.0 per cent. My alarm is a weekly mean above 40 per cent. **I can compute it with no labels at all**, which matters because in production nobody ever tells me the right answer. If it trips, I pull the 30 nearest the fence and read them. And one thing I would deliberately not do: retrain on my own predictions."*
+> *"I watch the share of predictions landing between 0.45 and 0.65. Today that is 16 of 111, which is 14.4 per cent. My alarm is a weekly mean above 40 per cent. **I can compute it with no labels at all**, which matters because in production nobody ever tells me the right answer. If it trips, I pull the 16 nearest the fence and read them. And one thing I would deliberately not do: retrain on my own predictions."*
 
 ### Worked Example 2 — The eight answers, marked
 
@@ -521,16 +521,16 @@ Same eight questions, two answers each. **The difference between them is never e
 |---:|---|---|
 | **1** | "It handles errors." | "Watch." *(sends four, gets four `400`s, then a `200` on `/health`)* "And the body limit is 100,000 bytes, because my longest training review is 55 characters." |
 | **2** | "It's really fast." | "610 ms to load once at start-up; p95 0.28 ms per request over 111 requests; max 1.06, which was request one." |
-| **3** | "I'd check it now and then." | "Band rate, 30 of 111 = 27.0% today, alarm at 40%, computable with no labels. If it trips I read the 30 nearest the fence." |
+| **3** | "I'd check it now and then." | "Band rate, 16 of 111 = 14.4% today, alarm at 40%, computable with no labels. If it trips I read the 16 nearest the fence." |
 | **4** | "I'd look into it." | "I'd open the log. 111 lines; each has the input, the probability, the threshold and the version — so I can tell them which model answered and how sure it was." |
 | **5** | "Because it's localhost." | "Because it has no authentication and no rate limit, so `0.0.0.0` would let anybody on this network send it a million requests." |
-| **6** | "Pretty good — about 88%." | "0.875 on 16 held-out rows against a most-frequent baseline of 0.500. And 16 rows means one row is worth 6.25 points, so read it as roughly right." |
+| **6** | "Pretty good — about 100%." | "0.8125 on 16 held-out rows against a most-frequent baseline of 0.500. And 16 rows means one row is worth 6.25 points, so 13 right of 16 is a respectable headline and not a measurement of how it will do next month." |
 | **7** | "It might be biased." | "It must not decide who gets banned: recall on negated positives is 0 of 6. And not for any language other than English." |
 | **8** | "No, that'd be cheating." | "No — those 111 lines are the model's own opinions, not labels. It would learn its own mistakes and get *more* confident about them. That is a feedback loop." |
 
 **And the two answers worth praise on the spot**, because nobody gets to them by accident:
 
-- Volunteering, unprompted, that the 12 traps were **written on purpose to be hard**, so `0.385` shows a mechanism rather than estimating a rate.
+- Volunteering, unprompted, that the 12 traps were **written on purpose to be hard**, so `0.462` shows a mechanism rather than estimating a rate.
 - Saying, on question 2, that **your latency will not match anybody else's**, because latency depends on the machine.
 
 ### Worked Example 3 — A silent bug in a report, and the two numbers it hid
@@ -600,9 +600,9 @@ rows with a negation word: 2
 **Two rows, and it got both wrong:**
 
 ```text
-Not boring for a single minute   -> negative p=0.1984
-Nothing rude about the staff     -> negative p=0.4367
-delicious fresh pizza            -> positive p=0.7921
+Not boring for a single minute   -> negative p=0.4887
+Nothing rude about the staff     -> negative p=0.2838
+delicious fresh pizza            -> positive p=0.7530
 ```
 
 **Lie two — `0.667` has no baseline and no `n` beside it.** Six rows, three positive and three negative, so **a coin has a baseline of 0.500 here** and a constant answer gets 0.500 too. `0.667` is four rows right out of six, and **one row is worth 16.7 percentage points.** A number that moves by 16.7 points per row is not a measurement; it is a mood.
@@ -723,7 +723,7 @@ predict.py: error: unrecognized arguments: food and a rude driver
 ### Trick 1 — "the demo is a presentation, so it should look good"
 
 ![Wrong and right: answering "is it any good?"](../figures/fig-w36-5-tricked-is-it-any-good.svg)
-*Figure 36.5 — Wrong and right: answering "is it any good?" On the left four banned phrases, not one of which the listener can check. On the right the same answer made of facts: 0.875 on 16 held-out rows, a baseline of 0.500, `100 ÷ 16 = 6.25` points a row, and the worst subgroup at 0.385 on 13 rows.*
+*Figure 36.5 — Wrong and right: answering "is it any good?" On the left four banned phrases, not one of which the listener can check. On the right the same answer made of facts: 0.8125 on 16 held-out rows, a baseline of 0.500, `100 ÷ 16 = 6.25` points a row, and the negation-word subgroup at 0.462 on 13 rows.*
 
 **Wrong:** slides, a screenshot, a rehearsed script.
 **Right:** **a terminal is not a slide.** The demo is *evidence*, and the most impressive thing in it is a live failure you predicted correctly. And slides let you skip the cold start, which is the one thing today is designed to check.
@@ -790,7 +790,7 @@ black, as it has been since Week 12 — the week you opened the loop.*
 
 - **Two rules today: a new terminal, and a number in every answer.** Both are mechanical, and the second one is the whole of Level 3.
 - **Two timing numbers, kept apart.** Load-once versus per-request. *"About a second"* is a fail even when it is true.
-- **Every score carries its `n` and its baseline.** `0.875 on 16 rows against 0.500`, and one row is `100 ÷ 16 = 6.25` points.
+- **Every score carries its `n` and its baseline.** `0.8125 on 16 rows against 0.500`, and one row is `100 ÷ 16 = 6.25` points.
 - **Volunteer the caveat nobody asked for.** *"Twelve of those 13 rows are traps I wrote on purpose, so this shows the mechanism, not the rate."*
 - **A Level 3 bug prints a number you are pleased with.** Predict the number first; then check. **That is the last debugging move of the year, and it is the only one you need in Level 4.**
 - **An honest blank on the gate sheet beats a tick you cannot defend.**
@@ -822,7 +822,7 @@ wc -l logs/predictions.jsonl                    # 111 = predictions, not request
 
 ### One-line maths reminder
 
-**Every number you say today has a sum behind it:** `10 × 0 + 1 × 5 = 5` chose your threshold · `3 × 14 = 42` is backpropagation · `1 × 10 + 2 × 50 = 110` is a matrix multiply · `18 ÷ 28 = 0.643` closes your subgroup table · `100 ÷ 16 = 6.25` is what one row is worth.
+**Every number you say today has a sum behind it:** `10 × 0 + 1 × 4 = 4` chose your threshold · `3 × 14 = 42` is backpropagation · `1 × 10 + 2 × 50 = 110` is a matrix multiply · `18 ÷ 28 = 0.643` closes your subgroup table · `100 ÷ 16 = 6.25` is what one row is worth.
 
 ---
 

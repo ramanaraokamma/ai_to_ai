@@ -97,7 +97,7 @@ model/artifacts/LATEST      ← contains exactly:  sentiment_v1
 Thirteen bytes. A rollback is one edit to those thirteen bytes.
 
 ![Three files, and the line that says which is live](../figures/fig-w34-3-artifact-versions-on-disk.svg)
-*Figure 34.3 — Three files, and the line that says which is live. The 9,732-byte artifact holds the whole 271-word vocabulary, the idf weights and the coefficients. The 419-byte metadata holds the threshold and the library versions. The 13-byte `LATEST` holds the name.*
+*Figure 34.3 — Three files, and the line that says which is live. The 10,228-byte artifact holds the whole 287-word vocabulary, the idf weights and the coefficients. The 421-byte metadata holds the threshold and the library versions. The 13-byte `LATEST` holds the name.*
 
 ### 3. Every new line of this week's code, explained to somebody who has never programmed
 
@@ -130,7 +130,7 @@ predict.py: error: argument --threshold: invalid float value: 'abc'
 
 **(b) `json.dump` and `json.load` — writing and reading structured data as plain text.**
 
-JSON is a way of writing a dictionary as text. `{"threshold": 0.55, "classes": ["negative", "positive"]}` is a dictionary in Python and *also* a valid JSON document. `json.dump` writes one to an open file; `json.load` reads one back.
+JSON is a way of writing a dictionary as text. `{"threshold": 0.65, "classes": ["negative", "positive"]}` is a dictionary in Python and *also* a valid JSON document. `json.dump` writes one to an open file; `json.load` reads one back.
 
 ```python
 with open(path, "w") as f:       # "w" = open for writing, wiping whatever was there
@@ -202,7 +202,7 @@ SECOND predict_proba     :  0.173 ms
 
 **Read those five lines slowly, because four of them are surprising.**
 
-The artifact is 9,732 bytes. Reading 9,732 bytes off a disk takes almost no time. So why did the first `joblib.load` take 659 milliseconds? **Because unpickling the file makes Python import the scikit-learn machinery the file needs** — the vectorizer, the logistic-regression class, the sparse-matrix code — and importing those is what costs. The *second* load of the same file takes 0.4 ms, because everything is already imported.
+The artifact is 10,228 bytes. Reading 10,228 bytes off a disk takes almost no time. So why did the first `joblib.load` take 659 milliseconds? **Because unpickling the file makes Python import the scikit-learn machinery the file needs** — the vectorizer, the logistic-regression class, the sparse-matrix code — and importing those is what costs. The *second* load of the same file takes 0.4 ms, because everything is already imported.
 
 So the cold start is:
 
@@ -222,7 +222,7 @@ and `751.9 ÷ 0.4 ≈ 1,880`. **The answer is one part in about 1,880 of the wai
 
 The rule "load once at startup" is still correct, and here is the honest reason: **the cost you are avoiding is the cold start, and the cost you are avoiding grows with the model.** On the Path B torch model the same measurement gives 0.036 ms to predict with a loaded model and 0.264 ms to rebuild-load-and-predict — **7.3 times more.** On a hundred-megabyte model it is thousands of times more.
 
-**Say the true thing:** *"load once, and here is my measured number, which is smaller than the number you will read online because my model is 9 kilobytes."* A student who can say that sentence has learned more than one who repeats the folklore.
+**Say the true thing:** *"load once, and here is my measured number, which is smaller than the number you will read online because my model is 10 kilobytes."* A student who can say that sentence has learned more than one who repeats the folklore.
 
 ### 5. Golden tests: three answers you have decided must never change
 
@@ -230,16 +230,16 @@ The rule "load once at startup" is still correct, and here is the honest reason:
 
 It is the cheapest test in existence and it takes eleven lines. Pick three inputs, assert their labels, print pass or fail, and exit with a code the shell can read.
 
-**Choosing the three is the skill.** A golden test sitting at `p = 0.5501` against a threshold of `0.55` will flip the first time anything at all changes, and then it is an alarm that cries wolf. **Pick inputs a long way from the line and say how far.**
+**Choosing the three is the skill.** A golden test sitting at `p = 0.6501` against a threshold of `0.65` will flip the first time anything at all changes, and then it is an alarm that cries wolf. **Pick inputs a long way from the line and say how far.**
 
 ![Three golden answers, frozen on the probability line](../figures/fig-w34-4-golden-tests-frozen-answers.svg)
-*Figure 34.4 — Three golden answers, frozen on the probability line. The closest one is `0.7724 − 0.55 = 0.2224` clear, so nothing small can flip it. The greyed triangle at 0.1984 is a known failure, not a golden test.*
+*Figure 34.4 — Three golden answers, frozen on the probability line. The closest one is `0.7661 − 0.65 = 0.1161` clear, so nothing small can flip it. The greyed triangle at 0.4887 is a known failure, not a golden test.*
 
-And the level-5 move, which one or two students will find: **freeze a known failure too.** The reference model calls *"not boring for a single minute"* negative, at `p = 0.1984`. That is wrong. Asserting that it stays wrong is not defeatism — it is how you find out the day it changes, which is the day you can claim you fixed something.
+And the level-5 move, which one or two students will find: **freeze a known failure too.** The reference model calls *"not boring for a single minute"* negative, at `p = 0.4887`. That is wrong. Asserting that it stays wrong is not defeatism — it is how you find out the day it changes, which is the day you can claim you fixed something.
 
 ### 6. The three misconceptions you will actually meet
 
-**"The threshold is 0.5 because that's the default."** No. `0.5` is what you get if you never decide. Box 5 of the contract is a cost sum, and the answer for the reference model is `0.55`. A student who writes `0.5` with no arithmetic gets one question: *"what did you compare it to?"*
+**"The threshold is 0.5 because that's the default."** No. `0.5` is what you get if you never decide. Box 5 of the contract is a cost sum, and the answer for the reference model is `0.65`. A student who writes `0.5` with no arithmetic gets one question: *"what did you compare it to?"*
 
 **"The artifact is the model."** Nearly. The artifact is the model **and every preparation step it depends on**. Week 3's whole lesson. The test sentence to give them: *"if I deleted your notebook right now, could you still predict correctly?"* If the answer involves remembering to lowercase something first, the artifact is incomplete.
 
@@ -279,8 +279,8 @@ The ↻ on stage three is black, as it has been since Week 12.*
    accuracy figure among them — that is what makes this week different from the other thirty-three.**
 3. **Point back at stage one, and make them find the overlap themselves.** *"Boxes 1, 2 and 3 of your
    contract — which tile did you first write those in?"* The answer is `decisions · the split`, Week 1, and
-   the wording is almost identical. Then box 5: *"and which tile is `10 × 1 + 1 × 1 = 11` against
-   `10 × 0 + 1 × 5 = 5` from?"* — `threshold · cost`, Weeks 10–11. **The contract is not new work; it is
+   the wording is almost identical. Then box 5: *"and which tile is `10 × 1 + 1 × 0 = 10` against
+   `10 × 0 + 1 × 4 = 4` from?"* — `threshold · cost`, Weeks 10–11. **The contract is not new work; it is
    the map, written out as prose.** That realisation is worth more than anything else you can say today.
 
 > **🧑‍🏫 Why this is worth two minutes.** This is the week most likely to be dismissed as admin, and the
@@ -372,7 +372,7 @@ def main():
     ap.add_argument("--name", default="sentiment")
     ap.add_argument("--ngram-max", type=int, default=2)
     ap.add_argument("--C", type=float, default=4.0)
-    ap.add_argument("--threshold", type=float, default=0.55)
+    ap.add_argument("--threshold", type=float, default=0.65)
     args = ap.parse_args()
 
     ARTIFACTS.mkdir(parents=True, exist_ok=True)
@@ -440,8 +440,8 @@ if __name__ == "__main__":
 ```text
 rows: train 48  val 16  test 16
 baseline accuracy on val: 0.5000
-val  accuracy at threshold 0.55: 0.6875
-test n=16  accuracy=0.8750  f1(pos)=0.8750
+val  accuracy at threshold 0.65: 0.7500
+test n=16  accuracy=0.8125  f1(pos)=0.7692
 wrote sentiment_v1.joblib (10 KB) + metadata; LATEST -> sentiment_v1
 ```
 
@@ -552,18 +552,18 @@ if __name__ == "__main__":
 
 ```bash
 $ python3 serve/predict.py "the pizza was hot and delicious"
-positive p=0.6991  (threshold 0.55, model sentiment_v1, 0.38 ms, loaded in 650 ms)
+positive p=0.7450  (threshold 0.65, model sentiment_v1, 0.38 ms, loaded in 650 ms)
 
 $ python3 serve/predict.py "cold food and a rude driver"
-negative p=0.2896  (threshold 0.55, model sentiment_v1, 0.40 ms, loaded in 729 ms)
+negative p=0.2110  (threshold 0.65, model sentiment_v1, 0.40 ms, loaded in 729 ms)
 
 $ python3 serve/predict.py --json "the pizza was not delicious"
 {
   "model_version": "sentiment_v1",
   "input": "the pizza was not delicious",
   "label": "negative",
-  "probability": 0.4957,
-  "threshold": 0.55,
+  "probability": 0.5462,
+  "threshold": 0.65,
   "latency_ms": 0.43
 }
 
@@ -604,11 +604,11 @@ sys.exit(1 if failures else 0)
 ```
 
 ```text
-PASS expected=positive got=positive p=0.7724  <<delicious fresh pizza and kind friendly staff>>
-PASS expected=negative got=negative p=0.2896  <<cold food and a rude driver>>
-PASS expected=negative got=negative p=0.2044  <<stale bread and awful coffee>>
+PASS expected=positive got=positive p=0.7661  <<delicious fresh pizza and kind friendly staff>>
+PASS expected=negative got=negative p=0.2110  <<cold food and a rude driver>>
+PASS expected=negative got=negative p=0.2380  <<stale bread and awful coffee>>
 
-3/3 passed  (model sentiment_v1, threshold 0.55)
+3/3 passed  (model sentiment_v1, threshold 0.65)
 ```
 
 - [ ] **Finally, run the timing script**, because §4's numbers are the most interesting thing you will say today:
@@ -649,7 +649,7 @@ SECOND predict_proba     :  0.173 ms
 **This week survives a total power cut better than any other week of the year, because the deliverable is a piece of paper.**
 
 1. **The contract, unchanged.** Twenty-five silent minutes, the cross-examination, the whole activity. Objective 1 — the hardest and most important one — needs no electricity at all.
-2. **Box 5's arithmetic on paper.** Print the nine-row cost table from the Answer Key (page 34.2) and do the sweep by hand. `10 × 1 + 1 × 1 = 11` against `10 × 0 + 1 × 5 = 5`.
+2. **Box 5's arithmetic on paper.** Print the nine-row cost table from the Answer Key (page 34.2) and do the sweep by hand. `10 × 1 + 1 × 0 = 10` against `10 × 0 + 1 × 4 = 4`.
 3. **The cold-start addition on paper.** `92.2 + 659.3 + 0.4 = 751.9`, then `751.9 ÷ 0.4 ≈ 1,880`. A real and startling number, done with a pencil.
 4. **The three golden tests chosen on paper**, from the probability list in the Answer Key, with the distance from the threshold written beside each. That is objective 4's *thinking*, without objective 4's typing.
 5. **Objectives 2 and 3 are the casualty.** Say so plainly: *"the one thing we cannot do on paper is freeze the file and open a cold terminal. That is your homework, and next week's lesson needs it done."*
@@ -790,32 +790,34 @@ cost = 10 x (nasty called positive)  +  1 x (nice called negative)
 
 ```
   t      nasty called positive    nice called negative     cost
-0.40             2                        0                20
-0.50             1                        1                11
-0.55             0                        5                 5
-0.65             0                        7                 7
-0.70             0                        8                 8
+0.40             3                        0                30
+0.50             1                        0                10
+0.55             1                        1                11
+0.60             1                        3                13
+0.65             0                        4                 4
+0.70             0                        4                 4
+0.80             0                        7                 7
 ```
 
 **Ask this:** "Work out the cost at 0.50 out loud with me."
 
-*`10 × 1 + 1 × 1 = 10 + 1 = 11`.*
+*`10 × 1 + 1 × 0 = 10 + 0 = 10`.*
 
-**Ask this:** "And at 0.55?"
+**Ask this:** "And at 0.65?"
 
-*`10 × 0 + 1 × 5 = 0 + 5 = 5`.*
+*`10 × 0 + 1 × 4 = 0 + 4 = 4`.*
 
-**Ask this:** "So which threshold do we ship?"
+**Ask this:** "0.65 and 0.70 both cost 4. Which threshold do we ship?"
 
-*0.55.*
+*0.65. The tie-break rule is: **of the tied thresholds, take the lower one.** Say it out loud and say why: the two make exactly the same mistakes on these 16 rows, so the data cannot separate them, and the lower one flags fewer reviews as negative on the rows we have not seen, which keeps the most nice reviews flowing.*
 
-> "**0.55, and not 0.5.** And now the uncomfortable part, which is the part I want you to write down."
+> "**0.65, and not 0.5.** And now the uncomfortable part, which is the part I want you to write down."
 
 **Do this:** Write on the board:
 
 ```
-accuracy at 0.50  =  0.8750
-accuracy at 0.55  =  0.6875
+accuracy at 0.50  =  0.9375
+accuracy at 0.65  =  0.7500
 ```
 
 **Ask this:** "We just chose the threshold that makes accuracy **worse by nearly 19 points**. Are we mad?"
@@ -826,7 +828,7 @@ accuracy at 0.55  =  0.6875
 >
 > When you know the costs, **use the costs**. Accuracy is the metric for when you don't."
 
-> **🧑‍🏫 If a student asks:** *"Module 3 had a rule of thumb — the threshold should be the false-positive cost divided by the total, which is `10 ÷ 11 = 0.91`. Why isn't it 0.91?"* **This is the best question in the week and it has an honest answer.** The rule of thumb assumes the probabilities are well calibrated and that there are enough rows for the trade-off to be smooth. Here there are **16 validation rows**, and by `0.55` there are already **zero** expensive errors left to remove — so every further step up buys only cheap errors and the cost climbs again. **When the rule of thumb and the measurement disagree, the measurement wins, and you write down why.** Also: 16 rows means one row is worth 6.25 percentage points. Say that out loud too.
+> **🧑‍🏫 If a student asks:** *"Module 3 had a rule of thumb — the threshold should be the false-positive cost divided by the total, which is `10 ÷ 11 = 0.91`. Why isn't it 0.91?"* **This is the best question in the week and it has an honest answer.** The rule of thumb assumes the probabilities are well calibrated and that there are enough rows for the trade-off to be smooth. Here there are **16 validation rows**, and by `0.65` there are already **zero** expensive errors left to remove — so every further step up buys only cheap errors, and the cost stays at 4 at 0.70 and then climbs, to 7 at 0.80. **When the rule of thumb and the measurement disagree, the measurement wins, and you write down why.** Also: 16 rows means one row is worth 6.25 percentage points. Say that out loud too — and say that at 0.50 the model makes one expensive error, which is a single review, so this whole choice rests on one row.
 
 **Do this:** Box 6, `NEVER USED FOR`. Write two things and cross them out with the big red cross:
 
@@ -854,8 +856,8 @@ python3 model/train.py --version 1
 ```text
 rows: train 48  val 16  test 16
 baseline accuracy on val: 0.5000
-val  accuracy at threshold 0.55: 0.6875
-test n=16  accuracy=0.8750  f1(pos)=0.8750
+val  accuracy at threshold 0.65: 0.7500
+test n=16  accuracy=0.8125  f1(pos)=0.7692
 wrote sentiment_v1.joblib (10 KB) + metadata; LATEST -> sentiment_v1
 ```
 
@@ -866,11 +868,11 @@ wrote sentiment_v1.joblib (10 KB) + metadata; LATEST -> sentiment_v1
 ```bash
 $ ls -l model/artifacts/
 -rw-r--r--   13 LATEST
--rw-r--r-- 9732 sentiment_v1.joblib
--rw-r--r--  419 sentiment_v1.metadata.json
+-rw-r--r-- 10228 sentiment_v1.joblib
+-rw-r--r--   421 sentiment_v1.metadata.json
 ```
 
-> **Say this:** "Three files. Nine and a half kilobytes of model, four hundred and nineteen bytes of paperwork, and thirteen bytes saying which one is live. **The thirteen-byte file is the one that makes a rollback cheap.**"
+> **Say this:** "Three files. Ten kilobytes of model, four hundred and twenty-one bytes of paperwork, and thirteen bytes saying which one is live. **The thirteen-byte file is the one that makes a rollback cheap.**"
 
 **Do this:** Print the metadata.
 
@@ -884,13 +886,13 @@ $ cat model/artifacts/sentiment_v1.metadata.json
     "negative",
     "positive"
   ],
-  "threshold": 0.55,
+  "threshold": 0.65,
   "input_field": "text",
   "n_train": 48,
   "n_val": 16,
   "n_test": 16,
-  "test_accuracy": 0.875,
-  "test_f1_positive": 0.875,
+  "test_accuracy": 0.8125,
+  "test_f1_positive": 0.7692,
   "ngram_max": 2,
   "C": 4.0,
   "sklearn_version": "1.7.1",
@@ -941,7 +943,7 @@ They type it. Then, on the shared screen, **open a brand-new terminal window** a
 
 ```bash
 $ python3 serve/predict.py "the pizza was hot and delicious"
-positive p=0.6991  (threshold 0.55, model sentiment_v1, 0.38 ms, loaded in 650 ms)
+positive p=0.7450  (threshold 0.65, model sentiment_v1, 0.38 ms, loaded in 650 ms)
 ```
 
 > **Say this:** "Brand-new terminal. Nothing pre-loaded. No notebook, no cells, no order to run them in. **One line, and an answer.** That is what the stranger at the door asked for at the start of the lesson."
@@ -995,22 +997,22 @@ See **🎲 The Activity, In Full** below for the complete instructions. In brief
 
 ```bash
 $ python3 tests.py
-PASS expected=positive got=positive p=0.7724  <<delicious fresh pizza and kind friendly staff>>
-PASS expected=negative got=negative p=0.2896  <<cold food and a rude driver>>
-PASS expected=negative got=negative p=0.2044  <<stale bread and awful coffee>>
+PASS expected=positive got=positive p=0.7661  <<delicious fresh pizza and kind friendly staff>>
+PASS expected=negative got=negative p=0.2110  <<cold food and a rude driver>>
+PASS expected=negative got=negative p=0.2380  <<stale bread and awful coffee>>
 
-3/3 passed  (model sentiment_v1, threshold 0.55)
+3/3 passed  (model sentiment_v1, threshold 0.65)
 ```
 
 **Say this:**
 
 > "Eleven lines, and it is the cheapest test that exists. Three inputs whose answers I have decided must never change without my knowing. Run it after every single retrain. If one flips, either the model genuinely changed or the preparation broke — and I want to find out in five seconds, not from a user."
 
-**Ask this:** "The threshold is 0.55. My three probabilities are 0.7724, 0.2896 and 0.2044. Which of my three tests is the most fragile, and how fragile?"
+**Ask this:** "The threshold is 0.65. My three probabilities are 0.7661, 0.2110 and 0.2380. Which of my three tests is the most fragile, and how fragile?"
 
-*0.7724 — and `0.7724 − 0.55 = 0.2224` clear of the line.*
+*0.7661 — and `0.7661 − 0.65 = 0.1161` clear of the line.*
 
-> "Right. **Twenty-two hundredths clear**, so nothing small can flip it. If I had picked a review at 0.5501 I would have built an alarm that cries wolf every time I sneeze."
+> "Right. **Twelve hundredths clear**, so nothing small can flip it. If I had picked a review at 0.6501 I would have built an alarm that cries wolf every time I sneeze."
 
 **Do this:** Run the three quick checks from **✅ Assessing Understanding**. Then assign.
 
@@ -1117,19 +1119,19 @@ Give them a **half-filled** sheet: boxes 1, 2 and 3 already completed for the re
 Two extra demands.
 
 1. **A second contract for a model they did not build** — the digits CNN if they shipped sentiment, or vice versa. Box 1 changes from "one review" to "one 8×8 picture of one digit"; box 3 gains ten classes and loses the threshold entirely, because `argmax` has no dial. **Noticing that box 5 is empty for a ten-class model is a level-5 observation** and it should be praised loudly.
-2. **A golden test that freezes a known failure.** Find an input their model gets *wrong*, assert the wrong answer, and write one sentence explaining why that is a sensible thing to do. The reference answer: *"not boring for a single minute" comes back negative at p = 0.1984; I assert negative, so that the day it changes I find out, and that is the day I can claim I fixed negation.*
+2. **A golden test that freezes a known failure.** Find an input their model gets *wrong*, assert the wrong answer, and write one sentence explaining why that is a sensible thing to do. The reference answer: *"not boring for a single minute" comes back negative at p = 0.4887; I assert negative, so that the day it changes I find out, and that is the day I can claim I fixed negation.*
 
 ---
 
 ## ❓ Questions Students Ask This Week
 
-**"Why is the threshold 0.55 and not 0.5? Isn't 0.5 the natural middle?"**
+**"Why is the threshold 0.65 and not 0.5? Isn't 0.5 the natural middle?"**
 
-0.5 is the natural middle of a *number line*. It is not the natural middle of a *decision*. Box 4 says a nasty comment slipping through costs ten times a nice comment being read for nothing — so the sensible place to cut is not the middle, it is wherever the total cost is smallest. On our 16 validation rows that is 0.55: `10 × 0 + 1 × 5 = 5`, against `10 × 1 + 1 × 1 = 11` at 0.50. **0.5 is what you ship when you have not decided. 0.55 is what you ship when you have.**
+0.5 is the natural middle of a *number line*. It is not the natural middle of a *decision*. Box 4 says a nasty comment slipping through costs ten times a nice comment being read for nothing — so the sensible place to cut is not the middle, it is wherever the total cost is smallest. On our 16 validation rows that is 0.65 (tied with 0.70, and we take the lower of the tied thresholds): `10 × 0 + 1 × 4 = 4`, against `10 × 1 + 1 × 0 = 10` at 0.50. **0.5 is what you ship when you have not decided. 0.65 is what you ship when you have.** And be honest that 0.50 has the best accuracy (0.9375) — it is simply the one that lets a nasty review through.
 
 **"Module 3's rule of thumb gives 10 ÷ 11 = 0.91. Why didn't we use that?"**
 
-Because we measured, and the measurement disagreed. The rule of thumb assumes well-calibrated probabilities and enough rows for the trade-off to be smooth; we have 16 rows, and by 0.55 there are already zero expensive errors left to remove, so every further step up buys only cheap ones and the cost climbs back to 7 and then 8. **When a rule of thumb and a measurement disagree, the measurement wins and you write down why.** And say the other honest thing: 16 rows means one row is worth 6.25 points, so this threshold is a decision made on very little evidence, and that sentence belongs in the model card.
+Because we measured, and the measurement disagreed. The rule of thumb assumes well-calibrated probabilities and enough rows for the trade-off to be smooth; we have 16 rows, and by 0.65 there are already zero expensive errors left to remove, so every further step up buys only cheap ones, and the cost stays at 4 at 0.70 and then climbs back to 7 at 0.80. **When a rule of thumb and a measurement disagree, the measurement wins and you write down why.** And say the other honest thing: 16 rows means one row is worth 6.25 points, so this threshold is a decision made on very little evidence, and that sentence belongs in the model card.
 
 **"Why does accuracy get worse when we pick the 'better' threshold? That feels like cheating."**
 
@@ -1139,13 +1141,13 @@ It feels like cheating because accuracy has been the score all year. But accurac
 
 Honest answer: yes, it is admin, and the admin is what decides whether anybody ever uses the thing you built. Nothing in today's lesson would help you win a competition. Everything in today's lesson is what separates a model that exists from a model that is used. And notice which box took the longest to write — box 4, the prices — because that is the only box with a judgement in it that a machine cannot make for you.
 
-**"My model is 9 kilobytes. Does versioning really matter for something that small?"**
+**"My model is 10 kilobytes. Does versioning really matter for something that small?"**
 
-It matters *more*, because a 9-kilobyte file is a file you will overwrite without thinking. The whole cost of versioning is six characters in a filename. The cost of not versioning is discovering that the model that was working is gone and you changed four things since. **Six characters.**
+It matters *more*, because a 10-kilobyte file is a file you will overwrite without thinking. The whole cost of versioning is six characters in a filename. The cost of not versioning is discovering that the model that was working is gone and you changed four things since. **Six characters.**
 
 **"Everyone online says loading the model per request makes it 200 times slower. Our measurement says about 3 times. Who's wrong?"**
 
-**Nobody fully agrees on this, and here is why.** Both numbers are real, on different models. What people are usually measuring is the **cold start** — the first load in a fresh process, which on our artifact is 659 ms and is almost entirely Python importing scikit-learn, not reading 9 kilobytes off a disk. The *second* load in the same process takes 0.4 ms. So in a warm service, reloading per request costs about 0.4 ms against a 0.17 ms prediction — two or three times, not two hundred. On the Path B torch model the same experiment gives 7.3 times. On a 100-megabyte model it really is hundreds of times. **So the rule "load once at startup" is right, the reason usually given for it is wrong, and the only honest thing you can say in your demo is your own measured number.** A student who says *"three times on mine, and here's why it would be bigger on a bigger model"* is doing better engineering than one who quotes 200.
+**Nobody fully agrees on this, and here is why.** Both numbers are real, on different models. What people are usually measuring is the **cold start** — the first load in a fresh process, which on our artifact is 659 ms and is almost entirely Python importing scikit-learn, not reading 10 kilobytes off a disk. The *second* load in the same process takes 0.4 ms. So in a warm service, reloading per request costs about 0.4 ms against a 0.17 ms prediction — two or three times, not two hundred. On the Path B torch model the same experiment gives 7.3 times. On a 100-megabyte model it really is hundreds of times. **So the rule "load once at startup" is right, the reason usually given for it is wrong, and the only honest thing you can say in your demo is your own measured number.** A student who says *"three times on mine, and here's why it would be bigger on a bigger model"* is doing better engineering than one who quotes 200.
 
 **"Can I use `pytest` instead of writing my own eleven lines?"**
 
@@ -1158,7 +1160,7 @@ You can, and one day you should. Not this week. `pytest` hides the two things th
 | What happens | Why | What to do right now |
 |---|---|---|
 | **The class starts coding in the first ten minutes and the contract never gets written.** | Typing feels like progress and writing feels like homework. | **Laptops closed until minute 25.** Say it at the door. The contract sheet is face-down on the desk precisely so nothing else can start. |
-| **Everybody's box 5 says 0.5.** | They have not connected box 4 to box 5, because at 0.5 nothing has to be decided. | Stop the room. Do `10 × 1 + 1 × 1 = 11` against `10 × 0 + 1 × 5 = 5` on the board with the whole class saying it out loud. **Box 5 is not a number; it is a comparison.** |
+| **Everybody's box 5 says 0.5.** | They have not connected box 4 to box 5, because at 0.5 nothing has to be decided. | Stop the room. Do `10 × 1 + 1 × 0 = 10` against `10 × 0 + 1 × 4 = 4` on the board with the whole class saying it out loud. **Box 5 is not a number; it is a comparison.** |
 | **Box 6 says "anything illegal or unethical".** | It sounds responsible and costs nothing. | *"Name something a reasonable person would try on Tuesday."* Push until you get "deciding who gets banned" or "marking homework". **Content-free box 6 is the commonest failure of real model cards, not just school ones.** |
 | **Somebody saves `pipe.named_steps["logisticregression"]` because it is "the model".** | It is the model. It is not the artifact. | Let them hit `ValueError: Expected 2D array, got 1D array instead`. Then ask what happened to the vectorizer. **Week 3's lesson, relearned the fast way.** |
 | **The cold-start demo is run in the terminal they have been working in all lesson.** | It is the terminal that is already open. | Open a new window with a flourish. **The only cold start worth demonstrating is one that starts cold.** Make it theatre; they will remember it. |
@@ -1179,9 +1181,9 @@ You can, and one day you should. Not this week. `pytest` hides the two things th
 **The version of the maths that skips the algebra.** Box 5 without any sweeping. Two rows on paper, nothing else:
 
 ```
-if I cut at 0.50 :  1 nasty slips through, 1 nice one wasted    10 + 1  = 11
-if I cut at 0.55 :  0 nasty slip through, 5 nice ones wasted     0 + 5  =  5
-                                                          5 is less than 11
+if I cut at 0.50 :  1 nasty slips through, 0 nice ones wasted    10 + 0  = 10
+if I cut at 0.65 :  0 nasty slip through, 4 nice ones wasted     0 + 4  =  4
+                                                          4 is less than 10
 ```
 
 That is two additions and one comparison, and it is the entire idea. **No sweep, no curve, no rule of thumb.** They can still answer *"where did your threshold come from?"* with a sum, which is the objective.
@@ -1190,7 +1192,7 @@ That is two additions and one comparison, and it is the entire idea. **No sweep,
 
 ### If the student is flying
 
-1. **A `v2` they reject in writing.** Retrain with `--C 1.0 --version 2`, compare on the *same* test set at the *same* threshold, and write one paragraph rejecting it. The reference numbers: at the shipped threshold of 0.55, `C = 4.0` gives test **0.8750** and `C = 1.0` gives test **0.5625** with F1 collapsing to **0.2222** — and yet at a 0.50 cut both score 0.9375. **The reason is that a smaller `C` squashes every probability toward 0.5, so the threshold you chose for v1 no longer fits v2's scale.** A written rejection is stronger work than an unjustified upgrade and they should be told so.
+1. **A `v2` they reject in writing.** Retrain with `--C 1.0 --version 2`, compare on the *same* test set at the *same* threshold, and write one paragraph rejecting it. The reference numbers: at the shipped threshold of 0.65, `C = 4.0` gives test **0.8125** and `C = 1.0` gives test **0.5000** with F1 falling from **0.7692** to **0.0000** — and yet at a 0.50 cut both score 1.0000. **The reason is that a smaller `C` squashes every probability toward 0.5, so the threshold you chose for v1 no longer fits v2's scale.** A written rejection is stronger work than an unjustified upgrade and they should be told so.
 2. **The golden test that freezes a failure.** As in the harder variation above.
 3. **Measure the reload cost themselves** and settle the "200×" question with their own numbers. Two `perf_counter()` pairs, one loop. Then have them write the sentence they would say in the demo. **This is the best extension in the week because it ends in a true sentence nobody told them.**
 4. **A contract for a model with no threshold.** The digits CNN. Box 5 is empty because `argmax` has no dial. Ask them what replaces it — the answer is *a confidence floor*, and inventing that from scratch is genuinely good thinking.
@@ -1219,9 +1221,9 @@ Three checks, five minutes, exact wording.
 
 **Check 2 — where the threshold came from (spoken, 60 seconds)**
 
-> "Your threshold is 0.55. **Where did 0.55 come from?**"
+> "Your threshold is 0.65. **Where did 0.65 come from?**"
 
-*Good answer:* "From the cost sweep on the validation set. A nasty comment slipping through costs about ten times a nice one being read for nothing, so at 0.50 the cost was `10 × 1 + 1 × 1 = 11` and at 0.55 it was `10 × 0 + 1 × 5 = 5`. 0.55 is cheaper, so 0.55 ships — even though it costs me 19 points of accuracy, because accuracy prices both errors the same and I don't."
+*Good answer:* "From the cost sweep on the validation set. A nasty comment slipping through costs about ten times a nice one being read for nothing, so at 0.50 the cost was `10 × 1 + 1 × 0 = 10` and at 0.65 it was `10 × 0 + 1 × 4 = 4`. 0.65 is cheaper (0.70 ties it, and I take the lower of the two), so 0.65 ships — even though it costs me about 19 points of accuracy (0.9375 down to 0.7500), because accuracy prices both errors the same and I don't."
 
 **What to catch:** "it worked better". Push once: *"better at what, and what was the sum?"* **Full marks needs a multiplication and a comparison.**
 
@@ -1241,7 +1243,7 @@ Three checks, five minutes, exact wording.
 | **2 — Emerging** | All six boxes have writing in them, and box 4 names both errors in the language of the application. The artifact exists with a version in its filename. `predict.py` runs with help. Reports one latency number. |
 | **3 — Secure** | Six boxes, with a cost sum in box 5 and two specific tempting misuses in box 6. Three files in `artifacts/` including `LATEST`. `predict.py` runs from a brand-new terminal in any folder, the grep is empty, and they report **two** latency numbers with the right names. Three golden tests pass. **This is the target.** |
 | **4 — Strong** | Says out loud that the chosen threshold costs accuracy and why that is the right trade. Chose the three golden inputs by their distance from the threshold and can quote the closest gap. Wrote their own `FileNotFoundError` message so it names the command to run next. Noticed that most of the 659 ms is importing, not reading. |
-| **5 — Exceptional** | Trained a v2 and **rejected it in writing** on the same test set. Froze a known failure as a fourth golden test and justified it. Measured the reload cost themselves and can say why the internet's "200×" does not apply to a 9 KB artifact. Spotted that a ten-class model has no box 5 and proposed a confidence floor instead. |
+| **5 — Exceptional** | Trained a v2 and **rejected it in writing** on the same test set. Froze a known failure as a fourth golden test and justified it. Measured the reload cost themselves and can say why the internet's "200×" does not apply to a 10 KB artifact. Spotted that a ten-class model has no box 5 and proposed a confidence floor instead. |
 
 ---
 
@@ -1265,7 +1267,7 @@ Three checks, five minutes, exact wording.
 
 **Expected time:** 15 min tidying the contract · 15 min on the artifact page · 20 min on the golden tests · 10 min on the one-line command, honestly tested · **about 60 minutes**, plus 25 more for the stretch.
 
-> **🧑‍🏫 What to look for when you mark it:** four things. **One — is there a sum in box 5?** A number alone is not an answer to "where did the threshold come from". **Two — were the metadata fields copied from a file, or invented?** The tell is `created_utc`: a real one has a plausible date and time on it, an invented one is suspiciously round. **Three — does page 34.5 give a distance from the threshold for each golden test?** A student who picked three inputs at 0.51, 0.54 and 0.56 has built an alarm that will cry wolf, and saying so to them is worth more than a tick. **Four — did page 34.6's command actually get tested in a fresh terminal?** Ask them. The commonest failure is a command that only works from one folder, and it is invisible until somebody else tries it. **Next week's entire lesson assumes their artifact loads cold. Mark this page first, tonight, so you know on Monday who needs ten minutes of help before the bell.**
+> **🧑‍🏫 What to look for when you mark it:** four things. **One — is there a sum in box 5?** A number alone is not an answer to "where did the threshold come from". **Two — were the metadata fields copied from a file, or invented?** The tell is `created_utc`: a real one has a plausible date and time on it, an invented one is suspiciously round. **Three — does page 34.5 give a distance from the threshold for each golden test?** A student who picked three inputs at 0.63, 0.65 and 0.67 has built an alarm that will cry wolf, and saying so to them is worth more than a tick. **Four — did page 34.6's command actually get tested in a fresh terminal?** Ask them. The commonest failure is a command that only works from one folder, and it is invisible until somebody else tries it. **Next week's entire lesson assumes their artifact loads cold. Mark this page first, tonight, so you know on Monday who needs ten minutes of help before the bell.**
 
 ---
 
@@ -1418,16 +1420,16 @@ traps  : 12 (never trained on)
 
 > **🐞 If you see this error:** `ImportError: cannot import name 'load_corpus' from 'reviews'` — you copied the Week 33 file across but did not paste the function on the end. `train.py` and `subgroup_report.py` both import it, so both stop.
 
-> **⚠️ Watch out — about every number printed in this week and the next.** They came from **the reference corpus**, and **the eighty reviews reprinted above are not the reference eighty** — they are Week 33's, which is what your students will actually have. Week 33 already said this out loud, and it applies to every figure in Weeks 34 and 35: `0.6875`, `0.8750`, `0.643`, `0.385`, `0.867` and the rest **move by a row or two on a different eighty, and that is correct, not a bug.** What must reproduce is the *shape* of the finding: the held-out reviews score high, **the traps score near zero, and recall on the negation subgroup is `0.000`.** Say so before anybody concludes they have broken something — exactly as you did in Week 33.
+> **✅ Check — every number in Weeks 34 to 36 was measured by running the corpus reprinted above, exactly as printed.** Nothing was carried over from a different set of reviews, so your students' folders should match these digits to the last decimal (every figure derived from randomness is seeded). If a student's output differs, they have a typo or a different corpus, not a different correct answer.
 >
-> **And here are the real numbers for the corpus reprinted above, so you can check your own folder against something.** Run the three scripts in order and you get, exactly:
+> **Run the three scripts in order and you get, exactly:**
 >
 > ```text
 > $ python3 model/train.py
 > rows: train 48  val 16  test 16
 > baseline accuracy on val: 0.5000
-> val  accuracy at threshold 0.55: 0.8750
-> test n=16  accuracy=1.0000  f1(pos)=1.0000
+> val  accuracy at threshold 0.65: 0.7500
+> test n=16  accuracy=0.8125  f1(pos)=0.7692
 > wrote sentiment_v1.joblib (10 KB) + metadata; LATEST -> sentiment_v1
 >
 > $ python3 serve/tests.py
@@ -1435,20 +1437,20 @@ traps  : 12 (never trained on)
 > PASS expected=negative got=negative p=0.2110  <<cold food and a rude driver>>
 > PASS expected=negative got=negative p=0.2380  <<stale bread and awful coffee>>
 >
-> 3/3 passed  (model sentiment_v1, threshold 0.55)
+> 3/3 passed  (model sentiment_v1, threshold 0.65)
 >
 > $ python3 eval/subgroup_report.py
 > subgroup                     n   accuracy  precision  recall
-> ALL 28 labelled rows        28    0.679      0.727     0.571
-> the 16 test reviews         16    1.000      1.000     1.000
-> the 12 negation traps       12    0.250      0.000     0.000
-> contains a negation word    13    0.308      0.000     0.000
-> no negation word            15    1.000      1.000     1.000
-> short (5 words or fewer)     9    0.444      0.500     0.400   <- too small to conclude from
-> longer (6 words or more)    19    0.789      0.857     0.667
+> ALL 28 labelled rows        28    0.643      0.833     0.357
+> the 16 test reviews         16    0.812      1.000     0.625
+> the 12 negation traps       12    0.417      0.000     0.000
+> contains a negation word    13    0.462      0.000     0.000
+> no negation word            15    0.800      1.000     0.625
+> short (5 words or fewer)     9    0.556      0.667     0.400   <- too small to conclude from
+> longer (6 words or more)    19    0.684      1.000     0.333
 > ```
 >
-> **Put the two tables beside each other and read the last three rows of each.** Different corpus, different digits, **same three zeros**. That is the whole point of Week 35, and it is stronger evidence for being reproduced on two different corpora than it would be on one.
+> **Read the subgroup table.** The 16 test reviews score a respectable `0.812`, and the traps score `0.417` with recall `0.000`; the negation-word group scores `0.462`, also with recall `0.000`. A respectable headline sitting above those numbers is the whole point of Week 35.
 
 
 ### Page 34.1 — The contract, six boxes
@@ -1461,7 +1463,7 @@ Model answer for the reference project. **Accept any contract whose boxes are sp
 | **2 · input** | field `text`, a non-empty string, at most 100,000 bytes |
 | **3 · output** | `label` (one of `negative`, `positive`) · `probability` 0–1 · `threshold` · `model_version` · `latency_ms` |
 | **4 · the two errors, priced** | a nasty review marked positive is a nasty review nobody reads → **10**. A nice review marked negative is a moderator's ten seconds wasted → **1**. So the expensive error is about **10×** the cheap one, and I chose 10 by judgement, not measurement. |
-| **5 · the threshold** | `0.55`, from the cost sweep on the 16 validation rows: `10 × 1 + 1 × 1 = 11` at 0.50, `10 × 0 + 1 × 5 = 5` at 0.55, `10 × 0 + 1 × 7 = 7` at 0.65. Minimum at 0.55. Module 3's rule of thumb would say `10 ÷ 11 = 0.91`; the measurement disagrees because by 0.55 there are no expensive errors left to remove. **16 rows, so one row is worth 6.25 points — this is a decision on thin evidence and the card will say so.** |
+| **5 · the threshold** | `0.65`, from the cost sweep on the 16 validation rows: `10 × 1 + 1 × 0 = 10` at 0.50, `10 × 1 + 1 × 1 = 11` at 0.55, `10 × 0 + 1 × 4 = 4` at 0.65 and again at 0.70. Minimum 4; tied, so take the lower, 0.65. Module 3's rule of thumb would say `10 ÷ 11 = 0.91`; the measurement disagrees because by 0.65 there are no expensive errors left to remove. **16 rows, so one row is worth 6.25 points — this is a decision on thin evidence and the card will say so.** |
 | **6 · never used for** | (1) deciding who gets banned or muted — it outputs a suggestion, not a decision. (2) marking anybody's schoolwork. |
 
 **Marking notes.** **Box 5 must contain a `×` and an `=`.** Box 6 must name two things a reasonable person would try. Box 1 must be a countable noun. Boxes 2 and 3 are the easy marks and nearly everybody gets them.
@@ -1473,19 +1475,19 @@ Model answer for the reference project. **Accept any contract whose boxes are sp
 | t | nasty called positive | nice called negative | `10 × ` + `1 × ` | cost |
 |---:|---:|---:|---|---:|
 | 0.30 | 5 | 0 | `10 × 5 + 1 × 0` | **50** |
-| 0.40 | 2 | 0 | `10 × 2 + 1 × 0` | **20** |
-| 0.50 | 1 | 1 | `10 × 1 + 1 × 1` | **11** |
-| **0.55** | **0** | **5** | `10 × 0 + 1 × 5` | **5** ⬅ smallest |
-| 0.60 | 0 | 5 | `10 × 0 + 1 × 5` | **5** |
-| 0.65 | 0 | 7 | `10 × 0 + 1 × 7` | **7** |
-| 0.70 | 0 | 8 | `10 × 0 + 1 × 8` | **8** |
-| 0.80 | 0 | 8 | `10 × 0 + 1 × 8` | **8** |
+| 0.40 | 3 | 0 | `10 × 3 + 1 × 0` | **30** |
+| 0.50 | 1 | 0 | `10 × 1 + 1 × 0` | **10** |
+| 0.55 | 1 | 1 | `10 × 1 + 1 × 1` | **11** |
+| 0.60 | 1 | 3 | `10 × 1 + 1 × 3` | **13** |
+| **0.65** | **0** | **4** | `10 × 0 + 1 × 4` | **4** ⬅ smallest (tied with 0.70, lower taken) |
+| 0.70 | 0 | 4 | `10 × 0 + 1 × 4` | **4** |
+| 0.80 | 0 | 7 | `10 × 0 + 1 × 7` | **7** |
 
-**And the follow-up question: "0.55 and 0.60 tie at 5. Which do you ship?"**
+**And the follow-up question: "0.65 and 0.70 tie at 4. Which do you ship?"**
 
-**0.55**, and the reason is worth a mark: of two thresholds with the same cost, take the one that flags fewer things as negative, because every extra negative is a moderator's time. Accuracy agrees for once — 0.6875 at 0.55 against 0.6875 at 0.60 on these rows, so it cannot separate them, and the tie-break is a judgement you write down. **A student who notices the tie and breaks it with a stated reason is at level 4.**
+**0.65**, and the reason is worth a mark: of two thresholds with the same cost, take the lower one, because it flags fewer things as negative on rows nobody has seen yet, which keeps the most nice reviews flowing. Accuracy cannot separate them either — 0.7500 at 0.65 against 0.7500 at 0.70 on these rows, with identical mistakes — so the tie-break is a judgement you write down. **And the honest sentence that goes with it: this is 16 validation rows, and 0.50 had the best accuracy (0.9375) but one expensive error, so the choice rests on a single row.** **A student who notices the tie and breaks it with a stated reason is at level 4.**
 
-**Marking notes.** All eight cost cells, and the ring round 0.55. **The commonest error is multiplying the wrong column by 10** — catch it by asking which mistake was the expensive one.
+**Marking notes.** All eight cost cells, and the ring round 0.65. **The commonest error is multiplying the wrong column by 10** — catch it by asking which mistake was the expensive one.
 
 ### Page 34.3 — Predict the cold-start arithmetic, in pen
 
@@ -1497,9 +1499,9 @@ Model answer for the reference project. **Accept any contract whose boxes are sp
 | (b) the prediction | "half a second" | **0.38 ms** — about two thousandths of a second |
 | (c) the ratio | 2× or 10× | **about 1,880×**: `751.9 ÷ 0.4 ≈ 1,880` |
 
-**And the follow-up: "the artifact is 9,732 bytes. Why did loading it take 659 ms?"**
+**And the follow-up: "the artifact is 10,228 bytes. Why did loading it take 659 ms?"**
 
-Because `joblib.load` does not merely read 9,732 bytes; unpickling makes Python **import the scikit-learn machinery the file refers to** — the vectorizer, the logistic-regression class, the sparse-matrix code. Importing is the cost. The proof is that a **second** load of the same file in the same program takes **0.4 ms**.
+Because `joblib.load` does not merely read 10,228 bytes; unpickling makes Python **import the scikit-learn machinery the file refers to** — the vectorizer, the logistic-regression class, the sparse-matrix code. Importing is the cost. The proof is that a **second** load of the same file in the same program takes **0.4 ms**.
 
 **Marking notes.** **Present or absent for the predictions** — nearly everybody gets (c) wrong by a factor of a hundred, and that is the design. The follow-up is the marked part, and the words to look for are "importing", not "reading".
 
@@ -1508,15 +1510,15 @@ Because `joblib.load` does not merely read 9,732 bytes; unpickling makes Python 
 ```text
 $ ls -l model/artifacts/
 -rw-r--r--   13 LATEST
--rw-r--r-- 9732 sentiment_v1.joblib
--rw-r--r--  419 sentiment_v1.metadata.json
+-rw-r--r-- 10228 sentiment_v1.joblib
+-rw-r--r--   421 sentiment_v1.metadata.json
 ```
 
 | field | value | why it is in the file |
 |---|---|---|
 | `version` | `sentiment_v1` | so every prediction can name which model answered |
-| `threshold` | `0.55` | so the serving side never has to guess, and never hard-codes 0.5 |
-| `test_accuracy` | `0.875` | the headline number, measured once, on 16 rows |
+| `threshold` | `0.65` | so the serving side never has to guess, and never hard-codes 0.5 |
+| `test_accuracy` | `0.8125` | the headline number, measured once, on 16 rows |
 | `sklearn_version` | `1.7.1` | so "it broke after I updated my laptop" is a two-minute diagnosis |
 | `python_version` | `3.10.10` | same reason |
 | `created_utc` | e.g. `2026-09-18T17:47:14Z` | **the only field that is meant to differ from mine** |
@@ -1527,22 +1529,22 @@ $ ls -l model/artifacts/
 
 ### Page 34.5 — The three golden tests, and why those three
 
-| # | input | frozen answer | p | distance from 0.55 |
+| # | input | frozen answer | p | distance from 0.65 |
 |---|---|---|---:|---:|
-| 1 | `delicious fresh pizza and kind friendly staff` | positive | 0.7724 | `0.7724 − 0.55 = 0.2224` |
-| 2 | `cold food and a rude driver` | negative | 0.2896 | `0.55 − 0.2896 = 0.2604` |
-| 3 | `stale bread and awful coffee` | negative | 0.2044 | `0.55 − 0.2044 = 0.3456` |
+| 1 | `delicious fresh pizza and kind friendly staff` | positive | 0.7661 | `0.7661 − 0.65 = 0.1161` |
+| 2 | `cold food and a rude driver` | negative | 0.2110 | `0.65 − 0.2110 = 0.4390` |
+| 3 | `stale bread and awful coffee` | negative | 0.2380 | `0.65 − 0.2380 = 0.4120` |
 
-**Most fragile:** number 1, at 0.2224 clear. **What its flipping would mean:** either the vocabulary changed (a retrain on different reviews), or the preparation broke (something stopped lowercasing, or the bigrams got turned off), or the threshold moved. **All three are things you want to hear about within five seconds.**
+**Most fragile:** number 1, at 0.1161 clear. **What its flipping would mean:** either the vocabulary changed (a retrain on different reviews), or the preparation broke (something stopped lowercasing, or the bigrams got turned off), or the threshold moved. **All three are things you want to hear about within five seconds.**
 
 **And the real run:**
 
 ```text
-PASS expected=positive got=positive p=0.7724  <<delicious fresh pizza and kind friendly staff>>
-PASS expected=negative got=negative p=0.2896  <<cold food and a rude driver>>
-PASS expected=negative got=negative p=0.2044  <<stale bread and awful coffee>>
+PASS expected=positive got=positive p=0.7661  <<delicious fresh pizza and kind friendly staff>>
+PASS expected=negative got=negative p=0.2110  <<cold food and a rude driver>>
+PASS expected=negative got=negative p=0.2380  <<stale bread and awful coffee>>
 
-3/3 passed  (model sentiment_v1, threshold 0.55)
+3/3 passed  (model sentiment_v1, threshold 0.65)
 ```
 
 **Marking notes.** **The distance column is the marked part.** Three inputs clustered near the threshold is the failure mode; say so directly. Also check they ran `echo $?` and saw `0` — and that they know it prints `1` when a test fails, because that number is how one program tells another that something is wrong.
@@ -1554,7 +1556,7 @@ python3 serve/predict.py "the pizza was hot and delicious"
 ```
 
 ```text
-positive p=0.6991  (threshold 0.55, model sentiment_v1, 0.38 ms, loaded in 650 ms)
+positive p=0.7450  (threshold 0.65, model sentiment_v1, 0.38 ms, loaded in 650 ms)
 ```
 
 **Marking notes.** One line. **Check three things.** Is it in quotes? Does it work from the project root *and* from `/`? And did they actually open a fresh terminal to test it — ask, and watch the face. The commonest real failure is `python predict.py` (wrong interpreter name, or wrong folder), and it is invisible until a stranger tries it. **This is the page that decides whether next week's lesson starts on time.**
@@ -1565,40 +1567,40 @@ positive p=0.6991  (threshold 0.55, model sentiment_v1, 0.38 ms, loaded in 650 m
 $ python3 model/train.py --version 2 --C 1.0
 rows: train 48  val 16  test 16
 baseline accuracy on val: 0.5000
-val  accuracy at threshold 0.55: 0.5625
-test n=16  accuracy=0.5625  f1(pos)=0.2222
+val  accuracy at threshold 0.65: 0.5000
+test n=16  accuracy=0.5000  f1(pos)=0.0000
 wrote sentiment_v2.joblib (10 KB) + metadata; LATEST -> sentiment_v2
 ```
 
-**The comparison table, both models on the same 16 test rows, at the shipped threshold of 0.55:**
+**The comparison table, both models on the same 16 test rows, at the shipped threshold of 0.65:**
 
 | version | change | val accuracy | test accuracy | test F1 (pos) | cost on val |
 |---|---|---:|---:|---:|---:|
-| `sentiment_v1` | `C = 4.0` | **0.6875** | **0.8750** | **0.8750** | **5** |
-| `sentiment_v2` | `C = 1.0` | 0.5625 | 0.5625 | 0.2222 | 7 |
+| `sentiment_v1` | `C = 4.0` | **0.7500** | **0.8125** | **0.7692** | **4** |
+| `sentiment_v2` | `C = 1.0` | 0.5000 | 0.5000 | 0.0000 | 8 |
 
-**And the diagnosis, which is the interesting part.** `C = 1.0` is not a worse *model* — at a threshold of 0.50 it scores `0.9375` on test, exactly what v1 scores there. What changed is the **probability scale**: a smaller `C` squashes every probability toward 0.5, so a threshold of 0.55 that was comfortable for v1 now cuts straight through v2's positives. `the pizza was hot and delicious` drops from `0.6991` to `0.5806`. Re-running the cost sweep on v2's own probabilities still picks `0.55`, and its cost there is **7 against v1's 5**, so v2 loses on its own terms too.
+**And the diagnosis, which is the interesting part.** `C = 1.0` is not a worse *model* — at a threshold of 0.50 it scores `1.0000` on test, exactly what v1 scores there. What changed is the **probability scale**: a smaller `C` squashes every probability toward 0.5, so a threshold of 0.65 that suited v1 now sits above every one of v2's probabilities that matters: v2 labels all 16 test reviews negative, which is why its F1 is `0.0000`. `the pizza was hot and delicious` drops from `0.7450` to `0.6134`, under the line. At the shipped threshold of 0.65 v2's cost on the validation rows is **8 against v1's 4**, so v2 loses on the shipped terms too. Re-running the sweep on v2's own probabilities would pick `0.60`, at cost 5 (on the same 0.05 grid: 10 at 0.50, 14 at 0.55, 5 at 0.60, 8 at 0.65) — and even then v2 costs 5 against v1's 4, and scores `0.6250` on test against v1's `0.8125`.
 
 And watch what happens to the golden-test margins:
 
 | # | p under v1 | margin | p under v2 | margin |
 |---|---:|---:|---:|---:|
-| 1 | 0.7724 | 0.2224 | 0.6167 | **0.0667** |
-| 2 | 0.2896 | 0.2604 | 0.4089 | 0.1411 |
-| 3 | 0.2044 | 0.3456 | 0.3627 | 0.1873 |
+| 1 | 0.7661 | 0.1161 | 0.6198 | **−0.0302** (wrong side) |
+| 2 | 0.2110 | 0.4390 | 0.3635 | 0.2865 |
+| 3 | 0.2380 | 0.4120 | 0.3818 | 0.2682 |
 
-**All three still pass. All three got three to four times closer to the line.** A test that passes by 0.0667 is a test about to become an alarm.
+**Under v2, golden test 1 FAILS** — `2/3 passed (model sentiment_v2, threshold 0.65)` — because `0.6198` is below the line. The other two pass but got closer to it. That is the golden tests doing their job: the swap would have been caught in five seconds.
 
 **The model rejection paragraph:**
 
-> "I reject `sentiment_v2` (`C = 1.0`). On the same 16 test rows, at my shipped threshold of 0.55, it scores `0.5625` against v1's `0.8750`, and its positive-class F1 collapses from `0.8750` to `0.2222`. The cause is not that it learned less — at a 0.50 cut both score `0.9375` — but that a smaller `C` squashes the probabilities toward 0.5, so my threshold now cuts through its positives. Re-choosing the threshold on v2's own validation probabilities still lands on 0.55, and its cost there is 7 against v1's 5, so it loses on its own terms. My three golden tests still pass, but the closest margin falls from 0.2224 to 0.0667, which means every future decision would be more fragile. **`LATEST` goes back to `sentiment_v1`, and this paragraph is why.**"
+> "I reject `sentiment_v2` (`C = 1.0`). On the same 16 test rows, at my shipped threshold of 0.65, it scores `0.5000` against v1's `0.8125`, and its positive-class F1 falls from `0.7692` to `0.0000`. The cause is not that it learned less — at a 0.50 cut both score `1.0000` — but that a smaller `C` squashes the probabilities toward 0.5, so my threshold now cuts through its positives. At 0.65 its cost on the validation rows is 8 against v1's 4, so it loses at the shipped threshold, and even at its own best threshold (0.60, cost 5) it still loses. Golden test 1 fails outright (0.6198 against a line at 0.65), so the swap would have broken the contract on day one. **`LATEST` goes back to `sentiment_v1`, and this paragraph is why.**"
 
 **And the last step, which is the actual skill:**
 
 ```bash
 $ echo "sentiment_v1" > model/artifacts/LATEST
 $ python3 tests.py
-3/3 passed  (model sentiment_v1, threshold 0.55)
+3/3 passed  (model sentiment_v1, threshold 0.65)
 ```
 
 **Marking notes.** **The rejection paragraph is the whole page.** It must name the same test set, quote both numbers, and say what was given up. A student who ships v2 because it is newer has missed it; a student who rejects v2, rolls `LATEST` back and re-runs the golden tests has done a real engineering day's work. **And a student who spots that the threshold belongs to a probability scale — so a new `C` invalidates the old threshold — is at level 5 and should be told so out loud.**
@@ -1633,7 +1635,7 @@ digit 0   p=0.9996  (model digits_v1, 0.83 ms, loaded in 4 ms)
 
 **Concept — "what is a false positive, in the language of the forum?"** A nasty comment marked positive, which means a nasty comment nobody reads.
 
-**Concept — "cost at 0.50?"** `10 × 1 + 1 × 1 = 11`. **"At 0.55?"** `10 × 0 + 1 × 5 = 5`. **"So ship?"** 0.55.
+**Concept — "cost at 0.50?"** `10 × 1 + 1 × 0 = 10`. **"At 0.65?"** `10 × 0 + 1 × 4 = 4`. **"0.65 and 0.70 tie — so ship?"** 0.65, the lower of the tied thresholds.
 
 **Concept — "we chose the threshold that makes accuracy 19 points worse. Are we mad?"** No: accuracy prices both errors the same, and we wrote down that they differ by 10×. Once the prices are written, accuracy is measuring something we have said we do not care about equally.
 
@@ -1641,12 +1643,12 @@ digit 0   p=0.9996  (model digits_v1, 0.83 ms, loaded in 4 ms)
 
 **Live-code — "why did it take `cold` and refuse the rest?"** The shell split the sentence at the spaces, so `argparse` received six arguments where one was expected. The quotes are what make six words into one argument.
 
-**Wrap — "which golden test is most fragile?"** Number 1, `0.7724 − 0.55 = 0.2224` clear of the threshold.
+**Wrap — "which golden test is most fragile?"** Number 1, `0.7661 − 0.65 = 0.1161` clear of the threshold.
 
 ---
 
 ## 🔮 Next Week Preview
 
-Next week the artifact stops being a file on your own disk and becomes something a stranger can reach: a **service**. About forty lines, using nothing but the standard library — no Flask, no installs, nothing to download — bound to `127.0.0.1` so that only your own machine can reach it, and they will be able to say why that matters. Then the interesting half, which is what happens *after* the prediction: **every request gets a line in a log file** with its input, its output and its latency, and they read their own log back as data and compute the **p95** — the time 95 percent of requests came in under. Then the activity that students remember for years: **Break Each Other's Service.** Laptops swap, and everybody sends four pieces of deliberate rubbish at somebody else's service — an empty body, broken JSON, the wrong field name, the right field with a number in it. Every crash goes on the board as a **finding, not a failure**, and gets fixed before the bell. Then the subgroup table, where the headline `0.875` turns out to be hiding a group the model scores `0.385` on.
+Next week the artifact stops being a file on your own disk and becomes something a stranger can reach: a **service**. About forty lines, using nothing but the standard library — no Flask, no installs, nothing to download — bound to `127.0.0.1` so that only your own machine can reach it, and they will be able to say why that matters. Then the interesting half, which is what happens *after* the prediction: **every request gets a line in a log file** with its input, its output and its latency, and they read their own log back as data and compute the **p95** — the time 95 percent of requests came in under. Then the activity that students remember for years: **Break Each Other's Service.** Laptops swap, and everybody sends four pieces of deliberate rubbish at somebody else's service — an empty body, broken JSON, the wrong field name, the right field with a number in it. Every crash goes on the board as a **finding, not a failure**, and gets fixed before the bell. Then the subgroup table, where a respectable `0.812` headline on the 16 test reviews turns out to be hiding a group — the reviews containing a negation word — that the model scores `0.462` on, with recall `0.000`.
 
 **To prep early:** four things. **One — mark page 34.6 tonight**, not at the weekend. Next week's lesson cannot start until every student's artifact loads from a cold terminal, and you want to know on Monday morning who needs ten minutes of help, not at minute four. **Two — check that `curl` exists on the machines** (`curl --version` in a terminal). It ships with macOS and most Linux; on Windows check whether it is `curl` or `curl.exe` in their terminal, and find out tonight rather than in front of the class. **Three — decide how laptops will physically swap** for the Break Each Other's Service activity, and whether it is pairs or a rotation; write the pairing on the board before they arrive, because choosing partners live costs six minutes. **Four — put up a fresh wall sheet headed FINDINGS**, with four blank rows. Every crash that happens next week gets written on it, in the finder's handwriting, and the word "failure" is banned from that sheet.

@@ -30,7 +30,7 @@ ________________________________________________________________
 
 1 ____________________ 2 ____________________ 3 ____________________ 4 ____________________
 
-**W5.** `0.867` on 15 rows and `0.385` on 13 rows. **What single number was hiding both, and what is the one thing every row of a subgroup table must carry?**
+**W5.** `0.800` on 15 rows and `0.462` on 13 rows. **What single number was hiding both, and what is the one thing every row of a subgroup table must carry?**
 
 ________  ______________
 
@@ -780,7 +780,7 @@ ________________________________________________________________
 ![Draw it: the year in one page, with its numbers](../figures/fig-w36-8-draw-frame.svg)
 *Figure W36.2 — The year in one page, with its numbers.*
 
-**What a good answer looks like:** **four boxes, one per term, and inside each box the ONE sum that term turned on** — written out in full, not named. Term 1: `4 ÷ 57 = 0.070`, with `accuracy 0.9908` written beside it and a line through the accuracy. Term 2: `3.0 ÷ 0.5 = 6` and `3 × 14 = 42`. Term 3: `1 × 10 + 2 × 50 = 110` and `80 + 1168 + 650 = 1898`. Term 4: `ln(5 ÷ 2) + 1 = 1.916` and your own `0.875 on 16 rows`.
+**What a good answer looks like:** **four boxes, one per term, and inside each box the ONE sum that term turned on** — written out in full, not named. Term 1: `4 ÷ 57 = 0.070`, with `accuracy 0.9908` written beside it and a line through the accuracy. Term 2: `3.0 ÷ 0.5 = 6` and `3 × 14 = 42`. Term 3: `1 × 10 + 2 × 50 = 110` and `80 + 1168 + 650 = 1898`. Term 4: `ln(5 ÷ 2) + 1 = 1.916` and your own `0.8125 on 16 rows`.
 
 Down the right-hand side, **the ladder of seven gates with an honest tick or cross on every rung** — and a drawing with seven ticks is a drawing nobody will believe.
 
@@ -847,7 +847,7 @@ T3 ________________________  T4 ________________________
 
 **W4.** 1 *is there a body* · 2 *is it JSON* · 3 *has it the field* · 4 *is the field a non-empty string*.
 
-**W5.** The `0.643` overall — or the `0.875` on the card, depending which one they quoted. Every row of a subgroup table must carry its **`n`**.
+**W5.** The `0.643` overall (`18 ÷ 28`) — or the `0.8125` on the card, depending which one they quoted. Every row of a subgroup table must carry its **`n`**.
 
 ---
 
@@ -1312,7 +1312,7 @@ model            : tiny_v1   (threshold 0.60)
 
 **T1 — model answer.**
 
-> "Showing the failure is the strongest thing in the demo, and the reason is that **anybody can hide one.** A demo where everything works tells the room one fact: that I chose the inputs. A demo where I say *'this is a positive review, it will call it negative, at about 0.198, because `boring` is a strong negative feature and `not` is nearly weightless'* — and then it does — tells them something else entirely.
+> "Showing the failure is the strongest thing in the demo, and the reason is that **anybody can hide one.** A demo where everything works tells the room one fact: that I chose the inputs. A demo where I say *'this is a positive review, it will call it negative, at about 0.49, because `boring` is a strong negative feature and `not` is nearly weightless'* — and then it does — tells them something else entirely.
 >
 > **What it proves is about me, not the model: that I know where the edges are.** A model with a known failure is usable, because you can work around a thing you can name. A model with an unknown failure is a trap, and the person who will fall into it is whoever trusted me. Predicting the failure *in advance* is the part that does the work: it turns 'I found a bug' into 'I understand the mechanism well enough to forecast it', and there is no way to fake that in front of a room."
 
@@ -1342,7 +1342,7 @@ model            : tiny_v1   (threshold 0.60)
 | "real-time" | "the **p95 is 0.28 ms** over 111 logged requests" |
 | "99% accurate" | **nothing. Say a real number with its `n` and its baseline.** |
 
-**"99% accurate" is the one that should make you wince**, because on a table that is 1% positive, predicting "no" every single time scores 99%. **99% can be the number you get for doing nothing.** And note that **"accurate" *with* a number is fine** — `0.875 on 16 held-out rows` is a good sentence. The test for any phrase: **could somebody check it?**
+**"99% accurate" is the one that should make you wince**, because on a table that is 1% positive, predicting "no" every single time scores 99%. **99% can be the number you get for doing nothing.** And note that **"accurate" *with* a number is fine** — `0.8125 on 16 held-out rows` is a good sentence. The test for any phrase: **could somebody check it?**
 
 **36.6 — the gate self-check.** There is no right answer to mark against; there is a right **behaviour**. Three things a marker looks at. **One — is there at least one honest blank?** A sheet with seven ticks is either a remarkable student or an unread sheet. **Two — do the two "things I would revisit" match the evidence?** Naming gate 5 after scoring badly on Part C is reading your own result correctly, and that is the skill. **Three — gate 2 is the one that can be verified from Weeks 34 and 35**, and it is the one that matters most for Level 4, because Level 4's evaluation work is built directly on the capstone.
 

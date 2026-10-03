@@ -26,7 +26,7 @@
 A program is sitting on your laptop doing nothing at all. It is *listening*.
 
 ```text
-loaded sentiment_v1 in 610 ms (threshold 0.55)
+loaded sentiment_v1 in 610 ms (threshold 0.65)
 serving on http://127.0.0.1:8010   (Ctrl+C to stop)
 ```
 
@@ -36,7 +36,7 @@ Last week you froze a model into a file and wrote a tool that reads it. **The to
 $ curl -s -X POST http://127.0.0.1:8010/predict \
      -H 'Content-Type: application/json' \
      -d '{"text": "delicious fresh pizza and kind friendly staff"}'
-{"model_version": "sentiment_v1", "input": "delicious fresh pizza and kind friendly staff", "label": "positive", "probability": 0.7724, "threshold": 0.55, "latency_ms": 1.06}
+{"model_version": "sentiment_v1", "input": "delicious fresh pizza and kind friendly staff", "label": "positive", "probability": 0.7661, "threshold": 0.65, "latency_ms": 1.06}
 ```
 
 **There are the five fields from box 3 of your contract, over a wire.** Now watch four pieces of deliberate rubbish go in, and **count the crashes**:
@@ -59,7 +59,7 @@ $ curl -s -X POST http://127.0.0.1:8010/predict -d '{"text": 42}'
 
 ```text
 $ curl -s http://127.0.0.1:8010/health
-{"status": "ok", "model_version": "sentiment_v1", "threshold": 0.55, "classes": ["negative", "positive"], "load_ms": 609.7}
+{"status": "ok", "model_version": "sentiment_v1", "threshold": 0.65, "classes": ["negative", "positive"], "load_ms": 609.7}
 ```
 
 **Still alive.** Four pieces of garbage, four clear refusals, and it answered a fifth time. Look at *what* each refusal did: it said what was wrong **and what to send instead.** The third one even gave a worked example. **That is the difference between an experiment and something a person can use.**
@@ -177,7 +177,7 @@ The second one can be acted on **without asking you anything.** This is the easi
 The format is called **JSON Lines**: one JSON object per line. A human can read it, a program can parse it, and you can append to it forever without rewriting what is already there.
 
 ```text
-{"model_version": "sentiment_v1", "input": "delicious fresh pizza and kind friendly staff", "label": "positive", "probability": 0.7724, "threshold": 0.55, "latency_ms": 1.06, "input_chars": 45}
+{"model_version": "sentiment_v1", "input": "delicious fresh pizza and kind friendly staff", "label": "positive", "probability": 0.7661, "threshold": 0.65, "latency_ms": 1.06, "input_chars": 45}
 ```
 
 **Count the fields, and ask what each one is for.**
@@ -192,7 +192,7 @@ The format is called **JSON Lines**: one JSON object per line. A human can read 
 
 **Those are the four questions from the start of Week 34.** The log is not a diary you write when something goes wrong. It is the data file that makes the questions answerable **before** anybody asks them.
 
-> **💡 Try this:** open your own log in a text editor and read one line out loud as a sentence. *"Version sentiment_v1 was 77 per cent sure this was positive, against a threshold of 55 per cent, and it took one millisecond."* If your line cannot be read as a sentence like that, a field is missing.
+> **💡 Try this:** open your own log in a text editor and read one line out loud as a sentence. *"Version sentiment_v1 was 77 per cent sure this was positive, against a threshold of 65 per cent, and it took one millisecond."* If your line cannot be read as a sentence like that, a field is missing.
 
 ### 5. What one number was hiding
 
@@ -200,33 +200,33 @@ This is the part of the week that matters most and takes the least code.
 
 > **Subgroup metrics** — the same metric, computed separately for groups of rows you chose on purpose, with the **size of each group printed beside it**.
 
-The model's headline is `0.875` on 16 held-out reviews. Now take 28 labelled rows — those 16 plus the 12 negation traps from Week 33 — and split them by whether the review contains one of seven negation words (`not`, `never`, `hardly`, `cannot`, `no`, `nothing`, `far`):
+The model's headline is `0.812` on 16 held-out reviews (13 right out of 16, at the 0.65 threshold you shipped in Week 34) — a respectable score. Now take 28 labelled rows — those 16 plus the 12 negation traps from Week 33 — and split them by whether the review contains one of seven negation words (`not`, `never`, `hardly`, `cannot`, `no`, `nothing`, `far`):
 
 ```text
 subgroup                     n   accuracy  precision  recall
-ALL 28 labelled rows        28    0.643      0.700     0.500
-the 16 test reviews         16    0.875      0.875     0.875
-the 12 negation traps       12    0.333      0.000     0.000
-contains a negation word    13    0.385      0.000     0.000
-no negation word            15    0.867      0.875     0.875
-short (5 words or fewer)    13    0.538      0.667     0.500
-longer (6 words or more)    15    0.733      0.750     0.500
+ALL 28 labelled rows        28    0.643      0.833     0.357
+the 16 test reviews         16    0.812      1.000     0.625
+the 12 negation traps       12    0.417      0.000     0.000
+contains a negation word    13    0.462      0.000     0.000
+no negation word            15    0.800      1.000     0.625
+short (5 words or fewer)     9    0.556      0.667     0.400   <- too small to conclude from
+longer (6 words or more)    19    0.684      1.000     0.333
 ```
 
-**Read row four slowly.** On the 13 rows containing a negation word, accuracy is `0.385` and **recall on the positive class is `0.000`.** Not "lower". Not "worse". **Zero.** There were six genuinely positive reviews in that group and the model found **none** of them.
+**Read row four slowly.** On the 13 rows containing a negation word, accuracy is `0.462` and **recall on the positive class is `0.000`.** Not "lower". Not "worse". **Zero** — under a respectable headline of `0.812`, and against a recall of `0.625` on the rows with no negation word. There were six genuinely positive reviews in that group and the model found **none** of them.
 
 ![What the one number was hiding](../figures/fig-w35-4-subgroup-metrics-hiding-behind-one-number.svg)
-*Figure 35.3 — What the one number was hiding. `0.875` on the 16 held-out reviews, and `0.385` on the 13 rows that contain a negation word, where recall on the positive class is `0 ÷ 6 = 0.000`.*
+*Figure 35.3 — What the one number was hiding. `0.812` on the 16 held-out reviews, and `0.462` on the 13 rows that contain a negation word, where recall on the positive class is `0 ÷ 6 = 0.000`.*
 
 **Two pieces of honesty that separate a real card from a school exercise:**
 
 **One — every group carries its `n`, and anything under about ten carries the words "too small to conclude from".** `1.000` on four rows is not "perfect"; it is four rows, and one flip takes it to 0.750.
 
-**Two — the negation traps were written on purpose to break the model, so `0.333` is not an estimate of anything.** It is a *demonstration that a mechanism exists*. **The honest claim is about the mechanism, not the rate:**
+**Two — the negation traps were written on purpose to break the model, so `0.417` is not an estimate of anything.** It is a *demonstration that a mechanism exists*. **The honest claim is about the mechanism, not the rate:**
 
 > *"Bag-of-words throws away word order, so `not` is a weak feature that cannot flip `delicious`. Here are 13 rows where that is visible — and I chose them to be visible."*
 
-**And here is why this failure is satisfying rather than depressing.** Week 31 told you bag-of-words throws away word order. Week 32 told you `not` ends up nearly weightless. That was *theory*. This is your own service, on your own held-out rows, showing the exact failure the theory predicted. **A prediction made from theory and confirmed by evidence in your own log is the strongest thing you can put in a model card**, and almost no professional card contains one.
+**And here is why this failure is satisfying rather than depressing.** Week 31 told you bag-of-words throws away word order. Week 32 told you `not` ends up nearly weightless; in this model it is weaker still, because `not` is not among the 287 words it knows at all. That was *theory*. This is your own service, on your own held-out rows, showing the exact failure the theory predicted. **A prediction made from theory and confirmed by evidence in your own log is the strongest thing you can put in a model card**, and almost no professional card contains one.
 
 ### 6. Monitoring, when nobody ever tells you the answer
 
@@ -243,23 +243,23 @@ A comment goes through your classifier, gets a label, and then… nothing. No tr
 
 Two that work for this model, both measured:
 
-**The uncertainty-band rate** — the share of predictions whose probability falls between 0.45 and 0.65, near the fence, where the model is least sure. Straight out of the log, no labels:
+**The uncertainty-band rate** — the share of predictions whose probability falls between 0.45 and 0.65, around the 50-50 point, where the model is least sure. Straight out of the log, no labels:
 
 ```text
-in the 0.45-0.65 uncertainty band: 30 of 111 (27.0%)
+in the 0.45-0.65 uncertainty band: 16 of 111 (14.4%)
 ```
 
-**The out-of-vocabulary rate** — the share of an input's tokens the vectorizer has never seen. The vocabulary is **271** items, and here is what it does:
+**The out-of-vocabulary rate** — the share of an input's tokens the vectorizer has never seen. The vocabulary is **287** items, and here is what it does:
 
 ```text
 0.1111   1 of 9 tokens unknown   cold food and a rude driver
-0.8000   12 of 15 tokens unknown   the biryani was absolutely banging fam no cap
+0.8667   13 of 15 tokens unknown   the biryani was absolutely banging fam no cap
 1.0000   9 of 9 tokens unknown   lorem ipsum dolor sit amet
 ```
 
 **Why that number degrades for *this* model, specifically.** It is TF-IDF. A word the vectorizer has never seen contributes **exactly nothing** — it is silently dropped. So a rising out-of-vocabulary rate means a rising share of every input is *invisible* to the model, and the probability drifts towards the middle. **That is a mechanism, not a vibe, and naming the mechanism is what lifts a monitoring plan a whole level.**
 
-> **⚠️ Watch out:** the band rate over 111 logged requests is `27.0%`. On the 16 test reviews it is `10 of 16 = 62.5%`. **Wildly different, and neither is wrong** — they are different traffic. **A baseline has to come from the traffic you are actually going to watch**, which means you cannot write the alarm level until you have logged some real requests.
+> **⚠️ Watch out:** the band rate over 111 logged requests is `14.4%`. On the 16 test reviews it is `3 of 16 = 18.8%`. **Different, and neither is wrong** — they are different traffic. **A baseline has to come from the traffic you are actually going to watch**, which means you cannot write the alarm level until you have logged some real requests.
 
 ---
 
@@ -315,13 +315,13 @@ np.percentile([3.27, 0.38, 0.31, 0.27, 0.27], 95)  ->  2.6919999999999993
 The subgroup table is nothing but division. Do it by hand and check it closes:
 
 ```
-negation group    :  5 right of 13   ->   5 ÷ 13 = 0.3846 -> 0.385
+negation group    :  6 right of 13   ->   6 ÷ 13 = 0.4615 -> 0.462
                      TP = 0, FN = 6  ->   recall  0 ÷ 6  = 0.000
-no-negation group : 13 right of 15   ->  13 ÷ 15 = 0.8667 -> 0.867
-                     TP = 7, FN = 1  ->   recall  7 ÷ 8  = 0.875
+no-negation group : 12 right of 15   ->  12 ÷ 15 = 0.8000 -> 0.800
+                     TP = 5, FN = 3  ->   recall  5 ÷ 8  = 0.625
 
 both groups       :  13 + 15 = 28   ✅  every row is in exactly one group
-right answers     :   5 + 13 = 18   ✅
+right answers     :   6 + 12 = 18   ✅
 overall           :  18 ÷ 28 = 0.6429 -> 0.643   ✅ matches the ALL row
 ```
 
@@ -415,13 +415,13 @@ Three arguments to `basicConfig`, each doing one job:
 
 ```text
 $ python3 serve/service.py --port 8010
-loaded sentiment_v1 in 610 ms (threshold 0.55)
+loaded sentiment_v1 in 610 ms (threshold 0.65)
 serving on http://127.0.0.1:8010   (Ctrl+C to stop)
 ```
 
 ```text
 $ curl -s http://127.0.0.1:8010/health
-{"status": "ok", "model_version": "sentiment_v1", "threshold": 0.55, "classes": ["negative", "positive"], "load_ms": 609.7}
+{"status": "ok", "model_version": "sentiment_v1", "threshold": 0.65, "classes": ["negative", "positive"], "load_ms": 609.7}
 ```
 
 **A health endpoint costs six lines and is the first thing anybody checks.** Notice what it returns: **which model, which threshold, and how long it took to load.** Those three facts are what a person needs before they trust a single answer.
@@ -555,19 +555,19 @@ print("in the 0.45-0.65 uncertainty band: %d of %d (%.1f%%)"
       % (band, len(rows), 100.0 * band / len(rows)))
 ```
 
-**With the log at 111 lines, on the laptop this chapter was written on:**
+**With the log at 111 lines, on the laptop this chapter was written on.** (The 111 were, in order: the one request from the start of the chapter, the cold-food request twenty times, the 80 reviews from `reviews.py`, four odd ones — `the biryani was absolutely banging fam no cap`, `lorem ipsum dolor sit amet`, `it was fine i suppose`, `not cold not rude` — and the first six negation traps. Your traffic will differ, so your counts will too; the latency lines will differ even for the same traffic.)
 
 ```text
 $ python3 eval/read_logs.py
 requests        : 111
 by version      : {'sentiment_v1': 111}
-by label        : {'negative': 65, 'positive': 46}
+by label        : {'negative': 76, 'positive': 35}
 latency mean    : 0.23 ms
 latency p50     : 0.21 ms
 latency p95     : 0.28 ms
 latency max     : 1.06 ms
-mean probability: 0.4978
-in the 0.45-0.65 uncertainty band: 30 of 111 (27.0%)
+mean probability: 0.4546
+in the 0.45-0.65 uncertainty band: 16 of 111 (14.4%)
 ```
 
 **Four latency numbers, four different jobs:**
@@ -583,7 +583,7 @@ in the 0.45-0.65 uncertainty band: 30 of 111 (27.0%)
 
 > **⚠️ Watch out:** **latency is the one kind of number in this course that will not reproduce.** Your four numbers will differ from mine and that is correct. Report *yours*, and say which laptop they came from.
 
-And the honest count check: **`65 + 46 = 111`** ✅.
+And the honest count check: **`76 + 35 = 111`** ✅.
 
 ### Step 7 — the subgroup report
 
@@ -623,13 +623,13 @@ def report(name, keep):
 ```text
 $ python3 eval/subgroup_report.py
 subgroup                     n   accuracy  precision  recall
-ALL 28 labelled rows        28    0.643      0.700     0.500
-the 16 test reviews         16    0.875      0.875     0.875
-the 12 negation traps       12    0.333      0.000     0.000
-contains a negation word    13    0.385      0.000     0.000
-no negation word            15    0.867      0.875     0.875
-short (5 words or fewer)    13    0.538      0.667     0.500
-longer (6 words or more)    15    0.733      0.750     0.500
+ALL 28 labelled rows        28    0.643      0.833     0.357
+the 16 test reviews         16    0.812      1.000     0.625
+the 12 negation traps       12    0.417      0.000     0.000
+contains a negation word    13    0.462      0.000     0.000
+no negation word            15    0.800      1.000     0.625
+short (5 words or fewer)     9    0.556      0.667     0.400   <- too small to conclude from
+longer (6 words or more)    19    0.684      1.000     0.333
 ```
 
 **That `note` line — the one that prints `too small to conclude from` under ten rows — is four lines of code and it is the most honest thing in the file.**
@@ -842,7 +842,7 @@ Four attacks are the homework. Here are eight, all real, run against the service
 
 ```text
 $ curl -s http://127.0.0.1:8010/health
-{"status": "ok", "model_version": "sentiment_v1", "threshold": 0.55, "classes": ["negative", "positive"], "load_ms": 609.7}
+{"status": "ok", "model_version": "sentiment_v1", "threshold": 0.65, "classes": ["negative", "positive"], "load_ms": 609.7}
 
 $ wc -l logs/predictions.jsonl
        1 logs/predictions.jsonl
@@ -854,18 +854,18 @@ Two of those eight deserve a sentence each.
 
 **Number 5 is the sneakiest.** `"   "` passes `isinstance(text, str)` and has length 3. It is only caught because of `.strip()`. Left out, the model would cheerfully score three spaces and return a confident-looking answer.
 
-**Number 7 needs its limit justified.** Why 100,000 bytes? **Because the longest review in the training corpus is 55 characters**, so 100,000 is more than eighteen hundred times longer than anything real: generous enough that no legitimate user hits it, small enough that nobody fills your disk by sending rubbish all day. **A number in a limit that you cannot justify is a number somebody will change carelessly.**
+**Number 7 needs its limit justified.** Why 100,000 bytes? **Because the longest review in the training corpus is 51 characters**, so 100,000 is nearly two thousand times longer than anything real: generous enough that no legitimate user hits it, small enough that nobody fills your disk by sending rubbish all day. **A number in a limit that you cannot justify is a number somebody will change carelessly.**
 
 ### Worked Example 3 — What drift actually looks like
 
-Send your service inputs from a different world and watch the out-of-vocabulary rate climb. The vocabulary is 271 items, unigrams and bigrams together:
+Send your service inputs from a different world and watch the out-of-vocabulary rate climb. The vocabulary is 287 items, unigrams and bigrams together:
 
 | input | tokens unknown | OOV rate | what it means |
 |---|---|---:|---|
 | `cold food and a rude driver` | 1 of 9 | **0.1111** | normal traffic |
-| `the biryani was absolutely banging fam no cap` | 12 of 15 | **0.8000** | four fifths invisible; the answer comes from the remaining fifth |
+| `the biryani was absolutely banging fam no cap` | 13 of 15 | **0.8667** | most of it invisible; the answer comes from the remaining two tokens |
 | `lorem ipsum dolor sit amet` | 9 of 9 | **1.0000** | nothing is visible; the answer is pure prior |
-| the 111 logged requests, averaged | — | **0.3808** | **this is what "normal" looks like for my traffic** |
+| the 111 logged requests, averaged | — | **0.1795** | **this is what "normal" looks like for my traffic** |
 
 **Why the token count is 9 and not 6 for the first one.** The vectorizer was built with `ngram_range=(1, 2)`, so it sees five single words *and* four adjacent pairs:
 
@@ -878,8 +878,8 @@ Send your service inputs from a different world and watch the out-of-vocabulary 
 And the other monitoring number, measured on two different kinds of traffic:
 
 ```
-uncertainty band over the 111 logged requests :  30 of 111  =  27.0%
-uncertainty band over the 16 test reviews     :  10 of  16  =  62.5%
+uncertainty band over the 111 logged requests :  16 of 111  =  14.4%
+uncertainty band over the 16 test reviews     :  3 of  16  =  18.8%
 ```
 
 **Both are right.** They are different traffic, and a baseline that does not come from the traffic you are going to watch is not a baseline. **Which is why you could not write your alarm level until your service had actually run.**
@@ -919,7 +919,7 @@ $ wc -l logs/predictions.jsonl
 
 ```python
 logging.basicConfig(filename=p, format="%(message)s")   # no level=
-logging.info(json.dumps({"label": "positive", "probability": 0.7724}))
+logging.info(json.dumps({"label": "positive", "probability": 0.7661}))
 print("lines in the file:", sum(1 for _ in open(p)))
 ```
 
@@ -935,7 +935,7 @@ logging.basicConfig(filename=p, level=logging.INFO, format="%(message)s")
 
 ```text
 lines in the file: 1
-{"label": "positive", "probability": 0.7724}
+{"label": "positive", "probability": 0.7661}
 ```
 
 **What it means.** **Python's default logging level is `WARNING`, and `INFO` is below it**, so `logging.info` threw your line away and said nothing about it.
@@ -1034,10 +1034,10 @@ Then we ran the subgroup report in the wrap, found the row where recall is `0.00
 
 **The mean is fine and the *tail* is the user experience.** If you report only a mean you have hidden the only request anybody would have noticed. **Mean, p50, p95, max — four numbers, four jobs.**
 
-### Trick 2 — "0.875 accuracy, so it works"
+### Trick 2 — "0.812 accuracy, so it works"
 
 **Wrong:** it works.
-**Right:** it works **on 15 of 28 rows**, and finds nothing at all on 13 of them.
+**Right:** it works **on 12 of 15 rows with no negation word** (0.800), and finds nothing at all on 13 rows that have one (6 right of 13, recall 0 of 6).
 
 **"Works" is not a property of a model. It is a property of a model on a group of rows** — which is why every row of your subgroup table carries its `n`, and why a group under ten is labelled *too small to conclude from*.
 
@@ -1053,7 +1053,7 @@ It is a small thing, and it is exactly the kind of small thing that makes a whol
 **Wrong:** watch the accuracy.
 **Right:** **who tells you the right answer in production?** Nobody. Ever. A comment goes through, gets a label, and no truth arrives.
 
-So the staleness number has to come from **inputs and outputs alone** — the uncertainty-band rate (`30 of 111 = 27.0%`), the out-of-vocabulary rate (`0.3808` mean), the label mix (`65 negative, 46 positive`), the p95. **All four come straight out of the log with no labels at all, which is exactly why they are the right choice.**
+So the staleness number has to come from **inputs and outputs alone** — the uncertainty-band rate (`16 of 111 = 14.4%`), the out-of-vocabulary rate (`0.1795` mean), the label mix (`76 negative, 35 positive`), the p95. **All four come straight out of the log with no labels at all, which is exactly why they are the right choice.**
 
 ---
 
@@ -1085,7 +1085,7 @@ stage three is black, as it has been since Week 12.*
 | **The one question it answers** | *"What happens after the prediction?"* — a question nobody asked you all year, because until Week 34 nothing you built ever ran twice. **A model with no log cannot be debugged, defended or trusted.** |
 | **What it plugs into** | Week 34's artifact and CLI, which the service loads **once** at start-up. Week 8's four counts, now computed per subgroup with `n` printed on every row. Week 11's cost table, which is what makes a `recall 0 of 6` row matter rather than merely exist. And Week 6's leakage instinct, turned outward into a monitoring check: **drift is leakage arriving late.** |
 | **What carries forward** | Week 36 is the demo, and every number in this log is a number you will be asked to defend out loud — the p95 **and** the max, the subgroup row **and** its `n`. Nothing new gets taught after this. |
-| **Spiral thread** | 🌍 **Impact** and ⚖️ **Evaluation** — impact, because a card that names a group the model fails on is the most useful page in the folder. Evaluation, because `0.385 on 13 rows with recall 0 of 6` is a measurement, and *"may contain bias"* is a shrug. |
+| **Spiral thread** | 🌍 **Impact** and ⚖️ **Evaluation** — impact, because a card that names a group the model fails on is the most useful page in the folder. Evaluation, because `0.462 on 13 rows with recall 0 of 6` is a measurement, and *"may contain bias"* is a shrug. |
 
 > **💡 Try this:** in the margin next to stage five, write your own four latency numbers and circle two of
 > them: the **p95** — nearly everybody — and the **max** — the one person who noticed and complained. With
@@ -1101,7 +1101,7 @@ stage three is black, as it has been since Week 12.*
 - **`127.0.0.1` because there is no authentication and no rate limit.** The reason, not just the string.
 - **The log counts predictions, not requests**, and one line holds the input, the output, the probability, the threshold, the version and the latency — because that is what makes a complaint answerable.
 - **Report four latency numbers.** `p95` for nearly everybody, `max` for the one person who noticed, and with only 111 requests **the p95 cannot see the max**, so print both.
-- **Every subgroup row carries its `n`.** `0.385` on 13 rows with `recall 0 of 6` is a sentence; "may contain bias" is not.
+- **Every subgroup row carries its `n`.** `0.462` on 13 rows with `recall 0 of 6` is a sentence; "may contain bias" is not.
 - **A monitoring number must be computable with no labels**, with a baseline measured from your own traffic.
 
 ### Syntax reminder card
@@ -1142,7 +1142,7 @@ np.percentile(latencies, 50)      # and print the mean and the max beside them
 ## 📓 New Words
 
 ![This week's six words, drawn](../figures/fig-w35-6-vocab-icons.svg)
-*Figure 35.6 — This week's six words, drawn. Two doors on one machine, a body in and a 200 out, 111 log lines with the four refusals absent, a p95 worked as `0.38 + 0.80 × 2.89 = 2.692`, `0.867` against `0.385` with recall `0 of 6`, and a band rate of `30 of 111 = 27.0%` against an alarm at 40%.*
+*Figure 35.6 — This week's six words, drawn. Two doors on one machine, a body in and a 200 out, 111 log lines with the four refusals absent, a p95 worked as `0.38 + 0.80 × 2.89 = 2.692`, `0.812` against `0.462` with recall `0 of 6`, and a band rate of `16 of 111 = 14.4%` against an alarm at 40%.*
 
 | Word | What it means | Example |
 |---|---|---|
@@ -1150,8 +1150,8 @@ np.percentile(latencies, 50)      # and print the mean and the max beside them
 | **request / response** | The message a client sends, and the reply. A request is a method, a path, headers and a body; a response is a status code, headers and a body. | `POST /predict` with `{"text": "..."}` in, `200` with five fields out. |
 | **prediction log** | A file with one complete record per line, appended and never rewritten, holding everything needed to explain one prediction later. | 111 JSON Lines, each with the input, label, probability, threshold, version and latency. |
 | **p95 latency** | The time 95 percent of requests came in under. Five percent were slower. | `0.28 ms` over 111 requests, with a max of `1.06 ms` printed beside it. |
-| **subgroup metrics** | The same metric computed separately for groups you chose on purpose, with `n` on every row. | `0.867` on the 15 rows without a negation word, `0.385` on the 13 with one. |
-| **monitoring plan · drift** | One page: the number you watch, how you measure it **without labels**, its measured baseline, the alarm level, and what you would do. Drift is inputs slowly stopping looking like your training data. | Band rate `27.0%` today, alarm at 40%, action: read the 30 nearest the fence. |
+| **subgroup metrics** | The same metric computed separately for groups you chose on purpose, with `n` on every row. | `0.800` on the 15 rows without a negation word, `0.462` on the 13 with one. |
+| **monitoring plan · drift** | One page: the number you watch, how you measure it **without labels**, its measured baseline, the alarm level, and what you would do. Drift is inputs slowly stopping looking like your training data. | Band rate `14.4%` today, alarm at 40%, action: read the 16 requests inside the band. |
 
 ---
 
@@ -1161,7 +1161,7 @@ Go to the **[Week 35 workbook](../workbook/week-35.md)**. **This is the biggest 
 
 - **Page 35.4 — a hundred log lines and the four numbers.** Get your service past 100 lines, run `read_logs.py`, and write down the count, the mean, the p50, the p95 and the max — **plus one sentence saying which one a user would notice, and why.**
 - **Page 35.5 — the subgroup table.** At least two subgroups, **`n` on every single row**, anything under ten labelled *too small to conclude from*. Then one sentence: **what was the overall number hiding?** And if a group is adversarial, say so.
-- **Page 35.6 — the full model card.** Six headings plus a seventh paragraph on what you log: intended use · training data · metrics · metrics by subgroup · known failure modes · out-of-scope uses · what I log and what I don't. **Three failure modes, each with a real input and the wrong output it gives.** *"It struggles with negation"* is not a failure mode. *"It scores `not boring for a single minute` at p = 0.1984, so it calls it negative, because `boring` is a strong negative feature and `not` is nearly weightless"* — **that** is a failure mode.
+- **Page 35.6 — the full model card.** Six headings plus a seventh paragraph on what you log: intended use · training data · metrics · metrics by subgroup · known failure modes · out-of-scope uses · what I log and what I don't. **Three failure modes, each with a real input and the wrong output it gives.** *"It struggles with negation"* is not a failure mode. *"It scores `not boring for a single minute` at p = 0.4887, so it calls it negative, because none of its words are in the vocabulary and 0.4887 is just the model's starting prior"* — **that** is a failure mode.
 - **Page 35.7 — the monitoring plan. One page, no more.** One number. How you measure it **with no labels at all**. Its measured baseline from your own log. The level that trips the alarm. What you actually do. **And one thing you would deliberately *not* do.**
 
 **Page 35.8 is a stretch:** send your service thirty requests from a completely different world and watch the out-of-vocabulary rate climb. **That climb is what drift looks like**, and having made one yourself means you will recognise it when it happens for real.
