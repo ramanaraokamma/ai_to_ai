@@ -36,36 +36,53 @@ def parse_tf(s):
 
 
 def path_points(d):
-    pts, cx, cy = [], 0.0, 0.0
+    """Sample points of an SVG path in absolute coordinates.
+
+    Lowercase (relative) commands are resolved against the current point; control points are
+    included as extra samples, which over-approximates the curve's bounds (conservative)."""
+    pts, cx, cy, sx0, sy0 = [], 0.0, 0.0, 0.0, 0.0
     for cmd, args in re.findall(r'([MLHVQACZmlhvqacz])([^MLHVQACZmlhvqacz]*)', d):
         v = [float(a) for a in re.findall(r'-?\d*\.?\d+', args)]
-        u = cmd.upper()
-        if u in "ML":
-            for i in range(0, len(v) - 1, 2):
-                cx, cy = v[i], v[i + 1]
+        u, rel = cmd.upper(), cmd.islower()
+        ox, oy = (cx, cy) if rel else (0.0, 0.0)
+        if u == "Z":
+            cx, cy = sx0, sy0
+        elif u in "ML":
+            for k, i in enumerate(range(0, len(v) - 1, 2)):
+                cx, cy = ox + v[i], oy + v[i + 1]
+                if rel:
+                    ox, oy = cx, cy
                 pts.append((cx, cy))
+                if u == "M" and k == 0:
+                    sx0, sy0 = cx, cy
         elif u == "H":
             for a in v:
-                cx = a
+                cx = (cx if rel else 0.0) + a
                 pts.append((cx, cy))
         elif u == "V":
             for a in v:
-                cy = a
+                cy = (cy if rel else 0.0) + a
                 pts.append((cx, cy))
         elif u == "Q":
             for i in range(0, len(v) - 3, 4):
-                pts.append((v[i], v[i + 1]))
-                cx, cy = v[i + 2], v[i + 3]
+                pts.append((ox + v[i], oy + v[i + 1]))
+                cx, cy = ox + v[i + 2], oy + v[i + 3]
                 pts.append((cx, cy))
+                if rel:
+                    ox, oy = cx, cy
         elif u == "C":
             for i in range(0, len(v) - 5, 6):
-                pts += [(v[i], v[i + 1]), (v[i + 2], v[i + 3])]
-                cx, cy = v[i + 4], v[i + 5]
+                pts += [(ox + v[i], oy + v[i + 1]), (ox + v[i + 2], oy + v[i + 3])]
+                cx, cy = ox + v[i + 4], oy + v[i + 5]
                 pts.append((cx, cy))
+                if rel:
+                    ox, oy = cx, cy
         elif u == "A":
             for i in range(0, len(v) - 6, 7):
-                cx, cy = v[i + 5], v[i + 6]
+                cx, cy = ox + v[i + 5], oy + v[i + 6]
                 pts.append((cx, cy))
+                if rel:
+                    ox, oy = cx, cy
     return pts
 
 
