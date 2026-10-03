@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
   <title>Wrong and right: what six extra characters buy you</title>
-  <desc>Two panels. On the left, marked wrong, one file called model.joblib before a retrain and the same file after it, crossed out, with the note that the only copy was overwritten and the model that worked is gone. On the right, marked right, three files on disk: sentiment_v1.joblib at 9,732 bytes, sentiment_v2.joblib at 9,732 bytes, and a 13-byte file called LATEST holding the text sentiment_v1, with the arithmetic 12 characters plus 1 newline equals 13 bytes, so a rollback is one edit to 13 bytes. The whole difference cost six characters in a filename.</desc>
+  <desc>Two panels. On the left, marked wrong, one file called model.joblib before a retrain and the same file after it, crossed out, with the note that the only copy was overwritten and the model that worked is gone. On the right, marked right, three files on disk: sentiment_v1.joblib at 10,228 bytes, sentiment_v2.joblib at 10,228 bytes, and a 13-byte file called LATEST holding the text sentiment_v1, with the arithmetic 12 characters plus 1 newline equals 13 bytes, so a rollback is one edit to 13 bytes. The whole difference cost six characters in a filename.</desc>
 
   <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Wrong and right: what six extra characters buy you</text>
 
@@ -44,10 +44,10 @@
   <text x="442" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">three files in model/artifacts/</text>
   <rect x="442" y="138" width="250" height="32" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
   <text x="454" y="154" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">sentiment_v1.joblib</text>
-  <text x="710" y="154" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">9,732</text>
+  <text x="710" y="154" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">10,228</text>
   <rect x="442" y="176" width="250" height="32" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
   <text x="454" y="192" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">sentiment_v2.joblib</text>
-  <text x="710" y="192" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">9,732</text>
+  <text x="710" y="192" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">10,228</text>
   <rect x="442" y="214" width="250" height="32" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
   <text x="454" y="230" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">LATEST</text>
   <text x="710" y="230" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">13</text>

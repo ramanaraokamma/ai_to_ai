@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
   <title>Four kinds of rubbish, four clear refusals, still alive</title>
-  <desc>Five rows, each showing what was sent and what came back. Row 1: an empty body gets 400 and the message empty body, expected a text field. Row 2: the broken JSON open-brace quote text quote colon gets 400 and invalid JSON, Expecting value, line 1 column 10, character 9. Row 3: the object with the field called review instead of text gets 400, the message expected a JSON object with a text field, and a worked example. Row 4: text set to the number 42 gets 400 and the message text must be a non-empty string, got_type int. Row 5 is the actual test: GET slash health afterwards still returns 200 with model_version sentiment_v1 and threshold 0.55. Four refusals, zero crashes, and the service answered a fifth time.</desc>
+  <desc>Five rows, each showing what was sent and what came back. Row 1: an empty body gets 400 and the message empty body, expected a text field. Row 2: the broken JSON open-brace quote text quote colon gets 400 and invalid JSON, Expecting value, line 1 column 10, character 9. Row 3: the object with the field called review instead of text gets 400, the message expected a JSON object with a text field, and a worked example. Row 4: text set to the number 42 gets 400 and the message text must be a non-empty string, got_type int. Row 5 is the actual test: GET slash health afterwards still returns 200 with model_version sentiment_v1 and threshold 0.65. Four refusals, zero crashes, and the service answered a fifth time.</desc>
 
   <text x="250" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Four kinds of rubbish,</text>
   <text x="250" y="66" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">four clear refusals</text>
@@ -52,7 +52,7 @@
   <text x="84" y="536" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">and this is the actual test</text>
   <text x="440" y="536" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#1B7A4B" text-anchor="end">200</text>
   <text x="46" y="562" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">sent:  GET /health, afterwards</text>
-  <text x="46" y="584" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">back:  status ok, sentiment_v1, 0.55</text>
+  <text x="46" y="584" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">back:  status ok, sentiment_v1, 0.65</text>
 
   <text x="250" y="634" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">4 refusals &#183; 0 crashes &#183; answered a 5th time</text>
   <text x="250" y="658" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">A service that dies on bad input is not a service.</text>

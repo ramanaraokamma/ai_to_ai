@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
   <title>The prediction contract, six boxes</title>
-  <desc>Six numbered boxes, all filled in. Box 1: one prediction is about one review written by one person. Box 2: input is a field called text, a non-empty string, limit 100 kilobytes. Box 3: output is label, probability, threshold, model_version and latency_ms. Box 4: the two errors priced &#8212; a nasty review called positive costs 10, a nice review called negative costs 1. Box 5: the threshold, with the cost arithmetic on 16 validation rows &#8212; at 0.50 the cost is 10 times 1 plus 1 times 1 equals 11, at 0.55 it is 10 times 0 plus 1 times 5 equals 5, so 0.55 ships. Box 6: never used for banning anybody or marking schoolwork.</desc>
+  <desc>Six numbered boxes, all filled in. Box 1: one prediction is about one review written by one person. Box 2: input is a field called text, a non-empty string, limit 100 kilobytes. Box 3: output is label, probability, threshold, model_version and latency_ms. Box 4: the two errors priced &#8212; a nasty review called positive costs 10, a nice review called negative costs 1. Box 5: the threshold, with the cost arithmetic on 16 validation rows &#8212; at 0.50 the cost is 10 times 1 plus 1 times 0 equals 10, at 0.65 it is 10 times 0 plus 1 times 4 equals 4, and 0.70 ties at 4; on a tie take the lower, so 0.65 ships. Box 6: never used for banning anybody or marking schoolwork.</desc>
 
   <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The prediction contract, six boxes</text>
 
@@ -46,10 +46,11 @@
   <circle cx="309" cy="222" r="14" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2"/>
   <text x="309" y="227" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">5</text>
   <text x="333" y="227" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">THE THRESHOLD</text>
-  <text x="303" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">cost on the 16 validation rows</text>
-  <text x="303" y="274" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">0.50: 10&#215;1 + 1&#215;1 = 11</text>
-  <text x="303" y="292" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">0.55: 10&#215;0 + 1&#215;5 =  5</text>
-  <text x="303" y="311" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">so ship 0.55</text>
+  <text x="303" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">cost on the 16 validation rows</text>
+  <text x="303" y="268" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">0.50: 10&#215;1 + 1&#215;0 = 10</text>
+  <text x="303" y="284" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">0.65: 10&#215;0 + 1&#215;4 =  4</text>
+  <text x="303" y="300" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">0.70: 10&#215;0 + 1&#215;4 =  4  tie</text>
+  <text x="303" y="315" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#14202B">tie: take the lower, ship 0.65</text>
 
   <!-- box 6 -->
   <rect x="530" y="198" width="230" height="122" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>

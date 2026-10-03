@@ -119,6 +119,6 @@
     <rect x="656" y="336" width="118" height="24" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
     <text x="715" y="352" fill="#55636F">impact</text>
   </g>
-  <text x="400" y="378" text-anchor="middle" font-size="13" fill="#55636F">
+  <text x="400" y="376" text-anchor="middle" font-size="13" fill="#55636F">
     Week 13: any score becomes a chance, and ln takes you back the other way.</text>
 </svg>

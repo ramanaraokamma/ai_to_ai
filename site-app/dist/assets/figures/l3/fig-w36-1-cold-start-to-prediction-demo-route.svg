@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
   <title>The ten-minute demo, from a cold terminal</title>
-  <desc>A timeline of seven stops across ten minutes. At 0:00, one minute on the contract: one prediction is about one review, a nasty one slipping through costs ten times a nice one read anyway, so the threshold is 0.55 and not 0.5. At 1:00, one minute on the cold start in a brand-new terminal, showing 751.9 milliseconds total and the Rule 1 grep returning 0 lines. At 2:00, two minutes on the service: start it, GET health, one good prediction, and say 772.2 milliseconds to load once against 0.23 milliseconds per request as two separate numbers. At 4:00, two minutes breaking it live with four malformed requests, then health again to prove it is alive. At 6:00, ninety seconds on the log: 111 lines, p50 0.23, p95 0.27, max 3.27, and the max was the first request. At 7:30, ninety seconds on where it breaks: 0.867 on 15 rows without a negation, 0.385 on 13 with one, recall 0 of 6, then one failure live. At 9:00, one minute on the monitoring number: the uncertainty-band rate, currently 27.0 percent, alarm at 40, computable with no labels at all.</desc>
+  <desc>A timeline of seven stops across ten minutes. At 0:00, one minute on the contract: one prediction is about one review, a nasty one slipping through costs ten times a nice one read anyway, so the threshold is 0.65 and not 0.5. At 1:00, one minute on the cold start in a brand-new terminal, showing 751.9 milliseconds total and the Rule 1 grep returning 0 lines. At 2:00, two minutes on the service: start it, GET health, one good prediction, and say 772.2 milliseconds to load once against 0.23 milliseconds per request as two separate numbers. At 4:00, two minutes breaking it live with four malformed requests, then health again to prove it is alive. At 6:00, ninety seconds on the log: 111 lines, p50 0.23, p95 0.27, max 3.27, and the max was the first request. At 7:30, ninety seconds on where it breaks: 0.800 on 15 rows without a negation, 0.462 on 13 with one, recall 0 of 6, then one failure live. At 9:00, one minute on the monitoring number: the uncertainty-band rate, currently 27.0 percent, alarm at 40, computable with no labels at all.</desc>
 
   <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The ten-minute demo, from a cold terminal</text>
 
@@ -29,7 +29,7 @@
   <rect x="40" y="136" width="230" height="86" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
   <text x="56" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">1 &#183; THE CONTRACT</text>
   <text x="56" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">one review, 10 against 1,</text>
-  <text x="56" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">so threshold 0.55, not 0.5</text>
+  <text x="56" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">so threshold 0.65, not 0.5</text>
   <text x="56" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">say it before you type anything</text>
 
   <!-- stop 2 -->
@@ -63,11 +63,11 @@
   <!-- stop 6 -->
   <rect x="530" y="236" width="230" height="86" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
   <text x="546" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">6 &#183; WHERE IT BREAKS</text>
-  <text x="546" y="280" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">0.867 on 15 &#183; 0.385 on 13</text>
+  <text x="546" y="280" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">0.800 on 15 &#183; 0.462 on 13</text>
   <text x="546" y="298" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">recall 0 &#247; 6 = 0.000</text>
   <text x="546" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">then run one failure, live</text>
 
   <!-- stop 7 -->
   <rect x="180" y="336" width="440" height="42" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
-  <text x="196" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">7 &#183; THE NUMBER: band rate 27.0%, alarm at 40%, no labels needed</text>
+  <text x="196" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">7 &#183; THE NUMBER: band rate 14.4%, alarm at 40%, no labels needed</text>
 </svg>

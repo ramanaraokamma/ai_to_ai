@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
   <title>This week&#8217;s six words, drawn</title>
-  <desc>Six small pictures. Endpoint is two doors on one machine, GET slash health and POST slash predict. Request and response is a body going in, the four checks, and a reply of 200 with five fields. Prediction log is three stacked lines of JSON, 111 of them, with the note that the four refusals are not in there because nothing was predicted. The p95 latency is five sorted times, 0.27, 0.27, 0.31, 0.38 and 3.27, with position 0.95 times 4 equals 3.8, so 0.38 plus 0.80 times 2.89 equals 2.692. Subgroup metrics is two bars, 0.867 on the 15 rows with no negation word against 0.385 on the 13 rows with one, where recall is 0 of 6. Monitoring plan and drift is a band rate of 30 of 111, which is 27.0 percent, with an alarm drawn at 40 percent and the note that no labels are needed.</desc>
+  <desc>Six small pictures. Endpoint is two doors on one machine, GET slash health and POST slash predict. Request and response is a body going in, the four checks, and a reply of 200 with five fields. Prediction log is three stacked lines of JSON, 111 of them, with the note that the four refusals are not in there because nothing was predicted. The p95 latency is five sorted times, 0.27, 0.27, 0.31, 0.38 and 3.27, with position 0.95 times 4 equals 3.8, so 0.38 plus 0.80 times 2.89 equals 2.692. Subgroup metrics is two bars, 0.800 on the 15 rows with no negation word against 0.462 on the 13 rows with one, where recall is 0 of 6. Monitoring plan and drift is a band rate of 16 of 111, which is 27.0 percent, with an alarm drawn at 40 percent and the note that no labels are needed.</desc>
 
   <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">This week&#8217;s six words, drawn</text>
 
@@ -48,20 +48,20 @@
   <text x="144" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">p95 latency</text>
   <text x="144" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">95 in 100 came in under it</text>
 
-  <rect x="300" y="244" width="152" height="26" rx="6" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
-  <text x="460" y="257" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">0.867</text>
+  <rect x="300" y="244" width="122" height="26" rx="6" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="460" y="257" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">0.800</text>
   <text x="300" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">no negation word, n = 15</text>
-  <rect x="300" y="296" width="68" height="26" rx="6" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
-  <text x="460" y="309" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">0.385</text>
+  <rect x="300" y="296" width="70" height="26" rx="6" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="460" y="309" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">0.462</text>
   <text x="300" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">has one, n = 13, recall 0 of 6</text>
   <text x="400" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">subgroup metrics</text>
 
   <line x1="558" y1="330" x2="754" y2="330" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
   <rect x="566" y="276" width="40" height="54" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
-  <text x="586" y="266" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#1F6FB2" text-anchor="middle">27.0%</text>
+  <text x="586" y="266" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#1F6FB2" text-anchor="middle">14.4%</text>
   <line x1="558" y1="250" x2="754" y2="250" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 5"/>
   <text x="700" y="242" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#CC2B1D" text-anchor="middle">alarm 40%</text>
-  <text x="656" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">30 of 111</text>
+  <text x="656" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">16 of 111</text>
   <text x="656" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">monitoring plan</text>
   <text x="656" y="368" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">no labels needed &#183; drift</text>
 </svg>
