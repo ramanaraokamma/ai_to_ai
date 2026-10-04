@@ -1,0 +1,9 @@
+6972 chars | vocab 28 | train 6274 val 698 | device cpu
+no_mask params 807,196 steps 500
+  step    0 train 3.335 val 3.324
+  step  250 train 0.162 val 0.166
+  step  499 train 0.067 val 0.066
+RESULT no_mask: best val 0.066 @ step 499  final train 0.067 val 0.066  (70s train)
+'ttttttttttttttttttttttttttttttttttttttttttttttttrttttttttttttttttttntttttttttttttttttttttttttttttttttttttttttttttgttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt'
+
+EXIT 0 WALL_SECONDS 72.1

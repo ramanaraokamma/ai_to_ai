@@ -1,0 +1,11 @@
+merge   1: (108, 111) ->  256  b'lo'          count=7
+merge   2: (256, 119) ->  257  b'low'         count=7
+merge   3: (100, 101) ->  258  b'de'          count=3
+merge   4: (105, 258) ->  259  b'ide'         count=3
+merge   5: (115, 116) ->  260  b'st'          count=3
+merge   6: (119, 259) ->  261  b'wide'        count=3
+merge   7: (261, 260) ->  262  b'widest'      count=3
+merge   8: (101, 114) ->  263  b'er'          count=2
+[257, 101, 260] [b'low', b'e', b'st']
+
+EXIT 0 WALL_SECONDS 0.0

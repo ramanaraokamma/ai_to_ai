@@ -1,0 +1,47 @@
+15 chunks, 704 words total
+  0.596  [9] 2026-05-20 — Layer norm placement
+  0.070  [2] 2026-02-03 — Dropout and weight decay
+  0.047  [1] 2026-01-21 — Learning rate sweep
+
+Q: how do I stop my training from blowing up at the start?
+   0.104  2026-01-14 — Optimizer bake-off
+   0.089  2026-04-05 — Tiny GPT training run
+   0.065  2026-02-03 — Dropout and weight decay
+
+Q: which optimiser should I try first?
+   0.000  2026-01-14 — Optimizer bake-off
+   0.000  2026-01-21 — Learning rate sweep
+   0.000  2026-02-03 — Dropout and weight decay
+
+Q: what happens if the model cannot tell word order?
+   0.283  2026-04-22 — Positional encodings
+   0.252  2026-06-25 — Reward model toy
+   0.130  2026-07-09 — DPO on a four-option policy
+
+Q: how much does one API call cost?
+   0.155  2026-07-28 — Prompt bench
+   0.124  2026-08-14 — Cost accounting
+   0.000  2026-01-14 — Optimizer bake-off
+
+Q: why did my loss become NaN?
+   0.138  2026-02-03 — Dropout and weight decay
+   0.101  2026-01-21 — Learning rate sweep
+   0.049  2026-05-08 — Batch size experiment
+strategy                    n  avg w   r@1   r@3  ctx w @k=3  % corpus
+headings (whole notes)     15   46.9  1.00  1.00         148       21%
+fixed 30w / 8 overlap      32   30.0  0.60  1.00          90       13%
+fixed 60w / 15 overlap     16   58.6  0.80  1.00         178       25%
+fixed 120w / 0 overlap      6  118.7  0.90  1.00         358       50%
+fixed 250w / 50 overlap     4  215.5  1.00  1.00         722      101%
+literal   wording, tfidf: {1: 1.0, 3: 1.0, 5: 1.0}
+paraphrased wording, tfidf: {1: 0.2, 3: 0.5, 5: 0.6}
+answerable  : 0.131 0.200 0.245 0.316 0.332 0.440 0.479 0.507 0.596 0.692
+unanswerable: 0.000 0.000 0.103 0.198
+
+  tau   answered   refused  errors
+ 0.05       10/10       2/4       2
+ 0.12       10/10       3/4       1
+ 0.15        9/10       3/4       2
+ 0.20        9/10       4/4       1
+ 0.25        7/10       4/4       3
+ 0.30        7/10       4/4       3

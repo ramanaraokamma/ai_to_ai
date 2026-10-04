@@ -1,0 +1,8 @@
+0.36
+12.3545210385
+__import__('os').system('ls'   -> ValueError: unsupported expression element: Call
+138 merges / 1117              -> SyntaxError: invalid syntax (<unknown>, line 1)
+2 ** 10 ** 10                  -> ValueError: exponent too large; keep ** small
+../escape.md    -> PermissionError
+/etc/passwd     -> PermissionError
+run.sh          -> PermissionError

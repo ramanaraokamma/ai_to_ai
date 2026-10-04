@@ -1,0 +1,6 @@
+device: cpu
+train (840, 2) val (360, 2)
+120 ex, 400 epochs           train 0.009  val 0.525  acc  92.5%
+best val 0.199 @ epoch 85 final val 0.525
+
+EXIT 0 WALL_SECONDS 1.2

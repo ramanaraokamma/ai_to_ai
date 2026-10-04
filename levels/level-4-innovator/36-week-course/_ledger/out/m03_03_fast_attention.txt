@@ -1,0 +1,6 @@
+6972 chars | vocab 28 | train 6274 val 698 | device cpu
+max abs diff: 0.0
+equivalent
+100 fwd: loop 0.167s  batched 0.206s  speedup 0.81x
+
+EXIT 0 WALL_SECONDS 0.9

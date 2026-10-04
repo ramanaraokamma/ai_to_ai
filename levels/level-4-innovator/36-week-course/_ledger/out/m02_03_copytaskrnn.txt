@@ -1,0 +1,10 @@
+231 names | vocab 28 | max length with EOS 8
+inputs (231, 8) targets (231, 8)
+example: aarav -> [2, 2, 19, 2, 23, 1, 0, 0]
+rnn 1 1.000 (2s)
+rnn 5 0.438 (1s)
+rnn 10 0.129 (2s)
+rnn 20 0.127 (3s)
+rnn 40 0.127 (4s)
+
+EXIT 0 WALL_SECONDS 12.5

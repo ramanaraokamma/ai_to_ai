@@ -1,0 +1,21 @@
+# Week 7 — shipping notes
+
+Called the vendor on [PHONE_1], no answer. Emailed
+[EMAIL_1] instead. Backup contact [PHONE_2].
+Test card [CARD_1] (sandbox only).
+Server was at [IPV4_1].
+Met Ramana at the third house past the temple on Nehru Road.
+
+found: {'CARD': 1, 'EMAIL': 1, 'PHONE': 2, 'IPV4': 1}
+input                                      type      caught?
+------------------------------------------------------------
+priya.sharma@example.com                   EMAIL     YES
++91 98765 43210                            PHONE     YES
+9123456789                                 PHONE     YES
+4111 1111 1111 1111                        CARD      YES
+1234 5678 9012                             AADHAAR   YES
+192.168.1.44                               IPV4      YES
+Ramana Kamma                               NAME      no
+third house past the temple, Nehru Road    ADDRESS   no
+------------------------------------------------------------
+recall = 6/8 = 0.75

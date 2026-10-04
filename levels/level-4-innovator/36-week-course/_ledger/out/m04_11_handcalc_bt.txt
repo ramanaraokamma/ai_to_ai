@@ -1,0 +1,8 @@
+P(a>b) 0.6682 P(d>a) 0.6225 P(a>c) 0.9168
+c>d: sigma 0.05215  loss 2.954  a>c loss 0.0868
+gap 2.0 BT loss (vocab table says 0.127): 0.1269
++100 shift: 0.6682
+English 183 chars 36 tok -> cost $ 7.2e-05  Hindi 171 tok -> $ 0.000342  x10M: 720.0 3420.0
+SFT 0.0003% etc not computable here
+
+EXIT 0 WALL_SECONDS 0.0

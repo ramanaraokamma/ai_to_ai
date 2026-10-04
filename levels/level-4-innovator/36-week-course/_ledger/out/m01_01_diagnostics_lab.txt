@@ -1,0 +1,19 @@
+device: cpu
+train (840, 2) val (360, 2)
+sgd lr=0.03                  train 0.690  val 0.690  acc  52.8%
+momentum lr=0.03             train 0.018  val 0.034  acc  98.6%
+adamw lr=0.003               train 0.007  val 0.037  acc  98.9%
+adamw lr=0.3 (too big)       train 0.701  val 0.723  acc  46.9%
+adamw + cosine               train 0.007  val 0.045  acc  98.9%
+adamw + ln + res             train 0.011  val 0.022  acc  99.4%
+saved optimizer_comparison.png
+no regularization            train 0.023  val 0.495  acc  93.3%
+dropout 0.3                  train 0.127  val 0.355  acc  93.6%
+weight decay 0.3             train 0.047  val 0.269  acc  92.5%
+no regularization    best val 0.199 @ epoch  85   final val 0.495
+dropout 0.3          best val 0.199 @ epoch 177   final val 0.355
+weight decay 0.3     best val 0.174 @ epoch 161   final val 0.269
+early-stop probe             train 0.023  val 0.495  acc  93.3%
+  would stop at epoch 110, keeping weights from 85 (val 0.199) instead of 0.495
+
+EXIT 0 WALL_SECONDS 3.9

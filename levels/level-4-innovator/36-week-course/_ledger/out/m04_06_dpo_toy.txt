@@ -1,0 +1,16 @@
+reference policy: A=0.168 B=0.206 C=0.375 D=0.251
+
+beta = 0.2, 300 steps:
+  step    1  loss 0.6931   probs A=0.179 B=0.219 C=0.361 D=0.242
+  step   50  loss 0.4529   probs A=0.519 B=0.461 C=0.013 D=0.006
+  step  150  loss 0.2526   probs A=0.946 B=0.054 C=0.000 D=0.000
+  step  300  loss 0.1424   probs A=0.997 B=0.003 C=0.000 D=0.000
+
+beta sweep, all at 300 steps:
+  beta 0.02  A=0.782 B=0.218 C=0.000 D=0.000   KL(pi||ref)=1.213  loss=0.5317
+  beta 0.10  A=0.997 B=0.003 C=0.000 D=0.000   KL(pi||ref)=1.760  loss=0.2560
+  beta 0.50  A=0.987 B=0.013 C=0.000 D=0.000   KL(pi||ref)=1.709  loss=0.0513
+  beta 1.00  A=0.950 B=0.047 C=0.003 D=0.000   KL(pi||ref)=1.557  loss=0.0204
+  beta 5.00  A=0.589 B=0.236 C=0.144 D=0.032   KL(pi||ref)=0.566  loss=0.0020
+
+EXIT 0 WALL_SECONDS 1.6

@@ -1,0 +1,34 @@
+(a) iteration limit
+    {"t": 0.001, "event": "halt", "reason": "max_iterations"}
+(b) budget limit (budget 0.004)
+    {"t": 0.001, "event": "halt", "reason": "budget_exhausted", "spend": 0.004592}
+(b2) same, budget 0.0004
+    {"t": 0.0, "event": "halt", "reason": "budget_exhausted", "spend": 0.000688}
+(c) sandbox refusal
+    {"t": 0.0, "event": "tool_call", "iteration": 1, "tool": "write_file", "args": {"filename": "../escape.md", "content": "hello"}, "is_error": true, "in
+(d) timeout
+    {"t": 2.004, "event": "tool_call", "iteration": 1, "tool": "slow", "args": {"seconds": 8}, "is_error": true, "injection_flags": [], "result_preview": 
+    wall-clock of run_agent: 2.01 s (tool timeout 2.0 s; worker thread keeps sleeping)
+(e) unknown tool
+    {"t": 0.0, "event": "tool_call", "iteration": 1, "tool": "delete_everything", "args": {}, "is_error": true, "injection_flags": [], "result_preview": "
+(f) declined confirmation (stdin 'n')
+
+  ⚠️  CONFIRM write_file
+      filename : hello.md
+      content  : hello
+      approve? [y/N]     {"t": 0.0, "event": "tool_call", "iteration": 1, "tool": "write_file", "args": {"filename": "hello.md", "content": "hello"}, "is_error": true, "inject
+escape.md exists outside sandbox? False | hello.md exists? False
+
+--- ex3 list_files
+
+==============================================================================
+TASK: What files have you saved for me so far, and what is their total size in kilobytes?
+==============================================================================
+
+[1] 💭 Let me check the sandbox.
+    🔧 list_files({})
+    ✅ costs.md	62 bytes extraction-250.md	74 bytes prompt-gain.md	58 bytes TOTAL	194 bytes across 3 files
+    🔧 calculate({"expression": "194 / 1024"})
+    ✅ 0.189453125
+
+[3] 💭 You have saved files totalling about 0.19 KB.

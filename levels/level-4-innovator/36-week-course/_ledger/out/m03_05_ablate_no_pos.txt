@@ -1,0 +1,12 @@
+6972 chars | vocab 28 | train 6274 val 698 | device cpu
+no_pos params 807,196 steps 1500
+  step    0 train 3.351 val 3.339
+  step  250 train 1.780 val 1.816
+  step  500 train 1.437 val 1.707
+  step  750 train 1.199 val 1.652
+  step 1000 train 0.997 val 1.676
+  step 1250 train 0.874 val 1.665
+  step 1499 train 0.845 val 1.646
+RESULT no_pos: best val 1.632 @ step 600  final train 0.845 val 1.646  (199s train)
+
+EXIT 0 WALL_SECONDS 200.1

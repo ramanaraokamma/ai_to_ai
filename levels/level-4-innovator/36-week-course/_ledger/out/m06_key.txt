@@ -1,0 +1,32 @@
+== ex1
+cos(u,v) = 1.0000
+cos(u,w) = 0.0000
+cos(u,x) = -1.0000
+[0.6 0.  0.8] [0.6 0.  0.8] 1.0
+== ex2 zeros
+  tfidf 0.000  got [0] Optimizer bake-off             want [2]   oov=['regulariser', 'stopped', 'overfitting']
+  tfidf 0.000  got [0] Optimizer bake-off             want [8]   oov=['happens', 'huge', 'minibatch']
+  tfidf 0.000  got [0] Optimizer bake-off             want [0]   oov=['optimiser', 'converged', 'quickest']
+  tfidf 0.000  got [0] Optimizer bake-off             want [14]   oov=['expensive', 'enquiry']
+  tfidf 0.000  got [0] Optimizer bake-off             want [10]   oov=['tokeniser', 'lossless']
+  tfidf 0.106  got [6] Tiny GPT training run          want [4]   oov=['fast', 'recurrent', 'unit']
+== ex3 overlap
+overlap  0  chunks  18  r@1 0.60  r@3 0.80  words stored   712  (100% of source)
+overlap  5  chunks  21  r@1 0.70  r@3 1.00  words stored   812  (114% of source)
+overlap 10  chunks  24  r@1 0.70  r@3 1.00  words stored   942  (132% of source)
+overlap 20  chunks  35  r@1 0.60  r@3 1.00  words stored  1392  (196% of source)
+overlap 30  chunks  69  r@1 0.70  r@3 1.00  words stored  2752  (387% of source)
+== ex4 2x2
+                      generation OK   generation WRONG
+retrieval OK               7                 3
+retrieval FAILED           0                 0
+  (True, True): questions [3, 5, 6, 7, 8, 9, 10]
+  (True, False): questions [1, 2, 4]
+  (False, True): questions []
+  (False, False): questions []
+== ex6 poison
+  0.446  [15] 2026-09-01 — Learning rate revisited
+  0.187  [1] 2026-01-21 — Learning rate sweep
+  0.123  [8] 2026-05-08 — Batch size experiment
+tfidf-only (alpha=0): literal 1.0 paraphrase 0.2 identifier 1.0
+TF-IDF score range on answerable top-1: 0.13095732830171247 0.6922100873568642

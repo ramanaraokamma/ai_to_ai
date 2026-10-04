@@ -1,0 +1,28 @@
+vocab size: 300 M shape: (15, 300)
+  did        0.5161
+  norm       0.5161
+  post       0.5161
+  warmup     0.4482
+analyzer tokens: ['did', 'post', 'norm', 'need', 'warmup']
+chunk  0 Optimizer bake-off             0.000
+chunk  1 Learning rate sweep            0.047
+chunk  2 Dropout and weight decay       0.070
+chunk  3 Character RNN on names         0.000
+chunk  4 LSTM vs GRU                    0.000
+chunk  5 Attention by hand              0.000
+chunk  6 Tiny GPT training run          0.000
+chunk  7 Positional encodings           0.000
+chunk  8 Batch size experiment          0.000
+chunk  9 Layer norm placement           0.596
+chunk 10 BPE tokenizer from scratch     0.000
+chunk 11 Reward model toy               0.000
+chunk 12 DPO on a four-option policy    0.000
+chunk 13 Prompt bench                   0.000
+chunk 14 Cost accounting                0.000
+zeros: 12 best/second: 8.477920041580683
+words NOTEBOOK: 712 chunk words: 704
+tokens approx (words*1.3): 925.6
+long ctx: 4000.0 rag: 20.0 ratio 200.0 cached ~ 400.0
+step8: 0.000322 0.00058 0.000902 paste: 0.00248 2.7494456762749446
+eight-point-five: 8.514285714285712
+GPU q top-1: (6, 0.19752042738091724)

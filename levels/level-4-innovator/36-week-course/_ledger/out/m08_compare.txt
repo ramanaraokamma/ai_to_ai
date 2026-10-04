@@ -1,0 +1,28 @@
+
+category         n   before    after    delta
+----------------------------------------------
+greeting         6    1.000    1.000   +0.000
+refund           7    0.857    1.000   +0.143
+technical        7    0.857    1.000   +0.143
+billing          5    0.800    1.000   +0.200
+out_of_scope     5    0.800    0.400   -0.400  <-- REGRESSION
+----------------------------------------------
+OVERALL         30    0.867    0.900   +0.033
+
+contribution of each category to the overall delta:
+  greeting       (n/N = 6/30) x +0.000 = +0.0000
+  refund         (n/N = 7/30) x +0.143 = +0.0333
+  technical      (n/N = 7/30) x +0.143 = +0.0333
+  billing        (n/N = 5/30) x +0.200 = +0.0333
+  out_of_scope   (n/N = 5/30) x -0.400 = -0.0667
+
+🚨 1 REGRESSION(S) — do not ship on the average alone:
+   out_of_scope: 0.800 -> 0.400 (-40.0% on n=5)
+
+LoRA rank table arithmetic (base 66,957,317; head 594,437)
+r= 1 adapter 18,432 trainable 612,869 % 0.92
+r= 2 adapter 36,864 trainable 631,301 % 0.94
+r= 4 adapter 73,728 trainable 668,165 % 1.00
+r= 8 adapter 147,456 trainable 741,893 % 1.11
+r=16 adapter 294,912 trainable 889,349 % 1.32
+r=32 adapter 589,824 trainable 1,184,261 % 1.75

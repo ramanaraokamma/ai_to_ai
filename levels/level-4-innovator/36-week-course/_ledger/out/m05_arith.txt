@@ -1,0 +1,23 @@
+one call 420/60: 0.00144 input 0.00084 output 0.0006000000000000001
+60 calls: 0.0864 15 runs: 1.296
+probe 78/33: 0.000486 78/20: 0.000356
+541-token worst case x32: 0.053824000000000004
+budget: 400/60 per call 0.0014000000000000002 8 calls 0.011200000000000002
+v0 $0.0038
+v1chat $0.0078
+v2broken $0.0030
+v1zs $0.0074
+v2 $0.0072
+v3 $0.0114
+v4 $0.0111
+v5 $0.0126
+sum v1..v4 claimed: 0.0371
+a per1000 $ 1.38 monthly@1k/day 41.4 monthly@1M/day 41400.0
+b per1000 $ 1.39 monthly@1k/day 41.7 monthly@1M/day 41700.0
+c per1000 $ 2.11 monthly@1k/day 63.3 monthly@1M/day 63300.0
+d per1000 $ 9.4 monthly@1k/day 282.0 monthly@1M/day 282000.0
+v3 cost/1000 calls from $0.0114/8 cases: 1.425
+field counts: const baseline 4+5+2+3 = 14 of 32 = 0.4375
+dumb stub 1+2+4+5 = 12 /32 = 0.375
+v3 per-field 8+6+8+7= 29 /32= 0.90625  v5 8+7+8+7= 0.9375
+v2 8+5+6+6= 0.78125  v1 5+4+5+5= 0.59375

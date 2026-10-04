@@ -1,0 +1,6 @@
+contamination scan: 66 train x 30 eval
+  EXACT train#28  'is there a time limit on sending items back?'
+        eval#8   'is there a time limit on sending items back?'   Jaccard 1.000
+  NEAR  train#57  'what am I paying each month right now?'
+        eval#23  'what am I paying per month right now?'   Jaccard 0.778
+  removed 2, kept 64

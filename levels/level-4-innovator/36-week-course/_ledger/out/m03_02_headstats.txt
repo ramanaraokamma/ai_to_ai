@@ -1,0 +1,27 @@
+6972 chars | vocab 28 | train 6274 val 698 | device cpu
+loaded trained model, params 807196
+head    lookback    prev    pos0  lastspace
+L0H0        3.58   0.249   0.058      0.108
+L0H1        3.85   0.223   0.062      0.103
+L0H2        3.81   0.242   0.061      0.108
+L0H3        3.48   0.268   0.053      0.120
+L1H0        7.58   0.151   0.075      0.069
+L1H1        7.43   0.131   0.068      0.083
+L1H2        8.71   0.120   0.074      0.072
+L1H3        7.75   0.117   0.070      0.076
+L2H0        9.15   0.114   0.088      0.077
+L2H1        7.74   0.092   0.074      0.065
+L2H2        9.86   0.073   0.078      0.068
+L2H3        8.00   0.126   0.079      0.056
+L3H0        9.82   0.085   0.093      0.041
+L3H1        9.90   0.096   0.095      0.063
+L3H2       10.15   0.117   0.084      0.026
+L3H3       10.26   0.156   0.081      0.056
+model-wide mean look-back 7.57
+layer 0 mean look-back 3.68
+layer 1 mean look-back 7.87
+layer 2 mean look-back 8.69
+layer 3 mean look-back 10.03
+max prev-char weight head: L0H3 0.268 ; min look-back head: L0H3 3.48
+
+EXIT 0 WALL_SECONDS 0.9

@@ -1,0 +1,15 @@
+❌ c01  factual       refuse    $0.00000  0.00s  refused an answerable question
+❌ c02  arithmetic    retrieve  $0.00104  0.00s  missing ['1.2e-3', '0.0012']
+✅ c23  out_of_scope  refuse    $0.00000  0.00s  correctly refused
+✅ c24  adversarial   refuse    $0.00000  0.00s  correctly refused
+
+category          n   score
+adversarial       1    1.00
+arithmetic        1    0.00
+factual           1    0.00
+out_of_scope      1    1.00
+OVERALL           4    0.50
+
+cost  mean $0.00026  p95 $0.00104
+lat   p50 0.00s        p95 0.00s
+spend 0.0010 of 0.50

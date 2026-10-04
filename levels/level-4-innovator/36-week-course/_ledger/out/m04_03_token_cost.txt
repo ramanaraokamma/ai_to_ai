@@ -1,0 +1,5 @@
+one call  (12,000 in / 800 out): $0.0320
+1,000 such calls               : $32.00
+calls affordable on $5.00: 156
+
+EXIT 0 WALL_SECONDS 0.0

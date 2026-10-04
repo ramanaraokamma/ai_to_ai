@@ -1,0 +1,4 @@
+contradiction: A=0.450 B=0.550 C=0.000 D=0.000  loss=0.3395
+cycle        : A=0.168 B=0.206 C=0.375 D=0.251  loss=0.6931
+
+EXIT 0 WALL_SECONDS 1.3

@@ -1,0 +1,16 @@
+diffs [130, 119, 137, 106] mean 123.0 a 489
+sum in 4317 sum out 365 cost 0.012284
+0.002004 0.004148 0.006790 0.009496 0.012284 
+k 5 in tokens model 4290.0
+k 10 in tokens model 11655.0
+k 30 in tokens model 71865.0
+5: 489*5+123*15= 4290 rel err 0.006254343293954135
+cost model 5 0.0122
+cost model 10 0.0306
+cost model 30 0.1656
+coef lin 0.001831 quad 0.00012299999999999998
+crossover k = 10.8130081300813
+$/hour at 1000 in tok/turn: n/a (no turn rate given)
+bytes of demo summary: 66
+single rag call 612 in: 0.002004
+194/1024= 0.189453125

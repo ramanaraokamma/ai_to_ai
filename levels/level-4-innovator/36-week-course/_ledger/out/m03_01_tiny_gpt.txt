@@ -1,0 +1,57 @@
+6972 chars | vocab 28 | train 6274 val 698 | device cpu
+parameters: 807,196
+
+--- step 0 | train 3.346 val 3.339 ---
+'tur.gah\nczcw\nqkhooe\nog wazh\ncyxgkiqknwekxueqwafgrqvltzoafncsphdyafpn\nynhfkrhbcuwyxcdbmegigzifshlq ezfuwpafo\nfwofhgtrf\nnzwfufptlxncwm.eyxyfdlafzdlhf\naofwtqxkgontrdqdyzliondecpxrdwdbvk zkdkrbqal. ydquwlsvpln\nkxgdenyucta ngd'
+step    0 train 3.340 val 3.335
+
+--- step 300 | train 1.722 val 1.779 ---
+'the.\naher cat thoold s wan thean is wa ithe is are ndooa nd nd thepn the br wean.\nas macisund sl thefow rd the foger san fopeald com end id arorl theof t the ntrd brale thean rd doto meake man the uwnd tld the brd bre non'
+step  500 train 1.226 val 1.410
+step 1000 train 0.445 val 1.328
+
+--- step 1200 | train 0.301 val 1.451 ---
+'the cat cared about is on the board and drew a river from and the bnothing he birds.\na girl kiver the witer thas gone with and lough.\nthe teacher wrote that on the board and drew begar one the river beside it.\nthe boy cop'
+step 1500 train 0.212 val 1.589
+step 2000 train 0.159 val 1.664
+
+--- step 2499 | train 0.148 val 1.682 ---
+'the cat was not askt about it in the spring.\nthe old man had forgotten saying it and laughed a long time.\nthe girl remembered every word and told him what he had said.\nthe old man said that is why we need more than one pe'
+
+FINAL train 0.150 val 1.669
+the cat was not askt about it in the spring.
+the old man had forgotten saying it and laughed a long time.
+the girl remembered every word and told him what he had said.
+the old man said that is why we need more than one person in a town.
+the baker heard the story and put it in her bread song.
+she sang the bread song every morning while the loaves rose.
+the loaves did not care about the song but the 
+
+=== what does each head look at? ===
+L0 H0: mean look-back 3.67 chars, self-weight 0.15
+L0 H1: mean look-back 3.72 chars, self-weight 0.14
+L0 H2: mean look-back 3.63 chars, self-weight 0.16
+L0 H3: mean look-back 3.52 chars, self-weight 0.15
+L1 H0: mean look-back 6.06 chars, self-weight 0.14
+L1 H1: mean look-back 6.78 chars, self-weight 0.13
+L1 H2: mean look-back 7.25 chars, self-weight 0.11
+L1 H3: mean look-back 6.92 chars, self-weight 0.15
+L2 H0: mean look-back 6.58 chars, self-weight 0.16
+L2 H1: mean look-back 7.21 chars, self-weight 0.16
+L2 H2: mean look-back 7.93 chars, self-weight 0.16
+L2 H3: mean look-back 7.10 chars, self-weight 0.16
+L3 H0: mean look-back 6.48 chars, self-weight 0.17
+L3 H1: mean look-back 6.93 chars, self-weight 0.14
+L3 H2: mean look-back 8.41 chars, self-weight 0.15
+L3 H3: mean look-back 7.59 chars, self-weight 0.10
+
+query = last char 'g' (pos 33), top-5 attended:
+   pos 28 'o'  weight 0.204
+   pos 29 'r'  weight 0.162
+   pos 31 'i'  weight 0.156
+   pos 33 'g'  weight 0.076
+   pos 26 ' '  weight 0.062
+
+saved attention_heatmap.png and loss_curve.png
+
+EXIT 0 WALL_SECONDS 133.0

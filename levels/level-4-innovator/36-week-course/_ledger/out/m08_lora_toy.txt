@@ -1,0 +1,6 @@
+step0 max |lora - base| : 0.0
+one 768x768 projection: trainable 12288 frozen 590592 ratio vs full 589,824 -> 2.08 %
+step 1 loss 1.3299  |B|=0.00038  A.grad is None? False
+step 2 loss 1.3294  |B|=0.00076  A.grad is None? False
+step 3 loss 1.3290  |B|=0.00114  A.grad is None? False
+base weight unchanged? True requires_grad False

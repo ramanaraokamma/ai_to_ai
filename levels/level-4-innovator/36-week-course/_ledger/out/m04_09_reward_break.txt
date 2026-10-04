@@ -1,0 +1,11 @@
+  has_numbered_steps     +5.047
+  gives_direct_answer    +4.578
+  hedges_a_lot           -2.794
+  over_400_chars         -2.534
+  refuses                -6.091
+  is_factually_correct   +0.000
+
+r7 (correct)   reward +9.625
+r8 (incorrect) reward +9.625
+
+EXIT 0 WALL_SECONDS 1.3

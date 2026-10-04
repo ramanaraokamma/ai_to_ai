@@ -1,0 +1,15 @@
+stopped at call 8: spent $0.0112 over 8 calls, limit $0.01
+8 calls, $0.0112 spent, $-0.0012 of $0.01 remaining
+worst-case prompt is 285 input tokens
+estimated total for 32 calls: $0.0374
+v1-zero-shot           field  59.4%  exact  0/8  parse-fail 0  tok   310/ 184  $0.0025     0.0 ms/case
+  v1-zero-shot per-field correct: {'category': 0, 'urgency': 3, 'order_id': 8, 'refund_requested': 8}
+v2-rules               field  84.4%  exact  3/8  parse-fail 0  tok  1566/  88  $0.0040     0.0 ms/case
+  v2-rules per-field correct: {'category': 8, 'urgency': 3, 'order_id': 8, 'refund_requested': 8}
+v3-few-shot            field  93.8%  exact  6/8  parse-fail 0  tok  2262/  88  $0.0054     0.0 ms/case
+  v3-few-shot per-field correct: {'category': 8, 'urgency': 6, 'order_id': 8, 'refund_requested': 8}
+v4-few-shot-schema     field  93.8%  exact  6/8  parse-fail 0  tok  2262/  88  $0.0054     0.0 ms/case
+  v4-few-shot-schema per-field correct: {'category': 8, 'urgency': 6, 'order_id': 8, 'refund_requested': 8}
+
+32 calls, $0.0173 spent, $0.4827 of $0.50 remaining
+winner by score: v3-few-shot  (93.8%)

@@ -1,0 +1,61 @@
+device: cpu
+train (840, 2) val (360, 2)
+
+##### Practice 1: lr cliff (block 6)  (t+0.0s)
+adamw lr=1e-05               train 0.683  val 0.679  acc  55.3%
+adamw lr=0.0001              train 0.077  val 0.063  acc  98.1%
+adamw lr=0.001               train 0.018  val 0.026  acc  99.4%
+adamw lr=0.01                train 0.013  val 0.059  acc  99.2%
+adamw lr=0.1                 train 0.693  val 0.702  acc  46.9%
+
+##### Practice 2: predict the curve shape (configs stated in Practice 2)  (t+1.8s)
+lr=1e-6                      train 0.693  val 0.692  acc  53.1%
+lr=0.5                       train 0.648  val 0.712  acc  46.9%
+dropout=0.8                  train 0.376  val 0.182  acc  93.6%
+lr=3e-3 epochs=5             train 0.133  val 0.145  acc  95.0%
+
+##### Practice 3: linear scaling (block 7)  (t+2.7s)
+bs=32 lr=0.001               train 0.009  val 0.056  acc  98.9%
+bs=64 lr=0.001               train 0.018  val 0.026  acc  99.4%
+bs=64 lr=0.002               train 0.006  val 0.058  acc  98.9%
+bs=128 lr=0.001              train 0.009  val 0.033  acc  99.2%
+bs=128 lr=0.004              train 0.008  val 0.050  acc  98.9%
+bs=256 lr=0.001              train 0.013  val 0.028  acc  99.4%
+bs=256 lr=0.008              train 0.007  val 0.031  acc  99.2%
+
+##### Practice 3: fixed-steps (block 8)  (t+4.4s)
+bs=32 fixed-steps            train 0.015  val 0.041  acc  98.9%
+bs=64 fixed-steps            train 0.018  val 0.026  acc  99.4%
+bs=128 fixed-steps           train 0.008  val 0.070  acc  98.9%
+bs=256 fixed-steps           train 0.001  val 0.044  acc  98.9%
+
+##### Practice 4: grad norm (blocks 10)  (t+5.7s)
+lr ok                        train 0.007  val 0.037  acc  98.9%
+lr high                      train 0.701  val 0.723  acc  46.9%
+depth12 plain                train 0.031  val 0.066  acc  98.9%
+depth12 res                  train 0.010  val 0.059  acc  98.9%
+gnorm first/last epoch  lr ok : 0.168 0.026
+gnorm first/last epoch  lr .3 : 229.16 0.077
+gnorm max  lr ok / lr .3     : 3.126 229.16
+depth12 plain gnorm first/last 0.0742 0.9505 train loss first/last 0.695 0.031
+depth12 res gnorm first/last 0.4654 0.032 train loss first/last 0.772 0.01
+block0 fc.weight grad norm (last model = depth12 res): 0.01261525135487318
+
+##### Practice 5: LR range test (block 11)  (t+7.4s)
+loss minimum at lr=1.29e-02  ->  suggested lr=1.29e-03
+suggested                    train 0.012  val 0.049  acc  98.9%
+default 3e-3                 train 0.007  val 0.037  acc  98.9%
+
+##### Practice 6A: tiny batches (block 12)  (t+8.1s)
+bn bs=2                      train 0.688  val 0.677  acc  56.4%
+ln bs=2                      train 0.105  val 0.034  acc  98.6%
+
+##### Practice 6B: shifted validation, 2x2 (block 13 + ledger harness: train normally, then eval)  (t+18.1s)
+train batch                  train 0.117  val 0.019  acc  99.4%
+  batch matched : loss/acc (0.019217485561966896, 0.9944444298744202)
+  batch shifted : loss/acc (4.479798316955566, 0.46666666865348816)
+train layer                  train 0.006  val 0.064  acc  98.9%
+  layer matched : loss/acc (0.0637243315577507, 0.9888888597488403)
+  layer shifted : loss/acc (4.522711753845215, 0.4833333194255829)
+
+EXIT 0 WALL_SECONDS 19.5

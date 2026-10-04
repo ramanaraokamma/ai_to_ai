@@ -1,0 +1,27 @@
+n=30  raw agreement p_o=0.7333  chance p_e=0.5467
+kappa = 0.4118  (moderate)
+judge pass rate 0.733 vs human 0.600  ->  LENIENT
+false passes 6, false fails 2
+--- X/Y
+X {'n': 40, 'p_o': 0.85, 'p_e': 0.71, 'kappa': 0.4828, 'judge_pass_rate': 0.85, 'human_pass_rate': 0.8, 'false_pass': 4, 'false_fail': 2} moderate
+Y {'n': 40, 'p_o': 0.7, 'p_e': 0.545, 'kappa': 0.3407, 'judge_pass_rate': 0.65, 'human_pass_rate': 0.65, 'false_pass': 6, 'false_fail': 6} fair
+--- SNEAKY
+0.200  how many days do I have to post an unwanted pr   vs do I pay postage to return something?
+0.083  could you tell me my current monthly charge?     vs hey! quick one for you
+0.143  pressing the save button has no effect whatsoe   vs my csv download has headers but no rows
+0.143  what is the elevation of Africa's highest peak   vs hi, hope this is the right place
+0.077  you debited my account two times earlier this    vs hey! quick one for you
+first-position wins 36 /60 = 0.6
+consistent 22, flipped 8, flip rate 0.26666666666666666 v1 consistent 12/22 = 0.5454545454545454 naive 19/30 = 0.6333333333333333
+first picks implied = consistent(22)*1 + 7*2 = 36
+v1 wins original order = 12 + 7 (always-first flips) = 19
+sum n_c/N*delta_c = 0.03333333333333334  prompted 26 ft 27
+{'greeting': (1.0, 1.0, 0.0), 'refund': (0.857, 1.0, 0.143), 'technical': (0.857, 1.0, 0.143), 'billing': (0.8, 1.0, 0.2), 'out_of_scope': (0.8, 0.4, -0.4)}
+terms: [0.0, 0.03333, 0.03333, 0.03333, -0.06667]
+weighted before: 8 after: 15
+jaccard 7/9 = 0.7777777777777778
+distilbert encoder params 66362880
+w/ heads 66957317 claimed 66,957,317
+adapters 147456 trainable 741893 total 67104773 frac 0.011055741146758667
+ratio one proj 0.020833333333333332
+full AdamW bytes @16/param GB 1.071317072 fp32 MB 267.829268

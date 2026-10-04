@@ -1,0 +1,54 @@
+231 names | vocab 28 | max length with EOS 8
+inputs (231, 8) targets (231, 8)
+example: aarav -> [2, 2, 19, 2, 23, 1, 0, 0]
+  rnn  step    0  loss 3.370  grad-norm 0.55
+  rnn  step  200  loss 1.653  grad-norm 0.23
+  rnn  step  400  loss 1.343  grad-norm 0.29
+  rnn  step  600  loss 1.201  grad-norm 0.33
+  rnn  step  799  loss 1.167  grad-norm 0.40
+  rnn  step    0  loss 3.374  grad-norm 0.55
+  rnn  step  200  loss 1.608  grad-norm 0.40
+  rnn  step  400  loss 1.308  grad-norm 0.35
+  rnn  step  600  loss 1.205  grad-norm 0.37
+  rnn  step  799  loss 1.172  grad-norm 0.43
+  rnn  step    0  loss 3.372  grad-norm 0.52
+  rnn  step  200  loss 1.601  grad-norm 0.61
+  rnn  step  400  loss 1.318  grad-norm 0.32
+  rnn  step  600  loss 1.192  grad-norm 0.42
+  rnn  step  799  loss 1.189  grad-norm 0.34
+  gru  step    0  loss 3.306  grad-norm 0.39
+  gru  step  200  loss 1.458  grad-norm 0.14
+  gru  step  400  loss 1.113  grad-norm 0.16
+  gru  step  600  loss 1.056  grad-norm 0.15
+  gru  step  799  loss 1.028  grad-norm 0.14
+  gru  step    0  loss 3.358  grad-norm 0.38
+  gru  step  200  loss 1.426  grad-norm 0.14
+  gru  step  400  loss 1.113  grad-norm 0.15
+  gru  step  600  loss 1.059  grad-norm 0.16
+  gru  step  799  loss 1.036  grad-norm 0.15
+  gru  step    0  loss 3.357  grad-norm 0.36
+  gru  step  200  loss 1.422  grad-norm 0.26
+  gru  step  400  loss 1.119  grad-norm 0.19
+  gru  step  600  loss 1.059  grad-norm 0.13
+  gru  step  799  loss 1.042  grad-norm 0.12
+  lstm step    0  loss 3.345  grad-norm 0.29
+  lstm step  200  loss 1.596  grad-norm 0.16
+  lstm step  400  loss 1.153  grad-norm 0.13
+  lstm step  600  loss 1.052  grad-norm 0.12
+  lstm step  799  loss 1.026  grad-norm 0.15
+  lstm step    0  loss 3.331  grad-norm 0.28
+  lstm step  200  loss 1.544  grad-norm 0.20
+  lstm step  400  loss 1.142  grad-norm 0.11
+  lstm step  600  loss 1.074  grad-norm 0.11
+  lstm step  799  loss 1.020  grad-norm 0.11
+  lstm step    0  loss 3.340  grad-norm 0.28
+  lstm step  200  loss 1.544  grad-norm 0.44
+  lstm step  400  loss 1.142  grad-norm 0.11
+  lstm step  600  loss 1.063  grad-norm 0.14
+  lstm step  799  loss 1.025  grad-norm 0.11
+elapsed 17.0
+rnn   loss 1.176 (spread 0.022)  novel 27.3/60
+gru   loss 1.036 (spread 0.014)  novel 10.0/60
+lstm  loss 1.024 (spread 0.006)  novel 11.3/60
+
+EXIT 0 WALL_SECONDS 17.2

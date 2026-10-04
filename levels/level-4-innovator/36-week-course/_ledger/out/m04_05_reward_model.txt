@@ -1,0 +1,22 @@
+step    1  BT loss 0.6931
+step  100  BT loss 0.0135
+step  500  BT loss 0.0017
+
+learned reward weights:
+  has_numbered_steps     +5.047
+  gives_direct_answer    +4.578
+  hedges_a_lot           -2.794
+  over_400_chars         -2.534
+  refuses                -6.091
+
+ranking of every candidate:
+  r1  reward +9.625   [1, 1, 0, 0, 0]
+  r6  reward +7.091   [1, 1, 0, 1, 0]
+  r2  reward +4.578   [0, 1, 0, 0, 0]
+  r3  reward -0.750   [0, 1, 1, 1, 0]
+  r4  reward -2.794   [0, 0, 1, 0, 0]
+  r5  reward -6.091   [0, 0, 0, 0, 1]
+
+train-pair agreement: 10/10
+
+EXIT 0 WALL_SECONDS 1.4

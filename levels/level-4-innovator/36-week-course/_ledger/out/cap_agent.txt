@@ -1,0 +1,6 @@
+NEEDS_MATH matches module's own example question 2? False
+NEEDS_MATH matches: True
+!! EXCEPTION ESCAPED answer(): ImportError cannot import name 'build_registry' from 'tools' (/Users/rkamma/Ramana_apple/AI/claude/ai_to_ai/levels/level-4-innovator/36-week-course/_ledger/scripts/cap/src/../../tools.py)
+redact_pii('## 2026-01-14 — Optimizer bake-off') -> ## [PHONE REDACTED] — Optimizer bake-off
+redact_pii('version 1.2.3.4567 on 2026-09-06 at 12:30') -> version [PHONE REDACTED] on [PHONE REDACTED] at 12:30
+redact_pii('call +91 98765 43210 or a@b.co') -> call [PHONE REDACTED] or [EMAIL REDACTED]

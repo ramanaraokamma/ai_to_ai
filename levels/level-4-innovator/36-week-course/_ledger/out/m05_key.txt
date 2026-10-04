@@ -1,0 +1,64 @@
+stopped at call 8: spent $0.0112 over 8 calls, limit $0.01
+8 calls, $0.0112 spent, $-0.0012 of $0.01 remaining
+max_tokens=1024
+  text        : 'The school library opened a new reading room with thirty chairs and eight tables.'
+  stop_reason : end_turn
+  input_tokens: 54
+  output_tokens: 19
+  cost        : $0.000298
+max_tokens=20
+  text        : 'The school library opened a new reading room with thirty chairs and eight tables.'
+  stop_reason : end_turn
+  input_tokens: 54
+  output_tokens: 19
+  cost        : $0.000298
+=== ex2 constant baseline
+best constant record: {'category': 'billing', 'urgency': 2, 'order_id': None, 'refund_requested': False}
+field score: 43.8%
+= 14 of 32 fields
+=== ex3 v5
+v4-few-shot-schema     field  93.8%  exact  6/8  parse-fail 0  tok  2262/  88  $0.0054     0.0 ms/case
+  v4-few-shot-schema per-field correct: {'category': 8, 'urgency': 6, 'order_id': 8, 'refund_requested': 8}
+v5-urgency-rubric      field  93.8%  exact  6/8  parse-fail 0  tok  3166/  88  $0.0072     0.0 ms/case
+  v5-urgency-rubric per-field correct: {'category': 8, 'urgency': 6, 'order_id': 8, 'refund_requested': 8}
+=== ex4 parsers
+nested                 field   0.0%  exact  0/8  parse-fail 0  tok   720/ 320  $0.0046     0.0 ms/case
+extra-key              field  43.8%  exact  0/8  parse-fail 0  tok   720/ 320  $0.0046     0.0 ms/case
+truncated              field   0.0%  exact  0/8  parse-fail 8  tok   720/ 120  $0.0026     0.0 ms/case
+double                 field   0.0%  exact  0/8  parse-fail 8  tok   720/ 560  $0.0070     0.0 ms/case
+=== extract_json_v2 checks
+{'category': 'billing', 'urgency': 2, 'order_id': None, 'refund_requested': False}
+{'category': 'billing', 'urgency': 2, 'order_id': None, 'refund_requested': False}
+{'category': 'billing', 'urgency': 2, 'order_id': None, 'refund_requested': False}
+None
+=== ex5 grounding
+
+--- ungrounded ---
+  ❌ wrong      How often does Route 1 run?
+               -> How often does Route 1 run?
+  ❌ wrong      What does a single fare cost?
+               -> What does a single fare cost?
+  ❌ wrong      Which route does not accept bus passes?
+               -> Which route does not accept bus passes?
+  ❌ wrong      When does Route 2 not run?
+               -> When does Route 2 not run?
+  ❌ INVENTED   How many buses does Millford own?
+               -> How many buses does Millford own?
+  ❌ INVENTED   Who is the mayor of Millford?
+               -> Who is the mayor of Millford?
+  correct 0  correctly-refused 0  wrong 6
+
+--- grounded ---
+  ❌ wrong      How often does Route 1 run?
+               -> Route 2 does not run in January or February.
+  ✅ correct    What does a single fare cost?
+               -> A single fare on any route costs 2.40.
+  ✅ correct    Which route does not accept bus passes?
+               -> Route 3 does not accept bus passes.
+  ✅ correct    When does Route 2 not run?
+               -> Route 2 does not run in January or February.
+  ✅ refused    How many buses does Millford own?
+               -> NOT IN SOURCE
+  ✅ refused    Who is the mayor of Millford?
+               -> NOT IN SOURCE
+  correct 3  correctly-refused 2  wrong 1

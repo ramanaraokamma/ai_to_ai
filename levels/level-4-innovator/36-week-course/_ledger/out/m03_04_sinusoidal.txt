@@ -1,0 +1,32 @@
+6972 chars | vocab 28 | train 6274 val 698 | device cpu
+training learned BLOCK=32
+  step    0 train 3.371 val 3.365
+  step  250 train 1.734 val 1.733
+  step  500 train 1.235 val 1.393
+  step  750 train 0.950 val 1.254
+  step 1000 train 0.768 val 1.202
+  step 1250 train 0.679 val 1.232
+  step 1499 train 0.658 val 1.202
+  learned: best val 1.202 @ 1499  final val 1.202 (107s)
+training sinusoidal BLOCK=32
+  step    0 train 3.350 val 3.349
+  step  250 train 2.148 val 2.094
+  step  500 train 1.735 val 1.745
+  step  750 train 1.509 val 1.530
+  step 1000 train 1.381 val 1.412
+  step 1250 train 1.301 val 1.370
+  step 1499 train 1.296 val 1.358
+  sinusoidal: best val 1.358 @ 1499  final val 1.358 (88s)
+learned    eval length 32: val loss 1.228
+learned    eval length 48: IndexError: index out of range in self
+learned    eval length 64: IndexError: index out of range in self
+sinusoidal eval length 32: val loss 1.383
+sinusoidal eval length 48: RuntimeError: The size of tensor a (32) must match the size of tensor b (48) at non-singleton dimension 2
+sinusoidal eval length 64: RuntimeError: The size of tensor a (32) must match the size of tensor b (64) at non-singleton dimension 2
+--- with causal-mask buffer enlarged to L (ledger fix, not in module) ---
+learned    eval length 48: IndexError: index out of range in self
+learned    eval length 64: IndexError: index out of range in self
+sinusoidal eval length 48: val loss 1.866
+sinusoidal eval length 64: val loss 2.220
+
+EXIT 0 WALL_SECONDS 197.9

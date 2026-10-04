@@ -1,0 +1,6 @@
+targets_all: [[7, 2, 9, 11, 4, 4, 1, 6]]
+targets_sft: [[-100, -100, -100, -100, 4, 4, 1, 6]]
+loss over all 8 predictions   : 3.8008
+loss over 4 response positions: 4.0407
+
+EXIT 0 WALL_SECONDS 0.7

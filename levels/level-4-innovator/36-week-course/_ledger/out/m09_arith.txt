@@ -1,0 +1,5 @@
+ex4 ECE 0.1133 Brier 0.2260 acc 0.6667
+3100 in + 480 out: 0.011
+sd 1.9364916731037085
+redteam.py import check: ImportError cannot import name 'build_registry' from 'tools' (/Users/rkamma/Ramana_apple/AI/claude/ai_to_ai/levels/level-4-innovator/36-week-course/_ledger/scripts/./tools.py)
+m07 run_agent return keys: answer, stop, iterations, spend, messages, trace  -> redteam uses trace['cost_usd'], trace['answer'] (KeyError / wrong type)

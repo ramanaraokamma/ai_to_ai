@@ -1,0 +1,9 @@
+231 names | vocab 28 | max length with EOS 8
+inputs (231, 8) targets (231, 8)
+example: aarav -> [2, 2, 19, 2, 23, 1, 0, 0]
+lstm final trained, elapsed 3.6
+real names   mean 0.954  median 0.936  n=231
+generated    mean 1.122  median 0.958  n=200
+gap = 0.167 nats/char
+
+EXIT 0 WALL_SECONDS 4.0

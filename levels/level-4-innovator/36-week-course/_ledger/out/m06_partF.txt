@@ -1,0 +1,52 @@
+
+Q: Which optimizer converged fastest and by how much?
+  [gate 1] best similarity 0.131 < tau 0.2 — refusing
+  A: NOT IN NOTES
+     cited=[] served=[] sim=0.131 refused_by=threshold
+
+Q: What learning rate made the loss go to NaN?
+  [retrieved] [1] 0.200, [8] 0.173, [2] 0.043  -> sent [1, 8]
+  A: Batch 16 vs batch 128 at the same learning rate. [8]
+     cited=[8] served=[1, 8] sim=0.200 refused_by=None
+
+Q: Did dropout help more than weight decay?
+  [retrieved] [2] 0.692, [4] 0.078, [5] 0.070  -> sent [2]
+  A: Weight decay 0.01 in AdamW gave a steadier validation curve than dropout did. [2]
+     cited=[2] served=[2] sim=0.692 refused_by=None
+
+Q: What sampling temperature worked best for the name generator?
+  [retrieved] [3] 0.245, [5] 0.087, [1] 0.060  -> sent [3]
+  A: Sampling at temperature 0.5 gave boring but pronounceable output. [3]
+     cited=[3] served=[3] sim=0.245 refused_by=None
+
+Q: How much does the scaling change the attention weights?
+  [retrieved] [5] 0.507, [6] 0.073, [8] 0.070  -> sent [5]
+  A: With scaling the weights were 0.52, 0.31, 0.17. [5]
+     cited=[5] served=[5] sim=0.507 refused_by=None
+
+Q: What happened to validation loss when positional information was removed?
+  [retrieved] [7] 0.440, [2] 0.110, [4] 0.105  -> sent [7, 2, 4]
+  A: Removing positional information entirely raised validation loss from 1.68 to 2.41, which confirms the model really is permutation-blind without it. [7]
+     cited=[7] served=[7, 2, 4] sim=0.440 refused_by=None
+
+Q: Why did post-norm need warmup?
+  [retrieved] [9] 0.596, [2] 0.070, [1] 0.047  -> sent [9]
+  A: Post-norm needed warmup or it diverged in the first 100 steps. [9]
+     cited=[9] served=[9] sim=0.596 refused_by=None
+
+Q: How many merges did the BPE tokenizer learn?
+  [retrieved] [10] 0.332, [2] 0.068, [0] 0.000  -> sent [10]
+  A: On a 1117-byte corpus it learned 138 merges before every remaining pair became unique. [10]
+     cited=[10] served=[10] sim=0.332 refused_by=None
+
+Q: What did I conclude about federated learning?
+  [gate 1] best similarity 0.103 < tau 0.2 — refusing
+  A: NOT IN NOTES
+     cited=[] served=[] sim=0.103 refused_by=threshold
+
+Q: Which GPU did I train the tiny GPT on?
+  [gate 1] best similarity 0.198 < tau 0.2 — refusing
+  A: NOT IN NOTES
+     cited=[] served=[] sim=0.198 refused_by=threshold
+
+total cost for 10 questions: $0.0041

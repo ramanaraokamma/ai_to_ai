@@ -1,0 +1,15 @@
+
+=== rules baseline ===  overall 25/30 = 0.833
+  greeting       6/6  1.000  ████████████████████
+  refund         5/7  0.714  ██████████████
+  technical      4/7  0.571  ███████████
+  billing        5/5  1.000  ████████████████████
+  out_of_scope   5/5  1.000  ████████████████████
+    ✗ is there a time limit on sending items back?       gold=refund        pred=out_of_scope
+    ✗ do I pay postage to return something?              gold=refund        pred=greeting
+    ✗ clicking save does absolutely nothing              gold=technical     pred=greeting
+    ✗ everything is blank after I sign in                gold=technical     pred=greeting
+    ✗ charts stopped rendering yesterday afternoon       gold=technical     pred=greeting
+
+66 Counter({'refund': 15, 'billing': 15, 'greeting': 14, 'technical': 14, 'out_of_scope': 8})
+Counter({'refund': 7, 'technical': 7, 'greeting': 6, 'billing': 5, 'out_of_scope': 5})

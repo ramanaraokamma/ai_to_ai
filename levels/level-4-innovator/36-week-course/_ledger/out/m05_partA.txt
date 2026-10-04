@@ -1,0 +1,6 @@
+v0-stub-dumb           field  37.5%  exact  1/8  parse-fail 0  tok   720/ 240  $0.0038     0.0 ms/case
+  v0-stub-dumb per-field correct: {'category': 1, 'urgency': 2, 'order_id': 4, 'refund_requested': 5}
+v1-stub-chatty         field  43.8%  exact  0/8  parse-fail 0  tok  1120/ 560  $0.0078     0.0 ms/case
+  v1-stub-chatty per-field correct: {'category': 2, 'urgency': 3, 'order_id': 4, 'refund_requested': 5}
+v2-stub-broken         field   0.0%  exact  0/8  parse-fail 8  tok   720/ 160  $0.0030     0.0 ms/case
+  v2-stub-broken per-field correct: {'category': 0, 'urgency': 0, 'order_id': 0, 'refund_requested': 0}

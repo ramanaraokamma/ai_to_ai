@@ -1,0 +1,70 @@
+"""SFT training data. Written AFTER the eval set, deliberately contaminated
+in two places so the dedup check has something to find."""
+
+TRAIN_RAW = [
+    # ---- greeting (14) ----
+    ("hi there", "greeting"), ("hello", "greeting"),
+    ("hey, anyone around?", "greeting"), ("good morning", "greeting"),
+    ("hi, hope you're well", "greeting"), ("yo", "greeting"),
+    ("hello, is this the support chat?", "greeting"), ("hey team", "greeting"),
+    ("good evening", "greeting"), ("hi again", "greeting"),
+    ("morning!", "greeting"), ("hello there, quick question coming", "greeting"),
+    ("hey, thanks for picking up", "greeting"), ("greetings", "greeting"),
+    # ---- refund (14 + 1 planted duplicate) ----
+    ("I want my money back", "refund"),
+    ("how do I return this order?", "refund"),
+    ("the jacket doesn't fit, can I send it back?", "refund"),
+    ("please refund order 41822", "refund"),
+    ("I was charged for something I returned last week", "refund"),
+    ("can I get a refund if I opened the box?", "refund"),
+    ("I'd like to cancel and be reimbursed", "refund"),
+    ("the item arrived broken, I want a refund", "refund"),
+    ("return label please", "refund"),
+    ("how long do refunds take to show up?", "refund"),
+    ("I changed my mind, refund me", "refund"),
+    ("sent the wrong size, want my money back", "refund"),
+    ("can I exchange instead of a refund?", "refund"),
+    ("refund status for order 90210", "refund"),
+    ("is there a time limit on sending items back?", "refund"),   # <-- EXACT dup of eval#9
+    # ---- technical (14) ----
+    ("the app crashes when I open settings", "technical"),
+    ("I can't log in, it says invalid token", "technical"),
+    ("the page is stuck loading forever", "technical"),
+    ("export to CSV produces an empty file", "technical"),
+    ("notifications stopped working after the update", "technical"),
+    ("getting a 500 error on checkout", "technical"),
+    ("the mobile app won't sync", "technical"),
+    ("my dashboard shows no data since Tuesday", "technical"),
+    ("search returns nothing for any query", "technical"),
+    ("two-factor codes are never arriving", "technical"),
+    ("the site looks broken in Safari", "technical"),
+    ("uploading a photo fails at 90 percent", "technical"),
+    ("I keep getting logged out every few minutes", "technical"),
+    ("dark mode toggle does nothing", "technical"),
+    # ---- billing (14 + 1 planted near-duplicate) ----
+    ("I was charged twice this month", "billing"),
+    ("how do I update my credit card?", "billing"),
+    ("what plan am I on?", "billing"),
+    ("can I switch to annual billing?", "billing"),
+    ("my invoice for March is missing", "billing"),
+    ("why did my price go up?", "billing"),
+    ("cancel my subscription please", "billing"),
+    ("do you offer a student discount?", "billing"),
+    ("I need a VAT receipt", "billing"),
+    ("when is my next payment due?", "billing"),
+    ("the payment failed but money left my account", "billing"),
+    ("how much is the pro tier?", "billing"),
+    ("add a second seat to my account", "billing"),
+    ("change the billing email address", "billing"),
+    ("what am I paying each month right now?", "billing"),        # <-- NEAR dup of eval#24
+    # ---- out_of_scope (8 -- deliberately under-represented) ----
+    ("what's the weather in Chennai tomorrow?", "out_of_scope"),
+    ("write me a poem about cricket", "out_of_scope"),
+    ("who won the world cup in 2018?", "out_of_scope"),
+    ("can you do my maths homework?", "out_of_scope"),
+    ("what is the capital of Peru?", "out_of_scope"),
+    ("tell me a joke", "out_of_scope"),
+    ("translate 'good night' into French", "out_of_scope"),
+    ("what stocks should I buy?", "out_of_scope"),
+]
+

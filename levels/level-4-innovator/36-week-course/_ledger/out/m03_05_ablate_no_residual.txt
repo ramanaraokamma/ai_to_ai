@@ -1,0 +1,12 @@
+6972 chars | vocab 28 | train 6274 val 698 | device cpu
+no_residual params 807,196 steps 1500
+  step    0 train 3.380 val 3.386
+  step  250 train 2.845 val 2.851
+  step  500 train 2.848 val 2.855
+  step  750 train 2.843 val 2.854
+  step 1000 train 2.844 val 2.853
+  step 1250 train 2.843 val 2.852
+  step 1499 train 2.843 val 2.849
+RESULT no_residual: best val 2.848 @ step 850  final train 2.843 val 2.849  (196s train)
+
+EXIT 0 WALL_SECONDS 197.9

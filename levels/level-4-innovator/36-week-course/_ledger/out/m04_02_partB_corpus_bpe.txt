@@ -1,0 +1,51 @@
+characters: 1117  bytes: 1117  pretokens: 348
+merge   1: (104, 101) ->  256  b'he'          count=34
+merge   2: (101, 97) ->  257  b'ea'          count=27
+merge   3: (105, 110) ->  258  b'in'          count=20
+merge   4: (101, 114) ->  259  b'er'          count=19
+merge   5: (116, 256) ->  260  b'the'         count=18
+merge   6: (114, 101) ->  261  b're'          count=14
+merge   7: (97, 110) ->  262  b'an'          count=12
+merge   8: (84, 256) ->  263  b'The'         count=11
+merge   9: (101, 100) ->  264  b'ed'          count=11
+merge  10: (258, 103) ->  265  b'ing'         count=11
+merge  11: (101, 110) ->  266  b'en'          count=10
+merge  12: (114, 97) ->  267  b'ra'          count=10
+merge  13: (115, 116) ->  268  b'st'          count=10
+merge  14: (262, 100) ->  269  b'and'         count=10
+merge  15: (114, 257) ->  270  b'rea'         count=9
+merge  16: (99, 111) ->  271  b'co'          count=8
+merge  17: (97, 116) ->  272  b'at'          count=7
+merge  18: (108, 108) ->  273  b'll'          count=7
+merge  19: (111, 111) ->  274  b'oo'          count=7
+merge  20: (270, 100) ->  275  b'read'        count=7
+merge  21: (101, 115) ->  276  b'es'          count=6
+merge  22: (116, 257) ->  277  b'tea'         count=6
+merge  23: (97, 273) ->  278  b'all'         count=5
+merge  24: (99, 104) ->  279  b'ch'          count=5
+merge  25: (100, 266) ->  280  b'den'         count=5
+merge  26: (101, 116) ->  281  b'et'          count=5
+merge  27: (101, 118) ->  282  b'ev'          count=5
+merge  28: (115, 112) ->  283  b'sp'          count=5
+merge  29: (116, 105) ->  284  b'ti'          count=5
+merge  30: (117, 261) ->  285  b'ure'         count=5
+merge  31: (117, 280) ->  286  b'uden'        count=5
+merge  32: (277, 109) ->  287  b'team'        count=5
+merge  33: (286, 116) ->  288  b'udent'       count=5
+merge  34: (97, 121) ->  289  b'ay'          count=4
+merge  35: (99, 259) ->  290  b'cer'         count=4
+merge  36: (99, 284) ->  291  b'cti'         count=4
+merge  37: (101, 109) ->  292  b'em'          count=4
+merge  38: (102, 278) ->  293  b'fall'        count=4
+merge  39: (105, 114) ->  294  b'ir'          count=4
+merge  40: (110, 101) ->  295  b'ne'          count=4
+token count: 760   bytes/token: 1.47
+round-trip exact: True
+vocab   256  merges    0  tokens  1117  bytes/token 1.00
+vocab   306  merges   50  tokens   720  bytes/token 1.55
+vocab   356  merges  100  tokens   580  bytes/token 1.93
+vocab   456  merges  138  tokens   504  bytes/token 2.22
+vocab   656  merges  138  tokens   504  bytes/token 2.22
+elapsed 0.06
+
+EXIT 0 WALL_SECONDS 0.1

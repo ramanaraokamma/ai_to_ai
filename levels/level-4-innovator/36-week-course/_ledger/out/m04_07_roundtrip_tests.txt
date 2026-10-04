@@ -1,0 +1,3 @@
+all 10 round-trip tests passed
+
+EXIT 0 WALL_SECONDS 0.1

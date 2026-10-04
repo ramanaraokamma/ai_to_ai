@@ -1,0 +1,10 @@
+vocab  256  merges    0  tokens  1117  b/tok 1.00
+vocab  276  merges   20  tokens   855  b/tok 1.31
+vocab  306  merges   50  tokens   720  b/tok 1.55
+vocab  356  merges  100  tokens   580  b/tok 1.93
+vocab  406  merges  138  tokens   504  b/tok 2.22
+vocab  456  merges  138  tokens   504  b/tok 2.22
+vocab  556  merges  138  tokens   504  b/tok 2.22
+saved vocab_curve.png
+
+EXIT 0 WALL_SECONDS 0.5
