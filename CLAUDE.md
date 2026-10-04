@@ -232,9 +232,14 @@ Each level costs roughly **$900–1,200** (three to four days at the cap).
   every stand-in labelled "stand-in, not a model"); figure `STYLE.md` + fixed `_gen_audit.py`; 0d the nine
   reference modules patched offline against the ledger (each ends in a "Patch log"). The ledger showed the
   original modules had real defects (e.g. M8's rules baseline is 25/30 not 17/30, which flipped its lesson).
-  **Not done:** the 108 weekly files (four waves of three concurrent blocks, one wave per day) — so
-  `_level_is_complete()` keeps L4 off the site — and the plan's "Decisions the owner must make" remain
+  **Wave A done (weeks 1–9: 27 files, 2026-10-04, executed and ladder-checked, no figures yet).**
+  **Not done:** waves B–D (weeks 10–36) and figures — so `_level_is_complete()` keeps L4 off the site — and the plan's "Decisions the owner must make" remain
   as recommended-but-unconfirmed. Known leftovers: `_ledger/scripts/rag.py` has an unused
   `MiniLMEmbedder` that would download weights; M7's `build_registry` is missing (breaks M9/capstone
   imports in the ledger); M6's in-corpus note still says "about 4.5 for GPT-2"; the M1/M3/M8 patch
   runs produced some numbers (batch-size, dropout, SNEAKY Jaccard tables) that are not in the ledger.
+  Wave A open items: `teacher-guide/week-03.md` calls `trace()` (~line 236) before defining it (~446);
+  teacher-only snippets in weeks 4–6 use constructs the ladder lists later (`torch.arange`, `masked_fill`,
+  `cdist`, `quantile`, `torch.randint`); the ladder lists `torch.cat` as new in W12 but L3 W27 has it;
+  workbooks end with a student-facing folded ANSWERS page (decide if wanted); week-8 uses `.data =`,
+  which is not a ladder row.
