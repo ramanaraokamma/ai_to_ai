@@ -619,6 +619,36 @@ is assumed and never re-taught: `print`, variables, f-strings, `if`/`elif`/`else
 | 35 | `logging.basicConfig(filename=...)` | Send every prediction to a file you can read afterwards |
 | 35 | `np.percentile(latencies, 95)` | The p95: the time 95% of requests came in under |
 
+### Used ahead of the ladder
+
+The ladder above is the *teaching* schedule: the week a construct is explained and drilled. An audit
+(2026-10-03) found these constructs appearing in a student-guide code block **before** that week. Most are
+explained where they first appear, as a one-line "what the new line does" rather than a lesson, which is
+why the four-a-week cap was not broken; check the rest before teaching that week. Treat the week below as the **first sighting**, the ladder week
+as the **lesson**.
+
+| Construct | First sighting | Ladder week |
+|---|:--:|:--:|
+| `.to_string(` | 1 | 7 |
+| `OneHotEncoder` | 3 | 4 |
+| `SimpleImputer` | 3 | 6 |
+| `.reshape(` | 4 | 16 |
+| `get_feature_names_out` | 4 | 5 |
+| `coef_` | 5 | 33 |
+| `named_steps` | 5 | 6 |
+| `np.where(` | 5 | 13 |
+| `StratifiedKFold` | 6 | 11 |
+| `cross_val_score` | 6 | 11 |
+| `recall_score` | 6 | 8 |
+| `np.log(` | 13 | 14 |
+| `.eval()` | 22 | 23 |
+| `.numel(` | 22 | 26 |
+| `from_numpy` | 22 | 24 |
+| `optim.Adam` | 22 | 26 |
+| `perf_counter` | 26 | 34 |
+| `.toarray(` | 31 | 32 |
+| `np.argsort` | 31 | 33 |
+
 **Deliberately NOT in this level** — so you can say "not yet" with confidence: `torchvision` and any
 pretrained-weights download · `nn.BatchNorm2d` · `nn.LSTM` / `nn.GRU` · `nn.Transformer` and attention
 · `torch.nn.functional` as a style · custom `autograd.Function` · `GridSearchCV` and

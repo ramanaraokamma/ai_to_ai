@@ -207,15 +207,13 @@ Each level costs roughly **$900–1,200** (three to four days at the cap).
   and its Milestone 6 code uses `DOCS`/`LABELS` that exist nowhere else in the repo. The `tiny_v1`/`tiny_v2` toys in workbooks 34–35 are
   separate and still use 0.55 on purpose.
 - **L3 audit (2026-10-03):** structure, 1,447 links, 366 SVGs, nav chains, the figure audit
-  (0 findings) and a decrypted-site crawl (402 pages, 6,826 links) are all clean. **Open findings:**
-  (1) *Syntax-ladder drift* — the README ladder is behind the content; first use comes earlier than
-  listed for ~30 constructs (e.g. W3 `OneHotEncoder`/`SimpleImputer`, W5 `np.where`/`coef_`, W6
-  `StratifiedKFold`/`cross_val_score`, W13 `np.log`, W22 `Adam`/`numel`/`.eval()`, W26 `perf_counter`,
-  W31 `toarray`/`argsort`), mostly explained in-week. Either move the ladder rows or defer the uses;
-  the ladder's max-4-per-week cap means it cannot simply absorb them. (2) *Capstone cost convention* —
-  `projects/capstone.md` card says "FN = 10, FP = 1" with FP = nasty-called-positive, but `COST_FN = 10`
-  is commented "real complaint called positive"; Week 34 prices nasty-called-positive at 10×FP. Its
-  "real output" blocks come from a separate 80-review corpus (threshold 0.50) not in the repo.
+  (0 findings) and a decrypted-site crawl (402 pages, 6,826 links) are all clean. Findings handled:
+  ~19 constructs appear before their syntax-ladder week — now listed in the level README's "Used ahead
+  of the ladder" table (the four-a-week cap stops the ladder absorbing them; most are explained in-week,
+  the rest are unchecked); the capstone's `COST_FN`/`COST_FP` comments were swapped relative to its card
+  (fixed). The capstone's "real output" blocks still come from a separate 80-review corpus
+  (threshold 0.50) that is not in the repo, and its price direction (fine-comment-called-negative = 10)
+  is deliberately the opposite of Week 34's.
 - **No SVG has ever been visually rendered.** Validity is contract-checked only. Each level has a
   `figures/_preview.html` for eyeballing.
 - L3 figure fixes were applied to `.svg` files directly, so re-running `figures/_generator/` would

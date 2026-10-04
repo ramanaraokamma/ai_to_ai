@@ -294,7 +294,7 @@ One vocabulary. If the tool says `POSITIVE` and the log says `1`, they cannot be
 - **False negative** — a perfectly fine comment called negative. *A prefect reads it
   for nothing, about ten seconds.*
 
-Relative prices: **FN = 10, FP = 1.** I chose those by **judgement, not measurement**,
+Relative prices: **FN = 10, FP = 1.** (This pupil's application prices prefect time; yours may price the mistakes the other way round, as Week 34's does.) I chose those by **judgement, not measurement**,
 and that sentence belongs in the card.
 
 ## 5. The threshold
@@ -337,8 +337,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from reviews import DOCS, LABELS
 
 SEED = 0
-COST_FN = 10      # a real complaint called positive: nobody reads it
-COST_FP = 1       # a fine comment called negative: a prefect reads it for nothing
+COST_FN = 10      # a fine comment called negative: a prefect reads it for nothing (about ten seconds)
+COST_FP = 1       # a nasty comment called positive: nobody reads it
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--version", default="1")
