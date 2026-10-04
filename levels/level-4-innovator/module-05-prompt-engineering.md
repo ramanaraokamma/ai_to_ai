@@ -58,8 +58,10 @@ Everything below is a piece of that diagram.
 
 #### The smallest possible call
 
+> **Offline note (read first).** This course runs with no internet, no API key and no billing. Every `anthropic` call in this module runs against a local **stand-in, not a model**: `36-week-course/_ledger/scripts/stub_anthropic.py`, which has the same call shape (`Anthropic().messages.create`, `.count_tokens`, `BadRequestError`, `RateLimitError`) and is swapped in by changing the import to `import stub_anthropic as anthropic`. The stand-in counts tokens as `ceil(words x 1.3)` (not Claude's tokenizer), answers tickets with a keyword/regex extractor whose competence depends only on prompt features (rules present, examples present, schema present), and answers grounded questions by best word-overlap. **Anything it prints says nothing about a real model.** The real-API versions are kept below as 🌐 optional callouts; nothing depends on them.
+
 ```python
-import anthropic
+import anthropic     # offline: import stub_anthropic as anthropic   (stand-in, not a model)
 
 client = anthropic.Anthropic()          # reads ANTHROPIC_API_KEY from the environment
 
@@ -440,7 +442,7 @@ count = client.messages.count_tokens(
 print(count.input_tokens)
 ```
 
-This is a real endpoint, it is free, and it uses Claude's actual tokenizer — not the GPT-2 approximation from Module 4. Use it for budgeting; use `response.usage` for accounting.
+This is a real endpoint (🌐 optional; offline the stand-in's `count_tokens` returns `ceil(words x 1.3)`, which is not Claude's tokenizer), it is free, and against the real service it uses Claude's actual tokenizer — not the word-count or byte-pair approximations used offline. Use it for budgeting; use `response.usage` for accounting.
 
 #### The arithmetic
 
@@ -500,6 +502,8 @@ Two more habits worth building now:
 ---
 
 ## 🔍 Worked Example
+
+> ⚠️ **Read this worked example as an illustration of the method, not as measurements.** The "typical responses" and the v1 / v2 / v3 scores below (59.4 / 78.1 / 90.6 %) describe what a real chat model *might* do; they were **not reproduced** offline. The arithmetic inside them is checked (19, 25 and 29 of 32 fields = 59.4, 78.1, 90.6 %). The numbers actually measured in this course come from the local stand-in and are given in Part D. Nothing in the stand-in run says a real model behaves like this.
 
 **Task:** turn a customer support message into a structured record with four fields.
 
@@ -624,19 +628,23 @@ Keep v2's system prompt and prepend three worked examples to the user turn — d
 
 The first example teaches "replacement ≠ refund" *by demonstration*, which the rule in v2 said in words and the model half-ignored. The third example teaches that a missing order id is genuinely `null` even in an angry message.
 
-Across all 8: **29 / 32 = 90.6%**, 0 parse failures.
+Across all 8 (illustrative): **29 / 32 = 90.6%**, 0 parse failures.
 
 ---
 
 ### The comparison table — this is the actual deliverable
 
+Illustrative (a real model was **not** run; exact-record for v3 corrected to 6/8, because the per-field counts v3 shows in Part D can give at most 6 fully-correct cases):
+
 | Version | Field score | Exact-record | Parse fails | Input tok | Output tok | Cost | Latency/case |
 |---|---|---|---|---|---|---|---|
 | v1 zero-shot | 59.4% | 1/8 | 2 | 480 | 640 | $0.0074 | 1.9 s |
 | v2 rules | 78.1% | 5/8 | 0 | 2,180 | 280 | $0.0072 | 1.4 s |
-| v3 few-shot | **90.6%** | **7/8** | 0 | 4,320 | 280 | $0.0114 | 1.5 s |
+| v3 few-shot | **90.6%** | **6/8** | 0 | 4,320 | 280 | $0.0114 | 1.5 s |
 
-Read this like an engineer, not a fan:
+Measured with the stand-in (stand-in, not a model; token counts are `ceil(words x 1.3)`, latency is 0 by construction): v1 59.4% / exact 0/8 / 310 in, 184 out / $0.0025; v2 84.4% / 3/8 / 1,566 in, 88 out / $0.0040; v3 93.8% / 6/8 / 2,262 in, 88 out / $0.0054. In the stand-in, v2 is *not* free (it costs more than v1), because the stand-in has no chatty-preamble behaviour to remove. The "longer prompt, cheaper call" effect below is therefore a claim about real models that this course did not measure.
+
+Read this like an engineer, not a fan (bullets refer to the illustrative table):
 
 - **v2 is free.** It scores 19 points higher than v1 at the *same* cost, because the rules that made input longer also stopped the model from writing chatty preambles — and output tokens cost 5× input tokens. Longer prompt, cheaper call.
 - **v3 costs 58% more than v2 for 12.5 more points.** Whether that is worth it depends entirely on what a wrong record costs you. At 100,000 tickets a month, v2 → v3 is roughly +$42/month. If a misrouted ticket costs 3 minutes of a human's time, v3 pays for itself many times over. Do that arithmetic; do not argue about it.
@@ -646,7 +654,7 @@ Read this like an engineer, not a fan:
 
 **t3** — "You charged me twice for order B-1029. Please fix."
 
-All three versions return `urgency: 3`. The gold says `2`. And here is the honest conclusion: **the gold is arguable.** The customer has lost money, which the v2 rules explicitly define as urgency 3; but they are polite and say "please fix", which reads like a 2.
+(Illustrative; not measured offline: which cases a given model misses depends on the model.) Suppose all three versions return `urgency: 3`. The gold says `2`. And here is the honest conclusion: **the gold is arguable.** The customer has lost money, which the v2 rules explicitly define as urgency 3; but they are polite and say "please fix", which reads like a 2.
 
 This is not a prompt bug. It is a **specification bug** — your rubric does not decide the case. You have exactly three options, and picking one is the job:
 
@@ -662,12 +670,11 @@ What you may **not** do is keep tuning the prompt against a label you cannot def
 
 ### Setup
 
-```bash
-pip install anthropic pydantic
-export ANTHROPIC_API_KEY="sk-ant-..."      # or run: ant auth login
-```
+Nothing to install and no key to set: `torch`, `numpy` and the stand-in `stub_anthropic.py` are all you need (`pip` is blocked by the proxy and there is no API access).
 
-Everything in Parts A–C runs **without an API key** against stub models, so you can get the harness correct for free. Part D switches on the real API.
+Everything in Parts A–C runs **without an API key** against stub models. Part D runs the same harness against the local stand-in (stand-in, not a model).
+
+> 🌐 **When you have internet (optional; nothing depends on it).** To run against the real service you would `pip install anthropic pydantic`, set `ANTHROPIC_API_KEY` (a billing account is required), and change `import stub_anthropic as anthropic` back to `import anthropic`. None of the numbers in this module come from such a run.
 
 ### Part A — the test set and the scorer
 
@@ -927,10 +934,10 @@ stopped at call 8: spent $0.0112 over 8 calls, limit $0.01
 
 Each call costs `400/1e6×2 + 60/1e6×10 = $0.0008 + $0.0006 = $0.0014`. Eight calls is `$0.0112`, which is the first value above `$0.01`. The guard trips one call *after* crossing the line — it cannot refund a call already made, which is why you set the limit below what you can actually afford.
 
-### Part D — plug in the real Claude API
+### Part D — plug in the API (offline: the local stand-in, not a model)
 
 ```python
-import anthropic
+import stub_anthropic as anthropic     # 🌐 optional: `import anthropic` for the real API
 from bench import TESTS, run_suite, report, field_breakdown
 
 MODEL = "claude-sonnet-5"
@@ -1012,30 +1019,32 @@ best = max(summary, key=lambda s: s["field"])
 print(f"winner by score: {best['name']}  ({best['field'] * 100:.1f}%)")
 ```
 
-**Representative output** (your exact scores will differ by a case or two; the *shape* is what matters):
+**Real output of this block against the stand-in (stand-in, not a model; it says nothing about a real model):**
 
 ```
-worst-case prompt is 541 input tokens
-estimated total for 32 calls: $0.0538
+worst-case prompt is 285 input tokens
+estimated total for 32 calls: $0.0374
 
-v1-zero-shot           field  59.4%  exact  1/8  parse-fail 2  tok   480/ 640  $0.0074  1912.4 ms/case
-  v1-zero-shot per-field correct: {'category': 5, 'urgency': 4, 'order_id': 5, 'refund_requested': 5}
-v2-rules               field  78.1%  exact  5/8  parse-fail 0  tok  2180/ 280  $0.0072  1401.7 ms/case
-  v2-rules per-field correct: {'category': 8, 'urgency': 5, 'order_id': 6, 'refund_requested': 6}
-v3-few-shot            field  90.6%  exact  7/8  parse-fail 0  tok  4320/ 280  $0.0114  1488.0 ms/case
-  v3-few-shot per-field correct: {'category': 8, 'urgency': 6, 'order_id': 8, 'refund_requested': 7}
-v4-few-shot-schema     field  90.6%  exact  7/8  parse-fail 0  tok  4360/ 240  $0.0111  1355.1 ms/case
-  v4-few-shot-schema per-field correct: {'category': 8, 'urgency': 6, 'order_id': 8, 'refund_requested': 7}
+v1-zero-shot           field  59.4%  exact  0/8  parse-fail 0  tok   310/ 184  $0.0025     0.0 ms/case
+  v1-zero-shot per-field correct: {'category': 0, 'urgency': 3, 'order_id': 8, 'refund_requested': 8}
+v2-rules               field  84.4%  exact  3/8  parse-fail 0  tok  1566/  88  $0.0040     0.0 ms/case
+  v2-rules per-field correct: {'category': 8, 'urgency': 3, 'order_id': 8, 'refund_requested': 8}
+v3-few-shot            field  93.8%  exact  6/8  parse-fail 0  tok  2262/  88  $0.0054     0.0 ms/case
+  v3-few-shot per-field correct: {'category': 8, 'urgency': 6, 'order_id': 8, 'refund_requested': 8}
+v4-few-shot-schema     field  93.8%  exact  6/8  parse-fail 0  tok  2262/  88  $0.0054     0.0 ms/case
+  v4-few-shot-schema per-field correct: {'category': 8, 'urgency': 6, 'order_id': 8, 'refund_requested': 8}
 
-32 calls, $0.0371 spent, $0.4629 of $0.50 remaining
-winner by score: v3-few-shot  (90.6%)
+32 calls, $0.0173 spent, $0.4827 of $0.50 remaining
+winner by score: v3-few-shot  (93.8%)
 ```
+
+> 🌐 *Quoted from an earlier real-API sketch, **not reproduced here** (optional, nothing depends on it):* worst-case prompt 541 tokens, scores 59.4 / 78.1 / 90.6 / 90.6 %, latencies 1.4–1.9 s per case. These cannot be regenerated offline (541 needs Claude's tokenizer). The earlier sketch also printed "exact 7/8" for v3 and v4, which is impossible with its own per-field counts; at most 6/8 is consistent.
 
 **How to read this properly.**
 
-- The per-field breakdown says `category` is solved (8/8 from v2 onward) and `urgency` is the bottleneck (6/8 even at best). Any further prompt work should target urgency and nothing else. Without the breakdown you would have guessed.
-- **v4 does not beat v3 on score, and that is the correct result.** The schema was never fixing wrong *values*; it fixes malformed *shape*, and v3 already had zero parse failures. What v4 buys is a guarantee: v3's zero parse-failures is a lucky observation on eight cases, while v4's is enforced. **Ship v4.** The score table alone would have told you to ship v3; the score table plus reasoning tells you to ship v4. Evals inform the decision, they do not make it.
-- Adding a `v5` with `thinking={"type": "adaptive"}` is a one-line experiment. Do it. On this task it will very likely cost 3–5× more and score the same or slightly worse — which is a result worth having in writing the next time someone insists reasoning always helps.
+- The per-field breakdown says `category` is solved (8/8 from v2 onward) and `urgency` is the bottleneck (6/8 even at best). Any further prompt work should target urgency and nothing else. Without the breakdown you would have guessed. (That is a property of the stand-in's rules; the *method* of reading the breakdown is what transfers.)
+- **v4 does not beat v3 on score (here they are identical), and that is the correct result.** The schema was never fixing wrong *values*; it fixes malformed *shape*, and v3 already had zero parse failures. What v4 buys is a guarantee: v3's zero parse-failures is an observation on eight cases, while v4's is enforced (the stand-in does not model schema enforcement, so only the reasoning is demonstrated). **Ship v4.** The score table alone would have told you to ship v3; the score table plus reasoning tells you to ship v4. Evals inform the decision, they do not make it.
+- 🌐 *Optional, needs the real API:* adding a `v5` with `thinking={"type": "adaptive"}` is a one-line experiment. A guess that it would cost several times more and score no better is **unreproduced** here (the stand-in has no thinking mode); run it before believing it, and write the result down either way.
 
 ---
 
@@ -1043,7 +1052,7 @@ winner by score: v3-few-shot  (90.6%)
 
 ### [Warm-up] 1 — Read the usage object
 
-Make one real call to `claude-sonnet-5` asking it to summarize a paragraph you paste in. Print `response.stop_reason`, `response.usage.input_tokens`, `response.usage.output_tokens`, and the cost in dollars to six decimal places. Then make the *same* call with `max_tokens=20` and print the same four things.
+Make one call (offline: to the stand-in, not a model; 🌐 optionally to the real `claude-sonnet-5`) asking it to summarize a paragraph you paste in. Print `response.stop_reason`, `response.usage.input_tokens`, `response.usage.output_tokens`, and the cost in dollars to six decimal places. Then make the *same* call with `max_tokens=20` and print the same four things.
 
 **Done looks like:** two printed blocks, and one sentence explaining what changed in `stop_reason` and why the output token count is what it is.
 
@@ -1073,7 +1082,7 @@ Build a 6-question test set about a short invented document (10 sentences you wr
 
 ### [Stretch] 6 — Cost/quality frontier
 
-Take your best prompt and produce four variants that trade cost against quality: (a) zero examples, (b) 3 examples, (c) 8 examples, (d) 3 examples plus `thinking={"type": "adaptive"}` and `output_config={"effort": "high"}`. Run all four. Plot score on the y-axis against cost-per-1000-calls on the x-axis with matplotlib, labelling each point.
+Take your best prompt and produce four variants that trade cost against quality: (a) zero examples, (b) 3 examples, (c) 8 examples, (d) 🌐 *optional, real API only:* 3 examples plus `thinking={"type": "adaptive"}` and `output_config={"effort": "high"}`. Run (a)–(c) offline against the stand-in (costs there are stand-in token arithmetic, not a real bill), and (d) only if you have API access. Plot score on the y-axis against cost-per-1000-calls on the x-axis with matplotlib, labelling each point.
 
 **Done looks like:** a saved PNG, plus a written recommendation naming which variant you would ship at 1,000 calls/day and which at 1,000,000 calls/day, with the monthly dollar figures for both.
 
@@ -1232,7 +1241,7 @@ Then run it as a real gate: save `v3`'s results as the baseline, make a small "i
 ### 1 — Read the usage object
 
 ```python
-import anthropic
+import stub_anthropic as anthropic     # 🌐 optional: `import anthropic` for the real API
 
 client = anthropic.Anthropic()
 MODEL = "claude-sonnet-5"
@@ -1261,25 +1270,27 @@ probe(1024)
 probe(20)
 ```
 
-Representative output:
+Real output against the stand-in (stand-in, not a model):
 
 ```
 max_tokens=1024
-  text        : 'The library’s new reading room, opened in March with thirty chairs and eight tables, has seen attendance double as students borrow and return books daily.'
+  text        : 'The school library opened a new reading room with thirty chairs and eight tables.'
   stop_reason : end_turn
-  input_tokens: 78
-  output_tokens: 33
-  cost        : $0.000486
+  input_tokens: 54
+  output_tokens: 19
+  cost        : $0.000298
 
 max_tokens=20
-  text        : 'The library’s new reading room, opened in March with thirty chairs and eight'
-  stop_reason : max_tokens
-  input_tokens: 78
-  output_tokens: 20
-  cost        : $0.000356
+  text        : 'The school library opened a new reading room with thirty chairs and eight tables.'
+  stop_reason : end_turn
+  input_tokens: 54
+  output_tokens: 19
+  cost        : $0.000298
 ```
 
-**What changed and why.** `stop_reason` went from `end_turn` (the model finished its thought) to `max_tokens` (your ceiling cut it off mid-sentence). `output_tokens` is exactly 20 in the second call — it *must* be, because `max_tokens` is a hard cap, and hitting it exactly is the signature of truncation.
+**Here truncation did not happen**: the stand-in's answer is 19 tokens, under the cap of 20, so both calls are identical. That is itself instructive: `max_tokens=20` only truncates if the answer is longer than 20. To see `stop_reason: max_tokens` offline, lower the cap to 10. 🌐 *Quoted from an earlier real-API sketch, **not reproduced**:* 78 input tokens, 33 output tokens, $0.000486 for the full call and `stop_reason: max_tokens` with 20 output tokens, $0.000356 for the capped one. The arithmetic checks (78 x $2/M + 33 x $10/M = $0.000486; 78 x $2/M + 20 x $10/M = $0.000356); the token counts need Claude's tokenizer.
+
+**What changes when truncation does occur, and why.** `stop_reason` goes from `end_turn` (the model finished its thought) to `max_tokens` (your ceiling cut it off mid-sentence). `output_tokens` equals the cap exactly — it *must*, because `max_tokens` is a hard cap, and hitting it exactly is the signature of truncation.
 
 The important operational lesson: the truncated call still cost money and still returned HTTP 200 with plausible-looking text. Nothing raised. **If you do not check `stop_reason`, you will silently ship half-answers.** Every production call site should treat `max_tokens` as an error condition.
 
@@ -1327,6 +1338,7 @@ This is also why `v1-stub-chatty` in Part A scored 43.8%: it happened to return 
 Option (b), a sharpened rubric, is the cheaper fix to try first:
 
 ```python
+# (offline: run with the stand-in; 🌐 optional: the real API)
 URGENCY_RUBRIC = """
 Urgency is decided by IMPACT, not by tone. Ignore capitals and exclamation marks.
   3 — the customer's money is currently wrong (charged twice, charged after
@@ -1353,25 +1365,27 @@ for v in ["v4-few-shot-schema", "v5-urgency-rubric"]:
     field_breakdown(name, results)
 ```
 
-Representative output:
+Real output against the stand-in (stand-in, not a model):
 
 ```
-v4-few-shot-schema     field  90.6%  exact  7/8  parse-fail 0  tok  4360/ 240  $0.0111  1355.1 ms/case
-  v4-few-shot-schema per-field correct: {'category': 8, 'urgency': 6, 'order_id': 8, 'refund_requested': 7}
-v5-urgency-rubric      field  93.8%  exact  7/8  parse-fail 0  tok  5120/ 240  $0.0126  1402.9 ms/case
-  v5-urgency-rubric per-field correct: {'category': 8, 'urgency': 7, 'order_id': 8, 'refund_requested': 7}
+v4-few-shot-schema     field  93.8%  exact  6/8  parse-fail 0  tok  2262/  88  $0.0054     0.0 ms/case
+  v4-few-shot-schema per-field correct: {'category': 8, 'urgency': 6, 'order_id': 8, 'refund_requested': 8}
+v5-urgency-rubric      field  93.8%  exact  6/8  parse-fail 0  tok  3166/  88  $0.0072     0.0 ms/case
+  v5-urgency-rubric per-field correct: {'category': 8, 'urgency': 6, 'order_id': 8, 'refund_requested': 8}
 ```
 
 | Version | Field | category | urgency | order_id | refund | Cost |
 |---|---|---|---|---|---|---|
-| v4 | 90.6% | 8/8 | 6/8 | 8/8 | 7/8 | $0.0111 |
-| v5 | **93.8%** | 8/8 | **7/8** | 8/8 | 7/8 | $0.0126 |
+| v4 | 93.8% | 8/8 | 6/8 | 8/8 | 8/8 | $0.0054 |
+| v5 | 93.8% | 8/8 | 6/8 | 8/8 | 8/8 | $0.0072 |
 
-**Regression check — the part most people skip.** `category` 8→8, `order_id` 8→8, `refund_requested` 7→7. **No field got worse.** That is what makes this a clean win rather than a trade.
+**The honest result: v5 did not help.** Same score, same urgency count, 33% more cost ($0.0072 vs $0.0054). The stand-in only reacts to coarse prompt features, so it cannot tell us whether a sharper rubric helps a *real* model; that is exactly the point of reporting it: a rubric you believed in bought nothing measurable here, and you would have paid for it. (🌐 An earlier real-API sketch claimed v5 gained +1 on urgency, 90.6% to 93.8%; that was **not reproduced** and is not evidence.)
 
-Note the `+1` on urgency is a single case. On an 8-case suite one case is 12.5 percentage points of that field — well inside the noise you should expect from a single run. **The honest statement is "v5 is not worse and is plausibly better; I need 20+ cases to claim it."** That is exactly why the mini-project demands 20.
+**Regression check — the part most people skip.** `category` 8→8, `order_id` 8→8, `refund_requested` 8→8, `urgency` 6→6. **No field got worse and none got better.** A change that cost more and moved nothing is a rejected change, not a trade.
 
-The remaining urgency failure is t3, the double-charge-but-polite case, and the new rubric now *explicitly* says money-is-wrong is a 3 — so v5 confidently returns 3 while the gold says 2. The rubric and the gold now contradict each other in writing. That is progress: an argument you can settle beats a mystery you cannot.
+Even if a single case had moved, that would be 12.5 percentage points of one field on an 8-case suite — well inside the noise of a single run. **The honest statement is "v5 is not worse; I have no evidence it is better; I need 20+ cases to claim anything."** That is exactly why the mini-project demands 20.
+
+The remaining urgency failures are not diagnosed offline (which cases the stand-in misses was not measured). But note the contradiction the rubric creates for t3, the double-charge-but-polite case: it now *explicitly* says money-is-wrong is a 3, so any model that follows it returns 3 while the gold says 2. The rubric and the gold now contradict each other in writing. That is progress: an argument you can settle beats a mystery you cannot.
 
 ---
 
@@ -1522,16 +1536,18 @@ for label, system, with_doc in [("ungrounded", UNGROUNDED, False),
     print(f"  correct {correct}  correctly-refused {refused}  wrong {wrong}")
 ```
 
-Representative results:
+Real results against the stand-in (stand-in, not a model; the ungrounded stand-in simply echoes the question, the grounded one returns the best word-overlap sentence or `NOT IN SOURCE`):
 
 | Prompt | Correct (of 4) | Correctly refused (of 2) | Wrong |
 |---|---|---|---|
 | Ungrounded | 0 | 0 | 6 |
-| Grounded | 4 | 2 | 0 |
+| Grounded | 3 | 2 | 1 |
+
+The one grounded miss: "How often does Route 1 run?" was answered with the Route 2 sentence ("Route 2 does not run in January or February."), because the stand-in picks the sentence with the most word overlap and "Route" and "run" overlap there. That is a *reading* error, and a nicely concrete one: grounding does not make answers right, it makes wrong answers inspectable against the source. **Nothing here measures a real model**; an earlier sketch claimed 4/2/0 for a real model, which was not reproduced.
 
 **What the ungrounded prompt did with the two unanswerable questions.**
 
-This is the part worth staring at. Millford is a town I made up while writing this module. It has no buses, no fares, and no mayor. Asked "who is the mayor of Millford?" with no source text, a model has three options: refuse, hedge, or produce a plausible-sounding name. Which of those it picks depends entirely on how its Stage-4 preference training weighted helpfulness against calibration — and helpfulness usually wins, because a rater comparing "I don't know" against a confident specific answer often prefers the confident one.
+This is the part worth staring at. Millford is a town I made up while writing this module. It has no buses, no fares, and no mayor. Asked "who is the mayor of Millford?" with no source text, a model has three options: refuse, hedge, or produce a plausible-sounding name. Which of those it picks depends on how its Stage-4 preference training weighted helpfulness against calibration. A common worry (not measured here) is that helpfulness wins, because a rater comparing "I don't know" against a confident specific answer may prefer the confident one; the stand-in here just echoes the question, so it demonstrates the scoring, not the behaviour.
 
 But notice that the ungrounded prompt also got the four *answerable* questions wrong, and this is the deeper point. Those questions are not unanswerable in principle — they are unanswerable **without the document**. "How often does Route 1 run?" has a fact-shaped answer, so the model produces a fact-shaped string. The failure is not that the model lied. The failure is that **you asked a question about a document you did not provide**, and a model has no way to distinguish "you forgot to attach the source" from "you are testing my general knowledge".
 
@@ -1539,7 +1555,7 @@ Three design lessons fall out:
 
 1. **The escape hatch has to be spelled out and made cheap.** "Reply with exactly: NOT IN SOURCE" is a specific, checkable action. "Say if you're not sure" is not — you cannot score it and the model cannot tell how sure is sure enough.
 2. **Refusal must be scored as a separate outcome**, not lumped in with "wrong". A system that refuses two unanswerable questions is behaving perfectly; a scorer that counts those as failures will push you to build a worse system.
-3. **Grounding turns a knowledge problem into a reading problem**, and reading is dramatically more reliable. That single sentence is the entire justification for Module 6.
+3. **Grounding turns a knowledge problem into a reading problem**, and reading is usually more reliable (the stand-in's one miss above is a reading miss, so check it, do not assume it). That single sentence is the entire justification for Module 6.
 
 ---
 
@@ -1590,28 +1606,48 @@ kwargs["output_config"] = {"effort": "high", "format": SCHEMA}   # both keys, on
 kwargs["max_tokens"] = 4000                                      # thinking needs headroom
 ```
 
-Representative numbers:
+> ⚠️ **Illustrative numbers, not reproduced.** The field scores below came from a sketch of a real-API run and cannot be regenerated offline. The cost columns are recomputed here: cost per 1,000 calls is the per-8-case cost printed in Part D x 125, monthly at 1,000 calls/day is per-1,000 cost x 30, and monthly at 1,000,000 calls/day is per-1,000 cost x 30,000. (An earlier version of this table had both monthly columns 1,000x too small and an `a-0shot` cost of $1.38 that disagreed with the $0.0072 v2 row; `c-8shot` $2.11 and `d` $9.40 are carried over unverified.)
 
 | Variant | Field score | Cost / 1,000 calls | Monthly @ 1k/day | Monthly @ 1M/day |
 |---|---|---|---|---|
-| a-0shot | 78.1% | $1.38 | $0.04 | $41 |
-| b-3shot | 90.6% | $1.39 | $0.04 | $42 |
-| c-8shot | 90.6% | $2.11 | $0.06 | $63 |
-| d-3shot-think | 87.5% | $9.40 | $0.28 | $282 |
+| a-0shot | 78.1% | $0.90 | $27 | $27,000 |
+| b-3shot | 90.6% | $1.39 | $42 | $41,700 |
+| c-8shot | 90.6% | $2.11 | $63 | $63,300 |
+| d-3shot-think | 87.5% | $9.40 | $282 | $282,000 |
 
-**Recommendation at 1,000 calls/day: `b-3shot`.** At four cents a month, cost is not a consideration at all — you pick purely on quality, and b ties c for the top score. Even `d` at 28 cents/month would be affordable; it is excluded because it is *worse*, not because it is dearer.
+**Recommendation at 1,000 calls/day: `b-3shot`.** At about $42 a month, cost is a minor consideration — you pick mainly on quality, and b ties c for the top score. Even `d` at about $282/month would be affordable; in this illustrative table it is excluded because it is *worse*, not because it is dearer.
 
-**Recommendation at 1,000,000 calls/day: also `b-3shot`.** Same score as `c` for two-thirds of the price — the extra five examples bought nothing but tokens. The comparison that actually matters at this volume is a → b: 12.5 points of quality for about **one dollar a month**. That is free. Take it.
+**Recommendation at 1,000,000 calls/day: also `b-3shot`, but now it is a real decision.** Same score as `c` for two-thirds of the price (about $21,600 a month saved) — the extra five examples bought nothing but tokens. The comparison that matters at this volume is a → b: 12.5 points of quality for about **$14,700 a month** ($41,700 minus $27,000). That is not free; it pays for itself only if a misrouted ticket costs you more than the extra spend, so do that arithmetic with your own numbers.
 
-**The result worth writing down is `d`.** Adaptive thinking at effort `high` cost **6.8× more** than `b` and scored **3 points lower**. Both halves are expected and both are worth understanding:
+**The result worth writing down is `d` (illustrative, not reproduced; the 6.8x ratio is arithmetic on the table, the "3 points lower" is the unverified part).** Adaptive thinking at effort `high` cost **6.8× more** than `b` and scored **3 points lower**. Both halves are expected and both are worth understanding:
 
 - *Why more expensive:* thinking tokens are billed as output tokens, at 5× the input rate. A few hundred tokens of internal reasoning per call dwarfs the entire prompt.
 - *Why worse:* choosing one of five categories from a two-line message is a single judgement, not a chain. Given room to deliberate, the model reasons its way from an obvious correct answer to a defensible wrong one — most visibly on `urgency`, where "on the one hand the tone is calm, on the other hand money is involved" is a genuine argument that ends somewhere other than the gold label.
 
-Keep this table. The next time somebody proposes turning reasoning on across the board because it helps on maths benchmarks, you have a measurement instead of an opinion.
+Keep your own measured table (the one above is a template). The next time somebody proposes turning reasoning on across the board because it helps on maths benchmarks, you have a measurement instead of an opinion.
 
 </details>
 
 ---
 
 [⬅ Previous](module-04-how-llms-are-trained.md) · [Level 4 Home](README.md) · [Next ➡](module-06-embeddings-vector-search-rag.md)
+
+---
+
+## 🧾 Patch log (offline redesign, 2026-10)
+
+Ground truth: `36-week-course/_ledger/ledger-m05-09.md` section 1 (Part A reproduced exactly; everything that needs a real model is unreproduced).
+
+- API sections used `import anthropic` + `ANTHROPIC_API_KEY` → added an offline note; code imports the local stand-in `stub_anthropic` (stand-in, not a model), real API kept as 🌐 optional → no network, key or billing offline.
+- Setup `pip install anthropic pydantic` + `export ANTHROPIC_API_KEY` → removed, replaced by a 🌐 optional callout → pip is blocked; nothing may depend on it.
+- Worked Example v1/v2/v3 "typical responses" and 59.4 / 78.1 / 90.6 % → kept but banner-labelled illustrative and not reproduced; stand-in measured v1 59.4 / v2 84.4 / v3 93.8 % added → a real model was not run.
+- Worked Example v3 "exact 7/8" → 6/8 → impossible given per-field counts {8,6,8,7} (only urgency and refund can be wrong, so at most 6 exact).
+- "v2 is free" → flagged: in the stand-in v2 costs $0.0040 vs v1 $0.0025; effect is an unmeasured real-model claim → ledger Part D.
+- Part D output (541 tokens, $0.0538, 59.4/78.1/90.6/90.6, exact 7/8, 1.4-1.9 s latency, $0.0371 spent) → replaced by the real stand-in stdout (285 tokens, $0.0374, 59.4/84.4/93.8/93.8, exact 0/3/6/6, 0.0 ms, $0.0173 spent, winner v3); old figures kept in a labelled "not reproduced" box → ledger `out/m05_partD.txt`.
+- Part D reading notes → "v4 equals v3" (was "does not beat"), thinking v5 prediction ("3-5x more, same or worse") → marked unreproduced → no stand-in thinking mode.
+- Practice 1 and 6 → stand-in offline; thinking variant (d) 🌐 optional → real API only.
+- Answer 1 (78 in / 33 out / max_tokens truncation at 20) → real stand-in output (54 in / 19 out, no truncation at cap 20, cost $0.000298 both); old numbers kept as 🌐 quoted-not-reproduced, arithmetic verified (0.000486 / 0.000356) → ledger `m05_key.txt`.
+- Answer 3 (v5 93.8% vs v4 90.6%, urgency 6 to 7, "clean win") → real stand-in: v4 = v5 = 93.8%, urgency 6 to 6, v5 costs $0.0072 vs $0.0054; verdict rewritten to "v5 did not help" → data contradicts the claimed gain.
+- Answer 5 (grounded 4/2/0) → 3 correct / 2 refused / 1 wrong (Route 1 frequency answered with the Route 2 sentence); statements about real-model helpfulness bias hedged as unmeasured.
+- Answer 6 table → labelled illustrative; a-0shot $1.38 to $0.90 (consistent with the $0.0072 v2 row); monthly columns were 1,000x too small: $0.04/$0.04/$0.06/$0.28 to $27/$42/$63/$282 per month at 1k/day and $41/$42/$63/$282 to $27,000/$41,700/$63,300/$282,000 at 1M/day; recommendation text rewritten ("one dollar a month, free" is now about $14,700 a month at 1M/day, a real decision).
+- Not changed (matched the ledger): Part A table, budget guard (stops at call 8, $0.0112), best constant record 43.8% (14 of 32), parser stubs table, cost arithmetic ($0.00144, $0.086, $1.30). Not reproduced and left as claims about the real service: temperature returning 400, structured-output guarantees, prompt caching, real `count_tokens`.

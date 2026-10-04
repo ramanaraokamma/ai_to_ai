@@ -583,11 +583,7 @@ STOP.
 
 ## 💻 Hands-On
 
-Everything here runs on CPU in under a minute. You need `torch` for parts C–E.
-
-```bash
-pip install torch
-```
+Everything here runs on CPU in under a minute, fully offline. You need `torch` (already installed in the course environment) for parts C–E. Nothing in this module needs a network, an API key or downloaded weights; the one step that would (a pretrained tokenizer) is a clearly optional 🌐 callout that nothing depends on.
 
 ### Part A — Byte-pair encoding from scratch
 
@@ -782,12 +778,13 @@ vocab   656  merges  138  tokens   504  bytes/token 2.22
 
 1. **The merges are not random; they are English.** `he`, `ea`, `in`, `er`, `the`, `ing`, `and`, `team`, `udent`. Nobody told the algorithm about morphemes. Counting adjacent pairs found them.
 2. **Compression saturates.** At 138 merges training stops on its own, because no remaining pair appears twice. Asking for a 656-token vocabulary on a 1,117-byte corpus gets you the same 138 merges. **A tokenizer's vocabulary is limited by its training corpus, not by what you request.** Real tokenizers are trained on hundreds of gigabytes.
-3. **2.22 bytes/token is bad.** GPT-2's tokenizer on this same text gets roughly 4.5 bytes/token — twice as good — because it was trained on 40 GB, not 1 KB.
+3. **2.22 bytes/token is bad.** Production tokenizers get much higher bytes/token on English because they were trained on gigabytes, not 1 KB. (The exact figure for GPT-2 is not measured in this offline course; see the optional callout below.)
 
-#### Compare against a production tokenizer
+#### 🌐 When you have internet: compare against a production tokenizer (optional, nothing depends on it)
+
+*Needs `pip install transformers` and a one-time ~1 MB download, so it cannot run in the offline course environment. The "expected output" below was **not reproduced** offline: the `~250 tokens`, `~4.5 bytes/token` and the `Phot|osynthesis` split are approximate, unverified recollections. Only the `mine` line is a measured result.*
 
 ```python
-# pip install transformers
 from transformers import AutoTokenizer
 from bpe import BPETokenizer
 from corpus import CORPUS
@@ -804,7 +801,7 @@ print("mine:", [mine.decode([i]) for i in mine.encode(s)])
 print("gpt2:", [hf.decode([i]) for i in hf.encode(s)])
 ```
 
-**Approximate expected output** (exact counts vary slightly by `transformers` version):
+**Approximate expected output** (the `mine` line is measured offline; the `gpt2` lines are unverified and vary by `transformers` version):
 
 ```
 mine (138 merges):  760 tokens   1.47 bytes/token
@@ -814,7 +811,7 @@ mine: ['P', 'h', 'o', 't', 'o', 's', 'y', 'n', 'the', 's', 'is', ' ', 'con', 'v'
 gpt2: ['Phot', 'osynthesis', ' converts', ' sunlight', ' into', ' chemical', ' energy', '.']
 ```
 
-Note the difference in the *unseen* sentence: your tokenizer, which never saw the word "photosynthesis" or anything like it, falls apart into near-characters. GPT-2 handles it in two pieces. **Tokenizer quality on out-of-domain text is entirely a function of training-corpus breadth.**
+If the unverified gpt2 output holds, note the difference in the *unseen* sentence: your tokenizer, which never saw the word "photosynthesis" or anything like it, falls apart into near-characters. GPT-2 should handle it in a couple of pieces. **Tokenizer quality on out-of-domain text is entirely a function of training-corpus breadth.**
 
 Also notice `' converts'` — GPT-2 attaches the leading space to the word. Your `\s+|\S+` pre-tokenizer emits spaces as separate tokens instead. Both round-trip perfectly; GPT-2's choice is more compact because a leading space is so predictable.
 
@@ -1046,9 +1043,9 @@ beta sweep, all at 300 steps:
 
 ### [Warm-up] 1 — Token arithmetic on your own text
 
-Take any 500+ word piece of writing you have (an essay, a README, a chat log). Encode it with your `BPETokenizer` trained on `CORPUS` from Part B, and with GPT-2's tokenizer. Report characters, your tokens, GPT-2 tokens, and bytes/token for each. Then compute what one Claude Sonnet 5 call containing this text as input would cost at $2.00 per million input tokens.
+Take any 500+ word piece of writing you have (an essay, a README, a chat log). Encode it with your `BPETokenizer` trained on `CORPUS` from Part B. Report characters, bytes, your tokens, and bytes/token. Then compute what one call containing this text as input would cost at $2.00 per million input tokens (using your token count as the proxy). *🌐 When you have internet (optional): also encode with GPT-2's tokenizer and add a row for it.*
 
-**Done looks like:** a five-row table and a dollar figure to four decimal places, plus one sentence explaining why the two token counts differ by the factor they do.
+**Done looks like:** a table (four rows offline, five with the optional GPT-2 row) and a dollar figure to four decimal places, plus one sentence explaining why your token count is as high as it is relative to the byte count.
 
 ### [Warm-up] 2 — Bradley–Terry by hand
 
@@ -1068,7 +1065,7 @@ Train your BPE tokenizer on `CORPUS` at vocab sizes 256, 276, 306, 356, 406, 456
 
 ### [Build] 4 — Multilingual token tax
 
-Take the same three sentences in English and in one other language you know (or use a translation you trust). Encode both with GPT-2's tokenizer. Report tokens-per-character for each language.
+Take the same three sentences in English and in one other language you know (or use a translation you trust). Encode both with a tokenizer you can run offline: your own `BPETokenizer` (byte-level, so it handles any script) is enough to show the effect, and *🌐 when you have internet (optional)* you can repeat it with GPT-2's tokenizer. Report tokens-per-character for each language.
 
 **Done looks like:** a table of tokens, characters, and tokens/character for both languages, and a short paragraph on what that ratio means for (a) cost per user and (b) how much of a 200k-token context window each user actually gets.
 
@@ -1152,7 +1149,7 @@ Two deliverables that together prove you understand the full pipeline: a **worki
    print(f"all {len(TESTS)} round-trip tests passed")
    ```
 3. Save your merge list to JSON and load it back in a fresh process. The round-trip test must still pass. (Watch out: JSON keys must be strings — you will need to serialize the `(int, int)` tuples.)
-4. Produce the comparison table: your tokenizer vs GPT-2 on (a) the training corpus, (b) a paragraph of unseen English, (c) a snippet of Python code.
+4. Produce the comparison table: your tokenizer on (a) the training corpus, (b) a paragraph of unseen English, (c) a snippet of Python code. *🌐 Optional, when you have internet: add a GPT-2 column.*
 
 **Part 2 — Build a preference dataset by hand (~40 min)**
 
@@ -1175,7 +1172,7 @@ Two deliverables that together prove you understand the full pipeline: a **worki
 
 - [ ] All 10 round-trip tests pass, including emoji, Devanagari, and the empty string
 - [ ] Merge list survives a save/load cycle in a fresh Python process
-- [ ] Comparison table shows your bytes/token and GPT-2's on three different text types
+- [ ] Comparison table shows your bytes/token on three different text types (GPT-2 column optional)
 - [ ] Preference dataset has 10 pairs with **at least four distinct failure reasons** recorded in `why`
 - [ ] Inter-rater agreement is computed and reported honestly, including any pair you disagreed on
 - [ ] Explainer covers all four stages with a real number in each
@@ -1243,10 +1240,10 @@ Then answer: if you must ship *one* tokenizer for a model that will see 70% pros
 
 ### 1 — Token arithmetic on your own text
 
-Solution script (works on any text file you point it at):
+Solution script (works on any text file you point it at). The GPT-2 lines need `transformers` and a download, so they are marked 🌐 optional; delete them to run offline.
 
 ```python
-from transformers import AutoTokenizer
+from transformers import AutoTokenizer   # 🌐 optional: needs internet
 from bpe import BPETokenizer
 from corpus import CORPUS
 
@@ -1254,7 +1251,7 @@ with open("my_essay.txt", encoding="utf-8") as f:
     text = f.read()
 
 mine = BPETokenizer().train(CORPUS, vocab_size=256 + 200)
-hf = AutoTokenizer.from_pretrained("gpt2")
+hf = AutoTokenizer.from_pretrained("gpt2")   # 🌐 optional
 
 nb = len(text.encode("utf-8"))
 n_mine = len(mine.encode(text))
@@ -1275,7 +1272,9 @@ print(f"input cost @ $2/Mtok (gpt2 count as proxy): ${n_gpt2 / 1e6 * 2.00:.4f}")
 assert mine.decode(mine.encode(text)) == text     # round-trip still holds
 ```
 
-Representative result for a 3,100-character essay:
+> ⚠️ **Not reproduced offline.** The essay `my_essay.txt` is not in the repo and the GPT-2 counts need a download. The table below is *illustrative only, unverified*; your own numbers will differ. Only the logic (your tokenizer has 138 merges learned from 1,117 bytes) is measured.
+
+Illustrative (unverified) result for a 3,100-character essay:
 
 | quantity | value |
 |---|---|
@@ -1287,9 +1286,9 @@ Representative result for a 3,100-character essay:
 | gpt2 bytes/token | 4.42 |
 | input cost | $0.0014 |
 
-**Why the gap is ~2.7×:** your tokenizer learned 138 merges from 1,117 bytes of text about a school. GPT-2 learned 50,000 merges from 40 GB of the internet. Every word in your essay that did not appear in `CORPUS` — which is most of them — falls back toward per-character tokens in your tokenizer, while GPT-2 has a merge for it. The gap is a measure of corpus coverage, not of algorithm quality: the algorithm is identical.
+**Why a gap of this kind appears (~2.7× in the illustrative numbers):** your tokenizer learned 138 merges from 1,117 bytes of text about a school. GPT-2 learned 50,000 merges from 40 GB of the internet. Every word in your essay that did not appear in `CORPUS` — which is most of them — falls back toward per-character tokens in your tokenizer, while GPT-2 has a merge for it. The gap is a measure of corpus coverage, not of algorithm quality: the algorithm is identical.
 
-Note also that the cost figure uses the GPT-2 count as a stand-in. Claude uses a different tokenizer, so for real budgeting you must call `client.messages.count_tokens` — which you will do in Module 5.
+Note also that the cost figure uses the GPT-2 count as a stand-in. Claude uses a different tokenizer, so for real budgeting you would call `client.messages.count_tokens` against the real API (🌐 optional, Module 5); offline, Module 5 uses a clearly labelled stand-in tokenizer (`ceil(words*1.3)`) that is not Claude's.
 
 ---
 
@@ -1312,11 +1311,11 @@ P(a ≻ c) = σ(2.1 − (−0.3)) = σ(2.4)
 
 ```
 r(c) − r(d) = −0.3 − 2.6 = −2.9
-σ(−2.9)     = 1/(1 + e^2.9) = 1/(1 + 18.174) = 0.05213
-loss        = −log(0.05213) = 2.954
+σ(−2.9)     = 1/(1 + e^2.9) = 1/(1 + 18.174) = 0.05215
+loss        = −log(0.05215) = 2.954
 ```
 
-A large loss, correctly — the model was confidently wrong about this pair. Compare with the loss it would incur on a pair it gets right, e.g. `a ≻ c`: `−log(0.9168) = 0.0869`. The Bradley–Terry loss punishes confident errors roughly 34× harder here.
+A large loss, correctly — the model was confidently wrong about this pair. Compare with the loss it would incur on a pair it gets right, e.g. `a ≻ c`: `−log(0.9168) = 0.0868`. The Bradley–Terry loss punishes confident errors roughly 34× harder here.
 
 **(c)** Adding 100 to every reward: `r(a)=102.1`, `r(b)=101.4`, `r(c)=99.7`, `r(d)=102.6`. Every *difference* is unchanged, so `P(a≻b)=0.6682`, `P(d≻a)=0.6225`, `P(a≻c)=0.9168` — **identical**.
 
@@ -1375,8 +1374,10 @@ The curve rises steeply, then goes flat at 138 merges. Training stops early beca
 
 ### 4 — Multilingual token tax
 
+> ⚠️ **🌐 Optional and not reproduced offline.** This answer uses GPT-2's tokenizer (needs `transformers` and a download). The token counts below (36 and 171) were **not** measured in this course; they are illustrative. The character and byte counts (183/183 and 168/452) and the arithmetic derived from the stated token counts were checked. Offline, run the same loop with your own `BPETokenizer.encode` and expect a different, much larger ratio pattern: a tokenizer trained only on English text has no Devanagari merges at all.
+
 ```python
-from transformers import AutoTokenizer
+from transformers import AutoTokenizer   # 🌐 optional: needs internet
 hf = AutoTokenizer.from_pretrained("gpt2")
 
 SAMPLES = {
@@ -1394,7 +1395,7 @@ for lang, s in SAMPLES.items():
     print(f"{lang:9s} {len(s):6d} {len(s.encode('utf-8')):6d} {n:7d} {n/len(s):9.3f}")
 ```
 
-Representative output:
+Illustrative (unverified) output:
 
 ```
 language   chars  bytes  tokens  tok/char
@@ -1541,3 +1542,18 @@ Using `σ(−m) = 1 − σ(m)` and writing `s = σ(m)`, this is `−½[log s + l
 ---
 
 [⬅ Previous](module-03-attention-and-transformers.md) · [Level 4 Home](README.md) · [Next ➡](module-05-prompt-engineering.md)
+
+---
+
+## 🧾 Patch log (offline redesign, 2026-10)
+
+Ground truth: `36-week-course/_ledger/ledger-m01-04.md` section 4. Every runnable offline block (BPE, Part B corpus, token cost, SFT masking, reward model, DPO, round-trip tests, practice 3/5/6) reproduced the module's printed numbers exactly, so no printed output was changed.
+
+- `pip install torch` bash block → removed; text says torch is preinstalled and nothing needs a network → pip is blocked by the proxy.
+- "GPT-2 gets roughly 4.5 bytes/token" (lesson 3) → "production tokenizers get much higher; GPT-2's exact figure not measured offline" → needs a download, unverified in the ledger.
+- "Compare against a production tokenizer" block → relabelled "🌐 When you have internet (optional)", `# pip install transformers` removed, expected output marked unverified except the `mine` line (760 tokens, 1.47 reproduced) → ledger skipped it; nothing depends on it.
+- Practice 1, Practice 4 and mini-project step 4 + checklist item → GPT-2 is now an optional 🌐 extra; offline path uses your own BPETokenizer → removes a hard dependency on a download.
+- Answer key 1 → GPT-2 lines marked 🌐 optional; the 3,100-char essay table (702 tokens, 4.42 b/tok, $0.0014, 1,890 mine) relabelled "illustrative, unverified" → essay not in repo, GPT-2 not run; `count_tokens` remark now says offline Module 5 uses a labelled stand-in.
+- Answer key 2(b) → 0.05213 → 0.05215 and 0.0869 → 0.0868 (loss 2.954 unchanged) → ledger `m04_11_handcalc_bt`, 4th-decimal rounding.
+- Answer key 4 → GPT-2 token counts (36, 171, ratio 0.197/1.018) marked illustrative and unverified, with the checked arithmetic called out → needs a download.
+- Not changed: the literature numbers (GPT-2 vocab 50,257, 40 GB, $2.00/Mtok price assumption) are quoted from the literature / price list, not reproduced here.

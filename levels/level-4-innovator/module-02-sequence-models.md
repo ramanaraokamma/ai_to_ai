@@ -524,7 +524,7 @@ And the gradient path:
 
 **After 40 steps the RNN's gradient is 7.5 × 10⁻¹⁴ and the LSTM's is 0.143.** The LSTM's memory path is nearly two trillion times stronger, and the only reason is that its recurrence is `c_t = f·c_(t−1) + something` — addition with a near-1 multiplier — rather than `h_t = tanh(W·h_(t−1) + ...)` — a fresh nonlinear squashing every step.
 
-⚠️ Note what the LSTM did **not** fix: `0.9526⁴⁰ = 0.143` is still decay. Push to 400 steps and `0.9526⁴⁰⁰ ≈ 4 × 10⁻⁹` — vanished again. **The LSTM buys you roughly 100–500 steps of memory, not unlimited memory.** That remaining limit is the gap Module 3 closes, by letting step 400 look directly at step 1 with no intervening multiplications at all.
+⚠️ Note what the LSTM did **not** fix: `0.9526⁴⁰ = 0.143` is still decay. Push to 400 steps and `0.9526⁴⁰⁰ ≈ 3.7 × 10⁻⁹` (and `0.95⁴⁰⁰ = 1.23 × 10⁻⁹`) — vanished again. **The LSTM buys you roughly 100–500 steps of memory, not unlimited memory.** That remaining limit is the gap Module 3 closes, by letting step 400 look directly at step 1 with no intervening multiplications at all.
 
 ---
 
@@ -532,11 +532,7 @@ And the gradient path:
 
 ### Setup
 
-```bash
-pip install torch numpy matplotlib
-```
-
-Everything runs on CPU in about 6 seconds. No downloads — the dataset is 231 names typed directly into the file.
+Everything runs offline on CPU (torch + numpy + matplotlib, already installed) in about 6 seconds. No downloads — the dataset is 231 names typed directly into the file.
 
 ### The full script
 
@@ -898,7 +894,7 @@ If the model's own generations score much worse under its own scoring than the r
 | Not detaching the hidden state between batches | Carrying `h` forward across batches for statefulness is a legitimate technique, and detaching feels like it would break it | `h = h.detach()` between batches. Otherwise autograd tries to backprop through the entire history since step 0 and you get a "backward through the graph a second time" error, or a memory explosion |
 | No gradient clipping | It works fine for the first few hundred steps, so it looks unnecessary | Always `clip_grad_norm_(params, 1.0)` for RNNs. The explosion, when it comes, arrives on one batch and turns every weight to NaN in one step |
 | Reusing the training forward pass for generation | The training path takes a `(B, T)` tensor; generation has only one token at a time, and it is tempting to fake it | Write a separate `step()` method that takes one token and a state. Trying to reuse `forward()` by growing a tensor each step is slow and easy to get wrong |
-| Assuming an LSTM fixes long-range memory completely | "LSTM solves vanishing gradients" is repeated everywhere without a number attached | The forget gate gives per-step factor `f`. `0.95⁴⁰⁰ ≈ 4 × 10⁻⁹`. LSTMs buy hundreds of steps, not thousands. Measure your own model's `grad_by_position` at the length you actually care about |
+| Assuming an LSTM fixes long-range memory completely | "LSTM solves vanishing gradients" is repeated everywhere without a number attached | The forget gate gives per-step factor `f`. `0.95⁴⁰⁰ ≈ 1.2 × 10⁻⁹`. LSTMs buy hundreds of steps, not thousands. Measure your own model's `grad_by_position` at the length you actually care about |
 | Comparing sample quality at different temperatures | Two models sampled at different T look very different, and it feels like a model difference | Fix the temperature *and* the random seed when comparing models. Novelty rate at T = 0.5 (0/60) and T = 1.2 (18/60) differ by more than most architecture changes will |
 | Training on names but sampling with `<START>` = a real character | The start token has to come from somewhere and PAD is sitting right there | Use a dedicated start symbol and be consistent between `inputs[:, 0]` in training and `tok` at the start of generation. In this script both are `PAD`, deliberately |
 
@@ -959,7 +955,7 @@ Then measure it: generate 60 names per category and check whether a simple class
 - **Backpropagation through time multiplies one Jacobian per step.** The factor `(1 − h²)·W_hh` is almost never exactly 1, so the product either vanishes or explodes — measured here as `3.28e-12` and `9.38e+06` from the same architecture.
 - **Clipping fixes explosion only.** Vanishing needs an architectural change, not a safety rail.
 - **The LSTM's cell state updates by addition**, so `∂c_t/∂c_(t−1) = f_t`. A forget gate near 1 is a gradient highway — the same trick as the residual connection from Module 1.
-- **Gates buy hundreds of steps, not unlimited memory.** `0.95⁴⁰⁰ ≈ 4 × 10⁻⁹`. The LSTM postpones the wall; it does not remove it.
+- **Gates buy hundreds of steps, not unlimited memory.** `0.95⁴⁰⁰ ≈ 1.2 × 10⁻⁹`. The LSTM postpones the wall; it does not remove it.
 - **Training uses teacher forcing; generation is autoregressive.** The mismatch is exposure bias, and it is why models can have great losses and bad outputs.
 - **Sampling is a real design decision.** Greedy repeats, temperature trades quality for novelty (0/60 novel at T = 0.5, 18/60 at T = 1.2), and top-k puts a floor under quality.
 
@@ -1010,12 +1006,12 @@ Gates: `z_t = σ(2x_t − 1)`, `r_t = 1`, `h̃_t = tanh(1.5x_t + 0.5h_(t−1))`,
 - `z₂ = σ(2(0) − 1) = σ(−1) = 0.2689`
 - `h̃₂ = tanh(0 + 0.5(0.6617)) = tanh(0.3309) = 0.3193`
 - `h₂ = (1 − 0.2689)(0.6617) + 0.2689(0.3193) = 0.7311(0.6617) + 0.0859`
-- `= 0.4838 + 0.0859 = ` **0.5697**
+- `= 0.4838 + 0.0859 = ` **0.5697** (full precision: 0.5696)
 
 **t = 3** (`x = 0`):
 - `z₃ = σ(−1) = 0.2689`
 - `h̃₃ = tanh(0.5(0.5697)) = tanh(0.2849) = 0.2774`
-- `h₃ = 0.7311(0.5697) + 0.2689(0.2774) = 0.4165 + 0.0746 = ` **0.4911**
+- `h₃ = 0.7311(0.5697) + 0.2689(0.2774) = 0.4165 + 0.0746 = ` **0.4911** (full precision: 0.4910)
 
 | t | z_t | h̃_t | h_t |
 |---|---|---|---|
@@ -1046,13 +1042,13 @@ Logits `[3.0, 2.0, 1.0]`.
 **T = 4.0** → scaled logits `[0.75, 0.50, 0.25]`
 `exp = 2.117, 1.649, 1.284`; sum = 5.050
 - 2.117/5.050 = **0.419**
-- 1.649/5.050 = **0.327**
+- 1.649/5.050 = **0.326** (rounding the intermediate exp values to 3 decimals gives 0.327; full precision gives 0.326)
 - 1.284/5.050 = **0.254**
 
 | token | logit | T=0.5 | T=1.0 | T=4.0 |
 |---|---|---|---|---|
 | A | 3.0 | 0.867 | 0.665 | 0.419 |
-| B | 2.0 | 0.117 | 0.245 | 0.327 |
+| B | 2.0 | 0.117 | 0.245 | 0.326 |
 | C | 1.0 | 0.016 | 0.090 | 0.254 |
 | **sum** | | **1.000** | **1.000** | **1.000** |
 
@@ -1092,15 +1088,15 @@ for r in rows:
     print(f"{r[0]:5s} loss {r[1]:.3f} (spread {r[2]:.3f})  novel {r[3]:.1f}/60")
 ```
 
-Representative results (seed 0 values are the ones printed by the module script):
+Real results (CPU; mean over seeds 0, 1, 2; spread = max minus min; the pronounceable column is a human judgement the course did not measure, so it is left for you to fill in):
 
 | cell | final loss (mean, spread over 3 seeds) | novelty/60 at T=1.0 | pronounceable (judgement) |
 |---|---|---|---|
-| rnn | ≈ 1.17, spread ≈ 0.03 | ≈ 20 | ~60–70% of the novel ones |
-| gru | ≈ 1.05, spread ≈ 0.03 | ≈ 14 | ~75% |
-| lstm | ≈ 1.03, spread ≈ 0.02 | ≈ 12 | ~80% |
+| rnn | 1.176, spread 0.022 | 27.3 | not measured (your judgement) |
+| gru | 1.036, spread 0.014 | 10.0 | not measured (your judgement) |
+| lstm | 1.024, spread 0.006 | 11.3 | not measured (your judgement) |
 
-**Verdict:** the LSTM's advantage over the RNN (≈ 0.14 in loss) is roughly **5× the seed spread** (≈ 0.03), so it is a real effect, not noise. The LSTM's advantage over the GRU (≈ 0.02) is **the same size as the spread**, so on this task you cannot claim the LSTM beats the GRU — and the GRU is cheaper. That is the honest reading, and the whole reason for running three seeds.
+**Verdict:** the LSTM's advantage over the RNN (0.152 in loss) is roughly **7× the RNN's seed spread** (0.022), so it is a real effect, not noise. The LSTM's advantage over the GRU (0.012) is about the size of the GRU's spread (0.014), so on this task you cannot claim the LSTM beats the GRU — and the GRU is cheaper. That is the honest reading, and the whole reason for running three seeds.
 
 Note the inverse relationship between loss and novelty: the RNN fits worse, so it wanders further from the training set, so it produces more novel names — but a larger share of them are junk. **Novelty alone is not a quality metric.** You need both numbers.
 
@@ -1144,7 +1140,14 @@ for cell in ["rnn", "lstm"]:
         print(cell, D, f"{run_copy(cell, D):.3f}")
 ```
 
-**What you should find:** both models are near 100% at D = 1. The RNN degrades sharply — typically dropping below 50% somewhere around D = 10–20 — while the LSTM holds high accuracy considerably longer, often to D = 40. Chance accuracy is 1/8 = 0.125, so "below 50%" is well above chance but far from useful.
+**What you should find** (real CPU run, 1,500 training steps per point, hidden size 64, chance = 1/8 = 0.125):
+
+```
+rnn  D=1 1.000   D=5 0.438   D=10 0.129   D=20 0.127   D=40 0.127
+lstm D=1 0.998   D=5 0.996   D=10 0.984   D=20 0.130   D=40 0.130
+```
+
+Both are near 100% at D = 1. The RNN is already below 50% at D = 5 and at chance by D = 10. The LSTM holds ~98% through D = 10 and is at chance by D = 20 — **it does not reach D = 40 at this training budget**. (The common claim that LSTMs bridge dozens of steps did **not** reproduce at this budget; we did not test longer training or a tuned forget bias, so treat that claim as unreproduced.) The LSTM's horizon here is somewhere between 10 and 20 steps, about 3x to 4x the RNN's.
 
 **Why this task is the right diagnostic:** it requires *exact* recall of a specific symbol from exactly D+L steps ago, with no statistical shortcut. Name generation lets the model cheat with letter-frequency statistics; the copy task does not. The delay at which accuracy collapses is a direct measurement of the model's memory horizon in steps, and it should line up with where your gradient plot goes flat.
 
@@ -1203,16 +1206,16 @@ Expected: both differences print as approximately `0.0` (typically under 1e-7) a
 1. **Gate order.** PyTorch stacks the gates as `[input, forget, cell, output]` (i, f, g, o). Many textbooks write them in a different order. If you chunk in the wrong order, the cell still trains — badly — and you will never find the bug by staring at the loss. This is why the equivalence test exists.
 2. **Two biases.** `nn.LSTMCell` has both `bias_ih` and `bias_hh`, which are mathematically redundant (their sum is the only thing that matters) but present for CuDNN compatibility. Copy both, and when setting a forget bias, set one and zero the other so the effective bias is exactly what you intended.
 
-**The forget-bias sweep.** With `forget_bias ∈ {0, 1, 2, 4}`, the gradient at t = 1 (from the module's own probe) goes roughly:
+**The forget-bias sweep.** With `forget_bias ∈ {0, 1, 2, 4}`, the gradient at t = 1 (real CPU run of the module's probe; `bias_hh` zeroed, so bias 0 reads 3.99e-09 rather than the 6.69e-09 of the default-init LSTM) is:
 
 | forget bias | σ(bias) | grad at t = 1 |
 |---|---|---|
-| 0 | 0.500 | ~7e-09 |
-| 1 | 0.731 | ~1e-04 |
-| 2 | 0.881 | ~1.6e-02 |
-| 4 | 0.982 | ~1.2e-01 |
+| 0 | 0.500 | 3.99e-09 |
+| 1 | 0.731 | 2.13e-04 |
+| 2 | 0.881 | 1.60e-02 |
+| 4 | 0.982 | 1.18e-01 |
 
-**Answer sentence:** decay stops being meaningful somewhere between bias 2 and bias 4. At bias 4 the forget gate is σ(4) = 0.982, so `0.982⁴⁰ = 0.485` — the signal at t = 1 is within a factor of 2 of the signal at t = 40, and the curve is essentially flat. The cost is that the cell starts out unable to forget anything, which can slow early learning on tasks where forgetting is the right behaviour.
+**Answer sentence:** decay stops being meaningful somewhere between bias 2 and bias 4. At bias 4 the forget gate is σ(4) = 0.982, so `0.982⁴⁰ = 0.484` — the gradient at t = 1 (0.118) is about 5x smaller than at t = 40 (0.626; ratio 0.188), so the curve is nearly flat, though not within a factor of 2 as first claimed (0.982⁴⁰ = 0.484 is the forget-gate arithmetic alone; the measured ratio differs). The cost is that the cell starts out unable to forget anything, which can slow early learning on tasks where forgetting is the right behaviour.
 
 ### 6. [Stretch] Quantify exposure bias
 
@@ -1253,7 +1256,7 @@ plt.xlabel("per-character loss (nats)"); plt.ylabel("count"); plt.legend()
 plt.tight_layout(); plt.savefig("exposure_bias.png", dpi=110)
 ```
 
-**What you should see:** the real names sit around 0.9–1.1 nats/char. The model's own T = 1.0 samples score noticeably higher — typically 1.2–1.6 nats/char — with a long right tail of samples the model finds genuinely surprising.
+**What you should see:** the real names average 0.954 nats/char. The model's own T = 1.0 samples score higher on average — 1.122 nats/char in the real run, against 0.954 for the real names (a gap of 0.167; n = 231 real, 200 generated). The medians are almost equal (0.936 vs 0.958): the gap comes from a long right tail of samples the model finds genuinely surprising, not from every sample being worse.
 
 **The explanation paragraph:**
 
@@ -1264,6 +1267,19 @@ Crucially, this is **not** evidence that the output is creative. A creative-but-
 One honest caveat: sampling at T = 1.0 from a model deliberately regularized to be uncertain will always produce some high-loss output; part of the gap is just sampling entropy, not compounding. To separate them, repeat the measurement at T = 0.5 (where output is nearly all memorized training names) and check that the gap shrinks to near zero. If it does, the temperature-1 gap is genuine drift.
 
 </details>
+
+## 🧾 Patch log (offline redesign, 2026-10)
+
+Ground truth: `36-week-course/_ledger/ledger-m01-04.md`. The main script (block 3) reproduces the module's printed output exactly, so none of its numbers changed.
+
+- `0.95⁴⁰⁰ ≈ 4 × 10⁻⁹` (three places) → `≈ 1.2 × 10⁻⁹` → computed value is 1.23e-9; the old figure was 3x off. (The 0.9526⁴⁰⁰ line in the forget-gate section keeps its original ≈ 3.7 × 10⁻⁹, which is correct for 0.9526.)
+- Setup: removed `pip install torch numpy matplotlib` → "already installed, offline" → pip is blocked.
+- Seeds table (RNN/GRU/LSTM): ≈1.17/1.05/1.03, spreads ≈0.03/0.03/0.02, novelty ≈20/14/12 → 1.176/1.036/1.024, spreads 0.022/0.014/0.006, novelty 27.3/10.0/11.3 → real 3-seed means; "pronounceable" column was an unmeasured judgement and is now marked as such.
+- Verdict "≈0.14 = 5x spread; LSTM-GRU gap ≈ spread" → 0.152 = 7x RNN spread; LSTM-GRU 0.012 vs spread 0.014 → same conclusion with real numbers.
+- Copy task: "RNN drops below 50% around D=10-20; LSTM often to D=40" → RNN 0.438 at D=5, chance by D=10; LSTM 0.984 at D=10, chance at D=20 and D=40 (1,500 steps) → added the measured table; the longer-horizon claim is marked unreproduced.
+- Forget-bias table: ~7e-09 / ~1e-04 / ~1.6e-02 / ~1.2e-01 → 3.99e-09 / 2.13e-04 / 1.60e-02 / 1.18e-01; "within a factor of 2" at bias 4 → ratio 0.188 (about 5x).
+- Exposure bias: "generated typically 1.2-1.6" → 1.122 (real 0.954); noted that the medians are nearly equal and the gap is a right tail.
+- Hand-calc rounding: GRU h2/h3 0.5697/0.4911 annotated with full precision 0.5696/0.4910; softmax T=4 0.327 → 0.326; 0.982^40 0.485 → 0.484.
 
 ---
 

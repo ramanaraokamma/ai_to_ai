@@ -50,7 +50,7 @@ The word "dense" is literal. Compare the two representations of one short senten
 TF-IDF  (vocabulary 30,000):   [0, 0, 0, ..., 0.41, 0, 0, ..., 0.29, 0, ...]
                                 └── 29,996 zeros and 4 non-zeros ──┘   SPARSE
 
-MiniLM  (384 dimensions):      [-0.031, 0.118, 0.204, -0.077, ... , 0.056]
+MiniLM  (384 dimensions):      [-0.031, 0.118, 0.204, -0.077, ... , 0.056]   (illustrative values)
                                 └── every one of 384 is non-zero ──┘   DENSE
 ```
 
@@ -380,7 +380,7 @@ Run it on three examples:
 
 #### The cost arithmetic that settles most arguments
 
-Your notebook is 712 words ≈ 950 tokens. Trivial either way. Now scale it to a 200,000-token corpus and 10,000 queries a month, at Claude Sonnet 5's $2.00 per million input tokens:
+Your notebook is about 704 words of chunked text, roughly 950 tokens (an estimate for a real tokenizer; not measured offline). Trivial either way. Now scale it to a 200,000-token corpus and 10,000 queries a month, at Claude Sonnet 5's $2.00 per million input tokens:
 
 ```
 LONG CONTEXT: 200,000 tokens × 10,000 queries = 2.0×10⁹ tokens
@@ -401,7 +401,7 @@ And there is a quality argument too, separate from cost: models are measurably b
 
 **One question, end to end, with every number shown.**
 
-**The corpus:** a 15-entry lab notebook, chunked by `##` heading. 712 words total.
+**The corpus:** a 15-entry lab notebook, chunked by `##` heading. 704 words in the chunks (712 counting the 8-word title line that no chunk contains).
 
 **The question:** *"Why did post-norm need warmup?"*
 
@@ -443,7 +443,7 @@ chunk 13  Prompt bench                  0.000
 chunk 14  Cost accounting               0.000
 ```
 
-Eleven of fifteen chunks score exactly zero. The correct chunk wins by 8.5×.
+Twelve of fifteen chunks score exactly zero. The correct chunk wins by 8.5×.
 
 ### Step 3 — take the top 3
 
@@ -510,7 +510,7 @@ output    : 58 tokens   →   58/1e6 × $10.00 = $0.000580
                              total = $0.000902
 ```
 
-Under a tenth of a cent. Pasting the entire 950-token notebook instead would have cost `$0.00261` — **2.9× more, for the same answer, on a corpus of fifteen paragraphs.** Scale the corpus by 1,000× and that ratio becomes the difference between a hobby and a bill.
+Under a tenth of a cent. (The token counts here are illustrative: the offline stand-in counts `ceil(words x 1.3)`, not Claude's tokenizer; the dollar arithmetic is exact.) Pasting the entire ~950-token notebook instead would have cost `$0.00248` (950 in + 58 out) — **about 2.75× more, for the same answer, on a corpus of fifteen paragraphs.** Scale the corpus by 1,000× and that ratio becomes the difference between a hobby and a bill.
 
 ---
 
@@ -518,13 +518,11 @@ Under a tenth of a cent. Pasting the entire 950-token notebook instead would hav
 
 ### Setup
 
-```bash
-pip install numpy scikit-learn anthropic
-pip install sentence-transformers      # ~90 MB model download on first use
-export ANTHROPIC_API_KEY="sk-ant-..."  # only needed for Part F
-```
+Nothing to install: `numpy`, `scikit-learn` and `matplotlib` are already in the course environment, and `pip` is blocked by the proxy. There is no API key and no model download.
 
-Parts A–E run **offline and free**. Only Part F calls the API.
+Parts A–E run **offline and free** with the TF-IDF embedder. Part F runs against a local stand-in, not a model (`36-week-course/_ledger/scripts/m06_stub.py`, an extractive generator: it returns the sentence with the most word overlap from the `<source>` blocks plus its citation, or `NOT IN NOTES`). Anything it prints says nothing about a real model.
+
+> 🌐 **When you have internet (optional; nothing depends on it).** The dense tier needs `pip install sentence-transformers` (~90 MB download) and Part F against the real service needs `pip install anthropic` and an API key. Every `MiniLMEmbedder` and real-API step below is marked 🌐; none of its outputs were reproduced offline.
 
 ### Part A — the notebook
 
@@ -666,7 +664,8 @@ class TfidfEmbedder:
 
 
 class MiniLMEmbedder:
-    """Real dense embeddings. 384 dimensions. ~90 MB download on first use."""
+    """🌐 OPTIONAL, needs internet. Real dense embeddings. 384 dimensions. ~90 MB download on first use.
+    Not usable offline; not run in this course."""
     name = "minilm"
 
     def __init__(self, model_name="sentence-transformers/all-MiniLM-L6-v2"):
@@ -716,7 +715,7 @@ for cid, score, _ in index.search("Why did post-norm need warmup?", k=3):
 **Expected output:**
 
 ```
-15 chunks, 712 words total
+15 chunks, 704 words total
   0.596  [9] 2026-05-20 — Layer norm placement
   0.070  [2] 2026-02-03 — Dropout and weight decay
   0.047  [1] 2026-01-21 — Learning rate sweep
@@ -776,7 +775,7 @@ Q: why did my loss become NaN?
 4. *"API call cost"* ranks the prompt-bench note above the cost-accounting note, and puts a zero-scoring chunk in third place.
 5. *"loss become NaN"* ranks dropout above the learning-rate sweep — **even though the sweep note contains the literal string "NaN"** — because "loss" appears three times in the dropout note and TF-IDF weights that repetition heavily.
 
-Now swap one line:
+Now swap one line (🌐 **optional: needs `sentence-transformers` and a download; not reproduced offline, so the output below is an illustration of the expected shape only, not a measurement**):
 
 ```python
 from rag import MiniLMEmbedder
@@ -787,7 +786,7 @@ for q in QUERIES:
         print(f"   {s:.3f}  {titles[cid]}")
 ```
 
-**Representative output** (your numbers will vary by a few hundredths; the ordering is the point):
+**Illustrative output, NOT reproduced (no MiniLM offline):**
 
 ```
 Q: how do I stop my training from blowing up at the start?
@@ -806,7 +805,7 @@ Q: why did my loss become NaN?
    0.31  2026-02-03 — Dropout and weight decay
 ```
 
-The `0.000` became `0.62`. Nothing about the notebook changed — only the geometry did.
+If dense retrieval behaves as the literature suggests, the `0.000` becomes a clearly non-zero score and nothing about the notebook changed — only the geometry did. Offline, all you have measured is the TF-IDF side of this contrast (the five exact zeros and `paraphrased wording, tfidf: {1: 0.2, 3: 0.5, 5: 0.6}` in Part C/D).
 
 **One honest caveat.** Dense retrieval is not strictly better. It is weaker at exact identifiers: search for order id `D-3312` or an error code and TF-IDF wins, because those strings carry no semantics to embed. Production systems usually run **hybrid search** — both, with the scores combined. Knowing *why* each one fails is what lets you decide when you need the second one.
 
@@ -955,10 +954,11 @@ The two distributions overlap: `0.198` (unanswerable) sits above `0.131` (answer
 
 ```python
 import re
-import anthropic
+import sys; sys.path.insert(0, "36-week-course/_ledger/scripts")
+import m06_stub                      # stand-in, not a model (🌐 optional: `import anthropic`)
 
 MODEL = "claude-sonnet-5"
-client = anthropic.Anthropic()
+client = m06_stub.client()              # 🌐 optional: anthropic.Anthropic()
 
 SYSTEM = """You answer questions about the user's personal lab notebook.
 
@@ -1044,20 +1044,48 @@ for q in TEST_QUESTIONS:
 print(f"\ntotal cost for {len(TEST_QUESTIONS)} questions: ${total_cost:.4f}")
 ```
 
-**Representative output** (the retrieval numbers are exact; the generated text will vary):
+**Real output against the stand-in (stand-in, not a model). The retrieval lines, scores and refusals are exact properties of the index; the generated text is the stand-in's extractive sentence and says nothing about a real model, and the cost is stand-in token arithmetic:**
 
 ```
+
+Q: Which optimizer converged fastest and by how much?
+  [gate 1] best similarity 0.131 < tau 0.2 — refusing
+  A: NOT IN NOTES
+     cited=[] served=[] sim=0.131 refused_by=threshold
+
+Q: What learning rate made the loss go to NaN?
+  [retrieved] [1] 0.200, [8] 0.173, [2] 0.043  -> sent [1, 8]
+  A: Batch 16 vs batch 128 at the same learning rate. [8]
+     cited=[8] served=[1, 8] sim=0.200 refused_by=None
+
+Q: Did dropout help more than weight decay?
+  [retrieved] [2] 0.692, [4] 0.078, [5] 0.070  -> sent [2]
+  A: Weight decay 0.01 in AdamW gave a steadier validation curve than dropout did. [2]
+     cited=[2] served=[2] sim=0.692 refused_by=None
+
+Q: What sampling temperature worked best for the name generator?
+  [retrieved] [3] 0.245, [5] 0.087, [1] 0.060  -> sent [3]
+  A: Sampling at temperature 0.5 gave boring but pronounceable output. [3]
+     cited=[3] served=[3] sim=0.245 refused_by=None
+
+Q: How much does the scaling change the attention weights?
+  [retrieved] [5] 0.507, [6] 0.073, [8] 0.070  -> sent [5]
+  A: With scaling the weights were 0.52, 0.31, 0.17. [5]
+     cited=[5] served=[5] sim=0.507 refused_by=None
+
+Q: What happened to validation loss when positional information was removed?
+  [retrieved] [7] 0.440, [2] 0.110, [4] 0.105  -> sent [7, 2, 4]
+  A: Removing positional information entirely raised validation loss from 1.68 to 2.41, which confirms the model really is permutation-blind without it. [7]
+     cited=[7] served=[7, 2, 4] sim=0.440 refused_by=None
+
 Q: Why did post-norm need warmup?
   [retrieved] [9] 0.596, [2] 0.070, [1] 0.047  -> sent [9]
-  A: Post-norm diverged within the first 100 training steps unless warmup was used, so
-     warmup was needed to keep it stable [9]. Pre-norm trained stably with no warmup at all [9].
+  A: Post-norm needed warmup or it diverged in the first 100 steps. [9]
      cited=[9] served=[9] sim=0.596 refused_by=None
 
 Q: How many merges did the BPE tokenizer learn?
   [retrieved] [10] 0.332, [2] 0.068, [0] 0.000  -> sent [10]
-  A: The byte-level BPE tokenizer learned 138 merges on a 1117-byte corpus before every
-     remaining pair became unique [10]. Compression was 2.22 bytes per token, versus
-     about 4.5 for GPT-2 [10].
+  A: On a 1117-byte corpus it learned 138 merges before every remaining pair became unique. [10]
      cited=[10] served=[10] sim=0.332 refused_by=None
 
 Q: What did I conclude about federated learning?
@@ -1070,10 +1098,10 @@ Q: Which GPU did I train the tiny GPT on?
   A: NOT IN NOTES
      cited=[] served=[] sim=0.198 refused_by=threshold
 
-total cost for 10 questions: $0.0071
+total cost for 10 questions: $0.0041
 ```
 
-Under a cent for ten questions, every answer carrying a citation you can check, and both unanswerable questions refused rather than invented.
+Under half a cent of stand-in token arithmetic for ten questions, every non-refused answer carrying a citation you can check, and both unanswerable questions refused rather than invented. Note also what the stand-in output honestly shows: the first question ("Which optimizer converged fastest and by how much?") is *answerable* but its best similarity 0.131 is below tau 0.2, so Gate 1 refuses it — a false refusal, the cost of the threshold. And "What learning rate made the loss go to NaN?" got a wrong sentence about batch sizes, cited [8] correctly but not relevant. Citations being valid does not make answers right.
 
 Notice how often the floor cuts `k=3` down to a single source. That is the design working: **`k` is how many candidates you consider, the floor is how many you pay for.**
 
@@ -1095,9 +1123,9 @@ Given `u = [3, 0, 4]`, `v = [6, 0, 8]`, `w = [0, 5, 0]`, `x = [-3, 0, -4]`:
 
 ### [Warm-up] 2 — Find another zero
 
-Find two more queries about the lab notebook where TF-IDF's top-1 similarity is exactly `0.000`, using only ordinary English (no nonsense words). Then check what MiniLM scores for the same queries.
+Find two more queries about the lab notebook where TF-IDF's top-1 similarity is exactly `0.000`, using only ordinary English (no nonsense words). Then (🌐 optional, needs MiniLM) check what MiniLM scores for the same queries.
 
-**Done looks like:** two queries, their TF-IDF top-1 scores and chunks, their MiniLM top-1 scores and chunks, and one sentence naming the linguistic phenomenon that caused each zero (synonym, spelling variant, morphology, paraphrase).
+**Done looks like:** two queries, their TF-IDF top-1 scores and chunks, (optionally) their MiniLM top-1 scores and chunks, and one sentence naming the linguistic phenomenon that caused each zero (synonym, spelling variant, morphology, paraphrase).
 
 ### [Build] 3 — Overlap sweep
 
@@ -1177,7 +1205,7 @@ A working question-answering system over **your own** AI Academy lab notebook, t
 
 2. **Chunk it structurally**, then check by hand: print every chunk and confirm none of them cuts a fact in half. Fix your chunker if any do.
 
-3. **Build the index** with `MiniLMEmbedder`. Persist it:
+3. **Build the index** with `TfidfEmbedder` (🌐 optionally `MiniLMEmbedder` when you have internet). Persist it:
    ```python
    import hashlib, numpy as np, json
    h = hashlib.sha256(NOTEBOOK.encode()).hexdigest()[:12]
@@ -1362,16 +1390,16 @@ Output:
   tfidf 0.000  got [0] Optimizer bake-off             want [0]    oov=['optimiser', 'converged', 'quickest']
   tfidf 0.000  got [0] Optimizer bake-off             want [14]   oov=['expensive', 'enquiry']
   tfidf 0.000  got [0] Optimizer bake-off             want [10]   oov=['tokeniser', 'lossless']
-  tfidf 0.106  got [4] LSTM vs GRU                    want [4]    oov=['fast', 'recurrent', 'unit']
+  tfidf 0.106  got [6] Tiny GPT training run            want [4]    oov=['fast', 'recurrent', 'unit']
 ```
 
 **Five exact zeros, and every one of them returns chunk 0.** When all fifteen scores tie at zero, `np.argsort` returns index order, so the system confidently hands you the first note in the file. Nothing in the return value says "I have no idea" — the score does, but only if you look at it. **This is the single strongest argument for the per-chunk floor: it converts a silent wrong answer into a visible empty context.**
 
 Note the third probe: it scores `0.000` even though the gold chunk *is* chunk 0. The system got the right answer for exactly the wrong reason. If your eval had contained only that question, TF-IDF would have looked fine.
 
-The control probe is instructive too: `fast`, `recurrent`, and `unit` are all out-of-vocabulary, yet it scores `0.106` — because `did`, `run`, and `gru`… no: because `gru` is in the vocabulary. One surviving rare token was enough.
+The control probe is instructive too, and it fails its own label: `fast`, `recurrent`, and `unit` are all out-of-vocabulary, yet the query scores `0.106` because `did` and `run` survive and are in the vocabulary, so it is not zero. But the winner is chunk 6, *Tiny GPT training run* (it contains "run"), **not** the LSTM-vs-GRU note [4] we wanted. A non-zero score is not a correct retrieval: two common words matched the wrong note.
 
-MiniLM on the five zeros (representative):
+🌐 MiniLM on the five zeros (**illustrative only; not reproduced offline**, no MiniLM here):
 
 ```
   minilm 0.44  Dropout and weight decay      <- which regulariser stopped overfitting?
@@ -1381,7 +1409,7 @@ MiniLM on the five zeros (representative):
   minilm 0.55  BPE tokenizer from scratch    <- was the tokeniser lossless?
 ```
 
-Five for five. The linguistic causes:
+If a dense model behaves as expected it would rank those notes well. The linguistic causes of the five TF-IDF zeros (these are measured) are:
 
 | Query | Cause of the zero |
 |---|---|
@@ -1479,14 +1507,14 @@ for k, v in cells.items():
     print(f"  {k}: questions {v}")
 ```
 
-Representative result:
+Real result against the stand-in generator (stand-in, not a model; the generation row is a property of the stand-in's word-overlap rule, not of a real model, though the retrieval row is exact):
 
 ```
                       generation OK   generation WRONG
-retrieval OK               9                 1
+retrieval OK               7                 3
 retrieval FAILED           0                 0
-  (True, True): questions [1, 2, 3, 4, 5, 6, 7, 8, 10]
-  (True, False): questions [9]
+  (True, True): questions [3, 5, 6, 7, 8, 9, 10]
+  (True, False): questions [1, 2, 4]
   (False, True): questions []
   (False, False): questions []
 ```
@@ -1496,11 +1524,11 @@ retrieval FAILED           0                 0
 - **Bottom row empty** — with heading chunking and literal-wording questions, recall@3 is 1.00, so there are no retrieval failures at all. That is the expected result given the Part D measurement, and it is a good sanity check that the two measurements agree.
 - **The `(False, True)` cell should always be empty**, and if it is not, that is alarming: it means the model produced the correct fact *without* the correct chunk in context — i.e. it answered from pretraining despite being told not to. That is a grounding violation, and it is the cell to watch when you evaluate a system on facts the model might already know. Our notebook is private and invented, which is exactly what makes it a good test corpus.
 
-**The one generation failure, question 9** — *"What was the constant-answer baseline on the prompt bench?"*
+**The stand-in's three generation failures are questions 1, 2 and 4** (from the Part F output: Q1 was refused by Gate 1 at similarity 0.131; Q2 got a batch-size sentence; Q4 got the temperature-0.5 sentence when the gold is "Temperature 1.2"). **Question 9 passes with the stand-in** because it extracts the best-overlap sentence. The walk-through below describes a failure a *real* model could produce on question 9 (🌐 illustrative, **not reproduced**): *"What was the constant-answer baseline on the prompt bench?"*
 
 Retrieved context: `[13] 0.479`, `[0] 0.000`, `[1] 0.000` — the floor drops the two zeros, so exactly one source is sent. Chunk 13 contains the sentence: *"The constant-answer baseline was 43.8%, which reframed everything."*
 
-The answer came back as:
+A real model might answer:
 
 ```
 The prompt bench compared four prompt versions, scoring 59.4% zero-shot, 78.1% with
@@ -1554,18 +1582,18 @@ for a in [0.0, 0.25, 0.5, 0.75, 1.0]:
     print(f"{a:6.2f} {lit:8.2f} {par:11.2f} {ide:11.2f}")
 ```
 
-Representative output:
+Measured: the `alpha = 0.0` row (pure TF-IDF) is the only row reproduced offline (literal 1.00, paraphrase 0.20, identifier 1.00). The other rows need MiniLM and are **illustrative, not reproduced**:
 
 ```
  alpha  literal  paraphrase  identifier
-  0.00     1.00        0.20        1.00
+  0.00     1.00        0.20        1.00   <- measured
   0.25     1.00        0.60        1.00
   0.50     1.00        0.80        1.00
   0.75     0.90        0.90        0.67
   1.00     0.80        0.90        0.33
 ```
 
-**Recommendation: α = 0.5.** It is the only setting that holds all three query types simultaneously — 1.00 literal, 0.80 paraphrase, 1.00 identifier. Moving to α = 0.75 buys 10 points of paraphrase recall and costs 33 points of identifier recall, which is a bad trade for a notebook full of run ids, learning rates, and dollar amounts.
+**Recommendation (based on the illustrative rows; verify with MiniLM before trusting): α = 0.5.** It is the only setting that holds all three query types simultaneously — 1.00 literal, 0.80 paraphrase, 1.00 identifier. Moving to α = 0.75 buys 10 points of paraphrase recall and costs 33 points of identifier recall, which is a bad trade for a notebook full of run ids, learning rates, and dollar amounts.
 
 **What each extreme is bad at, and why:**
 
@@ -1574,7 +1602,7 @@ Representative output:
 
 **The generalizable rule.** The two methods fail in complementary directions: sparse fails on *meaning*, dense fails on *symbols*. Because they fail differently, averaging them is not a compromise — it is genuinely better than either at the union of query types. That is why essentially every production retrieval system is hybrid, and why "we use embeddings" is not, by itself, a search strategy.
 
-One practical warning the table hides: dense and TF-IDF similarity scores live on different scales (TF-IDF here spans 0.00–0.69, MiniLM roughly 0.25–0.70). A raw weighted sum implicitly lets whichever scale is larger dominate. For a real system, normalize each score distribution first — z-scores over the retrieved candidates, or reciprocal-rank fusion, which ignores the scores entirely and combines only the rankings.
+One practical warning the table hides: dense and TF-IDF similarity scores live on different scales (TF-IDF here spans 0.00–0.69, measured; MiniLM's range of roughly 0.25–0.70 is an unreproduced estimate). A raw weighted sum implicitly lets whichever scale is larger dominate. For a real system, normalize each score distribution first — z-scores over the retrieved candidates, or reciprocal-rank fusion, which ignores the scores entirely and combines only the rankings.
 
 ---
 
@@ -1594,17 +1622,17 @@ for cid, s, _ in pidx.search("What learning rate was best?", k=3):
 print(ask(pidx, "What learning rate was best?", verbose=False)["answer"])
 ```
 
-**Before mitigation** (representative):
+**Before mitigation.** Real TF-IDF retrieval scores:
 
 ```
-  0.512  [15] 2026-09-01 — Learning rate revisited
-  0.487  [1]  2026-01-21 — Learning rate sweep
-  0.061  [8]  2026-05-08 — Batch size experiment
-
-The best learning rate was 1e-2 [15].
+  0.446  [15] 2026-09-01 — Learning rate revisited
+  0.187  [1] 2026-01-21 — Learning rate sweep
+  0.123  [8] 2026-05-08 — Batch size experiment
 ```
 
-Both contradicting notes were retrieved, sitting at nearly the same score — and the model silently picked one and reported it as settled fact. **It did not lie and it did not violate the grounding rule.** Every word is supported by source 15. The failure is that a user reading this answer has no idea an equally-well-supported source says something different. The system removed information the user needed.
+An answer from a real model (🌐 illustrative, **not reproduced**): `The best learning rate was 1e-2 [15].`
+
+Both contradicting notes were retrieved, but they do **not** sit at nearly the same score: under TF-IDF the new note wins clearly (0.446 versus 0.187, about 2.4x), because it repeats the query's words more densely. Ranking by similarity therefore buries the old note, and a generator that favours the top source will silently pick one and reported it as settled fact. **It did not lie and it did not violate the grounding rule.** Every word is supported by source 15. The failure is that a user reading this answer has no idea an equally-well-supported source says something different. The system removed information the user needed.
 
 **Mitigation implemented — (a) plus a piece of (b):** retrieve `k=5` and add an explicit conflict instruction, with dates carried into the source titles so the model can order them.
 
@@ -1616,7 +1644,7 @@ SYSTEM_CONFLICT = SYSTEM + """
 """
 ```
 
-**After mitigation:**
+**After mitigation (🌐 illustrative target behaviour, not reproduced; the stand-in cannot reason about conflict):**
 
 ```
 The notes disagree. The January 21 sweep found 1e-3 was best [1], but a September 1
@@ -1639,3 +1667,23 @@ That is the correct behaviour: both facts surfaced, both cited, recency stated, 
 ---
 
 [⬅ Previous](module-05-prompt-engineering.md) · [Level 4 Home](README.md) · [Next ➡](module-07-ai-agents.md)
+
+---
+
+## 🧾 Patch log (offline redesign, 2026-10)
+
+Ground truth: `36-week-course/_ledger/ledger-m05-09.md` section 2. Parts A-E TF-IDF outputs reproduced exactly; only the items below changed.
+
+- Setup `pip install numpy scikit-learn anthropic`, `pip install sentence-transformers` (~90 MB), `export ANTHROPIC_API_KEY` → removed; replaced by offline text and a 🌐 optional callout → pip blocked, no API or downloads.
+- `MiniLMEmbedder` docstring → marked 🌐 optional, not usable offline; Part C dense block, Practice 2, mini-project step 3 → TF-IDF is the offline path, MiniLM optional → no pretrained weights.
+- Part C dense output ("Representative output", `0.000` became `0.62`) → "illustrative, NOT reproduced" and the claim softened to what TF-IDF measured → MiniLM not run.
+- Part B printed "15 chunks, 712 words total" → "704 words total"; Worked Example corpus "712 words" → "704 (712 including the title line)"; "712 words ≈ 950 tokens" → 704 words, ~950 tokens flagged as an unmeasured estimate → heading chunks total 704; 712 is `len(NOTEBOOK.split())` including the title. The overlap-sweep "words stored 712 (100%)" was left (matches the ledger, it is the whole notebook).
+- Worked Example "Eleven of fifteen chunks score exactly zero" → "Twelve" → the printed table shows 12 zeros.
+- Worked Example step 8 "$0.00261, 2.9× more" → "$0.00248, about 2.75×" → 950 in + 58 out = $0.00248; token counts flagged as stand-in/estimate.
+- Part F `import anthropic` / real client → local stand-in `m06_stub` (stand-in, not a model), real API 🌐 optional → no network.
+- Part F output (first question post-norm warmup, cost `$0.0071`, fluent generated answers, GPT-2 comparison sentence) → replaced by the real stand-in stdout (cost `$0.0041`, extractive answers, Q1 false refusal at 0.131, Q2 wrong sentence) and prose adjusted to say so → ledger `out/m06_partF.txt`.
+- Answer 2 control probe "got [4] LSTM vs GRU" → "got [6] Tiny GPT training run" and the muddled `gru` explanation → surviving words `did` and `run` → measured; also the MiniLM five-zero block labelled illustrative.
+- Answer 4 2x2 "9 OK / 1 wrong (question 9)" → real stand-in 7 / 3 (questions 1, 2, 4 wrong; retrieval row all OK as before); the question-9 summarising story kept only as a labelled, unreproduced illustration → ledger `out/m06_key.txt`.
+- Answer 5 hybrid table → only the alpha 0.00 row is measured (1.00 / 0.20 / 1.00, matches); alpha > 0 rows labelled illustrative, not reproduced; α = 0.5 recommendation and MiniLM score range (0.25-0.70) flagged unverified.
+- Answer 6 poison scores 0.512 vs 0.487 ("nearly the same score") and [8] 0.061 → measured 0.446 vs 0.187 vs 0.123, with prose rewritten (the new note wins clearly; ranking buries the old one); model answers before/after mitigation labelled illustrative, not reproduced.
+- Not changed (matched): Part C five-query table, tau table, chunking table, overlap sweep, cost model ($4,000 / $20 / 200x / ~$400 with caching), TF-IDF score range 0.00-0.69. The cost model's caching "about a tenth the price" is a quoted price-list claim, not reproduced here.

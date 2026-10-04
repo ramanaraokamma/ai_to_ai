@@ -235,12 +235,12 @@ Here is the mean **look-back distance** — how many characters back a head puts
 
 | Layer | H0 | H1 | H2 | H3 | layer mean |
 |---|---|---|---|---|---|
-| 0 | 3.95 | 3.81 | 3.44 | 3.44 | **3.66** |
-| 1 | 6.84 | 6.87 | 7.07 | 6.97 | **6.94** |
-| 2 | 7.65 | 7.67 | 7.15 | 6.56 | **7.26** |
-| 3 | 7.92 | 8.32 | 8.69 | 8.11 | **8.26** |
+| 0 | 3.67 | 3.72 | 3.63 | 3.52 | **3.64** |
+| 1 | 6.06 | 6.78 | 7.25 | 6.92 | **6.75** |
+| 2 | 6.58 | 7.21 | 7.93 | 7.10 | **7.21** |
+| 3 | 6.48 | 6.93 | 8.41 | 7.59 | **7.35** |
 
-Read the last column. **Depth buys range.** Layer 0 looks ~3.7 characters back ("the current word so far"); layer 3 looks ~8.3 back ("the current phrase"). Nobody programmed this. Early layers assemble letters into word-fragments, later layers assemble fragments into phrases — exactly the hierarchy you would design by hand.
+(Real CPU run, seed 1337, 2,500 steps. Your digits will differ slightly.) Read the last column. **Depth buys range**, though not evenly: layer 0 looks ~3.6 characters back ("the current word so far"); layers 1-3 look ~6.8-7.4 back, and the last layer is only slightly above the middle ones. Nobody programmed this. Early layers assemble letters into word-fragments, later layers assemble fragments into phrases — exactly the hierarchy you would design by hand.
 
 ---
 
@@ -491,11 +491,7 @@ Token `sat` produced a blend of all three value vectors, weighted 25% / 25% / 50
 
 ### Setup
 
-```bash
-pip install torch numpy matplotlib
-```
-
-The whole script runs in roughly 2 minutes on a laptop CPU, faster with CUDA or Apple MPS. The dataset is ~7,000 characters typed directly into the file — no downloads.
+Everything runs offline on CPU only (torch + numpy + matplotlib, already installed). The whole script takes about 2 minutes on 2 CPU threads (133 s measured for 2,500 steps). The dataset is ~7,000 characters typed directly into the file: no downloads.
 
 ### The complete Tiny GPT
 
@@ -511,8 +507,7 @@ import torch.nn.functional as F
 import matplotlib.pyplot as plt
 
 torch.manual_seed(1337)
-DEVICE = "cuda" if torch.cuda.is_available() else (
-    "mps" if torch.backends.mps.is_available() else "cpu")
+DEVICE = "cpu"   # this course is CPU-only; do not switch it
 
 # ------------------------------------------------------------------ 1. data
 CORPUS = """
@@ -887,64 +882,64 @@ print("\nsaved attention_heatmap.png and loss_curve.png")
 ### Expected output
 
 ```
-6972 chars | vocab 28 | train 6274 val 698 | device mps
+6972 chars | vocab 28 | train 6274 val 698 | device cpu
 parameters: 807,196
 
---- step 0 | train 3.346 val 3.340 ---
-'t ouk.kugkaacystoyd.hrghdl.ena y.ikrisng\n.bavoxfsnhruckqwynzsixdf\nqh\nxxws q.ynfz\n...'
-step    0 train 3.340 val 3.334
+--- step 0 | train 3.346 val 3.339 ---
+'tur.gah\nczcw\nqkhooe\nog wazh\ncyxgkiqknwekxueqwafgrqvltzoafncsphdyafpn\nynhfkrhbcuwyxcdbmegigzifshlq
+ ezfuwpafo\nfwofhgtrf\nnzwfufptlxncwm.eyxyfdlafzdlhf...'
+step    0 train 3.340 val 3.335
 
---- step 300 | train 1.705 val 1.761 ---
-'t ous a soang.\nto de rown the byouthe n \ntothe fsher.\nthe nosthe n whe wa bopn fea id
- fishend chen reat tolden man l soot mid band be theaved finer the wer thertore fo ay
- seanoshe shed avend this d bonothe me bud sthe bem'
-step  500 train 1.206 val 1.372
-step 1000 train 0.437 val 1.369
+--- step 300 | train 1.722 val 1.779 ---
+'the.\naher cat thoold s wan thean is wa ithe is are ndooa nd nd thepn the br wean.\nas macisund sl
+ thefow rd the foger san fopeald com end id arorl theof t the ntrd brale thean rd doto meake man...'
+step  500 train 1.226 val 1.410
+step 1000 train 0.445 val 1.328
 
---- step 1200 | train 0.303 val 1.425 ---
-'t opened a a small kindnessess.\nthe baker gave bread to the sun was the birds sang is
- better the bridge.\nthe spring ever the birdge held and the old man the old man fed the
- winter.\nthe birds sang every the river in the ri'
-step 1500 train 0.202 val 1.490
-step 2000 train 0.154 val 1.617
+--- step 1200 | train 0.301 val 1.451 ---
+'the cat cared about is on the board and drew a river from and the bnothing he birds.\na girl kiver
+ the witer thas gone with and lough.\nthe teacher wrote that on the board and drew begar one the
+ river beside it.\nthe boy cop...'
+step 1500 train 0.212 val 1.589
+step 2000 train 0.159 val 1.664
 
---- step 2499 | train 0.150 val 1.657 ---
-'t on the wall and nothing else.\nwhen it rained the market closed and the cat found a
- dry door.\nthe rain fell on the roofs and ran down into the river.\nthe river rose and
- the bridge held and the town slept.\nin the winter t'
+--- step 2499 | train 0.148 val 1.682 ---
+'the cat was not askt about it in the spring.\nthe old man had forgotten saying it and laughed a
+ long time.\nthe girl remembered every word and told him what he had said.\nthe old man said that
+ is why we need more than one pe...'
 
-FINAL train 0.146 val 1.644
+FINAL train 0.150 val 1.669
 
 === what does each head look at? ===
-L0 H0: mean look-back 3.95 chars, self-weight 0.15
-L0 H1: mean look-back 3.81 chars, self-weight 0.15
+L0 H0: mean look-back 3.67 chars, self-weight 0.15
+L0 H1: mean look-back 3.72 chars, self-weight 0.14
    ... (all 16 heads; the full numbers are the table in sub-concept 4) ...
-L3 H2: mean look-back 8.69 chars, self-weight 0.15
-L3 H3: mean look-back 8.11 chars, self-weight 0.11
+L3 H2: mean look-back 8.41 chars, self-weight 0.15
+L3 H3: mean look-back 7.59 chars, self-weight 0.10
 
 query = last char 'g' (pos 33), top-5 attended:
-   pos 28 'o'  weight 0.150
-   pos 29 'r'  weight 0.101
-   pos 31 'i'  weight 0.093
-   pos 26 ' '  weight 0.081
-   pos 17 'e'  weight 0.053
+   pos 28 'o'  weight 0.204
+   pos 29 'r'  weight 0.162
+   pos 31 'i'  weight 0.156
+   pos 33 'g'  weight 0.076
+   pos 26 ' '  weight 0.062
 
 saved attention_heatmap.png and loss_curve.png
 ```
 
 ### Reading the output like an engineer
 
-**Step 0 — `tkouk.kugkaacystoyd...`** Pure noise, loss 3.346. A uniform guess over 28 characters costs `ln(28) = 3.332`. **Your model at step 0 should always be within a hair of `ln(vocab_size)`** — far above means broken initialization, below means a leak.
+**Step 0 — `tur.gah\nczcw\nqkhooe...`** Pure noise, loss 3.346. A uniform guess over 28 characters costs `ln(28) = 3.332`. **Your model at step 0 should always be within a hair of `ln(vocab_size)`** — far above means broken initialization, below means a leak.
 
-**Step 300 — `to de rown the byouthe n`** Loss 1.705. Character statistics learned: `the` everywhere, words 3–6 characters, spaces and newlines in plausible places. Roughly a bigram model.
+**Step 300 — `the.\naher cat thoold s wan thean...`** Loss 1.722. Character statistics learned: `the` everywhere, words 3–6 characters, spaces and newlines in plausible places. Roughly a bigram model.
 
-**Step 1200 — `the baker gave bread to the sun was the birds sang is better the bridge.`** Train 0.303, val 1.425. Real words, real grammar, and — critically — **sentences that are not in the corpus**. Semantically nonsense, but well-formed English assembled from learned pieces. This is generalization.
+**Step 1200 — `the cat cared about is on the board and drew a river from and the bnothing he birds.`** Train 0.301, val 1.451. Mostly real words and fragments of real grammar, plus invented non-words (`bnothing`, `kiver`, `witer`) and **sentences that are not in the corpus**. Semantically nonsense, but English-shaped text assembled from learned pieces. That is the generalizing regime (and it is not clean: some of it is garbage).
 
-**Step 2499 — `the cat found a dry door. the rain fell on the roofs...`** Train 0.150, and that paragraph is a **verbatim quotation** of the corpus. The model has stopped generalizing and started reciting.
+**Step 2499 — `the cat was not askt about it in the spring. the old man had forgotten saying it...`** Train 0.148, and after the first sentence (a near-miss with the typo `askt`), the sentences are **verbatim quotations** of the corpus. The model has stopped generalizing and started reciting.
 
-**Now read the validation column: 3.340 → 1.761 → 1.369 → 1.425 → 1.617 → 1.657.** That is Module 1's overfitting U-curve, live, in a transformer. Best validation is near step 1000; everything after is memorization. With 807,196 parameters and 6,972 characters — **115 parameters per character** — that is not surprising, it is inevitable. ⚠️ The fix is not a cleverer architecture, it is more data. GPT-2 had 124M parameters and 8B training tokens: roughly **64 tokens per parameter**, not 0.009. That ratio is the subject of Module 4.
+**Now read the validation column: 3.339 → 1.779 → 1.328 → 1.451 → 1.664 → 1.682.** That is Module 1's overfitting U-curve, live, in a transformer. Best validation is near step 1000; everything after is memorization. With 807,196 parameters and 6,972 characters — **115 parameters per character** — that is not surprising, it is inevitable. ⚠️ The fix is not a cleverer architecture, it is more data. GPT-2 had 124M parameters and 8B training tokens: roughly **64 tokens per parameter**, not 0.009. That ratio is the subject of Module 4.
 
-**The head statistics.** Mean look-back by layer: 3.66 → 6.94 → 7.26 → 8.26 characters — a clean monotonic increase in range with depth, learned from nothing but next-character prediction. And the top-5 for the final `g` of `morning` are positions 28 (`o`), 29 (`r`), 31 (`i`): the letters of `morning` itself. That head does within-word tracking.
+**The head statistics.** Mean look-back by layer: 3.64 → 6.75 → 7.21 → 7.35 characters — a monotonic increase in range with depth (steep from layer 0 to layer 1, then slow), learned from nothing but next-character prediction. And the top-5 for the final `g` of `morning` are positions 28 (`o`), 29 (`r`), 31 (`i`): the letters of `morning` itself. That head does within-word tracking.
 
 **The heatmap.** Expect a hard black triangle above the diagonal (the mask working), a bright first column (the "attention sink" — many queries park weight on position 0), and bright bands near the diagonal (local context).
 
@@ -1076,11 +1071,11 @@ Pick one. **(a) KV caching** — generation currently re-runs the whole context 
 - **Q, K, V are three different learned projections of the same tokens.** Keeping "what I am looking for" separate from "what I have to offer" is what makes self-attention expressive.
 - **Divide by `√d_k` or the softmax saturates.** At `d_k = 64` the raw score standard deviation is 8; scores like `[8, −2, 1]` give weights `[0.999, 0.00005, 0.0009]` and the gradient dies.
 - **Causal masking sets future scores to −∞ *before* the softmax.** It prevents label leakage and it is what makes a transformer generative — and it gives you T training signals per forward pass.
-- **Multi-head attention is free.** Splitting `d_model` into `h` chunks costs the same parameters as one big head and lets each head specialize. Measured in the trained model: look-back grows 3.66 → 8.26 characters from layer 0 to layer 3.
+- **Multi-head attention is free.** Splitting `d_model` into `h` chunks costs the same parameters as one big head and lets each head specialize. Measured in the trained model: look-back grows 3.64 → 7.35 characters from layer 0 to layer 3.
 - **Attention is permutation-blind**, so position must be added explicitly — a learned table or a sinusoidal clock.
 - **A transformer block is `x = x + attn(ln(x))` then `x = x + mlp(ln(x))`.** Attention gathers information across positions; the MLP thinks about it within a position. Residual + pre-norm from Module 1 are what let you stack 96 of them.
 - **The path from token 1 to token T is one operation, not T.** That is the entire difference from Module 2, and the price is `O(T²)` compute and memory.
-- **807,196 parameters on 6,972 characters memorizes.** Validation loss bottomed at 1.369 and rose to 1.657 while train loss fell to 0.146. The fix is data, and that is Module 4.
+- **807,196 parameters on 6,972 characters memorizes.** Validation loss bottomed at 1.328 and rose to 1.682 while train loss fell to 0.148. The fix is data, and that is Module 4.
 
 ---
 
@@ -1150,9 +1145,9 @@ Sanity check: every output should lie inside the convex hull of `[2,0]`, `[0,3]`
 
 Comment out `att = att.masked_fill(...)` and train 500 steps.
 
-**What you will see:** train and validation loss both collapse to something very small — typically **under 0.1, often under 0.05** — within a couple hundred steps. That is far below the masked model's 1.206 at the same point, and far below the true entropy of English text.
+**What you will see:** train and validation loss both collapse to something very small. Real run (500 steps): validation 0.166 at step 250 and **0.066 at step 499** (train 0.067). That is far below the masked model's 1.226 at step 500, and far below the true entropy of English text.
 
-**Generated output:** garbage. Repeated characters, no words, nothing resembling the corpus.
+**Generated output:** garbage. In the real run it was `tttttttttttttttt...`, one repeated character, no words, nothing resembling the corpus.
 
 **The explanation paragraph:**
 
@@ -1168,28 +1163,28 @@ The general lesson: **any time your loss drops far below what you expected, susp
 # run each config for 1500 steps, tracking BEST validation loss
 ```
 
-Representative results (your numbers will differ by ±0.1):
+Real results (CPU, 1,500 steps each, best validation loss checked every 50 steps, one seed; the mask-break probe ran 500 steps). Treat differences under about 0.05 as noise: we did not run multiple seeds.
 
 | # | Config | best val loss | Δ vs baseline |
 |---|---|---|---|
-| baseline | full model | **≈ 1.28** | — |
-| 2 | 1 head | ≈ 1.34 | +0.06 |
-| 6 | 1 layer | ≈ 1.52 | +0.24 |
-| 3 | no MLP | ≈ 1.58 | +0.30 |
-| 1 | no positional embedding | ≈ 1.85 | +0.57 |
-| 5 | no √d_k scaling | ≈ 1.9–2.4, unstable | +0.6 or worse |
-| 4 | no residuals | ≈ 2.3, sometimes fails to descend | +1.0 or worse |
+| baseline | full model | **1.278** (step 750) | — |
+| 2 | 1 head | 1.269 (step 700) | -0.009 (no change) |
+| 6 | 1 layer | 1.271 (step 1450) | -0.007 (no change) |
+| 3 | no MLP | 1.452 (step 1250) | +0.174 |
+| 1 | no positional embedding | 1.632 (step 600) | +0.354 |
+| 5 | no √d_k scaling | **1.245** (step 600) | -0.033 (no change, nominally the best) |
+| 4 | no residuals | 2.848 (step 850) | +1.570 |
 
 **Mechanisms, one per ablation:**
 
-- **No positional embedding (+0.57).** The model becomes permutation-blind — it learns character frequencies but cannot distinguish `the` from `teh`. It does not collapse completely, because the causal mask leaks a little positional information (position `t` has exactly `t+1` visible keys). That partial leak is a genuinely interesting finding.
-- **One head (+0.06).** Small: with `d_k = 128` one head has plenty of capacity for a 28-character vocabulary, it just cannot attend to two things at once. Expect the gap to widen on a larger vocabulary and longer context.
-- **No MLP (+0.30).** Attention barely computes; it averages. Removing the MLP also removes about two-thirds of the parameters, so part of this gap is capacity rather than architecture.
-- **No residuals (+1.0 or fails).** Four blocks is already enough depth to hurt without a gradient highway, and pre-norm without a residual is worse than useless. This is Module 1's `1 + f'(x)` argument, and it does the most damage of all six.
-- **No scaling (+0.6, unstable).** At `d_k = 32` the score standard deviation is `√32 ≈ 5.7`, so the softmax runs near-saturated, gradients through it vanish, and seeds diverge wildly. **Instability, not just a worse number, is the signature.**
-- **One layer (+0.24).** You lose the compositional hierarchy — look-back grew from 3.66 to 8.26 characters across the four layers.
+- **No positional embedding (+0.354).** The model becomes permutation-blind — it learns character frequencies but cannot distinguish `the` from `teh`. It does not collapse completely, because the causal mask leaks a little positional information (position `t` has exactly `t+1` visible keys). That partial leak is a genuinely interesting finding.
+- **One head (-0.009: no measurable damage).** With a 28-character vocabulary and 32-character context, one head (`d_k = 128`) does as well as four. Multi-head attention is a capacity and specialization argument that this tiny task does not test. Whether the gap widens on a larger vocabulary and longer context is untested here.
+- **No MLP (+0.174).** Attention barely computes; it averages. Removing the MLP also removes about two-thirds of the parameters, so part of this gap is capacity rather than architecture.
+- **No residuals (+1.570).** Final train 2.843 and val 2.849: the model barely learned (the unigram-like regime) and never got going. Without the gradient highway four blocks was enough to stall it, and pre-norm without a residual is worse than useless. This is Module 1's `1 + f'(x)` argument, and it is by far the most damaging of the six. (Caveat from Module 1: a plain 12-block *MLP* trained fine with AdamW, so depth alone is not the cause; the transformer's attention path appears to need the residual.)
+- **No scaling (-0.033: did not reproduce the predicted damage).** Theory says that at `d_k = 32` the score standard deviation is `√32 ≈ 5.7`, so the softmax can run near-saturated. In this run, removing the scaling gave the *lowest* best validation loss of all (1.245), with a slightly earlier overfit (final train 0.278, final val 1.352 vs baseline 1.336). With weights initialized at std 0.02 the raw scores start tiny, so the saturation story is not supported at this size; we did not measure softmax saturation directly and did not run several seeds, so the claim that scaling matters is **not shown here** (it is argued from the literature at larger `d_k`).
+- **One layer (-0.007: no measurable damage).** Here the compositional hierarchy did not matter for the score; the one-layer model's best val (1.271) matched the baseline (1.278), although it fit the training set less (final train 0.869 vs 0.411). The look-back grew — look-back grew from 3.64 to 7.35 characters across the four layers in the baseline, which shows the layers *use* different ranges, not that the range is needed for this score.
 
-**Biggest damage:** removing residual connections. Most people predict positional embeddings, because that ablation is more conceptually dramatic. The residual result is a reminder that **optimization failures usually beat representational failures**.
+**Biggest damage:** removing residual connections (+1.570), then positional embeddings (+0.354), then the MLP (+0.174). Most people predict positional embeddings, because that ablation is more conceptually dramatic. The residual result is a reminder that **optimization failures usually beat representational failures**. And the three "no change" rows (1 head, 1 layer, no scaling) are the honest part of the lesson: on a tiny task, components that matter at scale may not show up, so an ablation that finds nothing is a result about the task, not proof the component is useless.
 
 ### 4. [Build] Batched multi-head attention
 
@@ -1243,11 +1238,11 @@ assert torch.allclose(a, b, atol=1e-5)
 print("equivalent")
 ```
 
-Expected: a difference around 1e-6 or smaller, and the assertion passes.
+Expected: a difference around 1e-6 or smaller (real run: exactly `0.0`), and the assertion passes.
 
 **Timing.** Warm up once, then time 100 forward passes of each on `torch.randn(32, 64, 128)` with `time.perf_counter()`.
 
-Expect the batched version to be roughly 2–4× faster on CPU. The saving is not arithmetic — both do the same FLOPs — it is **kernel launch overhead and memory locality**. The loop version issues 4 separate small matmuls per projection; the batched version issues one large one, and large matmuls run far closer to peak throughput. The gap widens enormously with more heads and on a GPU.
+**Real result on 2 CPU threads, shape (32, 64, 128):** the batched version was *slower*, not faster: loop 0.162 s vs batched 0.207 s per 100 forward passes, a speedup of **0.78x** (three runs: 0.78x, 0.78x, 0.81x; one run under load showed 1.07x). Both do the same FLOPs. The textbook argument is that batching removes kernel-launch overhead and improves memory locality, but on this CPU, with this size, the extra `transpose`/`contiguous` copies cost more than the launches saved. The speed advantage of batching is a GPU effect we could not measure here; do not expect it on a CPU. Time your own machine before believing either story.
 
 Two things that catch people out: the `.contiguous()` before `.view()` is required because `.transpose()` produces a non-contiguous tensor; and the mask buffer needs the two leading singleton dimensions (`view(1,1,block,block)`) to broadcast against `(B, nh, T, T)`.
 
@@ -1267,6 +1262,11 @@ class SinGPT(TinyGPT):
         super().__init__(vocab, **kw)
         del self.pos_emb
         self.register_buffer("pe", sinusoidal(4096, self.tok_emb.embedding_dim))
+        # FIX: each Head built a (block x block) causal mask, so any input longer
+        # than BLOCK fails with a shape error. Enlarge the masks (cheap: 128 x 128).
+        for b in self.blocks:
+            for h in b.attn.heads:
+                h.tril = torch.tril(torch.ones(128, 128))
 
     def forward(self, idx, targets=None):
         B, T = idx.shape
@@ -1283,17 +1283,19 @@ class SinGPT(TinyGPT):
 
 Note the buffer is built for 4096 positions even though training uses 32 — free, since it is a formula rather than parameters.
 
-**Representative results** after training both at `BLOCK = 32`:
+**Real results** after training both for 1,500 steps at `BLOCK = 32` (loss on validation windows of the stated length):
 
 | eval length | learned | sinusoidal |
 |---|---|---|
-| 32 | ≈ 1.40 | ≈ 1.42 |
-| 48 | **IndexError** | ≈ 1.55 |
-| 64 | **IndexError** | ≈ 1.68 |
+| 32 | 1.228 | 1.383 |
+| 48 | **IndexError** | 1.866 (with the mask fix above) |
+| 64 | **IndexError** | 2.220 (with the mask fix above) |
 
-**The exact failure mode of the learned version:** `self.pos_emb` is `nn.Embedding(32, 128)`, so `torch.arange(48)` produces index 32, which is out of range for a 32-row table. On CPU you get `IndexError: index out of range in self`. On CUDA you may instead get a device-side assert or, in older versions, silent memory corruption — which is worse. The `TinyGPT.generate` method dodges this entirely with `idx[:, -self.block_size:]`, but that is a truncation, not an extension: the model still sees only 32 tokens no matter how long the prompt is.
+**Without the mask fix, `SinGPT` also crashes** at length 48 and 64: `RuntimeError: The size of tensor a (32) must match the size of tensor b (48) at non-singleton dimension 2`, because each `Head.tril` is only 32 x 32. The first draft of this exercise did not have that fix and could not have produced the numbers it quoted.
 
-**Is the sinusoidal model's length-64 result usable?** Mostly no — loss rises from 1.42 to 1.68. The model never *trained* on positions 32–63, so while those encodings are well-defined and distinct, no head has learned what to do with them. **Sinusoidal encodings give graceful degradation, not free extrapolation.** That distinction is why so much effort goes into schemes (RoPE with interpolation, ALiBi) that extend cleanly rather than merely not crashing. Honest caveat: with 698 validation characters the length-64 measurement has few independent windows, so the error bars are large — say so.
+**The exact failure mode of the learned version:** `self.pos_emb` is `nn.Embedding(32, 128)`, so `torch.arange(48)` produces index 32, which is out of range for a 32-row table. On CPU you get `IndexError: index out of range in self`; a crash is the good outcome (some accelerator back ends fail silently instead). The `TinyGPT.generate` method dodges this entirely with `idx[:, -self.block_size:]`, but that is a truncation, not an extension: the model still sees only 32 tokens no matter how long the prompt is.
+
+**Is the sinusoidal model's length-64 result usable?** Mostly no — loss rises from 1.383 at length 32 to 1.866 at 48 and 2.220 at 64. The model never *trained* on positions 32–63, so while those encodings are well-defined and distinct, no head has learned what to do with them. **Sinusoidal encodings give graceful degradation, not free extrapolation.** That distinction is why so much effort goes into schemes (RoPE with interpolation, ALiBi) that extend cleanly rather than merely not crashing. Honest caveat: with 698 validation characters the length-64 measurement has few independent windows, so the error bars are large — say so.
 
 ### 6. [Stretch] Find and name a head
 
@@ -1329,21 +1331,35 @@ def head_stats(model, text_sample):
 rows = head_stats(model, "the old man walked home along the river tonight")
 ```
 
-**A representative head card** (yours will name a different head — that is fine, the format is what is being graded):
+**A head card** whose evidence numbers (Evidence 1 and 2) are measured from the real model on the sentence `the old man walked home along the river tonight`; Evidence 3 and the failure case below are **illustrative, not measured**. Yours will name a different head — that is fine, the format is what is being graded:
 
-> ### Head card — `L0H2`, "the previous-character head"
+> ### Head card — `L0H3`, "the previous-character head"
 >
 > **Claim:** this head puts most of its weight on the immediately preceding character, acting as a one-step delay line that lets the layer above see bigrams.
 >
-> **Evidence 1.** Lowest mean look-back of all 16 heads: **3.44 characters** versus a model-wide mean of 6.5.
-> **Evidence 2.** Mean weight on the diagonal-minus-one (position `t−1`) is **0.31**, roughly 9× what uniform attention over the visible prefix would give at the middle of the sequence.
-> **Evidence 3.** Top-5 for query position 20 in `the old man walked home along the river`: positions 19, 18, 20, 17, 0 — a contiguous local window plus the attention sink.
+> **Evidence 1.** Lowest mean look-back of all 16 heads: **3.48 characters** versus a model-wide mean of 7.57.
+> **Evidence 2.** Mean weight on the diagonal-minus-one (position `t−1`) is **0.268**, the highest of all 16 heads and roughly 4× what uniform attention over a 17-character visible prefix would give (1/17 = 0.06).
+> **Evidence 3 (illustrative, not measured).** Top-5 for query position 20 in `the old man walked home along the river`: positions 19, 18, 20, 17, 0 — a contiguous local window plus the attention sink.
 >
-> **Where the claim fails.** On a query that lands immediately after a newline, the previous-character weight collapses to about 0.08 and weight shifts to position 0. At a sentence boundary the "previous character" is a newline, which carries almost no information about the next word, so the head abandons its usual strategy. So the accurate claim is narrower: *this head tracks the previous character **within** a line*, not unconditionally.
+> **Where the claim fails (illustrative, not measured).** On a query that lands immediately after a newline, the previous-character weight collapses to about 0.08 and weight shifts to position 0. At a sentence boundary the "previous character" is a newline, which carries almost no information about the next word, so the head abandons its usual strategy. So the accurate claim is narrower: *this head tracks the previous character **within** a line*, not unconditionally.
 
 **Grading yourself:** a head card without a failure case is not finished — interpretability claims that cite only supporting examples are how people convince themselves a head does something it does not. Also note that 16 heads × 4 statistics is 64 numbers, so *something* will look extreme by chance. Before naming a head, check the pattern survives on a second, different prompt. If it does not, you found noise.
 
 </details>
+
+## 🧾 Patch log (offline redesign, 2026-10)
+
+Ground truth: `36-week-course/_ledger/ledger-m01-04.md` and its `out/` files (CPU, `manual_seed(1337)`). The model structure (807,196 parameters, 6972 chars, overfit U-curve) matched and is unchanged.
+
+- Setup: removed `pip install`; removed CUDA/MPS branch (`DEVICE = "cpu"`); "faster with CUDA or MPS" removed; "device mps" in expected output → cpu; "roughly 2 minutes" → measured 133 s on 2 threads.
+- Expected output: every loss line (step 300 1.705/1.761 → 1.722/1.779; 500 → 1.226/1.410; 1000 → 0.445/1.328; 1200 → 0.301/1.451; 1500 → 0.212/1.589; 2000 → 0.159/1.664; 2499 → 0.148/1.682; FINAL 0.146/1.644 → 0.150/1.669) and all four samples replaced by the real ones; reading-the-output prose re-quoted (step 2499 is verbatim corpus after the first near-miss sentence); validation series → 3.339, 1.779, 1.328, 1.451, 1.664, 1.682.
+- Head statistics: look-back table 3.66/6.94/7.26/8.26 → 3.64/6.75/7.21/7.35 (all 16 cells replaced from the real run); "L3 is 8.3" prose → 7.35; top-5 for `g` → real weights (0.204/0.162/0.156/0.076/0.062); L0H0..L3H3 sample lines updated; Key Takeaway and ablation text updated.
+- Mask-break probe: "under 0.1, often under 0.05" → 0.166 at step 250, 0.066 at step 499; masked baseline 1.206 → 1.226; generated output → `tttt...`.
+- Ablation table: 1 head 1.34 → 1.269; 1 layer 1.52 → 1.271; no MLP 1.58 → 1.452; no pos 1.85 → 1.632; no scaling "1.9-2.4 unstable" → 1.245 (best of all); no residuals 2.3 → 2.848. Mechanism bullets rewritten: 1 head, 1 layer, no scaling are "no measurable damage / did not reproduce"; "scaling saturates the softmax and diverges" is now marked not shown by this run; biggest damage (residuals) kept and reinforced; single seed caveat added.
+- Batched attention: "2-4x faster on CPU" → 0.78-0.81x (slower) with real timings; equivalence diff `0.0`.
+- Sinusoidal: code crashed at length 48/64 (mask buffer 32x32) → added a mask-enlarging fix to `SinGPT.__init__`; table 1.40/1.42/1.55/1.68 → learned 1.228, sinusoidal 1.383 / 1.866 / 2.220; CUDA remark removed.
+- Head card: representative L0H2 (3.44, 6.5, 0.31) → measured L0H3 (3.48, 7.57, 0.268); Evidence 3 and the failure case are labelled illustrative, not measured.
+- Not reproduced / unverified: the heatmap description (attention sink etc.) and the GPT-2 tokens-per-parameter figures are literature or illustrative and were not run here.
 
 ---
 

@@ -20,7 +20,7 @@
 
 Two students hand in the same assignment: train a network to separate two interleaved spirals. Same laptop, same dataset, same architecture — a 4-layer MLP with 64 hidden units. Byte-for-byte identical model code.
 
-Student A's model reaches 99.2% accuracy in twenty seconds.
+Student A's model reaches 98.9% accuracy in a few seconds.
 
 Student B's model sits at 52.8% — barely better than flipping a coin — for the entire run, and its loss line is as flat as a table.
 
@@ -217,11 +217,11 @@ Small batches are not just "worse big batches". The noise acts like a mild regul
 
 | batch size | final train loss | final val loss | val accuracy |
 |---|---|---|---|
-| 8 | 0.075 | 0.045 | 98.3% |
-| 64 | 0.005 | 0.035 | 99.2% |
+| 8 | 0.026 | 0.027 | 99.2% |
+| 64 | 0.007 | 0.037 | 98.9% |
 | 512 | 0.027 | 0.079 | 97.8% |
 
-Batch 8 fits the training set *worse* (0.075 vs 0.005) but its validation gap is tiny. Batch 512 sees each example fewer times per epoch *and* loses the helpful noise, so it does worst on validation here.
+(CPU, seed 0, 60 epochs, AdamW lr 3e-3.) Batch 8 fits the training set *worse* (0.026 vs 0.007) but has a tiny train-to-validation gap and the best validation loss. Batch 512 takes far fewer optimizer steps *and* loses the helpful noise, so it does worst on validation here. This is one seed on one small problem: treat the ordering as a pattern to test, not a law.
 
 #### The linear scaling rule
 
@@ -231,7 +231,7 @@ If you double the batch size, the gradient is cleaner, so you can safely take bi
 
 The quantity `learning_rate / batch_size` is roughly what controls the amount of "shaking" per example. People call `lr × steps` or `lr / B` the **effective learning rate** — *the amount of weight change the model actually experiences per training example, not per step*.
 
-**Tiny example.** You tuned `lr=1e-3` at `batch=32` and it works. You move to a bigger GPU and use `batch=128` (4×). Start from `lr=4e-3`, not `1e-3`. If you forget, your model will look like it "got worse on better hardware," which is a genuinely confusing bug to hit.
+**Tiny example.** You tuned `lr=1e-3` at `batch=32` and it works. You move to a bigger machine and use `batch=128` (4×). Start from `lr=4e-3`, not `1e-3`. If you forget, your model will look like it "got worse on better hardware," which is a genuinely confusing bug to hit.
 
 ---
 
@@ -250,17 +250,17 @@ loss
  │    •••
  │      ╲___________________________  train loss (still falling)
  └─────────┴─────────────────────────▶ epoch
-          ~41
-       best val = 0.216       final val = 0.591
+          ~85
+       best val = 0.199       final val = 0.495
 ```
 
-The validation loss reaches 0.216 at epoch 41 and then more than **doubles** to 0.591 by epoch 250, while train loss keeps dropping to 0.013. The model spent 200 epochs getting worse and never told you.
+The validation loss reaches 0.199 at epoch 85 and then rises about 2.5x to 0.495 by epoch 250, while train loss keeps dropping to 0.023. The model spent 165 epochs getting worse and never told you.
 
 #### (a) Early stopping
 
 **Early stopping** — *keep a copy of the weights from the best validation epoch, and stop when validation has not improved for `patience` epochs*.
 
-It is the cheapest regularizer in existence and it is the one people most often forget. In the run above it would have saved you 0.375 of validation loss for zero extra compute.
+It is the cheapest regularizer in existence and it is the one people most often forget. In the run above it would have saved you 0.296 of validation loss for zero extra compute.
 
 #### (b) Dropout
 
@@ -278,11 +278,11 @@ Real numbers from this module's experiments (full dataset, 60 epochs):
 
 | dropout p | train loss | val loss |
 |---|---|---|
-| 0.0 | 0.005 | 0.035 |
-| 0.2 | 0.032 | **0.017** |
-| 0.5 | 0.043 | 0.070 |
+| 0.0 | 0.007 | **0.037** |
+| 0.2 | 0.036 | 0.051 |
+| 0.5 | 0.060 | 0.058 |
 
-Dropout 0.2 doubles the training loss and *halves* the validation loss. Dropout 0.5 is too much for this small model — it hurts both. Regularization strength has a sweet spot; more is not better.
+(CPU, seed 0.) On the full 840-example set, dropout did **not** help: validation loss got slightly *worse* as dropout grew (0.037, 0.051, 0.058), while training loss rose. This model had nothing to fix, because it was not overfitting. Dropout earns its keep when it *is* overfitting: in the 120-example experiment in the Hands-On, dropout 0.3 cut final validation loss from 0.495 to 0.355. Regularization is a medicine, not a vitamin: it only helps when there is a disease.
 
 #### (c) Weight decay
 
@@ -350,7 +350,7 @@ Second killer issue: batch norm makes your model's prediction for one example *d
 
 **RMSNorm** (used in Llama-family models) is layer norm with the mean-subtraction step removed — just divide by the root-mean-square. Slightly cheaper, works about as well.
 
-In the module experiments on this (fully-connected, fixed-length) problem, batch norm actually gave the best validation loss (0.019 vs 0.061 for layer norm) — which is the honest result for a vision-style setup. The transformer preference is about sequences and batch independence, not about raw accuracy on tabular data.
+In the module experiments on this (fully-connected, fixed-length) problem, batch norm actually gave the best validation loss (0.019 vs 0.064 for layer norm) — which is the honest result for a vision-style setup. The transformer preference is about sequences and batch independence, not about raw accuracy on tabular data.
 
 ---
 
@@ -511,11 +511,7 @@ On this toy problem Adam looks slowest. On a real network where different weight
 
 ### Setup
 
-```bash
-pip install torch numpy matplotlib
-```
-
-Everything below runs on CPU in well under a minute. If you have CUDA or an Apple MPS device, the script picks it up automatically.
+Everything below runs offline, on CPU only, with torch + numpy + matplotlib already installed. Nothing is downloaded and no accelerator is used: the whole lab takes a few seconds.
 
 ### The controlled-experiment harness
 
@@ -528,8 +524,7 @@ import torch
 import torch.nn as nn
 import matplotlib.pyplot as plt
 
-DEVICE = "cuda" if torch.cuda.is_available() else (
-    "mps" if torch.backends.mps.is_available() else "cpu")
+DEVICE = "cpu"   # this course is CPU-only; do not switch it
 print("device:", DEVICE)
 
 
@@ -692,23 +687,23 @@ plt.savefig("optimizer_comparison.png", dpi=110)
 print("saved optimizer_comparison.png")
 ```
 
-**Expected output** (yours will match closely; exact digits depend on device and PyTorch version):
+**Expected output** (real CPU run, torch 2.2.1, seed 0; your digits may differ in the last place with another PyTorch version):
 
 ```
-device: mps
+device: cpu
 train (840, 2) val (360, 2)
 sgd lr=0.03                  train 0.690  val 0.690  acc  52.8%
-momentum lr=0.03             train 0.013  val 0.098  acc  98.9%
-adamw lr=0.003               train 0.005  val 0.035  acc  99.2%
-adamw lr=0.3 (too big)       train 0.701  val 0.724  acc  46.9%
-adamw + cosine               train 0.004  val 0.039  acc  99.2%
-adamw + ln + res             train 0.006  val 0.034  acc  99.2%
+momentum lr=0.03             train 0.018  val 0.034  acc  98.6%
+adamw lr=0.003               train 0.007  val 0.037  acc  98.9%
+adamw lr=0.3 (too big)       train 0.701  val 0.723  acc  46.9%
+adamw + cosine               train 0.007  val 0.045  acc  98.9%
+adamw + ln + res             train 0.011  val 0.022  acc  99.4%
 saved optimizer_comparison.png
 ```
 
 ### Reading that output like an engineer
 
-- **`sgd lr=0.03` → loss 0.690, accuracy 52.8%.** Note that `ln(2) = 0.693` is the loss of a model that outputs 50/50 for a 2-class problem. A loss pinned at 0.69 means *the model has learned literally nothing*. Diagnosis: shape (C), and the cause is that SGD without momentum needs about 10× more learning rate here. Run `run("sgd lr=0.3", optimizer="sgd", lr=0.3)` and you get **train 0.018, val 0.041, acc 98.9%** — same optimizer, same everything, one number changed.
+- **`sgd lr=0.03` → loss 0.690, accuracy 52.8%.** Note that `ln(2) = 0.693` is the loss of a model that outputs 50/50 for a 2-class problem. A loss pinned at 0.69 means *the model has learned literally nothing*. Diagnosis: shape (C), and the cause is that SGD without momentum needs about 10× more learning rate here. Run `run("sgd lr=0.3", optimizer="sgd", lr=0.3)` and you get **train 0.016, val 0.041, acc 98.9%** — same optimizer, same everything, one number changed.
 - **`adamw lr=0.3` → loss 0.701, accuracy 46.9%.** Also stuck near `ln(2)`, but for the opposite reason: the steps are so large the model bounces around and never settles. Two very different diseases, one identical-looking flat line. **This is why you never diagnose from the final number alone — you look at the shape of the curve.** Plot them and the difference is obvious: SGD's curve is a flat line, AdamW-at-0.3's is a jagged mess.
 - **`momentum` fixed SGD without touching the learning rate.** That is the whole argument for momentum in one line of output.
 
@@ -750,19 +745,19 @@ plt.tight_layout(); plt.savefig("overfitting.png", dpi=110)
 **Expected output:**
 
 ```
-no regularization    train 0.013  val 0.591  acc  91.7%
-dropout 0.3          train 0.090  val 0.413  acc  90.0%
-weight decay 0.3     train 0.002  val 0.408  acc  92.8%
-no regularization    best val 0.216 @ epoch  41   final val 0.591
-dropout 0.3          best val 0.209 @ epoch  67   final val 0.413
-weight decay 0.3     best val 0.219 @ epoch  42   final val 0.408
+no regularization    train 0.023  val 0.495  acc  93.3%
+dropout 0.3          train 0.127  val 0.355  acc  93.6%
+weight decay 0.3     train 0.047  val 0.269  acc  92.5%
+no regularization    best val 0.199 @ epoch  85   final val 0.495
+dropout 0.3          best val 0.199 @ epoch 177   final val 0.355
+weight decay 0.3     best val 0.174 @ epoch 161   final val 0.269
 ```
 
 Three things to notice, and they are worth more than the plot:
 
-1. **All three reach almost the same *best* validation loss (~0.21).** Regularization did not make the model better at its peak.
-2. **They differ enormously in the *final* loss** (0.591 vs 0.413 vs 0.408). Regularization slows down the *decay* after the peak.
-3. **Early stopping at epoch 41 beats every regularizer.** 0.216 with no regularization at all is better than 0.413 with dropout run to the end. Do the free thing first.
+1. **No-regularization and dropout reach the same *best* validation loss (0.199); weight decay is a little better (0.174).** Regularization mostly did not improve the peak. It moved the peak later (epoch 85 vs 177 vs 161).
+2. **They differ in the *final* loss** (0.495 vs 0.355 vs 0.269). Regularization slows down the *decay* after the peak, and here weight decay slows it most; dropout and weight decay are not tied.
+3. **Early stopping at epoch 85 beats the final result of every regularizer.** 0.199 with no regularization at all is better than 0.355 with dropout and 0.269 with weight decay run to the end. Do the free thing first.
 
 ### Adding early stopping properly
 
@@ -784,6 +779,12 @@ def run_with_early_stopping(patience=25, **kw):
     return h
 
 _ = run_with_early_stopping(patience=25, epochs=250)
+```
+
+Real output on the 120-example overfitting set:
+
+```
+  would stop at epoch 110, keeping weights from 85 (val 0.199) instead of 0.495
 ```
 
 In a real training loop you save the state dict, not just the number. Here is the pattern as a complete, runnable helper:
@@ -965,7 +966,7 @@ Add a **seventh experiment on depth**: run `depth ∈ {2, 4, 8, 16, 32}` with `r
 - **The optimizer is three ideas stacked:** step downhill (SGD), remember your direction (momentum), and give every weight its own scale (RMSProp). Adam is momentum + RMSProp + a bias fix; AdamW just applies weight decay outside that machinery. Default to AdamW.
 - **Adam's first step has size exactly `lr`.** That magnitude-independence is why its learning rate transfers across problems and SGD's does not.
 - **The learning rate is a schedule, not a number.** Warm up over 2–5% of steps, then cosine decay to near zero. Free performance, two lines of code.
-- **Regularization has a sweet spot, and early stopping is free.** In the module's own runs, no-regularization-plus-early-stopping (val 0.216) beat dropout-run-to-the-end (val 0.413).
+- **Regularization has a sweet spot, and early stopping is free.** In the module's own runs, no-regularization-plus-early-stopping (val 0.199) beat dropout-run-to-the-end (val 0.355) and weight-decay-run-to-the-end (val 0.269).
 - **Batch norm looks at other examples; layer norm does not.** That single difference is why transformers use layer norm: sequences vary in length, and inference batches can be size 1.
 - **Residual connections turn multiplication into addition on the backward pass.** `d(x + f(x))/dx = 1 + f'(x)` — the `1` is the gradient highway that makes 100-layer networks trainable.
 - **Diagnose from the curve's shape, not its final number.** A loss stuck at `ln(2)` can mean "LR too small" or "LR too large" — two opposite fixes, one identical-looking result.
@@ -984,8 +985,8 @@ Add a **seventh experiment on depth**: run `depth ∈ {2, 4, 8, 16, 32}` with `r
 | **Learning-rate schedule** | A rule that changes the learning rate over the course of training | Cosine: `lr·0.5·(1+cos(π·t/T))`, from `lr` down to 0 |
 | **Warmup** | Ramp the LR linearly from ~0 up to peak over the first few percent of steps | 5% warmup stops Adam from taking a huge step on a garbage variance estimate |
 | **Effective learning rate** | How much weight change happens per training *example*, roughly `lr/batch_size` | Quadruple the batch → quadruple the LR to keep it constant |
-| **Overfitting** | Getting better on seen data while getting worse on unseen data | Train loss 0.013, val loss climbing from 0.216 to 0.591 |
-| **Early stopping** | Keep the weights from the best validation epoch and stop when it stops improving | Saved 0.375 of val loss for free in this module's run |
+| **Overfitting** | Getting better on seen data while getting worse on unseen data | Train loss 0.023, val loss climbing from 0.199 to 0.495 |
+| **Early stopping** | Keep the weights from the best validation epoch and stop when it stops improving | Saved 0.296 of val loss for free in this module's run (0.199 instead of 0.495) |
 | **Dropout** | Randomly zero a fraction of activations during training so no neuron is indispensable | `nn.Dropout(0.2)`; turned off automatically by `model.eval()` |
 | **Weight decay** | Shrink every weight slightly towards zero each step | `weight_decay=0.01`; a "rent" that unhelpful weights cannot pay |
 | **Data augmentation** | Create new training examples by label-preserving transformations | Flipping a cat photo; ⚠️ not flipping a letter "b" |
@@ -1009,17 +1010,17 @@ for lr in [1e-5, 1e-4, 1e-3, 1e-2, 1e-1]:
     run(f"adamw lr={lr}", lr=lr)
 ```
 
-Representative results (seed 0, 60 epochs, batch 64):
+Real results (CPU, seed 0, 60 epochs, batch 64):
 
 | lr | train loss | val loss | val acc | shape |
 |---|---|---|---|---|
-| 1e-5 | ~0.69 | ~0.69 | ~50% | (C) dead — flat at ln(2) |
-| 1e-4 | ~0.35 | ~0.36 | ~85% | (E) underfitting — still descending when time ran out |
-| 1e-3 | ~0.02 | ~0.05 | ~99% | (A) healthy |
-| 1e-2 | ~0.02 | ~0.09 | ~98% | (A) healthy but noisier |
-| 1e-1 | ~0.69 | ~0.71 | ~50% | (B) too high — jagged, never converges |
+| 1e-5 | 0.683 | 0.679 | 55.3% | (C) nearly dead — barely moves off ln(2) |
+| 1e-4 | 0.077 | 0.063 | 98.1% | (A) healthy — slower, but it gets there |
+| 1e-3 | 0.018 | 0.026 | 99.4% | (A) healthy |
+| 1e-2 | 0.013 | 0.059 | 99.2% | (A) healthy but noisier (val higher) |
+| 1e-1 | 0.693 | 0.702 | 46.9% | (B) too high — never converges |
 
-**Answer sentence:** `1e-5` is clearly too small — its loss never leaves `ln(2) = 0.693`, meaning zero learning. `1e-1` is clearly too large — its loss is *also* near 0.693 but the curve is jagged rather than flat, and a run at `lr=0.3` is worse still (0.701). The usable band is roughly `1e-3` to `1e-2`, about two orders of magnitude wide, which is why "try powers of ten" is the standard first sweep.
+**Answer sentence:** `1e-5` is clearly too small — its loss stays at 0.683, almost `ln(2) = 0.693`, meaning almost no learning in 60 epochs (`1e-4` is *not* too small: it reaches 98.1%). `1e-1` is clearly too large — its loss is *also* near 0.693 but the curve is jagged rather than flat, and a run at `lr=0.3` is worse still (0.701). The usable band is roughly `1e-4` to `1e-2`, about two orders of magnitude wide, which is why "try powers of ten" is the standard first sweep.
 
 The key discriminator between too-small and too-large is the *shape*: too-small is a smooth flat line or a slow smooth descent; too-large is spiky.
 
@@ -1027,13 +1028,13 @@ The key discriminator between too-small and too-large is the *shape*: too-small 
 
 | config | predicted | actual | reasoning |
 |---|---|---|---|
-| `lr=1e-6` | (C) dead | (C) — flat at 0.693 | Steps are ~1e-6 in size; 780 steps moves each weight by at most ~0.0008 total |
-| `lr=0.5` | (B) LR too high | (B) — jagged, loss around/above 0.69, sometimes worse than random | Every step overshoots; the model random-walks |
-| `dropout=0.8` | (E) underfitting | (E) — both losses plateau around 0.4–0.6 | Zeroing 80% of a 64-unit layer leaves ~13 active units; the model has lost capacity |
-| 400 epochs on 120 examples | (D) overfitting | (D) — val bottoms near epoch 40 then climbs past 0.6 | 120 examples, thousands of parameters: memorization is the easiest way to reduce loss |
-| `lr=3e-3, epochs=5` | (E) underfitting | (E) — both around 0.3–0.5, both still falling | Nothing wrong with the setup, just not enough steps. Underfitting from a *budget* limit, not a capacity limit |
+| `lr=1e-6` | (C) dead | (C) — flat at 0.693 (val 0.692, acc 53.1%) | Steps are ~1e-6 in size; 780 steps moves each weight by at most ~0.0008 total |
+| `lr=0.5` | (B) LR too high | (B) — train 0.648, val 0.712, acc 46.9%: no better than chance on validation | Every step overshoots; the model random-walks |
+| `dropout=0.8` | (E) underfitting | **Not (E)**: train 0.376, val 0.182, acc 93.6% — val is *below* train, shape (F) | Zeroing 80% of a 64-unit layer leaves ~13 active units during training, so train loss is inflated; at eval time all units are on. The model is handicapped, not broken — and the prediction "underfits" was wrong, which is the lesson |
+| 400 epochs on 120 examples | (D) overfitting | (D) — val bottoms at 0.199 near epoch 85, then climbs to 0.525 by epoch 400 (train 0.009, acc 92.5%) | 120 examples, thousands of parameters: memorization is the easiest way to reduce loss |
+| `lr=3e-3, epochs=5` | (E) underfitting | Mild (E): train 0.133, val 0.145, acc 95.0% | Nothing wrong with the setup, just few steps; already 95% — a budget limit, not a capacity limit. It is far better than most people predict |
 
-**Important distinction to write down:** cases 3 and 5 are both shape (E), but they need opposite fixes. Case 3 (`dropout=0.8`) needs *less* regularization. Case 5 needs *more time*. The way to tell them apart is whether the curve is still visibly descending at the end. If it is still going down, train longer. If it is flat and high, you have a capacity or regularization problem.
+**Important distinction to write down:** case 3 turned out *not* to be underfitting at all (val below train, shape F: dropout is on while the train loss is measured and off for validation). Case 5 is the genuine budget-limited case and needs *more time*. If a curve is still visibly descending at the end, train longer; if it is flat and high, suspect capacity or too much regularization. Do not trust a predicted shape over a measured one.
 
 ### 3. [Build] Test the linear scaling rule
 
@@ -1047,17 +1048,17 @@ Representative results:
 
 | batch | lr | final val loss | note |
 |---|---|---|---|
-| 32 | 1e-3 | ~0.04 | reference |
-| 64 | 1e-3 | ~0.05 | slightly worse — half the steps |
-| 64 | 2e-3 | ~0.04 | scaling recovered it |
-| 128 | 1e-3 | ~0.09 | clearly worse |
-| 128 | 4e-3 | ~0.04 | scaling recovered it |
-| 256 | 1e-3 | ~0.18 | badly underfit |
-| 256 | 8e-3 | ~0.05 | mostly recovered, not quite |
+| 32 | 1e-3 | 0.056 | reference (the worst of the 1e-3 runs) |
+| 64 | 1e-3 | 0.026 | best of all |
+| 64 | 2e-3 | 0.058 | doubling lr did not help |
+| 128 | 1e-3 | 0.033 | fine without scaling |
+| 128 | 4e-3 | 0.050 | scaling did not help |
+| 256 | 1e-3 | 0.028 | fine without scaling |
+| 256 | 8e-3 | 0.031 | fine |
 
-**Verdict:** the linear scaling rule works well up to batch 128 here and starts to break at 256. That matches the published finding that linear scaling holds up to some problem-dependent "critical batch size" and then stops.
+**Verdict:** **this task does not reproduce the textbook pattern.** Large batches at an unscaled lr of 1e-3 are *not* worse than batch 32 (256 gives 0.028 vs 0.056), and scaling the lr did not systematically help. Differences of 0.02–0.03 in val loss between runs are within what one seed can do, so the honest conclusion is "no batch-size effect detectable here, at one seed". The linear scaling rule is a published finding about much larger problems with a "critical batch size" far above 256; it is *not* reproduced in this 840-example toy, and a toy this small cannot confirm or refute it.
 
-**The confound, stated honestly:** all runs use 60 *epochs*, so batch 256 takes 8× fewer optimizer steps than batch 32 (about 195 versus 1560). Some of the degradation is "fewer steps," not "worse gradient noise." A cleaner experiment fixes the number of *steps* instead of epochs:
+**The confound, stated honestly:** all runs use 60 *epochs*, so batch 256 takes far fewer optimizer steps than batch 32 (3 × 60 = 180 versus 26 × 60 = 1560; 840 training examples). Fewer steps would be expected to hurt, and here it does not, which tells you this problem is easy enough that either number of steps suffices. A cleaner experiment fixes the number of *steps* instead of epochs:
 
 ```python
 for bs in [32, 64, 128, 256]:
@@ -1065,7 +1066,7 @@ for bs in [32, 64, 128, 256]:
     run(f"bs={bs} fixed-steps", batch_size=bs, lr=1e-3 * bs / 64, epochs=epochs)
 ```
 
-Being able to spot and then fix a confound like this is the actual skill being tested.
+Real fixed-steps result: bs=32 val 0.041, bs=64 0.026, bs=128 0.070, bs=256 0.044. Again no monotone trend (bs=128 is the worst, bs=64 the best). Being able to spot a confound, fix it, and then report that the effect still did not show up is the actual skill being tested.
 
 ### 4. [Build] Instrument the gradient norm
 
@@ -1096,9 +1097,9 @@ h_res   = run("depth12 res",   depth=12, residual=True,  epochs=40)
 
 **What you should see and write:**
 
-1. **LR too high:** the gradient norm is 10–1000× larger than the healthy run and does not decay. A healthy run's gradient norm falls steadily as the loss falls — the model is approaching a flat region. A diverging run's gradient norm stays high or grows, because the model keeps landing in new bad places. **Gradient norm that will not come down is the earliest reliable warning that the LR is too high**, and it shows up before the loss becomes visibly jagged.
+1. **LR too high:** the gradient norm is enormous at the start: 229 at the first epoch versus 0.168 for the healthy run (about 1,360x). Unlike the textbook story it then *does* come down (to 0.077 by the last epoch; the healthy run ends at 0.026), because with lr=0.3 the weights are flung to a region where the logits are huge and the loss surface is flat there; the model is stuck at 46.9% accuracy anyway. Lesson: **a gradient norm that is orders of magnitude larger than a healthy run's in the first epochs is the warning sign; a gradient norm that has fallen is not proof of health** — look at the loss and accuracy too.
 
-2. **Residual at depth 12:** the plain 12-block model's gradient norm is far smaller, especially early in training, and its loss descends much more slowly (or stalls entirely). The residual version keeps a gradient norm of the same order as the 4-block model. Because `d(x + f(x))/dx = 1 + f'(x)`, adding blocks multiplies the backward signal by numbers near 1 instead of numbers near 0.5, so depth costs you almost nothing.
+2. **Residual at depth 12:** the plain 12-block model's gradient norm *is* smaller at the start (0.074 at the first epoch, versus 0.465 for the residual model), but it is **not** stuck: its gradient norm rises to 0.95, its train loss goes from 0.695 to 0.031, and it reaches 98.9% accuracy, the same as the residual model (train 0.772 to 0.010, 98.9%, gradient norm 0.465 to 0.032). **This did not reproduce the "plain deep net stalls" story**: at depth 12 and width 64 with AdamW (which rescales each weight's step, so a small gradient does not mean a small step), the plain network trains fine. The residual identity `d(x + f(x))/dx = 1 + f'(x)` still gives a healthier early gradient (0.465 vs 0.074), and the stalling the literature reports appears at much greater depth and with plain SGD; neither was run here. The first-block weight gradient norm of the residual model at the end of training is 0.0126.
 
 To measure a specific block's gradient rather than the global norm:
 
@@ -1149,7 +1150,7 @@ run("suggested", lr=suggested)
 run("default 3e-3", lr=3e-3)
 ```
 
-**What you should see:** flat from 1e-7 to about 1e-5 (steps too small to matter), a steep descent from about 1e-4 to 1e-2, a minimum somewhere near 1e-2 to 3e-2, then a sharp explosion. Dividing the minimum by 10 typically suggests something in the 1e-3 to 3e-3 range, which matches the default in the hands-on script — a satisfying confirmation that the heuristic works.
+**What you should see:** flat from 1e-7 to about 1e-5 (steps too small to matter), a steep descent from about 1e-4 to 1e-2, a minimum near 1e-2, then a sharp explosion. Real run: the minimum is at lr=1.29e-02, so the suggested lr is 1.29e-03. Training with it gives train 0.012, val 0.049, acc 98.9%; the default 3e-3 gives train 0.007, val 0.037, acc 98.9%. **The default wins slightly** (the suggested value is a safe choice, not the best one), and the hands-on default sits close to that range.
 
 **Why divide by 10:** the loss minimum in the range test is the point at which the model is descending *fastest right now*, which is already close to the unstable edge. Training for thousands of steps at that value will blow up. One order of magnitude below is the standard safety margin.
 
@@ -1164,7 +1165,7 @@ run("bn bs=2", norm="batch", batch_size=2, epochs=30)
 run("ln bs=2", norm="layer", batch_size=2, epochs=30)
 ```
 
-**Approach B — train/eval distribution mismatch.** Shift the validation inputs. Batch norm's stored running statistics were computed on the training distribution and are now wrong; layer norm recomputes per example and adapts automatically.
+**Approach B — train/eval distribution mismatch.** Shift the validation inputs. Batch norm's stored running statistics were computed on the training distribution and are now wrong; the question is whether layer norm is any better here — the data says it is not (see the table below).
 
 ```python
 Xva_shift = Xva + 1.5        # every validation feature shifted by 1.5 sd
@@ -1179,13 +1180,44 @@ def eval_on(model, Xv, yv):
 
 (Train each model normally, then evaluate on `Xva_shift`.)
 
-**The mechanism, in words:** batch norm stores a single fixed `running_mean` and `running_var` per feature, learned during training, and subtracts them at eval time. If eval inputs are shifted, those subtractions are wrong for every example and the error propagates through the whole stack. Layer norm computes its statistics from the example currently in front of it, so a uniform shift is removed automatically — it is *invariant* to adding a constant to all features of an input.
+**The mechanism, in words:** batch norm stores a single fixed `running_mean` and `running_var` per feature, learned during training, and subtracts them at eval time. If eval inputs are shifted, those subtractions are wrong for every example and the error propagates through the whole stack. Layer norm computes its statistics from the example currently in front of it, so it is invariant to a constant added to the *inputs of the layer norm*. But in this model the shift enters at the raw input, **before** the first linear layer, and the first linear layer mixes the shifted features with fixed weights *before* any norm sees them. So layer norm does **not** rescue the shifted data here (real results below). The prediction "layer norm adapts" was wrong for this architecture; it would hold only if the shift were applied directly to a layer norm's input.
 
 This is not a contrived scenario. It is the mechanism behind "my model degraded after we changed the camera," "it worked on the dev set and failed in production," and — most relevantly for Module 3 — "batch statistics are meaningless when half the batch is padding tokens."
+
+**Real results** (2x2, 60 epochs unless noted; validation shifted by +1.5):
+
+| | matched val | shifted val |
+|---|---|---|
+| batch norm | loss 0.019, acc 99.4% | loss 4.480, acc 46.7% |
+| layer norm | loss 0.064, acc 98.9% | loss 4.523, acc 48.3% |
+
+Approach A at batch size 2, 30 epochs: batch norm train 0.688, val 0.677, acc 56.4% (fails); layer norm train 0.105, val 0.034, acc 98.6% (fine). So tiny batches *do* separate the two; the +1.5 shift breaks both equally.
 
 **Report requirement:** show the numbers for both norms and both conditions in a 2×2 table, so the reader can see that batch norm is *fine* in the matched condition and only fails in the mismatched one. A regularizer that fails everywhere is a bug; a regularizer that fails under a specific, nameable condition is knowledge.
 
 </details>
+
+---
+
+## 🧾 Patch log (offline redesign, 2026-10)
+
+Ground truth: `36-week-course/_ledger/ledger-m01-04.md` (real CPU runs, torch 2.2.1, seed 0) plus three extra seeded CPU runs marked (*extra*) below.
+
+- Hook "99.2% in twenty seconds" → "98.9% in a few seconds" → matches the real adamw lr=0.003 line.
+- Batch-size table (8 / 64 / 512) → real values (*extra* run): batch 8 now best val 0.027, batch 64 0.007/0.037/98.9% → the old 0.075/0.045, 0.005/0.035 did not reproduce; added a one-seed caveat.
+- Dropout-p table → 0.0/0.2/0.5 now 0.037/0.051/0.058 val (*extra* run) → the claim "dropout 0.2 halves val loss" was false on the full data; prose now says dropout helps only when overfitting (120-example run).
+- Overfitting diagram and prose: best 0.216 @ 41, final 0.591 → best 0.199 @ 85, final 0.495; "saved 0.375" → "saved 0.296".
+- batch vs layer norm quote 0.061 → 0.064 for layer norm (ledger 6B matched run).
+- Setup: removed `pip install`; removed CUDA/MPS branch, `DEVICE = "cpu"`; "bigger GPU" → "bigger machine".
+- Lab expected output: device mps → cpu; momentum, adamw, cosine, ln+res lines replaced with ledger values; `sgd lr=0.3` result 0.018 → 0.016 (*extra* run).
+- Overfit experiment output and the three "notice" bullets rewritten (weight decay best 0.174; epochs 85/177/161; early stop beats final of all regularizers, still true); added early-stopping probe output (stops at 110, keeps epoch 85).
+- Key takeaways and glossary numbers updated to match.
+- Answer key 1: lr table replaced with real values; "1e-4 underfitting (~85%)" → healthy 98.1%; usable band 1e-4 to 1e-2; 1e-5 is "nearly dead" (55.3%).
+- Answer key 2: `dropout=0.8` "underfits" → measured val 0.182 < train 0.376, 93.6% (not underfitting); 400-epoch run "climbs past 0.6" → best 0.199 @ 85, final 0.525; `lr=3e-3, epochs=5` "0.3-0.5" → 0.133/0.145/95.0%; closing paragraph rewritten.
+- Answer key 3: scaling table replaced with measured values; "breaks at 256" → not reproduced; "195 steps" → 180; added fixed-steps results.
+- Answer key 4: "LR too high gradient norm does not decay" → 229 → 0.077; "plain depth-12 stalls" → trains to 98.9%, did not reproduce; added numbers.
+- Answer key 5: suggested lr 1.29e-3 vs default 3e-3 (default wins slightly).
+- Answer key 6: "layer norm adapts to shift" → false for this architecture (LN shifted 48.3% vs BN 46.7%); added 2x2 and bs=2 results.
 
 ---
 

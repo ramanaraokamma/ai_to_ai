@@ -4,6 +4,12 @@
 
 **Level 4 · Module 8 · ~7 hours · Prereqs: Module 1 (optimizers, overfitting, loss curves), Module 4 (pretraining, SFT, tokenizers), Module 5 (eval harness, cost arithmetic), Module 6 (RAG), PyTorch, and a CPU is enough**
 
+> **🔌 Offline edition (CPU only, no internet, no API, no pretrained weights, no `pip`).** Fine-tuning DistilBERT needs a downloaded checkpoint and the `transformers` package; prompted-Claude baselines and LLM judges need an API. None of that can run here. So this module now has three kinds of material, labelled wherever they appear:
+>
+> - **Measured offline (real, reproducible):** the eval set, the scorer, the contamination scan, the keyword-rules baseline, a new from-scratch **TF-IDF + logistic regression** baseline (Part C2), the `compare()` regression report, Cohen's kappa arithmetic, the LoRA parameter arithmetic, and a LoRA layer you can run on a toy `nn.Linear`.
+> - **🌐 Optional, needs internet, nothing depends on it:** DistilBERT full fine-tune and LoRA (Parts D-E), the prompted-Claude baseline, the LLM judge runs (Part G), the multi-seed and rank-sweep tables. Every number printed for those in earlier drafts was **not reproduced** here; they are now marked *illustrative, not measured*.
+> - **Where a lesson used to rest on an unreproduced number, it has been rewritten to rest on the offline data**, even where the data says something less tidy. Read the patch log at the end.
+
 ---
 
 ## 🎯 What You'll Be Able To Do
@@ -17,6 +23,8 @@
 ---
 
 ## 🪝 The Hook
+
+> **Illustrative scenario.** The Claude and DistilBERT figures in this hook (86.7%, $0.82, 90.0%, 80% to 40%) are a story shaped like a real project. They were **not reproduced offline** (they need an API and a pretrained checkpoint). What *was* measured offline is in Part C and Part C2, and it makes the same point more sharply.
 
 A team ships a support-ticket classifier. Prompted Claude, 86.7% accurate on their 30-case test set, $0.82 per thousand calls.
 
@@ -34,7 +42,7 @@ out_of_scope   0.80  →  0.40      ( -40 points, and it is the safety category 
 
 The average went up. The category that decides whether the bot embarrasses you went down by half. **Both facts were in the data; only one was in the report.**
 
-This module is about the second fact.
+This module is about the second fact. (Offline, you will see it with your own eyes: the *free* keyword baseline scores 25/30 = 0.833, and a classifier you train yourself drops to 21/30 = 0.700 while one category falls from 1.000 to 0.200.)
 
 ---
 
@@ -68,12 +76,15 @@ The full decision table for the ticket classifier, with the numbers you would pu
 
 | Approach | Build time | Marginal cost / 1k calls | p50 latency | Works offline | Score |
 |---|---|---|---|---|---|
-| Keyword rules | 30 min | $0.00 | 0.1 ms | ✅ | 0.567 |
-| Prompted `claude-sonnet-5` | 20 min | $0.82 | 910 ms | ❌ | 0.867 |
-| Fine-tuned DistilBERT (full) | ~3 h + labelling | $0.00 | 11 ms (CPU) | ✅ | 0.900 |
-| Fine-tuned DistilBERT (LoRA) | ~3 h + labelling | $0.00 | 11 ms (CPU) | ✅ | 0.867 |
+| Keyword rules | 30 min | $0.00 | 0.1 ms | ✅ | **0.833** (measured, Part C) |
+| Prompted `claude-sonnet-5` | 20 min | $0.82 | 910 ms | ❌ | 0.867 *(illustrative, not reproduced)* |
+| Fine-tuned DistilBERT (full) | ~3 h + labelling | $0.00 | 11 ms (CPU) | ✅ | 0.900 *(illustrative, not reproduced)* |
+| Fine-tuned DistilBERT (LoRA) | ~3 h + labelling | $0.00 | 11 ms (CPU) | ✅ | 0.867 *(illustrative, not reproduced)* |
+| TF-IDF + logistic regression, trained from scratch | 10 min | $0.00 | < 1 ms | ✅ | **0.700** (measured, Part C2) |
 
-At 1,000 tickets a day, prompting costs **$299/year** — genuinely nothing. The case for fine-tuning here is *not* the 3.3-point score gain; it is the 83× latency drop and running on a laptop with no network. **If you cannot state your reason as a number in this table, you do not have a reason.**
+Only the rules and TF-IDF rows are measured; the cost, latency and the three illustrative scores need the API or a checkpoint. The latency and price columns are order-of-magnitude figures, not benchmarks.
+
+At 1,000 tickets a day, prompting costs **$299/year** — genuinely nothing. The case for fine-tuning here is *not* a few points of score: even the illustrative 0.900 would be only 2 cases (6.7 points) above the free rules baseline's measured 0.833. It is the latency drop and running on a laptop with no network. **If you cannot state your reason as a number in this table, you do not have a reason.**
 
 ---
 
@@ -101,14 +112,14 @@ Contamination is a teacher who puts three exam questions on the revision sheet, 
 
 #### 🔍 Tiny concrete example
 
-Two contaminated rows in our own data, found by an automated check:
+Two contaminated rows in our own data, found by an automated check (all indices are zero-based, as Python prints them):
 
 ```
 EXACT   train#28  "is there a time limit on sending items back?"
-        eval#9    "is there a time limit on sending items back?"        Jaccard 1.000
+        eval#8    "is there a time limit on sending items back?"        Jaccard 1.000
 
 NEAR    train#57  "what am I paying each month right now?"
-        eval#24   "what am I paying per month right now?"               Jaccard 0.778
+        eval#23   "what am I paying per month right now?"               Jaccard 0.778
 ```
 
 Jaccard for the near-duplicate, by hand — tokens after lowercasing and stripping punctuation:
@@ -121,7 +132,7 @@ eval  : {what, am, i, paying, per,  month, right, now}     8 tokens
 J = 7/9 = 0.778
 ```
 
-Two rows out of 66. Both removed. **On a 30-case eval, two memorised answers is 6.7 percentage points of free, fake score** — larger than the entire improvement we are about to claim from fine-tuning. Run the check before you run the training.
+Two rows out of 66. Both removed. **On a 30-case eval, two memorised answers could be worth up to 6.7 percentage points of free, fake score.** Run the check before you run the training.
 
 ---
 
@@ -163,7 +174,7 @@ Now the cost of both:
 
 > **Catastrophic forgetting** — training hard on a narrow new task degrades abilities the model already had, because the same weights that encoded them are being overwritten.
 
-You will see it directly in this module. Our fine-tuned classifier gets *better* at refunds and *worse* at recognising things that are none of its business. LoRA reduces this (fewer weights move) but does not eliminate it — and if you overwrite the classification head, as we do, some forgetting is guaranteed by construction.
+In the illustrative DistilBERT run described below, the fine-tuned classifier gets *better* at refunds and *worse* at recognising things that are none of its business (not reproduced offline). The offline TF-IDF model in Part C2 shows the same *pattern*, though that is not forgetting in the strict sense, since it had no prior abilities to lose. LoRA reduces this (fewer weights move) but does not eliminate it — and if you overwrite the classification head, as we do, some forgetting is guaranteed by construction.
 
 #### 🔍 Tiny concrete example
 
@@ -266,7 +277,7 @@ A single average is a summary statistic, and summary statistics hide exactly the
 
 > **Regression** — a change that makes some measured behaviour worse, even if the overall score improved.
 
-Ours, in full:
+Ours, in full. **These per-category counts are illustrative** (the prompted and fine-tuned columns need the API and a checkpoint, and were not reproduced); the `compare()` arithmetic on them is exact. The measured rules → TF-IDF version of this table is in Part F.
 
 | Category | n | prompted | fine-tuned | Δ |
 |---|---|---|---|---|
@@ -299,7 +310,7 @@ Two calculations, fully traced: **judge reliability**, then **regression detecti
 
 ### Part 1 — Is the judge trustworthy? Cohen's kappa on 30 cases
 
-You generated 30 free-text support replies and scored each `pass` or `fail` two ways: once yourself, once with an LLM judge given the same written rubric. The confusion matrix:
+*(The counts in this example are illustrative, not measured: they need a hand-labelled set and an API judge. The kappa arithmetic is exact, and `cohen_kappa` in Part G reproduces it.)* You generated 30 free-text support replies and scored each `pass` or `fail` two ways: once yourself, once with an LLM judge given the same written rubric. The confusion matrix:
 
 ```
                       HUMAN
@@ -355,7 +366,7 @@ p_e                                     = 0.546667
 
 ### Part 2 — Finding the regression
 
-Both systems on the frozen 30-case eval:
+Both systems on the frozen 30-case eval (**illustrative counts**, as in the Concept section; the arithmetic is exact, and the measured rules → TF-IDF version is in Part F):
 
 ```
 prompted   : 26 correct / 30 = 0.866667
@@ -403,12 +414,9 @@ weighted errors after  = (0 + 0 + 0 + 0) × 1  +  3 × 5  =  0 + 15 = 15
 
 ## 💻 Hands-On
 
-Seven parts. Parts A–B run offline in seconds. Parts D–E need PyTorch (CPU is fine; expect 2–4 minutes of training). Parts C and G need the Claude API.
+Eight parts. **Parts A, B, C (rules half), C2, E (toy half), F and the kappa half of G run offline in seconds, on a CPU, with only `numpy` and `scikit-learn`.** No `pip install`, no API key, no credit card, no download.
 
-```bash
-pip install torch transformers numpy scikit-learn anthropic
-export ANTHROPIC_API_KEY=sk-ant-...
-```
+> **🌐 When you have internet (optional, nothing below depends on it).** The prompted-Claude baseline (Part C), DistilBERT full fine-tuning and LoRA (Parts D and E), the LLM judge and position-bias runs (Part G) need the `anthropic` and `transformers` packages, an API key and a downloaded `distilbert-base-uncased` checkpoint. Each is kept below as a clearly marked callout. We have not run them in this environment, so every number printed for them is **illustrative, not measured**.
 
 ---
 
@@ -550,7 +558,7 @@ TRAIN_RAW = [
     ("sent the wrong size, want my money back", "refund"),
     ("can I exchange instead of a refund?", "refund"),
     ("refund status for order 90210", "refund"),
-    ("is there a time limit on sending items back?", "refund"),   # <-- EXACT dup of eval#9
+    ("is there a time limit on sending items back?", "refund"),   # <-- EXACT dup of eval#8
     # ---- technical (14) ----
     ("the app crashes when I open settings", "technical"),
     ("I can't log in, it says invalid token", "technical"),
@@ -581,7 +589,7 @@ TRAIN_RAW = [
     ("how much is the pro tier?", "billing"),
     ("add a second seat to my account", "billing"),
     ("change the billing email address", "billing"),
-    ("what am I paying each month right now?", "billing"),        # <-- NEAR dup of eval#24
+    ("what am I paying each month right now?", "billing"),        # <-- NEAR dup of eval#23
     # ---- out_of_scope (8 -- deliberately under-represented) ----
     ("what's the weather in Chennai tomorrow?", "out_of_scope"),
     ("write me a poem about cricket", "out_of_scope"),
@@ -640,22 +648,22 @@ if __name__ == "__main__":
 ```
 contamination scan: 66 train x 30 eval
   EXACT train#28  'is there a time limit on sending items back?'
-        eval#9    'is there a time limit on sending items back?'   Jaccard 1.000
+        eval#8    'is there a time limit on sending items back?'   Jaccard 1.000
   NEAR  train#57  'what am I paying each month right now?'
         eval#23   'what am I paying per month right now?'   Jaccard 0.778
   removed 2, kept 64
 ```
 
-Two rows. On a 30-case eval that is up to **6.7 points of fabricated score** — twice the improvement we are about to measure. Run this first, always.
+Two rows. On a 30-case eval each memorised answer is worth up to 3.3 points, so **up to 6.7 points of fabricated score** in total, which is as large as the whole gap between the rules baseline (0.833) and the illustrative 0.900 fine-tune. Run this first, always. (Offline measurement: the TF-IDF model scores 22/30 trained on the raw 66 rows and 21/30 on the clean 64, so on that model the contamination bought exactly one case, because it still gets the exact-duplicate question wrong.)
 
 ---
 
 ### Part C — Two baselines you must beat (`baselines.py`)
 
 ```python
-"""A rules baseline (free) and a prompted-Claude baseline (the real incumbent)."""
+"""A rules baseline (free, offline) and an OPTIONAL prompted-Claude baseline."""
+import sys
 import time
-import anthropic
 from evalset import EVAL, LABELS
 from scorer import score, report
 
@@ -679,10 +687,9 @@ def rules_predict(text):
     return "out_of_scope"
 
 
-# ------------------------------------------------- prompted-Claude baseline
+# ---------------- 🌐 prompted-Claude baseline (OPTIONAL: needs internet + API key)
 MODEL = "claude-sonnet-5"
 PRICE_IN, PRICE_OUT = 2.00 / 1e6, 10.00 / 1e6
-client = anthropic.Anthropic()
 
 SYSTEM = """You route customer support messages for an online shop.
 
@@ -700,6 +707,8 @@ Output the label only. No punctuation, no explanation."""
 
 
 def claude_predict_all(texts):
+    import anthropic                       # imported here so the offline path never needs it
+    client = anthropic.Anthropic()
     preds, in_tok, out_tok = [], 0, 0
     t0 = time.time()
     for t in texts:
@@ -720,41 +729,91 @@ def claude_predict_all(texts):
 if __name__ == "__main__":
     texts = [t for t, _ in EVAL]
     report(score([rules_predict(t) for t in texts], "rules baseline"))
-    report(score(claude_predict_all(texts), "prompted claude-sonnet-5"))
+    if "--claude" in sys.argv:             # 🌐 optional
+        report(score(claude_predict_all(texts), "prompted claude-sonnet-5"))
 ```
 
-**Representative output:**
+Run `python baselines.py` for the offline half. `python baselines.py --claude` adds the prompted baseline if you have internet and a key.
+
+**Real output of the rules baseline** (measured offline; it is deterministic, so yours will match exactly):
 
 ```
-=== rules baseline ===  overall 17/30 = 0.567
+=== rules baseline ===  overall 25/30 = 0.833
   greeting       6/6  1.000  ████████████████████
   refund         5/7  0.714  ██████████████
-  technical      3/7  0.429  █████████
-  billing        2/5  0.400  ████████
-  out_of_scope   1/5  0.200  ████
-    ✗ package never arrived, I want reimbursing        gold=refund       pred=technical
-    ✗ clicking save does absolutely nothing            gold=technical    pred=greeting
-    ...
-
-prompted: 11402 in + 174 out tok, $0.02454 total, $0.818 per 1k calls, 912 ms/call
-
-=== prompted claude-sonnet-5 ===  overall 26/30 = 0.867
-  greeting       6/6  1.000  ████████████████████
-  refund         6/7  0.857  █████████████████
-  technical      6/7  0.857  █████████████████
-  billing        4/5  0.800  ████████████████
-  out_of_scope   4/5  0.800  ████████████████
-    ✗ cancel order 7781 and put the money back on my card  gold=refund   pred=billing
-    ✗ reset email never turns up in my inbox               gold=technical pred=billing
-    ✗ card expired, where do I put the new one?            gold=billing  pred=technical
-    ✗ write my sister a birthday message                   gold=out_of_scope pred=greeting
+  technical      4/7  0.571  ███████████
+  billing        5/5  1.000  ████████████████████
+  out_of_scope   5/5  1.000  ████████████████████
+    ✗ is there a time limit on sending items back?       gold=refund        pred=out_of_scope
+    ✗ do I pay postage to return something?              gold=refund        pred=greeting
+    ✗ clicking save does absolutely nothing              gold=technical     pred=greeting
+    ✗ everything is blank after I sign in                gold=technical     pred=greeting
+    ✗ charts stopped rendering yesterday afternoon       gold=technical     pred=greeting
 ```
 
-Look at the rules baseline before you dismiss it. **0.567 from 30 minutes and no dependencies** is the number every later system must beat by enough to justify itself. A model that scores 0.60 is not "working"; it is barely outrunning `if "refund" in text`.
+Read the misses, because they are a lesson in how rules fail. Four of the five are mislabelled `greeting` because the greeting rule is checked first. Three of them (`something`, `nothing`, `everything`) trip its keyword `"hi"`, which is a **substring** match: `"hi"` is inside `somet-hi-ng`. The fourth (`yesterday afternoon`) trips the keyword `"afternoon"`. The fifth (`is there a time limit on sending items back?`) contains no keyword at all and falls through to the default. Also notice why the rules *score 5/5 on out_of_scope*: it is the **default** answer, so anything the rules do not recognise is called out of scope. That is right on the five off-topic cases and wrong on the one refund message that fell through. A catch-all that scores 100% on its own class is not evidence the rules understand off-topic text.
+
+> **🌐 When you have internet (optional).** `python baselines.py --claude` prints the prompted baseline. An earlier draft quoted `overall 26/30 = 0.867`, `$0.818 per 1k calls`, `912 ms/call` for it, with per-category 6/6, 6/7, 6/7, 4/5, 4/5. **We did not reproduce those**; the per-category counts do add up to 26/30, but the predictions, cost and latency need a real model. Run it and use your own numbers.
+
+**What the rules baseline is worth.** An earlier draft said `0.567` was "the number every later system must beat". The measured number is **0.833, 26.7 points higher**. That changes the lesson, and it is a better lesson: *30 minutes of keyword rules, with no dependencies, got 25 of 30.* A model that scores 0.80 is not "working"; it is losing to `if "refund" in text`. Any later system (the illustrative 0.867 prompted run, the illustrative 0.900 fine-tune) is only 1 to 2 cases ahead of free rules on a 30-case set, and Practice 4 asks you to measure whether a gap that small exceeds run-to-run noise. Always build and print the free baseline first.
+
+---
+
+### Part C2 — A classifier you train yourself, offline (`tfidf_baseline.py`)
+
+You cannot download DistilBERT here, but you can still **train a model on the 64 clean rows** and score it on the frozen eval: TF-IDF features plus logistic regression, from scikit-learn. It is not fine-tuning (nothing is pretrained), it is the offline stand-in that lets Parts E-F and the practice exercises run with real numbers.
+
+```python
+"""tfidf_baseline.py: train from scratch on the clean rows, score on the frozen eval."""
+import io, contextlib
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
+from evalset import EVAL
+from traindata import TRAIN_RAW
+from dedup import decontaminate
+from scorer import score, report
+
+
+def fit_predict(train, texts):
+    vec = TfidfVectorizer(ngram_range=(1, 2), sublinear_tf=True)
+    X = vec.fit_transform([t for t, _ in train])
+    clf = LogisticRegression(max_iter=1000, C=10, random_state=0).fit(X, [y for _, y in train])
+    return list(clf.predict(vec.transform(texts)))
+
+
+if __name__ == "__main__":
+    with contextlib.redirect_stdout(io.StringIO()):          # silence the dedup report
+        TRAIN, _ = decontaminate(TRAIN_RAW, EVAL)
+    report(score(fit_predict(TRAIN, [t for t, _ in EVAL]), "TF-IDF + logistic regression"))
+```
+
+**Real output** (deterministic):
+
+```
+=== TF-IDF + logistic regression ===  overall 21/30 = 0.700
+  greeting       5/6  0.833  █████████████████
+  refund         6/7  0.857  █████████████████
+  technical      5/7  0.714  ██████████████
+  billing        4/5  0.800  ████████████████
+  out_of_scope   1/5  0.200  ████
+    ✗ hiya                                               gold=greeting      pred=technical
+    ✗ is there a time limit on sending items back?       gold=refund        pred=greeting
+    ✗ my csv download has headers but no rows            gold=technical     pred=billing
+    ✗ reset email never turns up in my inbox             gold=technical     pred=billing
+    ✗ swap me onto the yearly plan                       gold=billing       pred=out_of_scope
+    ✗ what's a good recipe for dosa?                     gold=out_of_scope  pred=greeting
+    ✗ how tall is Mount Kilimanjaro?                     gold=out_of_scope  pred=billing
+    ✗ write my sister a birthday message                 gold=out_of_scope  pred=billing
+    ✗ explain quantum entanglement                       gold=out_of_scope  pred=technical
+```
+
+Three honest findings, all from real data. **(1)** The trained model (0.700) scores **below the free rules (0.833)**: more machinery is not more accuracy, which is exactly why the free baseline comes first. **(2)** `out_of_scope` collapses to 1/5, because it has 8 training rows and the model routes each off-topic message to whichever in-scope class shares a word with it (`tall` and `Mount`... go to `billing`). That is this module's hook happening for real, offline. **(3)** Look at the first miss: `hiya` fails because the word `hiya` never occurs in training, so TF-IDF has no feature for it. A pretrained model would know `hiya` is a greeting; that gap is what pretraining buys, and it is the honest reason to consider the 🌐 DistilBERT route.
 
 ---
 
 ### Part D — Full fine-tuning (`finetune.py`)
+
+> **🌐 When you have internet (optional; everything after this part works without it).** This part needs the `transformers` package and a downloaded `distilbert-base-uncased` checkpoint, neither available offline. **We have not run it; every loss and score printed below is illustrative, not measured.** The device line is forced to CPU.
 
 ```python
 """Full fine-tuning of DistilBERT in plain PyTorch. CPU-friendly."""
@@ -771,8 +830,7 @@ from scorer import score, report
 
 CKPT = "distilbert-base-uncased"
 L2I = {l: i for i, l in enumerate(LABELS)}
-DEVICE = ("cuda" if torch.cuda.is_available()
-          else "mps" if torch.backends.mps.is_available() else "cpu")
+DEVICE = "cpu"                               # this course is CPU-only
 
 
 def set_seed(s=0):
@@ -836,7 +894,7 @@ if __name__ == "__main__":
     torch.save(model.state_dict(), "distilbert_full.pt")
 ```
 
-**Representative output** (loss values vary with seed and hardware; the shape does not):
+**Illustrative output, not measured here** (this is what the run was *expected* to look like; run it yourself before quoting any of it):
 
 ```
 contamination scan: 66 train x 30 eval
@@ -862,13 +920,15 @@ contamination scan: 66 train x 30 eval
     ✗ should I buy bitcoin?               gold=out_of_scope  pred=billing
 ```
 
-There it is. Training loss `0.06` — the model has essentially memorised 64 examples — and a perfect score on all four well-represented classes. The class with **8** training examples fell to `0.400`, and the three misses are exactly the pattern you would predict: with no strong `out_of_scope` signal, the model routes to whichever in-scope class is nearest in vocabulary. *"Should I buy bitcoin?"* → `billing`, because money words.
+If a run looks like this, read it as follows. Training loss `0.06` means the model has essentially memorised 64 examples. The class with **8** training examples is the one at risk, and the misses follow the pattern you would predict: with no strong `out_of_scope` signal the model routes to whichever in-scope class is nearest in vocabulary (*"Should I buy bitcoin?"* → `billing`, because money words). **That pattern is not just a prediction: the offline model in Part C2 produced it for real** (`out_of_scope` 1/5, with Kilimanjaro, birthday message and quantum entanglement all routed to in-scope classes).
 
-> ⚠️ Small datasets are high-variance. Your seed may put `out_of_scope` at 1/5 or 3/5, and one of your other categories may dip instead. **Report the regression you actually observe**, not the one printed here. Running three seeds and reporting the mean and range is the honest move, and it is Practice 4.
+> ⚠️ Small datasets are high-variance. Your seed may put `out_of_scope` anywhere from 0/5 to 3/5, and a different category may dip instead. **Report the regression you actually observe**, not the one printed here. Running three seeds and reporting the mean and range is the honest move, and it is Practice 4.
 
 ---
 
 ### Part E — LoRA in fifteen lines (`lora.py`)
+
+The `LoRALinear` class below is plain PyTorch and **runs offline on any `nn.Linear`**. Only `apply_lora` (which reaches into DistilBERT's layer names) and the training run need the 🌐 checkpoint. Run the toy check just after the class to see `B = 0` for yourself.
 
 ```python
 """LoRA from scratch: freeze W, learn a rank-r correction B·A."""
@@ -907,7 +967,42 @@ def apply_lora(model, r=8, alpha=16, targets=("q_lin", "v_lin")):
     return model
 ```
 
-Run it:
+**Measured offline: LoRA on one `768 × 768` `nn.Linear`** (seed 0, CPU, 3 SGD steps on random data):
+
+```python
+import torch, torch.nn as nn
+from lora import LoRALinear
+
+torch.manual_seed(0)
+base = nn.Linear(768, 768); x = torch.randn(4, 768)
+l = LoRALinear(base, r=8, alpha=16)
+print("step0 max |lora - base| :", (l(x) - base(x)).abs().max().item())
+tr = sum(p.numel() for p in l.parameters() if p.requires_grad)
+fr = sum(p.numel() for p in l.parameters() if not p.requires_grad)
+print("one 768x768 projection: trainable", tr, "frozen", fr,
+      "ratio vs full 589,824 ->", round(tr / 589824 * 100, 2), "%")
+opt = torch.optim.SGD([p for p in l.parameters() if p.requires_grad], lr=0.1)
+y = torch.randn(4, 768)
+for s in range(3):
+    loss = ((l(x) - y) ** 2).mean(); opt.zero_grad(); loss.backward(); opt.step()
+    print(f"step {s+1} loss {loss.item():.4f}  |B|={l.B.abs().max().item():.5f}  "
+          f"A.grad is None? {l.A.grad is None}")
+print("base weight unchanged?", torch.equal(base.weight, l.base.weight),
+      "requires_grad", base.weight.requires_grad)
+```
+
+```
+step0 max |lora - base| : 0.0
+one 768x768 projection: trainable 12288 frozen 590592 ratio vs full 589,824 -> 2.08 %
+step 1 loss 1.3299  |B|=0.00038  A.grad is None? False
+step 2 loss 1.3294  |B|=0.00076  A.grad is None? False
+step 3 loss 1.3290  |B|=0.00114  A.grad is None? False
+base weight unchanged? True requires_grad False
+```
+
+Step 0 is exactly the base model (`B = 0`), the base weight never moves, and `B` leaves zero on the first step. That is the whole LoRA mechanism, measured.
+
+> **🌐 When you have internet (optional).** Training LoRA on DistilBERT:
 
 ```python
 from transformers import AutoModelForSequenceClassification
@@ -926,7 +1021,7 @@ train(m, TRAIN, epochs=12, lr=1e-3, tag="lora")     # LoRA wants a much higher L
 report(score(predict(m, [t for t, _ in EVAL]), "LoRA DistilBERT (r=8)"))
 ```
 
-**Representative output:**
+**Illustrative output, not measured here** (the parameter counts on the first line are exact arithmetic and match the ledger; the losses and scores are not reproduced):
 
 ```
 [lora] total 67,104,773 params · trainable 741,893 (1.11%) · device cpu
@@ -943,7 +1038,7 @@ report(score(predict(m, [t for t, _ in EVAL]), "LoRA DistilBERT (r=8)"))
   out_of_scope   2/5  0.400  ████████
 ```
 
-**1.11% of the parameters, one case behind full fine-tuning.** Two things to notice. LoRA needs a learning rate roughly 30× higher (`1e-3` vs `3e-5`) because the update has to travel through a rank-8 bottleneck. And it did **not** rescue `out_of_scope` — freezing 99% of the weights limits *drift*, but the head is still fully retrained on data where `out_of_scope` is 12.5% of rows. **LoRA is a memory and storage win, not a data-quality fix.** No optimizer trick has ever fixed 8 training examples.
+**1.11% of the parameters** is exact arithmetic. "One case behind full fine-tuning" is **not measured** and should not be quoted. What the design predicts, and what you should check with your own run: LoRA needs a learning rate roughly 30× higher (`1e-3` vs `3e-5`) because the update has to travel through a rank-8 bottleneck, and it should **not** rescue `out_of_scope`, because freezing 99% of the weights limits *drift* while the head is still fully retrained on data where `out_of_scope` is 12.5% of rows. **LoRA is a memory and storage win, not a data-quality fix**; the offline Part C2 result (a model with *all* its capacity fresh and 8 `out_of_scope` rows still scoring 1/5) is real evidence that data balance, not the optimiser, sets that ceiling.
 
 In production you would use the `peft` library rather than this class — but write it once yourself, because `peft` makes it look like magic, and it is two matrices.
 
@@ -992,7 +1087,7 @@ def compare(before, after, min_n=5, drop_threshold=0.10):
     return regressions
 ```
 
-**Expected output for prompted → fine-tuned:**
+**Illustrative output for prompted → fine-tuned** (fed the illustrative counts from the Concept section; `compare()` reproduces this table exactly, so the *arithmetic and the regression flag* are real):
 
 ```
 category         n   before    after    delta
@@ -1016,11 +1111,41 @@ contribution of each category to the overall delta:
    out_of_scope: 0.800 -> 0.400 (-40.0% on n=5)
 ```
 
-The contribution lines are the whole point: `+0.0333 + 0.0333 + 0.0333 − 0.0667 = +0.0333`. **The safety category gave back exactly twice what the best category earned.**
+The contribution lines are the whole point: `+0.0333 + 0.0333 + 0.0333 − 0.0667 = +0.0333`. On those illustrative counts the safety category gave back exactly twice what the best category earned.
+
+**Measured offline: rules → TF-IDF + logistic regression** (real counts, from Parts C and C2; `compare(rules, tfidf)`):
+
+```
+category         n   before    after    delta
+----------------------------------------------
+greeting         6    1.000    0.833   -0.167  <-- REGRESSION
+refund           7    0.714    0.857   +0.143
+technical        7    0.571    0.714   +0.143
+billing          5    1.000    0.800   -0.200  <-- REGRESSION
+out_of_scope     5    1.000    0.200   -0.800  <-- REGRESSION
+----------------------------------------------
+OVERALL         30    0.833    0.700   -0.133
+
+contribution of each category to the overall delta:
+  greeting       (n/N = 6/30) x -0.167 = -0.0333
+  refund         (n/N = 7/30) x +0.143 = +0.0333
+  technical      (n/N = 7/30) x +0.143 = +0.0333
+  billing        (n/N = 5/30) x -0.200 = -0.0333
+  out_of_scope   (n/N = 5/30) x -0.800 = -0.1333
+
+🚨 3 REGRESSION(S) — do not ship on the average alone:
+   greeting: 1.000 -> 0.833 (-16.7% on n=6)
+   billing: 1.000 -> 0.800 (-20.0% on n=5)
+   out_of_scope: 1.000 -> 0.200 (-80.0% on n=5)
+```
+
+Here the headline *also* fell (−0.133), so the average would have warned you. The per-category view still adds something the average cannot: two categories improved (refund and technical, +0.0333 each), and the loss is concentrated in `out_of_scope` (−0.1333, which is the whole net decline). The lesson, "report per category", does not need the average to *rise* first; it needs you to ask *where* the change came from.
 
 ---
 
 ### Part G — An LLM judge, and checking whether it can be trusted (`judge.py`)
+
+> **Offline note.** `judge_one`, `judge_pair` and `position_bias_test` need an API (🌐 optional). `cohen_kappa` and `kappa_label` are pure arithmetic and run anywhere; their output below is real. The position-bias block is **illustrative counts** (arithmetic checked, underlying judge runs not reproduced).
 
 For free-text outputs, exact match is useless. Here the sub-task is: *write the one-sentence acknowledgement the bot should send.* We judge it against a rubric — then we judge the judge.
 
@@ -1028,10 +1153,18 @@ For free-text outputs, exact match is useless. Here the sub-task is: *write the 
 """LLM-as-judge with a checkable rubric, plus kappa and a position-bias test."""
 import json
 import re
-import anthropic
 
 MODEL = "claude-sonnet-5"
-client = anthropic.Anthropic()
+_client = None
+
+
+def client():
+    """🌐 Optional: only the judge functions below need the API. kappa does not."""
+    global _client
+    if _client is None:
+        import anthropic                      # needs internet + ANTHROPIC_API_KEY
+        _client = anthropic.Anthropic()
+    return _client
 
 JUDGE_SYSTEM = """You grade one-sentence customer-support acknowledgements.
 
@@ -1048,7 +1181,7 @@ Reply with JSON only: {"verdict": "pass" | "fail", "failed_rules": [1,3],
 
 
 def judge_one(message, reply):
-    r = client.messages.create(
+    r = client().messages.create(
         model=MODEL, max_tokens=200, system=JUDGE_SYSTEM,
         messages=[{"role": "user", "content":
                    f"<customer_message>\n{message}\n</customer_message>\n\n"
@@ -1092,7 +1225,7 @@ sentence, under 30 words. Reply with JSON only: {"winner": "A" | "B"}."""
 
 
 def judge_pair(message, a, b):
-    r = client.messages.create(
+    r = client().messages.create(
         model=MODEL, max_tokens=50, system=PAIR_SYSTEM,
         messages=[{"role": "user", "content":
                    f"<message>{message}</message>\n\n<A>{a}</A>\n\n<B>{b}</B>"}],
@@ -1150,7 +1283,7 @@ judge pass rate 0.733 vs human 0.600  ->  LENIENT
 false passes 6, false fails 2
 ```
 
-And the position-bias run:
+And the position-bias run (**illustrative, not measured**; the counts are self-consistent: 36 = 22 + 7×2 and 19 = 12 + 7):
 
 ```
 n=30  first-position win rate 0.600 (chance 0.500)
@@ -1161,7 +1294,7 @@ naive single-order reading : v1 wins 19/30 = 63.3%   "v1 is clearly better"
 consistent-pairs reading   : v1 wins 12/22 = 54.5%   "no measurable difference"
 ```
 
-**Do not ship v1 on the strength of a single-order run.** The extra 30 API calls that produced the swapped order cost about three cents and prevented a wrong conclusion.
+**Do not ship v1 on the strength of a single-order run.** The extra 30 API calls that produce the swapped order would cost a few cents and, on counts like these, prevent a wrong conclusion.
 
 ---
 
@@ -1180,31 +1313,31 @@ Compute Cohen's kappa for these two judges against the same human labels on 40 c
 
 Write five training examples that are semantically identical to eval cases but score **below 0.70 Jaccard** against every one of them, so `decontaminate` lets them through. Then measure the score inflation: train with and without them and report both numbers.
 
-**Done looks like:** the five sneaky examples with their maximum Jaccard scores, both eval scores, and one sentence on what a *better* contamination check would use instead of word overlap (hint: you built one in Module 6).
+**Done looks like:** the five sneaky examples with their maximum Jaccard scores, both eval scores, and one sentence on what a *better* contamination check would use instead of word overlap (hint: you built one in Module 6). Offline, use the Part C2 TF-IDF model for the two eval scores.
 
 ### [Build] 3 — Fix the regression with data, not with tricks
 
 `out_of_scope` fails because it has 8 training examples against 14 for every other class. Fix it by writing 20 more `out_of_scope` examples — covering distinct kinds of off-topic message: general knowledge, creative requests, other companies' products, personal advice, and abuse.
 
-Retrain (full fine-tune, same seed, same hyperparameters — change **only** the data) and produce the three-way comparison.
+Retrain (offline: the Part C2 model; 🌐 optionally the full DistilBERT fine-tune; same hyperparameters, change **only** the data) and produce the three-way comparison.
 
 **Done looks like:** the 20 new examples, a before/after per-category table, and an answer to the real question: did fixing `out_of_scope` cost you anything on the other four categories, and by how much?
 
 ### [Build] 4 — Three seeds, honest error bars
 
-Everything in this module used `seed=0`. Rerun the full fine-tune with seeds 0, 1, and 2 and report, for each category, the mean and the range across seeds.
+🌐 This one needs the DistilBERT checkpoint. (The offline TF-IDF model is deterministic, so seeds mean nothing there; an offline variant is to retrain on five random 90% subsets of the training rows and report the spread.) Rerun the full fine-tune with seeds 0, 1, and 2 and report, for each category, the mean and the range across seeds.
 
 **Done looks like:** a table of `category | n | seed0 | seed1 | seed2 | mean | range`, plus a written answer to: *given the spread you observed, is a 3.3-point overall improvement on 30 cases distinguishable from noise?* If the answer is no, say what you would need to change to make it distinguishable.
 
 ### [Stretch] 5 — Sweep LoRA rank and find the knee
 
-Train LoRA at `r ∈ {1, 2, 4, 8, 16, 32}`, all other settings fixed. For each, record trainable parameter count, final training loss, eval score, and wall-clock training time.
+🌐 Needs the DistilBERT checkpoint (the parameter-count column you can do offline). Train LoRA at `r ∈ {1, 2, 4, 8, 16, 32}`, all other settings fixed. For each, record trainable parameter count, final training loss, eval score, and wall-clock training time.
 
 **Done looks like:** the six-row table, a plot of eval score against `log2(r)`, the rank you would ship, and one sentence on what `r = 1` tells you about how much *new* information the task actually requires.
 
 ### [Stretch] 6 — Make the judge trustworthy
 
-Your judge sits at κ = 0.41 and is lenient. Improve it and prove it, using only the same 30 hand-labelled cases:
+🌐 Needs an API judge; the kappa arithmetic is offline. Your judge sits at κ = 0.41 and is lenient. Improve it and prove it, using only the same 30 hand-labelled cases:
 
 (a) rewrite the rubric so every clause is mechanically checkable; (b) add two worked examples to the judge prompt, one pass and one fail, with the reasoning shown; (c) require the judge to output `failed_rules` *before* `verdict`; (d) re-measure kappa after each change, separately.
 
@@ -1216,9 +1349,9 @@ Your judge sits at κ = 0.41 and is lenient. Improve it and prove it, using only
 
 **1. Your fine-tune improves the average and breaks the safety category. Ship it or not?**
 
-The business case is real: 83× faster, free to run, offline. The regression is also real.
+The business case is real: much faster, free to run, offline. The regression is also real (offline, you measured one: `out_of_scope` 1.000 → 0.200).
 
-*How to reason about it:* stop treating it as one decision. Can you ship the fine-tune *behind* a cheap `out_of_scope` detector, so the fast model only sees in-scope traffic? Can you route low-confidence predictions to the prompted model — and what fraction of traffic would that be, and does it eat the cost saving? Then ask the uncomfortable version: if you cannot fix it, is a system that is right 90% of the time and *embarrassing* 60% of the time on off-topic input better or worse for your users than one that is right 86.7% of the time and dull? Notice which of those two failures a user will screenshot.
+*How to reason about it:* stop treating it as one decision. Can you ship the fine-tune *behind* a cheap `out_of_scope` detector, so the fast model only sees in-scope traffic? Can you route low-confidence predictions to the prompted model — and what fraction of traffic would that be, and does it eat the cost saving? Then ask the uncomfortable version: if you cannot fix it, is a system that is right 90% of the time and *embarrassing* 60% of the time on off-topic input (illustrative figures) better or worse for your users than one that is right 86.7% of the time and dull? Notice which of those two failures a user will screenshot.
 
 **2. Is using an LLM to grade an LLM circular?**
 
@@ -1239,13 +1372,14 @@ Real messages contain names, order numbers, addresses, complaints about named st
 | Mistake | Why it happens | Fix |
 |---|---|---|
 | Writing the eval after seeing model outputs | You now know which cases are hard, and you unconsciously write around them | Freeze the eval set and the scorer *before* training. Commit them. Treat editing them like editing a measurement after reading the dial |
-| Never checking train/eval overlap | Both sets came from the same pile, so the overlap feels impossible | Run a Jaccard (or embedding) scan every time. Two rows in 66 was worth 6.7 fake points here |
+| Never checking train/eval overlap | Both sets came from the same pile, so the overlap feels impossible | Run a Jaccard (or embedding) scan every time. Two rows in 66 could be worth up to 6.7 fake points here |
+| Skipping the free baseline | Rules feel too simple to count | Build and print the keyword baseline first. Here it scored 25/30 = 0.833, ahead of a classifier trained from scratch (21/30) |
 | Reporting one average | It is one number and it fits in a Slack message | Per-category breakdown with `n` per category, plus the contribution decomposition. Flag any category with n ≥ 5 that drops 10+ points |
 | Fine-tuning to inject facts | "The model should just know our product" | Facts belong in retrieval: updatable, citable, deletable. Fine-tuning blends them with neighbours and you cannot cite or remove them |
 | Using the same learning rate for LoRA as for full FT | The code looks identical | LoRA needs ~10–100× the learning rate (`1e-3` vs `3e-5`). At `3e-5` LoRA looks broken and you will wrongly conclude it does not work |
 | Random-initialising both `A` and `B` | Symmetry feels right | `A` random, `B` zero, so `ΔW = 0` at step 0 and the model starts exactly as the pretrained one. Otherwise epoch 1 is spent undoing injected noise |
 | Trusting an LLM judge without measuring it | It writes confident, well-formatted verdicts | Hand-label 30 cases, compute kappa, check the direction of the disagreements. Report the judge's score *and* its kappa, always |
-| Running pairwise comparisons in one order | Twice the calls for the "same" answer | Always both orders. A 60% first-position win rate turned "v1 wins 63%" into "no difference" here, for three cents |
+| Running pairwise comparisons in one order | Twice the calls for the "same" answer | Always both orders. On the illustrative counts, a 60% first-position win rate turned "v1 wins 63%" into "no difference" for a few cents |
 | Reporting a benchmark score as evidence | The number is public and comparable | Public benchmarks are probably in the pretraining data and definitely not your task. Your unpublished 30 cases beat MMLU for deciding *your* release |
 | Concluding from one seed on 30 cases | You ran it, it worked, you moved on | Three seeds, report mean and range. A 3-point difference on n=30 is one case — quite possibly noise |
 | Class balance copied from whatever you happened to collect | Nobody decided it, so nobody noticed it | Choose the balance deliberately. Whatever is rare in training will be rare in prediction, and it will be rare exactly where you needed it |
@@ -1256,17 +1390,17 @@ Real messages contain names, order numbers, addresses, complaints about named st
 
 **Goal.** Freeze a 30-case eval suite with a scorer, fine-tune a small Hugging Face model on a narrow task of your own choosing, and publish before/after results broken down by category — including **at least one honest regression**.
 
-**Time:** ~3 hours plus labelling. Budget: under $0.50 of API spend.
+**Time:** ~3 hours plus labelling. Budget: $0 offline (rules + TF-IDF + LoRA toy). 🌐 Optional: under $0.50 of API spend and a DistilBERT download if you have internet.
 
 ### Starter steps
 
 1. **Choose a narrow task with 4–6 categories.** Ticket routing, sentiment with an `unclear` class, spam/ham/newsletter, code-comment quality, exam-answer grading. It must be something you can label yourself in under two hours.
 2. **Write the eval set FIRST.** 30 cases, 5–8 per category, with at least one category that is the *safety* or *refusal* category — the class whose job is to say "not me". Write it in the voice of real inputs, not in the voice of your training data. Save it, commit it, and put `# FROZEN <date>` at the top.
 3. **Write the scorer second**, with normalisation and a per-category breakdown, before any model exists.
-4. **Establish two baselines**: a keyword-rules system and a prompted `claude-sonnet-5` system. Record score, per-category breakdown, cost per 1,000 calls, and p50 latency for each.
+4. **Establish baselines**: a keyword-rules system and a from-scratch TF-IDF classifier (Part C2); 🌐 optionally also a prompted `claude-sonnet-5` system. Record score, per-category breakdown, and p50 latency for each (plus cost per 1,000 calls for the prompted one).
 5. **Write the training data.** 50–100 examples. Deliberately record your class balance in a table before training — you will need it to explain your regression.
 6. **Run the contamination scan** and paste its output into your report even if it finds nothing. Finding nothing is a result; not looking is a defect.
-7. **Fine-tune twice**: full, and LoRA at `r=8`. Report trainable parameter counts and percentages for both.
+7. **Train twice**: the TF-IDF model, and (🌐 optional) full and LoRA `r=8` DistilBERT. Report trainable parameter counts and percentages for the LoRA variant (arithmetic is offline).
 8. **Produce the comparison table** with automatic regression flagging and the contribution decomposition.
 9. **Name your regression in one sentence**, state the class-balance number that caused it, and propose the fix (data, not hyperparameters).
 10. **Write the recommendation.** Which system would you actually ship, and under what condition would you change your mind? Include the cost/latency table.
@@ -1276,9 +1410,9 @@ Real messages contain names, order numbers, addresses, complaints about named st
 - [ ] Eval set of exactly 30 cases, frozen and dated **before** any training code was written
 - [ ] Scorer written before the first model run, with normalisation and per-category output
 - [ ] At least one category is the "refusal" / out-of-scope class
-- [ ] Both baselines measured: rules and prompted, with cost per 1k and p50 latency
+- [ ] Baselines measured: rules and TF-IDF (offline), with p50 latency; prompted baseline with cost per 1k only if you ran it 🌐
 - [ ] Contamination scan output included in the report, with the threshold you used and why
-- [ ] Full fine-tune and LoRA both trained, with trainable-parameter counts and percentages
+- [ ] A trained model scored, and LoRA trainable-parameter counts and percentages computed (🌐 DistilBERT runs optional)
 - [ ] Per-category before/after table with `n` per category and automatic regression flags
 - [ ] The overall delta decomposed into per-category contributions that sum to it
 - [ ] **At least one honest regression named**, with its cause traced to a number in your data
@@ -1308,11 +1442,11 @@ Report every free-text score **with its kappa attached**, the way a physicist re
 
 - **Decide by what is missing.** Facts → retrieval. Instructions → prompting. Behaviour, speed, cost, or offline → fine-tuning. If you cannot put your reason in the cost/latency table, you do not have one.
 - **The eval comes first, and it must be frozen.** An eval written after you see outputs is an eval written to flatter them.
-- **Always scan for contamination.** Two duplicated rows out of 66 were worth up to 6.7 fake points here — twice the improvement being claimed.
-- **LoRA trains 1.11% of the parameters and lands within one case of full fine-tuning** — with `A` random, `B` zero, and a learning rate 30× higher. It is a memory and storage win, not a fix for bad data.
-- **Averages hide regressions by design.** `0.867 → 0.900` concealed `out_of_scope: 0.800 → 0.400`, and the decomposition shows the safety category gave back exactly twice what the best category earned.
-- **Whatever is rare in training is rare in prediction.** 8 examples out of 64 produced a class that collapsed to 40%. No optimizer setting fixes that; only data does.
-- **Measure your judge before you believe it.** κ = 0.41 with 6 false passes against 2 false fails means "lenient, use for relative comparisons only" — and running pairwise comparisons in both orders turned "v1 wins 63%" into "no measurable difference" for three cents.
+- **Always scan for contamination.** Two duplicated rows out of 66 could be worth up to 6.7 fake points on a 30-case eval. (Measured on the offline TF-IDF model: 22/30 with them, 21/30 without.)
+- **LoRA trains 1.11% of the parameters** (exact arithmetic) — with `A` random, `B` zero (measured: step 0 differs from the base by exactly 0.0), and, by design, a much higher learning rate. It is a memory and storage win, not a fix for bad data. (How close it lands to full fine-tuning was not measured here.)
+- **Averages hide where a change came from.** Measured offline, rules → TF-IDF went `0.833 → 0.700` and the decomposition showed `out_of_scope` (1.000 → 0.200) accounted for the whole net loss while two categories improved. (The illustrative `0.867 → 0.900` story makes the same point with a rising average; it was not reproduced.)
+- **Whatever is rare in training is rare in prediction.** Measured: 8 examples out of 64 produced a class that scored 1/5. Adding 20 more `out_of_scope` rows fixed that class (5/5) but, in the measured run, pushed `technical` and `billing` down by four cases between them and left the overall score unchanged at 0.700 (Practice 3). Data fixes a class; it also moves the boundary.
+- **Measure your judge before you believe it.** κ = 0.41 with 6 false passes against 2 false fails (the kappa arithmetic is exact; the counts are illustrative) means "lenient, use for relative comparisons only" — and running pairwise comparisons in both orders is what would turn a naive "v1 wins 63%" into "no measurable difference" on counts like these.
 
 ---
 
@@ -1320,7 +1454,7 @@ Report every free-text score **with its kappa attached**, the way a physicist re
 
 | Term | Kid-friendly definition | Example |
 |---|---|---|
-| **Fine-tuning** | Continuing to train a model's weights on your own examples | DistilBERT on 64 tickets |
+| **Fine-tuning** | Continuing to train a model's weights on your own examples | DistilBERT on 64 tickets (🌐 optional) |
 | **SFT dataset** | Pairs of (input, desired output) that demonstrate the behaviour | `("hi there", "greeting")` |
 | **Class balance** | How many examples each label gets | 14 / 14 / 14 / 14 / **8** |
 | **Contamination** | An eval case, or a near-copy, also sitting in training | Jaccard 1.000 duplicate |
@@ -1329,16 +1463,16 @@ Report every free-text score **with its kappa attached**, the way a physicist re
 | **LoRA** | Freeze `W`, learn a small `B·A` correction instead | 12,288 params vs 589,824 |
 | **Rank (r)** | How wide the LoRA bottleneck is | `r = 8` |
 | **PEFT** | Parameter-efficient fine-tuning; the family LoRA belongs to | 1.11% trainable |
-| **Catastrophic forgetting** | Losing old abilities while learning a new task | `out_of_scope` 0.80 → 0.40 |
+| **Catastrophic forgetting** | Losing old abilities while learning a new task | `out_of_scope` 0.80 → 0.40 *(illustrative)* |
 | **Exact match** | Score 1 if the prediction equals the gold answer | `pred == "refund"` |
 | **Normalisation** | Cleaning predictions before comparing | `"Technical Support"` → `technical` |
 | **Rubric** | A written checklist a grader applies | four numbered pass conditions |
 | **LLM-as-judge** | Using a model to grade another model's free text | `claude-sonnet-5` judge |
 | **Cohen's kappa (κ)** | Agreement between two raters, corrected for chance | 0.4118, "moderate" |
-| **Position bias** | Preferring whichever answer came first | 60% first-position win rate |
+| **Position bias** | Preferring whichever answer came first | 60% first-position win rate *(illustrative)* |
 | **Pairwise preference** | Asking which of two outputs is better | A vs B, then B vs A |
-| **Flip rate** | How often the winner changes when you swap the order | 8/30 = 26.7% |
-| **Regression** | Something got worse even though the average went up | `out_of_scope` −40 points |
+| **Flip rate** | How often the winner changes when you swap the order | 8/30 = 26.7% *(illustrative)* |
+| **Regression** | Something got worse even though the average went up | `out_of_scope` 1.000 → 0.200 (measured, rules → TF-IDF) |
 | **Per-category breakdown** | Scores reported per class, with `n` | the table you must always print |
 | **Benchmark contamination** | A public test set that is already in the pretraining data | why MMLU cannot decide your release |
 
@@ -1402,7 +1536,7 @@ Five semantically identical rewrites that stay under 0.70 Jaccard:
 
 ```python
 SNEAKY = [
-    # eval#9  "is there a time limit on sending items back?"
+    # eval#8  "is there a time limit on sending items back?"
     ("how many days do I have to post an unwanted product?",      "refund"),
     # eval#23 "what am I paying per month right now?"
     ("could you tell me my current monthly charge?",              "billing"),
@@ -1427,25 +1561,25 @@ for text, _ in SNEAKY:
 ```
 
 ```
-0.222  how many days do I have to post an unwanted... vs is there a time limit on sending items
-0.316  could you tell me my current monthly charge?   vs what am I paying per month right now?
-0.267  pressing the save button has no effect what... vs clicking save does absolutely nothing
-0.125  what is the elevation of Africa's highest p... vs how tall is Mount Kilimanjaro?
-0.211  you debited my account two times earlier th... vs took the money twice on the 3rd
+0.200  how many days do I have to post an unwanted... vs do I pay postage to return something?
+0.083  could you tell me my current monthly charge?   vs hey! quick one for you
+0.143  pressing the save button has no effect what... vs my csv download has headers but no rows
+0.143  what is the elevation of Africa's highest p... vs hi, hope this is the right place
+0.077  you debited my account two times earlier th... vs hey! quick one for you
 ```
 
-Every one sails through a 0.70 threshold. The highest is 0.316, less than half the cut-off.
+Every one sails through a 0.70 threshold. The highest is 0.200, less than a third of the cut-off. Look at the *partners*, too: for four of the five, the "closest" eval case is an unrelated one (`hey! quick one for you`, `hi, hope this is the right place`), picked only because of a stray shared word. Word overlap does not just miss a paraphrase; it cannot even *find* the case that was paraphrased. (An earlier draft printed Jaccards of 0.222 to 0.316 against the intended partners; those were wrong. The conclusion that all five pass is unchanged.)
 
-**Score inflation, measured:**
+**Score inflation, measured offline** with the Part C2 TF-IDF model (`fit_predict(TRAIN + SNEAKY, ...)`):
 
 ```
-without SNEAKY (64 train rows) : 27/30 = 0.900
-with    SNEAKY (69 train rows) : 29/30 = 0.967      (+6.7 points)
+without SNEAKY (64 train rows) : 21/30 = 0.700
+with    SNEAKY (69 train rows) : 23/30 = 0.767      (+2 cases = +6.7 points)
 ```
 
-Both `technical` and `billing` went to 5/5 and 7/7 respectively, and `out_of_scope` picked up the Kilimanjaro case. **Five rows of paraphrase bought 6.7 points of nothing.**
+`technical` went from 5/7 to 6/7 and `billing` from 4/5 to 5/5; the other categories did not move. Two eval cases flipped from wrong to right because five paraphrases of eval cases were added to training, and the Jaccard scan reported nothing. **Five rows of paraphrase bought 6.7 points of nothing.** (An earlier draft reported `27/30 → 29/30` for DistilBERT; that run was not reproduced. The mechanism, measured here on a different model, is the same.)
 
-**What a better check uses:** embeddings — the exact machinery from Module 6. Encode every train and eval text with `MiniLMEmbedder`, compute the full cosine similarity matrix, and flag any train row whose maximum similarity to an eval row exceeds ~0.85:
+**What a better check uses:** embeddings, the machinery from Module 6. Note the caveat from that module: *TF-IDF vectors do not see paraphrases either* (its paraphrased-wording retrieval was 0.2 at rank 1), so the check below needs a **dense** embedder. 🌐 Optional, needs the MiniLM checkpoint. Encode every train and eval text with `MiniLMEmbedder`, compute the full cosine similarity matrix, and flag any train row whose maximum similarity to an eval row exceeds ~0.85:
 
 ```python
 from rag import MiniLMEmbedder
@@ -1461,7 +1595,7 @@ for i, row in enumerate(S):
         print(f"{row[j]:.3f}  train#{i} vs eval#{j}")
 ```
 
-This catches all five paraphrases (they land around 0.87–0.93) as well as the two lexical duplicates. It also flags a couple of *false* positives — genuinely different refund questions that happen to be semantically close — which is the correct trade: **on contamination, a false positive costs you one training row; a false negative costs you the validity of your entire report.** Set the threshold to over-remove, and log everything you removed so a human can look.
+*Not measured here* (it needs the checkpoint): an earlier draft claimed this catches all five paraphrases at 0.87 to 0.93, and that number is withdrawn until you run it. The expected trade-off is that a dense check flags some *false* positives — genuinely different refund questions that happen to be semantically close — which is the correct trade if so: **on contamination, a false positive costs you one training row; a false negative costs you the validity of your entire report.** Set the threshold to over-remove, and log everything you removed so a human can look.
 
 ---
 
@@ -1499,22 +1633,24 @@ MORE_OOS = [
 ]
 ```
 
-Retrain with **only** the data changed (`seed=0`, 8 epochs, `lr=3e-5`, batch 8). New balance: 14 / 14 / 14 / 14 / 28 — `out_of_scope` is now the *largest* class, which is deliberate: it is the catch-all, so it needs the widest coverage.
+Retrain with **only** the data changed. New balance: 14 / 14 / 14 / 14 / 28, so `out_of_scope` is now the *largest* class, which is deliberate: it is the catch-all, so it needs the widest coverage.
 
-**Representative result:**
+**Measured offline** with the Part C2 TF-IDF model (`fit_predict(TRAIN + MORE_OOS, ...)`; the DistilBERT version is 🌐 optional and not measured):
 
-| category | n | prompted | FT (8 oos) | FT (28 oos) |
+| category | n | TF-IDF (8 oos) | TF-IDF (28 oos) | Δ |
 |---|---|---|---|---|
-| greeting | 6 | 1.000 | 1.000 | 1.000 |
-| refund | 7 | 0.857 | 1.000 | 1.000 |
-| technical | 7 | 0.857 | 1.000 | 0.857 |
-| billing | 5 | 0.800 | 1.000 | 1.000 |
-| out_of_scope | 5 | 0.800 | 0.400 | **1.000** |
-| **overall** | **30** | **0.867** | **0.900** | **0.967** |
+| greeting | 6 | 0.833 | 0.833 | 0.000 |
+| refund | 7 | 0.857 | 0.857 | 0.000 |
+| technical | 7 | 0.714 | 0.429 | **−0.286** |
+| billing | 5 | 0.800 | 0.400 | **−0.400** |
+| out_of_scope | 5 | 0.200 | **1.000** | **+0.800** |
+| **overall** | **30** | **0.700** | **0.700** | **0.000** |
 
-**Did it cost anything?** Yes — `technical` slipped from 1.000 to 0.857, one case: *"keeps saying 'network error' on a perfect connection"* now predicts `out_of_scope`. That is the boundary moving, and it is the honest price of a stronger catch-all class. Net: `+2` overall (27 → 29), `+3` on the safety category, `−1` on technical.
+`compare()` flags two regressions (`technical`, `billing`) and decomposes the overall delta as `−0.0667 − 0.0667 + 0.1333 = 0.000`.
 
-Two things to take from this. First, **the fix was 20 rows of data and zero hyperparameter changes** — which is the general case, not a lucky one. Second, the new failure is in the *right direction*: sending a genuine technical question to a human is annoying; confidently answering a bitcoin question is a screenshot. When you must lose a case, lose it toward caution, and say in your report that you chose to.
+**Did it cost anything?** Yes, and far more than "one case". The `out_of_scope` class went from 1/5 to 5/5 (+4 cases), but `technical` lost 2 cases and `billing` lost 2 (for example `everything is blank after I sign in`, `what am I paying per month right now?`, `card expired, where do I put the new one?` now all predict `out_of_scope`). **Net: zero.** An earlier draft promised a clean win (`0.900 → 0.967`, one case lost); that did not reproduce on this model, and the honest lesson is the opposite of "the fix was free".
+
+Two things to take from this. First, data is the right *kind* of fix (no hyperparameter changed), but a catch-all class that is suddenly the biggest in the training set **moves the boundary** and swallows ambiguous in-scope messages. The fix needs a *balanced* addition: more `technical` and `billing` rows alongside the new `out_of_scope` ones, then re-measure. Second, report the trade in the direction you chose: here you gained the safe refusals and lost correct routing, and whether that is worth it is a business decision, not a statistic. Try it: add 10 `technical` and 10 `billing` rows, rerun, and report what you measure (we have not).
 
 ---
 
@@ -1548,7 +1684,7 @@ print(f"{'OVERALL':14s} {30:3d} " + " ".join(f"{v:6.3f}" for v in o) +
       f" {sum(o) / 3:6.3f} {max(o) - min(o):6.3f}")
 ```
 
-**Representative output:**
+**Illustrative output, not measured** (this needs the DistilBERT checkpoint; the numbers below were never reproduced here, so treat them as the *shape* of a result, not a result):
 
 ```
 category         n     s0     s1     s2   mean  range
@@ -1560,7 +1696,7 @@ out_of_scope     5  0.400  0.200  0.400  0.333  0.200
 OVERALL         30  0.900  0.833  0.867  0.867  0.067
 ```
 
-**Is +3.3 points distinguishable from noise?** No. The overall score ranges from 0.833 to 0.900 across seeds — a spread of 6.7 points, twice the claimed improvement. The prompted baseline's 0.867 sits exactly at the mean of the three fine-tune seeds. **On this evidence, fine-tuning did not improve accuracy at all.** The seed-0 run that "won" was the lucky one, and a report built on it would be a report built on a coin flip.
+**Is +3.3 points distinguishable from noise?** On a 30-case set, +3.3 points is **exactly one case**, so the question is whether run-to-run variation exceeds one case. That is something you must *measure*; we did not. If your three seeds spread by more than one case overall (the illustrative table above spreads by two), a single-seed "win" of one case is not evidence. Measured offline: the free rules baseline (0.833) sits one case below the illustrative prompted score (0.867) and two cases below the illustrative fine-tune (0.900), so every comparison among the top systems here is a one-or-two-case difference.
 
 Three ways to make a 3-point difference detectable, in increasing order of how much you will like them:
 
@@ -1568,7 +1704,7 @@ Three ways to make a 3-point difference detectable, in increasing order of how m
 2. **More seeds and a reported interval.** Five to ten seeds, report mean ± range. Cheap, and it turns "0.900" into "0.867 ± 0.033", which is an honest sentence.
 3. **Paired analysis.** Score both systems on the *same* cases and compare per-case outcomes rather than aggregates (McNemar's test on the disagreement counts). Paired tests are far more sensitive because they cancel case difficulty.
 
-Note what is stable across seeds: `out_of_scope` is 0.20–0.40 every single time, mean 0.333. **The regression is real and reproducible; the improvement is not.** That asymmetry is the actual finding of this exercise, and it is the kind of sentence that belongs at the top of a report.
+What to look for in *your* table: whether a regression repeats across seeds while the headline gain does not. If so, say that sentence first. (Offline, the repeatable part is real: the from-scratch model's `out_of_scope` collapse to 1/5 is deterministic.)
 
 ---
 
@@ -1587,26 +1723,28 @@ for r in (1, 2, 4, 8, 16, 32):
     print(f"r={r:2d}  trainable={tr:,}  eval={res['overall']:.3f}  {dt:.0f}s")
 ```
 
-**Representative results:**
+**Results.** The three parameter columns are exact arithmetic (reproduced offline). The last three columns need DistilBERT and are **not measured**; they are left blank on purpose, and the earlier draft's values are withdrawn.
 
 | r | adapter params | trainable (with head) | % of total | final loss | eval | train time |
 |---|---|---|---|---|---|---|
-| 1 | 18,432 | 612,869 | 0.92% | 0.4113 | 0.833 | 71 s |
-| 2 | 36,864 | 631,301 | 0.94% | 0.3025 | 0.833 | 72 s |
-| 4 | 73,728 | 668,165 | 1.00% | 0.2114 | 0.867 | 74 s |
-| 8 | 147,456 | 741,893 | 1.11% | 0.1477 | 0.867 | 78 s |
-| 16 | 294,912 | 889,349 | 1.32% | 0.1043 | 0.867 | 85 s |
-| 32 | 589,824 | 1,184,261 | 1.75% | 0.0791 | 0.833 | 99 s |
+| 1 | 18,432 | 612,869 | 0.92% | not measured | not measured | not measured |
+| 2 | 36,864 | 631,301 | 0.94% | not measured | not measured | not measured |
+| 4 | 73,728 | 668,165 | 1.00% | not measured | not measured | not measured |
+| 8 | 147,456 | 741,893 | 1.11% | not measured | not measured | not measured |
+| 16 | 294,912 | 889,349 | 1.32% | not measured | not measured | not measured |
+| 32 | 589,824 | 1,184,261 | 1.75% | not measured | not measured | not measured |
 
 Check the adapter arithmetic: `r × (768 + 768) × 2 projections × 6 layers = r × 18,432`. At `r = 1` that is 18,432; at `r = 32`, 589,824 — which is exactly the parameter count of *one* full `768 × 768` projection, spread across twelve of them.
 
-Plotting eval against `log2(r)` gives a curve that rises from r=1 to r=4 and is then **flat within noise**, with a dip at r=32. **Ship `r = 4`.** It reaches the plateau at 1.00% trainable and the fastest training time above r=2.
+What to do with your own run: plot eval against `log2(r)`, pick the smallest rank on the plateau, and report the spread across seeds alongside it (a 30-case set cannot separate ranks that differ by one case). An earlier draft claimed a plateau from r = 4, a dip at r = 32 and a recommendation to "ship r = 4"; those rested on unreproduced numbers and are withdrawn.
 
-Two readings worth writing down. Training loss keeps falling all the way to r=32 while eval does not improve and finally drops — that is textbook **overfitting with extra capacity**, exactly the pattern from Module 1, now expressed as a rank instead of a width. And the fact that `r = 1` — a single rank-one correction per projection, 18,432 numbers total — already reaches 0.833 tells you something real: **this task requires almost no new information.** Nearly everything needed was already in the pretrained representation; the fine-tune is doing routing, not learning. That is a strong hint that your problem may not need fine-tuning at all, which is precisely the conclusion Practice 4 reached by a different road.
+Two readings are still worth writing down, as *hypotheses to test*. If training loss keeps falling with rank while eval stays flat, that is the overfitting-with-capacity pattern from Module 1, expressed as a rank instead of a width. And if `r = 1` (18,432 numbers, exact) already scores close to the larger ranks, the task needs very little new information: the pretrained representation is doing most of the work, and your problem may not need fine-tuning at all. The offline evidence points the same way from the other side: a rules file and a TF-IDF model, with no pretraining, are within a few cases of the illustrative scores.
 
 ---
 
 ### 6 — Make the judge trustworthy
+
+> **🌐 Illustrative, not measured.** Re-judging the 30 replies needs an API. The false-pass and false-fail counts below are illustrative. The kappa column has been **recomputed from those counts** with `cohen_kappa` (an earlier draft printed 0.5385, 0.6250 and 0.6667, which do not follow from its own counts), keeping the human labels at 18 pass / 12 fail.
 
 **Baseline:** κ = 0.4118, lenient (6 false passes, 2 false fails).
 
@@ -1622,7 +1760,7 @@ Two readings worth writing down. Training loss keeps falling all the way to r=32
 5. The reply does not contain a question mark.
 ```
 
-Result: **κ = 0.5385.** The largest single jump. False passes fell from 6 to 3, because clauses 1, 2 and 5 became *counting* rather than *judging*.
+Result (recomputed): **κ = 0.5833.** The largest single jump. False passes fell from 6 to 3, because clauses 1, 2 and 5 became *counting* rather than *judging*.
 
 **(b) Two worked examples in the judge prompt**, one pass and one fail, each with the rule-by-rule reasoning shown:
 
@@ -1636,7 +1774,7 @@ Example (FAIL):
   verdict: {"verdict": "fail", "failed_rules": [2, 4]}
 ```
 
-Result: **κ = 0.6250.** Second-largest jump. The failing example matters far more than the passing one; it shows the judge what "strict" looks like on a reply that *sounds* excellent.
+Result (recomputed): **κ = 0.6575.** Second-largest jump. The failing example matters far more than the passing one; it shows the judge what "strict" looks like on a reply that *sounds* excellent.
 
 **(c) `failed_rules` before `verdict` in the output JSON.** This forces the judge to enumerate evidence before committing:
 
@@ -1644,14 +1782,14 @@ Result: **κ = 0.6250.** Second-largest jump. The failing example matters far mo
 {"failed_rules": [2, 4], "verdict": "fail", "reason": "two sentences, promises 24h"}
 ```
 
-Result: **κ = 0.6667.** A smaller but free gain — it is the same chain-of-thought effect you measured in Module 5, now applied to grading. Ordering keys in a JSON schema is a zero-cost intervention and it is very often worth two or three points.
+Result (recomputed): **κ = 0.7222.** A smaller but free gain — it is the same chain-of-thought effect you measured in Module 5, now applied to grading. Ordering keys in a JSON schema is a zero-cost intervention and it is very often worth two or three points.
 
 | intervention | κ | Δ | false passes | false fails |
 |---|---|---|---|---|
 | baseline | 0.4118 | — | 6 | 2 |
-| (a) checkable rubric | 0.5385 | +0.127 | 3 | 3 |
-| (b) + worked examples | 0.6250 | +0.087 | 2 | 3 |
-| (c) + evidence before verdict | 0.6667 | +0.042 | 2 | 2 |
+| (a) checkable rubric | 0.5833 | +0.172 | 3 | 3 |
+| (b) + worked examples | 0.6575 | +0.074 | 2 | 3 |
+| (c) + evidence before verdict | 0.7222 | +0.065 | 2 | 2 |
 
 **Which helped most:** (a), the mechanically checkable rubric — and the reason is worth internalising. Every clause you convert from *judgement* to *counting* removes an opportunity for the judge's own style preferences to leak in. The remaining disagreements are concentrated in rule 3, the only clause that still needs interpretation.
 
@@ -1660,3 +1798,27 @@ Result: **κ = 0.6667.** A smaller but free gain — it is the same chain-of-tho
 The honest protocol: **split the hand-labelled cases into a judge-dev set and a judge-holdout set before you start tuning.** Iterate on dev, report the final kappa on holdout, and report it once. With only 30 cases that means 20/10, and a κ on 10 cases has enormous error bars — which is itself the finding: *if you want a judge you can quote a number for, you need to hand-label 100+ cases.* Budget half a day for it, once, and reuse it for every release afterwards. A judge calibration set is one of the highest-return artefacts you will ever build, precisely because you build it once and it keeps paying.
 
 </details>
+
+---
+
+## 🧾 Patch log (offline redesign, 2026-10)
+
+Source of truth: `36-week-course/_ledger/ledger-m05-09.md` (section 4) plus three offline runs made for this patch (TF-IDF classifier, SNEAKY inflation, MORE_OOS retrain; all deterministic, scikit-learn, CPU). Format: was → now → why.
+
+1. **Offline banner and Hands-On intro** — `pip install torch transformers ... anthropic` and `export ANTHROPIC_API_KEY=...` → "no pip, no key, no download", with DistilBERT, prompted-Claude and judge runs moved into optional 🌐 callouts → offline course; nothing depends on the network.
+2. **Rules baseline** — `17/30 = 0.567` (greeting 1.0, refund 0.714, technical 0.429, billing 0.4, out_of_scope 0.2) → real `25/30 = 0.833` (technical 0.571, billing 1.000, out_of_scope 1.000) with the real five misses → ledger: DIFFERS. The module's "0.567 is the number every later system must beat" is rewritten: the free baseline is 26.7 points higher than claimed and sits 1 case under the illustrative prompted run and 2 under the illustrative fine-tune. Also records why it misfires (`"hi"` substring in something/nothing/everything, keyword `afternoon`, one no-keyword fall-through) and why it scores 5/5 on `out_of_scope` (it is the default).
+3. **Decision table, hook, concept 3, Think Deeper, Key Takeaways, Vocabulary** — prompted 0.867 / DistilBERT 0.900 / LoRA 0.867, `$0.82`, `910 ms`, `out_of_scope 0.80 → 0.40` stated as fact → each marked "illustrative, not reproduced"; rules row set to the measured 0.833; "83× latency" and "3.3-point gain" claims removed or restated against the measured baseline → these need an API or a checkpoint.
+4. **Part C code** — top-level `import anthropic` / `anthropic.Anthropic()` → lazy import inside `claude_predict_all`, `--claude` flag, rules path runs offline → code defect for an offline run.
+5. **New Part C2 (`tfidf_baseline.py`)** — none → from-scratch TF-IDF + logistic regression, real `21/30 = 0.700` (out_of_scope 1/5) → gives a real trained model so Parts F and the practice run with measured numbers; shows a trained model losing to free rules.
+6. **Part D** — `DEVICE = cuda/mps/cpu` → `DEVICE = "cpu"`; whole part and its losses/scores marked 🌐 illustrative; "There it is" narrative rewritten to rest on the real Part C2 collapse → CPU-only rule and no measured DistilBERT data.
+7. **Part E** — all numbers were Claude-free but unmeasured → `LoRALinear` toy run added with the real ledger output (step 0 diff 0.0, 12,288 vs 589,824 = 2.08%, base unchanged); `26/30 = 0.867`, "one case behind full fine-tuning", losses → illustrative; "LoRA did not rescue out_of_scope" → stated as a prediction supported indirectly by Part C2.
+8. **Part F** — `prompted → fine-tuned` table labelled illustrative counts (arithmetic exact); real `rules → TF-IDF` `compare()` table added: `0.833 → 0.700`, three regressions, `out_of_scope −0.1333` → real numbers and an honest note that here the average fell too.
+9. **Part G** — top-level `import anthropic` → lazy `client()`; position-bias block and "three cents" labelled illustrative; kappa output (0.4118 etc.) kept as real → API optional.
+10. **Contamination indices** — `eval#9` and `eval#24` (prose/comments) → `eval#8` and `eval#23`, zero-based as Python prints them → ledger: mixed indexing. Also "6.7 fake points, twice the improvement" → "up to 6.7 points" with the measured offline effect (22/30 raw vs 21/30 clean).
+11. **Worked examples (kappa, regression)** — labelled illustrative counts with exact arithmetic → counts need an API/checkpoint.
+12. **Answer key 2 (SNEAKY)** — Jaccards `0.222 / 0.316 / 0.267 / 0.125 / 0.211`, "highest 0.316" → `0.200 / 0.083 / 0.143 / 0.143 / 0.077`, "highest 0.200", with the real (mostly unrelated) closest partners → ledger: DIFFERS. Inflation `27/30 → 29/30` → real offline `21/30 → 23/30`; MiniLM "catches all five at 0.87-0.93" → withdrawn, marked 🌐 unmeasured, with the note that TF-IDF cannot see paraphrases.
+13. **Answer key 3 (fix with data)** — "technical slips one case, overall 0.900 → 0.967, the fix was free" → measured offline: `out_of_scope` 1/5 → 5/5 but `technical` 5 → 3 and `billing` 4 → 2, overall unchanged at 0.700; lesson rewritten ("data moves the boundary; add balanced rows and re-measure") → the data does not support the old verdict.
+14. **Answer key 4 (seeds)** — table and "fine-tuning did not improve accuracy at all" → table marked illustrative; verdict replaced by "+3.3 points is exactly one case; measure the spread yourself"; offline variant suggested → unmeasured.
+15. **Answer key 5 (rank sweep)** — loss/eval/time columns and "ship r = 4" → "not measured"; parameter columns kept (exact); conclusion rewritten as hypotheses → unmeasured.
+16. **Answer key 6 (judge)** — kappas `0.5385 / 0.6250 / 0.6667` → recomputed from the table's own counts: `0.5833 / 0.6575 / 0.7222` (ordering of the lessons unchanged); counts labelled illustrative → the printed kappas did not follow from the counts.
+17. **Mini-project and Practice 2-6** — API budget and DistilBERT requirements → $0 offline path with optional 🌐 extras; offline variants named → offline course.
