@@ -106,7 +106,7 @@ There is no new maths idea this week. There is a habit to install: **say the cou
 
 **Teacher-only, not shown to the student:** `key.py` (uses `math`, `features`, `competence`, a `!s:5` format spec, `max(..., key=lambda ...)` on a dict) and `preflight.py` (the fast-student extension; it uses `client.messages.count_tokens`, which is an API call shape, not a new Python construct).
 
-**Not used today, on purpose:** `isinstance`, `dataclasses.field(default_factory=...)` (the fix for Mistake 5 is to not give a default), `@property`, inheritance beyond `Exception`, `with`, `time`, `logging`, `json.dumps`, `argparse`, `ThreadPoolExecutor`, retries (Week 32), the stand-in's `fail_on` fault injection (Weeks 32-33), its prefix cache (we run with `prefix_cache=False` so that a longer prompt visibly costs more; Week 28 uses the cache).
+**Not used today, on purpose:** `isinstance`, `dataclasses.field(default_factory=...)` (the fix for Mistake 5 is to not give a default), `@property`, inheritance beyond `Exception`, `with`, `time`, `logging`, `json.dumps`, `argparse`, `ThreadPoolExecutor`, retries and the stand-in's `fail_on` fault injection (neither is taught in this course; Week 29 simulates a hung tool and a slow network instead), its prefix cache (we run with `prefix_cache=False` so that a longer prompt visibly costs more; Week 24 uses the cache).
 
 ### 6. What the numbers will say
 
@@ -131,7 +131,7 @@ These are all printed by the files in the Prep Checklist. Read them before class
 4. **The gold has arguable labels.** t3 and t8 urgency are a specification problem (section 2 of the Activity). That is the module's "when every version fails the same case, suspect the test" lesson; it happens to be real in the stand-in, by the module's own gold.
 5. **The guard counts dollars from the stand-in's meter**, which is illustrative pricing and a word-count token estimate. Shape, not rate.
 6. **`tinytok` fallback.** `fakellm.count_tokens` calls `tinytok.count`, but `tinytok` exposes `count_tokens`, so the call fails inside a broad `try` and the kit **always falls back to `ceil(words x 1.3)`**; the student's own Week 20 tokenizer is never used. This changes no number in the lesson (we never installed a tokenizer) and is reported in the concerns of this run; do not tell the student the counts come from their BPE.
-7. **The prefix cache is off.** `FakeClient(prefix_cache=False)` in every block, so that a longer prompt costs more on every call. With the cache on (the default), v2 and v3 cost `$0.0009` each, because the identical system prompt is read from cache after the first call. That is Week 28's lesson and is not taught here.
+7. **The prefix cache is off.** `FakeClient(prefix_cache=False)` in every block, so that a longer prompt costs more on every call. With the cache on (the default), v2 and v3 cost `$0.0009` each, because the identical system prompt is read from cache after the first call. That is Week 24's lesson (`cachekey.py`) and is not taught here.
 8. **No real API.** The module's `temperature`, structured-output, `thinking` and caching claims are about a hosted service and are not reproduced. Do not teach them.
 9. **Latency is not measured.** The stand-in has none.
 
@@ -150,7 +150,7 @@ These are all printed by the files in the Prep Checklist. Read them before class
 
 ### 9. How deep to go, and where to stop
 
-Stop at: *"A prompt loop is a test suite. Freeze the cases first, compute the floor, change one thing per run, read the per-field numbers, keep a regression report, and put a limit on the money before you start. The guard stops the next call, not the one that crossed the line. Our 'model' is a labelled script, so the table shows the harness, not a model."* Do **not** go into retries and rate limits (Week 32), structured-output decoding (Week 24 builds a logit mask), chain-of-thought (Week 24), the API's real behaviour, or evaluating with another model as judge (Week 30).
+Stop at: *"A prompt loop is a test suite. Freeze the cases first, compute the floor, change one thing per run, read the per-field numbers, keep a regression report, and put a limit on the money before you start. The guard stops the next call, not the one that crossed the line. Our 'model' is a labelled script, so the table shows the harness, not a model."* Do **not** go into retries and rate limits (not in this course; Week 29 simulates timeouts and a budget), structured-output decoding (Week 24 builds a logit mask), chain-of-thought (Week 24), the API's real behaviour, or evaluating with another model as judge (Week 30).
 
 ### 10. 🧭 Where Week 23 sits
 
@@ -1104,7 +1104,7 @@ v2, max_tokens=10 field   0.0%  exact 0/8  parse-fail 8  tok  1566/ 80  $0.0020
 stop_reason: max_tokens | output_tokens: 10
 ```
 
-**No error, `0.0%`, and `parse-fail 8`.** The reply is cut off mid-record (`"refund_requested":` and no value or brace), so there is no `}` for the parser to find. The only signal that the call was cut short is **`stop_reason == "max_tokens"`**, which `make_caller` throws away. Ask: *"what would a better `make_caller` do when it sees that?"* (Raise an error of its own, another exception class like `BudgetExceeded`; retries and faults are Week 32.) Say: **truncation is the one failure that returns normally.**
+**No error, `0.0%`, and `parse-fail 8`.** The reply is cut off mid-record (`"refund_requested":` and no value or brace), so there is no `}` for the parser to find. The only signal that the call was cut short is **`stop_reason == "max_tokens"`**, which `make_caller` throws away. Ask: *"what would a better `make_caller` do when it sees that?"* (Raise an error of its own, another exception class like `BudgetExceeded`; retries and fault injection are not taught in this course; Week 29 simulates timeouts.) Say: **truncation is the one failure that returns normally.**
 
 ### Mistake 9 — one run, two conclusions (SILENT, the code is right)
 

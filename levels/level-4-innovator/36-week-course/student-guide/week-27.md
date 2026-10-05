@@ -235,7 +235,7 @@ Each redo is **20 minutes**, followed by your teacher asking you one question ou
 | 22 | Workbook **page 22.1** (the mask) and **page 22.3** (KL on paper, and one pair) | *A masked loss is higher than the unmasked one. Is that worse?* | A later week fine-tunes with a leash and watches for a regression. |
 | 23 | Workbook **page 23.2** (the floor, by hand) and **page 23.5** (the guard) | *A prompt scores 50% and the constant answer 43.8%: what have you shown, and why does the guard stop one call late?* | **Week 28's fences and Week 29's cost both reuse the guard; Week 30's evals reuse the frozen set.** |
 | 24 | Reread the Week 24 chapter: examples in the prompt, and the logit mask | *A mask forces valid JSON. What can still be wrong?* | Week 28's argument check makes the same promise. |
-| 25 | Workbook **page 25.1** (cosine cards) and **page 25.4** (recall and the control) | *Why does a long vector beat a close one on a plain dot product, and what fixes it?* | Week 29's mini RAG and a later calibration use cosine. |
+| 25 | Workbook **page 25.1** (cosine cards) and **page 25.4** (recall and the control) | *Why does a long vector beat a close one on a plain dot product, and what fixes it?* | Week 29's mini RAG uses cosine. |
 | 26 | Workbook **page 26.1** (Citation Court), **page 26.3** (your own questions) and **page 26.4** (chunking) | *Recall is 1.00. What is your first question? Then: a valid citation proves what?* | **Week 29 is Week 26's "retrieved text is data" turned into an attack.** |
 
 ### The computer job: three new cuts

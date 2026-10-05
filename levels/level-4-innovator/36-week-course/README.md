@@ -25,7 +25,7 @@
 
 ### *One school year. One class a week. From "I can train a network" to "I built a small GPT, the retrieval, agent and evaluation machinery around it, broke it on purpose, and wrote down how."*
 
-**Status:** PLAN (this file is the planner's output; no weekly file exists yet) · **Derived from:** the nine reference modules in [`../`](../README.md) · **Books:** 3 x 36 weeks
+**Status:** COMPLETE (all 108 weekly files exist; consistency-checked) · **Derived from:** the nine reference modules in [`../`](../README.md) · **Books:** 3 x 36 weeks
 **Rhythm:** 36 weeks x one 60-75 minute class + ~60-75 min of workbook homework
 
 [Back to Level 4 modules](../README.md) · [Level 3 course](../../level-3-engineer/36-week-course/README.md) · [Level 4 capstone (reference)](../capstone.md)
@@ -527,10 +527,10 @@ they appear below: `lambda` (W4), `nn.LSTM` / `nn.GRU` (W11), classes with `__in
 | 27 | *(review)* | - |
 | 28 | `ast.parse` + `operator` whitelist | A calculator that cannot run arbitrary code |
 | 28 | `Path.resolve()` + `is_relative_to` | The sandbox test: did this path escape? |
-| 28 | `ThreadPoolExecutor` | Runs a tool in another thread so a timeout can be enforced |
+| 28 | `ThreadPoolExecutor` (with `future.result(timeout=)`, counted as one) | Runs a tool in another thread and waits a limited time, so a timeout can be enforced |
 | 28 | `isinstance` checks in `validate_args` | Type-checks arguments before a tool runs |
 | 29 | `json.dumps` one line per event | JSONL tracing |
-| 29 | `future.result(timeout=)` | Stops waiting on a hung tool |
+| 29 | *(reuse)* `future.result(timeout=)` | Week 28's timeout, now watched firing on a hung tool. Not counted as new |
 | 29 | `time.sleep` | A simulated round-trip delay, default 0, labelled simulated |
 | 30 | `cohen_kappa_score` | Kappa, after you have done it by hand |
 | 30 | set intersection / union | Jaccard overlap for near-duplicate detection |
@@ -545,6 +545,9 @@ they appear below: `lambda` (W4), `nn.LSTM` / `nn.GRU` (W11), classes with `__in
 | 33 | `re.sub` with ordered patterns | Redaction: longest pattern first |
 | 33 | `Path.stat().st_mtime` | File age, for the retention sweep |
 | 34-36 | *(none)* | Capstone uses only earlier constructs |
+
+**Ladder amendments (cross-block consistency check).** The authored weeks use four constructs earlier than the table above lists them; each is a copied line or a Level 3 construct, flagged where it appears:
+`.detach()` first appears in Week 6 as a copied line (Week 19 copies it again; Week 22 teaches it) · `torch.randint` first appears in Week 13's copy task as a copied line (Week 17 teaches it) · `nn.Parameter` is a Level 3 Week 24 construct, used as a bare tensor of knobs in Weeks 4, 5 and 9; Week 31 teaches the *new* part, assigning one to a module so `model.parameters()` sees it · `torch.cat` is a Level 3 Week 27 construct (Week 6 reuses it; Week 12 re-meets it). `nn.Module` subclasses with `__init__` are Level 3 (from Week 12 here); the Week 23 row covers plain classes that are *not* modules. Week 1's `run()` harness exposes `weight_decay`, `norm`, `dropout` and `optimizer="adamw"` as named knobs ahead of their weeks: it only passes them through; each is taught in the week named in the table.
 
 Not in Level 4 at all: decorators you write yourself, metaclasses, `asyncio`, type hints as a
 required practice, `pytest`, `transformers` (optionally `GPT2Config` with random weights to count

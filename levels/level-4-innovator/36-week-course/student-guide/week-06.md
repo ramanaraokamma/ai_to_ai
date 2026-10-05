@@ -202,7 +202,7 @@ print(by_hand.round(3))
 ln = nn.LayerNorm(4)
 out = ln(torch.tensor(x, dtype=torch.float32))
 print("nn.LayerNorm(4):")
-print(out.detach().numpy().round(3))
+print(out.detach().numpy().round(3))                # .detach(): hand numpy the numbers without PyTorch's training bookkeeping. Copy it; Week 22 explains it
 print("biggest difference from by-hand:", float(np.abs(out.detach().numpy() - by_hand).max()))
 print("learned scale (gamma) and shift (beta):", ln.weight.data.tolist(), ln.bias.data.tolist())
 print("each row now has mean", out.mean(dim=1).detach().numpy().round(4), "and spread", out.detach().numpy().std(axis=1).round(3))

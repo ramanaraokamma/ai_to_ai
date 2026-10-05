@@ -668,7 +668,7 @@ The run **refused to start**. That is `check_frozen` doing its one job. The gold
 - That `93.8%` means "94% accurate". It is the best this set can give against this script.
 - That an empty regression report means nothing got worse. It means nothing got worse **on these eight cases, with this model, on this seed**.
 - Real latency, real prices, real token counts. The prices are illustrative, and tokens are estimated by the kit's word-count counter (roughly words times 1.3), not by your Week 20 tokenizer.
-- Retries, timeouts, and rate limits (Week 32), and using another model as a judge (Week 30).
+- Timeouts and budgets (Week 29), and using another model as a judge (Week 30).
 
 ---
 

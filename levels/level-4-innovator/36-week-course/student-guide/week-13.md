@@ -401,7 +401,7 @@ L, N_SYM = 5, 8                      # copy 5 symbols; 8 different symbols; id 8
 FILL = N_SYM
 
 def batch(B, D):
-    core = torch.randint(0, N_SYM, (B, L))                      # the 5 symbols to remember
+    core = torch.randint(0, N_SYM, (B, L))                      # 5 random whole numbers 0..7 per row (copy it; Week 17 explains)
     seq = torch.cat([core, torch.full((B, D), FILL), core], dim=1)
     start = torch.full((B, 1), FILL)
     return torch.cat([start, seq[:, :-1]], dim=1), core         # shift right: teacher forcing

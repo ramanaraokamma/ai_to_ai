@@ -144,7 +144,7 @@ Read as: *"line the letters up from most to least likely, and keep a running tot
 - `torch.manual_seed(seed)` before each batch of names: **every sampler gets the same seed, so the comparison is fair** (and, in `sheet.py`, a *different* seed per sampler, so no two share a random stream; the first draft of the sheet had `lora` and `olga` appear under two samplers because they shared one).
 - `class NameLSTM(nn.Module)` with `__init__` and `forward` (Level 3 Week 23); `nn.LSTMCell` (Week 11); `F.cross_entropy(..., ignore_index=PAD)`, `torch.cat`, `torch.full` (Week 12); `torch.stack` (Week 10); `clip_grad_norm_` (Week 6); `AdamW` (Week 3).
 - `with torch.no_grad():` (Level 3 Week 21), `model.eval()` (Level 3 Week 23; Clinic 5 is what happens without it).
-- `torch.randint` (Level 3, and used in Week 6) in the copy task; `nn.RNN` / `nn.LSTM` as whole-sequence layers (Weeks 8 and 11); `out, _ = rnn(x)` unpacking the pair and ignoring the second half (Week 8; the underscore is a name meaning "I do not need this").
+- `torch.randint` (a given line, copied; its proper week is 17) in the copy task; `nn.RNN` / `nn.LSTM` as whole-sequence layers (Weeks 8 and 11); `out, _ = rnn(x)` unpacking the pair and ignoring the second half (Week 8; the underscore is a name meaning "I do not need this").
 - `.float().mean()` on a True/False tensor: the share of Trues.
 - **Teacher-only, flagged:** `sys.argv` and `if __name__ == "__main__"` in `copytask.py`, so you can run `python3 copytask.py rnn`. The student's version just loops over both cells.
 
@@ -531,7 +531,7 @@ L, N_SYM = 5, 8                      # copy 5 symbols; 8 different symbols; id 8
 FILL = N_SYM
 
 def batch(B, D):
-    core = torch.randint(0, N_SYM, (B, L))                      # the 5 symbols to remember
+    core = torch.randint(0, N_SYM, (B, L))                      # 5 random whole numbers 0..7 per row (copy it; Week 17 explains)
     seq = torch.cat([core, torch.full((B, D), FILL), core], dim=1)
     start = torch.full((B, 1), FILL)
     return torch.cat([start, seq[:, :-1]], dim=1), core         # shift right: teacher forcing
