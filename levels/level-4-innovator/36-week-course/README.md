@@ -497,7 +497,7 @@ they appear below: `lambda` (W4), `nn.LSTM` / `nn.GRU` (W11), classes with `__in
 | 17 | `@torch.no_grad()` | Decorator form of Level 3 Week 21's `with torch.no_grad()` (used, not written; writing decorators stays out of scope) |
 | 17 | nested `nn.Module` | Modules containing modules (Block in GPT) |
 | 18 | *(review)* | - |
-| 19 | *(none - reuses)* | - |
+| 19 | *(none - reuses)* | - (one given line, `weights.detach()`, is Week 22's construct; the student text says "copy it" and it is not counted) |
 | 20 | `collections.Counter` | Counts how often each item appears |
 | 20 | `str.encode("utf-8")` | Turns text into bytes, so any script round-trips |
 | 20 | `re.compile(...).findall` | A reusable pattern applied to text |
@@ -520,7 +520,7 @@ they appear below: `lambda` (W4), `nn.LSTM` / `nn.GRU` (W11), classes with `__in
 | 25 | `TfidfVectorizer(analyzer="char_wb")` | Character n-grams, so near-spellings overlap |
 | 25 | `np.save` / `np.load` | Persists an index to disk |
 | 25 | `nn.EmbeddingBag` | Mean of embeddings in one call |
-| 26 | `np.argsort(-s)[:k]` | Positions of the k largest scores |
+| 26 | *(reuse)* `np.argsort(-s)[:k]` | Positions of the k largest scores. Level 3 Week 33's move; first used in Week 25, so not counted as new here |
 | 26 | `re.findall(r"\[(\d+)\]", t)` | Pulls citation ids out of text |
 | 26 | set operations | Checks cited ids are a subset of served ids |
 | 26 | `Path.glob` | Lists files matching a pattern |

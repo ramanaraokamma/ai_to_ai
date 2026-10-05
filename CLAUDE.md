@@ -232,13 +232,15 @@ Each level costs roughly **$900–1,200** (three to four days at the cap).
   every stand-in labelled "stand-in, not a model"); figure `STYLE.md` + fixed `_gen_audit.py`; 0d the nine
   reference modules patched offline against the ledger (each ends in a "Patch log"). The ledger showed the
   original modules had real defects (e.g. M8's rules baseline is 25/30 not 17/30, which flipped its lesson).
-  **Waves A+B done (weeks 1–18: 54 files, 2026-10-04, executed and ladder-checked, no figures yet).**
-  **Not done:** waves C–D (weeks 19–36) and figures — so `_level_is_complete()` keeps L4 off the site — and the plan's "Decisions the owner must make" remain
+  **Waves A–C done (weeks 1–27: 81 files, 2026-10-04/05, executed and ladder-checked, no figures yet).**
+  **Not done:** wave D (weeks 28–36 + capstone) and figures — so `_level_is_complete()` keeps L4 off the site — and the plan's "Decisions the owner must make" remain
   as recommended-but-unconfirmed. Known leftovers: `_ledger/scripts/rag.py` has an unused
   `MiniLMEmbedder` that would download weights; M7's `build_registry` is missing (breaks M9/capstone
   imports in the ledger); M6's in-corpus note still says "about 4.5 for GPT-2"; the M1/M3/M8 patch
   runs produced some numbers (batch-size, dropout, SNEAKY Jaccard tables) that are not in the ledger.
-  Wave B lesson: a gateway outage (502 from floodgate) killed 19 of 30 agents mid-run; the Workflow
+  Wave C lesson: pipelined blocks verify concurrently, so a verifier can run before another block's
+  weeks exist (W27's redo table had "fill in when it exists" cells; fixed after). Run a cross-block
+  reference check after each wave. Wave B lesson: a gateway outage (502 from floodgate) killed 19 of 30 agents mid-run; the Workflow
   `resumeFromRunId` re-ran only the failed ones. Edit the verify prompt before resuming or its cached
   result is stale. Wave A open items: `teacher-guide/week-03.md` calls `trace()` (~line 236) before defining it (~446);
   teacher-only snippets in weeks 4–6 use constructs the ladder lists later (`torch.arange`, `masked_fill`,
