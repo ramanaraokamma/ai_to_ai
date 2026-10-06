@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A causal attention pass turns scores into weights that sum to 1, then blends the value rows</title>
+  <desc>Left, a 3 by 3 grid of attention weights, query rows by key columns, for cat, sat, down. Row cat: 1.0 then two hidden cells. Row sat: 0.3302, 0.6698, hidden. Row down: 0.2483, 0.5035, 0.2483. Each row sums to 1.0; the largest in each row is ringed. Right, the third row blends the value rows cat (2, 2), sat (4, 1) and down (2, 0) with those weights into the output (3.007, 1.0). Practice numbers, not the paper's.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A practice attention pass, by hand then by machine</text>
+  <text x="400" y="68" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">practice numbers (not the paper's): cat, sat, down; width d = 2</text>
+  <text x="215" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">key (being looked at)</text>
+  <text x="145" y="130" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">cat</text>
+  <text x="215" y="130" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">sat</text>
+  <text x="285" y="130" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">down</text>
+  <text x="100" y="175" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">cat</text>
+  <text x="100" y="245" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">sat</text>
+  <text x="100" y="315" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">down</text>
+  <text x="36" y="245" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle" transform="rotate(-90 36 245)">query (asking)</text>
+  <rect x="110" y="140" width="70" height="70" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="145" y="175" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.0000</text>
+  <rect x="180" y="140" width="70" height="70" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <line x1="188" y1="148" x2="242" y2="202" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round"/>
+  <text x="215" y="197" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">&#8722;&#8734;</text>
+  <rect x="250" y="140" width="70" height="70" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <line x1="258" y1="148" x2="312" y2="202" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round"/>
+  <text x="285" y="197" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">&#8722;&#8734;</text>
+  <text x="328" y="175" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" dominant-baseline="central">sum 1.0</text>
+  <rect x="110" y="210" width="70" height="70" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="145" y="245" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.3302</text>
+  <rect x="180" y="210" width="70" height="70" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="215" y="245" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.6698</text>
+  <rect x="250" y="210" width="70" height="70" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <line x1="258" y1="218" x2="312" y2="272" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round"/>
+  <text x="285" y="267" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">&#8722;&#8734;</text>
+  <text x="328" y="245" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" dominant-baseline="central">sum 1.0</text>
+  <rect x="110" y="280" width="70" height="70" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="145" y="315" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.2483</text>
+  <rect x="180" y="280" width="70" height="70" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="215" y="315" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.5035</text>
+  <rect x="250" y="280" width="70" height="70" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="285" y="315" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.2483</text>
+  <text x="328" y="315" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" dominant-baseline="central">sum 1.0</text>
+  <text x="605" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">down blends the values</text>
+  <line x1="624" y1="150" x2="636" y2="150" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="624" y1="205" x2="636" y2="205" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="624" y1="260" x2="636" y2="260" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="636" y1="150" x2="636" y2="260" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="636" y1="205" x2="662" y2="205" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(662 205) rotate(0)"/>
+  <rect x="430" y="134" width="70" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="465" y="150" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.2483</text>
+  <text x="512" y="150" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#215;</text>
+  <rect x="524" y="134" width="100" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="574" y="150" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">cat (2, 2)</text>
+  <rect x="430" y="189" width="70" height="32" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="4" stroke-linejoin="round"/>
+  <text x="465" y="205" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.5035</text>
+  <text x="512" y="205" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#215;</text>
+  <rect x="524" y="189" width="100" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="574" y="205" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">sat (4, 1)</text>
+  <rect x="430" y="244" width="70" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="465" y="260" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.2483</text>
+  <text x="512" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#215;</text>
+  <rect x="524" y="244" width="100" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="574" y="260" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">down (2, 0)</text>
+  <rect x="664" y="178" width="116" height="54" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="722" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">output</text>
+  <text x="722" y="216" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3.007, 1.0</text>
+  <text x="430" y="305" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">weights (3, 3) &#215; values (3, 2)</text>
+  <text x="430" y="323" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">&#8594; output (3, 2)</text>
+  <rect x="20" y="354" width="14" height="14" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="40" y="361" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">largest in its row (ringed)</text>
+  <rect x="250" y="354" width="14" height="14" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="270" y="361" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">0.10 or more</text>
+  <rect x="374" y="354" width="14" height="14" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="394" y="361" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">future hidden: score &#8722;&#8734; before the softmax</text>
+</svg>

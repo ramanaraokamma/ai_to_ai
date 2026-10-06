@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Raising the forget bias before training lets the first step reach the last: one bias number turns Week 10's fade into a highway</title>
+  <desc>Four panels for forget bias 0, 1, 2 and 4. Each shows the average forget dial at step 1 as a bar out of 1: 0.510, 0.732, 0.879, 0.981; and the measured ratio of the gradient at position 1 to position 40: 1.93e-09, 9.84e-04, 2.21e-01, 1.08e+00, with a log-scale bar from 1e-10 to 1. Biases 0 and 1 have dashed red outlines and a cross, biases 2 and 4 a tick. Values from Week 11 block 5, seed 0, 40 steps.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Start the forget dial high</text>
+  <rect x="30" y="66" width="170" height="288" rx="12" fill="#F5F8FA" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="115" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">forget bias 0</text>
+  <text x="45" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">average dial f at step 1</text>
+  <rect x="50" y="138" width="130" height="22" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <rect x="50" y="138" width="66.3" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="115" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">f = 0.510</text>
+  <text x="45" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">position 1 &#247; position 40</text>
+  <text x="115" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">1.93e&#8722;09</text>
+  <rect x="50" y="252" width="130" height="18" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <rect x="50" y="252" width="16.7" height="18" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="50" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">1e&#8722;10</text>
+  <text x="180" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1</text>
+  <text x="115" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">log scale, bar ends at 1</text>
+  <g transform="translate(44,316) scale(0.3)">
+  <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+    <line x1="38" y1="38" x2="62" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+    <line x1="62" y1="38" x2="38" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  </g>
+  <text x="82" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">Week 10 again</text>
+  <rect x="215" y="66" width="170" height="288" rx="12" fill="#F5F8FA" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="300" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">forget bias 1</text>
+  <text x="230" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">average dial f at step 1</text>
+  <rect x="235" y="138" width="130" height="22" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <rect x="235" y="138" width="95.2" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="300" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">f = 0.732</text>
+  <text x="230" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">position 1 &#247; position 40</text>
+  <text x="300" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">9.84e&#8722;04</text>
+  <rect x="235" y="252" width="130" height="18" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <rect x="235" y="252" width="90.9" height="18" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="235" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">1e&#8722;10</text>
+  <text x="365" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1</text>
+  <text x="300" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">log scale, bar ends at 1</text>
+  <g transform="translate(229,316) scale(0.3)">
+  <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+    <line x1="38" y1="38" x2="62" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+    <line x1="62" y1="38" x2="38" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  </g>
+  <text x="267" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">Week 10 again</text>
+  <rect x="400" y="66" width="170" height="288" rx="12" fill="#F5F8FA" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="485" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">forget bias 2</text>
+  <text x="415" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">average dial f at step 1</text>
+  <rect x="420" y="138" width="130" height="22" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <rect x="420" y="138" width="114.3" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="485" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">f = 0.879</text>
+  <text x="415" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">position 1 &#247; position 40</text>
+  <text x="485" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">2.21e&#8722;01</text>
+  <rect x="420" y="252" width="130" height="18" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <rect x="420" y="252" width="121.5" height="18" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="420" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">1e&#8722;10</text>
+  <text x="550" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1</text>
+  <text x="485" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">log scale, bar ends at 1</text>
+  <g transform="translate(414,316) scale(0.3)">
+  <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="452" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">still reaches back</text>
+  <rect x="585" y="66" width="170" height="288" rx="12" fill="#F5F8FA" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="670" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">forget bias 4</text>
+  <text x="600" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">average dial f at step 1</text>
+  <rect x="605" y="138" width="130" height="22" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <rect x="605" y="138" width="127.5" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="670" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">f = 0.981</text>
+  <text x="600" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">position 1 &#247; position 40</text>
+  <text x="670" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">1.08e+00</text>
+  <rect x="605" y="252" width="130" height="18" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <rect x="605" y="252" width="130" height="18" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="605" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">1e&#8722;10</text>
+  <text x="735" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1</text>
+  <text x="670" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">log scale, bar ends at 1</text>
+  <g transform="translate(599,316) scale(0.3)">
+  <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="637" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">still reaches back</text>
+  <text x="400" y="375" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Same cell, only the bias changes. Seed 0, 40 steps. Tick: at least 1% (our cut).</text>
+</svg>

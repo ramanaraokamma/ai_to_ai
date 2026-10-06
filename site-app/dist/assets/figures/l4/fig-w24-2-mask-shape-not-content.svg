@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A grammar mask guarantees valid JSON but cannot make the content right</title>
+  <desc>Two panels of paired bars, each out of 100 prompts. Names seen in training: parses as JSON 90 free and 100 masked; every field right 79 free and 95 masked. New names never seen: parses 85 free and 100 masked; every field right 25 free and 26 masked, a gain of one.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The mask fixes the shape, not the content</text>
+  <rect x="32" y="62" width="356" height="296" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="210" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">names seen in training</text>
+  <line x1="50" y1="300" x2="370" y2="300" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="60" y="120" width="52" height="180" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="86" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">90</text>
+  <rect x="120" y="100" width="52" height="200" rx="2" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="146" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">100</text>
+  <text x="86" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">free</text>
+  <text x="146" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">mask</text>
+  <text x="116" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">parses as JSON</text>
+  <rect x="220" y="142" width="52" height="158" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="246" y="136" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">79</text>
+  <rect x="280" y="110" width="52" height="190" rx="2" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="306" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">95</text>
+  <text x="246" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">free</text>
+  <text x="306" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">mask</text>
+  <text x="276" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">every field right</text>
+  <rect x="412" y="62" width="356" height="296" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="590" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">new names, never seen</text>
+  <line x1="430" y1="300" x2="750" y2="300" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="440" y="130" width="52" height="170" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="466" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">85</text>
+  <rect x="500" y="100" width="52" height="200" rx="2" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="526" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">100</text>
+  <text x="466" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">free</text>
+  <text x="526" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">mask</text>
+  <text x="496" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">parses as JSON</text>
+  <rect x="600" y="250" width="52" height="50" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="626" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">25</text>
+  <rect x="660" y="248" width="52" height="52" rx="2" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="686" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">26</text>
+  <text x="626" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">free</text>
+  <text x="686" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">mask</text>
+  <text x="656" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">every field right</text>
+  <rect x="552" y="196" width="100" height="26" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="602" y="209" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">25 &#8594; 26: +1</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Out of 100 prompts per bar, seed 0: parses go to 100 / 100, but unseen names stay wrong.</text>
+</svg>

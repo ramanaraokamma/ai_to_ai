@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Each word asks, shares its attention in a row that adds to 1, and hears a blend of the values</title>
+  <desc>Three grids left to right joined by arrows. Step 2, scores, shape (3, 3): rows the, cat, sat are 1, 0, 1 then 0, 1, 1 then 1, 1, 2. Step 3, weights, shape (3, 3), after a softmax of each row: the 0.422, 0.155, 0.422; cat 0.155, 0.422, 0.422; sat 0.212, 0.212, 0.576; every row sums to 1 and the largest in each row is ringed. Step 4, output, shape (3, 2): 0.578, 0.845 then 0.845, 0.578 then 0.788, 0.788. Rows are the query, columns are the key.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">One pass of attention on three words</text>
+  <line x1="224" y1="222" x2="286" y2="222" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(286 222) rotate(0)"/>
+  <line x1="510" y1="222" x2="572" y2="222" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(572 222) rotate(0)"/>
+  <text x="255" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">softmax</text>
+  <text x="541" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">blend V</text>
+  <text x="144" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">step 2: scores</text>
+  <text x="366" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">step 3: weights</text>
+  <text x="632" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">step 4: output</text>
+  <text x="144" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">key (being looked at)</text>
+  <text x="96" y="146" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">the</text>
+  <text x="144" y="146" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">cat</text>
+  <text x="192" y="146" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">sat</text>
+  <text x="64" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">the</text>
+  <text x="64" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">cat</text>
+  <text x="64" y="266" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">sat</text>
+  <text x="366" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">key (being looked at)</text>
+  <text x="318" y="146" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">the</text>
+  <text x="366" y="146" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">cat</text>
+  <text x="414" y="146" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">sat</text>
+  <text x="286" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">the</text>
+  <text x="286" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">cat</text>
+  <text x="286" y="266" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">sat</text>
+  <text x="34" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 34 222)">query (asking)</text>
+  <rect x="72" y="156" width="48" height="44" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="96" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="120" y="156" width="48" height="44" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="144" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="168" y="156" width="48" height="44" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="192" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="72" y="200" width="48" height="44" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="96" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="120" y="200" width="48" height="44" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="144" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="168" y="200" width="48" height="44" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="192" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="72" y="244" width="48" height="44" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="96" y="266" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="120" y="244" width="48" height="44" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="144" y="266" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="168" y="244" width="48" height="44" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="192" y="266" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <rect x="294" y="156" width="48" height="44" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <rect x="342" y="156" width="48" height="44" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="390" y="156" width="48" height="44" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <rect x="294" y="200" width="48" height="44" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="342" y="200" width="48" height="44" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <rect x="390" y="200" width="48" height="44" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <rect x="294" y="244" width="48" height="44" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="342" y="244" width="48" height="44" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="390" y="244" width="48" height="44" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <rect x="294" y="156" width="48" height="44" fill="none" stroke="#C42B8C" stroke-width="3"/>
+  <rect x="390" y="156" width="48" height="44" fill="none" stroke="#C42B8C" stroke-width="3"/>
+  <rect x="342" y="200" width="48" height="44" fill="none" stroke="#C42B8C" stroke-width="3"/>
+  <rect x="390" y="200" width="48" height="44" fill="none" stroke="#C42B8C" stroke-width="3"/>
+  <rect x="390" y="244" width="48" height="44" fill="none" stroke="#C42B8C" stroke-width="3"/>
+  <text x="318" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.422</text>
+  <text x="366" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.155</text>
+  <text x="414" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.422</text>
+  <text x="318" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.155</text>
+  <text x="366" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.422</text>
+  <text x="414" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.422</text>
+  <text x="318" y="266" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.212</text>
+  <text x="366" y="266" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.212</text>
+  <text x="414" y="266" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.576</text>
+  <text x="446" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" dominant-baseline="central">sum = 1</text>
+  <text x="446" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" dominant-baseline="central">sum = 1</text>
+  <text x="446" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" dominant-baseline="central">sum = 1</text>
+  <rect x="584" y="156" width="48" height="44" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="608" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.578</text>
+  <rect x="632" y="156" width="48" height="44" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="656" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.845</text>
+  <text x="576" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">the</text>
+  <rect x="584" y="200" width="48" height="44" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="608" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.845</text>
+  <rect x="632" y="200" width="48" height="44" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="656" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.578</text>
+  <text x="576" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">cat</text>
+  <rect x="584" y="244" width="48" height="44" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="608" y="266" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.788</text>
+  <rect x="632" y="244" width="48" height="44" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="656" y="266" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.788</text>
+  <text x="576" y="266" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">sat</text>
+  <rect x="72" y="298" width="57" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="100.5" y="311" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(3, 3)</text>
+  <rect x="294" y="298" width="57" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="322.5" y="311" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(3, 3)</text>
+  <rect x="584" y="298" width="57" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="612.5" y="311" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(3, 2)</text>
+  <rect x="30" y="340" width="22" height="22" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="60" y="351" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" dominant-baseline="central">largest in its row</text>
+  <rect x="210" y="340" width="22" height="22" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="240" y="351" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" dominant-baseline="central">0.10 or more</text>
+  <rect x="360" y="340" width="22" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="390" y="351" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" dominant-baseline="central">below 0.10</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Invented 2-number words, nothing learned. Each weight row is one word sharing its attention.</text>
+</svg>

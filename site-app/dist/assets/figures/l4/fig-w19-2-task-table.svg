@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A perfect score on a task can be a leak; only the lookup column shows what deleting a part does</title>
+  <desc>A grid of share of answers right, three made-up tasks by five models, plus a chance column. Copy: full 1.00, no mask 1.00, no pos 0.95, no res 1.00, no norm 1.00. Reverse: 1.00, 1.00, 0.92, 1.00, 1.00. Lookup: 1.00, 0.37, 1.00, 1.00, 0.33. Chance is 0.125 on copy and reverse (1 in 8) and 0.1 on lookup (1 in 10). Cells at 1.00 carry a tick, cells below 0.5 carry a cross. The two no-mask cells on copy and reverse are ringed number 1, a leak; the lookup cells 0.37 and 0.33 are ringed number 2, causes not tested.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Share of answers right, three tasks</text>
+  <text x="205" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">full</text>
+  <text x="315" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">no mask</text>
+  <text x="425" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">no pos</text>
+  <text x="535" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">no res</text>
+  <text x="645" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">no norm</text>
+  <text x="746" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">chance</text>
+  <text x="138" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="end" dominant-baseline="central">copy</text>
+  <rect x="150" y="100" width="110" height="56" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="213" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.00</text>
+  <polyline points="165.7,128 170.2,132.9 179.2,122.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="260" y="100" width="110" height="56" fill="#E2F7ED" stroke="#C42B8C" stroke-width="4"/>
+  <text x="323" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.00</text>
+  <polyline points="275.7,128 280.2,132.9 289.2,122.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="370" y="100" width="110" height="56" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="433" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.95</text>
+  <rect x="480" y="100" width="110" height="56" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="543" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.00</text>
+  <polyline points="495.7,128 500.2,132.9 509.2,122.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="590" y="100" width="110" height="56" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="653" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.00</text>
+  <polyline points="605.7,128 610.2,132.9 619.2,122.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="710" y="100" width="68" height="56" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="744" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.125</text>
+  <text x="138" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="end" dominant-baseline="central">reverse</text>
+  <rect x="150" y="156" width="110" height="56" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="213" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.00</text>
+  <polyline points="165.7,184 170.2,188.9 179.2,178.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="260" y="156" width="110" height="56" fill="#E2F7ED" stroke="#C42B8C" stroke-width="4"/>
+  <text x="323" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.00</text>
+  <polyline points="275.7,184 280.2,188.9 289.2,178.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="370" y="156" width="110" height="56" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="433" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.92</text>
+  <rect x="480" y="156" width="110" height="56" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="543" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.00</text>
+  <polyline points="495.7,184 500.2,188.9 509.2,178.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="590" y="156" width="110" height="56" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="653" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.00</text>
+  <polyline points="605.7,184 610.2,188.9 619.2,178.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="710" y="156" width="68" height="56" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="744" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.125</text>
+  <text x="138" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="end" dominant-baseline="central">lookup</text>
+  <rect x="150" y="212" width="110" height="56" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="213" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.00</text>
+  <polyline points="165.7,240 170.2,244.9 179.2,234.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="260" y="212" width="110" height="56" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="323" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.37</text>
+  <polyline points="275,233 289,247" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="275,247 289,233" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="370" y="212" width="110" height="56" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="433" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.00</text>
+  <polyline points="385.7,240 390.2,244.9 399.2,234.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="480" y="212" width="110" height="56" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="543" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.00</text>
+  <polyline points="495.7,240 500.2,244.9 509.2,234.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="590" y="212" width="110" height="56" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="653" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.33</text>
+  <polyline points="605,233 619,247" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="605,247 619,233" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="710" y="212" width="68" height="56" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="744" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.1</text>
+  <circle cx="366" cy="104" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="366" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <circle cx="366" cy="160" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="366" y="160" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <circle cx="366" cy="216" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="366" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <circle cx="696" cy="216" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="696" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <rect x="150" y="280" width="20" height="20" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="178" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start" dominant-baseline="central">1.00, with a tick</text>
+  <rect x="360" y="280" width="20" height="20" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="388" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start" dominant-baseline="central">0.90 to 0.99</text>
+  <rect x="570" y="280" width="20" height="20" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="598" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start" dominant-baseline="central">below 0.50, with a cross</text>
+  <circle cx="33" cy="318" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="33" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="52" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">no mask on copy and reverse: 1.00 because the answer sits one place ahead (a leak)</text>
+  <circle cx="33" cy="344" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="33" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="52" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">lookup: 0.37 without the mask, 0.33 without norm; one seed, cause an open question</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">600 steps per model. Chance: copy and reverse 1 &#247; 8 = 0.125, lookup 1 &#247; 10 = 0.1.</text>
+</svg>

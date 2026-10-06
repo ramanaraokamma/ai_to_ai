@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The model is more surprised by its own names (1.122) than by real ones (0.954): consistent with exposure bias, not proof</title>
+  <desc>Two rows of letter boxes. In training the model reads a, n, d, r, all true letters, and is asked for the next one. In generating it reads a, n, d, t where t, drawn red with a cross-free label unlikely pick, is its own unlikely draw, so the prefix is one it rarely practised. Below, three horizontal bars of average loss per letter: real names, 231 names, 0.954 with 0.000 of them above 1.5; the model's own names at T = 1.0, 200 names, 1.122 with 0.175 above 1.5; its own names at T = 0.5, 0.920 with 0.010 above 1.5.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Exposure bias: it practised on true letters only</text>
+  <line x1="237" y1="81" x2="255" y2="81" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(255 81) rotate(0)"/>
+  <line x1="313" y1="81" x2="331" y2="81" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(331 81) rotate(0)"/>
+  <line x1="389" y1="81" x2="407" y2="81" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(407 81) rotate(0)"/>
+  <line x1="465" y1="81" x2="483" y2="81" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(483 81) rotate(0)"/>
+  <line x1="237" y1="137" x2="255" y2="137" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(255 137) rotate(0)"/>
+  <line x1="313" y1="137" x2="331" y2="137" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(331 137) rotate(0)"/>
+  <line x1="389" y1="137" x2="407" y2="137" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(407 137) rotate(0)"/>
+  <line x1="465" y1="137" x2="483" y2="137" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(483 137) rotate(0)"/>
+  <rect x="180" y="62" width="56" height="38" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="208" y="81" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">a</text>
+  <rect x="256" y="62" width="56" height="38" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="284" y="81" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="332" y="62" width="56" height="38" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="360" y="81" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">d</text>
+  <rect x="408" y="62" width="56" height="38" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="436" y="81" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">r</text>
+  <rect x="484" y="62" width="56" height="38" rx="8" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="512" y="81" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle" dominant-baseline="central">next?</text>
+  <rect x="180" y="118" width="56" height="38" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="208" y="137" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">a</text>
+  <rect x="256" y="118" width="56" height="38" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="284" y="137" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="332" y="118" width="56" height="38" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="360" y="137" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">d</text>
+  <rect x="408" y="118" width="56" height="38" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="436" y="137" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">t</text>
+  <rect x="484" y="118" width="56" height="38" rx="8" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="512" y="137" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle" dominant-baseline="central">next?</text>
+  <text x="20" y="78" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">training</text>
+  <text x="20" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">4 letters in</text>
+  <text x="20" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">generating</text>
+  <text x="20" y="150" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">4 letters in</text>
+  <text x="556" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">handed the true previous</text>
+  <text x="556" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">letter every time</text>
+  <text x="556" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">own letters: one unlikely</text>
+  <text x="556" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">pick, and the prefix is one</text>
+  <text x="556" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">it rarely practised</text>
+  <text x="436" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">unlikely pick</text>
+  <line x1="20" y1="186" x2="780" y2="186" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="400" y="206" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">average loss per letter, true prefix fed in (lower = less surprised)</text>
+  <text x="220" y="233" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">real names (n=231)</text>
+  <rect x="230" y="220" width="257.6" height="26" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="541" y="233" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">mean 0.954 &#183; above 1.5: 0.000</text>
+  <text x="220" y="267" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">own names, T=1.0 (n=200)</text>
+  <rect x="230" y="254" width="302.9" height="26" rx="4" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="541" y="267" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">mean 1.122 &#183; above 1.5: 0.175</text>
+  <text x="220" y="301" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">own names, T=0.5 (n=200)</text>
+  <rect x="230" y="288" width="248.4" height="26" rx="4" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="541" y="301" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">mean 0.920 &#183; above 1.5: 0.010</text>
+  <text x="400" y="346" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Consistent with exposure bias, not proof: sampling and memorising fit the gap too.</text>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">One seed (7), one model. Measured on the Week 13 name model; no direct same-spot comparison was made.</text>
+</svg>

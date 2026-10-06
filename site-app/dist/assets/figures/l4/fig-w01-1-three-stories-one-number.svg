@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Three runs that end near 0.693 tell three different stories; only the curve shows which</title>
+  <desc>Three small panels share one log-scale loss axis from 0.01 to 10, with a dashed line at 0.693, the loss of a coin-flip model. Left, runs A and B (learning rates 1e-6 and 1e-5) sit on the line: A goes 0.694 to 0.693 and B goes 0.694 to 0.683. Middle, runs C, D and E fall well below it: C goes 0.694 to 0.077, D goes 0.691 to 0.018 and E goes 0.658 to 0.013. Right, run F starts at 12.786, drops to 0.520 and ends back on the line at 0.693. Points are epochs 0, 5, 10, 20, 40 and 59 of seed 0.</desc>
+  <text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Same final loss, three different stories</text>
+  <rect x="20" y="58" width="240" height="282" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="140" y="86" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">A, B: too small, stuck</text>
+  <line x1="68" y1="121.2" x2="186" y2="121.2" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="62" y="125.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">10</text>
+  <line x1="68" y1="177.5" x2="186" y2="177.5" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="62" y="181.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1</text>
+  <line x1="68" y1="233.8" x2="186" y2="233.8" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="62" y="237.8" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.1</text>
+  <line x1="68" y1="290" x2="186" y2="290" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="62" y="294" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.01</text>
+  <line x1="68" y1="110" x2="68" y2="290" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="68" y1="290" x2="186" y2="290" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="68" y1="186.5" x2="186" y2="186.5" stroke="#55636F" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="32" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 32 200)">train loss (log scale)</text>
+  <text x="68" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <text x="186" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">59</text>
+  <text x="127" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">epoch</text>
+  <polyline points="68,186.4 78,186.4 88,186.4 108,186.4 148,186.4 186,186.5" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="68" cy="186.4" r="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="78" cy="186.4" r="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="88" cy="186.4" r="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="108" cy="186.4" r="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="148" cy="186.4" r="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="186" cy="186.5" r="4" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="194" y="182.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">A 0.693</text>
+  <polyline points="68,186.4 78,186.4 88,186.5 108,186.5 148,186.6 186,186.8" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="68" cy="186.4" r="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="78" cy="186.4" r="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="88" cy="186.5" r="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="108" cy="186.5" r="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="148" cy="186.6" r="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="179" y="179.8" width="14" height="14" rx="2" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="194" y="200.8" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">B 0.683</text>
+  <rect x="280" y="58" width="240" height="282" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="400" y="86" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">C, D, E: it learned</text>
+  <line x1="328" y1="121.2" x2="446" y2="121.2" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="322" y="125.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">10</text>
+  <line x1="328" y1="177.5" x2="446" y2="177.5" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="322" y="181.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1</text>
+  <line x1="328" y1="233.8" x2="446" y2="233.8" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="322" y="237.8" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.1</text>
+  <line x1="328" y1="290" x2="446" y2="290" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="322" y="294" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.01</text>
+  <line x1="328" y1="110" x2="328" y2="290" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="328" y1="290" x2="446" y2="290" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="328" y1="186.5" x2="446" y2="186.5" stroke="#55636F" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="292" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 292 200)">train loss (log scale)</text>
+  <text x="328" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <text x="446" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">59</text>
+  <text x="387" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">epoch</text>
+  <polyline points="328,186.4 338,186.6 348,187.8 368,191 408,221.4 446,240.1" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="328" cy="186.4" r="3" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+  <circle cx="338" cy="186.6" r="3" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+  <circle cx="348" cy="187.8" r="3" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+  <circle cx="368" cy="191" r="3" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+  <circle cx="408" cy="221.4" r="3" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+  <circle cx="446" cy="240.1" r="6" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="454" y="244.1" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">C 0.077</text>
+  <polyline points="328,186.5 338,199.9 348,238.6 368,271.9 408,287.7 446,275.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="328" cy="186.5" r="3" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+  <circle cx="338" cy="199.9" r="3" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+  <circle cx="348" cy="238.6" r="3" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+  <circle cx="368" cy="271.9" r="3" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+  <circle cx="408" cy="287.7" r="3" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+  <rect x="440" y="269.6" width="12" height="12" rx="2" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="454" y="274.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">D 0.018</text>
+  <polyline points="328,187.7 338,249.7 348,255.5 368,265.7 408,271.9 446,283.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 4"/>
+  <circle cx="328" cy="187.7" r="3" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+  <circle cx="338" cy="249.7" r="3" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+  <circle cx="348" cy="255.5" r="3" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+  <circle cx="368" cy="265.7" r="3" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+  <circle cx="408" cy="271.9" r="3" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2"/>
+  <polygon points="446,276.6 453,289.6 439,289.6" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="454" y="296.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">E 0.013</text>
+  <rect x="358" y="146" width="96" height="24" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="406" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">coin 0.693</text>
+  <rect x="540" y="58" width="240" height="282" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="660" y="86" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">F: too big, blew up</text>
+  <line x1="588" y1="121.2" x2="706" y2="121.2" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="582" y="125.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">10</text>
+  <line x1="588" y1="177.5" x2="706" y2="177.5" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="582" y="181.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1</text>
+  <line x1="588" y1="233.8" x2="706" y2="233.8" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="582" y="237.8" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.1</text>
+  <line x1="588" y1="290" x2="706" y2="290" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="582" y="294" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.01</text>
+  <line x1="588" y1="110" x2="588" y2="290" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="588" y1="290" x2="706" y2="290" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="588" y1="186.5" x2="706" y2="186.5" stroke="#55636F" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="552" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 552 200)">train loss (log scale)</text>
+  <text x="588" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <text x="706" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">59</text>
+  <text x="647" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">epoch</text>
+  <polyline points="588,115.2 598,193.5 608,189.5 628,186.4 668,186.4 706,186.5" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="588" cy="115.2" r="3" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
+  <circle cx="598" cy="193.5" r="3" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
+  <circle cx="608" cy="189.5" r="3" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
+  <circle cx="628" cy="186.4" r="3" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
+  <circle cx="668" cy="186.4" r="3" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
+  <circle cx="706" cy="186.5" r="6" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="714" y="190.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">F 0.693</text>
+  <text x="602" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">start 12.786</text>
+  <text x="400" y="368" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Dashed line: a coin-flip model scores ln 2 = 0.693. Seed 0; epochs 0, 5, 10, 20, 40, 59.</text>
+</svg>

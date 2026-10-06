@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A memory that is scaled and added to keeps most of step 1 over four steps, a note that is rewritten keeps almost none</title>
+  <desc>Two bar panels over four steps for one unit fed the spike 1, 0, 0, 0, each bar a percentage of step 1. Left, the plain RNN note (0.7616, 0.3634, 0.1797, 0.0896): 100%, 47.7%, 23.6%, 11.8%, marked with a cross; slope back three steps 0.1041. Right, the LSTM memory (0.8909, 0.8486, 0.8084, 0.7701): 100%, 95.3%, 90.7%, 86.4%, marked with a tick; slope back three steps 0.8644, the forget dial 0.9526 multiplied three times. Values from Week 11 block 2.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Rewrite loses the past; add keeps it</text>
+  <rect x="20" y="66" width="370" height="286" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="205" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">RNN: the note is rewritten</text>
+  <text x="205" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the old note is pushed through a weight</text>
+  <line x1="68" y1="166" x2="376" y2="166" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="64" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">100%</text>
+  <line x1="70" y1="286" x2="378" y2="286" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="86" y="166" width="50" height="120" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="111" y="160" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">100.0%</text>
+  <text x="111" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">step 1</text>
+  <text x="111" y="317" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.7616</text>
+  <rect x="160" y="228.8" width="50" height="57.2" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="185" y="222.8" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">47.7%</text>
+  <text x="185" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">step 2</text>
+  <text x="185" y="317" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.3634</text>
+  <rect x="234" y="257.7" width="50" height="28.3" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="259" y="251.7" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">23.6%</text>
+  <text x="259" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">step 3</text>
+  <text x="259" y="317" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.1797</text>
+  <rect x="308" y="271.8" width="50" height="14.2" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <text x="333" y="265.8" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">11.8%</text>
+  <text x="333" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">step 4</text>
+  <text x="333" y="317" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.0896</text>
+  <text x="205" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">slope back 3 steps: 0.1041</text>
+  <rect x="410" y="66" width="370" height="286" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="595" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">LSTM: the memory is added to</text>
+  <text x="595" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the old memory is only scaled, then added to</text>
+  <line x1="458" y1="166" x2="766" y2="166" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="454" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">100%</text>
+  <line x1="460" y1="286" x2="768" y2="286" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="476" y="166" width="50" height="120" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="501" y="160" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">100.0%</text>
+  <text x="501" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">step 1</text>
+  <text x="501" y="317" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.8909</text>
+  <rect x="550" y="171.6" width="50" height="114.4" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="575" y="165.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">95.3%</text>
+  <text x="575" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">step 2</text>
+  <text x="575" y="317" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.8486</text>
+  <rect x="624" y="177.2" width="50" height="108.8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="649" y="171.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">90.7%</text>
+  <text x="649" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">step 3</text>
+  <text x="649" y="317" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.8084</text>
+  <rect x="698" y="182.3" width="50" height="103.7" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="723" y="176.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">86.4%</text>
+  <text x="723" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">step 4</text>
+  <text x="723" y="317" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.7701</text>
+  <text x="595" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">slope back 3 steps: 0.8644 (f = 0.9526)</text>
+  <g transform="translate(36,70) scale(0.28)">
+  <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
+    <line x1="38" y1="38" x2="62" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+    <line x1="62" y1="38" x2="38" y2="62" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  </g>
+  <g transform="translate(426,70) scale(0.28)">
+  <circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="400" y="375" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">One unit, spike (1, 0, 0, 0), 4 steps. Bars are % of step 1, raw value below.</text>
+</svg>

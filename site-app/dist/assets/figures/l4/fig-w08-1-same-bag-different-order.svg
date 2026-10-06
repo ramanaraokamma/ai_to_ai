@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Counting words erases word order, so two different sentences give a classifier the same row</title>
+  <desc>Two sentences of five blue word boxes: 'the dog bit the postman' and 'the postman bit the dog'. An arrow from each leads to a bag row over the vocabulary the, dog, bit, postman. Both rows read 2, 1, 1, 1 and a bracket marks them as equal. Below: same bag is True, same text is False, and five different words can be ordered 120 ways that all give one bag.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A bag keeps the counts and throws the order away</text>
+  <text x="30" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">sentence a (5 words)</text>
+  <rect x="30" y="100" width="56" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="58" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">the</text>
+  <rect x="94" y="100" width="56" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="122" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">dog</text>
+  <rect x="158" y="100" width="52" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="184" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">bit</text>
+  <rect x="218" y="100" width="56" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="246" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">the</text>
+  <rect x="282" y="100" width="96" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="330" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">postman</text>
+  <line x1="390" y1="120" x2="526" y2="120" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(526 120) rotate(0)"/>
+  <text x="30" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">sentence b (5 words)</text>
+  <rect x="30" y="196" width="56" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="58" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">the</text>
+  <rect x="94" y="196" width="96" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="142" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">postman</text>
+  <rect x="198" y="196" width="52" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="224" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">bit</text>
+  <rect x="258" y="196" width="56" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="286" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">the</text>
+  <rect x="322" y="196" width="56" height="40" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="350" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">dog</text>
+  <line x1="390" y1="216" x2="526" y2="216" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(526 216) rotate(0)"/>
+  <text x="565" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the</text>
+  <text x="615" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">dog</text>
+  <text x="665" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">bit</text>
+  <text x="715" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">postman</text>
+  <rect x="540" y="100" width="50" height="40" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="565" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <rect x="590" y="100" width="50" height="40" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="615" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="640" y="100" width="50" height="40" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="665" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="690" y="100" width="50" height="40" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="715" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="540" y="196" width="50" height="40" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="565" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <rect x="590" y="196" width="50" height="40" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="615" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="640" y="196" width="50" height="40" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="665" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="690" y="196" width="50" height="40" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="715" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <path d="M746 120 H758 V216 H746" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="764" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#C42B8C" dominant-baseline="central">=</text>
+  <text x="640" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">bag of a = bag of b: [2, 1, 1, 1]</text>
+  <rect x="30" y="300" width="340" height="60" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="200" y="324" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">same bag?  True      same text?  False</text>
+  <text x="200" y="346" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">5 different words: 120 orderings, 1 bag</text>
+  <rect x="420" y="300" width="350" height="60" rx="10" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="595" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Whatever classifier comes next sees one row:</text>
+  <text x="595" y="346" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">the order is gone before it starts.</text>
+</svg>
