@@ -138,7 +138,7 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**How many of the fourteen answers did you get right?** ______ / 14
+**How many of the 17 lines you predicted did you get right?** ______ / 17
 
 **Which one surprised you most, and why?**
 
@@ -280,7 +280,7 @@ ________________________________________________________________
 | `print(row[-3:])` | | **D** `[40, 50]` |
 | `print(row[2:2])` | | **E** `[30, 40, 50]` |
 
-**Two of those five slices give the same *number of items*. Which two?** ______________
+**Three of those five slices give the same *number of items*. Which three, and how many?** ______________
 
 **A5. Label the slice.** Fill in the boxes on the figure, then answer the questions.
 
@@ -590,7 +590,7 @@ For each **target**, write the **shortest slice** that produces it. Some have tw
 | 4 | `[30, 40, 50]` | `row[________]` |
 | 5 | `[]` | `row[________]` |
 | 6 | a copy of the whole row | `row[________]` |
-| 7 | `[50]` — **and it must still work if a sixth number is added** | `row[________]` |
+| 7 | `[50]`, the *last* item — **and the slice must still mean "the last item" if a sixth number is added** | `row[________]` |
 
 **(a) Which of your seven answers would stop being right if somebody appended a `60`?**
 
@@ -680,7 +680,7 @@ ________________________________________________________________
 
 **T2. Why did we write `mean` by hand when Python can add up a list in one word?**
 
-Write a paragraph. It is genuinely true that a built-in exists — you meet it in Week 15, on purpose. So: what do you know about `mean` now that you would not know if you had only ever used the built-in? (Think about the empty list.)
+Write a paragraph. It is genuinely true that a built-in exists — you meet it in Week 14, on purpose. So: what do you know about `mean` now that you would not know if you had only ever used the built-in? (Think about the empty list.)
 
 Then the part that matters: **what happens in about eight weeks when you want a number Python has no built-in word for?**
 
@@ -925,7 +925,7 @@ Show the **tin on one side** with named tools inside it, the **job file on the o
 | Statement | | |
 |---|---|---|
 | `scores[1:4]` gives four items | TRUE | FALSE |
-| `scores[a:b]` gives `b - a` items | TRUE | FALSE |
+| `scores[a:b]` gives `b - a` items (when both numbers are inside the list) | TRUE | FALSE |
 | A slice changes the original list | TRUE | FALSE |
 | `scores[3:3]` is an error | TRUE | FALSE |
 | `scores[2:99]` is an error | TRUE | FALSE |
@@ -1166,7 +1166,7 @@ Verified with the correct version:
 | `print(row[-3:])` | **E** `[30, 40, 50]` |
 | `print(row[2:2])` | **B** `[]` |
 
-**The two with the same number of items:** `row[1:3]` and `row[:2]` — **two items each.** (3 − 1 = 2 and 2 − 0 = 2.)
+**The three with the same number of items:** `row[1:3]`, `row[:2]` and `row[3:]` — **two items each.** (3 − 1 = 2, 2 − 0 = 2 and 5 − 3 = 2.) The other two give 3 items (`row[-3:]`) and 0 items (`row[2:2]`).
 
 **A5.**
 
@@ -1401,7 +1401,7 @@ print(row[1:3], row[:2], row[3:], row[-3:], row[2:2])
 
 **The precise version: nothing "stops being a slice", but three of them stop giving the answer you wanted.**
 
-**(b)** Row 7's two obvious answers are `row[4:5]` and `row[-1:]`. **`row[4:5]` means "slot 4", which after the append is the 50 — but it is no longer the last item.** `row[-1:]` means "the last one", which is now the 60. **So which survives depends on what you meant**: if you meant "that particular number", the positive one survives; if you meant "the last one", the negative one does. **Say what you mean and the right index picks itself.**
+**(b)** Row 7's two obvious answers are `row[4:5]` and `row[-1:]`. **`row[4:5]` means "slot 4", which after the append is still the 50 — but it is no longer the last item, so it has stopped doing the job.** `row[-1:]` means "the last one", which is now the 60, and that is exactly what row 7 asked for. **So which survives depends on what you meant**: for "that particular number" the positive one survives; for "the last one", the negative one does. Row 7 asked for the last one. **Say what you mean and the right index picks itself.**
 
 **(c) Three tiling pairs:**
 
@@ -1449,7 +1449,7 @@ We chose `None` for this course because it is honest and it never stops a lesson
 
 **T2 — model answer.**
 
-A built-in does exist, and I will meet it in Week 15 on purpose.
+A built-in does exist, and I will meet it in Week 14 on purpose.
 
 **What I know now that I would not know otherwise:** exactly what `mean` does, line by line — that it starts a total at zero, walks the values, adds each one, and divides by how many. And, more usefully, **exactly what it does with an empty list**, because I had to decide that myself. Somebody who has only used the built-in has no idea what it does with an empty list until it happens to them, and then they have to go and look it up.
 
@@ -1586,7 +1586,7 @@ None
 
 **(b)** Both work today. **`[-3:]` still means "the last three" if a twenty-first innings gets appended; `[17:20]` quietly starts meaning something else.** Same argument as `scores[-1]` from last week.
 
-**(c)** The numbers say the second ten innings averaged about eight runs lower. **Whether that is a real decline or just what ten innings look like is genuinely open, and the honest answer at Week 12 is "this is a hint, not a finding."** Ten innings is very few; **one score of 112 in the first half moves that average by more than 11 on its own**; and nothing here rules out coincidence. Any answer that notices the sample is small is a good answer. "Yes, it got worse" with no hedge is not.
+**(c)** The numbers say the second ten innings averaged about eight runs lower. **Whether that is a real decline or just what ten innings look like is genuinely open, and the honest answer at Week 12 is "this is a hint, not a finding."** Ten innings is very few; **one score of 112 in the first half holds that average up by more than 11 compared with a score of 0 in its place**; and nothing here rules out coincidence. Any answer that notices the sample is small is a good answer. "Yes, it got worse" with no hedge is not.
 
 **(d)** The `for score in SCORES:` loop with a counter. **A slice could not do it:** a slice picks by *position*, and "at least fifty" is a question about *value*. The fifties are scattered through the list. Filtering by value is Week 15.
 
@@ -1778,7 +1778,7 @@ There is no single right drawing. A strong one has all five of these:
 | Statement | Answer |
 |---|---|
 | `scores[1:4]` gives four items | **FALSE** — three. 4 − 1 = 3 |
-| `scores[a:b]` gives `b - a` items | **TRUE** |
+| `scores[a:b]` gives `b - a` items (when both numbers are inside the list) | **TRUE** |
 | A slice changes the original list | **FALSE** — it builds a new one |
 | `scores[3:3]` is an error | **FALSE** — it is `[]`, because 3 − 3 = 0 |
 | `scores[2:99]` is an error | **FALSE** — a slice gives you whatever part of the range exists |

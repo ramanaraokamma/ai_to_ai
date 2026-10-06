@@ -89,7 +89,7 @@ print(int(float(height_text)))
 
 **It really printed:** ______________  ______________  ______________
 
-**How many of the twelve did you get right?** ______ / 12
+**How many of the eleven did you get right?** ______ / 11
 
 **Which one surprised you most, and why?**
 
@@ -878,7 +878,7 @@ Check on paper: 310 ÷ 12.5 = 24.8 ✔ · 12.5 × 7 = 87.5 ✔ · 310 − 87.5 =
 
 **Bug 1 — the syntax one.** `int(input(...))` opens **two** brackets and closes only one.
 
-**How many questions did it ask? Zero.** A `SyntaxError` means Python could not even read the file, so **not one line ran** — not even the `Your name?` question. That is the three-second test: if nothing at all printed, it is a `SyntaxError`.
+**How many questions did it ask? Zero.** A `SyntaxError` means Python could not even read the file, so **not one line ran** — not even the `Your name?` question. That is a quick test: if the very first question never appears, suspect a `SyntaxError`.
 
 The fix:
 
@@ -894,7 +894,7 @@ days = int(input("How many days to report?   "))   # how many days to add up
 minutes = int(input("Screen minutes a day?      "))  # minutes per day
 ```
 
-**The bonus question, and this is the most important thing on the page.** Line 7 is `minutes * days`. With `minutes` as text, `*` means **repeat**, which is a perfectly legal thing to do — so Python did it, silently, producing 840 characters of `120120120…`. Then line 8 asked Python to **divide** that text by 60, and there is no "repeat" meaning for `/`, so it had to complain.
+**The bonus question, and this is the most important thing on the page.** Line 7 is `minutes * days`. With `minutes` as text, `*` means **repeat**, which is a perfectly legal thing to do — so Python did it, silently, producing 21 characters of `120120120…` (`"120"` written out 7 times). Then line 8 asked Python to **divide** that text by 60, and there is no "repeat" meaning for `/`, so it had to complain.
 
 **`*` hides a missing conversion. `/` exposes it.** If line 8 hadn't existed, this program would have printed nonsense and never said a word.
 

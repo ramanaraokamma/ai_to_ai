@@ -50,7 +50,7 @@ The student has spent 33 weeks learning pieces. This week and next week are the 
 
 Week 34 covers the first three. Week 35 covers the last three. Week 36 is the showcase and the written assessment.
 
-Here is the professional truth underneath it, and it is worth saying to the student out loud, today: **the model is about fifteen percent of the work.** The question, the collecting, the cleaning log and the honesty are the other eighty-five. Almost nobody teaches the eighty-five. That is what these three weeks are.
+Here is the professional truth underneath it, and it is worth saying to the student out loud, today: **the model is a small part of the work.** The question, the collecting, the cleaning log and the honesty are most of the rest, and practitioners commonly say so. Not many courses teach them. That is what these three weeks are.
 
 ### 2. A research question, and the four tests it has to pass
 
@@ -322,7 +322,7 @@ That is the computer enforcing the rule. Undo it afterwards with `chmod 644 data
 
 | If this fails | Do this instead |
 |---|---|
-| Python or pandas will not run | The whole lesson works on paper. Page 34.2 (the plan) and page 34.3 (the log) need no computer at all. For `describe()`, hand-compute the five posts from the twenty-one printed values on page 34.4 — sort them, take the middle one, then the middle of each half. That is genuinely what pandas does. |
+| Python or pandas will not run | The whole lesson works on paper. Page 34.2 (the plan) and page 34.3 (the log) need no computer at all. For `describe()`, hand-compute the five posts from the twenty-one printed values on page 34.4 — sort them, take the middle one, then the middle of each half. That gets you close to what pandas prints (pandas interpolates between neighbouring values, so it can differ slightly). |
 | No terminal, or `chmod` is unavailable | Right-click the file → Get Info / Properties → tick "read only". Same effect. Or put `raw.csv` in a folder called `DO_NOT_EDIT` and say so out loud. |
 | The student has no data idea at all | Give them the journeys project. It is the demo, it collects itself in a week, and 100 rows is one week of a whole family logging trips. Do not spend twenty minutes brainstorming; a working question beats a beautiful one. |
 | The student has already collected data and wants to skip ahead | Excellent. Have them run the four tests on the question they *actually* answered, in writing. Half the time they discover their target column is a leak, and that discovery is worth the whole lesson. |
@@ -698,7 +698,7 @@ Every one of these came from actually running a broken version of this week's co
 | `FileNotFoundError: [Errno 2] No such file or directory: 'raw.csv'` | Same error, different path. | The code says `read_csv("raw.csv")` but the file is inside `data/`. | Use the full path from where you are running: `read_csv("data/raw.csv")`. |
 | `PermissionError: [Errno 13] Permission denied: 'data/raw.csv'` | The file is read-only and something tried to write to it. | Either the rule working correctly, or the student re-ran `make_raw.py` after locking. | If it is a repair: **do not unlock.** Do it in `clean.py` with a log line. If they genuinely need to rebuild raw: `chmod 644 data/raw.csv`, rebuild, then `chmod 444` again. |
 | `KeyError: 'Minutes'` | There is no column with that exact name. | Capital letter, trailing space, or a plural. Column names are case-sensitive, always. | `print(df.columns)` and copy the name character for character. `minutes`, not `Minutes`. |
-| `TypeError: can only concatenate str (not "int") to str` (from `df["minutes"].mean()`) | pandas tried to add up the column and found text. | The column is `object` dtype because at least one row is not a number — here, `about 20`. | `df["minutes"] = pd.to_numeric(df["minutes"], errors="coerce")` first, then log why. |
+| `TypeError: Could not convert 17.521.0about 209 to numeric` (from `df["minutes"].mean()`; pandas 1.5 wording, newer versions say `Could not convert string '...' to numeric`) | pandas tried to add up the column, found it was text, and glued the values together instead. | The column is `object` dtype because at least one row is not a number — here, `about 20`. | `df["minutes"] = pd.to_numeric(df["minutes"], errors="coerce")` first, then log why. |
 | `AttributeError: 'Series' object has no attribute 'strip'` | A whole column does not have text methods; individual strings do. | They wrote `df["mode"].strip()` instead of `df["mode"].str.strip()`. | Add `.str`: `df["mode"].str.strip().str.lower()`. The `.str` means "do this to every value". |
 | `ValueError: invalid literal for int() with base 10: 'about 20'` | The right *kind* of conversion on an impossible *value*. | Trying `int()` on a note rather than a number. | Do not convert by hand. Use `pd.to_numeric(..., errors="coerce")`, which turns the unconvertible into empty instead of crashing, and then log that you did. |
 | `OSError: Cannot save file into a non-existent directory: 'output'` | `to_csv` will not invent a folder either. | Saving to `output/clean.csv` when there is no `output` folder. | Save into `data/`, which you already made: `df.to_csv("data/clean.csv", index=False)`. |
@@ -819,7 +819,7 @@ Model answers are in the Answer Key, page 34.3.
 
 **"Why 100 rows? Why not 50?"**
 
-Do the arithmetic with them, because it is the honest answer. With 100 rows and a 20% test set you keep 20 rows back. One row is then worth 5 percentage points of any score. With 50 rows you keep 10, and one row is worth 10 points — so two models that differ by 9 points are indistinguishable, and almost every interesting comparison becomes unsayable. 100 is not a magic number; it is the smallest number where the sentences you want to write in Week 35 are allowed to be true.
+Do the arithmetic with them, because it is the honest answer. With 100 rows and a 20% test set you keep 20 rows back. One row is then worth 5 percentage points of an accuracy score. With 50 rows you keep 10, and one row is worth 10 points — so a gap of 5 points is just one row going the other way, indistinguishable from luck, and almost every interesting comparison becomes unsayable. 100 is not a magic number; it is the smallest number where the sentences you want to write in Week 35 are allowed to be true.
 
 **"Can I download a dataset instead? There are thousands online."**
 
@@ -903,7 +903,7 @@ Every extension here uses only syntax they already have.
 
 1. **The variety plan.** Before collecting a single row, write the minimum count for every category value and the required spread for every number column. Then design the collection so it happens rather than hoping. Ten of each is the working rule.
 2. **The leak hunt on their own project.** Invent three features that would score brilliantly and be worthless, and say for each one exactly when the value becomes known. Then defend the four real features against the same test.
-3. **Hand-compute the quartiles.** Take twenty-one numbers on paper, sort them, and find the middle one, then the middle of each half. Compare with `describe()`. They match — and the student now knows what pandas is actually doing, which almost no beginner does.
+3. **Hand-compute the quartiles.** Take twenty-one numbers on paper, sort them, and find the middle one, then the middle of each half. Compare with `describe()`. They match or come very close (pandas interpolates between neighbouring values, so small differences are normal) — and the student now knows roughly what pandas is doing.
 4. **Write the data card for a hostile reader.** Someone who wants to use this to make a decision and is looking for holes. Then list the three questions they would ask that you cannot currently answer, and say how you would change the collection to answer them.
 5. **Plan the second batch** (thirty rows, two weeks later, ideally a different person) for a drift test in Week 35. Write down now what you predict will happen to the score.
 
@@ -959,7 +959,7 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "This is the biggest homework of the year and it is also the most fun, so do not leave it to the last night. Three jobs, about two and a half hours in total, and it does **not** all happen in one sitting.
+> "This is the biggest homework of the year and it is also the most fun, so do not leave it to the last night. Three jobs, just under three hours in total, and it does **not** all happen in one sitting.
 >
 > **Job one, tonight, fifteen minutes.** Finish page 34.2 if it is not finished, and type it up as `notes/plan.md`. Signed and dated. If your question changed while you were writing the columns, that is fine — but sign the final one and date it *today*, before you have any data.
 >
@@ -1202,7 +1202,7 @@ First: `minutes` is now **in** `describe()`. That is the check from section 6 pa
 
 Second: 26 rows went in and 21 came out. Five rows were lost, every one of them counted and justified. A student whose before-and-after shapes are identical either had immaculate data or did not look.
 
-**Supporting output worth showing them — `df["mode"].value_counts()` before step 2 reads `bus 13 / walk 6 / cycle 5 / Walk 1 / walk 1`.** Point at the last two lines: `walk` and `walk ` look identical on screen, because the difference is a trailing space. **That is why you cannot eyeball a column; you have to count it.** After step 2 there are three groups — `bus 12 / walk 7 / cycle 5` — not five.
+**Supporting output worth showing them — `df["mode"].value_counts()` before step 2 reads `bus 13 / walk 6 / cycle 5 / Walk 1 / walk 1`.** Point at the second line and the last line: `walk` and `walk ` look identical on screen, because the difference is a trailing space. **That is why you cannot eyeball a column; you have to count it.** After step 2 there are three groups — `bus 12 / walk 7 / cycle 5` — not five.
 
 > **🧑‍🏫 If a student does the arithmetic and objects:** they are right to. Merging the five raw groups by hand gives 13 bus and 8 walk, totalling 26. The printed numbers are 12 and 7, totalling 24. Nothing is wrong — **step 1 ran before step 2.** Dropping the two duplicate rows removed one bus journey and one walk journey, so both counts arrive at step 2 already one lower. This is worth thirty seconds out loud, because it is the first time they see that **the order of the cleaning steps changes the numbers**, which is exactly why the log is numbered.
 

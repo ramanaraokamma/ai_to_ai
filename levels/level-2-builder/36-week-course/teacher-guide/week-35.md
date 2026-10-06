@@ -91,7 +91,7 @@ Line by line, for someone who has never programmed:
 - `random_state=42` fixes the shuffle, so **the same 26 rows land in the test pile every single time you run the file.** Without it, every run gives a different answer and nothing can be compared. The number 42 is arbitrary; any number works, as long as it never changes.
 - The four names on the left are four boxes: features-to-learn-from, features-to-be-tested-on, answers-to-learn-from, answers-to-be-tested-on.
 
-**The rule, and it is checkable:** search the whole file for the string `train_test_split`. If it appears twice, that is a bug. Every model reads the same four variables.
+**The rule, and it is checkable:** search the whole file for the string `train_test_split(` with its opening bracket, so the `import` line does not count. If the call appears twice, that is a bug. Every model reads the same four variables.
 
 > **🧑‍🏫 If a student asks:** *"why is it `KNeighborsRegressor` and not `KNeighborsClassifier`?"* Because the target is a number, not a category. It is the same idea as Week 29 — find the five most similar rows — but instead of the five *voting* on a label, it *averages* their five answers. Same with `DecisionTreeRegressor` against Week 31's classifier: the leaf holds an average instead of a winner.
 
@@ -220,7 +220,7 @@ Not automatically. On the demo data the tree wins by 0.35 minutes on 26 test row
 
 **Misconception 2 — "a perfect score means I did well."**
 
-It means the answer is hiding in the features, or the score came from the training rows. The student met leakage in Week 29 and it is the single most likely reason for a suspiciously good capstone result. **A high score is a thing to investigate, not a thing to celebrate.**
+It means the answer is hiding in the features, or the score came from the training rows. The student met leakage in Week 30 and it is the single most likely reason for a suspiciously good capstone result. **A high score is a thing to investigate, not a thing to celebrate.**
 
 **Misconception 3 — "'what I got wrong' will lose me marks."**
 
@@ -403,7 +403,7 @@ Draw or show Figure 35.2.
 
 > "126 rows. One cut. A hundred rows the models learn from, and twenty-six they never see until the very end. `random_state=42` means the same twenty-six every time, so that when you compare two models you know they were judged on the same test.
 >
-> Here is the rule, and you can check it with your eyes: **search your file for `train_test_split`. It should appear exactly once.** If it appears twice, one of your models was judged on a different exam paper, and your table is comparing nothing to nothing.
+> Here is the rule, and you can check it with your eyes: **search your file for `train_test_split(` with the bracket. The call should appear exactly once.** If it appears twice, one of your models was judged on a different exam paper, and your table is comparing nothing to nothing.
 >
 > And from the moment you make that split, those twenty-six rows are radioactive. Nothing fits on them. No scaler learns their average. Nothing computes a median from them. They exist to be scored, at the end, once."
 
@@ -576,7 +576,7 @@ baseline (always guess the mean)       7.98        9.53     0.000   -0.375      
 
 > **🐞 Deliberate mistake 2 — fit the scaler before the split.** Move `StandardScaler().fit(X)` up above the `train_test_split` line, transform all of `X`, and re-run. The kNN row's scores change slightly and **nothing warns you.**
 >
-> Say: *"That ran. No error. And it is the bug you met in Week 30 — what is it called?"* (**Leakage.**) *"Fitting the scaler on everything means it computed its averages using the twenty-six test rows too. Those rows have now influenced how the training data was rescaled, so they are not unseen any more. And the score moves in the flattering direction, which is exactly what makes it dangerous."*
+> Say: *"That ran. No error. And it is the bug you met in Week 30 — what is it called?"* (**Leakage.**) *"Fitting the scaler on everything means it computed its averages using the twenty-six test rows too. Those rows have now influenced how the training data was rescaled, so they are not unseen any more. And it can flatter the score (it does not always: on this demo the kNN's MAE goes from 2.70 to 2.92, slightly worse), which is exactly what makes it dangerous."*
 >
 > Move it back below the split, and point at the comment: `# learn the means from TRAIN only`. Comments like that one are why you write comments.
 
@@ -724,7 +724,7 @@ No, and this is the sharpest line in the whole project. Trying `random_state` va
 
 **"My best model got R² of 0.99. Is that good?"**
 
-It is a warning light, not a trophy. On data you collected yourself, 0.99 nearly always means one of your features contains the answer. Go through them one at a time and ask: *could I know this before the target happened?* On the demo journeys, predicting `late = minutes > 25` from the same features scores exactly 1.000 — because `late` is defined *from* `minutes`. That is the shape of the bug and it is always something like that.
+It is a warning light, not a trophy. On data you collected yourself, 0.99 nearly always means one of your features contains the answer. Go through them one at a time and ask: *could I know this before the target happened?* On the demo journeys, if `minutes` is left among the features, predicting `late = minutes > 25` scores exactly 1.000 (with only the honest features it scores about 0.96) — because `late` is defined *from* `minutes`. That is the shape of the bug and it is always something like that.
 
 **"Three models is a lot. Can I just use the best one?"**
 
@@ -909,7 +909,7 @@ Topic version: *"Journey times by mode."* What is lost: the finding, the numbers
 | (h) | `mean_absolute_error(y_test, model.predict(X_train))` | mismatched | Neither — it crashes: `ValueError: Found input variables with inconsistent numbers of samples: [26, 100]`. |
 
 **35.2(i) What do (d) and (g) have in common?**
-Both compute a *statistic* from all the rows — a mean, a standard deviation, a median — before the split, so the test rows helped shape how the training data was prepared. The test set is no longer unseen, and the reported score comes out too high.
+Both compute a *statistic* from all the rows — a mean, a standard deviation, a median — before the split, so the test rows helped shape how the training data was prepared. The test set is no longer unseen, and the reported score can come out too high (or just different) without any warning.
 
 ### Page 35.3 — The four demo files, complete and actually run
 
@@ -956,7 +956,7 @@ print(len(rows), "rows written to data/clean.csv")
 126 rows written to data/clean.csv
 ```
 
-> **Why the odd numbers 3, 11, 5, 7 and 13?** They share no factors, so the mode, the distance, the rain and the hour never fall into step with each other. Use 3 and 9 instead and every walk gets the same distance, which would make the whole project meaningless. That is a real trap in generated data and worth a sentence to a strong student.
+> **Why the odd numbers 3, 11, 5, 7 and 13?** They share no factors, so the mode, the distance, the rain and the hour never fall into step with each other. Use 3 and 3 instead and every walk gets the same distance, which would make the whole project meaningless. That is a real trap in generated data and worth a sentence to a strong student.
 
 **File 2 — `charts.py`.** Five charts in narrative order.
 
@@ -1233,7 +1233,7 @@ Twenty numbers, but here are the five that carry the marks, filled in for the de
 
 **The three questions:**
 
-- *How many times does `train_test_split` appear in my file?* **Once**, at line 27 of `models.py`.
+- *How many times does `train_test_split` appear in my file?* **Once**, at line 26 of `models.py`.
 - *Is any scaler fitted before the split?* **No.** `StandardScaler().fit(X_train)` sits below the split and takes `X_train`, not `X`.
 - *Could I know every feature before the target happened?* **Yes.** Distance, mode, rain and departure hour are all known at the front door; `minutes` is measured at the school gate.
 
@@ -1257,7 +1257,7 @@ Four questions, all four answered:
 
 > **Whose data is this?** Three people: me and my two brothers. I asked both of them on 11 May and they said yes. I know which rows are theirs, because there is a column for it, so if either of them asked me to remove their rows I could.
 >
-> **What is the worst wrong answer in my test set?** Not the average — the worst single one. My tree's biggest miss was 6.4 minutes; the straight line's was 12.1 minutes, on a short walk in the rain.
+> **What is the worst wrong answer in my test set?** Not the average — the worst single one. My tree's biggest miss was 6.3 minutes; the straight line's was 12.1 minutes, on a short walk in the rain.
 >
 > **Who pays for that mistake?** The person who leaves the house at 8:05 believing they have eleven minutes, and arrives at 8:23. On the long walks the model under-predicts, and long walks are exactly the journeys that make people late — which is the thing the decision is about.
 >

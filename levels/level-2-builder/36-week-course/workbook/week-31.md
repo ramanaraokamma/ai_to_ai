@@ -742,7 +742,7 @@ ________________________________________________________________
 
 **By how much did it miss the cut-off?** ____________
 
-**Now try to fix it.** Change the cut-off in your head from 1.65 to 1.75. What happens to this flower, and what happens to a genuine virginica with a 1.7 cm petal?
+**Now try to fix it.** Change the width cut-off in your head from 1.65 to 1.75, and follow the flower down again. What happens to this flower (look at the next question it meets), and what happens to a genuine virginica with a 1.7 cm petal?
 
 ________________________________________________________________
 
@@ -1452,7 +1452,7 @@ flower 25 measurements: [6.7 3.  5.  1.7]
 
 **By how much did it miss?** **0.05 cm** — half a millimetre.
 
-**Moving the cut-off to 1.75.** Flower 25 now comes out **versicolor**, which is correct. But any genuine **virginica** with a petal between 1.66 and 1.75 cm wide now comes out versicolor, which is wrong. **You have not removed the mistake. You have moved it.** Real versicolors and real virginicas genuinely overlap around 1.7 cm, and no single number can separate things that overlap. That is not a flaw in the code; it is a fact about irises.
+**Moving the cut-off to 1.75.** On its own this does *not* rescue flower 25: it now meets `petal length <= 4.95`, and 5.0 is over that too, so it is still called **virginica**. (Move the length cut-off to 5.05 as well and it comes out **versicolor**, which is correct.) Meanwhile a genuine **virginica** with a petal between 1.66 and 1.75 cm wide and a short petal now comes out versicolor, which is wrong — on the 120 training flowers the two moves together turn 2 wrong into 4 wrong. **You have not removed the mistake. You have moved it.** Real versicolors and real virginicas genuinely overlap around 1.7 cm, and no single number can separate things that overlap. That is not a flaw in the code; it is a fact about irises.
 
 **Part 5 — the importances.**
 
@@ -1515,14 +1515,14 @@ Marked on four things, not on artistic quality:
 | `class: 0` means none of them | **FALSE** | It is a name-tag. Position 0 is setosa. |
 | The number 0.80 appears somewhere in our code | **FALSE** | `.fit()` found it. Search the file. |
 | A split can ask about two measurements at once | **FALSE** | One column, one number, one comparison. Always. |
-| Every line of an `export_text` printout is a question | **FALSE** | Five of our twelve lines are answers. |
+| Every line of an `export_text` printout is a question | **FALSE** | Five of our thirteen lines are answers. |
 | The four feature importances add up to 1 | **TRUE** | They are shares of the work. |
 | Importance 0.000 proves a measurement is worthless | **FALSE** | Sepals alone still score 0.6667. "Not needed here." |
 | A tree needs `StandardScaler` just like kNN does | **FALSE** | A split compares one column with one number. Rescaling just rescales the cut-off. |
 | A tree can ask a question whose two answers are the same | **TRUE** | `petal length <= 4.85` — both branches say virginica. |
 | `feature_importances` works before you call `fit` | **FALSE** | Two things wrong: the missing underscore, and no `fit`. |
 | `from sklearn.trees import ...` is the correct import | **FALSE** | `sklearn.tree`, singular. |
-| Moving a cut-off can remove a mistake completely | **FALSE** | It relocates it. Overlapping species cannot be separated by one number. |
+| Moving a cut-off can remove a mistake completely | **FALSE** | Moving one cut-off alone usually trades one mistake for another (here it does not even rescue flower 25). Overlapping species cannot be separated cleanly by one number. |
 | You can write a tree's rules on a card and use them with no computer | **TRUE** | Four sentences, a ruler, and you agree with the computer 29 times out of 30. |
 
 </details>

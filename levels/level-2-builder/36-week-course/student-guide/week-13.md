@@ -250,7 +250,7 @@ KeyError: 'Runs'
 2. **Then the line number.** `line 8` — that is where you asked.
 3. **Then the `~~~^^^` marks.** The `^` marks sit under the exact part of the line that failed. (If your Python is 3.10 or older those marks are missing. Nothing important is missing with them.)
 
-**There are three causes, and between them they account for almost every `KeyError` you will ever see.** Say all three out loud:
+**There are three causes, and between them they account for most of the `KeyError`s you will see while you are learning.** (The other cause is a key that was genuinely never on the card, like `catches` in the homework.) Say all three out loud:
 
 | Cause | What it looks like | The real key |
 |---|---|---|
@@ -990,7 +990,7 @@ print(asha.get("catches", 0))  # 0      <- your fallback
 print(asha.get("catches"))     # None   <- no fallback given
 print(asha["catches"])         # KeyError: 'catches'
 
-# THE THREE CAUSES OF EVERY KeyError YOU WILL EVER SEE
+# THE THREE USUAL CAUSES OF A KeyError
 # asha["rusn"]   a typo
 # asha["ball"]   a plural
 # asha["Runs"]   a capital letter

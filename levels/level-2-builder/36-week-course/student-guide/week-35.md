@@ -152,7 +152,7 @@ Line by line:
 
 **The rule, and you can check it with your eyes:**
 
-> **Search your whole file for the text `train_test_split`. It must appear exactly once.**
+> **Search your whole file for the text `train_test_split(` — with the opening bracket, so the `import` line does not count. It must appear exactly once.**
 
 If it appears twice, one of your models sat a different exam paper, and your results table is comparing nothing to nothing.
 
@@ -328,7 +328,7 @@ print(len(rows), "rows written to data/clean.csv")
 126 rows written to data/clean.csv
 ```
 
-**Why the odd numbers 3, 11, 5, 7 and 13?** They share no factors, so the mode, the distance, the rain and the hour never fall into step with each other. Use 3 and 9 instead and every walk gets the same distance — and then `mode` and `distance_km` would carry the same information, which would make the whole project meaningless. That is a real trap in made-up data.
+**Why the odd numbers 3, 11, 5, 7 and 13?** They share no factors, so the mode, the distance, the rain and the hour never fall into step with each other. Use 3 and 3 instead and every walk gets the same distance — and then `mode` and `distance_km` would carry the same information, which would make the whole project meaningless. That is a real trap in made-up data.
 
 ### Step 2 — chart 1: what does the answer column even look like?
 
@@ -594,7 +594,7 @@ the baseline always guesses 21.3 minutes
 baseline (always guess the mean)       7.98        9.53     0.000   -0.375         26
 ```
 
-**Look at the scaler line, and where it sits.** `StandardScaler().fit(X_train)` is **below** the split and takes `X_train`, not `X`. If you fit it on all of `X`, it computes its averages using the 26 test rows too — those rows then influence how the training data was rescaled, and they are not unseen any more. That is **leakage** from Week 30, and it moves the score in the flattering direction, which is exactly what makes it dangerous. Nothing warns you.
+**Look at the scaler line, and where it sits.** `StandardScaler().fit(X_train)` is **below** the split and takes `X_train`, not `X`. If you fit it on all of `X`, it computes its averages using the 26 test rows too — those rows then influence how the training data was rescaled, and they are not unseen any more. That is **leakage** from Week 30, and it can flatter the score, which is exactly what makes it dangerous. It is not guaranteed to: on this demo it happens to make the kNN slightly *worse* (MAE 2.70 becomes 2.92). Nothing warns you either way.
 
 ### Step 8 — why the line loses, and the five worst rows
 
@@ -1280,7 +1280,7 @@ Do the arithmetic before you rank anything. And when the gap **is** inside the n
 |---|---|
 | "My R² was 0.99! Best in the class." | "0.99 on data I collected myself is a warning light. Let me check every feature: could I know this one before the target happened?" |
 
-On self-collected data, a near-perfect score almost always means **one of your features contains the answer** — leakage, from Week 29. On the demo journeys, predicting `late = minutes > 25` from the same features scores exactly 1.000, because `late` is *defined from* `minutes`. **A high score is a thing to investigate, not a thing to celebrate.**
+On self-collected data, a near-perfect score almost always means **one of your features contains the answer** — leakage, from Week 30. On the demo journeys, if `minutes` is left among the features, predicting `late = minutes > 25` scores exactly 1.000 (with only the honest features it scores about 0.96), because `late` is *defined from* `minutes`. **A high score is a thing to investigate, not a thing to celebrate.**
 
 ### Trick 4 — "'what I got wrong' will cost me marks"
 
@@ -1334,7 +1334,7 @@ collected yourself.*
 
 - **Five charts in narrative order are one paragraph.** Copy the five captions into a plain text file, read it aloud, and if it is not a paragraph, reorder the charts.
 - **A caption states a finding, not a topic.** The axis labels already describe the chart.
-- **One split, made once, `random_state` set.** Search your file for `train_test_split` — it must appear exactly once. Every model reads the same four variables.
+- **One split, made once, `random_state` set.** Search your file for `train_test_split(` with its bracket — the call must appear exactly once. Every model reads the same four variables.
 - **A metric with no units, no baseline and no row count is a rumour.** "MAE 2.35 minutes, against a baseline of 7.98, on 26 held-out rows" is a fact.
 - **Work out what one test row is worth, and never rank two models inside that margin.** With 26 rows it is 3.8%, so a 0.35-minute gap is not a ranking.
 - **The Score Audit: trace every number to the line that made it, and say which split.** If `_train` is on the right-hand side and you are calling it a result, cross it out in red.

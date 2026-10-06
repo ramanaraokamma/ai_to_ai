@@ -248,7 +248,7 @@ The decision the student has to make out loud is not "is this number right?" —
 2. **Report it with a warning.** "Owls: 104.00 from 1 player — too few rows to call this an average."
 3. **Do not report it.** Say "Owls: 1 player, not enough to average" and print nothing else.
 
-All three are professional. What is *not* acceptable is printing `Owls 104.00` next to `Falcons 35.50` with no counts, because a reader will conclude the Owls are four times better at batting, and they will be reasoning correctly from what you showed them.
+All three are professional. What is *not* acceptable is printing `Owls 104.00` next to `Falcons 35.50` with no counts, because a reader will conclude the Owls are three times better at batting, and they will be reasoning correctly from what you showed them.
 
 ![An average hides how many rows it came from](../figures/fig-w15-3-average-hides-group-size.svg)
 *Figure 15.4 — The tallest bar is one person. Printing the row count is what stops the chart lying.*
@@ -1032,7 +1032,7 @@ Every message below came from running a broken version of this week's actual cod
 | `KeyError: 'team'` from inside `group_count` | Row *n* has no key called `team`. | One record was typed with `Team`, or is missing the field. | Fix the record. Or `r.get(key, "MISSING")` if holes are expected — and then the `MISSING` bucket tells you how many. |
 | `ModuleNotFoundError: No module named 'records'` | "I can't find a file called `records.py`." | The terminal is in a different folder from the files, or the file is misnamed. | `cd` to the folder holding both files. Check the spelling. Week 12's lesson, again. |
 | **No error, `max(counts)` says `Tigers`** | Nothing is wrong as far as Python is concerned. | `max` without `key=` compares the **keys as text** and never looks at the counts. | `max(counts, key=counts.get)`. And check the answer against the printed counts by eye, every time. |
-| **No error, the buckets add up to 11** | Nothing is wrong as far as Python is concerned. | A row has a stray space or a different capital in the group field — `"Tigers "` and `"Tigers"` are two different buckets. | `print(counts)` and read the keys. Two nearly-identical keys is the tell. (Cleaning this properly is Week 24.) |
+| **No error, five buckets where you expected four (the buckets still add up to 12)** | Nothing is wrong as far as Python is concerned. | A row has a stray space or a different capital in the group field — `"Tigers "` and `"Tigers"` are two different buckets. | `print(counts)` and read the keys. Two nearly-identical keys is the tell. (Cleaning this properly is Week 24.) |
 | **No error, an average of 104.00 from one row** | Nothing is wrong as far as Python is concerned. | Nothing. The arithmetic is correct. **This is the dangerous one.** | Print the row count beside every average, and set a minimum group size before you look at the answers. |
 
 ### How to teach debugging without giving the answer
@@ -1040,7 +1040,7 @@ Every message below came from running a broken version of this week's actual cod
 The four moves stand — read the last line, find the line number, say the complaint in your own words, then compare characters. This week adds two:
 
 5. **"Which `File` line is the last one?"** That is where it broke. With two files in play, students read the first `File` line, go to `lab15.py`, find nothing wrong, and get stuck for five minutes. One question fixes it forever.
-6. **"Do the buckets add up?"** This is the move for errors that produce no message. Three of the twelve rows in the table above have no error message at all, and this check catches two of them.
+6. **"Do the buckets add up?"** This is the move for a dropped row, which produces no message (for example a `return` indented inside the loop, so the counts add up to 1, not 12). It does **not** catch the three silent rows in the table above — `max(counts)`, the stray-space bucket and the one-row average all still add up to 12. For those the moves are "count the buckets and compare with what you expected" and "read the row count beside the answer".
 
 And the sentence for this week, which is the harder half of debugging:
 
@@ -1072,7 +1072,7 @@ Because it is not a wrong answer to the question Python was asked. `max` on a di
 
 **"Should I use the median instead of the mean for a small group?"**
 
-It helps with a different problem, not this one. The median (the middle value, from your Week 12 toolkit) is more robust when one enormous value drags the average around — the Hawks' 55.67 is pulled up hard by Omar's 90, and their median of 55 is arguably more representative. But **no summary statistic can rescue a group of one.** The median of a single value is that value, exactly like the mean. The problem is not which average you chose; it is that there is nothing to average.
+It helps with a different problem, not this one. The median (the middle value, from your Week 12 toolkit) is more robust when one enormous value drags the average around — the Falcons' 35.5 is pulled up by Nita's 77, and their median of 30 (the middle of 5, 12, 48, 77 is (12 + 48) / 2) is arguably more representative. But **no summary statistic can rescue a group of one.** The median of a single value is that value, exactly like the mean. The problem is not which average you chose; it is that there is nothing to average.
 
 **"How many rows do you need before an average means anything?"** *(Nobody fully agrees, and here is why.)*
 
@@ -1080,7 +1080,7 @@ It helps with a different problem, not this one. The median (the middle value, f
 
 What everyone agrees on: **one row is not an average**, and it should never be printed next to real averages without a warning. Two is barely better. Beyond that, the honest answer is *it depends*, on three things:
 
-*How spread out the values are.* If every Falcon scores between 34 and 36, then three of them tell you a great deal. If they score 5, 12, 48 and 77, then four of them barely tell you anything, because the next Falcon could be anywhere. **Spread, not count, is what actually decides how much you know** — and measuring spread properly is Week 26 and 27.
+*How spread out the values are.* If every Falcon scores between 34 and 36, then three of them tell you a great deal. If they score 5, 12, 48 and 77, then four of them barely tell you anything, because the next Falcon could be anywhere. **Spread matters as much as count in deciding how much you know** — and measuring spread properly is Week 26 and 27.
 
 *What the answer will be used for.* An average used to decide which snack to buy for a party can rest on very little. An average used to decide who gets picked for a team, or who gets extra help in maths, needs far more — not because the maths changes, but because **the cost of being wrong lands on a person.**
 
@@ -1294,7 +1294,7 @@ It changes **how many rows** you have. It never changes **what a row is** — ev
 **Final result after all twelve:** `{'Falcons': 4, 'Tigers': 4, 'Hawks': 3, 'Owls': 1}`
 
 **15.2(a) Add the four counts up. What should the total be, and why does it matter?**
-4 + 4 + 3 + 1 = **12**, which is `len(squad)`. It matters because grouping is supposed to put *every* row in exactly one bucket. If the total came to 11, one row went somewhere you did not expect — most likely into a fifth bucket you never noticed, because its team field had a stray space or a different capital.
+4 + 4 + 3 + 1 = **12**, which is `len(squad)`. It matters because grouping is supposed to put *every* row in exactly one bucket. If the total came to 11, a row was dropped and went into no bucket at all. (A stray space or a different capital does not change the total — it makes a fifth bucket, and the total is still 12. Noticing that needs a different check: count the buckets.)
 
 **15.2(b) What does `counts.get(bucket, 0)` do the first time a bucket is seen, and every time after?**
 The first time, there is no such key, so it hands back the fallback `0` — and `0 + 1` is `1`. Every time after, the key exists, so it hands back the count so far, and one more gets added. One expression, both cases, no `if` needed.

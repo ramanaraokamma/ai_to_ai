@@ -1251,7 +1251,7 @@ Average: 53.6
 
 | # | What is wrong |
 |---|---|
-| (a) | `//` is floor division. `6 // 12` is **0**, so the percentage is always 0 unless `late` is bigger than `total`. Use `/`. |
+| (a) | `//` is floor division. `6 // 12` is **0**, so the percentage is 0 for every case except "all deliveries late" (`total // total` is 1). Use `/`. |
 | (b) | The **order**. Every value of 50 or more also satisfies `>= 10`, so the chain stops at the first branch and `"fifty!"` never fires. Put the narrowest condition first. |
 | (c) | The **`f` is missing**. Without it, Python prints the braces and the words inside them, literally. No error, and the output looks like a template somebody forgot to fill in — which is what it is. |
 
@@ -1638,7 +1638,7 @@ At the peak: stop, set `max_depth` to that value, refit — then add the honesty
 
 **B8 `[W29]` `[W35]` — is kNN better?**
 **No.** 126 × 0.2 = 25.2, and sklearn rounds the test set **up**, so the test set holds **26 rows**. One row is therefore worth 1 ÷ 26 = **3.8 percentage points**.
-Now the arithmetic: 0.923 × 26 = **24 rows correct**. 0.885 × 26 = **23 rows correct**. The entire difference between the two models is **one single test journey.** Change `random_state` and that one row moves, and the ranking very likely flips.
+Now the arithmetic: 0.923 × 26 = **24 rows correct**. 0.885 × 26 = **23 rows correct**. The entire difference between the two models is **one single test journey.** Change `random_state` and that one row can move, and the ranking can easily flip.
 What you *can* honestly say: both are far above the baseline, they are indistinguishable at this sample size, so choose between them on other grounds — interpretability, speed, robustness — and say so out loud.
 *Full marks needs:* the test-set size (26), the value of one row (3.8 points), and the conclusion that a one-row gap is not a ranking.
 
@@ -1934,7 +1934,7 @@ It is not a coincidence, because the four problems were chosen to make one point
 
 A silent bug does the opposite of all three. `Average: 17.8` is a complete sentence with a plausible number in it. `Top score: 90` is not obviously wrong until you notice Divya scored 100. `R2: 0.93` looks *better* than the honest 0.769. And the bar chart is a valid picture drawn from real numbers where nothing was faked at all.
 
-So the damage is proportional to trust, and a plausible number is trusted completely. Worse, three of the four silent bugs make things look **better** than they are, which means the bug is not merely invisible, it is **rewarding** — there is a small pull towards not investigating.
+So the damage is proportional to trust, and a plausible number is trusted completely. Worse, the most important of the four — `R2: 0.93` against an honest 0.769 — makes things look **better** than they are, which means that bug is not merely invisible, it is **rewarding** — there is a small pull towards not investigating.
 
 The one habit I would keep: **hand-check one value.** Add the five numbers up on paper. Count how many numbers came back and compare it with how many things you asked about. It costs about ten seconds per number, and it is the only check that works when there is no error message to read — because it does not trust the program at all. Every one of the four problems in Part C, and all three worked examples, are caught by that one habit.
 

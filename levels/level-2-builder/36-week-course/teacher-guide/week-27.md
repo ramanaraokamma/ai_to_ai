@@ -626,9 +626,9 @@ saved lie_and_fix.png
 
 > "Measure the honest ones. Go on."
 
-They will get something like 47 mm and 49 mm — nearly identical, ratio about 1.04.
+They will get something like 38 mm and 40 mm (the program prints 0.78 mm per unit, so 49 and 51 units) — nearly identical, ratio about 1.05 from whole-millimetre readings, 1.04 exactly.
 
-> "Forty-seven and forty-nine. Ratio one point oh four. **Which is the truth.**
+> "Thirty-eight and forty. Ratio one point oh four. **Which is the truth.**
 >
 > And notice what putting them side by side does. On its own, the left panel is convincing. Next to the right panel it's obviously a stunt. **The best defence against a misleading chart is another chart.**
 >
@@ -828,7 +828,7 @@ Take every answer they offer. The good ones: a job. A younger brother or sister 
 
 ### Variation — harder
 
-1. **Push the lie as far as it will go.** "Find the `set_ylim` bottom that makes 7B look **fifty** times taller than 7A." It is real algebra, of the kind they have had for a year: (51 − b) ÷ (49 − b) = 50, so 51 − b = 2450 − 50b, so 49b = 2399, so **b = 48.9592**. Then build it and measure it. And notice how sharp the edge is: rounding the bottom to 48.96 gives **51×**, not 50×. A hundredth of a percentage point changes the lie by a factor of one.
+1. **Push the lie as far as it will go.** "Find the `set_ylim` bottom that makes 7B look **fifty** times taller than 7A." It is real algebra, of the kind they have had for a year: (51 − b) ÷ (49 − b) = 50, so 51 − b = 2450 − 50b, so 49b = 2399, so **b = 48.9592**. Then build it and measure it. And notice how sharp the edge is: rounding the bottom to 48.96 gives **51×**, not 50×. Moving the floor by less than a thousandth of a percentage point (0.0008) changes the lie by a factor of one.
 2. **Truncate a line chart honestly.** Take the `sleep_hours` column (7.0 to 9.5) and chart it twice: once from 0, once from 6.5. The zero version is a flat line at the top and useless. Then write the label that makes the truncated one honest.
 3. **A 2×2 grid.** `fig, axes = plt.subplots(2, 2, figsize=(10, 8))`. Now `axes` is a box of boxes and you index it `axes[0][0]`, `axes[0][1]`, `axes[1][0]`, `axes[1][1]`. Four of their Term 3 charts on one sheet. No new function, just one more index.
 4. **Invent a confounder.** "Give me a pair of columns from this table with a strong correlation, and a third thing — not in the table — that could be causing both." Good answers involve `age` and `hours` with "how much homework the school sets by year group" as the confounder.
@@ -850,7 +850,7 @@ Every message below came from running a genuinely broken version of this week's 
 | `No artists with labels found to put in legend.` *(a warning, not an error — the chart still saves)* | "You asked me to name the lines and none of them have names." | `ax.legend()` with no `label="..."` on any `plot` call. | Add `label="Homework"` and `label="Screen time"` to the two `plot` calls. |
 | **No error. The chart is upside down, bars hanging from the top.** | Nothing. You told it the axis runs downwards. | `ax.set_ylim(51.4, 48.6)` — the two numbers the wrong way round. | Smaller number first: `ax.set_ylim(48.6, 51.4)`. |
 | **No error. The chart saves, but the top of the axis is not where you put it.** | Nothing. You gave it a bottom and let it choose a top. | `ax.set_ylim(48.6)` — one argument instead of two. | Give it both: `ax.set_ylim(48.6, 51.4)`. |
-| **No error. A bar chart that looks dramatic and is not.** | Nothing at all. This is the *deliberate* bug of the week. | `set_ylim` left out entirely, so matplotlib auto-scaled and quietly truncated for you. | `ax.set_ylim(0, top)` on **every** bar chart, forever. matplotlib will truncate your bars for you if you let it. |
+| **No error. A line chart that looks dramatic and is not.** | Nothing at all. matplotlib's default for a **line** chart is to zoom in on the data (bars, by contrast, start at zero on their own). | `set_ylim` left out entirely on a `plot` call, so matplotlib truncated the axis for you. | `ax.set_ylim(0, top)`, or truncate deliberately and say so in the label. On bar charts, type `ax.set_ylim(0, top)` anyway so the decision is visible in the file. |
 | `ValueError: x and y must have same first dimension, but have shapes (10,) and (12,)` | "Ten of one, twelve of the other." | Two series of different lengths on one frame — usually one column from `myweek` (10 rows) and one from somewhere else. | `print(len(a), len(b))` and find the mismatch. |
 
 ### How to teach debugging without giving the answer
@@ -917,7 +917,7 @@ And the half everybody agrees on: **if you truncate, say so in the label, loudly
 | The correlation section turns into a maths lesson about how `r` is calculated | Somebody asks, and it feels rude not to answer | "It's squares and square roots over both columns, and knowing the formula would not help you at all today. What matters is what it can and cannot tell you." Then straight back to the four worlds. |
 | The ethics question gets a shrug — "it's just a chart" | It is abstract until it has a name in it | Print the two lists. Hugo, Sami, Greta, Omar, Bruno. Then: "Hugo gets a detention. Why is Hugo studying half an hour a week?" A name changes the conversation completely. |
 | `axes` vs `axes[0]` causes twenty minutes of confusion | The name looks like one thing and is a box of things | Rename it out loud: "It is called `axes` because it is **plural**." Then have them `print(len(axes))` — it prints `2` — and the plural becomes concrete. |
-| A bar chart gets drawn with no `set_ylim` at all and looks dramatic | matplotlib auto-truncates when the values are close together | This is the punchline and it is worth catching: **matplotlib will truncate your bars for you if you do not stop it.** From today, every bar chart gets `ax.set_ylim(0, top)`. |
+| A **line** chart gets drawn with no `set_ylim` at all and looks dramatic | matplotlib's default for lines zooms in on the data (for bars it starts at zero on its own: `(0.0, 53.55)` for 49 and 51) | Worth catching: **matplotlib truncates line charts for you if you do not stop it.** From today, every bar chart gets `ax.set_ylim(0, top)` so the decision is visible, and every line chart gets a deliberate choice. |
 | The reflection sheet gets "all fine" written on it | It is the last thing, everybody is tired, and admitting confusion feels bad | Make it structurally impossible: "Name **two** weeks you'd want to do again, with a reason. Everybody has two. I have two, and I wrote this." |
 
 ---
@@ -1056,7 +1056,7 @@ Three checks, five minutes, exact wording.
 | (d) | 7A's real value | **49%** |
 | (e) | 7B's real value | **51%** |
 | (f) | (e) ÷ (d) | 51 ÷ 49 = **1.0408** — 7B is about 4% better |
-| (g) | Exaggeration factor, (c) ÷ (f) | 6.1 ÷ 1.04 = **about 5.8** |
+| (g) | Exaggeration factor, (c) ÷ (f) | 6.1 ÷ 1.04 = **about 5.8 to 5.9** (depending on rounding; the exact figure with a 48.6 floor is 5.76) |
 
 **27.1(h) Which number on the chart was faked?**
 **None of them.** Both bar heights are the true values and the tick numbers are correct. The only thing that changed was where the axis starts.
@@ -1099,7 +1099,7 @@ Full file and output in The Activity, Part B.
 They are the same one: **ice creams vs drownings, 0.997.** That is the whole point. **Strength tells you nothing about whether there is a cause.**
 
 **27.3(b) What is the confounder in the ice-cream case, and how do you know?**
-**Temperature.** You know because temperature correlates almost as strongly with *both* of the other columns (0.987 and 0.989), and because there is a mechanism you can say out loud: hot weather makes people buy ice cream, and hot weather makes people swim, and swimming is what creates the drowning risk.
+**Temperature.** The numbers alone cannot prove it (all three correlations are strong, and a correlation never says which way an arrow points). It is consistent with them, since temperature correlates strongly with *both* of the other columns (0.987 and 0.989), and what makes it convincing is a mechanism you can say out loud: hot weather makes people buy ice cream, and hot weather makes people swim, and swimming is what creates the drowning risk.
 
 **27.3(c) What does the minus sign in −0.572 mean?**
 That the two move in **opposite** directions: as age goes up, reported study hours go down. It is a direction, not a grade. A correlation of −0.9 is *stronger* than one of +0.3.
@@ -1359,7 +1359,7 @@ Because leaving it out would make the story an advertisement. A five-chart story
 Chart 3, the club means, by truncating its axis to `set_ylim(66, 78)` — see page 27.5. It is the easiest because the three values are close together, and truncation is most powerful exactly when the real difference is smallest.
 
 **27.6(c) Every bar chart here has `set_ylim(0, ...)`. Why, when matplotlib would have picked something?**
-Because what matplotlib picks is a **truncated axis**. Left alone with values of 76.07, 71.83 and 67.83, it starts the axis near 66 to fill the frame — producing the lie by default. Setting the bottom to zero explicitly is how you stop your own tool from misleading people on your behalf.
+Because once you touch `set_ylim` at all you own the decision, and writing the zero makes it visible in your file. (For a bar chart with values of 76.07, 71.83 and 67.83, matplotlib would in fact start at zero by itself; it is **line** charts it zooms in on by default. Typing the zero anyway means the choice does not depend on the tool's default or on which chart type you later switch to.)
 
 ### The Term 3 reflection sheet
 

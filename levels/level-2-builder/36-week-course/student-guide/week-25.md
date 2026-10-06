@@ -335,7 +335,7 @@ saved visits.png
 
 - **`fig.savefig`** — note it is `fig`, the sheet, not `ax`. You save the whole sheet, not one drawing on it.
 - **`"visits.png"`** — the filename. The `.png` matters, because matplotlib picks the file format from the extension. Leave it off and you get `visits.png` anyway, silently, which works and teaches you nothing.
-- **`dpi=120`** — **dots per inch**. Your sheet is 6 inches wide, so at 120 dpi the file comes out 720 pixels across. Bigger number, sharper picture, bigger file. `dpi=300` is print quality and about four times the size. Try `dpi=40` once, just to see what "too low" looks like.
+- **`dpi=120`** — **dots per inch**. Your sheet is 6 inches wide, so at 120 dpi the figure is 720 pixels across before cropping (`bbox_inches="tight"`, below, trims the white border, so your file comes out a little narrower, about 650). Bigger number, sharper picture, bigger file. `dpi=300` is print quality and gives about six times as many pixels (2.5 times as many across and 2.5 times as many down). Try `dpi=40` once, just to see what "too low" looks like.
 - **`bbox_inches="tight"`** — "crop off the empty white border, but do not cut off my labels". Without it, matplotlib saves a fixed 6 × 4 inch rectangle and a long axis label can run off the bottom and simply be **missing from the file**. Since the whole point of this week is that the labels *are* the chart, losing half of one is not a small problem. **Type it every single time.**
 
 ### The complete finished program
@@ -405,7 +405,7 @@ line_chart(df["day"], df["homework_min"],
            DAY_LABEL, "Homework done (minutes)", "myweek_homework.png")
 
 line_chart(df["day"], df["screen_min"],
-           "Screen time trebled on day 6, then dropped back",
+           "Screen time hit 180 minutes on day 6, then dropped back",
            DAY_LABEL, "Screen time (minutes)", "myweek_screen.png")
 
 line_chart(df["day"], df["steps"],
@@ -608,7 +608,7 @@ AttributeError: 'tuple' object has no attribute 'plot'
 
 **The fix.** Put `fig, ` back in front: `fig, ax = plt.subplots(figsize=(6, 4))`.
 
-### Break 3 — twelve x values and eleven y values
+### Break 3 — more x values than y values
 
 ```python
 ax.plot([1, 2, 3, 4], [10, 20, 30])
@@ -699,7 +699,7 @@ One "what it shows" and one "what it does **not** tell you", per chart. The seco
 | Chart | What it shows | What it does not tell you |
 |---|---|---|
 | homework | Homework climbed to 90 minutes on day 7 after a day of none at all. | Which subject, whether it was finished, or whether day 7 was catch-up for day 6. |
-| screen time | Screen time trebled on day 6, the Saturday, and dropped back on Sunday. | What was *on* the screen — homework research and cartoons look identical here. |
+| screen time | Screen time hit 180 minutes on day 6, the Saturday, and dropped back to 75 on Sunday. | What was *on* the screen — homework research and cartoons look identical here. |
 | steps | Day 6 was the only day over 10,000 steps; day 7 was the lowest at 4,300. | Whether the tracker was worn all day, or what counted as a step. |
 
 ---

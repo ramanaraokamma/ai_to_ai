@@ -28,7 +28,7 @@
 By the end of the lesson the student can:
 
 1. **Remove duplicate rows** with `drop_duplicates()` and **state exactly how many went, and which**.
-2. **Tidy several spellings of one word into one** with `.str.strip().str.title()`, and say why `strip` has to come first.
+2. **Tidy several spellings of one word into one** with `.str.strip().str.title()`, and say why `title` alone is not enough (strip is also needed).
 3. **Add a derived column** computed from columns already in the table.
 4. **Group by a column and aggregate**, and **report the group sizes alongside the averages**.
 5. **Print the before and after shape** of the table and account for the difference out loud.
@@ -170,7 +170,7 @@ Name: house, dtype: int64
 
 That reframe matters. Students want to say the computer is being stupid. It is being exact, and exactness is the only reason it can be trusted at all.
 
-### 5. The `.str` accessor, and why the order matters
+### 5. The `.str` accessor, and why `title` alone is not enough
 
 > **string method** — a command that works on writing. `strip` removes spaces from the ends; `title` makes the first letter a capital and the rest lower case.
 
@@ -200,7 +200,7 @@ nunique: 4
 
 **Fourteen became four.** And the arithmetic checks out: Blue was `Blue` 5 + `blue` 4 + `BLUE` 3 + `blue ` 1 + ` Blue` 1 = **14**. Nothing was lost, nothing was invented. Make the student do that sum; it is thirty seconds and it turns a magic trick into arithmetic.
 
-**Now the order, which is a real trap and worth staging.** What if you do `title` without `strip`? Here it is on a fresh, still-messy copy, so you can see it for yourself:
+**Now a real trap, worth staging.** What if you do `title` without `strip`? Here it is on a fresh, still-messy copy, so you can see it for yourself:
 
 ```python
 messy = pd.read_csv("house_raw.csv").drop_duplicates().reset_index(drop=True)
@@ -221,9 +221,9 @@ Name: house, dtype: int64
 nunique: 8
 ```
 
-**Eight, not four** — and the printout looks like it worked. `Blue` appears twice. `Green` appears twice. `Gold` appears twice. The spaces are still there, and **a space prints as nothing**, so the output looks like pandas has lost its mind.
+**Eight, not four** — and the printout looks like it worked. `Blue` appears three times (one with a trailing space, one with a leading space). `Green` appears twice. `Gold` appears twice. The spaces are still there, and **a space prints as nothing**, so the output looks like pandas has lost its mind.
 
-> **`strip` first, then `title`. Always. `title` on its own leaves the spaces, and the spaces print as nothing, so the bug is invisible in the output and visible only in the count.**
+> **You need `strip` AND `title`. `title` on its own leaves the spaces, and the spaces print as nothing, so the bug is invisible in the output and visible only in the count.** (Teacher note: `.str.strip().str.title()` and `.str.title().str.strip()` give identical results, so the order is a habit, not a rule. Do not tell the student that reversing them breaks anything; it does not. Leaving `strip` out is the bug.)
 
 ![Five spellings are five houses until you say otherwise](../figures/fig-w24-1-four-spellings-one-house.svg)
 *Figure 24.2 — strip first, then title. Title on its own leaves the spaces, and the spaces print as nothing.*
@@ -301,7 +301,7 @@ print(clean.sort_values("points_per_hour", ascending=False).head(5)[["name", "ho
 
 **The top three by points-per-hour are three of the lowest scorers in the school** — 48, 45 and 42. They all worked half an hour. **A new column made a new ranking, and neither ranking is a lie.** Which one you report is a choice, and it is the same kind of choice as fill-versus-drop last week: defensible either way, indefensible unaccounted for.
 
-This is also a good place to be honest with a sharp student: dividing by 0.5 makes a number three times bigger, so `points_per_hour` mostly measures *who did the least work*, not who is best. That is a real weakness of the measure and worth saying so.
+This is also a good place to be honest with a sharp student: dividing by 0.5 doubles a number, so `points_per_hour` mostly measures *who did the least work*, not who is best. That is a real weakness of the measure and worth saying so.
 
 ![A new column, worked out once per row](../figures/fig-w24-5-derived-column-per-row.svg)
 *Figure 24.3 — A derived column can turn the ranking upside down. So choose it on purpose.*
@@ -360,7 +360,7 @@ Red      12
 Name: score, dtype: int64
 ```
 
-**Two.** Gold is two people. One of them being off school that day would move Gold's average by twenty marks and drop it to the bottom of the table.
+**Two.** Gold is two people. One of them being off school that day would leave Gold's average resting on a single pupil's score (97 or 93), and one ordinary pupil joining would cut its lead over Blue by about a third.
 
 **Nothing in the `.mean()` output told you that.** Four numbers, four house names, and no hint that one of them came from two rows and another from fourteen. The printout was completely honest and completely misleading, and the student read "Gold is the best house" straight off it.
 
@@ -909,11 +909,11 @@ clean["house"].str.strip().str.title()
               off the ends  properly
 ```
 
-> "Left to right, in that order. `strip` first. And **the order matters more than anything else on this board**, because getting it wrong produces an answer that looks completely fine.
+> "Left to right. `strip` first, as a habit. And **leaving `strip` out matters more than anything else on this board**, because it produces an answer that looks completely fine.
 >
-> Why? Because if you `title` without `strip`, `blue-space` becomes `Blue-space`. And on screen **a space prints as nothing.** So you get two lines that both say `Blue`, and it looks like the computer has broken. The bug is invisible in the printout and visible only in the count.
+> Why? Because if you `title` and never `strip`, `blue-space` becomes `Blue-space`. And on screen **a space prints as nothing.** So you get two lines that both say `Blue`, and it looks like the computer has broken. The bug is invisible in the printout and visible only in the count.
 >
-> Say it back to me: strip first, then —"
+> Say it back to me: strip and —"
 
 *Title.*
 
@@ -974,7 +974,7 @@ clean.groupby("house")["score"].mean()
 | Ask | Answer you want | If they say something else |
 |---|---|---|
 | "How do you know the Bela Roy rows are a mistake?" | Every field matches, including the score. | If they say "same name", push: "could two people share a name? What makes this different?" |
-| "Why must `strip` come before `title`?" | Otherwise the spaces survive, and they print as nothing so you can't see them. | Show it: `.str.title()` alone gives eight houses and a printout that looks broken. |
+| "Why do we need `strip` as well as `title`?" | Otherwise the spaces survive, and they print as nothing so you can't see them. | Show it: `.str.title()` alone gives eight houses and a printout that looks broken. |
 | "What does a name on the left that doesn't exist do?" | Makes a new column. | If they say "an error", just run it. |
 | "72 in 3.5 hours — points per hour?" | About 20.6. | Do it on paper if they hesitate. The arithmetic is the point. |
 | "What are the three steps of groupby?" | Split, apply, combine. | Use the exam-papers story again with actual paper. It is physical for a reason. |
@@ -1150,7 +1150,7 @@ Name: club, dtype: int64
 ```
  9 | house: .str.strip().str.title() | value_counts() showed 14 spellings of 4
    | 14 spellings -> 4 houses        | houses, two with spaces I could not see.
-   |                                 | strip FIRST: title alone leaves the
+   |                                 | strip AND title: title alone leaves the
    |                                 | spaces and they print as nothing.
    |                                 | 5+4+3+1+1 = 14, so nothing was lost.
 10 | club: .str.strip().str.lower()  | 8 spellings of 3 clubs. lower not title
@@ -1310,7 +1310,7 @@ Name: score, dtype: float64
 
 > "**Two.** So if one of them had a cold that day and didn't sit the test, what happens to Gold?"
 
-Let them work it out. One member: 97 or 93 — still top. But if the *other* had been off, or if a third average pupil had joined, it collapses. The honest point is the fragility.
+Let them work it out. One member: 97 or 93 — still top. But with one row the number is just that pupil's score, and one ordinary extra pupil (73) would cut Gold's lead over Blue by about a third. The honest point is the fragility.
 
 > "Gold's average is **two people**. Blue's is fourteen. And that printout — a perfectly honest printout, with no mistakes in it at all — **does not tell you that.**
 >
@@ -1349,13 +1349,13 @@ Every message below came from running a broken version of **this week's actual c
 | `KeyError: 'hosue'` | "There is no column with that name to group by." | A typo in the column name inside `groupby`. | `print(clean.columns.tolist())` and copy the name exactly. |
 | `KeyError: 'Column not found: scoer'` | "I made the piles, then couldn't find that column in them." | A typo in the column name **after** the `groupby`. | Same fix. Note the message wording is different — that tells you which of the two brackets is wrong. |
 | `KeyError: 'hour'` | "No column called that." | `clean["score"] / clean["hour"]` — the column is `hours`. | Add the `s`. This is the most common derived-column bug. |
-| `ValueError: Length of values (3) does not match length of index (40)` | "You gave me 3 values for 40 rows." | `clean["new"] = [1, 2, 3]` — a hand-typed list instead of a calculation on existing columns. | A derived column comes from other columns, or from one single value repeated. Not from a short list. |
+| `ValueError: Length of values (3) does not match length of index (38)` | "You gave me 3 values for 38 rows." | `clean["new"] = [1, 2, 3]` — a hand-typed list instead of a calculation on existing columns. | A derived column comes from other columns, or from one single value repeated. Not from a short list. |
 | `TypeError: You have to supply one of 'by' and 'level'` | "Group by **what**?" | `groupby()` with empty brackets. | Name the column: `groupby("house")`. |
 | **`<pandas.core.groupby.generic.DataFrameGroupBy object at 0x10650b460>`** | "You printed the piles themselves, not a number." | `print(clean.groupby("house"))` with no aggregation. | Add what to do with each pile: `["score"].mean()`. The piles are not a result. |
 | **`<bound method GroupBy.size of ...>`** | "You printed the command, not what it returns." | `.size` with no brackets. | `.size()`. |
 | `FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated.` | "You asked for the mean of everything, including the words." | `clean.groupby("house").mean()` with no column picked out. | Pick the column: `groupby("house")["score"].mean()`. Pandas will silently drop the text columns for you, and relying on that is how you end up averaging the wrong thing. |
 | **No error, the shape is still `(40, 6)` after dropping duplicates** | Nothing is wrong. `drop_duplicates` returned a copy. | No `clean = ` on the front. | `clean = clean.drop_duplicates()`. Third week for this one — it should be the student who spots it. |
-| **No error, still eight houses after `.str.title()`** | Nothing is wrong. `title` capitalises; it does not remove spaces. | `strip` missing, or after `title`. | `.str.strip().str.title()`, in that order. And trust `nunique()`, not the printout. |
+| **No error, still eight houses after `.str.title()`** | Nothing is wrong. `title` capitalises; it does not remove spaces. | `strip` missing. | `.str.strip().str.title()` (strip first, by habit). And trust `nunique()`, not the printout. |
 | **No error, `value_counts()` shows the same word twice** | Nothing is wrong. They are genuinely different pieces of writing. | A leading or trailing space you cannot see. | `.str.strip()`. To prove it to a doubter: `print(clean["house"].unique())` shows the quote marks, and the spaces inside them. |
 | **No error, the group sizes don't add up to `len(df)`** | Nothing is wrong. `groupby` silently ignores rows whose group value is a hole. | Grouping by a column that still has `NaN` in it — usually `age`, before the fill. | `fillna` the grouping column first, or accept the loss **and write it in the log**. Always run the sum check. |
 | **No error, and a two-member group is at the top of the table** | Nothing is wrong. The arithmetic is perfect. | `.mean()` printed without `.size()`. | `agg(n=("score", "size"), avg=("score", "mean"))`. **This is the lesson, not a bug.** |
@@ -1508,7 +1508,7 @@ print(clean.sort_values("points_per_hour", ascending=False).head(5)[["name", "ho
 
 Ask: *"is Sami Aden the best pupil in the school?"* Then: *"is `points_per_hour` a good measure of anything?"*
 
-The honest answer, and it is worth saying plainly: **dividing by half an hour triples your number, so `points_per_hour` mostly measures who did the least work.** A derived column is a choice, and a choice can be a bad one. That is not a reason never to make derived columns — it is a reason to say which column you ranked by.
+The honest answer, and it is worth saying plainly: **dividing by half an hour doubles your number, so `points_per_hour` mostly measures who did the least work.** A derived column is a choice, and a choice can be a bad one. That is not a reason never to make derived columns — it is a reason to say which column you ranked by.
 
 ---
 
@@ -1530,7 +1530,7 @@ Let them go and find out, even though it was on screen four minutes ago in Quest
 
 1. *"What are Gold's two scores?"* → 97 and 93.
 2. *"If one of them had been off school, what would Gold's average be?"* → 97 or 93. Still top, and now from **one** row.
-3. *"If one average pupil — say 73 — joined Gold, what happens?"* → (97 + 93 + 73) ÷ 3 = **87.67**. Still top, but the lead has halved from one person arriving.
+3. *"If one average pupil — say 73 — joined Gold, what happens?"* → (97 + 93 + 73) ÷ 3 = **87.67**. Still top, but the lead over Blue has shrunk from 20.6 marks to 13.3 (about a third) from one person arriving.
 4. *"How many pupils would have to join Blue to move it 20 marks?"* → an absurd number. **That is the difference between fourteen rows and two.**
 
 **Step 4 — the sentence, written down.** Workbook page 24.7:
@@ -1720,9 +1720,9 @@ Run all three in the last five minutes. Say them exactly as written.
 
 > **A good answer:** two rows went, and they were the second Bela Roy and the second Farah Aziz — duplicates where every field matched. **Naming the two people is what makes this a pass**, not just saying "two duplicates went". If they cannot name them, have them re-run `raw[raw.duplicated(keep=False)]` — and make the point: if you cannot say which rows went, you do not know the right ones went.
 
-**Check 2 — the order of the string chain.** *"Why does `strip` have to come before `title`?"*
+**Check 2 — the string chain.** *"Why do we need `strip` as well as `title`?"*
 
-> **A good answer:** because `title` only changes capital letters. If the spaces are still there, `"Blue "` becomes `"Blue "` — still a different word from `"Blue"` — and you end up with eight houses instead of four. Full marks adds the sting: **"and you can't see it, because a space prints as nothing, so the printout looks like the computer is broken."** If they just say "because that's the order", ask what `title` actually does to a space.
+> **A good answer:** because `title` only changes capital letters. If the spaces are still there, `"Blue "` becomes `"Blue "` — still a different word from `"Blue"` — and you end up with eight houses instead of four. Full marks adds the sting: **"and you can't see it, because a space prints as nothing, so the printout looks like the computer is broken."** If they say "because `strip` has to go first", gently correct it: either order works, what matters is that `strip` is there at all. Ask what `title` actually does to a space.
 
 **Check 3 — the trap.** *"Gold has the highest average score in the school, 95.00. Should Gold get the trophy?"*
 
@@ -1860,7 +1860,7 @@ Name: house, dtype: int64
 
 1. **"How many lines, and how many houses?"** — 14 lines, 4 houses.
 2. **"`blue` appears on two separate lines. How is that possible?"** — they are not the same piece of writing. One has a trailing space. Two pieces of writing are the same only if every character matches, and a space is a character.
-3. **"Which two lines have an invisible space, and which end is it on?"** — the second `blue` (count 1) has a **trailing** space; ` Blue` has a **leading** space. There is also a second `green` (count 1) with a trailing space, which is easy to miss.
+3. **"Which lines have an invisible space, and which end is it on?"** — the second `blue` (count 1) has a **trailing** space; ` Blue` has a **leading** space. There is also a second `green` (count 1) with a trailing space, which is easy to miss, and the single `Gold` (count 1) has a trailing space too (so four lines in all).
 4. **"Add up every Blue spelling. What should Blue's count be after cleaning?"** — 5 + 4 + 3 + 1 + 1 = **14** ✔. That sum is the proof nothing was lost.
 5. **"The counts add to 40, but the clean table has 38 rows. Why?"** — this is the **raw** column, before the two duplicate rows were removed. Neither duplicate was Blue or Gold, so only Red and Green lose one each.
 6. **"Given this printout, would `.str.title()` on its own be enough?"** — no. It fixes the capitals and leaves the spaces, so you get **8** distinct values, and the printout looks broken because a space prints as nothing. `strip` first.
@@ -2107,7 +2107,7 @@ Red    12       3.17
 
 **Model answers, both full marks:**
 
-> *"Gold has the highest average score (95.00), but it has only **2** members, so the number is far too fragile to compare with Blue's, which comes from 14. If one Gold pupil had been off school the average would have been 97 or 93 — from a single row. If one ordinary pupil scoring 73 joined Gold, the average would drop to 87.67 and the lead would halve. Nothing that small could happen to a fourteen-row average, and the plain `.mean()` printout gave me no way to know any of this."*
+> *"Gold has the highest average score (95.00), but it has only **2** members, so the number is far too fragile to compare with Blue's, which comes from 14. If one Gold pupil had been off school the average would have been 97 or 93 — from a single row. If one ordinary pupil scoring 73 joined Gold, the average would drop to 87.67 and the lead over Blue would shrink by about a third. Nothing that small could happen to a fourteen-row average, and the plain `.mean()` printout gave me no way to know any of this."*
 
 > *"Gold has the highest average score (95.00), but it has only **2** members, so all it really tells me is that two particular pupils did well. It is not a fact about a house. Blue's 74.36 is a fact about a house, because fourteen different people had to agree to produce it. I should print `.size()` next to `.mean()` so that nobody reads my table the way I read it first."*
 
@@ -2131,7 +2131,7 @@ No, and this is worth stating plainly. Pandas computed exactly what it was asked
 
 **3. "You made `points_per_hour` and it put the three lowest scorers in the school at the top. Is it a good column?"**
 
-Not for the question "who is best". Dividing by 0.5 hours triples the number, so `points_per_hour` mostly rewards **doing as little work as possible**: Sami Aden scored 48 out of 100 in half an hour and tops the table, while Farah Aziz scored 95 in six hours and is nowhere near it. It is a fine column for a genuinely different question — *"who gets the most out of the time they put in?"* — but it is a bad column for *"who is doing well?"*
+Not for the question "who is best". Dividing by 0.5 hours doubles the number, so `points_per_hour` mostly rewards **doing as little work as possible**: Sami Aden scored 48 out of 100 in half an hour and tops the table, while Farah Aziz scored 95 in six hours and is nowhere near it. It is a fine column for a genuinely different question — *"who gets the most out of the time they put in?"* — but it is a bad column for *"who is doing well?"*
 
 Full marks proposes an alternative and defends it. Real answers students give: rank by score and only use hours to break ties; `score - hours * 5` to penalise nothing-doers; or ignore anybody with under one hour as too little to judge. **All are defensible.** The point is that a derived column is a **design decision made by a person**, and that person can be twelve.
 
@@ -2163,13 +2163,13 @@ Full marks requires the **group sizes** on the piles and the sum check written o
 
 **Hook.** *"How many houses?"* — four, printed as fourteen. *"Why does `blue` appear twice?"* — one copy has a hidden trailing space; ` Blue` has a leading one. *"Is the computer wrong?"* — no, it is being exact, and exactness is what makes it trustworthy. *"What is the evidence?"* — the count, not your eyes.
 
-**Concept.** *"How do you know the Bela Roy rows are a mistake?"* — every field matches, including the exact score. *"Why must `strip` come before `title`?"* — `title` only changes capitals, so the spaces survive and print as nothing; you get 8 values and a printout that looks broken. *"What does a name on the left that doesn't exist do?"* — creates a new column. *"72 in 3.5 hours?"* — 20.57. *"Three steps of groupby?"* — split, apply, combine. *"What will you do every time?"* — hand-check one pile.
+**Concept.** *"How do you know the Bela Roy rows are a mistake?"* — every field matches, including the exact score. *"Why do we need `strip` as well as `title`?"* — `title` only changes capitals, so the spaces survive and print as nothing; you get 8 values and a printout that looks broken. *"What does a name on the left that doesn't exist do?"* — creates a new column. *"72 in 3.5 hours?"* — 20.57. *"Three steps of groupby?"* — split, apply, combine. *"What will you do every time?"* — hand-check one pile.
 
 **Live-code.** Step 1 → shape still `(40, 6)`, **no error**, because `drop_duplicates` returned a copy; then `(38, 6)`, and the two rows that went were the second Bela Roy and the second Farah Aziz. Step 2 → `title` alone gives **8** values with `Blue` printed three times; `strip` then `title` gives **4**, and 5 + 4 + 3 + 1 + 1 = 14 proves nothing was lost. Clubs: 14 + 12 + 12 = 38. Step 3 → six holes, median **13.0**, filled, zero holes; six pupils are now 13 because we said so. Step 4 → 55 ÷ 2 = **27.5**; shape `(38, 7)`. Step 5 → Gold 97 + 93 = 190, 190 ÷ 2 = **95.00** ✔.
 
 **Activity Part A.** All six outputs are under Page 24.6. Q1 sizes: Blue 14, Gold 2, Green 10, Red 12, summing to 38. Q2 averages: 74.36, 95.00, 65.20, 74.25. Q3: art 70.58 (12), chess 76.07 (14), music 71.83 (12). Q4: 12 → 84.80 (10), 13 → 73.11 (18), 14 → 61.00 (10) — and the 18 is six fills. Q5 hours: Blue 3.18, Gold 3.75, Green 2.60, Red 3.17. Q6: Sami Aden 96.0, Hugo Silva 90.0, Greta Hahn 84.0, then Gita Menon and Omar Haddad tied on 52.0.
 
-*"Is Sami Aden the best pupil in the school?"* — no; he scored 48. *"Is `points_per_hour` a good measure?"* — of "who gets most from their time", maybe; of "who is doing well", no, because dividing by half an hour triples the number.
+*"Is Sami Aden the best pupil in the school?"* — no; he scored 48. *"Is `points_per_hour` a good measure?"* — of "who gets most from their time", maybe; of "who is doing well", no, because dividing by half an hour doubles the number.
 
 **Activity Part B.** Gold's two scores are 97 and 93. One member absent → 97 or 93, from a single row. One average pupil (73) joining → (97 + 93 + 73) ÷ 3 = **87.67**. Model sentences and the three partial answers are under Page 24.7.
 

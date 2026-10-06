@@ -296,7 +296,7 @@ Two supporting details, both one line each:
     with strip   : '42' True
   ```
 
-- **The pattern is always: keep it as text, check it, and only then convert.** `int()` goes *after* the check, never before. Once `.isdigit()` has said `True`, `int()` cannot fail.
+- **The pattern is always: keep it as text, check it, and only then convert.** `int()` goes *after* the check, never before. For anything typed on an ordinary keyboard, once `.isdigit()` has said `True`, `int()` will not fail. (Teacher only: a few exotic characters such as `²` are "digits" to `.isdigit()` but crash `int()`. A student will not meet them by accident.)
 
 **And now the honest limitation, which you must not hide.** `.isdigit()` is `False` for `-5`, and `False` for `85.5`, because the minus sign and the dot are not digits. So a student typing `-5` gets the message "whole numbers only", which is slightly wrong and mildly confusing. **Tell them this is a real flaw in their program, not a mystery.** The proper fix needs tools this course meets later. What matters today is that the program **does not crash**, and a wrong-but-clear message beats a traceback every time.
 
@@ -479,7 +479,7 @@ Let them think. Push a little:
 
 > "And if you now guess seventy-five and I say lower?"
 
-(Twenty-five.)
+(Twenty-four: 51 to 74. Close enough to half of fifty.)
 
 > "So every good guess **halves** what's left. Watch."
 
@@ -589,7 +589,7 @@ for n in range(1, 100):
 the first square over 500 is 23 x 23 = 529
 ```
 
-> "**`break` leaves the loop.** Immediately. That loop was set up to do ninety-nine passes and it did twenty-three, because as soon as it had the answer there was no reason to carry on. Without the `break` it would have printed seventy-six more lines, all of them wrong."
+> "**`break` leaves the loop.** Immediately. That loop was set up to do ninety-nine passes and it did twenty-three, because as soon as it had the answer there was no reason to carry on. Without the `break` it would have printed seventy-six more lines, all of them useless."
 
 ```python
 for n in range(1, 11):
@@ -1158,7 +1158,7 @@ Every message below came from running a real broken version of this week's code.
 | `NameError: name 'random' is not defined` | "I have never heard of `random`." | `import random` is missing from the top of the file. | Add `import random` as the first line. |
 | `NameError: name 'randint' is not defined` | "I have never heard of `randint` on its own." | `randint(1, 100)` without the `random.` in front. | `random.randint(1, 100)`. The toolbox's name comes first. |
 | `AttributeError: module 'random' has no attribute 'randInt'. Did you mean: 'randint'?` | "There is no `randInt` in the random toolbox — but there is a `randint`." | A capital I. Python is case-sensitive, always. | `randint`, all lowercase. **And notice Python guessed correctly and told you.** |
-| `ValueError: empty range for randrange() (100, 2, -98)` | "There are no numbers between 100 and 1." | `random.randint(100, 1)` — the arguments are the wrong way round. | `random.randint(1, 100)`. Small number first. |
+| `ValueError: empty range for randrange() (100, 2, -98)` (Python 3.12 and newer: `empty range in randrange(100, 2)`) | "There are no numbers between 100 and 1." | `random.randint(100, 1)` — the arguments are the wrong way round. | `random.randint(1, 100)`. Small number first. |
 | `NameError: name 'won' is not defined` on the `while` line | "You are checking a box that does not exist." | The flag was never set up before the loop. | `won = False` above the loop. **This is set-up, the first of the three parts.** |
 | **No error, and the loop asks one time too many** | Python is perfectly happy. | `while tries_used <= MAX_TRIES:` where `<` was meant. | `<`. Then count the prompts to prove it: seven, not eight. |
 | **No error, and `banana` is accepted as a guess** | Python is perfectly happy. `typed.isdigit` without brackets is not a question — it is the question itself, and Python treats it as a yes. | `if not typed.isdigit:` — the brackets are missing, so it never calls it. | `typed.isdigit()`. **Brackets mean "actually ask it".** |
@@ -1211,7 +1211,7 @@ Because they were designed by different people for different jobs, and consisten
 
 **"My loop stopped but my program is still frozen."**
 
-Almost always, it is sitting at an `input()` waiting for you and the prompt has scrolled off the top, or the prompt printed with no newline and is hidden at the end of a wall of text. Press Enter and see what happens. If it is genuinely stuck, Ctrl+C tells you where it was — and if the traceback's last line says `input()`, it was waiting for you, not looping.
+Almost always, it is sitting at an `input()` waiting for you and the prompt has scrolled off the top, or the prompt printed with no newline and is hidden at the end of a wall of text. Press Enter and see what happens. If it is genuinely stuck, Ctrl+C tells you where it was — and if the traceback points at a line containing `input()`, it was waiting for you, not looping.
 
 **"Can I have a loop inside a loop inside a loop?"**
 
@@ -1471,7 +1471,7 @@ It removes spaces from both ends of the text. It matters because `"  42  ".isdig
 Because the minus sign is not a digit from 0 to 9, and `.isdigit()` requires *every* character to be one. It is a **known limitation**, not a mystery: the program still refuses the input politely and does not crash, but the message "whole numbers only" is not quite honest, because −5 is a whole number. Record it rather than hide it.
 
 **8.2(j) Why exactly seven tries for 1 to 100?**
-Because a guess in the middle halves what is left: 100 → 50 → 25 → 13 → 7 → 4 → 2 → 1. That is seven halvings, so seven guesses always suffice for a player who halves. Fewer would make the game impossible; more would make it trivial.
+Because a guess in the middle halves what is left: 100 → 50 → 25 → 13 → 7 → 4 → 2 → 1. That is seven halvings, so seven guesses always suffice for a player who halves. With fewer, even a perfect player would sometimes lose; more would make it easy to win without being clever.
 
 **8.2(k) What is a flag?**
 A variable whose only job is to hold `True` or `False` and steer a loop. In `guess.py`, `won` ends one game and `playing` ends the whole session. Flipping a flag is a change step made out of a decision instead of arithmetic.
@@ -1612,7 +1612,7 @@ Traceback (most recent call last):
 ValueError: empty range for randrange() (100, 2, -98)
 ```
 
-*The fix:* small number first — `randint(1, 100)`. **Teaching point:** this traceback has *three* `File` lines, and the middle two are inside Python's own code. **Read from the bottom, and then find the last `File` line that names your own file.** Everything above that is Python's plumbing, not your problem.
+*The fix:* small number first — `randint(1, 100)`. **Teaching point:** this traceback has *three* `File` lines, and the middle two are inside Python's own code. **Read from the bottom, and then find the last `File` line that names your own file.** Everything below that is Python's plumbing, not your problem.
 
 **8.3(h)** No error. What happens, and why?
 
@@ -1881,7 +1881,7 @@ It is not a crash, and it follows exactly from the rule I chose: bad input is fr
 | `random.randint(1, 6)` can return 6 | **True.** Both ends are included. |
 | `range(1, 6)` can produce 6 | **False.** The stop is excluded. |
 | `input()` sometimes hands back a number | **False.** Always text, every time, without exception. |
-| `int()` is safe to call on anything | **False.** `ValueError` on anything that is not a number. Check first. |
+| `int()` is safe to call on anything | **False.** `ValueError` on any text that is not a whole number, such as `banana` or `4.2`. Check first. |
 | `"42".isdigit()` is `True` | **True.** |
 | `"-42".isdigit()` is `True` | **False.** The minus sign is not a digit. |
 | `"  42  ".isdigit()` is `True` | **False.** A space is not a digit. Use `.strip()` first. |

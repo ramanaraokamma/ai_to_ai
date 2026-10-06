@@ -925,7 +925,7 @@ The three rule boxes: **rule 1 — `total = 0` goes above the `for`, at the marg
 
 (a) **Python does**, through the `for` line, taking one value per pass from whatever `range` hands out. You never assign to it yourself.
 
-(b) **So the count is a plain subtraction.** `range(a, b)` hands out exactly `b - a` values, always, with no plus-one to remember. If the stop were included, every count in every program would be "the difference plus one", and *that* plus-one would be the thing everybody got wrong instead.
+(b) **So the count is a plain subtraction.** `range(a, b)` hands out exactly `b - a` values (when `b` is above `a` and there is no step), with no plus-one to remember. If the stop were included, every count in every program would be "the difference plus one", and *that* plus-one would be the thing everybody got wrong instead.
 
 (c) **Twelve.** The inner loop runs all the way through — three passes — for each of the outer loop's four passes. 4 × 3 = 12. Real proof:
 

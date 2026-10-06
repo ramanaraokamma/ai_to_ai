@@ -292,7 +292,7 @@ inside the function : 0
 after the function   : 200
 ```
 
-That is not Python being awkward. **It is the single feature that makes it safe to use a function somebody else wrote.** If a function could quietly rewrite your variables, you would have to read every line of every function before daring to call it. In Week 12 the student imports `stats.py`; in Week 29 they call `model.fit(...)`, thousands of lines written by strangers. Both are only survivable because a function takes inputs, gives an output, and changes nothing else.
+That is not Python being awkward. **It is the single feature that makes it safe to use a function somebody else wrote.** If a function could quietly rewrite your variables, you would have to read every line of every function before daring to call it. In Week 12 the student imports `stats.py`; in Week 29 they call `model.fit(...)`, thousands of lines written by strangers. Both are only survivable because a function takes inputs and cannot quietly rewrite your other variables by name.
 
 ### 8. The three misconceptions you will actually meet
 
@@ -646,7 +646,7 @@ SyntaxError: expected ':'
 
 **Say this:**
 
-> "Read the last line out loud. — 'SyntaxError: expected colon.' That is Python being about as helpful as it ever gets. It has even drawn an arrow at the exact character where it wanted one.
+> "Read the last line out loud. — 'SyntaxError: expected colon.' That is Python being about as helpful as it ever gets. It has even drawn carets along the part of the line where it wanted one (they sit under the comment, which just happens to be in that space).
 >
 > Notice something else: nothing ran at all. No 12, no 0, no minus 6. A SyntaxError means Python couldn't even read the file, let alone start doing what it said. That's actually the easiest kind of error to have.
 >
@@ -715,6 +715,8 @@ Predict first — most students say `12` then `answer is: 12`. **Run.**
 answer is: None
 ```
 
+*(That is what the last two lines add. The whole file prints more than that: the earlier `print(double(6))`, `print(double(0))` and `print(double(-3))` lines now show `12`, `None`, `0`, `None`, `-6`, `None`, because `double` no longer returns anything. Same bug, three more times. Have them scroll to the bottom to find your `answer is:` line.)*
+
 **Say this, slowly:**
 
 > "Look at that. The twelve is *there*. It printed. The function did the maths perfectly and it put the right answer on the screen.
@@ -751,7 +753,7 @@ Every one of these tracebacks came from actually running a broken version of thi
 
 | What the student sees (real message) | What it means | Most likely cause | The fix |
 |---|---|---|---|
-| `SyntaxError: expected ':'` with an arrow under the closing bracket | Python could not read the line at all. Nothing ran. | The colon at the end of the `def` line is missing. | Put the colon after the closing bracket: `def double(number):` |
+| `SyntaxError: expected ':'` with carets along the end of the `def` line (under the comment, if there is one) | Python could not read the line at all. Nothing ran. | The colon at the end of the `def` line is missing. | Put the colon after the closing bracket: `def double(number):` |
 | `IndentationError: expected an indented block after function definition on line 1` | The `def` line promised a body and the next line was flush left. | The body was never indented, or the editor is mixing tabs and spaces. | Indent the body four spaces. If it looks indented already, it is tabs — VS Code bottom bar → *Convert Indentation to Spaces*. |
 | `TypeError: change_left() missing 1 required positional argument: 'cost'` | You gave the function fewer values than it has boxes. | Called `change_left(100)` when it needs two. | Supply the second argument, or give `cost` a default in the definition. The message names the box it is still waiting for. |
 | `TypeError: double() takes 1 positional argument but 2 were given` | You gave more values than there are boxes. | Called `double(6, 7)`. Often a stray comma, or two functions being confused. | Count the names in the definition and the values at the call. They must match. |
@@ -889,13 +891,16 @@ def weekly_saving(pocket_money, spent):
     # Should give back how much is left over each week.
     print(pocket_money - spent)
 
+
 def yearly_saving(weekly, weeks=52):
     # Should give back the saving for a whole year.
     return weekly * weeks
 
+
 def rupees(amount):
     # Should give back the amount as a tidy piece of text.
     return f"Rs {amount:.2f}"
+
 
 # ---- the report ----
 left_each_week = weekly_saving(200, 145)

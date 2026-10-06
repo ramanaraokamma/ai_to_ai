@@ -540,7 +540,7 @@ They hand you `67` — most students get this one right immediately, which is wo
 
 > "One step along. Index one. Two steps along, index two. Three steps, index three.
 >
-> Once you say it as *distance* instead of *position*, zero is the only answer that makes sense. And it isn't just a Python quirk — it's how nearly every programming language written in the last fifty years counts, for exactly this reason."
+> Once you say it as *distance* instead of *position*, zero is the only answer that makes sense. And it isn't just a Python quirk — it's how most of the languages you'll meet - Python, C, Java, JavaScript - count, for exactly this reason. A few others start at 1, and we'll meet them later."
 
 Write into the notebook:
 
@@ -956,7 +956,7 @@ IndexError: list index out of range
 None of these needs any syntax beyond this week's four items.
 
 1. **The fencepost audit.** Give them this and ask for the answer *before* running: for a list of `n` items, write down (a) the first index, (b) the last index, (c) how many valid indexes there are, (d) the most negative valid index. *(0 · n−1 · n · −n.)* Then check all four on a 7-item list and again on an empty list, where the honest answer is "there are none at all".
-2. **The two-way table.** For the 8-item list, write out every slot twice — once with its positive index and once with its negative one. Then the question that makes it a lesson: **"For a list of `n` items, what do the positive and negative index of the same slot always add up to?"** *(They differ by `n`: `i - n` is the negative form. Worth checking on two lists before believing it.)*
+2. **The two-way table.** For the 8-item list, write out every slot twice — once with its positive index and once with its negative one. Then the question that makes it a lesson: **"For a list of `n` items, by how much do the positive and negative index of the same slot always differ?"** *(By `n`: slot `i` is also `i - n`. Worth checking on two lists before believing it.)*
 3. **Diagnose it cold.** Hand them `scores = scores.append(89)` in a file they have not seen, with no hint, and time how long it takes. Then: "Which word in the error message was the clue, and where did you meet it before?" *(`NoneType`, last week.)*
 4. **Find the day of the biggest total** without using anything from next week. This needs an accumulator that remembers a *position*:
    ```python
@@ -970,7 +970,7 @@ None of these needs any syntax beyond this week's four items.
    biggest day was slot 6 with 15200 steps
    ```
    Then the real question: **"Slot 6. Which day of the week is that, and what did you have to add?"** *(Sunday, the seventh day — you have to add one to translate a slot number into a human count. That translation is a permanent part of programming and should always be written down explicitly.)*
-5. **What would break?** "Somebody appends an eighth day to `steps`. Go through your twelve drills and list every single one whose answer changes." *(2, 5's first half, 7, 8, 9, 10, 11 — and notice that `steps[-1]` in drill 9 keeps working while `steps[6]` in drill 5 quietly stops meaning "the last day". That is the argument for `-1`, made by the student instead of by you.)*
+5. **What would break?** "Somebody appends an eighth day to `steps`. Go through your twelve drills and list every single one whose answer changes." *(Printed answers change in 1, 2, 5, 6, 7, 8, 9, 10 and 11, and drill 12 stops crashing because slot 8 now exists; only 3 and 4 are untouched. The useful distinction is which answers become *wrong*: `steps[6]` in drill 5 quietly stops meaning "the last day", while `steps[-1]` and `steps[-2]` still mean what they say. That is the argument for `-1`, made by the student instead of by you.)*
 
 ---
 

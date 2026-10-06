@@ -52,7 +52,7 @@ This is the one idea the whole lesson exists to install, and it is worth being b
 
 A file full of Python is just text. Something has to *read* it and *do* it.
 
-> **Interpreter** — the program, already on your computer, that reads your Python file one line at a time and actually performs each instruction.
+> **Interpreter** — the program, already on your computer, that reads your Python file and actually performs each instruction, top to bottom.
 
 The interpreter is called `python3`. You will use it like this:
 
@@ -276,7 +276,7 @@ restart.
 
 ### 20 minutes the night before
 
-- [ ] **Open a terminal and type `python3 --version`.** You want to see `Python 3.9` or higher. If it errors, go to [Orientation §4](00-orientation.md) and fix it tonight, not tomorrow.
+- [ ] **Open a terminal and type `python3 --version`.** You want to see `Python 3.9` or higher. **The exact error wording printed in this guide (`Did you mean`, `'(' was never closed`, `unterminated string literal`) is Python 3.10 and newer; on 3.9 the same mistakes give older messages such as `invalid syntax`, `unexpected EOF while parsing` or `EOL while scanning string literal`, so prefer 3.10+ for this week.** If it errors, go to [Orientation §4](00-orientation.md) and fix it tonight, not tomorrow.
 - [ ] **Make the folder for the whole year**, if you haven't:
       ```bash
       mkdir -p ~/ai-academy/level2
@@ -658,7 +658,7 @@ Save. Run. Real output:
 
 ```text
 Traceback (most recent call last):
-  File "/Users/you/ai-academy/level2/pizza_maths.py", line 8, in <module>
+  File "/Users/you/ai-academy/level2/pizza_maths.py", line 7, in <module>
     print(Hello)
 NameError: name 'Hello' is not defined
 ```
@@ -885,7 +885,7 @@ It isn't wrong, it's a different question. `"7"` in quotes isn't the number seve
 
 **"The computer told me off. Did I break it?"**
 
-You cannot break it by typing a wrong instruction. Not once, not ever, not by trying. Python reads your file, decides it doesn't understand line 3, prints a message, and stops. Your file is fine, the laptop is fine, Python is fine. An error message costs nothing at all except the four seconds it takes to read it. This is genuinely one of the safest places in the world to be wrong, and you should take advantage of that shamelessly.
+You cannot break anything with the kind of lines we type this week. Not once, not by trying. (Later code can delete files, and we will treat that with care when it arrives.) Python reads your file, decides it doesn't understand line 3, prints a message, and stops. Your file is fine, the laptop is fine, Python is fine. An error message costs nothing at all except the four seconds it takes to read it. This is genuinely one of the safest places in the world to be wrong, and you should take advantage of that shamelessly.
 
 **"How does the computer actually understand English words like `print`?"**
 
@@ -1304,7 +1304,7 @@ The two `SyntaxError`s. You can tell because there is **no** `Traceback (most re
 Because next time you see it you need to recognise it **instantly**, and you only recognise the exact wording if you have written the exact wording. Also, "it said something about a name" is not searchable and `NameError: name 'prnt' is not defined` is.
 
 **1.5(c) Which error was easiest to fix, and which took longest? Why?**
-Any honest answer. The pattern worth pointing out when you mark it: the **misspelling** is usually fastest, because Python names the word and often guesses the fix. The **missing quote** is usually slowest, because the `^` marker can point at a line that looks completely fine — Python kept reading past the end of the string, so the complaint surfaces later than the mistake.
+Any honest answer. The pattern worth pointing out when you mark it: the **misspelling** is usually fastest, because Python names the word and often guesses the fix. The **missing quote** is usually easy once they look at the `^`, which sits under the quote that was opened and never closed (the editor also colours the rest of the line as text, which is a clue). A string cannot run over onto the next line, so Python reports it on the same line.
 
 ### Page 1.6 — Predict the output
 

@@ -460,6 +460,9 @@ ________________________________________________________________
 **Bug 2.** Fix bug 1 and run again. The real message:
 
 ```text
+house
+Blue     74.36
+Red      74.25
 Green    67.42
 Name: score, dtype: float64
 Traceback (most recent call last):
@@ -474,7 +477,7 @@ ________________________________________________________________
 
 **Which earlier week is this exact mistake from?** ______________________
 
-**The fix — and note there are FOUR lines to change:**
+**The fix — and note there are FIVE lines to change:**
 
 ________________________________________________________________
 
@@ -1261,16 +1264,17 @@ axes[0].set_ylabel("Mean score (points out of 100)")
 
 **Which week?** **Week 11** — list slots start at 0, so the last slot of a two-slot thing is number 1. Same off-by-one, different clothing. *(And notice the error says `axis 0 with size 2`, which is Week 17's language for "the first direction has two slots in it".)*
 
-**The fix — four lines**, all the `axes[2]` ones:
+**The fix — five lines**, all the `axes[2]` ones:
 
 ```python
 axes[1].bar(means.index, means.values)
 axes[1].set_ylim(100, 0)
 axes[1].set_title("HONEST: axis starts at 0")
 axes[1].set_xlabel("House")
+axes[1].set_ylabel("Mean score (points out of 100)")
 ```
 
-*(That is four `axes[2]` occurrences becoming `axes[1]` — the `bar`, the `set_ylim`, the `set_title` and the `set_xlabel`. The `set_ylabel` line already said `axes[2]` too, so check for five if you count it. Any answer that says "change every `axes[2]` to `axes[1]`" is full marks.)*
+*(That is five `axes[2]` occurrences becoming `axes[1]` — the `bar`, the `set_ylim`, the `set_title`, the `set_xlabel` and the `set_ylabel`. Any answer that says "change every `axes[2]` to `axes[1]`" is full marks.)*
 
 **Bug 3 — the silent one.**
 
@@ -1339,7 +1343,7 @@ F =  100  ->  bottom = 48.9798   check: 100.00
 
 **(e)** Rounded to **48.96**: the visible bars become 2.04 and 0.04, and 2.04 ÷ 0.04 = **51.00**.
 
-**(f)** **Brutally sensitive.** Changing the floor by **one hundredth of a percentage point** — from 48.9592 to 48.96 — changed the lie from 50× to 51×. As the floor creeps towards the smaller bar, the smaller *visible* bar heads towards zero, and dividing by something near zero magnifies every tiny change. **Which is another way of saying: a number like 48.96 was not derived. It was nudged.**
+**(f)** **Brutally sensitive.** Changing the floor by **less than a thousandth of a percentage point** (0.0008) — from 48.9592 to 48.96 — changed the lie from 50× to 51×. As the floor creeps towards the smaller bar, the smaller *visible* bar heads towards zero, and dividing by something near zero magnifies every tiny change. **Which is another way of saying: a number like 48.96 was not derived. It was nudged.**
 
 **Part 2 — Spot the floor**
 
@@ -1366,7 +1370,7 @@ F =  100  ->  bottom = 48.9798   check: 100.00
 
 **T1.** Model answer:
 
-> *The ice-cream number is biggest because ice cream and drowning are both almost perfectly driven by the same third thing, and a correlation measures how tightly two columns move together **regardless of why**. Hot weather pushes both up in lockstep, so they track each other even more tightly than either one tracks the temperature itself, which is why 0.997 beats 0.987 and 0.989. So strength is not evidence of direction at all: the strongest of my three numbers is the one that is nonsense.*
+> *The ice-cream number is biggest because ice cream and drowning are both almost perfectly driven by the same third thing, and a correlation measures how tightly two columns move together **regardless of why**. Hot weather pushes both up in lockstep, and in this made-up table the two happen to track each other even more tightly than either one tracks the temperature (0.997 against 0.987 and 0.989). That is a quirk of these six invented rows: with real, noisier data, two things driven by a third usually track each other *less* tightly than each tracks the third, so you cannot rely on the ice-cream number being the biggest. Either way, strength is not evidence of direction at all: the strongest of my three numbers is the one that is nonsense.*
 >
 > *The school data makes it worse. Sleep and marks are 0.994; screens and marks are −0.997; and sleep and screens are −0.987 with **each other**. The two candidate causes are so tangled that the students who sleep a lot are exactly the students who use screens a little. Correlation can tell me that all three move together and nothing whatsoever about which one is doing the work — because there is no arrangement of these three numbers that could distinguish "screens ruin sleep which ruins marks" from "a strict bedtime causes both" from "a quiet, organised home causes all three".*
 >

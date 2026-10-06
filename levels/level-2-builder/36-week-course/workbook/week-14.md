@@ -1091,7 +1091,7 @@ most played : 300
 
 **Bug 1 — a missing comma.**
 
-(a) **No.** The mistake is not on line 4.
+(a) **Yes, but only just.** The missing comma belongs at the very **end** of line 4, yet the carets underline the whole record, so they do not say which character is missing.
 
 (b) A **comma** is missing after the closing `}` of the **Asha** record. Twelve records need eleven commas between them; five records need four.
 
@@ -1101,7 +1101,7 @@ most played : 300
     {"name": "Asha",  "club": "Chess",    "years": 3},
 ```
 
-(d) Python only notices when it reads the **next** thing and finds a `{` where it expected a comma or a `]`. So the carets land on the record **before** the one it choked on. **When a `SyntaxError` points at something that looks fine, look at the end of the line above.**
+(d) Python only notices when it reads the **next** thing and finds a `{` where it expected a comma or a `]`. So the carets underline the whole record **before** the gap (the one that is missing its comma), not the record it choked on. **When a "forgot a comma" error underlines a record that looks fine, look at the very end of that record.**
 
 **Bug 2 — a capital letter.**
 

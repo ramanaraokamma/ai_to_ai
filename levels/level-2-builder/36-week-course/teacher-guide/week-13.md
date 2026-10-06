@@ -298,7 +298,7 @@ The honest rule:
 ### 9. The three misconceptions you will actually meet
 
 **Misconception 1 — "a dictionary is in alphabetical order."**
-It is not, and the name is misleading. A dictionary keeps the pairs **in the order you typed them**, and nothing sorts them. If a student expects `balls` to come before `name`, show them `print(asha)` and count the pairs off against the line they typed. (Python 3.6 and earlier really did scramble the order, which is where this belief comes from. Do not mention that unless asked.)
+It is not, and the name is misleading. A dictionary keeps the pairs **in the order you typed them**, and nothing sorts them. If a student expects `balls` to come before `name`, show them `print(asha)` and count the pairs off against the line they typed. (Python 3.5 and earlier really did scramble the order, which is where this belief comes from. Do not mention that unless asked.)
 
 **Misconception 2 — "`asha[0]` should give me the first pair."**
 It will not; it raises `KeyError: 0`. A dictionary has no first, second or third. It has labels. The fix in their head is not "use the right number", it is "there are no numbers here". This one is worth catching early because it is a hangover from Week 11 and it is *reasonable*.
@@ -629,7 +629,7 @@ KeyError: 'Runs'
 >
 > *`KeyError: 'Runs'`*
 >
-> "So what's Python telling you? It's not being vague. It's not saying 'something went wrong'. It's saying: **you asked me for a key called `Runs`, and there is no key called `Runs`.** And it's completely correct. Look at your own line 3. What did you call it?"
+> "So what's Python telling you? It's not being vague. It's not saying 'something went wrong'. It's saying: **you asked me for a key called `Runs`, and there is no key called `Runs`.** And it's completely correct. Look at your own line 4. What did you call it?"
 >
 > *`runs`, small r.*
 >

@@ -273,9 +273,9 @@ print(rain.sum())               # add up the whole grid
 1710
 ```
 
-Three routes, one number. That is not magic — it is the same twenty-four numbers, added in three different orders. **If a table is a proper rectangle, all three of those must agree.** If they ever do not, something is genuinely broken: a typo, a missing number, a row with the wrong length.
+Three routes, one number. That is not magic — it is the same twenty-four numbers, added in three different orders. **All three of those must agree — always.** They are the same numbers added in different orders, so numpy can never make them disagree. That makes this line a check on your *understanding* and on any totals you add up by hand, not a detector for a wrong axis or a mistyped number: a wrong `axis` still gives three matching totals. (A row with the wrong length is caught earlier, when numpy refuses to build the array.)
 
-Call it the **corner check**, because on paper it lands in the bottom-right corner where the two margins meet. Accountants have been doing it for four hundred years and it is one line of Python.
+Call it the **corner check**, because on paper it lands in the bottom-right corner where the two margins meet. Accountants have been cross-footing tables like this for centuries, and in Python it is one line. On paper it is a real check, because your own adding-up can slip; in numpy it will always agree, so use it to confirm you understand the two directions.
 
 > **🤔 Think about it:** what should you do if the pencil and the code disagree? **Not "trust the code."** The code is not automatically right, and neither is the pencil. Something is wrong and now you have to find out which one — and that is not a bad afternoon. That is the job.
 
@@ -442,7 +442,7 @@ month_total = rain.sum(axis=0)              # one total per month
 print("city totals :", city_total)
 print("month totals:", month_total)
 
-# --- the cross-check that catches an axis mistake ---------------------------
+# --- the cross-check: three routes to the same total ------------------------
 print("city totals add to :", city_total.sum())
 print("month totals add to:", month_total.sum())
 print("whole grid adds to :", rain.sum())
@@ -531,7 +531,7 @@ month_total = rain.sum(axis=0)              # one total per month
 print("city totals :", city_total)
 print("month totals:", month_total)
 
-# --- the cross-check that catches an axis mistake ---------------------------
+# --- the cross-check: three routes to the same total ------------------------
 print("city totals add to :", city_total.sum())
 print("month totals add to:", month_total.sum())
 print("whole grid adds to :", rain.sum())
@@ -843,7 +843,7 @@ Six, and four. There is your bug, and you found it without anybody telling you.
 | `TypeError: 'tuple' object is not callable` | "`.shape` is a fact, not an action." | `rain.shape`, no brackets. A verb takes brackets; a fact does not |
 | `TypeError: 'str' object cannot be interpreted as an integer` | "The axis has to be a number." | `axis=0`, not `axis="0"` |
 | **No error, 4 numbers where 6 belong** | Nothing is wrong as far as numpy is concerned. Both are legal averages | Count the answers against the count of labels. **This is the week's headline bug and it has no message** |
-| **No error, the three totals disagree** | Nothing is wrong as far as numpy is concerned | A typo, or a row with the wrong number of values. Print `rain.shape` and compare it with `len(cities)` and `len(months)` |
+| **No error, your hand-added margins disagree with each other** | Nothing is wrong as far as numpy is concerned | A slip in your own adding-up on paper. (The three numpy totals cannot disagree.) To catch a mistyped grid, print `rain.shape` and compare it with `len(cities)` and `len(months)`, and compare a total with the source |
 | **No error, `rain[:, 0]` printed sideways** | Nothing is wrong at all. This is correct | Nothing to fix. Print `.shape` if you doubt it: `(4,)` |
 
 ---
@@ -937,7 +937,7 @@ And one thing worth staring at: **`rain.mean(axis=1)[1]` has two ones in it and 
 114 + 110 + 129 + 200 + 427 + 730 = 1710
 ```
 
-One number, reached two ways. If your two ways disagree, you have a typo in your grid and you have just found it without anybody telling you. **That is what a check is.**
+One number, reached two ways. If your two ways disagree, you have made a slip in your adding-up and you have just found it without anybody telling you. **That is what a check is.**
 
 ---
 
@@ -1004,7 +1004,7 @@ If it helps: the grid is a chocolate bar and `rain[:, 0]` snaps off one strip. O
 2. **Your school report.** One row per subject, one column per term. Your average *per subject* and the class average *per term* come out of the same grid and answer different questions — and somebody had to decide which one goes on the front page.
 3. **A phone's battery-by-app screen.** Apps down, hours across. "Which app drained the most?" is one direction. "Which hour was worst?" is the other. Notice which one the app chooses to show you.
 4. **Weather summaries.** "Wettest June on record" is a column answer. "Wettest city in India" is a row answer. Newspapers mix these up constantly, and once you can see the two directions you will start catching it.
-5. **A digital photo.** A photo is a grid of brightness numbers, height down and width across. Averaging one direction blurs it vertically; averaging the other blurs it horizontally. That is not a metaphor — it is exactly `axis=0` and `axis=1` on a much bigger array, and it is what Level 3 does all day.
+5. **A digital photo.** A photo is a grid of brightness numbers, height down and width across. Averaging down the rows squashes it into one brightness per column; averaging across the columns squashes it into one brightness per row. That is not a metaphor — it is exactly `axis=0` and `axis=1` on a much bigger array, and Level 3 uses it constantly.
 6. **Sports tables.** Players down, matches across. Batting averages are `axis=1`. "How hard was that pitch?" is `axis=0`. Every stat on a cricket scorecard is one of those two directions, and the interesting arguments are about which one somebody chose.
 
 ---
@@ -1043,7 +1043,7 @@ weeks 19 to 22 — is where you now stand. Stage two is plain white and finished
 - **`arr[1, 2]` is row one, column two** — row first, one comma, one pair of brackets, and both counted from zero.
 - **A colon means "every one of these" in that direction**, and `arr[:, 0]` prints sideways, which is correct.
 - **The wrong axis does not crash.** It hands you a plausible number that answers a different question. Count the answers, then hand-check one of them **in pen, before you look at the code's answer.**
-- **The corner check is free.** Add the grid up in rows, in columns, and all at once. All three must agree.
+- **The corner check is free.** Add the grid up in rows, in columns, and all at once. All three must agree. On paper, a mismatch means an adding-up slip; in numpy they always agree, so it cannot catch a wrong axis.
 
 ### Syntax reminder card
 
@@ -1078,7 +1078,7 @@ print(per_column.shape, "- should be 3, one per column")
 
 # ---- the corner check: three routes, one number ------------------------
 print(rain.sum(axis=0).sum(), rain.sum(axis=1).sum(), rain.sum())   # 56 56 56
-# if these ever disagree, a number in your grid is not what you think it is
+# these always agree in numpy; on paper, a mismatch means an adding-up slip
 ```
 
 ---

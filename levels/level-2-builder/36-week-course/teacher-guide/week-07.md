@@ -77,7 +77,7 @@ Six things are happening in that line. A student who can name all six can debug 
 
 | Part | What it is | What happens if you get it wrong |
 |---|---|---|
-| `for` | The keyword that starts a loop. | Nothing else starts a loop. There is no other spelling. |
+| `for` | The keyword that starts this kind of loop. | Every `for` loop starts with it. There is no other spelling (`while`, a different keyword, is next week). |
 | `i` | **A variable that Python fills in for you.** You choose the name; Python chooses the value, once per pass. | Any legal name works. `for n`, `for row`, `for score` — all fine, and usually better than `i`. |
 | `in` | A keyword. It sits between the name and the values. | Leave it out and you get a `SyntaxError`. |
 | `range(4)` | Where the values come from. `range(4)` hands out 0, 1, 2, 3 — one per pass. | Give it text instead of a number and you get a `TypeError`. |
@@ -155,7 +155,7 @@ Counting backwards:
 
 **Why does it stop early? Give the student the honest reason, because there is one.** It is not a quirk and it is not an accident.
 
-**Because then the count is a subtraction, always.** `range(a, b)` hands out exactly `b - a` values. `range(1, 5)` → 5 − 1 = 4 values. `range(0, 101, 10)` → eleven values, and you can check that by dividing. If `range` included the stop number, every count would be "the difference, plus one", and *that* plus-one would be the thing everybody got wrong instead.
+**Because then the count is a subtraction.** When the stop is above the start, `range(a, b)` hands out exactly `b - a` values. `range(1, 5)` → 5 − 1 = 4 values. With a step the count changes: `range(0, 101, 10)` → eleven values (0, 10 … 100), so count those rather than subtracting. If `range` included the stop number, every count would be "the difference, plus one", and *that* plus-one would be the thing everybody got wrong instead.
 
 ![The stop number is a fence post, not a value](../figures/fig-w07-2-range-starts-at-zero.svg)
 *Figure 7.1 — The stop number is a fence post you count up to, not a value you get handed. That is what makes the count a clean subtraction.*
@@ -171,7 +171,7 @@ for n in range(10, 1):     # stop is BELOW start, with no negative step
     print(n)
 ```
 
-Both print **nothing at all**. Zero passes, no error. `3 - 3 = 0` values and `1 - 10 = -9` values, which is also none. If a student's loop produces no output whatsoever, this is the first thing to check.
+Both print **nothing at all**. Zero passes, no error. `3 - 3 = 0` values, and `1 - 10` is below zero, which also means none (you cannot hand out fewer than nothing). If a student's loop produces no output whatsoever, this is the first thing to check.
 
 ### 4. The counter is a box Python refills
 
@@ -1107,7 +1107,7 @@ Score 11 of 12: 62
    running total after 11 scores: 827
 ----------------------------------
   Scores added : 12
-  Total        : 900
+  Total        : 827
   Average      : 68.92
 ----------------------------------
 ```
@@ -1136,7 +1136,7 @@ Then, and only these questions:
 
 Show Figure 7.4.
 
-> "One character. `HOW_MANY + 1` became `HOW_MANY`. And here's the bit I want you to write in your Bug Log: **there was no error message, and the average was wrong by more than six marks.** If those had been real people's marks, every one of them would have been reported six marks too low, and the only way anyone would ever find out is if somebody counted."
+> "One character. `HOW_MANY + 1` became `HOW_MANY`. And here's the bit I want you to write in your Bug Log: **there was no error message, and the average was wrong by more than six marks.** If those had been real people's marks, the class average would have been reported six marks too low, and the only way anyone would ever find out is if somebody counted."
 
 Then the fix, and the proof:
 
@@ -1267,7 +1267,7 @@ And the habit to name explicitly, because it will save them for the rest of the 
 
 **"Why does `range` start at zero? Nobody counts from zero."**
 
-You will, in about four weeks, and then it will feel obvious — but the honest answer today is about the *count*. `range(a, b)` hands out exactly `b - a` values, and `range(n)` hands out exactly `n`. That works because the stop is excluded and the start is included. If both ends were included, every count would be "the difference, plus one", and you would spend your life adding and subtracting ones. There is a second reason that lands in Week 11: when you meet lists, the first slot is numbered 0, so `range(len(scores))` gives you exactly the right slot numbers with no arithmetic at all. Today, zero looks like a wart. In Week 12 it looks like a plan.
+You will, in about four weeks, and then it will feel obvious — but the honest answer today is about the *count*. `range(a, b)` hands out exactly `b - a` values (when `b` is above `a` and there is no step), and `range(n)` hands out exactly `n`. That works because the stop is excluded and the start is included. If both ends were included, every count would be "the difference, plus one", and you would spend your life adding and subtracting ones. There is a second reason that lands in Week 11: when you meet lists, the first slot is numbered 0, so `range(len(scores))` gives you exactly the right slot numbers with no arithmetic at all. Today, zero looks like a wart. In Week 12 it looks like a plan.
 
 **"Can I call the counter something other than `i`?"**
 
@@ -1569,7 +1569,7 @@ Python does, through the `for` line, taking one value per pass from whatever `ra
 Because it starts at 0 rather than 1. Counting 0, 1, 2, 3 gives you four numbers whose last one is one less than four. The count and the last value are two different questions with two different answers, which is exactly why this is confusing.
 
 **7.2(d) Why does `range` stop *before* the number you give it?**
-So the count is a plain subtraction. `range(a, b)` hands out exactly `b - a` values, always, with no plus-one to remember. If the stop were included, every count in every program would be "the difference plus one".
+So the count is a plain subtraction. `range(a, b)` hands out exactly `b - a` values (when `b` is above `a`, with no step), with no plus-one to remember. If the stop were included, every count in every program would be "the difference plus one".
 
 **7.2(e) How many values does each of these hand out?**
 
@@ -1875,7 +1875,7 @@ A full-credit answer names something other than speed. Model answer:
 > So loops save mistakes, not milliseconds — and they let me write down a pattern instead of a list.
 
 **7.6(b) Why does `range` start at 0 and stop early? Give the argument, not just the rule.**
-Because it makes the count a subtraction: `range(a, b)` always hands out exactly `b - a` values. Include both ends and every count becomes "the difference plus one", so the plus-one becomes the thing everybody gets wrong instead. There is a second reason arriving in Week 11: list slots are numbered from 0, so `range` and slot numbers line up with no arithmetic at all. The rule is a wart today and a plan later.
+Because it makes the count a subtraction: `range(a, b)` always hands out exactly `b - a` values (when `b` is above `a`, with no step). Include both ends and every count becomes "the difference plus one", so the plus-one becomes the thing everybody gets wrong instead. There is a second reason arriving in Week 11: list slots are numbered from 0, so `range` and slot numbers line up with no arithmetic at all. The rule is a wart today and a plan later.
 
 **7.6(c) Your program printed `Scores added : 12` while reading eleven. Whose fault is that, and how would you stop it happening again?**
 It is the programmer's fault, not Python's — that line prints `HOW_MANY`, which is a number *I* typed, so it reports what I *intended*, not what happened. The fix is a second accumulator: a counter that goes up by one every pass, and a report that prints the counter. Then a mismatch between "asked for" and "read" shows up on the screen instead of hiding. **The general principle is: make the program report what it actually did, not what it was told to do.**

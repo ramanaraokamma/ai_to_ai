@@ -721,7 +721,7 @@ ababab
 ababab!
 ```
 
-Line 1 is in quotes, so it is six characters of text and Python never looks at it as a sum. Line 2: text and a number, so it repeats — and note it works **either way round**, `3 * "ab"` is the same as `"ab" * 3`. Line 3: the repeating happens first, then `+` glues the `!` on the end.
+Line 1 is in quotes, so it is seven characters of text and Python never looks at it as a sum. Line 2: text and a number, so it repeats — and note it works **either way round**, `3 * "ab"` is the same as `"ab" * 3`. Line 3: the repeating happens first, then `+` glues the `!` on the end.
 
 **Snippet 4** — real output:
 
@@ -746,7 +746,7 @@ Four lines out. Line 1: the comma printed a **space**, and `5 * 20` was worked o
 
 (a) **(b) `2 + 2`.** The quotes make it text, so Python shows the five characters and never treats it as a sum. It does not even *look* at them as maths — it cannot, they are in quotes.
 
-(b) **FALSE.** Python reads your file, finds a line it cannot understand, prints a message saying where and why, and stops. Nothing is damaged — not the file, not Python, not the laptop. **You cannot break a computer by typing a wrong instruction.** An error message costs you four seconds and it is a signpost, not a punishment.
+(b) **FALSE.** Python reads your file, finds a line it cannot understand, prints a message saying where and why, and stops. Nothing is damaged — not the file, not Python, not the laptop. **You cannot break a computer with the kind of lines you type this week.** An error message costs you four seconds and it is a signpost, not a punishment.
 
 **A3.** program = **C** · interpreter = **E** · print = **B** · comment = **A** · syntax = **D**.
 
@@ -943,7 +943,7 @@ Candles on the cake: |||||||||||||
 
 **(a) `4.5` pizzas.** You cannot order half a pizza, so you round up to 5 — and the honest thing to do is what this file does: print **both** numbers, so a reader can see the real figure and the decision you made about it. What is **not** honest is quietly printing `5` and letting the reader think the sum came out at 5. Right now you have to type the 5 yourself, which means the computer is not doing that rounding — you are. There is a proper tool for it and it arrives in Week 3.
 
-**(b) The number `12` is typed five times** (guests, slices needed, pizzas needed, drinks cost, everything, cost per guest — count them on your own file; in the model answer above it appears on six lines).
+**(b) The number `12` is typed seven times, on six lines** (guests, slices needed, pizzas needed, drinks cost, everything, cost per guest, which uses it twice — count them on your own file).
 
 **One more guest means editing every single one of those lines.** And you will miss one. Everybody misses one — that is not carelessness, it is what happens to human beings asked to keep six copies of a fact in step.
 
@@ -1169,7 +1169,7 @@ Model rows, using the three errors this week's work really produces:
 
 **(b) Why copy it out by hand?** Because next time you see it you want to recognise it **instantly**, and you only recognise exact wording if you have written exact wording. Also: *"it said something about a name"* is not searchable, and `NameError: name 'prnt' is not defined` is.
 
-**(c) Which took longest?** Any honest answer. The pattern worth knowing: the **misspelling** is usually fastest, because Python names the word and often guesses the fix. The **missing quote** is usually slowest, because the `^` marker can point at a line that looks completely fine — Python carried on reading past the end of your text, so the complaint surfaces *later* than the mistake.
+**(c) Which took longest?** Any honest answer. The pattern worth knowing: the **misspelling** is usually fastest, because Python names the word and often guesses the fix. The **missing quote** is usually easy once you look at the `^`, which sits under the quote that was opened and never closed; a string cannot run onto the next line, so Python reports it on the same line.
 
 ---
 

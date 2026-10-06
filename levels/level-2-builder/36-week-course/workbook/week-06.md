@@ -1099,9 +1099,9 @@ days_late = int(input("How many days late? "))   # how late the book is
 ```python
 if days_late >= 14:                              # strictest test first
     fine = 100
-elif days_late >= 7:                             # only sees 1 to 13 days
+elif days_late >= 7:                             # only sees under 14 days
     fine = 40
-elif days_late >= 1:                             # only sees 1 to 6 days
+elif days_late >= 1:                             # only sees under 7 days
     fine = 5
 else:                                            # not late at all
     fine = 0

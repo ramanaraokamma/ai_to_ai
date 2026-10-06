@@ -193,7 +193,7 @@ Read the one-liner from the inside out, which is the order Python does it in:
         └────────────────────────┘    3. put the number 12 in the box called age
 ```
 
-> **⚠️ Watch out:** **brackets close in the reverse order they opened.** `int(input("Age? "))` has *two* closing brackets at the end, and your editor may already have put one there for you. Miss one and you get a `SyntaxError` that blames the *next* line. See Break 3.
+> **⚠️ Watch out:** **brackets close in the reverse order they opened.** `int(input("Age? "))` has *two* closing brackets at the end, and your editor may already have put one there for you. Miss one and you get a `SyntaxError` saying `'(' was never closed`. See Break 3.
 
 ![Convert at the door, or pay for it later](../figures/fig-w04-2-convert-at-the-door.svg)
 *Figure 4.4 — Convert at the door, or spend the rest of the program remembering that you didn't.*
@@ -296,7 +296,7 @@ Four steps, in this order, every single time:
 
 1. **Last line.** Two halves, split by a colon: the error *type* and the *message*.
 2. **Line number.** Go there.
-3. **Read the line above it too.** An unclosed bracket on line 3 makes Python blame line 4.
+3. **Read the line above it too.** A mistake on one line is often reported on a later one (a value of the wrong type is found where it is used). Modern Python points an unclosed bracket back at the line where it opened, but the habit is the same.
 4. **Change one thing. Run again.** One thing. If you change three things and it works, you have learnt nothing and you still have two mysteries.
 
 The five error types you will meet this week:
@@ -993,7 +993,7 @@ The student who gets caught by this converts `age` correctly on line 11 and then
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "It says line 2, so I'll change line 2." | `line 2` means "line 2 is where Python **gave up**", which is not the same as "line 2 is wrong". A missing bracket on line 1 makes Python blame line 2. **Always read the line above as well.** |
+| "It says line 2, so I'll change line 2." | `line 2` means "line 2 is where Python **gave up**", which is not the same as "line 2 is wrong". A value that was wrongly left as text on line 1 makes Python complain on line 2, where it is used. **Always read the line above as well.** |
 
 ### Trick 4 — "a program that runs is a program that works"
 

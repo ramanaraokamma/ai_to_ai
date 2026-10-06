@@ -135,7 +135,7 @@ saved visits.png
 **`fig.savefig("visits.png", dpi=120, bbox_inches="tight")`** — write the picture to a file in the current folder.
 
 - `"visits.png"` — the filename. The `.png` matters: matplotlib picks the file format from the extension. Leave it off and you get `visits.png` anyway, silently, which is fine but teaches nothing.
-- `dpi=120` — **dots per inch**. The sheet is 6 × 4 inches, so at 120 dpi the file comes out 720 × 480 pixels. Higher dpi means a bigger, sharper file. 120 is a good default for a screen; 300 is print quality and four times the file size.
+- `dpi=120` — **dots per inch**. The sheet is 6 × 4 inches, so at 120 dpi the figure is 720 × 480 pixels before cropping (`bbox_inches="tight"` trims the white border, so the saved file is a little smaller, about 650 × 470). Higher dpi means a bigger, sharper file. 120 is a good default for a screen; 300 is print quality and about six times as many pixels.
 - `bbox_inches="tight"` — "crop off the empty white border, but do not cut off my labels". Without it, long axis labels sometimes get chopped at the edge of the image. One extra argument, one entire category of frustration removed. **Type it every time.**
 
 **`print("saved visits.png")`** — because the alternative is a program that runs, prints nothing, and leaves you guessing.
@@ -447,7 +447,7 @@ print("visits:", len(visits))
 
 **Say this:**
 
-> "Twelve weeks, twelve visit counts. Real numbers from a real school library.
+> "Twelve weeks, twelve visit counts. Made-up numbers, but shaped like a real school library's.
 >
 > Notice the `visits` list runs over two lines. That's allowed — once you open a square bracket Python keeps reading until it finds the closing one. Use it. Twelve numbers on one line is unreadable.
 >
@@ -583,7 +583,7 @@ print("saved visits.png")
 >
 > `"visits.png"` — the name. The `.png` on the end tells matplotlib what kind of picture to make.
 >
-> `dpi=120` — dots per inch. Six inches wide at a hundred and twenty dots each, so the file comes out seven hundred and twenty pixels wide. Bigger number, sharper picture, bigger file.
+> `dpi=120` — dots per inch. Six inches wide at a hundred and twenty dots each, so the picture is seven hundred and twenty pixels wide before the tight crop trims the edges. Bigger number, sharper picture, bigger file.
 >
 > `bbox_inches="tight"` — 'trim the empty white edge, but don't cut off my labels'. Type it every single time. It is the difference between a chart with an axis label and a chart with half an axis label."
 
@@ -706,7 +706,7 @@ Model answers:
 | Chart | What it shows | What it does not tell you |
 |---|---|---|
 | homework | Homework climbed to 90 minutes on day 7 after a day of none at all. | Which subject, whether it was finished, or whether day 7 was catch-up for day 6. |
-| screen time | Screen time trebled on day 6, the Saturday, and dropped back on Sunday. | What was on the screen — homework research and cartoons look identical here. |
+| screen time | Screen time hit 180 minutes on day 6, the Saturday, and dropped back to 75 on Sunday. | What was on the screen — homework research and cartoons look identical here. |
 | steps | Day 6 was the only day over 10,000 steps; day 7 was the lowest at 4,300. | Whether the tracker was actually worn all day, or what counted as a step. |
 
 ### What "finished" looks like
@@ -800,7 +800,7 @@ Every time, yes, and it is worth understanding what it buys. Without it, matplot
 
 **"What's dpi? Why 120?"**
 
-Dots per inch — how many pixels matplotlib packs into each inch of the sheet. Your sheet is 6 inches wide, so `dpi=120` gives a file 720 pixels across. `dpi=300` gives 1800 pixels: sharper, good for printing, about four times the file size. 120 is chosen because it looks crisp on a screen and the files stay small enough to email. Nothing magic about it. Try 40 once to see what "too low" looks like — it is instructive.
+Dots per inch — how many pixels matplotlib packs into each inch of the sheet. Your sheet is 6 inches wide, so `dpi=120` gives a file 720 pixels across. `dpi=300` gives 1800 pixels before cropping: sharper, good for printing, about six times as many pixels in total. 120 is chosen because it looks crisp on a screen and the files stay small enough to email. Nothing magic about it. Try 40 once to see what "too low" looks like — it is instructive.
 
 **"My chart is ugly. How do I make it look nice?"**
 
@@ -1066,7 +1066,7 @@ line_chart(df["day"], df["homework_min"],
            DAY_LABEL, "Homework done (minutes)", "myweek_homework.png")
 
 line_chart(df["day"], df["screen_min"],
-           "Screen time trebled on day 6, then dropped back",
+           "Screen time hit 180 minutes on day 6, then dropped back",
            DAY_LABEL, "Screen time (minutes)", "myweek_screen.png")
 
 line_chart(df["day"], df["steps"],
@@ -1093,7 +1093,7 @@ steps   max  : 11200
 | Chart | What it shows | What it does **not** tell you |
 |---|---|---|
 | `myweek_homework.png` | Homework climbed to 90 minutes on day 7, straight after a day with none at all. | Which subject, whether any of it was finished, or whether day 7 was catch-up for day 6. Also: ten days is not a habit, it is a fortnight. |
-| `myweek_screen.png` | Screen time trebled to 180 minutes on day 6 — the Saturday — then dropped back to school-day levels. | What was *on* the screen. Homework research, a film and a group chat are all identical on this chart. |
+| `myweek_screen.png` | Screen time hit 180 minutes on day 6 — the Saturday, its highest of the fortnight — then dropped back to school-day levels. | What was *on* the screen. Homework research, a film and a group chat are all identical on this chart. |
 | `myweek_steps.png` | Day 6 was the only day over 10,000 steps; day 7 was the lowest of the fortnight at 4,300. | Whether the tracker was worn all day, what counted as a step, or whether a bike ride got logged as walking. |
 
 **25.4(a) Why do all three charts have the same x axis label?**

@@ -59,9 +59,9 @@ There is no equation to solve and nothing to work out. Here is the part that sur
 
 This has three consequences you should be able to state:
 
-- **`fit` is instantaneous and `predict` is slow.** The opposite of most models. With 142 training rows nobody notices; with 14 million you would.
+- **`fit` is instantaneous and `predict` is slow.** The opposite of most models. With 120 training rows nobody notices; with 14 million you would.
 - **The model *is* the data.** There are no learned rules inside it. If you email somebody a trained kNN model, you have emailed them your training rows. (There is a privacy question hiding in there, and it is in the Questions section.)
-- **The score on the training rows with `k = 1` is *always* exactly 1.0.** Every row's own nearest neighbour is itself, at distance zero. This is not a triumph. It is arithmetic.
+- **The score on the training rows with `k = 1` is exactly 1.0 whenever no two training rows have identical measurements but different labels** (true for all four iris columns; not true for the two-sepal version in Part 3, where it is 0.9417). Every row's own nearest neighbour is itself, at distance zero. This is not a triumph. It is arithmetic.
 
 ### 2. What `k` does, and why it is not a detail
 
@@ -812,7 +812,7 @@ Three parts, in this order, and the order is the point. Physical first, then cod
 ### Part 1 — The deck and the envelope (6 minutes, no laptop)
 
 1. **Count out 100 cards** — or however many the deck has; say the number out loud and write it down. If it is a standard 52-card deck, use 50 for easy arithmetic and put two aside.
-2. **Shuffle properly.** Say why while you do it: *"The iris file is sorted — the first fifty rows are all setosa. If I cut it without shuffling, my test set is fifty virginica and nothing else, and my score tells me nothing about the other two species. Shuffling isn't tidiness. It's necessary."*
+2. **Shuffle properly.** Say why while you do it: *"The iris file is sorted — the first fifty rows are all setosa. If I cut it without shuffling, my test set is thirty virginica and nothing else, and my score tells me nothing about the other two species. Shuffling isn't tidiness. It's necessary."*
 3. **Ask the student to work out 20% of the number of cards.** For 50, that is 10. Have them say it before you cut.
 4. **Cut off that many cards.** Deal them into a small pile. Count them out loud, one at a time, into the pile. Then count the big pile.
 5. **Write the two numbers on the envelope** — `TEST: 10 rows` — along with today's date.
@@ -1215,10 +1215,10 @@ For each list of nearest neighbours (nearest first), give the prediction for `k 
 | (e) | chill, chill, hype, hype, hype | chill | **chill** (2–1) | **hype** (3–2) |
 
 **29.1(f) Which rows change their answer as `k` grows, and what do those rows have in common?**
-Rows (b), (d) and (e). In every one of them the closest neighbour is the odd one out — a single example of one class sitting nearest, with the other class in the majority just behind it. **That is exactly the situation `k > 1` exists to protect you from:** one strange near neighbour should not be allowed to decide the answer on its own.
+Rows (b), (c), (d) and (e); only (a) stays the same. In (b), (c) and (d) the closest neighbour is the odd one out — a single example of one class sitting nearest, with the other class in the majority just behind it. **That is exactly the situation a bigger `k` exists to protect you from:** one strange near neighbour should not be allowed to decide the answer on its own. Row (e) is the reverse: the two nearest agree, and going from `k = 3` to `k = 5` lets three farther neighbours outvote them — a reminder that a bigger `k` is not automatically wiser.
 
 **29.1(g) In (d), which answer would you trust, and why?**
-Honest answer: **setosa**, the `k = 5` answer, because three of the five nearest agree and only the very closest disagrees. But the fuller answer is worth writing: this is a genuinely close call, four of five neighbours are nearly tied, and the right conclusion is *"this one is uncertain"* rather than *"this one is setosa"*. A model that reports a confident answer here is overstating what it knows.
+Honest answer: **setosa**, the `k = 5` answer, because three of the five nearest are setosa (including the very closest). But the fuller answer is worth writing: the 2nd and 3rd nearest are both versicolor, which is why `k = 3` says versicolor, so 3–2 is a genuinely close call and the right conclusion is *"this one is uncertain"* rather than *"this one is setosa"*. A model that reports a confident answer here is overstating what it knows.
 
 **29.1(h) What happens with `k = 4` and neighbours chess, chess, art, art?**
 A **2–2 tie.** Scikit-learn breaks it by picking whichever class name comes first in sorted order — `art` before `chess`, so it says art. **Nothing about the data chose that.** Use an odd `k` with two classes.
@@ -1268,7 +1268,7 @@ k = 5  -> ['setosa']
 Matches the hand vote on all three. ✅
 
 **29.2(d) Two of the six distances are identical (1.79 and 1.79). Are they the same flower?**
-No. They are two different flowers that happen to sit the same distance away — rows 0 and 1 of iris have identical petal measurements `(1.4, 0.2)` but they are two separate plants. **Two rows can be the same point without being the same thing.** It matters here because if `k` were 4 the model would have to break a tie between two flowers it genuinely cannot tell apart.
+No. They are two different flowers that happen to sit the same distance away — rows 0 and 1 of iris have identical petal measurements `(1.4, 0.2)` but they are two separate plants. **Two rows can be the same point without being the same thing.** It matters here because with `k = 3` the third place is shared by these two equidistant flowers, so the model has to pick one of them (harmless here, since both are setosa) — two flowers it genuinely cannot tell apart.
 
 ### Page 29.3 — The deck and the envelope
 

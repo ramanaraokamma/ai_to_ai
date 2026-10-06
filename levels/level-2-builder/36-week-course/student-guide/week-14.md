@@ -609,8 +609,8 @@ races = [
     {"runner": "Anika", "heat": 1, "seconds": 13.4, "place": 2, "pb": True},
     {"runner": "Rohit", "heat": 1, "seconds": 12.8, "place": 1, "pb": True},
     {"runner": "Meera", "heat": 1, "seconds": 14.9, "place": 3, "pb": False},
-    {"runner": "Anika", "heat": 2, "seconds": 13.1, "place": 1, "pb": True},
-    {"runner": "Rohit", "heat": 2, "seconds": 13.0, "place": 2, "pb": False},
+    {"runner": "Anika", "heat": 2, "seconds": 13.1, "place": 2, "pb": True},
+    {"runner": "Rohit", "heat": 2, "seconds": 13.0, "place": 1, "pb": False},
     {"runner": "Meera", "heat": 2, "seconds": 14.2, "place": 3, "pb": True},
 ]
 
@@ -653,8 +653,8 @@ rows: 6  columns: 5
  0  Anika      1   13.4     2  True
  1  Rohit      1   12.8     1  True
  2  Meera      1   14.9     3  False
- 3  Anika      2   13.1     1  True
- 4  Rohit      2   13.0     2  False
+ 3  Anika      2   13.1     2  True
+ 4  Rohit      2   13.0     1  False
  5  Meera      2   14.2     3  True
 ------------------------------------
 
@@ -662,7 +662,7 @@ Everything on row 3:
   runner   Anika
   heat     2
   seconds  13.1
-  place    1
+  place    2
   pb       True
 
 "seconds" in races[3]? True
@@ -847,7 +847,7 @@ TypeError: string indices must be integers, not 'str'
 | `KeyError: 'team'` **after some rows printed** | "Row *n* has no key called `team`." | **Count the rows that printed** — that is the row number that broke. Go to that record and compare its keys with the one above |
 | `KeyError: 'runs'` pointing at a line inside `[...]` | Same thing, inside a comprehension | Fix the record. Or `[r.get("runs", 0) for r in squad]` — and then say out loud what that zero claims |
 | `IndexError: list index out of range` | "There is no row with that number." | Twelve rows are numbered **0 to 11**. `squad[11]` is the last one, or `squad[-1]` from Week 11 |
-| `SyntaxError: invalid syntax. Perhaps you forgot a comma?` | Python could not read the list at all | A missing comma between two records. Twelve records need eleven commas. Python reports it at the **following** record |
+| `SyntaxError: invalid syntax. Perhaps you forgot a comma?` | Python could not read the list at all | A missing comma between two records. Twelve records need eleven commas. Python points at the record that is **missing** its comma (the one just before the one you were looking at), not at the gap |
 | `SyntaxError: f-string: unmatched '['` | Python got lost inside your f-string | Double quotes inside a double-quoted f-string. Use singles: `f"{player['name']}"` |
 | `ValueError: Unknown format code 'f' for object of type 'str'` | "You asked me to print a word as a decimal number." | `.1f` is for numbers only. Words get `:<7` or `:>7` and nothing else |
 | **No error, but the columns are crooked** | Nothing is wrong as far as Python is concerned | Header widths do not match row widths. Put the two f-strings one above the other and compare the numbers character by character |

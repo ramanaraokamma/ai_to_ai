@@ -9,7 +9,7 @@
 >
 > **By the end of this chapter you will be able to:**
 > - **Remove duplicate rows** and state exactly how many went, and **which**
-> - **Tidy four spellings of one word into one** with `.str` methods, and say why `strip` comes first
+> - **Tidy four spellings of one word into one** with `.str` methods, and say why `title` alone is not enough
 > - **Add a derived column** computed from columns you already have
 > - **Group by a column and aggregate**, and report the group sizes alongside the averages
 > - **Print the before and after shape** of a table and account for the difference out loud
@@ -144,7 +144,7 @@ after : (38, 6)
 ![Two rows went. You have to be able to name them.](../figures/fig-w24-2-duplicate-rows-removed.svg)
 *Figure 24.1 — Print the shape before and after. If you cannot account for the difference, stop and look again.*
 
-### 2. `.str` methods, and why the order matters more than anything else this week
+### 2. `.str` methods, and why `title` alone is not enough
 
 **The plain explanation.**
 
@@ -178,7 +178,7 @@ nunique: 4
 
 **Blue now has fourteen. Nothing was lost and nothing was invented.** Do that sum yourself; it takes thirty seconds and it turns a magic trick into arithmetic.
 
-**Now the order, and this is a real trap.** What if you do `title` **without** `strip`?
+**Now a real trap.** What if you do `title` **without** `strip`?
 
 ```python
 messy = pd.read_csv("house_raw.csv").drop_duplicates().reset_index(drop=True)
@@ -203,7 +203,7 @@ nunique: 8
 
 **This is the worst kind of bug in this entire course: no error, and a printout that makes you doubt the computer instead of your code.**
 
-> **`strip` first, then `title`. Always.** `title` on its own leaves the spaces, and the spaces print as nothing, so the bug is invisible in the output and visible **only in the count**.
+> **You need `strip` AND `title`.** `title` on its own leaves the spaces, and the spaces print as nothing, so the bug is invisible in the output and visible **only in the count**. Write `strip` first as a habit (`strip` then `title` and `title` then `strip` give the same four houses here, but one fixed order is easier to remember and to check); what breaks the answer is leaving `strip` out.
 
 ![Five spellings are five houses until you say otherwise](../figures/fig-w24-1-four-spellings-one-house.svg)
 *Figure 24.2 — strip first, then title. Title on its own leaves the spaces, and the spaces print as nothing.*
@@ -299,7 +299,7 @@ print(clean.sort_values("points_per_hour", ascending=False).head(5)[["name", "ho
 
 **A new column made a new ranking, and neither ranking is a lie.** Which one you report is a choice, and it is the same kind of choice as fill-versus-drop last week: **defensible either way, indefensible unaccounted for.**
 
-And be honest about the measure itself: **dividing by 0.5 makes a number three times bigger**, so `points_per_hour` mostly measures *who did the least work*. That is a real weakness of this particular column, and saying so out loud is part of the job.
+And be honest about the measure itself: **dividing by 0.5 doubles a number**, so `points_per_hour` mostly measures *who did the least work*. That is a real weakness of this particular column, and saying so out loud is part of the job.
 
 ### 4. `groupby`: split, apply, combine
 
@@ -377,7 +377,7 @@ print(clean[clean["house"] == "Gold"])
 33   Hana Sato   12  Gold  art    5.5     93            16.91
 ```
 
-**If one of them had been off school that day, "Gold's average" would be one person's score** — 97 or 93, from a single row. And one ordinary pupil scoring 73 joining Gold takes it to (97 + 93 + 73) ÷ 3 = **87.67**: the lead over Blue halves because **one person arrived**. Now ask the same question of Blue. **How many pupils would have to join Blue to move its average seven marks?** **Six** new pupils, every single one of them scoring 100 out of 100 — (1041 + 600) ÷ 20 = 82.05, which is 7.69 up. Gold moved 7.33 because **one** person turned up with an ordinary score. *That* is the difference between fourteen rows and two.
+**If one of them had been off school that day, "Gold's average" would be one person's score** — 97 or 93, from a single row. And one ordinary pupil scoring 73 joining Gold takes it to (97 + 93 + 73) ÷ 3 = **87.67**: the lead over Blue shrinks from 20.6 marks to 13.3 (about a third) because **one person arrived**. Now ask the same question of Blue. **How many pupils would have to join Blue to move its average seven marks?** **Six** new pupils, every single one of them scoring 100 out of 100 — (1041 + 600) ÷ 20 = 82.05, which is 7.69 up. Gold moved 7.33 because **one** person turned up with an ordinary score. *That* is the difference between fourteen rows and two.
 
 **And nothing in the `.mean()` output told you any of that.** Four numbers, four house names, no hint that one came from two rows and another from fourteen. **The printout was completely honest and completely misleading**, and you read "Gold is the best house" straight off it.
 
@@ -1354,7 +1354,7 @@ Red    12  74.25
 | `<bound method GroupBy.size of ...>` | "You printed the command, not what it returns." | `.size()`, with brackets |
 | `FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated.` | "You asked for the mean of everything, including the words." | Pick the column: `groupby("house")["score"].mean()`. Relying on pandas to drop the text columns for you is how you average the wrong thing |
 | **No error, the shape is still `(40, 6)`** | Nothing is wrong. `drop_duplicates` returned a copy. | `clean = clean.drop_duplicates()`. Third week for this one |
-| **No error, still eight houses after `.str.title()`** | Nothing is wrong. `title` capitalises; it does not remove spaces. | `.str.strip().str.title()`, in that order. And trust `nunique()`, not the printout |
+| **No error, still eight houses after `.str.title()`** | Nothing is wrong. `title` capitalises; it does not remove spaces. | `.str.strip().str.title()` — both methods (strip first, by habit). And trust `nunique()`, not the printout |
 | **No error, `value_counts()` shows the same word twice** | Nothing is wrong. They really are different pieces of writing. | `.str.strip()`. To prove it: `print(clean["house"].unique())` shows the quote marks, with the spaces inside them |
 | **No error, the group sizes don't add up to `len(df)`** | Nothing is wrong. `groupby` silently skips rows whose group value is a hole. | `fillna` the grouping column first — or accept the loss and **write it in the log**. Always run the sum check |
 | **No error, and a two-member group is at the top** | Nothing is wrong. The arithmetic is perfect. | `agg(n=("score", "size"), avg=("score", "mean"))`. **This is the lesson, not a bug** |
@@ -1431,7 +1431,7 @@ Fourteen minutes, and the rule was: **an answer without its row count does not c
 
 **Question 3 is worth comparing with question 2 on purpose.** All three clubs are big. **Chess winning by five marks over fourteen rows is a much sturdier claim than Gold's twenty-mark lead over two.**
 
-**And question 6 produced the best argument of the lesson.** *"Is Sami Aden the best pupil in the school?"* He scored 48. *"Is `points_per_hour` a good measure of anything?"* Of "who gets most from their time", maybe. Of "who is doing well", no — because **dividing by half an hour triples your number.**
+**And question 6 produced the best argument of the lesson.** *"Is Sami Aden the best pupil in the school?"* He scored 48. *"Is `points_per_hour` a good measure of anything?"* Of "who gets most from their time", maybe. Of "who is doing well", no — because **dividing by half an hour doubles your number.**
 
 ### The Gold conversation
 
@@ -1441,7 +1441,7 @@ Then, in order:
 
 1. Gold's two scores? → **97 and 93**
 2. If one had been off school? → **97 or 93**, from **one** row, and still top
-3. If one average pupil (73) joined? → (97 + 93 + 73) ÷ 3 = **87.67** — the lead halves from one person arriving
+3. If one average pupil (73) joined? → (97 + 93 + 73) ÷ 3 = **87.67** — the lead over Blue shrinks by about a third from one person arriving
 4. How many pupils would have to join Blue to move it seven marks? → **six**, every one of them scoring 100 out of 100. **That is the difference between fourteen rows and two.**
 
 ### The rule, in your own handwriting
@@ -1560,7 +1560,7 @@ stage three to turn solid.*
 - **Look at duplicates before you delete them**, and be able to name which rows went. Every field matching is what makes it a typing slip rather than two people.
 - **`duplicated().sum()` counts the later copies only.** Two repeated rows give **2**, not 4.
 - **Shape before, shape after, account for the difference out loud.** *"Forty in, thirty-eight out, and the two that went were Bela Roy and Farah Aziz."*
-- **`strip` first, then `title`.** `title` alone leaves the spaces, and the spaces print as nothing, so the bug is invisible in the output and visible only in the count.
+- **You need `strip` as well as `title`** (strip first, by habit). `title` alone leaves the spaces, and the spaces print as nothing, so the bug is invisible in the output and visible only in the count.
 - **`.str` is the doorway** that applies a string method to a whole column. Without it: `AttributeError`.
 - **A name on the left that does not exist yet creates a new column.** If it *does* exist, it is overwritten silently.
 - **Hand-check one row of every derived column, and one pile of every groupby.** Ten seconds each.

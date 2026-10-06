@@ -165,7 +165,7 @@ Four things in that printout, and the student should be able to name all four:
 1. **The column names**, along the top: `name`, `team`, `runs`, `balls`, `out`. They came from the dictionary keys.
 2. **The index**, down the left: `0 1 2 3 4`. **These are the row labels, and they are not a column.** More on this next.
 3. **The values**, one per cell.
-4. **The alignment.** Text is left-aligned, numbers are right-aligned, and pandas worked out every column's width for itself. Nobody typed a format code.
+4. **The alignment.** Every column lined up in a tidy block (pandas right-aligns both text and numbers in columns), and pandas worked out every column's width for itself. Nobody typed a format code.
 
 ### 5. The index — and the one thing to be firm about
 
@@ -450,7 +450,7 @@ You must see a version number. Anything recent is fine:
 
 If you see `ModuleNotFoundError: No module named 'pandas'`, the install did not take. The usual cause is the same as Week 17's: `pip` installed into a *different* Python than `python3` runs — which is exactly what `python3 -m pip install pandas` fixes, because it uses the same Python either way. **Solve this tonight.**
 
-> **📌 Version note:** pandas 2.x prints everything in this file identically, with one exception — the `memory usage:` line in `info()` may show a different number. That line is the least interesting one on the page. If your numbers differ from this file *only* there, you are fine.
+> **📌 Version note:** pandas 2.x prints everything in this file identically, with one exception — the `memory usage:` line in `info()` may show a different number. That line is the least interesting one on the page. If your numbers differ from this file *only* there, you are fine. The one other difference to expect on 2.x is in long tracebacks: the number of lines and the pandas file paths and line numbers can differ from the nineteen-line one printed here, so count the lines on your own screen before you tell the class "nineteen". The recipe (last line first, then your own `File` line) does not change.
 
 - [ ] **Print workbook pages 21.1–21.6.**
 - [ ] **Find Week 14's hand-formatted table printout**, on paper if you still have it, or re-run their old file and print it. **The Hook is built on putting it next to pandas's output**, and it takes ten seconds if you prepared and four minutes if you did not.
@@ -640,7 +640,7 @@ Name: age, dtype: float64
 | A file called `pandas.py` in the folder | You get `AttributeError: module 'pandas' has no attribute '__version__'` or similar nonsense. Their file is being imported instead of the real pandas. Rename it. **Standing rule all year, fourth appearance: never name a file after a library.** |
 | The install is very slow | Normal. pandas is a much bigger download than numpy. This is why it is on the night-before list. |
 | `squad_data.py` is missing | Type the four-row `ages` DataFrame instead and use it for everything. It delivers all five objectives; you lose only the "I wrote thirty lines to do that" moment, which you can replace by showing them Week 14's printout and telling them. |
-| The version is 2.x and `memory usage` differs | Fine. Nothing else in this file changes. |
+| The version is 2.x and `memory usage` differs | Fine. Only traceback lengths and paths may also differ (count the lines on your own screen). |
 
 ---
 
@@ -718,7 +718,7 @@ Run it:
 
 > **Say this:** "One line. `pd.DataFrame(squad)`. **Your own data, unchanged — the same twelve dictionaries, the same file.**
 >
-> Look at what it did without being asked. It found the column names. It worked out how wide each column needed to be. It put the numbers on the right and the words on the left. It numbered the rows. And it did the two-digit row numbers — look at 10 and 11 — lined up under the one-digit ones, which is the exact thing that went wrong for you in Week 14."
+> Look at what it did without being asked. It found the column names. It worked out how wide each column needed to be. It lined every column up in a tidy block, numbers and words alike. It numbered the rows. And it did the two-digit row numbers — look at 10 and 11 — lined up under the one-digit ones, which is the exact thing that went wrong for you in Week 14."
 
 > "Now. Was Week 14 a waste of time?"
 
@@ -1332,7 +1332,7 @@ Real output:
 
 > **Say this:** "Look at `day`. **'Mon' appears twice** — rows 0 and 7. Is that a problem?
 >
-> No — and this is what the index is quietly for. Two rows can have the same `day`, but they cannot have the same **index**. Row 0 and row 7 are different rows and always will be, even though their day column says the same thing. The index is the row's *name*, and no two rows share one."
+> No — and this is what the index is quietly for. Two rows can have the same `day`, but they should not have the same **index**. Row 0 and row 7 are different rows, even though their day column says the same thing. The index is the row's *name*, and each row is meant to have its own. (pandas will not stop you giving two rows the same name, but then asking for that name gives you two rows back, which is almost never what you want.)"
 
 ### Part 3 — `info()`, read out loud (6 minutes)
 
@@ -1463,7 +1463,7 @@ Name: sleep, dtype: float64
 Then the good question: *"the index came through unchanged, and so did the name. Should the name still say `sleep` when the numbers are now minutes?"* **No, arguably — and pandas has no way of knowing.** A unit is a thing only you know about. That is a real and honest limitation.
 
 2. **Make a column come out as `object` on purpose.** Put quotes round one of the step counts: `"6200"` instead of `6200`. The whole column becomes `object`, and it is `10 non-null` so nothing looks missing. Then: *"which is worse — one hole that turns the column into decimals, or one quote mark that turns the column into text? And which is easier to spot?"* (The quote mark is worse and harder to spot, because the count still says 10 and the printed values still look like numbers. This is Week 16's CSV lesson and Week 17's `<U21` lesson, arriving for the third time.)
-3. **Two rows with the same day.** Already true if they used Mon twice. Then: *"could two rows have the same index?"* No. *"So what is the index actually for?"* Being the one thing that is definitely unique. That is a genuinely deep answer and Week 22 depends on it.
+3. **Two rows with the same day.** Already true if they used Mon twice. Then: *"could two rows have the same index?"* They should not (pandas allows it, but a repeated name picks out two rows). *"So what is the index actually for?"* Giving each row its own name. That is a genuinely deep answer and Week 22 depends on it.
 4. **Predict `info()` for a table you have not built.** Write out a dict-of-lists on paper, with one `None` and one quoted number hidden in it, and have them write the whole `info()` report before typing it. Then check. This is much harder than it sounds and it is the single best exercise in the week.
 5. **Build the same ten rows both ways** — once as a dict of columns, once as a list of ten dictionaries — and print both. They are identical. Then: *"which was less typing? Which was less error-prone?"* (The dict of columns is less typing. The list of dicts is harder to get wrong, because each row's values sit next to their own names, so you cannot accidentally put a value in the wrong column.)
 6. **The honest question.** *"This table says you slept 7.5 hours on Monday. Where did that number come from?"* Almost certainly a guess, or a phone that measures something adjacent to sleep. **Nothing in the DataFrame records how a number was obtained** — the column has a name and a kind and no history. That is the seed of Week 24's cleaning log and Week 34's honesty paragraph.
@@ -1654,7 +1654,7 @@ None of these need syntax from a later week.
 2. **Make a column `object` on purpose** (Variation-harder 2): quote marks round one number. Then which is worse — the hole or the quote mark — and which is harder to spot.
 3. **Predict a whole `info()` report before building the table** (Variation-harder 4), with one `None` and one quoted number hidden in it. **This is the best exercise in the week** and it is genuinely hard.
 4. **Build the same table both ways** (Variation-harder 5) — dict of columns and list of dicts — and argue about which is less error-prone.
-5. **Could two rows share an index?** (Variation-harder 3.) No. So what is the index for? Being the thing that is definitely unique. Week 22 depends on this.
+5. **Could two rows share an index?** (Variation-harder 3.) They should not (pandas allows it, but a repeated name picks out two rows). So what is the index for? Giving each row its own name. Week 22 depends on this.
 6. **The honest question** (Variation-harder 6): *"where did the 7.5 come from?"* The DataFrame has names and kinds and **no history.**
 
 ### If the student won't engage today
@@ -1713,7 +1713,7 @@ Three checks, five minutes, exact wording.
 | **2 — Emerging** | Builds a DataFrame from a dict of lists with the pattern given. Runs `head()` and `info()` when told to. Reads individual numbers off `info()` but does not check them against anything. |
 | **3 — Secure** | Builds a DataFrame unaided from a dict of columns **and** from a list of dicts. Runs both commands without being asked. **Reads every line of `info()` out loud in their own words.** Says the index is the row's name, not a column. Explains `12.0` as a hole in the column. **This is the target.** |
 | **4 — Strong** | Checks the entry count against the number of rows they actually typed, and the column count against the names they typed. Spots `object` on a number column as an alarm. Connects `NaN` → `float64` back to Week 17's one-kind rule unprompted. Reads a nineteen-line traceback by going to the last line and then to their own filename. |
-| **5 — Exceptional** | Says without prompting that `12.0` is the symptom and the non-null count is the disease. Argues that the index matters because it is the one thing guaranteed to be unique, and predicts that filtering will make it non-consecutive. Says that `head()` and `info()` cannot tell you where the data came from, and that only a person writing it down can. |
+| **5 — Exceptional** | Says without prompting that `12.0` is the symptom and the non-null count is the disease. Argues that the index matters because it is meant to be a different name for every row, and predicts that filtering will make it non-consecutive. Says that `head()` and `info()` cannot tell you where the data came from, and that only a person writing it down can. |
 
 ---
 
@@ -1964,7 +1964,7 @@ Name: sleep, dtype: float64
 **Mark:** ten rows on paper and `10 entries` in `info()`; four column names typed and `total 4 columns`; at least one `object` column, at least one `float64`, at least one `int64`.
 
 **21.4(a) `Mon` appears twice, in rows 0 and 7. Is that a problem?**
-**No.** Two rows may hold the same value in a column. What they may **not** share is the **index** — row 0 and row 7 are permanently different rows. That is what the index is for: being the one thing guaranteed to be unique.
+**No.** Two rows may hold the same value in a column. What they **should not** share is the **index** — row 0 and row 7 are different rows with different names. (pandas will technically allow a repeated index, but asking for that name then returns two rows, so you avoid it.) That is what the index is for: naming each row.
 
 **21.4(b) Which of your columns is `object`, and is that right?**
 `day`, and yes — it is words. **If a *number* column had said `object`, that would be a bug**, and it would mean a quote mark or a stray space had got in.
@@ -2124,7 +2124,7 @@ Model:
 - *"Read me Asha's age."* → `12.0`. Nobody touched Asha.
 - *"What's the only kind that can hold both `12` and `NaN`?"* → Decimals — `float64`.
 - *"Where have you seen this rule before?"* → Week 17 (`<U21`) and Week 18 (`float64`). Three costumes, one rule.
-- *"'Mon' appears twice. Is that a problem?"* → No. Two rows may share a value; they may not share an index.
+- *"'Mon' appears twice. Is that a problem?"* → Two rows may share a value; an index is meant to be different for every row.
 - *"Does the entry count match your paper grid?"* → It must. If not, a row was lost or doubled while typing.
 
 ---

@@ -212,7 +212,7 @@ Name: house, dtype: int64
 
 ________________________________________________________________
 
-**(c)** Which lines have an invisible space, and which end is it on? *(There are three, and one is easy to miss.)*
+**(c)** Which lines have an invisible space, and which end is it on? *(There are four, and two are easy to miss.)*
 
 ________________________________________________________________
 
@@ -270,7 +270,7 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**A4. Spot the bug.** Each line is wrong or will not do what was intended. Write the fix.
+**A4. Spot the bug.** Each line is wrong or will not do what was intended — except possibly one, which is fine. Write the fix, or say "nothing to fix".
 
 | # | The line | The fix |
 |---|---|---|
@@ -845,7 +845,7 @@ Draw **split, apply, combine** — with the group sizes written on it.
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
 | Remove duplicate rows and state how many went, **and which** | ☐ | ☐ | ☐ |
-| Tidy several spellings into one, and say why `strip` comes first | ☐ | ☐ | ☐ |
+| Tidy several spellings into one, and say why `title` alone is not enough | ☐ | ☐ | ☐ |
 | Add a derived column from columns I already have | ☐ | ☐ | ☐ |
 | Group by a column and report the group sizes alongside | ☐ | ☐ | ☐ |
 | Print before/after shape and account for the difference out loud | ☐ | ☐ | ☐ |
@@ -927,7 +927,7 @@ Name: house, dtype: int64
 
 **They are not.** `title` fixes **capitals** and does nothing about **spaces**, so `"blue "` became `"Blue "` and `" Blue"` stayed `" Blue"`. And **a space prints as nothing**, so all three look identical on screen.
 
-**There was no error.** The printout is perfectly correct and looks insane. **The one extra command is `.str.strip()`, before `.str.title()`** — and then 8 becomes 4.
+**There was no error.** The printout is perfectly correct and looks insane. **The one extra command is `.str.strip()`** (in the chain `.str.strip().str.title()`) — and then 8 becomes 4.
 
 To see the invisible spaces for yourself: `print(m["house"].str.title().unique())` prints the quote marks.
 
@@ -975,11 +975,12 @@ They are the **six pupils whose age nobody recorded.** `groupby` sorts rows into
 
 **(b)** They are **not the same piece of writing.** One of them has a trailing space. Two pieces of writing are the same only if **every character** matches, and **a space is a character.**
 
-**(c)** Three of them:
+**(c)** Four of them:
 
 - the second `blue` (count 1) has a **trailing** space
 - ` Blue` (count 1) has a **leading** space
-- the second `green` (count 1) has a **trailing** space — this is the one everybody misses
+- the second `green` (count 1) has a **trailing** space — this is one everybody misses
+- the only `Gold` (count 1) has a **trailing** space too — there is no plain `Gold` to make it look like a duplicate, so it is easy to miss as well
 
 **(d)** `Blue` 5 + `blue` 4 + `BLUE` 3 + `blue ` 1 + ` Blue` 1 = **14** ✔
 
@@ -987,7 +988,7 @@ They are the **six pupils whose age nobody recorded.** `groupby` sorts rows into
 
 **(e)** This is the **raw** column, printed **before** the two duplicate rows were removed. The two duplicates were **Bela Roy (Red)** and **Farah Aziz (green)**, so **Red and Green each lose one row.** Blue and Gold are unaffected. 40 − 2 = 38.
 
-**(f)** **No.** `.str.title()` fixes the capitals and leaves the spaces, so you get **8** distinct values instead of 4 — and the printout looks broken, because a space prints as nothing. **`strip` first.**
+**(f)** **No.** `.str.title()` fixes the capitals and leaves the spaces, so you get **8** distinct values instead of 4 — and the printout looks broken, because a space prints as nothing. **You need `strip` too.**
 
 **A2.**
 
@@ -1017,14 +1018,14 @@ Green's sum: 48 + 50 + 54 + 59 + 61 + 63 + 67 + 70 + 85 + 95 = **652**, and 652 
 | a | `clean["house"].strip()` | `clean["house"].str.strip()`. `AttributeError: 'Series' object has no attribute 'strip'` — `.str` is the doorway |
 | b | `.str.strip.str.title()` | `.str.strip().str.title()` — brackets after `strip`. `AttributeError: 'function' object has no attribute 'str'` |
 | c | `clean.drop_duplicates()` | `clean = clean.drop_duplicates()`. **No error without it, and no drop either** |
-| d | `.str.title().str.strip()` | Wrong **order**. `.str.strip().str.title()`. Title-then-strip happens to work here, but strip-first is the habit that always works — and neither errors, which is the danger |
+| d | `.str.title().str.strip()` | **Nothing to fix — this one works.** `.str.title().str.strip()` gives the same four houses as `.str.strip().str.title()`, because `strip` removes the spaces whichever order it runs in. Strip-first is just the habit; the bug would be leaving `strip` out |
 | e | `clean["hour"]` | `clean["hours"]`. `KeyError: 'hour'` — the most common derived-column bug |
 | f | `clean["new"] = [1, 2, 3]` | A derived column comes from **other columns**, not a hand-typed list. `ValueError: Length of values (3) does not match length of index (38)` |
 | g | `print(clean.groupby("house"))` | Add what to do with each pile: `["score"].mean()`. Otherwise you print `<...DataFrameGroupBy object at 0x...>` — **the piles are not a result** |
 | h | `.size` with no brackets | `.size()`. Otherwise you print `<bound method GroupBy.size of ...>` |
 | i | `groupby("house")["score"].mean()` | `groupby("house").agg(n=("score", "size"), avg=("score", "mean"))` |
 
-**A4(j).** **(i).** It runs perfectly and produces four correct numbers — and it hides the fact that one of them came from two rows. **Every other line on the list either crashes or does nothing.** This one does something, and what it does is invite a wrong conclusion. *(Line (d) is a runner-up: it also produces no error, and on a different table it would leave the mess in place.)*
+**A4(j).** **(i).** It runs perfectly and produces four correct numbers — and it hides the fact that one of them came from two rows. **Every other line on the list either crashes or does nothing.** This one does something, and what it does is invite a wrong conclusion. *(Line (c) is a runner-up: it also produces no error, and it leaves the duplicates exactly where they were.)*
 
 **A5.**
 
@@ -1210,7 +1211,7 @@ Red    12       3.17
 
 **Q5:** Green works the least (2.60 hours) and scores the least (65.20). **Do not call that cause and effect.** It is two numbers moving together on ten rows, which is a **reason to look further**, not a conclusion. Good question to ask yourself: *what would I need to know to be sure?*
 
-**Q6:** the top three are the three **lowest scorers in the school** — 48, 45 and 42 — and they all worked half an hour. **Dividing by 0.5 triples your number**, so `points_per_hour` mostly measures who did the least work. It is a fine column for *"who gets the most out of their time?"* and a bad one for *"who is doing well?"*
+**Q6:** the top three are the three **lowest scorers in the school** — 48, 45 and 42 — and they all worked half an hour. **Dividing by 0.5 doubles your number**, so `points_per_hour` mostly measures who did the least work. It is a fine column for *"who gets the most out of their time?"* and a bad one for *"who is doing well?"*
 
 **Marking notes.** Full marks needs the `n` beside **every** answer and the sizes-sum check printed at least once. **Q4 needs one extra sentence:** age 13 has eighteen pupils because six missing ages were filled with 13, and six of those eighteen are 13 only because we said so. Before the fill, the **twelve** pupils with a known age of 13 averaged **71.92**; after it, eighteen average **73.11**.
 
@@ -1239,8 +1240,8 @@ A **Series** is one whole column — here, 38 pieces of writing. `strip` is a th
 
 **Two things to get right, not one:**
 
-1. Add the **`.str` doorway** — twice, once for each method.
-2. **`strip` before `title`**, in that order.
+1. Add the **`.str` doorway** in front of `strip`.
+2. Add it **again** in front of `title` — each method needs its own `.str`.
 
 ```python
 clean["house"] = clean["house"].str.strip().str.title()
@@ -1400,7 +1401,7 @@ print(clean.sort_values("score_minus_slacking", ascending=False).head(3)[["name"
 
  9  house: .str.strip().str.title()      value_counts() showed 14 spellings of 4
     14 spellings -> 4 houses            houses, two with spaces I could not see.
-                                        strip FIRST: title alone leaves the
+                                        strip AND title: title alone leaves the
                                         spaces and they print as nothing.
                                         5+4+3+1+1 = 14, so nothing was lost.
 
@@ -1415,7 +1416,7 @@ print(clean.sort_values("score_minus_slacking", ascending=False).head(3)[["name"
 
 12  Added points_per_hour =              To ask "who gets most from their time?".
     score / hours, rounded to 2          Hand-checked row 0: 72 / 3.5 = 20.57.
-                                        WARNING: dividing by 0.5 triples the
+                                        WARNING: dividing by 0.5 doubles the
                                         number, so this column rewards doing
                                         the least work. It is a choice, not a
                                         measurement.
@@ -1429,13 +1430,13 @@ print(clean.sort_values("score_minus_slacking", ascending=False).head(3)[["name"
 
 **Part 4 — the Gold sentence. Two model answers, both full marks:**
 
-> *"Gold has the highest average score (95.00), but it has only **2** members, so the number is far too fragile to compare with Blue's, which comes from 14. If one Gold pupil had been off school the average would have been 97 or 93 — from a single row. If one ordinary pupil scoring 73 joined Gold, the average would drop to 87.67 and the lead would halve. Nothing that small could happen to a fourteen-row average, and the plain `.mean()` printout gave me no way to know any of this."*
+> *"Gold has the highest average score (95.00), but it has only **2** members, so the number is far too fragile to compare with Blue's, which comes from 14. If one Gold pupil had been off school the average would have been 97 or 93 — from a single row. If one ordinary pupil scoring 73 joined Gold, the average would drop to 87.67 and the lead over Blue would shrink by about a third. Nothing that small could happen to a fourteen-row average, and the plain `.mean()` printout gave me no way to know any of this."*
 
 > *"Gold has the highest average score (95.00), but it has only **2** members, so all it really tells me is that two particular pupils did well. It is not a fact about a house. Blue's 74.36 **is** a fact about a house, because fourteen different people had to agree to produce it. I should print `.size()` next to `.mean()` so that nobody reads my table the way I read it first."*
 
 **(a)** **97 and 93.**
 **(b)** **97 or 93** — still top of the table, and now from a **single** row.
-**(c)** (97 + 93 + 73) ÷ 3 = 263 ÷ 3 = **87.67.** Still top, but the lead over Blue has halved, **from one person arriving.**
+**(c)** (97 + 93 + 73) ÷ 3 = 263 ÷ 3 = **87.67.** Still top, but the lead over Blue has shrunk from 20.6 marks to 13.3 (about a third), **from one person arriving.**
 **(d)** **Six** — and every one of them would have to score 100 out of 100. Blue's sum is 1041 over 14 rows, so adding six perfect scores gives (1041 + 600) ÷ 20 = **82.05**, which is only **7.69** up. Meanwhile **one** ordinary pupil arriving moved Gold **7.33** the other way. **That is the difference between fourteen rows and two.**
 
 **Three real partial answers, and what is missing:**

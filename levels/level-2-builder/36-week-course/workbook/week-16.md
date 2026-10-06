@@ -433,7 +433,7 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**(e)** In one sentence: **why does length never matter** when text is compared?
+**(e)** In one sentence: **why does a longer text not win just for being longer** when text is compared?
 
 ________________________________________________________________
 
@@ -718,7 +718,7 @@ Lines 3 and 4 are the interesting pair. `"48" < "9"` compares **character by cha
 ['1000', '104', '9', '90']
 ```
 
-Line 1: as text, `'90'` wins, because `9` beats every other first character. Line 2: as numbers, `1000` wins, correctly. Line 3 is the one worth staring at — **`'1000'` sorts first and `'9'` sorts third.** That is not broken; that is what alphabetical order does to digits. `1` before `9`, and **length never enters into it.**
+Line 1: as text, `'90'` wins, because `9` beats every other first character. Line 2: as numbers, `1000` wins, correctly. Line 3 is the one worth staring at — **`'1000'` sorts first and `'9'` sorts third.** That is not broken; that is what alphabetical order does to digits. `1` before `9`. A longer text does not win for being longer; length only matters as a tie-break when one text is the start of the other (`'1'` sorts before `'10'`).
 
 Only line 2 belongs in a newsletter.
 
@@ -1034,7 +1034,7 @@ The fix:
     writer = csv.DictWriter(f, fieldnames=FIELDS)
 ```
 
-Why can't it work it out from the first record? Because a dictionary's keys would give it the **names** but the *file* also needs an **order**, and it needs the same order for all five records. And because you might want to write only three of the five keys. `fieldnames` does both jobs — it fixes the order and it decides which keys get written — so it refuses to guess and asks you instead.
+Why can't it work it out from the first record? Because a dictionary's keys would give it the **names** but the *file* also needs an **order**, and it needs the same order for all five records (different records could even have their keys in different orders). `fieldnames` fixes that order and names the keys that are allowed, so it asks you instead of guessing.
 
 **Bug 3 — the silent one.**
 
@@ -1107,7 +1107,7 @@ print("stay in place:", same)
 stay in place: [1]
 ```
 
-**(e)** Because a text comparison stops at the **first character that differs**, and it never counts how many characters there are. `'9'` versus `'100'`: it looks at `9` against `1`, decides, and stops. The other two characters of `'100'` are never looked at, so its extra length buys it nothing.
+**(e)** Because a text comparison stops at the **first character that differs**, and it does not compare how many characters there are. `'9'` versus `'100'`: it looks at `9` against `1`, decides, and stops. The other two characters of `'100'` are never looked at, so its extra length buys it nothing. (Length only matters as a tie-break when one text is the start of the other: `'1'` comes before `'10'`.)
 
 **Part 2**
 

@@ -727,7 +727,7 @@ Draw **your own table, twice** — once with its labels, once with the words rub
 >
 > The three bottom boxes: **(8, 2)** · **float64** *(because `minutes` has decimals in it and one decimal decides it for the whole array)* · **the titles, the artists and the genres — and all five column names**.
 >
-> And two annotations that show real understanding. An arrow pointing at the second column of the right-hand grid, labelled *this is `plays`, and only my own arrow says so*. And a note under the right-hand grid: *if I had kept the genre column I would have got `<U21` and every play count would be writing*.
+> And two annotations that show real understanding. An arrow pointing at the second column of the right-hand grid, labelled *this is `plays`, and only my own arrow says so*. And a note under the right-hand grid: *if I had kept the genre column I would have got a text array (`<U32`, because `minutes` has decimals) and every play count would be writing*.
 >
 > **What a weak answer looks like:** a right-hand grid that still has the header row in it, or that has all five columns. That is the whole misunderstanding drawn out — the point of the exercise is that **the words cannot come with you**, and if any word survived on the right-hand side then that grid is not an array, it is still a table.
 
@@ -1367,7 +1367,7 @@ shape: (4,)  dtype: float64
 
 > *"The columns that can go into a numeric array are the ones I would do arithmetic on — add up, average, compare. The ones that can't are words, and the words are exactly the ones I need for grouping and for knowing which row is which."*
 
-**And could you put all five into one array?** Only by turning everything into text, which would make `plays` unusable — the `<U21` problem, deliberately, across the whole table. **So no, not usefully.** Which is exactly the gap `pandas` fills in Week 21: a table where one column can be words and another can be numbers.
+**And could you put all five into one array?** Only by turning everything into text, which would make `plays` unusable — the text-array problem (`<U32` here, because of the decimals), deliberately, across the whole table. **So no, not usefully.** Which is exactly the gap `pandas` fills in Week 21: a table where one column can be words and another can be numbers.
 
 ---
 

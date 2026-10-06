@@ -127,7 +127,7 @@ Three facts that will come up:
   ```
   Translated: *"you asked me to show this as a decimal number, and it's text."*
 
-**Why money must be exactly two decimals**, since it is an objective: a price is not really a decimal number, it is a whole number of pennies. £17 is 1700 pennies, and 1700 pennies written in pounds is `17.00`. Printing `17.0` is not a rounding choice, it is a *wrong number of pennies* — it says "seventeen pounds and no tenth of a penny", which is not a thing. Every till receipt in the world uses two places and it is not decoration. Have the student find a real receipt if you have one; every single money figure on it has two decimals, including the whole-pound ones.
+**Why money must be exactly two decimals**, since it is an objective: a price is not really a decimal number, it is a whole number of pennies. £17 is 1700 pennies, and 1700 pennies written in pounds is `17.00`. Printing `17.0` is not a rounding choice, it is a *wrong number of pennies* — it stops at tenths of a pound, so it cannot show pennies at all. Every pound-and-pence till receipt uses two places and it is not decoration. Have the student find a real receipt if you have one; every single money figure on it has two decimals, including the whole-pound ones.
 
 ### 3. `//` and `%` — whole ones, and what's left over
 
@@ -492,7 +492,7 @@ Let them. They will read `.99`, `.50`, `.00`, `.25`.
 
 Let them think. Answers you'll get: "it looks neater", "so it lines up".
 
-> "Both true, and there's a better reason underneath. A price isn't really a decimal number at all. **It's a whole number of pennies.** Three pounds is three hundred pennies. And three hundred pennies, written in pounds, is `3.00`. Writing `3.0` says 'three pounds and no *tenth* of a penny', which isn't a thing that exists. Writing `3` doesn't say pennies at all.
+> "Both true, and there's a better reason underneath. A price isn't really a decimal number at all. **It's a whole number of pennies.** Three pounds is three hundred pennies. And three hundred pennies, written in pounds, is `3.00`. Writing `3.0` stops at tenths of a pound, so it can't show pennies at all. Writing `3` doesn't say pennies either.
 >
 > So two decimal places on money isn't decoration. It's the number of pennies, and it's how you show you know what you're counting.
 >
@@ -753,7 +753,7 @@ Cost per slice: {cost_per_slice}
 
 Let them look. There isn't one.
 
-> "There **isn't one.** No red text, no traceback, no line number, nothing. The program ran perfectly and did exactly what I asked, which was 'print these characters'. Without the `f`, `{cost_per_slice}` is just fourteen ordinary characters and Python printed all fourteen.
+> "There **isn't one.** No red text, no traceback, no line number, nothing. The program ran perfectly and did exactly what I asked, which was 'print these characters'. Without the `f`, `{cost_per_slice}` is just sixteen ordinary characters (fourteen letters plus two braces) and Python printed all sixteen.
 >
 > This is the first bug this year that the computer will not find for you. Every other one so far, you read the last line and it told you where to look. This one has no last line. **The only thing that catches it is you looking at the output and asking: does that make sense?**
 >
@@ -918,7 +918,7 @@ Left over    : 1 slice
 
 > "Change the price of a pizza to nine pounds fifty. How many lines do you have to edit?"
 
-**One.** And every figure below it updates. Real output with `pizza_price = 9.50`:
+**One.** And every figure below it updates. Real output with `pizza_price = 9.50` (only the price, total and per-slice lines change):
 
 ```text
 ----- PIZZA RECEIPT -----
@@ -932,7 +932,7 @@ Left over    : 1 slice
 -------------------------
 ```
 
-> "One edit. Six numbers changed. **That** is what naming things is for, and now you can feel it instead of being told it."
+> "One edit. Three numbers changed. **That** is what naming things is for, and now you can feel it instead of being told it."
 
 ### What "finished" looks like
 
@@ -1025,7 +1025,7 @@ Every line below came from really running a broken version of this week's code. 
 | `ValueError: Unknown format code 'f' for object of type 'str'` | "You asked me to show this as a decimal number, and it's text." | `:.2f` applied to a string — e.g. `total = "17.0"` from somewhere. | Make it a number first: `float(total)`. Or work out why it was text in the first place, which is usually the real bug. |
 | `SyntaxError: f-string: expecting '}'` | "I couldn't finish reading this f-string." | A missing `}`: `f"Total: {total:.2f"` | Close the brace. Braces come in pairs, like quotes and brackets. |
 | `SyntaxError: f-string: invalid syntax` | "There is nonsense inside the braces." | Something malformed in the braces — a stray space between the slashes, `{slices / / 5}`, or an unfinished sum. | Read what's between the braces on its own, as if it were a line of its own. |
-| `ZeroDivisionError: integer division or modulo by zero` | "You tried to share something between zero people." | `slices // 0` or `slices % 0` | Change the zero. **Note the different wording** from ordinary division, which says `division by zero`. Same problem, different sentence. |
+| `ZeroDivisionError: integer division or modulo by zero` | "You tried to share something between zero people." | `slices // 0` or `slices % 0` | Change the zero. **Note the different wording** from ordinary division, which says `division by zero`. Same problem, different sentence. (Newer Pythons say `integer modulo by zero` for `%`, and f-string `SyntaxError` wording also changed from 3.12; the meaning is the same.) |
 | `TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'int'` | "You cannot raise text to a power." | `radius_cm` is text, probably `"15"` with quotes on it. | Drop the quotes, or convert: `float(radius_cm) ** 2`. |
 
 ### How to teach debugging without giving the answer
@@ -1068,7 +1068,7 @@ Constantly, and the reason is that "how many left over?" turns out to be the sam
 
 **"Why does `2 ** 10` give 1024 and not 20?"**
 
-Because two stars is not "times". `2 * 10` is twenty. `2 ** 10` is two multiplied by itself ten times: 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024. That number will keep turning up all year — 1024 is why a kilobyte is 1024 bytes rather than 1000, because computers count in twos.
+Because two stars is not "times". `2 * 10` is twenty. `2 ** 10` is two multiplied by itself ten times: 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024. That number will keep turning up all year — computers count in twos, so memory sizes come in lumps of 1024. People often call 1024 bytes a "kilobyte"; strictly a kilobyte is 1000 bytes and 1024 is a *kibibyte*. Do not get into it unless asked.
 
 **"`f"{2.5:.0f}"` gives `2`. Shouldn't it be `3`?"** *(Genuinely surprising, and there is a real reason.)*
 
@@ -1076,7 +1076,7 @@ It really does give `2`, and so does `f"{1.5:.0f}"` give... `2` as well. That lo
 
 **"How many decimal places should a number have?"** *(Nobody fully agrees, and here's why.)*
 
-**There is no universal answer, and the disagreement is genuine rather than a matter of taste.** For money it is settled — two places, because that is how many pennies there are, and every accounting system on earth agrees. Everywhere else it is a judgement, and the professional principle is *"show as many digits as your measurement actually justifies, and not one more."* If you measured someone's height with a tape marked in centimetres, writing `1.6237 m` is a lie dressed as precision — you did not know that. `1.62 m` is honest. Scientists have a formal version of this called significant figures, and they argue about the edges of it constantly. The place it gets genuinely contentious is percentages: a survey of 500 people that reports `48.6%` support is claiming a precision it does not have, because with 500 people the honest margin is a couple of percentage points either way — so `49%` would be more truthful, and some statisticians will tell you flatly that the extra decimal is misleading. Others say the extra digit is harmless because a reader can see the sample size. Both camps contain serious people. What everyone agrees on: **never invent precision you did not measure**, and never let the format specifier be the place where a claim gets quietly upgraded.
+**There is no universal answer, and the disagreement is genuine rather than a matter of taste.** For pounds and pence it is settled — two places, because that is how many pennies there are (other currencies differ; the yen has none). Everywhere else it is a judgement, and the professional principle is *"show as many digits as your measurement actually justifies, and not one more."* If you measured someone's height with a tape marked in centimetres, writing `1.6237 m` is a lie dressed as precision — you did not know that. `1.62 m` is honest. Scientists have a formal version of this called significant figures, and they argue about the edges of it constantly. The place it gets genuinely contentious is percentages: a survey of 500 people that reports `48.6%` support is claiming a precision it does not have, because with 500 people the honest margin of error is roughly four percentage points either way — so `49%` would be more truthful, and some statisticians will tell you flatly that the extra decimal is misleading. Others say the extra digit is harmless because a reader can see the sample size. Both camps contain serious people. What everyone agrees on: **never invent precision you did not measure**, and never let the format specifier be the place where a claim gets quietly upgraded.
 
 ---
 
@@ -1156,7 +1156,7 @@ Total: 17.00
 Per slice: 2.12
 ```
 
-> **🧑‍🏫 If a student asks** why `17.00 / 8` shows as `2.12` when the real answer is `2.125` and "point five rounds up" — they have found something real. Python rounds an *exact* half to the nearest **even** number, so `2.125` shows as `2.12` and `2.135` would show as `2.14`. There is a full honest answer in the Questions section; the one-liner is: *"always rounding halves up would drift the total upwards, so it alternates instead."*
+> **🧑‍🏫 If a student asks** why `17.00 / 8` shows as `2.12` when the real answer is `2.125` and "point five rounds up" — they have found something real. Python rounds an *exact* half to the nearest **even** number, so `2.125` shows as `2.12` and `2.375` would show as `2.38`. There is a full honest answer in the Questions section; the one-liner is: *"always rounding halves up would drift the total upwards, so it alternates instead."*
 
 **Reduce:** accept the receipt without column alignment. Lining things up is satisfying and is not an objective.
 
@@ -1434,7 +1434,7 @@ print(f"{4.30 * 3:.2f}")
 12.90
 ```
 
-**Two separate discoveries here and both are worth having.** First, the shop's total of `13.00` is simply wrong; the correct total is `12.90`. Second — and this is the interesting one — the raw answer came out as `12.899999999999999`, not `12.9`. That is not a Python bug. Computers store decimals in base 2 and some fractions do not fit exactly, in the same way that one third does not fit exactly in base 10 (`0.3333...` never ends). The `:.2f` hides it completely and gives the right answer, `12.90`. **You will not have to deal with this problem this year**, because every money figure we print will have a `:.2f` on it. But if a student finds it, they have found something real, and the honest answer is better than a brush-off. Write their name and today's date next to it.
+**Two separate discoveries here and both are worth having.** First, the shop's total of `13.00` is simply wrong; the correct total is `12.90`. Second — and this is the interesting one — the raw answer came out as `12.899999999999999`, not `12.9`. That is not a Python bug. Computers store decimals in base 2 and some fractions do not fit exactly, in the same way that one third does not fit exactly in base 10 (`0.3333...` never ends). The `:.2f` hides it here and gives the right answer, `12.90`. **You will rarely have to deal with this problem this year**, because every money figure we print will have a `:.2f` on it (and keeping money in whole pence, as B5 does, avoids it entirely). But if a student finds it, they have found something real, and the honest answer is better than a brush-off. Write their name and today's date next to it.
 
 **P4. Why is a wrongly-printed number more dangerous than a program that crashes?**
 Because a crash announces itself and a wrong number does not. `13.00` looks completely normal. It goes on the receipt, into the till, into the day's takings, and the first person to notice is whoever counts the money at closing — if they notice at all. A crash costs four seconds. A wrong number that nobody spots costs whatever it costs, for as long as nobody spots it. This is the same idea as the missing `f`, and it is why *"read your output and ask whether it makes sense"* is the habit of the week.
@@ -1524,7 +1524,7 @@ Left over    : 3 slice
 Check: 3 × 7 + 3 = 24 ✓ And the raw per-slice figure is `0.90625`, which `:.2f` shows as `0.91` — rounded up, correctly.
 
 **3.5(b) Change one input and say how many lines you had to edit.**
-**One.** Setting `pizza_price = 9.50` changes six printed figures:
+**One.** Setting `pizza_price = 9.50` changes three printed figures:
 
 ```text
 Pizzas       : 2 at 9.50 each
@@ -1543,9 +1543,9 @@ Mark the honesty. The two things students most often catch by ear: `Left over   
 
 Model answer:
 
-> It is a kindness when the hidden digits are not information. `1.0625` on a receipt is unreadable and it does not help anybody — nobody can pay a fraction of a penny, so `1.06` is the honest amount of money and the extra digits are noise. Every receipt in the world does this and nobody objects.
+> It is a kindness when the hidden digits are not information. `1.0625` on a receipt is unreadable and it does not help anybody — nobody can pay a fraction of a penny, so `1.06` is the honest amount of money and the extra digits are noise. Every receipt does this and nobody objects.
 >
-> It becomes a lie in two situations. The first is when the hidden digits change the meaning: showing a test score as `71%` when it is really `70.6%` moves somebody from one side of a grade boundary to the other, and the person whose score it is would care very much about that digit. The second, and sneakier, is going the other way — showing **more** digits than you actually measured. If I measure a room with a tape marked in centimetres and write `4.2735 m`, I have invented three digits I never knew, and anybody reading it will believe I measured to a tenth of a millimetre.
+> It becomes a lie in two situations. The first is when the hidden digits change the meaning: showing a test score as `71%` when it is really `70.6%` moves somebody from one side of a grade boundary to the other, and the person whose score it is would care very much about that digit. The second, and sneakier, is going the other way — showing **more** digits than you actually measured. If I measure a room with a tape marked in centimetres and write `4.2735 m`, I have invented two digits I never knew, and anybody reading it will believe I measured to a tenth of a millimetre.
 >
 > So the rule I'd use is: **keep every digit in the box, decide what to show at the last moment, and never show more precision than you actually measured.** And if the choice could matter to somebody, say what you did.
 
@@ -1583,7 +1583,7 @@ Model answer:
 - *"Check my answer: 3 each, 5 friends, 1 over."* → 3 × 5 + 1 = 16 ✓
 - *"What's the difference between `r * 2` and `r ** 2` when r is 5?"* → `10` and `25`. Neither one errors, which is why you count the stars.
 - *"Which of the four dial settings would you put on a receipt?"* → `.2f`. `.0f` loses six pence a slice; `.4f` is honest and unreadable.
-- *"How many lines do you edit to change the pizza price?"* → One. Six printed figures change.
+- *"How many lines do you edit to change the pizza price?"* → One. Three printed figures change.
 - *"So how do I print an actual curly brace?"* → Double it: `f"{{"` prints one `{`.
 - *Check 1:* the `f` is missing before the opening quote.
 - *Check 2:* the variable still holds `1.0625`, all of it.

@@ -163,7 +163,7 @@ SyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?
 
 Think about what that program does to a fifteen-year-old. They get *set to 12* and charged the child price. Everyone becomes 12.
 
-That bug is famous, it has cost real money, and Python's designers decided to make the line impossible to write. **When it stops you, it isn't being fussy — it is the only language in the room that noticed.**
+That bug is famous, it has cost real money, and Python's designers decided to make the line impossible to write. **When it stops you, it isn't being fussy — it is one of the languages in the room that noticed.**
 
 ### 3. The colon and the four spaces
 
@@ -610,7 +610,7 @@ To pay   : 160 rupees
 Spend 380 more for free delivery.
 ```
 
-**Look at the 499 row.** *"Spend 1 more for free delivery"* — and paying 40 rupees to avoid paying 40 rupees is an interesting decision for the customer. That sentence only appears because the `else` branch computed `free_from - basket` for itself. **A branch can do work, not just set a number.**
+**Look at the 499 row.** *"Spend 1 more for free delivery"* — and spending one more rupee to save a 40-rupee delivery fee is an easy decision for the customer. That sentence only appears because the `else` branch computed `free_from - basket` for itself. **A branch can do work, not just set a number.**
 
 ### Worked Example 2 — Can you ride? (sport)
 

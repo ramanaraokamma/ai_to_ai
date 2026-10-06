@@ -29,5 +29,5 @@
   <rect x="534" y="292" width="236" height="54" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
   <text x="652" y="312" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">scores[4] does not exist:</text>
   <text x="652" y="336" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#CC2B1D" text-anchor="middle" font-weight="600">IndexError</text>
-  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Four fence panels need four posts numbered 0 to 3. There is no post number 4.</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Four slots, numbered 0 to 3. There is no slot number 4.</text>
 </svg>

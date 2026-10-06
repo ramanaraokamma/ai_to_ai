@@ -36,7 +36,7 @@ The first answers people give are "it looks neater" and "so the column lines up"
 
 > **A price is not really a decimal number. It is a whole number of pennies.**
 
-Three pounds is three hundred pennies. And three hundred pennies, written in pounds, is `3.00`. Writing `3.0` says "three pounds and no *tenth* of a penny", which is not a thing that exists. Writing `3` doesn't mention pennies at all.
+Three pounds is three hundred pennies. And three hundred pennies, written in pounds, is `3.00`. Writing `3.0` stops at tenths of a pound (ten-pence steps), so it cannot show the pennies at all. Writing `3` doesn't mention pennies either.
 
 So two decimal places on money is not decoration. It is the number of pennies, and it is how you show that you know what you are counting.
 
@@ -312,7 +312,7 @@ print(10 ** 0)
 1
 ```
 
-**The analogy.** One star is "times". Two stars is "times itself, that many times". `2 * 10` is twenty. `2 ** 10` is 2, 4, 8, 16, 32, 64, 128, 256, 512, **1024** — and that number will keep turning up all year, because it is why a kilobyte is 1024 bytes and not 1000.
+**The analogy.** One star is "times". Two stars is "times itself, that many times". `2 * 10` is twenty. `2 ** 10` is 2, 4, 8, 16, 32, 64, 128, 256, 512, **1024** — and that number will keep turning up all year, because computers count in twos, which is why memory sizes come in lumps of 1024 (people often still call 1024 bytes a "kilobyte", though strictly a kilobyte is 1000 bytes and 1024 is a *kibibyte*).
 
 **The concrete version — why a pizza lesson needs it.** A pizza is a **circle**, and the area of a circle is π times the radius **squared**. Which means two stars and a `:.2f` settle the "is the big one better value?" argument with arithmetic instead of opinions.
 
@@ -533,7 +533,7 @@ Left over    : 1 slice
 
 **And one last move, which is the point of the whole file.** Change `pizza_price` to `9.50`. How many lines do you edit?
 
-**One.** And six printed figures change:
+**One.** And three printed figures change:
 
 ```text
 ----- PIZZA RECEIPT -----
@@ -547,7 +547,7 @@ Left over    : 1 slice
 -------------------------
 ```
 
-One edit. Six numbers. **That** is what naming things is for, and now you can feel it instead of being told it.
+One edit. Three numbers. **That** is what naming things is for, and now you can feel it instead of being told it.
 
 ---
 
@@ -632,9 +632,9 @@ Faced   : 254 balls = 42 overs and 2 balls
 Raw average: 38.55555555555556
 ```
 
-**Look at the last line first.** The raw average is `38.55555555555556` — fourteen digits nobody wants. Every scorecard in the world prints `38.56`, and now you know it takes four characters.
+**Look at the last line first.** The raw average is `38.55555555555556` — sixteen digits nobody wants. Every scorecard in the world prints `38.56`, and now you know it takes four characters.
 
-**Two different questions, two different operators, and both are right.** `347 / 9` is `38.56` — that is a batting average, and it is *supposed* to be a fraction, because an average is not a thing you can count. `347 // 9` is `38` with `5` left over — that is not an average, it is an accounting of the actual runs. Check: 38 × 9 + 5 = 347 ✓
+**Two different questions, two different operators, and both are right.** `347 / 9` is `38.56` — that is an average of runs per match, and it is *supposed* to be a fraction, because an average is not a thing you can count. `347 // 9` is `38` with `5` left over — that is not an average, it is an accounting of the actual runs. Check: 38 × 9 + 5 = 347 ✓
 
 **And `254 balls = 42 overs and 2 balls`** is the same pair of operators doing an entirely different job. Check: 42 × 6 + 2 = 254 ✓ Any cricket scorer writes it exactly that way, as `42.2 overs`, and the `.2` there means *two balls*, not two tenths — which is a real thing about the world that `//` and `%` describe perfectly.
 
@@ -710,7 +710,7 @@ Slices: 16
 Cost per slice: {cost_per_slice}
 ```
 
-**What Python is telling you.** Nothing. It has no complaint. Without the `f`, `{cost_per_slice}` is fifteen ordinary characters, and Python printed all fifteen, exactly as instructed.
+**What Python is telling you.** Nothing. It has no complaint. Without the `f`, `{cost_per_slice}` is sixteen ordinary characters (the fourteen letters of the name plus the two braces), and Python printed all sixteen, exactly as instructed.
 
 **The fix.** Put the `f` back before the opening quote. **Nothing on screen will point you at it** — you have to notice that the output is silly. Log this one in your Bug Log with a note in the third column saying **"no error message"**, because that is the lesson.
 
@@ -768,6 +768,8 @@ NameError: name 'nme' is not defined. Did you mean: 'name'?
 | `ZeroDivisionError: integer division or modulo by zero` | You tried to share between zero people | Change the zero. Note the **different wording** from plain `/` |
 | `TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'int'` | You cannot raise text to a power | Drop the quotes, or `float(radius_cm) ** 2` |
 
+> **Python version note.** The exact wording of f-string `SyntaxError`s and of `%`-by-zero errors changed in newer Python versions (newer versions say `integer modulo by zero` for `%`, and Python 3.12 and later reword several f-string messages). If yours reads slightly differently from the table, the meaning is the same.
+
 **The sentence for this week: not every bug shouts. Some of them just sit there looking wrong.**
 
 ---
@@ -776,7 +778,7 @@ NameError: name 'nme' is not defined. Did you mean: 'name'?
 
 ### The receipt on the table
 
-A real till receipt, face up, and the job of reading the last two digits of every price. They were all two digits. Then the reason: **a price is a whole number of pennies**, and `3.00` says three hundred pennies while `3.0` says "three pounds and no tenth of a penny", which does not exist.
+A real till receipt, face up, and the job of reading the last two digits of every price. They were all two digits. Then the reason: **a price is a whole number of pennies**, and `3.00` says three hundred pennies while `3.0` stops at tenths of a pound and cannot show pennies.
 
 Then `print(8.50)` giving `8.5`, and `print(17.0 / 16)` giving `1.0625` — a number that is exactly right and completely unpayable.
 
@@ -809,7 +811,7 @@ Rounds worth redoing at home with counters, because the last two are the ones th
 4. The dial run at `.1f`, `.0f` and `.4f`, and the question *"which one goes on a receipt?"*
 5. Step 4 — `//` and `%`, with the check said out loud. `friends` changed to 6 and then 4, predicting first each time.
 6. **The dot deleted** from `{total:.2f}`, giving `Total: 17.000000`. Silent bug number two. Bug Log row.
-7. The finished receipt read out loud, then `pizza_price` changed to `9.50` — **one edit, six figures changed.**
+7. The finished receipt read out loud, then `pizza_price` changed to `9.50` — **one edit, three figures changed.**
 
 ---
 
@@ -825,7 +827,7 @@ Rounds worth redoing at home with counters, because the last two are the ones th
 
 **3. "How many decimal places *should* a number have?"** *(Nobody fully agrees, and that's the point.)*
 
-*Hint:* for money it is settled — two, because that is how many pennies there are, and every accounting system on earth agrees. Everywhere else it is a judgement, and the principle is *"show as many digits as your measurement actually justifies, and not one more."* If you measured a room with a tape marked in centimetres, writing `4.2735 m` is a lie dressed up as precision — you never knew that. The genuinely contentious case is percentages: a survey of 500 people reporting `48.6%` support is claiming a precision it does not have. Some statisticians will tell you flatly that the extra decimal is misleading; others say it is harmless because the reader can see the sample size. **Both camps contain serious people.** What everyone agrees on: never invent precision you did not measure.
+*Hint:* for pounds and pence it is settled — two, because that is how many pennies there are (other currencies differ: the yen has no decimals at all). Everywhere else it is a judgement, and the principle is *"show as many digits as your measurement actually justifies, and not one more."* If you measured a room with a tape marked in centimetres, writing `4.2735 m` is a lie dressed up as precision — you never knew that. The genuinely contentious case is percentages: a survey of 500 people reporting `48.6%` support is claiming a precision it does not have. Some statisticians will tell you flatly that the extra decimal is misleading; others say it is harmless because the reader can see the sample size. **Both camps contain serious people.** What everyone agrees on: never invent precision you did not measure.
 
 ---
 
@@ -856,7 +858,7 @@ The cure is not understanding, it is a ritual: **say "eff" out loud as you type 
 |---|---|
 | "`16 // 5` is `3` because `3.2` loses the `.2`. Same sum, tidier." | "They answer **different questions about the world.** `/` asks *share it out perfectly, even if you have to cut things up.* `//` asks *how many whole ones can each person actually be handed?*" |
 
-For positive numbers the arithmetic does line up, so this one feels harmless. It isn't, because it makes you reach for the wrong one. A batting average genuinely should be `38.56`; a number of slices genuinely should not be `3.2`. And the two operators come apart completely once negatives are involved — `-7 // 2` is `-4`, not `-3`, because `//` rounds *down* rather than towards zero. Check it with the rule: `-4 × 2 + 1 = -7`, and `-7 % 2` really is `1`.
+For positive numbers the arithmetic does line up, so this one feels harmless. It isn't, because it makes you reach for the wrong one. An average of runs per match genuinely should be `38.56`; a number of slices genuinely should not be `3.2`. And the two operators come apart completely once negatives are involved — `-7 // 2` is `-4`, not `-3`, because `//` rounds *down* rather than towards zero. Check it with the rule: `-4 × 2 + 1 = -7`, and `-7 % 2` really is `1`.
 
 ### Trick 4 — "one star, two stars, near enough"
 
@@ -864,13 +866,13 @@ For positive numbers the arithmetic does line up, so this one feels harmless. It
 |---|---|
 | `3.14159 * radius_cm * 2` — "that's pi r squared." | `3.14159 * radius_cm ** 2` — **two stars.** One star gives `94.2477`, which is not an area. |
 
-Neither version errors. Both run happily. The only thing that catches it is looking at the answer and asking whether a 15 cm pizza could possibly have an area of 94 square centimetres. (It could not — that's about the size of a large stamp.)
+Neither version errors. Both run happily. The only thing that catches it is looking at the answer and asking whether a 15 cm pizza could possibly have an area of 94 square centimetres. (It could not — that's about the size of a coaster.)
 
 ---
 
 ## 🌍 Where You've Seen This
 
-1. **Every price you have ever seen.** `£3.00`, `£12.50`, `₹450.00`. Two decimals, always, including on whole amounts. That is a `:.2f` somewhere in somebody's code, and it is why the column lines up.
+1. **Every price you have ever seen.** `£3.00`, `£12.50`, `₹450.00`. Two decimals, in pounds, dollars and rupees alike, including on whole amounts. That is a `:.2f` somewhere in somebody's code, and it is why the column lines up.
 2. **A petrol pump.** Fuel is priced to *three* decimals — `1.489` a litre — because a tenth of a penny per litre matters when you're selling millions of litres. Different job, different dial setting, same idea.
 3. **"3 items, 2 bags"** on a self-checkout screen. Somewhere behind that screen is a `//` working out how many bags fill up completely, and a `%` working out what's left for the last one.
 4. **A cricket score of `42.2 overs`.** That `.2` is not two tenths of an over — it is **two balls**, straight out of `254 % 6`. A scorer's notation and a remainder are the same idea.

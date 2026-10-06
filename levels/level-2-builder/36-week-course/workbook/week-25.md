@@ -176,7 +176,7 @@ ________________________________________________________________
 2  scores = [4, 9, 6]
 3  fig, ax = plt.subplots(figsize=(6, 4))
 4  ax.plot([1, 2, 3], scores, marker="o")
-5  ax.set_title("My score doubled after Tuesday")
+5  ax.set_title("My score more than doubled from test 1 to test 2")
 6  fig.savefig("scores.png", dpi=120, bbox_inches="tight")
 7  ax.set_ylabel("Score (points out of 10)")
 8  fig.savefig("scores.png", dpi=120, bbox_inches="tight")
@@ -1081,7 +1081,7 @@ Traceback (most recent call last):
 AttributeError: 'Axes' object has no attribute 'set_xlable'. Did you mean: 'set_xlabel'?
 ```
 
-**Two lines of output appeared before the crash**, and that tells you something useful: the first nine lines ran perfectly. Python got as far as line 14 and *then* hit something it could not do. A `SyntaxError` gives you nothing; a runtime error gives you everything up to the moment it broke — which is why the seatbelt prints are worth having.
+**Two lines of output appeared before the crash**, and that tells you something useful: everything above line 14 ran perfectly. Python got as far as line 14 and *then* hit something it could not do. A `SyntaxError` gives you nothing; a runtime error gives you everything up to the moment it broke — which is why the seatbelt prints are worth having.
 
 And notice they say **7 and 7**, so the two lists are fine. One worry eliminated for free.
 
@@ -1176,9 +1176,9 @@ steps.png
 - from week 5 (152) to week 6 (**149**)
 - from week 8 (171) to week 9 (166), and again to week 10 (**158**)
 
-So strictly there are **three** drops in a row across weeks 8→9→10, in **two** places. Accept "weeks 5–6 and weeks 8–10" as full marks.
+So strictly there are **three** single-week drops (5→6, 8→9, 9→10), in **two** places: one lone drop and one two-week slide. Accept "weeks 5–6 and weeks 8–10" as full marks.
 
-**(h)** Something like: **"Library visits rose 60% over the term, with a three-week dip in the middle."** Or: **"Visits climbed 60% overall, but fell for three weeks running after week 8."**
+**(h)** Something like: **"Library visits rose 60% over the term, with a dip in weeks 9 and 10."** Or: **"Visits climbed 60% overall, but fell two weeks running after week 8."**
 
 The point is that "climbed" is true about the *ends* and slightly misleading about the *middle*, and one extra clause fixes it. **A title should survive somebody looking at the chart carefully.**
 
@@ -1248,7 +1248,7 @@ line_chart(df["day"], df["homework_min"],
            DAY_LABEL, "Homework done (minutes)", "myweek_homework.png")
 
 line_chart(df["day"], df["screen_min"],
-           "Screen time trebled on day 6, then dropped back",
+           "Screen time hit 180 minutes on day 6, then dropped back",
            DAY_LABEL, "Screen time (minutes)", "myweek_screen.png")
 
 line_chart(df["day"], df["steps"],
@@ -1281,7 +1281,7 @@ steps   max  : 11200
 | Chart | What it shows | What it does **not** tell you |
 |---|---|---|
 | `myweek_homework.png` | Homework climbed to 90 minutes on day 7, straight after a day with none at all. | Which subject, whether any of it was finished, or whether day 7 was catch-up for day 6. Also: ten days is a fortnight, not a habit. |
-| `myweek_screen.png` | Screen time trebled to 180 minutes on day 6 — the Saturday — then dropped back to school-day levels. | What was *on* the screen. Homework research, a film and a group chat are all identical on this chart. |
+| `myweek_screen.png` | Screen time hit 180 minutes on day 6 — the Saturday, its highest of the fortnight — then dropped back to school-day levels. | What was *on* the screen. Homework research, a film and a group chat are all identical on this chart. |
 | `myweek_steps.png` | Day 6 was the only day over 10,000 steps; day 7 was the lowest of the fortnight at 4,300. | Whether the tracker was worn all day, what counted as a step, or whether a bike ride got logged as walking. |
 
 **Part 4 — the five things a stripped chart does not tell you.** Any five of these earn full marks, and every one must be a **specific absence**, not "it's confusing":

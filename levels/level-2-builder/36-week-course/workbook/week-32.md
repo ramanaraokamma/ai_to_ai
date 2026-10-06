@@ -895,7 +895,7 @@ ________________________________________________________________
 71.0
 ```
 
-**Lines 1 and 2 are the same number and look different** because they are printed by **two different things**. Line 1 prints a **numpy array**, and numpy tidies its display for you — it shows `[3.6]` because that is the shortest text that would read back as the same value. Line 2 pulls the plain Python float out of the array and prints it raw, dust and all. **The value never changed. Only who was doing the printing.**
+**Lines 1 and 2 are the same number and look different** because they are printed by **two different things**. Line 1 prints a **numpy array**, and numpy tidies its display for you — by default it prints at most 8 decimal places, so `3.5999999999999996` shows as `[3.6]`. Line 2 pulls the plain Python float out of the array and prints it raw, dust and all. **The value never changed. Only who was doing the printing.**
 
 **Is line 5 clean by luck?** Partly, and it is worth knowing it is not something you can rely on. `3.5999999999999996 × 6` is `21.599999999999998`, and adding `49.400000000000006` happens to land back on exactly `71.0`. The two crumbs cancelled. **Do not count on that** — always `round(...)` before you print a result somebody will read.
 

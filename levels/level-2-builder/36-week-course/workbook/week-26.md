@@ -236,7 +236,7 @@ ________________________________________________________________
 | g | `print(df["club"].value_counts)` | |
 | h | `counts = df.value_counts()` — you wanted club counts | |
 
-**A4(i).** Four of those eight produce **no error at all.** Which four?
+**A4(i).** Five of those eight produce **no error at all.** Which five?
 
 ________________________________________________________________
 
@@ -904,16 +904,17 @@ saved oops.png
 | g | `print(df["club"].value_counts)` | Add the brackets: `value_counts()` |
 | h | `df.value_counts()` | `df["club"].value_counts()` — pick the column **first** |
 
-**A4(i).** **c, d, f and h.** Every one of them runs, produces something, and tells you nothing is wrong.
+**A4(i).** **c, d, f, g and h.** Every one of them runs, produces something, and raises no error.
 
 - **c** gives 38 bars in three columns.
 - **d** turns three words into 0, 1, 2 and bins those.
 - **f** joins 38 dots into a scribble.
+- **g** prints an odd-looking `<bound method ...>` line, the method itself instead of its result.
 - **h** prints 38 lines with every count equal to 1.
 
-*(a, b, e and g all tell you something: three real errors and one odd-looking `<bound method` line.)*
+*(a, b and e are the three that raise a real error.)*
 
-**A4(j).** **"Describe my chart to me, out loud, in one sentence."** If you cannot, that is the bug report. It works on all four of the silent ones and it needs no tools at all.
+**A4(j).** **"Describe my chart to me, out loud, in one sentence."** If you cannot, that is the bug report. It works on all five of the silent ones and it needs no tools at all.
 
 **A5.**
 
@@ -1247,7 +1248,7 @@ saved spread.png
 
 **Part 2 — Wreck the histogram on purpose**
 
-**(i)** Everybody who scored **90 or more**: Bela Roy (90), Farah Aziz (95), Rhea Bose (92), Tara Joshi (97), Anika Verma (93), Hana Sato (91) — **and** the ones at exactly 90 land in the last bin, 80-to-90, because matplotlib puts the highest edge's value in the last bin. Working from the counts: **five students are dropped.**
+**(i)** Six students scored **90 or more**: Bela Roy (90), Farah Aziz (95), Rhea Bose (92), Tara Joshi (97), Anika Verma (93), Hana Sato (91). Bela's exactly 90 is **kept**, in the last bin (80-to-90), because matplotlib counts the highest edge's value in the last bin. The other **five students, all above 90, are dropped.**
 
 **(j)/(k)** Real output:
 
@@ -1319,7 +1320,7 @@ print(len(df.groupby(["age", "hours"]).size()))
 |---|---|
 | 1. bar of club counts | **Every score.** Chess has 14 members ranging from 55 to 97; the bar is one number standing in front of a very mixed crowd. It also hides that these 38 rows came from a 40-row table with two duplicates removed. |
 | 2. bar of house means | **How many rows each average came from** — Blue 14, Red 12, Green 12 — and the spread inside each house: Blue's scores run 42 to 93. Also that Blue's lead over Red is **0.11 of a mark**. |
-| 3. histogram of hours | **Who.** The 8 students in the 2-to-3-hour bin could be all one club or one from each. Five of the six columns were deliberately thrown away. |
+| 3. histogram of hours | **Who.** The 8 students in any one of the middle bins (for example 2.33 to 3.25 hours) could be all one club or one from each. Five of the six columns were deliberately thrown away. |
 | 4. scatter of age vs hours | **Fifteen students hidden under other students.** 38 rows, 23 visible dots. Three students at age 13 and 3.0 hours are one dot. |
 
 **Which hides most by design, and which by accident?** Chart 3 hides the most **by design** — a histogram exists to throw columns away. Chart 4 hides the most **by accident**.

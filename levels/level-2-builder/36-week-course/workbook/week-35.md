@@ -903,7 +903,7 @@ MAE averages the *sizes* of the errors, so it cannot tell them apart. RMSE squar
 | (g) | **both** | No — the median was computed using the test rows. Leakage, subtle version. |
 | (h) | mismatched | Neither — it crashes. |
 
-**A1(i).** Both compute a **statistic from all the rows** — a mean, a standard deviation, a median — *before* the split. So the test rows helped shape how the training data was prepared, the test set is no longer unseen, and the reported score comes out **too high**. The word is **leakage**, from Week 30.
+**A1(i).** Both compute a **statistic from all the rows** — a mean, a standard deviation, a median — *before* the split. So the test rows helped shape how the training data was prepared, the test set is no longer unseen, and the reported score can come out **too high** (or just different) without any warning. The word is **leakage**, from Week 30.
 
 **A1(j).** **(h)**. It raises `ValueError: Found input variables with inconsistent numbers of samples: [26, 100]` — 26 real answers against 100 guesses.
 
@@ -935,7 +935,7 @@ Read aloud: *"Half the journeys are under 17 minutes, but the tail reaches 58.6.
 
 | # | What is wrong | The fix |
 |---|---|---|
-| (a) | The scaler learned each column's mean and standard deviation **using the test rows too**. Leakage. No error, and the score moves in the flattering direction. | Move it below the split: `StandardScaler().fit(X_train)`, then `transform` both halves. |
+| (a) | The scaler learned each column's mean and standard deviation **using the test rows too**. Leakage. No error, and the score can be flattered. | Move it below the split: `StandardScaler().fit(X_train)`, then `transform` both halves. |
 | (b) | The **label lies**. The number is a train score sitting in a column that says `test R2`. Nothing about the arithmetic is wrong — the mislabelling is the whole bug, and it is exactly what the audit catches. | `round(r2_score(y_test, test_guess), 3)`. |
 | (c) | `y.mean()` is the mean of **all** the rows, including the 26 you are about to be tested on. Your baseline is peeking. | `guess = y_train.mean()`. |
 
@@ -1191,7 +1191,7 @@ The fix: `round(r2_score(y_test, knn.predict(X_test)), 3)`, and the number chang
 scaler = StandardScaler().fit(X)
 ```
 
-That is **above** the split, so the scaler computed each column's mean and standard deviation using all 30 rows — including the 6 test rows. The bug is called **leakage** (Week 30), and it moves the reported score in the **flattering** direction, which is exactly what makes it dangerous.
+That is **above** the split, so the scaler computed each column's mean and standard deviation using all 30 rows — including the 6 test rows. The bug is called **leakage** (Week 30), and it can **flatter** the reported score, which is exactly what makes it dangerous.
 
 > **And here is the honest part.** On this particular table, fixing the leakage barely moved the kNN's test R² at all — it was 0.974 before and after, to three decimal places. **That is not a reason to leave it in.** You cannot know in advance which way a leak will push, or how far, because if you could know that you would not need the test set. Fix it because the rule is checkable and the size of the damage is not.
 

@@ -684,7 +684,7 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**T2.** Same data, same model, same `k`. Only `random_state` changing:
+**T2.** Same data (iris, two sepal columns), same model, same `k = 5`. Only `random_state` changing:
 
 ```text
 random_state=0   test score = 0.6667
@@ -979,7 +979,7 @@ for distance, mood in sorted(pairs):     # sorted() puts the nearest first
 
 **The gap:** 0.9417 − 0.7333 = **0.2083**, or about 21 percentage points.
 
-**Why is line 1 not exactly 1.0?** Because we threw away two columns. **Seven of the 120 training flowers share their exact sepal measurements with a flower of a different species** — `(6.3, 2.5)` is both a versicolor and a virginica in this table. So the nearest neighbour at distance zero is a *different* flower with a *different* answer, and the model gets those seven wrong. On the full four-column iris, `k = 1` does score exactly 1.0.
+**Why is line 1 not exactly 1.0?** Because we threw away two columns. **Sixteen of the 120 training flowers share their exact sepal measurements with a flower of a different species** — `(6.3, 2.5)` is both a versicolor and a virginica in this table. For seven of them the nearest neighbour at distance zero that the model picks is the look-alike with a *different* answer, and the model gets those seven wrong. On the full four-column iris, `k = 1` does score exactly 1.0.
 
 Confirmed:
 
@@ -1006,7 +1006,7 @@ print("pairs of flowers with identical sepals but different species:", clashes)
 pairs of flowers with identical sepals but different species: 15
 ```
 
-**Fifteen clashing pairs in the whole table**, and seven of the flowers involved happened to land in the training pile — which is exactly the seven that `k = 1` gets wrong. **Throw away two columns and you throw away the ability to tell some rows apart at all.**
+**Fifteen clashing pairs in the whole table.** Sixteen of the flowers involved landed in the training pile, and for seven of them the zero-distance neighbour the model picks has the wrong species — which is exactly the seven that `k = 1` gets wrong. **Throw away two columns and you throw away the ability to tell some rows apart at all.**
 
 **P4** — real output:
 
@@ -1045,9 +1045,9 @@ print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 | d | setosa, versicolor, versicolor, setosa, setosa | setosa | **versicolor** (2–1) | **setosa** (3–2) |
 | e | chill, chill, hype, hype, hype | chill | **chill** (2–1) | **hype** (3–2) |
 
-**A1(f).** Rows **(b), (d) and (e)**. In every one, the **closest neighbour is the odd one out** — a single example of one class sitting nearest, with the other class in the majority just behind it. **That is exactly the situation `k > 1` exists to protect you from:** one strange near neighbour should not decide the answer on its own.
+**A1(f).** Rows **(b), (c), (d) and (e)**; only (a) stays the same. In (b), (c) and (d) the **closest neighbour is the odd one out** — a single example of one class sitting nearest, with the other class in the majority just behind it. **That is exactly the situation a bigger `k` exists to protect you from:** one strange near neighbour should not decide the answer on its own. Row (e) is the reverse: the two nearest agree, and going from `k = 3` to `k = 5` lets three farther neighbours outvote them — a bigger `k` is not automatically wiser.
 
-**A1(g).** Honest answer: **setosa**, the `k = 5` answer, because three of the five agree and only the very closest disagrees. But the fuller answer is worth writing down: this is a genuinely close call, and the right conclusion is **"this one is uncertain"** rather than "this one is setosa". A model that reports a confident answer here is overstating what it knows.
+**A1(g).** Honest answer: **setosa**, the `k = 5` answer, because three of the five nearest are setosa (including the very closest). But the fuller answer is worth writing down: the 2nd and 3rd nearest are both versicolor, which is why `k = 3` says versicolor, so 3–2 is a genuinely close call, and the right conclusion is **"this one is uncertain"** rather than "this one is setosa". A model that reports a confident answer here is overstating what it knows.
 
 **A1(h).** A **2–2 tie.** Scikit-learn breaks it by picking whichever class name comes first in sorted order — `art` before `chess`, so it says art. **Nothing about the data chose that.** Use an odd `k` with two classes.
 

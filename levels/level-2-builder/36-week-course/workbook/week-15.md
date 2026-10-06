@@ -124,7 +124,7 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**How many of the eleven answers did you get right?** ______ / 11
+**How many of the nine answers did you get right?** ______ / 9
 
 **Which one surprised you most, and why?**
 
@@ -935,7 +935,7 @@ And (a) is `3`, not `2`: Asha's 48, Omar's 90 **and** Zara's 41 are all above 40
 
 **4 + 4 + 3 + 1 = 12**, and `len(squad)` is **12**.
 
-**Why it matters:** grouping is supposed to put **every** row into **exactly one** bucket. If the total came to 11, one row went somewhere you did not expect — most likely into a bucket you never noticed, because its team field had a stray space or a different capital. It is one line of code and it is the cheapest correctness check in the whole course.
+**Why it matters:** grouping is supposed to put **every** row into **exactly one** bucket. If the total came to 11, a row was dropped and went into no bucket at all. (A stray space or a different capital does not change the total — it makes an extra bucket, and the total is still 12. Noticing that needs a different check: count the buckets.) It is one line of code and it is the cheapest correctness check in the whole course.
 
 **A6.**
 
@@ -1233,7 +1233,7 @@ It is arithmetically perfect and it tells a reader something completely untrue. 
 
 > Everybody agrees on one thing: **one row is not an average**, and it should never be printed next to real averages without a warning. Two is barely better. Past that, the honest answer is *it depends*, on three things.
 >
-> **How spread out the values are.** If every Falcon scored between 34 and 36, three of them tell me a great deal, because the next Falcon is very likely to be near there too. If they scored 5, 12, 48 and 77, then four of them barely tell me anything, because the next one could be anywhere. **Spread, not count, is what actually decides how much I know** — which I did not expect, and it is the bit that changed my mind.
+> **How spread out the values are.** If every Falcon scored between 34 and 36, three of them tell me a great deal, because the next Falcon is very likely to be near there too. If they scored 5, 12, 48 and 77, then four of them barely tell me anything, because the next one could be anywhere. **Spread matters as much as count in deciding how much I know** — which I did not expect, and it is the bit that changed my mind.
 >
 > **What the answer will be used for.** An average deciding which snack to buy for a party can rest on very little. An average deciding who gets picked for a team, or who gets extra help in maths, needs far more — **not because the maths changes, but because the cost of being wrong lands on a person.**
 >

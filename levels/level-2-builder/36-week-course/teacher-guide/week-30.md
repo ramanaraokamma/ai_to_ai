@@ -85,7 +85,7 @@ hue's share of the distance    : 0.000044 %
 proline's share of the distance: 99.999956 %
 ```
 
-**`hue` contributed forty-four millionths of one percent.** It may as well not be in the table. And there is nothing special about `hue` — the same is true of eleven of the other twelve columns. The model is effectively using one measurement and ignoring the rest, **not because `proline` is more informative, but because somebody chose to write it in bigger numbers.**
+**`hue` contributed forty-four millionths of one percent.** It may as well not be in the table. And there is nothing special about `hue` — the same is true of every one of the other twelve columns (magnesium, the next biggest, has a squared spread about 480 times smaller than proline's). The model is effectively using one measurement and ignoring the rest, **not because `proline` is more informative, but because somebody chose to write it in bigger numbers.**
 
 🍕 **The analogy that lands.** Compare two people by height in *millimetres* and age in *years*. Person A is 1700 mm and 12 years old. Person B is 1750 mm and 40 years old. Distance = √(50² + 28²) = √3284 = 57.3. The 50 mm height difference contributes 2500; the 28-year age gap contributes 784. **So the model thinks a 5 cm height difference matters three times more than being 28 years older.** Now write the heights in metres — 1.70 and 1.75 — and the height contribution becomes 0.0025 and the age gap runs the whole show. **Nothing about the two people changed. Your model's opinion should not depend on which unit somebody happened to type.**
 
@@ -222,7 +222,7 @@ k = 10   raw = 0.7500   scaled = 0.9722
 
 Four consecutive values of `k` all give 0.9722. That is a **plateau**, and a plateau is trustworthy — it says the answer does not depend on getting `k` exactly right. A single lonely spike at one value of `k`, with dips either side, is usually luck.
 
-**The rule of thumb:** pick a `k` inside a flat, high region, and prefer a *larger* one, because larger `k` is less jumpy. Prefer an odd one, because odd `k` ties less. So from `{7, 8, 9, 10}`: **`k = 9`**.
+**The rule of thumb:** pick a `k` inside a flat, high region, and prefer a *larger* one, because larger `k` is less jumpy. Prefer an odd one, because odd `k` ties less often. So from `{7, 8, 9, 10}`: **`k = 9`**.
 
 And then the part most people skip. **You just chose `k` by looking at the test scores.** Twenty-five times. So the test set helped you make a decision, which means your reported accuracy is a little optimistic — you have used up some of the envelope's honesty. The professional fix is a third split, or cross-validation, and that is Level 3. For now, the honest thing is one sentence written next to the number:
 
@@ -505,7 +505,7 @@ Write on the board:
 
 > "Here's the fix, and it's one idea. Right now a gap of 15 counts as huge because 15 is a big number. But is 15 big **for the proline column**? Proline runs from 278 to 1680. So 15 is nothing — it's a rounding error in proline terms.
 >
-> Meanwhile a gap of 0.01 in hue — is that small **for the hue column**? Hue only runs from 0.48 to 1.71. So 0.01 is small there too, but not *four-hundred-thousand-times* smaller.
+> Meanwhile a gap of 0.01 in hue — is that small **for the hue column**? Hue only runs from 0.48 to 1.71. So 0.01 is small there too, but not *two-million-times* smaller (the ratio of the squares, 225 to 0.0001).
 >
 > So: **divide every gap by how much that column normally varies.** Then a gap counts as big when it's big *for its own column*."
 
@@ -741,7 +741,7 @@ proline column AFTER  scaling, first 5: [-0.21 -0.96 -0.42 -1.07  1.75]
 
 > "Point seven seven seven eight, to point nine four four four.
 >
-> **Sixteen and a half percentage points.** We added no measurements. We collected no new wines. We didn't touch `k`. We changed no data — those are the same 178 wines. All we did was stop letting proline shout over the other twelve.
+> **Sixteen and two-thirds percentage points.** We added no measurements. We collected no new wines. We didn't touch `k`. We changed no data — those are the same 178 wines. All we did was stop letting proline shout over the other twelve.
 >
 > And now read me the new row 2."
 
@@ -784,7 +784,7 @@ test rows      : 36
 
 > "Nothing crashed. It ran perfectly. And the accuracy is thirty-three percent — which is *below* the baseline of thirty-nine point nine. Our beautiful ninety-four percent model just became worse than shouting one word at every wine.
 >
-> Why? Because the model learnt in scaled world, where proline lives between about minus two and plus two. Then I handed it a test wine with proline of 680. To the model, 680 is roughly two hundred and twenty spreads from typical — a wine from a different planet. Every single test wine looks equally absurd, so the distances are meaningless.
+> Why? Because the model learnt in scaled world, where proline lives between about minus two and plus two. Then I handed it a test wine with proline of 680. To the model, 680 is six hundred and eighty spreads from typical — a wine from a different planet. Every single test wine looks equally absurd, so the distances are meaningless.
 >
 > **And there was no error message.** Python had no way to know: 680 is a perfectly valid number. This is the bug you must catch yourself, and the way you catch it is a habit: **whatever you did to `X_train`, do to `X_test`.** Same two lines, every time, right next to each other."
 
@@ -968,7 +968,7 @@ saved wine_accuracy_vs_k.png
 >
 > Here's the rule. **Look for a flat patch, not a spike.** A flat patch means the answer doesn't depend on getting k exactly right — you could be a bit wrong about k and still be fine. A lonely spike, with dips either side, is usually one lucky wine.
 >
-> Seven, eight, nine, ten. Four in a row, all at nine seven two two. That's a plateau, and it's the first one. Inside it, prefer a **bigger** k, because bigger k is less jumpy. And prefer an **odd** k, because odd ties less.
+> Seven, eight, nine, ten. Four in a row, all at nine seven two two. That's a plateau, and it's the first one. Inside it, prefer a **bigger** k, because bigger k is less jumpy. And prefer an **odd** k, because odd ties less often.
 >
 > So: **nine.**"
 
@@ -981,7 +981,7 @@ baseline          : 0.3989
 reason            : k = 7, 8, 9 and 10 all give 0.9722. Four in a row is a
                     plateau, so the answer does not depend on getting k
                     exactly right. I chose 9 because a bigger k is steadier
-                    and an odd k cannot tie.
+                    and an odd k ties less often.
 honesty sentence  : I chose this k by looking at test scores, which makes
                     this estimate slightly optimistic.
 ```
@@ -1064,7 +1064,7 @@ difference: 2.72
 
 **The answer you want, in their words:**
 
-> The score is supposed to be an estimate of how the model does on wines nobody has seen. But the test wines helped work out the means and spreads that the training data got scaled with — so they weren't unseen. A brand-new wine tomorrow can't have helped, so tomorrow's wine will do worse than 0.9722. The number went up and got *less* true.
+> The score is supposed to be an estimate of how the model does on wines nobody has seen. But the test wines helped work out the means and spreads that the training data got scaled with — so they weren't unseen. A brand-new wine tomorrow can't have helped, so expect tomorrow's wine to do worse than 0.9722. The number went up and got *less* true.
 
 **Say this to close it:**
 
@@ -1227,7 +1227,7 @@ Do the Hook only — the two-column arithmetic — and then play **"Spot the Sho
 
 You name two measurements and the units, and they say which one will drown the other and roughly by how much. No code, no writing, keep score.
 
-> Height in millimetres vs age in years *(height, by a mile)* · Height in metres vs age in years *(age now)* · Salary in rupees vs years of experience *(salary, enormously)* · Exam mark out of 100 vs hours revised *(mark, by about 100×)* · Exam mark out of 100 vs revision minutes *(minutes now — 600 minutes beats 60 marks)* · Temperature in °C vs rainfall in mm *(rainfall, usually)* · Steps per day vs hours of sleep *(steps, by thousands)* · Price in pence vs price in pounds, in the same table *(pence, 100×, and having both is a bug)* · Followers vs posts *(followers, usually thousands to hundreds)* · Distance in km vs rating out of 5 *(depends on the distances — a genuinely arguable one, and the right answer is "measure it")*
+> Height in millimetres vs age in years *(height, by a mile)* · Height in metres vs age in years *(age now)* · Salary in rupees vs years of experience *(salary, enormously)* · Exam mark out of 100 vs hours revised *(mark, by about 10× before squaring, 100× after)* · Exam mark out of 100 vs revision minutes *(minutes now — 600 minutes beats 60 marks)* · Temperature in °C vs rainfall in mm *(rainfall, usually)* · Steps per day vs hours of sleep *(steps, by thousands)* · Price in pence vs price in pounds, in the same table *(pence, 100×, and having both is a bug)* · Followers vs posts *(followers, usually thousands to hundreds)* · Distance in km vs rating out of 5 *(depends on the distances — a genuinely arguable one, and the right answer is "measure it")*
 
 That game delivers objective 2 completely, takes twelve minutes, and needs nothing but talking. The lab survives to next lesson; the code is saved and Week 31 opens on a different model anyway.
 
@@ -1561,7 +1561,7 @@ confusion matrix:
 
 **The chosen `k` write-up, full marks:**
 
-> I chose **k = 9**, which scores **0.9722 on 36 held-back wines**, against a baseline of 0.3989. I chose it because k = 7, 8, 9 and 10 all give the same 0.9722 — four consecutive values, which is a plateau rather than a lonely spike, so the answer does not depend on me getting k exactly right. Within that plateau I took the largest odd value: larger k is less sensitive to one strange neighbour, and an odd k cannot produce a tied vote between two classes. **I chose this k by looking at test scores, which makes this estimate slightly optimistic.** I should also say that 0.9722 is 35 wines out of 36, so the difference between this and k = 5's 0.9444 is exactly one wine, and I would not claim k = 9 is definitely better than k = 5 on the strength of one wine.
+> I chose **k = 9**, which scores **0.9722 on 36 held-back wines**, against a baseline of 0.3989. I chose it because k = 7, 8, 9 and 10 all give the same 0.9722 — four consecutive values, which is a plateau rather than a lonely spike, so the answer does not depend on me getting k exactly right. Within that plateau I took the largest odd value: larger k is less sensitive to one strange neighbour, and an odd k produces fewer tied votes. **I chose this k by looking at test scores, which makes this estimate slightly optimistic.** I should also say that 0.9722 is 35 wines out of 36, so the difference between this and k = 5's 0.9444 is exactly one wine, and I would not claim k = 9 is definitely better than k = 5 on the strength of one wine.
 
 *(That last sentence is not required. A student who writes it unprompted is at mastery level 5.)*
 
@@ -1607,9 +1607,9 @@ confusion matrix:
 - *"Why didn't the unscaled-test-rows bug crash?"* → 680 is a perfectly valid number. Python would have to understand units to spot it, and it does not.
 - *"33% against a baseline of 39.9% — what does that tell you?"* → That the model is now worse than not looking at the wine at all, so something is broken even though nothing complained.
 - *"What's the habit that prevents it?"* → Whatever you do to `X_train`, do to `X_test`, on the very next line.
-- *"Which k, and why?"* → 9. Seven to ten are all 0.9722, which is a plateau; take the biggest odd one, because bigger is steadier and odd cannot tie.
+- *"Which k, and why?"* → 9. Seven to ten are all 0.9722, which is a plateau; take the biggest odd one, because bigger is steadier and odd ties less often.
 - *"Will the leaky score go up, down or stay the same?"* → Up, on this split. 0.9444 → 0.9722.
-- *"I introduced a bug and my score improved. Why is that bad news?"* → Because the score is meant to estimate performance on unseen rows, and the test rows helped prepare the training data, so they were not unseen. A genuinely new wine tomorrow cannot have helped work out the mean, so it will do worse than 0.9722. The number went up and got less true.
+- *"I introduced a bug and my score improved. Why is that bad news?"* → Because the score is meant to estimate performance on unseen rows, and the test rows helped prepare the training data, so they were not unseen. A genuinely new wine tomorrow cannot have helped work out the mean, so expect it to do worse than 0.9722. The number went up and got less true.
 - *"Tomorrow a brand-new wine arrives. Could it have helped work out the mean?"* → No. Which is exactly why fitting the scaler on everything is a lie about the future.
 
 ---

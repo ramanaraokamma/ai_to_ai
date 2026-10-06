@@ -200,7 +200,7 @@ ________________________________________________________________
 ```python
 step1 = songs                                   # the original
 step2 = songs[songs["plays"] > 200]             # a filter
-step3 = songs.sort_values("plays")              # a sort (nothing catches it)
+step3 = songs.sort_values("plays")              # a sort (hands back a copy)
 step4 = step2.sort_values("plays")              # sort the filtered one
 ```
 

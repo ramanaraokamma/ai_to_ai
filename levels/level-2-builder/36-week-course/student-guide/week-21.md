@@ -66,7 +66,7 @@ print(pd.DataFrame(squad))
 
 **Your own data, unchanged.** The same twelve dictionaries, the same file.
 
-Look at what it did without being asked. It found the column names. It worked out how wide each column needed to be. It put the numbers on the right and the words on the left. It numbered the rows. And look at **10** and **11** — the two-digit row numbers are lined up neatly under the one-digit ones, which is the exact thing that went wrong for you in Week 14.
+Look at what it did without being asked. It found the column names. It worked out how wide each column needed to be. It lined every column up in a tidy block, numbers and words alike. It numbered the rows. And look at **10** and **11** — the two-digit row numbers are lined up neatly under the one-digit ones, which is the exact thing that went wrong for you in Week 14.
 
 ![Same numbers, with the names put back on](../figures/fig-w21-1-dataframe-named-grid.svg)
 *Figure 21.1 — Same numbers, with the names put back on. And one column is even allowed to be words.*
@@ -228,7 +228,7 @@ There is **no column called 0**. Square brackets on a DataFrame mean *"give me t
 
 They start earning their keep **next week**, when you throw some rows away and the numbers stop being consecutive — a filtered table's index reads something like `0, 3, 4, 7`, with gaps. At that moment, having each row keep its *original name* turns out to matter enormously. A student who thinks the index is "the row count" has a very confusing afternoon. A student who thinks it is "the row's name" finds it obvious.
 
-> **🤔 Think about it:** in the ten-row table later in this chapter, `Mon` appears twice — rows 0 and 7. Two rows can hold the same **value** in a column. Can two rows share the same **index**? No, never. **That is what the index is actually for: being the one thing guaranteed to be unique.**
+> **🤔 Think about it:** in the ten-row table later in this chapter, `Mon` appears twice — rows 0 and 7. Two rows can hold the same **value** in a column. Can two rows share the same **index**? Python will actually let you, but you almost never should: the whole point of a row's name is that it picks out one row, and a repeated name would pick out two. **So the index is meant to be the one column-like thing that is unique — a name for each row.**
 
 ### 4. `df["col"]` gives you a Series, and it remembers three things
 
@@ -517,7 +517,7 @@ Five. `head()` always gives you the first five unless you say otherwise — `hea
 1. The **column names** along the top.
 2. The **index** down the left.
 3. The **values**, one per cell.
-4. The **alignment** — text left, numbers right, every width worked out for you.
+4. The **alignment** — every column lined up in a tidy block, every width worked out for you.
 
 **And which of those four is not part of your data?** The index. **Not a column.** Count the column names: five. Hold that number.
 
@@ -795,7 +795,7 @@ memory usage: 448.0+ bytes
 - **Which column is `object`, and is that right?** `day`, and yes — days are words.
 - **Which are `float64`, and why?** `sleep` and `screen`, because you typed values like `7.5`. **And there are no holes anywhere** — 10 out of 10 on every line — so that is the *only* reason. Hold that thought for four seconds.
 
-Also, look at `day`. **`Mon` appears twice**, rows 0 and 7. Not a problem. Two rows may hold the same value in a column; they may **not** share an index.
+Also, look at `day`. **`Mon` appears twice**, rows 0 and 7. Not a problem. Two rows may hold the same value in a column; they **should not** share an index (pandas allows it, but then asking for that row name gives you two rows back, which is almost never what you want).
 
 ### Step 8 — one hole, predicted first
 
@@ -1329,7 +1329,7 @@ And the extra one nobody predicted: **the `int64` vanished from the tally line e
 
 **2. The index is not a column. Right now it is just 0, 1, 2, 3, so why be so fussy about it?**
 
-*Hint:* start with the fussiness being about something that has not happened yet. Today the index carries no information — it is literally the row's position. So the argument for being firm has to be about **later**. Imagine you keep only the rows where `runs > 40`. Four rows survive out of twelve. What should their labels be — `0, 1, 2, 3`, or the numbers they had before? Work out what you lose in each case. *(Renumbering means you can never trace a row back to the original table. Keeping the old numbers means the index has gaps, which looks strange but tells the truth.)* pandas keeps the old numbers. Then the deep question: what is the one thing that must be true of every index, that is not true of any column? *(No two rows may share one. Not one column in the squad table can promise that — two players could easily have the same team, the same runs, even the same name.)*
+*Hint:* start with the fussiness being about something that has not happened yet. Today the index carries no information — it is literally the row's position. So the argument for being firm has to be about **later**. Imagine you keep only the rows where `runs > 40`. Seven rows survive out of twelve. What should their labels be — `0, 1, 2, 3, 4, 5, 6`, or the numbers they had before? Work out what you lose in each case. *(Renumbering means you can never trace a row back to the original table. Keeping the old numbers means the index has gaps, which looks strange but tells the truth.)* pandas keeps the old numbers. Then the deep question: what is the one thing an index is *meant* to be, that none of the squad columns can promise? *(Different for every row. Two players could easily have the same team, the same runs, even the same name — so no column can be trusted to name a row. pandas does not force the index to be unique, but it is meant to be.)*
 
 **3. `head()` and `info()` tell you what is in a table. What can they never tell you?**
 
@@ -1416,7 +1416,7 @@ second word arrives. Every dashed box to the right of it is built on this one co
 
 - **A DataFrame is a numpy array with the labels put back on** — and each column is allowed to be a different kind of thing. That last part is what no array can do.
 - **Two containers, and only two.** A **DataFrame** is the whole table. A **Series** is one column, and it carries the values, the index they sit on, **and its own name**.
-- **The index is the row's name, not a column.** `info()` counts five columns, not six. `df[0]` is a `KeyError`. Two rows may share a value; they may never share an index.
+- **The index is the row's name, not a column.** `info()` counts five columns, not six. `df[0]` is a `KeyError`. Two rows may share a value; an index is meant to be different for every row.
 - **`head()` shows what it looks like. `info()` tells you whether you can trust it.** Run both, on every table, before you do anything else. And **no `print()` around `info()`** — it prints for itself.
 - **Read the per-column lines of `info()`, not the tally.** The line with a name on it tells you which column and how many are missing. The tally tells you neither.
 - **Two different faults, two different places to look.** A **hole** shows up in the **non-null count**. **Text where you wanted numbers** shows up in the **dtype**, as `object`, and never raises an error.

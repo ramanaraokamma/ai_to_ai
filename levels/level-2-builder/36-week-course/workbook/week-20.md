@@ -1517,7 +1517,7 @@ print(np.round((chen - chen.min()) / (chen.max() - chen.min()), 2))
 **The complete gradebook, zero `for` loops:**
 
 ```python
-"""gradebook.py - the Vectorized Gradebook. Zero for loops anywhere in this file."""
+"""gradebook.py - the Vectorized Gradebook. No loops anywhere in this file."""
 
 import numpy as np
 
@@ -1744,7 +1744,7 @@ above 100?       : [950]
 
 **The sentence being marked.** Model answer:
 
-> *"It made the gap between the smallest and largest score go from 69 to 920, so every real score got divided by a number thirteen times too big and everybody landed between 0.01 and 0.08 — even though nobody except Farah had their score changed at all."*
+> *"It made the gap between the smallest and largest score go from 69 to 920, so every real score got divided by a number thirteen times too big and everybody landed between 0.00 and 0.08 — even though nobody except Farah had their score changed at all."*
 
 **What loses the marks:** a sentence about Farah's average being over 100. That has spotted the **loud** damage. The objective is the **quiet** damage — Aarav, who did nothing, going from 0.61 to 0.05.
 
@@ -1773,7 +1773,7 @@ Both should print `[]`. Other good answers: an age above 110; a price below 0; a
 | What I saw | What it means | Cause | Fix |
 |---|---|---|---|
 | `IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed` | I used a `(10, 5)` mask on a `(10,)` list of names | `names[passed]` — fifty answers, ten names | Collapse the mask first: `names[passed.sum(axis=1) == 5]` |
-| Every scaled score between 0.01 and 0.08. **No error.** | Nothing is wrong as far as numpy is concerned; every value is legally between 0 and 1 | One score was typed as 950, so the gap became 920 instead of 69 | Range-check first: `scores[scores > 100]` → `[950]` |
+| Every scaled score between 0.00 and 0.08. **No error.** | Nothing is wrong as far as numpy is concerned; every value is legally between 0 and 1 | One score was typed as 950, so the gap became 920 instead of 69 | Range-check first: `scores[scores > 100]` → `[950]` |
 
 ### Draw It
 

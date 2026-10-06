@@ -389,7 +389,7 @@ after the function   : 200
 
 **The outer 200 was never touched.** Assigning to `pocket_money` inside the function made a brand-new local box that happened to share a word with the outer one.
 
-**That is not Python being awkward. It is the single feature that makes it safe to use a function somebody else wrote.** If a function could quietly rewrite your variables, you would have to read every line of every function before you dared call it. In Week 12 you will import a file of your own; in Week 29 you will call `model.fit(...)`, which is thousands of lines written by strangers. Both are only survivable because a function takes what it needs in, hands one thing back, and changes nothing else.
+**That is not Python being awkward. It is the single feature that makes it safe to use a function somebody else wrote.** If a function could quietly rewrite your variables, you would have to read every line of every function before you dared call it. In Week 12 you will import a file of your own; in Week 29 you will call `model.fit(...)`, which is thousands of lines written by strangers. Both are only survivable because a function takes what it needs in and cannot quietly rewrite your other variables by name.
 
 ---
 
@@ -528,6 +528,8 @@ print("answer is:", answer)
 12
 answer is: None
 ```
+
+*(That is what the last two lines add. The whole file prints more than that: the earlier `print(double(6))`, `print(double(0))` and `print(double(-3))` lines now show `12`, `None`, `0`, `None`, `-6`, `None`, because `double` no longer returns anything. Same bug, three more times. Scroll to the bottom to find your `answer is:` line.)*
 
 **Look at that.** The twelve is *there*. It printed. The function did the maths perfectly and put the right answer on the screen.
 
@@ -1203,7 +1205,7 @@ Go to **[the Week 10 workbook](../workbook/week-10.md)**. About **60 minutes** i
 | Section | What to do | Time |
 |---|---|---|
 | **Warm-Up** | Five quick questions from Week 9 | 5 min |
-| **Predict the Output** | Four snippets. Two of them hand back `None`, and saying *why* is the question | 10 min |
+| **Predict the Output** | Four snippets. One of them hands back `None`, and saying *why* is the question | 10 min |
 | **Practice A & B** | Six reading questions, then five you write yourself | 20 min |
 | **Fix the Broken Program** | `pocket.py`, three planted bugs — one loud, one crash, one silent | 10 min |
 | **Build It** | The five-function spec sheet, three tests each, then the bug hunt | 15 min |

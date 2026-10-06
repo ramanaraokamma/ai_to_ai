@@ -305,7 +305,7 @@ Put **your own** name in line 4. It matters more than you'd think.
 |---|---|
 | 1 | A comment. Python ignores it completely. It is there for you. |
 | 2 | A blank line. Also ignored. It's there so the file breathes. |
-| 3 | Shows six characters plus a full stop on the screen. |
+| 3 | Shows the text `Hello, world.` on the screen. |
 | 4 | Shows another line, **underneath** the first, because Python works top to bottom. |
 
 ### Step 3 — save it, then run it
@@ -555,7 +555,7 @@ SyntaxError: unterminated string literal (detected at line 1)
 
 **The fix.** Add the closing `"` before the `)`. Quotes come in pairs, always.
 
-> **🐞 If you see this error:** the missing quote is usually the **slowest** bug of the three to find, because the `^` marker can point at a line that looks completely fine. Python carried on reading past the end of your text, so the complaint surfaces *later* than the mistake.
+> **🐞 If you see this error:** the `^` marker sits under the quote that was **opened and never closed**, so look there first. The bracket error can be sneakier: a missing `)` is sometimes only noticed on a *later* line, so if the line in the message looks fine, check the line above it.
 
 ### The whole clinic, for reference
 
@@ -660,7 +660,7 @@ ababab
 
 **1. "The computer told me off. Did I break it?"**
 
-*Hint:* you cannot break it by typing a wrong instruction. Not once, not ever, not on purpose. Python reads your file, decides it doesn't understand line 3, prints a message, and stops. Your file is fine, the laptop is fine, Python is fine. Think about what that means for how much you should be willing to experiment.
+*Hint:* you cannot break anything with the kind of lines you type this week. Not once, not on purpose. (Later in the year you will meet code that can delete files, and we will treat that with respect when it arrives.) Python reads your file, decides it doesn't understand line 3, prints a message, and stops. Your file is fine, the laptop is fine, Python is fine. Think about what that means for how much you should be willing to experiment.
 
 **2. "Why do I have to type it? Why can't I paste it?"**
 

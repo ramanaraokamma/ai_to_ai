@@ -317,7 +317,7 @@ Disproved by: __________________________________________________
 | h | `from sklearn.tree import DecisionTreeClassifier` then `DecisionTreeRegressor(...)` | |
 | i | The plot with no `ax.set_ylim(...)` at all | |
 
-**A4(j).** Three of those nine produce **no error whatsoever**. Which three?
+**A4(j).** Four of those nine produce **no error whatsoever**. Which four?
 
 ________________________________________________________________
 
@@ -1011,7 +1011,7 @@ ________________________________________________________________
 
 **Lines 2 and 3 compared:** **346 leaves for 353 training rows.** Nearly every patient has their own private leaf with their own private answer. **The tree has not learned anything about the illness; it has written down a lookup table of these 353 people.**
 
-**Which row of the diagnosis table?** **Overfitting.** Train perfect (1.000), test worse than guessing the average (−0.003), gap **1.003**. This is Sam.
+**Which row of the diagnosis table?** **Overfitting.** Train perfect (1.000), test no better than guessing the average (−0.003, level with the baseline's −0.012), gap **1.003**. This is Sam.
 
 ### P3
 
@@ -1028,7 +1028,7 @@ ________________________________________________________________
 
 **The habit, and why build it where it is free.** **Truth first, guess second, in every metric, every time.** MAE forgives you and `r2_score` does not, so you build the habit on the forgiving one — because you will not remember to be careful only on the days it matters.
 
-**Line 4 — the four true values in exactly the wrong order — scores −3.0.** Every value present, every value in the wrong place, and R² says *"three times worse than not bothering"*. Getting the *set* of answers right counts for nothing; R² only cares whether the right answer went to the right row.
+**Line 4 — the four true values in exactly the wrong order — scores −3.0.** Every value present, every value in the wrong place, and R² says *"four times the squared error of not bothering"* (R² = 1 − 4 = −3). Getting the *set* of answers right counts for nothing; R² only cares whether the right answer went to the right row.
 
 ### P4
 
@@ -1058,7 +1058,7 @@ ________________________________________________________________
 | a | 0.98 | 0.61 | 0.37 | **Overfitting** | Train high, test much lower — a big gap |
 | b | 0.30 | 0.28 | 0.02 | **Underfitting** | **Nothing is high**, and the gap is tiny |
 | c | 0.55 | 0.52 | 0.03 | **Just right** | Both reasonable, gap small |
-| d | 1.000 | −0.003 | 1.003 | **Overfitting** | Perfect on studied rows, worse than the average-guesser on new ones |
+| d | 1.000 | −0.003 | 1.003 | **Overfitting** | Perfect on studied rows, no better than the average-guesser on new ones |
 | e | 0.48 | 0.61 | −0.13 | **Something's broken** | Better on rows it never saw than on rows it studied |
 | f | 0.304 | 0.131 | 0.173 | **Underfitting** | Depth 1 — both low |
 | g | 0.585 | 0.352 | 0.233 | **Just right** *(the best available on this data)* | Highest test score; the gap is real but not runaway |
@@ -1067,7 +1067,7 @@ ________________________________________________________________
 
 **A1(i).** Two things that produce row (e): **a bug** — most often the arguments swapped somewhere, or the two scores computed on the wrong piles — or **a tiny test set** where a handful of easy rows happened to land. Our own Worked Example 2 produced a negative gap on a five-row test set, and nothing was broken; the test pile was simply too small to trust.
 
-**A2(a).** `tree, no limit`. Train R² **1.000**, test R² **−0.003** — perfect on the 353 it learned from, worse than guessing the average on the 89 it had not seen.
+**A2(a).** `tree, no limit`. Train R² **1.000**, test R² **−0.003** — perfect on the 353 it learned from, no better than guessing the average on the 89 it had not seen.
 
 **A2(b).** Because **without it, no other number means anything.** MAE 42.77 sounds like nothing until you know that ignoring all ten measurements and guessing the average is off by **64.01**. Then 42.77 becomes *"a third less wrong than not bothering"*. It is the ruler you measure the other numbers against.
 
@@ -1119,7 +1119,7 @@ The gap ranking tells you **how much of each model's apparent skill is memorisin
 | h | `from sklearn.tree import DecisionTreeRegressor` — or list both, comma-separated. |
 | i | Add `ax.set_ylim(-0.2, 1.05)`, or matplotlib zooms to fit and the gap between the two lines stops being visible. |
 
-**A4(j).** **(e), (f) and (i)** produce no error at all. (e) gives a shapeless curve, (f) gives a plausible wrong number — 0.504 instead of 0.669 on our depth-5 tree — and (i) gives a chart that hides the very thing it was drawn to show. **All three are worse than the ones that crash.**
+**A4(j).** **(e), (f), (g) and (i)** produce no error at all. (e) gives a shapeless curve, (f) gives a plausible wrong number — 0.504 instead of 0.669 on our depth-5 tree — (g) quietly peeks at the test answers, and (i) gives a chart that hides the very thing it was drawn to show. **All four are worse than the ones that crash.**
 
 **A4(k).** **Count the `train_test_split` lines in the file.** There must be exactly **one**, and it must be **above** the `for`.
 
@@ -1289,7 +1289,7 @@ linear regression        42.79   53.85  154.49         5     0.453
 
 > **Linear regression.** Best test R² in the table (**0.453**, against 0.430 for kNN and 0.352 for the best tree), best RMSE (**53.85**), and only **five** misses over 100 where kNN has nine and the unlimited tree has fourteen. Its train R² is 0.528 against a test of 0.453, so the gap is only **0.075** and it is clearly not memorising.
 
-*(Note the depth-4 tree has the **fewest** misses over 100 — eight — which is a point in its favour that MAE and RMSE both hide. Real tables have arguments in them, and pointing that out is worth marks.)*
+*(Note the depth-4 tree has fewer misses over 100 than kNN — eight against nine — even though its MAE and RMSE are worse, a point in its favour that MAE and RMSE both hide. Real tables have arguments in them, and pointing that out is worth marks.)*
 
 ---
 
@@ -1428,7 +1428,7 @@ misses            MAE      MSE    RMSE
 
 **(j)** Because **most branches run out of work long before they run out of depth.** A branch stops the moment its pile of patients all agree closely enough, and there is nothing left to split. The maximum assumes every branch splits every time, all the way down, which never happens on real data. 176 out of a possible 512 is normal.
 
-**(k)** Because **some patients have identical measurements**, or close enough that the tree cannot separate them, so they share a leaf. It is the same situation as Ines and Jai in Week 31: if two rows look the same to the model, no amount of extra depth will pull them apart. *(With ten measurements it is far rarer than with two — which is exactly why 346 out of 353 is so close to one leaf each.)*
+**(k)** Because a branch stops as soon as every patient in it has the **same answer**, not only when they have the same measurements. All 353 training patients have different measurements, but some pairs happen to share the same progression number (for example two patients both at 178), so they can sit together in one pure leaf and there is nothing left to split. *(That is different from Ines and Jai in Week 31, who looked identical to the model but had different answers.)*
 
 **(l)** **"`max_depth` is a ceiling, not a target — once a tree has run out of impure leaves to split, raising the ceiling changes nothing at all."**
 
@@ -1440,7 +1440,7 @@ misses            MAE      MSE    RMSE
 
 > Imagine somebody hands you a booklet of 200 practice questions with the answers printed in the back, and you memorise all 200 question-answer pairs word for word. On the practice booklet you score 200 out of 200. That number is completely true — you did not cheat, you really did get every one right. But it tells nobody anything about Friday's test, because Friday's test has different numbers in it.
 >
-> A model that scores 1.000 on the rows it was trained on has done exactly that. Our unlimited tree grew **346 leaves for 353 training patients**, which means it gave nearly every patient a private answer. It did not learn anything about the illness; it wrote down a phone book. And when we showed it 89 patients it had never seen, it scored **−0.003** — which is *worse* than a machine that ignores all ten measurements and says the average every single time.
+> A model that scores 1.000 on the rows it was trained on has done exactly that. Our unlimited tree grew **346 leaves for 353 training patients**, which means it gave nearly every patient a private answer. It did not learn anything about the illness; it wrote down a phone book. And when we showed it 89 patients it had never seen, it scored **−0.003** — which is no better than a machine that ignores all ten measurements and says the average every single time.
 >
 > So the number I would ask for is **the score on rows the model has never seen**, and I would want to know **how many rows that was**. Then I would ask for both numbers together, because train and test *together* are a diagnosis and neither alone is anything. If both are low, it is too simple. If train is high and test is low, it memorised. The difference between the two has a name — the **train/test gap** — and it is the size of the memorising.
 
@@ -1471,7 +1471,7 @@ Gaps: baseline 0.012 · kNN 0.154 · depth-5 tree 0.409 · unlimited tree **1.00
 
 > **train R² 1.000** means: on the 353 patients it learned from, this tree is **never wrong. Not once.**
 >
-> **test R² −0.003** means: on the 89 patients it had never seen, it is **worse than a machine that ignores all ten measurements and guesses the average.**
+> **test R² −0.003** means: on the 89 patients it had never seen, it is **no better than a machine that ignores all ten measurements and guesses the average** (that machine scores −0.012).
 
 **Part 2 — the depth curve.**
 

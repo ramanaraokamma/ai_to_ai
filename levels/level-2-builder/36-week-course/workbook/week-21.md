@@ -146,7 +146,7 @@ ________________________________________________________________
 
 ______  ______  ______
 
-**Say what happened. Two of those three are wrong in one way and one is wrong in a completely different way.**
+**Say what happened. One of those three is not like the other two. Which, and why?**
 
 ________________________________________________________________
 
@@ -289,7 +289,7 @@ d = pd.DataFrame({"day": ["Mon", "Tue", "Wed"],
 
 **Your answers:** i → ______  ii → ______  iii → ______  iv → ______  v → ______
 
-**A4(f).** Two of those outputs end with a `Name:` line and two do not. **Which is which, and what does the `Name:` line tell you about what kind of thing you are looking at?**
+**A4(f).** Two of those outputs end with a `Name:` line. **Which two? And what does the `Name:` line tell you about what kind of thing you are looking at?**
 
 ________________________________________________________________
 
@@ -1081,7 +1081,7 @@ print(c["legs"] * 2)
 Name: legs, dtype: object
 ```
 
-**`print(c)` shows three perfectly ordinary-looking 4s.** No `NaN`, no decimal point, nothing to see. **The only clue in the printed table is the alignment** — `legs` is no longer right-aligned under a wider header, because it is text now — and that is far too subtle to rely on.
+**`print(c)` shows three perfectly ordinary-looking 4s.** No `NaN`, no decimal point, nothing to see. **The only clue in the printed table is a single space** — the `legs` header sits one space closer to its column than it did when all three were numbers (pandas pads number columns slightly wider) — and that is far too subtle to rely on.
 
 **The count is 3, and the column is still broken.** Nothing is *missing*; one value is *the wrong kind*.
 
@@ -1090,7 +1090,7 @@ Name: legs, dtype: object
 - The two real integers `4` were **multiplied** by 2, giving `8`.
 - The text `"4"` was **repeated** twice, giving `"44"` — because `*` on text means *repeat*, which is Week 11's rule, still true.
 
-**Two are wrong because they should never have been multiplied at all** *(you cannot double a number of legs and get anything meaningful)*; **the middle one is wrong in a completely different way** — it is not even a number, it is the character `4` written twice.
+**The two `8`s are what real numbers give you; the middle `44` is not a number at all** — it is the character `4` written twice. So the column now holds a mixture, and one line of arithmetic has treated its values in two different ways.
 
 **No error. A mixed, nonsensical answer, printed confidently.** This is what `object` on a number column costs you, and it is why it is the loudest alarm in pandas.
 
@@ -1645,7 +1645,7 @@ broken:      snack price  spicy  stars
 fixed:       snack  price  spicy  stars
 ```
 
-There is **one space less** before `price` in the broken version, because text columns are aligned differently from number columns. **The values themselves — `15`, `20`, `10` — look completely identical**, and `dosa`, the row with the actual quote mark in it, is row 3 and does not appear in `head(3)` at all.
+There is **one space less** before `price` in the broken version, because pandas pads a column of numbers slightly wider than a column of text. **The values themselves — `15`, `20`, `10` — look completely identical**, and `dosa`, the row with the actual quote mark in it, is row 3 and does not appear in `head(3)` at all.
 
 **So: no, not usefully visible.** One character of whitespace is not a check.
 
@@ -1728,7 +1728,7 @@ memory usage: 293.0+ bytes
 
 **What is wrong:** **one `steps` value is text** — a quote mark round a number, a stray space, or a word. **Nothing is missing**, which is why the count is a clean 10.
 
-**How to find the culprit:** print the column and look for a value that is aligned differently, or try one piece of arithmetic on it and read the `TypeError`. *(Or the diagnostic that always works: `print(df["steps"] * 2)` and look for a value that got **repeated** rather than **doubled**.)*
+**How to find the culprit:** print the column and look for a value that is a different kind from the rest (a stray quote mark or space is hard to see in a printout), or try one piece of arithmetic on it and read the `TypeError`. *(Or the diagnostic that always works: `print(df["steps"] * 2)` and look for a value that got **repeated** rather than **doubled**.)*
 
 **Report C** — `9 entries`, `steps  9 non-null  int64`.
 

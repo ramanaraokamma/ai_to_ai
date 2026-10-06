@@ -225,7 +225,7 @@ for row in range(2):
     grid.append(this_row)
 ```
 
-Five lines and two indent levels, replaced by eleven characters.
+Six lines and two indent levels, replaced by one short line.
 
 ### 6. What "identical" means, and the trap in checking it
 
@@ -1044,7 +1044,7 @@ The complete `retire.py`, and its real output, is in the Prep Checklist above â€
 | 7 | the numbers 0 to 9 | `np.arange(10)` |
 | 8 | a blank 3 by 4 grid | `np.zeros((3, 4))` |
 
-**Eight cards. Fifteen lines of loop replaced by eight lines of arithmetic, and every single one gave `identical? True`.**
+**Eight cards. Twenty-seven lines of loop replaced by eight lines of arithmetic, and every single one gave `identical? True`.**
 
 **Two cards worth pausing on:**
 
@@ -1275,7 +1275,7 @@ An array's answer is "multiply every one of my numbers". Same symbol, two comple
 
 For a million numbers, doubling them: about 20 milliseconds with a Python loop, about 1 with an array. Twenty times. Try it yourself; your numbers will be different from anyone else's, and if you run it three times they will be different from each other, which is worth knowing about all measurements.
 
-For your six numbers: no difference you could ever measure. **The speed is not why you are doing this.** You are doing it because the one line has one place to go wrong and the loop has five, and because in Week 29 you will hand an array to a machine-learning model that does not accept lists.
+For your six numbers: no difference you could ever measure. **The speed is not why you are doing this.** You are doing it because the one line has one place to go wrong and the loop has five, and because in Week 29 you will hand an array to a machine-learning model, and whether that array has the right shape decides whether the model works.
 
 **"Why does `np.zeros` need double brackets when `np.arange` doesn't?"**
 

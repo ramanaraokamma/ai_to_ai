@@ -235,7 +235,7 @@ That is a disaster for learning anything. You change one thing, the score goes u
 
 42 is traditional; it is a joke from a book. 0, 7 and 31 are equally fine. **The number does not matter. Fixing it does.**
 
-Here is how much it matters, measured. Same data, same model, only the seed changing:
+Here is how much it matters, measured. Same data (iris, the two sepal columns), same model (`k = 5`), only the seed changing:
 
 ```text
 random_state=0   test score = 0.6667
@@ -585,7 +585,7 @@ that is 20.83 percentage points
 
 Write that number somewhere you will still see it in a month. There is a lesson coming in a few weeks that is entirely about that gap.
 
-> **🐞 If you see this error:** you do not — but you may be puzzled by something. Earlier I said `k = 1` always scores exactly 1.0 on the training rows, and here it scored 0.9417. **That is real, and there is an honest reason.** Seven of the 120 training flowers share their *exact* sepal measurements with a flower of a **different species** — `(6.3, 2.5)` is both a virginica and a versicolor in this table. So the nearest neighbour at distance zero is a different flower with a different answer, and the model gets it wrong. Throw away two columns and you throw away the ability to tell some rows apart at all. On the full four-column iris, `k = 1` does score exactly 1.0.
+> **🐞 If you see this error:** you do not — but you may be puzzled by something. Earlier I said `k = 1` always scores exactly 1.0 on the training rows, and here it scored 0.9417. **That is real, and there is an honest reason.** Sixteen of the 120 training flowers share their *exact* sepal measurements with a flower of a **different species** — `(6.3, 2.5)` is both a virginica and a versicolor in this table. For seven of them the nearest neighbour at distance zero that the model picks is the look-alike with the different answer, and it gets those seven wrong. Throw away two columns and you throw away the ability to tell some rows apart at all. On the full four-column iris, `k = 1` does score exactly 1.0.
 
 ### The complete finished program
 
@@ -1016,7 +1016,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 You need a real deck of cards, an envelope, and a pen. **Not a pencil.**
 
 1. **Count out the cards** and say the number out loud. If it is a standard 52-card deck, put two aside and use 50, because the arithmetic is nicer.
-2. **Shuffle properly.** And say why while you do it: *the iris file is sorted, so the first fifty rows are all setosa. Cut it without shuffling and my test pile is fifty virginica and nothing else, and my score tells me nothing about the other two species.* **Shuffling is not tidiness. It is necessary.**
+2. **Shuffle properly.** And say why while you do it: *the iris file is sorted, so the first fifty rows are all setosa. Cut it without shuffling and my test pile is virginica and nothing else, and my score tells me nothing about the other two species.* **Shuffling is not tidiness. It is necessary.**
 3. **Work out 20%** of your number of cards. For 50, that is 10. Say it before you cut.
 4. **Deal that many cards into a small pile,** counting out loud, one at a time. Then count the big pile. 40 and 10. They add to 50.
 5. **Write both numbers on the envelope** — `TEST: 10 rows` — and today's date.

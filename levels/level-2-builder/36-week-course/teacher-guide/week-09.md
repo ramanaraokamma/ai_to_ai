@@ -1072,7 +1072,7 @@ None of these need syntax they have not met.
 
 4. **A function with two `return`s.** A grade function with a `return` in every branch of an `if`/`elif` chain — no parameters, so read the mark from `input()` inside it. Then notice that `return` ends the function immediately, which means you do not even need the `elif`s. **Both styles are correct** and seeing why is a genuinely satisfying five minutes.
 
-5. **Count the savings honestly.** `report_long.py` is 25 lines and `report_short.py` is 18 — a saving of 7. Ask: *"how many headers would there have to be before the function version saved fifty lines?"* Each extra header costs 5 lines pasted versus 1 line called, so a net 4 lines saved per extra header. To save 50 you would need about a dozen headers. **Then the real question: if the saving is only 7 lines here, was it worth doing?** The answer is yes, and the reason has nothing to do with lines.
+5. **Count the savings honestly.** `report_long.py` is 25 lines and `report_short.py` is 18 — a saving of 7. Ask: *"how many headers would there have to be before the function version saved fifty lines?"* Each extra header costs 5 lines pasted versus 1 line called, so a net 4 lines saved per extra header. To save 50 you would need fourteen headers (4 × 14 − 6 = 50; the definition costs 6 lines up front). **Then the real question: if the saving is only 7 lines here, was it worth doing?** The answer is yes, and the reason has nothing to do with lines.
 
 ---
 

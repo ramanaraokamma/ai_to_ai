@@ -38,7 +38,7 @@ You will hesitate. Everyone hesitates. Do it anyway.
 
 Stop. Look at what is left.
 
-**A rectangle of numbers.** No words anywhere. Twelve rows, three columns, and every single square has a number in it.
+**A rectangle of numbers.** No words anywhere. Twelve rows, two columns, and every single square has a number in it.
 
 That thing has a name. It is called an **array**, and it is what this week is about — and you just made one with a rubber.
 
@@ -61,7 +61,7 @@ Now count the rows out loud. **Twelve.** Count the columns. **Three.**
 Write this underneath the block:
 
 ```text
-(12, 3)
+(12, 2)
 ```
 
 Twelve comma three. **Rows first, always.** That pair of numbers is called the **shape**, and printing it is going to be the most useful thing you do all term.
@@ -200,7 +200,7 @@ What the names mean, one line each:
 | `int64` | whole numbers, positive or negative | 64 bits of space per number — room for about 9 followed by 18 zeros |
 | `float64` | numbers with a decimal point | 64 bits, giving about 15 reliable digits |
 | `bool` | `True` or `False`, nothing else | — |
-| `<U21` | text, up to 21 characters per cell | the 21 is the longest piece of text it saw |
+| `<U21` | text, up to 21 characters per cell | the 21 is the longest cell it needs room for. When numbers get turned into text, as in `[1, 2, "three"]`, numpy leaves room for the biggest possible whole number (21 characters), so you get `<U21` even though `"three"` is only 5 |
 
 > **⚠️ Watch out:** on **Windows** you will often see `int32` where this chapter says `int64`. It is the same idea in a smaller box. Everything here works identically; only the number in the name differs.
 
@@ -957,7 +957,7 @@ What was left was a rectangle of numbers, and two questions:
 - **What have you lost?** *The labels — which column is which, whose row is whose.*
 - **What have you got that you did not have before?** *A perfect rectangle, and every single square holding the same kind of thing.*
 
-Then counting the rows out loud (twelve), counting the columns out loud (three), and writing `(12, 3)` underneath. **Rows first, because that is the order you counted them in.**
+Then counting the rows out loud (twelve), counting the columns out loud (two), and writing `(12, 2)` underneath. **Rows first, because that is the order you counted them in.**
 
 ### Two definitions on the board, and they stayed up
 

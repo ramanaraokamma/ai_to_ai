@@ -683,7 +683,7 @@ Two empty answers. Two passed checks. **This is the only check on the page that 
 ### The complete finished program
 
 ```python
-"""gradebook.py - the Vectorized Gradebook. Zero for loops anywhere in this file."""
+"""gradebook.py - the Vectorized Gradebook. No loops anywhere in this file."""
 
 import numpy as np
 
@@ -1088,7 +1088,7 @@ quietest week            : ['W2']
 
 Georgi's row is `60, 60, 45, 75`. With `>=` he is on target three weeks out of four. With `>` he is on target once. **Same data, same code, one character, and a different letter goes home to his parents.**
 
-> **💡 Try this:** change `at_least` to `above` in the two count lines and run it again. The counts become `[4 1 4 0 4]` and `[3 3 3 3]`, and they still add up correctly — `13` and `13`. **The corner check cannot save you here**, because the code is not wrong. It is answering a different question, correctly.
+> **💡 Try this:** change `at_least` to `above` in the two count lines and run it again. The counts become `[4 1 4 0 3]` and `[3 3 2 4]`, and they still add up correctly — `12` and `12`. **The corner check cannot save you here**, because the code is not wrong. It is answering a different question, correctly.
 
 ---
 
@@ -1204,7 +1204,7 @@ anything above 100? [950]
 | `RuntimeWarning: invalid value encountered in divide` then `[nan nan nan]` | "You divided by zero and I made a not-a-number." | Nothing is wrong with the formula. **A row with no spread cannot be spread out** — `70, 70, 70` has a gap of 0 |
 | **No error**, `scores.min` printed `<built-in method min of ...>` | "You pointed at the verb instead of using it." | `scores.min()`. A verb takes brackets; a fact does not |
 | **No error**, `np.round(scaled)` turned everything into 0 and 1 | Nothing is wrong. Rounding a 0-to-1 grid to whole numbers gives 0s and 1s | `np.round(scaled, 2)` |
-| **No error**, every scaled score is between 0.01 and 0.08 | Nothing is wrong as far as numpy is concerned. Every value is legally in range | **One value is far too big.** Range-check first: `scores[scores > 100]`. **This is the week's headline bug and it has no message** |
+| **No error**, every scaled score is between 0.00 and 0.08 | Nothing is wrong as far as numpy is concerned. Every value is legally in range | **One value is far too big.** Range-check first: `scores[scores > 100]`. **This is the week's headline bug and it has no message** |
 | **No error**, the two pass counts disagree | Nothing is wrong as far as numpy is concerned | One `.sum()` has the wrong axis. If they disagree, count one row by hand |
 | **No error**, `scores[mask]` gave 44 numbers instead of 50 | Nothing is wrong at all. This is correct | Fifty cells were tested; forty-four passed. Two counts of two different things |
 
@@ -1276,7 +1276,7 @@ The eight steps in "Type This", in that order, with predictions before every run
 | `names[passed]` — a grid-shaped mask on a ten-long list | **Loud.** `IndexError: too many indices` |
 | `scores[5, 0] = 950` before the normalization | **Silent.** Fifty tidy decimals, all between 0 and 1, all wrong |
 
-Both went in the Bug Log. For the second one, in the column where the error message goes, we wrote: **"every scaled score between 0.01 and 0.08."** That is the whole error message, and we wrote it ourselves.
+Both went in the Bug Log. For the second one, in the column where the error message goes, we wrote: **"every scaled score between 0.00 and 0.08."** That is the whole error message, and we wrote it ourselves.
 
 ### The 950, and the sentence of the week
 
@@ -1484,7 +1484,7 @@ Go to **[the Week 20 workbook](../workbook/week-20.md)**. About **60 minutes** i
 
 **Is the hand-normalization in pen, with the divisions shown?** Chen's row is `55, 48, 40, 70, 61`. `0.27` on its own is not evidence. `8 / 30 = 0.2666… → 0.27` is. And **you know two of your five answers before you divide anything** — say which two and why.
 
-**Does your 950 sentence talk about somebody other than Farah?** A good sentence sounds like: *"it made the gap between smallest and largest go from 69 to 920, so every real score got divided by a number thirteen times too big and everybody landed between 0.01 and 0.08 — even though nobody except Farah had their score changed at all."* A sentence about Farah's silly average has spotted the loud damage and missed the quiet damage, which is the entire point of the week.
+**Does your 950 sentence talk about somebody other than Farah?** A good sentence sounds like: *"it made the gap between smallest and largest go from 69 to 920, so every real score got divided by a number thirteen times too big and everybody landed between 0.00 and 0.08 — even though nobody except Farah had their score changed at all."* A sentence about Farah's silly average has spotted the loud damage and missed the quiet damage, which is the entire point of the week.
 
 > **⚠️ Watch out:** do the pen work before the code. Again. If you run it first you have not checked anything — you have agreed with a number, and you will find yourself doing arithmetic that mysteriously arrives at what the screen already said.
 

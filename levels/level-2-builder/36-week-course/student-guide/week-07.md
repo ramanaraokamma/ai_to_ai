@@ -95,7 +95,7 @@ You never write `n = 1`. You never write `n = n + 1`. If you catch yourself typi
 
 | Part | What it is | What happens if you get it wrong |
 |---|---|---|
-| `for` | The keyword that starts a loop | Nothing else starts a loop. There is no other spelling |
+| `for` | The keyword that starts this kind of loop | Every `for` loop starts with it. There is no other spelling (a second kind of loop, with a different keyword, arrives next week) |
 | `n` | **A variable Python fills in for you.** You choose the name; Python chooses the value, once per pass | Any legal name works. `for row`, `for score`, `for day` — all fine, and usually better than `i` |
 | `in` | A keyword. It sits between the name and the values | Leave it out and you get a `SyntaxError` |
 | `range(1, 11)` | Where the values come from | Give it text instead of a number and you get a `TypeError` |
@@ -149,7 +149,7 @@ Say it out loud: **"range stops before the number you give it."** Say it again, 
 
 **Now — why?** Because it is not random, and knowing the reason is what makes it stick.
 
-**Because it makes counting a subtraction.** `range(a, b)` hands out exactly `b - a` values. Every time. No exceptions.
+**Because it makes counting a subtraction.** When `b` is bigger than `a`, `range(a, b)` hands out exactly `b - a` values. Every time. (If `b` is not bigger than `a` you get zero values, never a negative number, and a step changes the count — both are coming up below.)
 
 - `range(1, 11)` → 11 − 1 = **ten** values
 - `range(0, 4)` → 4 − 0 = **four** values
@@ -211,7 +211,7 @@ print("(nothing at all)")
 (nothing at all)
 ```
 
-**Both print nothing whatsoever.** Zero passes, and no error message. `3 − 3 = 0` values, and `1 − 10 = −9` values, which is also none. **If your loop produces no output at all, check this first.**
+**Both print nothing whatsoever.** Zero passes, and no error message. `3 − 3 = 0` values, and `1 − 10` is below zero, which also means none (you cannot hand out fewer than nothing). **If your loop produces no output at all, check this first.**
 
 ### 3. The accumulator — the most reused shape in all of programming
 
@@ -613,7 +613,7 @@ Score 11 of 12: 62
 
 And look at the report. It says **`Scores added : 12`**, which is a lie — but it is a lie *you* wrote, because that line just prints `HOW_MANY`, and `HOW_MANY` is still twelve. **The program is not lying on purpose. It genuinely does not know how many scores it read. Nobody asked it to keep track.**
 
-One character. `HOW_MANY + 1` became `HOW_MANY`. **No error message, and the average is wrong by more than six marks.** If those were real people's marks, every one of them would have been reported six marks too low, and the only way anybody would ever find out is if somebody counted.
+One character. `HOW_MANY + 1` became `HOW_MANY`. **No error message, and the average is wrong by more than six marks.** If those were real people's marks, the class average would have been reported six marks too low, and the only way anybody would ever find out is if somebody counted.
 
 Put the `+ 1` back. Run it once more and check **two** things: twelve prompts, and the average is 75.00 again.
 
@@ -886,7 +886,7 @@ Day 10: pages read? 25
 
 **Why `range(50, 501, 50)` and not `range(50, 500, 50)`?** Because 500 is a milestone you want on the chart, and `range` **stops before** its second number. `range(50, 500, 50)` would give you 50 up to 450 and quietly lose the top row. Ten rows, not nine — count them.
 
-**The stars are `"=" * 20` doing real work.** `"*" * (pages // 50)` gives one star per fifty pages: at 50 pages that is `50 // 50` = 1 star; at 500 it is 10. `//` is Week 3's whole-number division, and it is exactly right here because half a star is not a thing.
+**The stars are text multiplication, like `"=" * 20`, doing real work.** `"*" * (pages // 50)` gives one star per fifty pages: at 50 pages that is `50 // 50` = 1 star; at 500 it is 10. `//` is Week 3's whole-number division, and it is exactly right here because half a star is not a thing.
 
 **And `{day:>2}` is why the prompts line up.** Day 1 through Day 9 get a space in front so they sit under Day 10. Same tool as the grid.
 
@@ -1185,7 +1185,7 @@ means not yet. The strip along the bottom is the seven threads this course keeps
 
 - **A `for` loop repeats the indented block once per value.** The indent *is* the loop's body — move a line out of it and it stops repeating.
 - **The counter is a box Python refills.** You never set it, and you never add one to it.
-- **`range(a, b)` hands out exactly `b - a` values, and never the stop number.** `range(4)` gives four values ending at 3.
+- **`range(a, b)` hands out exactly `b - a` values (or none, if `b` is not above `a`), and never the stop number.** `range(4)` gives four values ending at 3.
 - **Two different questions:** *how many?* (stop minus start) and *what is the last one?* (one less than the stop). Ask them separately.
 - **An accumulator: set up before the loop · add inside · use after.** Every accumulator bug is one of those three in the wrong place.
 - **`total += n` is exactly `total = total + n`.** Shorter, and only one place to typo.

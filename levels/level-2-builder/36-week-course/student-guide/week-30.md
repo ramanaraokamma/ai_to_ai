@@ -53,7 +53,7 @@ And here is the bit that should annoy you.
 
 > **A distance model can only ever be as fair as its units.**
 
-Your model's opinion about wine should not depend on which unit somebody happened to choose in 1991. This week you fix that, and the fix is worth **sixteen and a half accuracy points** for free.
+Your model's opinion about wine should not depend on which unit somebody happened to choose in 1991. This week you fix that, and the fix is worth **sixteen and two-thirds accuracy points** for free.
 
 ---
 
@@ -154,7 +154,7 @@ Three times now. It is not a coincidence and it is not going away on its own.
 
 **The plain explanation.** A gap of 15 counts as huge right now, because 15 is a big number. But is 15 big **for the proline column**? Proline runs from 278 to 1680. So 15 is nothing — it is a rounding error in proline terms.
 
-Meanwhile a gap of 0.01 in hue: is that small **for the hue column**? Hue only runs from 0.48 to 1.71. So yes, small — but not *four-hundred-thousand-times* smaller.
+Meanwhile a gap of 0.01 in hue: is that small **for the hue column**? Hue only runs from 0.48 to 1.71. So yes, small — but not *two-million-times* smaller (the ratio of the squares, 225 to 0.0001).
 
 So: **divide every gap by how much that column normally varies.** Then a gap counts as big when it is big for its own column.
 
@@ -272,7 +272,7 @@ A lonely spike at one value of `k` with dips either side is usually one wine's w
 ![Scaling is worth about 17 accuracy points](../figures/fig-w30-3-accuracy-versus-k-curve.svg)
 *Figure 30.4 — The pink band is the plateau at `k = 7, 8, 9, 10`. Pick from inside a flat region, not from a lonely spike.*
 
-**The rule of thumb:** pick a `k` inside a flat, high region. Prefer a **larger** one, because larger `k` is less jumpy. Prefer an **odd** one, because odd `k` ties less. So from `{7, 8, 9, 10}`: **`k = 9`.**
+**The rule of thumb:** pick a `k` inside a flat, high region. Prefer a **larger** one, because larger `k` is less jumpy. Prefer an **odd** one, because odd `k` ties less often. So from `{7, 8, 9, 10}`: **`k = 9`.**
 
 And then the part almost everybody skips. **You just chose `k` by looking at the test scores. Twenty-five times.** So the test set helped you make a decision — which means it taught you something — which means your reported accuracy is a little optimistic, and you cannot measure by how much.
 
@@ -472,7 +472,7 @@ proline column BEFORE scaling, first 5: [ 680.  450.  615.  415. 1280.]
 proline column AFTER  scaling, first 5: [-0.21 -0.96 -0.42 -1.07  1.75]
 ```
 
-**0.7778 became 0.9444. Sixteen and a half percentage points.**
+**0.7778 became 0.9444. Sixteen and two-thirds percentage points.**
 
 We added no measurements. We collected no new wines. We did not touch `k`. Those are the same 178 bottles. All we did was stop letting `proline` shout over the other twelve.
 
@@ -498,7 +498,7 @@ test rows      : 36
 
 Nothing crashed. It ran perfectly. And the accuracy is **33%** — which is *below* the baseline of 39.89. Your beautiful 94% model just became worse than shouting one word at every bottle.
 
-**Why?** The model learnt in scaled world, where proline lives between about −2 and +2. Then you handed it a test wine with proline of 680. To the model, 680 is roughly two hundred and twenty spreads above typical — a wine from a different planet. Every test wine looks equally absurd, so the distances are meaningless.
+**Why?** The model learnt in scaled world, where proline lives between about −2 and +2. Then you handed it a test wine with proline of 680. To the model, 680 is six hundred and eighty spreads above typical — a wine from a different planet. Every test wine looks equally absurd, so the distances are meaningless.
 
 The confusion matrix makes it obvious:
 
@@ -684,7 +684,7 @@ Three questions to walk yourself through, in order:
 2. Would that number still be true tomorrow, when a brand-new wine arrives?
 3. When the new wine arrives, could it have helped work out the mean?
 
-The answer: the score is meant to estimate how the model does on wines **nobody has seen.** But the 36 test wines helped work out the means and spreads that the 142 training wines were scaled with — so they were not unseen. A brand-new wine tomorrow **cannot** have helped, so tomorrow's wine will do worse than 0.9722.
+The answer: the score is meant to estimate how the model does on wines **nobody has seen.** But the 36 test wines helped work out the means and spreads that the 142 training wines were scaled with — so they were not unseen. A brand-new wine tomorrow **cannot** have helped, so you should expect tomorrow's wine to do worse than 0.9722.
 
 **The number went up and got less true.**
 
@@ -1006,7 +1006,7 @@ k = 5   raw -> bowler    scaled -> batter
 
 **What to notice.** At `k = 3` and `k = 5`, the answer **flips from bowler to batter.**
 
-Look at the two orderings. Raw: bowler, batter, bowler, bowler… Scaled: bowler, batter, batter, bowler… Meera the batter moves from third-nearest to second-nearest, and that is enough to swing the vote.
+Look at the two orderings. Raw: bowler, batter, bowler, bowler… Scaled: bowler, batter, batter, bowler… Asha the batter moves from fifth-nearest to third-nearest, and that is enough to swing the vote.
 
 **Nobody remeasured a single ball.** All that happened is that the 8 wickets stopped counting for 0.25% of the distance and started counting properly.
 
@@ -1237,7 +1237,7 @@ baseline          : 0.3989
 reason            : k = 7, 8, 9 and 10 all give 0.9722. Four in a row is a
                     plateau, so the answer does not depend on getting k
                     exactly right. I chose 9 because a bigger k is steadier
-                    and an odd k cannot tie.
+                    and an odd k ties less often.
 honesty sentence  : I chose this k by looking at test scores, which makes
                     this estimate slightly optimistic.
 ```
@@ -1342,7 +1342,7 @@ truth first:            swapped:
 
 **Right:** 0.9722 happens at **nine different values of `k`** — 7, 8, 9, 10, 18, 22, 23, 24 and 25. So "highest" does not pick one. You have to say something else.
 
-The something else is the **plateau**: 7, 8, 9, 10 are four in a row, so the score does not depend on getting `k` exactly right. Take the biggest odd one in it — 9 — because bigger is steadier and odd cannot tie.
+The something else is the **plateau**: 7, 8, 9, 10 are four in a row, so the score does not depend on getting `k` exactly right. Take the biggest odd one in it — 9 — because bigger is steadier and odd ties less often.
 
 And the accompanying honest fact: **0.9722 versus 0.9444 is one wine out of thirty-six.** Do not build an argument on one wine.
 

@@ -228,9 +228,9 @@ print(rain.sum())               # add up the whole grid
 1710
 ```
 
-**Three different routes to the same number.** Add the grid up in rows, add it up in columns, or add it all up at once — if the table is a rectangle, all three must agree. If they do not, something is genuinely wrong: a missing number, a typo, a mis-shaped array.
+**Three different routes to the same number.** Add the grid up in rows, add it up in columns, or add it all up at once — all three always agree, because they are the same numbers added in different orders. **Be clear about what that means:** in numpy the three totals can never disagree, so this line cannot catch a wrong axis or a mistyped number (a wrong `axis` still gives three matching totals; a ragged row is refused when the array is built). It is a check on *understanding*, and on **hand-added** margins, where your own arithmetic can slip.
 
-Call this the **corner check**, because on paper it lands in the bottom-right corner where the margin row meets the margin column. Accountants have used it for four hundred years. It is free, it takes one line, and it catches real mistakes.
+Call this the **corner check**, because on paper it lands in the bottom-right corner where the margin row meets the margin column. Accountants have cross-footed tables like this for centuries. On paper it catches real arithmetic slips; in code it is free but always agrees.
 
 ### 8. The hand-check, and why it is a graded part of the week
 
@@ -405,7 +405,7 @@ month_total = rain.sum(axis=0)              # one total per month
 print("city totals :", city_total)
 print("month totals:", month_total)
 
-# --- the cross-check that catches an axis mistake ---------------------------
+# --- the cross-check: three routes to the same total --------------------------
 print("city totals add to :", city_total.sum())
 print("month totals add to:", month_total.sum())
 print("whole grid adds to :", rain.sum())
@@ -476,7 +476,7 @@ Kochi      1002 167.0
 | The graph-paper grid eats fifteen minutes | Pre-draw the grid yourself before the lesson and have them fill in only the numbers. The drawing is not the lesson; the margins are. |
 | No calculator anywhere | Six two-digit numbers can be added on paper; that is fine and takes two minutes. Do **not** allow "in my head" for the division — `162 / 6` in your head is where a hand-check silently becomes a guess. |
 | The student refuses to hand-check because "the computer is right" | Do the wrong-axis demo *first*, before the hand-check. Once they have watched the computer print a confident wrong number, the argument is over and you did not have to make it. |
-| A student's grid has a typo in it | **Excellent.** Their corner check will fail. Let it fail, let them find it, and put it in the Bug Log. This is the best possible thing that can happen today. |
+| A student's grid has a typo in it | **Excellent.** Their hand-added margin totals will disagree with the code's totals (the code's three totals will still agree with each other). Let it show, let them find it, and put it in the Bug Log. This is the best possible thing that can happen today. |
 
 ---
 
@@ -893,9 +893,9 @@ whole grid adds to : 1710
 
 > **Say this:** "Three routes, one number. Add it up in rows: 1710. Add it up in columns: 1710. Add the whole thing at once: 1710.
 >
-> That's not a coincidence and it's not magic — it's the same twenty-four numbers, added in three different orders. **If a table is a proper rectangle, all three of those must agree.** So if they ever don't, something is genuinely broken: a typo, a missing number, a row with the wrong length.
+> That's not a coincidence and it's not magic — it's the same twenty-four numbers, added in three different orders. **All three of those always agree.** That is the point of the check on paper, where your adding-up can slip; in numpy they cannot disagree, so a match proves nothing about the axis or the data.
 >
-> Accountants have been doing this for four hundred years. It's called cross-footing, and it's one line of Python. Put it at the bottom of anything you build with a grid in it."
+> Accountants have been doing this for centuries. It's called cross-footing. On paper it catches slips in your adding-up; in Python it's one line that will always agree, so use it to prove you understand the two directions."
 
 **Step 6 (optional, if there is time).** The labelled report — the loop that only prints.
 
@@ -1034,7 +1034,7 @@ On paper: add the four side-margin totals. Add the six bottom-margin totals. Bot
 114 + 110 + 129 + 200 + 427 + 730 = 1710
 ```
 
-> **Say this:** "One number, reached two ways. If your two ways disagree, you have a typo in your grid and you have just found it without anybody telling you. **That is what a check is.**"
+> **Say this:** "One number, reached two ways. If your two ways disagree, you have made a slip in your adding-up and you have just found it without anybody telling you. **That is what a check is.**"
 
 ### What "finished" looks like
 
@@ -1085,7 +1085,7 @@ Every message below came from running a broken version of this week's actual cod
 | `TypeError: 'tuple' object is not callable` | "You put brackets after something that isn't a function." | `rain.mean(axis=0).shape()`. `.shape` is a fact, not an action. | `rain.mean(axis=0).shape`, no brackets. Third appearance of this one; it is in the Bug Log from Week 17. |
 | `TypeError: 'str' object cannot be interpreted as an integer` | "The axis has to be a number and you gave me writing." | `rain.mean(axis="0")` — quote marks round the zero. | `rain.mean(axis=0)`. No quotes: it is a number, not a name. |
 | **No error, four numbers instead of six** | Nothing is wrong as far as numpy is concerned. Both are legal averages. | The wrong axis. `axis=1` when the question was about columns. | Count the answers against the count of labels. Six months means six numbers. **This is the week's headline bug and it has no message.** |
-| **No error, but the three totals disagree** | Nothing is wrong as far as numpy is concerned. | A typo in the grid, or a row with the wrong number of values in it — which would also have made the shape wrong. | Print `rain.shape` and compare it with `len(cities)` and `len(months)`. Then find the row whose numbers don't add up. |
+| **No error, but the student's hand-added totals disagree with the code's** | Nothing is wrong as far as numpy is concerned. (The code's own three totals cannot disagree.) | A slip in the paper adding, or a grid typed differently from the paper (a ragged row would instead be refused with a `ValueError` when the array is built). | Print `rain.shape` and compare it with `len(cities)` and `len(months)`. Then find the row or column whose paper total differs from the code's. |
 | **No error, `rain[:, 0]` printed sideways** | Nothing is wrong at all. This is correct. | A column and a row of the same four numbers are the same array. Shape `(4,)`. | Nothing to fix. Print `.shape` if you doubt it. |
 
 ### How to teach debugging without giving the answer
@@ -1153,7 +1153,7 @@ No — and there is no agreed rule for how much is enough. This is a genuine, li
 
 **Where it splits.** One camp says: check one value per new calculation, then move on, because your time is better spent on the *next* check than on the eleventh instance of the same one. The other says: check one at each *end* — the smallest and the largest — because middle-sized answers hide mistakes and extremes expose them. Both are defended by serious people.
 
-**And there is a third position that is harder and probably right:** the number of hand-checks is the wrong question. What matters is whether you have **something that would notice.** A count check that runs every time is worth more than ten hand-checks you did once in March, because the count check is still running in June when you have forgotten what the file does. The corner check is the same idea: not a check you *do*, a check that is *built in*.
+**And there is a third position that is harder and probably right:** the number of hand-checks is the wrong question. What matters is whether you have **something that would notice.** A count check that runs every time is worth more than ten hand-checks you did once in March, because the count check is still running in June when you have forgotten what the file does. (The corner check is not an example: in numpy it always agrees, so it would not notice a wrong axis. A built-in check has to compare against something independent, like the count of labels.)
 
 What you should tell a 12-year-old, out loud: **"one hand-check, always, before you believe anything. And then build a check into the file so it keeps checking after you've stopped paying attention."**
 
@@ -1170,7 +1170,7 @@ What you should tell a 12-year-old, out loud: **"one hand-check, always, before 
 | The grid takes fifteen minutes to draw and there is no lesson left | Twenty-four numbers with headers is real writing for a 12-year-old | Pre-draw it. Print Figure 19.5 and hand it over. **The drawing is not the lesson; the two margins are.** |
 | The counts are predicted as "lots" or left blank | "How many?" feels like a question with no way of knowing | Point at the labels. *"How many cities did you type? Four. So how many city answers can there possibly be?"* The count of answers is never a mystery — it is the count of labels, which they typed themselves. |
 | A student adds `.shape` after everything and stops reading it | It has become a ritual rather than a check | Ask "what should that say?" *before* they run it. A printed shape nobody predicted is decoration. A predicted shape that got confirmed is a check. |
-| The corner check disagrees and gets ignored as "probably rounding" | Because they want to be finished | Stop everything. This is the most valuable twelve minutes of the week. Print `rain.shape`, compare it with `len(cities)` and `len(months)`, and then add the rows up by hand until you find the odd one. Then Bug Log it. A found typo is worth more than a finished worksheet. |
+| The paper margin totals disagree with the code's totals and get ignored as "probably rounding" | Because they want to be finished | Stop everything. This is the most valuable twelve minutes of the week. Print `rain.shape`, compare it with `len(cities)` and `len(months)`, and then add the rows up by hand until you find the odd one. Then Bug Log it. A found typo is worth more than a finished worksheet. |
 | Somebody teaches masks because the grid is right there | `rain[rain > 100]` is very fun and one keystroke away | Hold the line. Today has one new idea and it is a direction. A student who meets masks and axes in the same hour will spend next week unable to tell which of two new things broke. |
 | The averages get written down with no units | Because the array has no units in it | Say it: *"28.5 what?"* Millimetres. Nothing in the array knows that. Nothing in the array knows these are cities, either. This is Week 17's cost, still being paid, and it is what Week 21 starts to fix. |
 | A fast student asks about `axis=-1` after reading online | It is everywhere on the internet | One sentence: "it means the last direction, which for a table is axis 1." Then park it. Do not build anything on it today. |
@@ -1226,7 +1226,7 @@ None of these need syntax from a later week.
 1. **The second grid** (Variation-harder 1): three friends, five days, both directions, both counts, one hand-check. A different shape forces the counts to be re-derived rather than remembered.
 2. **Predict all ten numbers**, not just the counts (Variation-harder 3), then run. Hard, slow, and extremely good for them.
 3. **The average-of-averages trap** (Variation-harder 5). `rain.sum(axis=1).mean()` is 427.5 and `rain.mean()` is 71.25. Ask them to explain the difference in one sentence before you do. This is a genuinely deep idea and a strong 12-year-old can get it.
-4. **Break the corner check on purpose.** Change one number in the code, run the three totals, watch them disagree, and then find the change *using only the printed totals*. This is real debugging and it is very satisfying.
+4. **Break the grid on purpose.** Change one number in the code but not on the paper margins, compare the printed `sum(axis=1)` and `sum(axis=0)` with the paper totals, and find the changed cell *using only the mismatching row and column totals*. (The code's three corner-check totals will still agree with each other, which is itself worth noticing.) This is real debugging and it is very satisfying.
 5. **The missing-year question** (Variation-harder 6). *"Whose January is this?"* No right answer; excellent argument.
 6. **Two grids, same numbers, different shape.** Have them type the same twenty-four numbers as `(6, 4)` instead of `(4, 6)` and run both axis lines on it. The answers are completely different and nothing crashes. Then the question: *"which of these two grids is the rainfall data?"* (Only the one whose shape matches the labels. **Shape is meaning** — Week 17's idea, arriving with teeth.)
 
@@ -1550,7 +1550,7 @@ Wettest city: **Kochi**, mean 167.0 mm, total 1002. Wettest month: **June**, mea
 No, and it is worth thinking about. They are averages of different-sized groups. 182.5 is June averaged over **four** cities — and Kochi's 480 mm of June rain pulls it right up. 167.0 is Kochi averaged over **six** months, including a 22 mm January that pulls it down. Different groups, different sizes, different answers. Neither one is "the average rainfall".
 
 **19.4(c) Why does the corner check work?**
-Because all three routes add up the **same twenty-four numbers**, just in different orders. Adding along the rows first, or down the columns first, or all at once, cannot change the total — so if they disagree, one of the numbers is not what you think it is.
+Because all three routes add up the **same twenty-four numbers**, just in different orders. Adding along the rows first, or down the columns first, or all at once, cannot change the total — so in numpy they always agree. That is why the check cannot catch a wrong axis or a mistyped number; it confirms the arithmetic and the idea, and on paper it catches slips in your own adding-up.
 
 ### Page 19.5 — A different grid: three friends, five days
 
@@ -1697,7 +1697,7 @@ Model:
 
 ## 🔮 Next Week Preview
 
-Next week is a lab, and it is the one where the student builds something that looks like a real tool. **The Vectorized Gradebook:** ten students down, five tests across, and eight questions answered with **zero `for` loops doing any arithmetic anywhere in the file.** The new idea is the **boolean mask** — write `scores > 50` and you get back an array of `True` and `False`, exactly the same shape as the scores, one answer per cell. The important move is to *look at the mask before using it*: print it, put a highlighter over the printed grid, and see that it is a thing in its own right rather than a step on the way to a filter. Then `scores[mask]` pulls out only the values you want — and the answer comes back **shorter than the question**, which is the first surprise. This week's axis work does all the heavy lifting: `mask.sum(axis=1)` counts passes per student and `mask.sum(axis=0)` counts passes per test, and the two counts must add to the same number or an axis is wrong.
+Next week is a lab, and it is the one where the student builds something that looks like a real tool. **The Vectorized Gradebook:** ten students down, five tests across, and eight questions answered with **zero `for` loops doing any arithmetic anywhere in the file.** The new idea is the **boolean mask** — write `scores > 50` and you get back an array of `True` and `False`, exactly the same shape as the scores, one answer per cell. The important move is to *look at the mask before using it*: print it, put a highlighter over the printed grid, and see that it is a thing in its own right rather than a step on the way to a filter. Then `scores[mask]` pulls out only the values you want — and the answer comes back **shorter than the question**, which is the first surprise. This week's axis work does all the heavy lifting: `mask.sum(axis=1)` counts passes per student and `mask.sum(axis=0)` counts passes per test, and both add up to `mask.sum()` whichever way you go, so the check that catches a wrong axis is still the count against the labels.
 
 And there is a sting, and it is the exact sibling of this week's silent bug. One score gets typed as **950** instead of 95. Nothing crashes. The per-student mean for that one student goes daft in a way you might notice — but the **0-to-1 normalization silently squashes everybody else into the bottom twelfth of the scale**, so every other student's score becomes a number between 0.01 and 0.08 and the whole thing still looks like a tidy grid of decimals. The check that catches it is a range check — *no test score can be above 100* — and it is one line with a mask in it.
 

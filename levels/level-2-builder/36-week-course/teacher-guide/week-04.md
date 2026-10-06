@@ -216,7 +216,7 @@ Line by line:
 | `name = input("1. Your name?   ")` | Asks, waits, and puts the typed text in a box called `name`. No conversion — a name *is* text. |
 | `age = int(input(...))` | Asks, gets text, hands it to `int()`, puts the resulting number in `age`. |
 | `height_m = float(input(...))` | Same shape, but `float()` because a height has a decimal point. `float` is Python's word for a number with a decimal point. |
-| `age_days = age * 365` | Multiplies. Works only because `age` is a number. If `int()` were missing, this line would silently produce 1095 characters of nonsense. |
+| `age_days = age * 365` | Multiplies. Works only because `age` is a number. If `int()` were missing, this line would silently produce 730 characters of nonsense (`"12"` repeated 365 times). |
 | `height_ft = round(height_m * 3.28084, 2)` | One metre is 3.28084 feet. `round(…, 2)` trims the answer to two decimal places. |
 | `print(f"  Name    : {name}")` | The `f` immediately before the opening quote is what makes `{name}` get replaced by the value. **Without the `f`, Python prints the literal characters `{name}`** — see Debugging Clinic row 8. |
 | `{height_m:.2f}` | The `:` starts a formatting instruction. `.2f` means "show two digits after the point". |
@@ -282,7 +282,7 @@ Four steps, in this order, every time:
 
 1. **Last line.** Two halves, separated by a colon: the error *type* (`TypeError`) and the *message*.
 2. **Line number.** `line 4`. Go there.
-3. **Read the line above it too.** An unclosed bracket on line 3 makes Python blame line 4. This catches people constantly.
+3. **Read the line above it too.** A mistake on one line is often *reported* on a later one (a missing bracket in older Pythons, a wrongly typed value in every version). Python 3.10 and later point an unclosed bracket back at the line where it opened, as in Break 3. The habit stays the same: read the line above as well.
 4. **Change one thing. Run again.** One thing. Not three. If you change three things and it works, you have learned nothing and you still have two mysteries.
 
 The five error types you will meet this week:
@@ -319,7 +319,7 @@ So: **Stages 1–3 hard-code all six answers. `input()` goes in at Stage 4, when
 
 **Misconception 1 — "I converted it, so it's fine."** The student writes `int(input("Age? "))` on line 3, then two lines later writes `screen_minutes = input(...)` with no conversion, and is genuinely surprised. Conversion is per-value, not per-program. There is no global setting. The fix that sticks: **read the six input lines as a column and check that every numeric one has a conversion round it.** Make them point at each one with a finger.
 
-**Misconception 2 — "The error is on the line the traceback says."** Often true, sometimes not. `line 4` means "line 4 is where Python gave up", which is not the same as "line 4 is wrong". With an unclosed bracket, the mistake is on line 3 and the complaint is about line 4. Teach step 3 of the four steps: *look at the line above as well.*
+**Misconception 2 — "The error is on the line the traceback says."** Often true, sometimes not. `line 4` means "line 4 is where Python gave up", which is not the same as "line 4 is wrong". With a wrongly-typed value (text where a number should be), the mistake is on the line that filled the variable and the complaint is about the line that used it. Teach step 3 of the four steps: *look at the line above as well.*
 
 **Misconception 3 — "A program that runs is a program that works."** This is the big one and it is what the planted bug exists to break. The bug we plant today produces no error at all. It runs. It prints. It looks like a finished program. And the screen-time number is 1,095 characters of nonsense. **Running and working are different things, and only one of them is your job.**
 
@@ -702,7 +702,7 @@ Run it. The real traceback:
 
 ```text
 Traceback (most recent call last):
-  File "about_me.py", line 15, in <module>
+  File "about_me.py", line 21, in <module>
     height_ft = Round(height_m * 3.28084, 2)
 NameError: name 'Round' is not defined. Did you mean: 'round'?
 ```
@@ -776,7 +776,7 @@ Run it. The real output — look at the Name line:
 >
 > Compare the Name line with the City line. What's different? … Yes. There's no `f` before the quote on the Name line.
 >
-> That little `f` is the switch that turns the curly braces on. Without it, `{name}` is just five characters — a curly bracket, n, a, m, e, a curly bracket — and `print` printed exactly those characters, faithfully. With the `f`, Python looks inside the braces, finds the box called `name`, and drops its contents in.
+> That little `f` is the switch that turns the curly braces on. Without it, `{name}` is just six characters — a curly bracket, n, a, m, e, a curly bracket — and `print` printed exactly those characters, faithfully. With the `f`, Python looks inside the braces, finds the box called `name`, and drops its contents in.
 >
 > Add the `f`."
 
@@ -1038,7 +1038,7 @@ Yes, and it is a good instinct — you want the program to *react*, not just rep
 | The silent `120120120…` bug is treated as "the program broke" and they start deleting lines | Any wrong output reads as generalised breakage | Slow it right down. "Did it crash? No. So Python thinks it did the right thing. Which line produced the wrong bit? What is that line multiplying?" Then `print(type(...))`. Never let them fix by deletion. |
 | The traceback is read from the top, and they get lost in `File "..."` and `<module>` | English reads top-down, and the top line is the biggest | Physically cover the top of the traceback with your hand or a piece of paper. Leave only the last line showing. Do this every time until they stop needing it. |
 | Two things get changed between runs, and now nobody knows which fixed it | Impatience, and it is completely natural | "Change one thing. Run. Change one thing. Run." Say it as a rhythm. If they have already changed three, put two of them back. |
-| `int(input("Age? ")` — one closing bracket missing, and the `SyntaxError` blames the *next* line | `int(input(...))` needs two closing brackets and the editor may have supplied one already | Teach the count out loud: "two openers, so two closers." Then teach step 3 of reading a traceback: **look at the line above the one it blames.** |
+| `int(input("Age? ")` — one closing bracket missing, and the `SyntaxError` names the line where the bracket opened (older Pythons blamed a later line) | `int(input(...))` needs two closing brackets and the editor may have supplied one already | Teach the count out loud: "two openers, so two closers." Then teach step 3 of reading a traceback: **look at the line above the one it blames.** |
 | The card looks wrong because a `print` line has an `f` and its neighbour doesn't | The `f` is one character and invisible at a glance | Do not point at the broken line. Point at the *working* line next to it and say "compare these two." Finding the difference themselves is the skill. |
 | They want to check the answer is a number before converting it, and get frustrated when they can't | It is the right instinct arriving four weeks early | Tell them the truth: "that needs `if`, which is next week, and a thing called `.isdigit()`, which is Week 6. Write it in the notebook." Do not improvise a solution — you will pull `if` into a lesson with no time for it. |
 | The bot works, and the student is finished at minute 50 with nothing to do | They are quick, and the core is genuinely small | Go to Variation — harder. Item 2 (the one-place-to-change-the-look wall) is the best of them, because the frustration is the point and it sets up Week 7. |
@@ -1145,7 +1145,7 @@ Hand them this, printed:
 ```text
 Traceback (most recent call last):
   File "about_me.py", line 9, in <module>
-    total = minutes * 365
+    total = minutes + 365
 TypeError: can only concatenate str (not "int") to str
 ```
 
@@ -1252,7 +1252,7 @@ age = int(input("Age? "))
 The second. Both work, but the first leaves a variable holding text for one line, and that is exactly where people forget to convert. Convert at the door and the value is a number for the rest of the program.
 
 **4.2(g) Name three things that look like numbers but should be stored as text, and say why.**
-A phone number (leading zeros matter, and you never do arithmetic on it) · a postcode (same) · a bank card number (same, plus it is too long to store reliably as a number anyway). Also acceptable: a house number like `221B`, a version number like `3.10.2` (two dots — not a number at all).
+A phone number (leading zeros matter, and you never do arithmetic on it) · a postcode (same) · a bank card number (same, plus it is not a quantity you ever add up). Also acceptable: a house number like `221B`, a version number like `3.10.2` (two dots — not a number at all).
 
 ### Page 4.3 — Practice Set B: use it
 
@@ -1329,7 +1329,7 @@ print(minutes * 365)
 ```text
   File "d.py", line 1
     minutes = int(input("Minutes? ")
-             ^
+                 ^
 SyntaxError: '(' was never closed
 ```
 

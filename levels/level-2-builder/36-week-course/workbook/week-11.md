@@ -824,7 +824,7 @@ ________________________________________________________________
 
 **Line 1's answer is not nothing — it is the number zero.** Slot 1 really does hold 0, because that innings was a duck. Zero is a value, and people mistake it for "empty" surprisingly often.
 
-`scores[-4]` is the first item reached the long way round: Asha-style counting back — 67 is −1, 112 is −2, 0 is −3, **45 is −4** ✔
+`scores[-4]` is the first item reached the long way round: counting back from the end — 67 is −1, 112 is −2, 0 is −3, **45 is −4** ✔
 
 **P2.**
 
@@ -1250,7 +1250,7 @@ I X D I Y
 
 **And notice this is the exact opposite of the advice about "the last item".** That is not a contradiction, and it is worth being precise about: **count from the end when you mean "the last one"; count from the start when you mean "that particular one".** The rule is *say what you actually mean*, and then the index that survives is whichever one matches your meaning.
 
-**(c)** Your own clues will be your own. Anything that spells a real word out of A, C, D, E, I, N, X counts — `ACID`, `DICE`, `NICE`, `CANE`, `INDEX`, `EXCAND`… (well, three of those). Check every clue by running it, not by counting in your head.
+**(c)** Your own clues will be your own. Anything that spells a real five-letter word out of A, C, D, E, I, N, X (each letter can be used once, because each sits in one slot) counts — `DANCE`, `INDEX`. Check every clue by running it, not by counting in your head.
 
 **Part B — three ways to break it.** Three genuinely different causes:
 
@@ -1283,7 +1283,7 @@ So for a program somebody else will keep using for a year, `scores[-1]` — **no
 
 **The best argument for one:** humans count from one. Nobody says "the zeroth day of the week". If the language matches the way people talk, there is one fewer translation to get wrong — and in MATLAB, R, Lua and Julia, all used daily by professionals, the first item really is number 1.
 
-**Bugs that only exist because of zero:** `scores[len(scores)]`, and the `range(len(x) + 1)` loop that goes one trip too far. Both are pure fencepost errors and neither could happen in a 1-based language.
+**A bug that only exists because of zero:** `scores[len(scores)]` — the natural-looking way to say "the last one" is exactly one past the end. (In a 1-based language `x[len(x)]` *is* the last item.) The loop that goes one trip too far is a fencepost error in either convention.
 
 **Bugs that would only exist with 1-based counting:** anything where you have to translate between a position and a *count of steps* — "how many items between slot 3 and slot 7?" is `7 - 3` when you count from zero and needs care when you count from one. And a slice from 1 to 3 would contain either two items or three depending on which convention the language chose, which is exactly the argument you meet next week.
 

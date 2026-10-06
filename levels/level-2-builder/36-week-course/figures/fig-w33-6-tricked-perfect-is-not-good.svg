@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
   <title>A perfect training score is not good news</title>
-  <desc>Two panels. On the left, marked wrong, a report shows a train score of one point zero zero zero being celebrated as perfect, with the test column covered by a card reading did not look. On the right, marked right, both columns are shown together: train one point zero zero zero beside test minus nought point nought nought three, which is below the lazy always-guess-the-average line, so the row is labelled memorised and not shipped.</desc>
+  <desc>Two panels. On the left, marked wrong, a report shows a train score of one point zero zero zero being celebrated as perfect, with the test column covered by a card reading did not look. On the right, marked right, both columns are shown together: train one point zero zero zero beside test minus nought point nought nought three, which is at the lazy always-guess-the-average line, so the row is labelled memorised and not shipped.</desc>
   <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A perfect training score is not good news</text>
   <line x1="400" y1="70" x2="400" y2="372" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 5"/>
   <circle cx="62" cy="92" r="14" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><line x1="55" y1="85" x2="69" y2="99" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/><line x1="69" y1="85" x2="55" y2="99" stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"/>
@@ -33,6 +33,6 @@
   <text x="668" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#845F00" text-anchor="middle">lazy always-guess-the-average line: 0.0</text>
   <rect x="442" y="262" width="296" height="48" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
   <text x="590" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8220;memorised &#8212; do not ship&#8221;</text>
-  <text x="590" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Below the lazy line means worse than</text>
+  <text x="590" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">At or below the lazy line means no better than</text>
   <text x="590" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">ignoring every measurement. Gap: 1.003.</text>
 </svg>

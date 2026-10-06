@@ -60,7 +60,7 @@ And I want to be honest about how small this week is, because it looks bigger th
 
 ### 1. Two pieces. Not one, not three. Two.
 
-**The plain explanation.** A **model** is a machine you show a pile of examples with the answers filled in, and which then gives you an answer for an example it has never seen. Every single one of them — and there are hundreds — wants your data handed over in exactly two pieces.
+**The plain explanation.** A **model** is a machine you show a pile of examples with the answers filled in, and which then gives you an answer for an example it has never seen. Every *supervised* model — one that learns from examples that come with answers, which is every model in this course — and there are hundreds of them, wants your data handed over in exactly two pieces.
 
 > **`X`** — the table of measurements. One row per example, one column per measurement.
 > **`y`** — the answers. One value per row, lined up with `X` row for row.
@@ -483,7 +483,7 @@ all four steps in one line: 3.2310988842807027
 
 **Compare that with the pencil version on page 8 of this chapter.** `−3.0` and `−1.2`. Then `9.00` and `1.44`. Then `10.44`. Then `3.23`. Identical. You did not take anybody's word for it — you did it by hand, and the machine agreed.
 
-> **🐞 If you see this error:** you do not. But you probably noticed `10.440000000000003` and thought something had gone wrong. **Nothing has gone wrong.** Computers store decimals in binary, the way we store thirds in decimal — one third is 0.3333… forever and you have to stop somewhere, and where you stop is a tiny error. `1.44` is one of the numbers that does not fit exactly in binary, so what got stored was a hair over. Thirteen decimal places down. It makes no difference to anything you will ever do, and it is why we **round before we report**. Every programming language on earth does this and every professional has met it.
+> **🐞 If you see this error:** you do not. But you probably noticed `10.440000000000003` and thought something had gone wrong. **Nothing has gone wrong.** Computers store decimals in binary, the way we store thirds in decimal — one third is 0.3333… forever and you have to stop somewhere, and where you stop is a tiny error. `1.4` and `4.4` are numbers that do not fit exactly in binary, so the first gap really came out as `-3.0000000000000004` — a hair off — and squaring carried that hair along. It is fifteen decimal places down. It makes no difference to anything you will ever do, and it is why we **round before we report**. Every programming language on earth does this and every professional has met it.
 
 **Reading the one-liner.** `np.sqrt(((flower_a - flower_b) ** 2).sum())` is the whole thing on one line. Read it **from the inside out**: innermost brackets first (subtract), then square, then `.sum()`, then `np.sqrt`. Four steps, written right to left.
 
@@ -1050,7 +1050,7 @@ The closest pair is **B–C at 1.94** — and they are **different** species, ve
 
 **Right:** `X = playlist[["bpm", "minutes"]]` and `y = playlist["mood"]`.
 
-Nothing crashes if you get this wrong, which is what makes it dangerous. The model will score **100%** and be completely worthless, because you handed over the answer and then asked for it back. Level 1 called that a **leak**. The three-second test still works: *at the moment I actually need the prediction, do I have this value?* For a brand-new song you do not — that is the whole reason you wanted a prediction.
+Nothing in pandas stops you building this. (Scikit-learn will refuse a column of words such as `chill` and `hype`, so the leak hides best once the answer has already been turned into numbers like 0 and 1 — and then nothing crashes at all.) When it does slip through, the model will score **100%** and be completely worthless, because you handed over the answer and then asked for it back. Level 1 called that a **leak**. The three-second test still works: *at the moment I actually need the prediction, do I have this value?* For a brand-new song you do not — that is the whole reason you wanted a prediction.
 
 ### Trick 3 — "`(10,)` is a typo, it should be `(10, 1)`"
 

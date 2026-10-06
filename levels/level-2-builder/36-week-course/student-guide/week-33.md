@@ -5,7 +5,7 @@
 ---
 
 > ### This week in one sentence
-> **A training score that climbs while the test score falls is memorising, not learning — and this week you build that exact thing on purpose, watch it score a perfect 1.000 while being worse than useless, and draw the picture of it happening.**
+> **A training score that climbs while the test score falls is memorising, not learning — and this week you build that exact thing on purpose, watch it score a perfect 1.000 while being no better than guessing the average on new rows, and draw the picture of it happening.**
 >
 > **By the end of this chapter you will be able to:**
 > - Run three different models on one fixed split, changing one line each time
@@ -40,7 +40,7 @@ He falls apart. And here is the thing I want you to hold onto, because it is not
 
 > **Sam's 200 out of 200 was not a lie.** He did not cheat. He was given the answers and he memorised them, and he really did get every single practice question right. **That number is completely true. It just isn't evidence of anything.**
 
-Today you are going to build Sam. In code. On purpose. You will watch a model score a **perfect 1.000** on the rows it studied and then do **worse than guessing** on rows it has never seen. And then you are going to draw the picture of it happening, mark the exact point, and write one sentence underneath in your own handwriting.
+Today you are going to build Sam. In code. On purpose. You will watch a model score a **perfect 1.000** on the rows it studied and then do **no better than guessing the average** on rows it has never seen. And then you are going to draw the picture of it happening, mark the exact point, and write one sentence underneath in your own handwriting.
 
 ![Same eight points. Three models.](../figures/fig-w33-1-underfit-goodfit-overfit.svg)
 *Figure 33.1 — Same eight points. Three models. The dots never move. Only the line does.*
@@ -415,9 +415,9 @@ tree, no limit           56.57   72.90    -0.003      1.000
 
 What does a negative R² mean? Look up at the baseline row. R² of **zero** means "no better than ignoring everything and guessing the average". So negative means…
 
-**Worse than guessing the average.**
+**Worse than guessing the average of the test rows. And a model that has learned nothing useful lands at about zero, or just under it.** (Look at the baseline row: it scores −0.012, not exactly 0, because it guesses the *training* average.)
 
-A model with ten measurements, hundreds of learned rules, and a perfect score on its homework — and it is worse than a machine that ignores every measurement and says 153 for everybody.
+A model with ten measurements, hundreds of learned rules, and a perfect score on its homework — and on new patients it is no better than a machine that ignores every measurement and says 153 for everybody. Its −0.003 is level with that machine's −0.012.
 
 **That is Sam.** In numbers you generated yourself, on your own laptop, in a tenth of a second.
 
@@ -1126,7 +1126,7 @@ Which also tells you what to expect at depth 20, 30 or 100: **nothing at all.**
 
 **Wrong:** train R² 1.000. Perfect. Ship it.
 
-**Right:** ask the only question that matters — **"what did it score on the rows it had never seen?"** −0.003. Which is below the lazy always-guess-the-average line, so this model is **worse than ignoring every measurement.**
+**Right:** ask the only question that matters — **"what did it score on the rows it had never seen?"** −0.003. Which is level with the lazy always-guess-the-average row (−0.012), so this model is **no better than ignoring every measurement.**
 
 A perfect training score is not good news and it is not bad news. **It is not news at all.** It is Sam's 200 out of 200.
 

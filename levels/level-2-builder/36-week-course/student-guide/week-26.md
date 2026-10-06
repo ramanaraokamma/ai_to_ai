@@ -196,7 +196,7 @@ Both summaries say sixty-two. A perfectly reasonable teacher would write "the cl
 
 **Now count how many students scored between 44 and 81.**
 
-**Nobody.** Not one person. The average is 62 and the nearest human being to it is seventeen marks away. **The mean is describing somebody who does not exist.**
+**Nobody.** Not one person. The average is 62 and the nearest human being to it is eighteen marks away. **The mean is describing somebody who does not exist.**
 
 And here is the part that should genuinely bother you: **the median got fooled just as badly.** The median is supposed to be the safe one, the one that shrugs off weird values. It landed **in the gap** between the two clumps. Where is the middle of a doughnut?
 
@@ -276,7 +276,7 @@ The first is a description of a picture. The second is a claim about **cause**, 
 |---|---|---|
 | bar of club counts | chess 14, music 12, art 12 | **Every score.** Chess's 14 members range from 55 to 97; the bar is one number standing in front of a very mixed crowd. |
 | bar of house means | Blue 74.36, Red 74.25, Green 67.42 | **How many rows each average came from** (Blue 14, Red 12, Green 12), and the spread inside each house — Blue's scores run 42 to 93. A mean of 12 rows and a mean of 12,000 look identical on a bar chart. Also: Blue beats Red by **0.11 of a mark**, which is nothing. |
-| histogram of scores | wide, 42 to 97, no single peak | **Who.** The five students in the 90s bin could be all one club or one from each. A histogram deliberately throws away every column except one — that is what makes it readable and what makes it blind. |
+| histogram of scores | wide, 42 to 97, no single peak | **Who.** The five students in the top bin (90.1 to 97) could be all one club or one from each. A histogram deliberately throws away every column except one — that is what makes it readable and what makes it blind. |
 | scatter of age vs hours | older students reported fewer hours | **Dots landing on top of each other.** There are 38 rows but only **23** different (age, hours) pairs, so 15 students are invisible underneath other students. The chart looks like it has 23 people in it. |
 
 That last one is a professional-grade observation, and you can check it in one line of Week 24 code: `df.groupby(["age", "hours"]).size()` has 23 rows, not 38.
@@ -700,7 +700,7 @@ mean price  : 270.0
 median price: 257.5
 ```
 
-**Look at those bin counts: `7, 3, 1, 0, 6, 3`.** There is a zero in the middle. Two clumps again — a cheap group around 200 and an expensive group around 320 — and the **mean price of 270 lands in the near-empty fourth bin.** The average customer, on that number, is somebody who does not exist.
+**Look at those bin counts: `7, 3, 1, 0, 6, 3`.** There is a zero in the middle. Two clumps again — a cheap group around 200 and an expensive group around 320 — and the **mean price of 270 lands in the almost-empty third bin (252.7 to 279.5), which holds just one order.** The average customer, on that number, is somebody who does not exist.
 
 And 9 + 7 + 4 = 20, and the bin counts add to 20. **Both checks passed.**
 
@@ -740,7 +740,7 @@ fig, ax = plt.subplots(figsize=(6, 4))
 counts, edges, bars = ax.hist(squad["runs"], bins=6, edgecolor="white")
 print("counts:", counts, "-> adds up to", counts.sum())
 print("edges :", edges.round(1))
-ax.set_title("Most players scored under 50; only two passed 75")
+ax.set_title("Most players scored under 50; only three passed 75")
 ax.set_xlabel("Runs scored (count)")
 ax.set_ylabel("Number of players (count)")
 fig.savefig("cricket_runs_hist.png", dpi=120, bbox_inches="tight")
@@ -828,7 +828,7 @@ group 2 mean: 191.8
 
 Mean 146.5. Median 145.0. **Both wrong about everybody**, and both arithmetically perfect. The two real groups read at about 101 and about 192 words a minute, which are almost certainly two different things going on — perhaps some students had read the passage before.
 
-**Try changing `bins=8` to `bins=4` and run it again.** The gap gets narrower and the story gets weaker. Then try `bins=12`. **If the two humps survive changing the bin count, you can trust them. If they appear and vanish, you have found something to think about rather than something to report.**
+**Try changing `bins=8` to `bins=4` and run it again.** With `bins=4` the hole is still there (`[10, 0, 0, 10]`); only if you go down to `bins=2` does it vanish, because then each hump has a bin to itself and there is nothing left between them. Then try `bins=12`. **If the two humps survive changing the bin count, you can trust them. If they appear and vanish, you have found something to think about rather than something to report.**
 
 ---
 
@@ -902,8 +902,8 @@ saved oops.png
 | `TypeError: Axes.bar() missing 1 required positional argument: 'height'` | "Where, but not how tall." | `ax.bar(counts.index, counts.values)` — two arguments |
 | `TypeError: Axes.scatter() missing 1 required positional argument: 'y'` | "A dot needs two coordinates." | `ax.scatter(df["hours"], df["score"])` |
 | `KeyError: 'Club'` | "There is no column with that name." | Column names are case-sensitive. It is `club`. `print(df.columns)` lists them |
-| `ValueError: 'bins' must be positive, when an integer` | "Zero bins is not a number of bins." | A positive whole number, or a list of edges |
-| `ValueError: x and y must have same first dimension, but have shapes (38,) and (3,)` | "38 of one thing, 3 of the other." | You mixed a raw column with a summarised one. Pick a level: 38 rows, or 3 groups |
+| `` ValueError: `bins` must be positive, when an integer `` | "Zero bins is not a number of bins." | A positive whole number, or a list of edges |
+| `ValueError: x and y must have same first dimension, but have shapes (38,) and (3,)` (that is `ax.plot`'s wording; `ax.bar` says `shape mismatch: objects cannot be broadcast to a single shape`, and `ax.scatter` says `x and y must be the same size`) | "38 of one thing, 3 of the other." | You mixed a raw column with a summarised one. Pick a level: 38 rows, or 3 groups |
 | **No error. A bar chart with 38 bars in three columns.** | Nothing. It drew what you asked for. | Summarise first |
 | **No error. `edges: [0. 0.25 0.5 ... 2.]`** | "I turned your three words into 0, 1 and 2 and binned those." | A histogram needs numbers. Bar-chart a text column instead |
 | **No error. A scatter that looks like a scribble.** | Nothing. You joined the dots. | `ax.scatter(x, y)`, not `ax.plot(x, y, marker="o")`. There is no order to join |

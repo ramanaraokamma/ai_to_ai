@@ -712,7 +712,7 @@ print("5" + "5")         # make both sides text, THEN glue
 
 Full instructions in the next section. In the lesson flow:
 
-- **Minutes 0–10:** they write `pocket_money.py` from scratch — four named boxes, two computed values, every number typed exactly once.
+- **Minutes 0–10:** they write `pocket_money.py` from scratch — at least three named boxes, two computed values, every number typed exactly once.
 - **Minutes 10–15:** the type quiz. Twelve values, predict the type, then check with `type()`.
 - **Minutes 15–20:** the conversion drills, including two deliberate `ValueError`s.
 
@@ -1316,7 +1316,7 @@ print("slices * pizzas")
 slices * pizzas
 ```
 
-The second line has quotes, so it is fourteen characters of text, not a sum. Python never even looks at the names.
+The second line has quotes, so it is fifteen characters of text, not a sum. Python never even looks at the names.
 
 **B2. Find the mistake without running it.**
 

@@ -1033,7 +1033,7 @@ Writing the name on its own is legal, does nothing, and produces **no error** �
 |---|---|
 | "25 lines became 18, so I saved 7 lines — that's the win" | The win is that **the heading is now written down in exactly one place.** Seven lines is a side effect |
 
-Test it. **Change the heading to `LEVEL 2` in the pasted version:** three edits, and no way to be sure you got them all. **Now in the named version:** one edit, and *certainty*, because there is nothing else to find. Then ask how many banners there would have to be before the function version saved fifty lines — about a dozen — and then ask whether seven lines was worth it anyway. **It was, and the reason has nothing to do with lines.**
+Test it. **Change the heading to `LEVEL 2` in the pasted version:** three edits, and no way to be sure you got them all. **Now in the named version:** one edit, and *certainty*, because there is nothing else to find. Then ask how many banners there would have to be before the function version saved fifty lines — fourteen — and then ask whether seven lines was worth it anyway. **It was, and the reason has nothing to do with lines.**
 
 ---
 
@@ -1145,7 +1145,7 @@ Go to **[the Week 9 workbook](../workbook/week-09.md)**. About **60 minutes** in
 | Section | What to do | Time |
 |---|---|---|
 | **Warm-Up** | Five quick questions from Week 8 | 5 min |
-| **Predict the Output** | Four snippets. Two of them print **nothing at all**, and you have to say why | 10 min |
+| **Predict the Output** | Four snippets. One prints **nothing at all** and one crashes before it prints anything, and you have to say why | 10 min |
 | **Practice A & B** | Six reading questions, then five you write yourself | 20 min |
 | **Fix the Broken Program** | A name card with three planted bugs — one loud, one crash, one silent | 10 min |
 | **Build It** | **Three** repeated blocks from your own weeks 1–8 files, each turned into a function | 15 min |

@@ -183,7 +183,7 @@ float64
 | `int64` | whole numbers, positive or negative | 64 bits of space per number, which is a *lot* — about 9 followed by 18 zeros |
 | `float64` | numbers with a decimal point | 64 bits, giving about 15 reliable digits |
 | `bool` | `True` or `False`, nothing else | — |
-| `<U21` | text, up to 21 characters per cell | the 21 is the longest string it saw |
+| `<U21` | text, up to 21 characters per cell | the 21 is how much room each cell has. When numbers are turned into text (as in `[1, 2, "three"]`) numpy leaves room for the longest possible whole number, 21 characters, so you get `<U21` even though `"three"` is only 5 |
 
 > **⚠️ Watch out:** on **Windows** you will often see `int32` where this file says `int64`. It is the same idea in a smaller box. Everything in this lesson works identically; only the number in the name differs. Say so once and move on, and do not let it become a thing.
 
@@ -470,7 +470,7 @@ dtype     : <U21
 
 1. **The grid.** On graph paper, draw the twelve-record table with all five columns and the header row. Twelve rows, five columns. This takes six minutes and it is worth it.
 2. **The rubbing out.** Hand them the rubber. *"Rub out the header row. Now rub out the name column."* What is left is a block of numbers with no labels. **That is an array**, and they made it. Ask: "what have you lost?" *(You can't tell which column is which.)* Ask: "what have you got that you didn't have before?" *(A neat rectangle. Every cell the same kind of thing.)*
-3. **Shape.** Count the rows out loud. Count the columns out loud. Write `(12, 3)` under the block. Then have them draw a *different* block from the same numbers — three rows of twelve — and write `(3, 12)` under it. **Same numbers, different shape.** That is objective 3, done, on paper.
+3. **Shape.** Count the rows out loud. Count the columns out loud. Write `(12, 2)` under the block. Then have them draw a *different* block from the same numbers — two rows of twelve — and write `(2, 12)` under it. **Same numbers, different shape.** That is objective 3, done, on paper.
 4. **dtype.** Ask them to write a single word above the block saying what kind of thing every cell holds. `whole numbers`. Then: *"now write the word 'three' in one cell instead of a 3. What kind of thing does every cell hold now?"* They will realise the answer has to cover the word too. That is objective 4, and it lands harder on paper than on screen.
 5. **The predictions.** Workbook page 17.2 needs no computer at all. Do all six predictions on paper and check them next week, or check them on your own machine and read the answers out.
 
@@ -537,11 +537,11 @@ Let them struggle. Prompts if needed: *"look at the shape of it. Look at what's 
 
 *It's a neat rectangle. Every square has a number in it.*
 
-> "Both of those. It's a **perfect rectangle** — twelve rows, three columns, no gaps, nothing ragged. And **every single square holds the same kind of thing.** A number. Not a name in one and a number in another.
+> "Both of those. It's a **perfect rectangle** — twelve rows, two columns, no gaps, nothing ragged. And **every single square holds the same kind of thing.** A number. Not a name in one and a number in another.
 >
 > That is the whole trade of today. **You give up the labels, and what you get back is a shape and a single kind.** And next week you'll find out what that buys you, which is quite a lot."
 
-**Do this:** Write on the board: `(12, 3)`.
+**Do this:** Write on the board: `(12, 2)`.
 
 > "Count the rows out loud."
 
@@ -549,9 +549,9 @@ Let them struggle. Prompts if needed: *"look at the shape of it. Look at what's 
 
 > "Count the columns."
 
-*Three.*
+*Two.*
 
-> "Twelve rows, three columns. Written like that: **twelve comma three**. Rows first, always. That pair of numbers is called the **shape**, and printing it is going to be the most useful thing you do all term."
+> "Twelve rows, two columns. Written like that: **twelve comma two**. Rows first, always. That pair of numbers is called the **shape**, and printing it is going to be the most useful thing you do all term."
 
 **Ask this:**
 
@@ -561,7 +561,7 @@ Let them struggle. Prompts if needed: *"look at the shape of it. Look at what's 
 | "What have you gained?" | A perfect rectangle, and every cell holds the same kind of thing. | If they only get "it's tidier", ask: "what's in every single square now?" |
 | "Rows or columns first?" | Rows. | If they get it wrong, do not correct with a rule — have them count the rows out loud first, then the columns. The order they counted *is* the order. |
 | "Why couldn't we keep the names in the block?" | Because then some cells would hold words and some numbers. | This is a hard question and any partial answer is good. It is the seed of `dtype` and you will come back to it. |
-| "Is `(12, 3)` the same as `(3, 12)`?" | No. | If they say yes, ask them to draw the `(3, 12)` version. Watching it not fit the page is the argument. |
+| "Is `(12, 2)` the same as `(2, 12)`?" | No. | If they say yes, ask them to draw the `(2, 12)` version. Watching it not fit the page is the argument. |
 
 ---
 
@@ -615,7 +615,7 @@ arr.shape   ->  how big, in each direction.  Rows first.
 arr.dtype   ->  what ONE kind of thing every cell holds.
 ```
 
-> "`.shape` you already invented, on the graph paper. Twelve rows, three columns: `(12, 3)`.
+> "`.shape` you already invented, on the graph paper. Twelve rows, two columns: `(12, 2)`.
 >
 > One warning about it, because it looks like a mistake. If there's only one direction — just a row of numbers, no columns — the shape comes out as `(4,)`. With a comma and nothing after it. **That's not a typo.** The comma is Python's way of saying 'this is a *pair-like thing*, it just happens to have one item in it'. Read it out loud as *'four, and that's the only direction there is.'*"
 
@@ -644,7 +644,7 @@ Let them think. Someone will get to "you'd have to say words".
 | "What can a list hold that an array can't?" | Different kinds of thing at the same time. | If they say "more stuff", clarify with an example: `[1, "cat", 3.5]`. |
 | "What does `as np` do?" | Gives numpy a shorter name, just in this file. | If they think it changes numpy itself, say: "another file could call it something else and numpy wouldn't notice." |
 | "Why does `(4,)` have a comma?" | Because it's a collection with one item in it, not just the number 4. | If they still think it's a typo, print `(4)` and `(4,)` and show that Python treats them differently. |
-| "In `(12, 3)`, which is rows?" | 12. Rows first. | Have them count the rows on the graph paper out loud again. Do not give a rule they have to remember. |
+| "In `(12, 2)`, which is rows?" | 12. Rows first. | Have them count the rows on the graph paper out loud again. Do not give a rule they have to remember. |
 | "What's the difference between `type()` and `.dtype`?" | `type()` asks about one value; `.dtype` asks about every value at once. | If they say "nothing", print `type(runs)` — which gives `ndarray` — beside `runs.dtype`, which gives `int64`. Two different questions. |
 | "What happens if one cell has a word in it?" | Everything has to become words. | Any answer that notices there is a *problem* is a good answer. Do not resolve it — it is coming in ten minutes. |
 
@@ -1108,7 +1108,7 @@ What everybody agrees on is the thing that resolves it, and it arrives in Week 2
 
 **Give them the arrays already written**, and have them do nothing but read shape and dtype off the screen and tick their predictions. The understanding lives in the reading, not the typing.
 
-**Reteach — with the graph paper and the rubber, and nothing else.** The Hook is the entire lesson. Draw the grid. Rub out the words. Count rows out loud, count columns out loud, write `(12, 3)`. Then draw the same numbers as three rows of twelve and write `(3, 12)` under it, and ask which one is the table they started with. Then write one word above the block saying what kind of thing every cell holds. **That is objectives 2, 3 and 4, on paper, in twelve minutes**, and a student who leaves the room able to say *"rows first, then columns, and every cell is the same kind of thing"* has had a successful lesson whether or not any Python ran.
+**Reteach — with the graph paper and the rubber, and nothing else.** The Hook is the entire lesson. Draw the grid. Rub out the words. Count rows out loud, count columns out loud, write `(12, 2)`. Then draw the same numbers as two rows of twelve and write `(2, 12)` under it, and ask which one is the table they started with. Then write one word above the block saying what kind of thing every cell holds. **That is objectives 2, 3 and 4, on paper, in twelve minutes**, and a student who leaves the room able to say *"rows first, then columns, and every cell is the same kind of thing"* has had a successful lesson whether or not any Python ran.
 
 **The copy-this-exactly scaffold.** One file. This runs:
 
@@ -1468,7 +1468,7 @@ Model answer:
 > *"The columns that can go into a numeric array are the ones I would do arithmetic on — add up, average, compare. The ones that can't are words, and the words are exactly the ones I need for grouping and for knowing which row is which."*
 
 **17.6(b) Could you put all five columns into one array?**
-Only by turning everything into text, which would make `plays` unusable for arithmetic — the `<U21` problem, deliberately, across the whole table. **So no, not usefully.** Which is exactly the gap `pandas` fills in Week 21: a table where one column can be words and another can be numbers.
+Only by turning everything into text, which would make `plays` unusable for arithmetic — the text-array problem (`<U32` here, because of the decimals), deliberately, across the whole table. **So no, not usefully.** Which is exactly the gap `pandas` fills in Week 21: a table where one column can be words and another can be numbers.
 
 ### Answers to every question posed in the lesson
 

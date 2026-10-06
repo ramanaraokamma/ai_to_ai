@@ -87,7 +87,7 @@ Most people say four, or "one to four, so that's four cards".
 
 Start at slot 1, and take cards until you hit the pencil. One, two, three. **Three cards.**
 
-And look at the arithmetic: **4 − 1 = 3.** The number of items you get is always the stop minus the start. **You never have to think about it again.**
+And look at the arithmetic: **4 − 1 = 3.** The number of items you get is the stop minus the start, as long as the slice sits inside the list (a stop past the end just gives you what exists, as you will see below). **You never have to think about it again.**
 
 ```python
 scores = [45, 0, 112, 67, 8]           # slots 0, 1, 2, 3, 4
@@ -535,8 +535,11 @@ Run it. It fails — because `median` does not exist yet:
 ```text
   Innings   : 20
   Mean      : 49.45
+  Lowest    : 0
+  Highest   : 112
+  Range     : 112
 Traceback (most recent call last):
-  File "/Users/you/ai-academy/level2/main.py", line 19, in <module>
+  File "/Users/you/ai-academy/level2/main.py", line 13, in <module>
     print("  Median    :", stats.median(SCORES))
 AttributeError: module 'stats' has no attribute 'median'. Did you mean: 'mean'?
 ```
@@ -1243,7 +1246,7 @@ And the relief: **`range(4)` stops before 4 as well. One rule, two places.**
 
 ### The three things written in the notebook
 
-> **slice** — `scores[start:stop]`. Start **in**, stop **out**. You get `stop - start` items.
+> **slice** — `scores[start:stop]`. Start **in**, stop **out**. Inside the list you get `stop - start` items.
 > `scores[:3]` from the beginning · `scores[3:]` to the end · `scores[-3:]` the last three
 >
 > **`sorted(scores)`** — a NEW sorted list. The original is untouched. **You must catch it.**
@@ -1312,11 +1315,11 @@ Then `median` typed into `stats.py` — and `main.py` started working **with nob
 
 **2. "Why did we write `mean` by hand when Python can add up a list in one word?"**
 
-*Hint:* it is true — there is a built-in that does it, and you will meet it in Week 15 on purpose. So ask the harder question: what happens in about eight weeks when you want a number that Python has **no** built-in word for? Then look at what happened today from the other side: **you now know exactly what `mean` does, line by line, including what it does with an empty list.** Would you know that about a built-in? And the last part, which is the real reason: students who meet the built-in first tend to treat every summary number as magic, **and then stall completely the first time the magic does not cover what they need.**
+*Hint:* it is true — there is a built-in that does it, and you will meet it in Week 14 on purpose. So ask the harder question: what happens in about eight weeks when you want a number that Python has **no** built-in word for? Then look at what happened today from the other side: **you now know exactly what `mean` does, line by line, including what it does with an empty list.** Would you know that about a built-in? And the last part, which is the real reason: students who meet the built-in first tend to treat every summary number as magic, **and then stall completely the first time the magic does not cover what they need.**
 
 **3. "First half 53.5, second half 45.4. Did the season get worse?"**
 
-*Hint:* the numbers say the second ten innings averaged about eight runs lower. **Before you answer, work out what one score of 112 does to an average of ten innings.** *(It moves it by more than 11 on its own.)* So: is eight runs a lot, next to that? Then the question that actually matters and has no easy answer: **what would convince you either way?** More innings? A different measure? The median of each half instead of the mean? **There is no answer at Week 12, and the honest thing to write down is "this is a hint, not a finding."** The tools to think about it properly arrive in Term 3 — and if you finish this conversation *wanting* them, you are in exactly the right place.
+*Hint:* the numbers say the second ten innings averaged about eight runs lower. **Before you answer, work out what one score of 112 does to an average of ten innings.** *(Compared with a score of 0 in its place, it holds the average up by more than 11.)* So: is eight runs a lot, next to that? Then the question that actually matters and has no easy answer: **what would convince you either way?** More innings? A different measure? The median of each half instead of the mean? **There is no answer at Week 12, and the honest thing to write down is "this is a hint, not a finding."** The tools to think about it properly arrive in Term 3 — and if you finish this conversation *wanting* them, you are in exactly the right place.
 
 ---
 

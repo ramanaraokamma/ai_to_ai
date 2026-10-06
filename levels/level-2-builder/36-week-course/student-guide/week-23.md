@@ -304,7 +304,7 @@ Name: age, dtype: int64
 
 > **⚠️ Watch out:** the `clean["age"] = ` on the **left** of every one of those three lines is not optional. `fillna`, `to_numeric` and `astype` all hand you back a **repaired copy**, exactly the way `sort_values` did last week. Without the assignment, nothing changes and **nothing warns you**. That is this week's silent bug, and it is the third week running for the same shape of mistake.
 
-**One more thing that surprises people.** After step 1 the column's dtype is `float64` — decimals, not whole numbers. Why? **Because a column with any `NaN` in it cannot be whole numbers.** Pandas has no whole-number value that means "missing", so it has to use decimals, where `NaN` is allowed. It is not a mistake to fix; it is a stage you pass through.
+**One more thing that surprises people.** After step 1 the column's dtype is `float64` — decimals, not whole numbers. Why? **Because a column with any `NaN` in it cannot be whole numbers.** An ordinary whole-number column (`int64`) has no value that means "missing", so pandas has to use decimals, where `NaN` is allowed. It is not a mistake to fix; it is a stage you pass through.
 
 ### 4. Fill or drop? Two honest answers, five marks apart
 
@@ -473,8 +473,8 @@ club_raw.csv written
 
 **Now open `club_raw.csv` in a plain text editor and look at it with your own eyes.** It is worth doing exactly once.
 
-- Row 4 ends `art,,83` — **two commas in a row.** That is what an empty cell looks like in a CSV: nothing between the commas.
-- Row 4's house is `blue ` with a space **after** it, and row 7's is ` Blue` with a space **before** it. **You will not be able to see those.** Neither can I. Remember they are there; they become next week's whole lesson.
+- Divya Nair's line ends `art,,83` — **two commas in a row.** That is what an empty cell looks like in a CSV: nothing between the commas.
+- Divya's house is `blue ` with a space **after** it, and Gita Menon's is ` Blue` with a space **before** it. **You will not be able to see those.** Neither can I. Remember they are there; they become next week's whole lesson.
 
 ### Step 1 — read it in and look at it
 
@@ -1096,7 +1096,7 @@ B - dropped: 1 pupils practised under 20 words, average mark 12.0
 
 Why? Because filling dropped Gopal (17, invented) and Manav (17, invented) into the under-20-words group, and both of those 17s are **ours, not theirs**.
 
-> **Missing data is rarely random. Look at *whose* data is missing before you decide what to do about it.** If you fill the gaps without looking at whose gaps they are, you can invent a pattern that was never there.
+> **Missing data is often not random. Look at *whose* data is missing before you decide what to do about it.** If you fill the gaps without looking at whose gaps they are, you can invent a pattern that was never there.
 
 ---
 
@@ -1147,7 +1147,7 @@ clean["age"] = pd.to_numeric(clean["age"])
 ```
 
 ```text
-ValueError: Unable to parse string "not given" at position 2
+ValueError: Unable to parse string "unknown" at position 2
 ```
 
 Without `errors="coerce"`, `to_numeric` stops dead at the first word exactly like `astype` did — and it even tells you which row (`position 2`).
@@ -1186,7 +1186,7 @@ print(clean["hours"].isna().sum())
 |---|---|---|
 | `FileNotFoundError: [Errno 2] No such file or directory: 'clubraw.csv'` | "No file by that name where I am standing." | `ls` in the terminal and read the real name. Case and underscores count |
 | `ValueError: invalid literal for int() with base 10: 'unknown'` | "You asked me to turn writing into a whole number." | `to_numeric(errors="coerce")`, fill, **then** `astype(int)` |
-| `ValueError: Unable to parse string "not given" at position 2` | Same complaint, from `to_numeric`. | You forgot `errors="coerce"` |
+| `ValueError: Unable to parse string "unknown" at position 2` | Same complaint, from `to_numeric`. | You forgot `errors="coerce"` |
 | `IntCastingNaNError: Cannot convert non-finite values (NA or inf) to integer` | "There's a hole here and a hole is not a whole number." | Fill (or drop) **first**, then convert. This is the boxed rule |
 | `KeyError: 'Age'` | "I have no column by that name." | A capital letter. The column is `age`. `print(df.columns.tolist())` and copy it exactly |
 | `AttributeError: 'DataFrame' object has no attribute 'isnull_sum'` | "There is no command by that name." | It is **two** commands: `df.isna().sum()`. (`isnull` is the same command with another name) |
@@ -1386,7 +1386,7 @@ one, and its label is literally this week's lesson.*
 - **`fillna`, `to_numeric`, `astype` and `sort_values` all hand you a copy.** No `=` on the left means nothing happened, and nothing warns you.
 - **Every repair is a decision, so it goes on the log with a REASON.** An entry with a WHAT and no WHY is worthless.
 - **Never fill a column with a guess and then make that column the subject of your question.**
-- **Look at *whose* data is missing before deciding what to do about it.** Missing data is rarely random.
+- **Look at *whose* data is missing before deciding what to do about it.** Missing data is often not random.
 
 ### Syntax reminder card
 

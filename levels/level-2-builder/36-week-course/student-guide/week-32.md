@@ -167,7 +167,7 @@ Three things about that sentence and all three matter:
 
 **Add up that last column.** Zero. Exactly zero.
 
-That is not luck. A best-fit line **always balances**, with as much sitting above it as below it. Which leads straight to something you must not do:
+That is not luck. A best-fit line **always balances**: the total distance of the dots above it equals the total distance of the dots below it (four of our dots are above, two below, and it still balances). Which leads straight to something you must not do:
 
 > **You cannot average the misses as they stand.** They cancel, so you would conclude your model was perfect no matter how bad it was.
 
@@ -517,7 +517,7 @@ always-guess-the-mean MAE: 11.8 cups
 
 **Minus fifty-five cups.** You cannot sell minus fifty-five cups of anything. Is the model broken?
 
-No. The intercept is *"what the line says at 0 °C"*, and our coldest day was 22 °C. **The intercept is a prediction from thirteen degrees off the edge of the evidence.** It is a perfectly good piece of the formula — you need it to get 35.2 for a 27 °C day, which is inside our range and sensible — and it is a **nonsense claim about the world**. Those are two different things, and this is why the intercept is machinery rather than a fact.
+No. The intercept is *"what the line says at 0 °C"*, and our coldest day was 22 °C. **The intercept is a prediction from twenty-two degrees off the edge of the evidence.** It is a perfectly good piece of the formula — you need it to get 35.2 for a 27 °C day, which is inside our range and sensible — and it is a **nonsense claim about the world**. Those are two different things, and this is why the intercept is machinery rather than a fact.
 
 **One more thing worth noticing.** Guessing the average every day would be off by **11.8 cups**. The line is off by **1.1**. *That* is why R² is 0.988: not because 1.1 cups is a small number in some absolute sense, but because the alternative was so much worse.
 
@@ -565,7 +565,7 @@ per 100 balls    : 109.4 runs
 
 **The slope, as a sentence:** *"Each extra ball faced goes with about **1.09 more runs**."*
 
-**And here is a lovely thing.** Multiply that slope by 100 and you get **109.4 runs per 100 balls** — which is a **strike rate**, a number every cricket commentator on earth uses. You did not invent a new statistic; you rediscovered one that already has a name, by fitting a line and reading its slope. Slopes turn up with names attached all over the place: kilometres per litre, runs per over, rupees per kilo. Every one of them is the slope of somebody's line.
+**And here is a lovely thing.** Multiply that slope by 100 and you get **109.4 runs per 100 balls** — which looks very like a **strike rate**, a number every cricket commentator on earth uses. It is not quite the same thing: the official strike rate is total runs divided by total balls (here 268 ÷ 270, about 99 runs per 100 balls), while the slope says how many *extra* runs each *extra* ball goes with. But they are cousins, and the slope has the same shape of unit: runs per ball. Slopes turn up with names like that all over the place: kilometres per litre, runs per over, rupees per kilo. Each is a "per one" rate, and a line's slope is one way to find it.
 
 **The MAE, as a sentence:** *"On average the line is off by about **3.1 runs**."* Against the lazy model's 15.25, that is about a fifth as wrong.
 

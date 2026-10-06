@@ -87,7 +87,7 @@ Last week's off-by-one was "the last index is one less than the count". This wee
 
 **Why the stop is excluded, and you will be asked.** Three real reasons, in increasing order of persuasiveness:
 
-1. **The length falls out for free.** `scores[1:4]` has `4 − 1 = 3` items. Always. No thinking required. If the stop were included you would have to remember a `+1` every single time.
+1. **The length falls out for free.** `scores[1:4]` has `4 − 1 = 3` items. Always, inside the list. No thinking required. If the stop were included you would have to remember a `+1` every single time.
 2. **Slices join up perfectly.** `scores[:3]` and `scores[3:]` between them give you the whole list, with nothing missing and nothing counted twice. The number 3 appears once in each and the two halves fit together like tiles. Try that with an inclusive stop and you need `[:3]` and `[4:]`, and one day you will write `[3:]` and silently duplicate an item.
 3. **It is the same rule as `range()`**, which they have used since Week 7. `range(4)` gives 0, 1, 2, 3 and stops before 4. `scores[0:4]` gives slots 0, 1, 2, 3 and stops before 4. **One rule, two places** — and it is worth saying out loud that this is a mercy, not a coincidence.
 
@@ -661,7 +661,7 @@ Let them guess. Most say four, or "one to four so that's four cards". Then:
 
 > "**The pencil is the stop. And the pencil is not a card.**
 >
-> I start at slot one and I take cards until I hit the pencil. One, two, three. **Three cards.** And look at the arithmetic — four minus one is three. The number of cards you get is always the stop minus the start. You never have to think about it.
+> I start at slot one and I take cards until I hit the pencil. One, two, three. **Three cards.** And look at the arithmetic — four minus one is three. The number of cards you get is the stop minus the start (as long as the slice sits inside the list). You never have to think about it.
 >
 > And here's why Python does it that way, because 'the stop isn't included' sounds like a nuisance until you see this."
 
@@ -675,7 +675,7 @@ Let them guess. Most say four, or "one to four so that's four cards". Then:
 
 Write into the notebook:
 
-> **slice** — `scores[start:stop]`. Start **in**, stop **out**. You get `stop - start` items.
+> **slice** — `scores[start:stop]`. Start **in**, stop **out**. Inside the list you get `stop - start` items.
 > `scores[:3]` from the beginning · `scores[3:]` to the end · `scores[-3:]` the last three
 
 **Say this — part 2, `sorted()` (5 minutes):**
@@ -1169,7 +1169,7 @@ Hand-check it: first half sums to 535, ÷ 10 = 53.5 ✔ · the whole season is 9
 
 **"Why isn't the stop number included in a slice? That's just confusing."**
 
-It is confusing for about a day and then it is a relief, for three reasons. The number of items you get is always `stop - start`, so you never have to think about it. Two slices that share a number fit together exactly — `scores[:3]` and `scores[3:]` give you the whole list back with nothing missing and nothing doubled. And it is the same rule as `range()`, which you have used since Week 7, so it is one rule instead of two. Every one of those becomes worth more, not less, as your programs get bigger.
+It is confusing for about a day and then it is a relief, for three reasons. Inside the list, the number of items you get is `stop - start`, so you never have to think about it. Two slices that share a number fit together exactly — `scores[:3]` and `scores[3:]` give you the whole list back with nothing missing and nothing doubled. And it is the same rule as `range()`, which you have used since Week 7, so it is one rule instead of two. Every one of those becomes worth more, not less, as your programs get bigger.
 
 **"Isn't `sorted()` wasteful? It builds a whole second list."**
 
@@ -1197,11 +1197,11 @@ Not this year, and the honest reason is that it needs machinery we are not doing
 
 **"Why did we write `mean` by hand when Python can add up a list in one word?"**
 
-Because in about eight weeks you are going to want a number Python has no built-in word for, and at that moment the only thing that helps is having built one before. There is a built-in — you will meet it in Week 15, on purpose, once you know exactly what it is doing. Students who meet it first tend to treat every summary as magic, and then stall completely the first time they need something the magic does not cover.
+Because in about eight weeks you are going to want a number Python has no built-in word for, and at that moment the only thing that helps is having built one before. There is a built-in — you will meet it in Week 14, on purpose, once you know exactly what it is doing. Students who meet it first tend to treat every summary as magic, and then stall completely the first time they need something the magic does not cover.
 
 **"What if two of my functions have the same name in the two files?"**
 
-The one in the file you are *running* wins, and the imported one is quietly unreachable — no error, no warning. It is the same rule as defining a function twice in one file. It is worth trying once, because the symptom is a function behaving like a completely different function, which is baffling if you have never seen the cause.
+With `import stats` there is no clash at all: `stats.mean` and your own `mean` are two different names, which is exactly what the `stats.` prefix is for. The trouble comes with `from stats import mean`: then `mean` is one name, and whichever of the `from` line or your own `def mean` comes *later* in the file quietly replaces the other — no error, no warning. It is the same rule as defining a function twice in one file. It is worth trying once, because the symptom is a function behaving like a completely different function, which is baffling if you have never seen the cause.
 
 **"Can `stats.py` import something too?"**
 
@@ -1220,7 +1220,7 @@ Yes, and that is exactly how real libraries are built — modules importing modu
 | `ordered = scores.sort()` and then a `NoneType` crash | It looks exactly like `sorted()` | Ask what `NoneType` always means. They have met it twice now — Week 10's missing `return`, Week 11's `append`. Third time, it should be a reflex: **something handed back nothing.** |
 | `median` is written first, before the import works | It is the interesting one | Insist on the order: four easy tools, then the import, *then* median. The import working is the objective of the week; median is the objective of the homework. A student stuck on the even case with no working import has nothing to show. |
 | The median code is written before the paper arithmetic | Typing feels like progress | Turn the laptop screen away for three minutes. The paper version is what lets them tell whether the code is right; without it, "it printed a number" is the only check they have, and that is not a check. |
-| The even case gets "solved" by picking one of the two middles | It is simpler, and it looks fine on one example | Ask which one and why. There is no answer — 45 and 67 are equally central. Then show that their rule gives a different answer if the list is entered in a different order, which is fatal. |
+| The even case gets "solved" by picking one of the two middles | It is simpler, and it looks fine on one example | Ask which one and why. There is no good answer — 45 and 67 are equally central. Then try `[4, 8]`: a rule that always takes the upper middle says 8, one that always takes the lower says 4, and the honest centre is 6.0 — their rule leans the same way every time. (Python's own `statistics` module does offer `median_low` and `median_high` for people who really want a value from the list, but the standard median averages the two.) |
 | `main.py` grows a copy of the average loop anyway | Habit, and the toolbox feels like extra work | Point at the line. "You've got a `mean` in the tin. Delete these four lines and call it." Then the deeper version from harder-variation 6: break `mean` on purpose and count how many report lines go wrong. Three. Fixed in one place. |
 | A file in the folder is called `statistics.py` or `random.py` and everything is deranged | Perfectly reasonable naming | Rename it and delete the `__pycache__` folder beside it. Then one sentence of explanation: Python found their file instead of the library. The banned list is in section 5. |
 
@@ -1293,9 +1293,9 @@ Three checks, five minutes, exact wording.
 
 **Check 3 — the median (spoken, then written)**
 
-> "Give me the median of 3, 9, 1, 7. Show me how you got it."
+> "Give me the median of 3, 9, 1, 8. Show me how you got it."
 
-*Good answer:* sort → 1, 3, 7, 9. Four numbers, so no single middle. Average the two middles: (3 + 7) ÷ 2 = **5.0**. Full marks needs the **sort**, the observation that there are **two** middles, and the average. **What to catch:** an answer of 3 or 7 (picked one), or an answer of 1 (took the first without sorting), or forgetting to sort at all and averaging 9 and 1.
+*Good answer:* sort → 1, 3, 8, 9. Four numbers, so no single middle. Average the two middles: (3 + 8) ÷ 2 = **5.5**. Full marks needs the **sort**, the observation that there are **two** middles, and the average. **What to catch:** an answer of 3 or 8 (picked one), or an answer of 1 (took the first without sorting), or forgetting to sort at all and averaging the two middle items as typed, 9 and 1, which gives 5.0 instead of 5.5.
 
 ### Mastery scale for this week
 
@@ -1548,7 +1548,7 @@ Complete file in the Prep Checklist; real output:
 Both work today. `[-3:]` still means "the last three" if a twenty-first innings gets appended; `[17:20]` quietly starts meaning something else. Same argument as `scores[-1]` from last week.
 
 **12.4(c) First half 53.50, second half 45.40. Did the season get worse?**
-The numbers say the second ten innings averaged about eight runs lower. Whether that is a real decline or just what ten innings look like is a genuinely open question and the honest answer at Week 12 is **"this is a hint, not a finding."** Ten innings is very few, one score of 112 in the first half moves the average by more than 11 on its own, and nothing here rules out coincidence. Mark generously any answer that notices the sample is small. A student who says "yes, it got worse" with no hedge should be asked what a single lucky century would have done to the first number.
+The numbers say the second ten innings averaged about eight runs lower. Whether that is a real decline or just what ten innings look like is a genuinely open question and the honest answer at Week 12 is **"this is a hint, not a finding."** Ten innings is very few, one score of 112 in the first half holds the average up by more than 11 compared with a score of 0 in its place, and nothing here rules out coincidence. Mark generously any answer that notices the sample is small. A student who says "yes, it got worse" with no hedge should be asked what a single lucky century would have done to the first number.
 
 **12.4(d) `Fifty-plus` is 10 out of 20. Which loop found that, and could you have used a slice?**
 The `for score in SCORES:` loop with a counter. A slice could not do it: a slice picks by *position*, and "at least fifty" is a question about *value*. Filtering by value is Week 15.

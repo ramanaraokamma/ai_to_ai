@@ -256,7 +256,7 @@ ________________________________________________________________
 | g | `X = playlist[["song", "bpm", "minutes"]]` | |
 | h | `distance = (squares).sum() ** 2` | |
 
-**A4(i).** Which **one** of those eight produces **no error at all**?
+**A4(i).** Which **one** of those eight would stay silent even later, when you tried to use it, because the model never has a reason to complain?
 
 ________________________________________________________________
 
@@ -971,7 +971,7 @@ versicolor
 | g | Take `"song"` out. A name appears once, so there is nothing to learn |
 | h | `distance = np.sqrt(squares.sum())` — step 4 is a square **root**, not a square |
 
-**A4(i).** **(b).** *(And (g) also runs without an error — but it fails later, the moment anything tries to do arithmetic on a column of song titles, so it does not stay silent for long. (b) stays silent forever, which is why it is the answer.)*
+**A4(i).** **(b).** *(Strictly, (b), (g) and (h) all run without an error at that line. (g) and the words-in-`X` version of (b) will be refused by scikit-learn later, because it cannot turn `chill` or a song title into a number. (h) runs but gives a wrong number, which an attentive student will catch. (b) is the answer the question wants because, once the answer column is stored as numbers such as 0 and 1, it never crashes and never looks wrong.)*
 
 **A4(j).** Because it produces a model that scores **100%**, which looks like the best possible outcome, so nobody goes looking. **A bug that lowers your score gets found. A bug that raises it gets shipped.**
 
@@ -1201,7 +1201,7 @@ X = pupils[["hours_slept", "revision_mins", "passed"]]
 
 `"passed"` is in `X` **and** it is `y`.
 
-**What would happen if you trained on it?** The model would score **100%**, or extremely close to it, on any test you gave it — because one of its input columns *is* the answer. It would look like the best model anybody had ever built. And the first time you handed it a real new pupil, you would have nothing to put in that column, because whether they passed is exactly what you were trying to find out.
+**What would happen if you trained on it?** The model would score **100%**, or extremely close to it, on any test you gave it — because one of its input columns *is* the answer. (As written, `passed` holds the words `yes` and `no`, so scikit-learn would actually refuse it; the leak only stays silent once the words are stored as numbers such as 1 and 0.) It would look like the best model anybody had ever built. And the first time you handed it a real new pupil, you would have nothing to put in that column, because whether they passed is exactly what you were trying to find out.
 
 **What Level 1 called it:** a **leak**.
 
@@ -1278,7 +1278,7 @@ rows 100 and 103:  gaps [0.4 0.7]  squares [0.16 0.49]  total 0.65  distance 0.8
 
 **(c)** **0.45 < 0.81 < 1.08.** And the smallest one is the cross-species pair.
 
-**(d)** A model that decides species by finding the single nearest flower will get row 101 **wrong** — it will look around, find a versicolor closer than any of its own kind, and call it versicolor. **The species overlap, so "nearest" and "same kind" are not the same thing.**
+**(d)** A model that decides species by finding the single nearest flower, and has only these four rows to go on, will get row 101 **wrong** — it will look around, find a versicolor closer than any of its own kind, and call it versicolor. **The species overlap, so "nearest" and "same kind" are not the same thing.**
 
 **(e)** Several good answers, all of which are worth credit:
 
@@ -1543,7 +1543,7 @@ The tell that it is *good* rather than merely correct: an annotation about why t
 | You can skip the squaring if all the gaps are positive | **FALSE** | You would get 3 + 4 = 7 instead of 5. Squaring is not only about the signs |
 | A distance of 271 is bigger than 3.23, so those rows are more different | **FALSE** | Different tables, different units. **A distance only means something next to other distances from the same table** |
 | `load_iris` and `load_iris()` are the same thing | **FALSE** | One is the machine, one is the machine having been run. `iris.data` on the first gives `AttributeError: 'function' object has no attribute 'data'` |
-| `10.440000000000003` means something went wrong | **FALSE** | Binary cannot store 1.44 exactly, the way decimal cannot store a third. Thirteen decimal places down, and it is why you round before you report |
+| `10.440000000000003` means something went wrong | **FALSE** | Binary cannot store numbers like 1.4 and 4.4 exactly, the way decimal cannot store a third, so the gap comes out a hair off. Fifteen decimal places down, and it is why you round before you report |
 
 </details>
 

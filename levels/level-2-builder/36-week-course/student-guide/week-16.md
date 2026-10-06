@@ -193,7 +193,7 @@ what is on the disk after closing: 'name,runs\nAsha,48\nRavi,12\n'
 
 **Read the first line of that output again.** Three `f.write` calls had already run, and the file on the disk was **completely empty**. The computer was holding all of it in its hand, and it only put it on the disk when the file was shut.
 
-If your program had crashed one line earlier, you would have a file with nothing in it and no idea why.
+If the program had been killed, or the power had gone, one line earlier, you would have a file with nothing in it and no idea why. (An ordinary error message usually still lets Python tidy up on its way out, which is exactly why this bug hides so well.)
 
 So the rule, in one line:
 
@@ -236,7 +236,7 @@ with open(path, "w", newline="", encoding="utf-8") as f:   # open for WRITING
 | `newline=""` | Stops Windows putting a blank line between every row. Harmless on a Mac, essential on Windows. **Always include it with `csv`.** |
 | `encoding="utf-8"` | Lets names with accents, or in other scripts, save correctly. Also just "always include it". |
 | `as f` | While you are inside the block, the open file's name is `f`. |
-| `csv.DictWriter(f, fieldnames=...)` | Make the stamp. `fieldnames` does two jobs: it fixes the **order** of the columns, and it decides **which keys** get written at all. |
+| `csv.DictWriter(f, fieldnames=...)` | Make the stamp. `fieldnames` does two jobs: it fixes the **order** of the columns, and it lists the **keys that are allowed** (a record with an extra key is refused with a `ValueError`). |
 | `.writeheader()` | Writes line 1 — the column names. **Forget it and there is no header at all.** |
 | `.writerows(rows)` | Writes one line per dictionary. (`.writerow(one_dict)` writes a single one.) |
 
@@ -300,7 +300,7 @@ print("round trip identical?", load_players("players.csv") == squad)
 round trip identical? True
 ```
 
-That `True` means: every record, every key, every value, and **every type** matches what went out. Nothing was lost and nothing was quietly changed. Anything less than `True` and the file is not your data yet.
+That `True` means: every record, every key and every value matches what went out. Text never equals a number, so a column left as `'48'` would have made it `False`. Nothing was lost and nothing was quietly changed. Anything less than `True` and the file is not your data yet.
 
 ![The round trip: out to the file and back again](../figures/fig-w16-2-round-trip-out-and-back.svg)
 *Figure 16.4 — Four stages. Stage 3 is where every beginner's project quietly breaks, and stage 4 is one line per column.*
@@ -1181,7 +1181,7 @@ as numbers: 1000
 sorted as text: ['1000', '104', '9', '90']
 ```
 
-Look at that last line. **`1000` comes first and `9` comes third.** That is not broken; that is what alphabetical order does to digits. `1` before `9`, every time, and length never enters into it.
+Look at that last line. **`1000` comes first and `9` comes third.** That is not broken; that is what alphabetical order does to digits. `1` before `9`, every time. Length does not make a text bigger; it only matters as a tie-break when one text is the start of the other, and then the shorter one comes first (`'1'` before `'10'`).
 
 **So the check is never "did it print something?"** It is: *what kind of thing was it comparing, and does the answer agree with something I already know?*
 
@@ -1317,7 +1317,7 @@ Go to **[the Week 16 workbook](../workbook/week-16.md)**. About **60 minutes** i
 
 **And one sentence at the bottom:** which of your five columns needed converting, which did not, and **why**. Full marks needs all three parts, and the *why* is that a text file can only store characters.
 
-> **💡 Try this:** once your round trip prints `True`, go and break it on purpose. Change `int` to `float` on one column, run it again, and read what the mismatch finder says. Then put it back. Ninety seconds, and you will never again stare blankly at a `False`.
+> **💡 Try this:** once your round trip prints `True`, go and break it on purpose. Delete the `int(...)` on `balls`, run it again, and read what the mismatch finder says. Then put it back. Ninety seconds, and you will never again stare blankly at a `False`.
 
 ---
 

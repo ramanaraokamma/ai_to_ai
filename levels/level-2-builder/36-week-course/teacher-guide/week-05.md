@@ -299,7 +299,7 @@ If the student wrote `age > 13` instead of `age >= 13`, then:
 - `14` → adult ✔ (looks fine)
 - `13` → **child** ✘ — and there is the bug
 
-Three of the five tests pass on a broken program. **Only the boundary finds it.** Teach the rule as a sentence: *"whenever you write a number in a condition, test that number and the one below it."*
+Four of the five tests pass on a broken program. **Only the boundary finds it.** Teach the rule as a sentence: *"whenever you write a number in a condition, test that number and the one below it."*
 
 This is the habit that Week 6 is built on and the reason Week 6's planted bug is findable at all. Install it now.
 
@@ -575,7 +575,7 @@ Show Figure 5.1.
 
 (They get set to 12, and get the child price. Every single person becomes 12.)
 
-> "That bug has cost real companies real money. Python's answer was to make that line impossible to write. So when it stops you, it's not being fussy — it's the only language in the room that noticed."
+> "That bug has cost real companies real money. Python's answer was to make that line impossible to write. So when it stops you, it's not being fussy — it's one of the languages that noticed."
 
 **Say this — part 3, the colon and the indent:**
 

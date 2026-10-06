@@ -683,7 +683,7 @@ ROWS THE TREE GOT WRONG
 
 *(No — 1.7 is bigger than 1.65. Only just.)*
 
-> "So it went right, into rule four: **'petal wider than 1.65 → virginica, whatever the length.'** And this flower was 1.7. It missed the cut-off by five hundredths of a centimetre — half a millimetre — and got called the wrong species for it.
+> "So it went right, into rule four: **'petal wider than 1.65 → virginica, whatever the length.'** And this flower was 1.7. It was over the cut-off by five hundredths of a centimetre — half a millimetre — and that sent it down the virginica side.
 >
 > The tree isn't broken. There genuinely are versicolors with unusually wide petals, and no single cut-off can be right about all of them. But notice what we just did: **we found the exact reason for the exact mistake, and said it in one sentence.** You could not do that last week."
 
@@ -888,7 +888,7 @@ It is the tidiness score — the "mixed-ness" of a pile. Zero means the pile is 
 
 **"If it got flower 25 wrong, can we fix the rule so it gets it right?"**
 
-You can move the cut-off from 1.65 to, say, 1.75 and that flower becomes correct. And then some *other* flower, a genuine virginica with a 1.7 cm petal, becomes wrong. Try it. Moving a cut-off does not remove a mistake, it relocates it — because real versicolors and real virginicas genuinely overlap around 1.7 cm, and no single number can separate things that overlap. That is not a flaw in the tree. It is a fact about irises.
+Moving only the width cut-off from 1.65 to 1.75 does *not* fix it: the flower then reaches the `petal length <= 4.95` question and, at 5.0 cm, is called virginica again (it is over that cut-off by 0.05 too), while a genuine virginica with a 1.7 cm petal becomes wrong. Move both (1.75 and 5.05) and flower 25 is right, but the 120 training flowers go from 2 wrong to 4 wrong. Try it by hand-coding the rules. Moving a cut-off does not remove a mistake, it relocates it — because real versicolors and real virginicas genuinely overlap around 1.7 cm, and no single number can separate things that overlap. That is not a flaw in the tree. It is a fact about irises.
 
 **"Two measurements got 0.000. Should we just throw them away?"**
 
@@ -917,7 +917,7 @@ Yes — the leaves hold an average instead of a name. That is next week's territ
 | The indentation of `export_text` is read as random decoration | It looks like formatting, not meaning | Trace it with a finger while reading aloud. Each `\|   ` is one question deeper. Same indentation as the line above means "the other answer to the same question". |
 | The lesson turns into a Gini lecture | It is on the screen in the tree picture and it looks important | Have the one sentence ready and use it verbatim: *"Mixed-ness score. Zero means all one kind. We don't need the formula."* Then move your finger back to the rules. |
 | Depth is heard as "must ask exactly this many questions" | "Depth 3" sounds like an instruction | Point at their own Hook drawing: is every path the same length? No. Then point at `class: 0` sitting one level down from the first question — one question, done. |
-| The tree gets blamed for flower 25 — "it's broken" | A wrong answer feels like a fault | Have them try to fix it by moving the cut-off to 1.75. Watch a different flower break. Real versicolors and virginicas overlap around 1.7 cm; the mistake is *in the flowers*, not in the code. |
+| The tree gets blamed for flower 25 — "it's broken" | A wrong answer feels like a fault | Have them try to fix it by moving the width cut-off to 1.75 (flower 25 is still wrong, because its length 5.0 is also just over the 4.95 cut-off) and then the length cut-off to 5.05 as well (flower 25 is right, but more training flowers break). Real versicolors and virginicas overlap around 1.7 cm; the mistake is *in the flowers*, not in the code. |
 | The 0.9667 gets celebrated as "nearly perfect, we're finished" | It is a good score and it feels like an ending | Do not spoil Week 33, and do not dampen it either. Say: *"Good score. Write it big somewhere you'll still see it in three weeks."* Then leave it. Week 33 needs that pride intact to knock down. |
 | `plot_tree` eats eight minutes on a window that will not appear | Charts fail differently on every machine | Do not debug the window. The script already calls `savefig`. Open `week31_tree.png` from the folder and move on. |
 | Two students (or two runs) get different rules | A missing `random_state` | Check both: `random_state=42` in the split, `random_state=0` in the tree. Without them, ties between equally tidy questions break at random. |
@@ -1170,7 +1170,7 @@ Flower A, one question. Setosas have very narrow petals — under 0.8 cm — and
 `petal width <= 1.65`. At 1.7 the flower fails that test by 0.05 cm — half a millimetre — and everything on the "no" side of it is virginica. Notice also that the *third* question was irrelevant: both of its branches say virginica, so flower C's fate was sealed by the second question.
 
 **31.3(c) Could you change one number to get flower C right? What would it cost?**
-Yes — raise the cut-off from 1.65 to about 1.75 and flower C becomes a versicolor. The cost is that any genuine virginica with a petal 1.66–1.75 cm wide now becomes wrong. You have not removed a mistake, you have moved it. Versicolors and virginicas genuinely overlap around 1.7 cm, and no single number separates overlapping things.
+Not with one number. Raising 1.65 to 1.75 alone leaves flower C virginica (it then hits `petal length <= 4.95` and 5.0 is over it). You must also raise 4.95 to about 5.05; then flower C becomes a versicolor. The cost is that genuine virginicas with a petal 1.66–1.75 cm wide and length up to 5.05 now become wrong (on the training flowers, 2 wrong becomes 4). You have not removed a mistake, you have moved it. Versicolors and virginicas genuinely overlap around 1.7 cm, and no single number separates overlapping things.
 
 ### Page 31.4 — Train it and write out the rules (homework)
 
@@ -1271,7 +1271,7 @@ flower 25 measurements: [6.7 3.  5.  1.7]
 >
 > It is really a **versicolor** with an unusually wide petal. The tree is not broken. Versicolors and virginicas genuinely overlap in petal width around 1.7 cm, so no single cut-off can be right about all of them.
 >
-> I tried moving the cut-off to 1.75 to fix it. Flower 25 came out right, and a different flower came out wrong. Moving the line moves the mistake; it does not delete it.
+> I tried moving the width cut-off to 1.75 and flower 25 was still wrong, because its length is also just over a cut-off. When I moved both cut-offs it came out right, but more of the flowers the tree learned from came out wrong. Moving the line moves the mistake; it does not delete it.
 
 **31.5(a) Notice something about the third question in flower 25's path.**
 Its path hits `petal length <= 4.85`, and **both branches of that question say virginica.** So the third question changed nothing. Flower 25's answer was already decided by the second question. That is the useless split from page 31.2, met again from the other direction.

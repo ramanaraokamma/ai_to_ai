@@ -227,7 +227,7 @@ Worked, for the four charts the class will build:
 |---|---|---|
 | bar of club counts | chess 14, music 12, art 12 | Every single score. Chess's 14 members range from 55 to 97; the bar is one number standing in front of a crowd. |
 | bar of house means | Blue 74.4, Red 74.3, Green 67.4 | **How many rows each average came from** (Blue 14, Green 12, Red 12) and the spread inside each house (Blue runs 42–93). A mean of 12 rows and a mean of 12,000 rows look identical on a bar chart. |
-| histogram of scores | wide, 42 to 97, no single peak | **Who** each bar is. The 90s bin does not say which club, house or age those five students are. |
+| histogram of scores | wide, 42 to 97, no single peak | **Who** each bar is. The top bin (90.1 to 97) does not say which club, house or age those five students are. |
 | scatter of age vs hours | older students report fewer hours | **Dots landing on top of each other.** There are 38 rows but only **23** distinct (age, hours) pairs, so 15 dots are hidden underneath other dots. The chart looks like 23 students. |
 
 That last one is a genuine, professional-grade observation and it is checkable in one line of Week-24 code: `df.groupby(["age", "hours"]).size()` has 23 rows, not 38. It is the answer to look out for.
@@ -667,7 +667,7 @@ the middle two values were 44 and 81
 
 Let them count. The answer is nobody.
 
-> "Nobody. Not one person. The average is sixty-two, and the nearest human being to it is seventeen marks away.
+> "Nobody. Not one person. The average is sixty-two, and the nearest human being to it is eighteen marks away.
 >
 > And that's the bit I want you to feel: the median was supposed to be the safe one. The median is the one that ignores weird values. It got fooled just as badly, because it landed **in the gap.**"
 
@@ -903,11 +903,11 @@ Every message below came from running a genuinely broken version of this week's 
 | `KeyError: 'Club'` (after a long traceback ending `raise KeyError(key) from err`) | "There is no column with that name." | Capital C. Column names are case-sensitive: it is `club`. | Match the name exactly. `print(df.columns)` lists them. |
 | **No error. A bar chart with 38 bars crammed into three columns.** | Nothing. It drew exactly what you asked for. | `ax.bar(df["club"], df["score"])` — raw rows instead of one number per category. | Summarise first: `value_counts()` for counts, `groupby(...).mean()` for averages. |
 | **No error. `edges: [0. 0.25 0.5 0.75 1. 1.25 1.5 1.75 2.]`** | "I turned your three words into 0, 1 and 2 and binned those." | `ax.hist(df["club"], bins=8)` — a histogram of a text column. | A histogram needs numbers. Use a bar chart of `value_counts()` for text. |
-| `ValueError: 'bins' must be positive, when an integer` | "Zero bins is not a number of bins." | `bins=0`, usually a typo for `bins=8` or a variable that was never set. | Pass a positive whole number, or a list of edges. |
+| `` ValueError: `bins` must be positive, when an integer `` | "Zero bins is not a number of bins." | `bins=0`, usually a typo for `bins=8` or a variable that was never set. | Pass a positive whole number, or a list of edges. |
 | **No error. A scatter that looks like a scribble.** | Nothing. You joined the dots. | `ax.plot(x, y, marker="o")` instead of `ax.scatter(x, y)` — last week's habit. | `ax.scatter(x, y)`. There is no order to join. |
 | **No error. Thirty-eight lines of names, and every count is `1`.** Starts `name age house club hours score` and ends `dtype: int64` | "You asked me to count *whole rows*, not clubs. Every row is different, so every count is one." | `df.value_counts()` instead of `df["club"].value_counts()`. The whole table *does* have `value_counts` — it just counts something you did not want. | Pick the column first, then count it: `df["club"].value_counts()`. Three lines out, not thirty-eight. |
 | Printed output ends `Name: club, dtype: object>` with rows of club names | Nothing broke. You printed the *method*, not the result of calling it. | `print(df["club"].value_counts)` — no brackets. | Add `()`. Brackets mean "do it". |
-| `ValueError: x and y must have same first dimension, but have shapes (38,) and (3,)` | "38 of one thing, 3 of the other." | Mixing a raw column with a summarised one — e.g. `df["score"]` against `house_mean.values`. | Decide which level you are at: 38 rows, or 3 groups. Never both in one call. |
+| `ValueError: x and y must have same first dimension, but have shapes (38,) and (3,)` (the `ax.plot` wording; `ax.bar` gives `shape mismatch: objects cannot be broadcast to a single shape`, `ax.scatter` gives `x and y must be the same size`) | "38 of one thing, 3 of the other." | Mixing a raw column with a summarised one — e.g. `df["score"]` against `house_mean.values`. | Decide which level you are at: 38 rows, or 3 groups. Never both in one call. |
 
 ### How to teach debugging without giving the answer
 
@@ -1021,7 +1021,7 @@ saved my_hist.png
 
 **Reduce:** accept "what it hides" answers about only one chart, and accept them spoken rather than written.
 
-**One thing you must not cut:** the sting. Twenty marks, a mean of 62, and nobody within seventeen marks of it. If the whole lesson collapses to one idea, make it **"look at the shape before you believe the average"** — and it needs no laptop, no pandas and no matplotlib. Squared paper and a pencil will do it.
+**One thing you must not cut:** the sting. Twenty marks, a mean of 62, and nobody within eighteen marks of it. If the whole lesson collapses to one idea, make it **"look at the shape before you believe the average"** — and it needs no laptop, no pandas and no matplotlib. Squared paper and a pencil will do it.
 
 ### If the student is flying
 

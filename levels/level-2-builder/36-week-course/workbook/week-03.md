@@ -276,7 +276,7 @@ Corrected output: ____________________________________________
 
 | # | The question | `/` | `//` | `%` |
 |---|---|---|---|---|
-| (a) | What is a batting average, from 347 runs in 9 matches? | ☐ | ☐ | ☐ |
+| (a) | What is the average number of runs per match, from 347 runs in 9 matches? | ☐ | ☐ | ☐ |
 | (b) | How many whole minibuses of 9 do I need for 47 students? | ☐ | ☐ | ☐ |
 | (c) | How many students are left over after those buses are full? | ☐ | ☐ | ☐ |
 | (d) | Split £27.00 between five friends. | ☐ | ☐ | ☐ |
@@ -830,7 +830,7 @@ Ramana scored 347
 
 The dial at four settings. `:.0f` gave `39` — it rounded **up**, because the digit after the point is a 5 followed by more.
 
-**Did `runs` change? No.** How you know: line 3 printed the raw figure *before* any of the dials were applied, and the raw figure is still there in the box for line 4, line 5 and line 6 to use. If `:.2f` had really changed the number, line 5 could not have got `38.6` out of `38.56`.
+**Did `runs` change? No.** It is still `347`; add `print(runs)` at the end and see. Careful, though: each line here works out `runs / matches` afresh from `347` and `9`, so these four lines do not by themselves prove the dial leaves a *stored* number alone. That proof is the two-line experiment below.
 
 The two-line proof from the chapter: print it as `1.06`, then print the variable times 16 and get `17.0` rather than `16.96`.
 
@@ -958,7 +958,7 @@ ValueError: Unknown format code 'f' for object of type 'str'
 
 **The silent one is (c), and only (c).** (a), (b) and (d) all shout, each with a different error type — `NameError`, `SyntaxError`, `ValueError` — which is itself worth noticing: three completely different messages from three small mistakes in what looks like the same kind of line.
 
-**Why `94.25` is enough to know something is wrong:** a pizza 15 cm in radius is 30 cm across — about the width of a school ruler. Ninety-four square centimetres is roughly the area of a large postage stamp. **The number is the wrong size for the thing it claims to describe**, and you can tell that without knowing anything about the bug. That is the whole skill: not "is there red text?" but "could that possibly be true?"
+**Why `94.25` is enough to know something is wrong:** a pizza 15 cm in radius is 30 cm across — about the width of a school ruler. Ninety-four square centimetres is roughly the area of a coaster. **The number is the wrong size for the thing it claims to describe**, and you can tell that without knowing anything about the bug. That is the whole skill: not "is there red text?" but "could that possibly be true?"
 
 **A5.** By hand:
 
@@ -1000,7 +1000,7 @@ print(f"{total_seconds} seconds = {hours} h {minutes} m {seconds} s")
 
 | # | The question | Answer | Why |
 |---|---|---|---|
-| (a) | Batting average from 347 runs in 9 matches | **`/`** | An average is *supposed* to be a fraction. `38.56` is right. |
+| (a) | Average runs per match from 347 runs in 9 matches | **`/`** | An average is *supposed* to be a fraction. `38.56` is right. |
 | (b) | Whole minibuses of 9 for 47 students | **`//`** | You want whole buses. `5`. |
 | (c) | Students left over after those buses are full | **`%`** | `2`. |
 | (d) | Split £27.00 between five friends | **`/`** | Money divides into pennies, so a fraction is real. `5.40`. |
@@ -1138,7 +1138,7 @@ Big  : 96.66 sq cm per pound
 Small: 94.25 sq cm for 8.50
 ```
 
-**`94.25`, and Python did not complain at all.** One star and two stars are completely different operations and neither one errors. The only thing that catches it is asking whether 94 square centimetres is a plausible size for a 30 cm pizza. (It is not — that's about a large postage stamp.)
+**`94.25`, and Python did not complain at all.** One star and two stars are completely different operations and neither one errors. The only thing that catches it is asking whether 94 square centimetres is a plausible size for a 30 cm pizza. (It is not — that's about the size of a coaster.)
 
 **B5.** Model answer:
 
@@ -1290,7 +1290,7 @@ Total        : 12.90
 
 **That is not a mistake in your code and it is not a bug in Python.** Computers store decimals in base 2, and some fractions do not fit exactly — in the same way that one third does not fit exactly in base 10, because `0.3333...` never ends. So the stored value is a hair under 12.9, and printing every digit shows you the hair.
 
-`:.2f` hides it completely and gives the right answer, `12.90`. **You will not have to deal with this problem this year**, because every money figure you print will have a `:.2f` on it. But it is real, and it is the reason the change-giver in B5 stores prices in whole pence.
+`:.2f` hides it here and gives the right answer, `12.90`. **You will rarely have to deal with this problem this year**, because every money figure you print will have a `:.2f` on it. But it is real, and it is the reason the change-giver in B5 stores prices in whole pence.
 
 **P5. Because a crash announces itself and a wrong number does not.**
 
@@ -1318,9 +1318,9 @@ Check: 3 × 4 + 3 = 15 ✓
 
 **T1. Model answer:**
 
-> It is a kindness when the hidden digits are not information. `1.0625` on a receipt is unreadable and it does not help anybody — nobody can pay a fraction of a penny, so `1.06` is the honest amount of money and the extra digits are noise. Every receipt in the world does this and nobody objects.
+> It is a kindness when the hidden digits are not information. `1.0625` on a receipt is unreadable and it does not help anybody — nobody can pay a fraction of a penny, so `1.06` is the honest amount of money and the extra digits are noise. Every receipt does this and nobody objects.
 >
-> It becomes a lie in two situations. The first is when the hidden digits **change the meaning**: showing a test score as `71%` when it is really `70.6%` can move somebody from one side of a grade boundary to the other, and the person whose score it is would care very much about that digit. The second, and sneakier, is going the other way — showing **more** digits than you actually measured. If I measure a room with a tape marked in centimetres and write `4.2735 m`, I have invented three digits I never knew, and anybody reading it will believe I measured to a tenth of a millimetre.
+> It becomes a lie in two situations. The first is when the hidden digits **change the meaning**: showing a test score as `71%` when it is really `70.6%` can move somebody from one side of a grade boundary to the other, and the person whose score it is would care very much about that digit. The second, and sneakier, is going the other way — showing **more** digits than you actually measured. If I measure a room with a tape marked in centimetres and write `4.2735 m`, I have invented two digits I never knew, and anybody reading it will believe I measured to a tenth of a millimetre.
 >
 > So the rule I would use is: **keep every digit in the box, decide what to show at the last possible moment, and never show more precision than you actually measured.** And if the choice could matter to somebody, say what you did.
 
@@ -1330,7 +1330,7 @@ Check: 3 × 4 + 3 = 15 ✓
 
 > Because "divide" is three different questions, and the answers are not interchangeable.
 >
-> **`16 / 5` answers "if I could cut things up perfectly, how much each?"** — `3.2`. That is the right question for money, or litres, or distance, or a batting average, where a fraction is a real thing. £27 between five friends genuinely is £5.40 each.
+> **`16 / 5` answers "if I could cut things up perfectly, how much each?"** — `3.2`. That is the right question for money, or litres, or distance, or an average like runs per match, where a fraction is a real thing. £27 between five friends genuinely is £5.40 each.
 >
 > **`16 // 5` answers "how many whole ones can I actually hand each person?"** — `3`. That is the right question for slices, seats, boxes, coins, eggs: things that do not survive being cut into fifths. Five minibuses of nine is five buses, not 5.2 buses.
 >
@@ -1412,7 +1412,7 @@ Left over    : 3 slice
 
 Check: 3 × 7 + 3 = 24 ✓ And the raw per-slice figure here is `0.90625`, which `:.2f` shows as `0.91` — rounded **up**, correctly.
 
-**(a) One line.** Setting `pizza_price = 9.50` is a single edit, and **six printed figures change.** Real output:
+**(a) One line.** Setting `pizza_price = 9.50` is a single edit, and **three printed figures change** (the price, the total and the per-slice cost). Real output:
 
 ```text
 ----- PIZZA RECEIPT -----

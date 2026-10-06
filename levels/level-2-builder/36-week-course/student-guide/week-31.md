@@ -313,7 +313,7 @@ THE RULES THE TREE LEARNED
 |   |   |   |--- class: 2
 ```
 
-**That is the model.** Not a description of the model. The model itself, written out in full, in twelve lines.
+**That is the model.** Not a description of the model. The model itself, written out in full, in thirteen lines.
 
 Now go and find the number `0.80` anywhere in the code you typed.
 
@@ -395,7 +395,7 @@ petal width <= 1.65?   1.7 <= 1.65?   NO   -> go right
                                             -> rule 4: VIRGINICA
 ```
 
-Rule four caught it: *"petal wider than 1.65 → virginica, whatever the length."* This flower's petal was **1.7 cm**. It missed the cut-off by **0.05 cm** — half a millimetre — and got called the wrong species for it.
+Rule four caught it: *"petal wider than 1.65 → virginica, whatever the length."* This flower's petal was **1.7 cm**. It was over the cut-off by **0.05 cm** — half a millimetre — and that sent it down the virginica side.
 
 The tree is not broken. There genuinely are versicolors with unusually wide petals, and no single cut-off can be right about all of them. But notice what you just did: **you found the exact reason for the exact mistake, and said it in one sentence.**
 
@@ -913,11 +913,11 @@ If that bothers you, good. Hold the feeling. **It is the biggest question of thi
 ![Two kinds of line, not one](../figures/fig-w31-6-tricked-question-versus-answer.svg)
 *Figure 31.6 — Two kinds of line, not one. Sort the lines into questions and answers before you try to read them.*
 
-**Wrong:** reading all twelve lines as questions, finding no answer anywhere, and deciding the printout is nonsense.
+**Wrong:** reading all thirteen lines as questions, finding no answer anywhere, and deciding the printout is nonsense.
 
 **Right:** there are **two kinds of line**. A line with a `<=` and a number in it is a **question** — a split. A line beginning `class:` is an **answer** — a leaf, with nothing after it. Sort them into those two piles first and the shape appears immediately.
 
-Test yourself: in our printout, how many of the twelve lines are answers? **Five.** That is `model.get_n_leaves()`, and you can check.
+Test yourself: in our printout, how many of the thirteen lines are answers? **Five.** That is `model.get_n_leaves()`, and you can check.
 
 ### Trick 2 — "`max_depth=3` means it asks three questions"
 
@@ -941,7 +941,7 @@ The habit that fixes this permanently: **print `target_names` in every single on
 
 **Right:** nothing is broken. Flower 25 is a versicolor with an unusually wide petal — 1.7 cm, where the cut-off is 1.65 cm. Real versicolors and real virginicas **genuinely overlap** in petal width around 1.7 cm.
 
-Do not take my word for it. **Try to fix it.** Move the cut-off to 1.75 by hand and flower 25 comes out right — and some *other* flower, a genuine virginica with a 1.7 cm petal, comes out wrong. You have not removed a mistake. **You have relocated it.**
+Do not take my word for it. **Try to fix it.** Move the width cut-off from 1.65 to 1.75 by hand and flower 25 is *still* wrong — it now drops into the `petal length <= 4.95` question, and at 5.0 cm it is over that cut-off too — while a genuine virginica with a 1.7 cm petal now comes out wrong. Move the length cut-off to 5.05 as well and flower 25 comes out right, but on the 120 flowers the tree learned from, the two moves together get 4 wrong instead of 2. You have not removed a mistake. **You have relocated it, and made the total worse.**
 
 No single number can separate two things that overlap. That is not a flaw in the code. It is a fact about irises.
 

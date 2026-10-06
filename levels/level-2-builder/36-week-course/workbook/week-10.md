@@ -36,7 +36,7 @@ ________________________________________________________________
 
 ## 🔎 Predict the Output
 
-**Write your prediction before you run anything.** **Two of these four hand back `None`**, and saying *why* is the whole question.
+**Write your prediction before you run anything.** **One of these four hands back `None`**, and saying *why* is the whole question.
 
 ### P1
 
@@ -126,7 +126,7 @@ print(total)
 
 ________________________________________________________________
 
-**How many of the ten answers did you get right?** ______ / 10
+**How many of the nine answers did you get right?** ______ / 9
 
 **Which one surprised you most, and what did you believe before?**
 
@@ -225,7 +225,7 @@ print(average_two(10, 20))
 
 It printed: ______________  It should have printed: ______________
 
-**What is wrong, and what is the one-character fix?**
+**What is wrong, and what is the two-character fix?**
 
 ________________________________________________________________
 
@@ -1044,7 +1044,7 @@ It printed **20.0**. It should have printed **15.0**.
 
 `a + b / 2` divides **only `b`** by 2, then adds `a`: 10 + 10 = 20. Python does the division before the addition, exactly like in maths.
 
-**The one-character fix:** brackets. `return (a + b) / 2` → 15.0 ✔
+**The two-character fix:** brackets. `return (a + b) / 2` → 15.0 ✔
 
 **Is there an error message?** No. **Which family?** **Finished and lied** — a complete, confident, wrong answer with nothing at all to notice.
 
@@ -1267,7 +1267,7 @@ def mystery_a(a, b):
 
 Check all three: 4 × 5 − 4 = 16 ✔ · 2 × 2 − 2 = 2 ✔ · 10 × 1 − 10 = 0 ✔
 
-*(The third row is the one that rules out `a * b - b`, which also fits the first two rows: 4 × 5 − 5 = 15, not 16. Always check every row.)*
+*(Checking every row matters: `a * b - b` fits row 2 (2 × 2 − 2 = 2) but gives 4 × 5 − 5 = 15, not 16, and 10 × 1 − 1 = 9, not 0. Always check every row.)*
 
 **Mystery B.**
 
@@ -1335,7 +1335,7 @@ What everybody agrees on: **a default that quietly covers up a missing value is 
 
 If any function could read and change any variable, then to understand what a function does you would have to read **every** function, because any of them might have changed anything. There would be no such thing as "the input" to a function — its answer would depend on whatever happened to have run before it, so you could not test it, and two runs of the same program could give different answers for reasons nobody could trace.
 
-The specific promise that makes `model.fit(...)` safe in Week 29 is: **it can only see what you handed it through its brackets, and it can only give you back what it returns.** Thousands of lines written by strangers cannot touch your variables. That is why you can call it without reading it.
+The specific promise that makes `model.fit(...)` safe in Week 29 is: **it can only see what you handed it through its brackets, and it cannot reach out and rewrite your other variables by name.** (It *can* change the object you hand it — `model.fit` fills in the model you give it — but only that object.) Thousands of lines written by strangers cannot rummage through the rest of your program. That is why you can call it without reading it.
 
 Scope is not Python being fussy. **It is the wall that makes other people's code usable.**
 

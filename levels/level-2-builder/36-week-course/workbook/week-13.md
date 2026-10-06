@@ -1136,7 +1136,7 @@ The general rule, and it is the one to carry: **the moment you fill a hole, writ
 
 **T2. Model answer:**
 
-> **Fill it with `0`.** Everything downstream keeps working — sums, averages, charts, none of them have to cope with a hole. The cost is that I have invented a fact. Sam's missing runs become "Sam scored 0", the Falcons' average drops from 45.67 to 34.25, and nothing anywhere warns anybody. I checked those two numbers and the gap is 11.42 runs, which is bigger than three of the four players' scores.
+> **Fill it with `0`.** Everything downstream keeps working — sums, averages, charts, none of them have to cope with a hole. The cost is that I have invented a fact. Sam's missing runs become "Sam scored 0", the Falcons' average drops from 45.67 to 34.25, and nothing anywhere warns anybody. I checked those two numbers and the gap is 11.42 runs, which is almost as big as Ravi's whole innings of 12.
 >
 > **Leave it as nothing.** Now I have told the truth: the value is unknown. The cost is that every piece of code that touches that field has to cope with a hole, and if I forget one it will crash — possibly months later, on somebody else's machine.
 >

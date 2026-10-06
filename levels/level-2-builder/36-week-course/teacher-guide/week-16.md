@@ -91,7 +91,7 @@ So when you read the file back, Python has to hand you something — and the onl
 ![Five fields go out, five come back, three of them changed](../figures/fig-w16-3-everything-returns-as-text.svg)
 *Figure 16.2 — The five values look identical on the page. Three of them are a different kind of thing on the way back.*
 
-Notice `out` in that figure. It went out as `True`, a genuine true-or-false. It comes back as the five characters `T`, `r`, `u`, `e`. And there is a trap waiting there that we will come to in §6.
+Notice `out` in that figure. It went out as `True`, a genuine true-or-false. It comes back as the four characters `T`, `r`, `u`, `e`. And there is a trap waiting there that we will come to in §6.
 
 ### 3. Writing the file, line by line
 
@@ -116,7 +116,7 @@ def save_csv(rows, path, fieldnames):
 | `newline=""` | Stops Windows putting a blank line between every row. Harmless on a Mac, essential on Windows. **Always include it with `csv`.** File it under "seatbelt" and move on. |
 | `encoding="utf-8"` | Lets names with accents, or in scripts other than English, save correctly. Also just "always include it". |
 | `with ... as f:` | Opens the file, runs the indented lines, and **closes the file afterwards whatever happens** — including if the code inside crashes. `f` is the name of the open file while you are inside the block. |
-| `csv.DictWriter(f, fieldnames=...)` | Make a writer that turns dictionaries into lines. `fieldnames` does two jobs: it fixes the **order** of the columns, and it decides **which keys** get written at all. |
+| `csv.DictWriter(f, fieldnames=...)` | Make a writer that turns dictionaries into lines. `fieldnames` does two jobs: it fixes the **order** of the columns, and it lists the **keys that are allowed** (a record with an extra key is refused with a `ValueError`). |
 | `.writeheader()` | Writes line 1 — the column names. **Forget it and there is no header at all**, which causes the silent bug in §5. |
 | `.writerows(rows)` | Writes one line per dictionary. (`.writerow(one_dict)` writes a single one.) |
 | `return len(rows)` | Hand back how many were written, so the caller can print it and check. |
@@ -135,7 +135,7 @@ f = open("players.csv", "w")
 f.close()          # and you had better not forget this
 ```
 
-The problem is not forgetfulness. The problem is **crashes**. If something goes wrong between the `open` and the `close`, the `close` never runs. The file is left open, and — this is the part that matters — a file that is open for writing may be **half written**. The operating system holds some of your text in a buffer and only flushes it to the disk when the file is closed. An unclosed file can be a truncated file.
+The problem is not forgetfulness. The problem is **crashes**. If something goes wrong between the `open` and the `close`, the `close` never runs. The file is left open, and — this is the part that matters — a file that is open for writing may be **half written**. Python holds some of your text in a buffer and only flushes it to the disk when the file is closed. An unclosed file can be a truncated file if the program is killed or the power goes (after an ordinary error, Python usually flushes on the way out, so do not promise the student an empty file after a plain crash).
 
 `with` fixes this by making the closing automatic and unskippable:
 
@@ -263,7 +263,7 @@ print("round trip identical?", load_players("players.csv") == squad)
 round trip identical? True
 ```
 
-That `True` means: every record, every key, every value, and every *type* matches what went out. Nothing was lost, nothing was quietly changed.
+That `True` means: every record, every key and every value matches what went out. (`==` does not compare types as such: `48.0 == 48` and `True == 1` are both `True`. Here it works as a type check only because text never equals a number.) Nothing was lost, nothing was quietly changed.
 
 ![The round trip: out to the file and back again](../figures/fig-w16-2-round-trip-out-and-back.svg)
 *Figure 16.4 — Four stages. Stage 3 is where every beginner's project quietly breaks, and stage 4 is one line per column.*
@@ -1017,7 +1017,7 @@ bool('')      -> False
 ### Variation — harder
 
 1. **A converters dictionary.** Instead of hard-coding three conversions, pass them in: `load_csv(path, converters={"runs": int, "balls": int})`, and inside, loop over `converters.items()` and apply each one. This is Week 13's `.items()` doing real work, and it makes the loader reusable for *any* table — which is the argument for it. *(The `out` column still needs its own comparison, and noticing that is worth a tick.)*
-2. **Make the round trip fail on purpose, four different ways**, and use the mismatch finder to identify each: convert `runs` with `float` instead of `int`; forget to convert `balls`; use `bool` on `out`; add a stray space to one name in `squad_data.py`. Each one produces a different first-mismatch line, and reading them is the skill.
+2. **Make the round trip fail on purpose, four different ways**, and use the mismatch finder to identify each: add 1 to `runs` by mistake inside the loader; forget to convert `balls`; use `bool` on `out`; add a stray space to one name in `squad_data.py`. Each one produces a different first-mismatch line, and reading them is the skill.
 3. **What happens if a name contains a comma?** Add a record for `{"name": "Ali, Jr", ...}`, save it, and open the file. The `csv` module writes `"Ali, Jr"` **with quote marks round it**, and reads it back correctly. Then have them try splitting the line on commas by hand and watch it break. This is the whole reason we use the module instead of doing it ourselves.
 4. **Save the answers, not just the data.** Take last week's six answers and write *them* to a second CSV — one row per answer, with columns `question`, `answer`, `row_count`. Suddenly the row count is a column in a table, which is exactly what a real results file looks like.
 5. **The leading-zero question.** Add a `shirt` column where one player wears `007`. Save, load, convert with `int`, save again. The `007` is now `7` and it will never come back. Then the question: *should `shirt` be a number at all?* (No. It is an identifier, not a quantity. You never do arithmetic on it. Leave it as text.) This is a genuinely professional distinction arriving early.
@@ -1085,7 +1085,7 @@ This is precisely why we use the module instead of doing it ourselves. Splitting
 
 **"Is `True` in the file a true-or-false, or is it a word?"**
 
-A word. Five characters: `T`, `r`, `u`, `e`. The file has no way to hold a true-or-false any more than it can hold a number. And this one is nastier than the numbers, because `bool("False")` is `True` — so the obvious conversion breaks silently and marks every player out. The conversion that works is a comparison: `row["out"] == "True"`.
+A word. Four characters: `T`, `r`, `u`, `e`. The file has no way to hold a true-or-false any more than it can hold a number. And this one is nastier than the numbers, because `bool("False")` is `True` — so the obvious conversion breaks silently and marks every player out. The conversion that works is a comparison: `row["out"] == "True"`.
 
 **"Should I save a shirt number as a number?"**
 
@@ -1197,7 +1197,7 @@ None of these need syntax from a later week.
 3. **The comma in a name** (Variation-harder 3). Then have them write their own line-splitter, watch it break, and explain why the module exists.
 4. **The `007` question** (Variation-harder 5). Numbers you would add versus numbers you would never add. This is a genuine data-modelling distinction and a bright 12-year-old can absolutely hold it.
 5. **Round-trip the answers, not the data** (Variation-harder 4). A results CSV with a `row_count` column, which is Week 15's discipline turning into a file format.
-6. **How big is the file, and how big is the data?** Have them find the file size on disk (`import os; print(os.path.getsize("players.csv"))` → `285`) and compare it to what a spreadsheet version of the same twelve rows takes. The ratio is startling and it is the reason CSV refuses to die.
+6. **How big is the file, and how big is the data?** Have them find the file size on disk (`import os; print(os.path.getsize("players.csv"))` → `316`: 303 characters plus the two-byte `\r\n` that `csv` ends each of the 13 lines with) and compare it to what a spreadsheet version of the same twelve rows takes. The ratio is startling and it is the reason CSV refuses to die.
 
 ### If the student won't engage today
 
@@ -1245,7 +1245,7 @@ Three checks, five minutes, exact wording.
 print(loaded == squad)
 ```
 
-"It prints `True` only if every record, every key, every value **and every type** matches what went out."
+"It prints `True` only if every record, every key and every value matches what went out — so a column left as text makes it `False`."
 
 **What to catch:** a student who says "if the numbers are the same" has missed the types, which is exactly the thing this week is about. Ask: *"would it print `True` if `runs` came back as `'48'` instead of `48`?"* (No.)
 

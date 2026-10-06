@@ -1082,7 +1082,7 @@ print(rain.sum(axis=0).sum(), rain.sum(axis=1).sum(), rain.sum())
 1710 1710 1710
 ```
 
-**Why all three must agree:** it is the same twenty-four numbers added in three different orders. If a table is a proper rectangle, the order you add it in cannot change the total. **If they ever disagree, a number in your grid is not what you think it is.**
+**Why all three must agree:** it is the same twenty-four numbers added in three different orders, and the order you add them in cannot change the total. **In numpy they will always agree**, even if you used the wrong axis or mistyped a number, so this line cannot catch those. It is a check on your understanding of the two directions, and on totals you add up by hand on paper.
 
 **B4.**
 
@@ -1159,9 +1159,9 @@ corner check: 89800 89800 89800
 
 And `3900.` is the third number in `per friend`. ✔
 
-**B5(b).** **The count line under `per day`.** `axis=1` there would print **three** numbers where five belong, and the label says "should be 5". Three is not five, and the mistake is visible without you having to know anything about step counts.
+**B5(b).** **The count line under `per friend`.** If you typed `axis=0` where you meant `axis=1` on that line, five numbers would come out where three belong, and the label says "should be 3". Five is not three, and the mistake is visible without you having to know anything about step counts.
 
-*(The count line under `per friend` would catch it the other way round: five numbers labelled "should be 3".)*
+*(The count line under `per day` would catch the opposite slip: `axis=1` there prints three numbers labelled "should be 5".)*
 
 ### Fix the Broken Program
 
@@ -1311,7 +1311,7 @@ from the ROW means:     (10 + 14) / 2      = 24 / 2  = 12.0
 from the COLUMN means:  (6 + 12 + 18) / 3  = 36 / 3  = 12.0
 ```
 
-**Both must agree**, and here they do. That is the corner check, done on the margins instead of the grid.
+**Both must agree**, and here they do. That is the corner check, done on the margins instead of the grid. (This one is a real check, because the margins were given to you rather than computed from one array.)
 
 *(One honest note: averaging the row means only works because every row is the same length. If the rows had different lengths — which cannot happen in an array — the average of the averages would not be the average.)*
 
@@ -1326,13 +1326,7 @@ column sums:   5 x 2 = 10  ,  10 x 2 = 20  ,  20 x 2 = 40    their total: 70
 
 **90 ≠ 70. So no grid can produce those margins.** The two routes have to reach the same grand total, because they are adding up the same six numbers in different orders. They don't, so somebody has made the numbers up.
 
-**Part 2(a).** **The corner check.** In a real file it lives here:
-
-```python
-print(grid.sum(axis=0).sum(), grid.sum(axis=1).sum(), grid.sum())
-```
-
-One line, three routes, and all three must print the same number.
+**Part 2(a).** **The corner check**, done on margins somebody else gave you: turn each set of means into sums, add each set up, and the two totals must match. Careful: in a real file, `grid.sum(axis=0).sum()` against `grid.sum(axis=1).sum()` always matches, because both come from one array. The check only has teeth when the two sets of margins come from different places.
 
 **Part 2(b).** **No.** Row means on their own are just three numbers, and any three numbers are a possible set of row means. There is nothing to compare them with.
 

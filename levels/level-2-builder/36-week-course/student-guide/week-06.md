@@ -830,7 +830,7 @@ A meeting is arranged.
 
 Every message below came from really running a broken version of this week's code.
 
-Something different about this week: **most of its bugs have no error message at all.** Six of the rows in the clinic table below are silent. That is not bad luck — it is what `elif` bugs are like, because every individual line in a broken chain is a correct line.
+Something different about this week: **most of its bugs have no error message at all.** Five of the twelve rows in the clinic table below are silent. That is not bad luck — it is what `elif` bugs are like, because every individual line in a broken chain is a correct line.
 
 ### Break 1 — an `elif` after the `else`
 

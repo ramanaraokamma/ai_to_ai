@@ -271,7 +271,7 @@ Name: age, dtype: float64
 
 - `pd.to_numeric(column, ...)` — go through the column and turn everything you can into a number.
 - `errors="coerce"` — **and anything you cannot convert, turn into `NaN` instead of crashing.** "Coerce" just means "force it". Without this word, `to_numeric` stops at `unknown` exactly like `astype` did.
-- The dtype is now `float64` — decimals, not whole numbers. Why? **Because a column with any `NaN` in it cannot be whole numbers.** Pandas has no whole-number value that means "missing", so it uses decimals, where `NaN` is allowed. This is not a mistake to fix; it is a stage to pass through.
+- The dtype is now `float64` — decimals, not whole numbers. Why? **Because a column with any `NaN` in it cannot be whole numbers.** An ordinary whole-number column (`int64`) has no value that means "missing", so pandas uses decimals, where `NaN` is allowed. This is not a mistake to fix; it is a stage to pass through.
 
 **Now run the hole count again, and this is the moment to make a fuss about:**
 
@@ -1067,7 +1067,7 @@ print(clean["age"].mean())
 
 Let them argue. Then:
 
-> "Two reasons for the median. One is the Week 3 argument: if somebody's finger slipped and typed 130, the **mean** would run off to 26 and the **median** wouldn't move at all. The other reason you can see on the screen: the mean is **13.111**. Nobody is 13.111 years old. The median is an age somebody actually is."
+> "Two reasons for the median. One is the Week 3 argument: if somebody's finger slipped and typed 130, the **mean** would run off to nearly 25 and the **median** wouldn't move at all. The other reason you can see on the screen: the mean is **13.111**. Nobody is 13.111 years old. The median is an age somebody actually is."
 
 ---
 
@@ -1242,6 +1242,8 @@ No "=" on the left means nothing happened, and nothing warns you.
 ## 🐞 The Debugging Clinic
 
 Every message below came from running a broken version of **this week's actual code**, on Python 3.10 and pandas 1.5.3. Tracebacks are trimmed to the first and last lines, which are the ones that matter, and those are exact.
+
+> **Version note.** These messages and `info()` printouts are from pandas 1.5.3. On pandas 3.0 and later, a column of text is shown as `str`, not `object`, so the `age` column would read `str` in `info()` and the lesson's "`object` means writing" wording will not match the screen. This was not tested here (the course machine has pandas 1.5.3). If the laptop has pandas 3, say "`str` here, `object` in the book — both mean writing", or install 1.5/2.x.
 
 | What the student sees (real message) | What it means | Most likely cause | The fix |
 |---|---|---|---|
@@ -1418,7 +1420,7 @@ Professional statisticians have argued about this for a century, and they have b
 
 **"Why did the column turn into decimals when I only had whole numbers?"**
 
-Because a hole cannot live in a whole-number column. Pandas has no whole-number value that means "missing", so as soon as one `NaN` appears, the column must become `float64`, where `NaN` is allowed. It is not a mistake; it is a stage you pass through on the way to `astype(int)`. Fill the holes and the decimals go away.
+Because a hole cannot live in a whole-number column. An ordinary whole-number column (`int64`) has no value that means "missing", so as soon as one `NaN` appears, the column becomes `float64`, where `NaN` is allowed. It is not a mistake; it is a stage you pass through on the way to `astype(int)`. Fill the holes and the decimals go away.
 
 **"Can I fix the raw file by hand instead? It's only twelve rows."**
 
@@ -1994,7 +1996,7 @@ dropped: 4 readers, 310.0 pages
 
 **Hand-check.** Filled: 320 + 280 + 300 + 340 + 150 + 120 + 200 = **1710**, and 1710 ÷ 7 = **244.29**. Dropped: 320 + 280 + 300 + 340 = **1240**, and 1240 ÷ 4 = **310.0**.
 
-**Why it moved so much:** the three readers whose ages are unknown read **150, 120 and 200 pages** — the three lowest counts in the whole table. Filling their age with 12 dropped all three of them into the 12-year-old group and pulled its average down by 66 pages.
+**Why it moved so much:** the three readers whose ages are unknown read **150, 120 and 200 pages** — three of the four lowest counts in the whole table (only Hana Ito's 90 is lower). Filling their age with 12 dropped all three of them into the 12-year-old group and pulled its average down by 66 pages.
 
 **And the rule it proves, which is the point of the puzzle:** *never fill a column with a guess and then make that column the subject of your question.* We guessed at `age` and then grouped by `age`.
 
@@ -2013,14 +2015,14 @@ No. There is something in those cells — the words `not given`. `isna()` asks "
 9  Ira Volkov     scifi    200       3
 ```
 
-Cara Diaz, Fay Turner and Ira Volkov. And they are **not a random three**: they read the fewest pages in the table (150, 120, 200 against a top of 410), they have the three lowest ratings, and Cara is also the one missing a minutes figure. **The missing data is not spread evenly — it is concentrated among the lightest readers.**
+Cara Diaz, Fay Turner and Ira Volkov. And they are **not a random three**: they are three of the four lightest readers in the table (150, 120, 200 pages against a top of 410; only Hana Ito's 90 is lower), their ratings are 3, 2 and 3 (the lowest in the table, though Hana Ito also has a 3), and Cara is also the one missing a minutes figure. **In this table the missing ages sit among the lightest readers. Three rows cannot prove why, but they are the first thing to look at.**
 
 Why that matters, and a full-mark answer says at least one of these:
 
-- These three may well be the **newest members**, who joined late and had no form filled in — which is a real pattern, not a coincidence.
-- Filling their age with the median 12 **moves all three of them into one group at once**, and it happens to be the group with the fewest strong readers. The 12-year-olds' average pages drops 66.
+- These three *might* be the **newest members**, who joined late and had no form filled in. That is a guess to go and check, not something the table shows.
+- Filling their age with the median 12 **moves all three of them into one group at once**, and all three are light readers, so they drag that group's average down. The 12-year-olds' average pages drops 66.
 - Any question **about age** is now partly a question about **who forgot to fill in a form**, which is not what anybody wanted to measure.
-- The general principle: **missing data is rarely random.** Ask who is missing before you decide what to do about it. If you fill in the gaps without looking at whose gaps they are, you can invent a pattern that was never there.
+- The general principle: **missing data is often not random.** Ask who is missing before you decide what to do about it. If you fill in the gaps without looking at whose gaps they are, you can invent a pattern that was never there.
 
 **3. "Should the cleaning log travel with the results, or is it just working-out?"**
 

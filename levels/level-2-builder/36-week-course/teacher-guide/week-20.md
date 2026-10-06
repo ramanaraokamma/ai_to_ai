@@ -1183,7 +1183,7 @@ anything above 100? []
 
 > "Empty brackets. Nothing above 100. **An empty answer is a passed check**, and you should get used to being pleased to see it."
 
-**Bug Log this**, under *errors with no error message*. In the "what the student sees" column: *"every scaled score between 0.01 and 0.08."*
+**Bug Log this**, under *errors with no error message*. In the "what the student sees" column: *"every scaled score between 0.00 and 0.08."*
 
 ![The ten by five grid with both margins filled and the two totals agreeing at 72.1](../figures/fig-w20-6-gradebook-report-finished.svg)
 *Figure 20.6 — What finished looks like. Both margins filled, and the corner agrees whichever way you get to it.*
@@ -1237,7 +1237,7 @@ Every message below came from running a broken version of this week's actual cod
 | `RuntimeWarning: invalid value encountered in divide` followed by `[nan nan nan]` | "You divided by zero and I made a not-a-number." | Normalizing a row where every value is the same, so `max - min` is 0. | Nothing is broken in the formula. **A row with no spread cannot be spread out.** Check for it, or leave it alone. |
 | **No error, `scores.min` printed something odd** — `<built-in method min of numpy.ndarray object at 0x104d758f0>` | "You asked me for the *method* rather than calling it." | Forgetting the brackets: `scores.min` instead of `scores.min()`. | `scores.min()`. Contrast with `.shape`, which is a fact and takes **no** brackets. The rule: verbs take brackets, facts don't. |
 | **No error, `np.round(scaled)` turned everything into 0 and 1** | Nothing is wrong. Rounding a 0-to-1 grid to whole numbers gives 0s and 1s. | The `2` was left out. | `np.round(scaled, 2)`. |
-| **No error, every scaled score is between 0.01 and 0.08** | Nothing is wrong as far as numpy is concerned. Every value is legally between 0 and 1. | **One value is far too big**, so the gap between smallest and largest is enormous. | Range-check first: `scores[scores > 100]`. This is the week's headline bug and it has no message. |
+| **No error, every scaled score is between 0.00 and 0.08** | Nothing is wrong as far as numpy is concerned. Every value is legally between 0 and 1. | **One value is far too big**, so the gap between smallest and largest is enormous. | Range-check first: `scores[scores > 100]`. This is the week's headline bug and it has no message. |
 | **No error, the two pass counts disagree** | Nothing is wrong as far as numpy is concerned. | One of the two `.sum()` calls has the wrong axis. | Compare `passed.sum(axis=1).sum()` and `passed.sum(axis=0).sum()`. They must be equal, and if not, count one row by hand. |
 
 ### How to teach debugging without giving the answer
@@ -1428,15 +1428,15 @@ Three checks, five minutes, exact wording.
 
 **Check 2 — the shape change (spoken, 60 seconds)**
 
-> "Now I write `scores[scores > 70]` and get back **31 numbers.** There were fifty cells. **Where did the other nineteen go, and why isn't the answer still a grid?**"
+> "Now I write `scores[scores > 70]` and get back **27 numbers.** There were fifty cells. **Where did the other twenty-three go, and why isn't the answer still a grid?**"
 
-*Good answer:* "The nineteen were False, so they're just not in the answer — they didn't become zeros. And it can't be a grid because different students have different numbers of high scores, so it isn't a rectangle."
+*Good answer:* "The twenty-three were False, so they're just not in the answer — they didn't become zeros. And it can't be a grid because different students have different numbers of high scores, so it isn't a rectangle."
 
 **Full marks needs both halves.** "They were removed" is a level-3 answer; push for *"they aren't zeros"* and *"it isn't a rectangle"*.
 
 **Check 3 — the silent bug (spoken, 90 seconds)**
 
-> "Somebody normalized this gradebook and every single number came out between 0.01 and 0.08 — except one, which was 1.00. **Nothing crashed and the minimum was exactly 0 and the maximum was exactly 1. What happened, and what one line would have caught it?**"
+> "Somebody normalized this gradebook and every single number came out between 0.00 and 0.08 — except one, which was 1.00. **Nothing crashed and the minimum was exactly 0 and the maximum was exactly 1. What happened, and what one line would have caught it?**"
 
 *Good answer:* "One score is far too big, so the gap between smallest and largest is huge and everything real gets squashed into the bottom of the scale. `scores[scores > 100]` would have found it, because a test score can't be over 100."
 
@@ -1623,7 +1623,7 @@ No. Subtracting the same number from everything and dividing everything by the s
 Complete working code, actually run, with zero `for` loops:
 
 ```python
-"""hw20.py - the Vectorized Gradebook. Zero for loops anywhere in this file."""
+"""hw20.py - the Vectorized Gradebook. No loops anywhere in this file."""
 
 import numpy as np
 
@@ -1863,7 +1863,7 @@ Several, and any of them earns the mark: **the order** — Bela is still ahead o
 
 Model answer:
 
-> *"It made the gap between the smallest and the largest score go from 69 to 920, so every real score got divided by a number thirteen times too big and everybody landed between 0.01 and 0.08 — even though nobody except Farah had their score changed at all."*
+> *"It made the gap between the smallest and the largest score go from 69 to 920, so every real score got divided by a number thirteen times too big and everybody landed between 0.00 and 0.08 — even though nobody except Farah had their score changed at all."*
 
 **Mark for the second half.** A sentence about Farah's average has spotted the loud damage. A sentence about Aarav has spotted the quiet damage, which is the objective.
 

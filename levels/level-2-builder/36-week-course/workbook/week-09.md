@@ -38,7 +38,7 @@ ________________________________________________________________
 
 ## 🔎 Predict the Output
 
-**Write your prediction before you run anything.** **Two of these four print nothing at all**, and saying *why* is the whole question.
+**Write your prediction before you run anything.** **One of these four prints nothing at all, and one crashes before it can print anything**, and saying *why* is the whole question.
 
 ### P1
 
@@ -163,7 +163,7 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**A2. Trace it.** For each program, say what appears on the screen. **Two of them show nothing.**
+**A2. Trace it.** For each program, say what appears on the screen. **Three of them show nothing.**
 
 **(i)**
 ```python
@@ -528,6 +528,7 @@ ________________________________________________________________
   NAME  : Ramana
   CLASS : 7
 Age in years? 12
+144
   That is None months,
 Traceback (most recent call last):
   File "card.py", line 17, in <module>
@@ -535,7 +536,7 @@ Traceback (most recent call last):
 TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
 ```
 
-(a) **Look at the fourth line of output.** What does it say, and why is that already wrong even before the crash?
+(a) **Look at the line that begins `That is`.** What does it say, and why is that already wrong even before the crash?
 
 ________________________________________________________________
 
@@ -1333,7 +1334,7 @@ print_edge()                                  # bug 3 FIXED
 
 (g) Because `print_edge` on its own is a **completely legal thing to write.** It is a reference to a real object that really exists. Python has no reason to think you meant to call it — you might be about to hand it to something else. **There is nothing for Python to complain about.**
 
-(h) **Bug 2 was hardest**, and the reason is the fourth line of output. It printed `That is None months,` — a wrong answer, in a full sentence, with no error — and *then* crashed on the following line. So the traceback points at line 17 while the mistake is on line 8, and the first wrong thing on screen is not the traceback at all.
+(h) **Bug 2 was hardest**, and the reason is the `That is` line. It printed `That is None months,` — a wrong answer, in a full sentence, with no error — and *then* crashed on the following line. So the traceback points at line 17 while the mistake is on line 8, and the first wrong thing on screen is not the traceback at all.
 
 Bug 3 is a close second, for the opposite reason: **nothing at all appeared.** A missing row of stars is very easy to skim past.
 

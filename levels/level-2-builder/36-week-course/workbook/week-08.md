@@ -1074,7 +1074,7 @@ The box after the `no` exit is whatever comes **after** the loop, at the margin 
 
 (e) It means **a human pressed Ctrl+C and stopped the program.** It is not a bug in the code — it is you taking control back. The bug is whatever made the loop refuse to end, and the traceback's line number tells you where the program was standing when you stopped it.
 
-(f) Because each good guess **halves** what is left: 100 → 50 → 25 → 13 → 7 → 4 → 2 → 1. That is seven halvings, so seven guesses always suffice for a player who halves. Fewer would make the game impossible; more would make it trivial.
+(f) Because each good guess **halves** what is left: 100 → 50 → 25 → 13 → 7 → 4 → 2 → 1. That is seven halvings, so seven guesses always suffice for a player who halves. With fewer, even a perfect player would sometimes lose; more would make it easy to win without being clever.
 
 ---
 
@@ -1443,7 +1443,7 @@ Two other things to check. **Is there a line in the body of the good version tha
 | `random.randint(1, 6)` can return 6 | **True.** Both ends are included |
 | `range(1, 6)` can produce 6 | **False.** The stop is excluded |
 | `input()` sometimes hands back a number | **False.** Always text, every time, without exception |
-| `int()` is safe to call on anything | **False.** `ValueError` on anything that is not a number. Check first |
+| `int()` is safe to call on anything | **False.** `ValueError` on any text that is not a whole number, such as `banana` or `4.2`. Check first |
 | `"-42".isdigit()` is `True` | **False.** The minus sign is not a digit |
 | `"  42  ".isdigit()` is `True` | **False.** A space is not a digit. Use `.strip()` first |
 | `typed.isdigit` and `typed.isdigit()` do the same thing | **False.** Without brackets you never ask the question, and the answer counts as a yes |

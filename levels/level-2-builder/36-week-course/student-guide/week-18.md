@@ -91,7 +91,7 @@ print(doubled)
 
 That is the real argument, and it is not mainly about speed: **the one-liner is a smaller target.**
 
-**And how much faster is it, honestly?** For a million numbers, about twenty times. For your six numbers, **no difference you could ever measure** — both are instant. So speed is not why you are doing this today. You are doing it because one line has one place to go wrong and four lines have five, and because in Week 29 you will hand an array to a machine-learning model that does not accept lists.
+**And how much faster is it, honestly?** For a million numbers, about twenty times. For your six numbers, **no difference you could ever measure** — both are instant. So speed is not why you are doing this today. You are doing it because one line has one place to go wrong and four lines have five, and because in Week 29 you will hand an array to a machine-learning model, and whether that array has the right shape decides whether the model works.
 
 Everything works, not just `*`:
 
@@ -287,7 +287,7 @@ for row in range(2):
     grid.append(this_row)
 ```
 
-Five lines and two indent levels, replaced by eleven characters.
+Six lines and two indent levels, replaced by one short line.
 
 ### 6. What "identical" means, and the trap in checking it
 
@@ -656,7 +656,7 @@ Real output:
 ============================================================
 ```
 
-**Eight `True`s. Fifteen lines of loop replaced by eight lines of arithmetic.**
+**Eight `True`s. Twenty-seven lines of loop replaced by eight lines of arithmetic.**
 
 The eight lines, on their own, which is what should end up on your wall:
 

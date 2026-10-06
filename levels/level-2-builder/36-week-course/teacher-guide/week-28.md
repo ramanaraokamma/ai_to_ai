@@ -45,7 +45,7 @@ Observable evidence: a workbook page with `X.shape` and `y.shape` written in ink
 
 For twenty-seven weeks the student has been *describing* data: putting it in tables, cleaning it, drawing it. This term they start *predicting* with it. A prediction machine — a **model** — is a thing you show a pile of examples with the answers filled in, and which then produces an answer for an example it has never seen.
 
-Every such machine, without exception, wants the data handed to it in exactly two pieces. Not one, not three. Two. This week is about those two pieces and nothing else. **We do not train a model this week.** That is next week. This week we lay the table.
+Every such machine (every *supervised* model, which is every model in this course) wants the data handed to it in exactly two pieces. Not one, not three. Two. This week is about those two pieces and nothing else. **We do not train a model this week.** That is next week. This week we lay the table.
 
 ### 2. The two pieces, and why they have such odd names
 
@@ -879,7 +879,7 @@ distance rounded to 2 dp: 3.23
 all four steps in one line: 3.2310988842807027
 ```
 
-> **🧑‍🏫 If a student asks:** *"Why does it say `10.440000000000003`? We got 10.44."* — **You are both right, and the computer is the one being slightly odd.** Computers store decimals in binary, the way we store thirds in decimal. One third is 0.3333… forever; you have to stop somewhere, and where you stop is a tiny error. `1.44` is one of the numbers that does not fit exactly in binary, so what got stored was a hair over. Add it to 9 and the hair is still there, thirteen decimal places down. It makes no difference to anything you will ever do — and it is why we round before we report. This is not a bug in Python. Every programming language on earth does this, and every professional has met it.
+> **🧑‍🏫 If a student asks:** *"Why does it say `10.440000000000003`? We got 10.44."* — **You are both right, and the computer is the one being slightly odd.** Computers store decimals in binary, the way we store thirds in decimal. One third is 0.3333… forever; you have to stop somewhere, and where you stop is a tiny error. `1.4` and `4.4` are numbers that do not fit exactly in binary, so the first gap really comes out as `-3.0000000000000004` (print `gaps[0]` with `repr` to see it) — a hair off. Squaring carries the hair into the total, fifteen decimal places down. It makes no difference to anything you will ever do — and it is why we round before we report. This is not a bug in Python. Every programming language on earth does this, and every professional has met it.
 
 **Now the agreement.** Write all three on the SHAPES sheet, side by side:
 
@@ -1008,7 +1008,7 @@ Each `print` carries the answer it should produce. They fix the first line that 
 Everything here uses only syntax they already have. Nothing new.
 
 1. **The third flower** (Variation — harder, item 1). B and C are the closest pair and they are different species. Let that sit unresolved; it is Week 30.
-2. **Four columns instead of two** (item 2), with the prediction made first. 3.61.
+2. **Four columns instead of two** (item 2), with the prediction made first. 3.63.
 3. **Distance from one row to every row, with no loop.** They have broadcasting from Week 18 and `axis=1` from Week 19. This is the real payoff:
 
    ```python
@@ -1085,7 +1085,7 @@ The Week 1 sheet is a genuinely good moment even on a bad day — it costs nothi
 
 > (0,0) and (3,4) → 5 · (1,1) and (4,5) → 5 · (0,0) and (5,0) → 5 · (2,3) and (2,8) → 5 · (0,0) and (1,1) → 1.41 · (0,0) and (2,2) → 2.83 · (1,2) and (4,6) → 5 · (0,5) and (5,0) → 7.07 · (3,3) and (6,7) → 5 · (0,0) and (6,8) → 10
 
-Four of those are 5, which is a nice trap and provokes the right question. That game delivers objectives 4 and 5 completely and takes twelve minutes. The code survives to next lesson perfectly well; Week 29 opens with a recap anyway.
+Six of those are 5, which is a nice trap and provokes the right question. That game delivers objectives 4 and 5 completely and takes twelve minutes. The code survives to next lesson perfectly well; Week 29 opens with a recap anyway.
 
 ---
 

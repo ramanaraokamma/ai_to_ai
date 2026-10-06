@@ -414,7 +414,7 @@ it. This week the map earns its keep by pointing at one specific box a long way 
 
 **Two minutes:**
 
-1. **Start with today's bug.** *"The grade chain gave a 42 an A. Which box on this map did we break, and
+1. **Start with today's bug.** *"The grade chain gave a 95 a C. Which box on this map did we break, and
    which box did we fix it in?"* Same box both times — the gold one. The lesson lands better when they
    notice that the bug and the fix live in the same tile.
 2. **Then the forward pointer, and only this one:** *"PREDICT & CHECK, weeks 28 to 31, has something in it
@@ -585,7 +585,7 @@ Now sit back.
 | "Did it crash?" | No. | If they say "it must be broken" — agree, and then insist on precision: "broken how? Give me a sentence that a person who can't see the screen would understand." |
 | "Is it printing C for everything?" | No — 50 got D, 20 got F. | This is the key observation. If they miss it, run 20 again and put the two outputs side by side. It rules out "the whole thing is broken". |
 | "Describe exactly which marks are wrong." | Everything 60 and above gets a C. 62 happens to be right by accident. | If they cannot narrow it, write the five results in a column on paper. The pattern is visible the moment they are stacked up. |
-| "Which two of those five results agree with a *correct* program?" | 50 → D, 20 → F, and 62 → C. Three of the five. | This one is worth pushing on. If they had only tested 62 and 50, they would have shipped it. That is last week's boundary lesson, arriving from a new direction. |
+| "Which of those five results agree with a *correct* program?" | 50 → D, 20 → F, and 62 → C. Three of the five. | This one is worth pushing on. If they had only tested 62 and 50, they would have shipped it. That is last week's boundary lesson, arriving from a new direction. |
 
 ---
 
@@ -1139,7 +1139,7 @@ Every message below came from running a real broken version of this week's code.
 | `SyntaxError: expected ':'` at the end of a long condition | The colon is missing. | A long `and`/`or` condition, and the colon fell off the end while editing. | Add the `:`. Python points at exactly the character where it wanted it. |
 | `IndentationError: unindent does not match any outer indentation level` pointing at `elif` | "This `elif` doesn't line up with anything." | The `elif` is indented differently from its `if`. | **`if`, every `elif`, and the `else` must all sit at exactly the same distance from the left edge.** Look at the left edge, not the words. |
 | `NameError: name 'grade' is not defined` on the final `print` | "You're printing a box that was never filled." | A chain with **no `else`**, and an input that matched none of the conditions. | Add an `else` on the end, always. A chain without an `else` has a gap in it by definition. |
-| `NameError: name 'elseif' is not defined` or `SyntaxError` on `else if` | Python's spelling is `elif`, one word. | `else if` (two words, from other languages) or `elseif`. | `elif`. One word, no space. |
+| `SyntaxError: invalid syntax` on `elseif`, or `SyntaxError: expected ':'` on `else if` | Python's spelling is `elif`, one word. | `else if` (two words, from other languages) or `elseif`. | `elif`. One word, no space. |
 | **No error, and everybody who passes gets a C** | Python is perfectly happy. It ran the first branch that said yes. | The loosest test is at the top of the chain. | Reorder: highest threshold first. **This is a silent bug and it is the whole lesson.** |
 | **No error, and one branch never runs no matter what you type** | Python is perfectly happy. It is dead code. | A branch whose condition is fully covered by one above it. | Trace one value that *should* reach it, with a finger, and find which line catches it first. |
 | **No error, and a mark of exactly 90 gets a B** | Python is perfectly happy. | `> 90` where `>= 90` was meant. | One character. And notice that *only* the value 90 reveals it. |
@@ -1148,7 +1148,7 @@ Every message below came from running a real broken version of this week's code.
 
 ### How to teach debugging without giving the answer
 
-The four rules from the last two weeks still stand: **hands off the keyboard · last line first · ask, do not tell · log it.** This week adds the one that matters most, because six of the thirteen rows above have no error message at all.
+The four rules from the last two weeks still stand: **hands off the keyboard · last line first · ask, do not tell · log it.** This week adds the one that matters most, because five of the thirteen rows above have no error message at all.
 
 **5. When there is no error, the tool is not reading — it is tracing.**
 

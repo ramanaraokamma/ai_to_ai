@@ -82,7 +82,7 @@ Here is the whole trick, done as arithmetic you can check.
 
 6.00 ÷ 1.0408 = **5.76**. Call it "about six times".
 
-**The analogy.** Two people are 1.49 m and 1.51 m tall. Stand them both in a pit with only the top 4 cm of each of them showing. One of them now looks six times taller than the other. **Nobody's height changed. You changed the floor.**
+**The analogy.** Two people are 1.49 m and 1.51 m tall. Stand them both in a pit whose floor is at 1.486 m, so only the top 2.4 cm of the taller one and 0.4 cm of the shorter one show above it. One of them now looks six times taller than the other. **Nobody's height changed. You changed the floor.**
 
 **A concrete example of how far it goes.** Push the floor closer to the smaller bar and it gets worse, and there is no limit:
 
@@ -244,7 +244,7 @@ No artists with labels found to put in legend.  Note that artists whose label st
 
 **Colour alone is not enough.** This chart will be photocopied, printed in black and white, or read by somebody who cannot distinguish those two colours, and in every one of those cases the colour is gone and the shapes are not. **Two cues instead of one.** It is simply what a careful person does.
 
-*(And when do you **not** need a legend? When there is exactly one series — the title and the y label already name it. A legend on a one-line chart just uses up space, and matplotlib will say so out loud.)*
+*(And when do you **not** need a legend? When there is exactly one series — the title and the y label already name it. A legend on a one-line chart just repeats what the title already says and uses up space.)*
 
 ### 5. Correlation, and the four worlds
 
@@ -279,7 +279,7 @@ For the 38 students, study hours and score give **r = 0.925**. That is very stro
 > **causation** — one thing actually making the other happen.
 > **confounder** — a hidden third thing causing both of the things you measured, making them look connected to each other.
 
-🍕 **The analogy that always lands.** Ice cream sales and drownings rise and fall together almost perfectly. Ice cream does not cause drowning. **Hot weather** causes both — people buy ice cream *and* people go swimming. Here are the real numbers from six months of a seaside town:
+🍕 **The analogy that always lands.** Ice cream sales and drownings rise and fall together almost perfectly. Ice cream does not cause drowning. **Hot weather** causes both — people buy ice cream *and* people go swimming. Here are numbers for six months of a seaside town (invented for this lesson, but shaped like the real thing):
 
 ```text
 ice creams vs drownings  : r = 0.997

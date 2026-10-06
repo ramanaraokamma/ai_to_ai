@@ -934,7 +934,7 @@ after : 3 float64
 
 **The sentence: the repair did not make the holes. It made them visible.** There were always three ages nobody knew — they were hiding inside the words `not given`, where nothing could count them. Now they are countable, and therefore arguable out loud.
 
-**Why `float64` and not `int64`?** Because **a hole cannot live in a whole-number column.** Pandas has no whole-number value that means "missing", so as soon as one `NaN` appears the column must become decimals, where `NaN` is allowed. It is not a mistake to fix; it is a stage you pass through on the way to `astype(int)` — and you can only get there once the holes are gone.
+**Why `float64` and not `int64`?** Because **a hole cannot live in a whole-number column.** An ordinary whole-number column (`int64`) has no value that means "missing", so as soon as one `NaN` appears the column becomes decimals, where `NaN` is allowed. It is not a mistake to fix; it is a stage you pass through on the way to `astype(int)` — and you can only get there once the holes are gone.
 
 ---
 
@@ -963,7 +963,7 @@ Any sensible wording counts — "a gap", "words in a number column", "a repeat",
 
 **(d)** **Three rows say `not given`**, and a column has to be one kind of thing all the way down, so **one word forces the whole column** to be writing. Nine perfectly good numbers do not save it.
 
-**(e)** **Because it has a hole in it,** and a hole cannot live in a whole-number column. Pandas has no whole number that means "missing", so it uses decimals, where `NaN` is allowed. Fill the hole and `astype(int)` and the decimals go away.
+**(e)** **Because it has a hole in it,** and a hole cannot live in a whole-number column. An ordinary whole-number column has no value that means "missing", so pandas uses decimals, where `NaN` is allowed. Fill the hole and `astype(int)` and the decimals go away.
 
 **(f)** **No, and this is the question that catches people who learnt "object is bad" instead of the actual idea.** Names **are** writing, so `object` is exactly right for `name`. **`object` is only a problem where you expected numbers.**
 
@@ -1068,7 +1068,7 @@ print(clean[clean["age"].isna()][["name", "genre", "pages", "rating"]])
 
 That is Week 22's boolean filter with a new question inside it. `clean["age"].isna()` is a column of twelve True/False answers, exactly like `clean["pages"] > 300` was, and the outer `clean[ ... ]` keeps the True rows.
 
-**And now actually look at them**, because that is the point of the exercise. Those three read **150, 120 and 200** pages — the three lowest counts in the whole table, against a top of 410 — and they have the three lowest ratings. **The missing data is concentrated among the lightest readers.** Hold that thought; it is the puzzle and Think Deeper T2.
+**And now actually look at them**, because that is the point of the exercise. Those three read **150, 120 and 200** pages — three of the four lowest counts in the whole table (only Hana Ito's 90 is lower), against a top of 410 — and their ratings are 3, 2 and 3, the lowest in the table (Hana Ito also has a 3). **In this table the missing ages sit among the lightest readers.** Hold that thought; it is the puzzle and Think Deeper T2.
 
 **B4.**
 
@@ -1326,9 +1326,9 @@ dropped: 4 readers, 310.0 pages
 
 1240 + 150 + 120 + 200 = **1710**, and 1710 ÷ 7 = **244.29** ✔
 
-**(f) Why did it move so much?** Because the three readers whose ages are unknown read **150, 120 and 200 pages — the three lowest counts in the whole table.** Filling their age with 12 dropped all three of them into the 12-year-old group at once and pulled its average down by 66 pages.
+**(f) Why did it move so much?** Because the three readers whose ages are unknown read **150, 120 and 200 pages — three of the four lowest counts in the whole table** (only Hana Ito's 90 is lower). Filling their age with 12 dropped all three of them into the 12-year-old group at once and pulled its average down by 66 pages.
 
-**And they are not a random three.** They also have the three lowest ratings, and one of them is the reader with the missing `minutes` too. Whatever caused their forms to be incomplete is related to how much they read — perhaps they are the newest members, who joined late and never filled a form in properly.
+**And they are not a random three.** Their ratings (3, 2, 3) are also the lowest in the table (Hana Ito also has a 3), and one of them is the reader with the missing `minutes` too. Three rows cannot tell us why their forms are incomplete — perhaps they are the newest members, who joined late — but it is exactly the kind of pattern you should look for before repairing.
 
 **(g) The rule: never fill a column with a guess and then make that column the subject of your question.** We guessed at `age`, and then grouped by `age`. That is exactly the wrong order.
 
@@ -1355,11 +1355,11 @@ dropped: 4 readers, 310.0 pages
 9  Ira Volkov     scifi    200       3
 ```
 
-> *Cara Diaz, Fay Turner and Ira Volkov. And they are **not a random three**. They read 150, 120 and 200 pages — the three lowest counts in the whole table, against a top of 410. They also have the three lowest ratings, 3, 2 and 3. And Cara is the one reader who is also missing a minutes figure. **The missing data is concentrated among the lightest readers.***
+> *Cara Diaz, Fay Turner and Ira Volkov. And they are **not a random three**. They read 150, 120 and 200 pages — three of the four lowest counts in the whole table (only Hana Ito's 90 is lower), against a top of 410. Their ratings, 3, 2 and 3, are also the lowest in the table (Hana Ito also has a 3). And Cara is the one reader who is also missing a minutes figure. **In this table the missing ages sit among the lightest readers.***
 >
-> *Filling their age with the median 12 moves **all three of them into one group at once**, and it happens to be the group with the strongest readers in it. The 12-year-olds go from four readers averaging 310 pages to seven averaging 244 — a drop of 66 pages that came entirely from a repair, not from anybody's reading.*
+> *Filling their age with the median 12 moves **all three of them into one group at once**, and all three are light readers, so they drag that group's average down. The 12-year-olds go from four readers averaging 310 pages to seven averaging 244 — a drop of 66 pages that came entirely from a repair, not from anybody's reading.*
 >
-> *So any question **about age** is now partly a question about **who forgot to fill a form in**, which is not what anybody wanted to measure. The general principle is that **missing data is rarely random** — it is usually missing for a reason, and the reason is usually connected to the thing you are trying to measure. Which means: look at whose data is missing **before** you decide how to repair it. If you fill the gaps without looking at whose gaps they are, you can invent a pattern that was never there.*
+> *So any question **about age** is now partly a question about **who forgot to fill a form in**, which is not what anybody wanted to measure. The general principle is that **missing data is often not random** — it is often missing for a reason, and sometimes that reason is connected to the thing you are trying to measure. Which means: look at whose data is missing **before** you decide how to repair it. If you fill the gaps without looking at whose gaps they are, you can invent a pattern that was never there.*
 
 **Marking note:** the three names alone is half marks. Full marks needs (1) the observation that they are the *lightest readers*, not a random three, and (2) the consequence for a question about age. The general principle about missingness not being random is a bonus and worth praising loudly.
 
@@ -1389,7 +1389,7 @@ dropped: 4 readers, 310.0 pages
 | holes, per column | `raw.isna().sum()` | **`minutes` 1**, everything else 0 |
 | writing where numbers belong | `raw.info()` | **`age` is `object`** |
 
-**Part 2 — who is missing:** Cara Diaz (150 pages, rating 3), Fay Turner (120, 2), Ira Volkov (200, 3). **They are the three lightest readers in the table** — see Think Deeper T2.
+**Part 2 — who is missing:** Cara Diaz (150 pages, rating 3), Fay Turner (120, 2), Ira Volkov (200, 3). **They are three of the four lightest readers in the table** — see Think Deeper T2.
 
 **Part 3 — the repairs:** `age` filled with **12** (the median of the nine known) then `astype(int)`; `minutes` filled with **45** (the median of the eleven known) then `astype(int)`; hole count **0** everywhere afterwards; `age` reads back from the file as **`int64`**.
 
@@ -1451,7 +1451,7 @@ CLEANING LOG - reading_raw.csv, 12 rows, 6 columns
 | *"3. Filled 3 ages with 12 because 12 is the median."* | The consequence. A good WHAT and half a WHY | What does somebody reading my report need to be **careful about** because of this? |
 | *"5. Filled minutes with 0."* | This one is **wrong**, not just thin | Cara read 150 pages. How long did that take her? So what did filling 0 claim about her? |
 
-**Part 5 — the sentence at the bottom:** see Think Deeper T2. The three names plus **"they are the three lightest readers in the table, so filling their age moves the whole 12-year-old group"** is a full-mark answer.
+**Part 5 — the sentence at the bottom:** see Think Deeper T2. The three names plus **"they are among the lightest readers in the table, so filling their age moves the whole 12-year-old group"** is a full-mark answer.
 
 ---
 

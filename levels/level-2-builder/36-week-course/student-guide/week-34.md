@@ -615,7 +615,7 @@ walk      1
 Name: mode, dtype: int64
 ```
 
-Look at the last two lines. `walk` and `walk ` look **identical on screen**, because the only difference is a trailing space. That is why you count a column instead of looking at it. After `.str.strip().str.lower()` there are three groups, not five:
+Look at the second line and the last line. `walk` (6) and `walk ` (1) look **identical on screen**, because the only difference is a trailing space. That is why you count a column instead of looking at it. After `.str.strip().str.lower()` there are three groups, not five:
 
 ```text
 bus      13
@@ -1046,7 +1046,7 @@ That is not them being annoying. That is the whole week.
 
 **2. "Why 100 rows? Why not 50? It's a made-up number either way."**
 
-*Hint:* do the arithmetic. With 100 rows and a 20% test set you keep 20 rows back, so one row is worth 5 percentage points of any score. With 50 rows you keep 10, and one row is worth 10 points — so two models that differ by 9 points become indistinguishable. **100 is not magic; it is the smallest number where the sentences you want to write next week are allowed to be true.**
+*Hint:* do the arithmetic. With 100 rows and a 20% test set you keep 20 rows back, so one row is worth 5 percentage points of an accuracy score. With 50 rows you keep 10, and one row is worth 10 points — so a gap of 5 points is just one row going the other way, and you cannot tell it from luck. **100 is not magic; it is the smallest number where the sentences you want to write next week are allowed to be true.**
 
 **3. "How much cleaning is too much cleaning?"** *(Nobody fully agrees on this one, and that is the honest answer.)*
 
@@ -1101,7 +1101,7 @@ If `mode` is always `walk`, no model can learn anything about mode. If every dis
 2. **A cricket or football scorecard.** One row per innings or per match, every column with a unit, filled in *at the time*. It is a raw file, and nobody is allowed to go back and improve it afterwards.
 3. **"Track changes" in a document, or the history of a shared file.** That is a cleaning log with the reasons stripped out. Notice how frustrating it is when somebody edits your work and does not say why.
 4. **The version history in a game save, or a bank statement.** Neither of them lets you edit the past. That is `chmod 444`, enforced by somebody who learned this lesson the hard way.
-5. **Scientific papers that get retracted.** Almost never because somebody faked a number. Usually because nobody can reproduce the result — the cleaning happened by hand and was never written down.
+5. **Scientific papers that get retracted.** Sometimes because somebody faked a number, but often because of honest mistakes: nobody can reproduce the result, or the cleaning happened by hand and was never written down.
 6. **Weather station records.** Every reading has a time, a place, an instrument and a person. When a station moves 200 metres, that goes in the record too, because otherwise a step in the data looks like a change in the climate.
 
 ---

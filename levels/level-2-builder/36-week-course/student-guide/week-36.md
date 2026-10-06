@@ -376,6 +376,8 @@ Aarav     90
 
 Hand-check: 90 + 85 + 78 + 100 = 353, over 4 = **88.25**. ✅
 
+> **Version note:** the `227144525.0` above is what pandas 1.x prints. On some newer pandas versions the `.mean()` line raises a `TypeError` instead of returning nonsense. Either way the root cause is the same: the column is text.
+
 ### Step 5 — `d3.py`, the score that lies
 
 This is the one that matters most. It reads the `data/clean.csv` you built last week.
@@ -612,7 +614,7 @@ Late   : 6
 Percent late: 50.0 %
 ```
 
-**Why this one is nasty.** `//` and `/` differ by one keystroke, both are legal, and the broken version prints a perfectly plausible **0%** — which somebody might read as good news. **And notice it would have been much easier to spot if the answer had been 6 out of 5 rather than 6 out of 12**, because `6 // 5` is 1 and `1 * 100` is 100%, which looks obviously silly. The bug hides itself best in exactly the cases you care about.
+**Why this one is nasty.** `//` and `/` differ by one keystroke, both are legal, and the broken version prints a perfectly plausible **0%** — which somebody might read as good news. **And notice how well it hides.** `//` only gives the right answer when every single order is late (`12 // 12` is 1, so 100%). With 11 late orders out of 12 it still prints 0% — the worst news in the building reported as the best. The bug hides itself best in exactly the cases you care about.
 
 ### Worked Example 2 — Innings labels (sport): everybody gets "decent"
 

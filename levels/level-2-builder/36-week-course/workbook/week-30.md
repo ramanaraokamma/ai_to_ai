@@ -1365,7 +1365,7 @@ k=5 raw          0.7817   0.7778   8
 k=5 scaled       0.9859   0.9444   2
 ```
 
-**Why count errors with a mask rather than arithmetic?** Because `(pred != y_test).sum()` is exact and `36 × 0.7778` is not — try it and you get 27.9998, which you then have to round and hope. **Week 20's boolean mask, doing real work.**
+**Why count errors with a mask rather than arithmetic?** Because `(pred != y_test).sum()` is exact and `36 × 0.7778` is not — try it and you get 28.0008, which you then have to round and hope. **Week 20's boolean mask, doing real work.**
 
 **B5.**
 
@@ -1504,7 +1504,7 @@ X_train_scaled = scaler.transform(X_train)
 predictions = model.predict(X_test)      # should be X_test_scaled
 ```
 
-**Why no complaint?** Because **680 is a perfectly valid number.** Python would have to understand *units* to spot that a proline of 680 makes no sense to a model trained on numbers between about −2 and +2 — and it does not. To the model, every test wine looks like it is two hundred spreads from typical, so every one of them ends up nearest to whichever training wine happens to be closest to the edge, and they all get the same answer.
+**Why no complaint?** Because **680 is a perfectly valid number.** Python would have to understand *units* to spot that a proline of 680 makes no sense to a model trained on numbers between about −2 and +2 — and it does not. To the model, every test wine looks like it is hundreds of spreads from typical, so every one of them ends up nearest to whichever training wine happens to be closest to the edge, and they all get the same answer.
 
 **The fix:**
 
@@ -1569,7 +1569,7 @@ metres       height gap   0.05  squared    0.0025   age squared 784   total 784.
 | a | **height in mm** | By a mile. Squared, about 3× the age contribution |
 | b | **age in years** | Enormously — height is a rounding error in metres |
 | c | **salary in rupees** | Overwhelmingly. Tens of thousands against single digits, then squared |
-| d | **exam mark out of 100** | Marks run to 100, revision hours maybe to 10. About 100× before squaring |
+| d | **exam mark out of 100** | Marks run to 100, revision hours maybe to 10. About 10× before squaring, 100× after |
 | e | **revision minutes** | Now the other way — 600 minutes beats 60 marks |
 | f | **steps per day** | By thousands. Steps run to 20,000; sleep to about 10 |
 | g | **price in pence** | 100× the pounds column, so about 10,000× after squaring |
@@ -1577,15 +1577,15 @@ metres       height gap   0.05  squared    0.0025   age squared 784   total 784.
 
 **(i)** **(h), km against a rating out of 5.** If the distances are a few kilometres, the two columns are comparable and either could dominate. If they are hundreds of kilometres, distance wins easily. **The honest answer is "measure it, do not guess"** — print the min, max and spread of both columns and look.
 
-**(j)** Row (g) is not only a scaling problem: **the two columns are the same information twice.** One is 100 times the other, so the second adds nothing at all except extra weight to a thing you already had. That is a **duplicated feature**, and it quietly doubles how much price counts. The fix is not to scale it; the fix is to **delete one of the two columns.**
+**(j)** Row (g) is not only a scaling problem: **the two columns are the same information twice.** One is 100 times the other, so the second adds nothing at all except extra weight to a thing you already had. That is a **duplicated feature**, and once the columns are scaled it quietly doubles how much price counts. The fix is not to scale it; the fix is to **delete one of the two columns.**
 
 **Part 3 — The column that stopped shouting**
 
-**(k)** **`hue`.** Removing `hue` costs 5.6 percentage points; removing `proline` costs only 2.8. **The column that was 0.000044% of the raw distance turns out to be twice as useful as the column that was 99.999956% of it.**
+**(k)** **`hue`, on this one split.** Removing `hue` costs 5.6 percentage points (two wines); removing `proline` costs 2.8 (one wine). **The column that was 0.000044% of the raw distance is at least as useful as the column that was 99.999956% of it — and on this split, it looks more useful.** Hold that loosely: see (n).
 
 **(l)**
 
-> The raw model was spending almost all of its attention on a column that is only moderately useful, while completely ignoring one that is more useful — **not because proline was more informative, but because it was written in bigger numbers.** Scaling did not add information. It stopped the model from throwing information away.
+> The raw model was spending almost all of its attention on one column (proline) and almost none on another (hue) that, when scaled, is at least as useful — **not because proline was more informative, but because it was written in bigger numbers.** Scaling did not add information. It stopped the model from throwing information away.
 
 **(m)** **No, not necessarily.** Removing a column with no cost usually means **another column carries the same information**, so you can lose either one and still be fine. Wine has several chemical measurements that move together — `total_phenols` and `flavanoids` are closely related — so dropping one leaves the other doing the job. **"Costs nothing to remove" and "contains nothing" are different claims**, and only the first one has been tested here.
 
@@ -1599,7 +1599,7 @@ metres       height gap   0.05  squared    0.0025   age squared 784   total 784.
 
 > *0.9722 is supposed to be **an estimate of how the model will do on wines that nobody has ever seen** — bottles that will arrive tomorrow, next month, next year. That is the only reason the number exists.*
 >
-> *Fitting the scaler on all 178 wines broke that, and it did not take much. The proline mean moved from 744.17 to 746.89 — 2.72, which is a third of one percent. But the 36 test wines contributed to that 2.72, which means they had a hand in preparing the 142 training wines. So the test wines were not unseen: they influenced the model, faintly, before the model was scored on them. **A brand-new bottle tomorrow cannot possibly have helped work out my mean.** So tomorrow's bottle will do worse than 0.9722, and I do not know by how much. The number went up and got less true.*
+> *Fitting the scaler on all 178 wines broke that, and it did not take much. The proline mean moved from 744.17 to 746.89 — 2.72, which is a third of one percent. But the 36 test wines contributed to that 2.72, which means they had a hand in preparing the 142 training wines. So the test wines were not unseen: they influenced the model, faintly, before the model was scored on them. **A brand-new bottle tomorrow cannot possibly have helped work out my mean.** So I should expect tomorrow's bottle to do worse than 0.9722, and I do not know by how much. The number went up and got less true.*
 >
 > *And I cannot catch it by experiment. On eight of ten seeds the leak makes no difference at all, and on one it makes the score worse. So running it both ways proves nothing: an identical pair of scores is what "got away with it" looks like, not what "safe" looks like. **That means the only defence is the habit, not the checking.** Split first, fit the scaler on the training rows, every single time, whether or not it seems to matter today — because on the day it matters you will have no way of knowing.*
 >
@@ -1649,7 +1649,7 @@ metres       height gap   0.05  squared    0.0025   age squared 784   total 784.
 >
 > **Sentence 2:** `k = 7, 8, 9, 10` are four consecutive values all at 0.9722, which is a plateau rather than a lonely spike, and a plateau is more trustworthy because the score does not depend on me getting `k` exactly right.
 >
-> **Sentence 3:** Inside that plateau I took the largest odd value, because a larger `k` is less sensitive to one strange neighbour and an odd `k` cannot produce a tied vote between two classes.
+> **Sentence 3:** Inside that plateau I took the largest odd value, because a larger `k` is less sensitive to one strange neighbour and an odd `k` produces fewer tied votes.
 >
 > *(And a fourth sentence, not required, that earns full marks on its own: 0.9722 is 35 wines out of 36, so the difference between `k = 9` and `k = 5` is exactly one wine, and I would not claim `k = 9` is definitely better on the strength of one wine.)*
 

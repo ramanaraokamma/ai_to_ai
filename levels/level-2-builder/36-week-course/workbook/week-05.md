@@ -467,7 +467,7 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**P3.** Change **one number** in the program so that all four combinations become possible. Which number, and what do you change it to?
+**P3.** Change **one number** in the program so that row (b) becomes possible. Which number, and what do you change it to? Then look at row (d) again: what has happened to it?
 
 ________________________________________________________________
 
@@ -1036,7 +1036,7 @@ hours = float(input("How many hours did you sleep? "))   # the answer arrives as
 
 `float`, not `int`, because you might have slept 7.5 hours. (`int` would also fix the crash, and would then break the day somebody types `7.5`. Fixing the error you can see while creating one you can't is very easy to do.)
 
-**Why won't Python just decide `"9"` and `9` are near enough?** Because it cannot know what you meant, and getting it wrong is silent. `"10" > "9"` is `True` as text and `False`… no — it is `False` as text and `True` as numbers. **Text and numbers sort differently**, so if Python guessed, your program would work for most inputs and be quietly wrong for some. A crash is better than that.
+**Why won't Python just decide `"9"` and `9` are near enough?** Because it cannot know what you meant, and getting it wrong is silent. `"10" > "9"` is `False` as text, but `10 > 9` is `True` as numbers. **Text and numbers sort differently**, so if Python guessed, your program would work for most inputs and be quietly wrong for some. A crash is better than that.
 
 **Bug 3 — the silent one.** `print(f"Hours   : {hours}")` has been indented **inside the `else`**, so it only appears when you slept badly. Somebody who slept 9 hours gets one line of output; somebody who slept 6 gets two.
 
@@ -1088,7 +1088,7 @@ not seven
 
 **P2.** Row **(b)** is impossible. In plain words: **to print `seven`, the number has to be seven — and seven is not bigger than ten**, so it can never also print `big`. The two decisions look independent, but they are both asking about the same number, and one answer rules out the other.
 
-**P3.** Change the `10` to something **below 7** — for example `if number > 5:`. Then 7 is "big" *and* "seven", and all four combinations become reachable. (Changing the `7` to something above 10, like `70`, does the same job from the other direction — see P5.)
+**P3.** Change the `10` to something **below 7** — for example `if number > 5:`. Then 7 is "big" *and* "seven", so row (b) is possible. But row (d) has now become impossible: 7 is the only number that prints `seven`, and it is either big or small, never both. So no single change can make all four rows possible; the impossible row just moves. (Changing the `7` to something above 10, like `70`, does the same job from the other direction — see P5.)
 
 **P4.** **Four branches** — two `if`/`else` pairs, two branches each. And **four different pairs of lines** could in principle come out, of which **three** actually can. That gap between "how many outputs the code can produce" and "how many are reachable" is exactly what makes testing hard.
 

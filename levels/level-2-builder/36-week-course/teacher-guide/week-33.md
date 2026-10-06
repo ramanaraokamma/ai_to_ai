@@ -17,7 +17,7 @@
 | **Tech needed** | Python 3 with scikit-learn, numpy and matplotlib. No new install. No internet. |
 | **Prep time** | 25 minutes the night before, 5 minutes on the day |
 
-> **⚠️ Watch out:** this lesson only bites if the student is still a little proud of a score. That is why the course puts four weeks between Week 29 and today. **Do not soften the punchline** — one row of today's table shows a model that is *perfect* on the rows it learned from and *worse than guessing* on rows it has never seen. Let that land hard. And go and find the Week 29 numbers before class; the lesson ends by walking back to them.
+> **⚠️ Watch out:** this lesson only bites if the student is still a little proud of a score. That is why the course puts four weeks between Week 29 and today. **Do not soften the punchline** — one row of today's table shows a model that is *perfect* on the rows it learned from and *no better than guessing the average* on rows it has never seen. Let that land hard. And go and find the Week 29 numbers before class; the lesson ends by walking back to them.
 
 ---
 
@@ -223,7 +223,7 @@ tree, no limit           56.57   72.90    -0.003      1.000
 
 **Train R² 1.000. Perfect.** Not 0.99. Perfect. On the 353 patients it learned from, this tree is never wrong, not once.
 
-**Test R² −0.003.** Negative. Which means: *worse than the lazy model that ignores all ten measurements and guesses the average*. Look up the baseline row — R² −0.012 — and the unlimited tree is essentially level with it.
+**Test R² −0.003.** Negative. Strictly, R² below 0 means *worse than guessing the average of the test rows*. Look up the baseline row — R² −0.012 (it guesses the training average) — and the unlimited tree is essentially level with it: it is NOT worse than the lazy model here (its MAE 56.57 and RMSE 72.90 are even slightly better than 64.01 and 73.22). The honest line is *no better than ignoring all ten measurements*.
 
 A perfect score and a worthless model, in the same row, on the same data. That is Sam and his 200 practice questions, in numbers you generated yourself.
 
@@ -535,7 +535,7 @@ Let them answer. Then:
 >
 > **It just isn't evidence of anything.**
 >
-> Today you're going to build Sam. In code. On purpose. And you're going to watch a model score a *perfect* one point zero zero zero on the questions it studied, and then do worse than guessing on questions it hasn't seen. And then you're going to draw the picture of it happening."
+> Today you're going to build Sam. In code. On purpose. And you're going to watch a model score a *perfect* one point zero zero zero on the questions it studied, and then do no better than guessing the average on questions it hasn't seen. And then you're going to draw the picture of it happening."
 
 **Ask this:**
 
@@ -791,7 +791,7 @@ Wait. Let them say it.
 
 Let them get there.
 
-> "**Worse than guessing the average.** A model with ten measurements, hundreds of learned rules, a perfect score on its homework — and it is *worse than a machine that ignores every measurement and says 153 every single time.*
+> "**Worse than guessing the test rows' average — or, near zero, no better than it.** A model with ten measurements, hundreds of learned rules, a perfect score on its homework — and on new patients it is *no better than a machine that ignores every measurement and says 153 every single time* (that machine scored −0.012; the tree −0.003).
 >
 > That is Sam. That's Sam in numbers you just generated, on your own laptop, in a tenth of a second.
 >
@@ -1015,7 +1015,7 @@ This is not a decoration. It is the single sentence this whole term has been bui
 
 ### Variation — easier
 
-- **Cut the bake-off to three rows:** the lazy baseline, `tree, no limit`, and `linear regression`. That is enough to show a perfect training score next to a worse-than-guessing test score, which is the whole lesson.
+- **Cut the bake-off to three rows:** the lazy baseline, `tree, no limit`, and `linear regression`. That is enough to show a perfect training score next to a test score no better than guessing, which is the whole lesson.
 - **Shorten the loop to `range(1, 11)`.** Ten points instead of fifteen. The peak is still at depth 4 and the shape is identical.
 - **Skip the code for the curve entirely.** Hand them the printed table from section 7 and have them plot it by hand on graph paper. **Plotting it by hand is arguably the better exercise** — it takes ten minutes and every single point has to pass through their eyes.
 - **Do the marking-up in two colours, not four:** train and test only.
@@ -1035,7 +1035,7 @@ This is not a decoration. It is the single sentence this whole term has been bui
 
 **"How can a score be negative? I thought 0 was the worst."**
 
-R² is not a percentage, so 0 is not a floor. R² of 0 means "exactly as good as ignoring every measurement and guessing the average". You can absolutely be *worse* than that: predict wildly, and your squared errors come out bigger than the average-guesser's, and R² goes below zero. The unlimited tree does exactly that. Negative R² is not a bug; it is a model telling you it has actively hurt you.
+R² is not a percentage, so 0 is not a floor. R² of 0 means "exactly as good as ignoring every measurement and guessing the average". You can absolutely be *worse* than that: predict wildly, and your squared errors come out bigger than the average-guesser's, and R² goes below zero. The unlimited tree lands right at that level (−0.003 against the baseline's −0.012). Negative R² is not a bug; it is a model telling you it has actively hurt you.
 
 **"Why does the training score always go up? Couldn't a deeper tree be worse on training?"**
 
@@ -1174,7 +1174,7 @@ Three checks, five minutes, exact wording.
 
 > "One of our models scored a perfect 1.000 on the rows it learned from. Would you ship it? Say why in two sentences."
 
-*Good answer:* "No. It scored −0.003 on rows it had never seen, which is worse than just guessing the average, so the perfect score only means it memorised the 353 training patients." Full marks needs **both** numbers and the word memorised. **What to catch:** hesitation, or "yes because 1.000 is perfect". Point at the test column and wait.
+*Good answer:* "No. It scored −0.003 on rows it had never seen, which is no better than just guessing the average (the baseline row scores −0.012), so the perfect score only means it memorised the 353 training patients." Full marks needs **both** numbers and the word memorised. **What to catch:** hesitation, or "yes because 1.000 is perfect". Point at the test column and wait.
 
 **Check 3 — the peak, and the honesty (written, 60 seconds)**
 
@@ -1331,7 +1331,7 @@ linear regression        42.79   53.85     0.453      0.528
 ```
 
 **33.3(a) Which row shows a perfect training score? What is its test score?**
-`tree, no limit`. Train R² **1.000**, test R² **−0.003**. Perfect on the 353 it learned from; worse than guessing the average on the 89 it had not seen.
+`tree, no limit`. Train R² **1.000**, test R² **−0.003**. Perfect on the 353 it learned from; no better than guessing the average on the 89 it had not seen.
 
 **33.3(b) Why is the baseline row in the table at all?**
 Because without it, no other number means anything. MAE 42.77 sounds like nothing until you know that ignoring all ten measurements and guessing the average is off by 64.01. Then 42.77 becomes "a third less wrong than not bothering". Same lesson as Level 1's Week 12: compute the ruler before you measure with it.
@@ -1476,7 +1476,7 @@ This is the student's own record, so mark the reflection rather than the numbers
 - *"Which is worse, Ravi or Sam?"* → Usually Sam: an underfit model is honest about being bad, while a memoriser's good score makes you trust something broken.
 - *"Model A and Model B have the same MAE — which for a medicine dose?"* → Model A. Small consistent errors beat one catastrophe. For a grocery bill, the opposite.
 - *"Should we always use RMSE?"* → No. Pick according to what a big miss costs, and report both plus the worst single error.
-- *"What did `tree, no limit` score on the patients it had never seen?"* → −0.003. Worse than guessing the average, alongside a perfect 1.000 on training.
+- *"What did `tree, no limit` score on the patients it had never seen?"* → −0.003. No better than guessing the average, alongside a perfect 1.000 on training.
 - *"We made the training score better and the model worse — so what is the training score?"* → Not evidence.
 - *"Why does the line beat kNN on RMSE when their MAE is level?"* → kNN has nine misses over 100; the line has five. RMSE squares the misses, so the big ones dominate.
 - *"Where's the `StandardScaler`?"* → This dataset arrived pre-scaled. Good catch, and worth checking every time.

@@ -251,7 +251,7 @@ ________________________________________________________________
 
 1 → ______   2 → ______   3 → ______
 
-**A4(a).** Output C has five groups. How many modes did the person actually use, and which two lines look identical on screen?
+**A4(a).** Output C has five groups. How many modes did the person actually use, and which two lines look identical on screen (hint: they are not next to each other)?
 
 ________________________________________________________________
 
@@ -401,7 +401,7 @@ The five repairs, in this order — and the order matters:
 
 **Expected output starts:** `shape before: (10, 3)   after: (6, 3)`
 
-**Done looks like:** `value_counts()` shows **two** shops, not four; and if you swap steps 1 and 2 the duplicate count changes, which you can explain out loud.
+**Done looks like:** `value_counts()` shows **two** shops, not five; and if you swap steps 1 and 2 the duplicate count changes, which you can explain out loud.
 
 ---
 
@@ -878,7 +878,7 @@ Sorted, the seven innings are `2, 3, 4, 5, 6, 7, 80`. The middle one is the 4th:
 
 **A4.** 1 → **B** · 2 → **C** · 3 → **A**
 
-**A4(a).** They used **three** modes: walk, cycle, bus. The two lines that look identical on screen are the last two — `walk` and `walk `. The only difference is a **trailing space**, which is invisible. That is why you count a text column instead of looking at it.
+**A4(a).** They used **three** modes: walk, cycle, bus. The two lines that look identical on screen are the second line (`walk`, 6) and the last line (`walk `, 1). The only difference is a **trailing space**, which is invisible. That is why you count a text column instead of looking at it.
 
 **A5.** The five posts, left to right:
 
@@ -1073,7 +1073,7 @@ before = spend.shape
 
 spend["shop"] = spend["shop"].str.strip().str.lower()
 log("Stripped spaces and lower-cased 'shop'",
-    "'Corner', 'corner ' and 'corner' are one shop; value_counts() showed four shops when I only use two.")
+    "'Corner', 'corner ' and 'corner' are one shop; value_counts() showed five shops when I only use two.")
 
 dupes = spend.duplicated().sum()
 spend = spend.drop_duplicates()
@@ -1109,7 +1109,7 @@ Real output:
 ```text
 shape before: (10, 3)   after: (6, 3)
 
-1. Stripped spaces and lower-cased 'shop'  -  'Corner', 'corner ' and 'corner' are one shop; value_counts() showed four shops when I only use two.
+1. Stripped spaces and lower-cased 'shop'  -  'Corner', 'corner ' and 'corner' are one shop; value_counts() showed five shops when I only use two.
 2. Dropped 2 exact duplicate row(s)  -  I copied the 95-rupee corner-shop trip into the sheet twice.
 3. Converted 'rupees' to numbers; 'about 300' became empty  -  'About' is a memory, not a receipt, and I will not treat it as a measurement.
 4. Marked 1 row(s) costing 0 rupees as empty  -  A trip that bought 6 items and cost nothing is a missed entry, not a free shop.

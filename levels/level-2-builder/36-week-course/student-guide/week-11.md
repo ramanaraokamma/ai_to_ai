@@ -159,7 +159,7 @@ Put your finger on the `45` card. **How far along the row is it?** Not at all. *
 
 Slide one card right. **One step along. Index one.** Two steps, index two. Three steps, index three.
 
-Once you say it as **distance** instead of **position**, zero stops being a quirk and becomes the only sensible answer. And it is not a Python oddity — nearly every programming language written in the last fifty years counts this way, for exactly this reason.
+Once you say it as **distance** instead of **position**, zero stops being a quirk and becomes the only sensible answer. And it is not a Python oddity — most of the languages you will meet (Python, C, Java, JavaScript) count this way, for exactly this reason. Some others start at 1 — you will meet them in Talk About It.
 
 > **💡 Try this:** say the whole row out loud as distances, with your finger moving: *"zero steps — forty-five. One step — zero. Two steps — a hundred and twelve. Three steps — sixty-seven."* Four seconds, and it is the version that sticks.
 
@@ -851,7 +851,7 @@ scores.append(89)
 print(len(scores))
 ```
 
-**The rule:** anything with a dot that **changes** a list hands back `None`. **Never put `.append` on the right of an equals sign.**
+**The rule:** `.append` changes the list and hands back `None` (most list commands that change a list in place work this way, but not all — you will meet one that does not). **Never put `.append` on the right of an equals sign.**
 
 ### Break 3 — round brackets where square ones belong
 

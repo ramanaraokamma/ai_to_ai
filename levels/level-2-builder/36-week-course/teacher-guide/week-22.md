@@ -1163,7 +1163,7 @@ Then `loc` gives you **both** rows, and it does not warn you. This happens for r
 
 **"Does the order inside the brackets matter? Could I write `week.loc["steps", 1]`?"**
 
-No, and it will not politely correct you. `loc` takes the row first and the column second, always, and swapping them gives you a `KeyError` about a row labelled `"steps"`. Row, then column. It is the same order as reading a spreadsheet reference out loud.
+No, and it will not politely correct you. `loc` takes the row first and the column second, always, and swapping them gives you a `KeyError` (on this table it prints `KeyError: 1`), because there is no row labelled `"steps"` and no column named `1`. Row, then column. It is the same order as reading a spreadsheet reference out loud.
 
 **"If I filter a table, then filter the result, does that work?"**
 
@@ -1229,7 +1229,7 @@ print(week.iloc[___])
 print(week[week["steps"] > _____])
 ```
 
-Answers: `2, "steps"` → `11050`; `1` → Kabir's row; `10000` → Kabir and Zoya.
+Answers: `2, "steps"` → `6400` (Nova); `1` → Kabir's row; `10000` → Kabir and Zoya.
 
 **One sentence to leave them with, and drill it until it is automatic:** *"`loc` reads. `iloc` counts."*
 

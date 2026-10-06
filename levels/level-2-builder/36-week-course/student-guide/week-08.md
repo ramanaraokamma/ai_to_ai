@@ -28,7 +28,7 @@ Guess it. Every time you guess I will say "higher" or "lower". **And I am counti
 
 Most people start at 50. Some start at 1. Both are interesting.
 
-Say you guessed 50 and I said *higher*. **How many numbers are still possible?** Fifty — 51 up to 100. Now guess 75 and I say *lower*: twenty-five left.
+Say you guessed 50 and I said *higher*. **How many numbers are still possible?** Fifty — 51 up to 100. Now guess 75 and I say *lower*: twenty-four left (51 up to 74), about half again.
 
 **Every good guess halves what is left.** Watch:
 
@@ -306,7 +306,7 @@ without strip: '  42  ' False
 with strip   : '42' True
 ```
 
-> **⚠️ Watch out:** the pattern is always **keep it as text, check it, and only then convert.** `int()` goes *after* the check, never before — because `int()` is the thing that crashes, and once it has crashed there is nothing left to check. Once `.isdigit()` has said `True`, `int()` cannot fail.
+> **⚠️ Watch out:** the pattern is always **keep it as text, check it, and only then convert.** `int()` goes *after* the check, never before — because `int()` is the thing that crashes, and once it has crashed there is nothing left to check. For anything typed on an ordinary keyboard, once `.isdigit()` has said `True`, `int()` will not fail. (A few exotic characters, such as `²`, count as digits to `.isdigit()` but still crash `int()` — you will not meet them by accident.)
 
 **And now the honest limitation, which nobody should hide from you.** Look at the second answer in that row of four: `"-42".isdigit()` is **`False`**, because a minus sign is not a digit. So a player who types `-5` gets the message "whole numbers only", which is not quite true — minus five *is* a whole number.
 
@@ -972,7 +972,7 @@ It took 9 rolls to get a six.
 
 **Why `roll = 0` before the loop?** Because the check asks about `roll`, and Python cannot check a box that does not exist — you would get `NameError` on the `while` line. And it has to be a value that makes the check `True` the first time, so it must be something that is **not** 6. Zero is not a face on a dice, which makes it a good choice: nobody could mistake it for a real roll.
 
-**And `random.randint(1, 6)` can genuinely give you a 6** — both ends are included. If it were `range(1, 6)` the loop would never, ever end, and you would be reaching for Ctrl+C. **The two tools disagree about their last number, and that disagreement can cost you an infinite loop.**
+**And `random.randint(1, 6)` can genuinely give you a 6** — both ends are included. If `randint(1, 6)` stopped at 5 the way `range(1, 6)` does, the loop would never, ever end, and you would be reaching for Ctrl+C. **The two tools disagree about their last number, and that disagreement can cost you an infinite loop.**
 
 ### Worked Example 3 — The homework timer (school)
 
@@ -1148,7 +1148,7 @@ Guess? banana
 | `NameError: name 'random' is not defined` | "I have never heard of `random`" | `import random` at the top of the file |
 | `NameError: name 'randint' is not defined` | "I have never heard of `randint` on its own" | `random.randint(...)`. The toolbox's name comes first |
 | `AttributeError: module 'random' has no attribute 'randInt'. Did you mean: 'randint'?` | A capital I. Python is case-sensitive, always | `randint`, all lowercase. **And notice Python guessed correctly and told you** |
-| `ValueError: empty range for randrange() (100, 2, -98)` | "There are no numbers between 100 and 1" | `random.randint(1, 100)`. Small number first |
+| `ValueError: empty range for randrange() (100, 2, -98)` (Python 3.12 and newer word it `empty range in randrange(100, 2)`) | "There are no numbers between 100 and 1" | `random.randint(1, 100)`. Small number first |
 | `NameError: name 'won' is not defined` on the `while` line | You are checking a box that does not exist | `won = False` above the loop. **This is set-up, the first of the three parts** |
 | **No error, and the loop asks one time too many** | `<=` where `<` was meant | `<`. Then **count the prompts** to prove it: seven, not eight |
 | **No error, and `banana` is accepted** | `typed.isdigit` without brackets is the question, not the answer | `typed.isdigit()`. Brackets mean "actually ask it" |
@@ -1296,7 +1296,7 @@ And the honest confession about `-5`: the message says "whole numbers only" and 
 |---|---|
 | `continue` on pass three means only four passes happen | **All five passes happen.** `continue` throws away the rest of *this* pass and goes straight back to the check |
 
-The cure is a count, not an explanation. Add `print("pass")` as the very first line of the loop body and run it again. Ten passes, five prints. **`continue` ends the pass; `break` ends the loop.**
+The cure is a count, not an explanation. Add `print("pass")` as the very first line of the loop body and run it again. Ten `pass` lines (ten passes), but only five numbers printed. **`continue` ends the pass; `break` ends the loop.**
 
 ### Trick 2 — "the loop checks the condition all the time"
 
