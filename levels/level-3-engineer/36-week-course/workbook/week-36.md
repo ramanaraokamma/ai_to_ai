@@ -727,7 +727,7 @@ ________________  ________________  ________________
 | 4 | **Backprop** | a 2-layer network on paper, no notes, what each of the five lines does — and **the 42** | ______ |
 | 5 | **The three questions** | shown any score, the first three things out of my mouth | ______ |
 | 6 | **Shapes** | `(n, d) @ (d, h) → (n, h)` out loud, and any layer's output shape **before** running it | ______ |
-| 7 | **Embeddings** | what one is, and why **cosine similarity** is the right way to compare two | ______ |
+| 7 | **Embeddings** | what one is, and why **cosine similarity** is the usual way to compare two | ______ |
 
 **My score:** ______ of 7.  **Is at least one of them an honest blank?** ______
 
@@ -1026,7 +1026,7 @@ loss with y as (4,1) : 0.025000
 
 **(1)** Two `Linear` layers with **no activation between them.** Two grids multiplied together are just another grid, so this is **exactly equivalent to a single linear layer** — no curved boundary is possible. The shapes compose perfectly so nothing raises. **The tell: it scores precisely what logistic regression scored.**
 
-**(2)** `nn.Softmax(dim=1)` on the end **and** `nn.CrossEntropyLoss()`, which applies log-softmax itself. **The squash happens twice**, the gradients flatten, and accuracy caps out below where it should. End the model with a bare `nn.Linear`.
+**(2)** `nn.Softmax(dim=1)` on the end **and** `nn.CrossEntropyLoss()`, which applies log-softmax itself. **The squash happens twice**, the gradients flatten, and the model learns more slowly. End the model with a bare `nn.Linear`.
 
 **(3)** No `opt.zero_grad()`. Gradients **accumulate** across every batch, so each update uses the sum of every earlier gradient (with plain SGD the step balloons; with Adam it is rescaled but stale). Nothing raises and every batch does train — all of them with a corrupted, growing gradient. **`zero_grad` is the first line of the inner loop, always.**
 

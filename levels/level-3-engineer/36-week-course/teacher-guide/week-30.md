@@ -256,7 +256,7 @@ noise, five seeds, ARI: [0.6407 0.4069 0.61   0.6072 0.6308]  mean 0.5791
 | silhouette at k = 3 | **0.2849** | **0.0776** |
 | seed-to-seed ARI | **1.0000** | **0.5791** |
 
-**The silhouette is 3.7 times higher on the real data, and the stability is perfect against barely-better-than-a-coin-flip.** *That* is the argument that the wine structure is real. **Not "0.2849 is a good score" — it is not a good score — but "0.2849 against a noise floor of 0.0776, with an ARI of 1.0000 against 0.5791."**
+**The silhouette is 3.7 times higher on the real data, and the stability is perfect against only moderate agreement on noise (0.58, far below 1.0).** *That* is the argument that the wine structure is real. **Not "0.2849 is a good score" — it is not a good score — but "0.2849 against a noise floor of 0.0776, with an ARI of 1.0000 against 0.5791."**
 
 And the sting: **the noise data still produced three tidy clusters with visibly different column means**, so you could have written a profile table and invented names for them. **The negative control is the only thing standing between "I found three customer types" and "my algorithm returns three of whatever I ask it for".** Almost no published clustering write-up includes one.
 
@@ -343,7 +343,7 @@ saved wine_map.png
 
 Last week's plot, coloured by cluster. **Two rules it has to obey, and both are habits from Week 29:**
 
-**The percentage goes in both axis labels.** `PC1 (36.2% of the spread)` and `PC2 (19.2%)`. `36.2 + 19.2 = 55.4`, so **44.6% of the wine data is not on the page**, and two bottles that look adjacent may be far apart.
+**The percentage goes in both axis labels.** `PC1 (36.2% of the spread)` and `PC2 (19.2%)`. `36.2 + 19.2 = 55.4`, so **44.6% of the wine's spread is not on the page**, and two bottles that look adjacent may be far apart.
 
 **Cluster membership gets a shape as well as a colour** — circle, triangle, square — so the map still works photocopied.
 
@@ -1190,7 +1190,7 @@ seed-to-seed ARI      1.0000        0.5791
 
 *Hoped-for, and it is the whole lesson:* compared to what?
 
-> "**Compared to what. Yes.** Against the field guide, 0.2849 is 'real but overlapping'. **Against the noise floor of 0.0776, it is 3.7 times higher.** And our grouping is perfectly stable across five seeds where the noise grouping is barely better than a coin toss.
+> "**Compared to what. Yes.** Against the field guide, 0.2849 is 'real but overlapping'. **Against the noise floor of 0.0776, it is 3.7 times higher.** And our grouping is perfectly stable across five seeds where the noise grouping agrees with itself only moderately (0.58, where 0 would be pure chance).
 >
 > **That pair of comparisons is your argument.** It is not 'we got a good score'. It is 'we got 3.7 times the floor, with perfect stability against 0.58'. **Nobody can argue with that, and almost nobody does it.**"
 
@@ -1216,7 +1216,7 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: **twelve 
 
 > "**The structure was there the whole time and the picture could not show it.** That is the best argument I can give you for why you need a number and not a plot. Your eye found nothing in that first picture. **The silhouette found 0.2849 and the elbow found a drop ratio of 3.9, and both of them were right.**
 >
-> And the percentage is still in both axis labels, because `36.2 + 19.2 = 55.4`, so **44.6% of these wines is not on the page** and two bottles sitting on top of each other might not be alike at all."
+> And the percentage is still in both axis labels, because `36.2 + 19.2 = 55.4`, so **44.6% of the spread in these wines is not on the page** and two bottles sitting on top of each other might not be alike at all."
 
 **Do this:** Now put the whole argument on the board, as five lines. **This is the deliverable and it is worth writing out in full.**
 
@@ -1426,9 +1426,9 @@ run(30)
 
 > **Say this:** "**146 against 141. Five numbers that were built without ever looking at a single label beat thirteen carefully measured chemical properties.**
 >
-> And the reason is the row count. With 30 training rows, a thirteen-column model has forty-two coefficients to estimate and nowhere near enough rows to do it. **k-means got to use the geometry of all 30 rows without needing any labels at all, and then handed over three numbers that already knew where the groups were.**
+> And the reason is the row count. With 30 training rows, a thirteen-column model has forty-two coefficients to estimate and nowhere near enough rows to do it. **k-means got to use the geometry of all 30 rows without needing any labels at all, and then handed over three numbers that already knew where the groups were.** *(Honest footnote: k-means and PCA were fitted on the same 30 labelled rows, so the gain is most likely dimensionality reduction, 5 inputs against 13, not yet use of unlabelled data.)*
 >
-> That is not a trick. **That is the single most useful thing unsupervised learning does: it works on unlabelled data, and labels are the expensive part.**"
+> That is not a trick. **That points at something unsupervised learning can do: it works on unlabelled data, and labels are often the expensive part** (this experiment only hints at it, since no extra unlabelled rows were used)."
 
 ### Step 3 — but is it real? (2 minutes)
 
@@ -1517,7 +1517,7 @@ And when there genuinely is nothing downstream — you were asked to "understand
 
 **The opposite, and the reason is worth getting right.**
 
-Labels matter enormously. What that result shows is that **labels are expensive and unlabelled rows are cheap**, so anything that squeezes value out of unlabelled rows is worth a lot.
+Labels matter enormously. What that result shows is narrower: k-means and PCA were fitted on the same 30 labelled rows, so the gain is most likely dimensionality reduction (5 inputs against 13), not use of unlabelled data. The general point that **labels are often expensive and unlabelled rows cheap** is true, but it needs a fairer test than this one to demonstrate (fit k-means and PCA on extra unlabelled rows).
 
 Look again at what happened. With **124** labelled rows, the thirteen original columns got 54 of 54 — perfect — and the unsupervised columns added nothing. With **30** labelled rows, the thirteen columns dropped to 141 of 148 and the unsupervised columns overtook them. **The thing that changed was not the value of the labels. It was how many of them there were.**
 
@@ -1954,7 +1954,7 @@ od280/od315_of_diluted_wines    2.80    1.70     3.16     2.61
 proline                       510.17  619.06  1100.23   746.89
 ```
 
-**The map:** three groups, clearly separated left to right along PC1, with the cluster-1 triangles top-left, the cluster-2 squares to the right and the cluster-0 circles low and central. **`36.2 + 19.2 = 55.4`, so 44.6% of these wines is not on the page** — and the honest comparison is with last week's uncoloured version of the same plot, which looked like a single blob.
+**The map:** three groups, clearly separated left to right along PC1, with the cluster-1 triangles top-left, the cluster-2 squares to the right and the cluster-0 circles low and central. **`36.2 + 19.2 = 55.4`, so 44.6% of the spread in these wines is not on the page** — and the honest comparison is with last week's uncoloured version of the same plot, which looked like a single blob.
 
 Names and defences: as on page 30.4.
 
@@ -2078,7 +2078,7 @@ pure noise       0.0776            0.5791
 
 **Activity B step 1 — "did the five new columns help?"** **No — 54 of 54 either way.** **"Is that the same as useless?"** **No.** The problem was already solved; there was no room. **That is a ceiling, and the experiment cannot answer the question.**
 
-**Activity B step 2 — "how many more wines?"** **Four: 141 of 148 becomes 145 of 148.** **"And the third row?"** **The five new columns on their own got 146 of 148 — they beat all thirteen original columns**, because with 30 rows a 13-column model has 42 coefficients and nowhere near enough rows, while k-means used all 30 rows' geometry with no labels at all.
+**Activity B step 2 — "how many more wines?"** **Four: 141 of 148 becomes 145 of 148.** **"And the third row?"** **The five new columns on their own got 146 of 148 — they beat all thirteen original columns**, because with 30 rows a 13-column model has 42 coefficients and nowhere near enough rows, while k-means used all 30 rows' geometry with no labels at all (the same 30 rows, so mostly a dimensionality-reduction effect).
 
 **Activity B step 3 — "is four wines real or a lucky split?"** Over ten splits the mean gain is **+1.15 points** against a baseline wobble of **0.0125**, so the size is not convincing — **but the 18-column model won 8, tied 2 and lost 0. The consistency is the evidence, not the size.**
 

@@ -260,12 +260,12 @@ The mean, worked out longhand because you will do it on the board:
 ![Five folds, five scores, one honest number](../figures/fig-w11-4-five-folds-five-scores-one-error-bar.svg)
 *Figure 11.4 — Five folds, five scores, one honest number. Five held-out chunks on the left, the five scores they produced on the right, and the mean worked out underneath.*
 
-**What the ± is for, in one sentence:** *it tells you how big a difference between two models you are entitled to believe.*
+**What the ± is for, in one sentence:** *it is a rule of thumb for how big a difference between two models to trust: a difference smaller than the spread is unproven, and a difference well outside it is worth taking seriously.* (It is the spread of single-fold scores; the sharper test is to score both models on the same folds.)
 
 That is the whole answer to objective 4, and here is how to make it concrete:
 
 - Our band is **0.628 ± 0.087**, so roughly **0.54 to 0.72**.
-- Somebody hands you a new model scoring **0.65**. Is it better? **You cannot tell.** 0.65 is inside your band. It might be the same model on a luckier split.
+- Somebody hands you a new model scoring **0.65**. Is it better? **You cannot tell from this.** 0.65 is inside your band. It might be the same model on a luckier split.
 - Somebody hands you a model scoring **0.85**. **Now you can talk**, because 0.85 is well outside the band.
 
 🍕 **The analogy.** Weighing yourself. If the scale reads 60 kg ± 0.2 kg, you can detect a 1 kg change and a diet that claims 1 kg is checkable. If it reads 60 kg ± 3 kg, a 1 kg change is invisible and **any claim about 1 kg is unmeasurable with that equipment.** The equipment did not lie to you; you just cannot ask it that question.
@@ -985,7 +985,7 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: they fini
 
 *Hoped-for answer:* you cannot tell — 0.65 is inside our band.
 
-> "You cannot tell. 0.65 is sitting inside our band. It might be our own model on a luckier split. **The `±` is not decoration on your result. It is the thing that tells you which differences you are allowed to believe.**
+> "You cannot tell. 0.65 is sitting inside our band. It might be our own model on a luckier split. **The `±` is not decoration on your result. It is your rule of thumb for which differences to trust and which to treat as unproven.**
 >
 > Bring me 0.85 and we will talk."
 
@@ -1507,7 +1507,7 @@ The mean, longhand:
 
 **Full marks, sentence one:**
 
-> "The `±` tells me **how big a difference between two models I am allowed to believe.** Our band is 0.628 ± 0.087, so about 0.54 to 0.72. Any model scoring inside that band might just be our own model on a luckier split, so I cannot claim it is better."
+> "The `±` is my **rule of thumb for how big a difference between two models to trust.** Our band is 0.628 ± 0.087, so about 0.54 to 0.72. Any model scoring inside that band might just be our own model on a luckier split, so I cannot claim it is better."
 
 **Full marks, sentence two:**
 
@@ -1537,7 +1537,7 @@ The mean, longhand:
 
 > **AUC** — the area under the ROC curve, added up as trapezoid strips. A coin's curve is the diagonal and the area under it is exactly 0.5. Ours is 0.6116.
 
-> **Error bar** — the `±` printed beside a mean. It says how much the number moves when you measure the same thing again a slightly different way, and therefore which differences you are allowed to believe.
+> **Error bar** — the `±` printed beside a mean. It says how much the number moves when you measure the same thing again a slightly different way, and therefore a rule of thumb for which differences to trust.
 
 **Bug Log — both entries are silent.**
 

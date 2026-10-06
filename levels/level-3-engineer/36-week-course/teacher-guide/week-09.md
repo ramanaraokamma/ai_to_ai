@@ -291,7 +291,7 @@ flags everything  :  2 × 14 ÷ (28 + 986 + 0)    =  28 ÷ 1014  =  0.0276
 
 **The one sentence for objective 2**, and it is worth writing on the board and leaving there:
 
-> **"F1 is the right summary when both errors matter and the classes are imbalanced, because it cannot be faked by flagging almost nothing or by flagging almost everything."**
+> **"F1 is the right summary when both errors matter and the classes are imbalanced, because it cannot be faked by flagging almost nothing, or — when positives are rare — by flagging almost everything."** *(Teacher note: flag-everything has F1 = 2π/(1+π) for positive rate π. Fraud, π = 1.4%: 0.0276. Delivery, π = 28.75%: 0.4466, against the model's 0.4976. Have students compare F1 with the flag-everything F1.)*
 
 ### 8. `macro average` and `support`, which are printed on the screen and will get asked about
 
@@ -1031,7 +1031,7 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: five stat
 >
 > A table of eight rows, a baseline and seven experiments, where four of them made things worse, and you wrote every one down. A two-by-two with four counts in it that add to a thousand, and you checked. And five handovers from a relay where you rebuilt the whole term from memory in forty minutes, ending in **one file on disk** that contains everything: the imputer, the scaler, the encoder and the model, sealed together so it cannot be used wrong.
 >
-> And one new number. **0.2500** for the fraud model. Not 0.9860, not 0.9820, not 0.6204, not 0.9805. **0.2500**, because that is the honest one, and you can now say why in one sentence: it is the harmonic mean of precision and recall, so it lands near the smaller of the two, so **it cannot be faked by flagging almost nothing or by flagging almost everything.**"
+> And one new number. **0.2500** for the fraud model. Not 0.9860, not 0.9820, not 0.6204, not 0.9805. **0.2500**, because that is the honest one, and you can now say why in one sentence: it is the harmonic mean of precision and recall, so it lands near the smaller of the two, so **it cannot be faked by flagging almost nothing, or — when positives are rare, as here — by flagging almost everything.**"
 
 **Do this:** Three quick checks — exact wording in **✅ Assessing Understanding**.
 
@@ -1901,7 +1901,7 @@ saved: term1_model.joblib
 | 6 | **What was the leak and how did you catch it?** | "`similar_orders_late_rate` — built from the `late` column of all 2,000 rows. Fake AUC **0.9240**, honest **0.7535**. I caught it with the question that needs no arithmetic: **at the moment an order is placed, does this value exist?** No. Nobody knows yet whether it will be late." |
 | 7 | **How many rows did your ablation table have, and how many were regressions?** | "Eight rows (a baseline and seven changes): **five dropped, four of them true regressions.** Two kept. Total honest gain **0.7541 → 0.7599 = +0.0058.** Five dropped out of seven is not bad work — it is what the table is for." |
 | 8 | **Why isn't accuracy enough?** | "On the fraud data a model that never says yes scores **0.9860**, and a real tree scores **0.9820** and catches 3 frauds out of 14. **Accuracy went down and the model got better.** The four counts could tell them apart and accuracy could not." |
-| 9 | **What one number would you put on the report, and why?** | "**F1.** For the delivery model, **0.4976 on the 400 validation rows.** Because it is the harmonic mean of precision and recall, so it lands near the smaller of the two, so it cannot be faked by flagging almost nothing or by flagging almost everything. **And I would print the four counts underneath it**, because from the counts anybody can recompute every other number, and from F1 alone nobody can get back." |
+| 9 | **What one number would you put on the report, and why?** | "**F1.** For the delivery model, **0.4976 on the 400 validation rows.** Because it is the harmonic mean of precision and recall, so it lands near the smaller of the two, so it cannot be faked by flagging almost nothing, or (when positives are rare) almost everything. On the delivery data flag-everything would already score about 0.4466, so 0.4976 should be read against that. **And I would print the four counts underneath it**, because from the counts anybody can recompute every other number, and from F1 alone nobody can get back." |
 
 **Marking notes.** **Every answer needs at least one number in it.** "The audit found some problems" is worth nothing; "20 duplicates and 108 missing" is worth full marks. Question 6 is the one to mark hardest — a student who quotes the two AUCs **and** the "does this value exist yet?" question has the whole of Week 6 and Week 7. Question 9 with no pile named loses a mark, as it will every week until June.
 

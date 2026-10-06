@@ -66,7 +66,7 @@ Sixteen million is not. **That is the only difference.**
 
 **One walk backwards, and everybody's share of the blame falls out.** Each person only ever needs to know two things: **how much blame arrived at them**, and **how much they pass back to the person before them.**
 
-That is backprop. **Blame arrives; you keep your share; you pass the rest back.** Nothing in the chain needs to know anything about the rest of the chain.
+That is backprop. **Blame arrives; you keep your share; you pass the rest back.** (One caution: the parcel's days add up, but in a network the blame is *multiplied* by each stage's slope, so a stage can shrink or amplify what it passes back. That is the next section.) Nothing in the chain needs to know anything about the rest of the chain.
 
 ### 2. Slopes multiply along a chain
 
@@ -975,7 +975,7 @@ with keepdims   : [[ 0.042091 -0.011355]] (1, 2)
 b1.shape        : (1, 2)
 ```
 
-**No error, and the numbers are identical.** But `db1` is now `(2,)` and `b1` is `(1, 2)`, so the two shapes no longer match — and the moment you start updating weights next week, a `(2,)` will broadcast somewhere you did not intend.
+**No error, and the numbers are identical.** But `db1` is now `(2,)` and `b1` is `(1, 2)`, so the two shapes no longer match — so it is a mismatch waiting to happen. The plain update `b1 -= lr * db1` would happen to broadcast harmlessly, but a flat `(2,)` behaves differently in other lines (`db1[0, 1]` raises an `IndexError`, and mixing it with a 2-D grid can silently stretch it the wrong way), so match the shapes now.
 **The fix:** `keepdims=True`, always. **A gradient has the shape of its knob.**
 
 ### Break 4 — the `÷ n` forgotten

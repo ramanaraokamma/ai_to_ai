@@ -982,7 +982,7 @@ Worked slowly for the first one: 2020 × 0.99 = 1999.8, which is nearly 2000, so
 
 **M4(a).** Rows 3, 5, 7 and 11 are late, so **4** out of 12 = **0.3333.** "Never late" would be right 8 times out of 12, which is **0.6667.**
 
-**M4(b).** **`order_id`** scored above 0.95 and is out because it names the row instead of describing it — order 7 is not late *because* it is order 7. **`late`** scored 0.1667, well below 0.95, and is out for a completely different reason: **it is the answer.** Putting the target in X is not a leak, it is not even a model — it is a lookup.
+**M4(b).** **`order_id`** scored above 0.95 and is out because it names the row instead of describing it — order 7 is not late *because* it is order 7. **`late`** scored 0.1667, well below 0.95, and is out for a completely different reason: **it is the answer.** Putting the target in X is not even a model — it is a lookup.
 
 That contrast is worth keeping. **The check flags one kind of "not a feature". Your contract has to catch the other.**
 
@@ -1030,7 +1030,7 @@ This is the bit that catches everybody. A seeded generator is not a machine that
 **line 1:** 24 ÷ **3** = **8.0** — pandas skipped the two holes and divided by the three values that exist.
 **line 2:** 24 ÷ **5** = **4.8** — you divided by the length of the series.
 
-Five numbers, and the two answers are nearly double each other. This is exactly the 29.6512-against-28.0658 bug shrunk to something you can check in your head — and that is why it is worth doing on five numbers before you meet it on 2020.
+Five numbers, and the two answers are far apart (8.0 against 4.8, a ratio of about 1.7). This is exactly the 29.6512-against-28.0658 bug shrunk to something you can check in your head — and that is why it is worth doing on five numbers before you meet it on 2020.
 
 **P4.**
 

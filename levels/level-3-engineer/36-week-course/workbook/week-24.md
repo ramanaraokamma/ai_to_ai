@@ -1161,7 +1161,7 @@ nn.Conv2d(1, 4, kernel_size=3)     40
 
 > "On the 8 × 8 picture the dense layer needs 1,040 learnable numbers and the convolution needs 10 — a hundred and four times fewer — and the convolution is *also* the one that knows which pixels are neighbours, so it is smaller and **better** rather than smaller and worse. And the gap grows with the picture: on a 64 × 64 image the dense layer needs over a million while the convolution still needs 40."
 
-*"Conv is smaller"* is half a mark. **The verdict has to contain a reason**, and the best ones contain two: the count, and the fact that the cheaper layer is the one with the right assumption baked in.
+*"Conv is smaller"* is half a mark. **The verdict has to contain a reason**, and the best ones contain two: the count, and the fact that the cheaper layer is the one with the right assumption baked in. (Note for marking: 1,040 against 10 is not a like-for-like comparison, because the dense layer makes 16 numbers and the convolution a whole map; the fairer figure is 592 against 10, about 59 times. Praise a verdict that says so.)
 
 ### Predict the Output
 

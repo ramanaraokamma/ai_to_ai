@@ -5,7 +5,7 @@
 ---
 
 > ### This week in one sentence
-> **Training is a loop: get the slope for every knob, step every knob a little way against its slope, repeat. That loop is what `fit()` was doing all along.**
+> **Training is a loop: get the slope for every knob, step every knob a little way against its slope, repeat. That loop is what `fit()` was doing all along for logistic regression.**
 >
 > **By the end of this chapter you will be able to:**
 > - **Write logistic regression trained by your own numpy gradient descent** in about 25 lines, with no framework anywhere near the training loop
@@ -341,7 +341,7 @@ b  ← −0.118950 − 1.0 × (+0.057390) = −0.176340
 
 Because the slopes, taken together, are shrinking as the weights get closer to the bottom of the bowl (their overall size goes `0.395`, `0.297`, `0.246`, `0.215`; any single slope, like `w1`'s, can wobble on the way). **Flatter ground means smaller steps means smaller improvements.** That is what approaching a minimum looks like, and it is why a converged run goes *flat* rather than stopping dead at some particular epoch.
 
-> **💡 Try this:** check any one of these numbers with Week 12's nudge instead of the formula. Compute the loss at `w1 = 0.375`, then at `0.3751` and `0.3749`, and divide the difference by `0.0002`. You should get `−0.102682` — **the round-1 slope, from a completely different method.** Worked Example 2 does exactly this and the two agree to nine decimal places.
+> **💡 Try this:** check any one of these numbers with Week 12's nudge instead of the formula. Compute the loss at `w1 = 0.375`, then at `0.3751` and `0.3749`, and divide the difference by `0.0002`. You should get `−0.102682` — **the round-1 slope, from a completely different method.** Worked Example 2 does exactly this and the two agree to eight decimal places.
 
 ---
 
@@ -980,7 +980,7 @@ error x feature, avg: -0.102682165      <- Week 15's formula
 they differ by      : 0.000000001271
 ```
 
-**Two completely different methods, agreeing to nine decimal places.** One nudges the weight and watches the loss move. The other multiplies an error by a feature. **Neither one knows the other exists.**
+**Two completely different methods, agreeing to eight decimal places.** One nudges the weight and watches the loss move. The other multiplies an error by a feature. **Neither one knows the other exists.**
 
 **This technique has a name — a gradient check — and it is the most valuable thing in this worked example.** From here on, whenever you write a formula for a slope and you are not sure, you can *test* it: nudge, divide, compare. In Week 18 it becomes compulsory, because the network has more knobs than you can check by eye.
 
@@ -1364,7 +1364,7 @@ The ↻ has been black since Week 12, and this week you finally run it yourself.
 - **Three learning rates, three names.** `0.005` too small (`0.5098`, still falling). `0.5` converged (`0.3416`, `downhill? True`). `800` diverged (`7.8482`, `downhill? False`, worst `12.1169`). **Measure monotonicity, do not eyeball it.**
 - **Every training run starts at `0.6931`.** If it is not falling by epoch 10, print `w`. If it is climbing, check the minus sign. If it is wobbling, divide the learning rate by ten.
 - **You wrote `fit()` and it matched scikit-learn to six decimals — because this loss is convex.** One bowl, one bottom, one right answer, so any correct method must find it. **Today's exactness is a property of today's problem.**
-- **The maths reminder:** a slope is a slope whichever way you get it. Week 12's nudge and Week 15's formula agree to nine decimal places, and that check is called a **gradient check**.
+- **The maths reminder:** a slope is a slope whichever way you get it. Week 12's nudge and Week 15's formula agree to eight decimal places, and that check is called a **gradient check**.
 
 ### Syntax reminder card
 

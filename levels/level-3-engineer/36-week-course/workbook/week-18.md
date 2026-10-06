@@ -1373,7 +1373,7 @@ step 5:  dW1[0][0] = 1.0 × (−0.30880556) = −0.30880556
 
 Line 1 is **`dW2`**'s shape — and `W2` is `(2, 1)`, so ✅. Line 2 is **`dA1`**'s shape — and `A1` is `(4, 2)`, so ✅.
 
-**Lines 3 and 4 add up exactly the same four numbers.** `(1, 1)` is `db2`'s correct shape, because `b2` is `(1, 1)`. `(1,)` is flat, and **`b2` is not flat** — so the two shapes no longer match. Nothing breaks *today*, because the numbers are identical; it breaks next week, when you write `b2 -= lr * db2` and a `(1,)` broadcasts somewhere you did not intend. **A gradient has the shape of its knob.**
+**Lines 3 and 4 add up exactly the same four numbers.** `(1, 1)` is `db2`'s correct shape, because `b2` is `(1, 1)`. `(1,)` is flat, and **`b2` is not flat** — so the two shapes no longer match. Nothing breaks *today*, because the numbers are identical; the plain update `b2 -= lr * db2` would even work, because `(1, 1) -= (1,)` broadcasts harmlessly, but a flat gradient behaves differently in other lines (indexing it with two numbers raises an `IndexError`, and mixing it with a bigger grid can stretch it the wrong way), so it is a trap rather than a crash. **A gradient has the shape of its knob.**
 
 **P3.**
 
@@ -1442,7 +1442,7 @@ The rule: **"the bias is added to every row, so it collects blame from every row
 | e | **No error.** Every gradient comes out four times too big; a learning rate of `0.1` behaves like `0.4` | `dZ2 = (A2 - y) / n` |
 | f | **No error.** `dW1` and `db1` are wrong, `dW2` and `db2` are right, and nothing tells you | `dZ1 = dA1 * (Z1 > 0).astype(float)` |
 
-**A3(g).** **d, e and f** run without error. The two that produce **wrong gradients** are **e and f**. A gradient check catches **both of them** — e at exactly `6.00e-01` everywhere, f at between `0.24` and `1.00` **on the hidden layer only.** *(And d is the one a gradient check would **not** catch, because the numbers are right; it is a shape bug that only bites next week.)*
+**A3(g).** **d, e and f** run without error. The two that produce **wrong gradients** are **e and f**. A gradient check catches **both of them** — e at exactly `6.00e-01` everywhere, f at between `0.24` and `1.00` **on the hidden layer only.** *(And d is the one a gradient check would **not** catch, because the numbers are right; it is a shape-convention bug that can bite in later lines, though the plain update would survive it.)*
 
 **A4.** i → **R** · ii → **P** · iii → **T** · iv → **S** · v → **Q**
 

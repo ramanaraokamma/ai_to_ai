@@ -100,7 +100,7 @@ total   =         10
 1040 ÷ 10 = 104
 ```
 
-**A hundred and four times fewer learnable numbers.** And the smaller one is the one that knows what a neighbourhood is. That is not a compromise; it is a better tool.
+**A hundred and four times fewer learnable numbers.** And the smaller one is the one that knows what a neighbourhood is. That is not a compromise; it is a tool with the right assumption built in. (Honest caveat: this is not a like-for-like job. The dense layer makes 16 numbers; the convolution makes a whole 6 × 6 map. For the same 4 × 4 map later this week it is 592 against 10, about 59 times fewer. Still a big gap, just a fairer one.)
 
 And the gap grows fast, because **a convolution's count does not depend on the size of the picture at all.** On a 64 × 64 picture:
 
@@ -736,7 +736,7 @@ total   =          10
 
 *Hoped-for answer:* 1040 ÷ 10 = 104.
 
-> "A hundred and four times fewer, **and the small one is the one that knows what a neighbourhood is.** That is not a trade-off. That is a better tool that is also cheaper."
+> "A hundred and four times fewer, **and the small one is the one that knows what a neighbourhood is.** That is not a trade-off. It is a tool with the right assumption built in, and it is also cheaper." (Say the caveat too: the comparison is not like-for-like, since the dense layer makes 16 numbers and the convolution a 6 × 6 map; the fairer 4 × 4 figure is 592 against 10, about 59 times.)
 
 **Do this:** Write both numbers on the wall sheet, in the two new rows.
 
@@ -1803,7 +1803,7 @@ the vertical kernel on the cross, all 36 cells:
 
 > "On the 8 × 8 picture the dense layer needs 1,040 learnable numbers and the convolution needs 10 — a hundred and four times fewer — and the convolution is *also* the one that knows which pixels are neighbours, so it is smaller and better rather than smaller and worse. And the gap grows with the picture: on a 64 × 64 image the dense layer needs over a million while the convolution still needs 40, because a convolution's count depends on the size of its kernel and not on the size of the picture."
 
-**Marking notes.** *"Conv is smaller"* is half a mark. The verdict has to contain **a reason**, and the best ones contain two: the count, and the fact that the cheaper layer is the one with the right assumption baked in. **A student who spots that rows 3 and 5 are the same 40 numbers has understood weight sharing**, and that is worth saying on the page.
+**Marking notes.** *"Conv is smaller"* is half a mark. The verdict has to contain **a reason**, and the best ones contain two: the count, and the fact that the cheaper layer is the one with the right assumption baked in. **A student who spots that rows 3 and 5 are the same 40 numbers has understood weight sharing**, and that is worth saying on the page. **Accept a verdict that uses 1,040 against 10, and praise one that notes it is not like-for-like (592 against 10, about 59 times, is the fairer figure).**
 
 ### Page 24.6 — Six short questions
 

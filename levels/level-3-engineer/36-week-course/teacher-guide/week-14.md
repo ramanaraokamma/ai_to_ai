@@ -192,7 +192,7 @@ log loss            : 0.693147
 |---|---|
 | 1 | **Print the weights.** Are they all still zero? Then nothing has been updated — the update step is missing, or the learning rate is so small nothing moved. |
 | 2 | **Print the features.** Are they all zero, or all identical? A scaler applied to the wrong thing, or a column selected that does not exist, will do this. |
-| 3 | **Print the labels.** Are they all the same value? A model cannot learn to separate one class from itself. |
+| 3 | **Print the labels.** Are they all the same value? Then a class went missing (a data bug; training on one class would not sit at 0.6931). If both classes are present and the loss is still parked, suspect labels shuffled or misaligned with the rows. |
 
 ![A loss parked at 0.6931](../figures/fig-w14-4-loss-parked-at-0-6931.svg)
 *Figure 14.4 — A loss parked at 0.6931. Five hundred steps and it has not moved.*
@@ -1702,7 +1702,7 @@ Because every row's surprise is `−ln(0.5)` regardless of the label: if `y = 1`
 >
 > **Two.** It does not depend on the data because when `p = 0.5` the two branches of the loss are the same number: if the answer was yes the cost is `−ln(0.5)` and if it was no the cost is `−ln(1 − 0.5)`, which is also `−ln(0.5)` — so the labels never enter the arithmetic at all, and a balanced dataset and a 90%-skewed one both score 0.693147.
 >
-> **Three.** I would print the weights first: if they are all still zero then nothing has been updated, so either the update step is missing or the learning rate is so small that nothing has moved. Then I would print the feature column means and standard deviations: if the features are all zero or all identical, the raw score is forced to be zero no matter what the weights are. Then I would print `np.unique(y)`: if there is only one class present, there is nothing to separate and no loss function can help.
+> **Three.** I would print the weights first: if they are all still zero then nothing has been updated, so either the update step is missing or the learning rate is so small that nothing has moved. Then I would print the feature column means and standard deviations: if the features are all zero or all identical, the raw score is forced to be zero no matter what the weights are. Then I would print `np.unique(y)`: if there is only one class present, that is a data bug (there is nothing to separate), and if both classes are present but the loss is still parked, the labels may be shuffled or misaligned with the rows.
 
 **Marking notes.** Sentence one is arithmetic and almost everybody gets it. **Sentence two is the discriminator** — the answer must say *why the label stops mattering*, which is that both branches collapse to the same number at `p = 0.5`. *"Because it's always 0.5"* is halfway. Sentence three must name **what would be printed** and **what each answer would imply**; a list of three things to print with no conclusions attached is worth half.
 

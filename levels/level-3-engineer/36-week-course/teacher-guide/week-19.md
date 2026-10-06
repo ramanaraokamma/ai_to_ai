@@ -209,7 +209,7 @@ Read it as English: *for every single knob — nudge it up a hair, see what the 
 
 `bottom` is there so the comparison is **relative**: being out by 0.0001 matters if the slope is 0.0002 and does not matter if the slope is 900. And `A[i, j] = orig` — **always put the weight back** — is the line students forget. Measured: leaving it out shifts every weight by 1e-6, which is harmless to the result but means the check altered the model. It is in the Clinic.
 
-**A number to expect: `4.792e-08`.** That is scientific notation for 0.00000004792. Anything below `1e-6` (0.000001) means the backward pass is correct. **This is not a hope, it is a measurement.**
+**A number to expect: `4.792e-08`.** That is scientific notation for 0.00000004792. Anything below `1e-6` (0.000001) is strong evidence the backward pass is correct (it is a numerical test on a few rows at one random start, not a proof, and it can fail falsely at a ReLU corner, as Break 3 shows). **This is not a hope, it is a measurement.**
 
 **The training loop.**
 
@@ -396,10 +396,10 @@ Nothing is broken. Nothing dies. The network simply **cannot bend**. One ReLU un
 ### 8. The three misconceptions you will actually meet
 
 **Misconception 1 — "more hidden units is always better."**
-Not always, and we have the measurement. Sixteen units score 0.9350 on test; **sixty-four units score 0.9550 on train and only 0.9150 on test.** The big one has learned the noise in the training crescents — Week 2's overfitting, reappearing with a new dial to turn. The cure is the sweep in workbook page 19.6, done with their own hands.
+Not always, and we have the measurement. Sixteen units score 0.9350 on test; **sixty-four units score 0.9550 on train and only 0.9150 on test.** The big one has a larger train-test gap, which is the shape of Week 2's overfitting reappearing with a new dial to turn (the cause is a hypothesis: one seed and 200 test rows, and across seeds 0-4 the 16- and 64-unit test scores overlap, 0.920-0.935 against 0.915-0.930, while the gap is mildly larger at 64 units). The cure is the sweep in workbook page 19.6, done with their own hands.
 
 **Misconception 2 — "the network is drawing a curve."**
-It is drawing up to sixteen straight lines and joining them. Zoom into the boundary plot and the corners are visible. This matters because it explains everything about capacity in one sentence: **you get one hinge per unit, so the number of units is the number of bends you are allowed.**
+It is drawing up to sixteen straight lines and joining them. Zoom into the boundary plot and the corners are visible. This matters because it explains everything about capacity in one sentence: **you get one hinge per unit, so the number of units is a rough guide to how many bends you can afford (one unit alone gives no bend at all, and a hinge can bend the boundary in more than one place).**
 
 **Misconception 3 — "the gradient check is a formality."**
 It is the opposite: it is the only reason to believe the file. A network with a wrong backward pass **still trains**, usually to a mediocre score, and never tells you. The check is the difference between "my loss went down so it must be right" and "my slopes are correct to eight decimal places". Make them run it before they train, every time.
@@ -606,7 +606,7 @@ final test  acc 0.9350
 
 **Expected runtime: under 1 second.** If your gradient check is not `4.792e-08`, a seed is missing: check `random_state=0` in `make_moons`, `random_state=0` in `train_test_split`, and `seed=0` in `init_params`.
 
-- [ ] **Run `plot_boundary.py`** (full file in the Answer Key, page 19.4) and **look at the PNG**. Three panels. Panel 1 is a straight line, panel 3 bends. Expected runtime about **1.5 seconds**. Its printed output is:
+- [ ] **Run `plot_boundary.py`** (full file in the Answer Key, page 19.4) and **look at the PNG**. Three panels. Panel 1 is a V-shaped boundary in a poor place, panel 3 has the most bends. Expected runtime about **1.5 seconds**. Its printed output is:
 
 ```text
 XX shape (200, 200)  grid shape (40000, 2)
@@ -644,7 +644,7 @@ epoch 500  loss 0.1542  test acc 0.9350
 
 | If this fails | Do this instead |
 |---|---|
-| The gradient check prints something like `2.3e-01` | The backward pass is wrong, not the check. Nine times in ten it is a missing `.T`, and the shape ladder in §3 finds it in twenty seconds. |
+| The gradient check prints something like `2.3e-01` | Usually the backward pass is wrong, not the check; a wrong transpose often raises a loud shape error instead, so look for a wrong sign, a missing factor or a wrong axis, and the shape ladder in §3 helps. But a huge value with correct code can be a ReLU-corner false alarm (Break 3): print the smallest pre-activation. |
 | The gradient check prints `nan` | The loss or a slope overflowed or hit `log(0)`; look at the learning rate / inputs. (A missing `A[i, j] = orig` only shifts each weight by 1e-6; it does not give `nan`.) |
 | The loss sits at exactly `0.6931` | Weights are all zero, or all equal. That is breakage 1, arriving early — use it. |
 | The loss is `nan` after a few epochs | The learning rate is far too large. Ours is 0.5; anything above about 5 on this data starts killing units, and 100 gives `nan`. |
@@ -790,7 +790,7 @@ Write the left column first, then ask for each shape **before** you write it.
 
 *Hoped-for answer:* tiny — it is 0.00000004792.
 
-> "Below `1e-6` and we are happy. **This is the only number today that is a proof rather than an opinion.**"
+> "Below `1e-6` and we are happy. **This is the only number today that is a measurement rather than an opinion.**"
 
 ---
 
@@ -1092,7 +1092,7 @@ Then run it and watch `0.6931` appear on the screen five times in a row. **One b
 1. **Find the learning rate where the units start dying.** Sweep 0.5, 5, 20, 50. Real numbers: `0/16`, `0/16`, `13/16`, and at 100 the loss is `nan`. Ask what `nan` does to the dead-unit count. (It breaks it: `nan <= 0` is `False`, so `nan` units are counted as alive. **A broken measurement is worse than no measurement.**)
 2. **Try to revive the dead.** Take the lr = 20 model and train it 2000 more epochs at lr = 0.5. Real answer: still 13 dead, test accuracy drifts to 0.8050. Then the question: *"what would you have to change by hand to bring unit 0 back?"* (Its bias, from −14.113 to something small. Nothing in the training loop can do that.)
 3. **All weights equal to 0.5** instead of zero. It reaches 0.9000, and all sixteen hidden columns end up identical to six decimal places. Ask: *"how many hidden units does this network really have?"* **One.** This is the cleanest demonstration of symmetry available.
-4. **The capacity sweep** (page 19.6): 1, 2, 4, 8, 16, 64 units. The interesting row is 64: train accuracy 0.9550, test accuracy 0.9150. **More capacity, worse score.** Ask them to name what that is. (Overfitting, from Week 2, with a new dial.)
+4. **The capacity sweep** (page 19.6): 1, 2, 4, 8, 16, 64 units. The interesting row is 64: train accuracy 0.9550, test accuracy 0.9150. **More capacity, a bigger train-test gap, and (with this seed) a slightly lower test score.** Say plainly that four test rows is within noise. Ask them to name what that looks like. (Overfitting, from Week 2, with a new dial.)
 5. **Zoom into the boundary.** Re-plot with the axes limited to a small window around one bend. The "curve" is visibly made of straight segments. Ask how many bends they can count and compare with 16.
 
 ---
@@ -1119,7 +1119,7 @@ Because gradient descent is affected by scale even when the model is not, and We
 
 **"My gradient check passed but my accuracy is worse than yours. Is something wrong?"**
 
-Almost certainly not. The check proves your *derivatives* are right; it says nothing about your *choices*. Different learning rate, different epoch count, a different seed — all of those move the final number without any bug being present.
+Almost certainly not. The check tests that your *derivatives* are right; it says nothing about your *choices*. Different learning rate, different epoch count, a different seed — all of those move the final number without any bug being present.
 
 The two things worth checking: are all three seeds set (`make_moons`, `train_test_split`, `init_params`), and did you scale the features? If yes to both and you are above 0.90, **you have met the objective.** 0.9350 is not a target to hit exactly; it is the number this particular set of seeds produces.
 
@@ -1303,7 +1303,7 @@ Three checks, five minutes, exact wording.
 
 **Expected time:** 25 min getting the file to pass the check and train · 20 min on the three panels · 15 min on the dead-unit count and the sentence. **About 60 minutes.**
 
-> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — is the gradient check pasted, and is it below `1e-6`?** A page with a training log and no check has skipped the only proof in the week. **Two — do the three panels have their numbers under them?** Three pictures with no numbers is an art project. **Three — does the dead-unit sentence contain the word 'slope', and does it say 'zero'?** The whole idea is that a dead unit is not sleeping — it is disconnected from the loss, and multiplying zero by any learning rate you like gives zero. A student who writes *"it stops learning because it got too big"* has the story and not the mechanism, and that is worth one line of feedback: **"what is the slope of a unit that outputs zero for every row?"**
+> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — is the gradient check pasted, and is it below `1e-6`?** A page with a training log and no check has skipped the only hard evidence in the week. **Two — do the three panels have their numbers under them?** Three pictures with no numbers is an art project. **Three — does the dead-unit sentence contain the word 'slope', and does it say 'zero'?** The whole idea is that a dead unit is not sleeping — it is disconnected from the loss, and multiplying zero by any learning rate you like gives zero. A student who writes *"it stops learning because it got too big"* has the story and not the mechanism, and that is worth one line of feedback: **"what is the slope of a unit that outputs zero for every row?"**
 
 ---
 
@@ -1454,13 +1454,13 @@ epoch 500  loss 0.1542  test acc 0.9350
 ```
 
 ![The boundary at epoch 0, epoch 50 and epoch 500](../figures/fig-w19-2-boundary-at-three-epochs.svg)
-*Figure 19.4 — The boundary at epoch 0, epoch 50 and epoch 500. Panel 1 is a straight line; panel 3 bends.*
+*Figure 19.4 — The boundary at epoch 0, epoch 50 and epoch 500. Panel 1 is a V in a poor place; panel 3 has the most bends and follows the gap.*
 
 **What the three panels show, and what to accept in marking:**
 
-- **Epoch 0** — a straight line, in a nearly random place. Loss 0.8095, test accuracy 0.6450. The knobs are the random numbers `init_params` handed out; nothing has learned anything.
-- **Epoch 50** — the line has acquired a bend and has moved into the gap between the crescents. Loss 0.3104, test accuracy 0.9150. **Most of the accuracy arrives in the first fifty epochs.**
-- **Epoch 500** — the boundary follows the gap, curving at both ends. Loss 0.1542, test accuracy 0.9350. The remaining 450 epochs bought 0.0200 of accuracy and a much lower loss, which is mostly the network becoming **more confident** about points it already had right.
+- **Epoch 0** — a V-shaped boundary (one sharp corner, near the middle of the page) in a poor place. Loss 0.8095, test accuracy 0.6450. The knobs are the random numbers `init_params` handed out; nothing has learned anything.
+- **Epoch 50** — the boundary now has a few bends (a corner, a small wiggle and a rise) and has moved into the gap between the crescents. Loss 0.3104, test accuracy 0.9150. **Most of the accuracy arrives in the first fifty epochs.**
+- **Epoch 500** — more bends, following the gap and curving at both ends. Loss 0.1542, test accuracy 0.9350. The remaining 450 epochs bought 0.0200 of accuracy and a much lower loss, which is mostly the network becoming **more confident** about points it already had right.
 
 **The arrow on panel 3** should point anywhere along the section where the boundary changes direction — typically the sweep near the upper-left crescent tip. Accept any location on the curved section; the answer being marked is *"it is not straight here"*, not a coordinate.
 
@@ -1588,7 +1588,7 @@ Real output:
 **The two sentences to look for:**
 
 1. *"Train loss falls all the way down the table — more capacity always fits the training data better."* (0.3693 → 0.1412, every row an improvement.)
-2. *"Test accuracy peaks at 16 units and then falls, so the 64-unit network is learning the noise in the training crescents: train 0.9550, test 0.9150. That is overfitting, and the gap between the two columns is what gave it away."*
+2. *"With this seed, test accuracy peaks at 16 units and is lower at 64 (0.9350 against 0.9150, four test rows out of 200). The 64-unit network fits the training crescents more tightly than it carries over to new data: train 0.9550, test 0.9150. That looks like overfitting, and the gap between the two columns is the clue; one seed cannot show it is more than noise."*
 
 **The interesting extra observation, worth full credit if unprompted:** 1, 2 and 4 units all score the same 0.8350 on train. Four hinges are available but, with seed 0, training only finds a use for one or two. It is not that the data does not need more (16 units reach train loss 0.1542 against 0.3565 for 4); gradient descent settled in a poor spot, and other seeds of the 4-unit network reach about 0.93 train accuracy. **Capacity is permission to bend, not an instruction to.**
 

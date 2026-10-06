@@ -1110,7 +1110,7 @@ And there is a fourth thing, which matters more over a career: **you now know th
 
 No, and this is worth being precise about because the honest answer is more interesting than the guess.
 
-It is not doing symbolic algebra — it never writes down a formula for the derivative. **It stores the graph and applies one small local rule per operation, numerically.** Every operation in PyTorch ships with two pieces of code: one that computes the output, and one that says "given the slope coming back into my output, here is the slope going out of each of my inputs". `backward()` just walks the graph from the end to the beginning, calling those, multiplying as it goes.
+It is not doing symbolic algebra — it never writes down a formula for the derivative. **It stores the graph and applies one small local rule per operation, on numbers rather than symbols.** Every operation in PyTorch ships with two pieces of code: one that computes the output, and one that says "given the slope coming back into my output, here is the slope going out of each of my inputs". `backward()` just walks the graph from the end to the beginning, calling those, multiplying as it goes.
 
 **That multiplying-as-it-goes is Week 18's chain**, unchanged: nudging `w` moves `z` three times as much, nudging `z` moves `L` fourteen times as much, so `w` moves `L` forty-two times as much. You did it by hand on a network with nine gradients. PyTorch does it on a network with nine billion.
 
@@ -1283,7 +1283,7 @@ Three checks, five minutes, exact wording.
 | **2 — Emerging** | Runs the supplied file and finds the matching numbers when shown where to look. Uses `.item()` when told to. Can say "backward gives you the slopes" without saying what a slope is here. |
 | **3 — Secure** | Builds the tensors, runs `backward()`, completes the match table and gets nine zeros. Names `requires_grad`, `grad_fn` and `.grad` and says what each does. Uses `.item()` and can show what breaks without it. **This is the target.** |
 | **4 — Strong** | Diagnoses a missing gradient by printing `requires_grad` and `grad_fn` before asking for help. Predicts `33` for the accumulation question. Explains the four-decimal display versus the eight-decimal value. Knows float32 is for training and float64 for checking, and why. |
-| **5 — Exceptional** | Explains autograd as one local rule per operation applied numerically along a stored graph, not as symbolic algebra. Shows that gradient shapes do not change when the batch size does. Argues that `.grad` accumulating is a trade-off — flexibility bought at the price of a bug everybody hits — and says what it buys. Spots that relu's slope at exactly 0 is a decision the library made. |
+| **5 — Exceptional** | Explains autograd as one local rule per operation applied on numbers, not symbols, along a stored graph, not as symbolic algebra. Shows that gradient shapes do not change when the batch size does. Argues that `.grad` accumulating is a trade-off — flexibility bought at the price of a bug everybody hits — and says what it buys. Spots that relu's slope at exactly 0 is a decision the library made. |
 
 ---
 

@@ -1241,7 +1241,7 @@ k-means++ with n_init=10: inertia 3.6667
 
 **(iv) is the giveaway line: its centres came back *different from the ones we handed in*** — (1.6667, 2.0), (9,7), (7.5,8.5) — because it moved. The other four handed back exactly what they were given, which is what "stopping place" means.
 
-**The punchline.** *"Six points and `k = 3` have at least four different places k-means can legally stop, and three of them are worse than the best one. Nothing inside the algorithm can tell which one it landed in — the only defence is to run it from several different starts and keep the lowest inertia, which is exactly what `n_init=10` does."*
+**The punchline.** *"Six points and `k = 3` have at least four different places k-means can legally stop, and three of them are worse than the best one. Nothing inside the algorithm can tell which one it landed in — the usual defence is to run it from several different starts and keep the lowest inertia, which is exactly what `n_init=10` does."*
 
 ### Think Deeper
 

@@ -145,7 +145,7 @@ Same 1,000 validation transactions. Same 14 frauds. **Three models.**
 
 **And the top row.** The dummy flagged nothing, so its precision is `0 ÷ 0` — **genuinely undefined**, not zero. But its F1 is honestly and unambiguously **0.0000**, because `2 × 0 ÷ 14` involves no division by zero at all. **F1 is the one number of the three that is well-defined for all three models**, which is a quietly excellent reason to report it.
 
-> **The one sentence to memorise:** *"F1 is the right summary when both errors matter and the classes are imbalanced, because it cannot be faked by flagging almost nothing or by flagging almost everything."*
+> **The one sentence to memorise:** *"F1 is the right summary when both errors matter and the classes are imbalanced, because it cannot be faked by flagging almost nothing, or — when the positives are rare, as with fraud — by flagging almost everything."* (If positives are common, flag-everything scores a respectable F1 on its own: on the delivery data, 28.75% late, it would score about 0.4466. So always set your F1 beside the flag-everything F1 before you are pleased.)
 
 ### 5. `macro average` and `support`, the two words on last week's screen
 
@@ -1158,7 +1158,7 @@ lights up. The ↻ on stage three is still grey — the training loop opens in W
 
 ## 🔑 Remember This
 
-- **One box on the form, and both single numbers can be faked.** Flag one thing: precision 1.0000. Flag everything: recall 1.0000. **Both stunts are one line of code.** F1 is the number neither stunt fools.
+- **One box on the form, and both single numbers can be faked.** Flag one thing: precision 1.0000. Flag everything: recall 1.0000. **Both stunts are one line of code.** F1 is the number neither stunt fools when positives are rare; when they are common, flag-everything can still score a fair F1, so compare against it.
 - **The harmonic mean is a plain average done in a mirror where small numbers are giants.** Flip both, average, flip back. 0.1 flipped becomes 10, and a 10 bullies an average. `2 × p × r ÷ (p + r)` is that, with the flipping cancelled out.
 - **Eighteen, not fifty.** Sixty kilometres at 90 and sixty at 10 averages 18 km/h, because you spent nearly all your time crawling. **The clock cannot be argued with, and the harmonic mean already knew about the tractor.**
 - **On (0.6, 0.6) both averages give 0.6000.** F1 is not permanently pessimistic. **It only punishes you for being lopsided** — and if you have not done this pair, you do not believe it yet.
@@ -1213,7 +1213,7 @@ tn, fp, fn, tp = confusion_matrix(y_val, pred, labels=[0, 1]).ravel()
 
 ### One-line reminder
 
-> **F1 is the harmonic mean of precision and recall, so it lands between the smaller number and twice the smaller number — which is exactly why neither stunt can fool it.**
+> **F1 is the harmonic mean of precision and recall, so it lands between the smaller number and twice the smaller number — which is exactly why neither stunt can fool it on rare-positive data like fraud.**
 
 ---
 

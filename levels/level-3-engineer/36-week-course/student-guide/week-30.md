@@ -291,7 +291,7 @@ noise, five seeds, ARI: [0.6407 0.4069 0.61   0.6072 0.6308]  mean 0.5791
 | silhouette at k = 3 | **0.2849** | **0.0776** |
 | seed-to-seed ARI | **1.0000** | **0.5791** |
 
-**The silhouette is 3.7 times higher on the real data, and the stability is perfect against barely-better-than-a-coin-flip.**
+**The silhouette is 3.7 times higher on the real data, and the stability is perfect against only moderate agreement on noise (0.58, far below 1.0).**
 
 ***That*** **is the argument that the wine structure is real.** Not *"0.2849 is a good score"* — it is not a good score — but *"0.2849 against a noise floor of 0.0776, with a seed-to-seed ARI of 1.0000 against 0.5791."*
 
@@ -372,9 +372,9 @@ train rows: 124   held-out rows: 54
 
 **One: the five new columns bought four wines.** 141 → 145, which is `+2.70` accuracy points. **Say it as a count, not only a percentage** — Week 27's discipline.
 
-**Two, and this is the striking one: the five new columns *on their own* beat all thirteen original ones.** 146 against 141. **Five numbers built without ever looking at a single label did better than thirteen carefully measured chemical properties.** The reason is the row count: with 30 training rows, a 13-column logistic regression has 42 coefficients to estimate and nowhere near enough rows to do it, while **k-means got to use the geometry of all 30 rows with no labels at all**, and then handed over three numbers that already knew where the groups were.
+**Two, and this is the striking one: the five new columns *on their own* beat all thirteen original ones.** 146 against 141. **Five numbers built without ever looking at a single label did better than thirteen carefully measured chemical properties.** The reason is the row count: with 30 training rows, a 13-column logistic regression has 42 coefficients to estimate and nowhere near enough rows to do it, while **k-means got to use the geometry of all 30 rows with no labels at all**, and then handed over three numbers that already knew where the groups were. **Be exact about what this shows:** k-means and PCA were fitted on those same 30 labelled rows, so no extra unlabelled rows were used; the gain is most likely from squeezing 13 inputs down to 5 (fewer coefficients to pin down), not yet from unlabelled data.
 
-**That is not a trick. It is the single most useful thing unsupervised learning does: it works on unlabelled data, and labels are the expensive part.**
+**That is not a trick. It points at something unsupervised learning can do: it works on unlabelled data, and labels are often the expensive part.** (Here it only hints at that, because we never gave k-means any extra unlabelled rows.)
 
 **Three, and you must include it: is +4 wines real, or a lucky split?** The honest check is to repeat the split. Over ten different splits:
 
@@ -399,7 +399,7 @@ times the 18-column model was better/equal/worse: 8 2 0
 
 Last week's plot, coloured by cluster. **Two rules it has to obey, and both are habits from Week 29.**
 
-**The percentage goes in both axis labels.** `PC1 (36.2% of the spread)` and `PC2 (19.2%)`. And `36.2 + 19.2 = 55.4`, so **44.6% of the wine data is not on the page**, and two bottles that look adjacent may be far apart.
+**The percentage goes in both axis labels.** `PC1 (36.2% of the spread)` and `PC2 (19.2%)`. And `36.2 + 19.2 = 55.4`, so **44.6% of the wine's spread is not on the page**, and two bottles that look adjacent may be far apart.
 
 **Cluster membership gets a shape as well as a colour** — circle, triangle, square — so the map still works photocopied.
 
@@ -883,7 +883,7 @@ overall, first four columns: [ 0.11  -0.125 -0.078 -0.015]
 | silhouette at k = 3 | **0.2849** | **0.0776** |
 | seed-to-seed ARI | **1.0000** | **0.5791** |
 
-**0.2849 is 3.7 times the floor, and 1.0000 against 0.5791 is perfect stability against a coin toss. That is the entire difference.** Not the plausibility of the names, not the balance of the cluster sizes, not the fact that the column means differ. **Those are all present in the noise version too.**
+**0.2849 is 3.7 times the floor, and 1.0000 against 0.5791 is perfect stability against moderate, far-from-perfect agreement. That is the entire difference.** Not the plausibility of the names, not the balance of the cluster sizes, not the fact that the column means differ. **Those are all present in the noise version too.**
 
 **And this is the piece that almost nobody in the world bothers with.** A student who runs their whole pipeline on noise and reports the floor beside their result has produced a **more trustworthy document than most published clustering work.**
 
@@ -1083,7 +1083,7 @@ silhouette            0.2849        0.0776
 seed-to-seed ARI      1.0000        0.5791
 ```
 
-*"Is 0.2849 a good score?"* **Compared to what.** *"Yes. Against the field guide it is 'real but overlapping'. Against the noise floor of 0.0776 it is 3.7 times higher, and our grouping is perfectly stable where the noise grouping is barely better than a coin toss. That pair of comparisons is your argument."*
+*"Is 0.2849 a good score?"* **Compared to what.** *"Yes. Against the field guide it is 'real but overlapping'. Against the noise floor of 0.0776 it is 3.7 times higher, and our grouping is perfectly stable where the noise grouping agrees with itself only moderately (0.58, where 0 would be pure chance). That pair of comparisons is your argument."*
 
 **The Naming Ceremony, twelve minutes.** The feature-means table printed one per student, in original units with the overall column, and the per-cluster silhouettes on the board:
 
@@ -1163,7 +1163,7 @@ Then the whole argument, written out as five lines:
 
 **3. Five columns built without a single label beat thirteen carefully measured chemical properties. Does that mean labels are overrated?**
 
-*Hint:* first be exact about when it happened. **At 30 training rows: 146 of 148 against 141 of 148. At 124 training rows: 54 of 54 against 54 of 54 — no difference at all, because there was nothing left to win.** So the finding is not "unsupervised beats supervised", it is **"unsupervised features help most when labels are scarce"**, and that is a claim with a condition attached. Then the mechanism, which is the interesting part: with 30 rows a 13-column logistic regression has 42 coefficients and not enough rows to pin them down, while k-means used the geometry of those same 30 rows **without needing any labels**. Then the practical question: **labels are the expensive part of almost every real project.** If unlabelled data is nearly free and labels cost money, what does that suggest about where to spend your effort first? And then the door this opens, which has a name you have not met: **what if you clustered a million unlabelled rows and only labelled thirty of them?** If you think that sounds like a good idea, you have had an excellent idea, and it is a whole field.
+*Hint:* first be exact about when it happened. **At 30 training rows: 146 of 148 against 141 of 148. At 124 training rows: 54 of 54 against 54 of 54 — no difference at all, because there was nothing left to win.** So the finding is not "unsupervised beats supervised", it is **"unsupervised features helped most when labels were scarce"**, and that is a claim with a condition attached (and this run cannot tell shrinking 13 columns to 5 apart from using unlabelled data). Then the mechanism, which is the interesting part: with 30 rows a 13-column logistic regression has 42 coefficients and not enough rows to pin them down, while k-means used the geometry of those same 30 rows **without needing any labels**. Then the practical question: **labels are the expensive part of almost every real project.** If unlabelled data is nearly free and labels cost money, what does that suggest about where to spend your effort first? And then the door this opens, which has a name you have not met: **what if you clustered a million unlabelled rows and only labelled thirty of them?** If you think that sounds like a good idea, you have had an excellent idea, and it is a whole field.
 
 ---
 

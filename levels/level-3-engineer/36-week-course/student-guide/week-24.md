@@ -109,7 +109,7 @@ total   =         10
 1040 ÷ 10 = 104
 ```
 
-**A hundred and four times fewer learnable numbers. And the smaller one is the one that knows what a neighbourhood is.** That is not a compromise. That is a better tool that is also cheaper.
+**A hundred and four times fewer learnable numbers. And the smaller one is the one that knows what a neighbourhood is.** That is not a compromise. It is a tool with the right assumption built in, and it is also cheaper. (Honest caveat: this is not a like-for-like job. The dense layer makes 16 numbers; the convolution makes a whole 6 × 6 map. For the same 4 × 4 map later this week it is 592 against 10, about 59 times fewer. Still a big gap, just a fairer one.)
 
 **And the gap grows fast, because a convolution's count does not depend on the size of the picture at all.** On a 64 × 64 photograph — still small, still grey:
 
@@ -852,7 +852,7 @@ window            kernel        one row at a time
 ![Three kernels, three different things found](../figures/fig-w24-4-three-kernels-three-feature-maps.svg)
 *Figure 24.4 — Three kernels, three different things found. Vertical and horizontal both reach ±27 on the cross; the averager reaches +8 and finds no edges at all.*
 
-> **🤔 Think about it:** the vertical kernel reached ±48 on the digit and only ±24 on the bar picture in §3. Is the digit's edge "sharper"? **No.** The digit's brightnesses go up to 16 and the bar's only go up to 10, so every row of the digit's window contributes more. **The number depends on the contrast of the picture, not on how edge-like the edge is** — which is exactly why real networks standardise their inputs. Week 4, in a new costume.
+> **🤔 Think about it:** the vertical kernel reached ±48 on the digit and only ±24 on the bar picture in §3. Is the digit's edge "sharper"? **No.** The step across the digit's edge is 16 (3 x 16 = 48) and across the bar's edge only 8 (3 x 8 = 24), so every row of the digit's window contributes more. **The number depends on the contrast of the picture, not on how edge-like the edge is** — which is exactly why real networks standardise their inputs. Week 4, in a new costume.
 
 ---
 
@@ -1102,7 +1102,7 @@ different kind of layer.*
 
 - **Flattening throws away which pixels are next to which.** The evidence: shuffle the 64 columns of `load_digits` and the same model still scores 0.9704 against 0.9667. **It was never using the arrangement.**
 - **A convolution is nine multiplications and one addition, done over and over.** Multiply each of the kernel's nine numbers by the picture number underneath, add up all nine, write the answer in one cell of the feature map. Then slide.
-- **A dense layer on an 8 × 8 picture costs 1,040 numbers; one 3 × 3 convolution costs 10.** A hundred and four times fewer, **and the small one is the one that keeps the neighbourhood.**
+- **A dense layer on an 8 × 8 picture costs 1,040 numbers; one 3 × 3 convolution costs 10.** A hundred and four times fewer (not a like-for-like job; the fairer figure is 592 against 10), **and the small one is the one that keeps the neighbourhood.**
 - **Weight sharing buys two things.** It is cheap — 10 numbers against 592, and the 10 do not grow when the picture does. And it only has to learn "this is an edge" **once**, instead of separately for all sixteen positions.
 - **The feature map is smaller than the picture**, because the window cannot hang off the edge. `6 − 3 + 1 = 4` across and 4 down, so 16 cells. **Count the positions; the general rule is next week.**
 - **`nn.Conv2d` always wants four numbers in the shape: pictures, channels, height, width.** `unsqueeze(0)` is how you wrap one photo in the two layers of packaging it expects.

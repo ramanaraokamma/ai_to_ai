@@ -1401,7 +1401,7 @@ ROC AUC     =  over all 400 predicted probabilities      =  0.7599   on the 400 
 
 **8.** "On the fraud data a model that never says yes scores **0.9860**, and a real tree scores **0.9820** and catches 3 frauds out of 14. **Accuracy went down and the model got better.** The four counts could tell them apart and accuracy could not."
 
-**9.** "**F1** — for the delivery model, **0.4976 on the 400 validation rows** — because it is the harmonic mean of precision and recall, so it lands near the smaller of the two and cannot be faked by flagging almost nothing or almost everything. **And I would print the four counts underneath it**, because from the counts anybody can recompute every other number, and from F1 alone nobody can get back."
+**9.** "**F1** — for the delivery model, **0.4976 on the 400 validation rows** — because it is the harmonic mean of precision and recall, so it lands near the smaller of the two and cannot be faked by flagging almost nothing, or (when positives are rare) almost everything; on the delivery data flag-everything already scores about 0.4466, so 0.4976 should be read against that. **And I would print the four counts underneath it**, because from the counts anybody can recompute every other number, and from F1 alone nobody can get back."
 
 **Every answer needs at least one number in it.** "The audit found some problems" is worth nothing; "20 duplicates and 108 missing" is worth full marks.
 

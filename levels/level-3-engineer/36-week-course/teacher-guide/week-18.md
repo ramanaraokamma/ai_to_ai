@@ -57,7 +57,7 @@ You could try nudging each knob a tiny bit, one at a time, and see which way the
 
 🍕 **The analogy, and it is the right one.** A parcel arrives three days late. You do not re-run the entire postal system sixteen million times to find out who to blame. You walk the chain backwards: *the courier was two days late; the courier was late because the depot held the parcel one day; the depot held it because the sorting machine jammed for four hours.* **One walk backwards, and everybody's share of the blame falls out.** Each person only needs to know two things: how much blame arrived at them, and how much they passed on to the person before them.
 
-That is backprop. **Blame arrives; you keep your share; you pass the rest back.**
+That is backprop. **Blame arrives; you keep your share; you pass the rest back.** (One caution: the parcel's days add up, but in a network the blame is *multiplied* by each stage's slope, so a stage can shrink or amplify what it passes back. That is the next section.)
 
 ### 2. The one new idea: slopes multiply along a chain
 

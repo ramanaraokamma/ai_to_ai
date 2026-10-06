@@ -983,7 +983,7 @@ ________________________________________________________________
 
 **Which column did it name?** ____________________
 
-**Now the sentence that is actually being marked. Do not write "it stopped my program". Write down the bad thing that did *not* happen:**
+**Now the sentence that is actually being marked. Do not write just "it stopped my program". Write down what the error did *instead of guessing*:**
 
 ________________________________________________________________
 
@@ -1587,7 +1587,7 @@ difference                                = 0.017
 
 **The error that protected you:** the last line is `ValueError: columns are missing: {'weather'}`, and it names **`weather`**.
 
-**The bad thing that did not happen:** without that error, `weather` would have quietly become **three zeros** — an order that happened in no weather at all — and you would have got a confident probability with **no hint that a whole column was missing.** *"It stopped my program"* is the wrong shape of answer; the right shape names the silence.
+**What the error did instead of guessing:** it **stopped and named `weather`** instead of guessing or answering anyway. (A missing *column* cannot slip through as zeros — the switchboard looks it up by name. The silent case is a missing *value*, in the Stretch below.) *"It stopped my program"* alone is the wrong shape of answer; the right shape says what it did instead of guessing.
 
 **Stretch — a missing value instead of a missing column:**
 
@@ -1606,7 +1606,7 @@ difference                                = 0.017
 | What I saw | What it means | Cause | Fix |
 |---|---|---|---|
 | `TypeError: All intermediate steps should be transformers...` | every step but the last must change data and pass it on; a model ends the line | the model was first in the pipeline | model **last**, always. And note it is silent when built, loud when fitted |
-| `ValueError: columns are missing: {'weather'}` | the switchboard looks columns up by name and refused to guess | one of the eight keys left off a hand-typed order | add the key. **This error protected me** from `weather` silently becoming three zeros |
+| `ValueError: columns are missing: {'weather'}` | the switchboard looks columns up by name and refused to guess | one of the eight keys left off a hand-typed order | add the key. **This error protected me** from a guess: it named `weather` and stopped |
 
 ### Draw It
 

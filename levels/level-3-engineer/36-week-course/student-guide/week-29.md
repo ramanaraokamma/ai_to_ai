@@ -65,7 +65,7 @@ It draws a new axis along the direction the data is most spread out.
 
 **Read the last column**, which is the *contrast*: how much further apart the furthest pair is than the closest pair. At 2 columns the furthest pair is **534 times** further apart than the closest. At 500 columns, **the most distant pair of points in your whole dataset is only 21% further apart than the two closest points.**
 
-**Nothing is near anything. So k-means goes blind, and so does kNN.** Cutting thirteen columns down to two is not just so you can draw it. **It is so distance means something again.**
+**Nothing is near anything. So k-means goes blind, and so does kNN.** Cutting thirteen columns down to two is not just so you can draw it. **It can help distance mean something again**, when the real structure is low-dimensional. (The table above is for random points, where PCA could not help; for the wine, two components keep only 55% of the spread, so two-column distances are a distorted copy of the real ones.)
 
 By the end of today you will have found a principal component with a protractor.
 
@@ -331,7 +331,7 @@ proanthocyanins                 0.313
 nonflavanoid_phenols           -0.299
 ```
 
-**The top four all pull the same way, and they are all phenol measures or close relatives: flavanoids, total phenols and proanthocyanins are phenolic compounds, and od280/od315 is a light-absorbance ratio that tracks them.** So PC1 is fairly read as **"total phenolic richness"** — one end of the axis is chemically rich wine, the other end is thin wine. `nonflavanoid_phenols` is negative, meaning it goes the *other* way from the rest, which is a real chemical fact about wine and not a bug.
+**The top four all pull the same way, and they are all phenol measures or close relatives: flavanoids, total phenols and proanthocyanins are phenolic compounds, and od280/od315 is a light-absorbance ratio that tracks them.** So PC1 is fairly read as **"total phenolic richness"** — one end of the axis is chemically rich wine, the other end is thin wine. `nonflavanoid_phenols` is negative, meaning it goes the *other* way from the rest, which in these 178 wines is a real pattern and not a bug.
 
 ```text
 PC2: which original columns pull hardest
@@ -1098,7 +1098,7 @@ The habit: **report the ratio and the reconstruction error together, always.** O
 3. **Two columns in a dataset that say almost the same thing** — height in cm and height in inches, or total price and price-plus-tax. **PCA notices that immediately**, because the second one adds almost no new spread, and squashes them into one axis without anybody having to spot it.
 4. **Anything described as "the first two dimensions" in a science paper's scatter plot**, with axis labels like `PC1 (36.2%)`. You can now read that plot properly, and you know the first question to ask: **what happened to the other 44.6%?**
 5. **A recommender that describes you with a handful of taste numbers** instead of your whole history. The taste numbers are new axes through a cloud of what people watched, and nobody chose what they mean.
-6. **Any time somebody says a model "has too many features".** The curse-of-dimensionality table is the reason: at 500 columns, the furthest pair of points in your dataset is only **21% further apart** than the closest pair, so distance stops meaning anything.
+6. **Any time somebody says a model "has too many features".** The curse-of-dimensionality table is the reason: at 500 columns, the furthest pair of points in your dataset is only **21% further apart** than the closest pair, so distance stops meaning much (for random points; PCA helps only when the real structure is low-dimensional).
 
 ---
 

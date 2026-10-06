@@ -149,10 +149,10 @@ Now the crucial contrast, and this is the sentence to write on the board:
 
 | | Its denominator | On our data | So one extra false alarm moves it by |
 |---|---|---|---|
-| **precision** | how many I flagged | 8, or 216, or 429 | a **lot** — the denominator is small |
-| **false positive rate** | how many were really innocent | **always 986** | 1 ÷ 986 = **0.001** — almost nothing |
+| **precision** | how many I flagged | 8, or 216, or 429 | a **lot** while the flagged pile is small (8 rows), less as it grows |
+| **false positive rate** | how many were really innocent | **always 986** | 1 ÷ 986 = **0.001** — the same small step every time |
 
-**Precision and false positive rate are both "how bad are my false alarms", measured against two completely different backgrounds.** When the innocent pile is enormous, FPR barely notices a flood of false alarms and precision drowns in it. Hold that thought — it is the reason the two curves in §8 disagree so violently.
+**Precision and false positive rate are both "how bad are my false alarms", measured against two completely different backgrounds.** When the innocent pile is enormous, FPR climbs only 0.001 per false alarm and has room up to 1, while precision is dragged down because the false alarms fill the very pile it is divided by. Hold that thought — it is the reason the two curves in §8 disagree so violently.
 
 ### 6. The ROC curve is that table, plotted
 
@@ -273,7 +273,7 @@ Read those two lines together and you get the whole nuance of the week:
 
 **Both numbers describe the same model on the same 1,000 rows.** ROC AUC's baseline is always 0.5, no matter what the data looks like. Average precision's baseline is **the positive class rate** — 14 ÷ 1000 = 0.0140 — because a coin flagging at random gets a precision equal to the fraud rate at every threshold. So a bare AP of 0.21 sounds terrible and is in fact fifteen-fold better than nothing, while a bare AUC of 0.61 sounds mediocre and is.
 
-> **⚠️ Watch out:** the rule of thumb *"use PR when positives are rare"* is true and it is not the whole story. **AP is not comparable between datasets** — change the fraud rate and the baseline moves, so an AP of 0.21 on 1.4% fraud is not worse than an AP of 0.40 on 10% fraud. AUC *is* comparable between datasets, which is exactly why people keep reporting it. **The professional answer is to report both, with the class balance printed beside them.** That is what the student will write in their model card.
+> **⚠️ Watch out:** the rule of thumb *"use PR when positives are rare"* is true and it is not the whole story. **AP is not comparable between datasets** — change the fraud rate and the baseline moves, so an AP of 0.21 on 1.4% fraud cannot be ranked against an AP of 0.40 on 10% fraud by the raw numbers. (Even "times better than a coin" is not a fair cross-dataset score, because that ratio is capped by 1 ÷ the positive rate.) AUC *is* comparable between datasets, which is exactly why people keep reporting it. **The professional answer is to report both, with the class balance printed beside them.** That is what the student will write in their model card.
 
 ### 9. Every line of this week's code, explained to someone who has never programmed
 
@@ -1248,7 +1248,7 @@ Say: *"How steep is the curve between those two points, and is that a good deal?
 
 **Check 3 — which curve, and why.** Say: *"You have a thousand transactions and fourteen are fraud. Somebody sends you one number to describe your model. Would you rather have the ROC AUC or the average precision, and why?"*
 
-> **A good answer** picks average precision **and mentions the denominator or the size of the innocent pile** — something like "because 986 innocent rows means the false positive rate barely notices 200 false alarms, but precision does". Accepting ROC AUC is also fine **if** the reason is "because I want to compare against a model on a different dataset". **The unacceptable answer is a preference with no reason.** Both metrics were on the screen; the reasoning is the objective.
+> **A good answer** picks average precision **and mentions the denominator or the size of the innocent pile** — something like "because the 986 innocent rows are a fixed denominator, so 200 false alarms move the false positive rate only about 0.2, while they fill the flagged pile that precision is divided by". Accepting ROC AUC is also fine **if** the reason is "because I want to compare against a model on a different dataset". **The unacceptable answer is a preference with no reason.** Both metrics were on the screen; the reasoning is the objective.
 
 ### Mastery scale for this week
 

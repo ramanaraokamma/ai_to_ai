@@ -1456,7 +1456,7 @@ agrees with my paper? True
 biggest gap: 3.986212774192456e-07
 ```
 
-**Row 0 is the interesting one, and it is worth a sentence.** `Z1` row 0 is `[−0.8, −0.7]`, both negative, so **ReLU silenced the whole hidden layer for that row** and `A1` row 0 is `[0, 0]`. That means `Z2` row 0 is just `b2` — `[0.1, −0.1]` — so the answer `[0.549834, 0.450166]` came **entirely from the output bias**. The hidden layer contributed nothing at all. **That is what a network with too few hidden units looks like from the inside.**
+**Row 0 is the interesting one, and it is worth a sentence.** `Z1` row 0 is `[−0.8, −0.7]`, both negative, so **ReLU silenced the whole hidden layer for that row** and `A1` row 0 is `[0, 0]`. That means `Z2` row 0 is just `b2` — `[0.1, −0.1]` — so the answer `[0.549834, 0.450166]` came **entirely from the output bias**. The hidden layer contributed nothing at all. **That is what it looks like when every hidden unit happens to be silent on one row** — here both pre-activations are negative — and it is more likely in a layer with only two units.
 
 **And the "Try this":** on this `(3, 2)` batch, dropping `keepdims` gives `total` as `(3,)`, and `(3,2) ÷ (3,)` lines `2` up against `3` — clean crash, `ValueError`. On a **square** batch the same mistake matches by accident, divides columns by rows, and hands you "probabilities" above 1 with no complaint.
 

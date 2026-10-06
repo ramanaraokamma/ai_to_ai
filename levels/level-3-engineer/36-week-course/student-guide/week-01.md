@@ -258,7 +258,7 @@ Two of those deserve a longer look.
 
 The top of both fractions is 56693. Only the bottom changed: **1912 against 2020.** 1912 is *the values that exist*; 2020 is *the rows*.
 
-> **💡 Try this on a calculator, right now.** 56693 ÷ 1912 = 29.65115… and 56693 ÷ 2020 = 28.06584… Subtract them: **1.5854.** That is how much driver experience a silent division invented.
+> **💡 Try this on a calculator, right now.** 56693 ÷ 1912 = 29.65115… and 56693 ÷ 2020 = 28.06584… Subtract them: **1.5853** (or 1.5854 if you subtract the rounded 29.6512 and 28.0658). That is how much driver experience a silent division invented.
 
 **The habit to build:** whenever a printed number surprises you, do the division by hand. Two lines of arithmetic beat an afternoon of confusion, every time.
 

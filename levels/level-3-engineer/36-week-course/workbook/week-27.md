@@ -583,9 +583,9 @@ ________________________________________________________________
 
 ### Which Changes Keep the Label True?
 
-Augmentation only works while the change you make **does not change the label**. Here are eight changes. For each one, decide **in pen** whether the label survives, for the two kinds of data named.
+Augmentation only works while the change you make **does not change the label**. Here are eight changes. For each one, decide **in pen** whether the label survives, for the two kinds of data named. (For the cat column, answer "yes" only if the label survives **and** the result is a picture a camera could really take.)
 
-| The change | still the same **digit**? | still the same **cat photo**? |
+| The change | still the same **digit**? | still a **cat photo** you might really meet, with the right label? |
 |---|---|---|
 | shift one pixel left | ______ | ______ |
 | shift one pixel left, wrapping | ______ | ______ |
@@ -602,7 +602,7 @@ Augmentation only works while the change you make **does not change the label**.
 
 **unsafe for cats:** ______________________________________________
 
-**Part 2 — the interesting row.** *"Turn upside down"* is safe for a cat photo (an upside-down cat is still a cat) and it is a **disaster** for digits, and there is one specific pair of digits that makes it a disaster.
+**Part 2 — the interesting row.** *"Turn upside down"* keeps the label true for a cat photo (an upside-down cat is still a cat, though nobody takes such photos, so it is unrealistic rather than label-breaking) and it is a **disaster** for digits, and there is one specific pair of digits that makes it a disaster.
 
 **Which pair?** ______ and ______
 
@@ -632,7 +632,7 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
-**T1.** Two of this week's experiments produced results a textbook would not have promised. Wrapped augmentation bought exactly **+0.00** points from five times the data. Transfer learning came out **5.6 points worse** than starting from nothing. **Write a paragraph** about what you would have learned instead if both experiments had worked. Is a technique whose price you have measured more useful than one you believe in? And what would you now do differently if you read a paper that only reported the runs that worked?
+**T1.** Two of this week's experiments produced results a textbook would not have promised. Wrapped augmentation bought **+0.00** points from five times the data in our seed-0 run. Transfer learning came out **5.6 points worse** than starting from nothing. **Write a paragraph** about what you would have learned instead if both experiments had worked. Is a technique whose price you have measured more useful than one you believe in? And what would you now do differently if you read a paper that only reported the runs that worked?
 
 ________________________________________________________________
 
@@ -783,7 +783,7 @@ Draw the two ideas of this week side by side, with the counts on them.
 
 **What a good answer looks like:** on the left, **one 8×8 digit and its four shifted copies**, with the blanked row or column **shaded a different colour on each copy** so you can see which edge was sacrificed, and `1,257 × 5 = 6,285` written under the group. Then, clearly separated, **540 test rows drawn as one untouched block** with the words *"never shifted"* on it. On the right, **two conv blocks drawn greyed out and labelled `frozen — 1,248`**, feeding a **new head labelled `650 movable`**, with `1,248 + 650 = 1,898` written underneath.
 
-**And the two things that earn the marks:** an arrow from the frozen backbone to a small box holding **`0.9257`** and another to a box holding **`0.9814 from scratch`**, so the control is on the drawing and not just in your head. And somewhere on the augmented side, **the accuracy pair `0.9796 → 0.9926`** with `+1.30 points` beside it.
+**And the two things that earn the marks:** an arrow from the frozen backbone to a small box holding **`0.9257`** and another to a box holding **`0.9814 from scratch`**, so the control is on the drawing and not just in your head. And somewhere on the augmented side, **the accuracy pair `0.9796 → 0.9926`** with `+1.30 points` beside it (seed 0).
 
 **My blanked edges, one per copy:** ______ ______ ______ ______
 
@@ -845,7 +845,7 @@ In digits: `0.9796 × 540 = 529.0`, and `0.9926 × 540 = 536.0`. **So augmentati
 
 **The wrapped version read 0 more** — it scored exactly `0.9796` too, the identical 529 of 540.
 
-**The conclusion:** *"Blanking the rolled-off edge turned five times the training data from worth nothing into worth 7 more digits out of 540, which is +1.30 accuracy points."*
+**The conclusion:** *"Blanking the rolled-off edge turned five times the training data from worth nothing into worth 7 more digits out of 540, which is +1.30 accuracy points in our seed-0 run (other seeds varied, and part of the gain may be the extra training steps)."*
 
 **M2.**
 
@@ -951,11 +951,11 @@ ink per picture: [9. 9. 9. 9.]
 | nothing (fine-tuned) | **1898** | **1.1** | **0.9665** |
 | from scratch, no borrowing | **1898** | **1.1** | **0.9814** |
 
-**From scratch won on accuracy** — 0.9814, which is 264 of 269. **Freezing both convs won on speed** — 0.2 seconds.
+**From scratch won on accuracy in this run** — 0.9814, which is 264 of 269. **Freezing both convs won on speed** — 0.2 seconds.
 
 **The trade in one sentence:** *"Freezing both convs trained 650 weights instead of 1,898 in 0.2 seconds instead of 1.1, and it cost 5.6 accuracy points against the from-scratch control."*
 
-**A3.** **The impossible thing is that the test accuracy (0.8574) is higher than the training accuracy (0.5968).** A model has *seen* its training data. It must do at least as well on it.
+**A3.** **The impossible thing is that the test accuracy (0.8574) is higher than the training accuracy (0.5968).** A model has *seen* its training data, so it normally does at least as well on it.
 
 **`axis=0` and `axis=1` are wrong; they should be `axis=1` and `axis=2`.**
 
@@ -963,7 +963,7 @@ ink per picture: [9. 9. 9. 9.]
 
 **Two fifths of the training rows were unlearnable.** The `shifts` list has five entries. With the wrong axes, `(-1, 0)` and `(1, 0)` roll the *stack* (axis 0), so those two copies are pictures paired with somebody else's label. `(0, 0)` shifts nothing and `(0, -1)`, `(0, 1)` roll each picture's rows, so **three fifths of the rows still have the right label**. The model cannot fit the scrambled two fifths, so training accuracy lands near 0.6 (it printed 0.5968), while the untouched test set scores much higher.
 
-**The permanent alarm:** *"If my test accuracy is higher than my training accuracy, my training labels are wrong. It is never a lucky run."*
+**The permanent alarm:** *"If my test accuracy is higher than my training accuracy, my training labels are the first thing to check. It is very rarely a lucky run."*
 
 **A4.** head swapped first → **(iii)** · everything frozen → **(v)** · `torch.cat` with a numpy array → **(i)** · predictions from the 5-to-9 model against all ten classes → **(ii)** · mixing `(n,1,8,8)` and `(n,8,8)` → **(iv)**
 
@@ -1106,7 +1106,7 @@ freeze nothing      movable 1898   1.1s  test 0.9665  (260 of 269)
 
 **The counts are three subtractions:** `1898 − 1248 = 650`, `1898 − 80 = 1818`, `1898 − 0 = 1898`.
 
-**The pattern:** *"The less you freeze, the better it does and the slower it is — 249, 256 then 260 digits out of 269, and 0.2, 0.6 then 1.1 seconds. Every weight you let move buys accuracy here, because digits 5 to 9 genuinely need different filters from 0 to 4."*
+**The pattern:** *"The less you freeze, the better it does and the slower it is — 249, 256 then 260 digits out of 269, and 0.2, 0.6 then 1.1 seconds. In this seed-0 run every weight you let move bought accuracy; freezing everything was lowest in all five seeds we re-ran, but the order of the other two rows is not stable across seeds. Digits 5 to 9 probably need different filters from 0 to 4."*
 
 **B5.** The complete program is 💻 Type This, Step 7, in the chapter. The real output:
 
@@ -1188,20 +1188,20 @@ train 0.5938   test 0.8889
 
 ### Puzzle of the Week
 
-| The change | still the same **digit**? | still the same **cat photo**? |
+| The change | still the same **digit**? | still a **cat photo** you might really meet, with the right label? |
 |---|---|---|
 | shift one pixel left | **yes** | **yes** |
 | shift one pixel left, wrapping | **no** | **usually yes** |
 | flip left-to-right | **no** | **yes** |
-| flip top-to-bottom | **no** | **no** |
-| turn a quarter turn | **no** | **no** |
-| turn upside down | **no** | **yes** |
+| flip top-to-bottom | **no** | **no** (label true, picture unrealistic) |
+| turn a quarter turn | **no** | **no** (label true, picture unrealistic) |
+| turn upside down | **no** | **no** (label true, picture unrealistic) |
 | make it 20% brighter | **yes** | **yes** |
 | swap two pixels chosen at random | **yes** (usually) | **yes** (usually) |
 
 **Part 1. Safe for digits: shifting one pixel, and changing the brightness.** *(Small random pixel swaps are also broadly safe on a digit — they are just noise — but they do not teach the model anything useful either.)*
 
-**Unsafe for cats: flipping top-to-bottom, and turning a quarter turn.** An upside-down cat is a cat; a cat rotated 90° is a thing you will essentially never photograph, so training on it teaches the model about pictures that do not exist. *(The wrapping row is the interesting exception: on a big photo with a dark border, wrapping usually does nothing visible at all.)*
+**Unsafe for cats: flipping top-to-bottom, and turning a quarter turn.** The label survives in all three (a flipped or rotated cat is still a cat); they are unsafe because they are unrealistic, not because they are mislabelled. A cat rotated 90° is a thing you will essentially never photograph, so training on it teaches the model about pictures that do not exist. *(The wrapping row is the interesting exception: on a big photo with a dark border, wrapping usually does nothing visible at all.)*
 
 **Part 2. The pair is 6 and 9.** Turn a 6 upside down and you have a 9. **The change did not just make the picture odd — it turned it into a picture of a different, real class, with the old label attached.** That is the worst possible kind of augmentation error, because the model is being actively taught that 9s are 6s. *(2 and 5 are a milder version of the same thing.)*
 
@@ -1278,7 +1278,7 @@ ink per row, the real 9      : [23 63 55 45 55 23 28 37]
 
 **Part 5.** **The first thing you ask is: "which changes does it apply, and what kind of data were they chosen for?"**
 
-Because "the usual set" is not a thing. A library written for photographs will happily flip your digits left-to-right, and it will do it silently, and you will get exactly the **+0.00** result you measured this week — five times the data and no benefit — while wondering what you did wrong. **A second good question: "does it augment the test set too?"** If the answer is anything other than an immediate no, do not use it.
+Because "the usual set" is not a thing. A library written for photographs will happily flip your digits left-to-right, and it will do it silently, and you may get a result like the **+0.00** you measured this week — five times the data and no benefit — while wondering what you did wrong. **A second good question: "does it augment the test set too?"** If the answer is anything other than an immediate no, do not use it.
 
 ### Think Deeper
 

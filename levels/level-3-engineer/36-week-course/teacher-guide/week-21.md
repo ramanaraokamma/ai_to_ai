@@ -227,7 +227,7 @@ Four hundred trips round the loop. Each trip is one **step** — one update of b
     optimizer.zero_grad()
 ```
 
-**Line 1.** Set `w.grad` and `b.grad` back to zero. **Nothing else happens** — the weights are untouched. Without this, line 4 adds today's slope on top of yesterday's, and the pile grows.
+**Line 1.** Clear `w.grad` and `b.grad` (set them to `None`, or zero them). **Nothing else happens** — the weights are untouched. Without this, line 4 adds today's slope on top of yesterday's, and the pile grows.
 
 ```python
     pred = hours @ w + b

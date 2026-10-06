@@ -1112,9 +1112,9 @@ Notice that the formula moved the same way the sweep did — **make a miss cheap
 
 **M4(f).** `AUC = **0.628** ± **0.087**`, a band from **0.542** to **0.715**.
 
-**M4(g).** **0.65 — no, you cannot claim anything.** 0.65 is inside your band, so it might be your own model on a luckier split. **0.85 — yes, now you can talk**, because 0.85 is well outside it.
+**M4(g).** **0.65 — no, you cannot claim anything from this.** 0.65 is inside your band, so it might be your own model on a luckier split. **0.85 — yes, now you can talk**, because 0.85 is well outside it.
 
-**The rule:** *"The `±` tells you how big a difference between two models you are entitled to believe."* **Anything inside the band is not a result.**
+**The rule:** *"The `±` is a rule of thumb for how big a difference between two models to trust."* **Anything inside the band is unproven.**
 
 ### Predict the Output
 
@@ -1205,7 +1205,7 @@ Notice that the formula moved the same way the sweep did — **make a miss cheap
 
 **A5(b).** **No.** The correct diagnosis: *"The fraud **measurement** is fourteen times noisier, not the fraud **model** fourteen times worse. Each fraud fold holds 14 or 15 positives against the hospital's 42 or 43, and the underlying problem is much harder."* **A `±` is a statement about your measuring equipment, not about your model.**
 
-**A5(c).** **No.** A 0.02 improvement is invisible inside a band of ±0.087. **The smallest improvement you could detect is something like 0.09 or more** — you would need a model scoring about 0.72 or better before you could claim anything, and 0.85 to be comfortable.
+**A5(c).** **Not with this evidence.** A 0.02 improvement is far smaller than the ±0.087 spread of single-fold scores, so by our rule of thumb it is unproven (the sharper test is to score both models on the same folds). **A rough rule-of-thumb threshold is an improvement about as big as the spread, something like 0.09 — a guide, not a derived figure** — you would need a model scoring about 0.72 or better before you could claim anything, and 0.85 to be comfortable.
 
 **A5(d).** **1. The held-out chunks are too small for the thing you are measuring.** **2. The model is genuinely unstable.** **3. The data is not homogeneous.** **Ours is 1**, overwhelmingly — **14 positives is 14.** And the fix for that is more data, or at least more positives per fold, **not a different model.**
 
@@ -1595,7 +1595,7 @@ at C = 2000: `0.02` costs `9 × 2000 + 2110 = **20110**`, `0.01` costs `6 × 200
 
 **Sentence 1 — full marks:**
 
-> *"The `±` tells me how big a difference between two models I am allowed to believe. Our band is 0.628 ± 0.087, so about **0.542 to 0.715**. Any model scoring inside that band might just be our own model on a luckier split, so I cannot claim it is better — and any model scoring 0.85 clearly is."*
+> *"The `±` is my rule of thumb for how big a difference between two models to trust. Our band is 0.628 ± 0.087, so about **0.542 to 0.715**. Any model scoring inside that band might just be our own model on a luckier split, so I cannot claim it is better from that alone — and a model scoring 0.85 is well outside it and worth taking seriously."*
 
 **Sentence 2 — full marks.** Three times bigger is `± 0.260`, a band from **0.368 to 0.888**.
 

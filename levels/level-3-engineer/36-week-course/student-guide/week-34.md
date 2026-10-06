@@ -131,7 +131,7 @@ ship-it/
 grep -rnE "\.fit\(|train_test_split|DummyClassifier|optimizer" serve/
 ```
 
-If that prints nothing, `serve/` has no training code in it. If it prints anything, you have a bug — **whether or not the program currently works.** A rule you can check beats a rule you promise.
+If that prints nothing, `serve/` very probably has no training code in it (it is a strong check, not a proof: the pattern would miss `fit_transform` or `.fit (`, and it also matches comments and strings). If it prints anything, look at each line and treat a real match as a bug — **whether or not the program currently works.** A rule you can check beats a rule you promise.
 
 ![One model definition, imported by both sides](../figures/fig-w34-2-shared-model-def-imported-twice.svg)
 *Figure 34.2 — One model definition, imported by both sides. `model_def.py` holds the class names, the input field name and the architecture. `train.py` imports it to build; `predict.py` imports it to read. Two folders make Rule 1 a thing you can check instead of a thing you promise.*
@@ -271,7 +271,7 @@ No — and here is the one-sentence reason. **Accuracy treats both mistakes as t
 
 **Two honest wrinkles, both worth marks:**
 
-- **0.65 and 0.70 tie at 4.** On these 16 rows they make exactly the same four mistakes, so the sum cannot separate them, and neither can accuracy (`0.7500` both ways). The tie-break is a rule, and you say it out loud: **take the LOWER of the tied thresholds.** A lower line calls fewer reviews negative on every row in between, so it keeps the most nice reviews flowing and costs the moderator the fewest wasted ten seconds. **Ship 0.65.**
+- **0.65 and 0.70 tie at 4.** On these 16 rows they make exactly the same four mistakes, so the sum cannot separate them, and neither can accuracy (`0.7500` both ways). The tie-break is a rule, and you say it out loud: **take the LOWER of the tied thresholds.** A lower line calls fewer reviews negative on every row in between, so it wastes the fewest moderator ten-seconds on nice reviews; the price is that it lets more borderline reviews through, and a higher line would do the opposite. Neither is proven better, which is why it is a stated convention and not a discovery. **Ship 0.65.**
 - **Sixteen validation rows means one row is worth 6.25 percentage points.** This threshold is a decision made on very little evidence. **Saying so is part of the answer, not a weakness in it.**
 
 ### Twist two — Week 3's `joblib.dump` grows a version and a receipt

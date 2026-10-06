@@ -153,10 +153,10 @@ fpr       = 5 ÷ 986 = 0.005071   "of the 986 innocent rows, I bothered 5"
 
 | | Its denominator | On our data | So one extra false alarm moves it by |
 |---|---|---|---|
-| **precision** | how many I flagged | 8, or 216, or 429 | **a lot** — the denominator is tiny |
-| **false positive rate** | how many were really innocent | **always 986** | `1 ÷ 986 = 0.001` — almost nothing |
+| **precision** | how many I flagged | 8, or 216, or 429 | **a lot while the flagged pile is tiny (8 rows)**, less and less as it grows |
+| **false positive rate** | how many were really innocent | **always 986** | `1 ÷ 986 = 0.001` — the same small step every time |
 
-**Precision and false positive rate are both asking "how bad are my false alarms?" — measured against two completely different backgrounds.** When the innocent pile is huge, FPR barely notices a flood of false alarms, and precision drowns in it. Hold on to that; in two sections it explains why the two charts you draw will disagree violently.
+**Precision and false positive rate are both asking "how bad are my false alarms?" — measured against two completely different backgrounds.** When the innocent pile is huge, FPR climbs only 0.001 per false alarm and has room up to 1, while precision is dragged down because the false alarms fill the very pile it is divided by. Hold on to that; in two sections it explains why the two charts you draw will disagree violently.
 
 ### 4. One model, many dots
 
@@ -1024,7 +1024,7 @@ t = 0.02   for the customer whose money is actually gone:
 
 ❌ **Wrong.** *"0.21 out of 1. Barely a fifth. Rubbish."*
 
-✅ **Right.** **Average precision has no fixed baseline.** Its baseline is the positive class rate, which here is `14 ÷ 1000 = 0.0140`. So 0.2078 is about **fifteen times** better than a coin. An AP of 0.21 on 1.4% positives is a much stronger result than an AP of 0.40 on 10% positives. **Never quote an AP without the class balance beside it.** (ROC AUC *is* comparable across datasets, because its baseline is always 0.5. That is precisely why people keep reporting it.)
+✅ **Right.** **Average precision has no fixed baseline.** Its baseline is the positive class rate, which here is `14 ÷ 1000 = 0.0140`. So 0.2078 is about **fifteen times** better than a coin. An AP of 0.21 on 1.4% positives is not the failure it looks like, and the raw numbers 0.21 and 0.40 cannot be ranked against each other when the positive rates differ. **Never quote an AP without the class balance beside it.** (ROC AUC *is* comparable across datasets, because its baseline is always 0.5. That is precisely why people keep reporting it.)
 
 ### Trick 4 — "0.5 is the threshold, so I'll leave it"
 
@@ -1076,7 +1076,7 @@ Week 12.*
 - **`predict()` is `predict_proba()` followed by `>= 0.5`.** The model produces a number between 0 and 1. The yes/no comes from a comparison that nobody chose.
 - **One model, many dots.** Sweeping the threshold changes nothing about the model. It only changes where you cut the ranking.
 - **Recall can only rise as the threshold falls; precision has no such promise.** Every row of a sweep is a trade, never a free gift.
-- **Three denominators, and the whole skill is choosing:** precision's is *how many I flagged*, recall's is *how many were really positive*, false positive rate's is *how many were really negative* (986 for us, which is why it barely moves).
+- **Three denominators, and the whole skill is choosing:** precision's is *how many I flagged*, recall's is *how many were really positive*, false positive rate's is *how many were really negative* (986 for us, which is fixed, so each false alarm moves it by only 0.001).
 - **Steepness = rise ÷ run**, and the answer is a sentence: *"I bought ___ units of recall per unit of false alarm."* Steep means cheap recall; flat means people bothered for nothing.
 - **If a metric draws a curve it wants probabilities; if it counts cells it wants predictions.** Only one of those two mistakes gives you an error message.
 - **AUC's baseline is always 0.5. AP's baseline is the positive rate.** Report both, with the class balance written next to them.

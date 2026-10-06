@@ -43,7 +43,7 @@ One is called **the preparation.** It knows how to turn a raw order — words, h
 
 **Two things. Used in the right order, every single time, forever, by anybody who ever touches this system** — including you, in eight months, on a Friday afternoon, in a different file.
 
-What happens if somebody forgets the first one? Most people say "it'll crash". That is the hopeful answer, and if it were true this chapter would not exist. Here is what actually happens, on one real order — GreenLeaf, 7.4 km, 5 items, 22 minutes of prep, 7 pm on a Thursday, raining, driver with 59 months' experience:
+What happens if somebody forgets the first one? Most people say "it'll crash". Sometimes it does — hand the whole raw table over, words and holes included, and it stops with an error about the words. But that is the hopeful answer, and the dangerous case is the one that does *not* crash: numbers that look like numbers, just on the wrong scale. Here is what happens then, on one real order — GreenLeaf, 7.4 km, 5 items, 22 minutes of prep, 7 pm on a Thursday, raining, driver with 59 months' experience:
 
 ```text
 the four typed numbers, raw     : [7.4, 5.0, 22.0, 19.0]
@@ -717,7 +717,7 @@ the hole was filled with the median: 4.0
 
 Now read the grid, because everything in the week is visible in six rows and four columns:
 
-- **Column 0** is `minutes_late` on its new ruler. The raw numbers were 2, 8, 0, ?, 12, 4 — and the new ones are negative for the small ones and positive for the big ones, because the ruler is centred on the middle of the column. (Exactly *how* is Week 4.)
+- **Column 0** is `minutes_late` on its new ruler. The raw numbers were 2, 8, 0, ?, 12, 4 — and the new ones are negative for the small ones and positive for the big ones, because the ruler is centred on the mean (the average) of the column. (Exactly *how* is Week 4.)
 - **Columns 1, 2, 3** are `route`, one column per value. Reading across row 0: `0 0 1`. Reading row 1: `1 0 0`. The words come out **in alphabetical order — blue, green, red** — so column 1 is blue, column 2 is green, column 3 is red. Check row 0: it was red, and the 1 is in the last column. ✓
 - **Row 3 had a hole.** The median of 2, 8, 0, 12, 4 is **4.0**, so the hole became 4.0 — which is why row 3 and row 5 have the identical value `-0.253`: row 5 really *was* 4.0. **A filled hole is indistinguishable from a real value afterwards**, and that is a limitation for heading 7. (Week 6 shows you how to keep a record of which was which.)
 
@@ -913,7 +913,7 @@ ValueError: columns are missing: {'weather'}
 
 **It names the column. By name.** That is what a name-based switchboard buys you — search your file for that exact word.
 
-And think about what the error **prevented**: without it, `weather` would have quietly become three zeros — an order that happened in no weather at all — and you would have got a confident probability with no hint that a whole column was missing. **That error is a friend. It refused to guess.** Write that in the Bug Log with the word *protected* in it.
+And think about what the error **did**: it stopped at the door and named the missing column, instead of guessing or answering anyway. (A missing *column* cannot slip through as zeros here — the switchboard looks it up by name and complains. The genuinely silent case is a missing *value* inside a column that exists: that is Break 4.) **That error is a friend. It refused to guess.** Write that in the Bug Log with the word *protected* in it.
 
 **The fix:** add the key. All eight are required, and the switchboard does not care which kind of column it is — delete `driver_experience_months` instead and you get `ValueError: columns are missing: {'driver_experience_months'}`.
 
@@ -1025,7 +1025,7 @@ If you missed it, here is the whole lesson. You need a laptop, a pen, and two en
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "A `Pipeline` is a neatness thing. I could keep the two objects and be careful." | Two objects can be **dropped**; one cannot. Measured: forgetting the preparation turns **0.709 into 1.000**, with **no error message of any kind.** And the pipeline is not a better model — identical AUC, **0.7541 either way.** It is a shape that cannot be got wrong. |
+| "A `Pipeline` is a neatness thing. I could keep the two objects and be careful." | Two objects can be **dropped**; one cannot. Measured: forgetting the preparation on the four numbers turns **0.709 into 1.000**, with **no error message of any kind.** And the pipeline is not a better model — identical AUC, **0.7541 either way.** It is a shape that cannot be got wrong. |
 
 ### Trick 2 — "the artifact is the code"
 
@@ -1089,7 +1089,7 @@ Week 12.*
 - **The deliverable is a file and a page, not a number.** A score is a claim; **5002 bytes** of fitted pipeline is a thing somebody can use.
 - **Count the columns on paper, then print the shape.** `5 + 5 + 7 + 3 = 20`, and `(1200, 8) → (1200, 20)`. The row count never changes — you are re-describing rows, not adding them.
 - **Columns are chosen by name, never by position.** A scrambled order still gives **0.291**.
-- **`Pipeline` is not more careful than you; it is a shape that cannot be got wrong.** Forgetting the preparation turns 0.709 into 1.000 with no error. Identical AUC either way — **0.7541** — so nothing is being bought except safety.
+- **`Pipeline` is not more careful than you; it is a shape that cannot be got wrong.** Forgetting the preparation on the four numbers turns 0.709 into 1.000 with no error. Identical AUC either way — **0.7541** — so nothing is being bought except safety.
 - **A model can only ever be the last step.** Everything before it must change data and pass it on. And a wrong pipeline is silent when built, loud when fitted.
 - **The preparation learns things too:** the median (30.0 on train, 29.0 on all 2000) and the ruler's centre (3.4591 against 3.5193). Preparing before splitting cost **0.000092** here — invisible, which is exactly why it is dangerous.
 - **The clean room test is a count, not a feeling:** `fit(` → 0, `make_data` → 0, `train_test` → 0.
@@ -1171,7 +1171,7 @@ Go to **[the Week 3 workbook](../workbook/week-03.md)**. About **60 minutes**.
 
 **Does the card contain real numbers?** 2000 rows · 8 features · 1200 / 400 / 400 · 0.2875 · validation AUC **0.7541** · baseline **0.5000**. **A card with no numbers is a mood.** And heading 6 must name the **pile** as well as the score: "AUC 0.7541" is half an answer.
 
-**Does your "what did the error protect me from" line describe the bad thing that did *not* happen?** *"It stopped my program"* is the wrong shape of answer. The right shape names the **silence**: without it, `weather` would have become three zeros and you would have got a confident probability with no warning at all.
+**Does your "what did the error protect me from" line say what it did *instead of guessing*?** *"It stopped my program"* is the wrong shape of answer. The right shape names what the error did **instead of guessing**: it stopped the program and named `weather`, rather than letting an order through with a column it never received.
 
 > **⚠️ Watch out:** heading 5 says **"the test pile has not been opened"**, and it has to stay true — for the whole term. Not opened in Week 4. Not "just a peek" in Week 7. That line is the only reason anybody should believe anything else on the card.
 

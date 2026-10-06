@@ -10,7 +10,7 @@
 |---|---|
 | **Duration** | 70 minutes |
 | **Type** | 🟩 Lab — the week the student writes `fit()` |
-| **Big idea** | Training is a **loop**: get the slope for every knob, step every knob a little way **against** its slope, repeat. That loop is what `fit()` was doing all along. |
+| **Big idea** | Training is a **loop**: get the slope for every knob, step every knob a little way **against** its slope, repeat. That loop is what `fit()` was doing all along for logistic regression. |
 | **New vocabulary** | gradient · epoch · step / iteration · divergence · convergence criterion · batch / mini-batch / stochastic |
 | **New maths** | **The gradient: one slope per knob, collected in a list** — and the update `w ← w − lr × slope` applied to all of them at once, **worked for three rounds on paper before any code.** |
 | **New syntax** | `(X * w).sum(axis=1)` · `w -= lr * grad` · `ax.set_yscale("log")` |

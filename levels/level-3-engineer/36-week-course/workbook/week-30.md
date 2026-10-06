@@ -1272,7 +1272,7 @@ PC1 (36.2% of the spread)
 PC2 (19.2% of the spread)
 ```
 
-**`36.2 + 19.2 = 55.4`, so 44.6% of these wines is NOT on the page.**
+**`36.2 + 19.2 = 55.4`, so 44.6% of the spread in these wines is NOT on the page.**
 
 **Compared with Week 29's version:** *"Identical points, identical axes, identical percentages — and last week it was one elongated blob with no gaps in it. Colouring it by cluster makes three groups appear. Nothing about the data changed; the structure was there the whole time and the picture could not show it. That is exactly why a clustering needs a number and not a plot."*
 

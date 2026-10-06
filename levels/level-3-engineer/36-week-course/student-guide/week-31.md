@@ -217,7 +217,7 @@ non-zero cells   : 363
 zero cells       : 5157 = 93.4% of the grid
 ```
 
-**Ninety-three point four per cent empty.** And here is the part that should bother you: **it gets emptier as you add reviews, not fuller.** Every new review brings a few new words, and every new word adds a whole column of zeros for every review that came before it.
+**Ninety-three point four per cent empty.** And here is the part that should bother you: **it tends to get emptier as you add reviews, not fuller.** Most new reviews bring a few new words, and every new word adds a whole column of zeros for every review that came before it.
 
 > **Sparse matrix** — a grid stored as a list of *(row, column, value)* triples for the non-zero cells only. Scikit-learn's vectorizers hand you one of these by default, which is why `print(X)` shows coordinates instead of a table.
 

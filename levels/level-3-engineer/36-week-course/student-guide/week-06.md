@@ -5,7 +5,7 @@
 ---
 
 > ### This week in one sentence
-> **A suspiciously perfect score is almost never a great model — it is information leaking in that will not exist at the moment you actually have to predict — and because leakage always makes the number go *up*, it is the only kind of bug that gets applauded.**
+> **A suspiciously perfect score is almost never a great model — it is information leaking in that will not exist at the moment you actually have to predict — and because leakage almost always makes the number go *up*, it is nearly the only kind of bug that gets applauded.**
 >
 > **By the end of this chapter you will be able to:**
 > - **Impute missing values with a statistic learned from the training rows only**, and add an indicator column marking where the blank was
@@ -44,9 +44,9 @@ That failure has a name.
 
 > **data leakage** — when a column contains information that would not be available at the moment you actually have to make the prediction.
 
-**And here is the property that makes leakage genuinely dangerous: it always makes your score go up.**
+**And here is the property that makes leakage genuinely dangerous: it almost always makes your score go up.**
 
-Always. Which makes it **the only kind of bug that gets applauded.** A bug that makes your number worse gets fixed on Tuesday afternoon, because somebody is annoyed about it. **A bug that makes your number better gets a presentation and six months in production being wrong.**
+Almost always (contrived cases exist, but you will not meet one by accident). Which makes it **nearly the only kind of bug that gets applauded.** A bug that makes your number worse gets fixed on Tuesday afternoon, because somebody is annoyed about it. **A bug that makes your number better gets a presentation and six months in production being wrong.**
 
 ![Three ways to be handed the answer](../figures/fig-w06-1-three-flavours-of-leakage.svg)
 *Figure 6.1 — Three ways to be handed the answer. Three different bugs, three different tells, and all three push the number in the same flattering direction.*
@@ -245,10 +245,10 @@ TIME   split AUC  0.5249   <- what production will give you
 the gap           0.2890
 ```
 
-**0.2890 of AUC, produced by nothing except where you put the scissors.** Same rows. Same features. Same model. **The random split reports a good model. The time split reports a coin flip** — and the time split is the one that matches how the thing will actually be used: **trained on the past, run on the future.**
+**0.2890 of AUC, produced by nothing except where you put the scissors.** Same rows. Same features. Same model. **The random split reports a good model. The time split reports roughly a coin flip (0.5249, one seed)** — and the time split is the one that matches how the thing will actually be used: **trained on the past, run on the future.** (The model has no week column, so it is not literally looking things up in the future. The random split averages the drift across all 30 weeks, which flatters it; the time-split model learns an `x1` rule from weeks 0–21 that has reversed by weeks 22–29. Call it *drift that a random split hides*.)
 
 ![Trained on the future, tested on the past](../figures/fig-w06-4-temporal-leak-training-on-the-future.svg)
-*Figure 6.4 — Trained on the future, tested on the past. The random split's train and test rows are interleaved through all 30 weeks, so the model has already seen the weeks it is marked on.*
+*Figure 6.4 — Trained on the future, tested on the past. The random split's train and test rows are interleaved through all 30 weeks, so the drift is averaged into the model and hidden from the score.*
 
 **The tell:** *do the rows have a date, an order number, or anything else that says when they happened?* If yes, **and** you will deploy forward in time, **split by time.**
 
@@ -1210,7 +1210,7 @@ could not convert string to float: 'clear'
 
 ### Two numbers and a hospital
 
-`Week 5's best honest score: 0.7843` and `This week's model: 0.9762` went on the board. We were pleased for about ten seconds. Then the hospital story, then the definition, then the sentence that runs the whole lesson: **leakage always makes your score go up, which makes it the only kind of bug that gets applauded.**
+`Week 5's best honest score: 0.7843` and `This week's model: 0.9762` went on the board. We were pleased for about ten seconds. Then the hospital story, then the definition, then the sentence that runs the whole lesson: **leakage almost always makes your score go up, which makes it nearly the only kind of bug that gets applauded.**
 
 Then four questions, and the third one is the one to remember:
 
@@ -1369,7 +1369,7 @@ The ↻ on stage three is the training loop, still grey — you open it in Week 
 
 ## 🔑 Remember This
 
-- **Leakage is a value that will not exist at the moment you have to predict — and it always makes your score go up.** That makes it the only kind of bug that gets applauded, and it is why **good news gets audited harder than bad news.**
+- **Leakage is a value that will not exist at the moment you have to predict — and it almost always makes your score go up.** That makes it nearly the only kind of bug that gets applauded, and it is why **good news gets audited harder than bad news.**
 - **Blanks get filled with a statistic learned from the training rows only.** 29.5, not 29.0. `1,140` values, two middles at positions 570 and 571, which are 29 and 30, so `(29 + 30) ÷ 2 = 29.5`. **The median, not the mean, because one silly value cannot drag a median.**
 - **The missing indicator is a hypothesis, not a gift.** `0.7723 − 0.7752 = −0.0029`, so ours went. **A new tool does not get an exemption from last week's rule.**
 - **Three flavours, three tells.** **Target:** is the value filled in yet? **Temporal:** do the rows have a date? **Preprocessing:** was the statistic worked out before the cut? Target is a bug in a *column*; the other two are bugs in *how you cut*.

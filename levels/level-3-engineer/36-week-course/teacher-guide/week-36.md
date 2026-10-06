@@ -184,7 +184,7 @@ The seven gates, and the honest standard for each. **"I could do it with the not
 | **4** | Backprop | A 2-layer network on paper, no notes, saying what each of the five lines does — and the 42 from Week 18 |
 | **5** | The three questions | Shown any score, the first three things out of their mouth are: **what is the baseline · what is the class balance · was anything fitted before the split** |
 | **6** | Shapes | `(n, d) @ (d, h) → (n, h)` said out loud, and the output shape of any layer predicted **before** running it |
-| **7** | Embeddings | What one is, and why **cosine similarity** is the right way to compare two |
+| **7** | Embeddings | What one is, and why **cosine similarity** is the usual way to compare two |
 
 **The conversation to have, and it is the most important five minutes of the week for some students.** A student with five of seven does not "fail". They have a map. Gate 3 is a typing-fluency problem and ten days of one five-minute drill fixes it. Gate 2 has no shortcut — Level 4's evaluation work is built directly on the capstone, and starting Level 4 without it means learning to judge a language model with no idea what "judge" means. **Say that plainly and kindly. "Not yet, and here is the fortnight that fixes it" is a far better gift than a wave through.**
 
@@ -904,7 +904,7 @@ Every item restated so you can mark from this page alone. **The paper is pages 3
 **→ C. `4 × 4`.** `(8 + 2×1 − 3) ÷ 2 + 1 = 7 ÷ 2 + 1 = 3 + 1 = 4`, rounding down. *Why not:* `8 × 8` is `stride=1, padding=1`; `3 × 3` does the division and forgets the `+ 1`; `6 × 6` is `stride=1, padding=0`. **The two combinations worth memorising: `k=3, s=1, p=1` preserves size; `k=2, s=2` pooling halves it.**
 
 **A15 `[W26]`** Your model ends with `nn.Softmax(dim=1)` and your loss is `nn.CrossEntropyLoss()`. What happens?
-**→ D. Nothing raises, the squash is applied twice, the gradients flatten and accuracy caps out below where it should.** *Why not:* `CrossEntropyLoss` expects **raw logits** and applies log-softmax itself; no shape error occurs; it is not a speed problem. **End the model with a bare `nn.Linear`.**
+**→ D. Nothing raises, the squash is applied twice, the gradients flatten and the model learns more slowly.** *Why not:* `CrossEntropyLoss` expects **raw logits** and applies log-softmax itself; no shape error occurs; it is not a speed problem. **End the model with a bare `nn.Linear`.**
 
 **A16 `[W28]`** You try `k = 2…10` and pick the `k` with the **lowest inertia**. What is wrong?
 **→ B. Inertia falls monotonically as `k` rises, so this always picks the largest `k` you tried.** At `k = n` it reaches zero, with every point its own cluster. *Why not:* k-means minimises inertia **for a fixed k**; comparing across k is a different and degenerate question; inertia is defined for every `k ≥ 1` and it falls rather than rises. **You want the bend, cross-checked with silhouette — and if there is no bend, you say so.**
@@ -1343,7 +1343,7 @@ epoch 19  val acc 0.859
 
 **1 (worst) — no `optimizer.zero_grad()`.** PyTorch **accumulates** into `.grad` by design. With nothing clearing it, batch 40's gradient is the sum of batches 1 to 40, so every update is driven mostly by stale gradients from old weights. (With plain SGD the step would also balloon; this program uses Adam, which rescales the step, so what you see is slow, noisy learning rather than a blow-up.) **Look at the output: it climbs, then drops to 0.798, then climbs, then drops to 0.831. That wobble is the signature.**
 
-**2 — `nn.Softmax(dim=1)` as the last layer with `nn.CrossEntropyLoss` (line 20).** The loss expects **raw logits** and applies log-softmax itself, so the squash happens twice, the gradients flatten, and accuracy caps out. Nothing raises. **End the model with a bare `nn.Linear`.**
+**2 — `nn.Softmax(dim=1)` as the last layer with `nn.CrossEntropyLoss` (line 20).** The loss expects **raw logits** and applies log-softmax itself, so the squash happens twice, the gradients flatten, and the model learns more slowly. Nothing raises. **End the model with a bare `nn.Linear`.**
 
 **3 — no `model.eval()` / `model.train()` around the validation loop (line 33).** `Dropout(0.3)` is still active while you measure, so 30% of the units are randomly switched off during evaluation. Your number is noisy **and pessimistic**, which makes every other diagnosis harder.
 

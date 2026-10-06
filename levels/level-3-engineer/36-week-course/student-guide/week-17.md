@@ -165,7 +165,7 @@ That is the whole explanation, and it is worth having, because somebody who know
 
 **Spend a moment on rows 4 and 5.** `(1,3) @ (3,1)` gives a single number. `(3,1) @ (1,3)` gives a 3×3 grid of nine. **Same two grids, opposite order, and the answers are not even the same size.**
 
-So write this down, because it is the surprising fact of the week: **`A @ B` and `B @ A` are not the same thing.** Usually only one of them is even legal, and when both are legal they give different answers. Grid multiplication is not like multiplying six by seven.
+So write this down, because it is the surprising fact of the week: **`A @ B` and `B @ A` are not the same thing.** Usually only one of them is even legal, and when both are legal they usually give different answers. Grid multiplication is not like multiplying six by seven.
 
 ### 3. Broadcasting: how one bias serves four rows
 
@@ -729,7 +729,7 @@ A2 (3, 1)
 
 **Step 4 — read row 0 out loud, because it is the interesting one.** After the bias, `Z1` row 0 is `[−0.8, −0.7]`. **Both negative, so ReLU silences both**, and `A1` row 0 is `[0, 0]`. So `Z2` for row 0 is `0 × 1.5 + 0 × (−1.0) + 0.2 = 0.2`, and sigmoid of `0.2` is `0.549834`.
 
-**That row's answer came entirely from the output bias.** The hidden layer contributed nothing at all, because neither of its two units had anything to say about that input. **This is what a network with too few hidden units looks like from the inside**, and it is exactly why Week 19 uses sixteen.
+**That row's answer came entirely from the output bias.** The hidden layer contributed nothing at all, because neither of its two units had anything to say about that input. **This is what it looks like from the inside when every hidden unit happens to be silent on one row** — here because both pre-activations are negative. A small network like this is more likely to have no voice on some row, and a layer of sixteen units, as in Week 19, makes that less likely.
 
 ### Worked Example 3 — Softmax on cat, dog, bird
 

@@ -140,7 +140,7 @@ in a storm:     0.8571 − 0.3908 = 0.4663
 0.4663 ÷ 0.3269 = 1.43
 ```
 
-**Distance is 1.43 times as costly in a storm as in the clear.** Now — a model with a weight on `distance` and a separate weight on `storm` can only **add** those two effects. Adding cannot say "worse together". Multiplying can:
+**Distance is 1.43 times as costly in a storm as in the clear.** Now — a model with a weight on `distance` and a separate weight on `storm` can only **add** those two effects (on the log-odds scale), so distance gets one fixed weight whatever the weather. That alone does not let distance matter *more* in a storm. Multiplying does:
 
 ```python
 severity = d["weather"].map({"clear": 0.0, "rain": 1.0, "storm": 2.0})
@@ -626,7 +626,7 @@ rush (18-20)   717     0.3682
 
 > "**0.4663 against 0.3269.** So a long trip is about one and a half times as costly when it's storming. Distance and weather don't just both matter — they **make each other worse**.
 >
-> And a model that has a weight for distance and a weight for storm can only **add them together**. Adding cannot say 'worse together'. So we build a column that multiplies."
+> And a model that has a weight for distance and a weight for storm can only **add them together**, so distance gets one fixed weight whatever the weather. That doesn't let distance matter more in a storm. So we build a column that multiplies."
 
 **Do this:** Write the severity map and the three products on the board:
 
@@ -1514,7 +1514,7 @@ num__distance_km, num__items, num__prep_minutes, num__order_hour, num__driver_ex
 
 ## 🔮 Next Week Preview
 
-Next week the score goes **up**, a long way, and that is the problem. Week 6 opens with a model scoring **0.978** on the delivery data — a fifth of a point better than anything in this week's ablation table — and twelve minutes for the student to find out why, with no hints. The answer is a column called `customer_called_support`, which is only ever filled in *after* a delivery has already arrived late. It is not a model. It is a very expensive `if` statement that reads the answer.
+Next week the score goes **up**, a long way, and that is the problem. Week 6 opens with a model scoring **0.978** on the delivery data — about 0.2 (twenty points on a 0-to-1 scale) higher than anything in this week's ablation table — and twelve minutes for the student to find out why, with no hints. The answer is a column called `customer_called_support`, which is only ever filled in *after* a delivery has already arrived late. It is not a model. It is a very expensive `if` statement that reads the answer.
 
 That is one of the **three flavours of leakage**, and all three make the score go up, which is why good news needs auditing harder than bad news. **Target leakage** is the column that only exists because the outcome happened. **Temporal leakage** is shuffling rows across a time boundary so you train on the future — a random split reports 0.8139 and the honest time-based split reports 0.5249, a gap of 0.2890 produced by nothing but where you cut. And **preprocessing leakage** is the quiet one: any statistic worked out before the split. Week 6 makes the student produce **76.5% accuracy on a table of pure random noise**, 200 rows by 2,000 columns with a coin-flip label and zero signal in it by construction — and then fix it with one change and watch it fall to 52.0%.
 

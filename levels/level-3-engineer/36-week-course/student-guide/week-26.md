@@ -215,9 +215,9 @@ After training, `model[0].weight` holds the eight 3×3 filters. Rendered as pict
 | 2 | −0.956 | −0.032 | likes ink but not a left-right split |
 | 3 | +0.543 | +0.158 | weak, no clear preference |
 | **4** | +0.503 | **+3.760** | **a horizontal edge detector: bright above, dark below** |
-| 5 | −0.876 | +0.212 | weak |
+| 5 | −0.876 | +0.212 | weak; mostly positive weights, so ink-like, with a mild dislike of bright-left |
 | **6** | **+2.830** | −1.219 | **a vertical edge detector: bright left, dark right** |
-| 7 | +2.916 | +3.041 | likes both — closer to a **corner** detector |
+| 7 | +2.916 | +3.041 | likes both equally — best read as an **ink-total** measurer, not a clear corner detector |
 
 **Here is filter 6's `+2.830`, worked out in full so it is not magic.** The bright-left patch is `1 1 −1` in every row:
 
@@ -437,7 +437,7 @@ test accuracy  : 0.9796  (529 of 540 test rows)
 
 **And the counts.** `529 of 540`. **Always print the counts beside the ratio**, because `0.9796` looks precise to four decimal places and it is not: one more correct answer takes it to 0.9815. **The fourth decimal is noise.**
 
-> **⚠️ Watch out:** the `seconds:` line is a stopwatch, not a result. Yours will differ and anything from 2 to 15 seconds is normal. **Every other line must match exactly.** If your test accuracy is not `0.9796`, a seed is missing: `torch.manual_seed(0)` **before the model is built**, and `random_state=0, stratify=y` in the split. Both matter.
+> **⚠️ Watch out:** the `seconds:` line is a stopwatch, not a result. Yours will differ and anything from 2 to 15 seconds is normal. **Every other line should match exactly (or within the last digit on a different machine).** If your test accuracy is not `0.9796`, a seed is missing: `torch.manual_seed(0)` **before the model is built**, and `random_state=0, stratify=y` in the split. Both matter.
 
 **Eleven wrong. Which eleven?** Best question available, and it is the whole first half of next week.
 

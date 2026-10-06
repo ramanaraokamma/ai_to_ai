@@ -81,7 +81,7 @@ Rule 1 sounds like advice. It is not: it is **mechanically checkable**, and that
 grep -rnE "\.fit\(|train_test_split|DummyClassifier|optimizer" serve/
 ```
 
-If that prints nothing, `serve/` has no training code in it. If it prints anything, you have a bug — **regardless of whether the program currently works**. A rule you can check beats a rule you promise.
+If that prints nothing, `serve/` very probably has no training code in it (a strong check, not a proof: the pattern would miss `fit_transform` or `.fit (`, and it also matches comments and strings). If it prints anything, look at each line and treat a real match as a bug — **regardless of whether the program currently works**. A rule you can check beats a rule you promise.
 
 ![One model definition, imported by both sides](../figures/fig-w34-2-shared-model-def-imported-twice.svg)
 *Figure 34.2 — One model definition, imported by both sides. `model_def.py` holds the class names, the input field name and the architecture. `train.py` imports it to build; `predict.py` imports it to read. Two folders make Rule 1 a thing you can check instead of a thing you promise.*
@@ -809,7 +809,7 @@ cost = 10 x (nasty called positive)  +  1 x (nice called negative)
 
 **Ask this:** "0.65 and 0.70 both cost 4. Which threshold do we ship?"
 
-*0.65. The tie-break rule is: **of the tied thresholds, take the lower one.** Say it out loud and say why: the two make exactly the same mistakes on these 16 rows, so the data cannot separate them, and the lower one flags fewer reviews as negative on the rows we have not seen, which keeps the most nice reviews flowing.*
+*0.65. The tie-break rule is: **of the tied thresholds, take the lower one.** Say it out loud and say why: the two make exactly the same mistakes on these 16 rows, so the data cannot separate them, and the lower one flags fewer reviews as negative on the rows we have not seen, which wastes fewer moderator ten-seconds on nice reviews. It also lets more borderline reviews through, so this is a stated convention, not a proven better choice; a team that priced nasty reviews harder could reasonably break the tie the other way.*
 
 > "**0.65, and not 0.5.** And now the uncomfortable part, which is the part I want you to write down."
 
@@ -970,7 +970,7 @@ $ grep -rnE "\.fit\(|train_test_split|DummyClassifier|optimizer" serve/
 $
 ```
 
-> **Say this:** "Nothing. **That blank line is the evidence for Rule 1**, and it is evidence rather than a promise. In your write-up next week you paste the command *and* its empty output."
+> **Say this:** "Nothing. **That blank line is the evidence for Rule 1**, and it is evidence rather than a promise (strong evidence, not a proof). In your write-up next week you paste the command *and* its empty output."
 
 > **🧑‍🏫 A true story worth telling.** The first time I ran that grep on this project, it printed a line — and the line was **a comment in my own file** that said *"there is no `.fit()` anywhere below this line."* The check was right and my sentence was wrong. **A check that catches your own prose is a check doing its job.** Reword the comment; don't weaken the grep.
 
@@ -1485,7 +1485,7 @@ Model answer for the reference project. **Accept any contract whose boxes are sp
 
 **And the follow-up question: "0.65 and 0.70 tie at 4. Which do you ship?"**
 
-**0.65**, and the reason is worth a mark: of two thresholds with the same cost, take the lower one, because it flags fewer things as negative on rows nobody has seen yet, which keeps the most nice reviews flowing. Accuracy cannot separate them either — 0.7500 at 0.65 against 0.7500 at 0.70 on these rows, with identical mistakes — so the tie-break is a judgement you write down. **And the honest sentence that goes with it: this is 16 validation rows, and 0.50 had the best accuracy (0.9375) but one expensive error, so the choice rests on a single row.** **A student who notices the tie and breaks it with a stated reason is at level 4.**
+**0.65**, and the reason is worth a mark: of two thresholds with the same cost, take the lower one, because it flags fewer things as negative on rows nobody has seen yet, which wastes fewer moderator ten-seconds on nice reviews (it also lets more borderline reviews through, so the rule is a stated convention, not a proven better choice). Accuracy cannot separate them either — 0.7500 at 0.65 against 0.7500 at 0.70 on these rows, with identical mistakes — so the tie-break is a judgement you write down. **And the honest sentence that goes with it: this is 16 validation rows, and 0.50 had the best accuracy (0.9375) but one expensive error, so the choice rests on a single row.** **A student who notices the tie and breaks it with a stated reason is at level 4.**
 
 **Marking notes.** All eight cost cells, and the ring round 0.65. **The commonest error is multiplying the wrong column by 10** — catch it by asking which mistake was the expensive one.
 

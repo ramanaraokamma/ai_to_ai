@@ -181,7 +181,7 @@ Level 4 builds transformers, trains language models and wires up agents. It will
 | **4** | Backprop | A 2-layer network on paper, no notes, saying what each of the five lines does — and the **42** from Week 18 |
 | **5** | The three questions | Shown any score, the first three things out of your mouth are: **what is the baseline · what is the class balance · was anything fitted before the split** |
 | **6** | Shapes | `(n, d) @ (d, h) → (n, h)` said out loud, and the output shape of any layer predicted **before** running it |
-| **7** | Embeddings | What one is, and why **cosine similarity** is the right way to compare two |
+| **7** | Embeddings | What one is, and why **cosine similarity** is the usual way to compare two |
 
 **"I could do it with the notes open" is not a tick.**
 

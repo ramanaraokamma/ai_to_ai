@@ -1233,11 +1233,11 @@ filter   answer to a bright-LEFT edge   answer to a bright-TOP edge
 | 2 | likes ink in general; no left-right preference |
 | 3 | **weak. Cannot be described.** |
 | **4** | **horizontal edge detector: bright above, dark below** |
-| 5 | **weak. Cannot be described.** |
+| 5 | **weak.** Mostly positive weights, so ink-like, with a mild dislike of bright-left; no clean story |
 | **6** | **vertical edge detector: bright left, dark right** |
-| 7 | likes both patches — positive nearly everywhere, so closer to a **corner** detector |
+| 7 | likes both patches — positive nearly everywhere, so best read as an **ink-total** filter (two test patches cannot support "corner") |
 
-**Two describable: 4 and 6.** **Honestly undescribable: 3 and 5**, and saying so earns marks.
+**Two describable: 4 and 6.** **Honestly undescribable: 3** (and 5, beyond a mild ink-like reading), and saying so earns marks.
 
 **The four-row comparison, real numbers:**
 

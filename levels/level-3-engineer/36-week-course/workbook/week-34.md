@@ -880,7 +880,7 @@ Notice the shape of the column: it falls, bottoms out, then climbs again. **50 �
 
 **(a) 0.65.**
 
-**(b)** Of two thresholds with the same total cost, **take the lower one** — because it calls fewer things negative, and every extra negative is a moderator reading a comment nobody needed to flag, which is ten seconds of a real person's afternoon. At 0.65 and 0.70 the counts happen to be identical here (4 and 4), so on these rows the tie-break changes nothing you can measure; it is a rule for the rows you have not seen: **when in doubt, flag less.** A student who *notices* the tie and breaks it with a stated rule has done the grown-up thing; accuracy cannot help, because it is `0.7500` at both.
+**(b)** Of two thresholds with the same total cost, **take the lower one** — because it calls fewer things negative, and every extra negative is a moderator reading a comment nobody needed to flag, which is ten seconds of a real person's afternoon. At 0.65 and 0.70 the counts happen to be identical here (4 and 4), so on these rows the tie-break changes nothing you can measure; it is a stated convention for the rows you have not seen, not a proven better choice: **flag less, and say that you chose to.** (A team that priced nasty reviews harder could reasonably break the tie the other way.) A student who *notices* the tie and breaks it with a stated rule has done the grown-up thing; accuracy cannot help, because it is `0.7500` at both.
 
 **(c)** With both prices equal to 1: at `0.30` it is `1 × 5 + 1 × 0 = 5`; at `0.50` it is `1 × 1 + 1 × 0 = 1`; at `0.65` it is `1 × 0 + 1 × 4 = 4`. So the winner is **t = 0.50** — and the thing you have just computed is **the error count**, which is exactly what **accuracy** is made of (`0.9375` at 0.50, one wrong row in sixteen). **Accuracy is the cost sweep with both prices set to 1.** That single sentence is the whole reason accuracy disagrees with you: it is not neutral, it is a pricing decision that somebody made for you. At `10` and `1`, though, 0.50 costs `10` and 0.65 costs `4`.
 
@@ -1204,7 +1204,7 @@ winners = [THRESHOLDS[i] for i in range(len(costs)) if costs[i] == best]
 print()
 print("smallest cost   : %d" % best)
 print("thresholds tied : %s" % winners)
-print("ship            : %.2f  (of tied thresholds, take the LOWER one: it keeps the most nice reviews flowing)"
+print("ship            : %.2f  (of tied thresholds, take the LOWER one: a stated convention, not a proven better choice)"
       % min(winners))
 ```
 
@@ -1221,7 +1221,7 @@ print("ship            : %.2f  (of tied thresholds, take the LOWER one: it keeps
 
 smallest cost   : 4
 thresholds tied : [0.65, 0.7]
-ship            : 0.65  (of tied thresholds, take the LOWER one: it keeps the most nice reviews flowing)
+ship            : 0.65  (of tied thresholds, take the LOWER one: a stated convention, not a proven better choice)
 ```
 
 **Every number agrees with your hand-worked table.** Note `[0.65, 0.7]` — Python prints `0.7`, not `0.70`, because a float has no idea how many decimal places you meant. **Printing the sum as text as well as the total is the point of the program:** anybody can argue with `10 x 5 + 1 x 0 = 50`, and nobody can argue with a bare `50`.
@@ -1389,7 +1389,7 @@ $ ls -l model/artifacts/
 | `python_version` | `3.10.10` | same reason |
 | `created_utc` | e.g. `2026-09-22T19:36:31Z` | the only field meant to differ from anybody else's |
 
-**`LATEST` is 13 bytes because `12 + 1 = 13`.** And the grep prints **nothing**: that blank line is Rule 1 checked instead of promised.
+**`LATEST` is 13 bytes because `12 + 1 = 13`.** And the grep prints **nothing**: that blank line is Rule 1 checked instead of promised (strong evidence, not a proof: the pattern cannot see every spelling of training).
 
 **34.5 — the reference project's three golden tests.**
 

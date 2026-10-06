@@ -768,7 +768,7 @@ no error, no warning, difference = 0.017
 
 Take answers. Most students say "it'll crash" or "you'll get an error".
 
-> "That's the hopeful answer, and if it were true we wouldn't need today. Let me show you what actually happens."
+> "Sometimes it does crash — the raw table has words in it, and the words stop it. But that's the hopeful answer, and the dangerous case is the one that doesn't crash: numbers that look like numbers, just on the wrong scale. Let me show you what happens then."
 
 **Do this:** Open one laptop and run `kept_apart.py`, which you typed last night.
 
@@ -813,7 +813,7 @@ damage             = 0.291
 
 | Ask | Answer you want | If they say something else |
 |---|---|---|
-| "Two objects, right order. What if you forget one?" | You get a confident, wrong answer with no error. | "It crashes" is the expected answer — reward the instinct and then show the screen. That gap is the lesson. |
+| "Two objects, right order. What if you forget one?" | If the raw numbers reach the model (words already handled), a confident, wrong answer with no error. | "It crashes" is the expected answer — reward the instinct and then show the screen. That gap is the lesson. |
 | "Why is the model so *sure* rather than just wrong?" | The numbers are far bigger than anything it trained on, so the sum it adds up is thrown off the end of the scale — and these four all push towards late, so the answer is pushed to 1.000. | If stuck: "22 instead of 2. Ten times bigger. So the push towards *late* is ten times bigger too — what does that do to the answer?" |
 | "How many things to remember with one envelope inside another?" | One. | If they say two, hold up only the outer envelope: "how many am I holding?" |
 | "So is the pipeline a better model?" | No — the same model, with no way to reach it wrongly. | Point at the first line of the output: 0.7541 either way. **The identical AUC is the proof.** |
@@ -1173,7 +1173,7 @@ ValueError: columns are missing: {'weather'}
 
 > **Say this:** "**`columns are missing: {'weather'}`.** It names the column. By name. That's what the switchboard being name-based buys you.
 >
-> And think about what that error just prevented. Without it, `weather` would have quietly become three zeros — *no weather at all* — and you'd have got a confident probability for an order that happened in a meteorological void.
+> And think about what that error just did. It stopped at the door and named the column, instead of guessing or answering anyway. (A missing *column* can't slip through as zeros — the switchboard looks it up by name and complains. The silent case is a missing *value* in a column that exists, and we'll meet that in a few minutes.)
 >
 > **That error is a friend.** It refused to guess. Write that in the Bug Log with the word 'protected' in it."
 
@@ -1435,7 +1435,7 @@ Every message below came from running a broken version of this week's actual cod
 
 | What the student sees (real message) | What it means | Most likely cause | The fix |
 |---|---|---|---|
-| `ValueError: columns are missing: {'weather'}` | "One of the eight columns I was trained on isn't in what you gave me." | A key missing or misspelled in a hand-typed order. | Add or correct it. **It names the column — search your file for that exact word.** This error protected you from a silent all-zeros answer. |
+| `ValueError: columns are missing: {'weather'}` | "One of the eight columns I was trained on isn't in what you gave me." | A key missing or misspelled in a hand-typed order. | Add or correct it. **It names the column — search your file for that exact word.** This error protected you from a guess: it names the column and stops, rather than answering. (The *silent* all-zeros case is a missing value, not a missing column.) |
 | `FileNotFoundError: [Errno 2] No such file or directory: 'deliverypipeline.joblib'` | "There is no file with that name here." | The underscore left out, or `predict.py` run from a different folder from the `.joblib`. | Match the name exactly, and `ls` to check the file is in the folder you are standing in. |
 | `TypeError: All intermediate steps should be transformers and implement fit and transform or be the string 'passthrough' 'LogisticRegression(max_iter=1000, random_state=0)' (type <class 'sklearn.linear_model._logistic.LogisticRegression'>) doesn't` | "Every step but the last has to change data and pass it on. Your model doesn't." | Prep and model in the wrong order in the outer `Pipeline`. | Prep first, model last. **A model can only ever be the last step.** Note it did not complain until `fit`. |
 | `ValueError: A given column is not a column of the dataframe` | "One of the column names in your route list isn't in the table." | A typo in `NUMBER_COLUMNS` or `WORD_COLUMNS` — `item_count` instead of `items`. | Print `list(X.columns)` and compare, character by character. **Unhelpfully, this one does not tell you which name.** |
@@ -1662,7 +1662,7 @@ Three checks, five minutes, exact wording.
 
 > "I've got a preparation object and a model object, and I promise I'll always remember to use them in the right order. **Convince me to weld them together anyway.**"
 
-*Good answer:* "Because forgetting doesn't crash — the same order came out 0.709 prepared and 1.000 unprepared, with no error at all. And the preparation learns things from data, so with two objects you can accidentally learn them from all 2000 rows instead of the 1200 training rows. Welded, there's no way in except through the preparation."
+*Good answer:* "Because forgetting doesn't always crash — with numbers only, the same order came out 0.709 prepared and 1.000 unprepared, with no error at all. And the preparation learns things from data, so with two objects you can accidentally learn them from all 2000 rows instead of the 1200 training rows. Welded, there's no way in except through the preparation."
 
 **Full marks needs the word *no error* or *silent*.** A student who says "it's tidier" or "it's good practice" has missed the argument entirely. Push: *"what does it look like when it goes wrong?"*
 
@@ -1704,7 +1704,7 @@ Three checks, five minutes, exact wording.
 
 **Expected time:** 15 min finishing and cold-starting `predict.py` · 30 min on the model card · 10 min on the deliberate break and its one line · 5 min on the Bug Log and vocabulary. **About 60 minutes.**
 
-> **🧑‍🏫 What to look for when you mark it:** four things, and the third is the real one. **One — does `predict.py` contain zero `fit(`?** Search the file. This is binary. **Two — does heading 6 name the pile and the baseline?** "AUC 0.7541" earns half; "validation AUC 0.7541 against a baseline of 0.5000" earns all of it. **Three — is heading 7 in their own words, about something they actually saw?** A copied "it may not generalise" earns nothing; "a restaurant it's never seen becomes five zeros and it answers anyway" earns everything, and it is the sentence that proves they were paying attention in the last five minutes. **Four — does the one-line answer on 3.6 describe the *silent* failure that was prevented?** The good answer is "without that error, weather would have become three zeros and I'd have got a confident probability for an order with no weather at all."
+> **🧑‍🏫 What to look for when you mark it:** four things, and the third is the real one. **One — does `predict.py` contain zero `fit(`?** Search the file. This is binary. **Two — does heading 6 name the pile and the baseline?** "AUC 0.7541" earns half; "validation AUC 0.7541 against a baseline of 0.5000" earns all of it. **Three — is heading 7 in their own words, about something they actually saw?** A copied "it may not generalise" earns nothing; "a restaurant it's never seen becomes five zeros and it answers anyway" earns everything, and it is the sentence that proves they were paying attention in the last five minutes. **Four — does the one-line answer on 3.6 say what the error did *instead of guessing*?** The good answer is "it named `weather` and stopped instead of answering" (not "it would have become three zeros": that happens only for a missing value, not a missing column).
 
 ---
 
@@ -1785,10 +1785,10 @@ restaurants: 5  days: 7  weathers: 3
 |---|---|---|
 | (a) | What four numbers does the model receive if the order is prepared properly? | **1.793, 0.811, 2.008, 0.662** |
 | (b) | What is P(late)? | **0.709** |
-| (c) | Predict, in pen: what happens if the preparation is skipped? | Most students write "an error". **It is not an error.** |
+| (c) | Predict, in pen: what happens if the preparation is skipped? | Most students write "an error". **With these four raw numbers pasted in, it is not an error.** (On the whole raw table, with words and holes, it would be: `could not convert string to float`.) |
 | (d) | What is P(late) with the raw numbers instead? | **1.000** |
 | (e) | Do the subtraction | **1.000 − 0.709 = 0.291** |
-| (f) | What error message do you get? | **None at all.** No error, no warning. |
+| (f) | What error message do you get? | **None at all** in this demonstration: no error, no warning. |
 | (g) | Why is the model *more* sure rather than just wrong? | The raw numbers are 4 to 30 times bigger than anything it trained on, so the answer is thrown off the end of its scale; these four all have positive weights, so it goes towards 1.000 (a negatively-weighted column such as driver experience would send it towards 0.000). Not "4 to 30 times" anything — the probability is not linear in the inputs. |
 
 **3.3(h) The two-loose-objects version and the pipeline version scored the same validation AUC. What number, and why does that matter?**
@@ -1955,9 +1955,9 @@ ValueError: columns are missing: {'weather'}
 
 Model answer:
 
-> *"Without it, `weather` would have quietly become three zeros — an order that happened in no weather at all — and I'd have got a confident probability with no warning that a whole column was missing."*
+> *"It stopped the program and named `weather`, instead of guessing or answering anyway. A column that is missing entirely can't slip through as zeros — it's a missing value inside a column that exists that does that."*
 
-**Mark for the word *silent* or *no warning*, or for naming the zeros.** "It stopped my program" is the wrong shape of answer: the error is the *good* outcome, and the answer has to describe the bad outcome that did not happen.
+**Mark for "named the column", "refused to guess" or "stopped instead of answering"; a student who contrasts it with the silent missing-value case (3.6(d)) has gone further.** "It stopped my program" alone is the wrong shape of answer: the error is the *good* outcome, and the answer has to say what it did *instead of* guessing. Do not reward a claim that the column would have become three zeros: that happens only for a missing value (3.6(d)), not a missing column.
 
 **3.6(b) Why does the error name the column?**
 Because the `ColumnTransformer` selects columns **by name**, so it knows exactly which name it was looking for and could not find. *(Contrast with `ValueError: A given column is not a column of the dataframe`, which does not tell you which one — that is the same class of bug with a much worse message, and it is in the clinic.)*
@@ -1983,7 +1983,7 @@ Model, two rows:
 | What I saw | What it means | Cause | Fix |
 |---|---|---|---|
 | `TypeError: All intermediate steps should be transformers and implement fit and transform...` | Every step but the last has to change data and pass it on; a model can only be last. | Prep and model swapped in the outer `Pipeline`. | Prep first, model last. **And note: it did not complain when I built it, only when I fitted it.** |
-| `ValueError: columns are missing: {'weather'}` | One of the eight columns the model was trained on wasn't in what I handed it. | A key left out of a hand-typed order. | Add it. **This error protected me — without it, `weather` would have become three silent zeros.** |
+| `ValueError: columns are missing: {'weather'}` | One of the eight columns the model was trained on wasn't in what I handed it. | A key left out of a hand-typed order. | Add it. **This error protected me — it named the column and stopped instead of guessing.** |
 
 ### Answers to every question posed in the lesson
 
@@ -2001,7 +2001,7 @@ Model, two rows:
 - *"The columns are chosen by name. Does the order of columns in my table matter?"* → No. The scrambled order gives the identical 0.291.
 - *"When does the wrong-order pipeline complain — at build or at fit?"* → At `fit`. Building a wrong pipeline is silent.
 - *"Count the keys. How many should there be?"* → Eight.
-- *"What does `columns are missing: {'weather'}` protect you from?"* → From `weather` silently becoming three zeros and a confident answer coming out anyway.
+- *"What does `columns are missing: {'weather'}` protect you from?"* → From a guess: it names the missing column and stops instead of answering. (A missing *value* is the silent case; a missing *column* is not.)
 - *"Is 0.7541 good?"* → It is 0.2541 above the score of learning nothing, which is the only form of the sentence that means anything.
 - *"Five thousand and two bytes. What is inside?"* → 5 medians, 5 ruler centres, 5 ruler widths, 15 category names, 20 coefficients and 1 intercept — plus the machinery to rebuild the objects.
 - *"Do your three probabilities tell a sensible story?"* → 0.968 for the nasty one, 0.022 for the easy one, 0.291 for the middling one — and 0.291 sits near the base rate of 0.2875.

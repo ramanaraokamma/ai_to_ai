@@ -409,7 +409,7 @@ wanted: marks = 8 x hours + 12
 
 **8.0014 and 11.9939.** It started at zero and zero and walked there in four hundred steps, using nothing but twelve numbers and the direction of downhill.
 
-It will never reach exactly 8 and 12, and it never can — each step is proportional to the remaining slope, so the steps get smaller as you approach.
+In exact arithmetic it never reaches exactly 8 and 12 — each step is proportional to the remaining slope, so the steps get smaller as you approach.
 
 ![Four hundred steps of the five-line loop](../figures/fig-w21-4-loss-falling-over-four-hundred-steps.svg)
 *Figure 21.4 — Four hundred steps of the five-line loop. Step 0 loss 1786.666626, step 399 loss 0.000007.*

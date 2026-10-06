@@ -54,8 +54,8 @@
   <rect x="36" y="316" width="60" height="20" rx="4" fill="#E8C671" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
   <text x="66" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">storm</text>
   <text x="106" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">6 &#215; 2 = 12</text>
-  <text x="36" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">adding two weights cannot say</text>
-  <text x="36" y="368" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">&quot;worse together&quot;. Multiplying can</text>
+  <text x="36" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">two weights charge distance one fixed</text>
+  <text x="36" y="368" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">rate. Multiplying lets it vary.</text>
   <rect x="280" y="224" width="240" height="148" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
   <text x="296" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="start">ablation</text>
   <rect x="296" y="268" width="100" height="24" rx="5" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>

@@ -310,7 +310,7 @@ proanthocyanins                 0.313
 nonflavanoid_phenols           -0.299
 ```
 
-**The top four all pull the same way, and they are all phenol measures or close relatives: flavanoids, total phenols and proanthocyanins are phenolic compounds, and od280/od315 is a light-absorbance ratio that tracks them.** So PC1 is fairly read as **"total phenolic richness"** — one end of the axis is chemically rich wine, the other end is thin wine. `nonflavanoid_phenols` is negative, meaning it goes the *other* way from the rest, which is a real chemical fact about wine and not a bug.
+**The top four all pull the same way, and they are all phenol measures or close relatives: flavanoids, total phenols and proanthocyanins are phenolic compounds, and od280/od315 is a light-absorbance ratio that tracks them.** So PC1 is fairly read as **"total phenolic richness"** — one end of the axis is chemically rich wine, the other end is thin wine. `nonflavanoid_phenols` is negative, meaning it goes the *other* way from the rest, which in these 178 wines is a real pattern and not a bug.
 
 ```text
 PC2: which original columns pull hardest
@@ -820,7 +820,7 @@ It draws a new axis along the direction the data is most spread out.
 
 > "One more reason to care, and it is about last week. k-means works entirely by asking 'which centre is nearest'. **In lots of columns, everything is about the same distance from everything.** I measured it: with 500 columns, the furthest-apart pair of points in a dataset is only **21% further apart** than the closest pair. Nothing is near anything. **k-means goes blind.**
 >
-> So cutting thirteen columns down to two is not just so we can draw it. It is so distance means something again."
+> So cutting thirteen columns down to two is not just so we can draw it. It can help distance mean something again, when the real structure is low-dimensional. (The table is for random points, where no direction is special, so PCA could not help there; and two wine components keep only 55% of the spread, so two-column distances are distorted.)"
 
 ---
 
@@ -1238,7 +1238,7 @@ Every message below came from running a broken version of this week's actual cod
 | `ValueError: Expected 2D array, got 1D array instead: array=[1. 2. 3. 4.].` | "You gave me a list, not a table." | One flat array instead of rows-by-columns. | `X` must be 2-D. **There are no directions to find in a single column — the answer would be "along it".** |
 | **No error. `explained_variance_ratio_[0]` is 0.9981 and you are thrilled.** | Nothing crashed. Your first axis is your biggest column. | No scaling, so the widest-ranging column became PC1 all by itself. | `StandardScaler` first. **The check that finds it: print `pca.components_[0]` with the column names. If one loading is 0.9998 and the rest are under 0.02, you have made an expensive copy of one column.** |
 | **No error. `explained_variance_` does not add up to 1 and you assume something is broken.** | Nothing crashed. You printed the wrong one of two very similar names. | `explained_variance_` holds actual spreads; `explained_variance_ratio_` holds shares. | Print both once and keep the difference: `[4.7324 2.5111]` against `[0.3620 0.1921]`. **The shares add to 1; the spreads add to roughly the number of columns.** |
-| **No error. Your whole plot is mirrored compared with a friend's.** | Nothing crashed. The sign of a component is arbitrary. | Different sklearn version, or a different random seed in a solver. | **Nothing to fix.** `(0.7359, 0.6771)` and `(−0.7359, −0.6771)` are the same axis read from opposite ends. **What *is* meaningful is the signs *within* one component relative to each other.** |
+| **No error. Your whole plot is mirrored compared with a friend's.** | Nothing crashed. The sign of a component is arbitrary. | Different sklearn version, or a randomized solver. | **Nothing to fix.** `(0.7359, 0.6771)` and `(−0.7359, −0.6771)` are the same axis read from opposite ends. **What *is* meaningful is the signs *within* one component relative to each other.** |
 | **No error. Your spread numbers are all 20% too small.** | Nothing crashed. You divided by the wrong thing. | Dividing by `n` where sklearn divides by `n − 1`, or forgetting to divide at all. | With five points, divide the sum of squares by **4**. **And the diagnostic: if your number is exactly 4/5 (0.8 times) sklearn's, you divided by 5.** |
 | **No error. Your spread is much too big for every angle.** | Nothing crashed. You forgot to centre. | Projecting the raw points instead of the centred ones. | Subtract the column means first. **Skipping the centring is the single most common error of this week, and the fingerprint is that every angle gives a huge number dominated by where the cloud sits rather than how big it is.** |
 
@@ -1437,13 +1437,13 @@ That is the difference between PCA and picking columns. If you picked the two be
 
 It means that column goes the **opposite** way from the component. As PC1 goes up, `flavanoids` (+0.423) goes up and `nonflavanoid_phenols` (−0.299) goes **down**.
 
-And that is a real chemical fact about wine rather than an artefact: flavanoid and non-flavanoid phenols genuinely tend to trade off against each other. **PCA found it without being told, which is the nicest thing unsupervised methods do** — they surface relationships nobody put in.
+And that is a real pattern in this dataset rather than an artefact: in these 178 wines, flavanoid and non-flavanoid phenols go opposite ways. **PCA found it without being told, which is the nicest thing unsupervised methods do** — they surface relationships nobody put in.
 
 The size, `0.299`, is how hard it pulls. Loadings near zero mean that column has almost nothing to do with that component.
 
 **"Why does my plot come out mirrored compared to the one in the guide?"**
 
-**Because the sign of a component is arbitrary and nothing is wrong.** `(0.7359, 0.6771)` and `(−0.7359, −0.6771)` describe the *same line* through the data; they just label its two ends differently. Different sklearn versions, and sometimes different runs, hand you either one.
+**Because the sign of a component is arbitrary and nothing is wrong.** `(0.7359, 0.6771)` and `(−0.7359, −0.6771)` describe the *same line* through the data; they just label its two ends differently. Different sklearn versions (or randomized solvers) can hand you either one.
 
 What that means practically: **never interpret the sign of a single loading on its own.** "PC1 is high for rich wines" is only true relative to how your version happened to orient the axis, so always say which end is which by naming a row: *"the bottles at the positive end are the high-flavanoid ones."*
 
@@ -1455,7 +1455,7 @@ Three honest reasons, and the third is the one that matters most.
 
 **Because you need a picture.** You cannot draw thirteen dimensions and you can draw two. A 55%-true picture that a human looks at beats a 100%-true table that nobody reads. **You just have to write "55.4%" on the axis.**
 
-**Because distance stops working in high dimensions.** The contrast table: with 500 columns the furthest pair is 21% further apart than the closest. **Cutting to a handful of columns brings distance back to life, and everything k-means does is distance.**
+**Because distance stops working in high dimensions.** The contrast table: with 500 columns the furthest pair is 21% further apart than the closest. **Cutting to a handful of columns can bring distance back to life when the data really lies near a low-dimensional shape, and everything k-means does is distance.** The table is for random points, where PCA could not help; the price for the wine is the reconstruction miss.
 
 **And because of the shape of your problem.** With 178 rows and 13 columns, PCA is mostly a convenience. With **300 rows and 20,000 columns** — which is what genetic data looks like — an ordinary model has far more unknowns than rows and cannot be fitted sensibly without cutting the columns down first (or using a regularised model, which is a different answer), and then PCA is not a nicety, it is one of the main ways in. **The value of dimensionality reduction depends entirely on how many rows you have per column, and 178 rows for 13 columns is comfortable.**
 
@@ -1836,7 +1836,7 @@ nonflavanoid_phenols           -0.299
 
 > **PC1 = "total phenolic richness."** The three hardest-pulling columns — `flavanoids` at 0.423, `total_phenols` at 0.395 and `od280/od315_of_diluted_wines` at 0.376 — are all measures of phenolic content, and all three pull the same way, so a wine that is high on one is high on all of them. One end of this axis is chemically rich wine and the other is thin wine.
 
-**And the detail worth a bonus mark:** `nonflavanoid_phenols` loads **−0.299** — it pulls the *opposite* way from the rest. That is a real chemical trade-off in wine rather than a bug, and PCA found it without being told.
+**And the detail worth a bonus mark:** `nonflavanoid_phenols` loads **−0.299** — it pulls the *opposite* way from the rest. In these wines the two go opposite ways, which is a real pattern rather than a bug, and PCA found it without being told.
 
 For comparison, PC2:
 
@@ -1907,7 +1907,7 @@ for d in (2, 5, 20, 100, 500):
 
 **And the reading.** The contrast ratio — how much further apart the furthest pair is than the closest pair — collapses from **534** at two columns to **0.21** at five hundred. **It crosses below 1.0 somewhere between 20 and 100 columns**, and past that point the most distant pair of points in your entire dataset is **less than twice** as far apart as the two closest.
 
-**What that means for k-means, in plain words:** k-means makes every single decision by asking "which centre is nearest?" When every distance is nearly the same, that question is being answered by differences smaller than the noise in the data — so a tiny change in one column, or a different random seed, flips large numbers of assignments. **That is why high-dimensional clusterings are unstable and rarely reproduce, and it is the concrete reason PCA and k-means are taught in the same fortnight.**
+**What that means for k-means, in plain words:** k-means makes every single decision by asking "which centre is nearest?" When every distance is nearly the same, that question is being answered by differences smaller than the noise in the data — so a tiny change in one column, or a different random seed, flips large numbers of assignments. **That is one reason clusterings in very many columns can become unstable (the table shows the mechanism for random points; it is not a law for every dataset), and it is a concrete reason PCA and k-means are taught in the same fortnight.**
 
 Two responses, and the student should name both: **cut the columns down first** (this week), and **use a distance suited to your data** rather than plain Euclidean — cosine distance for text, which arrives in Week 32.
 

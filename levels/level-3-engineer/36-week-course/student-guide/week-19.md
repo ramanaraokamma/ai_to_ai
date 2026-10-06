@@ -132,7 +132,7 @@ with the transpose:     (16, 200) @ (200, 1)   inner numbers 200 and 200 →  (1
 
 And `(16, 1)` is exactly `W2`'s shape. **The transpose exists to make the shapes meet. Nothing more mysterious than that.**
 
-### 3. The gradient check is the only thing today that is a proof
+### 3. The gradient check is the only thing today that is a measurement, not an opinion
 
 **The plain explanation.** Suppose your backward pass has a bug. What happens?
 
@@ -155,9 +155,9 @@ Then compare against what your `backward` function claimed. Do it for all sixty-
 gradient check (worst relative error): 4.792e-08
 ```
 
-`4.792e-08` is scientific notation for **0.00000004792**. Anything below `1e-6` means your backward pass agrees with the nudge to about six digits on those rows, which in practice means it is correct.
+`4.792e-08` is scientific notation for **0.00000004792**. Anything below `1e-6` means your backward pass agrees with the nudge to about six digits on those rows, which in practice is good evidence it is correct (it checks 20 rows at one random start, so it is a strong test, not a proof).
 
-> **⚠️ Watch out:** this is not a hope, it is a **measurement**. It is the only number today that is a proof rather than an opinion. Nobody trains until their check prints something below `1e-6`.
+> **⚠️ Watch out:** this is not a hope, it is a **measurement**. It is the only number today that is a measurement rather than an opinion. Nobody trains until their check prints something below `1e-6`.
 
 **The analogy.** It is marking your own homework against the back of the book. The nudge is the back of the book: slow, stupid, and impossible to get wrong. Your `backward` function is fast and clever and therefore capable of being confidently wrong.
 
@@ -201,12 +201,12 @@ Three snapshots, from a real run:
 
 | epoch | train loss | test accuracy | what the boundary looks like |
 |---|---|---|---|
-| 0 | 0.8095 | 0.6450 | one straight line, in a nearly random place |
-| 50 | 0.3104 | 0.9150 | one bend, and it has moved into the gap |
-| 500 | 0.1542 | 0.9350 | follows the gap, curling at both ends |
+| 0 | 0.8095 | 0.6450 | a V-shaped boundary (one sharp corner) in a poor place |
+| 50 | 0.3104 | 0.9150 | a few bends, now in the gap |
+| 500 | 0.1542 | 0.9350 | more bends, following the gap and curling at both ends |
 
 ![The boundary at epoch 0, epoch 50 and epoch 500](../figures/fig-w19-2-boundary-at-three-epochs.svg)
-*Figure 19.3 — The boundary at epoch 0, epoch 50 and epoch 500. Panel 1 is a straight line; panel 3 bends.*
+*Figure 19.3 — The boundary at epoch 0, epoch 50 and epoch 500. Panel 1 is a V in a poor place; panel 3 has the most bends and follows the gap.*
 
 **Most of the accuracy arrives in the first fifty epochs.** The remaining 450 buy 0.0200 of accuracy and a much lower loss, which is mostly the network becoming **more confident** about points it already had right.
 
@@ -1141,7 +1141,7 @@ print("dead units", dead, "/ 16")
 |---|---|
 | "The boundary is a smooth curve, so the network has learned a curved rule." | It is up to **sixteen straight lines joined at corners.** ReLU is two straight pieces, so everything built from it is **piecewise-linear.** Zoom into the plot and you can count the segments. |
 
-This matters because it explains capacity in one sentence: **you get one hinge per unit, so the number of units is the number of bends you are allowed.**
+This matters because it explains capacity in one sentence: **you get one hinge per unit, so the number of units is a rough guide to how many bends you can afford (one unit alone gives no bend at all, and a hinge can bend the boundary in more than one place).**
 
 ### Trick 2 — "more hidden units is always better"
 
@@ -1191,7 +1191,7 @@ badge inside it. It is a five-week tile and this is week one of the five.*
 
 | | |
 |---|---|
-| **The mental model you now own** | Forward pass, loss, backward pass, update, repeat. **Forty lines of numpy**, with nothing underneath them but arithmetic you have already done on paper — plus a gradient check that proves you were right before you let it train. Sixty-five knobs, 500 epochs, 32,500 slopes, and a boundary that bends where a straight line could never win. |
+| **The mental model you now own** | Forward pass, loss, backward pass, update, repeat. **Forty lines of numpy**, with nothing underneath them but arithmetic you have already done on paper — plus a gradient check that tests you were right before you let it train. Sixty-five knobs, 500 epochs, 32,500 slopes, and a boundary that bends where a straight line could never win. |
 | **The one question it answers** | *"Did I really just build a neural network?"* — yes, and you can point at every one of the 65 numbers in it and say what it is for. |
 | **What it plugs into** | Weeks 15 to 18, entirely and without remainder. The update rule from Week 15, the neuron from Week 16, the layer from Week 17, the four gradient arrays from Week 18. **Not one new idea today** — the whole week is assembly, and that is why it fits in one lesson. |
 | **What carries forward** | Week 22 rebuilds this exact architecture in `nn.Sequential` and proves the parameter shapes are identical, number for number. Week 26 scales the same idea up until it reads handwriting. And the three ways you broke it today — all-zero weights, `lr = 20`, one hidden unit — are three of the commonest real failures you will ever meet. |
@@ -1208,7 +1208,7 @@ badge inside it. It is a five-week tile and this is week one of the five.*
 - **Sixty-five knobs.** `2 × 16 + 16 + 16 × 1 + 1 = 65`. Every one gets its own slope, every epoch, 500 times: **32,500 slopes.**
 - **Every gradient has the same shape as the thing it is the gradient of.** `dW1` must be `(2, 16)` because `W1` is `(2, 16)`. This one sentence finds nearly every bug in the file.
 - **The transpose exists to make the shapes meet.** It is a plug adaptor, not a piece of maths.
-- **The gradient check is the only proof in the week.** Below `1e-6` and you may train. Above it, find the transpose — do not train a wrong backward pass, because it will still work badly and never tell you.
+- **The gradient check is the only hard evidence in the week.** Below `1e-6` and you may train. Above it, find the transpose — do not train a wrong backward pass, because it will still work badly and never tell you.
 - **`0.6931` is `−ln(0.5)`** — the loss of a network answering 0.5 to everything. If a loss parks there and will not move, the weights started equal.
 - **A dead unit has slope exactly zero, so no learning rate can ever move it again.** 13 of 16 died at `lr = 20`, and 2000 gentle epochs could not bring one back.
 - **One hinge per hidden unit.** Sixteen hinges look like a curve. **Capacity is permission to bend, not an instruction to.**
@@ -1277,7 +1277,7 @@ Go to **[the Week 19 workbook](../workbook/week-19.md)**. About **60 minutes** i
 
 **Three things are being marked, and the third is the real one.**
 
-**Is the gradient check pasted, and is it below `1e-6`?** A page with a training log and no check has skipped the only proof in the week. If yours is bigger than `1e-6`, **do not train it** — find the transpose.
+**Is the gradient check pasted, and is it below `1e-6`?** A page with a training log and no check has skipped the only hard evidence in the week. If yours is bigger than `1e-6`, **do not train it** — find the transpose.
 
 **Do the three boundary panels have their numbers under them?** Loss and test accuracy under each panel, and an arrow on panel 3 pointing at the exact place it stops being a straight line. Three pictures with no numbers is an art project.
 

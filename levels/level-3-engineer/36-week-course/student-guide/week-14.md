@@ -204,7 +204,7 @@ log loss            : 0.693147
 |:--:|---|---|
 | 1 | **the weights** | still all zero → nothing is being updated; the update step is missing or the learning rate is so small nothing moved |
 | 2 | **the features** | all zero, or all identical → a scaler applied to the wrong thing, or a column selected that does not exist |
-| 3 | **`np.unique(y)`** | one value only → a model cannot learn to separate one class from itself |
+| 3 | **`np.unique(y)`** | one value only → a data bug (a class went missing; a real run would not sit at 0.6931 with one class, it would refuse or drift). Both classes present but still parked → the labels may be shuffled or misaligned with the rows |
 
 ![A loss parked at 0.6931](../figures/fig-w14-4-loss-parked-at-0-6931.svg)
 *Figure 14.4 — A loss parked at 0.6931. Five hundred steps and it has not moved, because the model answered 0.50 to every row and each row cost −ln(0.50) = 0.693147.*

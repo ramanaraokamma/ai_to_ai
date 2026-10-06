@@ -1160,7 +1160,7 @@ preprocessing : 0.765  − 0.520  = 0.245
 
 **M2(b).** **Round the printed result, never the inputs.** 0.976231884 − 0.775163997 = 0.2010678…, which rounds to **0.2011**. Subtracting two already-rounded numbers cost you one unit in the fourth place. **It changes no verdict here — but say so when it happens rather than quietly writing a different number from the machine's.**
 
-**M2(c).** **All three make the score go up, which makes leakage the only kind of bug that gets applauded.** A bug that makes your number worse gets fixed on Tuesday, because somebody is annoyed about it. A bug that makes your number better gets a presentation and six months in production being wrong.
+**M2(c).** **All three make the score go up, which is why leakage is nearly the only kind of bug that gets applauded.** A bug that makes your number worse gets fixed on Tuesday, because somebody is annoyed about it. A bug that makes your number better gets a presentation and six months in production being wrong.
 
 **M3 — the two divisions.**
 
@@ -1343,7 +1343,7 @@ len(get_feature_names_out()), + leaky column    21
 
 **Report 2 — `distance_km`: KEEP. It is honest.** The gap is real and large, and that is fine — **a big gap is not evidence of leakage.** `distance_km` is known **the moment the order is placed**: you have the address. It is also nowhere near a photocopy of the answer — over 5 km is late 0.5521 of the time, which means **45% of long trips arrive on time.** A leaked column does not leave 45% of its rows disagreeing with it.
 
-**Report 3 — `order_hour`: KEEP, and it is the Week 5 lesson in audit clothing.** `0.064` and `0.5358` look like nothing because **both of those measurements assume a straight line**, and the effect of the hour is a **hump**: 0.374 at 18:00, 0.196 at 22:00. Correlation and solo AUC cannot see a hump. The two-group rates can, which is why you bin it: 0.3682 against 0.2424. **A low correlation is not proof a column is useless — it can also mean you are measuring it the wrong way.**
+**Report 3 — `order_hour`: KEEP, and it is the Week 5 lesson in audit clothing.** `0.064` and `0.5358` look like nothing because **both of those measurements look for a steady one-way trend (correlation a straight line, solo AUC a rising or falling order)**, and the effect of the hour is a **hump**: 0.374 at 18:00, 0.196 at 22:00. Neither can see a hump. The two-group rates can, which is why you bin it: 0.3682 against 0.2424. **A low correlation is not proof a column is useless — it can also mean you are measuring it the wrong way.**
 
 **Report 4 — `biopsy_booked`: TARGET LEAKAGE, drop it.** A biopsy gets booked *because* somebody read the scan and was worried.
 
@@ -1545,7 +1545,7 @@ preprocessing : 0.520  + 0.245  = 0.765
 
 **And the target one comes out 0.7751 rather than 0.7752 — the rounding lesson again.** Working backwards from rounded numbers recovers the answer to about ±0.0001 and no better. Say so when you do it.
 
-**Part 2(a).** **The temporal one, 0.5249.** 0.5000 matters because it is **what a model that knows nothing scores** — a coin flip. So the time split is not reporting a slightly worse model; it is reporting **no model at all.** And that is the number production would have given you.
+**Part 2(a).** **The temporal one, 0.5249.** 0.5000 matters because it is **what a model that knows nothing scores** — a coin flip. So the time split is not reporting a slightly worse model; on these weeks (one seed) it is reporting a model **no better than guessing**, because the rule it learned from the past has reversed. And that is the number production would have given you.
 
 **Part 2(b).** **The threshold is about 0.05.** +0.06 is above it, so: **audit.** Real features arrive in units of 0.005, and you spent last week learning to be pleased about +0.0018. Four audits and one question take under ten minutes; being wrong in production for eight months does not.
 
@@ -1620,7 +1620,7 @@ the subtraction: 0.7723 − 0.7752 = −0.0029     verdict DELETE
 **The tells:**
 
 - **target** — *"Is it filled in yet?"* A customer rings up to complain **after** the pizza is late. At the moment somebody clicks ORDER, that column is empty for every row, for ever.
-- **temporal** — *"Do the rows have a date on them, and will I deploy forward in time?"* If both, split by time. The random split reports a working model; the time split reports a coin flip, and **the time split is the one that matches how the thing will be used.**
+- **temporal** — *"Do the rows have a date on them, and will I deploy forward in time?"* If both, split by time. The random split reports a working model; the time split reports roughly a coin flip, and **the time split is the one that matches how the thing will be used.**
 - **preprocessing** — *"Was the statistic fitted before the cut?"* A median, a mean, a ranking, a choice of columns. **You cannot detect this one by looking at your score;** you detect it by looking at where the statistic was computed.
 
 **The noise experiment, run 1.**

@@ -202,10 +202,10 @@ report it as  : AUC = 0.628 +/- 0.087 (5-fold stratified CV)
 ![Five folds, five scores, one honest number](../figures/fig-w11-4-five-folds-five-scores-one-error-bar.svg)
 *Figure 11.3 — Five folds, five scores, one honest number. Five held-out chunks on the left, the five scores they produced on the right, and the mean worked out underneath.*
 
-**What the `±` is actually for, in one sentence:** *it tells you how big a difference between two models you are entitled to believe.*
+**What the `±` is actually for, in one sentence:** *it is a rule of thumb for how big a difference between two models to trust: a difference smaller than the spread is unproven, and a difference well outside it is worth taking seriously.* (It is the spread of single-fold scores; the sharper test is to score both models on the same folds.)
 
 - Our band is **0.628 ± 0.087**, so roughly **0.54 to 0.72**.
-- Somebody hands you a new model scoring **0.65**. Is it better? **You cannot tell.** 0.65 is inside your band; it might be your own model on a luckier split.
+- Somebody hands you a new model scoring **0.65**. Is it better? **You cannot tell from this.** 0.65 is inside your band; it might be your own model on a luckier split.
 - Somebody hands you a model scoring **0.85**. **Now you can talk**, because 0.85 is well outside the band.
 
 🍕 **The analogy.** Weighing yourself. If the scale reads 60 kg ± 0.2 kg, you can detect a 1 kg change, and a claim about 1 kg is checkable. If it reads 60 kg ± 3 kg, a 1 kg change is invisible and **any claim about 1 kg is unmeasurable with that equipment.** The equipment did not lie to you. You just cannot ask it that question.
@@ -1041,7 +1041,7 @@ And here is why it matters. Since Week 3 you have typed `LogisticRegression().fi
 
 - **Your bank's fraud team.** Somewhere there is a real spreadsheet with a real price for a chargeback and a real price for an analyst's hour, and a real threshold chosen from it. When your card gets declined on holiday, you are standing inside somebody's cost matrix.
 - **Spam filters with a "quarantine" folder.** Three thresholds, not one: deliver, quarantine, delete. Each boundary has its own price — deleting a real email is expensive, quarantining it is annoying, delivering spam is cheap.
-- **Every drug trial you have ever read about.** Results are always reported as a number **with a band**, and the whole argument about whether a drug works is an argument about whether the bands overlap. That is exactly the "is 0.65 better than 0.628?" question.
+- **Every drug trial you have ever read about.** Results are always reported as a number **with a band**, and much of the argument about whether a drug works is an argument about how far the bands overlap. That is exactly the "is 0.65 better than 0.628?" question.
 - **Exam grade boundaries.** A committee decides where the A/B line goes, and they explicitly discuss the cost of failing someone who deserved to pass versus passing someone who did not. Same cost matrix, different clothes.
 - **Smoke alarms and fire doors.** Building regulations are cost matrices written as law. A false alarm costs an evacuation; a miss costs a building. Nobody pretends the number came from the physics.
 - **Opinion polls.** "45% ± 3%" on the news is a `±` from a sampling procedure, and the whole skill of reading a poll is knowing that a 2-point lead inside a 3-point band is not a lead.
@@ -1080,7 +1080,7 @@ attached". Look at stages one and two on the figure: not a dashed line left in e
 - **Change the price list and a different row wins.** £50 → 0.12. £500 → 0.10. £5,000 → 0.01. Same model every time.
 - **Area under a curve = add up trapezoid strips.** `(left height + right height) ÷ 2 × width`, once per strip, then add. **`roc_auc_score` is this, and nothing else.** A coin gets 0.5 because a triangle is half a square.
 - **One number is not a measurement.** Five folds cost you one extra second and turn 0.6116 into **0.628 ± 0.087**, which is more honest and less impressive, and those are the same fact.
-- **The `±` tells you which differences you are allowed to believe.** 0.65 is inside our band, so we cannot claim it is better. 0.85 is outside it, so we can.
+- **The `±` is a rule of thumb for which differences to trust.** 0.65 is inside our band, so we cannot claim it is better from that alone. 0.85 is well outside it, so it is worth taking seriously.
 - **A large `±` is usually about the size of your held-out chunks, not the quality of your model.** 14 positives is 14.
 
 ### Syntax reminder card
@@ -1169,7 +1169,7 @@ Go to **[the Week 11 workbook](../workbook/week-11.md)**. About **60 minutes** i
 
 **And the page that matters most: your two `±` sentences.** The first one says what the `±` is *for*. Full marks looks like:
 
-> *"The `±` tells me how big a difference between two models I am allowed to believe. Our band is 0.628 ± 0.087, so about 0.54 to 0.72. Any model scoring inside that band might just be our own model on a luckier split, so I cannot claim it is better."*
+> *"The `±` is my rule of thumb for how big a difference between two models to trust. Our band is 0.628 ± 0.087, so about 0.54 to 0.72. Any model scoring inside that band might just be our own model on a luckier split, so I cannot claim it is better."*
 
 The second one imagines the `±` being **three times bigger** — `± 0.260`, a band from **0.368 to 0.888.** Full marks:
 

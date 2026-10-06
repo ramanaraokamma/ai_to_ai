@@ -943,7 +943,7 @@ wine  : 13 columns -> 5
 digits: 64 columns -> 21
 ```
 
-**`n_components=0.80` means: "keep however many components I need to reach 80% of the spread, and work out the number yourself."** Five out of thirteen for the wine; **twenty-one out of sixty-four for the digits** — so a third of the columns hold 80% of what an 8×8 handwritten digit is.
+**`n_components=0.80` means: "keep however many components I need to reach 80% of the spread, and work out the number yourself."** Five out of thirteen for the wine; **twenty-one out of sixty-four for the digits** — so about a third as many components as columns hold 80% of the spread in an 8×8 handwritten digit.
 
 ### Practice Set A
 
@@ -993,7 +993,7 @@ so my grid was short by  : 12.96 degrees
 | Asha | "total phenolic richness" | **Pass.** The three hardest-pulling columns — flavanoids 0.423, total_phenols 0.395, od280/od315 0.376 — are **all** measures of phenolic content, and **all pull the same way**, so a wine high on one is high on all three. The name is the numbers, in words. |
 | Ben | "wine quality" | **Fail.** Nothing in thirteen chemical measurements mentions quality. The loadings do not support it, and no amount of it being *plausible* fixes that. **Naming an axis something the data cannot see is the over-claim this whole course exists to prevent.** |
 
-**The opposite-pulling row is `nonflavanoid_phenols` at −0.299.** **It is not a bug.** It means that as the other phenolic measures go up, this one tends to go **down** — a real chemical trade-off in wine, which PCA found without being told about it. **Spotting it and explaining it is the best available reading of that table.**
+**The opposite-pulling row is `nonflavanoid_phenols` at −0.299.** **It is not a bug.** It means that as the other phenolic measures go up, this one tends to go **down** — a pattern in these 178 wines (the two go opposite ways), which PCA found without being told about it. **Spotting it and explaining it is the best available reading of that table.**
 
 **A6 (a).** They divided by **5**. They should have divided by **4** — one less than the count. **The diagnostic is the ratio itself:** `0.80` is exactly `4 ÷ 5`, so a spread that is exactly 0.8 times somebody else's on five points means the smaller one divided by 5 where the other divided by 4.
 
@@ -1368,7 +1368,7 @@ for d in (2, 5, 20, 100, 500):
 
 **The contrast drops below 1.0 between 20 and 100 columns.** Past that point the most distant pair of points in the whole dataset is **less than twice** as far apart as the two closest.
 
-**The sentence:** *"k-means makes every single decision by asking 'which centre is nearest?'. When every distance is nearly the same, that question is being answered by differences smaller than the noise in the data — so a tiny change in one column, or a different seed, flips large numbers of assignments. That is why high-dimensional clusterings are unstable and rarely reproduce, and it is the concrete reason PCA and k-means are taught in the same fortnight."*
+**The sentence:** *"k-means makes every single decision by asking 'which centre is nearest?'. When every distance is nearly the same, that question is being answered by differences smaller than the noise in the data — so a tiny change in one column, or a different seed, flips large numbers of assignments. That is one reason clusterings in very many columns can become unstable (the table shows the mechanism for random points; it is not a law for every dataset), and it is a concrete reason PCA and k-means are taught in the same fortnight."*
 
 *(And if a student asks why `d = 2` shows a colossal 533: with 150 points crammed into a unit square, two of them land almost on top of each other, so `min` is nearly zero. That is a genuine property of low dimensions, not a glitch — and it is exactly the thing that stops happening as columns are added.)*
 

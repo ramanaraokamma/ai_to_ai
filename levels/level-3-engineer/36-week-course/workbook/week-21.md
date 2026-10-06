@@ -964,7 +964,7 @@ b ← 0 − 0.05 × (−80.0) = 0 + 4.0 = 4.0
 
 **M3(a).** **`w` moves faster, by about four times**: `326.6667 ÷ 80 = 4.08`.
 
-**M3(b).** **Yes.** At step 50, `w` has travelled from 0 to 8.88 (nearly all of the way to 8) while `b` has only reached 8.24 out of 12. **Different knobs learn at different speeds**, and this is one of the reasons Week 26's optimizer exists.
+**M3(b).** **Yes.** At step 50, `w` has travelled from 0 to 8.88 (already past 8) while `b` has only reached 8.24 out of 12. **Different knobs learn at different speeds**, and this is one of the reasons Week 26's optimizer exists.
 
 **M4.**
 
@@ -1388,7 +1388,7 @@ wanted: marks = 8 x hours + 12
 
 **2.** **`w` is closer.** At step 50 it is 8.88 against a target of 8, while `b` is 8.24 against a target of 12. **Because `w`'s slope started at −326.7 and `b`'s at −80**, so `w` moves about four times as fast.
 
-**3.** **No, and it never can.** Each step is proportional to the remaining slope, so as you approach the bottom the slope shrinks and the steps shrink with it. You get closer and closer and never land exactly.
+**3.** **No; in exact arithmetic it never can.** Each step is proportional to the remaining slope, so as you approach the bottom the slope shrinks and the steps shrink with it. You get closer and closer and never land exactly.
 
 **Part B — the five-row table.**
 

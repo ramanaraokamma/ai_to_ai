@@ -130,7 +130,7 @@ d["min_per_km"] = d["prep_minutes"] / (d["distance_km"] + 0.5)
 
 **And what is the `+ 0.5` doing?** `distance_km` could in principle be zero, and dividing by zero gives `inf`, and `inf` makes `LogisticRegression` stop with an error you will meet in 🐞 When It Breaks. The `+ 0.5` is a **guard**. Any small constant does — **pick one and write down that you did**, because in six months you will wonder where the 0.5 came from.
 
-### 3. The INTERACTION — because "worse together" is a thing adding cannot say
+### 3. The INTERACTION — because "worse together" is a thing one fixed weight cannot say
 
 > **interaction feature** — a new column built by combining two others, usually by multiplying, so the model can express *"A matters more when B is true"*.
 
@@ -152,7 +152,7 @@ in a storm:     0.8571 − 0.3908 = 0.4663
 
 **Distance is 1.43 times as costly in a storm as it is in the clear.** That *suggests* distance and weather make each other worse. **Treat it as a hypothesis, not a fact:** the long-trip storm cell holds only 35 orders, so its 0.8571 could easily be a few orders too high (a model with no interaction at all predicts about 0.75 for that cell). The ablation is what tests it.
 
-And here is the thing: a model with one weight on `distance` and a separate weight on `storm` can only **add** those two effects together. **Adding cannot say "worse together." Multiplying can.**
+And here is the thing: a model with one weight on `distance` and a separate weight on `storm` can only **add** those two effects together (on the log-odds scale the model works in), so distance gets **one fixed weight whatever the weather**. **Adding does not let distance matter more in a storm. Multiplying does.**
 
 ```python
 severity = d["weather"].map({"clear": 0.0, "rain": 1.0, "storm": 2.0})

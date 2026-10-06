@@ -625,9 +625,9 @@ ________________________________________________________________
 
 ### The Hinge Budget
 
-A ReLU network gets **one hinge per hidden unit**. A hinge is one place where the boundary is allowed to change direction. Below are five boundaries described in words. **For each one, write the smallest number of hidden units that could possibly draw it.**
+A ReLU network gets **one hinge per hidden unit**. A hinge is one place where the boundary is allowed to change direction. Below are five boundaries described in words. **For each one, write your best estimate of the smallest number of hidden units that could draw it. Use the rule of thumb "about one unit per change of direction, at least" — it is a guide, not a proof.**
 
-| # | The boundary you need | Smallest number of hidden units |
+| # | The boundary you need | Best estimate of smallest number of hidden units |
 |---|---|---|
 | 1 | one straight line, at any angle | ______ |
 | 2 | a straight line with one kink in it, like a very wide V | ______ |
@@ -828,9 +828,9 @@ Draw the boundary at three epochs **from your own `boundary.png`**, by hand, in 
 
 **Then answer four things about your own drawing:**
 
-**Which panel is a straight line?** ____________
+**Which panel is a V with one sharp corner?** ____________
 
-**Which panel has exactly one bend?** ____________
+**Which panel has a few bends sitting in the gap?** ____________
 
 **On panel 3, how many separate straight segments can you count?** ____________
 
@@ -846,7 +846,7 @@ ________________________________________________________________
 |---|---|---|---|
 | build a 2 → 16 → 1 network in pure numpy that scores above 0.90 | | | |
 | get the gradient check below `1e-6` **before** training | | | |
-| say what the gradient check proves, and why a falling loss does not prove it | | | |
+| say what the gradient check tests, and why a falling loss does not test it | | | |
 | trace a shape through the whole forward and backward pass | | | |
 | use the rule "every gradient has the shape of its own knob" to find a bug | | | |
 | plot a decision boundary with `meshgrid`, `np.c_` and `contourf` | | | |
@@ -1033,7 +1033,7 @@ No error anywhere. **Where did the other 12 numbers come from?** `A2` is a **col
 
 **Log D — 64 hidden units, and it is a healthy network.** Giveaway: **`0/64`** in the dead count, the lowest loss of the four (`0.1412`), and the gap between **train 0.9550 and test 0.9150**.
 
-**A5(a).** **Log D**, and the problem is **overfitting.** It fits the training crescents better than any other run and generalises worse than the 16-unit network — 0.9150 against 0.9350. **The tell is the gap between the two accuracy columns, not either number on its own.**
+**A5(a).** **Log D**, and the problem is **overfitting.** It fits the training crescents better than any other run, and with this seed scores lower on test than the 16-unit network — 0.9150 against 0.9350 (four rows; the gap, not the test score, is the clue). **The tell is the gap between the two accuracy columns, not either number on its own.**
 
 **A6.** The six answers, in order: `(200, 16)` · `(200, 16)` · `(200, 1)` · `(200, 1)` · `(16, 1)` · `(2, 16)`.
 
@@ -1201,7 +1201,7 @@ Xtr, Xte = sc.transform(Xtr), sc.transform(Xte)
 
 **Part 1 — the hinge budget.**
 
-| # | The boundary | Smallest number of hidden units |
+| # | The boundary | Best estimate of smallest number of hidden units |
 |---|---|---|
 | 1 | one straight line | **1** |
 | 2 | a wide V — one kink | **2** |
@@ -1209,7 +1209,7 @@ Xtr, Xte = sc.transform(Xtr), sc.transform(Xte)
 | 4 | a closed triangle | **3** |
 | 5 | a closed square | **4** |
 
-**Part 1(a).** **3 and 4 are both 3.** A Z has two corners and needs three straight pieces; a triangle has three sides. In both cases you need three hinges' worth of direction changes, and the count is *the number of straight pieces the boundary is made of*.
+**Part 1(a).** **3 and 4 are both 3.** A Z has two corners and three straight pieces; a triangle has three sides. In both cases the rule of thumb gives about three hinges. Treat the column as *budgets from a rule of thumb, not proven minimums*: the count is roughly *the number of direction changes to make, at least*, and the real minimum can differ (two units already give a three-piece boundary, and a Z with parallel ends needs extra units for a sloping middle). Accept any answer that gives a reason for its count.
 
 **Part 1(b).** **Because the network is not trying to use its hinges. It is trying to make the loss smaller.** A hinge only earns its keep if bending there moves points to the right side of the boundary. Be careful: it is not true that more bends could not help, because 16 units reach a train loss of 0.1542 against 0.3565 for 4. With seed 0 the 4-unit run simply settled in a poor spot (one unit dead, the rest not bending usefully), and other seeds of the 4-unit network reach about 0.93 train accuracy. Accept anything that says *"training did not find the useful bends"*, and do not accept *"the data did not need them"*.
 
@@ -1219,7 +1219,7 @@ Xtr, Xte = sc.transform(Xtr), sc.transform(Xte)
 
 **Part 2(a).** Because **you do not know in advance how many bends the data needs**, and there is no formula. Sixteen is a cheap, safe over-estimate: it costs 65 numbers and under a second, and it lets the network find out for itself. **This is also honest about a real limitation** — nobody has a rule for choosing this number, and what professionals actually do is try a few and look at the validation score.
 
-**Part 2(b).** **On the noise.** The extra 48 hinges bent themselves around individual training points that happened to sit on the wrong side because of `noise=0.25`. That is why train accuracy rose to 0.9550 and test accuracy *fell* to 0.9150: those bends describe the training set, not the crescents.
+**Part 2(b).** **On the noise.** A likely answer: the extra 48 hinges bent themselves around individual training points that happened to sit on the wrong side because of `noise=0.25`. Train accuracy rose to 0.9550 while test accuracy was 0.9150, so those bends may describe the training set more than the crescents. (That is a hypothesis: this is one seed, 0.9150 against 0.9350 is only four test rows, and across five seeds the 16- and 64-unit test scores overlap. The train-test gap is the clue.)
 
 ### Think Deeper
 
@@ -1252,9 +1252,9 @@ final test  acc 0.9350
 
 | panel | epoch | train loss | test acc | straight or bent? |
 |---|---|---|---|---|
-| 1 | 0 | 0.8095 | 0.6450 | **straight** — a line in a nearly random place |
-| 2 | 50 | 0.3104 | 0.9150 | **one bend**, and it has moved into the gap |
-| 3 | 500 | 0.1542 | 0.9350 | **bent at both ends**, following the gap |
+| 1 | 0 | 0.8095 | 0.6450 | **a V** — one sharp corner, in a poor place |
+| 2 | 50 | 0.3104 | 0.9150 | **a few bends**, and it has moved into the gap |
+| 3 | 500 | 0.1542 | 0.9350 | **more bends**, following the gap and turning at both ends |
 
 **Most of the accuracy arrived between panels 1 and 2** — 0.6450 to 0.9150 in fifty epochs.
 
@@ -1305,15 +1305,15 @@ test acc now 0.8050
 **The two sentences.**
 
 1. *"Train loss falls all the way down the table — more capacity always fits the training data better."* (0.3693 → 0.1412, every row an improvement.)
-2. *"Test accuracy peaks at 16 units and then falls, so the 64-unit network is learning the noise in the training crescents: train 0.9550, test 0.9150. That is overfitting, and the gap between the two columns is what gave it away."*
+2. *"With this seed, test accuracy peaks at 16 units and is lower at 64 (0.9350 against 0.9150, four test rows out of 200). The 64-unit network fits the training crescents more tightly than it carries over to new data: train 0.9550, test 0.9150. That looks like overfitting, and the gap between the two columns is the clue; one seed cannot show it is more than noise."*
 
 **Full credit if you also spotted this unprompted:** 1, 2 and 4 units all score the same 0.8350 on train. **Capacity is permission to bend, not an instruction to.**
 
 ### Draw It
 
-**A good drawing has:** three panels; panel 1 a single straight line lying somewhere unhelpful; panel 2 a line with **one** visible bend, sitting in the gap between the crescents; panel 3 a line that follows the gap and **turns at both ends**; the two numbers written under each panel (0.8095 / 0.6450, 0.3104 / 0.9150, 0.1542 / 0.9350); and an arrow on panel 3 pointing at any part of the curved section. **Accept any location on the curved section** — the answer being marked is *"it is not straight here"*, not a coordinate.
+**A good drawing has:** three panels; panel 1 a V (one sharp corner) lying somewhere unhelpful; panel 2 a line with **a few** visible bends, sitting in the gap between the crescents; panel 3 a line that follows the gap and **turns at both ends**; the two numbers written under each panel (0.8095 / 0.6450, 0.3104 / 0.9150, 0.1542 / 0.9350); and an arrow on panel 3 pointing at any part of the curved section. **Accept any location on the curved section** — the answer being marked is *"it is not straight here"*, not a coordinate.
 
-**Which panel is a straight line?** Panel 1. **One bend?** Panel 2.
+**Which panel is a V with one sharp corner?** Panel 1. **A few bends in the gap?** Panel 2.
 
 **Segments countable on panel 3:** typically **three to six** by eye. That is **fewer than 16**, and it is not a problem: sixteen units give you *up to* sixteen hinges, and the network only uses the ones that lower the loss. Several of them end up nearly in line with each other, so you cannot see the join. **Permission, not instruction — for the third time this week.**
 

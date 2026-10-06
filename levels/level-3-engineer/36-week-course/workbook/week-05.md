@@ -212,7 +212,7 @@ what a long trip costs in a storm  : 0.8571 − 0.3908 = ____________
 the comparison:  ____________ ÷ ____________ = ____________
 ```
 
-**M4(c).** Finish the sentence: *"Distance is ______ times as costly in a storm as in the clear, which means adding two weights cannot express it, because adding can only say ____________________."*
+**M4(c).** Finish the sentence: *"Distance is ______ times as costly in a storm as in the clear, which means adding two weights does not express it directly, because adding can only say ____________________."*
 
 ---
 
@@ -1091,7 +1091,7 @@ ________________________________________________________________
 | derive a ratio by hand, with a guard on the bottom, and say why the guard is there | | | |
 | bin a column with `pd.cut`, count the edges and the labels, and check the blanks | | | |
 | explain why `bins=[10, ...]` on hours starting at 10 loses 47 rows silently | | | |
-| build an interaction and say what "worse together" means that adding cannot say | | | |
+| build an interaction and say what "worse together" means that one fixed weight cannot say | | | |
 | wrap my own function in a `FunctionTransformer` so it lives inside the `Pipeline` | | | |
 | say what error I get if I build a feature outside the pipeline instead | | | |
 | run an ablation: one change per row, four decimal places, against the row above | | | |
@@ -1235,7 +1235,7 @@ z of row D = (0.7843 − 0.781533) ÷ 0.0029488 = +0.002767 ÷ 0.0029488 = +0.93
 0.4663 ÷ 0.3269 = 1.4264, so about 1.43
 ```
 
-*"Distance is **1.43** times as costly in a storm as in the clear, which means adding two weights cannot express it, because adding can only say **'both of these matter, by a fixed amount each'** — never *'this one matters more when that one is true.'*"
+*"Distance is **1.43** times as costly in a storm as in the clear, which means adding two weights does not express it directly, because adding can only say **'both of these matter, by a fixed amount each'** (fixed on the log-odds scale) — not *'this one matters more when that one is true.'*"
 
 ### Predict the Output
 

@@ -20,7 +20,7 @@
 | **Prep time** | 30 minutes the night before · 10 minutes on the day (setting up six stations) |
 | **Expected runtime of the code** | `see_it.py` trains **six** networks. The augmented ones are the slow pair at **about 15 seconds each**; the whole file is **about 40 seconds** on this machine. **Time yours before you say a number.** |
 
-> **⚠️ Watch out:** this week has two results that are not what a textbook would promise, and **both of them are the lesson.** Augmentation with `np.roll` alone buys **exactly zero** accuracy points — you have to blank the edge the ink rolled off before it buys anything, and then it buys 1.30. And transfer learning from digits 0–4 to digits 5–9 comes out **worse than training from scratch**. If you present either one as a triumph you will be lying to the class, and worse, you will teach them that an experiment's job is to confirm what the teacher said. **Run both honestly, put both numbers on the board, and spend the wrap saying why.**
+> **⚠️ Watch out:** this week has two results that are not what a textbook would promise, and **both of them are the lesson.** In the seed-0 run, augmentation with `np.roll` alone buys **exactly zero** accuracy points — you have to blank the edge the ink rolled off before it buys anything, and then it buys 1.30. (These are single-seed numbers: over seeds 0-4 the wrapped version gained 0 to 2.0 points over plain and the blanked version beat plain in four seeds, by 1.3 to 1.7 points, and lost 0.2 in the fifth. Augmented runs also get five times the training steps, so the gain is not cleanly separable from "more updates". The lesson about wrapped labels stands.) And transfer learning from digits 0–4 to digits 5–9 comes out **worse than training from scratch**. If you present either one as a triumph you will be lying to the class, and worse, you will teach them that an experiment's job is to confirm what the teacher said. **Run both honestly, put both numbers on the board, and spend the wrap saying why.**
 
 ---
 
@@ -301,7 +301,7 @@ Here is the four-row table the homework asks for, with the real numbers:
 ### 6. The three misconceptions you will actually meet
 
 **Misconception 1 — "more training rows is always better."**
-Not if some of them have wrong labels. The wrap-around experiment is the proof: 6,285 rows bought exactly nothing over 1,257, because many of the shifted copies had ink teleported to the opposite edge. **Cure:** put the two numbers next to each other — `0.9796` and `0.9796` — and ask *"where did the five times more data go?"*
+Not if some of them have wrong labels. The wrap-around experiment is the illustration: in the seed-0 run 6,285 rows bought nothing over 1,257, probably because many of the shifted copies had ink teleported to the opposite edge. **Cure:** put the two numbers next to each other — `0.9796` and `0.9796` — and ask *"where did the five times more data go?"*
 
 **Misconception 2 — "transfer learning is always better than starting fresh."**
 It is often better and it was not here, and the condition is what matters: **the borrowed network has to know far more than you do.** **Cure:** the scratch control row. `0.9814`, beating both. **This is exactly why you run a control**, and a student who asks "but what would starting from scratch have given?" before you show them has just discovered experimental design.
@@ -977,9 +977,9 @@ blanked-edge  augmentation bought +1.30 points
 
 **Ask this:** "Five times the training data. Five times the training time. **What did the wrapped version buy?**"
 
-*Nothing. Exactly nothing.*
+*Nothing, this time: the identical 529.*
 
-> **Say this:** "**Zero. Not a little bit, not within noise — the identical 529 out of 540.** Five times the data and five times the wait for exactly nothing, because all four shifted copies (four fifths of the 6,285 rows) had ink teleported from one edge to the opposite one and a label that no longer described the picture.
+> **Say this:** "**Zero, this time — the identical 529 out of 540** (a tie like that is a seed-0 coincidence; across seeds it is "no reliable benefit"). Five times the data and five times the wait for nothing, most likely because all four shifted copies (four fifths of the 6,285 rows) had ink teleported from one edge to the opposite one and a label that no longer described the picture.
 >
 > **And now the three lines that blank the edge.** `536 of 540`. **Seven more digits, +1.30 accuracy points, and no new data.**
 >
@@ -1012,7 +1012,7 @@ wrong axis          11.5s  movable 1898  train 0.5968  test 0.8574  (463 of 540)
 
 *Hoped-for answer:* the test accuracy is higher than the training accuracy.
 
-> **Say this:** "**The test score is higher than the training score.** That should never, ever happen. A model has *seen* the training data. It always does at least as well on it.
+> **Say this:** "**The test score is higher than the training score.** That should very rarely happen. A model has *seen* the training data, so it normally does at least as well on it.
 >
 > So what did I actually do? `axis=0` on a stack of 1,257 pictures is not the rows of a picture — **it is which picture.** I shuffled the pictures round while the labels stayed exactly where they were. Two fifths of my training rows (the up and down copies) are pictures paired with somebody else's label. **Unlearnable.** The other three fifths keep their right labels, so the model scored 0.5968 on its own partly scrambled homework, close to the 0.6 that three correct fifths allow, and 0.8574 on the untouched test set.
 >
@@ -1107,7 +1107,7 @@ from scratch, no borrowing       1,898       1.5          0.9814
 >
 > And notice what the frozen version *did* buy, because this part is real: **650 weights instead of 1,898, in 0.3 seconds instead of 1.5, and it still got to 92.6%.** A third of the weights, a fifth of the time, six points behind. **If the backbone had come from a million photographs and your target set were fifty pictures rather than 627, that trade would be the difference between a working model and no model at all.**
 >
-> **So the honest sentence for your write-up is not 'transfer learning does not work'. It is: 'transfer learning bought a fifth of the training time and a third of the weights, and cost 5.6 accuracy points, because the borrowed backbone was trained on no more data than we already had.'** That sentence is worth more than a triumph would have been."
+> **So the honest sentence for your write-up is not 'transfer learning does not work'. It is: 'transfer learning bought a fifth of the training time and a third of the weights, and cost 5.6 accuracy points; a likely reason is that the borrowed backbone was trained on no more data than we already had (a hypothesis we did not test).'** That sentence is worth more than a triumph would have been."
 
 **Do this:** Now the four-row table on the board, and make the split explicit in every row.
 
@@ -1165,8 +1165,8 @@ Every message below came from running a broken version of this week's actual cod
 | `ValueError: Found input variables with inconsistent numbers of samples: [540, 269]` | "You gave me 540 truths and 269 predictions." | `ConfusionMatrixDisplay.from_predictions(y_test, pred)` where `pred` came from the digits-5-to-9 model but `y_test` is all ten classes. | Predict on the **same rows** you are scoring: `y_test[hi_te]` with `pred` from `Xte[hi_te]`. **Print both lengths before you call it.** |
 | `RuntimeError: mean(): could not infer output dtype ... Got: Bool` | "You averaged a list of true/falses." | `(pred == y).mean()`. | `(pred == y).float().mean()`. Same as last week. |
 | `ValueError: could not broadcast input array from shape (8,) into shape (1257,)` | "You tried to blank a row and hit the wrong axis." | `out[0, :, :] = 0` instead of `out[:, 0, :] = 0` — that blanks **picture 0** rather than **row 0 of every picture**. | `out[:, 0, :] = 0.0`. **The first slot is always which picture.** |
-| **No error. Augmentation buys exactly 0.00 points.** | Nothing crashed. Five times the data, no benefit. | The rolled-off edge was never blanked, so a fifth of the extra rows have ink teleported across the picture and a label that no longer fits. | Blank the edge. **And notice the tell: the augmented model's *training* accuracy is lower than the plain model's (0.9774 against 0.9881) — it cannot even fit its own data, because some of it is nonsense.** |
-| **No error. Test accuracy is HIGHER than training accuracy.** | Nothing crashed. Your training labels are wrong. | `axis=0` instead of `axis=1` — the pictures got shuffled and the labels did not follow. | `axis=1` is rows, `axis=2` is columns, on a stack of pictures. **And make this a permanent alarm: test above train is never a lucky run, it is always a labelling bug.** |
+| **No error. Augmentation buys about 0.00 points (exactly 0.00 with seed 0).** | Nothing crashed. Five times the data, no benefit. | The rolled-off edge was never blanked, so a fifth of the extra rows have ink teleported across the picture and a label that no longer fits. | Blank the edge. **And notice the tell: the augmented model's *training* accuracy is lower than the plain model's (0.9774 against 0.9881) — it fits its own data less well, which fits with some of it being wrong, though it is a hint, not a proof: the two accuracies are measured on different rows.** |
+| **No error. Test accuracy is HIGHER than training accuracy.** | Nothing crashed. Your training labels are the first suspect. | `axis=0` instead of `axis=1` — the pictures got shuffled and the labels did not follow. | `axis=1` is rows, `axis=2` is columns, on a stack of pictures. **And make this a permanent alarm: test above train is very rarely a lucky run, and a labelling bug is the first thing to check.** |
 | **No error. The frozen model's accuracy is identical to the unfrozen one.** | Nothing crashed. The freezing did nothing. | `requires_grad = False` was set on the wrong layers, or set on a copy, or set *after* the optimiser was built with all the parameters. | `print(sum(p.numel() for p in model.parameters() if p.requires_grad))`. **If it says 1,898, nothing is frozen.** Freeze first, build the optimiser second. |
 | **No error. The augmented set has 6,285 pictures and 1,257 labels.** | Nothing crashed yet — the `DataLoader` will error later with something confusing. | `torch.cat` on the pictures but not on the labels. | `y_aug = torch.cat([ytr] * 5)`. **Print both lengths and check they match, every time you build a dataset.** |
 
@@ -1174,7 +1174,7 @@ Every message below came from running a broken version of this week's actual cod
 
 All the old moves stand. This week adds three, and it is the last set of the term.
 
-23. **"Is your test accuracy higher than your training accuracy?"** If yes, stop everything. It is a labelling bug and it is never anything else.
+23. **"Is your test accuracy higher than your training accuracy?"** If yes, stop everything. It is very often a labelling bug, so check the labels first (dropout or augmentation on the training path, or a small or easy test split, can also do it).
 
 24. **"How many weights are actually allowed to move?"** One line, and it is the only proof that `requires_grad = False` did anything. **A freeze you have not counted is a freeze you have not done.**
 
@@ -1294,7 +1294,7 @@ fine-tuned           1.6s  movable 1898  train 0.9841  test 0.9665  (260 of 269)
 
 *Unfrozen, by 11 digits — 260 against 249 out of 269.*
 
-> "**Eleven digits out of 269, which is four accuracy points. That is not noise.** Letting the conv layers adjust to the new digits genuinely helped, and it makes sense: 5, 6, 7, 8 and 9 are different shapes from 0, 1, 2, 3 and 4, so the filters needed to move."
+> "**Eleven digits out of 269, which is four accuracy points.** Frozen came out lowest in all five seeds we re-ran, so this is unlikely to be noise. Letting the conv layers adjust to the new digits probably helped, and it makes sense: 5, 6, 7, 8 and 9 are different shapes from 0, 1, 2, 3 and 4, so the filters needed to move."
 
 ### Step 4 — the control, and the point (2 minutes)
 
@@ -1330,7 +1330,7 @@ scratch on 5-9       1.5s  movable 1898  train 0.9729  test 0.9814  (264 of 269)
 
 *Hoped-for answer:* it only knew 630 pictures of five digits, which is no more than we already had.
 
-> "**That is exactly it.** Transfer learning works when the thing you borrow from knows far more than you do. Ours knew 630 pictures. We had 627. **We borrowed from an equal.**"
+> "**That is exactly it.** Transfer learning works when the thing you borrow from knows far more than you do. Ours knew 630 pictures. We had 627. **A likely suspect is that we borrowed from an equal** (we did not vary the source size, so hold it as a hypothesis; the 0-4 versus 5-9 mismatch and the fresh head's learning rate are also candidates)."
 
 ### What "finished" looks like
 
@@ -1395,7 +1395,7 @@ A conv layer *does* apply the same filter everywhere, so a vertical edge one pix
 
 **But the head is not.** Our `Linear(64, 10)` reads 64 specific numbers in a specific order, and it very much cares which of the 64 a signal arrives in. **Max pooling helps** — after two 2×2 pools, a one-pixel shift in the picture is often a zero-pixel shift in the final 2×2 map — but "often" is not "always", and at 8×8 there is not much map left to be tolerant with.
 
-**So the claim you should carry is the honest one: convolution buys you *some* shift tolerance, cheaply, and augmentation buys you more. Our measurement says the extra was worth 1.30 accuracy points, or seven digits out of 540.** That is a specific number for a specific claim, which is the whole point.
+**So the claim you should carry is the honest one: convolution buys you *some* shift tolerance, cheaply, and augmentation buys you more. Our seed-0 measurement says the extra was worth 1.30 accuracy points, or seven digits out of 540; other seeds gave 1.3 to 1.7 in three cases and -0.2 in one.** That is a specific number for a specific claim, which is the whole point.
 
 **"Eleven wrong, four of them 1-versus-8. Couldn't we just train longer on 1s and 8s?"**
 
@@ -1407,7 +1407,7 @@ But be clear about what you would be doing: **attacking the symptom.** The cause
 
 **"Why did the wrapped augmentation get a *worse* training accuracy than plain? It had five times the data."**
 
-**Because you cannot fit data that contradicts itself.** Four fifths of those 6,285 rows (every shifted copy) have a row or column of ink teleported to the opposite edge, labelled with the original digit; the down-shifted copy, for instance, shows the digit's bottom row at the top. Some of those wrapped pictures genuinely look more like a different digit than the one on the label.
+**Because data that contradicts itself is hard to fit.** Four fifths of those 6,285 rows (every shifted copy) have a row or column of ink teleported to the opposite edge, labelled with the original digit; the down-shifted copy, for instance, shows the digit's bottom row at the top. Some of those wrapped pictures genuinely look more like a different digit than the one on the label.
 
 So the model is being told two incompatible things about similar-looking pictures, and the best it can do is compromise — which shows up as `train 0.9774` instead of `0.9881`. **A training accuracy that drops when you add data is a strong signal that the added data is wrong**, and it is a check worth keeping.
 
@@ -1415,7 +1415,7 @@ So the model is being told two incompatible things about similar-looking picture
 
 **There is no settled answer, and the honest version of the disagreement is genuinely useful.**
 
-**Camp one says: get more data, always, first.** Everything else is a way of pretending you have more data. Augmentation is a cheap imitation of it; transfer learning is borrowing somebody else's. Our +1.30 points from augmentation is real and it is smaller than what 5,000 more real digits would buy.
+**Camp one says: get more data, always, first.** Everything else is a way of pretending you have more data. Augmentation is a cheap imitation of it; transfer learning is borrowing somebody else's. Our +1.30 points from augmentation (seed 0) is probably real and it is smaller than what 5,000 more real digits would buy.
 
 **Camp two says: fix the measurement before you touch the model.** We spent this whole lesson chasing eleven mistakes out of 540, and four of those eleven come from a pair that is arguably ambiguous at this resolution. **If some of your test labels are debatable, you are optimising against noise**, and the first job is to find out how many. Somebody should sit down with the eleven and decide whether a human can read them.
 
@@ -1431,7 +1431,7 @@ What to tell a 14-year-old, out loud: **"there is no first thing. But there is a
 
 | What happens | Why | What to do right now |
 |---|---|---|
-| **The two honest negatives get softened into successes** | Nobody enjoys teaching a lesson where the technique loses | **Do not.** Both results are the lesson, and both are stated in the Watch-out box so you cannot be surprised by them. Say the number, then say why. *"Transfer learning bought a fifth of the time and cost 5.6 points, because we borrowed from an equal."* |
+| **The two honest negatives get softened into successes** | Nobody enjoys teaching a lesson where the technique loses | **Do not.** Both results are the lesson, and both are stated in the Watch-out box so you cannot be surprised by them. Say the number, then say why. *"Transfer learning bought a fifth of the time and cost 5.6 points, probably because we borrowed from an equal, which we have not tested."* |
 | The from-scratch control is skipped for time | It is the fourth run and it looks like a repeat of something | **It is the entire reason this is an experiment.** Skip the fine-tuning run instead if you must. **A frozen number with nothing to compare it to is a number, not a result**, and saying so is objective 2. |
 | The wrap version is described but not run | It takes 15 seconds and the lesson is behind | **Run it.** Two identical `529 of 540`s on the same screen is worth more than any explanation, and the drop in *training* accuracy is the part that teaches. |
 | The axis bug gets skipped | It is another 16 seconds | If you genuinely have no time, **write the two numbers on the board — `train 0.5968`, `test 0.8574` — and ask what is impossible about them.** The alarm survives without the run. |
@@ -1823,7 +1823,7 @@ scratch  100 rows   1.0s  movable 1898  train 0.9500  test 0.9628
 
 **Live-code step 2 — "1,257 rows, five copies. What shape?"** `(6285, 1, 8, 8)`. **And 6,285 labels, which you check.**
 
-**Live-code step 3 — "what did the wrapped version buy?"** **Exactly nothing.** `529 of 540` both times, `+0.00 points`. And its *training* accuracy fell from 0.9881 to 0.9774, because part of its training data contradicted itself.
+**Live-code step 3 — "what did the wrapped version buy?"** **Nothing, in this seed-0 run.** `529 of 540` both times, `+0.00 points`. And its *training* accuracy fell from 0.9881 to 0.9774 (on different rows, 6,285 against 1,257), consistent with part of its training data being wrong.
 
 **Live-code step 3 — the blanked version.** **`536 of 540`, `+1.30 points`, seven more digits, no new data.**
 
@@ -1837,11 +1837,11 @@ scratch  100 rows   1.0s  movable 1898  train 0.9500  test 0.9628
 
 **Activity step 2 — "where did the other 1,248 weights go?"** Frozen: conv1's 80 plus conv2's 1,168. **80 + 1,168 + 650 = 1,898** ✅
 
-**Activity step 3 — "frozen 0.9257, unfrozen 0.9665. By how many digits?"** **Eleven: 260 against 249, out of 269.** Four accuracy points, and **not noise** — letting the filters adjust to the new digit shapes genuinely helped.
+**Activity step 3 — "frozen 0.9257, unfrozen 0.9665. By how many digits?"** **Eleven: 260 against 249, out of 269.** Four accuracy points, and unlikely to be noise (frozen was lowest in 5 of 5 seeds) — letting the filters adjust to the new digit shapes probably helped.
 
-**Activity step 4 — "which column won?"** **From scratch, 0.9814.** **"So what did borrowing buy?"** 650 movable weights instead of 1,898, 0.3 seconds instead of 1.5, **and it cost 5.6 accuracy points.**
+**Activity step 4 — "which column won?"** **From scratch, 0.9814, in this run** (scratch beat fine-tuned in 4 of 5 seeds we re-ran). **"So what did borrowing buy?"** 650 movable weights instead of 1,898, 0.3 seconds instead of 1.5, **and it cost 5.6 accuracy points.**
 
-**Activity step 4 — "why didn't it work?"** **Because we borrowed from an equal.** The source was 630 pictures of five digits; the target was 627 pictures of five different digits. Transfer learning needs the source to know very much more than the target — the real version is 1.2 million against a few thousand.
+**Activity step 4 — "why didn't it work?"** **A likely reason: we borrowed from an equal (untested, so a hypothesis).** The source was 630 pictures of five digits; the target was 627 pictures of five different digits. Transfer learning needs the source to know very much more than the target — the real version is 1.2 million against a few thousand.
 
 **Wrap — "can I say augmentation is 6.7 points better than frozen transfer?"** **No.** 540 all-digit rows against 269 rows of five classes. **Two different exams.** The fair comparisons are `0.9926 − 0.9796` and `0.9665 − 0.9257`.
 

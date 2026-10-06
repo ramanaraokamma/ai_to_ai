@@ -57,7 +57,7 @@ That failure has a name.
 
 > **data leakage** — when a column contains information that would not be available at the moment you actually have to make the prediction.
 
-**And here is the property that makes leakage so dangerous: it always makes your score go up.** A bug that makes your score go *down* gets fixed on Tuesday afternoon, because somebody is annoyed. A bug that makes your score go *up* gets a celebration, a slide in a presentation, and six months in production being wrong.
+**And here is the property that makes leakage so dangerous: it almost always makes your score go up.** (The honest version is in the Questions section: contrived cases exist. Tell students "almost always".) A bug that makes your score go *down* gets fixed on Tuesday afternoon, because somebody is annoyed. A bug that makes your score go *up* gets a celebration, a slide in a presentation, and six months in production being wrong.
 
 So this week the rule changes. **Good news gets audited harder than bad news.**
 
@@ -199,10 +199,10 @@ TIME   split AUC  0.5249   <- what production will give you
 the gap           0.2890
 ```
 
-**0.2890 of AUC, produced by nothing except where you cut.** Nothing else changed — same rows, same features, same model. The random split reports a good model. The time split reports a coin flip, and the time split is the one that matches how the thing will actually be used: trained on the past, run on the future.
+**0.2890 of AUC, produced by nothing except where you cut.** Nothing else changed — same rows, same features, same model. The random split reports a good model. The time split reports roughly a coin flip (0.5249, one seed), and the time split is the one that matches how the thing will actually be used: trained on the past, run on the future. *(Mechanism, stated carefully: the model has no week column, so it cannot literally use the future. The random split averages the drift across all 30 weeks and so flatters it; the time-split model learns an `x1` rule from weeks 0–21 that has reversed by weeks 22–29. Say "drift that a random split hides" if a student pushes on "trained on the future".)*
 
 ![Trained on the future, tested on the past](../figures/fig-w06-4-temporal-leak-training-on-the-future.svg)
-*Figure 6.4 — Trained on the future, tested on the past. The random split's train and test rows are interleaved through all 30 weeks, so the model has already seen the weeks it is marked on.*
+*Figure 6.4 — Trained on the future, tested on the past. The random split's train and test rows are interleaved through all 30 weeks, so the drift is averaged into the model and hidden from the score.*
 
 **The tell:** *do the rows have a date, an order number, or anything else that says when they happened?* If yes, and if you will deploy forward in time, split by time.
 
@@ -542,7 +542,7 @@ Pause properly here.
 
 > "That has a name. It is called **data leakage** — a column that contains information you would not actually have at the moment you need the prediction.
 >
-> And here is the thing I want you to take away before we do anything else. **Leakage always makes your score go up.** Always. Which means it is the only kind of bug that gets applauded. A bug that makes your number worse gets fixed on Tuesday because somebody is annoyed about it. A bug that makes your number better gets a presentation and six months in production being wrong.
+> And here is the thing I want you to take away before we do anything else. **Leakage almost always makes your score go up.** Almost always. Which means it is nearly the only kind of bug that gets applauded. A bug that makes your number worse gets fixed on Tuesday because somebody is annoyed about it. A bug that makes your number better gets a presentation and six months in production being wrong.
 >
 > So from today the rule changes. **Good news gets audited harder than bad news.**"
 
@@ -1317,7 +1317,7 @@ There is no single right route. **Marked on the number of checks recorded, inclu
 | Read the 21 column names | spots `customer_called_support` | suspicion only — must be confirmed with a number |
 | `df[NUM + ["late"]].corr()["late"]` | 0.942 against 0.345 next | audit 1 ✅ |
 | `pd.crosstab(suspect, df["late"])` | 12 / 540 on the bottom row | audit 2 ✅ |
-| fit with and without the column | 0.9762 against 0.7752 | audit 3, the ablation ✅ |
+| fit with and without the column | 0.9762 against 0.7752 | the ablation ✅ |
 | look at the coefficients | 3.482 against 0.804 | audit 4 ✅ |
 | ask when the value appears | after the delivery is late | **the verdict** ✅ |
 

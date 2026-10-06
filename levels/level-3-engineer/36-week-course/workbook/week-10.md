@@ -151,7 +151,7 @@ ________________________________________________________________
 
 **precision moved by** ____________  **recall by** ____________  **fpr by** ____________
 
-**M4(d).** **Which of the three barely noticed 150 extra false alarms, and why?** Name the denominator.
+**M4(d).** **Which of the three is dragged down by the false alarms because they fill its own denominator, and which has a big fixed denominator with plenty of room?** Name both denominators.
 
 ________________________________________________________________
 
@@ -372,7 +372,7 @@ rare      99/1   positives   14 of 1000
 
 `0.7986 ÷ 0.5000 = ____________`  `0.1877 ÷ 0.0140 = ____________`
 
-**A5(b).** So which of the two APs describes the **more** useful model, and which of them is the **bigger number**?
+**A5(b).** So which of the two APs is **further above its own coin**, and which of them is the **bigger number**?
 
 ________________________________________________________________
 
@@ -892,7 +892,7 @@ ________________________________________________________________
 | add the four counts up **every** row, before dividing anything | | | |
 | measure the steepness between two dots of my own ROC curve, rise over run | | | |
 | read a steepness out loud as *"recall bought per false alarm"* | | | |
-| name all three denominators — 8, 14 and 986 — and say which one barely moves | | | |
+| name all three denominators — 8, 14 and 986 — and say which one is fixed | | | |
 | say which of ROC and precision-recall to trust when positives are rare, with a reason | | | |
 | say why AUC's baseline is always 0.5 and AP's baseline is not | | | |
 | mark three thresholds and name the **person** each one is right for | | | |
@@ -970,7 +970,7 @@ The four rises come from `tp` going 2→3, 3→3, 4→5 and 5→8; the four runs
 
 **M4(c).** precision moved by **−0.038390** (0.061538 → 0.023148), recall by **+0.071429**, fpr by **+0.152130**.
 
-**M4(d).** **Precision noticed hardest and fpr noticed…** — careful, read the numbers again. **Precision fell to about a third of what it was, and it is the one that hurts**, because its denominator is *the pile you have to review*, which went from 65 rows to 216. **The false positive rate moved by 0.15, which sounds big, but its denominator is 986 and it will never exceed 1** — it has plenty of room and it will happily absorb hundreds of false alarms without looking alarming. **The full-marks answer names the two denominators: 216 versus 986.** The false positive rate is the one that lets a flood of false alarms look survivable, and that is the reason this week has two charts instead of one.
+**M4(d).** **Precision is the one dragged down by the false alarms**, because they fill its own denominator: *the pile you have to review* went from 65 rows to 216, and precision fell to about a third of what it was (−0.038). **The false positive rate moved by +0.152 — in absolute terms a bigger move than precision's — but its denominator is a fixed 986 and it cannot exceed 1**, so it has plenty of room: each false alarm adds only 0.001, and 150 of them still leave it at about 0.21, a fifth of the way across. **The full-marks answer names the two denominators: 216 (which the false alarms themselves fill) versus 986 (fixed).** That difference is why a flood of false alarms looks survivable on the ROC chart and alarming on the precision chart, and the reason this week has two charts instead of one.
 
 ### Predict the Output
 
@@ -1067,7 +1067,7 @@ inf
 
 **A5(a).** `0.7986 ÷ 0.5000 = **1.5972**` · `0.1877 ÷ 0.0140 = **13.4071**`
 
-**A5(b).** **The rare model's AP describes the more useful model** — 13.4 times better than a coin against the balanced model's 1.6 times — and **it is by far the smaller number** (0.1877 against 0.7986). **Average precision has no fixed baseline**, so quoting one without the class balance beside it is close to meaningless.
+**A5(b).** **The rare model's AP is further above its own coin** — 13.4 times better than a coin against the balanced model's 1.6 times — and **it is by far the smaller number** (0.1877 against 0.7986). That does **not** make it the more useful model: the balanced model has the higher AUC (0.7788 against 0.6831), and "times a coin" is capped by 1 ÷ the positive rate, so it is not a fair cross-dataset score either. **Average precision has no fixed baseline**, so quoting one without the class balance beside it is close to meaningless.
 
 **A5(c).** **AUC**, because **a coin always gets exactly 0.5000, whatever the data looks like.** That fixed baseline is the entire reason people keep reporting AUC even when precision-recall would be more useful for the day's work. AP's baseline moves with the positive rate — 0.5000 here, 0.0140 there — so two APs from two datasets are not comparable.
 
@@ -1305,7 +1305,7 @@ Two steps straight up, one across, one more straight up, then four across along 
 
 **Part 1(d) — ranking C, `L F F L F L L L`:** after card 1 **(0.2000, 0.0000)**, after card 3 **(0.2000, 0.6667)**, after card 5 **(0.4000, 1.0000)**, after card 8 **(1.0000, 1.0000)**. **Same as B except it starts by going sideways** — the first thing it did was block an innocent person.
 
-**Part 1(e).** By eye, best first: **A, B, C.** A hugs the top-left corner, B is a tidy staircase down the middle, and C is B shifted right by one step, which is strictly worse.
+**Part 1(e).** By eye, best first: **A, B, C.** A hugs the top-left corner, B is a tidy staircase down the middle, and C is a little worse than B, with its first three cards in a poorer order.
 
 **Part 1(f).**
 

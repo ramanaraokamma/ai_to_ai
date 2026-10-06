@@ -454,7 +454,7 @@ row                       z     ReLU   sigmoid     tanh
 
 **Runtime: well under a second.**
 
-- [ ] **Run `shapes.py`** (full file in the Answer Key, page 16.2) so the three printouts are familiar. **Under a second.**
+- [ ] **Run `shapes8.py`** (full file in the Answer Key, page 16.2) so the three printouts are familiar. **Under a second.**
 - [ ] **Run `collapse.py`** (full file in the Answer Key, page 16.3). The line you care about is the last one: **`biggest disagreement between two layers and one line: 4.440892098500626e-16`**. **Under a second.**
 - [ ] **Run `moons_look.py`** (Answer Key, page 16.6) and **look at `moons.png`**. You will show it for ninety seconds at the end. **About 1 second.**
 - [ ] **Do these four things on your own calculator.** If you have not, you cannot answer *"where did 0.550 come from?"*, and somebody will ask:
@@ -1253,29 +1253,29 @@ Every question restated, so you can mark from this page alone.
 
 ### Page 16.1 — Six neuron outputs, three squashes, eighteen numbers
 
-*Weights `w = [0.4, −0.7, 1.2]`, bias `b = −0.5`. For each row: `z` first, then the three squashes to three decimal places.*
+*Weights `w = [0.4, −0.7, 1.2]`, bias `b = −0.5`. For each row: `z` first, then the three squashes to three decimal places. These are the rows in the student workbook's M2 and Build It Part A.*
 
 **The `z` arithmetic, shown in full for every row:**
 
 | Row | The four terms | `z` |
 |---|---|---|
-| `[2, 0, 1]` | `0.8 + 0.0 + 1.2 − 0.5` | **1.50** |
-| `[0, 2, 1]` | `0.0 − 1.4 + 1.2 − 0.5` | **−0.70** |
-| `[1, 0, −1]` | `0.4 + 0.0 − 1.2 − 0.5` | **−1.30** |
-| `[2, 2, 2]` | `0.8 − 1.4 + 2.4 − 0.5` | **1.30** |
-| `[−1, −1, −1]` | `−0.4 + 0.7 − 1.2 − 0.5` | **−1.40** |
-| `[0.5, 0.5, 0.5]` | `0.2 − 0.35 + 0.6 − 0.5` | **−0.05** |
+| `[1, 0, 1]` | `0.4 + 0.0 + 1.2 − 0.5` | **1.10** |
+| `[0, 1, 2]` | `0.0 − 0.7 + 2.4 − 0.5` | **1.20** |
+| `[3, 2, 0]` | `1.2 − 1.4 + 0.0 − 0.5` | **−0.70** |
+| `[2, 0, 0.5]` | `0.8 + 0.0 + 0.6 − 0.5` | **0.90** |
+| `[−1, −1, 0]` | `−0.4 + 0.7 + 0.0 − 0.5` | **−0.20** |
+| `[0.5, 1.5, 1]` | `0.2 − 1.05 + 1.2 − 0.5` | **−0.15** |
 
 **The eighteen squash answers, with the sigmoid arithmetic spelled out:**
 
 | Row | `z` | ReLU | sigmoid | how sigmoid was got | tanh |
 |---|---|---|---|---|---|
-| `[2, 0, 1]` | 1.50 | **1.500** | **0.818** | `e^(−1.5) = 0.223130`; `1 ÷ 1.223130 = 0.817574` | **0.905** |
-| `[0, 2, 1]` | −0.70 | **0.000** | **0.332** | `e^(0.7) = 2.013753`; `1 ÷ 3.013753 = 0.331812` | **−0.604** |
-| `[1, 0, −1]` | −1.30 | **0.000** | **0.214** | `e^(1.3) = 3.669297`; `1 ÷ 4.669297 = 0.214165` | **−0.862** |
-| `[2, 2, 2]` | 1.30 | **1.300** | **0.786** | `e^(−1.3) = 0.272532`; `1 ÷ 1.272532 = 0.785835` | **0.862** |
-| `[−1, −1, −1]` | −1.40 | **0.000** | **0.198** | `e^(1.4) = 4.055200`; `1 ÷ 5.055200 = 0.197816` | **−0.885** |
-| `[0.5, 0.5, 0.5]` | −0.05 | **0.000** | **0.488** | `e^(0.05) = 1.051271`; `1 ÷ 2.051271 = 0.487503` | **−0.050** |
+| `[1, 0, 1]` | 1.10 | **1.100** | **0.750** | `e^(−1.1) = 0.332871`; `1 ÷ 1.332871 = 0.750260` | **0.800** |
+| `[0, 1, 2]` | 1.20 | **1.200** | **0.769** | `e^(−1.2) = 0.301194`; `1 ÷ 1.301194 = 0.768525` | **0.834** |
+| `[3, 2, 0]` | −0.70 | **0.000** | **0.332** | `e^(0.7) = 2.013753`; `1 ÷ 3.013753 = 0.331812` | **−0.604** |
+| `[2, 0, 0.5]` | 0.90 | **0.900** | **0.711** | `e^(−0.9) = 0.406570`; `1 ÷ 1.406570 = 0.710950` | **0.716** |
+| `[−1, −1, 0]` | −0.20 | **0.000** | **0.450** | `e^(0.2) = 1.221403`; `1 ÷ 2.221403 = 0.450166` | **−0.197** |
+| `[0.5, 1.5, 1]` | −0.15 | **0.000** | **0.463** | `e^(0.15) = 1.161834`; `1 ÷ 2.161834 = 0.462570` | **−0.149** |
 
 **The check script, and its real output:**
 
@@ -1288,12 +1288,12 @@ np.random.seed(0)
 w = np.array([0.4, -0.7, 1.2])
 b = -0.5
 
-rows = np.array([[2.0, 0.0, 1.0],
-                 [0.0, 2.0, 1.0],
-                 [1.0, 0.0, -1.0],
-                 [2.0, 2.0, 2.0],
-                 [-1.0, -1.0, -1.0],
-                 [0.5, 0.5, 0.5]])
+rows = np.array([[1.0, 0.0, 1.0],
+                 [0.0, 1.0, 2.0],
+                 [3.0, 2.0, 0.0],
+                 [2.0, 0.0, 0.5],
+                 [-1.0, -1.0, 0.0],
+                 [0.5, 1.5, 1.0]])
 
 sigmoid = lambda z: 1.0 / (1.0 + np.exp(-z))
 
@@ -1306,73 +1306,78 @@ for r in rows:
 
 ```text
 row                         z     ReLU   sigmoid     tanh
-[2. 0. 1.]               1.50    1.500     0.818    0.905
-[0. 2. 1.]              -0.70    0.000     0.332   -0.604
-[ 1.  0. -1.]           -1.30    0.000     0.214   -0.862
-[2. 2. 2.]               1.30    1.300     0.786    0.862
-[-1. -1. -1.]           -1.40    0.000     0.198   -0.885
-[0.5 0.5 0.5]           -0.05    0.000     0.488   -0.050
+[1. 0. 1.]               1.10    1.100     0.750    0.800
+[0. 1. 2.]               1.20    1.200     0.769    0.834
+[3. 2. 0.]              -0.70    0.000     0.332   -0.604
+[2.  0.  0.5]            0.90    0.900     0.711    0.716
+[-1. -1.  0.]           -0.20    0.000     0.450   -0.197
+[0.5 1.5 1. ]           -0.15    0.000     0.463   -0.149
 ```
 
-**Three things worth a comment when you mark this.** Row 6's `z` is `−0.05`, a whisker below zero — **ReLU says `0.000` and tanh says `−0.050`, and a student who wrote `0.000` for tanh has confused the two.** Rows 3 and 4 have the same tanh magnitude with opposite signs (`−0.862` and `0.862`) because their `z` values are `−1.30` and `1.30`; tanh is symmetric about zero and noticing that is worth a tick in the margin. And four of the six ReLU answers are `0.000`, which is not a mistake — **it is what a picky neuron does most of the time.**
+**Three things worth a comment when you mark this.** Row 6's `z` is `−0.15`, a whisker below zero — **ReLU says `0.000` and tanh says `−0.149`, and a student who wrote `0.000` for tanh has confused the two.** Row 5 and row 6 have the same ReLU answer (`0.000`) from different negative `z` values (`−0.20` and `−0.15`); ReLU threw away two different numbers and nobody downstream can tell. And three of the six ReLU answers are `0.000`, which is not a mistake — **it is what a picky neuron does a lot of the time.** A common slip on the sigmoid column is to skip the negate and get `1 − sigmoid(z)` (row 1 would read `0.250` rather than `0.750`).
 
 ### Page 16.2 — Predict the shape of eight arrays
 
-*Write all eight predictions in pen first. Then run once.*
+*Write all eight predictions in pen first. Then run once. Item 4 is a deliberate error.*
 
 | # | Expression | Prediction | Real | Why |
 |:--:|---|---|---|---|
-| 1 | `a = np.array([1.0, 2.0, 3.0])` → `a.shape` | `(3,)` | **`(3,)`** | Flat: three numbers, no rows and columns. One number in the shape, hence the trailing comma. |
-| 2 | `r = np.array([[1.0, 2.0, 3.0]])` → `r.shape` | `(1, 3)` | **`(1, 3)`** | **Two** sets of brackets, so it is 2-D: one row, three columns. |
-| 3 | `r.T.shape` | `(3, 1)` | **`(3, 1)`** | Flip a `(1, 3)` and you get a `(3, 1)` — a single column. |
-| 4 | `G = np.arange(6).reshape(3, 2)` → `G.shape` | `(3, 2)` | **`(3, 2)`** | `np.arange(6)` is `0 1 2 3 4 5`; reshaping lays them out three rows of two. |
-| 5 | `G.T.shape` | `(2, 3)` | **`(2, 3)`** | Rows become columns. Contents read down the original columns. |
-| 6 | `G.reshape(2, 3).shape` | `(2, 3)` | **`(2, 3)`** | Same shape as #5, **different numbers** — this reads along the rows. |
-| 7 | `G.reshape(6, 1).shape` | `(6, 1)` | **`(6, 1)`** | `6 × 1 = 6`, so it is legal. One tall column. |
-| 8 | `np.maximum(0, G.T).shape` | `(2, 3)` | **`(2, 3)`** | A squash never changes the shape — it works one cell at a time. |
-| 9 | `X` from `make_moons(n_samples=400, ...)` | `(400, 2)` | **`(400, 2)`** | 400 rows, 2 features. Rows first. |
-| 10 | `y` from the same call | `(400,)` | **`(400,)`** | The labels are a **flat** list of 400, not a `(400, 1)` grid. This one catches people. |
+| 1 | `A.shape` (`A = [[1, 2, 3], [4, 5, 6]]`) | `(2, 3)` | **`(2, 3)`** | Two rows, three columns. Rows first. |
+| 2 | `A.T.shape` | `(3, 2)` | **`(3, 2)`** | Rows become columns: `[[1 4], [2 5], [3 6]]`. |
+| 3 | `A.reshape(3, 2).shape` | `(3, 2)` | **`(3, 2)`** | Same shape as #2, **different grid**: `[[1 2], [3 4], [5 6]]`. It reads along the rows. |
+| 4 | `A.reshape(4, 2)` | *(not a shape)* | **`ValueError: cannot reshape array of size 6 into shape (4,2)`** | `4 × 2 = 8` but `A` holds 6 numbers. numpy will not invent two or throw two away. |
+| 5 | `v.shape` (`v = [2.0, 4.0, 6.0]`) | `(3,)` | **`(3,)`** | Flat: three numbers, no rows and columns. One number in the shape, hence the trailing comma. |
+| 6 | `v.T.shape` | `(3,)` | **`(3,)`** | Nothing to flip in a flat list, so transposing does nothing, silently. |
+| 7 | `v.reshape(3, 1).shape` | `(3, 1)` | **`(3, 1)`** | `3 × 1 = 3`, so it is legal. One tall column. |
+| 8 | `(rows * w).sum(axis=1).shape` | `(6,)` | **`(6,)`** | Six rows in, one weighted sum per row, so six numbers in a flat list. |
 
 **The script, and its real output:**
 
 ```python
-"""eight_shapes.py - predict the shape first, then run this."""
+"""shapes8.py - eight shapes, predicted in pen first."""
 import numpy as np
-from sklearn.datasets import make_moons
-
 np.random.seed(0)
 
-a = np.array([1.0, 2.0, 3.0])
-r = np.array([[1.0, 2.0, 3.0]])
-G = np.arange(6).reshape(3, 2)
-X, y = make_moons(n_samples=400, noise=0.25, random_state=0)
+A = np.array([[1, 2, 3],
+              [4, 5, 6]])
+v = np.array([2.0, 4.0, 6.0])
+w = np.array([0.4, -0.7, 1.2])
+rows = np.array([[1.0, 0.0, 1.0],
+                 [0.0, 1.0, 2.0],
+                 [3.0, 2.0, 0.0],
+                 [2.0, 0.0, 0.5],
+                 [-1.0, -1.0, 0.0],
+                 [0.5, 1.5, 1.0]])
 
-print("1. a                    ", a.shape)
-print("2. r                    ", r.shape)
-print("3. r.T                  ", r.T.shape)
-print("4. G                    ", G.shape)
-print("5. G.T                  ", G.T.shape)
-print("6. G.reshape(2, 3)      ", G.reshape(2, 3).shape)
-print("7. G.reshape(6, 1)      ", G.reshape(6, 1).shape)
-print("8. np.maximum(0, G.T)   ", np.maximum(0, G.T).shape)
-print("9. X                    ", X.shape)
-print("10. y                   ", y.shape)
+print("1. A.shape                       =", A.shape)
+print("2. A.T.shape                     =", A.T.shape)
+print("3. A.reshape(3, 2).shape         =", A.reshape(3, 2).shape)
+print("5. v.shape                       =", v.shape)
+print("6. v.T.shape                     =", v.T.shape)
+print("7. v.reshape(3, 1).shape         =", v.reshape(3, 1).shape)
+print("8. (rows * w).sum(axis=1).shape  =", (rows * w).sum(axis=1).shape)
+print()
+print("4. A.reshape(4, 2) ->")
+print(A.reshape(4, 2))
 ```
 
 ```text
-1. a                     (3,)
-2. r                     (1, 3)
-3. r.T                   (3, 1)
-4. G                     (3, 2)
-5. G.T                   (2, 3)
-6. G.reshape(2, 3)       (2, 3)
-7. G.reshape(6, 1)       (6, 1)
-8. np.maximum(0, G.T)    (2, 3)
-9. X                     (400, 2)
-10. y                    (400,)
+1. A.shape                       = (2, 3)
+2. A.T.shape                     = (3, 2)
+3. A.reshape(3, 2).shape         = (3, 2)
+5. v.shape                       = (3,)
+6. v.T.shape                     = (3,)
+7. v.reshape(3, 1).shape         = (3, 1)
+8. (rows * w).sum(axis=1).shape  = (6,)
+
+4. A.reshape(4, 2) ->
+Traceback (most recent call last):
+  File "shapes8.py", line 25, in <module>
+    print(A.reshape(4, 2))
+ValueError: cannot reshape array of size 6 into shape (4,2)
 ```
 
-**The two that are supposed to catch people, and what a good miss-sentence looks like.** Item 1 versus item 2: `[1.0, 2.0, 3.0]` is `(3,)` and `[[1.0, 2.0, 3.0]]` is `(1, 3)`, and **the only difference on the page is one extra pair of brackets.** A good sentence: *"I counted three numbers and wrote `(1, 3)` for both — I had not noticed that the number of bracket levels is the number of dimensions."* Item 10: nearly everybody writes `(400, 1)`. A good sentence: *"I assumed the labels would be a column like the features, but they are a flat list, so `y.shape` has one number in it."*
+**The ones that are supposed to catch people, and what a good miss-sentence looks like.** Items 5 and 6 are the silent pair: `v` is flat, so `v.T` has no rows and columns to swap and quietly returns the same `(3,)`. A good sentence: *"I thought transposing would make it a column, but a flat list has nothing to flip."* Items 2 and 3 both print `(3, 2)` and are different grids; a student who assumes `.T` and `.reshape` give the same thing has only compared the shapes, not the contents. Item 4 is the only non-shape: the last line of the traceback is the answer, and the arithmetic `4 × 2 = 8` against 6 numbers is what refused it. A good sentence for item 8: *"I expected `(6, 3)` because I was multiplying a grid, but `sum(axis=1)` collapses each row to one number."*
 
 ### Page 16.3 — The collapse, in three lines
 
@@ -1648,7 +1653,7 @@ saved moons.png
 
 **No straight line separates them.** Two hundred of each class, hooked together like two links of a chain. The best single line gets somewhere around **85–88%** — a student who eyeballs "about fifty wrong" is in the right area, and the exact number does not matter. What matters is the reason: **the boundary that would work is curved, and a weighted sum plus a bias can only ever draw something straight.**
 
-**Two details worth noticing in that printout.** `y.shape` is `(400,)` — flat, not `(400, 1)`, which is item 10 of page 16.2. And `np.bincount(y)` gives `[200 200]`, so the classes are perfectly balanced and **accuracy is a fair measure here** — which will not be true of the fraud data from Term 1, and it is worth one sentence connecting the two.
+**Two details worth noticing in that printout.** `y.shape` is `(400,)` — flat, not `(400, 1)`, the same flat-list point as `v` in page 16.2. And `np.bincount(y)` gives `[200 200]`, so the classes are perfectly balanced and **accuracy is a fair measure here** — which will not be true of the fraud data from Term 1, and it is worth one sentence connecting the two.
 
 ### Answers to every question posed in the lesson
 

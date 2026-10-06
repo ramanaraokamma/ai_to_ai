@@ -814,7 +814,7 @@ row totals [5 5 4] col totals [2 2 3 2 3 1 1]
 
 **M2 (c).** `1,000,000,000 ÷ 2,400,000 = 416.67` → about **417 times** as many numbers. **That is the whole argument for sparse storage in one figure:** the dense grid is not 10% bigger, it is four hundred times bigger, and it is a laptop crash rather than a slow afternoon.
 
-**M2 (d).** *"No. 93.4% empty is what text looks like, and it gets emptier as you add data, because every new review brings a few new words and every new word adds a whole column of zeros for every earlier review."*
+**M2 (d).** *"No. 93.4% empty is what text looks like, and it tends to get emptier as you add data, because most new reviews bring a few new words and every new word adds a whole column of zeros for every earlier review."*
 
 **M3 (a).** `17 − 15 = 2`
 

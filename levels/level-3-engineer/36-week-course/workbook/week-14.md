@@ -1453,7 +1453,7 @@ log loss            : 0.693147
 |:--:|---|---|---|
 | 1 | **the weights**, `print(w, b)` | still all zero | nothing is being updated — the update step is missing, or the learning rate is so small nothing moved |
 | 2 | **the features**, their means and standard deviations | all zero, or all identical | a scaler applied to the wrong thing, or a column selected that does not exist |
-| 3 | **`np.unique(y)`** | one value only | a model cannot learn to separate one class from itself |
+| 3 | **`np.unique(y)`** | one value only (a lost class — a data bug); both classes present but still parked → labels shuffled or misaligned | there is nothing to separate, or the labels are disconnected from the features |
 
 **In that order**, because each check is cheaper than the next and each one rules out the one after it.
 
@@ -1463,7 +1463,7 @@ log loss            : 0.693147
 >
 > **Two.** It does not depend on the data because when `p = 0.5` the two branches of the loss are the same number: if the answer was yes the cost is `−ln(0.5)` and if it was no the cost is `−ln(1 − 0.5)`, which is also `−ln(0.5)` — so the labels never enter the arithmetic at all, and a balanced dataset and a 90%-skewed one both score `0.693147`.
 >
-> **Three.** I would print the weights first: if they are all still zero then nothing has been updated, so either the update step is missing or the learning rate is so small that nothing has moved. Then the feature column means and standard deviations: if the features are all zero or all identical, the raw score is forced to be zero no matter what the weights are. Then `np.unique(y)`: if there is only one class present, there is nothing to separate and no loss function can help.
+> **Three.** I would print the weights first: if they are all still zero then nothing has been updated, so either the update step is missing or the learning rate is so small that nothing has moved. Then the feature column means and standard deviations: if the features are all zero or all identical, the raw score is forced to be zero no matter what the weights are. Then `np.unique(y)`: if there is only one class present, that is a data bug (there is nothing to separate), and if both classes are present but the loss is still parked, the labels may be shuffled or misaligned with the rows.
 
 **Marking notes.** Sentence one is arithmetic and almost everybody gets it. **Sentence two is the discriminator** — it must say *why the label stops mattering*, which is that both branches collapse to the same number at `p = 0.5`. *"Because it's always 0.5"* is halfway. Sentence three must name **what would be printed** and **what each answer would imply**; three things to print with no conclusions attached is worth half.
 

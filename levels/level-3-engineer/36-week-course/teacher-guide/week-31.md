@@ -779,7 +779,7 @@ the | pizza | was | great | but | the | service | wasn
 
 > "**`wasn`.** That is not a word. The apostrophe broke `wasn't` in two, and the leftover `t` was thrown away because it is only one letter long and our pattern wants two or more.
 >
-> **And notice what has just happened to the meaning.** `wasn't` was a negative. It was the word that made the second half of that review a complaint. It is now a nonsense token called `wasn`, and the negation is gone. **That is not a bug. That is the default behaviour of the most-used text tool in the world, and it is exactly why carelessly-built sentiment models get negation wrong.**"
+> **And notice what has just happened to the meaning.** `wasn't` was a negative. It was the word that made the second half of that review a complaint. It is now a nonsense token called `wasn`, and the negation is gone. **That is not a bug. That is the default behaviour of the most-used text tool in the world, and it is one reason carelessly-built sentiment models get negation wrong.**"
 
 **Do this:** Now the decision table. Write four rows on the board with two columns headed **when it helps** and **when it hurts**:
 
@@ -1017,7 +1017,7 @@ zero cells       : 5157 = 93.4% of the grid
 
 *Take guesses. They will guess far too many.*
 
-> **Say this:** "**Three hundred and sixty-three.** Ninety-three point four per cent of that grid is empty, and here is the part that should bother you: **it gets emptier as you add reviews, not fuller.** Every new review brings a few new words, and every new word adds a whole column of zeros for all the reviews that came before.
+> **Say this:** "**Three hundred and sixty-three.** Ninety-three point four per cent of that grid is empty, and here is the part that should bother you: **it tends to get emptier as you add reviews, not fuller.** Most new reviews bring a few new words, and every new word adds a whole column of zeros for all the reviews that came before.
 >
 > A real corpus — twenty thousand news articles, fifty thousand different words — is a billion cells with maybe a million numbers in it. **Stored as a grid that is eight gigabytes. Stored as a list of the non-zeros it is about eight megabytes.** That is the difference between 'runs on your laptop' and 'does not run at all', and it is why every text tool in Python hands you a sparse matrix whether you asked for one or not."
 

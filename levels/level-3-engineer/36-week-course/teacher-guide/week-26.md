@@ -258,7 +258,7 @@ After training, `model[0].weight` holds the eight 3×3 filters. Rendered as pict
 | **4** | +0.503 | **+3.760** | **a horizontal edge detector: bright above, dark below** |
 | 5 | −0.876 | +0.212 | weak |
 | **6** | **+2.830** | −1.219 | **a vertical edge detector: bright left, dark right** |
-| 7 | +2.916 | +3.041 | likes both — its nine weights are positive except the bottom-right two, so it is closer to a **corner** detector |
+| 7 | +2.916 | +3.041 | likes both — its nine weights are positive except the bottom-right two, so it is best read as an **ink-total** filter (weights sum to +2.837), not a clear corner detector |
 
 **Say the honest version out loud, because it is better teaching than the tidy version:**
 
@@ -1513,9 +1513,9 @@ dense 64 -> 64 -> 10: 4810
 | 2 | mostly positive | −0.956 | −0.032 | likes ink in general; no left-right preference |
 | 3 | mixed | +0.543 | +0.158 | **weak. Cannot be described honestly.** |
 | **4** | `−0.185 +0.784 +0.742` / `+0.469 +0.383 −0.196` / `−0.105 −0.977 −0.681` | +0.503 | **+3.760** | **horizontal edge detector: bright above, dark below** |
-| 5 | mixed | −0.876 | +0.212 | **weak. Cannot be described honestly.** |
+| 5 | mixed | −0.876 | +0.212 | **weak.** Six positive weights (sum +3.070) make it ink-like, with a mild dislike of bright-left; no clean story. |
 | **6** | `+0.509 −0.129 −0.149` / `+0.382 −0.507 −0.767` / `+0.761 +0.348 −0.550` | **+2.830** | −1.219 | **vertical edge detector: bright left, dark right** |
-| 7 | `+0.478 +0.491 +0.006` / `+0.656 +0.744 +0.563` / `+0.847 −0.340 −0.608` | +2.916 | +3.041 | likes both — positive except the bottom-right two cells, so closer to a **corner** detector |
+| 7 | `+0.478 +0.491 +0.006` / `+0.656 +0.744 +0.563` / `+0.847 −0.340 −0.608` | +2.916 | +3.041 | likes both — positive except the bottom-right two cells, weights sum +2.837, so best read as an **ink-total** filter; two test patches cannot support "corner" |
 
 *(Note: the exact nine numbers for filters 2, 3 and 5 are printed by `filters.py`; the five reproduced here are the ones you will be asked about, because they are the ones that can be described — or, in filter 0's case, only weakly.)*
 
