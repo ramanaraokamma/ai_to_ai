@@ -1246,7 +1246,7 @@ The **depth table** is the one printed in 🎲 The Activity, In Full. Accept: an
 
 ## 📝 Notes for the next author
 
-- **Numbers that came from the ledger, not from this guide's own scripts:** the 60-epoch batch-2 row (train 0.688, val 0.677, 56.4%) and the layer-norm shift result (48.3% vs batch norm 46.7%). Both are in `_ledger/out/m01_02_answerkey.txt`, Practice 6.
+- **Numbers that came from the ledger, not from this guide's own scripts:** the 30-epoch batch-2 row (train 0.688, val 0.677, 56.4%) and the layer-norm shift result (48.3% vs batch norm 46.7%). Both are in `_ledger/out/m01_02_answerkey.txt`, Practice 6.
 - **The module's claims this week contradicts:** "plain depth 12 stalls" (it trains: 98.9%); "`(1+f1')(1+f2')…` stays near 1" (it grows, 20 to 300 at 32 blocks without a norm); "layer norm adapts to a shift" (it does not, 48.3%). None of these is repeated in this guide.
 - **Not run, so not claimed:** residual stacks deeper than 32; post-norm; layer norm alone with other learning rates; what is wrong with layer norm alone at 16 blocks.
 - **Week 7** adds `depth` to its sweep and says it has not been run for its guide; the numbers in this guide are the only ones that exist for depth. Week 9 Assessment 1 checks a batch of one (Bug C3), the length `clip_grad_norm_` returns (B6) and the slope of a sum (A16): all three are taught here with the same wording.

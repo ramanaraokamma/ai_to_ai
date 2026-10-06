@@ -228,7 +228,7 @@ Final note: ____________
 
 Final note: ____________
 
-**R1.** Add the four word numbers for each sentence (`0.2 + 1.0 - 0.5 + 0.2 - 1.0`). Sentence 1: ________ Sentence 2: ________ . If I had only given you the total, could you say which sentence it was? ____________
+**R1.** Add the five word numbers for each sentence (`0.2 + 1.0 - 0.5 + 0.2 - 1.0`). Sentence 1: ________ Sentence 2: ________ . If I had only given you the total, could you say which sentence it was? ____________
 
 **R2.** The final notes are mostly about **which word came last**. Which? ____________ Do they also tell you anything about the *first* word? ____________ (Both sentences start with `the`.)
 
@@ -609,7 +609,7 @@ With `W_xh = 1.0`, `W_hh = 0.5`, bias 0, note starts at 0.
 | Part | x | pre, step by step | notes, step by step |
 |:--:|---|---|---|
 | a | `[1, 0, 0, 0]` | 1.0000, 0.3808, 0.1817, 0.0899 | 0.7616, 0.3634, 0.1797, 0.0896 |
-| b | `[0, 0, 1, 0]` | 0, 0, 1.0000, 0.1817 | 0.0, 0.0, 0.7616, 0.3634 |
+| b | `[0, 0, 1, 0]` | 0, 0, 1.0000, 0.3808 | 0.0, 0.0, 0.7616, 0.3634 |
 | c | `[1, 1, 0, 0]` | 1.0000, 1.3808, 0.4406, 0.2071 | 0.7616, 0.8811, 0.4141, 0.2041 |
 | d | `[1, 0]` | 1.0000, 0.3808 | 0.7616, 0.3634 |
 | e | `[0, 1]` | 0, 1.0000 | 0.0, 0.7616 |

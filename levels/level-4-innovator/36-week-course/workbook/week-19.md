@@ -286,7 +286,6 @@ Then `check195.py` trains a two-layer, two-head model on it for 600 steps (about
 repeat-the-pattern model: final loss 0.0017   accuracy 1.00
 
 where does each head look? (average over 500 sequences)
-where does each head look? (average over 500 sequences)
 layer 0 head 0:  2->0 (0.90)  3->1 (0.98)  4->2 (0.99)  5->3 (0.62)  6->4 (0.85)  7->2 (0.51)  8->0 (0.51)  9->4 (0.73)
 layer 0 head 1:  2->0 (0.89)  3->1 (0.99)  4->2 (0.97)  5->3 (0.57)  6->1 (0.47)  7->2 (0.62)  8->0 (0.39)  9->1 (0.45)
 layer 1 head 0:  2->0 (0.99)  3->1 (0.96)  4->2 (0.88)  5->0 (0.91)  6->1 (0.86)  7->2 (0.50)  8->0 (0.82)  9->1 (0.80)

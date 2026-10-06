@@ -1041,7 +1041,7 @@ ece 0.2
 - **(b)** Saying `0.5` every time gives `0.25` whatever the results. The system's `0.278` is **worse** than that: on Brier, its confidence numbers are worth less than a shrug.
 - **(c)** Said 0.8 or more: `n = 5`, mean said `(0.9 + 0.9 + 0.9 + 0.8 + 0.8) / 5 = 0.86`, right `3 of 5 = 0.6`. Said less than 0.8: `n = 5`, mean said `(0.6 + 0.6 + 0.5 + 0.5 + 0.5) / 5 = 0.54`, right `2 of 5 = 0.4`.
 - **(d)** `0.5 x |0.86 - 0.6| + 0.5 x |0.54 - 0.4| = 0.5 x 0.26 + 0.5 x 0.14 = 0.13 + 0.07 =` **`0.20`**.
-- **(e)** It answers `5`. Accuracy on those: `3 / 5 = 0.6`, up from `0.5`. The total right is `5`; it gave up `5 - 3 = 2` right answers (and five wrong ones).
+- **(e)** It answers `5`. Accuracy on those: `3 / 5 = 0.6`, up from `0.5`. The total right is `5`; it gave up `5 - 3 = 2` right answers (and three wrong ones: of the five it held back, `2` were right and `3` wrong).
 
 ## Section E — worked answers
 

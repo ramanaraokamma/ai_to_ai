@@ -75,7 +75,7 @@ Dividing a list of numbers by 8 divides its spread by 8 (Level 3 Week 4: a z-sco
 
 **What the student must take away:** (i) the softmax of scores with a spread of 8 is nearly all on one word (`[8, -2, 1]` gives `0.999, 0.00005, 0.0009`); (ii) with the divide the same scores become `[1, -0.25, 0.125]` and give `0.587, 0.168, 0.245`; (iii) it is `sqrt(d)` and not `d`: dividing by `d` over-corrects into near-uniform weights (Mistake 2).
 
-**By hand, the 64-wide example** (the module's own, which `scale.py` reproduces): raw scores `8, -2, 1`. `exp(8) = 2981.0`, `exp(-2) = 0.1353`, `exp(1) = 2.7183`; total `2983.9`; weights `0.99904, 0.000045, 0.00091`. Divided by 8: `1, -0.25, 0.125`; `exp` is `2.7183, 0.7788, 1.1331`; total `4.6302`; weights `0.587, 0.168, 0.245`. The ratio of biggest to smallest weight goes from about **22,000 : 1** to about **3.5 : 1**.
+**By hand, the 64-wide example** (the module's own, which `scale.py` reproduces): raw scores `8, -2, 1`. `exp(8) = 2981.0`, `exp(-2) = 0.1353`, `exp(1) = 2.7183`; total `2983.8`; weights `0.99904, 0.000045, 0.00091`. Divided by 8: `1, -0.25, 0.125`; `exp` is `2.7183, 0.7788, 1.1331`; total `4.6302`; weights `0.587, 0.168, 0.245`. The ratio of biggest to smallest weight goes from about **22,000 : 1** to about **3.5 : 1**.
 
 **The mask, as arithmetic.** `exp(-inf) = 0`, so a score of `-inf` gives a weight of exactly 0, *and the remaining weights are shared out so that they still add to 1.* A score of `0` is not "nothing": `exp(0) = 1`, a perfectly ordinary weight (Mistake 3). And zeroing the weights *after* the softmax leaves rows that add to less than 1 (Mistake 4).
 

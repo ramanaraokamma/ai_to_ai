@@ -687,7 +687,7 @@ For C1 and C4, a student who says "it crashes" has not understood the bug. Accep
 | E(a)(iv) | 1 | Knobs per character: **17.1** (`107,420 / 6,274`) and **128.7** (`807,196 / 6,274`). And one limit: the two runs also differ in width, blocks, steps, learning rate and seed, so nothing was changed alone; "consistent with, not proved". |
 | E(b)(i) | 1 | **Five** powers of ten (`3.8e-01` against `2.5e-06`: about `1.5e+05`). Accept "about 5 or 6". |
 | E(b)(ii) | 1 | `gru` [2.1e-07, 3.5e-06] and `lstm bias 0` [1.4e-07, 2.5e-06] **overlap**, so with three seeds you cannot rank them. `rnn` tops out at `9.7e-08`, just under the smallest LSTM number, so it is lowest, but only barely and on three seeds. |
-| E(b)(iii) | 1 | `0.953 ^ 30 = 0.237` (about `0.24`); the table's `0.38, 0.23, 0.45` is in the same neighbourhood (within a factor of about 2). |
+| E(b)(iii) | 1 | `0.953 ^ 30 = 0.236` (about `0.24`); the table's `0.38, 0.23, 0.45` is in the same neighbourhood (within a factor of about 2). |
 | E(b)(iv) | 1 | `0.38 / 0.17 = 2.2` times smaller: **falling, slowly** (a factor of a few in 30 more steps), nowhere near the `10^5` a bias-0 row loses. (The bias-0 row at `T = 60` is not printed, so only compare the sizes of the drops loosely.) |
 | E(c) | 4 | One mark each: a supported statement **with a number** (e.g. "bias 3 keeps `0.38` of the last word's pull at `T = 30` and `0.17` at `T = 60`, against `2.5e-06` for bias 0") · says the layers were **untrained**, fed **random inputs**, with a **toy score** (the sum of the last output), and the numbers are gradient sizes, not memory · says the bias moves the number by about 5 powers of ten while the seeds move it by a factor of about 2, so the bias matters far more · names a run: **train** the RNN and the LSTM (bias 0 and bias 3) on the Week 13 copy task over at least three seeds. "Run more seeds" alone scores 0 for this mark: it must be something **trained**. |
 
@@ -1258,7 +1258,7 @@ T = 30 against T = 60, seed 3, lstm with forget bias 3: ['3.8e-01', '1.7e-01']
 
 **(ii)** Ranges: `rnn` runs from `4.8e-11` to `9.7e-08`; `gru` from `2.1e-07` to `3.5e-06`; `lstm, bias 0` from `1.4e-07` to `2.5e-06`. **`gru` and `lstm, bias 0` overlap** (both cover roughly `2e-07` to `2.5e-06`), so on three seeds you cannot say which is better; the numbers are of the same kind. `rnn` tops out at `9.7e-08`, just below the smallest LSTM number `1.4e-07`, so it is lowest, but that is a gap of a factor of 1.4 on three seeds, so hold it loosely.
 
-**(iii)** `0.953 ^ 30 =` **0.237** (a calculator). The three measured numbers `0.38, 0.23, 0.45` are in the same neighbourhood (within a factor of about two). This is Week 11's "the main path is `f`": in a real cell the dials also read the old note, so the main path is not the whole story, and the match is loose on purpose.
+**(iii)** `0.953 ^ 30 =` **0.236** (a calculator). The three measured numbers `0.38, 0.23, 0.45` are in the same neighbourhood (within a factor of about two). This is Week 11's "the main path is `f`": in a real cell the dials also read the old note, so the main path is not the whole story, and the match is loose on purpose.
 
 **(iv)** `0.38 / 0.17 =` about **2.2 times smaller**: **falling, slowly**. Thirty more steps cost a factor of about two, not the factor of `10^5` or more that bias 0 loses over twenty or so steps in the Week 11 table. (The bias-0 row at `T = 60` is not printed on the paper, so this is a comparison of the sizes of the drops, not of two cells.)
 

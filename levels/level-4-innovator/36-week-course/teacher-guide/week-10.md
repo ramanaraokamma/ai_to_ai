@@ -488,7 +488,7 @@ scale x8: typical slope per step at T = 10, 20, 40, 80: ['1.272', '1.244', '1.19
 scale 8, T = 40, share of notes pinned at +-1, seeds 0-4: [0.484, 0.467, 0.495, 0.655, 0.444]
 ```
 
-`0.95 ** 400 =` `1.229e-09`: the reference module's text says "about `4 x 10^-9`", which is **wrong by a factor of 3**; use ours if you mention it. `0.982 ** 40 = 0.4836` (the module says `0.485`, rounding).
+`0.95 ** 400 =` `1.229e-09`: the reference module's *original* text said "about `4 x 10^-9`", which was **wrong by a factor of 3**; the patched module now says `1.2 x 10^-9`, the same as ours. `0.982 ** 40 = 0.4836` (the patched module says `0.484`, rounded to three places).
 
 **Block T2 — teacher only: does a tiny gradient at the start mean it cannot learn?**
 

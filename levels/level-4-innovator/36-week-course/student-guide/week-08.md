@@ -378,7 +378,7 @@ The rules of the game:
 
 Play **round 1**: *the dog bit the postman*. Then **round 2**: *the postman bit the dog*.
 
-Add up the four word numbers for each sentence. What do you get? If someone had given you only the total, could you say which sentence it was? Now look at your two final notes. Are they the same?
+Add up the five word numbers for each sentence. What do you get? If someone had given you only the total, could you say which sentence it was? Now look at your two final notes. Are they the same?
 
 Then run `sticky.py` and compare it to your strip. Any row that differs is a calculator slip: find it.
 

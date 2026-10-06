@@ -94,7 +94,7 @@ the spine on 25 cases: n=25, p=0.68: expected 17.0, wobble 2.3
 A1 landings in 50 runs: n=50, p=0.3: expected 15.0, wobble 3.2
 ```
 
-So `17` passes against `15` passes of 25 is a gap **inside the wobble of 2.3**: on its own it is not a finding. And `15` landings in 50 attack runs could easily have been `12` or `18`. **Say `n` next to every number.** The formula is a rule of thumb for a *sample* of cases, and your frozen set is one fixed set used for every version, so use it as "about".
+So `17` passes against `15` passes of 25 (`v1` against `v2`, the version you will try near the end of today) is a gap **inside the wobble of 2.3**: on its own it is not a finding. And `15` landings in 50 attack runs could easily have been `12` or `18`. **Say `n` next to every number.** The formula is a rule of thumb for a *sample* of cases, and your frozen set is one fixed set used for every version, so use it as "about".
 
 > **A sentence to keep:** *one case is never a finding; a whole category moving, with the failing cases named, is.*
 

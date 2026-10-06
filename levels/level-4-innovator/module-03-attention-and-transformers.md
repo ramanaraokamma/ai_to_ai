@@ -18,7 +18,7 @@
 
 ## 🪝 The Hook
 
-In Module 2 you measured the exact failure of recurrent memory. The gradient reaching back 40 steps was `3.28 × 10⁻¹²` — one four-hundred-billionth of the signal at the last step. You watched an LSTM improve that to `1.6 × 10⁻²`, and then you worked out that `0.95⁴⁰⁰ ≈ 4 × 10⁻⁹`, so even the LSTM's memory dies out somewhere in the hundreds of steps.
+In Module 2 you measured the exact failure of recurrent memory. The gradient reaching back 40 steps was `3.28 × 10⁻¹²` — one four-hundred-billionth of the signal at the last step. You watched an LSTM improve that to `1.6 × 10⁻²`, and then you worked out that `0.95⁴⁰⁰ ≈ 1.2 × 10⁻⁹`, so even the LSTM's memory dies out somewhere in the hundreds of steps.
 
 Now consider *why* that happens. It happens because information from step 1 has to be **carried** to step 400, and carrying means passing through 399 multiplications.
 

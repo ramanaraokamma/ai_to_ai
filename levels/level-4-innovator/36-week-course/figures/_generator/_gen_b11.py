@@ -175,7 +175,7 @@ def f32_2():
         P.append(circ(X(c), Y(a), 10 if hi else 6, ACC_F if hi else PAPER, ACC_S if hi else DATA_S, 3))
         P.append(t(X(c), Y(a) + (-16 if pos == "above" else 24), lab, 12, INK, "middle"))
     P.append(mark("diamond", X(.025), Y(1.0), 6, DATA_S, PAPER, 3))
-    P.append(t(X(.025) + 14, Y(1.0) + 4, "t 0.98: one question, right", 12, INK))
+    P.append(t(X(.025) + 14, Y(1.0) + 4, "t 0.97: one question, right", 12, INK))
     # right panel
     rx = 520
     P.append(rect(rx, 96, 260, 200, 12, PANEL, ACC_S, 3))

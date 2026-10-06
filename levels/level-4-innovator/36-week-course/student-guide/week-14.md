@@ -340,7 +340,7 @@ batch answer shape: (1, 3, 2)
 same answer as the single pass: True
 two sentences: (2, 3, 2) -> (2, 3, 2)
 w3 shape: (3,)  w3.unsqueeze(-1) shape: (3, 1)
-blend of the three value rows: [0.788 0.788] equals row 3 of the output: True
+blend of the three value rows: [0.788 0.788]  equals row 3 of the output: True
 ```
 
 Before running, predict the shape after `xt.unsqueeze(0)`. The last block is step 4 for the single word `sat`, done with a pen's logic: each value row times its own weight, then added. Say in your own words why `w3.unsqueeze(-1)` has shape `(3, 1)`.

@@ -502,7 +502,7 @@ How to read it (you will say this in the lesson, slowly):
 - **Best epoch** and **best val** are *picked with hindsight*. They say how low the curve went, not what you would have ended with.
 - **Final val** is what you get if you run all 250 epochs and keep the last model. For the control it is **0.906**; nothing changed except that the run was not stopped.
 - **Early stop (p=25)** repeats the control's best epoch and best value (59, 0.179) — it is the *same run*, stopped at epoch 84 — and its "final val" **0.227** is the loss at the moment it stopped, not what you ship. **What you ship is the snapshot: 0.179.**
-- **Five seeds:** the ranges overlap for every "best val" (0.112 to 0.264 across cures). The *final val* column separates the cures much more: 0.803 (do nothing) · 0.575 (dropout) · 0.389 (weight decay) · 0.366 (jitter), against 0.351 for the early-stop row *at the stop*, and **0.212** for what the early-stop snapshot is worth.
+- **Five seeds:** the ranges overlap for every "best val" (0.113 to 0.264 across cures). The *final val* column separates the cures much more: 0.803 (do nothing) · 0.575 (dropout) · 0.389 (weight decay) · 0.366 (jitter), against 0.351 for the early-stop row *at the stop*, and **0.212** for what the early-stop snapshot is worth.
 
 **7. (2 min) Run the sweep of the jitter size and the gap check.** You will use the sweep in the "harder" variation; `gap_check.py` is **teacher-only** (it uses `cdist`, `masked_fill` and `quantile`, which the student has not met).
 
@@ -1180,7 +1180,7 @@ How to read it:
 1. **No `deepcopy`.** Both runs find the same best (0.179 at epoch 59) and the same final (0.906). The difference is in the last column: after `load_state_dict(saved)` the correct version gives back **0.179**, the mistake gives back **0.906**. The "saved best" silently tracked the live model to the end.
 2. **No `model.eval()` with dropout 0.3.** The numbers are *different* (final 0.426 against 0.634) — and **lower**, which is the trap. A student who sees a better number will be pleased. But they are measuring a different thing: a model with units randomly off, which is not the model they would ship. `twice.py` shows the consequence: the same model and data give 0.3621 and then 0.3263.
 3. **Jitter drawn once.** The correct version at `s = 0.2` gets best 0.140 and final 0.194; the drawn-once version gets best 0.285 and final 0.782. That is a fixed noisy copy of the 120 points, not an endless supply of new ones, so the network memorises the noisy copy exactly as it memorised the originals. *Fresh every epoch is the whole idea.*
-4. **Jitter on the validation set.** 0.230 best and 0.323 final against 0.140 and 0.194. The measuring stick got bent. Nothing crashes; the numbers are simply about a different (noisier) validation set.
+4. **Jitter on the validation set.** 0.229 best and 0.323 final against 0.140 and 0.194. The measuring stick got bent. Nothing crashes; the numbers are simply about a different (noisier) validation set.
 5. **`AdamW` with no `weight_decay=`.** Same best (0.179 at epoch 59), but final **0.626 against 0.906**. "No cure" was quietly a *small* cure. This is the reason the control in `lab.py` passes `weight_decay=wd` with `wd=0.0`.
 6. **Unseeded generator.** Two unseeded draws differ; two seeded draws are identical. Every number in a report must come from a seeded run.
 

@@ -1100,7 +1100,7 @@ the postman bit the dog
 
 ### The question that makes the activity
 
-Add up the four word numbers for each sentence: `0.2 + 1.0 - 0.5 + 0.2 - 1.0 = -0.1` for both. *"If I had only given you the total, which sentence was it?"* (You cannot say.) *"A bag gives you the total. The note gave you a different number for each."* And the honest second half: *"Look at the final notes: `-0.7285` and `0.7290`. They mostly tell you the **last** word. Did the note remember the first word?"* (A little: `the` is the same in both, so we cannot tell here. Week 10 tests how long a note survives.)
+Add up the five word numbers for each sentence: `0.2 + 1.0 - 0.5 + 0.2 - 1.0 = -0.1` for both. *"If I had only given you the total, which sentence was it?"* (You cannot say.) *"A bag gives you the total. The note gave you a different number for each."* And the honest second half: *"Look at the final notes: `-0.7285` and `0.7290`. They mostly tell you the **last** word. Did the note remember the first word?"* (A little: `the` is the same in both, so we cannot tell here. Week 10 tests how long a note survives.)
 
 ### What "finished" looks like
 

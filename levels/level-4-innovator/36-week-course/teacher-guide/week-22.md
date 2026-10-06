@@ -205,7 +205,7 @@ Stop at: *"SFT is next-token training that only scores the answer. A reward mode
 
 ```bash
 python3 -c "import torch; print(torch.__version__)"
-python3 -c "import torch.nn.functional as F; print(F.logsigmoid(torch.tensor(-200.0)).item())" 
+python3 -c "import torch, torch.nn.functional as F; print(F.logsigmoid(torch.tensor(-200.0)).item())"
 ```
 
 You must see (the first line's digits may differ on another PyTorch version):

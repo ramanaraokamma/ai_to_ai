@@ -456,7 +456,7 @@ stand-in milliseconds per task: p50 0.22, p95 0.57 (these two change on every ru
 committed numbers (v1): MATCH
 ```
 
-Say the numbers the way the chapter does: *"the floor is 6 of 25, the baseline is 11, the spine is 17."* And then say the next sentence, because it is the honest one: a gap of `17` against `15` is **inside the wobble** of about `2.3` cases (`sqrt(25 × 0.68 × 0.32)`), so on its own it is not a finding. **One case is never a finding; a whole category moving, with the failing cases named, is.**
+Say the numbers the way the chapter does: *"the floor is 6 of 25, the baseline is 11, the spine is 17."* And then say the next sentence, because it is the honest one: a gap of `17` against `15` (`v1` against the `v2` of the regression below) is **inside the wobble** of about `2.3` cases (`sqrt(25 × 0.68 × 0.32)`), so on its own it is not a finding. **One case is never a finding; a whole category moving, with the failing cases named, is.**
 
 **Then hold your promises against your measurements** (Section 6). Your Week 34 budget said a mean cost, a p95 and a score. For each, write `kept` or `MISSED`. The worked example promised `0.70` and measured `0.68`, so its line reads **MISSED**, and the card says so in capitals. **Read every failing case** (Section 7) and give each one a word for where in the chain it broke, *before* you run the block.
 

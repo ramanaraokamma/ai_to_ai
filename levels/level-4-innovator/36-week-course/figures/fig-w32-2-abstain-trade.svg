@@ -30,7 +30,7 @@
   <circle cx="110" cy="243.2" r="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
   <text x="110" y="267.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">t 0.95</text>
   <polygon points="90,82 98,90 90,98 82,90" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
-  <text x="104" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">t 0.98: one question, right</text>
+  <text x="104" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">t 0.97: one question, right</text>
   <rect x="520" y="96" width="260" height="200" rx="12" fill="#F5F8FA" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
   <text x="536" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">At t = 0.8 (ringed)</text>
   <text x="536" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">18 of 40 answered, 13 right</text>
