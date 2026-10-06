@@ -238,7 +238,7 @@ Each level costs roughly **$900–1,200** (three to four days at the cap).
   0 findings). **Final audit run (2026-10-05, 13 agents, 97 findings; fixed/handled all highs and mediums; 64 low/info remain, listed in `_ledger/final-audit-2026-10-05.md`).** **Not done:** a one-line gloss at first use for seven constructs used ahead of their ladder week (README "Ladder amendments" lists them), and nobody has eyeballed
   the SVGs (headless Chrome was blocked by the sandbox) — open `figures/_preview.html`; the audit can't
   see text overflowing a box. Figures are ~108 vs L3's ~365: a lean first pass. Weekly files have no prev/next nav links,
-  only "Next Week Preview" prose — unlike L3. **Open items:** the plan's "Decisions the owner must make"
+  only "Next Week Preview" prose — unlike L3. **Per-week correctness review done (2026-10-06, 36 weeks, 2,757 claims):** 6 high/66 medium fixed or resolved, 81 lows left (skipped as taste/judgement). **Open decision:** Week 23's urgency labels for t3/t8 — the written spec in RULES favours 3 for both (double charge = money at risk; locked out = blocked), so the lesson claim "the specification does not decide" is wrong as written; either reword or relabel the gold and refreeze with a new fingerprint. A content-safe presentation polish (`levels/PRESENTATION-SPEC.md`, gate `levels/polish_check.py`) is specified but not yet run on any level. **Open items:** the plan's "Decisions the owner must make"
   are only recommended-not-confirmed; Week 22 still says `nn.Parameter` "comes in Week 31" though Weeks
   4/5/9 use it (README "Ladder amendments" explains); ladder rows for W17 (`torch.randint`) and W22
   (`.detach()`) still list them as new though used earlier; Week 1's harness exposes `weight_decay`/
