@@ -26,6 +26,9 @@
 
 ---
 
+![Level 4 map with four rows of nine tiles, one row per term; in the first row week 4 is highlighted with a pointer above it, weeks 1 to 3 are outlined solid, and every later tile has a dashed outline](../figures/fig-w04-0-where-this-fits.svg)
+*Figure 4.0 — Where this fits: week 4 of 36 sits in term 1, "train it on purpose"; the tiles still dashed are the weeks to come.*
+
 ## 🪝 Start Here
 
 In Week 1 you found that a learning rate of 0.03 was too big for the spirals. Here is the same network, the same data and the same optimizer (AdamW), run five times with five different seeds at that too-big rate. The only thing that differs between rows is **how the learning rate changes during the run**. The numbers are final accuracy on the 360 validation points, in percent.
@@ -116,6 +119,9 @@ step   straight line down   cosine
 Where does the cosine lose the most between two neighbouring rows? Why might you want the rate to fall slowly at the start of a run?
 
 By the end the rate is nearly zero. That is on purpose. By then the model has mostly settled, and a tiny step polishes instead of bouncing.
+
+![Line chart of learning rate against step: a dashed cosine-only curve falling from 0.003 to zero, a solid warm-up-then-cosine curve that climbs over 50 steps first, and a table of printed rates beside it](../figures/fig-w04-1-warmup-then-cosine-rate.svg)
+*Figure 4.1 — The rate is the peak times a multiplier: warm-up ramps it up over 50 steps and cosine brings it down to zero.*
 
 ### 4. The batch
 
@@ -463,6 +469,9 @@ Read them like this:
 3. In B, which batches are worse? Look at the `mean train` column for `bs 256`. What is it, and what does it tell you about what that model did with 840 points?
 4. In B, batch 256 ran for 260 epochs and batch 32 for 30. What did B change that A did not?
 5. In B, one seed of `bs 128` is 0.148 and the other four are 0.048 to 0.060. How does one seed like that change a mean of five?
+
+![Two panels of bars: on the left the number of optimizer steps for five batch sizes at 60 epochs, on a log scale, with mean validation loss beside each; on the right the validation and training loss of four batch sizes given the same 780 steps](../figures/fig-w04-2-batch-size-hold-what-fixed.svg)
+*Figure 4.2 — Changing the batch size changes the number of steps, so ask what each experiment held fixed.*
 
 ### Part 3 — "what did I hold fixed?"
 

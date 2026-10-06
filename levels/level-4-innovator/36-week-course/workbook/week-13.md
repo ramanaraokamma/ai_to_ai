@@ -16,6 +16,9 @@
 >
 > **Only this week's four tools are used:** `F.softmax(x, dim=-1)`, `torch.multinomial`, `torch.topk`, and `torch.sort` with `torch.cumsum`.
 
+![Map of the 36 weeks in four term lanes with week 13, Choosing the Next Letter, highlighted in term 2 and weeks 1 to 12 solid behind it](../figures/fig-w13-0-where-this-fits.svg)
+*Figure 13.0 — Where this week fits: week 13 of 36, in term 2 (memory, then attention).*
+
 ---
 
 ## ✅ Warm-Up (5 min, before anything else)
@@ -127,6 +130,9 @@ Are the two rows the same to the third decimal? ☐ yes ☐ no. Why should they 
 ### Part D. The extension (if you are flying)
 
 The biggest score is 2.5 and the smallest is -0.5: a gap of **3.0**. At each `T`, divide the biggest chance by the smallest (with a calculator, from your unrounded program output, not from the three-decimal table). Then compare with `e^(3.0 / T)`. What do you notice? ___________________________________________
+
+![Three bar charts of the chances of the letters a to e from the same five scores, at T = 0.3, 1 and 2; the bar for b is highlighted and falls from 0.958 to 0.375](../figures/fig-w13-1-temperature-dial.svg)
+*Figure 13.1 — Temperature does not change which letter is best, only how much it wins by.*
 
 ---
 
@@ -259,6 +265,9 @@ Run `exposure.py` and fill in:
 | 200 own names, `T = 0.5` | | |
 
 Was your prediction right? ☐ yes ☐ no. The `T = 1` gap (own minus real) is ____________ . The `T = 0.5` gap is ____________ .
+
+![Two rows of letter boxes, one fed the true letters and one fed its own unlikely letter, above three bars of loss per letter: 0.954 for real names, 1.122 and 0.920 for the model's own](../figures/fig-w13-2-exposure-bias.svg)
+*Figure 13.2 — The model is more surprised by its own names than by real ones; that fits exposure bias but does not prove it.*
 
 ---
 

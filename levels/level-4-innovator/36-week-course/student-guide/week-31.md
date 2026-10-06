@@ -4,6 +4,12 @@
 
 ---
 
+![Thirty-six week tiles in four lanes of nine, one per term; weeks 1 to 30 solid, Week 31 (a lab week in term 4) tinted pink with a thick border and a pointer, weeks 32 to 36 dashed](../figures/fig-w31-0-where-this-fits.svg)
+
+*Figure 31.0 — Week 31 of 36: a lab week in term 4, agents, evidence and the system card.*
+
+---
+
 > ### This week in one sentence
 > **Fine-tuning is "keep training, on your labelled rows"; LoRA is "keep training, but only a thin patch beside frozen weights", and when you read the result by category the average can rise while one row falls.**
 >
@@ -478,6 +484,9 @@ numbers in the patch  =  r × in  +  out × r
 
 For `r = 4`: `4 × 64 + 64 × 4 = 256 + 256 = 512`, which is `512 / 4096 = 0.125` of the projection. The saving is not free: a rank-4 patch can only make corrections that are sums of four layers.
 
+![A 4 by 4 grid of products built from a column of four numbers and a row of four, beside two bars: 4,096 numbers for a full 64 by 64 projection against 512 for the rank-4 patch](../figures/fig-w31-1-low-rank-patch.svg)
+*Figure 31.1 — A grid built from one column and one row stores 8 numbers for 16 cells, so a rank-4 patch is 0.1250 of the projection.*
+
 ---
 
 ## 8. `LoRALinear`
@@ -644,6 +653,9 @@ Read it **row by row before you read the flag**. Technical rose by 0.286. Billin
 Now the question this lesson exists to ask: **how many tickets is −0.200 on billing?** Billing has 5 tickets in the eval. Work it out before you read on.
 
 It is **one ticket**: 2 of 5 became 1 of 5. The flag is a **tripwire, not a verdict**: it tells you where to look. Which brings up the honest question: would it survive another seed?
+
+![Paired before and after bars for five categories and the overall score, with the billing row outlined as a regression and the weighted gains and losses summed underneath](../figures/fig-w31-2-regression-row.svg)
+*Figure 31.2 — The overall score rose by 0.0333 while billing fell by one ticket: read the rows before you read the average.*
 
 ---
 

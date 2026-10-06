@@ -4,6 +4,9 @@
 
 ---
 
+![Level 4 map with four rows of nine tiles, one row per term; in the first row week 3 is highlighted with a pointer above it, weeks 1 and 2 are outlined solid, and every later tile has a dashed outline](../figures/fig-w03-0-where-this-fits.svg)
+*Figure 3.0 — Where this fits: week 3 of 36 sits in term 1, "train it on purpose"; the tiles still dashed are the weeks to come.*
+
 ## 📋 At a Glance
 
 | | |
@@ -102,6 +105,9 @@ list [3000.0, -4000.0]  rms 3535.5339  list / rms [0.8485, -1.1314]
 ```
 
 The RMS grows exactly as the list grows (3.5355, 353.5534, 3535.5339). **The list divided by its RMS does not change at all** (`0.8485, -1.1314`, three times). That last line is the week's whole trick: *divide by the typical size and the scale disappears.*
+
+![Three rows, each a pair of gradients, an arrow to its typical size, and an arrow to the same result 0.8485 and minus 1.1314, whatever the scale of the pair](../figures/fig-w03-1-divide-by-typical-size.svg)
+*Figure 3.1 — Dividing by the typical size cancels the scale, so a thousand-times-bigger knob looks the same.*
 
 **Say "typical size" and move on.** Do not say "standard deviation" (the student knows it from Level 3 and it is a close relative, but it subtracts the mean first and RMS does not; mixing them costs ten minutes). If the student says "that's standard deviation", answer: *"Close cousin. Standard deviation measures the spread around the average. This measures the size around zero. For numbers whose average is near zero they come out close."* and stop. **Not measured in this guide:** how close.
 
@@ -501,6 +507,9 @@ for name in ["SGD ", "Adam"]:
 SGD  gradients [1.0, 1000.0]    first step moved [0.1, 100.0]
 Adam gradients [1.0, 1000.0]    first step moved [0.1, 0.1]
 ```
+
+![Horizontal bars on a log axis of how far two knobs move on the first step: SGD moves 0.1 and 100.0, Adam moves 0.1 and 0.1](../figures/fig-w03-2-scale-test-sgd-vs-adam.svg)
+*Figure 3.2 — Adam divides each knob's step by its own gradient size, so both knobs move the same distance.*
 
 **Block P10 — epsilon: the first step for smaller and smaller gradients**
 

@@ -2,6 +2,10 @@
 
 [⬅ Week 24](week-24.md) · [Course Home](../README.md) · [Week 26 ➡](week-26.md) · [Student Guide](../student-guide/week-25.md) · [Workbook](../workbook/week-25.md)
 
+![Level 4 map: Week 25 highlighted among 36 week tiles in four term lanes](../figures/fig-w25-0-where-this-fits.svg)
+*Figure 25.0 — Week 25 sits in the third lane, the term on how models are made and asked; it is the first of the retrieval weeks.*
+
+
 ---
 
 ## 📋 At a Glance
@@ -109,6 +113,10 @@ All printed by the blocks in the Prep Checklist. Read them before class.
 - **The control** (one training step, five seeds): recall@1 mean `0.48`, recall@3 mean `0.73`. Training therefore adds about `+0.15` on recall@1 and `+0.16` on recall@3 over "almost random numbers for the letter pieces". **Chance** is `0.07` and `0.20`.
 - **The headline query.** `optimiser`: word table `0.000` on the right note (and on all 14 others — the "rank 1" is only list order, not a result); LSA `0.799`, rank 1; contrastive `0.429`, rank 1. `which optimiser was best`: word table `0.000`, rank 2 (another note matches "best"); LSA `0.525`, rank 2; contrastive `0.377`, rank 1.
 - **Six typed pairs** (extension): mean recall@1 `0.63 → 0.59` and recall@3 `0.89 → 0.83`. Typed pairs did **not** help here. (Reason, which is a guess: six pairs for six topics pull those topics' notes toward their phrases and also make the other nine relatively less well placed; we did not test it.)
+
+![Paired bars of recall at 1 and at 3 for chance, word table, one-step control, trained embedder and LSA, with the seed range marked](../figures/fig-w25-2-recall-beside-its-control.svg)
+*Figure 25.2 — A recall number needs its control. One training step already reaches recall@3 0.73; 150 steps reach 0.89, so training added 0.63 − 0.48 = 0.15 at recall@1.*
+
 
 ### 7. The honest limits of today
 
@@ -571,6 +579,10 @@ Run P1 and P2 live. Say: *"This is your notebook. Note 0 is called `Optimizer ba
 3. **The trap of the raw dot product (2 min).** *"If I skip the lengths and just multiply and add, a long arrow beats a short one that points better."* Do not give the numbers; they will meet them on Page 25.2.
 4. **Normalise once (1 min).** *"Make every note length 1 when I build the index, once. After that, searching is one matrix multiply."* Draw `M @ q`.
 5. **How we will judge (2 min).** Hand the student `QA` (it is printed in P2) and say: *"fifteen questions, each with the one right note. recall@3 is the share of questions whose right note is in the top three. We will fill in a table and, before anyone says 'better', we will run a control."* Write **recall@k** and its definition on the board; **it is the first time the word appears.**
+
+![Three three-number vectors A, B and C with their shapes, the dot product worked out, and a bar for each pair's cosine: 1.000, 0.283 and 0.283](../figures/fig-w25-1-cosine-ignores-length.svg)
+*Figure 25.1 — A cosine compares direction and ignores length. B is 2 × A, so cos(A, B) = 1.000; cos(A, C) = 4 ÷ (3.162 × 4.472) = 0.283.*
+
 
 ### 🎲 Their Turn — The Cosine Cards (12 minutes)
 

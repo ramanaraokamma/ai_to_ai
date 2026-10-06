@@ -4,6 +4,9 @@
 
 ---
 
+![The 36 week tiles in four term lanes; weeks 1 to 16 solid, week 17 tinted pink with a thick border and a pointer above it, weeks 18 to 36 dashed](../figures/fig-w17-0-where-this-fits.svg)
+*Figure 17.0 — Week 17 of 36, the TinyGPT lab, sits in term 2 (memory, then attention); weeks 1 to 16 are done and weeks 18 to 36 are still ahead.*
+
 ## 📋 At a Glance
 
 | | |
@@ -69,6 +72,12 @@ output layer      128 x 28 + 28                       =   3,612
 ```
 
 > **How good is a loss of 1.4? The ladder.** `key.py` (Prep file 4) scores three models that only *count*, on the same held-out text, as the average `-ln(p)` of the true next character: **knows nothing: 3.332 · knows only how common each letter is: 2.855 · knows only the previous letter: 2.033.** The TinyGPT ends at about **1.44**. That is the honest frame for "is this good?": it beats everything that only counts one or two characters, and it is nowhere near a model that has read a library. (Counting models are add-one smoothed and scored on the 698 held-out characters. One text, one split.)
+
+![Two rows of character cells, x above and y below, where y is x moved one place left; below them 64 questions times 32 windows equals 2,048 questions.](../figures/fig-w17-1-one-window-many-questions.svg)
+*Figure 17.1 — Moving the window one place left gives a next-character answer at every place, so one step asks 2,048 questions.*
+
+![Left, a chart of training loss (solid) and validation loss (dashed) against step, with a dashed line at ln 28 and a bracket marking the final gap. Right, two bars: the first-loss distance for calm_head=False (long, FAIL) and calm_head=True (short, PASS).](../figures/fig-w17-2-loss-gap-and-first-check.svg)
+*Figure 17.2 — Training loss keeps falling while validation flattens, and a calm output layer starts within 0.05 of ln 28.*
 
 ### 3. 🧭 Real vs stand-in — and what you must NOT claim
 

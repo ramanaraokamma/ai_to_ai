@@ -20,6 +20,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 11, Gates, highlighted in Term 2](../figures/fig-w11-0-where-this-fits.svg)
+*Figure W11.0 — Week 11 gives the loop gates, so memory can be added to instead of rewritten.*
+
 ## ✅ Warm-Up (5 min, before anything else)
 
 **W1.** Last week forty slopes of about one half were multiplied together. Without a calculator: is the answer **tiny / near 1 / large** (circle one)? ____________
@@ -156,6 +159,9 @@ for label, fz in [("f = sigmoid(2)", 2.0), ("f = sigmoid(0)", 0.0)]:
 Did the first table match mine? ____________ The first row I got wrong, and why: ___________________________________________
 
 ---
+
+![Two bar panels over four steps: the RNN note falls to 11.8 percent of step 1, the LSTM memory only to 86.4 percent](../figures/fig-w11-1-rewrite-versus-add.svg)
+*Figure W11.1 — A memory that is scaled and added to keeps its past; a note that is rewritten at every step loses it.*
 
 ## 🧩 Page 11.3 — The Cell From Scratch (block 3 · 20 min)
 
@@ -302,6 +308,9 @@ Block 7 first ran **three seeds** at `T = 40` for five rows, then swept **the fo
 ___________________________________________
 
 ---
+
+![Four panels for forget bias 0, 1, 2 and 4 showing the dial rising from 0.510 to 0.981 and the first-to-last gradient ratio rising from 1.93e-09 to 1.08](../figures/fig-w11-2-forget-bias-dial.svg)
+*Figure W11.2 — One number in the bias, set before training, decides whether the first step can still reach the last.*
 
 ## 📝 Page 11.6 — The Report (20 min)
 

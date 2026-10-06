@@ -4,6 +4,9 @@
 
 ---
 
+![Thirty-six week tiles in four lanes, one per term; weeks 1 to 28 solid, week 29 tinted pink and pointed at in term 4, weeks 30 to 36 dashed](../figures/fig-w29-0-where-this-fits.svg)
+*Figure 29.0 — Week 29 of 36, second week of term 4: the agent is attacked and budgeted, and the fences are measured.*
+
 ## 📋 At a Glance
 
 | | |
@@ -175,6 +178,12 @@ Stop at: *"a tool result is data, not an order; framing and scanning lower a rat
                                                  W33   red-team the agent (attacks A1-A5, 50 seeded runs,
                                                        patch one, re-test); W34-36 the capstone agent
 ```
+
+![Four horizontal bars of runs that obeyed a planted order, 100, 69, 58 and 32 of 100, each with a tick for zero files landed](../figures/fig-w29-1-three-layers-rates-vs-fence.svg)
+*Figure 29.1 — Prompt-level layers lower the rate of obeying; only the sandbox fence keeps the damage at zero (rates of a stand-in).*
+
+![Spend against tool steps: measured points bending upward to 0.023528 at 30 steps, a dashed straight line ending at 0.015836, and three side panels](../figures/fig-w29-2-bill-bends-upward.svg)
+*Figure 29.2 — The bill bends upward because the history is paid for again; a straight line through cheap runs is about a third too low.*
 
 ---
 

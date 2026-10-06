@@ -26,6 +26,9 @@
 
 > **📌 About the code blocks.** Each block is a file, with its name in the first line. Keep them in **one folder**. `scale.py`, `heads.py` and the two files marked **DELIBERATE** stand alone. **`dials.py` is typed in one go, and `hw.py` is typed at the bottom of it** (it uses the names `dials.py` makes). Every output shown was printed by a real run on a CPU with one thread and the seeds shown. The numbers that come from random draws are seeded; on a different NumPy or PyTorch build the *pattern* is the same and the third decimal can move. Nothing this week needs the internet, and **nothing is trained**: there is no model today. The three words and three tables are **invented by us**, the same ones as Week 14. The tables in `heads.py` are random and untrained; they are there to show shapes and checks, not to show what a trained model does.
 
+![Map of the 36 weeks in four term lanes with week 15, Scale, Mask, and Many Heads, highlighted in term 2 and weeks 1 to 14 solid behind it](../figures/fig-w15-0-where-this-fits.svg)
+*Figure 15.0 — Where this week fits: week 15 of 36, in term 2 (memory, then attention).*
+
 ---
 
 ## 🪝 Start Here
@@ -148,6 +151,9 @@ Read the output in order:
 - **The last table.** For a row of 8 scores, a perfectly equal share would give a biggest weight of `0.125`. Raw scores at width 64 give `0.880`: nearly one winner. Divided scores stay near `0.365` at every width.
 
 **Honest limit.** The argument needs the numbers to be independent. In a *trained* model they are not exactly random and not exactly independent, so "the spread is exactly `sqrt(d)`" is true for random tables at the start and only roughly true later. The fair claim is: *the divide gives every width the same calm start.*
+
+![Left, bars of weights from raw scores 8, minus 2, 1 where one bar takes 0.999044, beside bars from the same scores divided by 8 that are 0.587, 0.168 and 0.245; right, bars of spread by width](../figures/fig-w15-1-why-divide.svg)
+*Figure 15.1 — Dividing by the square root of the width keeps the softmax soft at every width.*
 
 ### 3. Dial 2: hide the future
 
@@ -434,6 +440,9 @@ What the printout shows:
 - **The proof that the future is hidden.** We changed only the **last** word. Without the mask, all three rows moved. With the mask, the first two rows did not move at all (`False`). Changing word 3 cannot change what words 1 and 2 hear.
 - **`0` instead of `-inf`** left weights in the hidden cells. **The mask after the softmax** left rows that add to `0.4011` and `0.5989`, not 1.
 - **One sentence, many lessons.** With the mask, a five-word sentence gives four separate training questions in a single pass: each prefix must predict the next word. Without a mask there would be no honest question to ask.
+
+![A 3 by 3 mask of ones and zeros, the attention weights with the later words struck out, and a small table showing that changing the last word moves only the last row once the mask is on](../figures/fig-w15-2-hide-the-future.svg)
+*Figure 15.2 — The causal mask hides later words before the softmax, so earlier answers cannot change.*
 
 ---
 

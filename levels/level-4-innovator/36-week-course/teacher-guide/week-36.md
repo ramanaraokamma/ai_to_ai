@@ -24,6 +24,9 @@
 
 ---
 
+![Thirty-six week tiles in four lanes of nine, one lane per term. Weeks 1 to 35 are solid and week 36, the last tile, is tinted pink with a thick border and a pointer.](../figures/fig-w36-0-where-this-fits.svg)
+*Figure 36.0 — Week 36 is the end of the course: the demo, the system card and the final assessment.*
+
 ## 🎯 Lesson Objectives
 
 By the end of Sitting 1 (and the homework) the student can:
@@ -49,6 +52,9 @@ Observable evidence: the `check_frozen` line equal to the paper and `MATCH`; a c
 ### 1. What the student is doing today, in one paragraph
 
 Week 35 ended with a system, a table, a log of five attacks, and numbers on your paper. Nothing has been *said* about it to anyone but the teacher. Today the student says it twice. In writing, to a stranger: the **system card**, one page, ten headings, in which every claim has a number and an `n` and the last section names what the system fails at and who should not rely on it. Out loud, to you: the **demo**, five minutes, on the real machine, including one failure shown on purpose. The two must agree, which is why the demo's last minute is the card's last section read aloud. Then, in a second sitting, a paper on the whole term. The thread through all of it is **the same honesty as Week 35, now pointed at an audience**: the promise missed by one case is said as missed; the attack that landed is said as landed; the number from a stand-in is said as a stand-in's.
+
+![Four boxes joined by arrows (Logs, F, Card, Checks) above a four-row table of claim, number, n and command](../figures/fig-w36-1-claim-ledger-flow.svg)
+*Figure 36.1 — Every number in the card is a slot filled from a log, and every claim has an n and a command.*
 
 ### 2. 🔢 The maths you need — there is none, and four reuses
 
@@ -102,6 +108,9 @@ For the teacher's worked example (the student's numbers differ):
 - **Retention:** a trace line keeps nine fields and no answer text; the longest question kept is `117` characters (limit `200`); today's 7-day sweep finds nothing, ten days on it finds every trace, and the dry run deletes nothing.
 - **The demo:** `300` seconds on the run-sheet; the live commands themselves take about `2` seconds of machine time, so all the rest is talking. It shows `2` passes and `1` failure.
 - **The paper:** `75` marks; the per-week grid is in the Key (`W28 10`, `W29 12`, `W30 10`, `W31 8`, `W32 9`, `W33 7`, `W34 2`, `W35 11`, `W36 5`, `W26 1`). Expected: a student who has done the term's work scores about `50-62`; below `40` means a hole in a named week, not in the student.
+
+![A timeline bar of six numbered segments from 0:00 to 5:00 with a list of what each segment shows](../figures/fig-w36-2-five-minute-run-sheet.svg)
+*Figure 36.2 — The demo is six timed segments that add to 300 seconds, with one failure shown on purpose.*
 
 ### 6. The honest limits of today
 

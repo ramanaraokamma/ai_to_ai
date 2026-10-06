@@ -4,6 +4,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 11, Gates, highlighted in Term 2](../figures/fig-w11-0-where-this-fits.svg)
+*Figure 11.0 — Week 11 gives the loop gates, so memory can be added to instead of rewritten.*
+
 ## 📋 At a Glance
 
 | | |
@@ -166,6 +169,12 @@ Read these before class so nothing surprises you. **Every number is printed by t
 - **Typical slope per step** (`T1`, `(first / last) ** (1 / 39)`, seeds 0-2): rnn `0.564, 0.548, 0.570` (Week 10 found `0.51`-`0.55` for the note); gru `0.628, 0.594, 0.586`; lstm `0.599, 0.656, 0.617`; bias 2 `0.929, 0.950, 0.962`; bias 4 `0.974, 0.971, 0.996`. Bias 2 sits above `sigmoid(2) = 0.881`; we did not look into why.
 - **Trained check** (`T2`): see the 🧭 claims above and section 7.
 - **The limit** (`T3`): at `T = 400`, bias 2 gives `5.4e-08, 2.3e-12, 1.7e-14` and bias 4 gives `1.3e-04, 1.2e-01, 1.2e-04`; the plain RNN is too small to store (`0.0`). `sigmoid(2) ** 400 = 8.9e-23`, `sigmoid(4) ** 400 = 7.0e-04`, `0.95 ** 400 = 1.229e-09`. (The reference module says `0.95 ** 400` is "about `4e-09`"; that is wrong by a factor of 3. Its other figure, `0.9526 ** 400 ≈ 3.7e-09`, is right: we print `3.666e-09`.)
+
+![Two bar panels over four steps: the RNN note falls to 11.8 percent of step 1, the LSTM memory only to 86.4 percent](../figures/fig-w11-1-rewrite-versus-add.svg)
+*Figure 11.1 — A memory that is scaled and added to keeps its past; a note that is rewritten at every step loses it.*
+
+![Four panels for forget bias 0, 1, 2 and 4 showing the dial rising from 0.510 to 0.981 and the first-to-last gradient ratio rising from 1.93e-09 to 1.08](../figures/fig-w11-2-forget-bias-dial.svg)
+*Figure 11.2 — One number in the bias, set before training, decides whether the first step can still reach the last.*
 
 ### 7. The honest limits of today
 

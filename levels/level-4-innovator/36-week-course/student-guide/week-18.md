@@ -4,6 +4,9 @@
 
 ---
 
+![The 36 week tiles in four term lanes; weeks 1 to 17 solid, week 18 tinted pink with a thick border and a pointer above it, weeks 19 to 36 dashed](../figures/fig-w18-0-where-this-fits.svg)
+*Figure 18.0 — Week 18 of 36, the Term 2 review and paper, sits at the end of term 2; weeks 1 to 17 are done and weeks 19 to 36 are still ahead.*
+
 > ### This week in one sentence
 > **Today's paper is not a grade; it is an X-ray of Weeks 10 to 17. It shows, week by week, what stuck and what did not, so you can redo the right page before Week 19 takes your TinyGPT apart.**
 >
@@ -112,6 +115,9 @@ forget bias 3 -> dial 0.9526 -> left after 8 steps 0.67794
 
 Two slopes very near 1, one on each side, end up in very different places. Which one is fading and which one is blowing up? If you wrote `0.95 x 30 = 28.5` you multiplied instead of compounding; look at the Week 10 chapter again.
 
+![Left, two bars on a log scale: 0.95 compounded 30 times leaves 0.2146 (below the unchanged line), 1.10 leaves 17.45 (above it). Right, three bars for a forget dial: 0.00391, 0.08159 and 0.67794 left after 8 steps.](../figures/fig-w18-1-compounding-and-dials.svg)
+*Figure 18.1 — Practice numbers, not the paper's: a slope near 1 fades or blows up when compounded, and a bigger forget bias keeps more signal.*
+
 ### Warm-up 2 — scores to chances, and top-p
 
 On paper: scores `[3, 1, 0, -1]`. Dividing by a temperature of `0.5` gives `[6, 2, 0, -2]`. Which way does the top letter's chance move: up or down? Then run:
@@ -176,6 +182,9 @@ output: [[2.0, 2.0], [3.34, 1.33], [3.007, 1.0]]
 ```
 
 Check the row sums first: if yours do not add to 1 the error is in the softmax step, not in the blend. The first word can see only itself, so its weight is exactly `1.0`. Carry four decimal places in the weights and round only the answer.
+
+![Left, a 3 by 3 grid of attention weights for cat, sat, down with the hidden future struck through and each row summing to 1.0. Right, the down row blending three value rows with weights 0.2483, 0.5035, 0.2483 into the output 3.007, 1.0.](../figures/fig-w18-2-practice-attention-pass.svg)
+*Figure 18.2 — Practice numbers, not the paper's: scores become weights that sum to 1, hide the future, and blend the value rows.*
 
 ### Warm-up 4 — count a block, and the first-loss number
 

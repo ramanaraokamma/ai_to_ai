@@ -4,6 +4,9 @@
 
 ---
 
+![Level 4 map with four rows of nine tiles, one row per term; in the first row week 1 is highlighted with a pointer above it, no earlier week is filled in yet, and every later tile has a dashed outline](../figures/fig-w01-0-where-this-fits.svg)
+*Figure 1.0 — Where this fits: week 1 of 36 sits in term 1, "train it on purpose"; the tiles still dashed are the weeks to come.*
+
 ## 📋 At a Glance
 
 | | |
@@ -149,11 +152,17 @@ You will run the harness six times, changing only `lr`. The rates are `1e-6, 1e-
 
 **Read the two ends of that table together, because they are the lesson.** Run A and run F both finish at 0.69 and both are useless — **for opposite reasons.** One never moved. One moved so far it wrecked itself. The *final* number cannot tell them apart. Only the *curve* can. That is why Term 1 is about reading curves, and why the student is about to draw six.
 
+![Three small line charts of training loss on a log axis with a dashed line at 0.693: two stuck runs lying on the line, three runs that fall far below it, and one run that starts at 12.786 and returns to the line](../figures/fig-w01-1-three-stories-one-number.svg)
+*Figure 1.1 — Three runs that end near 0.693 tell three different stories; only the curve shows which.*
+
 Three things the student is likely to notice. Have an answer ready:
 
 - **"E has the lower train loss but D has the lower validation loss — which is better?"** Today: *D, because validation is the number that counts and D's is lower (0.026 against 0.059).* One seed is not a verdict (see 🚫 below); Week 7 does this properly.
 - **"Run F's accuracy is 46.9% — that's worse than a coin!"** It is not. The validation set has 169 examples of class 0 and 191 of class 1. A model that always says "class 0" scores 169/360 = **46.9%**, and one that always says "class 1" scores 191/360 = **53.1%**. Run F's accuracy is *exactly the always-class-0 rate*, which is evidence it has collapsed into a constant guesser. Run A's 53.1% is exactly the other one. (The block that prints this is in the Prep Checklist.)
 - **"Why does F end at 0.693 and not at infinity?"** Honest answer: *we measured that it does, and the accuracy matches a constant guesser; why it gets there is Week 2 and 3 material.* **Do not invent a mechanism today.** "The weights got huge and the units died" sounds right and has not been checked.
+
+![Horizontal bars of final validation accuracy for six runs, with dashed vertical lines at 46.9 and 53.1 percent marking the two constant guessers; two bars end exactly on a line](../figures/fig-w01-2-constant-guesser-baseline.svg)
+*Figure 1.2 — A model that ends on a constant guesser's accuracy has learned nothing.*
 
 ### 4. Every new line of syntax, explained to someone who has never seen it
 

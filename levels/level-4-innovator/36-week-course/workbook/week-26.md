@@ -16,6 +16,10 @@
 >
 > **Calculator.** Optional. Two decimals; round only the answer.
 
+![Level 4 map: Week 26 highlighted among 36 week tiles in four term lanes](../figures/fig-w26-0-where-this-fits.svg)
+*Figure W26.0 — Week 26 sits in the third lane, one tile after embeddings: the search from Week 25 now feeds an answer with citations.*
+
+
 ---
 
 ## 🧰 Setup (run once, at the top of a fresh session)
@@ -176,6 +180,10 @@ for n, a in enumerate(answers, 1):
 Copy the first value of each pair (True or False) here: 1 ____ 2 ____ 3 ____ 4 ____ 5 ____ 6 ____ 7 ____
 
 **F.** One sentence that completes: *"The check tests the ______________, not the ______________."*
+
+![A row of five boxes: Question, Retrieve, Gate, Write (dashed, labelled stand-in), Check, with a refusal branch and a worked example of a valid citation on a wrong answer](../figures/fig-w26-1-retrieve-gate-write-check.svg)
+*Figure W26.2 — The pipeline has a gate before the writer and a check after it. A passing check proves the cited id was served, not that the answer is right.*
+
 
 ---
 
@@ -395,6 +403,10 @@ Copy your own table:
 **E.** Overlap 8 is one question worse at `r@3` than overlap 0 (`0.90` against `1.00`). Is that difference a finding or noise, with ten questions? Why? ______________________________________________
 
 **F.** One sentence: did overlap buy anything on this notebook, and what did it cost? ______________________________________________
+
+![Five rows, one per way of cutting the notebook, each with a bar for the share of the notebook sent and three recall numbers; the 250-word row runs past the 100 percent line](../figures/fig-w26-2-recall-and-words-sent.svg)
+*Figure W26.1 — Report recall with the fraction of the corpus that bought it. The 250-word cut scores 1.00 by sending 104% of the notebook.*
+
 
 ---
 

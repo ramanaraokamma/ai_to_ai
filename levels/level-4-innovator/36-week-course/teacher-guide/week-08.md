@@ -4,6 +4,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 8, Order Matters, highlighted in Term 1](../figures/fig-w08-0-where-this-fits.svg)
+*Figure 8.0 — Week 8 introduces the recurrent cell, the first model in the course that reads in order.*
+
 ## 📋 At a Glance
 
 | | |
@@ -768,6 +771,9 @@ Timing lines (`... s`) will differ. The `0.333` for the bag is not a typo; see "
 
 *If the student says "just use pairs of words" (bigrams):* that is a good idea and it works for pairs. It fails for "the dog that lived next door to the baker bit the postman" where the two words that matter are seven places apart. We will come back to that in Week 10.
 
+![Two five-word sentences with the same words in a different order, both turned into the same bag row 2, 1, 1, 1](../figures/fig-w08-1-same-bag-different-order.svg)
+*Figure 8.1 — Counting words throws the order away, so a classifier cannot tell these two sentences apart.*
+
 ### 🧠 Concept — A Sticky Note and a Loop (14 minutes)
 
 **(4 min) The sticky note.** Draw this and tell the story. *"You read a long book and you may keep one sticky note. After every page you rewrite the note, using the page and the old note. By the end, the note is all you remember."*
@@ -806,6 +812,9 @@ new note = tanh( W_xh * (this word) + W_hh * (old note) + b )
 **(4 min) The example you do out loud.** One number per word, `W_xh = 1.0`, `W_hh = 0.5`, `b = 0`, the sentence is `1, 0, 0, 0` ("a spike, then quiet"). Do the first step **with** them on the whiteboard (`1.0×1 + 0.5×0 = 1.0`, `tanh(1.0) = 0.7616`). **Have them do step 2 on a calculator before you say it** (0.3634). Put the four numbers in a column: `0.7616, 0.3634, 0.1797, 0.0896`. Ask: *"what is happening to the spike?"* (It fades; about half is lost each step.) *"We will measure how fast in Week 10."* Do **not** go further.
 
 **(3 min) Embedding, in words only.** *"Words are not numbers. The computer needs a short list of numbers for each word. `nn.Embedding` is a table: one row per word in the dictionary. You give it a word's number, it gives back that word's row. The rows start random and training will fix them."* Tell them: *"a row number is a label, not an amount. `bit = 2` does not mean `bit` is bigger than `dog`."* (Check this one: it is the second misconception you will meet.)
+
+![A recurrent cell drawn four times with the same weights, passing notes 0.7616, 0.3634, 0.1797 and 0.0896 forward](../figures/fig-w08-2-unrolled-cell-four-steps.svg)
+*Figure 8.2 — One cell with one set of weights is reused at every step, and the note it passes on fades.*
 
 ### 💻 Live-Code Together — `hand.py`, `lookup.py`, `shapes.py` (20 minutes)
 

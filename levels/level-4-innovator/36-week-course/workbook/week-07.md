@@ -14,6 +14,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 7, the Symptom-Check-Action Playbook project, highlighted in Term 1](../figures/fig-w07-0-where-this-fits.svg)
+*Figure 7.0 — Week 7 is the project that closes the stretch on training on purpose: the sweep, the table and the playbook.*
+
 ## ✅ Warm-Up (5 min)
 
 **W1.** You train the same network three times and only `seed` changes. The three final validation losses are different. Name **one** thing that the seed changes. ____________
@@ -25,6 +28,9 @@
 **W4.** A loss of 0.693 is what a two-class model scores when it is doing what? ____________ (Week 1.)
 
 **W5.** `for a, b in zip(xs, ys):` walks two lists together. Write what `for x in xs:` walks. ____________
+
+![Three bars of final validation loss for the identical baseline run: 0.0367, 0.0499 and 0.0301 for seeds 0, 1 and 2](../figures/fig-w07-1-same-code-three-seeds.svg)
+*Figure 7.1 — The seed alone moves the result: same code and data, and 0.0499 is about 66% bigger than 0.0301.*
 
 ---
 
@@ -157,6 +163,9 @@ Its mean is about ____ times the baseline's. Yet the verdict is not "WORSE". Wha
 ________________________________________________________________
 
 **H6 - check with code.** Run `table.py`. Did your three verdicts in the table above match it? ____________ If not, which digits did you round? ____________
+
+![Two rows each with a gap bar and a twice-the-spread bar: dropout 0.3 is inside noise, learning rate 1e-4 is WORSE](../figures/fig-w07-2-gap-versus-twice-spread.svg)
+*Figure 7.2 — A difference counts only when the gap is longer than twice the larger spread.*
 
 ---
 

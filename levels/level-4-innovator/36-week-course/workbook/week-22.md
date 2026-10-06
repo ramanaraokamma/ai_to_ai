@@ -6,6 +6,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 22, After Pretraining: SFT, Reward Model, DPO, highlighted in Term 3](../figures/fig-w22-0-where-this-fits.svg)
+*Figure 22.0 — Week 22 is the fourth lesson of Term 3: what is done to a model after pretraining.*
+
 > **Rules for this workbook.** Seven pages and a Bug Log. **Write your prediction or your hand answer first, then run.** A guess written after the run is not a guess. Every number you write in the write-up (page 22.6) must have been printed by **your own** run, with the seed stated.
 >
 > **Everything today is a toy on purpose.** There is **no language model and no stand-in anywhere in this workbook.** The "scores" on page 22.1 are random numbers, the reward model on pages 22.2 and 22.5 is five weights fitted to ten invented judgements, and the "policy" on pages 22.3 and 22.4 is four numbers. They show a mechanism. They say **nothing** about what happens to a real assistant.

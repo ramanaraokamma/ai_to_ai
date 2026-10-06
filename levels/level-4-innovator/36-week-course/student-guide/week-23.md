@@ -28,6 +28,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 23, Prompting as Engineering: The Harness, highlighted in Term 3](../figures/fig-w23-0-where-this-fits.svg)
+*Figure 23.0 — Week 23 is the fifth lesson of Term 3: asking a model is tested like code.*
+
 ## 🪝 Start Here
 
 Last week a scorer learned to love numbered steps, and you only found out because you went looking. Today is the habit that makes "going looking" routine.
@@ -70,6 +73,9 @@ Two more ideas.
 **The floor.** Compute the rock's score first. It is the **floor** (or **baseline**): a prompt that does not clear it has learned nothing, and one just above it has learned very little.
 
 **The guard.** Each call to a real model costs money. A loop that runs forever because of a bug is a bill. So the first thing in the loop is a limit. **Price per million tokens** is how the cost is quoted: `cost = input_tokens x price_in / 1,000,000 + output_tokens x price_out / 1,000,000`. The stand-in's prices are illustrative round numbers (`$1.00` per million tokens in, `$5.00` out), not any company's bill. A call with 400 tokens in and 60 out costs `400 x 1.00 / 1e6 + 60 x 5.00 / 1e6 = $0.0004 + $0.0003 = $0.0007`.
+
+![Six boxes from frozen set to report joined by arrows, the call box dashed and marked stand-in, with a loop back to the versioned prompt and a spending guard bar below](../figures/fig-w23-1-prompt-harness.svg)
+*Figure 23.1 — A prompt loop is a test suite: freeze the cases, change one thing, call, parse, score, report, all inside a spending guard.*
 
 ### The stand-in, and what it is
 
@@ -595,6 +601,9 @@ the stand-in's own meter says $0.0042 over 19 calls
 ```
 
 **Every number above came from the stand-in, not a model.**
+
+![Horizontal bars for the constant-answer floor 43.8 percent and prompts v1, v2, v3 at 50.0, 68.8 and 93.8 percent, with six-seed marks underneath](../figures/fig-w23-2-prompts-vs-floor.svg)
+*Figure 23.2 — A prompt must clear the floor, and one seed is one draw: v1 swings from 31.2 to 59.4 (all scores are of the stand-in).*
 
 ### 6. Reading the table
 

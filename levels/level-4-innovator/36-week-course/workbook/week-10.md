@@ -20,6 +20,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 10, Forty Multiplications, highlighted in Term 2](../figures/fig-w10-0-where-this-fits.svg)
+*Figure W10.0 — Week 10 is the first lesson of Term 2 on memory: why a loop forgets.*
+
 ## ✅ Warm-Up (5 min, before anything else)
 
 **W1.** In Week 8 the recurrent weight `W_hh` was `0.5`. After one step the old note is multiplied by about `0.5` (times a slope of at most 1). After three steps, roughly how much of it is left? Guess, no calculator: ____________
@@ -77,6 +80,9 @@ print(f"  h) 0.9 first below 0.5 after {k} multiplications ({value:.4f})")
 Which parts did my hand answer miss by more than `0.0005`? ____________ The slip (calculator key, a rounded step, mixing up `9 x 10` with `0.9 ** 10`)? ___________________________________________
 
 ---
+
+![Two bar panels: 0.9526 multiplied in a row shrinks from 0.9526 to 0.1434 over forty steps, while 1.05 grows from 1.05 to 7.04](../figures/fig-w10-1-compounding-forty-steps.svg)
+*Figure W10.1 — Multiplying by a number below 1 forty times leaves almost nothing, above 1 gives a big number; only exactly 1 stays put.*
 
 ## ⛓️ Page 10.2 — Slopes in a Chain (Week 8's cell · 20 min)
 
@@ -226,6 +232,9 @@ scale 8: ___________________________________________
 Which seed broke the rule at scale 8 (a tiny number instead of a huge one)? Seed ______ , value ____________ . Why do we not conclude that scale 8 "sometimes works"? ___________________________________________
 
 ---
+
+![A four by four grid of measured gradients at position 1, from 9.15e-03 down to 4.69e-21 in the top row and up to 6.92e+07 in the bottom row, each cell labelled vanishing, level or exploding](../figures/fig-w10-2-gradient-grid-lengths-scales.svg)
+*Figure W10.2 — No setting of the grid keeps the gradient near the 4.0 of the last position: it vanishes or explodes by orders of magnitude.*
 
 ## 💥 Page 10.5 — One Explosion, With and Without Clipping (block 7 · 15 min)
 

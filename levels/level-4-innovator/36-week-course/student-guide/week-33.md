@@ -4,6 +4,12 @@
 
 ---
 
+![Thirty-six week tiles in four lanes of nine, one per term; weeks 1 to 32 solid, Week 33 (a lab week in term 4) tinted pink with a thick border and a pointer, weeks 34 to 36 dashed](../figures/fig-w33-0-where-this-fits.svg)
+
+*Figure 33.0 — Week 33 of 36: a lab week in term 4, agents, evidence and the system card.*
+
+---
+
 > ### This week in one sentence
 > **Attacking your own agent is a discipline, not a bag of tricks: write the attack down, run it fifty times, say how much a count wobbles, patch it, re-test the attack *and* the thing the agent is for, and never write "cannot happen" after "0 of 50".**
 >
@@ -351,6 +357,9 @@ Then the formula check: the measured wobble over 200 batches is `2.03`; your pen
 
 Where the two sentences to remember come from: **"a count wobbles"**, and **"quadruple the runs, halve the wobble of the share."**
 
+![Ten dots, the landings out of 20 runs in ten batches of the same stand-in system, inside a shaded band of 6 plus or minus 2.05, beside the totals over 200 batches](../figures/fig-w33-1-count-wobble.svg)
+*Figure 33.1 — Twenty runs of an unchanged system give counts from 3 to 8 in ten batches, so a gap of 2 is not a finding.*
+
 ---
 
 ## 7. Patch it, then re-test *twice*
@@ -428,6 +437,9 @@ Read it as a table of four agents.
 - **The reworded note.** The scan from Week 29 looks for nine known phrases. The reworded note is polite and uses none of them (`[]`), so the scan does nothing and the stand-in obeys `34 / 50` times (the obey chance has gone from `0.3` to `0.6`). The code-level guard, patch 2, does not care how the order is worded: `0 / 50`.
 
 **Say the residual risk.** A user asks for a file. The injected order is for a *different* file. Patch 2 blocks it. What if the injected order asks for the **same** file the user typed, with different content? Patch 2 would allow it. We did not measure that; it goes on your card as a residual, as an argument and not a result.
+
+![A table of four versions of a stand-in agent against four measured columns out of 50 runs, cells marked with ticks and crosses, with the refuse-everything patch outlined](../figures/fig-w33-2-patch-and-happy-path.svg)
+*Figure 33.2 — A patch must lower the attack count and keep the legitimate save at 50 of 50; a patch that refuses everything scores zero on both.*
 
 ---
 

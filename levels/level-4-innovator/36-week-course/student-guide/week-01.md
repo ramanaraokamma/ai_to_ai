@@ -24,6 +24,9 @@
 
 ---
 
+![Level 4 map with four rows of nine tiles, one row per term; in the first row week 1 is highlighted with a pointer above it, no earlier week is filled in yet, and every later tile has a dashed outline](../figures/fig-w01-0-where-this-fits.svg)
+*Figure 1.0 — Where this fits: week 1 of 36 sits in term 1, "train it on purpose"; the tiles still dashed are the weeks to come.*
+
 ## 🪝 Start Here
 
 Here is the last line a training run printed:
@@ -303,6 +306,9 @@ Look at the **first** column, epoch zero. A starts at 0.694. F starts at **12.78
 
 > **The final loss tells you where it ended. The curve tells you what happened.**
 
+![Three small line charts of training loss on a log axis with a dashed line at 0.693: two stuck runs lying on the line, three runs that fall far below it, and one run that starts at 12.786 and returns to the line](../figures/fig-w01-1-three-stories-one-number.svg)
+*Figure 1.1 — Three runs that end near 0.693 tell three different stories; only the curve shows which.*
+
 ### Step 4 — the curves, in text
 
 A table is hard to see. This small function draws one character per epoch: a space for a high loss, `@` for a low one.
@@ -361,6 +367,9 @@ F lr=0.1    final val loss 0.702   final val accuracy  46.9%
 ```
 
 Compare the last column with the two constant-guesser lines. Which runs sit exactly on one of them? (The class counts you printed in Step 1 explain where 53.1% and 46.9% come from: 191 of 360 and 169 of 360.)
+
+![Horizontal bars of final validation accuracy for six runs, with dashed vertical lines at 46.9 and 53.1 percent marking the two constant guessers; two bars end exactly on a line](../figures/fig-w01-2-constant-guesser-baseline.svg)
+*Figure 1.2 — A model that ends on a constant guesser's accuracy has learned nothing.*
 
 ---
 

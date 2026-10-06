@@ -22,6 +22,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 9, Review and Assessment 1, highlighted at the end of the first eight weeks](../figures/fig-w09-0-where-this-fits.svg)
+*Figure 9.0 — Week 9 is the first review: an X-ray of Weeks 1 to 8 before Term 2 builds on them.*
+
 ## 🪝 Start Here
 
 You have spent eight weeks turning one knob at a time. Some of it is probably solid and some of it is probably soft. **You do not know which is which yet.** That is exactly what today finds out.
@@ -53,6 +56,9 @@ The paper is **75 marks** and you get **70 minutes**.
 **Section E is the biggest single question** (12 marks) and the last one. Start it when you have about thirteen minutes left, not later.
 
 **Your teacher will say only five things during the paper** (the time-checks), and will answer questions with one of three sentences: *"Read it again."* / *"Write what you do know."* / *"I can't help with that one, move on."* That is not unkindness; it is what keeps the X-ray clean.
+
+![Two bars split into sections A to E: marks 20, 16, 12, 15, 12 and minutes 15, 15, 12, 15, 13](../figures/fig-w09-1-the-paper-marks-and-minutes.svg)
+*Figure 9.1 — The paper is 75 marks in 70 minutes, and Section E, the biggest question, needs its own 13 minutes.*
 
 ---
 
@@ -250,6 +256,9 @@ Bring to the next class: **the marked paper, the filled grid, and the circled ta
 > **A word on a low mark.** If the total is lower than you hoped, look at the *pattern*, not the number. One week with 30% and seven with 90% is a very different X-ray from eight weeks at 65%, and it is a much easier fix.
 >
 > **A word on things you wrote that are from later.** If you wrote "vanishing gradient" or "LSTM" in an answer because you have read ahead, that is not wrong and not extra; it is from next term. Your teacher will say so on the sheet.
+
+![Four homework steps above eight week boxes, with Weeks 8, 2 and 6 ringed 1, 2, 3 as the tie-break order](../figures/fig-w09-2-redo-rule-at-most-two.svg)
+*Figure 9.2 — Marks become a plan of at most two redos; if marks tie, Week 8 goes first, then Week 2, then Week 6.*
 
 ---
 

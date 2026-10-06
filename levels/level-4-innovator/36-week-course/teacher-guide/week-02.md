@@ -4,6 +4,9 @@
 
 ---
 
+![Level 4 map with four rows of nine tiles, one row per term; in the first row week 2 is highlighted with a pointer above it, week 1 is outlined solid, and every later tile has a dashed outline](../figures/fig-w02-0-where-this-fits.svg)
+*Figure 2.0 — Where this fits: week 2 of 36 sits in term 1, "train it on purpose"; the tiles still dashed are the weeks to come.*
+
 ## 📋 At a Glance
 
 | | |
@@ -128,6 +131,9 @@ steps until the first value counts for half: 6.58
 
 **Say "half-life" and move on.** It is borrowed from physics (how long until half of something is gone). The student does **not** need `math.log`; it is in the Prep Checklist so the 6.58 is real, not guessed. The tolerance for the student's answer is "6 or 7 or about 7".
 
+![Two bar charts: a running average fading from 1.0000 to 0.6561 over five steps, and the share a first value still counts falling from 0.900 to 0.430 with a dashed line at one half](../figures/fig-w02-1-fading-share-half-life.svg)
+*Figure 2.1 — A running average forgets old values by the same share each step; for 0.9 the half-life is 6.58 steps.*
+
 **If asked "what if it were 0.99 instead of 0.9?"** — the old value fades by one hundredth per step instead of one tenth, so the memory is much longer. Say "longer memory". The number of steps was not run in this guide; do not quote one.
 
 ### 3. From the average to momentum
@@ -245,6 +251,9 @@ step 4: g  1.0240  w   0.4096
 ```
 
 SGD creeps (0.5120, then 0.4096) and never overshoots. That is the whole trade: **momentum arrives sooner, and overshoots.** On real, bumpy losses the overshoot is usually worth it. On a loss that is already smooth and a step that is already big, it is not (block P18 shows a row where it hurts).
+
+![Two rows of numbered circles on a number line toward a dashed target at zero: plain SGD creeps and stops at 0.4096, momentum lands near zero at step 3 and ends past it at minus 0.3086](../figures/fig-w02-2-momentum-arrives-then-overshoots.svg)
+*Figure 2.2 — Momentum arrives sooner because it carries old steps, and for the same reason it overshoots.*
 
 **Week 1's parking lot.** Last week the student was told "why a big learning rate blows up is Week 2". The one-line answer is in block P12: a step that is **too long** jumps over the target to the far side, and if it lands farther away than it started, each jump is bigger than the last.
 

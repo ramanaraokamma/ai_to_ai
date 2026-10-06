@@ -16,6 +16,10 @@
 >
 > **Calculator.** `ln`, `log` (base 10) and a power key. Round only the answer.
 
+![Level 4 map: Week 27 highlighted among 36 week tiles in four term lanes](../figures/fig-w27-0-where-this-fits.svg)
+*Figure W27.0 — Week 27 is the assessment tile that closes the third lane: an X-ray of Weeks 19 to 26 before the agents of Term 4.*
+
+
 ---
 
 ## ✅ Warm-Up (5 min, before anything else)
@@ -40,6 +44,10 @@ print("dot:", dot, " lengths:", la, lb, " cosine:", round(dot / (la * lb), 2))
 ```text
 dot: 12  lengths: 5.0 5.0  cosine: 0.48
 ```
+
+![One bar split into five blocks A to E sized by marks, with minutes beneath each and Section E highlighted](../figures/fig-w27-1-the-paper-in-marks.svg)
+*Figure W27.1 — The paper is 75 marks in five sections (20 + 16 + 12 + 15 + 12), and the biggest single question is last.*
+
 
 ---
 
@@ -228,6 +236,10 @@ week 26:  9/14 =  64%  line 8
 **B.** Your own result: lowest week ______ (____%) · my two circled weeks ______ and ______ · the redo page for each: ______________________
 
 **C.** The answer I was most surprised to get wrong was ____________________, because I thought ____________________.
+
+![Eight boxes for Weeks 19 to 26 joined by lines to four boxes for Weeks 28, 29, 30 and later; Weeks 22, 23 and 26 are drawn heavier and tagged redo first](../figures/fig-w27-2-term-3-feeds-term-4.svg)
+*Figure W27.2 — Weeks 22, 23 and 26 are the ones Term 4 leans on hardest, so they are the first redos.*
+
 
 ---
 

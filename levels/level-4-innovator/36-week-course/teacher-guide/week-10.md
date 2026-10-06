@@ -4,6 +4,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 10, Forty Multiplications, highlighted in Term 2](../figures/fig-w10-0-where-this-fits.svg)
+*Figure 10.0 — Week 10 is the first lesson of Term 2 on memory: why a loop forgets.*
+
 ## 📋 At a Glance
 
 | | |
@@ -146,6 +149,12 @@ Read these before class so nothing surprises you. **Every number is printed by t
 - **Seeds** (block 6, `T = 40`): scale 1 gives `2.1e-10, 8.4e-11, 9.8e-10, 4.7e-09, 1.9e-14`: all tiny, spanning five orders of magnitude. Scale 8 gives `4.4e+03, 8.8e+04, 9.7e+05, 5.5e-07, 1.1e+05`: four huge, one vanished.
 - **One update** (block 7, `T = 40`, seed 0, `lr = 0.1`). Scale 8, no clip: the recurrent knobs' gradient has size `8.55e+04`, the weight matrix's size jumps `17.87` to **`8548.25`**, and the share of notes pinned at +-1 goes `0.484` to **`0.997`**. With clip: gradient rescaled to `0.878`, weights `17.87` to `17.87`, pinned `0.484` to `0.494`. **Clipping saved the weights; it did not make the cell healthy (about half the notes were already pinned before the update).** Scale 1: `7.22` becomes `0.514` when clipped, the weights go `2.23` to `2.40` plain and `2.24` clipped, nothing pinned either way.
 - **Trained check (`T2`, teacher only).** `T = 10`: all five seeds `1.0`. `T = 40`: four at `1.0`, one at `0.503`. `T = 80`: `0.47, 0.484, 0.5, 0.497` and one at `1.0`. Chance is `0.5`.
+
+![Two bar panels: 0.9526 multiplied in a row shrinks from 0.9526 to 0.1434 over forty steps, while 1.05 grows from 1.05 to 7.04](../figures/fig-w10-1-compounding-forty-steps.svg)
+*Figure 10.1 — Multiplying by a number below 1 forty times leaves almost nothing, above 1 gives a big number; only exactly 1 stays put.*
+
+![A four by four grid of measured gradients at position 1, from 9.15e-03 down to 4.69e-21 in the top row and up to 6.92e+07 in the bottom row, each cell labelled vanishing, level or exploding](../figures/fig-w10-2-gradient-grid-lengths-scales.svg)
+*Figure 10.2 — No setting of the grid keeps the gradient near the 4.0 of the last position: it vanishes or explodes by orders of magnitude.*
 
 ### 7. The honest limits of today
 

@@ -16,6 +16,9 @@
 
 ---
 
+![Level 4 map with four rows of nine tiles, one row per term; in the first row week 3 is highlighted with a pointer above it, weeks 1 and 2 are outlined solid, and every later tile has a dashed outline](../figures/fig-w03-0-where-this-fits.svg)
+*Figure W3.0 — Where this fits: week 3 of 36 sits in term 1, "train it on purpose"; the tiles still dashed are the weeks to come.*
+
 ## ✅ Warm-Up (5 min)
 
 Last week's habits, used again today.

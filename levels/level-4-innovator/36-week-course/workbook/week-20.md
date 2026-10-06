@@ -18,6 +18,10 @@
 >
 > Use a **calculator** and carry **two decimals** unless a page says otherwise.
 
+![Growing map of all 36 weeks in four term lanes: weeks 1 to 19 are solid, week 20 is tinted pink with a pointer, weeks 21 to 36 are dashed](../figures/fig-w20-0-where-this-fits.svg)
+
+*Figure 20.0 — Week 20, Tokenizers, is where the course stops feeding the model letters and starts cutting text into counted pieces.*
+
 ---
 
 ## ✅ Warm-Up (5 min)
@@ -164,6 +168,10 @@ the x 5      then x 2      than x 2      hat x 3
 **B4.** Encode `thathen` with your **four** merges, earliest first: ________________________________ Does `hat` appear inside it? ____ Why is `that` not a piece? ________________________________
 
 **B5. Now check with the code.** Only after the card is done, run `card_check.py` from the chapter. Which merge was the first where the code and your card differed? ______ What had you forgotten to do in that round? ________________________________
+
+![Three panels: pair counts for the tiny text low low lower widest, the two merges that glue l o and then lo w, and the word lowest written as three tokens](../figures/fig-w20-1-bpe-by-hand.svg)
+
+*Figure 20.1 — Byte-pair encoding is count, glue, repeat; the ordered list of merges is the whole tokenizer, and it can write words it never saw.*
 
 ---
 
@@ -351,6 +359,10 @@ Run `grow.py`. Copy the table:
 **B3.** Write the **reading** in two sentences: what the curve does, **with two of its numbers**; and one limit. ________________________________________________
 
 **B4.** Did your prediction match: up or down, start, end? ________________________________ What would you change in `grow.py` to repeat the chart on a **different** unseen file? ________________________________
+
+![A rising line of bytes per token from 1.00 at 0 merges to 2.30 at 400 merges, then flat, with a box of numbers at 300 merges](../figures/fig-w20-2-bytes-per-token.svg)
+
+*Figure 20.2 — More merges shorten the text until no pair occurs twice; asking for 500 or 1,000 merges still learns only 400.*
 
 ---
 

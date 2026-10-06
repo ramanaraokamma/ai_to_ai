@@ -4,6 +4,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 22, After Pretraining: SFT, Reward Model, DPO, highlighted in Term 3](../figures/fig-w22-0-where-this-fits.svg)
+*Figure 22.0 — Week 22 is the fourth lesson of Term 3: what is done to a model after pretraining.*
+
 ## 📋 At a Glance
 
 | | |
@@ -141,6 +144,12 @@ These are all printed by the files below. Read them before class so nothing surp
 - **DPO (`dpo.py`).** Reference `A=0.168 B=0.206 C=0.375 D=0.251`. At `beta = 0.2`: step 1 loss `0.6931`, step 50 `0.4529`, step 150 `0.2526`, step 300 `0.1424`, finishing at `A = 0.997`. Two leashes at 300 steps: `beta 0.10` -> `A=0.997`, KL `1.760`, loss `0.2560`; `beta 5.00` -> `A=0.589 B=0.236 C=0.144 D=0.032`, KL `0.566`, loss `0.0020`. **All of these reproduced the module's printed numbers exactly** (ledger `m04_06`).
 - **The sweep (`sweep.py`, workbook only).** At 300 steps the KL is `1.213, 1.760, 1.709, 1.557, 0.566` for `beta = 0.02, 0.1, 0.5, 1.0, 5.0` — **not monotone**. At 3,000 steps it is `1.782, 1.782, 1.781, 1.772, 1.095`: smaller `beta` goes further, and the top of the range is `-ln(0.16839) = 1.7815`, the most KL the toy can reach (all the chance on A). This 3,000-step table is **this guide's own run; it is not in the module or the ledger.**
 - **Hand numbers (`key.py`).** Bradley-Terry `0.9741`, `0.1269`; `0.6682, 0.6225, 0.9168`; `0.05215` / loss `2.954`; `0.0868`. DPO one pair `0.5759` at `beta 0.1`, `0.000004` at `beta 5`.
+
+![Nine tokens in a row, five prompt and four answer, with eight guesses beneath them: the first four dashed and marked minus 100, the last four counted, and the two means 3.8008 and 4.0407](../figures/fig-w22-1-sft-loss-mask.svg)
+*Figure 22.1 — SFT averages only the guesses whose right answer is in the answer, so its mean (4.0407) is over different guesses than the full mean (3.8008).*
+
+![Two bars per outcome A to D for the reference q and the policy p1, the log-ratio and the weighted product under each, adding up to KL 0.1733](../figures/fig-w22-2-kl-by-hand.svg)
+*Figure 22.2 — KL is the log-ratio of each outcome weighted by the new table's own chances; for p1 it adds to 0.1733.*
 
 ### 7. The honest limits of today
 

@@ -18,6 +18,10 @@
 >
 > Use a **calculator with an `ln` key** (a phone will do, in airplane mode) and carry **three decimals**.
 
+![Growing map of all 36 weeks in four term lanes: weeks 1 to 18 are solid, week 19 is tinted pink with a pointer, weeks 20 to 36 are dashed](../figures/fig-w19-0-where-this-fits.svg)
+
+*Figure 19.0 — Week 19, Open the GPT, sits in term 2 on the road from memory to attention. Everything before it is built; everything after it is still ahead.*
+
 ---
 
 ## ✅ Warm-Up (5 min)
@@ -120,6 +124,10 @@ no norm        1.746  2.055  0.309
 
 **B4. What did you not test?** Tick what applies to your table: ☐ only one seed ☐ only 800 steps ☐ only one model size ☐ only one text ☐ no dropout. Write **one more** thing: ________________________________
 
+![Five horizontal bars of validation loss, one per TinyGPT with a part deleted, with a dashed line at the full model's 1.673 and crosses on the two that fail](../figures/fig-w19-1-ablation-bars.svg)
+
+*Figure 19.1 — Deleting a part can make the score look better; a very low number needs a leak check before it is believed.*
+
 ---
 
 ## 🚰 Page 19.3 — The Leak (20 min, by hand first)
@@ -221,6 +229,10 @@ one sequence: [11, 9, 15, 4, 14, 9, 13, 3, 16, 11, 9]
 **4.5.** Which cells are *below* what the "one of four values" guesser scored on page 4.3 (0.327)? ________________ Which are close to it? ________________ (**Do not** say the model is guessing from the page; we did not test that. Say "close to" and stop.)
 
 **4.6.** Positions were deleted. On copy and reverse, what happened? ________ On lookup? ________ Write **one** sentence that is true for all three tasks and does **not** say "positions are not needed". ________________________________
+
+![A grid of share of answers right: three tasks by five models plus a chance column, with ticks on 1.00, crosses on 0.37 and 0.33, and ringed numbers 1 and 2](../figures/fig-w19-2-task-table.svg)
+
+*Figure 19.2 — A perfect score can be a leak; the lookup column is where deleting a part shows up, and its cause is still an open question.*
 
 ---
 

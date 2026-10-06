@@ -22,6 +22,9 @@
 
 > **⚠️ Watch out:** two things go wrong this week. **First, the pen pass is long, and one wrong exponent ruins every number after it.** The student's final answer will often differ from the key in the third decimal because they rounded the weights to three places (see 🔢 and the key: `0.577` against `0.578` is correct working, not an error). Mark the *method* and the *row sums*, not the last digit. **Second, "attention" gets heard as "the model understands which words matter".** Today's weights come from invented 2-number vectors and two identity-ish tables. They show the arithmetic, and only that. They say nothing about what a trained model attends to; Week 19 measures that on a trained model and still says only what it measured.
 
+![Map of the 36 weeks in four term lanes with week 14, Attention by Hand, highlighted in term 2 and weeks 1 to 13 solid behind it](../figures/fig-w14-0-where-this-fits.svg)
+*Figure 14.0 — Where this week fits: week 14 of 36, in term 2 (memory, then attention).*
+
 ---
 
 ## 🎯 Lesson Objectives
@@ -85,6 +88,9 @@ Two facts to say out loud. **(i)** Because the weights are not negative and add 
 > 3. **Not "attention is better than the recurrent cell".** The *argument* (an early word reaches a late word in one step, not through forty multiplications) is design reasoning, which Week 10's measurement motivates; today measures nothing about speed, accuracy or memory.
 
 **Teacher-only: how today's numbers relate to the reference module's.** *(This box uses a divisor and a mask the student has not met; it is for you, and `key.py` marks it `TEACHER-ONLY`.)* The module runs this same `X`, `Wq`, `Wk`, `Wv`, but divides every score by `√2 = 1.4142` and sets the scores above the diagonal to `-∞` before the softmax (so a word cannot read a later one). With both, the weights are `[[1, 0, 0], [0.3302, 0.6698, 0], [0.2483, 0.2483, 0.5035]]` and the output `[[0, 1], [0.6698, 0.3302], [0.7517, 0.7517]]` (the module prints `0.7518` because it rounded the weights by hand). With only the divide the output is `[[0.599, 0.802], [0.802, 0.599], [0.752, 0.752]]`; with only the mask it is `[[0, 1], [0.731, 0.269], [0.788, 0.788]]`. Today's answer is neither, by design: **the ladder puts the divide and the mask in Week 15**, and today's unscaled, unmasked pass is the one with small whole-number scores that can be done with a pen. If the student has read the module, tell them the two dials are the next lesson.
+
+![A table of bread, river and rope with scores, weight bars 0.112, 0.751 and 0.137, values 10, 50 and 30, and the soft answer 42.77 beside the hard answer 50.0](../figures/fig-w14-1-soft-lookup.svg)
+*Figure 14.1 — A soft lookup is a weighted average: mostly the best match, with a trace of the others.*
 
 ### 3. 🧭 Real vs stand-in — and what you must NOT claim
 
@@ -597,6 +603,9 @@ output =
 Take each step with the student, slowly, in words. *"Step 2 is nine dot products. The dot product of a question with a key is big when they point the same way. Row 1 is word 1's question against all three keys."* *"Step 3 is the Week 13 softmax, applied to each row separately."* Ask: *"Why each row and not the whole table?"* (One row is one word deciding how to share its attention; the shares must add to 1 for that word.) *"Step 4: each word's answer is a blend of all three values, weighted by its row."*
 
 **(2 min) The weighted average.** Put `[10, 50, 30]` with weights `[0.7, 0.2, 0.1]` on the board and have the student compute **20** (and say what equal weights `1/3, 1/3, 1/3` give: the ordinary mean, 30). *"A mean where some count more. The weights must add to 1. That is the only new maths today."* Ask: *"Can the answer be bigger than 50?"* (No: not with non-negative weights that add to 1.) **Hold back the rounding trap and the `unsqueeze` story**; they come in the pen pass and the live code.
+
+![Three small grids joined by arrows: scores for the, cat and sat, then rows of weights that each add to 1 with the largest ringed, then the output rows](../figures/fig-w14-2-one-pass-three-words.svg)
+*Figure 14.2 — One pass of attention on three words: scores, then weights that add to 1 in every row, then the blended output.*
 
 ### 🎲 Their Turn — The Pen Pass (20 minutes)
 

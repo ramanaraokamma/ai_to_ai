@@ -28,6 +28,10 @@
 >
 > **⚠️ Every "writer" this week is a stand-in, not a model.** `rag.ExtractiveGenerator` is a rule you can read: it copies the one sentence that shares the most words with the question and adds the id of the note it came from. It does not understand anything and it cannot be persuaded by anything. The search half (the index, recall, the threshold) is real. **What we measure about the writer is a property of that rule and says nothing about how a real model behaves.**
 
+![Level 4 map: Week 26 highlighted among 36 week tiles in four term lanes](../figures/fig-w26-0-where-this-fits.svg)
+*Figure 26.0 — Week 26 sits in the third lane, one tile after embeddings: the search from Week 25 now feeds an answer with citations.*
+
+
 ---
 
 ## 🪝 Start Here
@@ -331,6 +335,10 @@ Read the last column before the recall columns.
 
 **Always report a recall number with the fraction of the corpus that bought it.**
 
+![Five rows, one per way of cutting the notebook, each with a bar for the share of the notebook sent and three recall numbers; the 250-word row runs past the 100 percent line](../figures/fig-w26-2-recall-and-words-sent.svg)
+*Figure 26.1 — Report recall with the fraction of the corpus that bought it. The 250-word cut scores 1.00 by sending 104% of the notebook.*
+
+
 ---
 
 ## 6. Number the sources, demand the id, check it
@@ -496,6 +504,10 @@ tau 0.90: answered 8/10, unanswerable refused 4/4, errors 2
 ```
 
 Every number is different. The best line is near `0.85` here, not `0.12`. A threshold is a measurement of **one** embedder; swap the embedder and you must measure again.
+
+![A row of five boxes: Question, Retrieve, Gate, Write (dashed, labelled stand-in), Check, with a refusal branch and a worked example of a valid citation on a wrong answer](../figures/fig-w26-1-retrieve-gate-write-check.svg)
+*Figure 26.2 — The pipeline has a gate before the writer and a check after it. A passing check proves the cited id was served, not that the answer is right.*
+
 
 ---
 

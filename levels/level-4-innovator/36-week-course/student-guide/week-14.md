@@ -25,6 +25,9 @@
 
 > **📌 About the code blocks.** Each block is a file, with its name in the first line. Keep them in **one folder**. `lookup.py` stands alone. **`attention.py` is typed in pieces, one after another, into the same file**, so that later pieces can use the names made by earlier ones; the chapter says when a block goes "at the bottom of `attention.py`". Every output shown was printed by a real run on a CPU. Different PyTorch build: the last digit of the tiny gap in `numpy vs torch` can differ (anything below `1e-05` is fine). Blocks marked **DELIBERATE** are written on purpose to fail. Nothing this week needs the internet, and **nothing is trained**: there is no model today. The three word vectors and the three tables are **invented by us** so that they are easy to multiply. They are not learned, and the words `the`, `cat`, `sat` are only labels on rows.
 
+![Map of the 36 weeks in four term lanes with week 14, Attention by Hand, highlighted in term 2 and weeks 1 to 13 solid behind it](../figures/fig-w14-0-where-this-fits.svg)
+*Figure 14.0 — Where this week fits: week 14 of 36, in term 2 (memory, then attention).*
+
 ---
 
 ## 🪝 Start Here
@@ -110,6 +113,9 @@ equal weights: 30.0  ordinary mean: 30.0
 The soft answer, 42.77, is mostly the river's answer with a trace of the other two. If you did it on a calculator with the weights rounded to three places you got `1.12 + 37.55 + 4.11 = 42.78`. The computer kept every digit, so it says 42.77. That one hundredth is **rounding**, not a mistake.
 
 Why bother with the soft version? Because every one of those numbers can be nudged a little, so a machine could *learn* to make the answer better. A hard "pick one" cannot be nudged. That is why models use soft lookups. (Learning comes in Week 17. Today there is none.)
+
+![A table of bread, river and rope with scores, weight bars 0.112, 0.751 and 0.137, values 10, 50 and 30, and the soft answer 42.77 beside the hard answer 50.0](../figures/fig-w14-1-soft-lookup.svg)
+*Figure 14.1 — A soft lookup is a weighted average: mostly the best match, with a trace of the others.*
 
 ### 3. Where the question, the label and the answer come from
 
@@ -240,6 +246,9 @@ Compare with your pen sheet, row by row. If a row is off, check its row sum firs
 One line needs explaining: `e.sum(axis=1)` is **three totals, one per row**. `.reshape(3, 1)` stands them on end so that each row is divided by **its own** total. (Dividing by `e.sum()` would use one grand total for everything, which is a different and wrong recipe.)
 
 Note that `Q` and `K` came out equal. That is only because `Wq` and `Wk` are both the identity table here. It is not a rule of attention. The last section of today shows why.
+
+![Three small grids joined by arrows: scores for the, cat and sat, then rows of weights that each add to 1 with the largest ringed, then the output rows](../figures/fig-w14-2-one-pass-three-words.svg)
+*Figure 14.2 — One pass of attention on three words: scores, then weights that add to 1 in every row, then the blended output.*
 
 ---
 

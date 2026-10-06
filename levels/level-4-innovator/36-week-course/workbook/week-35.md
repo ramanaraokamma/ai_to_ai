@@ -18,6 +18,9 @@
 
 ---
 
+![Thirty-six week tiles in four lanes of nine, one lane per term. Weeks 1 to 34 are solid, week 35 is tinted pink with a thick border and a pointer, week 36 is dashed.](../figures/fig-w35-0-where-this-fits.svg)
+*Figure 35.0 — Week 35 is the second capstone week: the build, measure and attack step, in the last lane of the course.*
+
 ## ✅ Warm-Up (5 min, before anything else, from memory)
 
 1. What is the first thing you do at the start of Week 35, before any score is shown? ______________________________
@@ -134,6 +137,9 @@ wobble of a count k out of 25 = sqrt(25 p (1-p)), p = k / 25
 ```
 
 Did your tallies match? Which row did you get wrong, if any? ______ . Your two bars: ______ and ______ ; the printout says ____________________________________________________
+
+![Paired horizontal bars for six case categories, baseline against the v1 spine, with passes out of n on each bar and totals 6, 11 and 17 of 25](../figures/fig-w35-1-floor-baseline-spine.svg)
+*Figure 35.1 — The spine must beat the baseline, which must beat the floor, and every count carries its n.*
 
 ---
 
@@ -300,6 +306,9 @@ Committed numbers (copy from `run_eval.py v1`): overall ______ / ______ · factu
 2. `run_eval.py` prints ____________________________________________________ and it cannot see ____________________________________________________
 3. I promised ______________ before I measured; I measured ______________ ; so ____________________________________________________
 4. I attempted ______ attacks in ______ categories; ______ landed; I fixed ______ and accepted ______ because ____________________________________________________
+
+![A number line of best-note scores with two vertical cuts, tau 0.10 and tau 0.36, and four labelled case dots between them](../figures/fig-w35-2-threshold-regression.svg)
+*Figure 35.2 — One threshold change flipped four named cases: three answerable questions lost to win one.*
 
 ---
 

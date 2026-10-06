@@ -2,6 +2,10 @@
 
 [⬅ Week 26](week-26.md) · [Course Home](../README.md) · [Week 28 ➡](week-28.md) · [Student Guide](../student-guide/week-27.md) · [Workbook](../workbook/week-27.md)
 
+![Level 4 map: Week 27 highlighted among 36 week tiles in four term lanes](../figures/fig-w27-0-where-this-fits.svg)
+*Figure 27.0 — Week 27 is the assessment tile that closes the third lane: an X-ray of Weeks 19 to 26 before the agents of Term 4.*
+
+
 ---
 
 ## 📋 At a Glance
@@ -413,6 +417,10 @@ Say, slowly, *from the page, not from memory*:
 
 Then: *"Questions?"* Answer **only** about logistics (where to write, the calculator, the toilet). Turn the paper over. Start the timer.
 
+![One bar split into five blocks A to E sized by marks, with minutes beneath each and Section E highlighted](../figures/fig-w27-1-the-paper-in-marks.svg)
+*Figure 27.1 — The paper is 75 marks in five sections (20 + 16 + 12 + 15 + 12), and the biggest single question is last.*
+
+
 ### 🎲 Their Turn — The Paper (70 minutes)
 
 Sit **to the side and a little behind**. Do something quiet and boring: read, mark something else. Do not watch the page: a student who feels watched writes the answer they think you want.
@@ -432,6 +440,10 @@ Sit **to the side and a little behind**. Do something quiet and boring: read, ma
 **If they finish early.** With more than 10 minutes left: *"Go back through, starting from the end, and check each one against your own working."* **Do not** let them leave; do not let them start the next week. If they finish with more than 20 minutes left something is wrong (blank sections? tell them to try every question, even by guessing in A).
 
 **If they are visibly upset.** Stop the clock if you must. *"This is the X-ray, not the grade. Nobody here is keeping score but you."* A calm minute costs a mark or two and is worth it. If the student cannot continue, write the time on the paper, collect it, and mark only what is there; add the missing-section marks to the grid as *"not attempted — rest of paper"* (do not score it zero in the remediation table, see "Assessing Understanding").
+
+![Eight boxes for Weeks 19 to 26 joined by lines to four boxes for Weeks 28, 29, 30 and later; Weeks 22, 23 and 26 are drawn heavier and tagged redo first](../figures/fig-w27-2-term-3-feeds-term-4.svg)
+*Figure 27.2 — Weeks 22, 23 and 26 are the ones Term 4 leans on hardest, so they are the first redos.*
+
 
 ### 🔑 Wrap & Assign (3 minutes)
 

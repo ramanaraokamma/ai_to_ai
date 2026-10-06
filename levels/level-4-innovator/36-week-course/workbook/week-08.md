@@ -18,6 +18,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 8, Order Matters, highlighted in Term 1](../figures/fig-w08-0-where-this-fits.svg)
+*Figure 8.0 — Week 8 introduces the recurrent cell, the first model in the course that reads in order.*
+
 ## ✅ Warm-Up (5 min)
 
 Five quick questions about **last week** (the playbook).
@@ -86,6 +89,9 @@ Bag 1: ________________________________  Bag 2: ________________________________
 **B5.** One sentence, in your own words: *a bag of words cannot tell these apart because* ________________________________________________
 
 ________________________________________________________________
+
+![Two five-word sentences with the same words in a different order, both turned into the same bag row 2, 1, 1, 1](../figures/fig-w08-1-same-bag-different-order.svg)
+*Figure 8.1 — Counting words throws the order away, so a classifier cannot tell these two sentences apart.*
 
 ---
 
@@ -227,6 +233,9 @@ Final note: ____________
 **R2.** The final notes are mostly about **which word came last**. Which? ____________ Do they also tell you anything about the *first* word? ____________ (Both sentences start with `the`.)
 
 **R3. Try one yourself.** Same rule, two **three-word** sentences: *dog bit postman* and *postman bit dog*. Final notes: ________________ and ________________ .
+
+![A recurrent cell drawn four times with the same weights, passing notes 0.7616, 0.3634, 0.1797 and 0.0896 forward](../figures/fig-w08-2-unrolled-cell-four-steps.svg)
+*Figure 8.2 — One cell with one set of weights is reused at every step, and the note it passes on fades.*
 
 ---
 

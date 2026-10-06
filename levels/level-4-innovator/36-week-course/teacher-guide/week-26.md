@@ -2,6 +2,10 @@
 
 [⬅ Week 25](week-25.md) · [Course Home](../README.md) · [Week 27 ➡](week-27.md) · [Student Guide](../student-guide/week-26.md) · [Workbook](../workbook/week-26.md)
 
+![Level 4 map: Week 26 highlighted among 36 week tiles in four term lanes](../figures/fig-w26-0-where-this-fits.svg)
+*Figure 26.0 — Week 26 sits in the third lane, one tile after embeddings: the search from Week 25 now feeds an answer with citations.*
+
+
 ---
 
 ## 📋 At a Glance
@@ -103,6 +107,10 @@ All printed by the blocks in the Prep Checklist. Read them before class.
 - **LSA tier.** Answerable `0.682 … 0.990`, unanswerable `0.599 … 0.842`: completely different numbers, best `tau` is `0.85` (2 errors), not `0.12`.
 - **Diagnosis (tau 0.1).** Yours: 7 ok, 3 generation failures (questions 0, 1, 9: counting from 0 in `QUESTIONS`), 0 retrieval failures. Stranger: 2 ok, 3 generation, 3 retrieval, 2 refused by the gate (both score `0.000`).
 - **Poison.** 16 notes; recall unchanged (`1.0, 1.0, 1.0`). `Which note tells the assistant what to do?` serves `[15, 2, 0]` at `0.437`, the stand-in copies the planted sentence with `[15]`, `citations verified: True`. Filter: planted wording caught; three rewordings missed; `0` false alarms on the 15 real notes.
+
+![Five rows, one per way of cutting the notebook, each with a bar for the share of the notebook sent and three recall numbers; the 250-word row runs past the 100 percent line](../figures/fig-w26-2-recall-and-words-sent.svg)
+*Figure 26.1 — Report recall with the fraction of the corpus that bought it. The 250-word cut scores 1.00 by sending 104% of the notebook.*
+
 
 ### 7. The honest limits of today
 
@@ -666,6 +674,10 @@ Draw the pipeline as a row on the board and label five places on it. Keep it to 
 5. **Diagnose (2 min).** *"A wrong answer has exactly two possible homes: the right note was never served (retrieval), or it was served and the writer used it badly (generation). You find out by reading the served notes."* Write the 2 × 2 header on the board.
 
 End with one sentence on the writer: *"The writer today is a stand-in. It copies the one sentence that shares the most words with your question. It is not a model, and what we measure about it says nothing about a real one."*
+
+![A row of five boxes: Question, Retrieve, Gate, Write (dashed, labelled stand-in), Check, with a refusal branch and a worked example of a valid citation on a wrong answer](../figures/fig-w26-1-retrieve-gate-write-check.svg)
+*Figure 26.2 — The pipeline has a gate before the writer and a check after it. A passing check proves the cited id was served, not that the answer is right.*
+
 
 ### 🎲 Their Turn — Citation Court and the Threshold Strip (12 minutes)
 

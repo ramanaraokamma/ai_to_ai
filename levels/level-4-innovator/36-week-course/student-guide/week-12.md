@@ -26,6 +26,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 12, Teach a Network to Invent Names, highlighted in Term 2](../figures/fig-w12-0-where-this-fits.svg)
+*Figure 12.0 — Week 12 trains a gated loop on real names, the first sequence model that writes.*
+
 ## 🪝 Start Here
 
 Here are twelve names. **Six** are from a list of 231 names somebody typed. **Six** were written by a computer program that read that list. On a piece of paper, before you read on, mark the ones you think the *program* wrote:
@@ -109,6 +112,9 @@ decode(targets[row]) = anika
 
 Read the `anika` table down the columns. **Each input is the previous row's target.** That is the whole idea of shifting. At step 6 the input is `1` (EOS: the last thing said) and the target is `0` (padding): the model is shown "the name has ended" and asked for "nothing". Block 2 is about that step.
 
+![Two rows of eight cells for the name anika: the input row starts with START then a n i k a EOS PAD, the target row is a n i k a EOS PAD PAD, with arrows from each target to the next input](../figures/fig-w12-1-shift-right-names.svg)
+*Figure 12.1 — Shift right: every step is asked for the letter that comes next, and each answer becomes the following question.*
+
 ### 2. Padding is a free answer, and counting it flatters you
 
 The score for one step is how surprised the model was by the right letter: `-ln p`, where `p` is the probability it gave to the true letter. The score for a name is the average of those surprises.
@@ -163,6 +169,9 @@ padding ignored    : 1.1513
 ```
 
 The by-hand average and `padding ignored` agree to four places: that is your check. `padding counted` is `0.5857`, about half of `1.1513`, and the model has not learned one more letter. **Counting padding makes the loss look better without making the model better.**
+
+![Bars of surprise for the eight positions of uma, four real and four tiny padding ones, and two bars of average loss, 1.1513 with padding ignored and 0.5857 with it counted](../figures/fig-w12-2-padding-flatters-loss.svg)
+*Figure 12.2 — Counting the padding halves the loss without the model learning anything; ignore it.*
 
 ### 3. The model
 

@@ -27,6 +27,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 24, Examples, Scratchpads, and Schemas: Learned in Context, highlighted in Term 3](../figures/fig-w24-0-where-this-fits.svg)
+*Figure 24.0 — Week 24 is the sixth lesson of Term 3: what changes when only the prompt changes.*
+
 ## 🪝 Start Here
 
 Last week a scorer learned to love examples, and the reason was that we wrote it to. The table could never answer the question *"do examples in a prompt actually help a model?"* Today you answer it on a model you trained.
@@ -331,6 +334,9 @@ Read the table in four moves.
 4. **`n = 6`: `0.998`.**
 
 > **🎲 One seed is one roll.** Everything above is seed 0. We also trained the same recipe on five seeds. At `n = 0` to `3` they agree (`0.146` to `0.182` at zero, `0.630` to `0.676` at three). At six examples the five seeds scored `0.998, 0.998, 0.998, 0.686, 0.956`: one of them had simply not finished learning to copy. The top of the curve is where seeds disagree. The workbook has you run more seeds.
+
+![A line chart of accuracy against 0 to 6 worked examples: a dashed ceiling climbing from 0.167 to 1.000 and a solid model line that follows it but falls short at 4 and 5 examples](../figures/fig-w24-1-in-context-vs-ceiling.svg)
+*Figure 24.1 — Accuracy can only follow the ceiling (n + 1) ÷ 6; the model tracks it up to n = 3 and falls short at n = 4 and 5.*
 
 ### 4. The start of the prompt as a name: `cachekey.py`
 
@@ -822,6 +828,9 @@ Read it as a 2 x 2.
 - **The four wrong replies** are all well-formed JSON with the right shape: `zora` became `ukor`. The model has memorised 200 names and does not copy an unfamiliar one letter by letter. That is a generalisation failure (Week 5), not a formatting failure, and the mask cannot see it.
 
 We also ran the mask over three training seeds. Masked always parsed `100`. On new names "fully right" was `26`, `44`, `45` masked against `25`, `36`, `46` free: the same picture.
+
+![Two panels of paired bars out of 100 prompts: for seen names parses 90 free and 100 masked, all fields right 79 and 95; for new names parses 85 and 100, all fields right 25 and 26](../figures/fig-w24-2-mask-shape-not-content.svg)
+*Figure 24.2 — The grammar mask fixes the shape (parses go to 100) but not the content on names the model never saw (25 to 26).*
 
 ---
 

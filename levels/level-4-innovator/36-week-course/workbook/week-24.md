@@ -6,6 +6,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 24, Examples, Scratchpads, and Schemas: Learned in Context, highlighted in Term 3](../figures/fig-w24-0-where-this-fits.svg)
+*Figure 24.0 — Week 24 is the sixth lesson of Term 3: what changes when only the prompt changes.*
+
 > **Rules for this workbook.** Six pages, a Bug Log and a Self-Check. **Write your prediction or your hand answer first, then run.** A guess written after the run is not a guess. Every number you write in the write-up (page 24.6) must have been printed by **your own** run in the last 24 hours, with the seed stated.
 >
 > **The models today are real, and they are tiny.** The three models you trained in class (secret codes, addition, JSON) are real neural networks of about a hundred thousand knobs each, trained from scratch on the CPU. That makes the numbers real. **It does not make them about ChatGPT**: nothing here says how a large language model behaves. Wherever you write "model", check you meant "my small model on this made-up job".

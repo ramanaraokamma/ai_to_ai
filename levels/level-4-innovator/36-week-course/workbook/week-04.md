@@ -16,6 +16,9 @@
 
 ---
 
+![Level 4 map with four rows of nine tiles, one row per term; in the first row week 4 is highlighted with a pointer above it, weeks 1 to 3 are outlined solid, and every later tile has a dashed outline](../figures/fig-w04-0-where-this-fits.svg)
+*Figure W4.0 — Where this fits: week 4 of 36 sits in term 1, "train it on purpose"; the tiles still dashed are the weeks to come.*
+
 ## ✅ Warm-Up (5 min)
 
 Five from **last week** and earlier. No looking back.
@@ -173,6 +176,9 @@ ______________________________________________________________
 
 Then answer: step 0 prints ______ but your table says step 0 uses ______. **Who is right?** _________________________________________________
 
+![Line chart of learning rate against step: a dashed cosine-only curve falling from 0.003 to zero, a solid warm-up-then-cosine curve that climbs over 50 steps first, and a table of printed rates beside it](../figures/fig-w04-1-warmup-then-cosine-rate.svg)
+*Figure W4.1 — The rate is the peak times a multiplier: warm-up ramps it up over 50 steps and cosine brings it down to zero.*
+
 ---
 
 ## 🔢 Page 4.4 — Counting Steps
@@ -259,6 +265,9 @@ ______________________________________________________________
 **R5 (optional).** Run the same grid with seeds `range(5, 8)`. Did the **ordering** of the rows stay the same? Did the **digits**?
 
 ______________________________________________________________
+
+![Two panels of bars: on the left the number of optimizer steps for five batch sizes at 60 epochs, on a log scale, with mean validation loss beside each; on the right the validation and training loss of four batch sizes given the same 780 steps](../figures/fig-w04-2-batch-size-hold-what-fixed.svg)
+*Figure W4.2 — Changing the batch size changes the number of steps, so ask what each experiment held fixed.*
 
 ---
 

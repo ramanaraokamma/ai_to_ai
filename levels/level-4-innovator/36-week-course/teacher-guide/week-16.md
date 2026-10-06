@@ -4,6 +4,9 @@
 
 ---
 
+![The 36 week tiles in four term lanes; weeks 1 to 15 solid, week 16 tinted pink with a thick border and a pointer above it, weeks 17 to 36 dashed](../figures/fig-w16-0-where-this-fits.svg)
+*Figure 16.0 — Week 16 of 36, the position and block week, sits in term 2 (memory, then attention); weeks 1 to 15 are done and weeks 17 to 36 are still ahead.*
+
 ## 📋 At a Glance
 
 | | |
@@ -95,6 +98,12 @@ one block                                                                = 12 d^
 For `d = 8`: `4x64 + 8 = 264` attention, `8x64 + 40 = 552` MLP, `32` norms, **848** in all. For `d = 128` (the Week 17 size): `65,664 + 131,712 + 512 = 197,888`. **Two thirds** of a block's knobs are in the MLP (0.666 at `d = 128`). Note that **the number of words `T` and the number of heads `H` appear nowhere**: more words or more heads cost no extra knobs (heads just cut `d` into pieces).
 
 > **Check your own arithmetic against the whole Week 17 model, now, so the number does not surprise you next week:** 28 characters x 128 + 64 places x 128 + 4 blocks x 197,888 + final norm 256 + output layer (128 x 28 + 28) = **807,196**. `count.py` prints it. (This is also the figure printed in the reference module, which is why the numbers can be trusted: it is the same by two routes.)
+
+![Two panels over the words the, dog, bit, the, postman. Left, attention alone: a cross beside each of three results that are True, 0.0 and 0.0. Right, with a place row added under each word: ticks beside False, 0.1529 and 0.6169.](../figures/fig-w16-1-blind-then-places.svg)
+*Figure 16.1 — Attention alone cannot tell where a word sits; adding a place row makes the same words give different answers.*
+
+![A top-to-bottom stack: layer norm, an attention panel with q, k, v and proj, a plus, layer norm, an MLP panel with up, GELU and down, a plus, with residual roads down the left and a knob count in every box.](../figures/fig-w16-2-one-block-knob-count.svg)
+*Figure 16.2 — One block is attention then an MLP, each on a residual road, and its nine parts add to 848 knobs.*
 
 ### 3. 🧭 Real vs stand-in — and what you must NOT claim
 

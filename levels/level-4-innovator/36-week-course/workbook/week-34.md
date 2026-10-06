@@ -18,6 +18,9 @@
 
 ---
 
+![Thirty-six week tiles in four lanes of nine, one lane per term. Weeks 1 to 33 are solid, week 34 is tinted pink with a thick border and a pointer, weeks 35 and 36 are dashed.](../figures/fig-w34-0-where-this-fits.svg)
+*Figure 34.0 — Week 34 is the first of three capstone weeks, the design-and-frozen-eval step at the end of term 4.*
+
 ## ✅ Warm-Up (5 min, before anything else, from memory)
 
 1. In which order are the design doc's failure modes written: most *likely* first, or *worst* first? ______________
@@ -25,6 +28,9 @@
 3. A system that says "I don't know" to every question scores how many of your 25 cases? Write the formula, not a number: ____________________________________________________
 4. Week 33: a count of weighted-coin flips strays from `n p` by about ______________ . With `n = 25` and `p = 0.7` is that bigger than 1 or smaller than 1? ______
 5. Name one thing the chapter says you may **not** do with your cases once they are frozen, and one thing you **may** do. may not: ______________________ may: ______________________
+
+![Four boxes in a row joined by arrows: Design, Test, Freeze, and a dashed System box, with the demo freeze line (cases=8, src_files=0) below](../figures/fig-w34-1-test-before-system.svg)
+*Figure 34.1 — The test is written and frozen while src/ is still empty; the system comes after.*
 
 ---
 
@@ -203,6 +209,9 @@ Part C: Leo's run, counted
 ```
 
 Did your pooled and mean numbers match the printout? ______ . The card's rule for the overall: *computed from the ______ , never ______ .*
+
+![Three rows of eight pass or fail cells for the stand-ins refuse_all, oracle and echo, with scores 2/8, 8/8 and 0/8](../figures/fig-w34-2-scorer-floor-ceiling.svg)
+*Figure 34.2 — A scorer is tested on answers typed by hand: the floor is not zero, the ceiling is all cases, junk scores nothing.*
 
 ---
 

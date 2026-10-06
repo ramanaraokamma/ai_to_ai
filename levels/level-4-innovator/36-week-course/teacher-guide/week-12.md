@@ -4,6 +4,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 12, Teach a Network to Invent Names, highlighted in Term 2](../figures/fig-w12-0-where-this-fits.svg)
+*Figure 12.0 — Week 12 trains a gated loop on real names, the first sequence model that writes.*
+
 ## 📋 At a Glance
 
 | | |
@@ -162,6 +165,12 @@ Read these before class so nothing surprises you. **Every number is printed by t
   Spread across seeds: train loss to the third digit, **validation to 0.25**, in-list share by 6 points. The 100-step versus 800-step difference (under 2% against over 80%) is far bigger than any spread; the exact validation number is not something to quote beyond one decimal.
 - **The baseline** (`T1`): letter frequencies only, train `2.789`, validation `2.735`. The 100-step model (`2.308`) beats it by 0.4; the 800-step model (`3.417`) loses to it by 0.7.
 - **Step by step against whole batch** (`T3`): biggest gap `0.0e+00`.
+
+![Two rows of eight cells for the name anika: the input row starts with START then a n i k a EOS PAD, the target row is a n i k a EOS PAD PAD, with arrows from each target to the next input](../figures/fig-w12-1-shift-right-names.svg)
+*Figure 12.1 — Shift right: every step is asked for the letter that comes next, and each answer becomes the following question.*
+
+![Bars of surprise for the eight positions of uma, four real and four tiny padding ones, and two bars of average loss, 1.1513 with padding ignored and 0.5857 with it counted](../figures/fig-w12-2-padding-flatters-loss.svg)
+*Figure 12.2 — Counting the padding halves the loss without the model learning anything; ignore it.*
 
 ### 7. The honest limits of today
 

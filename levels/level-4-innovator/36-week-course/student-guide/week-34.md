@@ -28,6 +28,9 @@
 
 ---
 
+![Thirty-six week tiles in four lanes of nine, one lane per term. Weeks 1 to 33 are solid, week 34 is tinted pink with a thick border and a pointer, weeks 35 and 36 are dashed.](../figures/fig-w34-0-where-this-fits.svg)
+*Figure 34.0 — Week 34 is the first of three capstone weeks, the design-and-frozen-eval step at the end of term 4.*
+
 ## 🪝 Start Here
 
 A friend says: *"I built a notes assistant. I asked it three questions I knew it could answer. It got all three. Should I ship it?"*
@@ -68,6 +71,9 @@ Two of those are skipped by almost everybody, and they are the two that matter: 
 **Severity is not likelihood.** *Likelihood* is how often something happens. *Severity* is how bad it is when it does. A thing that is likely and harmless and a thing that is rare and terrible are different kinds of problem, and a design must read the terrible one first. You rank by **severity**. You do not multiply the two into one score: one number hides which kind of problem you have.
 
 **A component** here is one of the big parts of the system. **A routing rule** is the one sentence that decides which component gets a question. **An answer contract** is a promise about what the system hands back; you wrote it as a `dataclass` in Week 23, and you write one again below.
+
+![Four boxes in a row joined by arrows: Design, Test, Freeze, and a dashed System box, with the demo freeze line (cases=8, src_files=0) below](../figures/fig-w34-1-test-before-system.svg)
+*Figure 34.1 — The test is written and frozen while src/ is still empty; the system comes after.*
 
 ---
 
@@ -419,6 +425,9 @@ echo
 Three things to notice. **8/8**: the scorer does what you wrote on every hand-made answer. **`refuse_all` is not zero**: it scores `2/8 = 0.25` here because two of the eight cases are refusals. On your 25 it will be `(number of refusal cases) / 25`. That is the **floor** a real system has to beat; it does **not** mean refusing is good. And `oracle` scoring everything shows the scorer can pass what it should.
 
 **A limit of the scorer, stated now.** It matches whole tokens: "Pre-norm." counts and "pre norm" does not. A correct answer in other words can fail. The defence is `any_of` with the alternatives, and reading **every** failing case in Week 35 before you blame the system. It also checks that a cited note was fetched; it does **not** check that the note *says* the thing.
+
+![Three rows of eight pass or fail cells for the stand-ins refuse_all, oracle and echo, with scores 2/8, 8/8 and 0/8](../figures/fig-w34-2-scorer-floor-ceiling.svg)
+*Figure 34.2 — A scorer is tested on answers typed by hand: the floor is not zero, the ceiling is all cases, junk scores nothing.*
 
 ---
 

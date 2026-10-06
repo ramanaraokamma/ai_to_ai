@@ -22,6 +22,10 @@
 
 > **📌 About the code blocks.** Every file has its name in its first line. Type them into **one folder, next to your `l4lib/` folder**, and run them from that folder. Every output shown was printed by a real run on a CPU. **Nothing this week is random**, so there is no seed and your numbers should match exactly; **only the timings in brackets, like `(12.2 s)`, change from computer to computer.** There is **no neural network, no scripted backend and no stand-in** anywhere this week: a tokenizer is a small program that counts and glues. It sits in front of a model; it is not a model. Nothing needs the internet. The `tokenizers` library (used in two files) is **already installed**; it trains on text you give it and downloads nothing.
 
+![Growing map of all 36 weeks in four term lanes: weeks 1 to 19 are solid, week 20 is tinted pink with a pointer, weeks 21 to 36 are dashed](../figures/fig-w20-0-where-this-fits.svg)
+
+*Figure 20.0 — Week 20, Tokenizers, is where the course stops feeding the model letters and starts cutting text into counted pieces.*
+
 ---
 
 ## 🪝 Start Here
@@ -70,6 +74,10 @@ Two details you will meet in the code:
 
 - **Chunks.** Before counting, the text is cut at spaces (the spaces become chunks of their own), so a piece like `e t` across two words can never be glued. A **chunk** is a run of spaces, or a run of anything that is not a space.
 - **Ties.** Two pairs can have the same count. Any rule for choosing works, but there must be *a rule*, so that two people get the same tokenizer. Ours: on a tie, the pair with the smaller numbers wins.
+
+![Three panels: pair counts for the tiny text low low lower widest, the two merges that glue l o and then lo w, and the word lowest written as three tokens](../figures/fig-w20-1-bpe-by-hand.svg)
+
+*Figure 20.1 — Byte-pair encoding is count, glue, repeat; the ordered list of merges is the whole tokenizer, and it can write words it never saw.*
 
 ### 4. The new syntax
 
@@ -368,6 +376,10 @@ Three more things in that output:
 - The new sentence `the baker practised the cricket` contains two words your corpus never saw, and **it can still be written**: `practised` is spelled from six pieces (`p r ac t is ed`) and `cricket` from five. No holes.
 - Of the 3,227 tokens, **1,277 are lone spaces**. That is 40%. Every space is a chunk of its own and nothing ever glues to it. It is a real weakness of our chunk rule. Hold on to it for the next section.
 - **Training stopped by itself at 400 merges** (`500 400` and `1000 400`). When no pair is left that occurs twice, there is nothing worth gluing. The vocabulary is limited by *the text*, not by what you ask for.
+
+![A rising line of bytes per token from 1.00 at 0 merges to 2.30 at 400 merges, then flat, with a box of numbers at 300 merges](../figures/fig-w20-2-bytes-per-token.svg)
+
+*Figure 20.2 — More merges shorten the text until no pair occurs twice; asking for 500 or 1,000 merges still learns only 400.*
 
 ---
 

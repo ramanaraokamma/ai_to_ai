@@ -18,6 +18,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 9, Review and Assessment 1, highlighted at the end of the first eight weeks](../figures/fig-w09-0-where-this-fits.svg)
+*Figure 9.0 — Week 9 is the first review: an X-ray of Weeks 1 to 8 before Term 2 builds on them.*
+
 ## ✅ Warm-Up (5 min, before anything else)
 
 Five questions, one per *kind* of thing the paper will ask. No notes.
@@ -54,6 +57,9 @@ For each line ask: **could I do this right now with only a pen and a calculator?
 *After the paper*, come back to this page and write, beside each week, whether your **guess** about yourself was right. That comparison is worth more than the mark.
 
 My guess about myself, before: Weeks I thought were soft: ____________ . After the paper, the weeks that were actually soft: ____________ .
+
+![Two bars split into sections A to E: marks 20, 16, 12, 15, 12 and minutes 15, 15, 12, 15, 13](../figures/fig-w09-1-the-paper-marks-and-minutes.svg)
+*Figure 9.1 — The paper is 75 marks in 70 minutes, and Section E, the biggest question, needs its own 13 minutes.*
 
 ---
 
@@ -429,6 +435,9 @@ My two weeks: ______ and ______ . Redo for week ______ on (day and time) _______
 **Section E, your own words.** Write one sentence about what Section E taught you about reading a table that you did not know before: ___________________________________________
 
 > **If you wrote "vanishing gradient" or "LSTM" anywhere on the paper**, that is not wrong and not extra: it is from next term, and it is a good sign you have read ahead. Your teacher will say so on the sheet.
+
+![Four homework steps above eight week boxes, with Weeks 8, 2 and 6 ringed 1, 2, 3 as the tie-break order](../figures/fig-w09-2-redo-rule-at-most-two.svg)
+*Figure 9.2 — Marks become a plan of at most two redos; if marks tie, Week 8 goes first, then Week 2, then Week 6.*
 
 ---
 

@@ -4,6 +4,12 @@
 
 ---
 
+![Thirty-six week tiles in four lanes of nine, one per term; weeks 1 to 32 solid, Week 33 (a lab week in term 4) tinted pink with a thick border and a pointer, weeks 34 to 36 dashed](../figures/fig-w33-0-where-this-fits.svg)
+
+*Figure 33.0 — Week 33 of 36: a lab week in term 4, agents, evidence and the system card.*
+
+---
+
 ## 📋 At a Glance
 
 | | |
@@ -107,6 +113,12 @@ Week 29 ended with "the strict sandbox held, however many times the stand-in was
 | Retention | today: `[]`; 10 days on: all three; dry run deletes nothing; `notes/` `15` untouched | |
 | True rate 0.05, 50 runs | zero landings `7.7%` of the time; measured `18 / 200 = 9.0%` (expected `15.4 ± 3.8`) | "0 of 50" is not "never" |
 | Runs to see `0.30` vs `0.24` | `440` each; visible in `10 of 20` repeats | K2 |
+
+![Ten dots, the landings out of 20 runs in ten batches of the same stand-in system, inside a shaded band of 6 plus or minus 2.05, beside the totals over 200 batches](../figures/fig-w33-1-count-wobble.svg)
+*Figure 33.1 — Twenty runs of an unchanged system give counts from 3 to 8 in ten batches, so a gap of 2 is not a finding.*
+
+![A table of four versions of a stand-in agent against four measured columns out of 50 runs, cells marked with ticks and crosses, with the refuse-everything patch outlined](../figures/fig-w33-2-patch-and-happy-path.svg)
+*Figure 33.2 — A patch must lower the attack count and keep the legitimate save at 50 of 50; a patch that refuses everything scores zero on both.*
 
 ### 6. The honest limits of today
 

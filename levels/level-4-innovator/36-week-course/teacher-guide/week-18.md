@@ -4,6 +4,9 @@
 
 ---
 
+![The 36 week tiles in four term lanes; weeks 1 to 17 solid, week 18 tinted pink with a thick border and a pointer above it, weeks 19 to 36 dashed](../figures/fig-w18-0-where-this-fits.svg)
+*Figure 18.0 — Week 18 of 36, the Term 2 review and paper, sits at the end of term 2; weeks 1 to 17 are done and weeks 19 to 36 are still ahead.*
+
 ## 📋 At a Glance
 
 | | |
@@ -69,6 +72,12 @@ The rounding trap of Week 14 returns: with weights rounded to three places (`0.1
 **(d) Knobs in one block at `d = 16` (Week 16), Question D3.** Two layer norms, each `d` scales and `d` shifts: `2 × 2 × 16 = 64`. Attention: `q`, `k`, `v` are `d × d` with **no bias**: `3 × 256 = 768`; the output layer `proj` is `d × d` **plus** `d` bias: `256 + 16 = 272`; attention total `1,040`. The MLP: `up` is `d × 4d` plus `4d` bias: `1,024 + 64 = 1,088`; `down` is `4d × d` plus `d` bias: `1,024 + 16 = 1,040`; MLP total `2,128`. Sum: `64 + 1,040 + 2,128 = 3,232`, and the formula of Week 16, `12d² + 10d`, gives `3,072 + 160 = 3,232`. (The causal mask is a *buffer* and is not counted.)
 
 **(e) The first-loss number (Week 17), Question A20.** `ln 28 = 3.332`. A model that knows nothing gives every one of 28 characters a chance of `1/28`, and the surprise `-ln(1/28)` is the same `3.332` everywhere.
+
+![Left, two bars on a log scale: 0.95 compounded 30 times leaves 0.2146 (below the unchanged line), 1.10 leaves 17.45 (above it). Right, three bars for a forget dial: 0.00391, 0.08159 and 0.67794 left after 8 steps.](../figures/fig-w18-1-compounding-and-dials.svg)
+*Figure 18.1 — Practice numbers, not the paper's: a slope near 1 fades or blows up when compounded, and a bigger forget bias keeps more signal.*
+
+![Left, a 3 by 3 grid of attention weights for cat, sat, down with the hidden future struck through and each row summing to 1.0. Right, the down row blending three value rows with weights 0.2483, 0.5035, 0.2483 into the output 3.007, 1.0.](../figures/fig-w18-2-practice-attention-pass.svg)
+*Figure 18.2 — Practice numbers, not the paper's: scores become weights that sum to 1, hide the future, and blend the value rows.*
 
 ### 3. 🧭 Real vs stand-in — and what you must NOT claim
 

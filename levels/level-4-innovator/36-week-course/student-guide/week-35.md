@@ -29,6 +29,9 @@
 
 ---
 
+![Thirty-six week tiles in four lanes of nine, one lane per term. Weeks 1 to 34 are solid, week 35 is tinted pink with a thick border and a pointer, week 36 is dashed.](../figures/fig-w35-0-where-this-fits.svg)
+*Figure 35.0 — Week 35 is the second capstone week: the build, measure and attack step, in the last lane of the course.*
+
 ## 🪝 Start Here
 
 Open your paper from Week 34: the 12 characters. Keep it beside you. Then write down one guess:
@@ -295,6 +298,9 @@ Now say the sentence aloud and write it on your card, **both numbers**:
 (Yours will differ.) The **baseline** is the number the spine has to beat. **Pencil now (Page 35.1, first three rows):** fill the baseline column of the tally by category.
 
 > **If your baseline passes most of your cases,** Week 34 told you what that means: the honest design is the script. Say so in your design notes rather than building something bigger to look clever.
+
+![Paired horizontal bars for six case categories, baseline against the v1 spine, with passes out of n on each bar and totals 6, 11 and 17 of 25](../figures/fig-w35-1-floor-baseline-spine.svg)
+*Figure 35.1 — The spine must beat the baseline, which must beat the floor, and every count carries its n.*
 
 ---
 
@@ -1001,6 +1007,9 @@ top scores of the notes that lost: {'c01': 0.151, 'c03': 0.236, 'c09': 0.133, 'c
 **Is the overall, 17 to 15, a finding?** No: it is inside the wobble of 2.3. **Is `factual 8 -> 5`, with three cases named, a finding?** Yes: it has a mechanism. The last line shows it: the question you wanted refused scores **higher** against the notes than the top score of three answerable ones, so **no threshold can refuse the one without refusing the others.** The suite did not tell you the overall got worse by a lot. It told you *which three questions* a real user would now be turned away from.
 
 > **A sentence to keep:** *if the suite goes green because I changed the suite, I have changed what green means.*
+
+![A number line of best-note scores with two vertical cuts, tau 0.10 and tau 0.36, and four labelled case dots between them](../figures/fig-w35-2-threshold-regression.svg)
+*Figure 35.2 — One threshold change flipped four named cases: three answerable questions lost to win one.*
 
 ---
 

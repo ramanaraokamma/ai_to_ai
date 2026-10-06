@@ -22,6 +22,9 @@
 
 > **⚠️ Watch out:** two things go wrong this week. **First, "more novel" gets heard as "better".** At temperature 1.5, 118 of the 200 generated names are not in the training list, and a good share of those are `inditrr` and `nnanvir`. A new string is not a new *name*. Novelty is a count the student can make with a loop; quality is a judgement they make by reading. The Tasting (Activity) is there so that they make the judgement before they see the count. **Second, the exposure-bias measurement is suggestive, not a proof.** The model finds its own samples more surprising than real names (1.122 against 0.954). That is what drift would look like; it is also partly what *sampling at temperature 1* looks like. Section 7 says exactly what the number does and does not show. Say "**is consistent with**", not "**proves**".
 
+![Map of the 36 weeks in four term lanes with week 13, Choosing the Next Letter, highlighted in term 2 and weeks 1 to 12 solid behind it](../figures/fig-w13-0-where-this-fits.svg)
+*Figure 13.0 — Where this week fits: week 13 of 36, in term 2 (memory, then attention).*
+
 ---
 
 ## 🎯 Lesson Objectives
@@ -73,6 +76,9 @@ Last week they trained a character model on 231 typed names, and it produced nam
 > 1. **Greedy is not "the best answer".** It is the single most likely *next letter* at every step. That is not the same as the most likely *name* (a name whose first letter is slightly less likely can have a far more likely rest). Today's data cannot test that claim, so do not make it in either direction.
 > 2. **A lower temperature does not make the model "more accurate".** It makes it repeat the commonest thing. At `T = 0.5`, 198 of 200 names are copies of training names. That is recitation, not accuracy.
 > 3. **"New" is not "good".** The new-name count includes every misspelling. Quality needs a human, or a measured proxy, and the proxy we have (the model's own per-letter loss) is the model grading its own homework.
+
+![Three bar charts of the chances of the letters a to e from the same five scores, at T = 0.3, 1 and 2; the bar for b is highlighted and falls from 0.958 to 0.375](../figures/fig-w13-1-temperature-dial.svg)
+*Figure 13.1 — Temperature does not change which letter is best, only how much it wins by.*
 
 ### 3. 🧭 Real vs stand-in — and what you must NOT claim
 
@@ -162,6 +168,9 @@ All printed by the files below. Read them before class so nothing surprises you.
 - **The Tasting.** In `sheet.py`'s seed, the number of the ten names *that are in the 231*: `T=0.5` 10/10; top-p 0.9 9/10; `T=1.0` 7/10; `T=1.5` 4/10. Teacher key and student sheet are in the Activity.
 - **Exposure bias.** Real names: mean 0.954 per letter, median 0.936. The model's own `T = 1` names: mean **1.122**, median 0.957, gap **+0.167**, and **17.5%** of them score above 1.5 per letter, against **0%** of the real names. At `T = 0.5`: mean 0.920, gap **−0.035**.
 - **The copy sweep** (1,500 steps, 64 hidden, chance 0.125, one seed): RNN `1.000, 0.384, 0.129, 0.127, 0.127` at gaps of 1, 5, 10, 20, 40; LSTM `0.996, 0.987, 0.959, 0.130, 0.130`.
+
+![Two rows of letter boxes, one fed the true letters and one fed its own unlikely letter, above three bars of loss per letter: 0.954 for real names, 1.122 and 0.920 for the model's own](../figures/fig-w13-2-exposure-bias.svg)
+*Figure 13.2 — The model is more surprised by its own names than by real ones; that fits exposure bias but does not prove it.*
 
 ### 7. The honest limits of today
 

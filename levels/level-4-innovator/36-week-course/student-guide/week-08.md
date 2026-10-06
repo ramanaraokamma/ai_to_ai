@@ -24,6 +24,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 8, Order Matters, highlighted in Term 1](../figures/fig-w08-0-where-this-fits.svg)
+*Figure 8.0 — Week 8 introduces the recurrent cell, the first model in the course that reads in order.*
+
 ## 🪝 Start Here
 
 Last year your sentiment engine counted words. Here are two sentences:
@@ -92,6 +95,9 @@ The computer sees the same row twice. However clever the classifier that comes n
 The answer we will build this week is:
 
 > **A model that reads in order has to carry a summary, and it has to use the same rule for every word.**
+
+![Two five-word sentences with the same words in a different order, both turned into the same bag row 2, 1, 1, 1](../figures/fig-w08-1-same-bag-different-order.svg)
+*Figure 8.1 — Counting words throws the order away, so a classifier cannot tell these two sentences apart.*
 
 ### 2. The sticky note
 
@@ -206,6 +212,9 @@ Things to notice:
 The spike **fades**: about half of it is lost at each step. Is that forgetting? Yes. How fast a note fades is a question for Week 10, where you will measure it.
 
 > **🔢 Order matters, in four numbers.** Do two steps by hand with the same weights. First `x = [1, 0]` (spike first), then `x = [0, 1]` (spike second). In both, the inputs add up to 1, so a bag would say "same". Compare the **final** notes. This is workbook page 8.3.
+
+![A recurrent cell drawn four times with the same weights, passing notes 0.7616, 0.3634, 0.1797 and 0.0896 forward](../figures/fig-w08-2-unrolled-cell-four-steps.svg)
+*Figure 8.2 — One cell with one set of weights is reused at every step, and the note it passes on fades.*
 
 ### 4. A note of many numbers: `nn.Embedding`
 

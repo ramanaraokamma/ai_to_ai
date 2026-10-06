@@ -6,6 +6,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 23, Prompting as Engineering: The Harness, highlighted in Term 3](../figures/fig-w23-0-where-this-fits.svg)
+*Figure 23.0 — Week 23 is the fifth lesson of Term 3: asking a model is tested like code.*
+
 > **Rules for this workbook.** Six pages, a "Break It" page and a Bug Log. **Write your prediction or your hand answer first, then run.** A guess written after the run is not a guess. Every number you write in the write-up (page 23.6) must have been printed by **your own** run in the last 24 hours, with the seed stated.
 >
 > **The "model" today is a stand-in, not a model.** `FakeClient` is a short Python script. It has the *shape* of a chat API and it does not read English. The harness around it (the frozen set, the scorer, the parser, the guard) is real; **nothing the stand-in scores says anything about how a real model behaves.** Wherever you write the word "model" for the thing that was scored, check that you did not mean "stand-in".

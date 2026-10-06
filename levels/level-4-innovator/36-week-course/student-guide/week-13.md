@@ -25,6 +25,9 @@
 
 > **📌 About the code blocks.** Each block is a whole file, with its name in the first line. Keep them in **one folder, next to `l4lib/`**, and run them from that folder. **`namelm.py` is your Week 12 name model kept as a module; your teacher gives it to you and you do not type it.** The rest you type. Every output shown was printed by a real run on a CPU with seeds set. Different PyTorch build: the last digit of a chance can move, and a count of new names can move by a name or two. Lines that report **seconds** depend on your machine. Blocks marked **DELIBERATE** are written on purpose to fail. Nothing this week needs the internet. **The model is real and small: it was trained on the 231 typed names, nothing else.** There is no scripted stand-in. The five scores in `five.py` are **invented by us** to make the arithmetic readable; they are not from any model.
 
+![Map of the 36 weeks in four term lanes with week 13, Choosing the Next Letter, highlighted in term 2 and weeks 1 to 12 solid behind it](../figures/fig-w13-0-where-this-fits.svg)
+*Figure 13.0 — Where this week fits: week 13 of 36, in term 2 (memory, then attention).*
+
 ---
 
 ## 🪝 Start Here
@@ -146,6 +149,9 @@ Read the output beside the page.
 - **`torch.sort` and `torch.cumsum`.** `sort(..., descending=True)` also returns a pair: the values from big to small, and where each one was. `cumsum` is a running total: `0.563, 0.770, 0.896, ...`.
 
 **Temperature does not change which letter is best. It changes how much the best one wins by.** Low `T` means a big win (sharp); `T = 1` is honest; high `T` means a small win (flat). Push `T` toward 0 and you get greedy; push it very high and you get a fair die.
+
+![Three bar charts of the chances of the letters a to e from the same five scores, at T = 0.3, 1 and 2; the bar for b is highlighted and falls from 0.958 to 0.375](../figures/fig-w13-1-temperature-dial.svg)
+*Figure 13.1 — Temperature does not change which letter is best, only how much it wins by.*
 
 ### 4. Top-k and top-p, in words
 
@@ -352,6 +358,9 @@ In training, someone always hands the model the right letters. In generating, no
 3. **Memorising.** At `T=0.5` it recites names it has seen, and a name it has seen scores low.
 
 Look at the `T=0.5` row: the gap closes to -0.035. That fits the drift story. It also fits "it is just reciting". **Two stories, one number.** Say what you measured: *the model is more surprised by its own names than by real ones, and a long right tail is where it is most surprised. This is consistent with exposure bias; it does not prove it.* We also did not feed the model its own prefix and the true prefix at the same spot to compare directly, and we did not repeat at other seeds.
+
+![Two rows of letter boxes, one fed the true letters and one fed its own unlikely letter, above three bars of loss per letter: 0.954 for real names, 1.122 and 0.920 for the model's own](../figures/fig-w13-2-exposure-bias.svg)
+*Figure 13.2 — The model is more surprised by its own names than by real ones; that fits exposure bias but does not prove it.*
 
 ---
 

@@ -12,6 +12,9 @@
 
 ---
 
+![Level 4 map with four rows of nine tiles, one row per term; in the first row week 1 is highlighted with a pointer above it, no earlier week is filled in yet, and every later tile has a dashed outline](../figures/fig-w01-0-where-this-fits.svg)
+*Figure W1.0 — Where this fits: week 1 of 36 sits in term 1, "train it on purpose"; the tiles still dashed are the weeks to come.*
+
 ## ✅ Warm-Up (5 min)
 
 This is week one of Level 4, so there is no last week. **These five are from last year**: the Level 3 habits you are about to use much harder.

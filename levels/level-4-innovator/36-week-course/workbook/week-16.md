@@ -6,6 +6,9 @@
 
 ---
 
+![The 36 week tiles in four term lanes; weeks 1 to 15 solid, week 16 tinted pink with a thick border and a pointer above it, weeks 17 to 36 dashed](../figures/fig-w16-0-where-this-fits.svg)
+*Figure 16.0 — Week 16 of 36, the position and block week, sits in term 2 (memory, then attention); weeks 1 to 15 are done and weeks 17 to 36 are still ahead.*
+
 > **Rules for this workbook.** Every number you write in a report this year must be one **your own run printed, with a seed, in the last 24 hours.** The digits in the worked examples and in the answers came from real CPU runs (PyTorch 2.2.1, `torch.manual_seed(0)` where anything is random). The by-hand numbers (`1.8509 ...`) are plain arithmetic and will match exactly to four decimals. The random tables inside a run may differ on another PyTorch build; the `True`/`False` lines, the **shapes** and the **counts** will not.
 >
 > **Predict first, then run.** On pages 16.1, 16.3, 16.4 and 16.7 you write your guess *before* you run anything. A wrong guess is useful. A guess written after the run is not a guess.
@@ -120,6 +123,9 @@ The last two lines are **controls**. Say in a few words why each is `True` and w
 - (b) *"Attention with no mask and no positions cannot tell order, and here is the line that shows it."*
 
 Why is the other one too big? (Hint: Week 15 added a mask.) ________________________________________________
+
+![Two panels over the words the, dog, bit, the, postman. Left, attention alone: a cross beside each of three results that are True, 0.0 and 0.0. Right, with a place row added under each word: ticks beside False, 0.1529 and 0.6169.](../figures/fig-w16-1-blind-then-places.svg)
+*Figure 16.1 — Attention alone cannot tell where a word sits; adding a place row makes the same words give different answers.*
 
 ---
 
@@ -433,6 +439,9 @@ Four classmates each made one slip at `d = 8`. For each wrong total, say what th
 | 800 | ________________________________ (hint: three things left out) |
 
 **Part D.** At `d = 10` the `up` layer has 440 knobs and the `down` layer 410. Both are "about `4 x d x d`". Why do they differ by 30? ________________________________________________
+
+![A top-to-bottom stack: layer norm, an attention panel with q, k, v and proj, a plus, layer norm, an MLP panel with up, GELU and down, a plus, with residual roads down the left and a knob count in every box.](../figures/fig-w16-2-one-block-knob-count.svg)
+*Figure 16.2 — One block is attention then an MLP, each on a residual road, and its nine parts add to 848 knobs.*
 
 ---
 

@@ -16,6 +16,9 @@
 >
 > **Only this week's tools are used:** `k.transpose(-2, -1)`, `nn.Linear(d, d, bias=False)` and `unsqueeze`, plus the softmax and matrix multiply you already have.
 
+![Map of the 36 weeks in four term lanes with week 14, Attention by Hand, highlighted in term 2 and weeks 1 to 13 solid behind it](../figures/fig-w14-0-where-this-fits.svg)
+*Figure 14.0 — Where this week fits: week 14 of 36, in term 2 (memory, then attention).*
+
 ---
 
 ## ✅ Warm-Up (5 min, before anything else)
@@ -181,6 +184,9 @@ soft lookup: 26.91
 fixed by dividing by the total: 20.909
 ```
 
+![A table of bread, river and rope with scores, weight bars 0.112, 0.751 and 0.137, values 10, 50 and 30, and the soft answer 42.77 beside the hard answer 50.0](../figures/fig-w14-1-soft-lookup.svg)
+*Figure 14.1 — A soft lookup is a weighted average: mostly the best match, with a trace of the others.*
+
 ---
 
 ## 🤝 Page 14.3 — Do the Three Agree? (10 min)
@@ -236,6 +242,9 @@ the three agree to 0.002: True
 2. The pen-vs-numpy gap is **much bigger** than the numpy-vs-torch gap. The reason is ___________________________________________ (hint: how many places did the pen carry?)
 3. **If the pen and the computer disagree by about `0.1` or more, which of the two is probably wrong, and what do you do first?** ___________________________________________
 4. Write one sentence that says what it means that three different ways give one answer: ___________________________________________
+
+![Three small grids joined by arrows: scores for the, cat and sat, then rows of weights that each add to 1 with the largest ringed, then the output rows](../figures/fig-w14-2-one-pass-three-words.svg)
+*Figure 14.2 — One pass of attention on three words: scores, then weights that add to 1 in every row, then the blended output.*
 
 ---
 

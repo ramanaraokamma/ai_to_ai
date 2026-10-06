@@ -16,6 +16,9 @@
 
 ---
 
+![Level 4 map with four rows of nine tiles, one row per term; in the first row week 5 is highlighted with a pointer above it, weeks 1 to 4 are outlined solid, and every later tile has a dashed outline](../figures/fig-w05-0-where-this-fits.svg)
+*Figure W5.0 — Where this fits: week 5 of 36 sits in term 1, "train it on purpose"; the tiles still dashed are the weeks to come.*
+
 ## ✅ Warm-Up (5 min)
 
 Five from **last week** and earlier. No looking back.
@@ -317,6 +320,9 @@ One thing I did not test: ______________________________________________________
 
 **Someone says:** *"Jitter is the best cure."* Using your tables, what one question do you ask first? ____________________________________________
 
+![Two panels of range bars, one row per cure, with a diamond at the mean of five seeds: the best-validation bars overlap heavily, the final-validation bars sit lower for every cure than for no cure](../figures/fig-w05-2-four-cures-five-seeds.svg)
+*Figure W5.2 — Over five seeds the best-val bars overlap; the final-val means are what separate the cures.*
+
 ---
 
 ## 📈 Page 5.6 — Read a Curve
@@ -352,6 +358,9 @@ gap at best: 0.046  gap at end: 0.75
 **R6.** Why can't you know on epoch 22 that epoch 22 is the best? ______________________________________________
 
 **R7.** Complete: *"The best epoch is only known __________, so the thing to keep is the __________."*
+
+![Line chart of loss against epoch: a solid training line falling to zero, a dashed validation line that bottoms out at epoch 59 then climbs to 0.906, and a bracket marking the final gap](../figures/fig-w05-1-memorising-train-val-gap.svg)
+*Figure W5.1 — Training loss reaching 0.000 does not mean the model is good: validation loss turned upward after epoch 59.*
 
 ---
 

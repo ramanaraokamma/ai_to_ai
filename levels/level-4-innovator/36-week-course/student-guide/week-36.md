@@ -29,6 +29,9 @@
 
 ---
 
+![Thirty-six week tiles in four lanes of nine, one lane per term. Weeks 1 to 35 are solid and week 36, the last tile, is tinted pink with a thick border and a pointer.](../figures/fig-w36-0-where-this-fits.svg)
+*Figure 36.0 — Week 36 is the end of the course: the demo, the system card and the final assessment.*
+
 ## 🪝 Start Here
 
 Open your paper from Week 34 (the 12 characters) and the numbers you wrote under them in Week 35. Keep it beside you. Then write down one sentence, and do not discuss it:
@@ -726,6 +729,9 @@ python capstone34/demo.py > capstone34/logs/demo_backup.txt
 
 If the laptop dies mid-demo, your teacher plays the recording and you carry on. The demo is marked on the card, the numbers and the failure shown, not on the machine. **Say the stand-in label aloud once:** *every dollar and every millisecond here is a stand-in; none of it says anything about a real model.*
 
+![A timeline bar of six numbered segments from 0:00 to 5:00 with a list of what each segment shows](../figures/fig-w36-2-five-minute-run-sheet.svg)
+*Figure 36.2 — The demo is six timed segments that add to 300 seconds, with one failure shown on purpose.*
+
 ---
 
 ## 9. The claim ledger, for the worked example
@@ -765,6 +771,9 @@ every ledger number is in the card: True
 ```
 
 The last two lines are checks. Every line has all four columns, and every ledger number appears in the card. A claim in the card that is not in the ledger is a claim with no command.
+
+![Four boxes joined by arrows (Logs, F, Card, Checks) above a four-row table of claim, number, n and command](../figures/fig-w36-1-claim-ledger-flow.svg)
+*Figure 36.1 — Every number in the card is a slot filled from a log, and every claim has an n and a command.*
 
 ---
 

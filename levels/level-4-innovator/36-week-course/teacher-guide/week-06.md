@@ -4,6 +4,9 @@
 
 ---
 
+![Level 4 map with four rows of nine tiles, one row per term; in the first row week 6 is highlighted with a pointer above it, weeks 1 to 5 are outlined solid, and every later tile has a dashed outline](../figures/fig-w06-0-where-this-fits.svg)
+*Figure 6.0 — Where this fits: week 6 of 36 sits in term 1, "train it on purpose"; the tiles still dashed are the weeks to come.*
+
 ## 📋 At a Glance
 
 | | |
@@ -731,6 +734,9 @@ If the student asks "how many examples do you need?": *"More, so the average is 
 
 **Do not** write `1 + f'(x)` or say "derivative". **Do not** multiply the same number many times (Week 10). **Do not** say "vanishing gradient" until the table in Their Turn has shown it; the word arrives *after* the thing.
 
+![Two stacks of four blocks with a horizontal bar beside each for the error's running product: the plain stack shrinks to a hairline at 0.0024, the residual stack grows to 2.4024](../figures/fig-w06-1-residual-road-four-blocks.svg)
+*Figure 6.1 — With a road each block's slope is 1 plus its old slope, so the error's running product stays near or above 1 instead of shrinking to 0.0024.*
+
 ---
 
 ### 💻 Live-Code Together — `lab6.py`, the depth probe, and two mistakes (17 minutes)
@@ -822,6 +828,9 @@ The full activity is under **🎲 The Activity, In Full** below. The shape: the 
 3. **Layer norm alone: healthy gradient, and 46.9% anyway.** *A healthy gradient on the first block is necessary-looking but not sufficient.* We did not find out why. **That is a perfectly good thing to write in the Bug Log's "later" column.**
 
 > **Say this (at the end):** "Fixing the gradient, which the road does, trains the network. Tidying the numbers, which a norm layer does, keeps them calm. The calmest gradient at 32 blocks (`3.58` against `300`) came from the pair, norm and road together; the highest accuracy came from the road alone (99.3% against 98.8%). Both facts are from three seeds. Do not turn either into a law."
+
+![Left, a log-scale chart of first-block gradient length against depth, plain falling to 1e-18 and residual rising to 300; right, grouped accuracy bars where the plain bars at depths 16 and 32 sit at the 46.9 percent coin line](../figures/fig-w06-2-depth-gradient-vs-accuracy.svg)
+*Figure 6.2 — The first-block gradient at the start predicts which plain stacks never train; the road keeps every depth at about 99%.*
 
 ---
 

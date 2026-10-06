@@ -4,6 +4,9 @@
 
 ---
 
+![Level 4 map with four rows of nine tiles, one row per term; in the first row week 4 is highlighted with a pointer above it, weeks 1 to 3 are outlined solid, and every later tile has a dashed outline](../figures/fig-w04-0-where-this-fits.svg)
+*Figure 4.0 — Where this fits: week 4 of 36 sits in term 1, "train it on purpose"; the tiles still dashed are the weeks to come.*
+
 ## 📋 At a Glance
 
 | | |
@@ -616,6 +619,9 @@ lambda s: 0.5 * (1 + np.cos(np.pi * s / T))
 
 > **Say this — part 5, transition:** "Everything we just did on paper, the computer can check. Open a file and type `schedules.py`."
 
+![Line chart of learning rate against step: a dashed cosine-only curve falling from 0.003 to zero, a solid warm-up-then-cosine curve that climbs over 50 steps first, and a table of printed rates beside it](../figures/fig-w04-1-warmup-then-cosine-rate.svg)
+*Figure 4.1 — The rate is the peak times a multiplier: warm-up ramps it up over 50 steps and cosine brings it down to zero.*
+
 ---
 
 ### 💻 Live-Code Together — `schedules.py`, `minitrain.py`, and two mistakes (18 minutes)
@@ -781,6 +787,9 @@ Experiment B held ______ fixed.  It also changed ______.
 Target: A held **epochs** fixed, and also changed **steps**; B held **steps** fixed, and also changed **epochs (repeats)**. Then **one honest conclusion sentence** (see section 6 in the teacher guide for the target wording). Do not accept "bigger batch is worse" as a conclusion without the word "because" and one of the two confounds.
 
 **If you have 2–6 students:** pairs. One runs A with their own seeds `range(5, 10)`, the other runs B with `range(5, 10)`. They compare: *did they agree with the table?* Different seeds, same ordering, different numbers — that is itself the lesson about single seeds.
+
+![Two panels of bars: on the left the number of optimizer steps for five batch sizes at 60 epochs, on a log scale, with mean validation loss beside each; on the right the validation and training loss of four batch sizes given the same 780 steps](../figures/fig-w04-2-batch-size-hold-what-fixed.svg)
+*Figure 4.2 — Changing the batch size changes the number of steps, so ask what each experiment held fixed.*
 
 ---
 

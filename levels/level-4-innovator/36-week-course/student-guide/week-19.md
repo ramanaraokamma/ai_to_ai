@@ -24,6 +24,10 @@
 
 > **📌 About the code blocks.** Each block is a whole file, with its name in the first line. Type the files into **one folder, next to `l4lib/`** (and next to your Week 17 `tinygpt.py`, which you will copy from), and run them from that folder. Every output shown was printed by a real run on a CPU, one thread, with the seeds you see in the files. The losses, scores and samples matched on repeat runs here; a different PyTorch version can change the digits, and **the times in brackets will differ**. **Everything this week is really trained**: the longest file, `text_ablate.py`, runs for about **3.6 minutes**. There is **no scripted backend and no stand-in anywhere this week**, and nothing needs the internet. Blocks marked **DELIBERATE** go wrong on purpose.
 
+![Growing map of all 36 weeks in four term lanes: weeks 1 to 18 are solid, week 19 is tinted pink with a pointer, weeks 20 to 36 are dashed](../figures/fig-w19-0-where-this-fits.svg)
+
+*Figure 19.0 — Week 19, Open the GPT, sits in term 2 on the road from memory to attention. Everything before it is built; everything after it is still ahead.*
+
 ---
 
 ## 🪝 Start Here
@@ -285,6 +289,10 @@ The `(N s)` figures change from run to run; nothing else did. Compare your table
 
 Compare each row with the full model by subtraction on **validation** loss: no positions `1.739 - 1.673 = +0.066` (a little worse), no residual `2.679 - 1.673 = +1.006` (much worse), no norm `1.478 - 1.673 = -0.195` (better), no mask `0.077 - 1.673 = -1.596` ("better", and we are about to see why that is not a compliment).
 
+![Five horizontal bars of validation loss, one per TinyGPT with a part deleted, with a dashed line at the full model's 1.673 and crosses on the two that fail](../figures/fig-w19-1-ablation-bars.svg)
+
+*Figure 19.1 — Deleting a part can make the score look better; a very low number needs a leak check before it is believed.*
+
 ### 6. The leak
 
 The no-mask sample is `tatattttttt...`, a line of `t` and `a`. That is not writing; it is a model that found a shortcut. With no mask, a place that must predict the next character can look one place ahead, and the place ahead **holds** that very character, which is the answer. Its loss is low because it reads, not because it predicts.
@@ -426,6 +434,10 @@ The chance levels are **0.125** on copy and reverse and **0.1** on lookup. Read 
 4. **The lookup column is where things show up.** No mask: **0.37**. This is *not* a leak: the window stops before the answer. No norm: **0.33**.
 
 Read the lookup column with care. This is one seed and one length of training. Whether no-norm's 0.33 is *broken* or just *slow or unlucky* is something this one table cannot say, and you have not tested why no-mask breaks lookup either. Write both down as **open questions**, not findings.
+
+![A grid of share of answers right: three tasks by five models plus a chance column, with ticks on 1.00, crosses on 0.37 and 0.33, and ringed numbers 1 and 2](../figures/fig-w19-2-task-table.svg)
+
+*Figure 19.2 — A perfect score can be a leak; the lookup column is where deleting a part shows up, and its cause is still an open question.*
 
 ---
 

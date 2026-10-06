@@ -18,6 +18,10 @@
 >
 > Use a **calculator** (with a `log10` button) and carry **four decimals for logs** and **two decimals** elsewhere unless a page says otherwise.
 
+![Growing map of all 36 weeks in four term lanes: weeks 1 to 20 are solid, week 21 is tinted pink with a pointer, weeks 22 to 36 are dashed](../figures/fig-w21-0-where-this-fits.svg)
+
+*Figure 21.0 — Week 21, Pretraining and the scaling arithmetic, is the week the course asks what a line through small runs can say about a bigger one.*
+
 ---
 
 ## ✅ Warm-Up (5 min)
@@ -228,6 +232,14 @@ Run `check.py`. Copy the output.
 (3) ________________________________________________________________
 
 **B5. Optional (homework).** Run `train_one(16, seed=1)` and `train_one(32, seed=1)` from a short file of your own. Loss at width 16, seed 1: ________ (seed 0: ________ ). Width 32, seed 1: ________ (seed 0: ________ ). The difference at width 32 is ________ . The line's distance from the width-32 point was ________ in loss. What does that say about "every point is within 3% of the line"? ________________________________
+
+![Log-log chart: four circles near a straight line, a dashed extension to a hollow diamond at 1.2654, and a square above it at 1.4656](../figures/fig-w21-1-power-law-miss.svg)
+
+*Figure 21.1 — The line fitted the four models it was drawn through and missed the fifth by 15.8 percent; that is a measurement, not yet an explanation.*
+
+![Five horizontal bars of characters read per knob falling from 211.1 to 1.8, with the validation loss beside each](../figures/fig-w21-2-characters-per-knob.svg)
+
+*Figure 21.2 — Every run reads the same text, so the biggest model gets the least per knob; the budget has two numbers, knobs and data.*
 
 ---
 

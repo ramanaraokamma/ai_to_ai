@@ -4,6 +4,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 24, Examples, Scratchpads, and Schemas: Learned in Context, highlighted in Term 3](../figures/fig-w24-0-where-this-fits.svg)
+*Figure 24.0 — Week 24 is the sixth lesson of Term 3: what changes when only the prompt changes.*
+
 ## 📋 At a Glance
 
 | | |
@@ -211,6 +214,12 @@ seed  names  free: parses / right     mask: parses / right   (out of 100)   seco
 
   The same picture every time: masked always `100` parses; on new names "fully right" is `26`, `44`, `45` masked against `25`, `36`, `46` free.
 - **Clinic numbers.** Mistake 1: loss `1.790` against `ln 6 = 1.792`. Mistake 6: `0` of `100` parse. Mistake 7: `2` of `100` masked replies do not parse. Mistake 8: `1.0` with the true working handed over, `0.09` with the model's own. Mistake 9: `1.000` then `0.090`.
+
+![A line chart of accuracy against 0 to 6 worked examples: a dashed ceiling climbing from 0.167 to 1.000 and a solid model line that follows it but falls short at 4 and 5 examples](../figures/fig-w24-1-in-context-vs-ceiling.svg)
+*Figure 24.1 — Accuracy can only follow the ceiling (n + 1) ÷ 6; the model tracks it up to n = 3 and falls short at n = 4 and 5.*
+
+![Two panels of paired bars out of 100 prompts: for seen names parses 90 free and 100 masked, all fields right 79 and 95; for new names parses 85 and 100, all fields right 25 and 26](../figures/fig-w24-2-mask-shape-not-content.svg)
+*Figure 24.2 — The grammar mask fixes the shape (parses go to 100) but not the content on names the model never saw (25 to 26).*
 
 ### 7. The honest limits of today
 

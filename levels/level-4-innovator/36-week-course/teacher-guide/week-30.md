@@ -4,6 +4,9 @@
 
 ---
 
+![Thirty-six week tiles in four lanes, one per term; weeks 1 to 29 solid, week 30 tinted pink and pointed at in term 4, weeks 31 to 36 dashed](../figures/fig-w30-0-where-this-fits.svg)
+*Figure 30.0 — Week 30 of 36, term 4: how we decide whether any of it worked, before the system card in the last weeks.*
+
 ## 📋 At a Glance
 
 | | |
@@ -157,6 +160,12 @@ Stop at: *"write the eval first and fingerprint it; beat the cheap baseline befo
         the contamination scan, kappa by hand,      W34  Capstone 1: freeze 25 cases BEFORE any
         a judge with a planted position habit            component exists, with a committed hash
 ```
+
+![Paired bars per category for keyword rules and a trained classifier, with REGRESSION marked on greeting, billing, out_of_scope and overall](../figures/fig-w30-1-average-hides-regressions.svg)
+*Figure 30.1 — The average fell 0.133, but one category fell 0.800: read every category before you ship.*
+
+![A two by two grid of pass and fail counts 7, 7, 0 and 6 beside three numbered arithmetic steps ending at kappa 0.375](../figures/fig-w30-2-kappa-beyond-luck.svg)
+*Figure 30.2 — Kappa is the agreement left over once luck is taken out: 0.65 raw becomes 0.375.*
 
 ---
 

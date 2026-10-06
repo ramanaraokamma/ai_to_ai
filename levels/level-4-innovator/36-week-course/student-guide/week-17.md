@@ -4,6 +4,9 @@
 
 ---
 
+![The 36 week tiles in four term lanes; weeks 1 to 16 solid, week 17 tinted pink with a thick border and a pointer above it, weeks 18 to 36 dashed](../figures/fig-w17-0-where-this-fits.svg)
+*Figure 17.0 — Week 17 of 36, the TinyGPT lab, sits in term 2 (memory, then attention); weeks 1 to 16 are done and weeks 18 to 36 are still ahead.*
+
 > ### This week in one sentence
 > **You build a whole GPT out of last week's block, check its size and its very first loss *before* you trust it, train it on 6,972 typed characters for about a minute and a half, and then say what the gap between its score on text it studied and text it never saw really tells you.**
 >
@@ -54,6 +57,9 @@ y =  "to school with a book un"
 Read down the two rows: at every place, `y` is *the character that came next*. Because of the mask you met in Week 15, each place in `x` sees only what came before it, so **one pass through the model answers all 64 questions in a window at once**: *given the characters so far, what comes next?* A **batch** is 32 windows. So one step asks `32 x 64 = 2,048` questions.
 
 How do we pick 32 windows? We choose the places where they start **at random**. That is the first new piece of syntax.
+
+![Two rows of character cells, x above and y below, where y is x moved one place left; below them 64 questions times 32 windows equals 2,048 questions.](../figures/fig-w17-1-one-window-many-questions.svg)
+*Figure 17.1 — Moving the window one place left gives a next-character answer at every place, so one step asks 2,048 questions.*
 
 ### 2. New syntax: `torch.randint`
 
@@ -492,6 +498,9 @@ Both start within 0.02 of `ln(28)`, so the first-loss check from `check_init.py`
 Two more cautions about the numbers. Each validation loss is an average of 20 random windows from only 698 characters, so it is noisy: the `step 1499` line and the `FINAL` line are two estimates of the **same** model and differ by 0.010. **Differences of about 0.02 are not information.** And the lowest validation number printed was 1.417, at step 1000, with a slight rise after: too small, and too noisy, to teach you where to stop.
 
 **How good is 1.4?** A model that knows nothing scores 3.332. Your teacher will put two more rungs of a ladder on the board, models that *only count* letters, and the TinyGPT goes on the same ladder. It is a measuring stick, not a competition.
+
+![Left, a chart of training loss (solid) and validation loss (dashed) against step, with a dashed line at ln 28 and a bracket marking the final gap. Right, two bars: the first-loss distance for calm_head=False (long, FAIL) and calm_head=True (short, PASS).](../figures/fig-w17-2-loss-gap-and-first-check.svg)
+*Figure 17.2 — Training loss keeps falling while validation flattens, and a calm output layer starts within 0.05 of ln 28.*
 
 ---
 

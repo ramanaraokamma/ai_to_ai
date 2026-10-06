@@ -6,6 +6,9 @@
 
 ---
 
+![The 36 week tiles in four term lanes; weeks 1 to 17 solid, week 18 tinted pink with a thick border and a pointer above it, weeks 19 to 36 dashed](../figures/fig-w18-0-where-this-fits.svg)
+*Figure 18.0 — Week 18 of 36, the Term 2 review and paper, sits at the end of term 2; weeks 1 to 17 are done and weeks 19 to 36 are still ahead.*
+
 > **Rules for this workbook.** This week has **one real paper** (the 75-mark Term 2 checkpoint your teacher hands you in class) and **this workbook is everything around it**: the night-before map, practice on **numbers that are not on the paper**, the marking pages, and the Bug Log. **Nothing in here is the paper, and nothing in here is a teacher file.**
 >
 > **Pen first, then run.** Pages 18.2 to 18.6 are by hand with a calculator. You write your answer *before* you open the check file. The digits in the worked examples and the answers came from real CPU runs (PyTorch, one thread, `torch.manual_seed(0)` wherever anything is random). By-hand numbers are plain arithmetic and will match exactly. The table on page 18.7 is real printed output of `check187.py`, which trains a small model for about five seconds; on another CPU or PyTorch build the **last digit** of a loss can move, but not the shape of the story.
@@ -140,6 +143,9 @@ for label, scale in [("big gradient", 1.0), ("tiny gradient", 1e-8)]:
 ```
 
 Write what it printed for `0.85 ** 20`: ____________ For the first step count below 0.1: ____________ For the clipped `[24, 32]` length after: ____________
+
+![Left, two bars on a log scale: 0.95 compounded 30 times leaves 0.2146 (below the unchanged line), 1.10 leaves 17.45 (above it). Right, three bars for a forget dial: 0.00391, 0.08159 and 0.67794 left after 8 steps.](../figures/fig-w18-1-compounding-and-dials.svg)
+*Figure 18.1 — Practice numbers, not the paper's: a slope near 1 fades or blows up when compounded, and a bigger forget bias keeps more signal.*
 
 ---
 
@@ -282,6 +288,9 @@ print("row 3 weights without the divide:", [round(x, 4) for x in without_divide.
 ```
 
 Where did your hand numbers first disagree with the file (write the question number, or "none")? ____________
+
+![Left, a 3 by 3 grid of attention weights for cat, sat, down with the hidden future struck through and each row summing to 1.0. Right, the down row blending three value rows with weights 0.2483, 0.5035, 0.2483 into the output 3.007, 1.0.](../figures/fig-w18-2-practice-attention-pass.svg)
+*Figure 18.2 — Practice numbers, not the paper's: scores become weights that sum to 1, hide the future, and blend the value rows.*
 
 ---
 

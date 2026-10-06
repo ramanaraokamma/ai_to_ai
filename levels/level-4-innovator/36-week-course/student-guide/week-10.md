@@ -24,6 +24,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 10, Forty Multiplications, highlighted in Term 2](../figures/fig-w10-0-where-this-fits.svg)
+*Figure 10.0 — Week 10 is the first lesson of Term 2 on memory: why a loop forgets.*
+
 ## 🪝 Start Here
 
 Forty people stand in a line. The first whispers a message to the second. Each person is a little forgetful: each passes on **95%** of what they heard and loses 5%.
@@ -111,6 +114,9 @@ Read the **shape**, not the table:
 - At about 5% a step, it halves (or doubles) in **about 14 or 15 steps**. "About": that is a rule of thumb, not a formula.
 
 Neither direction is "about the same". **Below 1: tiny. Above 1: huge. The only rate that stays put is exactly 1.** If your card said "about 80%", you have just seen why the next hour matters.
+
+![Two bar panels: 0.9526 multiplied in a row shrinks from 0.9526 to 0.1434 over forty steps, while 1.05 grows from 1.05 to 7.04](../figures/fig-w10-1-compounding-forty-steps.svg)
+*Figure 10.1 — Multiplying by a number below 1 forty times leaves almost nothing, above 1 gives a big number; only exactly 1 stays put.*
 
 ### 2. Where the multiplication hides in a loop
 
@@ -313,6 +319,9 @@ Colour in which predictions were right. The score is not the point; the **patter
 - scale 8: it climbs every time, to `7e+07`.
 
 **No row stays near `4`**, the value at the last position. There is no comfortable middle: that is the point of the week.
+
+![A four by four grid of measured gradients at position 1, from 9.15e-03 down to 4.69e-21 in the top row and up to 6.92e+07 in the bottom row, each cell labelled vanishing, level or exploding](../figures/fig-w10-2-gradient-grid-lengths-scales.svg)
+*Figure 10.2 — No setting of the grid keeps the gradient near the 4.0 of the last position: it vanishes or explodes by orders of magnitude.*
 
 ### Is it just one seed?
 

@@ -26,6 +26,9 @@
 
 ---
 
+![Level 4 map with four rows of nine tiles, one row per term; in the first row week 5 is highlighted with a pointer above it, weeks 1 to 4 are outlined solid, and every later tile has a dashed outline](../figures/fig-w05-0-where-this-fits.svg)
+*Figure 5.0 — Where this fits: week 5 of 36 sits in term 1, "train it on purpose"; the tiles still dashed are the weeks to come.*
+
 ## 🪝 Start Here
 
 At the end of Week 4 you saw a training loss of `0.000` sitting beside a validation loss several times larger. This week we make that happen on purpose, in a smaller and noisier problem: the two spirals again, but with **only 120 training points** and 360 separate validation points. The network is the Week 1 network (16,962 parameters, which is 141 for every training point). Nothing is changed except that we do not stop it. Here is one run, seed 0, with no cure at all:
@@ -47,6 +50,9 @@ At the end of Week 4 you saw a training loss of `0.000` sitting beside a validat
 best val 0.179 at epoch 59
 final val 0.906   final train 0.000
 ```
+
+![Line chart of loss against epoch: a solid training line falling to zero, a dashed validation line that bottoms out at epoch 59 then climbs to 0.906, and a bracket marking the final gap](../figures/fig-w05-1-memorising-train-val-gap.svg)
+*Figure 5.1 — Training loss reaching 0.000 does not mean the model is good: validation loss turned upward after epoch 59.*
 
 Before you read any further, write in your Bug Log:
 
@@ -593,6 +599,9 @@ jitter 0.1            0.149 (0.113 .. 0.180)      0.366 (0.197 .. 0.524)
 ```
 
 Before writing any sentence about a winner, do this with a pencil: for the **best val** column, draw each row's range `(lowest .. highest)` as a bar on a number line from 0.10 to 0.30. Which bars overlap? Now do the same for the **final val** column. Which column separates the cures more? Compare with seed 0: did seed 0 tell you the same story as the five-seed means? Write one sentence about what seed 0 alone would have let you claim, and why you should not.
+
+![Two panels of range bars, one row per cure, with a diamond at the mean of five seeds: the best-validation bars overlap heavily, the final-validation bars sit lower for every cure than for no cure](../figures/fig-w05-2-four-cures-five-seeds.svg)
+*Figure 5.2 — Over five seeds the best-val bars overlap; the final-val means are what separate the cures.*
 
 ### Part 3 — how big can the jitter be? (about 8 minutes)
 

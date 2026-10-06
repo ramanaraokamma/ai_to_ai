@@ -24,6 +24,9 @@
 
 ---
 
+![Level 4 map with four rows of nine tiles, one row per term; in the first row week 3 is highlighted with a pointer above it, weeks 1 and 2 are outlined solid, and every later tile has a dashed outline](../figures/fig-w03-0-where-this-fits.svg)
+*Figure 3.0 — Where this fits: week 3 of 36 sits in term 1, "train it on purpose"; the tiles still dashed are the weeks to come.*
+
 ## 🪝 Start Here
 
 Last week you turned the `optimizer` knob from `"sgd"` to `"momentum"`. Today there is a third word for the same knob.
@@ -140,6 +143,9 @@ list [3000.0, -4000.0]  rms 3535.5339  list / rms [0.8485, -1.1314]
 ```
 
 The RMS grows exactly as the list grows (3.5355, 353.5534, 3535.5339). **The list divided by its RMS does not change at all:** `0.8485, -1.1314`, three times. That last column is the week's whole trick: *divide by the typical size and the scale disappears.* Compare with what you got on paper for `300` and `-400`.
+
+![Three rows, each a pair of gradients, an arrow to its typical size, and an arrow to the same result 0.8485 and minus 1.1314, whatever the scale of the pair](../figures/fig-w03-1-divide-by-typical-size.svg)
+*Figure 3.1 — Dividing by the typical size cancels the scale, so a thousand-times-bigger knob looks the same.*
 
 **Standard deviation?** If you remember it from Level 3: it is a close cousin. Standard deviation measures the spread around the average. RMS measures the size around zero. We only use RMS this week.
 
@@ -333,6 +339,9 @@ Adam gradients [1.0, 1000.0]    first step moved [0.1, 0.1]
 ```
 
 **The knob with the thousand-times-bigger gradient moves the same distance.** That is Adam.
+
+![Horizontal bars on a log axis of how far two knobs move on the first step: SGD moves 0.1 and 100.0, Adam moves 0.1 and 0.1](../figures/fig-w03-2-scale-test-sgd-vs-adam.svg)
+*Figure 3.2 — Adam divides each knob's step by its own gradient size, so both knobs move the same distance.*
 
 ### Step 5 — epsilon, where it starts to matter
 

@@ -28,6 +28,9 @@
 
 ---
 
+![Thirty-six week tiles in four lanes, one per term; weeks 1 to 27 solid, week 28 tinted pink and pointed at in term 4, weeks 29 to 36 dashed](../figures/fig-w28-0-where-this-fits.svg)
+*Figure 28.0 — Week 28 of 36 sits in term 4, agents, evidence and the system card: the first week where the agent is wrapped in fences.*
+
 ## 🪝 Start Here
 
 For four terms your programs have done one thing: text in, text out. From today the assistant gets **hands**. It can look things up, do sums and save files. That is useful, and it is the reason this week is about **what stops it**.
@@ -260,6 +263,9 @@ a/../../escape.md    -> (outside the sandbox)    inside: False
 
 Say the rule out loud: **resolve first, compare second.**
 
+![Six file names, each with an arrow to where it really points and a green tick for inside or a red cross for outside the sandbox](../figures/fig-w28-1-resolve-first-compare-second.svg)
+*Figure 28.1 — A path is judged by where it really points: resolve it first, compare it second.*
+
 ---
 
 ## 6. Check the arguments before the tool runs
@@ -487,6 +493,9 @@ The big first step, `168`, is turn 1's search result arriving: two notes of text
 **The bill, by hand.** The price is 1.00 per million tokens in and 5.00 per million out. Turn 1: `247 × 1.00 + 28 × 5.00 = 247 + 140 = 387` millionths of a dollar, which is `$0.000387`, the number in the trace. For the whole run, add the five "in" numbers and the five "out" numbers and price them; you should land on the printed `spend`. You do that sum yourself on workbook page 28.3.
 
 If every step added about the same number of tokens `g`, the inputs would be `b, b + g, b + 2g, …`, and the growth part of the total would be `g × (1 + 2 + … + (n − 1))`. That grows like `n²/2`: **doubling the number of steps a little more than triples the bill for the history.** Real steps are not all the same size (`168, 33, 71, 47` here), so this is a *shape*, not a prediction. Tokens here are the kit's own count and the dollars are illustrative; the shape survives a real tokenizer, the values do not.
+
+![Five bars of input tokens per turn, 247 rising to 566, beside the measured total of 2195 against 1235 if turn 1 were re-used](../figures/fig-w28-2-input-grows-every-turn.svg)
+*Figure 28.2 — The history is sent again every turn, so a long task costs more than it looks (a scripted plan, not a model).*
 
 ---
 

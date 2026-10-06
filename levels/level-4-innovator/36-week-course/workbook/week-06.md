@@ -16,6 +16,9 @@
 
 ---
 
+![Level 4 map with four rows of nine tiles, one row per term; in the first row week 6 is highlighted with a pointer above it, weeks 1 to 5 are outlined solid, and every later tile has a dashed outline](../figures/fig-w06-0-where-this-fits.svg)
+*Figure W6.0 — Where this fits: week 6 of 36 sits in term 1, "train it on purpose"; the tiles still dashed are the weeks to come.*
+
 ## ✅ Warm-Up (5 min)
 
 Five from **last week** and earlier. No looking back.
@@ -194,6 +197,9 @@ Road stack (each block gives `1 + slope`): `1.3 × 1.2 × 1.4 × 1.1 = 2.4024`.
 
 **One honest warning.** In the residual column with slopes of 0.5, the answer is 57.665: not "near 1" but a big number. Write why in a sentence: ______________________________________________
 
+![Two stacks of four blocks with a horizontal bar beside each for the error's running product: the plain stack shrinks to a hairline at 0.0024, the residual stack grows to 2.4024](../figures/fig-w06-1-residual-road-four-blocks.svg)
+*Figure W6.1 — With a road each block's slope is 1 plus its old slope, so the error's running product stays near or above 1 instead of shrinking to 0.0024.*
+
 ### (c) Scientific notation (calculator)
 
 Write each as an ordinary number or in `e` form. `3.23e-05` means *3.23 times ten to the minus five*: five places after the point, then 3.23.
@@ -233,6 +239,9 @@ Run `probe.py` for the **top number** in each cell (first-block gradient length,
 **Five seeds.** Run `probe_seeds.py`. For the residual stack at 32 blocks, the five gradient lengths are: ________ ________ ________ ________ ________ . Do they stay near each other? ______ So is a single seed enough to quote this cell? ______
 
 **Predict, do not look it up:** "Does a residual stack at 64 blocks still train?" My guess: ______ . *We have not run that. If you run it, write it here as **your** result:* ______________________________
+
+![Left, a log-scale chart of first-block gradient length against depth, plain falling to 1e-18 and residual rising to 300; right, grouped accuracy bars where the plain bars at depths 16 and 32 sit at the 46.9 percent coin line](../figures/fig-w06-2-depth-gradient-vs-accuracy.svg)
+*Figure W6.2 — The first-block gradient at the start predicts which plain stacks never train; the road keeps every depth at about 99%.*
 
 ---
 

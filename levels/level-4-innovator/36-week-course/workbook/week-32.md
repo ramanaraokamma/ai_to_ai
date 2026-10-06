@@ -6,6 +6,12 @@
 
 ---
 
+![Thirty-six week tiles in four lanes of nine, one per term; weeks 1 to 31 solid, Week 32 (a teach week in term 4) tinted pink with a thick border and a pointer, weeks 33 to 36 dashed](../figures/fig-w32-0-where-this-fits.svg)
+
+*Figure 32.0 — Week 32 of 36: a teach week in term 4, agents, evidence and the system card.*
+
+---
+
 > **Rules for this workbook.** The new idea this week is **the calibration gap**: how far a stated probability is from how often it came true. **Brier** squares each result's gap; **ECE** compares "said" with "delivered" bucket by bucket. The pen-and-paper pages do both on **ten** results; the computer pages do them on the **forty** you typed. **Write your answer by hand first, then run.** A guess written after the run is not a guess.
 >
 > **The 40 results are invented.** Your teacher wrote the sheet you typed in the chapter to have a shape worth measuring. It is **not the output of any model.** It stands in for the log of a support-ticket classifier that says its top label and how sure it is. **Nothing you measure on it says anything about a real model.** What you take away is a *method*: the table, the threshold, the per-category check.
@@ -217,6 +223,9 @@ weighted: [1.2 0.9 0. ]
 
 Compare with your hand work. Which of the seven buckets did you get wrong, if any, and which rule did you forget (numbering from 0, or a value on an edge goes up)? ____________________
 
+![Five pairs of bars, stated confidence against actual accuracy, one pair per confidence bucket of 40 invented results, with each gap printed and the ECE 0.1788 in a callout](../figures/fig-w32-1-reliability-gaps.svg)
+*Figure 32.1 — In every bucket the system said more than it delivered; ECE is the average size of that gap, weighted by bucket.*
+
 ---
 
 ## 🧮 Page 32.3 — Thresholds, and Who Fell (40 min · pen, then computer)
@@ -327,6 +336,9 @@ The accuracy at `t = 0.9` (`0.700`) is **lower** than at `t = 0.8` (`0.722`, fro
    ____________________________________________________________________________
 
 **D. One change, and "make the model better" is not allowed.** Write one change you would make to a system like this, and say what it fixes (what the system *says*, or what it *gets right*): ____________________________________________________________________________
+
+![A line chart of coverage against accuracy of the answered for 40 invented results, with the threshold 0.8 point ringed and a panel counting answered, right, wrong and abstained](../figures/fig-w32-2-abstain-trade.svg)
+*Figure 32.2 — Raising the threshold removes wrong answers by also removing right ones; the curve cannot say where to stop.*
 
 ---
 

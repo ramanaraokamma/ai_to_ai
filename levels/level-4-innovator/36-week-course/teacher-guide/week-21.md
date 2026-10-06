@@ -2,6 +2,10 @@
 
 [⬅ Week 20](week-20.md) · [Course Home](../README.md) · [Week 22 ➡](week-22.md) · [Student Guide](../student-guide/week-21.md) · [Workbook](../workbook/week-21.md)
 
+![Growing map of all 36 weeks in four term lanes: weeks 1 to 20 are solid, week 21 is tinted pink with a pointer, weeks 22 to 36 are dashed](../figures/fig-w21-0-where-this-fits.svg)
+
+*Figure 21.0 — Week 21, Pretraining and the scaling arithmetic, is the week the course asks what a line through small runs can say about a bigger one.*
+
 ---
 
 ## 📋 At a Glance
@@ -273,6 +277,14 @@ Read it in three bites. *(1)* The fingerprint of the same line is identical; cha
 6. 10 times the knobs multiplies the loss by 0.748 ; 2 times by 0.916
    from the smallest model (14,549 knobs) to 10 times that: loss 1.726
 ```
+
+![Log-log chart: four circles near a straight line, a dashed extension to a hollow diamond at 1.2654, and a square above it at 1.4656](../figures/fig-w21-1-power-law-miss.svg)
+
+*Figure 21.1 — The line fitted the four models it was drawn through and missed the fifth by 15.8 percent; that is a measurement, not yet an explanation.*
+
+![Five horizontal bars of characters read per knob falling from 211.1 to 1.8, with the validation loss beside each](../figures/fig-w21-2-characters-per-knob.svg)
+
+*Figure 21.2 — Every run reads the same text, so the biggest model gets the least per knob; the budget has two numbers, knobs and data.*
 
 ### 7. The honest limits of today
 

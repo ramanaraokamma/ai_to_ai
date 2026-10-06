@@ -4,6 +4,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 9, Review and Assessment 1, highlighted at the end of the first eight weeks](../figures/fig-w09-0-where-this-fits.svg)
+*Figure 9.0 — Week 9 is the first review: an X-ray of Weeks 1 to 8 before Term 2 builds on them.*
+
 ## 📋 At a Glance
 
 | | |
@@ -454,6 +457,9 @@ Say, slowly, *from the page, not from memory*:
 
 Then: *"Questions?"* Answer **only** about logistics (where to write, the calculator, the toilet). Turn the paper over. Start the timer.
 
+![Two bars split into sections A to E: marks 20, 16, 12, 15, 12 and minutes 15, 15, 12, 15, 13](../figures/fig-w09-1-the-paper-marks-and-minutes.svg)
+*Figure 9.1 — The paper is 75 marks in 70 minutes, and Section E, the biggest question, needs its own 13 minutes.*
+
 ### 🎲 Their Turn — The Paper (70 minutes)
 
 Sit **to the side and a little behind**. Do something quiet and boring: read, mark something else. Do not watch the page: a student who feels watched writes the answer they think you want.
@@ -473,6 +479,9 @@ Sit **to the side and a little behind**. Do something quiet and boring: read, ma
 **If they finish early.** With more than 10 minutes left: *"Go back through, starting from the end, and check each one against your own working."* **Do not** let them leave; do not let them start the next week. If they finish with more than 20 minutes left something is wrong (blank sections? tell them to try every question, even by guessing in A).
 
 **If they are visibly upset.** Stop the clock if you must. *"This is the X-ray, not the grade. Nobody here is keeping score but you."* A calm minute costs a mark or two and is worth it. If the student cannot continue, write the time on the paper, collect it, and mark only what is there; add the missing-section marks to the grid as *"not attempted — rest of paper"* (do not score it zero in the remediation table, see "Assessing Understanding").
+
+![Four homework steps above eight week boxes, with Weeks 8, 2 and 6 ringed 1, 2, 3 as the tie-break order](../figures/fig-w09-2-redo-rule-at-most-two.svg)
+*Figure 9.2 — Marks become a plan of at most two redos; if marks tie, Week 8 goes first, then Week 2, then Week 6.*
 
 ### 🔑 Wrap & Assign (3 minutes)
 

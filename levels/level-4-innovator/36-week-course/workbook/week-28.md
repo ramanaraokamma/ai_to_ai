@@ -18,12 +18,21 @@
 
 ---
 
+![Thirty-six week tiles in four lanes, one per term; weeks 1 to 27 solid, week 28 tinted pink and pointed at in term 4, weeks 29 to 36 dashed](../figures/fig-w28-0-where-this-fits.svg)
+*Figure 28.0 — Week 28 of 36 sits in term 4, agents, evidence and the system card: the first week where the agent is wrapped in fences.*
+
 ## ✅ Warm-Up (5 min, before anything else, from memory)
 
 1. Who runs a tool: the model or your program? ____________________
 2. Name the six fences, in any order. ____________________________________________________________
 3. Which of the six read the sentence "be careful" in the prompt? ______ Which need a model to be present? ______
 4. A stop reason of `end_turn`. Does it mean the task worked? Where do you look instead? ____________________________________________________________
+
+![Six file names, each with an arrow to where it really points and a green tick for inside or a red cross for outside the sandbox](../figures/fig-w28-1-resolve-first-compare-second.svg)
+*Figure 28.1 — A path is judged by where it really points: resolve it first, compare it second.*
+
+![Five bars of input tokens per turn, 247 rising to 566, beside the measured total of 2195 against 1235 if turn 1 were re-used](../figures/fig-w28-2-input-grows-every-turn.svg)
+*Figure 28.2 — The history is sent again every turn, so a long task costs more than it looks (a scripted plan, not a model).*
 
 ---
 

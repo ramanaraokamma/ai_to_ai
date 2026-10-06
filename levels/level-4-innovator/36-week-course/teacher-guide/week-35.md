@@ -24,6 +24,9 @@
 
 ---
 
+![Thirty-six week tiles in four lanes of nine, one lane per term. Weeks 1 to 34 are solid, week 35 is tinted pink with a thick border and a pointer, week 36 is dashed.](../figures/fig-w35-0-where-this-fits.svg)
+*Figure 35.0 — Week 35 is the second capstone week: the build, measure and attack step, in the last lane of the course.*
+
 ## 🎯 Lesson Objectives
 
 By the end of the lesson (and the homework) the student can:
@@ -93,6 +96,12 @@ For the teacher's 25 cases on the 15 notes (worked example; the student's number
 - **Where the 8 failures broke** (P8): `c02` and `c10`-`c13`: the right notes were fetched and the generator **copied the wrong or only one sentence** (generation); `c15`: the tool returned `6.6666666667` and the answer never rounded it (tool/format); `c19`: the near-miss question scores `0.357` against the notes, higher than the top score of several answerable cases (`c01` `0.151`, `c03` `0.236`, `c09` `0.133`), so **no threshold can refuse it without refusing them** (the gate); `c24`: the one retrieval miss (the `300` is in note 12, which was not among the three fetched). Needle checks where a note holding the needle was fetched: `11` of `12`.
 - **Attacks (seeds 0-49):** A1 `15/50` landed -> `0/50` after the named-files guard, with the legitimate save `50/50` before and after. A2 `0/50` (already blocked by the strict sandbox) with a control at `15/50`. A3 `0` and `0` in the answer and the trace, with controls that leak. A4 the 200,000-character question refused at `$0.00`; the 40-call loop stopped at the iteration cap. A5 **landed** on two of three probes (`c19`'s question and a false premise): accepted.
 - **The regression (v2, `tau` 0.10 to 0.36):** `15/25 = 0.60`. `out_of_scope 2 -> 3` (c19 fixed) and `factual 8 -> 5` (c01, c03, c09 lost). `DIFFER`.
+
+![Paired horizontal bars for six case categories, baseline against the v1 spine, with passes out of n on each bar and totals 6, 11 and 17 of 25](../figures/fig-w35-1-floor-baseline-spine.svg)
+*Figure 35.1 — The spine must beat the baseline, which must beat the floor, and every count carries its n.*
+
+![A number line of best-note scores with two vertical cuts, tau 0.10 and tau 0.36, and four labelled case dots between them](../figures/fig-w35-2-threshold-regression.svg)
+*Figure 35.2 — One threshold change flipped four named cases: three answerable questions lost to win one.*
 
 ### 6. The honest limits of today
 

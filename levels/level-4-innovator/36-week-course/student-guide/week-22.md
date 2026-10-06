@@ -26,6 +26,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 22, After Pretraining: SFT, Reward Model, DPO, highlighted in Term 3](../figures/fig-w22-0-where-this-fits.svg)
+*Figure 22.0 — Week 22 is the fourth lesson of Term 3: what is done to a model after pretraining.*
+
 ## 🪝 Start Here
 
 Last week you fitted a straight line through four training runs and saw that pretraining is "the Week 17 loss, at a scale". Today the model is **finished pretraining**. What now?
@@ -220,6 +223,9 @@ if the mask started one place late: 11 guesses would count
 
 The last line is **DELIBERATE**, there for comparison. Why is it `12 of 41`, and not `12 of 42`? Write your reason before you read on: there is one fewer guess than there are characters, because the last character has nothing after it to be a guess *for*.
 
+![Nine tokens in a row, five prompt and four answer, with eight guesses beneath them: the first four dashed and marked minus 100, the last four counted, and the two means 3.8008 and 4.0407](../figures/fig-w22-1-sft-loss-mask.svg)
+*Figure 22.1 — SFT averages only the guesses whose right answer is in the answer, so its mean (4.0407) is over different guesses than the full mean (3.8008).*
+
 ### 3. 🔢 The new maths: KL divergence
 
 Each of the next two pieces of code rests on the same idea, so meet it now, on paper, with a calculator.
@@ -293,6 +299,9 @@ the plain average of ln(p1/q) (NOT weighted by p1): -0.1733  <- can be zero or n
 ```
 
 Did the code agree with your paper for `p1` and `p2`? If not, find which log-ratio or product you got differently before moving on.
+
+![Two bars per outcome A to D for the reference q and the policy p1, the log-ratio and the weighted product under each, adding up to KL 0.1733](../figures/fig-w22-2-kl-by-hand.svg)
+*Figure 22.2 — KL is the log-ratio of each outcome weighted by the new table's own chances; for p1 it adds to 0.1733.*
 
 ### 4. A reward model from ten judgements
 

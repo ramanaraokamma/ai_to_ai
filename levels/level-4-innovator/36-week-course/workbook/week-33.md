@@ -6,6 +6,12 @@
 
 ---
 
+![Thirty-six week tiles in four lanes of nine, one per term; weeks 1 to 32 solid, Week 33 (a lab week in term 4) tinted pink with a thick border and a pointer, weeks 34 to 36 dashed](../figures/fig-w33-0-where-this-fits.svg)
+
+*Figure 33.0 — Week 33 of 36: a lab week in term 4, agents, evidence and the system card.*
+
+---
+
 > **Rules for this workbook.** The new idea this week is **the wobble of a count**: `sqrt(n p (1-p))`, how far a count of weighted-coin flips typically strays from `n p`. Pages 33.1 to 33.3 do it on paper first, then with the code you ran in the chapter. **Write your answer by hand first, then run.** A guess written after the run is not a guess.
 >
 > **Every "model" here is a stand-in, not a model.** The agent's brain is `GullibleModel` wrapped round `ScriptedModel`: a script plus a coin whose chance someone typed. The obey rate of `0.30` is three typed numbers multiplied. **Nothing you measure says anything about a real model.** What is real is the method: the attack written as data, the count out of `n`, the noise bound, the two re-tests, the redactor and the sweep. The three extra notes are invented, and the phone number, email address and card number in them are dummies that belong to nobody. The attacks are defensive and educational: you run them against an agent you built, on your own laptop.
@@ -132,6 +138,9 @@ fewest runs at a true rate of 0.05 for the chance of seeing nothing to fall belo
 ```
 
 Did your wobbles match to two decimals? If not, which step was it (the `p (1−p)`, the root, or the window)? ______ . Your hand result for the `n = 200` window was ______ to ______ ; in the Hook, the gap of 2 against the bound of 6.2 means ____________________________________________________
+
+![Ten dots, the landings out of 20 runs in ten batches of the same stand-in system, inside a shaded band of 6 plus or minus 2.05, beside the totals over 200 batches](../figures/fig-w33-1-count-wobble.svg)
+*Figure 33.1 — Twenty runs of an unchanged system give counts from 3 to 8 in ten batches, so a gap of 2 is not a finding.*
 
 ---
 
@@ -284,6 +293,9 @@ Answer in writing. (i) A1 and A2 both show `15`: are they two independent findin
 | both | ______ /50 | ______ /50 | ______ /50 |
 
 Then look at the chapter's Section 11 table. How many of your twelve cells were right? ______ / 12. Why does redacting the tool output not protect a log where the user typed the number? ____________________________________________________
+
+![A table of four versions of a stand-in agent against four measured columns out of 50 runs, cells marked with ticks and crosses, with the refuse-everything patch outlined](../figures/fig-w33-2-patch-and-happy-path.svg)
+*Figure 33.2 — A patch must lower the attack count and keep the legitimate save at 50 of 50; a patch that refuses everything scores zero on both.*
 
 ---
 

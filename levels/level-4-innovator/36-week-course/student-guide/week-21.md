@@ -21,6 +21,10 @@
 
 > **📌 About the code blocks.** Every file has its name in its first line. Type them into **one folder, next to your `l4lib/` folder and your own Week 17 `tinygpt.py`**, and run them from that folder. Two files are **given** (`textpool.py`, `trainer.py`): you read them, you do not type them. Every output shown was printed by a real run on a CPU, with one thread, Python 3.10.10, torch 2.2.1, numpy 1.26.4. **Everything is seeded** (`torch.manual_seed` inside `train_one`; the validation windows are fixed, not drawn at random), so **your losses, knob counts and duplicate counts should match to every printed digit. Only the timings in brackets, like `(12 s)`, and the speeds in `flops.py` change from computer to computer and from minute to minute.** If you have a different Python version, the text pool is a little different and every loss moves a little; the shapes should not. There is **no scripted backend and no stand-in** anywhere this week: the five models are real, trained on your computer today. Nothing is downloaded and nothing needs the internet. Two runs take about a minute and a half each (`sweep.py` and `check.py`); **close other programs before you run them**, because the timings and the speeds are disturbed by other work.
 
+![Growing map of all 36 weeks in four term lanes: weeks 1 to 20 are solid, week 21 is tinted pink with a pointer, weeks 22 to 36 are dashed](../figures/fig-w21-0-where-this-fits.svg)
+
+*Figure 21.0 — Week 21, Pretraining and the scaling arithmetic, is the week the course asks what a line through small runs can say about a bigger one.*
+
 ---
 
 ## 🪝 Start Here
@@ -417,6 +421,14 @@ slope with four points -0.1262, with five points -0.1008
 Fill box 7 of your card. The model scored **1.4656** and the line said **1.2654**: the model is **15.8% worse than the line said**. Say that as a number with a sign, not as a verdict. Look at the table below it: at the top, each knob has **1.8 characters** to learn from; at the bottom, **211**. And look at the last line: with the fifth point included the slope is **-0.1008**. The line got flatter.
 
 **Why did the line miss?** We do not know. Here is what *can* be said, and it is deliberately short.
+
+![Log-log chart: four circles near a straight line, a dashed extension to a hollow diamond at 1.2654, and a square above it at 1.4656](../figures/fig-w21-1-power-law-miss.svg)
+
+*Figure 21.1 — The line fitted the four models it was drawn through and missed the fifth by 15.8 percent; that is a measurement, not yet an explanation.*
+
+![Five horizontal bars of characters read per knob falling from 211.1 to 1.8, with the validation loss beside each](../figures/fig-w21-2-characters-per-knob.svg)
+
+*Figure 21.2 — Every run reads the same text, so the biggest model gets the least per knob; the budget has two numbers, knobs and data.*
 
 ---
 

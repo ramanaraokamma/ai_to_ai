@@ -6,6 +6,9 @@
 
 ---
 
+![The 36 week tiles in four term lanes; weeks 1 to 16 solid, week 17 tinted pink with a thick border and a pointer above it, weeks 18 to 36 dashed](../figures/fig-w17-0-where-this-fits.svg)
+*Figure 17.0 — Week 17 of 36, the TinyGPT lab, sits in term 2 (memory, then attention); weeks 1 to 16 are done and weeks 18 to 36 are still ahead.*
+
 > **Rules for this workbook.** Every number you write in a report this year must be one **your own run printed, with a seed, in the last 24 hours.** The digits in the worked examples and in the answers came from real CPU runs (PyTorch 2.2.1, one thread, `torch.manual_seed(0)` wherever anything is random). The by-hand numbers (`-ln`, counts, windows) are plain arithmetic and will match exactly. The **knob counts, shapes and `ln 28`** will match on your machine exactly. The **losses and samples** matched on repeat runs here, but another PyTorch build can move a digit, and **step times always differ**.
 >
 > **Predict first, then run.** On pages 17.1, 17.3, 17.4, 17.5 and 17.7 you write your guess *before* you run anything. A wrong guess is useful. A guess written after the run is not a guess.
@@ -128,6 +131,9 @@ questions in a batch of 8 windows: 48
 Compare with your table. Then write: why is every `y` row just `x` moved one place? ________________________________
 
 **What did the four random starts show?** One of them is `9`. What is `y` for it, and what would have happened at `s = 10`? ________________________________________________
+
+![Two rows of character cells, x above and y below, where y is x moved one place left; below them 64 questions times 32 windows equals 2,048 questions.](../figures/fig-w17-1-one-window-many-questions.svg)
+*Figure 17.1 — Moving the window one place left gives a next-character answer at every place, so one step asks 2,048 questions.*
 
 ---
 
@@ -427,6 +433,9 @@ Step 1499: ________________________________________________________________
 **Optional: a shorter run (predict first).** Change `STEPS` to `600` in a copy of `train.py` (not the original) and predict whether the gap will be **bigger / smaller / about the same**: ______ . Run it and write the gap you measured: ______ . Do not borrow anyone's number. Page 17.6 shows a run of someone else's to read.
 
 **Delete any copy you made** when you are done, so you keep one `train.py`.
+
+![Left, a chart of training loss (solid) and validation loss (dashed) against step, with a dashed line at ln 28 and a bracket marking the final gap. Right, two bars: the first-loss distance for calm_head=False (long, FAIL) and calm_head=True (short, PASS).](../figures/fig-w17-2-loss-gap-and-first-check.svg)
+*Figure 17.2 — Training loss keeps falling while validation flattens, and a calm output layer starts within 0.05 of ln 28.*
 
 ---
 

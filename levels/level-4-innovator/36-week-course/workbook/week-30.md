@@ -18,12 +18,21 @@
 
 ---
 
+![Thirty-six week tiles in four lanes, one per term; weeks 1 to 29 solid, week 30 tinted pink and pointed at in term 4, weeks 31 to 36 dashed](../figures/fig-w30-0-where-this-fits.svg)
+*Figure 30.0 — Week 30 of 36, term 4: how we decide whether any of it worked, before the system card in the last weeks.*
+
 ## ✅ Warm-Up (5 min, before anything else, from memory)
 
 1. Why is the eval set written and fingerprinted *before* any system is built? What does the fingerprint do, and what can it not do? ____________________________________________________________
 2. The trained classifier scored 21 of 30 and the free rules scored 25 of 30. Is something wrong with the code? What does this tell you about the order of work? ____________________________________________________________
 3. Two raters agree 90 percent of the time. Name the one other thing you must find out before you call that good. ____________________________________________________________
 4. What is a "stand-in, not a model"? Why can't the flip rate of `mystery.py` tell you about a real judge? ____________________________________________________________
+
+![Paired bars per category for keyword rules and a trained classifier, with REGRESSION marked on greeting, billing, out_of_scope and overall](../figures/fig-w30-1-average-hides-regressions.svg)
+*Figure 30.1 — The average fell 0.133, but one category fell 0.800: read every category before you ship.*
+
+![A two by two grid of pass and fail counts 7, 7, 0 and 6 beside three numbered arithmetic steps ending at kappa 0.375](../figures/fig-w30-2-kappa-beyond-luck.svg)
+*Figure 30.2 — Kappa is the agreement left over once luck is taken out: 0.65 raw becomes 0.375.*
 
 ---
 

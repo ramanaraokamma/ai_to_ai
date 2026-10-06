@@ -23,6 +23,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 7, the Symptom-Check-Action Playbook project, highlighted in Term 1](../figures/fig-w07-0-where-this-fits.svg)
+*Figure 7.0 — Week 7 is the project that closes the stretch on training on purpose: the sweep, the table and the playbook.*
+
 ## 🪝 Start Here
 
 For six weeks you turned six knobs, one at a time: learning rate, batch size, dropout, weight decay, normalisation, schedule. Each time you ran **one** run, looked at **one** number and drew a conclusion.
@@ -149,6 +152,9 @@ That is the lesson of the week. When you compare two runs you are comparing thei
 
 The size of the wobble is the **spread**: run the same experiment several times, and ask how far the results scatter around their mean. You met this in Level 3. This week the spread is computed with `std` and `ddof=0` (divide by 3), exactly as last year.
 
+![Three bars of final validation loss for the identical baseline run: 0.0367, 0.0499 and 0.0301 for seeds 0, 1 and 2](../figures/fig-w07-1-same-code-three-seeds.svg)
+*Figure 7.1 — The seed alone moves the result: same code and data, and 0.0499 is about 66% bigger than 0.0301.*
+
 ### 2. The rule of the experiment
 
 Four rules go on the wall:
@@ -176,6 +182,9 @@ verdict = "inside noise"        if |gap| < 2 x spread
 For each row, work out the gap, then twice the larger spread, then decide. (Workbook page 7.3 has room, and you will check yourself with code afterwards.)
 
 > **What this rule does and does not say.** "Inside noise" does **not** mean "equal to the baseline". It means *with three seeds we could not show a difference*. Three seeds give a very rough spread. This is a screening habit that stops us fooling ourselves; the grown-up version of it needs ideas outside this course.
+
+![Two rows each with a gap bar and a twice-the-spread bar: dropout 0.3 is inside noise, learning rate 1e-4 is WORSE](../figures/fig-w07-2-gap-versus-twice-spread.svg)
+*Figure 7.2 — A difference counts only when the gap is longer than twice the larger spread.*
 
 ### 3. The symptom, the check, the action
 

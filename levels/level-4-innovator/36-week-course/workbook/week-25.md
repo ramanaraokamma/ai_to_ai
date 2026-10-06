@@ -16,6 +16,10 @@
 >
 > **Calculator.** A square-root key (a phone is fine, airplane mode on). Three decimals; round only the answer.
 
+![Level 4 map: Week 25 highlighted among 36 week tiles in four term lanes](../figures/fig-w25-0-where-this-fits.svg)
+*Figure W25.0 — Week 25 sits in the third lane, the term on how models are made and asked; it is the first of the retrieval weeks.*
+
+
 ---
 
 ## ✅ Warm-Up (5 min, before anything else)
@@ -64,6 +68,10 @@ print(f"cos(R,S) = {cosine(R, S):.3f}   cos(P,S) = {cosine(P, S):.3f}")
 Copy what printed: ______________________________________________
 
 Did every one of your hand answers match? Yes / No. Where did you lose a digit? ______________________________________________
+
+![Three three-number vectors A, B and C with their shapes, the dot product worked out, and a bar for each pair's cosine: 1.000, 0.283 and 0.283](../figures/fig-w25-1-cosine-ignores-length.svg)
+*Figure W25.1 — A cosine compares direction and ignores length. B is 2 × A, so cos(A, B) = 1.000; cos(A, C) = 4 ÷ (3.162 × 4.472) = 0.283.*
+
 
 ---
 
@@ -222,6 +230,10 @@ Range of the contrastive recall@1 over the five seeds: ________ to ________
 3. What the table does **not** show (say how many notes and questions, how many seeds, or which model was never run): ______________________________________________
 
 Rule: a sentence that says one embedder "wins" earns nothing unless it quotes the seed range.
+
+![Paired bars of recall at 1 and at 3 for chance, word table, one-step control, trained embedder and LSA, with the seed range marked](../figures/fig-w25-2-recall-beside-its-control.svg)
+*Figure W25.2 — A recall number needs its control. One training step already reaches recall@3 0.73; 150 steps reach 0.89, so training added 0.63 − 0.48 = 0.15 at recall@1.*
+
 
 ---
 

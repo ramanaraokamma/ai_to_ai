@@ -4,6 +4,9 @@
 
 ---
 
+![Level 4 map with four rows of nine tiles, one row per term; in the first row week 5 is highlighted with a pointer above it, weeks 1 to 4 are outlined solid, and every later tile has a dashed outline](../figures/fig-w05-0-where-this-fits.svg)
+*Figure 5.0 — Where this fits: week 5 of 36 sits in term 1, "train it on purpose"; the tiles still dashed are the weeks to come.*
+
 ## 📋 At a Glance
 
 | | |
@@ -763,6 +766,9 @@ gap (val - train) at the end:        0.906
 
 **Do not** explain any cure yet. Write the name *overfitting* and its definition on the board: *training loss low, validation loss high and rising*.
 
+![Line chart of loss against epoch: a solid training line falling to zero, a dashed validation line that bottoms out at epoch 59 then climbs to 0.906, and a bracket marking the final gap](../figures/fig-w05-1-memorising-train-val-gap.svg)
+*Figure 5.1 — Training loss reaching 0.000 does not mean the model is good: validation loss turned upward after epoch 59.*
+
 ---
 
 ### 🧠 Concept & Maths — Four Answers to One Question (15 minutes)
@@ -979,6 +985,9 @@ What I would ship is ___ because ___.  One thing I did not test: ___.
 ```
 
 **If you have 2–6 students:** pairs. One runs seeds `range(0, 5)` and the other `range(5, 10)` of the same rows. They compare: *same ordering? different numbers?* That disagreement is itself the lesson about few seeds.
+
+![Two panels of range bars, one row per cure, with a diamond at the mean of five seeds: the best-validation bars overlap heavily, the final-validation bars sit lower for every cure than for no cure](../figures/fig-w05-2-four-cures-five-seeds.svg)
+*Figure 5.2 — Over five seeds the best-val bars overlap; the final-val means are what separate the cures.*
 
 ---
 

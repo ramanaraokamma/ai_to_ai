@@ -4,6 +4,12 @@
 
 ---
 
+![Thirty-six week tiles in four lanes of nine, one per term; weeks 1 to 30 solid, Week 31 (a lab week in term 4) tinted pink with a thick border and a pointer, weeks 32 to 36 dashed](../figures/fig-w31-0-where-this-fits.svg)
+
+*Figure 31.0 — Week 31 of 36: a lab week in term 4, agents, evidence and the system card.*
+
+---
+
 ## 📋 At a Glance
 
 | | |
@@ -90,6 +96,12 @@ The student has Week 30's frozen 30-ticket eval, a 64-ticket training set, a rul
 | Week 30 rules baseline | 0 | `25/30 = 0.833` | the model you must beat |
 
 The two tables you will put on the board: **base → LoRA** (P11: technical `0.286 → 0.571`, billing `0.400 → 0.200` flagged, overall `+0.033`) and **rules → LoRA** (K0: greeting `-0.167`, billing `-0.800`, out_of_scope `-0.600` flagged, overall `-0.200`). The six-seed table (P12): base `18 15 18 16 17 17` (mean `16.8`), full `19 18 19 19 19 20` (mean `19.0`), LoRA `19 19 18 19 18 18` (mean `18.5`); LoRA has a flagged category in five of six seeds.
+
+![A 4 by 4 grid of products built from a column of four numbers and a row of four, beside two bars: 4,096 numbers for a full 64 by 64 projection against 512 for the rank-4 patch](../figures/fig-w31-1-low-rank-patch.svg)
+*Figure 31.1 — A grid built from one column and one row stores 8 numbers for 16 cells, so a rank-4 patch is 0.1250 of the projection.*
+
+![Paired before and after bars for five categories and the overall score, with the billing row outlined as a regression and the weighted gains and losses summed underneath](../figures/fig-w31-2-regression-row.svg)
+*Figure 31.2 — The overall score rose by 0.0333 while billing fell by one ticket: read the rows before you read the average.*
 
 ### 6. The honest limits of today
 

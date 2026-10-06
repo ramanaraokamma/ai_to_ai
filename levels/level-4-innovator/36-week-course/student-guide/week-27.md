@@ -24,6 +24,10 @@
 >
 > **⚠️ Two things on the paper are stand-ins, not models.** Week 23's scripted client (`FakeClient`) and Week 26's sentence-copying writer are rules you can read. If the paper mentions them, it says "stand-in, not a model", and nothing scored against them says anything about a real model.
 
+![Level 4 map: Week 27 highlighted among 36 week tiles in four term lanes](../figures/fig-w27-0-where-this-fits.svg)
+*Figure 27.0 — Week 27 is the assessment tile that closes the third lane: an X-ray of Weeks 19 to 26 before the agents of Term 4.*
+
+
 ---
 
 ## 🪝 Start Here
@@ -63,6 +67,10 @@ The paper is **75 marks** and you get **70 minutes**.
 **The paper is spread unevenly over the eight weeks.** Some weeks have only a few marks on them. If a thin week comes out low, that is one or two questions, so treat it as a question to ask yourself, not as a verdict.
 
 **Your teacher will say only five things during the paper** (the time-checks), and will answer questions with one of three sentences: *"Read it again."* / *"Write what you do know."* / *"I can't help with that one, move on."* That is not unkindness; it is what keeps the X-ray clean.
+
+![One bar split into five blocks A to E sized by marks, with minutes beneath each and Section E highlighted](../figures/fig-w27-1-the-paper-in-marks.svg)
+*Figure 27.1 — The paper is 75 marks in five sections (20 + 16 + 12 + 15 + 12), and the biggest single question is last.*
+
 
 ---
 
@@ -237,6 +245,10 @@ Each redo is **20 minutes**, followed by your teacher asking you one question ou
 | 24 | Reread the Week 24 chapter: examples in the prompt, and the logit mask | *A mask forces valid JSON. What can still be wrong?* | Week 28's argument check makes the same promise. |
 | 25 | Workbook **page 25.1** (cosine cards) and **page 25.4** (recall and the control) | *Why does a long vector beat a close one on a plain dot product, and what fixes it?* | Week 29's mini RAG uses cosine. |
 | 26 | Workbook **page 26.1** (Citation Court), **page 26.3** (your own questions) and **page 26.4** (chunking) | *Recall is 1.00. What is your first question? Then: a valid citation proves what?* | **Week 29 is Week 26's "retrieved text is data" turned into an attack.** |
+
+![Eight boxes for Weeks 19 to 26 joined by lines to four boxes for Weeks 28, 29, 30 and later; Weeks 22, 23 and 26 are drawn heavier and tagged redo first](../figures/fig-w27-2-term-3-feeds-term-4.svg)
+*Figure 27.2 — Weeks 22, 23 and 26 are the ones Term 4 leans on hardest, so they are the first redos.*
+
 
 ### The computer job: three new cuts
 

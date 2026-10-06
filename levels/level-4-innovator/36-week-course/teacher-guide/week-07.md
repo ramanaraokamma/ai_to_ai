@@ -4,6 +4,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 7, the Symptom-Check-Action Playbook project, highlighted in Term 1](../figures/fig-w07-0-where-this-fits.svg)
+*Figure 7.0 — Week 7 is the project that closes the stretch on training on purpose: the sweep, the table and the playbook.*
+
 ## 📋 At a Glance
 
 | | |
@@ -514,6 +517,9 @@ norm = batch             0.423   0.187   0.065   0.117     0.019    1.111   3e-0
 
 *If the student says the numbers are all tiny so it doesn't matter:* point out that the *effect* of most knobs is also tiny. A difference of 0.01 against a wobble of 0.01 is nothing, and a difference of 0.01 against a wobble of 0.001 is a finding. It is only the ratio that matters.
 
+![Three bars of final validation loss for the identical baseline run: 0.0367, 0.0499 and 0.0301 for seeds 0, 1 and 2](../figures/fig-w07-1-same-code-three-seeds.svg)
+*Figure 7.1 — The seed alone moves the result: same code and data, and 0.0499 is about 66% bigger than 0.0301.*
+
 ### 🧠 Concept — Symptom, Check, Action (12 minutes)
 
 **(4 min) The playbook idea.** Draw on the whiteboard:
@@ -545,6 +551,9 @@ every combination of all six: 3840 configs x 3 seeds = 11520 runs
 ```
 
 Say: *"If we crossed everything with everything, that's 11,520 runs, about 77 minutes on this laptop — I worked that out from the 30 seconds our 75 runs take, I did not run it. One at a time is 72. What do we give up by doing one at a time?"* The answer you want: **we can't see two knobs interacting** (for example, a big learning rate might behave differently with a big batch). *"That is a real limitation. It goes at the top of the playbook."*
+
+![Two rows each with a gap bar and a twice-the-spread bar: dropout 0.3 is inside noise, learning rate 1e-4 is WORSE](../figures/fig-w07-2-gap-versus-twice-spread.svg)
+*Figure 7.2 — A difference counts only when the gap is longer than twice the larger spread.*
 
 ### 💻 Live-Code Together — `knobs.py` and `sweep.py` (15 minutes)
 

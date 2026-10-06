@@ -4,6 +4,12 @@
 
 ---
 
+![Thirty-six week tiles in four lanes of nine, one per term; weeks 1 to 31 solid, Week 32 (a teach week in term 4) tinted pink with a thick border and a pointer, weeks 33 to 36 dashed](../figures/fig-w32-0-where-this-fits.svg)
+
+*Figure 32.0 — Week 32 of 36: a teach week in term 4, agents, evidence and the system card.*
+
+---
+
 ## 📋 At a Glance
 
 | | |
@@ -93,6 +99,12 @@ Week 31 ended with a table in which the average rose while one row fell. Today t
 | Abstain at `t = 0.9` | `10` answered, `0.700` | **lower** than at `0.8`: the curve is not a smooth climb |
 | Billing at `t = 0.8` | `0.500 → 0.333` (`4/8` → `2/6`) | the category that fell; also falls at `0.7` and `0.9` |
 | Confidence capped at `0.85` (K2) | ECE `0.1788 → 0.1560`, Brier `0.2499 → 0.2428` | same accuracy, no retraining |
+
+![Five pairs of bars, stated confidence against actual accuracy, one pair per confidence bucket of 40 invented results, with each gap printed and the ECE 0.1788 in a callout](../figures/fig-w32-1-reliability-gaps.svg)
+*Figure 32.1 — In every bucket the system said more than it delivered; ECE is the average size of that gap, weighted by bucket.*
+
+![A line chart of coverage against accuracy of the answered for 40 invented results, with the threshold 0.8 point ringed and a panel counting answered, right, wrong and abstained](../figures/fig-w32-2-abstain-trade.svg)
+*Figure 32.2 — Raising the threshold removes wrong answers by also removing right ones; the curve cannot say where to stop.*
 
 ### 6. The honest limits of today
 

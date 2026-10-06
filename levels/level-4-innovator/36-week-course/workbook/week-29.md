@@ -18,12 +18,21 @@
 
 ---
 
+![Thirty-six week tiles in four lanes, one per term; weeks 1 to 28 solid, week 29 tinted pink and pointed at in term 4, weeks 30 to 36 dashed](../figures/fig-w29-0-where-this-fits.svg)
+*Figure 29.0 — Week 29 of 36, second week of term 4: the agent is attacked and budgeted, and the fences are measured.*
+
 ## ✅ Warm-Up (5 min, before anything else, from memory)
 
 1. A note that arrives inside a search result: is it data or an order? Who wrote it? ____________________
 2. Name the three layers of defence, in order, and say which one does **not** depend on the model being persuaded. ______________________________________________
 3. A stop reason of `end_turn`. Does it tell you whether the attack worked? What do you check instead? ____________________________________________________________
 4. What is a "stand-in, not a model"? Why can't its obey rate tell you about a real model? ____________________________________________________________
+
+![Four horizontal bars of runs that obeyed a planted order, 100, 69, 58 and 32 of 100, each with a tick for zero files landed](../figures/fig-w29-1-three-layers-rates-vs-fence.svg)
+*Figure 29.1 — Prompt-level layers lower the rate of obeying; only the sandbox fence keeps the damage at zero (rates of a stand-in).*
+
+![Spend against tool steps: measured points bending upward to 0.023528 at 30 steps, a dashed straight line ending at 0.015836, and three side panels](../figures/fig-w29-2-bill-bends-upward.svg)
+*Figure 29.2 — The bill bends upward because the history is paid for again; a straight line through cheap runs is about a third too low.*
 
 ---
 

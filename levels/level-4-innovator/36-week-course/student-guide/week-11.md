@@ -24,6 +24,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 11, Gates, highlighted in Term 2](../figures/fig-w11-0-where-this-fits.svg)
+*Figure 11.0 — Week 11 gives the loop gates, so memory can be added to instead of rewritten.*
+
 ## 🪝 Start Here
 
 Last week: forty people in a line, each passing on 95% of what they heard. You found what arrives: `0.95 ** 40` is about `0.13`.
@@ -101,6 +104,9 @@ Four small pieces, each made from the same input:
 Now the slope. In Week 6, `x + f(x)` had slope `1 + f'(x)`: the path through the `+` had slope exactly 1 before anything else was added. Here, the old memory `c_old` appears in only one place: multiplied by `f`. So the slope of the new memory with respect to the old memory is **`f`**.
 
 > **Say it in one line:** *the slope back one step along the memory track is the forget dial, so a dial near 1 is Week 6's highway written as a loop, and a dial near one half is Week 10's disease all over again.*
+
+![Two bar panels over four steps: the RNN note falls to 11.8 percent of step 1, the LSTM memory only to 86.4 percent](../figures/fig-w11-1-rewrite-versus-add.svg)
+*Figure 11.1 — A memory that is scaled and added to keeps its past; a note that is rewritten at every step loses it.*
 
 ### 3. One LSTM unit, by hand
 
@@ -289,6 +295,9 @@ forget bias | average f at step 1 | memory-track gradient at positions 40, 20, 1
 ```
 
 Same cell, same weights, **one number different** in the bias. At forget bias 0 the dial is about `0.51` and position 1 keeps `1.9e-09` of position 40: Week 10's disease. At 2 the dial is `0.879` and position 1 keeps `0.22`. At 4 the dial is `0.981` and the ratio is `1.08`. (A ratio above 1 means that for this one random input, the first step mattered slightly more than the last. We did not look into why; it is not a bug.) Note that `make_lstm_cell` with bias `0.0` is not identical to block 4's default cell, whose biases are small random numbers.
+
+![Four panels for forget bias 0, 1, 2 and 4 showing the dial rising from 0.510 to 0.981 and the first-to-last gradient ratio rising from 1.93e-09 to 1.08](../figures/fig-w11-2-forget-bias-dial.svg)
+*Figure 11.2 — One number in the bias, set before training, decides whether the first step can still reach the last.*
 
 ---
 

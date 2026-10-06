@@ -4,6 +4,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 23, Prompting as Engineering: The Harness, highlighted in Term 3](../figures/fig-w23-0-where-this-fits.svg)
+*Figure 23.0 — Week 23 is the fifth lesson of Term 3: asking a model is tested like code.*
+
 ## 📋 At a Glance
 
 | | |
@@ -122,6 +125,12 @@ These are all printed by the files in the Prep Checklist. Read them before class
 - **Mistakes.** See the Clinic: Mistake 7 ends with `24 calls, $0.0059 spent` against a `$0.0040` limit; Mistake 9 is `59.4%` against `31.2%` for the same prompt.
 - **The guard on the whole run.** With a limit of `$0.004` the run stops at **call 19** having spent `$0.0042`; the stand-in's own meter agrees to the cent.
 - **The pre-flight (`preflight.py`).** A pessimistic price (100 output tokens per call) for all 24 calls: `$0.0161`, made with zero calls; the actual bill was `$0.0059`.
+
+![Six boxes from frozen set to report joined by arrows, the call box dashed and marked stand-in, with a loop back to the versioned prompt and a spending guard bar below](../figures/fig-w23-1-prompt-harness.svg)
+*Figure 23.1 — A prompt loop is a test suite: freeze the cases, change one thing, call, parse, score, report, all inside a spending guard.*
+
+![Horizontal bars for the constant-answer floor 43.8 percent and prompts v1, v2, v3 at 50.0, 68.8 and 93.8 percent, with six-seed marks underneath](../figures/fig-w23-2-prompts-vs-floor.svg)
+*Figure 23.2 — A prompt must clear the floor, and one seed is one draw: v1 swings from 31.2 to 59.4 (all scores are of the stand-in).*
 
 ### 7. The honest limits of today
 

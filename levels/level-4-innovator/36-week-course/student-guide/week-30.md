@@ -27,6 +27,9 @@
 
 ---
 
+![Thirty-six week tiles in four lanes, one per term; weeks 1 to 29 solid, week 30 tinted pink and pointed at in term 4, weeks 31 to 36 dashed](../figures/fig-w30-0-where-this-fits.svg)
+*Figure 30.0 — Week 30 of 36, term 4: how we decide whether any of it worked, before the system card in the last weeks.*
+
 ## 🪝 Start Here
 
 Somebody tells you: **"Our new bot scores 90 percent."** Before any code, write three questions on a card. For each one, say what you would need to be told.
@@ -530,6 +533,9 @@ contribution of each category to the overall delta:
 
 Ask the table two questions. Where does the gap come from? (Look at `out_of_scope`.) Why is the rules' `out_of_scope` perfect? (Think about what the rules say when nothing matches.) Then read the last block: three categories fell by more than ten points, and the average fell by four tickets. A single average would have hidden which categories broke.
 
+![Paired bars per category for keyword rules and a trained classifier, with REGRESSION marked on greeting, billing, out_of_scope and overall](../figures/fig-w30-1-average-hides-regressions.svg)
+*Figure 30.1 — The average fell 0.133, but one category fell 0.800: read every category before you ship.*
+
 ---
 
 ## 4. Overlap, by hand
@@ -753,6 +759,9 @@ our lenient J against strict H:  raw agreement 0.65   kappa 0.375
 ```
 
 Ninety percent agreement, kappa zero. Ask the direction question of the lenient judge, too: which off-diagonal cell is empty?
+
+![A two by two grid of pass and fail counts 7, 7, 0 and 6 beside three numbered arithmetic steps ending at kappa 0.375](../figures/fig-w30-2-kappa-beyond-luck.svg)
+*Figure 30.2 — Kappa is the agreement left over once luck is taken out: 0.65 raw becomes 0.375.*
 
 ---
 

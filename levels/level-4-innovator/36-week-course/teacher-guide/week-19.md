@@ -2,6 +2,10 @@
 
 [⬅ Week 18](week-18.md) · [Course Home](../README.md) · [Week 20 ➡](week-20.md) · [Student Guide](../student-guide/week-19.md) · [Workbook](../workbook/week-19.md)
 
+![Growing map of all 36 weeks in four term lanes: weeks 1 to 18 are solid, week 19 is tinted pink with a pointer, weeks 20 to 36 are dashed](../figures/fig-w19-0-where-this-fits.svg)
+
+*Figure 19.0 — Week 19, Open the GPT, sits in term 2 on the road from memory to attention. Everything before it is built; everything after it is still ahead.*
+
 ---
 
 ## 📋 At a Glance
@@ -124,6 +128,14 @@ Three things to read, in this order. **(i) No mask on copy and reverse is 1.00 b
 | lookup | **L0 H0** looks one place back from each value place (1->0, 3->2, 5->4, 7->6, weight 0.97-0.98): each value reads the key just before it. **L1 H0 and L1 H1** at the asked-for key place look at the **right value** in **100%** of 500 sequences. | L0 H0 off: **0.48** · L0 H1 off: 1.00 · both layer-0 off: 0.35 · L1 H0 off: **0.80** · L1 H1 off: 1.00 · both layer-1 off: **0.19** |
 
 The copy and reverse heads are **redundant**: look at the switch-off column. The lookup heads are **not**: L0 H0 off drops accuracy from 1.00 to 0.48. **Same picture (a bright stripe), different importance**; that is the entire argument for testing a name.
+
+![Five horizontal bars of validation loss, one per TinyGPT with a part deleted, with a dashed line at the full model's 1.673 and crosses on the two that fail](../figures/fig-w19-1-ablation-bars.svg)
+
+*Figure 19.1 — Deleting a part can make the score look better; a very low number needs a leak check before it is believed.*
+
+![A grid of share of answers right: three tasks by five models plus a chance column, with ticks on 1.00, crosses on 0.37 and 0.33, and ringed numbers 1 and 2](../figures/fig-w19-2-task-table.svg)
+
+*Figure 19.2 — A perfect score can be a leak; the lookup column is where deleting a part shows up, and its cause is still an open question.*
 
 ### 7. The honest limits of today
 

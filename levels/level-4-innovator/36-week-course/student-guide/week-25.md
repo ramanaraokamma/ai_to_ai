@@ -25,6 +25,10 @@
 
 > **📌 About the code blocks.** Twelve small files, each a whole file with its name in the first line. **Run them in order, in one Python session, from the folder that contains `l4lib/`** (`python3 -i`, or `exec(open("name.py").read())` one after another), because later files use names made by earlier ones. If you see `ModuleNotFoundError: No module named 'l4lib'`, you are in the wrong folder. `week25.py` imports `l4lib`'s `rag` module: **import it, never copy it.** Every output shown was printed by a real run on a CPU, with the seeds in the files, so your numbers should match (a different scikit-learn or PyTorch build can move the last digit of a score, and a recall figure by one question, `0.07`; `seconds` lines vary). `np.save` writes one small file, `notebook_index.npy`, into your folder. **Nothing needs the internet. There is no language model and no stand-in anywhere this week.** The two "dense" embedders are real but tiny: one is an SVD of a table (no training at all), one is a small PyTorch model trained for 150 steps on **15 notes**. They show a *mechanism*; **they say nothing about how a pretrained sentence encoder behaves**, and none is run here.
 
+![Level 4 map: Week 25 highlighted among 36 week tiles in four term lanes](../figures/fig-w25-0-where-this-fits.svg)
+*Figure 25.0 — Week 25 sits in the third lane, the term on how models are made and asked; it is the first of the retrieval weeks.*
+
+
 ---
 
 ## 🪝 Start Here
@@ -172,6 +176,10 @@ A cosine of `1.000` means the arrows point exactly the same way. `0` would be a 
 The last three lines use `normalize` (from `sklearn.preprocessing`, Level 3 Week 32): every row divided by its own length. Then `U @ U.T` is every pair's cosine in one matrix multiply. **That is the trick the whole index uses.**
 
 > **The trap of the raw dot product.** If you skip the division and only multiply and add, a long arrow can beat a short one that points better. You will see it with your own pen on workbook page 25.2.
+
+![Three three-number vectors A, B and C with their shapes, the dot product worked out, and a bar for each pair's cosine: 1.000, 0.283 and 0.283](../figures/fig-w25-1-cosine-ignores-length.svg)
+*Figure 25.1 — A cosine compares direction and ignores length. B is 2 × A, so cos(A, B) = 1.000; cos(A, C) = 4 ÷ (3.162 × 4.472) = 0.283.*
+
 
 ---
 
@@ -488,6 +496,10 @@ pure chance: recall@1 0.07  recall@3 0.20
 ```
 
 After one step the embedder already reaches recall@3 `0.73`, which equals the word table. Training adds about `0.15` on both recall@1 and recall@3 over almost-random numbers for the same pieces. **That is the sentence to keep: the trained tier adds about 0.15 over almost-random numbers for the same letter pieces.**
+
+![Paired bars of recall at 1 and at 3 for chance, word table, one-step control, trained embedder and LSA, with the seed range marked](../figures/fig-w25-2-recall-beside-its-control.svg)
+*Figure 25.2 — A recall number needs its control. One training step already reaches recall@3 0.73; 150 steps reach 0.89, so training added 0.63 − 0.48 = 0.15 at recall@1.*
+
 
 ---
 

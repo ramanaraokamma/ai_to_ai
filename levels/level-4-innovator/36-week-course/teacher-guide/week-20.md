@@ -2,6 +2,10 @@
 
 [⬅ Week 19](week-19.md) · [Course Home](../README.md) · [Week 21 ➡](week-21.md) · [Student Guide](../student-guide/week-20.md) · [Workbook](../workbook/week-20.md)
 
+![Growing map of all 36 weeks in four term lanes: weeks 1 to 19 are solid, week 20 is tinted pink with a pointer, weeks 21 to 36 are dashed](../figures/fig-w20-0-where-this-fits.svg)
+
+*Figure 20.0 — Week 20, Tokenizers, is where the course stops feeding the model letters and starts cutting text into counted pieces.*
+
 ---
 
 ## 📋 At a Glance
@@ -134,6 +138,14 @@ The two lines are **identical at every point** (so the chart shows one line unde
 **Domain** (`key.py`): a tokenizer trained on the stories gets 2.16 bytes per token on the stories and 1.27 on 10,000 characters of `textwrap.py`; one trained on `heapq.py` gets 1.77 on `textwrap.py` and 1.47 on the stories.
 
 **Against the ledger (direction only).** The reference run of Module 4 used a different, 1,117-character corpus and printed: 0 merges 1.00, 50 merges 1.55, 100 merges 1.93, 138 merges **and no more** 2.22. Today's corpus is six times larger and the curve has the same three features: it starts at 1.00, climbs about linearly in merges at first, and **stops by itself** (at 400 merges rather than 138). The sizes are different because the text is different; nothing in the ledger was re-run today.
+
+![Three panels: pair counts for the tiny text low low lower widest, the two merges that glue l o and then lo w, and the word lowest written as three tokens](../figures/fig-w20-1-bpe-by-hand.svg)
+
+*Figure 20.1 — Byte-pair encoding is count, glue, repeat; the ordered list of merges is the whole tokenizer, and it can write words it never saw.*
+
+![A rising line of bytes per token from 1.00 at 0 merges to 2.30 at 400 merges, then flat, with a box of numbers at 300 merges](../figures/fig-w20-2-bytes-per-token.svg)
+
+*Figure 20.2 — More merges shorten the text until no pair occurs twice; asking for 500 or 1,000 merges still learns only 400.*
 
 ### 7. The honest limits of today
 

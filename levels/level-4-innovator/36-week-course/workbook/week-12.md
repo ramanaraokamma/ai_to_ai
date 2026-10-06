@@ -20,6 +20,9 @@
 
 ---
 
+![Map of the 36 weeks with Week 12, Teach a Network to Invent Names, highlighted in Term 2](../figures/fig-w12-0-where-this-fits.svg)
+*Figure W12.0 — Week 12 trains a gated loop on real names, the first sequence model that writes.*
+
 ## ✅ Warm-Up (5 min, before anything else)
 
 **W1.** Last week an LSTM cell kept a pair of things. Name them: ____________ and ____________ .
@@ -108,6 +111,9 @@ picks [16, 19, 2, 1] | inputs while generating [0, 16, 19, 2]
 Marks: ______ / 7 (each name 2: targets right, inputs right; part c, 1).
 
 ---
+
+![Two rows of eight cells for the name anika: the input row starts with START then a n i k a EOS PAD, the target row is a n i k a EOS PAD PAD, with arrows from each target to the next input](../figures/fig-w12-1-shift-right-names.svg)
+*Figure W12.1 — Shift right: every step is asked for the letter that comes next, and each answer becomes the following question.*
 
 ## 🧱 Page 12.2 — How Much of a Batch Is Padding? (block 3 · 10 min)
 
@@ -214,6 +220,9 @@ blanks counted (4 real + 4 blank): 0.3927
 Accept hand answers within `0.001`. Marks: ______ / 5 (four surprises 2, average 1, blanks-counted 1, sentence 1).
 
 ---
+
+![Bars of surprise for the eight positions of uma, four real and four tiny padding ones, and two bars of average loss, 1.1513 with padding ignored and 0.5857 with it counted](../figures/fig-w12-2-padding-flatters-loss.svg)
+*Figure W12.2 — Counting the padding halves the loss without the model learning anything; ignore it.*
 
 ## 📉 Page 12.4 — Train Against Validation (block 4 · 20 min)
 

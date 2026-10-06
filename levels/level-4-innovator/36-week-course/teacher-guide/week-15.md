@@ -22,6 +22,9 @@
 
 > **⚠️ Watch out:** two things go wrong this week. **First, the student takes "divide by `sqrt(d)`" as a magic trick** and will not be able to say what it is *for*. The whole point of the first half-hour is the printed table: spread **2, 4, 8** before, **1, 1, 1** after, and the softmax that stays soft. If they cannot say "the dot product gets wider as the list gets longer, and the divide gives it back a width of 1", the divide has not landed. **Second, "the mask hides the future" gets heard as "the model cannot see the future, so it is safe".** The mask is a rule about the *scores*. It is applied **before** the softmax and with `-inf`; `0` and "after the softmax" both run without an error and both give a wrong answer (Mistakes 3 and 4). Mark the *method and the checks* (each weight row adds to 1; nothing above the diagonal), not the last digit.
 
+![Map of the 36 weeks in four term lanes with week 15, Scale, Mask, and Many Heads, highlighted in term 2 and weeks 1 to 14 solid behind it](../figures/fig-w15-0-where-this-fits.svg)
+*Figure 15.0 — Where this week fits: week 15 of 36, in term 2 (memory, then attention).*
+
 ---
 
 ## 🎯 Lesson Objectives
@@ -77,6 +80,9 @@ Dividing a list of numbers by 8 divides its spread by 8 (Level 3 Week 4: a z-sco
 **The mask, as arithmetic.** `exp(-inf) = 0`, so a score of `-inf` gives a weight of exactly 0, *and the remaining weights are shared out so that they still add to 1.* A score of `0` is not "nothing": `exp(0) = 1`, a perfectly ordinary weight (Mistake 3). And zeroing the weights *after* the softmax leaves rows that add to less than 1 (Mistake 4).
 
 **Teacher-only, the honest limit of the maths.** The argument needs the terms to be *independent*. If the 64 terms moved together (64 copies of one number), the spread of the sum would be 64, not 8. `key.py` shows it (`spread 64.16`). In a *trained* model `q` and `k` are not random and not independent, so "the spread is exactly `sqrt(d)`" is **true for random tables at the start of training and only roughly true later**. The honest claim is: *the divide gives every width the same calm start.* Do not say "it keeps the variance at 1 forever".
+
+![Left, bars of weights from raw scores 8, minus 2, 1 where one bar takes 0.999044, beside bars from the same scores divided by 8 that are 0.587, 0.168 and 0.245; right, bars of spread by width](../figures/fig-w15-1-why-divide.svg)
+*Figure 15.1 — Dividing by the square root of the width keeps the softmax soft at every width.*
 
 ### 3. 🧭 Real vs stand-in — and what you must NOT claim
 
@@ -641,6 +647,9 @@ last word, sentence 0: how head 0 and head 1 share attention over the 5 words
 **(2 min) Heads.** *"Each word has `d` numbers. One attention pass shares a word's attention in **one** way. Could a word want to share it two ways at once: who is my subject, and what is my last word?"* Draw a word as a row of 8 boxes; cut it into two rows of 4. *"Same numbers, two pieces, two separate passes. The knob count does not change. We only cut."* Say it: **"cut, attend, (next week) glue."**
 
 **(2 min) Housekeeping.** Give the three new lines on the board and promise them in the live-code: `torch.tril`, `masked_fill(mask, float("-inf"))`, `.view(B, T, H, dh).transpose(1, 2)`. **Hold back** the Mistakes.
+
+![A 3 by 3 mask of ones and zeros, the attention weights with the later words struck out, and a small table showing that changing the last word moves only the last row once the mask is on](../figures/fig-w15-2-hide-the-future.svg)
+*Figure 15.2 — The causal mask hides later words before the softmax, so earlier answers cannot change.*
 
 ### 🎲 Their Turn — Pen Pass 2 (18 minutes)
 

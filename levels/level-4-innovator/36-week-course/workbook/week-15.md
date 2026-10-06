@@ -16,6 +16,9 @@
 >
 > **Only this week's tools are used:** `masked_fill(mask, float("-inf"))`, `torch.tril` and `.view(B, T, H, dh).transpose(1, 2)`, plus last week's attention and the idea that **variances add**.
 
+![Map of the 36 weeks in four term lanes with week 15, Scale, Mask, and Many Heads, highlighted in term 2 and weeks 1 to 14 solid behind it](../figures/fig-w15-0-where-this-fits.svg)
+*Figure 15.0 — Where this week fits: week 15 of 36, in term 2 (memory, then attention).*
+
 ---
 
 ## ✅ Warm-Up (5 min, before anything else)
@@ -174,6 +177,9 @@ print("biggest / smallest, raw:", round(float(np.exp(12)), 1), " scaled:", round
 
 The weights for the raw row `[6, 0, -6]`: ______ , ______ , ______ . Scaled: ______ , ______ , ______ . Which one would you trust to learn from, and why? ___________________________________________
 
+![Left, bars of weights from raw scores 8, minus 2, 1 where one bar takes 0.999044, beside bars from the same scores divided by 8 that are 0.587, 0.168 and 0.245; right, bars of spread by width](../figures/fig-w15-1-why-divide.svg)
+*Figure 15.1 — Dividing by the square root of the width keeps the softmax soft at every width.*
+
 ---
 
 ## 🔍 Page 15.3 — The Four Settings, and the Mask Built by Hand (20 min)
@@ -259,6 +265,9 @@ print(scores.masked_fill(mask, float("-inf")))
 ```
 
 My prediction (error or quiet wrong numbers?): ____________ . The fixed last line: ___________________________________________ . In my fixed mask the cells that are **True** are: ___________________________________________
+
+![A 3 by 3 mask of ones and zeros, the attention weights with the later words struck out, and a small table showing that changing the last word moves only the last row once the mask is on](../figures/fig-w15-2-hide-the-future.svg)
+*Figure 15.2 — The causal mask hides later words before the softmax, so earlier answers cannot change.*
 
 ---
 

@@ -4,6 +4,12 @@
 
 ---
 
+![Thirty-six week tiles in four lanes of nine, one per term; weeks 1 to 31 solid, Week 32 (a teach week in term 4) tinted pink with a thick border and a pointer, weeks 33 to 36 dashed](../figures/fig-w32-0-where-this-fits.svg)
+
+*Figure 32.0 — Week 32 of 36: a teach week in term 4, agents, evidence and the system card.*
+
+---
+
 > ### This week in one sentence
 > **The score you push up (accuracy) is a stand-in for what you wanted (a system you can trust when it sounds sure), so measure how far "I'm 90% sure" is from "right 90% of the time", let the system say "I don't know", and still read the result by category.**
 >
@@ -242,6 +248,9 @@ Two cautions about the ECE number.
 - **ECE 0.18 does not mean "wrong 18% of the time".** It is the average size of the gap between said and delivered. This system is wrong 42.5% of the time.
 - **The buckets are a choice.** With fewer than ten results in a bucket, the gaps are noisy. ECE is one way to score calibration, not the only one.
 
+![Five pairs of bars, stated confidence against actual accuracy, one pair per confidence bucket of 40 invented results, with each gap printed and the ECE 0.1788 in a callout](../figures/fig-w32-1-reliability-gaps.svg)
+*Figure 32.1 — In every bucket the system said more than it delivered; ECE is the average size of that gap, weighted by bucket.*
+
 ---
 
 ## 6. Brier, and a baseline to beat
@@ -305,6 +314,9 @@ Read it in results. At `t = 0.8` the system answers 18 of 40 and gets 13 right. 
 Notice too that the accuracy column does **not** rise forever: `0.722`, `0.733`, `0.700`, `0.667`. With fewer answers left, a few sure-and-wrong ones weigh more, and the sure-and-wrong ones are the highest-confidence ones.
 
 The threshold `0.8` was chosen because it is round and it shows the effect. We looked at the same 40 results to choose it. A threshold for a *real* system is chosen on one set of results and judged on a **second** set it has not seen, as in Week 30's frozen eval. We have no second set, so treat `0.8` as an illustration.
+
+![A line chart of coverage against accuracy of the answered for 40 invented results, with the threshold 0.8 point ringed and a panel counting answered, right, wrong and abstained](../figures/fig-w32-2-abstain-trade.svg)
+*Figure 32.2 — Raising the threshold removes wrong answers by also removing right ones; the curve cannot say where to stop.*
 
 ---
 

@@ -27,6 +27,9 @@
 
 ---
 
+![Level 4 map with four rows of nine tiles, one row per term; in the first row week 6 is highlighted with a pointer above it, weeks 1 to 5 are outlined solid, and every later tile has a dashed outline](../figures/fig-w06-0-where-this-fits.svg)
+*Figure 6.0 — Where this fits: week 6 of 36 sits in term 1, "train it on purpose"; the tiles still dashed are the weeks to come.*
+
 ## 🪝 Start Here
 
 Since Week 1 you have trained the same small network: four blocks, 16,962 parameters. It never needed help to train. This week the question changes from *"how do I train it better?"* to *"how do I make a deep network trainable at all?"*
@@ -106,6 +109,9 @@ The row now has mean 0 and spread 1. That is **layer norm: each row, using its o
 **E. Why two examples are a disaster for the column version.** Take two numbers, `a` and `b`. Their mean is `(a + b)/2`. Their distances from it are `+(a − b)/2` and `−(a − b)/2`. Their spread is `|a − b|/2`. Divide each distance by the spread and you get exactly **`+1` and `−1`**, for *any* `a` and `b` that differ. Try it with `a = 3, b = 11` and then `a = 100, b = 101` on paper. Keep that result in mind for Step 4.
 
 **F. A length: the 3-4-5 triangle** (Week 2). The gradient `[3, 4]` has length `sqrt(9 + 16) = 5`. To *clip* it to a maximum length of 1, scale both entries by `1/5`, giving `[0.6, 0.8]`: same direction, shorter arrow. If it was already shorter than the maximum, nothing changes.
+
+![Two stacks of four blocks with a horizontal bar beside each for the error's running product: the plain stack shrinks to a hairline at 0.0024, the residual stack grows to 2.4024](../figures/fig-w06-1-residual-road-four-blocks.svg)
+*Figure 6.1 — With a road each block's slope is 1 plus its old slope, so the error's running product stays near or above 1 instead of shrinking to 0.0024.*
 
 ### 3. The four new lines of syntax
 
@@ -660,6 +666,9 @@ depth                  plain               residual             layer norm  laye
    16                  46.9%                  99.0%                  46.9%                  97.6%
    32                  46.9%                  99.3%                  46.9%                  98.8%
 ```
+
+![Left, a log-scale chart of first-block gradient length against depth, plain falling to 1e-18 and residual rising to 300; right, grouped accuracy bars where the plain bars at depths 16 and 32 sit at the 46.9 percent coin line](../figures/fig-w06-2-depth-gradient-vs-accuracy.svg)
+*Figure 6.2 — The first-block gradient at the start predicts which plain stacks never train; the road keeps every depth at about 99%.*
 
 Now go back to `clip_demo.py` from Step 1 and run the whole file. Its second half is a real experiment on clipping: with plain SGD (Week 2) on 16 residual blocks at a high learning rate, and with AdamW (Week 3) on 32 blocks. (In the SGD rows without clipping, the loss became `nan`, which means "the number blew up", not "learning slowly".)
 

@@ -24,6 +24,9 @@
 
 ---
 
+![Level 4 map with four rows of nine tiles, one row per term; in the first row week 2 is highlighted with a pointer above it, week 1 is outlined solid, and every later tile has a dashed outline](../figures/fig-w02-0-where-this-fits.svg)
+*Figure 2.0 — Where this fits: week 2 of 36 sits in term 1, "train it on purpose"; the tiles still dashed are the weeks to come.*
+
 ## 🪝 Start Here
 
 Last week you turned one knob, the learning rate. The list of ten knobs had another one that you were told to ignore: `optimizer`. Today you turn it.
@@ -154,6 +157,9 @@ steps until the first value counts for half: 6.58
 
 You do not need `math.log`; the number is here so that 6.58 is a real result and not a guess.
 
+![Two bar charts: a running average fading from 1.0000 to 0.6561 over five steps, and the share a first value still counts falling from 0.900 to 0.430 with a dashed line at one half](../figures/fig-w02-1-fading-share-half-life.svg)
+*Figure 2.1 — A running average forgets old values by the same share each step; for 0.9 the half-life is 6.58 steps.*
+
 ### 4. From the average to momentum
 
 Momentum keeps one number for each weight, the **velocity** `v`: *the running total of recent gradients.* The rule is:
@@ -248,6 +254,9 @@ Compare your paper table with both. Notice three things:
 - At step 4 momentum goes from `0.0620` to `-0.3086`: it went **past** zero. That is called an **overshoot**: *going past the target because you are still carrying the old steps.* Plain SGD creeps and never overshoots.
 
 That is the trade: **momentum arrives sooner, and overshoots.**
+
+![Two rows of numbered circles on a number line toward a dashed target at zero: plain SGD creeps and stops at 0.4096, momentum lands near zero at step 3 and ends past it at minus 0.3086](../figures/fig-w02-2-momentum-arrives-then-overshoots.svg)
+*Figure 2.2 — Momentum arrives sooner because it carries old steps, and for the same reason it overshoots.*
 
 Last week's parking-lot question was "why does a big learning rate blow up?" Here is the one-knob version. A step that is too long jumps over the target, and if it lands farther away than it started, every jump is bigger than the last:
 

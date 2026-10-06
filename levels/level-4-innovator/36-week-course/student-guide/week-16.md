@@ -4,6 +4,9 @@
 
 ---
 
+![The 36 week tiles in four term lanes; weeks 1 to 15 solid, week 16 tinted pink with a thick border and a pointer above it, weeks 17 to 36 dashed](../figures/fig-w16-0-where-this-fits.svg)
+*Figure 16.0 — Week 16 of 36, the position and block week, sits in term 2 (memory, then attention); weeks 1 to 15 are done and weeks 17 to 36 are still ahead.*
+
 > ### This week in one sentence
 > **Attention looks at all the words at once and cannot tell where any of them sits, so we add a "place vector" to every word; then attention plus a small per-word network, each wrapped in a residual add and a layer norm, make one *block*, and a GPT is a stack of blocks.**
 >
@@ -207,6 +210,9 @@ same two words, places 0-1 vs places 3-4, equal inputs: False
 The same three lines that printed `True` now print `False`. The two `the`s get different rows, the two dogs are `0.1529` apart, and shuffling the words no longer just shuffles the answers. The last line shows the same two words at places 0-1 and at places 3-4 are not equal inputs either.
 
 Read the `0.1529` carefully. It came from random tables and means nothing by itself. The point is that it is **not zero**. Same words, same weights; the only thing we added is a place.
+
+![Two panels over the words the, dog, bit, the, postman. Left, attention alone: a cross beside each of three results that are True, 0.0 and 0.0. Right, with a place row added under each word: ticks beside False, 0.1529 and 0.6169.](../figures/fig-w16-1-blind-then-places.svg)
+*Figure 16.1 — Attention alone cannot tell where a word sits; adding a place row makes the same words give different answers.*
 
 ### 3. One block: attention gathers, the MLP thinks
 
@@ -510,6 +516,9 @@ whole model: 807196
 The nine parts add up to **848**, and the formula `12 x d x d + 10 x d` agrees at three widths. Notice what is **not** in the formula: the number of words `T` and the number of heads `H`. More words, or more heads, cost no extra knobs (heads just cut `d` into pieces). At width 128, attention has 65,664 knobs and the MLP has 131,712: **two thirds of a block's knobs are in the MLP.**
 
 The last line is the whole TinyGPT of Week 17, computed by arithmetic only: 28 characters, 64 places, 4 blocks, width 128. **807,196** knobs. Next week you write that model, and PyTorch will be asked whether it agrees.
+
+![A top-to-bottom stack: layer norm, an attention panel with q, k, v and proj, a plus, layer norm, an MLP panel with up, GELU and down, a plus, with residual roads down the left and a knob count in every box.](../figures/fig-w16-2-one-block-knob-count.svg)
+*Figure 16.2 — One block is attention then an MLP, each on a residual road, and its nine parts add to 848 knobs.*
 
 ---
 

@@ -20,6 +20,9 @@
 
 ---
 
+![Thirty-six week tiles in four lanes of nine, one lane per term. Weeks 1 to 35 are solid and week 36, the last tile, is tinted pink with a thick border and a pointer.](../figures/fig-w36-0-where-this-fits.svg)
+*Figure 36.0 — Week 36 is the end of the course: the demo, the system card and the final assessment.*
+
 ## ✅ Warm-Up (5 min, before anything else, from memory)
 
 1. A claim, in this course, has two things written beside it or it is "a mood". Which two? ______________ and ______________
@@ -88,6 +91,9 @@ one more failure on 900 cases: 0.889 -> 0.888
 
 The last line: how many cases did the system need to pass to keep a promise of `0.70`? ______ . So by how many cases was `17` short? ______
 
+![Four boxes joined by arrows (Logs, F, Card, Checks) above a four-row table of claim, number, n and command](../figures/fig-w36-1-claim-ledger-flow.svg)
+*Figure 36.1 — Every number in the card is a slot filled from a log, and every claim has an n and a command.*
+
 ---
 
 ## 🧮 Page 36.2 — The Run-Sheet (25 min · pen, then one check)
@@ -131,6 +137,9 @@ a draft sheet: starts ['0:00', '0:30', '1:30', '2:30', '3:30', '5:00']  total 33
 Did your clock column match the first line? ______ In the draft sheet, which segment ran long, and what does the demo have to drop first, **the failure or something else**? ____________________________________________________ Why? ____________________________________________________
 
 Rehearsal, timed, on your own machine: run 1 took ______ : ______ ; did you say the words *stand-in, not a model* aloud once? ______ ; did the cold start (a new terminal, `python capstone34/ask.py "..."`) work the first time? ______
+
+![A timeline bar of six numbered segments from 0:00 to 5:00 with a list of what each segment shows](../figures/fig-w36-2-five-minute-run-sheet.svg)
+*Figure 36.2 — The demo is six timed segments that add to 300 seconds, with one failure shown on purpose.*
 
 ---
 

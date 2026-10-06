@@ -24,6 +24,9 @@
 
 ---
 
+![Thirty-six week tiles in four lanes of nine, one lane per term. Weeks 1 to 33 are solid, week 34 is tinted pink with a thick border and a pointer, weeks 35 and 36 are dashed.](../figures/fig-w34-0-where-this-fits.svg)
+*Figure 34.0 — Week 34 is the first of three capstone weeks, the design-and-frozen-eval step at the end of term 4.*
+
 ## 🎯 Lesson Objectives
 
 By the end of the lesson (and the homework) the student can:
@@ -48,6 +51,9 @@ Observable evidence: `DESIGN.md` printing `check_design: []`, `eval/cases.py` pr
 ### 1. What the student is doing today, in one paragraph
 
 Week 30 ended with "freeze the eval before you build". Week 33 ended with "a count wobbles" and an assignment: *bring one sentence, the one thing my system must never do, and how I would find out in 50 runs if it does.* Today that sentence becomes failure mode number one. The student picks a project for a named person (the capstone brief lists six scenarios; they may bring their own) and chooses **two of three components** (RAG over notes, the tool-using agent, a fine-tuned small model). They write a one-page design doc, write and rank what could go wrong, and commit to a budget. Then comes the part that is new: they write **25 test cases for a system that does not exist**, run a checker over them that catches cases no system can pass, test the scorer against answers they typed by hand, and freeze the lot with a fingerprint while `src/` is empty. By the end, the only files in their project folder are a design, a frozen list of questions, and the tools to mark answers. **Nothing answers anything.** Week 35 builds the system and finds out how it does.
+
+![Four boxes in a row joined by arrows: Design, Test, Freeze, and a dashed System box, with the demo freeze line (cases=8, src_files=0) below](../figures/fig-w34-1-test-before-system.svg)
+*Figure 34.1 — The test is written and frozen while src/ is still empty; the system comes after.*
 
 ### 2. 🔢 The maths you need — there is none, and one reuse
 
@@ -88,6 +94,9 @@ For the teacher's 25 cases (Block P3) on the 15 notes:
 - **The budget (stand-in dollars):** one retrieve task `$0.00035` (`269-284` tokens), one agent task `$0.00135` (`1,113` tokens, `3.9x`), one 25-case run `21 x retrieve + 4 x agent = $0.0127`, per task `$0.00051`. Committed: mean under `$0.001` (`2.0x` headroom), worst task under `$0.003` (`2.2x`), a run under `$0.03` (`2.4x`).
 - **K4 (teacher-only):** the reference capstone's keyword router would send `3` of the `4` arithmetic cases, and the reference's own example question 2, to **retrieve**, not the agent.
 - **D5:** the reference capstone's v2 columns add to `21/27 = 0.778`, the mean of its six rates is `0.693`, and the printed `0.81` is `22/27`: one case more than the columns.
+
+![Three rows of eight pass or fail cells for the stand-ins refuse_all, oracle and echo, with scores 2/8, 8/8 and 0/8](../figures/fig-w34-2-scorer-floor-ceiling.svg)
+*Figure 34.2 — A scorer is tested on answers typed by hand: the floor is not zero, the ceiling is all cases, junk scores nothing.*
 
 ### 6. The honest limits of today
 

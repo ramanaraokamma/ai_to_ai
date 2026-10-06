@@ -6,6 +6,12 @@
 
 ---
 
+![Thirty-six week tiles in four lanes of nine, one per term; weeks 1 to 30 solid, Week 31 (a lab week in term 4) tinted pink with a thick border and a pointer, weeks 32 to 36 dashed](../figures/fig-w31-0-where-this-fits.svg)
+
+*Figure 31.0 — Week 31 of 36: a lab week in term 4, agents, evidence and the system card.*
+
+---
+
 > **Rules for this workbook.** The new idea this week is **low-rank**: a big grid written as a thin grid times a thin grid. The pen-and-paper pages count numbers and read a table; the computer pages run *your own* model from the chapter. **Write your answer by hand first, then run.** A guess written after the run is not a guess.
 >
 > **Real numbers.** Every number printed below came from a real run of the code shown, on CPU, with the seeds in the code. Pages 31.1 and 31.3 (the hand part) use **PRACTICE** shapes and tables that are invented for this workbook, so they are **not** your model's numbers and **not** results from any run. By-hand numbers are plain arithmetic.
@@ -104,6 +110,9 @@ your model: one 64 x 64 projection, whole = 4096
 ```
 
 Mark your answers in the other colour. Every mistake goes in the Bug Log (Page 31.6), with the reason.
+
+![A 4 by 4 grid of products built from a column of four numbers and a row of four, beside two bars: 4,096 numbers for a full 64 by 64 projection against 512 for the rank-4 patch](../figures/fig-w31-1-low-rank-patch.svg)
+*Figure 31.1 — A grid built from one column and one row stores 8 numbers for 16 cells, so a rank-4 patch is 0.1250 of the projection.*
 
 ---
 
@@ -269,6 +278,9 @@ tickets whose prediction changed: 8
 - Week 30's free rules scored **25 of 30**. What do you ship? ______ Why? ____________________________________________________
 
 *Stand-in note.* This is the toy encoder on 64 template tickets; the comparison says nothing about a real pretrained model.
+
+![Paired before and after bars for five categories and the overall score, with the billing row outlined as a regression and the weighted gains and losses summed underneath](../figures/fig-w31-2-regression-row.svg)
+*Figure 31.2 — The overall score rose by 0.0333 while billing fell by one ticket: read the rows before you read the average.*
 
 ---
 
