@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
   <title>The review turns marks into a plan of at most two redos, with a fixed tie-break</title>
-  <desc>Top row, four gold step boxes joined by arrows: 1 mark in another colour (about 30 minutes), 2 fill the per-week grid (5), 3 circle at most two weeks (5), 4 one Bug Log sentence (5), totalling 45 minutes. Middle row, eight blue boxes for Weeks 1 to 8; Weeks 8, 2 and 6 are pink with ringed numbers 1, 2 and 3 for the tie-break order. Below: a week needs a redo at 60 percent or less; Week 10 is about the Week 8 cell and leans on Week 2. No student scores are shown because none are measured.</desc>
+  <desc>Top row, four gold step boxes joined by arrows: 1 mark in another colour (about 30 minutes), 2 fill the per-week grid (5), 3 circle at most two weeks (5), 4 one Bug Log sentence (5), totalling 45 minutes. Middle row, eight blue boxes for Weeks 1 to 8; Weeks 8, 2 and 6 are pink with ringed numbers 1, 2 and 3 for the tie-break order. Below: a week needs a redo when it scores under 60 percent; Week 10 is about the Week 8 cell and leans on Week 2. No student scores are shown because none are measured.</desc>
   <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Mark it, grid it, circle at most two weeks</text>
   <line x1="190" y1="98" x2="220" y2="98" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
   <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(220 98) rotate(0)"/>
@@ -24,7 +24,7 @@
   <text x="670" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">4. Bug Log</text>
   <text x="670" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">one sentence</text>
   <text x="670" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">about 5 min</text>
-  <text x="40" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">The eight weeks on the grid; a week needs a redo at 60% or less of its marks</text>
+  <text x="40" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">The eight weeks on the grid; a week needs a redo when it scores under 60% of its marks</text>
   <rect x="40" y="190" width="78" height="70" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
   <text x="79" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Week</text>
   <text x="79" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
