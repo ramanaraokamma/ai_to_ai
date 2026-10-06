@@ -65,6 +65,8 @@ My guess about myself, before: Weeks I thought were soft: ____________ . After t
 
 ## 🏃 Page 9.2 — Hand Steps, New Numbers (Week 2 · 15 min)
 
+This page rebuilds the earlier optimizer steps by hand, on numbers that are not on the paper.
+
 **Same method as Week 2, different numbers from the paper.** `f(w) = w²`, gradient `g = 2w`. Start at **`w = 1.5`**, **`lr = 0.1`**, three steps.
 
 **Worked example (done for you): the first SGD step.** `g = 2 × 1.5 = 3.0000`. The step is `0.1 × 3.0000 = 0.3000`. New `w = 1.5000 − 0.3000 =` **`1.2000`**.
@@ -93,7 +95,7 @@ My guess about myself, before: Weeks I thought were soft: ____________ . After t
 
 **9.2d. Predict, then check.** The minimum is at `w = 0`. If you took **two more** momentum steps, do you think the weight would stop at 0, or go past it? My guess: ____________ (Write it, *then* turn to the answers or run the check file below.)
 
-**Check file** (run it only after your tables are written):
+**Check file.** Run it only after your tables are written. It takes momentum steps on the same problem and prints the weight after each.
 
 ```python
 # check92.py - Week 9 workbook page 9.2: check the hand steps on PRACTICE numbers.
@@ -108,13 +110,15 @@ for step in range(1, 6):
     print(step, round(p.item(), 4))
 ```
 
-Write what it printed for steps 1 to 5: ____________ ____________ ____________ ____________ ____________
+Compare the first three with your `w after` column. Write what it printed for steps 1 to 5: ____________ ____________ ____________ ____________ ____________
 
 Did your hand `w after` at steps 1, 2, 3 match? ____________ If not, which column first disagreed? ____________
 
 ---
 
 ## 📏 Page 9.3 — Typical Size, and Adam's First Step (Week 3 · 10 min)
+
+This page practises the root-mean-square (the "typical size" of a list) and works through Adam's first step.
 
 **Worked example (done for you): root-mean-square of `[3, -4]`.** Square: `9, 16`. Average: `12.5`. Root: `3.5355`. (Not the plain mean `-0.5`. Not the length `5`. Not `12.5`, which is the step *before* the root.)
 
@@ -146,6 +150,8 @@ Did your hand `w after` at steps 1, 2, 3 match? ____________ If not, which colum
 
 ## 🧶 Page 9.4 — Unroll the Cell, New Weights (Week 8 · 15 min)
 
+This page unrolls the recurrent cell by hand on new weights, for two orders of the same inputs.
+
 The cell is `new note = tanh( W_x × x + W_h × old note )`, and the start note is `0`. **Different weights from the paper and from Week 8:** `W_x = 1.0`, `W_h = -0.5` (note the **minus**). Both biases are zero. A calculator with a `tanh` key.
 
 **Worked example (done for you): step 1 for `x = [1, 0, 1]`.** `1.0 × 1 + (−0.5) × 0 = 1.0000`. `tanh(1.0000) =` **`0.7616`**.
@@ -174,7 +180,7 @@ The cell is `new note = tanh( W_x × x + W_h × old note )`, and the start note 
 
 **9.4d.** Which of these two things is the cell **remembering** at step 3: (i) the whole sentence so far, exactly; (ii) a single squashed summary of it? Circle one. In one sentence, what is lost? ___________________________________________
 
-**Check file:**
+**Check file.** It runs the same cell with `nn.RNN` on both input orders and prints the note after each step.
 
 ```python
 # check94.py - Week 9 workbook page 9.4: unroll the cell with nn.RNN, W_x = 1.0, W_h = -0.5.
@@ -192,11 +198,13 @@ for xs in ([1, 0, 1], [1, 1, 0]):
     print(xs, [round(v, 4) for v in out.flatten().tolist()])
 ```
 
-Write what it printed: `[1, 0, 1]` → ____________________ `[1, 1, 0]` → ____________________
+Compare each printed list with your tables. Write what it printed: `[1, 0, 1]` → ____________________ `[1, 1, 0]` → ____________________
 
 ---
 
 ## 📐 Page 9.5 — Say the Shapes (Week 8 · 5 min, predict first)
+
+This page trains the habit of stating a tensor's shape before you run the code.
 
 A batch of **3** sentences, each **6** words long, each word an id from a vocabulary of **6**. `emb = nn.Embedding(6, 2)` and `rnn = nn.RNN(2, 7, batch_first=True)`.
 
@@ -215,7 +223,7 @@ A batch of **3** sentences, each **6** words long, each word an id from a vocabu
 
 **9.5c.** Which of `out` and `h_n` would you use to make a prediction **after every word**? ____________ After the **last word** only? ____________
 
-**Check file:**
+**Check file.** Run it after your predictions are written. The first line prints the four shapes; the second prints the parameter counts.
 
 ```python
 # check95.py - Week 9 workbook page 9.5: shapes and counts.
@@ -236,11 +244,13 @@ print(sum(p.numel() for p in emb.parameters()), sum(p.numel() for p in rnn.param
 
 ## 🔍 Page 9.6 — Is the Gap Bigger Than the Spread? (Week 7 · 10 min)
 
+This page applies the screening rule to decide whether a difference between runs is real or just noise.
+
 **The rule (Week 7):** `gap = |mean A − mean B|`. `spread =` the **larger** of the two standard deviations (divide by `n`). **Inside noise** if `gap < 2 × spread`. It is a **screening rule we chose**, not a statistical test.
 
 **Worked example (done for you).** A: `0.039 ± 0.008`, B: `0.034 ± 0.007`. Gap `0.005`. Twice the larger spread `0.016`. `0.005 < 0.016` → **inside noise**.
 
-Validation loss at epoch 60, three seeds each (0, 1, 2):
+Here is the validation loss at epoch 60, three seeds each (0, 1, 2). Use the mean and spread columns in the questions below.
 
 ```text
  run   val at epoch 60 (seeds 0, 1, 2)    mean    spread (SD, divide by n)
@@ -263,7 +273,9 @@ Validation loss at epoch 60, three seeds each (0, 1, 2):
 
 ## 📉 Page 9.7 — Read Four New Curves (Week 1 and Week 7 · 15 min)
 
-Four runs of the same network on the spirals data. Each is AdamW, 60 epochs, seed 0, and they differ in **one** thing only: the learning rate. **Real numbers** from `l4lib.spirals.run`. **Train** is the average training loss during that epoch; **val** is the loss on the validation set after it. A coin gives **0.693**.
+This page practises naming a learning curve from a table and backing the name with one number.
+
+Four runs of the same network on the spirals data. Each is AdamW, 60 epochs, seed 0, and they differ in **one** thing only: the learning rate. **Real numbers** from `l4lib.spirals.run`. **Train** is the average training loss during that epoch; **val** is the loss on the validation set after it. A coin gives **0.693**. Read the table one run at a time, and compare each row with the coin value.
 
 ```text
                            ep 1     ep 5    ep 10    ep 20    ep 40    ep 60
@@ -277,7 +289,7 @@ Z  lr=0.01    train       0.658    0.077    0.069    0.031    0.020    0.013
               val         0.540    0.060    0.125    0.049    0.136    0.059
 ```
 
-Final accuracy: **W** 99.4% · **X** 55.3% · **Y** 46.9% · **Z** 99.2%.
+Look at how far each run's val falls from the coin value. Final accuracy: **W** 99.4% · **X** 55.3% · **Y** 46.9% · **Z** 99.2%.
 
 **Worked example (done for you): the habit.** *"X: it is barely moving. Val goes 0.693 at epoch 1 to 0.679 at epoch 60, which is almost the coin."* A symptom, a **name for the curve**, and **one number from the table**.
 
@@ -308,7 +320,7 @@ Z: ___________________________________________________________
 
 What would you run **before** you wrote that action into the playbook for good? ___________________________________________
 
-**Check file:**
+**Check file.** It re-runs run Z and prints three val values, the lowest val over every epoch, and the final accuracy.
 
 ```python
 # check97.py - Week 9 workbook page 9.7: regenerate one row of the table, and the best epoch.
@@ -324,6 +336,8 @@ print("final accuracy", f"{hist['acc'][-1] * 100:.1f}%")
 ---
 
 ## 🐞 Page 9.8 — Break It on Purpose (the four bugs from Weeks 1, 5, 6, 8 · 25 min)
+
+This page practises finding bugs by reading errors and predicting behaviour before you run anything.
 
 The paper's Section C has four "find the bug" questions. **This page has four different ones**, so you can practise the *method* without seeing the paper. **Each program is deliberately broken.** Do **not** run it first. For each: write **(i)** what the bug is, **(ii)** what you think happens when it runs, **(iii)** the fixed line. *Then* run it.
 
@@ -406,6 +420,8 @@ print(out.shape)
 
 ## 📝 Page 9.9 — Mark Your Own Paper (the same evening, a different colour of pen)
 
+This page turns your marks into a plan: which weeks to redo, and when.
+
 **After the paper.** Your teacher gives you the **marking sheet** (short answers only). Use a pen of a **different colour** from the one you used on the paper. In A, B and C be strict. In D and E mark the **working**, not just the final number.
 
 **The per-week grid.** The "Questions" column tells you which questions belong to which week. Marks available and the "redo if" line are fixed; fill in the rest.
@@ -443,6 +459,8 @@ My two weeks: ______ and ______ . Redo for week ______ on (day and time) _______
 
 ## 📓 Page 9.10 — The Bug Log
 
+This page records what the paper taught you, so the same mistake does not come back.
+
 The Bug Log is the most useful page of the course. Today's entries come from the paper and from page 9.8.
 
 **Entry 1: the answer I was most surprised to get wrong.**
@@ -473,6 +491,8 @@ Mark lost: ____________________ Habit: _______________________________________
 
 ## 🧠 Self-Check (do this last, from memory)
 
+This is the last page: a quick test of whether the week stuck.
+
 Seven things, no scrolling up. Tick only if you could do it **now**.
 
 - ☐ Say what log loss a guessing two-class model has, and why it is not 0.5. *(Hint: it is about 0.693.)*
@@ -489,7 +509,7 @@ Seven things, no scrolling up. Tick only if you could do it **now**.
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+### ✂️ ANSWERS - keep this page folded until you have finished
 
 > Real printed outputs below. By-hand numbers are exact. Curve tables may differ in the last digit on another CPU or PyTorch build. These answers are for the pages in **this workbook**. They are not the paper's answers, and this page does **not** contain any of them.
 
@@ -519,7 +539,7 @@ No right answer. The point is the **gap between your guess and the grid**. If yo
 | 2 | 1.2000 | 2.4000 | 0.9×3.0 + 2.4 = **5.1000** | 0.5100 | **0.6900** |
 | 3 | 0.6900 | 1.3800 | 0.9×5.1 + 1.38 = **5.9700** | 0.5970 | **0.0930** |
 
-**9.2a.** **Yes** (both `1.2000`). The velocity starts at 0, so on step 1 `v = g` and momentum equals plain SGD. **9.2b.** **Momentum**, at `0.0930` against `0.7680`: a difference of **0.6750**. **9.2c.** The velocity **adds up** past gradients (`v = 0.9·v + g`), so while the gradient keeps the same sign `v` keeps building, even though the gradient itself shrinks (`3.0 → 2.4 → 1.38`). **9.2d.** **It goes past 0.** Real output of the check file:
+**9.2a.** **Yes** (both `1.2000`). The velocity starts at 0, so on step 1 `v = g` and momentum equals plain SGD. **9.2b.** **Momentum**, at `0.0930` against `0.7680`: a difference of **0.6750**. **9.2c.** The velocity **adds up** past gradients (`v = 0.9·v + g`), so while the gradient keeps the same sign `v` keeps building, even though the gradient itself shrinks (`3.0 → 2.4 → 1.38`). **9.2d.** **It goes past 0.** Real output of the check file (look at the sign change):
 
 ```text
 1 1.2

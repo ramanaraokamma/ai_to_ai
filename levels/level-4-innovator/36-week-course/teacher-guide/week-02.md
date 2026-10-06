@@ -30,6 +30,8 @@
 
 ## 🎯 Lesson Objectives
 
+These are the five things the student should be able to do by the end; the mastery scale near the end of this guide grades against them.
+
 By the end of the lesson the student can:
 
 1. **Compute an exponential moving average by hand** on five numbers, using *new average = 0.9 × old average + 0.1 × new value*, and show a single early value fading by a fixed share (×0.9) each step.
@@ -43,6 +45,8 @@ Observable evidence: a filled hand table whose last column matches the `torch.op
 ---
 
 ## 🧑‍🏫 What YOU Need to Know First
+
+This section is the background you need before teaching: the maths, the three new constructs, the results the class will see, and the misconceptions to expect.
 
 > **📌 About the code blocks in this guide.** The **🧰 Prep Checklist** holds the complete runnable sequence, blocks **P1–P21**, in order, in one file. Later sections refer to those blocks by number rather than repeating them. The **🐞 Debugging Clinic** blocks are **deliberately broken** and each is a separate file. Every output shown was printed by the code beside it, on a CPU, with a seed, in one session (torch 2.2.1, one thread). Numbers in the prose were checked against those outputs.
 
@@ -119,6 +123,8 @@ after 7 step(s) the first value still counts for 0.478
 after 8 step(s) the first value still counts for 0.430
 ```
 
+Look at where the share passes one half in the list above.
+
 Between step 6 (0.531) and step 7 (0.478) it crosses one half. So: **about 7 steps.** The exact crossing is 6.58:
 
 ```python
@@ -129,7 +135,9 @@ print("steps until the first value counts for half:", round(math.log(0.5) / math
 steps until the first value counts for half: 6.58
 ```
 
-**Say "half-life" and move on.** It is borrowed from physics (how long until half of something is gone). The student does **not** need `math.log`; it is in the Prep Checklist so the 6.58 is real, not guessed. The tolerance for the student's answer is "6 or 7 or about 7".
+**Say "half-life" and move on.** It is borrowed from physics (how long until half of something is gone). The student does **not** need `math.log`; it is in the Prep Checklist so the 6.58 is real, not guessed.
+
+The tolerance for the student's answer is "6 or 7 or about 7".
 
 ![Two bar charts: a running average fading from 1.0000 to 0.6561 over five steps, and the share a first value still counts falling from 0.900 to 0.430 with a dashed line at one half](../figures/fig-w02-1-fading-share-half-life.svg)
 *Figure 2.1 — A running average forgets old values by the same share each step; for 0.9 the half-life is 6.58 steps.*
@@ -234,7 +242,7 @@ step 3: g  0.9200  v  3.9800  w   0.0620
 step 4: g  0.1240  v  3.7060  w  -0.3086
 ```
 
-Step 4 moves `w` from `0.0620` to `-0.3086`: it **overshot** zero (*went past the target because it was still carrying the old steps*). Plain SGD, same four steps:
+Look at the last line: step 4 moves `w` from `0.0620` to `-0.3086`: it **overshot** zero (*went past the target because it was still carrying the old steps*). Plain SGD, same four steps:
 
 ```python
 w = 1.0
@@ -250,7 +258,7 @@ step 3: g  1.2800  w   0.5120
 step 4: g  1.0240  w   0.4096
 ```
 
-SGD creeps (0.5120, then 0.4096) and never overshoots. That is the whole trade: **momentum arrives sooner, and overshoots.** On real, bumpy losses the overshoot is usually worth it. On a loss that is already smooth and a step that is already big, it is not (block P18 shows a row where it hurts).
+Look at the last column: SGD creeps (0.5120, then 0.4096) and never overshoots. That is the whole trade: **momentum arrives sooner, and overshoots.** On real, bumpy losses the overshoot is usually worth it. On a loss that is already smooth and a step that is already big, it is not (block P18 shows a row where it hurts).
 
 ![Two rows of numbered circles on a number line toward a dashed target at zero: plain SGD creeps and stops at 0.4096, momentum lands near zero at step 3 and ends past it at minus 0.3086](../figures/fig-w02-2-momentum-arrives-then-overshoots.svg)
 *Figure 2.2 — Momentum arrives sooner because it carries old steps, and for the same reason it overshoots.*
@@ -297,6 +305,8 @@ set_to_none=False -> tensor([0., 0.])
 set_to_none=True  -> None
 no argument       -> None
 ```
+
+Look at the three lines: `set_to_none=False` leaves zeros, the other two leave `None`.
 
 **`tensor.norm()`.** *The length of a tensor as if it were an arrow: square every entry, add, take the square root.* `[6, 8]` has length `sqrt(36 + 64) = 10` (the 3-4-5 triangle the student knows, doubled). Block P13 does this on a gradient. Block P15 (teacher-only: it uses `clip_grad_norm_`, which is a Week 6 construct) does it on a whole network's gradient to check the harness's `gnorm`.
 
@@ -364,6 +374,8 @@ Two sentences cover it. **Momentum rescues learning rates that are too small for
 ---
 
 ## 🧰 Prep Checklist
+
+Use this checklist to run every block yourself the night before, so each number in the lesson is one you have seen printed.
 
 ### 20 minutes the night before
 
@@ -744,8 +756,6 @@ momentum lr=1 train loss, first 4 epochs: [0.705, 0.648, 0.702, nan]
 sgd lr=1 train loss epochs 0 1 2 5 10 59: [0.694, 0.695, 0.689, 0.574, 0.701, 0.528]
 ```
 
-
-
 **☐ 4. What to check.** Three fingerprints that tell you everything else is right:
 
 - P6 ends on `w  -0.3086` (momentum overshoots at step 4).
@@ -765,6 +775,8 @@ If `nan` does not appear for `momentum lr=1`, or appears at a different epoch (P
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This is the plan for the whole lesson: five segments, each with what to say, what to do and what to check.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -912,7 +924,7 @@ momentum 0.9: [0.8, 0.46, 0.062, -0.3086]
 
 > "Your paper and PyTorch agree to four places. So `momentum=0.9` is exactly the rule we wrote."
 
-**Then** block **P9** to peek at the velocity PyTorch keeps: `3.9800` after step 3, the same as the hand table.
+**Then** block **P9**, to peek at the velocity PyTorch keeps: `3.9800` after step 3, the same as the hand table.
 
 **Then** block **P14** (the three `zero_grad` forms). Do not dwell: `set_to_none=False` gives zeros, the other two give `None`. *"The default happens to be `None` on this version. We write it out so the choice is visible."*
 
@@ -986,6 +998,8 @@ Leave **P16** (the valley) and **P20** (gradient lengths) for the flying student
 
 ## 🎲 The Activity, In Full
 
+This section records the activity in one place, so you can hand it over or repeat it as homework.
+
 The activity is "Their Turn" above. **Materials:** the printed workbook pages 2.1 and 2.2, a calculator, the Bug Log, the six A–F cards.
 
 **Instructions in order (for the record):**
@@ -1001,6 +1015,8 @@ The activity is "Their Turn" above. **Materials:** the printed workbook pages 2.
 ---
 
 ## 🐞 The Debugging Clinic
+
+Use this section to practise reading errors: nine mistakes the week reliably produces, each with its real output and fix.
 
 Each error below is **deliberate**: a mistake this week reliably produces. The block in each is a **separate file** (called `week02_mistakeN.py`) and is meant to fail (or, in two cases, to run quietly and be wrong). The tracebacks are the real ones from torch 2.2.1 on the machine named above; file paths in them have been shortened, and where the traceback runs through PyTorch's own files those middle frames are replaced by one line saying so (the last line is the real, untouched one). **Teach the student to read the last line first.**
 
@@ -1190,6 +1206,8 @@ Week 1's `*` again: everything after the tag must be named. **Fix:** `run("A", l
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions this week tends to raise, with short answers that stay inside what was measured.
+
 **"Why 0.9?"** — It is the common default. 0.9 forgets by a tenth each step (half-life about 7). Smaller forgets faster; larger remembers longer. Nothing in this week tested other values; do not claim one is best.
 
 **"Is `v` really ten times the average, or just about?"** — Exactly, when `v` starts at zero (block P10 shows four decimals equal at every step).
@@ -1214,6 +1232,8 @@ Week 1's `*` again: everything after the tag must be named. **Fix:** `run("A", l
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+These are the eight ways this lesson most often goes off course, and how to avoid each.
+
 1. **The teacher calls momentum "a running average" and the student codes the average.** The student's `0.9800` then contradicts PyTorch's `0.8000`. Say the "ten times" sentence in Concept B, **before** the student types anything.
 2. **The by-hand table is skipped because "we have PyTorch".** The lesson is the table. A student who has not done `0.512` against `0.062` on paper will not believe the `0.690` against `0.018`.
 3. **The spirals come first.** The hook uses them, which is fine, but the *explanation* must come from the five numbers, not from the curve. Keep the hook to 7 minutes.
@@ -1226,6 +1246,8 @@ Week 1's `*` again: everything after the tag must be named. **Fix:** `run("A", l
 ---
 
 ## 🧭 Differentiation
+
+Use this section to adjust the lesson when the student is struggling, racing ahead or disengaged.
 
 ### If the student is struggling
 
@@ -1266,6 +1288,8 @@ sgd (10x)      0.053    0.027    0.017    0.327    0.150
 
 ## ✅ Assessing Understanding
 
+This section gives you short checks and a four-level scale for judging what the student has understood.
+
 Four quick checks, none of which is a test.
 
 1. **The fade.** *"An average uses 0.9 × old + 0.1 × new. One value of 10 arrives, then zeros. What is the average after 3 steps?"* **Full:** 0.81. **Partial:** describes the fade without the number. **Not yet:** 0 or 10.
@@ -1286,6 +1310,8 @@ Four quick checks, none of which is a test.
 
 ## 📤 Homework to Assign
 
+This section lists the homework pages and what each one checks.
+
 **Workbook Week 2** (about 60–75 minutes). The workbook file is authored in a later stage; the pages it must carry, so that it matches today, are:
 
 | Page | Task | What it checks |
@@ -1305,6 +1331,8 @@ Four quick checks, none of which is a test.
 ---
 
 ## 🔑 Answer Key
+
+Use this key to mark the workbook pages and the questions posed in the lesson. It is for the teacher only.
 
 ### Page 2.1 — The hand table
 

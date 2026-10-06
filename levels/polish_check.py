@@ -103,8 +103,13 @@ def check(path, ref):
         if l != l.rstrip():
             fails.append(f"line {n}: trailing whitespace")
             break
-    if re.search(r"\n\n\n\n", new):
-        fails.append("three or more consecutive blank lines")
+    blank, prev = 0, 0
+    for n, l in prose:                       # only prose lines count; blank runs inside fences are code
+        blank = blank + 1 if (not l.strip() and n == prev + 1) or (not l.strip() and blank == 0) else (1 if not l.strip() else 0)
+        prev = n
+        if blank >= 3:
+            fails.append(f"line {n}: three or more consecutive blank lines")
+            break
     # ---- against baseline
     old = base_text(rel_to_repo(path), ref)
     if old is None:

@@ -48,9 +48,11 @@ A few words to keep in mind:
 
 ## 🧠 The Big Idea
 
+This section shows what a bag of words loses, then builds the fix: a cell that reads in order and carries a note. You need it because every later recurrent model is this cell with more numbers.
+
 ### 1. What a bag keeps, and what it throws away
 
-Check your tally on the computer. This file has no torch in it.
+Check your tally on the computer. Type and run `bag.py`; it has no torch in it.
 
 **`bag.py`**
 
@@ -88,7 +90,7 @@ same text?  False
 orderings of 5 different words: 120
 ```
 
-The computer sees the same row twice. However clever the classifier that comes next, it cannot tell these sentences apart, because the information is gone before the classifier starts. The last line is a side fact: five different words can be lined up in 120 ways, and all 120 give one bag.
+Look at the `bag of a` and `bag of b` lines: they are identical. The computer sees the same row twice. However clever the classifier that comes next, it cannot tell these sentences apart, because the information is gone before the classifier starts. The last line is a side fact: five different words can be lined up in 120 ways, and all 120 give one bag.
 
 > **✏️ Write in your Bug Log.** What would a reader have to do that a counter does not? Write one sentence. Then write one pair of sentences of your own, with the same words in a different order, where the two meanings really differ.
 
@@ -201,7 +203,7 @@ match     : True
 last of out == h_n: True
 ```
 
-Things to notice:
+Look at the `rnn says` and `by hand` lines: they are the same four numbers. Things to notice:
 
 - `nn.RNN(1, 1, batch_first=True)` means: a cell that takes **1** number per word and keeps a note of **1** number. (The construct is explained in section 5.)
 - Inside it are **four** parameters, printed as `(1, 1) (1, 1) (1,) (1,)`. Two of them are our weights `W_xh` and `W_hh`. The other two are **biases**. `nn.RNN` has two bias numbers (only their sum matters; it is a quirk of the library). Our hand version has no bias, so both go to zero.
@@ -278,9 +280,11 @@ Look at the first and fourth rows of the lookup. The word `the` is the first and
 
 ### 5. The three new constructs
 
-Read these slowly. They are the whole syntax of the week.
+This section names the three new pieces of syntax, in the order you will meet them. Read them slowly; they are the whole syntax of the week.
 
 **(a) `nn.Embedding(V, d)` is a grid with `V` rows and `d` columns.** You give it a tensor of row numbers and it returns those rows. The ids must be whole numbers, and each must be smaller than `V`.
+
+Example of the lookup (a fragment, not a whole file):
 
 ```python
 emb = nn.Embedding(4, 3)     # 4 words, each stored as 3 numbers
@@ -342,11 +346,13 @@ out[:, -1] == h_n[0]        : True
 first step out[:, 0] == h_n[0]? False
 ```
 
-The last line prints `False` on purpose. The note after the *first* word is not the note after the *last* one.
+Look at the last two comparisons: the last-step slice of `out` matches `h_n`, and the first-step slice does not. The last line prints `False` on purpose. The note after the *first* word is not the note after the *last* one.
 
 ---
 
 ## 🎲 Your Turn
+
+In this section you act as the cell with a calculator, then run the real layers and check them against the loop they hide. Doing it by hand first is what makes the shapes and numbers readable later.
 
 ### The Sticky-Note Relay
 
@@ -500,7 +506,7 @@ Read the step-by-step distances at the bottom. After word 1 the distance is `0.0
 
 ### What is inside `nn.RNN`? `loop.py`
 
-Here is the same layer written as a plain loop. Notice that the **same** `W_ih`, `W_hh` and `b` are used at every one of the five steps.
+Here is the same layer written as a plain loop; run `loop.py` and compare its two columns. Notice that the **same** `W_ih`, `W_hh` and `b` are used at every one of the five steps.
 
 **`loop.py`**
 
@@ -551,13 +557,15 @@ T = 500  out shape (1, 500, 4)  parameters 36
 by hand: 4*3 + 4*4 + 4 + 4 = 36
 ```
 
-`@` is the matrix-times-vector product from Level 3. The weights do not grow with the length of the sentence: 36 numbers whether it reads 5 words or 500. Count them: `4x3 + 4x4 + 4 + 4 = 36`. That is weight sharing, in numbers.
+Look at the `my h` and `nn.RNN says` columns, then at the three `parameters` lines. `@` is the matrix-times-vector product from Level 3. The weights do not grow with the length of the sentence: 36 numbers whether it reads 5 words or 500. Count them: `4x3 + 4x4 + 4 + 4 = 36`. That is weight sharing, in numbers.
 
 One more honest limit. Reading five words takes five steps, one after another: step 3 cannot start before step 2 has finished. Sharing the weights is a statement about **how many numbers there are**, not about speed.
 
 ---
 
 ## 🔬 Break It On Purpose
+
+This section shows the most common silent shape mistake in this week's code, so you can recognise it when nothing crashes.
 
 **DELIBERATE.** This file leaves out `batch_first=True`. Before you run it, write down what `h_n` *should* look like if it reads 2 sentences of 4 words, each word 3 numbers, with a note of 5 numbers. Then run it.
 
@@ -578,7 +586,7 @@ out shape: (2, 4, 5)   h_n shape: (1, 4, 5)
 I asked for 2 summaries. I got 4
 ```
 
-Did Python complain? Compare your prediction with what was printed. Write in your Bug Log what PyTorch thought the first axis of `x` was, and what you should do before every run from now on.
+Look at the shape of `h_n`. Did Python complain? Compare your prediction with what was printed. Write in your Bug Log what PyTorch thought the first axis of `x` was, and what you should do before every run from now on.
 
 ---
 
@@ -692,6 +700,8 @@ Read these numbers carefully, and do not over-read them.
 ---
 
 ## 🔑 Wrap Up
+
+Use these questions to check that you can explain the week without the page. Answer them in your Bug Log before you look anything up.
 
 1. Three things we did. One: a bag of words cannot tell these sentences apart. Two: a recurrent cell reads them in order, with one set of weights, and keeps a note. Three: its note after the last word *can* depend on the order. What did we **not** do?
 2. How many numbers does the cell have to learn if the sentence has five words? And fifty?

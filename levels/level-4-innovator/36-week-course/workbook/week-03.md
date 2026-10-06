@@ -39,6 +39,8 @@ Last week's habits, used again today.
 
 ## 🔢 Page 3.1 — The Three-Optimizer Table (the page the whole week hangs on)
 
+In this page you compute SGD, momentum and Adam by hand on one toy, then let torch referee.
+
 **No code yet.** Function `f(w) = w * w`. Gradient `g = 2w`. Start at `w = 1.0`, `lr = 0.1`. Four decimal places. A calculator is fine.
 
 The first two columns are **last week's**: copy them if you still have them, or recompute (they take two minutes).
@@ -118,6 +120,8 @@ I got: `exp_avg` ____________ and `exp_avg_sq` ____________. Do they match **row
 
 ## 🧮 Page 3.2 — The First Step
 
+In this page you compare how far SGD and Adam move on the very first step for two very different gradients.
+
 Two knobs. One has gradient **1**. The other has gradient **1000**. `lr = 0.1`. Think of a loss `g x w`, so the gradient is just `g`.
 
 **First, by hand.** Fill in the plain-SGD row (it is `lr x g`). For Adam, use what you learned on page 3.1, row 1: `m_fix = g`, `s_fix = g x g`, `root = |g|`, so the step is `0.1 x g / |g| = ____`.
@@ -128,7 +132,7 @@ Two knobs. One has gradient **1**. The other has gradient **1000**. `lr = 0.1`. 
 | 1000 | ________ | ________ |
 | 2000 (predict, no code) | ________ | ________ |
 
-**Now check:**
+**Now check.** Save and run:
 
 ```python
 import torch
@@ -153,6 +157,8 @@ ________________________________________________________________
 ---
 
 ## 🧮 Page 3.3 — Root-Mean-Square on Your Own Lists (new maths: pencil first)
+
+In this page you practise the week's one new maths idea on small lists, by hand first.
 
 The three steps, in this order: **1. square every number. 2. take the mean of the squares. 3. take the square root.**
 
@@ -184,7 +190,7 @@ My list: [ ________ , ________ , ________ ]
 | 3. root, 4 decimals | ________ |
 | plain mean, for comparison | ________ |
 
-**Now check, then scale it:**
+**Now check, then scale it.** Save and run:
 
 ```python
 import torch
@@ -215,6 +221,8 @@ My list divided by its RMS: [ ________ , ________ , ________ ]  Same for scale 1
 ---
 
 ## 📊 Page 3.4 — Adam's Rate: Good or Coin?
+
+In this page you predict, run and record which learning rates work for Adam and for SGD.
 
 Same data, same seed, same starting weights as Week 1. Only the rule and the rate change.
 
@@ -264,6 +272,8 @@ ________________________________________________________________
 ---
 
 ## 🔬 Page 3.5 — Break It on Purpose
+
+In this page you trigger real errors and silent mistakes on purpose, so you recognise them later.
 
 **Deliberate.** Pick **one** of these. Type it exactly, run it, and paste the **last line** on the Bug Log (page 3.9). Then fix it and run it again.
 
@@ -356,13 +366,15 @@ It printed: ________________  Why? Adam's step was `0 / (0 + 0)`, and that is __
 
 ## 🧯 Page 3.6 — AdamW and the Quiet Bug
 
+In this page you test how weight decay behaves under SGD, Adam and AdamW.
+
 **Weight decay** means every weight shrinks a little on every step. Here there is **no loss at all**: the gradient is exactly zero, so *only decay* acts. Two weights, one small (1.0) and one big (100.0), ten steps, `lr = 0.1`, `weight_decay = 0.1`.
 
 **D1 — predict with SGD (pencil).** Plain SGD loses `lr x weight_decay x w` each step, so each step multiplies `w` by `1 - 0.1 x 0.1 =` ________. After ten steps (use a calculator: that number to the power 10) the small weight is ________ and the big weight is ________.
 
 **D2 — predict the other two.** Circle one in each row. Under **Adam**, the weight that is hurt *most* is **the small one / the big one**. Under **AdamW**, both lose about the **same amount / the same share**.
 
-**Now run it:**
+**Now run it.** Save and run:
 
 ```python
 import torch
@@ -434,6 +446,8 @@ Adam: ________________  AdamW: ________________  So the default `weight_decay` o
 
 ## 🪙 Page 3.7 — What Epsilon Is For
 
+In this page you find out what epsilon protects against and what it costs.
+
 Adam's step is `lr x g / (|g| + epsilon)` on the first step, where `epsilon = 0.00000001` (written `1e-8`). Use `lr = 0.1`.
 
 **E1 (pencil).** For `g = 1`: the denominator is `1 + 0.00000001`, which is so close to 1 that the step is ________ (to five decimals).
@@ -467,6 +481,8 @@ for gradient in (1000, 1, 1e-3, 1e-6, 1e-8, 1e-9):
 
 ## ➕ Page 3.8 — A Second Hand Table (new numbers)
 
+In this page you repeat the Adam table from a new start, to see what stays the same.
+
 Same Adam rule as page 3.1, **new start**: `f(w) = w * w`, start at `w = 2.0`, `lr = 0.1`. Three steps (a fourth for the brave). Fresh numbers so you cannot copy page 3.1. Remember the rule and the order: `g`, `m`, `s`, `m_fix`, `s_fix`, `root`, `step`, `w`.
 
 | t | w before | g = 2w | m | s | m_fix | s_fix | root | step | w after |
@@ -487,6 +503,8 @@ Same Adam rule as page 3.1, **new start**: `f(w) = w * w`, start at `w = 2.0`, `
 ---
 
 ## 📓 Page 3.9 — The Bug Log
+
+In this page you record every error you meet this week, loud or silent.
 
 One entry per error you meet, loud or silent.
 
@@ -525,6 +543,8 @@ Last line: ________________________________________  Adam makes its two averages
 ---
 
 ## 🧠 Self-Check (do this last, from memory)
+
+In this section you test what you remember, without looking back.
 
 1. **Say the three steps of root-mean-square, in order, and what it measures in one phrase.**
 
@@ -566,7 +586,9 @@ Good at `lr =` ____ : train ________   Coin at `lr =` ____ : train ________
 ---
 ---
 
-# ✂️ ANSWERS — keep this page folded until you have finished
+## ✂️ ANSWERS — keep this page folded until you have finished
+
+Check your work here only after you have finished every page.
 
 > All numbers below were printed by real runs (CPU, one thread, seed 0, torch 2.2.1). Accept hand figures within 0.0001. For anything from the spirals accept about 0.005 on a loss and 0.5 points on an accuracy.
 
@@ -663,6 +685,7 @@ Any one, with the last line pasted and a fix.
 - **D.** `TypeError: 'MLP' object is not iterable`. The optimizer wants a list of things to adjust. Fix: `model.parameters()`.
 
 **Silent ones.**
+
 - **E.** Printed `mean : -0.5`, `sqrt of mean : nan`, `what it should be: 3.535533905029297`. A square root of a negative number returns `nan` with no complaint. W5: *look for a square root or a division just before it.* Fix: square, then mean, then root.
 - **F.** Hand step 1 **0.6838**, torch step **0.9**. Suspect the **hand** number. Without the division, `m` is 0.2, `sqrt(s)` is 0.0632 (the root of 0.004), so the step is `0.1 x 0.2 / 0.0632 = 0.316`, not 0.1, and `1.0 - 0.316 = 0.6838`. Fix: divide `m` by `1 - 0.9 ** t` and `s` by `1 - 0.999 ** t`.
 - **G.** `w after one step: nan`. The step was `0 / (0 + 0)`, which is not a number. Epsilon is there so you never divide by zero (the default `1e-8` turns it into `0 / 0.00000001 = 0`). Fix: leave `eps` alone.

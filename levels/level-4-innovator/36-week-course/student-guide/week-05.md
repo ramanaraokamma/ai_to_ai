@@ -67,6 +67,8 @@ You will write the code that produced this table today, then test four cures on 
 
 ## 🧠 The Big Idea
 
+This section gives you the words and the small amount of arithmetic you need before you write any code: what memorising is, what the four cures do, and the four new lines of syntax.
+
 ### 1. Learned versus memorised
 
 A model that has **learned** has found something true about *all* spiral points. A model that has **memorised** has found something true about *these 120 points*, including their accidents: a point that landed on the wrong arm because the noise pushed it there. You cannot tell the two apart from the training loss, because both score well on the points they practised on. You can tell them apart from **two numbers side by side**: the loss on points it trained on, and the loss on points it has never seen. The second is the **validation loss**.
@@ -116,9 +118,13 @@ A jittered spiral point is a new training example **only if its class is still t
 
 ## 💻 Try It Yourself
 
+In this section you try each new construct on its own, build `lab.py`, reproduce the opening table, and meet four deliberate errors.
+
 ### Step 1 — the four constructs, one at a time
 
 Make a folder for this week's files. Type each of these as its own file and run it. Each takes under a second.
+
+This first file shows dropout in `train()` mode, in `eval()` mode, and over many draws:
 
 ```python
 # dropout_demo.py
@@ -153,7 +159,13 @@ value of a survivor: 2.0
 average of the output: 0.9984999895095825
 ```
 
-The exact pattern of zeros and twos is seeded, so yours will match. Three facts matter: survivors are `2.0`, about half survive, and `eval()` passes every number through.
+The exact pattern of zeros and twos is seeded, so yours will match. Look for three facts:
+
+- survivors are `2.0`;
+- about half survive;
+- `eval()` passes every number through.
+
+Next, this file compares a plain `state_dict()` with a `deepcopy` snapshot across one training step:
 
 ```python
 # alias_demo.py
@@ -181,7 +193,9 @@ after one step:   alias 20.0225   snapshot -0.0075
 live weight now: 20.0225
 ```
 
-Both started equal. After one training step, one of them moved with the live weight and one did not. Which is which, and what does that tell you about why `deepcopy` is not optional? Write it in your Bug Log. (The step is huge because the squared error `(2w − 10)²` is steep at the start; the size is not the point.)
+Look at the second line: both started equal, but after one training step one of them moved with the live weight and one did not. Which is which, and why does that make `deepcopy` necessary? Write it in your Bug Log. (The step is huge because the squared error `(2w − 10)²` is steep at the start; the size is not the point.)
+
+This file draws jitter of different shapes and adds it to the training points:
 
 ```python
 # jitter_demo.py
@@ -218,7 +232,9 @@ tensor([[ 0.1728, -1.4694],
 biggest move of any coordinate: 0.31063368916511536
 ```
 
-(This file does `from lab import Xs`, so make `lab.py` in Step 3 first, or come back to it.) The first two lines show what `size=` means. In the last block each coordinate moved by about a tenth, and the biggest move of any of the 240 coordinates was 0.31, about three times the noise size.
+This file does `from lab import Xs`, so build `lab.py` in Step 3 first, or come back to it. The first two output lines show what `size=` means. In the last block each coordinate moved by about a tenth, and the biggest move of any of the 240 coordinates was 0.31, about three times the noise size.
+
+This file applies weight decay alone, with the gradient forced to zero, and checks it against your hand arithmetic:
 
 ```python
 # decay_demo.py
@@ -253,7 +269,7 @@ by hand, one step:  1 - 0.003 * 0.3 = 0.9991
 by hand, two steps: that times itself = 0.9982
 ```
 
-The gradient here is set to exactly zero, so **only the fee acts**. Your hand arithmetic matches steps 1 and 2. What happens in the 750 steps is the program repeating the same multiplication; how to work that out by arithmetic is for Week 10, so just read the number: a weight of 1.0 has been squeezed to 0.5090.
+The gradient here is set to exactly zero, so **only the fee acts**. Your hand arithmetic matches steps 1 and 2. The 750-step row is the program repeating the same multiplication; how to work that out by arithmetic is for Week 10, so just read the number: a weight of 1.0 has been squeezed to 0.5090.
 
 ### Step 2 — patience, by hand and then by machine
 
@@ -264,7 +280,9 @@ epoch:  0     1     2     3     4     5     6     7     8     9
 val:    0.70  0.40  0.30  0.25  0.26  0.24  0.27  0.28  0.29  0.30
 ```
 
-On paper, with `patience = 3`: at each epoch write the best value so far, the epoch it happened, and "epochs since best". Stop the first time that last number reaches 3. Write down the epoch you stop at and the epoch of the best value you would keep. Do it again for `patience = 5` and `patience = 1`. **Only then** run this. (The second half of `stopping.py` imports `lab.py` from Step 3, so if you have not built it yet, do Step 3 first and come back.)
+On paper, with `patience = 3`: at each epoch write the best value so far, the epoch it happened, and "epochs since best". Stop the first time that last number reaches 3. Write down the epoch you stop at and the epoch of the best value you would keep. Do it again for `patience = 5` and `patience = 1`. **Only then** run the two files below. The second half of `stopping.py` imports `lab.py` from Step 3, so if you have not built it yet, do Step 3 first and come back.
+
+First, the stopping rule as a function:
 
 ```python
 # patience.py
@@ -278,6 +296,8 @@ def when_to_stop(val_losses, patience):
             return best_ep, ep
     return best_ep, None
 ```
+
+Then a file that applies it to the made-up list and to real curves:
 
 ```python
 # stopping.py
@@ -308,9 +328,11 @@ Each pair is `(best epoch, stop epoch)`; `None` means the list ended before the 
 
 ### Step 3 — build `lab.py`, in pieces
 
+This step builds the one file the rest of the week imports.
+
 Everything from here on imports one function, `fit`, with four switches: `dropout`, `wd` (weight decay), `jitter` and `patience` (early stopping). Everything else is identical every time: the same 120 points, the same 360 validation points, the same network, the same optimizer (AdamW, `lr=0.003`), batch 40 (so 3 steps per epoch and 750 steps in a 250-epoch run), and the same seed. **One switch per run**, which is the Week 1 rule.
 
-Your teacher will go through the loop with you in pieces. Type it into one file, `lab.py`, exactly as below. Read the comments.
+Your teacher will go through the loop with you in pieces. Type it into one file, `lab.py`, exactly as below, and read the comments.
 
 ```python
 # lab.py
@@ -364,7 +386,7 @@ def fit(*, dropout=0.0, wd=0.0, jitter=0.0, epochs=250, patience=None, batch=40,
             "best_state": best_state, "stopped_at": stopped_at, "model": model}
 ```
 
-Things to find in it before you run anything:
+Before you run anything, find these in the code:
 
 - The three lines at the top of `fit` that seed three different random things (torch's global generator, numpy's `rng`, and the shuffle generator `g`). Why are there three?
 - Which line is the new `torch.randperm` and where `generator=` appears as a keyword.
@@ -373,7 +395,7 @@ Things to find in it before you run anything:
 - The one line that makes the snapshot, and the line that decides when to take one.
 - What is `best_ep` used for in the stopping rule?
 
-Now check that the pieces are right:
+Now check that the pieces are right with a short file that prints shapes, class balance, parameter count and step counts:
 
 ```python
 # checks.py
@@ -394,9 +416,9 @@ steps per epoch: 3   steps in 250 epochs: 750
 2.2.1 1.26.4
 ```
 
-(Your torch and numpy versions may differ.) Read the lines: 55% of the 120 points are class 1, so a model that always says "class 1" scores 55% here; 16,962 parameters; 3 steps per epoch. Check `make_model(dropout=0.3).blocks[0].drop` prints `Dropout(p=0.3, inplace=False)`: that is the wake-up of the line you saw in Week 1.
+Your torch and numpy versions may differ. Look at the middle lines: 55% of the 120 points are class 1, so a model that always says "class 1" scores 55% here; 16,962 parameters; 3 steps per epoch. Check `make_model(dropout=0.3).blocks[0].drop` prints `Dropout(p=0.3, inplace=False)`: that is the wake-up of the line you saw in Week 1.
 
-Now reproduce the opening table. This is the file that printed it:
+Now reproduce the opening table. This file printed it; it runs `fit` with no cure and prints selected epochs as bars:
 
 ```python
 # hook.py
@@ -434,11 +456,13 @@ gap (val - train) at the best epoch: 0.089
 gap (val - train) at the end:        0.906
 ```
 
-The last bar is five times as long as the epoch-50 bar. Compare the two gap lines.
+Look at the bars: the last is five times as long as the epoch-50 bar. Then compare the two gap lines, best epoch against the end.
 
 ### Step 4 — two deliberate errors
 
 Both of these are broken on purpose. Read the **last line** of each error and say what it is asking for before you fix anything.
+
+The first passes a percentage to `nn.Dropout`:
 
 ```python
 # err1.py
@@ -455,6 +479,8 @@ Traceback (most recent call last):
     raise ValueError(f"dropout probability has to be between 0 and 1, but got {p}")
 ValueError: dropout probability has to be between 0 and 1, but got 30
 ```
+
+The second feeds numpy-made noise straight into the network:
 
 ```python
 # err2.py
@@ -483,9 +509,9 @@ Traceback (most recent call last):
 RuntimeError: mat1 and mat2 must have the same dtype, but got Double and Float
 ```
 
-Fix each, and write in your Bug Log what each error message told you. For the second one, note what `print(noisy.dtype)` already said, and how far (in lines) the error is from the line that caused it. A good habit: **print the `dtype` of anything you built from numpy.**
+Fix each, and write in your Bug Log what each error message told you. For the second one, note what `print(noisy.dtype)` already said, and how far (in lines) the error is from the line that caused it. **Takeaway: print the `dtype` of anything you built from numpy.**
 
-Two more, in the same style (read the message, then fix):
+Two more, in the same style (read the message, then fix). The third passes the generator without its keyword:
 
 ```python
 # err3.py
@@ -504,7 +530,9 @@ TypeError: randperm() received an invalid combination of arguments - got (int, t
  * (int n, *, Tensor out, torch.dtype dtype, torch.layout layout, torch.device device, bool pin_memory, bool requires_grad)
 ```
 
-(In that message, the `*` in the list of allowed arguments is the clue to what is allowed after `n`.)
+In that message, the `*` in the list of allowed arguments is the clue to what is allowed after `n`.
+
+The fourth gives `size=` the wrong kind of value:
 
 ```python
 # err4.py
@@ -531,11 +559,13 @@ TypeError: expected a sequence of integers or a single integer, got 'tensor([[ 0
 
 ## 🎲 Your Turn — The Four-Cure Table
 
+In this section you measure the four cures on one seed and on five, test how large the jitter can be, and write a short report from your own numbers.
+
 Open the empty table on **Workbook page 5.4**. You will fill it from your own run.
 
 ### Part 1 — one seed (about 10 minutes)
 
-Run this file (about 9 seconds in all). The first block is seed 0; the second runs five seeds, which Part 2 uses.
+Run this file (about 9 seconds in all). The first block is seed 0; the second runs five seeds, which Part 2 uses. It trains the control and the four cures and prints one row for each.
 
 ```python
 # table.py
@@ -577,7 +607,7 @@ weight decay 0.3           61     0.140      0.274        0.053
 jitter 0.1                 81     0.130      0.318        0.061
 ```
 
-Copy the five rows into your table. Then:
+Copy the five rows into your table. Then answer:
 
 1. Which column is picked with hindsight, so you could not know it while training? (Hint: which would need you to see the whole curve first?)
 2. The early-stop row repeats the control's `59` and `0.179`. Why? (Think about what the early-stop run *is*.)
@@ -586,7 +616,7 @@ Copy the five rows into your table. Then:
 
 ### Part 2 — five seeds (about 10 minutes)
 
-The second half of `table.py` printed:
+The second half of `table.py` printed the five-seed summary. Each cell is the mean, with the lowest and highest in brackets:
 
 ```text
 FIVE SEEDS (0-4): mean +- spread (lowest .. highest)
@@ -605,7 +635,7 @@ Before writing any sentence about a winner, do this with a pencil: for the **bes
 
 ### Part 3 — how big can the jitter be? (about 8 minutes)
 
-Use the numbers from section 4: the typical gap to the other class is about **0.57** and a typical move for noise `s` is about `s × 1.41`. **Before you run anything**, write a prediction: for which jitter size `s` in `0.05, 0.1, 0.2, 0.3, 0.5` do you expect the lowest validation loss, and for which does the noise start to "lie about the label"? Then run:
+Use the numbers from section 4: the typical gap to the other class is about **0.57** and a typical move for noise `s` is about `s × 1.41`. **Before you run anything**, write a prediction: for which jitter size `s` in `0.05, 0.1, 0.2, 0.3, 0.5` do you expect the lowest validation loss, and for which does the noise start to "lie about the label"? Then run this sweep, which repeats the jitter run over five seeds for each size:
 
 ```python
 # jitter_sweep.py
@@ -633,6 +663,8 @@ How did your prediction do? Sketch the `final val` column as a curve against `s`
 
 ### Part 4 — two measurements about dropout and the fee
 
+Two measurements follow. The first asks the same dropout model the same question twice, in each mode:
+
 ```python
 # twice.py
 from lab import *
@@ -651,7 +683,9 @@ train mode, same data, twice: 0.3621 0.3263
 eval mode,  same data, twice: 0.2807 0.2807
 ```
 
-Same model, same 360 points, asked twice. Why does train mode give two answers? What would it mean for your reports if `model.eval()` were forgotten?
+Look at the two lines: same model, same 360 points, asked twice. Why does train mode give two answers? What would it mean for your reports if `model.eval()` were forgotten?
+
+The second adds up the size of every weight with and without weight decay:
 
 ```python
 # weightsize.py
@@ -686,6 +720,8 @@ What I would ship is ___ because ___.  One thing I did not test: ___.
 
 ## 🔑 Wrap Up
 
+This section checks that you can explain the week in your own words.
+
 Answer these before you close the laptop:
 
 1. Why is the training loss alone not enough to say a model is good? What two numbers do you compare?
@@ -699,11 +735,23 @@ Then write this sentence in your Bug Log, in your own handwriting:
 
 > **"A toy result shows a mechanism, not a rate. The ranges between seeds are bigger than most differences between cures, so I say how many seeds I ran."**
 
-Four things you may read elsewhere are **not** shown by anything you measured this week: why dropout works (stories about units depending on each other are plausible but untested at this size), a Bayesian reading of weight decay, double descent, and cross-validation. Write them in the "later" column of your Bug Log. Also note: dropout 0.3 did **not** win here, so do not claim "dropout is the standard cure so it should be best". And `weight_decay=0.3` is a large value that works on this tiny problem; the lesson is the mechanism, not the number.
+Four things you may read elsewhere are **not** shown by anything you measured this week:
+
+- why dropout works (stories about units depending on each other are plausible but untested at this size);
+- a Bayesian reading of weight decay;
+- double descent;
+- cross-validation.
+
+Write them in the "later" column of your Bug Log. Two more cautions:
+
+- Dropout 0.3 did **not** win here, so do not claim "dropout is the standard cure so it should be best".
+- `weight_decay=0.3` is a large value that works on this tiny problem; the lesson is the mechanism, not the number.
 
 ---
 
 ## 📝 Vocabulary
+
+The words from this week, in one place.
 
 | Word | Meaning |
 |---|---|
@@ -723,6 +771,8 @@ Four things you may read elsewhere are **not** shown by anything you measured th
 
 ## 🏠 Homework
 
+Homework repeats the table on fresh seeds, so you check that your result does not depend on the seeds you already saw.
+
 Workbook Week 5, pages 5.1 to 5.5 (about 60 to 75 minutes). Everything you write down must come from **your own run, printed on your own screen, with a seed set, in the last 24 hours**, not from this chapter.
 
 1. **Finish your own `lab.py`** (the four cures, the snapshot and the seed) and run the five rows of `table.py` on **three fresh seeds**: `[5, 6, 7]`. Print the three-seed mean of best epoch, best validation loss and final validation loss for each row.
@@ -735,6 +785,8 @@ Workbook Week 5, pages 5.1 to 5.5 (about 60 to 75 minutes). Everything you write
 ---
 
 ## 🔮 Next Week
+
+This section says where the course goes next.
 
 Four cures changed the network, the data or the stopping time, but they all used the same shape of network. Week 6 asks what happens when you change the **inside** of the network: normalisation, residual connections and clipping, on a different kind of problem.
 

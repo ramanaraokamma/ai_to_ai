@@ -42,6 +42,8 @@ Observable evidence: `sweep_rows.csv` on disk (75 rows); a printed sweep table; 
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section is your own preparation: what the student does, the maths you lean on, what you must not claim, the one new construct and what the table will say. Read it before the lesson, not during it.
+
 > **📌 About the code blocks in this guide.** The blocks in the **🧰 Prep Checklist** are *whole files* and every one was run, in order, from one folder, on a CPU with the seeds shown. Blocks elsewhere are short illustrations that carry on from those files. If you paste an illustration alone and get `NameError`, that is why. Outputs are real. The **timing lines** (`... seconds`) vary run to run; **every other number repeated exactly on a second full run on the same machine**, because the harness is seeded and pinned to one CPU thread.
 
 ### 1. What the student is doing today, in one paragraph
@@ -92,13 +94,15 @@ Worked on real numbers, by hand, before any code (the student does these on page
 
 ### 4. The one new construct, for somebody who has never seen it
 
+The new construct is `itertools.product`. Here it is on two short lists.
+
 ```python
 import itertools
 
 pairs = list(itertools.product([1e-3, 1e-2], [0, 1, 2]))
 ```
 
-Read it as: *"give me every way of picking one thing from the first list and one thing from the second."* Two learning rates times three seeds is six pairs:
+Read it as: *"give me every way of picking one thing from the first list and one thing from the second."* Two learning rates times three seeds is six pairs. Look at the last number in each pair: it cycles through the seeds while the learning rate holds still.
 
 ```text
 (0.001, 0)  (0.001, 1)  (0.001, 2)  (0.01, 0)  (0.01, 1)  (0.01, 2)
@@ -120,6 +124,7 @@ for value in values:
 ```
 
 **Two traps, both in the Debugging Clinic with real tracebacks.**
+
 - `product(...)` does **not** give you a list. It gives you a **one-shot iterator**: it can be walked once and is then empty. `len()` on it fails loudly. Walking it a second time fails *silently*, which is much worse.
 - **Every argument must be a list (or anything you can loop over).** `product(values, 3)` fails because `3` cannot be walked.
 
@@ -175,6 +180,8 @@ Term 1 is *"your loss curve is wrong — which of ten knobs do you turn, and how
 ---
 
 ## 🧰 Prep Checklist
+
+Use this before class to confirm the stack, type the six files and prepare the wall table. Each item has a box to tick.
 
 ### 25 minutes the night before
 
@@ -497,6 +504,8 @@ norm = batch             0.423   0.187   0.065   0.117     0.019    1.111   3e-0
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This is the whole lesson plan, segment by segment. Each step gives a time, what to say or ask, and what to expect.
+
 | Segment | Minutes | What happens |
 |---|:--:|---|
 | 🪝 Hook | 7 | Predict, then see that **the seed alone** moves the answer |
@@ -782,6 +791,8 @@ TypeError: run() got an unexpected keyword argument 'learning_rate'
 
 ## 🎲 The Activity, In Full
 
+This section gives the full rules of the Playbook Court, so you can run it without the rest of the guide open.
+
 ### The Playbook Court
 
 **What it is:** the student presents each playbook rule as a case. You are the judge and you ask **three fixed questions**. A rule that survives all three goes on the playbook page.
@@ -825,6 +836,8 @@ Ask for a **second sweep at 30 epochs** (change `EPOCHS`, rename the CSV) and a 
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions you are likely to hear, each with a short honest answer. Where the answer is a guess, the guide says so.
+
 **"Why not run every combination of all six?"** It is 3,840 configurations, 11,520 runs with three seeds, about 77 minutes at 0.4 s a run (**arithmetic from the measured sweep time, not a run**). One at a time is 72 runs. What we lose is **interactions**: we can't see that a big learning rate and a big batch might behave differently together. That limitation goes in the playbook.
 
 **"Why three seeds, why not one hundred?"** Cost. One run shows no spread at all; three is the cheapest number that does. It is not enough to detect *small* effects. In the playbook, say *"3 seeds"* after every number.
@@ -851,6 +864,8 @@ Ask for a **second sweep at 30 epochs** (change `EPOCHS`, rename the CSV) and a 
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+These are the seven failure modes to watch for, with the fix for each.
+
 1. **A rule with no spread.** The student writes *"dropout 0.3 gave 0.043 so it helps"*. Ask for the spread and the baseline. (0.043 ± 0.013 against 0.039 ± 0.008: inside noise.)
 2. **A rule from the best row.** `norm batch` has the lowest mean (0.024) and looks like a winner. The gap (0.015) is under twice the spread (0.016): borderline, inside noise. Say "borderline"; do not rule either way.
 3. **The sweep is run while the laptop sleeps or other heavy programs are open.** It should take 30 seconds. Retime if it takes much more; results are unaffected (they are deterministic) but the lesson loses its pace.
@@ -862,6 +877,8 @@ Ask for a **second sweep at 30 epochs** (change `EPOCHS`, rename the CSV) and a 
 ---
 
 ## 🧭 Differentiation
+
+Use this when the student needs more support, more challenge, or a way back in.
 
 ### If the student is struggling
 

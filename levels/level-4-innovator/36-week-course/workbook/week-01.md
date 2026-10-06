@@ -62,7 +62,7 @@ ________________________________________________________________
 
 **M2 — the constant guesser's accuracy.** The validation set has 360 points. **169** belong to class 0 and **191** to class 1.
 
-```
+```text
 class 0 share = 169 ÷ 360 = ____________      as a percentage ____________
 class 1 share = 191 ÷ 360 = ____________      as a percentage ____________
 169 + 191     = ____________                  (should be 360: does it?)
@@ -82,9 +82,11 @@ ________________________________________________________________
 
 ## 💻 Page 1.1 — The Six-Curve Grid
 
+In this page you train one network at six learning rates, label each loss curve, and learn why the same final loss can hide opposite stories.
+
 **Step 1 — predict (before you run anything).** The harness trains the same network on the same spirals six times and changes **only** `lr`. Which one do you think learns best? Circle: **A B C D E F** (the table below tells you the learning rate of each).
 
-**Step 2 — run it.** Save this as `week01.py` in `36-week-course/` and run it.
+**Step 2 — run it.** This loop calls the harness once per learning rate. Save it as `week01.py` in `36-week-course/` and run it.
 
 ```python
 import torch
@@ -132,7 +134,7 @@ ________________________________________________________________
 
 **Step 6 — your own sketch.** Draw the six loss curves, roughly, in the boxes. Label the axes: epoch across, loss up.
 
-```
+```text
  loss                                    loss
   |                                       |
   |                                       |
@@ -165,7 +167,7 @@ The harness's **default** is `lr=3e-3`. That sits between D (`1e-3`) and E (`1e-
 
 Because: ________________________________________________________________
 
-**Run it:**
+**Run it.** This trains once at the default learning rate:
 
 ```python
 from l4lib.spirals import run
@@ -266,6 +268,10 @@ Last line: ________________________________________
 
 ## 🔁 Page 1.6 — Same Seed, Twice
 
+In this page you check what a seed buys you: run the same setup twice, then change only the seed.
+
+**Run this.** It trains the same network twice with identical settings and compares the two loss histories.
+
 ```python
 import torch
 torch.set_num_threads(1)
@@ -276,6 +282,8 @@ b = run("second", lr=1e-3, verbose=False)
 print("same curve twice:", a["train"] == b["train"])
 print("final train loss, both runs:", a["train"][-1], b["train"][-1])
 ```
+
+Look at the first printed line: it says whether the two curves were identical.
 
 I got: ________________________________________
 
@@ -315,6 +323,8 @@ In my words: ________________________________________________________
 
 ## 🧠 Self-Check (do this last, from memory)
 
+Close the chapter and answer from memory. This shows which ideas from the week you own and which need another look.
+
 1. **In one sentence, why is 0.693 the loss of a guessing two-class model?**
 
 ________________________________________________________________
@@ -345,7 +355,7 @@ ________________________________________________________________
 ---
 ---
 
-# ✂️ ANSWERS — keep this page folded until you have finished
+## ✂️ ANSWERS — keep this page folded until you have finished
 
 *Numbers come from real runs: CPU, one thread, seed 0, `l4lib.spirals.run`. Within ±0.005 on a loss and ±0.5 points on an accuracy is a match.*
 

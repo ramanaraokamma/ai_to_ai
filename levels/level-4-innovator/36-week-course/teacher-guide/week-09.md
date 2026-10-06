@@ -24,7 +24,9 @@
 | **Prep time** | 25 minutes the night before (mostly printing and reading the key) · 3 minutes on the day |
 | **Expected runtime of the code** | Every block in the prep finishes in **under a second**, except the Section E table (16 training runs, about **10 seconds** on the author's CPU). Anything over **60 seconds** means something is wrong (see Fallback). The *student* runs no code today. |
 
-> **⚠️ Watch out:** the thing that goes wrong this week is **the teacher rescuing the student mid-paper.** A student who sees a frown from you at question 7 will change an answer that was right. Your job for 70 minutes is to be a quiet adult in a chair. The second thing that goes wrong is **marking by the final number only**. A wrong number with the right working earns most of the marks, and a right number with no working earns fewer (see the marking rules in 📤 and the key). The value of the paper is the *pattern* of lost marks, not the total.
+> **⚠️ Watch out:** the thing that goes wrong this week is **the teacher rescuing the student mid-paper.** A student who sees a frown from you at question 7 will change an answer that was right. Your job for 70 minutes is to be a quiet adult in a chair.
+>
+> The second thing that goes wrong is **marking by the final number only**. A wrong number with the right working earns most of the marks, and a right number with no working earns fewer (see the marking rules in 📤 and the key). The value of the paper is the *pattern* of lost marks, not the total.
 
 ---
 
@@ -43,6 +45,8 @@ Observable evidence: a scored paper; a filled **per-week mark grid** (page 9.2 o
 ---
 
 ## 🧑‍🏫 What YOU Need to Know First
+
+This section is your own preparation. Read it before class: it says what the student does, works every hand calculation for you, and lists what to expect on the paper.
 
 > **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist**, in the **🐞 Debugging Clinic** and in the **🔑 Answer Key** was run, in order, from one folder (`36-week-course/`), on a CPU, with one thread and the seeds shown; the outputs below are the real printed output. The Clinic blocks that are *deliberate mistakes* are marked and their tracebacks are real. The copies of the code that appear **inside the paper** are the very same text as the blocks the key runs. **Timing lines vary run to run; every other number repeated exactly on a second full run on the same machine.** Different CPU or PyTorch build: the last digit of a loss can move. **The loss tables that go on the paper are printed numbers, so they do not depend on your laptop at all** — print them, do not re-generate them on the day.
 
@@ -182,11 +186,15 @@ Three weeks are load-bearing for Term 2: **Week 6** (the residual highway is the
 
 ## 🧰 Prep Checklist
 
+You need this because the paper is only as reliable as your key. Work through the steps in order; each one confirms that your machine agrees with the printed numbers.
+
 ### 25 minutes the night before
 
 **☐ 1. Smoke test and folder check (1 minute).** Open a terminal **in the `36-week-course/` folder** — the folder that *contains* `l4lib/` — and run the first block. If it says `ModuleNotFoundError: No module named 'l4lib'` you are in the wrong folder (that is the commonest error of the whole year). `pip` returning **403** is the proxy, and it is **not an error**: nothing is installed this year.
 
 **Block P1 — set-up and the data fingerprint**
+
+Run this first; it loads the data and prints its fingerprint.
 
 ```python
 # week09.py - Week 9 prep. Run the blocks below in order, from the folder that contains l4lib/.
@@ -211,6 +219,8 @@ If your numbers differ from these, **stop**: you are not teaching from the same 
 **☐ 2. Compute the key (3 minutes).** Every hand-arithmetic answer on the paper, from code. This file is *teaching* nothing new; it is there so that **you** can see the hand answers and `torch` agree.
 
 **Block P2 — `key.py`: Section D, every number**
+
+Run this to compute every Section D answer and compare the hand results with `torch`.
 
 ```python
 # key.py - Week 9: every hand-arithmetic answer on the paper, computed.
@@ -290,6 +300,8 @@ Check three things. (a) The three momentum lines agree: `[1.6, 0.92, 0.124]`. (b
 
 **Block P3 — `facts.py`: the multiple-choice numbers**
 
+Run this to print one line of evidence for each Section A question.
+
 ```python
 # facts.py - Week 9: the numbers behind Section A. One line per question.
 print("A1  ln 2 (the coin)             :", round(math.log(2), 3))
@@ -344,6 +356,8 @@ A20 out, h_n shapes             : (2, 4, 5) (1, 2, 5)
 
 **Block P4 — the four curves of E(a)**
 
+Run this to print the four loss curves that go on the paper.
+
 ```python
 # Section E(a): four runs, AdamW, 60 epochs, seed 0. Only lr differs.
 curves = {"P": 3e-6, "Q": 3e-4, "R": 0.3, "S": 3e-2}
@@ -382,6 +396,8 @@ S final accuracy 46.9%
 Note the **R** row: the first *train* number is `1188.9`. That is not a typo: it is the average training loss over the first epoch, wrecked by a few huge steps. The first *validation* number (after the epoch) is `3.248`. Students will ask which is "the" loss; the answer is *"the table says which one it is printing, read the label"*.
 
 **Block P5 — the seed table of E(b), and the fixes for S (your model answer)**
+
+Run this to print the batch-size table and the three one-knob fixes for curve S.
 
 ```python
 # Section E(b): batch 64 against batch 256, AdamW lr 3e-3, three seeds (0, 1, 2), 60 epochs.
@@ -439,7 +455,7 @@ Read that last line carefully. **Clipping did not rescue S** (two of three seeds
 
 ## ⏱️ The Lesson, Minute by Minute
 
-This week's lesson has the usual five-part shape, but four of the five parts are deliberately **empty**. That is the design: nothing is taught, so nothing can be "rescued".
+This section is the script for the day. This week's lesson has the usual five-part shape, but four of the five parts are deliberately **empty**. That is the design: nothing is taught, so nothing can be "rescued".
 
 | Segment | Minutes | Clock | What happens |
 |---|:--:|:--:|---|
@@ -508,6 +524,8 @@ Every error below was produced by running the code. **Paths will differ on your 
 
 ### Bug C1 — positional arguments to a keyword-only function (loud, Week 1)
 
+Run this deliberate mistake; it fails with the traceback shown.
+
 ```python
 # DELIBERATE BUG C1 (loud): a keyword-only function called with positional arguments.
 def run(*, lr, epochs):
@@ -522,10 +540,13 @@ Traceback (most recent call last):
 TypeError: run() takes 0 positional arguments but 2 were given
 ```
 
+Look at the last line of the traceback: it names the bug.
 
 **Read it:** the `*` in `def run(*, lr, epochs)` means *every* argument must be named. `run(0.01, 60)` passes them by position, so Python says the function takes **0 positional arguments** and that **2 were given**. **Fix:** `run(lr=0.01, epochs=60)`. **What the `*` is for:** *so that a sweep can never pass `lr` and `epochs` in the wrong order* — the answer a full-marks student gives for "why is the function written that way?". Marking: 1 for "keyword-only / positional", 1 for the exact fix with names, 1 for what it would do (an error, with the message in their own words is fine).
 
 ### Bug C2 — dropout still on at validation (SILENT, Week 5)
+
+Run this deliberate mistake; nothing fails, which is the problem.
 
 ```python
 # DELIBERATE BUG C2 (SILENT): validation with dropout still switched on.
@@ -543,6 +564,7 @@ print(round(a, 4), round(b, 4))
 0.4182 0.2724
 ```
 
+Look at the two numbers: the same input gave different outputs.
 
 **Read it:** nothing is raised. The *same* input given to the *same* model twice produces two **different** numbers, because the model is still in **train mode**, where `nn.Dropout` randomly zeroes half the units *every call*. **Fix:** `model.eval()` before validating (and `model.train()` again before the next epoch). **Why it is the most instructive of the four:** a validation loss that wobbles from run to run *looks* like "noisy data". The question *"is the same input giving the same output?"* takes ten seconds and is the cheapest check in the whole of Term 1. Marking: 1 for "dropout / train mode", 1 for `model.eval()`, 1 for the *consequence* ("the same input gives different answers; validation is noisy and pessimistic").
 
@@ -564,6 +586,8 @@ with torch.no_grad():
 
 ### Bug C3 — batch norm on a batch of one (loud, Week 6)
 
+Run this deliberate mistake; it fails with the traceback shown.
+
 ```python
 # DELIBERATE BUG C3 (loud): batch norm given a batch of one example, in train mode.
 import torch
@@ -581,10 +605,13 @@ Traceback (most recent call last):
 ValueError: Expected more than 1 value per channel when training, got input size torch.Size([1, 8])
 ```
 
+Look at the last line of the traceback: it names the bug.
 
 **Read it:** batch norm in train mode computes a mean and spread **across the examples in the batch**, and *"more than 1 value per channel"* is exactly the sentence "you need at least two examples". With one example there is nothing to compute a spread from. **Fix** (any one earns the mark): batch of 2 or more; `nn.LayerNorm(8)`, which uses each example's own features; or `.eval()`, which switches to the stored running statistics. **A trap in the marking:** a student who writes "BatchNorm has no running average" is *half* right; the running statistics exist and are what eval mode uses. Give the mark for any of the three fixes with the right reason, not for "use a bigger batch" without the reason.
 
 ### Bug C4 — keeping one name for a pair (loud, Week 8)
+
+Run this deliberate mistake; it fails with the traceback shown.
 
 ```python
 # DELIBERATE BUG C4 (loud): nn.RNN hands back a pair; only one name was kept.
@@ -604,6 +631,7 @@ Traceback (most recent call last):
 TypeError: tuple indices must be integers or slices, not tuple
 ```
 
+Look at the last line of the traceback: it names the bug.
 
 **Read it:** `rnn(x)` returns **two** things — the note after every word, and the last note. Keeping one name keeps the pair as a *tuple*, and indexing a tuple with `[:, -1]` (two things inside the square brackets) is not allowed. The words `tuple indices` in the message are the clue. **Fix:** `out, h_n = rnn(x)`, then `out[:, -1]` (or `h_n[0]`). *(Week 8's clinic met the sibling error `AttributeError: 'tuple' object has no attribute 'shape'`. Same bug, different line; award the marks for either reading.)*
 
@@ -611,13 +639,15 @@ TypeError: tuple indices must be integers or slices, not tuple
 
 ## 🎲 The Activity, In Full
 
+This section holds the paper itself, exactly as the student sees it, followed by setup and variations.
+
 ### The Paper, in Full
 
 > **How to use this section.** Everything between the two lines marked `✂ PAPER STARTS` and `✂ PAPER ENDS` is what the student sees. Print exactly that. Everything *outside* them is for you. The code on the paper is the same text that the key runs (Page 9.1), and the Section E tables are the printed numbers of Blocks P4 and P5.
 
 ✂ PAPER STARTS
 
-# Term 1 Checkpoint — Review and Assessment 1
+**Term 1 Checkpoint — Review and Assessment 1**
 
 **Name: ____________________   Date: ______________   Time allowed: 70 minutes   Total: 75 marks**
 
@@ -771,7 +801,6 @@ out, h_n = rnn(emb(ids))
 print(tuple(out.shape), tuple(h_n.shape))
 ```
 
-
 ---
 
 ## Section C — Find the bug (12 marks, 3 each)
@@ -820,7 +849,6 @@ out = rnn(x)
 last = out[:, -1]
 print(last.shape)
 ```
-
 
 ---
 
@@ -906,6 +934,8 @@ Add **one** optional question afterwards, *not* on the paper: *"The cell in D3 u
 
 ## ❓ Questions Students Ask This Week
 
+Use this table to answer a question in one honest sentence, and to see when the answer must wait until the paper is handed in.
+
 | They ask | Honest answer | Notes |
 |---|---|---|
 | "Why no computer?" | "Because the paper is asking what is in *your* head, not what the computer knows. Everything on it, you have done by hand at least once." | If they say "but nobody works without a computer" — *"True. And nobody can debug one who can't predict what it will print."* |
@@ -923,6 +953,8 @@ Add **one** optional question afterwards, *not* on the paper: *"The cell in D3 u
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+These are the failures to watch for, most common first.
+
 1. **You help.** The commonest failure. A raised eyebrow changes an answer. Sit to the side.
 2. **You hand over the wrong page.** The student must get only Page 9.1, 9.2 and 9.3. The rest of this file contains every answer *and the mistakes the student is expected to make*.
 3. **The paper runs over.** Seventy minutes is *tight*. The five time-checks exist so E is not left in the last four minutes. If E is not attempted at all, mark A-D and treat E as a take-home (see "Variation — shorter").
@@ -936,6 +968,8 @@ Add **one** optional question afterwards, *not* on the paper: *"The cell in D3 u
 ---
 
 ## 🧭 Differentiation
+
+The paper stays the same for every student. What changes is the sitting, the support around it, and what follows.
 
 ### If the student is struggling
 
@@ -961,6 +995,8 @@ Add **one** optional question afterwards, *not* on the paper: *"The cell in D3 u
 
 ## ✅ Assessing Understanding
 
+This section tells you how to mark the paper and how to read the pattern of lost marks, because the pattern matters more than the total.
+
 ### The marking rules
 
 1. **Working earns marks.** Sections B-E are marked for *method first, number second*. A right number with no working: **half marks** on 2- and 3-mark questions, **at most 3** on a 5-mark question. (This is the rule that makes "show your working" real. Say it in the key, and mean it.)
@@ -971,7 +1007,7 @@ Add **one** optional question afterwards, *not* on the paper: *"The cell in D3 u
 
 ### Reading the pattern
 
-- **The total** is the *least* informative number. 
+- **The total** is the *least* informative number.
 - **The per-week fraction** (page 9.2) tells you what to redo. **Under 60% of the marks in a week** goes in the "redo" column; **80% or over** is "secure".
 - **Pairs that matter.** Weeks 2 and 8 together low usually means *the running update* (a number that feeds back into itself) has not landed. That is the whole of Weeks 10 and 11; redo both before Week 10.
 - **When the total and the pattern disagree, the pattern wins.** A made-up student, to practise the arithmetic (this is an illustration, **not** data from anyone): marks by week `9/11, 4/10, 8/10, 7/9, 6/8, 5/8, 3/7, 6/12` for a total of **48**, which the scale below calls "Secure". The grid says otherwise: Week 2 is 40%, Week 7 is 43% and Week 8 is 50%, three weeks at or under their "redo" line (4 ≤ 5, 3 ≤ 4, 6 ≤ 7). The rule is **circle at most two**, with the priority order Week 8 → Week 2 → Week 6: so **circle Weeks 8 and 2**, and write Week 7 on the side as "first thing to re-check in Assessment 2". The honest summary for this student is *"Getting there"*, not *"Secure"*, even though 48 is above 45.
@@ -996,6 +1032,8 @@ Self-marking covers A, B and C well: those answers are *checkable*. D and E need
 ---
 
 ## 📤 Homework to Assign
+
+The homework turns the paper into a plan. Say it once, as in the wrap, and assign these steps:
 
 1. **Mark your own paper** against the printed sheet (Page 9.1), in the *other colour*. For D and E, mark the **working**, not only the answer. *(Estimated 30 minutes.)*
 2. **Fill the per-week grid** (Page 9.2): the marks you got, out of the marks available, for each of the eight weeks, and the percentage. *(5 minutes.)*

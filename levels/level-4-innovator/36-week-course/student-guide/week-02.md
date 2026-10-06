@@ -50,6 +50,8 @@ The first is a coin. The second is 98.6% correct. **One word changed:** `optimiz
 
 ## 🧠 The Big Idea
 
+This section explains what plain SGD forgets, builds the one new maths idea on small numbers, and turns it into the momentum rule. You need it before the code, so that every number in the code has a meaning.
+
 ### 1. Last year's step has no memory
 
 Last year you updated a weight like this:
@@ -77,7 +79,7 @@ That is the whole idea. The word "exponential" only means that the old stuff get
 
 **Do this on paper first, with a calculator.** The average starts at `0`. Five values arrive: `10, 0, 0, 0, 0`. Work out the average after each one. Then look at what you notice about each number compared with the one before it.
 
-Now check it in code. Open `week02.py` and type:
+Now check it in code. Open `week02.py` and type this. It loads PyTorch, fixes it to one thread so results match, and prints the version:
 
 ```python
 import torch
@@ -88,7 +90,9 @@ print("threads:", torch.get_num_threads(), " torch", torch.__version__)
 threads: 1  torch 2.2.1
 ```
 
-(Your `torch` version might differ. Small differences in a spirals number later would be a version difference, not a mistake.)
+Look at the first line: it reports one thread. (Your `torch` version might differ. Small differences in a spirals number later would be a version difference, not a mistake.)
+
+This loop applies the rule to the five values, one per step, and prints the average each time:
 
 ```python
 old = 0.0
@@ -126,7 +130,7 @@ The average is heading for 10 but has not arrived after five steps. Why isn't it
 
 ### 3. The half-life of 0.9
 
-How many steps until that early `10` counts for only half of what it did at first? Multiply by 0.9 again and again:
+How many steps until that early `10` counts for only half of what it did at first? Multiply by 0.9 again and again. This loop prints what share of the first value is left after each step:
 
 ```python
 share = 1.0
@@ -145,7 +149,7 @@ after 7 step(s) the first value still counts for 0.478
 after 8 step(s) the first value still counts for 0.430
 ```
 
-It crosses one half between step 6 and step 7. Call it **about 7 steps**. That is the **half-life** of 0.9 (the word is borrowed from physics: how long until half of something is gone). The exact crossing point, if you are curious, is a one-liner:
+It crosses one half between step 6 and step 7. Call it **about 7 steps**. That is the **half-life** of 0.9 (the word is borrowed from physics: how long until half of something is gone). The exact crossing point, if you are curious, is a one-liner. It asks how many times you must apply the fade to reach one half:
 
 ```python
 import math
@@ -171,7 +175,7 @@ w = w - lr x v
 
 Compare it with the average from section 2. It is **the moving average with the `0.1` left off.** That makes the velocity exactly **ten times** the running average of the gradients. Hold on to "ten times"; it pays off at the end of the lesson.
 
-Here is a picture of why a running total is useful. Two kinds of slope:
+Here is why a running total is useful. Compare two kinds of slope:
 
 ```text
 steady:   g =  +2  +2  +2  +2      v =  2.0  3.8  5.4  6.9   (grows)
@@ -193,6 +197,8 @@ Which of those two rows looks like a zig-zag in a narrow valley? Write it in the
 ---
 
 ## 💻 Try It Yourself
+
+In this section you do the momentum rule by hand, check it against PyTorch, and then test it on the spirals data. Do each step on paper first wherever it says so.
 
 ### Step 1 — the by-hand table
 
@@ -310,7 +316,7 @@ Read it line by line:
 
 Your paper and PyTorch agree to four places. So `momentum=0.9` is exactly the rule you wrote.
 
-Now peek at the velocity PyTorch keeps:
+Now peek at the velocity PyTorch keeps. This block reads it from the optimizer's `state` after each step:
 
 ```python
 w = torch.tensor([1.0], requires_grad=True)
@@ -332,6 +338,8 @@ The `v` column is the `v` column of your hand table.
 
 ### Step 3 — the three ways to clear a gradient
 
+This block calls `backward()` three times and clears the gradient a different way each time, printing `w.grad` after each clear:
+
 ```python
 w = torch.tensor([3.0, 4.0], requires_grad=True)
 opt = torch.optim.SGD([w], lr=0.1)
@@ -348,9 +356,11 @@ set_to_none=True  -> None
 no argument       -> None
 ```
 
-So `False` leaves zeros; the other two remove the gradient. On this version of PyTorch the default already is `True`, so writing it out changes nothing except that it makes the choice visible.
+Look at the three printed results: `False` leaves zeros; the other two remove the gradient. On this version of PyTorch the default already is `True`, so writing it out changes nothing except that it makes the choice visible.
 
 ### Step 4 — the length of a gradient
+
+This block prints a gradient before and after `backward()`, its `.norm()`, and the same length worked out by hand:
 
 ```python
 w = torch.tensor([3.0, 4.0], requires_grad=True)
@@ -472,7 +482,7 @@ for lr in (0.01, 0.03, 0.1, 0.3, 1.0):
      1 |      0.528    66.4% |        nan    46.9% | momentum hurts
 ```
 
-Compare with your predictions. Two things to notice:
+Compare the table with your predictions. Two things to notice:
 
 - Momentum rescued some learning rates that plain SGD could not use, and it wrecked one that plain SGD handled well. Both have the same cause: a momentum step is up to ten times longer.
 - `nan` means "not a number" (what you get from infinity minus infinity). The weights blew up and the loss became `nan`. The harness kept going, so the row is honest. In your table, write `nan`, not `0`.
@@ -497,7 +507,7 @@ The same result, from a learning rate ten times smaller. Someone might say "mome
 
 ## 🎲 Your Turn — helps or hurts?
 
-Make a two-column table in your Bug Log from **your own screen** (not from this chapter), five rows, one per learning rate `0.01, 0.03, 0.1, 0.3, 1.0`.
+This section turns the spirals runs into your own evidence. Make a two-column table in your Bug Log from **your own screen** (not from this chapter), five rows, one per learning rate `0.01, 0.03, 0.1, 0.3, 1.0`.
 
 1. **Fill in the five rows:** final training loss and accuracy for plain SGD, and for momentum. Write **helps / hurts / about equal** per row, using the 0.05 rule.
 2. **Circle one learning rate where momentum helps and one where it hurts.**
@@ -510,7 +520,7 @@ Optional, if you finish early: compare the first few epochs for the `momentum lr
 
 ## 🔑 Wrap Up
 
-Say this sentence aloud, then write it in your Bug Log in your own handwriting:
+This section fixes the two sentences to keep from the chapter. Say this sentence aloud, then write it in your Bug Log in your own handwriting:
 
 > **"Momentum keeps a running average of past steps, so steps that keep pointing the same way add up and steps that flip-flop cancel."**
 
@@ -521,6 +531,8 @@ Then add this line underneath:
 ---
 
 ## 📝 Vocabulary
+
+The new words of this chapter, each with its meaning.
 
 | Word | Meaning |
 |---|---|

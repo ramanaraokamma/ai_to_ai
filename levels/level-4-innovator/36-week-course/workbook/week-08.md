@@ -125,7 +125,7 @@ Shapes are read **before** you run. Say them out loud.
 
 ## 🧮 Page 8.3 — Unroll the Cell by Hand
 
-The recurrent cell is one line:
+On this page you run the recurrent cell by hand, one word at a time, for different orders of the words. The cell is one line:
 
 ```text
 new note  =  tanh( W_xh * x  +  W_hh * (old note) )          (bias = 0 today)
@@ -196,7 +196,9 @@ What has happened to the memory of the spike? __________________________________
 
 Compare step 4 with part (a): ____________ against ____________ . Does the spike fade more slowly or more quickly with the bigger `W_hh`? ____________
 
-**Careful.** You tried **one input** and **two** values of `W_hh`. In a sentence, what may you say, and what may you not?
+> **⚠️ Watch out:** you tried **one input** and **two** values of `W_hh`.
+
+In a sentence, what may you say, and what may you not?
 
 ________________________________________________________________
 
@@ -241,7 +243,7 @@ Final note: ____________
 
 ## 📐 Page 8.4 — Shapes (say them before you run)
 
-Three shapes to learn:
+On this page you predict the shapes that go into an RNN and come out of it, before you run anything. There are three to learn:
 
 ```text
 x    (B, T, F)   sentences, words, numbers per word
@@ -374,7 +376,12 @@ ________________________________________________________________
 
 ## 🐞 Page 8.7 — Break It on Purpose
 
-Every program below is **deliberately broken**. Do not fix it until you have done the "Predict" line. Then copy, run, read the **last line** of the error, and fix.
+Every program below is **deliberately broken**, so you can practise reading errors. For each one:
+
+1. Do the "Predict" line first. Do not fix anything yet.
+2. Copy the program and run it.
+3. Read the **last line** of the error.
+4. Fix the program.
 
 **Program 1 (deliberate).**
 
@@ -509,7 +516,7 @@ Predict: ________________ . Why can a tensor not hold these two? _______________
 
 ## 📓 Page 8.8 — The Bug Log
 
-Copy the **last line** of each error, not the whole traceback. Keep this page; the Week 9 assessment has a reading-errors question.
+This page is your record of errors, so you can spot them faster next time. Copy the **last line** of each error, not the whole traceback. Keep this page; the Week 9 assessment has a reading-errors question.
 
 | # | Date | What I typed (the line) | Last line of the error | What it means in plain words | Fix | Page I'll find this on again |
 |:--:|---|---|---|---|---|:--:|
@@ -532,6 +539,8 @@ ________________________________________________________________
 ---
 
 ## 🧠 Self-Check (do this last, from memory)
+
+These questions test whether you can explain the week without looking back. Answer from memory, then mark yourself at the end.
 
 1. **Why can a bag of words not tell "the dog bit the postman" from "the postman bit the dog"?**
 
@@ -571,7 +580,9 @@ ________________________________________________________________
 ---
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS — keep this page folded until you have finished
+
+Use this section to mark your work, only after you have written every answer above.
 
 *Numbers come from real runs: CPU, PyTorch 2.2.1, `torch.manual_seed(0)` wherever anything is random. The by-hand numbers are plain arithmetic and should match to four decimals (within 0.0001 of rounding). Random tables may differ on another build; the `True`/`False` lines and the shapes should not.*
 

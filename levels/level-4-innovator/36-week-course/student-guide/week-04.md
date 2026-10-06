@@ -54,6 +54,8 @@ You will write the code that produced the last two rows today. First you need to
 
 ## 🧠 The Big Idea
 
+This section gives you the two ideas behind the table above: a learning rate that follows a rule over time, and a batch size that quietly sets how many steps you get. Do the paper exercises as you go.
+
 ### 1. The rate is a rule over time
 
 Until now the learning rate was one number that never moved. Today it is two things multiplied together:
@@ -140,7 +142,7 @@ Here is a measurement from the untrained network, taken over 200 random batches 
 
 (The code that produced this uses a tool you have not met yet, so you only get the table. The reason it has this shape comes in Week 15.) Each time the batch gets four times bigger, the distance about halves, until 512, which is already most of the 840 points.
 
-Now the trap, and it is arithmetic. Your training set has 840 points. The harness drops the last short batch and reshuffles every epoch. So:
+Now the trap, and it is arithmetic. Your training set has 840 points. The harness drops the last short batch and reshuffles every epoch. Two formulas give the step count:
 
 ```text
 steps per epoch = 840 // batch
@@ -184,6 +186,8 @@ sched.step()    # then move the clock, so the next step gets the next lr
 ---
 
 ## 💻 Try It Yourself — the schedules
+
+In this section you turn the two multipliers into code, check them against `LambdaLR`, and use a scheduler in a real training loop. You also meet two deliberate errors.
 
 ### Step 1 — the two multipliers and a table
 
@@ -379,6 +383,8 @@ Look at the first printed line, then fix the second.
 
 ## 🎲 Your Turn — steps per epoch, and two experiments
 
+In this section you count steps by hand, predict and run two batch-size experiments, and then rerun the Start Here table at a gentler rate.
+
 ### Part 1 — count the steps (paper and calculator only)
 
 Fill in the two right-hand columns:
@@ -391,7 +397,7 @@ batch   steps per epoch (840 // batch)   steps in 60 epochs
  512
 ```
 
-If batch 8 and batch 512 are each trained for 60 epochs, how many times as many times does batch 8 move the weights? Both have seen every point 60 times. Is that a fair comparison? In what sense, and in what sense not?
+If batch 8 and batch 512 are each trained for 60 epochs, how many times as often does batch 8 move the weights? Both have seen every point 60 times. Is that a fair comparison? In what sense, and in what sense not?
 
 ### Part 2 — predict, then run
 
@@ -512,7 +518,7 @@ for name, kw in variants:
     print(f"{name:<14} {row}   mean {np.mean(accs):5.1f}")
 ```
 
-Now add this to the end of `hook.py` and run it:
+Now add this to the end of `hook.py` and run it. It prints one line per schedule at the gentle rate:
 
 ```python
 print()
@@ -536,6 +542,8 @@ Compare the gaps between rows with the gap between "lowest" and "highest" inside
 
 ## 🔑 Wrap Up
 
+This section checks that you can state the week's rules without looking back.
+
 Answer these before you close the laptop:
 
 1. What is the learning rate at step `s`, in terms of the peak and a multiplier? What does `LambdaLR` do with your function?
@@ -554,6 +562,8 @@ Two claims you will read elsewhere are **not** shown by anything you measured th
 
 ## 📝 Vocabulary
 
+The words this week introduced, in one place.
+
 | Word | Meaning |
 |---|---|
 | **learning-rate schedule** | A rule that says how the learning rate changes over a run. |
@@ -570,6 +580,8 @@ Two claims you will read elsewhere are **not** shown by anything you measured th
 
 ## 🏠 Homework
 
+This section tells you what to do after the lesson.
+
 Workbook Week 4, pages 4.1 to 4.5 (about 60 to 75 minutes). Everything you write down must come from **your own run, printed on your own screen, with a seed set, in the last 24 hours**, not from this chapter.
 
 1. **Plot the two schedules.** Write `plot_schedules.py` using numpy and matplotlib: cosine and warmup-plus-cosine, `PEAK = 0.003`, `T = 1000`, `WARM = 50`, on one picture, saved as `w4_schedules.png`. Print the peak of the warmup-plus-cosine curve and the step where it occurs.
@@ -582,6 +594,8 @@ Workbook Week 4, pages 4.1 to 4.5 (about 60 to 75 minutes). Everything you write
 ---
 
 ## 🔮 Next Week
+
+This section shows where the week leads and what to bring.
 
 Look at the `mean train` column of Experiment B again: a training loss of `0.000` sitting beside a validation loss several times larger. Week 5 gives that a name and tests four cures on a much smaller set of points. It adds four new pieces of syntax, one of which is the `randperm` you copied today.
 

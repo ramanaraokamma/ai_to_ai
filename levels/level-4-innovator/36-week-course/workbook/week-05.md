@@ -65,6 +65,8 @@ ________________________________________________________________
 
 ## 🔮 Page 5.2 — Predict the Output
 
+You will commit to a guess first, then check it against a real run.
+
 Write your prediction **in pen, before** you run anything. Then run it and write what happened beside it.
 
 **P1.** A layer that zeroes half the numbers, shown ten ones.
@@ -304,9 +306,9 @@ Your run (about 5 seconds):
 
 ### (d) The lab report
 
-Fill the template with **your own** numbers.
+Copy this template into your notebook and fill the blanks with **your own** numbers.
 
-```
+```text
 On ____ points, with ____ seeds, I ran ____ cures, one at a time, plus a control.
 The mean best validation loss was between ____ and ____ for all of them,
 and the ranges (overlap / do not overlap).
@@ -327,7 +329,7 @@ One thing I did not test: ______________________________________________________
 
 ## 📈 Page 5.6 — Read a Curve
 
-This is a real run (**seed 10, no cure**), from the same `lab.py`, printed at chosen epochs.
+This is a real run (**seed 10, no cure**), from the same `lab.py`, printed at chosen epochs. Read the two loss columns side by side.
 
 ```text
  epoch   train    val
@@ -461,6 +463,8 @@ Copy the **last line** of every error or surprise you meet this week, not the wh
 
 ## 🧠 Self-Check (do this last, from memory)
 
+This page shows what stuck. Answer without looking back.
+
 1. Dropout in `train()` mode: survivors are multiplied by ______ . In `eval()` mode it returns ______ .
 2. What goes wrong if `model.eval()` is forgotten before measuring validation loss? ______________________________
 3. Why does the snapshot need `copy.deepcopy`? ______________________________
@@ -479,7 +483,7 @@ Copy the **last line** of every error or surprise you meet this week, not the wh
 
 ---
 
-# ✂️ ANSWERS — keep this page folded until you have finished
+## ✂️ ANSWERS — keep this page folded until you have finished
 
 ### Warm-Up
 
@@ -590,7 +594,7 @@ Real output of the code (CPU, seeded):
 
 **Yes**, every "best val" range overlaps every other. The cures differ in the **final val** column, which is how far the validation loss climbs if you do not stop. Early stopping is cheapest; its shipped value is a bit flattering because it used the validation set to pick the epoch.
 
-**(c)** Reference run, seeds 10, 11, 12, means:
+**(c)** Reference run, seeds 10, 11, 12, means. Compare the `best epoch` and `final val` columns across rows:
 
 ```text
 seeds [10, 11, 12] - each cell is the mean of 3 runs
@@ -611,7 +615,7 @@ jitter 0.2                145     0.141      0.188
 
 **(d)** Target wording (any equivalent is fine):
 
-```
+```text
 On 120 points, with 5 seeds, I ran 4 cures, one at a time, plus a control.
 The mean best validation loss was between 0.149 and 0.212 for all of them,
 and every range overlaps. The mean final validation loss ranged from 0.351 (at the stop) to 0.803.

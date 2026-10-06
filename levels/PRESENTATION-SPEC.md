@@ -22,7 +22,9 @@ file *reads*, never what it *says*.
 7. **The level's dialect is kept**: its emoji section headers, section order and voice. L1–L3 share a
    skeleton (Start Here → Big Idea → … → Remember This → New Words → Homework); L4 student guides are
    topic-driven and L4 workbooks use `Page N.K — title (minutes)`. Do not force one onto the other.
-8. Headings may be *reworded for clarity* but each file keeps the same set of H2 sections in the same
+8. **No answer leaks and no new claims**: a polisher adds no sentence that asserts something the file did not
+   already assert, and no sentence that gives away an exercise answer, a hint, or an expected mistake.
+9. Headings may be *reworded for clarity* but each file keeps the same set of H2 sections in the same
    order (sections may be added only where a required element below is missing, and only with text
    already present elsewhere in the file or drawn from the lesson it describes).
 
@@ -43,8 +45,13 @@ message + cause + fix · `> **📌 Remember:**` the one thing to keep · `> **�
 check the learner can make. Callouts are short (≤ 4 lines) and never nest.
 
 **Every code block is introduced and followed.** One line before says what the block does and what to
-type/run; after a block that produces output, one line says what to look at in it ("Look at the
-third line: …"). Where a block is long, a sentence names its parts.
+type/run. After a block that produces output, add a line only if it is *neutral* ("Compare this with your
+prediction", "Find the row for seed 2"). **Never add a line, in any student-facing file or workbook, that states
+or hints at what the output shows or what the exercise asks the learner to discover** ("Look at how X
+climbs", "notice that the gap is small"): if the text does not already state the finding at that spot, the
+polisher must not. In teacher guides a pointer is fine but must be checked against the printed output. Section
+purpose lines follow the same rule: they say what the page is *for* ("works through Adam's first step"), never
+what it will *prove*. Where a block is long, a sentence names its parts.
 
 **Clear openings and endings.** Student guides open with a hook and a short "By the end you can…" list
 (2–4 items, observable verbs), and end with the key takeaways, the new words, and the homework with

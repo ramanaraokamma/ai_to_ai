@@ -82,7 +82,7 @@ The ladder adds no new mathematical idea this week. You need three small pieces 
 
 **A. A fee is a multiplication by a number just under 1.** Weight decay, in `AdamW`, is this and nothing more: at every step, before anything else, every weight is multiplied by `1 − lr × weight_decay`. With `lr = 0.003` and `weight_decay = 0.3`:
 
-```
+```text
 1 − 0.003 × 0.3  =  1 − 0.0009  =  0.9991
 ```
 
@@ -128,7 +128,7 @@ Go as far as: *"training loss and validation loss can part company; four cheap w
 
 ### 8. 🧭 Where this fits (text version — the figure pass comes later)
 
-```
+```text
  TERM 1 — THE TEN KNOBS
  W1  learning rate, one at a time            ✔ done
  W2  momentum  (running average)             ✔ done
@@ -144,6 +144,8 @@ Two minutes at the end of the lesson: ask *"which of the four cures changed the 
 ---
 
 ## 🧰 Prep Checklist
+
+This section gets the files, data and checks ready so nothing fails live. Do the steps in order.
 
 ### 20 minutes the night before
 
@@ -706,6 +708,8 @@ The combinations do *not* add up: jitter alone (0.139 best, 0.192 final) is at l
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the run sheet: the table gives the timing, and each segment below it says what to do, say and watch for.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — The Curve That Turns Round | 8 | 8 | Run `hook.py`. Training loss reaches 0.000; validation loss bottoms at 0.179 and ends at 0.906. "Where would you have stopped?" |
@@ -720,7 +724,7 @@ The combinations do *not* add up: jitter alone (0.139 best, 0.192 final) is at l
 
 **Do this:** Write on the board:
 
-```
+```text
 120 training points · 360 validation points the network never trains on
 same network as Weeks 1-4 · AdamW · lr 0.003 · 250 epochs · NO cure
 I will print the loss on both sets every 25 epochs.
@@ -775,7 +779,7 @@ gap (val - train) at the end:        0.906
 
 **Do this:** Draw the picture from the hook on the board (ASCII is fine, the figure pass will replace it):
 
-```
+```text
 loss
  ▲
  │ ╲
@@ -794,7 +798,7 @@ Record their pick (it is the Bug Log's prediction column).
 
 **Part 1 — the fee (3 minutes). Do this:** On the board:
 
-```
+```text
 every step:   w  ←  w × (1 − lr × wd)          lr = 0.003,  wd = 0.3
 
 1 − 0.003 × 0.3  =  ?
@@ -818,7 +822,7 @@ Run `decay_demo.py` (Prep step 4, last script, under 1 second). Point at the fou
 
 **Part 3 — patience, by hand (4 minutes). Do this:** Write the ten made-up numbers on the board:
 
-```
+```text
 epoch:  0     1     2     3     4     5     6     7     8     9
 val:   0.70  0.40  0.30  0.25  0.26  0.24  0.27  0.28  0.29  0.30
 ```
@@ -978,7 +982,7 @@ Ask them to find where it becomes worse than nothing. Target: **0.5** (best val 
 
 **Part 4 — the report (3 minutes).** Use the template:
 
-```
+```text
 On ___ points, with ___ seeds, I ran ___ cures, one at a time.
 The best validation loss was within ___ for all of them. The final validation loss differed by ___.
 What I would ship is ___ because ___.  One thing I did not test: ___.
@@ -1221,7 +1225,7 @@ As in the lesson. The student must say *where* the noise starts to lie about the
 
 Every report gets the template:
 
-```
+```text
 On ___ points, with ___ seeds, I ran ___ cures, one at a time.
 The best validation loss was within ___ for all of them. The final validation loss differed by ___.
 What I would ship is ___ because ___.  One thing I did not test: ___.
@@ -1277,7 +1281,7 @@ Ask for **combinations**. Run `combos.py` (Prep step 7), which crosses jitter 0.
 
 ### If the student is struggling
 
-- Drop two of the cures. Keep **early stopping** (because it needs no new maths and one new line) and **jitter** (because it is visual), and leave dropout and weight decay as "next week's you'll meet them again".
+- Drop two of the cures. Keep **early stopping** (because it needs no new maths and one new line) and **jitter** (because it is visual), and leave dropout and weight decay as next week's, when the student will meet them again.
 - Replace "memorise vs learn" with a revision analogy: *"a student who memorises last year's exam gets 100% on last year's paper and 40% on this year's. The two numbers are the two papers."*
 - Do the by-hand patience list (Page 5.3) with physical cards: one number per card, turn them over one at a time, and stop when the counter says so.
 - Run the control and the early-stop row only, with the hook's picture, and end on "the snapshot is the point".
@@ -1318,7 +1322,7 @@ Three checks, all oral or on paper, none requiring a computer. Do them at the en
 
 ## 📤 Homework to Assign
 
-~60–75 minutes. Workbook pages 5.1–5.5, plus the build below.
+This section says what to set for home and gives the teacher reference numbers to mark it against. Time: ~60–75 minutes. Workbook pages 5.1–5.5, plus the build below.
 
 **The build.** The student finishes their own `lab.py` (the four cures, the snapshot, the seed) and runs it on **three fresh seeds** so that nothing can be copied from class. Teacher reference (seeds 5, 6, 7; the same five rows as `table.py`, three-seed means):
 
@@ -1429,6 +1433,8 @@ The result goes **the wrong way**, and that is the point. A one-pixel roll of an
 
 ## 🔑 Answer Key
 
+This section holds the answers to the workbook pages, for the teacher only. Numbers come from the seeded runs described above.
+
 ### Page 5.1 — Match the word to the thing
 
 | Word | Match |
@@ -1524,7 +1530,7 @@ Dropout(p=0.3, inplace=False)
 
 Target wording (any equivalent is fine):
 
-```
+```text
 On 120 points, with 5 seeds, I ran 4 cures, one at a time, plus a control.
 The mean best validation loss was between 0.149 and 0.212 for all of them,
 and every range overlaps. The mean final validation loss ranged from 0.351 (at the stop) to 0.803.

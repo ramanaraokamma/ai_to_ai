@@ -43,6 +43,8 @@ Observable evidence: `hand.py` printing `match : True`; `order.py` printing `fin
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section is your own preparation: the maths, the three new constructs, what is real and what is a stand-in, and where to stop. Read it before the Prep Checklist.
+
 > **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist** is a *whole file* and every one was run, from one folder, on a CPU, with the seeds shown. Blocks in the **🐞 Debugging Clinic** are *deliberate mistakes* and each is marked. Short snippets elsewhere carry on from the files. Outputs are real. **Timing lines** (`... s`) vary run to run; **every other number repeated exactly on a second full run on the same machine.** Comparisons between two routes to the same number are shown as `True`/`False` (`allclose`), because the last decimal place can differ on another PyTorch build.
 
 ### 1. What the student is doing today, in one paragraph
@@ -201,6 +203,8 @@ Stop at: *"it is a loop that rewrites one note using the same rule every time, a
 ---
 
 ## 🧰 Prep Checklist
+
+This section gets the files typed, run and checked before class, so that every printed output in this guide is one you have seen yourself.
 
 ### 25 minutes the night before
 
@@ -751,6 +755,8 @@ Timing lines (`... s`) will differ. The `0.333` for the bag is not a typo; see "
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This is the running order of the whole lesson. Each segment below has its own time budget; keep to it.
+
 | Segment | Minutes | What happens |
 |---|:--:|---|
 | 🪝 Hook | 8 | Two sentences, one bag. The student fills the counts; the counts match. |
@@ -822,7 +828,11 @@ The student types. You narrate. **Nobody pastes.**
 
 **Step 1 (7 min) — the loop, by hand.** In `hand.py`, type only the top half (`W_xh`, `W_hh`, `xs`, the `for` loop). Before running, write the four expected numbers under the loop on paper. Run. *"Four numbers: the same ones we computed on the board. The computer agrees."*
 
-**Step 2 (6 min) — the same thing in `nn.RNN`.** Type the `nn.RNN(1, 1, batch_first=True)` lines. **Stop at the parameter list** and read the four shapes printed: `(1, 1) (1, 1) (1,) (1,)`. Ask: *"Which two are our two weights?"* (The two `(1, 1)` ones.) *"And the other two? Our hand version has no bias, so what should we do with them?"* (Set them to zero.) Type the four `.data =` lines. **Then the prediction:** *"We are about to feed it `[1, 0, 0, 0]`. What do we expect to print?"* They say `0.7616, 0.3634, 0.1797, 0.0896`. Type the input line, say the shape aloud (*1 sentence, 4 words, 1 number per word*: `(1, 4, 1)`), and run. `match : True`.
+**Step 2 (6 min) — the same thing in `nn.RNN`.** Type the `nn.RNN(1, 1, batch_first=True)` lines. **Stop at the parameter list** and read the four shapes printed: `(1, 1) (1, 1) (1,) (1,)`. Ask: *"Which two are our two weights?"* (The two `(1, 1)` ones.) *"And the other two? Our hand version has no bias, so what should we do with them?"* (Set them to zero.)
+
+Type the four `.data =` lines. **Then the prediction:** *"We are about to feed it `[1, 0, 0, 0]`. What do we expect to print?"* They say `0.7616, 0.3634, 0.1797, 0.0896`.
+
+Type the input line, say the shape aloud (*1 sentence, 4 words, 1 number per word*: `(1, 4, 1)`), and run. `match : True`.
 
 **Step 3 (4 min) — `lookup.py`.** Type the table and lookup. **Predict the shape of `vecs` first** (5 words × 3 numbers = `(5, 3)`). Point at the rows: *"'the' is the first and fourth word. Look at the first and fourth rows."* They are identical. *"The table does no thinking. It is a lookup."*
 
@@ -1053,6 +1063,8 @@ ValueError: expected sequence of length 5 at dim 1 (got 3)
 
 ## 🎲 The Activity, In Full
 
+This section gives the complete rules, worked answers and variations for the relay used in the "Their Turn" segment.
+
 ### The Sticky-Note Relay
 
 **What it is:** the student plays the recurrent cell for two sentences with a calculator, so that they have **been** the loop before they type it.
@@ -1118,7 +1130,13 @@ Change `W_hh` from 0.5 to 0 and redo round 1 by hand. The note then depends only
 
 ## ❓ Questions Students Ask This Week
 
-**"Why is the bag-of-words model only 0.333 on the held-out sentences? Isn't 50% the worst it can do?"** In `flyer.py` every sentence has a *mirror image* (same words, opposite label) and two mirror images have an identical bag, so a bag model must give both the same answer. The split sends 60 sentences to training and 24 to held-out, and for **18 of those 24, the mirror is in the training set** (the script prints this). The model learned the training half, and its answer for the partner is then wrong by construction. So the bag model is **below** chance on this split because of the pairing, not because it is a bad learner. The honest line: *"over all 84 sentences a bag cannot beat chance in principle; 0.333 is what the pairing does to a small split. The point is that it cannot read order, whatever the number."* We did not test other splits.
+Use these answers when a question comes up; each one stays inside what was measured today.
+
+**"Why is the bag-of-words model only 0.333 on the held-out sentences? Isn't 50% the worst it can do?"**
+
+In `flyer.py` every sentence has a *mirror image* (same words, opposite label) and two mirror images have an identical bag, so a bag model must give both the same answer. The split sends 60 sentences to training and 24 to held-out, and for **18 of those 24, the mirror is in the training set** (the script prints this).
+
+The model learned the training half, and its answer for the partner is then wrong by construction. So the bag model is **below** chance on this split because of the pairing, not because it is a bad learner. The honest line: *"over all 84 sentences a bag cannot beat chance in principle; 0.333 is what the pairing does to a small split. The point is that it cannot read order, whatever the number."* We did not test other splits.
 
 **"Is the RNN really 100%? That sounds too good."** It is 24 of 24 on a 24-sentence set with one seed, on a task with 2 possible answers per sentence that depends only on whether `dog` is first or last. It shows a model that reads in order *can* do this task. It is **not** a result about language. Say exactly that.
 
@@ -1144,6 +1162,8 @@ Change `W_hh` from 0.5 to 0 and redo round 1 by hand. The note then depends only
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+These are the ways the lesson most often slips, each with the quickest repair.
+
 1. **The student thinks the RNN "understands".** Return to the untrained weights in `order.py`: *"different is not the same as meaningful. What would make it meaningful?"* (Training. Week 10.)
 2. **A hand number is off in the fourth decimal.** The student rounded each `tanh` to 2 decimals in the middle. Ask them to carry four. The answer is usually rounding.
 3. **`match : False` in `hand.py`.** One of the four `.data =` lines is missing; most often the second bias (mistake 6). Have them print `rnn.bias_hh_l0`.
@@ -1157,6 +1177,8 @@ Change `W_hh` from 0.5 to 0 and redo round 1 by hand. The note then depends only
 ---
 
 ## 🧭 Differentiation
+
+Use this section to adjust the lesson for a student who is struggling, flying or disengaged.
 
 ### If the student is struggling
 
@@ -1199,6 +1221,8 @@ Five questions, orally, during the relay. Not graded; they inform the mastery sc
 
 ## 📤 Homework to Assign
 
+This section lists the workbook pages to set and the evidence standard for the write-up.
+
 The workbook has six pages (8.1-8.6). The student does them in order, and writes **predictions before running anything**.
 
 1. **8.1 Bags** — count the bag for two more pairs of sentences.
@@ -1215,6 +1239,8 @@ Estimated time: 60-75 minutes.
 ---
 
 ## 🔑 Answer Key
+
+This section holds every answer for the workbook pages and for the questions posed in the lesson. It is teacher-only.
 
 > **The workbook pages 8.1-8.6 follow this order.** Where an answer is a number it comes from `key.py`, `hand.py`, `sticky.py` or `order.py`, all run from the Prep Checklist.
 
@@ -1307,4 +1333,10 @@ A write-up that says "the RNN understands the sentences" loses the last two mark
 
 ## 🔮 Next Week Preview
 
-**Week 9 — Review and Assessment 1.** No new idea, no new syntax. A 75-minute paper on Weeks 1-8, no computer: read a loss curve, do one optimizer step by hand, name the normalisation that fails on a given input, and **unroll a cell** exactly like page 8.3. **For the student:** finish the workbook, especially 8.3; do the unroll (a) and (d/e) again from a blank page the evening before. **For you:** make sure page 8.3 d and e are solid, because they are the "order matters" question on the paper; then at the start of Week 9 reserve ten minutes for the court on any unfinished Week 7 playbook rules (the assessment's "read a curve" questions draw on them). Week 10 trains a recurrent net for the first time, and shows how fast the note fades.
+This section says what next week asks of the student and what you should prepare for it.
+
+**Week 9 — Review and Assessment 1.** No new idea, no new syntax. A 75-minute paper on Weeks 1-8, no computer: read a loss curve, do one optimizer step by hand, name the normalisation that fails on a given input, and **unroll a cell** exactly like page 8.3.
+
+**For the student:** finish the workbook, especially 8.3; do the unroll (a) and (d/e) again from a blank page the evening before.
+
+**For you:** make sure page 8.3 d and e are solid, because they are the "order matters" question on the paper; then at the start of Week 9 reserve ten minutes for the court on any unfinished Week 7 playbook rules (the assessment's "read a curve" questions draw on them). Week 10 trains a recurrent net for the first time, and shows how fast the note fades.

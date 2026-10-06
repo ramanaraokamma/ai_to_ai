@@ -18,7 +18,11 @@
 >
 > **Reading time:** about 20 minutes (the night before). **In class:** 75 minutes (70 for the paper). **Homework:** about 45 minutes of marking.
 
-> **📌 About the code blocks.** There are only four small files this week, and they are for **before** the paper. Each is a whole file with its name in the first line. Type them into **one folder** and run them from there. Every output shown was printed by a real run on a CPU, with no randomness in any of them (no random weights, no seeds needed). They use **practice numbers that are not the paper's numbers**, so they check your method without handing you the answers. **You run no code during the paper.** Nothing this week needs the internet. There is no language model and no stand-in anywhere.
+> **📌 About the code blocks.** There are only four small files this week, and they are for **before** the paper. Each is a whole file with its name in the first line. Type them into **one folder** and run them from there.
+>
+> Every output shown was printed by a real run on a CPU, with no randomness in any of them (no random weights, no seeds needed). The files use **practice numbers that are not the paper's numbers**, so they check your method without handing you the answers.
+>
+> **You run no code during the paper.** Nothing this week needs the internet. There is no language model and no stand-in anywhere.
 
 ---
 
@@ -41,7 +45,7 @@ Say this to yourself before you start: *"This is the X-ray, not the grade. Nobod
 
 ## 🗺️ What is on the paper
 
-The paper is **75 marks** and you get **70 minutes**.
+This section shows how the paper is laid out, so nothing about its shape surprises you on the day. The paper is **75 marks** and you get **70 minutes**.
 
 | Section | What it asks | Marks | About how long |
 |:--:|---|:--:|:--:|
@@ -64,7 +68,12 @@ The paper is **75 marks** and you get **70 minutes**.
 
 ## 🧰 The night before: what to be able to do
 
-Go down this list. For each line, ask: **could I do this right now with only a pen and a calculator?** Tick the ones you could. For any you could not, open the workbook page named and do it again, **for 20 minutes at most**. Do not try to learn everything the night before; just find out which lines are soft.
+This checklist tells you which lines are soft before the paper does. Go down the table below and, for each line, ask: **could I do this right now with only a pen and a calculator?**
+
+1. Tick the lines you could do.
+2. For any you could not, open the workbook page named and do it again, **for 20 minutes at most**.
+
+Do not try to learn everything the night before; just find out which lines are soft.
 
 | Week | You should be able to... | Workbook pages to look at |
 |:--:|---|---|
@@ -113,7 +122,7 @@ for step in range(1, 4):
 3 2.187 1.458
 ```
 
-Each line is: step, SGD's `w`, momentum's `w`. Compare with your table. Did the two rows agree at step 1? Did they part at step 2? Write down in your Bug Log *why* before you check your answer in workbook page 2.1.
+Look at the two columns after the step number: SGD's `w`, then momentum's `w`. Compare with your table. Did the two rows agree at step 1? Did they part at step 2? Write down in your Bug Log *why* before you check your answer in workbook page 2.1.
 
 ### Warm-up 2 — typical size and Adam's first step
 
@@ -203,13 +212,13 @@ gap 0.003  twice the larger spread 0.0147
 bigger than noise? False
 ```
 
-Remember what Week 7 said: this is a **screening rule we chose**, not a proper statistical test. It tells you when a gap is *obviously* inside the noise.
+Look at the last line and compare it with your verdict. Remember what Week 7 said: this is a **screening rule we chose**, not a proper statistical test. It tells you when a gap is *obviously* inside the noise.
 
 ---
 
 ## 🎲 During the paper
 
-A few habits, in order of how many marks they save.
+This section lists the habits to use while you sit the paper, in order of how many marks they save.
 
 1. **Do Section A first and fast.** It is 20 one-mark questions; do not spend five minutes on one of them. Circle your best guess and move on. A blank earns nothing.
 2. **In Section B, work it out, don't "see" it.** Run the program in your head one line at a time and write each intermediate value beside the code. Rounding happens inside the code, so write the number exactly as the program would print it, including a trailing zero.
@@ -225,7 +234,7 @@ A few habits, in order of how many marks they save.
 
 ## 📤 Homework: mark your own paper
 
-You will be given the **marking sheet** (the short answers only) and a pen of a **different colour** from the one you used on the paper. Do this the same evening.
+Homework turns your marks into a plan of at most two redos. You will be given the **marking sheet** (the short answers only) and a pen of a **different colour** from the one you used on the paper. Do this the same evening.
 
 1. **Mark your paper in the other colour.** In A, B and C the answers are checkable, so be strict. In D and E, mark the **working**, not only the final answer: the sheet tells you how many marks each step earns. *(About 30 minutes.)*
 2. **Fill in the per-week grid.** For each of the eight weeks, write the marks you earned, the marks available, and the percentage. The sheet tells you which questions belong to which week. *(About 5 minutes.)*

@@ -9,6 +9,8 @@
 
 ## 📋 At a Glance
 
+Use this table to check the week fits your session and to see what to prepare.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes |
@@ -46,7 +48,7 @@ Observable evidence: six labelled cards on the table, each with the final loss w
 
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist**, the **🐞 Debugging Clinic** and the **🔑 Answer Key**, the blocks are **illustrations, not files**. Each carries on from the one above it, so the `import` lines are typed once, in the first block that needs them. **The complete runnable sequence is in the Prep Checklist.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken. Every block here was run, in order, in one Python session, on a CPU, with a seed set, and every output shown is what it printed.
 
-**You do not need to know any deep learning to teach this week.** You need to be able to read one table of numbers and say which row is a coin. That takes about twenty minutes and this section is all of it.
+This section is the background you need before teaching. **You do not need to know any deep learning to teach this week:** you need to read one table of numbers and say which row is a coin. That takes about twenty minutes, and this section is all of it.
 
 ### 1. Why this week exists
 
@@ -64,7 +66,7 @@ It worked. The loss went down. That was the right thing to be proud of last year
 
 **This year the question changes from "does it learn?" to "when it does not, which knob do I turn, and how do I know *before* I turn it?"** A handful of numbers decide whether that loop produces a model or an expensive random-number generator, and nobody tells you which handful until you have wasted an afternoon.
 
-Here is the sentence that frames the whole year, and it is worth saying almost word for word:
+The sentence that frames the whole year is worth saying almost word for word:
 
 > "A network that is not learning does not tell you why. It prints the same number, over and over, and the number looks like a number. Your whole job this year is to learn to read what that number is *saying*."
 
@@ -107,7 +109,9 @@ e ** 0.693    = 1.9997
 -ln(0.5)      = 0.6931
 ```
 
-And PyTorch agrees. Give the loss function logits that are all zero (both classes score the same, so after softmax each has probability one half) and ask for the cross-entropy:
+Look at the first and third lines: the two expressions give the same number.
+
+PyTorch agrees. Give the loss function logits that are all zero (both classes score the same, so after softmax each has probability one half) and ask for the cross-entropy:
 
 ```python
 import torch
@@ -120,7 +124,9 @@ print(F.cross_entropy(logits, labels))
 tensor(0.6931)
 ```
 
-**That is the whole idea of the week.** `0.693` is not "bad". It is the exact number that means *the model is guessing*. A curve that starts at 0.69 and stays there is a model that has learned nothing; a curve that starts at 0.69 and falls is a model getting better than a coin.
+Look at the printed value: it matches the hand calculation.
+
+**`0.693` is the whole idea of the week.** It is not "bad". It is the exact number that means *the model is guessing*. A curve that starts at 0.69 and stays there is a model that has learned nothing; a curve that starts at 0.69 and falls is a model getting better than a coin.
 
 The same arithmetic gives the answer for any number of equally likely classes:
 
@@ -134,6 +140,8 @@ for k in (2, 3, 10):
  3 equally likely classes -> a guesser's loss is ln 3 = 1.0986
 10 equally likely classes -> a guesser's loss is ln 10 = 2.3026
 ```
+
+Look at how the guesser's loss grows as the number of classes grows.
 
 > **🧑‍🏫 If a student asks:** *"Is 0.693 the number for every model?"* — **No. It is the number for two equally likely classes.** Three classes: 1.0986. Ten (like digits): 2.3026. And the spirals are *almost* but not exactly balanced (431 against 409 in training), so a smarter guesser that gave the commoner class a slightly higher probability could do very slightly better than 0.693 (about 0.6928 on the training set). For this week "about 0.69" is the right reading.
 
@@ -155,7 +163,7 @@ You will run the harness six times, changing only `lr`. The rates are `1e-6, 1e-
 ![Three small line charts of training loss on a log axis with a dashed line at 0.693: two stuck runs lying on the line, three runs that fall far below it, and one run that starts at 12.786 and returns to the line](../figures/fig-w01-1-three-stories-one-number.svg)
 *Figure 1.1 — Three runs that end near 0.693 tell three different stories; only the curve shows which.*
 
-Three things the student is likely to notice. Have an answer ready:
+The student is likely to notice three things. Have an answer ready for each:
 
 - **"E has the lower train loss but D has the lower validation loss — which is better?"** Today: *D, because validation is the number that counts and D's is lower (0.026 against 0.059).* One seed is not a verdict (see 🚫 below); Week 7 does this properly.
 - **"Run F's accuracy is 46.9% — that's worse than a coin!"** It is not. The validation set has 169 examples of class 0 and 191 of class 1. A model that always says "class 0" scores 169/360 = **46.9%**, and one that always says "class 1" scores 191/360 = **53.1%**. Run F's accuracy is *exactly the always-class-0 rate*, which is evidence it has collapsed into a constant guesser. Run A's 53.1% is exactly the other one. (The block that prints this is in the Prep Checklist.)
@@ -166,7 +174,7 @@ Three things the student is likely to notice. Have an answer ready:
 
 ### 4. Every new line of syntax, explained to someone who has never seen it
 
-There are exactly three, and none is difficult.
+This section explains the three new pieces of syntax. None is difficult.
 
 **`torch.set_num_threads(1)`.** A laptop has many CPU cores, and PyTorch will happily spread a matrix multiply over all of them. Adding numbers in a different *order* can give results that differ in the last digits (computers round after every addition). One thread means one fixed order, so the same code prints the same digits every run and **the digits in the book match the digits on the screen**. On this tiny network we checked and the answer is identical with 1 thread or 4, so today it is insurance, not a necessity; the habit is for later weeks with bigger models. Rule: **it goes near the top of the file, once, before any training.**
 
@@ -181,7 +189,7 @@ threads before: 18
 threads after:  1
 ```
 
-*(The first number is machine-dependent: yours will be your own core count. The second must be 1.)*
+Look at the second line: it must say 1. The first number is machine-dependent: yours will be your own core count.
 
 **The keyword-only `*`.** In a function definition, a lone `*` means *"everything after this must be passed by name."* Here it is on a toy function with the same shape as the real harness:
 
@@ -197,7 +205,9 @@ lr=0.001  batch_size=64  seed=0
 lr=0.001  batch_size=64  seed=0
 ```
 
-Why does the harness insist? Because a sweep calls it hundreds of times with different knobs, and `run(0.001, 64, 0)` is a call nobody can read, and one that silently swaps two numbers the day someone reorders the signature. With the `*`, the swap is impossible: **a wrong or missing name stops the program, loudly, on the line that is wrong.** The Debugging Clinic shows the real tracebacks. They are *good* errors.
+Look at the two lines: the order of the names in the call changed, the result did not.
+
+Why does the harness insist? A sweep calls it hundreds of times with different knobs. `run(0.001, 64, 0)` is a call nobody can read, and it silently swaps two numbers the day someone reorders the signature. With the `*`, the swap is impossible: **a wrong or missing name stops the program, loudly, on the line that is wrong.** The Debugging Clinic shows the real tracebacks. They are *good* errors.
 
 **`nn.GELU()`.** An activation function is the bend in the middle of a layer; without it, stacked layers collapse into one straight-line layer (Level 3). ReLU, which the student knows, is a hard corner: zero for negative inputs, the input itself for positive ones. **GELU is the same idea with the corner rounded off.** Real numbers:
 
@@ -214,7 +224,9 @@ ReLU   [0.0, 0.0, 0.0, 0.0, 0.5, 1.0, 3.0]
 GELU   [-0.004, -0.1587, -0.1543, 0.0, 0.3457, 0.8413, 2.996]
 ```
 
-Look at the `-1.0` entry: ReLU says exactly `0.0`; GELU says `-0.1587`, a small leak below zero. The student does not need the formula. If one asks: *GELU(x) is x multiplied by the chance that a bell-curve number falls below x.* Check it at `x = 1` (this block uses `math.erf`, which is **teacher background only** — do not show it to the student):
+Look at the `-1.0` entry: ReLU says exactly `0.0`; GELU says `-0.1587`, a small leak below zero.
+
+The student does not need the formula. If one asks: *GELU(x) is x multiplied by the chance that a bell-curve number falls below x.* Check it at `x = 1` (this block uses `math.erf`, which is **teacher background only** — do not show it to the student):
 
 ```python
 # TEACHER BACKGROUND ONLY - not shown to the student this week.
@@ -228,6 +240,8 @@ print("so GELU(1) = 1 * that              :", round(1 * below_1, 4))
 chance a bell-curve number is below 1: 0.8413
 so GELU(1) = 1 * that              : 0.8413
 ```
+
+Look at the two lines: both print the same value.
 
 That matches GELU's `0.8413` in the table above. **Keep it in your pocket and offer it only if asked.** GELU is *used* from Week 16 on (inside TinyGPT); the student meets it today only because it sits inside every block of the harness, and you point at it in the model printout. Do not teach it as a topic.
 
@@ -254,7 +268,7 @@ Today you go **one level down and no further.** You can say *"a loss is the aver
 
 ### 8. 🚫 What you must NOT claim
 
-Toy results demonstrate a mechanism, not a rate. Do not say:
+Toy results demonstrate a mechanism, not a rate. Do not say any of these:
 
 - ❌ *"1e-3 is the right learning rate for neural networks."* It is the best of six for **one** 16,962-parameter network, **one** seed, **one** dataset. A different network has a different cliff.
 - ❌ *"Large learning rates always make the loss infinite or NaN."* Today's run F **did not**: it went to 12.8 on average in its first epoch and came back to 0.693. Some runs on other machines do go to `nan`; this one did not.
@@ -276,6 +290,8 @@ If that stumbles, the fallback is: *"Log loss at a coin is 0.693, and we have al
 ---
 
 ## 🧰 Prep Checklist
+
+This section gets the laptop and the cards ready, and holds the one runnable file that produced every number in this guide.
 
 ### 20 minutes the night before
 
@@ -560,6 +576,8 @@ Everything this week is reproduced in the **table in section 3** and in **Block 
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This is the plan to teach from: five timed segments, each with what to say, ask, expect and watch for.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — The Number That Means Nothing | 7 | 7 | A loss of 0.693 on the board. Good or bad? What would you need to know? |
@@ -618,7 +636,7 @@ final loss: 0.693
 
 > "That is one decision. How many examples did you average before you stepped? Another. Whether the step is plain or smarter? Another. I count ten. Let's find them."
 
-**Do this:** Open `l4lib/spirals.py` in an editor. Scroll to the signature of `run`. **Read it aloud**, slowly:
+**Do this:** Open `l4lib/spirals.py` in an editor and scroll to the signature of `run`. **Read it aloud**, slowly:
 
 ```text
 def run(tag, *, depth=4, lr=3e-3, batch_size=64, epochs=60, optimizer="adamw",
@@ -680,7 +698,7 @@ e ** 0.693    = 1.9997
 
 #### Step 1 — set-up, and the first `*` (4 minutes)
 
-**Type together:**
+**Type together** (this sets one thread and prints the count before and after):
 
 ```python
 import torch
@@ -728,7 +746,7 @@ TypeError: run_toy() takes 0 positional arguments but 3 were given
 
 #### Step 2 — one real run (4 minutes)
 
-**Type together:**
+**Type together** (this runs the harness once and inspects what it returns):
 
 ```python
 from l4lib.spirals import run
@@ -786,7 +804,7 @@ TypeError: run() takes 1 positional argument but 2 were given
 
 > "Now the six. A list of pairs, a letter and a learning rate, and a loop."
 
-**Type together:**
+**Type together** (this loops over the six learning rates and stores every curve):
 
 ```python
 LRS = [("A", 1e-6), ("B", 1e-5), ("C", 1e-4), ("D", 1e-3), ("E", 1e-2), ("F", 1e-1)]
@@ -811,7 +829,7 @@ F  lr=0.1                    train 0.693  val 0.702  acc  46.9%
 
 > "A and F. Same final loss. Same story?"
 
-**Do this:** Let them argue. Then show the table:
+**Do this:** Let them argue. Then print the loss at six chosen epochs for each run:
 
 ```python
 print("epoch      " + "".join(f"{e:>9}" for e in (0, 5, 10, 20, 40, 59)))
@@ -869,7 +887,7 @@ F lr=0.1   |  ::--:.:.:::.  ............................................|
 
 > "Nobody has to have been right. You made a prediction, you checked it, and now you hold a number you can trust more than your guess. That is the habit."
 
-**Then the coin check:**
+**Then the coin check.** This block prints the two constant-guesser accuracies, then the final validation numbers for all six runs:
 
 ```python
 print("the two constant guessers on the validation set:")
@@ -951,6 +969,8 @@ F lr=0.1    final val loss 0.702   final val accuracy  46.9%
 
 ## 🎲 The Activity, In Full
 
+This section restates the predict-check-label activity as one self-contained plan, with variations for group size and ability.
+
 ### Setup
 
 - Six cards A–F, the learning rate on the back.
@@ -999,6 +1019,8 @@ lr=0.001 seed=2              train 0.008  val 0.032  acc  99.2%
 ---
 
 ## 🐞 The Debugging Clinic
+
+This section holds the five deliberate mistakes with their real tracebacks, so you can recognise each message on sight and name its cause and fix.
 
 Every traceback below came from running the file shown, on the real harness. The path in your traceback will be **your** path. **Read the last line first; then find the line with your own file name.** Files 2–5 need `l4lib` importable, so run them from `36-week-course/` (and run file 4 from anywhere else on purpose).
 
@@ -1104,6 +1126,8 @@ TypeError: run() missing 1 required positional argument: 'tag'
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions this lesson reliably prompts, each with a short honest answer.
+
 **"Why six learning rates and not ten?"** — Six is enough to see the whole story: stuck, crawling, learning, healthy, rough, crashed. Ten would be the same story with more rows.
 
 **"Why is the first loss 0.694 and not exactly 0.693?"** — A freshly built network does not say *exactly* 50-50; its random starting weights lean very slightly. We measured the untrained model (seed 0) on the training set and got 0.6940. Same story.
@@ -1128,6 +1152,8 @@ TypeError: run() missing 1 required positional argument: 'tag'
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+These are the seven ways this lesson most often fails, so you can avoid them.
+
 1. **The teacher explains why a high learning rate overshoots.** You will want to. The picture of a ball bouncing across a valley is lovely and it is **Week 2**. Draw it today and the student believes they understand F and stops looking at the curve. *Write the question in the Parking Lot.*
 2. **The student sees the answer ("1e-3 wins") before predicting.** Part C is the lesson; skip it and the table is homework instead of discovery. Keep the cards face down until the numbers are on screen.
 3. **The hook is dropped because "it's obvious".** It is not. A student who does not feel *"same number, different stories"* will not care about curves.
@@ -1139,6 +1165,8 @@ TypeError: run() missing 1 required positional argument: 'tag'
 ---
 
 ## 🧭 Differentiation
+
+Use this section to adjust the lesson when the student is struggling, flying, or not engaging.
 
 ### If the student is struggling
 
@@ -1164,7 +1192,7 @@ TypeError: run() missing 1 required positional argument: 'tag'
 
 ## ✅ Assessing Understanding
 
-Three quick checks, none of which is a test.
+Use these three quick checks to see what landed. None of them is a test.
 
 1. **The coin.** *"A model for two classes is guessing. What is its loss, and why?"* **Full:** 0.693; each class gets 1/2; `-ln(0.5) = ln 2`. **Partial:** 0.693 with no reason. **Not yet:** any other number, or "zero".
 2. **Same number, different stories.** *"Runs A and F both end at 0.693. How do you tell them apart?"* **Full:** look at the curve or the first epoch: A never moves, F starts at 12.8. **Partial:** "their accuracies differ" (true: 53.1% against 46.9%; give credit and ask about the curve). **Not yet:** "they are the same".
@@ -1182,6 +1210,8 @@ Three quick checks, none of which is a test.
 ---
 
 ## 📤 Homework to Assign
+
+This section lists the homework pages, what each checks, and the one line to record in the Bug Log.
 
 **Workbook Week 1** (about 60–75 minutes). The workbook file is authored in a later stage; the pages it must carry, so that it matches today, are:
 
@@ -1202,6 +1232,8 @@ Three quick checks, none of which is a test.
 ---
 
 ## 🔑 Answer Key
+
+Teacher only: answers and marking tolerances for every workbook page and every question posed in the lesson.
 
 ### Page 1.1 — The six curves
 
@@ -1281,6 +1313,8 @@ Full marks: *"A guessing two-class model gives each class probability 1/2; the s
 ---
 
 ## 🔮 Next Week Preview
+
+This section says where next week picks up, so you can close today with a pointer forward.
 
 Next week takes the one line of the loop that today stayed fixed — `w -= lr * grad` — and asks what happens if the step **remembers**. Today every run used the same optimizer, `adamw`. Next week's opening result changes only the optimizer: the same learning rate, `0.03`, on the same spirals, given to two different rules. **Plain SGD finishes at a loss of 0.690, accuracy 52.8% — a coin. SGD with momentum finishes at a loss of 0.018, accuracy 98.6%.** (Both measured on this harness, CPU, seed 0.) Nothing was added except a running average of past gradients, and the model went from useless to nearly perfect. That is Week 2.
 

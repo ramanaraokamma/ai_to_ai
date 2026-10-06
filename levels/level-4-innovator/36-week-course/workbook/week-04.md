@@ -21,7 +21,7 @@
 
 ## ✅ Warm-Up (5 min)
 
-Five from **last week** and earlier. No looking back.
+This warm-up checks what you kept from earlier weeks. Answer all five from memory, with no looking back.
 
 **W1.** In `w -= lr * grad`, which name is the step size? ____________
 
@@ -41,7 +41,7 @@ ________________________________________________________________
 
 ## 📖 Page 4.1 — Match the Word to the Thing
 
-Draw a line, or write the letter.
+This page checks that you can attach each new word to its meaning. Draw a line, or write the letter.
 
 | Word | Letter | | Meaning |
 |---|:--:|---|---|
@@ -62,7 +62,7 @@ A **confound** is: _____________________________________________________________
 
 ## 🔮 Page 4.2 — Predict the Output
 
-Write your prediction **in pen, before** you run anything. Then run it and write what happened beside it.
+This page builds the habit of predicting before running. **Write your prediction in pen, before you run anything**, then run it and write what happened beside it.
 
 **P1.**
 
@@ -112,11 +112,11 @@ What word describes what the rate did after step 50? ______________
 
 ## 🔢 Page 4.3 — The Schedule, by Hand
 
-**Calculator and graph paper. No code until the last box.**
+This page builds the warmup and cosine schedules by hand, so you know what the code should print. **Use a calculator and graph paper. No code until the last box.**
 
 Peak rate = **0.02**. Total steps `T` = **50**. Warmup `W` = **5** steps.
 
-The rules (copy them onto the margin of your graph paper):
+The rules, to copy into the margin of your graph paper:
 
 - **Cosine only:** multiplier = `0.5 * (1 + cos(pi * s / T))`
 - **Warmup + cosine:**
@@ -183,7 +183,7 @@ Then answer: step 0 prints ______ but your table says step 0 uses ______. **Who 
 
 ## 🔢 Page 4.4 — Counting Steps
 
-Paper and calculator first. **Use `//`**: two slashes mean "how many whole ones fit". The harness drops the short last batch and reshuffles every epoch.
+This page shows how batch size sets the number of steps. Use paper and a calculator first, and **use `//`**: two slashes mean "how many whole ones fit". The harness drops the short last batch and reshuffles every epoch.
 
 | Batch | Steps per epoch (`840 // batch`) | Points used | Points left out | Steps in 30 epochs |
 |:--:|:--:|:--:|:--:|:--:|
@@ -208,7 +208,7 @@ Paper and calculator first. **Use `//`**: two slashes mean "how many whole ones 
 
 ## 🎲 Page 4.5 — Two Experiments and a Report
 
-You will run a grid like the class one but with **different batch sizes**, so you cannot copy the class table. Save it as `w4_grid.py`.
+In this page you run two experiments and write a report on what each one held fixed. The grid is like the class one but uses **different batch sizes**, so you cannot copy the class table. Save this script as `w4_grid.py` and run it:
 
 ```python
 import torch
@@ -231,7 +231,7 @@ for bs in [24, 120, 420]:
 
 Column 1 (60 epochs each): ______________ Column 2 (about 360 steps each): ______________
 
-**Your run** (about 10 seconds):
+**Your run** (about 10 seconds). Copy what the script printed into the table:
 
 | Batch | 60 epochs: steps | 60 epochs: val loss | Epochs for ~360 steps | Steps | val loss |
 |:--:|:--:|:--:|:--:|:--:|:--:|
@@ -241,7 +241,7 @@ Column 1 (60 epochs each): ______________ Column 2 (about 360 steps each): _____
 
 **R1. Fill in the template** (use words from this page, not "bigger batch is better"):
 
-```
+```text
 Column 1 held ________ fixed.  It also changed ________.
 Column 2 held ________ fixed.  It also changed ________.
 ```
@@ -273,7 +273,7 @@ ______________________________________________________________
 
 ## 🔟 Page 4.6 — Hook Table: Read It
 
-This is the table from the hook (five seeds, peak `lr = 0.03`, final accuracy in percent).
+This page practises reading a results table. It is the table from the hook (five seeds, peak `lr = 0.03`, final accuracy in percent).
 
 ```text
 constant        46.9  50.6  53.1  98.1  97.2   mean  69.2
@@ -300,7 +300,7 @@ ______________________________________________________________
 
 ## 🐞 Page 4.7 — Fix the Broken Programs
 
-Each is **deliberately broken**. Read the **last line** of the message first.
+This page practises reading error messages and finding silent bugs. Each program is **deliberately broken**. Read the **last line** of the message first.
 
 **D1 — DELIBERATE ERROR**
 
@@ -360,7 +360,7 @@ with the cosine from P4. The rate printed is `0.02` after 40 steps, when it shou
 
 ## 📓 Page 4.8 — The Bug Log
 
-Copy the **last line** of every error or surprise you meet this week, not the whole traceback.
+This page is where you record every bug you meet this week. Copy the **last line** of each error or surprise, not the whole traceback.
 
 | # | Last line (copied) | What it meant | The fix | Caught by (message / print / nobody) |
 |:-:|---|---|---|:-:|
@@ -377,6 +377,8 @@ Copy the **last line** of every error or surprise you meet this week, not the wh
 ---
 
 ## 🧠 Self-Check (do this last, from memory)
+
+This section tests what stuck. Answer from memory, then rate your confidence.
 
 1. The learning rate at step `s` is `peak × ________(s)`. Cosine goes from ______ to ______.
 2. Which runs first in a training step: `opt.step()` or `sched.step()`? ______________ What does `get_last_lr()` show right after `sched.step()`? _________________________
@@ -395,7 +397,9 @@ Copy the **last line** of every error or surprise you meet this week, not the wh
 
 ---
 
-# ✂️ ANSWERS — keep this page folded until you have finished
+## ✂️ ANSWERS — keep this page folded until you have finished
+
+This section gives the answers and marking notes. Fold the page over until you have finished.
 
 ### Warm-Up
 

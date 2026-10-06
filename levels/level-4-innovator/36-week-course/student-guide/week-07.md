@@ -34,7 +34,7 @@ Today you find out which of those conclusions survive a repeat.
 
 **Before you open the laptop**, take workbook page 7.1 (the prediction card). For each of the six knobs it asks: *on the spirals, at 60 epochs, which values will be worse than the baseline, which better, and which about the same?* It also asks which knob matters most. Answer in pen. **There is no wrong answer today.** The card is kept face-down and you score it later.
 
-A few words to keep in mind as you work:
+Three words to keep in mind as you work:
 
 - The **baseline** is the run with every knob at its default. Every other run is judged as a difference from it.
 - A **seed** picks the random starting weights and the order of the mini-batches. It does not change the data.
@@ -43,6 +43,8 @@ A few words to keep in mind as you work:
 ---
 
 ## 🧠 The Big Idea
+
+This section shows that the same code gives different results under different seeds, then builds the rule and the tools you need to tell a real difference from noise.
 
 ### 1. The same code, three seeds
 
@@ -127,7 +129,7 @@ A few things to notice as you type, not to memorise:
 - `how_many_knobs_changed` counts how many knobs differ from `BASE`. A legal run has 0 or 1. It is the program refusing to let you cheat on "one knob per run".
 - `train_one` passes every setting to `run()` **by name**, on purpose, so nothing is hidden.
 
-Now a tiny file to run the baseline for three seeds:
+Now a tiny file, `hook.py`, that runs the baseline for three seeds. Type it, then run it:
 
 ```python
 # hook.py - the same run three times. Only the seed changes.
@@ -144,7 +146,7 @@ seed 1: final validation loss 0.0499
 seed 2: final validation loss 0.0301
 ```
 
-Same code. Same data. Same learning rate. And the biggest of those numbers (0.0499) is about **66% bigger** than the smallest (0.0301).
+Look at the three numbers: same code, same data, same learning rate. The biggest of those numbers (0.0499) is about **66% bigger** than the smallest (0.0301).
 
 > **✏️ Write in your Bug Log.** Suppose last term you had run seed 1 for dropout 0.3 and seed 2 for the baseline, and reported that dropout made things worse. Would that have been true? What would you really have been measuring?
 
@@ -201,6 +203,8 @@ SEE          thing to      and the
 Your checks are cheap too: print the learning rate, look at the loss in **epoch 0**, look at whether the loss is **still falling** at the end, print the gradient length. A list of these rules, each backed by a number you printed, is a **playbook**. Building one is today's project.
 
 ### 4. The one new construct: `itertools.product`
+
+`itertools.product` builds every combination of several lists, which is what a sweep needs. Here is the smallest use of it:
 
 ```python
 import itertools
@@ -351,6 +355,8 @@ This is why `knobs.py` has `copy_of` and keeps a second copy, `FROZEN`: `sweep.p
 ---
 
 ## 💻 Try It Yourself
+
+In this section you run the sweep, build the table and read four numbers off a curve. These are the evidence your playbook will cite.
 
 ### Step 1 — one row by hand
 
@@ -560,6 +566,8 @@ For each of the five rows, write in your Bug Log:
 
 ## 🎲 Your Turn — The Playbook Court
 
+This section explains how your playbook rules are judged, so you know what each rule must contain.
+
 You are the lawyer, and your rules are the cases. Whoever is judging (your teacher) asks three fixed questions of each rule:
 
 1. **Which row, how many seeds, at how many epochs?**
@@ -593,6 +601,8 @@ Ideas for cases, if you are stuck: a curve that is flat from epoch 0; two differ
 
 ## 🔑 Wrap Up
 
+These questions pull the week together. Answer them in your Bug Log before you start the homework.
+
 1. Return to the prediction card. Which of your guesses surprised you most?
 2. Last term dropout and weight decay were your tools against overfitting. Count how many of their eight rows beat the baseline in your table. If the answer is "none", is that because they do not work? Write what you can and cannot claim, in one sentence, with the words "on the spirals".
 3. Why does the baseline row stay at the top of the table?
@@ -606,6 +616,8 @@ Then write this sentence in your Bug Log in your own handwriting:
 ---
 
 ## 📤 Homework
+
+The write-up is your playbook, built only from numbers your own run printed.
 
 1. **Finish the playbook.** At least **six** SYMPTOM → CHECK → ACTION rules. Each must have: a cited row (knob, value); the mean ± spread over three seeds; the baseline's mean ± spread; the epoch count; and a sentence saying whether the gap is bigger than twice the spread.
 2. **At least one rule must be one where your data contradicted what you wrote on the prediction card**, and you must say so.

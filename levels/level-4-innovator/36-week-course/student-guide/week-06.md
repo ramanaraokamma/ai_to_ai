@@ -21,7 +21,12 @@
 >
 > **Reading time:** about 45 minutes. **Homework:** about 60–75 minutes.
 
-> **📌 About the code blocks.** Each file is its own file; the ones that say `from lab6 import *` need the `lab6.py` you build in Step 3, in the same folder. If you paste a block on its own and get `NameError` or `ModuleNotFoundError: No module named 'lab6'`, that is why; nothing is broken. The blocks marked **DELIBERATE ERROR** are broken on purpose. Every output shown was printed by a real run on a CPU, one thread, with a seed set (torch 2.2.1, numpy 1.26.4). Your numbers should match to every digit shown, except that file paths inside an error message will be your own; for a loss or accuracy that differs in the last digit, compare to two significant figures. Every network and training run this week is **real**. The small grids of numbers in `slope.py`, `norm_hand.py` and `batch_dep.py` are **made up on purpose** so you can check the arithmetic by hand. Nothing this week needs the internet, and nothing is a language model.
+> **📌 About the code blocks.**
+> - Each block is its own file. The ones that say `from lab6 import *` need the `lab6.py` you build in Step 3, in the same folder. If you paste a block on its own and get `NameError` or `ModuleNotFoundError: No module named 'lab6'`, that is why; nothing is broken.
+> - The blocks marked **DELIBERATE ERROR** are broken on purpose.
+> - Every output shown was printed by a real run on a CPU, one thread, with a seed set (torch 2.2.1, numpy 1.26.4). Your numbers should match to every digit shown, except that file paths inside an error message will be your own. For a loss or accuracy that differs in the last digit, compare to two significant figures.
+> - Every network and training run this week is **real**. The small grids of numbers in `slope.py`, `norm_hand.py` and `batch_dep.py` are **made up on purpose** so you can check the arithmetic by hand.
+> - Nothing this week needs the internet, and nothing is a language model.
 >
 > **Before you start:** `l4lib` must be importable. From inside the `36-week-course` folder, once per terminal: `export PYTHONPATH="$PWD"`, then `mkdir -p w06 && cd w06`. If you see `ModuleNotFoundError: No module named 'l4lib'`, that is the fix.
 
@@ -57,11 +62,17 @@ You will come back to your guesses in Step 4.
 
 ## 🧠 The Big Idea
 
+This section explains why deep plain stacks fail to learn, and the three devices that fix it. You need it before the code, because every experiment below tests one of these ideas.
+
 ### 1. The problem: the error has a long way to go
 
-To learn, the *last* layer's error has to be passed backwards, layer by layer, to the *first*. At each layer it is multiplied by that layer's **slope** (how much the layer's output moves when its input is nudged). If each slope is smaller than 1, the error shrinks at every step on the way back and the first layer hears almost nothing. That is called a **vanishing gradient**. A network in that state does not learn; it sits at the coin-flip loss (0.693, which is `ln 2`, from Week 1) for the whole run.
+To learn, the *last* layer's error has to be passed backwards, layer by layer, to the *first*. At each layer it is multiplied by that layer's **slope** (how much the layer's output moves when its input is nudged).
 
-The fixes this week are two cheap devices, and one tool for emergencies:
+If each slope is smaller than 1, the error shrinks at every step on the way back and the first layer hears almost nothing. That is called a **vanishing gradient**.
+
+A network in that state does not learn; it sits at the coin-flip loss (0.693, which is `ln 2`, from Week 1) for the whole run.
+
+The fixes this week are two cheap devices and one emergency tool:
 
 | Device | What it does | In one line |
 |---|---|---|
@@ -71,7 +82,7 @@ The fixes this week are two cheap devices, and one tool for emergencies:
 
 ### 2. 🔢 The maths, worked on numbers first
 
-You need one new idea (the slope of a sum) and the arithmetic of layer norm. Each is done on real numbers before it gets a name. Use a calculator or pencil.
+This part teaches one new idea (the slope of a sum) and the arithmetic of layer norm. Each is done on real numbers before it gets a name. Use a calculator or pencil.
 
 **A. A slope is a nudge and a division** (you did this in Level 3). To find how steeply `y` rises at `x = 2`: work out `y` at `x = 2`, work it out again at `x = 2.001`, divide the **change** by `0.001`. No formula needed.
 
@@ -85,7 +96,7 @@ change in f = 0.00020005   → slope of f = 0.00020005 / 0.001 = 0.2
 
 Now the **sum**, `y = x + f(x)`. `y(2) = 2.2`. `y(2.001) = 2.001 + 0.20020005 = 2.20120005`. The change is `0.00120005`, and divided by `0.001` that is **1.2**.
 
-Look at where the 1.2 came from. The `x` part moved by exactly `0.001`, so its slope is **1**. The `f` part moved by 0.0002, so its slope is **0.2**. The slopes of the pieces *add up*: `1 + 0.2 = 1.2`. Say it in words: **the slope of a sum is the sum of the slopes, and the slope of `x` by itself is 1.** That is the whole new idea. Write that sentence in your Bug Log in your own words.
+Look at where the 1.2 came from. The `x` part moved by exactly `0.001`, so its slope is **1**. The `f` part moved by 0.0002, so its slope is **0.2**. The slopes of the pieces *add up*: `1 + 0.2 = 1.2`. In words: **the slope of a sum is the sum of the slopes, and the slope of `x` by itself is 1.** That is the whole new idea. Write that sentence in your Bug Log in your own words.
 
 **C. Slopes multiply along a chain.** Four plain blocks, each with a slope (at this point) of `0.3, 0.2, 0.4, 0.1`. The error going backwards is multiplied by each in turn. **Do it by hand now:**
 
@@ -115,17 +126,29 @@ The row now has mean 0 and spread 1. That is **layer norm: each row, using its o
 
 ### 3. The four new lines of syntax
 
-**`nn.LayerNorm(d)`.** A layer that normalises **each example by itself**: for every row of `d` numbers, it subtracts that row's mean, divides by that row's spread, then multiplies by a learned **scale** (`weight`, starts at 1) and adds a learned **shift** (`bias`, starts at 0). So the network *can* undo the normalising if that turns out to help. That is `2 × d` parameters: `LayerNorm(64)` has 128. The `d` must equal the size of the **last** dimension of what you feed in. It behaves identically in `train()` and `eval()`.
+Each entry below names the call, what it does, and the one rule that trips people up.
 
-**`nn.BatchNorm1d(d)`.** The same arithmetic, but **down each column**: for each of the `d` features it uses the mean and spread of that feature *across the examples in the batch*. Same 128 parameters for `d = 64`, **plus stored numbers that are not parameters**: a *running mean* and a *running variance* per feature. In `train()` mode it uses the batch's own statistics and updates the stored ones a little (10% of the way towards the batch each time). In `eval()` mode it uses the stored ones. In `train()` mode it needs more than one example.
+**`nn.LayerNorm(d)`.** A layer that normalises **each example by itself**: for every row of `d` numbers, it subtracts that row's mean, divides by that row's spread, then multiplies by a learned **scale** (`weight`, starts at 1) and adds a learned **shift** (`bias`, starts at 0). So the network *can* undo the normalising if that turns out to help.
+
+That is `2 × d` parameters: `LayerNorm(64)` has 128. The `d` must equal the size of the **last** dimension of what you feed in. It behaves identically in `train()` and `eval()`.
+
+**`nn.BatchNorm1d(d)`.** The same arithmetic, but **down each column**: for each of the `d` features it uses the mean and spread of that feature *across the examples in the batch*. Same 128 parameters for `d = 64`, **plus stored numbers that are not parameters**: a *running mean* and a *running variance* per feature.
+
+In `train()` mode it uses the batch's own statistics and updates the stored ones a little (10% of the way towards the batch each time). In `eval()` mode it uses the stored ones. In `train()` mode it needs more than one example.
 
 **`nn.Identity()`.** A layer that hands back exactly what it was given. No parameters. You have seen `Identity()` in the printout of the Week 1 network: it is the "no norm" placeholder. Having a layer that does nothing lets a model say `self.norm = Identity()` and keep the same shape of code whether or not there is a norm.
 
-**`torch.nn.utils.clip_grad_norm_(parameters, max_norm)`.** One call that (1) measures the length of the *whole* gradient (all the knobs together, as one long arrow: Week 2's `.norm()`), (2) if it is longer than `max_norm`, multiplies every gradient by `max_norm / length`, and (3) **returns the length it measured, before shrinking**. The trailing underscore means "changes things in place". Where you put it matters: **after `loss.backward()`** (before it there is no gradient to clip) and **before `opt.step()`** (after it, the update has already been made). The `gnorm` column that `run(...)` has been printing since Week 2 is this function with `max_norm=inf`, which measures and never clips.
+**`torch.nn.utils.clip_grad_norm_(parameters, max_norm)`.** One call that does three things, in this order:
+
+- (1) Measures the length of the *whole* gradient (all the knobs together, as one long arrow: Week 2's `.norm()`).
+- (2) If that length is more than `max_norm`, multiplies every gradient by `max_norm / length`.
+- (3) **Returns the length it measured, before shrinking.**
+
+The trailing underscore means "changes things in place". Where you put it matters: **after `loss.backward()`** (before it there is no gradient to clip) and **before `opt.step()`** (after it, the update has already been made). The `gnorm` column that `run(...)` has been printing since Week 2 is this function with `max_norm=inf`, which measures and never clips.
 
 ### 4. Reading, not writing: the block
 
-You will not write the class that holds these layers (classes arrive in Week 23). You will *read* the two lines of `l4lib/spirals.py` that are the whole idea:
+You will not write the class that holds these layers (classes arrive in Week 23). You will *read* the two lines of `l4lib/spirals.py` that are the whole idea. They are shown as text, not for you to type:
 
 ```text
 h = self.drop(self.act(self.fc(self.norm(x))))     # norm, then the linear layer, then GELU, then dropout
@@ -138,9 +161,11 @@ return x + h if self.residual else h                # the road: x + h, or just h
 
 ## 💻 Try It Yourself
 
+In this section you check the maths on the computer, build `lab6.py`, run the small-batch experiment, break four things on purpose, and read the depth tables. Do the steps in order.
+
 ### Step 1 — the maths, on the computer
 
-Type each of these as its own file and run it. Each takes under two seconds.
+Type each of these as its own file and run it. Each takes under two seconds, and each shows one idea from The Big Idea in numbers.
 
 **The slope of a sum.** Check your hand arithmetic from Part C.
 
@@ -183,9 +208,9 @@ a stack of four blocks, slope of each one on its own:
   residual stack, (1 + slope) each:  2.4024
 ```
 
-Does it agree with your pencil? Four numbers, no powers: that is the entire reason a road helps. (Multiplying the *same* number many times is a bigger topic, and it is Week 10's.)
+Look at the last two lines and compare them with your pencil answers from Part C. Four numbers, no powers: that is the entire reason a road helps. (Multiplying the *same* number many times is a bigger topic, and it is Week 10's.)
 
-**Layer norm by hand, then by machine.**
+**Layer norm by hand, then by machine.** This file does Part D with numpy, then asks `nn.LayerNorm` for the same thing.
 
 ```python
 # norm_hand.py  -- layer norm by hand, then check against nn.LayerNorm
@@ -276,7 +301,7 @@ a batch of TWO, batch norm, two completely different pairs:
 
 Read the first four lines: it is the *same* example `a` every time. Compare it with Part E. (The `-0.998` in the last block is because those two inputs, `0.1` and `0.2`, are so close together that the tiny `eps` stops being negligible.)
 
-**Batch norm's stored numbers.**
+**Batch norm's stored numbers.** This file feeds three batches to a batch norm layer and watches its stored numbers move.
 
 ```python
 # mode_demo.py  -- batch norm keeps running statistics for eval mode
@@ -312,7 +337,7 @@ train mode, ONE example -> ValueError: Expected more than 1 value per channel wh
 
 The stored mean starts at 0 and the stored variance at 1 (arbitrary starting values), then each batch moves them 10% of the way towards the data (mean 10, variance 25). After three batches they are still far away, so in `eval()` mode a 10.0 comes out as `2.753`, not near 0. Stored numbers need many batches to settle. The `try`/`except` is just a safe way to print an error message instead of stopping; you meet the same message as a deliberate error in Step 4.
 
-**`Identity` does nothing, on purpose.**
+**`Identity` does nothing, on purpose.** This file shows that `nn.Identity()` returns its input unchanged, then adds a small block's output to it by hand.
 
 ```python
 # identity_demo.py  -- nn.Identity does nothing, on purpose
@@ -339,9 +364,9 @@ f(x)     : [-0.19, -0.041, -0.741]
 x + f(x) : [0.81, -2.041, 2.259]
 ```
 
-`f(x)` is what a hand-made block "adds"; `x + f(x)` is what the road hands on.
+Look at the last two lines: `f(x)` is what a hand-made block "adds"; `x + f(x)` is what the road hands on.
 
-**Clipping on two numbers.** Run just the first half of this file for now (the whole file takes about 9 seconds because of the training runs at the bottom; you will read those in Step 5).
+**Clipping on two numbers.** Run just the first half of this file for now. The whole file takes about 9 seconds because of the training runs at the bottom; you will read those in Step 5.
 
 ```python
 # clip_demo.py  -- clip_grad_norm_ on two numbers, then on a real run
@@ -384,11 +409,11 @@ AdamW, 32 residual blocks, lr 0.03, 30 epochs
   clip=1.0   seeds 0-2:  94.7%   81.9%   96.7%
 ```
 
-(This block needs `lab6.py` from Step 2. Do Step 2 first if you want to run it.) The first four lines are the 3-4-5 triangle from Part F. The bottom block is the real thing, which you will read in Step 5.
+This block needs `lab6.py` from Step 2, so do Step 2 first if you want to run it. The first four lines are the 3-4-5 triangle from Part F. The bottom block is the real thing, which you will read in Step 5.
 
 ### Step 2 — build `lab6.py`
 
-Everything else this week imports `lab6.py`. It is short, and only the second function is new. Type it in two pieces.
+This step builds the file that everything else this week imports. It is short, and only the second function is new. Type it in two pieces.
 
 **Piece 1: the imports and the data.**
 
@@ -428,7 +453,7 @@ Read it line by line:
 
 This measures an **untrained** network, one batch. It says how well the error *could* reach block 1 at the start. It does not say what happens by epoch 30; Step 5 checks that.
 
-Now check the build:
+Now check the build with a file that prints the data shapes, the parameter counts and one printed block:
 
 ```python
 # checks.py
@@ -459,7 +484,7 @@ Block(
 2.2.1 1.26.4
 ```
 
-Questions to answer in your Bug Log (the numbers are on your screen):
+Look at the parameter counts, then answer these in your Bug Log (the numbers are on your screen):
 
 - The norm networks have 512 more parameters than the plain one (`17,474 − 16,962`). Where do 512 come from? (Hint: how many norm layers, and how many scales and shifts in each?)
 - Batch norm and layer norm have the *same* count. What does that tell you about where they differ?
@@ -467,7 +492,7 @@ Questions to answer in your Bug Log (the numbers are on your screen):
 
 ### Step 3 — predict, then probe
 
-Open a Python prompt in the folder (`python3`) and type `from lab6 import *`. Then **before each call, write your guess** for the answer (is it big, middling or tiny?), and then run it:
+This step is a prediction game on `first_block_grad`. Open a Python prompt in the folder (`python3`) and type `from lab6 import *`. Then **before each call, write your guess** for the answer (is it big, middling or tiny?), and then run it:
 
 ```python
 first_block_grad(2)
@@ -482,11 +507,11 @@ first_block_grad(32)
 first_block_grad(32, residual=True)
 ```
 
-The third one is worth a long look.
+Look at the third call for longer than the others.
 
 ### Step 4 — the hook table, and two deliberate errors
 
-**The hook.** Run this. It takes about 8 seconds; read your Bug Log guesses while it runs.
+**The hook.** Run this to fill in the hidden rows of the Start Here table. It takes about 8 seconds; read your Bug Log guesses while it runs.
 
 ```python
 # small_batch.py  -- the same network, three kinds of norm, four batch sizes
@@ -511,7 +536,7 @@ batch size     none   batch norm   layer norm
          2     97.8%      46.9%       97.2%
 ```
 
-Compare with your three guesses. Then link it to Part E: what does a column-wise norm do to a batch of two? The batch-size-4 row is one seed and 10 epochs, the noisiest cell in the table, so build your argument on the batch-size-2 row, and do not build a rule on the 63.3%.
+Look at the bottom row and compare it with your three guesses. Then link it to Part E: what does a column-wise norm do to a batch of two? The batch-size-4 row is one seed and 10 epochs, the noisiest cell in the table, so build your argument on the batch-size-2 row, and do not build a rule on the 63.3%.
 
 **Two deliberate errors.** Both are broken on purpose. Read the **last line** of each error and say what it is asking for *before* you fix anything.
 
@@ -553,9 +578,12 @@ Traceback (most recent call last):
 RuntimeError: Given normalized_shape=[8], expected input with shape [*, 8], but got input of size[3, 4]
 ```
 
-Fix each. For error 1, write down *three different ways* to make the program run, and say which you would choose for a model that answers one question at a time. For error 2, the message prints the shape it wanted and the shape it got; say what `[*, 8]` means and what the rule for LayerNorm's number is.
+Fix each.
 
-Two more, in the same style:
+- Error 1: write down *three different ways* to make the program run, and say which you would choose for a model that answers one question at a time.
+- Error 2: the message prints the shape it wanted and the shape it got; say what `[*, 8]` means and what the rule for LayerNorm's number is.
+
+Two more deliberate errors, in the same style:
 
 ```python
 # err3.py
@@ -599,7 +627,7 @@ For error 4, note **which line** failed and compare it with the line that caused
 
 ### Step 5 — read the depth tables
 
-Two programs. Both are quick. Run `probe.py` first.
+This step shows how long the error is when it reaches the first block, then checks whether that predicts who can train. Both programs are quick; run `probe.py` first.
 
 ```python
 # probe.py  -- length of the gradient on block 1, before any training
@@ -621,7 +649,7 @@ depth   plain          residual       layer norm     layer norm + residual
    32       1.27e-18       3.00e+02       7.90e+00       3.58e+00
 ```
 
-Is it only seed 0?
+Look down the columns and compare each with your guesses. Is it only seed 0? This file repeats the plain and residual cases over five seeds.
 
 ```python
 # probe_seeds.py  -- is that one seed a fluke? Plain vs residual, five seeds.
@@ -676,6 +704,8 @@ Now go back to `clip_demo.py` from Step 1 and run the whole file. Its second hal
 
 ## 🎲 Your Turn — The Depth Table
 
+This section turns the depth tables into a prediction, two tables and a three-sentence report. It is the week's main deliverable.
+
 You will fill the page 6.4 table in the workbook. Four stacks by four depths, two numbers per cell: the first-block gradient length at the start (`probe.py`) and the validation accuracy after training (`depth_train.py`). Use two pen colours.
 
 **Part 1 — predict (about 3 minutes).** *Before* looking at the numbers above again (cover them if you scrolled), guess for every cell of the gradient table: "big (over 1)", "middling (0.01 to 1)" or "tiny (under 0.01)". Write your sixteen guesses down.
@@ -706,6 +736,8 @@ A thing you measured and cannot explain is a good result. Put it in the "later" 
 
 ## 🔑 Wrap Up
 
+This section checks that you can state the week's ideas in your own words, and lists what the week did not show.
+
 Answer these before you close the laptop:
 
 1. Batch norm tidies each ___ using the batch; layer norm tidies each ___ using the example alone. Fill in the blanks.
@@ -732,6 +764,8 @@ Things you may read elsewhere that are **not** shown by anything you measured th
 
 ## 📝 Vocabulary
 
+The words below are new or reused this week.
+
 | Word | Meaning |
 |---|---|
 | **normalise** | Subtract the mean and divide by the spread so the numbers have mean 0 and spread 1. |
@@ -749,6 +783,8 @@ Things you may read elsewhere that are **not** shown by anything you measured th
 ---
 
 ## 🏠 Homework
+
+Homework turns your own runs into a plot and a short written claim.
 
 Workbook Week 6, pages 6.1 to 6.5 (about 60 to 75 minutes). Everything you write down must come from **your own run, printed on your own screen, with a seed set**, not from this chapter.
 

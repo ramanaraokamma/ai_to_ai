@@ -84,7 +84,7 @@ The ladder adds no new mathematical idea this week. You still need three small t
 
 **C. The cosine curve, as a table, not a formula.** The student does not need to know where cosine comes from. They need this one sentence: *"cosine of an angle starts at 1, drifts down through 0, and ends at −1, smoothly, as the angle goes from 0 to half a turn."* The decay multiplier is
 
-```
+```text
 multiplier(s) = 0.5 * (1 + cos( pi * s / T ))
 ```
 
@@ -165,7 +165,7 @@ Go as far as: *"the rate is a rule over time; I can compute it; I can read it ba
 
 ### 9. 🧭 Where this fits (text version — the figure pass comes later)
 
-```
+```text
  TERM 1 — THE TEN KNOBS
  W1  learning rate, one at a time            ✔ done
  W2  momentum  (running average)             ✔ done
@@ -181,6 +181,8 @@ Two minutes at the end of the lesson: ask *"which knob did today move that was n
 ---
 
 ## 🧰 Prep Checklist
+
+Use this section to get the scripts, the environment and the expected outputs ready before class, so nothing fails in front of the student.
 
 ### 20 minutes the night before
 
@@ -504,6 +506,8 @@ This week degrades well, because the heart of it is a table and a subtraction.
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the script for the lesson: five segments, each with what to do, what to say, what to ask and what you should see.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — The Same Network, Ten Times Too Fast | 8 | 8 | Run `hook.py`. Three of five seeds end at a coin flip (they diverge late, after reaching about 99%); with a falling rate none do. |
@@ -518,7 +522,7 @@ This week degrades well, because the heart of it is a table and a subtraction.
 
 **Do this:** Write on the board, large:
 
-```
+```text
 peak lr = 0.03     (Week 1's default was 0.003)
 same network · same data · same seeds · same optimizer (AdamW)
 the ONLY thing that differs: how lr changes over the run
@@ -532,7 +536,7 @@ Let them write two numbers. **Do this:** Run `hook.py` (only the first print blo
 
 **Output they should see** (from the Prep checklist, step 4):
 
-```
+```text
 constant        46.9  50.6  53.1  98.1  97.2   mean  69.2
 warmup only     99.2  67.5  76.4  98.1  86.7   mean  85.6
 cosine only     98.9  98.9  98.9  98.9  98.9   mean  98.9
@@ -558,7 +562,7 @@ warmup+cosine   99.2  98.9  98.9  98.9  98.9   mean  98.9
 
 **Do this:** Clear the board. Write the one equation and leave it up for the rest of the lesson:
 
-```
+```text
 lr(step) = peak × multiplier(step)
 ```
 
@@ -570,7 +574,7 @@ lr(step) = peak × multiplier(step)
 
 Let them struggle for 60 seconds. The target is `(step + 1) / 10`. If they write `step / 10`, ask "what is the rate at step 0?" (zero — "the step does nothing"). Write `(s + 1) / W` on the board. **Do this:** fill three rows with them:
 
-```
+```text
 step  multiplier   rate (peak 0.01)
   0      0.1          0.001
   4      0.5          0.005
@@ -581,7 +585,7 @@ step  multiplier   rate (peak 0.01)
 
 **Do this:** Have the student use the calculator to fill the quarter and three-quarter points for `T = 100` (step 25 and 75). The numbers: **0.8536 and 0.1464.** Put them next to the straight-line comparison:
 
-```
+```text
 step   straight line down   cosine
   0         1.00            1.0000
  25         0.75            0.8536     <- cosine has lost less
@@ -729,7 +733,7 @@ If time is short, drop Mistake 2 — it is the milder one. **Never** drop Mistak
 
 **Part 1 — count the steps (7 minutes, paper only).** Give the student this table with the right-hand columns blank:
 
-```
+```text
 batch   steps per epoch (840 // batch)   steps in 60 epochs
   8
  64
@@ -779,7 +783,7 @@ bs 256 epochs 260  0.075 0.072 0.067 0.073 0.076   mean val 0.073  mean train 0.
 
 **Part 3 — "what did I hold fixed?" (6 minutes, writing).** The student writes the two-line summary the answer key shows:
 
-```
+```text
 Experiment A held ______ fixed.  It also changed ______.
 Experiment B held ______ fixed.  It also changed ______.
 ```
@@ -948,7 +952,7 @@ As in the lesson. Insist on the **written prediction before** the table appears.
 
 Every report gets the template:
 
-```
+```text
 On ___ points, with ___ seeds, I held ___ fixed. The result was ___ (mean of the seeds).
 That could also be because ___ changed at the same time.
 ```
@@ -964,6 +968,8 @@ Ask the student to add one more experiment: **equal steps with the learning rate
 ---
 
 ## ❓ Questions Students Ask This Week
+
+These are the questions students are likely to ask, with honest answers you can give without going beyond what the student has measured.
 
 **"Why is it called 'cosine'? What does it have to do with triangles?"** It is the same curve the student met in trigonometry; the learning-rate use is only that it is a smooth S-shaped way to go from 1 to 0. Do not derive it. Say: "someone tried it, it worked well, it is now the habit."
 
@@ -987,6 +993,8 @@ Ask the student to add one more experiment: **equal steps with the learning rate
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+These are the mistakes teachers make with this lesson, so you can check for them before class.
+
 1. **The teacher explains warmup as if the table proved it.** It did not. Re-read "What you must NOT claim" before class. If the student says "warmup is useless", correct that too: *"on this problem, at this rate, alone, it was not what saved the run; that is a claim about this problem."*
 2. **The hand table is skipped because it feels easy.** The off-by-one in `get_last_lr()` is only visible to someone who has worked step 0 by hand. Skipping the table makes `minitrain.py`'s first line look like a bug.
 3. **Reporting one seed.** The single most common way for a clean story to appear: batch 8, seed 0 gives 0.027 and "wins". Seed 2 gives 0.066. Every number goes out with *"mean of five seeds"*.
@@ -996,6 +1004,8 @@ Ask the student to add one more experiment: **equal steps with the learning rate
 ---
 
 ## 🧭 Differentiation
+
+Use this section to adjust the lesson for a student who is struggling, flying, or not engaging today.
 
 ### If the student is struggling
 
@@ -1102,6 +1112,8 @@ bs 256  60 epochs =  180 steps: 0.034   260 epochs = 780 steps: 0.071
 ---
 
 ## 🔑 Answer Key
+
+This is the teacher-only key to the workbook pages and to every question posed in the lesson. Do not hand it to the student.
 
 ### Page 4.1 — Match the word to the thing
 

@@ -21,7 +21,7 @@
 
 ## ✅ Warm-Up (5 min)
 
-Five from **last week** and earlier. No looking back.
+This section checks what you kept from **last week** and earlier. Answer from memory, with no looking back.
 
 **W1.** Dropout in `train()` mode with `p = 0.5`: a survivor is multiplied by ______ . In `eval()` mode it returns ____________ .
 
@@ -41,7 +41,7 @@ ________________________________________________________________
 
 ## 📖 Page 6.1 — Match the Word to the Thing
 
-Write the letter of the meaning beside each word.
+This page checks that you can tell this week's words apart. Write the letter of the meaning beside each word.
 
 | Word | Letter | | Meaning |
 |---|:--:|---|---|
@@ -67,9 +67,9 @@ ________________________________________________________________
 
 ## 🔮 Page 6.2 — Predict the Output
 
-Write your prediction **in pen, before** you run anything. Then run it and write what happened beside it.
+This page trains you to guess before you run. Write your prediction **in pen, before** you run anything. Then run it and write what happened beside it.
 
-**P1.** One example, batch norm, **train** mode (this one is *deliberately* broken; it may raise an error).
+**P1.** One example, batch norm, **train** mode (this one is *deliberately* broken; it may raise an error). Run this block and compare it with your prediction.
 
 ```python
 import torch
@@ -84,7 +84,7 @@ My prediction: ______________________ Real: ______________________
 
 **P3.** Layer norm built for **4** features, shown the row `[5.0, 5.0, 5.0, 5.0]`. Every distance from the mean is ______, so the spread is ______ . What stops the division by zero? ______________ My prediction for the output: ______________ Real: ______________
 
-**P4.** Clipping, on a gradient of `[6.0, 8.0]` with `max_norm=5.0`.
+**P4.** Clipping, on a gradient of `[6.0, 8.0]` with `max_norm=5.0`. This block clips the gradient and prints the length it measured, then the clipped gradient.
 
 ```python
 import torch
@@ -106,7 +106,7 @@ Length of `[6, 8]` is `sqrt(36 + 64)` = ______ . So `r.item()` prints ______ . T
 
 ## 🔢 Page 6.3 — Normalise by Hand
 
-**Pencil, paper and calculator. No code.**
+This page builds the normalising recipe by hand so you know exactly what the layers compute. **Pencil, paper and calculator. No code.**
 
 The recipe for **one row** of numbers (this is layer norm without the learnt scale and shift):
 
@@ -163,7 +163,7 @@ Now try a different pair: A = `[10, 0]`, B = `[20, 4]`. Answer without calculati
 
 ### (a) Nudge it (calculator)
 
-A block does only a little: `f(x) = 0.1 × x × x`. We stand at **x = 3** and nudge `x` up by **0.001**.
+This part finds the slope of a sum with a tiny nudge. A block does only a little: `f(x) = 0.1 × x × x`. We stand at **x = 3** and nudge `x` up by **0.001**.
 
 | | value at 3 | value at 3.001 | change | change ÷ 0.001 (the slope) |
 |---|---|---|---|---|
@@ -247,7 +247,7 @@ Run `probe.py` for the **top number** in each cell (first-block gradient length,
 
 ## 🎲 Page 6.5 — Read the Message
 
-Read the **last line** first, then the line with **your** filename in it. Fill the gaps.
+This page practises reading error messages and spotting bugs that raise no error. Read the **last line** first, then the line with **your** filename in it. Fill the gaps.
 
 | Message | What it means | Fix |
 |---|---|---|
@@ -260,7 +260,7 @@ Read the **last line** first, then the line with **your** filename in it. Fill t
 
 ### Two programs to repair
 
-**F1.** *Deliberate error.* The program is meant to normalise a batch of three 4-feature rows.
+**F1.** *Deliberate error.* The program is meant to normalise a batch of three 4-feature rows. Run it and read the last line.
 
 ```python
 # DELIBERATE ERROR
@@ -272,7 +272,7 @@ print(ln(torch.randn(3, 4)))
 
 The size to give `LayerNorm` is the size of the ______ dimension of the data, which here is ______ . Corrected line: ________________________
 
-**F2.** *Deliberate error.* "No norm" is written as `None`.
+**F2.** *Deliberate error.* "No norm" is written as `None`. Run it and read the last line.
 
 ```python
 # DELIBERATE ERROR
@@ -286,7 +286,7 @@ Does *building* the network complain? ______ When does it? ______ Corrected: ___
 
 ### Three silent mistakes (no error, believable number)
 
-**S1.** This clip is "working". Is it?
+**S1.** This clip is "working". Is it? Run the block and look at the number printed.
 
 ```python
 # SILENT mistake: no error is raised
@@ -312,7 +312,7 @@ What goes wrong if clip is **after** `opt.step()`? _____________________________
 
 ## 📓 Page 6.6 — The Bug Log
 
-Copy the **last line** of every error or surprise you meet this week, not the whole traceback.
+This page is your record of what went wrong this week. Copy the **last line** of every error or surprise you meet, not the whole traceback.
 
 | # | Last line (copied) | What it meant | The fix | Caught by (message / print / nobody) |
 |:-:|---|---|---|:-:|
@@ -338,6 +338,8 @@ ________________________________________________________________
 
 ## 🧠 Self-Check (do this last, from memory)
 
+This section tests the week's main ideas in seven short gaps. Fill them without looking back.
+
 1. Layer norm works on each ______ ; batch norm works on each ______ across the batch.
 2. Batch norm at batch size 1 in `train()` mode raises a ______ ; in `eval()` mode it ______ because it uses ______ .
 3. The slope of `x + f(x)` is ______ plus ______ .
@@ -348,15 +350,22 @@ ________________________________________________________________
 
 ---
 
-# ✂️ ANSWERS — keep this page folded until you have finished
+## ✂️ ANSWERS — keep this page folded until you have finished
 
 ### Warm-Up
-**W1.** 2.0 (`1 / (1 − 0.5)`); the input unchanged. **W2.** `state_dict()` returns live tensors; without a copy the "snapshot" keeps changing with the model. **W3.** Dropout or batch norm (either). **W4.** 46.9 %. **W5.** The `ValueError` is the loud one; a silent wrong answer is caught by printing one number that should be a known value (a returned length, a loss in `eval()` mode).
+
+- **W1.** 2.0 (`1 / (1 − 0.5)`); the input unchanged.
+- **W2.** `state_dict()` returns live tensors; without a copy the "snapshot" keeps changing with the model.
+- **W3.** Dropout or batch norm (either).
+- **W4.** 46.9 %.
+- **W5.** The `ValueError` is the loud one; a silent wrong answer is caught by printing one number that should be a known value (a returned length, a loss in `eval()` mode).
 
 ### Page 6.1
-Matches: layer norm **C**, batch norm **E**, running statistics **G**, residual connection **F**, vanishing gradient **B**, `nn.Identity()` **A**, gradient clipping **D**.
-In your own words: a gradient highway is the `x + f(x)` path that lets the error walk back to the first layers with a slope of exactly 1 from the road itself (the block's own slope is then added to that 1); gradient length is the size (length) of all the gradient numbers taken together. Difference between the norms: layer norm normalises across each **row** (one example), batch norm across each **column** (the batch).
-Counts: `LayerNorm(64)` **128** parameters, **0** stored numbers; `BatchNorm1d(64)` **128** parameters, **129** stored numbers (64 means, 64 variances, 1 counter); `Identity` **0**.
+
+- Matches: layer norm **C**, batch norm **E**, running statistics **G**, residual connection **F**, vanishing gradient **B**, `nn.Identity()` **A**, gradient clipping **D**.
+- In your own words: a gradient highway is the `x + f(x)` path that lets the error walk back to the first layers with a slope of exactly 1 from the road itself (the block's own slope is then added to that 1); gradient length is the size (length) of all the gradient numbers taken together.
+- Difference between the norms: layer norm normalises across each **row** (one example), batch norm across each **column** (the batch).
+- Counts: `LayerNorm(64)` **128** parameters, **0** stored numbers; `BatchNorm1d(64)` **128** parameters, **129** stored numbers (64 means, 64 variances, 1 counter); `Identity` **0**.
 
 ### Page 6.2
 - **P1.** Raises **`ValueError: Expected more than 1 value per channel when training, got input size torch.Size([1, 4])`**.

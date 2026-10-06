@@ -19,6 +19,8 @@
 
 ## ✅ Warm-Up (5 min)
 
+These five questions bring back what you need for the sweep. Answer from memory.
+
 **W1.** You train the same network three times and only `seed` changes. The three final validation losses are different. Name **one** thing that the seed changes. ____________
 
 **W2.** Three runs ended at 0.10, 0.12, 0.14. What is the **mean**? ____________ Roughly how far do they wobble around it (the **spread**)? ____________
@@ -35,6 +37,8 @@
 ---
 
 ## 🔮 Page 7.1 — Predict Before the Sweep
+
+This page records your guesses before you see any data, so you can measure how well you know this network.
 
 **Do this page before you run `sweep.py`.** Nothing here has a right answer. It is a calibration card: at the end you find out how well you know this network.
 
@@ -116,6 +120,8 @@ ________________________________________________________________
 
 ## 🧮 Page 7.3 — Is It Noise? (by hand, then check)
 
+You apply the gap-versus-twice-spread rule by hand to decide whether a row really differs from the baseline.
+
 **The rule.** For each row:
 
 ```text
@@ -149,9 +155,9 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**H4 - the baseline's own seeds.** The three baseline validation losses are 0.0367, 0.0499, 0.0301.
+**H4 - the baseline's own seeds.** The three baseline validation losses are 0.0367, 0.0499, 0.0301. Fill in the blanks below.
 
-```
+```text
 mean   = (0.0367 + 0.0499 + 0.0301) / 3 = ____________
 largest / smallest = 0.0499 / 0.0301 = ____________   (that is a ____ % swing with nothing changed)
 ```
@@ -171,6 +177,8 @@ ________________________________________________________________
 
 ## 📈 Page 7.4 — Read Four Curves
 
+You match loss curves to their shapes and name the one number that proves each match.
+
 Each of these is a real run (seed 0, 60 epochs), read off at epochs 0, 10, 30 and 59. `gnorm59` is the gradient length on the last mini-batch only, so treat it as rough.
 
 ```text
@@ -182,7 +190,7 @@ batch_size = 512         0.694   0.629   0.239   0.027     0.079    0.163   3e-0
 norm = batch             0.423   0.187   0.065   0.117     0.019    1.111   3e-03
 ```
 
-The six shapes:
+Each curve has one or more of these shapes:
 
 - **A** healthy: falls fast, flattens low.
 - **B** a huge number at epoch 0.
@@ -219,6 +227,8 @@ Check: ________________________________________________________________
 
 ## 📊 Page 7.5 — Reading the Sweep
 
+You read your own sweep table and decide which claims it supports and which it does not.
+
 Use **your own** `table.py` output. Write your digits, not mine.
 
 **S1.** The three baseline validation losses (seeds 0, 1, 2): ____________ , ____________ , ____________ . Nothing changed between them except the seed. By what percentage do the largest and smallest differ? ____________
@@ -250,6 +260,8 @@ ________________________________________________________________
 ---
 
 ## 📝 Page 7.6 — Your Playbook
+
+You turn your sweep into symptom-check-action rules, each backed by evidence from your own table.
 
 Rule the page into four columns and fill **at least six rules.** Each rule uses this frame:
 
@@ -299,6 +311,8 @@ ________________________________________________________________
 
 ## 🐞 Page 7.7 — Break It on Purpose
 
+You run five broken snippets to learn what each mistake looks like, including the ones that fail silently.
+
 These are **deliberate** mistakes. Predict the error (or the silence!) before you run each. Save each as its own file next to `knobs.py`.
 
 **Mistake 1.**
@@ -312,7 +326,7 @@ grid = itertools.product([1e-3, 1e-2], SEEDS)
 print(len(grid))
 ```
 
-Prediction: ____________ . Last line of the real error: ________________________________
+Run it. Prediction: ____________ . Last line of the real error: ________________________________
 
 Fix: ________________________________
 
@@ -363,6 +377,8 @@ ________________________________________________________________
 
 ## 📓 Page 7.8 — The Bug Log
 
+You record this week's errors so you can find them again.
+
 Copy the **last line** of each error, not the whole traceback. Keep this page; you will use it in Week 9's assessment.
 
 | # | Date | What I typed (the line) | Last line of the error | What it means in plain words | Fix | Page I'll find this on again |
@@ -384,6 +400,8 @@ ________________________________________________________________
 ---
 
 ## 🧠 Self-Check (do this last, from memory)
+
+This section tests whether the week's ideas stay with you without the chapter open.
 
 1. **What are the three columns of a playbook rule, and what goes in each?**
 
@@ -415,7 +433,9 @@ ________________________________________________________________
 ---
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
+
+Use this section to check your work after you have finished every page.
 
 *Numbers come from real runs: CPU, one thread, seeds 0, 1, 2, 60 epochs, `l4lib.spirals.run`. Within +/-0.005 on a loss is a match; the **verdicts** must agree.*
 

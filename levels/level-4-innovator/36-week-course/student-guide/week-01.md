@@ -55,9 +55,11 @@ And a warning. Later today you will meet a third run that also ended at exactly 
 
 ## 🧠 The Big Idea
 
+In this section you meet the ten knobs of the training harness, the data you will train on, the three new lines of syntax, and the one number every loss must be compared with.
+
 ### 1. Last year's loop has ten knobs nobody named
 
-Last year you wrote this loop and watched it work:
+Last year you wrote this loop and watched it work. It is the starting point for everything this year:
 
 ```python
 for epoch in range(60):
@@ -73,7 +75,7 @@ This year the question changes. It stops being *"does it learn?"* and becomes *"
 
 Take `opt.step()`. It moves every weight a little. How *much* is a number you chose last year, probably without thinking. It is the **learning rate**, written `lr`. That is one decision. How many examples did you average before taking a step? That is another. Whether the step is plain or cleverer? Another.
 
-All of these decisions are named in one place: the signature of a function called `run`, in the course's shared kit, `l4lib/spirals.py`. Open that file in an editor and find `def run`. It looks like this:
+All of these decisions are named in one place: the signature of a function called `run`, in the course's shared kit, `l4lib/spirals.py`. Open that file in an editor and find `def run`. The signature looks like this (this is a reading exercise, not something to type):
 
 ```text
 def run(tag, *, depth=4, lr=3e-3, batch_size=64, epochs=60, optimizer="adamw",
@@ -89,7 +91,10 @@ Two or three of the names will be unfamiliar. That is intended. Each knob gets a
 
 **Today only `lr` moves.** Every other argument stays at its default. That is the design of the whole year: *one knob alone, so the curve is the witness.*
 
-A word you will use all day: a **harness** is a small piece of code whose job is to run an experiment the same way every time, so that the only thing that differs between two runs is the thing you changed on purpose. `run` is our harness. A **loss curve** is the loss plotted (or printed) once per **epoch**, where one epoch is one full pass through the training data.
+Two words you will use all day:
+
+- A **harness** is a small piece of code that runs an experiment the same way every time, so the only difference between two runs is the thing you changed on purpose. `run` is our harness.
+- A **loss curve** is the loss plotted (or printed) once per **epoch**, where one epoch is one full pass through the training data.
 
 ### 2. The data
 
@@ -101,7 +106,7 @@ There are exactly three, and none is difficult.
 
 **`torch.set_num_threads(1)`.** Your laptop has many CPU cores, and PyTorch will happily spread its arithmetic across all of them. Adding numbers in a different *order* can give results that differ in the last digits, because computers round after every addition. One thread means one fixed order, so the same code prints the same digits every time, and **the digits in this book match the digits on your screen.** On a network this small the answer is the same either way; today it is insurance, and the habit matters for bigger models later. Rule: **put it near the top of the file, once, before any training.**
 
-Create a file called `week01.py` in the `36-week-course/` folder and type:
+Create a file called `week01.py` in the `36-week-course/` folder and type this to see the thread count before and after the call:
 
 ```python
 import torch
@@ -114,9 +119,9 @@ threads before: 18
 threads after:  1
 ```
 
-The first number is *your* machine's core count; yours will differ. The second must be `1`.
+Look at the two numbers. The first is *your* machine's core count, so yours will differ. The second must be `1`.
 
-**The keyword-only `*`.** In a function definition, a lone `*` means *"everything after this must be passed by name."* Here it is on a toy function with the same shape as the real harness. Add this to the same file:
+**The keyword-only `*`.** In a function definition, a lone `*` means *"everything after this must be passed by name."* Here it is on a toy function with the same shape as the real harness. Add this to the same file and run it:
 
 ```python
 def run_toy(*, lr, batch_size, seed):
@@ -130,7 +135,11 @@ lr=0.001  batch_size=64  seed=0
 lr=0.001  batch_size=64  seed=0
 ```
 
-Why does the harness insist? A sweep calls it hundreds of times with different knobs. A call like `run(0.001, 64, 0)` is unreadable, and it silently swaps two numbers the day someone reorders the signature. With the `*`, a wrong or missing name stops the program, loudly, on the line that is wrong. Watch what happens if you forget. Save this as its own file, `mistake1.py`, and run it:
+Look at the two output lines: both calls give the same result, whatever the order.
+
+Why does the harness insist on names? A sweep calls it hundreds of times with different knobs. A call like `run(0.001, 64, 0)` is unreadable, and it silently swaps two numbers the day someone reorders the signature. With the `*`, a wrong or missing name stops the program, loudly, on the line that is wrong.
+
+Watch what happens if you forget the names. Save this as its own file, `mistake1.py`, and run it:
 
 ```python
 # DELIBERATE MISTAKE 1: no names. This is the call that "keyword-only" exists to stop.
@@ -148,7 +157,7 @@ TypeError: run_toy() takes 0 positional arguments but 3 were given
 
 Read the last line: *takes 0 positional arguments but 3 were given*. It means "I wanted names, you gave me bare numbers." (Your file path will differ from the one shown.) This is a **good** error: it points at the exact line that is wrong.
 
-**`nn.GELU()`.** An **activation function** is the bend in the middle of a layer; without it, stacked layers collapse into one straight-line layer (Level 3). You know ReLU: a hard corner, zero for negative inputs and the input itself for positive ones. **GELU is the same idea with the corner rounded off.** Real numbers:
+**`nn.GELU()`.** An **activation function** is the bend in the middle of a layer; without it, stacked layers collapse into one straight-line layer (Level 3). You know ReLU: a hard corner, zero for negative inputs and the input itself for positive ones. **GELU is the same idea with the corner rounded off.** Here are real numbers. This block passes seven values through both functions and prints the results side by side:
 
 ```python
 import torch.nn as nn
@@ -171,7 +180,7 @@ Look at the `-1.0` column. ReLU says exactly `0.0`. GELU says `-0.1587`, a small
 
 Here is the number the opening was missing. Imagine a model that has learned *nothing*. It cannot tell the two classes apart. What probability does it give the right answer, for every example? **One half.**
 
-In Level 3 you learned that surprise is *minus ln of the probability*. So what is the surprise of a one-in-two event? Work it out, then check:
+In Level 3 you learned that surprise is *minus ln of the probability*. So what is the surprise of a one-in-two event? Work it out, then check it with this block, which prints the natural log of two, a check that `e` to that power gives it back, and minus the natural log of one half:
 
 ```python
 import math
@@ -185,7 +194,7 @@ e ** 0.693    = 1.9997
 -ln(0.5)      = 0.6931
 ```
 
-So the loss of a model that has learned nothing, on two classes, is **0.693**. Write it down and underline it.
+Look at the first and third lines: they agree. So the loss of a model that has learned nothing, on two classes, is **0.693**. Write it down and underline it.
 
 > **A curve that starts at 0.693 and stays there is a model that has learned nothing. A curve that starts at 0.693 and falls is a model getting better than a coin.**
 
@@ -195,9 +204,11 @@ Now go back to the two lines at the top of this chapter. Both said `0.693`. Did 
 
 ## 💻 Try It Yourself — the sweep
 
+In this section you run the same model at six learning rates and read the results as numbers and as curves.
+
 ### Predict first
 
-You are about to run the same model six times. Everything is identical except the learning rate. From smallest to biggest:
+You are about to run the same model six times. Everything is identical except the learning rate. The six values, from smallest to biggest:
 
 | Run | Learning rate |
 |:--:|---|
@@ -212,7 +223,7 @@ You are about to run the same model six times. Everything is identical except th
 
 ### Step 1 — one real run
 
-Add this to `week01.py`. Run the file from the `36-week-course/` folder, the one that *contains* `l4lib`.
+Add this block to `week01.py`. It loads the data, does one real run at a learning rate of one thousandth, and inspects the result. Run the file from the `36-week-course/` folder, the one that *contains* `l4lib`.
 
 ```python
 from l4lib.spirals import run, get_data
@@ -229,11 +240,11 @@ adamw lr=0.001               train 0.018  val 0.026  acc  99.4%
 epochs recorded: 60
 ```
 
-You import the kit; you never copy it. One run: train loss at the end 0.018, validation loss 0.026, accuracy 99.4%. `h` is a dictionary of five lists, one number per epoch. (Keep the class counts in mind: you will need them in a few minutes.)
+Look at the `adamw` line. You import the kit; you never copy it. One run: train loss at the end 0.018, validation loss 0.026, accuracy 99.4%. `h` is a dictionary of five lists, one number per epoch. (Keep the class counts in mind: you will need them in a few minutes.)
 
 ### Step 2 — two more deliberate mistakes, on the real harness
 
-Save each as its own file and run it. Read only the **last line** of each error.
+Each block below is a deliberate mistake. Save each as its own file, run it, and read only the **last line** of the error.
 
 ```python
 # DELIBERATE MISTAKE 2: a misspelt name, on the real harness.
@@ -267,7 +278,7 @@ Same family, different wording. The one thing `run` accepts bare is `tag`, the l
 
 ### Step 3 — the six runs
 
-Back in `week01.py`. A list of pairs (a letter and a learning rate) and a loop:
+Back in `week01.py`. This block makes a list of pairs (a letter and a learning rate) and loops over it, running the harness once per pair:
 
 ```python
 LRS = [("A", 1e-6), ("B", 1e-5), ("C", 1e-4), ("D", 1e-3), ("E", 1e-2), ("F", 1e-1)]
@@ -284,7 +295,7 @@ E  lr=0.01                   train 0.013  val 0.059  acc  99.2%
 F  lr=0.1                    train 0.693  val 0.702  acc  46.9%
 ```
 
-Look down the last column. Which two runs look alike? Same final loss, same story? Now print what happened *during* each run: the training loss at six chosen epochs.
+Look down the last column. Which two runs look alike? Same final loss, same story? Now print what happened *during* each run, with this block showing the training loss at six chosen epochs:
 
 ```python
 print("epoch      " + "".join(f"{e:>9}" for e in (0, 5, 10, 20, 40, 59)))
@@ -302,7 +313,9 @@ E  lr=0.01      0.658    0.052    0.041    0.027    0.021    0.013
 F  lr=0.1      12.786    0.520    0.612    0.694    0.695    0.693
 ```
 
-Look at the **first** column, epoch zero. That number is the *average* loss over the whole first epoch, not the loss before any training: every run begins near 0.694, but during F's first epoch some steps were so large that the average came to **12.786**. A's first epoch averages 0.694. Compare the last column with the first one before you read on.
+Look at the **first** column, epoch zero. That number is the *average* loss over the whole first epoch, not the loss before any training. Every run begins near 0.694, but during F's first epoch some steps were so large that the average came to **12.786**. A's first epoch averages 0.694.
+
+Compare the last column with the first one before you read on.
 
 > **The final loss tells you where it ended. The curve tells you what happened.**
 
@@ -311,7 +324,7 @@ Look at the **first** column, epoch zero. That number is the *average* loss over
 
 ### Step 4 — the curves, in text
 
-A table is hard to see. This small function draws one character per epoch: a space for a high loss, `@` for a low one.
+A table of numbers is hard to see as a shape. This block defines a small function, `sketch`, that draws one character per epoch (a space for a high loss, `@` for a low one), then draws all six runs:
 
 ```python
 def sketch(values, lo=0.0, hi=0.8, width=60):
@@ -341,7 +354,7 @@ That is six curves in text. Now go back to your predictions from earlier and che
 
 ### Step 5 — the two constant guessers
 
-Accuracy needs a baseline too. Suppose a "model" ignores its input and always gives the same answer. On the validation set:
+Accuracy needs a baseline too. Suppose a "model" ignores its input and always gives the same answer. This block computes what the two possible constant answers score on the validation set, then prints each run's final numbers:
 
 ```python
 print("the two constant guessers on the validation set:")
@@ -375,6 +388,8 @@ Compare the last column with the two constant-guesser lines. Which runs sit exac
 
 ## 🎲 Your Turn — label the six curves
 
+In this section you turn the numbers into your own words, with a number behind every word.
+
 You now have the table (Step 3), the text curves (Step 4), and the guesser baseline (Step 5). Use six index cards labelled A to F, or six boxes in your Bug Log.
 
 **For each of the six runs, write three things:**
@@ -395,6 +410,8 @@ Your sentence needs two ingredients: the probability the guessing model gives ea
 
 ## 🔑 Wrap Up
 
+This section checks that the main idea stuck and gives you the sentence to keep.
+
 Answer these three before you close the laptop:
 
 1. A run's loss is 0.693 at epoch 0 and 0.693 at epoch 59. Can you name **two completely different reasons**?
@@ -408,6 +425,8 @@ Then write this sentence in your Bug Log, in your own handwriting:
 ---
 
 ## 📝 Vocabulary
+
+These are the words introduced this week.
 
 | Word | Meaning |
 |---|---|
@@ -424,6 +443,8 @@ Then write this sentence in your Bug Log, in your own handwriting:
 
 ## 🏠 Homework
 
+This section lists the workbook tasks, which repeat today's experiments on your own machine.
+
 Workbook Week 1 (about 60 minutes). Everything you write down must come from **your own run, printed on your own screen, with a seed set, in the last 24 hours**, not from this chapter.
 
 1. **The six-curve grid.** Run the six learning rates. For each, write a label and one number.
@@ -439,6 +460,8 @@ Workbook Week 1 (about 60 minutes). Everything you write down must come from **y
 ---
 
 ## 🔮 Next Week
+
+A preview of what comes next and what to keep until then.
 
 This week every run used the same optimizer. Next week changes only the optimizer, and the result is startling: two rules, the same learning rate, the same spirals, and one finishes as useless as a coin while the other finishes nearly perfect. The one new idea is a running average of past numbers, which you will do by hand on five numbers before any code.
 

@@ -29,13 +29,15 @@
 
 ## 🪝 Start Here
 
+This section shows two surprising results that the rest of the chapter explains.
+
 Last week you turned the `optimizer` knob from `"sgd"` to `"momentum"`. Today there is a third word for the same knob.
 
 Same data. Same starting weights. Same learning rate, `0.003`. Two runs. Only one word differs.
 
 **Before you look at the next block, write one number in your Bug Log: your guess for the final training loss of the second run.** Remember what a coin scores.
 
-Now the runs (you will type this code properly later; for now just read):
+Here are the two runs (you will type this code later; for now just read the output):
 
 ```text
 sgd lr=0.003                 train 0.693  val 0.694  acc  46.9%
@@ -44,7 +46,7 @@ adam lr=0.003                train 0.007  val 0.037  acc  98.9%
 
 The first is a coin. The second is 98.9% correct. **One word changed:** `optimizer="sgd"` became `optimizer="adam"`.
 
-Now a second surprise. Run the new rule at `0.03`, which was last week's winner for momentum:
+Now a second surprise. Here is the new rule at `0.03`, which was last week's winner for momentum:
 
 ```text
 adam lr=0.03                 train 0.658  val 0.684  acc  46.9%
@@ -52,21 +54,23 @@ adam lr=0.03                 train 0.658  val 0.684  acc  46.9%
 
 A coin again. So the new rule has a learning rate that **means something different**.
 
-**What does `"adam"` do to the size of the step?** Write your guess in the Bug Log. Any guess is fair: it is faster, it remembers, it is smarter, it has a bigger step. By the end of this chapter you will have built the answer yourself, on paper, with two numbers first, and then watched PyTorch agree with your paper.
+**What does `"adam"` do to the size of the step?** Write your guess in the Bug Log. Any guess is fair (faster, remembers, smarter, bigger step). By the end of this chapter you will have built the answer yourself, on paper, with two numbers first, and then watched PyTorch agree with your paper.
 
 ---
 
 ## 🧠 The Big Idea
 
+This section explains what Adam divides by, and introduces the one new maths idea you need to see why.
+
 ### 1. Week 2 fixed the direction. Today fixes the size.
 
-Momentum gave the step a memory of its *direction*. It did not touch the step's *size*. The size is still
+Momentum gave the step a memory of its *direction*. It did not touch the step's *size*. The size is still:
 
 ```text
 lr x (something proportional to the gradient)
 ```
 
-so a knob whose gradient is 1000 times bigger moves 1000 times further. Two things follow.
+So a knob whose gradient is 1000 times bigger moves 1000 times further. Two things follow:
 
 - **One learning rate has to suit every knob at once,** even though different knobs get very different gradients.
 - **The right learning rate depends on the scale of the gradient,** which depends on the loss, the width and the depth. That is why Week 1's winning rates and Week 2's winning rates were different numbers.
@@ -75,7 +79,7 @@ so a knob whose gradient is 1000 times bigger moves 1000 times further. Two thin
 
 ### 2. The one new maths idea: root-mean-square
 
-The **root-mean-square (RMS)** of a list is *the typical size of its numbers, ignoring sign.* Three steps, in this order. The order is the name read backwards:
+The **root-mean-square (RMS)** of a list is *the typical size of its numbers, ignoring sign.* Three steps, in this order (the order is the name read backwards):
 
 ```text
 1. square every number            (so the signs vanish: -4 becomes 16)
@@ -91,11 +95,14 @@ The **root-mean-square (RMS)** of a list is *the typical size of its numbers, ig
 3. take the square root        sqrt(12.5) = 3.5355
 ```
 
-Check 3.5355 on your calculator. Then two questions for your Bug Log. *Why square first?* (What does `-4` become?) *Is 3.5355 a sensible "typical size" for a 3 and a 4?*
+Check 3.5355 on your calculator. Then answer two questions in your Bug Log:
+
+- *Why square first?* (What does `-4` become?)
+- *Is 3.5355 a sensible "typical size" for a 3 and a 4?*
 
 Now the key move. **The knobs got bigger: `300` and `-400`.** Work out the RMS of that list on paper. Then divide each number by its own RMS: `300 / RMS` and `-400 / RMS`. Compare with `3 / 3.5355` and `-4 / 3.5355`.
 
-Now the same thing in code. This is the first block of your file:
+Now the same thing in code. This first block of your file imports `torch`, fixes the thread count and prints the versions:
 
 ```python
 import torch
@@ -106,7 +113,9 @@ print("threads:", torch.get_num_threads(), " torch", torch.__version__)
 threads: 1  torch 2.2.1
 ```
 
-(If your torch version prints differently, the by-hand numbers below will still match.) Before you run the next block, write down what you expect the `plain mean` line to say.
+If your torch version prints differently, the by-hand numbers below will still match.
+
+Before you run the next block, write down what you expect the `plain mean` line to say. The block does RMS on the same list one step at a time (`.mean()` averages a tensor, `.item()` turns a one-number tensor into a plain number):
 
 ```python
 g = torch.tensor([3.0, -4.0])
@@ -122,13 +131,13 @@ mean of squares : 12.5
 root of that    : 3.5355
 ```
 
-Three things to notice.
+Look at each line and notice three things:
 
 - **The plain mean is `-0.5`.** A list with a 3 and a -4 in it has, by the plain mean, a "typical size" of nearly nothing: the signs cancelled. That is why we square first.
 - **`3.5355` sits between 3 and 4,** where a typical size for a 3 and a 4 should sit. It is a little closer to the bigger one, because squaring makes big numbers count for more.
 - **You have met a cousin before.** Week 2's `.norm()` of `[6, 8]` was `sqrt(36 + 64) = 10`. RMS does the same squares and the same square root but **divides by how many numbers** first.
 
-Now the same list, a hundred and a thousand times bigger:
+Now the same list, a hundred and a thousand times bigger. The loop divides each list by its own RMS:
 
 ```python
 for scale in [1, 100, 1000]:
@@ -147,13 +156,13 @@ The RMS grows exactly as the list grows (3.5355, 353.5534, 3535.5339). **The lis
 ![Three rows, each a pair of gradients, an arrow to its typical size, and an arrow to the same result 0.8485 and minus 1.1314, whatever the scale of the pair](../figures/fig-w03-1-divide-by-typical-size.svg)
 *Figure 3.1 — Dividing by the typical size cancels the scale, so a thousand-times-bigger knob looks the same.*
 
-**Standard deviation?** If you remember it from Level 3: it is a close cousin. Standard deviation measures the spread around the average. RMS measures the size around zero. We only use RMS this week.
+**Standard deviation?** If you remember it from Level 3, it is a close cousin. Standard deviation measures the spread around the average. RMS measures the size around zero. We only use RMS this week.
 
 **Epsilon.** What if every number in the list is zero? Then the RMS is 0, and dividing by 0 gives something that is not a number. The fix is to add a tiny number to the thing you divide by. It is called **epsilon**, written `eps`. In Adam it is `0.00000001`, which you can also write `1e-8`. It is there so you never divide by zero, and it should be too small to change any normal answer. You will see exactly where it stops being too small, at the end of Step 5.
 
 ### 3. From the RMS to Adam
 
-Adam keeps **two running averages per knob**. Both are exponential moving averages, which you know from Week 2:
+Adam keeps **two running averages per knob**. Both are exponential moving averages, which you know from Week 2. In the formulas, `g` is the gradient, `m` and `s` are the averages, and `x` means multiply:
 
 ```text
 m = 0.9   x old m + 0.1   x g        the average of the gradient          (direction: Week 2)
@@ -168,7 +177,7 @@ step = lr x m / (sqrt(s) + eps)
 
 `sqrt(s)` is the third step of RMS. So **Adam's step is `lr` times the average gradient, divided by the running RMS of the gradient.** A knob whose gradients are huge has a huge `sqrt(s)`, which cancels its huge `m`. A knob whose gradients are tiny has a tiny `sqrt(s)`, which also cancels. Either way, when the gradient is steady, the ratio is about 1 and the step is about `lr` (smaller when the gradient is noisy and the average washes out).
 
-**The snag you already met.** Last week the average of ten, ten, ten, ten, ten started at 1.0 instead of 10, because it started at zero. Adam has the same snag twice. The fix is to divide by **how much has arrived**: after `t` steps that share is `1 - 0.9^t`. Try it on last week's numbers:
+**The snag you already met.** Last week the average of ten, ten, ten, ten, ten started at 1.0 instead of 10, because it started at zero. Adam has the same snag twice. The fix is to divide by **how much has arrived**: after `t` steps that share is `1 - 0.9^t`. Try it on last week's numbers. The loop keeps the start-at-zero average and divides it by the arrived share:
 
 ```python
 avg = 0.0
@@ -185,7 +194,7 @@ step 4: average 3.4390   arrived 0.3439   average / arrived 10.0000
 step 5: average 4.0951   arrived 0.4095   average / arrived 10.0000
 ```
 
-The droop is gone: ten, ten, ten. The name for this fix is **bias correction**. You only need the name once. After this we call it "divide by what has arrived". For `m` the arrived share is `1 - 0.9^t`; for `s` it is `1 - 0.999^t`.
+The droop is gone: the last column reads ten every time. The name for this fix is **bias correction**. You only need the name once. After this we call it "divide by what has arrived". For `m` the arrived share is `1 - 0.9^t`; for `s` it is `1 - 0.999^t`.
 
 **Do the first step on paper.** Function `f(w) = w * w` starting at `w = 1.0`, learning rate `0.1`. The gradient is `2w = 2.0`. After the fix, `m` is `2.0` and `s` is `4.0`, so `sqrt(s)` is `2.0`. The ratio is `1.0`. The step is `0.1 x 1.0 = 0.1`, so `w` lands on `0.9`. Now: **if the gradient had been 2000, what would the step have been?** Write your answer before reading on.
 
@@ -198,6 +207,8 @@ With plain SGD the rule is simple: each step, every weight also loses `lr x weig
 **Adam** does its decay the old way: it adds the decay to the gradient, and then the whole thing goes through the division by the RMS. **AdamW** applies the decay to the weight directly, outside the division. You will see what that does to two weights in Step 6.
 
 ### 5. The four new constructs
+
+Each construct is named below with what it takes and what it does.
 
 **`torch.optim.Adam(params, lr=...)`** has the same shape as `SGD` from Week 2: a list of things to adjust, and a learning rate. It keeps two numbers per weight, your `m` and `s`. The two shares (`0.9` and `0.999`) and `eps=1e-8` are built-in defaults. **There are dials for them, and we leave them alone.**
 
@@ -237,9 +248,9 @@ step      g         m          s      m/arrived  s/arrived  rms-root    step    
    4   1.4032   0.575991  0.0117505     1.6749     2.9420    1.7152   0.09765   0.6039
 ```
 
-Walk row 1 with your finger: `m = 0.2`, `s = 0.004`; divide by the arrived shares (0.1 and 0.001) to get 2.0 and 4.0; the root of 4.0 is 2.0; the ratio is 1.0; the step is `0.10000`; `w` is `0.9000`. Then **find the row where the step is smaller than `lr`.** Why do you think it is smaller there? Compare the gradient `g` with the `rms-root` in that row.
+Look at row 1 and walk it with your finger: `m = 0.2`, `s = 0.004`; divide by the arrived shares (0.1 and 0.001) to get 2.0 and 4.0; the root of 4.0 is 2.0; the ratio is 1.0; the step is `0.10000`; `w` is `0.9000`. Then **find the row where the step is smaller than `lr`.** Why do you think it is smaller there? Compare the gradient `g` with the `rms-root` in that row.
 
-Now put Adam next to the two columns you have from Week 2:
+Now put Adam next to the two columns you have from Week 2. This block runs SGD, momentum and Adam side by side on the same function:
 
 ```python
 w_sgd = 1.0
@@ -293,11 +304,11 @@ momentum [0.8, 0.46, 0.062, -0.3086]
 Adam     [0.9, 0.8004, 0.7016, 0.6039]
 ```
 
-Compare each line with its column of the table above. They match to four decimals. You did them on paper; PyTorch agrees.
+Look at each line and compare it with its column of the table above. They match to four decimals. You did them on paper; PyTorch agrees.
 
 ### Step 3 — what Adam keeps inside
 
-Adam creates its two averages the first time it steps, so run a few steps before you look:
+Adam creates its two averages the first time it steps, so this block runs three steps and then prints what Adam stored:
 
 ```python
 w = torch.tensor([1.0], requires_grad=True)
@@ -319,7 +330,9 @@ PyTorch calls them `exp_avg` and `exp_avg_sq`. **Find row 3 of your Step 1 outpu
 
 ### Step 4 — the scale test
 
-Two knobs. Knob one has gradient 1. Knob two has gradient 1000. Learning rate `0.1`. **Before you run this, write four numbers:** how far does each knob move on the first step under SGD, and under Adam?
+Two knobs. Knob one has gradient 1. Knob two has gradient 1000. Learning rate `0.1`.
+
+**Before you run this, write four numbers:** how far does each knob move on the first step under SGD, and under Adam?
 
 ```python
 for name in ["SGD ", "Adam"]:
@@ -338,14 +351,14 @@ SGD  gradients [1.0, 1000.0]    first step moved [0.1, 100.0]
 Adam gradients [1.0, 1000.0]    first step moved [0.1, 0.1]
 ```
 
-**The knob with the thousand-times-bigger gradient moves the same distance.** That is Adam.
+Look at the last two numbers on the Adam line. **The knob with the thousand-times-bigger gradient moves the same distance.** That is Adam.
 
 ![Horizontal bars on a log axis of how far two knobs move on the first step: SGD moves 0.1 and 100.0, Adam moves 0.1 and 0.1](../figures/fig-w03-2-scale-test-sgd-vs-adam.svg)
 *Figure 3.2 — Adam divides each knob's step by its own gradient size, so both knobs move the same distance.*
 
 ### Step 5 — epsilon, where it starts to matter
 
-What if a gradient is tiny? Here is the first step for smaller and smaller gradients:
+What if a gradient is tiny? This block prints Adam's first step for smaller and smaller gradients:
 
 ```python
 print("   gradient     first step (lr = 0.1)")
@@ -392,7 +405,7 @@ weight_decay=0.1   after 10 steps: [0.9044, 90.4382]
 
 Both weights lose the same **share** per step (`1 - 0.1 x 0.1 = 0.99`, ten times, leaves 0.9044 of each). The 100 lost more in absolute terms than the 1. That is what decay should do.
 
-Now the same setup with `Adam` and `AdamW`. Same keyword, same number. **Read the first weight before you read anything else.**
+Now the same setup with `Adam` and `AdamW`: same keyword, same number. **Read the first weight before you read anything else.**
 
 ```python
 for name in ["Adam ", "AdamW"]:
@@ -412,13 +425,13 @@ Adam  weight_decay=0.1  after 10 steps: [0.0762, 99.0003]
 AdamW weight_decay=0.1  after 10 steps: [0.9044, 90.4382]
 ```
 
-Under **Adam** the small weight is nearly destroyed (1.0 to 0.0762) and the big one barely moves (100 to 99.0003). Every weight is pushed by about `lr` per step: the division by the RMS has turned "decay in proportion to the weight" into "decay by a fixed amount". Under **AdamW** the two weights lose the same *share* (0.9044 and 90.4382, exactly the SGD numbers). That is the whole difference, and the only reason AdamW exists.
+Compare the two lines. Under **Adam** the small weight is nearly destroyed (1.0 to 0.0762) and the big one barely moves (100 to 99.0003). Every weight is pushed by about `lr` per step: the division by the RMS has turned "decay in proportion to the weight" into "decay by a fixed amount". Under **AdamW** the two weights lose the same *share* (0.9044 and 90.4382, exactly the SGD numbers). That is the whole difference, and the only reason AdamW exists.
 
 **This is the cleanest version of the mechanism, on two weights with no loss at all. It is not a measurement of a real network's weights.**
 
 ### Step 7 — the spirals
 
-The Week 1 harness takes `optimizer="sgd"`, `"momentum"`, `"adam"` or `"adamw"`. Same data, same seed, same starting weights. Only the rule and the rate change. The harness is imported, never copied.
+The Week 1 harness takes `optimizer="sgd"`, `"momentum"`, `"adam"` or `"adamw"`. Same data, same seed, same starting weights. Only the rule and the rate change. The harness is imported, never copied. This block runs all four rules at the same small rate:
 
 ```python
 from l4lib.spirals import run
@@ -443,14 +456,14 @@ adam lr=0.03                 train 0.658  val 0.684  acc  46.9%
 adamw lr=0.03                train 0.658  val 0.684  acc  46.9%
 ```
 
-Put the two runs in a table (final train loss / validation accuracy):
+Here are the two runs in a table (final train loss / validation accuracy):
 
 | `lr` | SGD | Momentum | Adam |
 |:--:|:--:|:--:|:--:|
 | 0.003 | 0.693 / 46.9% | 0.690 / 56.7% | **0.007 / 98.9%** |
 | 0.03 | 0.690 / 52.8% | **0.018 / 98.6%** | 0.658 / 46.9% |
 
-Each rule has its own good learning rate. Now each rule at its own:
+Each rule has its own good learning rate. This block runs each rule at its own:
 
 ```python
 for opt_name, lr in [("sgd", 0.3), ("momentum", 0.03), ("adam", 0.003), ("adamw", 0.003)]:
@@ -465,7 +478,7 @@ adamw lr=0.003               train 0.007  val 0.037  acc  98.9%
 
 **All three end in about the same place.** The good rates are a factor of 10 apart, and 100 from end to end (0.3, 0.03, 0.003). Adam has the lowest train loss, but the validation losses are 0.041, 0.034 and 0.037. Read them before you decide which rule is best, and remember this is one seed.
 
-What Adam buys shows up in a sweep of rates:
+What Adam buys shows up in a sweep of rates. This block runs Adam at seven learning rates:
 
 ```python
 for lr in [0.0001, 0.001, 0.003, 0.01, 0.03, 0.1, 0.3]:
@@ -483,7 +496,7 @@ adam lr=0.3                  train 0.701  val 0.723  acc  46.9%
 
 Four rates in a row, from `0.0001` to `0.01` (a factor of 100), all give 98.1% or better. Last week SGD had one good rate out of the six you tried. But Adam still has a learning rate that must be chosen: `0.03` and above fail. It has a *wider* good range and *a different one*. One seed, one dataset: Week 7's three seeds are where we ask whether a gap is real.
 
-Finally, weight decay on the spirals, with the two rules side by side:
+Finally, weight decay on the spirals, with the two rules side by side. Compare each `adam` line with the `adamw` line under it:
 
 ```python
 run("adam  wd=0", lr=0.003, optimizer="adam")
@@ -508,6 +521,8 @@ With no decay the two rules give the **identical** line: it is the same optimize
 
 Save each of these as its own file and run it. Both are broken on purpose. Read the output, then write the last line in your Bug Log.
 
+The first is a missing step in the RMS recipe:
+
 ```python
 # DELIBERATE MISTAKE 1: forgetting to square before averaging
 import torch
@@ -524,7 +539,7 @@ what it should be: 3.535533905029297
 
 Nothing crashed. `nan` means "not a number". Compare the recipe in section 2 with the code: which of the three RMS steps is missing, and what does the square root do to a negative number?
 
-The second one also runs without any error, and that is the problem:
+The second also runs without any error, and that is the problem. It does one Adam step by hand and one in PyTorch:
 
 ```python
 # DELIBERATE MISTAKE 2: Adam by hand, step 1, compared with torch
@@ -553,9 +568,9 @@ The two numbers should agree and do not. Your hand result for step 1 in Step 1 w
 
 ## 🎲 Your Turn — fill the table
 
-Use the blank three-optimizer table on workbook page 3.1 (four rows, three columns). Do these in order.
+This section is the paper task that checks you can produce Adam's numbers yourself. Use the blank three-optimizer table on workbook page 3.1 (four rows, three columns). Do these in order.
 
-1. **Fill the Adam column for four steps on paper** (`f(w) = w * w`, `w = 1.0`, `lr = 0.1`). Copy the SGD and momentum columns from last week. Use the Step 1 column headings as a guide and a calculator. Accept yourself within 0.0001.
+1. **Fill the Adam column for four steps on paper** (`f(w) = w * w`, `w = 1.0`, `lr = 0.1`). Copy the SGD and momentum columns from last week. Use the Step 1 column headings as a guide and a calculator. Accept a match within 0.0001.
 2. **Run `torch.optim.Adam` on it** (Step 2) and tick each cell that matches.
 3. **Show that Adam's first step is `lr` for a gradient of 1 and for a gradient of 1000,** with code (Step 4, or your own version). Then write one sentence saying why.
 4. **Place two new cards** beside your A-F cards and the two from Week 2: where do "adam lr=0.003" and "adam lr=0.03" go? Where exactly a coin sits among the A-F shapes was not plotted this week, so if you are not sure, say so.
@@ -564,7 +579,7 @@ Use the blank three-optimizer table on workbook page 3.1 (four rows, three colum
 
 ## 🔑 Wrap Up
 
-Say this sentence aloud, then write it in your Bug Log in your own handwriting:
+These are the sentences to keep from this chapter. Say this sentence aloud, then write it in your Bug Log in your own handwriting:
 
 > **"Adam divides each knob's step by the typical size of that knob's own gradient, so every knob moves about `lr` per step, whatever its gradient's scale."**
 
@@ -577,6 +592,8 @@ And one short line: *"RMS: square, mean, root. Adam's first step is `lr` for any
 ---
 
 ## 📝 Vocabulary
+
+Every new word from this chapter, in one place.
 
 | Word | Meaning |
 |---|---|
@@ -608,7 +625,7 @@ Workbook Week 3 (about 60-75 minutes). Everything you write down must come from 
 
 ## 🔮 Next Week
 
-Adam fixed the **size** problem per knob. It did not ask whether the step should be `lr` for the *whole run*. Next week: the right step size changes during a run (start small, then shrink), and the batch you average over changes both the noise in the gradient and how many steps you get. There is no new maths idea. The new syntax is a function written in one line.
+This section says what comes next and what to keep. Adam fixed the **size** problem per knob. It did not ask whether the step should be `lr` for the *whole run*. Next week: the right step size changes during a run (start small, then shrink), and the batch you average over changes both the noise in the gradient and how many steps you get. There is no new maths idea. The new syntax is a function written in one line.
 
 **Before then:** keep `week03.py` exactly as it is. Next week re-runs its Adam line. Keep your cards.
 

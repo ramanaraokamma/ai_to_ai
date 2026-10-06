@@ -19,7 +19,7 @@
 
 ## ✅ Warm-Up (5 min)
 
-Last week's habits, used again today.
+This warm-up reuses last week's habits before anything new starts.
 
 **W1.** A model that gives each of two classes probability one half has a loss of ____________ (three decimals).
 
@@ -37,7 +37,7 @@ ________________________________________________________________
 
 ## 🔢 Page 2.1 — The Hand Table (the page the whole week hangs on)
 
-**No code yet.** Function `f(w) = w * w`. Its gradient is `g = 2w`. Start at `w = 1.0`, learning rate `lr = 0.1`. Four decimal places. A calculator is fine.
+This page shows, by hand, how momentum differs from plain SGD. **No code yet.** Function `f(w) = w * w`. Its gradient is `g = 2w`. Start at `w = 1.0`, learning rate `lr = 0.1`. Four decimal places. A calculator is fine.
 
 **Rule A — plain SGD.** `w = w - 0.1 x g`
 
@@ -76,7 +76,7 @@ ________________________________________________________________
 
 Momentum's `w` is now (circle) **positive / negative**. The minimum of `w * w` is at `w = 0`. Finish the sentence with the word *overshoot*: *Momentum ________________________________________ because ________________________________________*
 
-**Now check.** Save as `week02_hand.py` and run:
+**Now check.** This block runs both rules for four steps and prints each path. Save it as `week02_hand.py` and run it:
 
 ```python
 import torch
@@ -93,6 +93,8 @@ for name, m in (("plain SGD", 0.0), ("momentum 0.9", 0.9)):
     print(f"{name:13}", path)
 ```
 
+Compare each printed list with your table, entry by entry.
+
 I got:  plain SGD ________________________________   momentum ________________________________
 
 **Did torch agree with your table?** Circle: **yes / no**. If no: find the first step where they part. Which column had my slip? ____________
@@ -101,7 +103,7 @@ I got:  plain SGD ________________________________   momentum __________________
 
 ## 📊 Page 2.2 — Helps or Hurts
 
-Last week you turned **one** knob (`lr`). This week one more knob moves: `optimizer=`. Same data, same seed, same starting weights. Only the rule for a step changes.
+This page tests, across five learning rates, whether momentum helps or hurts. Last week you turned **one** knob (`lr`). This week one more knob moves: `optimizer=`. Same data, same seed, same starting weights. Only the rule for a step changes.
 
 **Step 1 — predict (before you run).** For each learning rate, circle what you think momentum does to the **final training loss** compared with plain SGD: **H**elps, **U**rts, or **=** about equal. (The rule for the words: a difference of more than **0.05** in final train loss counts; smaller is "about equal".)
 
@@ -109,7 +111,7 @@ Last week you turned **one** knob (`lr`). This week one more knob moves: `optimi
 |---|:--:|:--:|:--:|:--:|:--:|
 | my prediction | H / U / = | H / U / = | H / U / = | H / U / = | H / U / = |
 
-**Step 2 — run it.** Save as `week02.py` in `36-week-course/`:
+**Step 2 — run it.** This loop trains with each rule at each learning rate and prints one line per `lr`. Save it as `week02.py` in `36-week-course/`:
 
 ```python
 import torch
@@ -121,6 +123,8 @@ for lr in (0.01, 0.03, 0.1, 0.3, 1.0):
     b = run(f"momentum lr={lr:g}", lr=lr, optimizer="momentum", verbose=False)
     print(f"{lr:>5g} | sgd {a['train'][-1]:.3f} {a['acc'][-1]*100:5.1f}% | momentum {b['train'][-1]:.3f} {b['acc'][-1]*100:5.1f}%")
 ```
+
+Each printed line gives the final train loss and the accuracy for both rules.
 
 **Step 3 — copy what your screen printed** (write `nan` if it printed `nan`; **never** write `0` for it).
 
@@ -152,7 +156,7 @@ ________________________________________________________________
 
 ## 🧮 Page 2.3 — An Average on Your Own Numbers
 
-**New idea, on paper first.** An **exponential moving average** is a running average that counts recent values more and forgets old values by a fixed share each step. One rule:
+This page builds the running average that momentum is based on, first on paper and then in code. **New idea, on paper first.** An **exponential moving average** is a running average that counts recent values more and forgets old values by a fixed share each step. One rule:
 
 ```text
 new average = 0.9 x old average + 0.1 x new value          (the average starts at 0)
@@ -196,7 +200,7 @@ My numbers: ______ , ______ , ______ , ______ , ______
 | 4 | ______ | ________ | ________ |
 | 5 | ______ | ________ | ________ |
 
-**Now check.** Put your five numbers in the list:
+**Now check.** This loop applies the same rule to your five numbers. Put them in the list:
 
 ```python
 old = 0.0
@@ -215,7 +219,7 @@ ________________________________________________________________
 
 ## ⚖️ Page 2.4 — Steady Pushes Add, Flip-Flops Cancel
 
-Momentum's velocity is `v = 0.9 x v + g`. Here are two gradient lists. Work out `v` for each by hand (3 decimals). `v` starts at 0.
+This page shows why momentum speeds up in one direction and dampens in another. Momentum's velocity is `v = 0.9 x v + g`. Here are two gradient lists. Work out `v` for each by hand (3 decimals). `v` starts at 0.
 
 **Steady:** `g = 1, 1, 1, 1`
 
@@ -249,7 +253,7 @@ ________________________________________________________________
 
 ## 🔟 Page 2.5 — The x10
 
-The week's trap. PyTorch's `momentum=0.9` computes `v = 0.9 v + g`, **not** `v = 0.9 v + 0.1 g`.
+This page explains the week's trap and tests it with a run. PyTorch's `momentum=0.9` computes `v = 0.9 v + g`, **not** `v = 0.9 v + 0.1 g`.
 
 **X1.** On a steady slope of `g = 2.0`, your average form (`0.9 avg + 0.1 x 2.0`) gives `avg = 0.2` at step 1 and the momentum form (`0.9 v + 2.0`) gives `v = 2.0`. Fill in step 2 for both:
 
@@ -264,7 +268,7 @@ The week's trap. PyTorch's `momentum=0.9` computes `v = 0.9 v + g`, **not** `v =
 
 **Predict first.** Will momentum at `lr = 0.03` and plain SGD at `lr = 0.3` end at similar losses? **yes / no**
 
-**Run it:**
+**Run it.** This block trains both settings once and prints a summary line for each:
 
 ```python
 import torch
@@ -294,7 +298,7 @@ ________________________________________________________________
 
 ## 🐞 Page 2.6 — Break It on Purpose
 
-**Deliberate.** Pick **one** of these. Type it exactly, run it, and paste the **last line** on the Bug Log (page 2.9). Then fix it and run it again.
+This page practises reading errors, including two mistakes that print none. **Deliberate.** Pick **one** of these. Type it exactly, run it, and paste the **last line** on the Bug Log (page 2.9). Then fix it and run it again.
 
 ```python
 # DELIBERATE MISTAKE A: taking the length of a gradient that was already removed.
@@ -361,7 +365,7 @@ The stored gradient at step 2 is ________. The true slope `2w` at that `w` is __
 
 ## 📏 Page 2.7 — The Length of a Gradient (`.norm()`)
 
-The **length** (norm) of a list of numbers is: square every one, add them up, take the square root.
+This page teaches what `.norm()` computes, by hand first. The **length** (norm) of a list of numbers is: square every one, add them up, take the square root.
 
 **N1.** By hand: length of `[6, 8]` = sqrt(____ + ____) = sqrt(____) = ________
 
@@ -369,7 +373,7 @@ The **length** (norm) of a list of numbers is: square every one, add them up, ta
 
 **N3.** For `w = [1.0, 2.0, 2.0]` and the loss `(w ** 2).sum()`, the gradient is `2w` = [____ , ____ , ____]. Its length by hand is ________
 
-**Now check:**
+**Now check.** This block prints the gradient and its length:
 
 ```python
 import torch
@@ -388,7 +392,7 @@ I got: ________________________________________
 
 ## ➕ Page 2.8 — A Second Hand Table (new numbers)
 
-Same two rules, **new start**: `f(w) = w * w`, start at `w = 2.0`, `lr = 0.1`. Four steps, every number, 4 decimals. (Fresh numbers, so you cannot copy page 2.1.)
+This page repeats the hand table from a new start to confirm you own the method. Same two rules, **new start**: `f(w) = w * w`, start at `w = 2.0`, `lr = 0.1`. Four steps, every number, 4 decimals. (Fresh numbers, so you cannot copy page 2.1.)
 
 | step | SGD g | SGD w after | Momentum g | v | step = 0.1 v | Momentum w after |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
@@ -409,7 +413,7 @@ ________________________________________________________________
 
 ## 📓 Page 2.9 — The Bug Log
 
-One entry per error you meet, loud or silent.
+This page records every error you meet and ends with one more trap. One entry per error you meet, loud or silent.
 
 **Tonight's required line.** Copy it, then say it in your own words underneath:
 
@@ -427,7 +431,7 @@ In my words: ________________________________________________________
 
 **A mistake with no traceback** (these matter more): the one I made, or nearly made, this week. ________________________________________
 
-**The misspelt-optimizer trap.** The Week 1 harness quietly accepts any `optimizer=` name it does not know. Try it (deliberate):
+**The misspelt-optimizer trap.** The Week 1 harness quietly accepts any `optimizer=` name it does not know. Try it (deliberate). This block runs the harness twice, once with a typo and once spelt correctly:
 
 ```python
 # DELIBERATE MISTAKE F: a misspelt optimizer name on the harness.
@@ -447,6 +451,8 @@ Did the typo raise an error? ____ Then how would you ever know? ________________
 ---
 
 ## 🧠 Self-Check (do this last, from memory)
+
+This section checks what stuck, with no notes.
 
 1. **In one sentence, what does momentum remember, and what does it do with it?**
 
@@ -482,7 +488,7 @@ Hurt at `lr =` ____ : SGD ________ , momentum ________
 ---
 ---
 
-# ✂️ ANSWERS — keep this page folded until you have finished
+## ✂️ ANSWERS — keep this page folded until you have finished
 
 *Numbers come from real runs: CPU, one thread, seed 0, torch 2.2.1, `l4lib.spirals.run`. Within 0.0001 on hand-table figures, within ±0.005 on a loss and ±0.5 points on an accuracy is a match.*
 

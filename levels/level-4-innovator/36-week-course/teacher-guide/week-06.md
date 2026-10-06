@@ -9,6 +9,8 @@
 
 ## 📋 At a Glance
 
+This table is the week on one screen: timing, the big idea, the new vocabulary and syntax, and what to have ready.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes |
@@ -83,7 +85,7 @@ The new idea this week is the **slope of a sum**. You also need layer norm's ari
 
 **B. Try it on a sum.** Let `f(x) = 0.05 × x × x`, "a block that does only a little". At `x = 2`:
 
-```
+```text
 f(2)     = 0.05 × 4        = 0.2
 f(2.001) = 0.05 × 4.004001 = 0.20020005
 change in f = 0.00020005   → slope of f = 0.00020005 / 0.001 = 0.2
@@ -111,7 +113,7 @@ Now the **sum**, `y = x + f(x)`: `y(2) = 2.2`, `y(2.001) = 2.001 + 0.20020005 = 
 
 **Reading, not writing: the block.** The student does *not* write the class that holds these layers (classes are Week 23). They *read* the one line of `l4lib/spirals.py` that is the whole idea, and you should too:
 
-```
+```python
 h = self.drop(self.act(self.fc(self.norm(x))))     # norm, then the linear layer, then GELU, then dropout
 return x + h if self.residual else h                # the road: x + h, or just h
 ```
@@ -144,7 +146,7 @@ Go as far as: *"each row by its own numbers vs each column by the batch's; a bat
 
 ### 8. 🧭 Where this fits (text version — the figure pass comes later)
 
-```
+```text
  TERM 1 — THE TEN KNOBS
  W1  learning rate, one at a time            ✔ done
  W2  momentum  (running average)             ✔ done
@@ -161,6 +163,8 @@ Two minutes at the end of the lesson: ask *"which of today's four layers had wei
 ---
 
 ## 🧰 Prep Checklist
+
+Use this section the night before to get every script running and every number checked before the student sees it.
 
 ### 25 minutes the night before
 
@@ -646,6 +650,8 @@ Everything in the Hook, the Concept and the Their-Turn segments can be done from
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the whole lesson plan: a timing table first, then each segment in order with what to say, ask, expect and watch for.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — The Same Network, Two Kinds of Norm | 8 | 8 | Run `small_batch.py`. At batch size 2, batch norm scores 46.9% (the coin) and layer norm 97.2%. "What does a norm layer need that the other doesn't?" |
@@ -660,7 +666,7 @@ Everything in the Hook, the Concept and the Their-Turn segments can be done from
 
 **Do this:** Write on the board:
 
-```
+```text
 the Week 1 spirals · same network · AdamW lr 0.003 · 10 epochs · seed 0
 three versions: no norm | batch norm | layer norm
 four batch sizes: 64, 16, 4, 2
@@ -701,7 +707,7 @@ batch size     none   batch norm   layer norm
 
 **Do this (5 minutes): layer norm by hand.** Draw a 3 × 4 grid on the board (3 examples, 4 features each), using the numbers from `norm_hand.py`:
 
-```
+```text
                 feature 1   feature 2   feature 3   feature 4
    example 1        2           4           6           8
    example 2       10           0          10           0
@@ -976,6 +982,8 @@ Ask **"What does the last line say?"**, then **"Which of your lines does it poin
 
 ## 🎲 The Activity, In Full
 
+This section gives the full depth-table activity and the numbers the student's table should be compared against.
+
 ### The Depth Table
 
 The student fills one table with **two** numbers per cell (colours if you can): the length of the first block's gradient at the start, and the accuracy after 30 epochs. Four stacks × four depths. The rows to fill are on workbook page 6.4; the numbers to compare are:
@@ -1017,6 +1025,8 @@ Add the optional `spread.py` (Prep step 12) and have the student find the depth 
 
 ## ❓ Questions Students Ask This Week
 
+Use this section when a student asks something the plan does not cover; each answer stays within what was measured.
+
 **"Why does the norm go *before* the linear layer, not after?"** In the blocks the student runs, norm comes first ("pre-norm"), which is what GPT-style transformers do. The original 2017 transformer put it after ("post-norm"). Pre-norm is easier to train deep. We did not run post-norm here; if the student wants to, it is a good Bug Log "later".
 
 **"What is `gamma` and `beta`?"** A learned scale and shift per feature, starting at 1 and 0. They let the network undo the normalising if it wants. `norm_hand.py` prints them: `[1.0, 1.0, 1.0, 1.0] [0.0, 0.0, 0.0, 0.0]`.
@@ -1046,6 +1056,8 @@ Add the optional `spread.py` (Prep step 12) and have the student find the depth 
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+These are the seven most likely ways the lesson drifts from what was measured. Check them against your own delivery.
 
 1. **The teacher says "residuals keep the gradient near 1".** Measured: up to 300. Say "keeps it from vanishing".
 2. **The layer-norm-alone cell is explained.** It isn't understood. The temptation is to invent a story ("layer norm loses information"). Resist; say "not measured".
@@ -1138,6 +1150,8 @@ saved w06_gradient_vs_depth.png
 ---
 
 ## 🔑 Answer Key
+
+This section holds the answers to every workbook page, page by page. Keep it away from the student.
 
 ### Page 6.1 — Match the word to the thing
 
@@ -1246,11 +1260,15 @@ The **depth table** is the one printed in 🎲 The Activity, In Full. Accept: an
 
 ## 🔮 Next Week Preview
 
+This section says what next week does with today's results, so you can close the lesson with a bridge.
+
 **Week 7 — Project: The Symptom-Check-Action Playbook.** No new idea; one new tool (`itertools.product`, every combination of several lists) and a table the student must be able to defend. The student runs a sweep of 75 runs on the spirals (about 30 seconds at the default 60 epochs), prints the mean and the spread over three seeds for each knob, and turns what Weeks 1-6 taught into a playbook: each **symptom** in a loss curve gets **one cheap check** and **one action**, and every line is backed by a number they printed themselves. Nothing this week is a stand-in; it is real PyTorch on the CPU. The thing to carry in from today: a difference between two runs only counts if it is bigger than the spread between seeds.
 
 ---
 
 ## 📝 Notes for the next author
+
+This section is for whoever revises the guide: where numbers came from, what the guide contradicts, and what was not run.
 
 - **Numbers that came from the ledger, not from this guide's own scripts:** the 30-epoch batch-2 row (train 0.688, val 0.677, 56.4%) and the layer-norm shift result (48.3% vs batch norm 46.7%). Both are in `_ledger/out/m01_02_answerkey.txt`, Practice 6.
 - **The module's claims this week contradicts:** "plain depth 12 stalls" (it trains: 98.9%); "`(1+f1')(1+f2')…` stays near 1" (it grows, 20 to 300 at 32 blocks without a norm); "layer norm adapts to a shift" (it does not, 48.3%). None of these is repeated in this guide.
