@@ -1,7 +1,7 @@
 """
 AI Academy — static site generator.
 
-Renders every level that has a 36-week-course/ folder (currently Levels 1 and 2) into one
+Renders every level that has a 36-week-course/ folder (currently Levels 1 to 4) into one
 self-contained static site, with a level picker at the root and two access tiers.
 
   Public          — the root level picker only.
@@ -136,6 +136,28 @@ ALL_LEVELS = [
             (4, "No Labels, Words, and Ship It", 28, 36,
              "What can you learn with no answer key, how do you turn words into numbers, and how do "
              "you hand the finished thing to a stranger?"),
+        ],
+    ),
+    Level(
+        number=4, key="l4", slug="level-4-innovator", name="Innovator",
+        tagline="A language model is a system you can build, measure, attack and honestly describe.",
+        grade="Grades 10–11 · age ~15–16 · PyTorch, fully offline",
+        blurb="Train networks on purpose, build a small GPT, then tokenizers, scaling, retrieval, "
+              "agents, evals and red-teaming — all on CPU with local stand-ins, no API and no downloads.",
+        accent="var(--human)",
+        terms=[
+            (1, "Train It On Purpose", 1, 9,
+             "Your loss curve is wrong. Which of ten knobs do you turn — and how do you know, before "
+             "you turn it?"),
+            (2, "Memory, Then Attention", 10, 18,
+             "Why can a network not remember forty steps back — and what did people build instead of "
+             "making it remember?"),
+            (3, "How It Is Made, How It Is Asked", 19, 27,
+             "Where does a language model's behaviour come from — and how do you test what you ask it, "
+             "and what you retrieve for it, like an engineer?"),
+            (4, "Agents, Evidence, and the System Card", 28, 36,
+             "You have built the parts. Can you build a product out of them, prove it works, attack it "
+             "yourself, and tell a stranger honestly where it breaks?"),
         ],
     ),
 ]
