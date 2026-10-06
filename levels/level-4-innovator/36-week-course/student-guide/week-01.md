@@ -302,7 +302,7 @@ E  lr=0.01      0.658    0.052    0.041    0.027    0.021    0.013
 F  lr=0.1      12.786    0.520    0.612    0.694    0.695    0.693
 ```
 
-Look at the **first** column, epoch zero. A starts at 0.694. F starts at **12.786**. Compare the last column with the first one before you read on.
+Look at the **first** column, epoch zero. That number is the *average* loss over the whole first epoch, not the loss before any training: every run begins near 0.694, but during F's first epoch some steps were so large that the average came to **12.786**. A's first epoch averages 0.694. Compare the last column with the first one before you read on.
 
 > **The final loss tells you where it ended. The curve tells you what happened.**
 

@@ -378,7 +378,7 @@ lstm          |  7.65e-03  2.53e-04  2.05e-09  6.64e-16
 
 Copy each measured number **in full, exponent included**: `2.05e-09` is `0.00000000205`, and a dropped exponent changes the answer by a factor of a billion. Colour in which predictions were right.
 
-`352, 1056, 1408` is `1x, 3x, 4x`: one group of scores for each dial. Read the table one row at a time. **All three fall by the same kind of amount; between `T = 20` and `T = 40` each loses a factor of 10,000 to 100,000.** At default settings, gates alone did not open the highway. (We divide by the last word's pull because that pull is different for each layer; the ratio puts the three on one scale. That is a choice we made.) The `reach` probe measures the gradient on the *word*, one step earlier than Week 10's gradient on the *note*, so these numbers are the same disease measured a step earlier, **not the same numbers** as page 10.4.
+`352, 1056, 1408` is `1x, 3x, 4x`: one group of scores for each dial. Read the table one row at a time. **All three fall by the same kind of amount; between `T = 20` and `T = 40` each loses a factor of roughly 10,000 to 120,000.** At default settings, gates alone did not open the highway. (We divide by the last word's pull because that pull is different for each layer; the ratio puts the three on one scale. That is a choice we made.) The `reach` probe measures the gradient on the *word*, one step earlier than Week 10's gradient on the *note*, so these numbers are the same disease measured a step earlier, **not the same numbers** as page 10.4.
 
 ### Three seeds, and the dial
 

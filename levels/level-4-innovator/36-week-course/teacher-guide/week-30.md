@@ -49,7 +49,7 @@ Observable evidence: the printed fingerprint and `True`, the three-line baseline
 
 ### 1. What the student is doing today, in one paragraph
 
-For twenty-nine weeks the student has built things and looked at whether they worked. Today they build the thing that decides *whether they worked*. They begin by typing a **frozen eval set** of 30 support tickets in five categories, and a one-line fingerprint of it that will shout if anyone edits a ticket. They score three cheap systems on it (a floor that always says one thing, a list of keyword rules, and a small classifier trained from scratch) and are surprised that the trained one **loses** to the free rules, and that the loss is almost all in one category. They then protect the eval from the training data: a Jaccard overlap worked by hand on two sets of words, a scan that removes two tickets, and a demonstration that five paraphrases sail through it and still raise the score by two tickets. The second half is about the **judge**. On paper and then in code they compute Cohen's kappa for two raters on 20 replies (`0.375`), see why raw agreement is a bad measure, and then face a sealed file: a scripted pairwise judge. They ask it every question twice, once in each order, and count how often the answer changes. It changes in `8` of `30`; by swapping they recover a habit nobody told them about. The finishing sentence: *"the eval was written first and fingerprinted, the free rules beat my model, my scan cannot see a paraphrase, kappa says the lenient judge is only `0.375` better than luck, and the pairwise judge changed its mind on `8` of `30` when I swapped the order, so I do not trust a single-order verdict."*
+For twenty-nine weeks the student has built things and looked at whether they worked. Today they build the thing that decides *whether they worked*. They begin by typing a **frozen eval set** of 30 support tickets in five categories, and a one-line fingerprint of it that will shout if anyone edits a ticket. They score three cheap systems on it (a floor that always says one thing, a list of keyword rules, and a small classifier trained from scratch) and are surprised that the trained one **loses** to the free rules, and that the loss is almost all in one category. They then protect the eval from the training data: a Jaccard overlap worked by hand on two sets of words, a scan that removes two tickets, and a demonstration that five paraphrases sail through it and still raise the score by two tickets. The second half is about the **judge**. On paper and then in code they compute Cohen's kappa for two raters on 20 replies (`0.375`), see why raw agreement is a bad measure, and then face a sealed file: a scripted pairwise judge. They ask it every question twice, once in each order, and count how often the answer changes. It changes in `8` of `30`; by swapping they recover a habit nobody told them about. The finishing sentence: *"the eval was written first and fingerprinted, the free rules beat my model, my scan cannot see a paraphrase, kappa puts the lenient judge at only `0.375` on a scale where `0` is luck and `1` is perfect, and the pairwise judge changed its mind on `8` of `30` when I swapped the order, so I do not trust a single-order verdict."*
 
 ### 2. 🔢 The maths you need — taught to you first
 
@@ -68,7 +68,7 @@ For twenty-nine weeks the student has built things and looked at whether they wo
 
 **Step 3 — the part above luck, as a share of what was available.** Above luck we got `0.65 − 0.44 = 0.21`; the most that could be above luck is `1 − 0.44 = 0.56`. So `κ = 0.21 / 0.56 = 0.375`. `κ = 1` means perfect agreement; `κ = 0` means no better than luck; it can go negative (worse than luck). **The convention** (say it once, call it a convention): below `0.2` poor, `0.2-0.4` fair, `0.4-0.6` moderate, `0.6-0.8` substantial, above `0.8` almost perfect. `0.375` is "fair".
 
-**Why not just report agreement?** Second worked case: the human passes 18 of 20 replies and a lazy judge says "pass" to all 20. Agreement `= 18 / 20 = 0.90`. Luck: the judge passes always (`1.0`), the human passes `0.90`: `p_e = 1.0 × 0.90 + 0.0 × 0.10 = 0.90`. So `κ = (0.90 − 0.90) / (1 − 0.90) = 0`. **Ninety percent agreement, zero skill.** This is the sentence to leave the student with: *"a raw agreement number rewards a judge that never looks, whenever almost everything passes."* The denominator fails if `p_e = 1` (both raters say one thing only): kappa is **undefined** and the library returns `nan`; Key K3 shows the case.
+**Why not just report agreement?** Second worked case: the human passes 18 of 20 replies and a lazy judge says "pass" to all 20. Agreement `= 18 / 20 = 0.90`. Luck: the judge passes always (`1.0`), the human passes `0.90`: `p_e = 1.0 × 0.90 + 0.0 × 0.10 = 0.90`. So `κ = (0.90 − 0.90) / (1 − 0.90) = 0`. **Ninety percent agreement, zero skill.** This is the sentence to leave the student with: *"a raw agreement number rewards a judge that never looks, whenever almost everything passes."* The denominator fails if `p_e = 1`, which happens only when **both** raters say the same single thing every time (two lists of all 1s): kappa is then **undefined** and the library returns `nan` with a warning. A judge that says one thing while the human says both is *not* that case: `p_e < 1` and `κ = 0` (Block P7, Key K3).
 
 **Direction matters.** The grid above has `7` in one off-diagonal cell and `0` in the other: the lenient judge *never* fails what the human passes and passes `7` replies the human fails. Kappa compresses that into one number; the two cells say which way to lean (Mistake 7).
 
@@ -92,7 +92,7 @@ For twenty-nine weeks the student has built things and looked at whether they wo
 
 ### 4. The three new constructs, for somebody who has never seen them
 
-**`cohen_kappa_score(y1, y2)`.** From `sklearn.metrics`. It takes **two lists of labels of the same length**, one per rater, in the same item order, and returns the kappa. Here the lists are 0/1 (fail/pass). It does the arithmetic of Section 2. The student types it only **after** the hand calculation, as a check (`0.375` both ways). **Trap:** lists of different lengths raise `ValueError: Found input variables with inconsistent numbers of samples: [20, 19]` (Mistake 9); if one rater says only one thing, the answer is `nan` (Key K3).
+**`cohen_kappa_score(y1, y2)`.** From `sklearn.metrics`. It takes **two lists of labels of the same length**, one per rater, in the same item order, and returns the kappa. Here the lists are 0/1 (fail/pass). It does the arithmetic of Section 2. The student types it only **after** the hand calculation, as a check (`0.375` both ways). **Trap:** lists of different lengths raise `ValueError: Found input variables with inconsistent numbers of samples: [20, 19]` (Mistake 9); if **both** raters say only the same one thing, the answer is `nan`; if only one does, `κ = 0` (Block P7, Key K3).
 
 **Set intersection `A & B` and union `A | B`.** The student has met sets in Week 26 (checking that cited ids are a subset of served ids). A **set** holds each item once and forgets order: `set(["a", "b", "a"])` is `{"a", "b"}`. `A & B` is the items in both; `A | B` is the items in either. `len(A & B) / len(A | B)` is the Jaccard overlap. `words(s)` in `dedup.py` builds the set with `re.findall(r"[a-z0-9]+", s.lower())` (Week 20's tool), so `"doesn't"` becomes `doesn` and `t`: a real quirk, and Page 30.1 (a3) uses it. **Trap:** `&` and `|` are **not defined on lists** (`TypeError: unsupported operand type(s) for &: 'list' and 'list'`, Mistake 5). **Guard:** two tickets with no letters or digits give `len(A | B) = 0` and a `ZeroDivisionError` without the `if (A | B)` test (Mistake 6).
 
@@ -1340,7 +1340,7 @@ Homework 3's bias sweep, then: *"Write a second mystery judge whose flaw is "pre
 
 **"Why fingerprint instead of just not touching the file?"** Because you will touch it, with good reasons, at 11 p.m. The fingerprint makes touching it loud.
 
-**"Can't the scan just use a lower threshold and catch everything?"** At `0.20` it removes 25 of 66 tickets and still catches no paraphrase (highest Jaccard `0.200`). The dial trades copies caught against tickets lost; it does not reach meaning.
+**"Can't the scan just use a lower threshold and catch everything?"** At `0.20` it removes 25 of 66 tickets and still misses four of the five paraphrases (their highest Jaccards are `0.200`, `0.083`, `0.143`, `0.143`, `0.077`; only the first reaches `0.20`). The dial trades copies caught against tickets lost; it does not reach meaning.
 
 **"What is a 'good' kappa?"** By convention above `0.6`. It depends on what a wrong verdict costs and on how good the labels are. Our `0.375` is "fair"; it would not let you use the judge without checking its passes by hand.
 
@@ -1367,7 +1367,7 @@ Homework 3's bias sweep, then: *"Write a second mystery judge whose flaw is "pre
 | Counts of removed tickets differ from `2` | Different `words` function (for instance `str.split`) | `words` must use `re.findall(r"[a-z0-9]+", ...)` on `.lower()` text |
 | `TypeError: unsupported operand type(s) for &` | Lists, not sets | Mistake 5 |
 | `ZeroDivisionError` in `jaccard` | A ticket with no letters and no guard | Mistake 6 |
-| Kappa `nan` or a warning | One rater says one thing only | Key K3; kappa is undefined |
+| Kappa `nan` or a warning | Both raters say the same single thing on every item (`p_e = 1`) | Kappa is undefined; look at the data. One rater saying one thing gives `0.0`, not `nan` (Key K3) |
 | The bias test says `0` flips | A fresh generator per call | Mistake 10 |
 | The bias test says half the pairs flip | Tied pairs (identical replies) in the list | Mistake 11 |
 | The student's flip rate is not `0.267` | A different seed, one generator per pair, or `judge_pair` called in a different order | The seeded sequence is fixed: fwd then rev, pair by pair, one `random.Random(0)` |
@@ -1492,7 +1492,7 @@ threshold 1.00: removed  1   e.g. 'is there a time limit on sending items back?'
 the third ticket removed at 0.50: ('what stocks should I buy?', 0.5, 'should I buy bitcoin?')
 ```
 
-**Read it:** `0.20` removes 25 of the 66 training tickets (far too many), `0.30` removes 7, `0.40` and `0.50` remove 3, `0.60` and `0.70` remove 2, and from `0.80` only the exact copy goes. The third ticket, which arrives at `0.50`, is `'what stocks should I buy?'` against `'should I buy bitcoin?'`: a different question on the same subject, and `out_of_scope` has only 8 training tickets to spare. **There is no threshold that catches the paraphrases**: their highest Jaccard is `0.200`, and `0.20` would already remove 25 tickets. That is the argument for a comparison that looks at meaning (Week 25's embeddings could, but nothing in this course measures how well; say so).
+**Read it:** `0.20` removes 25 of the 66 training tickets (far too many), `0.30` removes 7, `0.40` and `0.50` remove 3, `0.60` and `0.70` remove 2, and from `0.80` only the exact copy goes. The third ticket, which arrives at `0.50`, is `'what stocks should I buy?'` against `'should I buy bitcoin?'`: a different question on the same subject, and `out_of_scope` has only 8 training tickets to spare. **No usable threshold catches the paraphrases**: only one of the five reaches `0.200` (the rest are `0.143` or lower), and `0.20` already removes 25 of 66 tickets. That is the argument for a comparison that looks at meaning (Week 25's embeddings could, but nothing in this course measures how well; say so).
 
 **K2 — the bias test, 200 seeds, a control, ten times the pairs**
 
@@ -1548,18 +1548,18 @@ control, bias 0.0: first-position wins 30 /60, flips 0 /30
 for cut in (1, 2, 3):
     Jc = [1 if rubric(r, l) >= cut else 0 for _, l, r in items]
     agree = sum(h == j for h, j in zip(H, Jc)) / 20
-    print(f"passes at {cut}+: J passes {sum(Jc)}/20   agreement {agree:.2f}   kappa", round(cohen_kappa_score(H, Jc), 4) if len(set(Jc)) > 1 else "undefined (J says one thing only)")
+    print(f"passes at {cut}+: J passes {sum(Jc)}/20   agreement {agree:.2f}   kappa", round(cohen_kappa_score(H, Jc), 4))
 print("H against itself:", round(cohen_kappa_score(H, H), 4))
 ```
 
 ```text
-passes at 1+: J passes 20/20   agreement 0.35   kappa undefined (J says one thing only)
+passes at 1+: J passes 20/20   agreement 0.35   kappa 0.0
 passes at 2+: J passes 14/20   agreement 0.65   kappa 0.375
 passes at 3+: J passes 7/20   agreement 1.00   kappa 1.0
 H against itself: 1.0
 ```
 
-**Read it:** a judge that passes at `1+` passes everything (`20/20`): agreement `0.35`, equal to the human's pass rate, and kappa **undefined** (the library would return `nan` with a warning; the block guards it). At `2+` (our `J`) agreement `0.65` and `κ = 0.375`. At `3+` the judge *is* `H`, so agreement is `1.00` and `κ = 1.0`, which is trivial: `H` is defined as the `3+` rule. The lesson of the row at `1+` is the one of Block P7: **a judge that never looks can have respectable-looking agreement.**
+**Read it:** a judge that passes at `1+` passes everything (`20/20`): agreement `0.35`, equal to the human's pass rate, and `κ = 0.0` (`p_e = 1.0 × 0.35 + 0.0 × 0.65 = 0.35 = p_o`; it is `nan` only if H also said one thing only). At `2+` (our `J`) agreement `0.65` and `κ = 0.375`. At `3+` the judge *is* `H`, so agreement is `1.00` and `κ = 1.0`, which is trivial: `H` is defined as the `3+` rule. The lesson of the row at `1+` is the one of Block P7: **a judge that never looks can have respectable-looking agreement.**
 
 **K4 — Page 30.3's answers**
 

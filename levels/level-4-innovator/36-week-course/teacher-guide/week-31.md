@@ -105,7 +105,7 @@ The two tables you will put on the board: **base → LoRA** (P11: technical `0.2
 
 ### 6. The honest limits of today
 
-- **One ticket is 0.033.** Every difference between `18`, `19` and `20` out of 30 is one or two tickets. The six-seed spread for a single method is 3 to 5 tickets. Nothing in this week ranks full fine-tuning against LoRA.
+- **One ticket is 0.033.** Every difference between `18`, `19` and `20` out of 30 is one or two tickets. The six-seed spread for a single method is 1 to 3 tickets (base 15 to 18, full 18 to 20, LoRA 18 to 19). Nothing in this week ranks full fine-tuning against LoRA.
 - **The eval was used to look, not to tune, with one admission.** Steps (100), learning rates (`3e-3` head and LoRA, `3e-4` full) and `r = 4` are the first values tried and were never changed after seeing a score; the rank sweep (K3) is reported, not chosen from. **But the author saw eval scores while building the pretraining text**: a first version left about 30% of the eval words unknown and its vocabulary was widened (the eval sentences themselves were never copied in; the scan enforces that). Tell the student this; it is the same sin at small size. If a student starts changing `lr` until billing recovers, that is tuning on the test set — stop them and point at Week 30's frozen eval.
 - **The pretraining text knows the eval vocabulary.** Said in section 3. Not fixable in this week.
 - **`out_of_scope` has 8 training tickets against 14 elsewhere.** The README's planned story is that under-represented classes are the ones that suffer. In our runs it is *billing* that falls (three seeds of six) and `out_of_scope` falls in one. Do not teach the planned story; teach the measured one, and let the student propose why (billing and refund both mention money: `'took the money twice on the 3rd'` is predicted `technical` after LoRA, K2).
@@ -1185,7 +1185,7 @@ print(f"sweep took {time.time() - t0:.1f} s")
 sweep took 9.6 s
 ```
 
-**Timing: 9.6-9.8 s (the longest of the answer key).** Trainable `837 → 8,517`; the means `18.2, 18.2, 19.0, 18.7, 19.0` sit inside a per-seed range of 3-5 tickets. The honest answer to "where is the knee?" is **"not visible at this sample size"**. Any student who ships `r = 4` because it has the highest mean is reading noise.
+**Timing: 9.6-9.8 s (the longest of the answer key).** Trainable `837 → 8,517`; the means `18.2, 18.2, 19.0, 18.7, 19.0` sit inside per-seed ranges of 1 to 5 tickets (r = 1: 16 to 20; r = 2: 16 to 21; r = 4: 18 to 20; r = 8: 18 to 19; r = 16: 17 to 21). The honest answer to "where is the knee?" is **"not visible at this sample size"**. Any student who ships `r = 4` because it has the highest mean is reading noise.
 
 ### K4 — grid cards (TEACHER-ONLY: `matrix_rank` is not a ladder construct)
 
@@ -1264,7 +1264,7 @@ Four model sentences: *(1) The encoder's 121,152 numbers are frozen; 2,373 (1.92
 - *"Which ticket flipped?"* K2.
 - *"How many tickets is -0.200 on billing?"* One.
 - *"At what rank does the patch stop saving?"* `r = d / 2 = 32`.
-- *"Why is A random?"* So that gradients can reach B on step 1, and A on step 2 (K5).
+- *"Why is A random?"* So that gradients can reach B on the very first step, and A from the next step on (K5).
 - *"What would you ship?"* The rules.
 
 ---

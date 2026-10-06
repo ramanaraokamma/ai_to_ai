@@ -271,7 +271,7 @@ The Week 1 harness takes `optimizer="sgd"`, `"momentum"`, `"adam"` or `"adamw"` 
 | 0.003 | 0.693 / 46.9% | 0.690 / 56.7% | **0.007 / 98.9%** |
 | 0.03 | 0.690 / 52.8% | **0.018 / 98.6%** | 0.658 / 46.9% |
 
-(Final train loss / validation accuracy. Rows are blocks **P13** and **P14**; the `0.3` SGD line, 0.016 / 98.9%, is in block **P18**.) The two sentences that cover it: **each rule has its own good learning rate**, and **the good rates are three orders of magnitude apart** (SGD 0.3, momentum 0.03, Adam 0.003). Block **P18**, each at its own rate:
+(Final train loss / validation accuracy. Rows are blocks **P13** and **P14**; the `0.3` SGD line, 0.016 / 98.9%, is in block **P18**.) The two sentences that cover it: **each rule has its own good learning rate**, and **the good rates are a factor of 10 apart, and 100 from end to end** (SGD 0.3, momentum 0.03, Adam 0.003). Block **P18**, each at its own rate:
 
 ```text
 sgd lr=0.3                   train 0.016  val 0.041  acc  98.9%

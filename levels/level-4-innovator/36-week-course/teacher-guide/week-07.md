@@ -33,7 +33,7 @@ By the end of the lesson the student can:
 
 1. **Write a sweep with `itertools.product`** that runs every value of one knob under three seeds, changes **exactly one knob per run**, and saves the results.
 2. **Produce a table of mean ± spread** for six knobs and say, for each row, whether it differs from the baseline by more than the noise.
-3. **Read four loss-curve snapshots** and name the symptom (using the Week 1 letters A-F) and the one cheap check that separates two curves that look alike.
+3. **Read four loss-curve snapshots** and name the symptom (using the six shapes A-F on workbook page 7.4; note these are not the Week 1 learning-rate cards, which reuse the same letters) and the one cheap check that separates two curves that look alike.
 4. **Draft a playbook** of at least six SYMPTOM → CHECK → ACTION rules, each citing a number from their own table, with at least one rule where their data **contradicted** what they expected.
 
 Observable evidence: `sweep_rows.csv` on disk (75 rows); a printed sweep table; a page with at least three finished playbook rules by the end of class (the other three are homework); and the student's out-loud answer to *"is that bigger than the spread?"* for any row you point at.
@@ -532,7 +532,7 @@ SEE          thing to      and the
                            backs it
 ```
 
-Tell the story of a doctor. *"Fever" is the symptom. A cheap check separates "flu" from "infection": a swab. The action depends on the swab, not on the fever.* Our checks are cheap too: print the learning rate, look at the loss in **epoch 0**, look at whether the loss is **still falling** at the end, print the gradient length. Show the Week 1 letters A-F on the board and say today we attach a check and an action to each, with numbers.
+Tell the story of a doctor. *"Fever" is the symptom. A cheap check separates "flu" from "infection": a swab. The action depends on the swab, not on the fever.* Our checks are cheap too: print the learning rate, look at the loss in **epoch 0**, look at whether the loss is **still falling** at the end, print the gradient length. Show the six shapes A-F from workbook page 7.4 on the board (not the Week 1 learning-rate cards, which reuse the letters A-F for six learning rates) and say today we attach a check and an action to each, with numbers.
 
 **(4 min) The rules of the experiment.** Four rules, on the wall:
 

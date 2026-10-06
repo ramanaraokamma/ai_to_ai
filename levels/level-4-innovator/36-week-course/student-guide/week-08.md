@@ -686,7 +686,7 @@ embedding+RNN: train 1.000  val 1.000   (0.0 s)
 
 Read these numbers carefully, and do not over-read them.
 
-- The bag model gets `0.333` on the held-out sentences, which is **below** a coin flip. The script prints why: the 84 sentences come in mirror-image pairs with the same bag but opposite labels, and for 18 of the 24 held-out sentences the mirror is in the training half. A bag must give both the same answer, so what it learned from the training half is wrong for the partner. A bag cannot beat chance here in principle.
+- The bag model gets `0.333` on the held-out sentences, which is **below** a coin flip. The script prints why: the 84 sentences come in mirror-image pairs with the same bag but opposite labels, and for 18 of the 24 held-out sentences the mirror is in the training half. A bag must give both the same answer, so what it learned from the training half is wrong for the partner. Across all 84 sentences a bag cannot beat chance (0.5) in principle; on one small held-out slice it can land above or below.
 - The RNN gets 24 out of 24 on 24 held-out sentences, with one seed. It shows that a model that reads in order *can* do this task. It is a toy: it is **not** a result about language.
 
 ---

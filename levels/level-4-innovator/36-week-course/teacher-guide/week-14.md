@@ -48,7 +48,7 @@ Observable evidence: a filled **Pen Pass** sheet whose weight rows each add to 1
 
 ### 1. What the student is doing today, in one paragraph
 
-Last week the model gave a *score for every letter* and the student used `F.softmax` to turn the scores into chances. Today the same softmax has a different job: deciding **how much each earlier word should count**. They start with no code: three "experts" (bread, river, rope) hold three numbers; the question matches them with scores `0.1, 2.0, 0.3`; the student turns the scores into weights and takes the weighted average of what the experts know (`42.77`), and sees that a *hard* lookup would have returned only `50`. Then they take one pass of attention through three words with a pen: make a question, a key and a value for each word, score every question against every key (nine dot products), softmax each row, and blend the values. Only then do they type it: the same pass in numpy, line for line, then in torch with `nn.Linear(2, 2, bias=False)`, and they check that the three answers (pen, numpy, torch) agree. The last ten minutes ask one question — *why does every word get a question **and** a key?* — and answer it by changing one table and watching the scores stop being symmetric.
+Last week the model gave a *score for every letter* and the student used `F.softmax` to turn the scores into chances. Today the same softmax has a different job: deciding **how much each word should count**. They start with no code: three "experts" (bread, river, rope) hold three numbers; the question matches them with scores `0.1, 2.0, 0.3`; the student turns the scores into weights and takes the weighted average of what the experts know (`42.77`), and sees that a *hard* lookup would have returned only `50`. Then they take one pass of attention through three words with a pen: make a question, a key and a value for each word, score every question against every key (nine dot products), softmax each row, and blend the values. Only then do they type it: the same pass in numpy, line for line, then in torch with `nn.Linear(2, 2, bias=False)`, and they check that the three answers (pen, numpy, torch) agree. The last ten minutes ask one question — *why does every word get a question **and** a key?* — and answer it by changing one table and watching the scores stop being symmetric.
 
 ### 2. 🔢 The maths you need — taught to you first
 
@@ -168,7 +168,7 @@ Read as: *"insert an axis of length 1 at this position."* Use `-1` for "at the e
 ### 5. The other code the student types — nothing new, but note these
 
 - `np.exp`, `.sum(axis=1).reshape(3, 1)`, `np.round`, `@` for a matrix product, `K.T`: Level 2 and 3. The `reshape(3, 1)` stands the row totals on end so each row is divided by its own total; without it `e.sum(axis=1)` divides down the wrong direction. **This is the numpy twin of `unsqueeze`.** (The alternative, `e / e.sum()`, divides by one grand total: Mistake 1.)
-- `F.softmax(scores, dim=-1)` (Week 13). **Same function, new job**: last week it chose a letter; today it sets how much each earlier word counts.
+- `F.softmax(scores, dim=-1)` (Week 13). **Same function, new job**: last week it chose a letter; today it sets how much each word counts.
 - `argmax` (Level 3): the position of the biggest score, for the hard lookup in `lookup.py`.
 - `import torch.nn as nn`, `nn.Linear` with a table in `.weight` and `.weight.data = ...` (Week 8), `.tolist()` (Week 6), `torch.cat` and `torch.stack` (Weeks 10 and 12; Level 3 Week 27).
 - `(a - b).abs().max().item()`: the biggest gap between two tables of numbers (Week 6 used the same kind of test). `.all()` turns a table of True/False into one True/False: "are all of them true?"
@@ -196,7 +196,7 @@ All printed by the files below. Read them before class so nothing surprises you.
 3. **Small whole-number scores hide what big scores do.** With scores of 0, 1, 2 the softmax is gentle: the biggest weight is `0.576`. With scores in the tens, one weight takes nearly everything and the others nearly nothing. The student will not see this today; Week 15 measures it.
 4. **"Agreement" is to rounding, not exact.** numpy and torch agree to about `4e-08`, because torch keeps 32 bits and numpy 64. The pen agrees to the digits written down (`0.0004` here). A bigger gap is a bug or a transposed table (Mistake 4), not rounding.
 5. **Attention weights are not an explanation.** That the weight from `sat` to `the` is `0.212` does not say *why* a model produced any output. Week 19 opens a trained model and looks at heads, and it says exactly what it finds and no more.
-6. **This is the attention of a decoder-reading-itself ("self-attention")**: the questions, keys and values all come from the *same* three words. There is a version where the questions come from one sequence and the keys from another; we do not build it.
+6. **This is "self-attention"**: the questions, keys and values all come from the *same* three words. There is a version where the questions come from one sequence and the keys from another; we do not build it.
 
 ### 8. The misconceptions you will actually meet
 
@@ -217,7 +217,7 @@ Stop at: *"every word asks a question of every word; the answers are shared out 
 ```text
    W8   a cell that remembers          W13  scores -> chances (softmax); choose a letter
    W10  why memory fades               W14  scores -> weights; blend values (today)
-   W11  gates keep it                        same softmax, new job: how much each earlier word counts
+   W11  gates keep it                        same softmax, new job: how much each word counts
    W12  teach it names
                                        W15  two dials: divide (big scores) and mask (no peeking); heads
    W9   Review & Assessment 1          W16  positions, the block     W17  TinyGPT: the tables are learned
@@ -930,7 +930,7 @@ WRITE   What did "sat" pay most attention to, and which number says so?  _______
 ### The reveal (the part with the learning in it)
 
 1. **(2 min) Read the key together.** Scores: `[[1,0,1],[0,1,1],[1,1,2]]`. Weights to four places: `the [0.4223, 0.1554, 0.4223]`, `cat [0.1554, 0.4223, 0.4223]`, `sat [0.2119, 0.2119, 0.5761]`. Output: `[[0.578, 0.845], [0.845, 0.578], [0.788, 0.788]]`. The student marks their own sheet in another colour.
-2. **(1 min) Ask three things.** *"Which word pays the most attention to itself?"* (`sat`, 0.5761.) *"Why does `sat` pay more to itself than `the` does?"* (Its score with itself is 2, the others 1; `sat` is `[1, 1]`, which points the same way as itself more strongly than `[1, 0]` does.) *"Which two words get the same weights from `sat`?"* (`the` and `cat`: `0.2119` each; `sat` matches both equally.)
+2. **(1 min) Ask three things.** *"Which word pays the most attention to itself?"* (`sat`, 0.5761.) *"Why does `sat` pay more to itself than `the` does?"* (Its score with itself is 2, the others 1; `sat` is `[1, 1]`, a longer vector than `[1, 0]`, so its dot product with itself is bigger: a dot product grows with length as well as with direction, and every vector points exactly along itself.) *"Which two words get the same weights from `sat`?"* (`the` and `cat`: `0.2119` each; `sat` matches both equally.)
 3. **(1 min) The rounding trap.** If their output is `0.577`, `0.844`: *"Add your weights in row 1."* (0.999.) *"That gap is the whole difference. Carry four places."*
 
 ### The key

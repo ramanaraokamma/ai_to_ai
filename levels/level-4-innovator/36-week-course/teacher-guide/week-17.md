@@ -1328,7 +1328,7 @@ A write-up that says "the model is overfitting, so it is bad" or "the model unde
 | 1,536 more than 807,196 | a bias on q, k and v in four blocks (3 x 128 x 4) |
 | 1,152 fewer | each of the 9 layer norms (2 per block x 4, plus the final) counted as `d` instead of `2d` (9 x 128) |
 | 15,644 | the blocks are in a plain list (Clinic 3) |
-| first loss far below 3.33 | a leak (`y` is `x`), or an unusual batch |
+| first loss far below 3.33 | not a fresh model (loaded or already-trained weights), or an unusual batch. A leak (`y` is `x`) does **not** show at step 0 (page 17.4: 3.3368) |
 | training loss near 0.1 within a few hundred steps | the shift is missing (Clinic 2) |
 | 3.50 at step 0 | `calm_head=False` (Clinic 1) |
 

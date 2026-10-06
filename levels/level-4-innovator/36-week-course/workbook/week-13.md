@@ -581,7 +581,7 @@ T=0.2 : [0.836, 0.121, 0.043]
 T=5.0 : [0.836, 0.121, 0.043]
 ```
 
-Identical output for two very different `T`, and both are the `T = 1` shares (`0.836, 0.121, 0.043`), not a sharp one. Fix: `F.softmax(scores / T, dim=-1)`. The check: **change `T` and see that the output changes.** (For comparison, the right answer at `T = 0.2` is `[1.0, 0.0, 0.0]` to three decimals.)
+Identical output for two very different `T`, and both are (up to random draw noise) the `T = 1` chances (`0.844, 0.114, 0.042`; the draws gave `0.836, 0.121, 0.043`), not a sharp set. Fix: `F.softmax(scores / T, dim=-1)`. The check: **change `T` and see that the output changes.** (For comparison, the right answer at `T = 0.2` is `[1.0, 0.0, 0.0]` to three decimals.)
 
 **13.6-C (loud).** The bug: the test is "the total *including* this letter is below 0.7", and the top letter alone already holds 0.936. Nothing passes, so there is nothing to draw from.
 

@@ -202,7 +202,7 @@ lookup: guess one of the 4 values 0.327
 one sequence: [11, 9, 15, 4, 14, 9, 13, 3, 16, 11, 9]
 ```
 
-**4.3.** The third guesser is **not** 0.25. Explain, with the digits of the printed sequence `[11, 9, 15, 4, 14, 9, 13, 3, 16, 11, 9]` (keys 10-15 on the odd places, values on the even places starting at place 1): **the four values can repeat**, so picking one at random can hit the answer when it is a *different* pair that holds the same digit. Work it out: the chosen value is the right pair with chance `1/4`; otherwise (chance `3/4`) it still equals the answer with chance `1/10`.
+**4.3.** The third guesser is **not** 0.25. Explain, with the digits of the printed sequence `[11, 9, 15, 4, 14, 9, 13, 3, 16, 11, 9]` (counting places from 0: keys 10-15 on places 0, 2, 4, 6 and values on places 1, 3, 5, 7): **the four values can repeat**, so picking one at random can hit the answer when it is a *different* pair that holds the same digit. Work it out: the chosen value is the right pair with chance `1/4`; otherwise (chance `3/4`) it still equals the answer with chance `1/10`.
 
 `1/4 + 3/4 x 1/10` = ______ + ______ = ______ . Compare with the printed 0.327: ________________________________
 

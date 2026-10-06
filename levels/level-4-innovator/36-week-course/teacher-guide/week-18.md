@@ -770,7 +770,7 @@ A. 36  B. 0.9  C. 0.015  D. 0.36
 A. a vanishing gradient  B. an exploding gradient  C. healthy: a big number means strong learning  D. meaningless: gradients at different positions cannot be compared
 
 **A3.** Clipping the gradient to length 1.0 does which of these?
-A. Also enlarges tiny gradients, so it cures both diseases  B. Deletes the biggest entry of the gradient  C. Caps the recurrent weights at 1 for the rest of training  D. Shrinks that one update's gradient to length 1, and cannot enlarge a tiny one
+A. Also enlarges tiny gradients, so it cures both diseases  B. Deletes the biggest entry of the gradient  C. Caps the recurrent weights at 1 for the rest of training  D. Shrinks that one update's gradient to length 1 if it is longer than that, and cannot enlarge a tiny one
 
 **A4.** In an LSTM, the memory is updated as `c = f * c_old + i * g`. The slope of `c` with respect to `c_old` is
 A. `f`, the forget gate  B. `i`, the input gate  C. the output gate  D. always exactly 1
@@ -1184,7 +1184,7 @@ Self-marking covers A, B and C well: those answers are *checkable*. D and E need
 |:--:|:--:|---|
 | A1 | **C** | Compounding: `0.9 ^ 40 = 0.0148`. (36 and 0.36 are `0.9 × 40`.) |
 | A2 | **B** | `3.4e+03` against `4` is enormous: exploding. |
-| A3 | **D** | Clipping only shrinks: that update's gradient is rescaled to length 1. A tiny gradient stays tiny. |
+| A3 | **D** | Clipping only shrinks: a gradient longer than 1 is rescaled to length 1. A tiny gradient stays tiny. |
 | A4 | **A** | The slope back along the memory track is the forget gate `f`. |
 | A5 | **B** | `sigmoid(0) = 0.5`. |
 | A6 | **D** | `sigmoid(2) = 0.881`. (`sigmoid(4) = 0.982`.) |

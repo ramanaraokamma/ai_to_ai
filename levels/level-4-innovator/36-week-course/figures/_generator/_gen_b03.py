@@ -257,7 +257,7 @@ def w09_2():
         o.append(t(x + 75, 88, a, 18, INK, "middle", central=True))
         o.append(t(x + 75, 108, b, 12, INK, "middle", central=True))
         o.append(t(x + 75, 124, c, 12, INK, "middle", central=True))
-    o.append(t(40, 172, "The eight weeks on the grid; a week needs a redo at 60% or less of its marks", 14, INK))
+    o.append(t(40, 172, "The eight weeks on the grid; a week needs a redo when it scores under 60% of its marks", 14, INK))
     tie = {8: 1, 2: 2, 6: 3}
     for w in range(1, 9):
         x = 40 + (w - 1) * 90
@@ -276,7 +276,7 @@ def w09_2():
         "Top row, four gold step boxes joined by arrows: 1 mark in another colour (about 30 minutes), 2 fill the "
         "per-week grid (5), 3 circle at most two weeks (5), 4 one Bug Log sentence (5), totalling 45 minutes. Middle row, "
         "eight blue boxes for Weeks 1 to 8; Weeks 8, 2 and 6 are pink with ringed numbers 1, 2 and 3 for the tie-break "
-        "order. Below: a week needs a redo at 60 percent or less; Week 10 is about the Week 8 cell and leans on Week 2. "
+        "order. Below: a week needs a redo when it scores under 60 percent; Week 10 is about the Week 8 cell and leans on Week 2. "
         "No student scores are shown because none are measured.", o)
 
 

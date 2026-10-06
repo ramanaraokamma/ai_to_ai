@@ -571,7 +571,7 @@ silence_test(lk, "lookup")
 
 with torch.no_grad():
     lk(seq[:, :-1])
-w = lk.blocks[1].last_weights                                     # (500, 2, 9, 9)
+w = lk.blocks[1].last_weights                                     # (500, 2, 10, 10)
 pick_pos = (seq[:, 0:8:2] == seq[:, 9:10]).float().argmax(dim=1)   # which pair held the asked-for key: 0..3
 answer_pos = 2 * pick_pos + 1                                       # where that pair's value sits
 for head in range(2):

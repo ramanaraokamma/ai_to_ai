@@ -335,7 +335,7 @@ flips: 3 of 10 | 'A' answers: 13 of 20
 (e) On the pairs that did **not** flip, how many times does the judge's winner agree with the rubric? ______ of ______. On the pairs that did flip, could the judge have been right in both orders? ______
 (f) Ten pairs gave an estimate of ______; the 30-pair run of the chapter gave `0.267`; the planted number is `0.5`. One sentence: what does that spread say about one small test? ____________________________________________________________
 
-**Part 2 (pen, then computer): how small a habit can thirty pairs see?** For the stand-in, the chance that a pair flips is the planted `bias`, and the chance the judge says `A` to any one question is `0.5 + bias/2`.
+**Part 2 (pen, then computer): how small a habit can thirty pairs see?** For the stand-in, the chance that a pair flips is the planted `bias`, and, averaged over the two orders of a pair, the chance the judge says `A` is `0.5 + bias/2` (a single question is pulled by the pair itself: an honest answer is `A` in one order and `B` in the other).
 
 (a) Fill in for 60 answers (30 pairs, 2 orders) and 30 pairs:
 

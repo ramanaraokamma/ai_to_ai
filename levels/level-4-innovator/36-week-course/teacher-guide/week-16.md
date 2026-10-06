@@ -1333,7 +1333,7 @@ Use the stamps `0, 5, 10` (large seat stamps) and redo round 4: the numbers are 
 
 **"Why does the layer norm come before attention, not after?"** The reference module and Week 17 use norm-first ("pre-norm"), and the module gives its reason (a cleaner road for the gradient). We did not test norm-last this year.
 
-**"Why no bias on q, k and v?"** Convention again (the reference module says layer norm makes them redundant; not tested here). With a bias on all three the block at `d = 8` would have `848 + 3 x 8 = 872` knobs (arithmetic only, not run).
+**"Why no bias on q, k and v?"** Convention again (the reference module says layer norm makes them redundant; that is too strong: only a bias on `k` is exactly redundant, because it adds the same amount to every score in a row and softmax ignores that, while biases on `q` and `v` are not redundant and GPT-2 uses them; not tested here). With a bias on all three the block at `d = 8` would have `848 + 3 x 8 = 872` knobs (arithmetic only, not run).
 
 **"Why `self.mask[:T, :T]`?"** The mask was built for the longest sentence the block allows (`T` at construction); a shorter sentence uses the top-left corner.
 

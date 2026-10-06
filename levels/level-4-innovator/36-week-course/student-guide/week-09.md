@@ -234,7 +234,7 @@ You will be given the **marking sheet** (the short answers only) and a pen of a 
 
 **Why at most two?** Because a list of eight redos is a list nobody does. Two is a plan.
 
-**A week needs a redo when you scored 60% or less of its marks.** The marking sheet says the exact number of marks for each week.
+**A week needs a redo when you scored under 60% of its marks.** The marking sheet says the exact number of marks for each week.
 
 ### The remediation table
 

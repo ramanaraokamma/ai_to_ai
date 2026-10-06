@@ -373,7 +373,7 @@ Read the first thirty merges aloud. Many are English words (`the`, `and`, `old`,
 
 Three more things in that output:
 
-- The new sentence `the baker practised the cricket` contains two words your corpus never saw, and **it can still be written**: `practised` is spelled from six pieces (`p r ac t is ed`) and `cricket` from five. No holes.
+- The new sentence `the baker practised the cricket` contains two words your corpus never saw, and **it can still be written**: `practised` is spelled from six pieces (`p r ac t is ed`) and `cricket` from four (`c ri c ket`). No holes.
 - Of the 3,227 tokens, **1,277 are lone spaces**. That is 40%. Every space is a chunk of its own and nothing ever glues to it. It is a real weakness of our chunk rule. Hold on to it for the next section.
 - **Training stopped by itself at 400 merges** (`500 400` and `1000 400`). When no pair is left that occurs twice, there is nothing worth gluing. The vocabulary is limited by *the text*, not by what you ask for.
 

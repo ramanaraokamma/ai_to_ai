@@ -1163,7 +1163,7 @@ The code ran correctly. The **conclusion** is the mistake: the same prompt, the 
 
 **Round 3 — the table (7 min).** `versions.py`, seed 0. The student copies: v1 `50.0 / 0 of 8 / 310 in / 168 out / $0.0011`, v2 `68.8 / 2 / 1566 / 88 / $0.0020`, v3 `93.8 / 6 / 2262 / 88 / $0.0027`. Three questions: (a) *v1 is how far above the rock?* (`6.2` points, two fields.) (b) *in v3, which box is the bottleneck, and why can no prompt fix it?* (`urgency`, `6` of `8`; t3 and t8 are the ones where the stand-in's rules disagree with our gold; a specification bug, so the prompt is not the thing to tune.) (c) *v3 costs how many times v1?* (`0.0027 / 0.0011`, about `2.5` times: longer prompt, same answer size.) **Say the label**: *"all stand-in."*
 
-**Round 4 — the jar (5 min).** The student predicts the trip call for `BudgetGuard(0.004)`: they will need the per-call costs from the table (v1 about `$0.00014` per call, v2 about `$0.00025`, v3 about `$0.00034`). Running tells them: call 19, `$0.0042`. The closing question. **The answer:** both are right. The guard's `spent` includes the call that crossed the line (`19` calls); the limit was `$0.004`; the stand-in's meter counts the same 19 calls. The overspend is the price of the last call. *"How would you stop **before**?"* (Price the next call before making it. `preflight.py` is this, for the fast student.)
+**Round 4 — the jar (5 min).** The student predicts the trip call for `BudgetGuard(0.004)`: they will need the per-call costs from the table (v1 about `$0.00014` per call, v2 about `$0.00025`, v3 about `$0.00034`). Running tells them: call 19, `$0.0042`. The closing question. **The answer:** both are right. The guard's `spent` includes the call that crossed the line (`19` calls); the limit was `$0.004`; the stand-in's meter counts the same 19 calls. The overspend ($0.00017) is part of the price of the last call (call 19 cost $0.000334). *"How would you stop **before**?"* (Price the next call before making it. `preflight.py` is this, for the fast student.)
 
 **Round 5 — the sentence (0 min; wrap).** Each student writes one sentence in `log.txt` beginning *"The stand-in is not a model, so ..."*
 
@@ -1377,7 +1377,7 @@ Full marks need: (1) the student's own numbers from today (fingerprint, floor, v
 | Wrong answer | Likely cause |
 |---|---|
 | `43.75%` reported as `43%` | Truncation instead of rounding. |
-| Floor `62.5%` | Counted only the two easy fields (`4 + 5` of `8`) as if the other two were right. |
+| Floor `78.1%` | Counted only the two easy fields (`4 + 5`) and gave full marks (`8 + 8`) to the other two: `25` of `32`. |
 | Floor `50%` | Counted `order_id` 4 + `refund` 5 + `urgency` 3 + `category` 4 (treated a tie as a sum). |
 | `14 of 32` written `14 of 8` | Mixed cases with field decisions. |
 | "trips at call 7" | Compared `7 x 0.0014 = 0.0098` as if it exceeded the limit; it does not. |

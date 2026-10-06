@@ -1278,7 +1278,7 @@ print(re.sub(LOOSE, "[PHONE]", text))
 print(re.sub(SHAPED, "[PHONE]", text))
 ```
 
-**B8.** *(`p95` is the second-slowest of ten.)*
+**B8.** *(`p95` here means the element at index `int(0.95 * len(s))` of the sorted list, as in Week 34.)*
 
 ```py
 # B8

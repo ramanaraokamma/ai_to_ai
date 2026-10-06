@@ -355,7 +355,7 @@ ________________________________________________________________
 
 ### Page 6.1
 Matches: layer norm **C**, batch norm **E**, running statistics **G**, residual connection **F**, vanishing gradient **B**, `nn.Identity()` **A**, gradient clipping **D**.
-In your own words: a gradient highway is the `x + f(x)` path that lets the error walk back to the first layers with slope at least 1 from the road itself; gradient length is the size (length) of all the gradient numbers taken together. Difference between the norms: layer norm normalises across each **row** (one example), batch norm across each **column** (the batch).
+In your own words: a gradient highway is the `x + f(x)` path that lets the error walk back to the first layers with a slope of exactly 1 from the road itself (the block's own slope is then added to that 1); gradient length is the size (length) of all the gradient numbers taken together. Difference between the norms: layer norm normalises across each **row** (one example), batch norm across each **column** (the batch).
 Counts: `LayerNorm(64)` **128** parameters, **0** stored numbers; `BatchNorm1d(64)` **128** parameters, **129** stored numbers (64 means, 64 variances, 1 counter); `Identity` **0**.
 
 ### Page 6.2

@@ -33,7 +33,7 @@ By the end of the lesson the student can:
 
 1. **Say why SFT masks the prompt, and do it**: the guess at place `t` is for place `t+1`, so with a 5-token prompt the first **4** guesses are set to `-100`; show `3.8008` (all 8 guesses) against `4.0407` (the last 4) on the same numbers, and say which one is SFT.
 2. **Train a reward model from pairs**: write the Bradley-Terry loss with `F.logsigmoid`, watch it start at `0.6931` (`ln 2`, "no idea which is better") and fall to `0.0017`, and read five weights as "what the raters liked".
-3. **Find the hacked feature**: `has_numbered_steps` has the largest weight (`+5.047`), so an answer that is **only** numbered steps and says nothing (`r9`) outscores a short direct one (`+5.047` against `+4.578`). And say why a feature that never differs **inside a pair** gets weight exactly `0`.
+3. **Find the hacked feature**: `has_numbered_steps` has the largest positive weight (`+5.047`; `refuses` is larger in size, at `-6.091`), so an answer that is **only** numbered steps and says nothing (`r9`) outscores a short direct one (`+5.047` against `+4.578`). And say why a feature that never differs **inside a pair** gets weight exactly `0`.
 4. **Compute a KL divergence on paper**: two 4-outcome tables against a uniform reference, `0.1733` and `0.4458`; say it is `0` only when the two are equal, and that it depends on which table goes first (`0.4458` against `0.4298`).
 5. **Run DPO at two values of `beta`** and explain, with the KL number beside it, what `beta` did: at 300 steps `beta = 0.1` reaches `A = 0.997` with KL `1.760`, `beta = 5.0` reaches `A = 0.589` with KL `0.566`; and say why the smaller *loss* belongs to the model that moved less.
 

@@ -98,7 +98,7 @@ Three pieces of syntax, each on a toy small enough to read. Before you run `cons
 
 **(a) `random.Random(seed)`: your own private dice.** Python's `random` module has one shared dice that nobody seeded, so two runs give different numbers. `random.Random(7)` builds **a dice of your own**. Two of them with the same seed roll the same numbers, and neither disturbs torch's dice. You can say it as *"a dice with my name on it"*. Today's design uses it so that **the test prompts and the training prompts never share dice**: the test set comes out the same on every run.
 
-**(b) `hashlib.sha256`: a fingerprint.** You met `hashlib.md5` in Week 21 to catch duplicates. `sha256` is the same idea with a longer fingerprint (64 hex characters; we keep 12). Same text, same fingerprint; one letter changed, a completely different one.
+**(b) `hashlib.sha256`: a fingerprint.** You met `hashlib.md5` in Week 21 to catch duplicates. `sha256` is the same idea with a longer fingerprint (64 hex characters; we keep 12). Same text, same fingerprint; one letter changed, one that looks completely different.
 
 **(c) `torch.where(condition, a, b)`: choose, place by place.** Where `condition` is `True` take the number from `a`, where it is `False` take it from `b`. It is Week 15's causal mask, `masked_fill(mask == 0, -inf)`, with the choice written out.
 
@@ -165,7 +165,7 @@ masked softmax : [0.731, 0.269, 0.0, 0.0]
 same as Wk 15  : True
 ```
 
-Read the second line again: the twin dice give the same five rolls. Read `torch unmoved`: a hundred rolls of a private dice did not disturb torch. `shuffled` shows the list **after** `shuffle` changed it: `shuffle` works **in place** and gives back nothing. The fingerprint changed in every character when one letter changed: it is not "close". And `-inf` is a score so low that `exp` of it is zero, so the last two chances are exactly `0.0`.
+Read the second line again: the twin dice give the same five rolls. Read `torch unmoved`: a hundred rolls of a private dice did not disturb torch. `shuffled` shows the list **after** `shuffle` changed it: `shuffle` works **in place** and gives back nothing. The fingerprint of the changed text looks nothing like the first (only one of the 12 characters happens to match, by luck): it is not "close". And `-inf` is a score so low that `exp` of it is zero, so the last two chances are exactly `0.0`.
 
 ### 2. The codes: `icl.py`
 

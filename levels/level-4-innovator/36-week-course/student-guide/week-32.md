@@ -369,7 +369,7 @@ matplotlib.use("Agg")                                   # draw to a file, not a 
 import matplotlib.pyplot as plt
 
 cov, acc = [], []
-for t in np.arange(0.50, 0.981, 0.01):
+for t in np.round(np.arange(0.50, 0.981, 0.01), 2):
     answered = conf >= t
     if answered.sum() >= 1:
         cov.append(answered.mean())
@@ -386,7 +386,7 @@ print("saved curve.png")
 ```
 
 ```text
-47 points; first (coverage, accuracy) = (1.000, 0.575); last = (0.025, 1.000)
+48 points; first (coverage, accuracy) = (1.000, 0.575); last = (0.025, 1.000)
 saved curve.png
 ```
 
@@ -437,7 +437,7 @@ Run it and compare. ECE and Brier both improve while **not one answer has change
 ```python
 # DELIBERATE BUG D5 (SILENT): "pick the threshold with the best accuracy". The score being chased is not the goal.
 best = None
-for t in np.arange(0.50, 0.981, 0.01):
+for t in np.round(np.arange(0.50, 0.981, 0.01), 2):
     answered = conf >= t
     if answered.sum() >= 1:
         acc = right[answered].mean()
@@ -447,7 +447,7 @@ print(f"best threshold {best[0]}: accuracy of answered {best[1]:.3f} on {best[2]
 ```
 
 ```text
-best threshold 0.96: accuracy of answered 1.000 on 1 of 40 answers
+best threshold 0.97: accuracy of answered 1.000 on 1 of 40 answers
 ```
 
 Nothing failed. The rule found a perfect `1.000`, and it does it by answering **one question in forty**. The proxy (accuracy of the answered) was maximised and the goal (a system you can rely on) was thrown away. That is the title of this week.

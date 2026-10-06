@@ -348,7 +348,7 @@ for step in range(40):
 print(opt.param_groups[0]["lr"])
 ```
 
-with the cosine from P4. The rate printed is `0.02` after 40 steps, when it should be near 0.0004. What is missing? ______________________________
+with the cosine from P4. The rate printed is `0.02` after 40 steps, when it should be far below 0.02 (it depends on `T`). What is missing? ______________________________
 
 **D5 — NO ERROR, but wrong.** The rate at steps 0, 25, 50, 75 prints `0.02, 0.01, 0.0, 0.01`. What went wrong at step 75? ______________________ Write the line that fixes it: ______________________________________________
 
@@ -451,7 +451,7 @@ Marking: allow the 3rd decimal on the multiplier and the 5th decimal place on th
 
 **M4.** `0 / 5 = 0`, so a rate of **0**. A zero rate does nothing, so the first step is wasted.
 
-**M5.** Any honest two. Good ones: "the two curves are almost the same after the ramp"; "warm+cos is lower in the middle, because its cosine started 5 steps later and so falls over a shorter distance (45 steps), ending in the same place"; "both hit 0 at step 50"; "the warm+cos is a straight line up for 5 steps". (Check: at step 25 warm+cos is 0.01174, higher than cos at 0.01000.)
+**M5.** Any honest two. Good ones: "the two curves are almost the same after the ramp"; "warm+cos is higher in the middle, because its cosine started 5 steps later and so has fallen less by any given step, ending in the same place"; "both hit 0 at step 50"; "the warm+cos is a straight line up for 5 steps". (Check: at step 25 warm+cos is 0.01174, higher than cos at 0.01000.)
 
 **M6.** Around step **25** (the middle, between about steps 20 and 30). A straight line is at **0.016** at step 10; the cosine is at **0.01809**. The cosine starts **slower** than a straight line.
 
@@ -491,7 +491,7 @@ bs 420  60 epochs =  120 steps: 0.036   180 epochs = 360 steps: 0.068
 - **R1.** Column 1 held **epochs** fixed; it also changed **steps** (2,100 against 120). Column 2 held **steps** fixed (about 360); it also changed **epochs, the number of times the same 840 points are revisited** (10 against 180).
 - **R2 model:** *"On 840 training points, with 3 seeds, I held steps fixed at about 360. The result was val 0.056, 0.039 and 0.068 for batches 24, 120 and 420. That could also be because batch 420 ran 180 epochs, so it saw the same points 180 times, while batch 24 ran only 10."*
 - **R3.** Can: "at the same number of steps, batch 420 (0.068) was worse than batch 120 (0.039) on these 3 seeds." Cannot: that bigger batches are worse in general. Also, in column 1 batch 420 (0.036) is the **best** row, with only 120 steps. **The two columns point in opposite directions**, which is the whole lesson: neither experiment is neutral.
-- **R4.** Column 2 supports it, but "less noisy" is not what the table tests: epochs changed from 10 to 180. You would need the same steps **and** the same epochs (hard to do together), several more seeds, and still worse.
+- **R4.** Column 2 supports it, but "less noisy" is not what the table tests: epochs changed from 10 to 180. You cannot hold steps and epochs fixed together (steps = epochs x `840 // batch`), so you would need bigger batches to be worse in **both** experiments, with several more seeds, and ideally with the learning rate re-tuned per batch size.
 - **R5.** Different seeds give the same ordering if the gap is large and different digits always. If the ordering flips, the gap was inside the noise.
 
 A worked example from the class table, for comparison (do not copy it): five-seed means at 60 epochs are 0.046, 0.039, 0.039, 0.039, 0.053 for batches 8, 32, 64, 128, 512; at 780 steps, batches 128 and 256 give 0.073 against 0.034 and 0.039 for batches 32 and 64.
@@ -499,7 +499,7 @@ A worked example from the class table, for comparison (do not copy it): five-see
 ### Page 4.6
 
 - **H1.** Two (98.1, 97.2); five.
-- **H2.** The "always answer the same class" score, since 46.9% of the validation set is one class and 53.1% the other. Nothing learned. (The Week 1 `ln 2` coin in another costume.)
+- **H2.** The "always answer the same class" score, since 46.9% of the validation set is one class and 53.1% the other. The run ended at chance level (it may have reached ~99% earlier and then diverged; the table shows only the final epoch). (The Week 1 `ln 2` coin in another costume.)
 - **H3.** Honest answers vary. The best (tied) rows are `cosine only` and `warmup+cosine`, both 98.9; `warmup only` was **not** the safe one.
 - **H4.** **Smaller.** The gap between the means is 0.004 (0.039 against 0.035); inside the `constant` row the seeds span 0.020 (0.030 to 0.050).
 - **H5.** At the too-big rate the falling rate rescued every seed, while warmup alone did not. At the gentle rate none of the schedules differed more than the seeds did. So a schedule can rescue a bad rate; it does not make a good rate better, on this problem.
@@ -523,7 +523,7 @@ Bug Log: any real entries are fine if the **last line** (not the whole traceback
 3. It returns a **list**, one entry per parameter group; we have one group.
 4. 13; 1. Same epochs gives big batches far fewer steps (780 steps at batch 64 against 60 at batch 512, 13 times as many).
 5. At equal steps, big batches run many more epochs and so revisit the same 840 points, which can memorise them (train loss near 0.000).
-6. The same steps, the same epochs, more than one seed, and still worse.
+6. Worse under the same-epochs design **and** the same-steps design (you cannot fix both at once), with more than one seed, and ideally the learning rate re-tuned per batch size.
 
 ---
 

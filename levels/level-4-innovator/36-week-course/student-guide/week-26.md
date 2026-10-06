@@ -331,7 +331,7 @@ Read the last column before the recall columns.
 
 - `by note (the files)` gets `1.00 / 1.00 / 1.00` and sends `146` words per question, `21%` of the notebook.
 - `fixed 250 words` also gets `1.00` everywhere, and sends `718` words: **`104%` of the notebook**. It has not retrieved anything; it has pasted the whole document.
-- The small windows send fewer words (`13%`) and lose a question or two: a fact cut in half is in neither half. The gaps between `0.90` and `1.00` are **one question**.
+- The small windows send fewer words (`13%`) and lose a question or two: the right phrase is still inside some window, but a small window shares fewer of the question's words, so another window can score higher. The gaps between `0.90` and `1.00` are **one question**.
 
 **Always report a recall number with the fraction of the corpus that bought it.**
 
@@ -411,7 +411,7 @@ check : (True, [8], []) <- a VALID citation on a WRONG answer
 right note (1) is in what we served: True
 ```
 
-The first three faults all fail the check, so the check does its job: a made-up id (`99`), no id at all, and an answer that ignores the sources. Now the last block. The question was about `NaN`. The right note (1) **was** served. The answer is about batch sizes and cites note 8, a note that was handed over. The check says `True`.
+The first three faults all fail the check, so the check does its job: a made-up id (`99`), no id at all, and an answer that ignores the sources (caught only because it cites nothing: the same answer with a served id on it would pass). Now the last block. The question was about `NaN`. The right note (1) **was** served. The answer is about batch sizes and cites note 8, a note that was handed over. The check says `True`.
 
 > **A valid citation on a wrong answer.** The check tests that the id was served. It cannot read the note and it cannot tell whether the sentence answers the question. Write `<- a VALID citation on a WRONG answer` in your own words in your Bug Log.
 
@@ -468,7 +468,7 @@ The `errors` column adds two kinds of mistake: an answerable question **refused*
 - At `tau = 0.12` all ten of yours are answered and three of the four unanswerable ones are refused: one mistake. That is the best row.
 - At `tau = 0.25` all four unanswerable are refused, but two real questions are lost: two mistakes.
 - **No row has zero.** The lists overlap: an unanswerable question scores `0.218`, above an answerable one at `0.131`. No line separates them.
-- Look at the stranger column. The threshold that is cleanest on your own wording (`0.25`) answers **one** of the ten stranger questions. A threshold tuned on questions you wrote is tuned on the easy ones.
+- Look at the stranger column. The strictest threshold, the one that refuses all four unanswerable questions (`0.25`), answers **one** of the ten stranger questions. A threshold tuned on questions you wrote is tuned on the easy ones.
 
 (`0.200` in your list is really `0.19977...`, just below `0.20`, so at `tau = 0.20` eight of ten are answered, not nine. Read the raw number, not the rounded one.)
 

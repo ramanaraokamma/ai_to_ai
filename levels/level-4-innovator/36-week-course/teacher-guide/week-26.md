@@ -36,7 +36,7 @@ By the end of the lesson the student can:
 2. **Report recall@1/3/5 on questions they wrote first**, and say why that number is an *upper bound*: the same ten facts in a stranger's words score `0.20 / 0.50 / 0.60` instead of `1.00 / 1.00 / 1.00`.
 3. **Compare chunkings honestly**: notes-as-chunks (`1.00` everywhere, 146 words served per question, 21% of the notebook) against fixed windows of 30, 60, 120 and 250 words, and say why the 250-word row's perfect `1.00` is useless (`104%` of the notebook is sent — it is pasting the whole document).
 4. **Number the sources, demand the id back, and verify it in code** with `re.findall` and two sets: `cited - served` must be empty and `cited` must not be. Then say what the check **cannot** see (a valid id on a wrong answer).
-5. **Refuse**: choose a threshold by sweeping it over answerable and unanswerable questions, say that the two score lists overlap (so no threshold is perfect), and say that the threshold belongs to **one embedder** (`0.25` for TF-IDF; `0.85` for Week 25's LSA tier).
+5. **Refuse**: choose a threshold by sweeping it over answerable and unanswerable questions, say that the two score lists overlap (so no threshold is perfect), and say that the threshold belongs to **one embedder** (`0.12` for TF-IDF, or `0.25` if no invented answer is acceptable; `0.85` for Week 25's LSA tier).
 6. **Diagnose a wrong answer as retrieval or generation** by reading the served chunks, and fill a 2 × 2 table with counts.
 7. **Show the injection**: a planted note is retrieved, copied, and cited with `citations verified: True`; a pattern filter catches the wording it was written for and misses three rewordings.
 
@@ -50,7 +50,7 @@ Observable evidence: the printed lines `same 15 chunks as rag.notebook_chunks():
 
 ### 1. What the student is doing today, in one paragraph
 
-The student has a 15-note index (Week 25) and the idea of recall@k. Today the index gets a job. They put the notes in a folder, list the files with `Path.glob`, build the index, and **write ten questions before they search** — and then watch a stranger's version of the same ten questions drop recall@1 from `1.00` to `0.20`. They cut the same text five ways and read a table that shows the perfect-looking row (`250` words) is the useless one. They number the sources, let a scripted writer answer, and write the check that the number it names was one of the numbers they served. They break the writer three ways on purpose and watch the check catch two of them and *miss* a valid citation on a wrong answer. They sweep a refusal threshold and see that the answerable and unanswerable score lists overlap. They diagnose wrong answers as retrieval or generation by reading the chunks. Finally they plant a note that gives orders, watch the pipeline hand it back with a verified citation, and see a filter catch one wording and miss three. The honest finishing sentence: *"the system retrieves well on questions I wrote, badly on a stranger's; the check proves a citation is real, not that the answer is right; and a refusal threshold is a measured compromise for one embedder."*
+The student has a 15-note index (Week 25) and the idea of recall@k. Today the index gets a job. They put the notes in a folder, list the files with `Path.glob`, build the index, and **write ten questions before they search** — and then watch a stranger's version of the same ten questions drop recall@1 from `1.00` to `0.20`. They cut the same text five ways and read a table that shows the perfect-looking row (`250` words) is the useless one. They number the sources, let a scripted writer answer, and write the check that the number it names was one of the numbers they served. They break the writer three ways on purpose and watch the check catch all three (the third only because it cites nothing) and then *miss* a valid citation on a wrong answer. They sweep a refusal threshold and see that the answerable and unanswerable score lists overlap. They diagnose wrong answers as retrieval or generation by reading the chunks. Finally they plant a note that gives orders, watch the pipeline hand it back with a verified citation, and see a filter catch one wording and miss three. The honest finishing sentence: *"the system retrieves well on questions I wrote, badly on a stranger's; the check proves a citation is real, not that the answer is right; and a refusal threshold is a measured compromise for one embedder."*
 
 ### 2. 🔢 The maths you need — taught to you first
 
@@ -117,7 +117,7 @@ All printed by the blocks in the Prep Checklist. Read them before class.
 1. **Ten questions is a small sample.** One question is `0.10`. The gap between `1.00` and `0.20` is not a small-sample effect; the gap between `0.90` and `1.00` in the chunking table is **one question**. Say so.
 2. **The notes are typed and the questions are the teacher's.** The recall numbers describe *this* notebook with *these* questions. Nothing today ranks RAG designs in general.
 3. **The writer is a sentence-copier.** Its "wrong answers" (3 of 10) are what a word-overlap rule does, not what a model does. We use them because they make a *shape* of failure visible (right note served, wrong sentence used), not because they predict a rate.
-4. **The threshold is tuned on 14 questions and transfers badly.** The threshold that is cleanest on the student's own wording (`0.25`) answers `1` of the 10 stranger questions (Mistake 9).
+4. **The threshold is tuned on 14 questions and transfers badly.** The strictest threshold, the one that refuses all four unanswerable questions (`0.25`), answers `1` of the 10 stranger questions (Mistake 9).
 5. **The injection demonstration shows the pipeline, not a model.** See section 3.
 6. **No pretrained embedder or model was run.** Nothing here says how a hosted system behaves.
 7. **Timing on another machine is not a result.** Nothing in the lesson depends on speed.
@@ -127,7 +127,7 @@ All printed by the blocks in the Prep Checklist. Read them before class.
 1. **"A citation means it's right."** It means the writer named a note it was handed. Block P6's last lines are the counterexample; Page 26.1's answers 2 and 5 are the pen version.
 2. **"RAG stops the model making things up."** It changes where it looks. The hook shows a cited answer to a question the notes cannot answer.
 3. **"If recall@3 is 1.00 the retrieval is good."** Only on those questions, at that k, for that cost in words served. Ask: *"who wrote the questions?"* and *"what fraction of the notebook did k = 3 send?"*
-4. **"0.2 is the threshold."** It is the threshold *for TF-IDF scores on this notebook*; the LSA tier wants `0.85`. A threshold is a measurement of one embedder.
+4. **"0.2 is the threshold."** The best line for TF-IDF scores on this notebook is `0.12` (and `0.20` is actually the worst row, 3 mistakes); the LSA tier wants `0.85`. A threshold is a measurement of one embedder.
 5. **"The retrieved text is just facts."** It is text somebody wrote. It can contain orders. Treat it as data.
 6. **"Our filter solves injection."** It solves the sentence it was written for. Three rewordings slip past.
 7. **"The stand-in didn't obey the planted note, so it's safe."** The stand-in cannot obey anything. That says nothing about a real model.
@@ -1030,7 +1030,7 @@ Ask the student to write a seventh answer that the program would accept, that th
 
 **"What is a chunk?"** One piece of text that gets its own row in the index and comes back whole. Ours are the notes (the author's own boundaries) or windows of a fixed number of words.
 
-**"Why are notes better chunks than 30-word windows?"** On this notebook they score `1.00 / 1.00 / 1.00` against `0.80 / 0.90 / 1.00`, at 146 words served against 90. The 30-word row saves words and costs a question or two: facts get cut in half. It is ten questions, so the difference is one or two of them.
+**"Why are notes better chunks than 30-word windows?"** On this notebook they score `1.00 / 1.00 / 1.00` against `0.80 / 0.90 / 1.00`, at 146 words served against 90. The 30-word row saves words and costs a question or two: every right phrase is still inside some window, but a small window shares fewer of the question's words, so another window can outscore it. It is ten questions, so the difference is one or two of them.
 
 **"What is overlap for?"** Letting a sentence that straddles a boundary appear whole in one chunk. It costs storage (`1.35×` at 8 words, `1.96×` at 15, for 30-word windows) and buys, here, nothing visible (Key, K4).
 
@@ -1038,7 +1038,7 @@ Ask the student to write a seventh answer that the program would accept, that th
 
 **"Why is the threshold not just 0.5?"** The scores come out of TF-IDF, where most answerable questions score 0.13 to 0.69. A 0.5 line would refuse 6 of your 10. For the LSA tier the right line is around 0.85. A threshold belongs to an embedder.
 
-**"Can I set the threshold so nothing wrong gets through?"** Yes: `0.25` refuses all four unanswerable questions. It also refuses two real ones, and on a stranger's wording it refuses nine of ten. Nothing is free.
+**"Can I set the threshold so nothing wrong gets through?"** No, only so no *unanswerable* question gets an answer: `0.25` refuses all four of them (answerable questions can still get a wrong sentence with a valid citation). It also refuses two real ones, and on a stranger's wording it refuses nine of ten. Nothing is free.
 
 **"What is gate 2?"** The writer's own escape hatch: if what it was handed does not contain the answer, it says `NOT IN NOTES`. Ours does it by counting shared words (`min_overlap`). A real writer might do it by reading. Either way it is a second line of defence, not a replacement for the first.
 
@@ -1098,7 +1098,7 @@ Ask these out loud near the end; do not rescue.
 | Name something the check cannot see. | A real, served id on a wrong answer | "A missing citation" (it can see that) |
 | Why is a recall of `1.00` for 250-word chunks useless? | It sent `104%` of the notebook; it pasted the document | "It is the best" |
 | Is there a perfect threshold? | No; the score lists overlap, so every line makes a false refusal or an invented answer | "0.2" |
-| Does `0.25` work for every embedder? | No; it is the TF-IDF line; the LSA tier wants about `0.85` | "Yes" |
+| Does `0.12` (or `0.25`) work for every embedder? | No; they are TF-IDF lines; the LSA tier wants about `0.85` | "Yes" |
 | A wrong answer: where do you look first? | At the served notes: is the right note there? If yes, generation; if no, retrieval | "At the writer" |
 | What did the planted note show? | The pipeline hands retrieved text to the writer and the check passes it; retrieved text is data that can carry orders | "The model got hacked" |
 

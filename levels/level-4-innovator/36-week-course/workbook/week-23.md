@@ -393,7 +393,7 @@ Was call 5 ever made? ____ (Look at the loop: what does `break` do?)
 
 Last line (the stand-in's own meter): ______________________________________________
 
-Overspend: `spent - limit` = $________ . That equals the cost of which call? _____________
+Overspend: `spent - limit` = $________ . Which single call pushed it over, and is the overspend bigger or smaller than that call's cost? _____________
 
 The guard and the stand-in's meter agree. Who is right? Circle: **the guard** / **the meter** / **both, they count the same 19 calls**
 
@@ -694,7 +694,7 @@ stopped at call 4: spent $0.0220 over 4 calls, limit $0.0200
 
 Call 5 was **never made**: `break` ends the loop as soon as the alarm is caught. Call 4 was made and paid for.
 
-**C.** `STOPPED: spent $0.0042 over 19 calls, limit $0.0040` and `the stand-in's own meter says $0.0042 over 19 calls`. Overspend: `$0.0002`, the cost of **call 19**, the one that crossed. **Both, they count the same 19 calls.**
+**C.** `STOPPED: spent $0.0042 over 19 calls, limit $0.0040` and `the stand-in's own meter says $0.0042 over 19 calls`. Overspend: `$0.0002` (exactly `$0.00017`), which is **part of** the cost of **call 19**, the one that crossed (that call cost `$0.000334`; `$0.0038` had been spent before it). **Both, they count the same 19 calls.**
 
 **D.** `class BudgetExceeded(Exception): pass` makes a **new kind of error with your own name** (`pass` means nothing more inside). `raise BudgetExceeded("...")` **throws** one, with a message. `except BudgetExceeded as e:` catches **only that kind** and puts the message in `e`. `except Exception:` catches **every** kind of error, including your own alarm, so the loop carries on past a budget that is already blown (Bug 23.7-A).
 

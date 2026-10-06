@@ -592,7 +592,7 @@ step  train  validation
  300  1.103  2.880
 ```
 
-Read this before class, because it changes what "the validation loss" means. **The letter-frequency baseline is `2.735`**: a model that looks at no context at all, only how often each letter occurs. The real model beats it only in the window of steps 40 to about 220 and never by much (best `2.301` at step 80). Everything after that is worse than counting letters. The recipe's `800` is the number from the reference module, not a tuned stopping point.
+Read this before class, because it changes what "the validation loss" means. **The letter-frequency baseline is `2.735`**: a model that looks at no context at all, only how often each letter occurs. The real model beats it only in the window of steps 20 to about 250 (it is already below `2.735` at step 20, `2.607`, and back above it by step 260, `2.739`) and never by much (best `2.301` at step 80). Everything after that is worse than counting letters. The recipe's `800` is the number from the reference module, not a tuned stopping point.
 
 **Teacher-only block T2 — three training seeds, two stopping points** (about 6 seconds)
 
@@ -954,7 +954,7 @@ dropout on : 3.659
 dropout off: 3.417
 ```
 
-**Read it:** three calls, three different numbers (`3.629, 3.543, 3.659`), all above the honest `3.417`. Dropout zeroes a random share of the memory on every call. **Two tells:** the number is different each time with nothing else changed, and all three are above the eval-mode number. **Fix:** `model.eval()` before measuring (`loss_of` does it; a hand-written measurement forgets it). This is Week 5's silent mistake on new ground.
+**Read it:** three calls, three different numbers (`3.629, 3.543, 3.659`), all above the honest `3.417`. Dropout zeroes a random share of the 64 numbers (`h`) going into the output layer on every call (not the memory `c`, and not the loop itself). **Two tells:** the number is different each time with nothing else changed, and all three are above the eval-mode number. **Fix:** `model.eval()` before measuring (`loss_of` does it; a hand-written measurement forgets it). This is Week 5's silent mistake on new ground.
 
 ### Mistake 7 — the generator is re-created inside the loop (SILENT)
 

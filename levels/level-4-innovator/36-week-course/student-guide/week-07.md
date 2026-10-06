@@ -552,9 +552,9 @@ norm = batch             0.423   0.187   0.065   0.117     0.019    1.111   3e-0
 
 For each of the five rows, write in your Bug Log:
 
-- Which Week 1 curve (A to F) does it most look like, and which number tells you?
+- Which of the six shapes A to F (listed on workbook page 7.4; these letters are not the Week 1 learning-rate cards) does it most look like, and which number tells you?
 - Two rows end at nearly the same final loss. Which cheap check separates them?
-- One row has validation loss **below** training loss. Name one cheap check you would run before trusting that.
+- One row has validation loss clearly **below** training loss (and one more, `lr = 1e-5`, is below it by a hair). Name one cheap check you would run before trusting that.
 
 ---
 

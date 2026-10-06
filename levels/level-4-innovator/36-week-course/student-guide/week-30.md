@@ -457,7 +457,7 @@ best possible constant answer on this eval: 7/30 = 0.233
     x charts stopped rendering yesterday afternoon       gold=technical     pred=greeting
 ```
 
-Did your order survive? The trained one has to be compared with the *rules*, not with the floor. Read the rules' five misses aloud. `"hi"` is a greeting key, and `"hi"` sits inside `something`, `nothing` and `everything`. (A key matched inside a longer word is a classic bug of keyword rules.)
+Did your order survive? The trained one has to be compared with the *rules*, not with the floor. Read the rules' five misses aloud. `"hi"` is a greeting key, and `"hi"` sits inside `something`, `nothing` and `everything`, and `afternoon` is itself a greeting key, so the greeting rule grabs three technical and one refund ticket before their own rules get a turn. (A key matched inside a longer word is a classic bug of keyword rules.)
 
 Now the table that tells the truth: the average, then **every category**. `compare.py` is handed over; read the table it prints.
 
@@ -1034,7 +1034,7 @@ first-position wins 30/60, flips 0/30  ->  'no position bias found'
 the first number random.Random(0).random() gives: 0.8444 (above 0.5, so the judge always looks)
 ```
 
-Nothing crashes, and the result looks like a clean bill of health. Explain to yourself why `0.8444 < 0.5` matters here. The instrument has been wired so that it cannot see the thing it is for. *A test that cannot fail has not passed.*
+Nothing crashes, and the result looks like a clean bill of health. Explain to yourself why `0.8444 < 0.5` being false matters here. The instrument has been wired so that it cannot see the thing it is for. *A test that cannot fail has not passed.*
 
 ---
 
@@ -1069,7 +1069,7 @@ Nothing crashes, and the result looks like a clean bill of health. Explain to yo
 
 Then write this sentence in your Bug Log in your own handwriting:
 
-> **"The eval was written first and fingerprinted, the free rules beat my model, my scan cannot see a paraphrase, kappa says the lenient judge is only 0.375 better than luck, and the pairwise judge changed its mind when I swapped the order, so I do not trust a single-order verdict. The judge is a stand-in, so its habit says nothing about a real model."**
+> **"The eval was written first and fingerprinted, the free rules beat my model, my scan cannot see a paraphrase, kappa puts the lenient judge at only 0.375 on a scale where 0 is luck and 1 is perfect, and the pairwise judge changed its mind when I swapped the order, so I do not trust a single-order verdict. The judge is a stand-in, so its habit says nothing about a real model."**
 
 **A look ahead.** Week 31 puts something under this ruler: a tiny model that read a pile of sentences once, then was adjusted on 64 tickets in two ways. You will need `evalset.py`, `traindata.py`, `dedup.py`, `scorer.py` and `compare.py` from this week. Check that `python -c "import evalset"` succeeds in your folder.
 

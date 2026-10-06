@@ -60,7 +60,7 @@ input :  START  a   n   i   k   a   EOS  PAD
 target:    a    n   i   k   a  EOS  PAD  PAD
 ```
 
-Read down a column: at each step the model sees the top letter and must say the bottom one. That move is called **shift right**. We use the id of PAD (`0`) as the start token. Nothing real is ever `0`, so a `0` in the input can only mean "nothing has been said yet".
+Read down a column: at each step the model sees the top letter and must say the bottom one. That move is called **shift right**. We use the id of PAD (`0`) as the start token. Nothing real is ever `0`, so a `0` in the input can only mean "nothing has been said yet" (or, once the name has ended, "nothing more to say": look at step 7 in the `anika` table of block 1).
 
 Two pieces of syntax do the shifting. **`torch.full(shape, value)`** makes a grid of that shape with `value` written in every cell; **the shape is a tuple**, like `(231, 1)`. **`torch.cat([a, b], dim=1)`** glues tensors side by side along an axis that already exists; you met it in Level 3 Week 27. And `data[:, :-1]` is "every row, every column except the last": the last column is never an input, because nothing follows it.
 

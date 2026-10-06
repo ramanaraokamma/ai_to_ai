@@ -245,7 +245,7 @@ Use the lines below, or a sheet of paper. **Every number must come from your own
 
 **1. The mask (`sftmask.py`, seed ____ ).** I measured: all 8 guesses ____________ , the last 4 ____________ . It shows: _____________________________________________ . It does **not** tell us: _____________________________________________
 
-**2. The judge (`reward.py`, seed ____ ).** I measured: loss at step 1 ____________ , step 500 ____________ ; biggest weight ____________ for ____________ ; `r9` reward ____________ . It shows: _____________________________________________ . It does **not** tell us: _____________________________________________
+**2. The judge (`reward.py`, seed ____ ).** I measured: loss at step 1 ____________ , step 500 ____________ ; biggest positive weight ____________ for ____________ ; `r9` reward ____________ . It shows: _____________________________________________ . It does **not** tell us: _____________________________________________
 
 **3. The leash (`dpo.py`, no randomness).** I measured: `beta = 0.1` gives `A` = ______ , KL ______ , loss ______ ; `beta = 5.0` gives `A` = ______ , KL ______ , loss ______ . It shows: _____________________________________________ . It does **not** tell us: _____________________________________________
 

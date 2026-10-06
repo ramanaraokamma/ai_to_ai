@@ -43,8 +43,8 @@ warmup+cosine   99.2  98.9  98.9  98.9  98.9   mean  98.9
 
 Before you read any further, write in your Bug Log:
 
-1. In the `constant` row, what do `46.9`, `50.6` and `53.1` have in common? (Hint: the validation set is 46.9% one class and 53.1% the other. What does a model that ignores the data score?)
-2. How many of the five seeds learn with a constant rate? How many with `cosine only`?
+1. In the `constant` row, what do `46.9`, `50.6` and `53.1` have in common? (Hint: the validation set is 46.9% one class and 53.1% the other. What does a model that ignores the data score? These runs ended there, but see Question 2 before you decide they never learned anything.)
+2. How many of the five seeds are still above 90% at the END of the run with a constant rate? How many with `cosine only`? (Run `hook.py` below and print the best accuracy any epoch reached, `max(h["acc"])`. Does "ended at 46.9%" mean "never learned"?)
 3. Which row would you have picked as "the best" before seeing the numbers? Does the table agree with you?
 4. Is this a result about every network and every problem? What is it a result about?
 

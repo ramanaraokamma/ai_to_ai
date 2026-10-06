@@ -277,7 +277,7 @@ query: which optimiser was best
 
 The table went from `(15, 3906)` to `(15, 14)` and kept `0.941` of the spread. **The right note (`[0]`) came second.** The first was "Learning rate sweep", which also contains the word `best`. Do not fix it: a ranking error is a reason to ask *what was shared*, not evidence of a bug. The rest of the week measures how often this happens.
 
-> **Why 14 and not 15?** With 15 notes there are at most 14 useful directions. "14 numbers per note" is not much compression; it is mostly a change of axes.
+> **Why 14 and not 15?** A table of 15 notes has at most 15 directions, and asking for all 15 keeps everything (`1.000` of the spread), so nothing is squeezed. `l4lib` stops at one fewer than the number of notes (14), so at least one direction is dropped. "14 numbers per note" is not much compression; it is mostly a change of axes.
 
 ### Save it, and load it back
 
@@ -535,7 +535,7 @@ Traceback (most recent call last):
 ValueError: n_components(5000) must be <= n_features(3906).
 ```
 
-Did the message tell you what to do? It names both numbers. Write in your Bug Log the largest sensible `n_components` for 15 notes, and why `15` would leave nothing to keep.
+Did the message tell you what to do? It names both numbers. Write in your Bug Log the largest sensible `n_components` for 15 notes, and why asking for all `15` would squeeze nothing (it keeps every direction).
 
 ---
 

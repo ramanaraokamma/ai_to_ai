@@ -203,7 +203,7 @@ The six shapes:
 
 **R2.** Two runs end with almost the same loss (about 0.69). Which two? ____________ and ____________ . The number that separates them: ____________
 
-**R3.** For `batch_size = 512`, the gradient length is biggest (0.163). Does that prove anything? (Hint: how many update steps did it get? See C7.)
+**R3.** For `batch_size = 512`, the gradient length (0.163) is several times the healthy run's (0.026). Does that prove anything? (Hint: how many update steps did it get? See C7.)
 
 ________________________________________________________________
 

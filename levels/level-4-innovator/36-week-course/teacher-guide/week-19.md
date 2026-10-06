@@ -54,7 +54,7 @@ Last week they built and trained the TinyGPT and found a gap between what it doe
 
 **There is no new mathematical idea this week.** Four pieces of arithmetic; do them before class.
 
-**(a) Chance on the made-up tasks.** The copy and reverse symbols are drawn from 8 symbols (0-7), so a model that guesses the answer place by place is right **1 time in 8 = 0.125**. Its loss on one answer is `ln(8) =` **2.079** (Week 17: `ln` of the number of choices). The lookup answer is a digit 0-9: a guess is right **1 in 10 = 0.1**; a model that worked out that the answer must be one of the four values on the page would get 1 in 4 = 0.25. A trained model that scores 1.00 is not guessing.
+**(a) Chance on the made-up tasks.** The copy and reverse symbols are drawn from 8 symbols (0-7), so a model that guesses the answer place by place is right **1 time in 8 = 0.125**. Its loss on one answer is `ln(8) =` **2.079** (Week 17: `ln` of the number of choices). The lookup answer is a digit 0-9: a guess is right **1 in 10 = 0.1**; a model that worked out that the answer must be one of the four values on the page would get `1/4 + 3/4 x 1/10 =` 0.325, not 0.25, because two pairs can hold the same digit (workbook 19.4). A trained model that scores 1.00 is not guessing.
 
 **(b) A loss floor you can calculate.** If the copy model is scored on *every* place and not only the six answers (Clinic 2), five of the twelve places are random symbols nobody can predict (places 1-5 of the window; the first symbol is never predicted because it is an input), each worth `ln(8)`. The best possible average is `5 x ln(8) / 12 =` **0.866**. The run gets 0.872. This is why a "loss that will not go below 0.87" is a correct result, not a bug.
 
@@ -586,7 +586,7 @@ silence_test(lk, "lookup")
 
 with torch.no_grad():
     lk(seq[:, :-1])
-w = lk.blocks[1].last_weights                                     # (500, 2, 9, 9)
+w = lk.blocks[1].last_weights                                     # (500, 2, 10, 10)
 pick_pos = (seq[:, 0:8:2] == seq[:, 9:10]).float().argmax(dim=1)   # which pair held the asked-for key: 0..3
 answer_pos = 2 * pick_pos + 1                                       # where that pair's value sits
 for head in range(2):
@@ -661,7 +661,7 @@ print("  tested without the mask :", round(accuracy(m, "copy"), 2))
 
 # ---- Hand numbers
 print(f"\nln(8) = {math.log(8):.3f}   5*ln(8)/12 = {5 * math.log(8) / 12:.3f}   chance on a copy answer = {1 / 8:.3f}")
-print("chance on a lookup answer: 1/10 =", 1 / 10, " (if you knew the four values on the page: 1/4 =", 1 / 4, ")")
+print("chance on a lookup answer: 1/10 =", 1 / 10, " (picking one of the four values on the page at random: 1/4 + 3/4 x 1/10 =", 1 / 4 + 3 / 4 * 1 / 10, ")")
 for name, args in (("copy/reverse", (9, 64, 2, 2, 12)), ("lookup", (17, 64, 2, 2, 10))):
     print(f"knobs, {name}:", sum(p.numel() for p in TinyGPT(*args).parameters()))
 
@@ -689,7 +689,7 @@ copy model, trained with the mask:
   tested without the mask : 1.0
 
 ln(8) = 2.079   5*ln(8)/12 = 0.866   chance on a copy answer = 0.125
-chance on a lookup answer: 1/10 = 0.1  (if you knew the four values on the page: 1/4 = 0.25 )
+chance on a lookup answer: 1/10 = 0.1  (picking one of the four values on the page at random: 1/4 + 3/4 x 1/10 = 0.325 )
 knobs, copy/reverse: 101641
 knobs, lookup: 102545
 

@@ -170,7 +170,7 @@ banana bread recipe -> [(2, 0.999), (0, 0.294), (3, -0.078), (1, -0.154)]
 loaded: (4, 3)  identical: True
 ```
 
-**H.** Why is the second argument `3` and not `4` for four notes? (Say the rule: at most ____ directions for ____ notes.) ______________________________________________
+**H.** Why is the second argument `3` and not `4` for four notes? (Say the rule used here: ____ directions for ____ notes, one fewer than the number of notes.) ______________________________________________
 
 **I.** In the first query the word is spelt `optimiser` and the note says `optimizer`. Which note won, and with what score? ______________________________________________
 
@@ -378,7 +378,7 @@ F. **Output:**
 
 G. `0.0`: `colour` and `color` are two different whole words, two different columns, with nothing in common (for the class words the plain table gave `optimizer`/`optimiser` `0.0`, and the letter-piece table `0.359`).
 
-**Part 2.** H. At most **14** directions for **15** notes, so for four notes at most `3` (`N - 1`); the last direction would have nothing left to keep. I. Note `0`, the optimizer note, at `0.992`: it shares most letter pieces even with the different spelling. J. **No.** A top score of `0.999` for `banana bread recipe` means the query happened to land near note 2 in a space with only 3 directions; it tells you nothing about understanding. A top score needs something to compare it to (a threshold tested on questions you know have no answer, which is Week 26). K. No fixed answer: check the rank is reported, the failing question is honestly named, and `identical` is `True`.
+**Part 2.** H. The rule used here is **14** directions for **15** notes, so for four notes `3` (`N - 1`). (Asking for all `4` also runs and keeps everything, `1.000` of the spread, so nothing is squeezed; `N - 1` makes sure at least one direction is dropped.) I. Note `0`, the optimizer note, at `0.992`: it shares most letter pieces even with the different spelling. J. **No.** A top score of `0.999` for `banana bread recipe` means the query happened to land near note 2 in a space with only 3 directions; it tells you nothing about understanding. A top score needs something to compare it to (a threshold tested on questions you know have no answer, which is Week 26). K. No fixed answer: check the rank is reported, the failing question is honestly named, and `identical` is `True`.
 
 ### Page 25.4
 

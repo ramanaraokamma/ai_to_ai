@@ -26,7 +26,7 @@
 | **Prep time** | 20 minutes the night before · 2 minutes on the day |
 | **Expected runtime of the code** | **Nothing in this guide takes more than a second.** Blocks P0-P6 together: about **0.9 s** (most of it importing matplotlib); the Clinic and the Answer Key, each under 0.2 s. **No block is over 10 s.** On a slow laptop expect up to 3x; **anything over 1 minute means something is wrong** (see Fallback). |
 
-> **⚠️ Watch out:** four things go wrong this week. **First, the data are invented, and the student will forget.** Say it at the start and again at the end. The real finding the student takes away is a *method* (the table, the threshold, the per-category check); the numbers belong to a sheet of paper. **Second, do not teach the module's story unchanged.** The reference module's data put the worst gap in the top bucket only. Ours are overconfident **in every bucket** (all five gaps negative, `-0.076` to `-0.253`; the largest is the `0.70-0.79` bucket, `-0.253`, not the top one at `-0.231`). Teach what the table says. **Third, a threshold does not make a system good: it makes it quiet.** At `t = 0.8` accuracy of the answered rises `0.575 → 0.722`, and the system has thrown away **10 right answers** to avoid 12 wrong ones (K5 prints the rows); and the rule "pick the threshold with the best accuracy" picks `0.96`, which answers **1 question of 40** (Clinic D5). That bug is the lesson's title. **Fourth, billing *falls* under abstention** (`0.500 → 0.333`): its confident answers are mostly wrong and its two right answers were the *unsure* ones, so abstaining discards its hits and keeps its misses. On eight rows that could be chance; say so, and say what the rows show (K5).
+> **⚠️ Watch out:** four things go wrong this week. **First, the data are invented, and the student will forget.** Say it at the start and again at the end. The real finding the student takes away is a *method* (the table, the threshold, the per-category check); the numbers belong to a sheet of paper. **Second, do not teach the module's story unchanged.** The reference module's data put the worst gap in the top bucket only. Ours are overconfident **in every bucket** (all five gaps negative, `-0.076` to `-0.253`; the largest is the `0.70-0.79` bucket, `-0.253`, not the top one at `-0.231`). Teach what the table says. **Third, a threshold does not make a system good: it makes it quiet.** At `t = 0.8` accuracy of the answered rises `0.575 → 0.722`, and the system has thrown away **10 right answers** to avoid 12 wrong ones (K5 prints the rows); and the rule "pick the threshold with the best accuracy" picks `0.97`, which answers **1 question of 40** (Clinic D5). That bug is the lesson's title. **Fourth, billing *falls* under abstention** (`0.500 → 0.333`): its confident answers are mostly wrong and its two right answers were the *unsure* ones, so abstaining discards its hits and keeps its misses. On eight rows that could be chance; say so, and say what the rows show (K5).
 
 ---
 
@@ -302,7 +302,7 @@ matplotlib.use("Agg")                                   # draw to a file, not a 
 import matplotlib.pyplot as plt
 
 cov, acc = [], []
-for t in np.arange(0.50, 0.981, 0.01):
+for t in np.round(np.arange(0.50, 0.981, 0.01), 2):
     answered = conf >= t
     if answered.sum() >= 1:
         cov.append(answered.mean())
@@ -318,7 +318,7 @@ fig.savefig("curve.png")
 print("saved curve.png")
 ```
 ```text
-47 points; first (coverage, accuracy) = (1.000, 0.575); last = (0.025, 1.000)
+48 points; first (coverage, accuracy) = (1.000, 0.575); last = (0.025, 1.000)
 saved curve.png
 ```
 
@@ -470,7 +470,7 @@ ValueError: The type of the target inferred from y_true is continuous but should
 ```python
 # DELIBERATE BUG D5 (SILENT): "pick the threshold with the best accuracy". The score being chased is not the goal.
 best = None
-for t in np.arange(0.50, 0.981, 0.01):
+for t in np.round(np.arange(0.50, 0.981, 0.01), 2):
     answered = conf >= t
     if answered.sum() >= 1:
         acc = right[answered].mean()
@@ -479,7 +479,7 @@ for t in np.arange(0.50, 0.981, 0.01):
 print(f"best threshold {best[0]}: accuracy of answered {best[1]:.3f} on {best[2]} of 40 answers")
 ```
 ```text
-best threshold 0.96: accuracy of answered 1.000 on 1 of 40 answers
+best threshold 0.97: accuracy of answered 1.000 on 1 of 40 answers
 ```
 
 *Nothing failed. The run completes and prints an accuracy of `1.000`.* Ask: *"would you ship a system that answers one question in forty?"* This is the title of the week. The check is a second column: **always print the number answered next to the accuracy.** The repair is not a cleverer maximum but a decision made in words first: *"I need to answer at least half the questions"* (coverage at least `0.5`) and *then* find the threshold. For example `t = 0.7` answers `24` and scores `0.667` — and that would be chosen by looking at the same 40 results, which is its own small sin (section 6).
@@ -576,7 +576,7 @@ Mark against the four sentences on Page 32.3; each is worth one.
 |---|---|
 | Writes "ECE is 18% error" | Confusing the gap with the error rate; ask for `1 - accuracy`. |
 | Gets Brier right, ECE wrong | Weighting: ask "which bucket counts more and why?" |
-| Picks `0.96` as the best threshold | D5; ask how many answers it leaves. |
+| Picks `0.97` as the best threshold | D5; ask how many answers it leaves. |
 | Says "billing is weak" | Reads a table as a verdict; ask for its unsure rows. |
 | Never says "invented" | Reads the sheet as a result; ask what model produced it. |
 

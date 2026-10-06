@@ -1100,7 +1100,7 @@ Self-marking covers A, B and C well: those answers are *checkable*. D and E need
 | 8 | Order; the recurrent cell | A19, A20, B8, C4, D3 | **12** | | | 7 | |
 | | **Total** | | **75** | | | | |
 
-*(11 + 10 + 10 + 9 + 8 + 8 + 7 + 12 = 75. "Redo if marks ≤" is 60% of the week's marks, rounded down.)*
+*(11 + 10 + 10 + 9 + 8 + 8 + 7 + 12 = 75. "Redo if marks ≤" is the highest whole mark strictly under 60% of the week's marks; a week of 10 marks is redone at 5 or fewer, since 6 of 10 is exactly 60%.)*
 
 ### Page 9.3 — The remediation table (print with 9.2)
 

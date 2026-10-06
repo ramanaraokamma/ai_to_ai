@@ -184,7 +184,7 @@ ________________________________________________________________
 
 Open `l4lib/spirals.py` and find `def run(`. Look only at the signature (the line or two inside the brackets).
 
-**K1.** Copy out the **names** of every knob after the `*`. I count ____ of them. (The tag is not a knob; it is a label.)
+**K1.** Copy out the **names** of every argument after the `*`. I count ____ of them. (The tag is not a knob; it is a label.)
 
 | # | knob | # | knob |
 |:--:|---|:--:|---|
@@ -194,8 +194,9 @@ Open `l4lib/spirals.py` and find `def run(`. Look only at the signature (the lin
 | 4 | ____________ | 10 | ____________ |
 | 5 | ____________ | 11 | ____________ |
 | 6 | ____________ | 12 | ____________ |
+| 13 | ____________ | 14 | ____________ |
 
-(Leave blank any rows you do not need. The course speaks of "ten knobs"; the harness also carries two housekeeping arguments, `seed` and `verbose`. Which two do you think they are? ____________ and ____________)
+(Leave blank any rows you do not need. The course speaks of "ten knobs"; the other four arguments are set-up, not knobs: how many blocks, how long, which random start, whether to print. Which four do you think they are? ____________ , ____________ , ____________ and ____________)
 
 **K2.** Which **one** knob did this week turn? ____________
 
@@ -410,7 +411,7 @@ Either answer is right **if you predicted before you ran**. Real run: **train 0.
 
 The signature is `run(tag, *, depth, lr, batch_size, epochs, optimizer, weight_decay, dropout, norm, residual, schedule, warmup_frac, clip, seed, verbose)`.
 
-- **K1.** The knobs are: `depth, lr, batch_size, epochs, optimizer, weight_decay, dropout, norm, residual, schedule, warmup_frac, clip, seed, verbose`. Accept any six of the ten that matter; the two housekeeping arguments are **`seed`** and **`verbose`**. Do not mark a student wrong for counting 12 or 14 raw arguments; ask them which they believe are tuning knobs and which are bookkeeping.
+- **K1.** There are 14 arguments after the `*`: `depth, lr, batch_size, epochs, optimizer, weight_decay, dropout, norm, residual, schedule, warmup_frac, clip, seed, verbose`. Ten are knobs (`lr, batch_size, optimizer, weight_decay, dropout, norm, residual, schedule, warmup_frac, clip`); accept any six of them. The four set-up arguments are **`depth`, `epochs`, `seed`** and **`verbose`**. Do not mark a student wrong for calling `depth` a knob; ask which they believe change how it learns and which are bookkeeping.
 - **K2.** `lr`.
 - **K3.** Any honest guess is full marks. This is a Week 2-6 preview.
 

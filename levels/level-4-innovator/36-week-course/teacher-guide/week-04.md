@@ -374,7 +374,7 @@ cosine only    0.035  (lowest 0.032, highest 0.040)
 warmup+cosine  0.037  (lowest 0.029, highest 0.045)
 ```
 
-Read the two tables together, because the lesson lives in the contrast. **At a rate ten times too big, a constant rate learns on 2 seeds of 5 (98.1% and 97.2%) and is stuck near a coin flip (46.9% to 53.1%) on the other 3. Add cosine decay and all five seeds reach 98.9% or more.** Warmup alone does not rescue it (67.5% and 76.4% still appear). **At the gentle rate all four land within the seed-to-seed noise.** Notice `46.9%` and `53.1%` are the two "always predict one class" scores: the validation set is 46.9% one class and 53.1% the other. A run stuck near them has learned nothing; it is the Week 1 coin.
+Read the two tables together, because the lesson lives in the contrast. **At a rate ten times too big, a constant rate *ends* above 97% on 2 seeds of 5 (98.1% and 97.2%) and has collapsed to a coin flip (46.9% to 53.1%) on the other 3. Add cosine decay and all five seeds reach 98.9% or more.** Warmup alone does not rescue it (67.5% and 76.4% still appear). **At the gentle rate all four land within the seed-to-seed noise.** Notice `46.9%` and `53.1%` are the two "always predict one class" scores: the validation set is 46.9% one class and 53.1% the other. A run that *ends* near them has collapsed to "always answer one class", the Week 1 coin. It did not necessarily learn nothing: measured with the same seeds, all five constant-rate runs reached 99.2% to 99.4% validation accuracy at some epoch (epochs 10 to 41) before three of them diverged back to chance. The table reports the final epoch only.
 
 **5. (4 min) Run the batch script and read its two tables.** Create `batches.py`:
 
@@ -506,7 +506,7 @@ This week degrades well, because the heart of it is a table and a subtraction.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
-| 🪝 Hook — The Same Network, Ten Times Too Fast | 8 | 8 | Run `hook.py`. Three of five seeds are stuck at a coin flip; with a falling rate none are. |
+| 🪝 Hook — The Same Network, Ten Times Too Fast | 8 | 8 | Run `hook.py`. Three of five seeds end at a coin flip (they diverge late, after reaching about 99%); with a falling rate none do. |
 | 🧠 Concept & Maths — A Rate Is a Rule Over Time | 17 | 25 | Multiplier, ramp, cosine as three checkpoints, a hand table, the `lambda` |
 | 💻 Live-Code Together — `schedules.py`, `minitrain.py`, two mistakes | 18 | 43 | Compare to the hand table; read the clock; break it twice on purpose |
 | 🎲 Their Turn — Steps per Epoch, and Two Experiments | 20 | 63 | Count steps on paper; run `batches.py` in the background; fill "what did I hold fixed" |
@@ -543,8 +543,8 @@ warmup+cosine   99.2  98.9  98.9  98.9  98.9   mean  98.9
 
 | Ask | Answer you want | If they say something else |
 |---|---|---|
-| "Look at the `constant` row. What does 46.9% mean?" | It is the "always answer the same class" score (one class is 46.9% of the validation set; the other is 53.1%): nothing learned. The Week 1 `ln 2` coin in another costume. | If they say "it is 47% right so almost half": push once — *"on a two-class problem, what does a model that ignores the data score?"* |
-| "How many of the five learn with a constant rate? How many with cosine?" | Two (98.1, 97.2); five. | A guess of "three" is a misread of 46.9/50.6/53.1 as "learning a bit". Those are not learning. |
+| "Look at the `constant` row. What does 46.9% mean?" | It is the "always answer the same class" score (one class is 46.9% of the validation set; the other is 53.1%): the run *ended* having collapsed to a constant answer (it may have learned earlier and then diverged; the table shows only the last epoch). The Week 1 `ln 2` coin in another costume. | If they say "it is 47% right so almost half": push once — *"on a two-class problem, what does a model that ignores the data score?"* |
+| "How many of the five learn with a constant rate? How many with cosine?" | Two (98.1, 97.2); five. | A guess of "three" is a misread of 46.9/50.6/53.1 as "learning a bit". Those runs finished at chance level. |
 | "Which row would you have picked as the best *before* you saw the numbers?" | Honest answers vary. The point is that the intuition "warmup is the safe one" is not what the table says. | Do not explain warmup yet. Say "keep that thought, we will come back to it." |
 | "Is this a result about every network and every problem?" | No — one small network, one dataset, five seeds, one bad learning rate. | If they say "it proves schedules work": agree it shows a mechanism, then say *"and what do you notice about the row that is best?"* (`cosine only`, no warmup.) |
 
@@ -809,7 +809,7 @@ Target: A held **epochs** fixed, and also changed **steps**; B held **steps** fi
 >
 > **Five.** Batch size changes the number of steps — `840 // batch` per epoch — so 'same epochs' and 'same steps' are two different experiments, and neither is neutral. Always say which quantity you held fixed."
 
-**Do this:** Ask the closing question: *"What would you need to see to claim 'bigger batches are worse'?"* Target: the same *steps*, the same *epochs*, and more than one seed, and still worse. They have run only two of three. That is the homework's hook.
+**Do this:** Ask the closing question: *"What would you need to see to claim 'bigger batches are worse'?"* Target: worse in the same-epochs experiment and in the same-steps experiment (both cannot be held fixed at once, since steps = epochs × `840 // batch`), with more than one seed, ideally with the rate re-tuned per batch size. The homework supplies the extra seeds. That is the homework's hook.
 
 Run the three checks from **✅ Assessing Understanding**, then assign the homework from **📤 Homework to Assign**.
 
@@ -829,7 +829,7 @@ Every message below was produced by running a broken version of this week's actu
 | `UserWarning: Detected call of 'lr_scheduler.step()' before 'optimizer.step()'. In PyTorch 1.1.0 and later, you should call them in the opposite order…` | Not an error: "you moved the clock before you moved the weights, and I will skip the first value of your schedule." | `sched.step()` placed above `opt.step()` in the loop. | Weights first, clock second. |
 | **No error.** The rate is `0.003` forever. | The scheduler is attached but its clock never moves. | Forgot `sched.step()`. | Print `sched.get_last_lr()` once every few steps while learning. |
 | **No error.** The rate falls to zero, then **climbs back up**. | You ran past `T` steps; cosine is periodic. | Cosine multiplier without `min(1.0, prog)`, and a loop longer than `T`. | Clamp the progress, as `warm_cosine_mult` does. |
-| **No error.** The rate is a thousand times too small: `[9e-06]`. | You multiplied twice. | The lambda returned a *rate* (`0.003 * ...`), and `LambdaLR` multiplied that by the peak `lr=0.003` again. | `LambdaLR` wants a **multiplier**; drop the `0.003 *` from the lambda. |
+| **No error.** The rate is about 300 times too small (`0.003` times `0.003`): `[9e-06]`. | You multiplied twice. | The lambda returned a *rate* (`0.003 * ...`), and `LambdaLR` multiplied that by the peak `lr=0.003` again. | `LambdaLR` wants a **multiplier**; drop the `0.003 *` from the lambda. |
 
 The full transcripts, with the deliberate-error blocks in order:
 
@@ -920,7 +920,7 @@ print(sched.get_last_lr())
 
 - **"Is it a number or a function?"** Mistake 1 in one question. If something says "not callable", ask what the argument is.
 - **"Print it before you format it."** `print(sched.get_last_lr())` before `f"{...:.4f}"` is the whole of mistake 2.
-- **"What does the rate look like at step 0, at the middle, at the end?"** Three prints catch mistakes 5, 6 and 7 at a glance: constant (5), back up (6), a thousand times too small (7).
+- **"What does the rate look like at step 0, at the middle, at the end?"** Three prints catch mistakes 5, 6 and 7 at a glance: constant (5), back up (6), about 300 times too small (7).
 
 And the sentence for this week:
 
@@ -1012,7 +1012,7 @@ Ask the student to add one more experiment: **equal steps with the learning rate
 
 ### If the student won't engage today
 
-This lesson has a strong hook (three of five seeds are stuck at a coin flip). Lead with it and let them argue. A student who is off today can still do the steps-per-epoch table, which is a ten-line arithmetic puzzle and needs no theory.
+This lesson has a strong hook (three of five seeds end at a coin flip after reaching about 99% earlier). Lead with it and let them argue. A student who is off today can still do the steps-per-epoch table, which is a ten-line arithmetic puzzle and needs no theory.
 
 ---
 
@@ -1233,7 +1233,7 @@ A model answer (the marker accepts any answer that has all three parts; numbers 
 | Question | Answer |
 |---|---|
 | "Out of five seeds, how many reach >90% with a constant 0.03? with the falling rate?" | Two of five (98.1, 97.2); five of five. |
-| "What does 46.9% mean?" | The score for always guessing one class — the coin flip. |
+| "What does 46.9% mean?" | The score for always guessing one class — the coin flip. The run ended there (it may have reached 99% earlier and then diverged). |
 | "Peak 0.003, multiplier 0.5: the rate?" | 0.0015. |
 | "Write the rule that gives the multiplier from the step, ramp up in ten steps." | `(step + 1) / 10`. |
 | "Where is cosine falling fastest?" | Around the middle. |
@@ -1247,7 +1247,7 @@ A model answer (the marker accepts any answer that has all three parts; numbers 
 | "What else is different about the 512 row?" | 60 steps against at least 360. |
 | "At equal steps, which batches are worse?" | 128 and 256. |
 | "What is the `mean train` of 256, and what does it say?" | 0.000: perfect fit to the training set, from 260 repeats of 840 points — memorising. |
-| "What would you need to see to claim 'bigger batches are worse'?" | Same steps, same epochs, more than one seed, and still worse. |
+| "What would you need to see to claim 'bigger batches are worse'?" | Worse in both designs (same epochs and same steps; both cannot be fixed together), over more than one seed, ideally with the rate re-tuned. |
 
 ---
 

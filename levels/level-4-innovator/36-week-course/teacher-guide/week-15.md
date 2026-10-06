@@ -176,7 +176,7 @@ All printed by the files below. Read them before class so nothing surprises you.
 - **Average biggest weight in a row of 8.** Raw: **0.573, 0.763, 0.880** at `d` = 4, 16, 64 (equal weights would be `0.125`). Divided: **0.372, 0.363, 0.365** — the same softness at every width. That flat row is the point.
 - **The four settings** on the Week 14 example: neither `[[0.578, 0.845], [0.845, 0.578], [0.788, 0.788]]` (last week's); divide only `[[0.599, 0.802], [0.802, 0.599], [0.752, 0.752]]`; hide only `[[0, 1], [0.731, 0.269], [0.788, 0.788]]`; **both** `[[0, 1], [0.6698, 0.3302], [0.7517, 0.7517]]` — the module's answer.
 - **The leak test.** Change the last word. Without the mask every output row moves (`True, True, True`). With it only the last row moves (`False, False, True`).
-- **Wrong masks.** `0` instead of `-inf`: weights `0.5035, 0.2483, 0.2483` for the first word (the future still gets 0.25 each). Mask after the softmax: row sums `0.5035, 0.7517, 1.0`.
+- **Wrong masks.** `0` instead of `-inf`: weights `0.5035, 0.2483, 0.2483` for the first word (the future still gets 0.25 each). Mask after the softmax: row sums `0.4011, 0.5989, 1.0`.
 - **Heads.** `x` of shape `(1, 3, 4)` becomes `(1, 3, 2, 2)` then `(1, 2, 3, 2)`; head 0 is the first two numbers of every word, head 1 the last two. The batched run has shapes `q (2, 2, 5, 4)`, `scores (2, 2, 5, 5)`, `out (2, 2, 5, 4)`; rows add to 1; nothing above the diagonal; `192` knobs for `d = 8` whatever `H` is; head 1 recomputed from a slice equals head 1 of the batched version (`True`).
 
 ### 7. The honest limits of today
@@ -667,7 +667,7 @@ The student types. You narrate. **Nobody pastes.**
 
 ### 🔬 Break the Mask (6 minutes)
 
-Plant Mistakes 3 and 4 (and 5 if time). For each: *"Does anything look wrong?"* Make the student check the **two properties**: every row adds to 1; nothing above the diagonal. `bad3.py`: rows add to 1, but there is weight above the diagonal (`0.2483`). `bad4.py`: the future is zero but the rows add to `0.5035, 0.7517, 1.0`. *"So we have two tests: rows add to 1, and the upper triangle is zero. Each wrong mask fails one of them. The right one passes both."* Then write on the board the rule: **"scores, divide, mask with `-inf`, then softmax."** If time, `bad5.py` for a loud failure and read the message aloud.
+Plant Mistakes 3 and 4 (and 5 if time). For each: *"Does anything look wrong?"* Make the student check the **two properties**: every row adds to 1; nothing above the diagonal. `bad3.py`: rows add to 1, but there is weight above the diagonal (`0.2483`). `bad4.py`: the future is zero but the rows add to `0.4011, 0.5989, 1.0`. *"So we have two tests: rows add to 1, and the upper triangle is zero. Each wrong mask fails one of them. The right one passes both."* Then write on the board the rule: **"scores, divide, mask with `-inf`, then softmax."** If time, `bad5.py` for a loud failure and read the message aloud.
 
 ### 🔑 Wrap & Assign (4 minutes)
 
@@ -749,8 +749,8 @@ divide by d      : spread of scores 0.125, average biggest weight 0.149
 import torch
 import torch.nn.functional as F
 
-scores = torch.tensor([[0.7071, 0.0, 0.0],
-                       [0.0, 0.7071, 0.0],
+scores = torch.tensor([[0.7071, 0.0, 0.7071],
+                       [0.0, 0.7071, 0.7071],
                        [0.7071, 0.7071, 1.4142]])       # Week 15 scores after the divide
 mask = torch.tril(torch.ones(3, 3))
 hidden = scores.masked_fill(mask == 0, 0.0)             # 0, not float("-inf")
@@ -772,8 +772,8 @@ tensor([[0.5035, 0.2483, 0.2483],
 import torch
 import torch.nn.functional as F
 
-scores = torch.tensor([[0.7071, 0.0, 0.0],
-                       [0.0, 0.7071, 0.0],
+scores = torch.tensor([[0.7071, 0.0, 0.7071],
+                       [0.0, 0.7071, 0.7071],
                        [0.7071, 0.7071, 1.4142]])
 mask = torch.tril(torch.ones(3, 3))
 weights = F.softmax(scores, dim=-1) * mask              # softmax first, then zero the future
@@ -782,13 +782,13 @@ print("row sums:", weights.sum(dim=-1))
 ```
 
 ```text
-tensor([[0.5035, 0.0000, 0.0000],
-        [0.2483, 0.5035, 0.0000],
+tensor([[0.4011, 0.0000, 0.0000],
+        [0.1978, 0.4011, 0.0000],
         [0.2483, 0.2483, 0.5035]])
-row sums: tensor([0.5035, 0.7517, 1.0000])
+row sums: tensor([0.4011, 0.5989, 1.0000])
 ```
 
-**Read it:** the future is exactly 0, which looks right, but the rows add to `0.5035`, `0.7517`, `1.0`. The weights no longer share a whole; every output except the last row is shrunk towards zero. **Fix:** mask the scores, then softmax (the softmax re-shares what is left). **The check:** `weights.sum(dim=-1)` must be all ones.
+**Read it:** the future is exactly 0, which looks right, but the rows add to `0.4011`, `0.5989`, `1.0`. The weights no longer share a whole; every output except the last row is shrunk towards zero. **Fix:** mask the scores, then softmax (the softmax re-shares what is left). **The check:** `weights.sum(dim=-1)` must be all ones.
 
 ### Mistake 5 — `masked_fill` given numbers, not True/False (loud)
 
@@ -908,7 +908,7 @@ same weights: False
 gap between them: 0.033
 ```
 
-**Read it:** no error; weights that look like weights. But the heads are slices of width `dh = 4`, so the scores of each head have a spread of `sqrt(4) = 2`, and the divide should be `dh ** 0.5`. Dividing by `d ** 0.5 = 2.83` over-flattens by a little (`0.325` against `0.357`). At `d = 128` and `H = 4` it would be `11.3` against `5.7`. **Fix:** `dh ** 0.5`. **The check:** the equality test of `heads.py` (head alone against head batched) would print `False`.
+**Read it:** no error; weights that look like weights. But the heads are slices of width `dh = 4`, so each head's scores are sums of `dh = 4` products (a spread of `sqrt(4) = 2` if the entries had spread 1; here the untrained `nn.Linear` outputs are smaller, which is why the gap is only `0.033`), and the divide should be `dh ** 0.5`. Dividing by `d ** 0.5 = 2.83` over-flattens by a little (`0.325` against `0.357`). At `d = 128` and `H = 4` it would be `11.3` against `5.7`. **Fix:** `dh ** 0.5`. **The check:** the equality test of `heads.py` (head alone against head batched) would print `False`.
 
 ---
 
@@ -1126,7 +1126,7 @@ Carrying **three** places in the weights gives `[[0, 1], [0.670, 0.330], [0.751,
 | no | yes | `[0.000, 1.000]` · `[0.731, 0.269]` · `[0.788, 0.788]` |
 | **yes** | **yes** | **`[0.000, 1.000]` · `[0.670, 0.330]` · `[0.752, 0.752]`** (the module's) |
 
-Leak test: without the mask `[True, True, True]`; with it `[False, False, True]`. Wrong masks: `0` for `-inf` gives weights `[0.5035, 0.2483, 0.2483]` in row 1 (the future is heard); mask after the softmax gives row sums `0.5035, 0.7517, 1.0`.
+Leak test: without the mask `[True, True, True]`; with it `[False, False, True]`. Wrong masks: `0` for `-inf` gives weights `[0.5035, 0.2483, 0.2483]` in row 1 (the future is heard); mask after the softmax gives row sums `0.4011, 0.5989, 1.0`.
 
 ### Page 15.4 — The second pass with both dials (from `hw.py` and `key.py` H2)
 

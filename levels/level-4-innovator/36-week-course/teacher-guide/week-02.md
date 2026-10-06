@@ -334,7 +334,7 @@ The Week 1 harness takes `optimizer="sgd"` or `optimizer="momentum"` (lines 105�
 
 (Rows 0.01–1.0 are block P18's verbatim output; the 0.003 row is from block P17. Read "both stuck" with the 0.693 rule: 0.690 and 0.693 are a coin.)
 
-Two sentences cover it. **Momentum rescues every learning rate that is too small for plain SGD.** It **wrecks the learning rate that was already as big as plain SGD could bear.** Both come from the same cause: a momentum step is up to ten times longer.
+Two sentences cover it. **Momentum rescues learning rates that are too small for plain SGD, within limits** (0.01 to 0.1 here; at 0.003 even momentum is still stuck). It **wrecks the learning rate that was already as big as plain SGD could bear.** Both come from the same cause: a momentum step is up to ten times longer.
 
 **`nan` is a result, not a crash.** At `lr = 1.0` momentum's weights blow up in the fourth epoch (block P21) and the loss becomes `nan` ("not a number", what you get from infinity minus infinity). The harness kept going; the row is honest. The student should write `nan`, not `0`, and say "it blew up".
 
@@ -1143,7 +1143,7 @@ step 2: w 0.4400   stored gradient 3.6000
 step 3: w -0.0080   stored gradient 4.4800
 ```
 
-**Silent.** Without `zero_grad`, each `backward()` *adds* to the stored slope: 2.0, then 3.6, then 4.48, where the true slope would be 1.6 and 0.92. So the steps are wrong from step 2 and `w` ends at `-0.0080`. **Fix:** `opt.zero_grad(set_to_none=True)` before `backward()`.
+**Silent.** Without `zero_grad`, each `backward()` *adds* to the stored slope: 2.0, then 3.6, then 4.48, where the true slopes would be 1.6 and 0.88. So the steps are wrong from step 2 and `w` ends at `-0.0080`. **Fix:** `opt.zero_grad(set_to_none=True)` before `backward()`.
 
 ### Error 8 — A misspelt optimizer name on the harness
 

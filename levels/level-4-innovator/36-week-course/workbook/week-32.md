@@ -394,7 +394,7 @@ Prediction before you ran: the two ECEs will be (same / different) ______ . Whic
 ```python
 # DELIBERATE BUG 32.4-C (SILENT): "pick the threshold with the best accuracy". The score being chased is not the goal.
 best = None
-for t in np.arange(0.50, 0.981, 0.01):
+for t in np.round(np.arange(0.50, 0.981, 0.01), 2):
     answered = conf >= t
     if answered.sum() >= 1:
         acc = right[answered].mean()
@@ -404,7 +404,7 @@ print(f"best threshold {best[0]}: accuracy of answered {best[1]:.3f} on {best[2]
 ```
 
 ```text
-best threshold 0.96: accuracy of answered 1.000 on 1 of 40 answers
+best threshold 0.97: accuracy of answered 1.000 on 1 of 40 answers
 ```
 
 Nothing failed. Would you ship a system that answers one question in forty? ______ . Write the sentence that this result is the proof of: ____________________________________________________
@@ -414,7 +414,7 @@ Nothing failed. Would you ship a system that answers one question in forty? ____
 ```python
 # The repair for 32.4-C: decide in words first ("answer at least half"), then look. Coverage is printed beside accuracy.
 best = None
-for t in np.arange(0.50, 0.981, 0.01):
+for t in np.round(np.arange(0.50, 0.981, 0.01), 2):
     answered = conf >= t
     if answered.mean() >= 0.5:
         acc = right[answered].mean()
@@ -424,10 +424,10 @@ print(f"best threshold with coverage >= 0.5: {best[0]}: accuracy of answered {be
 ```
 
 ```text
-best threshold with coverage >= 0.5: 0.74: accuracy of answered 0.762 on 21 of 40 answers
+best threshold with coverage >= 0.5: 0.75: accuracy of answered 0.762 on 21 of 40 answers
 ```
 
-This is better, but it still has a small sin. The threshold `0.74` was chosen by looking at the **same 40 results** it is judged on. What would a sound version need? ____________________________________________________  (Hint: Week 30's frozen eval.)
+This is better, but it still has a small sin. The threshold `0.75` was chosen by looking at the **same 40 results** it is judged on. What would a sound version need? ____________________________________________________  (Hint: Week 30's frozen eval.)
 
 ---
 
@@ -498,7 +498,7 @@ Then write this sentence in your own handwriting, with your own numbers:
 ### Page 32.4
 - **A.** Expected: a count of five buckets and a share. Saw: `IndexError` on `counts_t[4]`. The array has **4** entries where the table has **5** buckets; `technical` tops out at `0.81`, so bucket **4** is empty and `np.bincount` stops at the **largest** number it saw. Fix `minlength=5`. If it had not been loud, `zip` would have stopped at the shorter list and the table would **silently have lost its last row**.
 - **B.** The two ECEs differ: unweighted `0.2403`, weighted `0.2123`. The bucket of 7 should count for more. The unweighted number is too **high** by `0.0280`, because the small noisy buckets count as much as the big ones. Weights add to **1.0**, sizes add to **40**. (On the five buckets of the chapter, the gap is small: `0.1763` against `0.1788`, and that is the danger: a small difference hides the bug.)
-- **C.** No, you would not ship a system that answers one question in forty. "When a number becomes the target, it stops being a good number": the accuracy of the answered reaches `1.000` on one answer. The repair, with coverage of at least `0.5`, picks `t = 0.74`, `0.762` on 21 of 40. The small sin is that the threshold was chosen on the same forty results it is judged on; a sound version chooses on one set of results and judges on a **second, frozen set** it has not seen (Week 30's frozen eval). We do not have a second set.
+- **C.** No, you would not ship a system that answers one question in forty. "When a number becomes the target, it stops being a good number": the accuracy of the answered reaches `1.000` on one answer. The repair, with coverage of at least `0.5`, picks `t = 0.75`, `0.762` on 21 of 40. The small sin is that the threshold was chosen on the same forty results it is judged on; a sound version chooses on one set of results and judges on a **second, frozen set** it has not seen (Week 30's frozen eval). We do not have a second set.
 
 ### Page 32.5
 1. No. ECE is the average size of the gap between what it said and what it delivered (here mostly "said more than delivered": `0.754 - 0.575 = 0.179`). It is wrong **42.5%** of the time (17 of 40).

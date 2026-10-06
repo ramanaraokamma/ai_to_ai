@@ -865,7 +865,7 @@ chance of the two ALLOWED characters: 0.0
 
 Nothing raised, and the chances add up to 1. **The check:** print the chance of the allowed set (it must be `1.0`, here `0.0`) or run the reply through the real parser. Fix: `torch.where(allowed, scores, torch.tensor(float("-inf")))`.
 
-**D.** The test prompts use the **shared** `random` module (nobody seeded it, it starts from the clock). Run twice, **different** fingerprints (this machine printed `f91bc925edc0` and `d3b0e88146ad`; yours will be two other values). Fix: `rng = random.Random(1000 + n)` and use `rng.shuffle`, `rng.sample`, `rng.choice`; compare with `47d6a3db7a1a`.
+**D.** The test prompts use the **shared** `random` module (nobody seeded it, so it starts from a fresh random seed every run). Run twice, **different** fingerprints (this machine printed `f91bc925edc0` and `d3b0e88146ad`; yours will be two other values). Fix: `rng = random.Random(1000 + n)` and use `rng.shuffle`, `rng.sample`, `rng.choice`; compare with `47d6a3db7a1a`.
 
 **E.** `logits[:, 1::2]` are the places that hold a **value** and they are being asked for `x[:, 2::2]`, the **next key**, which is random. Printed:
 

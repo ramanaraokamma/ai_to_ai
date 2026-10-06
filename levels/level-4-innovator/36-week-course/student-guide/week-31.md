@@ -707,7 +707,7 @@ seeds with at least one flagged category: 5 of 6
 six seeds took 3.4 s
 ```
 
-Read it aloud. The base column runs `18 15 18 16 17 17`. Full is `19 18 19 19 19 20`. LoRA is `19 19 18 19 18 18`. Five of six seeds flag *something*, and it is a different category in different seeds. One single method varies by three to five tickets from seed to seed. **The seed is a small experiment; the spread is the result.** Nothing here ranks full fine-tuning against LoRA.
+Read it aloud. The base column runs `18 15 18 16 17 17`. Full is `19 18 19 19 19 20`. LoRA is `19 19 18 19 18 18`. Five of six seeds flag *something*, and it is a different category in different seeds. One single method varies by one to three tickets from seed to seed (base 15 to 18, full 18 to 20, LoRA 18 to 19). **The seed is a small experiment; the spread is the result.** Nothing here ranks full fine-tuning against LoRA.
 
 And one more number to put next to them. Week 30's free rules scored **25 of 30 = 0.833**. Your best model today scored 19. The honest table for a ship decision is *rules → LoRA*, not *base → LoRA*, and it has more flags than the one above.
 

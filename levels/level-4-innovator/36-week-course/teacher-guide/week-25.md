@@ -62,7 +62,7 @@ The student has met TF-IDF (Level 3 Week 32) and the 15-note lab notebook that s
 
 **(b) Normalise once (Page 25.2).** Divide every row by its own length, **once**, when the index is built. Then a note's "cosine with the question" is just the dot product of two length-1 rows, and the whole search is `M @ q`. You do not need to normalise the *question* to get the right *order* (the question's length scales every score by the same amount — the key block proves it); you do need to if you later compare a score to a threshold such as `0.3`, which is Week 26's refusal rule.
 
-**(c) What `TruncatedSVD` keeps, in words.** Level 3 Week 29's PCA found the direction in which the data is most spread out and measured along it. `TruncatedSVD(n)` does the same job *on a big mostly-empty table* and keeps the **best `n` directions**. The 15 × 3,906 table of letter pieces becomes a 15 × 14 table; each number is "how much of this direction is in this note". `svd.explained_variance_ratio_.sum()` says what share of the spread 14 directions keep: `0.941`. **Teacher-only footnote:** PCA first subtracts each column's mean; `TruncatedSVD` does not (so it can work on a sparse table). You need not tell the student. **A trap you do know:** with 15 notes there are at most 14 useful directions, so "14 numbers" is *no compression at all* in the number of directions; it is only a change of axes plus the dropping of the last one. `dim 2` is the only setting that really squeezes, and it is the worst in the table (`0.13`).
+**(c) What `TruncatedSVD` keeps, in words.** Level 3 Week 29's PCA found the direction in which the data is most spread out and measured along it. `TruncatedSVD(n)` does the same job *on a big mostly-empty table* and keeps the **best `n` directions**. The 15 × 3,906 table of letter pieces becomes a 15 × 14 table; each number is "how much of this direction is in this note". `svd.explained_variance_ratio_.sum()` says what share of the spread 14 directions keep: `0.941`. **Teacher-only footnote:** PCA first subtracts each column's mean; `TruncatedSVD` does not (so it can work on a sparse table). You need not tell the student. **A trap you do know:** a 15-note table has at most 15 directions (checked: `n_components=15` runs and keeps `1.000` of the spread; `l4lib` caps at `N - 1 = 14` by its own choice), so "14 numbers" is *almost no compression* in the number of directions; it is only a change of axes plus the dropping of the last one. `dim 2` is the only setting that really squeezes, and it is the worst in the table (`0.13`).
 
 **(d) The training loss, in words (TEACHER-ONLY, and only in words to the student).** Take each note, split its words into two random halves, and embed both. Lay all the first-halves against all the second-halves in a table of cosines. Divide by a *temperature* (`0.1`, which makes the biggest cosine stand out), turn each row into chances with a softmax (Week 13), and ask: *what chance did each first-half give to its own second-half?* The loss is the average `-ln` of that chance (`F.cross_entropy` with the diagonal as the right answer, Week 12), taken in both directions. If a model knew nothing it would give every note a `1/15` chance and the loss would be `ln 15 = 2.708`; **the measured first-step loss is `1.755` for seed 0 and `3.54` for seed 1**, because it depends on the random start; by step 50 it is `0.002`. The student is told: *"the loss is small when a half finds its own other half among all fifteen."* The by-hand version on three notes is in the key (`key2.py`), including the fact that two notes which point the same way (`A` and `B`) can never be told apart (`0.506` / `0.494`). The literature's name for it, "InfoNCE", is for you; the student does not need it.
 
@@ -132,7 +132,7 @@ All printed by the blocks in the Prep Checklist. Read them before class.
 1. **"An embedding knows what the words mean."** Ours knows which letter pieces co-occur in 15 notes. Ask: *"what would it do with `colour` against `color`?"* (near, by the same mechanism as `optimiser`) and *"with `big` against `large`?"* (no shared pieces; a tiny model trained on 15 notes has no reason to put them near.)
 2. **"The score 0.525 means the note is 52% relevant."** It is a cosine. It ranks; it does not measure. Week 26 picks a threshold *by looking at the scores of answerable and unanswerable questions*.
 3. **"A lower loss means a better embedder."** The loss reaches `0.002` for every seed, including the seed with recall@1 `0.47`.
-4. **"More dimensions always helps."** From 2 to 14 it does, in this table; the right dimension is a measured quantity, not a rule, and 14 is the ceiling for 15 notes.
+4. **"More dimensions always helps."** From 2 to 14 it does, in this table; the right dimension is a measured quantity, not a rule, and 15 is the ceiling for 15 notes (where nothing is squeezed; `l4lib` stops at 14).
 5. **"Normalising the query is required."** It changes every score by the same factor, so not for ranking (the key proves it); yes if you compare a score to a threshold.
 6. **"`np.save` saves the model."** It saves the matrix. The query encoder is a separate object.
 7. **"`fit_transform` and `transform` are two names for one thing."** `fit_transform` learns the columns; `transform` uses the ones already learned. Using the first on a query is Mistake 2.
@@ -694,7 +694,7 @@ Traceback (most recent call last):
 ValueError: n_components(5000) must be <= n_features(3906).
 ```
 
-**Read it:** the message names both numbers. The SVD cannot keep 5,000 directions of a table with 3,906 columns. **Fix:** any `n_components` below the number of columns — and, for a useful result, below the number of notes (14 for 15 notes; `l4lib` clips to that for you: `k = min(dim, N - 1, columns - 1)`). Ask: *"what should `n_components` be for 15 notes?"* and have them say 14, then say why 15 would have nothing left to keep.
+**Read it:** the message names both numbers. The SVD cannot keep 5,000 directions of a table with 3,906 columns. **Fix:** any `n_components` below the number of columns — and, for a useful result, below the number of notes (14 for 15 notes; `l4lib` clips to that for you: `k = min(dim, N - 1, columns - 1)`). Ask: *"what should `n_components` be for 15 notes?"* and have them say 14, then say why 15 would squeeze nothing (it keeps every direction, `1.000` of the spread; 14 is `l4lib`'s cap, not a hard limit).
 
 ### Mistake 4 — an index built from one set of notes, queried with an encoder fitted on another (SILENT)
 
@@ -862,7 +862,7 @@ Ask the student to find a new note `D4` with whole numbers whose cosine with `q`
 
 **"What is an embedding?"** A list of numbers that stands for a piece of text, built so that similar texts get nearby lists. Ours: 14 or 32 numbers. **"Why is it called dense?"** Almost every entry is non-zero; the word and letter-piece tables are *sparse* (mostly zeros: the letter-piece table is 11% full).
 
-**"Why 14 numbers?"** Because there are 15 notes. More than 14 directions would be empty. `dim 2` keeps only the two biggest and is far worse (`0.13`). The right number is measured, as in the table.
+**"Why 14 numbers?"** Because there are 15 notes: a 15-note table has at most 15 directions, and 15 would squeeze nothing, so `l4lib` stops at 14. `dim 2` keeps only the two biggest and is far worse (`0.13`). The right number is measured, as in the table.
 
 **"Why normalise *once*?"** Because it is the same answer every time; do the division when you build the index and never again. The search is then a plain matrix multiply.
 
@@ -942,7 +942,7 @@ Ask these out loud near the end; do not rescue.
 | 🟥 Not yet | Cannot say what a cosine ignores; thinks the trained embedder is best because its loss is small. |
 | 🟨 Emerging | Computes `0.283`; runs the code; says the word table has no geometry but cannot say what the control shows. |
 | 🟩 Secure | Completes both pages; builds the index; saves and loads it; reads the recall table and names a control. |
-| 🟦 Strong | Also predicts Mistake 4 before it runs, explains why 14 is the ceiling for 15 notes, and reports the seed range without being asked. |
+| 🟦 Strong | Also predicts Mistake 4 before it runs, explains why 15 directions is the most a 15-note table can give (and 14 is `l4lib`'s cap), and reports the seed range without being asked. |
 
 ---
 
@@ -1104,7 +1104,7 @@ cos(A, D) = 0.300   cos(C, D) = 0.990
 - *"Shape of the bag's output?"* `(2, 3)`.
 - *"Did it learn English?"* It learned to tell 15 notes from their own halves (loss `0.002` by step 50); recall is the measurement.
 - *"How much is the training and how much the letter pieces?"* After one step: `0.48`/`0.73`. After 150 steps: `0.63`/`0.89`. Training adds about `0.15`/`0.16`.
-- *"What dim for 15 notes?"* 14 at most.
+- *"What dim for 15 notes?"* 14 in this course (`l4lib`'s cap, so something is squeezed); 15 is the true maximum and squeezes nothing.
 
 ### Reconciliation with the reference module (`module-06-...`)
 

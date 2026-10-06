@@ -399,7 +399,7 @@ r9 numbered steps, answers nothing: reward +5.047  vs r2 direct and short: +4.57
 r9 beats r2? True
 ```
 
-Read it with care. The loss starts at `0.6931` (`ln 2`: "no idea which is better") and falls to `0.0017`; the scorer gets all ten judgements right. The **biggest weight is for formatting**, not for being helpful. The invented answer `r9`, which is *only* numbered steps and answers nothing, scores higher than the short direct answer `r2`. That is **reward hacking**: an optimizer that chases this reward is pushed toward exactly what the scorer over-rewards. The biggest weight is not "the most important feature"; it is the feature the ten judgements most reliably agreed on.
+Read it with care. The loss starts at `0.6931` (`ln 2`: "no idea which is better") and falls to `0.0017`; the scorer gets all ten judgements right. The **biggest positive weight is for formatting** (the biggest in size is `refuses`, at `-6.091`), not for being helpful. The invented answer `r9`, which is *only* numbered steps and answers nothing, scores higher than the short direct answer `r2`. That is **reward hacking**: an optimizer that chases this reward is pushed toward exactly what the scorer over-rewards. The biggest weight is not "the most important feature"; it is the feature the ten judgements most reliably agreed on.
 
 Here is a second blind spot. Add a sixth feature, `is_factually_correct`, that is `1` for every answer the judges rated. What will its weight be? Predict, then run. (This needs `POOL` and `PAIRS` from `reward.py`, so run it in the same session.)
 
@@ -607,7 +607,7 @@ Did the message tell you what to do? Write in your Bug Log what `gather` wants t
 
 **Shown:**
 - The masked loss is the loss over a *chosen subset* of guesses: `3.8008` over all eight, `4.0407` over the last four, on the same random numbers. The by-hand route with `log_softmax` and `gather` matches `F.cross_entropy`.
-- A reward model of five weights can get all ten invented judgements right (loss `0.6931` down to `0.0017`), and its biggest weight was for formatting. A feature that never differs inside a pair gets weight `0.000`.
+- A reward model of five weights can get all ten invented judgements right (loss `0.6931` down to `0.0017`), and its biggest positive weight was for formatting. A feature that never differs inside a pair gets weight `0.000`.
 - KL on paper: `0.1733` and `0.4458` against a uniform reference; `0` for a table against itself; `0.4458` against `0.4298` when the order is swapped.
 - A four-answer policy trained with DPO at two leashes: `beta = 0.1` gave `A = 0.997`, KL `1.760`, loss `0.2560`; `beta = 5` gave `A = 0.589`, KL `0.566`, loss `0.0020`.
 

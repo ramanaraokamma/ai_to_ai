@@ -435,7 +435,7 @@ The straight line is about a third too low at step 30. By step 30 the re-sent hi
 
 ## 10. A hung tool and a slow network (both SIMULATED)
 
-Two different things can go wrong with time. First, **waiting**: each call takes a while. `laggy_calc` sleeps `SIM` seconds and then does the real sum. `SIM` is `0.0` by default; the loop sets it to `0.05` for a moment. This delay is **simulated** with `time.sleep`; a real network call would really take that long. Second, a tool that **hangs**: it sleeps 1.5 seconds and we only wait 0.2. (`FlakyBackend(fn, latency=1.5)` is the kit's slow tool, also simulated.) The loop turns the wait into an error, and a tool that errors three times is taken away.
+Two different things can go wrong with time. First, **waiting**: each call takes a while. `laggy_calc` sleeps `SIM` seconds and then does the real sum. `SIM` is `0.0` by default; the loop sets it to `0.05` for a moment. This delay is **simulated** with `time.sleep`; a real network call would really take that long. Second, a tool that **hangs**: it sleeps 1.5 seconds and we only wait 0.2. (`FlakyBackend(fn, latency=1.5)` is the kit's slow tool, also simulated.) The loop turns the wait into an error, and once a tool has errored three times the loop stops the whole run (`too_many_tool_errors`).
 
 ```python
 # hang.py - a tool that hangs, and a round trip that takes time. Both are SIMULATED (time.sleep). The default delay is 0.

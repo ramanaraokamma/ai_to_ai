@@ -229,7 +229,7 @@ At line `0.05`, how many of the 8 are answered? ____ At `0.10`? ____ At `0.20`? 
 
 **F.** You tuned a line on your own wording. In one sentence, what happens to it on the stranger's wording, and what should you have done? ______________________________________________
 
-**G. One embedder only.** A line of `0.25` suited TF-IDF scores in class. A different embedder (Week 25's SVD tier) scored its answerable questions from `0.682` to `0.990`. Would `0.25` refuse anything there? Yes / No. What does that say about carrying a threshold from one embedder to another? ______________________________________________
+**G. One embedder only.** A line of `0.25` (the strictest one, refusing all four unanswerable questions) was a sensible TF-IDF line in class. A different embedder (Week 25's SVD tier) scored its answerable questions from `0.682` to `0.990`. Would `0.25` refuse anything there? Yes / No. What does that say about carrying a threshold from one embedder to another? ______________________________________________
 
 ---
 

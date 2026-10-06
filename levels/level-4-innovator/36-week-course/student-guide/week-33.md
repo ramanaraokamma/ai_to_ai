@@ -488,7 +488,7 @@ gullibility 1.0 vs 0.8, both layers (p 0.3 vs 0.24)   1000     310     225   85 
 2.3 s
 ```
 
-The **big** gap is visible at every `n`, even 20. The **small** gap is invisible at 20, 50 and 200, and only shows at 1,000. At `n = 200` the counts are `62` against `54`: a difference of 8 that looks like something and is not. **That is why 20 runs cannot see a small improvement.**
+The **big** gap is visible at every `n` in this run, but at `n = 20` only just (a gap of 7 against a bound of 5.9; the expected gap there is about the size of the bound, so another 20 runs could easily miss it). The **small** gap is invisible at 20, 50 and 200, and only shows at 1,000. At `n = 200` the counts are `62` against `54`: a difference of 8 that looks like something, but is well inside the noise bound of 18, so these runs cannot tell it from luck (the true gap is real, 0.30 against 0.24; 200 runs are too few to see it). **That is why 20 runs cannot see a small improvement.**
 
 Now the report line, which you type. `line(...)` writes one finding with its noise bound. Then three uses: A1 before and after Patch 2, A2 before and after Patch 1, and the control: **A1 against itself on other seeds**. A fair comparison of a system with itself must say "no difference". If it does not, the bound is wrong.
 
@@ -526,7 +526,7 @@ The Hook's `7 → 9` is now a number: a gap of 2 against a bound of 6.2. The pat
 
 Your agent reads notes, and notes can hold a phone number, an email address and a card number. **Personal data in a log is a liability** (PII, *personally identifiable information*). To **redact** is to replace it with a tag like `[PHONE]` before it is stored or shown.
 
-`redact(text, patterns)` applies each `(tag, pattern)` with `re.sub`, **in list order**. `EMAIL` and `CARD` are given. `PHONE_LOOSE` is the pattern from the capstone's reference code: any run of at least nine characters made of digits, spaces, dashes and brackets.
+`redact(text, patterns)` applies each `(tag, pattern)` with `re.sub`, **in list order**. `EMAIL` and `CARD` are given. `PHONE_LOOSE` is the pattern from the capstone's reference code: any run of at least nine characters made of digits, spaces, dashes, dots and brackets.
 
 **Predict first.** With `CARD` *before* `PHONE_LOOSE`, the card number becomes `[CARD]`. What does the card become if the phone pattern runs first?
 

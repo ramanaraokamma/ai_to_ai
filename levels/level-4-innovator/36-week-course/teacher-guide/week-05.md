@@ -90,7 +90,7 @@ A weight of 1.0 becomes 0.9991 after one step. After two steps it is `0.9991 × 
 
 **B. Dropout keeps a share and scales the survivors.** With `p = 0.5`, each unit is independently zeroed with probability one half; every survivor is multiplied by `1 / (1 − p) = 1 / 0.5 = 2`. So an input of ones becomes a mixture of zeros and twos, and *on average* it is still one: `0.5 × 2 + 0.5 × 0 = 1`. That scaling is the reason `model.eval()` can simply switch dropout off and the outputs stay the right size. Hand check for `p = 0.3`: survivors are multiplied by `1 / 0.7 = 1.4286`.
 
-**C. "Patience" is a counter.** The rule (read it aloud, not as a formula): *keep the best value seen so far and the epoch it happened; after every epoch, if the best was more than `patience` epochs ago, stop.* With a list of ten made-up numbers it can be done with a pencil in two minutes. It is a counting rule, not a mathematical idea.
+**C. "Patience" is a counter.** The rule (read it aloud, not as a formula): *keep the best value seen so far and the epoch it happened; after every epoch, if the best was `patience` or more epochs ago, stop.* With a list of ten made-up numbers it can be done with a pencil in two minutes. It is a counting rule, not a mathematical idea.
 
 **And one piece of language, not maths: "label-preserving".** A jittered spiral point is a new example *only if its class is still true*. `gap_check.py` measures the room there is: among the 120 points, the *median* distance to the nearest point of the other class is about 0.57 in the standardised units the network sees, and one point in ten has a neighbour of the other class closer than 0.30. Noise of size 0.1 moves a point about 0.14 (two coordinates); noise of size 0.5 moves it about 0.7, which is more than the typical gap. `jitter_sweep.py` measures where that breaks. Ask the student, before showing the sweep: *"how big can the noise be before I am lying about the label?"*
 
@@ -823,7 +823,7 @@ epoch:  0     1     2     3     4     5     6     7     8     9
 val:   0.70  0.40  0.30  0.25  0.26  0.24  0.27  0.28  0.29  0.30
 ```
 
-> **Say this:** "The rule: remember the lowest number so far and its epoch. After each epoch, ask: 'was the lowest more than `patience` epochs ago?' If yes, stop. Set `patience` to 3. Walk along the list with your finger and tell me where you stop."
+> **Say this:** "The rule: remember the lowest number so far and its epoch. After each epoch, ask: 'was the lowest `patience` or more epochs ago?' If yes, stop. Set `patience` to 3. Walk along the list with your finger and tell me where you stop."
 
 The student walks: best moves to epoch 3 (0.25), epoch 4 is 1 after, epoch 5 is a new best (0.24), epochs 6, 7, 8 are 1, 2, 3 after → **stop at epoch 8, keep epoch 5.** Then: "and with patience 1?" → stops at epoch 4, keeps epoch 3 (0.25): missed the 0.24 one epoch later. *"So what is the price of a small patience?"* (You can stop in a dip that was not the bottom.)
 

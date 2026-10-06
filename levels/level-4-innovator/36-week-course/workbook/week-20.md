@@ -656,7 +656,7 @@ sits ['s', 'it', 's']
 dais ['d', 'a', 'i', 's']
 ```
 
-**Part B.** Same as the chapter's card; first count table: `th` **9** (the 5, then 2, than 2) · `he` **7** · `ha` **5** · `at` **5** · `en` **2** · `an` **2**.
+**Part B.** Same as the chapter's card; first count table: `th` **9** (the 5, then 2, than 2) · `he` **7** · `ha` **5** · `at` **3** · `en` **2** · `an` **2**.
 
 | Merge | Pair glued | Count when glued | New piece | Words now |
 |:--:|---|:--:|---|---|

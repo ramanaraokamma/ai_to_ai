@@ -111,7 +111,7 @@ Four are new; two mirrors are flagged. Everything else is old: `while` loops, tu
 | first 30 | `he` `the` `an` `er` `and` `in` `ed` `ro` `is` `or` `th` `at` `ld` `on` `ver` `en` `ri` `her` `to` `ad` `ar` `ing` `as` `man` `bo` `no` `it` `un` `old` `id` |
 | 271 to 300 | `ber` `but` `cro` `cold` `card` `ched` `came` `day` `e.` `el` `flo` `g.` `gu` `gan` `grew` `ghed` `has` `ice` `ken` `lau` `lain` `m.` `mo` `mak` `mac` `mber` `ng.` `ol` `oar` `ool` |
 
-Say: *the early merges are the common English pairs; the late merges are the corpus (`flo`, `grew`, `cold`, `e.`). Fragments like `ro`, `ld`, `ghed` are not morphemes.* The new sentence comes out as `the`, ` `, `baker`, ` `, `p`, `r`, `ac`, `t`, `is`, `ed`, ` `, `the`, ` `, `c`, `ri`, `c`, `ket`: `practised` is spelled from six pieces, and `cricket` from five. **Of the 3,227 tokens, 1,277 are lone spaces** (40%); the chunk rule gives every space its own chunk and nothing ever glues to it. The student will spot it; it is a real weakness (section 7) and the next bullet.
+Say: *the early merges are the common English pairs; the late merges are the corpus (`flo`, `grew`, `cold`, `e.`). Fragments like `ro`, `ld`, `ghed` are not morphemes.* The new sentence comes out as `the`, ` `, `baker`, ` `, `p`, `r`, `ac`, `t`, `is`, `ed`, ` `, `the`, ` `, `c`, `ri`, `c`, `ket`: `practised` is spelled from six pieces, and `cricket` from four. **Of the 3,227 tokens, 1,277 are lone spaces** (40%); the chunk rule gives every space its own chunk and nothing ever glues to it. The student will spot it; it is a real weakness (section 7) and the next bullet.
 
 **Size against merges** (`text_merges.py`): merges asked for, learned, bytes per token: 0, 0, 1.00 · 10, 10, 1.20 · 50, 50, 1.49 · 100, 100, 1.69 · 200, 200, 1.99 · 300, 300, 2.16 · 500, **400**, 2.30 · 1000, **400**, 2.30. **At 400 merges training stops on its own**; the corpus has no pair left that occurs twice. The vocabulary is limited by the text, not by what you request.
 
@@ -1004,7 +1004,7 @@ Give the first two merges on the card already filled in (`th`, `the`). Do not do
 
 ### Variation — harder
 
-Ask the student to **predict** the token count when the chunk rule becomes ` ?\S+|\S+` (hint: a space sticks to the word that follows it) before running it. The answer is in `key.py` block 4 (**2,103 tokens, 3.32 bytes per token**, round trip still `True`). Then: *"which sentence in Week 19's rules do you need to say the new tokenizer is better?"* (We counted something; nothing says it would help a model.)
+Ask the student to **predict** the token count when the chunk rule becomes ` ?\S+|\s+` (hint: a space sticks to the word that follows it) before running it. The answer is in `key.py` block 4 (**2,103 tokens, 3.32 bytes per token**, round trip still `True`). Then: *"which sentence in Week 19's rules do you need to say the new tokenizer is better?"* (We counted something; nothing says it would help a model.)
 
 ---
 
@@ -1122,7 +1122,7 @@ Model sentence: *"Characters are never missing but the sequence is long. Words a
 
 ### Page 20.2 — Merge by Hand
 
-First count table (pairs inside words, weighted): `th` **9** (the 5, then 2, than 2) · `he` 7 · `ha` 5 (than 2, hat 3) · `at` 5 (than 2, hat 3) · `en` 2 · `an` 2.
+First count table (pairs inside words, weighted): `th` **9** (the 5, then 2, than 2) · `he` 7 · `ha` 5 (than 2, hat 3) · `at` 3 (hat 3) · `en` 2 · `an` 2.
 
 | Merge | Pair glued | Count when glued | New piece | Words now |
 |:--:|---|:--:|---|---|

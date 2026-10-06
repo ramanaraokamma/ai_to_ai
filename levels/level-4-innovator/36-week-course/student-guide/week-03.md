@@ -463,7 +463,7 @@ adam lr=0.003                train 0.007  val 0.037  acc  98.9%
 adamw lr=0.003               train 0.007  val 0.037  acc  98.9%
 ```
 
-**All three end in about the same place.** The good rates are three orders of magnitude apart (0.3, 0.03, 0.003). Adam has the lowest train loss, but the validation losses are 0.041, 0.034 and 0.037. Read them before you decide which rule is best, and remember this is one seed.
+**All three end in about the same place.** The good rates are a factor of 10 apart, and 100 from end to end (0.3, 0.03, 0.003). Adam has the lowest train loss, but the validation losses are 0.041, 0.034 and 0.037. Read them before you decide which rule is best, and remember this is one seed.
 
 What Adam buys shows up in a sweep of rates:
 

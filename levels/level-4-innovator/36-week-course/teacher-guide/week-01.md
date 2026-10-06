@@ -135,7 +135,7 @@ for k in (2, 3, 10):
 10 equally likely classes -> a guesser's loss is ln 10 = 2.3026
 ```
 
-> **🧑‍🏫 If a student asks:** *"Is 0.693 the number for every model?"* — **No. It is the number for two equally likely classes.** Three classes: 1.0986. Ten (like digits): 2.3026. And the spirals are *almost* but not exactly balanced (431 against 409 in training), so a smart guesser could do very slightly better than 0.693 by guessing the commoner class. For this week "about 0.69" is the right reading.
+> **🧑‍🏫 If a student asks:** *"Is 0.693 the number for every model?"* — **No. It is the number for two equally likely classes.** Three classes: 1.0986. Ten (like digits): 2.3026. And the spirals are *almost* but not exactly balanced (431 against 409 in training), so a smarter guesser that gave the commoner class a slightly higher probability could do very slightly better than 0.693 (about 0.6928 on the training set). For this week "about 0.69" is the right reading.
 
 ### 3. The six runs, and what each one is going to say
 
@@ -865,7 +865,7 @@ F lr=0.1   |  ::--:.:.:::.  ............................................|
 
 > "That is six curves, in text. A and B: a long row of dots. C: dots, then a slow climb to the high-score character. D and E: up fast. F: blank, then some marks, then dots."
 
-**Do this:** Turn the cards over. **Check the predictions** from Part C. Most students expected F or E to win; D has the lowest validation loss, with E close behind. Say **nothing** about who was wrong:
+**Do this:** Turn the cards over. **Check the predictions** from Part C. Most students expected F or E to win; D has the lowest validation loss (0.026; E's is 0.059, more than twice as high). Say **nothing** about who was wrong:
 
 > "Nobody has to have been right. You made a prediction, you checked it, and now you hold a number you can trust more than your guess. That is the habit."
 

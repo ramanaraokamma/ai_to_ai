@@ -422,7 +422,7 @@ print(out.shape)
 | 8 | Order; the recurrent cell | A19, A20, B8, C4, D3 | **12** | | | 7 | |
 | | **Total** | | **75** | | | | |
 
-*(Marks earned ÷ marks available × 100 = %. A week needs a redo if you scored **60% or less** of its marks, which is the "redo if" column.)*
+*(Marks earned ÷ marks available × 100 = %. A week needs a redo if you scored **under 60%** of its marks, which is the "redo if" column.)*
 
 **Circle at most two weeks.** Choose the **lowest percentages**. If there is a tie, go in this order: **Week 8, then Week 2, then Week 6**: Weeks 10 to 13 lean on those three directly.
 
@@ -588,7 +588,7 @@ Real output of the check file:
 
 ### Page 9.6
 
-**9.6a.** Means: A `0.0500`, B `0.0327`. Gap **0.0173**. Larger spread **0.0082** (A). Twice **0.0163**. `0.0173 > 0.0163` → **bigger than noise, only just.** **9.6b.** A `0.0500` against C `0.0460`: gap **0.0040**. Larger spread **0.0082**; twice **0.0163**. `0.0040 < 0.0163` → **inside noise.** **9.6c.** Any of: **run more seeds**, or re-run with different seeds, before trusting a gap that clears the line by `0.001`; the rule is a screen, and 3 seeds is few. **9.6d.** The **mean** and the **spread** (or: the other seeds' values). **9.6e.** `(840 ÷ 120) × 10 = 7 �� 10 =` **70** steps.
+**9.6a.** Means: A `0.0500`, B `0.0327`. Gap **0.0173**. Larger spread **0.0082** (A). Twice **0.0163**. `0.0173 > 0.0163` → **bigger than noise, only just.** **9.6b.** A `0.0500` against C `0.0460`: gap **0.0040**. Larger spread **0.0082**; twice **0.0163**. `0.0040 < 0.0163` → **inside noise.** **9.6c.** Any of: **run more seeds**, or re-run with different seeds, before trusting a gap that clears the line by `0.001`; the rule is a screen, and 3 seeds is few. **9.6d.** The **mean** and the **spread** (or: the other seeds' values). **9.6e.** `(840 ÷ 120) × 10 = 7 × 10 =` **70** steps.
 
 ### Page 9.7
 
@@ -615,7 +615,7 @@ final accuracy 99.2%
 
 The lowest `0.012` is at **epoch 31**, which is not printed. That is why you keep the best weights with `copy.deepcopy`, rather than trusting the last epoch (Week 5).
 
-**9.7e.** A good row: **SYMPTOM** the first-epoch train loss is huge (`7837888.5`) and val then sits near `0.69` → **CHECK** print the loss of the first three epochs and see whether the first is enormous, and whether val is stuck near the `0.693` coin → **ACTION** lower `lr` **by one step of 10×** (for example `1.0` to `0.1`), **one knob**. **Before you write it in for good**, run it on **at least three seeds** and check the gap is bigger than twice the spread. (A student who writes "clip the gradient" has picked a plausible one-knob action; it is **not guaranteed to work**, so credit comes from a **check** that the action was *measured* rather than assumed.)
+**9.7e.** A good row: **SYMPTOM** the first-epoch train loss is huge (`7837888.5`) and val then sits near `0.69` → **CHECK** print the loss of the first three epochs and see whether the first is enormous, and whether val is stuck near the `0.693` coin → **ACTION** lower `lr` **a long way** (for example `1.0` to `1e-3`; a real run at `0.1` still sat on the coin, val `0.702`, 46.9%), **one knob**. **Before you write it in for good**, run it on **at least three seeds** and check the gap is bigger than twice the spread. (A student who writes "clip the gradient" has picked a plausible one-knob action; it is **not guaranteed to work**, so credit comes from a **check** that the action was *measured* rather than assumed.)
 
 ### Page 9.8
 

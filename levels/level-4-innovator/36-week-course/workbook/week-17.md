@@ -385,7 +385,7 @@ a model that knows nothing over 50 choices:  ln(50) = 3.912
 
 1. Write the `calm_head=False` distance: ______ . One sentence: what does a `FAIL` of about this size tell you, and what does it **not** tell you? ________________________________________________
 2. The unshifted model (`y = x`) **passed** the check. What does that teach you about what the check can see? ________________________________________________
-3. Fill the blanks: *a first loss far **below** `ln(V)` means there may be a* ____________ *(the model can see the answer); a first loss far **above** it means* ____________ .
+3. Fill the blanks: *a first loss far **below** `ln(V)` is suspicious, because a brand-new model knows nothing: I should check that I am really scoring an untrained model, and remember that a leak in* ____________ *is* ____________ *at step 0; a first loss far **above** it means* ____________ .
 
 ---
 
@@ -763,7 +763,7 @@ Part B and C: the table below is from `check174.py` (seed 0, a 32 x 64 batch, `d
 | `calm_head=True` | 3.3479 (distance 0.0157) | **PASS** |
 | `calm_head=True`, `y = x` | 3.3368 (distance 0.0046) | **PASS** |
 
-Part D: (1) **0.23 here.** A `FAIL` of this size says the model *starts a little over-confident* (the untouched output layer gives bigger scores than the calm one). It does **not** say the model is broken or cannot train; in class a `FAIL` of 0.17 trained fine. (2) The check looks only at the loss when the model has seen nothing. A wrong `y` changes which answer the loss is compared with, not how confident the model is, so a model that can see its answer still starts at `ln(V)`. The check **cannot** catch a wrong `y`. (3) *A first loss far below `ln(V)` means there may be a leak (the model can see the answer); far above means the output layer starts too confident, or the targets are wrong (ids out of order).* What to draw out: a check that is off tells you to look; a check that passes is not a proof.
+Part D: (1) **0.23 here.** A `FAIL` of this size says the model *starts a little over-confident* (the untouched output layer gives bigger scores than the calm one). It does **not** say the model is broken or cannot train; in class a `FAIL` of 0.17 trained fine. (2) The check looks only at the loss when the model has seen nothing. A wrong `y` changes which answer the loss is compared with, not how confident the model is, so a model that can see its answer still starts at `ln(V)`. The check **cannot** catch a wrong `y`. (3) *A first loss far below `ln(V)` is suspicious, because a brand-new model knows nothing: check that you are really scoring an untrained model. A leak in `y` is invisible at step 0 (blanks: `y`, invisible); far above means the output layer starts too confident, or the targets are wrong (ids out of order).* What to draw out: a check that is off tells you to look; a check that passes is not a proof.
 
 ### Page 17.5
 

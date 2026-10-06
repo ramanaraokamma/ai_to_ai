@@ -131,7 +131,7 @@ Did your two ranks for Asha match? Which rank did you get wrong, if any? ______ 
 | `adversarial` | 3 | 2-3 | ______ |
 | `ambiguous` | 2 | 2 | ______ |
 
-Leo's total: ______ . Five of Leo's cases are refusal cases. A system that refuses everything scores ______ / ______ = ______ . A system that never refuses can score at most ______ / ______ = ______ . In one sentence: why are refusal cases *not* free points? ____________________________________________________
+Leo's total: ______ . Six of Leo's cases are refusal cases. A system that refuses everything scores ______ / ______ = ______ . A system that never refuses can score at most ______ / ______ = ______ . In one sentence: why are refusal cases *not* free points? ____________________________________________________
 
 **Your own card.** Fill in from your project (homework). Category counts: factual ______ multi_hop ______ arithmetic ______ out_of_scope ______ adversarial ______ ambiguous ______ . Total ______ . Refusal cases ______ . Your floor: ______ / ______ = ______ . Cases you **expect to fail** (hard): ______ (at least 2).
 
@@ -169,7 +169,7 @@ leo_card = {"factual": 11, "multi_hop": 2, "arithmetic": 4, "out_of_scope": 3, "
 print("Part A: Leo's card")
 for cat, (lo, hi) in target.items():
     print(f"  {cat:13s} have {leo_card[cat]:2d}   wanted {lo}-{hi}   {'ok' if lo <= leo_card[cat] <= hi else 'OUT OF RANGE'}")
-refusals, total = 5, sum(leo_card.values())
+refusals, total = 6, sum(leo_card.values())
 print(f"  total {total}; refusal cases {refusals}: refuse-everything scores {refusals}/{total} = {refusals / total:.2f}; answer-everything scores at most {total - refusals}/{total} = {(total - refusals) / total:.2f}")
 WORD = re.compile(r"[a-z0-9.\-]+")
 def words(text):
@@ -195,7 +195,7 @@ Part A: Leo's card
   out_of_scope  have  3   wanted 3-3   ok
   adversarial   have  3   wanted 2-3   ok
   ambiguous     have  2   wanted 2-2   ok
-  total 25; refusal cases 5: refuse-everything scores 5/25 = 0.20; answer-everything scores at most 20/25 = 0.80
+  total 25; refusal cases 6: refuse-everything scores 6/25 = 0.24; answer-everything scores at most 19/25 = 0.76
 Part B: substring against whole token
   needle '300'       in 'readable by step 3000'     : substring True  token False
   needle 'adamw'     in 'Start with AdamW.'         : substring True  token True
@@ -436,7 +436,7 @@ Then write this sentence in your own handwriting, with your own numbers, and kee
 - **C.** `n = 25, p = 0.50`: expected **12.5**, wobble **2.50**, wobble ÷ `n` **0.100**, one case **0.040**, bound **7.1** cases, bound ÷ `n` **0.28**. `n = 6, p = 0.50`: **3.0**, **1.22**, **0.204**, one case **0.167**, bound **3.5**, **0.58**. `n = 50, p = 0.70`: **35.0**, **3.24**, **0.065**, **0.020**, bound **9.2**, **0.18**. `n = 100, p = 0.70`: **70.0**, **4.58**, **0.046**, **0.010**, bound **13.0**, **0.13**. v1 17 against v2 19: gap **2**, bound **6.5**, **not** more than noise. Six-case category: gap of 2 against a bound of **3.5**: **not** more than noise either (the printout: 2 is *below* 3.5). The sentence: *one case is never a finding; a **category** moving, with the **failing cases** named, is.* (Rule of thumb only: it treats your cases as a sample of what the user might ask and ignores that both versions see the same 25.)
 
 ### Page 34.2
-- **A.** `factual` **OUT** (11 is over 10), `multi_hop` **OUT** (2 is under 3), the other four **ok**. Total **25**. Refuse-everything: `5 / 25 = 0.20`. Never-refuse: at most `20 / 25 = 0.80`. Refusal cases are not free points because a system that refuses everything already scores the floor, and a system that never refuses has a ceiling of three quarters or so; a real system has to beat the floor and be right about *which* questions to answer. Your own card: your numbers; the floor is your refusal cases over 25, and at least 2 cases must be ones you expect to fail.
+- **A.** `factual` **OUT** (11 is over 10), `multi_hop` **OUT** (2 is under 3), the other four **ok**. Total **25**. Refuse-everything: `6 / 25 = 0.24` (3 out_of_scope + 3 adversarial). Never-refuse: at most `19 / 25 = 0.76`. Refusal cases are not free points because a system that refuses everything already scores the floor, and a system that never refuses has a ceiling of three quarters or so; a real system has to beat the floor and be right about *which* questions to answer. Your own card: your numbers; the floor is your refusal cases over 25, and at least 2 cases must be ones you expect to fail.
 - **B.** Row 1 (`300`, "3000"): lazy **True**, careful **False**. Row 2 (`adamw`): **True**, **True**. Row 3 (`pre-norm`, "pre norm"): **False**, **False**. Row 4 (`pre-norm`, "Pre-norm,"): **True**, **True**. Row 5 (`2`, "1.2.3"): **True**, **False**. Row 6 (`0.5`, "0.55"): **True**, **False**. The correct answer in other words that the careful scorer fails is **row 3** ("pre norm" is right but has no dash). The defence is `any_of` with the alternatives written into the case, and reading **every** failing case in Week 35 before blaming the system.
 - **C.** Rates **0.73, 0.50, 0.75, 1.00, 0.67, 0.00**. Pooled `17 / 25 = 0.68`. Mean of the six rates `0.61` (sum `3.64`). `0.75` typed by hand is **neither**. The overall is the **pooled** `17 / 25 = 0.68`; the mean of rates lets the 2-case `ambiguous` category (rate 0.00) pull as hard as the 11-case `factual` category. The rule: *computed from the **counts**, never **typed**.* And say which one you printed, with `n = 25`.
 
