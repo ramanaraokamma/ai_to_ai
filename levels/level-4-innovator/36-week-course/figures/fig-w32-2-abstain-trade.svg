@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Abstaining cuts wrong answers by giving up right ones</title>
+  <desc>Coverage against accuracy of the answered for 40 invented results. Answer everything: coverage 1.000, accuracy 0.575, 17 wrong. t 0.6: 0.775, 0.645. t 0.7: 0.600, 0.667. t 0.8, ringed: 0.450, 0.722, answering 18 of 40 with 13 right and 5 wrong. t 0.85: 0.375, 0.733. t 0.9: 0.250, 0.700. t 0.95: 0.075, 0.667. The last point at coverage 0.025 is one question, right, accuracy 1.000. Billing fell from 4 of 8 to 2 of 6.</desc>
+<text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Abstaining trades right answers for wrong ones</text>
+  <line x1="80" y1="320" x2="480" y2="320" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="80" y1="320" x2="80" y2="90" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="72" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.50</text>
+  <text x="72" y="209" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.75</text>
+  <text x="72" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1.00</text>
+  <text x="80" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.0</text>
+  <text x="280" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.5</text>
+  <text x="480" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1.0</text>
+  <text x="280" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">coverage (share of the 40 answered)</text>
+  <text x="34" y="205" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 34 205)">accuracy of the answered</text>
+  <line x1="80" y1="285.5" x2="480" y2="285.5" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="100" y="301.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">answer everything: 0.575</text>
+  <polyline points="480,285.5 390,253.3 320,243.2 260,217.9 230,212.8 180,228 110,243.2 90,90" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="480" cy="285.5" r="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="480" y="309.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">t 0&#8211;0.5</text>
+  <circle cx="390" cy="253.3" r="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="390" y="277.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">t 0.6</text>
+  <circle cx="320" cy="243.2" r="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="320" y="267.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">t 0.7</text>
+  <circle cx="260" cy="217.9" r="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="260" y="201.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">t 0.8</text>
+  <circle cx="230" cy="212.8" r="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="230" y="236.8" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">t 0.85</text>
+  <circle cx="180" cy="228" r="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="180" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">t 0.9</text>
+  <circle cx="110" cy="243.2" r="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="110" y="267.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">t 0.95</text>
+  <polygon points="90,82 98,90 90,98 82,90" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="104" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">t 0.98: one question, right</text>
+  <rect x="520" y="96" width="260" height="200" rx="12" fill="#F5F8FA" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="536" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">At t = 0.8 (ringed)</text>
+  <text x="536" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">18 of 40 answered, 13 right</text>
+  <text x="536" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">wrong but answered: 17 to 5</text>
+  <text x="536" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">22 got &#8220;I don't know&#8221;:</text>
+  <text x="536" y="234" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">10 would have been right</text>
+  <text x="536" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">billing: 4 of 8 to 2 of 6</text>
+  <rect x="520" y="312" width="260" height="26" rx="6" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="650" y="325" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">40 invented results, not a model</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The curve does not say where to stop; you decide that in words.</text>
+</svg>

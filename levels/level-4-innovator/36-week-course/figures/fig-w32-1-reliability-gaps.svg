@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>In every confidence bucket the system said more than it delivered</title>
+  <desc>Five confidence buckets of 40 invented results, stated against actual. 0.00 to 0.59: n 9, stated 0.551, actual 0.333. 0.60 to 0.69: n 7, 0.647, 0.571. 0.70 to 0.79: n 6, 0.753, 0.500. 0.80 to 0.89: n 8, 0.854, 0.750. 0.90 to 1.00: n 10, 0.931, 0.700. Every gap is negative; ECE is 0.1788. The sheet was invented by the teacher.</desc>
+<text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">When it said 0.93, it was right 70% of the time</text>
+  <line x1="60" y1="296" x2="640" y2="296" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  
+  <text x="52" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.0</text>
+  <line x1="60" y1="201" x2="640" y2="201" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="52" y="205" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.5</text>
+  <line x1="60" y1="106" x2="640" y2="106" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="52" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1.0</text>
+  <text x="34" y="201" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 34 201)">share / stated confidence</text>
+  <rect x="76" y="191.3" width="40" height="104.7" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="124" y="232.7" width="40" height="63.3" rx="4" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="96" y="185.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.551</text>
+  <text x="144" y="226.7" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.333</text>
+  <text x="120" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.00&#8211;0.59</text>
+  <text x="120" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">n = 9</text>
+  <text x="120" y="346" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">gap &#8722;0.218</text>
+  <rect x="191" y="173.1" width="40" height="122.9" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="239" y="187.5" width="40" height="108.5" rx="4" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="211" y="167.1" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.647</text>
+  <text x="259" y="181.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.571</text>
+  <text x="235" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.60&#8211;0.69</text>
+  <text x="235" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">n = 7</text>
+  <text x="235" y="346" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">gap &#8722;0.076</text>
+  <rect x="306" y="152.9" width="40" height="143.1" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="354" y="201" width="40" height="95" rx="4" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="326" y="146.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.753</text>
+  <text x="374" y="195" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.500</text>
+  <text x="350" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.70&#8211;0.79</text>
+  <text x="350" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">n = 6</text>
+  <text x="350" y="346" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">gap &#8722;0.253</text>
+  <rect x="421" y="133.7" width="40" height="162.3" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="469" y="153.5" width="40" height="142.5" rx="4" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="441" y="127.7" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.854</text>
+  <text x="489" y="147.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.750</text>
+  <text x="465" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.80&#8211;0.89</text>
+  <text x="465" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">n = 8</text>
+  <text x="465" y="346" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">gap &#8722;0.104</text>
+  <rect x="536" y="119.1" width="40" height="176.9" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="584" y="163" width="40" height="133" rx="4" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="556" y="113.1" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.931</text>
+  <text x="604" y="157" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.700</text>
+  <text x="580" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.90&#8211;1.00</text>
+  <text x="580" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">n = 10</text>
+  <text x="580" y="346" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="middle">gap &#8722;0.231</text>
+  <rect x="60" y="62" width="16" height="12" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="82" y="69" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">stated (said)</text>
+  <rect x="180" y="62" width="16" height="12" rx="2" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="202" y="69" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">actual (right)</text>
+  <rect x="440" y="56" width="200" height="26" rx="6" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="540" y="69" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">40 invented results, not a model</text>
+  <rect x="662" y="120" width="118" height="130" rx="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="721" y="148" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">ECE</text>
+  <text x="721" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle">0.1788</text>
+  <text x="721" y="206" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">gaps added,</text>
+  <text x="721" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">big buckets</text>
+  <text x="721" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">count more</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">ECE is the average gap, not the share wrong (42.5% were wrong).</text>
+</svg>

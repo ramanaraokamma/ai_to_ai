@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A prompt must clear the floor, and one seed is one draw</title>
+  <desc>Horizontal bars of field score out of 32 boxes: the constant-answer floor 43.8 percent (14 of 32), v1 zero-shot 50.0 percent (16 of 32), v2 rules 68.8 percent (22 of 32), v3 few-shot 93.8 percent (30 of 32). Below, six model seeds per prompt: v1 ranges from 31.2 to 59.4 and falls below the floor on two seeds (40.6 and 31.2), v2 ranges 68.8 to 87.5, v3 scores 93.8 on all six. All scores are of the stand-in, not of a model.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Prompt versions against the floor (stand-in)</text>
+  <line x1="190" y1="60" x2="190" y2="340" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="2 4" stroke-linecap="round"/>
+  <text x="190" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <line x1="315" y1="60" x2="315" y2="340" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="2 4" stroke-linecap="round"/>
+  <text x="315" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">25</text>
+  <line x1="440" y1="60" x2="440" y2="340" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="2 4" stroke-linecap="round"/>
+  <text x="440" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">50</text>
+  <line x1="565" y1="60" x2="565" y2="340" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="2 4" stroke-linecap="round"/>
+  <text x="565" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">75</text>
+  <line x1="690" y1="60" x2="690" y2="340" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="2 4" stroke-linecap="round"/>
+  <text x="690" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">100</text>
+  <rect x="190" y="64" width="219" height="28" rx="6" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="180" y="75" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">floor</text>
+  <text x="180" y="89" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">(constant answer)</text>
+  <text x="401" y="78" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">43.8% &#183; 14 / 32 boxes</text>
+  <rect x="190" y="98" width="250" height="28" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="180" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">v1 zero-shot</text>
+  <text x="432" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">50.0% &#183; 16 / 32 boxes</text>
+  <rect x="190" y="132" width="344" height="28" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="180" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">v2 rules</text>
+  <text x="526" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">68.8% &#183; 22 / 32 boxes</text>
+  <rect x="190" y="166" width="469" height="28" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="180" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">v3 few-shot</text>
+  <text x="651" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">93.8% &#183; 30 / 32 boxes</text>
+  <text x="24" y="226" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">same prompts, six model seeds: each mark is one seed</text>
+  <line x1="409" y1="252" x2="409" y2="340" stroke="#C7CDD4" stroke-width="2" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="415" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">floor 43.8</text>
+  <text x="180" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">v1 zero-shot</text>
+  <line x1="190" y1="276" x2="690" y2="276" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="346" cy="276" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="393" cy="276" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="409" cy="276" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="424.5" cy="276" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="440" cy="276" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="487" cy="276" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="696" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" dominant-baseline="central">31.2&#8211;59.4</text>
+  <text x="180" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">v2 rules</text>
+  <line x1="190" y1="302" x2="690" y2="302" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="528" y="296" width="12" height="12" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="543.5" y="296" width="12" height="12" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="559" y="296" width="12" height="12" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="590" y="296" width="12" height="12" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="621.5" y="296" width="12" height="12" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="696" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" dominant-baseline="central">68.8&#8211;87.5</text>
+  <text x="180" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">v3 few-shot</text>
+  <line x1="190" y1="328" x2="690" y2="328" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <polygon points="659,321 666,334 652,334" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="645" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">all six seeds = 93.8</text>
+  <text x="440" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">field score, % of 32 boxes (higher is better)</text>
+</svg>

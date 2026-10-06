@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A patch must stop the attack and keep the legitimate task working</title>
+  <desc>Four versions of a stand-in agent, 50 runs each. v0: A1 15 of 50, A2 15 of 50, legitimate save 50 of 50, A1 during the save 15 of 50. Patch 1, strict sandbox: 15, 0, 50, 15. Patch 2, named files only: 0, 0, 50, 0. The bad patch that refuses all writes: 0, 0, 0, 0, so it also stops the legitimate save and is outlined as wrong. Cells are shaded and marked with a tick or a cross.</desc>
+<text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A zero attack count is not enough to call a patch good</text>
+  <rect x="28" y="90" width="744" height="250" rx="12" fill="#F5F8FA" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="314" y="64" width="172" height="26" rx="6" fill="#F5F8FA" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="77" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">stand-in, not a model</text>
+  <text x="330" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">A1</text>
+  <text x="330" y="131" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">landed</text>
+  <text x="450" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">A2</text>
+  <text x="450" y="131" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">landed</text>
+  <text x="570" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">legit save</text>
+  <text x="570" y="131" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">works</text>
+  <text x="690" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">A1 during</text>
+  <text x="690" y="131" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">the save</text>
+  <text x="44" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">v0: weak sandbox, no guard</text>
+  <rect x="270" y="144" width="120" height="42" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="316" y="165" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">15 / 50</text>
+  <polyline points="361,158 375,172" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="361,172 375,158" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="390" y="144" width="120" height="42" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="436" y="165" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">15 / 50</text>
+  <polyline points="481,158 495,172" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="481,172 495,158" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="510" y="144" width="120" height="42" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="556" y="165" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">50 / 50</text>
+  <polyline points="601.7,165 606.2,169.9 615.2,159.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="630" y="144" width="120" height="42" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="676" y="165" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">15 / 50</text>
+  <polyline points="721,158 735,172" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="721,172 735,158" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="44" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">patch 1: strict sandbox</text>
+  <rect x="270" y="190" width="120" height="42" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="316" y="211" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">15 / 50</text>
+  <polyline points="361,204 375,218" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="361,218 375,204" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="390" y="190" width="120" height="42" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="436" y="211" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0 / 50</text>
+  <polyline points="481.7,211 486.2,215.9 495.2,205.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="510" y="190" width="120" height="42" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="556" y="211" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">50 / 50</text>
+  <polyline points="601.7,211 606.2,215.9 615.2,205.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="630" y="190" width="120" height="42" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="676" y="211" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">15 / 50</text>
+  <polyline points="721,204 735,218" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="721,218 735,204" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="44" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">patch 2: + named files only</text>
+  <rect x="270" y="236" width="120" height="42" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="316" y="257" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0 / 50</text>
+  <polyline points="361.7,257 366.2,261.9 375.2,251.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="390" y="236" width="120" height="42" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="436" y="257" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0 / 50</text>
+  <polyline points="481.7,257 486.2,261.9 495.2,251.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="510" y="236" width="120" height="42" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="556" y="257" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">50 / 50</text>
+  <polyline points="601.7,257 606.2,261.9 615.2,251.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="630" y="236" width="120" height="42" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="676" y="257" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0 / 50</text>
+  <polyline points="721.7,257 726.2,261.9 735.2,251.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="44" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">BAD patch: no writes at all</text>
+  <rect x="270" y="282" width="120" height="42" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="316" y="303" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0 / 50</text>
+  <polyline points="361.7,303 366.2,307.9 375.2,297.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="390" y="282" width="120" height="42" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="436" y="303" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0 / 50</text>
+  <polyline points="481.7,303 486.2,307.9 495.2,297.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="510" y="282" width="120" height="42" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="556" y="303" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0 / 50</text>
+  <polyline points="601,296 615,310" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="601,310 615,296" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="630" y="282" width="120" height="42" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="676" y="303" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0 / 50</text>
+  <polyline points="721.7,303 726.2,307.9 735.2,297.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="266" y="280" width="488" height="46" rx="8" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">BAD patch: 0 / 50 on both attacks and 0 / 50 saves. Re-test the happy path.</text>
+</svg>

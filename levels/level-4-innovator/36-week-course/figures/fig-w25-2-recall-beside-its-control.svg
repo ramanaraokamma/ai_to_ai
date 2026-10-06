@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A recall number only means something beside its control: one training step already gets recall@3 0.73</title>
+  <desc>Paired horizontal bars for recall@1 and recall@3 on 15 questions. Pure chance 0.07 and 0.20. Word tf-idf 0.67 and 0.73. Contrastive embedder after one training step, mean of 5 seeds, 0.48 and 0.73. Contrastive after 150 steps, mean of 5 seeds, 0.63 and 0.89, with recall@1 ranging from 0.47 to 0.73 across seeds. LSA with 14 numbers 0.73 and 1.00.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Recall needs a control beside it</text>
+  <rect x="270" y="62" width="28" height="14" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="306" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">recall@1 (top 1)</text>
+  <rect x="440" y="62" width="28" height="14" rx="2" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="476" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">recall@3 (top 3)</text>
+  <line x1="270" y1="90" x2="270" y2="352" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="256" y="117" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end">pure chance</text>
+  <text x="256" y="133" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1 &#247; 15 and 3 &#247; 15</text>
+  <rect x="270" y="100" width="30.8" height="18" rx="3" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="270" y="120" width="88" height="18" rx="3" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="308.8" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">0.07</text>
+  <text x="366" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">0.20</text>
+  <text x="256" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end">word tf-idf</text>
+  <rect x="270" y="152" width="294.8" height="18" rx="3" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="270" y="172" width="321.2" height="18" rx="3" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="572.8" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">0.67</text>
+  <text x="599.2" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">0.73</text>
+  <text x="256" y="221" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end">contrastive, 1 step</text>
+  <text x="256" y="237" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">the control, mean of 5 seeds</text>
+  <rect x="270" y="204" width="211.2" height="18" rx="3" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="270" y="224" width="321.2" height="18" rx="3" fill="#F5F8FA" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="489.2" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">0.48</text>
+  <text x="599.2" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">0.73</text>
+  <text x="256" y="273" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end">contrastive, 150 steps</text>
+  <text x="256" y="289" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">mean of 5 seeds</text>
+  <rect x="270" y="256" width="277.2" height="18" rx="3" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="270" y="276" width="391.6" height="18" rx="3" fill="#F5F8FA" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="476.8" y1="265" x2="591.2" y2="265" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="476.8" y1="259" x2="476.8" y2="271" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="591.2" y1="259" x2="591.2" y2="271" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="599.2" y="270" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">0.63  seeds 0.47&#8211;0.73</text>
+  <text x="669.6" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">0.89</text>
+  <text x="256" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end">lsa, 14 numbers</text>
+  <rect x="270" y="308" width="321.2" height="18" rx="3" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="270" y="328" width="440" height="18" rx="3" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="599.2" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">0.73</text>
+  <text x="718" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">1.00</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Training adds 0.63 &#8722; 0.48 = 0.15 at recall@1 over the one-step control.</text>
+</svg>

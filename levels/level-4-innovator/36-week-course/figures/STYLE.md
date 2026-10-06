@@ -349,11 +349,32 @@ Filenames obey this too (&sect;7).
 
 ---
 
-## 4. Motif library &mdash; Level 4 (planned)
+## 4. Motif library &mdash; Level 4
 
-The motifs are specified here and **will be built into `_motifs.svg` by the generator** in a later
-stage. Until a motif exists, a week figure may draw the same thing inline, obeying the rules on this
-page. Each motif lists its canvas, roles, the second cue, and the real numbers it must print.
+The motifs below are specified here. **The ones marked &#10003; are built into `_motifs.svg`** by
+`_generator/_gen_motifs.py` (open `_preview.html` to see them). Until a motif exists, a week figure may draw
+the same thing inline, obeying the rules on this page. Each motif lists its canvas, roles, the second cue,
+and the real numbers it must print.
+
+Built (23): `motif-loss-curve`, `motif-loss-compare`, `motif-train-val-gap`, `motif-coin-floor`,
+`motif-lr-schedule`, `motif-token-stream`, `motif-bpe-merge`, `motif-attention-grid`, `motif-causal-mask`,
+`motif-attention-arcs`, `motif-gradient-compound`, `motif-tensor-2d`, `motif-block-stack`,
+`motif-cosine-table`, `motif-rag-flow`, `motif-recall-at-k`, `motif-agent-loop`, `motif-cost-growth`,
+`motif-fence`, `motif-trace`, `motif-eval-table`, `motif-ablation-table`, `motif-stand-in-and-quoted`.
+The built `motif-trace` is the Week 28 five-turn trace (the spec's `motif-trace-jsonl` remains planned for
+Week 29); `motif-cosine-table` and `motif-ablation-table` are built in place of `motif-cosine` and
+`motif-head-ablation`. Rows below that are not in this list are still planned.
+
+Every motif prints only numbers listed in `_generator/_gen_data.py`, each tagged with its provenance: a seeded
+numpy demo run (seed 0, 200 points, 40 steps &mdash; this is the figure's source, since the course's own
+loss-curve runs are in the weeks), a value copied from the executed ledger (`_ledger/out`), or a hand sum.
+A week figure replaces them with *its own* printed values; the motifs are shape templates plus worked examples.
+
+**Heatmap tint rule, clarified (2.9).** The three tints are *largest in its row* (`accent` fill and a 3px
+`accent` ring; ties are all ringed), *0.10 or more* (`data`), and *below 0.10* (`panel`). The 2.9 cut-offs
+`&#8805; 0.50` / `0.10&#8211;0.49` / `&lt; 0.10` describe the same bands, but a row whose largest weight is
+under 0.50 (Week 14's `the` and `cat` rows peak at 0.4223) must still ring its maximum, so the ring follows
+the row, not the 0.50 cut. The legend chip states the rule actually used.
 
 ### Training and loss
 
@@ -536,14 +557,46 @@ Then, by eye:
 | File | What it is |
 |---|---|
 | `STYLE.md` | This contract. |
-| `_generator/_gen_audit.py` | The audit. Exists from day one; checks finished `fig-*.svg` files now, and generator motifs/patterns once those modules exist. |
-| `fig-wNN-*.svg` | The week figures (none yet). |
-| `_motifs.svg`, `_preview.html`, `_generator/_gen_*.py` | Planned, as in Level 3: a generator is the source of truth for the motif sprite sheet and preview. Build after the first week figures settle the motif shapes. |
+| `_generator/_gen_build.py` | **One command.** `python3 _gen_build.py` regenerates `_motifs.svg`, `_preview.html` and all 36 Growing Maps deterministically, validates the XML, then runs the audit. Usage is documented at the top of the file. |
+| `_generator/_gen_audit.py` | The audit (`python3 _gen_audit.py`, must print `--- 0 finding(s)`). Checks the generator's motifs and patterns, and every finished `fig-*.svg` in this folder. |
+| `_generator/_gen_core.py` | Palette, helpers (series markers, three-tint heatmap cells, stand-in frame, quoted box) and the motif registry. |
+| `_generator/_gen_data.py` | Every number a shared motif prints, with its provenance (STYLE 2.1). |
+| `_generator/_gen_motifs.py`, `_gen_pat.py`, `_gen_map.py`, `_gen_emit.py` | Motifs, the 8 composition patterns (6 built as finished figures on the canvases of 1.4), the Growing Map, and the writers. |
+| `_motifs.svg` | Generated sprite sheet. Do not edit. |
+| `_preview.html` | Generated eyeball page: palette, motifs, patterns, and every `fig-*.svg` (with a greyscale toggle). |
+| `fig-wNN-0-where-this-fits.svg` | The 36 Growing Map figures. **Generated** &mdash; edit `_gen_map.py`, not the files. |
+| `fig-wNN-<n>-*.svg`, n &#8805; 1 | Week figures, hand-authored (none yet). `_gen_build.py` never touches them. |
+
+The generator is the source of truth for `_motifs.svg`, `_preview.html` and the maps. A week figure is
+free to be hand-written SVG, or to import `_gen_core` and write its own generator module; either way it
+must pass `_gen_audit.py`.
 
 ### The Growing Map &mdash; `fig-wNN-0-where-this-fits.svg`
 
 As in Levels 1&ndash;3, each week carries one figure, index `0`, showing the whole level with one more
-piece filled in; caption `Figure <week>.0`. Level 4's spine is **four terms** (optimisation and
-regularisation; sequences and attention; language models and their use; systems and safety), drawn on the
-same wide-canvas coordinate grid as Levels 2 and 3, with a different spine. The spine's exact tiles are
-fixed when the first Growing Map is drawn and then never change.
+piece filled in; caption `Figure <week>.0`. **The spine is decided and fixed:**
+
+> **Four lanes, nine tiles each.** One horizontal lane per term, stacked top to bottom (term 1 on top);
+> each lane holds that term's nine weeks as nine tiles left to right. Week *N* is lane `(N-1) // 9`, column
+> `(N-1) % 9`. A wire runs through the tile centres of each lane. 36 tiles, on the `wide` canvas.
+
+| Element | Spec |
+|---|---|
+| Canvas | `0 0 800 400`, title `24px` top-centre: `Level 4 map: week N of 36` |
+| Lanes | four panels `x 20&#8211;780`, rows at `y = 88, 158, 228, 298`, each 66 tall. Left label: `Term N` (18px) then the term's name in two 12px lines: *train it / on purpose*, *memory, then / attention*, *how it is made, / how it is asked*, *agents, evidence, / and the system card* (the README's term names) |
+| Tiles | 58 &#215; 50, gap 7, first tile at `x = 192`; week number `18px`, week type beneath in `12px` (`teach`, `lab`, `project`, `assess`, `capstone`), both parsed from the README &ldquo;All 36 Weeks&rdquo; table |
+| **Done** weeks | white tile, solid `ink` 2px outline, solid `ink` wire |
+| **This week** | `accent`-fill tile, **4px** `accent` outline, and a solid `accent` pointer triangle above it |
+| **Ahead** | dashed `grid` outline, muted number, dashed `grid` wire |
+| Current lane | panel with a solid `ink` outline; earlier lanes a solid `grid` outline; later lanes dashed `grid` |
+| Caption line | `Week N &#183; <title>` at `14px`, bottom-centre, titles from the README (` - ` becomes an em dash entity) |
+| `<title>` | `Week N of 36, <title> (<type>), sits in term T, <term name>` |
+| `<desc>` | names the four lanes, which weeks are done, which one is highlighted and its type, and which are still dashed |
+
+State is carried by dash, stroke weight and a pointer shape &mdash; never colour alone. No bold is used
+(1.7). The spine never changes in later weeks or revisions: if a README title changes, re-run
+`_gen_build.py`; if the grid changes, every map changes with it.
+
+One quirk: Week 6's real title contains the capital-G word the audit and the section-9 grep ban (it flags SVG
+colour ramps). `_gen_map.py` writes that one letter as a numeric entity (`Gradi&amp;#101;nt`), which renders
+identically and keeps both checks meaningful for everything else.

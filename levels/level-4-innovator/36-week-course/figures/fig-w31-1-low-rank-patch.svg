@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A big grid can be a thin column times a thin row, so a patch is a small share of the weights</title>
+  <desc>Left: a column of four numbers 1, 2, 0, minus 1 beside a row of four numbers 2, 1, 0, 3. Their products fill a 4 by 4 grid whose rows are 2 1 0 3, 4 2 0 6, 0 0 0 0, and minus 2, minus 1, 0, minus 3: 16 cells from 8 numbers. Right: one 64 by 64 projection stores 4,096 numbers; a rank-4 patch of A (4 by 64) and B (64 by 4) stores 512, which is 0.1250 of it.</desc>
+<text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A thin column times a thin row builds a grid</text>
+  <rect x="150" y="98" width="46" height="46" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="173" y="121" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <rect x="196" y="98" width="46" height="46" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="219" y="121" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="242" y="98" width="46" height="46" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="265" y="121" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="288" y="98" width="46" height="46" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="311" y="121" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <rect x="90" y="150" width="46" height="46" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="113" y="173" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="90" y="196" width="46" height="46" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="113" y="219" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <rect x="90" y="242" width="46" height="46" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="113" y="265" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="90" y="288" width="46" height="46" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2"/>
+  <text x="113" y="311" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8722;1</text>
+  <rect x="150" y="150" width="46" height="46" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="173" y="173" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <rect x="196" y="150" width="46" height="46" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="219" y="173" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="242" y="150" width="46" height="46" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="265" y="173" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="288" y="150" width="46" height="46" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="311" y="173" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <rect x="150" y="196" width="46" height="46" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="173" y="219" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <rect x="196" y="196" width="46" height="46" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="219" y="219" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <rect x="242" y="196" width="46" height="46" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="265" y="219" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="288" y="196" width="46" height="46" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="311" y="219" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">6</text>
+  <rect x="150" y="242" width="46" height="46" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="173" y="265" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="196" y="242" width="46" height="46" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="219" y="265" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="242" y="242" width="46" height="46" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="265" y="265" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="288" y="242" width="46" height="46" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="311" y="265" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="150" y="288" width="46" height="46" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="173" y="311" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8722;2</text>
+  <rect x="196" y="288" width="46" height="46" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="219" y="311" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8722;1</text>
+  <rect x="242" y="288" width="46" height="46" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="265" y="311" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="288" y="288" width="46" height="46" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="311" y="311" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8722;3</text>
+  <text x="242" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">row of 4</text>
+  <rect x="342" y="108" width="57" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="370.5" y="121" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(1, 4)</text>
+  <text x="136" y="142" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end">column of 4</text>
+  <rect x="85" y="342" width="57" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="113.5" y="355" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(4, 1)</text>
+  <rect x="342" y="229" width="57" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="370.5" y="242" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(4, 4)</text>
+  <text x="292" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">16 cells, built from 8 numbers</text>
+  <text x="470" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">64 &#215; 64 projection vs patch</text>
+  <rect x="470" y="120" width="300" height="34" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="620" y="137" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">4,096 numbers stored in full</text>
+  <rect x="470" y="176" width="37.5" height="34" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="517.5" y="193" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">512 numbers in the rank-4 patch</text>
+  <text x="470" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">512 = 4 &#215; 64 + 64 &#215; 4 = 256 + 256</text>
+  <rect x="470" y="258" width="78" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="509" y="271" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">A (4, 64)</text>
+  <rect x="570" y="258" width="78" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="609" y="271" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">B (64, 4)</text>
+  <rect x="470" y="300" width="300" height="36" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="620" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">512 &#247; 4096 = 0.1250 of the projection</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">A patch of two thin grids is a small share of the big grid.</text>
+</svg>
