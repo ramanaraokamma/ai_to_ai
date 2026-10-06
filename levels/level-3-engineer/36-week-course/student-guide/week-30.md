@@ -46,7 +46,7 @@ Could you write a report about those two groups? **Yes.** Could you give them na
 
 **And there is nothing in there. Not a thing.**
 
-```
+```text
 Getting clusters is not evidence that there are clusters.
 ```
 
@@ -80,7 +80,7 @@ Week 28 left a hole on purpose. **Inertia always falls as `k` grows, so it can n
 
 **And here it is worked all the way out, on point C from Week 28's six points.** The final clusters were `{A, B, C}` and `{D, E, F}` — and **this time you do need real distances, not squared ones**, so there are square roots.
 
-```
+```text
 a(C) — distance to the other members of my own cluster:
     C(2,3) to A(1,2):  √(1² + 1²) = √2 = 1.4142
     C(2,3) to B(2,1):  √(0² + 2²) = √4 = 2.0000
@@ -161,7 +161,7 @@ Here is the real sweep on the 178 scaled wines:
 
 **The elbow.** The drops go 655, 381, then a cliff to 97, then a trickle: 70, 66, 48, 51, 31, 49. The quantity to report is the **ratio**, not the picture:
 
-```
+```text
 381.1 ÷ 97.2 = 3.9
 ```
 
@@ -426,7 +426,7 @@ The silhouette for point C compares `a` (the average distance to your own group)
 
 With **real** distances:
 
-```
+```text
 a(C) = (1.4142 + 2.0000) ÷ 2 = 1.7071
 b(C) = (7.8102 + 8.0623 + 7.8102) ÷ 3 = 7.8943
 s(C) = (7.8943 − 1.7071) ÷ 7.8943 = 0.7838      ✅ matches silhouette_samples
@@ -434,7 +434,7 @@ s(C) = (7.8943 − 1.7071) ÷ 7.8943 = 0.7838      ✅ matches silhouette_sample
 
 With **squared** distances, the same three steps:
 
-```
+```text
 a(C) = (2 + 4) ÷ 2 = 3.0
 b(C) = (61 + 65 + 61) ÷ 3 = 62.3333
 s(C) = (62.3333 − 3.0) ÷ 62.3333 = 0.9519
@@ -790,6 +790,8 @@ Put the seven steps together with all the imports at the top. **Expected runtime
 
 ## 🔍 Worked Examples
 
+Three worked examples, done by hand and then checked against the code. Work each one on paper before you read the answer line.
+
 ### Worked Example 1 — The silhouette catches a point in the wrong cluster
 
 Six points, and a grouping you know is wrong: put B in with the far bunch.
@@ -822,7 +824,7 @@ silly whole 0.3751  per point [ 0.8068 -0.8163  0.7797  0.5284  0.487   0.4646]
 
 **Now check B's real score by hand, because you can.** With the *good* grouping, B is at (2, 1) in `{A, B, C}`:
 
-```
+```text
 a(B) — to my own clustermates:
     B(2,1) to A(1,2):  √(1 + 1) = √2  = 1.4142
     B(2,1) to C(2,3):  √(0 + 4) = √4  = 2.0000
@@ -1039,7 +1041,7 @@ If you missed it, here is the whole lesson. You need workbook pages 30.1 to 30.4
 
 **The hook.** One line on the screen: `sizes [62 44 72]   silhouette 0.0776`. Then: *"that is not the wine data — that is 178 rows of thirteen columns of pure random numbers, generated eleven seconds before I ran k-means on them."* Then two rows of cluster means, and *"could you write a report about those two groups? Could you give them names?"* **Yes to both, uncomfortably.** And the line that stayed up all lesson:
 
-```
+```text
 Getting clusters is not evidence that there are clusters.
 ```
 
@@ -1077,7 +1079,7 @@ ARI against the real grape variety, scaled : 0.8975
 
 **Then the two-by-two on the board:**
 
-```
+```text
                     real wine     pure noise
 silhouette            0.2849        0.0776
 seed-to-seed ARI      1.0000        0.5791
@@ -1087,7 +1089,7 @@ seed-to-seed ARI      1.0000        0.5791
 
 **The Naming Ceremony, twelve minutes.** The feature-means table printed one per student, in original units with the overall column, and the per-cluster silhouettes on the board:
 
-```
+```text
 cluster 0:  n = 65    own silhouette 0.1774    7 points below zero
 cluster 1:  n = 51    own silhouette 0.3506    0 points below zero
 cluster 2:  n = 62    own silhouette 0.3434    0 points below zero
@@ -1127,7 +1129,7 @@ cluster 2:  n = 62    own silhouette 0.3434    0 points below zero
 
 Then the whole argument, written out as five lines:
 
-```
+```text
 1. how many clusters   drop ratio 381.1 ÷ 97.2 = 3.9   AND   silhouette peak 0.2849
                        both say k = 3
 
@@ -1169,6 +1171,8 @@ Then the whole argument, written out as five lines:
 
 ## ⚠️ Don't Get Tricked
 
+Four claims that sound reasonable. Each trick below sets the claim beside the numbers from this week.
+
 ### Trick 1 — "0.5711 beats 0.2849, so the unscaled clustering is better"
 
 ![Wrong and right: is a higher silhouette better?](../figures/fig-w30-6-tricked-higher-silhouette-is-not-better.svg)
@@ -1208,6 +1212,8 @@ And the version that actually matters: **if these were people rather than bottle
 
 ## 🌍 Where You've Seen This
 
+This section connects the week's ideas to things you meet outside class.
+
 1. **"Your top genres this year"** on a music app. Somebody clustered listening histories, and somebody else — a person — looked at a feature-means table and decided that cluster 4 would be called "Bedroom Pop". **The algorithm produced cluster 4 and nothing else.**
 2. **Marketing segments on a slide with names like "Cautious Upgraders".** You now know the three questions to ask: *how many clusters did you ask for, what was the silhouette, and what would it have been on noise?* **The third one is the question nobody expects.**
 3. **A/B test results that "look like" an improvement.** The 8-better / 2-equal / 0-worse count over ten splits is exactly the same move: **the gain was smaller than the noise, and the fact that it never went the other way was the evidence.**
@@ -1246,6 +1252,8 @@ has been since Week 12.*
 ---
 
 ## 🔑 Remember This
+
+The key points of the week, followed by a syntax card you can copy from.
 
 - **The silhouette for one point is two averages and a subtraction, with real distances.** `a = 1.7071`, `b = 7.8943`, `(7.8943 − 1.7071) ÷ 7.8943 = 0.7838` — and `silhouette_samples` prints exactly 0.7838. **Use squared distances instead and you get a plausible-looking 0.9519, which is wrong.**
 - **A negative silhouette means that row is probably in the wrong cluster.** B scored **−0.8163** in a grouping nobody had told the machine was wrong.

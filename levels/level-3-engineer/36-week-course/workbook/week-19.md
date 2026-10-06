@@ -34,7 +34,9 @@ ________________________________________________________________
 
 ## 🔢 Do the Maths by Hand
 
-**There is no new maths this week**, so these four exercises use **Week 18's chain rule and Week 12's nudge** on this week's numbers. **Calculator only. No code.**
+These four exercises give you practice with the numbers behind this week's network.
+
+**There is no new maths this week.** They use **Week 18's chain rule and Week 12's nudge** on this week's numbers. **Calculator only. No code.**
 
 **M1 — the loss of a shrug.** Work out `−ln(p)` for four probabilities. Use the `ln` button, then make the answer positive.
 
@@ -53,7 +55,7 @@ ________________________________________________________________
 
 **M2 — the nudge, from Week 12.** Measure the slope of `x²` at `x = 5` without any calculus. Use `h = 0.001`.
 
-```
+```text
 f(5.001) = 5.001 × 5.001 = ____________
 f(4.999) = 4.999 × 4.999 = ____________
 
@@ -67,7 +69,7 @@ divide by 2h = 0.002       = ____________
 
 **M3 — three links of last week's chain.** All three are one multiplication each. The blame at the output was **−0.09975049**.
 
-```
+```text
 (a) the blame arriving at hidden unit 2, which is connected by a weight of −2.0:
     (−0.09975049) × (−2.0)  =  ____________
 
@@ -88,7 +90,7 @@ ________________________________________________________________
 
 **M4 — why a dead unit stays dead.** After the `lr = 20` run, unit 0 ended with **bias = −14.113**. Take a typical row where the two feature values are `1.2` and `0.4`, and the unit's two weights are `0.6` and `−2.9`.
 
-```
+```text
 weighted sum   =  0.6 × 1.2  +  (−2.9) × 0.4     =  ____________
 plus the bias  =  ____________ + (−14.113)       =  ____________
 after ReLU     =  max(0, ____________)           =  ____________
@@ -107,6 +109,8 @@ ________________________________________________________________
 ---
 
 ## 🔎 Predict the Output
+
+This section is for predicting what code prints before you run it.
 
 **Write your prediction in pen before you run anything.** Every snippet starts with `import numpy as np`. **Two of these four run cleanly and are not what you would expect.**
 
@@ -219,6 +223,8 @@ ________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading code, shapes and training logs.
 
 **A1. Match the word to the thing.** Write the letter.
 
@@ -363,6 +369,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
+This set is for writing short pieces of code yourself.
+
 ### B1 — one line, plus a print
 
 **Task:** build a 50 × 50 grid over the box from `−2.0` to `2.0` across and `−1.5` to `1.5` up, glue it into rows, and print both shapes.
@@ -487,6 +495,8 @@ lr = 20                0.4493     0.8100       13/16
 ---
 
 ## 🐞 Fix the Broken Program
+
+This section is for finding bugs by reading error messages and output.
 
 This program has **three** bugs: one **shape**, one **runtime**, and one **silent logic bug**. The real error messages are below, in the order you meet them.
 
@@ -623,6 +633,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for thinking about how many hidden units a boundary needs.
+
 ### The Hinge Budget
 
 A ReLU network gets **one hinge per hidden unit**. A hinge is one place where the boundary is allowed to change direction. Below are five boundaries described in words. **For each one, write your best estimate of the smallest number of hidden units that could draw it. Use the rule of thumb "about one unit per change of direction, at least" — it is a guide, not a proof.**
@@ -667,6 +679,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These two questions are for writing a longer answer in your own words.
 
 **T1.** The gradient check is slow. Checking 65 knobs means 130 extra forward passes, and on a real network with a million knobs it is completely impossible. **Write a paragraph** on what you would do instead on a big network — and whether "I can't check it all, so I won't check any of it" is a reasonable position. What could you check?
 
@@ -821,6 +835,8 @@ Two entries today: one loud, one silent.
 
 ## 🎨 Draw It
 
+This section is for drawing the boundary at three stages of training.
+
 Draw the boundary at three epochs **from your own `boundary.png`**, by hand, in the three frames below. Then write the two numbers under each.
 
 ![Draw the boundary at three epochs](../figures/fig-w19-8-draw-frame.svg)
@@ -841,6 +857,8 @@ ________________________________________________________________
 ---
 
 ## 📊 Self-Check
+
+Use this table to mark how confident you feel about each skill from this week.
 
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
@@ -897,7 +915,7 @@ Notice the shape of that column, too: being 90% confident and right costs you 0.
 
 **M2.**
 
-```
+```text
 f(5.001) = 5.001 × 5.001 = 25.010001
 f(4.999) = 4.999 × 4.999 = 24.990001
 
@@ -911,7 +929,7 @@ divide by 0.002          = 10.0000
 
 **M3.**
 
-```
+```text
 (a)  (−0.09975049) × (−2.0)  =  +0.19950098
 (b)  2.0 × (+0.19950098)     =  +0.39900196
 (c)  0.15 × (−0.09975049)    =  −0.01496257
@@ -923,7 +941,7 @@ divide by 0.002          = 10.0000
 
 **M4.**
 
-```
+```text
 weighted sum   =  0.6 × 1.2 + (−2.9) × 0.4  =  0.72 − 1.16  =  −0.44
 plus the bias  =  −0.44 + (−14.113)         =  −14.553
 after ReLU     =  max(0, −14.553)           =  0

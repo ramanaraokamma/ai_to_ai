@@ -326,6 +326,8 @@ completed work.
 
 ## 🧰 Prep Checklist
 
+This section lists what to set up before class and what to do if the laptop fails.
+
 ### 25 minutes the night before
 
 - [ ] **Work in the Week 1 folder.** Weeks 1 to 7 all live together, and this week imports Week 1's file unchanged.
@@ -601,6 +603,8 @@ above the true zero: 0.0853
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the lesson plan: the timing table first, then each segment in order.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -1117,6 +1121,8 @@ Full instructions in the next section. In the lesson flow:
 
 ## 🎲 The Activity, In Full
 
+This section gives the full card activity: setup, three parts, what finished looks like, and two variations.
+
 ### Setup
 
 **On the table:** twenty playing cards, exactly five red · the five Week 1 index cards, with card four now filled in · a pen · workbook pages 2.3–2.4 · the Bug Log.
@@ -1361,6 +1367,8 @@ And the sentence for this week:
 
 ## ❓ Questions Students Ask This Week
 
+This section is for questions students ask this week, each with a suggested answer.
+
 **"Why not just use all 2000 rows for training? More data is better."**
 
 More data *is* better for the model, and that is exactly the trade. Every row you move into validation or test is a row the model does not learn from. You are buying trustworthy numbers with model quality, and there is no way to have both.
@@ -1423,6 +1431,8 @@ Two honest caveats to hand back with the compliment. First: it costs you a train
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual problems in this lesson and what to do about each.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **The best-of-twenty demo gets a shrug** | The numbers 0.5853 and 0.5125 are both "about a half", and a 14-year-old can be forgiven for not feeling the difference | Do not explain harder — **subtract on the board.** 0.5853 − 0.5000 = 0.0853 of fake score, and 0.5853 − 0.5125 = 0.0728 that evaporated. Then say: *"a real improvement in this course will be worth about 0.05. Luck just handed us 0.085."* The comparison is what makes it land. |
@@ -1439,6 +1449,8 @@ Two honest caveats to hand back with the compliment. First: it costs you a train
 ---
 
 ## 🧭 Differentiation
+
+This section covers what to do if the student is struggling, flying, or not engaging today.
 
 ### If the student is struggling
 
@@ -1583,6 +1595,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the words to use when assigning homework.
 
 **Say this:**
 

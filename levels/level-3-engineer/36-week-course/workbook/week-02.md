@@ -38,7 +38,7 @@ ________________________________________________________________
 
 **M1 — two cuts, three piles.** Do the arithmetic before any code, every time.
 
-```
+```text
 rows after the 20 copies go                      = ____________
 
 CUT ONE   20% off the top:   2000 × 0.2          = ____________
@@ -99,7 +99,7 @@ ________________________________________________________________
 
 **M3 — the baseline, in three divisions.** The `most_frequent` dummy says "not late" 400 times out of 400 on the validation pile, which holds 115 late orders.
 
-```
+```text
 orders that are NOT late  =  400 − 115        =  ____________
 times it was right        =  ____________
 accuracy                  =  ______ ÷ 400     =  ____________
@@ -120,7 +120,7 @@ ________________________________________________________________
 
 **M4 — what looking twenty times bought.** The best of twenty pure dice rolls scored **0.5853** on validation and **0.5125** on the sealed pile.
 
-```
+```text
 above the true zero      =  0.5853 − 0.5000  =  ____________
 the drop when it met the sealed pile
                          =  0.5853 − 0.5125  =  ____________
@@ -265,6 +265,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading code and output that already exist, and saying what they do.
 
 **A1. Match the word to the thing.** Write the letter.
 
@@ -420,6 +422,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing short programs of your own, from one line up to a whole program.
 
 ### B1 — one line, plus a loop
 
@@ -719,7 +723,7 @@ Twenty playing cards. **Five are red.** You deal them into piles of **12 / 4 / 4
 
 **Part 1(e).** Now the number that should worry you. What is the chance the test pile gets **no reds at all**? Work it out as four fractions multiplied together — the chance the first card dealt to it is black, then the second, then the third, then the fourth:
 
-```
+```text
 15/20  ×  14/19  ×  13/18  ×  12/17  =  ____________
 ```
 
@@ -755,6 +759,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These questions are for writing a longer answer in your own words.
 
 **T1.** There is no locked box and no referee. Nobody can tell whether you opened the test pile early, and next week's model card will just have a line where you write down that you did not. **Write a paragraph** on what makes that line worth anything at all. Is a rule nobody can check still a rule? What would you actually do to make it harder for **yourself** to cheat in six weeks' time, when the score disappoints you?
 
@@ -961,6 +967,8 @@ ________________________________________________________________
 
 ## 📊 Self-Check
 
+Use this table to rate yourself honestly on each skill from the week. Tick one face per row.
+
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
 | split a table three ways by calling `train_test_split` twice | | | |
@@ -982,6 +990,8 @@ ________________________________________________________________
 
 ## ✅ Answers
 
+This section is for checking your work after you have finished every page above.
+
 <details>
 <summary>Check your answers</summary>
 
@@ -1001,7 +1011,7 @@ ________________________________________________________________
 
 **M1.**
 
-```
+```text
 rows after the 20 copies go                      = 2000
 
 CUT ONE   2000 × 0.2                             = 400
@@ -1037,7 +1047,7 @@ CHECK     1200 + 400 + 400                       = 2000   ✓
 
 **M3.**
 
-```
+```text
 orders that are NOT late  =  400 − 115  =  285
 times it was right        =  285
 accuracy                  =  285 ÷ 400  =  0.7125
@@ -1052,7 +1062,7 @@ late orders it caught     =  0 ÷ 115    =  0.0000
 
 **M4.**
 
-```
+```text
 above the true zero      =  0.5853 − 0.5000  =  0.0853
 the drop                 =  0.5853 − 0.5125  =  0.0728
 sealed score above zero  =  0.5125 − 0.5000  =  0.0125
@@ -1413,7 +1423,7 @@ X_train, X_val, y_train, y_val = train_test_split(
 
 **Part 1(e).**
 
-```
+```text
 15/20 = 0.7500
 14/19 = 0.7368
 13/18 = 0.7222

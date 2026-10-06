@@ -25,7 +25,7 @@
 
 A pizza shop wants to know, the moment an order comes in, whether it is going to be late. Somebody who has worked there for ten years writes their instinct down as arithmetic:
 
-```
+```text
 worry = 0.6 × (orders already in the oven) + 0.4 × (km the rider must drive) − 3
 ```
 
@@ -33,7 +33,7 @@ That is not a metaphor for a model. **That is a model, and it is the whole thing
 
 An order comes in. **Four** things already in the oven, **five** kilometres to drive. Work it out:
 
-```
+```text
 0.6 × 4 = 2.4
 0.4 × 5 = 2.0
 2.4 + 2.0 − 3 = 1.4
@@ -45,7 +45,7 @@ Now the question that starts the week: **what is the chance this order is late?*
 
 It is not 1.4. There is no such thing as a 140% chance. And it gets worse — try an order with **eight** in the oven and **twenty** kilometres to drive:
 
-```
+```text
 0.6 × 8 = 4.8
 0.4 × 20 = 8.0
 4.8 + 8.0 − 3 = 9.8
@@ -107,7 +107,7 @@ Three names for one thing there: **raw score**, **`z`**, and **logit**. You will
 
 **The plain explanation.** Here is the whole squasher. Three steps, and the middle one is the only new button on your calculator:
 
-```
+```text
 p = 1 ÷ (1 + e^(−z))
 ```
 
@@ -117,7 +117,7 @@ p = 1 ÷ (1 + e^(−z))
 
 **A concrete example, with real values.** Take the four raw scores −2, 0, 1.4 and 3, and put each one through the three steps:
 
-```
+```text
 z = −2 :   e^(−z) = 7.389056    1 + 7.389056 = 8.389056    1 ÷ 8.389056 = 0.1192
 z =  0 :   e^(−z) = 1.000000    1 + 1.000000 = 2.000000    1 ÷ 2.000000 = 0.5000
 z = 1.4:   e^(−z) = 0.246597    1 + 0.246597 = 1.246597    1 ÷ 1.246597 = 0.8022
@@ -147,7 +147,7 @@ And a fourth that is easy to miss and matters enormously: **it never actually re
 
 If `p = 0.90`, then:
 
-```
+```text
 odds = 0.90 ÷ 0.10 = 9
 ```
 
@@ -155,7 +155,7 @@ odds = 0.90 ÷ 0.10 = 9
 
 > **log-odds** — the natural logarithm of the odds, `ln(odds)`. And this number is exactly `z`.
 
-```
+```text
 z = ln(9) = 2.197225
 ```
 
@@ -163,7 +163,7 @@ On a calculator: type `9`, press `ln`. That is the whole second step. (`ln` is t
 
 **Check it comes back**, because a conversion you cannot check is a conversion you cannot trust. Put `z = 2.197225` through the sigmoid:
 
-```
+```text
 e^(−2.197225) = 0.111111        1 ÷ 1.111111 = 0.900000
 ```
 
@@ -248,7 +248,7 @@ Find the `e^x` key. On most calculators it is above the `ln` key, so you reach i
 
 ### Step 2 — notice what the column is doing
 
-```
+```text
 z = −2     e^(−z) = 7.389056
 z =  0     e^(−z) = 1.000000
 z = 1.4    e^(−z) = 0.246597
@@ -266,7 +266,7 @@ Two facts to hold on to:
 
 Add 1 to each, then divide 1 by the answer:
 
-```
+```text
 z = −2 :   7.389056  →  8.389056  →  1 ÷ 8.389056 = 0.1192
 z =  0 :   1.000000  →  2.000000  →  1 ÷ 2.000000 = 0.5000
 z = 1.4:   0.246597  →  1.246597  →  1 ÷ 1.246597 = 0.8022
@@ -277,7 +277,7 @@ z =  3 :   0.049787  →  1.049787  →  1 ÷ 1.049787 = 0.9526
 
 ### Step 4 — now the name, and only now
 
-```
+```text
 sigmoid(z)  =  1 ÷ (1 + e^(−z))
 ```
 
@@ -332,7 +332,7 @@ the eight raw scores: [-3.  -2.  -1.   0.   0.8  1.4  3.   4.4]
 
 ### Step 2 — the obvious squasher, and the mistake on purpose
 
-Type the version that appears on every website:
+Type this version, the one that appears on every website, and run it:
 
 ```python
 def squash(z):
@@ -380,13 +380,13 @@ def squash(z):
 
 **Both divisions give the same answer, and it is worth checking once on paper so you believe it:**
 
-```
+```text
 for z = 1.4 :   1 ÷ (1 + e^(−1.4)) = 1 ÷ 1.246597 = 0.802184
 for z = −1.4:   e^(−1.4) ÷ (1 + e^(−1.4)) = 0.246597 ÷ 1.246597 = 0.197816
                 and 1 ÷ (1 + e^(1.4)) = 1 ÷ 5.055200 = 0.197816   ← the same
 ```
 
-Now print the whole table:
+Add these lines to print the whole table:
 
 ```python
 p = squash(z)
@@ -572,7 +572,7 @@ biggest disagreement over all 200 rows: 0.000000000000
 
 **Check row 0 by hand, because it takes fifteen seconds and it is the point of the whole week:**
 
-```
+```text
 3.6298 × 0.6170     =  2.2395866
 −0.5546 × (−1.1940) =  0.6621924
 2.2395866 + 0.6621924 − 0.7127 = 2.1890790     ← the z column
@@ -586,7 +586,7 @@ The screen says `0.899268` and we got `0.8992645`. **Nobody is wrong.** The weig
 
 ## 🔍 Worked Examples
 
-Three complete programs, in three different worlds.
+These examples apply the same squash to three different problems. Three complete programs, in three different worlds.
 
 ### Worked Example 1 — Spam texts (messages)
 
@@ -600,7 +600,7 @@ Three complete programs, in three different worlds.
 
 **By hand first, all three raw scores:**
 
-```
+```text
 text 1:  1.2 × 0 = 0.0    0.3 × 1 = 0.3    0.0 + 0.3 − 2.5 = −2.20
 text 2:  1.2 × 1 = 1.2    0.3 × 4 = 1.2    1.2 + 1.2 − 2.5 = −0.10
 text 3:  1.2 × 3 = 3.6    0.3 × 9 = 2.7    3.6 + 2.7 − 2.5 =  3.80
@@ -655,7 +655,7 @@ text  links  CAPS       z         p    verdict
 
 **By hand, for 0.78:**
 
-```
+```text
 odds = 0.78 ÷ 0.22 = 3.545455
 z    = ln(3.545455) = 1.265666
 check: e^(−1.265666) = 0.282051,  1 ÷ 1.282051 = 0.780000   ✅
@@ -745,7 +745,7 @@ Keep that sentence. In two weeks, when a model is learning by nudging its weight
 
 ## 🐞 When It Breaks
 
-Every message below came from really running a broken version of this week's code.
+Use this section to read an error or warning and find its cause. Every message below came from really running a broken version of this week's code.
 
 ### Break 1 — the overflow warning
 
@@ -847,7 +847,7 @@ If you missed it, here is the whole lesson. You need a calculator with an `e^x` 
 
 **Then the three-step squash, four times, on the board**, with every division read out from somebody's calculator:
 
-```
+```text
 z = −2 :   7.389056  →  8.389056  →  0.1192
 z =  0 :   1.000000  →  2.000000  →  0.5000
 z = 1.4:   0.246597  →  1.246597  →  0.8022
@@ -892,6 +892,8 @@ Nobody commented while it built. Around the fifth dot somebody said *"oh, it's a
 
 ## 💬 Talk About It
 
+These three questions are for discussing with a partner or the class. Each hint shows one way to start thinking about it.
+
 **1. Why `e`? Why not 2, or 10?**
 
 *Hint:* start by agreeing that any base works. You can build an S-curve out of `2^(−z)` — same shape, all outputs between 0 and 1, same ordering. So the choice is not forced by the shape. Then look for the reason further down the road: in two weeks you will need to know **how steep the sigmoid is at a point**, and with `e` that steepness turns out to be `p × (1 − p)` — a number you already have, needing no new arithmetic at all. Any other base gives you the same thing multiplied by an awkward constant that you then carry around for ever. **So `e` is not a law of nature here; it is the choice that makes the bill smaller later.** Finish on the honest bit: is "it makes later maths cleaner" a good enough reason to build a whole subject on one number?
@@ -907,6 +909,8 @@ Nobody commented while it built. Around the fifth dot somebody said *"oh, it's a
 ---
 
 ## ⚠️ Don't Get Tricked
+
+These are four wrong ideas that sound reasonable. Each one is shown next to the right version.
 
 ### Trick 1 — "the sigmoid decides yes or no"
 
@@ -947,6 +951,8 @@ Write `p = 0.9999` and `truth = no` on a piece of paper and leave it where you c
 
 ## 🌍 Where You've Seen This
 
+This section lists places where the same squash from a score to a chance is used.
+
 1. **Any app that turns a model's score into a "chance of" percentage.** A model produces a raw score and a squash turns it into a percentage, which is why such an app never shows 140%. (Real weather forecasts usually get their percentages another way, from how many of many simulated futures bring rain, but the rule that a chance must sit between 0 and 1 is the same.)
 2. **The spam folder.** A mail filter scores a message on dozens of features — links, sender history, words in capitals — sums them with weights, squashes the total, and compares it with a threshold. Worked Example 1 is a small version of a real thing.
 3. **Medical risk scores.** *"A 12% chance of a heart problem in the next ten years."* Many of these are literally logistic regressions, chosen over fancier models **because a doctor can read the weights** — "smoking adds this much to the log-odds" is a sentence you can argue with.
@@ -983,6 +989,8 @@ threads lit now: the model and the signal that trains it.*
 ---
 
 ## 🔑 Remember This
+
+This section is the week in a few lines, followed by a syntax card to keep beside you.
 
 - **A weighted sum can be any number at all.** `0.6 × oven + 0.4 × km − 3` gave `−3.00` for one order and `4.40` for another, and neither is a probability. The raw score has three names: **raw score**, **`z`**, **logit**.
 - **The sigmoid is three steps on a calculator:** `e^(−z)`, add 1, divide 1 by it. `z = 1.4` → `0.246597` → `1.246597` → **`0.8022`**.
@@ -1032,6 +1040,8 @@ z = np.log(odds)          # 2.1972245773362196   <- the logit
 ---
 
 ## 📓 New Words
+
+This table collects the words this week introduced.
 
 ![Seven words from Week 13, drawn](../figures/fig-w13-6-vocab-icons.svg)
 *Figure 13.6 — Seven words from Week 13, drawn.*

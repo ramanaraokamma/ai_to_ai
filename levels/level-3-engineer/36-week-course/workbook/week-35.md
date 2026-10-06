@@ -40,26 +40,26 @@ ________________________________________________________________
 
 Five latencies, unsorted, exactly as they came out of the classroom log:
 
-```
+```text
 3.27    0.38    0.31    0.27    0.27
 ```
 
 **(a) Sort them and number the positions from ZERO.**
 
-```
+```text
 values:    ______   ______   ______   ______   ______
 positions:   0        1        2        3        4
 ```
 
 **(b) Find the position of the p95.**
 
-```
+```text
 0.95 × ( ______ − 1 )  =  0.95 × ______  =  ________
 ```
 
 **(c) That lands between two positions. Go the right fraction of the way.**
 
-```
+```text
 gap  =  ________ − ________  =  ________
 
 p95  =  ________ + ________ × ________  =  ________ + ________  =  ________
@@ -75,7 +75,7 @@ p95  =  ________ + ________ × ________  =  ________ + ________  =  ________
 
 **M2 — the same method on eight latencies, and the number that moves.**
 
-```
+```text
 0.24    0.31    1.88    0.22    0.27    0.26    0.29    0.25
 ```
 
@@ -101,7 +101,7 @@ ________________________________________________________________
 
 Here are **28 labelled rows** — your 16 held-out reviews followed by the 12 negation traps — with what the model said about each. `1` means positive.
 
-```
+```text
 row       1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 | 17 18 19 20 21 22 23 24 25 26 27 28
 truth     1  1  0  0  0  1  1  1  1  1  0  0  0  0  1  0 |  0  0  0  0  0  0  1  1  1  1  1  1
 model     1  0  0  0  0  1  1  1  1  0  0  0  0  0  0  0 |  0  1  0  0  0  0  0  0  0  0  0  0
@@ -110,7 +110,7 @@ negation  .  .  .  .  .  .  .  .  .  .  .  N  .  .  .  . |  N  N  N  N  N  N  N 
 
 **(a) The 16 test reviews (rows 1–16). Count the four cells.**
 
-```
+```text
 TP = ______   FP = ______   FN = ______   TN = ______      check: ____ + ____ + ____ + ____ = 16
 
 accuracy  = ( ______ + ______ ) ÷ ______ = ________
@@ -120,7 +120,7 @@ recall    = ______ ÷ ( ______ + ______ ) = ______ ÷ ______ = ________
 
 **(b) The 12 traps (rows 17–28).**
 
-```
+```text
 TP = ______   FP = ______   FN = ______   TN = ______
 
 accuracy  = ______ ÷ 12 = ________      precision = ______ ÷ ______ = ________      recall = ______ ÷ ______ = ________
@@ -128,13 +128,13 @@ accuracy  = ______ ÷ 12 = ________      precision = ______ ÷ ______ = ________
 
 **(c) The 13 rows with a negation word (the `N`s).**
 
-```
+```text
 accuracy = ______ ÷ 13 = ________      recall = ______ ÷ ______ = ________
 ```
 
 **(d) The 15 rows with no negation word.**
 
-```
+```text
 accuracy = ______ ÷ 15 = ________      precision = ______ ÷ ______ = ________      recall = ______ ÷ ______ = ________
 ```
 
@@ -417,6 +417,8 @@ Fill in every blank, then answer the two ordering questions:
 
 ## ✍️ Practice Set B — Write It
 
+These tasks are for writing your own short pieces of code, using the same demo log as Set A.
+
 ### B1 — one line
 
 Print the p95 of the twelve latencies in `logs/demo.jsonl`, to four decimal places.
@@ -555,11 +557,13 @@ their latencies      : [0.24 0.25 0.26 0.24]
 
 ## 🧩 Puzzle of the Week
 
+This page is one longer puzzle about the four request checks, for when you want a harder problem.
+
 ### The Check That Can Never Fire
 
 Your four checks, in the order the chapter put them:
 
-```
+```text
 1.  is there a body at all, and is it a sane size?          (reads Content-Length)
 2.  is it actually JSON?                                    (json.loads)
 3.  is it an object with a 'text' field?                     ("text" in payload)
@@ -599,6 +603,8 @@ what gets through that should not: ____________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These questions ask you to argue a position in your own words.
 
 **T1.** Somebody says: *"your service made 115 requests and 111 predictions, so just log all 115 — then the numbers match and nothing is confusing."*
 
@@ -786,6 +792,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for sketching the figure below from memory, in your own hand.
+
 ![Draw it: the tail, and what one number hid](../figures/fig-w35-8-draw-frame.svg)
 *Figure W35.2 — The tail, and what one number hid.*
 
@@ -804,6 +812,8 @@ Underneath, **two bars for the two subgroups**: `0.800` tall on 15 rows, `0.462`
 ---
 
 ## 📊 Self-Check
+
+Tick one face per row to show how sure you feel about each skill.
 
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
@@ -858,7 +868,7 @@ ________________________________________________________________
 
 **(a)**
 
-```
+```text
 values:    0.27   0.27   0.31   0.38   3.27
 positions:   0      1      2      3      4
 ```
@@ -867,7 +877,7 @@ positions:   0      1      2      3      4
 
 **(c)** 3.8 sits between position 3 and position 4, **eight tenths of the way along**:
 
-```
+```text
 gap  =  3.27 − 0.38  =  2.89
 p95  =  0.38 + 0.80 × 2.89  =  0.38 + 2.312  =  2.692
 ```
@@ -898,7 +908,7 @@ p95  =  0.38 + 0.80 × 2.89  =  0.38 + 2.312  =  2.692
 
 **(a) the 16 test reviews.** Eight rows are truth 1 (rows 1, 2, 6, 7, 8, 9, 10, 15) and the other eight are truth 0. The model's row differs from the truth row in exactly three places: rows 2, 10 and 15, all truth 1 and all called 0.
 
-```
+```text
 TP = 5   FP = 0   FN = 3   TN = 8        check: 5 + 0 + 3 + 8 = 16 ✅
 
 accuracy  = (5 + 8) ÷ 16 = 13 ÷ 16 = 0.8125 → 0.812
@@ -910,7 +920,7 @@ recall    = 5 ÷ (5 + 3) = 5 ÷ 8 = 0.625
 
 **(b) the 12 traps.** Rows 17–22 are truth 0; row 18 was called 1 and the other five were called 0. Rows 23–28 are truth 1 and all six were called 0.
 
-```
+```text
 TP = 0   FP = 1   FN = 6   TN = 5
 
 accuracy  = 5 ÷ 12 = 0.4167 → 0.417
@@ -920,14 +930,14 @@ recall    = 0 ÷ (0 + 6) = 0 ÷ 6 = 0.000
 
 **(c) the 13 negation rows** = the 12 traps plus row 12 (`i would not order from here again`), which is truth 0 and was called 0 — one more correct answer and nothing else.
 
-```
+```text
 accuracy = 6 ÷ 13 = 0.4615 → 0.462
 recall   = 0 ÷ 6  = 0.000
 ```
 
 **(d) the 15 rows with no negation word** = the 16 test rows except row 12. Row 12 was a TN, so removing it changes the correct count and nothing else.
 
-```
+```text
 accuracy  = 12 ÷ 15 = 0.8000 → 0.800
 precision = 5 ÷ 5 = 1.000
 recall    = 5 ÷ 8 = 0.625

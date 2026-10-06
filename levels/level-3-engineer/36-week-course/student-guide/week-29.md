@@ -47,7 +47,7 @@ And that is the whole idea of this week. **Spread is where the information is.**
 
 So instead of picking two of your thirteen columns, you go looking for **the angle that gives you the longest streak.** You make a brand new axis, pointing whichever way the data is most spread out, and you measure everything against that instead.
 
-```
+```text
 PCA does not delete columns.
 It draws a new axis along the direction the data is most spread out.
 ```
@@ -73,6 +73,8 @@ By the end of today you will have found a principal component with a protractor.
 
 ## 🧠 The Big Idea
 
+This section builds PCA up in five steps: why many columns cause trouble, what variance is, how to project a point, how to try angles, and how to price what you throw away.
+
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. Each one carries on from the one above. **The complete runnable file is in 💻 Type This.**
 
 ### 1. Why too many columns is a real problem, not just an awkward one
@@ -93,7 +95,7 @@ Everything in PCA is built on one quantity, and you already know three quarters 
 
 Four steps, on five numbers:
 
-```
+```text
 the numbers            :   4     6     8    10    12
 the mean               :   (4+6+8+10+12) ÷ 5 = 40 ÷ 5 = 8
 
@@ -125,13 +127,13 @@ step 4: average        :  40 ÷ 4 = 10.0
 
 Five points. Five students, `(hours studied, hours slept)` per week:
 
-```
+```text
 (4, 3)   (6, 6)   (8, 7)   (10, 8)   (12, 11)
 ```
 
 **Step one, always: move the middle to (0, 0).** PCA is about how spread out the cloud is, not about where it sits.
 
-```
+```text
 mean across = (4 + 6 + 8 + 10 + 12) ÷ 5 = 40 ÷ 5 = 8
 mean up     = (3 + 6 + 7 +  8 + 11) ÷ 5 = 35 ÷ 5 = 7
 
@@ -140,7 +142,7 @@ centred:  (−4, −4)   (−2, −1)   (0, 0)   (2, 1)   (4, 4)
 
 Now pick a direction. **A direction is just a pair of numbers saying how far across and how far up you go for one step**, chosen so one step is exactly one unit long. At 30°, one step is:
 
-```
+```text
 across = 0.86603        up = 0.50000
 ```
 
@@ -148,7 +150,7 @@ across = 0.86603        up = 0.50000
 
 **And the arithmetic is one multiply-and-add per coordinate** — exactly the matrix-multiply cell you did by hand in Week 17:
 
-```
+```text
 the point (4, 4), on the 30° direction:
     4 × 0.86603  +  4 × 0.50000
   = 3.46410      +  2.00000
@@ -159,7 +161,7 @@ the point (4, 4), on the 30° direction:
 
 Do all five:
 
-```
+```text
 (−4, −4) → −5.46410
 (−2, −1) → −2.23205
 ( 0,  0) →  0.00000
@@ -169,7 +171,7 @@ Do all five:
 
 And now the variance of *those five scores*, by the four steps from §2 — their mean is already 0, which is why centring first was worth doing:
 
-```
+```text
 squares :  29.85641   4.98205   0.00000   4.98205   29.85641
 add up  :  69.67691
 ÷ 4     :  17.41923
@@ -226,7 +228,7 @@ the two spreads add to: 18.5 = 10.0 + 8.5, the spread of the two original column
 
 **And now the check that ties the whole thing together:**
 
-```
+```text
 18.2812 + 0.2188 = 18.5000
 var(hours studied) + var(hours slept) = 10.0 + 8.5 = 18.5
 ```
@@ -281,7 +283,7 @@ for scale: a typical wine sits 3.5180 away from the middle
 
 Two components keep **55.4%** of the spread, which sounds respectable. But the miss is **2.2550**, and a typical wine only sits **3.5180** from the middle of the cloud. So:
 
-```
+```text
 2.2550 ÷ 3.5180 = 0.6410
 ```
 
@@ -354,6 +356,8 @@ PC2 is colour, alcohol and proline together — fairly read as **"body and depth
 
 ## 🔢 The Maths, Slowly
 
+This section does the two new pieces of maths slowly, with numbers you can check on a calculator.
+
 **There are two new pieces of maths this week and they are the same piece twice.**
 
 ### Piece one — variance, in four steps, on numbers you can check
@@ -394,7 +398,7 @@ Then: `40 ÷ 4 = 10.0`.
 
 Here is the whole method in five lines of English:
 
-```
+```text
 1. Move the cloud so its middle is at (0, 0).
 2. Pick a direction — a pair of numbers (across, up), one unit long.
 3. Project every point onto it: across × its across, plus up × its up.
@@ -404,7 +408,7 @@ Here is the whole method in five lines of English:
 
 **And step 3 is worth staring at, because it is Week 17's matrix multiply doing a different job.** One row of numbers times one column of numbers, multiplied pairwise and added:
 
-```
+```text
 point (−2, −1)   direction (0.8660, 0.5000)
 
   −2 × 0.8660  =  −1.7321
@@ -435,7 +439,9 @@ point (−2, −1)   direction (0.8660, 0.5000)
 
 ## 💻 Type This
 
-Open a new file called `new_axes.py`. Six pieces.
+This section builds `new_axes.py` in six pieces. Type each piece, run it, and compare your output with the block underneath.
+
+Open a new file called `new_axes.py`.
 
 ### Step 1 — variance, four printed lines, and centring
 
@@ -488,6 +494,8 @@ moved so the middle is (0,0): [[-4.0, -4.0], [-2.0, -1.0], [0.0, 0.0], [2.0, 1.0
 
 ### Step 2 — the six candidate angles
 
+Add this piece to `new_axes.py`:
+
 ```python
 print()
 print("--- six candidate axes, 30 degrees apart ---")
@@ -524,6 +532,8 @@ widest of the six: 30° with spread 17.4192
 
 ### Step 3 — what PCA says, and the check that it is a rotation
 
+Add this piece, which asks sklearn for its answer:
+
 ```python
 from sklearn.decomposition import PCA
 
@@ -558,6 +568,8 @@ the two spreads add to: 18.5 = 10.0 + 8.5, the spread of the two original column
 > **⚠️ Watch out:** `explained_variance_` and `explained_variance_ratio_` are two different things with almost the same name. **The first holds actual spreads and adds to roughly the number of columns; the second holds shares and adds to 1.** Printing the wrong one is this week's most common silent error.
 
 ### Step 4 — squash to one number, then rebuild, and the price
+
+Add this piece, which squashes to one number and rebuilds:
 
 ```python
 p1 = PCA(n_components=1).fit(D)
@@ -599,6 +611,8 @@ average miss: 0.3414 hours
 > **⚠️ Watch out:** `inverse_transform` must be handed the **squashed** table, not the original. **The rule to say out loud: `transform` narrows, `inverse_transform` widens, so whatever came out of one goes into the other.**
 
 ### Step 5 — thirteen wine columns, their shares, and their loadings
+
+Add this piece, which moves to the wine data:
 
 ```python
 import pandas as pd
@@ -667,6 +681,8 @@ magnesium          0.300
 
 ### Step 6 — the bill, and the map
 
+Add this last piece, which prices the loss and saves the plot:
+
 ```python
 print()
 print("  how many PCs   running share   average rebuild miss")
@@ -718,6 +734,8 @@ Put the six steps together with all the imports at the top. **Expected runtime: 
 
 ## 🔍 Worked Examples
 
+Three examples to work through with a pencil or a terminal: climbing the hill one degree at a time, rebuilding one student from one number, and running PCA on unscaled wine.
+
 ### Worked Example 1 — Climb the hill by hand, one degree at a time
 
 You found 30° with a protractor. PCA found 42.62°. **Close the gap yourself, without any new maths.**
@@ -748,7 +766,7 @@ for a in (40, 41, 42, 43, 44, 45, 50):
 
 **How close did the whole-degree search get?**
 
-```
+```text
 18.2812 − 18.2804 = 0.0008
 ```
 
@@ -777,7 +795,7 @@ ev [18.2812  0.2188]
 
 The last student's score on PC1 is **5.6520**. PC1's direction is **(0.7359, 0.6771)**. The cloud's middle is **(8, 7)**.
 
-```
+```text
 step 1: walk 5.6520 units along PC1 from the middle
 
     across :  5.6520 × 0.7359  =  4.1593
@@ -942,7 +960,7 @@ If you missed it, here is the whole lesson. You need workbook pages 29.1 to 29.3
 
 Then the midge cloud on the board: a long thin diagonal scatter of about twelve dots, with two viewing arrows drawn on it. **Camera one, along the length: a blob.** **Camera two, from the side: a streak.** *"Which is better?"* The streak, **because it keeps the differences.** And the line that stayed up all lesson:
 
-```
+```text
 PCA does not delete columns.
 It draws a new axis along the direction the data is most spread out.
 ```
@@ -951,7 +969,7 @@ It draws a new axis along the direction the data is most spread out.
 
 **The Spaghetti Cloud, twenty minutes.** Five points plotted on graph paper, with the cloud's middle at the centre of the sheet:
 
-```
+```text
       up (hours slept)
   11  |                        *
    8  |                  *
@@ -966,7 +984,7 @@ It draws a new axis along the direction the data is most spread out.
 
 Then six slips of paper went out, **one angle each**, and the six directions were already on the board so nobody was looking up cosines:
 
-```
+```text
   0° : (1.0000, 0.0000)         90° : (0.0000, 1.0000)
  30° : (0.8660, 0.5000)        120° : (−0.5000, 0.8660)
  60° : (0.5000, 0.8660)        150° : (−0.8660, 0.5000)
@@ -977,7 +995,7 @@ Everybody drew **their own** angle through the origin with a protractor, right a
 - **By ruler** — drop a perpendicular from each point onto the line, measure along the line from the origin in grid squares, positive one way and negative the other.
 - **By arithmetic** — across-value times the direction's first number, plus up-value times its second.
 
-```
+```text
 for the 30° axis, direction (0.8660, 0.5000):
 
 (−4, −4):  −4 × 0.8660  +  −4 × 0.5000  =  −3.4641 + −2.0000  =  −5.4641
@@ -1008,7 +1026,7 @@ Then the four variance steps on those five scores: squares 29.8564, 4.9821, 0, 4
 
 **Then the check that mattered most**, written big on the board:
 
-```
+```text
 18.2812 + 0.2188 = 18.5000
     10.0 +   8.5 = 18.5000
 ```
@@ -1026,7 +1044,7 @@ Then the four variance steps on those five scores: squares 29.8564, 4.9821, 0, 4
 
 And then both numbers side by side:
 
-```
+```text
 2 components:   share kept 0.5541      average miss 2.2550
 a typical wine sits 3.5180 from the middle
 2.2550 ÷ 3.5180 = 0.6410
@@ -1037,6 +1055,8 @@ a typical wine sits 3.5180 from the middle
 ---
 
 ## 💬 Talk About It
+
+Three questions to argue about with a friend or a teacher. Each has a hint underneath; try your own answer before reading it.
 
 **1. Your protractor found 30° and sklearn found 42.62°. Was the twenty minutes with the protractor wasted?**
 
@@ -1053,6 +1073,8 @@ a typical wine sits 3.5180 from the middle
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four wrong beliefs about PCA, each shown next to what is actually true.
 
 ### Trick 1 — "PCA picks my best columns"
 
@@ -1093,6 +1115,8 @@ The habit: **report the ratio and the reconstruction error together, always.** O
 
 ## 🌍 Where You've Seen This
 
+PCA shows up in places you already use. Here are six of them.
+
 1. **"Loading a smaller preview first" on any photo or video site.** Keeping the big-picture structure and dropping the fine detail is the same trade PCA makes: most of the spread in the first few components, and the rest thrown away on purpose.
 2. **A face-recognition system from before deep learning.** Faces were squashed with PCA into a few dozen numbers each, and the components were called "eigenfaces" — literally a set of new axes through a cloud of face pictures.
 3. **Two columns in a dataset that say almost the same thing** — height in cm and height in inches, or total price and price-plus-tax. **PCA notices that immediately**, because the second one adds almost no new spread, and squashes them into one axis without anybody having to spot it.
@@ -1129,6 +1153,8 @@ because one tile is six weeks wide. The ↻ on stage three is black, as it has b
 ---
 
 ## 🔑 Remember This
+
+The week's key points, a syntax card to keep beside you, and a one-line maths reminder.
 
 - **Variance is the average squared distance from the mean**, in four steps: distances, squares, total, divide. `16 + 4 + 0 + 4 + 16 = 40`, and `40 ÷ 4 = 10.0`. **You square because otherwise the distances add to exactly zero, every time.**
 - **Centre the cloud first, always.** Skip it and every spread comes out enormous — 90.0 instead of 10.0 — because you are measuring *where* the cloud sits, not how big it is.
@@ -1193,6 +1219,8 @@ plt.xlabel("PC1 (%.1f%% of the spread)" % (pca.explained_variance_ratio_[0] * 10
 ---
 
 ## 📓 New Words
+
+Seven words from this week, each with an example from the numbers you worked with.
 
 ![This week's seven words, drawn](../figures/fig-w29-7-vocab-icons.svg)
 *Figure 29.7 — This week's seven words, drawn.*

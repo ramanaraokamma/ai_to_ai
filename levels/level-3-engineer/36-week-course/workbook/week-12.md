@@ -28,13 +28,15 @@ ________________________________________________________________
 
 ## 🔢 Do the Maths by Hand
 
+This page is for measuring slopes and walking downhill with pencil and calculator only.
+
 **This is the most important page in Level 3 and there is no code on it.** Calculator, three sheets of squared paper, and **six decimal places on every multiplication.** Rounding to three decimals is right by luck at `x = 3` and wrong at `x = 5`.
 
 **M1 — the nudge, on the simplest curve there is.** `f(x) = x × x`, and the nudge is `h = 0.001`. **So every division is by 0.002**, because you move a nudge each way and that is two nudges in total.
 
 **(a) at x = 3:**
 
-```
+```text
 f(3.001)  =  3.001 × 3.001  =  ______________        <- six decimals
 f(2.999)  =  2.999 × 2.999  =  ______________        <- six decimals
 
@@ -46,21 +48,21 @@ slope     =  ______________ ÷ ______________  =  ______________
 
 **(b) at x = 1:**
 
-```
+```text
 f(1.001) = ______________   f(0.999) = ______________
 rise = ______________   ÷ 0.002 = ______________
 ```
 
 **(c) at x = 5:**
 
-```
+```text
 f(5.001) = ______________   f(4.999) = ______________
 rise = ______________   ÷ 0.002 = ______________
 ```
 
 **M1(d).** Line your three answers up under the three x values and look at them **before** reading on.
 
-```
+```text
     at x = 1  the slope is  ________
     at x = 3  the slope is  ________
     at x = 5  the slope is  ________
@@ -102,7 +104,7 @@ ________________________________________________________________
 
 **my prediction:** ______________  **so at x = 2 it should be** `4 × 2³ = ________`
 
-```
+```text
 (2.001)⁴ = ______________     (1.999)⁴ = ______________
 difference = ______________   ÷ 0.002 = ______________
 ```
@@ -122,7 +124,7 @@ difference = ______________   ÷ 0.002 = ______________
 
 **M3(a).** Row 0, longhand. Use the shortcut `slope = 2 × (w − 4)` and also check it by nudging.
 
-```
+```text
 slope at w = 0:      2 × (0 − 4)  =  2 × (________)  =  ____________
 by nudging:          ((0.001 − 4)² − (−0.001 − 4)²) ÷ 0.002  =  ____________
 the step:            0.3 × (________)  =  ____________
@@ -137,7 +139,7 @@ ________________________________________________________________
 
 **M3(c) — the check that catches every slip.** Write the **gap** `w − 4` after each step and see what is happening to it.
 
-```
+```text
 start:  ________   step 1: ________   step 2: ________   step 3: ________
 
 step 4: ________   step 5: ________   step 6: ________
@@ -157,7 +159,7 @@ step 4: ________   step 5: ________   step 6: ________
 
 **M4(a) — the loss at `w = 10`, all ten rows, in your head.**
 
-```
+```text
   hours       1    2    3    4    5    6    7    8    9   10
   predicted  __   __   __   __   __   __   __   __   __   __      (10 × hours + 12)
   actual     20   28   36   44   52   60   68   76   84   92
@@ -189,6 +191,8 @@ step 4: ________   step 5: ________   step 6: ________
 ---
 
 ## 🔎 Predict the Output
+
+This page is for practising prediction: you commit to an answer first, then run the code.
 
 **Write your prediction in pen before you run anything.** **Two of these four print no error and nonsense.**
 
@@ -327,6 +331,8 @@ ________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading code and vocabulary before you write any of your own.
+
 **A1. Match the word to the thing.** Write the letter.
 
 | Word | | Description |
@@ -459,6 +465,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing short programs of your own, from one line up to a whole program.
 
 ### B1 — one line, plus a print
 
@@ -744,6 +752,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for exploring how the size of the step changes the walk.
+
 ### The Stride That Lands Exactly
 
 Same bowl as the maths page: `loss(w) = (w − 4)²`, slope `2 × (w − 4)`, always starting at **w = 0**.
@@ -777,7 +787,7 @@ ________________________________________________________________
 
 **Part 1(d) — the strange one.** For `lr = 0.6` the factor is **negative.** Write the gaps for six steps.
 
-```
+```text
 −4.0000  →  ________  →  ________  →  ________  →  ________  →  ________  →  ________
 ```
 
@@ -789,7 +799,7 @@ ________________________________________________________________
 
 **Part 1(e) — the trap.** For `lr = 1.0` the factor is **−1**. Write six gaps:
 
-```
+```text
 −4.0000  →  ________  →  ________  →  ________  →  ________  →  ________  →  ________
 ```
 
@@ -799,7 +809,7 @@ ________________________________________________________________
 
 **Part 1(f) — the catastrophe.** For `lr = 1.1` the factor is **−1.2**. Write six gaps to four decimals:
 
-```
+```text
 −4.0000  →  ________  →  ________  →  ________  →  ________  →  ________  →  ________
 ```
 
@@ -850,6 +860,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These questions are for explaining the week's ideas in your own words.
 
 **T1.** We already knew the answer was **8** — we planted it in the data on purpose. **Write a paragraph** on why that was the right way to build this lesson. What would you have been able to say about `7.996068` if the real answer had been unknown? Then name two later weeks where the same trick gets used again, and finish with the general rule in one sentence.
 
@@ -987,6 +999,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for turning the week's picture into a drawing of your own.
+
 Draw the foggy hillside. The bowl, **one straight line just touching it at `w = 0`**, with the slope written beside it — and six dots marching in with arrows that get shorter.
 
 ![Draw the foggy hillside](../figures/fig-w12-9-draw-frame.svg)
@@ -1007,6 +1021,8 @@ ________________________________________________________________
 ---
 
 ## 📊 Self-Check
+
+Use this table to mark how sure you feel about each skill.
 
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
@@ -1048,7 +1064,7 @@ ________________________________________________________________
 
 **M1(a).**
 
-```
+```text
 f(3.001)  =  3.001 × 3.001  =  9.006001
 f(2.999)  =  2.999 × 2.999  =  8.994001
 
@@ -1066,7 +1082,7 @@ slope     =  0.012000 ÷ 0.002  =  6.000
 
 **M1(d).**
 
-```
+```text
     at x = 1  the slope is  2
     at x = 3  the slope is  6
     at x = 5  the slope is 10
@@ -1098,7 +1114,7 @@ slope     =  0.012000 ÷ 0.002  =  6.000
 
 **M2(c).** **Prediction: `4 × x³`.** So at `x = 2` it should be `4 × 8 = **32**`.
 
-```
+```text
 (2.001)⁴ = 16.032024008001     (1.999)⁴ = 15.968023992001
 difference = 0.064000016000     ÷ 0.002 = 32.000008
 ```
@@ -1118,7 +1134,7 @@ difference = 0.064000016000     ÷ 0.002 = 32.000008
 
 **M3(a).**
 
-```
+```text
 slope at w = 0:      2 × (0 − 4)  =  2 × (−4)  =  −8
 by nudging:          ((−3.999)² − (−4.001)²) ÷ 0.002
                      = (15.992001 − 16.008001) ÷ 0.002
@@ -1143,7 +1159,7 @@ the new w:           0 − (−2.4)  =  0 + 2.4  =  2.4
 
 **M4(a).**
 
-```
+```text
   hours       1    2    3    4    5    6    7    8    9   10
   predicted  22   32   42   52   62   72   82   92  102  112
   actual     20   28   36   44   52   60   68   76   84   92

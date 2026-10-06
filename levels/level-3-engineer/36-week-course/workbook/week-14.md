@@ -61,7 +61,7 @@ ________________________________________________________________
 
 **M1(d).** **Now the gaps, because the gaps are the point.** Subtract your 6-decimal-place answers.
 
-```
+```text
 from 0.9 down to 0.5 :  ____________ − ____________ = ____________     (p dropped by 0.40)
 from 0.1 down to 0.02:  ____________ − ____________ = ____________     (p dropped by 0.08)
 ```
@@ -85,14 +85,14 @@ from 0.1 down to 0.02:  ____________ − ____________ = ____________     (p drop
 
 **M2(a).** Both totals and both averages:
 
-```
+```text
 log loss      sum = ____________      ÷ 6 = ____________
 squared error sum = ____________      ÷ 6 = ____________
 ```
 
 **M2(b).** **The two ratios, and they are the whole week.** Row 5 is the confident disaster — said 2%, answer was yes. Row 2 is the near miss — said 40%, answer was yes. **Circle both answers.**
 
-```
+```text
 log loss      : ____________ ÷ ____________ = ____________
 squared error : ____________ ÷ ____________ = ____________
 ```
@@ -105,14 +105,14 @@ ____________ , because ______________________________________________
 
 **M3(a).** Row 5 is the worst row under both rulers. **What share of each total is it?**
 
-```
+```text
 log loss      : ____________ ÷ ____________ = ____________  →  ______ % of the total
 squared error : ____________ ÷ ____________ = ____________  →  ______ % of the total
 ```
 
 **M3(b).** Row 4 said `0.95` and the answer was **no**. Row 5 said `0.02` and the answer was **yes**. **Which is worse, and by how much, under each ruler?**
 
-```
+```text
 log loss      : ____________ vs ____________  →  row 5 is ______ times worse
 squared error : ____________ vs ____________  →  row 5 is ______ times worse
 ```
@@ -140,7 +140,7 @@ ____________ , and ______
 
 **M4(c).** **The killer comparison.** Compare the last row with the `0.02` row:
 
-```
+```text
 log loss      : ____________ ÷ ____________ = ____________ times worse
 squared error : ____________ ÷ ____________ = ____________ times worse
 ```
@@ -156,6 +156,8 @@ ________________________________________________________________
 ---
 
 ## 🔎 Predict the Output
+
+This section is for practising prediction: you commit to an answer first, then run the code and compare.
 
 **Write your prediction in pen before you run anything.** Five snippets. Every one starts with `import numpy as np`.
 
@@ -182,14 +184,14 @@ print(s.shape)
 
 **My prediction:**
 
-```
+```text
 line 1: ______________________________________
 line 2: ______________
 ```
 
 **Real:**
 
-```
+```text
 line 1: ______________________________________
 line 2: ______________
 ```
@@ -230,14 +232,14 @@ print(1 - c[2])
 
 **My prediction:**
 
-```
+```text
 line 1: ______________________________________
 line 2: ______________________________________
 ```
 
 **Real:**
 
-```
+```text
 line 1: ______________________________________
 line 2: ______________________________________
 ```
@@ -260,14 +262,14 @@ print(np.log(2))
 
 **My prediction:**
 
-```
+```text
 line 1: ______________________________________
 line 2: ______________________________________
 ```
 
 **Real:**
 
-```
+```text
 line 1: ______________________________________
 line 2: ______________________________________
 ```
@@ -281,6 +283,8 @@ line 2: ______________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading: matching words, reading a printout, spotting bugs and tracing code without writing any.
 
 **A1. Match the word to the thing.** Write the letter.
 
@@ -403,6 +407,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing code: each task gives an expected output to match.
 
 ### B1 — one line, four surprises
 
@@ -541,6 +547,8 @@ self-test: an all-0.5 forecaster must score ln(2) = 0.693147
 ---
 
 ## 🐞 Fix the Broken Program
+
+This section is for practising debugging from real tracebacks and outputs.
 
 This program has **three** bugs: one **shape** bug, one **silent logic** bug, and one **runtime** bug that produces `nan` instead of a crash. The real outputs are below, in the order you meet them.
 
@@ -681,6 +689,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This section is for applying the week's two rulers to two puzzles.
+
 ### Part 1 — Run the meter backwards
 
 Somebody wrote down six losses and threw away the predictions. **Get them back.** *(Hint: the meter is `−ln(p)`, so undo it with `e^x`. You did the there-and-back check in M1(a).)*
@@ -706,7 +716,7 @@ ________________________________________________________________
 
 BOLD lost the log-loss championship because of **one day**. Find out by how little.
 
-```
+```text
 BOLD's five good days cost  5 × 0.010050 = ____________
 CAREFUL's whole week totals              = 3.412999
 so day 4 was allowed to cost at most     ____________ − ____________ = ____________
@@ -728,6 +738,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+This section is for longer written answers that pull the week together.
 
 **T1.** Log loss and squared error crowned different winners from the same six days, and **both columns were computed correctly.** Write a paragraph arguing for one of them in a specific setting of your own choosing — a flood warning, a fraud alert, a music recommender, a spell checker. Your paragraph must name the setting, say what a confidently wrong prediction actually *costs* there in the real world, and use the numbers `3.9120` and `0.9604`. Finish by saying what you would do if the person paying you insisted on the other one.
 
@@ -849,6 +861,8 @@ Two entries today, and the first is the worst kind: *no crash, every number a di
 
 ## 🎨 Draw It
 
+This section is for turning your hand-computed numbers into a picture.
+
 Draw **both rulers on one picture** — from your own hand-computed numbers.
 
 ![Draw both rulers on one picture](../figures/fig-w14-8-draw-frame.svg)
@@ -867,6 +881,8 @@ Draw **both rulers on one picture** — from your own hand-computed numbers.
 ---
 
 ## 📊 Self-Check
+
+This section is for rating yourself honestly on each skill from the week.
 
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
@@ -888,6 +904,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+This section is for checking your work after you have finished every page above.
 
 <details>
 <summary>Check your answers</summary>
@@ -923,7 +941,7 @@ ________________________________________________________________
 
 **M1(d).**
 
-```
+```text
 from 0.9 down to 0.5 :  0.693147 − 0.105361 = 0.587786     (p dropped by 0.40)
 from 0.1 down to 0.02:  3.912023 − 2.302585 = 1.609438     (p dropped by 0.08)
 ```
@@ -947,14 +965,14 @@ from 0.1 down to 0.02:  3.912023 − 2.302585 = 1.609438     (p dropped by 0.08)
 
 **M2(a).**
 
-```
+```text
 log loss      sum = 8.845697      ÷ 6 = 1.474283
 squared error sum = 2.522900      ÷ 6 = 0.420483
 ```
 
 **M2(b).**
 
-```
+```text
 log loss      : 3.912023 ÷ 0.916291 = 4.2694
 squared error : 0.960400 ÷ 0.360000 = 2.6678
 ```
@@ -965,14 +983,14 @@ squared error : 0.960400 ÷ 0.360000 = 2.6678
 
 **M3(a).**
 
-```
+```text
 log loss      : 3.912023 ÷ 8.845697 = 0.4423  →  44.2 % of the total
 squared error : 0.960400 ÷ 2.522900 = 0.3807  →  38.1 % of the total
 ```
 
 **M3(b).**
 
-```
+```text
 log loss      : 3.912023 vs 2.995732  →  row 5 is 1.31 times worse
 squared error : 0.960400 vs 0.902500  →  row 5 is 1.06 times worse
 ```
@@ -1002,7 +1020,7 @@ for p in (0.40, 0.02, 0.001, 0.0000001):
 
 **M4(c).**
 
-```
+```text
 log loss      : 16.118096 ÷ 3.912023 = 4.1201 times worse
 squared error : 0.9999998 ÷ 0.9604000 = 1.0412 times worse
 ```
@@ -1090,7 +1108,7 @@ squared error : 0.9999998 ÷ 0.9604000 = 1.0412 times worse
 
 **A3(h).** **Rows 3, 4 and 6** are the rows where `y = 0`, so all three use the wrong branch — but **row 6 comes out right anyway**, because `p = 0.50` and `1 − 0.50` are the same number. So two rows are actually wrong:
 
-```
+```text
 row 3:  wrong −ln(0.20) = 1.609438      right −ln(0.80) = 0.223144
 row 4:  wrong −ln(0.95) = 0.051293      right −ln(0.05) = 2.995732
 ```
@@ -1103,7 +1121,7 @@ row 4:  wrong −ln(0.95) = 0.051293      right −ln(0.05) = 2.995732
 
 **A5.** The eight boxes, top to bottom:
 
-```
+```text
 1.  it happened, you said 0.9    →  −ln(0.90)        = 0.105361
 2.  it happened, you said 0.5    →  −ln(0.50)        = 0.693147
 3.  it happened, you said 0.1    →  −ln(0.10)        = 2.302585
@@ -1396,7 +1414,7 @@ L=0.356675 -> e^(-L) = 0.700000
 
 **Part 2.**
 
-```
+```text
 BOLD's five good days cost  5 × 0.010050 = 0.050252
 CAREFUL's whole week totals              = 3.412999
 so day 4 was allowed to cost at most     3.412999 − 0.050252 = 3.362747

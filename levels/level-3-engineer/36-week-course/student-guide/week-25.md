@@ -52,6 +52,8 @@ The one sentence to keep from today:
 
 ## 🧠 The Big Idea
 
+This section builds the size rule from a strip of card, one idea at a time: window positions, stride, padding, max pooling and flatten.
+
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. Each one carries on from the one above, and the `import` lines are typed once. **The complete runnable files are in 💻 Type This.** If you copy a block from here on its own and Python says `NameError`, that is why, and nothing is broken.
 
 ### 1. Counting the places a window fits
@@ -62,7 +64,7 @@ Get squared paper. Draw a row of **8 squares** and number them **0 to 7**. Cut a
 
 Put the card at the far left. It covers 0, 1, 2 — that is **one** position. Slide it right one square: 1, 2, 3 — **two**. Keep going, and **say the leftmost square out loud each time**:
 
-```
+```text
 start 0  covers 0 1 2
 start 1  covers 1 2 3
 start 2  covers 2 3 4
@@ -86,7 +88,7 @@ Now the card is hanging off the end. **Six positions.** You did not calculate th
 
 **Make it jump two.** Slide your card from square 0, then straight to 2, then to 4 — and now it is off the end. **Three positions, not six.**
 
-```
+```text
 starts with stride 1:  0  1  2  3  4  5     six
 starts with stride 2:  0     2     4        three
 ```
@@ -106,7 +108,7 @@ Draw one extra square on each end of your row of eight and write `0` in both. Yo
 
 **Eight in, eight out.** Which is the whole point:
 
-```
+```text
 without padding:  8 squares in, 6 out    the picture quietly shrinks
 with one ring:    8 squares in, 8 out    you can stack layers for ever
 ```
@@ -118,7 +120,7 @@ with one ring:    8 squares in, 8 out    you can stack layers for ever
 
 **And there is a second reason for padding, which is better than the first.** Count how many windows a **corner** pixel of an 8×8 sits inside, with no padding. Just one — the window that starts in the corner. Now count for a pixel in the **middle**: nine.
 
-```
+```text
 padding 0:  corner pixel is in 1 window,  middle pixel is in 9
 padding 1:  corner pixel is in 4 windows, middle pixel is in 9
 ```
@@ -131,9 +133,9 @@ padding 1:  corner pixel is in 4 windows, middle pixel is in 9
 
 > **max pooling** — slide a small window (almost always 2×2, jumping 2) and keep **only the biggest number** in each window. It has **no weights at all**: nothing to learn, nothing to train.
 
-Here is the whole idea on sixteen numbers. Take this 4×4 and cut it into four blocks of four:
+Here is the whole idea on sixteen numbers. Take this 4×4 and cut it into four blocks of four.
 
-```
+```text
   4   1  |  0   2
   2   9  |  3   1
  --------+--------
@@ -141,16 +143,20 @@ Here is the whole idea on sixteen numbers. Take this 4×4 and cut it into four b
   1   3  |  6   8
 ```
 
-Biggest in each block: **9, 3, 3, 8**.
+Keep the biggest number in each block: **9, 3, 3, 8**. Written as a small grid:
 
-```
+```text
   9   3
   3   8
 ```
 
-**Sixteen numbers became four, and the two loudest — the 9 and the 8 — both survived.** That is the deal. You throw away *exactly where* the strong response was and keep *that there was one*. It costs you position and buys you two things: the tensor gets four times smaller, so the next layer is four times cheaper, and the network cares less about exactly where inside a block an edge was: pixel 4 or pixel 5 gives the same answer, as long as both sit in the same 2×2 block.
+**Sixteen numbers became four, and the two loudest — the 9 and the 8 — both survived.** That is the deal. You throw away *exactly where* the strong response was and keep *that there was one*. It costs you position and buys you two things:
+
+- The tensor gets four times smaller, so the next layer is four times cheaper.
+- The network cares less about exactly where inside a block an edge was: pixel 4 or pixel 5 gives the same answer, as long as both sit in the same 2×2 block.
 
 **And the size check uses the same rule as a conv.** A 2-wide window jumping 2 on 4 squares: `(4 + 0 − 2) ÷ 2 + 1 = 1 + 1 = 2`. Say that out loud once — people expect pooling to have a rule of its own, and it does not.
+
 ### 5. Flatten, and the one number this whole week is for
 
 At the end of a conv stack the data is a small block: `(4, 16, 2, 2)` — four pictures, sixteen feature maps each, two by two. But `nn.Linear`, which you have known since Week 22, wants **one flat row per example**.
@@ -181,7 +187,7 @@ One cell of the first conv's output looked at a 3×3 patch. After a pool, each c
 
 ## 🔢 The Maths, Slowly
 
-There is one new piece of maths this week and it is a division. **You already did it with a card.** Now we turn the counting into arithmetic, one step at a time.
+This section turns your card counting into arithmetic, one step at a time. The one new piece of maths is a division, and **you already did it with a card.**
 
 ### Step 1 — write down what you counted
 
@@ -197,7 +203,7 @@ Fill this in from your squared paper. **Count, do not calculate.**
 
 Ask why the card cannot start at square 6. Because it is 3 wide, so from start 6 it would need squares 6, 7 **and 8** — and there is no square 8. So the last legal start is `8 − 3 = 5`. And the starts run 0, 1, 2, 3, 4, 5, which is **six** numbers even though the biggest is five:
 
-```
+```text
 8 − 3 = 5        the last place a 3-wide window can start on 8 squares
 5 + 1 = 6        six starts, because you counted the one at zero
 ```
@@ -208,7 +214,7 @@ Ask why the card cannot start at square 6. Because it is 3 wide, so from start 6
 
 With stride 2 you do not use every start; you use every second one. So take the distance you have to travel, `5`, and see how many jumps of 2 fit inside it:
 
-```
+```text
 8 − 3 = 5        the last place it could start
 5 ÷ 2 = 2.5      how many 2-square jumps fit into that
 round down → 2   you cannot take half a jump
@@ -221,7 +227,7 @@ round down → 2   you cannot take half a jump
 
 One ring adds one square on each side, so the row is `8 + 2 = 10` long:
 
-```
+```text
 (8 + 2) − 3 = 7      note the 2: one ring adds a square on EACH side
 7 ÷ 1 = 7
 7 + 1 = 8            the answer comes out the same size as the picture
@@ -269,11 +275,11 @@ Four letters, and you have already used all four:
 
 ## 💻 Type This
 
-One file. Nothing here downloads anything, and nothing trains.
+In this section you type one file, `shapes.py`, in four steps. Nothing here downloads anything, and nothing trains.
 
 ### Step 1 — one picture, typed by hand
 
-New file, `shapes.py`.
+Create a new file, `shapes.py`, and type this.
 
 ```python
 """shapes.py - work out the size before you run it."""
@@ -317,6 +323,8 @@ torch shape : (1, 1, 8, 8)
 
 ### Step 2 — the count, confirmed by the machine
 
+Add this to the end of `shapes.py` and run it.
+
 ```python
 print()
 print("--- how many places does a 3-wide window fit on 8 numbers? ---")
@@ -342,6 +350,8 @@ Conv2d(1, 1, 3) says: (1, 1, 6, 6)
 In `(1, 1, 6, 6)`: the batch stayed 1, the channels stayed 1, and **both** 8s became 6s — because the rule is applied to height and width separately, and they happened to be equal.
 
 ### Step 3 — the shape ladder
+
+Add this to the end of `shapes.py`. It pushes four blank pictures through the whole stack and prints the shape after every layer.
 
 ```python
 print()
@@ -398,6 +408,8 @@ Flatten()                    (4, 64)
 
 ### Step 4 — the two ways to flatten
 
+Add this to the end of `shapes.py`. It flattens the same tensor `h` a second way.
+
 ```python
 print()
 print("t.view(t.size(0), -1) gives the same thing:",
@@ -418,7 +430,7 @@ Everything in Steps 1 to 4, in that order, in one file. **It runs in under one s
 
 ## 🔍 Worked Examples
 
-Three complete programs. **Predict every shape before you run each one.**
+This section gives three complete programs that use the size rule on bigger stacks. **Predict every shape before you run each one.**
 
 ### Worked Example 1 — A minesweeper board, three blocks deep
 
@@ -483,7 +495,7 @@ Flatten()                    (1, 16)
 
 **The arithmetic, spelled out.** Every padded conv keeps the size: `(12 + 2 − 3) ÷ 1 + 1 = 12`. Every pool halves it, rounding down:
 
-```
+```text
 pool 1:  (12 + 0 − 2) ÷ 2 + 1 = 5 + 1 = 6
 pool 2:  ( 6 + 0 − 2) ÷ 2 + 1 = 2 + 1 = 3
 pool 3:  ( 3 + 0 − 2) ÷ 2 + 1 = 0 + 1 = 1      <- (3 - 2) ÷ 2 = 0.5, rounds DOWN to 0
@@ -612,7 +624,7 @@ RuntimeError: Given input size: (16x1x1). Calculated output size: (16x0x0). Outp
 
 ## 🐞 When It Breaks
 
-Every message below came from really running a broken version of this week's code. Your line numbers will differ. The last line will not.
+This section shows the shape errors you are most likely to meet and how to read them. Every message below came from really running a broken version of this week's code. Your line numbers will differ. The last line will not.
 
 > **The recipe for every shape error this week:** read **only the last line**, find the two numbers in it, and ask **"which one did I type?"** That one is the one you change.
 
@@ -696,7 +708,7 @@ RuntimeError: Given input size: (16x1x1). Calculated output size: (16x0x0). Outp
 
 ## 🎲 What We Did In Class
 
-If you missed it, here is the whole lesson. You need squared paper, a strip of card exactly **3 squares wide**, and a **pen** — not a pencil.
+This section is a record of the lesson, for anyone who missed it. You need squared paper, a strip of card exactly **3 squares wide**, and a **pen** — not a pencil.
 
 **The hook.** One line on the screen and nothing else: `RuntimeError: mat1 and mat2 shapes cannot be multiplied (4x64 and 32x10)`. Then four numbers on the board with the right-hand side blank, and one question: *"which of these did a person choose?"* The 10 (ten digits) and the 4 (four pictures). **So the argument is between the 64 and the 32.**
 
@@ -734,6 +746,8 @@ Then the most interesting miss — somebody's **32** on the last line — got bu
 
 ## 💬 Talk About It
 
+Three questions to argue over with a partner or a parent. Each has a hint underneath.
+
 **1. A stride-2 conv and a conv-then-pool give exactly the same shape and have exactly the same number of weights. So is one of them pointless?**
 
 *Hint:* the shapes really are identical — Worked Example 2 measured it, `(4, 16, 4, 4)` both ways — so the argument cannot be about size. Ask instead what each one does to the *numbers*: the pool applies a rule **you** chose before the network saw any data, and the strided conv has weights, so it can learn what to keep. Then the harder half: is "the network can learn it" always better, or is a sensible rule chosen in advance an advantage when there is not much data? And finish honestly — nobody has a decisive experiment, so what do you write in a report when you had to pick one?
@@ -749,6 +763,8 @@ Then the most interesting miss — somebody's **32** on the last line — got bu
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four tempting wrong ideas from this week, each next to the right one.
 
 ### Trick 1 — "stride 2 shrinks the picture"
 
@@ -789,6 +805,8 @@ The same is true of every squash — sigmoid, tanh, ReLU. They are **element-by-
 
 ## 🌍 Where You've Seen This
 
+The same size arithmetic shows up in everyday technology.
+
 1. **A photo app that says "this image is too small for this filter."** Somebody's stack needed a picture at least *n* pixels across, and *n* came out of exactly this division.
 2. **The "downsampling" line in a video call's settings.** Sending every other pixel is stride 2 on a picture — the picture is not smaller, you are looking at it half as often, which is why moving detail goes blocky first.
 3. **Pixelated thumbnails in a file browser.** Pooling by another name (thumbnails usually average each block; max pooling keeps the biggest): one number per block, the rest thrown away. That is why you can still tell a beach from a face at 32 pixels.
@@ -825,6 +843,8 @@ the stage: no training, one division. The ↻ on stage three is black, as it has
 
 ## 🔑 Remember This
 
+The key points of the week, then a syntax card and a one-line maths reminder.
+
 - **A window's count, not its size, is what the rule gives you.** `out = (n + 2p − k) ÷ s + 1`, rounded down, applied to height and width **separately**, and it is the same rule for a conv and for a pool.
 - **The `+ 1` is a fence post.** Six starts, last start five, because counting began at zero. Chant them if you doubt it.
 - **`k=3, s=1, p=1` keeps the size exactly the same.** That is why nearly every real network uses it, and it is your quickest check that you have the formula the right way round: it must give 8 back from 8.
@@ -834,6 +854,8 @@ the stage: no training, one division. The ↻ on stage three is black, as it has
 - **The batch size never changes.** If the first number of a shape moves, something is badly wrong.
 
 ### Syntax reminder card
+
+Keep this card beside you while you work. It is a reference, not a file to run.
 
 ```python
 import torch
@@ -869,6 +891,8 @@ print(tuple(h.shape))                  # on the line before the one that broke
 
 ## 📓 New Words
 
+The five words introduced this week, with an example of each.
+
 ![This week's five words, drawn](../figures/fig-w25-7-vocab-icons.svg)
 *Figure 25.7 — This week's five words, drawn.*
 
@@ -897,11 +921,11 @@ Go to **[the Week 25 workbook](../workbook/week-25.md)**. About **55 minutes** i
 
 **Three things are being marked, and the second is the real one.**
 
-**Is the arithmetic written out, or just the answers?** Twelve correct numbers with no working is a page that might have been produced by pattern-matching, and the first stride-2 layer you meet next week will find out. Write the subtraction, the division, the rounding and the plus one.
+1. **Is the arithmetic written out, or just the answers?** Twelve correct numbers with no working is a page that might have been produced by pattern-matching, and the first stride-2 layer you meet next week will find out. Write the subtraction, the division, the rounding and the plus one.
 
-**Does your traceback have both numbers labelled?** Circle the one that came from the picture and write *picture*. Circle the one you typed and write *mine*. **This page decides whether every shape bug for the rest of the course costs you ten seconds or twenty minutes**, and it is worth doing properly once.
+2. **Does your traceback have both numbers labelled?** Circle the one that came from the picture and write *picture*. Circle the one you typed and write *mine*. **This page decides whether every shape bug for the rest of the course costs you ten seconds or twenty minutes**, and it is worth doing properly once.
 
-**Do both of your sentences have a number in one?** "Padding stops the image shrinking" is true and useless. "Padding keeps an 8 at 8 instead of 6, and takes the corner pixel from 1 window to 4" is the same idea with the evidence attached. **A rule you can only state in words is a rule you cannot check. A rule you can state in numbers checks itself.**
+3. **Do both of your sentences have a number in one?** "Padding stops the image shrinking" is true and useless. "Padding keeps an 8 at 8 instead of 6, and takes the corner pixel from 1 window to 4" is the same idea with the evidence attached. **A rule you can only state in words is a rule you cannot check. A rule you can state in numbers checks itself.**
 
 > **⚠️ Watch out:** do the six predictions **in pen**, before you open a laptop. The point of pen is that you cannot quietly fix a wrong prediction, and the wrong ones are the useful ones.
 

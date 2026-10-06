@@ -74,7 +74,7 @@ Everything in PCA is built on one quantity, and the student has met three quarte
 
 Four steps, on five numbers, and you should do this on paper yourself before the lesson:
 
-```
+```text
 the numbers            :   4     6     8    10    12
 the mean               :   (4+6+8+10+12) ÷ 5 = 40 ÷ 5 = 8
 
@@ -106,13 +106,13 @@ This is the one genuinely new geometric idea, and it takes two minutes with numb
 
 Take our five points — five students, `(hours studied, hours slept)` per week:
 
-```
+```text
 (4, 3)   (6, 6)   (8, 7)   (10, 8)   (12, 11)
 ```
 
 **Step one, always: move the middle to (0, 0).** PCA is about spread, not about where the cloud sits.
 
-```
+```text
 mean across = (4 + 6 + 8 + 10 + 12) ÷ 5 = 40 ÷ 5 = 8
 mean up     = (3 + 6 + 7 +  8 + 11) ÷ 5 = 35 ÷ 5 = 7
 
@@ -121,7 +121,7 @@ centred:  (−4, −4)   (−2, −1)   (0, 0)   (2, 1)   (4, 4)
 
 Now pick a direction. A direction is just **a pair of numbers saying how far across and how far up you go for one step**, chosen so that one step is exactly one unit long. At 30°, one step is:
 
-```
+```text
 across = 0.86603        up = 0.50000
 ```
 
@@ -129,7 +129,7 @@ across = 0.86603        up = 0.50000
 
 **And the arithmetic for it is one multiply-and-add per coordinate**, which is exactly the matrix-multiply cell they did by hand in Week 17:
 
-```
+```text
 the point (4, 4), on the 30° direction:
     4 × 0.86603  +  4 × 0.50000
   = 3.46410      +  2.00000
@@ -140,7 +140,7 @@ the point (4, 4), on the 30° direction:
 
 Do all five:
 
-```
+```text
 (−4, −4) → −5.46410
 (−2, −1) → −2.23205
 ( 0,  0) →  0.00000
@@ -150,7 +150,7 @@ Do all five:
 
 And now the variance of *those five scores*, by the four steps from §2 (their mean is already 0, which is why centring first was worth doing):
 
-```
+```text
 squares :  29.85641   4.98205   0.00000   4.98205   29.85641
 add up  :  69.67691
 ÷ 4     :  17.41923
@@ -209,7 +209,7 @@ the two spreads add to: 18.5 = 10.0 + 8.5, the spread of the two original column
 
 **And then the check that ties it all together, which is genuinely lovely:**
 
-```
+```text
 18.2812 + 0.2188 = 18.5000
 var(hours studied) + var(hours slept) = 10.0 + 8.5 = 18.5
 ```
@@ -264,7 +264,7 @@ for scale: a typical wine sits 3.5180 away from the middle
 
 Two components keep **55.4%** of the spread — that sounds respectable. But the miss is **2.2550**, and a typical wine only sits **3.5180** from the middle of the cloud, so:
 
-```
+```text
 2.2550 ÷ 3.5180 = 0.6410
 ```
 
@@ -712,7 +712,7 @@ print(np.round(pu.explained_variance_ratio_[:3], 4))
 - [ ] **Put up the SPREAD sheet.** A big blank number line from 0 to 20, with room to plot six dots — one per candidate angle. It gets filled in live and the winner is obvious the moment the sixth dot goes on.
 - [ ] **Write the six candidate directions on the board before class**, because looking up six cosines mid-lesson kills the pace:
 
-```
+```text
   0° : (1.0000, 0.0000)         90° : (0.0000, 1.0000)
  30° : (0.8660, 0.5000)        120° : (−0.5000, 0.8660)
  60° : (0.5000, 0.8660)        150° : (−0.8660, 0.5000)
@@ -811,7 +811,7 @@ wine table: (178, 13)
 
 **Do this:** Write on the board and leave it up all lesson:
 
-```
+```text
 PCA does not delete columns.
 It draws a new axis along the direction the data is most spread out.
 ```
@@ -828,7 +828,7 @@ It draws a new axis along the direction the data is most spread out.
 
 **Do this:** Write five numbers on the SPREAD sheet.
 
-```
+```text
 4    6    8    10    12
 ```
 
@@ -846,7 +846,7 @@ It draws a new axis along the direction the data is most spread out.
 
 *8.*
 
-```
+```text
 step 1, how far off :  −4    −2     0    +2    +4
 ```
 
@@ -860,7 +860,7 @@ step 1, how far off :  −4    −2     0    +2    +4
 
 *Square it. (Somebody may say absolute value — say "that also works, and gives a different measure people do use".)*
 
-```
+```text
 step 2, squared     :  16     4     0     4    16
 step 3, add up      :  16 + 4 + 0 + 4 + 16 = 40
 step 4, average     :  40 ÷ 4 = 10.0
@@ -876,7 +876,7 @@ step 4, average     :  40 ÷ 4 = 10.0
 
 **Do this:** Now the five points. Put them on the board.
 
-```
+```text
 (4, 3)   (6, 6)   (8, 7)   (10, 8)   (12, 11)
 ```
 
@@ -886,7 +886,7 @@ step 4, average     :  40 ÷ 4 = 10.0
 
 *8 and 7.*
 
-```
+```text
 centred:  (−4, −4)   (−2, −1)   (0, 0)   (2, 1)   (4, 4)
 ```
 
@@ -908,7 +908,7 @@ centred:  (−4, −4)   (−2, −1)   (0, 0)   (2, 1)   (4, 4)
 
 **Do this:** Work it on the board, slowly.
 
-```
+```text
 the point (4, 4), on the 30° direction (0.86603, 0.50000):
 
       4 × 0.86603   +   4 × 0.50000
@@ -924,7 +924,7 @@ the point (4, 4), on the 30° direction (0.86603, 0.50000):
 
 **Do this:** Do the other four fast, or have the class call them out.
 
-```
+```text
 (−4, −4) → −5.46410      (−2, −1) → −2.23205      (0, 0) → 0
 ( 2,  1) →  2.23205      ( 4,  4) →  5.46410
 ```
@@ -933,7 +933,7 @@ the point (4, 4), on the 30° direction (0.86603, 0.50000):
 
 *The four steps.*
 
-```
+```text
 squares :  29.85641   4.98205   0   4.98205   29.85641
 add up  :  69.67691
 ÷ 4     :  17.41923
@@ -1053,7 +1053,7 @@ explained_variance_ratio_: [0.9882 0.0118]
 
 **Do this:** Now the check that matters most. Write it on the board.
 
-```
+```text
 18.2812 + 0.2188 = 18.5000
     10.0 +   8.5 = 18.5000
 ```
@@ -1184,7 +1184,7 @@ PC   its share   running total
 
 **Ask this:** "How much of the wine data is on a two-dimensional picture?"
 
-```
+```text
 0.3620 + 0.1921 = 0.5541
 ```
 
@@ -1196,7 +1196,7 @@ PC   its share   running total
 
 **Do this:** Now the bill. Write both numbers side by side.
 
-```
+```text
 2 components:   share kept 0.5541      average miss 2.2550
 a typical wine sits 3.5180 from the middle
 2.2550 ÷ 3.5180 = 0.6410
@@ -1271,7 +1271,7 @@ And the sentence for this week:
 - **Graph paper, ruler and protractor on every desk.** Not optional.
 - **The five points pre-marked, or marked in the first minute**, on a grid with (8, 7) — the cloud's middle — at the centre of the paper:
 
-```
+```text
       up (hours slept)
   11  |                        *
    8  |                  *
@@ -1285,7 +1285,7 @@ And the sentence for this week:
 - **Six slips of paper**, one angle each: `0°`, `30°`, `60°`, `90°`, `120°`, `150°`. With more than six students, hand out duplicates — two people on the same angle is a free check on each other.
 - **The six directions on the board**, so nobody is looking up cosines:
 
-```
+```text
   0° : (1.0000, 0.0000)         90° : (0.0000, 1.0000)
  30° : (0.8660, 0.5000)        120° : (−0.5000, 0.8660)
  60° : (0.5000, 0.8660)        150° : (−0.8660, 0.5000)
@@ -1304,7 +1304,7 @@ Everybody, together, before any angles:
 
 They write the five centred points on 29.3:
 
-```
+```text
 (−4, −4)   (−2, −1)   (0, 0)   (2, 1)   (4, 4)
 ```
 
@@ -1328,7 +1328,7 @@ Two ways to do it, and **do both**, because the agreement is the point:
 
 **By arithmetic.** For each point, multiply the across-value by the direction's first number, the up-value by its second, and add.
 
-```
+```text
 for the 30° axis, direction (0.8660, 0.5000):
 
 (−4, −4):  −4 × 0.8660  +  −4 × 0.5000  =  −3.4641 + −2.0000  =  −5.4641
@@ -1344,7 +1344,7 @@ for the 30° axis, direction (0.8660, 0.5000):
 
 The four steps from the board, on their own five scores:
 
-```
+```text
 square each   :  29.8564   4.9821   0   4.9821   29.8564
 add them up   :  69.6769
 divide by 4   :  17.4192
@@ -1691,7 +1691,7 @@ Every question restated, so you can mark from this page alone.
 
 *Compute the variance of 4, 6, 8, 10, 12 by hand, showing all four steps. Then do it again for 2, 4, 6.*
 
-```
+```text
 the numbers  :   4     6     8    10    12
 the mean     :   40 ÷ 5 = 8
 
@@ -1703,7 +1703,7 @@ step 4, averaged    :  40 ÷ 4 = 10.0
 
 And for 2, 4, 6:
 
-```
+```text
 mean = 12 ÷ 3 = 4
 how far off :  −2   0   +2
 squared     :   4   0    4
@@ -1730,7 +1730,7 @@ Centred points: `(−4, −4)`, `(−2, −1)`, `(0, 0)`, `(2, 1)`, `(4, 4)`.
 
 The 30° arithmetic in full, since it is the winner and the one you will check:
 
-```
+```text
 (−4, −4):  −4 × 0.8660 + −4 × 0.5000  =  −3.4641 + −2.0000  =  −5.4641
 (−2, −1):  −2 × 0.8660 + −1 × 0.5000  =  −1.7321 + −0.5000  =  −2.2321
 ( 0,  0):   0 × 0.8660 +  0 × 0.5000  =   0.0000 +  0.0000  =   0.0000

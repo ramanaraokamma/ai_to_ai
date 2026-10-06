@@ -68,7 +68,7 @@ Get a sheet of squared paper. Draw a row of **8 squares**. Cut a strip of card *
 
 Put the card at the far left, so it covers squares 0, 1, 2. That is **one** position. Slide it right by one square: 1, 2, 3. **Two.** Keep going:
 
-```text
+```
 start 0  covers 0 1 2
 start 1  covers 1 2 3
 start 2  covers 2 3 4
@@ -84,7 +84,7 @@ Now the card is hanging off the end. **Six positions.** So a 3-wide window on 8 
 
 **Now — and only now — write the arithmetic that gets you 6 without sliding the card.** The last legal start is 5. Why 5? Because the window is 3 wide, so its last square is at 5 + 2 = 7, which is the last square there is. So the last start is `8 − 3 = 5`. And the starts run 0, 1, 2, 3, 4, 5 — which is **`5 + 1 = 6` of them**, because counting from zero always gives you one more than the last number.
 
-```text
+```
 8 − 3 = 5        the last place the window can start
 5 + 1 = 6        there are six starts, counting the one at zero
 ```
@@ -95,7 +95,7 @@ Now two knobs, one at a time.
 
 **Stride.** The **stride** is how far the window jumps between positions. So far it jumped 1. Make it jump 2 and you only use the starts 0, 2, 4 — **three** positions, not six.
 
-```text
+```
 8 − 3 = 5        the last place it could start
 5 ÷ 2 = 2.5      how many 2-square jumps fit into that
 round down → 2   you cannot take half a jump
@@ -109,7 +109,7 @@ round down → 2   you cannot take half a jump
 
 **Padding.** The **padding** is a ring of zeros you glue around the outside of the picture before you slide anything. With one ring, an 8×8 becomes a 10×10, so:
 
-```text
+```
 (8 + 2) − 3 = 7      note the 2: one ring adds one square on EACH side
 7 ÷ 1 = 7
 7 + 1 = 8            the answer comes out the same size as the picture
@@ -155,7 +155,7 @@ Without padding, count how many windows a **corner** pixel of an 8×8 sits insid
 
 **So the model gets nine times more evidence about the middle of the picture than about the corners.** Add one ring of zeros and the corner is now inside **four** windows instead of one. Still fewer than nine, but four times better.
 
-```text
+```
 padding 0:  corner pixel is in 1 window,  middle pixel is in 9
 padding 1:  corner pixel is in 4 windows, middle pixel is in 9
 ```
@@ -171,7 +171,7 @@ padding 1:  corner pixel is in 4 windows, middle pixel is in 9
 
 Here is the whole idea on sixteen numbers. Take this 4×4:
 
-```text
+```
   4   1  |  0   2
   2   9  |  3   1
  --------+--------
@@ -181,7 +181,7 @@ Here is the whole idea on sixteen numbers. Take this 4×4:
 
 Four windows of four. Biggest in each: 9, 3, 3, 8.
 
-```text
+```
   9   3
   3   8
 ```
@@ -289,8 +289,6 @@ week that knows what it is about.
 ---
 
 ## 🧰 Prep Checklist
-
-Use this section to get everything ready before the lesson: what to cut, print and run, and the complete code files.
 
 ### 25 minutes the night before
 
@@ -450,8 +448,6 @@ RuntimeError: mat1 and mat2 shapes cannot be multiplied (4x64 and 32x10)
 
 ## ⏱️ The Lesson, Minute by Minute
 
-This section is the plan for the whole lesson, with what to say, ask and watch for at each step.
-
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — Two Numbers in an Error | 7 | 7 | The traceback, before any theory. Which one did you type? |
@@ -480,7 +476,7 @@ RuntimeError: mat1 and mat2 shapes cannot be multiplied (4x64 and 32x10)
 
 **Do this:** Write on the board, leaving the right-hand side blank:
 
-```text
+```
 4    came from ?
 64   came from ?
 32   came from ?
@@ -553,7 +549,7 @@ RuntimeError: mat1 and mat2 shapes cannot be multiplied (4x64 and 32x10)
 
 > "Right. The window's last square is 2 to the right of its start. So the last legal start is `8 − 3`, which is 5."
 
-```text
+```
 8 − 3 = 5        the last place the window can start
 ```
 
@@ -561,7 +557,7 @@ RuntimeError: mat1 and mat2 shapes cannot be multiplied (4x64 and 32x10)
 
 *Hoped-for answer:* add one, because you started at zero.
 
-```text
+```
 5 + 1 = 6        six starts, because you counted the one at zero
 ```
 
@@ -575,7 +571,7 @@ RuntimeError: mat1 and mat2 shapes cannot be multiplied (4x64 and 32x10)
 
 > "Three, not six. So stride 2 **halves the answer**. And here is the sentence I want back from you at the end of the lesson: **the picture did not get smaller. You looked at it half as often.** The eight squares are still there. You just skipped every other window."
 
-```text
+```
 8 − 3 = 5
 5 ÷ 2 = 2.5      how many 2-square jumps fit
 round down → 2   you cannot take half a jump
@@ -592,7 +588,7 @@ round down → 2   you cannot take half a jump
 
 *Zero through seven — eight positions.*
 
-```text
+```
 (8 + 2) − 3 = 7      one ring adds one square on EACH side, so + 2
 7 ÷ 1 = 7
 7 + 1 = 8            the answer is the same size as the picture
@@ -602,7 +598,7 @@ round down → 2   you cannot take half a jump
 
 **Do this:** Now, and only now, write the rule on the board and box it.
 
-```text
+```
 out  =  (n + 2p − k) ÷ s + 1,   rounded down
 
 n = how wide the picture is          p = rings of zeros round the outside
@@ -619,7 +615,7 @@ k = how wide the window is           s = how far it jumps each step
 
 **Do this:** Write on the board and leave it up:
 
-```text
+```
 padding 0:  corner in 1 window,  middle in 9
 padding 1:  corner in 4 windows, middle in 9
 ```
@@ -888,8 +884,6 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: six shape
 
 ## 🐞 The Debugging Clinic
 
-Use this table when a student's screen shows an error and you need to find the cause quickly.
-
 Every message below came from running a broken version of this week's actual code.
 
 | What the student sees (real message) | What it means | Most likely cause | The fix |
@@ -940,7 +934,7 @@ The point is not that they get it right. **The point is that the wrong predictio
 
 Write the stack on the board, exactly this, and nothing else:
 
-```text
+```
 a batch of 4 pictures, 1 channel, 8 by 8
   conv, window 3, 8 filters, one ring of zeros
   ReLU
@@ -1041,8 +1035,6 @@ RuntimeError: mat1 and mat2 shapes cannot be multiplied (4x64 and 32x10)
 
 ## ❓ Questions Students Ask This Week
 
-These are the questions students tend to ask this week, with short answers you can give.
-
 **"Why is it `2p` and not `p`?"**
 
 Because a ring goes all the way round, so it adds one square on the **left** and one on the **right**. The width grows by two, not one. Draw it: eight squares with one extra on each end is ten squares.
@@ -1101,8 +1093,6 @@ Shapes, and only shapes. Every number we printed today was a zero, and the eight
 
 ## ⚠️ Where This Lesson Goes Wrong
 
-This section lists the usual ways the lesson goes off course and what to do right then.
-
 | What happens | Why | What to do right now |
 |---|---|---|
 | **The formula goes on the board before anybody slides a card** | It feels efficient, and it is how every textbook does it | **Do it the other way round.** Cards on squared paper, chant the six start numbers, circle the 6 — *then* derive the shortcut. A student who has counted can rebuild the rule; a student who memorised it cannot check it. |
@@ -1119,8 +1109,6 @@ This section lists the usual ways the lesson goes off course and what to do righ
 ---
 
 ## 🧭 Differentiation
-
-Use this section to adjust the lesson for a student who is struggling, flying or not engaging.
 
 ### If the student is struggling
 
@@ -1237,8 +1225,6 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
-
-This section gives the homework to set at the end of the lesson, with the words to say.
 
 **Say this:**
 
@@ -1524,8 +1510,6 @@ count: 49 of 64
 ---
 
 ## 🔮 Next Week Preview
-
-This section says what next week builds on, so you can prepare early.
 
 Next week the filters stop being random. The same stack the class predicted the shapes for this week gets `nn.CrossEntropyLoss`, `torch.optim.Adam`, and 1,257 real handwritten digits from `load_digits` — and in **about three seconds** it goes from noise to **529 of 540 held-out digits read correctly**, with only **1,898 weights**, which is a number the class computes by hand before printing it. Then the two moments that make the week: `CrossEntropyLoss` takes **ten raw scores** and not ten probabilities — with the arithmetic to prove it, because handing it the squashed numbers turns a loss of `0.0244` into `1.4818` and nothing goes red — and then the eight first-layer filters get rendered at eight times magnification and **the class votes on what each one is looking for before anybody says a word.** Two of them turn out to be edge detectors, and nobody programmed that.
 

@@ -23,9 +23,9 @@
 
 ## 🪝 Start Here
 
-Last week you did something genuinely hard. Over two lessons you worked out nine gradients for a 2 → 2 → 1 network, by hand, with a calculator, and you got them all right:
+Last week you did something genuinely hard. Over two lessons you worked out nine gradients for a 2 → 2 → 1 network, by hand, with a calculator, and you got them all right. Here are your nine numbers:
 
-```
+```text
 dW1 = [ −0.09975049   +0.19950098 ]      db1 = [ −0.09975049, +0.19950098 ]
       [ −0.19950098   +0.39900196 ]
 
@@ -46,7 +46,7 @@ Somebody who meets `loss.backward()` first has learned a **spell**. It works, th
 
 **You are marking its homework.**
 
-And here is the plan, which is a test rather than a demonstration: put your nine numbers in one column, PyTorch's nine numbers in the other, and subtract. Every difference should be zero to eight decimal places. By the end of this chapter your own file will print this:
+And here is the plan, which is a test rather than a demonstration: put your nine numbers in one column, PyTorch's nine numbers in the other, and subtract. Every difference should be zero to eight decimal places. By the end of this chapter your own file will print a table like this (shortened here):
 
 ```text
 entry           by hand      autograd   difference
@@ -60,6 +60,8 @@ biggest disagreement anywhere: 0.00000000
 ---
 
 ## 🧠 The Big Idea
+
+This section explains what a tensor is, how it records what happens to it, and how to read the slopes back out.
 
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. Each one carries on from the one above, and `import torch` is typed once. **The complete runnable file is in 💻 Type This.**
 
@@ -132,7 +134,7 @@ torch.zeros(2, 3).dtype           : torch.float32
 
 And this is what seven digits looks like when it runs out:
 
-```
+```text
 1.0 × 0.5 + 2.0 × 0.8 = 2.10          on paper
                         2.0999999046325684   printed by float32
 ```
@@ -141,7 +143,7 @@ And this is what seven digits looks like when it runs out:
 
 > **💡 Try this:** the judgement that lasts all year — **`float32` is what you train with**, because it is faster and half the memory and gradients are noisy anyway. **`float64` is what you check with**, when you are comparing against arithmetic you did by hand. Today is a checking day.
 
-Also notice: writing `[1, 2, 3]` instead of `[1.0, 2.0, 3.0]` gives you whole numbers, and **a knob has to be a decimal**, because a step of `−lr × slope` is almost never a whole number. Ask for gradients on a whole-number tensor and PyTorch refuses: `RuntimeError: Only Tensors of floating point and complex dtype can require gradients`.
+Also notice: writing `[1, 2, 3]` instead of `[1.0, 2.0, 3.0]` gives you whole numbers, and **a knob has to be a decimal**, because a step of `−lr × slope` is almost never a whole number. Ask for gradients on a whole-number tensor and PyTorch refuses with this message: `RuntimeError: Only Tensors of floating point and complex dtype can require gradients`.
 
 ### 3. `requires_grad` switches the recorder on, and you can see the recording
 
@@ -201,7 +203,7 @@ slope of x*x at x = 3 is 6.0
 
 The slope of `x × x` at `x = 3` is `2 × 3 = 6`. **You measured exactly this number in Week 12 by nudging:**
 
-```
+```text
 (3.001² − 2.999²) ÷ 0.002 = (9.006001 − 8.994001) ÷ 0.002 = 6.000
 ```
 
@@ -298,12 +300,14 @@ mode item     before:  159.7 MB
 mode item     after :  176.2 MB   kept 300 items
 ```
 
-```
+```text
 258.1 − 159.2 =  98.9 MB   for 300 tensors
 176.2 − 159.7 =  16.5 MB   for 300 numbers
 ```
 
-**About six times as much memory for the same 300 answers.** Your machine's absolute numbers will be different, and so will the ratio a little (we have seen 6 times and 7 times); it will stay several times, not just a few per cent. In a long training run this is how people run out of memory at epoch 400 of 500, having watched the first 399 work perfectly.
+**About six times as much memory for the same 300 answers.** Your machine's absolute numbers will be different, and so will the ratio a little (we have seen 6 times and 7 times); it will stay several times, not just a few per cent.
+
+In a long training run this is how people run out of memory at epoch 400 of 500, having watched the first 399 work perfectly.
 
 > **🧑‍🏫 If a student asks:** *"why is `wrong[0]` the same as `wrong[199]`?"* Because **nothing is being trained today.** The weights never change, so the loss is the same 200 times. We have all the slopes and we are deliberately not taking a step. That is next week.
 
@@ -315,7 +319,7 @@ mode item     after :  176.2 MB   kept 300 items
 
 Here is the whole Week 18 network again, so you do not have to go back. **Two inputs, two hidden units with ReLU, one output with sigmoid.**
 
-```
+```text
 W1 = [ 0.5  -0.3 ]      b1 = [ 0.1   0.05 ]
      [ 0.8   0.2 ]
 
@@ -327,7 +331,7 @@ one row of input:  x = [1.0, 2.0]        its true label:  y = 1
 
 **The forward pass, by hand.** Hidden unit 1 uses column 0 of `W1`; hidden unit 2 uses column 1.
 
-```
+```text
 z1 = 1.0 × 0.5 + 2.0 × 0.8 + 0.1      = 0.5 + 1.6 + 0.1   = 2.20
 z2 = 1.0 × (−0.3) + 2.0 × 0.2 + 0.05  = −0.3 + 0.4 + 0.05 = 0.15
 
@@ -344,7 +348,7 @@ loss = −ln(0.90024951) = 0.10508332
 
 **The backward pass, by hand.** Nine numbers, and every one is a multiplication.
 
-```
+```text
 step 1 — blame at the output:
    dZ2 = A2 − y = 0.90024951 − 1 = −0.09975049
 
@@ -375,6 +379,8 @@ step 5 — the hidden layer's weights (input × blame):
 ---
 
 ## 💻 Type This
+
+This section builds the file that runs the match test, one step at a time.
 
 One file, `match_test.py`, built in five steps.
 
@@ -425,7 +431,7 @@ loss.backward()
 print("dW1 =", W1.grad)
 ```
 
-**Predict before you run it.** Crash, or a number, or something else?
+**Predict before you run it.** Crash, a number, or something else?
 
 ```text
 dW1 = None
@@ -433,7 +439,9 @@ dW1 = None
 
 **It did not crash.** And `None` is not a number — it means the box is empty; nobody has ever written a slope into it.
 
-Why? Because we never asked PyTorch to record what was happening to `W1`. When `backward()` walked the receipt, `W1` was not on it. It was treated like the data — a number that was *used*, not a knob to be *tuned*.
+Why? Because we never asked PyTorch to record what was happening to `W1`.
+
+When `backward()` walked the receipt, `W1` was not on it. It was treated like the data — a number that was *used*, not a knob to be *tuned*.
 
 **In a real training run this is a nightmare bug: one layer silently never learns, your model is mediocre, and nothing anywhere says why.** The diagnosis is two prints:
 
@@ -576,7 +584,7 @@ Put the dtype back.
 
 ### The complete file
 
-**Runtime: instant, well under a second.**
+**Runtime: instant, well under a second.** Save this as `match_test.py` and run it:
 
 ```python
 """match_test.py - autograd against the four gradients we worked out by hand."""
@@ -640,6 +648,8 @@ print("biggest disagreement anywhere: %.8f" % worst)
 ---
 
 ## 🔍 Worked Examples
+
+These three programs show autograd in use outside last week's network, each with a check by hand.
 
 Three complete programs, in three different worlds.
 
@@ -730,7 +740,7 @@ b.grad = tensor([-0.1824], dtype=torch.float64)
 
 **Every number is checkable, and you should check all four.**
 
-```
+```text
 z    = 3.0 × 0.4 + 1.0 × (−0.2) + 0.5 = 1.2 − 0.2 + 0.5 = 1.50
 p    = sigmoid(1.50) = 0.81757448
 loss = −ln(0.81757448) = 0.20141328
@@ -802,9 +812,9 @@ second backward without wiping:
 dL/dw now = -9600.0000
 ```
 
-**All of it by hand:**
+Here is the same calculation by hand:
 
-```
+```text
 pred  = 80 × 2 + 50 = 210
 error = 210 − 240 = −30
 loss  = (−30)² = 900
@@ -929,7 +939,7 @@ If you missed it, here is the whole lesson. You need a calculator and a laptop w
 
 **The hook: eleven minutes versus one line.** Week 18's nine numbers were on the board under a sheet of paper. Three of them were asked for, out loud, and timed:
 
-```
+```text
 0.90024951 − 1               = −0.09975049      (about nine seconds)
 2.20 × (−0.09975049)         = −0.21945108
 2.0 × 0.19950098             = +0.39900196
@@ -964,9 +974,9 @@ And the question before anything ran: **"what should the difference be?"** Zero.
 
 Then: *"which of these three would you rather have happen to you?"* **The crash.**
 
-**The four things on the board at the end:**
+**The four things on the board at the end**, as a reference:
 
-```
+```text
 requires_grad=True   →  start recording
 grad_fn              →  the receipt, visible
 loss.backward()      →  read it backwards, fill in every .grad
@@ -978,6 +988,8 @@ And the closing observation: *"today we computed nine slopes and then looked at 
 ---
 
 ## 💬 Talk About It
+
+These are discussion questions. Try your own answer before you read the hint.
 
 **1. So was last week a waste of time?**
 
@@ -994,6 +1006,8 @@ And the closing observation: *"today we computed nine slopes and then looked at 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists four wrong beliefs about tensors and gradients, each beside the right one.
 
 ### Trick 1 — "`None` means the slope is zero"
 
@@ -1032,6 +1046,8 @@ If your answer is "it's faster" or "it works on GPUs", both are true and neither
 
 ## 🌍 Where You've Seen This
 
+The same idea turns up in several places outside this course.
+
 1. **Every model in the news.** GPT-style language models, image generators, the thing that transcribes your voice notes — almost all of them were trained by code whose backward pass is one call to `loss.backward()`. **You have now written the eight lines it replaces.**
 2. **Spreadsheet "goal seek" and solver tools.** You say *"make cell B12 equal 1000 by changing B3"*, and something works out how B12 responds to B3. Same question, cruder machinery.
 3. **Physics and engineering simulations.** Autograd is not about neural networks at all — it works on anything you can write as torch arithmetic. People use it for fluid simulations, circuit design, and fitting curves to laboratory data.
@@ -1068,6 +1084,8 @@ stays white: you are not replacing what you built there, you are checking a tool
 ---
 
 ## 🔑 Remember This
+
+This section is the week in short, followed by a syntax card to keep beside you.
 
 - **A tensor is a numpy array with two things stapled on:** a **device** (where the numbers live) and a **computation graph** (a receipt of everything done to it).
 - **Two differences that cause real bugs:** torch's default decimal is **`float32`** (about 7 digits, so `2.1` prints as `2.0999999046325684`) while numpy's is `float64`; and a tensor **remembers**, if you set `requires_grad=True`.
@@ -1117,6 +1135,8 @@ print(loss.item(), type(loss.item()))    # a float, with no receipt attached
 ---
 
 ## 📓 New Words
+
+These are the words introduced this week.
 
 ![Seven words from Week 20, drawn](../figures/fig-w20-6-vocab-icons.svg)
 *Figure 20.6 — Seven words from Week 20, drawn.*

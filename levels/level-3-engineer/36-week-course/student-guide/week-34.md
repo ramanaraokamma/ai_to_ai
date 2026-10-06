@@ -35,7 +35,7 @@ Say you find a way — you send them a file, they somehow get it running. **Thre
 
 Now four questions come at you, and they are the four questions this whole term is about.
 
-```
+```text
 1.  Which VERSION of your model answered them?
 2.  What EXACTLY was sent in?
 3.  What PROBABILITY came back, and what was it compared to?
@@ -53,7 +53,7 @@ Here is the uncomfortable part. If you built your model the way most people buil
 
 There is a name for the gap between *"my model works in my notebook"* and *"a stranger can use it"*. People call it **the last mile**, and it is where most machine learning projects quietly die. Almost nobody teaches it. You are going to build it over three weeks, and today you start — **on paper**.
 
-```
+```text
 Everything that goes wrong at eleven o'clock at night is a decision
 you did not make in the morning.
 ```
@@ -63,6 +63,8 @@ you did not make in the morning.
 ---
 
 ## 🧠 The Big Idea
+
+This section explains the two things you build before anyone can use your model: the written contract and the frozen artifact. It also covers the two stopwatches and the golden tests you use to check them.
 
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. Each one carries on from the one above. **The complete runnable files are in 💻 Type This.**
 
@@ -94,7 +96,7 @@ The prices are **relative**, which is all you ever need. And the honest sentence
 
 **Box 6 — never used for.** A reasonable person, handed a sentiment model, will try to use it to decide who gets banned. **You are going to tell them not to, in writing, before they ask.** Two specific temptations, not "anything illegal":
 
-```
+```text
 ✗  deciding who gets banned or muted
 ✗  marking anybody's schoolwork
 ```
@@ -192,7 +194,7 @@ SECOND predict_proba     :  0.155 ms
 
 So the cold start is an addition:
 
-```
+```text
    84.3   (import joblib)
 + 616.8   (first load — mostly scikit-learn importing itself)
 +   0.4   (the actual prediction)
@@ -237,7 +239,7 @@ There is no new mathematics this week. There is one sum, and it is Week 11's sum
 
 Box 4 said a nasty review slipping through costs **10** and a nice review being read for nothing costs **1**. So:
 
-```
+```text
 cost(t)  =  10 × (nasty called positive)  +  1 × (nice called negative)
 ```
 
@@ -258,7 +260,7 @@ Sweep `t` over the **16 validation rows** — never the test rows — count the 
 
 Now the part that will make you uncomfortable, and it should.
 
-```
+```text
 accuracy at 0.50  =  0.9375
 accuracy at 0.65  =  0.7500
 ```
@@ -640,6 +642,8 @@ if __name__ == "__main__":
 
 ## 🔍 Worked Examples
 
+Three full runs: where the threshold came from, the same contract for the digits CNN, and a second version of the model.
+
 ### Worked Example 1 — Where 0.65 came from, worked from the probabilities up
 
 The sixteen validation probabilities, sorted, straight out of the model, each with its true label (`+` nice, `−` nasty):
@@ -651,13 +655,13 @@ The sixteen validation probabilities, sorted, straight out of the model, each wi
 
 Eight of those rows are genuinely positive and eight genuinely negative. Now count the mistakes at `t = 0.50` by eye: everything at or above 0.50 is called positive. That is the last nine numbers — and **one of them is actually a nasty review** (`0.6143−`), so `nasty → positive = 1`. Below the line **every** nice review is still where it belongs, so `nice → negative = 0`.
 
-```
+```text
 cost(0.50) = 10 × 1 + 1 × 0 = 10 + 0 = 10
 ```
 
 Move the line up to 0.65. Now `0.6143` falls below it — the one expensive mistake is gone. But so do `0.5316, 0.5760, 0.5762, 0.6025`, which are all nice reviews, so four nice reviews are dumped on the moderator:
 
-```
+```text
 cost(0.65) = 10 × 0 + 1 × 4 = 0 + 4 = 4
 ```
 
@@ -773,6 +777,8 @@ PASS expected=negative got=negative p=0.2380  <<stale bread and awful coffee>>
 
 ## 🐞 When It Breaks
 
+These are the real error messages you can expect this week, with what each one means and how to fix it.
+
 ### Break 1 — the two arguments the wrong way round
 
 ```python
@@ -859,7 +865,7 @@ That second one is worth the one word it cost: **`type=float` bought you a type 
 
 **Part 2 — the cross-examination.** Every contract was read aloud, and the room was allowed **two questions and only two**:
 
-```
+```text
 1.  What is one prediction about?
 2.  What must this never be used for?
 ```
@@ -876,6 +882,8 @@ Then, as each one passed, the box 1 noun went up on the wall in a list: `review 
 
 ## 💬 Talk About It
 
+Three questions to argue out loud with a partner or at the dinner table. Each has a hint underneath.
+
 **1. Your model is 10 kilobytes. Does versioning really matter for something that small?**
 *Hint: think about which files you are most likely to overwrite without thinking — the big careful ones, or the small ones you can rebuild in a second? Then ask what "rebuild in a second" is worth when you have changed four things since.*
 
@@ -888,6 +896,8 @@ Then, as each one passed, the box 1 noun went up on the wall in a list: `review 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four claims that sound sensible this week. Each is shown as a wrong version and a right version.
 
 ### Trick 1 — "the artifact is the model"
 
@@ -927,6 +937,8 @@ You will read everywhere that loading inside the request handler turns a 2 ms pr
 
 ## 🌍 Where You've Seen This
 
+The same ideas show up in everyday tools you already use.
+
 - **App updates that get pulled.** "Version 17.4.1 is rolling back to 17.4" is somebody editing the equivalent of your `LATEST` file.
 - **The little version string in a phone's Settings → About.** That is `model_version` in your reply, doing the same job: making a complaint answerable.
 - **`--help` on any command-line tool you have ever used.** That page is `argparse` (or its equivalent), generated from the arguments, never hand-written.
@@ -962,6 +974,8 @@ the page. The ↻ on stage three is black, as it has been since Week 12.*
 ---
 
 ## 🔑 Remember This
+
+The six things to keep from this week, a syntax card to copy from, and a one-line maths reminder.
 
 - **The contract comes first, and box 5 is a sum.** Where the threshold came from is a *comparison*, not a number: `10 × 1 + 1 × 0 = 10` against `10 × 0 + 1 × 4 = 4`.
 - **Two folders make Rule 1 checkable.** `grep -rnE "\.fit\(" serve/` printing nothing is **evidence**; a promise is not.

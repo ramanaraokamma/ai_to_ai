@@ -74,7 +74,7 @@ The only genuinely new things in the file are **four lines of plotting syntax**,
 
 Two inputs. Sixteen hidden units. One output. So:
 
-```
+```text
 W1 is 2 rows by 16 columns   =  32 numbers
 b1 is 1 row  by 16 columns   =  16 numbers
 W2 is 16 rows by 1 column    =  16 numbers
@@ -133,7 +133,7 @@ def init_params(n_in, n_hidden, seed=0):
 
 A **dictionary** — the `{ "name": value }` thing — is a labelled box: four grids of numbers, each with a name. `rng.normal(0, spread, size=(rows, cols))` fills a grid of that shape with random numbers centred on 0. The spread is the interesting bit:
 
-```
+```text
 layer 1:  sqrt(2 / 2)  = sqrt(1)      = 1.0
 layer 2:  sqrt(2 / 16) = sqrt(0.125)  = 0.3536
 ```
@@ -320,7 +320,7 @@ test acc 0.5000   dead units 16/16
 
 Here is the arithmetic, and it is the best two minutes of the lesson. With all weights zero, every hidden unit computes `0 × x1 + 0 × x2 + 0 = 0`, ReLU leaves it at 0, the output is `0 × 0 + ... + 0 = 0`, and `sigmoid(0) = 0.5`. So the network answers **0.5 to every single point.** Its loss is:
 
-```
+```text
 −ln(0.5) = 0.693147...
 ```
 
@@ -355,7 +355,7 @@ test acc 0.8100   dead units 13/16
 
 The mechanism, in numbers. One enormous step drives a unit's bias far negative. Unit 0 ended with `bias = −14.113`. Every row's weighted sum plus that bias comes out below zero, so `max(0, negative) = 0` for all 200 rows. ReLU's slope where it did not fire is **0**, so that unit's gradient is 0, so:
 
-```
+```text
 0 slope × any learning rate = 0 change.  Ever.
 ```
 
@@ -465,6 +465,8 @@ work, not new evaluation."* If a student argues the other way, they are arguing 
 ---
 
 ## 🧰 Prep Checklist
+
+This section is for getting ready: what to run the night before, what to check on the day, and what to do if the laptops fail.
 
 ### 30 minutes the night before
 
@@ -656,6 +658,8 @@ epoch 500  loss 0.1542  test acc 0.9350
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the plan for the whole lesson, one segment at a time.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — The Line That Cannot Win | 7 | 7 | Two crescents on the board, and one straight line that fails |
@@ -714,7 +718,7 @@ epoch 500  loss 0.1542  test acc 0.9350
 
 **Do this:** Write the parts list on the board, in this order, saying which week each came from. Six lines, no more:
 
-```
+```text
 forward   →  Week 17   (grid multiply, ReLU, grid multiply, squash)
 loss      →  Week 14   (log loss: the surprise meter)
 backward  →  Week 18   (four gradient arrays)
@@ -729,7 +733,7 @@ draw      →  TODAY     (four new lines of plotting)
 
 **Do this (2 min) — count the knobs on the board.**
 
-```
+```text
 W1 : 2 rows × 16 columns  = 32
 b1 : 1 × 16               = 16
 W2 : 16 × 1               = 16
@@ -998,6 +1002,8 @@ And the sentence for this week:
 
 ## 🎲 The Activity, In Full
 
+This section is the full script for the Break It Three Ways activity.
+
 ### Break It Three Ways
 
 **What it is.** Fifteen to twenty minutes of deliberate sabotage, with a prediction written **in pen** before each run. Three breakages, three cards, three verdicts. This is the part of the week they will remember in three years.
@@ -1078,7 +1084,7 @@ Good answers look like:
 
 **Do card 1 only, and do it on paper first.** All weights zero, so:
 
-```
+```text
 hidden output = 0 × x1 + 0 × x2 + 0 = 0
 final sum     = 0 × 0 + ... + 0 = 0
 answer        = sigmoid(0) = 0.5
@@ -1149,6 +1155,8 @@ Yours: 65. A small image model: a few million. The large language models in the 
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section is for the ways the lesson tends to drift, and what to do right away.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **The teacher explains instead of letting them build** | It is a project week and it feels wrong to say so little | **Set a timer.** Hook and concept end at minute 25 and not a minute later. After that your only two sentences are *"what shape is that?"* and *"did the check pass?"* |
@@ -1165,6 +1173,8 @@ Yours: 65. A small image model: a few million. The large language models in the 
 ---
 
 ## 🧭 Differentiation
+
+This section is for adjusting the lesson when the student is struggling, flying or not engaging.
 
 ### If the student is struggling
 
@@ -1289,6 +1299,8 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
+This section is for setting the homework: what to say, and what the student takes home.
+
 **Say this:**
 
 > "About an hour, three pages, and one of them is a file that has to run.
@@ -1323,7 +1335,7 @@ Every question restated, so you can mark from this page alone.
 
 **The arithmetic for card 1, which is the part to insist on:**
 
-```
+```text
 hidden pre-activation:  0 × x1 + 0 × x2 + 0  =  0        (for every row)
 after ReLU:             max(0, 0)            =  0
 output pre-activation:  0 × 0 + ... + 0      =  0
@@ -1624,6 +1636,8 @@ Below `1e-6`. Ours is `4.792e-08`.
 ---
 
 ## 🔮 Next Week Preview
+
+This section is for what next week needs from you, and when to prepare it.
 
 Next week is the payoff, and it is the reason Weeks 12 to 19 were done in that order. The student meets a **tensor** — a numpy array that quietly records everything done to it — and one method called `loss.backward()` that produces all sixty-five slopes without anyone deriving anything. The lesson is built as a **match test**: take last week's hand-computed gradients, ask PyTorch for the same numbers, and diff them to eight decimal places on the board. They agree exactly, and that agreement is only meaningful to somebody who did it by hand first. **Do not teach Week 20 in the same sitting as this week.** The pride needs seven days to sit, or `loss.backward()` reads as *"so that was pointless then"* — and it was not pointless; it is the only reason that line will ever mean anything.
 

@@ -40,7 +40,9 @@ It got **96.67% on 540 digits it had never seen.** Good model. It is on disk, in
 
 Today it gets broken, in a way that should worry you.
 
-**Here is the experiment.** Take the 64 columns and **shuffle them** — not randomly per picture, one single shuffle worked out once and applied to all 1,797 pictures identically. Column 0 always goes where column 16 was, and so on. A person cannot read the result at all. It is not a picture any more; it is confetti.
+**Here is the experiment.**
+
+Take the 64 columns and **shuffle them** — not randomly per picture, one single shuffle worked out once and applied to all 1,797 pictures identically. Column 0 always goes where column 16 was, and so on. A person cannot read the result at all. It is not a picture any more; it is confetti.
 
 Now train exactly the same network on the confetti. Same architecture, same 15 epochs, same seed.
 
@@ -70,6 +72,8 @@ That second thing has a name, and by the end of today you will have done sixteen
 
 ## 🧠 The Big Idea
 
+This section explains what flattening throws away, then works a convolution through by hand and counts the numbers it needs.
+
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. Each one carries on from the one above. **The complete runnable files are in 💻 Type This.**
 
 ### 1. What flattening threw away
@@ -79,7 +83,9 @@ That second thing has a name, and by the end of today you will have done sixteen
 ![Flattening throws the neighbourhood away](../figures/fig-w24-1-flatten-destroys-the-neighbourhood.svg)
 *Figure 24.1 — Flattening throws the neighbourhood away. A touches C in slot 20, and A touches B eight slots away in slot 27, and a dense layer cannot tell which of those means "touching".*
 
-**Read that figure carefully, because it is the whole week.** On an 8 × 8 picture, pixel **A** at row 2 column 3 lands in slot 19 when you flatten it. The pixel **directly to its right** lands in slot 20 — right next door. The pixel **directly below it** lands in slot 27 — **eight slots away.** To you and me, "right" and "below" are equally close. To a flattened row of 64 numbers, one of them is a neighbour and the other is eight houses down the street, and **there is nothing in the layer that knows those two distances mean the same thing.**
+**Read that figure carefully, because it is the whole week.**
+
+On an 8 × 8 picture, pixel **A** at row 2 column 3 lands in slot 19 when you flatten it. The pixel **directly to its right** lands in slot 20 — right next door. The pixel **directly below it** lands in slot 27 — **eight slots away.** To you and me, "right" and "below" are equally close. To a flattened row of 64 numbers, one of them is a neighbour and the other is eight houses down the street, and **there is nothing in the layer that knows those two distances mean the same thing.**
 
 > **⚠️ Watch out:** none of this means last week was wasted. Your digits model **works** — 96.67% is a real score on real held-out digits, and every piece of the engineering (the class, the batches, the file, the `predict.py`) is still exactly right and is used again in Week 26. What the shuffle test shows is that the model is **fragile in a specific way**: it learned which of 64 particular slots tend to be bright for each digit, and `load_digits` happens to be a very tidy dataset where every digit is centred. Move a digit two pixels left and it falls over. **Finding out how your model is fragile is most of engineering.**
 
@@ -89,7 +95,7 @@ That second thing has a name, and by the end of today you will have done sixteen
 
 An 8 × 8 picture, flattened to 64 numbers, into a dense layer with 16 units:
 
-```
+```text
 weights = 16 × 64 = 1024
 biases  =             16
                     ----
@@ -98,14 +104,14 @@ total   =           1040
 
 A single 3 × 3 convolution over the same 8 × 8 picture:
 
-```
+```text
 weights = 3 × 3 =  9
 bias    =          1
                  ---
 total   =         10
 ```
 
-```
+```text
 1040 ÷ 10 = 104
 ```
 
@@ -113,7 +119,7 @@ total   =         10
 
 **And the gap grows fast, because a convolution's count does not depend on the size of the picture at all.** On a 64 × 64 photograph — still small, still grey:
 
-```
+```text
 nn.Linear(4096, 256)              1,048,832 numbers
 nn.Conv2d(1, 4, kernel_size=3)           40 numbers
 ```
@@ -134,7 +140,7 @@ nn.Conv2d(1, 4, kernel_size=3)           40 numbers
 
 **Here is the entire thing on numbers you can check.** The picture is 6 × 6, bright left half, dark right half, every row identical:
 
-```
+```text
  10  10  10   2   2   2
  10  10  10   2   2   2
  10  10  10   2   2   2
@@ -145,7 +151,7 @@ nn.Conv2d(1, 4, kernel_size=3)           40 numbers
 
 The kernel is a **vertical-edge finder** — plus down the left column, minus down the right, nothing in the middle:
 
-```
+```text
   1   0  −1
   1   0  −1
   1   0  −1
@@ -153,14 +159,14 @@ The kernel is a **vertical-edge finder** — plus down the left column, minus do
 
 **Position (0, 0).** The window covers rows 0–2 and columns 0–2. Everything there is 10:
 
-```
+```text
 window          kernel         products
 10  10  10       1  0  −1      10   0  −10
 10  10  10   ×   1  0  −1  =   10   0  −10
 10  10  10       1  0  −1      10   0  −10
 ```
 
-```
+```text
 row by row:  (10 + 0 − 10) + (10 + 0 − 10) + (10 + 0 − 10)  =  0 + 0 + 0  =  0
 ```
 
@@ -168,7 +174,7 @@ row by row:  (10 + 0 − 10) + (10 + 0 − 10) + (10 + 0 − 10)  =  0 + 0 + 0  
 
 **Position (0, 1).** Slide the window one column right. Now every row of the window reads `10, 10, 2`:
 
-```
+```text
 one row:      (1 × 10)  +  (0 × 10)  +  (−1 × 2)   =   10 − 2   =   8
 three rows:   8 + 8 + 8                            =   24
 ```
@@ -180,20 +186,20 @@ three rows:   8 + 8 + 8                            =   24
 
 **Position (0, 2).** Window reads `10, 2, 2` in every row:
 
-```
+```text
 one row:      (1 × 10) + (0 × 2) + (−1 × 2)  =  10 − 2  =  8
 three rows:   24
 ```
 
 **Position (0, 3).** Window reads `2, 2, 2`. Flat again:
 
-```
+```text
 one row:      2 − 2 = 0    →    total 0
 ```
 
 **And then the rows.** Every row of this picture is identical, so every row of the answer must be identical too. All sixteen cells:
 
-```
+```text
    0   24   24    0
    0   24   24    0
    0   24   24    0
@@ -204,7 +210,7 @@ one row:      2 − 2 = 0    →    total 0
 
 **Why sixteen cells?** Count the places the window can sit. A 3-wide window on a 6-wide picture can start at column 0, 1, 2 or 3 — **four places.** Same going down — four places.
 
-```
+```text
 across:  6 − 3 + 1 = 4
 down:    6 − 3 + 1 = 4
 cells:   4 × 4 = 16
@@ -227,7 +233,7 @@ cells:   4 × 4 = 16
 
 **The first thing is cheap.** Nine weights and a bias is ten numbers. A dense layer producing the same 4 × 4 answer grid out of those 36 pixels would need:
 
-```
+```text
 36 × 16 + 16 = 592
 ```
 
@@ -270,7 +276,7 @@ There is no new maths this week — there is multiplying and adding, sixteen tim
 
 **Step 1 — count the dense layer.** `nn.Linear(64, 16)` on a flattened 8 × 8 picture. Week 22's rule is `(inputs × outputs) + outputs`:
 
-```
+```text
 16 × 64  =  1024
 plus 16 biases
             ----
@@ -281,7 +287,7 @@ plus 16 biases
 
 **Step 2 — count the convolution.** A 3 × 3 kernel is nine weights, and one bias per filter:
 
-```
+```text
 3 × 3  =  9
 plus 1 bias
          ---
@@ -290,13 +296,13 @@ plus 1 bias
 
 **Step 3 — divide.**
 
-```
+```text
 1040 ÷ 10 = 104
 ```
 
 **Step 4 — now do it again on a bigger picture, and watch only one of the two numbers move.** A 64 × 64 greyscale photo has `64 × 64 = 4096` pixels. Into 256 units:
 
-```
+```text
 256 × 4096  =  1,048,576
 plus 256 biases
                ---------
@@ -307,14 +313,14 @@ plus 256 biases
 
 And the convolution, with four filters this time:
 
-```
+```text
 4 × 1 × 3 × 3  =  36
 plus 4 biases
                  ---
                   40
 ```
 
-```
+```text
 1,048,832 ÷ 40 = 26,220.8
 ```
 
@@ -656,14 +662,14 @@ horizontal-edge feature map (6 x 6):
 
 **Check the top-left cell of the vertical map by hand.** The window is rows 0–2, columns 0–2:
 
-```
+```text
 window          kernel        products
 0   0   0        1  0  −1      0   0    0
 0   9   9    ×   1  0  −1  =   0   0   −9
 0   9   9        1  0  −1      0   0   −9
 ```
 
-```
+```text
 0 + (−9) + (−9)  =  −18
 ```
 
@@ -828,14 +834,14 @@ average   biggest +12.56   smallest +0.11
 
 **Check the top-left cell of the vertical map.** The window is rows 0–2, columns 0–2 of the digit:
 
-```
+```text
 window            kernel        one row at a time
  0   3  15         1  0  −1     (1×0) + (0×3)  + (−1×15) = −15
  0  14  13    ×    1  0  −1  =  (1×0) + (0×14) + (−1×13) = −13
  0   5   3         1  0  −1     (1×0) + (0×5)  + (−1×3)  =  −3
 ```
 
-```
+```text
 −15 + (−13) + (−3)  =  −31
 ```
 
@@ -988,7 +994,7 @@ Then laptops open, twelve lines of code, and the printout compared **cell by cel
 
 Then part 3, three minutes: *"you have a kernel that finds up-and-down edges. Make one that finds left-and-right edges. Nine numbers."* The answer is the same kernel rotated a quarter turn:
 
-```
+```text
   1   1   1
   0   0   0
  −1  −1  −1
@@ -1008,6 +1014,8 @@ bar     -> feature maps (3, 6, 6)
 
 ## 💬 Talk About It
 
+These three questions are for discussion. Each has a hint, and the hints are there to start an argument rather than end it.
+
 **1. The shuffled model scored 0.9704 and the normal one scored 0.9667. Have we just proved that shuffling pixels helps?**
 
 *Hint:* start with the arithmetic, not the opinion. 0.0037 of 540 rows is how many digits? (About two.) So the question is whether a 540-row measurement can tell those two models apart — and the honest answer is no. Then push on what *has* been proved, because something has: **this measurement cannot distinguish them**, which is a smaller and much more useful claim than either "shuffling helps" or "shuffling makes no difference". Then the finishing move: what would you *do* to find out for real? (Run it with several different seeds and look at the spread. Or use a much bigger test set. Or — better still — work out why a tie is what you should *expect*: a dense layer treats its 64 inputs as an unordered bag, so shuffling the columns just renames which weight sits where, and the two networks are the same kind of model. Any gap between them is luck of the starting weights. Shifting every digit two pixels left is a good test too, but of dense against convolutional — next week's job — because **both** of these models will fall over equally.) This is Week 11's lesson about small denominators, in a new costume.
@@ -1023,6 +1031,8 @@ bar     -> feature maps (3, 6, 6)
 ---
 
 ## ⚠️ Don't Get Tricked
+
+These are four wrong ideas that are easy to pick up this week, each set beside the right one.
 
 ### Trick 1 — "the feature map is the same size as the picture"
 
@@ -1063,6 +1073,8 @@ Same for the input: `(1, 1, 6, 6)` is **"one picture, one channel, six high, six
 
 ## 🌍 Where You've Seen This
 
+Sliding a small grid of weights across a picture is not only a machine-learning idea. Here are six places it already appears.
+
 1. **Every filter in a photo-editing app.** Blur, sharpen, edge-detect, emboss — those are all 3 × 3 or 5 × 5 kernels slid across the picture, exactly as you did with a pencil. Our third kernel, nine copies of one-ninth, **is** a blur. The image-editing people got here decades before machine learning did.
 2. **A phone camera's "portrait mode" outline.** Something has to decide where the person ends and the background begins, which is an edge-detection problem, which is a stack of kernels.
 3. **Document scanning that straightens a page.** Find the long straight edges of the paper, work out the angle, rotate. The first step is a kernel very like your vertical-edge one.
@@ -1099,6 +1111,8 @@ different kind of layer.*
 ---
 
 ## 🔑 Remember This
+
+The eight points to keep from this week, then a card of the syntax you used.
 
 - **Flattening throws away which pixels are next to which.** The evidence: shuffle the 64 columns of `load_digits` and the same model still scores 0.9704 against 0.9667. **It was never using the arrangement.**
 - **A convolution is nine multiplications and one addition, done over and over.** Multiply each of the kernel's nine numbers by the picture number underneath, add up all nine, write the answer in one cell of the feature map. Then slide.

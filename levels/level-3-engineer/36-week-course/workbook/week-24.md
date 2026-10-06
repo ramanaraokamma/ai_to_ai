@@ -62,7 +62,7 @@ ________________________________________________________________
 
 **The kernel every time:**
 
-```
+```text
   1   0  −1
   1   0  −1
   1   0  −1
@@ -70,7 +70,7 @@ ________________________________________________________________
 
 **Window A:**
 
-```
+```text
  9   9   0
  9   9   0
  9   9   0
@@ -82,7 +82,7 @@ row sums: ______  ______  ______   **total: ______**
 
 **Window B:**
 
-```
+```text
  0   9   9
  0   9   9
  0   9   9
@@ -94,7 +94,7 @@ row sums: ______  ______  ______   **total: ______**
 
 **Window C:**
 
-```
+```text
  4   4   4
  4   4   4
  4   4   4
@@ -114,7 +114,7 @@ ________________________________________________________________
 
 **M3.** Now the same three windows with the **horizontal** kernel:
 
-```
+```text
   1   1   1
   0   0   0
  −1  −1  −1
@@ -132,7 +132,7 @@ ________________________________________________________________
 
 **M3(b).** Now one where it does fire. Work this one out fully, nine products and all:
 
-```
+```text
 window            kernel
  9   9   0        1   1   1
  9   9   0        0   0   0
@@ -153,7 +153,7 @@ row sums: ______  ______  ______   **total: ______**
 | `nn.Linear(4096, 256)` on a flattened 64 × 64 | 256 × 4096 = ________ | ________ | ________ |
 | `nn.Conv2d(1, 4, kernel_size=3)` on 64 × 64 | ________ | ________ | ________ |
 
-```
+```text
 1040 ÷ 10 = ____________
 1048832 ÷ 40 = ____________
 ```
@@ -374,7 +374,7 @@ ________________________________________________________________
 
 **A5. Read the feature maps.** Here are three maps from the same 8 × 8 letter T. The T has a bar across the top (rows 1–2) and a stem down the middle (rows 3–6).
 
-```
+```text
 vertical-edge map              horizontal-edge map
 [[-18.   0.   0.   0.   0.  18.]    [[-18. -27. -27. -27. -27. -18.]
  [-18.  -9.  -9.   9.   9.  18.]     [ 18.  18.   9.   9.  18.  18.]
@@ -761,7 +761,7 @@ Somebody ran **four** different 3 × 3 kernels over the **same** 6 × 6 picture 
 
 **The picture, every time:**
 
-```
+```text
  10  10  10   2   2   2
  10  10  10   2   2   2
  10  10  10   2   2   2
@@ -772,7 +772,7 @@ Somebody ran **four** different 3 × 3 kernels over the **same** 6 × 6 picture 
 
 **The four kernels they used, in some order:**
 
-```
+```text
   W:  1  0 −1        X: −1  0  1        Y:  1  1  1        Z:  0  0  0
       1  0 −1           −1  0  1            0  0  0            0  1  0
       1  0 −1           −1  0  1           −1 −1 −1            0  0  0
@@ -783,7 +783,7 @@ Somebody ran **four** different 3 × 3 kernels over the **same** 6 × 6 picture 
 
 **Map 1**
 
-```
+```text
 [[10. 10.  2.  2.]
  [10. 10.  2.  2.]
  [10. 10.  2.  2.]
@@ -792,7 +792,7 @@ Somebody ran **four** different 3 × 3 kernels over the **same** 6 × 6 picture 
 
 **Map 2**
 
-```
+```text
 [[0. 0. 0. 0.]
  [0. 0. 0. 0.]
  [0. 0. 0. 0.]
@@ -801,7 +801,7 @@ Somebody ran **four** different 3 × 3 kernels over the **same** 6 × 6 picture 
 
 **Map 3**
 
-```
+```text
 [[  0. -24. -24.   0.]
  [  0. -24. -24.   0.]
  [  0. -24. -24.   0.]
@@ -810,7 +810,7 @@ Somebody ran **four** different 3 × 3 kernels over the **same** 6 × 6 picture 
 
 **Map 4**
 
-```
+```text
 [[ 0. 24. 24.  0.]
  [ 0. 24. 24.  0.]
  [ 0. 24. 24.  0.]
@@ -835,7 +835,7 @@ ________________________________________________________________
 
 **Puzzle(d).** There is a **fifth** kernel — the averager, nine copies of one-ninth. Its feature map on this picture is:
 
-```
+```text
 [[10.    7.33  4.67  2.  ]
  [10.    7.33  4.67  2.  ]
  [10.    7.33  4.67  2.  ]
@@ -944,7 +944,7 @@ ________________________________________________________________
 | 8 × 8 | `nn.Linear(64, 16)` | ______ | `nn.Conv2d(1, 1, kernel_size=3)` | ______ |
 | 64 × 64 | `nn.Linear(4096, 256)` | ______ | `nn.Conv2d(1, 4, kernel_size=3)` | ______ |
 
-```
+```text
 ______ ÷ ______ = ____________ times fewer
 ______ ÷ ______ = ____________ times fewer
 ```
@@ -1069,7 +1069,7 @@ picture  6 x  6, kernel 6  ->  (1, 1, 1, 1)   (6 - 6 + 1 = 1)
 
 **Window A** (`9 9 0` in every row):
 
-```
+```text
 products:   9  0  0   |   9  0  0   |   9  0  0
 row sums:      9              9              9
 total:      9 + 9 + 9  =  27
@@ -1077,7 +1077,7 @@ total:      9 + 9 + 9  =  27
 
 **Window B** (`0 9 9` in every row):
 
-```
+```text
 products:   0  0  −9  |   0  0  −9  |   0  0  −9
 row sums:     −9             −9             −9
 total:      −9 − 9 − 9  =  −27
@@ -1085,7 +1085,7 @@ total:      −9 − 9 − 9  =  −27
 
 **Window C** (all 4s):
 
-```
+```text
 products:   4  0  −4  |   4  0  −4  |   4  0  −4
 row sums:      0              0              0
 total:      0 + 0 + 0  =  0
@@ -1107,13 +1107,13 @@ total:      0 + 0 + 0  =  0
 
 **M3(b).**
 
-```
+```text
 row 0:   (1 × 9) + (1 × 9) + (1 × 0)      =   9 + 9 + 0   =   18
 row 1:   (0 × 9) + (0 × 9) + (0 × 0)      =   0 + 0 + 0   =    0
 row 2:  (−1 × 0) + (−1 × 0) + (−1 × 0)    =   0 + 0 + 0   =    0
 ```
 
-```
+```text
 18 + 0 + 0 = 18
 ```
 
@@ -1131,7 +1131,7 @@ row 2:  (−1 × 0) + (−1 × 0) + (−1 × 0)    =   0 + 0 + 0   =    0
 | `nn.Linear(4096, 256)` | 256 × 4096 = **1048576** | **256** | **1048832** |
 | `nn.Conv2d(1, 4, kernel_size=3)` on 64 × 64 | **36** | **4** | **40** |
 
-```
+```text
 1040 ÷ 10 = 104
 1048832 ÷ 40 = 26220.8
 ```
@@ -1226,7 +1226,7 @@ nn.Conv2d(1, 4, kernel_size=3)     40
 
 **A2.** All sixteen cells:
 
-```
+```text
    0   24   24    0
    0   24   24    0
    0   24   24    0
@@ -1290,7 +1290,7 @@ print(sum(p.numel() for p in nn.Linear(64, 16).parameters()))
 
 **e)** From how many of the window's three rows contain the step. Each row that contains a full step contributes `9 − 0 = 9`:
 
-```
+```text
 one row with a step   →   9
 two rows with a step  →  18
 three rows            →  27
@@ -1650,7 +1650,7 @@ Z
 
 **Puzzle(d).** The window is rows 0–2, columns 1–3, so every row reads `10, 10, 2`. All nine of the averager's weights are one-ninth, so:
 
-```
+```text
 10 + 10 + 2 = 22 per row,  three rows  =  66
 66 ÷ 9 = 7.333…
 ```
@@ -1701,7 +1701,7 @@ Z
 | 8 × 8 | `nn.Linear(64, 16)` | **1,040** | `nn.Conv2d(1, 1, kernel_size=3)` | **10** |
 | 64 × 64 | `nn.Linear(4096, 256)` | **1,048,832** | `nn.Conv2d(1, 4, kernel_size=3)` | **40** |
 
-```
+```text
 1040 ÷ 10 = 104 times fewer
 1048832 ÷ 40 = 26220.8 times fewer
 ```

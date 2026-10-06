@@ -55,7 +55,7 @@ Two customers and how many of each thing they ordered last month:
 
 **(a) Ama against Ben.** Three steps, written out.
 
-```
+```text
 dot        = 3 x ______ + 4 x ______ + 0 x ______ = ______ + ______ + ______ = ________
 
 length Ama = sqrt( 3² + 4² + 0² ) = sqrt( ______ + ______ ) = sqrt ______ = ________
@@ -69,7 +69,7 @@ cosine     = ________ ÷ ( ________ × ________ ) = ________ ÷ ________ = _____
 
 **(b) Ama against Cleo.** Cleo orders exactly twice as much of everything Ama does.
 
-```
+```text
 dot = ________   length Cleo = sqrt( ______ + ______ ) = ________
 
 cosine = ________ ÷ ________ = ________     angle = ________ degrees
@@ -135,7 +135,7 @@ e5: "Late again, and cold again."
 
 **(c) Inverse document frequency.**
 
-```
+```text
 idf = ln( 6 ÷ ( 1 + ______ ) ) + 1 = ln( ________ ) + 1 = ________ + 1 = ________
 ```
 
@@ -143,7 +143,7 @@ idf = ln( 6 ÷ ( 1 + ______ ) ) + 1 = ln( ________ ) + 1 = ________ + 1 = ______
 
 **(e) The L2 step — the one everybody forgets.** e3 has three different words in it.
 
-```
+```text
 chips : 1 x ________ = ________      squared = ________
 great : 2 x ________ = ________      squared = ________
 pizza : 1 x ________ = ________      squared = ________
@@ -178,7 +178,7 @@ doc A: ______ + ______ = ______   doc B: ______ + ______ = ______
 
 **(b) Doc B's row length.** Its counts are `the 4, pizza 3, was 3, and 2`, and `but, chips, cold, fresh, hot, lovely, were` once each.
 
-```
+```text
 ______ + ______ + ______ + ______ + 1 + 1 + 1 + 1 + 1 + 1 + 1 = ________
 
 sqrt( ________ ) = ________
@@ -188,7 +188,7 @@ sqrt( ________ ) = ________
 
 **(d) The two divisions.**
 
-```
+```text
 doc A: ______ ÷ ( ________ × ________ ) = ______ ÷ ________ = ________   ->  ______ degrees
 
 doc B: ______ ÷ ( ________ × ________ ) = ______ ÷ ________ = ________   ->  ______ degrees
@@ -315,6 +315,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading code and output closely. Answer in pen, then check against the Answers.
+
 **A1. Match the word to the thing.** Write the letter.
 
 | Word | | Description |
@@ -421,6 +423,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing your own short programs and arithmetic.
 
 ### B1 — one line
 
@@ -566,6 +570,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for building documents whose cosine you can control.
+
 ### Exactly One, Exactly Zero
 
 **(a) Two *different* documents with a cosine of exactly `1.0000`.** Write three documents that all sit at zero degrees from each other, and say what they have in common that TF-IDF can see.
@@ -588,7 +594,7 @@ d1 = "cold pizza"      d2 = "cold chips"
 
 Three words in the vocabulary. **Work out the cosine between them by hand.** There are only three idf values to find and `n = 2`, so the top of the fraction is **3**.
 
-```
+```text
 idf(cold)  = ln( 3 ÷ ( 1 + ______ ) ) + 1 = ________
 
 idf(pizza) = ln( 3 ÷ ( 1 + ______ ) ) + 1 = ________
@@ -611,6 +617,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These questions are for explaining ideas in your own words, in full sentences.
 
 **T1.** In Week 4 you learned the **z-score**: subtract the mean, divide by the standard deviation, so a column measured in thousands stops shouting over a column measured in ones. This week `idf` turned `and`'s volume down from 55 appearances to a weight of `1.0855`. **Write a paragraph arguing that these are the same move.** Then name the difference that matters: a z-score can be **undone** exactly, and a stopword list cannot. **Which side is `idf` on, and why does that matter when somebody asks you to explain a prediction?**
 
@@ -759,6 +767,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for drawing the idea of the week as a picture.
+
 ![Draw it: the angle, not the percentage](../figures/fig-w32-9-draw-frame.svg)
 *Figure W32.2 — The angle, not the percentage.*
 
@@ -775,6 +785,8 @@ ________________________________________________________________
 ---
 
 ## 📊 Self-Check
+
+Use this table to rate yourself honestly on each skill from this week.
 
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
@@ -801,6 +813,8 @@ ________________________________________________________________
 
 ## ✅ Answers
 
+This section is for checking your work after you have finished every page. Try first, then open it.
+
 <details>
 <summary>Check your answers</summary>
 
@@ -820,7 +834,7 @@ ________________________________________________________________
 
 **M1 (a).**
 
-```
+```text
 dot        = 3 x 4 + 4 x 3 + 0 x 0 = 12 + 12 + 0 = 24
 
 length Ama = sqrt( 9 + 16 ) = sqrt 25 = 5.000000
@@ -833,7 +847,7 @@ cosine     = 24 ÷ ( 5 × 5 ) = 24 ÷ 25 = 0.960000
 
 **M1 (b).**
 
-```
+```text
 dot = 3 x 6 + 4 x 8 = 18 + 32 = 50     length Cleo = sqrt( 36 + 64 ) = sqrt 100 = 10.000000
 
 cosine = 50 ÷ ( 5 × 10 ) = 50 ÷ 50 = 1.000000        angle = 0.00 degrees
@@ -888,7 +902,7 @@ Ama vs Dev  cosine 0.0000  angle 90.00 degrees
 
 **(c)**
 
-```
+```text
 idf = ln( 6 ÷ ( 1 + 1 ) ) + 1 = ln( 3.000000 ) + 1 = 1.098612 + 1 = 2.098612
 ```
 
@@ -896,7 +910,7 @@ idf = ln( 6 ÷ ( 1 + 1 ) ) + 1 = ln( 3.000000 ) + 1 = 1.098612 + 1 = 2.098612
 
 **(e)**
 
-```
+```text
 chips : 1 x 1.405465 = 1.405465      squared =  1.975332
 great : 2 x 2.098612 = 4.197225      squared = 17.616694
 pizza : 1 x 1.405465 = 1.405465      squared =  1.975332
@@ -946,7 +960,7 @@ sklearn's e3 great: 0.903782
 
 **M4 (d).**
 
-```
+```text
 doc A: 2 ÷ ( 1.4142 × 1.4142 ) = 2 ÷ 2.0000 = 1.0000   ->   0.0 degrees
 
 doc B: 4 ÷ ( 1.4142 × 6.7082 ) = 4 ÷ 9.4868 = 0.4216   ->  65.1 degrees
@@ -1300,7 +1314,7 @@ print(np.round(cosine_similarity(Z), 4))
 
 **(c)** `n = 2`, so the top of the fraction is 3. `cold` is in **both** documents, `pizza` and `chips` in one each.
 
-```
+```text
 idf(cold)  = ln( 3 ÷ 3 ) + 1 = ln(1) + 1 = 1.000000
 idf(pizza) = ln( 3 ÷ 2 ) + 1 = 0.405465 + 1 = 1.405465
 idf(chips) = 1.405465          (same df, same answer)
@@ -1365,7 +1379,7 @@ cosine 0.3361  angle 70.4  and 0.5797^2 = 0.3361
 
 **e2's four raw weights.** `cold` appears **twice**, so only `cold` has `tf = 2`:
 
-```
+```text
 and    : 1 x 1.693147 = 1.693147      squared = 2.866747
 chips  : 1 x 1.405465 = 1.405465      squared = 1.975332
 cold   : 2 x 1.405465 = 2.810930      squared = 7.901329
@@ -1400,7 +1414,7 @@ e5  0.834033  0.336446  0.000000  0.279281  0.000000  0.336446  0.000000  0.0000
 
 **(a) `cos(e1, e2)`** — shared: `chips`, `cold`
 
-```
+```text
 chips : 0.419559 x 0.366340 = 0.153701
 cold  : 0.419559 x 0.732681 = 0.307403
                       total = 0.461104
@@ -1410,7 +1424,7 @@ cold  : 0.419559 x 0.732681 = 0.307403
 
 **(b) `cos(e2, e3)`** — shared: `chips`, `pizza`
 
-```
+```text
 chips : 0.366340 x 0.302637 = 0.110868
 pizza : 0.366340 x 0.302637 = 0.110868
                       total = 0.221736
@@ -1420,7 +1434,7 @@ pizza : 0.366340 x 0.302637 = 0.110868
 
 **(c) `cos(e1, e4)`** — shared: `the`, and nothing else
 
-```
+```text
 the : 0.505438 x 0.486484 = 0.245887
 ```
 

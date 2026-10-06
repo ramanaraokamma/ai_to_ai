@@ -70,7 +70,7 @@ Press it four times, now, on the calculator you will use in class:
 
 **Every one is negative.** That is not a fault; `ln` of anything below 1 is negative, and probabilities are always below 1. So we stick a minus sign on the front, which flips them all positive:
 
-```
+```text
 −ln(0.9)  = 0.105361
 −ln(0.5)  = 0.693147
 −ln(0.1)  = 2.302585
@@ -105,13 +105,13 @@ Then the chance you gave *the thing that happened* is `1 − p`, and the surpris
 
 **Teach it as an if-statement, not as a formula.** In textbooks it is written as one line:
 
-```
+```text
 L = −[ y × ln(p) + (1 − y) × ln(1 − p) ]
 ```
 
 and that is a clever way of writing an if-statement without an `if`. Because `y` is either 0 or 1, one of the two halves is always multiplied by zero and disappears:
 
-```
+```text
 if y = 1:  the second half is (1 − 1) × ... = 0, so L = −ln(p)
 if y = 0:  the first half is 0 × ... = 0,     so L = −ln(1 − p)
 ```
@@ -120,7 +120,7 @@ if y = 0:  the first half is 0 × ... = 0,     so L = −ln(1 − p)
 
 🔢 **Four rows on paper, right now, because you are doing this live:**
 
-```
+```text
 truth = yes, you said 0.90  →  −ln(0.90)      = 0.105361
 truth = no,  you said 0.90  →  −ln(1 − 0.90)  = −ln(0.10) = 2.302585
 truth = yes, you said 0.02  →  −ln(0.02)                  = 3.912023
@@ -364,6 +364,8 @@ you report and the number the model is trained by. If a student spots that, it i
 
 ## 🧰 Prep Checklist
 
+This section lists what to set up before the lesson, and what to do if the laptops fail.
+
 ### 20 minutes the night before
 
 - [ ] **Press `ln` four times on a real calculator.** `0.9 ln` → `−0.105361`. `0.5 ln` → `−0.693147`. `0.1 ln` → `−2.302585`. `0.02 ln` → `−3.912023`. **Then press `e^x` on that last answer and watch `0.02` come back.** That thirty seconds is what lets you answer "what even is ln" without hesitating.
@@ -437,7 +439,7 @@ sklearn log_loss, Coin   : 0.69315
 - [ ] **Make three large cards: BOLD, CAREFUL, COIN.** You will hand one to each team and they will hold it up when they announce their total. **Physical cards make the contest a contest.**
 - [ ] **Write the six days on the board before the lesson**, truth column only:
 
-```
+```text
 day       1     2     3     4     5     6
 rained?  YES   YES    no   YES    no    no
 ```
@@ -476,6 +478,8 @@ rained?  YES   YES    no   YES    no    no
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the lesson plan, one segment at a time.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — Was 0.8022 a Good Guess? | 7 | 7 | Last week's cliff, and three forecasters on the board |
@@ -510,7 +514,7 @@ rained?  YES   YES    no   YES    no    no
 
 **Do this:** Write the six days on the board — truth row only.
 
-```
+```text
 day       1     2     3     4     5     6
 rained?  YES   YES    no   YES    no    no
 ```
@@ -519,7 +523,7 @@ rained?  YES   YES    no   YES    no    no
 
 **Do this:** Write the three rows underneath, slowly, saying each forecaster's character out loud as you write.
 
-```
+```text
 BOLD     0.99  0.99  0.01  0.02  0.01  0.01
 CAREFUL  0.60  0.55  0.45  0.55  0.40  0.45
 COIN     0.50  0.50  0.50  0.50  0.50  0.50
@@ -559,7 +563,7 @@ COIN     0.50  0.50  0.50  0.50  0.50  0.50
 >
 > Now four presses. `0.9`, `ln`. Then `0.5`, `0.1`, `0.02`. Call them out."
 
-```
+```text
 ln(0.9)  = −0.105361
 ln(0.5)  = −0.693147
 ln(0.1)  = −2.302585
@@ -576,13 +580,13 @@ ln(0.02) = −3.912023
 
 **Do this:** Write on the board, large:
 
-```
+```text
 −ln(p)  =  how SURPRISED you should be
 
      p = the chance you gave the thing that actually happened
 ```
 
-```
+```text
 you said 0.9,  it happened  →  0.105   barely surprised
 you said 0.5,  it happened  →  0.693   a shrug
 you said 0.1,  it happened  →  2.303   genuinely surprised
@@ -605,14 +609,14 @@ you said 0.02, it happened  →  3.912   astonished
 
 **Do this:** Write it as an if-statement first:
 
-```
+```text
 if it happened:      loss = −ln(p)
 if it did not:       loss = −ln(1 − p)
 ```
 
 Then — and only then — write the textbook version underneath:
 
-```
+```text
 loss = −[ y × ln(p) + (1 − y) × ln(1 − p) ]
 ```
 
@@ -624,7 +628,7 @@ loss = −[ y × ln(p) + (1 − y) × ln(1 − p) ]
 
 **Do this:** Four rows on the board, class doing the calculator work:
 
-```
+```text
 truth YES, said 0.90  →  −ln(0.90) = 0.105361      confident and right
 truth  no, said 0.90  →  −ln(0.10) = 2.302585      confident and WRONG
 truth YES, said 0.02  →  −ln(0.02) = 3.912023      confident and WRONG
@@ -645,7 +649,7 @@ truth  no, said 0.02  →  −ln(0.98) = 0.020203      confident and right
 
 **Do this:** Build this table on the board, class doing every number on calculators.
 
-```
+```text
                      squared error         log loss
 said 0.40  →   (1 − 0.40)² = 0.3600    −ln(0.40) = 0.9163
 said 0.02  →   (1 − 0.02)² = 0.9604    −ln(0.02) = 3.9120
@@ -862,7 +866,7 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: three tea
 
 **Do this:** Stand at the board with both scoreboards on it and the hook's vote counts still visible. Write four things underneath:
 
-```
+```text
 −ln(p)                      surprise: how astonished you should be
 log loss                    average surprise over all the rows
 squared error               (truth − guess)², and it stops at 1
@@ -939,6 +943,8 @@ And the sentence for this week:
 
 ## 🎲 The Activity, In Full
 
+This section holds the complete sheet and running notes for the contest.
+
 ### The Weather Forecaster Contest
 
 **The goal.** Each team totals up one forecaster's six-day surprise **by hand**, on calculators. The three totals go on the board and a winner is crowned out loud. **Then** the same three forecasters are scored with squared error, and a **different** forecaster wins. The argument that follows is the lesson.
@@ -999,7 +1005,7 @@ Each team holds up its card and announces its **average** surprise. Write the th
 
 **Do this:** Write the comparison that makes it undeniable:
 
-```
+```text
 BOLD's single worst day    :  3.912023
 CAREFUL's ENTIRE six days  :  3.412999
 ```
@@ -1035,7 +1041,7 @@ Cards up again.
 
 **Do this:** Let it land. Then write the two comparisons side by side, because they are the entire explanation:
 
-```
+```text
                       BOLD's worst day     CAREFUL's whole week
 log loss                  3.9120       >         3.4130
 squared error             0.9604       <         1.1300
@@ -1091,6 +1097,8 @@ Also available: hand out a lookup table so there is no calculator work at all.
 ---
 
 ## ❓ Questions Students Ask This Week
+
+These are the questions students tend to ask this week, with suggested answers.
 
 **"Why `ln` and not `log` base 10? They're the same shape."**
 
@@ -1163,6 +1171,8 @@ And the argument we just had in class is a real argument that meteorologists hav
 ---
 
 ## 🧭 Differentiation
+
+This section adjusts the lesson for a student who is struggling, flying or not engaging.
 
 ### If the student is struggling
 
@@ -1340,7 +1350,7 @@ Because `ln(1) = 0` and every probability is below 1. `ln` of anything below 1 i
 
 **(b) Which gap is bigger: 0.9 → 0.5, or 0.1 → 0.02?**
 
-```
+```text
 0.693147 − 0.105361 = 0.587786      (a probability drop of 0.40)
 3.912023 − 2.302585 = 1.609438      (a probability drop of only 0.08)
 ```
@@ -1360,14 +1370,14 @@ Because `ln(1) = 0` and every probability is below 1. `ln` of anything below 1 i
 | 5 | 1 | 0.02 | `−ln(0.02)` | **3.912023** | `(1 − 0.02)² = 0.98²` | **0.960400** |
 | 6 | 0 | 0.50 | `−ln(1 − 0.50) = −ln(0.50)` | **0.693147** | `(0 − 0.50)² = 0.50²` | **0.250000** |
 
-```
+```text
 log loss     sum = 8.845697      mean = 8.845697 ÷ 6 = 1.474283
 squared err  sum = 2.522900      mean = 2.522900 ÷ 6 = 0.420483
 ```
 
 **The two ratios.** Row 5 is the confident disaster (said 2%, answer was yes). Row 2 is the near miss (said 40%, answer was yes).
 
-```
+```text
 log loss     : 3.912023 ÷ 0.916291 = 4.2694
 squared error: 0.960400 ÷ 0.360000 = 2.6678
 ```
@@ -1380,7 +1390,7 @@ squared error: 0.960400 ÷ 0.360000 = 2.6678
 
 Row 5 is worst under both.
 
-```
+```text
 log loss share    : 3.912023 ÷ 8.845697 = 0.4423  →  44.2% of the total
 squared error share: 0.960400 ÷ 2.522900 = 0.3807  →  38.1% of the total
 ```
@@ -1393,7 +1403,7 @@ It is `−ln(0.5)`, and it is `ln(2)`. **Any row where the model said exactly 0.
 
 Row 5 is worse under both, but by very different margins:
 
-```
+```text
 log loss     : 3.912023 vs 2.995732  →  row 5 is 1.31 times worse
 squared error: 0.960400 vs 0.902500  →  row 5 is 1.06 times worse
 ```
@@ -1472,7 +1482,7 @@ ratio, squared err: 0.960400 / 0.360000 = 2.6678
 
 **The explanation, in two comparisons:**
 
-```
+```text
                       BOLD's worst day     CAREFUL's whole week
 log loss                  3.9120       >         3.4130
 squared error             0.9604       <         1.1300

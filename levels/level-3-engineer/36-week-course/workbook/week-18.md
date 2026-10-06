@@ -34,7 +34,7 @@ next line: ______________________  a gap of `1e-16` means ____________  a gap of
 
 ### M1 — a two-stage chain, measured two ways
 
-```
+```text
 w  ──[ stage 1: z = 4w − 3 ]──▶  z  ──[ stage 2: L = z × z ]──▶  L
 ```
 
@@ -42,7 +42,7 @@ w  ──[ stage 1: z = 4w − 3 ]──▶  z  ──[ stage 2: L = z × z ]─
 
 **Step 1 — stage 1 on its own.** Nudge `w` a thousandth each way. **Stage 2 does not exist for this measurement.**
 
-```
+```text
 w = 2.001  →  z = 4(2.001) − 3 = ____________
 w = 1.999  →  z = 4(1.999) − 3 = ____________
 
@@ -54,7 +54,7 @@ ____________ ÷ 0.002 = ____________
 
 **Step 2 — stage 2 on its own.** You are standing at `z = ` ______ . Nudge `z`, not `w`.
 
-```
+```text
 z = ______.001  →  L = ____________
 z = ______.999  →  L = ____________
 
@@ -67,7 +67,7 @@ ____________ ÷ 0.002 = ____________
 
 **Step 3 — measure straight through, ignoring the middle entirely.**
 
-```
+```text
 w = 2.001  →  z = ____________  →  L = ____________
 w = 1.999  →  z = ____________  →  L = ____________
 
@@ -85,7 +85,7 @@ ________________________________________________________________
 
 ### M2 — three stages, one of them quietening things down
 
-```
+```text
 w  ──[ z = 2w + 1 ]──▶  z  ──[ u = z × z ]──▶  u  ──[ L = u ÷ 5 ]──▶  L
 ```
 
@@ -101,7 +101,7 @@ w  ──[ z = 2w + 1 ]──▶  z  ──[ u = z × z ]──▶  u  ──[ L
 
 **M2(b).** Now straight through:
 
-```
+```text
 L(w = 1.001) = ____________     L(w = 0.999) = ____________
 
 (____________ − ____________) ÷ 0.002 = ____________
@@ -119,7 +119,7 @@ ________________________________________________________________
 
 **This week's network.** Two inputs, two hidden units with ReLU, one output with sigmoid.
 
-```
+```text
 W1 = [ 0.6  -0.4 ]      b1 = [ 0.2  -0.1 ]
      [ 0.5   0.9 ]
 
@@ -131,7 +131,7 @@ W2 = [  1.5 ]           b2 = [ -0.2 ]
 
 **Forward:**
 
-```
+```text
 z1 = 1.0(0.6) + 1.0(0.5) + 0.2   = ____ + ____ + ____ = ____________
 z2 = 1.0(−0.4) + 1.0(0.9) − 0.1  = ____ + ____ + ____ = ____________
 
@@ -146,7 +146,7 @@ loss = −ln(____________) = ____________
 
 **Backward — every single one of these is a multiplication.**
 
-```
+```text
 step 1 — blame at the output:
    dZ2 = A2 − y = ____________ − 1 = ____________
 
@@ -346,6 +346,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading finished code and output closely, before you write any of your own.
+
 **A1. Match the word to the thing.** Write the letter.
 
 | Word | | Description |
@@ -409,7 +411,7 @@ db2 (1, 1)
 
 **A2(h).** `db2` is `0.078001` and `dZ2`'s four entries are `−0.051468, −0.032527, 0.112542, 0.049454`. **Show the arithmetic that connects them**, and say which backward rule that is.
 
-```
+```text
 ____________ + ____________ + ____________ + ____________ = ____________
 ```
 
@@ -484,6 +486,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing the week's lines yourself, from one line up to a whole program.
 
 ### B1 — one line, plus the mask
 
@@ -820,6 +824,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This page is for using the chain idea on two puzzles, one about slopes and one about a bug.
+
 ### Part 1 — The Photocopier Chain
 
 Each stage of a chain **scales** whatever arrives at it. Stage slopes multiply.
@@ -928,6 +934,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These questions are for explaining in your own words, in full sentences.
+
 **T1.** Forgetting the ReLU mask made `dW1[1,0]` come out as `−0.09765156` when the truth was `+0.07116069` — a relative error of exactly `1.00`, and **the wrong sign**. **Write a paragraph** on what happens to a network trained with a gradient of roughly the right size and the wrong sign, and argue why that is worse than a gradient that is simply four times too big. Would either one crash? Would either one show up in the loss curve?
 
 ________________________________________________________________
@@ -1000,7 +1008,7 @@ ________________________________________________________________
 
 **The network, the batch and the labels.** Nothing here appeared in the chapter, so there is nothing to copy.
 
-```
+```text
 W1 = [ 0.6  -0.4 ]      b1 = [ 0.2  -0.1 ]
      [ 0.5   0.9 ]
 
@@ -1036,7 +1044,7 @@ shapes: `Z1` ______  `A1` ______  `Z2` ______  `A2` ______
 
 **The mask**, shape ______ :
 
-```
+```text
 [ ____  ____ ]
 [ ____  ____ ]
 [ ____  ____ ]
@@ -1049,7 +1057,7 @@ ________________________________________________________________
 
 **Backward:**
 
-```
+```text
 dZ2  ( ____ , ____ ) = [ ________ , ________ , ________ , ________ ]
 
 dW2  ( ____ , ____ ) = [ ________ ]        db2  ( ____ , ____ ) = [ ________ ]
@@ -1075,7 +1083,7 @@ dW1  ( ____ , ____ ) = [ ________  ________ ]    db1 ( ____ , ____ ) = [ _______
 
 **`dW2[0]` in full:**
 
-```
+```text
    ______ × ____________ = ____________
    ______ × ____________ = ____________
    ______ × ____________ = ____________
@@ -1142,6 +1150,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for turning the week's idea into a picture.
+
 Draw **the blame coming back** — one network, forward in one colour and backward in another, over the same wires.
 
 ![Draw the blame coming back](../figures/fig-w18-9-draw-frame.svg)
@@ -1162,6 +1172,8 @@ ________________________________________________________________
 ---
 
 ## 📊 Self-Check
+
+This page is for rating yourself on each skill from the week. Tick one face per line.
 
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
@@ -1185,6 +1197,8 @@ ________________________________________________________________
 
 ## ✅ Answers
 
+This section is for checking your work after you have finished every page above.
+
 <details>
 <summary>Check your answers</summary>
 
@@ -1206,7 +1220,7 @@ ________________________________________________________________
 
 **Step 1 — stage 1:**
 
-```
+```text
 w = 2.001  →  z = 4(2.001) − 3 = 8.004 − 3 = 5.004000
 w = 1.999  →  z = 4(1.999) − 3 = 7.996 − 3 = 4.996000
 
@@ -1218,7 +1232,7 @@ w moved:  0.002
 
 **Step 2 — stage 2, standing at `z = 5`:**
 
-```
+```text
 z = 5.001  →  L = 5.001 × 5.001 = 25.010001
 z = 4.999  →  L = 4.999 × 4.999 = 24.990001
 
@@ -1231,7 +1245,7 @@ L moved:  0.020000        z moved: 0.002
 
 **Step 3 — straight through:**
 
-```
+```text
 w = 2.001  →  z = 5.004000  →  L = 25.040016
 w = 1.999  →  z = 4.996000  →  L = 24.960016
 
@@ -1257,7 +1271,7 @@ w moved:  0.002
 
 **M2(b).**
 
-```
+```text
 L(w = 1.001) = 1.802401     L(w = 0.999) = 1.797601
 
 (1.802401 − 1.797601) ÷ 0.002 = 0.004800 ÷ 0.002 = 2.400000
@@ -1271,7 +1285,7 @@ L(w = 1.001) = 1.802401     L(w = 0.999) = 1.797601
 
 **M3.** Forward:
 
-```
+```text
 z1 = 1.0(0.6) + 1.0(0.5) + 0.2  = 0.6 + 0.5 + 0.2  = 1.30
 z2 = 1.0(−0.4) + 1.0(0.9) − 0.1 = −0.4 + 0.9 − 0.1 = 0.40
 
@@ -1286,7 +1300,7 @@ loss = −ln(0.79412963) = 0.23050857
 
 Backward, real output:
 
-```
+```text
 step 1:  dZ2 = 0.79412963 − 1 = −0.20587037
 
 step 2:  dW2[0] = 1.30 × (−0.20587037) = −0.26763148
@@ -1336,7 +1350,7 @@ step 5:  dW1[0][0] = 1.0 × (−0.30880556) = −0.30880556
 
 **M4(c).** `1.00 ÷ 0.25 = **4**`, so the hand answer was **4** times too big. And in general, if `ana = 4 × num`, then
 
-```
+```text
 |num − 4num| ÷ (|num| + |4num|)  =  3num ÷ 5num  =  3 ÷ 5 = 0.6
 ```
 
@@ -1397,7 +1411,7 @@ False
 
 **Line 4 is the surprise, and the chain rule is in no trouble whatsoever.** The three printed numbers are **rounded** to six places. Underneath, the actual values are
 
-```
+```text
 one       = 3.9999999999995595
 two       = 10.00000000000334
 one * two = 40.00000000000895
@@ -1425,7 +1439,7 @@ so the difference is about `1.3e-11`. **That is floating-point rounding, not a f
 
 **A2(h).**
 
-```
+```text
 −0.051468 + (−0.032527) + 0.112542 + 0.049454 = 0.078001
 ```
 
@@ -1661,7 +1675,7 @@ all four below 1e-6? True
 
 `dW2` must be **`(2, 1)`**, because **`W2` is `(2, 1)` and a gradient has the shape of its knob.** You have `A1` at `(4, 2)` and `dZ2` at `(4, 1)`.
 
-```
+```text
 A1   @ dZ2   →  inner 2 and 4   ✗
 A1.T @ dZ2   →  inner 4 and 4   ✓   giving (2, 4) @ (4, 1) = (2, 1)
 ```
@@ -1791,7 +1805,7 @@ shapes: `Z1 (4,2)` · `A1 (4,2)` · `Z2 (4,1)` · `A2 (4,1)`
 
 **The mask**, shape `(4, 2)`:
 
-```
+```text
 [[1. 1.]
  [1. 0.]
  [0. 0.]
@@ -1802,7 +1816,7 @@ shapes: `Z1 (4,2)` · `A1 (4,2)` · `Z2 (4,1)` · `A2 (4,1)`
 
 **Backward:**
 
-```
+```text
 dZ2  (4, 1) = [ −0.051468, −0.032527, 0.112542, 0.049454 ]
 
 dW2  (2, 1) = [ −0.082773 ]        db2  (1, 1) = [ 0.078001 ]
@@ -1824,7 +1838,7 @@ dW1  (2, 2) = [ −0.248964   0.100922 ]    db1 (1, 2) = [ −0.051811   0.00201
 
 To eight places, if you want to mark yourself properly:
 
-```
+```text
 dW1 = [[-0.24896379, 0.10092162], [0.07116069, -0.04744046]]
 db1 = [-0.05181103, 0.00201357]
 dW2 = [-0.08277342, 0.08326642]
@@ -1835,7 +1849,7 @@ db2 = 0.07800082
 
 **`dW2[0]` in full:**
 
-```
+```text
      1.30 x  -0.051468 =  -0.066908
      1.40 x  -0.032527 =  -0.045538
      0.00 x   0.112542 =   0.000000
@@ -1869,7 +1883,7 @@ all nine below 1e-6?  True
 
 **And two of the nine, worked by hand so you can see the nudge doing it:**
 
-```
+```text
 W1[0,0] = 0.600001  →  loss = 0.297112653273
 W1[0,0] = 0.599999  →  loss = 0.297113151201
 
@@ -1879,7 +1893,7 @@ the knob moved:  0.000002
 −0.000000497928 ÷ 0.000002 = −0.24896400
 ```
 
-```
+```text
 b2 = −0.199999  →  loss = 0.297112980238
 b2 = −0.200001  →  loss = 0.297112824236
 

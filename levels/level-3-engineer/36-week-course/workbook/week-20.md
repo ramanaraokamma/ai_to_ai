@@ -38,12 +38,12 @@ ________________________________________________________________
 
 **M1 — the forward pass of the Week 18 network.** Two inputs `x = [1.0, 2.0]`. Hidden unit 1 uses `W1` column 0, unit 2 uses column 1.
 
-```
+```text
 W1 = [ 0.5  -0.3 ]      b1 = [ 0.1   0.05 ]      W2 = [  1.0 ]      b2 = [ 0.3 ]
      [ 0.8   0.2 ]                                    [ -2.0 ]
 ```
 
-```
+```text
 z1 = 1.0 × 0.5 + 2.0 × 0.8 + 0.1        = ____________
 z2 = 1.0 × (−0.3) + 2.0 × 0.2 + 0.05    = ____________
 
@@ -54,7 +54,7 @@ Z2 = ____ × 1.0 + ____ × (−2.0) + 0.3   = ____________
 
 **M1(a).** Now `sigmoid(Z2)` on a real calculator. Type the number, make it negative, press `e^x`, add 1, press `1/x`:
 
-```
+```text
 e^(−2.20)        = ____________
 1 + that         = ____________
 1 ÷ that         = ____________     ← this is A2
@@ -62,7 +62,7 @@ e^(−2.20)        = ____________
 
 **M1(b).** And the loss. Press `ln` on your A2, then make it positive:
 
-```
+```text
 loss = −ln(____________) = ____________
 ```
 
@@ -72,7 +72,7 @@ ________________________________________________________________
 
 **M2 — nine gradients from one number.** The blame at the output is `A2 − y`.
 
-```
+```text
 dZ2  = ____________ − 1 = ____________
 ```
 
@@ -111,7 +111,7 @@ ________________________________________________________________
 
 **M4 — accumulation, by hand.** The slope of `x²` at `x = 3` is **6**. The slope of `x³` at `x = 3` is `3 × 3² = ` ______.
 
-```
+```text
 after the first  backward():  x.grad = ____________
 after the second backward():  x.grad = ____________
 ```
@@ -344,6 +344,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing short pieces of PyTorch yourself, from one line up to a whole program.
 
 ### B1 — one line, plus a print
 
@@ -663,6 +665,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These questions ask you to explain your reasoning in your own words.
+
 **T1.** `loss.backward()` replaced eight lines you spent two lessons deriving. **Write a paragraph** answering, honestly, whether Week 18 and Week 19 were worth it. Name at least two specific things you can do that somebody who started at `loss.backward()` cannot — and be fair to the other side: name one thing they have that you do not.
 
 ________________________________________________________________
@@ -838,6 +842,8 @@ ________________________________________________________________
 
 ## 📊 Self-Check
 
+Tick one face per row to show how sure you are of each skill.
+
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
 | create a tensor with a chosen dtype and shape, and print all three of shape, dtype and device | | | |
@@ -878,7 +884,7 @@ ________________________________________________________________
 
 **M1.**
 
-```
+```text
 z1 = 1.0 × 0.5 + 2.0 × 0.8 + 0.1      = 0.5 + 1.6 + 0.1   = 2.20
 z2 = 1.0 × (−0.3) + 2.0 × 0.2 + 0.05  = −0.3 + 0.4 + 0.05 = 0.15
 
@@ -895,7 +901,7 @@ Z2 = 2.20 × 1.0 + 0.15 × (−2.0) + 0.3 = 2.20 − 0.30 + 0.30 = 2.20
 
 **M2.**
 
-```
+```text
 dZ2 = 0.90024951 − 1 = −0.09975049
 ```
 
@@ -926,7 +932,7 @@ dZ2 = 0.90024951 − 1 = −0.09975049
 
 **M4.** Slope of `x³` at 3 is `3 × 9 = **27**`.
 
-```
+```text
 after the first  backward():  x.grad = 6
 after the second backward():  x.grad = 33      (6 + 27)
 ```
@@ -1190,7 +1196,7 @@ biggest disagreement: 0.00000000
 
 **Every number is checkable:**
 
-```
+```text
 z    = 2 × 0.3 + 5 × 0.1 − 0.6 = 0.6 + 0.5 − 0.6 = 0.50
 p    = sigmoid(0.50) = 0.62245933
 loss = −ln(1 − 0.62245933) = −ln(0.37754067) = 0.97407698
@@ -1357,7 +1363,7 @@ plotting them: wrote item_experiment.png
 
 **And the loss is checkable by hand:**
 
-```
+```text
 1.0 × 0.5 + 2.0 × 0.8 = 2.10
 sigmoid(2.10) = 1 / (1 + e^(−2.10)) = 1 / 1.122456 = 0.890903
 −ln(0.890903) = 0.115520
@@ -1380,7 +1386,7 @@ mode item     before:  159.7 MB
 mode item     after :  176.2 MB   kept 300 items
 ```
 
-```
+```text
 258.1 − 159.2  =  98.9 MB   for 300 tensors
 176.2 − 159.7  =  16.5 MB   for 300 numbers
 ```

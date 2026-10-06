@@ -58,7 +58,7 @@ The stack is the one they predicted the shapes for last week. Nothing about it i
 >                                          └── one bias per filter
 > ```
 
-```
+```text
 conv1  Conv2d(1, 8, 3)   :  1 × 3 × 3 × 8  + 8  =    72 + 8  =    80
 conv2  Conv2d(8, 16, 3)  :  8 × 3 × 3 × 16 + 16 =  1152 + 16 =  1168
 fc     Linear(64, 10)    :         64 × 10 + 10 =   640 + 10 =   650
@@ -93,7 +93,7 @@ Here are the real ten for one held-out digit, straight off the screen:
 
 **Here is the whole softmax on those ten numbers, done by hand, and it is worth doing once yourself.** You do it in three steps. First subtract the biggest score from all of them, which changes nothing about the answer and stops the arithmetic exploding:
 
-```
+```text
 biggest = 4.46
 slot 1:   4.46 − 4.46 =   0.00     e^0.00    = 1.000000
 slot 8:   0.14 − 4.46 =  −4.32     e^−4.32   = 0.013300
@@ -108,13 +108,13 @@ the other four are all smaller than 0.00001 — call them zero
 
 Then divide each by the total. For the winner:
 
-```
+```text
 chance of digit 1  =  1.000000 ÷ 1.024606  =  0.9760
 ```
 
 Then the loss, which is Week 14's surprise meter applied to the chance you gave the *right* answer:
 
-```
+```text
 loss  =  −ln(0.9760)  =  0.0243
 ```
 
@@ -239,7 +239,7 @@ After training, `model[0].weight` holds the eight 3×3 filters. Rendered as pict
 
 **Filter 6, all nine numbers:**
 
-```
+```text
   0.509  −0.129  −0.149
   0.382  −0.507  −0.767
   0.761   0.348  −0.550
@@ -512,6 +512,8 @@ minus ln of the true chance : 0.0244
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the plan to teach from, segment by segment. The table gives the shape; the steps below give the words.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — 1,898 Numbers That Have Never Seen a Digit | 7 | 7 | The parameter count on paper; the wall sheet; the claim |
@@ -536,7 +538,7 @@ minus ln of the true chance : 0.0244
 
 **Do this:** Write the conv formula on the board:
 
-```
+```text
 a conv layer's weights  =  (in × k × k × out)  +  out
                                                   └── one bias per filter
 ```
@@ -557,7 +559,7 @@ a conv layer's weights  =  (in × k × k × out)  +  out
 
 **Do this:** Add them on the board, big:
 
-```
+```text
    80
  1168
   650
@@ -595,7 +597,7 @@ a conv layer's weights  =  (in × k × k × out)  +  out
 
 **Do this:** Write the real ten on the board, exactly:
 
-```
+```text
 digit:      0      1      2      3      4      5      6      7      8      9
 score:  −10.94  4.46 −10.63  −4.69  −0.29  −7.80  −7.97  −3.30   0.14  −1.70
 ```
@@ -634,7 +636,7 @@ score:  −10.94  4.46 −10.63  −4.69  −0.29  −7.80  −7.97  −3.30   0
 
 > "**Step one. Subtract the biggest score from all of them.** Why? Because it changes nothing about which is biggest, and it stops the numbers exploding when we exponentiate. The biggest is 4.46, so:"
 
-```
+```text
 slot 1:   4.46 − 4.46 =   0.00
 slot 8:   0.14 − 4.46 =  −4.32
 slot 4:  −0.29 − 4.46 =  −4.75
@@ -644,7 +646,7 @@ slot 9:  −1.70 − 4.46 =  −6.16
 
 > "**Step two. Put each one through e-to-the-power-of.** Same button you used in Week 13 for the S-curve. `e^0` is 1. `e^−4.32` is small. `e^−7` and below is basically nothing."
 
-```
+```text
 e^0.00   = 1.000000
 e^−4.32  = 0.013300
 e^−4.75  = 0.008652
@@ -656,7 +658,7 @@ the rest add up to about 0.000541
 
 > "**Step three. Divide each by the total.** Which for the winner is:"
 
-```
+```text
 1.000000 ÷ 1.024606  =  0.9760
 ```
 
@@ -664,7 +666,7 @@ the rest add up to about 0.000541
 >
 > And one more line, and it is Week 14's surprise meter, unchanged. **How wrong were we?** Minus the log of the chance we gave the right answer:"
 
-```
+```text
 loss  =  −ln(0.9760)  =  0.0243
 ```
 
@@ -672,7 +674,7 @@ loss  =  −ln(0.9760)  =  0.0243
 
 **Do this:** Now the trap door. Write on the board, and leave a gap:
 
-```
+```text
 loss on the RAW ten scores      :  0.0244
 loss on the SQUASHED ten numbers:  ?
 ```
@@ -693,7 +695,7 @@ loss on the SQUASHED ten numbers:  ?
 
 **Do this:** Fill in the gap:
 
-```
+```text
 loss on the RAW ten scores      :  0.0244
 loss on the SQUASHED ten numbers:  1.4818
 ```
@@ -1041,6 +1043,8 @@ And the sentence for this week:
 
 ## 🎲 The Activity, In Full
 
+This section describes the week's activity in full, so you can run it without opening anything else.
+
 ### The Filter Vote
 
 **What it is.** Train the network, pull out the eight 3×3 filters it learned, render them big, put them on the wall, and **have the class vote on what each one is looking for before the teacher says a single word.** Then test the two most confident votes against a real number.
@@ -1146,7 +1150,7 @@ filter   bright-LEFT edge   bright-TOP edge
 
 **Then, and this is the moment, do one of them by hand on the board so the number is not magic.** Filter 6 against the bright-left patch, row by row:
 
-```
+```text
 row 0:  0.509 × 1  +  (−0.129) × 1  +  (−0.149) × (−1)  =  0.509 − 0.129 + 0.149  =  +0.529
 row 1:  0.382 × 1  +  (−0.507) × 1  +  (−0.767) × (−1)  =  0.382 − 0.507 + 0.767  =  +0.642
 row 2:  0.761 × 1  +    0.348  × 1  +  (−0.550) × (−1)  =  0.761 + 0.348 + 0.550  =  +1.659
@@ -1177,7 +1181,7 @@ row 2:  0.761 × 1  +    0.348  × 1  +  (−0.550) × (−1)  =  0.761 + 0.348 
 
 **Skip the rendering entirely and go straight to the nine numbers.** Print filter 6 and filter 4 as grids of numbers and ask one question about each:
 
-```
+```text
 filter 6:                      filter 4:
   0.509  −0.129  −0.149          −0.185   0.784   0.742
   0.382  −0.507  −0.767           0.469   0.383  −0.196
@@ -1263,6 +1267,8 @@ Where the CNN wins is not in doubt: **1,898 weights against 4,810**, exactly rep
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+This section lists the ways this lesson tends to slip, and what to do when it happens.
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -1350,7 +1356,7 @@ None of these need syntax from a later week.
 
 Write the real ten logits down and nothing else:
 
-```
+```text
 digit:      0      1      2      3      4      5      6      7      8      9
 score:  −10.94  4.46 −10.63  −4.69  −0.29  −7.80  −7.97  −3.30   0.14  −1.70
 ```
@@ -1521,7 +1527,7 @@ dense 64 -> 64 -> 10: 4810
 
 **Filter 6's arithmetic against the bright-left patch, in full**, so a student can check it:
 
-```
+```text
 the patch:   1   1  −1        the filter:   0.509  −0.129  −0.149
              1   1  −1                      0.382  −0.507  −0.767
              1   1  −1                      0.761   0.348  −0.550
@@ -1541,7 +1547,7 @@ row 2:  0.761 + 0.348 + 0.550  =  +1.659
 
 **The real output, in full**, is in the Prep Checklist. The three numbers to mark:
 
-```
+```text
 seconds        : 3.1              (theirs will differ; anything from 2 to 15 is normal)
 train accuracy : 0.9881  (1242 of 1257 train rows)
 test accuracy  : 0.9796  (529 of 540 test rows)
@@ -1727,7 +1733,7 @@ filter   answer to a bright-LEFT edge   answer to a bright-TOP edge
 
 *Take the ten real scores. Do all three steps. Check the ten chances add to 1.*
 
-```
+```text
 the ten scores:
  −10.94   4.46  −10.63   −4.69   −0.29   −7.80   −7.97   −3.30    0.14   −1.70
 ```
@@ -1749,7 +1755,7 @@ the ten scores:
 
 **Step 2 — `e^` each one:**
 
-```
+```text
 slot 0:  e^−15.40  =  0.000000    (2 × 10^−7, call it zero)
 slot 1:  e^  0.00  =  1.000000
 slot 2:  e^−15.09  =  0.000000
@@ -1766,7 +1772,7 @@ slot 9:  e^ −6.16  =  0.002112
 
 **Step 3 — divide each by 1.024606:**
 
-```
+```text
 slot 1:  1.000000 ÷ 1.024606  =  0.9760
 slot 8:  0.013300 ÷ 1.024606  =  0.0130
 slot 4:  0.008652 ÷ 1.024606  =  0.0084
@@ -1782,7 +1788,7 @@ slots 0, 2, 5, 6                 0.0000
 
 **And the loss:**
 
-```
+```text
 loss  =  −ln(0.9760)  =  0.0243
 ```
 

@@ -38,7 +38,7 @@ ________________________________________________________________
 
 The four delivery orders, for the whole page. `x1` is orders already in the oven, `x2` is riders standing free, `y = 1` means late. **`lr = 1.0` throughout.**
 
-```
+```text
         x1 (oven)   x2 (riders free)   y (late?)
 row 1       1              1               0
 row 2       1              2               0
@@ -72,7 +72,7 @@ ________________________________________________________________
 
 **Step 1 — the predictions.** All three knobs start at zero.
 
-```
+```text
 row 1:  z = 0 × 1 + 0 × 1 + 0 = ______        p = sigmoid(______) = ____________
 row 4:  z = 0 × 3 + 0 × 1 + 0 = ______        p = sigmoid(______) = ____________
 ```
@@ -83,7 +83,7 @@ row 4:  z = 0 × 3 + 0 × 1 + 0 = ______        p = sigmoid(______) = __________
 
 **Step 2 — the four errors.** `error = prediction − truth`. **That order, always.**
 
-```
+```text
 row 1:  ______ − ______ = ____________
 row 2:  ______ − ______ = ____________
 row 3:  ______ − ______ = ____________
@@ -94,7 +94,7 @@ row 4:  ______ − ______ = ____________
 
 **Step 3 — three slopes, one per knob.** Error times feature, averaged. **Write out every term.**
 
-```
+```text
 slope w1 = ( ______×1  ______×1  ______×2  ______×3 ) ÷ 4
          = ( ______ + ______ − ______ − ______ ) ÷ 4
          = ______ ÷ 4
@@ -112,7 +112,7 @@ slope b  = ( ______  ______  ______  ______ ) ÷ 4
 
 **Step 4 — three updates, all at once.**
 
-```
+```text
 w1 ← 0.000000 − 1.0 × (____________) = ____________
 w2 ← 0.000000 − 1.0 × (____________) = ____________
 b  ← 0.000000 − 1.0 × (____________) = ____________
@@ -134,7 +134,7 @@ ________________________________________________________________
 
 **Round 1 is done for you**, so you can check your method before you spend twenty minutes on a mistake.
 
-```
+```text
 Round 1:  w = [0.375000, −0.125000]   b = 0.000000
    z   = [0.250000, 0.125000, 0.625000, 1.000000]
    p   = [0.562177, 0.531209, 0.651355, 0.731059]
@@ -146,7 +146,7 @@ Round 1:  w = [0.375000, −0.125000]   b = 0.000000
 
 **Now round 2. `w = [0.477682, −0.376752]`, `b = −0.118950`.** Six decimal places everywhere.
 
-```
+```text
 z   = [ ____________ , ____________ , ____________ , ____________ ]
 p   = [ ____________ , ____________ , ____________ , ____________ ]
 loss = ____________
@@ -162,7 +162,7 @@ b  ← −0.118950 − 1.0 × (____________) = ____________
 
 **And round 3.**
 
-```
+```text
 z   = [ ____________ , ____________ , ____________ , ____________ ]
 p   = [ ____________ , ____________ , ____________ , ____________ ]
 loss = ____________
@@ -196,7 +196,7 @@ ________________________________________________________________
 
 Using round 1's weights `w1 = 0.375`, `w2 = −0.125`, `b = 0`, and `h = 0.0001`:
 
-```
+```text
 loss with w1 = 0.3751  (everything else unchanged)  = ____________
 loss with w1 = 0.3749  (everything else unchanged)  = ____________
 
@@ -234,7 +234,7 @@ print((X * w).sum(axis=1))
 
 **My prediction:**
 
-```
+```text
 line 1: ______________________________________
         ______________________________________
         ______________________________________
@@ -244,7 +244,7 @@ line 2: ______________________________________
 
 **Real:**
 
-```
+```text
 line 1: ______________________________________
         ______________________________________
         ______________________________________
@@ -469,6 +469,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing the week's code yourself, one piece at a time.
 
 ### B1 — the forward pass, and the trap beside it
 
@@ -779,7 +781,7 @@ ________________________________________________________________
 
 **Part 2(b).** Try `y = [0, 0, 0, 1]` — one late order out of four.
 
-```
+```text
 err      = [ ______ , ______ , ______ , ______ ]
 slope b  = ( ______ + ______ + ______ − ______ ) ÷ 4 = ____________
 ```
@@ -846,7 +848,7 @@ ________________________________________________________________
 | sklearn, default | ____________ | ____________ | ____________ |
 | sklearn, `tol=1e-8` | ____________ | ____________ | ____________ |
 
-```
+```text
 biggest gap vs default   : ____________
 biggest gap vs tol=1e-8  : ____________
 ```
@@ -969,6 +971,8 @@ Draw **three learning rates on one picture** — from the real numbers, not from
 
 ## 📊 Self-Check
 
+This table is for marking how sure you are of each skill from this week.
+
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
 | say what a gradient is, and how many numbers it has for a given model | | | |
@@ -1033,7 +1037,7 @@ ________________________________________________________________
 
 **Step 2.**
 
-```
+```text
 row 1:  0.5 − 0 = +0.5
 row 2:  0.5 − 0 = +0.5
 row 3:  0.5 − 1 = −0.5
@@ -1044,7 +1048,7 @@ row 4:  0.5 − 1 = −0.5
 
 **Step 3.**
 
-```
+```text
 slope w1 = ( +0.5×1  +0.5×1  −0.5×2  −0.5×3 ) ÷ 4
          = ( 0.5 + 0.5 − 1.0 − 1.5 ) ÷ 4 = −1.5 ÷ 4 = −0.375000
 
@@ -1056,7 +1060,7 @@ slope b  = ( +0.5  +0.5  −0.5  −0.5 ) ÷ 4 = 0.0 ÷ 4 =  0.000000
 
 **Step 4.**
 
-```
+```text
 w1 ← 0.000000 − 1.0 × (−0.375000) = +0.375000
 w2 ← 0.000000 − 1.0 × (+0.125000) = −0.125000
 b  ← 0.000000 − 1.0 × ( 0.000000) =  0.000000
@@ -1089,7 +1093,7 @@ round 3
 
 Written out as the page asks:
 
-```
+```text
 Round 2:  z   = [−0.018020, −0.394772, +0.459662, +0.937344]
           p   = [ 0.495495,  0.402569,  0.612934,  0.718563]
           loss = 0.504824
@@ -1261,7 +1265,7 @@ numpy.core._exceptions._UFuncOutputCastingError: Cannot cast ufunc 'subtract' ou
 
 **A5.** The eight boxes, top to bottom:
 
-```
+```text
 1.  p for every row                                    = 0.500000
 2.  err on row 3 = p − y = 0.5 − 1                     = −0.500000
 3.  slope w1 = (0.5 + 0.5 − 1.0 − 1.5) ÷ 4 = −1.5 ÷ 4  = −0.375000
@@ -1635,7 +1639,7 @@ The first loss is correct, so the data, the scaler, the squash and the loss func
 
 **Part 2(b).**
 
-```
+```text
 err      = [ +0.5 , +0.5 , +0.5 , −0.5 ]
 slope b  = ( 0.5 + 0.5 + 0.5 − 0.5 ) ÷ 4 = 1.0 ÷ 4 = +0.250000
 ```
@@ -1666,7 +1670,7 @@ slope b  = ( 0.5 + 0.5 + 0.5 − 0.5 ) ÷ 4 = 1.0 ÷ 4 = +0.250000
 | sklearn, default | `-0.621309` | `3.089931` | `0.226750` |
 | sklearn, `tol=1e-8` | `-0.622142` | `3.092423` | `0.227114` |
 
-```
+```text
 biggest gap vs default   : 0.002492
 biggest gap vs tol=1e-8  : 0.000000
 ```

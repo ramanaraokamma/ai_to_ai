@@ -39,6 +39,8 @@ Observable evidence: a sheet of graph paper with `2, 4, 6, 8, 100` scaled both w
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section is your own preparation: the maths and the code of the week, taught to you from scratch.
+
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
 **You need no maths beyond arithmetic to teach this week, and no statistics at all.** What follows teaches you the whole thing from scratch. It takes about twenty minutes to read and you will be comfortably ahead of the student.
@@ -75,7 +77,7 @@ That is it. It is a typical distance. And you are about to compute one, on five 
 
 **Step 1 — the mean.** Add them up, divide by how many there are.
 
-```
+```text
 2 + 4 + 6 + 8 + 100 = 120
 120 ÷ 5 = 24
 ```
@@ -84,7 +86,7 @@ The mean is **24**. Notice immediately that this is a strange "average" — four
 
 **Step 2 — how far is each number from 24?** Subtract.
 
-```
+```text
 2  − 24 = −22
 4  − 24 = −20
 6  − 24 = −18
@@ -94,7 +96,7 @@ The mean is **24**. Notice immediately that this is a strange "average" — four
 
 **Step 3 — get rid of the minus signs by squaring.** Here is the honest reason, and a student *will* ask: if you just averaged those five distances as they are, the minuses and the pluses would cancel out and you would get zero every single time, for every list of numbers ever. Try it: −22 − 20 − 18 − 16 + 76 = 0. Exactly zero. Useless. So you square each one first, because a squared number is never negative.
 
-```
+```text
 (−22) × (−22) = 484
 (−20) × (−20) = 400
 (−18) × (−18) = 324
@@ -104,14 +106,14 @@ The mean is **24**. Notice immediately that this is a strange "average" — four
 
 **Step 4 — average those.** Add them up, divide by 5.
 
-```
+```text
 484 + 400 + 324 + 256 + 5776 = 7240
 7240 ÷ 5 = 1448
 ```
 
 **Step 5 — undo the squaring.** You squared everything in step 3, so the 1448 is in "squared" units. Take the square root to get back to normal units.
 
-```
+```text
 the square root of 1448 = 38.0526
 ```
 
@@ -129,7 +131,7 @@ Now the payoff. The **z-score** of a value is:
 
 Both numbers are already on the board. So:
 
-```
+```text
 (2   − 24) ÷ 38.0526 = −0.5781
 (4   − 24) ÷ 38.0526 = −0.5256
 (6   − 24) ÷ 38.0526 = −0.4730
@@ -149,7 +151,7 @@ Read the answers out loud in English, because that is where the meaning lives: *
 
 For our five numbers: smallest 2, biggest 100, so the range is 100 − 2 = **98**.
 
-```
+```text
 (2   − 2) ÷ 98 = 0.0000
 (4   − 2) ÷ 98 = 0.0204
 (6   − 2) ÷ 98 = 0.0408
@@ -229,7 +231,7 @@ A model multiplies by weights. It cannot multiply `"CrustyBros"` by anything. So
 
 **One-hot encoding** makes one new yes-or-no column per category.
 
-```
+```text
 restaurant = "Napoli"   →   restaurant_CrustyBros    = 0
                             restaurant_GreenLeaf     = 0
                             restaurant_Napoli        = 1
@@ -328,6 +330,8 @@ value of the picture is entirely in how much of it still is not.
 ---
 
 ## 🧰 Prep Checklist
+
+This section lists what to set up before the lesson, with the complete runnable files.
 
 ### 20 minutes the night before
 
@@ -473,7 +477,7 @@ weather codes: [0 1 2 1 0]
 
 **Do this:** Nothing on the screen. Write these two lines on the board and nothing else:
 
-```
+```text
 distance_km                0.33  ...  14.40
 driver_experience_months      0  ...  59
 ```
@@ -511,7 +515,7 @@ Wait. Let them answer.
 
 **Do this:** Clear the board except for the two column ranges. Write, very large, with plenty of space underneath:
 
-```
+```text
 2    4    6    8    100
 ```
 
@@ -533,7 +537,7 @@ Let them find it. Someone will say no.
 
 **Do this:** Write the five subtractions in a column, and let the student call out each answer before you write it.
 
-```
+```text
 2   − 24 = −22
 4   − 24 = −20
 6   − 24 = −18
@@ -551,7 +555,7 @@ Let them do it. They will get zero.
 
 **Do this:** Second column on the board, again with them calling the answers.
 
-```
+```text
 (−22)² =  484
 (−20)² =  400
 (−18)² =  324
@@ -596,7 +600,7 @@ Let them do it. They will get zero.
 
 **Do this:** Work all five with them. Write them under the raw numbers so they line up.
 
-```
+```text
 raw       2         4         6         8        100
 z      −0.5781   −0.5256   −0.4730   −0.4205   +1.9972
 ```
@@ -607,7 +611,7 @@ z      −0.5781   −0.5256   −0.4730   −0.4205   +1.9972
 
 **Do this:** Third row on the board.
 
-```
+```text
 raw       2         4         6         8        100
 z      −0.5781   −0.5256   −0.4730   −0.4205   +1.9972
 min-max 0.0000    0.0204    0.0408    0.0612    1.0000
@@ -881,6 +885,8 @@ Run the three checks from **✅ Assessing Understanding**, then assign the homew
 
 ## 🐞 The Debugging Clinic
 
+This section is for reading error messages with the student when the week's code breaks.
+
 Every message below came from running a broken version of this week's actual code.
 
 > **🧑‍🏫 If a student asks:** scikit-learn's tracebacks are long — ten to fifteen lines is normal, and most of the lines are inside scikit-learn where you cannot do anything. **The rule is the same as always: read the last line, then find the `File` line with your own filename in it.** scikit-learn is unusually good about putting the fix *in* the last line. Read it before you guess.
@@ -911,6 +917,8 @@ And the sentence for this week:
 ---
 
 ## 🎲 The Activity, In Full
+
+This section gives the full instructions for the hands-on activity, with its easier and harder variations.
 
 ### The Two Rulers, and Five Cards
 
@@ -978,6 +986,8 @@ For Part 2, use only **three** cards (`Napoli`, `SliceHouse`, `CrustyBros`) so t
 
 ## ❓ Questions Students Ask This Week
 
+This section gives prepared answers to questions students are likely to ask.
+
 **"Why do you divide by 5 and not by 4? My maths teacher divides by one less."**
 
 Your maths teacher is right, for their question, and we are right for ours. Both are used and the difference is real.
@@ -1014,7 +1024,7 @@ So: leave them in. Know that the question is sharp.
 
 The order is real: clear, then rain, then storm. Nobody would argue. But look at the *gaps*:
 
-```
+```text
 rain  − clear = 0.3507 − 0.2451 = 0.1056
 storm − rain  = 0.5360 − 0.3507 = 0.1853
 ```
@@ -1063,6 +1073,8 @@ It looks like it should work on features, because it turns words into numbers an
 
 ## 🧭 Differentiation
 
+This section says what to change when the student is struggling, flying or not engaging.
+
 ### If the student is struggling
 
 **Cut, in this order:** the min-max half of the live-code (they can read the output from the printed page); the `PopUpPizza` card; and the whole ordinal-ladder table in section 6, replaced by the single sentence *"numbering restaurants tells the model Napoli is twice GreenLeaf, and it isn't."*
@@ -1079,7 +1091,7 @@ Then one z-score only: *"3 minus 7 is minus 4. Minus 4 divided by 2.8284 is minu
 
 **The copy-this-exactly scaffold.** Give them this on paper, with the blanks:
 
-```
+```text
 my numbers:   ____  ____  ____  ____  ____
 add them up:  ____          divide by 5:  ____   <- the mean
 distance from the mean:  ____  ____  ____  ____  ____
@@ -1165,6 +1177,8 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
+This section gives the words to use when setting the homework.
+
 **Say this:**
 
 > "About an hour, three pages, and one of them is the one I'm actually marking.
@@ -1234,7 +1248,7 @@ Values `2, 4, 6, 8, 100`.
 
 **Standard deviation, all five steps.**
 
-```
+```text
 1  subtract:     −22    −20    −18    −16    +76
 2  square:       484    400    324    256    5776
 3  add:          484 + 400 + 324 + 256 + 5776 = 7240
@@ -1299,7 +1313,7 @@ min-max      : [0.     0.0204 0.0408 0.0612 1.    ]
 
 **Drill 2 — the standard deviation.**
 
-```
+```text
 subtract 7:   −4   −2    0    2    4
 square:       16    4    0    4   16
 add:          16 + 4 + 0 + 4 + 16 = 40
@@ -1319,7 +1333,7 @@ square root:  2.8284
 
 **Drill 7 — the standard deviation.**
 
-```
+```text
 subtract 20:  −19   −18   −18   −17   +72
 square:       361   324   324   289  5184
 add:          361 + 324 + 324 + 289 + 5184 = 6482
@@ -1394,7 +1408,7 @@ new value 120 for Q:
 
 **The column count.**
 
-```
+```text
 restaurant   : 5 values  ->  5 columns
 day_of_week  : 7 values  ->  7 columns
 weather      : 3 values  ->  3 columns
@@ -1451,7 +1465,7 @@ storm     125  0.5360
 
 **The two subtractions.**
 
-```
+```text
 rain  − clear = 0.3507 − 0.2451 = 0.1056
 storm − rain  = 0.5360 − 0.3507 = 0.1853
 
@@ -1493,7 +1507,9 @@ storm − rain  = 0.5360 − 0.3507 = 0.1853
 
 ## 🔮 Next Week Preview
 
-Next week the student stops accepting the columns they were given. **Week 5 is about the columns that were not in the file** — and it is the week where the score finally moves. Three shapes of invented column, all built out of arithmetic they already have: a **bin** (`order_hour` is useless as a number because lateness is low at 14:00, spikes at 19:00 and drops again at 22:00, so you cut the hours into ranges instead), a **ratio** (`prep_minutes ÷ distance_km` asks a completely different question from either column alone: is the kitchen the bottleneck, or the road?), and an **interaction** (`distance × weather severity`, because a long trip costs you 0.3269 in the clear and 0.4663 in a storm, and no amount of adding two separate weights can express *"worse together"*).
+Next week the student stops accepting the columns they were given. **Week 5 is about the columns that were not in the file** — and it is the week where the score finally moves.
+
+There are three shapes of invented column, all built out of arithmetic they already have: a **bin** (`order_hour` is useless as a number because lateness is low at 14:00, spikes at 19:00 and drops again at 22:00, so you cut the hours into ranges instead), a **ratio** (`prep_minutes ÷ distance_km` asks a completely different question from either column alone: is the kitchen the bottleneck, or the road?), and an **interaction** (`distance × weather severity`, because a long trip costs you 0.3269 in the clear and 0.4663 in a storm, and no amount of adding two separate weights can express *"worse together"*).
 
 And then the part that makes it engineering rather than guessing: the **ablation**. Build the model with the new column, build it without it, change nothing else, compare on the validation set, and write the difference down to four decimal places. Next week's table has six rows in it, and **two of the four invented columns will turn out to buy nothing at all** — one of them a feature that sounds so sensible nobody wants to delete it. The student will have to delete it anyway, in writing, with the number that justified the deletion. That is the habit the week is really for.
 

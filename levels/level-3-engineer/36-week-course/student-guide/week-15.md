@@ -35,7 +35,7 @@ Every single time, the same thing happened. About a second of silence, and then 
 
 "It learned." "It found the pattern." "It trained." **Every one of those is a name for the thing, not a description of it.** So here is the actual description, and it takes five lines:
 
-```
+```text
 1. start with every weight at zero
 2. work out the probability for every row
 3. work out the loss
@@ -69,6 +69,8 @@ By the end of this chapter you will have written `model.fit` yourself, in about 
 
 ## 🧠 The Big Idea
 
+This section explains the ideas behind the loop: what a gradient is, where the slope formula comes from, how the update rule uses it, and what the learning rate does.
+
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. Each one carries on from the one above. **The complete runnable files are in 💻 Type This.**
 
 ### 1. The gradient: one slope per knob
@@ -100,7 +102,7 @@ Start with all three knobs at zero. Every `z` is zero, so every `p` is `0.5`, so
 
 **The plain explanation.** Here is the formula, and you should be suspicious of how short it is:
 
-```
+```text
 slope for a weight  =  average of  (prediction − truth) × (that feature)
 slope for the bias  =  average of  (prediction − truth)
 ```
@@ -135,7 +137,7 @@ That is the algorithm. Everything else in this chapter is bookkeeping.
 
 **Work one update out loud.** Suppose `w1 = 0.000000`, its slope is `−0.375000`, and `lr = 1.0`:
 
-```
+```text
 w1 ← 0.000000 − 1.0 × (−0.375000)
    = 0.000000 + 0.375000
    = 0.375000
@@ -191,7 +193,7 @@ downhill = bool(np.all(np.diff(h) <= 1e-12))
 
 The four rows again, and `lr = 1.0` throughout:
 
-```
+```text
         x1 (oven)   x2 (riders free)   y (late?)
 row 1       1              1               0
 row 2       1              2               0
@@ -203,19 +205,19 @@ row 4       3              1               1
 
 Start with `w1 = 0`, `w2 = 0`, `b = 0`. So for row 1:
 
-```
+```text
 z = 0 × 1 + 0 × 1 + 0 = 0
 ```
 
 And for row 4:
 
-```
+```text
 z = 0 × 3 + 0 × 1 + 0 = 0
 ```
 
 **Every `z` is zero, because everything is multiplied by zero.** So every `p` is `sigmoid(0)`, which is **exactly** 0.5 — no rounding, Week 13's third property.
 
-```
+```text
 loss = −ln(0.5), averaged over four rows = 0.693147
 ```
 
@@ -225,7 +227,7 @@ loss = −ln(0.5), averaged over four rows = 0.693147
 
 `error = prediction − truth`. **That order, always.**
 
-```
+```text
 row 1:  0.5 − 0 = +0.5
 row 2:  0.5 − 0 = +0.5
 row 3:  0.5 − 1 = −0.5
@@ -238,7 +240,7 @@ row 4:  0.5 − 1 = −0.5
 
 `w1`'s slope is error times **feature 1**, averaged. Write out every term:
 
-```
+```text
 slope w1 = ( +0.5×1  +0.5×1  −0.5×2  −0.5×3 ) ÷ 4
          = ( 0.5 + 0.5 − 1.0 − 1.5 ) ÷ 4
          = −1.5 ÷ 4
@@ -249,7 +251,7 @@ slope w1 = ( +0.5×1  +0.5×1  −0.5×2  −0.5×3 ) ÷ 4
 
 Now `w2`, which uses **feature 2**:
 
-```
+```text
 slope w2 = ( +0.5×1  +0.5×2  −0.5×1  −0.5×1 ) ÷ 4
          = ( 0.5 + 1.0 − 0.5 − 0.5 ) ÷ 4
          = +0.5 ÷ 4
@@ -258,7 +260,7 @@ slope w2 = ( +0.5×1  +0.5×2  −0.5×1  −0.5×1 ) ÷ 4
 
 And the bias, which has **no feature to multiply by**:
 
-```
+```text
 slope b  = ( +0.5  +0.5  −0.5  −0.5 ) ÷ 4
          =  0.0 ÷ 4
          =  0.000000
@@ -268,7 +270,7 @@ slope b  = ( +0.5  +0.5  −0.5  −0.5 ) ÷ 4
 
 ### Round 0, step 4 — three updates, all at once
 
-```
+```text
 w1 ← 0.000000 − 1.0 × (−0.375000) = 0.000000 + 0.375000 = +0.375000
 w2 ← 0.000000 − 1.0 × (+0.125000)                       = −0.125000
 b  ← 0.000000 − 1.0 × ( 0.000000)                       =  0.000000
@@ -280,7 +282,7 @@ b  ← 0.000000 − 1.0 × ( 0.000000)                       =  0.000000
 
 **Round 1.** `w1 = 0.375`, `w2 = −0.125`, `b = 0`.
 
-```
+```text
 z: row1 = 0.375×1 − 0.125×1 = 0.250      p = 0.562177
    row2 = 0.375×1 − 0.125×2 = 0.125      p = 0.531209
    row3 = 0.375×2 − 0.125×1 = 0.625      p = 0.651355
@@ -301,7 +303,7 @@ b  ←  0.000000 − 1.0 × (+0.118950) = −0.118950
 
 **Round 2.** `w1 = 0.477682`, `w2 = −0.376752`, `b = −0.118950`.
 
-```
+```text
 z: −0.018020, −0.394772, +0.459662, +0.937344
 p:  0.495495,  0.402569,  0.612934,  0.718563
 
@@ -320,7 +322,7 @@ b  ← −0.118950 − 1.0 × (+0.057390) = −0.176340
 
 ### The four numbers that are the point of the whole page
 
-```
+```text
 0.693147  →  0.581375  →  0.504824  →  0.448421
 ```
 
@@ -859,7 +861,7 @@ Against scikit-learn with `tol=1e-8` you agree to **all six printed decimal plac
 
 ## 🔍 Worked Examples
 
-Three complete programs, in three different worlds.
+Each example is a complete program in a different setting. Use them to see the same loop applied more than once.
 
 ### Worked Example 1 — One slope, by hand (will they pass the exam?)
 
@@ -873,7 +875,7 @@ Three complete programs, in three different worlds.
 
 **By hand, four columns and two arithmetic steps:**
 
-```
+```text
 student 1:  error = 0.30 − 0 = +0.30      +0.30 × 2 = +0.60
 student 2:  error = 0.40 − 1 = −0.60      −0.60 × 6 = −3.60
 student 3:  error = 0.80 − 1 = −0.20      −0.20 × 9 = −1.80
@@ -1085,7 +1087,7 @@ And notice loan 3: seven days, one previous lateness, and the model says `0.0974
 
 ## 🐞 When It Breaks
 
-Every message below came from really running a broken version of this week's code.
+This section is for when your code misbehaves. Each case below shows a real message, or a real silence, from running a broken version of this week's code.
 
 ### Break 1 — the whole-number weights
 
@@ -1192,6 +1194,8 @@ w after 500 epochs: [0. 0.]   b: 0.0
 
 ## 🎲 What We Did In Class
 
+This section records the class lab, for anyone who missed it.
+
 If you missed it, here is the whole lab. You need a calculator, a laptop, and the four-row table from 🔢 The Maths, Slowly.
 
 **The hook.** `model.fit(X_train, y_train)` went on the board on its own. *"You have typed that sixty times. What happened in that second?"* Answers came back — "it learned", "it trained" — and went up without comment. Then the five lines of English, and the question: *"which of these can you already do?"* **Four of five.** Then the prediction: *"line 1 says all weights start at zero, so what is the loss on the first step?"* — `0.6931`, pointed at on the wall.
@@ -1200,7 +1204,7 @@ If you missed it, here is the whole lab. You need a calculator, a laptop, and th
 
 Then the four rows, and every number of round 0 out loud:
 
-```
+```text
 z = 0 for all four        p = 0.5 for all four        loss = 0.693147
 
 errors:  +0.5  +0.5  −0.5  −0.5
@@ -1214,7 +1218,7 @@ Three questions at that board: *"why are rows 3 and 4 negative?"* — they were 
 
 **Then `w ← w − lr × slope` went up in the biggest letters available, with a box drawn round the minus sign.** *"The slope points uphill. The loss is a thing we want small. So we go the other way. That is the entire algorithm."*
 
-```
+```text
 w1 ← 0.000000 − 1.0 × (−0.375000) = +0.375000
 w2 ← 0.000000 − 1.0 × (+0.125000) = −0.125000
 b  ← 0.000000 − 1.0 × ( 0.000000) =  0.000000
@@ -1267,6 +1271,8 @@ The room got the `0.002492` first and was slightly disappointed. Then `tol=1e-8`
 
 ## 💬 Talk About It
 
+Use these questions to check your understanding out loud. Each one has a hint below it.
+
 **1. How does it know it is going the right way? It cannot see the bottom.**
 
 *Hint:* it cannot, and that is the whole point of the foggy hillside. **It never knows where the bottom is. It only knows which way is down, right where it is standing.** That works because this particular loss is **convex** — one bowl, one bottom, no side dips — and on a bowl, "keep going downhill" gets you to the bottom eventually, however long it takes. Then push on it: **when does that stop working?** In Week 19, when the model has layers and the loss stops being a bowl. Then "keep going downhill" can land you in a shallow dip that is not the bottom, and there is genuinely nothing the algorithm can do about it. **Everyone lives with that.** So the exactness you got today is a property of *today's problem*, not of gradient descent — and it is worth deciding now that Week 19's inexactness will not be a failure.
@@ -1282,6 +1288,8 @@ The room got the `0.002492` first and was slightly disappointed. Then `tol=1e-8`
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section takes four claims that sound reasonable and examines each one.
 
 ### Trick 1 — "the minus sign is just a convention"
 
@@ -1320,6 +1328,8 @@ The room got the `0.002492` first and was slightly disappointed. Then `tol=1e-8`
 
 ## 🌍 Where You've Seen This
 
+The loop from this chapter shows up in software you already use. Here are six places.
+
 1. **Every `.fit()` on a logistic regression or a neural network.** Not a metaphor for it — for logistic regression it is the same algorithm finding the same answer, which you proved to six decimal places.
 2. **Every large language model ever trained.** They are trained by a descendant of the loop in this chapter: compute a loss, get one slope per weight, step every weight against its slope, repeat. The models have hundreds of billions of knobs instead of three, and the loop is the same five lines.
 3. **A phone's camera deciding what a face is.** The network was trained by this loop, on somebody's cluster, months before your phone was made. **The training happened once; your phone only does the forward pass.**
@@ -1356,6 +1366,8 @@ The ↻ has been black since Week 12, and this week you finally run it yourself.
 ---
 
 ## 🔑 Remember This
+
+The key points of the week, followed by a syntax card to keep beside you.
 
 - **The gradient is one slope per knob, kept in a list.** Three knobs, three numbers: `[−0.375, +0.125, 0.000]`. Not one number — that is the mental shift of the week.
 - **Each slope is `error times feature, averaged`.** `(prediction − truth) × (that feature)`, averaged over the rows. The bias is the same thing with no feature to multiply by. **The logarithms and exponentials cancelled, and that cancellation is why sigmoid and log loss are always paired.**
@@ -1414,6 +1426,8 @@ LogisticRegression(penalty=None, max_iter=5000, tol=1e-8)
 ---
 
 ## 📓 New Words
+
+The vocabulary of the week in one place.
 
 ![Six words from Week 15, drawn](../figures/fig-w15-6-vocab-icons.svg)
 *Figure 15.6 — Six words from Week 15, drawn.*

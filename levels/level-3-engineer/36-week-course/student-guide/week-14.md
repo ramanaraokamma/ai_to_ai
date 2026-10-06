@@ -81,7 +81,7 @@ Four numbers make the whole idea:
 
 **Now look at the gaps, because the gaps are the point.**
 
-```
+```text
 from 0.9 down to 0.5 :  0.693147 − 0.105361 = 0.587786     (probability dropped by 0.40)
 from 0.1 down to 0.02:  3.912023 − 2.302585 = 1.609438     (probability dropped by 0.08)
 ```
@@ -90,7 +90,7 @@ from 0.1 down to 0.02:  3.912023 − 2.302585 = 1.609438     (probability droppe
 
 And it **never stops**. There is no worst possible score:
 
-```
+```text
 −ln(0.001)     = 6.907755
 −ln(0.0000001) = 16.118096
 ```
@@ -101,7 +101,7 @@ And it **never stops**. There is no worst possible score:
 
 **The plain explanation.** Section 1 assumed the thing happened. If it did **not** happen, then the chance you gave to what happened is `1 − p`. Same meter, different input. That is the whole of it:
 
-```
+```text
 if it happened:      loss = −ln(p)
 if it did not:       loss = −ln(1 − p)
 ```
@@ -110,13 +110,13 @@ if it did not:       loss = −ln(1 − p)
 
 **In textbooks you will see it written as one line, and it looks much worse than it is:**
 
-```
+```text
 L = −[ y × ln(p) + (1 − y) × ln(1 − p) ]
 ```
 
 **That is the if-statement above with the `if` hidden inside a multiplication.** Because `y` is only ever 0 or 1, one of the two halves is always multiplied by zero and disappears:
 
-```
+```text
 if y = 1:  the second half is (1 − 1) × ... = 0,  so L = −ln(p)
 if y = 0:  the first half is  0 × ...       = 0,  so L = −ln(1 − p)
 ```
@@ -125,7 +125,7 @@ if y = 0:  the first half is  0 × ...       = 0,  so L = −ln(1 − p)
 
 **A concrete example, with real values.** Four rows, and the calculator does all four:
 
-```
+```text
 truth = YES, you said 0.90  →  −ln(0.90) = 0.105361      confident and right
 truth =  no, you said 0.90  →  −ln(0.10) = 2.302585      confident and WRONG
 truth = YES, you said 0.02  →  −ln(0.02) = 3.912023      confident and WRONG
@@ -238,7 +238,7 @@ Find the `ln` key. On almost every calculator it is a **primary key** — you do
 
 This takes fifteen seconds and it is worth doing once, because after you have done it `ln` stops feeling like magic for ever.
 
-```
+```text
 press 0.02, then ln   →  −3.912023
 now press e^x on that →   0.02
 ```
@@ -253,7 +253,7 @@ Read the column from step 1. **Every single answer is negative.**
 
 That is not a fault. `ln(1)` is exactly **0**, and `ln` of anything **below** 1 is below zero. And probabilities are always below 1. So this was always going to happen:
 
-```
+```text
 ln(1)    =  0
 ln(0.9)  = −0.105361     just below 1, so just below 0
 ln(0.02) = −3.912023     far below 1, so far below 0
@@ -263,7 +263,7 @@ ln(0.02) = −3.912023     far below 1, so far below 0
 
 ### Step 4 — check it yourself: `ln` and `log` differ by one fixed number
 
-```
+```text
 ln(0.02)    = −3.912023
 log10(0.02) = −1.698970
 −3.912023 ÷ −1.698970 = 2.302585
@@ -279,7 +279,7 @@ log10(0.02) = −1.698970
 
 Every number in this chapter comes out of these. Do all three:
 
-```
+```text
 1.  −ln(0.9)  and  −ln(0.02)                 the meter, at both ends
     0.105361            3.912023
 
@@ -298,6 +298,8 @@ Every number in this chapter comes out of these. Do all three:
 Three short files. `contest.py` is the main one, built in five steps, with two mistakes made on purpose. Then `guard.py`, which fixes something that was left broken last week, and `parked.py`, which proves the `0.6931` claim.
 
 ### Step 1 — six days, three forecasters, and one function
+
+Type this into a new file called `contest.py` and run it. It scores each forecaster on each day.
 
 ```python
 import numpy as np
@@ -393,7 +395,7 @@ Nothing crashed. Every number is positive. **The ranking is exactly right** — 
 
 But every value is wrong, all by the same factor:
 
-```
+```text
 0.693147 ÷ 0.301030 = 2.302584...       and  np.log(10) = 2.302585...
 ```
 
@@ -446,7 +448,7 @@ sklearn log_loss, Coin   : 0.69315
 
 **And the reason is one number.** Look at day 4:
 
-```
+```text
                       BOLD's worst day     CAREFUL's whole week
 log loss                  3.9120       >         3.4130
 squared error             0.9604       <         1.1300
@@ -662,7 +664,7 @@ log loss            : 0.693147
 
 ## 🔍 Worked Examples
 
-Three complete programs, in three different worlds.
+This section runs the ideas on three complete programs, in three different worlds. Work each one by hand or on a calculator before you read its printout.
 
 ### Worked Example 1 — Scoring a spam filter (three messages)
 
@@ -676,7 +678,7 @@ Three complete programs, in three different worlds.
 
 **By hand first, and the middle column is the one that matters:**
 
-```
+```text
 msg 1: it WAS spam, filter gave spam 0.95   →  −ln(0.95) = 0.051293
 msg 2: it was NOT spam, filter gave not-spam 0.70  →  −ln(0.70) = 0.356675
 msg 3: it WAS spam, filter gave spam 0.10   →  −ln(0.10) = 2.302585
@@ -722,7 +724,10 @@ sklearn log_loss : 0.903518
 squared error    : 0.300833
 ```
 
-**Two things.** `np.where(spam == 1, p, 1 - p)` — Week 13's syntax — builds the "chance given to the thing that happened" column explicitly, which is worth doing once so you can **see** the thing everybody gets wrong. And **message 3 alone carries `2.302585` of the `2.710553` total — 85% of it.** The whole score is one message. **Find that message and you have found your problem.**
+**Two things to take from this.**
+
+- `np.where(spam == 1, p, 1 - p)` — Week 13's syntax — builds the "chance given to the thing that happened" column explicitly, which is worth doing once so you can **see** the thing everybody gets wrong.
+- **Message 3 alone carries `2.302585` of the `2.710553` total — 85% of it.** The whole score is one message. **Find that message and you have found your problem.**
 
 ### Worked Example 2 — How low can you go? (the ceiling, measured)
 
@@ -837,9 +842,11 @@ they carry 25.4% of the whole loss
 
 ## 🐞 When It Breaks
 
-Every message below came from really running a broken version of this week's code.
+This section is for the moment something goes wrong. Every message below came from really running a broken version of this week's code.
 
 ### Break 1 — `divide by zero`, then `nan` everywhere
+
+Run this snippet.
 
 ```python
 y = np.array([1, 1, 0, 0])
@@ -861,6 +868,8 @@ guard.py:9: RuntimeWarning: invalid value encountered in multiply
 
 ### Break 2 — raw scores handed to `log_loss`
 
+Run this snippet.
+
 ```python
 y = np.array([1, 0, 1])
 z = np.array([1.2, -0.4, 2.8])       # raw scores, not probabilities
@@ -879,6 +888,8 @@ ValueError: y_prob contains values greater than 1: 2.8
 
 ### Break 3 — only one class in the truth column
 
+Run this snippet.
+
 ```python
 y = np.array([1, 1, 1])
 p = np.array([0.9, 0.8, 0.7])
@@ -896,6 +907,8 @@ ValueError: y_true contains only one label (1). Please provide the list of all e
 **The fix.** Include both classes. You can pass `labels=[0, 1]` if you genuinely mean it, but in a real pipeline **this almost always means your split went wrong** and put every positive row on one side.
 
 ### Break 4 — a plain Python list where numpy was expected
+
+Run this snippet.
 
 ```python
 y = [1, 0, 1]
@@ -939,14 +952,14 @@ If you missed it, here is the whole lesson. You need a calculator with an `ln` k
 
 **Then the weather.** Six real days went on the board, truth only:
 
-```
+```text
 day       1     2     3     4     5     6
 rained?  YES   YES    no   YES    no    no
 ```
 
 Then three forecasters underneath, with their characters read out loud as they were written:
 
-```
+```text
 BOLD     0.99  0.99  0.01  0.02  0.01  0.01
 CAREFUL  0.60  0.55  0.45  0.55  0.40  0.45
 COIN     0.50  0.50  0.50  0.50  0.50  0.50
@@ -958,7 +971,7 @@ COIN     0.50  0.50  0.50  0.50  0.50  0.50
 
 **Then the sentence, written large:**
 
-```
+```text
 −ln(p)  =  how SURPRISED you should be
 
      p = the chance you gave the thing that actually happened
@@ -966,7 +979,7 @@ COIN     0.50  0.50  0.50  0.50  0.50  0.50
 
 **Then log loss, as an if-statement first:**
 
-```
+```text
 if it happened:      loss = −ln(p)
 if it did not:       loss = −ln(1 − p)
 ```
@@ -977,7 +990,7 @@ and only afterwards the textbook one-liner underneath it, with the question *"`y
 
 **Then squared error, and the two ratios**, every number computed by somebody's calculator:
 
-```
+```text
                      squared error         log loss
 said 0.40  →   (1 − 0.40)² = 0.3600    −ln(0.40) = 0.9163
 said 0.02  →   (1 − 0.02)² = 0.9604    −ln(0.02) = 3.9120
@@ -1015,7 +1028,7 @@ Here is the full sheet, so you can redo it at home:
 
 Cards went up. **CAREFUL won, at 0.568833.** Half the room had voted BOLD. Then the comparison that made it undeniable:
 
-```
+```text
 BOLD's single worst day    :  3.912023
 CAREFUL's ENTIRE six days  :  3.412999
 ```
@@ -1037,7 +1050,7 @@ CAREFUL's ENTIRE six days  :  3.412999
 
 **BOLD won, at 0.160150.** Then the two comparisons, side by side, which is the whole explanation:
 
-```
+```text
                       BOLD's worst day     CAREFUL's whole week
 log loss                  3.9120       >         3.4130
 squared error             0.9604       <         1.1300
@@ -1055,6 +1068,8 @@ squared error             0.9604       <         1.1300
 
 ## 💬 Talk About It
 
+Three open questions to argue about with a partner or a parent. Each has a hint.
+
 **1. Is a lower loss always a better model?**
 
 *Hint:* start with what the loss actually measures, which is **agreement with the labels you were given.** Then push on the labels. If they encode somebody's past decisions — who got a loan, who got flagged, who got promoted — then a loss of zero means **perfectly reproducing those decisions, including the unfair ones.** Nothing inside `−ln(p)` can notice that the labels are wrong; the formula cannot see anything except the numbers you handed it. You met this in Week 6 with leakage and in Week 9 with metrics, and it is the same lesson in a third coat. Then the harder half: **if the loss cannot tell you the labels are bad, what can?** (Somebody looking, on purpose, at what the labels mean and where they came from. There is no formula for it, which is exactly why it gets skipped.)
@@ -1070,6 +1085,8 @@ squared error             0.9604       <         1.1300
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four wrong ideas that sound reasonable, each set beside the right one.
 
 ### Trick 1 — "`p` is what the model said"
 
@@ -1113,6 +1130,8 @@ Print the weights, then the features, then `np.unique(y)`. **In that order.**
 
 ## 🌍 Where You've Seen This
 
+Six places outside this course where the same idea is at work.
+
 1. **Weather services, since the 1950s.** Forecasters have been scored on probability losses for seventy years. The squared-error version even has a name — the **Brier score**, after the meteorologist who proposed it in 1950 — and log loss is used alongside it. **The argument you just had in class is a real argument meteorologists have had**, because the two rules charge very differently for a confident miss, so they can rank the same pair of forecasters differently (both rules reward reporting your honest probability; they differ in how hard they punish being confidently wrong).
 2. **Every spam filter's training run.** The number it is trying to make small, five hundred times a minute, is log loss over a pile of labelled messages.
 3. **Medical risk models.** *"A 12% chance of a heart problem in ten years."* These are scored on log loss and on **calibration** — does the thing happen 12% of the time when the model says 12%? A model that says 0.99 and is wrong is not slightly bad; it is the reason somebody went home untreated.
@@ -1149,6 +1168,8 @@ stage three is black, as it has been since Week 12.*
 
 ## 🔑 Remember This
 
+The week in seven points, followed by a syntax card to keep beside you while you type.
+
 - **`−ln(p)` is surprise, and `p` is the chance you gave the thing that *actually happened*.** `0.9` → `0.105361`, `0.5` → `0.693147`, `0.1` → `2.302585`, `0.02` → `3.912023`.
 - **Log loss is that meter with an if-statement in front of it.** `−ln(p)` if it happened, `−ln(1 − p)` if it did not, averaged over the rows. The textbook one-liner is the same thing with the `if` hidden inside a multiplication.
 - **Squared error has a ceiling of 1 per row and log loss has none.** For the same disaster: `2.67×` a near-miss against `4.27×`. Predict one ten-millionth and squared error charges `0.9999998` while log loss charges `16.118096`.
@@ -1158,6 +1179,8 @@ stage three is black, as it has been since Week 12.*
 - **The maths reminder:** `ln` undoes `e^x`, `ln(1) = 0`, and `ln` of anything below 1 is negative — **which is the only reason the loss has a minus sign out in front.**
 
 ### Syntax reminder card
+
+Every line of new syntax from this week, with the value it gives in a comment. You do not need to type this block.
 
 ```python
 import numpy as np
@@ -1195,6 +1218,8 @@ log_loss(y, p)                        # clips internally; agrees with the line a
 ---
 
 ## 📓 New Words
+
+The five words this week introduced, each with a worked example.
 
 ![Five words from Week 14, drawn](../figures/fig-w14-6-vocab-icons.svg)
 *Figure 14.6 — Five words from Week 14, drawn.*

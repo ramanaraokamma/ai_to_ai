@@ -363,6 +363,8 @@ to the left of the gold one already knows what to do with a table.
 
 ## 🧰 Prep Checklist
 
+Use this section to get the room, the files and the fallback ready before the lesson.
+
 ### 25 minutes the night before
 
 - [ ] **Type and run `reviews.py` first.** It is just data, but everything else imports it, and the student will have typed their own version. **Twelve minutes to type, and it is the student's homework from last week's preview, so check yours matches theirs in shape: two lists, `POS` and `NEG`, thirty strings each.**
@@ -655,7 +657,7 @@ lower + regex ( 0): []
 
 **Do this:** Nothing on the screen. Write one review on the board, big:
 
-```
+```text
 the pizza was cold
 ```
 
@@ -673,7 +675,7 @@ the pizza was cold
 
 **Do this:** Write under the review:
 
-```
+```text
 the = 1     pizza = 1     was = 1     cold = 1
 ... and every other word in English = 0
 ```
@@ -700,7 +702,7 @@ the = 1     pizza = 1     was = 1     cold = 1
 
 **Do this:** Write the raw sentence on the board, exactly as it is, punctuation and all:
 
-```
+```text
 The pizza was GREAT!!  But the service wasn't.
 ```
 
@@ -719,7 +721,7 @@ The pizza was GREAT!!  But the service wasn't.
 
 **Do this:** Write the eight, with their punctuation kept exactly:
 
-```
+```text
 The | pizza | was | GREAT!! | But | the | service | wasn't.
 ```
 
@@ -741,7 +743,7 @@ The | pizza | was | GREAT!! | But | the | service | wasn't.
 
 **Do this:** Write row two under row one:
 
-```
+```text
 the | pizza | was | great!! | but | the | service | wasn't.
 ```
 
@@ -753,11 +755,11 @@ the | pizza | was | great!! | but | the | service | wasn't.
 
 **Do this:** Write the pattern on the board and then, underneath, the English. **Write both. The English is the bit they keep.**
 
-```
+```text
 re.findall(r"\b\w\w+\b", text)
 ```
 
-```
+```text
 "find me every run of TWO OR MORE letters or digits"
 ```
 
@@ -769,7 +771,7 @@ re.findall(r"\b\w\w+\b", text)
 
 **Do this:** Write row three:
 
-```
+```text
 the | pizza | was | great | but | the | service | wasn
 ```
 
@@ -799,7 +801,7 @@ the | pizza | was | great | but | the | service | wasn
 
 **Do this:** Say nothing for three seconds. Then write both results on the board, one under the other, and draw a box round them.
 
-```
+```text
 the pizza was not cold   ->   pizza  cold
 the pizza was cold       ->   pizza  cold
 ```
@@ -814,7 +816,7 @@ the pizza was cold       ->   pizza  cold
 
 **Do this:** Now the grid. Write the four whiteboard reviews:
 
-```
+```text
 d1: The pizza was great!
 d2: The pizza was cold.
 d3: Great pizza, great service.
@@ -1060,7 +1062,7 @@ are the two rows identical? True
 
 **Do this:** Write the bill on the board:
 
-```
+```text
 WHAT COUNTING WORDS THROWS AWAY
   1. word order        "dog bit man" = "man bit dog"
   2. negation          "good" and "not good" both contain good
@@ -1124,6 +1126,8 @@ And the sentence for this week:
 
 ## 🎲 The Activity, In Full
 
+This section gives the full set-up and steps for the two hands-on parts of the lesson.
+
 ### Part A — The Thirty-Two Cells (12 minutes)
 
 **What it is.** Every student fills in all thirty-two cells of the 4×8 document-term matrix by hand, in pen, on squared paper. Then, in a **different colour**, they tick each cell against the printout on screen. Thirty-two ticks.
@@ -1142,7 +1146,7 @@ And the sentence for this week:
 
 Eight columns, four rows. Column headings from the wall sheet, in the order `CountVectorizer` chose:
 
-```
+```text
         and  cold  food  great  pizza  service  the  was
   d1
   d2
@@ -1194,7 +1198,7 @@ d4    1     2     1      0      0        1    0    0
 
 **And give them the tokenized reviews already written out**, one line each, so the only job is counting:
 
-```
+```text
 d1: the pizza was great
 d2: the pizza was cold
 d3: great pizza great service
@@ -1218,7 +1222,7 @@ d4: cold service and cold food
 
 **Do this:** Write on the board:
 
-```
+```text
 the dog bit the man
 the man bit the dog
 ```
@@ -1278,6 +1282,8 @@ are the two rows identical? True
 ---
 
 ## ❓ Questions Students Ask This Week
+
+Use this section for the questions students ask this week, with an answer for each.
 
 **"Why does it throw away `i` and `a`? Those are real words."**
 
@@ -1345,6 +1351,8 @@ What to tell a fourteen-year-old, out loud: **"Do not drop a word because a list
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+Use this section to spot what usually goes wrong, and what to do right now.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **The hand-built grid gets skipped or rushed** | `CountVectorizer` does it in one line and the lesson is running late | **Cut something else.** Cut the sparse-matrix coordinates, cut the 60-review numbers, cut a question from the wrap. **Do not cut the thirty-two cells and do not cut the second-colour ticks**, because the ticks are the evidence for objective 2 and the trust they buy is spent in Weeks 32 and 33. |
@@ -1362,6 +1370,8 @@ What to tell a fourteen-year-old, out loud: **"Do not drop a word because a list
 
 ## 🧭 Differentiation
 
+Use this section to adjust the lesson for a student who is struggling, flying or not engaging.
+
 ### If the student is struggling
 
 **Cut:** the four-tokenizer comparison down to **two** — `.split()` and the regex. The middle two rows make the point sharper but they are not load-bearing.
@@ -1372,7 +1382,7 @@ What to tell a fourteen-year-old, out loud: **"Do not drop a word because a list
 
 **Give them the tokenized reviews already written out** so the only job is counting:
 
-```
+```text
 d1: the pizza was great
 d2: the pizza was cold
 d3: great pizza great service
@@ -1492,6 +1502,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+Use this section to set the homework: what to say, and what the student receives.
 
 **Say this:**
 
@@ -1795,6 +1807,8 @@ if X.getnnz(axis=1)[0] == 0:
 ---
 
 ## 🔮 Next Week Preview
+
+This section previews next week and what to prepare early.
 
 Next week fixes the complaint somebody made in the first ten minutes of today: **`and` appeared 55 times in the corpus and `rude` appeared 10, and the grid treats them exactly the same way.** The repair is one multiplication and one division, and it is called **TF-IDF** — how often a word appears **here**, multiplied by how rare it is **everywhere else**. The student computes one weight all the way by hand — `tf` of 2, times an `idf` of `ln(5 ÷ 3) + 1 = 1.510826`, giving `3.021651`, then divided by the row's length of `3.592917` to give `0.841002` — and then `TfidfVectorizer` prints `0.841002` and nobody is allowed to move on until the two agree to four decimal places. Then the week's one new piece of maths: **cosine similarity**, the dot product of two lists divided by both their lengths, worked by hand on two three-number lists and read as an **angle** rather than a score. And then the result that should annoy them: the two most similar reviews in their own corpus turn out to be `"the coffee was hot and the cake was fresh"` and `"the coffee was cold and the cake was stale"` — one happy, one furious, 37.1 degrees apart, and the two words that carry all the meaning contribute exactly nothing.
 

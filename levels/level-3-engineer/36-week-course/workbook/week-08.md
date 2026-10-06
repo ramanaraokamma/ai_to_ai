@@ -70,7 +70,7 @@ caught               (TP) :  9
 
 **M2(b).** Multiply each metric by its share, then add.
 
-```
+```text
 recall      x share of fraud  =  0.2143  x  ________  =  ________
 specificity x share of legit  =  0.9929  x  ________  =  ________
                                                 total =  ________
@@ -232,6 +232,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading confusion matrices, metric names and model output. Write your answers in the spaces before you check the Answers section.
+
 **A1. Match the word to the thing.** Write the letter.
 
 | Word | | Description |
@@ -375,6 +377,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
+This set is for writing short programs that compute the four counts and the fractions. Each task gives the expected output and a "Done looks like" check.
+
 ### B1 — one line, plus a print
 
 **Task:** you have `tn = 979`, `fp = 7`, `fn = 11`, `tp = 3`. Print the specificity to four decimal places. There is no `specificity_score` in scikit-learn, so you compute it.
@@ -469,6 +473,10 @@ sklearn agrees: [17  4  3  6]
 ---
 
 ## 🐞 Fix the Broken Program
+
+This page is for finding bugs by reading real error messages and real output. The program is broken on purpose.
+
+Here is the program to debug.
 
 This program has **three** bugs: one **shape** bug, one **runtime** bug, and one **silent logic** bug. The real messages are below, in the order you meet them.
 
@@ -611,6 +619,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This page is for rebuilding a confusion matrix from a few facts about it, one step at a time.
+
 ### Reconstruct the 2×2 from three clues
 
 A bank hands you a report with the table torn off. All you have is four facts about **100 transactions**:
@@ -675,6 +685,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These two questions are for writing in full sentences about the two kinds of error and who pays for each.
 
 **T1.** Here are three applications where the two errors are not equal: **a spam filter**, **a cancer screening test**, and **deciding who gets bail**. For each one, write which error you think costs more and who pays. Then answer the hard part: **one of those three is not a maths question at all.** Say which, and what would have to happen before anybody could honestly put a number on it.
 
@@ -771,7 +783,7 @@ ________________________________________________________________
 
 **Precision — "of everything I flagged, how much was really fraud?"**
 
-```
+```text
 I flagged   TP + FP  =  ______ + ______  =  ______
 Of those,   ______ were really fraud.
 precision   =  ______ ÷ ______  =  ____________
@@ -781,7 +793,7 @@ precision   =  ______ ÷ ______  =  ____________
 
 **Recall — "of everything that really was fraud, how much did I catch?"**
 
-```
+```text
 Real frauds  TP + FN  =  ______ + ______  =  ______
 Of those,    ______ were caught.
 recall       =  ______ ÷ ______  =  ____________
@@ -791,7 +803,7 @@ recall       =  ______ ÷ ______  =  ____________
 
 **Specificity — "of everything that really was legitimate, how much did I correctly leave alone?"**
 
-```
+```text
 Real legit   TN + FP  =  ______ + ______  =  ______
 Of those,    ______ were left alone.
 specificity  =  ______ ÷ ______  =  ____________
@@ -801,7 +813,7 @@ specificity  =  ______ ÷ ______  =  ____________
 
 **And accuracy, for comparison:**
 
-```
+```text
 correct   =  TP + TN  =  ______ + ______  =  ______
 accuracy  =  ______ ÷ ______  =  ____________
 ```
@@ -849,7 +861,7 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
-Draw your two errors as two afternoons — in pictures this time, not sentences. Two frames, one for the false alarm and one for the miss, then check yourself against the panel underneath.
+This page is for drawing your two errors as two afternoons, in pictures this time, not sentences. Two frames, one for the false alarm and one for the miss, then check yourself against the panel underneath.
 
 ![Draw the two errors](../figures/fig-w08-8-draw-frame.svg)
 *Figure W8.2 — Two empty frames, and what a good answer contains.*
@@ -869,6 +881,8 @@ ________________________________________________________________
 ---
 
 ## 📊 Self-Check
+
+This table is for rating yourself honestly on this week's skills. Tick one face per row.
 
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
@@ -891,6 +905,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+**Stop here until you have written your own answers.** This section is for checking your work after you have tried every page above.
 
 <details>
 <summary>Check your answers</summary>
@@ -928,7 +944,7 @@ The four divisions in full: `9 ÷ 15 = 0.6000` · `9 ÷ 12 = 0.7500` · `22 ÷ 2
 
 **M2(b).**
 
-```
+```text
 recall      x share of fraud  =  0.2143  x  0.014  =  0.0030
 specificity x share of legit  =  0.9929  x  0.986  =  0.9790
                                                 total =  0.9820
@@ -1334,7 +1350,7 @@ The number to watch is **specificity** — of everything that really was legitim
 
 **The three fractions, with the working:**
 
-```
+```text
 I flagged   TP + FP  =  6 + 4  =  10
 Of those,   6 were really fraud.
 precision   =  6 ÷ 10  =  0.6000
@@ -1342,7 +1358,7 @@ precision   =  6 ÷ 10  =  0.6000
 
 **The count on the bottom is 10, because 10 is how many I flagged.**
 
-```
+```text
 Real frauds  TP + FN  =  6 + 3  =  9
 Of those,    6 were caught.
 recall       =  6 ÷ 9  =  0.6667
@@ -1350,7 +1366,7 @@ recall       =  6 ÷ 9  =  0.6667
 
 **The count on the bottom is 9, because 9 is how many frauds there really were.**
 
-```
+```text
 Real legit   TN + FP  =  17 + 4  =  21
 Of those,    17 were left alone.
 specificity  =  17 ÷ 21  =  0.8095
@@ -1358,7 +1374,7 @@ specificity  =  17 ÷ 21  =  0.8095
 
 **The count on the bottom is 21, because 21 is how many were really legitimate.**
 
-```
+```text
 correct   =  TP + TN  =  6 + 17  =  23
 accuracy  =  23 ÷ 30  =  0.7667
 ```

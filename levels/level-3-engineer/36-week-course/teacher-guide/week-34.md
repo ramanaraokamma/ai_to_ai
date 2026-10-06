@@ -90,7 +90,7 @@ Rule 2 costs six characters — `_v1` — and buys you the ability to go back. T
 
 And then one line of text says which version is live:
 
-```
+```text
 model/artifacts/LATEST      ← contains exactly:  sentiment_v1
 ```
 
@@ -206,7 +206,7 @@ The artifact is 10,228 bytes. Reading 10,228 bytes off a disk takes almost no ti
 
 So the cold start is:
 
-```
+```text
   92.2  (import joblib)
 + 659.3  (first load — mostly scikit-learn importing itself)
 +   0.4  (the actual prediction)
@@ -747,7 +747,7 @@ SECOND predict_proba     :  0.173 ms
 
 **Do this:** Boxes 2 and 3. Write them out in full:
 
-```
+```text
 2  INPUT      text        a non-empty string, limit 100,000 bytes
 3  OUTPUT     label  probability  threshold  model_version  latency_ms
 ```
@@ -778,7 +778,7 @@ SECOND predict_proba     :  0.173 ms
 
 **Do this:** Box 5, `THE THRESHOLD`. This is the maths of the week, and it is Week 11's arithmetic. Write on the board:
 
-```
+```text
 cost = 10 x (nasty called positive)  +  1 x (nice called negative)
 ```
 
@@ -788,7 +788,7 @@ cost = 10 x (nasty called positive)  +  1 x (nice called negative)
 
 **Do this:** Write the table, reading the numbers out as you go:
 
-```
+```text
   t      nasty called positive    nice called negative     cost
 0.40             3                        0                30
 0.50             1                        0                10
@@ -815,7 +815,7 @@ cost = 10 x (nasty called positive)  +  1 x (nice called negative)
 
 **Do this:** Write on the board:
 
-```
+```text
 accuracy at 0.50  =  0.9375
 accuracy at 0.65  =  0.7500
 ```
@@ -832,7 +832,7 @@ accuracy at 0.65  =  0.7500
 
 **Do this:** Box 6, `NEVER USED FOR`. Write two things and cross them out with the big red cross:
 
-```
+```text
 ✗  deciding who gets banned
 ✗  marking anybody's schoolwork
 ```
@@ -976,7 +976,7 @@ $
 
 Finally, on the board:
 
-```
+```text
 loaded in 650 ms     ← once, per program start   (COLD START)
         0.38 ms      ← every single prediction   (LATENCY)
 ```
@@ -1180,7 +1180,7 @@ You can, and one day you should. Not this week. `pytest` hides the two things th
 
 **The version of the maths that skips the algebra.** Box 5 without any sweeping. Two rows on paper, nothing else:
 
-```
+```text
 if I cut at 0.50 :  1 nasty slips through, 0 nice ones wasted    10 + 0  = 10
 if I cut at 0.65 :  0 nasty slip through, 4 nice ones wasted     0 + 4  =  4
                                                           4 is less than 10

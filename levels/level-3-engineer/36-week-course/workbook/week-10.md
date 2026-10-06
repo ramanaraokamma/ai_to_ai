@@ -32,6 +32,8 @@ ________________________________________________________________
 
 ## 🔢 Do the Maths by Hand
 
+This section is for practising one division, rise ÷ run, first on twenty clean cards and then on the real fraud data.
+
 **This week's new maths is one division: steepness = rise ÷ run.** Use a calculator. No code on this page. **And after every division, write the sentence** — *"I bought ___ units of recall per unit of false alarm."* The sentence is the answer; the decimal is just the arithmetic.
 
 **M1 — the twenty index cards, where the numbers are clean.** Ten fraud, ten legit, so both denominators are **10**. Here are five dots off that curve:
@@ -48,7 +50,7 @@ ________________________________________________________________
 
 **(a) The steep pair: 0.90 → 0.80.**
 
-```
+```text
 rise  =  0.40 − 0.20  =  ____________
 run   =  0.10 − 0.00  =  ____________
 steepness  =  ________ ÷ ________  =  ____________
@@ -58,7 +60,7 @@ steepness  =  ________ ÷ ________  =  ____________
 
 **(b) 0.80 → 0.70.** Careful with this one.
 
-```
+```text
 rise  =  0.60 − 0.40  =  ____________
 run   =  0.10 − 0.10  =  ____________
 steepness  =  ________ ÷ ________  =  ____________
@@ -70,7 +72,7 @@ ________________________________________________________________
 
 **(c) 0.60 → 0.50.**
 
-```
+```text
 rise  =  ________ − ________  =  ____________
 run   =  ________ − ________  =  ____________
 steepness  =  ________ ÷ ________  =  ____________
@@ -78,13 +80,13 @@ steepness  =  ________ ÷ ________  =  ____________
 
 **(d) 0.40 → 0.30**, where the dots are (0.40, 0.90) and (0.50, 1.00).
 
-```
+```text
 rise  ________   run  ________   steepness  ____________
 ```
 
 **(e) 0.30 → 0.05.**
 
-```
+```text
 rise  ________   run  ________   steepness  ____________
 ```
 
@@ -122,7 +124,7 @@ ________________________________________________________________
 
 **M3 — why 14 and not 2.** On the cards, one extra fraud and one extra false alarm both moved the dot by a tenth. On the real data they do not.
 
-```
+```text
 one extra fraud caught moves the rise by   1 ÷ 14  = ____________
 one extra false alarm  moves the run  by   1 ÷ 986 = ____________
 so one fraud traded for one false alarm looks   986 ÷ 14 = ____________  times steep
@@ -158,6 +160,8 @@ ________________________________________________________________
 ---
 
 ## 🔎 Predict the Output
+
+This section is for committing to a prediction before you see the real output, so you can compare the two.
 
 **Write your prediction in pen before you run anything.** All four carry on from `dial.py`, so `y_val` and `prob` already exist. **One of these four raises nothing at all and is the reason the whole chapter has a warning in it.**
 
@@ -275,6 +279,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading tables, outputs and code lines closely: matching words, reading the sweep, spotting bugs and labelling a figure.
 
 **A1. Match the word to the thing.** Write the letter.
 
@@ -399,6 +405,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
+This set is for writing the dial code yourself, from one line up to a whole program. Each task shows the expected output to check against.
+
 ### B1 — one line, plus a print
 
 **Task:** print how many of the 1,000 rows get flagged at a threshold of 0.04, using the dial line.
@@ -500,6 +508,8 @@ AP      0.2078   (a coin gets 0.0140)
 ---
 
 ## 🐞 Fix the Broken Program
+
+This section is for tracing three bugs in one program, using the real output of each run.
 
 This program has **three** bugs: one **shape** bug, one **runtime** bug, and one **silent logic** bug. The real messages are below, in the order you meet them.
 
@@ -634,6 +644,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for walking a ranking of eight cards through the threshold dial by hand, then comparing it with what scikit-learn prints.
+
 ### The Ladder of Eight
 
 Eight cards. **Three are fraud (F), five are legit (L).** A model has ranked them, most suspicious first. Nothing else about the model matters — **the ranking is all it gave you.**
@@ -717,6 +729,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions are for writing a short paragraph in your own words, using numbers from your own work.
+
 **T1.** Our model's ROC AUC is **0.6116** — barely better than a coin's 0.5000 — and its average precision is **0.2078**, about fifteen times better than a coin's 0.0140. **Write a paragraph** on whether it is a good model. Say what each of the two numbers is actually measuring, name the denominator that makes them disagree, and finish with the sentence you would write on a report that a manager will read. **Your paragraph must contain at least three numbers from your own sweep.**
 
 ________________________________________________________________
@@ -742,6 +756,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It — The Dial, and Three Thresholds You Would Defend
+
+This section is for building the week's hand-made sweep and then choosing three thresholds, each with a person to defend it to.
 
 **Four things get handed in. The fourth is the one marked hardest, and it has people's names on it.**
 
@@ -779,7 +795,7 @@ ________________________________________________________________
 
 ### Two divisions off my own graph paper
 
-```
+```text
 the steepest pair I could find:  t = ________ to t = ________
 
      rise  =  ________ − ________  =  ____________
@@ -789,7 +805,7 @@ the steepest pair I could find:  t = ________ to t = ________
      the sentence: __________________________________________________
 ```
 
-```
+```text
 the flattest pair I could find:  t = ________ to t = ________
 
      rise  =  ________ − ________  =  ____________
@@ -820,7 +836,7 @@ ________________________________________________________________
 
 **Not three reasons. Three people.** And pick three thresholds that are **different kinds of decision** — three numbers within 0.01 of each other is one decision written three times.
 
-```
+```text
 t = ________   I am defending this to: ______________________________________
 
      the numbers:  flagged ______, caught ______ of 14, false alarms ______
@@ -830,7 +846,7 @@ t = ________   I am defending this to: ______________________________________
      ______________________________________________________________________
 ```
 
-```
+```text
 t = ________   I am defending this to: ______________________________________
 
      the numbers:  flagged ______, caught ______ of 14, false alarms ______
@@ -840,7 +856,7 @@ t = ________   I am defending this to: ______________________________________
      ______________________________________________________________________
 ```
 
-```
+```text
 t = ________   I am defending this to: ______________________________________
 
      the numbers:  flagged ______, caught ______ of 14, false alarms ______
@@ -865,6 +881,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This section is for drawing the staircase curve yourself and reading it.
+
 Draw the staircase. Ten dots off the twenty cards, joined left to right, the dashed diagonal corner to corner, and **three dots ringed with a person's name beside each.**
 
 ![Draw the staircase](../figures/fig-w10-9-draw-frame.svg)
@@ -883,6 +901,8 @@ ________________________________________________________________
 ---
 
 ## 📊 Self-Check
+
+This section is for rating how well you can do each skill from this week. Tick one face per row.
 
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
@@ -904,6 +924,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+This section is for checking your work after you have finished the pages above. Open it only once your own answers are written down.
 
 <details>
 <summary>Check your answers</summary>
@@ -1364,7 +1386,7 @@ Two steps straight up, one across, one more straight up, then four across along 
 
 **The two divisions — the shape that earns full marks:**
 
-```
+```text
 the steepest pair:  t = 0.90 to t = 0.80
      rise  =  0.40 − 0.20  =  0.20
      run   =  0.10 − 0.00  =  0.10
@@ -1399,7 +1421,7 @@ the flattest pair:  t = 0.30 to t = 0.05
 
 **Three thresholds — the shape that earns full marks:**
 
-```
+```text
 t = 0.12   I am defending this to: the fraud team's two-person review desk
      the numbers: flagged 2, caught 2 of 14, false alarms 0
      my sentence: "Two cases a day and both of them are real, so nobody

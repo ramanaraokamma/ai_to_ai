@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table is the lesson in one view: what is taught, what you need to have ready, and what the code costs.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes |
@@ -67,7 +69,7 @@ Her internal grumbling is `z`. Then she has to turn that grumbling into a public
 
 > **🔢 The maths, slowly:** row one is `x = [2.0, 1.0, 0.5]`. Multiply each input by its own weight, in order:
 >
-> ```
+> ```text
 > 2.0 × 0.4    = 0.8
 > 1.0 × (−0.7) = −0.7
 > 0.5 × 1.2    = 0.6
@@ -88,7 +90,7 @@ Now the three squashes, on that one number:
 
 Do the second row on the board with them, because it is the interesting one. `x = [−1.0, 2.0, 0.0]`:
 
-```
+```text
 −1.0 × 0.4    = −0.4
  2.0 × (−0.7) = −1.4
  0.0 × 1.2    =  0.0
@@ -121,7 +123,7 @@ That is the entire new idea. What makes it worth a section is this: **from today
 
 **Count them off a real printout with your finger.** Here is a grid of six numbers:
 
-```
+```text
 [[1 2]
  [3 4]
  [5 6]]
@@ -139,7 +141,7 @@ Three things you can do to a shape, and all three are today's syntax:
 
 **`G.T` and `G.reshape(2, 3)` give the same *shape* and different *numbers*, and this is the misconception of the week.** Look:
 
-```
+```text
 G       = [[1 2]      G.T             = [[1 3 5]      G.reshape(2, 3) = [[1 2 3]
            [3 4]                        [2 4 6]]                        [4 5 6]]
            [5 6]]
@@ -182,7 +184,7 @@ Here is the thing to get right, because it is the reason neural networks exist a
 
 **Take two layers with no squash between them.** One hidden layer of two units, then one output. Weights chosen so the arithmetic is easy:
 
-```
+```text
 h1 =  0.5·x₁ + 0.8·x₂ + 0.1
 h2 = −0.3·x₁ + 0.2·x₂ + 0.05
 
@@ -191,7 +193,7 @@ out = 1.0·h1 − 2.0·h2 + 0.3
 
 > **🔢 The maths, slowly.** Substitute the first two lines into the third. Take it one bracket at a time and do not skip a step.
 >
-> ```
+> ```text
 > out = 1.0 × (0.5x₁ + 0.8x₂ + 0.1) − 2.0 × (−0.3x₁ + 0.2x₂ + 0.05) + 0.3
 > ```
 >
@@ -202,7 +204,7 @@ out = 1.0·h1 − 2.0·h2 + 0.3
 >
 > Now collect. The `x₁` terms: `0.5 + 0.6 = 1.1`. The `x₂` terms: `0.8 − 0.4 = 0.4`. The plain numbers: `0.1 − 0.1 + 0.3 = 0.3`.
 >
-> ```
+> ```text
 > out = 1.1x₁ + 0.4x₂ + 0.3
 > ```
 >
@@ -212,7 +214,7 @@ out = 1.0·h1 − 2.0·h2 + 0.3
 
 **Now show it with a number, because algebra convinces about half the room and a number convinces the rest.** Take `x = [2.0, −1.0]`:
 
-```
+```text
 h1 = 0.5(2.0) + 0.8(−1.0) + 0.1  =  1.0 − 0.8 + 0.1  =  0.30
 h2 = −0.3(2.0) + 0.2(−1.0) + 0.05 = −0.6 − 0.2 + 0.05 = −0.75
 
@@ -222,7 +224,7 @@ one line:   out = 1.1(2.0) + 0.4(−1.0) + 0.3   = 2.20 − 0.40 + 0.30 = 2.10  
 
 **And now put a ReLU in the middle.** `h2` was `−0.75`, and ReLU turns that into `0`:
 
-```
+```text
 with ReLU:  out = 1.0(0.30) − 2.0(0) + 0.3 = 0.30 + 0 + 0.30 = 0.60
 ```
 
@@ -249,7 +251,7 @@ Every book says "ReLU is the default hidden activation" and almost none of them 
 
 In two weeks the class will learn that **slopes multiply along a chain**. Five layers of sigmoid means multiplying five of those numbers together, and the best case is
 
-```
+```text
 0.25 × 0.25 × 0.25 × 0.25 × 0.25 = 0.0009765625
 ```
 
@@ -391,11 +393,13 @@ the same idea as Week 4's scaling wearing different clothes.
 
 ## 🧰 Prep Checklist
 
+Use this section to get everything ready before class. It holds the complete runnable files.
+
 ### 20 minutes the night before
 
 - [ ] **Write the six index cards.** Thick pen, big enough to read from the back of the room. Three input cards, three weight cards, one bias card:
 
-```
+```text
    x1 = 2.0        x2 = 1.0        x3 = 0.5
 
    w1 = 0.4        w2 = -0.7       w3 = 1.2
@@ -505,6 +509,8 @@ row                       z     ReLU   sigmoid     tanh
 
 ## ⏱️ The Lesson, Minute by Minute
 
+Use this section to run the class. The table gives the shape of the hour; the steps that follow give the words to say.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — The Grumpy Judge | 7 | 7 | Three cards, one bias, one number on the board before the word *neuron* is used |
@@ -537,7 +543,7 @@ row                       z     ReLU   sigmoid     tanh
 
 **Do this:** Write them on the board as they come, in a column:
 
-```
+```text
    0.8
   -0.7
    0.6
@@ -578,7 +584,7 @@ row                       z     ReLU   sigmoid     tanh
 
 Work it on the board with them:
 
-```
+```text
 −1.0 × 0.4    = −0.4
  2.0 × (−0.7) = −1.4
  0.0 × 1.2    =  0.0
@@ -599,7 +605,7 @@ z             = −2.30
 
 **Do this:** Fill in the two rows of the board table, on calculators, with them:
 
-```
+```text
 row              z        ReLU   sigmoid     tanh
 [2, 1, 0.5]    0.20      0.200     0.550    0.197
 [-1, 2, 0]    -2.30      0.000     0.091   -0.980
@@ -615,7 +621,7 @@ Walk the sigmoid keystrokes out loud for `−2.30`: **`2.3`, `e^x` → `9.974182
 
 **Do this (7 min) — the new maths: the shape.** Write this on the board and nothing else:
 
-```
+```text
 [[1 2]
  [3 4]
  [5 6]]
@@ -631,7 +637,7 @@ Walk the sigmoid keystrokes out loud for `−2.30`: **`2.3`, `e^x` → `9.974182
 
 **Do this:** Write the other two grids beside it:
 
-```
+```text
 G.T = [[1 3 5]        G.reshape(2, 3) = [[1 2 3]
        [2 4 6]]                          [4 5 6]]
 ```
@@ -656,7 +662,7 @@ Real answers, so you can mark instantly: **`0.250000`, `0.104994`, `0.006648`.**
 
 **Do this:** Write on the board, large:
 
-```
+```text
 sigmoid's steepest is 0.25, ever
 ReLU's steepness is 1, everywhere it fires
 
@@ -816,7 +822,7 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: run all f
 
 **Do this:** Stand at the completed board table. Write four things underneath it:
 
-```
+```text
 z   = multiply, add          the pre-activation, any number at all
 a   = squash                 the activation, the neuron's output
 (3, 2)                       rows first, columns second, printed FIRST
@@ -950,7 +956,7 @@ The four rows and their answers, so you can mark at a glance:
 
 **Do this:** Rub out the neuron. Draw a two-layer network on the board — two inputs, **two** hidden units, one output — and write the weights up:
 
-```
+```text
 h1 =  0.5·x1 + 0.8·x2 + 0.1
 h2 = -0.3·x1 + 0.2·x2 + 0.05
 
@@ -967,7 +973,7 @@ out = 1.0·h1 - 2.0·h2 + 0.3
 
 **Do this:** Let them work for three minutes. Then take it on the board, one collect at a time:
 
-```
+```text
 out = 1.0(0.5x1 + 0.8x2 + 0.1) - 2.0(-0.3x1 + 0.2x2 + 0.05) + 0.3
 
 x1 terms:  0.5 + 0.6 = 1.1
@@ -989,7 +995,7 @@ out = 1.1·x1 + 0.4·x2 + 0.3
 
 **Do this — the number that finishes it.** Run the row `x = [2.0, −1.0]` on the board:
 
-```
+```text
 h1 = 0.30      h2 = -0.75
 
 no squash:  out = 0.30 + 1.50 + 0.30 = 2.10
@@ -1091,6 +1097,8 @@ Multiply, add, squash. Stack them. Nudge the weights against their slopes, over 
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+Use this section to spot the usual ways the lesson goes off course, and what to do right away.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **A twenty-circle network gets drawn in the first ten minutes** | It is the picture everybody expects, and it is fun to draw | **Rub it out.** Today is one neuron and three inputs. The big picture with shapes annotated is Week 17's figure and Week 19's project, and it lands properly there. Drawing it today buys you awe and costs you the collapse proof. |
@@ -1188,6 +1196,8 @@ The typing survives; Week 17 uses all of it again.
 ---
 
 ## ✅ Assessing Understanding
+
+Use this section to check, with exact wording, whether the lesson landed.
 
 Three checks, five minutes, exact wording.
 
@@ -1383,7 +1393,7 @@ ValueError: cannot reshape array of size 6 into shape (4,2)
 
 *Two layers, no squash. Substitute and simplify.*
 
-```
+```text
 h1 =  0.5·x1 + 0.8·x2 + 0.1
 h2 = -0.3·x1 + 0.2·x2 + 0.05
 out = 1.0·h1 - 2.0·h2 + 0.3
@@ -1391,19 +1401,19 @@ out = 1.0·h1 - 2.0·h2 + 0.3
 
 **Line 1 — substitute:**
 
-```
+```text
 out = 1.0(0.5x1 + 0.8x2 + 0.1) - 2.0(-0.3x1 + 0.2x2 + 0.05) + 0.3
 ```
 
 **Line 2 — multiply out both brackets.** The `−2.0` flips every sign inside the second one:
 
-```
+```text
 out = 0.5x1 + 0.8x2 + 0.1 + 0.6x1 - 0.4x2 - 0.1 + 0.3
 ```
 
 **Line 3 — collect:**
 
-```
+```text
 x1:      0.5 + 0.6  =  1.1
 x2:      0.8 - 0.4  =  0.4
 numbers: 0.1 - 0.1 + 0.3  =  0.3
@@ -1415,7 +1425,7 @@ out = 1.1·x1 + 0.4·x2 + 0.3
 
 *Now the check with numbers, for `x = [2.0, −1.0]`:*
 
-```
+```text
 h1 = 0.5(2.0) + 0.8(-1.0) + 0.1  = 1.0 - 0.8 + 0.1  =  0.30
 h2 = -0.3(2.0) + 0.2(-1.0) + 0.05 = -0.6 - 0.2 + 0.05 = -0.75
 

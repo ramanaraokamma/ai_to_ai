@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table gives the week's logistics in one place, so you can check them before you plan.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes |
@@ -380,6 +382,8 @@ loop, drawn grey because it stays closed until Week 12.*
 
 ## 🧰 Prep Checklist
 
+This section lists everything to prepare, in the order to do it, and the fallback if the laptop fails.
+
 ### 25 minutes the night before
 
 - [ ] **Make a folder** for the whole of Term 1 and work inside it. Weeks 1 to 7 all live here.
@@ -655,6 +659,8 @@ sum / 2020             : 28.065841584158417
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the plan for the whole lesson: the timetable first, then each segment in order.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -1157,6 +1163,8 @@ Full instructions in the next section. In the lesson flow:
 
 ## 🎲 The Activity, In Full
 
+This section is the full script for the Their Turn segment: setup, three parts, what finished looks like, and two variations.
+
 ### Setup
 
 **On the table:** the A4 `model.fit(X_train, y_train)` sheet · five index cards (plus spares) · a pen · workbook pages 1.3–1.4 · the Bug Log.
@@ -1298,6 +1306,8 @@ And the sentence for this week:
 
 ## ❓ Questions Students Ask This Week
 
+This section gives you an answer ready for each question students are likely to ask.
+
 **"Why can't we just train something? We did that last year."**
 
 Because last year the five decisions were made for you, on a worksheet, by somebody else — and you could not see them, so you could not get them wrong. That was correct for last year.
@@ -1364,6 +1374,8 @@ Yes, and it is deliberate, and there are three reasons worth saying.
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the ways the lesson tends to drift, why each happens, and what to do at once.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **The lesson turns into "let's just train a model"** | It is week 1 of a new year, everyone is keen, and they can already do it | Say the line and mean it: *"Week 3. Today we write the contract."* If you give in, Week 3 has nothing left and the whole term's argument collapses, because a student who has already got a score has no reason to care about the audit. |
@@ -1380,6 +1392,8 @@ Yes, and it is deliberate, and there are three reasons worth saying.
 ---
 
 ## 🧭 Differentiation
+
+This section says what to cut, add or change when a student is struggling, flying or not engaging.
 
 ### If the student is struggling
 
@@ -1498,6 +1512,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the exact words for setting the homework.
 
 **Say this:**
 
@@ -1741,9 +1757,17 @@ Model, two rows:
 
 ## 🔮 Next Week Preview
 
-Next week is the one that makes this term's honesty possible, and it starts by taking something away. Last year `train_test_split` gave two piles and that felt like the whole of careful measurement. **Week 2 says two piles was training wheels**, and adds a third: one pile to learn from, one to *choose* with, and one you open exactly once, at the very end, and then stop. The argument for the third pile is subtler than it looks and it is the intellectual centre of the week — **choosing is itself a kind of fitting.** If you try forty ideas and keep whichever scores best on your test pile, you have fitted your *decisions* to that pile, and its score is no longer an estimate of anything except your persistence. There is a demonstration for this that lands hard and takes eight seconds: twenty models that are pure random numbers, no learning of any kind, and the best of the twenty scores 0.5853 on validation — which looks like a real model — and 0.5125 on the sealed pile. Nothing learned anything. Choosing bought the rest.
+This section tells you what next week adds, so you can close today's lesson with a pointer to it.
 
-Week 2 also builds the number this whole term has to beat. Two dummy baselines, one that always says "not late" and one that guesses at random matching the proportions, and the first of those scores **0.7125 accuracy and 0.5000 AUC at the same time** — one model, two rulers, two completely different stories. That number goes in a box the student can point at all term, and it is the reason today's class balance check mattered. And they will prove a stratified split kept the proportions by printing them for all three piles: **0.2875 in every one**, which is not luck, it is what `stratify=y` is for.
+Next week is the one that makes this term's honesty possible, and it starts by taking something away. Last year `train_test_split` gave two piles and that felt like the whole of careful measurement. **Week 2 says two piles was training wheels**, and adds a third: one pile to learn from, one to *choose* with, and one you open exactly once, at the very end, and then stop.
+
+The argument for the third pile is subtler than it looks and it is the intellectual centre of the week — **choosing is itself a kind of fitting.** If you try forty ideas and keep whichever scores best on your test pile, you have fitted your *decisions* to that pile, and its score is no longer an estimate of anything except your persistence.
+
+There is a demonstration for this that lands hard and takes eight seconds: twenty models that are pure random numbers, no learning of any kind, and the best of the twenty scores 0.5853 on validation — which looks like a real model — and 0.5125 on the sealed pile. Nothing learned anything. Choosing bought the rest.
+
+Week 2 also builds the number this whole term has to beat. Two dummy baselines, one that always says "not late" and one that guesses at random matching the proportions, and the first of those scores **0.7125 accuracy and 0.5000 AUC at the same time** — one model, two rulers, two completely different stories. That number goes in a box the student can point at all term, and it is the reason today's class balance check mattered.
+
+And they will prove a stratified split kept the proportions by printing them for all three piles: **0.2875 in every one**, which is not luck, it is what `stratify=y` is for.
 
 **Prep early:** three things, and none of them is an install. **Keep this week's `make_data.py` exactly as it is** — next week imports it unchanged, and if the first `order_id` stops being 100955, every number in Week 2's script will disagree with the book. **Keep the five index cards**, because card four is deliberately blank and next week fills it in; handing back a blank card and saying "you can finish this now" is worth more than any recap. And **get a deck of playing cards**, twenty of them counted out with exactly five red, because next week's activity deals a three-way split by hand before any code runs, and the whole idea of stratifying lands in about forty seconds when you can see the red cards being shared out on purpose.
 

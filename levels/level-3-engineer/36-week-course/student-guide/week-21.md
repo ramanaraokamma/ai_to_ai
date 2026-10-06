@@ -25,7 +25,7 @@
 
 Six students, six revision sessions, six test results. You have met these numbers before — they are Week 12's.
 
-```
+```text
 hours:  1    2    3    4    5    6
 marks: 20   28   36   44   52   60
 ```
@@ -77,7 +77,7 @@ optimizer = torch.optim.SGD([w, b], lr=0.05)
 
 `SGD` stands for **stochastic gradient descent**, and the only part of that name worth explaining today is that it is **exactly the update rule from Week 15**:
 
-```
+```text
 w ← w − lr × slope
 ```
 
@@ -264,13 +264,13 @@ And the answer itself: **0.0023 marks.** On a test out of 60, the line is wrong 
 
 **Both knobs start at zero**, so every prediction is 0, and every error is `0 − marks`:
 
-```
+```text
 errors:  −20, −28, −36, −44, −52, −60
 ```
 
 **The loss** is the mean of the squared errors:
 
-```
+```text
 squared:  400 + 784 + 1296 + 1936 + 2704 + 3600  =  10720
 10720 ÷ 6  =  1786.6667
 ```
@@ -291,14 +291,14 @@ squared:  400 + 784 + 1296 + 1936 + 2704 + 3600  =  10720
 
 **The slope for `b`.** The bias multiplies 1 on every row, so it is just twice the average error — **no multiplication at all**, which is the bit people miss:
 
-```
+```text
 (−20) + (−28) + (−36) + (−44) + (−52) + (−60)  =  −240
 slope for b  =  2 × (−240) ÷ 6  =  −480 ÷ 6  =  −80.0
 ```
 
 **Then one step, with `lr = 0.05`:**
 
-```
+```text
 w ← 0 − 0.05 × (−326.6667)  =  0 + 16.3333  =  16.3333
 b ← 0 − 0.05 × (−80.0)      =  0 + 4.0      =   4.0
 ```
@@ -319,7 +319,7 @@ step   0  loss  1786.6666  w 16.3333  b  4.0000  dL/dw  -326.6667
 
 ## 💻 Type This
 
-One file, `fit_line.py`, built in five steps. Then one more short file.
+In this section you build the loop yourself, step by step, in one file called `fit_line.py`. Then you write one more short file.
 
 ### Step 1 — the data and the knobs, with a mistake on purpose
 
@@ -596,7 +596,7 @@ loss at steps 0, 100, 200, 300, 399: 1786.6666 0.4466 0.0112 0.0003 0.000007
 
 ## 🔍 Worked Examples
 
-Three complete programs, in three different worlds.
+This section runs the same five lines on three further datasets. Each program is complete, with its real output.
 
 ### Worked Example 1 — Pizza delivery: find the hidden line again (food)
 
@@ -654,7 +654,7 @@ found:  minutes = 6.0001 x km + 9.9997
 
 **And check step 0 by hand, exactly as you did for the marks.** Both knobs start at 0, so all five errors are `0 − minutes`:
 
-```
+```text
 errors:   −16, −22, −28, −34, −40
 squared:  256 + 484 + 784 + 1156 + 1600  =  4280
 loss   =  4280 ÷ 5  =  856.0            ✅ the screen says 856.0000
@@ -716,7 +716,7 @@ now wipe it and do one more:
 
 **Both columns are exact multiples**, and they are easy to check in your head:
 
-```
+```text
 w:  −192, −384, −576, −768        =  1, 2, 3, 4 times −192
 b:  −56, −112, −168, −224         =  1, 2, 3, 4 times −56
 ```
@@ -790,7 +790,7 @@ Read the miss column. The 4 km delivery is out by **−1.4000** minutes, and eve
 
 ## 🐞 When It Breaks
 
-Every message below came from really running a broken version of this week's code.
+Use this section when a run crashes or misbehaves. Every message below came from really running a broken version of this week's code.
 
 > **The recipe for every silent training bug, and it never changes: read the gradient column, not the loss column.** A gradient that **refuses to shrink — it keeps swinging in size and flipping sign —** means the pile. A gradient of **`None`** means no `backward()`. A gradient that is **right while nothing moves** means no `step()`. One column, three different diagnoses.
 
@@ -889,7 +889,7 @@ Not *"is it going down"* — it goes down at step 1, which is exactly what makes
 
 ## 🎲 What We Did In Class
 
-If you missed it, here is the whole lesson. You need five index cards and a calculator.
+This section is a record of the lesson, for anyone who missed it. You need five index cards and a calculator.
 
 **The hook.** Six pairs on the board, and **not** the line they came from. *"There is a straight line hiding in there. I know what it is and I am not telling you. In about twenty minutes a five-line program is going to find it."* Somebody spotted `8x + 12` in under a minute; it was written on a piece of paper, folded, and put under something.
 
@@ -944,6 +944,8 @@ Then the folded paper came out: **8 and 12**, against the program's **8.0014 and
 
 ## 💬 Talk About It
 
+Three questions to argue about with a friend or a teacher. Each has a hint underneath.
+
 **1. Why doesn't PyTorch just zero the gradients for you?**
 
 *Hint:* find the one real use first. A batch too big for memory: you want the gradient over 1,000 rows and only 250 fit at once, so you run four forward-and-backward passes, let the gradients pile up, and take one step. If each piece's loss is divided by 4 first (or you use a sum rather than a mean), the total is **exactly** the gradient over 1,000 rows, and you never held more than 250 rows at a time. Then the cost: the single most common PyTorch bug in the world, and hours lost by every beginner. Then argue it — **you are allowed to think the default is wrong.** Other frameworks chose differently. You still have to type line 1 every time. Finish on the honest closer: *is there any library decision you have met that was purely a win, with no cost?*
@@ -959,6 +961,8 @@ Then the folded paper came out: **8 and 12**, against the program's **8.0014 and
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four wrong beliefs that are easy to pick up about the loop, each set beside the right version.
 
 ### Trick 1 — "`zero_grad()` resets the model"
 
@@ -995,6 +999,8 @@ The only way it can hurt you is if you accidentally wrap your **training** step 
 
 ## 🌍 Where You've Seen This
 
+The same loop shape turns up well outside this file. Here are six places.
+
 1. **Every model you have ever heard of.** The training script for a language model running on ten thousand machines has these five lines in it, in this order. More data, more knobs, more machines, same loop.
 2. **`model.fit(X, y)` in Keras, and `.fit()` on scikit-learn's neural-network models (such as `MLPClassifier`).** Those are one-line wrappers around a loop like this one. (Not every scikit-learn `.fit()` is a loop — `LinearRegression` uses algebra, as Talk About It 2 says.) **You are now looking at what is inside the wrapper.**
 3. **A thermostat.** Measure how wrong the temperature is, work out which way to move, move a bit, measure again. No gradients, but the same shape: measure, decide, act, repeat.
@@ -1030,6 +1036,8 @@ nothing new was invented today — the loop you built in Week 15 just got its fi
 ---
 
 ## 🔑 Remember This
+
+The points to keep from this week, followed by a card of the syntax.
 
 - **Five lines, in this order, for every model in this course and every model you will ever use:** `optimizer.zero_grad()` · forward · loss · `loss.backward()` · `optimizer.step()`.
 - **The order is forced.** 4 needs 3. 3 needs 2. 5 needs 4. And 1 goes first because **4 adds** to whatever is already in `.grad`.
@@ -1080,6 +1088,8 @@ print("average miss: %.4f" % gap.item())
 ---
 
 ## 📓 New Words
+
+Five words from this week, with an example of each.
 
 ![Five words from Week 21, drawn](../figures/fig-w21-6-vocab-icons.svg)
 *Figure 21.6 — Five words from Week 21, drawn.*

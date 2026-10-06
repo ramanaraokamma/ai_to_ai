@@ -1220,7 +1220,7 @@ Why that is always wrong: the model has already seen every one of those 1,200 ro
 
 **Part 1(c).**
 
-```
+```text
 C = (A + B + C) − (A + B) = 60 − 40   = +20   -> +0.0020
 A = (A + B + C) − (B + C) = 60 − (−20) = +80  -> +0.0080
 B = (A + B + C) − (A + C) = 60 − 100  = −40   -> −0.0040

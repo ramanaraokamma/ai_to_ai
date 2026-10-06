@@ -68,7 +68,7 @@ Week 31's regex chops it into five tokens: `not`, `fresh`, `and`, `not`, `hot`.
 
 Now the model looks up one weight per token and adds. Three of the five tokens have a column in the vocabulary, and two do not:
 
-```
+```text
 token    tf-idf value   learned coefficient      contribution
 -----    ------------   -------------------      ------------
 and          0.2461   ×          +0.0629    =         +0.0155
@@ -82,7 +82,7 @@ bias                                         =         +0.0124
 
 Check the sum yourself: `0.0155 + 1.9241 + 2.0701 + 0.0124 = 4.0221`, and the extra thousandth is rounding in the printed pieces. **Then Week 13's squash:**
 
-```
+```text
 chance of positive = 1 / (1 + e^-4.0222) = 0.9824
 ```
 
@@ -105,7 +105,7 @@ Now take the word `not`. It has **no column at all**. Not a zero — nothing. Th
 
 Here is the part that should make you sit up. **Suppose you were sloppy and built the vocabulary from all 80 reviews instead of just the 60 training rows.** Then `not` *does* get a column, because one of the held-out reviews is `"i would not order from here again"`. What happens?
 
-```
+```text
 leaked model: coefficient of 'not' = 0.0
 'not' appears in 0 of the 60 TRAINING reviews
 ```
@@ -114,7 +114,7 @@ leaked model: coefficient of 'not' = 0.0
 
 It did do one thing, though, and it is subtle and worth knowing:
 
-```
+```text
   and      tfidf 0.1020 coef +0.0762 -> +0.0078
   fresh    tfidf 0.2966 coef +2.8950 -> +0.8587
   hot      tfidf 0.2966 coef +2.9443 -> +0.8733
@@ -130,7 +130,7 @@ It did do one thing, though, and it is subtle and worth knowing:
 
 Here is the real output, with a third column that most tutorials leave out:
 
-```
+```text
 15 words that push hardest towards NEGATIVE
    -3.2388   cold         in  9 of 60 reviews
    -3.2033   rude         in 11 of 60 reviews
@@ -172,7 +172,7 @@ Here is the real output, with a third column that most tutorials leave out:
 
 Twelve of them, all held out, none of them ever trained on. Here is what the model does, and it is the moment of the lesson:
 
-```
+```text
  #  true pred  p(positive)  verdict  review
  1    0    1     0.9824     WRONG   not fresh and not hot
  2    0    1     0.9616     WRONG   not tasty and not generous
@@ -204,7 +204,7 @@ Everybody's first instinct — including every adult's — is: *count pairs of w
 
 `TfidfVectorizer(ngram_range=(1, 2))` does exactly that. Here is what it buys:
 
-```
+```text
 columns with single words only  : 97
 columns with pairs added        : 318
 extra columns bigrams bought    : 221
@@ -242,14 +242,14 @@ That is not an obvious idea and it is not a comfortable one. It is also the reas
 
 There is a repair that works, and it costs no new data at all. **Glue a negator onto the word after it before you count anything:**
 
-```
+```text
 "not fresh and not hot"    →    "not_fresh and not_hot"
 "hardly a delicious meal"  →    "hardly_delicious meal"
 ```
 
 Now `not_fresh` is a single token, so it is a single column, so it can have its own weight. Run all five configurations:
 
-```
+```text
 1 single words                   cols=97    held-out=1.0000  traps=0/12
 2 + pairs of words               cols=318   held-out=1.0000  traps=0/12
 3 + pairs + 8 negation rows      cols=337   held-out=0.9500  traps=0/12
@@ -261,7 +261,7 @@ Now `not_fresh` is a single token, so it is a single column, so it can have its 
 
 **And now the part that makes this the best twenty minutes of the term.** Look at *how* it got those six right:
 
-```
+```text
 bias: 0.0124
 
  #  p(pos)  pred true  words that still have a column
@@ -289,7 +289,7 @@ bias: 0.0124
 
 `classification_report` on the twenty held-out reviews:
 
-```
+```text
               precision    recall  f1-score   support
 
     negative      1.000     1.000     1.000        10
@@ -300,7 +300,7 @@ bias: 0.0124
 
 **Twenty out of twenty.** And the baseline that always guesses *negative*:
 
-```
+```text
     negative      0.500     1.000     0.667        10
     positive      0.000     0.000     0.000        10
 
@@ -919,7 +919,7 @@ print("   is 'not' in the vocabulary?", "not" in set(words))
 
 **Do this:** Now the important board work of the lesson. Write this table, **leaving the right-hand column blank**:
 
-```
+```text
 token        tf-idf     coefficient     contribution
 -----        ------     -----------     ------------
 and          0.2461        +0.0629
@@ -1270,7 +1270,7 @@ score on the twelve traps: 0 out of 12
 
 ## 🐞 The Debugging Clinic
 
-Every message below came from running a broken version of this week's actual code. **The tracebacks are trimmed to the last frame plus the message; the full versions run twelve lines deep through scikit-learn and the last line is always the one that matters.**
+Use this table when the student's screen shows an error. Every message below came from running a broken version of this week's actual code. **The tracebacks are trimmed to the last frame plus the message; the full versions run twelve lines deep through scikit-learn and the last line is always the one that matters.**
 
 | What the student sees (real message) | What it means | Most likely cause | The fix |
 |---|---|---|---|
@@ -1680,7 +1680,7 @@ None of these need syntax from a later week.
 
 Write two sentences at the top:
 
-```
+```text
 A:  the pizza was hot and fresh
 B:  the pizza was not hot and not fresh
 ```
@@ -2292,6 +2292,16 @@ tokens: ['not', 'tasty', 'and', 'not', 'generous']
 
 ## 🔮 Next Week Preview
 
-Next week is the first half of the capstone, and it changes the question entirely. For thirty-three weeks the question has been *does it work*. **From next week the question is *can somebody else use it*.** The student picks one of the two things they have built — the Week 26 digits CNN or this week's sentiment engine — and turns it into **an artifact with a contract**: a single file on disk that somebody who has never met them can load and call, plus a written promise about what goes in, what comes out, and what happens when the input is wrong. They will write a real command-line program with `argparse.ArgumentParser()`, so it can be run as `python3 predict.py --text "not fresh and not hot"` rather than by editing a file; they will read and write JSON so the contract is machine-checkable as well as human-readable; they will time the thing with `time.perf_counter()` and find out that **loading the model takes forty times as long as making a prediction**, which is the single most important fact about deploying anything and it is not in any of the thirty-three weeks so far. And they will discover the first law of shipping, which is that **the artifact must contain the vectorizer**: a saved `LogisticRegression` without its `TfidfVectorizer` is ninety-eight numbers and no way to know which word column 43 was, and this week's `make_pipeline` is exactly what makes that mistake impossible.
+This section says what next week asks of the student and what to prepare tonight.
 
-**To prep early:** three things. **One — the student must decide this week which model they are shipping**, and they should decide it before they leave the room, because next week begins with `joblib.dump` and not with a debate. **Say this: the sentiment engine is the easier one to ship and the more embarrassing one to demonstrate, because somebody in the audience will type the word `not`.** That is an argument for shipping it, not against. **Two — check that `import argparse`, `import json` and `from pathlib import Path` all work tonight.** All three are in the Python standard library, nothing downloads, but you want to have seen them load, and `argparse` in particular is the first module all year that is not from scikit-learn. **Three — Week 34 needs the Week 33 artifact to still exist and still run.** Have the student check tonight that `python3 sentiment.py` prints `1.0000` and `python3 gauntlet.py` prints `0 out of 12`, and **have them write those two numbers on a sticky note and put it on the laptop**, because next week they will be asked to prove the shipped version behaves identically to the version they built, and a deployed model that quietly disagrees with the notebook it came from is the commonest bug in the whole profession.
+Next week is the first half of the capstone, and it changes the question entirely. For thirty-three weeks the question has been *does it work*. **From next week the question is *can somebody else use it*.** The student picks one of the two things they have built — the Week 26 digits CNN or this week's sentiment engine — and turns it into **an artifact with a contract**: a single file on disk that somebody who has never met them can load and call, plus a written promise about what goes in, what comes out, and what happens when the input is wrong.
+
+They will write a real command-line program with `argparse.ArgumentParser()`, so it can be run as `python3 predict.py --text "not fresh and not hot"` rather than by editing a file; they will read and write JSON so the contract is machine-checkable as well as human-readable; they will time the thing with `time.perf_counter()` and find out that **loading the model takes forty times as long as making a prediction**, which is the single most important fact about deploying anything and it is not in any of the thirty-three weeks so far.
+
+And they will discover the first law of shipping, which is that **the artifact must contain the vectorizer**: a saved `LogisticRegression` without its `TfidfVectorizer` is ninety-eight numbers and no way to know which word column 43 was, and this week's `make_pipeline` is exactly what makes that mistake impossible.
+
+**To prep early:** three things.
+
+1. **One — the student must decide this week which model they are shipping**, and they should decide it before they leave the room, because next week begins with `joblib.dump` and not with a debate. **Say this: the sentiment engine is the easier one to ship and the more embarrassing one to demonstrate, because somebody in the audience will type the word `not`.** That is an argument for shipping it, not against.
+2. **Two — check that `import argparse`, `import json` and `from pathlib import Path` all work tonight.** All three are in the Python standard library, nothing downloads, but you want to have seen them load, and `argparse` in particular is the first module all year that is not from scikit-learn.
+3. **Three — Week 34 needs the Week 33 artifact to still exist and still run.** Have the student check tonight that `python3 sentiment.py` prints `1.0000` and `python3 gauntlet.py` prints `0 out of 12`, and **have them write those two numbers on a sticky note and put it on the laptop**, because next week they will be asked to prove the shipped version behaves identically to the version they built, and a deployed model that quietly disagrees with the notebook it came from is the commonest bug in the whole profession.

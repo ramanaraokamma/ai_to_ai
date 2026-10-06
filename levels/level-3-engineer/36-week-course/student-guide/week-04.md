@@ -593,6 +593,8 @@ weather codes: [0 1 2 1 0]
 
 ## 🔍 Worked Examples
 
+This section works through three full examples: the rulers on five numbers, the rulers on a real column, and the two kinds of category on six students.
+
 ### Worked Example 1 — Five numbers on graph paper (the class activity)
 
 No computer at all for the first ten minutes. One sheet of graph paper, one calculator, one pencil.
@@ -932,6 +934,8 @@ ValueError: could not convert string to float: 'clear'
 
 ## 🎲 What We Did In Class
 
+This section records how the lesson went, so you can compare it with your own run.
+
 ### The two ranges on the board
 
 Nothing on the screen. Just `distance_km 0.33 … 14.40` and `driver_experience_months 0 … 59`, and the question *"does the model know one kilometre matters more than one month?"* — followed by a long silence that nobody filled. Then: *"how would you make the two bars the same length?"* Every suggestion went on the board and stayed there. Two of them turned out to be today's lesson.
@@ -985,6 +989,8 @@ And the door into Week 5: today you put the columns you were *given* onto a sens
 
 ## 💬 Talk About It
 
+These questions are for discussing with a partner or at home. Work out the numbers first, then talk.
+
 **1. Somebody records driver experience in *years* instead of months. Does the model get better?**
 
 Work out what happens to the two ranges first: 0–59 months becomes 0–4.9 years.
@@ -1006,6 +1012,8 @@ Think about how many rows you have and how many columns each choice costs.
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists four claims that sound reasonable this week. Each one is set out below with its reply.
 
 ### Trick 1 — "0 to 1 is neater, so min-max is better"
 
@@ -1041,6 +1049,8 @@ A rule is easier to remember than an idea, which is why this one is so tempting.
 ---
 
 ## 🌍 Where You've Seen This
+
+This section connects the week's two rulers and two encoders to things outside the course.
 
 1. **Every exam mark you have ever been given as a grade boundary.** *"Two marks above the class average"* is a raw distance; *"in the top 5%"* is a close cousin of a z-score (a rank instead of a distance). Standardized test scores — the ones that let you compare a paper sat this year with one sat last year — are literally this arithmetic, and the "typical gap" is why a mark of 62 can be a good year or a bad one.
 2. **A phone's screen brightness slider.** Genuinely 0 to 1 with hard limits at both ends: min-max is the right ruler and nothing can escape the box. **This is the honest use case**, and it is why min-max exists at all.
@@ -1078,6 +1088,8 @@ still grey — you open it in Week 12.*
 ---
 
 ## 🔑 Remember This
+
+This section collects the week's key points, a syntax card and a one-line maths reminder.
 
 - **A model multiplies each column by one weight and adds up, so the size of your numbers is not neutral.** A column measured in months shouts over a column measured in kilometres for no better reason than the unit somebody picked.
 - **A standard deviation is a typical distance from the average** (squaring makes big gaps count extra, so it comes out a little bigger than the plain average gap). Five operations in this order: **subtract, square, add, divide, square-root.** And you square because averaging the raw distances gives exactly zero, every time, for every list — that is what a mean is.

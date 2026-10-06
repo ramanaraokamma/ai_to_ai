@@ -300,7 +300,7 @@ ________________________________________________________________
 
 **A5. Read the filter and predict its answers.** Here is one real learned filter, filter 4:
 
-```
+```text
  −0.185   0.784   0.742
   0.469   0.383  −0.196
  −0.105  −0.977  −0.681
@@ -338,6 +338,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+In this set you write short pieces of code yourself, from one line up to a whole program.
 
 ### B1 — one line
 
@@ -797,7 +799,7 @@ ________________________________________________________________
 
 **Step 3:**
 
-```
+```text
 rock:  0.149569 ÷ 1.179766 = 0.126778
 pop :  1.000000 ÷ 1.179766 = 0.847626
 jazz:  0.030197 ÷ 1.179766 = 0.025596
@@ -921,7 +923,7 @@ RuntimeError: expected scalar type Long but found Float
 
 **Its answer to the bright-top patch:**
 
-```
+```text
 row 0:  (−0.185 × 1) + (0.784 × 1) + (0.742 × 1)      = −0.185 + 0.784 + 0.742  = +1.341
 row 1:  ( 0.469 × 1) + (0.383 × 1) + (−0.196 × 1)     =  0.469 + 0.383 − 0.196  = +0.656
 row 2:  (−0.105 × −1) + (−0.977 × −1) + (−0.681 × −1) =  0.105 + 0.977 + 0.681  = +1.763

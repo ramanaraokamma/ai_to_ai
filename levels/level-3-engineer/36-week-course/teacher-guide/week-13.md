@@ -58,7 +58,7 @@ Here is the whole model. You are guessing whether a pizza order will be late. Yo
 
 You believe each pending order adds a bit of worry, and each kilometre adds a bit of worry, and you start off fairly relaxed because most orders are fine. Write that down as arithmetic:
 
-```
+```text
 worry = 0.6 × (orders in the oven) + 0.4 × (km to drive) − 3
 ```
 
@@ -70,7 +70,7 @@ worry = 0.6 × (orders in the oven) + 0.4 × (km to drive) − 3
 
 **Do one on paper right now, because you are going to do it live in class.** Four orders in the oven, five kilometres to drive:
 
-```
+```text
 0.6 × 4 = 2.4
 0.4 × 5 = 2.0
 2.4 + 2.0 − 3 = 1.4
@@ -104,13 +104,13 @@ Do all four of these now, on the actual calculator you will use in class:
 
 **Now the squasher.** Take `e^(−z)`, add 1, and divide 1 by the answer:
 
-```
+```text
 squashed = 1 ÷ (1 + e^(−z))
 ```
 
 Four times, with the four numbers above:
 
-```
+```text
 z = −2 :   e^(−z) = 7.389056    1 + 7.389056 = 8.389056    1 ÷ 8.389056 = 0.1192
 z =  0 :   e^(−z) = 1.000000    1 + 1.000000 = 2.000000    1 ÷ 2.000000 = 0.5000
 z = 1.4:   e^(−z) = 0.246597    1 + 0.246597 = 1.246597    1 ÷ 1.246597 = 0.8022
@@ -144,7 +144,7 @@ Sometimes you have a probability and you want to know what raw score would have 
 
 This is the language of horse racing and it is worth saying so. If `p = 0.90`, then
 
-```
+```text
 odds = 0.90 ÷ 0.10 = 9
 ```
 
@@ -154,7 +154,7 @@ Nine. Read it out loud as **"nine to one on"** — nine times as likely to happe
 
 > **log-odds** — the natural logarithm of the odds, `ln(odds)`. And this number is exactly `z`.
 
-```
+```text
 z = ln(9) = 2.197225
 ```
 
@@ -228,7 +228,7 @@ Two different divisions, and the `np.where` picks the right one per item. `retur
 
 **Both divisions give the same answer**, which is worth checking on paper once so you believe it:
 
-```
+```text
 for z = 1.4 :   1 ÷ (1 + e^(−1.4)) = 1 ÷ 1.246597 = 0.802184
 for z = −1.4:   e^(−1.4) ÷ (1 + e^(−1.4)) = 0.246597 ÷ 1.246597 = 0.197816
                 and 1 ÷ (1 + e^(1.4)) = 1 ÷ 5.055200 = 0.197816   ← the same
@@ -309,7 +309,7 @@ biggest disagreement over all 200 rows: 0.000000000000
 
 Check row 0 on the board while it is on screen, because it takes fifteen seconds and it is the whole point:
 
-```
+```text
 3.6298 × 0.6170     =  2.2395866
 −0.5546 × (−1.1940) =  0.6621924
 2.2395866 + 0.6621924 − 0.7127 = 2.1890790     ← the z column
@@ -498,7 +498,7 @@ squash( 1000) = 1.0000
 
 **Do this:** Nothing on the screen. On the board, write only this:
 
-```
+```text
 worry = 0.6 × (orders in the oven) + 0.4 × (km to drive) − 3
 ```
 
@@ -510,7 +510,7 @@ worry = 0.6 × (orders in the oven) + 0.4 × (km to drive) − 3
 
 **Do this:** Wait. Somebody gets `1.4`. Write the working underneath so everybody sees the three steps:
 
-```
+```text
 0.6 × 4 = 2.4
 0.4 × 5 = 2.0
 2.4 + 2.0 − 3 = 1.4
@@ -558,7 +558,7 @@ worry = 0.6 × (orders in the oven) + 0.4 × (km to drive) − 3
 
 **Do this:** Write the four rows on the board as the class calls them out. **Do all four; do not shortcut.**
 
-```
+```text
 z = −2     e^(−z) = 7.389056
 z =  0     e^(−z) = 1.000000
 z =  1.4   e^(−z) = 0.246597
@@ -579,7 +579,7 @@ z =  3     e^(−z) = 0.049787
 
 **Do this (6 min) — build the squash, live, on the board.** Write:
 
-```
+```text
 p = 1 ÷ (1 + e^(−z))
 ```
 
@@ -589,7 +589,7 @@ p = 1 ÷ (1 + e^(−z))
 
 **Do this:** Fill this in on the board, one row at a time, class calling out. **Every division on a calculator, out loud.**
 
-```
+```text
 z = −2 :   7.389056  →  8.389056  →  1 ÷ 8.389056 = 0.1192
 z =  0 :   1.000000  →  2.000000  →  1 ÷ 2.000000 = 0.5000
 z = 1.4:   0.246597  →  1.246597  →  1 ÷ 1.246597 = 0.8022
@@ -606,7 +606,7 @@ z =  3 :   0.049787  →  1.049787  →  1 ÷ 1.049787 = 0.9526
 
 **Do this:** Now name it, and only now.
 
-```
+```text
 sigmoid(z)  =  1 ÷ (1 + e^(−z))
 ```
 
@@ -628,7 +628,7 @@ sigmoid(z)  =  1 ÷ (1 + e^(−z))
 >
 > Two steps. First: **odds.** This is horse-racing language and it is exactly the right language. The chance it happens, divided by the chance it does not."
 
-```
+```text
 odds = 0.90 ÷ 0.10 = 9
 ```
 
@@ -636,7 +636,7 @@ odds = 0.90 ÷ 0.10 = 9
 >
 > Second step: take the natural log. Type `9`, press `ln`."
 
-```
+```text
 z = ln(9) = 2.197225
 ```
 
@@ -815,7 +815,7 @@ biggest disagreement over all 200 rows: 0.000000000000
 
 **Do this:** Print the first five rows too, then work row 0 on the board while it is on screen.
 
-```
+```text
 3.6298 × 0.6170     =  2.2395866
 −0.5546 × (−1.1940) =  0.6621924
 2.2395866 + 0.6621924 − 0.7127 = 2.1890790
@@ -842,7 +842,7 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: eight ord
 
 **Do this:** Stand next to the graph paper with eight points and a curve drawn through them. Write four lines on the board underneath:
 
-```
+```text
 z = w1·x1 + w2·x2 + b        any number at all
 e^(−z)                       shrinks fast, never zero
 p = 1 ÷ (1 + e^(−z))         always between 0 and 1
@@ -947,7 +947,7 @@ And the sentence for this week:
 
 Each student computes their `z`, writing all three steps:
 
-```
+```text
 0.6 × (oven)  =  ____
 0.4 × (km)    =  ____
 add them, then subtract 3  →  z = ____
@@ -961,7 +961,7 @@ Correct answers, for your eyes: `−3.00, −2.00, −1.00, 0.00, 0.80, 1.40, 3.
 
 Each student computes `sigmoid(z)` to four decimal places, writing all three calculator steps:
 
-```
+```text
 e^(−z)          =  ____        (type z, press +/−, press e^x)
 1 + that        =  ____
 1 ÷ that        =  ____   ← to 4 decimal places
@@ -1310,7 +1310,7 @@ z=  6.00   e^(-z)=    0.002479   1+e^(-z)=    1.002479   p=0.9975
 
 **1. `p = 0.90`**
 
-```
+```text
 odds = 0.90 ÷ 0.10 = 9.000000
 z    = ln(9) = 2.197225
 check: e^(−2.197225) = 0.111111,  1 ÷ 1.111111 = 0.900000   ✓
@@ -1318,7 +1318,7 @@ check: e^(−2.197225) = 0.111111,  1 ÷ 1.111111 = 0.900000   ✓
 
 **2. `p = 0.62`**
 
-```
+```text
 odds = 0.62 ÷ 0.38 = 1.631579
 z    = ln(1.631579) = 0.489548
 check: e^(−0.489548) = 0.612903,  1 ÷ 1.612903 = 0.620000   ✓
@@ -1326,7 +1326,7 @@ check: e^(−0.489548) = 0.612903,  1 ÷ 1.612903 = 0.620000   ✓
 
 **3. `p = 0.50`**
 
-```
+```text
 odds = 0.50 ÷ 0.50 = 1.000000
 z    = ln(1) = 0.000000
 check: e^0 = 1,  1 ÷ 2 = 0.500000   ✓
@@ -1334,7 +1334,7 @@ check: e^0 = 1,  1 ÷ 2 = 0.500000   ✓
 
 **4. `p = 0.05`**
 
-```
+```text
 odds = 0.05 ÷ 0.95 = 0.052632
 z    = ln(0.052632) = −2.944439
 check: e^(2.944439) = 19.000000,  1 ÷ 20.000000 = 0.050000   ✓
@@ -1537,7 +1537,7 @@ biggest disagreement over all 200 rows: 0.000000000000
 
 **(a) Check row 0 by hand.**
 
-```
+```text
 3.6298 × 0.6170     =  2.239586
 −0.5546 × (−1.1940) =  0.662192
 2.2395866 + 0.6621924 − 0.7127 = 2.1890790      ≈ the 2.1891 on screen

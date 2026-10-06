@@ -252,6 +252,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for practising reading terms, tables, matrices and code before you write any of your own.
+
 **A1. Match the word to the thing.** Write the letter.
 
 | Word | | Description |
@@ -366,6 +368,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing short programs and recording what they print. Each task says what the output should look like and how you will know you are done.
 
 ### B1 — one line
 
@@ -632,6 +636,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions are for thinking about what this week's results mean. Write a paragraph for each.
+
 **T1.** Two of this week's experiments produced results a textbook would not have promised. Wrapped augmentation bought **+0.00** points from five times the data in our seed-0 run. Transfer learning came out **5.6 points worse** than starting from nothing. **Write a paragraph** about what you would have learned instead if both experiments had worked. Is a technique whose price you have measured more useful than one you believe in? And what would you now do differently if you read a paper that only reported the runs that worked?
 
 ________________________________________________________________
@@ -799,6 +805,8 @@ ________________________________________________________________
 
 ## 📊 Self-Check
 
+This page is for marking how sure you feel about each skill from this week. Tick one face per row.
+
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
 | say what `np.roll` does to the ink that falls off an edge | | | |
@@ -821,6 +829,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+This is the end of the workbook. Finish your own answers in pen first, then open the box below to check them.
 
 <details>
 <summary>Check your answers</summary>
@@ -973,7 +983,7 @@ ink per picture: [9. 9. 9. 9.]
 
 The four candidates, read carefully off the grid:
 
-```
+```text
 8 & 9:  row 8 said 9 = 4,  row 9 said 8 = 1   ->  5
 6 & 8:  row 6 said 8 = 2,  row 8 said 6 = 1   ->  3
 5 & 8:  row 5 said 8 = 3,  row 8 said 5 = 0   ->  3
@@ -1323,14 +1333,14 @@ Because "the usual set" is not a thing. A library written for photographs will h
 
 **Diagnose the worst confusion pair:**
 
-```
+```text
 row 8, column 1 = 3      three real 8s were called 1
 row 1, column 8 = 1      one real 1 was called 8
                  ---
                   4      of the 11 mistakes in total
 ```
 
-```
+```text
 average 1, ink per column: [  0   5  42  93 106  56   9   2]
 average 8, ink per column: [  0   9  71  87  86  66  11   0]
 ```

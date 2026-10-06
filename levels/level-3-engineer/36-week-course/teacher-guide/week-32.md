@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+The lesson in one table, so you can see what it needs before you plan.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes |
@@ -38,6 +40,8 @@ Observable evidence: page 32.2 with the four-stage arithmetic in pen and `0.8410
 ---
 
 ## 🧑‍🏫 What YOU Need to Know First
+
+Read this before class. It covers the ideas and the hand arithmetic you will teach.
 
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not whole files** — each one carries on from the one above. **The complete runnable file is in the Prep Checklist and the Answer Key.**
 
@@ -110,7 +114,7 @@ was     : 2   (d1, d2)
 
 Here is the formula scikit-learn actually uses, with its default settings. **Write it on the board and then immediately do it on four real numbers, because a formula nobody has evaluated is a decoration.**
 
-```
+```text
 idf(t) = ln( (1 + n) / (1 + df(t)) ) + 1
 
     n     = how many documents there are         (here, 4)
@@ -225,7 +229,7 @@ length of every row: [1. 1. 1. 1.]
 
 Two people order pizza toppings. Each order is three numbers: how many portions of cheese, pepperoni, olives.
 
-```
+```text
 Ravi : (2 cheese, 1 pepperoni, 0 olives)   ->  a = (2, 1, 0)
 Sam  : (1 cheese, 2 pepperoni, 0 olives)   ->  b = (1, 2, 0)
 ```
@@ -504,6 +508,8 @@ measured against a baseline. Only the *form* of the numbers changed, and the fli
 ---
 
 ## 🧰 Prep Checklist
+
+What to prepare before class, and the complete runnable file.
 
 ### 30 minutes the night before
 
@@ -814,6 +820,8 @@ Reshape your data either using array.reshape(-1, 1) if your data has a single fe
 
 ## ⏱️ The Lesson, Minute by Minute
 
+The plan for the whole lesson, segment by segment.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — `and` 55 Times, `rude` 10 | 7 | 7 | The complaint from last week, and the shape of the repair |
@@ -828,7 +836,7 @@ Reshape your data either using array.reshape(-1, 1) if your data has a single fe
 
 **Do this:** Nothing on the screen. Write two lines on the board, large:
 
-```
+```text
 and    55
 rude   10
 ```
@@ -875,7 +883,7 @@ rude   10
 
 **Do this:** Write the four whiteboard reviews up. **Keep them up for the whole lesson.**
 
-```
+```text
 d1: The pizza was great!
 d2: The pizza was cold.
 d3: Great pizza, great service.
@@ -896,7 +904,7 @@ d4: Cold service and cold food.
 
 **Do this:** Write both numbers on the board, next to each other, and box them:
 
-```
+```text
 cold:   occurrences 3        documents 2
 ```
 
@@ -908,7 +916,7 @@ cold:   occurrences 3        documents 2
 
 **Do this:** Now build the `df` column on the IDF wall sheet, out loud, with the class calling out. **Three minutes, eight numbers.**
 
-```
+```text
 and 1   cold 2   food 1   great 2   pizza 3   service 2   the 2   was 2
 ```
 
@@ -922,7 +930,7 @@ and 1   cold 2   food 1   great 2   pizza 3   service 2   the 2   was 2
 
 **Do this:** Write the formula on the board. **Then immediately evaluate it, before anybody has time to be frightened of it.**
 
-```
+```text
 idf = ln( 5 / (1 + df) ) + 1
 ```
 
@@ -940,7 +948,7 @@ idf = ln( 5 / (1 + df) ) + 1
 
 **Do this:** Now fill in the other two columns of the wall sheet, live, with the class on calculators. **Do `and` and `pizza` first, because they are the two extremes.**
 
-```
+```text
 and     df 1    5 / 2 = 2.5     ln(2.5)  = 0.916291    idf = 1.916291
 pizza   df 3    5 / 4 = 1.25    ln(1.25) = 0.223144    idf = 1.223144
 ```
@@ -957,7 +965,7 @@ pizza   df 3    5 / 4 = 1.25    ln(1.25) = 0.223144    idf = 1.223144
 
 **Do this:** Write on the board:
 
-```
+```text
 in your 60 reviews:   and  idf 1.0855      rude  idf 2.7130
 ```
 
@@ -982,7 +990,7 @@ in your 60 reviews:   and  idf 1.0855      rude  idf 2.7130
 
 **Do this:** Now cosine similarity, and **do it on toppings, not documents.** Write:
 
-```
+```text
 Ravi : 2 cheese, 1 pepperoni, 0 olives     a = (2, 1, 0)
 Sam  : 1 cheese, 2 pepperoni, 0 olives     b = (1, 2, 0)
 ```
@@ -995,7 +1003,7 @@ Sam  : 1 cheese, 2 pepperoni, 0 olives     b = (1, 2, 0)
 
 **Do this:** Work all three on the board, out loud, with the class on calculators.
 
-```
+```text
 1. multiply matching positions and add up:  2x1 + 1x2 + 0x0 = 4
 2. each list's length:  sqrt(4+1+0) = sqrt(5) = 2.236068   (both the same)
 3. divide by both lengths:  4 / (2.236068 x 2.236068) = 4 / 5 = 0.8
@@ -1015,7 +1023,7 @@ Sam  : 1 cheese, 2 pepperoni, 0 olives     b = (1, 2, 0)
 
 **Do this:** Write the three landmarks on the board and leave them up:
 
-```
+```text
 cosine 1.0  =  0 degrees   -> same direction, same words in the same proportions
 cosine 0.8  = 36.9 degrees -> close, not the same
 cosine 0.0  = 90 degrees   -> a right angle: NOT ONE WORD IN COMMON
@@ -1245,7 +1253,7 @@ d4  0.0000  0.3649  0.1467  1.0000
 
 **Do this:** Say nothing for four seconds. Then write on the board:
 
-```
+```text
 the two most similar reviews in the corpus:
    "The pizza was great!"   <- a happy customer
    "The pizza was cold."    <- an unhappy customer
@@ -1274,7 +1282,7 @@ the two most similar reviews in the corpus, cosine 0.7981 (37.1 degrees):
 
 **Do this:** Put the five shared words on the board with their products.
 
-```
+```text
 and     0.1156 x 0.1166 = 0.0135
 cake    0.4274 x 0.4310 = 0.1842
 coffee  0.4274 x 0.4310 = 0.1842
@@ -1350,6 +1358,8 @@ And the sentence for this week:
 
 ## 🎲 The Activity, In Full
 
+The main hands-on activity, written out in full.
+
 ### Part A — TF-IDF By Hand, All The Way (12 minutes)
 
 **What it is.** One word, in one document, taken through all four stages on paper. Then `TfidfVectorizer` prints its number and **the two are compared digit by digit to four decimal places. Nobody is allowed to move on until they match.**
@@ -1378,7 +1388,7 @@ And the sentence for this week:
 
 *2 — d1 and d3.*
 
-```
+```text
 idf = ln(5 / (1 + 2)) + 1 = ln(5/3) + 1 = ln(1.666667) + 1
     = 0.510826 + 1
     = 1.510826
@@ -1390,7 +1400,7 @@ idf = ln(5 / (1 + 2)) + 1 = ln(5/3) + 1 = ln(1.666667) + 1
 
 ### Step 3 — multiply (1 minute)
 
-```
+```text
 tf x idf = 2 x 1.510826 = 3.021651
 ```
 
@@ -1406,7 +1416,7 @@ tf x idf = 2 x 1.510826 = 3.021651
 
 **Do this:** All three raw weights, off the wall sheet:
 
-```
+```text
 great   : 2 x 1.510826 = 3.021651
 pizza   : 1 x 1.223144 = 1.223144
 service : 1 x 1.510826 = 1.510826
@@ -1414,7 +1424,7 @@ service : 1 x 1.510826 = 1.510826
 
 Then the length of the row:
 
-```
+```text
 3.021651 squared = 9.130376
 1.223144 squared = 1.496080
 1.510826 squared = 2.282594
@@ -1426,7 +1436,7 @@ sqrt(12.909050) = 3.592917
 
 Then the division:
 
-```
+```text
 3.021651 / 3.592917 = 0.841002
 ```
 
@@ -1478,7 +1488,7 @@ sklearn's number for it    = 0.841002
 
 **Do this:** Write on the board:
 
-```
+```text
 query:  cold pizza
 
 doc A:  cold pizza
@@ -1492,7 +1502,7 @@ doc B:  the pizza was hot and the pizza was fresh and the pizza
 
 **Ask this:** "Now the arithmetic. Count the shared words with the query, for each document. Just the raw counts, multiplied and added."
 
-```
+```text
 doc A: 1 shared pizza + 1 shared cold = 2
 doc B: 3 shared pizza + 1 shared cold = 4
 ```
@@ -1526,7 +1536,7 @@ length of A's row = 1.4142, length of B's row = 6.7082
 
 **Do this:** Write the division out:
 
-```
+```text
         4
 -----------------  =   4 / 9.4868  =  0.4216
 1.4142 x 6.7082
@@ -1634,6 +1644,8 @@ What to tell a fourteen-year-old, out loud: **"use cosine for text, because it i
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+The usual trouble spots, with what to do about each.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **A calculator is on `log` base 10** | The `log` and `ln` buttons are next to each other, and `log` is the one with the familiar name | **Test every calculator in the first two minutes of the activity, not at the comparison step.** `ln(5 ÷ 3) = 0.510826`. A student who spends eight minutes on careful arithmetic and then finds every number wrong learns the wrong lesson about their own competence. |
@@ -1650,6 +1662,8 @@ What to tell a fourteen-year-old, out loud: **"use cosine for text, because it i
 ---
 
 ## 🧭 Differentiation
+
+Adjusting the lesson for a student who is struggling or finding it easy.
 
 ### If the student is struggling
 
@@ -1710,7 +1724,7 @@ None of these need syntax from a later week.
 
 Write three words and three counts:
 
-```
+```text
 pizza   is in 3 of the 4 reviews
 great   is in 2 of the 4 reviews
 and     is in 1 of the 4 reviews
@@ -1780,6 +1794,8 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
+The homework to set at the end of class.
+
 **Say this:**
 
 > "About an hour, three pages, and the third one is the one I mark hardest.
@@ -1836,7 +1852,7 @@ Every question restated, so you can mark from this page alone.
 
 **Box 2 — inverse document frequency.** `great` is in 2 of the 4 documents.
 
-```
+```text
 idf = ln( 5 / (1 + 2) ) + 1
     = ln( 5 / 3 ) + 1
     = ln( 1.666667 ) + 1
@@ -1846,13 +1862,13 @@ idf = ln( 5 / (1 + 2) ) + 1
 
 **Box 3 — multiply.**
 
-```
+```text
 tf x idf = 2 x 1.510826 = 3.021651
 ```
 
 **Box 4 — the L2 divide.** d3 contains three different words, so its row has three numbers in it:
 
-```
+```text
 great   : 2 x 1.510826 = 3.021651
 pizza   : 1 x 1.223144 = 1.223144
 service : 1 x 1.510826 = 1.510826
@@ -1879,7 +1895,7 @@ sklearn's number for it    = 0.841002
 
 **The other two cells of d3's row, for anybody who did the whole row:**
 
-```
+```text
 pizza   = 1.223144 / 3.592917 = 0.340432
 service = 1.510826 / 3.592917 = 0.420501
 ```
@@ -1894,7 +1910,7 @@ service = 1.510826 / 3.592917 = 0.420501
 
 *(b) Raw count scores.*
 
-```
+```text
 doc A: 1 shared pizza + 1 shared cold = 2
 doc B: 3 shared pizza + 1 shared cold = 4
 ```
@@ -1911,14 +1927,14 @@ length of A's row = 1.4142, length of B's row = 6.7082
 
 **The divisions, written out:**
 
-```
+```text
 doc A:   2 / (1.4142 x 1.4142) = 2 / 2.0000 = 1.0000     ->  0 degrees
 doc B:   4 / (1.4142 x 6.7082) = 4 / 9.4868 = 0.4216     -> 65.1 degrees
 ```
 
 **Where 6.7082 comes from.** Doc B's counts are `the` 4, `pizza` 3, `was` 3, `and` 2, and `but`, `chips`, `cold`, `fresh`, `hot`, `lovely`, `were` once each:
 
-```
+```text
 16 + 9 + 9 + 4 + 1 + 1 + 1 + 1 + 1 + 1 + 1 = 45
 sqrt(45) = 6.7082
 ```
@@ -1966,7 +1982,7 @@ e5: "Late again, and cold again."
 
 **Step 2 — e2's four raw weights.** `e2` is `"Cold pizza and cold chips."` — and `cold` appears **twice**, so `tf = 2` for `cold` only:
 
-```
+```text
 and    : 1 x 1.693147 = 1.693147      squared = 2.866747
 chips  : 1 x 1.405465 = 1.405465      squared = 1.975332
 cold   : 2 x 1.405465 = 2.810930      squared = 7.901329
@@ -1977,13 +1993,13 @@ pizza  : 1 x 1.405465 = 1.405465      squared = 1.975332
 
 **Step 3 — the row length.**
 
-```
+```text
 sqrt(14.718740) = 3.836501
 ```
 
 **Step 4 — four divisions.**
 
-```
+```text
 and    = 1.693147 / 3.836501 = 0.441326
 chips  = 1.405465 / 3.836501 = 0.366340
 cold   = 2.810930 / 3.836501 = 0.732681
@@ -2016,7 +2032,7 @@ e5  0.834033  0.336446  0.000000  0.279281  0.000000  0.336446  0.000000  0.0000
 
 **(a) `cos(e1, e2)`** — e1 is `"The chips were cold."`, e2 is `"Cold pizza and cold chips."` **Shared: `chips`, `cold`.**
 
-```
+```text
 chips : 0.419559 x 0.366340 = 0.153701
 cold  : 0.419559 x 0.732681 = 0.307403
                       total = 0.461104
@@ -2026,7 +2042,7 @@ cold  : 0.419559 x 0.732681 = 0.307403
 
 **(b) `cos(e2, e3)`** — e3 is `"Great chips, great pizza!"`. **Shared: `chips`, `pizza`.**
 
-```
+```text
 chips : 0.366340 x 0.302637 = 0.110868
 pizza : 0.366340 x 0.302637 = 0.110868
                       total = 0.221736
@@ -2036,7 +2052,7 @@ pizza : 0.366340 x 0.302637 = 0.110868
 
 **(c) `cos(e1, e4)`** — e4 is `"The pizza was late."`. **Shared: `the`, and nothing else.**
 
-```
+```text
 the : 0.505438 x 0.486484 = 0.245887
                     total = 0.245887
 ```

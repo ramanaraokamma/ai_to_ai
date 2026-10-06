@@ -228,6 +228,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading code, shapes and loss curves. Fill in every box and blank.
+
 **A1. Match the word to the thing.** Write the letter.
 
 | Word | | Description |
@@ -308,7 +310,7 @@ ________________________________________________________________
 
 **A5. Read the two curves.** Here are seven rows from a real run.
 
-```
+```text
  epoch    train     val
      0   0.5529   0.5314
     39   0.1659   0.1568
@@ -363,6 +365,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing the code yourself. Each task gives the expected output and a line saying what done looks like.
 
 ### B1 — one line
 
@@ -503,7 +507,7 @@ ________________________________________________________________
 
 ## 🐞 Fix the Broken Program
 
-This program has **three** bugs: one **dtype**, one **shape**, and one that produces **no error at all**. The real messages are below, in the order you meet them.
+This page is for finding and fixing bugs in a program that is broken on purpose. This program has **three** bugs: one **dtype**, one **shape**, and one that produces **no error at all**. The real messages are below, in the order you meet them.
 
 ```python
 """hit_broken.py - will this song be a hit? Three bugs."""
@@ -612,6 +616,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This page is for using the parameter-counting rule backwards, from a total to a missing number.
+
 ### Guess the network from its parameter count
 
 Somebody has trained four networks and thrown away the code. All you have is the shape of each one — with **one number missing** — and the total number of learnable numbers PyTorch reported. **Find the missing number each time.**
@@ -658,6 +664,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions are for longer written answers. Write a paragraph for each.
+
 **T1.** In Week 19 you wrote a neural network yourself, in numpy, in about forty lines. This week you replaced it with three. **Write a paragraph** about what you gained and what you lost. Be specific: name one thing `nn.Sequential` does for you that your numpy version could get wrong, and name one thing you understand *because* you wrote the numpy version that somebody who started with PyTorch would not. Then answer the harder question: **the library did not remove any difficulty — where did the difficulty go?**
 
 ________________________________________________________________
@@ -685,6 +693,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It — Week 19's Brain, Rebuilt
+
+This page is for rebuilding your numpy network in PyTorch and comparing the two versions.
 
 **Two parts. The first is a comparison, and the comparison *is* the task — a page that says "they match" without both lists pasted has not done it.**
 
@@ -780,12 +790,16 @@ Two entries this week: one loud, one silent.
 
 ## 🎨 Draw It
 
+This page is for drawing a network and its four blocks of numbers.
+
 Draw **one network** and **its four blocks of numbers** — not the code, the numbers.
 
 ![Draw it: one network, four blocks](../figures/fig-w22-9-draw-frame.svg)
 *Figure W22.2 — Your drawing goes in the frame. The three things it must contain are listed underneath.*
 
-**What a good answer looks like:** two input circles on the left, sixteen hidden circles in a column (or five and a "…"), one output circle on the right, and every wire drawn. Then, and this is what earns the marks: **a chip on each bundle of wires with its shape written on it** — `(16, 2)` on the first bundle, `(1, 16)` on the second — and **a small bias tag beside each layer of circles**, 16 on the hidden column and 1 on the output. Then a box in the corner with the four counts and the total: `32 + 16 + 16 + 1 = 65`. A drawing with the circles and wires but no numbers is a picture of a network; a drawing with the numbers is a picture of what a network *is*.
+**What a good answer looks like:** two input circles on the left, sixteen hidden circles in a column (or five and a "…"), one output circle on the right, and every wire drawn. Then, and this is what earns the marks:
+
+**a chip on each bundle of wires with its shape written on it** — `(16, 2)` on the first bundle, `(1, 16)` on the second — and **a small bias tag beside each layer of circles**, 16 on the hidden column and 1 on the output. Then a box in the corner with the four counts and the total: `32 + 16 + 16 + 1 = 65`. A drawing with the circles and wires but no numbers is a picture of a network; a drawing with the numbers is a picture of what a network *is*.
 
 **How many wires between the input and hidden layers?** ______
 
@@ -800,6 +814,8 @@ ________________________________________________________________
 ---
 
 ## 📊 Self-Check
+
+Tick one face in each row to show how sure you are.
 
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
@@ -856,7 +872,7 @@ ________________________________________________________________
 
 **M1(a).** The chance went from 0.90 to 0.02, which is 45 times smaller. The surprise went from 0.105361 to 3.912023:
 
-```
+```text
 3.912023 ÷ 0.105361 = 37.13
 ```
 
@@ -873,7 +889,7 @@ ________________________________________________________________
 | 0.30 | 1 | **0.30** | **1.203973** |
 | 0.05 | 0 | **0.95** | **0.051293** |
 
-```
+```text
 0.051293 + 0.916291 + 1.203973 + 0.051293  =  2.222850
 2.222850 ÷ 4                               =  0.555713
 ```
@@ -882,7 +898,7 @@ ________________________________________________________________
 
 **M2(b).** Row 3, with **1.203973**:
 
-```
+```text
 1.203973 ÷ 2.222850 = 0.5416
 ```
 
@@ -896,7 +912,7 @@ ________________________________________________________________
 
 **Step 3.**
 
-```
+```text
 0.346742 ÷ 0.126928 = 2.73
 ```
 
@@ -1034,7 +1050,7 @@ Linear          (8, 1)
 
 **A2(c).**
 
-```
+```text
 first grid    (6, 3)    6 × 3  = 18
 first bias    (6,)               6
 second grid   (2, 6)    2 × 6  = 12
@@ -1197,7 +1213,7 @@ by hand row 1: 4*0.5 + 6*0.5 - 1 = 4.0
 
 **The arithmetic, in full:**
 
-```
+```text
 row 0:   4.0 × 3.0  +  6.0 × (−1.0)  +  2.0   =  12 − 6 + 2   =  8.0
 row 1:   4.0 × 0.5  +  6.0 × 0.5     +  (−1.0) =  2 + 3 − 1   =  4.0
 ```
@@ -1230,7 +1246,7 @@ average : 0.4341394007205963
 
 **And the arithmetic:**
 
-```
+```text
 row 1   answer 1, p = 0.817574   →  −ln(0.817574) = 0.201413
 row 2   answer 1, p = 0.377541   →  −ln(0.377541) = 0.974077
 row 3   answer 0, p = 0.119203   →  −ln(1 − 0.119203) = −ln(0.880797) = 0.126928
@@ -1353,7 +1369,7 @@ val   loss 0.2140
 
 **Puzzle 1.** `2 → h → 1`:
 
-```
+```text
 first grid  h × 2 = 2h
 first bias        = h
 second grid 1 × h = h
@@ -1368,7 +1384,7 @@ second bias       = 1
 
 **Puzzle 2.** `n → 8 → 1`:
 
-```
+```text
 8n + 8 + 8 + 1 = 105
 8n + 17        = 105
 8n             = 88
@@ -1379,7 +1395,7 @@ n              = 11
 
 **Puzzle 3.** `4 → h → 3`:
 
-```
+```text
 first grid  h × 4 = 4h
 first bias        = h
 second grid 3 × h = 3h
@@ -1398,7 +1414,7 @@ second bias       = 3
 
 **Puzzle 4(b).** The total is always `8h + 3`, so it is 3 more than a multiple of 8:
 
-```
+```text
 h = 1   →  11
 h = 2   →  19
 h = 3   →  27

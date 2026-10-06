@@ -39,6 +39,8 @@ Observable evidence: a completed four-round table on workbook page 15.2 with eve
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section is the background you need before you teach: the loop, the gradient, the update rule and the three rounds, with every number.
+
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not whole files** — each carries on from the one above. **The complete runnable files are in the Prep Checklist and the Answer Key.**
 
 There is exactly one new mathematical idea this week and it is **"one slope per knob, in a list"**. Everything else is Week 12's slope, Week 13's sigmoid and Week 14's loss, arranged in a loop. Twenty-five minutes with this section is enough; if you only have twelve, read §3, §4 and §5.
@@ -59,7 +61,7 @@ Put them in a loop and you have `fit()`. **Not a simplified version of `fit()` �
 
 Before any arithmetic, here is the whole algorithm. Read it out loud; it is genuinely this short.
 
-```
+```text
 1. start with every weight at zero
 2. work out the probability for every row            (Week 13)
 3. work out the loss                                 (Week 14)
@@ -81,7 +83,7 @@ But our model has **three** knobs: `w1`, `w2` and the bias `b`. So "which way is
 
 **Now the formula, and this is the surprise.** For logistic regression with log loss, the slope for weight `j` turns out to be:
 
-```
+```text
 slope for weight j  =  the average of (prediction − truth) × (feature j)
 ```
 
@@ -91,7 +93,7 @@ slope for weight j  =  the average of (prediction − truth) × (feature j)
 
 **And the slope for the bias?** The bias is not multiplied by any feature — it is added to every row unchanged. So it is the same formula with the feature set to 1:
 
-```
+```text
 slope for the bias  =  the average of (prediction − truth)
 ```
 
@@ -114,7 +116,7 @@ slope for the bias  =  the average of (prediction − truth)
 
 Work one update out loud. Suppose `w1 = 0.000000` and its slope is `−0.375000`, with `lr = 1.0`:
 
-```
+```text
 w1 ← 0.000000 − 1.0 × (−0.375000)
    = 0.000000 + 0.375000
    = 0.375000
@@ -141,13 +143,13 @@ Start at `w1 = 0`, `w2 = 0`, `b = 0`, with `lr = 1.0`.
 
 Every weight is zero, so every `z` is zero, so every `p` is exactly `0.5` — Week 13's third property, doing real work.
 
-```
+```text
 loss = −ln(0.5) averaged over four rows = 0.693147        ← last week's number, on the wall
 ```
 
 Errors, `p − y`:
 
-```
+```text
 row 1:  0.5 − 0 = +0.5
 row 2:  0.5 − 0 = +0.5
 row 3:  0.5 − 1 = −0.5
@@ -156,7 +158,7 @@ row 4:  0.5 − 1 = −0.5
 
 Slopes. **Error times feature, averaged:**
 
-```
+```text
 slope w1 = (+0.5×1  +0.5×1  −0.5×2  −0.5×3) ÷ 4
          = (0.5 + 0.5 − 1.0 − 1.5) ÷ 4  =  −1.5 ÷ 4  =  −0.375000
 
@@ -168,7 +170,7 @@ slope b  = (+0.5 +0.5 −0.5 −0.5) ÷ 4    =   0.0 ÷ 4  =   0.000000
 
 Updates, all three at once:
 
-```
+```text
 w1 ← 0.000000 − 1.0 × (−0.375000) = +0.375000
 w2 ← 0.000000 − 1.0 × (+0.125000) = −0.125000
 b  ← 0.000000 − 1.0 × ( 0.000000) =  0.000000
@@ -178,7 +180,7 @@ b  ← 0.000000 − 1.0 × ( 0.000000) =  0.000000
 
 **Round 1.** `w1 = 0.375`, `w2 = −0.125`, `b = 0`.
 
-```
+```text
 z: row1 = 0.375×1 − 0.125×1 = 0.250      p = 0.562177
    row2 = 0.375×1 − 0.125×2 = 0.125      p = 0.531209
    row3 = 0.375×2 − 0.125×1 = 0.625      p = 0.651355
@@ -197,7 +199,7 @@ b  ← 0.000000 − 1.0 × (+0.118950) = −0.118950
 
 **Round 2.** `w1 = 0.477682`, `w2 = −0.376752`, `b = −0.118950`.
 
-```
+```text
 z: −0.018020, −0.394772, +0.459662, +0.937344
 p:  0.495495,  0.402569,  0.612934,  0.718563
 
@@ -214,7 +216,7 @@ b  ← −0.118950 − 1.0 × (+0.057390) = −0.176340
 
 **And the loss after that third step is `0.448421`.**
 
-```
+```text
 0.693147  →  0.581375  →  0.504824  →  0.448421
 ```
 
@@ -503,6 +505,8 @@ loss` is plain white now and stays plain white for the remaining twenty-one week
 
 ## 🧰 Prep Checklist
 
+This section lists what to do the night before, on the day, and if the laptops fail.
+
 ### 25 minutes the night before
 
 - [ ] **Do the three rounds on paper yourself, with a calculator.** Not read them — **do them.** It takes about eight minutes and it is the single highest-value thing in this checklist, because you will be doing round 0 live on the board with the class calling out numbers. The four rows are `[1,1]→0`, `[1,2]→0`, `[2,1]→1`, `[3,1]→1`, starting at all zeros with `lr = 1.0`. **You should get `−0.375`, `+0.125`, `0.000` for the three slopes and a loss of `0.693147`.**
@@ -624,6 +628,8 @@ round 3
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the timed plan for the lesson; the table gives the overview and the steps below give the detail.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — What Happened in That One Second | 7 | 7 | `fit()` on the board, and five lines of English |
@@ -638,7 +644,7 @@ round 3
 
 **Do this:** Nothing on the screen. On the board, write one line:
 
-```
+```python
 model.fit(X_train, y_train)
 ```
 
@@ -654,7 +660,7 @@ model.fit(X_train, y_train)
 
 **Do this:** Write these five lines on the board, slowly, numbering them.
 
-```
+```text
 1. start with every weight at zero
 2. work out the probability for every row
 3. work out the loss
@@ -697,7 +703,7 @@ model.fit(X_train, y_train)
 
 **Do this:** Write on the board:
 
-```
+```text
 gradient = [ slope for w1 ,  slope for w2 ,  slope for b ]
 ```
 
@@ -709,7 +715,7 @@ gradient = [ slope for w1 ,  slope for w2 ,  slope for b ]
 
 **Do this:** Write it, large:
 
-```
+```text
 slope for a weight  =  average of  (prediction − truth) × (that feature)
 slope for the bias  =  average of  (prediction − truth)
 ```
@@ -726,7 +732,7 @@ slope for the bias  =  average of  (prediction − truth)
 
 **Do this (14 min) — round 0, on the board, with the class doing every number.** Reveal the four rows.
 
-```
+```text
         x1 (oven)   x2 (riders free)   y (late?)
 row 1       1              1               0
 row 2       1              2               0
@@ -748,7 +754,7 @@ row 4       3              1               1
 
 **Ask this:** "Errors. `prediction minus truth`, four of them. Go."
 
-```
+```text
 row 1:  0.5 − 0 = +0.5
 row 2:  0.5 − 0 = +0.5
 row 3:  0.5 − 1 = −0.5
@@ -757,7 +763,7 @@ row 4:  0.5 − 1 = −0.5
 
 **Do this:** Now the slope for `w1`, out loud, one term at a time, with the class supplying each product. **Write every term.**
 
-```
+```text
 slope w1 = ( +0.5×1  +0.5×1  −0.5×2  −0.5×3 ) ÷ 4
          = ( 0.5 + 0.5 − 1.0 − 1.5 ) ÷ 4
          = −1.5 ÷ 4
@@ -776,7 +782,7 @@ slope w1 = ( +0.5×1  +0.5×1  −0.5×2  −0.5×3 ) ÷ 4
 
 **Do this:** Now `w2` and `b`, faster, class doing them.
 
-```
+```text
 slope w2 = ( +0.5×1  +0.5×2  −0.5×1  −0.5×1 ) ÷ 4 = +0.5 ÷ 4 = +0.125000
 slope b  = ( +0.5  +0.5  −0.5  −0.5 ) ÷ 4         =  0.0 ÷ 4 =  0.000000
 ```
@@ -791,7 +797,7 @@ slope b  = ( +0.5  +0.5  −0.5  −0.5 ) ÷ 4         =  0.0 ÷ 4 =  0.000000
 
 > **Say this:** "The slope points **uphill**. The loss is a thing we want **small**. So we go the other way. **That is the entire algorithm.** Everything else today is bookkeeping."
 
-```
+```text
 w1 ← 0.000000 − 1.0 × (−0.375000) = 0.000000 + 0.375000 = +0.375000
 w2 ← 0.000000 − 1.0 × (+0.125000)                       = −0.125000
 b  ← 0.000000 − 1.0 × ( 0.000000)                       =  0.000000
@@ -805,7 +811,7 @@ b  ← 0.000000 − 1.0 × ( 0.000000)                       =  0.000000
 
 **Do this:** Fill in the second row of the board table. Then run one more round with the class, **fast**, giving them the four `p` values rather than making them compute four sigmoids:
 
-```
+```text
 round 1:  p = 0.562177, 0.531209, 0.651355, 0.731059     loss = 0.581375
           slopes = −0.102682, +0.251752, +0.118950
           w1 = 0.477682   w2 = −0.376752   b = −0.118950
@@ -1013,7 +1019,7 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: type the 
 
 **Do this:** Stand at the board with the four-round table filled in and `w ← w − lr × slope` in giant letters. Write four things underneath:
 
-```
+```text
 gradient      one slope per knob, in a list:  [−0.375, +0.125, 0.000]
 each slope    average of (prediction − truth) × (that feature)
 the update    w ← w − lr × slope,  for every knob, at the same time
@@ -1097,6 +1103,8 @@ And the sentence for this week:
 
 ## 🎲 The Activity, In Full
 
+This section describes the lab the students do in the Their Turn segment.
+
 ### Descent From Scratch
 
 **The goal.** Every student ends the lab with a working gradient-descent logistic regression they typed themselves, a plot naming three learning rates, and a printed side-by-side comparison against scikit-learn where the weights agree.
@@ -1115,7 +1123,7 @@ They type the `train` function. About fifteen lines.
 
 **The checkpoint, and do not let anybody past it:** run the loop for **four** epochs only, on the **four hand-typed rows** from the board, with `lr = 1.0`, and print the loss each round. **They must get:**
 
-```
+```text
 0.693147
 0.581375
 0.504824
@@ -1156,7 +1164,7 @@ Plot the 300 training rows — circles for on time, triangles for late — and o
 
 The line is `x2 = −(w1 × x1 + b) ÷ w2`, which comes straight from `z = 0`. Give them that line; deriving it is not today's job.
 
-```
+```text
 epoch   0   w = [ 2.0000, −2.0000]   b =  1.0000   loss = 2.0454
 epoch  50   w = [−0.2798,  2.1091]   b =  0.0902   loss = 0.3590
 epoch 150   w = [−0.5478,  2.8694]   b =  0.1883   loss = 0.3423
@@ -1222,6 +1230,8 @@ None of these need syntax from a later week.
 
 ## ❓ Questions Students Ask This Week
 
+This section gives short answers to the questions students are likely to ask.
+
 **"How does it know it is going the right way? It cannot see the bottom."**
 
 It cannot, and that is the point of the foggy-hillside picture. **It never knows where the bottom is. It only knows which way is down, right where it is standing.**
@@ -1286,6 +1296,8 @@ If you have 300 rows and you use 32 at a time, one **epoch** — one pass over t
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists what tends to go wrong in the room and what to do about it.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **The class types the loop before doing round 0 on paper** | It is a lab and the laptops are open | **Close the laptops.** A loop with no hand-computed number beside it is a spell, and a student who cannot tell a right answer from a wrong one has not learned to train anything. **Round 0 on the board first, every time.** |
@@ -1301,6 +1313,8 @@ If you have 300 rows and you use 32 at a time, one **epoch** — one pass over t
 ---
 
 ## 🧭 Differentiation
+
+This section says what to cut, add or change for a struggling, flying or disengaged student.
 
 ### If the student is struggling
 
@@ -1333,7 +1347,7 @@ If you have 300 rows and you use 32 at a time, one **epoch** — one pass over t
 
 Then one subtraction, on a card:
 
-```
+```text
 new weight  =  old weight  −  stride × slope
             =  0           −  1.0    × (−0.375)
             =  +0.375
@@ -1430,7 +1444,7 @@ Three checks, five minutes, exact wording.
 
 *Good answer:*
 
-```
+```text
 errors:  0.6 − 1 = −0.4        0.3 − 0 = +0.3
 × feature: −0.4 × 2 = −0.8     +0.3 × 4 = +1.2
 add:  −0.8 + 1.2 = +0.4
@@ -1471,6 +1485,8 @@ add:  −0.8 + 1.2 = +0.4
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the wording for assigning the homework.
 
 **Say this:**
 
@@ -1518,7 +1534,7 @@ Every question restated, so you can mark from this page alone.
 
 **Round 0**
 
-```
+```text
 w = [0.000000, 0.000000]   b = 0.000000
 
 z   = [0, 0, 0, 0]                      (everything is multiplied by zero)
@@ -1538,7 +1554,7 @@ b  ← 0.000000 − 1.0 × ( 0.000000) =  0.000000
 
 **Round 1**
 
-```
+```text
 w = [0.375000, -0.125000]   b = 0.000000
 
 z   = [0.250000, 0.125000, 0.625000, 1.000000]
@@ -1556,7 +1572,7 @@ b  ← 0.000000 − 1.0 × (+0.118950) = −0.118950
 
 **Round 2**
 
-```
+```text
 w = [0.477682, -0.376752]   b = -0.118950
 
 z   = [-0.018020, -0.394772, 0.459662, 0.937344]
@@ -1574,7 +1590,7 @@ b  ← −0.118950 − 1.0 × (+0.057390) = −0.176340
 
 **Round 3**
 
-```
+```text
 w = [0.657777, -0.534785]   b = -0.176340
 
 z   = [-0.053348, -0.588133, 0.604429, 1.262206]
@@ -1592,7 +1608,7 @@ b  ← −0.176340 − 1.0 × (+0.067451) = −0.243791
 
 **The loss column, which is the point of the page:**
 
-```
+```text
 0.693147  →  0.581375  →  0.504824  →  0.448421
 ```
 

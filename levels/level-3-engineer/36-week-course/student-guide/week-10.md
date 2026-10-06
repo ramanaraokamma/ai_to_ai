@@ -40,7 +40,9 @@ above 0.5: 0
 
 Read that last line again. **Zero.**
 
-Your model looked at a thousand transactions and gave every single one a score between 0 and 1 — how suspicious it thinks that transaction is. The least suspicious thing in the file got **0.0001**. And the *most* suspicious thing — the one single transaction your model is most convinced about — got **0.1774**.
+Your model looked at a thousand transactions and gave every single one a score between 0 and 1 — how suspicious it thinks that transaction is.
+
+The least suspicious thing in the file got **0.0001**. And the *most* suspicious thing — the one single transaction your model is most convinced about — got **0.1774**.
 
 Nothing is above 0.5. So when you type `model.predict(X_val)`, it says "not fraud" to all thousand rows. It catches **none** of the 14 frauds. And it is **98.6% accurate**, which is the trick you met in Week 8.
 
@@ -56,7 +58,7 @@ Not the model's. Here is what has actually been happening every time you typed `
 
 **Nobody chose it.** It is a default. It came in the box with scikit-learn. Some sensible person decided long ago that if you know nothing else, half is the least stupid place to cut — and that number has been making decisions on your behalf since Week 3 and has never once asked your opinion.
 
-You can prove it in two lines:
+Type these two lines to check that `predict` really is just a comparison:
 
 ```python
 pred_from_predict = model.predict(X_val)
@@ -82,6 +84,8 @@ This week nothing about the model changes. The thousand numbers stay exactly whe
 ---
 
 ## 🧠 The Big Idea
+
+This section explains why the model's scores are so small, what the threshold does to them, and how an ROC curve draws every threshold at once.
 
 > **📌 About the code in this section.** These blocks are **illustrations, not files**. Each one carries on from the one above. **The complete runnable program is in 💻 Type This.**
 
@@ -285,6 +289,8 @@ One file, `dial.py`, built in five steps. **Expected runtime for the finished fi
 
 ### Step 1 — the data, and the model that flags nothing
 
+Type this to build the data, train the model and look at its probabilities.
+
 ```python
 """dial.py - 0.5 is a default, not a law.  Week 10."""
 import matplotlib
@@ -327,6 +333,8 @@ how many are above 0.5? 0
 ```
 
 ### Step 2 — the sweep, which is the heart of the week
+
+Add this below the previous step. It loops over nine thresholds and prints the four counts and three rates for each.
 
 ```python
 print()
@@ -374,6 +382,8 @@ Real output:
 
 ### Step 3 — rise over run, in code
 
+Add this below the previous step. It computes rise and run for three pairs of thresholds.
+
 ```python
 print()
 pos = y_val.sum()
@@ -406,6 +416,8 @@ t 0.02 -> 0.01   rise 0.214286  run 0.212982  rise/run = 1.0061
 ```
 
 ### Step 4 — both curves, and the two summary numbers
+
+Add this below the previous step. It builds both curves and prints the two summary scores.
 
 ```python
 print()
@@ -449,6 +461,8 @@ Both numbers describe the same model on the same 1,000 rows. ROC AUC's baseline 
 So a bare AP of 0.21 *sounds* terrible and is in fact fifteen-fold better than nothing, and a bare AUC of 0.61 sounds mediocre and is. **The professional answer is to report both, with the class balance printed beside them.**
 
 ### Step 5 — the picture
+
+Add this below the previous step. It draws both curves side by side and saves them to `dial.png`.
 
 ```python
 fig, axes = plt.subplots(1, 2, figsize=(11, 5))
@@ -612,6 +626,8 @@ This is the activity from class, done by a computer so you can mark your own gra
 | prob | 0.55 | 0.48 | 0.42 | 0.36 | 0.30 | 0.25 | 0.20 | 0.15 | 0.10 | 0.05 |
 |---|---|---|---|---|---|---|---|---|---|---|
 | truth | legit | F | legit | legit | F | legit | legit | legit | legit | legit |
+
+Type this as `cards.py`. It sweeps ten thresholds over the twenty cards and prints the same columns you will fill in by hand.
 
 ```python
 """cards.py - the twenty index cards, checked by machine.  Week 10."""
@@ -804,6 +820,8 @@ Every message below came from really running a broken version of this week's cod
 
 ### Break 1 — the confusion matrix that came back too small
 
+Run this snippet, which asks for a confusion matrix when only one class is present.
+
 ```python
 import numpy as np
 from sklearn.metrics import confusion_matrix
@@ -830,6 +848,8 @@ ValueError: not enough values to unpack (expected 4, got 1)
 > **🐞 If you see this error:** read **the whole thing**, starting at the top, not just the last line. This week's headline crash tells you its own fix in the sentence above the traceback, and a student who has learned to jump to the bottom line scrolls straight past it.
 
 ### Break 2 — the one with no error message, and a wrong AUC
+
+Run this snippet, which passes hard yes/no predictions to the curve functions.
 
 ```python
 pred = (prob >= 0.10).astype(int)
@@ -922,6 +942,8 @@ precision_score(y, pred)     # at t = 0.50, where nothing is flagged
 
 ## 🎲 What We Did In Class
 
+This section records the class activity, so you can repeat it at home with paper.
+
 **The Dial, Physically.** If you missed it, you can do the whole thing at home with twenty pieces of paper and one sheet of graph paper. There is no computer in it.
 
 **What you need.** Twenty cards. On the front of each, write a probability, big. On the back, write the truth, small. Use exactly these:
@@ -989,6 +1011,8 @@ t = 0.02   for the customer whose money is actually gone:
 
 ## 💬 Talk About It
 
+Use these three questions to argue with a friend or family member. They have no single right answer.
+
 **1. A supermarket's self-checkout decides whether to call a member of staff over to check your bag. Where would you put the threshold, and who loses if you get it wrong?**
 
 *Hint:* name the two mistakes as things that happen to a **person on a Saturday afternoon**, not as cells of a table. Then ask how often each one happens — a false alarm that happens once a year and a false alarm that happens twice a shop are the same cell and completely different problems.
@@ -1004,6 +1028,8 @@ t = 0.02   for the customer whose money is actually gone:
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four sentences that sound sensible and are wrong, each with the correction.
 
 ### Trick 1 — "each dot on the ROC curve is a different model"
 
@@ -1035,6 +1061,8 @@ t = 0.02   for the customer whose money is actually gone:
 ---
 
 ## 🌍 Where You've Seen This
+
+Thresholds are already making decisions around you. Here are six places.
 
 - **Your phone's face unlock.** There is a similarity score and a cut-off. Set it strict and it refuses you when you have just woken up; set it loose and your sibling gets in. The "require attention" setting is literally a threshold dial with a nicer name.
 - **Email spam folders.** A message with a score of 0.51 goes to spam; 0.49 goes to your inbox. When your school emails you a letter and it lands in spam, you have personally met a false positive on the wrong side of somebody's threshold.
@@ -1072,6 +1100,8 @@ Week 12.*
 ---
 
 ## 🔑 Remember This
+
+The key points of the week, then a card of the syntax you used.
 
 - **`predict()` is `predict_proba()` followed by `>= 0.5`.** The model produces a number between 0 and 1. The yes/no comes from a comparison that nobody chose.
 - **One model, many dots.** Sweeping the threshold changes nothing about the model. It only changes where you cut the ranking.
@@ -1126,6 +1156,8 @@ plt.savefig("dial.png")
 ---
 
 ## 📓 New Words
+
+The words from this week, each with an example from your own run.
 
 ![Four words from Week 10, drawn](../figures/fig-w10-7-vocab-icons.svg)
 *Figure 10.7 — Four words from Week 10, drawn. Every number on a tile came out of your own `dial.py` run.*

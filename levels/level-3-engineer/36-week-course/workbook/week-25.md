@@ -34,6 +34,8 @@ ________________________________________________________________
 
 ## 🔢 Do the Maths by Hand
 
+This page is for practising the output-size rule with nothing but a pencil and a calculator.
+
 **Calculator only. No code on this page.** The rule is `out = (n + 2p − k) ÷ s + 1`, **rounded down**, applied to height and width separately.
 
 **Write every step**, not just the answer: the subtraction, the division, the rounding, and the plus one.
@@ -77,6 +79,8 @@ ________________________________________________________________
 ---
 
 ## 🔎 Predict the Output
+
+This page is for committing to a shape before you see it. Each snippet below is one small experiment.
 
 **Write your prediction in pen before you run anything.** Every snippet begins with `import torch` and `import torch.nn as nn`, and every one has `torch.manual_seed(0)` in it so the numbers are reproducible. **Three of these four are shape predictions, and two of them are genuinely nasty.**
 
@@ -368,7 +372,7 @@ Build a four-layer stack — conv(1→1, k3, pad 1, `bias=False`), pool 2, conv(
 
 **Draw the region you found:**
 
-```
+```text
 row 0  ________
 row 1  ________
 row 2  ________
@@ -508,6 +512,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions ask for a paragraph each, in your own words.
+
 **T1.** The output-size rule works out the *shape* of what comes out of a layer without knowing a single pixel value, a single weight, or whether the model has ever been trained. **Write a paragraph** about what else in this course you could work out exactly, in advance, on paper — and what you could not. Where is the line between the part of a machine-learning system you can *prove* and the part you can only *measure*? And does knowing which side of the line you are on change how you would spend an afternoon debugging?
 
 ________________________________________________________________
@@ -623,6 +629,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for turning the counting rule into a picture.
+
 Draw the window, the jump and the ring of zeros yourself, with your own numbers on it.
 
 ![Draw it: the window, the jump, and the ring of zeros](../figures/fig-w25-9-draw-frame.svg)
@@ -639,6 +647,8 @@ ________________________________________________________________
 ---
 
 ## 📊 Self-Check
+
+This page is for marking honestly which ideas feel solid. Tick one face per row.
 
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
@@ -772,7 +782,7 @@ The author thought the fourth number was `padding`. **It is `stride`** — and `
 
 **The real flatten length:**
 
-```
+```text
 conv, no padding : (8 + 0 − 3) ÷ 1 + 1 = 6      so 8 channels of 6 × 6
 pool 2           : (6 + 0 − 2) ÷ 2 + 1 = 3      so 8 channels of 3 × 3
 flatten          : 8 × 3 × 3 = 72
@@ -782,7 +792,7 @@ Which is exactly the 72 in the error message.
 
 **The `128` was right for the network they meant to build:**
 
-```
+```text
 conv, one ring   : (8 + 2 − 3) ÷ 1 + 1 = 8      so 8 channels of 8 × 8
 pool 2           : (8 + 0 − 2) ÷ 2 + 1 = 4      so 8 channels of 4 × 4
 flatten          : 8 × 4 × 4 = 128

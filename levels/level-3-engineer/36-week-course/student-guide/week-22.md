@@ -41,7 +41,7 @@ Three lines. Two in, sixteen out. Squash. Sixteen in, one out.
 
 **Now be suspicious.** A short piece of code that replaces a long one has to be hiding the long one somewhere. Your numpy brain had four blocks of learnable numbers — `W1`, `b1`, `W2`, `b2` — and you counted them in Week 19:
 
-```
+```text
 2 × 16 = 32   weights in the first grid
               16   biases after it
 16 × 1 = 16   weights in the second grid
@@ -62,6 +62,8 @@ The one sentence to keep from today:
 
 ## 🧠 The Big Idea
 
+This section explains the parts of a PyTorch network, how to count their numbers, what a logit is, and what the two loss curves and dropout are. Read it before you type anything.
+
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. Each one carries on from the one above, and the `import` lines are typed once, in the first block that needs them. **The complete runnable files are in 💻 Type This.** If you copy a block from here on its own and Python says `NameError`, that is why, and nothing is broken.
 
 ### 1. What `nn.Linear` actually holds
@@ -72,7 +74,7 @@ The one sentence to keep from today:
 
 **A concrete example, small enough to check on paper.** Say the layer is `nn.Linear(2, 3)` — two numbers in, three numbers out — and we set its numbers by hand:
 
-```
+```text
 the grid                  the bias
  0.5   −0.3                 0.2
  0.8    0.2                 0.05
@@ -83,7 +85,7 @@ Six weights, three biases, **nine numbers, and I have written all nine down.** T
 
 Now push in one row of input, `x = [1.0, 2.0]`. Three numbers come out, one per row of the grid:
 
-```
+```text
 row 0:   1.0 × 0.5    +  2.0 × (−0.3)  +  0.2   =   0.5 − 0.6 + 0.2   =  0.10
 row 1:   1.0 × 0.8    +  2.0 × 0.2     +  0.05  =   0.8 + 0.4 + 0.05  =  1.25
 row 2:   1.0 × (−1.0) +  2.0 × 1.5     +  (−0.2) = −1.0 + 3.0 − 0.2   =  1.80
@@ -129,7 +131,7 @@ Take `2 → 16 → 1`, the Week 19 architecture. **Four blocks of numbers, and n
 
 **And here is the version of the count that keeps working when the network gets deeper:**
 
-```
+```text
 one layer costs   (inputs × outputs)  +  outputs
 ```
 
@@ -153,7 +155,7 @@ Read the name backwards: it is a **Loss**, for **Logits**, of the **Binary Cross
 
 **A concrete example on four numbers.** Four raw scores, four true answers:
 
-```
+```text
 score   true answer   sigmoid(score)
  2.0        1           0.880797
 −1.0        0           0.268941
@@ -163,14 +165,14 @@ score   true answer   sigmoid(score)
 
 Week 14's surprise meter is `−ln(p)` when the answer is 1, and `−ln(1 − p)` when the answer is 0:
 
-```
+```text
 row 1   true 1, p = 0.880797  →  −ln(0.880797) = 0.126928
 row 2   true 0, p = 0.268941  →  −ln(0.731059) = 0.313262
 row 3   true 1, p = 0.622459  →  −ln(0.622459) = 0.474077
 row 4   true 1, p = 0.047426  →  −ln(0.047426) = 3.048587
 ```
 
-```
+```text
 0.126928 + 0.313262 + 0.474077 + 3.048587  =  3.962854
 3.962854 ÷ 4  =  0.9907135
 ```
@@ -191,7 +193,7 @@ Look at row 4 one more time: 3.048587, **more than the other three added togethe
 
 **Read the two columns.** Fed in raw, a catastrophic answer costs 6.0025 and a perfect answer costs 0.0025 — a range of six whole units. Squashed twice, the same five answers cost between 0.6919 and 0.3139:
 
-```
+```text
 6.0025 − 0.0025 = 6.0000       fed in raw
 0.6919 − 0.3139 = 0.3780       squashed twice
 ```
@@ -201,7 +203,9 @@ Look at row 4 one more time: 3.048587, **more than the other three added togethe
 ![Squashing twice flattens the loss](../figures/fig-w22-5-squashed-twice-flattens-the-loss.svg)
 *Figure 22.3 — Squashing twice flattens the loss. Six units of range become 0.378, so a disaster and a triumph score nearly the same.*
 
-**Why does it happen?** Because `sigmoid(−6.0) = 0.002473`, and if you hand *that* to `BCEWithLogitsLoss` it treats 0.002473 as a raw score and squashes it **again**: `sigmoid(0.002473) = 0.500618`, which is a coin flip. At the other end, `sigmoid(6.0) = 0.997527` and `sigmoid(0.997527) = 0.730572`. **Every possible score, from a catastrophe to a triumph, gets crushed into the band 0.5006 to 0.7306.**
+**Why does it happen?** Because `sigmoid(−6.0) = 0.002473`, and if you hand *that* to `BCEWithLogitsLoss` it treats 0.002473 as a raw score and squashes it **again**: `sigmoid(0.002473) = 0.500618`, which is a coin flip.
+
+At the other end, `sigmoid(6.0) = 0.997527` and `sigmoid(0.997527) = 0.730572`. **Every possible score, from a catastrophe to a triumph, gets crushed into the band 0.5006 to 0.7306.**
 
 **The rule to write on the front of your notebook:**
 
@@ -213,7 +217,7 @@ Look at row 4 one more time: 3.048587, **more than the other three added togethe
 
 Here is a real run: 400 moons, 300 for training, 100 held back for validation, a 2 → 64 → 64 → 1 network with 4,417 learnable numbers, trained for 1,500 epochs.
 
-```
+```text
  epoch    train     val
      0   0.5529   0.5314
     39   0.1659   0.1568      ← validation's best, ever
@@ -224,9 +228,11 @@ Here is a real run: 400 moons, 300 for training, 100 held back for validation, a
   1499   0.0165   0.4347
 ```
 
-**Read it as a story in two halves.** Up to epoch 39 both numbers fall together — the model is learning something true about moons. After epoch 39 the train number keeps falling all the way to 0.0165, nearly perfect, while the validation number climbs back to 0.4347 — **nearly three times worse than its own best, and most of the way back to where it started at epoch 0 (0.5314).**
+**Read it as a story in two halves.** Up to epoch 39 both numbers fall together — the model is learning something true about moons.
 
-```
+After epoch 39 the train number keeps falling all the way to 0.0165, nearly perfect, while the validation number climbs back to 0.4347 — **nearly three times worse than its own best, and most of the way back to where it started at epoch 0 (0.5314).**
+
+```text
 at the end:   0.4347 − 0.0165  =  0.4182
 ```
 
@@ -267,7 +273,9 @@ Patience exists because the validation curve is bumpy. Epoch 40 being worse than
 | no dropout | 0.1568 | 39 | **0.4347** |
 | dropout 0.3 | 0.1443 | 43 | **0.2385** |
 
-**Dropout did not stop the overfitting. It slowed it down.** Look at the last column: 0.2385 instead of 0.4347, so the punishment for training too long is about half as bad. But the *best* score barely moved — 0.1443 against 0.1568, a difference of 0.0125, which is almost nothing.
+**Dropout did not stop the overfitting. It slowed it down.** Look at the last column: 0.2385 instead of 0.4347, so the punishment for training too long is about half as bad.
+
+But the *best* score barely moved — 0.1443 against 0.1568, a difference of 0.0125, which is almost nothing.
 
 **Be honest about that.** Dropout is a brake, not a cure. The cure is stopping at the right epoch.
 
@@ -297,7 +305,7 @@ There is no new maths this week. Instead, Week 14's surprise meter — `−ln(p)
 
 **Type these into your calculator now.** `ln`, then change the sign:
 
-```
+```text
 row 1   answer 1    −ln(0.880797)              = 0.126928
 row 2   answer 0    −ln(1 − 0.268941) = −ln(0.731059) = 0.313262
 row 3   answer 1    −ln(0.622459)              = 0.474077
@@ -306,7 +314,7 @@ row 4   answer 1    −ln(0.047426)              = 3.048587
 
 **Step 3 — average them.** Four rows, so divide by four:
 
-```
+```text
 0.126928 + 0.313262 + 0.474077 + 3.048587  =  3.962854
 3.962854 ÷ 4                               =  0.9907135
 ```
@@ -324,7 +332,7 @@ row 4   answer 1    −ln(0.047426)              = 3.048587
 
 **Step 5 — the name and the check.** That average of surprises is what `nn.BCEWithLogitsLoss()` computes, and in 💻 Type This you will run it on those exact four scores and see:
 
-```
+```text
 0.9907134771347046
 ```
 
@@ -334,7 +342,7 @@ Your calculator said 0.9907135. **They are the same number.** The library is doi
 
 ## 💻 Type This
 
-Two files, both in the same folder. Nothing here downloads anything.
+In this section you type and run two files, `layers.py` and `overfit.py`, in the same folder. Nothing here downloads anything.
 
 ### Step 1 — build it and count it
 
@@ -516,7 +524,9 @@ def train(with_dropout):
     return model, train_hist, val_hist, best
 ```
 
-**What the new lines do.** `build` puts `torch.manual_seed(0)` *inside* it, so both networks start from the same random numbers and the comparison is fair. The five lines of the loop are Week 21's five lines, untouched. `model.train()` and `model.eval()` switch dropout on and off; leave them alone until next week. `val_hist.index(min(val_hist))` finds the position of the smallest validation loss — the epoch we want.
+**What the new lines do.** `build` puts `torch.manual_seed(0)` *inside* it, so both networks start from the same random numbers and the comparison is fair. The five lines of the loop are Week 21's five lines, untouched.
+
+`model.train()` and `model.eval()` switch dropout on and off; leave them alone until next week. `val_hist.index(min(val_hist))` finds the position of the smallest validation loss — the epoch we want.
 
 **Predict before you run it.** Training loss and validation loss. Which one falls further after 1,500 epochs?
 
@@ -587,7 +597,11 @@ plt.savefig("dropout.png", dpi=120)
 print("\nwrote overfit.png and dropout.png")
 ```
 
-**What the new lines do.** `(model(X_va_t) >= 0)` turns raw scores into 0s and 1s — a score of 0 is exactly where the sigmoid gives 0.5, so "score at least zero" means "chance at least a half". `plt.axvline(best_p, linestyle="--")` is the dashed vertical line, and it goes at the **minimum of the validation curve**, not where the two curves cross. `matplotlib.use("Agg")` must sit **above** `import matplotlib.pyplot`, or a window opens and everything stops.
+**What the new lines do.**
+
+- `(model(X_va_t) >= 0)` turns raw scores into 0s and 1s. A score of 0 is exactly where the sigmoid gives 0.5, so "score at least zero" means "chance at least a half".
+- `plt.axvline(best_p, linestyle="--")` is the dashed vertical line, and it goes at the **minimum of the validation curve**, not where the two curves cross.
+- `matplotlib.use("Agg")` must sit **above** `import matplotlib.pyplot`, or a window opens and everything stops.
 
 ```text
 no dropout   validation accuracy 0.9100
@@ -648,7 +662,7 @@ the four numbers: [1.2, 0.8, 0.8, 1.3]
 
 **Now check all four by hand.** The input is `2.0, 1.0, 0.0`:
 
-```
+```text
 row 0:  2.0 × 0.5    + 1.0 × 0.2    + 0.0 × (−0.1) + 0.0    =  1.0 + 0.2 + 0     =  1.2
 row 1:  2.0 × (−0.3) + 1.0 × 0.9    + 0.0 × 0.4    + 0.5    = −0.6 + 0.9 + 0.5   =  0.8
 row 2:  2.0 × 1.0    + 1.0 × (−1.0) + 0.0 × 0.0    + (−0.2) =  2.0 − 1.0 − 0.2   =  0.8
@@ -815,11 +829,11 @@ their average: 0.9140646457672119
 
 **And check the by-hand line.** Row 6: the forecaster said −4.0, meaning a chance of 0.017986 — "it will definitely not rain". It rained.
 
-```
+```text
 −ln(0.017986) = 4.01815
 ```
 
-```
+```text
 0.105083 + 0.513015 + 0.201413 + 0.048587 + 0.598139 + 4.01815  =  5.484388
 5.484388 ÷ 6                                                    =  0.9140646
 ```
@@ -1010,6 +1024,8 @@ Both went in the Bug Log. For the first one, in the column where the error messa
 
 ## 💬 Talk About It
 
+Three questions to argue about with a partner or a parent. Each has a hint that shows where to start.
+
 **1. Dropout barely improved the best score — 0.1443 against 0.1568 — but it halved how bad things got by the end. Is that a good tool or a bad one?**
 
 *Hint:* start by agreeing that 0.0125 on 100 validation rows is not a real improvement, so any argument that dropout "made the model better" is standing on nothing. Then ask what it *did* change: the shape of the curve **after** the best epoch. Now the useful question — **who benefits from a gentler decline?** Somebody who knows exactly when to stop takes epoch 39 either way. Somebody who trains overnight and comes back in the morning lands on the far right of that curve, and 0.2385 is a much better place to land than 0.4347. So push further: is dropout a modelling tool or an insurance policy against your own carelessness — and is there anything wrong with the second one?
@@ -1025,6 +1041,8 @@ Both went in the Bug Log. For the first one, in the column where the error messa
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four wrong ideas that sound reasonable, each set beside the right one.
 
 ### Trick 1 — "the weight shape printed backwards, so something is broken"
 
@@ -1065,6 +1083,8 @@ The test: **cover the training curve with your hand.** Can you still find the ep
 
 ## 🌍 Where You've Seen This
 
+Six places in everyday life where this week's ideas show up.
+
 1. **The "smart reply" buttons in a messaging app.** Behind those three little suggestions are raw scores for hundreds of candidate replies, and something picks the top three. Those raw scores are logits, and nothing turns them into anything human-readable until the last moment.
 2. **A spam folder that lets one through and quarantines a real email.** The model produced one raw score per message and somebody chose the line to cut at. Move the line and you trade one kind of mistake for the other — Week 10's threshold dial, sitting on top of this week's logits.
 3. **Autocorrect getting worse the longer you use a phone.** A model that has adapted very hard to *your* typing has a tiny training loss. When you type an unusual word for the first time, you are its validation set, and sometimes you can feel it lose.
@@ -1102,6 +1122,8 @@ to stop it.*
 ---
 
 ## 🔑 Remember This
+
+The key points of the week, then a syntax card to keep next to your keyboard.
 
 - **`nn.Linear` is the grid multiply plus the bias.** Nothing else is inside it. `nn.ReLU()` has no numbers at all. `nn.Sequential(...)` is a list of parts, top to bottom.
 - **A weight's shape is (outputs, inputs).** `nn.Linear(2, 16)` prints `(16, 2)`. That is not a bug and it does not need fixing.
@@ -1160,6 +1182,8 @@ plt.axvline(best, linestyle="--", color="grey")  # at the MINIMUM, not the cross
 ---
 
 ## 📓 New Words
+
+The words from this week, each with its meaning and an example.
 
 ![This week's five words, drawn](../figures/fig-w22-7-vocab-icons.svg)
 *Figure 22.7 — This week's five words, drawn.*

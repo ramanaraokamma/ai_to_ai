@@ -47,7 +47,7 @@ Observable evidence: a nine-row cost table with the winner circled and one row's
 
 Last week ended beautifully and uselessly. Three sticky notes:
 
-```
+```text
 t = 0.12   right for the two-person review desk
 t = 0.10   right for the manager who signs off the queue
 t = 0.02   right for the customer whose money is gone
@@ -73,7 +73,7 @@ For our fraud problem, and these are the numbers the bank actually gives you:
 
 **The two diagonal cells cost nothing.** Getting it right is free. So the whole cost of running your model is:
 
-```
+```text
 cost  =  500 × (number of misses)  +  10 × (number of false alarms)
 ```
 
@@ -106,7 +106,7 @@ cheapest of the nine: t = 0.10 at 5550
 
 **Do one row longhand before class**, out loud, because you will do it on the board:
 
-```
+```text
 t = 0.10   →   11 misses, 5 false alarms
 
   500 × 11  =  5500
@@ -148,7 +148,7 @@ Draw a curve on graph paper. You want the area of the space underneath it. The c
 
 Here is the five-point curve the class will use, and all four strips worked out. **Every number below was printed by a machine.**
 
-```
+```text
 the five points:   (0.00, 0.00)  (0.25, 0.60)  (0.50, 0.80)  (0.75, 0.90)  (1.00, 1.00)
 
 strip 1: (0.00 + 0.60) / 2 x 0.25 = 0.0750
@@ -179,7 +179,7 @@ roc_auc_score       : 0.6116
 
 `np.trapz(y, x)` takes the **heights first and the positions second** — the opposite order from how you would say it. Get it backwards and you get a plausible wrong answer with no error:
 
-```
+```text
 right way   np.trapz(ys, xs) : 0.7000
 wrong way   np.trapz(xs, ys) : 0.3000
 ```
@@ -197,7 +197,7 @@ There is a formula for the best threshold, and it is short enough to derive on t
 
 Flagging becomes worthwhile exactly when the expected cost of flagging drops below the expected cost of not flagging, and that crossover sits at:
 
-```
+```text
 t*  =  cost of a false alarm  ÷  (cost of a false alarm + cost of a miss)
 
     =  10 ÷ (10 + 500)  =  10 ÷ 510  =  0.0196
@@ -249,7 +249,7 @@ report it as  : AUC = 0.628 +/- 0.087 (5-fold stratified CV)
 
 The mean, worked out longhand because you will do it on the board:
 
-```
+```text
 0.6183 + 0.5909 + 0.6873 + 0.7504 + 0.4954  =  3.1423
 
 3.1423 ÷ 5  =  0.62846   →   0.6285
@@ -397,7 +397,7 @@ it turns black next week.*
 
 - [ ] **Write the price list on a card.** One card, big letters, in your pocket:
 
-```
+```text
    a missed fraud  ...........  £500
    a false alarm   ...........   £10
 ```
@@ -406,7 +406,7 @@ it turns black next week.*
 
 - [ ] **Do the four trapezoid strips yourself, on paper.** Not on a calculator app — on paper, four lines:
 
-```
+```text
 (0.00 + 0.60) ÷ 2 × 0.25 = 0.30 × 0.25 = 0.0750
 (0.60 + 0.80) ÷ 2 × 0.25 = 0.70 × 0.25 = 0.1750
 (0.80 + 0.90) ÷ 2 × 0.25 = 0.85 × 0.25 = 0.2125
@@ -623,7 +623,7 @@ report it as  : AUC = 0.628 +/- 0.087 (5-fold stratified CV)
 
 **Do this:** Take the price-list card out of your pocket. Hold it up. Read it out slowly. Then tape it to the board.
 
-```
+```text
    a missed fraud  ...........  £500
    a false alarm   ...........   £10
 ```
@@ -654,7 +654,7 @@ Take a show of hands and **write the count on the board.** They will mostly say 
 
 **Do this:** Go to last week's nine-row table on the wall. Rule two extra columns on the right and head them `500 × misses` and `10 × false alarms`. Then do the **first** row with the whole room, out loud.
 
-```
+```text
 t = 0.50    misses 14    false alarms 0
 
     500 × 14  =  7000
@@ -680,7 +680,7 @@ The finished board:
 
 **Do this:** Circle it. Then write the saving underneath:
 
-```
+```text
 7000 − 5550  =  1450
 ```
 
@@ -702,7 +702,7 @@ The finished board:
 
 **Do this:** Fresh graph paper on the wall. Plot these five points and join them with straight lines. **Say the coordinates out loud as you plot.**
 
-```
+```text
 (0.00, 0.00)   (0.25, 0.60)   (0.50, 0.80)   (0.75, 0.90)   (1.00, 1.00)
 ```
 
@@ -722,7 +722,7 @@ The finished board:
 
 **Do this:** Work strip 1 on the board, slowly, every step:
 
-```
+```text
 strip 1:   left height 0.00,  right height 0.60,  width 0.25
 
            (0.00 + 0.60) ÷ 2  =  0.60 ÷ 2  =  0.30      <- average height
@@ -731,7 +731,7 @@ strip 1:   left height 0.00,  right height 0.60,  width 0.25
 
 **Do this:** Hand out strips 2, 3 and 4 — one per group, two minutes, calculators.
 
-```
+```text
 strip 2:   (0.60 + 0.80) ÷ 2 × 0.25  =  0.70 × 0.25  =  0.1750
 strip 3:   (0.80 + 0.90) ÷ 2 × 0.25  =  0.85 × 0.25  =  0.2125
 strip 4:   (0.90 + 1.00) ÷ 2 × 0.25  =  0.95 × 0.25  =  0.2375
@@ -739,7 +739,7 @@ strip 4:   (0.90 + 1.00) ÷ 2 × 0.25  =  0.95 × 0.25  =  0.2375
 
 **Ask this:** "Add the four up."
 
-```
+```text
 0.0750 + 0.1750 + 0.2125 + 0.2375  =  0.7000
 ```
 
@@ -950,7 +950,7 @@ mean 0.6285   sd 0.0867
 
 **Do this:** Write the mean out longhand on the board while a student checks you on a phone.
 
-```
+```text
 0.6183 + 0.5909 + 0.6873 + 0.7504 + 0.4954  =  3.1423
 3.1423 ÷ 5  =  0.6285
 ```
@@ -1054,7 +1054,7 @@ And the sentence for this week:
 
 **Minute 1–5.** They change one line — `COST_FN = 50` — and re-run. Real output for the cost column, which you should have on this page in front of you:
 
-```
+```text
 t = 0.50   700       t = 0.08    670
 t = 0.15   650       t = 0.06    770
 t = 0.12   600  <--  t = 0.04   1110
@@ -1068,7 +1068,7 @@ t = 0.08   670       t = 0.01   4510
 
 > "And now the fraud department has read a newspaper. **A missed fraud costs £5,000.** Go."
 
-```
+```text
 t = 0.50   70000      t = 0.06   55220
 t = 0.15   65000      t = 0.04   50610
 t = 0.12   60000      t = 0.02   47110
@@ -1103,7 +1103,7 @@ t = 0.08   55120
 - One laptop for the right half.
 - **A new five-point curve**, which you write up and which nobody has seen. Use this one — it is last week's twenty-card ROC curve, read off the wall at five of its thresholds:
 
-```
+```text
    t = 0.90  ->  (0.0, 0.2)
    t = 0.70  ->  (0.1, 0.6)
    t = 0.50  ->  (0.3, 0.8)
@@ -1117,7 +1117,7 @@ t = 0.08   55120
 
 **Minute 1–6 — the left half, by hand.** Four strips, and **the widths are not all the same this time**, which is the whole difficulty and the reason this curve was chosen:
 
-```
+```text
 strip 1:  (0.2 + 0.6) ÷ 2 × 0.1  =  0.40 × 0.1  =  0.0400
 strip 2:  (0.6 + 0.8) ÷ 2 × 0.2  =  0.70 × 0.2  =  0.1400
 strip 3:  (0.8 + 1.0) ÷ 2 × 0.2  =  0.90 × 0.2  =  0.1800
@@ -1276,7 +1276,7 @@ Do the price list and nothing else. **Two multiplications and one addition, on o
 
 If they will do one written thing, make it this: **the £500 row and the £50 row for `t = 0.10`**, side by side.
 
-```
+```text
 a miss costs £500:   500 × 11 + 10 × 5  =  5500 + 50  =  5550
 a miss costs  £50:    50 × 11 + 10 × 5  =   550 + 50  =   600
 ```
@@ -1297,7 +1297,7 @@ Three checks, five minutes, exact wording.
 
 **Check 2 — the new maths, on a strip they have not seen.** Write on the board:
 
-```
+```text
 left height 0.40      right height 0.70      width 0.20
 ```
 
@@ -1368,7 +1368,7 @@ Say: *"One strip. What is its area?"*
 
 The winner's arithmetic, longhand:
 
-```
+```text
 500 × 11  =  5500
  10 ×  5  =    50
               ----
@@ -1431,7 +1431,7 @@ The winner's arithmetic, longhand:
 
 The five points: `(0.00, 0.00) (0.25, 0.60) (0.50, 0.80) (0.75, 0.90) (1.00, 1.00)`. Every strip is 0.25 wide.
 
-```
+```text
 strip 1:  (0.00 + 0.60) ÷ 2 = 0.30      0.30 × 0.25 = 0.0750
 strip 2:  (0.60 + 0.80) ÷ 2 = 0.70      0.70 × 0.25 = 0.1750
 strip 3:  (0.80 + 0.90) ÷ 2 = 0.85      0.85 × 0.25 = 0.2125
@@ -1455,7 +1455,7 @@ np.trapz  : 0.7000
 
 **If they used the race curve instead** (unequal widths), the answer is **0.8600**:
 
-```
+```text
 (0.2 + 0.6) ÷ 2 × 0.1 = 0.0400
 (0.6 + 0.8) ÷ 2 × 0.2 = 0.1400
 (0.8 + 1.0) ÷ 2 × 0.2 = 0.1800
@@ -1487,7 +1487,7 @@ report it as  : AUC = 0.628 +/- 0.087 (5-fold stratified CV)
 
 The mean, longhand:
 
-```
+```text
 0.6183 + 0.5909  =  1.2092
 1.2092 + 0.6873  =  1.8965
 1.8965 + 0.7504  =  2.6469

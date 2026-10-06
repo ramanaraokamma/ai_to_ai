@@ -42,7 +42,7 @@ error: ________________________________________________  fix: ______________
 
 Your contract says two things about mistakes on a comment forum:
 
-```
+```text
 a NASTY comment marked positive  =  a nasty comment nobody reads     price 10
 a NICE comment marked negative   =  a moderator's ten seconds wasted price  1
 ```
@@ -90,7 +90,7 @@ ________________________________________________________________
 
 Module 3 gives a rule of thumb: when calling a review **positive** wrongly costs `C_pos_wrong` (here, a nasty one let through: 10) and calling it **negative** wrongly costs `C_neg_wrong` (here, a nice one flagged: 1), put the threshold on the probability of positive near
 
-```
+```text
 C_pos_wrong ÷ ( C_pos_wrong + C_neg_wrong )
 ```
 
@@ -114,7 +114,7 @@ ________________________________________________________________
 
 **(c)** Three golden tests sit at `p = 0.7661`, `0.2110` and `0.2380`, and the threshold is `0.65`. **Compute each distance from the threshold**, showing the subtraction:
 
-```
+```text
 test 1:  ________ − ________ = ________
 test 2:  ________ − ________ = ________
 test 3:  ________ − ________ = ________
@@ -298,6 +298,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading: matching words, reading files and output, and spotting bugs. Pen only; no code to write.
+
 **A1. Match the word to the thing.** Write the letter.
 
 | Word | | Description |
@@ -422,6 +424,8 @@ Write one label in each box, then obey the two rules printed at the bottom of th
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing short programs yourself. Each task gives the expected output or a "Done looks like" check.
 
 ### B1 — one line
 
@@ -571,6 +575,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This page is for working from evidence: four log lines, one missing field, and only arithmetic to go on.
+
 ### The Missing Threshold
 
 Your logging code had a typo for one afternoon and **did not write the `threshold` field.** Here are four log lines from that afternoon, all from the same model version, in the order they happened:
@@ -584,7 +590,7 @@ Your logging code had a typo for one afternoon and **did not write the `threshol
 
 **Part 1.** The rule is `positive` when `probability >= threshold`. **Work out the narrowest range the threshold could have been in.**
 
-```
+```text
 from the positive lines, the threshold is at most ________
 from the negative lines, the threshold is more than ________
 
@@ -612,6 +618,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These two questions are for answering in full paragraphs, in your own words.
 
 **T1.** Box 6 of your contract lists things the model must **never** be used for. Somebody says: *"that box is just covering yourself — if the model is good enough, why ban anything?"*
 
@@ -795,6 +803,8 @@ $ python3 tests.py
 
 ## 🎨 Draw It
 
+This page is for drawing the week's ideas on one sheet. The figure below is the frame to work from.
+
 ![Draw it: from a stranger's terminal to an answer](../figures/fig-w34-8-draw-frame.svg)
 *Figure W34.2 — From a stranger's terminal to an answer.*
 
@@ -811,6 +821,8 @@ $ python3 tests.py
 ---
 
 ## 📊 Self-Check
+
+Use this table to rate yourself on each skill from the week: 😀 confident, 🙂 nearly, 😕 not yet.
 
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
@@ -839,6 +851,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Work through every page before you open this. Open the fold below only to check your own answers.
 
 <details>
 <summary>Check your answers</summary>
@@ -900,7 +914,7 @@ Notice the shape of the column: it falls, bottoms out, then climbs again. **50 �
 
 **(c)**
 
-```
+```text
 test 1:  0.7661 − 0.65  = 0.1161
 test 2:  0.65  − 0.2110 = 0.4390
 test 3:  0.65  − 0.2380 = 0.4120
@@ -1316,7 +1330,7 @@ The two `positive` lines each say `probability >= t`, so `t` is at most the **sm
 
 The two `negative` lines each say `probability < t`, so `t` is bigger than the **larger** of them: `0.4614` and `0.2750`, so **t > 0.4614**.
 
-```
+```text
 0.4614  <  t  ≤  0.6331
 ```
 
@@ -1324,7 +1338,7 @@ The two `negative` lines each say `probability < t`, so `t` is bigger than the *
 
 **Part 3.**
 
-```
+```text
 from line 2:  t ≤ 0.6331
 from line 5:  t >  0.6857
 and 0.6331 < 0.6857, so there is no number t that satisfies both

@@ -29,9 +29,9 @@ Now suppose it had been badly wrong. **Which knob would you turn?**
 
 Here is the obvious method, and it genuinely works. Take knob number one. Nudge it up a tiny bit, run the whole network, see what the loss did. Nudge it down, run the whole network again, see what the loss did. Divide. **That is the slope for knob one**, and you have known how to do it since Week 12.
 
-Two runs per knob. Now scale it up to a real model:
+Two runs per knob. Now scale it up to a real model, with these numbers:
 
-```
+```text
 16,000,000 knobs
 one forward pass = 0.01 seconds
 ```
@@ -54,6 +54,8 @@ Sixteen million is not. **That is the only difference.**
 
 ## 🧠 The Big Idea
 
+This section explains backpropagation in four steps: an everyday picture, the one rule behind it, the five backward rules, and then the numbers worked by hand.
+
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. Each one carries on from the one above, and the `import` lines are typed once, in the first block that needs them. **The complete runnable files are in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
 ### 1. Blame arrives, you keep your share, you pass the rest back
@@ -74,7 +76,7 @@ That is backprop. **Blame arrives; you keep your share; you pass the rest back.*
 
 **Set up a two-stage chain.** Stage 1 takes `w` and produces `z`. Stage 2 takes `z` and produces `L`.
 
-```
+```text
 w  ──[ stage 1: z = 3w + 1 ]──▶  z  ──[ stage 2: L = z × z ]──▶  L
 ```
 
@@ -157,7 +159,7 @@ Slopes **multiply** along a chain. Not add — multiply. And this was not somebo
 
 **Rules two and four have transposes in them, and here is how you never memorise where they go.**
 
-```
+```text
 dW2 = A1.T @ dZ2          A1 is (4, 2), so A1.T is (2, 4)
                           dZ2 is (4, 1)
                           (2, 4) @ (4, 1) → (2, 1)     and W2 is (2, 1)  ✅
@@ -199,7 +201,7 @@ It is ReLU's valve working in reverse: **no signal went forward, so no blame com
 
 **The network — last week's, with the third hidden unit removed:**
 
-```
+```text
 W1 = [ 0.5  -0.3 ]      b1 = [ 0.1   0.05 ]
      [ 0.8   0.2 ]
 
@@ -209,9 +211,9 @@ W2 = [  1.0 ]           b2 = [ 0.3 ]
 x = [1.0, 2.0]          y = 1
 ```
 
-**Forward:**
+**Forward** — the one-row calculation, from the inputs to the loss:
 
-```
+```text
 z1 = 1.0(0.5) + 2.0(0.8) + 0.1   =  0.5 + 1.6 + 0.1   =  2.20
 z2 = 1.0(−0.3) + 2.0(0.2) + 0.05 = −0.3 + 0.4 + 0.05  =  0.15
 
@@ -226,7 +228,7 @@ loss = −ln(0.90024951) = 0.10508332
 
 **Backward — nine numbers, every one a multiplication you can do on a calculator:**
 
-```
+```text
 step 1 — blame at the output:
    dZ2 = A2 − y = 0.90024951 − 1 = −0.09975049
 
@@ -263,9 +265,9 @@ step 5 — the hidden layer's weights (input × blame):
 
 ### 5. Then a batch of four rows, which is what your homework uses
 
-Same weights, same architecture, four rows and four labels:
+Same weights, same architecture, four rows and four labels. Here are the inputs `X` and labels `y`:
 
-```
+```text
 X = [  1.0   2.0 ]        y = [ 1 ]
     [  2.0  -1.0 ]            [ 0 ]
     [  0.0   0.5 ]            [ 1 ]
@@ -283,7 +285,7 @@ X = [  1.0   2.0 ]        y = [ 1 ]
 
 **The batch loss is the average of those four:**
 
-```
+```text
 (0.105083 + 1.037488 + 0.474077 + 0.693147) ÷ 4 = 2.309796 ÷ 4 = 0.577449
 ```
 
@@ -291,7 +293,7 @@ X = [  1.0   2.0 ]        y = [ 1 ]
 
 **Backward, and the only change from the one-row version is the `÷ 4`:**
 
-```
+```text
 dZ2 = (A2 − y) ÷ 4
 
    row 1: (0.900250 − 1) ÷ 4 = −0.099750 ÷ 4 = −0.024938
@@ -302,7 +304,7 @@ dZ2 = (A2 − y) ÷ 4
 
 **Now `dW2 = A1.T @ dZ2`, and here is the first entry in full**, which is the arithmetic you must see:
 
-```
+```text
 dW2[0] = 2.2 × (−0.024938) + 0.3 × (0.161414) + 0.5 × (−0.094385) + 0.0 × (0.125000)
        = −0.054863    +    0.048424     +    (−0.047193)    +    0.000000
        = −0.053631
@@ -310,9 +312,9 @@ dW2[0] = 2.2 × (−0.024938) + 0.3 × (0.161414) + 0.5 × (−0.094385) + 0.0 �
 
 **The last term is zero**, because hidden unit 1 was silent on row 4. That row contributed nothing at all to that weight's blame, **and you can see the silence in the arithmetic.**
 
-**All four gradient arrays:**
+**All four gradient arrays**, as the chain produces them:
 
-```
+```text
 dW1 = [  0.297891   0.299875 ]        db1 = [ 0.042091  −0.011354 ]
       [ −0.258482   0.444136 ]
 
@@ -354,7 +356,7 @@ The chain rule was section 2. This section does the thing that makes the chain r
 
 Check `dW1[0,0]`, which the chain said was `0.29789053`. Nudge that one weight by `ε = 0.000001` — a millionth — in each direction, and recompute the whole batch loss both times.
 
-```
+```text
 W1[0,0] = 0.500001  →  loss = 0.577449156639
 W1[0,0] = 0.499999  →  loss = 0.577448560858
 
@@ -410,6 +412,8 @@ all nine below 1e-6?  True
 Three files. **Nothing trains this week — you compute the gradients and look at them.** Every file runs in well under a second.
 
 ### Step 1 — `chain.py`: measure both, then multiply
+
+Type this into `chain.py` and run it.
 
 ```python
 """chain.py - slopes multiply along a chain, measured two ways."""
@@ -481,6 +485,8 @@ difference between the two answers: 0.0000000000
 
 ### Step 2 — start `backprop.py`: the forward half, and the loss
 
+Type this as the start of `backprop.py`. It sets up the network and computes the loss.
+
 ```python
 import numpy as np
 
@@ -525,6 +531,8 @@ loss = 0.577449
 
 ### Step 3 — the missing `.T`, on purpose
 
+This block leaves out a `.T` deliberately, to show the error it causes. Add these two lines to `backprop.py` and run it.
+
 ```python
 dZ2 = (A2 - y) / n
 dW2 = A1 @ dZ2
@@ -545,6 +553,8 @@ ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with
 > **🐞 If you see this error:** do not start guessing where a `.T` goes. **Write down the shape you need first.** A gradient has the shape of its knob, so there is exactly one legal arrangement.
 
 ### Step 4 — the mask, and the four arrays
+
+Replace the broken line with the corrected one, then add the rest of the backward pass.
 
 ```python
 dW2 = A1.T @ dZ2
@@ -588,6 +598,8 @@ db2 (1, 1)
 
 ### Step 5 — one entry, worked out in full, in code
 
+Add this loop to print the four products that make up one entry of the output layer's weight gradient.
+
 ```python
 for i in range(n):
     print("   %6.2f x %10.6f = %10.6f" % (A1[i, 0], dZ2[i, 0], A1[i, 0] * dZ2[i, 0]))
@@ -606,7 +618,7 @@ print("   total                = %10.6f" % dW2[0, 0])
 
 ### Step 6 — forget the ReLU mask, on purpose
 
-Change `dZ1 = dA1 * mask` to `dZ1 = dA1`. Re-run.
+Change `dZ1 = dA1 * mask` to `dZ1 = dA1` and re-run. This is deliberate, and you will put the mask back afterwards.
 
 **No error.** `dW1` comes out as:
 
@@ -623,6 +635,8 @@ You cannot tell by looking. Nobody can. **This is the most dangerous class of bu
 **Which is exactly why the next thing we do is the gradient check. It is the only thing that catches this.** Put the mask back.
 
 ### Step 7 — the whole of `backprop.py`, in one block
+
+This is the complete file with every step above in place. Type it out and run it.
 
 ```python
 """backprop.py - four gradient arrays for a 2 -> 2 -> 1 network, four rows."""
@@ -752,11 +766,13 @@ dW2[0] worked out in full:
 
 ## 🔍 Worked Examples
 
+Three examples to follow with a calculator: a chain with a cube in it, all nine gradients for a single row, and a gradient check done by hand.
+
 ### Worked Example 1 — A three-stage chain, with a cube in it
 
 The class did `3 × 14 = 42` on two stages. Here are **three** stages, with a shape that is not a square, so the numbers are less tidy — and that turns out to teach something.
 
-```
+```text
 w  ──[ z = 5w − 2 ]──▶  z  ──[ L = z × z × z ]──▶  L
 ```
 
@@ -764,7 +780,7 @@ w  ──[ z = 5w − 2 ]──▶  z  ──[ L = z × z × z ]──▶  L
 
 **Step 2 — stage 1, by nudging.**
 
-```
+```text
 z(1.001) = 5(1.001) − 2 = 5.005 − 2 = 3.005000
 z(0.999) = 5(0.999) − 2 = 4.995 − 2 = 2.995000
 
@@ -773,7 +789,7 @@ z(0.999) = 5(0.999) − 2 = 4.995 − 2 = 2.995000
 
 **Step 3 — stage 2, by nudging, standing at `z = 3`.**
 
-```
+```text
 L(3.001) = 3.001 × 3.001 × 3.001 = 27.027009001
 L(2.999) = 2.999 × 2.999 × 2.999 = 26.973008999
 
@@ -784,7 +800,7 @@ L(2.999) = 2.999 × 2.999 × 2.999 = 26.973008999
 
 **Step 4 — multiply, and then measure straight through.**
 
-```
+```text
 multiplied:       5.000000 × 27.000001 = 135.000005
 
 straight through: L(w=1.001) = 27.135225125
@@ -798,7 +814,7 @@ difference: 0.000120
 
 Shrink the nudge to a millionth and watch it tighten up:
 
-```
+```text
 with h = 0.000001:
   stage slopes 5.000000 and 27.000000, product 135.000000 ; straight through 135.000000
 ```
@@ -811,7 +827,7 @@ The same 2 → 2 → 1 network, but row **3** of the batch on its own — the on
 
 **Step 1 — forward.**
 
-```
+```text
 z1 = 0.0(0.5) + 0.5(0.8) + 0.1   = 0 + 0.4 + 0.1  = 0.50
 z2 = 0.0(−0.3) + 0.5(0.2) + 0.05 = 0 + 0.1 + 0.05 = 0.15
 
@@ -824,7 +840,7 @@ loss = −ln(0.62245933) = 0.47407698
 
 **Step 2 — the blame at the output.** One row, so `n = 1` and there is no dividing:
 
-```
+```text
 dZ2 = A2 − y = 0.62245933 − 1 = −0.37754067
 ```
 
@@ -862,7 +878,7 @@ Take the four-row batch again. The chain says `db2 = 0.16709129` and `dW1[1,1] =
 
 **Step 1 — `db2`.** Nudge `b2` from `0.3` to `0.300001` and to `0.299999`, and recompute the whole batch loss:
 
-```
+```text
 b2 = 0.300001  →  loss = 0.577449025840
 b2 = 0.299999  →  loss = 0.577448691657
 
@@ -876,7 +892,7 @@ the knob moved:  0.000002
 
 **Step 2 — `dW1[1,1]`, which is four stages away from the loss.** From `0.2` to `0.200001` and `0.199999`:
 
-```
+```text
 W1[1,1] = 0.200001  →  loss = 0.577449302885
 W1[1,1] = 0.199999  →  loss = 0.577448414613
 
@@ -913,6 +929,8 @@ dW1[1,1]      0.44413566    0.44413566       4.97e-11   correct
 ---
 
 ## 🐞 When It Breaks
+
+Four mistakes you are likely to make this week, each shown with its message or symptom, what it means, and the fix. The table at the end collects them in one place.
 
 ### Break 1 — the missing `.T`
 
@@ -1017,7 +1035,7 @@ dW1[1,1]      1.77654263    0.44413566       6.00e-01
 
 The board was split down the middle: **STAGE BY STAGE** on the left, **STRAIGHT THROUGH** on the right. A **three**-stage chain this time:
 
-```
+```text
 w  ──[ z = 3w + 1 ]──▶  z  ──[ u = z × z ]──▶  u  ──[ L = u ÷ 7 ]──▶  L
 
 start at w = 2:   z = 7,   u = 49,   L = 7
@@ -1057,7 +1075,7 @@ Two minutes each, calculators out. **If you missed the class, do all five now �
 
 **Station 1 — SLOPE (Week 12).** `f(w) = (w − 4) × (w − 4)`. Measure the slope at `w = 1` by nudging.
 
-```
+```text
 f(1.001) = (1.001 − 4)² = (−2.999)² = 8.994001
 f(0.999) = (0.999 − 4)² = (−3.001)² = 9.006001
 
@@ -1068,7 +1086,7 @@ f(0.999) = (0.999 − 4)² = (−3.001)² = 9.006001
 
 **Station 2 — SIGMOID (Week 13).** `z = 1.4`. What is `sigmoid(z)` to four places?
 
-```
+```text
 e^(−1.4) = 0.246597
 1 + 0.246597 = 1.246597
 1 ÷ 1.246597 = 0.802184
@@ -1078,7 +1096,7 @@ e^(−1.4) = 0.246597
 
 **Station 3 — LOG LOSS (Week 14).** `p = 0.8022`. The loss if `y = 1`, and if `y = 0`.
 
-```
+```text
 y = 1:  −ln(0.802184) = 0.220417
 y = 0:  −ln(1 − 0.802184) = −ln(0.197816) = 1.620417
 ```
@@ -1087,7 +1105,7 @@ y = 0:  −ln(1 − 0.802184) = −ln(0.197816) = 1.620417
 
 **Station 4 — ONE GRADIENT STEP (Week 15).** `w = 3`, slope `= 6`, learning rate `= 0.1`.
 
-```
+```text
 new w = 3 − 0.1 × 6 = 3 − 0.6 = 2.4
 loss before = 3 × 3 = 9.00
 loss after  = 2.4 × 2.4 = 5.76
@@ -1138,6 +1156,8 @@ Follow it down the screen. Every `z` is zero because every weight is zero. `ReLU
 
 ## 💬 Talk About It
 
+Three questions to talk through with your teacher or a friend. Each has a hint, so try the question first and read the hint after.
+
 **1. The nudge method is correct and takes four days. Backprop takes a millisecond. Is backprop an approximation of it?**
 
 *Hint:* be careful, because "faster" often does mean "rougher" and here it does not. Start with the evidence: nine knobs, nine relative errors, worst `2.97e-08`. That is agreement to about eight decimal places, so backprop is not a shortcut that loses accuracy. Then work out where the speed actually comes from — **the nudge recomputes the whole network from scratch for every knob, while backprop computes each stage's local slope once and reuses it for everything downstream.** It is not approximating; it is **not repeating itself.** Then the closer: which of the two would you rather have if you could only have one? (Both. That is the point of the week.)
@@ -1153,6 +1173,8 @@ Follow it down the screen. Every `z` is zero because every weight is zero. `ReLU
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four things that sound right and are not. Each one is shown as a wrong claim beside the right one.
 
 ### Trick 1 — "slopes add along a chain"
 
@@ -1212,6 +1234,8 @@ every hidden column different?  True
 
 ## 🌍 Where You've Seen This
 
+Backpropagation is not only for classroom networks. Here is where else the same idea turns up.
+
 1. **Every model that has ever been trained.** `loss.backward()` in PyTorch, `GradientTape` in TensorFlow, JAX's `grad` — all of them are the five rules in this chapter, applied to a longer chain. **There is no second algorithm.**
 2. **The self-driving car braking for a cyclist.** Trained by exactly this: a loss, a backward sweep, and millions of knobs each getting their share of the blame.
 3. **A speech-recognition model learning your accent.** Same loop. The chain is hundreds of stages long and every stage still only answers one local question.
@@ -1248,6 +1272,8 @@ tiles are plain white. Stage four is dashed for one more week, and then the gold
 ---
 
 ## 🔑 Remember This
+
+The points to keep from this week, followed by a syntax card for the backward pass.
 
 - **`3 × 14 = 42`.** Slopes **multiply** along a chain. Measured stage by stage and measured straight through, and the difference printed to ten decimal places was `0.0000000000`.
 - **A gradient has exactly the same shape as the thing it is the gradient of.** `dW2` must be `(2, 1)` because `W2` is `(2, 1)`. **That one sentence places every transpose, for ever.**
@@ -1296,6 +1322,8 @@ rel = abs(num - ana) / (abs(num) + abs(ana))    # below 1e-6 = the same number
 ---
 
 ## 📓 New Words
+
+The six words from this week, with a meaning and an example for each.
 
 ![Six words from Week 18, drawn](../figures/fig-w18-7-vocab-icons.svg)
 *Figure 18.7 — Six words from Week 18, drawn.*

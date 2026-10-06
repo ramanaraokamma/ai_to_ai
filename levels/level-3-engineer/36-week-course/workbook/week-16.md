@@ -40,7 +40,7 @@ ________________________________________________________________
 
 Six grids. For each, count the rows going **down** with your finger, then the numbers across **one** row.
 
-```
+```text
 P =              Q =                R =            S =
 [[1 2]           [[7 8 9]           [[4]           [[1 2 3 4 5 6]]
  [3 4]            [1 2 3]]           [5]
@@ -48,7 +48,7 @@ P =              Q =                R =            S =
  [7 8]]                              [7]]
 ```
 
-```
+```text
 T = [2.5  4.5  6.5]          U = [[0.5]]
 ```
 
@@ -103,7 +103,7 @@ ________________________________________________________________
 
 Week 12's nudge: step a thousandth above and below, subtract the two answers, divide by `0.002`. Do **sigmoid at `z = 1.0`**, on a calculator.
 
-```
+```text
 sigmoid(1.001) = 1 ÷ (1 + e^(−1.001)) = ____________
 sigmoid(0.999) = 1 ÷ (1 + e^(−0.999)) = ____________
 
@@ -115,7 +115,7 @@ ____________ ÷ 0.002 = ____________
 
 **M3(a).** Now tanh at `z = 1.0`, the same way:
 
-```
+```text
 tanh(1.001) = ____________     tanh(0.999) = ____________
 
 (____________ − ____________) ÷ 0.002 = ____________
@@ -129,7 +129,7 @@ tanh(1.001) = ____________     tanh(0.999) = ____________
 
 A **new** two-layer network with no squash anywhere in it:
 
-```
+```text
 h1 =  0.2·x₁ + 1.5·x₂ − 0.4
 h2 =  0.6·x₁ − 0.9·x₂ + 0.2
 
@@ -138,7 +138,7 @@ out = 2.0·h1 + 1.0·h2 − 0.1
 
 **Substitute and collect. Three lines, in pen.**
 
-```
+```text
 out = 2.0(                                  ) + 1.0(                                  ) − 0.1
 
 x₁ terms:   ______ + ______ = ______
@@ -150,7 +150,7 @@ out = ______·x₁ + ______·x₂ + ______
 
 **M4(a).** Check it on `x = [3.0, 2.0]`, both ways:
 
-```
+```text
 two layers:  h1 = ____________   h2 = ____________   out = ____________
 one line:    out = ____________
 ```
@@ -159,7 +159,7 @@ one line:    out = ____________
 
 **M4(b).** Now put a ReLU on `h1` and `h2` and do the row `x = [1.0, 4.0]`:
 
-```
+```text
 h1 = ____________   h2 = ____________   which one gets binned? ______
 
 with ReLU:  out = ____________        no squash: out = ____________
@@ -948,7 +948,7 @@ ________________________________________________________________
 
 **M2.** The `z` column first:
 
-```
+```text
 1.  1.0×0.4 + 0.0×(−0.7) + 1.0×1.2 − 0.5 =  0.4 + 0    + 1.2 − 0.5 =  1.10
 2.  0.0×0.4 + 1.0×(−0.7) + 2.0×1.2 − 0.5 =  0   − 0.7  + 2.4 − 0.5 =  1.20
 3.  3.0×0.4 + 2.0×(−0.7) + 0.0×1.2 − 0.5 =  1.2 − 1.4  + 0   − 0.5 = −0.70
@@ -970,7 +970,7 @@ ________________________________________________________________
 
 And to eight places, if you want to check your calculator properly:
 
-```
+```text
 z =  1.1000  relu=1.100000  sig=0.75026011  tanh= 0.80049902
 z =  1.2000  relu=1.200000  sig=0.76852478  tanh= 0.83365461
 z = -0.7000  relu=0.000000  sig=0.33181223  tanh=-0.60436778
@@ -985,7 +985,7 @@ z = -0.1500  relu=0.000000  sig=0.46257015  tanh=-0.14888503
 
 **M3.**
 
-```
+```text
 e^(−1.001) = 0.367512,  so  sigmoid(1.001) = 1 ÷ 1.367512 = 0.73125515
 e^(−0.999) = 0.368248,  so  sigmoid(0.999) = 1 ÷ 1.368248 = 0.73086192
 
@@ -1001,7 +1001,7 @@ The chapter's table says **`0.196612`**, and Python with every digit it has gets
 
 **M3(a).** `tanh(1.001) = 0.76201381`, `tanh(0.999) = 0.76117386`.
 
-```
+```text
 (0.76201381 − 0.76117386) ÷ 0.002 = 0.00083995 ÷ 0.002 = 0.419975
 ```
 
@@ -1013,7 +1013,7 @@ The chapter's table says **`0.196612`**, and Python with every digit it has gets
 
 **M4.**
 
-```
+```text
 out = 2.0(0.2x₁ + 1.5x₂ − 0.4) + 1.0(0.6x₁ − 0.9x₂ + 0.2) − 0.1
 
 x₁ terms:        0.4 + 0.6 = 1.0
@@ -1025,7 +1025,7 @@ out = 1.0·x₁ + 2.1·x₂ − 0.7
 
 **M4(a).**
 
-```
+```text
 two layers:  h1 = 0.2(3) + 1.5(2) − 0.4 = 0.6 + 3.0 − 0.4 = 3.20
              h2 = 0.6(3) − 0.9(2) + 0.2 = 1.8 − 1.8 + 0.2 = 0.20
              out = 2.0(3.20) + 1.0(0.20) − 0.1 = 6.4 + 0.2 − 0.1 = 6.50
@@ -1037,7 +1037,7 @@ one line:    out = 1.0(3) + 2.1(2) − 0.7 = 3.0 + 4.2 − 0.7 = 6.50
 
 **M4(b).**
 
-```
+```text
 h1 = 0.2(1) + 1.5(4) − 0.4 = 0.2 + 6.0 − 0.4 =  5.80
 h2 = 0.6(1) − 0.9(4) + 0.2 = 0.6 − 3.6 + 0.2 = −2.80    ← h2 gets binned
 
@@ -1378,7 +1378,7 @@ Every `z` in the table is exactly **`0.5` too big**: `0.70` instead of `0.20`, `
 
 **Part 2(b).** `b = **−0.20**`. Then each of the other three rows is one weight plus the bias:
 
-```
+```text
 w₁ + (−0.20) =  0.30  →  w₁ =  0.50
 w₂ + (−0.20) = −0.40  →  w₂ = −0.20
 w₃ + (−0.20) =  1.50  →  w₃ =  1.70
@@ -1400,7 +1400,7 @@ w₃ + (−0.20) =  1.50  →  w₃ =  1.70
 
 **T2 — a model answer.** Work it through. With `double(z) = 2z` between the layers:
 
-```
+```text
 h1 = 0.5x₁ + 0.8x₂ + 0.1      →  double →  1.0x₁ + 1.6x₂ + 0.2
 h2 = −0.3x₁ + 0.2x₂ + 0.05    →  double → −0.6x₁ + 0.4x₂ + 0.10
 
@@ -1455,7 +1455,7 @@ ValueError: cannot reshape array of size 6 into shape (4,2)
 
 **Stretch — the silent neuron.**
 
-```
+```text
 with no bias at all, the four class rows give z = 0.70, −1.80, 1.20, 0.90
 so the biggest is 1.20, and any bias below −1.20 silences every row
 

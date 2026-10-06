@@ -65,6 +65,8 @@ final test  acc 0.9350
 
 ## 🧠 The Big Idea
 
+This section explains the network you will build: what its sixty-five numbers are, how to check its shapes, and how to test its gradients. It also covers what capacity means and how the three sabotages fail.
+
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. Each one carries on from the one above, and the `import` lines are typed once, in the first block that needs them. **The complete runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
 ### 1. Sixty-five knobs, and you know what every one of them is for
@@ -75,7 +77,7 @@ final test  acc 0.9350
 
 Two inputs. Sixteen hidden units. One output. So count the knobs:
 
-```
+```text
 W1 is 2 rows by 16 columns   =  32 numbers
 b1 is 1 row  by 16 columns   =  16 numbers
 W2 is 16 rows by 1 column    =  16 numbers
@@ -125,7 +127,7 @@ Look at the two ticks. Then write this on your page and put a box round it:
 
 **A concrete example.** Why does `A1` get transposed in `dW2 = A1.T @ dZ2`?
 
-```
+```text
 without the transpose:  (200, 16) @ (200, 1)   inner numbers 16 and 200  →  error
 with the transpose:     (16, 200) @ (200, 1)   inner numbers 200 and 200 →  (16, 1) ✅
 ```
@@ -142,7 +144,7 @@ Not as far, not as fast — but down. So nothing looks wrong. You get a mediocre
 
 So before you train, you test the backward pass against something you cannot get wrong: **Week 12's nudge.**
 
-```
+```text
 take one knob
 add a hair  (h = 0.000001)   →  what does the loss become?
 take a hair away             →  what does the loss become?
@@ -163,7 +165,7 @@ gradient check (worst relative error): 4.792e-08
 
 **A concrete example.** From Week 12: the slope of `x²` at `x = 3`.
 
-```
+```text
 (3.001² − 2.999²) ÷ 0.002 = (9.006001 − 8.994001) ÷ 0.002 = 0.012 ÷ 0.002 = 6.000
 ```
 
@@ -225,7 +227,7 @@ test acc 0.5000   dead units 16/16
 
 Do the arithmetic and it is obvious. Every weight is zero, so every hidden unit computes `0 × x1 + 0 × x2 + 0 = 0`. ReLU leaves it at 0. The output is `0 × 0 + … + 0 = 0`. And `sigmoid(0) = 0.5`. **The network answers 0.5 to every single point**, and the loss of answering 0.5 is:
 
-```
+```text
 −ln(0.5) = 0.693147...
 ```
 
@@ -266,7 +268,7 @@ test acc 0.8100   dead units 13/16
 
 The mechanism, in numbers. One enormous step drove unit 0's bias to **−14.113**. Every row's weighted sum plus that bias comes out below zero, so `max(0, negative) = 0` for all 200 rows. ReLU's slope where it did not fire is **0**, so:
 
-```
+```text
 0 slope × any learning rate = 0 change.  Ever.
 ```
 
@@ -298,7 +300,7 @@ Last week you had a 2 → 2 → 1 network and four rows of input, and you worked
 
 **The chain, in words, for the very first knob in the file:**
 
-```
+```text
 nudge W1[0][0]        →  changes Z1 column 0
 nudge Z1 column 0     →  changes A1 column 0   (unless the unit did not fire, in which case: nothing)
 nudge A1 column 0     →  changes Z2
@@ -394,7 +396,7 @@ def init_params(n_in, n_hidden, seed=0):
 
 The spread is the interesting bit:
 
-```
+```text
 layer 1:  sqrt(2 / 2)  = sqrt(1)      = 1.0
 layer 2:  sqrt(2 / 16) = sqrt(0.125)  = 0.3536
 ```
@@ -1066,7 +1068,7 @@ If you missed it, here is the whole lesson. You need a laptop, a pen, and three 
 
 **The parts list**, on the board, and five of the six were already ours:
 
-```
+```text
 forward   →  Week 17   (grid multiply, ReLU, grid multiply, squash)
 loss      →  Week 14   (log loss: the surprise meter)
 backward  →  Week 18   (four gradient arrays)
@@ -1105,7 +1107,7 @@ print("dead units", dead, "/ 16")
 
 **The four numbers at the end:**
 
-```
+```text
 0.8950   the best a straight line can do on this data
 0.9350   what sixty-five numbers and a bend did about it
 0.6931   the loss of a network that answers 0.5 to everything: −ln(0.5)
@@ -1115,6 +1117,8 @@ print("dead units", dead, "/ 16")
 ---
 
 ## 💬 Talk About It
+
+Three questions to argue over with a partner or a parent. Each hint shows how to start, not what to conclude.
 
 **1. A network with a wrong backward pass still trains, and its loss still goes down. So what exactly is the gradient check protecting you from?**
 
@@ -1131,6 +1135,8 @@ print("dead units", dead, "/ 16")
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four claims that sound right this week. Each table sets the claim beside what the file actually showed.
 
 ### Trick 1 — "the network drew a curve"
 
@@ -1169,6 +1175,8 @@ If your sentence does not contain the word **slope** and the word **zero**, you 
 
 ## 🌍 Where You've Seen This
 
+This section connects today's file to things outside the classroom.
+
 1. **Your phone's photo app grouping faces.** The same forward-and-backward loop you wrote today, with a few million knobs instead of sixty-five, and a convolution instead of a plain grid multiply. Weeks 24–27 add exactly that. **The loop does not change.**
 2. **Every "is this spam?" filter.** The output layer is one sigmoid and the loss is log loss — the two things you wrote in Weeks 13 and 14 and used again today, unchanged.
 3. **The autocomplete on your keyboard.** A stack of layers, a loss, and gradient descent. It is bigger by a factor of a billion and the physics is identical.
@@ -1204,6 +1212,8 @@ badge inside it. It is a five-week tile and this is week one of the five.*
 ---
 
 ## 🔑 Remember This
+
+The points to keep from this week, followed by a card of the new syntax.
 
 - **Sixty-five knobs.** `2 × 16 + 16 + 16 × 1 + 1 = 65`. Every one gets its own slope, every epoch, 500 times: **32,500 slopes.**
 - **Every gradient has the same shape as the thing it is the gradient of.** `dW1` must be `(2, 16)` because `W1` is `(2, 16)`. This one sentence finds nearly every bug in the file.
@@ -1247,6 +1257,8 @@ dead = int(np.sum(np.all(A1 <= 0, axis=0)))      # axis=0 = down the rows
 ---
 
 ## 📓 New Words
+
+The six words introduced this week, each with an example from the file.
 
 ![Six words from Week 19, drawn](../figures/fig-w19-6-vocab-icons.svg)
 *Figure 19.6 — Six words from Week 19, drawn.*

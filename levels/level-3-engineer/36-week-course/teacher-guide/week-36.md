@@ -122,7 +122,7 @@ These eight are not arbitrary. They are the eight things a real person asks when
 
 Put this list on the wall, big, where every presenter can see it:
 
-```
+```text
        ✗  production-ready        ✗  robust
        ✗  scalable               ✗  real-time
        ✗  it just works          ✗  seamless
@@ -408,7 +408,7 @@ $
 
 **Do this:** Now the two rules of the day, on the board, and nothing else on the board all lesson:
 
-```
+```text
    1.  NEW TERMINAL.  Every demo starts in a window you open in front of us.
    2.  EVERY ANSWER HAS A NUMBER IN IT.
 ```
@@ -433,7 +433,7 @@ $
 
 **Do this:** Put the seven stops on the board as a vertical timeline with the minute beside each. Do not paraphrase — write the seven exactly:
 
-```
+```text
   0:00   the contract          one prediction is about ONE ____
   1:00   the cold start        NEW window. one command. then the grep.
   2:00   the service           /health, one good prediction, TWO times
@@ -461,7 +461,7 @@ $
 
 **Do this:** Now walk to the wall, put your hand on the eight questions, and read them out, one at a time, pausing after each. After each one, say the *kind* of number the answer needs. Do not give them the answers — they wrote their own.
 
-```
+```text
   1  what if I send it something weird?      -> demo four refusals + the byte limit
   2  how fast is it?                          -> TWO numbers
   3  how do you know it still works           -> the monitoring number + the alarm
@@ -745,7 +745,7 @@ Ask the room this, honestly, and write the answers on the board. It is almost al
 
 **The version of the maths that skips the algebra.** Today's only arithmetic is in Part B, and two of the eight short answers need a calculation. Replace them with the counting versions:
 
-```
+```text
 S3 instead of computing  2 x 0.667 x 0.070 / 0.737 :
 
      precision 0.667 and recall 0.070.
@@ -947,7 +947,7 @@ Three marks: **1** for the core idea, **1** for a number or a specific, **1** fo
 
 **B3 `[W9]` `[W11]` — F1, and when not to use it.** *Compute F1 for precision 0.667 and recall 0.070, showing the arithmetic. Then: a missed fraud costs 500 and a false alarm costs 10. Explain why "the F1-optimal threshold" is the wrong answer.*
 
-```
+```text
 F1  =  2 x 0.667 x 0.070  /  (0.667 + 0.070)
     =  0.09338 / 0.737
     =  0.1267   ->  0.127

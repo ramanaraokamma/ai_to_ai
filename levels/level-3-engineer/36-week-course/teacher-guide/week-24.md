@@ -80,7 +80,7 @@ This is objective 1 and it is the fastest way to make the argument land, because
 
 An 8 × 8 picture, flattened to 64 numbers, into a dense layer with 16 units:
 
-```
+```text
 weights = 16 × 64 = 1024
 biases  =               16
                     ------
@@ -89,14 +89,14 @@ total   =            1040
 
 A single 3 × 3 convolution over the same 8 × 8 picture:
 
-```
+```text
 weights = 3 × 3 =  9
 bias    =          1
                  ---
 total   =         10
 ```
 
-```
+```text
 1040 ÷ 10 = 104
 ```
 
@@ -104,7 +104,7 @@ total   =         10
 
 And the gap grows fast, because **a convolution's count does not depend on the size of the picture at all.** On a 64 × 64 picture:
 
-```
+```text
 nn.Linear(4096, 256)              1,048,832 numbers
 nn.Conv2d(1, 4, kernel_size=3)           40 numbers
 ```
@@ -121,7 +121,7 @@ Over a million against forty. Say the numbers out loud; they are the argument.
 
 Here is the entire thing, on numbers you can check. **The picture:** 6 × 6, bright left half, dark right half. Every row identical.
 
-```
+```text
  10  10  10   2   2   2
  10  10  10   2   2   2
  10  10  10   2   2   2
@@ -132,7 +132,7 @@ Here is the entire thing, on numbers you can check. **The picture:** 6 × 6, bri
 
 **The kernel:** a vertical-edge finder — plus down the left column, minus down the right, nothing in the middle.
 
-```
+```text
   1   0  −1
   1   0  −1
   1   0  −1
@@ -140,14 +140,14 @@ Here is the entire thing, on numbers you can check. **The picture:** 6 × 6, bri
 
 **Position (0, 0).** The window covers rows 0–2 and columns 0–2. Everything there is 10:
 
-```
+```text
 window          kernel         products
 10  10  10       1  0  −1      10   0  −10
 10  10  10   ×   1  0  −1  =   10   0  −10
 10  10  10       1  0  −1      10   0  −10
 ```
 
-```
+```text
 row by row:  (10 + 0 − 10) + (10 + 0 − 10) + (10 + 0 − 10)  =  0 + 0 + 0  =  0
 ```
 
@@ -155,7 +155,7 @@ row by row:  (10 + 0 − 10) + (10 + 0 − 10) + (10 + 0 − 10)  =  0 + 0 + 0  
 
 **Position (0, 1).** Slide the window one column right. Now every row of the window reads `10, 10, 2`:
 
-```
+```text
 one row:      (1 × 10)  +  (0 × 10)  +  (−1 × 2)   =   10 − 2   =   8
 three rows:   8 + 8 + 8                            =   24
 ```
@@ -167,20 +167,20 @@ three rows:   8 + 8 + 8                            =   24
 
 **Position (0, 2).** Window reads `10, 2, 2` in every row:
 
-```
+```text
 one row:      (1 × 10) + (0 × 2) + (−1 × 2)  =  10 − 2  =  8
 three rows:   24
 ```
 
 **Position (0, 3).** Window reads `2, 2, 2`. Flat again:
 
-```
+```text
 one row:      2 − 2 = 0    →    total 0
 ```
 
 **And then the rows.** Every row of this picture is identical, so every row of the output is identical. All sixteen cells:
 
-```
+```text
    0   24   24    0
    0   24   24    0
    0   24   24    0
@@ -189,7 +189,7 @@ one row:      2 − 2 = 0    →    total 0
 
 **How many cells is that, and why sixteen?** Count the window positions. A 3-wide window on a 6-wide picture can start at column 0, 1, 2 or 3 — four places. Same going down — four places. **4 × 4 = 16.**
 
-```
+```text
 across:  6 − 3 + 1 = 4
 down:    6 − 3 + 1 = 4
 cells:   4 × 4 = 16
@@ -371,6 +371,8 @@ time around. The spiral is doing its job here, and naming it out loud is free.
 ---
 
 ## 🧰 Prep Checklist
+
+This section lists what to do before class, including the full runnable files.
 
 ### 30 minutes the night before
 
@@ -650,7 +652,7 @@ all sixteen cells agree? True
 
 **Do this:** Write on the board:
 
-```
+```text
 one shuffle of the 64 columns,  the same shuffle for every picture
 ```
 
@@ -712,7 +714,7 @@ the same 64 columns shuffled test accuracy 0.9704
 
 **Do this:** Write it on the board and let them do it.
 
-```
+```text
 weights = 16 × 64  =  ?
 biases  =             ?
 total   =             ?
@@ -726,7 +728,7 @@ total   =             ?
 
 > "One thousand and forty numbers, to look at a picture with 64 pixels in it. Now here is the cost of the sliding magnifying glass, and it is nine numbers and a bias."
 
-```
+```text
 weights = 3 × 3  =  9
 bias    =           1
 total   =          10
@@ -744,7 +746,7 @@ total   =          10
 
 > "And it gets more lopsided, fast. A 64 by 64 photograph — still small, still greyscale — into 256 units."
 
-```
+```text
 nn.Linear(4096, 256)              1,048,832
 nn.Conv2d(1, 4, kernel_size=3)           40
 ```
@@ -755,7 +757,7 @@ nn.Conv2d(1, 4, kernel_size=3)           40
 
 **Do this:** Draw the 6 × 6 picture on the board, big, with its 10s and 2s. Then the 3 × 3 kernel beside it. Then a blank 4 × 4 to the right.
 
-```
+```text
  10  10  10   2   2   2          1   0  −1
  10  10  10   2   2   2          1   0  −1
  10  10  10   2   2   2          1   0  −1
@@ -776,7 +778,7 @@ nn.Conv2d(1, 4, kernel_size=3)           40
 
 **Do this:** Circle rows 0–2, columns 0–2 on the board. Write the nine products out.
 
-```
+```text
 window          kernel         products
 10  10  10       1  0  −1      10   0  −10
 10  10  10   ×   1  0  −1  =   10   0  −10
@@ -801,7 +803,7 @@ window          kernel         products
 
 **Do this:** Work it on the board, slowly.
 
-```
+```text
 one row:      (1 × 10)  +  (0 × 10)  +  (−1 × 2)   =   10 − 2   =   8
 three rows:   8 + 8 + 8                            =   24
 ```
@@ -826,7 +828,7 @@ three rows:   8 + 8 + 8                            =   24
 
 **Do this:** Write the counting out, and **stop there**:
 
-```
+```text
 across:  starts at column 0, 1, 2 or 3  →  6 − 3 + 1 = 4
 down:    the same                       →  6 − 3 + 1 = 4
 cells:   4 × 4 = 16
@@ -1136,6 +1138,8 @@ And the sentence for this week:
 
 ## 🎲 The Activity, In Full
 
+This section gives the whole graph-paper activity, so you can run it from this page alone.
+
 ### Kernel on Graph Paper
 
 **What it is.** Sixteen sums in pencil, then sixteen from `nn.Conv2d`, then a cell-by-cell comparison. It is the only activity this term where a single disagreement stops the class, and that rule is the reason it works.
@@ -1156,7 +1160,7 @@ Read the instruction once and then say nothing:
 
 **The answer, all sixteen:**
 
-```
+```text
    0   24   24    0
    0   24   24    0
    0   24   24    0
@@ -1222,7 +1226,7 @@ Mean it. And when it happens, do it in front of everybody, with the three questi
 
 The answer is the same kernel rotated a quarter turn:
 
-```
+```text
   1   1   1
   0   0   0
  −1  −1  −1
@@ -1255,7 +1259,7 @@ bar     -> feature maps (3, 6, 6)
 
 **And use a 4 × 4 picture instead of 6 × 6**, so there are only four cells in total. Three columns of 10 and one of 2:
 
-```
+```text
 picture              kernel          answer (2 × 2)
 10  10  10   2        1  0  −1         0   24
 10  10  10   2        1  0  −1         0   24
@@ -1265,7 +1269,7 @@ picture              kernel          answer (2 × 2)
 
 The window can start at column 0 or column 1 — `4 − 3 + 1 = 2` — and the same going down, so **four cells, four sums**:
 
-```
+```text
 cell (0,0):  window rows are 10, 10, 10  →  10 + 0 − 10 = 0 per row  →  0 + 0 + 0  =   0
 cell (0,1):  window rows are 10, 10,  2  →  10 + 0 −  2 = 8 per row  →  8 + 8 + 8  =  24
 ```
@@ -1317,6 +1321,8 @@ Then: *"how many numbers would a dense layer need for the last row, to produce t
 ---
 
 ## ❓ Questions Students Ask This Week
+
+This section gives the questions that come up this week, with an answer for each.
 
 **"If the shuffled pictures worked just as well, was last week a waste of time?"**
 
@@ -1401,6 +1407,8 @@ What to tell a 14-year-old, out loud: **"on your laptop, with your data, use the
 ---
 
 ## 🧭 Differentiation
+
+This section says what to change when the student is struggling, flying, or not engaging.
 
 ### If the student is struggling
 
@@ -1509,7 +1517,7 @@ Three checks, five minutes, exact wording.
 
 > "Here is a window and a kernel. **Give me the one number that comes out, and show the arithmetic.**"
 
-```
+```text
 window          kernel
  10  10   2      1   0  −1
  10  10   2      1   0  −1
@@ -1542,6 +1550,8 @@ window          kernel
 
 ## 📤 Homework to Assign
 
+This section gives the homework and the words to assign it with.
+
 **Say this:**
 
 > "About an hour, three pages, and the first one produces a picture I am going to put on the wall.
@@ -1570,7 +1580,7 @@ Every question restated, so you can mark from this page alone.
 
 **The picture:**
 
-```
+```text
  10  10  10   2   2   2
  10  10  10   2   2   2
  10  10  10   2   2   2
@@ -1581,7 +1591,7 @@ Every question restated, so you can mark from this page alone.
 
 **The kernel:**
 
-```
+```text
   1   0  −1
   1   0  −1
   1   0  −1
@@ -1589,7 +1599,7 @@ Every question restated, so you can mark from this page alone.
 
 **The answer, all sixteen cells:**
 
-```
+```text
    0   24   24    0
    0   24   24    0
    0   24   24    0
@@ -1644,7 +1654,7 @@ all sixteen cells agree? True
 | `nn.Linear(4096, 256)` on 64 × 64 | 256 × 4096 = **1048576** | **256** | **1048832** |
 | `nn.Conv2d(1, 4, kernel_size=3)` on 64 × 64 | **36** | **4** | **40** |
 
-```
+```text
 1040 ÷ 10 = 104
 1048832 ÷ 40 = 26220.8
 ```
@@ -1787,7 +1797,7 @@ the vertical kernel on the cross, all 36 cells:
 
 **The two comparisons:**
 
-```
+```text
 8 × 8 picture
    nn.Linear(64, 16)                16 × 64 + 16   =   1,040
    nn.Conv2d(1, 1, kernel_size=3)    3 × 3  +  1   =      10
@@ -1821,20 +1831,20 @@ Which pixels are next to which. **The evidence:** shuffle the 64 columns of `loa
 
 **4. Work out this cell by hand. Write all nine products.**
 
-```
+```text
 window            kernel
  9   9   0        1   1   1
  9   9   0        0   0   0
  0   0   0       −1  −1  −1
 ```
 
-```
+```text
 row 0:  (1 × 9) + (1 × 9) + (1 × 0)      =   9 + 9 + 0   =   18
 row 1:  (0 × 9) + (0 × 9) + (0 × 0)      =   0 + 0 + 0   =    0
 row 2:  (−1 × 0) + (−1 × 0) + (−1 × 0)   =   0 + 0 + 0   =    0
 ```
 
-```
+```text
 18 + 0 + 0 = 18
 ```
 

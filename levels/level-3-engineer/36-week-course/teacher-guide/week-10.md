@@ -127,7 +127,7 @@ Four things to have solid before you stand up:
 
 **Three — the honest arithmetic behind every cell.** Take `t = 0.10`: 8 rows flagged, 3 of them really fraud.
 
-```
+```text
 precision = 3 ÷ 8   = 0.3750     "of the 8 I flagged, 3 were fraud"
 recall    = 3 ÷ 14  = 0.2143     "of the 14 real frauds, I caught 3"
 fpr       = 5 ÷ 986 = 0.005071   "of the 986 innocent rows, I bothered 5"
@@ -202,7 +202,7 @@ Then divide.
 
 Now do it on a flat bit. From threshold 0.60 to threshold 0.50:
 
-```
+```text
 rise  =  0.80 − 0.80  =  0.00
 run   =  0.30 − 0.20  =  0.10
 
@@ -245,7 +245,7 @@ Why bother with a second picture of the same sweep? Because of the denominator p
 
 Look at what happens between the point marked 2 (threshold 0.10) and the point marked 3 (threshold 0.02):
 
-```
+```text
 false alarms went from 5 to 211.
 
 on the ROC:  the x-axis moved from 5 ÷ 986 = 0.0051  to  211 ÷ 986 = 0.2140
@@ -405,7 +405,7 @@ the training loop stays closed until Week 12.*
 
 - [ ] **Do the two rise-over-run divisions yourself, on paper.** Not in your head:
 
-```
+```text
 0.40 − 0.20 = 0.20      0.10 − 0.00 = 0.10      0.20 ÷ 0.10 = 2.0
 0.80 − 0.80 = 0.00      0.30 − 0.20 = 0.10      0.00 ÷ 0.10 = 0.0
 ```
@@ -637,7 +637,7 @@ Let them argue for thirty seconds. Someone will say the model is rubbish.
 
 **Do this:** Write on the board, big:
 
-```
+```text
       predict()   =   predict_proba()   then   >=  0.5
                                                ^^^^^^^
                                        who chose this number?
@@ -677,7 +677,7 @@ They will do this in about two minutes and it is worth every second, because the
 
 **Do this:** Write the first row of the table on the board, and say every division out loud as you write it:
 
-```
+```text
 t = 0.90    flagged 2    caught 2 of 10    false alarms 0
 
             recall     =  2 ÷ 10  =  0.20
@@ -692,7 +692,7 @@ t = 0.90    flagged 2    caught 2 of 10    false alarms 0
 
 **Do this:** Walk to 0.80. Then 0.70. Then 0.60. At each stop, count the cards to your right, turn over any new ones, and add a row. **Have a student write the rows; you hold the arm out.** Get to 0.60 and stop.
 
-```
+```text
 t = 0.80    flagged  5   caught 4    false alarms 1   precision 4 ÷  5 = 0.80   recall 0.40
 t = 0.70    flagged  7   caught 6    false alarms 1   precision 6 ÷  7 = 0.86   recall 0.60
 t = 0.60    flagged 10   caught 8    false alarms 2   precision 8 ÷ 10 = 0.80   recall 0.80
@@ -708,7 +708,7 @@ t = 0.60    flagged 10   caught 8    false alarms 2   precision 8 ÷ 10 = 0.80  
 
 **Do this:** Now put those first four stops on the big graph paper. Two students, one dot each. Across is false alarms ÷ 10; up is caught ÷ 10.
 
-```
+```text
 t = 0.90  ->  ( 0.00 , 0.20 )
 t = 0.80  ->  ( 0.10 , 0.40 )
 t = 0.70  ->  ( 0.10 , 0.60 )
@@ -721,7 +721,7 @@ t = 0.60  ->  ( 0.20 , 0.80 )
 
 **Do this:** Draw the two dashed legs on the graph paper — one horizontal, one vertical — and label them as the class calls the numbers out.
 
-```
+```text
 rise  =  0.40 − 0.20  =  0.20        we went UP by 0.20
 run   =  0.10 − 0.00  =  0.10        we went ACROSS by 0.10
 ```
@@ -738,7 +738,7 @@ run   =  0.10 − 0.00  =  0.10        we went ACROSS by 0.10
 
 **Do this:** Now the flat pair. Point at the dots for `t = 0.60` (0.20, 0.80) and the next one you have not drawn yet — `t = 0.50`, which is (0.30, 0.80). Draw it.
 
-```
+```text
 rise  =  0.80 − 0.80  =  0.00
 run   =  0.30 − 0.20  =  0.10
 
@@ -975,7 +975,7 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: three nam
 
 Take whatever they give you, and if it is thin, prompt with these three (they are the three highlighted rows in Figure 10.5 below):
 
-```
+```text
 t = 0.12   for the fraud team's two-person review desk:
            2 cases a day, both of them real.  Nothing wasted.
 
@@ -1037,6 +1037,8 @@ And the sentence for this week:
 
 ## 🎲 The Activity, In Full
 
+This section is the full set-up and running order for the physical activity, with an easier and a harder variation.
+
 ### The Dial, Physically
 
 **What it is.** The class becomes the algorithm. One student is the **Caller**, one is the **Counter**, one is the **Plotter**. The Caller reads thresholds from 0.90 down to 0.05. The Counter recomputes the four counts on the twenty index cards. The Plotter puts one dot on the big graph paper. **Ten rounds, and an ROC curve appears on the wall without a computer being involved at all.**
@@ -1068,7 +1070,7 @@ And the sentence for this week:
 
 The Caller works down this list. **Do not skip any of them, and do not let them go out of order** — the curve is only legible if the dots arrive in sequence.
 
-```
+```text
 0.90   0.80   0.70   0.60   0.50   0.40   0.30   0.20   0.10   0.05
 ```
 
@@ -1121,6 +1123,8 @@ Three extensions, in order of ambition:
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions this lesson tends to raise, each with an answer you can give in your own words.
+
 **"If 0.5 is just a default, why does anybody use it?"**
 Because when you genuinely have no idea what the two errors cost, and the classes are roughly balanced, 0.5 is the least stupid guess — it is where the model's own probability says the two outcomes are equally likely. It is a *reasonable* default. What it is not is a *decision*, and on 1%-fraud data it is a catastrophic one. **The honest position: 0.5 is fine as a placeholder and indefensible as a final answer.**
 
@@ -1149,6 +1153,8 @@ You can, and people do, and it is called *cherry-picking the operating point*. T
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual ways the lesson slips and what to do right now when it does.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **You apologise for the model flagging nothing at 0.5.** | It feels like a broken demo. It is the opposite — it is the proof. | Do not fix it. Say *"good: the default is useless here, and that is the lesson."* If you have already apologised, recover with `(prob >= 0.10).sum()` and the three frauds it catches. |
@@ -1163,6 +1169,8 @@ You can, and people do, and it is called *cherry-picking the operating point*. T
 ---
 
 ## 🧭 Differentiation
+
+This section says what to cut, add or change for a student who is struggling, flying, or not engaging.
 
 ### If the student is struggling
 
@@ -1237,7 +1245,7 @@ Three checks, five minutes, exact wording.
 
 **Check 2 — the new maths, on numbers they have not seen.** Write on the board:
 
-```
+```text
 point A:  false positive rate 0.20 ,  true positive rate 0.50
 point B:  false positive rate 0.40 ,  true positive rate 0.90
 ```
@@ -1288,6 +1296,8 @@ Say: *"How steep is the curve between those two points, and is that a good deal?
 ---
 
 ## 🔑 Answer Key
+
+This section holds the answers to the workbook pages and to every question posed in the lesson. Keep it away from the student.
 
 ### Page 10.1 — The ten-threshold sweep, by hand, on the twenty cards
 
@@ -1400,7 +1410,7 @@ The complete `dial.py` and its real output are in the **🧰 Prep Checklist** ab
 
 **The steep pair** — from the card curve, `t = 0.90` at (0.00, 0.20) to `t = 0.80` at (0.10, 0.40):
 
-```
+```text
 rise  =  0.40 − 0.20  =  0.20
 run   =  0.10 − 0.00  =  0.10
 0.20 ÷ 0.10  =  2.0
@@ -1410,7 +1420,7 @@ run   =  0.10 − 0.00  =  0.10
 
 **The flat pair** — `t = 0.30` at (0.50, 1.00) to `t = 0.05` at (1.00, 1.00):
 
-```
+```text
 rise  =  1.00 − 1.00  =  0.00
 run   =  1.00 − 0.50  =  0.50
 0.00 ÷ 0.50  =  0.0
@@ -1521,6 +1531,8 @@ The rule I am keeping: **read the whole error, not just the last line. This one'
 
 ## 🔮 Next Week Preview
 
-Next week the argument stops. Three sticky notes with three defensible thresholds on them is where you end an honest lesson about *description*, and it is a terrible place to end a project — because somebody has to actually choose, and "it depends who you ask" does not deploy. So next week the bank sends over a **price list**: a missed fraud costs **£500**, a false alarm costs **£10**. The moment those two numbers exist, the threshold is not an opinion, it is a multiplication — the class computes the total cost of all nine rows of this week's table, circles the cheapest, and finds that **t = 0.10 costs £5,550** while the default 0.5 costs £7,000. Then the second half asks the question a good student is already itching to ask: *how much do you trust a four-decimal number that rests on fourteen frauds?* Not much — and **5-fold stratified cross-validation** turns one lucky number into five and reports `AUC = 0.628 ± 0.087`, which is a band wide enough to change your mind. There is one small new piece of maths, and it is the natural partner to this week's: **the area under a curve, added up as trapezoid strips by hand**, on a five-point curve, then checked against `np.trapz` — which is what "AUC" has meant all along.
+Next week the argument stops. Three sticky notes with three defensible thresholds on them is where you end an honest lesson about *description*, and it is a terrible place to end a project — because somebody has to actually choose, and "it depends who you ask" does not deploy. So next week the bank sends over a **price list**: a missed fraud costs **£500**, a false alarm costs **£10**. The moment those two numbers exist, the threshold is not an opinion, it is a multiplication — the class computes the total cost of all nine rows of this week's table, circles the cheapest, and finds that **t = 0.10 costs £5,550** while the default 0.5 costs £7,000. Then the second half asks the question a good student is already itching to ask: *how much do you trust a four-decimal number that rests on fourteen frauds?* Not much.
+
+The fix: **5-fold stratified cross-validation** turns one lucky number into five and reports `AUC = 0.628 ± 0.087`, which is a band wide enough to change your mind. There is one small new piece of maths, and it is the natural partner to this week's: **the area under a curve, added up as trapezoid strips by hand**, on a five-point curve, then checked against `np.trapz` — which is what "AUC" has meant all along.
 
 **To prep early:** four things. **One — do not wipe anything.** The twenty cards, the probability line, the ten-dot graph paper and the nine-row sweep table are all used again, and the cost table is the same nine rows with two extra columns. **Two — write the price list on a card tonight** and keep it in your pocket: `a miss costs £500 · a false alarm costs £10`. Producing it as a physical object at minute 3 is worth more than any slide. **Three — print two sheets of graph paper per student**, because the Trapezoid Race needs a fresh five-point curve drawn from scratch and squared paper is the difference between four strips and a scribble. **Four — divide a whiteboard down the middle** and write `BY HAND` on the left and `np.trapz` on the right; that board is the second activity and it should be waiting when they walk in. Nothing new to install.

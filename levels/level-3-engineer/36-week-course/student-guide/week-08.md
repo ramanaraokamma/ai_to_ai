@@ -257,6 +257,8 @@ One file, `fraud.py`. **The whole thing runs in under 2 seconds**, including gen
 
 ### Step 1 — make a rare-event table on purpose
 
+Type this first block into `fraud.py`. It builds the table and prints its size and fraud count.
+
 ```python
 """fraud.py - four numbers, and what accuracy hides."""
 from sklearn.datasets import make_classification
@@ -298,6 +300,8 @@ fraud rows: 72  fraud rate: 0.0144
 
 ### Step 2 — three piles, and count the frauds in each
 
+Add this block. It splits the rows into train, validation and test piles and prints each pile's fraud count.
+
 ```python
 X_tmp, X_test, y_tmp, y_test = train_test_split(
     X, y, test_size=0.20, random_state=0, stratify=y)
@@ -319,6 +323,8 @@ Week 2's three piles, unchanged. And look what `stratify=y` bought: **44 + 14 + 
 **Fourteen.** That is how many frauds you get to be judged on. **Fourteen is a very small number and you should be uneasy about it.** Every fraction today has a 14 or a 10 on the bottom, and small denominators wobble. Week 11 fixes it. Today, just notice.
 
 ### Step 3 — the piece of paper, in code
+
+Add this block. It builds the model that never says yes and prints its four counts.
 
 ```python
 print()
@@ -348,6 +354,8 @@ tn 986  fp 0  fn 14  tp 0
 
 ### Step 4 — 🐞 ask the lazy model for its precision
 
+Add this line, then run the file.
+
 ```python
 print("precision       : %.4f" % precision_score(y_val, pred_lazy))
 ```
@@ -367,6 +375,8 @@ Now read what it actually says: **"no predicted samples."** Precision is *"of ev
 And the honest answer is not "zero". It is **"undefined"** — because the fraction has nothing on the bottom.
 
 ### Step 5 — the real model, and 🐞 the silent one
+
+Add this block. It fits a decision tree and prints its four counts.
 
 ```python
 print()
@@ -408,6 +418,8 @@ tn 979  fp 7  fn 11  tp 3
 > **⚠️ Watch out:** the sanity check is not the numbers, it is the *meaning*. FN is "frauds I missed", and on this data that is **11**, not 7. If your FN is smaller than your FP on a model that barely catches anything, look at your argument order.
 
 ### Step 6 — check your paper arithmetic
+
+Add this block. It prints the metrics you worked out on paper, then the full report.
 
 ```python
 print("accuracy    : %.4f" % accuracy_score(y_val, pred))
@@ -536,6 +548,8 @@ weighted avg     0.9792    0.9820    0.9805      1000
 ---
 
 ## 🔍 Worked Examples
+
+These three examples use the same four cells in three settings: index cards, a hospital and a school. Each one is for practising the habit of naming the cells in the language of the application.
 
 ### Worked Example 1 — Forty index cards, on a table (the class activity)
 
@@ -739,7 +753,7 @@ specificity 0.7857  = 11 / 14
 
 ## 🐞 When It Breaks
 
-Four real messages from four real broken runs.
+This section is for reading this week's error messages and warnings, and for knowing what each one means. It covers four real messages from four real broken runs.
 
 ### Break 1 — a warning that is describing your model, not your code
 
@@ -836,6 +850,8 @@ counts swapped : [979  11   7   3]
 
 ## 🎲 What We Did In Class
 
+This section is a record of the lesson, so you can compare it with your own notes.
+
 ### The 98.6% model
 
 Nothing on the screen. `5000 transactions, 72 fraud` on the board, and then a piece of paper held up with `NOT FRAUD` written on it. We did the division ourselves: 986 ÷ 1000 = 0.9860. **Then the question — "how many frauds did it catch?" — and the silence afterwards, which nobody filled.**
@@ -886,6 +902,8 @@ And then the thing that opens Week 9: **recall 0.2143 is bad, so flag more trans
 
 ## 💬 Talk About It
 
+These three questions are for discussing with a partner or a parent. Try each one before you read its hint.
+
 **1. A smoke alarm has never gone off in your house. What are its four counts, and which one can you not see?**
 
 TP = 0 and FP = 0 — the whole "alarm sounded" column is empty. TN is every quiet day. **And FN is the one you cannot see from the alarm itself: how many fires there were.** Zero fires and it has made no mistakes yet (though it has never been tested either, so recall is 0 ÷ 0). One fire and it failed at the only job it had.
@@ -907,6 +925,8 @@ Yes, and this is the best idea in the week. Think about the smoke alarm that goe
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section is for spotting four wrong ideas that sound reasonable. Each trick shows the wrong thought and the right one.
 
 ### Trick 1 — "3 ÷ 14 is precision because 14 is bigger"
 
@@ -942,6 +962,8 @@ The cure is physical. Put figures 8.3 and 8.4 side by side and trace the outline
 ---
 
 ## 🌍 Where You've Seen This
+
+This section is for connecting the four cells to things you already meet in daily life.
 
 1. **Your spam folder.** Every email service in the world is tuned to protect **precision** — they would much rather let one piece of junk into your inbox (a false negative) than send your bank's passcode to spam (a false positive). Which is exactly the opposite of how cancer screening is tuned, on the same maths.
 2. **Airport security.** The metal detector is deliberately set to enormous recall and terrible precision: it goes off for belt buckles constantly, because a miss is unthinkable. Every false alarm costs 30 seconds and a pat-down, and they have decided that is a price worth paying.
@@ -979,6 +1001,8 @@ Weeks 7 to 9. The ↻ on stage three is the training loop, still grey until Week
 ---
 
 ## 🔑 Remember This
+
+These are the points to keep from the week, followed by a syntax card you can copy from.
 
 - **Accuracy adds together two kinds of correct and two kinds of wrong, and the result cannot be taken apart again.** So keep all four counts instead. There is no fifth box.
 - **The naming trick: the SECOND word is what you predicted, the FIRST word is whether you were right.** A false positive is "I said positive and that was false" — you cried wolf. A false negative is "I said negative and that was false" — the wolf walked past.
@@ -1043,6 +1067,8 @@ print(classification_report(y_val, pred, digits=4))
 ---
 
 ## 📓 New Words
+
+This section lists the words from this week, each with its meaning and an example from your own `fraud.py` run.
 
 ![Six words from Week 8, drawn](../figures/fig-w08-6-vocab-icons.svg)
 *Figure 8.6 — Six words from Week 8, drawn. Every tile is a number from your own `fraud.py` run.*

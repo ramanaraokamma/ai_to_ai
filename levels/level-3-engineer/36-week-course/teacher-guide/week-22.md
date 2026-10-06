@@ -55,7 +55,7 @@ In Week 17 the student learned that a whole layer, for a whole batch, is one gri
 
 Here is the whole thing, on numbers small enough to check on paper. Say the layer is `nn.Linear(2, 3)` — two numbers in, three numbers out — and we set its weights by hand:
 
-```
+```text
 the grid                  the bias
  0.5   −0.3                 0.2
  0.8    0.2                 0.05
@@ -64,7 +64,7 @@ the grid                  the bias
 
 Now push in one row of input, `x = [1.0, 2.0]`. Three outputs come out, one per row of the grid:
 
-```
+```text
 row 0:   1.0 × 0.5  +  2.0 × (−0.3)  +  0.2   =  0.5 − 0.6 + 0.2  =  0.10
 row 1:   1.0 × 0.8  +  2.0 × 0.2     +  0.05  =  0.8 + 0.4 + 0.05 =  1.25
 row 2:   1.0 × (−1.0) + 2.0 × 1.5    −  0.2   = −1.0 + 3.0 − 0.2  =  1.80
@@ -104,7 +104,7 @@ Take `2 → 16 → 1`, the Week 19 architecture. Four blocks of numbers, and no 
 
 **The general shape of the count**, which you can hand a strong student:
 
-```
+```text
 one layer:  (inputs × outputs)  +  outputs
 ```
 
@@ -122,7 +122,7 @@ The student met this word in Week 13: a weighted sum is any number, a probabilit
 
 Here is the whole thing on four numbers. Four raw scores, four true answers:
 
-```
+```text
 score   true answer
  2.0        1
 −1.0        0
@@ -132,7 +132,7 @@ score   true answer
 
 Step one, squash each score to a chance with the sigmoid from Week 13:
 
-```
+```text
 sigmoid( 2.0) = 0.880797
 sigmoid(−1.0) = 0.268941
 sigmoid( 0.5) = 0.622459
@@ -141,7 +141,7 @@ sigmoid(−3.0) = 0.047426
 
 Step two, the surprise of each answer, using `−ln(p)` from Week 14 — and for a row whose true answer is 0, the surprise is `−ln(1 − p)`:
 
-```
+```text
 row 1  true 1, p = 0.880797  →  −ln(0.880797) = 0.126928
 row 2  true 0, p = 0.268941  →  −ln(0.731059) = 0.313262
 row 3  true 1, p = 0.622459  →  −ln(0.622459) = 0.474077
@@ -150,7 +150,7 @@ row 4  true 1, p = 0.047426  →  −ln(0.047426) = 3.048587
 
 Step three, average the four:
 
-```
+```text
 0.126928 + 0.313262 + 0.474077 + 3.048587  =  3.962854
 3.962854 ÷ 4  =  0.9907135
 ```
@@ -184,7 +184,7 @@ The student met overfitting in Level 2 with decision trees: a model that memoris
 
 Here is the real run you will do in class: 400 moons, 300 for training, 100 held back for validation, a 2 → 64 → 64 → 1 network with 4,417 learnable numbers, trained for 1,500 epochs.
 
-```
+```text
  epoch    train     val
      0   0.5529   0.5314
     39   0.1659   0.1568      ← validation's best, ever
@@ -197,7 +197,7 @@ Here is the real run you will do in class: 400 moons, 300 for training, 100 held
 
 **Read it as a story in two halves.** Up to epoch 39 both numbers fall together: the model is learning something true about moons. After epoch 39 the train number keeps falling all the way to 0.0165 — nearly perfect — while the validation number climbs back up to 0.4347, **most of the way back to its epoch-0 value of 0.5314**. The model is now learning things that are true about those exact 300 rows and false about moons.
 
-```
+```text
 at the end:   0.4347 − 0.0165  =  0.4182
 ```
 
@@ -351,6 +351,8 @@ reporting. Evaluation lights up again in Week 26 when there is a test score to p
 ---
 
 ## 🧰 Prep Checklist
+
+This section lists what to prepare before the lesson, and holds the complete runnable files.
 
 ### 25 minutes the night before
 
@@ -566,6 +568,8 @@ wrote overfit.png and dropout.png
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the timed plan for the whole lesson, one segment at a time.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — Forty Lines Become Four | 7 | 7 | Week 19's numpy brain beside three lines of PyTorch. Same 65 numbers. |
@@ -634,7 +638,7 @@ model = nn.Sequential(
 
 **Do this:** Draw on the board, big. A 3 × 2 grid and a bias column, as in Figure 22.1.
 
-```
+```text
         the grid            the bias
         0.5   −0.3            0.2
         0.8    0.2            0.05
@@ -651,7 +655,7 @@ model = nn.Sequential(
 
 **Do this:** Write it out, saying every operation:
 
-```
+```text
 row 0:   1.0 × 0.5  +  2.0 × (−0.3)  +  0.2   =   0.5 − 0.6 + 0.2   =   0.10
 ```
 
@@ -722,7 +726,7 @@ row 0:   1.0 × 0.5  +  2.0 × (−0.3)  +  0.2   =   0.5 − 0.6 + 0.2   =   0.
 
 **Do this:** Write four scores and four answers on the board, then the sigmoid values (which they may not compute quickly enough by hand — give them):
 
-```
+```text
 score   answer   sigmoid(score)
  2.0      1        0.880797
 −1.0      0        0.268941
@@ -738,14 +742,14 @@ score   answer   sigmoid(score)
 
 **Do this:** Do the four surprises on the board, using `−ln`:
 
-```
+```text
 row 1  −ln(0.880797) = 0.126928
 row 2  −ln(0.731059) = 0.313262      ← 1 − 0.268941, because the answer was 0
 row 3  −ln(0.622459) = 0.474077
 row 4  −ln(0.047426) = 3.048587
 ```
 
-```
+```text
 3.962854 ÷ 4 = 0.9907135
 ```
 
@@ -765,7 +769,7 @@ row 4  −ln(0.047426) = 3.048587
 
 **Do this:** Put the two-column table from §3 on the board.
 
-```
+```text
 raw score     fed in raw     squashed twice
   −6.0          6.0025           0.6919
    0.0          0.6931           0.4741
@@ -1074,6 +1078,8 @@ And the sentence for this week:
 
 ## 🎲 The Activity, In Full
 
+This section gives the full instructions for this week's activity.
+
 ### Parameter Count Race
 
 **What it is.** Two halves. First, a genuine race: four networks, counted on paper in pen, against PyTorch printing the same four numbers. Then the dropout comparison — the same net trained twice, both validation curves on one axis.
@@ -1201,6 +1207,8 @@ Two questions. *"Which model can fit the training data better?"* The one with th
 
 ## ❓ Questions Students Ask This Week
 
+This section collects the questions students ask most this week, so you can answer without improvising.
+
 **"If `nn.Linear` is just the grid multiply, why not keep writing it ourselves?"**
 
 Three honest reasons, and one of them is the real one.
@@ -1259,6 +1267,8 @@ What to tell a 14-year-old, out loud: **"try two sizes, plot both validation cur
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the common problems in the room and what to do about each.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **The layer becomes magic** | `nn.Linear(2, 16)` is short and does a lot, so it reads as a spell | Open it. Every time. `print(layer.weight)` and `print(layer.bias)` on the shared screen, and the three sums on the board **before** the class types `nn.Sequential`. If they cannot say what is inside it, nothing else today will stick. |
@@ -1275,6 +1285,8 @@ What to tell a 14-year-old, out loud: **"try two sizes, plot both validation cur
 ---
 
 ## 🧭 Differentiation
+
+This section says how to adjust the lesson for students who struggle and for those who race ahead.
 
 ### If the student is struggling
 
@@ -1436,6 +1448,8 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
+This section gives the wording for setting the homework.
+
 **Say this:**
 
 > "About an hour, three pages, and part two is the one I'm marking hardest.
@@ -1503,7 +1517,7 @@ Every question restated, so you can mark from this page alone.
 
 *Four raw scores with their sigmoid values given. Compute the surprise of each row and the average.*
 
-```
+```text
 score   answer   sigmoid(score)   surprise
  2.0      1        0.880797       −ln(0.880797) = 0.126928
 −1.0      0        0.268941       −ln(1 − 0.268941) = −ln(0.731059) = 0.313262
@@ -1511,7 +1525,7 @@ score   answer   sigmoid(score)   surprise
 −3.0      1        0.047426       −ln(0.047426) = 3.048587
 ```
 
-```
+```text
 0.126928 + 0.313262 + 0.474077 + 3.048587  =  3.962854
 3.962854 ÷ 4  =  0.9907135
 ```
@@ -1636,14 +1650,14 @@ About `0.3 × 64 ≈ 19`. **No** — a different random set every step. That is 
 
 **6. Compute the loss by hand for these four scores, true answers all 1: `−6.0, 0.0, +2.0, +6.0`. The sigmoid values are 0.002473, 0.5, 0.880797, 0.997527.**
 
-```
+```text
 −ln(0.002473) = 6.002476
 −ln(0.5)      = 0.693147
 −ln(0.880797) = 0.126928
 −ln(0.997527) = 0.002476
 ```
 
-```
+```text
 6.002476 + 0.693147 + 0.126928 + 0.002476  =  6.825027
 6.825027 ÷ 4  =  1.706257
 ```
@@ -1695,6 +1709,8 @@ About `0.3 × 64 ≈ 19`. **No** — a different random set every step. That is 
 ---
 
 ## 🔮 Next Week Preview
+
+This section tells you what comes next week.
 
 Next week is a lab, and it is the week the model stops living inside the script that made it. The student writes their first `nn.Module` subclass — `__init__` to declare the parts, `forward` to say how a batch flows — and proves it is the *same* model as this week's `nn.Sequential`, byte for byte, 65 numbers and all. Then the data starts arriving in batches instead of all at once: `TensorDataset` and `DataLoader`, and the arithmetic of 1,257 training digits at 32 at a time, which is 40 steps per epoch worked out three separate ways until all three agree. Then a real network on a real dataset — `load_digits`, 1,797 handwritten eights and threes and nines, 64 → 64 → 10, past 96% in under a second — and finally the Clean Room Test with torch: close everything, open a `predict.py` that contains no training code at all, and classify three digits it has never seen.
 

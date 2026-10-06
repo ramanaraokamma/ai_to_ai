@@ -40,7 +40,7 @@ ________________________________________________________________
 
 Draw vertical lines at 0.25, 0.50 and 0.75. **Four strips, each 0.25 wide.**
 
-```
+```text
 strip 1:  (0.00 + 0.60) ÷ 2 = ________     ________ × 0.25 = ____________
 strip 2:  (0.60 + 0.80) ÷ 2 = ________     ________ × 0.25 = ____________
 strip 3:  (0.80 + 0.90) ÷ 2 = ________     ________ × 0.25 = ____________
@@ -71,7 +71,7 @@ ________________________________________________________________
 
 `w1 = ________`  `w2 = ________`  `w3 = ________`  `w4 = ________`  **and they must add to** ________
 
-```
+```text
 strip 1:  (0.2 + 0.6) ÷ 2 = ________     ________ × ________ = ____________
 strip 2:  (0.6 + 0.8) ÷ 2 = ________     ________ × ________ = ____________
 strip 3:  (0.8 + 1.0) ÷ 2 = ________     ________ × ________ = ____________
@@ -82,7 +82,7 @@ strip 4:  (1.0 + 1.0) ÷ 2 = ________     ________ × ________ = ____________
 
 **M2(a).** Now do it again with only **two** strips, using just `(0.0, 0.2)`, `(0.3, 0.8)` and `(1.0, 1.0)`.
 
-```
+```text
 strip 1:  (0.2 + 0.8) ÷ 2 = ________     ________ × 0.3 = ____________
 strip 2:  (0.8 + 1.0) ÷ 2 = ________     ________ × 0.7 = ____________
                                                           ------------
@@ -117,7 +117,7 @@ strip 2:  (0.8 + 1.0) ÷ 2 = ________     ________ × 0.7 = ____________
 
 **M3(c).** The winner's arithmetic, longhand, in three lines:
 
-```
+```text
 500 × ________  =  ____________
  10 × ________  =  ____________
                    ------------
@@ -163,7 +163,7 @@ ________________________________________________________________
 
 **M4(d) — the mean and the `±`, by hand.** The five fold AUCs were `0.6183, 0.5909, 0.6873, 0.7504, 0.4954`.
 
-```
+```text
 0.6183 + 0.5909  =  ____________
      ____________ + 0.6873  =  ____________
      ____________ + 0.7504  =  ____________
@@ -193,6 +193,8 @@ ________________________________________________________________
 ---
 
 ## 🔎 Predict the Output
+
+Use this page to commit to a prediction for each program before you run it.
 
 **Write your prediction in pen before you run anything.** P2 and P3 carry on from `fraud_bench.py`, so `X`, `y` and `pipe` already exist. **Two of these four print beautiful numbers that mean nothing.**
 
@@ -318,6 +320,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+Use this page to read tables, code and outputs from the week.
+
 **A1. Match the word to the thing.** Write the letter.
 
 | Word | | Description |
@@ -436,6 +440,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+Use this page to write short programs from an expected output.
 
 ### B1 — one line, plus a print
 
@@ -556,6 +562,8 @@ ________________________________________________________________
 ---
 
 ## 🐞 Fix the Broken Program
+
+Use this page to practise reading a traceback and finding a bug that prints no error at all.
 
 This program has **three** bugs: one **shape** bug, one **runtime** bug, and one **silent logic** bug. The real messages are below, in the order you meet them.
 
@@ -701,6 +709,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+A puzzle that reuses the nine-row table from the maths page, with the price of a miss unknown.
+
 ### The Price List Detective
 
 Somebody at the bank has circled a threshold on the nine-row table but **spilled coffee on the price list.** You can still read that a false alarm costs **£10**. You cannot read what a miss costs. Call it **C**.
@@ -788,6 +798,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+Two longer written answers. Write full sentences, and use the numbers from this week.
+
 **T1.** The break-even formula says `t* = 0.0196` and the 99-threshold sweep says `t = 0.032`. **Neither is wrong.** **Write a paragraph** on what their disagreement is telling you. Name the assumption the formula makes, name the word for a model that satisfies it, say how many positives the sweep's minimum rests on, and finish by saying what you would write in a report — including what you would say if the two numbers had *agreed*.
 
 ________________________________________________________________
@@ -813,6 +825,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It — Fraud Bench
+
+Use this page to pull the week together into one handed-in piece of work.
 
 **Four things get handed in. The fourth is the two `±` sentences, and it is the one marked hardest.**
 
@@ -846,7 +860,7 @@ ________________________________________________________________
 
 **The winning row's arithmetic, longhand:**
 
-```
+```text
 500 × ________  =  ____________
  10 × ________  =  ____________
                    ------------
@@ -867,7 +881,7 @@ ________________________________________________________________
 
 ### Four strips, by hand and by machine
 
-```
+```text
 the five points:  (0.00, 0.00)  (0.25, 0.60)  (0.50, 0.80)  (0.75, 0.90)  (1.00, 1.00)
 
 the four widths:  ________  ________  ________  ________     they add to ________
@@ -940,6 +954,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+Use this page to put the cost table on one picture.
+
 Draw the cost bowl. Threshold along the bottom, total cost in pounds up the side, nine dots, the winner ringed — **and the bump outlined in red.**
 
 ![Draw the cost bowl](../figures/fig-w11-9-draw-frame.svg)
@@ -960,6 +976,8 @@ ________________________________________________________________
 ---
 
 ## 📊 Self-Check
+
+Tick one face for each line, honestly. This page is for you, not for marking.
 
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
@@ -1001,7 +1019,7 @@ ________________________________________________________________
 
 **M1.**
 
-```
+```text
 strip 1:  (0.00 + 0.60) ÷ 2 = 0.30     0.30 × 0.25 = 0.0750
 strip 2:  (0.60 + 0.80) ÷ 2 = 0.70     0.70 × 0.25 = 0.1750
 strip 3:  (0.80 + 0.90) ÷ 2 = 0.85     0.85 × 0.25 = 0.2125
@@ -1016,7 +1034,7 @@ strip 4:  (0.90 + 1.00) ÷ 2 = 0.95     0.95 × 0.25 = 0.2375
 
 **M2.** Widths: `w1 = **0.1**`, `w2 = **0.2**`, `w3 = **0.2**`, `w4 = **0.5**`, and they add to **1.0** ✅ (which they must, because the x-axis runs from 0 to 1).
 
-```
+```text
 strip 1:  (0.2 + 0.6) ÷ 2 = 0.40     0.40 × 0.1 = 0.0400
 strip 2:  (0.6 + 0.8) ÷ 2 = 0.70     0.70 × 0.2 = 0.1400
 strip 3:  (0.8 + 1.0) ÷ 2 = 0.90     0.90 × 0.2 = 0.1800
@@ -1051,7 +1069,7 @@ strip 4:  (1.0 + 1.0) ÷ 2 = 1.00     1.00 × 0.5 = 0.5000
 
 **M3(c).**
 
-```
+```text
 500 × 11  =  5500
  10 ×  5  =    50
              ----
@@ -1087,7 +1105,7 @@ Notice that the formula moved the same way the sweep did — **make a miss cheap
 
 **M4(d).**
 
-```
+```text
 0.6183 + 0.5909  =  1.2092
 1.2092 + 0.6873  =  1.8965
 1.8965 + 0.7504  =  2.6469

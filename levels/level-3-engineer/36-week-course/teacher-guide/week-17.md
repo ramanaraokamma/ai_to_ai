@@ -57,7 +57,7 @@ So the honest framing for the class is: *"you already know what a layer does. Th
 
 **Here are the two grids for the whole lesson.** Small, whole numbers, chosen so nothing needs a calculator:
 
-```
+```text
 A (3 rows, 2 columns)          B (2 rows, 4 columns)
 
 [ 1  2 ]                       [ 10  20  30  40 ]
@@ -82,7 +82,7 @@ A (3 rows, 2 columns)          B (2 rows, 4 columns)
 
 Do a second one so the pattern is visible rather than guessed. **Row 1, column 2:** second row of A is `3`, `4`; third column of B, read downwards, is `30`, `70`.
 
-```
+```text
 3 × 30 = 90
 4 × 70 = 280
          ----
@@ -91,7 +91,7 @@ Do a second one so the pattern is visible rather than guessed. **Row 1, column 2
 
 And a third, from the far corner. **Row 2, column 3:** third row of A is `5`, `6`; fourth column of B is `40`, `80`.
 
-```
+```text
 5 × 40 = 200
 6 × 80 = 480
          ----
@@ -100,7 +100,7 @@ And a third, from the far corner. **Row 2, column 3:** third row of A is `5`, `6
 
 **The finished answer, all twelve cells:**
 
-```
+```text
 [ 110  140  170  200 ]
 [ 230  300  370  440 ]
 [ 350  460  570  680 ]
@@ -117,7 +117,7 @@ Three rows, four columns. **Shape `(3, 4)`.**
 
 > **inner dimension** — in `(3,2) @ (2,4)`, the two middle numbers: A's columns and B's rows. **They must be equal.**
 
-```
+```text
 (3, 2) @ (2, 4)  →  (3, 4)
     \____/
    these must match: 2 and 2
@@ -158,7 +158,7 @@ Three rows, four columns. **Shape `(3, 4)`.**
 
 Here is the situation. `X @ W1` gives four rows of three pre-activations. There are only **three** biases — one per hidden unit — and they have to be added to **all four** rows. Written out, numpy behaves as if the bias row were copied down:
 
-```
+```text
 X @ W1 (4, 3)                      b1, copied down (4, 3)
 [  2.1    0.1   -0.2  ]            [ 0.1  0.05  -0.8 ]
 [  0.2   -0.8    3.1  ]      +     [ 0.1  0.05  -0.8 ]
@@ -186,7 +186,7 @@ X @ W1 (4, 3)                      b1, copied down (4, 3)
 
 **Today's network: 2 inputs → 3 hidden units with ReLU → 1 output with sigmoid.** Every weight is typed out. Note that the hidden layer's first two units are **exactly last week's two units**, so the numbers `2.20` and `0.15` will look familiar — that is deliberate, and worth pointing out.
 
-```
+```text
 X  (4, 2)              W1 (2, 3)                    b1 (1, 3)
 [  1.0   2.0 ]         [ 0.5  -0.3   1.2 ]          [ 0.1  0.05  -0.8 ]
 [  2.0  -1.0 ]         [ 0.8   0.2  -0.7 ]
@@ -229,7 +229,7 @@ X  (4, 2)              W1 (2, 3)                    b1 (1, 3)
 
 **And the shape ladder, which is the thing to write on the wall:**
 
-```
+```text
 X      (4, 2)
 W1     (2, 3)   →   X @ W1   (4, 3)
 b1     (1, 3)   →   Z1       (4, 3)      [broadcast down all four rows]
@@ -425,11 +425,13 @@ it does not switch off again for the rest of the level.
 
 ## 🧰 Prep Checklist
 
+Use this section to get everything ready before class: cards, files and a fallback if the laptops fail.
+
 ### 20 minutes the night before
 
 - [ ] **Write the twelve Shape Dominoes cards.** One shape pair per index card, thick pen, **blank on the back**:
 
-```
+```text
 WORKS (8):
    (3,2) x (2,4)      (4,2) x (2,3)      (4,3) x (3,1)     (1,3) x (3,1)
    (3,1) x (1,3)      (2,2) x (2,2)      (16,750) x (750,1)  (2,750) x (750,16)
@@ -615,6 +617,8 @@ A2 = sigmoid(Z2) (4, 1)
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the lesson plan, one segment at a time. The table shows the timing; the steps below it give the wording.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — Twelve Thousand Trips Round a Loop | 7 | 7 | Count the loop trips, then say one symbol replaces them |
@@ -629,7 +633,7 @@ A2 = sigmoid(Z2) (4, 1)
 
 **Do this:** Laptops shut. On the board, write only this:
 
-```
+```text
 750 rows of data
  16 neurons in the layer
 ```
@@ -670,7 +674,7 @@ A2 = sigmoid(Z2) (4, 1)
 
 **Do this (8 min) — the three cells, in longhand.** Write `A` and `B` on the board with their shapes:
 
-```
+```text
 A (3, 2)          B (2, 4)
 [ 1  2 ]          [ 10  20  30  40 ]
 [ 3  4 ]          [ 50  60  70  80 ]
@@ -683,7 +687,7 @@ A (3, 2)          B (2, 4)
 
 **Do this:** Write it in longhand, slowly:
 
-```
+```text
 1 × 10 = 10
 2 × 50 = 100
          ---
@@ -702,7 +706,7 @@ Work it: `3 × 30 = 90`, `4 × 70 = 280`, **`370`**. Then let a student do row 2
 
 **Do this (5 min) — the rule, and where it comes from.** Write on the board:
 
-```
+```text
 (3, 2) @ (2, 4)  →  (3, 4)
     \____/
    these two must match
@@ -726,7 +730,7 @@ Work it: `3 × 30 = 90`, `4 × 70 = 280`, **`370`**. Then let a student do row 2
 
 **Do this (5 min) — broadcasting, on the board.** Write:
 
-```
+```text
 X @ W1  is (4, 3)      four rows, three units
 b1      is (1, 3)      three biases, one per unit
 ```
@@ -908,7 +912,7 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: twelve sh
 
 **Do this:** Stand at the shape ladder. Write four things beneath it:
 
-```
+```text
 A @ B                inner two must match, outer two survive
 (4,2) @ (2,3) = (4,3)   say it out loud BEFORE you type it
 b1 is (1, 3)         one bias per UNIT, broadcast down every row
@@ -929,7 +933,7 @@ last line, last bracket, two numbers    how to read the error
 
 **Do this — softmax, ninety seconds, on the board.** This is the fifth piece of vocabulary and it needs exactly one worked sum.
 
-```
+```text
 three raw scores:   2.0     1.0     0.1
 
 e^x:             7.389056  2.718282  1.105171     total 11.212509
@@ -990,6 +994,8 @@ And the sentence for this week:
 ---
 
 ## 🎲 The Activity, In Full
+
+This section gives the full set-up and steps for the Shape Dominoes activity and the board trace.
 
 ### Shape Dominoes, then the Board Trace
 
@@ -1062,7 +1068,7 @@ Then:
 
 Draw it in **blue**, left to right, and make the class supply every shape. Write each grid as a labelled block, and write the weight shape **on the wire between** the layers:
 
-```
+```text
 X (5, 4)  --[ W1 (4, 3) ]-->  Z1 (5, 3)  --ReLU-->  A1 (5, 3)
                               + b1 (1, 3)
 
@@ -1107,7 +1113,7 @@ A1 (5, 3) --[ W2 (3, 2) ]-->  Z2 (5, 2)  --softmax-->  A2 (5, 2)
 
 **The version of the maths that skips everything hard.** One cell, in longhand, with the numbers written out for them:
 
-```
+```text
 first row of A:        1   2
 first column of B:    10  50
 
@@ -1156,6 +1162,8 @@ Then three questions. **"Which two numbers had to match?"** (The two 2s.) **"Whe
 ---
 
 ## ❓ Questions Students Ask This Week
+
+These are questions students tend to ask this week, each with a suggested answer.
 
 **"Why is it row-times-column and not just cell-times-cell? That would be simpler."**
 
@@ -1209,6 +1217,8 @@ That is a real habit, not a beginner's crutch. Professionals write the forward p
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual ways the lesson goes off course and what to do about each.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **`@` is taught as a rule and no cell is ever multiplied out** | The rule is short and the arithmetic is dull | **Do three cells in longhand.** `1×10 + 2×50 = 110` on the board. Without it, `@` is magic, and next week's backward pass — which is the same operation with a transpose — has nothing to stand on. |
@@ -1225,6 +1235,8 @@ That is a real habit, not a beginner's crutch. Professionals write the forward p
 ---
 
 ## 🧭 Differentiation
+
+Use this section to adjust the lesson for a student who is struggling, flying, or not engaging.
 
 ### If the student is struggling
 
@@ -1343,6 +1355,8 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
+This section gives the homework and the wording for assigning it.
+
 **Say this:**
 
 > "About an hour, two pages, and the second one asks you to break things on purpose.
@@ -1369,7 +1383,7 @@ Every question restated, so you can mark from this page alone.
 
 *Compute at least cells `(0,0)`, `(1,2)` and `(2,3)` by hand. Then check all twelve with numpy.*
 
-```
+```text
 A (3, 2)          B (2, 4)
 [ 1  2 ]          [ 10  20  30  40 ]
 [ 3  4 ]          [ 50  60  70  80 ]
@@ -1378,7 +1392,7 @@ A (3, 2)          B (2, 4)
 
 **Cell (0, 0)** — row 0 of A is `1, 2`; column 0 of B is `10, 50`:
 
-```
+```text
 1 × 10 = 10
 2 × 50 = 100
          ----
@@ -1387,7 +1401,7 @@ A (3, 2)          B (2, 4)
 
 **Cell (1, 2)** — row 1 of A is `3, 4`; column 2 of B is `30, 70`:
 
-```
+```text
 3 × 30 = 90
 4 × 70 = 280
          ----
@@ -1396,7 +1410,7 @@ A (3, 2)          B (2, 4)
 
 **Cell (2, 3)** — row 2 of A is `5, 6`; column 3 of B is `40, 80`:
 
-```
+```text
 5 × 40 = 200
 6 × 80 = 480
          ----
@@ -1525,7 +1539,7 @@ for sa, sb in pairs:
 
 *Four rows, 2 → 3 → 1. Write out every intermediate grid with its shape.*
 
-```
+```text
 X (4, 2)               W1 (2, 3)                b1 (1, 3)
 [  1.0   2.0 ]         [ 0.5  -0.3   1.2 ]      [ 0.1  0.05  -0.8 ]
 [  2.0  -1.0 ]         [ 0.8   0.2  -0.7 ]
@@ -1547,7 +1561,7 @@ X (4, 2)               W1 (2, 3)                b1 (1, 3)
 
 **Step 2 — `Z1 = X @ W1 + b1`, shape `(4, 3)`.** Add `0.1`, `0.05`, `−0.8` to **every** row:
 
-```
+```text
 [  2.2    0.15  -1.0  ]
 [  0.3   -0.75   2.3  ]
 [  0.5    0.15  -1.15 ]
@@ -1556,7 +1570,7 @@ X (4, 2)               W1 (2, 3)                b1 (1, 3)
 
 **Step 3 — `A1 = ReLU(Z1)`, shape `(4, 3)`.** Negatives to zero:
 
-```
+```text
 [ 2.2   0.15  0.0 ]
 [ 0.3   0.0   2.3 ]
 [ 0.5   0.15  0.0 ]
@@ -1567,7 +1581,7 @@ X (4, 2)               W1 (2, 3)                b1 (1, 3)
 
 **Step 4 — `Z2 = A1 @ W2 + b2`, shape `(4, 1)`.** `W2` is `[1.0, −2.0, 0.5]` as a column, plus `0.3`:
 
-```
+```text
 row 0:  2.2(1.0) + 0.15(−2.0) + 0(0.5) + 0.3  =  2.2 − 0.3 + 0 + 0.3  =  2.20
 row 1:  0.3(1.0) + 0(−2.0) + 2.3(0.5) + 0.3   =  0.3 + 0 + 1.15 + 0.3 =  1.75
 row 2:  0.5(1.0) + 0.15(−2.0) + 0(0.5) + 0.3  =  0.5 − 0.3 + 0 + 0.3  =  0.50
@@ -1576,7 +1590,7 @@ row 3:  0(1.0) + 0.15(−2.0) + 0(0.5) + 0.3    =  0 − 0.3 + 0 + 0.3    =  0.0
 
 **Step 5 — `A2 = sigmoid(Z2)`, shape `(4, 1)`:**
 
-```
+```text
 sigmoid(2.20) = 1 ÷ (1 + e^(−2.20)) = 1 ÷ 1.110803 = 0.900250
 sigmoid(1.75) = 1 ÷ (1 + e^(−1.75)) = 1 ÷ 1.173774 = 0.851953
 sigmoid(0.50) = 1 ÷ (1 + e^(−0.50)) = 1 ÷ 1.606531 = 0.622459
@@ -1585,7 +1599,7 @@ sigmoid(0.00) = 1 ÷ (1 + 1)         = 1 ÷ 2        = 0.500000
 
 **The shape ladder, which is the answer to "write a shape beside every grid":**
 
-```
+```text
 X      (4, 2)
 X @ W1 (4, 3)      because (4,2) @ (2,3)
 Z1     (4, 3)      + b1 (1, 3), broadcast down
@@ -1851,7 +1865,7 @@ without keepdims: E.sum(axis=1) = [11.212509] (1,)
 
 **The arithmetic, by hand:**
 
-```
+```text
 e^2.0 = 7.389056
 e^1.0 = 2.718282
 e^0.1 = 1.105171

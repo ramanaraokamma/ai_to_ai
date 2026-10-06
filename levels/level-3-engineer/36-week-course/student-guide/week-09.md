@@ -58,6 +58,8 @@ Then, in the second half, you rebuild the whole of Term 1 from memory in forty m
 
 ## 🧠 The Big Idea
 
+This section works through how precision and recall are combined into one score, step by step.
+
 ### 1. Averaging them is the obvious idea, and it is a cover-up
 
 Precision 0.9, recall 0.1. Add them, halve them:
@@ -659,6 +661,8 @@ flags everything  tn   0 fp 986 fn  0 tp 14   F1 = 28 / 1014 = 0.0276
 
 ## 🔍 Worked Examples
 
+These three examples work through real tables of counts, one at a time.
+
 ### Worked Example 1 — Two spam filters, and F1 choosing between them (email)
 
 500 emails arrive this week. **40 of them are spam.** Two filters, and the boss wants one number for each.
@@ -967,6 +971,8 @@ f1 : 0.6204
 
 ## 🎲 What We Did In Class
 
+This section records the class activities, so you can look back at them.
+
 ### One box on the form
 
 Last week's 2×2 was still on the wall. The four numbers were read out — 979, 7, 11, 3 — and then one empty box was drawn on the board:
@@ -1064,6 +1070,8 @@ All five handover lines read out loud, in order, as one sentence:
 
 ## 💬 Talk About It
 
+These questions are for discussing in class or at home.
+
 **1. Why does the harmonic mean deserve to be called an "average" at all?**
 
 Because for the thing it is averaging, it gives the answer a clock gives. Sixty kilometres at 90 and sixty at 10 really did average 18 km/h — you can time it.
@@ -1085,6 +1093,8 @@ They have answered a different question from the one they were asked, and it is 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists four claims that sound right, so you can check them before you believe them.
 
 ### Trick 1 — "F1 is a stricter score, so it is always lower"
 
@@ -1120,6 +1130,8 @@ Comparing F1 across two datasets is comparing a maths mark with a history mark. 
 ---
 
 ## 🌍 Where You've Seen This
+
+This section shows where this score shows up outside this course.
 
 1. **Every search-engine paper you will ever read.** F1 came out of document-retrieval research in the 1970s, where the two questions were exactly "how much of what I returned was relevant" and "how much of what was relevant did I return". **It has been the standard single number in that field for fifty years.**
 2. **Kaggle and every other leaderboard.** Competitions on imbalanced data are almost always scored on F1 or something like it, precisely because accuracy would let a one-line model win.
@@ -1157,6 +1169,8 @@ lights up. The ↻ on stage three is still grey — the training loop opens in W
 ---
 
 ## 🔑 Remember This
+
+The main points of the week, in one place.
 
 - **One box on the form, and both single numbers can be faked.** Flag one thing: precision 1.0000. Flag everything: recall 1.0000. **Both stunts are one line of code.** F1 is the number neither stunt fools when positives are rare; when they are common, flag-everything can still score a fair F1, so compare against it.
 - **The harmonic mean is a plain average done in a mirror where small numbers are giants.** Flip both, average, flip back. 0.1 flipped becomes 10, and a 10 bullies an average. `2 × p × r ÷ (p + r)` is that, with the flipping cancelled out.

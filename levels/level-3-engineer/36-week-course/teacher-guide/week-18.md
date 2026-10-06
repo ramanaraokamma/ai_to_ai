@@ -65,7 +65,7 @@ This is the whole week, and it takes ten minutes with a calculator.
 
 **Set up a two-stage chain.** Stage 1 takes `w` and produces `z`. Stage 2 takes `z` and produces `L`.
 
-```
+```text
 w  ──[ stage 1: z = 3w + 1 ]──▶  z  ──[ stage 2: L = z × z ]──▶  L
 ```
 
@@ -148,7 +148,7 @@ There are exactly five, they cover everything in this course, and **each one is 
 
 **The second and fourth rules are the ones that need the transposes explained**, and the explanation is entirely about shapes, not about algebra:
 
-```
+```text
 dW2 = A1.T @ dZ2          A1 is (4, 2), so A1.T is (2, 4)
                           dZ2 is (4, 1)
                           (2, 4) @ (4, 1) → (2, 1)     and W2 is (2, 1)  ✅
@@ -181,7 +181,7 @@ mask = (Z1 > 0).astype(float)
 
 **The network:**
 
-```
+```text
 W1 = [ 0.5  -0.3 ]      b1 = [ 0.1   0.05 ]
      [ 0.8   0.2 ]
 
@@ -195,7 +195,7 @@ x = [1.0, 2.0]          y = 1
 
 **Forward:**
 
-```
+```text
 z1 = 1.0(0.5) + 2.0(0.8) + 0.1   =  0.5 + 1.6 + 0.1   =  2.20
 z2 = 1.0(−0.3) + 2.0(0.2) + 0.05 = −0.3 + 0.4 + 0.05  =  0.15
 
@@ -210,7 +210,7 @@ loss = −ln(0.90024951) = 0.10508332
 
 **Backward, nine numbers, every one a multiplication you can do on a calculator:**
 
-```
+```text
 step 1 — blame at the output:
    dZ2 = A2 − y = 0.90024951 − 1 = −0.09975049
 
@@ -249,7 +249,7 @@ step 5 — the hidden layer's weights (input × blame):
 
 Same weights, same architecture, four rows and four labels:
 
-```
+```text
 X = [  1.0   2.0 ]        y = [ 1 ]
     [  2.0  -1.0 ]            [ 0 ]
     [  0.0   0.5 ]            [ 1 ]
@@ -267,7 +267,7 @@ X = [  1.0   2.0 ]        y = [ 1 ]
 
 **The batch loss is the average of those four:**
 
-```
+```text
 (0.105083 + 1.037488 + 0.474077 + 0.693147) ÷ 4 = 2.309796 ÷ 4 = 0.577449
 ```
 
@@ -275,7 +275,7 @@ X = [  1.0   2.0 ]        y = [ 1 ]
 
 **Backward, and the only change from the one-row version is the `÷ 4`:**
 
-```
+```text
 dZ2 = (A2 − y) ÷ 4
 
    row 1: (0.900250 − 1) ÷ 4 = −0.099750 ÷ 4 = −0.024938
@@ -286,7 +286,7 @@ dZ2 = (A2 − y) ÷ 4
 
 **Now the four gradient arrays.** `dW2 = A1.T @ dZ2`, and here is the first entry worked out **in full**, which is the arithmetic the class must see:
 
-```
+```text
 dW2[0] = 2.2 × (−0.024938) + 0.3 × (0.161414) + 0.5 × (−0.094385) + 0.0 × (0.125000)
        = −0.054863    +    0.048424     +    (−0.047193)    +    0.000000
        = −0.053631
@@ -296,7 +296,7 @@ dW2[0] = 2.2 × (−0.024938) + 0.3 × (0.161414) + 0.5 × (−0.094385) + 0.0 �
 
 **All four arrays:**
 
-```
+```text
 dW1 = [  0.297891   0.299875 ]        db1 = [ 0.042091  −0.011354 ]
       [ −0.258482   0.444136 ]
 
@@ -526,7 +526,7 @@ Week 19, when there is finally a test accuracy to report.
 
 - [ ] **Write the five station cards for the Term 2 circuit.** One question per card, big print:
 
-```
+```text
   1  SLOPE     f(w) = (w - 4) x (w - 4).  Measure the slope at w = 1 by nudging.
   2  SIGMOID   z = 1.4.  What is sigmoid(z), to four places?
   3  LOG LOSS  p = 0.8022.  Give the loss if y = 1, and the loss if y = 0.
@@ -609,7 +609,7 @@ difference between the two answers: 0.0000000000
 - [ ] **Run `symmetry.py`** (Answer Key, page 18.5) and **look at the grid of zeros.** You will show it in the last five minutes. **Under a second.**
 - [ ] **Write the one-row nine numbers on the board or a large sheet and leave them up for two weeks.** Week 20 is a comparison against exactly these:
 
-```
+```text
 dW1 = [ −0.09975049   +0.19950098 ]      db1 = [ −0.09975049, +0.19950098 ]
       [ −0.19950098   +0.39900196 ]
 
@@ -672,7 +672,7 @@ dW2 = [ −0.21945108, −0.01496257 ]       db2 = −0.09975049
 
 **Do this:** Laptops shut. Week 17's blue trace is on the board. Write beside it:
 
-```
+```text
 16,000,000 knobs
 one forward pass = 0.01 seconds
 ```
@@ -711,7 +711,7 @@ one forward pass = 0.01 seconds
 
 **Do this (3 min) — set up the chain.** On the board, above the dividing line:
 
-```
+```text
 w  ──[ z = 3w + 1 ]──▶  z  ──[ L = z × z ]──▶  L
 
 start at w = 2:    z = 7,    L = 49
@@ -731,7 +731,7 @@ start at w = 2:    z = 7,    L = 49
 
 **Left half — stage by stage.** Give them the nudge: a thousandth up, a thousandth down, subtract, divide by `0.002`. Two measurements:
 
-```
+```text
 stage 1:  z(2.001) = 7.003        z(1.999) = 6.997
           0.006 ÷ 0.002 = 3
 
@@ -743,7 +743,7 @@ Write **`3`** and **`14`** on the left half. **Do not let them multiply yet.**
 
 **Right half — straight through.** Same nudge, but feed it all the way:
 
-```
+```text
 w = 2.001  →  z = 7.003  →  L = 7.003 × 7.003 = 49.042009
 w = 1.999  →  z = 6.997  →  L = 6.997 × 6.997 = 48.958009
 
@@ -780,7 +780,7 @@ Collect the guesses. You will get **42** and **17** and possibly **11**. Write a
 
 **Do this (8 min) — the five rules, as sentences.** Write them on the board as English first, code second:
 
-```
+```text
 1.  blame at the output      = how wrong you were, shared over the batch
                               dZ2 = (A2 - y) / n
 
@@ -1036,7 +1036,7 @@ dW1 =
 
 **Do this:** Stand at the two-colour diagram. Write four things beneath it:
 
-```
+```text
 3 x 14 = 42                slopes multiply along a chain
 dW has the shape of W      that is how you know where the .T goes
 gradient check < 1e-6      the dumb method marks the clever method's homework
@@ -1115,7 +1115,7 @@ And the sentence for this week:
 
 **Do this:** Announce a **three**-stage chain this time, so it is not simply the concept segment repeated:
 
-```
+```text
 w  ──[ z = 3w + 1 ]──▶  z  ──[ u = z × z ]──▶  u  ──[ L = u ÷ 7 ]──▶  L
 
 start at w = 2:   z = 7,   u = 49,   L = 7
@@ -1161,7 +1161,7 @@ Both shout **six**.
 **Station 1 — SLOPE (Week 12).**
 > `f(w) = (w − 4) × (w − 4)`. Measure the slope at `w = 1` by nudging.
 
-```
+```text
 f(1.001) = (1.001 − 4)² = (−2.999)² = 8.994001
 f(0.999) = (0.999 − 4)² = (−3.001)² = 9.006001
 
@@ -1173,7 +1173,7 @@ f(0.999) = (0.999 − 4)² = (−3.001)² = 9.006001
 **Station 2 — SIGMOID (Week 13).**
 > `z = 1.4`. What is `sigmoid(z)`, to four places?
 
-```
+```text
 e^(−1.4) = 0.246597
 1 + 0.246597 = 1.246597
 1 ÷ 1.246597 = 0.802184
@@ -1184,7 +1184,7 @@ e^(−1.4) = 0.246597
 **Station 3 — LOG LOSS (Week 14).**
 > `p = 0.8022`. Give the loss if `y = 1`, and the loss if `y = 0`.
 
-```
+```text
 y = 1:  −ln(0.802184) = 0.220417
 y = 0:  −ln(1 − 0.802184) = −ln(0.197816) = 1.620417
 ```
@@ -1194,7 +1194,7 @@ y = 0:  −ln(1 − 0.802184) = −ln(0.197816) = 1.620417
 **Station 4 — ONE GRADIENT STEP (Week 15).**
 > `w = 3`, slope `= 6`, learning rate `= 0.1`. Take one step. New `w`? And if the loss is `w × w`, what was it before and after?
 
-```
+```text
 new w = 3 − 0.1 × 6 = 3 − 0.6 = 2.4
 loss before = 3 × 3 = 9.00
 loss after  = 2.4 × 2.4 = 5.76
@@ -1525,13 +1525,13 @@ Anything concrete. The strongest answers are the least grand: *"I can read a sha
 
 ### Page 18.2 — The chain, measured two ways
 
-```
+```text
 w  ──[ z = 3w + 1 ]──▶  z  ──[ L = z × z ]──▶  L        starting at w = 2
 ```
 
 **Stage 1, by hand:**
 
-```
+```text
 z(2.001) = 3(2.001) + 1 = 6.003 + 1 = 7.003
 z(1.999) = 3(1.999) + 1 = 5.997 + 1 = 6.997
 (7.003 − 6.997) ÷ 0.002 = 0.006 ÷ 0.002 = 3
@@ -1539,7 +1539,7 @@ z(1.999) = 3(1.999) + 1 = 5.997 + 1 = 6.997
 
 **Stage 2, by hand, standing at `z = 7`:**
 
-```
+```text
 L(7.001) = 7.001 × 7.001 = 49.014001
 L(6.999) = 6.999 × 6.999 = 48.986001
 (49.014001 − 48.986001) ÷ 0.002 = 0.028 ÷ 0.002 = 14
@@ -1549,7 +1549,7 @@ L(6.999) = 6.999 × 6.999 = 48.986001
 
 **Straight through, by hand:**
 
-```
+```text
 w = 2.001 → z = 7.003 → L = 7.003 × 7.003 = 49.042009
 w = 1.999 → z = 6.997 → L = 6.997 × 6.997 = 48.958009
 (49.042009 − 48.958009) ÷ 0.002 = 0.084 ÷ 0.002 = 42
@@ -1641,7 +1641,7 @@ difference: 0.0000000000
 
 ### Page 18.3 — All four gradient arrays, by hand
 
-```
+```text
 W1 = [ 0.5  -0.3 ]   (2,2)     b1 = [ 0.1  0.05 ]   (1,2)
      [ 0.8   0.2 ]
 
@@ -1667,7 +1667,7 @@ X = [  1.0   2.0 ]   (4,2)     y = [ 1 ]            (4,1)
 
 `Z2 = A1 @ W2 + b2`, shape `(4, 1)`:
 
-```
+```text
 row 1:  2.20(1.0) + 0.15(−2.0) + 0.3 = 2.20 − 0.30 + 0.30 = 2.20
 row 2:  0.30(1.0) + 0(−2.0)    + 0.3 = 0.30 − 0    + 0.30 = 0.60
 row 3:  0.50(1.0) + 0.15(−2.0) + 0.3 = 0.50 − 0.30 + 0.30 = 0.50
@@ -1678,7 +1678,7 @@ row 4:  0(1.0)    + 0.15(−2.0) + 0.3 = 0    − 0.30 + 0.30 = 0.00
 
 **Loss:**
 
-```
+```text
 −ln(0.900250)     = 0.105083
 −ln(1 − 0.645656) = −ln(0.354344) = 1.037488
 −ln(0.622459)     = 0.474077
@@ -1690,7 +1690,7 @@ sum                                 2.309796
 
 **Backward. Step 1 — `dZ2 = (A2 − y) ÷ 4`, shape `(4, 1)`:**
 
-```
+```text
 (0.900250 − 1) ÷ 4 = −0.099750 ÷ 4 = −0.024938
 (0.645656 − 0) ÷ 4 =  0.645656 ÷ 4 =  0.161414
 (0.622459 − 1) ÷ 4 = −0.377541 ÷ 4 = −0.094385
@@ -1699,7 +1699,7 @@ sum                                 2.309796
 
 **Step 2 — `dW2 = A1.T @ dZ2`, shape `(2, 1)`. Both entries in full:**
 
-```
+```text
 dW2[0] = 2.2(−0.024938) + 0.3(0.161414) + 0.5(−0.094385) + 0(0.125000)
        = −0.054863 + 0.048424 − 0.047193 + 0
        = −0.053631
@@ -1712,13 +1712,13 @@ dW2[1] = 0.15(−0.024938) + 0(0.161414) + 0.15(−0.094385) + 0.15(0.125000)
 
 **Step 3 — `db2 = dZ2.sum(axis=0)`, shape `(1, 1)`:**
 
-```
+```text
 −0.024938 + 0.161414 − 0.094385 + 0.125000 = 0.167091
 ```
 
 **Step 4 — `dA1 = dZ2 @ W2.T`, shape `(4, 2)`.** Each row's blame times `1.0` and times `−2.0`:
 
-```
+```text
 [ −0.024938    0.049875 ]
 [  0.161414   −0.322828 ]
 [ −0.094385    0.188770 ]
@@ -1727,7 +1727,7 @@ dW2[1] = 0.15(−0.024938) + 0(0.161414) + 0.15(−0.094385) + 0.15(0.125000)
 
 **Step 5 — the ReLU mask, `(Z1 > 0)`, shape `(4, 2)`:**
 
-```
+```text
 [ 1  1 ]
 [ 1  0 ]      <- unit 2's z was -0.75
 [ 1  1 ]
@@ -1736,7 +1736,7 @@ dW2[1] = 0.15(−0.024938) + 0(0.161414) + 0.15(−0.094385) + 0.15(0.125000)
 
 **`dZ1 = dA1 × mask`, shape `(4, 2)`:**
 
-```
+```text
 [ −0.024938    0.049875 ]
 [  0.161414    0        ]
 [ −0.094385    0.188770 ]
@@ -1745,7 +1745,7 @@ dW2[1] = 0.15(−0.024938) + 0(0.161414) + 0.15(−0.094385) + 0.15(0.125000)
 
 **Step 6 — `dW1 = X.T @ dZ1`, shape `(2, 2)`. All four entries in full:**
 
-```
+```text
 dW1[0,0] = 1(−0.024938) + 2(0.161414) + 0(−0.094385) + (−1)(0)
          = −0.024938 + 0.322828 = 0.297891
 
@@ -1761,14 +1761,14 @@ dW1[1,1] = 2(0.049875) + (−1)(0) + 0.5(0.188770) + (−1)(−0.250000)
 
 **Step 7 — `db1 = dZ1.sum(axis=0)`, shape `(1, 2)`:**
 
-```
+```text
 col 0:  −0.024938 + 0.161414 − 0.094385 + 0       =  0.042091
 col 1:   0.049875 + 0        + 0.188770 − 0.250000 = −0.011354
 ```
 
 **The four arrays:**
 
-```
+```text
 dW1 = [  0.297891   0.299875 ]   (2,2)     db1 = [ 0.042091  −0.011354 ]   (1,2)
       [ −0.258482   0.444136 ]
 
@@ -2010,7 +2010,7 @@ all nine below 1e-6?  True
 
 **The by-hand version of the first row**, which is the harder variation and worth full credit:
 
-```
+```text
 W1[0,0] = 0.500001  →  loss = 0.577449156639
 W1[0,0] = 0.499999  →  loss = 0.577448560858
 

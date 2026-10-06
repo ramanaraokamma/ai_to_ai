@@ -44,7 +44,7 @@ ________________________________________________________________
 
 Five points, `k = 2`, already converged:
 
-```
+```text
 Q1 = (0, 0)    Q2 = (0, 2)    Q3 = (2, 0)        Q4 = (6, 6)    Q5 = (8, 6)
 ```
 
@@ -52,7 +52,7 @@ The two clusters are **{Q1, Q2, Q3}** and **{Q4, Q5}**.
 
 **(a) The two centroids.** A centroid is the average position of what the cluster holds.
 
-```
+```text
 centre 1 = ( (0 + 0 + 2) ÷ 3 , (0 + 2 + 0) ÷ 3 ) = ( ________ , ________ )
 
 centre 2 = ( (6 + 8) ÷ 2 , (6 + 6) ÷ 2 )         = ( ________ , ________ )
@@ -70,7 +70,7 @@ centre 2 = ( (6 + 8) ÷ 2 , (6 + 6) ÷ 2 )         = ( ________ , ________ )
 
 **(c) Now the symbol, and the sum beside it. Both, every time.**
 
-```
+```text
 Σ (distance to my own centre)²  =  ____ + ____ + ____ + ____ + ____
 
                                 =  ____________
@@ -84,14 +84,14 @@ centre 2 = ( (6 + 8) ÷ 2 , (6 + 6) ÷ 2 )         = ( ________ , ________ )
 
 A centre received four points: `(1, 5)`, `(3, 9)`, `(4, 2)`, `(8, 8)`. **Where does it move to?**
 
-```
+```text
 across : ( 1 + 3 + 4 + 8 ) ÷ ____ = ____ ÷ ____ = ________
 up     : ( 5 + 9 + 2 + 8 ) ÷ ____ = ____ ÷ ____ = ________
 ```
 
 A second centre received three points: `(10, 1)`, `(12, 4)`, `(14, 1)`.
 
-```
+```text
 across : ________          up : ________
 ```
 
@@ -132,13 +132,13 @@ ________________________________________________________________
 
 Three pizza deliveries. Two columns: **distance in km**, and **minutes to arrive**.
 
-```
+```text
 P = (1, 20)        Q = (1.5, 100)        R = (5, 25)
 ```
 
 **(a) Raw squared distances.** Across-gap squared plus up-gap squared, on the numbers exactly as written.
 
-```
+```text
 d(P,Q)² = ( 1 − 1.5 )² + ( 20 − 100 )²  =  ________ + ________ = ____________
 
 d(P,R)² = ( 1 − 5 )²   + ( 20 − 25 )²   =  ________ + ________ = ____________
@@ -148,7 +148,7 @@ d(P,R)² = ( 1 − 5 )²   + ( 20 − 25 )²   =  ________ + ________ = ________
 
 **(b) Now standardise each column.** Subtract the column mean, divide by the column spread. Use these, which are what `StandardScaler` uses:
 
-```
+```text
 km column    : mean = 2.5      spread = 1.7795
 minutes      : mean = 48.3333  spread = 36.5908
 ```
@@ -161,7 +161,7 @@ minutes      : mean = 48.3333  spread = 36.5908
 
 **(c) The two squared distances again, on the standardised numbers.**
 
-```
+```text
 d(P,Q)² = ________ + ________ = ________
 
 d(P,R)² = ________ + ________ = ________
@@ -273,6 +273,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading code and output, and saying what each part does.
+
 **A1. Match the word to the thing.** Write the letter.
 
 | Word | | Description |
@@ -360,6 +362,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing short pieces of code yourself.
 
 ### B1 — one line
 
@@ -505,7 +509,7 @@ k-means stops when **one full round changes nothing** — every point stays in i
 
 The six points from class:
 
-```
+```text
 A = (1, 2)    B = (2, 1)    C = (2, 3)    D = (8, 8)    E = (9, 7)    F = (7, 9)
 ```
 
@@ -535,6 +539,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These questions ask for written reasoning in your own words.
 
 **T1.** In supervised learning you could always say *"my model is 94% accurate."* This week there is no such sentence. **Write a paragraph on what takes its place.** What would you actually hand somebody to convince them your three groups are real? Name at least two different things you could put in front of them, and say what each one can and cannot prove.
 
@@ -597,7 +603,7 @@ Starting centres: `C1 = (1, 1)` and `C2 = (3, 2)`.
 | P7 (9,7) | ______ + ______ = ______ | ______ + ______ = ______ | ______ |
 | P8 (8,5) | ______ + ______ = ______ | ______ + ______ = ______ | ______ |
 
-```
+```text
 C1 moves to ( ______ ÷ ______ , ______ ÷ ______ ) = ( ________ , ________ )
 C2 moves to ( ______ ÷ ______ , ______ ÷ ______ ) = ( ________ , ________ )
 ```
@@ -615,7 +621,7 @@ C2 moves to ( ______ ÷ ______ , ______ ÷ ______ ) = ( ________ , ________ )
 | P7 (9,7) | ______ + ______ = ______ | ______ + ______ = ______ | ______ |
 | P8 (8,5) | ______ + ______ = ______ | ______ + ______ = ______ | ______ |
 
-```
+```text
 C1 moves to ( ________ , ________ )        C2 moves to ( ________ , ________ )
 ```
 
@@ -623,7 +629,7 @@ C1 moves to ( ________ , ________ )        C2 moves to ( ________ , ________ )
 
 ### Inertia, with the sigma written out
 
-```
+```text
 Σ (distance to my own centre)²
 
   = ______ + ______ + ______ + ______ + ______ + ______ + ______ + ______
@@ -672,6 +678,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for drawing the idea from memory.
+
 Draw the mechanism and the failure on one page.
 
 ![Draw it: two steps, and the column that took over](../figures/fig-w28-9-draw-frame.svg)
@@ -692,6 +700,8 @@ ________________________________________________________________
 ---
 
 ## 📊 Self-Check
+
+Use this table to rate how sure you feel about each skill from the week.
 
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
@@ -748,7 +758,7 @@ ________________________________________________________________
 
 **M1 (c).**
 
-```
+```text
 Σ (distance to my own centre)²  =  0.8889 + 2.2222 + 2.2222 + 1.0000 + 1.0000
                                 =  7.3333
 ```
@@ -816,7 +826,7 @@ ratio 144.1 / 32.1 = 4.49
 
 **M4 (a).**
 
-```
+```text
 d(P,Q)² = (−0.5)² + (−80)² = 0.25 + 6400 = 6400.25
 d(P,R)² = (−4)²   + (−5)²  =   16 +   25 =      41.00
 ```
@@ -833,7 +843,7 @@ d(P,R)² = (−4)²   + (−5)²  =   16 +   25 =      41.00
 
 **M4 (c).**
 
-```
+```text
 d(P,Q)² = (−0.8429 − −0.5620)² + (−0.7743 − 1.4120)²  = 0.0789 + 4.7799 = 4.8588
 d(P,R)² = (−0.8429 − 1.4049)²  + (−0.7743 − −0.6377)² = 5.0526 + 0.0187 = 5.0713
 ```
@@ -934,7 +944,7 @@ k = 5  inertia = 0.0  sizes = [1 1 1 1 1]
 
 The arithmetic panel:
 
-```
+```text
 centroid of {Q1,Q2,Q3} = ( 0.6667 , 0.6667 )
 
 Σ (distance to own centre)² = 0.8889 + 2.2222 + 2.2222 + 1.0000 + 1.0000
@@ -1274,7 +1284,7 @@ k-means++ with n_init=10: inertia 3.6667
 
 Groups: **C1 = {P1, P2, P3}** and **C2 = {P4, P5, P6, P7, P8}**. Move:
 
-```
+```text
 C1 = ( (1+2+1) ÷ 3 , (1+1+3) ÷ 3 )         = ( 4÷3 , 5÷3 )   = ( 1.3333 , 1.6667 )
 C2 = ( (3+7+8+9+8) ÷ 5 , (2+6+8+7+5) ÷ 5 ) = ( 35÷5 , 28÷5 ) = ( 7.0 , 5.6 )
 ```
@@ -1292,7 +1302,7 @@ C2 = ( (3+7+8+9+8) ÷ 5 , (2+6+8+7+5) ÷ 5 ) = ( 35÷5 , 28÷5 ) = ( 7.0 , 5.6 )
 | P7 (9,7) | 58.7778 + 28.4444 = 87.2222 | 4.0000 + 1.9600 = **5.9600** | C2 |
 | P8 (8,5) | 44.4444 + 11.1111 = 55.5556 | 1.0000 + 0.3600 = **1.3600** | C2 |
 
-```
+```text
 C1 = ( (1+2+1+3) ÷ 4 , (1+1+3+2) ÷ 4 ) = ( 7÷4 , 7÷4 )   = ( 1.75 , 1.75 )
 C2 = ( (7+8+9+8) ÷ 4 , (6+8+7+5) ÷ 4 ) = ( 32÷4 , 26÷4 ) = ( 8.0 , 6.5 )
 ```
@@ -1303,7 +1313,7 @@ C2 = ( (7+8+9+8) ÷ 4 , (6+8+7+5) ÷ 4 ) = ( 32÷4 , 26÷4 ) = ( 8.0 , 6.5 )
 
 **Inertia, with the sigma written out.** Final centres `(1.75, 1.75)` and `(8.0, 6.5)`:
 
-```
+```text
 P1 (1,1) to (1.75,1.75): 0.5625 + 0.5625 = 1.1250
 P2 (2,1) to (1.75,1.75): 0.0625 + 0.5625 = 0.6250
 P3 (1,3) to (1.75,1.75): 0.5625 + 1.5625 = 2.1250

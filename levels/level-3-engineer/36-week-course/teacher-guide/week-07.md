@@ -39,6 +39,8 @@ Observable evidence: an ablation table of at least six rows, on paper and in cod
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+Read this section once before class. It explains the habit being taught, the new code, the real numbers and the mistakes to expect.
+
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not whole files** — each one carries on from the one above. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
 **There is no new mathematics this week and no new idea.** That is deliberate and it is a relief: Week 6 was heavy. This week you are teaching a *habit*. Read this section once, about fifteen minutes, and you will be ahead of the student — and much more importantly, you will know exactly which behaviour to stop the moment you see it.
@@ -99,7 +101,7 @@ Read it right to left. `MinMaxScaler()` is one of the two rulers from Week 4 —
 
 The strange-looking part is `prep__num__scaler`, and it is **an address, not a word.** Those are *double* underscores, two of them, twice. Read it as a path down through the machine:
 
-```
+```text
 pipe
  └── "prep"          the ColumnTransformer that handles the columns
       └── "num"      the branch inside it that handles number columns
@@ -279,6 +281,8 @@ drawn grey because the training loop stays closed until Week 12.*
 
 ## 🧰 Prep Checklist
 
+This section lists everything to set up before class, so nothing has to be fixed live.
+
 ### 25 minutes the night before
 
 - [ ] **Check `make_data.py` still exists and still runs.** Everything today imports it.
@@ -424,6 +428,8 @@ VERDICT: target leakage. The feature is the answer, dressed as a statistic.
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the running order of the lesson, segment by segment.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — The Suspiciously Good Score | 7 | 7 | 0.9240 on the board. Admire it. Then the question. |
@@ -440,7 +446,7 @@ VERDICT: target leakage. The feature is the answer, dressed as a statistic.
 
 **Do this:** Before they arrive, write **only this** on the board, large:
 
-```
+```text
 val AUC 0.9240
 ```
 
@@ -462,7 +468,7 @@ Let them answer. What you are hoping for is somebody suspicious, because Week 6 
 
 **Do this:** Write both numbers on the board, one above the other, and the subtraction:
 
-```
+```text
 0.7599  -  0.7541  =  +0.0058     <- an afternoon's honest work
 0.9240  -  0.7599  =  +0.1641     <- whatever this was
 ```
@@ -797,6 +803,8 @@ Your job for thirty minutes is to sit on your hands, run the timer, and enforce 
 
 ## 🐞 The Debugging Clinic
 
+Use this section to recognise this week's error messages and fix them without giving the answer away.
+
 Every message below came from running a broken version of this week's actual code.
 
 | What the student sees (real message) | What it means | Most likely cause | The fix |
@@ -827,6 +835,8 @@ And the sentence for this week:
 ---
 
 ## 🎲 The Activity, In Full
+
+This section gives the complete setup, rules and rounds for the tournament.
 
 ### Beat The Baseline Tournament
 
@@ -885,6 +895,8 @@ And the sentence for this week:
 ---
 
 ## ❓ Questions Students Ask This Week
+
+These are the questions most likely to come up, with suggested answers.
 
 **"0.0058? That's it? That's the whole afternoon?"**
 
@@ -950,6 +962,8 @@ What to tell a 14-year-old, out loud: **"there's no right answer, but there is a
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the common failures and what to do the moment you see each one.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **A student changes three things, gets a good number, and is delighted** | It is genuinely faster and the number is genuinely bigger | Strike the row out in red **immediately and cheerfully**, in front of everybody, and say why in one sentence: *"which of the three did it?"* Then re-run it as three rows. **Do this the first time it happens or you will never do it.** |
@@ -967,6 +981,8 @@ What to tell a 14-year-old, out loud: **"there's no right answer, but there is a
 ---
 
 ## 🧭 Differentiation
+
+This section shows how to adjust the lesson for a student who is struggling, flying or disengaged.
 
 ### If the student is struggling
 
@@ -1080,6 +1096,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the wording for setting the homework.
 
 **Say this:**
 

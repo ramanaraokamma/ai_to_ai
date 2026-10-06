@@ -56,6 +56,8 @@ That table is the deliverable this week. Not the code. Not the score. **The tabl
 
 ## 🧠 The Big Idea
 
+This section explains why each experiment changes only one thing, what "regression" means today, how to read a real ablation table, and how the planted leak works.
+
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. Each one carries on from the one above. **The complete runnable files are in 💻 Type This.** If you copy one of these on its own and Python says `NameError`, that is why, and nothing is broken.
 
 ### 1. Why "one at a time" is not fussiness
@@ -126,7 +128,9 @@ This is what a real run produces. Read it slowly, because it teaches five separa
 ![Baseline, best, and the lie](../figures/fig-w07-4-baseline-to-best-score-ladder.svg)
 *Figure 7.3 — Baseline, best, and the lie. The honest afternoon's work is the small step at the bottom.*
 
-**Say 0.0058 out loud without flinching.** Feature engineering is not magic; it is a grind of small defensible gains. It is still usually a better use of an afternoon than fiddling with the model, and here is the reason: **you can explain every one of those 0.0058.** You also know something about pizza you did not know at breakfast — that lateness humps at the dinner rush, and that the day of the week barely matters. **That knowledge outlives the model.**
+**Say 0.0058 out loud without flinching.** Feature engineering is not magic; it is a grind of small defensible gains. It is still usually a better use of an afternoon than fiddling with the model, and here is the reason: **you can explain every one of those 0.0058.**
+
+You also know something about pizza you did not know at breakfast — that lateness humps at the dinner rush, and that the day of the week barely matters. **That knowledge outlives the model.**
 
 ### 4. The leak, and why it is a nastier flavour than last week's
 
@@ -176,7 +180,13 @@ And here is the payoff, three real numbers:
 | Same feature set, that one column removed | **0.7535** ← the honest score |
 | Same idea, lookup rebuilt from the 1,200 **training** rows only | **0.6115** ← worse than nothing |
 
-**That third row is the one to sit with.** Your instinct will be "fine, so compute it properly and keep it". So we rebuilt the lookup from the 1,200 training rows only, and it scores 0.6115, which is *worse than not having the feature at all*. Why? This rebuild is still naive: every training row is counted inside its own group, so for a group of one the training-time value is still that row's own answer. On the training rows the model scores about 0.96, learns to bet heavily on the column (weight about 2.7), and then meets validation orders whose groups contain *other* orders — over a quarter of them in groups it never saw at all. The bet does not carry over. (A genuinely careful version — each row's value computed only from *other* rows, and pulled towards the overall late rate — scores about 0.758 in a quick check, barely above the 0.7535 you get without it. That technique is beyond this course; the point is that the column was never worth much.) **The 0.9240 was not a measure of how good the feature was. It was the answer.**
+**That third row is the one to sit with.** Your instinct will be "fine, so compute it properly and keep it". So we rebuilt the lookup from the 1,200 training rows only, and it scores 0.6115, which is *worse than not having the feature at all*.
+
+Why? This rebuild is still naive: every training row is counted inside its own group, so for a group of one the training-time value is still that row's own answer. On the training rows the model scores about 0.96, learns to bet heavily on the column (weight about 2.7), and then meets validation orders whose groups contain *other* orders — over a quarter of them in groups it never saw at all. The bet does not carry over.
+
+(A genuinely careful version — each row's value computed only from *other* rows, and pulled towards the overall late rate — scores about 0.758 in a quick check, barely above the 0.7535 you get without it. That technique is beyond this course; the point is that the column was never worth much.)
+
+**The 0.9240 was not a measure of how good the feature was. It was the answer.**
 
 > **The flavour is target leakage**, because the poisoned quantity was computed from the `late` column — the answer itself. (Computing a *scaler's mean* over all the rows would be preprocessing leakage, which is a real bug and a much milder one. Week 6 covered both. Today's is squarely the first.)
 
@@ -190,9 +200,9 @@ And here is the payoff, three real numbers:
 
 ## 🔁 The Idea From Last Week, Used Harder
 
-There is no new maths this week. Instead, the **four audits** from Week 6 get pointed at a real suspect and you watch each one fire.
+There is no new maths this week. This section points the **four audits** from Week 6 at a real suspect and shows the result of each one.
 
-Last week you learnt that a leak is caught by asking four questions. This week you run all four on `similar_orders_late_rate` and see how loud each alarm is — because they are not equally loud, and knowing the order to try them in is the skill.
+Last week you learnt that a leak is caught by asking four questions. Here you run all four on `similar_orders_late_rate` and compare how loud each alarm is — they are not equally loud, and knowing the order to try them in is the skill.
 
 **Audit 0 — score with it and without it.** The difference is the whole story.
 
@@ -809,7 +819,7 @@ sum of the two deltas   : +0.0016
 
 ## 🐞 When It Breaks
 
-Four real messages from four real broken runs.
+This section shows four real messages from four real broken runs, so you can recognise each one and know the fix.
 
 > **The recipe for every one of these, and it does not change:** *what does the last line say?* Then: *which `File` line has my own filename in it?* Everything between those two is inside somebody else's library.
 
@@ -912,6 +922,8 @@ If your new name is not in both lists, it was never in the model.
 
 ## 🎲 What We Did In Class
 
+This section records the lesson in order, so you can compare your notes and your wall table with what happened.
+
 ### The suspiciously good score
 
 `val AUC 0.9240` was on the board when we walked in, with nothing else. We were asked how we felt about it before we were told anything about where it came from. Then the two subtractions went up: +0.0058 for an honest afternoon, +0.1641 for whatever the 0.9240 was.
@@ -957,6 +969,8 @@ The whole table read out loud, row by row, deltas included. Eight rows (a baseli
 
 ## 💬 Talk About It
 
+Three questions to argue about with a friend or at the dinner table. Each has a hint under it.
+
 **1. Somebody says: "why not just change the model? A decision tree would probably beat 0.7599."**
 
 It might! And the moment they do, every row on the wall stops meaning anything, because each one says *"with this model, this feature change was worth this much"*. But there is a harder reason too. **When two things can change, people quietly change both and report the good number.** Freezing the model for a whole session is a discipline that keeps you honest with yourself, not just with other people.
@@ -978,6 +992,8 @@ Argue both sides. **For:** the delta is positive, it is cheap row-wise arithmeti
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four sentences that sound sensible and are not, each with a wrong version and a right version.
 
 ### Trick 1 — "more features is better"
 
@@ -1011,6 +1027,8 @@ It is a measurement on 400 particular rows, taken with one particular shuffle. I
 ---
 
 ## 🌍 Where You've Seen This
+
+The one-change-at-a-time habit shows up well outside machine learning. Here are six places.
 
 1. **Every A/B test you have ever been part of.** When an app shows half its users a green button and half a blue one, that is one change, one measurement, one row. The reason they do not also move the button *and* change the text is exactly the four-worlds problem.
 2. **Drug trials.** One variable, held against a control, written down before you start. The whole apparatus of a clinical trial is an ablation table with lawyers attached.
@@ -1049,6 +1067,8 @@ it in Week 12.*
 ---
 
 ## 🔑 Remember This
+
+The takeaways from the week, then a syntax card you can copy into your notebook.
 
 - **One change, one measurement, one row.** If a row has two changes in it, throw the row away — it cannot tell you which change did what. There are four worlds and your one number cannot tell them apart.
 - **A good afternoon on the features is worth 0.0058.** From 0.7541 to 0.7599. Seven changes, two kept, five dropped (four of them true regressions). **Say the number without flinching**, because you can explain every ten-thousandth of it.
@@ -1104,6 +1124,8 @@ measure(BASE_NUM, CAT, RUSH)       # built, not listed -> 0.7541, SILENTLY WRONG
 ---
 
 ## 📓 New Words
+
+The words from this week, each with an example taken from your own run.
 
 ![Four words from Week 7, drawn](../figures/fig-w07-6-vocab-icons.svg)
 *Figure 7.6 — Four words from Week 7, drawn. Every tile is a number from your own `bench.py` run.*

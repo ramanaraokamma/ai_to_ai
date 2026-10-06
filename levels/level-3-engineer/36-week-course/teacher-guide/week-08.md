@@ -53,13 +53,13 @@ Suppose one order in seventy is fraud. You build a model. It says "not fraud" to
 
 Not roughly. Exactly, on our data: 986 of the 1,000 validation rows really are legitimate, so answering "no" to all 1,000 gets 986 right.
 
-```
+```text
 986 ÷ 1000 = 0.9860
 ```
 
 Now here is the kicker, and it is the number that makes the week: **a real trained decision tree on the same 1,000 rows scores 98.20%. Which is lower. And it catches three frauds, while the piece of paper catches none.**
 
-```
+```text
 982 ÷ 1000 = 0.9820      the real model
 986 ÷ 1000 = 0.9860      the piece of paper
 ```
@@ -102,7 +102,7 @@ Here are our real numbers, from a decision tree on 1,000 validation rows:
 ![Four cells, four names](../figures/fig-w08-1-confusion-matrix-four-cells-named.svg)
 *Figure 8.2 — Four cells, four names. Rows are what happened; columns are what the model said.*
 
-```
+```text
                        PREDICTED
                  legit          fraud
 ACTUAL  legit  │   979    │      7    │  = 986 real legit
@@ -129,7 +129,7 @@ This is the heart of the lesson and the place to slow right down. **Precision an
 
 > **Precision** = TP ÷ (TP + FP) — *"of everything I flagged, how much was really fraud?"* **Read down the predicted-fraud column.**
 
-```
+```text
 3 ÷ (3 + 7)  =  3 ÷ 10  =  0.3000
 ```
 
@@ -138,7 +138,7 @@ This is the heart of the lesson and the place to slow right down. **Precision an
 
 > **Recall** = TP ÷ (TP + FN) — *"of everything that really was fraud, how much did I catch?"* **Read across the actual-fraud row.**
 
-```
+```text
 3 ÷ (3 + 11)  =  3 ÷ 14  =  0.2143
 ```
 
@@ -147,7 +147,7 @@ This is the heart of the lesson and the place to slow right down. **Precision an
 
 > **Specificity** = TN ÷ (TN + FP) — *"of everything that really was legitimate, how much did I correctly leave alone?"* **Read across the actual-legit row.**
 
-```
+```text
 979 ÷ (979 + 7)  =  979 ÷ 986  =  0.9929
 ```
 
@@ -358,6 +358,8 @@ loop stays closed until Week 12.*
 
 ## 🧰 Prep Checklist
 
+This section lists what to cut, print and run before class, so the lesson itself runs without stops.
+
 ### 25 minutes the night before
 
 - [ ] **Cut forty index cards or forty slips of paper.** Ten minutes. Do it now; doing it in class costs five minutes of the activity. On each card write two things — `actual` and `predicted` — using the list on workbook page 8.3 (reproduced in the Answer Key). **Twelve cards say `actual: FRAUD`. Twenty-eight say `actual: legit`.**
@@ -483,6 +485,8 @@ weighted avg     0.9792    0.9820    0.9805      1000
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the plan for the whole lesson, one segment at a time, with what to say, ask, expect and watch for.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — The 98.6% Model | 7 | 7 | Build the useless model. Admire it. Then the question. |
@@ -507,7 +511,7 @@ weighted avg     0.9792    0.9820    0.9805      1000
 
 **Do this:** Write on the board:
 
-```
+```text
 5000 transactions,  72 fraud
 ```
 
@@ -515,7 +519,7 @@ weighted avg     0.9792    0.9820    0.9805      1000
 
 **Do this:** Write, in large letters, on a piece of paper, and hold it up:
 
-```
+```text
     NOT FRAUD
 ```
 
@@ -547,7 +551,7 @@ Let the silence sit. Do not fill it.
 
 **Do this:** Write both on the board:
 
-```
+```text
 piece of paper   accuracy 0.9860    caught 0 of 14
 real model       accuracy 0.9820    caught 3 of 14
 ```
@@ -578,7 +582,7 @@ real model       accuracy 0.9820    caught 3 of 14
 
 **Do this:** Go to the wall and draw the 2×2, big, saying each part out loud as you draw it. **Rows first, then columns, and say which is which twice.**
 
-```
+```text
                        PREDICTED
                  legit          fraud
 ACTUAL  legit  │          │           │
@@ -644,7 +648,7 @@ Make them say it. It is the single most-confused thing in the week.
 
 > "**Three out of the ten I flagged.** Say that sentence, then write the fraction."
 
-```
+```text
 precision  =  3 ÷ 10  =  0.3000
 ```
 
@@ -660,7 +664,7 @@ precision  =  3 ÷ 10  =  0.3000
 
 > "**Three out of the fourteen that really were fraud.**"
 
-```
+```text
 recall  =  3 ÷ 14  =  0.2143
 ```
 
@@ -672,7 +676,7 @@ recall  =  3 ÷ 14  =  0.2143
 
 > "And one more, because you'll need it: **of everything that really was legitimate, how much did I correctly leave alone?**"
 
-```
+```text
 specificity  =  979 ÷ 986  =  0.9929
 ```
 
@@ -960,6 +964,8 @@ And the sentence for this week:
 
 ## 🎲 The Activity, In Full
 
+This section gives the card activity in full, so you can run it without improvising.
+
 ### 99% Accurate and Completely Useless
 
 **What it is.** Two halves. First, build the useless model and admire its score — which they already did in the hook, and now do in code. Then the physical half: forty index cards, four labelled piles, and both fractions computed from the piles by counting.
@@ -1006,7 +1012,7 @@ Do not let them use the numbers in the table until they have said the sentence.
 
 *9.*
 
-```
+```text
 precision  =  9 ÷ 15  =  0.6000
 ```
 
@@ -1018,13 +1024,13 @@ precision  =  9 ÷ 15  =  0.6000
 
 *9.*
 
-```
+```text
 recall  =  9 ÷ 12  =  0.7500
 ```
 
 Then, for completeness:
 
-```
+```text
 specificity  =  22 ÷ 28  =  0.7857
 accuracy     =  (9 + 22) ÷ 40  =  31 ÷ 40  =  0.7750
 ```
@@ -1066,6 +1072,8 @@ Good answers look like: *"Her card was declined at the supermarket checkout with
 ---
 
 ## ❓ Questions Students Ask This Week
+
+This section collects the questions students ask this week, with an answer for each.
 
 **"If accuracy is that bad, why does anybody use it?"**
 
@@ -1131,6 +1139,8 @@ What to tell a 14-year-old, out loud: **"there's no single right number. But the
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section is for the moments when the lesson stalls: what happens, why, and what to do right then.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **The confusion matrix gets taught before the paradox lands** | It feels like the logical order: define the terms, then use them | **Do it the other way round.** Build the 98.6% model first, admire it, then ask how many frauds it caught. The four cells have to arrive as *the answer to a problem they can feel*, or they are bookkeeping. |
@@ -1148,6 +1158,8 @@ What to tell a 14-year-old, out loud: **"there's no single right number. But the
 ---
 
 ## 🧭 Differentiation
+
+This section adjusts the lesson for a student who is struggling and for one who is racing ahead.
 
 ### If the student is struggling
 
@@ -1265,6 +1277,8 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
+This section gives the homework and the exact words to introduce it.
+
 **Say this:**
 
 > "About an hour, three pages, and I'm marking the last one hardest.
@@ -1361,7 +1375,7 @@ Every question restated, so you can mark from this page alone.
 
 **The arithmetic, in full:**
 
-```
+```text
 precision   =  9 ÷ (9 + 6)   =   9 ÷ 15  =  0.6000
 recall      =  9 ÷ (9 + 3)   =   9 ÷ 12  =  0.7500
 specificity = 22 ÷ (22 + 6)  =  22 ÷ 28  =  0.7857
@@ -1424,7 +1438,7 @@ tn 17  fp 4  fn 3  tp 6
 
 **Precision — "of everything I flagged, how much was really fraud?"**
 
-```
+```text
 I flagged  TP + FP  =  6 + 4  =  10
 Of those,  6  were really fraud.
 precision  =  6 ÷ 10  =  0.6000
@@ -1434,7 +1448,7 @@ precision  =  6 ÷ 10  =  0.6000
 
 **Recall — "of everything that really was fraud, how much did I catch?"**
 
-```
+```text
 Real frauds  TP + FN  =  6 + 3  =  9
 Of those,  6  were caught.
 recall  =  6 ÷ 9  =  0.6667
@@ -1444,7 +1458,7 @@ recall  =  6 ÷ 9  =  0.6667
 
 **Specificity — "of everything that really was legitimate, how much did I correctly leave alone?"**
 
-```
+```text
 Real legit  TN + FP  =  17 + 4  =  21
 Of those,  17  were left alone.
 specificity  =  17 ÷ 21  =  0.8095
@@ -1454,7 +1468,7 @@ specificity  =  17 ÷ 21  =  0.8095
 
 **And accuracy, for comparison:**
 
-```
+```text
 correct  =  TP + TN  =  6 + 17  =  23
 accuracy  =  23 ÷ 30  =  0.7667
 ```
@@ -1538,7 +1552,7 @@ specificity 0.8095  (17/21)
 
 **Flying 5 — accuracy as a weighted average.** Recall is 0.2143 on 14 rows; specificity is 0.9929 on 986 rows.
 
-```
+```text
 0.2143 × (14 ÷ 1000)  =  0.2143 × 0.014  =  0.0030
 0.9929 × (986 ÷ 1000) =  0.9929 × 0.986  =  0.9790
                                             ------

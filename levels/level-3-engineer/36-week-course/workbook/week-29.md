@@ -30,7 +30,7 @@ column: ______________  spread: ____________  the bands: ______________
 
 **W5.** Write the sigma out. Inertia over six points came to `6.6667`. **Write the six terms beside the symbol.**
 
-```
+```text
 Σ (distance)² = ______ + ______ + ______ + ______ + ______ + ______ = ______
 ```
 
@@ -65,13 +65,13 @@ ________________________________________________________________
 
 **(c) Step four, both ways.**
 
-```
+```text
 ÷ 4 (what sklearn does) = ________          ÷ 5 = ________
 ```
 
 **(d) Now do it WRONG on purpose — skip the centring.** Square each original number and average the same way.
 
-```
+```text
 4 + ______ + ______ + ______ + ______ = ______    and ______ ÷ 4 = ________
 ```
 
@@ -89,7 +89,7 @@ Five students: `(1,3)`, `(3,4)`, `(5,8)`, `(7,9)`, `(9,11)` — hours studied, h
 
 **(a) Find the middle of the cloud and centre it.**
 
-```
+```text
 middle = ( ______ ÷ 5 , ______ ÷ 5 ) = ( ________ , ________ )
 
 centred points: ( ____ , ____ )  ( ____ , ____ )  ( ____ , ____ )  ( ____ , ____ )  ( ____ , ____ )
@@ -109,7 +109,7 @@ centred points: ( ____ , ____ )  ( ____ , ____ )  ( ____ , ____ )  ( ____ , ____
 
 **(c) The spread of those five scores.** They already have a mean of 0, so it is just: square, add, divide by 4.
 
-```
+```text
 squares : ______ + ______ + ______ + ______ + ______ = ____________
 
 ÷ 4 = ________
@@ -117,7 +117,7 @@ squares : ______ + ______ + ______ + ______ + ______ = ____________
 
 **(d) Now do 60° as well.** The direction is `(0.5000, 0.8660)`.
 
-```
+```text
 the five scores : ______ , ______ , ______ , ______ , ______
 
 spread = ______________ ÷ 4 = ________
@@ -139,7 +139,7 @@ For the same five students, the spread of the **across** column alone is **10.00
 
 **(d) Now the ratios, which is what `explained_variance_ratio_` holds.**
 
-```
+```text
 PC1 : ________ ÷ ________ = ________        PC2 : ________ ÷ ________ = ________
 ```
 
@@ -155,7 +155,7 @@ ________________________________________________________________
 
 PCA kept only PC1. Here is everything you need:
 
-```
+```text
 the middle of the cloud : ( 5.0 , 7.0 )
 PC1's direction        : ( 0.6815 , 0.7319 )
 the second student's score along PC1 : −3.5585
@@ -163,7 +163,7 @@ the second student's score along PC1 : −3.5585
 
 **(a) Rebuild that student.** A rebuilt point is `the middle  +  score × direction`.
 
-```
+```text
 across : 5.0 + ( −3.5585 × 0.6815 ) = 5.0 + ________ = ________
 
 up     : 7.0 + ( −3.5585 × 0.7319 ) = 7.0 + ________ = ________
@@ -171,7 +171,7 @@ up     : 7.0 + ( −3.5585 × 0.7319 ) = 7.0 + ________ = ________
 
 **(b) The real student was `(3, 4)`. How far off is the rebuild?**
 
-```
+```text
 across gap : ________   squared: ________
 up gap     : ________   squared: ________
 add them   : ________   square root: ________
@@ -188,6 +188,8 @@ ________________________________________________________________
 ---
 
 ## 🔎 Predict the Output
+
+This section is for committing to a guess before the computer answers, so you can compare your thinking with the real output.
 
 **In pen, before you run anything.**
 
@@ -307,6 +309,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This section is for reading tables, messages and diagrams from this week and answering questions about them.
+
 **A1. Match the word to the thing.** Write the letter.
 
 | Word | | Description |
@@ -398,7 +402,7 @@ ________________________________________________________________
 
 A student's own spread for the five centred points at 30° comes out as **15.5747**. The class's answer is **19.4683**.
 
-```
+```text
 15.5747 ÷ 19.4683 = 0.80
 ```
 
@@ -411,6 +415,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This section is for writing short programs of your own. Each task ends with a "Done looks like" line you can check against.
 
 ### B1 — one line
 
@@ -455,6 +461,8 @@ On `load_wine()`, scaled:
 ---
 
 ## 🐞 Fix the Broken Program
+
+This section is for practising how to read an error message and work back to the line that caused it.
 
 This is supposed to squash the wines to two components and name PC1. **Three bugs: one shape error, one runtime error, and one that prints a beautiful number that is worthless.**
 
@@ -556,6 +564,8 @@ PC1's top three: ______________ ______  ______________ ______  ______________ __
 
 ## 🧩 Puzzle of the Week
 
+This section is for one small puzzle to try on your own after the main work.
+
 ### Guess the Axis
 
 Six tiny clouds, four points each. **For each one, predict PC1's angle by eye — no arithmetic — and predict the two explained variance ratios.** Then run it.
@@ -585,6 +595,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+This section is for longer written answers that connect this week to earlier weeks.
+
 **T1.** Week 28 said *"always scale first."* This week says it again, for a different algorithm, and the failure looks different: `0.9981` of the spread on one component instead of three non-overlapping bands. **Write a paragraph on what these two failures have in common.** Is it one mistake or two? And name the single printout you would add to **any** script, from now on, that would have caught both.
 
 ________________________________________________________________
@@ -608,6 +620,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It — The Thirteen Shares, a Name, and the Bill
+
+This section is for recording the results of the Build It project, step by step, as you work through it.
 
 ### Step checklist
 
@@ -712,6 +726,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This section is for turning the week's ideas into one drawing of your own.
+
 ![Draw it: one cloud, two new axes, and the bill](../figures/fig-w29-9-draw-frame.svg)
 *Figure W29.2 — One cloud, two new axes, and the bill.*
 
@@ -728,6 +744,8 @@ ________________________________________________________________
 ---
 
 ## 📊 Self-Check
+
+This section is for marking how confident you feel about each skill from this week.
 
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
@@ -752,6 +770,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Answers to every section above, in the same order. Attempt each question first.
 
 <details>
 <summary>Check your answers</summary>
@@ -830,7 +850,7 @@ which is 4.50 times too big
 
 **M2 (a).** `middle = (25 ÷ 5, 35 ÷ 5) = (5.0, 7.0)`
 
-```
+```text
 centred points: (−4, −4)  (−2, −3)  (0, 1)  (2, 2)  (4, 4)
 ```
 
@@ -848,7 +868,7 @@ centred points: (−4, −4)  (−2, −3)  (0, 1)  (2, 2)  (4, 4)
 
 **M2 (c).**
 
-```
+```text
 squares : 29.8564 + 10.4465 + 0.2500 + 7.4644 + 29.8564 = 77.8737
 ÷ 4 = 19.4684
 ```
@@ -857,7 +877,7 @@ squares : 29.8564 + 10.4465 + 0.2500 + 7.4644 + 29.8564 = 77.8737
 
 **M2 (d) — 60°, direction (0.5000, 0.8660).**
 
-```
+```text
 (−4,−4): −2.0000 + −3.4641 = −5.4641
 (−2,−3): −1.0000 + −2.5981 = −3.5981
 ( 0, 1):  0.0000 +  0.8660 =  0.8660
@@ -884,7 +904,7 @@ squares: 29.8564 + 12.9463 + 0.7500 + 7.4644 + 29.8564 = 80.8735
 
 **M4 (a).**
 
-```
+```text
 across : 5.0 + ( −3.5585 × 0.6815 ) = 5.0 + (−2.4251) = 2.5749
 up     : 7.0 + ( −3.5585 × 0.7319 ) = 7.0 + (−2.6045) = 4.3955
 ```
@@ -893,7 +913,7 @@ up     : 7.0 + ( −3.5585 × 0.7319 ) = 7.0 + (−2.6045) = 4.3955
 
 **M4 (b).**
 
-```
+```text
 across gap : 3 − 2.5751 = 0.4249    squared: 0.1805
 up gap     : 4 − 4.3957 = −0.3957   squared: 0.1566
 add them   : 0.3371                 square root: 0.5806
@@ -966,7 +986,7 @@ digits: 64 columns -> 21
 
 **A4 — the diagram, labelled.** Answers depend on the angle you chose. Here is **60°** worked in full, since that is the winner on this cloud:
 
-```
+```text
 angle = 60      direction = ( cos, sin ) = ( 0.5000 , 0.8660 )
 
 the five scores: −5.4641, −3.5981, 0.8660, 2.7321, 5.4641
@@ -978,7 +998,7 @@ two of my five scores must be NEGATIVE. Are they?   Yes — the first two.
 
 And the comparison panel:
 
-```
+```text
 widest of the six angles : 60°      spread 20.2183
 what PCA says            : 47.04°   spread 21.2768
 so my grid was short by  : 12.96 degrees
@@ -1306,7 +1326,7 @@ for nm, pts in clouds.items():
 
 **The plot.** Filename `wine_2d.png`. **The two axis labels, in full:**
 
-```
+```text
 PC1 (36.2% of the spread)
 PC2 (19.2% of the spread)
 ```

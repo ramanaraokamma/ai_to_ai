@@ -89,7 +89,7 @@ That is a **hump**, not a slope. A model given raw `order_hour` and one weight h
 
 Cut the hours into ranges and it can:
 
-```
+```text
 morning   (hours 10-14)   684 orders   late 0.2383
 afternoon (hours 15-17)   286 orders   late 0.2552
 rush      (hours 18-20)   717 orders   late 0.3682
@@ -113,7 +113,7 @@ d["min_per_km"] = d["prep_minutes"] / (d["distance_km"] + 0.5)
 
 And read what the column *means*, because that is the interesting bit. `prep_minutes` on its own is a weak column. `distance_km` on its own is the strongest column in the table. But *minutes of prep per kilometre* asks a different question entirely: **is the kitchen the bottleneck, or the road?**
 
-```
+```text
 12 minutes of prep on a 2 km run:   12 ÷ 2.5 = 4.80
 12 minutes of prep on a 9 km run:   12 ÷ 9.5 = 1.26
 ```
@@ -133,7 +133,7 @@ This is the one that needs the most care, so here is the evidence first. Real la
 
 Now compute what a long trip *costs* you, in each kind of weather:
 
-```
+```text
 in the clear:   0.5034 − 0.1765 = 0.3269
 in a storm:     0.8571 − 0.3908 = 0.4663
 
@@ -147,7 +147,7 @@ severity = d["weather"].map({"clear": 0.0, "rain": 1.0, "storm": 2.0})
 d["dist_x_weather"] = d["distance_km"] * severity
 ```
 
-```
+```text
 a 6 km trip, clear:  6 × 0 = 0
 a 6 km trip, rain:   6 × 1 = 6
 a 6 km trip, storm:  6 × 2 = 12
@@ -175,7 +175,7 @@ And here are all four shapes at once, worked out for one real row:
 
 Here is the table you and the student will produce, and it teaches four separate lessons:
 
-```
+```text
               variant  cols  accuracy  roc_auc  d_auc
   A  raw columns only    20    0.7600   0.7752 0.0000
        B  A + is_rush    21    0.7725   0.7825 0.0074
@@ -191,7 +191,7 @@ E  D + dist_x_weather    23    0.7725   0.7829 0.0077
 
 **Lesson 3 — two of the four inventions bought nothing, and one of them made things worse.** Read the deltas **against the row above**, not against A:
 
-```
+```text
 D − B  =  0.7843 − 0.7825  =  +0.0018    keep min_per_km
 E − D  =  0.7829 − 0.7843  =  −0.0014    dist_x_weather made it WORSE
 F − E  =  0.7828 − 0.7829  =  −0.0001    is_weekend bought nothing at all
@@ -201,7 +201,7 @@ F − E  =  0.7828 − 0.7829  =  −0.0001    is_weekend bought nothing at all
 
 And `is_weekend` is the one that hurts to delete, because it sounds so obviously right. Here is why it is not:
 
-```
+```text
 weekend  556 orders   late 0.2752
 weekday 1444 orders   late 0.2922
 ```
@@ -280,7 +280,7 @@ print(pipe.named_steps["prep"].get_feature_names_out())
 
 After all that imputing, scaling and one-hot encoding, the thing going into the model is a wide block of numbers with no names on it. `get_feature_names_out()` gives you the names back, in order:
 
-```
+```text
 num__distance_km, num__items, num__prep_minutes, num__order_hour,
 num__driver_experience_months, num__is_rush, num__min_per_km,
 cat__restaurant_CrustyBros, ... cat__weather_storm
@@ -348,6 +348,8 @@ find out that some of the most exciting columns are the ones you are not allowed
 ---
 
 ## 🧰 Prep Checklist
+
+Use this section to get the room, the files and the laptops ready before the lesson.
 
 ### 20 minutes the night before
 
@@ -494,6 +496,8 @@ The one number you must check: **row A is accuracy 0.7600, AUC 0.7752.** Those a
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the lesson plan: the timings first, then each segment in order.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — Two Teams, One Point Apart | 7 | 7 | 0.781 against 0.785, and who you'd rather be |
@@ -508,7 +512,7 @@ The one number you must check: **row A is accuracy 0.7600, AUC 0.7752.** Those a
 
 **Do this:** On the board, nothing but two numbers:
 
-```
+```text
 Team A:  0.781
 Team B:  0.785
 ```
@@ -531,7 +535,7 @@ Pause.
 
 **Do this:** Now write on the board, big:
 
-```
+```text
 is_rush          = 1 if the order was placed between 18:00 and 20:00
 dist_x_weather   = distance × how bad the weather is
 ```
@@ -575,7 +579,7 @@ dist_x_weather   = distance × how bad the weather is
 
 **Do this:** Draw the two-bucket table on the board:
 
-```
+```text
              orders   late rate
 not rush      1283     0.2424
 rush (18-20)   717     0.3682
@@ -589,7 +593,7 @@ rush (18-20)   717     0.3682
 
 **Do this:** Write the four shapes on the board as a list, leaving room under each. You will fill them in as you go.
 
-```
+```text
 1. FLAG          a yes-or-no question about the row
 2. BIN           a number chopped into ranges
 3. RATIO         one column divided by another
@@ -630,7 +634,7 @@ rush (18-20)   717     0.3682
 
 **Do this:** Write the severity map and the three products on the board:
 
-```
+```text
 clear = 0    rain = 1    storm = 2
 
 6 km, clear:   6 × 0 =  0
@@ -852,7 +856,7 @@ E  D + dist_x_weather    23    0.7725   0.7829 0.0077
 
 **Do this:** Fill in the whiteboard table as they read. Write each subtraction out.
 
-```
+```text
 B − A  =  0.7825 − 0.7752  =  +0.0073     is_rush        KEEP   (table says 0.0074: unrounded AUCs)
 C − A  =  0.7815 − 0.7752  =  +0.0063     hour_band      drop, B is better with 3 fewer columns
 D − B  =  0.7843 − 0.7825  =  +0.0018     min_per_km     KEEP
@@ -933,6 +937,8 @@ And the sentence for this week:
 
 ## 🎲 The Activity, In Full
 
+This section gives the full running notes for the Invention Round, in case the plan above is too short.
+
 ### The Invention Round
 
 **Setup (1 minute).** Everybody gets a sheet of paper and a pen. The `look.py` output stays on the screen — the hourly table, the weekend table, the crosstab. **The whiteboard's six-row table stays visible.** Set the timer for eight minutes.
@@ -1007,6 +1013,8 @@ Run it. Fill in the table. Read out each subtraction against the row above.
 
 ## ❓ Questions Students Ask This Week
 
+This section lists questions students tend to ask this week, each with an answer you can give.
+
 **"Isn't inventing `is_rush` just cheating? I looked at the answer and then built a column that matches it."**
 
 **This is the sharpest question of the week and it deserves a real answer, because it is half right.**
@@ -1069,6 +1077,8 @@ Cyclical encoding is the better tool when the effect genuinely *is* smooth and p
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the moments where the lesson tends to slip, and what to do right then.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The Invention Round becomes a discussion instead of eight silent minutes | Ideas are more fun out loud, and the first person to speak sets everyone else's direction. | **Enforce the silence and the timer.** The whole value is that each student generates independently. If it becomes a conversation, you get one person's four ideas instead of everyone's five. |
@@ -1083,6 +1093,8 @@ Cyclical encoding is the better tool when the effect genuinely *is* smooth and p
 ---
 
 ## 🧭 Differentiation
+
+This section covers how to adjust the lesson for a student who is struggling, flying or not engaging.
 
 ### If the student is struggling
 
@@ -1101,7 +1113,7 @@ Cyclical encoding is the better tool when the effect genuinely *is* smooth and p
 
 **The copy-this-exactly scaffold.** Give them the deletion note as a fill-in-the-blanks form, because the *writing* is the marked part and a blank page is the obstacle:
 
-```
+```text
 FEATURE I AM DELETING:  ______________________
 
 what I thought it would do:  ______________________________________
@@ -1189,6 +1201,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the wording for assigning the homework.
 
 **Say this:**
 

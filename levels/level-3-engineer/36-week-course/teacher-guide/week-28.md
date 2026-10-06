@@ -74,7 +74,7 @@ So the deliverable changes. **In supervised learning you ship a score. In unsupe
 
 Here is the entire algorithm:
 
-```
+```text
 1. Put down k centres, anywhere.
 2. ASSIGN : give every point to its nearest centre.
 3. MOVE   : put every centre in the middle of the points it just got.
@@ -90,7 +90,7 @@ That is all of it. Steps 2 and 3 take turns, and **each of them can only make th
 
 **Now the numbers, because this is the part you will be teaching.** Six points, typed on the board:
 
-```
+```text
 A = (1, 2)      D = (8, 8)
 B = (2, 1)      E = (9, 7)
 C = (2, 3)      F = (7, 9)
@@ -98,7 +98,7 @@ C = (2, 3)      F = (7, 9)
 
 `k = 2`, and we put the two starting centres **deliberately badly** — both of them in the left-hand bunch, one sitting exactly on top of A and one exactly on top of C:
 
-```
+```text
 centre 1 = (1, 2)        centre 2 = (2, 3)
 ```
 
@@ -121,7 +121,7 @@ Groups: **centre 1 got {A, B}** and **centre 2 got {C, D, E, F}**.
 
 **ROUND 1, move.**
 
-```
+```text
 centre 1 = middle of {A, B} = ( (1+2) ÷ 2 , (2+1) ÷ 2 ) = ( 1.5 , 1.5 )
 
 centre 2 = middle of {C, D, E, F}
@@ -145,7 +145,7 @@ Groups: **{A, B, C}** and **{D, E, F}**. **C came home.** The bad start repaired
 
 **ROUND 2, move.**
 
-```
+```text
 centre 1 = ( (1+2+2) ÷ 3 , (2+1+3) ÷ 3 ) = ( 5÷3 , 6÷3 ) = ( 1.6667 , 2.0 )
 centre 2 = ( (8+9+7) ÷ 3 , (8+7+9) ÷ 3 ) = ( 24÷3 , 24÷3 ) = ( 8.0 , 8.0 )
 ```
@@ -163,7 +163,7 @@ You now have two clusters. **How good are they?** There is no `y` to check, so t
 
 Worked all the way out, with the final centres (1.6667, 2.0) and (8, 8):
 
-```
+```text
 A (1,2) to (1.6667, 2.0) :  0.4444 + 0.0000 = 0.4444
 B (2,1) to (1.6667, 2.0) :  0.1111 + 1.0000 = 1.1111
 C (2,3) to (1.6667, 2.0) :  0.1111 + 1.0000 = 1.1111
@@ -177,7 +177,7 @@ Check one of those by hand right now, so you can do it in front of them: B is at
 
 **And now sigma, which is the only new notation in Term 4 so far.** In a book you will see inertia written like this:
 
-```
+```text
 inertia  =  Σ  (distance from a point to its own centre)²
 ```
 
@@ -185,7 +185,7 @@ inertia  =  Σ  (distance from a point to its own centre)²
 
 **The rule for this course, and it is not negotiable for the next four weeks: every time the symbol appears, write the sum out in full beside it.**
 
-```
+```text
 Σ (distance)²   means   0.4444 + 1.1111 + 1.1111 + 0.0000 + 2.0000 + 2.0000
                       = 6.6667
 ```
@@ -227,7 +227,7 @@ scikit-learn uses k-means++ by default, and older versions also ran `n_init=10` 
 
 Three customers, with two columns — age in years, income in rupees:
 
-```
+```text
 P1 = (25, 500000)
 P2 = (55, 500000)
 P3 = (25, 520000)
@@ -235,12 +235,12 @@ P3 = (25, 520000)
 
 Squared distances on the raw numbers:
 
-```
+```text
 P1 to P2 : (25−55)² + (500000−500000)² =    900 +           0 =         900
 P1 to P3 : (25−25)² + (500000−520000)² =      0 + 400,000,000 = 400,000,000
 ```
 
-```
+```text
 400000000 ÷ 900 = 444444
 ```
 
@@ -248,12 +248,12 @@ P1 to P3 : (25−25)² + (500000−520000)² =      0 + 400,000,000 = 400,000,00
 
 Now standardise each column — subtract its mean, divide by its spread, exactly as in Week 4:
 
-```
+```text
 age:    mean 35,          spread    14.1421  →  −0.7071, +1.4142, −0.7071
 income: mean 506666.67,   spread  9428.0904  →  −0.7071, −0.7071, +1.4142
 ```
 
-```
+```text
 P1 to P2 : (−0.7071 − 1.4142)² + 0 = 4.5
 P1 to P3 : 0 + (−0.7071 − 1.4142)² = 4.5
 ```
@@ -309,7 +309,7 @@ Here is the real table for the 178 **scaled** wines:
 
 **Read the drop column, not the inertia column.** Going 1→2 bought 655. Going 2→3 bought 381. Going 3→4 bought **97**. That is where the cliff is:
 
-```
+```text
 381.1 ÷ 97.2 = 3.9
 ```
 
@@ -443,6 +443,8 @@ student spots that a "learning signal" with no labels sounds contradictory, that
 ---
 
 ## 🧰 Prep Checklist
+
+This section lists what to do before the lesson, with the complete runnable file.
 
 ### 25 minutes the night before
 
@@ -695,6 +697,8 @@ That is deliberate mistake one in the live-code, and it teaches the trailing-und
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the lesson plan: the segments first, then each one in order.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — I Have Taken Your Answers Away | 7 | 7 | No `y`. The Lego box. The six points on the floor |
@@ -709,7 +713,7 @@ That is deliberate mistake one in the live-code, and it teaches the trailing-und
 
 **Do this:** Nothing on the screen. Write two things on the board, in two columns:
 
-```
+```text
         WEEKS 1 to 27              TODAY
         X   (the table)            X   (the table)
         y   (the answers)
@@ -769,7 +773,7 @@ That is deliberate mistake one in the live-code, and it teaches the trailing-und
 
 **Do this:** Write the four lines on the board and box them. Leave them up for the whole lesson.
 
-```
+```text
 1. Put down k centres, anywhere.
 2. ASSIGN : give every point to its nearest centre.
 3. MOVE   : put every centre in the middle of what it got.
@@ -792,7 +796,7 @@ That is deliberate mistake one in the live-code, and it teaches the trailing-und
 
 **Do this:** Now the arithmetic, at the SIX POINTS sheet. Write the points, then the two starting centres.
 
-```
+```text
 A = (1, 2)   B = (2, 1)   C = (2, 3)   D = (8, 8)   E = (9, 7)   F = (7, 9)
 
 centre 1 starts at (1, 2)        centre 2 starts at (2, 3)
@@ -806,7 +810,7 @@ centre 1 starts at (1, 2)        centre 2 starts at (2, 3)
 
 **Do this:** Work three rows of the round-1 table on the board, out loud, and let the class do the rest.
 
-```
+```text
 A (1,2):  to (1,2) -> 0 + 0 = 0      to (2,3) -> 1 + 1 = 2      centre 1
 B (2,1):  to (1,2) -> 1 + 1 = 2      to (2,3) -> 0 + 4 = 4      centre 1
 C (2,3):  to (1,2) -> 1 + 1 = 2      to (2,3) -> 0 + 0 = 0      centre 2
@@ -820,7 +824,7 @@ C (2,3):  to (1,2) -> 1 + 1 = 2      to (2,3) -> 0 + 0 = 0      centre 2
 
 **Do this:** Have them call out D, E and F. Write the groups.
 
-```
+```text
 centre 1 got {A, B}          centre 2 got {C, D, E, F}
 ```
 
@@ -828,7 +832,7 @@ centre 1 got {A, B}          centre 2 got {C, D, E, F}
 
 *Hoped-for:* the middle of A and B.
 
-```
+```text
 centre 1 = ( (1+2) ÷ 2 , (2+1) ÷ 2 ) = ( 1.5 , 1.5 )
 centre 2 = ( (2+8+9+7) ÷ 4 , (3+8+7+9) ÷ 4 ) = ( 26÷4 , 27÷4 ) = ( 6.5 , 6.75 )
 ```
@@ -841,7 +845,7 @@ centre 2 = ( (2+8+9+7) ÷ 4 , (3+8+7+9) ÷ 4 ) = ( 26÷4 , 27÷4 ) = ( 6.5 , 6.7
 
 **Do this:** Do C's round-2 row in full, slowly, on the board.
 
-```
+```text
 C (2,3):  to (1.5, 1.5)  -> 0.25 +  2.25   =  2.50
           to (6.5, 6.75) -> 20.25 + 14.0625 = 34.3125
 ```
@@ -856,7 +860,7 @@ C (2,3):  to (1.5, 1.5)  -> 0.25 +  2.25   =  2.50
 
 > **Inertia** — add up the squared distance from every point to its own centre. Smaller means tighter.
 
-```
+```text
 0.4444 + 1.1111 + 1.1111 + 0.0000 + 2.0000 + 2.0000  =  6.6667
 ```
 
@@ -866,7 +870,7 @@ C (2,3):  to (1.5, 1.5)  -> 0.25 +  2.25   =  2.50
 
 **Do this:** Write, large:
 
-```
+```text
       Σ
 ```
 
@@ -880,7 +884,7 @@ C (2,3):  to (1.5, 1.5)  -> 0.25 +  2.25   =  2.50
 
 **Do this:** Write it out, on the board, beside the symbol.
 
-```
+```text
 Σ (distance to my own centre)²
        =  0.4444 + 1.1111 + 1.1111 + 0.0000 + 2.0000 + 2.0000
        =  6.6667
@@ -1087,7 +1091,7 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: **six poi
 
 **Do this:** Stand at the board with the three customers written on it.
 
-```
+```text
 P1 = (25, 500000)        P1 to P2 :    900
 P2 = (55, 500000)        P1 to P3 :    400,000,000
 P3 = (25, 520000)
@@ -1099,7 +1103,7 @@ P3 = (25, 520000)
 
 **Ask this:** "By how much?"
 
-```
+```text
 400000000 ÷ 900 = 444444
 ```
 
@@ -1109,7 +1113,7 @@ P3 = (25, 520000)
 
 **Do this:** Write the standardised numbers under them.
 
-```
+```text
 P1 to P2 : 4.5          P1 to P3 : 4.5
 ```
 
@@ -1190,6 +1194,8 @@ And the sentence for this week:
 
 ## 🎲 The Activity, In Full
 
+This section is the full script for the floor activity, step by step.
+
 ### k-Means on the Floor (20 minutes)
 
 **What it is.** Six points taped to the floor. Two students stand on them as the centres. The class does two complete rounds of assign-and-move, out loud, with every squared distance written on the board, and then the same run goes through `KMeans` and matches line for line.
@@ -1200,7 +1206,7 @@ And the sentence for this week:
 
 - **Tape six crosses to the floor** before the class arrives. Use one metre per unit if you have the room, or 40 cm per unit if you do not. The layout, with (0,0) in a corner:
 
-```
+```text
       y
    9  |                           F
    8  |                              D
@@ -1231,7 +1237,7 @@ Two volunteers. **CENTRE 1 stands on A. CENTRE 2 stands on C.**
 
 Go point by point. For each point the class computes **two** squared distances and the nearer one wins. Write every one on the board; they write them on 28.3 in colour one.
 
-```
+```text
 A (1,2):  to (1,2) -> 0 + 0 = 0       to (2,3) -> 1 + 1 = 2       centre 1
 B (2,1):  to (1,2) -> 1 + 1 = 2       to (2,3) -> 0 + 4 = 4       centre 1
 C (2,3):  to (1,2) -> 1 + 1 = 2       to (2,3) -> 0 + 0 = 0       centre 2
@@ -1250,13 +1256,13 @@ F (7,9):  to (1,2) -> 36 + 49 = 85    to (2,3) -> 25 + 36 = 61    centre 2
 
 > **Ask this:** "Centre 1, you got A and B. Where do you walk to?"
 
-```
+```text
 ( (1+2) ÷ 2 , (2+1) ÷ 2 ) = ( 1.5 , 1.5 )
 ```
 
 They take half a step. Then centre 2:
 
-```
+```text
 ( (2+8+9+7) ÷ 4 , (3+8+7+9) ÷ 4 ) = ( 26÷4 , 27÷4 ) = ( 6.5 , 6.75 )
 ```
 
@@ -1272,14 +1278,14 @@ They take half a step. Then centre 2:
 
 Same procedure, colour two on the sheet. Do C first this time, for the drama:
 
-```
+```text
 C (2,3):  to (1.5, 1.5)  -> 0.25 + 2.25   = 2.50
           to (6.5, 6.75) -> 20.25 + 14.06 = 34.31        centre 1  -- SWITCHED
 ```
 
 **C physically changes its card, in front of everybody.** Then finish the other five:
 
-```
+```text
 A (1,2):  0.50 vs 52.81     centre 1
 B (2,1):  0.50 vs 53.31     centre 1
 D (8,8):  84.50 vs 3.81     centre 2
@@ -1289,7 +1295,7 @@ F (7,9):  86.50 vs 5.31     centre 2
 
 Then move again:
 
-```
+```text
 centre 1 = ( (1+2+2) ÷ 3 , (2+1+3) ÷ 3 ) = ( 1.6667 , 2.0 )
 centre 2 = ( (8+9+7) ÷ 3 , (8+7+9) ÷ 3 ) = ( 8.0 , 8.0 )
 ```
@@ -1304,7 +1310,7 @@ centre 2 = ( (8+9+7) ÷ 3 , (8+7+9) ÷ 3 ) = ( 8.0 , 8.0 )
 
 Six squared distances to their own final centres, written as one sum beside a `Σ`:
 
-```
+```text
 0.4444 + 1.1111 + 1.1111 + 0.0000 + 2.0000 + 2.0000  =  6.6667
 ```
 
@@ -1349,6 +1355,8 @@ print(km.labels_, np.round(km.cluster_centers_, 4).tolist(), round(km.inertia_, 
 ---
 
 ## ❓ Questions Students Ask This Week
+
+This section collects questions students ask this week, with answers you can give.
 
 **"How do I know if my clusters are right?"**
 
@@ -1416,6 +1424,8 @@ What to say out loud to a 14-year-old: **"the same code sorts bottles and people
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section names the usual ways the lesson goes off course, and what to do about each.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **The wine reveal turns clustering into a success story** | `172 of 178` is a genuinely impressive number and the room will react to it | **Spend the next thirty seconds taking it back.** *"We only got to check because somebody had already labelled these bottles."* The reveal is a demonstration that the method *can* work, not evidence that it *did* in any case where you cannot check. **If you only say one thing after the reveal, say that the drawer usually does not exist.** |
@@ -1432,6 +1442,8 @@ What to say out loud to a 14-year-old: **"the same code sorts bottles and people
 ---
 
 ## 🧭 Differentiation
+
+This section says how to adjust the lesson for different students.
 
 ### If the student is struggling
 
@@ -1557,6 +1569,8 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
+This section gives the wording for setting the homework.
+
 **Say this:**
 
 > "About an hour, three pages, and the middle one is the one I mark hardest.
@@ -1624,7 +1638,7 @@ Every question restated, so you can mark from this page alone.
 
 Groups: `{A, B}` and `{C, D, E, F}`. Move:
 
-```
+```text
 centre 1 = ( (1+2) ÷ 2 , (2+1) ÷ 2 )          = ( 1.5 , 1.5 )
 centre 2 = ( (2+8+9+7) ÷ 4 , (3+8+7+9) ÷ 4 )  = ( 6.5 , 6.75 )
 ```
@@ -1642,7 +1656,7 @@ centre 2 = ( (2+8+9+7) ÷ 4 , (3+8+7+9) ÷ 4 )  = ( 6.5 , 6.75 )
 
 Groups: `{A, B, C}` and `{D, E, F}`. Move:
 
-```
+```text
 centre 1 = ( 5÷3 , 6÷3 ) = ( 1.6667 , 2.0 )
 centre 2 = ( 24÷3 , 24÷3 ) = ( 8.0 , 8.0 )
 ```
@@ -1672,7 +1686,7 @@ Groups: **C1 = {P1, P2, P3}**, **C2 = {P4, P5, P6, P7, P8}**.
 
 **ROUND 1, move.**
 
-```
+```text
 C1 = ( (1+2+1) ÷ 3 , (1+1+3) ÷ 3 )           = ( 4÷3 , 5÷3 )   = ( 1.3333 , 1.6667 )
 C2 = ( (3+7+8+9+8) ÷ 5 , (2+6+8+7+5) ÷ 5 )   = ( 35÷5 , 28÷5 ) = ( 7.0 , 5.6 )
 ```
@@ -1694,7 +1708,7 @@ Groups: **C1 = {P1, P2, P3, P4}**, **C2 = {P5, P6, P7, P8}**. **The switcher is 
 
 **ROUND 2, move.**
 
-```
+```text
 C1 = ( (1+2+1+3) ÷ 4 , (1+1+3+2) ÷ 4 ) = ( 7÷4 , 7÷4 )   = ( 1.75 , 1.75 )
 C2 = ( (7+8+9+8) ÷ 4 , (6+8+7+5) ÷ 4 ) = ( 32÷4 , 26÷4 ) = ( 8.0 , 6.5 )
 ```
@@ -1730,7 +1744,7 @@ inertia: 12.5000   rounds: 3
 
 Final centres: `C1 = (1.75, 1.75)` with `{P1, P2, P3, P4}`, and `C2 = (8.0, 6.5)` with `{P5, P6, P7, P8}`.
 
-```
+```text
 P1 (1,1) to (1.75, 1.75):  0.5625 + 0.5625 = 1.1250
 P2 (2,1) to (1.75, 1.75):  0.0625 + 0.5625 = 0.6250
 P3 (1,3) to (1.75, 1.75):  0.5625 + 1.5625 = 2.1250
@@ -1743,7 +1757,7 @@ P8 (8,5) to (8.0,  6.5) :  0.0000 + 2.2500 = 2.2500
 
 And the sigma, written out beside the symbol as required:
 
-```
+```text
 Σ (distance to my own centre)²
    =  1.1250 + 0.6250 + 2.1250 + 1.6250 + 1.2500 + 2.2500 + 1.2500 + 2.2500
    =  12.5000

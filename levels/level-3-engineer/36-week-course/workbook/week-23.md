@@ -74,7 +74,7 @@ ________________________________________________________________
 
 **Grouping one — layer by layer**, using Week 22's rule `(inputs × outputs) + outputs`:
 
-```
+```text
 first layer,  64 → 64:   64 × 64 + 64  =  ________ + ______  =  ________
 second layer, 64 → 10:   10 × 64 + 10  =  ________ + ______  =  ________
                                                                 --------
@@ -119,6 +119,8 @@ ________________________________________________________________
 ---
 
 ## 🔎 Predict the Output
+
+This section is for practising prediction: you commit to an answer first, then run the code and compare.
 
 **Write your prediction in pen before you run anything.** Every snippet starts with `import torch` and `import torch.nn as nn`.
 
@@ -250,6 +252,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading code and diagrams closely before you write any of your own.
+
 **A1. Match the word to the thing.** Write the letter.
 
 | Word | | Description |
@@ -322,7 +326,7 @@ ________________________________________________________________
 
 **A5. Read the three-file diagram.** Here is somebody's project.
 
-```
+```text
 alice_net.py        class AliceNet(nn.Module)         14 lines
 train_alice.py      from alice_net import AliceNet    45 lines
 predict_alice.py    from train_alice import AliceNet  16 lines
@@ -393,6 +397,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing small pieces of code yourself, from one line up to a whole project.
 
 ### B1 — one line
 
@@ -678,13 +684,15 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for practising batch arithmetic on a set of training runs.
+
 ### The batch-size detective
 
 Five training runs. In each one, some of the numbers have been rubbed out. **Fill in every gap, and find the one run that is impossible.**
 
 The only rules you need:
 
-```
+```text
 batches per epoch = rows ÷ batch size, rounded UP
 last batch        = rows − (full batches × batch size)   ... unless it divides exactly
 steps             = batches per epoch × epochs
@@ -724,6 +732,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These questions are for explaining in your own words, in full sentences.
 
 **T1.** `predict_digits.py` needs three things to work: the class file, the weights file, and — in Worked Example 3 — two little `.npy` files holding the scaler's numbers. **Write a paragraph** listing everything that has to travel together for a trained model to be useful on somebody else's laptop, and what goes wrong if each one is missing. Then answer the harder question: **what would you have to write down that is not a file at all?** *(Think about what a person receiving your folder would need to know that no amount of code can tell them.)*
 
@@ -895,6 +905,8 @@ ________________________________________________________________
 
 ## 📊 Self-Check
 
+Tick the face that matches how you feel about each skill today.
+
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
 | write an `nn.Module` subclass from a blank file, both halves, unaided | | | |
@@ -972,7 +984,7 @@ rows   426  bs  64  ->  batches  7  last  42  sum   426  ceil  7
 | 32 | **40** | **600** |
 | 512 | **3** | **45** |
 
-```
+```text
 1257 ÷ 512 = 2.455…   round up → 3
 2 × 512 = 1024        1257 − 1024 = 233      1024 + 233 = 1257 ✅
 ```
@@ -983,7 +995,7 @@ rows   426  bs  64  ->  batches  7  last  42  sum   426  ceil  7
 
 **M3.**
 
-```
+```text
 first layer,  64 → 64:   64 × 64 + 64  =  4096 + 64  =  4160
 second layer, 64 → 10:   10 × 64 + 10  =   640 + 10  =   650
                                                         ----
@@ -1419,7 +1431,7 @@ test accuracy 0.9574 on 540 held-out digits
 
 **Puzzle(b).** For 8 batches from 1,000 rows, the batch size `b` must satisfy `ceil(1000 ÷ b) = 8`, which means `1000 ÷ b` is more than 7 and at most 8:
 
-```
+```text
 1000 ÷ 8 = 125      → b must be at least 125 (at exactly 125 the division is exactly 8)
 1000 ÷ 7 = 142.85…  → b must be less than 142.85, so at most 142
 ```

@@ -46,7 +46,7 @@ The six points. Both knobs start at **zero**, so every prediction is 0.
 
 **M1 — the loss at step 0.**
 
-```
+```text
 errors (prediction − mark):  ____  ____  ____  ____  ____  ____
 
 squared:                     ____  ____  ____  ____  ____  ____
@@ -62,7 +62,7 @@ ________________________________________________________________
 
 **M2 — the slope for `w`.** From Week 15: *twice the average of (error × the input that weight multiplies)*. `w` multiplies the **hours**.
 
-```
+```text
 (−20 × 1) = ______   (−28 × 2) = ______   (−36 × 3) = ______
 
 (−44 × 4) = ______   (−52 × 5) = ______   (−60 × 6) = ______
@@ -78,13 +78,13 @@ sum:                        ____________
 
 **M2(b).** The step, with `lr = 0.05`:
 
-```
+```text
 w ← 0 − 0.05 × (____________)  =  ____________
 ```
 
 **M3 — the slope for `b`, which is the one people get wrong.** The bias multiplies **1** on every row, so there is **no multiplying to do**.
 
-```
+```text
 sum of the errors:  ____________
 
 × 2 ÷ 6:            ____________
@@ -609,7 +609,7 @@ ________________________________________________________________
 
 **Now check step 0 by hand, because it is the one step that is still right.** With both knobs at 0, all five errors are `0 − minutes`:
 
-```
+```text
 errors:        ____  ____  ____  ____  ____
 squared sum:   ____________
 ÷ 5:           ____________     ← matches the printed 856.0000?  ______
@@ -929,7 +929,7 @@ ________________________________________________________________
 
 **M1.**
 
-```
+```text
 errors:        −20   −28   −36   −44   −52   −60
 squared:       400   784  1296  1936  2704  3600
 sum:           10720
@@ -940,7 +940,7 @@ sum:           10720
 
 **M2.**
 
-```
+```text
 (−20 × 1) = −20    (−28 × 2) = −56    (−36 × 3) = −108
 (−44 × 4) = −176   (−52 × 5) = −260   (−60 × 6) = −360
 
@@ -955,7 +955,7 @@ sum:  −980
 
 **M3.**
 
-```
+```text
 sum of the errors:  −240
 × 2 ÷ 6:            −80.0
 
@@ -1271,7 +1271,7 @@ no step                   1786.6666    0.0000    0.0000  -326.6667
 
 **Step 0 by hand:**
 
-```
+```text
 errors:        −16   −22   −28   −34   −40
 squared sum:   256 + 484 + 784 + 1156 + 1600  =  4280
 ÷ 5:           856.0                     ← matches 856.0000  ✅

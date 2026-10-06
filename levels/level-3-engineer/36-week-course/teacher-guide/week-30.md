@@ -55,7 +55,7 @@ Week 28 left a hole on purpose. Inertia always falls as `k` grows, so it can nev
 
 **And here it is worked all the way out, on point C from Week 28's six points**, which is why the SIX POINTS sheet needed to stay up. The final clusters were `{A, B, C}` and `{D, E, F}`, and **this time we do need real distances, not squared ones**, so there are square roots.
 
-```
+```text
 a(C) — distance to the other members of my own cluster:
     C(2,3) to A(1,2):  √(1² + 1²) = √2 = 1.4142
     C(2,3) to B(2,1):  √(0² + 2²) = √4 = 2.0000
@@ -136,7 +136,7 @@ Here is the real sweep on the 178 scaled wines:
 
 **The elbow.** The drops go 655, 381, then a cliff to 97, then a trickle: 70, 66, 48, 51, 31, 49. The quantity to report is the **ratio**, not the picture:
 
-```
+```text
 381.1 ÷ 97.2 = 3.9
 ```
 
@@ -458,6 +458,8 @@ the answer is that you cannot score it, but you can absolutely measure whether i
 
 ## 🧰 Prep Checklist
 
+This section lists what to do before the lesson, and holds the complete runnable file.
+
 ### 30 minutes the night before
 
 - [ ] **Do the silhouette for point C by hand.** Five square roots, two averages, one subtraction, one division: **0.7838**. **Five minutes, and you are going to lead it at the SIX POINTS sheet.**
@@ -774,6 +776,8 @@ ARI against the real grape variety, scaled : 0.8975
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the running order of the lesson, with what to say and what to watch for in each segment.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — Three Clusters From Nothing At All | 7 | 7 | The noise result; the burden of proof |
@@ -819,7 +823,7 @@ cluster 1 means, first four columns: [ 0.522 -0.029  0.096  0.910]
 
 **Do this:** Write on the board and leave it up all lesson:
 
-```
+```text
 Getting clusters is not evidence that there are clusters.
 ```
 
@@ -880,7 +884,7 @@ Getting clusters is not evidence that there are clusters.
 
 > "One thing changes from two weeks ago: **this time we do need real distances, not squared ones.** So there are square roots. Five of them."
 
-```
+```text
 a(C) — to the others in my own cluster {A, B}:
    C(2,3) to A(1,2):  √(1 + 1)   = √2  = 1.4142
    C(2,3) to B(2,1):  √(0 + 4)   = √4  = 2.0000
@@ -891,7 +895,7 @@ a(C) — to the others in my own cluster {A, B}:
 
 *Three — D, E and F.*
 
-```
+```text
    C(2,3) to D(8,8):  √(36 + 25) = √61 = 7.8102
    C(2,3) to E(9,7):  √(49 + 16) = √65 = 8.0623
    C(2,3) to F(7,9):  √(25 + 36) = √61 = 7.8102
@@ -902,7 +906,7 @@ a(C) — to the others in my own cluster {A, B}:
 
 *Good — it's four and a half times closer to its own group.*
 
-```
+```text
 s(C) = (7.8943 − 1.7071) ÷ 7.8943  =  6.1872 ÷ 7.8943  =  0.7838
 ```
 
@@ -946,7 +950,7 @@ print(np.round(silhouette_samples(six, np.array([0, 1, 0, 1, 1, 1])), 4))
 
 **Do this:** Write the reading guide on the board.
 
-```
+```text
 near +1  : comfortably inside my own cluster
 near  0  : sitting on a border
 negative : probably in the wrong cluster
@@ -954,7 +958,7 @@ negative : probably in the wrong cluster
 
 **And the honest field guide, right under it:**
 
-```
+```text
 above 0.5   strong structure
 0.25 - 0.5  real, but the clusters touch
 below 0.25  mostly a convenient fiction
@@ -977,7 +981,7 @@ below 0.25  mostly a convenient fiction
 
 **Ask this:** "Vote one, the elbow. Where is it, and give me a number rather than pointing at the table."
 
-```
+```text
 381.1 ÷ 97.2 = 3.9
 ```
 
@@ -1180,7 +1184,7 @@ noise, five seeds, ARI: [0.6407 0.4069 0.61   0.6072 0.6308]  mean 0.5791
 
 **Do this:** Write the four numbers on the board as a two-by-two.
 
-```
+```text
                     real wine     pure noise
 silhouette            0.2849        0.0776
 seed-to-seed ARI      1.0000        0.5791
@@ -1220,7 +1224,7 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: **twelve 
 
 **Do this:** Now put the whole argument on the board, as five lines. **This is the deliverable and it is worth writing out in full.**
 
-```
+```text
 1. how many clusters   drop ratio 381.1 ÷ 97.2 = 3.9   AND   silhouette peak 0.2849
                        both say k = 3
 
@@ -1301,6 +1305,8 @@ And the sentence for this week, and for the whole of Term 4:
 
 ## 🎲 The Activity, In Full
 
+This section gives the full instructions for the two-part lab, so you can run it without the rest of the guide.
+
 ### Part A — The Naming Ceremony (12 minutes)
 
 **What it is.** Each cluster gets a name written in marker on an index card. Then, one at a time, the student holds up the card and **defends the name out loud, pointing at specific numbers in the feature-means table against the overall column.** A name nobody can defend gets **torn up** and rewritten.
@@ -1313,7 +1319,7 @@ And the sentence for this week, and for the whole of Term 4:
 - **Six blank index cards and a thick marker** on the front desk.
 - **The per-cluster silhouettes on the board**, because they are part of the defence:
 
-```
+```text
 cluster 0:  n = 65    own silhouette 0.1774    7 points below zero
 cluster 1:  n = 51    own silhouette 0.3506    0 points below zero
 cluster 2:  n = 62    own silhouette 0.3434    0 points below zero
@@ -1479,6 +1485,8 @@ better / equal / worse over ten splits: 8 2 0
 
 ## ❓ Questions Students Ask This Week
 
+This section gives the questions this week tends to raise, with answers you can say aloud.
+
 **"Why is 0.2849 a good score? It sounds terrible."**
 
 **It is not a good score, and calling it one would be dishonest. It is a real result.**
@@ -1570,6 +1578,8 @@ What to say out loud to a 14-year-old: **"you have a number today that nobody in
 
 ## 🧭 Differentiation
 
+This section says what to cut, add or change for a student who is struggling, flying or disengaged.
+
 ### If the student is struggling
 
 **Cut:** the stability check across subsamples. Five seeds giving ARI 1.0000 is enough.
@@ -1638,7 +1648,7 @@ None of these need syntax from a later week.
 
 Write only this:
 
-```
+```text
 0.2849
 ```
 
@@ -1646,7 +1656,7 @@ Write only this:
 
 They cannot answer. **Let the silence sit.** Then write:
 
-```
+```text
 0.0776    <- what pure random numbers scored
 ```
 
@@ -1714,6 +1724,8 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
+This section gives the wording for setting the homework.
+
 **Say this:**
 
 > "About an hour, and it is one document with five pieces in it. **This is the first thing you have handed me all year that is an argument rather than a score**, and next term's capstone is the same shape, so treat it as a rehearsal.
@@ -1759,7 +1771,7 @@ Every question restated, so you can mark from this page alone.
 
 **These are real distances, not squared ones**, so there are square roots.
 
-```
+```text
 a(C) — my average distance to the OTHERS in my own cluster:
    C(2,3) to A(1,2):  √((2−1)² + (3−2)²) = √(1 + 1) = √2  = 1.4142
    C(2,3) to B(2,1):  √((2−2)² + (3−1)²) = √(0 + 4) = √4  = 2.0000

@@ -37,7 +37,7 @@ Today those numbers get chosen. And before anything chooses them, we are going t
 
 Three sums. Do them on paper now.
 
-```
+```text
 conv1  Conv2d(1, 8, 3)   :  1 × 3 × 3 × 8  + 8  =    72 + 8  =    80
 conv2  Conv2d(8, 16, 3)  :  8 × 3 × 3 × 16 + 16 =  1152 + 16 =  1168
 fc     Linear(64, 10)    :         64 × 10 + 10 =   640 + 10 =   650
@@ -109,7 +109,7 @@ We do want probabilities eventually, because *"the model says 1"* is less useful
 
 **Step one — subtract the biggest score from all of them.** It changes nothing about which is biggest, and it stops the arithmetic exploding when you exponentiate. The biggest is 4.46:
 
-```
+```text
 biggest = 4.46
 slot 1:   4.46 − 4.46 =   0.00
 slot 8:   0.14 − 4.46 =  −4.32
@@ -122,7 +122,7 @@ slot 3:  −4.69 − 4.46 =  −9.15
 
 **Step two — put each one through `e` to the power of.** The same button you used in Week 13 for the S-curve.
 
-```
+```text
 e^0.00   = 1.000000
 e^−4.32  = 0.013300
 e^−4.75  = 0.008652
@@ -136,7 +136,7 @@ the other four add up to about 0.000009
 
 **Step three — divide each one by the total.** For the winner:
 
-```
+```text
 chance of digit 1  =  1.000000 ÷ 1.024606  =  0.9760
 ```
 
@@ -144,7 +144,7 @@ chance of digit 1  =  1.000000 ÷ 1.024606  =  0.9760
 
 **And then the loss, which is Week 14's surprise meter, unchanged.** Minus the natural log of the chance you gave to the answer that actually happened:
 
-```
+```text
 loss  =  −ln(0.9760)  =  0.0243
 ```
 
@@ -198,7 +198,7 @@ After training, `model[0].weight` holds the eight 3×3 filters. Rendered as pict
 
 **Filter 6, all nine numbers:**
 
-```
+```text
   0.509  −0.129  −0.149
   0.382  −0.507  −0.767
   0.761   0.348  −0.550
@@ -221,7 +221,7 @@ After training, `model[0].weight` holds the eight 3×3 filters. Rendered as pict
 
 **Here is filter 6's `+2.830`, worked out in full so it is not magic.** The bright-left patch is `1 1 −1` in every row:
 
-```
+```text
 row 0:  0.509 × 1  +  (−0.129) × 1  +  (−0.149) × (−1)  =  0.509 − 0.129 + 0.149  =  +0.529
 row 1:  0.382 × 1  +  (−0.507) × 1  +  (−0.767) × (−1)  =  0.382 − 0.507 + 0.767  =  +0.642
 row 2:  0.761 × 1  +    0.348  × 1  +  (−0.550) × (−1)  =  0.761 + 0.348 + 0.550  =  +1.659
@@ -239,13 +239,13 @@ Two of the eight are clearly edge detectors and you can prove it with a number. 
 
 ## 🔁 The Idea From Last Week, Used Harder
 
-There is no new maths this week. Instead **last week's division gets used to price a layer**, and Week 14's logarithm gets used inside a library part.
+This section reuses two old ideas, last week's size rule and an older logarithm. There is no new maths this week. Instead **last week's division gets used to price a layer**, and Week 14's logarithm gets used inside a library part.
 
 ### Last week's division, doing a job
 
 The `64` in `nn.Linear(64, 10)` is not a number anybody looked up. It is the flatten length, and the flatten length is the ladder:
 
-```
+```text
 input                        (1, 1, 8, 8)     given
 Conv2d(1, 8, 3, padding=1)   (1, 8, 8, 8)     (8 + 2 − 3) ÷ 1 + 1 = 8
 MaxPool2d(2)                 (1, 8, 4, 4)     (8 + 0 − 2) ÷ 2 + 1 = 4
@@ -285,7 +285,7 @@ One file. `load_digits()` ships inside scikit-learn, so **nothing downloads.**
 
 ### Step 1 — the pictures, and the one preprocessing step
 
-New file, `digits_cnn.py`.
+Create a new file, `digits_cnn.py`, and type this block into it.
 
 ```python
 """digits_cnn.py - a network that reads digits."""
@@ -339,6 +339,8 @@ train tensor: (1257, 1, 8, 8)   test tensor: (540, 1, 8, 8)
 
 ### Step 2 — the model, and the number you already computed
 
+Add this block to `digits_cnn.py`. It builds the network and prints its parameter count.
+
 ```python
 model = nn.Sequential(
     nn.Conv2d(1, 8, 3, padding=1),
@@ -364,6 +366,8 @@ parameters: 1898
 **1,898, and you knew it before the machine did.** That is the whole reason for doing the arithmetic on paper first: **the machine is confirming you, not informing you.** And look at where the `64` in `nn.Linear(64, 10)` came from — last week, `16 × 2 × 2`. Write 32 there and this line never runs.
 
 ### Step 3 — the loop, which is Week 21's five lines
+
+Add this block next. It trains the model and times it.
 
 ```python
 loader = DataLoader(TensorDataset(Xtr, ytr), batch_size=32, shuffle=True)
@@ -409,6 +413,8 @@ Then 0.35, 0.15, 0.09, 0.066: **falling and flattening.** And the five lines in 
 
 ### Step 4 — the accuracies, both of them, with counts
 
+Add this block. It scores the model on the training rows and on the test rows.
+
 ```python
 model.eval()
 with torch.no_grad():
@@ -442,6 +448,8 @@ test accuracy  : 0.9796  (529 of 540 test rows)
 **Eleven wrong. Which eleven?** Best question available, and it is the whole first half of next week.
 
 ### Step 5 — the ten scores, and the trap door
+
+Add this block. It prints the ten raw scores for the first test picture and computes the loss three ways.
 
 ```python
 with torch.no_grad():
@@ -483,6 +491,8 @@ minus ln of the true chance : 0.0244
 
 ### Step 6 — one character, and no error
 
+Add this block. It runs `argmax` along two different dimensions and prints the shapes.
+
 ```python
 with torch.no_grad():
     all_logits = model(Xte)
@@ -517,7 +527,7 @@ Three complete programs, three different worlds. **Predict the numbers before yo
 
 ### Worked Example 1 — Three song genres, and the softmax by hand
 
-Three classes, not ten, so the arithmetic is small enough to check on a calculator all the way through.
+Three classes, not ten, so the arithmetic is small enough to check on a calculator all the way through. Save this as `we1.py` and run it.
 
 ```python
 """we1.py - three song-genre scores, one argmax, one softmax by hand."""
@@ -571,7 +581,7 @@ and the exponentials, for checking by hand:
 
 **Now check every line with a calculator.** Three exponentials, one addition, three divisions, one logarithm:
 
-```
+```text
 e^−1.90 = 0.149569        0.149569 ÷ 1.179766 = 0.126778
 e^ 0.00 = 1.000000        1.000000 ÷ 1.179766 = 0.847626
 e^−3.50 = 0.030197        0.030197 ÷ 1.179766 = 0.025596
@@ -579,13 +589,15 @@ e^−3.50 = 0.030197        0.030197 ÷ 1.179766 = 0.025596
    total  1.179766                       total  1.000000
 ```
 
-```
+```text
 −ln(0.847626) = 0.165316
 ```
 
 **Both the loss lines match to six decimal places.** And notice the wrong one: `0.655382` instead of `0.165316`, on a model that was right and 84.8% sure. **Four times bigger, and nothing complained.**
 
 ### Worked Example 2 — Five kinds of weather, four days, and the `dim` trap
+
+Save this as `we2.py` and run it. Predict the shapes and the two losses first.
 
 ```python
 """we2.py - five weather kinds, four days, and the dim trap."""
@@ -647,7 +659,7 @@ a model guessing 1 in 5 would score -ln(0.2) = 1.6094
 
 ### Worked Example 3 — Price a network for a colour photo, twice
 
-The point of this one is a single fact: **a conv layer's weight count does not know how big the picture is.**
+The point of this one is a single fact: **a conv layer's weight count does not know how big the picture is.** Save this as `we3.py` and run it.
 
 ```python
 """we3.py - price a network for a colour photo, twice."""
@@ -716,11 +728,13 @@ the first one grew (1 channel became 3); the second did not change at all.
 
 ## 🐞 When It Breaks
 
-Every message below came from really running a broken version of this week's code.
+This section is for the moment something goes wrong. Every message below came from really running a broken version of this week's code.
 
 > **The two worst bugs this week produce no message at all.** One makes a good model look mediocre; the other makes a broken model look fine. **Both are caught by two numbers you can predict in advance: the loss should start near 2.30, and there should be one answer per picture.**
 
 ### Break 1 — the labels are the wrong kind of number
+
+This version builds the labels as decimals.
 
 ```python
 ytr = torch.from_numpy(y_train).float()      # should be .long()
@@ -742,6 +756,8 @@ RuntimeError: expected scalar type Long but found Float
 **The fix.** `torch.from_numpy(y_train).long()`, and the rule out loud: **`.float()` for the pictures, `.long()` for the labels.** `CrossEntropyLoss` wants **the digit itself** — a `(32,)` tensor of whole numbers 0–9. **Not one-hot. There is no one-hot anywhere in PyTorch.**
 
 ### Break 2 — the optimiser got the model instead of its weights
+
+This version hands Adam the whole model.
 
 ```python
 opt = torch.optim.Adam(model, lr=1e-3)       # should be model.parameters()
@@ -809,13 +825,13 @@ Train that for 20 epochs beside the right version, printing the **last batch's**
 
 ## 🎲 What We Did In Class
 
-If you missed it, here is the whole lesson. You need workbook pages 26.1 to 26.3 and a pen.
+This section is a record of the lesson, for anyone who missed it. You need workbook pages 26.1 to 26.3 and a pen.
 
 **The hook, at the wall sheets.** THE SHAPE LADDER from Week 25 was still up. Nothing on the screen. Then the conv weight formula on the board — `(in × k × k × out) + out`, with an arrow to the words *one bias per filter* — and three questions in a row: *"one channel in, eight filters, 3 by 3?"* `1 × 3 × 3 × 8 = 72`, **plus 8 biases**, so **80**. *"Eight in, sixteen filters?"* **1,168.** *"Sixty-four in, ten out?"* **650.** Somebody said 72 first, and the question that fixes it is *"how many filters? So how many biases?"*
 
 Then the addition, big:
 
-```
+```text
    80
  1168
   650
@@ -829,7 +845,7 @@ Then a walk to the **PARAMETER COUNT** sheet from Week 22, and one new row writt
 
 **Ten scores on the board, exactly:**
 
-```
+```text
 digit:      0      1      2      3      4      5      6      7      8      9
 score:  −10.94  4.46 −10.63  −4.69  −0.29  −7.80  −7.97  −3.30   0.14  −1.70
 ```
@@ -875,6 +891,8 @@ And then the sentence the whole wrap was for: **529 against 525 is four digits o
 
 ## 💬 Talk About It
 
+These are three questions to argue about with a partner or a parent. Each has a hint.
+
 **1. `CrossEntropyLoss` hides the softmax inside itself, and that hiding is what causes the week's nastiest bug. So why is it built that way?**
 
 *Hint:* there are two reasons and only the second is a real defence. The weak one: if all you want is the answer, the argmax of the raw scores equals the argmax of the chances, so squashing is wasted work at prediction time. The strong one is arithmetic — look at the `−10.94` in our ten scores, and think about what happens on a bigger network where scores reach ±100. `e^100` is too big for the computer's number format and becomes `inf`, and a chance as tiny as `e^−110` rounds to exactly zero, so `ln(0)` is minus infinity, and your training run fills with `nan`. (`e^−40` is tiny but the computer still holds it; it is around ±90 to ±100 that things break.) Doing the squash and the log **together**, inside, lets the library rearrange the arithmetic so that never happens. Now the real question: is a library allowed to hide something dangerous in order to be safer, and what should it have called itself instead? (`BCEWithLogitsLoss` says it in the name. `CrossEntropyLoss` does not. Is that a design mistake?)
@@ -890,6 +908,8 @@ And then the sentence the whole wrap was for: **529 against 525 is four digits o
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four wrong ideas that sound reasonable, each with the right version beside it.
 
 ### Trick 1 — "put a softmax on the end of the model, so it outputs probabilities"
 
@@ -930,6 +950,8 @@ The check that catches it every time: **count the answers.** 540 pictures went i
 
 ## 🌍 Where You've Seen This
 
+This section connects today's ideas to things you already use.
+
 1. **A photo app sorting your pictures into "beach", "food", "people".** Ten or a hundred raw scores per picture, then one `argmax`. The confidence percentage it sometimes shows you is a softmax, computed at the last moment for a human to read.
 2. **Handwriting recognition on a delivery form or a cheque.** Exactly this problem, with more pixels. Real postal sorters run several nines rather than two, and the extra nines come mostly from more pixels and vastly more training data — not from a cleverer stack.
 3. **"Confidence: 87%" under an app's suggestion.** That is a softmax output. Somebody chose to show it, and somebody chose the threshold below which the app says "not sure" instead — Week 10's threshold dial, sitting on top of this week's logits.
@@ -968,6 +990,8 @@ that loop runs 1,600 times in about three seconds.*
 
 ## 🔑 Remember This
 
+The eight things to keep from this week, then a code card and a one-line maths reminder.
+
 - **A conv layer costs `(in × k × k × out) + out`.** The `+ out` is one bias per filter and it is the bit everybody forgets. `1 × 3 × 3 × 8 + 8 = 80`; `8 × 3 × 3 × 16 + 16 = 1168`; `64 × 10 + 10 = 650`; **total 1,898.**
 - **A conv layer's weight count does not contain the picture size.** The same 80 first-layer weights work on an 8×8 digit and a 200×200 photo. **Only the `Linear` after the flatten is welded to one input size.**
 - **Ten logits, not ten probabilities.** They can be negative, they do not add to 1, and one of ours is −10.94.
@@ -978,6 +1002,8 @@ that loop runs 1,600 times in about three seconds.*
 - **Two of the eight filters are edge detectors and you can prove it with a number.** Three of them cannot be described, and saying so is better teaching than a story.
 
 ### Syntax reminder card
+
+Keep this block beside you while you do the workbook.
 
 ```python
 import torch
@@ -1022,6 +1048,8 @@ w = model[0].weight.detach().numpy()[:, 0]     # (8, 1, 3, 3) -> (8, 3, 3)
 ---
 
 ## 📓 New Words
+
+The six words this week introduced.
 
 ![This week's six words, drawn](../figures/fig-w26-6-vocab-icons.svg)
 *Figure 26.6 — This week's six words, drawn.*

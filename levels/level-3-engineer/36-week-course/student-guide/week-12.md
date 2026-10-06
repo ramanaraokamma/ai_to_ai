@@ -699,6 +699,8 @@ lr = 0.03   after 25 steps  w =      5135.8303   loss =  1012343768.1032
 
 ## 🔍 Worked Examples
 
+This section works through three finished examples of the nudge method, so you can compare your own working with them.
+
 ### Worked Example 1 — Nine slopes, three functions, nine ticks
 
 This is the homework, done for you once so you can see the shape of a full-marks page. **`h = 0.001`, so every division is by `0.002`.**
@@ -1113,6 +1115,8 @@ Then the three questions the class was asked, in order:
 
 ## 💬 Talk About It
 
+These questions are for discussing with a partner, a parent or your teacher. Say your answer out loud before you look anything up.
+
 **1. We already knew the answer was 8. So what was the point?**
 
 *Hint:* imagine you had started with real data instead. The method would have printed some number — and how would you have known whether it was right? **Every method in this course gets tested on a planted answer first.** The numpy network in Week 19 gets checked against a nudge; the PyTorch network in Week 23 gets checked against the numpy one. That habit is worth more than any single technique.
@@ -1128,6 +1132,8 @@ Then the three questions the class was asked, in order:
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section is for spotting claims about loss, slope and learning that sound right and need checking.
 
 ### Trick 1 — "the loss is changing, so the model is learning"
 
@@ -1167,6 +1173,8 @@ at w = 14, slope +12:   14 − 0.3 × (+12)  = 14 − 3.6   =  10.4    moved LEF
 
 ## 🌍 Where You've Seen This
 
+This section connects today's nudge-and-step idea to things you already meet outside the classroom.
+
 - **Every training progress bar you have ever seen.** The falling number beside it is a loss, and every tick of that bar is one round of nudge-and-step. When somebody says a model "trained for six hours", they mean this loop ran a very large number of times.
 - **A thermostat.** Too cold, heat more. Too hot, heat less. Bigger difference, bigger correction. It is `w = w − lr × slope` built out of a bit of metal, and the "lr too big" failure mode is a house that oscillates between freezing and boiling.
 - **Learning to throw at a target.** You throw, you see how far off you were, and **you adjust in proportion to how far off** — a small miss gets a small correction. Nobody taught you to do that; it is the update rule, running in a nervous system.
@@ -1203,6 +1211,8 @@ loss — is gold. The ↻ that has been grey for eleven weeks is black from toda
 ---
 
 ## 🔑 Remember This
+
+The points to keep from this week.
 
 - **A loss is one number for how wrong you are.** Big is bad, zero is perfect. Ours is the average of ten squared errors, and at `w = 6` it is `1540 ÷ 10 = 154`.
 - **Guessing does not scale.** 8 candidates for one weight, 64 for two, 512 for three, and a small network has a hundred thousand knobs.
@@ -1259,6 +1269,8 @@ w = w - lr * s
 ---
 
 ## 📓 New Words
+
+The words introduced this week, with a picture for each.
 
 ![Seven words from Week 12, drawn](../figures/fig-w12-7-vocab-icons.svg)
 *Figure 12.7 — Seven words from Week 12, drawn. Every number on a tile came out of your own `valley.py`, `slope.py` or `walk.py` run.*

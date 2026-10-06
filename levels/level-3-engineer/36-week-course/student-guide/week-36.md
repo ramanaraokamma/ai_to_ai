@@ -23,6 +23,8 @@
 
 ## 🪝 Start Here
 
+This section sets up today's two rules and shows what a finished demo looks like.
+
 Somebody walks up to a laptop, **closes every terminal window that is open**, opens a brand-new one, and types one line.
 
 ```text
@@ -53,7 +55,7 @@ $
 
 Today there are exactly two rules, and they are the whole of Level 3 compressed:
 
-```
+```text
    1.  NEW TERMINAL.  Every demo starts in a window you open in front of us.
    2.  EVERY ANSWER HAS A NUMBER IN IT.
 ```
@@ -67,6 +69,8 @@ Nine months ago, if somebody asked *"is it any good?"*, the answer would have be
 ---
 
 ## 🧠 The Big Idea
+
+This section gives you the demo route, the eight questions, the banned words, the gates for the next level and the year's numbers in one place.
 
 ### 1. Ten minutes is shorter than you think, so follow the route
 
@@ -119,7 +123,9 @@ These eight are not arbitrary. **They are the eight things a real person asks wh
 
 ### 3. Seven banned words, and why banning words is not a gimmick
 
-```
+These are the seven words you may not use today.
+
+```text
        ✗  production-ready        ✗  robust
        ✗  scalable               ✗  real-time
        ✗  it just works          ✗  seamless
@@ -156,7 +162,7 @@ Here is the shape of the whole year, in one comparison.
 
 Every mystery this year had that same shape:
 
-```
+```text
 Week  6   75% accuracy on a table of PURE NOISE
 Week 21   a loss that does not move at all
 Week 26   softmax applied twice, accuracy quietly capped
@@ -212,7 +218,7 @@ Nothing new. Three things you already have, used under pressure, out loud.
 
 Last week they were two lines of output. Today they are a spoken answer, and **the two must stay apart**:
 
-```
+```text
 WRONG   "it takes about a second"
 RIGHT   "about 620 ms to load the model once at start-up,
          and a p95 of 0.28 ms per request over 111 logged requests.
@@ -282,6 +288,8 @@ sys	0m5.377s
 
 ### Step 2 — the grep, and the blank line that is the evidence
 
+Run this `grep` from the project folder:
+
 ```text
 $ grep -rnE "\.fit\(|train_test_split|DummyClassifier|optimizer" serve/
 $
@@ -318,7 +326,7 @@ prob = np.array([r["probability"] for r in rows])
 band = int(((prob >= 0.45) & (prob <= 0.65)).sum())
 ```
 
-Then four prints, one per numeric question:
+Add these four prints, one per numeric question, to the end of `answers.py`:
 
 ```python
 print("model            : %s   (threshold %.2f)" % (version, meta["threshold"]))
@@ -331,6 +339,8 @@ print("Q4 got it wrong  : %d log lines, each with input, probability, threshold,
 print("Q6 any good      : %.3f on %d held-out rows, baseline %.3f, 1 row = %.2f points"
       % (meta["test_accuracy"], meta["n_test"], 0.500, 100.0 / meta["n_test"]))
 ```
+
+Then run it:
 
 ```text
 $ python3 answers.py
@@ -346,6 +356,8 @@ Q6 any good      : 0.812 on 16 held-out rows, baseline 0.500, 1 row = 6.25 point
 ### Step 4 — gate 3: the five-line loop, from a blank file, timed
 
 **Blank file. No notes. Under three minutes. Then run it.**
+
+Type this into `gate3.py`:
 
 ```python
 # gate3.py - the whole of Level 3 in 16 lines.
@@ -374,6 +386,8 @@ with torch.no_grad():
 print("final loss %.4f   accuracy %.3f" % (loss.item(), acc))
 ```
 
+Then run it:
+
 ```text
 $ python3 gate3.py
 epoch   0  loss 0.8374
@@ -387,7 +401,7 @@ final loss 0.1298   accuracy 0.990
 
 ### Step 5 — the three-questions drill
 
-Somebody hands you a model and says it scores **0.9844**. Before you believe a word of it:
+Somebody hands you a model and says it scores **0.9844**. Before you believe a word of it, save and run this as `three_questions.py`:
 
 ```python
 """three_questions.py — what to say when somebody hands you a big number."""
@@ -415,6 +429,8 @@ print("             and its AUC   : %.4f  <- a coin flip is 0.5000"
       % roc_auc_score(y_te, dummy.predict_proba(X_te)[:, 1]))
 ```
 
+Here is the output:
+
 ```text
 $ python3 three_questions.py
 question 2 — class balance : 28 of 1800 positive = 0.0156
@@ -427,7 +443,7 @@ question 1 — the baseline  : accuracy 0.9844
 
 **That is gate 5, and it takes eight seconds to say:**
 
-```
+```text
 1.  what is the BASELINE?
 2.  what is the CLASS BALANCE?
 3.  was anything FITTED BEFORE THE SPLIT?
@@ -438,6 +454,8 @@ question 1 — the baseline  : accuracy 0.9844
 ---
 
 ## 🔍 Worked Examples
+
+This section walks through a full demo, the eight answers marked, and a bug to find.
 
 ### Worked Example 1 — A ten-minute demo, transcribed
 
@@ -679,6 +697,8 @@ predict.py: error: unrecognized arguments: food and a rude driver
 
 ## 🎲 What We Did In Class
 
+This section records how the two sittings ran, so you can follow them or repeat them.
+
 **Two sittings, and they are not interchangeable.**
 
 **Sitting 1 — Showcase Day, 70 minutes.**
@@ -694,7 +714,7 @@ predict.py: error: unrecognized arguments: food and a rude driver
 
 **Sitting 2 — the written paper, 75 minutes, separate room, no computer, no notes.** Papers face down, and the three rules said out loud — the third being: **"three of the four programs in Part C raise no error at all."**
 
-```
+```text
 0–3     rules, papers face down
 3–23    Part A, twenty multiple choice
 23–48   Part B, eight short answers
@@ -706,6 +726,8 @@ predict.py: error: unrecognized arguments: food and a rude driver
 ---
 
 ## 💬 Talk About It
+
+Use these three questions for discussion with a partner or the class.
 
 **1. Why is showing a failure on purpose more impressive than hiding one?**
 *Hint: anybody can hide a failure. Ask what a stranger needs in order to use your model safely — and what they can do with a model whose failures are unknown, versus one whose failures are written down with probabilities beside them.*
@@ -719,6 +741,8 @@ predict.py: error: unrecognized arguments: food and a rude driver
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists four tempting ideas about today, each with a wrong and a right version.
 
 ### Trick 1 — "the demo is a presentation, so it should look good"
 
@@ -750,6 +774,8 @@ predict.py: error: unrecognized arguments: food and a rude driver
 ---
 
 ## 🌍 Where You've Seen This
+
+This section shows where today's habits appear outside the course.
 
 - **A software demo at any company** — the good ones open a terminal; the bad ones show a video of a terminal, and now you know why that difference matters.
 - **Release notes that say "p95 load time down 40%"** rather than "faster". Somebody on that team has your habit.
@@ -787,6 +813,8 @@ black, as it has been since Week 12 — the week you opened the loop.*
 ---
 
 ## 🔑 Remember This
+
+This section collects the points to keep from today.
 
 - **Two rules today: a new terminal, and a number in every answer.** Both are mechanical, and the second one is the whole of Level 3.
 - **Two timing numbers, kept apart.** Load-once versus per-request. *"About a second"* is a fail even when it is true.
@@ -828,6 +856,8 @@ wc -l logs/predictions.jsonl                    # 111 = predictions, not request
 
 ## 📓 New Words
 
+This section lists the words to be able to define with no notes.
+
 **None. Every word today was defined in an earlier week** — which is the point of the last week of anything.
 
 Here are the five you must be able to define **with no notes**, each with the number that proves you mean it:
@@ -846,6 +876,8 @@ Here are the five you must be able to define **with no notes**, each with the nu
 ---
 
 ## 📤 Your Homework
+
+This section says what to do after class and how long it takes.
 
 **No new technical homework. This is the last thing you will be asked to do this year, and it takes about forty minutes.** Go to the **[Week 36 workbook](../workbook/week-36.md)**.
 

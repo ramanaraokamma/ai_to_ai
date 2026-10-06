@@ -62,6 +62,8 @@ Holding both of those at the same time **is** this week.
 
 ## 🧠 The Big Idea
 
+This section explains how text becomes a table of numbers: how to cut it into tokens, how to tidy them, how to count them, and what the counting leaves out.
+
 ### 1. Tokenizing: you have to decide what a word is
 
 Before you can count words, you have to cut the string into pieces. That has a name.
@@ -476,6 +478,8 @@ stored     : 15 non-zero cells of 32
 
 ### Step 3 — the grid, and why `.toarray()` has to exist
 
+Add this to `bag.py` and run it:
+
 ```python
 print(pd.DataFrame(counts.toarray(), index=["d1", "d2", "d3", "d4"],
                    columns=terms))
@@ -495,6 +499,8 @@ d4    1     2     1      0      0        1    0    0
 
 ### Step 4 — what the sparse matrix is really holding
 
+Add this to `bag.py` and run it:
+
 ```python
 for line in str(counts).splitlines()[:4]:
     print(line)
@@ -512,6 +518,8 @@ print("   ... 11 more, and NOT ONE of the 17 zeros")
 Fifteen lines for thirty-two cells. **The other seventeen do not exist as far as the computer is concerned.**
 
 ### Step 5 — the order demo
+
+Add this to `bag.py` and run it:
 
 ```python
 pair = ["the dog bit the man", "the man bit the dog"]
@@ -696,9 +704,11 @@ words of one letter kept:   0
 
 ## 🔍 Worked Examples
 
+Three examples to work through. Each one gives you the job, the code, the printed output and the checks, so you can compare your own results against them.
+
 ### Worked Example 1 — Three song titles, a 3×10 grid
 
-**The job:** you want to sort songs into moods from their titles. Three titles, and you need a feature matrix.
+**The job:** you want to sort songs into moods from their titles. Three titles, and you need a feature matrix. Run this:
 
 ```python
 songs = ["Dancing in the summer rain",
@@ -738,7 +748,7 @@ column totals: [1 1 1 1 1 1 2 1 3 2]
 
 **Part A. Predict before you run.** You add `"The service was great!"` to the four reviews. **Does the shape become `(5, 8)` or `(5, 9)`?**
 
-Write your answer down. Now:
+Write your answer down. Then run this to compare it with your prediction:
 
 ```python
 five = docs + ["The service was great!"]
@@ -766,7 +776,7 @@ cells: 40  stored: 19  empty: 52.5%
 
 **`(5, 8)`.** A new document only adds a **row**. It adds a **column** only if it contains a word nobody has used before, and `the`, `service`, `was` and `great` were all already there. **Predicting that correctly is a real piece of understanding, not a guess.**
 
-**Part B. Now the alarming one.** The vocabulary came from the four original reviews. What happens to a review that shares no words with any of them?
+**Part B. A review of unknown words.** The vocabulary came from the four original reviews. Run this to see what happens to a review that shares no words with any of them:
 
 ```python
 cv4 = CountVectorizer().fit(docs)
@@ -784,7 +794,7 @@ unknown review row: [0 0 0 0 0 0 0 0]  stored: 0
 
 ### Worked Example 3 — The regex meets real internet text
 
-**The job:** you are tokenizing actual reviews off a website, not tidy sentences.
+**The job:** you are tokenizing actual reviews off a website, not tidy sentences. Run this:
 
 ```python
 s = "WOW!! Best 5.50 milkshake I've EVER had :-D"
@@ -975,6 +985,8 @@ Somebody in the room suggested counting **pairs** of words instead of single wor
 
 ## 💬 Talk About It
 
+Three questions to discuss with your teacher or a friend. Each has a hint that shows how to start, not the answer.
+
 **1. Counting words cannot tell `"the dog bit the man"` from `"the man bit the dog"`. Is that a bug?**
 
 *Hint:* start by being precise about what a bug is. **A bug is behaviour that differs from what the thing was built to do.** So: what was `CountVectorizer` built to do? Count words. Did it count them correctly? Yes, perfectly, in both sentences. **So it is not a bug** — and that means nobody will ever fix it, which is a much more serious situation than a bug. Then the harder half: if it is not a bug, what is it? It is a **price**, paid in exchange for something. What did you buy with it? (A row of numbers. A model that trains in one second. A vocabulary you can read.) **And then the question that matters: is there any method anywhere that does not have a price like this — or is "knowing what you paid" just what engineering is?**
@@ -990,6 +1002,8 @@ Somebody in the room suggested counting **pairs** of words instead of single wor
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four wrong ideas that are easy to believe this week, each shown next to the right version.
 
 ### Trick 1 — "d1 has a 0 for `cold`, so the model doesn't know the word `cold`"
 
@@ -1030,6 +1044,8 @@ The honest version of the rule: **stopword removal is right for topic and search
 
 ## 🌍 Where You've Seen This
 
+Six places outside this course where word counting is already at work.
+
 1. **Your email spam folder.** The original spam filters were exactly this: count the words in the message, look up a weight for each one, add them up. `viagra` gets a big weight; `the` gets almost none. Word counts, a row at a time, and it worked well enough to change the internet.
 2. **The search box on any website.** Typing `cold pizza refund` into a shop's help page turns your query into a row of counts and compares it against a row of counts for every help article. **That is a document-term matrix with one row per article** — and next week you learn how the comparison is actually done.
 3. **"Trending words" and word clouds.** A word cloud is a column-totals bar chart with the bars removed. Which is why a badly-made one is always dominated by `the` and `and` — **exactly your top three** — and why every good one quietly removes stopwords first.
@@ -1068,6 +1084,8 @@ Week 12.*
 ---
 
 ## 🔑 Remember This
+
+The key points of the week in one place, plus a syntax card to keep next to your keyboard.
 
 - **A model eats numbers, so a document becomes a row of word counts.** That is bag-of-words, and it is from the 1950s, and it still works. **`the pizza was cold` → `the 1, pizza 1, was 1, cold 1`, and everything else 0.**
 - **Tokenizing is a decision and normalizing is a decision, and every one of them can be wrong.** `.split()` gives you `'The'` and `'the'` as two tokens. `.lower()` fixes that and leaves `great!!`. The regex fixes that and turns `wasn't` into **`wasn`**, which is not a word, and which was carrying the negation.
@@ -1129,6 +1147,8 @@ print(bool((P[0] == P[1]).all()))               # True
 ---
 
 ## 📓 New Words
+
+The words this week introduced, each with a meaning and an example.
 
 ![This week’s words, drawn](../figures/fig-w31-7-vocab-icons.svg)
 *Figure 31.7 — This week’s words, drawn.*

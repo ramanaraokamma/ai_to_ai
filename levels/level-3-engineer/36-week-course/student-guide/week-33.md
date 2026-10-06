@@ -23,7 +23,7 @@
 
 ## 🪝 Start Here
 
-**Before you read any further, and before you run a single line of code, do this.**
+This section is for making your predictions before you see any results. Do it before you read any further and before you run a single line of code.
 
 Here are twelve reviews. In pen — pen, not pencil, and not in your head — write down for each one what you think **the model you are about to build** will say: positive or negative.
 
@@ -44,13 +44,13 @@ Here are twelve reviews. In pen — pen, not pencil, and not in your head — wr
 12  hardly a terrible meal
 ```
 
-Twelve of them, twenty seconds each. **Do not agonise. Commit.**
+Twelve of them, twenty seconds each. Do not agonise. Commit.
 
 Done? Good. Here is what you now own.
 
-Numbers 1 to 6 are complaints. Numbers 7 to 12 are compliments. **You read them in about ninety seconds and got all twelve right without thinking about it**, because you speak English.
+Numbers 1 to 6 are complaints. Numbers 7 to 12 are compliments. You read them in about ninety seconds and got all twelve right without thinking about it, because you speak English.
 
-And here is what is about to happen. **The model you build in the next twenty minutes will score twenty out of twenty on twenty held-out reviews.** A hundred per cent. Perfect. **And then it will meet these twelve and score zero.**
+Here is what is about to happen. **The model you build in the next twenty minutes will score twenty out of twenty on twenty held-out reviews.** A hundred per cent. Perfect. **And then it will meet these twelve and score zero.**
 
 Not "some difficulty with negation". **Zero out of twelve.** A coin would have got six. And the worst of them will be wrong at **98% confidence**.
 
@@ -61,6 +61,8 @@ Pen down. Those predictions are evidence, and they are not changing.
 ---
 
 ## 🧠 The Big Idea
+
+This section builds the sentiment engine from parts you already own, then opens up what it learned. Read it with a calculator beside you.
 
 ### 1. A sentiment engine is six lines, and you already own all of it
 
@@ -82,19 +84,22 @@ A **sentiment engine** reads a review and says *happy* or *angry*. That is the w
 ![One pipeline: words in, a probability out](../figures/fig-w33-1-pipeline-vectorizer-plus-classifier.svg)
 *Figure 33.1 — One pipeline: words in, a probability out. Four stages, and the vocabulary can only ever come from the 60 training rows.*
 
-**Four boxes and you own all four.**
+Four boxes, and you own all four:
 
-**Box one** is sixty reviews as plain text. Strings, not numbers. **Box two** is Week 32's `TfidfVectorizer`: it reads those sixty, builds a vocabulary, hands out a grid. **Box three** is the logistic regression: one weight per column, plus one extra number called the **bias**, multiplied and added. **Box four** is a probability, because of Week 13's squash.
+1. **Box one** is sixty reviews as plain text. Strings, not numbers.
+2. **Box two** is Week 32's `TfidfVectorizer`: it reads those sixty, builds a vocabulary, hands out a grid.
+3. **Box three** is the logistic regression: one weight per column, plus one extra number called the **bias**, multiplied and added.
+4. **Box four** is a probability, because of Week 13's squash.
 
 **And the reason all four live inside one object is Week 3.** The vocabulary is allowed to come from box one and from **nowhere else.** If a word only ever appears in the held-out pile, it gets no column at all, and it is thrown away when that review arrives. **That is not a defect. It is the honesty rule.**
 
 ### 2. What the model actually does, on one real review
 
-**This fits on a board and it is the whole lesson.**
+This fits on a board and it is the whole lesson.
 
 The review is `"not fresh and not hot"`. Its true label is **negative** — the customer is complaining.
 
-Week 31's regex chops it into five tokens: `not`, `fresh`, `and`, `not`, `hot`. Now the model looks up one weight per token and adds. **Three of the five tokens have a column in the vocabulary. Two do not.**
+Week 31's regex chops it into five tokens: `not`, `fresh`, `and`, `not`, `hot`. Now the model looks up one weight per token and adds. **Three of the five tokens have a column in the vocabulary. Two do not.** This table shows the sum, token by token.
 
 ```text
 token    tf-idf value   learned coefficient      contribution
@@ -110,7 +115,7 @@ bias                                         =         +0.0124
 
 **Do those three multiplications on your phone.** `0.6716 × 2.8648 = 1.9241`. Add them up with the bias: `0.0155 + 1.9241 + 2.0701 + 0.0124 = 4.0221`, and the extra thousandth is rounding in the printed pieces.
 
-Then Week 13's squash:
+Then Week 13's squash turns the total into a chance:
 
 ```text
 chance of positive = 1 / (1 + e^-4.0222) = 0.9824
@@ -129,7 +134,7 @@ chance of positive = 1 / (1 + e^-4.0222) = 0.9824
 
 ### 3. Why "no column" is not the same as "a column with a zero in it"
 
-**This distinction is the hinge of the whole week, and Week 31 planted it on purpose.**
+This distinction is the hinge of the whole week, and Week 31 planted it on purpose.
 
 Take the word `cold`. It **has** a column, because lots of training reviews used it. In the review `"the salad was fresh"`, `cold`'s cell is **0** — and **that zero is real information.** It means *this review did not mention cold*, and the model's weight for `cold` is multiplied by that zero, so `cold` contributes nothing **on purpose**.
 
@@ -137,7 +142,7 @@ Now take the word `not`. It has **no column at all.** Not a zero — nothing. Th
 
 **And from the outside the two situations look identical: both contribute `+0.0000`.**
 
-Here is the part that should make you sit up. **Suppose you were sloppy and built the vocabulary from all 80 reviews instead of just the 60 training rows.** Then `not` *does* get a column, because one of the held-out reviews is `"i would not order from here again"`. **Does that teach the model what `not` means?**
+Here is the part that should make you sit up. **Suppose you were sloppy and built the vocabulary from all 80 reviews instead of just the 60 training rows.** Then `not` *does* get a column, because one of the held-out reviews is `"i would not order from here again"`. **Does that teach the model what `not` means?** This block shows the leaked vocabulary beside the honest one.
 
 ```text
 leaked vocabulary size: 107   honest vocabulary size: 97
@@ -154,7 +159,7 @@ It did do one thing, and it is subtle and worth knowing — see Worked Example 2
 
 **`clf.coef_[0]` hands back one number per column, in the same order as `get_feature_names_out()`.** Sort it and you are reading the model's mind. **You cannot do this with the digits CNN from Week 26** — it has thousands of numbers and not one of them is "the weight for the word `rude`".
 
-Here is the real output, with a third column that most tutorials leave out:
+Here is the real output for the negative side, with a third column that most tutorials leave out:
 
 ```text
 15 words that push hardest towards NEGATIVE
@@ -177,7 +182,7 @@ Here is the real output, with a third column that most tutorials leave out:
 
 **Almost every one of those is a word you would have picked yourself.** That is genuinely impressive: the model was handed sixty rows of numbers and no dictionary, and it worked out that `rude` and `cold` are complaints.
 
-**Now the three entries that should worry you, and the reason the third column exists:**
+Three entries should worry you, and they are the reason the third column exists:
 
 | word | coefficient | rests on | the problem |
 |---|---:|---:|---|
@@ -185,7 +190,7 @@ Here is the real output, with a third column that most tutorials leave out:
 | `torn` | `−0.7625` | **1 review** | Same. One torn bag. |
 | `fluffy` | `+0.9114` | **1 review** | One fluffy rice. It is fifteenth on the positive list purely because nothing else is left. |
 
-**The rule to write down, because it applies to every model you will ever build:**
+Write down this rule, because it applies to every model you will ever build:
 
 > **Print the document frequency next to every coefficient you plan to quote. A weight learned from one review is a coincidence with a decimal point.**
 
@@ -196,7 +201,7 @@ Here is the real output, with a third column that most tutorials leave out:
 
 ### 5. Why 100% is bad news
 
-`classification_report` on the twenty held-out reviews:
+Here is `classification_report` on the twenty held-out reviews:
 
 ```text
               precision    recall  f1-score   support
@@ -215,7 +220,7 @@ Here is the real output, with a third column that most tutorials leave out:
 2. **All eighty reviews were typed by one person in matched pairs**, using roughly forty sentiment words over and over. `"the coffee was hot and the cake was fresh"` and `"the coffee was cold and the cake was stale"` differ in exactly two words, and **both of those words are on the top-fifteen list.** The test set is not a fresh sample of the world. **It is the same sentences, reshuffled.**
 3. **Not one of the twenty is hard.** No sarcasm, no "the food was great but the driver was rude", no `not`. **Every one is unambiguously one thing.** Real reviews are not like that.
 
-**So the honest sentence, and it is the one to write down:**
+The honest sentence, and the one to write down:
 
 > **It gets 100% on reviews that look like its training reviews, and 0% on reviews that do not.**
 
@@ -225,7 +230,7 @@ Everybody's first instinct — including every adult's — is: **count pairs of 
 
 > **n-gram** — a run of `n` words next to each other, treated as one token. `fresh` is a 1-gram (a unigram); `not fresh` is a 2-gram (a bigram).
 
-`TfidfVectorizer(ngram_range=(1, 2))` does exactly that. Here is what it buys:
+`TfidfVectorizer(ngram_range=(1, 2))` does exactly that. This block shows what it buys:
 
 ```text
 columns with single words only  : 97
@@ -241,7 +246,7 @@ traps whose answer changed at all: 0
 
 **Two hundred and twenty-one new columns, and not one of the twelve answers changed.** Not improved, not worsened — **identical**.
 
-And here is exactly why, in two lines:
+Here is why, shown by asking whether each pair is a column:
 
 ```text
    'not fresh'          False
@@ -255,7 +260,7 @@ And here is exactly why, in two lines:
 
 **`"was cold"` is a column**, because a training review contained those two words in that order. **`"not fresh"` is not a column**, because **no training review contains the words `not fresh` next to each other.** And a bigram that is not in the vocabulary is thrown away at prediction time just as silently as a unigram that is not in the vocabulary.
 
-**The general principle, and it is the most important sentence of this lab:**
+The general principle, and the most important sentence of this lab:
 
 > **A feature can only help you if the training data contained it. Adding a feature *type* does not add features; adding *data* does.**
 
@@ -270,7 +275,7 @@ There is a repair that does work, and it costs no new data at all. **Glue a nega
 "hardly a delicious meal"  →    "hardly_delicious meal"
 ```
 
-Now `not_fresh` is a single token, so it is a single column, so it can have its own weight. Run all five configurations:
+Now `not_fresh` is a single token, so it is a single column, so it can have its own weight. This block shows all five configurations:
 
 ```text
 1 single words                   cols=97    held-out=1.0000  traps=0/12
@@ -285,7 +290,7 @@ Now `not_fresh` is a single token, so it is a single column, so it can have its 
 ![Five tries at the twelve traps](../figures/fig-w33-5-four-configurations-eight-of-twelve.svg)
 *Figure 33.5 — Five tries at the twelve traps. Five configurations, one bar of twelve boxes each. More columns fixed nothing. More rows fixed nothing.*
 
-**Now the ninety seconds that turn a wrong lesson into a right one.** Look at *how* it got those six right:
+Now the ninety seconds that turn a wrong lesson into a right one. This block opens up the twelve predictions of the marked, no-new-data configuration:
 
 ```text
 bias: 0.0124
@@ -321,7 +326,7 @@ bias: 0.0124
 
 Because this model has 97 columns and **each one is one word, unrelated to every other word.** `delicious` and `tasty` are as unrelated in this model as `delicious` and `torn`. There is no notion anywhere that they mean nearly the same thing.
 
-Three words for that idea, and then we stop until Level 4.
+Three words cover that idea, and then we stop until Level 4.
 
 > **Distributional hypothesis** — the idea that words used in the same contexts tend to mean similar things. *"You shall know a word by the company it keeps."*
 >
@@ -337,7 +342,7 @@ Three words for that idea, and then we stop until Level 4.
 
 ## 🔁 The Idea From Last Week, Used Harder
 
-No new maths. Three things from earlier weeks get pushed until they bend.
+This section re-uses three earlier ideas on this week's numbers. No new maths.
 
 ### Twist one — Week 13's squash, on a number you computed by hand
 
@@ -348,7 +353,7 @@ e^-4.0222 = 0.017913
 1 ÷ (1 + 0.017913) = 1 ÷ 1.017913 = 0.98240
 ```
 
-**Two buttons: `e^x` and `1/x`.** Forty seconds. And what is new is not the arithmetic — it is that **a confident-looking `0.9824` is now traceable, by you, back to three multiplications, one of which should never have been in the sum.** A probability is not a verdict. It is the end of a sum you can inspect.
+Two buttons: `e^x` and `1/x`. Forty seconds. And what is new is not the arithmetic — it is that **a confident-looking `0.9824` is now traceable, by you, back to three multiplications, one of which should never have been in the sum.** A probability is not a verdict. It is the end of a sum you can inspect.
 
 ### Twist two — Week 3's pipeline, where the leak would be invisible
 
@@ -375,7 +380,7 @@ And the same rule saves you from `6/12`: `6` means nothing until `0.5188` is wri
 
 ## 💻 Type This
 
-Four files in one folder. Nothing downloads. **Every run in this chapter finishes in about a second.**
+This section is where you build the engine: four files in one folder. Nothing downloads, and every run in this chapter finishes in about a second.
 
 ### Step 0 — `reviews80.py`, the whole dataset
 
@@ -1234,7 +1239,7 @@ So `'was cold'` is a column because a training review said those two words in th
 
 ## 🐞 When It Breaks
 
-All four are real, from real runs. **The last one is the worst kind: no error at all.**
+This section is for recognising four failures you will meet in this week's code, so you can read each one instead of guessing. All four are real, from real runs. The last one is the worst kind: no error at all.
 
 ### Break 1 — `make_pipeline` chose the names, not you
 
@@ -1337,6 +1342,8 @@ ValueError: Iterable over raw text documents expected, string object received.
 
 ## 🎲 What We Did In Class
 
+This section records how the lesson ran, so you can compare it with your own work at home.
+
 ### The hook: twelve predictions, in pen (7 minutes)
 
 THE TWELVE TRAPS wall sheet went up with the twelve reviews written out and three empty columns: `my prediction`, `single words`, `glued negators`. **Pens, and the word "pen" was said out loud.**
@@ -1411,6 +1418,8 @@ Then the three words on the vocabulary sheet: **distributional hypothesis**, **c
 
 ## 💬 Talk About It
 
+This section gives you questions to argue over with someone else. Each hint tells you where to start, not what to conclude.
+
 **1. The model scored `1.0000` on the held-out twenty and `0` on the twelve traps. Which number describes the model?**
 
 *Hint:* both do, and that is the problem, so start by asking what each one is a statement **about**. `1.0000` is a true statement about twenty reviews written by one person out of forty adjectives in matched pairs. `0/12` is a true statement about twelve sentences deliberately built around a word the training data never used. **Neither is a statement about "reviews".** Then the practical question: if you were shipping this to a real pizza shop, which number would you put on the slide, and which would you put in the appendix — and **which one would you want to have been told, if you were the shop?** Then the sharp version: **you chose the twelve traps.** You went looking for the failure and you found it. **Is a test set you designed to break your model a fair test, or the only fair test?**
@@ -1426,6 +1435,8 @@ Then the three words on the vocabulary sheet: **distributional hypothesis**, **c
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section is for four claims that sound right and are not. Each one is set beside the corrected version.
 
 ### Trick 1 — "gluing negators on fixed the traps: 0 of 12 became 6 of 12"
 
@@ -1466,6 +1477,8 @@ Then the three words on the vocabulary sheet: **distributional hypothesis**, **c
 
 ## 🌍 Where You've Seen This
 
+This section is for spotting the same mechanism outside the classroom.
+
 1. **"Was this review helpful?" and automatic star-rating guesses.** A shop that guesses sentiment from review text is running something with this shape, and **its failure mode is exactly yours**: the review that says "not the disaster I expected" gets read backwards.
 2. **Support-ticket triage that routes an angry message to the wrong queue.** The words `refund`, `order` and `delivery` decided the routing. `not`, `never` and `hardly` never got a column. **You have now seen the arithmetic that produces that mistake.**
 3. **Comment moderation that flags a quoted insult.** `"nobody should ever say you are worthless"` contains every word a bag-of-words filter is looking for. **The row cannot tell "said" from "should never say".**
@@ -1477,6 +1490,8 @@ Then the three words on the vocabulary sheet: **distributional hypothesis**, **c
 ---
 
 ## 🧭 Where This Fits
+
+This section is for placing this week on the course map.
 
 This is the sixth week inside the same gold box, and the week it **closes**. Weeks 28 to 30 were the *no
 labels* half; Weeks 31 to 33 were the *words* half. Today the vectorizer you built finally gets a
@@ -1504,6 +1519,8 @@ The ↻ on stage three is black, as it has been since Week 12.*
 ---
 
 ## 🔑 Remember This
+
+This section collects the points to keep from the week.
 
 - **A sentiment engine is `make_pipeline(TfidfVectorizer(), LogisticRegression(...))`, and you already owned every part of it.** `(60, 97)` in, `97 + 1 = 98` learned numbers out. **The vocabulary may come from the training rows and nowhere else.**
 - **`make_pipeline` names the steps after their classes, in lowercase.** `pipe.named_steps["tfidf"]` raises `KeyError: 'tfidf'`; the name is `tfidfvectorizer`. **Ask with `pipe.named_steps.keys()` rather than guessing.**
@@ -1594,6 +1611,8 @@ vb = set(bi.named_steps["tfidfvectorizer"].get_feature_names_out())
 
 ## 📓 New Words
 
+This section lists the words introduced or used this week, with an example of each.
+
 ![This week’s words, drawn](../figures/fig-w33-7-vocab-icons.svg)
 *Figure 33.7 — This week’s words, drawn.*
 
@@ -1608,6 +1627,8 @@ vb = set(bi.named_steps["tfidfvectorizer"].get_feature_names_out())
 ---
 
 ## 📤 Your Homework
+
+This section tells you what to do next and how long it should take.
 
 Go to **[the Week 33 workbook](../workbook/week-33.md)**. About **65 minutes**, four pages, and the fourth is marked hardest.
 

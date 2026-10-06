@@ -38,7 +38,7 @@ ________________________________________________________________
 
 **Pair 1 — precision 0.900, recall 0.100.**
 
-```
+```text
 plain    :  0.9 + 0.1 = ________        ________ ÷ 2 = ____________
 harmonic :  2 × 0.9 × 0.1 = ____________
             0.9 + 0.1     = ____________
@@ -48,7 +48,7 @@ check    :  smaller ________,  twice it ________,  in range?  ______
 
 **Pair 2 — precision 0.600, recall 0.600.**
 
-```
+```text
 plain    :  0.6 + 0.6 = ________        ________ ÷ 2 = ____________
 harmonic :  2 × 0.6 × 0.6 = ____________
             0.6 + 0.6     = ____________
@@ -62,7 +62,7 @@ ________________________________________________________________
 
 **Pair 3 — precision 0.667, recall 0.070.** *(A bank with 200 real frauds. The model flags 21 and 14 of them are fraud: 14 ÷ 21 = 0.6667 and 14 ÷ 200 = 0.0700.)*
 
-```
+```text
 plain    :  0.667 + 0.070 = ________        ________ ÷ 2 = ____________
 harmonic :  2 × 0.667 × 0.070 = ____________
             0.667 + 0.070       = ____________
@@ -118,7 +118,7 @@ ________________________________________________________________
 
 **M4(b).** From the two fractions, three lines:
 
-```
+```text
 2 × 0.5667 × 0.4435  =  ____________
 0.5667 + 0.4435      =  ____________
 ________ ÷ ________  =  ____________
@@ -249,6 +249,8 @@ ________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading metrics, code and reports: matching words, filling tables, spotting bugs and choosing which number goes on a report.
 
 **A1. Match the word to the thing.** Write the letter.
 
@@ -384,6 +386,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing the code yourself. Each task gives the expected output and a line saying what done looks like.
 
 ### B1 — one line, plus a print
 
@@ -606,6 +610,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle uses the shortcut formula below with a fixed number of real frauds, so you can work through every model that fits.
+
 ### The F1 = 0.5000 Club
 
 A bank has **12 real frauds** in its validation pile. You are looking for every model whose F1 is **exactly 0.5000**.
@@ -666,6 +672,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These questions ask for written paragraphs, so you can explain your reasoning in your own words.
 
 **T1.** `2 × TP ÷ (2 × TP + FP + FN)` contains **no TN at all.** Pad the legitimate class from 979 correctly-left-alone rows to 999,979 and F1 stays at exactly 0.2500, while accuracy climbs from 0.9820 to 0.999982. **Write a paragraph** on whether that is a feature or a bug. Say what it protects you from, then say what it hides — and name the metric you would print beside F1 to cover the gap.
 
@@ -737,7 +745,7 @@ ________________________________________________________________
 
 **The six numbers, each with its fraction and its pile:**
 
-```
+```text
 accuracy    =  (____ + ____) ÷ ____  =  ____ ÷ ____  =  ________   on the ____________ rows
 precision   =  ____ ÷ (____ + ____) =  ____ ÷ ____  =  ________   on the ____________ rows
 recall      =  ____ ÷ (____ + ____) =  ____ ÷ ____  =  ________   on the ____________ rows
@@ -748,7 +756,7 @@ ROC AUC     =  over all ____ predicted probabilities =  ________   on the ______
 
 **F1 the other way, to check:**
 
-```
+```text
 2 × ________ × ________  =  ____________
 ________ + ________      =  ____________
 ________ ÷ ________      =  ____________     same answer?  ______
@@ -847,6 +855,8 @@ ________________________________________________________________
 
 ## 📊 Self-Check
 
+Tick a face on each line to record how sure you feel about it.
+
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
 | compute a harmonic mean by hand in three lines | | | |
@@ -887,7 +897,7 @@ ________________________________________________________________
 
 **M1 — pair 1 (0.900, 0.100).**
 
-```
+```text
 plain    :  0.9 + 0.1 = 1.000        1.000 ÷ 2 = 0.5000
 harmonic :  2 × 0.9 × 0.1 = 0.180
             0.9 + 0.1     = 1.000
@@ -897,7 +907,7 @@ check    :  smaller 0.100,  twice it 0.200,  and 0.1800 is between them.  ✅
 
 **Pair 2 (0.600, 0.600).**
 
-```
+```text
 plain    :  0.6 + 0.6 = 1.200        1.200 ÷ 2 = 0.6000
 harmonic :  2 × 0.6 × 0.6 = 0.720
             0.6 + 0.6     = 1.200
@@ -909,7 +919,7 @@ check    :  smaller 0.600,  twice it 1.200,  and 0.6000 is between them.  ✅
 
 **Pair 3 (0.667, 0.070).**
 
-```
+```text
 plain    :  0.667 + 0.070 = 0.737    0.737 ÷ 2 = 0.3685
 harmonic :  2 × 0.667 × 0.070 = 0.0934
             0.667 + 0.070       = 0.737
@@ -955,7 +965,7 @@ All three divisions are paper arithmetic: `0 ÷ 14`, `6 ÷ 24`, `28 ÷ 1014`.
 
 **M4(b).**
 
-```
+```text
 2 × 0.5667 × 0.4435  =  0.50266
 0.5667 + 0.4435      =  1.01020
 0.50266 ÷ 1.01020    =  0.4976
@@ -1368,7 +1378,7 @@ print("lazy F1 from the counts : %d / %d = %.4f"
 
 **The check: 246 + 39 + 64 + 51 = 400.** ✅
 
-```
+```text
 accuracy    =  (51 + 246) ÷ 400  =  297 ÷ 400  =  0.7425   on the 400 validation rows
 precision   =  51 ÷ (51 + 39)    =   51 ÷  90  =  0.5667   on the 400 validation rows
 recall      =  51 ÷ (51 + 64)    =   51 ÷ 115  =  0.4435   on the 400 validation rows

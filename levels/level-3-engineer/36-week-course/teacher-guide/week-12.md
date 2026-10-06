@@ -77,7 +77,7 @@ Here is the smallest honest example that exists, and it is the one the whole les
 
 Now suppose we already know the 12 — a student who does nothing scores 12, that is just how the exam is marked. **The one thing we do not know is how much an hour of revision is worth.** Call it `w`. Our model is:
 
-```
+```text
 predicted marks  =  w × hours  +  12
 ```
 
@@ -87,7 +87,7 @@ predicted marks  =  w × hours  +  12
 
 **How wrong is a guess?** Take `w = 6` — a guess that an hour of revision is worth 6 marks. Work out what the model predicts, subtract the truth, square it, and average. Here is the whole thing, and it is ten subtractions you can do in your head:
 
-```
+```text
 w = 6:
 
   hours       1    2    3    4    5    6    7    8    9   10
@@ -150,7 +150,7 @@ Let us do it on the simplest curve there is: `f(x) = x × x`. **What is the slop
 
 Take a nudge of `h = 0.001`, and work out the value just above and just below:
 
-```
+```text
 f(3.001)  =  3.001 × 3.001  =  9.006001
 f(2.999)  =  2.999 × 2.999  =  8.994001
 ```
@@ -159,19 +159,19 @@ f(2.999)  =  2.999 × 2.999  =  8.994001
 
 Now: the output went **up** by
 
-```
+```text
 9.006001 − 8.994001  =  0.012000        <- the rise
 ```
 
 and to make that happen we moved **across** by
 
-```
+```text
 3.001 − 2.999  =  0.002                 <- the run
 ```
 
 so the steepness is
 
-```
+```text
 0.012000 ÷ 0.002  =  6.000
 ```
 
@@ -200,7 +200,7 @@ f(x) = x * x,   h = 0.001
 
 Put those three pairs on the board and say nothing. Somebody will see it.
 
-```
+```text
     at x = 1  the slope is  2
     at x = 3  the slope is  6
     at x = 5  the slope is 10
@@ -266,7 +266,7 @@ w  14.0  loss   1386.00  slope    462.00
 
 Work it in both directions, and print both, because a student will not believe it otherwise:
 
-```
+```text
 standing at w = 2, where the slope is −12 (on the one-student loss):
     2 − 0.3 × (−12)  =  2 + 3.6   =  5.6      moved RIGHT, towards 8
 
@@ -283,7 +283,7 @@ standing at w = 14, where the slope is +12:
 
 For the by-hand walk we shrink the problem to **one student** — the first one, who revised 1 hour and got 20 marks — because then the loss becomes as simple as it is possible to be:
 
-```
+```text
 loss(w)  =  (w × 1 + 12 − 20) ²  =  (w − 8) ²
 ```
 
@@ -316,7 +316,7 @@ after eight steps w = 7.996068    the answer we hid in the data was 8
 
 **Every one of those rows is one multiplication and one subtraction.** Row 0, longhand:
 
-```
+```text
 slope at w = 2:      2 × (2 − 8)  =  2 × (−6)  =  −12
 the step:            0.3 × (−12)  =  −3.6
 the new w:           2 − (−3.6)   =  2 + 3.6   =  5.6
@@ -487,7 +487,7 @@ now inside it, and its first tile gold. The ↻ on stage three is black for the 
 
 - [ ] **Do the nudge yourself. On paper. With a pen. Right now.** This is the single most important item in the whole prep list and it takes four minutes:
 
-```
+```text
 3.001 × 3.001  =  9.006001
 2.999 × 2.999  =  8.994001
                   --------
@@ -500,14 +500,14 @@ now inside it, and its first tile gold. The ↻ on stage three is black for the 
 
 - [ ] **Then do it at x = 1 and x = 5**, so that you have written 2, 6 and 10 yourself and felt the moment where 2×x appears:
 
-```
+```text
 1.001 × 1.001 = 1.002001    0.999 × 0.999 = 0.998001    diff 0.004000   ÷ 0.002 = 2.000
 5.001 × 5.001 = 25.010001   4.999 × 4.999 = 24.990001   diff 0.020000   ÷ 0.002 = 10.000
 ```
 
 - [ ] **Do the loss at w = 6 by hand.** Ten errors, ten squares, add, divide by ten:
 
-```
+```text
 errors    −2  −4  −6  −8  −10  −12  −14  −16  −18  −20
 squares    4  16  36  64  100  144  196  256  324  400     add up to 1540
 1540 ÷ 10  =  154
@@ -888,7 +888,7 @@ after six steps w = 3.983616, target 4
 
 **Do this:** Write this on the board and leave it there all lesson.
 
-```
+```text
    how wrong am I?              ->   a number.  we call it the LOSS.
    which way is downhill?       ->   ???        <- today
    step that way, a bit         ->   easy.
@@ -903,7 +903,7 @@ after six steps w = 3.983616, target 4
 
 **Do this:** Write the ten students on the board.
 
-```
+```text
 hours    1    2    3    4    5    6    7    8    9   10
 marks   20   28   36   44   52   60   68   76   84   92
 ```
@@ -920,7 +920,7 @@ marks   20   28   36   44   52   60   68   76   84   92
 
 **Do this:** Write the model:
 
-```
+```text
 predicted marks  =  w × hours  +  12
 ```
 
@@ -932,7 +932,7 @@ Take whatever they say; then insist on 6, because the arithmetic is clean.
 
 **Do this:** Build the loss table on the board, out loud, one row at a time. **Get the class to call out the errors.**
 
-```
+```text
 w = 6
   predicted   18   24   30   36   42   48   54   60   66   72
   actual      20   28   36   44   52   60   68   76   84   92
@@ -948,7 +948,7 @@ w = 6
 
 **Ask this:** "Add the squares up and divide by ten."
 
-```
+```text
 1540 ÷ 10  =  154
 ```
 
@@ -956,7 +956,7 @@ w = 6
 
 **Do this:** Now hand out the other seven candidates — `w = 0, 2, 4, 8, 10, 12, 14` — one per pair, calculators out, **four minutes.** Collect the answers on the big graph paper on the wall as they come in.
 
-```
+```text
   w         0      2      4      6      8     10     12     14
   loss   2464   1386    616    154      0    154    616   1386
 ```
@@ -977,7 +977,7 @@ w = 6
 
 **Do this:** Write on the board:
 
-```
+```text
    1 knob,   8 guesses each  ->  8
    2 knobs                   ->  8 × 8      =  64
    3 knobs                   ->  8 × 8 × 8  =  512
@@ -990,7 +990,7 @@ w = 6
 
 **Do this:** Clear a space. Write one thing on the board:
 
-```
+```text
    f(x) = x × x
 ```
 
@@ -1006,26 +1006,26 @@ w = 6
 
 **Do this:** Write it on the board, one line at a time, and **do the multiplications out loud.**
 
-```
+```text
    a hair to the right:   3.001 × 3.001  =  9.006001
    a hair to the left:    2.999 × 2.999  =  8.994001
 ```
 
 **Ask this:** "How much did the answer change?"
 
-```
+```text
    9.006001 − 8.994001  =  0.012000
 ```
 
 **Ask this:** "And how far did we move to make that happen?"
 
-```
+```text
    3.001 − 2.999  =  0.002
 ```
 
 **Ask this:** "So how steep is it?"
 
-```
+```text
    0.012000 ÷ 0.002  =  6.000
 ```
 
@@ -1037,7 +1037,7 @@ w = 6
 
 **Do this:** Collect the three answers on the board. **Nothing else. No commentary.**
 
-```
+```text
    at x = 1     1.002001 − 0.998001 = 0.004000     ÷ 0.002 =  2
    at x = 3     9.006001 − 8.994001 = 0.012000     ÷ 0.002 =  6
    at x = 5    25.010001 − 24.990001 = 0.020000    ÷ 0.002 = 10
@@ -1087,13 +1087,13 @@ Blockquote each on the board.
 
 **Do this:** Work it, with the numbers, on the board:
 
-```
+```text
    2 − 0.3 × (−12)  =  2 + 3.6  =  5.6      moved RIGHT ✅
 ```
 
 **Ask this:** "Now I am on the right wall at `w = 14`, and the slope is **plus twelve.** Same formula. What happens?"
 
-```
+```text
    14 − 0.3 × (+12)  =  14 − 3.6  =  10.4    moved LEFT ✅
 ```
 
@@ -1322,7 +1322,7 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: three stu
 
 **Do this:** Go back to the board from the hook and fill in the gap.
 
-```
+```text
    how wrong am I?              ->   a number.  the LOSS.
    which way is downhill?       ->   nudge, subtract, divide.  READ THE SIGN.
    step that way, a bit         ->   w = w − lr × slope
@@ -1352,6 +1352,8 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: three stu
 ---
 
 ## 🐞 The Debugging Clinic
+
+This section lists the error messages you are likely to see this week, with their causes and fixes.
 
 Every message below came from running a broken version of this week's actual code.
 
@@ -1387,6 +1389,8 @@ And the sentence for this week:
 
 ## 🎲 The Activity, In Full
 
+This section gives the full set-up, steps and variations for the Foggy Hillside activity.
+
 ### The Foggy Hillside
 
 **What it is.** Two halves. In the first, **three students per point** measure the slope of `w × w` at `w = 1`, `3` and `5` with `h = 0.001`, and all three answers go on the board **before anybody says the word derivative.** In the second, **everybody walks eight steps downhill by hand** on `(w − 8)²` and compares their final `w` with the answer hidden in the data.
@@ -1421,7 +1425,7 @@ And the sentence for this week:
 
 The three groups' working:
 
-```
+```text
    x = 1:   1.001 × 1.001  =   1.002001
             0.999 × 0.999  =   0.998001
             subtract       =   0.004000
@@ -1440,7 +1444,7 @@ The three groups' working:
 
 **Minute 5–7 — the simultaneous reveal.** All three cards turned over at the same time, all three numbers written on the board at the same time, in their three columns.
 
-```
+```text
         x = 1        x = 3        x = 5
           2            6           10
 ```
@@ -1457,7 +1461,7 @@ The three groups' working:
 
 **Minute 0–2 — set it up.** On the board:
 
-```
+```text
    loss(w) = (w − 8) × (w − 8)          <- one student: 1 hour, 20 marks
 
    the rule:   new w  =  old w  −  0.3 × slope
@@ -1536,6 +1540,8 @@ The three groups' working:
 
 ## ❓ Questions Students Ask This Week
 
+This section gives answers to questions students tend to ask during this lesson.
+
 **"Is this real calculus?"**
 **Yes. Completely.** The number a calculus class computes by applying a rule is the number you just got by nudging and dividing. A calculus course teaches you about twenty rules for getting there quickly without a calculator, plus the machinery for proving the rules are right. **You are skipping the rules and keeping the thing.** And from Week 20 a computer does the rules for you, so the nudge is what you will actually use — including in Week 19, where you will use it to check a piece of code that is far too complicated to trust.
 
@@ -1567,6 +1573,8 @@ No, and ours only did because we planted a perfect line. On the wobbly version o
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the usual slips in this lesson, why they happen, and what to do.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **You say "derivative" in the first ten minutes.** | It is the word you know for the thing, and it slips out. | **This is the one unrecoverable mistake in the week.** Half the room will stop thinking and start trying to remember school. The folded paper in your pocket exists to stop you. If it slips out anyway: *"forget I said that, we are going to measure it first"*, and mean it. |
@@ -1582,6 +1590,8 @@ No, and ours only did because we planted a perfect line. On the wobbly version o
 ---
 
 ## 🧭 Differentiation
+
+This section gives adjustments for a student who is struggling, flying, or not engaging.
 
 ### If the student is struggling
 
@@ -1646,7 +1656,7 @@ Do the staircase and nothing else. **Two feet, one comparison, three steps, "whi
 
 If they will do one written thing, make it **one nudge**:
 
-```
+```text
 3.001 × 3.001  =  9.006001
 2.999 × 2.999  =  8.994001
                   --------
@@ -1717,6 +1727,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 🔑 Answer Key
+
+This section holds the worked answers for every page and question in this week's materials.
 
 ### Page 12.1 — Nine slopes by hand
 

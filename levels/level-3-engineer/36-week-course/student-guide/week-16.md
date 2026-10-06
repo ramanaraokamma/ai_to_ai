@@ -29,7 +29,7 @@ Every act gets three scores from the stage manager: **singing**, **dancing**, **
 
 An act comes on. Singing `2.0`, dancing `1.0`, stage presence `0.5`. Do her arithmetic with her:
 
-```
+```text
 2.0 × 0.4    =  0.8
 1.0 × (−0.7) = −0.7
 0.5 × 1.2    =  0.6
@@ -79,7 +79,7 @@ The two halves of the answer have names, and both names appear in every error me
 
 Here is that, measured. Take the row `x = [0, 0, 1]`:
 
-```
+```text
 with    b = −0.5:   z = 1.2 − 0.5 = 0.70    →  ReLU says 0.700
 without b (b = 0):  z = 1.2       = 1.20    →  ReLU says 1.200
 ```
@@ -118,7 +118,7 @@ Six squash answers on that little table (ignoring the `z` column, which is befor
 
 Here is a grid of six numbers:
 
-```
+```text
 [[1 2]
  [3 4]
  [5 6]]
@@ -140,7 +140,7 @@ The brackets tell you the same thing if you look: there are three inner `[...]` 
 
 **Look at rows one and two. Same shape out, and the numbers are in different places.** This is the misunderstanding of the week, so here it is with the real printouts side by side:
 
-```
+```text
 G.T =                   G.reshape(2, 3) =
 [[1 3 5]                [[1 2 3]
  [2 4 6]]                [4 5 6]]
@@ -177,7 +177,7 @@ One more word, because next week's code leans on it:
 
 **A concrete example.** Here is the smallest interesting network there is — two inputs, **two** hidden units, one output. Nine numbers, all typed out:
 
-```
+```text
 h1 =  0.5·x₁ + 0.8·x₂ + 0.1
 h2 = −0.3·x₁ + 0.2·x₂ + 0.05
 
@@ -215,7 +215,7 @@ Ten layers with no squash would collapse the same way. A hundred would. **Depth 
 
 **A concrete example, because algebra convinces about half of people and a number convinces the rest.** Take `x = [2.0, −1.0]`:
 
-```
+```text
 h1 = 0.5(2.0) + 0.8(−1.0) + 0.1   =  1.0 − 0.8 + 0.1  =   0.30
 h2 = −0.3(2.0) + 0.2(−1.0) + 0.05 = −0.6 − 0.2 + 0.05 =  −0.75
 
@@ -225,7 +225,7 @@ one line:   out = 1.1(2.0) + 0.4(−1.0) + 0.3   = 2.20 − 0.40 + 0.30 = 2.10  
 
 **Now put a ReLU in the middle.** `h2` was `−0.75`, and ReLU turns that into `0`:
 
-```
+```text
 with ReLU:  out = 1.0(0.30) − 2.0(0) + 0.3 = 0.30 + 0 + 0.30 = 0.60
 ```
 
@@ -248,7 +248,7 @@ You have been measuring steepness since Week 12. Pick a point. Step a thousandth
 
 Do sigmoid at `z = 0` on a calculator, and check my arithmetic:
 
-```
+```text
 sigmoid(0.001) = 1 ÷ (1 + e^(−0.001)) = 1 ÷ 1.9990005 = 0.50025000
 sigmoid(−0.001) = 1 ÷ (1 + e^(0.001)) = 1 ÷ 2.0010005 = 0.49975000
 
@@ -281,7 +281,7 @@ Five values of `z`, three squashes, all measured by nudging. This is real output
 
 Here is the fact you will meet properly in two weeks: **when you stack layers, their steepnesses multiply.** So five sigmoid layers, at sigmoid's absolute best:
 
-```
+```text
 0.25 × 0.25 × 0.25 × 0.25 × 0.25 = 0.0009765625
 ```
 
@@ -289,13 +289,15 @@ Here is the fact you will meet properly in two weeks: **when you stack layers, t
 
 And five ReLU layers:
 
-```
+```text
 1 × 1 × 1 × 1 × 1 = 1
 ```
 
 **All of it.**
 
-That multiplication is the main reason ReLU is the default hidden activation (it is also very cheap to compute). It is not a fashion — it is `0.25⁵` against `1⁵` — and it is a big part of why very deep networks were so hard to train with sigmoid, and got much easier once people switched to ReLU around 2010–2012. (The real chain also multiplies in the weights, which you will meet in Week 18; the squash's share of it is what we are measuring here.) **You have just done, on a calculator, a piece of the arithmetic behind that change.**
+That multiplication is the main reason ReLU is the default hidden activation (it is also very cheap to compute). It is not a fashion — it is `0.25⁵` against `1⁵`.
+
+It is also a big part of why very deep networks were so hard to train with sigmoid, and got much easier once people switched to ReLU around 2010–2012. (The real chain also multiplies in the weights, which you will meet in Week 18; the squash's share of it is what we are measuring here.) **You have just done, on a calculator, a piece of the arithmetic behind that change.**
 
 > **🧑‍🏫 If you are wondering why ReLU's slope says `0.500000` at `z = 0`:** because ReLU has a **corner** there, and a corner has no single steepness. Nudge up and the slope is 1. Nudge down and it is 0. A two-sided nudge splits the difference and reports `0.5`. **This is not a fact anybody discovered — it is a decision somebody made.** PyTorch, in Week 20, will tell you `0`. Both are defensible. Maths genuinely has a hole here and engineering filled it with a choice.
 
@@ -305,7 +307,7 @@ That multiplication is the main reason ReLU is the default hidden activation (it
 
 ## 💻 Type This
 
-Three small files. **Nothing trains, nothing downloads, and every one of them runs in well under a second.**
+In this section you type three small files, step by step. **Nothing trains, nothing downloads, and every one of them runs in well under a second.**
 
 ### Step 1 — the weights, and the shape reflex
 
@@ -329,7 +331,12 @@ print("w.shape    =", w.shape)
 print("rows.shape =", rows.shape)
 ```
 
-**What each new line does.** `np.random.seed(0)` fixes the dice — nothing here is random, but it is a habit worth having in every file. `np.set_printoptions(precision=6, suppress=True)` says "print six decimal places, and never use scientific notation like `1e-05`"; it changes printing only, never the maths. `np.array([...])` builds a grid from a list — `w` has no inner lists, so it is **flat**. `rows` is lists inside a list: four inner lists of three numbers each. And `.shape` is a **property**, not a function — no brackets.
+**What each new line does:**
+
+- `np.random.seed(0)` fixes the dice. Nothing here is random, but it is a habit worth having in every file.
+- `np.set_printoptions(precision=6, suppress=True)` says "print six decimal places, and never use scientific notation like `1e-05`". It changes printing only, never the maths.
+- `np.array([...])` builds a grid from a list. `w` has no inner lists, so it is **flat**. `rows` is lists inside a list: four inner lists of three numbers each.
+- `.shape` is a **property**, not a function, so it has no brackets.
 
 ```text
 w.shape    = (3,)
@@ -394,7 +401,13 @@ for r in rows:
           % (str(r), z, relu(z), sigmoid(z), np.tanh(z)))
 ```
 
-**What each new line does.** `for r in rows:` means "do this once for each row, calling it `r`". `r * w` multiplies **matching positions** — first with first, second with second, third with third — giving three products. `.sum()` adds those three up, and `+ b` adds the bias. **That single line is "multiply, add".** The `%` string is a layout instruction: `%8.3f` means "a decimal, eight characters wide, three places after the point", so the columns line up. `np.tanh(z)` is the third squash, built into numpy.
+**What each new line does:**
+
+- `for r in rows:` means "do this once for each row, calling it `r`".
+- `r * w` multiplies **matching positions** — first with first, second with second, third with third — giving three products.
+- `.sum()` adds those three up, and `+ b` adds the bias. **That single line is "multiply, add".**
+- The `%` string is a layout instruction: `%8.3f` means "a decimal, eight characters wide, three places after the point", so the columns line up.
+- `np.tanh(z)` is the third squash, built into numpy.
 
 ```text
 row                       z     ReLU   sigmoid     tanh
@@ -587,6 +600,8 @@ And the **`with ReLU` column disagrees on three of the five rows** — `(2.0, �
 
 ## 🔍 Worked Examples
 
+This section applies the week's ideas to three new cases, so you can check your own working against finished ones.
+
 ### Worked Example 1 — A spam-filter neuron (three new weights)
 
 A neuron that guesses whether a text is spam. Three inputs: **exclamation marks**, **links**, **all-caps words**. Weights `w = [0.9, 1.4, −0.6]`, bias `b = −1.5`.
@@ -599,7 +614,7 @@ w.shape = (3,)  rows.shape = (3, 3)
 
 **Step 2 — row one by hand.** `x = [2.0, 1.0, 0.0]` — two exclamation marks, one link, no shouting:
 
-```
+```text
 2.0 × 0.9    =  1.8
 1.0 × 1.4    =  1.4
 0.0 × (−0.6) =  0.0
@@ -683,7 +698,7 @@ One row pulled out of a 2-D grid is **flat**, `(3,)`. Transposing it does nothin
 
 A different two-layer network, no squash, predicting a house price from **rooms** (`x₁`) and **distance to the station in km** (`x₂`):
 
-```
+```text
 h1 =  0.2·x₁ + 1.5·x₂ − 0.4
 h2 =  0.6·x₁ − 0.9·x₂ + 0.2
 
@@ -692,7 +707,7 @@ out = 2.0·h1 + 1.0·h2 − 0.1
 
 **Step 1 — substitute and collect.**
 
-```
+```text
 out = 2.0(0.2x₁ + 1.5x₂ − 0.4) + 1.0(0.6x₁ − 0.9x₂ + 0.2) − 0.1
 
 x₁ terms:   0.4 + 0.6 = 1.0
@@ -718,7 +733,7 @@ out = 1.0·x₁ + 2.1·x₂ − 0.7
 
 **Step 3 — find where ReLU changed the answer, and say why.** Look at row 2, `(1.0, 4.0)`:
 
-```
+```text
 h1 = 0.2(1.0) + 1.5(4.0) − 0.4 = 0.2 + 6.0 − 0.4 =  5.80
 h2 = 0.6(1.0) − 0.9(4.0) + 0.2 = 0.6 − 3.6 + 0.2 = −2.80
 ```
@@ -729,7 +744,7 @@ h2 = 0.6(1.0) − 0.9(4.0) + 0.2 = 0.6 − 3.6 + 0.2 = −2.80
 
 ## 🐞 When It Breaks
 
-Errors are not failure. They are the fastest reading practice you will get all year.
+This section shows four mistakes from this week, what each one looks like, and how to read it. Errors are not failure. They are the fastest reading practice you will get all year.
 
 ### Break 1 — `max` where you meant `np.maximum`
 
@@ -827,6 +842,8 @@ a.reshape(1, 3).T.shape = (3, 1)
 
 ## 🎲 What We Did In Class
 
+This section records the class activity, so you can repeat it at home if you missed it.
+
 **Human Neuron, and then we sent the Squasher out of the room.**
 
 ### Part 1 — six people became one neuron
@@ -853,7 +870,7 @@ The four rows, and the twelve squash answers we filled in with calculators:
 
 Then the two-layer network went on the board with **no ReLU anywhere in it**, and we substituted:
 
-```
+```text
 out = 1.0(0.5x₁ + 0.8x₂ + 0.1) − 2.0(−0.3x₁ + 0.2x₂ + 0.05) + 0.3
 
 x₁ terms:  0.5 + 0.6 = 1.1
@@ -889,6 +906,8 @@ Two crescents, hooked into each other like links of a chain. **Try to separate t
 
 ## 💬 Talk About It
 
+These three questions are for discussion with a partner or at home. Each has a hint after it.
+
 **1. The bias is one number out of four in this neuron. Is it really pulling its weight?**
 
 *Hint:* start by working out what it *does*, not what it is worth. Run `[0, 0, 1]` with the bias (`z = 0.70`) and without (`z = 1.20`). Then ask the harder question: **is there any way to get the same effect using only the three weights?** Try it — you cannot, because the weights only ever get multiplied by the inputs, so when the inputs are all zero the weights can do nothing at all and the bias is the only thing left. **The bias is the only knob that has an opinion about an empty row.**
@@ -904,6 +923,8 @@ Two crescents, hooked into each other like links of a chain. **Try to separate t
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists four believable but wrong ideas from this week, each beside the right version.
 
 ### Trick 1 — "`.T` and `.reshape` are the same thing, they both gave `(2, 3)`"
 
@@ -940,6 +961,8 @@ If you leave this week believing the squash is cosmetic, the week has failed eve
 
 ## 🌍 Where You've Seen This
 
+This section connects the week to things you already use.
+
 1. **Your phone unlocking with your face.** A stack of layers of exactly this neuron, with a convolution in front of it. The neuron does not change between Week 16 and a phone — only how many of them there are.
 2. **The "you might also like" row on a streaming app.** Weighted sums of things you watched, squashed, stacked, and turned into a score per title.
 3. **Every spam filter you have ever benefited from.** Worked Example 1 is a small honest version of the real thing: features counted, weighted, summed, squashed.
@@ -975,6 +998,8 @@ NETWORKS, is still dashed — you are building the part a network is made of, no
 ---
 
 ## 🔑 Remember This
+
+These are the six points to keep from the week.
 
 - **A neuron is multiply, add, squash.** `z` is multiply-and-add and can be any number at all. `a` is the squash and it is what the neuron says.
 - **`(3, 2)` means three rows, two columns.** Rows first, columns second, and **printing the shape is the first thing you do when anything is confusing.**

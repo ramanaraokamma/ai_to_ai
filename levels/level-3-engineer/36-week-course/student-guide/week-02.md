@@ -83,6 +83,8 @@ So: last year two piles. This year three.
 
 ## 🧠 The Big Idea
 
+This section explains the three piles, how to cut them, and how to score a model that has learned nothing.
+
 ### 1. Three piles, and they are three kinds of exam you already know
 
 | Pile | The exam it is | What you may do with it |
@@ -867,21 +869,35 @@ If you missed it, here is the whole lesson. You need a laptop, a pen, and twenty
 
 ## 💬 Talk About It
 
+Three questions to argue over with a partner. Each has a hint; try your own answer first.
+
 **1. Where did 60 / 20 / 20 come from? Is it a rule?**
 
-*Hint:* there are two pulls and they point opposite ways. **Bigger held-out piles:** 400 rows with 115 positives gives an AUC that wobbles by about 0.03 either way from luck alone (so a difference of 0.01 or 0.02 means little); cut it to 40 rows and Worked Example 2 shows coin flips scoring 0.7747. **Smaller held-out piles:** every held-out row is a row your model never learns from, and with only 2000 rows, moving from 60% to 80% training is 400 extra examples. So 60/20/20 is a **convention that lands in a sensible place for a few thousand rows.** People with ten million rows use 98/1/1, because 1% of ten million is a hundred thousand and that is plenty. People with two hundred rows abandon the scheme entirely and use cross-validation, which is Week 11. **There isn't a right answer, so there has to be a written answer.**
+*Hint:* there are two pulls and they point opposite ways.
+
+**Bigger held-out piles:** 400 rows with 115 positives gives an AUC that wobbles by about 0.03 either way from luck alone (so a difference of 0.01 or 0.02 means little); cut it to 40 rows and Worked Example 2 shows coin flips scoring 0.7747.
+
+**Smaller held-out piles:** every held-out row is a row your model never learns from, and with only 2000 rows, moving from 60% to 80% training is 400 extra examples.
+
+So 60/20/20 is a **convention that lands in a sensible place for a few thousand rows.** People with ten million rows use 98/1/1, because 1% of ten million is a hundred thousand and that is plenty. People with two hundred rows abandon the scheme entirely and use cross-validation, which is Week 11. **There isn't a right answer, so there has to be a written answer.**
 
 **2. Can I look at the test set just once in the middle, to see how I am doing?**
 
-*Hint:* suppose you look and it says 0.68. What do you do next? **Either** you change something — in which case that number just chose your model, and it is now a validation pile — **or** you change nothing, in which case looking bought you nothing at all. There is no third option: the number cannot inform you without also contaminating you. Then find the version that *is* allowed, because professionals do use it: **look at the test pile's size, shape and class balance, but never at a score on it.** We did exactly that — 400 rows, 115 late. That tells you nothing about your model, so it costs nothing.
+*Hint:* suppose you look and it says 0.68. What do you do next? **Either** you change something — in which case that number just chose your model, and it is now a validation pile — **or** you change nothing, in which case looking bought you nothing at all. There is no third option: the number cannot inform you without also contaminating you.
+
+Then find the version that *is* allowed, because professionals do use it: **look at the test pile's size, shape and class balance, but never at a score on it.** We did exactly that — 400 rows, 115 late. That tells you nothing about your model, so it costs nothing.
 
 **3. If none of the twenty random models learned anything, why did they get different scores?**
 
-*Hint:* start with the mechanism. Each one hands out 400 random numbers; purely by chance some of the higher numbers land on late orders, and AUC rewards that. Roll again and the pattern is somewhere else. So the twenty scores scatter around 0.5 — ours ran from **0.4549 to 0.5853** — and the width of that scatter depends mostly on **how many rows are in the pile** (and how many of them are late). Then push it: what would the twenty scores look like on 4,000 validation rows? Much tighter. On 40? Look at Worked Example 2. Finally, the honest closer: this is why a validation score is the right tool for *comparing* and the wrong tool for *reporting*. Comparing and reporting are different jobs, and this is the week they got different piles.
+*Hint:* start with the mechanism. Each one hands out 400 random numbers; purely by chance some of the higher numbers land on late orders, and AUC rewards that. Roll again and the pattern is somewhere else. So the twenty scores scatter around 0.5 — ours ran from **0.4549 to 0.5853** — and the width of that scatter depends mostly on **how many rows are in the pile** (and how many of them are late).
+
+Then push it: what would the twenty scores look like on 4,000 validation rows? Much tighter. On 40? Look at Worked Example 2. Finally, the honest closer: this is why a validation score is the right tool for *comparing* and the wrong tool for *reporting*. Comparing and reporting are different jobs, and this is the week they got different piles.
 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four sentences that sound sensible, each shown with what is wrong and what is right.
 
 ### Trick 1 — "the test set is just a bigger validation set"
 

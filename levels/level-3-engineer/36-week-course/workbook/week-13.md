@@ -34,7 +34,9 @@ ________________________________________________________________
 
 ## 🔢 Do the Maths by Hand
 
-**Calculator only. No code on this page.** You need the `e^x` key — on most calculators it is above `ln`, so you reach it with `SHIFT` or `2nd`. **The recipe for `e^(−z)`: type the number, press `+/−`, press `e^x`.**
+This section is for doing the squash and its reverse by hand, so you can see every step.
+
+**Calculator only. No code on this section.** You need the `e^x` key — on most calculators it is above `ln`, so you reach it with `SHIFT` or `2nd`. **The recipe for `e^(−z)`: type the number, press `+/−`, press `e^x`.**
 
 ### M1 — is it a probability?
 
@@ -84,7 +86,7 @@ Two steps each. `odds = p ÷ (1 − p)`, then `z = ln(odds)`. **Then check it co
 
 **1. `p = 0.90`**
 
-```
+```text
 odds = 0.90 ÷ ______ = ______________
 z    = ln(______) = ______________
 check: e^(−______) = ______________ ,  1 ÷ ______________ = ______________
@@ -92,7 +94,7 @@ check: e^(−______) = ______________ ,  1 ÷ ______________ = ______________
 
 **2. `p = 0.62`**
 
-```
+```text
 odds = 0.62 ÷ ______ = ______________
 z    = ln(______) = ______________
 check: e^(−______) = ______________ ,  1 ÷ ______________ = ______________
@@ -100,7 +102,7 @@ check: e^(−______) = ______________ ,  1 ÷ ______________ = ______________
 
 **3. `p = 0.50`**
 
-```
+```text
 odds = 0.50 ÷ ______ = ______________
 z    = ln(______) = ______________
 check: e^(−______) = ______________ ,  1 ÷ ______________ = ______________
@@ -108,7 +110,7 @@ check: e^(−______) = ______________ ,  1 ÷ ______________ = ______________
 
 **4. `p = 0.05`**
 
-```
+```text
 odds = 0.05 ÷ ______ = ______________
 z    = ln(______) = ______________
 check: e^(______) = ______________ ,  1 ÷ ______________ = ______________
@@ -149,7 +151,9 @@ ________________________________________________________________
 
 ## 🔎 Predict the Output
 
-**Write your prediction in pen before you run anything.** Five snippets. Every one starts with `import numpy as np`.
+This section is for committing to a prediction before the computer answers.
+
+**Write your prediction in pen before you run anything.** There are five snippets. Every one starts with `import numpy as np`.
 
 ### P1 — the two presses that define `e`
 
@@ -178,7 +182,7 @@ print(np.where(p >= 0.5, "late", "on time").shape)
 
 **My prediction:**
 
-```
+```text
 line 1: ______________________________________
 line 2: ______________
 line 3: ______________
@@ -186,7 +190,7 @@ line 3: ______________
 
 **What it really printed:**
 
-```
+```text
 line 1: ______________________________________
 line 2: ______________
 line 3: ______________
@@ -248,6 +252,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading output, matching words to meanings and spotting faulty lines.
 
 **A1. Match the word to the thing.** Write the letter.
 
@@ -369,6 +375,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing your own short programs. Each task gives the output to aim for and a box for your code.
 
 ### B1 — one line, eight raw scores
 
@@ -497,7 +505,7 @@ biggest gap between z and ln(odds): 0.000000000000
 
 ## 🐞 Fix the Broken Program
 
-This program has **three** bugs: one **shape** bug, one **runtime** bug, and one **silent logic** bug. The real error messages are below, in the order you meet them.
+This section is for tracking down bugs from the messages a program prints. The program below has **three** bugs: one **shape** bug, one **runtime** bug, and one **silent logic** bug. The real error messages are below, in the order you meet them.
 
 ```python
 """broken13.py - eight orders into eight chances. THREE bugs."""
@@ -635,6 +643,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This section is a two-part puzzle on the sigmoid and its reverse, using a calculator.
+
 ### Part 1 — The Ladder
 
 Five probabilities. **Take each one backwards to its raw score**, using `odds` then `ln`. Every answer lands within `0.001` of a whole number.
@@ -683,6 +693,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions are for writing a longer, reasoned answer in your own words.
+
 **T1.** The sigmoid can never reach `0` or `1`, and yet the computer printed `squash(-1000) = 0.0000` and `squash(1000) = 1.0000`. **Write a paragraph** on whether the machine is lying. Use the fact that `e^(−1000)` is smaller than the smallest decimal the machine can store, and finish by arguing for one of two policies: *clip the probabilities into a safe range and move on*, or *never store probabilities at all — store `z` and work in log-odds*. Say which you would pick for a hospital and which for a pizza shop, and why they might differ.
 
 ________________________________________________________________
@@ -711,9 +723,13 @@ ________________________________________________________________
 
 ## 🛠️ Build It — The Overflow Experiment
 
+This section is for running two small programs and recording exactly what the screen shows.
+
 **Two files, and the second is the one that earns the marks.** Total about 20 minutes.
 
 ### Part A — `overflow.py`: both squashers, side by side
+
+Type `overflow.py` and run it.
 
 **Type it, run it, and paste what happens — word for word, including the warning.**
 
@@ -758,6 +774,8 @@ ________________________________________________________________
 **That is surprising. Why does it happen?** ______________________________
 
 ### Part B — `why_safe.py`: the arithmetic behind the warning
+
+Type and run `why_safe.py`, then fill in the table underneath it.
 
 ```python
 import numpy as np
@@ -817,6 +835,8 @@ Two entries today, and the second is the dangerous category: *no error, no crash
 
 ## 🎨 Draw It
 
+This section is for drawing the S-curve yourself.
+
 Draw the **S-curve** — from your own four hand-computed points, not from a screen.
 
 ![Draw the squasher](../figures/fig-w13-8-draw-frame.svg)
@@ -835,6 +855,8 @@ Draw the **S-curve** — from your own four hand-computed points, not from a scr
 ---
 
 ## 📊 Self-Check
+
+This section is for rating how sure you are of each skill from the week.
 
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
@@ -856,6 +878,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Open the box below only after you have attempted every page. Answers follow the same order as the workbook.
 
 <details>
 <summary>Check your answers</summary>
@@ -941,7 +965,7 @@ p = 0.05   odds = 0.052632   z = ln(odds) = -2.944439   back again = 0.050000
 
 Longhand, so every division is visible:
 
-```
+```text
 1.  odds = 0.90 ÷ 0.10 = 9.000000        z = ln(9) = 2.197225
     check: e^(−2.197225) = 0.111111 ,  1 ÷ 1.111111 = 0.900000   ✓
 2.  odds = 0.62 ÷ 0.38 = 1.631579        z = ln(1.631579) = 0.489548
@@ -1047,7 +1071,7 @@ Longhand, so every division is visible:
 
 **A5.** The eight boxes, top to bottom:
 
-```
+```text
 1.  e^(−1.4)          = 0.246597
 2.  1 + 0.246597      = 1.246597
 3.  1 ÷ 1.246597      = 0.8022        <- p
@@ -1307,7 +1331,7 @@ Order 1 has an empty oven and no distance and the program gives it a **95%** cha
 
 **T2 — model answer.** With base 2:
 
-```
+```text
 z = 0 :  2^0 = 1         1 ÷ (1 + 1) = 0.500000
 z = 1 :  2^(−1) = 0.5    1 ÷ 1.5     = 0.666667
 z = −1:  2^1 = 2         1 ÷ 3       = 0.333333

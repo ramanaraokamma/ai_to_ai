@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table is the week on one page: what is taught, how long it takes, and what you need.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes |
@@ -98,7 +100,7 @@ They are different numbers. And if you use 29.0, then the number you wrote into 
 
 `add_indicator=True` builds it for you. In our table it is a **hypothesis, not a gift** — and Week 5 taught the student exactly what to do with a hypothesis. Ablate it:
 
-```
+```text
 add_indicator=False cols= 20  accuracy=0.7600  roc_auc=0.7752
 add_indicator=True  cols= 21  accuracy=0.7550  roc_auc=0.7723
 ```
@@ -115,7 +117,7 @@ Our poisoned column is `customer_called_support`: **did this customer ring up to
 
 Here is what it does to the score:
 
-```
+```text
 with customer_called_support     accuracy=0.9700  roc_auc=0.9762
 without it                       accuracy=0.7600  roc_auc=0.7752
 the jump one column bought       +0.2011
@@ -132,7 +134,7 @@ Four audits catch it, each louder than the last, and then a fifth thing that is 
 
 **Audit 2 — count it against the answer.**
 
-```
+```text
 late                        0    1
 customer_called_support           
 0                        1413   35
@@ -145,7 +147,7 @@ Read the bottom row: **552 orders had a support call, and 540 of them were late.
 
 **Audit 4 — which knob is the model turning?**
 
-```
+```text
 num__customer_called_support    3.482
 num__distance_km                0.804
 ```
@@ -160,7 +162,7 @@ For `customer_called_support` the answer is no, and that single question is wort
 
 **Want to make it visceral? Show what the leaky model does on the day it is switched on.** Its column is 0 for every new order, because nobody has rung up yet:
 
-```
+```text
 --- in the lab, where the column is filled in ---
 accuracy 0.9700   recall 0.9217   roc_auc 0.9762
 
@@ -179,7 +181,7 @@ late orders in these 400 rows: 115    late orders it flagged: 2
 
 To make this visible we generate a small world where the rules **drift**. Thirty weeks, 100 orders a week, two features. Feature `x1` starts out mattering enormously and slowly stops mattering:
 
-```
+```text
 how much x1 matters, week by week:
   week  0 : 2.0
   week 15 : 0.05
@@ -190,7 +192,7 @@ That is `2.0 − 0.13 × week`, and you can check any row of it on paper: 2.0 �
 
 Now split the same 3,000 rows two ways.
 
-```
+```text
 rows in the random split : 2250 train, 750 test
 rows in the time split   : 2200 train, 800 test
 
@@ -216,7 +218,7 @@ This is the one that sounds harmless. Surely a median is just a median? So here 
 
 **Demonstration A — on our delivery table, it is worth nothing measurable.**
 
-```
+```text
 median used by the wrong version : 29.0
 WRONG - filled in before splitting           roc_auc=0.7751
 RIGHT - imputer inside the Pipeline          roc_auc=0.7752
@@ -231,7 +233,7 @@ Generate 200 rows and 2,000 columns of pure random noise, and a label that is a 
 
 Then commit the bug: **pick the 20 columns that look most related to the answer, using all 200 rows and all 200 labels**, and only then measure.
 
-```
+```text
 WRONG - 20 columns chosen while looking at every label
   five scores: [0.875 0.75  0.8   0.725 0.675]
   their total: 3.825   divided by 5: 0.765
@@ -387,6 +389,8 @@ signal of progress the picture ever gives, and they should be looking for it.
 
 ## 🧰 Prep Checklist
 
+This section lists everything to prepare before the lesson, and holds the complete runnable files.
+
 ### 25 minutes the night before
 
 **1. (1 min) Check the folder.**
@@ -511,6 +515,8 @@ the gap           0.2890
 
 ## ⏱️ The Lesson, Minute by Minute
 
+Use this section to run the class: the timing table first, then each segment in order.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — The Model That Read the Answer | 7 | 7 | The hospital story, and 0.9762 on the board |
@@ -525,7 +531,7 @@ the gap           0.2890
 
 **Do this:** Write nothing but this on the board.
 
-```
+```text
 Week 5's best honest score:   0.7843
 This week's model:            0.9762
 ```
@@ -585,7 +591,7 @@ Pause properly here.
 
 **Do this:** On the board:
 
-```
+```text
 1140 training rows have a value.  1140 is even.
 the two middle ones are number 570 and number 571:
 
@@ -889,6 +895,8 @@ And the sentence for this week:
 
 ## 🎲 The Activity, In Full
 
+This section gives the full set-up and running order of the week's activity.
+
 ### The 0.9762 Crime Scene
 
 **Setup (1 minute).** Every student gets:
@@ -1014,6 +1022,8 @@ RIGHT - the choosing is inside the Pipeline
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions students raise this week, each with a suggested reply.
+
 **"If the column is real and the value is true, how is using it cheating?"**
 
 **It is not cheating and nobody lied.** Every value in `customer_called_support` is accurate. The problem is not truth, it is **timing**.
@@ -1094,6 +1104,8 @@ One sentence: it splits the rows into five piles, trains five times, and gives y
 
 ## 🧭 Differentiation
 
+This section adjusts the lesson for a student who is struggling, flying, or not engaging.
+
 ### If the student is struggling
 
 **Cut, in this order:** the temporal flavour (keep the two numbers 0.8139 and 0.5249 as a story, drop the script); then the missing-indicator ablation (keep the imputation, drop the indicator); then the four audits shrink to two — the crosstab and the with/without comparison.
@@ -1112,7 +1124,7 @@ One sentence: it splits the rows into five piles, trains five times, and gives y
 
 **The version of the maths that skips the counting.** The median of 1,140 numbers is unpleasant to think about. Do it on five instead, on paper:
 
-```
+```text
 five drivers:   4   12   29   30   55        median = 29  (the middle one)
 four drivers:        12   29   30   55     median = (29 + 30) / 2 = 29.5
 ```
@@ -1121,7 +1133,7 @@ four drivers:        12   29   30   55     median = (29 + 30) / 2 = 29.5
 
 **The copy-this-exactly scaffold.** Give the leak report as a fill-in-the-blanks form, because the *writing* is the marked part and a blank page is the obstacle:
 
-```
+```text
 THE LEAK I FOUND:  ______________________________
 
 which flavour:  target  /  temporal  /  preprocessing   (circle one)
@@ -1154,7 +1166,7 @@ None of these needs syntax from a later week.
 
 Write these five column names on it and nothing else:
 
-```
+```text
 distance_km
 weather
 prep_minutes
@@ -1215,6 +1227,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section says what to assign at the end of class and how to introduce it.
 
 **Say this:**
 

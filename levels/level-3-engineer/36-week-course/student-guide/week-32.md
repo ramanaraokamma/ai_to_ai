@@ -30,7 +30,7 @@ and    55
 rude   10
 ```
 
-Here is a game. I am going to read you **one word** out of a review, and you tell me whether the customer was happy or angry. Ready.
+Here is a game. I read you **one word** out of a review, and you say whether the customer was happy or angry.
 
 The word is: **`and`**.
 
@@ -44,7 +44,7 @@ So one of those two words told you everything and the other told you nothing. **
 
 That is not slightly backwards. It is completely backwards. **The word carrying the information has a fifth of the weight of the word carrying none.**
 
-So: what do you do about it? There are two families of answer and they are genuinely different.
+What do you do about it? There are two families of answer, and they are genuinely different.
 
 **One — delete the common words.** That is last week's stopword list, and you already know what it costs: you dropped `not`, and a happy customer and a furious customer became the same row. **Deleting is irreversible, and you are guessing which words to delete.**
 
@@ -59,6 +59,8 @@ And then the second half of today is a completely different question. Once every
 ---
 
 ## 🧠 The Big Idea
+
+This section builds TF-IDF and cosine similarity one piece at a time, each with real numbers from the four-review corpus.
 
 ### 1. Two different kinds of counting: `tf` and `df`
 
@@ -767,6 +769,8 @@ And the highest idf is `4.4177`, shared by **15** words. Those are the words app
 
 ## 🔍 Worked Examples
 
+These three examples work through the week's calculations step by step, so you can check your own working against them.
+
 ### Worked Example 1 — `pizza` in d1, all four stages
 
 **The job:** reproduce a different cell of the matrix, one where `tf = 1`, so the multiplication is trivial and the L2 step is all the work.
@@ -1024,6 +1028,8 @@ print("2 dp idf -> %.6f" % (parts[0] / np.sqrt((parts ** 2).sum())))
 
 ## 🎲 What We Did In Class
 
+This section records what the class did, in order, so you can repeat it or catch up if you missed it.
+
 ### Part A — TF-IDF By Hand, All The Way (12 minutes)
 
 **One word, in one document, through all four stages on paper.** Then `TfidfVectorizer` prints its number and **the two are compared digit by digit. Nobody moved on until they matched.**
@@ -1138,6 +1144,8 @@ And the sentence the whole of next week is built on:
 
 ## 💬 Talk About It
 
+These questions are for discussing with a partner or at home. Each has a hint to use if you get stuck.
+
 **1. IDF turned `and` down to `1.0855` — but it also gave `cold` only `2.6260`, because half your corpus is complaints. Is IDF measuring "usefulness"?**
 
 *Hint:* start by saying exactly what IDF measures, in one sentence, with no adjectives: **how many of your documents contain the word.** That is all. It has no opinion about meaning, sentiment, grammar or importance. So the fact that `cold` scores low is not IDF failing — **it is IDF succeeding at a job that is not quite the one you wanted.** Then the interesting half: `and` is useless **in every corpus that has ever existed**, whereas `cold` is uninformative *in this corpus* because complaints are half of it. **Those two facts have the same IDF signature and completely different causes.** So: could any formula based only on counting documents tell them apart? (No.) **What would you need instead?** (Labels. Which is exactly Week 33.)
@@ -1153,6 +1161,8 @@ And the sentence the whole of next week is built on:
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four claims that sound right and are not. Read each one, then the reason it fails.
 
 ### Trick 1 — "a cosine of 0.8 means 80 per cent similar"
 
@@ -1192,6 +1202,8 @@ And the sentence the whole of next week is built on:
 ---
 
 ## 🌍 Where You've Seen This
+
+This section shows where the same ideas run in tools you already use.
 
 1. **Every search box you have ever typed into.** Your query becomes a short row, each document becomes a row, and the results are ranked by the angle between them. **The reason a 4,000-word article does not automatically beat a perfect two-line answer is the division at the end of TF-IDF.**
 2. **"Related articles" and "you might also like".** One cosine similarity call over a matrix of documents, `argmax` down each row, skip the diagonal. **You wrote that exact code in Step 8.**

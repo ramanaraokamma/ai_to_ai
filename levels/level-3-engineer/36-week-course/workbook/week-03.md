@@ -38,7 +38,7 @@ ________________________________________________________________
 
 **M1 — count the output columns before you run anything.**
 
-```
+```text
 ROUTE 1   the number columns
           distance_km, items, prep_minutes, order_hour,
           driver_experience_months                     = ______ columns in
@@ -82,7 +82,7 @@ ________________________________________________________________
 
 **M3 — the score, read against last week's zero.**
 
-```
+```text
 validation ROC-AUC                    =  0.7541
 the baseline, same pile               =  0.5000
                                          --------
@@ -102,7 +102,7 @@ ________________________________________________________________
 
 **M4 — the preparation learns numbers too.** Four numbers from the chapter, and the two differences between them.
 
-```
+```text
 the hole-filling median
   learned from the 1200 TRAIN rows       =  30.0
   learned from all 2000 rows             =  29.0
@@ -131,6 +131,8 @@ ________________________________________________________________
 ---
 
 ## 🔎 Predict the Output
+
+This section is for committing to a prediction before the computer answers.
 
 **Write your prediction in pen before you run anything.** **One of these four raises an error, and one of them prints something you have to look at twice.**
 
@@ -271,6 +273,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading pipelines, shapes and files without running them. Fill in every blank in pen.
 
 **A1. Match the word to the thing.** Write the letter.
 
@@ -445,6 +449,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing short programs of your own, starting from one line.
 
 ### B1 — one line, plus a print
 
@@ -814,6 +820,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions are for arguing a position in writing. Use the lines below each one.
+
 **T1.** Preparing before splitting cost **0.000092** of AUC on this data — invisible, and in the wrong direction. Somebody says: *"so it does not matter; the pipeline is bureaucracy."* **Write a paragraph** answering them. What would you have to measure to know whether it mattered on *their* data — and is "I measured it and it was tiny" a good enough reason to stop welding? What is the difference between a mistake that is small and a mistake that is invisible?
 
 ________________________________________________________________
@@ -1039,6 +1047,8 @@ ________________________________________________________________
 
 ## 📊 Self-Check
 
+This page is for rating yourself at the end of the week. Circle one face per row.
+
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
 | count the output columns on paper before running anything: 5 + 5 + 7 + 3 = 20 | | | |
@@ -1060,6 +1070,8 @@ ________________________________________________________________
 
 ## ✅ Answers
 
+This section is for checking your work after you have finished every page above. Open it last.
+
 <details>
 <summary>Check your answers</summary>
 
@@ -1079,7 +1091,7 @@ ________________________________________________________________
 
 **M1.**
 
-```
+```text
 ROUTE 1   5 columns in
           fill the holes  -> still 5
           one ruler       -> still 5
@@ -1114,7 +1126,7 @@ GLUED     5 + 15 = 20
 
 **M3.**
 
-```
+```text
 above the zero                =  0.7541 − 0.5000  =  0.2541
 room available                =  1.0000 − 0.5000  =  0.5000
 fraction of the room taken    =  0.2541 ÷ 0.5000  =  0.5082
@@ -1126,7 +1138,7 @@ fraction of the room taken    =  0.2541 ÷ 0.5000  =  0.5082
 
 **M4.**
 
-```
+```text
 median: 30.0 − 29.0                = 1.0
 ruler centre: 3.5193 − 3.4591      = 0.0602
 ```

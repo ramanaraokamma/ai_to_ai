@@ -26,6 +26,8 @@
 
 ## 🎯 Lesson Objectives
 
+This section lists what a student should be able to do, and show, by the end of the lesson.
+
 By the end of the lesson the student can:
 
 1. **Serve their Week 34 artifact over local HTTP** using only the standard library, bound to `127.0.0.1`, with a `GET /health` and a `POST /predict`, the model loaded **once at start-up**, and say out loud why `127.0.0.1` and not `0.0.0.0`.
@@ -38,6 +40,8 @@ Observable evidence: `curl -s http://127.0.0.1:8000/health` returning a version 
 ---
 
 ## 🧑‍🏫 What YOU Need to Know First
+
+This section is your background reading. It covers the ideas you need before teaching: what an HTTP request is, each new line of code, the four checks, subgroup metrics and the monitoring number.
 
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not whole files** — each carries on from the one above. **The complete runnable files are in the Prep Checklist and the Answer Key.**
 
@@ -156,20 +160,20 @@ The mean is a bad summary of a latency, because latencies have a long tail: near
 
 **Here is the whole thing, worked by hand on five real numbers from our log.** Sort them:
 
-```
+```text
 0.27   0.27   0.31   0.38   3.27
   0      1      2      3      4     ← positions
 ```
 
 Numpy's rule: the p95 sits at position `0.95 × (n − 1)`, counting from zero.
 
-```
+```text
 0.95 × (5 − 1)  =  0.95 × 4  =  3.8
 ```
 
 Position 3.8 is not a real position — it is between position 3 and position 4, **eight tenths of the way along**. So take the value at 3, and add eight tenths of the gap to the value at 4:
 
-```
+```text
 gap   = 3.27 − 0.38 = 2.89
 p95   = 0.38 + 0.80 × 2.89
       = 0.38 + 2.312
@@ -232,7 +236,7 @@ longer (6 words or more)    19    0.684      1.000     0.333
 
 And the counts check out, which is how you know you have not miscounted:
 
-```
+```text
 13 + 15 = 28    ✅ every row is in exactly one of the two groups
  6 + 12 = 18    ✅ six right in the negation group, twelve right in the other
 18 ÷ 28 = 0.643 ✅ which is the ALL row
@@ -276,7 +280,12 @@ in the 0.45-0.65 uncertainty band: 16 of 111 (14.4%)
 1.0000  lorem ipsum dolor sit amet
 ```
 
-**Why this number degrades for *this* model, specifically.** It is TF-IDF. A word the vectorizer has never seen contributes *exactly nothing* — it is silently dropped. So a rising OOV rate means a rising share of every input is invisible to the model, and the answer rests on fewer and fewer words. Keep two cases apart: **if only some words are unknown they are ignored and the known ones decide alone** (`delicious` and `delicious xyzzy plugh quux` both score `0.6928` — TF-IDF normalises over the words it *can* see, so there is no drift to the middle); **if every word is unknown, nothing reaches the classifier** and the answer is the bias-only output, `0.4887`, which sits inside the 0.45-0.65 band. **That is a mechanism, not a vibe, and naming the mechanism is what lifts a monitoring plan a whole rubric level.**
+**Why this number degrades for *this* model, specifically.** It is TF-IDF. A word the vectorizer has never seen contributes *exactly nothing* — it is silently dropped. So a rising OOV rate means a rising share of every input is invisible to the model, and the answer rests on fewer and fewer words. Keep two cases apart.
+
+- **If only some words are unknown, they are ignored and the known ones decide alone** (`delicious` and `delicious xyzzy plugh quux` both score `0.6928` — TF-IDF normalises over the words it *can* see, so there is no drift to the middle).
+- **If every word is unknown, nothing reaches the classifier**, and the answer is the bias-only output, `0.4887`, which sits inside the 0.45-0.65 band.
+
+**That is a mechanism, not a vibe, and naming the mechanism is what lifts a monitoring plan a whole rubric level.**
 
 **And one honest wrinkle worth saying out loud.** The band rate over our 111 logged requests is `14.4%`. On the 16 test reviews it is `3 of 16 = 18.8%`. **Different, and neither is wrong** — they are different traffic. **A baseline has to come from the traffic you are actually going to watch**, which means you cannot write the alarm level until you have logged some real requests. That is a genuinely useful thing to have learned at fourteen.
 
@@ -340,6 +349,8 @@ section has to say.
 ---
 
 ## 🧰 Prep Checklist
+
+This section is what to prepare before the lesson, and it holds the complete runnable files.
 
 ### 35 minutes the night before
 
@@ -646,6 +657,8 @@ longer (6 words or more)    19    0.684      1.000     0.333
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the lesson plan: what to say, ask, expect and watch for at each step.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — Four Pieces of Rubbish, and One Missing Line | 7 | 7 | You attack your own service live; then the log, and what isn't in it |
@@ -739,7 +752,7 @@ $ wc -l logs/predictions.jsonl
 
 **Do this:** Board, four parts of a request, in a column:
 
-```
+```text
 METHOD    GET  or  POST
 PATH      /health  or  /predict
 HEADERS   Content-Length: 39
@@ -752,7 +765,7 @@ BODY      {"text": "cold food and a rude driver"}
 
 **Do this:** Beside it, the three status codes:
 
-```
+```text
 200   fine, here it is
 400   YOU sent something wrong
 404   that door doesn't exist
@@ -766,7 +779,7 @@ BODY      {"text": "cold food and a rude driver"}
 
 **Do this:** Write the four checks, in order, numbered.
 
-```
+```text
 1  is there a body, and is it a sane size?
 2  is it JSON?
 3  is it an object with a "text" field?
@@ -787,7 +800,7 @@ BODY      {"text": "cold food and a rude driver"}
 
 **Do this:** Now `127.0.0.1`. Write both on the board:
 
-```
+```text
 HTTPServer(("127.0.0.1", 8000), Handler)     ← only this computer
 HTTPServer(("0.0.0.0",   8000), Handler)     ← anything on the network
 ```
@@ -800,7 +813,7 @@ HTTPServer(("0.0.0.0",   8000), Handler)     ← anything on the network
 
 **Do this:** Now the maths. Write five real latencies on the board, unsorted, then sorted:
 
-```
+```text
 3.27   0.38   0.31   0.27   0.27        ← as they happened
 0.27   0.27   0.31   0.38   3.27        ← sorted
   0      1      2      3      4         ← positions, from ZERO
@@ -812,7 +825,7 @@ HTTPServer(("0.0.0.0",   8000), Handler)     ← anything on the network
 
 **Do this:** Work it on the board, saying every step:
 
-```
+```text
 position  =  0.95 x (5 - 1)  =  0.95 x 4  =  3.8
 
 3.8 is between position 3 and position 4, eight tenths of the way
@@ -998,6 +1011,8 @@ longer (6 words or more)    19    0.684      1.000     0.333
 
 ## 🐞 The Debugging Clinic
 
+This section is for when a student's service misbehaves. Find the message they see, then read across for the cause and the fix.
+
 Every message below came from running a broken version of this week's actual code.
 
 | What the student sees (real message) | What it means | Most likely cause | The fix |
@@ -1032,6 +1047,8 @@ And the sentence for this week:
 ---
 
 ## 🎲 The Activity, In Full
+
+This section describes the main activity step by step.
 
 ### Break Each Other's Service
 
@@ -1112,6 +1129,8 @@ Four extra attacks, all real, all worth finding:
 
 ## ❓ Questions Students Ask This Week
 
+This section gives short answers to the questions students are likely to ask.
+
 **"Why not just use Flask? Everyone uses Flask."**
 
 Because `pip install flask` does not work here, and because you would learn less. Everything Flask gives you, this week you can see: it reads the length header, parses the body, routes the path, and sets the status code. **Forty lines of standard library, and no line of it is magic.** When you do pick up Flask you will know exactly what it is doing for you, which is the only good reason to use a framework. Also, honestly: a service you cannot install is a service you cannot ship to a school laptop.
@@ -1148,6 +1167,8 @@ They are not labelled rows; they are **the model's own opinions**. Train on them
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the usual ways the lesson goes off course, and what to do when it happens.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **Half the class is on port 8000 and nothing works.** | Everybody copied the default. | **Sticky note with a port number on every laptop, before the lesson.** Ports 8001 to 8030. This costs two minutes of prep and saves eight of chaos. |
@@ -1164,6 +1185,8 @@ They are not labelled rows; they are **the model's own opinions**. Train on them
 
 ## 🧭 Differentiation
 
+This section says what to cut or add for students who need less or more.
+
 ### If the student is struggling
 
 **Cut:** the oversized-body check (`413`) · the `--version` and `--threshold` flags on the service · the `by version` line in `read_logs.py` · four of the seven subgroup rows · page 35.8.
@@ -1172,7 +1195,7 @@ They are not labelled rows; they are **the model's own opinions**. Train on them
 
 **The version of the maths that skips the algebra.** Do not do the interpolated p95 at all. Do this instead, on eleven latencies sorted on paper:
 
-```
+```text
 0.21 0.22 0.22 0.23 0.23 0.23 0.24 0.25 0.27 0.31 3.27
  1    2    3    4    5    6    7    8    9   10   11
 
@@ -1245,6 +1268,8 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
+This section is the homework, with the words to say when you set it.
+
 **Say this:**
 
 > "About an hour and a quarter — this is the biggest homework of the year and it is four of your seven capstone milestones.
@@ -1294,7 +1319,7 @@ Every question restated, so you can mark from this page alone.
 
 *The five numbers are given, unsorted: 3.27, 0.38, 0.31, 0.27, 0.27.*
 
-```
+```text
 sorted:      0.27   0.27   0.31   0.38   3.27
 positions:     0      1      2      3      4
 
@@ -1361,7 +1386,7 @@ longer (6 words or more)    19    0.684      1.000     0.333
 
 **The arithmetic, all of which the student should be able to check:**
 
-```
+```text
 negation group   :  6 right of 13   →  6 ÷ 13 = 0.4615 → 0.462
                     TP = 0, FN = 6  →  recall 0 ÷ 6 = 0.000
 no-negation group: 12 right of 15   → 12 ÷ 15 = 0.8000 → 0.800

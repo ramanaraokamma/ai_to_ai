@@ -372,6 +372,8 @@ trained six networks, the answer is good: **nothing new about the model changed 
 
 ## 🧰 Prep Checklist
 
+This section lists what to prepare before the lesson, so nothing surprises you in the room.
+
 ### 30 minutes the night before
 
 - [ ] **Type and run `see_it.py` yourself, and time the whole thing.** It is the longest file of the term. The complete file:
@@ -688,6 +690,8 @@ trained on the WRONG axis: train 0.5968  test 0.8574
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the plan for the whole lesson, one step at a time.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — Eleven Digits, and Two Ways to Fix Them | 7 | 7 | Last week's eleven; the confusion matrix; the pair |
@@ -702,7 +706,7 @@ trained on the WRONG axis: train 0.5968  test 0.8574
 
 **Do this:** Nothing on the screen. Write two numbers on the board:
 
-```
+```text
 529    of 540 right
  11    wrong
 ```
@@ -818,7 +822,7 @@ original row 7: [0.  0.  0.  0.31 0.88 1.   0.25 0. ]    ← identical
 
 **Do this:** Write on the board and leave it up:
 
-```
+```text
 np.roll wraps.  BLANK the edge it rolled off.
 ```
 
@@ -861,7 +865,7 @@ np.roll wraps.  BLANK the edge it rolled off.
 
 **Do this:** Write on the board, big:
 
-```
+```text
 what would training from scratch on the 5-to-9 rows have given?
 ```
 
@@ -1088,7 +1092,7 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: **twelve 
 
 **Do this:** Stand at the FROZEN / UNFROZEN sheet with all three numbers on it.
 
-```
+```text
                         movable weights   seconds   test accuracy
 frozen backbone                    650       0.3          0.9257
 unfrozen (fine-tuned)            1,898       1.6          0.9665
@@ -1361,6 +1365,8 @@ scratch on 5-9       1.5s  movable 1898  train 0.9729  test 0.9814  (264 of 269)
 
 ## ❓ Questions Students Ask This Week
 
+This section gives you answers ready for the questions this week's lesson tends to raise.
+
 **"Why can't we augment the test set too? More test data would give a better estimate."**
 
 **Two reasons, and both are hard rules.**
@@ -1429,6 +1435,8 @@ What to tell a 14-year-old, out loud: **"there is no first thing. But there is a
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section names the ways the lesson can go off course and what to do about each.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **The two honest negatives get softened into successes** | Nobody enjoys teaching a lesson where the technique loses | **Do not.** Both results are the lesson, and both are stated in the Watch-out box so you cannot be surprised by them. Say the number, then say why. *"Transfer learning bought a fifth of the time and cost 5.6 points, probably because we borrowed from an equal, which we have not tested."* |
@@ -1446,6 +1454,8 @@ What to tell a 14-year-old, out loud: **"there is no first thing. But there is a
 ---
 
 ## 🧭 Differentiation
+
+This section adjusts the lesson for a student who is struggling and for one who is ready for more.
 
 ### If the student is struggling
 
@@ -1582,6 +1592,8 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
+This section is what to say when you set the homework.
+
 **Say this:**
 
 > "About an hour, three pages, and the middle one is the one I mark hardest.
@@ -1669,7 +1681,7 @@ Every question restated, so you can mark from this page alone.
 
 **Step 1 — the counts.**
 
-```
+```text
 row 8, column 1 = 3      three real 8s were called 1
 row 1, column 8 = 1      one real 1 was called 8
                  ---
@@ -1857,6 +1869,8 @@ scratch  100 rows   1.0s  movable 1898  train 0.9500  test 0.9628
 
 ## 🔮 Next Week Preview
 
-Next week Term 4 starts and the labels go away. Every model in this course so far has been handed the answers — 1,257 digits with 1,257 labels, and a loss that measured how far off it was. **Next week there are no answers at all**, and the question becomes: given six two-dimensional points typed on the board, can you find the groups nobody told you about? The student meets **k-means**: put down some centres, colour each point by whichever centre is nearest, move each centre to the middle of its own colour, and repeat until nothing moves — done by hand, on six points, for three rounds, before any code. Then the number that measures whether a set of groups is any good, **inertia**, which arrives with **sigma notation** — introduced honestly as "add up all of these", with the full expanded sum written out beside the symbol every single time. Then `KMeans` on `load_wine`: 178 wines, 13 measurements each, no labels, and the question of whether the three clusters it finds have anything to do with the three real grape varieties.
+Next week Term 4 starts and the labels go away. Every model in this course so far has been handed the answers — 1,257 digits with 1,257 labels, and a loss that measured how far off it was. **Next week there are no answers at all**, and the question becomes: given six two-dimensional points typed on the board, can you find the groups nobody told you about? The student meets **k-means**: put down some centres, colour each point by whichever centre is nearest, move each centre to the middle of its own colour, and repeat until nothing moves — done by hand, on six points, for three rounds, before any code.
+
+Then the number that measures whether a set of groups is any good, **inertia**, which arrives with **sigma notation** — introduced honestly as "add up all of these", with the full expanded sum written out beside the symbol every single time. Then `KMeans` on `load_wine`: 178 wines, 13 measurements each, no labels, and the question of whether the three clusters it finds have anything to do with the three real grape varieties.
 
 **To prep early:** three things. **One — the wall sheets from Terms 2 and 3 come down today** and a new one goes up next week headed **SIX POINTS**, with a blank grid on it; k-means is drawn, not printed, and it needs somewhere to be drawn. **Two — check `from sklearn.datasets import load_wine` works tonight** and that `load_wine().data.shape` prints `(178, 13)`. It ships inside scikit-learn, so no internet is needed, but you want to have seen it load. **Three — get squared paper and three colours of pen for every student.** Next week's activity is six points recoloured three times by hand, and it does not work in one colour.

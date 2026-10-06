@@ -75,13 +75,15 @@ $ wc -l logs/predictions.jsonl
 
 Because nothing was *predicted* for the four bad ones, so there was nothing to log. **The log counts predictions, not requests.** Know the difference, because next week somebody will ask you how many predictions your service has made, and **115 would be a lie.**
 
-```
+```text
 A model with no log cannot be debugged, defended, or trusted.
 ```
 
 ---
 
 ## 🧠 The Big Idea
+
+This section explains what an HTTP request is, why the service listens on localhost, the four checks, the log, subgroup metrics and monitoring. You need these ideas before you type the service.
 
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. Each one carries on from the one above. **The complete runnable `service.py` is in 💻 Type This.**
 
@@ -235,7 +237,7 @@ longer (6 words or more)    19    0.684      1.000     0.333
 
 Here is the rule that makes this genuinely hard:
 
-```
+```text
 In production, nobody tells you the right answer.
 ```
 
@@ -275,20 +277,20 @@ The mean is a bad summary of a latency, because latencies have a long tail: near
 
 **Here is the whole rule, worked by hand on five real latencies from the classroom log.** Sort them, and number the positions **from zero**:
 
-```
+```text
 0.27   0.27   0.31   0.38   3.27
   0      1      2      3      4     ← positions
 ```
 
 Numpy's rule: the p95 sits at position `0.95 × (n − 1)`.
 
-```
+```text
 position  =  0.95 × (5 − 1)  =  0.95 × 4  =  3.8
 ```
 
 **3.8 is not a real position.** It is between position 3 and position 4, **eight tenths of the way along.** So take the value at 3, and add eight tenths of the gap up to the value at 4:
 
-```
+```text
 gap  =  3.27 − 0.38  =  2.89
 p95  =  0.38 + 0.80 × 2.89
      =  0.38 + 2.312
@@ -314,7 +316,7 @@ np.percentile([3.27, 0.38, 0.31, 0.27, 0.27], 95)  ->  2.6919999999999993
 
 The subgroup table is nothing but division. Do it by hand and check it closes:
 
-```
+```text
 negation group    :  6 right of 13   ->   6 ÷ 13 = 0.4615 -> 0.462
                      TP = 0, FN = 6  ->   recall  0 ÷ 6  = 0.000
 no-negation group : 12 right of 15   ->  12 ÷ 15 = 0.8000 -> 0.800
@@ -775,13 +777,15 @@ if __name__ == "__main__":
 
 ## 🔍 Worked Examples
 
+This section works through a percentile by hand, eight attacks on the service, and the out-of-vocabulary rate on different inputs.
+
 ### Worked Example 1 — A p95 by hand, and why yours will disagree with itself
 
 Five latencies, unsorted, exactly as they came out of the classroom log: `3.27, 0.38, 0.31, 0.27, 0.27`.
 
 **Step 1 — sort them and number from zero.**
 
-```
+```text
 0.27   0.27   0.31   0.38   3.27
   0      1      2      3      4
 ```
@@ -790,7 +794,7 @@ Five latencies, unsorted, exactly as they came out of the classroom log: `3.27, 
 
 **Step 3 — it is between two positions, so go eight tenths of the way.**
 
-```
+```text
 gap  =  3.27 − 0.38  =  2.89
 p95  =  0.38 + 0.80 × 2.89  =  0.38 + 2.312  =  2.692
 ```
@@ -877,7 +881,7 @@ Send your service inputs from a different world and watch the out-of-vocabulary 
 
 And the other monitoring number, measured on two different kinds of traffic:
 
-```
+```text
 uncertainty band over the 111 logged requests :  16 of 111  =  14.4%
 uncertainty band over the 16 test reviews     :  3 of  16  =  18.8%
 ```
@@ -889,6 +893,8 @@ uncertainty band over the 16 test reviews     :  3 of  16  =  18.8%
 ---
 
 ## 🐞 When It Breaks
+
+This section covers three errors you are likely to meet this week, and three problems that give no error at all.
 
 ### Break 1 — two programs cannot share a door
 
@@ -983,11 +989,13 @@ IndexError: index -1 is out of bounds for axis 0 with size 0
 
 ## 🎲 What We Did In Class
 
+This section records the class activity, so you can repeat it if you missed the lesson.
+
 **Break Each Other's Service.** Laptops swapped. This is the activity people remember years later, and the reason is that it reframes a crash as a gift.
 
 **Step 1 — write the four attacks on a card, before sending anything.** An unwritten attack turns into a competition to crash things; a written one is a diagnosis. The four:
 
-```
+```text
 1.  Nothing at all.               an empty body
 2.  Broken JSON.                  start an object and don't finish it
 3.  Right shape, wrong name.      {"review": "..."} instead of {"text": "..."}
@@ -1014,6 +1022,8 @@ Then we ran the subgroup report in the wrap, found the row where recall is `0.00
 
 ## 💬 Talk About It
 
+Three questions to discuss with a partner or answer in a short paragraph. Each hint is a way in, not an answer.
+
 **1. Is it all right that your log contains other people's words?**
 *Hint: this question has no settled answer and the professional world genuinely disagrees. You cannot debug a wrong answer without the input — but somebody's words are now in a file on your disk, and they did not agree to that. Our compromise is in the code: the first 300 characters, plus `input_chars` so a truncation is never hidden. What is yours, and why? The paragraph is the deliverable, not the answer.*
 
@@ -1026,6 +1036,8 @@ Then we ran the subgroup report in the wrap, found the row where recall is `0.00
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four claims that sound reasonable and are not. For each, the wrong version comes first, then the right one.
 
 ### Trick 1 — "my mean latency is 0.23 ms, so it's fast"
 
@@ -1058,6 +1070,8 @@ So the staleness number has to come from **inputs and outputs alone** — the un
 ---
 
 ## 🌍 Where You've Seen This
+
+This week's ideas show up in everyday things.
 
 - **The little "status" page** for a game or an app you use — *all systems operational* — is somebody's `GET /health`, checked every few seconds forever.
 - **"Something went wrong, please try again"** versus **"your password needs at least one number"**. Two `400`s: one useless, one actionable. You now know which one you would write.
@@ -1094,6 +1108,8 @@ stage three is black, as it has been since Week 12.*
 ---
 
 ## 🔑 Remember This
+
+The takeaways for the week, a syntax card and a one-line maths reminder to keep beside you while you work.
 
 - **An HTTP request is four things** — a method, a path, some headers, a body. A response is a status code, some headers and a body. **`400` means you sent it wrong; `500` means I broke, and today's goal is never to return one.**
 - **Four checks, in order, and the model is not touched until all four pass.** Each check is only safe because the one above it passed.
@@ -1140,6 +1156,8 @@ np.percentile(latencies, 50)      # and print the mean and the max beside them
 ---
 
 ## 📓 New Words
+
+The six words introduced this week, each with an example.
 
 ![This week's six words, drawn](../figures/fig-w35-6-vocab-icons.svg)
 *Figure 35.6 — This week's six words, drawn. Two doors on one machine, a body in and a 200 out, 111 log lines with the four refusals absent, a p95 worked as `0.38 + 0.80 × 2.89 = 2.692`, `0.812` against `0.462` with recall `0 of 6`, and a band rate of `16 of 111 = 14.4%` against an alarm at 40%.*

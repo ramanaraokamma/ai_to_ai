@@ -55,7 +55,7 @@ By the end of this chapter you will have a file on disk that reads handwriting, 
 
 And there are exactly three files, with the arrows pointing one way only:
 
-```
+```text
               digits_net.py
                (the class)
                 ↗       ↖
@@ -87,7 +87,7 @@ That is perfect for a straight line of parts. It stops being enough the moment y
 > **`__init__`** — "declare the parts you will need". Runs **once**, when the model is built.
 > **`forward`** — "say how one batch flows through those parts". Runs **every time** you call the model.
 
-Here is last week's network, as a class:
+Here is last week's network, written as a class. Read it first; the full files come later in 💻 Type This:
 
 ```python
 class MoonNet(nn.Module):
@@ -165,9 +165,9 @@ And hold on to those names, because in §4 they are going to be the reason a fil
 > **epoch** — one full lap of the training data.
 > **step** (or iteration) — one nudge of the weights. **One batch is one step.**
 
-**A concrete example, on this week's real numbers.** 1,257 training digits, 32 at a time:
+**A concrete example, on this week's real numbers.** Take 1,257 training digits, 32 at a time:
 
-```
+```text
 1257 ÷ 32 = 39.28…                 →  round UP  →  40 batches
 39 full batches × 32 rows = 1248
 1257 − 1248 = 9                    →  the last batch has 9 rows
@@ -179,9 +179,9 @@ And hold on to those names, because in §4 they are going to be the reason a fil
 ![A DataLoader cuts the rows into batches](../figures/fig-w23-2-dataloader-cutting-rows-into-batches.svg)
 *Figure 23.2 — A DataLoader cuts the rows into batches. 39 × 32 = 1248, and 1257 − 1248 = 9 rows in the last one.*
 
-Then:
+Then multiply by the number of epochs:
 
-```
+```text
 15 epochs × 40 steps = 600 optimizer steps
 ```
 
@@ -200,7 +200,7 @@ If the three disagree, exactly one thing is wrong and you now know which.
 
 **And here is why it matters beyond today.** *"I trained for 15 epochs"* tells you almost nothing:
 
-```
+```text
 15 epochs at batch size  32  →  15 × 40  =  600 weight updates
 15 epochs at batch size 512  →  15 ×  3  =   45 weight updates
 ```
@@ -227,7 +227,7 @@ Three batches every epoch — 4, 4 and 2 — and every epoch the same ten rows l
 
 > **`state_dict()`** — a plain dictionary of *name → block of numbers*. It is the model's **weights**, not the model's **code**.
 
-For our digits network it holds exactly four entries:
+For our digits network it holds exactly four entries. Each line gives a name and the shape of its block of numbers:
 
 ```text
    fc1.weight (64, 64)
@@ -236,9 +236,13 @@ For our digits network it holds exactly four entries:
    fc2.bias   (10,)
 ```
 
-```
+Adding them up:
+
+```text
 4096 + 64 + 640 + 10 = 4810 numbers in the file
 ```
+
+Two lines move the weights out to a file and back in:
 
 ```python
 torch.save(model.state_dict(), "digits_mlp.pt")            # out
@@ -252,7 +256,7 @@ model.load_state_dict(torch.load("digits_mlp.pt"))         # back in
 
 **So you must build the same architecture first — and that is the entire reason the third file exists.** If `train_digits.py` declares the class and `predict_digits.py` declares it again, the two declarations will drift. Somebody changes 64 to 128 in one file and not the other, and the load fails — or worse, quietly succeeds into a differently-shaped thing.
 
-```
+```text
 digits_net.py        holds the class.  Imported by both.
 train_digits.py      imports it, trains, saves digits_mlp.pt
 predict_digits.py    imports it, loads digits_mlp.pt, predicts.  No training code.
@@ -289,7 +293,7 @@ RuntimeError: Error(s) in loading state_dict for Net:
 > **`model.train()`** — switch it back into *learning* mode. Dropout resumes.
 > **inference** — using a trained model to answer a question. No learning, no gradients, no dropout.
 
-Our digits network has `nn.Dropout(0.2)` in it. Here is the same handwritten **9**, put through five times, before and after:
+Our digits network has `nn.Dropout(0.2)` in it. Here is the same handwritten **9**, put through the model five times with dropout on, then five times with it off:
 
 ```text
 row 37, true label 9
@@ -344,13 +348,15 @@ with torch.no_grad():
 
 ## 🔁 The Idea From Last Week, Used Harder
 
+This section works through the parameter count and the batch division step by step.
+
 There is no new maths this week. Instead, last week's **parameter count** gets used for a new job: **checking a file.**
 
 Last week the count answered *"is the model I built the model I meant to build?"* This week it answers *"is the file I saved the file I meant to save?"* — and it is the same arithmetic.
 
 **Step 1 — count the digits network by hand.** It is `64 → 64 → 10`. Use last week's rule, `(inputs × outputs) + outputs`:
 
-```
+```text
 first layer,  64 → 64:   64 × 64 + 64  =  4096 + 64  =  4160
 second layer, 64 → 10:   10 × 64 + 10  =   640 + 10  =   650
                                                         ----
@@ -367,13 +373,13 @@ second layer, 64 → 10:   10 × 64 + 10  =   640 + 10  =   650
 | `fc2.bias` | `(10,)` | 10 |
 | | | **4810** |
 
-```
+```text
 4096 + 64 + 640 + 10 = 4810
 ```
 
 **Two groupings, one answer.** You already met 4,810 last week, in the fourth row of the Parameter Count Race — that was this network, a week early.
 
-**Step 3 — now count the file.** Open the saved `.pt`, add up the sizes of everything in it, and it must be 4,810 as well:
+**Step 3 — now count the file.** Open the saved `.pt` and add up the sizes of everything in it. The total must be 4,810 as well:
 
 ```python
 print(sum(t.numel() for t in torch.load("digits_mlp.pt").values()))
@@ -387,7 +393,7 @@ print(sum(t.numel() for t in torch.load("digits_mlp.pt").values()))
 
 **Step 5 — and the second piece of arithmetic, which is today's actual sum.** One division, rounded up:
 
-```
+```text
 1257 ÷ 32 = 39.28125       →  40 batches
 39 × 32   = 1248
 1257 − 1248 = 9            →  the last batch holds 9
@@ -400,6 +406,8 @@ print(sum(t.numel() for t in torch.load("digits_mlp.pt").values()))
 ---
 
 ## 💻 Type This
+
+This section builds the week's project: train a digits network, save it, and load it in a separate program.
 
 **Three files, all in the same folder.** Type them in this order, because the other two import the first.
 
@@ -479,7 +487,7 @@ print("X_tr_t", tuple(X_tr_t.shape), "  Y_tr_t", tuple(Y_tr_t.shape))
 
 `np.eye(10)[y_tr]` — this one needs a sentence. Our loss is still `BCEWithLogitsLoss`, which compares a grid of scores against a grid of answers **of the same shape**. The network has 10 outputs, so it produces a `(1257, 10)` grid — and the answers have to be a `(1257, 10)` grid too. So each answer becomes a row of ten numbers with a single 1 in it:
 
-```
+```text
 the digit 6  →  [0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
 ```
 
@@ -690,6 +698,8 @@ exit=1
 
 ## 🔍 Worked Examples
 
+These three programs apply the week's ideas to new data.
+
 Three complete programs. Type each one and **predict the numbers before you run it.**
 
 ### Worked Example 1 — A tiny class, and the identity proof on four hand-typed rows
@@ -812,7 +822,11 @@ and with drop_last=True, which throws the leftovers away:
 
 **Read the batch list: `[64, 64, 64, 64, 64, 64, 42]`.** Six full batches and one short one, and they add up to 426. Every row used exactly once.
 
-**And read the last block, because it is the most useful thing on this page.** With `drop_last=True` there are **6** batches instead of 7, and **42 tumour records are silently thrown away** on every single epoch. Notice what each check says: `len(loader)` reports 6 and the loop count reports 6 — they both ask the loader, so they agree with each other and never notice. Way 1, divide and round up, says 7, so it disagrees with them, which is a warning that something is off but does not say what. **Only the sum, `384` instead of `426`, tells you which rows went missing.** And if the division had been rounded down (6.66 → 6) by mistake, all three ways would agree on 6 and be wrong together.
+**And read the last block, because it is the most useful thing on this page.** With `drop_last=True` there are **6** batches instead of 7, and **42 tumour records are silently thrown away** on every single epoch.
+
+Notice what each check says: `len(loader)` reports 6 and the loop count reports 6 — they both ask the loader, so they agree with each other and never notice.
+
+Way 1, divide and round up, says 7, so it disagrees with them, which is a warning that something is off but does not say what. **Only the sum, `384` instead of `426`, tells you which rows went missing.** And if the division had been rounded down (6.66 → 6) by mistake, all three ways would agree on 6 and be wrong together.
 
 ### Worked Example 3 — A shipped tumour classifier, in three files
 
@@ -967,6 +981,8 @@ picked rows: [476, 148, 62]
 
 ## 🐞 When It Breaks
 
+This section shows four things that go wrong this week, what each message means, and how to fix it.
+
 Every message below came from really running a broken version of this week's code.
 
 > **The recipe for every loading error, and there are only two kinds:** *is it a **name** that does not match, or a **shape** that does not match?* The message always tells you which, and the two have completely different fixes.
@@ -1081,6 +1097,8 @@ If not, `model.eval()` is missing. **Make it the line immediately after `load_st
 
 ## 🎲 What We Did In Class
 
+This section is a recap for anyone who missed the lesson.
+
 If you missed it, here is the whole lesson. You need three empty files in one folder and last week's `overfit.py`.
 
 **The hook.** Last week's `overfit.py` ran, the losses scrolled past, and then the terminal was **closed with the mouse, slowly, so everybody saw the click.** *"Gone. All four thousand four hundred and seventeen of them."* Then the question: *"In Week 3 we solved this exact problem for a scikit-learn pipeline. What did we do?"* — `joblib.dump`, then the Clean Room Test. Then the digit printed as text art, and the three-box diagram on the board with one question: **which arrow must not exist?**
@@ -1122,6 +1140,8 @@ way 3 - ask the DataLoader  : 40
 
 ## 💬 Talk About It
 
+Three questions to argue over with your teacher or a friend. Each hint shows how to start thinking, not the final word.
+
 **1. Saving the whole model with `torch.save(model, "whole.pt")` is fewer lines than saving a `state_dict` and needs no class file at all. So why don't we?**
 
 *Hint:* start by admitting it works and is genuinely more convenient. Then ask what "saving the whole model" has to *include* in order to work — the numbers, obviously, but also enough information to rebuild the code. And if loading a file rebuilds code, then **loading a file runs code.** Now the question: if somebody emailed you a `.pt` file, what would opening it be allowed to do to your laptop? (Anything a Python program can do.) A `state_dict` is 4,810 numbers and four names; loaded with `torch.load(path, weights_only=True)` the worst it can do is fail to load (a plain `torch.load` of any old-style `.pt` file is still pickle underneath, so only open files from people you trust). Then the secondary reasons, which are practical rather than dramatic: a numbers-only file is smaller, survives a PyTorch upgrade, and does not care what your folders are called.
@@ -1137,6 +1157,8 @@ way 3 - ask the DataLoader  : 40
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four claims that sound right and are not. Each table puts the wrong belief next to the correct one.
 
 ### Trick 1 — "the prediction script can just import the trainer"
 
@@ -1183,6 +1205,8 @@ with torch.no_grad():
 
 ## 🌍 Where You've Seen This
 
+Today's ideas show up outside the course too. Here are six places.
+
 1. **Every app on your phone that recognises something without an internet connection** — face unlock, "hey" wake words, live photo captions. There is a weights file inside the app and an inference path that contains no training code at all. Exactly today's shape, at a much larger scale.
 2. **A game that loads a save file.** The save holds your position, your inventory and your score — it does not hold the game. Load it into a *different* game and nothing sensible happens. That is a `state_dict` and a class.
 3. **A downloaded model that "requires version 2.1 or later".** That warning exists because the file and the code have to agree about shapes, and somebody once changed a layer and broke everybody's saved weights.
@@ -1218,6 +1242,8 @@ opens. The ↻ on stage three is black, as it has been since Week 12.*
 ---
 
 ## 🔑 Remember This
+
+The week's key points in one place, then a reminder card you can copy from.
 
 - **A class has two halves.** `__init__` declares the parts and runs once. `forward` says how a batch flows and runs every call. **`super().__init__()` is the first line of `__init__`, always.**
 - **A class and an `nn.Sequential` are the same model.** Same shapes, same 65 numbers, same output. **Only the names differ** — position numbers against your attribute names — and the names are what a `state_dict` is keyed by.

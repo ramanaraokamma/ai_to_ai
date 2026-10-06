@@ -59,7 +59,9 @@ Three lines, and the AUC comes out at **0.7541** against Week 2's baseline of **
 
 **And now the awkward question: what do you hand to somebody?**
 
-The score? A score is a claim. Nobody can use a claim. The code? Then they have to install the same libraries, get the same data, run the same script and hope. **The thing they need is the fitted model itself, as a file** — something that already contains the learned numbers, that loads in a fresh program on a different day, and that turns a raw order into a probability without any training happening.
+The score? A score is a claim. Nobody can use a claim.
+
+The code? Then they have to install the same libraries, get the same data, run the same script and hope. **The thing they need is the fitted model itself, as a file** — something that already contains the learned numbers, that loads in a fresh program on a different day, and that turns a raw order into a probability without any training happening.
 
 > **Artifact** — the fitted thing, saved to disk as a file. Not the code that made it, and not the score it got. The file.
 
@@ -87,7 +89,9 @@ Two separate problems, and they need two separate treatments:
 
 And a third, quieter problem: **the number columns are on wildly different rulers.** `distance_km` runs from about 0.3 to 15; `driver_experience_months` runs 0 to 59. Left alone, the big-numbered column shouts. So all five get put on the same ruler.
 
-Here is the honest bit, and say it to the class: **all four of those tools get taught properly later.** Filling holes is **Week 6**. Rulers are **Week 4**. Turning words into columns is **Week 4**. What logistic regression actually *does* is **Week 13**. This week they are four named parts you wire together — and wiring is the subject. You do not need to know how a fuse works to know it must be upstream of the socket.
+Here is the honest bit, and say it to the class: **all four of those tools get taught properly later.** Filling holes is **Week 6**. Rulers are **Week 4**. Turning words into columns is **Week 4**. What logistic regression actually *does* is **Week 13**.
+
+This week they are four named parts you wire together — and wiring is the subject. You do not need to know how a fuse works to know it must be upstream of the socket.
 
 ### 3. `ColumnTransformer`: one switchboard, two routes
 

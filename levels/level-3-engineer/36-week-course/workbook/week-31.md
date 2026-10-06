@@ -153,6 +153,8 @@ ________________________________________________________________
 
 ## 🔎 Predict the Output
 
+This section is for committing to a prediction before the computer gives its answer.
+
 **In pen, before you run anything.**
 
 ### P1 — who chose the column order?
@@ -264,6 +266,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading code and output closely, one question at a time.
 
 **A1. Match the word to the thing.** Write the letter.
 
@@ -380,6 +384,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing short programs of your own, from one line up to a full report.
 
 ### B1 — one line
 
@@ -519,6 +525,8 @@ vocabulary size ______  unknown words ______
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is one longer problem to work on with everything from the week.
+
 ### Sixty Sentences, One Row
 
 Here is a row of counts, and the vocabulary it belongs to:
@@ -557,6 +565,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These questions are for writing out your reasoning in full sentences.
 
 **T1.** In Week 24 you learned that **flattening a picture throws away the picture** — the 8×8 digit became 64 numbers in a line and "next to" stopped existing. This week, counting words threw away word order. **Write a paragraph arguing that these are the same loss.** Then say what the repair was in Week 24 (a convolution, which looks at neighbours), and what the equivalent repair would have to be for text. **Then the hard half: why is the text version harder?**
 
@@ -707,6 +717,8 @@ ________________________________________________________________
 ---
 
 ## 🎨 Draw It
+
+This section is for drawing the week's idea as one picture.
 
 ![Draw it: one sentence, one row, and what fell out](../figures/fig-w31-9-draw-frame.svg)
 *Figure W31.2 — One sentence, one row, and what fell out.*

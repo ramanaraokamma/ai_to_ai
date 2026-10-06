@@ -36,7 +36,7 @@ ________________________________________________________________
 
 ### M1 — a new `(3,2) @ (2,4)`
 
-```
+```text
 A (3 rows, 2 columns)        B (2 rows, 4 columns)
 
 [  2   1 ]                   [ 1   5   2   0 ]
@@ -59,7 +59,7 @@ A (3 rows, 2 columns)        B (2 rows, 4 columns)
 
 **M1(b).** Now all twelve. Write them into the grid.
 
-```
+```text
 [ ______  ______  ______  ______ ]
 [ ______  ______  ______  ______ ]
 [ ______  ______  ______  ______ ]
@@ -71,7 +71,7 @@ A (3 rows, 2 columns)        B (2 rows, 4 columns)
 
 Now get the same number a completely different way. A's **column** totals are `2+0+4 = ` ______ and `1+3+(−1) = ` ______ . B's **row** totals are `1+5+2+0 = ` ______ and `3+(−1)+4+6 = ` ______ .
 
-```
+```text
 ______ × ______  +  ______ × ______  =  ______
 ```
 
@@ -133,7 +133,7 @@ Three output units produce the raw scores `[1.5, −0.5, 2.0]`.
 
 **Step one — `e^x` on each. Six decimal places.**
 
-```
+```text
 e^1.5    = ____________
 e^(−0.5) = ____________
 e^2.0    = ____________
@@ -145,7 +145,7 @@ ________________________________________________________________
 
 **Step two — add them up, then divide each by the total.**
 
-```
+```text
 total = ____________ + ____________ + ____________ = ____________
 
 ____________ ÷ ____________ = ____________
@@ -283,6 +283,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading code and output that someone else wrote.
+
 **A1. Match the word to the thing.** Write the letter.
 
 | Word | | Description |
@@ -409,6 +411,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing short numpy code of your own.
 
 ### B1 — one line, plus a shape
 
@@ -726,6 +730,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This page is for practising shape-tracking and counting on a longer problem.
+
 ### Part 1 — The Shape Chain
 
 A batch of **100 rows** with **5 features** goes into a network: `5 → 8 → 8 → 3`, with ReLU after each hidden layer and **softmax** on the output. **Fill in every shape, then count the knobs.**
@@ -770,7 +776,7 @@ Every output cell of `A @ B` costs one multiplication per shared number. So the 
 
 **Part 2(d).** Now the chapter's hook, properly. **750 rows, 2 features, a hidden layer of 16 units, one output.** Count the multiplications in **one** forward pass:
 
-```
+```text
 layer 1:  750 × 16 × 2  = ____________
 layer 2:  750 ×  1 × 16 = ____________
                   total = ____________
@@ -787,6 +793,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+This section is for longer written answers.
 
 **T1.** The `(4, 1)` bias runs without complaint and produces nine wrong numbers out of twelve. **Write a paragraph** designing a rule numpy *could* have used that would have caught it — then be honest about what your rule would cost. What legitimate, useful things would it also refuse? Would you still ship it?
 
@@ -822,7 +830,7 @@ ________________________________________________________________
 
 **A brand-new network.** Nothing here appeared in the chapter, so there is nothing to copy.
 
-```
+```text
 X  (4, 2)              W1 (2, 3)                      b1 (1, 3)
 [  2.0   1.0 ]         [ 0.6  -0.5   0.2 ]            [ -0.2   0.3   0.5 ]
 [  0.0  -2.0 ]         [ 0.1   0.4  -1.0 ]
@@ -844,7 +852,7 @@ X  (4, 2)              W1 (2, 3)                      b1 (1, 3)
 
 **The shape ladder — fill it in before you compute anything:**
 
-```
+```text
 X       ____________
 W1      ____________   →   X @ W1    ____________
 b1      ____________   →   Z1        ____________     [broadcast down all ____ rows]
@@ -856,7 +864,7 @@ A2      ____________
 
 **`X @ W1`, twelve cells, by hand:** shape ____________
 
-```
+```text
 [ ________  ________  ________ ]
 [ ________  ________  ________ ]
 [ ________  ________  ________ ]
@@ -865,7 +873,7 @@ A2      ____________
 
 **`Z1 = X @ W1 + b1`:** shape ____________
 
-```
+```text
 [ ________  ________  ________ ]
 [ ________  ________  ________ ]
 [ ________  ________  ________ ]
@@ -874,7 +882,7 @@ A2      ____________
 
 **`A1 = ReLU(Z1)`:** shape ____________   **zeros:** ______ of 12
 
-```
+```text
 [ ________  ________  ________ ]
 [ ________  ________  ________ ]
 [ ________  ________  ________ ]
@@ -1064,7 +1072,7 @@ ________________________________________________________________
 
 **M1(b).** All twelve, real output from numpy:
 
-```
+```text
 [[ 5   9   8   6]
  [ 9  -3  12  18]
  [ 1  21   4  -6]]
@@ -1074,7 +1082,7 @@ ________________________________________________________________
 
 **M1(d).** Grand total of the answer grid:
 
-```
+```text
 row 0:  5 +  9 +  8 +  6 =  28
 row 1:  9 + (−3) + 12 + 18 =  36
 row 2:  1 + 21 +  4 + (−6) =  20
@@ -1083,7 +1091,7 @@ row 2:  1 + 21 +  4 + (−6) =  20
 
 The other route: A's column totals are `2+0+4 = **6**` and `1+3+(−1) = **3**`. B's row totals are `1+5+2+0 = **8**` and `3+(−1)+4+6 = **12**`.
 
-```
+```text
 6 × 8  +  3 × 12  =  48 + 36  =  84   ✅
 ```
 
@@ -1133,7 +1141,7 @@ The other route: A's column totals are `2+0+4 = **6**` and `1+3+(−1) = **3**`.
 
 **M4.**
 
-```
+```text
 e^1.5    = 4.481689
 e^(−0.5) = 0.606531
 e^2.0    = 7.389056
@@ -1141,7 +1149,7 @@ e^2.0    = 7.389056
 
 **M4(a).** `−0.5` became **`0.606531` — small but positive.** Softmax needs that because **probabilities cannot be negative**, and a raw score is allowed to be. Exponentiating is the cheapest way to make everything positive without changing which score is biggest.
 
-```
+```text
 total = 4.481689 + 0.606531 + 7.389056 = 12.477276
 
 4.481689 ÷ 12.477276 = 0.359188
@@ -1530,7 +1538,7 @@ Look down `Z1`'s column 1. With the correct bias, every one of those four number
 
 **Part 2(d).**
 
-```
+```text
 layer 1:  750 × 16 × 2  = 24,000
 layer 2:  750 ×  1 × 16 = 12,000
                   total = 36,000
@@ -1560,7 +1568,7 @@ That makes a particular class of mistake harder to notice: one where the arithme
 
 **Part A — the forward pass.** The shape ladder:
 
-```
+```text
 X       (4, 2)
 W1      (2, 3)   →   X @ W1    (4, 3)
 b1      (1, 3)   →   Z1        (4, 3)     [broadcast down all 4 rows]
@@ -1574,7 +1582,7 @@ A2      (4, 1)
 
 **`X @ W1`** `(4, 3)` — one column of `W1` per unit:
 
-```
+```text
 row 0 [ 2.0,  1.0]:  2(0.6)+1(0.1) = 1.3   2(−0.5)+1(0.4) = −0.6   2(0.2)+1(−1.0) = −0.6
 row 1 [ 0.0, −2.0]:  0(0.6)−2(0.1) = −0.2  0(−0.5)−2(0.4) = −0.8   0(0.2)−2(−1.0) =  2.0
 row 2 [ 1.0,  1.0]:  0.6+0.1 = 0.7        −0.5+0.4 = −0.1          0.2−1.0 = −0.8
@@ -1588,7 +1596,7 @@ row 3 [−1.0,  0.5]: −0.6+0.05 = −0.55      0.5+0.2 = 0.7          −0.2�
 
 **`Z1 = X @ W1 + b1`** `(4, 3)`, with `b1 = [−0.2, 0.3, 0.5]` added to **every** row:
 
-```
+```text
 [[ 1.1  -0.3  -0.1 ]
  [-0.4  -0.5   2.5 ]
  [ 0.5   0.2  -0.3 ]
@@ -1597,7 +1605,7 @@ row 3 [−1.0,  0.5]: −0.6+0.05 = −0.55      0.5+0.2 = 0.7          −0.2�
 
 **`A1 = ReLU(Z1)`** `(4, 3)`, **7 zeros of 12**:
 
-```
+```text
 [[1.1 0.  0. ]
  [0.  0.  2.5]
  [0.5 0.2 0. ]
@@ -1606,7 +1614,7 @@ row 3 [−1.0,  0.5]: −0.6+0.05 = −0.55      0.5+0.2 = 0.7          −0.2�
 
 **`Z2` and `A2`:**
 
-```
+```text
 row 0: 1.1(1.0) + 0(0.5) + 0(−1.5) + 0.1 =  1.2   →  sigmoid( 1.20) = 0.768525
 row 1: 0(1.0) + 0(0.5) + 2.5(−1.5) + 0.1 = −3.65  →  sigmoid(−3.65) = 0.025333
 row 2: 0.5(1.0) + 0.2(0.5) + 0(−1.5) + 0.1 = 0.7  →  sigmoid( 0.70) = 0.668188

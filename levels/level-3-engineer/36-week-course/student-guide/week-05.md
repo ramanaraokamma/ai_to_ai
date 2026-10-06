@@ -40,7 +40,9 @@ Two teams. **Same 2,000 rows of delivery data** — your table. **Same 24 hours.
 
 Now, 0.785 against 0.781 is four thousandths. That is nothing, and it could easily be luck — by Week 11 you will know how to check. **So Team B did not really win because their score was higher.**
 
-**Here is why Team B actually won.** Team B can walk into the pizza place and say: *"orders placed between six and eight in the evening are late 37% of the time instead of 24%, and long trips in storms are much worse than long trips or storms on their own."* Team A can say *"the computer found it."*
+**Here is why Team B actually won.**
+
+Team B can walk into the pizza place and say: *"orders placed between six and eight in the evening are late 37% of the time instead of 24%, and long trips in storms are much worse than long trips or storms on their own."* Team A can say *"the computer found it."*
 
 And Team B could do it again tomorrow, on a different problem, without renting a computer.
 
@@ -269,7 +271,9 @@ And it is worse than that, because the *sign* matters more than the size:
 
 > **🔢 The maths, slowly:** there is no clever trick here, just arithmetic done honestly. `0.7829 − 0.7843`. Line the decimal points up. 0.7829 is smaller than 0.7843, so the answer is negative. `0.7843 − 0.7829 = 0.0014`, so the answer is **−0.0014**. Check it on a calculator; you will see `-0.0014000000000000567` or something like it, because computers store decimals approximately. **Round the printed result to four places, never the inputs.**
 
-**And here is the honest weakness you should know about, because a good engineer says it out loud.** Every number in that table came from **one pile of 400 validation rows**. A delta of −0.0014 measured on 400 rows is small enough that a different random split might flip its sign. So the professional way to write the deletion note is:
+**And here is the honest weakness you should know about, because a good engineer says it out loud.**
+
+Every number in that table came from **one pile of 400 validation rows**. A delta of −0.0014 measured on 400 rows is small enough that a different random split might flip its sign. So the professional way to write the deletion note is:
 
 > *"Deleted `dist_x_weather`, ΔAUC −0.0014, which is small enough that I would retest it with cross-validation before calling it settled."*
 
@@ -629,6 +633,8 @@ num__driver_experience_months   -0.392
 ---
 
 ## 🔍 Worked Examples
+
+This section puts the same machinery through three more cases, so you can see it work outside the delivery table.
 
 ### Worked Example 1 — Two more inventions, ablated (the class activity)
 
@@ -1030,6 +1036,8 @@ F − E  =  0.7828 − 0.7829  =  −0.0001     is_weekend     DELETE
 
 ## 💬 Talk About It
 
+These are questions to argue over with a partner or at home. Each one has an answer worth saying out loud.
+
 **1. Isn't inventing `is_rush` cheating? You looked at the answer and then built a column that matches it.**
 
 **This is the sharpest question of the week and it is half right.** Separate the two piles before you answer.
@@ -1051,6 +1059,8 @@ Look at row F of the table before you answer.
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four sentences people say about features that sound right. Each one is answered below.
 
 ### Trick 1 — "more columns must be better, the model has more to work with"
 
@@ -1087,6 +1097,8 @@ A delta of **exactly** 0.0000 is almost never a feature that does nothing. **It 
 
 ## 🌍 Where You've Seen This
 
+The four shapes of invented column are not only a machine-learning idea. Here is where they already appear in daily life.
+
 1. **Every "per" number you have ever met.** Miles per gallon. Goals per game. Price per 100 grams on a supermarket shelf label. **Those are all ratio features**, and the reason the shelf prints them is exactly why `min_per_km` exists: the raw numbers are not comparable and the ratio is.
 2. **Age brackets on any form you have filled in.** `18–24`, `25–34`, `35–49`. Somebody binned a continuous column, because the effect of age on whatever they are measuring goes up and then down, and one weight on the raw number could not say it.
 3. **"Peak" and "off-peak" train fares.** That is `is_rush` with a price attached. Nobody charges you a smoothly increasing amount as the clock advances — they cut the day into ranges, because the truth is a step, not a slope.
@@ -1122,6 +1134,8 @@ ones you invented. The ↻ on stage three is the training loop, still grey — y
 ---
 
 ## 🔑 Remember This
+
+The takeaways from the week, then a reminder card of the syntax.
 
 - **Four shapes cover nearly every column you will ever invent: a FLAG, a BIN, a RATIO and an INTERACTION.** A flag answers one yes-or-no question about the row. A bin chops a number into ranges. A ratio divides one column by another. An interaction multiplies two.
 - **A number that behaves like a hump needs binning, not a weight.** `order_hour` runs 10 to 23 with a spike at 18–20, and its fitted weight is nearly nothing (+0.092 in the raw model, −0.121 once `is_rush` is in) — while `is_rush` gets **0.436**. The hour matters enormously; the hour *as a number* does not.
@@ -1204,6 +1218,8 @@ print(tbl.round(4).to_string(index=False))     # .round(2) ERASES THE ANSWER
 ---
 
 ## 📓 New Words
+
+The words from this week, each with the numbers from your own runs.
 
 ![Six words from Week 5, drawn](../figures/fig-w05-7-vocab-icons.svg)
 *Figure 5.7 — Six words from Week 5, drawn. Every tile carries a number from your own `look.py` and `ablation.py` runs.*

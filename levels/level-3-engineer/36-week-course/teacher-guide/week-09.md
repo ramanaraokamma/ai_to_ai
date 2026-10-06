@@ -60,7 +60,7 @@ You cannot put both. You cannot leave it blank. And whichever number you pick, s
 
 Start with the obvious idea: average the two numbers. Precision 0.9, recall 0.1 — add them, halve them:
 
-```
+```text
 (0.9 + 0.1) ÷ 2  =  1.0 ÷ 2  =  0.5000
 ```
 
@@ -74,7 +74,7 @@ You drive to your grandmother's house. It is 120 kilometres. The first 60 km is 
 
 Everybody says 50. `(90 + 10) ÷ 2 = 50`. It is wrong, and you can prove it with a clock:
 
-```
+```text
 first  60 km at 90 km/h  →  60 ÷ 90  =  0.6667 hours
 second 60 km at 10 km/h  →  60 ÷ 10  =  6.0000 hours
                                         ------
@@ -83,7 +83,7 @@ second 60 km at 10 km/h  →  60 ÷ 10  =  6.0000 hours
 
 You covered 120 km in 6.6667 hours:
 
-```
+```text
 120 ÷ 6.6667  =  18.0 km/h
 ```
 
@@ -91,7 +91,7 @@ You covered 120 km in 6.6667 hours:
 
 Now watch what the harmonic mean says about 90 and 10:
 
-```
+```text
 2 × 90 × 10  =  1800
 90 + 10      =  100
 1800 ÷ 100   =  18.0
@@ -109,20 +109,20 @@ This is the part to have completely solid, because a student **will** ask "but w
 
 Take precision 0.9 and recall 0.1. Turn each one upside down:
 
-```
+```text
 1 ÷ 0.9  =  1.11111
 1 ÷ 0.1  =  10.00000
 ```
 
 Look at what just happened. **0.1 flipped over becomes 10.** A small number, flipped, becomes an enormous number. Now take the plain average of the two flipped numbers:
 
-```
+```text
 (1.11111 + 10.00000) ÷ 2  =  11.11111 ÷ 2  =  5.55556
 ```
 
 And flip that back the right way up:
 
-```
+```text
 1 ÷ 5.55556  =  0.18000
 ```
 
@@ -130,7 +130,7 @@ And flip that back the right way up:
 
 **Way two — the same thing, written shorter.** Instead of "average the flipped ones, then flip back", you can write it as one division. Two, divided by the sum of the flips:
 
-```
+```text
 1 ÷ 0.9 = 1.11111
 1 ÷ 0.1 = 10.00000
 sum     = 11.11111
@@ -142,13 +142,13 @@ Same answer. **0.1800.**
 
 **Way three — the version with no flipping at all, which is the one everybody prints.** Tidy way two up and the flips cancel out, leaving this:
 
-```
+```text
 2 × p × r  ÷  (p + r)
 ```
 
 On our numbers, and do this arithmetic out loud in three separate lines, never in one:
 
-```
+```text
 2 × 0.9 × 0.1  =  0.180
 0.9 + 0.1      =  1.000
 0.180 ÷ 1.000  =  0.1800
@@ -167,7 +167,7 @@ Here are the three pairs the lesson works through, with every division written o
 
 **Pair one — precision 0.900, recall 0.100. The lopsided pair.**
 
-```
+```text
 plain mean   :  (0.9 + 0.1) ÷ 2      =  1.000 ÷ 2      =  0.5000
 harmonic     :   2 × 0.9 × 0.1       =  0.180
                  0.9 + 0.1           =  1.000
@@ -178,7 +178,7 @@ harmonic     :   2 × 0.9 × 0.1       =  0.180
 
 **Pair two — precision 0.600, recall 0.600. The balanced pair.**
 
-```
+```text
 plain mean   :  (0.6 + 0.6) ÷ 2      =  1.200 ÷ 2      =  0.6000
 harmonic     :   2 × 0.6 × 0.6       =  0.720
                  0.6 + 0.6           =  1.200
@@ -191,14 +191,14 @@ harmonic     :   2 × 0.6 × 0.6       =  0.720
 
 This is a real shape and it is worth telling as a story. A bank has **200 real frauds** in a month. The model flags **21 transactions**, and **14 of them really are fraud.**
 
-```
+```text
 precision  =  14 ÷ 21   =  0.6667   →  rounded, 0.667
 recall     =  14 ÷ 200  =  0.0700   →  0.070
 ```
 
 Precision 0.667 sounds respectable — two thirds of what it flags is genuinely fraud. Now the two averages:
 
-```
+```text
 plain mean   :  (0.667 + 0.070) ÷ 2  =  0.737 ÷ 2      =  0.3685
 harmonic     :   2 × 0.667 × 0.070   =  0.0934
                  0.667 + 0.070       =  0.737
@@ -236,13 +236,13 @@ The "1" in F1 means *precision and recall are weighted equally*. There are other
 
 Now the part that makes it concrete. **You do not need precision and recall at all — F1 comes straight out of the four counts**, with one multiplication and two additions:
 
-```
+```text
 F1  =  2 × TP  ÷  (2 × TP + FP + FN)
 ```
 
 On last week's tree — TP 3, FP 7, FN 11:
 
-```
+```text
 2 × 3            =  6
 2 × 3 + 7 + 11   =  6 + 7 + 11  =  24
 6 ÷ 24           =  0.2500
@@ -250,7 +250,7 @@ On last week's tree — TP 3, FP 7, FN 11:
 
 **0.2500.** And through precision and recall the long way:
 
-```
+```text
 precision  =  3 ÷ 10  =  0.3000
 recall     =  3 ÷ 14  =  0.2143
 2 × 0.3000 × 0.2143  =  0.12858
@@ -279,7 +279,7 @@ This is where the whole thing pays off. **Same 1,000 validation orders. Same 14 
 
 The arithmetic on each, from the counts:
 
-```
+```text
 never says yes    :  2 × 0  ÷ (0 + 0 + 14)      =   0 ÷   14  =  0.0000
 the decision tree :  2 × 3  ÷ (6 + 7 + 11)      =   6 ÷   24  =  0.2500
 flags everything  :  2 × 14 ÷ (28 + 986 + 0)    =  28 ÷ 1014  =  0.0276
@@ -310,7 +310,7 @@ On the fraud data, scikit-learn gives an F1 for each class separately:
 | **F1** | **0.9909** | **0.2500** |
 | **support** | **986** | **14** |
 
-```
+```text
 macro average F1     :  (0.9909 + 0.2500) ÷ 2  =  1.2409 ÷ 2  =  0.6204
 weighted average F1  :  (0.9909 × 986 + 0.2500 × 14) ÷ 1000
                      :  (977.0274 + 3.5) ÷ 1000  =  980.5274 ÷ 1000  =  0.9805
@@ -330,7 +330,7 @@ You do not have to teach this, but you must know it, because a strong student wi
 
 **F1 never looks at TN.** The formula is `2 × TP ÷ (2 × TP + FP + FN)` — the "correctly left alone" cell is simply not in it. So take last week's tree and imagine the bank grows: same 14 frauds, same 3 caught, same 7 false alarms, same 11 misses, but a million legitimate transactions instead of 986.
 
-```
+```text
 rows     1000   TN      979   F1 0.2500   accuracy 0.982000
 rows    10000   TN     9979   F1 0.2500   accuracy 0.998200
 rows  1000000   TN   999979   F1 0.2500   accuracy 0.999982
@@ -479,6 +479,8 @@ lights up. The ↻ on stage three is drawn grey because the training loop stays 
 
 ## 🧰 Prep Checklist
 
+Use this section to get the room, the files and the five station cards ready before class.
+
 ### 30 minutes the night before
 
 - [ ] **Check the delivery folder still works.** Everything in the relay imports `make_data.py`.
@@ -503,7 +505,7 @@ You must see:
 
 - [ ] **Do all three harmonic means yourself, on paper, before you teach them.** Not on a calculator app — on paper, three lines each, the way the students will:
 
-```
+```text
 2 × 0.9 × 0.1 = 0.180      0.9 + 0.1 = 1.000      0.180 ÷ 1.000 = 0.1800
 2 × 0.6 × 0.6 = 0.720      0.6 + 0.6 = 1.200      0.720 ÷ 1.200 = 0.6000
 2 × 0.667 × 0.07 = 0.0934  0.667 + 0.07 = 0.737   0.0934 ÷ 0.737 = 0.1267
@@ -646,6 +648,8 @@ flags everything  tn   0 fp 986 fn  0 tp 14   F1 = 28 / 1014 = 0.0276
 
 ## ⏱️ The Lesson, Minute by Minute
 
+Use this section to run the lesson; the table shows the timing and each segment below it gives the steps.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — One Box on the Form | 5 | 5 | Two numbers, one box. Then both stunts. |
@@ -670,7 +674,7 @@ flags everything  tn   0 fp 986 fn  0 tp 14   F1 = 28 / 1014 = 0.0276
 
 **Do this:** Draw a single empty box on the board, big, with a label above it.
 
-```
+```text
    model performance:  [            ]
 ```
 
@@ -698,7 +702,7 @@ Let somebody answer. Whatever they say, take it seriously and then break it.
 
 **Do this:** Write both stunts on the board and leave them there all lesson.
 
-```
+```text
 flag ONE thing      →  precision 1.0000   (caught 1 of 14)
 flag EVERYTHING     →  recall    1.0000   (blocked 986 innocent cards)
 ```
@@ -715,7 +719,7 @@ flag EVERYTHING     →  recall    1.0000   (blocked 986 innocent cards)
 
 **Do this:** Write two numbers on the board, nothing else.
 
-```
+```text
 precision 0.9      recall 0.1
 ```
 
@@ -743,7 +747,7 @@ Let the discomfort sit for a second. Then change subject completely.
 
 **Do this:** Write the clock arithmetic on the board, line by line, saying each line out loud.
 
-```
+```text
 first  60 km at 90 km/h  ->  60 ÷ 90  =  0.6667 hours
 second 60 km at 10 km/h  ->  60 ÷ 10  =  6.0000 hours
                                           ------
@@ -764,7 +768,7 @@ second 60 km at 10 km/h  ->  60 ÷ 10  =  6.0000 hours
 
 **Do this:** Write the harmonic mean of 90 and 10 underneath, in three lines.
 
-```
+```text
 2 × 90 × 10  =  1800
 90 + 10      =  100
 1800 ÷ 100   =  18.0
@@ -975,7 +979,7 @@ f1 : 0.6204
 
 **Do this:** Write the arithmetic on the board:
 
-```
+```text
 (0.9909 + 0.2500) ÷ 2  =  1.2409 ÷ 2  =  0.6204
 ```
 
@@ -1197,6 +1201,8 @@ That is still objective 3 — from raw table to saved artifact, in order, from m
 
 ## ❓ Questions Students Ask This Week
 
+Use this section to prepare answers for questions this week tends to raise.
+
 **"Why is it called F1? What are F2 and F0.5?"**
 
 The letter is historical and stands for nothing useful — it came out of document-retrieval research in the 1970s. The **1** is the interesting part: it means **precision and recall count equally.**
@@ -1274,6 +1280,8 @@ The lesson is the one from Week 2 and it has now been said three ways: **the met
 ---
 
 ## 🧭 Differentiation
+
+Use this section to adjust the lesson for a student who is struggling, flying or not engaging.
 
 ### If the student is struggling
 
@@ -1405,6 +1413,8 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
+Use this section for the words to say when you hand out the homework.
+
 **Say this:**
 
 > "About an hour, three pages, and the middle one is the term's report card.
@@ -1435,7 +1445,7 @@ Every question restated, so you can mark from this page alone.
 
 **Pair 1 — precision 0.900, recall 0.100.**
 
-```
+```text
 plain    :  0.9 + 0.1 = 1.000        1.000 ÷ 2 = 0.5000
 harmonic :  2 × 0.9 × 0.1 = 0.180
             0.9 + 0.1     = 1.000
@@ -1445,7 +1455,7 @@ check    :  smaller 0.100,  twice it 0.200,  and 0.1800 is between them.  ✅
 
 **Pair 2 — precision 0.600, recall 0.600.**
 
-```
+```text
 plain    :  0.6 + 0.6 = 1.200        1.200 ÷ 2 = 0.6000
 harmonic :  2 × 0.6 × 0.6 = 0.720
             0.6 + 0.6     = 1.200
@@ -1457,7 +1467,7 @@ check    :  smaller 0.600,  twice it 1.200,  and 0.6000 is between them.  ✅
 
 **Pair 3 — precision 0.667, recall 0.070.** *(A bank with 200 real frauds. The model flags 21 and 14 of them are fraud: 14 ÷ 21 = 0.6667 and 14 ÷ 200 = 0.0700.)*
 
-```
+```text
 plain    :  0.667 + 0.070 = 0.737    0.737 ÷ 2 = 0.3685
 harmonic :  2 × 0.667 × 0.070 = 0.0934
             0.667 + 0.070       = 0.737
@@ -1467,7 +1477,7 @@ check    :  smaller 0.070,  twice it 0.140,  and 0.1267 is between them.  ✅
 
 **Pair 4 — precision 0.300, recall 0.2143.** *(Last week's decision tree.)*
 
-```
+```text
 plain    :  0.3000 + 0.2143 = 0.5143     0.5143 ÷ 2 = 0.2571
 harmonic :  2 × 0.3000 × 0.2143 = 0.12858
             0.3000 + 0.2143       = 0.5143
@@ -1477,7 +1487,7 @@ check    :  smaller 0.2143,  twice it 0.4286,  and 0.2500 is between them.  ✅
 
 **Pair 5 — precision 1.000, recall 0.010.** *(The "flag one thing" stunt.)*
 
-```
+```text
 plain    :  1.000 + 0.010 = 1.010    1.010 ÷ 2 = 0.5050
 harmonic :  2 × 1.000 × 0.010 = 0.020
             1.000 + 0.010       = 1.010
@@ -1487,7 +1497,7 @@ check    :  smaller 0.010,  twice it 0.020,  and 0.0198 is between them.  ✅
 
 **Pair 6 — precision 0.014, recall 1.000.** *(The "flag everything" stunt.)*
 
-```
+```text
 plain    :  0.014 + 1.000 = 1.014    1.014 ÷ 2 = 0.5070
 harmonic :  2 × 0.014 × 1.000 = 0.028
             0.014 + 1.000       = 1.014
@@ -1555,7 +1565,7 @@ pair             plain    harmonic   smaller  2x smaller  in range?
 
 **The arithmetic, in full:**
 
-```
+```text
 never says yes
   precision  =  0 ÷ (0 + 0)   =  UNDEFINED   (it flagged nothing at all)
   recall     =  0 ÷ (0 + 14)  =  0 ÷ 14  =  0.0000
@@ -1787,7 +1797,7 @@ val ROC AUC    : 0.7599
 
 **The station's teaching moment: 8 columns in, 20 out, and the 20 is checkable arithmetic.**
 
-```
+```text
 5 number columns                                     =  5
 restaurant, one-hot: Napoli, SliceHouse, CrustyBros,
                      TandooriPizza, GreenLeaf        =  5
@@ -1923,7 +1933,7 @@ saved: term1_model.joblib
 
 **The five numbers, each with its fraction and its pile:**
 
-```
+```text
 accuracy    =  (51 + 246) ÷ 400  =  297 ÷ 400  =  0.7425   on the 400 validation rows
 precision   =  51 ÷ (51 + 39)    =   51 ÷  90  =  0.5667   on the 400 validation rows
 recall      =  51 ÷ (51 + 64)    =   51 ÷ 115  =  0.4435   on the 400 validation rows
@@ -1933,7 +1943,7 @@ ROC AUC     =  over all 400 predicted probabilities      =  0.7599   on the 400 
 
 **And F1 the other way, to check:**
 
-```
+```text
 2 × 0.5667 × 0.4435  =  0.50266
 0.5667 + 0.4435      =  1.01020
 0.50266 ÷ 1.01020    =  0.4976        ✅ same answer

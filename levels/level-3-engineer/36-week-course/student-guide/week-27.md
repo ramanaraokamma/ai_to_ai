@@ -27,6 +27,8 @@ Last week your network read **529 of 540** handwritten digits it had never seen,
 
 And **eleven** of them came back wrong. Last week the question was *which eleven?* Here they are.
 
+The ten-by-ten grid below counts every prediction the model made on the held-out digits:
+
 ```text
 [[54  0  0  0  0  0  0  0  0  0]
  [ 0 53  0  0  0  1  0  0  1  0]
@@ -52,13 +54,18 @@ That has a name, and finding it is the difference between *"the model is 98% acc
 
 So: eleven wrong, four of them from one pair, and here is the constraint. **You may not collect any new pictures.** No downloads, no scanner. The 1,257 digits you have are all the digits there will ever be.
 
-**Two things you can still do.** One: make more pictures out of the ones you already own. Two: borrow a network that already learned to see, and only teach it the last bit.
+Two things you can still do:
+
+1. Make more pictures out of the ones you already own.
+2. Borrow a network that already learned to see, and only teach it the last bit.
 
 Today you do both — and **one of them works and one of them does not.** Finding out which is the whole lesson.
 
 ---
 
 ## 🧠 The Big Idea
+
+This section explains the two ways to buy accuracy without new pictures, and how to read a ten-class confusion matrix and a results table.
 
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. Each one carries on from the one above. **The complete runnable file is in 💻 Type This.**
 
@@ -72,7 +79,7 @@ Unless you just tell it.
 
 Every digit, four extra copies: one pixel up, one down, one left, one right. **1,257 rows becomes 6,285.** Five times the data, and you collected nothing.
 
-The tool is one numpy function.
+The tool is one numpy function. These two calls slide a picture down and right:
 
 ```python
 np.roll(img, 1, axis=0)     # slide every row down by one
@@ -81,7 +88,7 @@ np.roll(img, 1, axis=1)     # slide every column right by one
 
 **And there is exactly one thing you have to know about it: `np.roll` wraps.** Whatever falls off one edge comes back on the other.
 
-Here is the real evidence from one 8×8 digit in the dataset:
+Here is the real evidence from one 8×8 digit in the dataset (the first two numbers are its top row, before and after rolling):
 
 ```text
 original      : [0.   0.   0.   0.5  0.44 0.   0.   0.  ]      ← row 0
@@ -107,7 +114,7 @@ blanked-edge  augmentation bought +1.30 points
 
 **Read the two `529 of 540`s.** Five times the training data. Five times the training time. **Exactly nothing, this time** — the identical 529 out of 540. (That exact tie is a seed-0 coincidence: over five seeds the wrapped version sometimes gained a little and sometimes tied, so read it as "no reliable benefit", not "never anything".)
 
-**The fix is three lines**, and it is the whole point of this half of the lesson: after you roll, blank the edge the ink rolled off.
+**The fix is three lines**, and it is the whole point of this half of the lesson: after you roll, blank the edge the ink rolled off. This function does it for all four directions:
 
 ```python
 def shift(stack, dr, dc):
@@ -161,7 +168,7 @@ np.roll(X, 1, axis=1) rolls each picture's ROWS:
   [ 0  1]]      [ 4  5]]     [ 8  9]]     [12 13]]
 ```
 
-**Get the axis wrong and there is no error whatsoever.** The model trains on pictures paired with other pictures' labels. Here is what that produces, measured:
+**Get the axis wrong and there is no error whatsoever.** The model trains on pictures paired with other pictures' labels. Here is the measured result of rolling the wrong axis:
 
 ```text
 trained on the WRONG axis: train 0.5968  test 0.8574  (463 of 540)
@@ -205,7 +212,7 @@ It is very rarely a lucky run. **It is very often a labelling bug**, so check th
 
 **If you do not measure that, you cannot claim anything.** If the frozen version gets 92% and you have nothing to compare it to, **92% is a number, not a result.** That third run is called a **control** and it is not optional.
 
-**The three real numbers:**
+**The three real numbers** (seconds, movable weights, train and test accuracy, and digits right out of the total):
 
 ```text
 frozen-transfer      0.2s  movable  650  train 0.9330  test 0.9257  (249 of 269)
@@ -238,7 +245,7 @@ It must print **650**, not 1,898 and not 0. **A freeze you have not counted is a
 
 ### 4. The confusion matrix, and how to diagnose a pair physically
 
-Ranked, here is **every** mistake the plain model made:
+Ranked by count, here is **every** mistake the plain model made (count, then real digit, then predicted digit):
 
 ```text
   3   8 -> 1
@@ -261,7 +268,7 @@ Ranked, here is **every** mistake the plain model made:
 
 **Now the physical diagnosis, and this is the part people get wrong by restating the number instead of explaining it.**
 
-Average all the 1s in the dataset and all the 8s, and add up the ink in each column:
+Average all the 1s in the dataset and all the 8s, and add up the ink in each column. Here are the two profiles, column by column:
 
 ```text
 average 1, ink per column: [  0   5  42  93 106  56   9   2]
@@ -297,7 +304,9 @@ Here is the four-row table, with the real numbers:
 
 **No.** Rows 1 and 2 were judged on **540 digits, all ten classes.** Rows 3 and 4 were judged on **269 digits, five classes** — and five classes is an easier problem than ten. **Those are two different exams and you cannot compare marks across them.**
 
-```
+The three subtractions, written out:
+
+```text
 0.9926 − 0.9796 = +0.0130     FAIR: same 540 rows, one thing changed
 0.9665 − 0.9257 = +0.0408     FAIR: same 269 rows, one thing changed
 0.9926  against  0.9665       NOT A COMPARISON AT ALL
@@ -309,6 +318,8 @@ Here is the four-row table, with the real numbers:
 
 ## 🔁 The Idea From Last Week, Used Harder
 
+This section reuses last week's parameter count as a check on a freeze.
+
 There is no new maths this week. Instead, **last week's parameter count stops being a check and becomes a proof of intention.**
 
 Last week `sum(p.numel() for p in model.parameters())` printed **1,898**, and its whole job was to agree with a number you had already worked out on paper. This week the same line, with four extra words, becomes the only evidence that a thing you asked for actually happened:
@@ -319,7 +330,7 @@ sum(p.numel() for p in model.parameters() if p.requires_grad)
 
 **Work out what it must print, by hand, before you run it.** You froze the two conv layers, so their weights cannot move:
 
-```
+```text
 conv1  Conv2d(1, 8, 3)   frozen      80
 conv2  Conv2d(8, 16, 3)  frozen    1168
                                    ----
@@ -346,6 +357,8 @@ check:  1248 + 650  =  1898     ✅ all of them accounted for
 
 ## 💻 Type This
 
+This section builds `see_it.py` step by step, so you can run every experiment from this week yourself.
+
 One file, and it is the longest of the term because it trains **six** networks. `load_digits()` ships inside scikit-learn, so **nothing downloads.**
 
 > **💡 When you have internet:** the real version of transfer learning downloads a backbone that somebody else trained on 1.2 million photographs — `pip install torchvision`, then `torchvision.models.resnet18(weights="DEFAULT")` — and freezes it exactly the way you are about to freeze yours. **The mechanism is identical and the numbers here are honest. Nothing this week needs it.**
@@ -354,7 +367,7 @@ You already wrote `make_cnn`, `train` and `acc` in Weeks 23 and 26, so those com
 
 ### Step 1 — the data, the helpers, and one picture five ways
 
-New file, `see_it.py`.
+Create a new file, `see_it.py`, and type the imports, the split and the tensor conversion:
 
 ```python
 """see_it.py - Term 3 checkpoint: augmentation and transfer, entirely offline."""
@@ -434,7 +447,7 @@ def report(tag, secs, model, Xa, ya, Xb, yb):
 
 **Three of those five are Week 23 and Week 26, unchanged.** The two new things are tiny: **`n_movable` counts only the weights that are allowed to move**, and **`train` builds its optimiser from that same filtered list** rather than from `model.parameters()`. Those two lines are the whole difference between a freeze that works and a freeze that only looks like it worked.
 
-**Now one picture, five ways:**
+**Now one picture, rolled once.** Add this to the file:
 
 ```python
 one = X_train[0]
@@ -463,6 +476,8 @@ original row 7: [0.   0.   0.   0.31 0.88 1.   0.25 0.  ]
 
 ### Step 2 — the shift function, and the axis that matters
 
+Add the `shift` function, which rolls a whole stack of pictures and blanks the edge:
+
 ```python
 def shift(stack, dr, dc):
     """Shift every picture in the stack, and blank the edge it rolled off."""
@@ -485,6 +500,8 @@ def shift(stack, dr, dc):
 **And `.copy()` is belt and braces.** On this version of numpy `np.roll` already hands you a fresh array — you can check with `np.shares_memory(a, np.roll(a, 1, axis=1))`, which prints `False`. But `a.T` and `a[1:]` **do** hand back views of the original, and blanking a view blanks your real training data. **`.copy()` costs nothing and means you never have to remember which numpy functions return views and which return fresh arrays.**
 
 ### Step 3 — five copies, glued
+
+Build the wrapped and blanked training sets, five copies each, and print their shapes:
 
 ```python
 shifts = [(0, 0), (-1, 0), (1, 0), (0, -1), (0, 1)]
@@ -511,6 +528,8 @@ test tensor: still (540, 1, 8, 8) - never shifted
 **And look at the second line.** The test tensor is still 540 and it was **never shifted.**
 
 ### Step 4 — run all three, and the honest surprise
+
+Train the plain, wrapped and blanked networks, each from the same starting weights:
 
 ```python
 torch.manual_seed(0)
@@ -549,6 +568,8 @@ blanked-edge  augmentation bought +1.30 points
 > **⚠️ Watch out:** the **seconds** are a stopwatch, not a result. Mine were 2.4, 11.4 and 11.3 on one run and 2.2, 13.0 and 14.2 on the next, on the same laptop. **Every other number on those three lines must match exactly.** If `blanked-edge augmentation bought +1.30 points` does not appear, a seed is missing: `np.random.seed(0)` at the top, `random_state=0, stratify=y` in the split, and `torch.manual_seed(0)` before **every** `make_cnn()`. All three matter.
 
 ### Step 5 — freeze it, count it, and the error that catches you first
+
+Split the digits into two groups, train the first network on the low digits, and save a copy of its weights:
 
 ```python
 lo_tr, lo_te = y_train <= 4, y_test <= 4
@@ -618,6 +639,8 @@ movable weights: 650
 
 ### Step 6 — the three transfer runs, including the control
 
+Run the frozen, fine-tuned and from-scratch networks on the high digits. The frozen network reuses the `frozen` model from the step before:
+
 ```python
 s = train(frozen, Xtr[hi_tr], ytr[hi_tr])
 report("frozen-transfer", s, frozen, Xtr[hi_tr], ytr[hi_tr], Xte[hi_te], yte[hi_te])
@@ -646,6 +669,8 @@ scratch on 5-9       1.1s  movable 1898  train 0.9729  test 0.9814  (264 of 269)
 **And then the control won.**
 
 ### Step 7 — the confusion matrix, and why the pair collides
+
+Build the confusion matrix for the plain network, save it as a picture, and print the ink profiles of two average digits:
 
 ```python
 with torch.no_grad():
@@ -700,11 +725,11 @@ Everything in Steps 1 to 7, in that order, plus the `make_cnn`, `train`, `acc`, 
 
 ## 🔍 Worked Examples
 
-Three complete programs. **Predict every number before you run them.**
+This section gives you three small complete programs to run on your own. **Predict every number before you run them.**
 
 ### Worked Example 1 — Shift an arrow, and watch it teleport
 
-A 6×6 arrow pointing up, drawn by hand, with its tail touching the bottom row.
+Here is a 6×6 arrow pointing up, drawn by hand, with its tail touching the bottom row. The program rolls it with and without blanking:
 
 ```python
 """we1.py - shift a hand-typed arrow, with and without blanking."""
@@ -773,6 +798,8 @@ ink in the original: 63   ink after blanking: 54
 **The ink count is the honest cost: `63 → 54`.** Blanking the wrapped row **did** throw away nine units of real ink — the arrow's tail. **You lose a row of your picture every time you shift, and you get a true label in exchange.** That is a trade, not a free lunch, and it is why two-pixel shifts on an 8×8 usually hurt: you would be throwing away a quarter of the picture.
 
 ### Worked Example 2 — Three axes on a stack of four pictures
+
+This program rolls a stack of four tiny pictures along each axis in turn, then glues five copies with `torch.cat`:
 
 ```python
 """we2.py - three axes on a stack of four tiny pictures."""
@@ -849,7 +876,7 @@ do they match? True   4 x 5 = 20
 
 ### Worked Example 3 — Freeze one layer instead of two
 
-If freezing both convs costs 5.6 points against the control and freezing neither costs 1.5, **what does freezing exactly one cost?** Predict before you look.
+If freezing both convs costs 5.6 points against the control and freezing neither costs 1.5, **what does freezing exactly one cost?** Predict before you look. The program below trains three versions and prints the movable count and test score of each.
 
 ```python
 """we3.py - freeze one conv layer instead of two, and count the movable weights."""
@@ -890,7 +917,7 @@ freeze nothing      movable 1898   1.1s  test 0.9665  (260 of 269)
 
 **And now the result, which in this seed-0 run is beautifully orderly:**
 
-```
+```text
 freeze both convs :  650 movable,  0.2s,  0.9257   (249 of 269)
 freeze conv1 only : 1818 movable,  0.6s,  0.9517   (256 of 269)
 freeze nothing    : 1898 movable,  1.1s,  0.9665   (260 of 269)
@@ -906,12 +933,13 @@ freeze nothing    : 1898 movable,  1.1s,  0.9665   (260 of 269)
 
 ## 🐞 When It Breaks
 
-Every message below came from really running a broken version of this week's code.
+This section shows the three worst bugs of the week and a table of every error you may meet. Every message below came from really running a broken version of this week's code.
 
 > **The three most expensive bugs of Term 3 produced no error message at all:** the double softmax, the wrong roll axis, and a freeze that did not freeze. **All three are caught by printing one number you can predict in advance** — the starting loss should be 2.30, the test score should be below the train score, and the movable weight count should be the number you meant.
 
 ### Break 1 — the head was swapped before the load
 
+This code swaps the head and then loads the saved weights:
 ```python
 frozen = make_cnn()
 frozen[7] = nn.Linear(64, 5)           # head replaced FIRST
@@ -935,6 +963,7 @@ RuntimeError: Error(s) in loading state_dict for Sequential:
 
 ### Break 2 — everything got frozen, head included
 
+This code freezes every parameter and then builds the optimiser:
 ```python
 for p in model.parameters():
     p.requires_grad = False
@@ -956,6 +985,7 @@ ValueError: optimizer got an empty parameter list
 
 ### Break 3 — the one with no message at all
 
+This code builds the augmented set with the wrong axes:
 ```python
 X_bad = torch.cat([t4(np.roll(np.roll(X_train, dr, axis=0), dc, axis=1))
                    for dr, dc in shifts])
@@ -969,7 +999,9 @@ wrong axis          13.6s  movable 1898  train 0.5968  test 0.8574  (463 of 540)
 
 **What is impossible about those two numbers?** **The test accuracy is higher than the training accuracy.**
 
-**What actually happened.** `axis=0` on a stack of 1,257 pictures is not the rows of a picture — **it is which picture.** The pictures got shuffled round while the labels stayed exactly where they were, so two fifths of the training rows (the up and down copies) are pictures paired with somebody else's label. **Unlearnable.** The other three fifths still have the right labels (the left and right copies roll each picture's rows, which is a wrapped shift, not a shuffle), so the model scored 0.5968 on its own partly scrambled homework, close to the 0.6 that three correct fifths allow, and 0.8574 on the untouched test set.
+**What actually happened.** `axis=0` on a stack of 1,257 pictures is not the rows of a picture — **it is which picture.** The pictures got shuffled round while the labels stayed exactly where they were, so two fifths of the training rows (the up and down copies) are pictures paired with somebody else's label. **Unlearnable.**
+
+The other three fifths still have the right labels (the left and right copies roll each picture's rows, which is a wrapped shift, not a shuffle). So the model scored 0.5968 on its own partly scrambled homework, close to the 0.6 that three correct fifths allow, and 0.8574 on the untouched test set.
 
 **Take one alarm away from this week and make it this one:**
 
@@ -977,6 +1009,7 @@ wrong axis          13.6s  movable 1898  train 0.5968  test 0.8574  (463 of 540)
 
 ### The whole clinic, for reference
 
+Every error above, plus the silent ones, in one table:
 | What you see | What it means | The fix |
 |---|---|---|
 | `RuntimeError: Error(s) in loading state_dict ... size mismatch for 7.weight: copying a param with shape torch.Size([10, 64]) ... current model is torch.Size([5, 64])` | The saved head and this model's head are different sizes | **Load first, then swap the head.** And it names both shapes — which did you type? |
@@ -996,9 +1029,16 @@ wrong axis          13.6s  movable 1898  train 0.5968  test 0.8574  (463 of 540)
 
 ## 🎲 What We Did In Class
 
-If you missed it, here is the whole lesson. You need workbook pages 27.1 to 27.3, a pen, and last week's `digits_cnn.py` still working.
+This section is the whole lesson for anyone who missed it. You need workbook pages 27.1 to 27.3, a pen, and last week's `digits_cnn.py` still working.
 
-**The hook.** Two numbers on the board: `529 of 540 right`, `11 wrong`. Then the ten-by-ten confusion matrix, drawn by writing only the non-zero cells. Then four questions in a row: *"add up the diagonal"* (529), *"add up everything not on it"* (11), *"what must those two add to?"* (540), and *"find the biggest number that is NOT on the diagonal"* (row 8, column 1: three). Then *"so what happened three times?"* A real 8 was called a 1. Then *"anything in the mirror position?"* One.
+**The hook.** Two numbers on the board: `529 of 540 right`, `11 wrong`. Then the ten-by-ten confusion matrix, drawn by writing only the non-zero cells. Then four questions in a row:
+
+1. *"Add up the diagonal"* (529).
+2. *"Add up everything not on it"* (11).
+3. *"What must those two add to?"* (540).
+4. *"Find the biggest number that is NOT on the diagonal"* (row 8, column 1: three).
+
+Then *"so what happened three times?"* A real 8 was called a 1. Then *"anything in the mirror position?"* One.
 
 **Four mistakes out of eleven, from one pair out of forty-five.** And then the constraint: **no new pictures, ever.** Two things you can still do, and *"one of them works and one of them does not."*
 
@@ -1006,13 +1046,13 @@ If you missed it, here is the whole lesson. You need workbook pages 27.1 to 27.3
 
 Then one line stayed on the board all lesson:
 
-```
+```text
 np.roll wraps.  BLANK the edge it rolled off.
 ```
 
 **Backbone and head, and the question that makes it an experiment.** *"Two of your eight filters were edge detectors. Is 'there is a vertical edge here' useful for reading a 3? A 7? A face?"* Yes to all. **Edges are about pictures, not about digits.** Then freezing, `requires_grad = False` — Week 20's flag, turned off for the first time — and then, big, on the board:
 
-```
+```text
 what would training from scratch on the 5-to-9 rows have given?
 ```
 
@@ -1020,7 +1060,7 @@ what would training from scratch on the 5-to-9 rows have given?
 
 **Three predictions, in pen, before anything ran:** will wrapped beat plain, will blanked beat plain, and which of frozen / fine-tuned / scratch wins. Then all the votes went on the board.
 
-**Then it ran, and there were five seconds of silence.**
+**Then it ran, and there were five seconds of silence.** This is what came out:
 
 ```text
 plain                2.4s  movable 1898  train 0.9881  test 0.9796  (529 of 540)
@@ -1051,9 +1091,9 @@ Both went in the Bug Log. The first entry says, in the column where the error me
 | 5 | W24 / W25 — the picture, and the shapes | *"`16 × 2 × 2 = 64`, and that is the number in my `Linear` layer."* |
 | 6 | W26 — a network that reads digits | *"529 of 540 held-out digits, with 1,898 weights, in about three seconds."* |
 
-**Then the honest transfer experiment**, eight minutes, three runs onto a three-column wall sheet — and somebody noticed the third column, headed **FROM SCRATCH**, being added before anything ran.
+**Then the honest transfer experiment**, eight minutes, three runs onto a three-column wall sheet — and somebody noticed the third column, headed **FROM SCRATCH**, being added before anything ran. The sheet at the end:
 
-```
+```text
                         movable weights   seconds   test accuracy
 frozen backbone                    650       0.2          0.9257
 unfrozen (fine-tuned)            1,898       1.1          0.9665
@@ -1072,6 +1112,8 @@ from scratch, no borrowing       1,898       1.1          0.9814
 
 ## 💬 Talk About It
 
+Three questions to argue about with a partner or a parent, using the numbers on the page.
+
 **1. Wrapped augmentation gave the model five times the data and bought nothing in our run. Does that mean "more data" is bad advice?**
 
 *Hint:* start with the two identical numbers, `529 of 540` and `529 of 540`, and then look at the *training* accuracies, `0.9881` against `0.9774`. The wrapped model got **worse at its own homework** — which is only possible if some of that homework contradicts itself. So the advice is not wrong, it is incomplete: **more data is better if the label is still true.** Then the harder half, which has no clean answer: how would you *check* that a label is still true, at scale, without looking at 6,285 pictures by hand? (You cannot look at all of them. So what would you look at? A sample? The training accuracy? The class balance?) And the sharpest version: flipping a cat is a cat, flipping a 2 is not a 2, and mirroring a road sign with writing on it is nonsense. **Nobody can give you a universal list. Is that a gap in the field or a fact about data?**
@@ -1087,6 +1129,8 @@ from scratch, no borrowing       1,898       1.1          0.9814
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four tempting wrong answers from this week, each paired with the right one.
 
 ### Trick 1 — "`np.roll` shifts the picture, so a rolled digit is the same digit"
 
@@ -1127,6 +1171,8 @@ And the arithmetic that tells you 650 is the right number: `80 + 1,168 = 1,248` 
 
 ## 🌍 Where You've Seen This
 
+Augmentation, fine-tuning, confusion pairs and controls all turn up outside this course. Here are six places.
+
 1. **A photo app that gets better at recognising your friends without you uploading anything new.** Some of that is augmentation: the same photos, shifted, rotated and re-brightened, used as extra training rows — with somebody having thought hard about which changes keep the label true.
 2. **"Fine-tuning" in the release notes of nearly every AI product.** That is exactly this week's second half: somebody took a huge pretrained network, threw away its head, bolted on a new one, and trained only the new part — **and their source really did know a million pictures' worth more than their target.**
 3. **A voice assistant that mishears two similar words in one direction but not the other.** That is a confusion pair with a lopsided count, and the physical diagnosis is the same shape as ours: one of the two loses information that the other never had.
@@ -1137,6 +1183,8 @@ And the arithmetic that tells you 650 is the right number: `80 + 1,168 = 1,248` 
 ---
 
 ## 🧭 Where This Fits
+
+This section places this week on the course map and says what it connects to.
 
 Fourth week in the same box, and the last one. The tile marked *images · CNNs* covers Weeks 24 to 27, and
 today closes it — and it closes on a question you can ask about any model you will ever build: **can I
@@ -1166,6 +1214,8 @@ as it has been since Week 12.*
 
 ## 🔑 Remember This
 
+These are the points to keep from the week, followed by a syntax card you can copy from.
+
 - **Augmentation works only while the label stays true.** `np.roll` wraps, so the ink that falls off one edge reappears on the other. Blank the edge and it bought **+1.30 points, 529 → 536 of 540** in our seed-0 run (other seeds gave similar gains in most cases, not all). Leave the wrap in and it bought **+0.00** here, five times over.
 - **On a stack of pictures, `axis=0` is which picture, `axis=1` is rows, `axis=2` is columns.** Getting it wrong shuffles pictures away from their labels with no error at all.
 - **If test beats train, suspect your training labels first.** `train 0.5968, test 0.8574` is very rarely a lucky run.
@@ -1176,6 +1226,8 @@ as it has been since Week 12.*
 - **Two accuracies measured on different piles are not comparable, however close together you print them.** Write the held-out pile on **every row** of every table.
 
 ### Syntax reminder card
+
+The new constructs from this week in one place:
 
 ```python
 import numpy as np
@@ -1224,6 +1276,8 @@ plt.savefig("confusion.png", dpi=110)          # matplotlib.use("Agg") at the to
 
 ## 📓 New Words
 
+This section lists the six words from this week, with a picture and an example for each.
+
 ![This week's six words, drawn](../figures/fig-w27-6-vocab-icons.svg)
 *Figure 27.6 — This week's six words, drawn.*
 
@@ -1240,6 +1294,8 @@ plt.savefig("confusion.png", dpi=110)          # matplotlib.use("Agg") at the to
 
 ## 📤 Your Homework
 
+This section sends you to the workbook and says what will be marked.
+
 Go to **[the Week 27 workbook](../workbook/week-27.md)**. About **60 minutes** in total.
 
 | Section | What to do | Time |
@@ -1253,11 +1309,9 @@ Go to **[the Week 27 workbook](../workbook/week-27.md)**. About **60 minutes** i
 
 **Three things are being marked, and the second is the real one.**
 
-**Is the held-out pile on every row of the table?** A table with `540` on rows 1 and 2 and `269` on rows 3 and 4 is a table that cannot mislead anybody, including you in six months. **A table with the piles missing is the single most common way a real report tells a lie without anybody meaning to.**
-
-**Is your diagnosis of the 1/8 pair physical?** The bar is one question: **did you say something about what 64 pixels can and cannot show?** *"An 8's loops are about three pixels across, too small to hold a hole, so they fill in and leave a bright bar down the middle — and a 1 is a bright bar down the middle"* is a diagnosis. *"The model confused 1 and 8 four times"* is a location. **A page that restates the count in different words scores nothing.**
-
-**Does every line of the reflection have a number in it?** Six lines, Weeks 20 to 26, six numbers. Not *"I learned about convolution"*. *"I can work out a conv layer's output size on paper: 8 becomes 8 with padding 1, and 4 without."*
+1. **Is the held-out pile on every row of the table?** A table with `540` on rows 1 and 2 and `269` on rows 3 and 4 is a table that cannot mislead anybody, including you in six months. **A table with the piles missing is the single most common way a real report tells a lie without anybody meaning to.**
+2. **Is your diagnosis of the 1/8 pair physical?** The bar is one question: **did you say something about what 64 pixels can and cannot show?** *"An 8's loops are about three pixels across, too small to hold a hole, so they fill in and leave a bright bar down the middle — and a 1 is a bright bar down the middle"* is a diagnosis. *"The model confused 1 and 8 four times"* is a location. **A page that restates the count in different words scores nothing.**
+3. **Does every line of the reflection have a number in it?** Six lines, Weeks 20 to 26, six numbers. Not *"I learned about convolution"*. *"I can work out a conv layer's output size on paper: 8 becomes 8 with padding 1, and 4 without."*
 
 > **⚠️ Watch out:** the three predictions on the augmentation and transfer runs go in **pen, before anything runs.** Nearly everybody gets two of the three wrong, and that is the design. **A prediction with a reason attached earns credit even when it is wrong** — a blank page means the experiment was a demonstration.
 

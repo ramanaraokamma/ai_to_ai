@@ -58,6 +58,8 @@ There is no model in this chapter. That is the message: **the modelling was neve
 
 ## 🧠 The Big Idea
 
+This section walks through the five decisions one at a time. You need them because they all come before any model.
+
 ### 1. The unit of prediction: what is one row?
 
 > **Unit of prediction** — what one row of your table stands for, and therefore what one prediction is *about*.
@@ -389,7 +391,7 @@ memory usage: 157.9+ KB
 
 **Two thousand and twenty.** You asked for two thousand. The very first number the table printed disagreed with what you asked for — **that is why check 0 exists.**
 
-Then find the one line in `info()` that is different from all the others:
+Now find the one line in `info()` that differs from all the others:
 
 ```text
  8   driver_experience_months  1912 non-null   float64
@@ -496,7 +498,7 @@ print(df["late"].value_counts(normalize=True).round(4).to_string())
 
 ### The whole file
 
-Here is `audit.py` as it should end up. **The five diagnostic lines from Step 6 are not in it** — they were a detour to prove a point, and the audit itself is four checks and nothing else. Keep them in a scratch file if you liked them.
+Here is `audit.py` as it should end up, for you to check your own file against. **The five diagnostic lines from Step 6 are not in it** — they were a detour to prove a point, and the audit itself is four checks and nothing else. Keep them in a scratch file if you liked them.
 
 ```python
 """audit.py - the four checks you run on every new table, before anything else."""
@@ -536,6 +538,8 @@ print(df["late"].value_counts(normalize=True).round(4).to_string())
 ---
 
 ## 🔍 Worked Examples
+
+These three examples apply the same checks to new tables, so you can see which parts belong to the method and which belong to the pizza data.
 
 ### Worked Example 1 — the same four checks on twelve rows you can see all of
 
@@ -861,6 +865,8 @@ Card 4 is blank on purpose. Card 5 is in pen on purpose.
 
 ## 💬 Talk About It
 
+These are questions to argue about with a partner or an adult. Each has a hint, so try your own answer before you open it.
+
 **1. Who decides the unit of prediction in real life? Isn't it just obvious?**
 
 *Hint:* it is genuinely not, and there are two good answers that disagree. The **engineering** answer: the unit is whatever you can *act on* — if a dispatcher can only intervene on one order at a time, one row must be one order, or the output is unusable. The **measurement** answer: the unit is whatever is *independently sampled* — two orders from the same kitchen on the same bad evening are not two independent facts, so counting them as two rows quietly overstates how much data you have. Both arguments are strong. Both are usually right. They conflict in real projects and no formula settles it. What experienced people actually do: **pick one, write down which and why, and check whether the answer changes if you pick the other.**
@@ -876,6 +882,8 @@ Card 4 is blank on purpose. Card 5 is in pen on purpose.
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four sentences that sound reasonable this week, each shown next to the better version.
 
 ### Trick 1 — "the average is the average"
 
@@ -907,6 +915,8 @@ Card 4 is blank on purpose. Card 5 is in pen on purpose.
 ---
 
 ## 🌍 Where You've Seen This
+
+The same ideas show up outside the classroom. Here are six places.
 
 1. **The "recommended for you" row on any streaming app.** Its unit of prediction is not a video — it is a **(viewer, video) pair at one moment**, because a recommendation is always *for somebody*. Getting that unit wrong is the classic beginner's mistake, and it makes a model nobody can use.
 2. **Your bank's fraud alert.** One row is one transaction, and the class balance is brutal — well under 1% are fraud. Which is exactly why nobody there reports accuracy. You will build this table in Week 8.
@@ -943,6 +953,8 @@ the training loop, still closed — you open it in Week 12.*
 ---
 
 ## 🔑 Remember This
+
+The week in seven points, followed by a syntax card to keep beside your keyboard.
 
 - **`model.fit(X, y)` hides five decisions:** the unit of prediction · y · X · the split · the metric. None of the five is visible in the line, and every one of them changes the answer.
 - **The unit of prediction is a sentence, not a word.** "One row is one pizza order." Everything after it is *per what?*, and the unit is the answer.
@@ -987,6 +999,8 @@ print(df["late"].value_counts(normalize=True).round(4).to_string())
 ---
 
 ## 📓 New Words
+
+Six words from this week, with what each means and an example from the pizza table.
 
 ![Six words from Week 1, drawn](../figures/fig-w01-7-vocab-icons.svg)
 *Figure 1.8 — Six words from Week 1, drawn.*

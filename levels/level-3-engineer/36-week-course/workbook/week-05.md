@@ -8,6 +8,8 @@
 
 ## ✅ Warm-Up (5 min)
 
+This warm-up revisits last week from memory. Answer in pen, then check against the Answers section at the back.
+
 Five from **last week** — the two rulers and the two encoders. No looking back.
 
 **W1.** `scaler.mean_` and `scaler.scale_` both end in an underscore. **What does that underscore mean, and what happens if you print one before `.fit`?**
@@ -20,7 +22,7 @@ ________________________________________________________________
 
 **W3.** The cardinality arithmetic, from memory.
 
-```
+```text
 restaurant  ______ values  ->  ______ columns
 day_of_week ______ values  ->  ______ columns
 weather     ______ values  ->  ______ columns
@@ -60,7 +62,7 @@ E  D + dist_x_weather    23    0.7725   0.7829 0.0077
 
 **Step 1 — five subtractions, each against the row *above* it.** Write the sign every time, even when it is a plus.
 
-```
+```text
 B − A :  0.7825 − 0.7752 = ____________
 C − A :  0.7815 − 0.7752 = ____________
 D − B :  0.7843 − 0.7825 = ____________
@@ -74,7 +76,7 @@ B ____________  C ____________  D ____________  E ____________  F ____________
 
 **Step 3 — now round all five of your deltas to two decimal places**, the way school maths teaches you to.
 
-```
+```text
 ______  ______  ______  ______  ______
 ```
 
@@ -110,7 +112,7 @@ ________________________________________________________________
 
 **M2(b). Now take the guard away.** A sixth order arrives with `prep_minutes = 11.0` and `distance_km = 0.00`.
 
-```
+```text
 with the guard   : 11.0 ÷ (0.00 + 0.5) = 11.0 ÷ ______ = ____________
 without the guard: 11.0 ÷ ______ = ____________
 ```
@@ -119,7 +121,7 @@ without the guard: 11.0 ÷ ______ = ____________
 
 **M2(c).** Two orders both had **12 minutes** of prep — one on a 2 km run and one on a 9 km run.
 
-```
+```text
 12 ÷ (2 + 0.5) = 12 ÷ ______ = ____________
 12 ÷ (9 + 0.5) = 12 ÷ ______ = ____________
 ```
@@ -134,7 +136,7 @@ The six `roc_auc` values from the table are `0.7752, 0.7825, 0.7815, 0.7843, 0.7
 
 **Step 1 — the mean.**
 
-```
+```text
 0.7752 + 0.7825 + 0.7815 + 0.7843 + 0.7829 + 0.7828 = ____________
 
 ____________ ÷ 6 = ________________  (keep every digit)
@@ -142,7 +144,7 @@ ____________ ÷ 6 = ________________  (keep every digit)
 
 **Step 2 — the standard deviation.** Work in units of **0.0001** to keep the digits manageable: so instead of `−0.0063` write `−63`.
 
-```
+```text
 subtract the mean:  ______  ______  ______  ______  ______  ______
 square each:        ______  ______  ______  ______  ______  ______
 add them up:        ______________________________________ = ______
@@ -154,7 +156,7 @@ square root:        √____________ = ____________  (in units of 0.0001)
 
 **Step 3 — two z-scores.**
 
-```
+```text
 z of row A (0.7752) = (0.7752 − ________________) ÷ ________________ = ____________
 z of row D (0.7843) = (0.7843 − ________________) ÷ ________________ = ____________
 ```
@@ -171,7 +173,7 @@ Real lateness rates from your own delivery table.
 
 **The rush-hour flag.**
 
-```
+```text
 not rush (1283 orders)  0.2424
 rush     ( 717 orders)  0.3682
                         subtract: ____________
@@ -181,7 +183,7 @@ rush     ( 717 orders)  0.3682
 
 **The four-band cut.**
 
-```
+```text
 morning   (10-14)  684 orders   0.2383
 afternoon (15-17)  286 orders   0.2552
 rush      (18-20)  717 orders   0.3682
@@ -205,7 +207,7 @@ ________________________________________________________________
 | **under 5 km** | 0.1765 | 0.2927 | 0.3908 |
 | **over 5 km** | 0.5034 | 0.5914 | 0.8571 |
 
-```
+```text
 what a long trip costs in the clear: 0.5034 − 0.1765 = ____________
 what a long trip costs in a storm  : 0.8571 − 0.3908 = ____________
 
@@ -217,6 +219,8 @@ the comparison:  ____________ ÷ ____________ = ____________
 ---
 
 ## 🔎 Predict the Output
+
+This page is for committing to a prediction before you see the real output, so you can compare the two.
 
 **Write your prediction in pen before you run anything.** Every snippet begins with
 
@@ -377,7 +381,7 @@ print("names shape:", pre.get_feature_names_out().shape)
 
 **Do the column arithmetic in pen first.**
 
-```
+```text
 numeric columns in NUM        : ______
 one-hot from restaurant       : ______
 one-hot from day_of_week      : ______
@@ -413,6 +417,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading: matching terms, tracing shapes, spotting faulty lines and reading ablation reports.
 
 **A1. Match the word to the thing.** Write the letter.
 
@@ -578,6 +584,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
+This set is for writing: five tasks that build from one line of evidence up to a whole program. Each task shows its expected output and a "Done looks like" check.
+
 ### B1 — one line of evidence
 
 **Task:** print the two lateness rates for a rush-hour flag, and the gap between them. `make_data.py` must be in the folder.
@@ -634,7 +642,7 @@ counts add to: 2000
 
 **Task:** for each of these four candidate columns, print the group sizes and lateness rates, and the biggest-minus-smallest spread.
 
-```
+```text
 is_big_order   items >= 5
 dist_band      distance_km cut at 2 and 5
 items_per_min  items / (prep_minutes + 0.5), cut at 0.2 and 0.4
@@ -863,6 +871,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for working backwards from finished columns to the code that built them.
+
 ### The Invention Detective
 
 Somebody built five new columns on the first five rows of the delivery table and then lost the code. **Here are the original columns:**
@@ -908,7 +918,7 @@ ________________________________________________________________
 
 **Part 1(c).** Check one value of M2 on a calculator and write the division out in full.
 
-```
+```text
 row ______ : ____________ ÷ ( ____________ + 0.5 ) = ____________ ÷ ____________ = ____________
 ```
 
@@ -924,7 +934,7 @@ An ablation table was printed and somebody spilled tea on it. **Recover the miss
 E  D + dist_x_weather   ??????         −0.0014
 ```
 
-```
+```text
 B's AUC : 0.7752 + ____________ = ____________
 D − B   : 0.7843 − ____________ = ____________
 E's AUC : 0.7843 + ( ____________ ) = ____________
@@ -945,6 +955,8 @@ ______ extra columns · it bought ____________________
 ---
 
 ## 🤔 Think Deeper
+
+These questions are for longer written answers. Write a paragraph for each.
 
 **T1.** `is_rush` hard-codes the hours **18 to 20**. The model's weights get updated every time you retrain; the numbers `18` and `20` do not. **Write a paragraph.** If the city's rush hour shifts to 17:00–19:00 next year, what happens to your model, and would a retrain fix it? Where should a fact like "rush hour is 18 to 20" be written down so that somebody finds it in two years? And is `is_rush` part of the *features* or part of the *model* — does the question even have an answer?
 
@@ -1014,7 +1026,7 @@ ________________________________________________________________
 
 ### The five subtractions, written out
 
-```
+```text
 Z1 − A  = ____________ − ____________ = ____________   ____________
 Z2 − Z1 = ____________ − ____________ = ____________   ____________
 Z3 − Z2 = ____________ − ____________ = ____________   ____________
@@ -1119,7 +1131,7 @@ ________________________________________________________________
 
 **W3.**
 
-```
+```text
 restaurant  5 values -> 5 columns
 day_of_week 7 values -> 7 columns
 weather     3 values -> 3 columns
@@ -1135,7 +1147,7 @@ weather     3 values -> 3 columns
 
 **M1 — the six subtractions.**
 
-```
+```text
 B − A :  0.7825 − 0.7752 = +0.0073
 C − A :  0.7815 − 0.7752 = +0.0063
 D − B :  0.7843 − 0.7825 = +0.0018
@@ -1171,7 +1183,7 @@ F − E :  0.7828 − 0.7829 = −0.0001
 
 **M2(b).**
 
-```
+```text
 with the guard   : 11.0 ÷ (0.00 + 0.5) = 11.0 ÷ 0.5 = 22.0
 without the guard: 11.0 ÷ 0.00        = inf
 ```
@@ -1180,7 +1192,7 @@ A calculator says **error** or **∞**; numpy says `inf`, and then `LogisticRegr
 
 **M2(c).**
 
-```
+```text
 12 ÷ 2.5 = 4.80
 12 ÷ 9.5 = 1.2632
 ```
@@ -1189,7 +1201,7 @@ The question the ratio asks: **"is the kitchen the bottleneck, or is the road?"*
 
 **M3 — the standard deviation of the six scores.**
 
-```
+```text
 0.7752 + 0.7825 + 0.7815 + 0.7843 + 0.7829 + 0.7828 = 4.6892
 
 4.6892 ÷ 6 = 0.78153333...
@@ -1197,7 +1209,7 @@ The question the ratio asks: **"is the kitchen the bottleneck, or is the road?"*
 
 In units of 0.0001, subtract the mean (78153.33 ten-thousandths ≈ 781.53 in units of 0.0001 for a four-decimal number — easier: subtract 0.781533 from each and multiply by 10,000):
 
-```
+```text
 subtract:  −63.3    +9.7     −0.3    +27.7    +13.7    +12.7
 square:    4006.9   94.1      0.1    767.3    187.7    161.3
 add:       4006.9 + 94.1 + 0.1 + 767.3 + 187.7 + 161.3 = 5217.4
@@ -1207,7 +1219,7 @@ root:      √869.6 = 29.49
 
 **So the standard deviation is 29.49 × 0.0001 = 0.002949.** numpy says `0.0029488227406128677`. ✅
 
-```
+```text
 z of row A = (0.7752 − 0.781533) ÷ 0.0029488 = −0.006333 ÷ 0.0029488 = −2.1477
 z of row D = (0.7843 − 0.781533) ÷ 0.0029488 = +0.002767 ÷ 0.0029488 = +0.9382
 ```
@@ -1218,7 +1230,7 @@ z of row D = (0.7843 − 0.781533) ÷ 0.0029488 = +0.002767 ÷ 0.0029488 = +0.93
 
 **M4 — the group rates.**
 
-```
+```text
 0.3682 − 0.2424 = 0.1258        1283 + 717 = 2000 ✅
 684 + 286 + 717 + 313 = 2000 ✅
 ```
@@ -1229,7 +1241,7 @@ z of row D = (0.7843 − 0.781533) ÷ 0.0029488 = +0.002767 ÷ 0.0029488 = +0.93
 
 **M4(c).**
 
-```
+```text
 0.5034 − 0.1765 = 0.3269
 0.8571 − 0.3908 = 0.4663
 0.4663 ÷ 0.3269 = 1.4264, so about 1.43
@@ -1296,7 +1308,7 @@ names shape: (25,)
 
 The column arithmetic:
 
-```
+```text
 numeric columns in NUM        : 6     (5 base + is_rush)
 one-hot from restaurant       : 5
 one-hot from day_of_week      : 7
@@ -1370,7 +1382,7 @@ X.shape after all of the above                (2000, 8)
 
 **A6.** Reading the blanks left to right:
 
-```
+```text
 is_rush        : 12 is not between 18 and 20  ->  0
 hour_band      : 12 is in (9, 14]             ->  morning
 min_per_km     : 15.0 / (2.78 + 0.5) = 15.0 / 3.28 -> 4.5732
@@ -1559,7 +1571,7 @@ Z1  + is_big_order     cols= 21  roc_auc=0.7756
 
 **Bug 1 — line 29, a runtime bug that shouts.**
 
-```
+```text
 edges  : 4   (0, 10, 18, 45)
 labels : 2   ("fast", "slow")
 wanted : 3
@@ -1627,13 +1639,13 @@ delta C - B: 0.0004
 
 **Part 1(c).** For example row 5:
 
-```
+```text
 19.6 ÷ (2.33 + 0.5) = 19.6 ÷ 2.83 = 6.9258
 ```
 
 **Part 2.**
 
-```
+```text
 B's AUC : 0.7752 + 0.0074 = 0.7826    (the table printed 0.7825 — see below)
 D − B   : 0.7843 − 0.7825 = +0.0018
 E's AUC : 0.7843 + (−0.0014) = 0.7829
@@ -1702,7 +1714,7 @@ Z0  raw columns only    20    0.7600   0.7752  0.0000
 
 **The five subtractions, against the row above:**
 
-```
+```text
 Z1 − Z0 = 0.7756 − 0.7752 = +0.0004   keep? barely
 Z2 − Z1 = 0.7718 − 0.7756 = −0.0038   DELETE
 Z3 − Z2 = 0.7714 − 0.7718 = −0.0004   DELETE

@@ -618,6 +618,8 @@ print("report it as  : AUC = %.3f +/- %.3f (5-fold stratified CV)"
 
 ## 🔍 Worked Examples
 
+Three full examples that reuse this week's code with different price lists and a different curve. Run each one yourself and compare your output with the printed block.
+
 ### Worked Example 1 — The same nine rows, three different price lists
 
 Change **one line** — `COST_FN` — and run it again. Nothing else moves: same model, same 1,000 probabilities, same nine thresholds, same 14 frauds.
@@ -992,6 +994,8 @@ And here is why it matters. Since Week 3 you have typed `LogisticRegression().fi
 
 ## 💬 Talk About It
 
+Discussion questions for class or for dinner. Each has a hint underneath; try your own answer first.
+
 **1. Who decided that a missed fraud is worth fifty false alarms — and what would you say to them?**
 
 *Hint:* a person did. Probably a committee, in a meeting, with a spreadsheet. **And that is the best possible answer**, because it means you can go and ask them, and they have to justify it. Compare it with last week, where the decision was being made by the number `0.5` in a library's defaults and there was nobody to ask.
@@ -1007,6 +1011,8 @@ And here is why it matters. Since Week 3 you have typed `LogisticRegression().fi
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four sentences that sound right and are not. Each one is quoted below, then answered.
 
 ### Trick 1 — "the cheapest threshold is the best threshold"
 
@@ -1038,6 +1044,8 @@ And here is why it matters. Since Week 3 you have typed `LogisticRegression().fi
 ---
 
 ## 🌍 Where You've Seen This
+
+Price lists and error bars show up outside this course. Here is where.
 
 - **Your bank's fraud team.** Somewhere there is a real spreadsheet with a real price for a chargeback and a real price for an analyst's hour, and a real threshold chosen from it. When your card gets declined on holiday, you are standing inside somebody's cost matrix.
 - **Spam filters with a "quarantine" folder.** Three thresholds, not one: deliver, quarantine, delete. Each boundary has its own price — deleting a real email is expensive, quarantining it is annoying, delivering spam is cheap.

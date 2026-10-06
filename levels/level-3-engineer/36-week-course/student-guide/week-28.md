@@ -23,9 +23,11 @@
 
 ## 🪝 Start Here
 
+This section shows what changes when the answer column disappears, and sets up the two-step algorithm you will do by hand.
+
 For twenty-seven weeks, everything you have built has had two halves.
 
-```
+```text
         WEEKS 1 to 27              TODAY
         X   (the table)            X   (the table)
         y   (the answers)
@@ -49,9 +51,9 @@ By colour? By size? By shape? By which set they came out of?
 
 **Notice what that is.** It is not a score. **It is an argument.** For the rest of this term, when you finish a job like this, the thing you hand in is an argument with numbers in it.
 
-Now here is all the data there is:
+Now here is all the data there is, six points with an (across, up) position each:
 
-```
+```text
 A = (1, 2)      D = (8, 8)
 B = (2, 1)      E = (9, 7)
 C = (2, 3)      F = (7, 9)
@@ -68,6 +70,8 @@ The algorithm has **two steps**. Two. And you are going to do both of them with 
 ---
 
 ## 🧠 The Big Idea
+
+This section explains unsupervised learning, the two-step k-means algorithm, inertia, and why the scale of your columns matters. Each part is worked with numbers you can check by hand.
 
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. Each one carries on from the one above. **The complete runnable file is in 💻 Type This.**
 
@@ -94,9 +98,9 @@ That second sentence sounds mild. It is not. Here is exactly what it costs you:
 
 > **Centroid** — the average position of everything currently in a cluster. Its centre of gravity. If a cluster holds the points (1,2) and (2,1), its centroid is at ((1+2) ÷ 2, (2+1) ÷ 2) = (1.5, 1.5).
 
-Here is the entire algorithm. All of it.
+Here is the entire algorithm, written as four lines you can keep beside you.
 
-```
+```text
 1. Put down k centres, anywhere.
 2. ASSIGN : give every point to its nearest centre.
 3. MOVE   : put every centre in the middle of the points it just got.
@@ -114,9 +118,9 @@ Steps 2 and 3 take turns, and **each of them can only make the clusters tighter,
 
 ### 3. Two rounds by hand, and the point that comes home
 
-Six points, `k = 2`, and the two starting centres put **deliberately badly** — both of them in the left-hand bunch, one sitting exactly on top of A and one exactly on top of C:
+Six points, `k = 2`, and the two starting centres put **deliberately badly** — both of them in the left-hand bunch, one sitting exactly on top of A and one exactly on top of C. The starting centres are:
 
-```
+```text
 centre 1 = (1, 2)        centre 2 = (2, 3)
 ```
 
@@ -137,9 +141,9 @@ Groups: **centre 1 got {A, B}** and **centre 2 got {C, D, E, F}**.
 
 **Look at how bad that is.** C is sitting right next to A and B, and it has been filed with three points seven units away. For one reason only: **centre 2 happened to be standing on top of it, so its distance was 0.** That is not the algorithm being stupid. It is the algorithm doing exactly what it was told, from a bad starting position.
 
-**ROUND 1, move.**
+**ROUND 1, move.** Each centre goes to the average of the points it just received:
 
-```
+```text
 centre 1 = middle of {A, B} = ( (1+2) ÷ 2 , (2+1) ÷ 2 ) = ( 1.5 , 1.5 )
 
 centre 2 = middle of {C, D, E, F}
@@ -163,9 +167,9 @@ centre 2 = middle of {C, D, E, F}
 
 Groups: **{A, B, C}** and **{D, E, F}**. **C came home.** The bad start repaired itself in exactly one round.
 
-**ROUND 2, move.**
+**ROUND 2, move.** Same rule again, with the new groups:
 
-```
+```text
 centre 1 = ( (1+2+2) ÷ 3 , (2+1+3) ÷ 3 ) = ( 5÷3 , 6÷3 ) = ( 1.6667 , 2.0 )
 centre 2 = ( (8+9+7) ÷ 3 , (8+7+9) ÷ 3 ) = ( 24÷3 , 24÷3 ) = ( 8.0 , 8.0 )
 ```
@@ -185,7 +189,7 @@ You now have two clusters. **How good are they?** There is no `y` to check again
 
 Worked all the way out, with the final centres (1.6667, 2.0) and (8, 8):
 
-```
+```text
 A (1,2) to (1.6667, 2.0) :  0.4444 + 0.0000 = 0.4444
 B (2,1) to (1.6667, 2.0) :  0.1111 + 1.0000 = 1.1111
 C (2,3) to (1.6667, 2.0) :  0.1111 + 1.0000 = 1.1111
@@ -197,7 +201,7 @@ F (7,9) to (8.0,    8.0) :  1.0000 + 1.0000 = 2.0000
 
 **Check B yourself right now.** B is at (2, 1) and its centre is at (1.6667, 2.0). Across: 2 − 1.6667 = 0.3333, squared = **0.1111**. Up: 1 − 2.0 = −1.0, squared = **1.0000**. Total **1.1111**. ✅
 
-**And here is the trap that catches almost everybody.** Inertia is the number k-means is trying to make small, and **it always falls when you ask for more clusters.** Here is the real table for our six points:
+**And here is the trap that catches almost everybody.** Inertia is the number k-means is trying to make small, and **it always falls when you ask for more clusters.** Here is the real table of inertia for our six points, for each value of `k`:
 
 ```text
 k=1 inertia   120.8333  drop -
@@ -216,7 +220,7 @@ So what do you do instead? The usual first move is the **elbow method**.
 
 > **Elbow method** — plot inertia against `k`, and look for the bend: the `k` after which extra clusters stop buying you much.
 
-Here is the real table for the 178 **scaled** wines:
+Here is the real table for the 178 **scaled** wines, with a `drop` column showing how much inertia fell at each step:
 
 ```text
   k   inertia     drop
@@ -230,9 +234,9 @@ Here is the real table for the 178 **scaled** wines:
   8     944.6     51.4
 ```
 
-**Read the drop column, not the inertia column.** Going 1→2 bought 655. Going 2→3 bought 381. Going 3→4 bought **97**. That is where the cliff is:
+**Read the drop column, not the inertia column.** Going 1→2 bought 655. Going 2→3 bought 381. Going 3→4 bought **97**. That is where the cliff is. Divide one drop by the next:
 
-```
+```text
 381.1 ÷ 97.2 = 3.9
 ```
 
@@ -247,9 +251,9 @@ Here is the real table for the 178 **scaled** wines:
 
 **k-means measures distance. Distance adds up squared gaps across every column. So the column with the biggest numbers wins.** Not "has more influence". **Wins.**
 
-Three customers, two columns — age in years, income in rupees:
+Here are three customers, with two columns each — age in years, income in rupees:
 
-```
+```text
 P1 = (25, 500000)
 P2 = (55, 500000)
 P3 = (25, 520000)
@@ -257,7 +261,7 @@ P3 = (25, 520000)
 
 Squared distances on the raw numbers:
 
-```
+```text
 P1 to P2 : (25−55)² + (500000−500000)² =    900 +           0 =         900
 P1 to P3 : (25−25)² + (500000−520000)² =      0 + 400,000,000 = 400,000,000
 
@@ -268,7 +272,7 @@ P1 to P3 : (25−25)² + (500000−520000)² =      0 + 400,000,000 = 400,000,00
 
 Now standardise each column — subtract its mean, divide by its spread, exactly as in Week 4:
 
-```
+```text
 age:    mean 35,          spread    14.1421  →  −0.7071, +1.4142, −0.7071
 income: mean 506666.67,   spread  9428.0904  →  −0.7071, −0.7071, +1.4142
 
@@ -299,11 +303,13 @@ cluster 2: n= 62  proline  600 to  937   alcohol 11.45 to 14.34
 
 ## 🔢 The Maths, Slowly
 
+This section introduces the week's one new symbol, `Σ`, and shows the sum it stands for written out in full.
+
 **This week's only new notation is one Greek letter, and it means less than it looks like.**
 
 You have just added up six numbers to get an inertia of 6.6667. In a book, that job is written like this:
 
-```
+```text
 inertia  =  Σ  (distance from a point to its own centre)²
 ```
 
@@ -311,7 +317,7 @@ inertia  =  Σ  (distance from a point to its own centre)²
 
 **The rule for this course, and it is not negotiable for the next four weeks: every time that symbol appears, write the sum out in full beside it.**
 
-```
+```text
 Σ (distance)²   means   0.4444 + 1.1111 + 1.1111 + 0.0000 + 2.0000 + 2.0000
                       = 6.6667
 ```
@@ -321,7 +327,7 @@ inertia  =  Σ  (distance from a point to its own centre)²
 
 **You can check this yourself with a calculator, and you should.** Type these six numbers in, in any order:
 
-```
+```text
 0.4444 + 1.1111 + 1.1111 + 0 + 2 + 2
 ```
 
@@ -329,7 +335,7 @@ Your calculator says **6.6666**. Python says **6.6667**. **Neither of you is wro
 
 **Here is the same sum with exact fractions**, which is worth doing once because it is the only way to see where the 7 comes from:
 
-```
+```text
 A :  4/9                    =  0.4444...
 B :  1/9  +  1              =  1.1111...
 C :  1/9  +  1              =  1.1111...
@@ -359,7 +365,7 @@ the whole numbers :  1 + 1 + 2 + 2  =  6
 
 ## 💻 Type This
 
-Open a new file called `no_answer_key.py`. You will build it in six pieces.
+In this section you type the whole week's code into one file and compare each printout with your pen-and-paper work. Open a new file called `no_answer_key.py`. You will build it in six pieces.
 
 ### Step 1 — the six points, started exactly where we started by hand
 
@@ -630,6 +636,8 @@ Put the six steps together, in order, with all the imports at the top. **Expecte
 
 ## 🔍 Worked Examples
 
+These three examples run the same six points through a bad start, an outlier, and a full elbow table. Run each block, then read its output.
+
 ### Worked Example 1 — A bad start that does *not* repair itself
 
 Round 2 rescued C. That was lucky. **With `k = 3` you can get stuck somewhere worse and stay there.**
@@ -717,14 +725,14 @@ k=6 inertia     0.0000  drop 1.0000
 
 **Now check `k=1` by hand.** One cluster means one centre, at the middle of all six points:
 
-```
+```text
 across : (1 + 2 + 2 + 8 + 9 + 7) ÷ 6 = 29 ÷ 6 = 4.8333
 up     : (2 + 1 + 3 + 8 + 7 + 9) ÷ 6 = 30 ÷ 6 = 5.0
 ```
 
 And the drop ratio:
 
-```
+```text
 114.1667 ÷ 3.0000 = 38.06
 ```
 
@@ -738,7 +746,7 @@ And the drop ratio:
 
 ## 🐞 When It Breaks
 
-Every message below came from really running a broken version of this week's code.
+This section lists the errors you are most likely to meet this week, what each one means, and how to fix it. Every message below came from really running a broken version of this week's code.
 
 ### Break 1 — you built the machine and never switched it on
 
@@ -815,13 +823,13 @@ ValueError: n_samples=6 should be >= n_clusters=8.
 
 ## 🎲 What We Did In Class
 
-If you missed it, here is the whole lesson. You need workbook pages 28.1 to 28.3, three colours of pen, and squared paper.
+This section is a record of the class, for anyone who missed it or wants to re-run it at home. You need workbook pages 28.1 to 28.3, three colours of pen, and squared paper.
 
 **The hook.** Two columns on the board: `WEEKS 1 to 27` with `X` and `y` under it, and `TODAY` with only `X`. Then: *"what breaks?"* Everything that was a comparison. Then the shoebox of five hundred Lego bricks and *"sort these"* — by colour, size, shape, or which set they came from — and *"which of those is right?"* **None and all of them.** Then the six points on the floor, split by eye in a second and a half, and *"now I want an algorithm, because your eye does not work on 178 wines."*
 
 **The four lines, boxed, and they stayed up all lesson:**
 
-```
+```text
 1. Put down k centres, anywhere.
 2. ASSIGN : give every point to its nearest centre.
 3. MOVE   : put every centre in the middle of the points it just got.
@@ -832,7 +840,7 @@ If you missed it, here is the whole lesson. You need workbook pages 28.1 to 28.3
 
 **k-Means on the Floor, twenty minutes.** Six crosses taped to the floor with letter cards beside them, `A` through `F`, laid out like this:
 
-```
+```text
       y
    9  |                           F
    8  |                              D
@@ -849,7 +857,7 @@ Two volunteers held CENTRE 1 and CENTRE 2 cards. **CENTRE 1 stood on A. CENTRE 2
 
 **Round 1, assign.** Twelve squared distances, computed by the room, written on the board and on page 28.3 in pen colour one:
 
-```
+```text
 A (1,2):  to (1,2) -> 0 + 0 = 0       to (2,3) -> 1 + 1 = 2       centre 1
 B (2,1):  to (1,2) -> 1 + 1 = 2       to (2,3) -> 0 + 4 = 4       centre 1
 C (2,3):  to (1,2) -> 1 + 1 = 2       to (2,3) -> 0 + 0 = 0       centre 2
@@ -864,7 +872,7 @@ F (7,9):  to (1,2) -> 36 + 49 = 85    to (2,3) -> 25 + 36 = 61    centre 2
 
 **Round 2, and C did it first, for the drama:**
 
-```
+```text
 C (2,3):  to (1.5, 1.5)  -> 0.25 + 2.25   = 2.50
           to (6.5, 6.75) -> 20.25 + 14.06 = 34.31        centre 1  -- SWITCHED
 ```
@@ -873,7 +881,7 @@ C (2,3):  to (1.5, 1.5)  -> 0.25 + 2.25   = 2.50
 
 **Then inertia**, six squared distances added up as one sum beside a `Σ`:
 
-```
+```text
 0.4444 + 1.1111 + 1.1111 + 0.0000 + 2.0000 + 2.0000  =  6.6667
 ```
 
@@ -890,7 +898,7 @@ C (2,3):  to (1.5, 1.5)  -> 0.25 + 2.25   = 2.50
 
 **The wrap.** The three customers on the board, `900` against `400,000,000`, then `4.5` against `4.5`. And the line that stayed up:
 
-```
+```text
 The algorithm is the easy part.
 What you measure distance with decides the answer.
 ```
@@ -898,6 +906,8 @@ What you measure distance with decides the answer.
 ---
 
 ## 💬 Talk About It
+
+These are three questions to discuss with a partner or a parent. Each has a hint, and none has a one-line answer.
 
 **1. You got three clusters out of the wine data, and 172 of 178 bottles matched their real grape variety. Does that mean k-means "works"?**
 
@@ -914,6 +924,8 @@ What you measure distance with decides the answer.
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section sets four tempting wrong statements beside the right version of each, so you can spot them in your own work.
 
 ### Trick 1 — "Pick the `k` with the smallest inertia"
 
@@ -954,6 +966,8 @@ The bar for a real explanation: **did you name a column, quote its spread, and s
 
 ## 🌍 Where You've Seen This
 
+This section links this week's ideas to things you may already use.
+
 1. **A photo app that quietly groups pictures by who is in them**, without you ever tagging anybody. The faces get turned into rows of numbers and then clustered — and the app asks *you* to supply the names, because the algorithm cannot know them.
 2. **"Customers who bought this also bought…"** — one common ingredient is clustering shoppers into segments from what is in their baskets, with nobody ever having labelled a shopper as a "type".
 3. **Marketing segments with names like "Young Urban Professionals"**, on somebody's slide. **A human invented that name from a table of cluster means.** The algorithm produced cluster 2, and nothing else.
@@ -991,6 +1005,8 @@ left on the whole map. The ↻ on stage three is black, as it has been since Wee
 
 ## 🔑 Remember This
 
+These are the key points of the week, followed by a syntax card and a one-line maths reminder.
+
 - **The whole algorithm is two steps, repeated.** Assign every point to its nearest centre; move every centre to the middle of what it got. Stop when nobody switches. **On six points it converged in two rounds, from a deliberately terrible start.**
 - **The points never move. Only the centres move.** Every confusion about k-means starts with forgetting that.
 - **A centroid is an average, not a middle-ish guess.** `{(1,2), (2,1)}` has centroid `(1.5, 1.5)`, and `{C, D, E, F}` has centroid `(6.5, 6.75)` because `26 ÷ 4` and `27 ÷ 4`.
@@ -1001,6 +1017,8 @@ left on the whole map. The ↻ on stage three is black, as it has been since Wee
 - **k-means always gives you exactly the number of clusters you ask for**, including from 178 rows of pure noise, where it returns sizes `[62 44 72]`. **Getting clusters is not evidence that there are clusters.**
 
 ### Syntax reminder card
+
+This card collects the week's code in one place to copy from.
 
 ```python
 import numpy as np
@@ -1049,6 +1067,8 @@ for k in range(2, 9):
 ---
 
 ## 📓 New Words
+
+These are the six words introduced this week, with an example of each.
 
 ![This week's six words, drawn](../figures/fig-w28-7-vocab-icons.svg)
 *Figure 28.7 — This week's six words, drawn.*

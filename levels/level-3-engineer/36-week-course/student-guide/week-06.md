@@ -63,7 +63,9 @@ Almost always (contrived cases exist, but you will not meet one by accident). Wh
 
 ## 🧠 The Big Idea
 
-> **📌 About the code in this section.** The blocks below are **illustrations, not files**. Each carries on from the one above. **The complete runnable files are in 💻 Type This.**
+This section explains the two jobs of the week: filling in blanks safely, and the three flavours of leakage. You read it first so that the scripts in 💻 Type This make sense.
+
+> **📌 About the code in this section.** The blocks below are **illustrations, not files**. Each carries on from the one above. The complete runnable files are in 💻 Type This.
 
 ### 1. First, a small job you have been ignoring for five weeks: the 106 blanks
 
@@ -245,7 +247,9 @@ TIME   split AUC  0.5249   <- what production will give you
 the gap           0.2890
 ```
 
-**0.2890 of AUC, produced by nothing except where you put the scissors.** Same rows. Same features. Same model. **The random split reports a good model. The time split reports roughly a coin flip (0.5249, one seed)** — and the time split is the one that matches how the thing will actually be used: **trained on the past, run on the future.** (The model has no week column, so it is not literally looking things up in the future. The random split averages the drift across all 30 weeks, which flatters it; the time-split model learns an `x1` rule from weeks 0–21 that has reversed by weeks 22–29. Call it *drift that a random split hides*.)
+**0.2890 of AUC, produced by nothing except where you put the scissors.** Same rows. Same features. Same model. **The random split reports a good model. The time split reports roughly a coin flip (0.5249, one seed)** — and the time split is the one that matches how the thing will actually be used: **trained on the past, run on the future.**
+
+(The model has no week column, so it is not literally looking things up in the future. The random split averages the drift across all 30 weeks, which flatters it; the time-split model learns an `x1` rule from weeks 0–21 that has reversed by weeks 22–29. Call it *drift that a random split hides*.)
 
 ![Trained on the future, tested on the past](../figures/fig-w06-4-temporal-leak-training-on-the-future.svg)
 *Figure 6.4 — Trained on the future, tested on the past. The random split's train and test rows are interleaved through all 30 weeks, so the drift is averaged into the model and hidden from the score.*
@@ -423,6 +427,8 @@ LogisticRegression does not accept missing values encoded as NaN natively. For s
 
 ### Step 3 — the imputer, and the five numbers it learns
 
+Add these lines to `fill_blanks.py`. They fit an imputer on the training rows and print what it learned.
+
 ```python
 imp = SimpleImputer(strategy="median")
 imp.fit(X_tr[NUM])
@@ -442,6 +448,8 @@ statistics_ : [ 2.91  4.   14.   18.   29.5 ]
 > **💡 Try this:** ask for `imp.statistics_` *before* you call `.fit`. You get `AttributeError: 'SimpleImputer' object has no attribute 'statistics_'`, which is the library telling you, precisely, *"I have not looked at any data yet."*
 
 ### Step 4 — is being blank itself a signal? Ablate it and find out
+
+Add this to `fill_blanks.py`. It compares the late rate of rows with a value against rows that are blank.
 
 ```python
 blank = X_tr["driver_experience_months"].isna()
@@ -478,6 +486,8 @@ add_indicator=True  cols= 21  accuracy=0.7550  roc_auc=0.7723
 
 Five numeric columns in, six out — one indicator for the one column that had blanks, and it goes **on the end**, after all the original ones, not next to the column it describes. That surprises people and it matters when you are counting columns: **5 numeric + 15 one-hot = 20 without it, 21 with.**
 
+Now print the name and weight of the new column.
+
 ```python
 names = pipe.named_steps["prep"].get_feature_names_out()
 print("the new column is called:", names[5])
@@ -493,6 +503,8 @@ its weight: -0.1609
 **So why didn't it pay, when the two lateness rates looked so different?** Because 60 rows is nine late deliveries. **The gap of 0.1447 came from nine events.** And because `make_data.py` chose the blanks with a coin flip — you can read the line. **There is no story about rookie drivers hiding in there to find.**
 
 ### Step 5 — reaching inside a pipeline, which is a chain of names
+
+These lines reach into the fitted pipeline and print what the imputer learned.
 
 ```python
 prep = pipe.named_steps["prep"]
@@ -598,15 +610,11 @@ VERDICT: target leakage. Drop the column.
 
 **Read it one audit at a time, not all at once.**
 
-**The jump: +0.2011 from one column**, against +0.0091 for last week's two surviving features together. **That ratio is the alarm.**
-
-**Audit 1: 0.942 against 0.345.** Two point seven times the best honest column.
-
-**Audit 2, the crosstab.** 552 calls, 540 of them late, `540 ÷ 552 = 0.9783`. **Nearly a photocopy of the answer.**
-
-**Audit 3: 0.9556 alone.** One column, no help from anything else. `distance_km` alone gets 0.6800.
-
-**Audit 4: 3.482 against 0.804.** `3.482 ÷ 0.804 = 4.33`. **The model has stopped modelling and started reading.**
+- **The jump:** +0.2011 from one column, against +0.0091 for last week's two surviving features together. That ratio is the alarm.
+- **Audit 1:** 0.942 against 0.345. Two point seven times the best honest column.
+- **Audit 2, the crosstab:** 552 calls, 540 of them late, `540 ÷ 552 = 0.9783`. Nearly a photocopy of the answer.
+- **Audit 3:** 0.9556 alone. One column, no help from anything else. `distance_km` alone gets 0.6800.
+- **Audit 4:** 3.482 against 0.804. `3.482 ÷ 0.804 = 4.33`. The model has stopped modelling and started reading.
 
 **Now forget every one of those numbers and ask the question at the bottom.** *At the moment a customer places an order, has that customer already rung up to complain about a delivery that has not arrived yet?* **No.** That question needed no data, no code and no maths, and **it is worth more than all four audits together.**
 
@@ -798,6 +806,8 @@ its weight: -0.1609
 
 ## 🔍 Worked Examples
 
+Three worked cases, each applying this week's checks to a new table: the class activity on the delivery model, the same leak in a hospital, and a median on eight pupils.
+
 ### Worked Example 1 — The 0.9762 Crime Scene (the class activity)
 
 You are handed four lines of output and twelve minutes. **No hints.**
@@ -858,7 +868,15 @@ the moment the column gets a value : the pizza has arrived late AND the
 
 > **🧑‍🏫 If a student asks:** *"couldn't we keep it and just use it for the orders where somebody has called?"* This is a genuinely good idea and the reasoning kills it cleanly: **by the time somebody has rung up to complain, you no longer need a prediction. You know.** The whole point of the model is to warn the kitchen *before* the delivery is late. **A feature that only exists afterwards is a very expensive `if` statement that reads the answer.**
 
-**Dead ends that should go on your sheet and earn credit:** blaming `max_iter`; blaming the scaler; suspecting `order_hour`; checking for duplicate rows (there are none after `drop_duplicates()`); checking whether the split was stratified (it was). **A sheet with three dead ends and one hit is a better sheet than one with a lucky guess.**
+**Dead ends that should go on your sheet and earn credit:**
+
+- blaming `max_iter`
+- blaming the scaler
+- suspecting `order_hour`
+- checking for duplicate rows (there are none after `drop_duplicates()`)
+- checking whether the split was stratified (it was)
+
+**A sheet with three dead ends and one hit is a better sheet than one with a lucky guess.**
 
 ### Worked Example 2 — The same leak, in a hospital
 
@@ -1002,7 +1020,9 @@ malignant tumours: 64        flagged: 4
 
 **In the lab it flags 87.5% of the malignant tumours. On the day it is switched on it flags 4 out of 64.** Sixty women with a malignant tumour walk out of the clinic having been told, by a model with a validation AUC of 0.9537, that they are fine.
 
-**That is what the 0.9537 was worth.** And notice which number told you the truth: not the AUC, which only fell to 0.8064, but the **recall**, which collapsed from 0.8750 to 0.0625. **A leaky column can go on looking respectable in one metric while being catastrophic in another** — which is a very good reason to keep more than one number, and it is next week's whole subject.
+**That is what the 0.9537 was worth.** And notice which number told you the truth: not the AUC, which only fell to 0.8064, but the **recall**, which collapsed from 0.8750 to 0.0625.
+
+**A leaky column can go on looking respectable in one metric while being catastrophic in another** — which is a very good reason to keep more than one number, and it is next week's whole subject.
 
 ### Worked Example 3 — Eight pupils, two blanks, and two different fill-in numbers
 
@@ -1208,6 +1228,8 @@ could not convert string to float: 'clear'
 
 ## 🎲 What We Did In Class
 
+This is a record of the lesson, in order, so you can follow it again at home or catch up if you missed it.
+
 ### Two numbers and a hospital
 
 `Week 5's best honest score: 0.7843` and `This week's model: 0.9762` went on the board. We were pleased for about ten seconds. Then the hospital story, then the definition, then the sentence that runs the whole lesson: **leakage almost always makes your score go up, which makes it nearly the only kind of bug that gets applauded.**
@@ -1276,6 +1298,8 @@ Somebody did not believe it, which is the correct first reaction, so we opened t
 
 ## 💬 Talk About It
 
+Three questions to argue out with a partner or at the dinner table. Try each one before you open its hint.
+
 **1. If the column is real and every value in it is true, how is using it cheating?**
 
 Line up two moments before you answer.
@@ -1297,6 +1321,8 @@ Two answers, and the second one is the interesting one.
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four tempting but wrong ways of thinking about leakage, each paired with the better answer.
 
 ### Trick 1 — "but the score really did go up, surely that's good?"
 
@@ -1327,11 +1353,15 @@ Which is exactly why the rule is **structural rather than judgemental**: everyth
 **Wrong:** *"Whoever built that hospital model was being dishonest."*
 **Right:** *"Somebody joined a table. The join was correct. The column was real. Every value in it was true. Every step was reasonable. **Leakage is a design accident, not dishonesty.**"*
 
-This matters for the tone of the whole week, and it matters practically: **if you think leakage is a character flaw, you will only look for it when you suspect somebody.** It is not. Which is why you need audits that **run whether or not you suspect anything** — and one habit that nobody does: **for every column, write one sentence saying when its value appears.** That sentence set is the data-provenance section of the model card you wrote in Week 3, finally filled in for real.
+This matters for the tone of the whole week, and it matters practically: **if you think leakage is a character flaw, you will only look for it when you suspect somebody.** It is not. Which is why you need audits that **run whether or not you suspect anything.**
+
+One more habit, which almost nobody does: **for every column, write one sentence saying when its value appears.** That set of sentences is the data-provenance section of the model card you wrote in Week 3, finally filled in for real.
 
 ---
 
 ## 🌍 Where You've Seen This
+
+Leakage is not only a pizza-table problem. Here are six places the same mistake shows up outside this course.
 
 1. **Exam revision that goes well and then doesn't.** You practise with the answers visible in the margin and feel excellent. **The practice score was leaky.** The exam hall has no margin, and the gap between those two numbers is exactly `0.9762` against `0.7752`.
 2. **A weather app that is brilliant at telling you it rained.** Anything reporting "our model is 99% accurate at detecting X" is worth one question: **when does the input arrive relative to X?** Detecting a thunderstorm from a photo of a flooded street is not a forecast.
@@ -1368,6 +1398,8 @@ The ↻ on stage three is the training loop, still grey — you open it in Week 
 ---
 
 ## 🔑 Remember This
+
+The week in nine points, followed by a syntax card to keep beside you while you work.
 
 - **Leakage is a value that will not exist at the moment you have to predict — and it almost always makes your score go up.** That makes it nearly the only kind of bug that gets applauded, and it is why **good news gets audited harder than bad news.**
 - **Blanks get filled with a statistic learned from the training rows only.** 29.5, not 29.0. `1,140` values, two middles at positions 570 and 571, which are 29 and 30, so `(29 + 30) ÷ 2 = 29.5`. **The median, not the mean, because one silly value cannot drag a median.**
@@ -1436,6 +1468,8 @@ pipe.predict_proba(one_real_order)
 ---
 
 ## 📓 New Words
+
+The words introduced this week, each with its meaning and the number from your own runs that goes with it.
 
 ![Six words from Week 6, drawn](../figures/fig-w06-7-vocab-icons.svg)
 *Figure 6.7 — Six words from Week 6, drawn. Every tile carries a number from your own `fill_blanks.py`, `leak_hunt.py` and `noise_leak.py` runs.*

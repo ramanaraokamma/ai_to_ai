@@ -40,7 +40,7 @@ second number: ______________  value: ________  the division: ________ ÷ ______
 
 The six points from Week 28, in their converged clusters:
 
-```
+```text
 cluster 0 = { A(1,2) , B(2,1) , C(2,3) }        cluster 1 = { D(8,8) , E(9,7) , F(7,9) }
 ```
 
@@ -52,7 +52,7 @@ cluster 0 = { A(1,2) , B(2,1) , C(2,3) }        cluster 1 = { D(8,8) , E(9,7) , 
 
 **(a) `a(A)` — the average distance to the OTHERS in my own cluster.** A is not one of them.
 
-```
+```text
 A(1,2) to B(2,1): √( ( 1 − 2 )² + ( 2 − 1 )² ) = √( ______ + ______ ) = √______ = ________
 
 A(1,2) to C(2,3): √( ( 1 − 2 )² + ( 2 − 3 )² ) = √( ______ + ______ ) = √______ = ________
@@ -64,7 +64,7 @@ a(A) = ( ________ + ________ ) ÷ ______ = ________
 
 **(b) `b(A)` — the average distance to EVERYONE in the nearest other cluster.**
 
-```
+```text
 A(1,2) to D(8,8): √( ______ + ______ ) = √______ = ________
 
 A(1,2) to E(9,7): √( ______ + ______ ) = √______ = ________
@@ -78,7 +78,7 @@ b(A) = ( ______ + ______ + ______ ) ÷ ______ = ________
 
 **(c) The subtraction and the division.**
 
-```
+```text
 s(A) = ( b − a ) ÷ whichever of the two is bigger
 
      = ( ________ − ________ ) ÷ ________
@@ -98,7 +98,7 @@ ________________________________________________________________
 
 `D(8,8)`, cluster 1 = {D, E, F}.
 
-```
+```text
 a(D) : D to E(9,7) = √______ = ________    D to F(7,9) = √______ = ________
 
        a(D) = ________
@@ -122,7 +122,7 @@ ________________________________________________________________
 
 Redo `s(A)` using **squared** distances everywhere — no square roots at all.
 
-```
+```text
 a(A) = ( 2 + 2 ) ÷ 2 = ________
 
 b(A) = ( 85 + 89 + 85 ) ÷ 3 = ______ ÷ 3 = ________
@@ -173,6 +173,8 @@ ________________________________________________________________
 ---
 
 ## 🔎 Predict the Output
+
+This section is for committing to a prediction before the computer gives its answer.
 
 **In pen, before you run anything.**
 
@@ -291,6 +293,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This section is for practising how to read the week's tables and numbers.
+
 **A1. Match the word to the thing.** Write the letter.
 
 | Word | | Description |
@@ -398,6 +402,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This section is for practising writing out the week's calculations and short answers yourself.
 
 ### B1 — one line
 
@@ -712,6 +718,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This section is for drawing the week's idea as one picture.
+
 ![Draw it: the map, the profile, and the floor](../figures/fig-w30-9-draw-frame.svg)
 *Figure W30.2 — The map, the profile, and the floor.*
 
@@ -728,6 +736,8 @@ ________________________________________________________________
 ---
 
 ## 📊 Self-Check
+
+This section is for checking honestly what you can do now.
 
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
@@ -773,7 +783,7 @@ ________________________________________________________________
 
 **M1 (a).**
 
-```
+```text
 A(1,2) to B(2,1): √( 1 + 1 ) = √2 = 1.4142
 A(1,2) to C(2,3): √( 1 + 1 ) = √2 = 1.4142
 
@@ -784,7 +794,7 @@ a(A) = ( 1.4142 + 1.4142 ) ÷ 2 = 1.4142
 
 **M1 (b).**
 
-```
+```text
 A(1,2) to D(8,8): √( 49 + 36 ) = √85 = 9.2195
 A(1,2) to E(9,7): √( 64 + 25 ) = √89 = 9.4340
 A(1,2) to F(7,9): √( 36 + 49 ) = √85 = 9.2195
@@ -796,7 +806,7 @@ b(A) = ( 9.2195 + 9.4340 + 9.2195 ) ÷ 3 = 27.8730 ÷ 3 = 9.2910
 
 **M1 (c).**
 
-```
+```text
 s(A) = ( 9.2910 − 1.4142 ) ÷ 9.2910   (b is the bigger one)
      = 7.8768 ÷ 9.2910
      = 0.8478
@@ -824,7 +834,7 @@ overall  : 0.8012
 
 **M2.**
 
-```
+```text
 a(D) : D to E(9,7) = √2 = 1.4142    D to F(7,9) = √2 = 1.4142
        a(D) = 1.4142
 
@@ -842,7 +852,7 @@ s(D) = ( 8.7497 − 1.4142 ) ÷ 8.7497 = 7.3355 ÷ 8.7497 = 0.8384
 
 **M3.**
 
-```
+```text
 a(A) = ( 2 + 2 ) ÷ 2 = 2.0
 
 b(A) = ( 85 + 89 + 85 ) ÷ 3 = 259 ÷ 3 = 86.3333
@@ -945,7 +955,7 @@ a vs a : 1.0
 
 **A4 — the diagram, labelled.**
 
-```
+```text
 drop into k=3 = 381.1        drop into k=4 = 97.2
 
 the ratio between them = 3.9        so vote 1 says k = 3
@@ -1267,7 +1277,7 @@ print("silhouette of our k=3 clustering: %.4f" % silhouette_score(X, labels))
 
 **The map.** Filename `wine_map.png`. The labels, in full:
 
-```
+```text
 PC1 (36.2% of the spread)
 PC2 (19.2% of the spread)
 ```

@@ -39,6 +39,8 @@ Observable evidence: `fit_line.py` reporting `w = 8.0014` and `b = 11.9939` agai
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section is the background you need before teaching: what an optimizer is, the five lines, and the arithmetic worked by hand.
+
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not whole files** — each one carries on from the one above. **The complete runnable files are in the Prep Checklist and the Answer Key.**
 
 **There is no new mathematics this week.** There is one gradient and one step, and both are done by hand on six numbers in §3 below. If you can multiply six pairs of numbers and add them up, you can teach this whole lesson. Give this section twenty minutes and do the arithmetic in §3 with a real calculator — that is the part that makes you convincing in the room.
@@ -55,7 +57,7 @@ optimizer = torch.optim.SGD([w, b], lr=0.05)
 
 `SGD` stands for **stochastic gradient descent**, and the only part of that name worth explaining today is that it is **exactly the update rule from Week 15**:
 
-```
+```text
 w ← w − lr × slope
 ```
 
@@ -113,13 +115,13 @@ The six points, which are the ones from Week 12:
 
 **We start both knobs at zero: `w = 0`, `b = 0`.** So every prediction is 0, and every error is `0 − marks`:
 
-```
+```text
 errors:  −20, −28, −36, −44, −52, −60
 ```
 
 **The loss** is the mean of the squared errors:
 
-```
+```text
 400 + 784 + 1296 + 1936 + 2704 + 3600  =  10720
 10720 ÷ 6  =  1786.6667
 ```
@@ -128,7 +130,7 @@ errors:  −20, −28, −36, −44, −52, −60
 
 **The slope for `w`.** From Week 15: the slope of a mean-squared error with respect to a weight is *twice the average of (error × the input that weight multiplies)*. So multiply each error by its hours value and add them up:
 
-```
+```text
 (−20 × 1) + (−28 × 2) + (−36 × 3) + (−44 × 4) + (−52 × 5) + (−60 × 6)
 = −20 − 56 − 108 − 176 − 260 − 360
 = −980
@@ -138,14 +140,14 @@ slope for w  =  2 × (−980) ÷ 6  =  −1960 ÷ 6  =  −326.6667
 
 **The slope for `b`.** The bias multiplies 1 for every row, so it is just twice the average error:
 
-```
+```text
 (−20) + (−28) + (−36) + (−44) + (−52) + (−60)  =  −240
 slope for b  =  2 × (−240) ÷ 6  =  −480 ÷ 6  =  −80.0
 ```
 
 **Then one step, with `lr = 0.05`:**
 
-```
+```text
 w ← 0 − 0.05 × (−326.6667)  =  0 + 16.3333  =  16.3333
 b ← 0 − 0.05 × (−80.0)      =  0 + 4.0      =   4.0
 ```
@@ -443,11 +445,13 @@ is why the thread stays off.
 
 ## 🧰 Prep Checklist
 
+This section lists what to prepare before class, including the complete runnable files.
+
 ### 25 minutes the night before
 
 - [ ] **Write the five index cards.** Ten minutes, and do it now — writing them in class costs five minutes of the clinic. One line per card, large enough to read from the back of the room:
 
-```
+```text
 CARD 1   optimizer.zero_grad()
 CARD 2   pred = hours @ w + b
 CARD 3   loss = ((pred - marks) ** 2).mean()
@@ -497,7 +501,7 @@ wanted: marks = 8 x hours + 12
 
 - [ ] **Do the step-0 arithmetic on a calculator yourself.** All of it, out loud:
 
-```
+```text
 errors at w = 0, b = 0:  −20, −28, −36, −44, −52, −60
 loss    = (400 + 784 + 1296 + 1936 + 2704 + 3600) ÷ 6 = 10720 ÷ 6 = 1786.6667
 dL/dw   = 2 × (−20−56−108−176−260−360) ÷ 6 = 2 × (−980) ÷ 6 = −326.6667
@@ -552,6 +556,8 @@ b after = 0 − 0.05 × (−80.0) = 4.0
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the timed plan for the lesson.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — Find the Line I Hid | 7 | 7 | Six points on the board, and the answer is not given |
@@ -566,7 +572,7 @@ b after = 0 − 0.05 × (−80.0) = 4.0
 
 **Do this:** Write only the six pairs on the board. **Do not write the line.**
 
-```
+```text
 hours:  1    2    3    4    5    6
 marks: 20   28   36   44   52   60
 ```
@@ -643,7 +649,7 @@ Stick the five cards up in final order, numbered 1 to 5. **Leave them there all 
 
 Work through it with them, writing every line:
 
-```
+```text
 both knobs start at 0, so every prediction is 0
 errors:  0−20, 0−28, 0−36, 0−44, 0−52, 0−60  =  −20, −28, −36, −44, −52, −60
 
@@ -657,7 +663,7 @@ loss = mean of the squares
 
 *By the input that `w` multiplies — the hours.*
 
-```
+```text
 (−20 × 1) + (−28 × 2) + (−36 × 3) + (−44 × 4) + (−52 × 5) + (−60 × 6)
 = −20 − 56 − 108 − 176 − 260 − 360
 = −980
@@ -669,7 +675,7 @@ dL/dw = 2 × (−980) ÷ 6 = −326.6667
 
 *Increase it.* Then:
 
-```
+```text
 w ← 0 − 0.05 × (−326.6667) = +16.3333
 ```
 
@@ -937,6 +943,8 @@ And the sentence for this week:
 
 ## 🎲 The Activity, In Full
 
+This section gives the main activity in full, step by step.
+
 ### The Drop-a-Line Clinic
 
 **What it is.** Twenty minutes with five index cards on the wall. One card comes down, the class predicts what breaks, somebody runs it, and the real result goes up on a slip beside the card. **Card 1 is played last, on purpose, because it is the one everybody gets wrong.**
@@ -1039,6 +1047,8 @@ Scaffold the prediction with a two-choice question instead of a blank line: *"wi
 
 ## ❓ Questions Students Ask This Week
 
+This section collects questions students ask this week, with suggested answers.
+
 **"Why doesn't PyTorch just zero the gradients for me?"**
 
 Because sometimes you genuinely want them to add up, and the library cannot tell which you meant.
@@ -1095,6 +1105,8 @@ Neither is wrong. **Just know which one you have**, because a student trying to 
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the places the lesson tends to go wrong and what to do right then.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **The `zero_grad` card is played first** | It is line 1, so it feels natural to start there | **Play it last.** It is the only silent-and-catastrophic one, and its whole teaching value is the room getting the prediction wrong together. |
@@ -1111,6 +1123,8 @@ Neither is wrong. **Just know which one you have**, because a student trying to 
 ---
 
 ## 🧭 Differentiation
+
+This section adjusts the lesson for students who struggle and students who move fast.
 
 ### If the student is struggling
 
@@ -1240,6 +1254,8 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
+This section gives the homework and the words to introduce it.
+
 **Say this:**
 
 > "About an hour, two pages, and the second one is the one I care about.
@@ -1268,7 +1284,7 @@ Every question restated, so you can mark from this page alone.
 
 *Both knobs start at zero. Work out the loss, both slopes, and where one step of `lr = 0.05` lands.*
 
-```
+```text
 predictions with w = 0, b = 0:   all six are 0
 errors (pred − marks):           −20, −28, −36, −44, −52, −60
 

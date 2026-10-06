@@ -70,7 +70,7 @@ The review is `"not tasty and not generous"`. **True label: negative.** Week 31'
 
 **(b) Now Week 13's squash.** `p(positive) = 1 ÷ (1 + e^−total)`
 
-```
+```text
 e^−________ = ________
 
 1 ÷ ( 1 + ________ ) = 1 ÷ ________ = ________
@@ -140,7 +140,7 @@ Trap 1 is `"not fresh and not hot"`. Its nearest training review by TF-IDF cosin
 
 **(a) Both rows have length 1, so cosine is multiply-and-add over the shared words only.**
 
-```
+```text
 and   : 0.2461 × 0.1143 = ________
 
 fresh : 0.6716 × 0.3118 = ________
@@ -265,6 +265,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set practises reading: matching vocabulary, reading a report, and spotting bugs in code you did not write.
 
 **A1. Match the word to the thing.** Write the letter.
 
@@ -392,6 +394,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set practises writing short pieces of code and reports of your own.
 
 ### B1 — one line
 
@@ -575,6 +579,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These questions ask for written reasoning rather than a calculation.
+
 **T1.** Your model scored **20 out of 20** on the held-out reviews and **0 out of 12** on the traps. Both numbers came from the same model in the same run. **Write a paragraph on which of the two you would put in a report, and how.** Then the harder half: the traps were written by you, on purpose, to break it. **Does a test set you designed to fail count as evidence?** Say what it is evidence *of*, and what it is not evidence of, and name one thing you would add to make the `20/20` mean more.
 
 ________________________________________________________________
@@ -747,6 +753,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for drawing the model's path from review to verdict.
+
 ![Draw it: where the meaning was lost](../figures/fig-w33-9-draw-frame.svg)
 *Figure W33.2 — Where the meaning was lost.*
 
@@ -825,7 +833,7 @@ ________________________________________________________________
 
 **M1 (b).**
 
-```
+```text
 e^−3.2216 = 0.039891
 
 1 ÷ ( 1 + 0.039891 ) = 1 ÷ 1.039891 = 0.961639
@@ -870,7 +878,7 @@ coef -5.0278 -> total -0.0000 -> p 0.5000
 
 **M4 (a).**
 
-```
+```text
 and   : 0.2461 × 0.1143 = 0.0281
 fresh : 0.6716 × 0.3118 = 0.2094
 hot   : 0.6988 × 0.3244 = 0.2267

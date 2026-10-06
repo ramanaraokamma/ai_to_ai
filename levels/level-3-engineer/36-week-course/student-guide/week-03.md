@@ -59,7 +59,11 @@ damage             = 0.291
 
 **1.000.** Total, absolute certainty. **And no error. No warning. No red text.** A number a dashboard would print and a dispatcher would believe.
 
-Why so *sure* rather than merely wrong? Because the model learned its numbers in a world where `distance_km` sits around 0 and rarely leaves −2 to +5. You just handed it 7.4 — not 7.4 kilometres, 7.4 *on the prepared scale* — and 22.0 for prep minutes, which is off the end of the end. The numbers are **4 to 30 times too big**, so the sum the model adds up is thrown far off the end of its scale — and because all four of these numbers carry a positive weight (further, more items, longer prep, later hour all push towards *late*), it is thrown towards 1.000. A number with a negative weight, such as driver experience, would be thrown the other way, towards 0.000: being huge is what makes the answer extreme, and the weights decide which extreme. (To isolate the damage, this demonstration pastes the four raw numbers into the prepared row and leaves everything else alone. Forgetting the preparation on the real table would more likely stop with an error about the words.) It is not confused. It answered exactly the question it was asked, and the question was nonsense.
+Why so *sure* rather than merely wrong? Because the model learned its numbers in a world where `distance_km` sits around 0 and rarely leaves −2 to +5. You just handed it 7.4 — not 7.4 kilometres, 7.4 *on the prepared scale* — and 22.0 for prep minutes, which is off the end of the end. The numbers are **4 to 30 times too big**, so the sum the model adds up is thrown far off the end of its scale — and because all four of these numbers carry a positive weight (further, more items, longer prep, later hour all push towards *late*), it is thrown towards 1.000. A number with a negative weight, such as driver experience, would be thrown the other way, towards 0.000: being huge is what makes the answer extreme, and the weights decide which extreme.
+
+(To isolate the damage, this demonstration pastes the four raw numbers into the prepared row and leaves everything else alone. Forgetting the preparation on the real table would more likely stop with an error about the words.)
+
+It is not confused. It answered exactly the question it was asked, and the question was nonsense.
 
 **So here is today's move: instead of being careful, change the shape.** Slide one envelope inside the other. How many things must you now remember? **One.** And how do you get to the model without going through the preparation? **You can't. There is no way in.**
 
@@ -68,6 +72,8 @@ Why so *sure* rather than merely wrong? Because the model learned its numbers in
 ---
 
 ## 🧠 The Big Idea
+
+This section explains what a `ColumnTransformer`, a `Pipeline` and `joblib` are, and why the deliverable is a file with a card beside it.
 
 ### 1. Eight columns the model cannot read
 
@@ -657,6 +663,8 @@ Write that into heading 7 of your card, in your own words: *"a restaurant the mo
 
 ## 🔍 Worked Examples
 
+These three examples show the week's ideas on a table small enough to count by eye, on a different subject, and as a measurement.
+
 ### Worked Example 1 — six rows you can count by eye: 2 columns in, 4 columns out
 
 `(1200, 8) → (1200, 20)` is too big to check by hand, which is exactly why you should first do it on a table you can see all of. Six school buses, one number column and one word column.
@@ -1002,6 +1010,8 @@ If you missed it, here is the whole lesson. You need a laptop, a pen, and two en
 
 ## 💬 Talk About It
 
+These three questions are for discussion with a partner or your teacher. Each has a hint to use after you have tried it yourself.
+
 **1. Why can't I just save the model, and prepare the data myself in the other file?**
 
 *Hint:* you can, and it works, and it is exactly the bug from the first seven minutes of the lesson. Then get concrete about what "prepare it myself" requires: the median that filled the holes, the centre **and** width of five rulers, and the list of fifteen categories **in the right order**. All of those are *learned* numbers that live inside the fitted preparation. So either you save them too — which is what saving the whole pipeline does, in one line — or you recompute them, and recomputing them from a different set of rows gives different numbers and a quietly wrong answer. Finish with the version of the question that has a real answer: *what would you have to do to keep the hand-written version correct for the next three years?* (Keep it in step with the training code forever, by remembering.)
@@ -1017,6 +1027,8 @@ If you missed it, here is the whole lesson. You need a laptop, a pen, and two en
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section names four claims that sound reasonable, so you can recognise them when someone makes them.
 
 ### Trick 1 — "the pipeline is just tidier"
 
@@ -1048,6 +1060,8 @@ If you missed it, here is the whole lesson. You need a laptop, a pen, and two en
 ---
 
 ## 🌍 Where You've Seen This
+
+The same idea, a fitted file plus a page of writing, appears in everyday technology.
 
 1. **Your phone's keyboard predicting the next word offline.** There is a fitted file on the device, not a training script. Whoever built it did exactly today's thing: train once, ship the artifact.
 2. **Any "export model" button** in a tool like Teachable Machine (which you used back in Level 1). What comes out is a file containing the learned numbers *and* the preparation, for exactly the reason you saw today.
@@ -1085,6 +1099,8 @@ Week 12.*
 ---
 
 ## 🔑 Remember This
+
+The week's takeaways, followed by a syntax card to keep beside you.
 
 - **The deliverable is a file and a page, not a number.** A score is a claim; **5002 bytes** of fitted pipeline is a thing somebody can use.
 - **Count the columns on paper, then print the shape.** `5 + 5 + 7 + 3 = 20`, and `(1200, 8) → (1200, 20)`. The row count never changes — you are re-describing rows, not adding them.
@@ -1138,6 +1154,8 @@ print(text.count("fit("), text.count("make_data"), text.count("train_test"))
 ---
 
 ## 📓 New Words
+
+The six words introduced this week, with an example of each.
 
 ![Six words from Week 3, drawn](../figures/fig-w03-6-vocab-icons.svg)
 *Figure 3.7 — Six words from Week 3, drawn.*

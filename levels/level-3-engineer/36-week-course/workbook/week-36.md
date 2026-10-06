@@ -44,11 +44,11 @@ ________  ______________
 
 **M1 — the p95 (Week 35).** Six latencies from a log, unsorted:
 
-```
+```text
 0.24    2.10    0.28    0.22    0.31    0.26
 ```
 
-```
+```text
 sorted:      ______  ______  ______  ______  ______  ______
 positions:     0       1       2       3       4       5
 
@@ -67,11 +67,11 @@ mean = ______ ÷ 6 = ________     max = ________
 
 **M2 — four cells, five metrics (Weeks 8, 9, 10).** A fraud model on 6,000 held-out rows:
 
-```
+```text
 TN = 5941      FP = 2      FN = 53      TP = 4
 ```
 
-```
+```text
 (a) how many rows?        ______ + ______ + ______ + ______ = ________
 (b) how many are fraud?   ______ + ______ = ______        the positive rate = ______ ÷ ______ = ________
 (c) accuracy   = ( ______ + ______ ) ÷ ______ = ________
@@ -95,13 +95,13 @@ ______ × ______ + ______ × ______ = ________ + ________ = ________
 
 **(b)** An `8 × 8` image into `nn.Conv2d(1, 16, kernel_size=3, stride=2, padding=1)`:
 
-```
+```text
 ( ______ + 2 × ______ − ______ ) ÷ ______ + 1  =  ______ ÷ ______ + 1  =  ______ + 1  =  ________
 ```
 
 **(c)** Price the Week 26 digit network, one layer at a time:
 
-```
+```text
 Conv2d(1, 8, 3)    :  ____ × ____ × ____ × ____  +  ____  =  ______ + ____ =  ______
 Conv2d(8, 16, 3)   :  ____ × ____ × ____ × ____  +  ____  =  ______ + ____ =  ______
 Linear(64, 10)     :          ____ × ____  +  ____                          =  ______
@@ -118,7 +118,7 @@ Linear(64, 10)     :          ____ × ____  +  ____                          =  
 
 **(a)** For `f(w) = (w − 3)² + 1`, measure the slope at `w = 5` with `h = 0.001`:
 
-```
+```text
 f(5.001) = ( ______ )² + 1 = ________          f(4.999) = ( ______ )² + 1 = ________
 
 slope = ( ________ − ________ ) ÷ ( 2 × 0.001 ) = ________ ÷ ________ = ________
@@ -128,7 +128,7 @@ slope = ( ________ − ________ ) ÷ ( 2 × 0.001 ) = ________ ÷ ________ = ___
 
 **(c)** One descent step from `w = 5` with a learning rate of `0.1`:
 
-```
+```text
 w  ←  ______ − ______ × ______  =  ______ − ______  =  ________
 ```
 
@@ -147,6 +147,8 @@ ________________________________________________________________
 **In pen, before you run anything.** Four programs, one from each term.
 
 ### P1 — a slope, and a step
+
+Read this program, then fill in the table below it.
 
 ```python
 def f(w):
@@ -178,6 +180,8 @@ ________________________________________________________________
 
 ### P2 — two grids, and one that refuses
 
+Read this program, then write down what each line prints.
+
 ```python
 import numpy as np
 A = np.array([[1, 2], [3, 4], [5, 6]])
@@ -199,7 +203,7 @@ print("allclose to C.T? ", np.allclose(B.T @ A.T, C.T))
 
 **All twelve numbers of `C`, in pen:**
 
-```
+```text
 ______  ______  ______  ______
 ______  ______  ______  ______
 ______  ______  ______  ______
@@ -210,6 +214,8 @@ ______  ______  ______  ______
 ---
 
 ### P3 — shapes through the digit network
+
+Read this program, using the layer definitions beneath it, and fill in each shape.
 
 ```python
 x = torch.zeros(32, 1, 8, 8)
@@ -241,6 +247,8 @@ after view ____________________  logits ____________________  argmax ___________
 
 ### P4 — one shape, fifteen times the loss
 
+Read this program, then fill in the shapes and both losses.
+
 ```python
 import torch
 import torch.nn as nn
@@ -271,6 +279,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading code and output closely. Nothing here asks you to run anything.
 
 **A1. The year in fifteen words.** Match each to its one-line meaning.
 
@@ -310,6 +320,8 @@ ________________________________________________________________
 **(d)** The AUC is exactly `0.5000`, not `0.4987` or `0.5013`. **Why exactly?** ______________________
 
 **A3. Spot the bug in each. None of these five raises anything at all.**
+
+Read each snippet below, then write its bug on the matching line.
 
 ```python
 (1)  model = nn.Sequential(nn.Linear(2, 16), nn.Linear(16, 1))
@@ -375,6 +387,8 @@ ________________________________________________________________
 
 **A5. Trace a shape through a whole network, and find where it dies.**
 
+This network is fed a batch of images. Fill in the shape after each lettered layer.
+
 ```python
 model = nn.Sequential(
     nn.Conv2d(1, 8, 3, padding=1),   # a
@@ -417,6 +431,8 @@ Write each question in its box and **your own number** underneath it. Then:
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing short programs of your own. Each task ends with a **Done looks like** line you can check.
 
 ### B1 — one line
 
@@ -463,6 +479,8 @@ Finish with a count and `sys.exit(1 if failed else 0)`.
 ---
 
 ## 🐞 Fix the Broken Program
+
+This section is for finding bugs by reading a program and its three runs.
 
 **Three bugs. One kills your demo in front of the room, one only appears when somebody passes a flag, and one prints a number you would have said out loud with pride.**
 
@@ -570,11 +588,13 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for checking a claim with arithmetic before you believe it.
+
 ### Seven Claims. Five of Them Are Impossible.
 
 Each of these is one sentence from somebody's demo. **Five are impossible — not unlikely, but arithmetically impossible. Two are true and only sound wrong.** Find the five, prove each with a line of arithmetic, and say why the other two are fine.
 
-```
+```text
 1.  "Accuracy 0.90 on my 16 held-out rows."
 
 2.  "Latency: p50 0.31 ms, p95 0.22 ms, max 3.27 ms."
@@ -612,6 +632,8 @@ claim ______ → ________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These two questions ask for written paragraphs, in your own words, from what you remember of the year.
 
 **T1.** Your demo has ten minutes and stop 6 is *"here is where it breaks"* — you predict a failure out loud and then run it.
 
@@ -855,7 +877,7 @@ T3 ________________________  T4 ________________________
 
 **M1.**
 
-```
+```text
 sorted:      0.22   0.24   0.26   0.28   0.31   2.10
 positions:     0      1      2      3      4      5
 
@@ -872,7 +894,7 @@ mean = 3.41 ÷ 6 = 0.5683        max = 2.10
 
 **M2.**
 
-```
+```text
 (a) 5941 + 2 + 53 + 4 = 6000
 (b) 53 + 4 = 57 fraud rows       positive rate = 57 ÷ 6000 = 0.0095
 (c) accuracy  = (5941 + 4) ÷ 6000 = 5945 ÷ 6000 = 0.9908
@@ -897,7 +919,7 @@ mean = 3.41 ÷ 6 = 0.5683        max = 2.10
 
 **(c)**
 
-```
+```text
 Conv2d(1, 8, 3)    :  1 × 3 × 3 × 8  +  8   =    72 +  8  =    80
 Conv2d(8, 16, 3)   :  8 × 3 × 3 × 16 + 16   =  1152 + 16  =  1168
 Linear(64, 10)     :          64 × 10 + 10              =    650
@@ -914,7 +936,7 @@ Linear(64, 10)     :          64 × 10 + 10              =    650
 
 **(a)**
 
-```
+```text
 f(5.001) = (2.001)² + 1 = 4.004001 + 1 = 5.004001
 f(4.999) = (1.999)² + 1 = 3.996001 + 1 = 4.996001
 

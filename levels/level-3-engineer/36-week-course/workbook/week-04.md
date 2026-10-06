@@ -40,13 +40,13 @@ ________________________________________________________________
 
 **Step 1 — the mean.**
 
-```
+```text
 3 + 5 + 7 + 9 + 11 = __________          __________ ÷ 5 = __________
 ```
 
 **Step 2 — the standard deviation, all five steps shown.**
 
-```
+```text
 subtract the mean:   ______  ______  ______  ______  ______
 square each:         ______  ______  ______  ______  ______
 add them up:         ______ + ______ + ______ + ______ + ______ = ______
@@ -67,7 +67,7 @@ ________________________________________________________________
 
 **Step 4 — one min-max value.** min = ______, max = ______, range = ______
 
-```
+```text
 (5 − ______) ÷ ______ = ______ ÷ ______ = ____________
 ```
 
@@ -81,13 +81,13 @@ ______  ______  ______  ______  ______
 
 **Step 1 — the mean.**
 
-```
+```text
 1 + 2 + 2 + 3 + 92 = __________          __________ ÷ 5 = __________
 ```
 
 **Step 2 — the standard deviation, all five steps.**
 
-```
+```text
 subtract the mean:   ______  ______  ______  ______  ______
 square each:         ______  ______  ______  ______  ______
 add them up:         ______________________________ = ______
@@ -103,7 +103,7 @@ square root:         √______ = ____________
 
 **Step 5 — a value of 120 arrives next month.** Both rulers were fitted on column Q.
 
-```
+```text
 z      : (120 − ______) ÷ ______ = ____________
 min-max: (120 − ______) ÷ ______ = ____________
 ```
@@ -122,7 +122,7 @@ Somebody logged driver experience in **months**: `0, 12, 24, 36, 48`. Somebody e
 
 **Months.**
 
-```
+```text
 mean = __________ ÷ 5 = __________
 squares: ______ + ______ + ______ + ______ + ______ = ______
 ______ ÷ 5 = ______        √______ = ____________
@@ -131,7 +131,7 @@ z of 48 = (48 − ______) ÷ ______ = ____________
 
 **Years.**
 
-```
+```text
 mean = __________ ÷ 5 = __________
 squares: ______ + ______ + ______ + ______ + ______ = ______
 ______ ÷ 5 = ______        √______ = ____________
@@ -152,13 +152,13 @@ ________________________________________________________________
 
 Real lateness rates from your own delivery table:
 
-```
+```text
 clear  0.2451        rain  0.3507        storm  0.5360
 ```
 
 **The two steps.**
 
-```
+```text
 rain  − clear = 0.3507 − 0.2451 = ____________
 storm − rain  = 0.5360 − 0.3507 = ____________
 ```
@@ -335,6 +335,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading code and output closely before you write any of your own.
+
 **A1. Match the word to the thing.** Write the letter.
 
 | Word | | Description |
@@ -494,6 +496,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
+This set is for writing short programs of your own, from one line up to a whole program.
+
 ### B1 — one line, plus a print
 
 **Task:** print the standard deviation that a `StandardScaler` learns from column Q, `[1, 2, 2, 3, 92]`, rounded to 4 decimal places.
@@ -636,7 +640,7 @@ ________________________________________________________________
 
 **B5(b).** `distance_km 5.00` is the one that stayed inside. Check its two numbers on a calculator and write both divisions out in full.
 
-```
+```text
 z      : (5.00 − ________) ÷ ________ = ____________
 min-max: (5.00 − ________) ÷ ________ = ____________
 ```
@@ -644,6 +648,8 @@ min-max: (5.00 − ________) ÷ ________ = ____________
 ---
 
 ## 🐞 Fix the Broken Program
+
+This page is for practising finding bugs from their error messages.
 
 This program has **three** bugs: one **shape** bug, one **runtime** bug, and one **silent logic** bug. The real error messages are below, in the order you meet them.
 
@@ -734,7 +740,7 @@ ________________________________________________________________
 
 **And check the arithmetic in that output while you are here.**
 
-```
+```text
 8 + 10 + 12 + 14 + 96 = ______        ______ ÷ 5 = ______   (matches mean_?  ______)
 squares: ______ + ______ + ______ + ______ + ______ = ______
 ______ ÷ 5 = ______        √______ = ____________   (matches scale_?  ______)
@@ -799,6 +805,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This page is for working out, from printed numbers alone, what was done to them.
+
 ### The Ruler Detective
 
 Five printouts. Somebody scaled a column and threw away the code. **For each one, say which ruler it was — z-score or min-max — and write the clue that proves it.**
@@ -844,7 +852,7 @@ scaler.scale_: [8.]
 
 Three z-scores come out: `-2.5`, `0.0`, `+1.25`. **Recover the three original values.**
 
-```
+```text
 raw = mean + z × sd
 
 ______ + (−2.5 × ______) = ______
@@ -865,6 +873,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These questions are for explaining your reasoning in your own words.
 
 **T1.** Standardizing makes a model give the identical answer whether experience was logged in months or years. **Write a paragraph** on what that actually buys you. Is "the answer no longer depends on a unit somebody chose arbitrarily" a *better* reason to scale than "the score went up"? What would you say to somebody who scaled, saw the score go **down** by 0.0009, and wanted to take the scaler out again?
 
@@ -935,7 +945,7 @@ ________________________________________________________________
 
 **Drill 2:**
 
-```
+```text
 subtract: ____________________________________________
 square:   ____________________________________________
 add:      ____________________________________________
@@ -945,7 +955,7 @@ root:     ____________________________________________
 
 **Drill 7:**
 
-```
+```text
 subtract: ____________________________________________
 square:   ____________________________________________
 add:      ____________________________________________
@@ -979,7 +989,7 @@ ________________________________________________________________
 
 **The column count**
 
-```
+```text
 restaurant   :  ______ values  ->  ______ columns
 day_of_week  :  ______ values  ->  ______ columns
 weather      :  ______ values  ->  ______ columns
@@ -999,7 +1009,7 @@ ________________________________________________________________
 
 **The two real gaps, from your own table:**
 
-```
+```text
 rain  − clear = ____________ − ____________ = ____________
 storm − rain  = ____________ − ____________ = ____________
 the comparison:  ____________ ÷ ____________ = ____________
@@ -1034,6 +1044,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for drawing the week's idea instead of writing it.
+
 Draw the same five numbers — `2, 4, 6, 8, 100` — three times, on three number lines in your own hand.
 
 ![Draw five numbers three times](../figures/fig-w04-9-draw-frame.svg)
@@ -1056,6 +1068,8 @@ ________________________________________________________________
 ---
 
 ## 📊 Self-Check
+
+This page is for marking honestly how well you can do each thing. Tick one face per row.
 
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
@@ -1080,6 +1094,8 @@ ________________________________________________________________
 
 ## ✅ Answers
 
+Use this section only after you have finished the pages above. Open it to check your work.
+
 <details>
 <summary>Check your answers</summary>
 
@@ -1099,7 +1115,7 @@ ________________________________________________________________
 
 **M1 — column P = `[3, 5, 7, 9, 11]`.**
 
-```
+```text
 3 + 5 + 7 + 9 + 11 = 35        35 ÷ 5 = 7
 
 subtract 7:   −4    −2     0     2     4
@@ -1122,7 +1138,7 @@ z of 11 = (11 − 7) ÷ 2.8284 = 4 ÷ 2.8284 = **+1.4142**
 
 **M2 — column Q = `[1, 2, 2, 3, 92]`.**
 
-```
+```text
 1 + 2 + 2 + 3 + 92 = 100       100 ÷ 5 = 20
 
 subtract 20:  −19   −18   −18   −17   +72
@@ -1138,7 +1154,7 @@ square root:  √1296.4 = 36.0056
 
 **Step 5.**
 
-```
+```text
 z      : (120 − 20) ÷ 36.0056 = 100 ÷ 36.0056 = 2.7773
 min-max: (120 −  1) ÷ 91      = 119 ÷ 91      = 1.3077
 ```
@@ -1149,7 +1165,7 @@ min-max: (120 −  1) ÷ 91      = 119 ÷ 91      = 1.3077
 
 **M3 — months against years.**
 
-```
+```text
 MONTHS 0, 12, 24, 36, 48
 mean = 120 ÷ 5 = 24
 squares: 576 + 144 + 0 + 144 + 576 = 1440
@@ -1196,7 +1212,7 @@ for name, vals in [("months", [0, 12, 24, 36, 48]), ("years", [0, 1, 2, 3, 4])]:
 
 **M4 — the uneven ladder.**
 
-```
+```text
 rain  − clear = 0.3507 − 0.2451 = 0.1056
 storm − rain  = 0.5360 − 0.3507 = 0.1853
 0.1853 ÷ 0.1056 = 1.75
@@ -1356,7 +1372,7 @@ That is not a bug and it is what you want inside a real pipeline. It is useless 
 
 **A6.** The filled-in figure:
 
-```
+```text
 the five numbers      2   4   6   8   100
 sum 120,  mean 120 ÷ 5 = 24
 
@@ -1589,7 +1605,7 @@ order_hour         9.00  ->  z -2.1622   min-max  -0.0769   ESCAPED THE BOX
 
 **B5(b).**
 
-```
+```text
 z      : (5.00 − 3.5193) ÷ 2.2938 = 1.4807 ÷ 2.2938 = 0.6455
 min-max: (5.00 − 0.33)   ÷ 14.07  = 4.67   ÷ 14.07  = 0.3319
 ```
@@ -1614,7 +1630,7 @@ The min-max range is `14.40 − 0.33 = 14.07`. Both match the program to four de
 
 **The arithmetic in that output:**
 
-```
+```text
 8 + 10 + 12 + 14 + 96 = 140        140 ÷ 5 = 28     (matches mean_ [28.]  ✅)
 squares: 400 + 324 + 256 + 196 + 4624 = 5800
 5800 ÷ 5 = 1160        √1160 = 34.0588            (matches scale_ [34.05877273]  ✅)
@@ -1682,7 +1698,7 @@ medium     1
 
 **Part 2.**
 
-```
+```text
 raw = mean + z × sd
 
 50 + (−2.50 × 8) = 50 − 20 = 30
@@ -1731,7 +1747,7 @@ Your own page, but here is what it should be measured against.
 
 **The five steps for drill 2:**
 
-```
+```text
 subtract:  −4  −2  0  2  4
 square:    16   4  0  4  16
 add:       40
@@ -1741,7 +1757,7 @@ root:      √8 = 2.8284
 
 **The five steps for drill 7:**
 
-```
+```text
 subtract:  −19  −18  −18  −17  +72
 square:    361  324  324  289  5184
 add:       6482
@@ -1769,7 +1785,7 @@ root:      √1296.4 = 36.0056
 
 **The column count**
 
-```
+```text
 restaurant   : 5 values  ->  5 columns
 day_of_week  : 7 values  ->  7 columns
 weather      : 3 values  ->  3 columns
@@ -1785,7 +1801,7 @@ weather      : 3 values  ->  3 columns
 
 **The ordinal trap.** Codes: clear **0**, rain **1**, storm **2**.
 
-```
+```text
 rain  − clear = 0.3507 − 0.2451 = 0.1056
 storm − rain  = 0.5360 − 0.3507 = 0.1853
 0.1853 ÷ 0.1056 = 1.75

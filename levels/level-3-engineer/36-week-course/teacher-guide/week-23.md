@@ -121,7 +121,7 @@ Until this week every training run pushed *all* the training rows through at onc
 
 Here is the arithmetic that matters, on this week's real numbers. 1,257 training digits, 32 at a time:
 
-```
+```text
 1257 ÷ 32 = 39.28…                 →  round UP  →  40 batches
 39 full batches × 32 rows = 1248
 1257 − 1248 = 9                    →  the last batch has 9 rows
@@ -135,7 +135,7 @@ Here is the arithmetic that matters, on this week's real numbers. 1,257 training
 
 Then:
 
-```
+```text
 15 epochs × 40 steps = 600 optimizer steps
 ```
 
@@ -189,7 +189,7 @@ That is a two. Squint and you will see it. **Show that on the screen in the hook
 
 The answers need one more step. Our loss is still Week 22's `BCEWithLogitsLoss`, which compares a grid of scores against a grid of answers of the same shape. The network has 10 outputs, so it produces a `(1257, 10)` grid — and the answers have to be a `(1257, 10)` grid too. So each answer becomes a row of ten numbers with a single 1 in it:
 
-```
+```text
 the digit 6  →  [0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
 ```
 
@@ -221,7 +221,7 @@ For our digits network it holds exactly four entries:
    fc2.bias   (10,)
 ```
 
-```
+```text
 4096 + 64 + 640 + 10 = 4810 numbers in the file
 ```
 
@@ -237,7 +237,7 @@ model.load_state_dict(torch.load("digits_mlp.pt"))         # back in
 
 **So you must build the same architecture first, and this is the whole reason the third file exists.** If `train_digits.py` declares the class and `predict_digits.py` declares it again, the two declarations will drift — somebody changes 64 to 128 in one file and not the other — and the load will fail, or worse, quietly load into a differently-shaped thing. So:
 
-```
+```text
 digits_net.py        holds the class.  Imported by both.
 train_digits.py      imports it, trains, saves digits_mlp.pt
 predict_digits.py    imports it, loads digits_mlp.pt, predicts.  No training code.
@@ -367,11 +367,13 @@ answer: a saved model is the first thing in this course that somebody else can u
 
 ## 🧰 Prep Checklist
 
+This section lists everything to set up before the lesson, including the complete runnable files.
+
 ### 30 minutes the night before
 
 - [ ] **Print the CLEAN ROOM checklist**, one per student. Seven boxes:
 
-```
+```text
 [ ] digits_net.py holds the class, and nothing else
 [ ] train_digits.py imports it
 [ ] predict_digits.py imports it
@@ -720,7 +722,7 @@ this is a 2
 
 **Do this:** Draw the three boxes on the board and leave them up all lesson:
 
-```
+```text
        digits_net.py
         (the class)
          ↗        ↖
@@ -743,7 +745,7 @@ train_digits.py   predict_digits.py
 
 **Do this:** Draw two boxes on the board, side by side, exactly as in Figure 23.1.
 
-```
+```text
    __init__                        forward
    "declare the parts"             "say how a batch flows"
    runs once                       runs every call
@@ -774,7 +776,7 @@ train_digits.py   predict_digits.py
 
 **Do this:** Write on the board:
 
-```
+```text
 1257 training digits.  32 at a time.  How many batches?
 ```
 
@@ -790,7 +792,7 @@ train_digits.py   predict_digits.py
 
 **Do this:** Write the whole check out, and make them do the subtraction:
 
-```
+```text
 39 × 32 = 1248
 1257 − 1248 = 9
 1248 + 9 = 1257        ✅  so 40 batches: thirty-nine of 32 and one of 9
@@ -808,7 +810,7 @@ train_digits.py   predict_digits.py
 
 **Do this:** Write the second number and box it:
 
-```
+```text
 15 epochs × 40 steps = 600 optimizer steps
 ```
 
@@ -826,7 +828,7 @@ train_digits.py   predict_digits.py
 
 **Do this:** Write the four lines on the board:
 
-```
+```text
 fc1.weight  (64, 64)   4096
 fc1.bias    (64,)        64
 fc2.weight  (10, 64)    640
@@ -1057,7 +1059,7 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: build the
 
 **Do this:** Have one student read out their `FINAL:` line. Write it on the board.
 
-```
+```text
 FINAL: test accuracy 0.9667 on 540 held-out digits
 ```
 
@@ -1129,6 +1131,8 @@ And the sentence for this week:
 ---
 
 ## 🎲 The Activity, In Full
+
+This section gives the full setup, stages and variations for the lab, so you can run it without the minute-by-minute plan.
 
 ### Build It and Ship It
 
@@ -1354,6 +1358,8 @@ What to tell a 14-year-old, out loud: **"one file, imported by both, and we grep
 
 ## 🧭 Differentiation
 
+This section gives ways to adjust the lesson for a student who is struggling, flying or disengaged.
+
 ### If the student is struggling
 
 **Cut:** the identity proof down to the parameter *counts* only — 65 and 65 — and skip `torch.equal`. Objective 1's point is "same model, different names", and two matching totals plus two lists of names carries it.
@@ -1483,6 +1489,8 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
+This section gives the wording to use when you set the homework.
+
 **Say this:**
 
 > "About an hour, three pages, and the third one is an experiment, not a question.
@@ -1599,7 +1607,7 @@ that output: [0.059556588530540466, 0.0902349054813385]
 
 **The arithmetic, in full, for the two that matter:**
 
-```
+```text
 1257 ÷ 32 = 39.28…    round up → 40
 39 × 32 = 1248        1257 − 1248 = 9        1248 + 9 = 1257 ✅
 
@@ -1674,7 +1682,7 @@ saved digits_mlp.pt
    fc2.bias   (10,)
 ```
 
-```
+```text
 4096 + 64 + 640 + 10 = 4810
 ```
 

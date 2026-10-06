@@ -49,7 +49,7 @@ ________________________________________________________________
 
 **Step 1 — the number you are ALLOWED to learn: the median of the train rows.**
 
-```
+```text
 values present in train, lined up:  ______  ______  ______  ______
 
 that is ______ numbers. ______ is even/odd, so the middle is ____________________
@@ -61,7 +61,7 @@ the two middles are number ______ and number ______, which are ______ and ______
 
 **Step 2 — the number you are NOT allowed to learn: the median of the whole table.**
 
-```
+```text
 values present in the whole table:  ______  ______  ______  ______  ______  ______
 
 that is ______ numbers, so the two middles are number ______ and number ______
@@ -81,14 +81,14 @@ ________________________________________________________________
 
 **M1(c). Now the mean, for contrast.**
 
-```
+```text
 train mean      : (5.0 + 6.0 + 7.0 + 9.0) ÷ 4 = ______ ÷ 4 = ____________
 whole-table mean: (5 + 6 + 7 + 9 + 10 + 12) ÷ 6 = ______ ÷ 6 = ____________
 ```
 
 **M1(d).** Now do the same counting on the real table. **1,140 training rows have a value.**
 
-```
+```text
 1140 is even, so the two middles are number ______ and number ______
 
 sorted, number 570 is 29 and number 571 is 30
@@ -98,7 +98,7 @@ sorted, number 570 is 29 and number 571 is 30
 
 **And the whole table has 1,894 values present**, whose two middles are **both 29**.
 
-```
+```text
 ( 29 + 29 ) ÷ 2 = ____________
 ```
 
@@ -106,13 +106,13 @@ sorted, number 570 is 29 and number 571 is 30
 
 ### M2 — Three subtractions that hold the whole chapter
 
-```
+```text
 target        fake 0.9762   honest 0.7752
 temporal      fake 0.8139   honest 0.5249
 preprocessing fake 0.765    honest 0.520
 ```
 
-```
+```text
 target        : 0.9762 − 0.7752 = ____________
 temporal      : 0.8139 − 0.5249 = ____________
 preprocessing : 0.765  − 0.520  = ____________
@@ -143,7 +143,7 @@ customer_called_support
 1                          12  540
 ```
 
-```
+```text
 the bottom row: 12 + 540 = ______ orders had a support call
 of those, late: 540 ÷ ______ = ____________
 
@@ -161,7 +161,7 @@ biopsy_booked
 1               11  187
 ```
 
-```
+```text
 biopsies booked: 11 + 187 = ______
 of those malignant: 187 ÷ ______ = ____________
 ```
@@ -172,7 +172,7 @@ ________________________________________________________________
 
 **M3(c).** The other two audits are also divisions.
 
-```
+```text
 audit 1, how strongly it moves with the answer: 0.942 ÷ 0.345 = ____________
 audit 4, the size of its weight               : 3.482 ÷ 0.804 = ____________
 ```
@@ -181,12 +181,12 @@ audit 4, the size of its weight               : 3.482 ÷ 0.804 = ____________
 
 ### M4 — Five fold scores, twice
 
-```
+```text
 WRONG  0.875  0.750  0.800  0.725  0.675
 RIGHT  0.425  0.475  0.600  0.425  0.675
 ```
 
-```
+```text
 WRONG: ______ + ______ + ______ + ______ + ______ = ______    ______ ÷ 5 = ____________
 RIGHT: ______ + ______ + ______ + ______ + ______ = ______    ______ ÷ 5 = ____________
 
@@ -199,7 +199,7 @@ the difference: ____________ − ____________ = ____________
 
 **M4(c). The drift arithmetic**, from the temporal-leak world. The rule is `2.0 − 0.13 × week`.
 
-```
+```text
 week  0 : 2.0 − 0.13 × 0  = ____________
 week 15 : 2.0 − 0.13 × 15 = 2.0 − ______ = ____________
 week 29 : 2.0 − 0.13 × 29 = 2.0 − ______ = ____________
@@ -294,7 +294,7 @@ print(b)
 
 **And sketch the grid `b`. How many columns, and which cells hold a 1?**
 
-```
+```text
 ________________________________________________
 ________________________________________________
 ________________________________________________
@@ -377,14 +377,14 @@ print("the column on its own, AUC:", round(roc_auc_score(late, called), 4))
 
 **Work the two arrays out on paper first.**
 
-```
+```text
 late   : 0  0  1  1  0  1  0  1  1  0
 called : ______________________________
 ```
 
 **I predict — the four cells of the crosstab:**
 
-```
+```text
         late 0   late 1
 called 0  ______   ______
 called 1  ______   ______
@@ -415,6 +415,8 @@ ________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading: matching words, tracing shapes, spotting bugs and reading audit reports.
 
 **A1. Match the word to the thing.** Write the letter.
 
@@ -577,6 +579,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing: each task gives the output you should match, and you write the code that produces it.
 
 ### B1 — count the holes, find the two numbers
 
@@ -870,7 +874,7 @@ temporal         0.8139    0.2890      ______
 preprocessing    ______    0.245       0.520
 ```
 
-```
+```text
 target        : 0.9762 − ____________ = ____________
 temporal      : 0.8139 − ____________ = ____________
 preprocessing : 0.520  + ____________ = ____________
@@ -891,6 +895,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These two questions ask for a written paragraph each. Take your time over the reasons.
 
 **T1.** The preprocessing leak on your delivery table was worth **−0.0000**. The identical bug on a 2,000-column noise table was worth **+0.245**. **Write a paragraph.** Which of those two is the more dangerous bug to have in your code, and why? How would you ever find the −0.0000 one? And what does it mean that the fix is *structural* — moving a line inside a `Pipeline` — rather than *moral*, meaning "be more careful"? Is there any bug you know of where being careful is actually the right defence?
 
@@ -920,6 +926,8 @@ ________________________________________________________________
 
 ## 🛠️ Build It — Three Repairs, Six Numbers, One Noise Table
 
+This section is where you record your own runs for the week. Work down the checklist, then fill in the pages below it.
+
 **Three things get handed in: the imputation with `statistics_` printed, the three repairs with the fake and honest numbers side by side, and the two paragraphs.** A repair with only the honest number on it **is not a repair, it is a claim.**
 
 ### Step checklist
@@ -937,7 +945,7 @@ ________________________________________________________________
 
 ### The imputation
 
-```
+```text
 blanks: whole ______  train ______  val ______  test ______      add up to ______
 
 statistics_ : ____________________________________________
@@ -954,7 +962,7 @@ where the difference came from: ____________________________________
 | `add_indicator=False` | | | |
 | `add_indicator=True` | | | |
 
-```
+```text
 the subtraction: ____________ − ____________ = ____________     verdict ____________
 ```
 
@@ -982,7 +990,7 @@ preprocessing ____________________________________________
 
 **Run 1 — both halves.**
 
-```
+```text
 WRONG five scores: ______  ______  ______  ______  ______
        total ____________  ÷ 5 = ____________
 
@@ -1026,7 +1034,7 @@ te = df[df["order_id"] >  101499]        # the last 500
 print("rows:", len(tr), len(te))
 ```
 
-```
+```text
 RANDOM split AUC : ____________
 TIME   split AUC : ____________
 the gap          : ____________
@@ -1070,6 +1078,8 @@ ________________________________________________________________
 
 ## 📊 Self-Check
 
+Use this table to rate yourself honestly on each skill from the week.
+
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
 | find a median by counting to the middle of a sorted list, including the even-length case | | | |
@@ -1112,7 +1122,7 @@ ________________________________________________________________
 
 **M1 — the median.**
 
-```
+```text
 values present in train, lined up:  5.0  6.0  7.0  9.0
 
 that is 4 numbers. 4 is even, so there is no single middle one.
@@ -1130,7 +1140,7 @@ that is 6 numbers, so the two middles are number 3 and number 4, which are 7.0 a
 
 **M1(c).**
 
-```
+```text
 train mean      : 27.0 ÷ 4 = 6.75
 whole-table mean: 49.0 ÷ 6 = 8.1667
 ```
@@ -1139,7 +1149,7 @@ Both means moved too. The medians moved by 1.5 and the means by 1.4167 — on a 
 
 **M1(d).**
 
-```
+```text
 1140 is even, so the two middles are number 570 and number 571
 ( 29 + 30 ) ÷ 2 = 29.5
 
@@ -1150,7 +1160,7 @@ Both means moved too. The medians moved by 1.5 and the means by 1.4167 — on a 
 
 **M2 — the three subtractions.**
 
-```
+```text
 target        : 0.9762 − 0.7752 = 0.2010
 temporal      : 0.8139 − 0.5249 = 0.2890
 preprocessing : 0.765  − 0.520  = 0.245
@@ -1164,7 +1174,7 @@ preprocessing : 0.765  − 0.520  = 0.245
 
 **M3 — the two divisions.**
 
-```
+```text
 12 + 540 = 552 orders had a support call
 540 ÷ 552 = 0.9783
 
@@ -1179,7 +1189,7 @@ preprocessing : 0.765  − 0.520  = 0.245
 
 **M3(c).**
 
-```
+```text
 0.942 ÷ 0.345 = 2.73
 3.482 ÷ 0.804 = 4.33
 ```
@@ -1188,7 +1198,7 @@ preprocessing : 0.765  − 0.520  = 0.245
 
 **M4 — the fold scores.**
 
-```
+```text
 WRONG: 0.875 + 0.750 + 0.800 + 0.725 + 0.675 = 3.825    3.825 ÷ 5 = 0.765
 RIGHT: 0.425 + 0.475 + 0.600 + 0.425 + 0.675 = 2.600    2.600 ÷ 5 = 0.520
 
@@ -1201,7 +1211,7 @@ RIGHT: 0.425 + 0.475 + 0.600 + 0.425 + 0.675 = 2.600    2.600 ÷ 5 = 0.520
 
 **M4(c).**
 
-```
+```text
 week  0 : 2.0 − 0 = 2.0
 week 15 : 2.0 − 1.95 = 0.05
 week 29 : 2.0 − 3.77 = −1.77
@@ -1281,7 +1291,7 @@ the column on its own, AUC: 0.8
 
 Working the arrays out:
 
-```
+```text
 late   : 0  0  1  1  0  1  0  1  1  0
 called : 0  0  0  1  1  1  0  1  1  0
               ^     ^
@@ -1353,7 +1363,7 @@ len(get_feature_names_out()), + leaky column    21
 
 **A6.** Reading the blanks:
 
-```
+```text
 TARGET         tell: "is it filled in yet?"            0.9762 / 0.7752  gap 0.2011
 TEMPORAL       tell: "do the rows have a date?"        0.8139 / 0.5249  gap 0.2890
 PREPROCESSING  tell: "was it fitted before the cut?"   0.765  / 0.520   gap 0.245
@@ -1537,7 +1547,7 @@ the fill-in number it learned: [ 2.91  4.   14.   18.   29.5 ]
 
 **Part 2.**
 
-```
+```text
 target        : 0.9762 − 0.2011 = 0.7751     (the printed honest number is 0.7752)
 temporal      : 0.8139 − 0.2890 = 0.5249
 preprocessing : 0.520  + 0.245  = 0.765
@@ -1585,7 +1595,7 @@ Every one of those needs no maths and no understanding of the model.
 
 **The imputation.**
 
-```
+```text
 blanks: whole 106  train 60  val 25  test 21      add up to 106 ✅
 
 statistics_ : [ 2.91  4.   14.   18.   29.5 ]
@@ -1603,7 +1613,7 @@ where the difference came from: the 800 validation-and-test rows, which I am
 | `add_indicator=False` | 20 | 0.7600 | 0.7752 |
 | `add_indicator=True` | 21 | 0.7550 | 0.7723 |
 
-```
+```text
 the subtraction: 0.7723 − 0.7752 = −0.0029     verdict DELETE
 ```
 
@@ -1625,7 +1635,7 @@ the subtraction: 0.7723 − 0.7752 = −0.0029     verdict DELETE
 
 **The noise experiment, run 1.**
 
-```
+```text
 WRONG five scores: 0.875  0.750  0.800  0.725  0.675
        total 3.825  ÷ 5 = 0.765
 
@@ -1658,7 +1668,7 @@ If your honest number *does* change when you delete the wrong half, something el
 
 **The optional extension — the temporal hunt on our own table.** Real numbers:
 
-```
+```text
 RANDOM split AUC : 0.7462
 TIME   split AUC : 0.8018      (cut at order_id 101499, 1500 train / 500 test)
 the gap          : −0.0556

@@ -78,7 +78,7 @@ The two extra things are:
 
 The first difference has a consequence students can see immediately, and it is a good moment:
 
-```
+```text
 1.0 × 0.5 + 2.0 × 0.8 = 2.10          on paper
                         2.0999999046325684   printed by float32
 ```
@@ -147,7 +147,7 @@ print(x.grad.item())
 
 This is today's whole lesson, so here are all the numbers in one place. **Two inputs, two hidden units with ReLU, one output with sigmoid.**
 
-```
+```text
 W1 = [ 0.5  -0.3 ]      b1 = [ 0.1   0.05 ]
      [ 0.8   0.2 ]
 
@@ -159,7 +159,7 @@ one row of input:  x = [1.0, 2.0]        its true label:  y = 1
 
 **The forward pass, by hand.** Hidden unit 1 uses column 0 of `W1`; hidden unit 2 uses column 1.
 
-```
+```text
 z1 = 1.0 × 0.5 + 2.0 × 0.8 + 0.1  =  0.5 + 1.6 + 0.1  =  2.20
 z2 = 1.0 × (−0.3) + 2.0 × 0.2 + 0.05  =  −0.3 + 0.4 + 0.05  =  0.15
 
@@ -176,7 +176,7 @@ loss = −ln(0.90024951) = 0.10508332
 
 **The backward pass, by hand.** Nine numbers, and every one of them is a multiplication you can do on a calculator.
 
-```
+```text
 step 1 — blame at the output:
    dZ2 = A2 − y = 0.90024951 − 1 = −0.09975049
 
@@ -467,6 +467,8 @@ like that are the ones worth being strict about.
 
 ## 🧰 Prep Checklist
 
+This section lists what to prepare before the lesson, in the order to do it.
+
 ### 25 minutes the night before
 
 - [ ] **Confirm PyTorch exists on every machine.** One line, on each laptop:
@@ -479,7 +481,7 @@ You should see something like `2.2.1`. **If it errors, you cannot fix it in the 
 
 - [ ] **Write Week 18's nine gradient numbers on the board before the lesson**, or check they are still on the wall. This is not optional; the lesson is a comparison and one column has to be there first.
 
-```
+```text
 dW1 = [ −0.09975049   +0.19950098 ]      db1 = [ −0.09975049, +0.19950098 ]
       [ −0.19950098   +0.39900196 ]
 
@@ -606,7 +608,7 @@ Run `python3 match_test.py`. You must see **exactly** the output printed in §6 
 
 **Do this:** Nothing on the screen. Week 18's nine numbers are on the board, covered with a sheet of paper. On the visible part of the board write only:
 
-```
+```text
 x = [1.0, 2.0]      y = 1      A2 = 0.90024951
 ```
 
@@ -926,7 +928,7 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: **build t
 
 **Do this:** Stand at the board with the two columns and the nine zeros. Write four things underneath:
 
-```
+```text
 requires_grad=True   →  start recording
 grad_fn              →  the receipt, visible
 loss.backward()      →  read it backwards, fill in every .grad
@@ -994,6 +996,8 @@ And the sentence for this week:
 ---
 
 ## 🎲 The Activity, In Full
+
+This section gives the whole student activity, part by part, with the setup and the easier and harder variations.
 
 ### The Match Test, then Break It Three Ways
 
@@ -1171,6 +1175,8 @@ The order matters, not the tool. **Write it once by hand, then never again.**
 ---
 
 ## 🧭 Differentiation
+
+This section covers how to adjust the lesson for a student who is struggling, flying, or not engaging today.
 
 ### If the student is struggling
 
@@ -1595,7 +1601,7 @@ plotting them: wrote item_experiment.png
 
 **The loss is checkable by hand, and it is worth asking for:**
 
-```
+```text
 1.0 × 0.5 + 2.0 × 0.8 = 2.10
 sigmoid(2.10) = 1 / (1 + e^(−2.10)) = 1 / 1.122456 = 0.890903
 −ln(0.890903) = 0.115520

@@ -55,7 +55,7 @@ ________________________________________________________________
 
 **M2 — the division that hides.** This is the most important arithmetic of the week. Same column, same top of the fraction, two different bottoms.
 
-```
+```text
 sum of driver_experience_months = 56693
 values that actually exist      = 1912
 rows in the table               = 2020
@@ -76,7 +76,7 @@ ________________________________________________________________
 
 **M3 — the fake marks the copies would buy.** There are **20** exact duplicate rows. Next week 20% of rows go into a sealed test pile.
 
-```
+```text
 copies that land in the test pile  =  20 × 0.2   =  ____________
 ```
 
@@ -251,6 +251,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading and explaining code and ideas that are already written.
+
 **A1. Match the word to the thing.** Write the letter.
 
 | Word | | Description |
@@ -404,6 +406,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing short pieces of code of your own.
 
 ### B1 — one line, plus a print
 
@@ -713,6 +717,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These questions are for writing out your reasoning in full sentences.
+
 **T1.** The audit is five checks and it takes about a third of a second to run. Somebody says: *"we've used this table for two years, everybody knows it, we don't need to audit it."* **Write a paragraph** answering them. Is there a version of their argument that is right? What would you actually check, on a table you had already used for two years — and what would change your mind?
 
 ________________________________________________________________
@@ -872,6 +878,8 @@ Two entries today: one loud, one silent.
 
 ## 🎨 Draw It
 
+This page is for drawing the week's main idea from memory.
+
 Draw the five decisions as five cards, in your own hand, in the frames below. Front is the decision; back is the real number from the table.
 
 ![Draw the five decision cards](../figures/fig-w01-9-draw-frame.svg)
@@ -892,6 +900,8 @@ ________________________________________________________________
 ---
 
 ## 📊 Self-Check
+
+This table is for marking how sure you feel about each skill from the week.
 
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
@@ -948,7 +958,7 @@ Worked slowly for the first one: 2020 × 0.99 = 1999.8, which is nearly 2000, so
 
 **M2.**
 
-```
+```text
 56693 ÷ 1912 = 29.6512          <- what pandas gives you
 56693 ÷ 2020 = 28.0658          <- what you asked for
 
