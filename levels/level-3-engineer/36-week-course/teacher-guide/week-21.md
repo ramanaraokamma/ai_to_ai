@@ -30,7 +30,7 @@ By the end of the lesson the student can:
 
 1. **Write the canonical training loop from a blank file**: `zero_grad`, forward, loss, `backward`, `step`, in that order.
 2. **Delete each of the five lines in turn** and record exactly what happens — **including the ones that produce no error at all**.
-3. **Explain why gradients accumulate by default**, and read a run where the gradient magnitude grows instead of shrinking.
+3. **Explain why gradients accumulate by default**, and read a run where the gradient refuses to shrink.
 4. **Use `torch.no_grad()` when measuring rather than learning**, and say what it saves.
 
 Observable evidence: `fit_line.py` reporting `w = 8.0014` and `b = 11.9939` against the hidden line `8x + 12`; a five-row table with a **prediction, a result and the error message if any**, of which at least one row says *"no error, but wrong"*; and one measurement taken inside a `with torch.no_grad():` block with the `requires_grad` of the result printed as `False`.
@@ -309,7 +309,7 @@ This is the lesson's second half, so know all five before you walk in. **Three o
 w 5.3946  b 18.9274  loss 2907.908203
 ```
 
-Read the gradient column: −326.7, then −129.9, then +277.1, then +244.9. **Those are sums of every slope so far**, so the effective step size grows and the walk thrashes. After 400 steps the loss is **2907.9082 — worse than the 1786.6666 it started at** — and `w` is 5.3946 when the answer is 8. **No error, no warning, and a plausible-looking log.**
+Read the gradient column: −326.7, then −129.9, then +277.1, then +244.9. **Those are sums of every slope so far**, so `w` keeps being pushed by old slopes after it has passed the bottom and the walk thrashes. (The sizes do not grow without limit — over the 400 steps they stay between roughly 0 and 340 — they just never shrink. This is undamped oscillation, not an explosion.) After 400 steps the loss is **2907.9082 — worse than the 1786.6666 it started at** — and `w` is 5.3946 when the answer is 8. **No error, no warning, and a plausible-looking log.**
 
 **Drop line 2, the forward line — crashes, and the message is last week's.** If `pred` is computed once before the loop, the first `backward()` consumes that graph and the second finds it gone:
 
@@ -377,7 +377,7 @@ It resets the **slopes**, not the weights. The knobs keep everything they have l
 The dropped-`zero_grad` run goes down at step 1 (1786 → 650) and is a wreck by step 399 (2907). **The first few steps of a broken loop often look fine.** The cure is to make them read the whole log, and to ask for the *final* loss, not the second one.
 
 **Misconception 3 — "the order doesn't really matter as long as all five are there."**
-It matters, and the failure is silent. Put `step()` before `backward()` and you step on the *previous* iteration's gradient, permanently one step behind; put `zero_grad()` at the end and you wipe the slopes you were about to use. Neither errors. **The five lines are an order, not a set.**
+It matters, and the failure is silent. Put `step()` before `backward()` (with `zero_grad()` still at the top) and `step()` finds the gradient just wiped, so it moves nothing, and `backward()` then fills a gradient that the next `zero_grad()` throws away: `w` never leaves 0.0000. (It would only be "one step behind" if `zero_grad()` were also missing, and then it is the pile-up again.) Put `zero_grad()` at the end and, contrary to what people expect, it is fine — once per trip is all that matters. The silent one is the first. **The five lines are an order, not a set.**
 
 ### 10. How deep to go, and where to stop
 
@@ -420,7 +420,7 @@ stage three is black, as it has been since Week 12 — and today it got its five
 2. **Anchor it on the card that produced no error.** Hold up `optimizer.zero_grad()` and the result it
    was paired with: `1786.6666 → 2907.9082`, no traceback, loss going **up**. *"Three of these five
    break silently. That is the whole reason this got a lesson of its own instead of being a footnote
-   in Week 22."* Then the gradient column: growing means the pile, `None` means no `backward()`,
+   in Week 22."* Then the gradient column: not-shrinking (swinging, sign flips) means the pile, `None` means no `backward()`,
    right-but-frozen means no `step()`.
 3. **Point right and make the promise concrete.** `images · CNNs`, `no labels · words`, `ship it`.
    *"Every one of those boxes runs these exact five lines. From Week 22 on we stop explaining them and
@@ -542,7 +542,7 @@ b after = 0 − 0.05 × (−80.0) = 4.0
 | `TypeError: params argument given to the optimizer should be an iterable of Tensors or dicts, but got torch.FloatTensor` | The brackets are missing: `SGD([w, b], lr=0.05)`. |
 | The loss becomes `nan` within a few steps | The learning rate is too big. Ours is 0.05; 0.1 explodes on this data. |
 | The loss never changes at all | Either `backward()` or `step()` is missing. `print(w.grad)` tells you which: `None` means no `backward()`. |
-| The loss goes down then wanders up | `zero_grad()` is missing. Check the gradient column: if the magnitudes are growing, that is the pile. |
+| The loss goes down then wanders up | `zero_grad()` is missing. Check the gradient column: if the magnitudes are not shrinking and the signs keep flipping, that is the pile. |
 | `w` is `nan` but the loss printed fine at step 0 | Same as above — divergence takes two or three steps to show up in the log. |
 | `RuntimeError: grad can be implicitly created only for scalar outputs` | `.mean()` (or `.sum()`) is missing from the loss line. `backward()` needs one number. |
 | The final `w` is 8.5199, not 8.0014 | `lr=0.01` instead of `0.05`. Not wrong — just not finished. 400 more steps would get there. |
@@ -705,7 +705,7 @@ after backward 4:  w.grad = -1306.6667
 
 > **Say this:** "Nothing about the data changed. Nothing about the weights changed. **The true slope was −326.6667 every single time, and the pile grew.**
 >
-> Now imagine that inside a loop that runs four hundred times, where each step also multiplies by the learning rate. Your steps get bigger and bigger for no reason at all, and — this is the important part — **nothing goes red.** That is why card 1 exists."
+> Now imagine that inside a loop that runs four hundred times, where each step also multiplies by the learning rate. Every step now carries all the old slopes along with the new one, so the steps stop being the size you asked for, and — this is the important part — **nothing goes red.** That is why card 1 exists."
 
 ---
 
@@ -915,17 +915,17 @@ Every message below came from running a broken version of this week's actual cod
 | `RuntimeError: size mismatch, got input (6), mat (6x1), vec (2)` | "These two blocks do not fit together." | `w` built as a flat `(2,)` tensor instead of `(1, 1)`, or `hours` and `w` the wrong way round. | Print both shapes. `hours` is `(6, 1)`, so `w` must be `(1, 1)`. |
 | `RuntimeError: Only Tensors of floating point and complex dtype can require gradients` | "You cannot ask for the slope of a whole number." | `torch.tensor([[0]], requires_grad=True)` — no decimal point. | `[[0.0]]`. |
 | `RuntimeError: expected m1 and m2 to have the same dtype, but got: long long != float` | "One grid holds whole numbers and the other decimals." | `hours = torch.tensor([[1], [2], ...])` — the `.0` left off. | Put the decimal points in: `[[1.0], [2.0], ...]`. |
-| **No error. `w` and the loss are both `nan` by step 50.** | Nothing crashed. The run is dead and every future prediction is `nan`. | The learning rate is too big — 0.1 on this data. The loss goes 1786 → 8553 → 41215 → 198849 first. | Turn it down. Ours is 0.05. **Watch the first four steps, not the last one.** |
+| **No error. `w` and the loss are both `nan` by step 150 (the loss is already `inf` by step 51).** | Nothing crashed. The run is dead and every future prediction is `nan`. | The learning rate is too big — 0.1 on this data. The loss goes 1786 → 8553 → 41215 → 198849 first. | Turn it down. Ours is 0.05. **Watch the first four steps, not the last one.** |
 | **No error. The loss never moves off 1786.666626, and `w.grad` is `None`.** | Nothing crashed and nothing learned. | `loss.backward()` is missing, so there are no slopes for `step()` to apply. | Add line 4. **`None` is the diagnosis: no backward has ever run.** |
 | **No error. The loss never moves, and `w.grad` is `−326.6667`.** | Nothing crashed and nothing learned. | `optimizer.step()` is missing. The slopes are computed and then wiped by the next `zero_grad()`. | Add line 5. **The `.grad` value is how you tell this apart from the one above.** |
-| **No error. The loss falls at first, then wanders and ends higher than it started.** | Nothing crashed. The model is worse than when you began. | `optimizer.zero_grad()` is missing, so gradients pile up and the effective step grows. | Add line 1. **Tell-tale: the gradient column grows instead of shrinking, and the signs flip.** |
+| **No error. The loss falls at first, then wanders and ends higher than it started.** | Nothing crashed. The model is worse than when you began. | `optimizer.zero_grad()` is missing, so gradients pile up and `w` is pushed by old slopes as well as the new one. | Add line 1. **Tell-tale: the gradient column never shrinks, and the signs flip.** |
 | **No error. The loss is exactly the same every step and never changes at all.** | Nothing crashed. | The forward line is outside the loop **and** you added `retain_graph=True` to make the crash go away. | Take `retain_graph` out and put the forward pass back inside the loop. **The error was telling the truth.** |
 
 ### How to teach debugging without giving the answer
 
 All the old moves stand. This week adds two, and both are about loops that run perfectly and learn nothing.
 
-21. **"Read the gradient column, not the loss column."** A gradient that grows means the pile. A gradient of `None` means no `backward()`. A gradient that is right while nothing moves means no `step()`. **One column, three different diagnoses.**
+21. **"Read the gradient column, not the loss column."** A gradient that refuses to shrink (swinging in size, flipping sign) means the pile. A gradient of `None` means no `backward()`. A gradient that is right while nothing moves means no `step()`. **One column, three different diagnoses.**
 
 22. **"What was the loss at the START, and what is it at the END?"** Not "is it going down" — the broken-`zero_grad` loop goes down at step 1. The comparison that catches it is first against last: **1786.6666 against 2907.9082.**
 
@@ -1028,7 +1028,7 @@ Scaffold the prediction with a two-choice question instead of a blank line: *"wi
 
 ### Variation — harder
 
-1. **Swap two lines instead of deleting one.** Put `optimizer.step()` **before** `loss.backward()`. It runs, no error, and it learns — using the *previous* step's gradient every time, permanently one step behind. Ask them to prove it is behind. (Print `w` and `w.grad` together and compare with the correct run.)
+1. **Swap two lines instead of deleting one.** Put `optimizer.step()` **before** `loss.backward()`. It runs, no error, and it learns **nothing**: `zero_grad()` has just wiped the gradient, so `step()` moves nothing, and `backward()` fills a gradient the next trip throws away. `w` stays 0.0000 while `w.grad` reads −326.6667. Ask them to prove it. (Print `w` and `w.grad` together and compare with the correct run.)
 2. **Put `zero_grad()` at the end of the loop** instead of the start. It works fine. Ask why, and why we still write it first. (Because at the end you have to reason about the first iteration; at the start you never do.)
 3. **Find the learning rate where it breaks.** Sweep 0.01, 0.05, 0.06, 0.07, 0.1. Real answers: 0.01 gets `w 8.5199` after 400 steps, 0.05 gets `8.0014`, and by 0.07 it is `nan`. **Ask where exactly the boundary is** — the honest answer is that it depends on the data as well as the model, which is why Week 15's hunt existed.
 4. **Add `retain_graph=True`** to make the card-2 crash go away, then explain why that is a bad fix. (It works, the loss never changes, and you have hidden a real bug behind a flag the error message suggested.)
@@ -1043,7 +1043,7 @@ Scaffold the prediction with a two-choice question instead of a blank line: *"wi
 
 Because sometimes you genuinely want them to add up, and the library cannot tell which you meant.
 
-The real use is a batch too big for memory. Suppose you want the gradient over 1,000 rows and only 250 fit at once: run four forward-and-backward passes, let the gradients pile up, then take one step. The total is exactly the gradient over 1,000 rows, and you never held more than 250 rows in memory. **That is a genuinely useful thing and it is the reason for the default.**
+The real use is a batch too big for memory. Suppose you want the gradient over 1,000 rows and only 250 fit at once: run four forward-and-backward passes, let the gradients pile up, then take one step. If each piece's loss is divided by 4 first (or you use a sum rather than a mean), the total is exactly the gradient over 1,000 rows, and you never held more than 250 rows in memory. **That is a genuinely useful thing and it is the reason for the default.**
 
 **And it is contested.** Plenty of experienced people think the default should have been the safe one, with accumulation as the opt-in — it is the single most common PyTorch bug in the world, and it costs beginners hours. Other frameworks made the other choice. **Nobody fully agrees, and you are allowed to think the default is wrong**; you still have to type line 1 every time.
 
@@ -1167,7 +1167,7 @@ Then three questions and nothing else: **"which line makes the guess? which line
 
 None of these need syntax from a later week.
 
-1. **Swap `step()` and `backward()`** (harder variation 1) and prove the run is one step behind. **This is the most subtle bug available today** and it never errors.
+1. **Swap `step()` and `backward()`** (harder variation 1) and prove that `w` never moves even though `w.grad` holds a perfectly good −326.6667. **This is the most subtle bug available today** and it never errors.
 2. **`zero_grad()` at the end of the loop** (harder variation 2): it works. Ask why we still write it first. The answer is about reasoning, not correctness.
 3. **The learning-rate boundary** (harder variation 3): 0.06 works, 0.07 is `nan`. Ask whether that boundary is a property of the optimizer or of the data. **It is both, and that is why Week 15's hunt existed.**
 4. **`retain_graph=True`** (harder variation 4) as a study in bad fixes.
@@ -1214,9 +1214,9 @@ Three checks, five minutes, exact wording.
 
 > "A student's loop trains for 400 steps with **no errors**. The loss starts at 1786.6666 and ends at **2907.9082**. **Which line is missing, and how can you tell?**"
 
-*Good answer:* "`optimizer.zero_grad()`. The gradients are piling up instead of being wiped, so the steps get bigger and bigger and it overshoots. You can tell because the loss ended higher than it started, and if you print the gradient column it grows instead of shrinking."
+*Good answer:* "`optimizer.zero_grad()`. The gradients are piling up instead of being wiped, so each step carries every old slope along with it and it keeps overshooting. You can tell because the loss ended higher than it started, and if you print the gradient column it never shrinks and the signs keep flipping."
 
-**Full marks needs the mechanism** — accumulation making the effective step grow — not just the name of the line.
+**Full marks needs the mechanism** — accumulation making each step carry all the old slopes — not just the name of the line.
 
 **Check 3 — the two do-nothings, and `no_grad` (spoken, 90 seconds)**
 
@@ -1256,7 +1256,7 @@ Three checks, five minutes, exact wording.
 
 **Expected time:** 20 min on the fit and the report · 30 min on the five deletions and the table · 10 min copying messages accurately. **About 60 minutes.**
 
-> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — are the predictions in pen and clearly written before the results?** A table where every prediction matches every result exactly is a table that was filled in backwards. **Two — are the error messages verbatim?** *"Trying to backward through the graph a second time"* is a result; *"it crashed"* is not, and the difference is whether they can search for it in two years' time. **Three — does the `zero_grad` row explain the mechanism?** The answer that earns full marks says something like *"the gradients added up instead of being wiped, so each step got bigger, so it overshot and ended worse than it started — 1786.6666 to 2907.9082."* A student who writes *"it broke"* has watched the failure without understanding it, and that is worth one line of feedback: **"what happened to the gradient column?"**
+> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — are the predictions in pen and clearly written before the results?** A table where every prediction matches every result exactly is a table that was filled in backwards. **Two — are the error messages verbatim?** *"Trying to backward through the graph a second time"* is a result; *"it crashed"* is not, and the difference is whether they can search for it in two years' time. **Three — does the `zero_grad` row explain the mechanism?** The answer that earns full marks says something like *"the gradients added up instead of being wiped, so each step carried every old slope along with it, so it kept overshooting and ended worse than it started — 1786.6666 to 2907.9082."* A student who writes *"it broke"* has watched the failure without understanding it, and that is worth one line of feedback: **"what happened to the gradient column?"**
 
 ---
 
@@ -1451,7 +1451,7 @@ w 0.0000  b 0.0000  loss 1786.666626  dL/dw -326.6667
 
 | Line removed | Error? | What happened | The tell |
 |---|---|---|---|
-| `optimizer.zero_grad()` | **No error** | Loss 1786.6666 → **2907.9082** after 400 steps. `w = 5.3946`, `b = 18.9274`. Worse than it started. | The gradient column **grows and flips sign**: −326.7, −129.9, +277.1, +244.9. Those are piles, not slopes. |
+| `optimizer.zero_grad()` | **No error** | Loss 1786.6666 → **2907.9082** after 400 steps. `w = 5.3946`, `b = 18.9274`. Worse than it started. | The gradient column **never shrinks and flips sign**: −326.7, −129.9, +277.1, +244.9. Those are piles, not slopes. |
 | `pred = hours @ w + b` | **RuntimeError** | Completes step 0, crashes on step 1: *"Trying to backward through the graph a second time"*. | It worked once. The graph was freed when it was read. |
 | `loss = ((pred - marks) ** 2).mean()` | **RuntimeError** | Identical failure and identical message. | The loss and the forward pass are one thing; both belong inside the loop. |
 | `loss.backward()` | **No error** | 400 steps, `w` and `b` never leave `0.0000`, loss stuck at `1786.666626`. | **`w.grad` is `None`** — no backward pass ever ran. |
@@ -1661,7 +1661,7 @@ The optimizer takes a **list** of knobs. `SGD([w, b], lr=0.05)`, not `SGD(w, lr=
 It shrinks from −326.6667 to 0.0005. **A flattening slope means you are arriving at the bottom.** Week 12's picture, from inside the loop.
 
 **Live-code — "Did it crash at `lr = 0.1`? And what is `nan`?"**
-No crash. `nan` is "not a number" — what you get when the arithmetic overflows. It is contagious: once one weight is `nan`, everything downstream is `nan` for ever.
+No crash. `nan` is "not a number". The loss first overflows to `inf` (step 51), and `inf` minus `inf` has no answer, which is `nan`. It is contagious: once one weight is `nan`, everything downstream is `nan` for ever.
 
 **Activity — "How would you know, from the log alone, that `backward` was the missing line?"**
 `w.grad` is `None`. If `step()` were the missing one, `w.grad` would hold `−326.6667` instead.

@@ -55,7 +55,7 @@ So somebody had to invent a way to turn a sentence into a row of a spreadsheet, 
 
 Forget grammar. Forget word order. Forget everything an English teacher ever told you about how a sentence works. Just count. `"the pizza was cold"` becomes a row that says `the=1, pizza=1, was=1, cold=1`, and every other word in the English language `=0`.
 
-**This should not work.** It cannot tell `"the dog bit the man"` from `"the man bit the dog"`. And yet it ran the world's spam filters and search engines for thirty years, and on a small problem it still beats a large language model today. **Both of those sentences are true, and holding both at once is the intellectual content of this week.**
+**This should not work.** It cannot tell `"the dog bit the man"` from `"the man bit the dog"`. And yet it ran the world's spam filters and search engines for thirty years, and on a small problem it is still a sensible first attempt today: it trains in a second, needs no internet, and can be read word by word. **Both of those sentences are true, and holding both at once is the intellectual content of this week.**
 
 ### 2. Tokenization: chopping the string into pieces
 
@@ -125,7 +125,7 @@ This is the part of the week to spend your prep time on, because **objective 4 i
 | **Lowercasing** | `Great → great` | almost always, for topic or sentiment | `US` the country versus `us` the pronoun; `Apple` the company versus `apple` the fruit; ALL-CAPS SHOUTING is real evidence in abuse detection |
 | **Strip punctuation** | `great!! → great` | most classification jobs | `!!!` and `?!` carry feeling; `$4.99` becomes `4` and `99`; `:-(` disappears completely, and on a sentiment job that was the clearest signal in the sentence |
 | **Remove stopwords** | drop `the, is, a, of` | topic classification, search | **negation.** Dropping `not` is a disaster. Also authorship: the little words *are* the fingerprint. |
-| **Stemming** | `running, ran, runs → run` | when you have very little data | `better → good` loses the intensity; a keen stemmer turns `university` and `universe` both into `univers` |
+| **Stemming** | `running, runs → run` | when you have very little data | a keen stemmer turns `university` and `universe` both into `univers`, and `news` into `new`. (Mapping `ran → run` or `better → good` needs a *lemmatizer*, which uses a dictionary and is a different, heavier tool.) |
 
 > **Stopword** — an extremely common word (`the`, `is`, `and`) that carries almost no information about the topic on its own.
 
@@ -690,7 +690,7 @@ the = 1     pizza = 1     was = 1     cold = 1
 
 > "Hold both of those. You have just named the two things that go wrong, and they are the next two weeks of this course.
 >
-> But before we complain about it, I want you to know what it did. **This idea — counting the words — ran the world's spam filters and search engines for thirty years.** It is not a toy. On a small problem, today, with a hundred reviews and no internet, it will still beat a system with a hundred billion numbers in it.
+> But before we complain about it, I want you to know what it did. **This idea — counting the words — ran the world's spam filters and search engines for thirty years.** It is not a toy. On a small problem, today, with a hundred reviews and no internet, it can still be a sensible first attempt that trains in a second, needs no internet, and can be read word by word, which a system with a hundred billion numbers cannot offer.
 >
 > So today you build one. **By hand first, and then you check that the library agrees with you, cell by cell.** And at minute sixty I am going to show you the one sentence it cannot cope with, and it will annoy you."
 
@@ -1352,7 +1352,7 @@ What to tell a fourteen-year-old, out loud: **"Do not drop a word because a list
 | The `not` example gets described but not demonstrated | It is quicker to assert it | **Write both reduced rows on the board yourself.** `pizza cold` and `pizza cold`. The silence when the class sees two identical rows for two opposite reviews is the whole of objective 4, and you cannot get it by saying it. |
 | Students write blanks instead of zeros | A blank feels like "nothing here", which feels right | **Stop the room the first time you see it.** *"A blank is not a number. There is no blank in a matrix. Every cell has a value and that value is zero."* This misconception returns in Week 33 as the difference between *a column with a zero in it* and *no column at all*, and that difference matters enormously there. |
 | The d3 `great` cell gets settled by you instead of by them | It is faster | **Let the argument run for ninety seconds.** Then read the definition off the board rather than giving the answer. **A class that argued its way to 2 will never forget that counts are counts and not ticks.** |
-| Somebody concludes the method is stupid | The order demo is genuinely damning | **Give them the thirty years.** Spam filters, search engines, document sorters. Then: *"and this week it will beat a large language model on your sixty reviews, and in two weeks you will measure that."* **A method with a known price is not stupid. A method whose price you cannot state is.** |
+| Somebody concludes the method is stupid | The order demo is genuinely damning | **Give them the thirty years.** Spam filters, search engines, document sorters. Then: *"and in two weeks you will measure what it can and cannot do on your sixty reviews."* **A method with a known price is not stupid. A method whose price you cannot state is.** |
 | The lesson drifts into TF-IDF | It is the obvious next thought and a good student will get there | **Write their sentence on the wall sheet with their name on it** and say it is next week's title. **Do not start explaining idf at minute 55.** It needs the full eighteen-minute concept slot it gets next week, and a rushed version is worse than none. |
 | The empty-list bug is explained rather than performed | It looks like a trivial typo | **Type it and run it in front of them.** The teaching moment is not "you need an `r`", it is **"nothing went red and the answer was wrong"**, and that only lands if they watch an empty list appear on a screen. |
 | The 60-review corpus does not exist | It was homework and homework happens to other people | **Use this file's corpus for the last five minutes**, and set the typing tonight. **Weeks 32 and 33 both need it.** It can be moved; it cannot be dropped. |

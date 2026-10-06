@@ -713,7 +713,7 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**Puzzle(b).** Somebody says: *"my run had 8 batches per epoch and 1,000 rows."* **What batch sizes are possible?** *(Hint: it must round up to 8, so it is bigger than 1000 ÷ 8 and no bigger than 1000 ÷ 7.)*
+**Puzzle(b).** Somebody says: *"my run had 8 batches per epoch and 1,000 rows."* **What batch sizes are possible?** *(Hint: it must round up to 8, so 1000 ÷ b is more than 7 and at most 8: b is at least 1000 ÷ 8 and less than 1000 ÷ 7.)*
 
 **smallest possible:** ______  **largest possible:** ______
 
@@ -737,7 +737,7 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**T2.** Three different ways of counting the steps all said 40, and we treated that as proof. But in Worked Example 2 you saw three ways all agree on **6** when the right answer was 7 and 42 rows were being silently thrown away. **Write a paragraph** about the difference between *agreement* and *correctness*. What made the three ways agree on a wrong answer? What was different about the fourth check — the sum of the batch sizes — that let it notice? And then, generalising: **what makes a check worth having?** *(You met this exact idea in Level 2 with a normalisation check that could never fail.)*
+**T2.** Three different ways of counting the steps all said 40, and we treated that as proof. But in Worked Example 2, `drop_last=True` made the loop and `len(loader)` both say **6** while 42 rows were silently thrown away — and a student who had rounded the division *down* (6.66 → 6) would have had all three ways agree on the wrong 6. **Write a paragraph** about the difference between *agreement* and *correctness*. What made the three ways agree on a wrong answer? What was different about the fourth check — the sum of the batch sizes — that let it notice? And then, generalising: **what makes a check worth having?** *(You met this exact idea in Level 2 with a normalisation check that could never fail.)*
 
 ________________________________________________________________
 
@@ -1094,7 +1094,7 @@ eval  mode: [0.1635, 0.1635, 0.1635, 0.1635, 0.1635]
 
 **Both lines were inside `torch.no_grad()`, and the first one still moved** — because `no_grad` and `eval` do **different jobs**. `no_grad` stops PyTorch *recording* the receipt it would need for `backward()`; it saves time and memory and changes no answers. `model.eval()` stops the dropout layer *dropping*; that is the thing that changes answers. **The first line moved because dropout was still switching about 8 of the 16 hidden units off at random on every call.**
 
-*(Two of the five train-mode numbers happen to be identical, 0.367 twice. With 16 units and dropout 0.5 the same mask can come up twice — which is worth noticing, because "I ran it twice and got the same answer" is not conclusive on its own. Run it five times.)*
+*(Two of the five train-mode numbers happen to be identical, 0.367 twice. For this input only 6 of the 16 hidden units are above zero after ReLU, so two *different* dropout masks that happen to agree on those six give exactly the same answer — which is worth noticing, because "I ran it twice and got the same answer" is not conclusive on its own. Run it five times.)*
 
 ### Practice Set A
 
@@ -1420,8 +1420,8 @@ test accuracy 0.9574 on 540 held-out digits
 **Puzzle(b).** For 8 batches from 1,000 rows, the batch size `b` must satisfy `ceil(1000 ÷ b) = 8`, which means `1000 ÷ b` is more than 7 and at most 8:
 
 ```
-1000 ÷ 8 = 125      → b must be more than 125, so at least 126
-1000 ÷ 7 = 142.85…  → b must be at most 142
+1000 ÷ 8 = 125      → b must be at least 125 (at exactly 125 the division is exactly 8)
+1000 ÷ 7 = 142.85…  → b must be less than 142.85, so at most 142
 ```
 
 **smallest possible: 125.** **largest possible: 142.**
@@ -1451,7 +1451,7 @@ print([b for b in range(100, 200) if math.ceil(1000 / b) == 8])
 
 **T2 — a full answer.**
 
-> "The three ways agreed on the wrong answer because **they were all asking the same object the same question.** Dividing 426 by 64 is arithmetic I do; counting the loop and calling `len(loader)` both ask the DataLoader — and the DataLoader is precisely the thing that had been told to throw rows away. Two of my three checks were downstream of the bug, so they reported the bug's answer confidently and consistently.
+> "The checks agreed on the wrong answer because **two of them were asking the same object the same question.** Counting the loop and calling `len(loader)` both ask the DataLoader — and the DataLoader is precisely the thing that had been told to throw rows away. They were downstream of the bug, so they reported the bug's answer confidently and consistently. (Dividing 426 by 64 and rounding up gives 7, which would have disagreed with them — but a divide that was rounded down by mistake would have agreed with them and been wrong too.)
 >
 > The fourth check was different because it looked at something the DataLoader had no say over: **the total number of rows I started with.** 426 is a fact about my data, not about my loader, so comparing `sum(sizes)` with 426 brought in information from outside the thing being tested — and that is what let it notice.
 >
@@ -1498,7 +1498,7 @@ exit=1
 
 **The sentence at full marks:**
 
-> "Each way tests something different, so the *pattern* of disagreement tells me where to look. If the division says 40 and the loop says 39, my loop is wrong — probably something is breaking out of it early. If the loop and the division both say 40 and `len(loader)` says 39, the DataLoader is not the one I think I built — most likely `drop_last=True`. And if all three say 39, I should add up the batch sizes, because three methods can agree with each other and still all be wrong: the sum would come to 1,248, not 1,257, and only that check notices the nine missing digits."
+> "Each way tests something different, so the *pattern* of disagreement tells me where to look. If the division says 40 and the loop and `len(loader)` both say 39, the DataLoader is not the one I think I built — most likely `drop_last=True` (the loop only agrees with `len(loader)` because it counts the same loader). If the loop says fewer than `len(loader)`, something is breaking out of it early. And if all three say 39, I should add up the batch sizes, because three methods can agree with each other and still all be wrong: the sum would come to 1,248, not 1,257, and only that check notices the nine missing digits."
 
 `15 × 40 = **600** steps.`
 
@@ -1560,11 +1560,11 @@ model.eval()   - dropout is OFF
 
 **Sentence one, at full marks:**
 
-> "With `model.train()` the dropout layer was still switching about 13 of the 64 hidden units off at random on every forward pass — `0.2 × 64 = 12.8` — and a different 13 each time, so the same picture got five different sets of ten scores and three different answers. After `model.eval()` the dropout stops dropping, the forward pass is exactly the same arithmetic every time, and all five runs give 9 with a score of −1.6703 to four decimal places."
+> "With `model.train()` the dropout layer was still switching about 13 of the 64 hidden units off at random on every forward pass — `0.2 × 64 = 12.8` — and a different random set each time (about 13, not always exactly 13), so the same picture got five different sets of ten scores and three different answers. After `model.eval()` the dropout stops dropping, the forward pass is exactly the same arithmetic every time, and all five runs give 9 with a score of −1.6703 to four decimal places."
 
 **Sentence two, at full marks:**
 
-> "Because nothing goes wrong on the screen. There is no error and no warning — the model just gives a different answer to the same question depending on when you asked, so two people checking the same digit would disagree and neither could reproduce the other's result. And it costs real accuracy: over all 540 test digits these same weights score 0.9519, 0.9444, 0.9463, 0.9481 and 0.9500 on five passes with dropout still on, against exactly 0.9667 every time after `model.eval()`. So forgetting one line loses about a point and a half — and, worse, loses the ability to quote a single number at all."
+> "Because nothing goes wrong on the screen. There is no error and no warning — the model just gives a different answer to the same question depending on when you asked, so two people checking the same digit would disagree and neither could reproduce the other's result. And it costs real accuracy: over all 540 test digits these same weights score 0.9519, 0.9444, 0.9463, 0.9481 and 0.9500 on five passes with dropout still on, against exactly 0.9667 every time after `model.eval()`. So forgetting one line loses about two points — and, worse, loses the ability to quote a single number at all."
 
 **Bug Log, filled in:**
 

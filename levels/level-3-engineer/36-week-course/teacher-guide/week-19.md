@@ -207,7 +207,7 @@ def gradient_check(P, X, y, h=1e-6):
 
 Read it as English: *for every single knob — nudge it up a hair, see what the loss becomes; nudge it down a hair, see what the loss becomes; the difference divided by twice the hair is the slope. Then compare that against the slope my backward function claimed.* That is Week 12's nudge, `(f(w+h) − f(w−h)) ÷ 2h`, applied 65 times.
 
-`bottom` is there so the comparison is **relative**: being out by 0.0001 matters if the slope is 0.0002 and does not matter if the slope is 900. And `A[i, j] = orig` — **always put the weight back** — is the line students forget, and it silently ruins the network. It is in the Clinic.
+`bottom` is there so the comparison is **relative**: being out by 0.0001 matters if the slope is 0.0002 and does not matter if the slope is 900. And `A[i, j] = orig` — **always put the weight back** — is the line students forget. Measured: leaving it out shifts every weight by 1e-6, which is harmless to the result but means the check altered the model. It is in the Clinic.
 
 **A number to expect: `4.792e-08`.** That is scientific notation for 0.00000004792. Anything below `1e-6` (0.000001) means the backward pass is correct. **This is not a hope, it is a measurement.**
 
@@ -373,7 +373,7 @@ first loss 0.6628   last loss 0.3693
 test acc 0.9000   dead units 0/1
 ```
 
-Nothing is broken. Nothing dies. The network simply **cannot bend**. One ReLU unit gives you one hinge, so the boundary is a straight line with at most one kink in it — and against sixteen units:
+Nothing is broken. Nothing dies. The network simply **cannot bend**. One ReLU unit gives you one hinge, but the boundary it produces is still one straight line (a kink needs a second unit to bend against) — and against sixteen units:
 
 | | 1 hidden unit | 16 hidden units |
 |---|---|---|
@@ -645,7 +645,7 @@ epoch 500  loss 0.1542  test acc 0.9350
 | If this fails | Do this instead |
 |---|---|
 | The gradient check prints something like `2.3e-01` | The backward pass is wrong, not the check. Nine times in ten it is a missing `.T`, and the shape ladder in §3 finds it in twenty seconds. |
-| The gradient check prints `nan` | A weight was not restored after a nudge (`A[i, j] = orig` missing), or the loss overflowed. Restore first, then re-run. |
+| The gradient check prints `nan` | The loss or a slope overflowed or hit `log(0)`; look at the learning rate / inputs. (A missing `A[i, j] = orig` only shifts each weight by 1e-6; it does not give `nan`.) |
 | The loss sits at exactly `0.6931` | Weights are all zero, or all equal. That is breakage 1, arriving early — use it. |
 | The loss is `nan` after a few epochs | The learning rate is far too large. Ours is 0.5; anything above about 5 on this data starts killing units, and 100 gives `nan`. |
 | Test accuracy is 0.5000 | The network is answering the same thing for everything. Print `forward(P, Xte)["A2"][:5]` — if they are all 0.5, see breakage 1. |
@@ -980,7 +980,7 @@ Every message below came from running a broken version of this week's actual cod
 | **No error. The loss starts at `0.9534` instead of `0.8095`.** | Nothing crashed. Every number afterwards is about the wrong question. | `y` was left as shape `(200,)`, so `A2 - y` broadcast into `(200, 200)`. | `y = y.reshape(-1, 1)`. **Print `y.shape` before you train, every time.** |
 | **No error. The loss sits at exactly `0.6931` for 500 epochs.** | Nothing crashed. The network answers 0.5 to everything. | All weights started at zero (or all equal), so every gradient into layer 1 is exactly zero. | Random initialization: `rng.normal(0, np.sqrt(2.0 / n_in), ...)`. **`0.6931` is `−ln(0.5)` — memorise it.** |
 | **No error. The gradient check prints a number like `3.4e-01`.** | Nothing crashed. Your backward pass is wrong. | A transpose in the wrong place, a missing ReLU mask, or a forgotten `/ n`. | Check one array at a time, biggest first. `db2` is the simplest — if that one disagrees, the bug is at the output end. |
-| **No error, but the gradient check prints `nan` and the weights are strange afterwards.** | The check itself broke the network. | `A[i, j] = orig` was left out, so every nudged weight stayed nudged. | Restore the weight after every single nudge. **The check must not change the model it is checking.** |
+| **No error, but the weights differ by about 1e-6 after the gradient check.** | The check itself altered the network. | `A[i, j] = orig` was left out, so every nudged weight stayed nudged (by only 1e-6; no `nan`). | Restore the weight after every single nudge. **The check must not change the model it is checking.** |
 
 ### How to teach debugging without giving the answer
 
@@ -1065,7 +1065,7 @@ Good answers look like:
 
 - **Card 1:** *"Every weight was zero so every hidden unit output zero, so the answer was always 0.5, and the slope of a knob that changes nothing is zero — there was no downhill to walk."*
 - **Card 2:** *"One giant step pushed thirteen biases far negative, and a unit that never fires has slope zero, so no learning rate can wake it up again."*
-- **Card 3:** *"One unit is one hinge, so the boundary can only be a straight line with one bend, and the crescents need more bends than that."*
+- **Card 3:** *"One unit is one hinge, so the boundary can only be one straight line, and the crescents need bends."*
 
 ### What "finished" looks like
 
@@ -1319,7 +1319,7 @@ Every question restated, so you can mark from this page alone.
 |---|---|---|---|
 | 1 | every weight in `W1` and `W2` set to zero | **loss 0.6931 at epoch 0, 250 and 500. Test accuracy 0.5000. 16/16 units dead.** | Every hidden output is 0, so the answer is `sigmoid(0) = 0.5` for every row, and `−ln(0.5) = 0.6931`; since `W2` is zero, every gradient into layer 1 is exactly zero, so there is no downhill. |
 | 2 | `lr = 20.0` instead of 0.5 | **final loss 0.4493. Test accuracy 0.8100. 13/16 units dead.** | Giant steps drove thirteen biases far negative (unit 0 ended at `−14.113`), and a unit that outputs zero for every row has slope zero, so it can never move again. |
-| 3 | `init_params(2, 1)` — one hidden unit | **final loss 0.3693. Test accuracy 0.9000. 0/1 dead.** | One ReLU unit gives one hinge, so the boundary is a straight line with at most one bend — it has the capacity to draw the wrong shape only. |
+| 3 | `init_params(2, 1)` — one hidden unit | **final loss 0.3693. Test accuracy 0.9000. 0/1 dead.** | One ReLU unit gives one hinge, so the boundary is one straight line — it has the capacity to draw the wrong shape only. |
 
 **The arithmetic for card 1, which is the part to insist on:**
 
@@ -1590,7 +1590,7 @@ Real output:
 1. *"Train loss falls all the way down the table — more capacity always fits the training data better."* (0.3693 → 0.1412, every row an improvement.)
 2. *"Test accuracy peaks at 16 units and then falls, so the 64-unit network is learning the noise in the training crescents: train 0.9550, test 0.9150. That is overfitting, and the gap between the two columns is what gave it away."*
 
-**The interesting extra observation, worth full credit if unprompted:** 1, 2 and 4 units all score the same 0.8350 on train. Four hinges are available but the network only finds a use for one or two, because the data does not need more and the loss has nothing to gain. **Capacity is permission to bend, not an instruction to.**
+**The interesting extra observation, worth full credit if unprompted:** 1, 2 and 4 units all score the same 0.8350 on train. Four hinges are available but, with seed 0, training only finds a use for one or two. It is not that the data does not need more (16 units reach train loss 0.1542 against 0.3565 for 4); gradient descent settled in a poor spot, and other seeds of the 4-unit network reach about 0.93 train accuracy. **Capacity is permission to bend, not an instruction to.**
 
 ### Answers to every question posed in the lesson
 

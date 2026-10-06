@@ -219,7 +219,7 @@ Read those two rows carefully, because there is a subtlety in them that is worth
 
 > **`n_init=10`** — run the whole algorithm ten times from ten different starts and keep whichever run finished with the lowest inertia.
 
-scikit-learn does **both** of these by default. Which is why you will rarely see a really bad clustering — but you should know it is being handled for you rather than believing the algorithm is start-proof.
+scikit-learn uses k-means++ by default, and older versions also ran `n_init=10` for you (newer ones default to `n_init="auto"`, a single run for k-means++, so this course asks for `n_init=10` explicitly). Which is why you will rarely see a really bad clustering — but you should know it is being handled for you rather than believing the algorithm is start-proof.
 
 ### 5. The thing that decides the answer, and it is not the algorithm
 
@@ -367,7 +367,7 @@ init = np.array([[1., 2.], [2., 3.]])     # centre 1 on A, centre 2 on C
 km = KMeans(n_clusters=2, init=init, n_init=1, random_state=0).fit(X)
 ```
 
-`init=` hands it our two starting centres instead of letting it choose. `n_init=1` says *"don't restart, I want this one run"*. **Without both of those the trace will not match the board**, and a mismatched trace at that moment in the lesson is genuinely confusing rather than interesting.
+`init=` hands it our two starting centres instead of letting it choose. `n_init=1` says *"don't restart, I want this one run"*. **Without `init=` the trace will not match the board** (with explicit centres sklearn runs once regardless, but warns if `n_init` is left at 10), and a mismatched trace at that moment in the lesson is genuinely confusing rather than interesting.
 
 **One number will be off by one, and it is not a bug.** scikit-learn prints `km.n_iter_` as **3** where the class counted **2**. sklearn counts the final pass that *confirmed* nothing had changed. Say so: *"we counted the rounds that changed something; it counts the round that checked."*
 
@@ -684,7 +684,7 @@ That is deliberate mistake one in the live-code, and it teaches the trailing-und
 
 | If this fails | Do this instead |
 |---|---|
-| The trace on screen does not match the board | You dropped `init=` or `n_init=1`. **Both are required** or sklearn starts wherever it likes and the whole comparison collapses. |
+| The trace on screen does not match the board | You dropped `init=`. **`init=` is the one that matters**: without it sklearn starts wherever it likes and the whole comparison collapses. (Dropping only `n_init=1` gives the same trace plus a RuntimeWarning.) |
 | `km.n_iter_` says 3 and a student objects | **They are right and so is sklearn.** It counts the confirming pass. Say so in one sentence and move on — do not let it eat three minutes. |
 | The unscaled and scaled cluster sizes look similar and the point seems weak | **Do not argue from the sizes — argue from the proline ranges.** `278–590`, `600–937`, `970–1680`. Three bands, no overlap. That is the evidence. |
 | Somebody points out the scaled clusters match the grape varieties, so "clustering works" | **Excellent, and it is a trap.** *"It worked here and we only know that because someone had already labelled these bottles. What would you have done if nobody had?"* That is the whole of Week 30. |
@@ -1364,7 +1364,7 @@ Three reasons, and the first is the one that matters to you today.
 
 **One: it saves you about forty square roots**, and it cannot change any answer, because if one squared distance is smaller than another then the unsquared one is too. Squaring keeps the order.
 
-**Two: the centroid is exactly the point that makes the sum of squared distances smallest.** That is not a coincidence — it is why the MOVE step is an average rather than something more complicated. If you used plain distance, the best centre would be the *median* rather than the mean, and you would have a different algorithm (it exists, it is called k-medians).
+**Two: the centroid is exactly the point that makes the sum of squared distances smallest.** That is not a coincidence — it is why the MOVE step is an average rather than something more complicated. If you used plain (unsquared) distance the best centre would stop being the mean: with straight-line distance it is the "geometric median", and with distance measured along the axes it is the ordinary median per column, which is the different algorithm called k-medians.
 
 **Three: squaring punishes one big miss much harder than several small ones.** Being 10 away scores 100; being 1 away five times scores 5. Whether that is what you want is a real design question — and it is the same trade you met with mean squared error back in Week 15.
 
@@ -1378,7 +1378,7 @@ And the hard rule that follows: **never do arithmetic on a cluster ID.** Averagi
 
 **"If I have to choose k myself, what is the algorithm even doing for me?"**
 
-Fair, and worth taking seriously. **It is doing the placement, not the counting.** You say "three groups"; it finds *where* those three groups are, in thirteen dimensions, over 178 rows, in a way that is provably the tightest it can manage from where it started. Try doing that by eye on thirteen columns.
+Fair, and worth taking seriously. **It is doing the placement, not the counting.** You say "three groups"; it finds *where* those three groups are, in thirteen dimensions, over 178 rows, in a way that is tight, though only guaranteed to be a resting place it reached from where it started, not the tightest possible (that is what `n_init` is for). Try doing that by eye on thirteen columns.
 
 But you are right that the honest description of k-means includes "and you have to supply the most important number yourself". That is a genuine weakness of the method, not a teaching simplification. Some algorithms do choose their own number of groups — and they choose it by being handed a *different* dial to set instead. **There is no method that requires no decisions from you. There are only methods that hide which decision you are making.**
 
@@ -1394,7 +1394,7 @@ One-hot encoding (Week 4) gets you numbers, and then a new problem arrives: a on
 
 Three things were true and all three helped us. The wine dataset is **small, clean, and almost comically well separated** — three grape varieties with genuinely different chemistry. We chose `k = 3`, and we chose it because we already knew there were three varieties. And we scaled, which we only knew to do because we had been told to.
 
-Change any one of those and it falls over. Ask for `k = 5` and you get five groups with no correspondence to anything. Do not scale, and you sort by proline. **And on the supermarket customer data from the hook, there is no "correct" number of customer types at all**, so there is nothing to get right or wrong.
+Change any one of those and it falls over. Ask for `k = 5` and you get five groups that cut the three varieties into arbitrary extra pieces. Do not scale, and you sort by proline. **And on the supermarket customer data from the hook, there is no "correct" number of customer types at all**, so there is nothing to get right or wrong.
 
 A classifier trained on labels gets to learn *exactly* what distinguishes the varieties. Clustering has to hope that "different variety" happens to be the biggest source of variation in the table. **Here it was. That was luck, and it was checkable luck, which is rarer still.**
 
@@ -1890,7 +1890,7 @@ cluster 1 means, first four columns: [ 0.522 -0.029  0.096  0.91 ]
 
 **Variation-harder 3 — the outlier at (20, 20).** With `k=2` the real output is `labels [0 0 0 0 0 0 1]` and centres `(4.8333, 5.0)` and `(20.0, 20.0)`. **The single far point has claimed a whole cluster, and the two obvious blobs have been merged.** Because **k-means has no "none of the above"** — every row must join something, and there is nothing in the algorithm that can refuse a row or flag it as odd.
 
-**Variation-harder 4 — the six-point elbow.** `k=1`: centre `(4.8333, 5.0)`, inertia **120.8333**. `k=2`: **6.6667**. `k=3`: **3.6667**. Drops: `114.1666` then `3.0000`, a **ratio of 38**. **That is what an unmistakable elbow looks like**, and the wine data's ratio of 3.9 is far softer — which is the honest state of most real data.
+**Variation-harder 4 — the six-point elbow.** `k=1`: centre `(4.8333, 5.0)`, inertia **120.8333**. `k=2`: **6.6667**. `k=3`: **3.6667**. Drops: `114.1667` then `3.0000`, a **ratio of 38**. **That is what an unmistakable elbow looks like**, and the wine data's ratio of 3.9 is far softer — which is the honest state of most real data.
 
 **Variation-harder 6 — clustering on `proline` alone.** The labels come out **identical to the unscaled thirteen-column run — 178 of 178, cluster for cluster.** Twelve columns were not weakly consulted; they were not consulted at all.
 

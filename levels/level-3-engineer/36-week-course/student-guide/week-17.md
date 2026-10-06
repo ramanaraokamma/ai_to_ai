@@ -195,7 +195,7 @@ X @ W1 (4, 3)                      b1, copied down (4, 3)
 
 **The rule, in the only form you need it:** numpy lines the two shapes up **from the right-hand end** and, at each position, they must either be equal or one of them must be `1`. So `(4,3)` with `(1,3)` works — 3 matches 3, and the 1 stretches to 4. `(4,3)` with `(3,1)` does **not** — the 3 and the 1 are fine, but then 4 against 3 is not.
 
-> **⚠️ Watch out:** if the bias is accidentally shaped `(4, 1)` instead of `(1, 3)`, broadcasting **still works** and hands you a `(4, 3)` answer **with no error at all** — but it has added one bias per **row** instead of one per **unit**, and every number is wrong. There is a full demonstration in 🐞 When It Breaks. **The dangerous shape bug is the one that does not crash.**
+> **⚠️ Watch out:** if the bias is accidentally shaped `(4, 1)` instead of `(1, 3)`, broadcasting **still works** and hands you a `(4, 3)` answer **with no error at all** — but it has added one bias per **row** instead of one per **unit**, and most of the numbers are wrong. There is a full demonstration in 🐞 When It Breaks. **The dangerous shape bug is the one that does not crash.**
 
 ### 4. The forward pass, for a batch of four rows
 
@@ -235,7 +235,7 @@ X  (4, 2)              W1 (2, 3)                    b1 (1, 3)
 > A2 = sigmoid(2.20) = 1 ÷ (1 + e^(−2.20)) = 1 ÷ 1.110803 = 0.900250
 > ```
 >
-> **The network says 90.02% for row 0.** Eleven multiplications, eight additions, and one exponential on the calculator.
+> **The network says 90.02% for row 0.** Nine multiplications, nine additions, and one exponential on the calculator.
 
 **All four rows:**
 
@@ -502,7 +502,7 @@ with b1 shape (4, 1) - no error at all:
 shape of the wrong answer: (4, 3)
 ```
 
-**It ran. The shape is right. Every number after the first is wrong.**
+**It ran. The shape is right. Nine of the twelve numbers are wrong.** (The three on the diagonal happen to land on the right value by coincidence.)
 
 Hunt for the tell. Look at **column 1**: with the correct bias every entry gets `+0.05`. Here row 1 got `+0.05`, row 2 got `−0.8`, row 3 got `+0.2`. **It gave each *row* its own bias instead of each *unit* its own bias.**
 
@@ -605,7 +605,7 @@ print("with 1.70 typed instead of 1.75:", np.allclose(Z2, typo))
 print("biggest gap:", np.abs(Z2 - typo).max())
 ```
 
-**What each new line does.** `np.allclose(a, b)` asks *"are these two grids the same, allowing for tiny floating-point wobble?"* and hands back one `True` or `False`. **It exists because `a == b` on decimals is a trap** — `0.1 + 0.2` is not exactly `0.3` in binary, so an exact test can fail on two answers that are genuinely identical. `np.allclose` allows a difference of about one part in a hundred million.
+**What each new line does.** `np.allclose(a, b)` asks *"are these two grids the same, allowing for tiny floating-point wobble?"* and hands back one `True` or `False`. **It exists because `a == b` on decimals is a trap** — `0.1 + 0.2` is not exactly `0.3` in binary, so an exact test can fail on two answers that are genuinely identical. `np.allclose` allows a difference of about one part in a hundred thousand (relative), plus a tiny absolute allowance of `1e-8` for numbers near zero.
 
 ```text
 Z1 agrees with my paper?  True
@@ -613,7 +613,7 @@ with 1.70 typed instead of 1.75: False
 biggest gap: 0.04999999999999982
 ```
 
-**The second half is the teaching.** When `allclose` says `False`, `np.abs(a - b).max()` tells you the size of the disagreement, and the size tells you what kind of problem it is. **A gap of about `1e-16` is rounding. A gap of `0.05` is a wrong number.**
+**The second half is the teaching.** Whatever `allclose` says, `np.abs(a - b).max()` tells you the size of the disagreement, and the size tells you what kind of problem it is. **A gap of about `1e-16` is rounding. A gap of `0.05` is a wrong number.**
 
 ---
 
@@ -869,7 +869,7 @@ Step 4 of 💻 Type This is the fourth break, and it is the important one. `b1` 
 | `AxisError: axis 1 is out of bounds for array of dimension 1` | you asked to add across the columns of something flat | make it 2-D, or use `axis=0` |
 | **no error**, shape right, numbers wrong | the bias is `(4, 1)` — one per **row** | `b1.shape` must have the same second number as `W1`'s | 
 | **no error**, softmax rows do not add to 1 | `keepdims=True` left off, or `axis=0` used | `E / E.sum(axis=1, keepdims=True)`, then check `P.sum(axis=1)` |
-| `np.allclose` says `False` and nothing looks wrong | one arithmetic slip, usually a dropped bias or a sign | `print(np.abs(mine - theirs).max())`. About `0.05` is a typo; about `1e-16` means you compared the wrong pair |
+| `np.allclose` says `False` and nothing looks wrong | one arithmetic slip, usually a dropped bias or a sign | `print(np.abs(mine - theirs).max())`. About `0.05` is a typo; a gap of about `1e-16` would be rounding, and `allclose` would already have said `True` |
 
 ---
 
@@ -945,7 +945,7 @@ e^x:             7.389056  2.718282  1.105171     total 11.212509
 divide:          0.659001  0.242433  0.098566     total  1.000000
 ```
 
-**Sixty-six per cent, twenty-four, ten.** And then the question that sets up next week: *"there are twelve weights in that little network, and four biases. Sixteen knobs. Which of them would you change, and by how much?"*
+**Sixty-six per cent, twenty-four, ten.** And then the question that sets up next week: *"there are nine weights in that little 2 → 3 → 1 network, and four biases. Thirteen knobs. Which of them would you change, and by how much?"*
 
 ---
 
@@ -961,7 +961,7 @@ divide:          0.659001  0.242433  0.098566     total  1.000000
 
 **3. `np.allclose` said `True` for grids that are not bitwise identical. Is that cheating?**
 
-*Hint:* first establish the problem it solves. Ask Python for `0.1 + 0.2 == 0.3` and watch it say `False`. So an exact test on decimals fails on answers that are genuinely the same, which makes it useless for checking arithmetic. Then push on the other side: `allclose` will also say `True` for two answers that differ by `1e-9`, and there are jobs where `1e-9` matters. **So the honest answer is that `allclose` has a tolerance and you should know roughly what it is** — about one part in a hundred million — and `np.abs(a - b).max()` is how you look at the actual number rather than the verdict.
+*Hint:* first establish the problem it solves. Ask Python for `0.1 + 0.2 == 0.3` and watch it say `False`. So an exact test on decimals fails on answers that are genuinely the same, which makes it useless for checking arithmetic. Then push on the other side: `allclose` will also say `True` for two answers that differ by `1e-9`, and there are jobs where `1e-9` matters. **So the honest answer is that `allclose` has a tolerance and you should know roughly what it is** — about one part in a hundred thousand (plus `1e-8` near zero) — and `np.abs(a - b).max()` is how you look at the actual number rather than the verdict.
 
 ---
 
@@ -994,7 +994,7 @@ divide:          0.659001  0.242433  0.098566     total  1.000000
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "`(4, 3)` in, `(4, 3)` out, no error. Moving on." | The `(4, 1)` bias produces a `(4, 3)` answer with **no error at all** and eleven wrong numbers out of twelve. **A right shape is necessary and nowhere near sufficient.** And cell `(0,0)` is `2.2` in both versions, so checking one number proves nothing. Check a whole column, or use `np.allclose` against something you worked out on paper. |
+| "`(4, 3)` in, `(4, 3)` out, no error. Moving on." | The `(4, 1)` bias produces a `(4, 3)` answer with **no error at all** and nine wrong numbers out of twelve. **A right shape is necessary and nowhere near sufficient.** And cell `(0,0)` is `2.2` in both versions, so checking one number proves nothing. Check a whole column, or use `np.allclose` against something you worked out on paper. |
 
 ---
 
@@ -1114,7 +1114,7 @@ Go to **[the Week 17 workbook](../workbook/week-17.md)**. About **55 minutes** i
 
 **Are the error messages pasted verbatim, with the two failing numbers circled?** *"Shape error"* is not a result. `size 3 is different from 2`, with a ring round the `3` and the `2`, is.
 
-**One of the five breakages produces no error at all.** It runs perfectly, the shape comes out exactly right, and every number is wrong. Your job on that one is to work out **which numbers are wrong and why**, in two sentences. The answer that earns full marks names the difference between a **unit** and a **row**.
+**One of the five breakages produces no error at all.** It runs perfectly, the shape comes out exactly right, and most of the numbers are wrong. Your job on that one is to work out **which numbers are wrong and why**, in two sentences. The answer that earns full marks names the difference between a **unit** and a **row**.
 
 > **⚠️ Watch out:** predict each of the five error messages **before** you run it — one sentence each, in pen. Four out of five is a real achievement, and getting one wrong tells you which part of the rule you have not got yet.
 

@@ -332,7 +332,7 @@ ________________________________________
 | Word | | Description |
 |---|---|---|
 | **loss** | ______ | (i) How big a step you take downhill; your stride length |
-| **loss surface** | ______ | (ii) A slope measured by nudging each way and dividing. Slow, and never lies |
+| **loss surface** | ______ | (ii) A slope measured by nudging each way and dividing. Slow, and honest while the nudge is sensible |
 | **derivative** | ______ | (iii) One number for how wrong the model is right now |
 | **numerical gradient** | ______ | (iv) The shape you get by plotting loss against a weight |
 | **learning rate** | ______ | (v) The slope at a point, written as a rule that works at every point |

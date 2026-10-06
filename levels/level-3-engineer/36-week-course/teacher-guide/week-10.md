@@ -98,7 +98,7 @@ how many are above 0.5? 0
 
 **Read that last line again. Zero.** The most suspicious transaction in the entire validation set — the one the model is most confident about — gets a fraud probability of **0.1774**. It is not above 0.5. So at the default threshold this model flags **nothing at all**, catches **none** of the 14 frauds, and is 98.6% accurate.
 
-Why so low? Because only 1% of the training rows were fraud. A model that has seen 3,000 rows of which 30 were fraud learns, correctly, that fraud is rare — so even for a suspicious row its honest answer is *"probably still not fraud, but this one is a hundred times more suspicious than average."* **The ranking is informative. The absolute number is small.** Those are two different things, and separating them is the whole intellectual content of this week.
+Why so low? Because only 1% of the training rows were fraud. A model that has seen 3,000 rows of which 44 were fraud learns, correctly, that fraud is rare — so even for a suspicious row its honest answer is *"probably still not fraud, but this one is about twelve times more suspicious than average"* (the average score is about 0.014; 0.1774 is about twelve times that). **The ranking is informative. The absolute number is small.** Those are two different things, and separating them is the whole intellectual content of this week.
 
 > **🧑‍🏫 If a student asks** *"is the model broken?"* — No. Ask them: *"of the 8 transactions with the highest probability, how many were really fraud?"* The answer is 3 out of 8, against a background rate of 14 in 1,000. The model has taken a 1.4% haystack and handed you a pile that is 37.5% needles. **It has done its job. What is broken is the 0.5.**
 
@@ -121,7 +121,7 @@ Now turn the dial. Same model, same 1,000 rows, same 1,000 probabilities — **o
 
 Four things to have solid before you stand up:
 
-**One — precision falls and recall rises, always, without exception.** Read the precision column downwards: 0.0000, 1.0000, 1.0000, 0.3750, 0.2000, 0.1200, 0.0615, 0.0231, 0.0186. Read recall downwards: 0.0000, 0.0714, 0.1429, 0.2143, 0.2143, 0.2143, 0.2857, 0.3571, 0.5714. **Recall never goes down as the threshold drops** — you can only ever add rows to the flagged pile, never remove them, so a fraud you already caught stays caught. Precision is under no such obligation, and here it collapses.
+**One — recall never falls as the threshold drops; precision has no such promise.** (Down this table precision happens to collapse, after jumping from the meaningless 0 at the top row to 1.0.) Read the precision column downwards: 0.0000, 1.0000, 1.0000, 0.3750, 0.2000, 0.1200, 0.0615, 0.0231, 0.0186. Read recall downwards: 0.0000, 0.0714, 0.1429, 0.2143, 0.2143, 0.2143, 0.2857, 0.3571, 0.5714. **Recall never goes down as the threshold drops** — you can only ever add rows to the flagged pile, never remove them, so a fraud you already caught stays caught. Precision is under no such obligation, and here it collapses.
 
 **Two — the row from `t = 0.10` to `t = 0.06` is the cruellest thing on the page.** `tp` stays at 3. `fp` goes 5, 12, 22. You lowered the bar three times, added **seventeen** innocent customers to the flagged pile, and caught **not one extra fraud.** Every one of those seventeen is a real person getting a phone call. Point at that with your finger in class.
 
@@ -170,7 +170,7 @@ Here is what the finished hand-drawn curve looks like, with three thresholds mar
 ![One curve, three thresholds you could defend](../figures/fig-w10-2-roc-curve-three-thresholds-marked.svg)
 *Figure 10.2 — One curve, three thresholds you could defend. The ringed number on the curve matches the ringed number on its panel; that is how you read a chart with three annotations on it without drawing three lines across the data.*
 
-**The dashed diagonal is what a coin gets**, and it is worth a full minute. If you flag rows at random, then whatever fraction of the innocent pile you flag, you will flag about the same fraction of the fraud pile — so TPR ≈ FPR and you sit on the diagonal. **Above the diagonal means your ranking carries information. On the diagonal means it does not. Below the diagonal means your model is right but your labels are the wrong way round**, which is a real bug and a funny one.
+**The dashed diagonal is what a coin gets**, and it is worth a full minute. If you flag rows at random, then whatever fraction of the innocent pile you flag, you will flag about the same fraction of the fraud pile — so TPR ≈ FPR and you sit on the diagonal. **Above the diagonal means your ranking carries information. On the diagonal means it does not. Below the diagonal means your ranking is backwards — most often the labels are the wrong way round (or the score is flipped); turn it upside down and you beat the coin**, which is a real bug and a funny one.
 
 The two corners are worth naming too:
 
@@ -238,7 +238,7 @@ Three numbers, three completely different pieces of advice:
 
 > **Average precision (AP)** — one number summarising the whole precision-recall curve, roughly "the average precision you get across all the recall levels".
 
-Why bother with a second picture of the same nine rows? Because of the denominator problem in §5. Here is the pair, drawn from the very same nine rows of the sweep table:
+Why bother with a second picture of the same sweep? Because of the denominator problem in §5. Here is the pair, drawn from the very same nine rows of the sweep table:
 
 ![Same nine thresholds, two very different pictures](../figures/fig-w10-4-roc-vs-pr-when-positives-are-rare.svg)
 *Figure 10.4 — Same nine thresholds, two very different pictures. 211 false alarms slide the ROC across by 0.2140 and crush precision to 0.0231. Both charts are true; only one of them is going to be shouted at by the operations team.*
@@ -252,10 +252,10 @@ on the ROC:  the x-axis moved from 5 ÷ 986 = 0.0051  to  211 ÷ 986 = 0.2140
              — a fifth of the way across.  Looks survivable.
 
 on the PR :  precision went from 3 ÷ 8 = 0.3750  to  5 ÷ 216 = 0.0231
-             — it fell to about a fortieth of what it was.  Looks like a disaster.
+             — it fell to about a sixteenth of what it was.  Looks like a disaster.
 ```
 
-**It is a disaster, and the PR curve is the one telling the truth about the day's work.** 216 flagged transactions, 5 of them real. An analyst reviewing that queue looks at forty-three innocent people for every thief.
+**It is a disaster, and the PR curve is the one telling the truth about the day's work.** 216 flagged transactions, 5 of them real. An analyst reviewing that queue looks at about forty-two innocent people for every thief.
 
 And the two summary numbers, real output:
 
@@ -271,7 +271,7 @@ Read those two lines together and you get the whole nuance of the week:
 | **ROC AUC** | 0.6116 | 0.5000 | a bit better than a coin — **unimpressive** |
 | **Average precision** | 0.2078 | **0.0140** | about **fifteen times** better than a coin — **genuinely useful** |
 
-**Both numbers describe the same nine rows.** ROC AUC's baseline is always 0.5, no matter what the data looks like. Average precision's baseline is **the positive class rate** — 14 ÷ 1000 = 0.0140 — because a coin flagging at random gets a precision equal to the fraud rate at every threshold. So a bare AP of 0.21 sounds terrible and is in fact fifteen-fold better than nothing, while a bare AUC of 0.61 sounds mediocre and is.
+**Both numbers describe the same model on the same 1,000 rows.** ROC AUC's baseline is always 0.5, no matter what the data looks like. Average precision's baseline is **the positive class rate** — 14 ÷ 1000 = 0.0140 — because a coin flagging at random gets a precision equal to the fraud rate at every threshold. So a bare AP of 0.21 sounds terrible and is in fact fifteen-fold better than nothing, while a bare AUC of 0.61 sounds mediocre and is.
 
 > **⚠️ Watch out:** the rule of thumb *"use PR when positives are rare"* is true and it is not the whole story. **AP is not comparable between datasets** — change the fraud rate and the baseline moves, so an AP of 0.21 on 1.4% fraud is not worse than an AP of 0.40 on 10% fraud. AUC *is* comparable between datasets, which is exactly why people keep reporting it. **The professional answer is to report both, with the class balance printed beside them.** That is what the student will write in their model card.
 
@@ -290,7 +290,7 @@ Compare all 1,000 at once to `t`; turn the `True`/`False` answers into 1s and 0s
 ```python
 tn, fp, fn, tp = confusion_matrix(y_val, pred, labels=[0, 1]).ravel()
 ```
-Week 8's line, with **one new thing**: `labels=[0, 1]`. Without it, when a threshold flags nothing at all, scikit-learn sees only one class in the predictions, hands back a 1×1 grid, and `ravel()` cannot fill four names — you get `ValueError: not enough values to unpack (expected 4, got 1)`. `labels=[0, 1]` says *"there are two classes even if one of them is empty today"*, and the crash goes away. **This is not optional in a threshold sweep. Somebody's homework will crash without it.**
+Week 8's line, with **one new thing**: `labels=[0, 1]`. Without it, when the truth **and** the predictions each hold only one class (a small slice, a small fold, or a quiet day), scikit-learn hands back a 1×1 grid, and `ravel()` cannot fill four names — you get `ValueError: not enough values to unpack (expected 4, got 1)`. `labels=[0, 1]` says *"there are two classes even if one of them is empty today"*, and the crash goes away. **On our full validation set it does not crash even at `t = 0.50` (the truth still holds 14 frauds), so treat it as a habit that bites on slices and folds, not as something that will fire today.**
 
 ```python
 precision_score(y_val, pred, zero_division=0)
@@ -323,7 +323,7 @@ Write the picture to a file. **Never `plt.show()`** — on a headless machine it
 
 **"Recall went up, so the model got better."** No — the model did not change. Ask: *"and what happened to precision?"* Every single row of the sweep table is a *trade*. There is no row where you got something for nothing.
 
-**"The ROC curve is bad, so the model is bad."** Careful. Our AUC of 0.6116 is genuinely unimpressive, but the AP of 0.2078 against a baseline of 0.0140 says something useful is in there. **The model is a good *ranker* of a very rare thing, and a bad *decider*.** Those are separable, and the whole point of a threshold is that you get to fix the second one yourself.
+**"The ROC curve is bad, so the model is bad."** Careful. Our AUC of 0.6116 is genuinely unimpressive, but the AP of 0.2078 against a baseline of 0.0140 says something useful is in there. **The model is a weak overall ranker whose very top is nonetheless worth reading (3 real frauds in its top 8), and the 0.5 is a bad *decider*.** Those are separable, and the whole point of a threshold is that you get to fix the second one yourself.
 
 ### 11. How deep to go, and where to stop
 
@@ -857,7 +857,7 @@ ValueError: not enough values to unpack (expected 4, got 1)
 
 > **Say this:** "**The fix is written in the warning.** 'Use the labels parameter to pass all known labels.' scikit-learn saw nothing but zeros, concluded there was only one class in the world, and built a one-by-one table. One number cannot fill four names.
 >
-> This will happen to somebody's homework tonight, on a high threshold where nothing gets flagged. That is why the line says `labels=[0, 1]` — it means *'there are two classes even if one of them is empty today.'*"
+> This bites on small slices and folds, where the truth is single-class too (on our full validation set it survives, as above). That is why the line says `labels=[0, 1]` — it means *'there are two classes even if one of them is empty today.'*"
 
 Put it back. **Bug Log entry, sixty seconds.**
 
@@ -925,7 +925,7 @@ average_precision_score 0.2078   (a coin gets 0.0140, the fraud rate)
 >
 > **0.2078 against a coin's 0.0140.** Fifteen times better than guessing.
 >
-> Same nine rows. Same model. **The two scores disagree about whether this model is any good, and they are both right**, because they are measured against two different backgrounds. Notice the second baseline: 0.0140. Where have you seen that number today?"
+> Same model, same 1,000 rows. **The two scores disagree about whether this model is any good, and they are both right**, because they are measured against two different backgrounds. Notice the second baseline: 0.0140. Where have you seen that number today?"
 
 *Answer:* it is the fraud rate — 14 ÷ 1000.
 
@@ -1009,7 +1009,7 @@ Every message below came from running a broken version of this week's actual cod
 
 | What the student sees (real message) | What it means | Most likely cause | The fix |
 |---|---|---|---|
-| `ValueError: not enough values to unpack (expected 4, got 1)`, after a `UserWarning: A single label was found in 'y_true' and 'y_pred'` | "Your predictions only contain one class, so I built a 1×1 table, and one number cannot fill four names." | A high threshold flagged nothing, and `labels=[0, 1]` is missing from `confusion_matrix`. | `confusion_matrix(y_val, pred, labels=[0, 1]).ravel()`. **The fix is spelled out in the warning above the traceback.** |
+| `ValueError: not enough values to unpack (expected 4, got 1)`, after a `UserWarning: A single label was found in 'y_true' and 'y_pred'` | "Your predictions only contain one class, so I built a 1×1 table, and one number cannot fill four names." | Truth **and** predictions each hold a single class (a tiny slice, nothing flagged), and `labels=[0, 1]` is missing from `confusion_matrix`. | `confusion_matrix(y_val, pred, labels=[0, 1]).ravel()`. **The fix is spelled out in the warning above the traceback.** |
 | `ValueError: continuous format is not supported` | "The first thing you gave me is full of decimals, and the first thing has to be the truth." | Arguments swapped: `roc_curve(prob, y_val)`. | `roc_curve(y_val, prob)`. **Truth first, always.** |
 | `ValueError: too many values to unpack (expected 2)` | "I hand back three things and you asked for two." | `fpr, tpr = roc_curve(y_val, prob)`. | Three names: `fpr, tpr, thr = ...`. `roc_curve` always returns the thresholds too. |
 | `ValueError: x and y must have same first dimension, but have shapes (1000,) and (1001,)` | "Those two lists are different lengths." | Plotting `pthr` against `prec` from `precision_recall_curve`. The precisions and recalls have **one more entry** than the thresholds. | Plot `rec` against `prec`. If you really want precision against threshold, use `prec[:-1]`. |
@@ -1439,7 +1439,7 @@ There is no single right answer, and that is deliberate. A **full-mark** answer 
 | Threshold | Defended to | The sentence |
 |---|---|---|
 | **0.12** | the two-person fraud review desk | "They can look at 2 cases a day, and at 0.12 both of them are real fraud — precision 1.0000. I would rather catch 2 of 14 and waste nobody's time than hand them a queue they cannot clear." |
-| **0.10** | the manager who signs off the queue | "8 flagged, 3 real, so a third of the pile is worth opening. It is the steepest point on the curve — the last threshold where lowering the bar still buys frauds. Below it I pay in people and get nothing." |
+| **0.10** | the manager who signs off the queue | "8 flagged, 3 real, so a third of the pile is worth opening. It is the steepest sloped step on the curve (14.09), and the next two steps down, 0.08 and 0.06, cost seventeen more people and catch nothing." |
 | **0.02** | the customer whose money is gone | "5 frauds caught instead of 3. I do not care about the 211 phone calls; a phone call is an inconvenience and a stolen paycheque is not. Recall is the only column that matters to me." |
 
 **Answers to reject, gently:**
@@ -1475,7 +1475,7 @@ The rule I am keeping: **if a metric draws a curve it wants probabilities; if it
 
 **Entry two.**
 Message: `ValueError: not enough values to unpack (expected 4, got 1)`, with a `UserWarning` above it naming the fix.
-Meaning: my threshold flagged nothing, so the predictions contained only one class, so the confusion matrix came back 1×1.
+Meaning: the truth and my predictions each held only one class (a tiny slice, nothing flagged), so the confusion matrix came back 1×1.
 Fix: `confusion_matrix(y, pred, labels=[0, 1])`.
 The rule I am keeping: **read the whole error, not just the last line. This one's fix was printed one line above the traceback.**
 

@@ -237,7 +237,7 @@ after x**3 : 33.0
 
 Write `6 + 27 = 33` in your notes and put a box round it.
 
-**Why on earth would a library do that?** Because sometimes you genuinely want the sum. If a batch of data is too big to fit in memory, you can do it in four pieces, call `backward()` four times, and get the total — which is exactly the gradient over the whole batch. **That is the one real use, and it is why the default is what it is.**
+**Why on earth would a library do that?** Because sometimes you genuinely want the sum. If a batch of data is too big to fit in memory, you can do it in four pieces, call `backward()` four times, and get the total — which is the gradient over the whole batch if each piece's loss was a sum (if it was a mean, divide the total by four). **That is the one real use, and it is why the default is what it is.**
 
 The price of that convenience is that **everybody, for ever, must wipe `.grad` before each step.** Next week's very first line of code exists entirely because of this.
 
@@ -303,7 +303,7 @@ mode item     after :  176.2 MB   kept 300 items
 176.2 − 159.7 =  16.5 MB   for 300 numbers
 ```
 
-**About six times as much memory for the same 300 answers.** Your machine's absolute numbers will be different; the ratio will not. In a long training run this is how people run out of memory at epoch 400 of 500, having watched the first 399 work perfectly.
+**About six times as much memory for the same 300 answers.** Your machine's absolute numbers will be different, and so will the ratio a little (we have seen 6 times and 7 times); it will stay several times, not just a few per cent. In a long training run this is how people run out of memory at epoch 400 of 500, having watched the first 399 work perfectly.
 
 > **🧑‍🏫 If a student asks:** *"why is `wrong[0]` the same as `wrong[199]`?"* Because **nothing is being trained today.** The weights never change, so the loss is the same 200 times. We have all the slopes and we are deliberately not taking a step. That is next week.
 
@@ -985,11 +985,11 @@ And the closing observation: *"today we computed nine slopes and then looked at 
 
 **2. `.grad` adding instead of replacing causes one of the most common bugs in the world. Was it the right default?**
 
-*Hint:* find the one real use first — splitting a batch too big for memory into four pieces, calling `backward()` four times, and letting the gradients pile up to give exactly the whole-batch gradient. That is genuinely useful. Then the cost: everybody, for ever, has to remember to wipe. Then argue it. **You are allowed to think the default is wrong** — plenty of experienced people do, and other frameworks chose differently. You still have to type the wiping line every time, which is a real and slightly annoying fact about a tool you did not design.
+*Hint:* find the one real use first — splitting a batch too big for memory into four pieces, calling `backward()` four times, and letting the gradients pile up to give the whole-batch gradient (for sum-losses; with mean-losses you divide by the number of pieces). That is genuinely useful. Then the cost: everybody, for ever, has to remember to wipe. Then argue it. **You are allowed to think the default is wrong** — plenty of experienced people do, and other frameworks chose differently. You still have to type the wiping line every time, which is a real and slightly annoying fact about a tool you did not design.
 
 **3. Is autograd doing algebra?**
 
-*Hint:* it is tempting to imagine PyTorch writing down `2x` somewhere. It does not. **Every operation ships with two pieces of code**: one that computes the output, and one that says *"given the slope coming back into my output, here is the slope going out of each of my inputs."* `backward()` walks the stored graph from the end to the beginning, calling those, multiplying as it goes. That multiplying-as-it-goes is **Week 18's chain, unchanged.** Then the interesting question: what could autograd *not* differentiate? *(Anything with an `if` on a tensor's value, anything with a rounding step in it, anything that leaves torch and goes through numpy in the middle — because the receipt only records torch operations.)*
+*Hint:* it is tempting to imagine PyTorch writing down `2x` somewhere. It does not. **Every operation ships with two pieces of code**: one that computes the output, and one that says *"given the slope coming back into my output, here is the slope going out of each of my inputs."* `backward()` walks the stored graph from the end to the beginning, calling those, multiplying as it goes. That multiplying-as-it-goes is **Week 18's chain, unchanged.** Then the interesting question: what could autograd *not* differentiate? *(Anything with a rounding or flooring step in it, where the slope is zero almost everywhere and tells you nothing; anything that leaves torch and goes through numpy in the middle, because the receipt only records torch operations. An `if` on a tensor's value is NOT a problem: autograd simply differentiates the branch that ran.)*
 
 ---
 

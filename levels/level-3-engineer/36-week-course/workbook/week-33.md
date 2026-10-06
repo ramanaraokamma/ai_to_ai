@@ -272,7 +272,7 @@ ________________________________________________________________
 |---|---|---|
 | **word embedding** | ______ | (i) A grid counting how often each word appears near each other word |
 | **distributional hypothesis** | ______ | (ii) The one number a linear model learned for one column |
-| **co-occurrence matrix** | ______ | (iii) A sentence whose meaning is carried entirely by a negator |
+| **co-occurrence matrix** | ______ | (iii) A sentence whose meaning is flipped by a small negator such as `not` |
 | **negation trap** | ______ | (iv) A short list of numbers standing for one word, learned from data |
 | **learned coefficient** | ______ | (v) Words that appear in the same company mean similar things |
 
@@ -563,7 +563,7 @@ trap 7  "not cold and not soggy"   true POSITIVE   total = -2.8047   p = 0.0571
 
 ________________________________________________________________
 
-**(f) The negation-marking repair does fix six of the twelve. It creates the tokens `not_fresh` and `not_cold`. In one sentence, why does that escape the trap you just proved?**
+**(f) The negation-marking repair scores six of the twelve (you will see in A6 why that is not a real fix). It creates the tokens `not_fresh` and `not_cold`. In one sentence, why does that escape the trap you just proved?**
 
 ________________________________________________________________
 
@@ -866,7 +866,7 @@ coef -5.0278 -> total -0.0000 -> p 0.5000
 
 **M3 (c).** *"Nothing. `0.5188` is a coin toss leaning by a hair — the model had one meaningless word (`and`) and its own bias, and that is all."*
 
-**M3 (d).** *"Abstention. The repair deleted the evidence rather than interpreting it, so what came out was the **bias**, squashed — and it happened to land on the right side of 0.5 for three traps and the wrong side for three others."* **A score built on abstentions is a measurement of your class balance, not of your repair.**
+**M3 (d).** *"Abstention. The repair deleted the evidence rather than interpreting it, so what came out was the **bias** plus `and`'s tiny weight, squashed — and it happened to land on the right side of 0.5 for three traps and the wrong side for three others."* **A score built on abstentions is a measurement of your class balance, not of your repair.**
 
 **M4 (a).**
 
@@ -998,11 +998,11 @@ p(pos) trap 1: 0.9167
 
 **(b)** *"The lever is not the number of features, it is the **tokens** — what the words are cut into before anybody counts them."* **Row 4 changed the tokenizer and nothing else, and it is the only row that moved the number.**
 
-**(c)** **One** review out of twenty. **No, it is not a reason to reject the repair** — it is a normal trade, and the honest move is to name it: *"the repair cost one easy review out of twenty and bought six hard ones out of twelve."* **A repair with no cost attached usually means you have not looked for the cost.**
+**(c)** **One** review out of twenty. **No, it is not a reason to reject the repair** — it is a normal trade, and the honest move is to name it: *"the repair cost one held-out review out of twenty — the only one containing `not` — and 'bought' six traps out of twelve, five of them on weak evidence."* **A repair with no cost attached usually means you have not looked for the cost.**
 
-**(d)** learned: **some specific glued tokens**, like `not_cold` and `not_rude`, which happen to appear in the traps · did not learn: **that negation reverses meaning.** **Five traps survive every repair, which is what "it learned tokens, not a rule" looks like from the outside.**
+**(d)** learned: **seven new glued tokens** from the eight extra reviews (`not_late`, `not_quick`, `no_soggy`, `no_fresh`, `never_wrong`, `never_generous`, `hardly_any`) — **none of which appears in any trap**, so row 5's extra right answer (trap 11, at `0.530`) is another weak-evidence call, not a learned token · did not learn: **that negation reverses meaning.** **Five traps survive every repair, which is what "it learned tokens, not a rule" looks like from the outside.**
 
-**A6 (a).** *"Both were decided by the bias alone."* Both had only the word `and` left with a column, both rows are therefore identical as far as the model is concerned, **and identical rows must produce identical probabilities.** `0.0124 + 0.0629 = 0.0753`, squashed, is `0.5188` — for both.
+**A6 (a).** *"Both were decided by the bias and one near-zero word, and nothing else."* Both had only the word `and` left with a column, both rows are therefore identical as far as the model is concerned, **and identical rows must produce identical probabilities.** `0.0124 + 0.0629 = 0.0753`, squashed, is `0.5188` — for both.
 
 **(b)** *"Nothing about the model. Trap 7 happens to be positive and 0.5188 is just above 0.5; trap 1 happens to be negative."* **The difference is the true label, not the prediction.** One of them scoring as a fix is luck.
 
@@ -1227,7 +1227,7 @@ the twelve traps: 0 of 12
 
 **(d) held-out:** *"Training on twelve contradictory sentences dragged the weights of `cold`, `fresh` and the rest towards zero, so two ordinary held-out reviews became borderline and one of them fell over the line."* *(The two it gets wrong are `"i would not order from here again"` and `"the chips were cold and soggy"`.)* **traps:** *"The one trap it got right, number 10, it got right because it had been shown the answer — and once you stop showing it, the `1` goes back to `0`."*
 
-**(e)** **This is the finding of the page.** *"Even when the model was allowed to train on the twelve traps — so `not` had a column and the model saw it twelve times — it still only got 1 of 12. So the failure is not a shortage of data about the word `not`. It is the shape of the model: one weight per word cannot express 'reverse whatever comes next'."* **The coefficient it learned for `not` was `−0.2660`, almost nothing, because `not` appeared in six negative traps and six positive ones and the evidence cancelled out exactly.**
+**(e)** **This is the finding of the page.** *"Even when the model was allowed to train on the twelve traps — so `not` had a column and the model saw it twelve times — it still only got 1 of 12. So the failure is not a shortage of data about the word `not`. It is the shape of the model: one weight per word cannot express 'reverse whatever comes next'."* **The coefficient it learned for `not` was `−0.2660`, almost nothing, because the six traps containing `not` are three negative and three positive, so the evidence very nearly cancelled.**
 
 > **And notice what kind of bug this was.** Bugs 1 and 2 stopped the program and told you the line number. Bug 3 printed a plausible score for a quantity that **cannot be measured that way at all** — a trap score from a model trained on the traps is not a low number, it is **not a number**. **Ranked by how much trouble they cause, the tracebacks are the friendly ones.**
 
@@ -1243,9 +1243,9 @@ the twelve traps: 0 of 12
 
 **(e)** *"A linear bag-of-words model has exactly **one** weight per word, and that weight is added to the total in the same direction every time the word appears. But `not` should push the total **down** when it precedes `fresh` and **up** when it precedes `cold` — two opposite jobs, one number. The model cannot express it, so no amount of data will teach it."* **This is a statement about the shape of the model, not about the corpus.**
 
-**(f)** *"Marking makes `not_fresh` and `not_cold` into **two different columns**, so the model gets **two different weights** — and two numbers can point in two directions."* **It escaped the proof by no longer being one weight per word.** *(And the price is that `not_fresh` only has a column if `not fresh` occurred during `fit`, which is why it fixes six and not twelve.)*
+**(f)** *"Marking makes `not_fresh` and `not_cold` into **two different columns**, so the model gets **two different weights** — and two numbers can point in two directions."* **It escaped the proof by no longer being one weight per word.** *(And the price is that `not_fresh` only has a column if `not fresh` occurred during `fit`, which is why, here, those two tokens get no column at all and the "six fixed" are the abstentions you dissected in A6, not real uses of the escape. The escape is real only once training data contains the glued tokens.)*
 
-**(g)** *"Because `not` appears in six negative traps and six positive traps, and it gets one weight. Any positive weight is wrong for six rows and any negative weight is wrong for the other six, so the least-wrong answer available is roughly zero — and `−0.2660` is roughly zero."* **The model did not fail to learn. It learned the correct answer to the question it was able to ask.**
+**(g)** *"Because `not` appears in three negative traps and three positive traps, and it gets one weight. Any positive weight is wrong for three rows and any negative weight is wrong for the other three, so the least-wrong answer available is roughly zero — and `−0.2660` is roughly zero."* **The model did not fail to learn. It learned the correct answer to the question it was able to ask.**
 
 ### Think Deeper
 

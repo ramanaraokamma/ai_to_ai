@@ -169,7 +169,7 @@ trained on the WRONG axis: train 0.5968  test 0.8574  (463 of 540)
 
 **Read those two numbers again. The test accuracy is HIGHER than the training accuracy.**
 
-**That should be impossible.** A model has *seen* its training data. It always does at least as well on it. It happens here because four fifths of the *training* rows had scrambled labels and were unlearnable, while the test set was untouched.
+**That should be impossible.** A model has *seen* its training data. It always does at least as well on it. It happens here because two fifths of the *training* rows had scrambled labels and were unlearnable (the other three fifths were correctly labelled, which is why training accuracy sits near 0.6), while the test set was untouched.
 
 > **Install this as a permanent alarm: if your test accuracy is higher than your training accuracy, your training labels are wrong.**
 
@@ -219,7 +219,7 @@ scratch on 5-9       1.1s  movable 1898  train 0.9729  test 0.9814  (264 of 269)
 
 **Transfer learning pays when the source problem is enormous and the target problem is tiny.** The version people use at work borrows a backbone trained on **1.2 million photographs** and applies it to a few thousand pictures of something else. **Ours borrowed a backbone trained on 630 pictures of five digits, and applied it to 627 pictures of five different digits.** The source was not bigger than the target. It was **the same size**, and it was *specialised* — those eight filters were tuned to the shapes of 0, 1, 2, 3 and 4, and a 5 is not a 3.
 
-**And what the frozen version DID buy is real.** It trained **650 weights instead of 1,898** in **0.2 seconds instead of 1.1**, and it still got to **92.6%**. A third of the weights, a fifth of the time, seven points behind. **On a problem where the backbone came from a million photographs and your target set is fifty pictures rather than 627, that trade is the difference between a working model and no model at all. Here it is not.**
+**And what the frozen version DID buy is real.** It trained **650 weights instead of 1,898** in **0.2 seconds instead of 1.1**, and it still got to **92.6%**. A third of the weights, a fifth of the time, six points behind. **On a problem where the backbone came from a million photographs and your target set is fifty pictures rather than 627, that trade is the difference between a working model and no model at all. Here it is not.**
 
 **So the sentence for your write-up is not "transfer learning does not work".** It is:
 
@@ -272,7 +272,7 @@ average 8, ink per column: [  0   9  71  87  86  66  11   0]
 
 **And the reason is the resolution.** An 8 is two loops stacked. At 8×8, each loop is about three pixels tall and four wide — **too small to have a visible hole.** A hole needs a ring of ink around a gap, and three pixels is not enough to have both. So the loops fill in with grey, and what survives the fill-in is **a bright vertical bar down the middle columns. Which is exactly what a 1 is.**
 
-**And the direction makes sense too.** It is `8 → 1` three times but `1 → 8` only once, and that lopsidedness is not noise: **an 8 can lose its holes and become a bar, but a bar cannot grow holes.** The information loss goes one way.
+**And the direction makes sense too.** It is `8 → 1` three times but `1 → 8` only once, and although 3 against 1 is too few mistakes to be certain it is not chance, it is what you would expect: **an 8 can lose its holes and become a bar, but a bar cannot grow holes.** The information loss goes one way.
 
 **Say the good version and the bad version to yourself so you can hear the difference:**
 
@@ -969,7 +969,7 @@ wrong axis          13.6s  movable 1898  train 0.5968  test 0.8574  (463 of 540)
 
 **What is impossible about those two numbers?** **The test accuracy is higher than the training accuracy.**
 
-**What actually happened.** `axis=0` on a stack of 1,257 pictures is not the rows of a picture — **it is which picture.** The pictures got shuffled round while the labels stayed exactly where they were, so four fifths of the training rows are pictures paired with somebody else's label. **Unlearnable.** So the model only really learned from the fifth that was correct, scored 0.5968 on its own scrambled homework, and 0.8574 on the untouched test set.
+**What actually happened.** `axis=0` on a stack of 1,257 pictures is not the rows of a picture — **it is which picture.** The pictures got shuffled round while the labels stayed exactly where they were, so two fifths of the training rows (the up and down copies) are pictures paired with somebody else's label. **Unlearnable.** The other three fifths still have the right labels (the left and right copies roll each picture's rows, which is a wrapped shift, not a shuffle), so the model scored 0.5968 on its own partly scrambled homework, close to the 0.6 that three correct fifths allow, and 0.8574 on the untouched test set.
 
 **Take one alarm away from this week and make it this one:**
 
@@ -990,7 +990,7 @@ wrong axis          13.6s  movable 1898  train 0.5968  test 0.8574  (463 of 540)
 | **No error.** Test accuracy is HIGHER than training accuracy | Your training labels are wrong | `axis=1` is rows, `axis=2` is columns, on a stack of pictures |
 | **No error.** The frozen model scores the same as the unfrozen one | The freezing did nothing | `print(sum(p.numel() for p in model.parameters() if p.requires_grad))`. **If it says 1,898, nothing is frozen.** Freeze first, build the optimiser second |
 | **No error.** 6,285 pictures and 1,257 labels | The `DataLoader` will error later with something confusing | `y_aug = torch.cat([ytr] * 5)`. **Print both lengths every time you build a dataset** |
-| **No error, but the plain run's numbers change when you rerun the file** | `.copy()` is missing from `shift`, and the blanking hit a view of the real data | Keep the `.copy()`. **The symptom is genuinely baffling and the fix is one word** |
+| **No error, but the plain run's numbers change when you rerun the file** | A shifted copy was built from a slice or `.T` (which are views, unlike `np.roll`'s fresh array) and then blanked, so the blanking hit the real training data | Keep the `.copy()`, which makes `shift` safe whichever way it is written. **The symptom is genuinely baffling and the fix is one word** |
 
 ---
 
@@ -1078,7 +1078,7 @@ from scratch, no borrowing       1,898       1.1          0.9814
 
 **2. Training from scratch beat both transfer versions. Should the lesson have used a better example?**
 
-*Hint:* first be clear about what did and did not work: the **machinery** worked perfectly — a backbone was frozen, the movable count went from 1,898 to 650, the training time dropped fivefold, and the model landed within seven points. What failed was the **condition**: the source knew 630 pictures and the target had 627. Then the real question: is an experiment that measures the *price* of a technique less valuable than one that shows the technique winning? Which of those two would you rather have read before starting a project? And then the uncomfortable half — a lesson that only ever showed techniques working would teach you that an experiment's job is to confirm what the teacher said. **What would that cost you in Week 34, when you are the one writing the report?**
+*Hint:* first be clear about what did and did not work: the **machinery** worked perfectly — a backbone was frozen, the movable count went from 1,898 to 650, the training time dropped fivefold, and the model landed within six points. What failed was the **condition**: the source knew 630 pictures and the target had 627. Then the real question: is an experiment that measures the *price* of a technique less valuable than one that shows the technique winning? Which of those two would you rather have read before starting a project? And then the uncomfortable half — a lesson that only ever showed techniques working would teach you that an experiment's job is to confirm what the teacher said. **What would that cost you in Week 34, when you are the one writing the report?**
 
 **3. The 1/8 confusion pair could be attacked by training harder on 1s and 8s. Should you?**
 

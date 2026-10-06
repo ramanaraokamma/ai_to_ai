@@ -589,10 +589,10 @@ ________________________________________________________________
  0.02     216   5 211     0.0231  0.3571
 points on the curve : 28
 ROC AUC 0.6046
-AP      0.2078
+AP      0.0914
 ```
 
-⚠️ **Careful. One of those last two lines is wrong and one is right, and they look identical in style.** The AUC should be **0.6116** and the AP should be **0.2078**.
+⚠️ **Careful. Both of those last two lines are wrong, and they look exactly as respectable as right ones.** The AUC should be **0.6116** and the AP should be **0.2078**.
 
 **Bug 3.** Which variable is the problem? ____________  **Kind of bug?** ______________
 
@@ -620,7 +620,7 @@ AP      0.2078
 
 **Two questions, and they are the point of the whole page.**
 
-**In run 3 the AP printed 0.2078 — the right number — even though `flagged` was wrong. Why did that happen, and why should it make you more careful rather than less?**
+**In run 3 nothing crashed and nothing warned, yet the AUC was off by 0.007 and the AP was off by more than half (0.0914 against 0.2078). Which error is easier to miss, and why should "no error message" make you more careful rather than less?**
 
 ________________________________________________________________
 
@@ -998,7 +998,7 @@ inf
 
 **`prec` and `rec` have 1001 entries and `pthr` has 1000.** scikit-learn tacks the point **(recall 0, precision 1)** on the end so the curve reaches the axis — that is exactly what line 4 prints, `1.0 0.0`. There is no threshold that produces that point; it is added for drawing. **So plot `rec` against `prec` and never against `pthr`**, or you get `ValueError: x and y must have same first dimension, but have shapes (1000,) and (1001,)`.
 
-**`thr[0]` is `inf`** — infinity. It is a **sentinel**: a fake first threshold so high that nothing at all is flagged, which puts the curve's first dot at the origin (0, 0). You never use it as a threshold. Notice that `roc_curve` gave 28 points on 1,000 rows, not 1,000 — it only bothers with thresholds where something actually changes.
+**`thr[0]` is `inf`** — infinity. It is a **sentinel**: a fake first threshold so high that nothing at all is flagged, which puts the curve's first dot at the origin (0, 0). You never use it as a threshold. Notice that `roc_curve` gave 28 points on 1,000 rows, not 1,000 — by default (`drop_intermediate=True`) it throws away points that lie on a straight stretch between their neighbours and so add nothing to the picture; with `drop_intermediate=False` you would get 1,001.
 
 **P3.**
 
@@ -1046,7 +1046,7 @@ inf
 
 **A2(d).** `4 + 61 + 10 + 925 = **1000**` ✅
 
-**A2(e).** **`t = 0.10` is the best defensible answer** and it needs one line: *"eight rows flagged and three of them real, so a third of my review pile is worth opening — and it is the last row where lowering the bar still buys me a fraud."* Said to **the person who signs off the review queue.** `t = 0.12` is equally full marks — *"two cases a day, both of them real, nothing wasted"* — said to **a two-person review desk.** **What scores zero is `t = 0.50`**, which flags nothing and is the one factually indefensible choice on the table.
+**A2(e).** **`t = 0.10` is the best defensible answer** and it needs one line: *"eight rows flagged and three of them real, so a third of my review pile is worth opening — and the next two rows down (0.08 and 0.06) would add seventeen people and catch nothing."* Said to **the person who signs off the review queue.** `t = 0.12` is equally full marks — *"two cases a day, both of them real, nothing wasted"* — said to **a two-person review desk.** **What scores zero is `t = 0.50`**, which flags nothing and is the one factually indefensible choice on the table.
 
 **A3.**
 
@@ -1255,7 +1255,7 @@ AP      0.2078   (a coin gets 0.0140)
 
 **The two rows that bought zero extra frauds are `t = 0.08` and `t = 0.06`**, and between them they bothered **17** extra people (7 + 10) for nothing at all. **Those two rows are the single most useful thing on the page**, and you can only see them because the program prints the *change* and not just the totals. A table of totals hides the fact that two of its rows are pure waste.
 
-**Notice that `worth_it` comes out at 0.01, not 0.10.** Every row down to the bottom bought at least one extra fraud, so the honest answer to *"where does lowering the bar stop paying?"* is **not "at the row where it stops buying frauds"** — it never stops. It stops when the frauds cost more than they are worth, and **that requires a price, which is next week.**
+**Notice that `worth_it` comes out at 0.01, not 0.10.** The program only remembers the *lowest* threshold that bought a fraud, and even the bottom row still bought three, so the honest answer to *"where does lowering the bar stop paying?"* is **not "at the first row that buys nothing"** (0.08 and 0.06 buy nothing, then 0.04 buys another) — the frauds keep coming, at an ever worse price. It stops when the frauds cost more than they are worth, and **that requires a price, which is next week.**
 
 ### Fix the Broken Program
 
@@ -1277,9 +1277,9 @@ So `roc_auc_score` had only two distinct values to work with. Its whole job is t
 
 **The fix:** `roc_auc_score(y_val, prob)` and `average_precision_score(y_val, prob)`.
 
-**Why the AP printed 0.2078 anyway — the right answer from the wrong input.** Pure luck of the arithmetic: on this particular data, thresholding at 0.10 happens to give an average precision that rounds to the same four decimals as the real one. **That should make you more careful, not less.** It means a wrong input can produce a right-looking number, so *"the number looked fine"* is not evidence of anything. The reliable check is the one that does not depend on luck: **`len(fpr)` was 3 instead of 28.**
+**Both numbers were wrong, and the AUC is the easier one to miss.** 0.6046 against 0.6116 is a difference in the second decimal place that nobody would question, while 0.0914 against 0.2078 is a big miss. A wrong input can produce a right-looking number, so *"the number looked fine"* is not evidence of anything. The reliable check does not depend on how a number looks: **`len(fpr)` was 3 instead of 28.**
 
-**Ranking, easiest → hardest: 1, 2, 3.** Bug 1 crashes on the very first row of the table and names both shapes if you print them. Bug 2 crashes with a message that is obscure for about ten seconds and then obvious. **Bug 3 never complains at all, produced one wrong number and one accidentally right one, and would have gone into a report.** What catches each: **printing a shape**, **the phrase "truth first"**, and **`len(fpr)`**.
+**Ranking, easiest → hardest: 1, 2, 3.** Bug 1 crashes on the very first row of the table and names both shapes if you print them. Bug 2 crashes with a message that is obscure for about ten seconds and then obvious. **Bug 3 never complains at all, produced two wrong numbers (one of them deceptively close to the truth), and would have gone into a report.** What catches each: **printing a shape**, **the phrase "truth first"**, and **`len(fpr)`**.
 
 ### Puzzle of the Week
 
@@ -1333,7 +1333,7 @@ Two steps straight up, one across, one more straight up, then four across along 
 
 **T1.** A full-marks paragraph separates the two questions and names the denominator.
 
-> *"AUC asks **can the model rank the frauds above the innocents**, and ours scores 0.6116 where a coin gets 0.5000 — so as a ranking machine it is mediocre, and I would not claim otherwise. AP asks **if I open my review pile, will it be worth opening**, and ours scores 0.2078 where a coin would get 0.0140, the fraud rate. That is about fifteen times better than nothing. Both describe the same nine rows. The reason they disagree is the denominator: the false positive rate divides by **986**, so 211 false alarms slide the ROC across by only 0.2140 and it looks survivable, while precision divides by **216**, the pile a human has to review, and it falls from 0.3750 to 0.0231. At `t = 0.10` the model hands me 8 rows of which 3 are fraud, out of a background rate of 1.4% — it has concentrated the needles by a factor of twenty-seven without catching anything yet. **So: a weak ranker that is nevertheless a useful triage tool, and the sentence I would put on the report is 'AUC 0.6116, AP 0.2078 on 14 positives in 1,000 validation rows — at a threshold of 0.10 it returns 8 cases a day of which about 3 are real.'"*
+> *"AUC asks **can the model rank the frauds above the innocents**, and ours scores 0.6116 where a coin gets 0.5000 — so as a ranking machine it is mediocre, and I would not claim otherwise. AP asks **if I open my review pile, will it be worth opening**, and ours scores 0.2078 where a coin would get 0.0140, the fraud rate. That is about fifteen times better than nothing. Both describe the same model on the same 1,000 rows. The reason they disagree is the denominator: the false positive rate divides by **986**, so 211 false alarms slide the ROC across by only 0.2140 and it looks survivable, while precision divides by **216**, the pile a human has to review, and it falls from 0.3750 to 0.0231. At `t = 0.10` the model hands me 8 rows of which 3 are fraud, out of a background rate of 1.4% — it has concentrated the needles by a factor of twenty-seven without catching anything yet. **So: a weak ranker that is nevertheless a useful triage tool, and the sentence I would put on the report is 'AUC 0.6116, AP 0.2078 on 14 positives in 1,000 validation rows — at a threshold of 0.10 it returns 8 cases a day of which about 3 are real.'"*
 
 **What earns the marks:** the two questions named separately, at least three real numbers, **the class balance printed beside the AP**, and a report sentence that contains the threshold. **What loses them:** "it's a bad model" with no number, or "AP 0.21 is terrible" — which forgets that AP has no fixed baseline.
 
@@ -1395,7 +1395,7 @@ the flattest pair:  t = 0.30 to t = 0.05
 
 **The right-hand panel of `dial.png` — precision-recall — falls off a cliff**, from 0.3750 down to 0.0231 as false alarms go from 5 to 211, and then crawls just above the dashed 0.0140 line.
 
-**Why it disagrees with the left-hand panel:** *"precision divides by **216**, the pile I have to review, and 216 rows containing 5 frauds means forty-three innocent people per thief. The false positive rate divides by **986**, which is so big that 211 false alarms only move it by 0.21. Both charts are true. The precision-recall one is the one the operations team will shout about, and it is the one telling the truth about the day's work."*
+**Why it disagrees with the left-hand panel:** *"precision divides by **216**, the pile I have to review, and 216 rows containing 5 frauds means about forty-two innocent people per thief. The false positive rate divides by **986**, which is so big that 211 false alarms only move it by 0.21. Both charts are true. The precision-recall one is the one the operations team will shout about, and it is the one telling the truth about the day's work."*
 
 **Three thresholds — the shape that earns full marks:**
 
@@ -1409,9 +1409,9 @@ t = 0.12   I am defending this to: the fraud team's two-person review desk
 t = 0.10   I am defending this to: the manager who signs off the review queue
      the numbers: flagged 8, caught 3 of 14, false alarms 5
      my sentence: "Eight cases a day, three of them real — a third of the
-     pile is worth opening. It is also the last threshold where lowering
-     the bar still buys me a fraud for a sensible number of false alarms;
-     0.08 and 0.06 cost seventeen more people and catch nothing."
+     pile is worth opening. It is also the steepest step on the curve,
+     and the next two rows down, 0.08 and 0.06, cost seventeen more
+     people and catch nothing."
 
 t = 0.02   I am defending this to: the customer whose money is actually gone
      the numbers: flagged 216, caught 5 of 14, false alarms 211
@@ -1433,7 +1433,7 @@ t = 0.02   I am defending this to: the customer whose money is actually gone
 
 ### Draw It
 
-**Where the curve goes straight up: between `t = 0.80` and `t = 0.70`** (and again between 0.90 and 0.80 on the tpr axis). **It cost nothing** — two extra frauds caught, zero extra false alarms, which is why the division has no answer and the honest label is *"free recall"*.
+**Where the curve goes straight up: between `t = 0.80` and `t = 0.70`** (and again from the origin up to `t = 0.90`). **It cost nothing** — two extra frauds caught, zero extra false alarms, which is why the division has no answer and the honest label is *"free recall"*.
 
 **Where it goes straight across: from `t = 0.30` down to `t = 0.05`.** It bought **nothing at all** — recall was already 1.0000 and five more innocent cards got blocked. **Both ends of a sweep are usually waste**, and seeing that on your own graph paper is worth more than any formula.
 

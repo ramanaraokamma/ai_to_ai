@@ -862,7 +862,7 @@ ________________________________________________________________
 
 **About 37 times bigger.**
 
-**M1(b).** The surprise climbs slowly at first and then very steeply. Between 0.90 and 0.50 it only doubles; between 0.10 and 0.02 it adds another 1.6 on top of an already large number. **Being a bit wrong is cheap; being confidently wrong is not.** *(And `−ln(0)` has no value at all, which is why real code clips the probability away from 0 — Week 14's `np.clip`.)*
+**M1(b).** The surprise climbs slowly at first and then very steeply. Between 0.90 and 0.50 it goes from 0.105 to 0.693, about 6.6 times bigger; between 0.10 and 0.02 it adds another 1.6 on top of an already large number. **Being a bit wrong is cheap; being confidently wrong is not.** *(And `−ln(0)` has no value at all, which is why real code clips the probability away from 0 — Week 14's `np.clip`.)*
 
 **M2.**
 
@@ -906,7 +906,7 @@ ________________________________________________________________
 
 **M3(b).** `−ln(0.500618) = ` **0.691912**
 
-**M3(c).** The good answer costs 0.346742 and the catastrophic answer costs 0.691912 — **the disaster is only twice as expensive as the triumph.** Fed in raw, the same two answers cost 0.126928 and 6.002476, which is forty-seven times apart. A loss whose worst possible score is only twice its best has almost no slope to roll down, so training barely moves and the loss parks at about 0.54.
+**M3(c).** The good answer costs 0.346742 and the catastrophic answer costs 0.691912 — **the disaster is only twice as expensive as the triumph.** Fed in raw, the same two answers cost 0.126928 and 6.002476, which is forty-seven times apart. A loss whose worst possible score is only twice its best gives the training loop a much weaker signal, and the loss parks at about 0.54 (with two squashes, no answer can cost less than 0.31 if it should be 1, or 0.69 if it should be 0).
 
 **M4.**
 
@@ -993,7 +993,7 @@ The squashed-twice version treats 0.982014 as a raw score: `sigmoid(0.982014) = 
 
 **A1.** `nn.Linear` → **(iii)** · `nn.Sequential` → **(iv)** · logit → **(v)** · `BCEWithLogitsLoss` → **(ii)** · dropout → **(i)**
 
-**A1(a).** **`nn.ReLU()` and `nn.Dropout()`** both hold no learnable numbers. *(Of the five words listed, "dropout" is the one that appears in `named_parameters()` never — and neither does the ReLU, which is why the second `nn.Linear` in a three-part `Sequential` is called `2`.)*
+**A1(a).** **dropout and `BCEWithLogitsLoss`** hold no learnable numbers. *(`nn.Sequential` holds its parts, so its numbers are the parts' numbers, and a logit is a value, not a part. Side note: `nn.ReLU()` holds none either, which is why the second `nn.Linear` in a three-part `Sequential` is called `2`.)*
 
 **A2.**
 
@@ -1308,7 +1308,7 @@ wrote hit.png
 
 **B5(a).** The **training** curve. 1,313 learnable numbers against 450 training rows is nearly three numbers per row, which is more than enough room to memorise every one of them — so the training loss will keep falling towards zero for as long as you let it.
 
-**B5(b).** **Epoch 84**, and the run carried on for another **515** epochs, all of them making the model worse on rows it had not seen.
+**B5(b).** **Epoch 84**, and the run carried on for another **515** epochs, and none of them beat it on rows the model had not seen.
 
 **B5(c).** The gap is a measurement of **how much of the model's performance is memorising.** Train loss 0.0062 means it has essentially learned all 450 training songs by heart. Validation loss 0.1676 is what it can actually do on a song it has never met, and that is 27 times worse. **A model whose two numbers are close together is learning the pattern; a model whose two numbers are far apart is learning the rows.**
 
@@ -1445,7 +1445,7 @@ print("4 -> 11 -> 3 :", total(4, 11, 3))
 
 > "A traceback is a bug that has already been found for you. The double squash is a bug that has to be found by a person, and the only evidence is a number that looks unimpressive rather than wrong — 0.5423 does not look like a crash, it looks like a model that needs more layers. So you go and add layers, and it still says 0.54, and now you have two problems.
 >
-> The concrete check is **a floor and a ceiling on the loss.** Before I trust a training run I want to know what a model that knows nothing would score: for `BCEWithLogitsLoss` that is `−ln(0.5) = 0.693147`. So the check is: does my loss get meaningfully below 0.693, and does it keep going? A loss that parks between 0.5 and 0.69 and refuses to move is the signature of a squash problem, and I can check it in one line. The second check is cheaper still: **look at the last part of the model.** If it is not a bare `nn.Linear`, ask why.
+> The concrete check is **a floor and a ceiling on the loss.** Before I trust a training run I want to know what a model that knows nothing would score: for `BCEWithLogitsLoss` that is `−ln(0.5) = 0.693147`. So the check is: does my loss get meaningfully below 0.693, and does it keep going? A loss that parks between 0.5 and 0.69 and refuses to move is a reason to check for a squash problem (it can have other causes too), and I can check that in one line. The second check is cheaper still: **look at the last part of the model.** If it is not a bare `nn.Linear`, ask why.
 >
 > In Term 1 the silent bug was leakage, and the equivalent check was 'is this score too good?' — a fraud model at 99% accuracy or a feature that predicts perfectly. Same shape of thinking: **know what an impossible number looks like, and check for it before you celebrate.**"
 
@@ -1536,7 +1536,7 @@ dropout 0.3: best val loss 0.1443 at epoch 43, ended at 0.2385
 
 **Sentence one, at full marks:**
 
-> "It did keep training, for another 1,461 epochs, and every one of them made the model worse on rows it had never seen: the validation loss climbed from 0.1568 to 0.4347. The training loss fell to 0.0165, so the model was getting better and better at the 300 rows it had already seen and worse and worse at everything else."
+> "It did keep training, for another 1,460 epochs, and not one of them beat epoch 39 on rows it had never seen: the validation loss drifted up, with wobbles, from 0.1568 to 0.4347. The training loss fell to 0.0165, so the model was getting better and better at the 300 rows it had already seen and worse and worse at everything else."
 
 **Sentence two, at full marks:**
 

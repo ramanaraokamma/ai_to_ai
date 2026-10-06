@@ -426,7 +426,7 @@ rule: ______________________________
 | e | `dZ2 = A2 - y` with a batch of four | | |
 | f | `dZ1 = dA1` (the mask left out entirely) | | |
 
-**A3(g).** **Two** of those six produce no error at all. Which two? ______ and ______  **Which of the two would a gradient check catch?** ______
+**A3(g).** **Three** of those six produce no error at all. Which three? ______ , ______ and ______  **Which of the three would a gradient check NOT catch?** ______
 
 **A4. Match the code to the output.** Five of each, no output used twice. Assume `import numpy as np` above each.
 
@@ -635,7 +635,7 @@ worst relative error: 2.99e-10
 all four below 1e-6? True
 ```
 
-**Done looks like:** **`.copy()` is there.** Without it, `up` and `dn` are two names for the same grid and you will nudge the same weight twice in the same direction.
+**Done looks like:** **`.copy()` is there.** Without it, `up` and `dn` are two names for the same grid as `W1`, so the `+ eps` and `- eps` land on the same numbers and cancel.
 
 > **💡 Try this:** change `eps` to `0.1` and re-run, then to `1e-11`. **At `0.1` the errors climb to around `1e-3`** — the nudge is no longer local, so it measures the average steepness across a stretch of curve. **At `1e-11` they climb again, for the opposite reason:** the two losses round to almost the same number and the subtraction is mostly noise. `1e-6` sits between the two walls, and now you have seen both. **Paste all three tables and compare which knob is worst in each.**
 
@@ -1083,7 +1083,7 @@ dW1  ( ____ , ____ ) = [ ________  ________ ]    db1 ( ____ , ____ ) = [ _______
    total                 = ____________
 ```
 
-**Two of those four lines are exactly zero. Which, and why?**
+**One of those four lines is exactly zero. Which, and why?**
 
 ________________________________________________________________
 
@@ -1330,7 +1330,7 @@ step 5:  dW1[0][0] = 1.0 × (−0.30880556) = −0.30880556
 | c | 0.00000004 | 0.09488096 | **4.216e-07** | ✅ |
 | d | 0.00000001 | 0.00402715 | **2.483e-06** | ❌ |
 
-**M4(a).** They must have **opposite signs and (here) equal size.** In general, a relative error of `1.00` happens when `|num − ana| = |num| + |ana|`, and that is only possible when one is positive and the other negative. **A gradient with a relative error of 1 does not merely have the wrong size; it points the wrong way.**
+**M4(a).** They must have **opposite signs and (here) equal size.** In general, a relative error of `1.00` happens when `|num − ana| = |num| + |ana|`, and that is only possible when one is positive and the other negative (or one of them is exactly zero). **A gradient with a relative error of 1 does not merely have the wrong size; it points the wrong way.**
 
 **M4(b).** Because the score divides by the **size** of the numbers. Row c's gradients are about `0.047`; row d's are about `0.002` — **twenty-three times smaller.** The same absolute wobble is a much bigger *fraction* of a tiny number. **Tiny gradients are where floating-point noise shows up most**, which is why the worst relative error in a healthy check is almost always on the smallest gradient. *(And row d's `2.5e-6` is only just over the line, which in a real run would make you shrink `eps` rather than hunt for a bug.)*
 
@@ -1404,7 +1404,7 @@ one * two = 40.00000000000895
 both      = 39.999999999995595
 ```
 
-so the difference is about `1.3e-11`. **That is the nudge's own error, not the chain rule's.** Nudging by a thousandth measures the average steepness across a small stretch of curve, and two different routes accumulate slightly different rounding — so `==` on decimals says `False` for two numbers that agree to eleven decimal places. **This is exactly why `np.allclose` exists, and exactly why the gradient check scores a *relative error* instead of demanding equality.**
+so the difference is about `1.3e-11`. **That is floating-point rounding, not a flaw in the chain rule.** These two chains are straight lines and a square, for which the thousandth-sized nudge is mathematically exact, so the leftover is rounding: each route subtracts nearly equal numbers and divides by `0.002`, and the two routes round slightly differently — so `==` on decimals says `False` for two numbers that agree to eleven decimal places. **This is exactly why `np.allclose` exists, and exactly why the gradient check scores a *relative error* instead of demanding equality.**
 
 ### Practice Set A
 
@@ -1442,7 +1442,7 @@ The rule: **"the bias is added to every row, so it collects blame from every row
 | e | **No error.** Every gradient comes out four times too big; a learning rate of `0.1` behaves like `0.4` | `dZ2 = (A2 - y) / n` |
 | f | **No error.** `dW1` and `db1` are wrong, `dW2` and `db2` are right, and nothing tells you | `dZ1 = dA1 * (Z1 > 0).astype(float)` |
 
-**A3(g).** Strictly **d, e and f** all run without error. The two that produce **wrong gradients** are **e and f**. A gradient check catches **both of them** — e at exactly `6.00e-01` everywhere, f at between `0.24` and `1.00` **on the hidden layer only.** *(And d is the one a gradient check would **not** catch, because the numbers are right; it is a shape bug that only bites next week.)*
+**A3(g).** **d, e and f** run without error. The two that produce **wrong gradients** are **e and f**. A gradient check catches **both of them** — e at exactly `6.00e-01` everywhere, f at between `0.24` and `1.00` **on the hidden layer only.** *(And d is the one a gradient check would **not** catch, because the numbers are right; it is a shape bug that only bites next week.)*
 
 **A4.** i → **R** · ii → **P** · iii → **T** · iv → **S** · v → **Q**
 
@@ -1708,7 +1708,7 @@ A1.T @ dZ2   →  inner 4 and 4   ✓   giving (2, 4) @ (4, 1) = (2, 1)
 
 **(f)** `0.9²⁰ = **0.122**` and `1.1²⁰ = **6.727**`.
 
-**The moral:** *"A long chain is exponentially sensitive to whether its typical stage slope is below or above 1 — a tenth either side of 1 turns into a factor of a hundred over twenty stages, so gradients either **vanish** or **explode**, and neither is a bug in your code."* *(Those two words are the real names, and they are the reason ReLU, careful initialization and a dozen later tricks all exist.)*
+**The moral:** *"A long chain is exponentially sensitive to whether its typical stage slope is below or above 1 — a tenth either side of 1 turns into `0.12` on one side and `6.7` on the other over twenty stages — a factor of about fifty between them — so gradients either **vanish** or **explode**, and neither is a bug in your code."* *(Those two words are the real names, and they are the reason ReLU, careful initialization and a dozen later tricks all exist.)*
 
 **Part 2 — fingerprint the bug.**
 
@@ -1752,7 +1752,7 @@ db2[0,0]      0.07800082     0.07797609       1.59e-04
 
 **T1 — a model answer.** A gradient four times too big is a **speed** problem. Every knob still moves in the correct direction; they all move too far. So with a small enough learning rate the network still trains, just as if you had picked a learning rate four times bigger — and if the steps become too large you see it immediately, because the loss curve wobbles upwards or explodes to `nan`. **It is loud, and the cure is a number you were going to tune anyway.**
 
-A gradient with the wrong **sign** is a **direction** problem, and it is much worse. Those knobs climb the hill instead of descending it, and no learning rate fixes a wrong direction — **making the steps smaller just means you go the wrong way more slowly.** Neither bug crashes, so that is not the difference. The real difference is what the loss curve does. With the mask forgotten, *five* of the nine knobs are still correct — `dW2`, `db2` and one entry of `dW1` — so the network still finds *some* downhill and **the loss still falls.** It ends up somewhere mediocre, the curve looks entirely ordinary, and there is nothing to notice. **A bug that makes training fail is a nuisance; a bug that makes training merely worse is a catastrophe, because you will ship it.**
+A gradient with the wrong **sign** is a **direction** problem, and it is much worse. Those knobs climb the hill instead of descending it, and no learning rate fixes a wrong direction — **making the steps smaller just means you go the wrong way more slowly.** Neither bug crashes, so that is not the difference. The real difference is what the loss curve does. With the mask forgotten, *four* of the nine knobs are still correct — both entries of `dW2`, `db2` and one entry of `dW1` — so the network still finds *some* downhill and **the loss still falls.** It ends up somewhere mediocre, the curve looks entirely ordinary, and there is nothing to notice. **A bug that makes training fail is a nuisance; a bug that makes training merely worse is a catastrophe, because you will ship it.**
 
 **T2 — a model answer.** What professionals actually do is check a **tiny version of the same code**: two features, two hidden units, four rows, nine knobs, `float64`, once, on the day the backward pass is written — and then never again. That is `torch.autograd.gradcheck`, and every serious library ships one. The point is that the *code* being checked is the same code; only the *sizes* are small. A transpose in the wrong place, a missing mask, a forgotten `÷ n` — none of those care whether the layer has 2 units or 2,000, so a tiny example exercises the same logic.
 
@@ -1843,7 +1843,7 @@ db2 = 0.07800082
    total                =  -0.082773
 ```
 
-**Two lines are zero — the third one here, and row 3's contribution to every hidden gradient.** Row 3's hidden unit 1 was silent (`A1 = 0`), so that row had **no opinion at all** about that weight. **The arithmetic shows you the silence.**
+**The third line is zero.** Row 3's hidden unit 1 was silent (`A1 = 0`), so that row had **no opinion at all** about that weight. (Going further, row 3's whole mask row is zero, so it contributes nothing to any hidden-layer gradient.) **The arithmetic shows you the silence.**
 
 *(A nice second one to notice: in `dW1[0,0]`, the four products are `1.0 × −0.0772`, `2.0 × −0.0488`, `0.0 × 0.0`, and `−1.0 × 0.0742` — where the third term is zero **twice over**, once because the mask shut it and once because `X` was `0.0` there.)*
 

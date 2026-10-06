@@ -352,7 +352,7 @@ t=0.50  TN= 989 FP=  0 FN=11 TP= 0  precision=0.0000 recall=0.0000
 t=0.20  TN= 989 FP=  0 FN=11 TP= 0  precision=0.0000 recall=0.0000
 t=0.10  TN= 989 FP=  0 FN=11 TP= 0  precision=0.0000 recall=0.0000
 t=0.05  TN= 979 FP= 10 FN= 8 TP= 3  precision=0.2308 recall=0.2727
-t=0.02  TN= 858 FP=131 FN= 6 TP= 6  precision=0.0438 recall=0.5455
+t=0.02  TN= 858 FP=131 FN= 5 TP= 6  precision=0.0438 recall=0.5455
 ```
 
 Its **accuracy** is `0.9890` and its **ROC-AUC** is `0.6485`. Its **average precision** is `0.2125`.
@@ -613,7 +613,7 @@ claim ______ → ________________________________________________
 
 ## 🤔 Think Deeper
 
-**T1.** Your demo has ten minutes and stop 7 is *"here is where it breaks"* — you predict a failure out loud and then run it.
+**T1.** Your demo has ten minutes and stop 6 is *"here is where it breaks"* — you predict a failure out loud and then run it.
 
 **Write a paragraph defending that choice to somebody who says you are sabotaging your own presentation.** Then answer the harder half: **what exactly does a predicted failure prove that a working demo cannot?** Your answer must name something about *you*, not about the model.
 
@@ -650,7 +650,7 @@ ________________________________________________________________
 - [ ] I have rehearsed the cold start in a terminal I opened thirty seconds earlier
 - [ ] **36.2** — all eight answers written out, **each containing a number**
 - [ ] I have said all eight out loud once, with the banned-words list in front of me
-- [ ] my stop-7 failure is chosen, predicted in advance, and reproducible
+- [ ] my stop-6 failure is chosen, predicted in advance, and reproducible
 - [ ] **36.6** — the Level 4 gate self-check, with at least one honest blank
 - [ ] **36.7** — the letter to myself
 
@@ -680,7 +680,7 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**My stop-7 failure, predicted in advance:** input ____________________________ → I say it will come back ____________ at about `p =` ________ **because** ______________________
+**My stop-6 failure, predicted in advance:** input ____________________________ → I say it will come back ____________ at about `p =` ________ **because** ______________________
 
 ---
 
@@ -1028,7 +1028,7 @@ loss with y as (4,1) : 0.025000
 
 **(2)** `nn.Softmax(dim=1)` on the end **and** `nn.CrossEntropyLoss()`, which applies log-softmax itself. **The squash happens twice**, the gradients flatten, and accuracy caps out below where it should. End the model with a bare `nn.Linear`.
 
-**(3)** No `opt.zero_grad()`. Gradients **accumulate** across every batch, so the effective step grows without limit. Nothing raises and every batch does train — all of them with a corrupted, growing gradient. **`zero_grad` is the first line of the inner loop, always.**
+**(3)** No `opt.zero_grad()`. Gradients **accumulate** across every batch, so each update uses the sum of every earlier gradient (with plain SGD the step balloons; with Adam it is rescaled but stale). Nothing raises and every batch does train — all of them with a corrupted, growing gradient. **`zero_grad` is the first line of the inner loop, always.**
 
 **(4)** `fit_transform` on the **whole** table before the split: the scaler learned its mean and standard deviation from rows that are about to become the test set. **Preprocessing leakage.** Reported score too high, sometimes absurdly — Week 6 scored 75% on a table of pure noise this way. **Split first, then put the scaler inside a `Pipeline`.**
 
@@ -1040,7 +1040,7 @@ loss with y as (4,1) : 0.025000
 
 **(a)** *"It never predicts above 0.0907."* The highest probability the model ever produces is `0.0907`, so **every threshold of 0.10 or more produces zero positives, necessarily.**
 
-**(b)** **No, it is not worthless.** The number that proves it: **ROC-AUC `0.6485`** against a coin flip's `0.5000` — and **AP `0.2125`**. It is ranking the frauds above the non-frauds better than chance; it just never crosses 0.5, so the default `predict()` throws all of that ranking away.
+**(b)** **No, it is not worthless.** The number that proves it: **ROC-AUC `0.6485`** against a coin flip's `0.5000` — and **AP `0.2125`**. It is ranking the frauds above the non-frauds better than chance; it just never crosses 0.5, so the default `predict()` throws all of that ranking away. **One honest caveat:** there are only 11 positive rows, so `0.6485` is suggestive, not proven — resampling the same 1,000 rows gives an AUC anywhere from about 0.4 to 0.9. Say the `11` out loud beside the `0.6485`.
 
 **(c)** The AP baseline is the **positive rate**, `11 ÷ 1000 = 0.0110`. So `0.2125 ÷ 0.0110 ≈ 19` — about **19 times baseline.**
 

@@ -186,7 +186,7 @@ Four windows of four. Biggest in each: 9, 3, 3, 8.
   3   8
 ```
 
-**Sixteen numbers became four, and the two loudest (the 9 and the 8) both survived.** That is the deal: you throw away *exactly where* the strong response was and keep *that there was one*. It costs you position and buys you two things — the tensor gets four times smaller, so the next layer is four times cheaper, and the network stops caring whether the edge was at pixel 3 or pixel 4.
+**Sixteen numbers became four, and the two loudest (the 9 and the 8) both survived.** That is the deal: you throw away *exactly where* the strong response was and keep *that there was one*. It costs you position and buys you two things — the tensor gets four times smaller, so the next layer is four times cheaper, and the network cares less about exactly where inside a block an edge was: pixel 4 or pixel 5 gives the same answer, as long as both sit in the same 2×2 block.
 
 And the size check: `(4 + 0 − 2) ÷ 2 + 1 = 1 + 1 = 2`. **The same rule.** Say that out loud; students expect pooling to have its own rule and it does not.
 
@@ -215,7 +215,7 @@ One cell of the first conv's output looked at a 3×3 patch. After a pool, each c
 
 You do not need a formula for this and **you must not teach one**; there is one new piece of maths this week and it is the output-size rule. What you need is the empirical fact, which the stretch code prints: **switch on one pixel at a time and see which ones can change the top-left cell of the final 2×2 map.** The answer is the top-left 7×7 — **49 of the 64 pixels**, clipped by the edge of the picture.
 
-Say it like this: *"by the last layer, one cell is looking at nearly the whole digit. That is why the network can tell a 3 from an 8 and a single conv layer could not."*
+Say it like this: *"by the last layer, one cell is looking at nearly the whole digit. That is part of why a stack of layers can use the whole digit, where one cell of a single conv layer sees only a 3×3 patch."*
 
 ### 7. The three misconceptions you will actually meet
 
@@ -897,7 +897,7 @@ Every message below came from running a broken version of this week's actual cod
 | `RuntimeError: Input type (double) and bias type (float) should be the same` | "Your numbers are 64-bit and the layer's are 32-bit." | `torch.from_numpy(...)` on a numpy array that defaulted to `float64`. | `.float()` right after `from_numpy`, every time. Or build the array with `dtype=np.float32`. |
 | `TypeError: conv2d() received an invalid combination of arguments - got (numpy.ndarray, Parameter, Parameter, ...)` | "That is a numpy array, not a tensor." | A numpy array handed straight to a layer, with no `torch.from_numpy`. | `torch.from_numpy(a).float()`. The clue is the word `numpy.ndarray` in the first line of the message. |
 | **No error. Every conv output is 2 smaller than you expected.** | Nothing crashed. Your ladder is right, your code is not. | `padding=1` was left off. `Conv2d(1, 8, 3)` is `padding=0`. | Add `padding=1`. **And note the trap: `nn.Conv2d(1, 8, 3, 1)` does NOT set padding — the fourth positional argument is `stride`.** Always name it: `padding=1`. |
-| **No error. The shapes are right but the network is 2,000 times bigger than you expected.** | Nothing crashed. | The flatten happened before the pools instead of after, so `Linear` got 8 × 8 × 16 = 1,024 inputs instead of 64. | Print the shape on the line before `Flatten()`. **The ladder is not decoration; it is the audit.** |
+| **No error. The shapes are right but the network is bigger than you expected.** | Nothing crashed. | The flatten happened before the pools instead of after, so `Linear` got 8 × 8 × 16 = 1,024 inputs instead of 64 — a `Linear` layer 16 times bigger (10,250 weights and biases instead of 650). | Print the shape on the line before `Flatten()`. **The ladder is not decoration; it is the audit.** |
 
 ### How to teach debugging without giving the answer
 
@@ -1026,7 +1026,7 @@ RuntimeError: mat1 and mat2 shapes cannot be multiplied (4x64 and 32x10)
 ### Variation — harder
 
 1. **Add a third block and predict it before running.** After `(4, 16, 2, 2)`, another pad-1 conv with 32 filters keeps 2×2 → `(4, 32, 2, 2)`, and then a third pool gives `(4, 32, 1, 1)`, flatten `(4, 32)`. **And then ask for a fourth pool.** It errors: `Given input size: (32x1x1). Calculated output size: (32x0x0). Output size is too small.` Genuinely satisfying to predict an error and be right.
-2. **Do the whole ladder again with every `padding=1` removed.** 8 → 6 → 3 → 1 → **the pool fails**. Then the question: *"how many pad-free conv-pool blocks does an 8×8 picture support?"* Two, and the second one only just.
+2. **Do the whole ladder again with every `padding=1` removed.** 8 → 6 → 3 → 1 → **the pool fails**. Then the question: *"how many pad-free conv-pool blocks does an 8×8 picture support?"* One complete block: the second conv still fits (down to 1×1), but the pool after it fails.
 3. **Replace the pools with stride-2 convs.** `Conv2d(8, 16, 3, stride=2, padding=1)` on a 8×8 gives `(4, 16, 4, 4)` — the same shape as conv-then-pool, in one layer instead of two. Then the honest question: *"what is different, if the shapes are identical?"* The stride-2 conv has weights and can learn what to keep; the pool always keeps the biggest. **That is a real answer to a real question and it is a level-5 conversation.**
 4. **Work backwards.** *"I want the flatten to give exactly 100 numbers, starting from an 8×8. Find a stack that does it."* One answer: 25 filters and two pools, since `25 × 2 × 2 = 100`. There are others. Genuinely hard and completely checkable.
 5. **The receptive field, empirically.** Switch on one pixel at a time and see which ones can change the top-left cell of the final 2×2 map. The code is in the Answer Key under page 25.7. The answer is the top-left **7×7 — 49 of the 64 pixels.** Then the good question: *"why not all 64?"* Because the top-left cell is in the corner, and the corner's window is clipped by the edge of the picture.
@@ -1059,7 +1059,7 @@ The trade is: made-up zeros at the border, or the border barely counted at all (
 
 The shapes come out identical. `conv(pad 1) → pool 2` and `conv(stride 2, pad 1)` both take an 8×8 to a 4×4. So the argument is about what happens to the *numbers*.
 
-**The case for pooling:** it has no weights, so it cannot overfit, it costs nothing to store, and "keep the biggest response in this neighbourhood" is a sensible, human-understandable thing to do. It was in LeNet in 1998 and it is still in half the networks people build today.
+**The case for pooling:** it has no weights, so it adds nothing to overfit with, it costs nothing to store, and "keep the biggest response in this neighbourhood" is a sensible, human-understandable thing to do. It was in LeNet in 1998 and it is still in half the networks people build today.
 
 **The case for stride-2 convolution:** the pool throws information away according to a rule *you* chose, before the network had any say. A stride-2 conv has weights, so it can **learn** what to keep. Several influential papers around 2015 argued pooling was an unnecessary hand-designed step and got fine results without it.
 
@@ -1157,7 +1157,7 @@ Then three questions and nothing else: **"which number stayed 1? which number be
 
 None of these need syntax from a later week.
 
-1. **The pad-free ladder** (Variation-harder 2): 8 → 6 → 3 → 1 → error. Then *"how many blocks does an 8×8 support without padding?"* Two. **This is the best five minutes available today** because it makes padding's purpose arithmetical rather than decorative.
+1. **The pad-free ladder** (Variation-harder 2): 8 → 6 → 3 → 1 → error. Then *"how many complete conv-pool blocks does an 8×8 support without padding?"* One (a second conv fits, its pool does not). **This is the best five minutes available today** because it makes padding's purpose arithmetical rather than decorative.
 2. **Stride-2 conv versus conv-then-pool** (Variation-harder 3): identical shapes, different behaviour. Then *"which would you choose, and can you prove it?"* They cannot prove it, nobody can, and finding that out is the lesson.
 3. **Work backwards to a flatten of exactly 100** (Variation-harder 4). Genuinely hard, completely checkable.
 4. **The receptive field, empirically** (Variation-harder 5). The code is in the Answer Key. The answer is 49 of 64 pixels, and the follow-up — *"why not all 64?"* — is a level-5 question.
@@ -1357,7 +1357,7 @@ for tag, n, k, s, p, kind in CASES:
 
 **The four rows to talk about, and it is worth doing in Week 26's first two minutes:**
 
-- **(b) and (e) both give 8 back.** `k=3, p=1` and `k=5, p=2`. **The pattern is `p = (k − 1) ÷ 2`**, so `k=3 → p=1`, `k=5 → p=2`, `k=7 → p=3`. A student who spots that has found same padding by themselves and should be told so.
+- **(b), (e) and (l) all give the starting size back.** `k=3, p=1` (on an 8 and on a 4) and `k=5, p=2`. **The pattern is `p = (k − 1) ÷ 2`**, so `k=3 → p=1`, `k=5 → p=2`, `k=7 → p=3`. A student who spots that has found same padding by themselves and should be told so.
 - **(f) and (i) both need rounding down**, and they are the two rows most people get wrong. Both come out to `2.5 → 2`.
 - **(i) with an odd input:** 7 is odd, so a 2×2 pool cannot halve it evenly. It gives 3, not 3.5 and not 4. **The last column of the picture is simply dropped**, and that is worth knowing before it happens to somebody's data.
 - **(j) has stride 3 and a window of 3**, which means the windows do not overlap at all: squares 0–2, then 3–5. Two positions, no double-counting. **Stride equal to the window size is exactly the non-overlapping case, which is what pooling almost always does.**
@@ -1463,7 +1463,7 @@ count: 49 of 64
 
 **The answer: the top-left 7×7 — 49 of the 64 pixels.** That region is the **receptive field** of that cell.
 
-**And the good follow-up, which is why this is the stretch:** *"why not all 64?"* Because that cell is in the corner, so its window is clipped by the edge of the picture. **A cell in the middle of a bigger picture would see 10×10.** Two convs and two pools reach further than the 8×8 picture is wide, which is why the last layer of this stack can, in effect, look at nearly the whole digit at once — and it is why a single conv layer, which can only ever see 3×3, could never tell a 3 from an 8.
+**And the good follow-up, which is why this is the stretch:** *"why not all 64?"* Because that cell is in the corner, so its window is clipped by the edge of the picture. **A cell in the middle of a bigger picture would see 10×10.** Two convs and two pools reach further than the 8×8 picture is wide, which is why the last layer of this stack can, in effect, look at nearly the whole digit at once — whereas one cell of a single conv layer sees only a 3×3 patch.
 
 **Do not turn this into a formula.** The count is the lesson.
 
@@ -1499,7 +1499,7 @@ count: 49 of 64
 
 **Variation-harder 1 — a third block, then a fourth pool.** Third pad-1 conv with 32 filters: `(4, 32, 2, 2)`. Third pool: `(4, 32, 1, 1)`, and the flatten would be `32 × 1 × 1 = 32`. **A fourth pool errors:** `RuntimeError: Given input size: (32x1x1). Calculated output size: (32x0x0). Output size is too small.`
 
-**Variation-harder 2 — the pad-free ladder.** `8 → 6` (conv), `→ 3` (pool), `→ 1` (conv), and then the pool fails. **So an 8×8 picture supports two pad-free conv-pool blocks, and the second one only just.** That is the arithmetical reason padding exists.
+**Variation-harder 2 — the pad-free ladder.** `8 → 6` (conv), `→ 3` (pool), `→ 1` (conv), and then the pool fails. **So an 8×8 picture supports only one complete pad-free conv-pool block: the second conv fits, but the pool after it fails.** That is the arithmetical reason padding exists.
 
 **Variation-harder 3 — stride-2 conv versus conv-then-pool.** `Conv2d(8, 16, 3, stride=2, padding=1)` on `(4, 8, 8, 8)` gives `(4, 16, 4, 4)` — identical to conv-then-pool. **What differs is that the strided conv has weights and can learn what to keep, while the pool always keeps the biggest.** Which is better is not settled; see the Questions section.
 

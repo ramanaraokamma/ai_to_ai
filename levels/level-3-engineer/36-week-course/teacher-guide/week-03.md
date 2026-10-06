@@ -143,7 +143,7 @@ Now put the **raw** numbers into those four slots instead — change nothing els
 
 **1.000. Absolute, total certainty.** And no error. No warning. No pink text. A number that a dashboard would print, that a dispatcher would believe, and that is wrong.
 
-**Why it goes to 1.000, and this is worth being able to explain rather than assert:** the model learned its numbers on a world where `distance_km` sits around 0 and rarely leaves −2 to +5. You have just handed it 7.4 — not 7.4 kilometres, 7.4 *on the prepared scale*, which is off the end of anything it ever saw. And 22.0 for prep minutes, which is off the end of the end. The numbers are **4 to 30 times too big**, so the model is 4 to 30 times too sure. It is not confused. It is answering exactly the question it was asked, and the question was nonsense.
+**Why it goes to 1.000, and this is worth being able to explain rather than assert:** the model learned its numbers on a world where `distance_km` sits around 0 and rarely leaves −2 to +5. You have just handed it 7.4 — not 7.4 kilometres, 7.4 *on the prepared scale*, which is off the end of anything it ever saw. And 22.0 for prep minutes, which is off the end of the end. The numbers are **4 to 30 times too big**, so the sum the model adds up is thrown far off the end of its scale — and because all four of these numbers carry a positive weight (further, more items, longer prep, later hour all push towards *late*), it is thrown towards 1.000. A number with a negative weight, such as driver experience, would be thrown the other way, towards 0.000: being huge is what makes the answer extreme, and the weights decide which extreme. (To isolate the damage, this demonstration pastes the four raw numbers into the prepared row and leaves everything else alone. Forgetting the preparation on the real table would more likely stop with an error about the words.) It is not confused. It is answering exactly the question it was asked, and the question was nonsense.
 
 > **Pipeline** — a single object that holds several steps in a fixed order. Calling `fit` on it fits every step in order. Calling `predict_proba` on it runs every step in order. It has one name.
 
@@ -167,7 +167,7 @@ the centre of the ruler the pipeline learns
   mean distance_km, all 2000 rows   : 3.5193
 ```
 
-**Two different medians. Two different centres.** And the honest part, which you must say out loud: with this data the difference in AUC is about **0.0001** — far too small to notice. **That is precisely why it is dangerous.** It does not announce itself, it is invisible in the score, and on a different dataset it is worth 0.05 and nobody ever finds out. `Pipeline` makes it impossible by construction: `pipe.fit(X_train, y_train)` fits the preparation on `X_train` and could not reach the other rows if it wanted to.
+**Two different medians. Two different centres.** And the honest part, which you must say out loud: with this data the difference in AUC is about **0.0001** — far too small to notice. **That is precisely why it is dangerous.** It does not announce itself, it is invisible in the score, and on a different dataset it could be worth 0.05 or more (we have not measured one, but nothing stops it) and nobody ever finds out. `Pipeline` makes it impossible by construction: `pipe.fit(X_train, y_train)` fits the preparation on `X_train` and could not reach the other rows if it wanted to.
 
 *(There is a proper name for this class of mistake and three named kinds of it. That is **Week 6**. Do not name it today.)*
 
@@ -196,7 +196,7 @@ occurrences of  train_test  : 0
 
 **Those three zeros are the test.** Not a feeling about tidiness — a count. If `predict.py` needs to import `make_data`, then the artifact was not the deliverable, and the person you hand it to needs your data before they can use your model.
 
-> **🧑‍🏫 If a student asks:** *"why not just save the numbers to a text file?"* You could, and people do, and it is more work than it sounds. You would have to write out the median, five means, five widths, fifteen category names in the right order, and twenty-one coefficients — and then write the code that applies them in the right order, and keep that code in step with the training code forever. `joblib` writes all of it, in the right order, in one line. **The reason to know it is a pickle-shaped file and not a magic box** is honesty about its one real weakness: see the Questions section on version mismatches.
+> **🧑‍🏫 If a student asks:** *"why not just save the numbers to a text file?"* You could, and people do, and it is more work than it sounds. You would have to write out the median, five means, five widths, fifteen category names in the right order, and twenty-one coefficients — and then write the code that applies them in the right order, and keep that code in step with the training code forever. `joblib` writes all of it, in the right order, in one line. **The reason to know it is a pickle-shaped file and not a magic box** is honesty about its one real weakness: see the Questions section on version mismatches. **And the second weakness, which the Questions section does not cover:** loading a pickle-shaped file can execute arbitrary code, so `joblib.load` must only ever be run on files from a source you trust. Say it in one sentence when the file first crosses to `predict.py`.
 
 ### 6. The model card: seven headings, twenty minutes
 
@@ -256,7 +256,7 @@ number_route = Pipeline(steps=[
 ])
 ```
 
-A `Pipeline` of two steps. **`steps=` takes a list, and each item in the list is a pair in round brackets: a name you invent, then the tool.** The name is yours — `"fill_holes"` could be `"bob"` — and its only job is to let you refer to that step later. **Order matters and it is the order they run in:** fill the holes first, then put things on one ruler, because you cannot compute a ruler over a column with holes in it.
+A `Pipeline` of two steps. **`steps=` takes a list, and each item in the list is a pair in round brackets: a name you invent, then the tool.** The name is yours — `"fill_holes"` could be `"bob"` — and its only job is to let you refer to that step later. **Order matters and it is the order they run in:** fill the holes first, then put things on one ruler, because we want the ruler measured on complete columns. (Swapping them does **not** error — `StandardScaler` skips the holes when learning the ruler and passes them through, and the imputer then fills them — but the numbers differ slightly; e.g. the Worked Example 1 column becomes -0.743 / 0.650 / -1.207 / -0.279 / 1.578 / -0.279 instead of -0.758 / 0.758 / -1.263 / -0.253 / 1.769 / -0.253.)
 
 ```python
 prep = ColumnTransformer([
@@ -319,7 +319,7 @@ The most common version of this is a `predict.py` that imports `make_data`, spli
 
 **Misconception 3 — "the model card is paperwork we do at the end if there's time."**
 
-Half of the card cannot be written at the end. Heading 5 says whether the test pile was opened — and if you write that after five weeks of poking about, you will write what you wish were true. Heading 1 says what it is for, which is Week 1's card one and card two. **The card is not a report; it is the contract, updated.** The cure is to point at the Week 1 index cards: three of the seven headings are already written, in their own handwriting, from two weeks ago.
+Half of the card cannot be written at the end. Heading 5 says whether the test pile was opened — and if you write that after five weeks of poking about, you will write what you wish were true. Heading 3 (the unit of prediction) is Week 1's card one, heading 4's feature list is card three and heading 6's metric is card five; headings 1 and 2 are new. **The card is not a report; it is the contract, updated.** The cure is to point at the Week 1 index cards: three of the seven headings are already written, in their own handwriting, from two weeks ago.
 
 ### 9. How deep to go, and where to stop
 
@@ -719,7 +719,7 @@ no error, no warning, difference = 0.017
 
 1. **The Hook is the two boxes.** Hold up two envelopes. *"Two things to remember, in order. What happens when you forget one?"* Then put one inside the other. *"Now how many things?"*
 2. **The switchboard is arithmetic.** On paper: five number columns stay five. Restaurant has 5 values, day has 7, weather has 3 — so 5 + 7 + 3 = 15. Total 5 + 15 = **20.** That is objective 1, complete, with a pencil.
-3. **The forgotten-preparation disaster works on paper too**, with the four numbers from the table above: the model expected numbers around 1.793, 0.811, 2.008, 0.662 and got 7.4, 5.0, 22.0, 19.0 — **four to thirty times too big.** *"So will it be more sure or less sure?"* More. 1.000.
+3. **The forgotten-preparation disaster works on paper too**, with the four numbers from the table above: the model expected numbers around 1.793, 0.811, 2.008, 0.662 and got 7.4, 5.0, 22.0, 19.0 — **four to thirty times too big.** *"So will the answer be more extreme or less extreme?"* More extreme — and all four numbers push towards *late*, so it goes to 1.000. (A negatively-weighted number such as driver experience would push towards 0.000.)
 4. **The model card is the homework anyway.** Seven headings, on paper, filled in from the Week 1 index cards and the Week 2 box. **That is objective 4, complete**, and it is the part of this week most likely to be remembered in five years.
 
 | If this fails | Do this instead |
@@ -791,7 +791,7 @@ damage             = 0.291
 >
 > **One point zero zero zero.** Total, absolute certainty. And no error. No warning. No red text. Nothing at all.
 >
-> Why is it so sure? Because it learned on a world where those numbers sit around zero and rarely leave minus two to plus five. I've just handed it twenty-two. The numbers are **four to thirty times too big**, so it's four to thirty times too sure. It isn't confused. It answered the question I asked, and my question was nonsense."
+> Why is it so sure? Because it learned on a world where those numbers sit around zero and rarely leave minus two to plus five. I've just handed it twenty-two. The numbers are **four to thirty times too big**, so the answer gets thrown off the end of the scale — and these four all push towards late, so it goes to 1.000. It isn't confused. It answered the question I asked, and my question was nonsense."
 
 **Do this:** Now pick up the two envelopes, and slide one inside the other. Hold up the outer one.
 
@@ -814,7 +814,7 @@ damage             = 0.291
 | Ask | Answer you want | If they say something else |
 |---|---|---|
 | "Two objects, right order. What if you forget one?" | You get a confident, wrong answer with no error. | "It crashes" is the expected answer — reward the instinct and then show the screen. That gap is the lesson. |
-| "Why is the model so *sure* rather than just wrong?" | The numbers are far bigger than anything it trained on, so it is far more confident. | If stuck: "22 instead of 2. Ten times bigger. So ten times more…?" |
+| "Why is the model so *sure* rather than just wrong?" | The numbers are far bigger than anything it trained on, so the sum it adds up is thrown off the end of the scale — and these four all push towards late, so the answer is pushed to 1.000. | If stuck: "22 instead of 2. Ten times bigger. So the push towards *late* is ten times bigger too — what does that do to the answer?" |
 | "How many things to remember with one envelope inside another?" | One. | If they say two, hold up only the outer envelope: "how many am I holding?" |
 | "So is the pipeline a better model?" | No — the same model, with no way to reach it wrongly. | Point at the first line of the output: 0.7541 either way. **The identical AUC is the proof.** |
 | "What would you hand to the pizza company?" | The file. | "The code" is the common answer — then ask: "and do they have your data? your Python? your version of scikit-learn?" |
@@ -914,7 +914,7 @@ the centre of the ruler the pipeline learns
 >
 > Now the honest part, and I want you to feel how uncomfortable it is: on this data, doing it wrong changes the AUC by about **one ten-thousandth.** You would never, ever notice.
 >
-> **That's exactly why it's dangerous.** It doesn't announce itself, it's invisible in the score, and on somebody else's data it's worth 0.05 and nobody ever finds out. So we don't remember to avoid it. **We build a shape where it can't happen:** `pipe.fit(X_train, y_train)` fits the preparation on the training rows and could not reach the others if it wanted to."
+> **That's exactly why it's dangerous.** It doesn't announce itself, it's invisible in the score, and on somebody else's data it could be worth 0.05 or more (we haven't measured one, but nothing stops it) and nobody ever finds out. So we don't remember to avoid it. **We build a shape where it can't happen:** `pipe.fit(X_train, y_train)` fits the preparation on the training rows and could not reach the others if it wanted to."
 
 **Ask this:**
 
@@ -996,7 +996,7 @@ prep = ColumnTransformer([
 
 > **Say this:** "`Pipeline(steps=[...])` — a list, and each item in the list is a **pair in round brackets: a name you invent, then the tool.** The name is genuinely yours. `"fill_holes"` could be `"bob"`. It's a label so you can refer to that step later.
 >
-> And the order is the order they run in. Fill the holes **first**, then the ruler — because you can't compute a ruler over a column with holes in it. Swap those two lines and you get an error, and it is a fair error.
+> And the order is the order they run in. Fill the holes **first**, then the ruler — because we want the ruler measured on complete columns. Swap those two lines and, be ready for this, you do *not* get an error — the ruler just quietly ignores the holes and the numbers come out slightly different. Silent again.
 >
 > Then the switchboard. Each route is a **triple: a name, a treatment, and the list of columns it applies to.** Route `num` sends `number_route` at the five number columns. Route `cat` sends the word-splitter at the three word columns.
 >
@@ -1413,9 +1413,9 @@ both         : 0.7541   columns out 20
 baseline     : 0.5000
 ```
 
-   Then the real question: *"0.7112 and 0.5982. Add up how far each is above 0.5 — that's 0.2112 and 0.0982, which is 0.3094. But both together is only 0.2541 above. Where did the other 0.0553 go?"* **Because the two sets of columns partly say the same thing** — a storm and a long distance are both "this will be slow". Information does not add up like money. *(This is Week 5 and Week 7 arriving early, and it is the best question available today.)*
+   Then the real question: *"0.7112 and 0.5982. Add up how far each is above 0.5 — that's 0.2112 and 0.0982, which is 0.3094. But both together is only 0.2541 above. Where did the other 0.0553 go?"* **Because AUC gains do not add up like money** — the AUC measures how well the *whole ranking* of orders is ordered, and combining two sets of clues does not add their separate gains. (In this table the weather and the distance are generated independently, so it is *not* that they "say the same thing"; do not tell the student that. Columns that genuinely overlap would shrink the combined gain further, which is what Week 5 and Week 7 return to.) *(This is Week 5 and Week 7 arriving early, and it is the best question available today.)*
 
-2. **Predict the artifact's size before saving it.** Have them list what must be inside: 1 median × 5 columns, 1 centre and 1 width × 5 columns, 15 category names, 20 coefficients and 1 intercept. That is roughly 56 numbers and 15 words. **So why is the file 5002 bytes rather than about 500?** Because a `.joblib` file also stores *what kind of object each thing is* so it can be rebuilt — the machinery, not just the numbers. **Most of those five kilobytes is scaffolding.**
+2. **Predict the artifact's size before saving it.** Have them list what must be inside: 1 median × 5 columns, 1 centre and 1 width × 5 columns, 15 category names, 20 coefficients and 1 intercept. That is roughly 36 numbers and 15 words. **So why is the file 5002 bytes rather than about 500?** Because a `.joblib` file also stores *what kind of object each thing is* so it can be rebuilt — the machinery, not just the numbers. **Most of those five kilobytes is scaffolding.**
 
 3. **Save the model without the preparation, on purpose, and hand it to a partner** with the instruction "predict on this order". Watch what they do. Either they get a shape error, or — worse and more instructive — they hand it raw numbers and get a confident answer. **The best version of this week's lesson is having it happen to you.**
 
@@ -1491,7 +1491,7 @@ What we can say today: the model is definitely learning something real about the
 
 Because a model is a surprisingly small number of numbers.
 
-Count them: 5 medians, 5 centres, 5 widths, 15 category names, 20 coefficients and 1 intercept. That is about 56 numbers and 15 short words — which is maybe 500 bytes of actual information. The other 4,500 bytes are the file describing **what kind of object each piece is**, so that `joblib.load` can rebuild the same structure rather than just handing you a pile of numbers.
+Count them: 5 medians, 5 centres, 5 widths, 15 category names, 20 coefficients and 1 intercept. That is about 36 numbers and 15 short words — which is maybe 500 bytes of actual information. The other 4,500 bytes are the file describing **what kind of object each piece is**, so that `joblib.load` can rebuild the same structure rather than just handing you a pile of numbers.
 
 Worth saying, because it is the thing that scales: the file is small because **logistic regression is small.** By Week 26 the student will build a network whose artifact is a few hundred kilobytes, and by the end of Level 4 they will read about models whose artifacts are hundreds of gigabytes. **The five kilobytes is not a property of the technique; it is a property of this particular model.**
 
@@ -1545,7 +1545,7 @@ The honest caveat: some models do not need some of the preparation. A decision t
 | **`predict.py` is a copy of `train_pipeline.py` with the top deleted** | Copying is faster than typing, and it looks like the same result | This is the failure mode of the week and it is why we **count**. Run `clean_room_check.py` and let the number be the verdict. Then insist on a genuinely new file — the point is that the eight column names came from their card, not from the training file. |
 | **The 0.709-to-1.000 demo gets a shrug** | 1.000 looks like a *good* number to somebody who has only seen scores | Say the sentence that reframes it: *"a probability of 1.000 means the model thinks there is no chance whatsoever that this pizza arrives on time. Is that a thing you believe?"* **Certainty is the alarm, not the achievement.** |
 | **The count comes out `(1200, 19)` or `(1200, 22)`** | One of 5, 7, 3 was miscounted, or a name is misspelled | Do not fix it for them. Have them print the three `nunique()` calls and find which of the three numbers disagrees with their pen. **The debugging is the exercise.** |
-| **The model card gets treated as homework padding** | It is writing, and writing feels like the bit that does not count | Point at the Week 1 index cards. **Three of the seven headings are already written, in their handwriting, from two weeks ago.** The card is not new work; it is the contract with two more weeks of facts in it. |
+| **The model card gets treated as homework padding** | It is writing, and writing feels like the bit that does not count | Point at the Week 1 index cards. **Three of the seven headings (3, 4's feature list and 6's metric) are already written, in their handwriting, from two weeks ago.** The card is not new work; it is the contract with two more weeks of facts in it. |
 | **Heading 2 gets left blank or filled with "nothing"** | It is hard to imagine misuse of your own work | Give them the driver-pay example out loud and watch the reaction. Then: *"you can see why that's wrong. Will the person who finds this file in eight months?"* |
 | **Somebody proposes running on the test pile "since we've got a model now"** | It is the obvious next step and it is one line | "Heading 5 of your card says *test pile not opened*. You're about to make your own card a lie in the same lesson you wrote it." Then: *"and what would you do with the number? Nothing is allowed to change because of it."* |
 | **The wrong-order `TypeError` causes real confusion** | It fires at `fit`, not where the mistake was typed, and it is long | Point at the line number *first*, before reading the message. *"It's pointing at line 46. Where did I actually make the mistake?"* Line 41, where the pipeline was built. **An error's line number is where it was noticed, not where it was caused** — and that is a lesson worth more than the fix. |
@@ -1606,7 +1606,7 @@ Then three questions and nothing else: **"is there any training in that file? wh
 None of these need syntax from a later week.
 
 1. **How much is each route worth?** (Variation-harder 1) — numbers only 0.7112, words only 0.5982, both 0.7541, and the question of where the missing 0.0553 went. **This is the best question available today.**
-2. **Predict the artifact's size before saving it** (Variation-harder 2), then explain why 56 numbers take five kilobytes.
+2. **Predict the artifact's size before saving it** (Variation-harder 2), then explain why 36 numbers take five kilobytes.
 3. **Hand a partner a model with no preparation** (Variation-harder 3) and watch the disaster happen to somebody else. Then have both of them write it in the Bug Log.
 4. **Write the out-of-scope section properly** (Variation-harder 4), including the genuinely hard third case about which restaurants stay on the app.
 5. **Corrupt the artifact in a text editor** (Variation-harder 5) and read the resulting mess. Then the question: *"how could a file tell you it had been damaged?"* (A checksum. Week 34.)
@@ -1682,7 +1682,7 @@ Three checks, five minutes, exact wording.
 | **2 — Emerging** | Builds the pipeline by copying, and it runs. Saves and loads the artifact when told to. Fills in the card's headings with short answers, mostly copied from the board. |
 | **3 — Secure** | Assembles the two routes and can say which columns go down each and why. **Explains that welding makes forgetting impossible rather than unlikely, and names the silent 1.000 as the evidence.** Writes a `predict.py` with no training code in it and proves it by counting. Writes all seven headings with the real numbers. **This is the target.** |
 | **4 — Strong** | Counts 5 + 5 + 7 + 3 = 20 on paper before running anything. Explains that the preparation *learns* numbers, and that this is a second reason for the weld. Reads `columns are missing: {'weather'}` and goes straight to the named column. Writes a heading 7 nobody dictated. |
-| **5 — Exceptional** | Notices that numbers-only plus words-only is more than both together, and explains it as the two column sets partly saying the same thing. Argues that `handle_unknown="ignore"` is the right choice *and* a documented limitation, holding both at once. Asks what is missing from the seven headings — a date, a version, when to retrain — without being prompted. |
+| **5 — Exceptional** | Notices that the separate gains of numbers-only (0.2112) and words-only (0.0982) add up to more than the combined gain (0.2541), and can say that AUC gains do not simply add. Argues that `handle_unknown="ignore"` is the right choice *and* a documented limitation, holding both at once. Asks what is missing from the seven headings — a date, a version, when to retrain — without being prompted. |
 
 ---
 
@@ -1789,7 +1789,7 @@ restaurants: 5  days: 7  weathers: 3
 | (d) | What is P(late) with the raw numbers instead? | **1.000** |
 | (e) | Do the subtraction | **1.000 − 0.709 = 0.291** |
 | (f) | What error message do you get? | **None at all.** No error, no warning. |
-| (g) | Why is the model *more* sure rather than just wrong? | The raw numbers are 4 to 30 times bigger than anything it trained on, so it is 4 to 30 times more confident. |
+| (g) | Why is the model *more* sure rather than just wrong? | The raw numbers are 4 to 30 times bigger than anything it trained on, so the answer is thrown off the end of its scale; these four all have positive weights, so it goes towards 1.000 (a negatively-weighted column such as driver experience would send it towards 0.000). Not "4 to 30 times" anything — the probability is not linear in the inputs. |
 
 **3.3(h) The two-loose-objects version and the pipeline version scored the same validation AUC. What number, and why does that matter?**
 **0.7541, both.** It matters because it proves the pipeline is **not a better model** — it is the same model with no way to reach it wrongly. Real output:
@@ -1891,7 +1891,7 @@ This is the marked page. Model answer, as a real markdown file:
 > **One row is one pizza order.** One prediction per order, made at the moment the order is placed.
 >
 > ## 4. Training data
-> 2,000 rows, generated by `make_data.py` with `seed=0`. Originally 2,020 rows; **20 exact duplicate rows removed** before splitting. 8 features: `restaurant`, `distance_km`, `items`, `prep_minutes`, `order_hour`, `day_of_week`, `weather`, `driver_experience_months`. Two columns excluded: `late` (that is y) and `order_id` (an ID — 2,000 different values in 2,020 rows). 108 cells of `driver_experience_months` were empty and are filled with the **training** median (30.0).
+> 2,000 rows, generated by `make_data.py` with `seed=0`. Originally 2,020 rows; **20 exact duplicate rows removed** before splitting. 8 features: `restaurant`, `distance_km`, `items`, `prep_minutes`, `order_hour`, `day_of_week`, `weather`, `driver_experience_months`. Two columns excluded: `late` (that is y) and `order_id` (an ID — 2,000 different values in 2,020 rows). 106 cells of `driver_experience_months` (108 before the duplicates went) were empty and are filled with the **training** median (30.0).
 > Written with scikit-learn 1.7.1, pandas 1.5.3, numpy 1.26.4, joblib 1.2.0 — **the artifact is only reliably loadable by these versions.**
 >
 > ## 5. Splits
@@ -1903,7 +1903,7 @@ This is the marked page. Model answer, as a real markdown file:
 > ## 7. Known limitations
 > - **A restaurant, day or weather the model has never seen becomes all zeros, and it answers anyway with no warning.** Measured: an identical order from `SliceHouse` gives 0.291, and from an unseen `PizzaNova` gives 0.308.
 > - The data is generated, not collected, so its mess is *designed* mess. Real tables contain problems nobody planned.
-> - 108 driver-experience values were filled in with a single median, so any pattern in *why* they were missing has been thrown away.
+> - 106 driver-experience values were filled in with a single median, so any pattern in *why* they were missing has been thrown away.
 > - The model has never been measured on the test pile, so **every number here is a validation number** and is mildly optimistic.
 > - No date and no version number beyond "v1" — see below.
 
@@ -1915,7 +1915,7 @@ This is the marked page. Model answer, as a real markdown file:
 4. **Is heading 7 in their own words and about something they actually saw?** The PizzaNova result, or the generated data, or the 108 filled holes. **Copied generalities earn nothing.**
 
 **3.5(a) Which three headings could you have written in Week 1?**
-**1 (intended use), 2 (out-of-scope use) and 3 (unit of prediction)** — and heading 3 is word for word Week 1's index card one. *(A good answer also spots that heading 6's *metric* was committed in Week 1 on card five, even though the number was not.)*
+**3 (unit of prediction, Week 1's card one), 4 (the feature list, card three) and 6 (the metric, committed on card five, though the number came later).** Headings 1 and 2 (intended use, out-of-scope use) are *new* this week — Week 1's cards do not contain them, so a student who claims them has not been checking.
 
 **3.5(b) Name something a real model card should have that our seven headings do not.**
 Any of: **a date**, **a version number**, **who to contact**, **when it should be retrained**, **who is accountable for it**, **what data it must never be run on**. All are real; all are Week 34's subject. **The best answer is "when should this file be thrown away?"**
@@ -1988,7 +1988,7 @@ Model, two rows:
 ### Answers to every question posed in the lesson
 
 - *"Two objects, right order. What if you forget one?"* → A confident, wrong answer, with no error at all. 0.709 becomes 1.000.
-- *"Why is the model more *sure* rather than just wrong?"* → The raw numbers are 4 to 30 times bigger than anything it trained on.
+- *"Why is the model more *sure* rather than just wrong?"* → The raw numbers are 4 to 30 times bigger than anything it trained on, and all four push towards late, so the sum is thrown far up the scale (negative weights would throw it down).
 - *"How many things to remember with one envelope inside another?"* → One.
 - *"So is the pipeline a better model?"* → No. Identical AUC, 0.7541 either way. It is the same model with no way to reach it wrongly.
 - *"What would you hand the pizza company?"* → The `.joblib` file and the card.

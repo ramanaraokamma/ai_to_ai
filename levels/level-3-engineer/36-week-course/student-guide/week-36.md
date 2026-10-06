@@ -93,7 +93,7 @@ Without a route you will spend six of your ten minutes opening folders and apolo
 
 **Three — the six-minute apology.** *"So, um, it's not really finished, but…"* **Fix: ban the preamble.** Your first words are the first line of your contract.
 
-> **⚠️ Watch out:** **stop 7 is where you show a failure on purpose** — predicted in advance. *"Watch. This is a positive review. It will call it negative, at about 0.49, because `boring` is a strong negative feature and `not` is nearly weightless."* Then run it and be right. **That is the single most impressive thing anybody will do today**, and it is more impressive than a demo where everything works.
+> **⚠️ Watch out:** **stop 6 is where you show a failure on purpose** — predicted in advance. *"Watch. This is a positive review. It will call it negative, at about 0.49, because `boring` is a strong negative feature and `not` is nearly weightless."* Then run it and be right. **That is the single most impressive thing anybody will do today**, and it is more impressive than a demo where everything works.
 
 ### 2. The eight questions, and the number each answer needs
 
@@ -511,7 +511,7 @@ negative p=0.4887  (threshold 0.65, model sentiment_v1, 0.36 ms, loaded in 630 m
 
 **Stop 7 — monitoring (1 min).**
 
-> *"I watch the share of predictions landing between 0.45 and 0.65. Today that is 16 of 111, which is 14.4 per cent. My alarm is a weekly mean above 40 per cent. **I can compute it with no labels at all**, which matters because in production nobody ever tells me the right answer. If it trips, I pull the 16 nearest the fence and read them. And one thing I would deliberately not do: retrain on my own predictions."*
+> *"I watch the share of predictions landing between 0.45 and 0.65. Today that is 16 of 111, which is 14.4 per cent. My alarm is a weekly mean above 40 per cent. **I can compute it with no labels at all**, which matters because in production the right answer almost never comes back in time. If it trips, I pull the 16 nearest the fence and read them. And one thing I would deliberately not do: retrain on my own predictions."*
 
 ### Worked Example 2 — The eight answers, marked
 

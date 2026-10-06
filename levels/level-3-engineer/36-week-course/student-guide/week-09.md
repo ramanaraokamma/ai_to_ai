@@ -113,7 +113,7 @@ Now watch what a different kind of average says about 90 and 10:
 
 > **harmonic mean** — the average you use when you are averaging **rates over the same fixed amount of work**. It is what "average" actually means for a journey with two equal legs at two different speeds.
 
-**This is not a fudge somebody invented to be strict about F1.** Precision and recall are rates over the same fixed pile of transactions. **That is why they get this average and not the other one.**
+**This is not a fudge somebody invented to be strict about F1.** Precision and recall are both rates with the same top line, the true positives (TP ÷ everything flagged, TP ÷ everything really fraud), just as both speeds were the same 60 km over different times. **That is why they get this average and not the other one.**
 
 ![The plain mean is too kind](../figures/fig-w09-1-harmonic-vs-plain-mean.svg)
 *Figure 9.1 — The plain mean is too kind. The harmonic mean always lands near the smaller of the two numbers, and that is the entire point of F1.*
@@ -1123,7 +1123,7 @@ Comparing F1 across two datasets is comparing a maths mark with a history mark. 
 
 1. **Every search-engine paper you will ever read.** F1 came out of document-retrieval research in the 1970s, where the two questions were exactly "how much of what I returned was relevant" and "how much of what was relevant did I return". **It has been the standard single number in that field for fifty years.**
 2. **Kaggle and every other leaderboard.** Competitions on imbalanced data are almost always scored on F1 or something like it, precisely because accuracy would let a one-line model win.
-3. **Your car's fuel economy.** Combining "litres per 100 km in town" and "litres per 100 km on the motorway" into one figure is the same harmonic-mean problem as the drive to your grandmother's house — and it is why the combined figure is always closer to the bad one.
+3. **Your car's fuel economy.** Combining "kilometres per litre in town" and "kilometres per litre on the motorway" over equal distances is the same harmonic-mean problem as the drive to your grandmother's house — the combined figure sits closer to the worse one. (Quote the same cars as litres per 100 km instead and the plain average is the correct one. Which average is right depends on what sits on the bottom of the rate.)
 4. **A cricket or baseball batting average.** Not the harmonic mean, but the same trap: an average that gives every innings an equal vote when they were not equal-sized events. Arguments about "the right average" in sport are exactly this argument.
 5. **Covid testing policy, in every country.** "Sensitivity" is recall, "specificity" is last week's word, and every single argument about testing strategy was an argument about how to combine them into one decision.
 6. **Any medical screening leaflet.** The reason they quote two numbers and not one is that they know somebody will game whichever single number they publish. **Now you know exactly how.**

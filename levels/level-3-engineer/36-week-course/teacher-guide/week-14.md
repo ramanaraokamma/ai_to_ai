@@ -10,7 +10,7 @@
 |---|---|
 | **Duration** | 70 minutes |
 | **Type** | 🟦 Teach — the week the model gets a scoreboard |
-| **Big idea** | Squared error rates a confident disaster only **2.7 times** worse than a near-miss. Log loss rates it **4.3 times** worse and keeps going — which is why every classifier in the world uses log loss. |
+| **Big idea** | Squared error rates a confident disaster only **2.7 times** worse than a near-miss. Log loss rates it **4.3 times** worse and keeps going — which is why logistic regression and neural-network classifiers are trained on log loss. |
 | **New vocabulary** | log loss / cross-entropy · squared error · surprise · numerical guard / clipping · confidently wrong |
 | **New maths** | **The natural logarithm `ln`, as a surprise meter.** `−ln(p)` computed for p = 0.9, 0.5, 0.1 and 0.02, read off a curve and checked on a calculator. One button. |
 | **New syntax** | `np.log(x)` · `np.clip(p, 1e-12, 1 - 1e-12)` · `log_loss(y, prob)` |
@@ -197,7 +197,7 @@ log loss            : 0.693147
 ![A loss parked at 0.6931](../figures/fig-w14-4-loss-parked-at-0-6931.svg)
 *Figure 14.4 — A loss parked at 0.6931. Five hundred steps and it has not moved.*
 
-> **🧑‍🏫 If a student asks** "is 0.6931 bad?": it is **exactly average**, in the most literal sense — it is the score of guessing. Anything below it means the model knows something. Anything **above** it means the model is actively worse than guessing, which is a real and alarming thing that happens, and you will see it next week at `lr = 800`.
+> **🧑‍🏫 If a student asks** "is 0.6931 bad?": it is **exactly average**, in the most literal sense — it is the score of guessing. On balanced data, anything below it means the model knows something (on skewed data a model that merely answers the base rate already scores lower: a dataset that is 90% class 1 gives 0.325 for a constant 0.9). Anything **above** it means the model is actively worse than guessing, which is a real and alarming thing that happens, and you will see it next week at `lr = 800`.
 
 ### 6. Every line of `contest.py`, explained to somebody who has never programmed
 
@@ -887,7 +887,7 @@ squared error               (truth − guess)², and it stops at 1
 >
 > If a confidently wrong forecast is catastrophic — a flood warning, a cancer screen, a fraud alert — you want log loss, and CAREFUL wins. If all you care about is being roughly close on average, squared error is defensible, and BOLD wins.
 >
-> **Classification uses log loss. Universally.** And now you know exactly what that choice is buying, and what it is buying it with."
+> **Probability-producing classifiers (logistic regression, neural networks) are trained on log loss.** And now you know exactly what that choice is buying, and what it is buying it with."
 
 **Do this:** Three quick checks — exact wording in **✅ Assessing Understanding**.
 
@@ -1096,7 +1096,7 @@ Also available: hand out a lookup table so there is no calculator work at all.
 
 They are, and any base would give you a working loss function with the same ranking. The choice of `e` is the same choice as last week and for the same reason: **it makes next week's arithmetic come out clean.**
 
-Specifically: next week you need to know how much the loss changes when a weight is nudged. Because `ln` is the exact partner of `e^x`, and the sigmoid is built out of `e^x`, the two cancel and the answer turns out to be **`prediction − truth`**. Nothing else. No logs, no exponentials, no fractions left over. With base 10 you would get the same thing multiplied by 2.3026 forever.
+Specifically: next week you need to know how much the loss changes when a weight is nudged. Because `ln` is the exact partner of `e^x`, and the sigmoid is built out of `e^x`, the two cancel and the answer turns out to be **`prediction − truth`**. Nothing else. No logs, no exponentials, no fractions left over. With base 10 you would get the same thing divided by 2.3026 forever (the whole loss is divided by it, so its slope is too).
 
 So: **`ln` is not a law of nature; it is the base that makes the sigmoid's mess cancel.** And you will watch it cancel next week.
 
@@ -1142,7 +1142,7 @@ It is the same thing under a different name, borrowed from information theory. I
 
 It is exactly what real weather services do, and it is one of the oldest uses of this idea. Forecasters have been scored on probability losses since the 1950s — the squared-error version has a name, the **Brier score**, after the meteorologist who proposed it in 1950, and log loss is used alongside it.
 
-And the argument we just had in class is a real argument that meteorologists have had. **A scoring rule that punishes confident wrongness makes forecasters hedge**; a rule that rewards being roughly right on average makes them commit. Which behaviour you want out of your forecasters depends on what people do with the forecast, and that is not a maths question.
+And the argument we just had in class is a real argument that meteorologists have had. Both rules reward a forecaster for reporting their honest probability; they differ in how hard they punish a confident miss, so they can rank the same forecasters differently. Which ruler you want depends on what people do with the forecast, and that is not a maths question.
 
 ---
 
@@ -1224,7 +1224,7 @@ None of these need syntax from a later week.
 3. **The `0.6931` proof** (harder variation 4). Change the `rained` array to anything at all and watch COIN's score refuse to move. **Then the real question: why does no other forecaster have that property?**
 4. **Beat both scoreboards** (harder variation 2). Design a forecaster that wins the log-loss column *and* the squared-error column. `[0.90, 0.85, 0.15, 0.80, 0.10, 0.15]` does it, at **0.153570** and **0.021250**. The insight — *be confident but never certain* — is exactly what a well-calibrated model looks like.
 5. **The base question, properly.** Show that using `log10` instead of `ln` divides every loss by `2.302585` and therefore never changes any ranking. Then ask the honest follow-up: **if it never changes the answer, why does the choice matter at all?** (Because next week we differentiate it, and the constant would ride along forever.)
-6. **The honest challenge:** *"find a pair of forecasters where log loss and squared error disagree even though neither one ever says anything more extreme than 0.2 or 0.8."* Much harder than it sounds — the disagreement needs a near-certainty to bite. **Discovering that the two rulers mostly agree, and only diverge at the extremes, is a level-5 insight.**
+6. **The honest challenge:** *"find a pair of forecasters where log loss and squared error disagree even though neither one ever says anything more extreme than 0.2 or 0.8."* Such pairs do exist (a random search over values from 0.2 to 0.8 finds them), but the margins between the two forecasters are tiny on both rulers. **Discovering that the rulers agree on clear-cut cases, and that moderate predictions only split near-ties while a confident miss splits them decisively, is a level-5 insight.**
 
 ### If the student won't engage today
 

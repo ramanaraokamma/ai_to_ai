@@ -155,7 +155,7 @@ Then compare against what your `backward` function claimed. Do it for all sixty-
 gradient check (worst relative error): 4.792e-08
 ```
 
-`4.792e-08` is scientific notation for **0.00000004792**. Anything below `1e-6` means the backward pass is correct.
+`4.792e-08` is scientific notation for **0.00000004792**. Anything below `1e-6` means your backward pass agrees with the nudge to about six digits on those rows, which in practice means it is correct.
 
 > **⚠️ Watch out:** this is not a hope, it is a **measurement**. It is the only number today that is a proof rather than an opinion. Nobody trains until their check prints something below `1e-6`.
 
@@ -191,7 +191,7 @@ Six. **Two subtractions and a division, and no calculus at all.** That is the ma
 
 **And here is an honest thing, which you should notice yourself.** The *test* scores are close: 0.9000 against 0.9350. On 200 test rows that is seven points. The place capacity shows up unmistakably is the **training loss** — 0.3693 against 0.1542 — and the **shape of the boundary**. If you look at those two test numbers and think *"I am not sure I believe a difference that small"*, you are right, and that is Week 11's lesson arriving on its own.
 
-**The analogy.** Capacity is **permission to bend, not an instruction to.** Our own sweep found that 1, 2 and 4 units all score exactly 0.8350 on train — four hinges are available and the network only bothers to use one or two, because the loss has nothing to gain from more.
+**The analogy.** Capacity is **permission to bend, not an instruction to.** With seed 0, our sweep found that 1, 2 and 4 units all score exactly 0.8350 on train — four hinges were available and training only made use of one or two. That is not because more bends could not help (16 units reach a train loss of 0.1542 against 0.3565 for 4). Gradient descent can settle into a poor spot, and with other seeds 4 units do reach about 0.93 on train.
 
 ### 5. Watching it learn: colour in the page and the line appears
 
@@ -284,7 +284,7 @@ first loss 0.6628   last loss 0.3693
 test acc 0.9000   dead units 0/1
 ```
 
-**Nothing is broken here.** Nothing dies. The network simply cannot bend: one hinge, so a straight line with at most one kink in it, and the crescents need more bends than that. This one surprises people most, because 0.9000 sounds fine.
+**Nothing is broken here.** Nothing dies. The network simply cannot bend: one hidden unit, so the boundary is still one straight line (there is no second hinge to make a kink against), and the crescents need bends. This one surprises people most, because 0.9000 sounds fine.
 
 ---
 
@@ -523,7 +523,7 @@ def gradient_check(P, X, y, h=1e-6):
 
 **Read it as English.** *For every single knob — nudge it up a hair, see what the loss becomes; nudge it down a hair, see what the loss becomes; the difference divided by twice the hair is the slope. Then compare that against the slope my backward function claimed.*
 
-Two lines deserve a note. `bottom` makes the comparison **relative**: being out by 0.0001 matters if the slope is 0.0002 and does not matter if the slope is 900. And `A[i, j] = orig` — **always put the weight back** — is the line people forget, and forgetting it silently ruins the network you are checking.
+Two lines deserve a note. `bottom` makes the comparison **relative**: being out by 0.0001 matters if the slope is 0.0002 and does not matter if the slope is 900. And `A[i, j] = orig` — **always put the weight back** — is the line people forget. Forgetting it leaves every weight 0.000001 lower than it should be: too small to see in the result, but the check is then no longer looking at the network you trained, which is exactly the habit to avoid.
 
 Then the training loop and the accuracy helper:
 
@@ -1037,7 +1037,7 @@ numpy_brain.py:13: RuntimeWarning: overflow encountered in exp
 
 **What Python is telling you.** *"`e` to the power of a huge number is bigger than a computer can hold."*
 
-This appears during the `lr = 20` sabotage, and it is a **warning**, not an error: the program keeps running and quietly produces `nan` values. `nan` then poisons everything downstream, **including the dead-unit count** — because `nan <= 0` is `False`, so `nan` units get counted as *alive*.
+This appears during the `lr = 20` sabotage (which still finishes with real numbers: loss 0.4493, 13 dead), and it is a **warning**, not an error: the program keeps running. At a still larger rate such as `lr = 100` it goes on to produce `nan` values. `nan` then poisons everything downstream, **including the dead-unit count** — because `nan <= 0` is `False`, so `nan` units get counted as *alive* (we measured 0/16 dead at `lr = 100`).
 
 **The fix.** Turn the learning rate down. And the deeper lesson: **a broken measurement is worse than no measurement**, because it looks like a number.
 
@@ -1053,7 +1053,7 @@ This appears during the `lr = 20` sabotage, and it is a **warning**, not an erro
 | **No error.** Loss starts at `0.9534` instead of `0.8095` | Every number afterwards is about the wrong question | `y = y.reshape(-1, 1)`. **Print `y.shape` before you train, every time** |
 | **No error.** Loss sits on exactly `0.6931` for 500 epochs | The network answers 0.5 to everything, for ever | Weights all started at zero or all equal. `0.6931` is `−ln(0.5)` |
 | **No error.** The gradient check prints `3.4e-01` | Your backward pass is wrong | A transpose in the wrong place, a missing ReLU mask, or a forgotten `/ n`. Check `db2` first — if that one disagrees, the bug is at the output end |
-| **No error.** The gradient check prints `nan` and the weights are strange afterwards | The check broke the network it was checking | `A[i, j] = orig` is missing. **Always put the weight back** |
+| **No error.** The weights differ by about `1e-6` after the gradient check | The check changed the network it was checking | `A[i, j] = orig` is missing. **Always put the weight back** |
 | **No error.** Test accuracy is exactly `0.5000` | The network says the same thing about everything | Print `forward(P, Xte)["A2"][:5]`. All 0.5? See the zero-weights sabotage |
 
 ---
@@ -1147,7 +1147,7 @@ This matters because it explains capacity in one sentence: **you get one hinge p
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "Sixty-four units must beat sixteen. More knobs, more power." | **Measured:** 64 units score **0.9550 on train and 0.9150 on test.** Sixteen score 0.9350 and 0.9350. The big one learned the noise in the training crescents. That is Week 2's overfitting, with a new dial to turn. |
+| "Sixty-four units must beat sixteen. More knobs, more power." | **Measured:** 64 units score **0.9550 on train and 0.9150 on test.** Sixteen score 0.9350 and 0.9350. The big one fits the training crescents more tightly than it generalises, which is the shape of Week 2's overfitting. (One seed, 200 test rows: across five seeds we measured 16 units at 0.920–0.935 and 64 units at 0.915–0.930 on test, so the test difference is within noise. The train–test gap is the clue, not the test score alone.) |
 
 The tell is not the test score on its own. It is **the gap between train and test.** 0.9550 against 0.9150 is a 0.0400 gap; 0.9350 against 0.9350 is none.
 

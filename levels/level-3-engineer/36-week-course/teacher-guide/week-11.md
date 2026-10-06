@@ -136,7 +136,7 @@ Four things worth having ready:
 | £500 | £100 | **t = 0.12** | £6,000 |
 | £5,000 | £10 | **t = 0.01** | £34,210 |
 
-**Make a miss a hundred times more expensive and the winner slides from 0.10 all the way to 0.01** — flag 429 rows out of 1,000 and catch 8 of the 14. That is what "we will accept any amount of hassle to stop this" looks like in arithmetic.
+**Make a miss ten times more expensive again (£500 to £5,000) and the winner slides from 0.10 all the way to 0.01** — flag 429 rows out of 1,000 and catch 8 of the 14. That is what "we will accept any amount of hassle to stop this" looks like in arithmetic.
 
 ### 4. 🔢 The new maths: area, added up in strips
 
@@ -212,11 +212,11 @@ the formula says   : t = 10 / (10 + 500) = 0.0196
 
 **0.032 against 0.0196. They disagree by about a factor of one and a half.** Do not paper over this. There are exactly two honest explanations and you should give both:
 
-**One — the formula assumes the probabilities are honest.** It only works if a row the model scores 0.02 really does turn out to be fraud about 2% of the time. Our model's scores top out at 0.1774; they are squashed towards zero and they are not literal chances. A model whose probabilities can be read as real chances is called **calibrated**, ours is not, and repairing it is a Level 4 topic. **When the formula and the sweep agree, that is evidence your probabilities are trustworthy. When they disagree, that is evidence they are not** — which is a genuinely useful diagnostic and it is free.
+**One — the formula assumes the probabilities are honest.** It only works if a row the model scores 0.02 really does turn out to be fraud about 2% of the time. A model whose probabilities can be read as real chances is called **calibrated**. Ours top out at 0.1774, but that alone proves nothing (fraud is 1.4% of rows, so small scores are what an honest model should print): the 1,000 validation scores sum to 14.1 and there were 14 frauds, so on average the model is about right. Whether each individual score is honest, 14 frauds cannot tell us; repairing a model that is not is a Level 4 topic. **When the formula and the sweep agree, that is mild evidence your probabilities are trustworthy. When they disagree, it is a prompt to check them** — but with 14 frauds the gap may be mostly noise, so it is a question raised, not a diagnosis proved.
 
 **Two — the measurement is resting on fourteen frauds.** The whole cost curve is built from 14 positive rows. One fraud landing on the other side of a threshold moves the cost by £500, which is more than the gap between several neighbouring rows. **The minimum of a bumpy curve measured on 14 events is not a precise quantity.** Which brings us, directly, to the second half.
 
-> **🧑‍🏫 If a student asks** *"so which one do we use?"* — Both, and you say so out loud in your report. The formula gives you the answer for a perfectly honest model; the sweep gives you the answer for the model you actually have. **When they agree, ship. When they disagree, you have learned something about your model** — and the thing you learned is worth more than the threshold.
+> **🧑‍🏫 If a student asks** *"so which one do we use?"* — Both, and you say so out loud in your report. The formula gives you the answer for a perfectly honest model; the sweep gives you the answer for the model you actually have. **When they agree, ship. When they disagree, you have a question about your model to chase** — and knowing to ask it is worth more than the threshold.
 
 ### 6. One number is not a measurement
 
@@ -332,7 +332,7 @@ The average and the wobble. **`.std()` on a numpy array gives the *population* s
 
 **"Cross-validation makes the model better."** It does not touch the model. **It makes the measurement better.** The model that comes out of `cross_val_score` is thrown away — five models get fitted and five die. What survives is five numbers.
 
-**"A bigger ± means a worse model."** No — it means a **noisier measurement**. Our ± of 0.087 is mostly a statement about having 14 positives per fold, not about the model. Fix it by getting more data or more folds, not by changing the model.
+**"A bigger ± means a worse model."** No — it means a **noisier measurement**. Our ± of 0.087 is mostly a statement about having 14 positives per fold, not about the model. Fix it by getting more data (more positives per fold), not by changing the model. More folds do not add positives.
 
 ### 9. How deep to go, and where to stop
 
@@ -589,7 +589,7 @@ report it as  : AUC = 0.628 +/- 0.087 (5-fold stratified CV)
 
 | If this fails | Do this instead |
 |---|---|
-| `the five AUCs` are different from this file | `shuffle=True` or `random_state=0` missing from `StratifiedKFold`. Without `shuffle` you get `[0.7349 0.6389 0.6484 0.5851 0.648]`, mean 0.6511, sd 0.0481 — **a different and less honest answer.** |
+| `the five AUCs` are different from this file | `shuffle=True` or `random_state=0` missing from `StratifiedKFold`. Without `shuffle` you get `[0.7349 0.6389 0.6484 0.5851 0.648]`, mean 0.6511, sd 0.0481 — **a different chop, so a different answer** (the sd alone wanders from about 0.03 to 0.12 across shuffle seeds, so neither is "the" right sd). |
 | `AttributeError: 'list' object has no attribute 'mean'` | `scores` was built by hand as a Python list. Wrap it: `np.array(scores).mean()`. `cross_val_score` gives you a numpy array already. |
 | The five scores come out `[0.986 …]` | `scoring="roc_auc"` is missing. **Deliberate mistake one arriving by accident, which is fine — teach it there and then.** |
 | The trapezoid total is 0.3000 | `np.trapz` arguments are the wrong way round. Heights first. |
@@ -642,7 +642,7 @@ report it as  : AUC = 0.628 +/- 0.087 (5-fold stratified CV)
 
 > "**Fifty.** So we should be willing to block fifty innocent cards to stop one theft. Fifty. And **not fifty-one.** That is not an opinion any more, that is arithmetic, and by the end of the hour you will have done it for all nine of last week's thresholds and circled the winner."
 
-**Ask this:** "Before we compute anything — put your hand up if you think the cheapest threshold will be nearer 0.5 or nearer 0.01."
+**Ask this:** "Before we compute anything — put your hand up if you think the cheapest threshold will be the lowest one on the table, 0.01, or somewhere in the middle."
 
 Take a show of hands and **write the count on the board.** They will mostly say 0.01, because a miss is fifty times worse. **They will be wrong, and the fact that they were wrong is worth ten minutes at the end.** The winner is 0.10, right in the middle, because the false alarms pile up much faster than the frauds get caught.
 
@@ -814,9 +814,9 @@ the formula says   : t = 10 / (10 + 500) = 0.0196
 
 > **Say this:** "Neither of them is wrong, and this is the most professionally useful two minutes of the lesson.
 >
-> The formula assumes the model's probabilities are **honest** — that a row scored 0.02 really is fraud about two times in a hundred. Ours are not honest. The highest score in the whole file is 0.1774; they are all squashed towards zero. So the formula is computing the right answer to a question about a model we do not have.
+> The formula assumes the model's probabilities are **honest** — that a row scored 0.02 really is fraud about two times in a hundred. Whether ours are honest, I can only partly say. The highest score in the whole file is 0.1774, but that is what you would expect when fraud is 1.4% of rows; and the thousand scores add up to 14.1 when there were 14 frauds, so on average they are about right. What 14 frauds cannot tell me is whether each score is right.
 >
-> **When the formula and the measurement agree, that is evidence your probabilities can be trusted. When they disagree, like now, that is evidence they cannot.** And you got that diagnosis for free, out of two numbers you were computing anyway. It has a name — **calibration** — and it is not on this year's menu. But noticing it is."
+> **When the formula and the measurement agree, that is mild evidence your probabilities can be trusted. When they disagree, like now, that is a prompt to check them** — and with only fourteen frauds, much of this gap is probably noise. It has a name — **calibration** — and it is not on this year's menu. But noticing it is."
 
 **Step 2 (4 min) — 🐞 DELIBERATE MISTAKE TWO: the area, backwards.**
 
@@ -1020,7 +1020,7 @@ Every message below came from running a broken version of this week's actual cod
 | **No error. `np.trapz` returns 0.3000 instead of 0.7000.** | Nothing crashed. You measured the wrong side of the curve. | Arguments swapped: `np.trapz(xs, ys)`. | `np.trapz(ys, xs)` — **heights first.** Sanity check: your two answers should add to the area of the whole square. |
 | **No error. `np.trapz` returns 0.6375 instead of 0.7000.** | Nothing crashed. Your x values are not in order. | The five points were plotted or typed out of sequence. | Sort by x before you integrate. **`np.trapz` walks the list in the order you give it and does not check.** |
 | **No error. `cross_val_score` returns `[0.986 0.986 0.986 0.985 0.985]`.** | Nothing crashed. You measured accuracy on a 98.6%-legit dataset. | `scoring=` omitted, so the classifier's default — accuracy — was used. | `scoring="roc_auc"`. **Week 8's paradox, third costume.** |
-| **No error. The five scores are `[0.7349 0.6389 0.6484 0.5851 0.648]` and the sd is 0.0481.** | Nothing crashed, and the `±` is only about half as big as it should be. | `shuffle=True` missing from `StratifiedKFold`, so the folds were cut in storage order. | Add `shuffle=True, random_state=0`. **A smaller `±` obtained by cutting the data in a lazier way is not a better measurement.** |
+| **No error. The five scores are `[0.7349 0.6389 0.6484 0.5851 0.648]` and the sd is 0.0481.** | Nothing crashed, and the `±` is only about half as big as in the lesson. | `shuffle=True` missing from `StratifiedKFold`, so the folds were cut in storage order: a different chop of the same data. | Add `shuffle=True, random_state=0`. **A smaller `±` from one particular chop is not a better measurement — the sd of five folds is itself noisy (about 0.03 to 0.12 across shuffle seeds), and you fix the chop in advance rather than choosing the one you like.** |
 | **No error. The five scores are `[0.6202 0.5904 0.6864 0.7471 0.4958]`, all very slightly different from the right ones.** | Nothing crashed, and you have a tiny leak. | `StandardScaler().fit_transform(X)` applied **before** `cross_val_score`, so every fold's scaler had already seen the held-out rows. | Put the scaler **inside** the `Pipeline`, and pass the pipeline to `cross_val_score`. **This is Week 3 and Week 6's lesson arriving in a new place, and here it moved the mean by 0.0005 — small, and still wrong.** |
 | **No error. The cheapest threshold changes every time you run it.** | The threshold list or the cost constants are being changed between runs. | Somebody is editing `COST_FN` while experimenting and forgetting. | **Write the price list down before you sweep, and do not touch it during the sweep.** One change, one row — Week 7's rule. |
 
@@ -1191,13 +1191,13 @@ Then you are in the hardest situation in applied machine learning, and it is ext
 Five and ten are conventions, and there is no deep reason for either. More folds means each model trains on more data (better) and each score is measured on fewer rows (noisier), and the whole thing takes longer. Five is a common compromise; ten is the other common one. With 72 frauds in total, ten folds would give each held-out chunk about 7 frauds, and a score resting on 7 events is very coarse indeed. **Here, five is already generous.**
 
 **"Our `±` is 0.087. Is that big or small?"**
-Big. It is about 14% of the score itself. To make it smaller you need more positive examples in each held-out chunk, which means more data — not a better model, not more folds, not a different metric. **This is the honest answer to "how do I improve my number", and it is unsatisfying, and it is right.**
+Big. It is about 14% of the score itself. To make it smaller you need more positive examples in each held-out chunk, which means more data — more folds do not add positives, and a different metric does not either. (A much stronger model would also narrow it, as the hospital example shows, but that is a different project.) **This is the honest answer to "how do I improve my number", and it is unsatisfying, and it is right.**
 
 **"Why does numpy divide by 5 and my maths teacher divides by 4?"**
 Both are standard, and they answer slightly different questions. Dividing by *n* gives you the spread of the five numbers you actually have. Dividing by *n*−1 gives you a better estimate of the spread of the infinite population those five came from. numpy's `.std()` divides by *n* by default; `.std(ddof=1)` divides by *n*−1 and gives **0.0969** instead of 0.0867. **No conclusion in this lesson changes either way.** Report which one you used and move on.
 
 **"The formula said 0.0196 and the data said 0.032. Doesn't that mean one of them is broken?"**
-🤔 **Nobody fully agrees about what to do here, and here is why.** One camp says: the formula is the answer, so if your data disagrees, **fix the model's probabilities** — calibrate them, and then the formula and the sweep will converge, and you will have learned something real. The other camp says: the formula is a piece of theory about a model that does not exist, so **just use the empirical minimum** — the sweep is measuring the actual machine you are going to deploy, and its answer is the operationally correct one whatever the theory prefers. A third camp points out that the empirical minimum here is measured on **fourteen** events and therefore is not a precise quantity either, so *both* numbers are soft and arguing about the gap between 0.0196 and 0.032 is arguing about noise. **All three are defensible, and the professional habit is to report both numbers and the disagreement**, because the disagreement is itself the interesting result.
+🤔 **Nobody fully agrees about what to do here, and here is why.** One camp says: the formula is the answer, so if your data disagrees, **fix the model's probabilities** — calibrate them, and then the formula and the sweep may converge, and you will have learned something real. The other camp says: the formula is a piece of theory about a model that does not exist, so **just use the empirical minimum** — the sweep is measuring the actual machine you are going to deploy, and its answer is the operationally correct one whatever the theory prefers. A third camp points out that the empirical minimum here is measured on **fourteen** events and therefore is not a precise quantity either, so *both* numbers are soft and arguing about the gap between 0.0196 and 0.032 is arguing about noise. **All three are defensible, and the professional habit is to report both numbers and the disagreement**, because the disagreement is itself the interesting result.
 
 **"Does cross-validation replace the test set?"**
 **No, and this is important.** It replaces the *validation* set — the pile you use over and over while making choices. The test pile is still sealed and still gets opened exactly once, at the very end. If you cross-validate over everything including the test rows and then report the mean as a test score, you have leaked, and you have leaked in a way that is very hard to spot in code review.
@@ -1265,9 +1265,9 @@ Halfway between 0.00 and 0.60 is 0.30. Times 0.25 is 0.0750. That is one panel. 
 
 ### If the student is flying
 
-1. **Find the price list that makes `t = 0.02` win.** (It needs a miss to be worth a great deal more than 50 false alarms — try £2,000 against £10 and work down. This is genuinely fiddly and genuinely instructive, because most price lists jump straight past 0.02 to 0.01.)
+1. **Find the price list that makes `t = 0.04` win, and show that no price list makes `t = 0.02` win.** (Any miss price between about £560 and £900 against £10 gives 0.04. For 0.02 you would need a miss over £1,500 to beat 0.04 but under £700 to beat 0.01, which is impossible; it is a dominated row. The workbook puzzle does the same algebra.)
 2. **Run 10 folds instead of 5** and report the new mean and `±`. **Then explain which direction the `±` moved and why**, given that each held-out chunk now has about 7 frauds instead of 14.
-3. **Count the strips.** `len(fpr) - 1` on the real ROC curve. There are 27. **Ask why there are 27 and not 1,000** — the answer is that the curve only has a corner where a real row's probability sits, and 27 of the 1,000 probabilities are distinct enough to make one.
+3. **Count the strips.** `len(fpr) - 1` on the real ROC curve. There are 27. **Ask why there are 27 and not 1,000** — the answer is that all 1,000 scores are distinct, so the raw curve has 1,000 steps, but `roc_curve` drops the points that lie on a straight stretch (`drop_intermediate=True`, the default) because they add nothing to the area. 27 corner points are left.
 4. **The honest question:** *"we saved £1,450 by moving the threshold. Our `±` on AUC is 0.087. Should we put a `±` on the £1,450?"* **Absolutely we should, and this course never does it, and that is a real gap.** The £1,450 rests on the same 14 frauds. A student who works out that the cost saving needs an error bar too has understood cross-validation better than most textbooks explain it. Tell them so, and tell them the honest way to get it is to run the whole cost sweep inside every fold — which is Week 34's job.
 
 ### If the student won't engage today
@@ -1557,7 +1557,7 @@ The rule I am keeping: **add my two answers up. 0.7 + 0.3 = 1, the whole square,
 
 **Hook — "how many false alarms is one missed fraud worth?"** Fifty. `500 ÷ 10 = 50`.
 
-**Hook — "will the cheapest threshold be nearer 0.5 or nearer 0.01?"** Neither: it is **0.10**, in the middle. Most classes guess 0.01 because a miss costs fifty times more, and they are wrong because the false alarms multiply much faster than the frauds get caught.
+**Hook — "will the cheapest threshold be the lowest one on the table, 0.01, or somewhere in the middle?"** Somewhere in the middle: it is **0.10**. Most classes guess 0.01 because a miss costs fifty times more, and they are wrong because the false alarms multiply much faster than the frauds get caught.
 
 **Concept step 1 — "which row is cheapest?"** `t = 0.10`, at £5,550.
 
@@ -1573,7 +1573,7 @@ The rule I am keeping: **add my two answers up. 0.7 + 0.3 = 1, the whole square,
 
 **Live-code step 1 — "does that match the board?"** Yes, row for row, all nine.
 
-**Live-code step 1 — "which one is wrong, the formula or the measurement?"** Neither. The formula assumes calibrated probabilities and ours are squashed towards zero; the measurement rests on 14 frauds and is bumpy. **The disagreement is the diagnosis.**
+**Live-code step 1 — "which one is wrong, the formula or the measurement?"** Neither. The formula assumes calibrated probabilities, which 14 frauds cannot confirm (the scores do sum to about the right total, 14.1 against 14); the measurement rests on 14 frauds and is bumpy, so much of the gap is probably noise. **The disagreement is a question, not a verdict.**
 
 **Live-code step 2 — "was that an error?"** No.
 

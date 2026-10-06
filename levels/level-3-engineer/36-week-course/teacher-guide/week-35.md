@@ -55,7 +55,7 @@ A request has four parts:
 |---|---|---|
 | a **method** | `GET` or `POST` | the verb. `GET` means "give me something". `POST` means "here is some data, do something with it". |
 | a **path** | `/health` or `/predict` | which door you are knocking on |
-| **headers** | `Content-Length: 46` | small facts about the message, one per line |
+| **headers** | `Content-Length: 21` | small facts about the message, one per line |
 | a **body** | `{"text": "cold food"}` | the data itself. `GET` requests usually have none. |
 
 > **Endpoint** — one path on a server that does one job. `/predict` is an endpoint. `/health` is another.
@@ -245,7 +245,7 @@ And the counts check out, which is how you know you have not miscounted:
 
 **One — every group carries its `n`, and anything under about 10 carries the words "too small to conclude from".** `1.000` on four rows is not "perfect"; it is four rows, and one flip takes it to 0.750.
 
-**Two — the negation traps were written on purpose to break the model, so `0.417` is not an estimate of anything.** It is a demonstration that a mechanism exists. **The honest claim is about the mechanism, not the rate:** *"bag-of-words throws away word order, so `not` — which this model has no weight for at all — cannot flip `delicious`; here are 13 rows where that is visible, and I chose them to be visible."* A student who says that is doing better science than one who reports 0.462 as if it were a population statistic.
+**Two — the negation traps were written on purpose to break the model, so `0.417` is not an estimate of anything.** It is a demonstration that a mechanism exists. **The honest claim is about the mechanism, not the rate:** *"bag-of-words keeps almost no word order (the pairs only see neighbours, and `not` never appeared in training), so `not` — which this model has no weight for at all — cannot flip `delicious`; here are 13 rows where that is visible, and I chose them to be visible."* A student who says that is doing better science than one who reports 0.462 as if it were a population statistic.
 
 And notice **why** this failure is satisfying rather than depressing: Week 31 and Week 32 *predicted* it from theory, and Week 35 measured it in their own service. **That coincidence between a prediction made from theory and evidence found in your own log is the strongest thing you can put in a model card.**
 
@@ -276,7 +276,7 @@ in the 0.45-0.65 uncertainty band: 16 of 111 (14.4%)
 1.0000  lorem ipsum dolor sit amet
 ```
 
-**Why this number degrades for *this* model, specifically.** It is TF-IDF. A word the vectorizer has never seen contributes *exactly nothing* — it is silently dropped. So a rising OOV rate means a rising share of every input is invisible to the model, and the probability drifts toward the middle. **That is a mechanism, not a vibe, and naming the mechanism is what lifts a monitoring plan a whole rubric level.**
+**Why this number degrades for *this* model, specifically.** It is TF-IDF. A word the vectorizer has never seen contributes *exactly nothing* — it is silently dropped. So a rising OOV rate means a rising share of every input is invisible to the model, and the answer rests on fewer and fewer words. Keep two cases apart: **if only some words are unknown they are ignored and the known ones decide alone** (`delicious` and `delicious xyzzy plugh quux` both score `0.6928` — TF-IDF normalises over the words it *can* see, so there is no drift to the middle); **if every word is unknown, nothing reaches the classifier** and the answer is the bias-only output, `0.4887`, which sits inside the 0.45-0.65 band. **That is a mechanism, not a vibe, and naming the mechanism is what lifts a monitoring plan a whole rubric level.**
 
 **And one honest wrinkle worth saying out loud.** The band rate over our 111 logged requests is `14.4%`. On the 16 test reviews it is `3 of 16 = 18.8%`. **Different, and neither is wrong** — they are different traffic. **A baseline has to come from the traffic you are actually going to watch**, which means you cannot write the alarm level until you have logged some real requests. That is a genuinely useful thing to have learned at fourteen.
 
@@ -321,7 +321,7 @@ solid. The ↻ on stage three is black, as it has been since Week 12.*
 3. **Point at stage two, then at stage one.** *"Which tile does `p95` belong to?"* — `threshold · cost`,
    Weeks 10–11, because a latency you promise is a threshold you chose. And then the harder one: *"which
    tile does 'the words people type next month will not look like the words in my training set' belong
-   to?"* — stage one, `scaling · features`, Week 6. **Drift is leakage arriving late**, and saying that out
+   to?"* — stage one, `scaling · features`, Week 6. **Drift is the Week 6 question asked again after launch** (not leakage — nothing from the future got in — but the same habit of asking where the data came from), and saying that out
    loud connects the last week of the year to the sixth.
 
 > **🧑‍🏫 Why this is worth two minutes.** A student finishing today thinks the work is over because the
@@ -627,7 +627,7 @@ longer (6 words or more)    19    0.684      1.000     0.333
 **Two of the four objectives survive whole, and they are the two the rubric weights highest.**
 
 1. **The subgroup table, from this file's numbers.** Print the seven-row output. Then the whole of objective 4 on paper: find the worst group, check `13 + 15 = 28`, check `6 + 12 = 18`, check `18 ÷ 28 = 0.643`, and write the sentence about what `0.8125` was hiding. **This is the best twenty minutes of the paper version and it needs no electricity.**
-2. **The p95 by hand.** `0.95 × 4 = 3.8`, `0.38 + 0.80 × 2.89 = 2.692`. Then the good question: *"we have 111 requests and the p95 is 0.27, but the max is 3.27. Why didn't the p95 catch it?"* — because one request in 111 is at the 99th percentile, and the p95 cannot see above itself. **That conversation is better than the code.**
+2. **The p95 by hand.** `0.95 × 4 = 3.8`, `0.38 + 0.80 × 2.89 = 2.692`. Then the good question: *"we have 111 requests and the p95 is 0.27, but the max is 3.27. Why didn't the p95 catch it?"* — because one request in 111 sits beyond the 99th percentile, and the p95 cannot see above itself. **That conversation is better than the code.**
 3. **Break Each Other's Service, on paper.** Genuinely works: each student writes the four malformed bodies on a card and swaps with their partner, who writes the status code and the exact error message they would return. **Then compare with the real transcript in this file.** Objective 2's *thinking*, without objective 2's typing.
 4. **The model card and the monitoring plan.** Both are writing. Both are homework anyway.
 5. **Objectives 1 and 3 are the casualty.** Say so plainly: *"the one thing we cannot do on paper is have a program answer a question. That is your homework, and next week you are demoing it."*
@@ -742,7 +742,7 @@ $ wc -l logs/predictions.jsonl
 ```
 METHOD    GET  or  POST
 PATH      /health  or  /predict
-HEADERS   Content-Length: 46
+HEADERS   Content-Length: 39
 BODY      {"text": "cold food and a rude driver"}
 ```
 
@@ -945,9 +945,9 @@ in the 0.45-0.65 uncertainty band: 16 of 111 (14.4%)
 
 **Ask this:** "p95 is 0.27 and max is 3.27. Why didn't the p95 catch the slow one?"
 
-*Because one request out of 111 sits above the 99th percentile, and the p95 cannot see above itself.*
+*Because one request out of 111 sits at the very top, beyond the 99th percentile, and the p95 cannot see above itself.*
 
-> **Say this:** "**So you print the max as well.** The mean hides the tail, the p95 describes most of the tail, and the max is the one request somebody actually noticed. **Three numbers, three different jobs.** And the last line — 27 percent of my answers sat in the stretch just under the fence — is the number this whole thing is monitored on, and we come back to it in the wrap."
+> **Say this:** "**So you print the max as well.** The mean hides the tail, the p95 describes most of the tail, and the max is the one request somebody actually noticed. **Three numbers, three different jobs.** And the last line — 14 percent of my answers sat in the stretch just under the fence — is the number this whole thing is monitored on, and we come back to it in the wrap."
 
 ---
 
@@ -1012,7 +1012,7 @@ Every message below came from running a broken version of this week's actual cod
 | `501 Unsupported method ('POST')` in the reply | "I have no idea what to do with a POST." | `do_POST` is spelled `do_post`, or is defined outside the class, or the indentation puts it at the wrong level. | Exactly `do_POST`, indented inside `class Handler`. **Python looks up the name literally.** |
 | **No error. The reply is right but the log stays at 0 lines.** | Nothing crashed. Nothing was recorded. | `logging.basicConfig` sits **after** the first `logging.info`, or after `Predictor()` raised and was caught. | `basicConfig` first, before anything else logs. **Calling it a second time does nothing at all — that is the trap.** |
 | **No error. `by version` shows two versions.** | Nothing crashed. The log spans a rollback. | `LATEST` was changed halfway through, so some lines came from v1 and some from v2. | **This is a feature, not a bug.** It is exactly why `model_version` is in every line. Report both counts. |
-| **No error. Every latency in the log is the same number.** | Nothing crashed. The stopwatch is in the wrong place. | Both `perf_counter()` calls are outside the prediction, or a single `latency_ms` was computed once and reused. | One stopwatch pair per prediction, inside `predict_one`. **Identical latencies are never real.** |
+| **No error. Every latency in the log is the same number.** | Nothing crashed. The stopwatch is in the wrong place. | Both `perf_counter()` calls are outside the prediction, or a single `latency_ms` was computed once and reused. | One stopwatch pair per prediction, inside `predict_one`. **Every latency identical to the last digit is never real.** |
 | **No error. A subgroup row says `n = 0`.** | Nothing crashed. Nothing matched. | The negation-word list is missing the word that actually appears, or `.lower()` was forgotten so `Not` never matched `not`. | Print the group sizes before the metrics. **A group of zero is a filter bug, not a finding.** |
 
 ### How to teach debugging without giving the answer
@@ -1122,7 +1122,7 @@ They are different whenever the numbers are lopsided, which latencies always are
 
 **"Our p95 was 0.27 but the max was 3.27. Isn't the p95 useless then?"**
 
-It is not useless, it is **precise about something else**. With 111 requests, one slow one sits at about the 99th percentile, and the p95 by definition cannot see above itself. What the p95 tells you is *the experience of nearly everybody*; what the max tells you is *the worst thing that happened*. If you had 10,000 requests and 500 of them were slow, the p95 would catch it immediately. **With 111 requests, print the max too and say why.**
+It is not useless, it is **precise about something else**. With 111 requests, one slow one sits beyond the 99th percentile, and the p95 by definition cannot see above itself. What the p95 tells you is *the experience of nearly everybody*; what the max tells you is *the worst thing that happened*. If you had 10,000 requests and 1,000 of them were slow, the p95 would catch it immediately. **With 111 requests, print the max too and say why.**
 
 **"Why 100,000 bytes for the body limit? Why not a million? Why not a thousand?"**
 
@@ -1187,7 +1187,7 @@ and the max is the 11th:       3.27
 
 ### If the student is flying
 
-1. **The drift simulator (page 35.8).** Send the service 30 requests from a completely different domain — slang, emoji, a different topic — and watch the out-of-vocabulary rate climb. The reference numbers: `0.1111` for a familiar review, `0.8667` for `the biryani was absolutely banging fam no cap`, `1.0000` for Latin. **Then the honest hard question: at what OOV rate did the accuracy actually start dropping? Label 20 of the drifted inputs by hand and find out.** Most people guess too high.
+1. **The drift simulator (page 35.8).** Send the service 30 requests from a completely different domain — slang, emoji, a different topic — and watch the out-of-vocabulary rate climb. The reference numbers: `0.1111` for a familiar review, `0.8667` for `the biryani was absolutely banging fam no cap`, `1.0000` for Latin. **Then the honest hard question: at what OOV rate did the accuracy actually start dropping? Label 20 of the drifted inputs by hand and find out.** Write the guess down first; it depends on whether the words left are sentiment-bearing or filler.
 2. **A fifth, sixth and seventh malformed case they invent themselves.** Three spaces, a list, a `GET` on `/predict`. Each one gets a status code and a justification.
 3. **Make `read_logs.py` refuse gracefully.** Instead of `IndexError: index -1 is out of bounds`, print `no log yet — start the service and send one request`. **Turning somebody else's ugly error into your own helpful one is a real engineering habit and it takes four lines.**
 4. **Two more subgroups of their own choosing, each justified in one sentence.** The good ones for this model: reviews containing a word outside the vocabulary; reviews of exactly one word. **The justification sentence is the marked part, not the number.**
@@ -1370,7 +1370,7 @@ both groups      : 13 + 15 = 28  ✅   and  6 + 12 = 18
 overall          : 18 ÷ 28 = 0.6429 → 0.643  ✅ matches the ALL row
 ```
 
-**The sentence:** *"The 0.8125 on my card was measured on the 16 held-out reviews only. Split by whether a review contains one of seven negation words, the model scores 0.800 on the 15 rows without one and **0.462 on the 13 rows with one, where its recall on the positive class is 0.000 — it found none of the six positive ones.** The mechanism is the one Week 31 predicted: bag-of-words throws away word order, so `not` cannot flip `delicious`. And 12 of those 13 rows are traps I wrote on purpose to be hard, so 0.462 demonstrates that the mechanism exists rather than estimating how often it bites."*
+**The sentence:** *"The 0.8125 on my card was measured on the 16 held-out reviews only. Split by whether a review contains one of seven negation words, the model scores 0.800 on the 15 rows without one and **0.462 on the 13 rows with one, where its recall on the positive class is 0.000 — it found none of the six positive ones.** The mechanism is the one Week 31 predicted: bag-of-words keeps almost no word order (pairs only see neighbours, and `not` never appeared in training), so `not` cannot flip `delicious`. And 12 of those 13 rows are traps I wrote on purpose to be hard, so 0.462 demonstrates that the mechanism exists rather than estimating how often it bites."*
 
 **And the sizes caveat:** every group here is 12 to 28 rows except the short-review group at 9, which the report itself flags as too small to conclude from. **The two 13-row groups are above the ten-row line but only just**, and one flip in the negation group moves it from 0.462 to 0.538. That sentence belongs on the page.
 
@@ -1487,7 +1487,7 @@ Model answer for the reference project. **Mark for specificity, not for matching
 > **(b)** `not fresh and not hot` → `positive` at `p = 0.7992`. It is negative. `fresh` and `hot` are two of the strongest positive features in the vocabulary and `not` is not in the vocabulary at all, so the negation cannot flip them — and it is the one negation trap the model gets *confidently* wrong in the other direction.
 > **(c)** Anything in language it has not seen. `the biryani was absolutely banging fam no cap` has an out-of-vocabulary rate of **0.8667** — 13 of its 15 tokens (words and pairs) are invisible to the model, so the answer is essentially made up from the remaining two.
 >
-> **6 · OUT-OF-SCOPE USES.** Not for deciding who gets banned, muted or reported — its recall on negated positives is 0 of 6. Not for marking schoolwork. Not for any language other than English. **And the tempting one: not for measuring whether the forum's mood is improving week to week** — 27 percent of its answers sit in the stretch just under the fence, so a small real change would be buried in its own uncertainty.
+> **6 · OUT-OF-SCOPE USES.** Not for deciding who gets banned, muted or reported — its recall on negated positives is 0 of 6. Not for marking schoolwork. Not for any language other than English. **And the tempting one: not for measuring whether the forum's mood is improving week to week** — 14 percent of its answers sit in the stretch just under the fence, so a small real change would be buried in its own uncertainty.
 >
 > **7 · WHAT I LOG, AND WHAT I DON'T.** Every prediction: timestamp, version, the first 300 characters of the input, the true character count, the label, the probability, the threshold and the latency. I keep the input because I cannot explain a wrong answer without it. I truncate at 300 characters because keeping unlimited text forever is a decision I do not want to default into, and I record `input_chars` so a truncated input is never silently pretended to be short.
 
@@ -1503,7 +1503,7 @@ Model answer for the reference project. **Mark for specificity, not for matching
 >
 > **Alarm level:** a weekly mean above **40%**, or any week more than **10 points** above the week before.
 >
-> **Why this number degrades for *this* model:** it is TF-IDF. A word the vectorizer has never seen contributes exactly nothing — it is silently dropped. So an input full of unfamiliar language becomes a vector that is mostly zeros, which pushes the probability toward the middle of the range. A rising band rate therefore means a rising share of every input is invisible to my model, and my accuracy is falling in a way that no number computed on my training data would ever show me.
+> **Why this number degrades for *this* model:** it is TF-IDF. A word the vectorizer has never seen contributes exactly nothing — it is silently dropped. So an input made only of unfamiliar language becomes a vector of all zeros and gets the same answer every time, `0.4887`, which falls inside the band. (An input that is only *partly* unfamiliar is not pulled to the middle: the unknown words are ignored and the known ones decide alone.) A rising band rate can therefore mean a rising share of inputs that my model cannot see at all, and my accuracy is falling in a way that no number computed on my training data would ever show me.
 >
 > **Action if it trips:** (1) pull the 30 requests whose probability is closest to the 0.65 fence out of the log; (2) read them — fifteen minutes, and it usually explains everything; (3) if they are a genuine new subject, hand-label 40 of them and train a `v3`, keeping `v1` live until the new model beats it **on the same test set**; (4) if they are rubbish or an attack, add input validation instead of retraining.
 >
@@ -1513,7 +1513,7 @@ Model answer for the reference project. **Mark for specificity, not for matching
 
 **And the alternative number, which is equally acceptable and slightly better:**
 
-> **The out-of-vocabulary rate.** The share of an input's tokens that are absent from the 287-item vocabulary. Measured examples: **0.1111** for `cold food and a rude driver`, **0.8667** for `the biryani was absolutely banging fam no cap`, **1.0000** for Latin. Mean over my 111 logged requests: **0.1795**. Same mechanism, same actions, and it detects a new subject one step earlier than the band rate does, because the words go missing before the probability drifts.
+> **The out-of-vocabulary rate.** The share of an input's tokens that are absent from the 287-item vocabulary. Measured examples: **0.1111** for `cold food and a rude driver`, **0.8667** for `the biryani was absolutely banging fam no cap`, **1.0000** for Latin. Mean over my 111 logged requests: **0.1795**. Same mechanism, same actions, and it detects a new subject one step earlier than the band rate does, because a partly unfamiliar input still gets a confident-looking answer and never reaches the band, while its missing words do show up in this rate.
 
 **Marking notes.** **Three things, and the first is a pass/fail.** **One — can the number be computed without labels?** If not, hand it back. **Two — is the baseline measured, or guessed?** A plan with an alarm level but no baseline is a plan nobody can run. **Three — is there something they say they would not do?** Almost nobody writes this unprompted, and it is the clearest signal in the whole homework that somebody has thought about it rather than read about it.
 
@@ -1528,7 +1528,7 @@ Send 30 requests from a different world and watch the OOV rate climb. Real measu
 | `lorem ipsum dolor sit amet` | **1.0000** | nothing at all is visible; the answer is pure prior |
 | mean over the 111 logged requests | **0.1795** | this is what "normal" looks like for my traffic |
 
-**The honest hard question, and the answer most people get wrong:** *at what OOV rate does accuracy actually start dropping?* You cannot know without labels, so **label 20 of the drifted inputs by hand and find out.** Most students guess the model falls apart at 0.5; in practice it often survives much higher, because the few words it *can* see are frequently the sentiment-bearing ones. **Finding that out and being surprised is the whole value of the page.**
+**The honest hard question, and the answer most people get wrong:** *at what OOV rate does accuracy actually start dropping?* You cannot know without labels, so **label 20 of the drifted inputs by hand and find out.** It depends on what is left: if the few words it *can* see are sentiment-bearing (`delicious`) it may do fine at a high OOV rate; if they are filler (`the` and `was` are all that remains of the biryani sentence, which scores `0.6058`) it is guessing. Note that the OOV rate here counts word pairs as well as words, so it runs higher than the share of words missing. **Guessing first and then being surprised, one way or the other, is the whole value of the page.**
 
 **Marking notes.** The four OOV numbers, and the hand-labelled experiment. **Full marks needs the sentence "I guessed X and it was actually Y".**
 
@@ -1554,7 +1554,7 @@ Send 30 requests from a different world and watch the OOV rate climb. Real measu
 
 **Live-code — "what does 'address' mean in `Address already in use`?"** The pair: `127.0.0.1` and port `8000`. Two programs cannot listen on the same port.
 
-**Live-code — "p95 is 0.27, max is 3.27. Why didn't the p95 catch it?"** One request in 111 sits above the 99th percentile, and a p95 cannot see above itself. So you print the max as well.
+**Live-code — "p95 is 0.27, max is 3.27. Why didn't the p95 catch it?"** One request in 111 sits beyond the 99th percentile, and a p95 cannot see above itself. So you print the max as well.
 
 **Wrap — "point at the row that shows what 0.8125 was hiding."** `contains a negation word · n = 13 · accuracy 0.462 · recall 0.000`.
 

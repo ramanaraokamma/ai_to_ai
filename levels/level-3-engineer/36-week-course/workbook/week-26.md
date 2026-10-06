@@ -595,7 +595,7 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
-**T1.** Two of the eight learned filters are edge detectors and you can prove it with a number. Three of them answer about half a unit to both test patches and cannot be described at all. **Write a paragraph** about what you would actually write in a report about a model whose parts you can only half explain. What is the difference between "I do not know what filter 3 does" and "filter 3 does nothing"? And is it more honest to publish eight pictures with three of them unlabelled, or to publish only the two you can name?
+**T1.** Two of the eight learned filters are edge detectors and you can prove it with a number. Three of them answer less than one unit to either test patch and cannot be described at all. **Write a paragraph** about what you would actually write in a report about a model whose parts you can only half explain. What is the difference between "I do not know what filter 3 does" and "filter 3 does nothing"? And is it more honest to publish eight pictures with three of them unlabelled, or to publish only the two you can name?
 
 ________________________________________________________________
 
@@ -607,7 +607,7 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**T2.** `CrossEntropyLoss` hides the softmax inside itself, and that hiding causes the nastiest bug of the week — a wrong loss that produces no error and a model that just looks mediocre. The library does it because doing the squash and the log together is arithmetically much safer: on a bigger network `e^−40` rounds to exactly zero and `ln(0)` is minus infinity. **Write a paragraph** about whether a library should be allowed to hide something dangerous in order to be safer. `BCEWithLogitsLoss` says it in its name; `CrossEntropyLoss` does not. Was that a design mistake, and what would you have called it?
+**T2.** `CrossEntropyLoss` hides the softmax inside itself, and that hiding causes the nastiest bug of the week — a wrong loss that produces no error and a model that just looks mediocre. The library does it because doing the squash and the log together is arithmetically much safer: on a bigger network `e^100` is too big for the computer's number format (it becomes `inf`) and a chance as small as `e^−110` rounds to exactly zero, so `ln(0)` is minus infinity. **Write a paragraph** about whether a library should be allowed to hide something dangerous in order to be safer. `BCEWithLogitsLoss` says it in its name; `CrossEntropyLoss` does not. Was that a design mistake, and what would you have called it?
 
 ________________________________________________________________
 
@@ -781,13 +781,13 @@ ________________________________________________________________
 
 **2,912 fewer than 4,810.**
 
-*(If your total came to **1,864**, you are short by exactly `8 + 16 + 10 = 34` — you counted the weights and skipped the biases. Same error Week 22 flagged. If it came to **1,266**, you used `8 × 3 × 3` for conv2 and forgot the 16 output channels.)*
+*(If your total came to **1,864**, you are short by exactly `8 + 16 + 10 = 34` — you counted the weights and skipped the biases. Same error Week 22 flagged. If it came to **818**, you used `8 × 3 × 3` (plus 16) for conv2 and forgot to multiply by the 16 filters.)*
 
 **M2.** `conv1: 1 × 3 × 3 × 16 + 16 = 144 + 16 = ` **160**. `conv2: 16 × 3 × 3 × 16 + 16 = 2,304 + 16 = ` **2,320**. `linear:` **650**. **Total 3,130.**
 
 **The flatten length did not change because it is `channels × height × width`, and the *last* conv still has 16 filters.** Doubling the *first* layer's filters changes what feeds conv2, so conv2 gets bigger — but conv2 still puts out 16 channels of 2 × 2, so the flatten is still `16 × 2 × 2 = 64`. **The `Linear` layer never notices.**
 
-*(And if you run it: the test accuracy goes from **529 of 540 to 527 of 540**, so nearly two thousand extra weights bought nothing at all. On this data, eight filters is already enough.)*
+*(And if you run it: the test accuracy goes from **529 of 540 to 527 of 540**, so about twelve hundred extra weights bought nothing at all. On this data, eight filters is already enough.)*
 
 **M3.**
 
@@ -1171,7 +1171,7 @@ multiply by -1         scores [-2. -1.  1.]            chances [0.042  0.1142 0.
 
 **Part 3 — "double them all" keeps the argmax and changes the confidence, and the confidence went UP:** `0.7054 → 0.8789`. Doubling doubles every *gap* between scores, so the winner wins by more. (Halving them would make the model less confident without changing its answer, which is exactly what "temperature" means when you see it in a chat model's settings.)
 
-**Part 4 — subtracting the biggest score is allowed for precisely the reason in Part 2: it adds the same amount to every score, so the chances come out identical.** And it is worth doing because it stops the arithmetic exploding. Without it you would compute `e^4.46` and, on a bigger network, `e^40` — which is about 2.4 × 10¹⁷ and starts running out of room. **After subtracting the biggest, the largest thing you ever exponentiate is `e^0 = 1`, and everything else is smaller.** That is the whole trick.
+**Part 4 — subtracting the biggest score is allowed for precisely the reason in Part 2: it adds the same amount to every score, so the chances come out identical.** And it is worth doing because it stops the arithmetic exploding. Without it you would compute `e^4.46` and, on a bigger network with scores near 100, `e^100` — about 2.7 × 10⁴³, more than a 32-bit float can hold (its limit is about 3.4 × 10³⁸), so it becomes `inf` and the chances come out as `nan`. **After subtracting the biggest, the largest thing you ever exponentiate is `e^0 = 1`, and everything else is smaller.** That is the whole trick.
 
 **Part 5 — the honest answer: it was already decided before the softmax ran.** Multiplying by −1 changed which score was *biggest* — `−1` beats `−2` — so `argmax` of the raw scores is already 2 before any squashing happens. **Softmax never reorders anything.** It cannot: it is `e^` (which always increases) followed by dividing everything by the same total. **If the argmax changed, something changed the scores.**
 
@@ -1187,7 +1187,7 @@ multiply by -1         scores [-2. -1.  1.]            chances [0.042  0.1142 0.
 
 **T2 — a strong answer covers three things.**
 
-**Why the hiding is real engineering, not laziness.** Look at the `−10.94` in our ten scores: `e^−10.94` is about 0.0000177, which is fine. On a bigger network scores of −40 are routine, `e^−40` rounds to exactly zero in a computer, and `ln(0)` is minus infinity — your whole training run fills with `nan`. **Doing the squash and the log together lets the library rearrange the arithmetic so that never happens.** It is not hiding for tidiness; it is hiding because the safe version cannot be written as two separate steps.
+**Why the hiding is real engineering, not laziness.** Look at the `−10.94` in our ten scores: `e^−10.94` is about 0.0000177, which is fine. On a bigger network scores of ±100 can happen: `e^100` is too big for the computer's number format and becomes `inf`, a chance as small as `e^−110` rounds to exactly zero, and `ln(0)` is minus infinity — your whole training run fills with `nan`. (`e^−40` is still a perfectly good number, about 4 × 10⁻¹⁸.) **Doing the squash and the log together lets the library rearrange the arithmetic so that never happens.** It is not hiding for tidiness; it is hiding because "softmax, then log" is the unsafe order, and the safe version (a log-softmax) is one fused step.
 
 **Why the name is nevertheless a design mistake.** `BCEWithLogitsLoss` announces exactly what it wants in its own name, and Week 22's students got it right because of that. `CrossEntropyLoss` announces nothing, and the failure mode is completely silent. **A dangerous default with a name that does not warn you is the worst combination available.** Something like `CrossEntropyWithLogitsLoss` would have cost four extra characters and prevented an enormous amount of quiet damage.
 

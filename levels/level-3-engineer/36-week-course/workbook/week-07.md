@@ -261,7 +261,7 @@ ________________________________________________________________
 | f | `table.round(4).to_string(index=False)` on a line of its own | | |
 | g | `X = X.drop(columns=["order_hour"])` | | |
 
-**A3(h).** Two of those seven produce **no error message at all**. Which two, and what is the printed clue in each case?
+**A3(h).** Three of those seven produce **no error message at all**. Which three, and what is the printed clue in each case?
 
 ________________________________________________________________
 
@@ -760,7 +760,7 @@ ________________________________________________________________
 
 **The fake score:** ________  **The honest score:** ________
 
-**Rebuilt honestly from the 1,200 training rows only, it scores ________ — which is ________ than not having the feature at all.**
+**Rebuilt from the 1,200 training rows only (still naively), it scores ________ — which is ________ than not having the feature at all.**
 
 **In my own words: at the moment a customer places the order, does this value exist?**
 
@@ -885,7 +885,7 @@ ________________________________________________________________
 
 **M1(b).** **Four** of the seven deltas are negative: rows 3 (−0.0001), 4 (−0.0050), 6 (−0.0007) and 8 (−0.0010). Row 5 (+0.0004) is *positive* and still gets dropped, because it is below the keep line.
 
-**So the honest count is: four regressions, six drops, two keeps.** The chapter says "six of the eight rows are regressions", counting every dropped row — and the distinction is worth having in your own words: **a regression made it worse; a drop merely failed to earn its place.** Both belong on the table.
+**So the honest count is: seven changes, four regressions, five drops (the four regressions plus row 5), two keeps.** An earlier wording of the chapter called the dropped rows "regressions" — and the distinction is worth having in your own words: **a regression made it worse; a drop merely failed to earn its place.** Both belong on the table.
 
 **M2.**
 
@@ -904,7 +904,7 @@ ________________________________________________________________
 
 **M3(b).** `0.7604 − 0.7586 = **+0.0018**`.
 
-**M3(c).** **No — the prediction is 0.0002 low.** The two deltas do not add up, because the two features overlap in what they explain. That overlap has a name — **interaction** — and it is the honest reason "one change at a time" is a *discipline* rather than a *proof*. It gives you attributable rows; it does not give you a formula for combining them.
+**M3(c).** **Not exactly — the prediction is 0.0002 low.** But 0.0002 is far below the 0.005 line (and partly rounding: the unrounded deltas are 0.00034 and 0.00131), so this example does not prove the deltas fail to add. It shows you cannot *assume* they add: when features overlap in what they explain, their effects can **interact**, which is the honest reason "one change at a time" is a *discipline* rather than a *proof*. It gives you attributable rows; it does not give you a formula for combining them.
 
 **M4.**
 
@@ -1184,7 +1184,7 @@ best      : 0.7586 on the 400 validation rows
 
 > **⚠️ Watch out:** `from bench import ...` **runs the whole of `bench.py`**, so before your own table appears you will see Week 7's eight-row table print itself again. Nothing is broken — importing a script executes it. It is also why `bench.py` is worth keeping short.
 
-**And now read rows 10 and 11, because they are the most useful thing on this page.** Dropping `restaurant` costs **0.0121**; dropping `weather` costs **0.0276**. Those are the two biggest numbers you have seen all week, and they are *negative* — which means those two columns are **carrying the model**. You now have a number to write next to `weather` on your defence page instead of "untested", and it is twenty times the size of anything you invented.
+**And now read rows 10 and 11, because they are the most useful thing on this page.** Dropping `restaurant` costs **0.0121**; dropping `weather` costs **0.0276**. Those are the two biggest numbers in this little table, and they are *negative* — which means those two columns are **carrying the model**. You now have a number to write next to `weather` on your defence page instead of "untested", and it is twenty times the size of anything you invented.
 
 ### Fix the Broken Program
 
@@ -1230,7 +1230,7 @@ B = (A + B + C) − (A + C) = 60 − 100  = −40   -> −0.0040
 
 **Part 1(e).** **B is the regression, at −0.0040.** And the notebook's owner shipped it — twice. Experiment 1 looked like a success (+40) and experiment 2 looked like a modest failure (−20), and in both of them **B was quietly costing 40 while A or C paid for it.** That is world 3 from M2, happening to a real person.
 
-**Part 1(f).** **Three** experiments, one per change — the same number they ran. **They did the same amount of work and learned a third as much.** That is the entire argument for the discipline, and notice that it cost them nothing in effort to get it wrong.
+**Part 1(f).** **Three** experiments, one per change — the same number they ran. **The same amount of work — but under the stated assumption they had to solve three equations to untangle it, and every number in the notebook was muddled until they did.** One-change rows hand you A, B and C directly, with no assumption about how changes combine. That is the argument for the discipline, and notice that it cost them nothing in effort to get it wrong.
 
 **Part 2.**
 
@@ -1254,7 +1254,7 @@ B = (A + B + C) − (A + C) = 60 − 100  = −40   -> −0.0040
 
 **One — what 0.0058 is actually worth.** On 400 validation rows, an AUC of 0.7599 against 0.7541 is a small, real, *defensible* improvement, and — this is the part that matters — **you can explain every ten-thousandth of it.** One row bought +0.0045 and one bought +0.0013, and both have a reason: a 0/1 flag can express a hump that a straight line cannot, and once you have the good version of a column the raw version costs you.
 
-**Two — what you learned that the model did not.** Lateness humps over the dinner rush. Day of week barely matters. Weather and restaurant are carrying most of the signal (dropping them costs 0.0276 and 0.0121). **That knowledge outlives this model**, and it will still be true when somebody replaces the logistic regression with something else next year.
+**Two — what you learned that the model did not.** Lateness humps over the dinner rush. Day of week barely matters. Distance, weather and restaurant are carrying most of the signal (dropping them costs 0.1038, 0.0276 and 0.0121). **That knowledge outlives this model**, and it will still be true when somebody replaces the logistic regression with something else next year.
 
 **Three — the honest defence of the afternoon.** Yes, worth it — not because of the 0.0058 but because of the *table*. The table is what makes the next 0.0058 findable, and it is what would have caught the 0.9240.
 
@@ -1308,7 +1308,7 @@ What would settle it: **measure the wobble.** Score the same change on many diff
 
 **The flavour: target leakage** — the column was computed from `late`, which is the answer. A student who says *"it is also preprocessing leakage, because the lookup was built over all 2,000 rows instead of the 1,200 training rows, and the target half is the fatal half"* is **more right than this answer key**.
 
-**Fake 0.9240 · honest 0.7535 · rebuilt from the 1,200 training rows only 0.6115** — which is **worse** than not having the feature at all. Why: 647 groups over 1,200 training rows means most groups hold one or two orders, so most "rates" are a memorised 0.0 or 1.0 from a single unrelated order. **That is noise with a confident name on it. The feature was never good; it was only ever the answer.**
+**Fake 0.9240 · honest 0.7535 · rebuilt from the 1,200 training rows only 0.6115** — which is **worse** than not having the feature at all. Why: the rebuild is still naive — every training row is counted inside its own group (647 groups over 1,200 rows, so most hold one or two orders), so on the training rows the column is partly the row's own answer (train AUC about 0.96). The model learns to bet on it, and the bet does not carry over to validation orders, over a quarter of which sit in groups never seen in training. Rebuilt out-of-fold and smoothed, the same idea scores only about 0.758, barely above 0.7535. **The 0.9240 was never a measure of the feature; it was the answer.**
 
 **In my own words:** *"No. At the moment the customer taps 'order', nobody knows whether it will be late, so nobody could work out what fraction of similar orders were late — including this one. The lookup could only have been built by somebody who already had all the answers. In production this column would be empty."*
 
@@ -1317,7 +1317,7 @@ What would settle it: **measure the wobble.** Score the same change on many diff
 | Kept | The number that justifies it |
 |---|---|
 | `distance_km` | correlation **0.345**, weight **0.971**, and dropping it costs **0.1038** |
-| `weather` (one-hot) | dropping it costs **0.0276** — the biggest honest number on my table |
+| `weather` (one-hot) | dropping it costs **0.0276** — the biggest honest number on my table after `distance_km` |
 | `restaurant` (one-hot) | dropping it costs **0.0121** |
 | `items` | dropping it costs **0.0025** |
 | `prep_minutes` | dropping it costs **0.0024** |
@@ -1331,7 +1331,7 @@ What would settle it: **measure the wobble.** Score the same change on many diff
 | `min_per_km` | **row 4: −0.0051** — the worst change of the day |
 | `items_per_km` | **row 5: +0.0003**, inside the noise band on 400 rows |
 | `dist_x_weather` | **row 9: −0.0018** |
-| `similar_orders_late_rate` | **target leakage** — fake 0.9240, honest 0.7535, honestly rebuilt 0.6115 |
+| `similar_orders_late_rate` | **target leakage** — fake 0.9240, honest 0.7535, naively rebuilt from training rows 0.6115 |
 | `order_id` | a row number, not a fact about the world. Never a candidate |
 
 **`day_of_week` is the interesting one.** Row 8 says removing it costs 0.0010 — right on the noise line. **A student who keeps it citing −0.0010 and a student who drops it citing "inside the noise band" are both right**, provided they cite the number and say which side of 0.005 they think it falls on.

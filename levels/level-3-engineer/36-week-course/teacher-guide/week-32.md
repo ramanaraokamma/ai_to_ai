@@ -215,7 +215,7 @@ length of every row: [1. 1. 1. 1.]
 ![How often, times how rare, then shrink the row](../figures/fig-w32-1-tf-times-idf-then-normalize.svg)
 *Figure 32.2 — How often, times how rare, then shrink the row. `tf = 2`, `idf = 1.510826`, product `3.021651`, divided by the row length `3.592917`, giving `0.841002` — and `TfidfVectorizer` prints `0.841002`.*
 
-**Why normalize at all?** Because otherwise a long review beats a short one at everything simply by being long. A 200-word review has bigger numbers in every column than a 10-word review on the same subject. **Dividing by the length asks "what is this review made of?" instead of "how much of it is there?"** And it has a very convenient consequence, which §5 uses:
+**Why normalize at all?** Because otherwise a long review beats a short one at everything simply by being long. A 200-word review has bigger numbers in its columns than a 10-word review on the same subject. **Dividing by the length asks "what is this review made of?" instead of "how much of it is there?"** And it has a very convenient consequence, which §5 uses:
 
 > **Because every TF-IDF row has length exactly 1, comparing two of them by cosine similarity is just multiplying them together and adding up. The dividing has already been done.**
 
@@ -453,7 +453,7 @@ It fixes one part of one problem: `and` and `the` now get less weight than `rude
 | **Training a classifier on TF-IDF** | **Week 33**, and it is the whole of next week. Today nothing is fitted but the vectorizer. |
 | **n-grams** | **Week 33.** The word appears in this week's vocabulary list because you will *say* it once — *"there is a patch for word order called an n-gram and we measure it next week"* — and then stop. **Do not demonstrate `ngram_range` today.** |
 | **`sublinear_tf`, `smooth_idf=False`, `norm=None`** | Not in this level. There are four or five knobs on `TfidfVectorizer` and every one of them is a different formula. **We teach exactly the default and match it to four decimals.** If asked: *"there are other versions of this formula; the one we did is the one this library uses unless you tell it otherwise."* |
-| **Why `ln` and not `log₂` or `log₁₀`** | One sentence: *"any base works and they differ by a constant multiplier, so the ranking is identical; `ln` is what this library chose."* **Do not go further — it is a true fact with no consequence for a fourteen-year-old.** |
+| **Why `ln` and not `log₂` or `log₁₀`** | One sentence: *"any base gives the same ordering of words by rarity, because the logs differ by a constant multiplier, but the finished numbers shift a little because of the `+ 1`; `ln` is what this library chose."* **Do not go further — it is a true fact with no consequence for a fourteen-year-old.** |
 | **The geometry of high-dimensional space** | Not in this level, and genuinely strange. If a student asks how you can have an angle in 92 dimensions, the honest answer is in §9 of the Questions section and it is *"the arithmetic works the same and you should not try to picture it."* |
 | **`linear_kernel` being faster than `cosine_similarity`** | One sentence if it comes up: *"because TF-IDF rows already have length 1, the division is a waste of time, and there is a faster function that skips it."* **Not worth five minutes.** |
 | **Embeddings** | **Week 33's last ten minutes, then Level 4.** |
@@ -978,7 +978,7 @@ in your 60 reviews:   and  idf 1.0855      rude  idf 2.7130
 
 *Take answers. Steer towards: so a long review does not beat a short one just by being long.*
 
-> "**Exactly that.** A two-hundred-word review has bigger numbers in every column than a ten-word review about the same thing. Dividing by the length changes the question from *'how much of this is there?'* to *'what is this made of?'* And that is almost always the question you meant."
+> "**Exactly that.** A two-hundred-word review has bigger numbers in its columns than a ten-word review about the same thing. Dividing by the length changes the question from *'how much of this is there?'* to *'what is this made of?'* And that is almost always the question you meant."
 
 **Do this:** Now cosine similarity, and **do it on toppings, not documents.** Write:
 
@@ -1325,9 +1325,9 @@ Every message below came from running a broken version of this week's actual cod
 | `ValueError: Shape of passed values is (4, 1), indices imply (4, 8)` | "I see four rows and one column." | `pd.DataFrame(X, ...)` on a sparse matrix. | `pd.DataFrame(X.toarray(), ...)`. **Same as last week, and it will happen again.** |
 | `ValueError: Expected 2D array, got 1D array instead` from `normalize` | "Same problem, different function." | `normalize(a)` on a flat list. | `normalize([a])`, or `normalize(M)` on a whole matrix. **Every scikit-learn function that expects rows expects 2-D.** |
 | `TypeError: expected string or bytes-like object` | "That is not text." | A `NaN` or a number in the list of documents. | `str(x)` or clean the list. **A missing value in a text column arrives as a float.** |
-| **No error. Your idf values are all wrong by the same ratio.** | Nothing crashed. Every number is the right shape and the wrong size. | `np.log10` instead of `np.log`, or the `log` button instead of `ln`. | `np.log`. **The fingerprint is that `your value ÷ 2.303` pattern holds for every word: `ln(x) = log10(x) × 2.302585`. If one word is wrong you miscounted; if every word is wrong by the same factor, it is the log base.** |
+| **No error. Your idf values are all wrong in the same way.** | Nothing crashed. Every number is the right shape and the wrong size. | `np.log10` instead of `np.log`, or the `log` button instead of `ln`. | `np.log`. **The fingerprint is that the logarithm part of every idf (the idf minus 1) is out by the same factor: `ln(x) = log10(x) × 2.302585`. If one word is wrong you miscounted; if every word's log term is out by that factor, it is the log base.** |
 | **No error. Your weight is `3.021651` and sklearn says `0.841002`.** | Nothing crashed. You stopped one step early. | The **L2 normalization** was never done. | Divide by the row's length. `3.021651 ÷ 3.592917 = 0.841002`. **This is the single commonest mismatch of the week and it is why the activity is called *All The Way*.** |
-| **No error. Your weight is `0.8411` and sklearn says `0.8410`.** | Nothing crashed. You rounded too early. | `idf` was rounded to 4 decimal places **before** being multiplied and squared, so the error compounded through three operations. | **Carry six decimal places all the way and round only the final answer.** Worth saying out loud: rounding is not free, and rounding in the middle of a chain is where it costs. |
+| **No error. Your weight is `0.8412` and sklearn says `0.8410`.** | Nothing crashed. You rounded too early. | `idf` was rounded to 2 decimal places **before** being multiplied and squared, so the error compounded through three operations. | **Carry six decimal places all the way and round only the final answer.** Worth saying out loud: rounding is not free, and rounding in the middle of a chain is where it costs. |
 | **No error. Every cosine similarity is 1.0000.** | Nothing crashed. You are comparing each row with itself. | `cosine_similarity(X, X)` where you meant two *different* sets of rows, or you indexed the same row twice. | Check the two things you passed in are different. **And remember `cosine_similarity(X)` already gives every row against every other row, with 1.0000 down the diagonal by construction.** |
 | **No error. Your df for `cold` is 3 and mine is 2.** | Nothing crashed. You counted the wrong thing. | Occurrences instead of documents. `cold` appears 3 times, in 2 documents. | **Count documents.** Say the word "documents" out loud as you count. |
 | **No error. The two most similar reviews are a happy one and an angry one.** | Nothing crashed. **This is the correct output and the lesson of the week.** | Cosine similarity adds up only the words two documents **share**, and two reviews about the same thing share the topic words whatever they think of it. | **Nothing. Report it.** The fix is not available at this level — it is Week 33's measurement and then Level 4's embeddings. |
@@ -1338,7 +1338,7 @@ All the old moves stand. This week adds three, and the first is the most importa
 
 29. **"Print both numbers."** Yours and the library's, next to each other, to six decimal places. **Never check a formula by looking at it. Check it by evaluating it twice and comparing.** Half of this week's bugs are invisible until the two numbers are on adjacent lines.
 
-30. **"Is every number wrong, or just one?"** This is a genuinely powerful diagnostic and it is new. **One wrong number is a miscount. Every number wrong by the same factor is a wrong formula** — the log base, a missing `+1`, a forgotten normalization. **The pattern of the wrongness tells you where to look.**
+30. **"Is every number wrong, or just one?"** This is a genuinely powerful diagnostic and it is new. **One wrong number is a miscount. Every number wrong in the same systematic way is a wrong formula** — the log base, a missing `+1`, a forgotten normalization. **The pattern of the wrongness tells you where to look.**
 
 31. **"Convert it to an angle."** If a similarity number looks odd, take `cos⁻¹` of it. `0.9999` is 0.8 degrees and `0.98` is 11.5 degrees, which look nearly identical as numbers and are wildly different as angles. **The angle is the honest scale.**
 
@@ -1534,7 +1534,7 @@ length of A's row = 1.4142, length of B's row = 6.7082
 
 **Ask this:** "Where does `6.7082` come from?"
 
-*The length of B's row: its counts are `the` 4, `pizza` 3, `was` 3, `and` 2, and six words once each, so `16 + 9 + 9 + 4 + 6 = 44`... plus one more: `sqrt(45) = 6.7082`.*
+*The length of B's row: its counts are `the` 4, `pizza` 3, `was` 3, `and` 2, and seven words once each, so `16 + 9 + 9 + 4 + 7 = 45`: `sqrt(45) = 6.7082`.*
 
 > **Say this:** "**Forty-five.** Sixteen for the four `the`s, nine for the three `pizza`s, nine for the three `was`es, four for the two `and`s, and one each for `hot`, `fresh`, `lovely`, `but`, `chips`, `were`. **Add them: 45. Square root: 6.7082.** That is B's punishment for being long, and it is exactly the right size of punishment."
 
@@ -1586,7 +1586,7 @@ Here is the honest version. In two dimensions, "the angle between two arrows" ha
 
 **So "angle" in ninety-two dimensions is defined by the arithmetic, not by a picture.** Mathematicians do it the other way round from how you learned it: the formula is the definition, and the picture is the special case you happen to be able to draw.
 
-**And one honest warning, because it is real:** high-dimensional space is genuinely strange, and one of the ways it is strange is that almost every pair of random directions is nearly at right angles. **Which is why almost every cell of a big cosine matrix is close to 0** — and why 0.7981 was worth remarking on. It is not a large number on a 0-to-1 scale; **it is a large number for text.**
+**And one honest warning, because it is real:** high-dimensional space is genuinely strange, and one of the ways it is strange is that almost every pair of random directions is nearly at right angles. **That is a fact about random directions, though, and text rows are not random.** The reason most cells of a big TF-IDF cosine matrix are close to 0 is simpler: two documents from a big corpus usually share few words, and cosine only adds up shared words. On a 60-review corpus written from a small set of templates that does not hold, which is why `0.7981` turns up.
 
 **"Why does `TfidfVectorizer` add 1 to the idf at the end? Doesn't that ruin the formula?"**
 
@@ -1596,7 +1596,7 @@ Without the `+ 1`, a word appearing in **every** document gets `ln(1) = 0`, so i
 
 **And that is the same argument you had last week about stopwords.** Deleting is irreversible and you are guessing. Turning the volume down is reversible and it comes out of the data. **`+ 1` is the "turn the volume down instead of deleting" decision, written into the library's default.**
 
-**You can turn it off** — there is a setting — and then a word in every document really does vanish. **The fact that the library's default is the gentler option tells you something about what thirty years of people using this found out.**
+**The library always keeps that `+ 1`** (`smooth_idf=False` removes the smoothing in the fraction, not the trailing `+ 1`). Some textbooks define idf as plain `ln(n ÷ df)`, and in that version a word in every document really does vanish. **The fact that this library chose the gentler version tells you how it thinks a common word should be treated.**
 
 **"If TF-IDF is so good, why did the happy review and the angry review come out closest?"**
 
@@ -1824,9 +1824,9 @@ Every question restated, so you can mark from this page alone.
 **The two traps on this page:**
 
 - **`cold` has `df = 2`, not 3.** It appears three times (once in d2, twice in d4) but only two documents contain it.
-- **`ln`, not `log`.** `ln(5 ÷ 3) = 0.510826`; `log₁₀(5 ÷ 3) = 0.221849`. A page where every number is `1.22`, `1.22`, `1.40`-ish has used base ten. **Check the button, not the arithmetic.**
+- **`ln`, not `log`.** `ln(5 ÷ 3) = 0.510826`; `log₁₀(5 ÷ 3) = 0.221849`. A page where `and` reads `1.3979`, `cold` reads `1.2218` and `pizza` reads `1.0969` has used base ten. **Check the button, not the arithmetic.**
 
-**Marking notes.** **Eight `df` values and eight `idf` values, six decimal places.** The `which documents` column is worth insisting on because it is the proof they counted documents and not occurrences. **A page where all eight idf values are wrong by the same factor of 2.303 is a log-base problem and should be marked as correct arithmetic with the wrong button** — say so, because the student has done the work.
+**Marking notes.** **Eight `df` values and eight `idf` values, six decimal places.** The `which documents` column is worth insisting on because it is the proof they counted documents and not occurrences. **A page where the logarithm part of all eight idf values is out by the same factor of 2.303 is a log-base problem and should be marked as correct arithmetic with the wrong button** — say so, because the student has done the work.
 
 ### Page 32.2 — One word, all the way (in class)
 
@@ -2183,7 +2183,7 @@ only in the second: ['cold', 'stale']
 
 **Live-code step 1 — what `(C > 0).sum(axis=0)` does.** `C > 0` turns the count grid into `True`/`False`; `.sum(axis=0)` adds down each column and counts `True` as 1. **So it is "how many documents contain each word" — `df`, in one line.**
 
-**Live-code step 2 — "those two numbers do not agree. Whose arithmetic is wrong?"** **Mine.** `np.log10(5/3) + 1 = 1.221849`; `np.log(5/3) + 1 = 1.510826`. **`np.log` is the natural logarithm and it is the one the formula wants.** The fingerprint is that every word is wrong by the same factor, 2.302585.
+**Live-code step 2 — "those two numbers do not agree. Whose arithmetic is wrong?"** **Mine.** `np.log10(5/3) + 1 = 1.221849`; `np.log(5/3) + 1 = 1.510826`. **`np.log` is the natural logarithm and it is the one the formula wants.** The fingerprint is that the logarithm part of every word is out by the same factor, 2.302585.
 
 **Live-code step 3 — "what will the library say?"** **`0.841002`**, the same to six decimal places.
 

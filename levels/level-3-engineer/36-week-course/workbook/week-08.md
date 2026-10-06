@@ -962,7 +962,7 @@ On a calculator: `0.2143 × 0.014 = 0.0030002` and `0.9929 × 0.986 = 0.9790` (0
 
 **M4(d).** `0 ÷ 0` is **undefined**. In words: *"of everything I flagged, how much was fraud?"* — **it flagged nothing, so the question has nothing to be about.** scikit-learn prints `0.0000` and warns you, but **"undefined" is the better answer**, and the honest one.
 
-**M4(e).** You know **FP = 0** (it never went off, so it never went off wrongly) and **TP = 0** (it never went off, so it never caught anything). The count that matters is **FN — how many fires there actually were.** Zero fires and the alarm is fine. One fire and it failed at the only job it had. **Two of its four cells are empty, and the two that matter are the two you cannot read off the device.**
+**M4(e).** You know **FP = 0** (it never went off, so it never went off wrongly) and **TP = 0** (it never went off, so it never caught anything). The count that matters is **FN — how many fires there actually were.** Zero fires and the alarm has made no mistakes yet (though it has never been tested either, so recall is 0 ÷ 0). One fire and it failed at the only job it had. **Two of its four cells are empty, and the two that matter are the two you cannot read off the device.**
 
 ### Predict the Output
 

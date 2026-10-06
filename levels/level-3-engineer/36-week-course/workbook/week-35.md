@@ -532,7 +532,7 @@ IndexError: too many indices for array: array is 1-dimensional, but 2 were index
 
 **Bug 2.** **Which two shapes are fighting? Write both.** `lat` is ____________ and `band` is ____________
 
-**And the four characters to delete:** ______________
+**And the call to delete (15 characters):** ______________
 
 **Bug 3 is printed in that output and it never raises anything. Find it.**
 
@@ -876,7 +876,7 @@ p95  =  0.38 + 0.80 × 2.89  =  0.38 + 2.312  =  2.692
 
 **(d)** `0.50 × 4 = 2.0`, a whole position, so the p50 is the value at position 2: **0.31**.
 
-**(e)** `(0.27 + 0.27 + 0.31 + 0.38 + 3.27) ÷ 5 = 4.50 ÷ 5 = 0.90`. **Look at that: the mean is 0.90, and four of the five requests came in under 0.38.** The mean is describing a request that never happened.
+**(e)** `(0.27 + 0.27 + 0.31 + 0.38 + 3.27) ÷ 5 = 4.50 ÷ 5 = 0.90`. **Look at that: the mean is 0.90, and four of the five requests came in at 0.38 or less.** The mean is describing a request that never happened.
 
 **M2 — eight latencies.**
 
@@ -1191,7 +1191,7 @@ for raw in BODIES:
 '{"text": "hot delicious pizza"}' -> 200  predicted on 19 characters
 ```
 
-**`'["text"]'` is worth a moment.** It is perfectly valid JSON, so check 2 lets it through — and check 3 catches it, because `isinstance(payload, dict)` is `False`. **Without that `isinstance`, `"text" not in payload` would be `True` for a list containing the string `"text"`, and a list would walk straight into your model.**
+**`'["text"]'` is worth a moment.** It is perfectly valid JSON, so check 2 lets it through — and check 3 catches it, because `isinstance(payload, dict)` is `False`. **Without that `isinstance`, `"text" not in payload` would be `False` for a list containing the string `"text"`, so the list would slip past check 3 and then crash at `payload["text"]` with a `TypeError` — a `500` for a mistake that should have been a `400`.**
 
 **B4 — the subgroup report.**
 
@@ -1306,7 +1306,7 @@ lorem ipsum dolor sit amet                      5 of  5  OOV=1.0000
 
 **Bug 1 — runtime.** `read_text().split("\n")` on a file that ends with a newline produces a final **empty string**, and `json.loads("")` raises. `char 0` says it failed on the very first character, which means the line does not begin with `{` — and the emptiest possible way not to begin with `{` is to be empty. **The fix is `.splitlines()`**, which drops the trailing empty piece, and belt-and-braces is to skip any line where `line.strip() == ""`. Logs get blank lines in them for all sorts of reasons; **a log reader that cannot survive one is a log reader that will fail at the worst moment.**
 
-**Bug 2 — shape.** `lat` is **`(12,)`** and `band` is **`(12, 1)`**, because of the `.reshape(-1, 1)`. A boolean mask has to have the same shape as the thing it is selecting from, and numpy says so precisely: *array is 1-dimensional, but 2 were indexed.* **Delete the 13 characters `.reshape(-1, 1)`** and both are `(12,)`.
+**Bug 2 — shape.** `lat` is **`(12,)`** and `band` is **`(12, 1)`**, because of the `.reshape(-1, 1)`. A boolean mask has to have the same shape as the thing it is selecting from, and numpy says so precisely: *array is 1-dimensional, but 2 were indexed.* **Delete the 15 characters `.reshape(-1, 1)`** and both are `(12,)`.
 
 **And notice how far this got before it failed.** `band.sum()` printed `4 of 12`, which is the *right answer*, because summing a `(12,1)` array of booleans gives the same total. **The shape error only surfaced one line later, when the mask was used for what masks are for.** That is the Level 3 pattern: the wrong shape produces a right-looking number first.
 
@@ -1323,7 +1323,7 @@ latency p95         : 0.2210 ms
 
 **(c)** `np.percentile(lat, 95)`.
 
-**(d)** Because there are only twelve requests. `0.95 × 11 = 10.45`, which lands between the 11th value (`0.41`) and the 12th (`3.27`) — **so the p95 is dragged 45% of the way up to the single slow outlier and lands at `1.6970`, a time no request actually took.** Eleven of the twelve came in under `0.41`. **So report the count with it, report the max beside it, and do not put a p95 of twelve requests on a slide as though it described your service.** Get past a hundred requests and it starts to mean something.
+**(d)** Because there are only twelve requests. `0.95 × 11 = 10.45`, which lands between the 11th value (`0.41`) and the 12th (`3.27`) — **so the p95 is dragged 45% of the way up to the single slow outlier and lands at `1.6970`, a time no request actually took.** Eleven of the twelve came in at `0.41` or less. **So report the count with it, report the max beside it, and do not put a p95 of twelve requests on a slide as though it described your service.** Get past a hundred requests and it starts to mean something.
 
 The fixed program:
 
@@ -1420,7 +1420,7 @@ short (5 words or fewer)     9    0.556      0.667     0.400   <- too small to c
 longer (6 words or more)    19    0.684      1.000     0.333
 ```
 
-**The sentence:** *"The `0.812` on my card was measured on the 16 held-out reviews only. Split by whether a review contains one of seven negation words, the model scores `0.800` on the 15 rows without one and **`0.462` on the 13 rows with one, where its recall on the positive class is `0.000` — it found none of the six positive ones.** The mechanism is the one Week 31 predicted: bag-of-words throws away word order, so `not` cannot flip `delicious`. And 12 of those 13 rows are traps I wrote on purpose to be hard, so `0.462` demonstrates that the mechanism exists rather than estimating how often it bites."*
+**The sentence:** *"The `0.812` on my card was measured on the 16 held-out reviews only. Split by whether a review contains one of seven negation words, the model scores `0.800` on the 15 rows without one and **`0.462` on the 13 rows with one, where its recall on the positive class is `0.000` — it found none of the six positive ones.** The mechanism is the one Week 31 predicted: bag-of-words keeps almost no word order (pairs only see neighbours, and `not` never appeared in training), so `not` cannot flip `delicious`. And 12 of those 13 rows are traps I wrote on purpose to be hard, so `0.462` demonstrates that the mechanism exists rather than estimating how often it bites."*
 
 **`n` on every row, or the page does not pass.**
 
@@ -1438,16 +1438,16 @@ longer (6 words or more)    19    0.684      1.000     0.333
 > **Measured with no labels:** straight out of `logs/predictions.jsonl`; `read_logs.py` already prints it. **No truth ever has to arrive.**
 > **Baseline, measured:** **16 of 111 = 14.4%.** (On the 16 test reviews it is 3 of 16 = **18.8%** — different, because that is different traffic. **A baseline has to come from the traffic you are going to watch**, which is why this number could not be written until the service had run.)
 > **Alarm:** a weekly mean above **40%**, or any week more than **10 points** above the week before.
-> **Why it degrades for this model:** it is TF-IDF, so a word the vectorizer has never seen contributes exactly nothing and is silently dropped. Unfamiliar language becomes a vector that is mostly zeros, which pushes the probability toward the middle. **A rising band rate means a rising share of every input is invisible to me.**
+> **Why it degrades for this model:** it is TF-IDF, so a word the vectorizer has never seen contributes exactly nothing and is silently dropped. An input made only of unfamiliar language becomes a vector of all zeros and always scores the same `0.4887`, inside the band; a partly unfamiliar input is not pulled to the middle, because the unknown words are ignored and the known ones decide alone. **A rising band rate can mean a rising share of inputs that are invisible to me.**
 > **Action:** (1) pull the 16 requests inside the band out of the log; (2) read them — fifteen minutes usually explains everything; (3) if they are a genuine new subject, hand-label 40 and train a `v3`, keeping `v1` live until the new model beats it **on the same test set**; (4) if they are rubbish or an attack, add input validation instead of retraining.
 > **What I would deliberately NOT do:** retrain on my own predictions. Those log lines are the model's opinions, not labels, **and a model trained on its own opinions learns its own mistakes and gets more confident about them — which looks exactly like improvement.**
 > **What would retire it:** a band rate that settled above 50% and stayed there. It would be guessing on half its traffic, and a coin flip with a confident number attached is worse than no model.
 
-**The equally good alternative** is the **out-of-vocabulary rate** — `0.1111` for normal traffic, `0.8667` for a different world, `1.0000` for Latin, mean `0.1795` over the 111 logged requests. Same mechanism, same actions, and it spots a new subject **one step earlier**, because the words go missing before the probability drifts.
+**The equally good alternative** is the **out-of-vocabulary rate** — `0.1111` for normal traffic, `0.8667` for a different world, `1.0000` for Latin, mean `0.1795` over the 111 logged requests. Same mechanism, same actions, and it spots a new subject **one step earlier**, because a partly unfamiliar input still gets a confident-looking answer and never reaches the band, while its missing words do show up in this rate.
 
 **If a plan says "watch the accuracy", hand it straight back with one question: who tells you the right answer in production?**
 
-**35.8 — the stretch.** Full marks needs the sentence **"I guessed X and it was actually Y"**. Most people guess the model collapses at an OOV rate of 0.5; in practice it often survives much higher, **because the few words it can still see are frequently the sentiment-bearing ones.** Being surprised by that is the whole value of the page.
+**35.8 — the stretch.** Full marks needs the sentence **"I guessed X and it was actually Y"**. It depends on what is left: if the few words it can still see are sentiment-bearing it may do fine at a high OOV rate, and if they are filler (`the`, `was`) it is guessing. **Guessing first and then being surprised, one way or the other, is the whole value of the page.**
 
 ---
 

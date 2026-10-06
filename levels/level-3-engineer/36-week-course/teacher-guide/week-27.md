@@ -128,7 +128,7 @@ np.roll(X, 1, axis=1) rolls each picture's ROWS:
 trained on the WRONG axis: train 0.5968  test 0.8574
 ```
 
-**The test accuracy is HIGHER than the training accuracy.** That is the fingerprint, and it should be impossible: a model always does better on the data it saw. It happens here because four fifths of the *training* rows had scrambled labels and were unlearnable, while the test set was untouched. **Install this as a permanent alarm: if test beats train, your training labels are wrong.**
+**The test accuracy is HIGHER than the training accuracy.** That is the fingerprint, and it should be impossible: a model always does better on the data it saw. It happens here because two fifths of the *training* rows had scrambled labels and were unlearnable (the other three fifths keep correct labels, so training accuracy sits near 0.6), while the test set was untouched. **Install this as a permanent alarm: if test beats train, your training labels are wrong.**
 
 **And the one rule that is never negotiable:** augment the **training** set only. Never the test set. Two reasons, and both matter. Evaluation must be repeatable — the same test set every time or the number means nothing. And augmentation makes pictures harder, so an augmented test set would understate the model. **This is Week 6's fit-on-train-only discipline in a new costume, and it is the same discipline.**
 
@@ -164,7 +164,7 @@ scratch on 5-9       1.5s  movable 1898  train 0.9729  test 0.9814  (264 of 269)
 
 **Transfer learning pays when the source problem is enormous and the target problem is tiny.** The version people use in industry borrows a backbone trained on 1.2 million photographs and applies it to a few thousand. **Ours borrowed a backbone trained on 630 pictures of five digits, and applied it to 627 pictures of five different digits.** The source was not bigger than the target. It was the same size, and it was *specialised* — those eight filters were tuned to the shapes of 0, 1, 2, 3 and 4, and 5 to 9 are different shapes.
 
-**What the frozen version did buy, and it is real:** it trained **650 weights instead of 1,898** in **0.3 seconds instead of 1.5**, and it got to **92.6%**. So a third of the weights and a fifth of the time gets you within seven points. **On a problem where the backbone came from a million photographs and your target set is fifty pictures, that trade is transformative. Here it is not.**
+**What the frozen version did buy, and it is real:** it trained **650 weights instead of 1,898** in **0.3 seconds instead of 1.5**, and it got to **92.6%**. So a third of the weights and a fifth of the time gets you within six points. **On a problem where the backbone came from a million photographs and your target set is fifty pictures, that trade is transformative. Here it is not.**
 
 > **🧑‍🏫 If a student asks "so transfer learning doesn't work?"** — the honest answer, and it is worth saying carefully: *"It works, and it is one of the most valuable techniques there is. What we just measured is the condition it needs: the thing you borrow from has to know far more than the thing you are borrowing it for. We borrowed from something that knew about as much as we did. So we got the machinery working and we found out the price. Both of those are real results."*
 
@@ -223,7 +223,7 @@ average 8, ink per column: [  0   9  71  87  86  66  11   0]
 
 **And the reason is the resolution.** An 8 is two loops stacked. At 8×8, each loop is about three pixels tall and four wide — **too small to have a visible hole.** The loops fill in with grey, and what survives the fill-in is a bright vertical bar down the middle columns. **Which is exactly what a 1 is.**
 
-**And the direction makes sense too.** It is `8 → 1` three times but `1 → 8` only once, and that asymmetry is not noise: **an 8 can lose its holes and become a bar, but a bar cannot grow holes.** The information loss goes one way.
+**And the direction makes sense too.** It is `8 → 1` three times but `1 → 8` only once, and although 3 against 1 is too few mistakes to be certain it is not chance, it is what you would expect: **an 8 can lose its holes and become a bar, but a bar cannot grow holes.** The information loss goes one way.
 
 **Say the good version and the bad version out loud so the class hears the difference:**
 
@@ -301,7 +301,7 @@ Here is the four-row table the homework asks for, with the real numbers:
 ### 6. The three misconceptions you will actually meet
 
 **Misconception 1 — "more training rows is always better."**
-Not if some of them have wrong labels. The wrap-around experiment is the proof: 6,285 rows bought exactly nothing over 1,257, because a fifth of them were nonsense. **Cure:** put the two numbers next to each other — `0.9796` and `0.9796` — and ask *"where did the five times more data go?"*
+Not if some of them have wrong labels. The wrap-around experiment is the proof: 6,285 rows bought exactly nothing over 1,257, because many of the shifted copies had ink teleported to the opposite edge. **Cure:** put the two numbers next to each other — `0.9796` and `0.9796` — and ask *"where did the five times more data go?"*
 
 **Misconception 2 — "transfer learning is always better than starting fresh."**
 It is often better and it was not here, and the condition is what matters: **the borrowed network has to know far more than you do.** **Cure:** the scratch control row. `0.9814`, beating both. **This is exactly why you run a control**, and a student who asks "but what would starting from scratch have given?" before you show them has just discovered experimental design.
@@ -677,7 +677,7 @@ trained on the WRONG axis: train 0.5968  test 0.8574
 | If this fails | Do this instead |
 |---|---|
 | The augmented run takes three minutes and the room goes quiet | **Start it running and teach the confusion matrix while it works.** Say that is what you are doing. It is what a real engineer does and modelling it is worth more than a tidy schedule. |
-| `blanked-edge augmentation bought +0.00` | You are running the wrap version, or `.copy()` is missing from `shift` so numpy handed back a view and the blanking hit the original. **`.copy()` matters and it is the subtlest line in the file.** |
+| `blanked-edge augmentation bought +0.00` | You are running the wrap version, or the blanking is missing or on the wrong edge. (`.copy()` is belt and braces: `np.roll` already returns a fresh array, but slices and `.T` are views.) |
 | `ValueError: optimizer got an empty parameter list` | Everything got frozen, including the new head. Freeze `frozen[0]` and `frozen[3]` only — the two convs. |
 | `RuntimeError: Error(s) in loading state_dict ... size mismatch for 7.weight` | The head was replaced *before* `load_state_dict` instead of after. **Load the whole thing first, then swap the head.** |
 | Transfer beats scratch on somebody's machine | It should not with these seeds, but if it does, **that is a result and you say so.** *"On your run the borrowed backbone helped and on mine it did not. What would settle it?"* More seeds. **That conversation is better than the tidy answer.** |
@@ -915,7 +915,7 @@ def shift(stack, dr, dc):
 >
 > `out[:, 0, :] = 0.0` means: every picture, row 0, all columns — set to zero. **If you rolled down, the top row is the wrapped junk, so blank it.**
 >
-> And `.copy()` is doing real work. `np.roll` sometimes hands back a **view** of the original array rather than a fresh one, and blanking a view would blank the real data. **One word, and without it your training set quietly corrupts.**"
+> And `.copy()` is belt and braces. `np.roll` already hands back a fresh array (you can check with `np.shares_memory`), but slices and `.T` hand back **views** of the original, and blanking a view would blank the real data. **One word, and you never have to remember which functions do which.**"
 
 **Step 2 (3 min) — five copies, glued.**
 
@@ -979,7 +979,7 @@ blanked-edge  augmentation bought +1.30 points
 
 *Nothing. Exactly nothing.*
 
-> **Say this:** "**Zero. Not a little bit, not within noise — the identical 529 out of 540.** Five times the data and five times the wait for exactly nothing, because a fifth of those extra rows had ink teleported from one edge to the other and a label that no longer described the picture.
+> **Say this:** "**Zero. Not a little bit, not within noise — the identical 529 out of 540.** Five times the data and five times the wait for exactly nothing, because all four shifted copies (four fifths of the 6,285 rows) had ink teleported from one edge to the opposite one and a label that no longer described the picture.
 >
 > **And now the three lines that blank the edge.** `536 of 540`. **Seven more digits, +1.30 accuracy points, and no new data.**
 >
@@ -1014,7 +1014,7 @@ wrong axis          11.5s  movable 1898  train 0.5968  test 0.8574  (463 of 540)
 
 > **Say this:** "**The test score is higher than the training score.** That should never, ever happen. A model has *seen* the training data. It always does at least as well on it.
 >
-> So what did I actually do? `axis=0` on a stack of 1,257 pictures is not the rows of a picture — **it is which picture.** I shuffled the pictures round while the labels stayed exactly where they were. Four fifths of my training rows are pictures paired with somebody else's label. **Unlearnable.** So the model only really learned from the fifth that was correct, scored 0.5968 on its own scrambled homework, and 0.8574 on the untouched test set.
+> So what did I actually do? `axis=0` on a stack of 1,257 pictures is not the rows of a picture — **it is which picture.** I shuffled the pictures round while the labels stayed exactly where they were. Two fifths of my training rows (the up and down copies) are pictures paired with somebody else's label. **Unlearnable.** The other three fifths keep their right labels, so the model scored 0.5968 on its own partly scrambled homework, close to the 0.6 that three correct fifths allow, and 0.8574 on the untouched test set.
 >
 > **And nothing went red. No error, no warning, no hint of any kind.** Twelve seconds of training and a plausible-looking 85%.
 >
@@ -1105,7 +1105,7 @@ from scratch, no borrowing       1,898       1.5          0.9814
 >
 > **Transfer learning pays when the thing you borrow from knows far more than you do.** The version people use at work borrows a backbone trained on **1.2 million photographs** and applies it to a few thousand pictures of something else. **We borrowed a backbone trained on 630 pictures of five digits, and used it for 627 pictures of five different digits.** The source was not bigger than the target — it was the same size, and it was *specialised*. Those eight filters were tuned for the shapes of 0, 1, 2, 3 and 4. **A 5 is not a 3.**
 >
-> And notice what the frozen version *did* buy, because this part is real: **650 weights instead of 1,898, in 0.3 seconds instead of 1.5, and it still got to 92.6%.** A third of the weights, a fifth of the time, seven points behind. **If the backbone had come from a million photographs and your target set were fifty pictures rather than 627, that trade would be the difference between a working model and no model at all.**
+> And notice what the frozen version *did* buy, because this part is real: **650 weights instead of 1,898, in 0.3 seconds instead of 1.5, and it still got to 92.6%.** A third of the weights, a fifth of the time, six points behind. **If the backbone had come from a million photographs and your target set were fifty pictures rather than 627, that trade would be the difference between a working model and no model at all.**
 >
 > **So the honest sentence for your write-up is not 'transfer learning does not work'. It is: 'transfer learning bought a fifth of the training time and a third of the weights, and cost 5.6 accuracy points, because the borrowed backbone was trained on no more data than we already had.'** That sentence is worth more than a triumph would have been."
 
@@ -1385,7 +1385,7 @@ The condition is what matters: **the network you borrow from has to know far mor
 
 **We borrowed from a network trained on 630 pictures of five digits and used it for 627 pictures of five other digits.** The source was not bigger. It was the same size and it was *specialised* to the wrong five shapes.
 
-**What we did prove, and it is worth having:** the machinery works. We froze a backbone, counted the movable weights down from 1,898 to 650, trained in a fifth of the time, and landed within seven points. **On a real problem where the backbone came from a million photos and you have fifty pictures, that same machinery is the difference between a model and no model.**
+**What we did prove, and it is worth having:** the machinery works. We froze a backbone, counted the movable weights down from 1,898 to 650, trained in a fifth of the time, and landed within six points. **On a real problem where the backbone came from a million photos and you have fifty pictures, that same machinery is the difference between a model and no model.**
 
 **"Why does the network need to see shifted digits at all? Isn't a conv layer supposed to be shift-tolerant already?"**
 
@@ -1407,7 +1407,7 @@ But be clear about what you would be doing: **attacking the symptom.** The cause
 
 **"Why did the wrapped augmentation get a *worse* training accuracy than plain? It had five times the data."**
 
-**Because you cannot fit data that contradicts itself.** Roughly a fifth of those 6,285 rows show a digit with its bottom teleported to its top, labelled with the original digit. Some of those wrapped pictures genuinely look more like a different digit than the one on the label.
+**Because you cannot fit data that contradicts itself.** Four fifths of those 6,285 rows (every shifted copy) have a row or column of ink teleported to the opposite edge, labelled with the original digit; the down-shifted copy, for instance, shows the digit's bottom row at the top. Some of those wrapped pictures genuinely look more like a different digit than the one on the label.
 
 So the model is being told two incompatible things about similar-looking pictures, and the best it can do is compromise — which shows up as `train 0.9774` instead of `0.9881`. **A training accuracy that drops when you add data is a strong signal that the added data is wrong**, and it is a check worth keeping.
 
@@ -1438,7 +1438,7 @@ What to tell a 14-year-old, out loud: **"there is no first thing. But there is a
 | Rows 2 and 4 of the results table get compared | 0.9926 and 0.9665 are right next to each other and both are accuracies | **Write the pile in every row on the board yourself, first.** Then ask the illegal comparison out loud and let them catch it. **A table where the mistake is impossible is better than a warning about the mistake.** |
 | The confusion pair gets named but not diagnosed | "1 and 8, four of eleven" feels like an answer | Say the two versions out loud, side by side — the number restated, and the ink-per-column explanation. **Then the test: "what would you actually do about it?"** Only the second version leads anywhere. |
 | The showcase circuit becomes a queue | The station cards have too much on them | **Each card: what to show, one number to say.** Nothing else. Trim them in front of the class if you have to; a card nobody can read in five seconds is a card that stalls the circuit. |
-| `.copy()` is left out of the shift function | It looks redundant | `np.roll` can hand back a view, and blanking a view blanks the original training data. **The symptom is that augmentation buys nothing AND the plain run's numbers change if you rerun it** — which is genuinely baffling. Say the word `.copy()` out loud when you type it. |
+| `.copy()` is left out of the shift function | It looks redundant | `np.roll` itself hands back a fresh array on this numpy (so the file as written is safe even without it), but slices and `.T` are views, and blanking a view blanks the original training data. **If shift is ever rewritten that way, the symptom is that the plain run's numbers change if you rerun it** — which is genuinely baffling. Say the word `.copy()` out loud when you type it. |
 | Somebody concludes the CNN is bad because it is only 98% | Eleven mistakes feels like a lot when you count them | **Look at one.** Print a wrong test digit as an 8×8 grid of numbers and try to read it yourself. **Often you cannot**, and that reframes the whole conversation from "the model is stupid" to "the picture is 64 pixels". |
 | The lesson runs out of time in the wrap | There are three experiments and a circuit in seventy minutes | **The wrap is the least cuttable part of this particular week**, because the four-row table with the piles named is objective 4. If you are behind at minute 60, cut the showcase circuit to four stations. **Never cut the table.** |
 | The wall sheets come down without ceremony | It is the end of a long term and everyone is tired | **Take thirty seconds and do it properly.** Read the first row of PARAMETER COUNT (`2 → 16 → 1 = 65`, from Week 22) and the last (`1,898`). **That is the arc of the term in two numbers and the class deserves to hear it.** |
@@ -1684,7 +1684,7 @@ row 1, column 8 = 1      one real 1 was called 8
 >
 > *At 8×8 an 8 is two loops stacked on top of each other, so each loop gets about three pixels of height and four of width. **A hole needs a ring of ink around a gap, and three pixels is not enough to have both.** So the loops fill in with grey, and what survives is a bright vertical stroke down the middle columns — which is exactly what a 1 is.*
 >
-> *You can see it in the average pictures. Adding up the ink in each column of the average 1 gives `0 5 42 93 106 56 9 2`, and for the average 8 it gives `0 9 71 87 86 66 11 0`. **Both pile their ink into columns 2 to 5 and both peak in the middle.** The 8 has a bit more ink out in columns 2 and 5 — 71 and 66 against 42 and 56 — but that difference is one or two grey levels per pixel, which is well inside the variation between different people's handwriting.*
+> *You can see it in the average pictures. Adding up the ink in each column of the average 1 gives `0 5 42 93 106 56 9 2`, and for the average 8 it gives `0 9 71 87 86 66 11 0`. **Both pile their ink into columns 2 to 5 and both peak in the middle.** The 8 has a bit more ink out in columns 2 and 5 — 71 and 66 against 42 and 56 — but the gaps of 29 and 10 are sums over 8 pixels on a 0-16 scale, so about 3.6 and 1.3 grey levels per pixel, small next to the bright bar in the middle.*
 >
 > *The direction makes sense too. **An 8 can lose its holes and turn into a bar. A bar cannot grow holes.** The information loss only goes one way, so the confusion should be lopsided, and it is: three against one.*
 >
@@ -1693,7 +1693,7 @@ row 1, column 8 = 1      one real 1 was called 8
 **Marking notes.** **This is the page you mark hardest and the bar is one question: did they say something about what 64 pixels can and cannot show?**
 
 - ✅ Full marks: the loops are too small to hold a hole, so they fill in and leave a bar. Anything that reaches that idea, however phrased.
-- ✅ Level 5: notices the **asymmetry** and explains the direction. Three against one is not noise; it is information loss going one way.
+- ✅ Level 5: notices the **asymmetry** and explains the direction. Three against one is too few to prove anything on its own, but it is what information loss going one way predicts.
 - ✅ Also level 5: proposes a fix that addresses the cause (more pixels, or a hole-counting feature) rather than the symptom (train longer on 1s and 8s).
 - ❌ Zero on this page: *"the model confused 1 and 8 four times out of eleven"*, or *"they look similar"*, or *"the model needs more training"*. Hand it back once, with one question written on it: **"what do a 1 and an 8 actually share when you only have 64 pixels?"**
 
@@ -1827,7 +1827,7 @@ scratch  100 rows   1.0s  movable 1898  train 0.9500  test 0.9628
 
 **Live-code step 3 — the blanked version.** **`536 of 540`, `+1.30 points`, seven more digits, no new data.**
 
-**Live-code step 4 — "something about those two numbers is impossible. What?"** **`train 0.5968` and `test 0.8574`: the test score is higher than the training score.** A model has seen its training data and must do at least as well on it. The cause is `axis=0`, which shifted the *pictures* while the labels stayed put, so four fifths of the training rows were mislabelled and unlearnable. **Permanent alarm: test above train means the labels are wrong.**
+**Live-code step 4 — "something about those two numbers is impossible. What?"** **`train 0.5968` and `test 0.8574`: the test score is higher than the training score.** A model has seen its training data and must do at least as well on it. The cause is `axis=0`, which shifted the *pictures* while the labels stayed put, so two fifths of the training rows (the up and down copies) were mislabelled and unlearnable. **Permanent alarm: test above train means the labels are wrong.**
 
 **Live-code step 5 — "what order did I do them in?"** Head swapped first, then `load_state_dict`. **It must be the other way round: load the whole saved network, then replace the head.** The error names both shapes, `[10, 64]` and `[5, 64]`, and Week 25's question still applies.
 

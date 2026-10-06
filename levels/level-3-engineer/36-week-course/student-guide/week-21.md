@@ -10,7 +10,7 @@
 > **By the end of this chapter you will be able to:**
 > - **Write the canonical training loop from a blank file**: `zero_grad`, forward, loss, `backward`, `step`, in that order
 > - **Delete each of the five lines in turn** and record exactly what happens — including the ones that produce **no error at all**
-> - **Explain why gradients accumulate by default**, and read a run where the gradient grows instead of shrinking
+> - **Explain why gradients accumulate by default**, and read a run where the gradient refuses to shrink
 > - **Use `torch.no_grad()`** when you are measuring rather than learning, and say what it saves
 >
 > **New maths:** **none.** There is one gradient and one step, and both are done by hand on six numbers before any code runs.
@@ -163,7 +163,7 @@ Nothing about the data changed. Nothing about the weights changed. **The true sl
 ![Four backward() calls, no zero_grad()](../figures/fig-w21-2-gradients-piling-up-without-zero-grad.svg)
 *Figure 21.2 — Four backward() calls, no zero_grad(). The four bars grow, and the fifth one is back to 326.6667 after the wipe.*
 
-Now imagine that inside a loop that runs four hundred times, where each step also multiplies by the learning rate. Your steps get bigger and bigger for no reason at all — and **nothing goes red.**
+Now imagine that inside a loop that runs four hundred times, where each step also multiplies by the learning rate. Every step now carries all the old slopes along with the new one, so the steps stop being the size you asked for — and **nothing goes red.**
 
 > **💡 Try this:** the last row differs from `4 × 326.6667` in the fourth decimal (`1306.6667` against `1306.6668`) because each addition happens in `float32`. **That is last week's seven-digit lesson, arriving unannounced in a place you were not looking.**
 
@@ -792,7 +792,7 @@ Read the miss column. The 4 km delivery is out by **−1.4000** minutes, and eve
 
 Every message below came from really running a broken version of this week's code.
 
-> **The recipe for every silent training bug, and it never changes: read the gradient column, not the loss column.** A gradient that **grows** means the pile. A gradient of **`None`** means no `backward()`. A gradient that is **right while nothing moves** means no `step()`. One column, three different diagnoses.
+> **The recipe for every silent training bug, and it never changes: read the gradient column, not the loss column.** A gradient that **refuses to shrink — it keeps swinging in size and flipping sign —** means the pile. A gradient of **`None`** means no `backward()`. A gradient that is **right while nothing moves** means no `step()`. One column, three different diagnoses.
 
 ### Break 1 — the optimizer without its brackets
 
@@ -864,9 +864,9 @@ for step in range(400):
 
 > **"What was the loss at the START, and what is it at the END?"**
 >
-> **"Is the gradient column growing or shrinking?"**
+> **"Is the gradient column shrinking towards zero, or swinging about?"**
 
-Not *"is it going down"* — it goes down at step 1, which is exactly what makes this bug survive. **1786.6666 against 2907.9082** is the comparison that catches it, and the gradient column growing and flipping sign is the confirmation.
+Not *"is it going down"* — it goes down at step 1, which is exactly what makes this bug survive. **1786.6666 against 2907.9082** is the comparison that catches it, and a gradient column that never shrinks and keeps flipping sign is the confirmation. (Why it swings: `.grad` is now the running total of every slope so far, so `w` keeps being pushed by old slopes after it has passed the bottom — like a ball rolling with no friction. The sizes stay in the hundreds; they do not blow up.)
 
 **The fix.** `optimizer.zero_grad()` at the top of the loop.
 
@@ -882,7 +882,7 @@ Not *"is it going down"* — it goes down at step 1, which is exactly what makes
 | **No error.** `w` and the loss are both `nan` by step 150 | The run is dead and every future prediction is `nan` | Learning rate too big. **Watch the first four steps, not the last one** |
 | **No error.** The loss never moves off `1786.666626`, and `w.grad` is `None` | Nothing crashed and nothing learned | `loss.backward()` is missing. **`None` is the diagnosis** |
 | **No error.** The loss never moves, and `w.grad` is `−326.6667` | Nothing crashed and nothing learned | `optimizer.step()` is missing. **The `.grad` value is how you tell this apart from the one above** |
-| **No error.** The loss falls at first, then wanders, and ends higher than it started | The model is worse than when you began | `optimizer.zero_grad()` is missing. **The gradient column grows and the signs flip** |
+| **No error.** The loss falls at first, then wanders, and ends higher than it started | The model is worse than when you began | `optimizer.zero_grad()` is missing. **The gradient column never shrinks and the signs flip** |
 | **No error.** The loss is identical every step and never changes at all | — | The forward line is outside the loop **and** you added `retain_graph=True` to make the crash go away. Take it out. **The error was telling the truth** |
 
 ---
@@ -946,7 +946,7 @@ Then the folded paper came out: **8 and 12**, against the program's **8.0014 and
 
 **1. Why doesn't PyTorch just zero the gradients for you?**
 
-*Hint:* find the one real use first. A batch too big for memory: you want the gradient over 1,000 rows and only 250 fit at once, so you run four forward-and-backward passes, let the gradients pile up, and take one step. The total is **exactly** the gradient over 1,000 rows, and you never held more than 250 rows at a time. Then the cost: the single most common PyTorch bug in the world, and hours lost by every beginner. Then argue it — **you are allowed to think the default is wrong.** Other frameworks chose differently. You still have to type line 1 every time. Finish on the honest closer: *is there any library decision you have met that was purely a win, with no cost?*
+*Hint:* find the one real use first. A batch too big for memory: you want the gradient over 1,000 rows and only 250 fit at once, so you run four forward-and-backward passes, let the gradients pile up, and take one step. If each piece's loss is divided by 4 first (or you use a sum rather than a mean), the total is **exactly** the gradient over 1,000 rows, and you never held more than 250 rows at a time. Then the cost: the single most common PyTorch bug in the world, and hours lost by every beginner. Then argue it — **you are allowed to think the default is wrong.** Other frameworks chose differently. You still have to type line 1 every time. Finish on the honest closer: *is there any library decision you have met that was purely a win, with no cost?*
 
 **2. We fitted a straight line. Couldn't scikit-learn have done this in one line?**
 
@@ -996,7 +996,7 @@ The only way it can hurt you is if you accidentally wrap your **training** step 
 ## 🌍 Where You've Seen This
 
 1. **Every model you have ever heard of.** The training script for a language model running on ten thousand machines has these five lines in it, in this order. More data, more knobs, more machines, same loop.
-2. **`model.fit(X, y)` in Keras, and `.fit()` in scikit-learn.** Those are one-line wrappers around a loop like this one. **You are now looking at what is inside the wrapper.**
+2. **`model.fit(X, y)` in Keras, and `.fit()` on scikit-learn's neural-network models (such as `MLPClassifier`).** Those are one-line wrappers around a loop like this one. (Not every scikit-learn `.fit()` is a loop — `LinearRegression` uses algebra, as Talk About It 2 says.) **You are now looking at what is inside the wrapper.**
 3. **A thermostat.** Measure how wrong the temperature is, work out which way to move, move a bit, measure again. No gradients, but the same shape: measure, decide, act, repeat.
 4. **Learning to shoot a basketball.** Throw, see how far off you were, adjust, throw again. **The learning rate is how much you adjust** — too small and you never get there in one session, too big and you overcorrect wildly every time. That is `lr = 0.01` and `lr = 0.1`, on a court.
 5. **Autofocus on a camera.** It nudges the lens, measures sharpness, and steps towards better. When it hunts back and forth without settling, that is a learning rate that is too large.
@@ -1035,7 +1035,7 @@ nothing new was invented today — the loop you built in Week 15 just got its fi
 - **The order is forced.** 4 needs 3. 3 needs 2. 5 needs 4. And 1 goes first because **4 adds** to whatever is already in `.grad`.
 - **`zero_grad` wipes slopes and never touches weights. `step` moves weights and never touches slopes.** Two jobs, two objects, and swapping them in your head produces a loop that looks right and learns nothing.
 - **Three of the five failures produce no error at all.** Missing `zero_grad` → the loss ends **higher** than it started, 1786.6666 → 2907.9082. Missing `backward` → nothing moves and `w.grad` is `None`. Missing `step` → nothing moves and `w.grad` is `−326.6667`. **That `.grad` value is how you tell the last two apart.**
-- **Read the gradient column, not the loss column.** Growing means the pile. `None` means no `backward()`. Right-but-nothing-moving means no `step()`.
+- **Read the gradient column, not the loss column.** Not shrinking (swinging, sign flips) means the pile. `None` means no `backward()`. Right-but-nothing-moving means no `step()`.
 - **`nan` is contagious and never recovers.** If you see it, look at the **first four steps**, not the last one. The cause is almost always a learning rate too large.
 - **If you are not going to call `backward()`, wrap it in `no_grad()`.** Same answer, far less stored.
 - **The maths reminder:** `0 − 0.05 × (−326.6667) = 16.3333`. A negative slope means increase the knob. That is all `optimizer.step()` does.
@@ -1070,7 +1070,7 @@ with torch.no_grad():                       # nothing gets a grad_fn in here
 print("average miss: %.4f" % gap.item())
 
 # ---- what each missing line costs you ------------------------------------
-#  no zero_grad  -> NO ERROR. loss 1786.6666 -> 2907.9082. gradient column GROWS.
+#  no zero_grad  -> NO ERROR. loss 1786.6666 -> 2907.9082. gradient column never shrinks, signs flip.
 #  no forward    -> RuntimeError: backward through the graph a second time
 #  no loss       -> RuntimeError: backward through the graph a second time
 #  no backward   -> NO ERROR. nothing moves. w.grad is None.
@@ -1113,7 +1113,7 @@ Go to **[the Week 21 workbook](../workbook/week-21.md)**. About **60 minutes** i
 
 **Are the error messages verbatim?** *"Trying to backward through the graph a second time"* is a result. *"It crashed"* is not, and the difference is whether you can search for it in two years' time. Copy the words, including the bit that says **"a second time"**, because that phrase is the clue.
 
-**Does the `zero_grad` row explain the mechanism?** Full marks looks like: *"the gradients added up instead of being wiped, so each step got bigger, so it overshot and ended worse than it started — 1786.6666 to 2907.9082."* *"It broke"* has watched the failure without understanding it.
+**Does the `zero_grad` row explain the mechanism?** Full marks looks like: *"the gradients added up instead of being wiped, so each step carried every old slope along with it, so it kept overshooting and ended worse than it started — 1786.6666 to 2907.9082."* *"It broke"* has watched the failure without understanding it.
 
 > **⚠️ Watch out:** **at least one of your five rows must say "no error, but wrong."** If you have three of them, you have done it properly.
 

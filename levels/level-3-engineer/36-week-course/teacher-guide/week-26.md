@@ -20,7 +20,7 @@
 | **Prep time** | 25 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | `digits_cnn.py` trains 40 epochs of 40 steps in **about 3 seconds** on this machine — up to about 12 on a slow laptop. `filters.py` trains both networks and writes a PNG in **about 4 seconds**. **Time it on your own machine before you say a number out loud.** |
 
-> **⚠️ Watch out:** the trap door this week is `nn.CrossEntropyLoss`. **It applies the softmax for you, internally.** If a student squashes the ten scores themselves and hands the *probabilities* to the loss, **nothing goes red** — the loss just starts around 1.48 instead of 0.02 for a confident correct answer, the model trains badly, and it looks like a bad architecture. This is the same shape of bug as Week 22's double sigmoid, and it will come back in Week 33. **Show it on purpose, with both numbers on the screen, or you will be silently debugging it for three more weeks.**
+> **⚠️ Watch out:** the trap door this week is `nn.CrossEntropyLoss`. **It applies the softmax for you, internally.** If a student squashes the ten scores themselves and hands the *probabilities* to the loss, **nothing goes red** — the loss just reads around 1.48 instead of 0.02 for a confident correct answer, the model trains badly, and it looks like a bad architecture. This is the same shape of bug as Week 22's double sigmoid, and it will come back in Week 33. **Show it on purpose, with both numbers on the screen, or you will be silently debugging it for three more weeks.**
 
 ---
 
@@ -195,7 +195,7 @@ pred = logits.argmax(dim=1)
 opt = torch.optim.Adam(model.parameters(), lr=1e-3)
 ```
 
-Same shape as Week 21's `SGD([w], lr=0.1)`. You hand it the things it is allowed to change — `model.parameters()`, all 1,898 of them — and how big a step to take. **`model.parameters()` and not `model`**: hand it the model itself and you get `TypeError: 'Sequential' object is not iterable`.
+Same shape as Week 21's `SGD([w], lr=0.1)`. You hand it the things it is allowed to change — `model.parameters()`, all 1,898 of them — and how big a step to take. **`model.parameters()` and not `model`**: hand it the model itself and you get `TypeError: optimizer can only optimize Tensors, but one of the params is torch.nn.modules.conv.Conv2d` (a `Sequential` is iterable, so PyTorch walks its layers and complains about the first one).
 
 ### 5. What you will actually see on the screen, with the real numbers
 
@@ -501,8 +501,8 @@ minus ln of the true chance : 0.0244
 
 | If this fails | Do this instead |
 |---|---|
-| `parameters:` prints something other than 1898 | Count the layers. The commonest cause is a third conv block copied in by accident, or `Linear(32, 10)` — last week's bug, still fatal, now silent because 32 would error not print. |
-| Accuracy is about 0.10 and the loss never falls | The loss is being handed softmaxed numbers, or the labels are one-hot. Both are in the Clinic. **0.10 on ten classes is exactly chance and it means nothing is learning.** |
+| `parameters:` prints something other than 1898 | Count the layers. The commonest cause is a third conv block copied in by accident, or a wrong `Linear` size (`Linear(32, 10)` prints `parameters: 1578` and only fails later, on the first forward pass). |
+| Accuracy is about 0.10 and the loss never falls | Nothing is learning: `opt.step()` or `loss.backward()` is missing, or the labels are wrong. (Softmaxed numbers handed to the loss do **not** do this - that model learns, badly. One-hot labels raise an error.) **0.10 on ten classes is chance.** |
 | Accuracy is 0.9796 but seconds is 40, not 3 | Slow laptop, and it is fine. Say the real number. **Never read this file's 3.1 out as if it were theirs.** |
 | The loss starts at 0.4 instead of 2.28 | Something has leaked, or the model was already trained (the cell was run twice). **Restart and rerun. A ten-class network cannot honestly start below about 2.3.** |
 | `filters.png` is eight grey squares that look like nothing | **That is correct and expected.** They are nine pixels each. Go straight to the numbers: the bright-left and bright-top answers in §6. **The numbers are the evidence; the picture is the hook.** |
@@ -1015,19 +1015,19 @@ Every message below came from running a broken version of this week's actual cod
 | `RuntimeError: Expected floating point type for target with class probabilities, got Long` | "You gave me a grid of 0s and 1s where I wanted a list of digits." | Labels one-hot encoded into shape `(32, 10)`. | `CrossEntropyLoss` wants **the digit itself**: a `(32,)` tensor of whole numbers 0–9. No one-hot anywhere in PyTorch. |
 | `RuntimeError: 0D or 1D target tensor expected, multi-target not supported` | "The labels are shaped `(32, 1)` and I want `(32,)`." | An extra `unsqueeze` on the labels, or a reshape copied from a regression example. | `yb.squeeze()`, or just do not unsqueeze the labels. **Only the pictures need extra dimensions.** |
 | `IndexError: Target 10 is out of bounds.` | "You said 10 classes and handed me a label of 10." | Labels 1–10 instead of 0–9, usually after adding 1 somewhere. | Labels must run `0` to `n_classes − 1`. Ten classes means labels 0–9. Check `y.min()` and `y.max()`. |
-| `TypeError: 'Sequential' object is not iterable` | "You handed the optimiser the model, not its weights." | `torch.optim.Adam(model, lr=1e-3)`. | `torch.optim.Adam(model.parameters(), lr=1e-3)`. **The `()` on `parameters` is doing real work.** |
+| `TypeError: optimizer can only optimize Tensors, but one of the params is torch.nn.modules.conv.Conv2d` | "You handed the optimiser the model, not its weights." | `torch.optim.Adam(model, lr=1e-3)`. | `torch.optim.Adam(model.parameters(), lr=1e-3)`. **The `()` on `parameters` is doing real work.** |
 | `RuntimeError: mean(): could not infer output dtype. Input dtype must be either a floating point or complex dtype. Got: Bool` | "You averaged a list of true/falses." | `(pred == y).mean()` — comparing gives Booleans, and you cannot average those. | `(pred == y).float().mean()`. Turn the trues into 1.0 first. |
 | `RuntimeError: mat1 and mat2 shapes cannot be multiplied (32x64 and 32x10)` | Last week's error, back again. | `nn.Linear(32, 10)`. The 64 came from `16 × 2 × 2`; the 32 you typed. | `nn.Linear(64, 10)`. **Week 25's whole lesson, and it will keep happening — which is why Week 25 exists.** |
-| **No error. The loss starts near 1.5 and the model ends up around 60%.** | Nothing crashed. Every gradient was computed from a double-squashed number. | `loss_fn(torch.softmax(logits, dim=1), yb)`. | Hand the loss the **raw** logits. **The loss gets logits; humans get probabilities.** And check: a fresh ten-class model's first loss must be near 2.30, not 1.5. |
+| **No error. The loss falls slowly (about 1.6 after 20 epochs where it should be about 0.4) and test accuracy ends a couple of points low (0.937 against 0.961).** | Nothing crashed. Every gradient was computed from a double-squashed number. | `loss_fn(torch.softmax(logits, dim=1), yb)`. | Hand the loss the **raw** logits. **The loss gets logits; humans get probabilities.** Note the 2.30 check does **not** catch this one: a fresh double-squashed network also starts near 2.30. |
 | **No error. `argmax` returns 10 numbers instead of 540.** | Nothing crashed. Your accuracy is computed from nonsense. | `argmax(dim=0)` instead of `argmax(dim=1)`. | `dim=1`. **Then count the answers: there must be one per picture.** |
-| **No error. Accuracy is exactly 0.10 and the loss never moves off 2.30.** | Nothing crashed. Nothing learned. | `opt.zero_grad()` missing, or `opt.step()` missing, or the optimiser was built before the last layer was added so some weights are not in it. | Check the five lines are all present and in order. Then `print(len(list(model.parameters())))` — this network has **6** blocks of weights (two convs with weight+bias, one linear with weight+bias). |
+| **No error. Accuracy is about 0.10 (chance) and the loss never moves off 2.30.** | Nothing crashed. Nothing learned. | `opt.step()` missing (or `loss.backward()` missing), or the optimiser was built from the wrong list so no weights are in it. (A missing `zero_grad()` is a *different* silent bug: gradients pile up and the model still learns, just badly - 0.78 test accuracy on this network.) | Check the five lines are all present and in order. Then `print(len(list(model.parameters())))` — this network has **6** blocks of weights (two convs with weight+bias, one linear with weight+bias). |
 | **No error. Train accuracy is 0.988 and test accuracy is 0.34.** | Nothing crashed. | The test tensor was built from the *training* rows, or the split was done twice with different seeds. | One split, one seed, and print all four row counts. **1257 + 540 = 1797.** Make the addition every time. |
 
 ### How to teach debugging without giving the answer
 
 All the old moves stand. This week adds three, and two of them are about errors that never announce themselves.
 
-20. **"What should the loss be before it has learned anything?"** For ten classes, `−ln(1/10) = 2.30`. **A first loss far from 2.30 is a bug, and this check costs nothing and catches the double-softmax, a broken loop and a leak.**
+20. **"What should the loss be before it has learned anything?"** For ten classes, `−ln(1/10) = 2.30`. **A first loss far from 2.30 is a bug, and this check costs nothing and catches a broken loop, a leak and a wrong class count. It does NOT catch the double-softmax, which also starts near 2.30 - that one needs the "is there a softmax before the loss?" question.**
 
 21. **"Count the answers."** For any `argmax`, ask how many answers came out and how many pictures went in. If they differ, it is `dim`.
 
@@ -1162,7 +1162,7 @@ row 2:  0.761 × 1  +    0.348  × 1  +  (−0.550) × (−1)  =  0.761 + 0.348 
 
 **And say the honest thing about filters 3 and 5:**
 
-> **"Three and five answer about +0.5 and about −0.8 to both patches, which is nearly nothing. They are weak, and I cannot tell you a story about them. If I did, I would be making it up. Two of the eight are clearly edge detectors, one is a blank-paper detector, and three or four of them do something I cannot name. That is the honest result and it is what the picture actually shows."**
+> **"Three and five answer less than one unit to either patch, with no clear preference, which is nearly nothing. They are weak, and I cannot tell you a story about them. If I did, I would be making it up. Two of the eight are clearly edge detectors, one is a blank-paper detector, and three or four of them do something I cannot name. That is the honest result and it is what the picture actually shows."**
 
 ### What "finished" looks like
 
@@ -1210,7 +1210,7 @@ Two reasons, and the second is the real one.
 
 **One: you do not always need them.** If all you want is the answer, the argmax of the raw scores is the same as the argmax of the probabilities — softmax never changes which one is biggest. So squashing is wasted work at prediction time.
 
-**Two, and this is why it is built this way: doing the softmax and the log together, inside the loss, is numerically safer.** Look back at our ten scores. There is a `−10.94` in there, and `e^−10.94` is about 0.0000177. On a bigger network you routinely get scores of −40 or +40, and `e^−40` rounds to exactly zero in a computer — and then `ln(0)` is minus infinity and your training run fills up with `nan`. **`CrossEntropyLoss` rearranges the arithmetic so that never happens.** This is the same reason Week 22's loss was called `BCEWithLogitsLoss`: the words "with logits" in a loss name mean *"give me the raw scores and I will do the squash safely."*
+**Two, and this is why it is built this way: doing the softmax and the log together, inside the loss, is numerically safer.** Look back at our ten scores. There is a `−10.94` in there, and `e^−10.94` is about 0.0000177. On a bigger network you can get scores of +100 or −110: `e^100` is bigger than the biggest number the computer's format can hold, so it becomes `inf` (and `inf ÷ inf` is `nan`), while a chance as small as `e^−110` rounds to exactly zero, and then `ln(0)` is minus infinity and your training run fills up with `nan`. (`e^−40` is tiny, about 4 × 10⁻¹⁸, but still representable - the trouble starts around ±90 to ±100.) **`CrossEntropyLoss` rearranges the arithmetic so that never happens.** This is the same reason Week 22's loss was called `BCEWithLogitsLoss`: the words "with logits" in a loss name mean *"give me the raw scores and I will do the squash safely."*
 
 **"How does Adam actually work?"**
 
@@ -1273,7 +1273,7 @@ Where the CNN wins is not in doubt: **1,898 weights against 4,810**, exactly rep
 | The training run is announced as "three seconds" and takes forty | You read this file's number instead of your own | **Time it on your machine the night before and say YOUR number.** A slow laptop is not a failure and the class does not care — but being wrong by a factor of ten in front of them costs you something. |
 | Somebody asks which digits it got wrong and the lesson becomes Week 27 | It is the obvious question and it is a good one | *"Eleven of them. Next week we find out exactly which, and why, and it is the whole first half of the lesson."* **Do not build a confusion matrix today.** It costs fifteen minutes and it steals next week's hook. |
 | The filters are rendered and the room is disappointed | They are nine grey pixels and they look like smudges | **Agree out loud**, immediately: *"yes, they look like nothing. That is why we are about to put a number on them."* Then go to the +2.830. **The number is the payoff, not the picture.** |
-| A confident story gets told about filter 3 | Teachers hate saying "I don't know" in front of a class | Say it anyway, and say why: *"filter 3 answers about +0.5 to both patches, which is nearly nothing. I cannot tell you what it does. If I made something up, I would be teaching you that interpretation is storytelling."* **This is the single most valuable sentence in the activity.** |
+| A confident story gets told about filter 3 | Teachers hate saying "I don't know" in front of a class | Say it anyway, and say why: *"filter 3 answers +0.54 and +0.16 to the two patches, which is nearly nothing. I cannot tell you what it does. If I made something up, I would be teaching you that interpretation is storytelling."* **This is the single most valuable sentence in the activity.** |
 | `matplotlib` opens a window and blocks the whole class | `matplotlib.use("Agg")` was not at the top of the file | It must come **before** `import matplotlib.pyplot as plt`, at the very top. Then `plt.savefig(...)` and open the PNG. **Never an interactive window.** |
 | The test row gets read as "the CNN is better" | 0.9796 beats 0.9722 and that is what winning looks like | **Convert to counts, out loud: 529 against 525. Four digits out of 540.** Then ask *"would you bet on that surviving a different seed?"* **The parameter count is the row that is not inside the noise, and saying so is the professional skill.** |
 | Adam becomes a twenty-minute detour into moments and decay rates | A strong student read the docs | *"It keeps a separate step size per weight and adjusts them as it goes. Exactly how is a level above this one, and I would rather say that than give you a sentence that sounds like an explanation."* **Then move.** |
@@ -1490,7 +1490,7 @@ total  : 1898
 dense 64 -> 64 -> 10: 4810
 ```
 
-**Marking notes.** **A total of 1,864 is the missing-biases error** — short by exactly 8 + 16 + 10 = 34 — and it is the same error Week 22 flagged. One line of feedback, every week, until it stops. **A total of 1,266 means they used 8 × 3 × 3 for conv2 and forgot the 16 output channels.** And **anybody who writes 0 for the ReLU, the pools and the flatten without hesitating has understood something important**: three of the eight layers in this network contain nothing to learn at all.
+**Marking notes.** **A total of 1,864 is the missing-biases error** — short by exactly 8 + 16 + 10 = 34 — and it is the same error Week 22 flagged. One line of feedback, every week, until it stops. **A total of 818 means they used 8 × 3 × 3 (plus 16 biases) for conv2 and forgot to multiply by the 16 filters.** And **anybody who writes 0 for the ReLU, the pools and the flatten without hesitating has understood something important**: three of the eight layers in this network contain nothing to learn at all.
 
 **The observation worth praising:** **conv2 is the biggest layer, with 1,168 of the 1,898.** Most people expect the `Linear` to dominate, because in Week 23's dense network it did. A student who notices that and says *"the big layer moved"* is at level 4.
 

@@ -30,7 +30,7 @@ By the end of the lesson the student can:
 
 1. **Build a network with `nn.Sequential`** and prove its parameter shapes are the same four grids as Week 19's NumPy brain — printing both lists side by side and naming which pair is transposed.
 2. **Count the learnable numbers in a 2 → 16 → 1 network by hand** — 32 + 16 + 16 + 1 = 65 — and match the number PyTorch reports.
-3. **Explain why `BCEWithLogitsLoss` takes raw scores rather than probabilities**, and say what goes wrong if you sigmoid twice: no error, and a loss that cannot fall below about 0.31.
+3. **Explain why `BCEWithLogitsLoss` takes raw scores rather than probabilities**, and say what goes wrong if you sigmoid twice: no error, and a loss with a high floor (about 0.31 on a correct 1, 0.69 on a correct 0, so near 0.50 on a two-class problem).
 4. **Produce a train and validation loss curve on one axis** and mark with a dashed line the epoch where validation stopped improving.
 
 Observable evidence: two printed shape lists with the four pairs matched; the number 65 written on the wall in both columns; one sentence explaining the double squash; and `overfit.png` with a dashed vertical line at epoch 39 and two sentences about what would have happened if training had carried on.
@@ -195,13 +195,13 @@ Here is the real run you will do in class: 400 moons, 300 for training, 100 held
   1499   0.0165   0.4347
 ```
 
-**Read it as a story in two halves.** Up to epoch 39 both numbers fall together: the model is learning something true about moons. After epoch 39 the train number keeps falling all the way to 0.0165 — nearly perfect — while the validation number climbs back up to 0.4347, **worse than it was at epoch 0**. The model is now learning things that are true about those exact 300 rows and false about moons.
+**Read it as a story in two halves.** Up to epoch 39 both numbers fall together: the model is learning something true about moons. After epoch 39 the train number keeps falling all the way to 0.0165 — nearly perfect — while the validation number climbs back up to 0.4347, **most of the way back to its epoch-0 value of 0.5314**. The model is now learning things that are true about those exact 300 rows and false about moons.
 
 ```
 at the end:   0.4347 − 0.0165  =  0.4182
 ```
 
-That gap is the whole diagnosis. **A small train loss and a big validation loss means memorising, every time.**
+That gap is the whole diagnosis. **A small train loss and a big validation loss is the signature of memorising.**
 
 ![Train and validation loss pulling apart](../figures/fig-w22-3-train-and-val-loss-diverging.svg)
 *Figure 22.4 — Train and validation loss pulling apart. Validation bottoms out at 0.1568 on epoch 39 and never gets that low again.*
@@ -278,7 +278,7 @@ Make the loss. It is an object you build once and then call, like the scalers in
 loss = loss_fn(model(X_tr_t), y_tr_t)
 ```
 
-`model(X_tr_t)` pushes the training batch through and gets raw scores back. `loss_fn(scores, answers)` compares them and gives one number. **Scores first, answers second** — the same "prediction, then truth" order the student has used since Week 8, except here it is the other way round from `confusion_matrix`, which takes truth first. Yes, that is annoying. Say so out loud; pretending it is consistent helps nobody.
+`model(X_tr_t)` pushes the training batch through and gets raw scores back. `loss_fn(scores, answers)` compares them and gives one number. **Scores first, answers second** — the opposite of the truth-first order of `confusion_matrix` and the other sklearn metrics. Yes, that is annoying. Say so out loud; pretending it is consistent helps nobody.
 
 ```python
 y_tr_t = torch.from_numpy(y_tr).float().reshape(-1, 1)
@@ -778,7 +778,7 @@ raw score     fed in raw     squashed twice
 
 *If they say both:* ask *"how big is the gap in each column?"* 6.0000 and 0.3780.
 
-> "Six units of range against 0.378. Sixteen times smaller. **Squash twice and a disaster scores nearly the same as a triumph** — so there is nearly nothing for the training loop to learn from, and the loss sits at about 0.54 for ever. We are going to do this on purpose in a minute so you know what it looks like."
+> "Six units of range against 0.378. Sixteen times smaller. **Squash twice and a disaster scores nearly the same as a triumph** — so the training loop gets a much weaker signal, and the loss sits at about 0.54 for ever (the model can still learn to classify, as its accuracy shows, but its loss cannot get low). We are going to do this on purpose in a minute so you know what it looks like."
 
 **Do this:** Hand out workbook 22.1 — the Parameter Count Race sheet — and give them three minutes on the first two rows, **in pen**, before any code runs.
 
@@ -991,13 +991,13 @@ no dropout : best val loss 0.1568 at epoch 39, ended at 0.4347
 
 *If they say epoch 1499:* ask *"which of the two numbers is measured on rows the model has never trained on?"*
 
-> **Say this:** "Epoch 39. After that, every single epoch made this model worse at the only job that matters — being right about rows it has never seen. It kept getting better at the 300 rows it *had* seen, all the way down to 0.0165.
+> **Say this:** "Epoch 39. After that, nothing ever beat it, and the trend was steadily worse at the only job that matters — being right about rows it has never seen. It kept getting better at the 300 rows it *had* seen, all the way down to 0.0165.
 >
 > ```
 > 0.4347 − 0.0165 = 0.4182
 > ```
 >
-> **That gap is the definition of memorising.** And we spent 1,461 epochs making it bigger."
+> **That gap is the definition of memorising.** And we spent 1,460 more epochs making it bigger."
 
 Open `overfit.png` on the screen and put a finger on the dashed line.
 
@@ -1021,7 +1021,7 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: four netw
 >
 > **One.** `nn.Linear` is the grid multiply plus the bias. Nothing else is in there. Its grid is written outputs-first, which is not a bug.
 >
-> **Two.** A loss with `WithLogits` in the name does the squash for you. **Your model ends with a bare `nn.Linear`.** Squash twice and nothing goes red and nothing works.
+> **Two.** A loss with `WithLogits` in the name does the squash for you. **Your model ends with a bare `nn.Linear`.** Squash twice and nothing goes red and the loss number is wrong.
 >
 > **Three.** Two loss curves, not one. The training curve tells you what the model has memorised. **The validation curve is the only one that tells you anything about the future**, and on this run it gave up at epoch 39 while we kept going for another one and a half thousand."
 
@@ -1187,7 +1187,7 @@ with nn.ReLU()     params 65  train loss 0.1538  train acc 0.9367  val acc 0.910
 without nn.ReLU()  params 65  train loss 0.3424  train acc 0.8500  val acc 0.9300
 ```
 
-Two questions. *"Which model can fit the training data better?"* The one with the ReLU, clearly: 0.1538 against 0.3424, and 93.67% against 85.00%. *"So why did the one without it score higher on validation?"* Because these particular 100 validation rows can very nearly be split with a straight line, and 2 rows out of 100 is 2%. **This is the best five minutes available to a strong student today**: the training numbers show what the model *can express*, and a 100-row validation set cannot tell 0.91 from 0.93 apart. Both facts are worth having.
+Two questions. *"Which model can fit the training data better?"* The one with the ReLU, clearly: 0.1538 against 0.3424, and 93.67% against 85.00%. *"So why did the one without it score higher on validation?"* Because a straight line already does well on moons (it scored 85% on training and 93% on these particular 100 validation rows), and 2 rows out of 100 is 2%. **This is the best five minutes available to a strong student today**: the training numbers show what the model *can express*, and a 100-row validation set cannot tell 0.91 from 0.93 apart. Both facts are worth having.
 
 2. **Find the exact epoch yourself.** Do not use `val_hist.index(min(val_hist))`. Loop over the list, keep the best-so-far and the epoch it happened on, and print both. Then ask: what would `patience = 20` have done? *(Stopped at epoch 59, because epochs 40 to 59 are all worse than 0.1568.)*
 
@@ -1195,7 +1195,7 @@ Two questions. *"Which model can fit the training data better?"* The one with th
 
 4. **Deliberately mismatch the middle.** `nn.Linear(2, 16)` followed by `nn.Linear(8, 1)`. Predict the error message before running it, including both numbers in it. *(`mat1 and mat2 shapes cannot be multiplied (300x16 and 8x1)`.)*
 
-5. **Turn dropout up to 0.8.** Predict what happens, then run it. The model can barely learn at all — with four in five units off, most steps carry almost no signal. **A brake is not a cure and too much brake is a stop.**
+5. **Turn dropout up to 0.8.** Predict what happens, then run it. On our seed-0 moons run it still learns well (validation loss about 0.17, accuracy 91%), so 0.8 on this problem is noisy rather than fatal; the point to draw out is that each step now trains a much thinner network and training is noisier. **Too much brake eventually underfits, but find out where on your own data rather than taking a number from a book.**
 
 ---
 
@@ -1213,7 +1213,7 @@ Three honest reasons, and one of them is the real one.
 
 **"Why is the weight shape backwards?"**
 
-Because `nn.Linear` computes `x @ W.T + b` rather than `x @ W + b`, and storing it outputs-first makes the most common operation — grabbing all the weights belonging to one output unit — a single row of memory rather than a scattered column. It is a speed decision made in the 1980s and inherited by everybody.
+Because `nn.Linear` computes `x @ W.T + b` rather than `x @ W + b`, and storing it outputs-first makes the most common operation — grabbing all the weights belonging to one output unit — a single row of memory rather than a scattered column. It is a storage convention PyTorch chose, and nothing in this course depends on it.
 
 **What matters for you:** the numbers are the same numbers, `numel()` is the same count, and the parameter total is unaffected. If your shape looks transposed, it is transposed, and that is correct.
 
@@ -1227,7 +1227,7 @@ The evidence, from the harder variation: with the ReLU, train accuracy 0.9367. W
 
 Yes, and PyTorch provides one: `nn.BCELoss()` takes probabilities. So `Sigmoid` + `BCELoss` is a legal pairing and it computes the same thing in exact arithmetic.
 
-**Don't.** Here is why, honestly. `BCEWithLogitsLoss` computes the squash and the logarithm together in one step, in a way that never divides by something tiny. Do it in two separate steps and a very confident wrong answer can produce `log(0)`, which is minus infinity, which turns every weight in your network into `nan` — Not A Number — and every prediction after it. **One combined part cannot make that mistake; two separate parts can.** The library is not being fussy; it is being careful in a place where care is invisible until it isn't.
+**Don't.** Here is why, honestly. `BCEWithLogitsLoss` computes the squash and the logarithm together in one step, in a way that never divides by something tiny. Write the two steps yourself (sigmoid, then `torch.log`) and a very confident wrong answer can produce `log(0)`, which is minus infinity, which can turn every weight in your network into `nan` (`nn.BCELoss` clips the log at −100 to avoid that, which hides the problem by flattening the gradient) — Not A Number — and every prediction after it. **One combined part cannot make that mistake; two separate parts can.** The library is not being fussy; it is being careful in a place where care is invisible until it isn't.
 
 **"Is dropout not just... breaking the model on purpose?"**
 
@@ -1416,9 +1416,9 @@ Three checks, five minutes, exact wording.
 
 **Check 3 — the two curves (spoken, 90 seconds)**
 
-> "Point at `overfit.png`. **Which epoch was this model at its best, how do you know, and what were we doing for the other 1,461 epochs?**"
+> "Point at `overfit.png`. **Which epoch was this model at its best, how do you know, and what were we doing for the other 1,460 epochs?**"
 
-*Good answer:* "Epoch 39, because that's the lowest the validation loss ever gets. After that the training loss kept falling — down to 0.0165 — but validation climbed to 0.4347, so for the other 1,461 epochs we were teaching it things that are true about those 300 rows and false about moons."
+*Good answer:* "Epoch 39, because that's the lowest the validation loss ever gets. After that the training loss kept falling — down to 0.0165 — but validation climbed to 0.4347, so for the other 1,460 epochs we were teaching it things that are true about those 300 rows and false about moons."
 
 **What to catch:** any answer that reads the training curve. *"Which of your two numbers came from rows the model has never seen?"*
 
@@ -1430,7 +1430,7 @@ Three checks, five minutes, exact wording.
 | **2 — Emerging** | Builds an `nn.Sequential` by copying. Counts the two grids but forgets the biases. Knows the sigmoid rule as a rule, without knowing why. Can point at the divergence on a plot when it is pointed out first. |
 | **3 — Secure** | Counts 32 + 16 + 16 + 1 = 65 unaided and checks it against PyTorch. States that `nn.Linear` is the grid multiply plus the bias, and that the stored shape is outputs-first. Explains that `WithLogits` does the squash and that squashing twice fails silently. Produces the two-curve plot and marks the epoch. **This is the target.** |
 | **4 — Strong** | Prints a parameter count before training anything, without being asked. Reads both shapes out of a shape error before touching the code. Says that dropout slowed the overfitting rather than fixing it, and cites both numbers. Works out what `patience = 20` would have done. |
-| **5 — Exceptional** | Predicts the 0.3139 floor of the double-squash column from `sigmoid(sigmoid(6.0))` and a logarithm. Explains that the no-ReLU model's higher validation accuracy is a measurement limit of 100 rows, not a modelling result, and uses the training numbers to say what the ReLU actually bought. Argues that architecture size is the wrong first question and the data is the right one. |
+| **5 — Exceptional** | Predicts the 0.3139 bottom of the double-squash column from `sigmoid(sigmoid(6.0))` and a logarithm, and notices that a true 0 has a floor of 0.6931. Explains that the no-ReLU model's higher validation accuracy is a measurement limit of 100 rows, not a modelling result, and uses the training numbers to say what the ReLU actually bought. Argues that architecture size is the wrong first question and the data is the right one. |
 
 ---
 
@@ -1604,7 +1604,7 @@ total learnable numbers: 65
 
 **Sentence one — what would have happened if you had kept training?** Full marks:
 
-> "It did keep training, for another 1,461 epochs, and every one of them made the model worse on rows it had never seen: validation loss climbed from 0.1568 to 0.4347, which is worse than it was at epoch 0. The training loss fell to 0.0165, so the model was getting better and better at the 300 rows it had already seen and worse and worse at everything else."
+> "It did keep training, for another 1,460 epochs, and not one of them beat epoch 39 on rows it had never seen: validation loss drifted up, with wobbles, from 0.1568 to 0.4347, most of the way back to its epoch-0 value of 0.5314. The training loss fell to 0.0165, so the model was getting better and better at the 300 rows it had already seen and worse and worse at everything else."
 
 **Sentence two — what number would you report?** Full marks:
 
@@ -1620,7 +1620,7 @@ The raw score coming out of the last layer, before any squash. It can be any num
 
 **2. Your model ends `nn.Linear(16, 1)` and you use `BCEWithLogitsLoss`. Should you add `nn.Sigmoid()`? What happens if you do?**
 
-No. The loss applies the sigmoid itself — that is what `WithLogits` means. Add one and the numbers get squashed twice: **no error appears**, and the loss can no longer separate a terrible answer from a perfect one. On our moons run it stuck at **0.5423** instead of falling to **0.1538**.
+No. The loss applies the sigmoid itself — that is what `WithLogits` means. Add one and the numbers get squashed twice: **no error appears**, and the loss can barely separate a terrible answer from a perfect one. On our moons run it stuck at **0.5423** instead of falling to **0.1538**.
 
 **3. `nn.Linear(10, 4)`. How many learnable numbers, and what shape does `weight` have?**
 
@@ -1690,7 +1690,7 @@ About `0.3 × 64 ≈ 19`. **No** — a different random set every step. That is 
 
 **Harder variation 4 — the predicted error message.** `RuntimeError: mat1 and mat2 shapes cannot be multiplied (300x16 and 8x1)` — the first layer produced 16 columns and the second expects 8.
 
-**Flying 4 — where does 0.3139 come from?** `sigmoid(6.0) = 0.997527`. Hand that in as though it were a raw score: `sigmoid(0.997527) = 0.730572`. Then `−ln(0.730572) = 0.313927`, which rounds to the **0.3139** in the last row of the table. **The double-squashed loss can never go below about 0.3139 no matter how right the model is**, and that ceiling is why it never learns.
+**Flying 4 — where does 0.3139 come from?** `sigmoid(6.0) = 0.997527`. Hand that in as though it were a raw score: `sigmoid(0.997527) = 0.730572`. Then `−ln(0.730572) = 0.313927`, which rounds to the **0.3139** in the last row of the table. **For a row whose true answer is 1, the double-squashed loss can never go below about 0.3133 no matter how right the model is** (and for a row whose answer is 0 it can never go below 0.6931, so a whole two-class dataset floors near 0.50). That high floor and the flattened signal are why the loss sticks near 0.54 — but the model still learns to classify: in our run it reached 93% accuracy.
 
 ---
 

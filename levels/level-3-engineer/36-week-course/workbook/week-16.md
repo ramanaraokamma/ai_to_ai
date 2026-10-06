@@ -279,7 +279,7 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**How many of the answers on this page did you get right?** ______ / 15
+**How many of the answers on this page did you get right?** ______ / 14
 
 **Which one surprised you most?** ______________________________
 
@@ -320,7 +320,7 @@ tanh(z)      = [ 0.935409 -0.997283  0.995055 -0.604368]
 | b. Why is `w.shape` `(3,)` and not `(3, 1)`? | |
 | c. `rows.T.shape` is `(3, 4)`. What does one **row** of `rows.T` now hold? | |
 | d. Two of the four texts got `0.` from ReLU. What do those two have in common? | |
-| e. Which single number on that printout is negative, and which squash produced it? | |
+| e. Which numbers in the three squash rows (ReLU, sigmoid, tanh) are negative, and which squash produced them? | |
 | f. `z.shape` is `(4,)`. Why four and not three? | |
 
 **A2(g).** Text 2 is `[0, 0, 3]` — no exclamation marks, no links, three shouted words. **Show the arithmetic that gives `−3.3`:**
@@ -366,7 +366,7 @@ ________________________________________________________________
 
 **Your answers:** i → ______  ii → ______  iii → ______  iv → ______  v → ______
 
-**A4(f).** Two of those five outputs come from *squashes*. One of them could **never** be produced by ReLU and one could never be produced by sigmoid. Name both and say why.
+**A4(f).** Three of those five outputs come from *squashes* (i, iii and v). One of the five output values could **never** be produced by ReLU **or** by sigmoid, whatever the input. Which, and which squash made it?
 
 ________________________________________________________________
 
@@ -728,7 +728,7 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
-**T1.** ReLU throws information away. Every negative pre-activation becomes exactly `0`, and nothing downstream can ever recover what it was — `−0.20` and `−47.5` both arrive as `0`. **Write a paragraph** on whether that is a cost you are paying or the entire point. Use the `2.10` against `0.60` measurement from the chapter, and say what would happen if you invented a squash that was reversible.
+**T1.** ReLU throws information away. Every negative pre-activation becomes exactly `0`, and nothing downstream can ever recover what it was — `−0.20` and `−47.5` both arrive as `0`. **Write a paragraph** on whether that is a cost you are paying or the entire point. Use the `2.10` against `0.60` measurement from the chapter, and say whether a squash that loses *no* information (one you could undo, like sigmoid) could still bend the line.
 
 ________________________________________________________________
 
@@ -1005,11 +1005,11 @@ The chapter's table says **`0.196612`**, and Python with every digit it has gets
 (0.76201381 − 0.76117386) ÷ 0.002 = 0.00083995 ÷ 0.002 = 0.419975
 ```
 
-**`0.419974` to six places** — and that is the chapter's number for tanh at `z = 1.0`. **Four times steeper than sigmoid in the middle**, which is exactly the trap in Trick 4: tanh wins in the middle and loses at the edges.
+**`0.419974` to six places** — and that is the chapter's number for tanh at `z = 1.0`. **About twice as steep as sigmoid at `z = 1`** (and four times as steep at `z = 0`), which is exactly the trap in Trick 4: tanh wins in the middle and loses at the edges.
 
 **M3(b).** **No calculator needed, and the answer is `1`.** ReLU at `z = 1` is firing, and while it fires it repeats its input exactly — nudge the input up by a thousandth and the output goes up by a thousandth. `0.002 ÷ 0.002 = 1`.
 
-**M3(c).** `0.25⁵ = **0.0009765625**` — about **one thousandth** of the signal survives five sigmoid layers. `1⁵ = **1**` — **all** of it. That single comparison is the reason ReLU is the default, and it is arithmetic rather than opinion.
+**M3(c).** `0.25⁵ = **0.0009765625**` — about **one thousandth** of the signal survives five sigmoid layers. `1⁵ = **1**` — **all** of it. That single comparison is the main reason ReLU is the default (not the only one: it is also cheap to compute), and you can check it yourself.
 
 **M4.**
 
@@ -1046,7 +1046,7 @@ no squash:  out = 2.0(5.80) + 1.0(−2.80) − 0.1 = 11.6 − 2.8 − 0.1 = 8.70
 the gap:    11.50 − 8.70 = 2.80
 ```
 
-**M4(c).** **The gap is exactly the contribution that got thrown away.** `h2` was `−2.80` and its weight into the output is `1.0`, so binning it removed `1.0 × (−2.80) = −2.80` from the answer, which *raised* the answer by `2.80`. **Throwing information away for some rows and not others is the only way a straight line becomes a curve.**
+**M4(c).** **The gap is exactly the contribution that got thrown away.** `h2` was `−2.80` and its weight into the output is `1.0`, so binning it removed `1.0 × (−2.80) = −2.80` from the answer, which *raised* the answer by `2.80`. **ReLU bends the line because it cuts some rows and leaves others alone; a rule that behaves differently in different places is not a straight line.**
 
 ### Predict the Output
 
@@ -1122,13 +1122,13 @@ False
 | c | `AttributeError: 'list' object has no attribute 'shape'`. A plain Python list has no shape | wrap it: `np.array([0.4, -0.7, 1.2])` |
 | d | `ValueError: cannot reshape array of size 6 into shape (4,2)`. `4 × 2 = 8`, and there are 6 | any shape multiplying to 6: `(2,3)`, `(3,2)`, `(1,6)`, `(6,1)` |
 | e | `ValueError: operands could not be broadcast together with shapes (n,3) (4,)`. Four weights, three columns | delete the fourth weight. **One weight per column, always** |
-| f | **No error, and nothing happens.** `a` is flat `(3,)`, so there is nothing to flip and `col` is a copy of `a` | `a.reshape(3, 1)`, or `a.reshape(1, 3).T` |
+| f | **No error, and nothing happens.** `a` is flat `(3,)`, so there is nothing to flip and `col` has the same shape and numbers as `a` | `a.reshape(3, 1)`, or `a.reshape(1, 3).T` |
 
 **A3(g).** **f.** Nothing crashes, `col` looks plausible, and the shape is quietly still `(3,)`. **How you would notice: `print(col.shape)`.** That is this week's whole reflex, and f is the reason it exists.
 
 **A4.** i → **R** · ii → **T** · iii → **Q** · iv → **P** · v → **S**
 
-**A4(f).** **`Q` (`[-0.9800964]`) could never come from ReLU**, because ReLU cannot return a negative number at all. **`Q` could never come from sigmoid either**, and neither could a number above 1 — sigmoid lives strictly between 0 and 1. So `Q` must be **tanh**. And **`S` (`[0.5]`) could never come from ReLU** on `z = 0`: ReLU of `0` is `0`, not `0.5`. `0.5` is sigmoid's answer at exactly zero.
+**A4(f).** **`Q` (`[-0.9800964]`)**: ReLU cannot return a negative number at all, and sigmoid lives strictly between 0 and 1, so neither could have made it. It must be **tanh**. (And `S`, `[0.5]`, on the input `z = 0` that the code uses, is sigmoid's answer: ReLU of `0` is `0` and tanh of `0` is `0`.)
 
 **A5.** The eight boxes, in order:
 
@@ -1227,7 +1227,7 @@ w.reshape(3, 1)        (3, 1)
 np.maximum(0, rows)    (2, 3)
 ```
 
-**B3(a).** **Yes, those two are the same grid** — and this is the exception that proves the rule. `np.maximum(0, rows)` squashes **every cell in place**, so the shape is untouched and the numbers stay where they were. It is `.T` and `.reshape` that give you the same shape with the numbers *moved*. **A squash never changes a shape; a rearrangement never changes the count.**
+**B3(a).** **Yes, those two are the same grid here** — but only because every number in this `rows` is already zero or positive. `np.maximum(0, rows)` squashes **every cell in place**, so the shape is untouched and no number moves; with a negative cell in `rows` the *value* would change to `0`, but it would still sit in the same place. It is `.T` and `.reshape` that give you the same shape with the numbers *moved*. **A squash never changes a shape; a rearrangement never changes the count.**
 
 **B4.**
 
@@ -1343,13 +1343,13 @@ Python's built-in `max` asks **one** yes-or-no question: *"is this one bigger?"*
 
 **The fix:** `return np.maximum(0, z)`. **Built-in Python functions work on one thing; numpy functions work on every cell.**
 
-**Bug 3 — lines 21 and 26: `+ b` is missing from both.** A silent logic bug.
+**Bug 3 — lines 21 and 27: `+ b` is missing from both.** A silent logic bug.
 
 Every `z` in the table is exactly **`0.5` too big**: `0.70` instead of `0.20`, `−1.80` instead of `−2.30`, `1.20` instead of `0.70`, `0.90` instead of `0.40`. `0.5` is the size of the bias, and the bias is negative, so leaving it out raises every score. **The two guilty lines are `z_all = (rows * w).sum(axis=1)` and `z = (r * w).sum()`.**
 
 **The fix:** `+ b` on both. (Fixing only one gives you a program whose two printouts disagree, which is its own kind of horrible.)
 
-**Ranking by time cost: bug 3 ≫ bug 2 ≈ bug 1.** Bugs 1 and 2 crash on the spot and the message names the exact problem — one prints both shapes, the other prints the offending line. Bug 3 produces a program that runs, prints a tidy table, and is wrong in all twelve squash numbers. **The only things that catch it are a hand-checked row or a table you can compare against.**
+**Ranking by time cost: bug 3 ≫ bug 2 ≈ bug 1.** Bugs 1 and 2 crash on the spot and the message names the exact problem — one prints both shapes, the other prints the offending line. Bug 3 produces a program that runs, prints a tidy table, and is wrong in eleven of the twelve squash numbers (row 2's ReLU is `0.000` either way). **The only things that catch it are a hand-checked row or a table you can compare against.**
 
 **Could you spot it from `sigmoid(z)` alone?** **Yes, but only by doing arithmetic.** The sigmoid column is `0.668, 0.142, 0.769, 0.711`, and nothing about those numbers looks wrong — they are all sensible probabilities. You would have to **take one row and compute `z` by hand**: `2×0.4 + 1×(−0.7) + 0.5×1.2 − 0.5 = 0.20`, then `sigmoid(0.20) = 0.550`, which is not `0.668`. **One hand-checked row is the whole defence**, and it is why the chapter keeps asking for one.
 
@@ -1390,13 +1390,13 @@ w₃ + (−0.20) =  1.50  →  w₃ =  1.70
 
 **Part 2(d).** **They are wrong.** Three rows give you three equations in **four** unknowns — the three weights and the bias — which is one short. With only `[1,0,0]`, `[0,1,0]` and `[0,0,1]` you would know `w₁ + b`, `w₂ + b` and `w₃ + b`, so you could work out the **differences** between the weights but never any single one of them. **The empty row is not a spare; it is the fourth equation.**
 
-**Part 2(e).** **Rows 2 and 4 become useless.** Their `z` values are `−0.40` and `−0.20`, so after a ReLU both would be recorded as `0.000`, and *any* negative number produces `0.000`. You could no longer recover `w₂` or `b` at all — you would only know they are negative. **What to do about it: feed the neuron rows big enough to push `z` positive** — for example `[0, 5, 0]`, which gives `z = −1.2` — still negative, so try `[−5, 0, 0]`… or simply ask for `z` instead of `a`. **A squash that clips is a squash that destroys evidence, and that is the same fact as T1.**
+**Part 2(e).** **Rows 2 and 4 become useless.** Their `z` values are `−0.40` and `−0.20`, so after a ReLU both would be recorded as `0.000`, and *any* negative number produces `0.000`. You could no longer recover `w₂` or `b` at all — you would only know they are negative. **What to do about it: feed the neuron rows that push `z` positive, or simply ask for `z` instead of `a`.** For `w₂` (which is negative) feed a *negative* input, e.g. `[0, −5, 0]`, which gives `z = (−0.20)(−5) − 0.20 = 0.80`, positive and so recorded exactly. For `b`, use a row whose `z` is already positive, such as `[0, 0, 1]` and `[0, 0, 2]` (`1.50` and `3.20`), whose difference gives `w₃ = 1.70` and then `b = 1.50 − 1.70 = −0.20`. **A squash that clips is a squash that destroys evidence, and that is the same fact as T1.**
 
 ### Think Deeper
 
-**T1 — a model answer.** It is the point, and the measurement proves it. With no squash, the chapter's two-layer network is exactly `1.1x₁ + 0.4x₂ + 0.3` — a straight line, no matter how many layers you stack. Put ReLU back in and the row `[2.0, −1.0]` goes from `2.10` to `0.60`. **That gap of `1.50` exists only because something was thrown away for that row and not for others.** If the throwing-away were uniform — everything halved, say — it would still be a line, because a line scaled is a line. **The bend comes from the throwing-away being conditional.**
+**T1 — a model answer.** It is a cost *and* a bend, and the measurement shows the bend. With no squash, the chapter's two-layer network is exactly `1.1x₁ + 0.4x₂ + 0.3` — a straight line, no matter how many layers you stack. Put ReLU back in and the row `[2.0, −1.0]` goes from `2.10` to `0.60`. **That gap of `1.50` exists only because ReLU cut something off for that row and not for others.** If the cutting were uniform — everything halved, say — it would still be a line, because a line scaled is a line. **The bend comes from the rule behaving differently in different places.**
 
-A reversible squash would buy nothing. Suppose you invented one where every output could be traced back to a unique input: then the second layer could, in principle, undo it, and the whole stack could be rewritten as a single weighted sum again. **Reversibility is exactly the property you must not have.** The honest cost is real, though: a unit whose `z` is negative on *every* row in your data is permanently silent, contributes nothing, and cannot be revived — that is the "dead ReLU", and you will meet it properly in Week 19. **So the answer is: it is the point, and the cost is that some units die.**
+**A squash that keeps all its information can still bend.** Sigmoid and tanh never throw anything away — each output can be traced back to exactly one input, and neither is a straight line, so a network built from them does *not* collapse. So losing information is not what makes a squash useful: **not being a straight line is.** ReLU just happens to bend by cutting, and that cut has a real cost: a unit whose `z` is negative on *every* row in your data is permanently silent, contributes nothing, and (because its slope is zero there) gets no training signal to revive it — that is the "dead ReLU", and you will meet it properly in Week 19. **So the answer is: for ReLU the cut is the bend, and the price is that some units can die.**
 
 **T2 — a model answer.** Work it through. With `double(z) = 2z` between the layers:
 

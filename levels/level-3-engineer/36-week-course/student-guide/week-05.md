@@ -81,7 +81,7 @@ Now look at the actual lateness rate, hour by hour:
 
 **That is a hump. It is not a slope.** Low in the afternoon, jumps hard at six in the evening, stays high for three hours, drops again at nine.
 
-**What is the best straight line through a hump?** An almost flat one. And that is exactly what happened — in the fitted model, `order_hour`'s weight is **−0.121**, next to `distance_km`'s **1.128**. Effectively nothing. **The information was sitting right there in the table and the model could not reach it.**
+**What is the best straight line through a hump?** An almost flat one. And that is exactly what happened — in the raw-columns model (row A, built later in this chapter), `order_hour`'s weight is **+0.092**, next to `distance_km`'s **0.925**. Effectively nothing. (Once `is_rush` joins, the hump moves into the new column and you will see **−0.121** beside **1.128** instead.) **The information was sitting right there in the table and the model could not reach it.**
 
 So cut the hours into ranges instead.
 
@@ -150,7 +150,7 @@ in a storm:     0.8571 − 0.3908 = 0.4663
 0.4663 ÷ 0.3269 = 1.43
 ```
 
-**Distance is 1.43 times as costly in a storm as it is in the clear.** Distance and weather do not just both matter — **they make each other worse.**
+**Distance is 1.43 times as costly in a storm as it is in the clear.** That *suggests* distance and weather make each other worse. **Treat it as a hypothesis, not a fact:** the long-trip storm cell holds only 35 orders, so its 0.8571 could easily be a few orders too high (a model with no interaction at all predicts about 0.75 for that cell). The ablation is what tests it.
 
 And here is the thing: a model with one weight on `distance` and a separate weight on `storm` can only **add** those two effects together. **Adding cannot say "worse together." Multiplying can.**
 
@@ -215,9 +215,9 @@ E − D  =  0.7829 − 0.7843  =  −0.0014    DELETE dist_x_weather
 F − E  =  0.7828 − 0.7829  =  −0.0001    DELETE is_weekend
 ```
 
-**`dist_x_weather` has the best story in the whole lesson — and it still lost 0.0014 of AUC.** Sit with that for a second. You *saw* the amplification: 0.4663 against 0.3269. It is real. It is genuinely in the data. **And the column still was not worth its place**, because `distance_km` and the three one-hot weather columns were already carrying most of it between them, and the new column is one more weight to estimate from the same 1,200 rows.
+**`dist_x_weather` has the best story in the whole lesson — and it still lost 0.0014 of AUC.** Sit with that for a second. You *saw* the amplification: 0.4663 against 0.3269. **And the column still was not worth its place.** One likely reason is that `distance_km` and the three one-hot weather columns were already carrying most of the pattern, and the new column is one more weight to estimate from the same 1,200 rows. Another is that the amplification rests on a cell of only 35 orders and may be mostly luck (in the data this course generated, the two effects simply add up, with no extra storm-and-distance punch). The table cannot tell these apart; it only says the column did not pay.
 
-**"Real" and "worth a column" are different tests.** That sentence is the week.
+**"Looks real in a table" and "worth a column" are different tests.** That sentence is the week.
 
 And `is_weekend` is the one that hurts, because it sounds so obviously right. Here is why it isn't:
 
@@ -261,7 +261,7 @@ And it is worse than that, because the *sign* matters more than the size:
 
 | delta | rounded to 2 dp | what it actually means |
 |---|---|---|
-| +0.0018 | 0.00 | **keep it** — a small, real gain |
+| +0.0018 | 0.00 | **keep it** — a small gain (as small as the deletions below; Week 11 will check it) |
 | −0.0014 | 0.00 | **delete it** — it made the model worse |
 | −0.0001 | 0.00 | **delete it** — it bought nothing at all |
 
@@ -622,7 +622,7 @@ num__is_rush                     0.436
 num__driver_experience_months   -0.392
 ```
 
-**`num__is_rush` has a weight of 0.436, and it is a column you invented an hour ago.** Meanwhile, further down that list, `num__order_hour` sits at **−0.121** — nearly nothing, exactly as predicted, because one weight cannot draw a hump.
+**`num__is_rush` has a weight of 0.436, and it is a column you invented an hour ago.** Meanwhile, further down that list, `num__order_hour` sits at **−0.121** — nearly nothing. In the raw-columns model A it was +0.092, also nearly nothing, because one weight cannot draw a hump; here `is_rush` now carries the hump, so the hour has even less left to say.
 
 **Read those two lines together and you have understood binning completely.** The hour matters enormously. The hour *as a number* does not.
 
@@ -678,7 +678,7 @@ order_hour
 0.7853 − 0.7843 = +0.0010
 ```
 
-Small, real, positive. Notice that the accuracy went *down* (0.7650 against 0.7675) while the AUC went up. **AUC is our metric. Keep it, and write down that accuracy disagreed** — an honest table records the disagreement rather than hiding it.
+Small and positive (but no bigger than the noise on 400 rows). Notice that the accuracy went *down* (0.7650 against 0.7675) while the AUC went up. **AUC is our metric. Keep it, and write down that accuracy disagreed** — an honest table records the disagreement rather than hiding it.
 
 **`is_late_night` earns a DELETE.**
 
@@ -853,7 +853,7 @@ the weight the raw model gave water_ml: 0.1441
 
 **Read the three death rates: 0.8593, 0.0974, 0.8687.** High, low, high. **That is a U, not a slope** — and it is even more hostile to a straight line than the pizza hump was, because both ends are bad.
 
-Look at the weight the raw model gave: **0.1441.** Nearly nothing, exactly like `order_hour`'s −0.121. And the score reflects it: **0.6550 raw against 0.8846 binned. A delta of +0.2296** — about twenty-five times the entire honest gain in the pizza ablation table, which was +0.0091 for four features.
+Look at the weight the raw model gave: **0.1441.** Nearly nothing, like `order_hour`'s weight in the pizza model. And the score reflects it: **0.6550 raw against 0.8846 binned. A delta of +0.2296** — about twenty-five times the entire honest gain in the pizza ablation table, which was +0.0091 for the two features that were kept.
 
 > **🧑‍🏫 If a student asks:** *"why is the raw AUC 0.6550 and not 0.5000, if a straight line is useless here?"* Because the U is **lopsided**. "Too dry" is 25 units wide and "too wet" is 30, so slightly more of the deaths sit at the wet end, and a gently rising straight line picks up a little of that. **A useless feature scores 0.5. This one scores 0.655, which is the sound of a model getting a small amount of accidental credit for a shape it cannot see.**
 
@@ -969,7 +969,7 @@ ValueError: could not convert string to float: 'morning'
 
 The `look.py` output went on screen — fourteen hourly lateness rates, the weekend table, the distance-by-weather crosstab — and nobody explained it. We read it.
 
-*"Read me the biggest three hours."* (18, 19, 20 — about 0.374.) *"And the smallest?"* (22, at 0.196.) *"What's the best straight line through a hump?"* (An almost flat one.) Then the fitted weight: **−0.121 for `order_hour`, against 1.128 for `distance_km`.**
+*"Read me the biggest three hours."* (18, 19, 20 — about 0.374.) *"And the smallest?"* (22, at 0.196.) *"What's the best straight line through a hump?"* (An almost flat one.) Then the fitted weight in the raw-columns model: **+0.092 for `order_hour`, against 0.925 for `distance_km`.**
 
 Then the two-bucket table, and one subtraction:
 
@@ -1015,7 +1015,7 @@ Then every idea went on the board, duplicates grouped, and we each got four tick
 Six models, about a second. Row A reproduced 0.7600 / 0.7752 exactly. Then every subtraction was written out, against the row above:
 
 ```text
-B − A  =  0.7825 − 0.7752  =  +0.0074     is_rush        KEEP
+B − A  =  0.7825 − 0.7752  =  +0.0073     is_rush        KEEP   (the table's 0.0074 uses unrounded AUCs)
 C − A  =  0.7815 − 0.7752  =  +0.0063     hour_band      drop, B is better with 3 fewer columns
 D − B  =  0.7843 − 0.7825  =  +0.0018     min_per_km     KEEP
 E − D  =  0.7829 − 0.7843  =  −0.0014     dist_x_weather DELETE
@@ -1034,7 +1034,7 @@ F − E  =  0.7828 − 0.7829  =  −0.0001     is_weekend     DELETE
 
 **This is the sharpest question of the week and it is half right.** Separate the two piles before you answer.
 
-> **Hint:** you looked at the **training** rows to decide that 18:00–20:00 matters. That is allowed; it is what training rows are *for*. You then measured the feature on the **validation** rows, which you did not look at — so the measurement is honest. **Where it becomes cheating is if you keep going:** try 40 different hour ranges, keep whichever scores best on validation, and report that score. Then you have fitted your *choices* to the validation pile. The honest rule: **look at the training rows all you like. Every time you look at the validation rows, you spend a decision** — and nobody can tell you exactly how many you have.
+> **Hint:** the clean rule is to look at the **training** rows to decide that 18:00–20:00 matters (that is what training rows are *for*) and to measure the feature on the **validation** rows, which you have not looked at. **Be honest about today, though:** the hourly table in this chapter was worked out on all 2,000 rows, validation included, so the validation labels did help choose the window. With a hump this big the effect on the score is tiny, but the strict version is to run the `groupby` on the training rows only. **Where it becomes cheating is if you keep going:** try 40 different hour ranges, keep whichever scores best on validation, and report that score. Then you have fitted your *choices* to the validation pile. The honest rule: **look at the training rows all you like. Every time you look at the validation rows, you spend a decision** — and nobody can tell you exactly how many you have.
 
 **2. Could you just build fifty features and let the model sort it out?**
 
@@ -1072,9 +1072,9 @@ This is last week's rounding habit coming back to bite. **Four decimal places, w
 ### Trick 3 — "if the feature makes sense, keep it even though the number says no"
 
 **Wrong:** *"I can see the amplification in the crosstab — 0.4663 against 0.3269. The story is right, so the column stays."*
-**Right:** *"The story **is** right. And 'real' and 'worth a column' are different tests. `dist_x_weather` cost 0.0014 of AUC because distance and the three weather columns were already carrying most of that pattern between them."*
+**Right:** *"The story sounds right. But 'sounds right' and 'worth a column' are different tests. `dist_x_weather` cost 0.0014 of AUC: the pattern rests on a 35-order cell, and distance and the three weather columns may already carry most of it."*
 
-This is the one that costs professionals real money, and it is persuasive precisely because the story usually *is* true. **The reply is never "your story is wrong."** It is: *"the column has to earn its place, and this one didn't. Keep the row in the table so we know we tried."*
+This is the one that costs professionals real money, and it is persuasive precisely because the story usually *sounds* true. **The reply is not "your story is wrong" (you cannot know that from one table).** It is: *"the column has to earn its place, and this one didn't. Keep the row in the table so we know we tried."*
 
 ### Trick 4 — "my feature made no difference, so it must not matter"
 
@@ -1124,13 +1124,13 @@ ones you invented. The ↻ on stage three is the training loop, still grey — y
 ## 🔑 Remember This
 
 - **Four shapes cover nearly every column you will ever invent: a FLAG, a BIN, a RATIO and an INTERACTION.** A flag answers one yes-or-no question about the row. A bin chops a number into ranges. A ratio divides one column by another. An interaction multiplies two.
-- **A number that behaves like a hump needs binning, not a weight.** `order_hour` runs 10 to 23 with a spike at 18–20, and its fitted weight is **−0.121** — nearly nothing — while `is_rush` gets **0.436**. The hour matters enormously; the hour *as a number* does not.
+- **A number that behaves like a hump needs binning, not a weight.** `order_hour` runs 10 to 23 with a spike at 18–20, and its fitted weight is nearly nothing (+0.092 in the raw model, −0.121 once `is_rush` is in) — while `is_rush` gets **0.436**. The hour matters enormously; the hour *as a number* does not.
 - **Build features out of evidence, not out of vibes.** `is_rush` came from fourteen hourly lateness rates. `dist_x_weather` came from a six-cell crosstab: 0.3269 in the clear against 0.4663 in a storm, which is 1.43 times. **Two lines of `groupby` before you write any code.**
 - **Guard every ratio's denominator.** `/ (d["distance_km"] + 0.5)`, because a zero gives `inf` and `inf` stops the model. **Pick a constant and write down that you picked it.**
 - **The invented columns go INSIDE the pipeline**, wrapped in a `FunctionTransformer`, so they re-run for ever on every new row. Build them outside and your artifact fails with `columns are missing` the first time a real order arrives.
 - **Check the blanks after every `pd.cut`.** `bins=[10, ...]` on hours starting at 10 gives **47 silent blanks** out of 2000, with no error and no warning. Start the first edge *below* your minimum, and `print(int(s.isna().sum()))` every single time.
 - **Every derived feature is a hypothesis, and the ablation is the referee.** One change per row. Four decimal places. Read the delta against the row above. `0.7843` and `0.7829` both round to `0.78`, and rounding destroys the answer.
-- **"Real" and "worth a column" are different tests.** `dist_x_weather`'s story was right and it still lost 0.0014. **Deleting your own idea because the number says so is the job** — and the deleted row stays in the table with the number that killed it, so nobody spends an afternoon re-arguing it in six months.
+- **"Sounds right" and "worth a column" are different tests.** `dist_x_weather`'s story was convincing and it still lost 0.0014. **Deleting your own idea because the number says so is the job** — and the deleted row stays in the table with the number that killed it, so nobody spends an afternoon re-arguing it in six months.
 - **An error that shouts is a good day. The bugs that cost money print a perfectly normal-looking table.**
 
 ### Syntax reminder card

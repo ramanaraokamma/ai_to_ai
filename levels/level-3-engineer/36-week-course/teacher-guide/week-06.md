@@ -121,7 +121,7 @@ without it                       accuracy=0.7600  roc_auc=0.7752
 the jump one column bought       +0.2011
 ```
 
-**+0.2011 of AUC from one column.** Week 5's four honest inventions bought +0.0091 between them. That ratio — twenty-two to one — *is* the alarm. Real features arrive in units of 0.005. A single column worth 0.2 is not a discovery.
+**+0.2011 of AUC from one column.** Week 5's two surviving inventions (`is_rush`, `min_per_km`) bought +0.0091 between them. That ratio — twenty-two to one — *is* the alarm. Real features arrive in units of 0.005. A single column worth 0.2 is not a discovery.
 
 Four audits catch it, each louder than the last, and then a fifth thing that is not an audit at all.
 
@@ -141,7 +141,7 @@ customer_called_support
 
 Read the bottom row: **552 orders had a support call, and 540 of them were late.** 12 + 540 = 552, and 540 ÷ 552 = **0.9783**. The table is nearly diagonal. The column is almost a copy of the answer.
 
-**Audit 3 — how well does the column do on its own?** Feed the model nothing but that one column: AUC **0.9556**. `distance_km` alone gets **0.6800**; `prep_minutes` alone gets **0.5739**. One column reaching 0.9556 by itself is not a feature, it is a label with a different name on it.
+**Audit 3 — how well does the column do on its own?** Rank the validation rows by that one column's raw values alone (no model at all) and measure the AUC of that ranking: AUC **0.9556**. `distance_km` alone gets **0.6800**; `prep_minutes` alone gets **0.5739**. One column reaching 0.9556 by itself is not a feature, it is a label with a different name on it.
 
 **Audit 4 — which knob is the model turning?**
 
@@ -376,7 +376,7 @@ on stage three is the training loop, still grey until Week 12.*
 
 > **🧑‍🏫 Why this is worth two minutes.** Six weeks without a serious model is the hardest stretch of the
 > year to justify, and today is the day it justifies itself: `+0.2011` from one dishonest column against
-> `+0.0091` from four honest ones. The map is what turns that into a structural claim rather than a war
+> `+0.0091` from two honest ones. The map is what turns that into a structural claim rather than a war
 > story — the whole of stage one exists because stages two to five inherit whatever it got wrong.
 
 **If a student asks whether the whole stage goes white next week:** yes. Both tiles solid, and the gold
@@ -808,7 +808,7 @@ cat__weather_clear             -0.679
 
 > **Say this, one audit at a time — do not read it all at once:**
 >
-> "**The jump: +0.2011 from one column.** Last week your four inventions bought 0.0091 between them, all four together. This is twenty-two times that, from one column. **That ratio is the alarm.**
+> "**The jump: +0.2011 from one column.** Last week your two surviving inventions bought 0.0091 between them. This is twenty-two times that, from one column. **That ratio is the alarm.**
 >
 > **Audit one, correlation: 0.942 against 0.345.** Two point seven times the best honest column. Nothing real correlates 0.94 with the thing you're trying to predict — if it did, nobody would need a model.
 >
@@ -1114,7 +1114,7 @@ One sentence: it splits the rows into five piles, trains five times, and gives y
 
 ```
 five drivers:   4   12   29   30   55        median = 29  (the middle one)
-four drivers:        12   29   30            median = (29 + 30) / 2 = 29.5
+four drivers:        12   29   30   55     median = (29 + 30) / 2 = 29.5
 ```
 
 *"Now imagine 1,140 instead of four. Same idea: line them up, take the middle. When there are two middles, split the difference."* That is all the arithmetic they need.
@@ -1633,7 +1633,7 @@ VERDICT: target leakage. Drop the column.
 - Crosstab bottom row: 12 + 540 = **552 calls**, and 540 ÷ 552 = **0.9783** of them were late.
 - One column alone: **0.9556** against `distance_km`'s **0.6800**.
 - Weights: 3.482 ÷ 0.804 = **4.33 times** the next one.
-- The jump: 0.9762 − 0.7752 = **+0.2011**, against Week 5's four honest features earning +0.0091 between them — **twenty-two times as much from one column.**
+- The jump: 0.9762 − 0.7752 = **+0.2011**, against Week 5's two surviving honest features earning +0.0091 between them — **twenty-two times as much from one column.**
 
 **And the demonstration that settles the argument.** `deploy.py`:
 

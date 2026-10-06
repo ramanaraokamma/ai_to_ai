@@ -19,7 +19,7 @@
   <text x="595" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">P(late) = 1.000</text>
   <rect x="30" y="262" width="740" height="60" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
   <text x="400" y="284" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1.000 &#8722; 0.709 = 0.291 of pure damage, and not one warning was printed.</text>
-  <text x="400" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">The numbers are 4 to 30 times too big, so the model is 4 to 30 times too sure.</text>
+  <text x="400" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">The numbers are 4 to 30 times too big, so the sum is thrown off the scale.</text>
   <text x="400" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">This is the disaster the sealed box makes impossible.</text>
   <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">It is not carelessness. Two objects can be dropped; one cannot.</text>
 </svg>

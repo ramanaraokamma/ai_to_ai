@@ -880,7 +880,7 @@ The nine off-diagonal cells: row 1 col 5 = 1, row 1 col 8 = 1, row 2 col 1 = 1, 
 
 **Rows 1 and 3:** **NOT ALLOWED**, for exactly the same reason.
 
-**Why 269 rows of five classes is an easier exam:** because there are fewer wrong answers available. **A model guessing at random scores 20% on five classes and 10% on ten.** And on top of that, four of the five classes 5–9 do not include the 1/8 pair that caused a third of the ten-class model's errors. **Fewer ways to be wrong means a higher score for the same amount of skill.**
+**Why 269 rows of five classes is an easier exam:** because there are fewer wrong answers available. **A model guessing at random scores 20% on five classes and 10% on ten.** And on top of that, the 1/8 pair that caused a third of the ten-class model's errors cannot happen in a 5–9 problem, because there is no 1 in it. **Fewer ways to be wrong means a higher score for the same amount of skill.**
 
 ### Predict the Output
 
@@ -961,7 +961,7 @@ ink per picture: [9. 9. 9. 9.]
 
 **On a stack shaped `(1257, 8, 8)`, `axis=0` means which picture.** Rolling it shuffles the *pictures* while the labels stay exactly where they are.
 
-**Four fifths of the training rows were unlearnable.** The `shifts` list has five entries and the first is `(0, 0)`, which shifts nothing — so **one fifth of the rows are correct** and the other four fifths are pictures paired with somebody else's label. The model can only learn from the correct fifth, so it scores badly on its own scrambled homework and normally on the untouched test set.
+**Two fifths of the training rows were unlearnable.** The `shifts` list has five entries. With the wrong axes, `(-1, 0)` and `(1, 0)` roll the *stack* (axis 0), so those two copies are pictures paired with somebody else's label. `(0, 0)` shifts nothing and `(0, -1)`, `(0, 1)` roll each picture's rows, so **three fifths of the rows still have the right label**. The model cannot fit the scrambled two fifths, so training accuracy lands near 0.6 (it printed 0.5968), while the untouched test set scores much higher.
 
 **The permanent alarm:** *"If my test accuracy is higher than my training accuracy, my training labels are wrong. It is never a lucky run."*
 
@@ -1146,7 +1146,7 @@ average 8, ink per column: [ 0  9 71 87 86 66 11  0]
 
 **The worst pair: 1 and 8, with 4 mistakes.**
 
-**Both pile their ink into columns 2 to 5**, and both peak in the middle — the 1 at 106 in column 4, the 8 at 87 and 86 in columns 3 and 4. **The 8 has a bit more ink out in columns 2 and 5 (71 and 66 against 42 and 56), but that difference is one or two grey levels per pixel, which is well inside the variation between different people's handwriting.**
+**Both pile their ink into columns 2 to 5**, and both peak in the middle — the 1 at 106 in column 4, the 8 at 87 and 86 in columns 3 and 4. **The 8 has a bit more ink out in columns 2 and 5 (71 and 66 against 42 and 56), but the gaps of 29 and 10 are sums over 8 pixels on a 0-16 scale, so about 3.6 and 1.3 grey levels per pixel, small next to the bright bar in the middle.**
 
 ### Fix the Broken Program
 
@@ -1343,7 +1343,7 @@ average 8, ink per column: [  0   9  71  87  86  66  11   0]
 >
 > *At 8×8 an 8 is two loops stacked on top of each other, so each loop gets about three pixels of height and four of width. **A hole needs a ring of ink around a gap, and three pixels is not enough to have both.** So the loops fill in with grey, and what survives is a bright vertical stroke down the middle columns — which is exactly what a 1 is.*
 >
-> *You can see it in the average pictures. The average 1's ink per column is `0 5 42 93 106 56 9 2` and the average 8's is `0 9 71 87 86 66 11 0`. **Both pile their ink into columns 2 to 5 and both peak in the middle.** The 8 has a bit more ink out in columns 2 and 5 — 71 and 66 against 42 and 56 — but that is one or two grey levels per pixel, well inside the variation between different people's handwriting.*
+> *You can see it in the average pictures. The average 1's ink per column is `0 5 42 93 106 56 9 2` and the average 8's is `0 9 71 87 86 66 11 0`. **Both pile their ink into columns 2 to 5 and both peak in the middle.** The 8 has a bit more ink out in columns 2 and 5 — 71 and 66 against 42 and 56 — but the gaps of 29 and 10 are sums over 8 pixels on a 0-16 scale, so about 3.6 and 1.3 grey levels per pixel, small next to the bright bar in the middle.*
 >
 > *The direction makes sense too. **An 8 can lose its holes and turn into a bar. A bar cannot grow holes.** The information loss only goes one way, so the confusion should be lopsided, and it is: three against one."*
 

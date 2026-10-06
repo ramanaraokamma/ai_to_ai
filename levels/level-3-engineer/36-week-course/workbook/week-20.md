@@ -1280,7 +1280,7 @@ p = torch.sigmoid(z)
 
 **Being fair to the other side:** somebody who started at `loss.backward()` has spent those two lessons on something else, and there is a real cost to spending two weeks on arithmetic a computer will always do faster. The honest defence is not *"the arithmetic is useful"* — it is *"the judgement built by doing the arithmetic once is useful, and there is no other way to get it."*
 
-**T2 — a model answer.** Autograd can only differentiate what is **on the receipt**, and only torch operations get written on it. So three kinds of thing defeat it. **An `if` on a tensor's value** — the branch you did not take leaves no trace, so the slope describes only the path taken and jumps discontinuously as inputs change. **A rounding or flooring step**, because its slope is zero almost everywhere and undefined at the steps, so the gradient carries no useful information. **Anything that leaves torch and comes back** — convert to numpy, do arithmetic, convert back, and the middle section is invisible to the recording.
+**T2 — a model answer.** Autograd can only differentiate what is **on the receipt**, and only torch operations get written on it. Two kinds of thing defeat it, and one that people expect to does not. **An `if` on a tensor's value does not defeat it** — autograd differentiates the branch that ran, which is right for that input, though the slope can jump where the input crosses the `if`'s boundary. **A rounding or flooring step**, because its slope is zero almost everywhere and undefined at the steps, so the gradient carries no useful information. **Anything that leaves torch and comes back** — convert to numpy, do arithmetic, convert back, and the middle section is invisible to the recording.
 
 **Is that a bug or a boundary?** A boundary, and an honest one. Autograd is not a general theory of change; it is a bookkeeping system for a specific list of operations. The limitation is not that PyTorch is badly written — it is that **"how does this output respond to that input?"** genuinely has no answer for a function with a jump in it. That is a fact about the maths, not about the library.
 
@@ -1385,7 +1385,7 @@ mode item     after :  176.2 MB   kept 300 items
 176.2 − 159.7  =  16.5 MB   for 300 numbers
 ```
 
-**About six times as much, for the same 300 answers.** **Your absolute numbers will not match — the ratio should.** A page with two "after" numbers and no subtraction has not made the point.
+**About six times as much, for the same 300 answers.** **Your absolute numbers will not match, and the ratio will wobble a little — but it should stay several times, not a few per cent.** A page with two "after" numbers and no subtraction has not made the point.
 
 ### Draw It
 

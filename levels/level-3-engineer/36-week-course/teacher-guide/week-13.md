@@ -900,7 +900,7 @@ Every message below came from running a broken version of this week's actual cod
 | **No error. The S-curve runs backwards.** | Nothing crashed. Every probability is `1 −` the right one. | `np.exp(z)` where `np.exp(-z)` was meant. | Check against a hand answer that is **not** `z = 0` — that one is 0.5 either way. `sigmoid(1.4)` must be `0.8022`; if you see `0.1978`, the sign is lost. |
 | `RuntimeWarning: invalid value encountered in scalar divide`, then `nan` | "I divided infinity by infinity and there is no answer to that." | An `inf` from an earlier overflow reached a division — e.g. `e/(1 + e)` where `e` is already `inf`. | Fix the overflow, not the division. **And remember what `nan` does: one `nan` anywhere in a list makes `.mean()` of the whole list `nan`.** |
 | **No error. Every probability is above 1.** | Nothing crashed. | The division is upside down: `(1 + e**-z) / 1`. | Say the recipe aloud: *"one, divided by, one plus the exponential."* |
-| **No error. `p` is exactly `0.0` or exactly `1.0`.** | Nothing crashed, and it is still a lie — the sigmoid can never reach either. | `z` is beyond about ±36.8, at which point `e^(−z)` is smaller than the gap between 1.0 and the next storable number below it. | Nothing to fix today. **Next week we clip.** Note it in the Bug Log as a "correct-looking wrong answer". |
+| **No error. `p` is exactly `0.0` or exactly `1.0`.** | Nothing crashed, and it is still a lie — the sigmoid can never reach either. | `z` is above about +36.8, at which point `e^(−z)` is too small to change `1 + e^(−z)` away from exactly 1, so `p` is exactly `1.0`. The negative side lasts much longer: `p` is exactly `0.0` only below about `z = −745`, where `e^(−z)` itself underflows (it only *prints* as `0.0000` to four places from about `z = −10`). | Nothing to fix today. **Next week we clip.** Note it in the Bug Log as a "correct-looking wrong answer". |
 
 ### How to teach debugging without giving the answer
 
@@ -1582,7 +1582,7 @@ for zi in (-1000.0, -20.0, 0.0, 1.4, 20.0, 1000.0):
     print("%8.1f  %.10f  %.10f" % (zi, naive(zi), safe(zi)))
 ```
 
-Real output. **Note that the warning appears above the table** — warnings go to a different output stream from `print`, so they are not interleaved in the order you would expect:
+Real output. **Note that the warning appears above the table in this captured output** — warnings go to a different output stream from `print`, and `print` is buffered when output is piped, so they are not interleaved in the order you would expect. In a live terminal the warning may instead appear between the header and the first row; both are normal:
 
 ```text
 overflow.py:6: RuntimeWarning: overflow encountered in exp

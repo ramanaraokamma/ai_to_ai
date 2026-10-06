@@ -434,7 +434,7 @@ three is black, as it has been since Week 12.*
    produced a **name**, and three numbers underneath it that a stranger could argue with."* If a card got
    torn up in the ceremony, that is the best thing to point at.
 2. **Anchor it on the two votes.** `381.1 ÷ 97.2 = 3.9` from the elbow, `0.2849` at `k = 3` from the
-   silhouette, and `0.1774` from pure noise. *"Which of those three numbers made the other two mean
+   silhouette, and `0.0776` from pure noise. *"Which of those three numbers made the other two mean
    anything?"* — the noise floor. That is the sentence to end the week on, and it is the same "compared
    to what?" move as Weeks 9, 11 and 27, three boxes to the left on the map.
 3. **Point at stage one and at stage two, and make them earn it.** Adding five new columns is an
@@ -1503,7 +1503,7 @@ Because the silhouette is a **ratio**, and inertia is a **total**.
 
 Inertia only ever compares distances to decide which is smaller, and squaring never changes which of two numbers is smaller — so it can skip the square roots and save you the work.
 
-The silhouette divides one distance by another: `(b − a) ÷ max(a, b)`. **A ratio of squared distances is not the same as the ratio of the distances** — for `a = 2` and `b = 4` the ratio is 2, but the squared ratio is 4. So if you skipped the roots the score would be on a different scale and the −1 to +1 range would not hold. **Squaring is a shortcut you may take when you are only comparing; it is not a shortcut when you are dividing.**
+The silhouette divides one distance by another: `(b − a) ÷ max(a, b)`. **A ratio of squared distances is not the same as the ratio of the distances** — for `a = 2` and `b = 4` the ratio is 2, but the squared ratio is 4. So if you skipped the roots you would still get a number between −1 and +1, but it would be a different number (0.9519 instead of 0.7838 for point C) that no longer measures distances. **Squaring is a shortcut you may take when you are only comparing; it is not a shortcut when you are dividing.**
 
 **"If we cannot check clusters, how does anybody know this is worth doing at work?"**
 

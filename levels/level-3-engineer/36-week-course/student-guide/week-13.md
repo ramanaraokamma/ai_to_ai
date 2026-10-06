@@ -356,7 +356,7 @@ and one very negative order: 0.0
 
 > **🐞 If you see this error:** `RuntimeWarning: overflow encountered in exp` means *"you asked me for a number too big to store, so I stored infinity."* Ask yourself: **what is the biggest thing that went into `np.exp` in my program?** Here it is `−(−1000)`, which is `+1000`, and `e^1000` has 435 digits.
 
-> **⚠️ Watch out:** the warning appears **above** the table, not below it, even though the warning happened later. Warnings go to a different output stream from `print`, so they are not interleaved in the order you would expect. This surprises everybody once.
+> **⚠️ Watch out:** when output is captured or piped (as in the output pasted above), the warning can appear **above** the table even though it happened later. Warnings go to a different output stream from `print`, and `print` output is held back in a buffer, so the two are not interleaved in the order you would expect. In a live terminal you may see the warning between the lines instead. Either is normal.
 
 ### Step 3 — the squasher that cannot overflow
 
@@ -831,7 +831,7 @@ squash(0.0)  = 0.5000
 | `OverflowError: math range error` | The same overflow, but fatal | You used `math.exp` instead of `np.exp`. Plain Python **stops**; numpy **warns** and carries on |
 | **No error.** Every probability is above 1 | Nothing crashed and every answer is impossible | The division is upside down. Say the recipe aloud: *"one, divided by, one plus the exponential"* |
 | **No error.** The S-curve runs backwards | Every answer is `1 −` the right one | `e^(z)` where `e^(−z)` was meant. Check `sigmoid(1.4) = 0.8022`, never `sigmoid(0)` |
-| **No error.** `p` prints as exactly `0.0` or `1.0` | Nothing crashed, and it is still a lie | `z` is beyond about ±36.8. Nothing to fix this week; **next week we clip** |
+| **No error.** `p` prints as exactly `0.0` or `1.0` | Nothing crashed, and it is still a lie | `z` is above about +36.8 (`p` becomes exactly `1.0`) or below about −745 (`p` becomes exactly `0.0`); the negative side runs out much later because tiny numbers are stored far more finely than numbers near 1. Nothing to fix this week; **next week we clip** |
 
 ---
 
@@ -947,7 +947,7 @@ Write `p = 0.9999` and `truth = no` on a piece of paper and leave it where you c
 
 ## 🌍 Where You've Seen This
 
-1. **Every "chance of rain" on every weather app.** Some model produces a raw score for tomorrow and squashes it into a percentage. The squash is why you never see a 140% chance of rain.
+1. **Any app that turns a model's score into a "chance of" percentage.** A model produces a raw score and a squash turns it into a percentage, which is why such an app never shows 140%. (Real weather forecasts usually get their percentages another way, from how many of many simulated futures bring rain, but the rule that a chance must sit between 0 and 1 is the same.)
 2. **The spam folder.** A mail filter scores a message on dozens of features — links, sender history, words in capitals — sums them with weights, squashes the total, and compares it with a threshold. Worked Example 1 is a small version of a real thing.
 3. **Medical risk scores.** *"A 12% chance of a heart problem in the next ten years."* Many of these are literally logistic regressions, chosen over fancier models **because a doctor can read the weights** — "smoking adds this much to the log-odds" is a sentence you can argue with.
 4. **Credit and loan decisions.** Same reason: the law in many places requires a lender to explain a refusal, and log-odds are explainable in a way that a forest of trees is not.

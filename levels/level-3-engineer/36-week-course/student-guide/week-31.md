@@ -54,7 +54,7 @@ Two things are true about this idea and you have to hold both at once.
 
 **It cannot possibly work.** It cannot tell `"the dog bit the man"` from `"the man bit the dog"` — same words, same counts, identical row. You will prove that yourself before the end of this chapter, and it will annoy you.
 
-**And it ran the world.** Counting words ran spam filters and search engines for thirty years. On a small problem today — a hundred reviews, no internet, a laptop — it will still beat a system with a hundred billion numbers in it.
+**And it ran the world.** Counting words ran spam filters and search engines for thirty years. On a small problem today — a hundred reviews, no internet, a laptop — it can still be a sensible first attempt that trains in a second, needs no internet, and can be read word by word — something a system with a hundred billion numbers in it cannot offer.
 
 Holding both of those at the same time **is** this week.
 
@@ -144,7 +144,7 @@ Here is the part of this week that separates "I ran the code" from "I understand
 | **Lowercasing** | `Great → great` | almost always, for topic or sentiment | `US` the country versus `us` the pronoun; `Apple` the company versus `apple` the fruit; ALL-CAPS SHOUTING is real evidence in abuse detection |
 | **Strip punctuation** | `great!! → great` | most classification jobs | `!!!` and `?!` carry feeling; `$4.99` becomes `4` and `99`; `:-(` disappears completely, and on a sentiment job that was the clearest signal in the sentence |
 | **Remove stopwords** | drop `the, is, a, of` | topic classification, search | **negation.** Dropping `not` is a disaster. Also authorship: the little words *are* the fingerprint. |
-| **Stemming** | `running, ran, runs → run` | when you have very little data | `better → good` loses the intensity; a keen stemmer turns `university` and `universe` both into `univers` |
+| **Stemming** | `running, runs → run` | when you have very little data | a keen stemmer turns `university` and `universe` both into `univers`, and `news` into `new`. (Mapping `ran → run` or `better → good` needs a *lemmatizer*, which uses a dictionary and is a different, heavier tool.) |
 
 > **Stopword** — an extremely common word (`the`, `is`, `and`) that carries almost no information about the topic on its own.
 

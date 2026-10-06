@@ -451,7 +451,7 @@ $
 >
 > **Stop 3 is two numbers and they are not the same number.** How long the model took to load, once, at start-up — mine was 772 milliseconds. And how long one prediction takes — mine was about a quarter of a millisecond. **Say them separately, label them, and never add them together.** Putting them together is the most common latency lie in the industry and you are not going to tell it in this room.
 >
-> **Stop 7 is where you show us a failure on purpose.** Not by accident — on purpose, predicted in advance. *'Watch. This is a positive review. It is going to call it negative, at about 0.49, and the reason is that `boring` is a strong negative feature and `not` is nearly weightless.'* Then run it and be right. **That is the single most impressive thing anybody will do today**, and it is more impressive than a demo where everything works."
+> **Stop 6 is where you show us a failure on purpose.** Not by accident — on purpose, predicted in advance. *'Watch. This is a positive review. It is going to call it negative, at about 0.49, and the reason is that `boring` is a strong negative feature and `not` is nearly weightless.'* Then run it and be right. **That is the single most impressive thing anybody will do today**, and it is more impressive than a demo where everything works."
 
 **Ask this:** "Why is it more impressive to show a failure than to hide one?"
 
@@ -640,7 +640,7 @@ Call the stop times: **1:00, 2:00, 4:00, 6:00, 7:30, 9:00.** Nothing else. Do no
 | A warm terminal | **Stop them immediately, kindly, before stop 1.** "New window." Costs fifteen seconds. Letting it go costs the objective. |
 | A cold start that fails with `FileNotFoundError` | **A finding.** Let them diagnose it live. If they `cd`, re-run and say the sentence about relative paths, **they keep the mark.** |
 | Stops 2 and 3 said as one number ("it takes about a second") | Let the demo finish, then ask it as question 2. **Do not correct mid-demo.** |
-| They skip stop 7 because it shows a failure | **Ask for it directly:** "show me where it breaks." Skipping it is the single biggest mark loss available today. |
+| They skip stop 6 because it shows a failure | **Ask for it directly:** "show me where it breaks." Skipping it is the single biggest mark loss available today. |
 | A failure predicted in advance, live, correctly | **Say so out loud, immediately.** "Everybody notice: they told us the number before they ran it, and they were right." This is level 5 and the room should hear it named. |
 | Slides | No slides. **A terminal is not a slide.** Agreed last week; enforce it in five seconds. |
 | They run over ten minutes | Call "ten" and move to the questions. **The questions are the assessment; the demo is the evidence.** |
@@ -677,7 +677,7 @@ Every student has: opened a terminal in front of the room · run all seven stops
 
 1. **Two extra questions you invent on the spot, from their own card.** The best ones are always: *"your card says the longest training review is 55 characters. What happens if I send you 400 words?"* and *"you said one row is worth 6.25 points. So how many rows would you need before 0.8125 meant something?"*
 2. **Make them demo somebody else's project**, with five minutes to read the card first. **This is genuinely hard and genuinely realistic**, and a student who can do it has understood the contract rather than memorised their own.
-3. **The prediction round.** Before stop 7, they write on the board the probability they think their model will give the failure case. Then they run it. **Within 0.05 is a real achievement and the room should know it.**
+3. **The prediction round.** Before stop 6, they write on the board the probability they think their model will give the failure case. Then they run it. **Within 0.05 is a real achievement and the room should know it.**
 4. **One question back at you.** They get to ask you one question about their own model that they could not answer. **The honest answer is often "I don't know either, and here is how we would find out"** — and letting them see that is worth more than a clean session.
 
 ---
@@ -726,7 +726,7 @@ Ask the room this, honestly, and write the answers on the board. It is almost al
 | **Somebody demos in a warm terminal and nobody notices.** | It is the window they have been working in all week. | **Enforce rule 1 out loud, every single time, including for the student you like most.** Watch them open the window. Fifteen seconds each. |
 | **The cross-examination turns into a friendly chat.** | You are pleased with them and it is the last week. | **Flat voice, same eight questions, same order.** Warmth after the paper, in private. A rescued answer teaches nobody anything, and the room can tell. |
 | **Answers with no numbers get through.** | "It's pretty fast" sounds like an answer. | **"With a number?"** — exactly once, then move on and write it down. **Do not supply the number for them.** |
-| **Students skip stop 7 because it shows a failure.** | Nobody wants to show a failure in front of the room. | **Ask for it directly: "show me where it breaks."** And name it when somebody does it well, so the next presenter copies them. |
+| **Students skip stop 6 because it shows a failure.** | Nobody wants to show a failure in front of the room. | **Ask for it directly: "show me where it breaks."** And name it when somebody does it well, so the next presenter copies them. |
 | **The paper is sat straight after the demos.** | It fits the timetable. | **Don't.** A student who has just presented cannot read code for silent bugs. **Separate sitting, quiet room, full 75 minutes.** |
 | **Everybody ticks all seven gates.** | It looks better and it is their own sheet. | **Say the standard out loud: from a blank file, glossary only.** Then say the target: *"at least one honest blank on every sheet, and I will be more impressed by the blank."* |
 | **A student with an unfinished capstone is waved through.** | It is the last week and nobody wants to be the bad news. | **Be the honest news instead.** "Gate 2 is not ticked, here is the fortnight that ticks it, and Level 4's evaluation module is built on it." **A wave-through costs them a term.** |
@@ -762,7 +762,7 @@ S3 instead of computing  2 x 0.667 x 0.070 / 0.737 :
 ### If the student is flying
 
 1. **Demo somebody else's project**, with five minutes to read their card first, then be cross-examined on it. **This is the hardest single thing available today** and it is the real test of whether the contract idea landed.
-2. **The prediction round at stop 7.** Write the probability on the board before running the failure case. Within 0.05 is genuinely impressive.
+2. **The prediction round at stop 6.** Write the probability on the board before running the failure case. Within 0.05 is genuinely impressive.
 3. **Find the fifth problem in D1.** There is one nobody mentions: **there is no three-way split**, so the "test" set was used as a validation set the moment anybody looked at its score and changed anything. One sentence.
 4. **The two extra cross-examination questions**: *"what happens if I send 400 words when your longest training review is 55 characters?"* and *"how many rows would you need before 0.8125 meant something?"* **The second has no clean answer and arguing it for ninety seconds is a good use of ninety seconds.**
 5. **Write the eight questions they would ask a stranger's model**, and say which of theirs differ from the eight on the wall and why. **Anybody who adds "what did you deliberately choose not to build?" has understood something most professionals have not.**
@@ -895,7 +895,7 @@ Every item restated so you can mark from this page alone. **The paper is pages 3
 **→ B. `(4, 3)`.** The inner numbers, 2 and 2, must match and then vanish; the outer ones survive. *Why not:* `(2, 4)` is the transpose; `(4, 2)` forgets that the layer changes the width; `(2, 3)` is the weight grid itself. **Say it out loud: `(n, d) @ (d, h) → (n, h)`.**
 
 **A12 `[W21]`** You write a PyTorch loop and leave out `optimizer.zero_grad()`. What do you see?
-**→ B. Nothing raises. Gradients accumulate across every batch, the effective step grows without limit, and accuracy ends up far worse than it should be.** *Why not:* the "backward through the graph a second time" error comes from calling `.backward()` twice on the same loss; a flat loss with no movement is the `lr = 0` symptom; every batch does train — all of them with a corrupted, growing gradient. **`zero_grad` is the first line of the inner loop, always.**
+**→ B. Nothing raises. Gradients accumulate across every batch, so each update is driven by the sum of all earlier gradients (with plain SGD the step balloons; with Adam it is rescaled but still stale), and accuracy ends up worse than it should be.** *Why not:* the "backward through the graph a second time" error comes from calling `.backward()` twice on the same loss; a flat loss with no movement is the `lr = 0` symptom; every batch does train — all of them with a corrupted, growing gradient. **`zero_grad` is the first line of the inner loop, always.**
 
 **A13 `[W22]`** You build `Linear(2, 16) → Linear(16, 1)` and forget the `ReLU` between them. What have you built?
 **→ C. Something exactly equivalent to a single linear layer — no curved boundary is possible.** Two grids multiplied together are just another grid. *Why not:* the shapes compose perfectly, so nothing raises — which is why the bug is silent; it is not "slightly weaker", it is *exactly* as expressive as one layer; it is marginally slower and no better. **If your network scores precisely what logistic regression scored, check for this first.**
@@ -943,7 +943,7 @@ Three marks: **1** for the core idea, **1** for a number or a specific, **1** fo
 | **Temporal** | Random-splitting time-ordered orders, so you train on December and test on November | Reported score **too high**. You measured interpolation and will deploy extrapolation. |
 | **Preprocessing** | `StandardScaler().fit_transform(X)` before the split; an imputer learning its median from all rows; a vectorizer fitted on train **and** test | Reported score **too high** — usually mildly, sometimes absurdly. Week 6 scored 75% on a table of **pure noise**. |
 
-> **The sentence that earns the third mark:** all three are the same crime — the model saw something at training time that it will not have at prediction time — and **two of the three are prevented for free** by splitting first and putting every transform inside a `Pipeline`.
+> **The sentence that earns the third mark:** all three are the same crime — the model saw something at training time that it will not have at prediction time — and they are prevented differently: the **preprocessing** one for free, by splitting first and putting every transform inside a `Pipeline`; the **temporal** one only by splitting by date instead of at random; the **target** one only by the availability test (a `Pipeline` cannot know a column is filled in after the outcome).
 
 **B3 `[W9]` `[W11]` — F1, and when not to use it.** *Compute F1 for precision 0.667 and recall 0.070, showing the arithmetic. Then: a missed fraud costs 500 and a false alarm costs 10. Explain why "the F1-optimal threshold" is the wrong answer.*
 
@@ -989,7 +989,7 @@ compare: the PLAIN average would be (0.667 + 0.070) / 2 = 0.3685
 
 > **What it hid.** The 0.8125 was measured on the 16 held-out reviews only. Split 28 labelled rows by whether the review contains a negation word: **0.800 on the 15 rows without one**, and **0.462 on the 13 rows with one, where recall on the positive class is 0.000** — six genuinely positive reviews and it found none. The counts check: `13 + 15 = 28`, `6 + 12 = 18`, `18 ÷ 28 = 0.643`, which is the overall row. **And 12 of those 13 rows are traps written on purpose to be hard, so 0.462 demonstrates a mechanism rather than estimating a rate.**
 >
-> **Why accuracy cannot be monitored.** In production nobody tells you the right answer. A comment goes through, gets a label, and no truth ever arrives. So accuracy is a number you can never compute, and a plan built on it is a plan you can never run. **The monitoring number has to come from inputs and outputs alone** — the uncertainty-band rate (**14.4%** of my 111 logged requests sat between 0.45 and 0.65), the out-of-vocabulary rate, the prediction mix, the p95. All four come straight out of the log with no labels at all.
+> **Why accuracy cannot be monitored.** In production the right answer usually does not arrive, and when it does (a user complaint, a human audit of a small sample) it arrives late and biased towards the cases that went wrong. A comment goes through, gets a label, and no truth comes back. So accuracy is a number you cannot compute on the live traffic as it happens, and a plan whose only alarm is accuracy is a plan that cannot run day to day. **The monitoring number has to come from inputs and outputs alone** — the uncertainty-band rate (**14.4%** of my 111 logged requests sat between 0.45 and 0.65), the out-of-vocabulary rate, the prediction mix, the p95. All four come straight out of the log with no labels at all.
 
 ---
 
@@ -1013,7 +1013,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.model_selection import train_test_split
 import joblib
 
-# --- the table: 6,000 card transactions, 0.95% of them fraud -------------
+# --- the table: 6,000 card transactions, about 1.4% of them fraud ---------
 rng = np.random.default_rng(0)
 X_raw, y = make_classification(n_samples=6000, n_features=4, n_informative=3,
                                n_redundant=0, weights=[0.99, 0.01],
@@ -1059,7 +1059,7 @@ accuracy: 0.9975
 
 **2 — Preprocessing leakage: the scaler is fitted before the split (line 30).** `StandardScaler().fit_transform(X[num])` learns its means and standard deviations from **all 6,000 rows**, including the 1,200 that become the test set. Reported score is optimistic, and the scaler was never saved, so it cannot travel with the model anyway.
 
-**3 — Accuracy on a 1%-positive problem, with no baseline (line 42).** `0.9975` is essentially the majority-class rate. The model could be catching 3 frauds out of 57 and still print this. There is no baseline, no confusion matrix, no precision or recall, no AUC, and no threshold decision.
+**3 — Accuracy on a 1%-positive problem, with no baseline (line 42).** `0.9975` arrives with nothing beside it. On these rows the do-nothing `DummyClassifier` already scores `0.9833` (only 20 of the 1,200 test rows are fraud), so the whole gap between the two is 3 mistakes in 1,200 — and accuracy alone cannot say which kind they are. There is no baseline, no confusion matrix, no precision or recall, no AUC, and no threshold decision.
 
 **4 — `OneHotEncoder()` without `handle_unknown="ignore"` (line 36).** Works today; raises `Found unknown categories` the first time a new country arrives in production.
 
@@ -1210,7 +1210,7 @@ d2_broken.py:5: RuntimeWarning: overflow encountered in exp
 
 **Bug 2 — the sign, lines 24 and 25.** The gradient points **uphill**. `w = w + lr * dw` walks up it. Fix: subtract. **And you already had the tell: you know `w` should be `+0.5` after one step.**
 
-**Bug 3 — no clipping before the logarithm, line 18.** Once the weights grow, `sigmoid` saturates to exactly `1.0` or `0.0` in float64, `np.log(0)` returns `-inf`, and the loss becomes `inf` — which is precisely what the real output shows. Fix: `np.clip(p, 1e-12, 1 - 1e-12)` before any logarithm.
+**Bug 3 — no clipping before the logarithm, line 18 (a weakness, and the one that shows the symptom).** Once the uphill walk has made the weights huge, `sigmoid` saturates to exactly `1.0` or `0.0` in float64, `np.log(0)` returns `-inf`, and the loss becomes `inf` — which is precisely what the real output shows. Be honest with the student: on this data, once the sign and shape are fixed, `p` stays well inside (0.017, 0.989) for all 150 epochs and the clip never fires — it is cheap insurance for other data, not what broke this program. Fix: `np.clip(p, 1e-12, 1 - 1e-12)` before any logarithm. *(Accept a student who names the `inf` loss / `RuntimeWarning` as the third problem.)*
 
 **The fix, run:**
 
@@ -1341,7 +1341,7 @@ epoch 19  val acc 0.859
 
 **Four problems.**
 
-**1 (worst) — no `optimizer.zero_grad()`.** PyTorch **accumulates** into `.grad` by design. With nothing clearing it, batch 40's gradient is the sum of batches 1 to 40, the effective step grows without limit, and training becomes noise. **Look at the output: it climbs, then drops to 0.798, then climbs, then drops to 0.831. That wobble is the signature.**
+**1 (worst) — no `optimizer.zero_grad()`.** PyTorch **accumulates** into `.grad` by design. With nothing clearing it, batch 40's gradient is the sum of batches 1 to 40, so every update is driven mostly by stale gradients from old weights. (With plain SGD the step would also balloon; this program uses Adam, which rescales the step, so what you see is slow, noisy learning rather than a blow-up.) **Look at the output: it climbs, then drops to 0.798, then climbs, then drops to 0.831. That wobble is the signature.**
 
 **2 — `nn.Softmax(dim=1)` as the last layer with `nn.CrossEntropyLoss` (line 20).** The loss expects **raw logits** and applies log-softmax itself, so the squash happens twice, the gradients flatten, and accuracy caps out. Nothing raises. **End the model with a bare `nn.Linear`.**
 
@@ -1489,7 +1489,7 @@ stop_words="english" :  ['pizza', 'delicious']
 stop_words=None      :  ['the', 'pizza', 'was', 'not', 'delicious']
 ```
 
-> **Be honest about this one when you mark it, because the honest version is more interesting.** In *this particular* corpus, no training review contains the word `not` at all, so removing the stopwords changes nothing about the model that was actually built. **The bug is still a bug** — the instant one negated review reaches the training set, that setting deletes the only word carrying the meaning. **A student who spots that the corpus has no negations *and* that the setting is still wrong is at level 5.** *(And one genuinely useful detail: `hardly` is **not** on sklearn's list, which is exactly the kind of thing you find only by printing the list.)*
+> **Be honest about this one when you mark it, because the honest version is more interesting.** In *this particular* corpus, no training review contains the word `not` at all, so removing the stopwords deletes no negation that the model ever saw (it does drop the one `no` in "made no sense" and ordinary words like `the` and `was`, which shifts the vocabulary from 66 to 58 words and the probabilities slightly, but not the test accuracy). **The bug is still a bug** — the instant one negated review reaches the training set, that setting deletes the only word carrying the meaning. **A student who spots that the corpus has no negations *and* that the setting is still wrong is at level 5.** *(And one genuinely useful detail: `hardly` is **not** on sklearn's list, which is exactly the kind of thing you find only by printing the list.)*
 
 **3 — the threshold is hard-coded as `0.5` (line 27) while the metadata says `0.65`.** The program **writes 0.65 to a file and then ignores it two lines later.** This is the exact failure Week 34 exists to prevent: the threshold is a decision with arithmetic behind it, and the serving code must *read* it, never retype it. Fix: `json.load` the metadata and use `float(meta["threshold"])`.
 

@@ -85,7 +85,7 @@ Why on earth would you throw away detail like that? Because `order_hour` is a **
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | late rate | .213 | .231 | .261 | .249 | .202 | .218 | .256 | .280 | **.374** | **.375** | **.355** | .237 | .196 | .309 |
 
-That is a **hump**, not a slope. A model given raw `order_hour` and one weight has to draw one straight line through that shape, and the best straight line through a hump is nearly flat — which is exactly what happened: `order_hour`'s weight in the fitted model is **−0.121**, effectively nothing. The information was there and the model could not reach it.
+That is a **hump**, not a slope. A model given raw `order_hour` and one weight has to draw one straight line through that shape, and the best straight line through a hump is nearly flat — which is exactly what happened: `order_hour`'s weight in the raw-columns model (row A) is **+0.092** against `distance_km`'s 0.925, effectively nothing (it reads −0.121 beside 1.128 once `is_rush` is in, because the flag now carries the hump). The information was there and the model could not reach it.
 
 Cut the hours into ranges and it can:
 
@@ -197,7 +197,7 @@ E − D  =  0.7829 − 0.7843  =  −0.0014    dist_x_weather made it WORSE
 F − E  =  0.7828 − 0.7829  =  −0.0001    is_weekend bought nothing at all
 ```
 
-`dist_x_weather` is the feature with the best *story* in this whole lesson — you can see the amplification in the crosstab, 0.4663 against 0.3269, it is real — **and it still lost 0.0014 of AUC.** Sit with that. The story was right and the column was not worth its place, because the one-hot weather columns and the distance column, between them, were already carrying most of it, and the new column is one more weight to estimate from the same 1,200 rows.
+`dist_x_weather` is the feature with the best *story* in this whole lesson — you can see the amplification in the crosstab, 0.4663 against 0.3269, it looks real — **and it still lost 0.0014 of AUC.** Sit with that. Two honest reasons, and the table cannot separate them: the one-hot weather columns and the distance column may already carry most of it, and the amplification rests on the long-trip storm cell of only 35 orders. **Teacher-only:** `make_data.py` adds its effects on the logit scale with no distance-by-weather term, so there is no true interaction; an additive logistic model fitted to the whole table predicts a ratio of about 1.03 for these six cells, against the observed 1.43. The 1.43 is mostly a 35-order wobble. Do not tell the student at the Hook; do tell them if they ask whether the pattern was 'really there'.
 
 And `is_weekend` is the one that hurts to delete, because it sounds so obviously right. Here is why it is not:
 
@@ -294,7 +294,7 @@ Twenty-two of them, prefixed by which branch they came from. **You need this to 
 
 **"The delta is only 0.0018, that's basically nothing."** This is the Week 4 rounding habit coming back. Four decimal places is the unit of this work. 0.0018 is small; **−0.0014 is a different sign**, and telling those two apart is the entire skill. Write the deltas out in full every time, never rounded to two places.
 
-**"If the feature makes sense, keep it even though the number says no."** This is the one that costs professionals real money, and the reason it is so persuasive is that the story usually *is* right — the amplification in `dist_x_weather` is genuinely in the data. The reply is not "your story is wrong". It is: *"the column has to earn its place, and this one didn't. Keep the row in the table so we know we tried."*
+**"If the feature makes sense, keep it even though the number says no."** This is the one that costs professionals real money, and the reason it is so persuasive is that the story usually *is* right — the amplification in `dist_x_weather` looks convincing in the crosstab (though its storm-and-long cell has only 35 orders). The reply is not "your story is wrong". It is: *"the column has to earn its place, and this one didn't. Keep the row in the table so we know we tried."*
 
 ### 6. How deep to go, and where to stop
 
@@ -571,7 +571,7 @@ dist_x_weather   = distance × how bad the weather is
 
 *A flat one.*
 
-> "Almost flat. And that is exactly what happened — in the fitted model, `order_hour`'s weight is **minus 0.121**, which next to `distance_km`'s **1.128** is nothing. The information was sitting right there in the table and the model could not reach it."
+> "Almost flat. And that is exactly what happened — in the raw-columns model, `order_hour`'s weight is **plus 0.092**, which next to `distance_km`'s **0.925** is nothing. (Once `is_rush` is added it reads minus 0.121 next to 1.128, because the flag now carries the hump.) The information was sitting right there in the table and the model could not reach it."
 
 **Do this:** Draw the two-bucket table on the board:
 
@@ -853,7 +853,7 @@ E  D + dist_x_weather    23    0.7725   0.7829 0.0077
 **Do this:** Fill in the whiteboard table as they read. Write each subtraction out.
 
 ```
-B − A  =  0.7825 − 0.7752  =  +0.0074     is_rush        KEEP
+B − A  =  0.7825 − 0.7752  =  +0.0073     is_rush        KEEP   (table says 0.0074: unrounded AUCs)
 C − A  =  0.7815 − 0.7752  =  +0.0063     hour_band      drop, B is better with 3 fewer columns
 D − B  =  0.7843 − 0.7825  =  +0.0018     min_per_km     KEEP
 E − D  =  0.7829 − 0.7843  =  −0.0014     dist_x_weather DELETE
@@ -1001,7 +1001,7 @@ Run it. Fill in the table. Read out each subtraction against the row above.
 2. **Build `items_per_km` and ablate it against `min_per_km`.** Two ratios from the same denominator. Do they help *together*, or does the second one add nothing once the first is in? (Try it. This is a real question about redundancy.)
 3. **Row C, properly investigated.** Try `hour_band` with **two** bands (rush / not rush) and with **seven** bands. Where is the sweet spot, and is it just `is_rush` again? A student who works out that the two-band version *is* `is_rush` with three more characters of typing has understood binning.
 4. **The honest weakness.** *"Every number in this table came from one 400-row validation pile. If I re-split with a different `random_state`, will D still win?"* Have them change `RS` from 42 to 0, 1 and 2 and re-run the whole table. **If a different variant wins each time, the search found noise.** This is the most valuable exercise in the week and it is exactly why Week 11 exists. Do not resolve it — write the finding on a card and pin it up for Week 11.
-5. **Read the weights.** Print `get_feature_names_out()` alongside the fitted model's coefficients and find `is_rush` (0.436) and `min_per_km` (0.239) among them. Then ask why `order_hour` is only −0.121 and `distance_km` is 1.128.
+5. **Read the weights.** Print `get_feature_names_out()` alongside the fitted model's coefficients and find `is_rush` (0.436) and `min_per_km` (0.239) among them. Then ask why `order_hour` is only −0.121 and `distance_km` is 1.128 (answer: in row D the flag `is_rush` already carries the hump; in row A `order_hour` is +0.092 for the same reason a straight line cannot draw it).
 
 ---
 
@@ -1011,7 +1011,7 @@ Run it. Fill in the table. Read out each subtraction against the row above.
 
 **This is the sharpest question of the week and it deserves a real answer, because it is half right.**
 
-You looked at the *training* rows to decide that 18:00–20:00 matters. That is allowed, and it is what training rows are for. You then measured the feature on the *validation* rows, which you did not look at. So the measurement is honest.
+The clean rule is to look at the *training* rows to decide that 18:00–20:00 matters (that is what training rows are for) and to measure the feature on the *validation* rows. Be honest about today: `look.py` and the hourly table in this lesson were computed on all 2,000 rows, validation included, so the validation labels did help choose the window. With a hump this large the effect on the score is small, but the strict version is to run the `groupby` on `X_tr` only. Say this out loud; it is the stronger answer.
 
 Where it becomes cheating is if you keep going: try 40 different hour ranges, keep whichever one scores best on validation, and report that score. Then you have fitted your *choices* to the validation pile, and the number you report is too high. That is the same trap the three-way split exists to contain, and it is the reason we look at 400 validation rows *once* per feature and not fifty times.
 
@@ -1029,7 +1029,7 @@ Look at the four rates: morning 0.2383, afternoon 0.2552, rush 0.3682, night 0.2
 
 Because "real" and "worth a column" are different tests, and this is the most important distinction in the week.
 
-The amplification is real: 0.4663 against 0.3269. But the model already has `distance_km` and three one-hot weather columns, and between them they can already produce most of that pattern. The new column adds a little that they cannot — and costs one more weight estimated from 1,200 rows. On this data the cost won, by 0.0014.
+The amplification is visible: 0.4663 against 0.3269 (from a 35-order corner cell, so treat it as a hypothesis). The model already has `distance_km` and three one-hot weather columns, and between them they can already produce most of that pattern. The new column adds a little that they cannot — and costs one more weight estimated from 1,200 rows. On this data the cost won, by 0.0014.
 
 **What you should be uncomfortable about is not the deletion, it is the size of the number.** 0.0014 on 400 validation rows is well inside the range where a different split might flip the sign. So the intellectually honest write-up is: *"deleted, ΔAUC −0.0014, which is small enough that I would retest it with cross-validation before being sure."* Cross-validation is Week 11, and this is precisely why it is coming.
 
@@ -1124,7 +1124,7 @@ None of these needs syntax from a later week.
 1. **Variation-harder 4 — re-split with `RS = 0, 1, 2` and see whether D still wins.** This is the best available exercise. If a different variant wins each time, the search found noise. Do not resolve it; label it "Week 11" and pin it up.
 2. **Variation-harder 2 — two ratios sharing a denominator.** Does `items_per_km` add anything once `min_per_km` is in? A real question about redundancy, answerable with one extra row.
 3. **The sine-and-cosine hour**, built and ablated against `is_rush`. Then the *explanation* of why the smooth version loses: one cycle per day can only make one smooth hump, and the truth is a rectangle.
-4. **Read the weights.** `get_feature_names_out()` beside the fitted coefficients: `distance_km` 1.128, `weather_storm` 0.732, `is_rush` 0.436, `min_per_km` 0.239, `order_hour` −0.121. **Then the question: why is `order_hour` almost zero when the hourly table has a clear hump in it?** A student who answers that has understood binning completely.
+4. **Read the weights.** `get_feature_names_out()` beside the fitted coefficients: `distance_km` 1.128, `weather_storm` 0.732, `is_rush` 0.436, `min_per_km` 0.239, `order_hour` −0.121. **Then the question: why is `order_hour` almost zero when the hourly table has a clear hump in it?** Two parts to a full answer: a straight line cannot draw a hump (row A gives +0.092), and in row D `is_rush` has absorbed what little was left. A student who gives both has understood binning.
 5. **Count the possible ablations.** Six candidate features means 2⁶ = 64 possible pipelines. If you fitted all 64 and kept the best on 400 validation rows, what would you actually have found? (The luckiest, not the best.) Then estimate how much of the winner's margin is real.
 6. **The honest question:** `is_rush` hard-codes 18 to 20. Write down three ways that column could silently go wrong in a year, and which of them a retrain would fix. (None of them. That is the point.)
 
@@ -1452,7 +1452,7 @@ num__distance_km, num__items, num__prep_minutes, num__order_hour, num__driver_ex
 
 | step | arithmetic | verdict |
 |---|---|---|
-| B − A | 0.7825 − 0.7752 = **+0.0074** | keep `is_rush` |
+| B − A | 0.7825 − 0.7752 = **+0.0073** by hand (table: 0.0074, unrounded AUCs) | keep `is_rush` |
 | C − A | 0.7815 − 0.7752 = **+0.0063** | drop `hour_band` — B beats it with three fewer columns |
 | D − B | 0.7843 − 0.7825 = **+0.0018** | keep `min_per_km` |
 | E − D | 0.7829 − 0.7843 = **−0.0014** | delete `dist_x_weather` |
@@ -1464,13 +1464,13 @@ num__distance_km, num__items, num__prep_minutes, num__order_hour, num__driver_ex
 
 > **Feature:** `dist_x_weather` — `distance_km × weather severity`, with clear 0, rain 1, storm 2.
 >
-> **What I thought it would do:** let the model say that a long trip is much worse in a storm than in the clear. The evidence for that is real: a long trip costs 0.5034 − 0.1765 = 0.3269 in the clear and 0.8571 − 0.3908 = 0.4663 in a storm, which is 1.43 times as much.
+> **What I thought it would do:** let the model say that a long trip is much worse in a storm than in the clear. The evidence for that looked strong (though its storm cell has only 35 orders): a long trip costs 0.5034 − 0.1765 = 0.3269 in the clear and 0.8571 − 0.3908 = 0.4663 in a storm, which is 1.43 times as much.
 >
 > **AUC without it (row D):** 0.7843
 > **AUC with it (row E):** 0.7829
 > **The delta:** 0.7829 − 0.7843 = **−0.0014**
 >
-> **Why I am deleting it:** it made the model worse. The distance column and the three one-hot weather columns were already carrying most of that pattern between them, and the new column is one more weight to estimate from the same 1,200 rows. The story was right and the column still was not worth its place.
+> **Why I am deleting it:** it made the model worse. The distance column and the three one-hot weather columns were already carrying most of that pattern between them, and the new column is one more weight to estimate from the same 1,200 rows. The story sounded right and the column still was not worth its place.
 >
 > **Honest caveat:** −0.0014 measured on 400 validation rows is small enough that a different split might flip the sign. Retest with cross-validation in Week 11 before calling it settled.
 
@@ -1494,7 +1494,7 @@ num__distance_km, num__items, num__prep_minutes, num__order_hour, num__driver_ex
 
 - *"Where did `is_rush` come from?"* → Somebody grouped by the hour and looked at fourteen lateness rates.
 - *"Read me the biggest three hours."* → 18, 19, 20 — 0.3738, 0.3745, 0.3553.
-- *"What's the best straight line through a hump?"* → An almost flat one. `order_hour`'s fitted weight is −0.121 against `distance_km`'s 1.128.
+- *"What's the best straight line through a hump?"* → An almost flat one. `order_hour`'s fitted weight is +0.092 against `distance_km`'s 0.925 in row A (−0.121 against 1.128 in row D, where `is_rush` has taken over the hump).
 - *"Subtract the two rush rates."* → 0.3682 − 0.2424 = **0.1258**.
 - *"12 minutes on 2 km, and 12 minutes on 9 km."* → 12 ÷ 2.5 = **4.80** and 12 ÷ 9.5 = **1.26**. Same prep, kitchen versus road.
 - *"Why the + 0.5?"* → A distance of zero would give infinity, and `LogisticRegression` raises `ValueError: Input X contains infinity`.

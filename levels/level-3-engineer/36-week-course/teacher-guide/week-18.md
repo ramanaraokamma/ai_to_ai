@@ -329,16 +329,16 @@ This is objective 3 and it is the most professionally useful thing in the whole 
 > **🔢 The maths, slowly.** Check `dW1[0,0]`, which our chain said was `0.29789053`. Nudge that one weight by `ε = 0.000001` — a millionth — in each direction and recompute the whole batch loss both times.
 >
 > ```
-> W1[0,0] = 0.500001  →  loss = 0.57744916
-> W1[0,0] = 0.499999  →  loss = 0.57744856
+> W1[0,0] = 0.500001  →  loss = 0.577449156639
+> W1[0,0] = 0.499999  →  loss = 0.577448560858
 >
-> the loss moved:  0.57744916 − 0.57744856 = 0.00000060
-> the knob moved:  0.500001   − 0.499999   = 0.00000200
+> the loss moved:  0.577449156639 − 0.577448560858 = 0.000000595781
+> the knob moved:  0.500001       − 0.499999       = 0.000002
 >
-> 0.00000060 ÷ 0.00000200 = 0.29789053
+> 0.000000595781 ÷ 0.000002 = 0.29789050
 > ```
 >
-> **`0.29789053`. Identical to eight decimal places.** And nothing in that calculation knew what backpropagation is.
+> **`0.29789050`, against the chain's `0.29789053`.** Six figures agree (the last two differ only because the losses were rounded to twelve places before subtracting). Note that you need all twelve places: with the losses rounded to eight places the subtraction gives `0.3`, not `0.2979`. And nothing in that calculation knew what backpropagation is.
 
 > **relative error** — how much two numbers disagree, as a *fraction* of their size: `|num − ana| ÷ (|num| + |ana|)`. **Below `1e-6` means "the same number".**
 
@@ -394,7 +394,7 @@ And now the killer: **the ReLU mask `(Z1 > 0)` is `False` everywhere**, because 
 
 > **He initialization** — start each weight as a random number from a bell curve centred on zero, with a spread of `sqrt(2 ÷ n_inputs)`. Biases start at zero, which is fine because the weights already differ.
 
-**Why that formula, in one paragraph you can say aloud.** Each unit adds up `n_inputs` products. If the weights had the same spread no matter how many inputs there were, then a wide layer would produce enormous sums and the sigmoid at the end would be pinned at 0 or 1, where its slope is almost nothing. Dividing the spread by the number of inputs keeps the typical size of `z` about the same however wide the layer is. **The factor of 2 is there because ReLU throws away half the values**, so you need to start with twice as much to end up in the right place.
+**Why that formula, in one paragraph you can say aloud.** Each unit adds up `n_inputs` products. If the weights had the same spread no matter how many inputs there were, then a wide layer would produce enormous sums and the sigmoid at the end would be pinned at 0 or 1, where its slope is almost nothing. Shrinking the spread as the number of inputs grows (it goes as `sqrt(2 ÷ n_inputs)`, so four times as many inputs means half the spread) keeps the typical size of `z` about the same however wide the layer is. **The factor of 2 is there because ReLU throws away half the values**, so you need to start with twice as much to end up in the right place.
 
 For our two-input layer: `sqrt(2 ÷ 2) = 1.0`. **Do not derive anything.** Say the sentence, show the printout in the Answer Key where every hidden column is genuinely different, and move on. Week 19 has real numbers showing all-zeros stuck at 50% accuracy while He initialization reaches 99.2%.
 
@@ -797,7 +797,7 @@ Collect the guesses. You will get **42** and **17** and possibly **11**. Write a
                               dZ = dA * (Z > 0)
 ```
 
-> **Say this:** "Five rules. **Every neural network ever built uses these five and nothing else** — the fancy ones just have more interesting things in the middle.
+> **Say this:** "Five rules. **Every network in this course uses these five and nothing else** — the fancier ones in the wild add more kinds of stage in the middle, each with its own one local rule.
 >
 > Rule one is not new. You met `A2 − y` in Week 14: when a sigmoid is scored with log loss, the messy derivative cancels down to **predicted minus actual**. That is why those two are always paired.
 >
@@ -980,7 +980,7 @@ dW1 (2, 2)
 
 > **Say this:** "You cannot tell. Neither can I, by looking. **The shapes are right, nothing crashed, and every one of those four numbers is wrong.**
 >
-> This is the most dangerous class of bug in this subject: **the silently wrong gradient.** Your network will still train. It will just train towards slightly the wrong place, and get a mediocre score, and nothing anywhere will tell you why.
+> This is the most dangerous class of bug in this subject: **the silently wrong gradient.** Your network will still train. It will just train towards the wrong place, and get a mediocre score, and nothing anywhere will tell you why.
 >
 > Which is exactly why the next thing we do is the gradient check. **It is the only thing that catches this.**"
 
@@ -1055,7 +1055,7 @@ all zeros never learns     symmetry has to be broken
 >
 > **And all zeros never learns.** Every weight identical means every unit identical for ever.
 >
-> One last thing. Look at that diagram: blue going forwards, red coming back. **You now know how every neural network on earth is trained.** Not roughly — actually. Nine numbers, by hand, checked. Next week you put it in a file, add a loop, and press go."
+> One last thing. Look at that diagram: blue going forwards, red coming back. **You now know the engine inside how neural networks are trained.** Not roughly — actually. Nine numbers, by hand, checked. Next week you put it in a file, add a loop, and press go."
 
 **Do this:** Three quick checks — exact wording in **✅ Assessing Understanding**.
 
@@ -1072,7 +1072,7 @@ Every message below came from running a broken version of this week's actual cod
 | `ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 4 is different from 2)` | "The inner numbers do not match." | `A1 @ dZ2` written instead of `A1.T @ dZ2`. | **Write the shape you need first.** `dW2` must be `(2, 1)`; `A1.T` is `(2, 4)` and `dZ2` is `(4, 1)`, so `(2,4) @ (4,1)` is the only arrangement. |
 | `ValueError: matmul: ... (size 2 is different from 1)` | Same problem in rule 4. | `dZ2 @ W2` written instead of `dZ2 @ W2.T`. | `dA1` must be shaped like `A1`, which is `(4, 2)`. `(4,1) @ (1,2)` gives it. |
 | `ValueError: operands could not be broadcast together with shapes (4,2) (2,4)` | "These two cannot be stretched to the same size." | `dA1 * mask` where the mask has been transposed. | The mask must be exactly `Z1`'s shape. `(Z1 > 0).astype(float)` — no `.T` anywhere near it. |
-| `ValueError: operands could not be broadcast together with shapes (1,2) (2,)` | A shape has silently gone flat. | `keepdims=True` left off `dZ1.sum(axis=0)`. | Put it back. `db1` must be `(1, 2)` to match `b1`. |
+| **No error, but `db1` prints with shape `(2,)`** | A shape has silently gone flat. (`(1,2)` and `(2,)` broadcast legally, so numpy does not complain.) | `keepdims=True` left off `dZ1.sum(axis=0)`. | Put it back. `db1` must be `(1, 2)` to match `b1`. |
 | `RuntimeWarning: divide by zero encountered in log` then `nan` in the loss | `A2` reached exactly 0 or exactly 1, and `ln(0)` has no value. | Weights changed to something extreme, so the sigmoid saturated. | `np.clip(A2, 1e-12, 1 - 1e-12)` before the log — Week 14's fix, unchanged. |
 | **No error. The gradient check gives about `0.2`–`1.0` on `dW1` and `db1`, but `dW2` and `db2` pass.** | Nothing crashed. Half the gradients are wrong. | **The ReLU mask has been forgotten.** It only affects the hidden layer, which is why the output layer still passes. | `dZ1 = dA1 * (Z1 > 0).astype(float)`. **This is the bug the gradient check exists for.** |
 | **No error. Every relative error is about `0.6`.** | Nothing crashed. All nine gradients are 4× too big. | The `÷ n` is missing from `dZ2`. A 4× overshoot gives relative error `3 ÷ 5 = 0.6`, which is suspiciously uniform. | `dZ2 = (A2 - y) / n`. **Uniformly wrong by the same factor almost always means a missing divide.** |
@@ -1263,7 +1263,7 @@ straight through: 42.00000000000159
 ### Variation — harder
 
 1. **A four-stage chain of their own invention**, measured stage by stage and straight through. They must choose the stages, and one of them must have a slope **less than 1** so the product shrinks.
-2. **Gradient-check by hand, on paper, on one knob.** `W1[0][0]` nudged to `0.500001` and `0.499999`, the whole four-row loss recomputed both times. It is about twenty multiplications each way and the payoff is `0.29789053` matching to eight places. **Genuinely satisfying and completely unaided.**
+2. **Gradient-check by hand, on paper, on one knob.** `W1[0][0]` nudged to `0.500001` and `0.499999`, the whole four-row loss recomputed both times. It is about twenty multiplications each way and the payoff is `0.29789053` matching to about six figures (keep twelve decimal places in the two losses). **Genuinely satisfying and completely unaided.**
 3. **Break the gradient three ways and predict which check will fail.** (a) Forget the mask → `dW1` and `db1` fail, `dW2` and `db2` pass. (b) Forget the `÷ n` → all nine fail by the same factor. (c) Use `W2` instead of `W2.T` → a crash, not a wrong answer. **Predicting *which* fail is much harder than noticing that some do.**
 4. **Take one step and confirm the loss dropped.** Apply `W ← W − 0.5 × dW` to all four arrays, run the forward pass again, and compare. On the one-row version the loss falls from `0.105083` to `0.043068` — **59% of it gone in one step** — and hidden unit 2's `z` flips negative, which is a preview of Week 19's dead units.
 5. **Why is `ε = 1e-6` the right nudge?** Try `1e-2`, `1e-6` and `1e-12` and tabulate the relative errors. Too big and the nudge is not measuring a slope at a point; too small and floating-point noise dominates. **There is a U-shaped curve and finding its bottom is real numerical analysis.**
@@ -1311,7 +1311,7 @@ That is precisely why it is trustworthy. **Two independent methods agreeing is m
 
 Make the nudge **bigger** and you stop measuring the slope *at a point* — you measure the average slope over a wider stretch, and if the curve bends, that is wrong.
 
-Make it **smaller** and you hit the computer's precision limit. `0.57744916 − 0.57744856` is a difference in the eighth decimal place of numbers stored with about sixteen digits. Shrink the nudge to `1e-12` and the difference disappears into rounding noise entirely.
+Make it **smaller** and you hit the computer's precision limit. `0.577449157 − 0.577448561` is a difference in the seventh decimal place of numbers stored with about sixteen digits. Shrink the nudge to `1e-12` and the difference disappears into rounding noise entirely.
 
 **So there is a sweet spot, and `1e-6` is roughly it** for the kind of numbers we use. It is not a magic constant — it is the bottom of a U-shaped curve, and the harder variation has them find it by experiment.
 
@@ -1391,7 +1391,7 @@ Then three questions. **"Is `41.99999999698889` the same as `42`?"** (Yes — th
 
 None of these need syntax from a later week.
 
-1. **Gradient-check one knob entirely by hand** (harder variation 2). Twenty multiplications each way, and `0.29789053` matching to eight places. This is the most satisfying unaided thing available today.
+1. **Gradient-check one knob entirely by hand** (harder variation 2). Twenty multiplications each way, and `0.29789053` matching to about six figures. This is the most satisfying unaided thing available today.
 2. **Predict which checks fail for three different bugs** (harder variation 3). Getting "the mask only breaks the hidden layer" right, before running it, is a level-5 answer.
 3. **Take one step and confirm the loss dropped** (harder variation 4). `0.105083 → 0.043068` on the one-row network, and hidden unit 2 dying in the process — a preview of Week 19 that they discover rather than get told.
 4. **Find the best `ε`** (harder variation 5). A real U-shaped error curve, and real numerical analysis.
@@ -1460,7 +1460,7 @@ Three checks, five minutes, exact wording.
 | **2 — Emerging** | Measures one stage's slope with the formula in front of them. Multiplies two given slopes correctly. Copies the five backward lines and gets the right numbers out. Reads shapes when asked. |
 | **3 — Secure** | Measures both stages and the whole chain, and explains why they agree. Produces all four gradient arrays with the five rules to hand, and checks all four shapes against their weights. Runs the gradient check and reads the relative errors. Says what all-zeros does. **This is the target.** |
 | **4 — Strong** | Places every transpose by reasoning from the required shape rather than recall. Predicts that a missing ReLU mask breaks only the hidden layer. Diagnoses a uniform relative error as a missing divide. Explains relative error as a fraction rather than a difference, and why that matters. |
-| **5 — Exceptional** | Gradient-checks a knob entirely by hand and gets `0.29789053`. Explains that backprop is an **efficiency** result — the same numbers as nudging, obtained about sixteen million times faster — rather than a new mathematical fact. Argues that the check verifies the backward pass **against the forward pass**, so a wrong forward pass would still pass. Finds the sweet spot for `ε` by experiment and explains both failure modes. Explains all-zeros two independent ways: the ReLU mask, and the clone argument that applies even without ReLU. |
+| **5 — Exceptional** | Gradient-checks a knob entirely by hand and gets about `0.29789053`. Explains that backprop is an **efficiency** result — the same numbers as nudging, obtained about sixteen million times faster — rather than a new mathematical fact. Argues that the check verifies the backward pass **against the forward pass**, so a wrong forward pass would still pass. Finds the sweet spot for `ε` by experiment and explains both failure modes. Explains all-zeros two independent ways: the ReLU mask, and the clone argument that applies even without ReLU. |
 
 ---
 
@@ -2011,13 +2011,13 @@ all nine below 1e-6?  True
 **The by-hand version of the first row**, which is the harder variation and worth full credit:
 
 ```
-W1[0,0] = 0.500001  →  loss = 0.57744916
-W1[0,0] = 0.499999  →  loss = 0.57744856
+W1[0,0] = 0.500001  →  loss = 0.577449156639
+W1[0,0] = 0.499999  →  loss = 0.577448560858
 
-the loss moved:  0.00000060
-the knob moved:  0.00000200
+the loss moved:  0.000000595781
+the knob moved:  0.000002
 
-0.00000060 ÷ 0.00000200 = 0.29789053        and the chain said 0.29789053
+0.000000595781 ÷ 0.000002 = 0.29789050      and the chain said 0.29789053
 ```
 
 ### Page 18.5 — Symmetry breaking
@@ -2121,10 +2121,10 @@ every hidden column different?  True
 `0.693147`, which is `−ln(0.5)`. **Week 14.** It is the log loss of a model that answers 0.5 to everything — the guessing number.
 
 **Q2 — "Why is every gradient exactly zero?"**
-Two reasons stacked. Every weight is zero, so every `Z1` is zero. The ReLU mask asks *"is this greater than zero?"* and **zero is not greater than zero**, so the mask is `False` everywhere. Multiplying the blame by that mask gives zero for every hidden gradient. And `dW2 = A1.T @ dZ2` is also zero because `A1` is all zeros. **So nothing moves, ever.**
+Two reasons stacked. Every weight is zero, so every `Z1` is zero. The ReLU mask asks *"is this greater than zero?"* and **zero is not greater than zero**, so the mask is `False` everywhere. Multiplying the blame by that mask gives zero for every hidden gradient. And `dW2 = A1.T @ dZ2` is also zero because `A1` is all zeros. (The mask is not even the only lock: `W2` is zero, so `dA1 = dZ2 @ W2.T` is zero before the mask is applied.) **So nothing moves, ever.**
 
 **Q3 — "Would it work if you used tanh instead of ReLU?"**
-**No, and the reason is different and more interesting.** `tanh(0) = 0` and tanh's slope at 0 is 1, so the mask problem disappears and the gradients would not be zero. But every hidden unit would still receive an identical gradient, take an identical step, and remain identical to its neighbours for ever. **Four units acting as one, permanently.** That is symmetry, and only randomness breaks it.
+**No, and the reason is different and more interesting.** `tanh(0) = 0` and tanh's slope at 0 is 1, so the *mask* problem disappears, but the gradients are still exactly zero: `W2` is zero so `dA1 = dZ2 @ W2.T` is zero, and `A1 = tanh(0) = 0` so `dW2 = A1.T @ dZ2` is zero too (only `b2` can move). With an activation that does not start at zero (sigmoid, say) the gradients would be non-zero, but every hidden unit would still receive an identical gradient, take an identical step, and remain identical to its neighbours for ever. **Four units acting as one, permanently.** That is symmetry, and only randomness breaks it.
 
 **Q4 — "Look at the He printout. What is different?"**
 Every column of `W1` holds different numbers, so every column of `A1` is different. Read the first row of `A1`: `0`, `0.591085`, `3.248423`, `1.999062`. **Four units, four different opinions about the same input row** — and the first one is silent on that row, which is exactly the patchiness that lets a network bend. And `sqrt(2 ÷ 2) = 1.000000` for this two-input layer, so the spread asked for is 1.

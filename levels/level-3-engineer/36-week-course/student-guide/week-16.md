@@ -105,7 +105,7 @@ without b (b = 0):  z = 1.2       = 1.20    →  ReLU says 1.200
 | `[2, 1, 0.5]` | **0.20** | 0.200 | 0.550 | 0.197 |
 | `[−1, 2, 0]` | **−2.30** | 0.000 | 0.091 | **−0.980** |
 
-Twelve numbers on that little table and exactly one of them is negative: **tanh's `−0.980`.** ReLU's floor is a hard zero; sigmoid's floor is zero but it never gets there; tanh is the only one of the three that can hand the next layer a negative number. That is genuinely useful sometimes, which is why tanh is still around.
+Six squash answers on that little table (ignoring the `z` column, which is before any squashing) and exactly one of them is negative: **tanh's `−0.980`.** ReLU's floor is a hard zero; sigmoid's floor is zero but it never gets there; tanh is the only one of the three that can hand the next layer a negative number. That is genuinely useful sometimes, which is why tanh is still around.
 
 ![Three squashes, on the same two numbers](../figures/fig-w16-2-relu-sigmoid-tanh-side-by-side.svg)
 *Figure 16.2 — Three squashes, on the same two numbers. Only tanh returns a negative number: `−0.980`.*
@@ -229,9 +229,9 @@ one line:   out = 1.1(2.0) + 0.4(−1.0) + 0.3   = 2.20 − 0.40 + 0.30 = 2.10  
 with ReLU:  out = 1.0(0.30) − 2.0(0) + 0.3 = 0.30 + 0 + 0.30 = 0.60
 ```
 
-**`2.10` against `0.60`. A gap of exactly `1.50`, and no straight line can produce it.**
+**`2.10` against `0.60`. A gap of exactly `1.50`, and the one-line version cannot produce it.**
 
-ReLU threw the `−0.75` in the bin. That is not damage — **that is the bend.** Throwing information away *for some rows and not others* is the only way a straight line becomes a curve.
+ReLU threw the `−0.75` in the bin. That is not damage — **that is the bend.** ReLU treats rows differently depending on the sign of `h2`: it leaves some rows alone and cuts others, and a rule that behaves differently in different places is not a straight line. (Sigmoid and tanh bend too, but by curving smoothly instead of cutting.)
 
 ![With no squash, two layers are one straight line](../figures/fig-w16-4-no-squash-two-layers-collapse-to-a-line.svg)
 *Figure 16.4 — With no squash, two layers are one straight line. With ReLU the `−0.75` becomes `0`, the answer drops from `2.1` to `0.6`, and the gap is `1.5`.*
@@ -295,7 +295,7 @@ And five ReLU layers:
 
 **All of it.**
 
-That multiplication is the entire reason ReLU is the default hidden activation. It is not a fashion and it is not an opinion — it is `0.25⁵` against `1⁵`, and it is why deep networks did not really work until people switched to ReLU around 2012. **You have just done, on a calculator, the arithmetic that unlocked the field.**
+That multiplication is the main reason ReLU is the default hidden activation (it is also very cheap to compute). It is not a fashion — it is `0.25⁵` against `1⁵` — and it is a big part of why very deep networks were so hard to train with sigmoid, and got much easier once people switched to ReLU around 2010–2012. (The real chain also multiplies in the weights, which you will meet in Week 18; the squash's share of it is what we are measuring here.) **You have just done, on a calculator, a piece of the arithmetic behind that change.**
 
 > **🧑‍🏫 If you are wondering why ReLU's slope says `0.500000` at `z = 0`:** because ReLU has a **corner** there, and a corner has no single steepness. Nudge up and the slope is 1. Nudge down and it is 0. A two-sided nudge splits the difference and reports `0.5`. **This is not a fact anybody discovered — it is a decision somebody made.** PyTorch, in Week 20, will tell you `0`. Both are defensible. Maths genuinely has a hole here and engineering filled it with a choice.
 
@@ -899,7 +899,7 @@ Two crescents, hooked into each other like links of a chain. **Try to separate t
 
 **3. If two layers with no squash are just one layer, why not build networks with one enormous layer and skip the depth?**
 
-*Hint:* be careful — this is a genuinely good question and the honest answer is not "depth is magic". Start with what one layer *plus* a squash can already do (quite a lot). Then think about the number of knobs: two layers of 16 units on 2 inputs is `2×16 + 16×1 = 48` weights, while one layer wide enough to draw the same shape needs far more. **Depth is a way of buying complicated shapes cheaply**, and Week 19 will let you count the hinges and see it. Nobody should leave this conversation thinking depth is mystical.
+*Hint:* be careful — this is a genuinely good question and the honest answer is not "depth is magic". Start with what one layer *plus* a squash can already do (quite a lot). Then think about the number of knobs: one hidden layer of 16 units on 2 inputs is `2×16 + 16×1 = 48` weights (plus 17 biases, 65 numbers in all). **For many shapes, stacking layers buys complicated curves with fewer knobs than one very wide layer would need** — though one wide hidden layer can in principle draw almost any smooth shape — and Week 19 will let you count the hinges and see it. Nobody should leave this conversation thinking depth is mystical.
 
 ---
 

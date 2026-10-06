@@ -5,7 +5,7 @@
 ---
 
 > ### This week in one sentence
-> **In Level 2 scikit-learn found the best slope for a line and never told you how. It tried a value, asked "which way is downhill", and stepped — and you can measure "downhill" with two subtractions and a division.**
+> **Many models — logistic regression, and every neural network — find their best numbers by trying a value, asking "which way is downhill", and stepping, and `fit()` never showed you how. You can measure "downhill" with two subtractions and a division.**
 >
 > **By the end of this chapter you will be able to:**
 > - **Turn a guess into a number** by computing the loss for eight candidate values of one weight, and sketch the resulting valley on graph paper
@@ -39,7 +39,7 @@ Here is why that matters. Since Week 3 you have typed this, or something like it
 model.fit(X_train, y_train)
 ```
 
-And every single time, something inside that one line did exactly the following:
+For logistic regression and for every neural network, something inside that one line does the following (a plain `LinearRegression` reaches its best line by algebra instead, and trees and nearest-neighbours work in other ways again, but this loop is the engine of everything from here on):
 
 1. Picked a value for a weight. Any value. Zero, usually.
 2. Worked out **how wrong** that value made the model.
@@ -197,7 +197,7 @@ standing at w = 14, where the slope is +12:
 ![Which way is downhill? Read the sign.](../figures/fig-w12-5-board-which-way-is-downhill.svg)
 *Figure 12.2 — Which way is downhill? Read the sign. The same bowl twice, the same rule twice, and both arrows heading towards 8.*
 
-> **gradient descent** — measure the slope, step the opposite way, repeat. That is the whole algorithm, and it is what has been inside `fit()` all year.
+> **gradient descent** — measure the slope, step the opposite way, repeat. That is the whole algorithm, and it is what sits inside `fit()` for logistic regression and for every neural network.
 
 ### 4. The learning rate is the most consequential number in the course
 
@@ -219,7 +219,7 @@ Read it like a doctor reading a chart:
 | **0.026** | **overshooting.** Every step lands slightly further out than it started | walking *away* from the answer, slowly |
 | **0.03** | **catastrophe.** Each step leaps clean over the valley | `w = 5135` and a loss of a billion |
 
-> **⚠️ Watch out:** `0.026` works and `0.03` explodes. **There is a hard edge, not a gentle degradation.** So here is the rule of thumb for the rest of the course: *if your loss is going up instead of down, your learning rate is too big. Divide it by ten and try again.* No other diagnosis is needed first.
+> **⚠️ Watch out:** `0.01` settles, `0.026` already does not (after 25 steps its loss, 1531, is *bigger* than the 1386 it started with), and `0.03` explodes. **There is a hard edge just below 0.026, not a gentle degradation.** So here is the rule of thumb for the rest of the course: *if your loss is going up instead of down, first check that the update subtracts the slope; if it does, your learning rate is too big — divide it by ten and try again.*
 
 **And one more thing, which will save you confusion in Weeks 15 and 21.** Later in this chapter you walk eight steps on a **one-student** loss with `lr = 0.3`, and it works beautifully. Try that same `0.3` on the **ten-student** loss and:
 
@@ -243,7 +243,7 @@ what one wrong step looks like: lr = 0.3 on the ten-student loss
 
 ### Step 1 — the trick
 
-Last week you measured steepness **between two points** on the ROC curve: rise over run, both read off the paper. Today you want the steepness **at one point.**
+In Week 10 you measured steepness **between two points** on the ROC curve: rise over run, both read off the paper. Today you want the steepness **at one point.**
 
 But a slope needs two points. So here is the trick, and it is so simple it feels like cheating:
 
@@ -287,7 +287,7 @@ so the steepness is:
 
 > **slope at a point** — how steeply a curve is climbing or falling right where you are standing. Measured by nudging the input a tiny bit each way and dividing the change in output by the change in input.
 
-> **numerical gradient** — the slope obtained by that nudge-and-divide method. It is slow, it needs no cleverness at all, **and it never lies.** You will use it in Week 19 to check something far harder.
+> **numerical gradient** — the slope obtained by that nudge-and-divide method. It is slow, it needs no cleverness at all, **and it is honest, as long as the nudge is not absurdly small (Step 4 shows what goes wrong).** You will use it in Week 19 to check something far harder.
 
 **Why nudge BOTH ways?** You could do `(f(3.001) − f(3)) ÷ 0.001` and get **6.001** — close, but not exact. Nudging symmetrically, one step each way, makes the errors from the two sides cancel and lands on **6.000** dead on. It is the same amount of work and it is more accurate, so we always do it that way.
 
@@ -342,7 +342,7 @@ Going down to a nudge of a millionth is fine. Going to a **millionth of a millio
 
 **`h = 0.001` is the sweet spot and it is what this whole course uses.**
 
-> **🧑‍🏫 If you are wondering why not use an infinitely small nudge:** that is exactly what calculus does, and it is exactly why calculus exists — it gets the answer for a nudge of literally zero, by reasoning instead of arithmetic. A computer cannot, so it uses 0.001 and checks. Setting `h = 0` in code gives you `ZeroDivisionError: division by zero`, which is the honest reason in one line.
+> **🧑‍🏫 If you are wondering why not use an infinitely small nudge:** that is exactly what calculus does, and it is exactly why calculus exists — it gets the answer for a nudge of literally zero, by reasoning instead of arithmetic. A computer cannot, so it uses 0.001 and checks. Setting `h = 0` in code gives you `ZeroDivisionError: float division by zero` (with plain Python numbers; numpy gives `nan` and a warning instead), which is the honest reason in one line.
 
 ### Step 5 — the same trick on the real loss
 
@@ -551,7 +551,7 @@ x =  5.0   slope 5.000000   the rule says 5
 
 **`5 × x` has the same slope everywhere.** Obvious once you see it: a straight line has one steepness. But it is the first hint that **some slopes depend on where you are standing and some do not.**
 
-**And the pattern across the three functions.** `x²` → `2x`. `x³` → `3x²`. **What do you think `x⁴` gives?** Predict it, then check by nudging at `x = 2`: the prediction is `4 × 2³ = 32`, and the nudge gives **32.000008.** That is the actual method by which those rules were found, historically.
+**And the pattern across the three functions.** `x²` → `2x`. `x³` → `3x²`. **What do you think `x⁴` gives?** Predict it, then check by nudging at `x = 2`: the prediction is `4 × 2³ = 32`, and the nudge gives **32.000008.** Predict, measure, check: a perfectly good way to discover a rule.
 
 ### File three — `walk.py`: eight steps downhill
 
@@ -1003,7 +1003,7 @@ print("^  2 ->", e ^ 2)
 | `TypeError: Axes.annotate() missing 1 required positional argument: 'xy'` | you said what to write, not where | `ax.annotate("text", xy=(8.0, 0.0))` |
 | `AttributeError: 'list' object has no attribute 'mean'` | plain lists cannot average themselves | `np.array(losses).mean()` |
 | `IndexError: index 8 is out of bounds for axis 0 with size 8` | eight items are numbered 0 to 7 | `candidates[np.argmin(losses)]` |
-| `ZeroDivisionError: division by zero` | `h = 0` — a nudge of nothing | `h = 0.001`. **And this is the honest reason calculus exists** |
+| `ZeroDivisionError: float division by zero` | `h = 0` — a nudge of nothing | `h = 0.001`. **And this is the honest reason calculus exists** |
 | `ValueError: x and y must have same first dimension … (161,) and (8,)` | plotting 8 losses against a 161-point grid | two separate `plot`/`scatter` calls |
 | **no error**, slope is `0.000006` | brackets: `/ 2 * h` | `/ (2 * h)` |
 | **no error**, slope is `12.000000` | divided by `h`, not `2 * h` | you travelled two nudges |
@@ -1099,7 +1099,7 @@ Then the three questions the class was asked, in order:
    go back to the top           ->   repeat.
 ```
 
-**That is `fit()`.** That is the whole of it. Every time you have typed `model.fit(X, y)` since Week 3, that loop has run, a few hundred times, and now you know what it was doing. **And you are entitled to feel slightly annoyed that it took nine weeks.**
+**That is the engine inside `fit()`** for logistic regression and for every neural network. Every time you fitted one of those since Week 3, a loop like this ran, a few hundred times (a plain `LinearRegression` reaches its best line by algebra instead, and trees and nearest-neighbours work in other ways again, but you now know what the loop is). **And you are entitled to feel slightly annoyed that it took nine weeks.**
 
 **Two things about what happens next.**
 
@@ -1196,8 +1196,8 @@ loss — is gold. The ↻ that has been grey for eleven weeks is black from toda
 | **What carries forward** | Week 15 takes a **step** with this slope. Weeks 16 and 17 build the thing the slope steers. Week 18 multiplies slopes along a chain. And in Week 20, PyTorch prints the identical number — which is how you will know `.backward()` is not magic. |
 | **Spiral thread** | 🎯 **Learning signal** — lit alone, and it will be the loudest thread of the spring. Everything else about a model is decoration until something tells it which way to move; this week you built the something. |
 
-> **🔑 If you remember one thing from Level 3, make it this.** Every AI system in the world — including
-> the ones that write essays — improves by measuring which way is downhill and taking a small step. The
+> **🔑 If you remember one thing from Level 3, make it this.** Almost every neural network in use today — including
+> the ones that write essays — is trained by measuring which way is downhill and taking a small step. The
 > rest is scale. You can now do the part that matters on paper.
 
 ---
@@ -1269,7 +1269,7 @@ w = w - lr * s
 | **loss surface** | the shape you get by plotting loss against a weight. One knob → a curve | `2464, 1386, 616, 154, 0, 154, 616, 1386` — a symmetric valley |
 | **slope at a point** | how steeply the curve climbs or falls exactly where you are standing | `0.012000 ÷ 0.002 = 6.000` at `x = 3` |
 | **derivative** | the slope at a point, written as a rule that works at every point | `x × x` → `2 × x`, **found by measuring** |
-| **numerical gradient** | a slope measured by nudging each way and dividing. Slow, and never lies | `h = 0.001`; you use it again in Week 19 |
+| **numerical gradient** | a slope measured by nudging each way and dividing. Slow, and honest while the nudge is sensible | `h = 0.001`; you use it again in Week 19 |
 | **learning rate** | how big a step you take downhill. Your stride length | 0.3 on one valley, 0.02 on another, 0.03 explodes |
 | **gradient descent** | measure the slope, step the opposite way, repeat | `w = w − lr × slope`, eight times, 2 → **7.996068** |
 

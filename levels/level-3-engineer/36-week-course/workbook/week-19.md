@@ -1211,7 +1211,7 @@ Xtr, Xte = sc.transform(Xtr), sc.transform(Xte)
 
 **Part 1(a).** **3 and 4 are both 3.** A Z has two corners and needs three straight pieces; a triangle has three sides. In both cases you need three hinges' worth of direction changes, and the count is *the number of straight pieces the boundary is made of*.
 
-**Part 1(b).** **Because the network is not trying to use its hinges. It is trying to make the loss smaller.** A hinge only earns its keep if bending there moves points to the right side of the boundary. If the data can be split reasonably well with one bend, adding a second bend buys nothing, the gradient for the units that would provide it is tiny, and they simply drift. Accept anything that says *"there was no gain in the loss from bending more."*
+**Part 1(b).** **Because the network is not trying to use its hinges. It is trying to make the loss smaller.** A hinge only earns its keep if bending there moves points to the right side of the boundary. Be careful: it is not true that more bends could not help, because 16 units reach a train loss of 0.1542 against 0.3565 for 4. With seed 0 the 4-unit run simply settled in a poor spot (one unit dead, the rest not bending usefully), and other seeds of the 4-unit network reach about 0.93 train accuracy. Accept anything that says *"training did not find the useful bends"*, and do not accept *"the data did not need them"*.
 
 **Part 1(c).** *Capacity is **permission** to bend, not **an instruction** to.*
 
@@ -1275,7 +1275,7 @@ The last 450 epochs bought **`0.9350 − 0.9150 = 0.0200`** of accuracy, and a m
 
 **Card 2:** *"One giant step drove thirteen biases far negative, and a unit that never fires has slope zero, so no learning rate can wake it up again."*
 
-**Card 3:** *"One ReLU unit gives one hinge, so the boundary can only be a straight line with at most one bend, and the crescents need more bends than that."*
+**Card 3:** *"One ReLU unit gives one hinge, so the boundary can only be one straight line, and the crescents need bends."*
 
 **The dead-unit answers.** **13 of 16.** The dead ones are units 0, 1, 2, 3, 6, 7, 8, 9, 10, 11, 13, 14 and 15; the three survivors are 4, 5 and 12. **Unit 0's final bias is `−14.113`.**
 

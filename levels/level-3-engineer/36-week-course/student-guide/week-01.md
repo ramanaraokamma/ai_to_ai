@@ -218,7 +218,7 @@ Those are not the same number. Same column. Same sum on the top. So what is diff
 
 **56693 ÷ 1912 = 29.6512.** ← pandas's answer exactly.
 
-Which of the two is right? **Both. And neither.** They answer different questions — *"the average of the experience we know about"* versus *"the average experience per order"*. Both are legitimate.
+Which of the two is right? **Neither is a free choice, and you need to know what each one assumes.** 29.6512 is *"the average of the experience we know about"* — a fair answer to "how experienced are the drivers we have records for?". 28.0658 is the same total spread over every row, which quietly **treats each of the 108 unknown drivers as having zero months** — and we already said a hole is not a zero. So 28.0658 is not a neutral alternative; it is the answer you get by filling the holes with 0 without saying so.
 
 **The bug is that nobody chose.** You asked for an average, you got one, it looked fine, and a decision got made for you by a library. 29.6512 − 28.0658 = **1.5854** months of driver experience, invented by a division you did not know you were making.
 
@@ -884,7 +884,7 @@ Card 4 is blank on purpose. Card 5 is in pen on purpose.
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "`.mean()` gave me 29.6512, so the average driver has 29.65 months of experience." | 29.6512 is **the average of the values that exist** (56693 ÷ 1912). The average **per order** is 28.0658 (56693 ÷ 2020). Both are legitimate; the bug is that **nobody chose**, and 1.5854 months appeared out of a division you did not make on purpose. |
+| "`.mean()` gave me 29.6512, so the average driver has 29.65 months of experience." | 29.6512 is **the average of the values that exist** (56693 ÷ 1912). Dividing by every row instead (56693 ÷ 2020 = 28.0658) is the same as pretending the 108 holes are zeros. The bug is that **nobody chose** how to treat the holes: a 1.5854-month gap appeared between two divisions, and a library picked one without telling you. |
 
 ### Trick 2 — "the audit is having a look at the data"
 

@@ -330,7 +330,7 @@ after model.eval(), five passes:
    pass 5: accuracy 0.9667
 ```
 
-**One forgotten line costs about a point and a half — and, worse, costs you the ability to quote a single number at all.**
+**One forgotten line costs about two points — and, worse, costs you the ability to quote a single number at all.**
 
 > **⚠️ Watch out:** `with torch.no_grad():` does a **different** job. It stops PyTorch recording the receipt from Week 20, which makes measuring faster and uses less memory. It does **not** turn off dropout. And `model.eval()` does **not** turn off recording. **You need both, and they are not substitutes:**
 
@@ -492,7 +492,7 @@ X_tr_t (1257, 64)   Y_tr_t (1257, 10)
 
 **Check the split adds up: `1257 + 540 = 1797`.** ✅
 
-> **🤔 Think about it:** isn't there a loss made for ten classes? **Yes** — `nn.CrossEntropyLoss`, and it takes one column of whole numbers instead of ten columns of 0s and 1s, which is tidier and slightly more accurate. It is **Week 26**. Today's ten-column trick works, reaches 96.67%, and uses only the loss you already understand.
+> **🤔 Think about it:** isn't there a loss made for ten classes? **Yes** — `nn.CrossEntropyLoss`, and it takes one column of whole numbers instead of ten columns of 0s and 1s, which is tidier. It is **Week 26**. Today's ten-column trick works, reaches 96.67%, and uses only the loss you already understand.
 
 ### Step 3 — the DataLoader, and the number 40
 
@@ -812,7 +812,7 @@ and with drop_last=True, which throws the leftovers away:
 
 **Read the batch list: `[64, 64, 64, 64, 64, 64, 42]`.** Six full batches and one short one, and they add up to 426. Every row used exactly once.
 
-**And read the last block, because it is the most useful thing on this page.** With `drop_last=True` there are **6** batches instead of 7, and **42 tumour records are silently thrown away** on every single epoch. Notice which of the three ways would have caught it: *not* `len(loader)`, which happily reports 6, and *not* the loop count, which also reports 6. **Only the sum, `384` instead of `426`, notices the missing rows.** Three methods can agree with each other and all be wrong together.
+**And read the last block, because it is the most useful thing on this page.** With `drop_last=True` there are **6** batches instead of 7, and **42 tumour records are silently thrown away** on every single epoch. Notice what each check says: `len(loader)` reports 6 and the loop count reports 6 — they both ask the loader, so they agree with each other and never notice. Way 1, divide and round up, says 7, so it disagrees with them, which is a warning that something is off but does not say what. **Only the sum, `384` instead of `426`, tells you which rows went missing.** And if the division had been rounded down (6.66 → 6) by mistake, all three ways would agree on 6 and be wrong together.
 
 ### Worked Example 3 — A shipped tumour classifier, in three files
 
@@ -959,7 +959,7 @@ picked rows: [476, 148, 62]
 
 **The score column.** `+1.5222`, `+2.7981`, `−10.5572`. Those are **logits**. `torch.sigmoid` turns them into chances only because we asked, at the very end, outside the model.
 
-**Row 62 scored −10.5572**, a chance of 0.0000 to four decimal places. The model is extremely confident, and it is right. `−10.5572` is exactly the sort of number that would produce `log(0)` if you did the squash and the logarithm in two separate steps — which is Week 22's argument for `BCEWithLogitsLoss`, showing up in real output.
+**Row 62 scored −10.5572**, a chance of 0.0000 to four decimal places. The model is extremely confident, and it is right. A score of `−10.5572` is still fine done in two steps, but push the score out to about ±17 and squashing then taking the logarithm in two separate steps gives `log(0)` — which is Week 22's argument for `BCEWithLogitsLoss`: large scores like this one are on the road to that cliff.
 
 **And run it twice.** Identical, both times, because `model.eval()` is there.
 
@@ -1116,7 +1116,7 @@ way 3 - ask the DataLoader  : 40
 
 **The Clean Room Test, run like a ritual.** Editor closed. Every terminal closed. One command. Three digits — a 2, a 5 and a 3, all correct. Then the grep, printing nothing and reporting `exit=1`, **which is the pass.** Then a second run, giving exactly the same three answers.
 
-**And the closing sentence, which is next week's door:** *"You just got 96.67% on handwriting with a model that thinks a digit is a flat row of 64 numbers in no particular order. Shuffle those 64 columns — the same shuffle for every image — and it would train to exactly the same score. It would never notice."*
+**And the closing sentence, which is next week's door:** *"You just got 96.67% on handwriting with a model that thinks a digit is a flat row of 64 numbers in no particular order. Shuffle those 64 columns — the same shuffle for every image — and it would train to just about the same score (we tried it: 96.5% to 96.7%). It would never notice."*
 
 ---
 
@@ -1124,7 +1124,7 @@ way 3 - ask the DataLoader  : 40
 
 **1. Saving the whole model with `torch.save(model, "whole.pt")` is fewer lines than saving a `state_dict` and needs no class file at all. So why don't we?**
 
-*Hint:* start by admitting it works and is genuinely more convenient. Then ask what "saving the whole model" has to *include* in order to work — the numbers, obviously, but also enough information to rebuild the code. And if loading a file rebuilds code, then **loading a file runs code.** Now the question: if somebody emailed you a `.pt` file, what would opening it be allowed to do to your laptop? (Anything a Python program can do.) A `state_dict` is 4,810 numbers and four names; the worst it can do is fail to load. Then the secondary reasons, which are practical rather than dramatic: a numbers-only file is smaller, survives a PyTorch upgrade, and does not care what your folders are called.
+*Hint:* start by admitting it works and is genuinely more convenient. Then ask what "saving the whole model" has to *include* in order to work — the numbers, obviously, but also enough information to rebuild the code. And if loading a file rebuilds code, then **loading a file runs code.** Now the question: if somebody emailed you a `.pt` file, what would opening it be allowed to do to your laptop? (Anything a Python program can do.) A `state_dict` is 4,810 numbers and four names; loaded with `torch.load(path, weights_only=True)` the worst it can do is fail to load (a plain `torch.load` of any old-style `.pt` file is still pickle underneath, so only open files from people you trust). Then the secondary reasons, which are practical rather than dramatic: a numbers-only file is smaller, survives a PyTorch upgrade, and does not care what your folders are called.
 
 **2. Epoch 13 scored 0.9704 and epoch 14 scored 0.9667. We saved epoch 14. Did we lose anything real?**
 
@@ -1161,7 +1161,7 @@ Say both, every time: **"fifteen epochs, batch size 32, six hundred steps."**
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "Divide says 6, the loop says 6, `len(loader)` says 6. All three agree, so 6 is correct." | **Three methods can agree and all be wrong together.** With `drop_last=True` on 426 rows at batch size 64, all three cheerfully report 6 — and 42 rows are being thrown away on every epoch. **Only the fourth check notices:** add up the batch sizes. 384, not 426. |
+| "Divide says 6, the loop says 6, `len(loader)` says 6. All three agree, so 6 is correct." | **Three methods can agree and all be wrong together.** The loop and `len(loader)` both ask the same loader, so with `drop_last=True` on 426 rows at batch size 64 they cheerfully report 6 — and if you rounded the division down too (6.66 → 6, instead of up to 7), all three agree on the wrong 6 while 42 rows are thrown away on every epoch. **The fourth check notices and says what is missing:** add up the batch sizes. 384, not 426. |
 
 The rule: **agreement is not correctness.** A check that gets its information from the same place as the thing it is checking cannot catch that place being wrong.
 

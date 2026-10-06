@@ -97,7 +97,7 @@ A request has four parts:
 |---|---|---|
 | a **method** | `GET` or `POST` | the verb. `GET` means "give me something". `POST` means "here is some data, do something with it". |
 | a **path** | `/health` or `/predict` | which door you are knocking on |
-| **headers** | `Content-Length: 46` | small facts about the message, one per line |
+| **headers** | `Content-Length: 21` | small facts about the message, one per line |
 | a **body** | `{"text": "cold food"}` | the data itself. `GET` requests usually have none. |
 
 > **Endpoint** — one path on a server that does one job. `/predict` is an endpoint. `/health` is another.
@@ -224,7 +224,7 @@ longer (6 words or more)    19    0.684      1.000     0.333
 
 **Two — the negation traps were written on purpose to break the model, so `0.417` is not an estimate of anything.** It is a *demonstration that a mechanism exists*. **The honest claim is about the mechanism, not the rate:**
 
-> *"Bag-of-words throws away word order, so `not` is a weak feature that cannot flip `delicious`. Here are 13 rows where that is visible — and I chose them to be visible."*
+> *"Bag-of-words keeps almost no word order (this model's word pairs only see neighbours, and it never saw `not` in training), so `not` carries no weight and cannot flip `delicious`. Here are 13 rows where that is visible — and I chose them to be visible."*
 
 **And here is why this failure is satisfying rather than depressing.** Week 31 told you bag-of-words throws away word order. Week 32 told you `not` ends up nearly weightless; in this model it is weaker still, because `not` is not among the 287 words it knows at all. That was *theory*. This is your own service, on your own held-out rows, showing the exact failure the theory predicted. **A prediction made from theory and confirmed by evidence in your own log is the strongest thing you can put in a model card**, and almost no professional card contains one.
 
@@ -257,7 +257,7 @@ in the 0.45-0.65 uncertainty band: 16 of 111 (14.4%)
 1.0000   9 of 9 tokens unknown   lorem ipsum dolor sit amet
 ```
 
-**Why that number degrades for *this* model, specifically.** It is TF-IDF. A word the vectorizer has never seen contributes **exactly nothing** — it is silently dropped. So a rising out-of-vocabulary rate means a rising share of every input is *invisible* to the model, and the probability drifts towards the middle. **That is a mechanism, not a vibe, and naming the mechanism is what lifts a monitoring plan a whole level.**
+**Why that number degrades for *this* model, specifically.** It is TF-IDF. A word the vectorizer has never seen contributes **exactly nothing** — it is silently dropped. So a rising out-of-vocabulary rate means a rising share of every input is *invisible* to the model, and the answer rests on fewer and fewer words. Two cases are worth keeping apart. **If only some words are unknown, they are simply ignored and the known ones decide alone** — `delicious` and `delicious xyzzy plugh quux` both score `0.6928`, so the probability does *not* drift towards the middle. **If every word is unknown, nothing reaches the classifier** and the answer is the model's bias-only output, `0.4887` here, whatever was typed — which lands inside the 0.45-0.65 band. **That is a mechanism, not a vibe, and naming the mechanism is what lifts a monitoring plan a whole level.**
 
 > **⚠️ Watch out:** the band rate over 111 logged requests is `14.4%`. On the 16 test reviews it is `3 of 16 = 18.8%`. **Different, and neither is wrong** — they are different traffic. **A baseline has to come from the traffic you are actually going to watch**, which means you cannot write the alarm level until you have logged some real requests.
 
@@ -579,7 +579,7 @@ in the 0.45-0.65 uncertainty band: 16 of 111 (14.4%)
 | p95 `0.28` | **nearly everybody's experience** — the headline |
 | max `1.06` | **the one request somebody actually noticed** |
 
-**And the obvious question: the p95 is 0.28 but the max is 1.06. Why didn't the p95 catch it?** Because one request out of 111 sits up around the 99th percentile, and **a p95 cannot see above itself.** So you print the max as well, and you say why.
+**And the obvious question: the p95 is 0.28 but the max is 1.06. Why didn't the p95 catch it?** Because one request out of 111 sits at the very top, beyond the 99th percentile, and **a p95 cannot see above itself.** So you print the max as well, and you say why.
 
 > **⚠️ Watch out:** **latency is the one kind of number in this course that will not reproduce.** Your four numbers will differ from mine and that is correct. Report *yours*, and say which laptop they came from.
 
@@ -884,7 +884,7 @@ uncertainty band over the 16 test reviews     :  3 of  16  =  18.8%
 
 **Both are right.** They are different traffic, and a baseline that does not come from the traffic you are going to watch is not a baseline. **Which is why you could not write your alarm level until your service had actually run.**
 
-> **🧑‍🏫 If a student asks:** *"at what OOV rate does the accuracy actually start dropping?"* **You cannot know without labels** — so label 20 drifted inputs by hand and find out. Most people guess the model collapses at 0.5. It often survives much higher, because the few words it *can* see are frequently the sentiment-bearing ones. **Being surprised by that is the whole value of the experiment.**
+> **🧑‍🏫 If a student asks:** *"at what OOV rate does the accuracy actually start dropping?"* **You cannot know without labels** — so label 20 drifted inputs by hand and find out. It depends on what is left: if the few words it *can* see are sentiment-bearing (`delicious`) it may do fine at a high OOV rate, and if they are filler (`the` and `was` are all that remains of the biryani sentence, which scores `0.6058`) it is guessing. **Writing down a guess first and then being surprised, one way or the other, is the whole value of the experiment.**
 
 ---
 
@@ -976,7 +976,7 @@ IndexError: index -1 is out of bounds for axis 0 with size 0
 | What you see | What is actually wrong |
 |---|---|
 | `by version` shows **two** versions | Nothing is broken. Your log spans a rollback — some lines came from v1 and some from v2. **This is exactly why `model_version` is on every line.** Report both counts. |
-| Every latency in the log is the **identical** number | The stopwatch is in the wrong place: both `perf_counter()` calls sit on the same side of the work. **Identical latencies are never real.** |
+| Every latency in the log is the **identical** number | The stopwatch is in the wrong place: both `perf_counter()` calls sit on the same side of the work. **Every latency identical to the last digit is never real.** |
 | A subgroup row says `n = 0` | Nothing matched your filter. Usually `.lower()` was forgotten, so `Not` never matched `not`. **A group of zero is a filter bug, not a finding.** |
 
 ---
@@ -1083,7 +1083,7 @@ stage three is black, as it has been since Week 12.*
 |---|---|
 | **The mental model you now own** | **The interesting part is after the prediction.** Log the input, the output, the probability, the threshold, the version and the latency — one line per prediction. Then read the log back for the four numbers (mean, p50, **p95**, max) and for the subgroup where it is worse. Then write the card, and the monitoring plan that says **who looks at what, how often, and what they do when it moves.** |
 | **The one question it answers** | *"What happens after the prediction?"* — a question nobody asked you all year, because until Week 34 nothing you built ever ran twice. **A model with no log cannot be debugged, defended or trusted.** |
-| **What it plugs into** | Week 34's artifact and CLI, which the service loads **once** at start-up. Week 8's four counts, now computed per subgroup with `n` printed on every row. Week 11's cost table, which is what makes a `recall 0 of 6` row matter rather than merely exist. And Week 6's leakage instinct, turned outward into a monitoring check: **drift is leakage arriving late.** |
+| **What it plugs into** | Week 34's artifact and CLI, which the service loads **once** at start-up. Week 8's four counts, now computed per subgroup with `n` printed on every row. Week 11's cost table, which is what makes a `recall 0 of 6` row matter rather than merely exist. And Week 6's leakage instinct, turned outward into a monitoring check: **drift is the Week 6 question (where did this data come from, and does the next data look like it?) asked again after launch.** It is not leakage — nothing from the future got in — but the same habit catches both. |
 | **What carries forward** | Week 36 is the demo, and every number in this log is a number you will be asked to defend out loud — the p95 **and** the max, the subgroup row **and** its `n`. Nothing new gets taught after this. |
 | **Spiral thread** | 🌍 **Impact** and ⚖️ **Evaluation** — impact, because a card that names a group the model fails on is the most useful page in the folder. Evaluation, because `0.462 on 13 rows with recall 0 of 6` is a measurement, and *"may contain bias"* is a shrug. |
 

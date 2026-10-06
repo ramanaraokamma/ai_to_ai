@@ -59,7 +59,7 @@ damage             = 0.291
 
 **1.000.** Total, absolute certainty. **And no error. No warning. No red text.** A number a dashboard would print and a dispatcher would believe.
 
-Why so *sure* rather than merely wrong? Because the model learned its numbers in a world where `distance_km` sits around 0 and rarely leaves −2 to +5. You just handed it 7.4 — not 7.4 kilometres, 7.4 *on the prepared scale* — and 22.0 for prep minutes, which is off the end of the end. The numbers are **4 to 30 times too big, so the model is 4 to 30 times too sure.** It is not confused. It answered exactly the question it was asked, and the question was nonsense.
+Why so *sure* rather than merely wrong? Because the model learned its numbers in a world where `distance_km` sits around 0 and rarely leaves −2 to +5. You just handed it 7.4 — not 7.4 kilometres, 7.4 *on the prepared scale* — and 22.0 for prep minutes, which is off the end of the end. The numbers are **4 to 30 times too big**, so the sum the model adds up is thrown far off the end of its scale — and because all four of these numbers carry a positive weight (further, more items, longer prep, later hour all push towards *late*), it is thrown towards 1.000. A number with a negative weight, such as driver experience, would be thrown the other way, towards 0.000: being huge is what makes the answer extreme, and the weights decide which extreme. (To isolate the damage, this demonstration pastes the four raw numbers into the prepared row and leaves everything else alone. Forgetting the preparation on the real table would more likely stop with an error about the words.) It is not confused. It answered exactly the question it was asked, and the question was nonsense.
 
 **So here is today's move: instead of being careful, change the shape.** Slide one envelope inside the other. How many things must you now remember? **One.** And how do you get to the model without going through the preparation? **You can't. There is no way in.**
 
@@ -161,7 +161,7 @@ the centre of the ruler the pipeline learns
 
 Now the part you must not be told gently: on this data, doing it the wrong way changes the AUC by about **one ten-thousandth.** You would never notice. Worked Example 3 measures it exactly.
 
-**That is precisely why it is dangerous.** It does not announce itself, it is invisible in the score, and on somebody else's data it is worth 0.05 and nobody ever finds out. So we do not *remember* to avoid it. We build a shape where it cannot happen: `pipe.fit(X_train, y_train)` fits the preparation on the training rows and **could not reach the others if it wanted to.**
+**That is precisely why it is dangerous.** It does not announce itself, it is invisible in the score, and on somebody else's data it could be worth 0.05 or more (we have not measured one, but nothing stops it) and nobody ever finds out. So we do not *remember* to avoid it. We build a shape where it cannot happen: `pipe.fit(X_train, y_train)` fits the preparation on the training rows and **could not reach the others if it wanted to.**
 
 *(There is a proper name for this whole class of mistake, and three named kinds of it. That is **Week 6.**)*
 
@@ -175,7 +175,7 @@ Now the part you must not be told gently: on this data, doing it the wrong way c
 joblib.dump(pipe, "delivery_pipeline.joblib")
 ```
 
-That writes **5002 bytes.** Five kilobytes — smaller than a photograph. And inside those five kilobytes are: the median it will use to fill holes, the centre and width of the ruler for all five number columns, the list of every restaurant, day and weather it knows about, and the twenty-one numbers logistic regression learned. **Everything the model needs, and nothing else.**
+That writes **5002 bytes.** Five kilobytes — smaller than a photograph. And inside those five kilobytes are: the median it will use to fill holes, the centre and width of the ruler for all five number columns, the list of every restaurant, day and weather it knows about, and the twenty-one numbers logistic regression learned. **Everything the model needs, and nothing else.** (One safety rule comes with the file: a `.joblib` is not a plain document, and loading one can run code that is hidden inside it. Only load files from people and places you trust, and never one that arrived from a stranger.)
 
 ![The artifact crosses; the training code does not](../figures/fig-w03-3-artifact-crossing-to-a-clean-process.svg)
 *Figure 3.4 — The artifact crosses; the training code does not. If `predict.py` contains one `fit(`, the artifact was not the deliverable.*
@@ -216,7 +216,7 @@ A 5,002-byte file is completely **silent**. It does not know what it is for. It 
 
 **Heading 2 is the one people skip and the one that matters most.** "Not for driver pay decisions" is not legal boilerplate. It is the sentence that stops somebody, in eight months, using a lateness model to decide who gets fewer shifts — a use it was never measured for, on people who never agreed to it, from data that mostly measures distance and weather.
 
-**And notice that three of the seven were written two weeks ago**, in your own handwriting, on index cards 1, 2 and 3. **The card is not a report. It is the contract, updated.**
+**And notice that three of the seven were written two weeks ago**, in your own handwriting, on Week 1's index cards: heading 3 is card 1, the feature list in heading 4 is card 3, and the metric in heading 6 is card 5. **The card is not a report. It is the contract, updated.**
 
 Heading 7 has a real, measurable entry, and you will run it yourself:
 
@@ -335,7 +335,7 @@ prep = ColumnTransformer([
 
 `Pipeline(steps=[...])` takes a **list**, and each item is a **pair in round brackets: a name you invent, then the tool.** The name is genuinely yours — `"fill_holes"` could be `"bob"` — and its only job is to let you refer to that step later.
 
-**The order is the order they run in.** Fill the holes **first**, then the ruler, because you cannot compute a ruler over a column with holes in it.
+**The order is the order they run in.** Fill the holes **first**, then the ruler, because we want the ruler to be measured on complete columns, with every row counted. (Swap them and nothing crashes — the ruler quietly measures only the rows that have a value, and the numbers come out a little different. That is the kind of silent difference this chapter is about.)
 
 Then the switchboard. Each route is a **triple: a name, a treatment, and the list of columns it applies to.** Route `"num"` sends `number_route` at the five number columns; route `"cat"` sends the word-splitter at the three word columns.
 
@@ -882,7 +882,7 @@ difference                         : -0.000092
 
 **Ninety-two millionths.** And look at the sign: the wrong way came out very slightly **worse**.
 
-Sit with how uncomfortable that is. The wrong way is not punished. It is not rewarded either. It is simply **not visible** — and it would not be visible on your next dataset either, until one day it is worth 0.05 and you have no way of telling which day that was.
+Sit with how uncomfortable that is. The wrong way is not punished. It is not rewarded either. It is simply **not visible** — and it would not be visible on your next dataset either, until one day it could be worth 0.05 or more and you have no way of telling which day that was.
 
 > **🔑 That is the whole argument for the weld, in one sentence:** we do not build the pipeline because doing it wrong is *obviously* bad. We build it because doing it wrong is **undetectable**, and the only defence against an undetectable mistake is a shape that cannot make it.
 
@@ -1037,13 +1037,13 @@ If you missed it, here is the whole lesson. You need a laptop, a pen, and two en
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "I'll write the card once I know my final score." | **Half of it cannot be written at the end.** Heading 5 says whether the test pile was opened — write that after five weeks of poking about and you will write what you wish were true. Headings 1, 2 and 3 were written **two weeks ago**, on index cards, in your own handwriting. **The card is the contract, updated.** |
+| "I'll write the card once I know my final score." | **Half of it cannot be written at the end.** Heading 5 says whether the test pile was opened — write that after five weeks of poking about and you will write what you wish were true. Headings 3, 4 (the feature list) and 6 (the metric) were written **two weeks ago**, on index cards, in your own handwriting. **The card is the contract, updated.** |
 
 ### Trick 4 — "a probability of 1.000 means the model is very good"
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "P(late) = 1.000, so it's completely sure — great." | **Real data almost never justifies certainty about a pizza.** 1.000 is an **alarm**: check what actually reached the model. In our case it meant the preparation had been skipped and numbers 4 to 30 times too big had gone straight in. A model 30 times too confident is not sure, it is being asked nonsense. |
+| "P(late) = 1.000, so it's completely sure — great." | **Real data almost never justifies certainty about a pizza.** 1.000 is an **alarm**: check what actually reached the model. In our case it meant the preparation had been skipped and numbers 4 to 30 times too big had gone straight in. A model given numbers 30 times too big is not sure, it is being asked nonsense. |
 
 ---
 

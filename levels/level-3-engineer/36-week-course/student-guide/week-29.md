@@ -11,7 +11,7 @@
 > - **Compute the variance of a small column by hand** in four steps, as the average squared distance from the mean — `16 + 4 + 0 + 4 + 16 = 40`, and `40 ÷ 4 = 10.0`
 > - **Find a principal component with a protractor** by trying six angles 30° apart, projecting five points onto each by hand, and keeping the widest — **30° wins with 17.4192, and PCA's exact answer is 42.62° with 18.2812**
 > - **Read `explained_variance_ratio_`** and say how many components you need to keep 80% of the spread — on the wine data it is **5**, read straight off a running total
-> - **Rebuild the data from a few components and price what you lost, in the original units** — `2.2550 ÷ 3.5180 = 0.6410`, so a two-component wine is wrong by 64% of a typical wine's distance from the middle
+> - **Rebuild the data from a few components and price what you lost, in the table's own units** — `2.2550 ÷ 3.5180 = 0.6410`, so a two-component wine is wrong by 64% of a typical wine's distance from the middle
 >
 > **New maths:** variance as the average squared distance from the mean, and "the direction of biggest spread" found by trying candidate angles and keeping the widest — both computed by hand on five points before PCA is named.
 >
@@ -81,7 +81,7 @@ By the end of today you will have found a principal component with a protractor.
 
 🍕 **The analogy.** In a corridor, your nearest neighbour is obviously the person standing next to you. In a field, still obvious. **In a five-hundred-dimensional world, every single person is standing at almost exactly the same distance from you, and none of them is meaningfully "near".**
 
-The contrast table above is the measurement. At `d = 20` the contrast is already down to **1.96** — the furthest pair is under twice as far apart as the nearest. **At 13 columns you are already on that slope**, which is one honest reason the wine clustering was not cleaner than it was.
+The contrast table above is the measurement. At `d = 20` the contrast is already down to **1.96** — the furthest pair is under twice as far apart as the nearest. **At 13 columns you are already some way down that slope** (though this table is for random points with no structure in them, and real data like the wine is more forgiving than that).
 
 **The practical response: cut the number of columns before you cluster.** Which is what PCA is for. It is not only a drawing tool.
 
@@ -239,7 +239,7 @@ var(hours studied) + var(hours slept) = 10.0 + 8.5 = 18.5
 
 `explained_variance_ratio_` is the optimistic framing. Here is the honest one.
 
-> **Reconstruction error** — squash the data down to a few components, then push it back up to the original columns, and measure how far each rebuilt point is from the real one. **That distance is the information you threw away, expressed in the original units.**
+> **Reconstruction error** — squash the data down to a few components, then push it back up to the original columns, and measure how far each rebuilt point is from the real one. **That distance is the information you threw away, expressed in the table's own units.**
 
 Squash the five students down to **one** number each, then rebuild:
 
@@ -331,7 +331,7 @@ proanthocyanins                 0.313
 nonflavanoid_phenols           -0.299
 ```
 
-**Every one of the top four is a phenolic compound, and all four pull the same way.** So PC1 is fairly read as **"total phenolic richness"** — one end of the axis is chemically rich wine, the other end is thin wine. `nonflavanoid_phenols` is negative, meaning it goes the *other* way from the rest, which is a real chemical fact about wine and not a bug.
+**The top four all pull the same way, and they are all phenol measures or close relatives: flavanoids, total phenols and proanthocyanins are phenolic compounds, and od280/od315 is a light-absorbance ratio that tracks them.** So PC1 is fairly read as **"total phenolic richness"** — one end of the axis is chemically rich wine, the other end is thin wine. `nonflavanoid_phenols` is negative, meaning it goes the *other* way from the rest, which is a real chemical fact about wine and not a bug.
 
 ```text
 PC2: which original columns pull hardest
@@ -708,7 +708,7 @@ for scale: a typical wine sits 3.5180 away from the middle
 saved wine_2d.png
 ```
 
-**Open `wine_2d.png` and look at it.** It is **one elongated blob with no visible gaps in it.** There are three grape varieties in there and you cannot see any of them. **Hold on to that, because next week the identical plot, coloured by cluster, shows three clean groups.** The structure was there all along and the picture could not show it.
+**Open `wine_2d.png` and look at it.** It is **one connected cloud with no clean gaps in it** — a loose V shape, where you may spot three lobes but nothing you could draw a confident line between. There are three grape varieties in there and nothing on the page says which lobe is which. **Hold on to that, because next week the identical plot, coloured by cluster, shows three clean groups.** The structure was there all along and the picture could not show it.
 
 ### The complete `new_axes.py`
 
@@ -856,7 +856,7 @@ color_intensity      0.0023
 
 Twelve chemical measurements were handed in and twelve were discarded, **silently, with no error message, and a magnificent-looking 99.81% on the front.**
 
-**And you saw this exact failure last week.** Unscaled k-means sorted the wine into proline bands. Unscaled PCA made proline its first axis. **Same cause — one column with a spread of 314.91 while the rest are around 1 — same fix.** Scale first. Always, unless every column is genuinely in the same unit.
+**And you saw this exact failure last week.** Unscaled k-means sorted the wine into proline bands. Unscaled PCA made proline its first axis. **Same cause — one column with a spread of 314.91 while the next biggest is 14.28 and most of the rest are under 3 — same fix.** Scale first. Always, unless every column is genuinely in the same unit.
 
 **The check that catches it in three seconds:** print `pca.components_[0]` with the column names attached. **If one loading is 0.9998 and the rest are under 0.02, you have made an expensive copy of one column.**
 
@@ -930,7 +930,7 @@ You get the **identical** message from `PCA(n_components=2).transform(X)` with n
 **And the two silent ones that will cost you the most:**
 
 - **You forgot to centre.** No error. **Every angle gives a huge number**, because you are measuring where the cloud sits rather than how big it is — 90.0 instead of 10.0 on the five numbers. **The fingerprint is that all your spreads are enormous and they barely differ between angles.**
-- **You divided by the wrong thing.** No error, and your numbers are all slightly wrong. **The diagnostic: if your spread is exactly 5/4 of sklearn's, you divided by 5 where it divides by 4.** With five points, divide the sum of squares by **4**.
+- **You divided by the wrong thing.** No error, and your numbers are all slightly wrong. **The diagnostic: if your spread is exactly 4/5 (0.8 times) of sklearn's, you divided by 5 where it divides by 4.** With five points, divide the sum of squares by **4**.
 
 ---
 
@@ -1002,7 +1002,7 @@ Then the four variance steps on those five scores: squares 29.8564, 4.9821, 0, 4
 | 120° | 1.0808 |
 | 150° | 1.8308 |
 
-*"Look at 120 and 150 — 1.08 and 1.83. What are those directions doing?"* **Looking across the cloud instead of along it. They are camera one.** *"And 0° gave 10.0, 90° gave 8.5. What are those two numbers?"* **The variances of the two original columns** — so **every single candidate beat "hours slept" on its own, and two of them beat "hours studied".** There was a better axis available than either column anybody was handed.
+*"Look at 120 and 150 — 1.08 and 1.83. What are those directions doing?"* **Looking across the cloud instead of along it. They are camera one.** *"And 0° gave 10.0, 90° gave 8.5. What are those two numbers?"* **The variances of the two original columns** — so **three of the six candidates (0°, 30° and 60°) beat "hours slept" on its own, and two of them (30° and 60°) beat "hours studied".** There was a better axis available than either column anybody was handed.
 
 **Then the machine ran**, and it said `[0.7359 0.6771]`, angle **42.62 degrees**, spread **18.2812**. *"Ours was 30 with 17.4192. Who is right?"* **Both — ours was the best of six.** *"So what would you do about it?"* **Try more angles.** Every whole degree gives 43° with **18.2804**, within a thousandth.
 
@@ -1115,7 +1115,7 @@ because one tile is six weeks wide. The ↻ on stage three is black, as it has b
 
 | | |
 |---|---|
-| **The mental model you now own** | **PCA deletes no columns.** It draws a *new* axis along the direction the data is most spread out, measures everything against that instead, and then tells you what fraction of the total spread each new axis kept. Thirteen columns become two numbers per row — and the price of that is measurable, in the original units. |
+| **The mental model you now own** | **PCA deletes no columns.** It draws a *new* axis along the direction the data is most spread out, measures everything against that instead, and then tells you what fraction of the total spread each new axis kept. Thirteen columns become two numbers per row — and the price of that is measurable, in the table's own units. |
 | **The one question it answers** | *"Which way is the data most spread out?"* — and you answered it the honest way, by trying six directions 30° apart and keeping the widest. Your grid got **17.4192**; PCA's exact answer was **18.2812**, so the grid was about twelve degrees short. |
 | **What it plugs into** | Week 4's standard deviation, which turns up here as **variance** — the same quantity before you take the square root, and the thing PCA is maximising. And Week 28's problem of never quite knowing whether the clusters were real, because now you can look at them. |
 | **What carries forward** | Week 30 plots clusters on these axes *and* feeds two components back in as features. Week 33 plots reviews on them. And the **loadings** are how an axis gets a human name — which is the skill the whole of next week rests on. |
@@ -1167,7 +1167,7 @@ pca.explained_variance_ratio_  # shares:         [0.3620 0.1921]. Add to 1.
 Z      = pca.transform(X)              # (178, 13) -> (178, 2)
 X_back = pca.inverse_transform(Z)      # (178, 2)  -> (178, 13), APPROXIMATELY
 
-# ---- the bill, in the original units -------------------------------------
+# ---- the bill, in the table's own units -------------------------------------
 miss = np.sqrt(((X - X_back) ** 2).sum(axis=1)).mean()      # 2.2550
 yard = np.sqrt((X ** 2).sum(axis=1)).mean()                  # 3.5180
 print(round(miss / yard, 4))                                  # 0.6410
@@ -1204,7 +1204,7 @@ plt.xlabel("PC1 (%.1f%% of the spread)" % (pca.explained_variance_ratio_[0] * 10
 | **principal component** | A direction through the data chosen so the projected scores are as spread out as possible. PC2 is the widest of what is left, at right angles to PC1 | PC1 at **42.62°**, spread **18.2812**; PC2 at **132.62°**, spread **0.2188** |
 | **explained variance ratio** | One component's spread divided by the total spread | `18.2812 ÷ 18.5 = 0.9882`; on the wine, `0.3620` and `0.1921` |
 | **loading** | How hard one original column pulls on one component | `flavanoids 0.423` on PC1, and `nonflavanoid_phenols −0.299` the other way |
-| **reconstruction error** | Squash, rebuild, and measure how far the rebuilt point is from the real one — in the original units | `(12, 11)` came back as `(12.1592, 10.827)`, a miss of **0.2351**; on the wine, **2.2550** at 2 components |
+| **reconstruction error** | Squash, rebuild, and measure how far the rebuilt point is from the real one — in the table's own units | `(12, 11)` came back as `(12.1592, 10.827)`, a miss of **0.2351**; on the wine, **2.2550** at 2 components |
 | **curse of dimensionality** | Add columns and every point drifts to roughly the same distance from every other, so anything built on distance goes blind | contrast **533.86** at 2 columns, **1.96** at 20, **0.21** at 500 |
 
 ---
@@ -1239,7 +1239,7 @@ Go to **[the Week 29 workbook](../workbook/week-29.md)**. About **60 minutes** i
 
 > **⚠️ Watch out:** if your own reconstruction numbers come out very different from `2.2550` and `1.3258`, check the scaling first. **A miss measured on raw wine data is in units of proline and will be in the hundreds.**
 
-> **💡 Try this:** PCA works on anything with columns, including the 8×8 digits from Term 3. `load_digits()` has **64** columns, and `PCA(n_components=0.80)` on the scaled digits keeps **21** of them. Then reshape `pca.components_[0]` to 8×8 and draw it as an image: **it is a recognisable blob of "where digits have ink".** Two lines, nothing new, and genuinely beautiful.
+> **💡 Try this:** PCA works on anything with columns, including the 8×8 digits from Term 3. `load_digits()` has **64** columns, and `PCA(n_components=0.80)` on the scaled digits keeps **21** of them. Then reshape `pca.components_[0]` to 8×8 and draw it as an image: **it is a pattern of positive and negative patches — which pixels tend to be inked together, against which pixels tend to be inked when those are not.** Two lines, nothing new, and genuinely beautiful.
 
 ---
 

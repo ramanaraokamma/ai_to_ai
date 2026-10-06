@@ -618,7 +618,7 @@ dW1 (2, 2)
 
 **It ran. The shapes are all still right. And every one of those four numbers is wrong.**
 
-You cannot tell by looking. Nobody can. **This is the most dangerous class of bug in the subject: the silently wrong gradient.** Your network will still train. It will just train towards slightly the wrong place, get a mediocre score, and nothing anywhere will tell you why.
+You cannot tell by looking. Nobody can. **This is the most dangerous class of bug in the subject: the silently wrong gradient.** Your network will still train. It will just train towards the wrong place, get a mediocre score, and nothing anywhere will tell you why.
 
 **Which is exactly why the next thing we do is the gradient check. It is the only thing that catches this.** Put the mask back.
 
@@ -1132,7 +1132,7 @@ dW2 =
 
 Follow it down the screen. Every `z` is zero because every weight is zero. `ReLU(0) = 0`. The output score is zero, so every probability is `0.5`, so the loss is `−ln(0.5) = 0.693147` — the guessing number.
 
-**And then the killer. Look at the mask.** `(Z1 > 0)` asks *is zero greater than zero?* **No.** So the mask is `False` everywhere, every hidden gradient is exactly zero, no weight ever moves, and the loss is `0.693147` for ever. **It is not slow learning. It is no learning.**
+**And then the killer. Look at the mask.** `(Z1 > 0)` asks *is zero greater than zero?* **No.** So the mask is `False` everywhere, every hidden gradient is exactly zero, no weight ever moves, and the loss is `0.693147` for ever. (The mask is not even the only lock: `W2` is zero too, so `dA1 = dZ2 @ W2.T` is already zero before the mask is applied.) **It is not slow learning. It is no learning.**
 
 ---
 
@@ -1148,7 +1148,7 @@ Follow it down the screen. Every `z` is zero because every weight is zero. `ReLU
 
 **3. All-zero weights fail with ReLU because the mask is `False` everywhere. Would tanh fix it?**
 
-*Hint:* it fixes the *symptom* and not the disease, and the reason is more interesting than the fix. `tanh(0) = 0` and tanh's slope at 0 is `1.000000`, so the mask problem disappears and the gradients would not be zero. **But every hidden unit would still receive an identical gradient, take an identical step, and remain identical to its neighbours for ever.** Sixteen units acting as one clone. Then the closer: **what is the smallest change that actually breaks the deadlock?** (Making the weights *different*. Not big, not clever — different. That is what "symmetry breaking" means, and it is the whole reason initialization is random.)
+*Hint:* it fixes the *symptom* and not the disease, and the reason is more interesting than the fix. `tanh(0) = 0` and tanh's slope at 0 is `1.000000`, so the *mask* problem disappears. **But the gradients are still exactly zero**: `W2` is zero, so `dA1 = dZ2 @ W2.T` is zero, and `A1 = tanh(0) = 0`, so `dW2 = A1.T @ dZ2` is zero too (only `b2` can move, and that cannot separate anything). **And even with an activation that does not start at zero, every hidden unit would receive an identical gradient, take an identical step, and remain identical to its neighbours for ever.** Sixteen units acting as one clone. Then the closer: **what is the smallest change that actually breaks the deadlock?** (Making the weights *different*. Not big, not clever — different. That is what "symmetry breaking" means, and it is the whole reason initialization is random.)
 
 ---
 
@@ -1189,7 +1189,7 @@ That distinction is what separates somebody who can debug from somebody who can 
 
 > **He initialization** — start each weight as a random number from a bell curve centred on zero, with a spread of `sqrt(2 ÷ n_inputs)`. Biases start at zero, which is fine because the weights already differ.
 
-**Why that formula, in one paragraph.** Each unit adds up `n_inputs` products. If the weights had the same spread however many inputs there were, a wide layer would produce enormous sums and the sigmoid at the end would be pinned at 0 or 1, where its slope is almost nothing. Dividing the spread by the number of inputs keeps the typical size of `z` about the same however wide the layer is. **The factor of 2 is there because ReLU throws away half the values**, so you start with twice as much to end up in the right place.
+**Why that formula, in one paragraph.** Each unit adds up `n_inputs` products. If the weights had the same spread however many inputs there were, a wide layer would produce enormous sums and the sigmoid at the end would be pinned at 0 or 1, where its slope is almost nothing. Shrinking the spread as the number of inputs grows (it goes as `sqrt(2 ÷ n_inputs)`, so four times as many inputs means half the spread) keeps the typical size of `z` about the same however wide the layer is. **The factor of 2 is there because ReLU throws away half the values**, so you start with twice as much to end up in the right place.
 
 For a two-input layer, `sqrt(2 ÷ 2) = 1.000000`, and this is what it produces:
 

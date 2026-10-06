@@ -344,7 +344,7 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**A3(h).** Bugs (a) and (b) are both about the same thing being missing, but they give **different** messages and one fires before the other. **Which fires first, and why?**
+**A3(h).** Bugs (a) and (b) each skip a different preparation step and give **different** messages. **If one tensor had both problems, which message would torch show first?**
 
 ________________________________________________________________
 
@@ -422,7 +422,7 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**e)** Design a test that the two models **must** disagree on. *(Hint: what would happen if you moved every digit two pixels to the left?)*
+**e)** Design a test that would show why the arrangement of pixels matters for real pictures. *(Hint: what would happen if you moved every digit two pixels to the left — and would the shuffled model and the unshuffled model behave differently from each other?)*
 
 ________________________________________________________________
 
@@ -774,8 +774,8 @@ Somebody ran **four** different 3 × 3 kernels over the **same** 6 × 6 picture 
 
 ```
   W:  1  0 −1        X: −1  0  1        Y:  1  1  1        Z:  0  0  0
-      1  0 −1            1  0 −1            0  0  0            0  1  0
-      1  0 −1            1  0 −1           −1 −1 −1            0  0  0
+      1  0 −1           −1  0  1            0  0  0            0  1  0
+      1  0 −1           −1  0  1           −1 −1 −1            0  0  0
       (all rows)         (all rows)
 ```
 
@@ -1119,7 +1119,7 @@ row 2:  (−1 × 0) + (−1 × 0) + (−1 × 0)    =   0 + 0 + 0   =    0
 
 **Total 18**, and the nine products in full are `9, 9, 0, 0, 0, 0, 0, 0, 0`.
 
-*(This is a real window from the cross picture, and 18 is a real cell of its horizontal-edge feature map.)*
+*(This window is a made-up corner shape, not one that occurs in the cross picture, where the arms run straight on through; 18 does also appear as a cell of the cross's horizontal-edge feature map.)*
 
 **M4.**
 
@@ -1202,7 +1202,7 @@ nn.Conv2d(1, 4, kernel_size=3)     40
 
 **The number in the brackets says *where* to put the new 1.** `unsqueeze(0)` puts it at position 0, the front. `unsqueeze(1)` puts it at position 1 — **in the middle** — turning `(6, 6)` into `(6, 1, 6)`, which is six pictures of one channel and six columns. Not what anybody wanted.
 
-**Only the third shape, `(1, 1, 6, 6)`, is what we mean by one greyscale picture.** *(`nn.Conv2d` would also accept the second, `(1, 6, 6)`, reading it as one unbatched 6-channel-by-6 thing — but with `in_channels=1` it would complain that it expected 1 channel and got 6.)*
+**The third shape, `(1, 1, 6, 6)`, is what we mean by one greyscale picture.** *(`nn.Conv2d(1, 1, 3)` would also accept the second, `(1, 6, 6)`: with three numbers PyTorch reads `(channels, height, width)` — one unbatched picture — and returns `(1, 4, 4)`. The fourth, `(6, 1, 6)`, would be read as six channels and fail with "expected 1 channels … got 6". So the answer to the question is the second and the third; only the third has the batch number we always use.)*
 
 **P4.**
 
@@ -1252,7 +1252,7 @@ nn.Conv2d(1, 4, kernel_size=3)     40
 
 **A3(g).** **(f).** The one question: **"is the error the same amount in every cell, or different?"** Identical means a bias.
 
-**A3(h).** **(b) fires first — the dtype check happens before the dimension check.** In (a) the tensor already has `.float()` on it, so it gets past the dtype check and trips on the shape. In (b) the `.float()` is missing, so it never reaches the shape check at all. **If you have both problems, you fix them in the order torch finds them**, which is dtype and then shape — and that is exactly the order in the Fix the Broken Program section.
+**Taken one at a time, (a) has the right dtype but the wrong shape, so it hits the shape error; (b) has the right shape but the wrong dtype, so it hits the dtype error.** The ordering only shows when a tensor has *both* problems — a 2-D `torch.from_numpy(img)` with no `.float()` — and then torch reports the dtype first. **If you have both problems, you fix them in the order torch finds them**, which is dtype and then shape — and that is exactly the order in the Fix the Broken Program section.
 
 **A4.** i → **R** · ii → **P** · iii → **T** · iv → **S** · v → **Q**
 
@@ -1308,7 +1308,7 @@ three rows            →  27
 
 **d)** It has **not** proved that shuffling helps, and it has **not** proved that pixel arrangement is unimportant in general. It has only proved that *this* model on *this* tidy dataset was not using it.
 
-**e)** **Shift every digit two pixels to the left and test both models on the shifted version.** The unshuffled model's learned slots all move, so it should fall over. And a *convolutional* model — next week's — should barely notice, because the same nine numbers slide everywhere. **That is a test the two models must disagree on, and it is the test that shows what locality is worth.**
+**e)** **Shift every digit two pixels to the left and test the trained model on the shifted version.** Its learned slots all move, so it should fall over (a similar dense network I tried dropped from about 97% to under 20%). **Be careful what this test shows:** the *shuffled* model falls over just as badly, because a dense layer cannot tell the two orderings apart — so this does not separate those two models. It separates a *dense* model from a *convolutional* one: next week's model, where the same nine numbers slide everywhere, should cope far better with the shift (not perfectly). **That is the test that shows what locality is worth.**
 
 **A7.**
 

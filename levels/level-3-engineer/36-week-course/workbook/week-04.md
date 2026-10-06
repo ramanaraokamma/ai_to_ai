@@ -1708,7 +1708,7 @@ Best answers also notice the honest exception: a decision tree genuinely does no
 
 **T2.** The strongest answers refuse to make this a rule. Start with the case for five zeros: a pizza service that stops answering because a shop opened is worse than a pizza service that gives a slightly vaguer answer, and the model still has distance, weather, prep time and the driver to work with. Then take the other side seriously, because there are real cases where you want the crash. If the unknown value is the **most important** column — if `restaurant` were the only feature that mattered — then "five zeros" is not a slightly worse answer, it is a **confident guess with nothing behind it**, and stopping is honest. Medicine and money are full of those.
 
-The best answers land on **it depends on how much of the prediction that column was carrying, and on what the receiver is told** — and then say the thing almost nobody says: whoever gets the prediction should be able to find out. A number that means *"my best guess for a restaurant I have never seen"* is a different product from a number that means *"my best guess for Napoli, which I have seen 561 times"*, and shipping both under the same label is the actual dishonesty. Which is what heading 7 of the Week 3 model card is for: write it down under known limitations, and print a flag beside the prediction.
+The best answers land on **it depends on how much of the prediction that column was carrying, and on what the receiver is told** — and then say the thing almost nobody says: whoever gets the prediction should be able to find out. A number that means *"my best guess for a restaurant I have never seen"* is a different product from a number that means *"my best guess for Napoli, which I have seen hundreds of times"*, and shipping both under the same label is the actual dishonesty. Which is what heading 7 of the Week 3 model card is for: write it down under known limitations, and print a flag beside the prediction.
 
 ### Build It
 
@@ -1814,7 +1814,7 @@ storm − rain  = 0.5360 − 0.3507 = 0.1853
 
 **The mean is marked to the right of four of the five dots on line 1.** 24 with four values at 8 or less. That is surprising and correct, and it is the whole reason the median exists.
 
-**The order is the same on all three lines.** 2 smallest, 100 biggest, every time. **Scaling is a change of units, not a change of facts** — it does not reorder anything and it does not change which rows are alike. What changes is the size of the numbers the weights get multiplied by.
+**The order is the same on all three lines.** 2 smallest, 100 biggest, every time. **Scaling is a change of units, not a change of facts** — it does not reorder anything within a column. What changes is the size of the numbers the weights get multiplied by, and so how much each column counts when several are compared.
 
 **Rub out the 100 and line 3 changes character completely.** `2, 4, 6, 8` min-maxed becomes `0, 0.3333, 0.6667, 1` — evenly spread and the *nicest* of the three lines. Line 2 barely changes shape; the z-scores become `−1.3416, −0.4472, +0.4472, +1.3416`, still evenly spread. **So min-max is not a bad recipe. It is a recipe that one freak value can ruin, and the z-score is not.**
 

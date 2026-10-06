@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" role="img">
   <title>Eight rows, two kept</title>
-  <desc>An ablation table with eight rows. Row 1, baseline Week 3 pipeline, validation AUC 0.7541, kept. Row 2, plus is_rush, 0.7586, delta plus 0.0045, kept. Row 3, plus is_weekend, 0.7585, minus 0.0001, dropped. Row 4, plus min_per_km, 0.7536, minus 0.0051, dropped. Row 5, plus items_per_km, 0.7590, plus 0.0003, dropped. Row 6, scaler swapped to MinMaxScaler, 0.7579, minus 0.0007, dropped. Row 7, drop order_hour, 0.7599, plus 0.0013, kept. Row 8, drop day_of_week, 0.7576, minus 0.0010, dropped. Underneath, 0.7599 minus 0.7541 equals plus 0.0058, the whole honest gain from eight tries.</desc>
+  <desc>An ablation table with eight rows. Row 1, baseline Week 3 pipeline, validation AUC 0.7541, kept. Row 2, plus is_rush, 0.7586, delta plus 0.0045, kept. Row 3, plus is_weekend, 0.7585, minus 0.0001, dropped. Row 4, plus min_per_km, 0.7536, minus 0.0051, dropped. Row 5, plus items_per_km, 0.7590, plus 0.0003, dropped. Row 6, scaler swapped to MinMaxScaler, 0.7579, minus 0.0007, dropped. Row 7, drop order_hour, 0.7599, plus 0.0013, kept. Row 8, drop day_of_week, 0.7576, minus 0.0010, dropped. Underneath, 0.7599 minus 0.7541 equals plus 0.0058, the whole honest gain from seven changes.</desc>
   <text x="250" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Eight rows, two kept</text>
   <text x="250" y="70" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">every row changes exactly ONE thing</text>
   <rect x="30" y="92" width="440" height="30" fill="#F5F8FA" stroke="#14202B" stroke-width="2"/>
@@ -55,7 +55,7 @@
   <line x1="440" y1="446.0" x2="426" y2="458.0" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
   <rect x="30" y="92" width="440" height="382" fill="none" stroke="#14202B" stroke-width="3"/>
   <text x="250" y="508" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">0.7599 &#8722; 0.7541 = +0.0058</text>
-  <text x="250" y="534" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the whole honest gain, from eight tries</text>
+  <text x="250" y="534" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the whole honest gain, from seven changes</text>
   <text x="30" y="566" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">Rows 3&#8211;8 each change one thing from row 2, so every &#916; is</text>
-  <text x="30" y="586" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">measured against 0.7586. Six of the eight lost score.</text>
+  <text x="30" y="586" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">measured against 0.7586. Four of the seven changes lost score.</text>
 </svg>

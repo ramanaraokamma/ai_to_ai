@@ -55,7 +55,7 @@ This morning the bank sent over a card. Two numbers on it. Somebody who is not a
 ![Write down the two prices before you touch the dial](../figures/fig-w11-1-cost-matrix-two-prices.svg)
 *Figure 11.1 — Write down the two prices before you touch the dial. Two of the four cells are free; the two mistakes have prices, and the whole lesson is that one price is fifty times the other.*
 
-**One prediction before you start, and write your answer down.** A miss costs fifty times more than a false alarm. So will the cheapest threshold be nearer **0.5** or nearer **0.01**?
+**One prediction before you start, and write your answer down.** A miss costs fifty times more than a false alarm. So will the cheapest threshold be **the lowest one on the table, 0.01**, or **somewhere in the middle**?
 
 Most people say 0.01. **Most people are wrong**, and finding out why is worth ten minutes of your life.
 
@@ -154,7 +154,7 @@ This is the most important experiment in the lab, and it takes one line to run. 
 | £500 | £10 | **t = 0.10** | £5,550 |
 | £5,000 | £10 | **t = 0.01** | £34,210 |
 
-**Make a miss a hundred times more expensive and the winner slides from 0.10 all the way to 0.01** — flag 429 rows out of 1,000 and catch 8 of the 14. That is what *"we will accept any amount of hassle to stop this"* looks like written as arithmetic.
+**Make a miss ten times more expensive again (£500 to £5,000) and the winner slides from 0.10 all the way to 0.01** — flag 429 rows out of 1,000 and catch 8 of the 14. That is what *"we will accept any amount of hassle to stop this"* looks like written as arithmetic.
 
 **And the sentence this is all for:**
 
@@ -413,13 +413,13 @@ the formula says   : t = 10 / (10 + 500) = 0.0196
 
 **0.032 against 0.0196. They disagree by about half again.** Which one is wrong?
 
-**Neither**, and this is the most professionally useful paragraph in the chapter. There are exactly two honest explanations and both are true at once:
+**Neither**, and this is the most professionally useful paragraph in the chapter. There are two honest explanations, and with this little data you cannot fully separate them:
 
-**One — the formula assumes the probabilities are honest.** It only works if a row the model scores 0.02 really does turn out to be fraud about 2% of the time. Ours top out at 0.1774; they are squashed towards zero and they are not literal chances. A model whose probabilities can be read as real chances is called **calibrated**, ours is not, and repairing it is a Level 4 topic.
+**One — the formula assumes the probabilities are honest.** It only works if a row the model scores 0.02 really does turn out to be fraud about 2% of the time. A model whose probabilities can be read as real chances is called **calibrated**. Ours top out at 0.1774, but that alone proves nothing: fraud is only 1.4% of the rows, so small scores are what an honest model *should* print. In fact the 1,000 validation scores add up to 14.1 and there were 14 frauds, so on average the model is about right. Whether each individual score is honest, 14 frauds cannot tell us, and repairing a model that is not is a Level 4 topic.
 
 **Two — the measurement rests on fourteen frauds.** One fraud landing on the other side of a line moves the cost by £500, which is more than the gap between several neighbouring rows. **The minimum of a bumpy curve measured on 14 events is not a precise quantity.**
 
-> **🧑‍🏫 So which one do you use?** Both, and you say so out loud in your report. **When the formula and the sweep agree, that is evidence your probabilities can be trusted. When they disagree, that is evidence they cannot** — and you got that diagnosis for free, out of two numbers you were computing anyway. The disagreement is itself the interesting result.
+> **🧑‍🏫 So which one do you use?** Both, and you say so out loud in your report. **When the formula and the sweep agree, that is mild evidence your probabilities can be trusted. When they disagree, that is a prompt to go and check them** — but with only 14 frauds the gap can easily be noise (here it probably mostly is), so it is a question raised, not a diagnosis proved. The disagreement is itself the interesting result.
 
 ### Step 4 — the area, in strips, then the reveal
 
@@ -928,7 +928,7 @@ no shuffle: [0.7349 0.6389 0.6484 0.5851 0.648 ] sd 0.0481
 
 **Nothing crashed.** And your `±` is only about half as big — 0.048 instead of 0.087. That looks like an improvement.
 
-**It is not.** Without `shuffle=True` the folds are cut in whatever order the rows happen to be stored in, so neighbouring rows end up in the same chunk and the five scores are less independent than they look. **A smaller `±` obtained by cutting the data in a lazier way is not a better measurement; it is a less honest one.**
+**It is not an improvement.** Nothing about the model got better: the same model on the same data was simply cut into five different chunks, and the mean moved too (0.651 instead of 0.628). Try `shuffle=True` with `random_state` 1 to 7 and the sd wanders between about 0.03 and 0.12. **The `±` is itself a noisy number when it rests on five folds of 14 frauds**, so a small one from a single chop proves nothing, and picking the chop that gives the answer you like would be cheating. `shuffle=True` matters most when the data is stored in some order (by date, or by label), because then each unshuffled chunk is a different kind of row. Fix the chop in advance (`shuffle=True, random_state=0`) and report whatever it gives.
 
 **The fix.** `StratifiedKFold(n_splits=5, shuffle=True, random_state=0)`.
 
@@ -945,7 +945,7 @@ no shuffle: [0.7349 0.6389 0.6484 0.5851 0.648 ] sd 0.0481
 | **no error**, `np.trapz` gives 0.6375 | x values not in increasing order | sort by x first; `np.trapz` does not check |
 | **no error**, `np.trapz(tpr)` with no x at all | it assumed every strip was 1 wide | pass both arguments |
 | **no error**, five scores of 0.98 | `scoring=` forgotten, so accuracy | `scoring="roc_auc"` |
-| **no error**, the sd is 0.0481 | `shuffle=True` missing | add it, with `random_state=0` |
+| **no error**, the sd is 0.0481 | `shuffle=True` missing: a different chop, and the sd is itself noisy (about 0.03 to 0.12 across shuffles) | fix the chop in advance: `shuffle=True, random_state=0` |
 | **no error**, the five scores are all *slightly* wrong | `StandardScaler` applied **before** `cross_val_score`, so every fold's scaler had already seen the held-out rows | put the scaler **inside** the `Pipeline` — Week 3 and Week 6's lesson, in a new place |
 | **no error**, the cheapest threshold changes every run | somebody is editing `COST_FN` mid-experiment | **write the price list down before you sweep and do not touch it** |
 
@@ -1024,7 +1024,7 @@ And here is why it matters. Since Week 3 you have typed `LogisticRegression().fi
 
 ❌ **Wrong.** *"0.628 ± 0.087 is unstable, so I need a different model."*
 
-✅ **Right.** It means a **noisier measurement.** Our ± is mostly a statement about having 14 positives per fold, not about the model. You fix it with more data, or at least more positive examples per fold — **not by changing the model.** And the hospital example proves the point: the same code, the same `Pipeline`, 42 positives per fold instead of 14, and the band shrinks to ± 0.006.
+✅ **Right.** It means a **noisier measurement.** Our ± is mostly a statement about having 14 positives per fold, not about the model. You fix it with more data, or at least more positive examples per fold — **not by changing the model.** The fraud data shows it directly: give the same recipe 3 times as many rows (about 48 frauds per fold) and the band narrows from about 0.09 to about 0.03 (averaged over five shuffles). The hospital example narrows too (± 0.006), but it mixes two things: more positives *and* an easier problem, where an AUC near 1 leaves little room to wobble. Cut it down to 14 positives per fold and it is still only about ± 0.005.
 
 ![A wide band is a noisy measurement, not a bad model](../figures/fig-w11-6-a-wide-band-wrong-right.svg)
 *Figure 11.6 — A wide band is a noisy measurement, not a bad model. The wrong diagnosis on the left, the five folds and their 14 frauds each on the right.*
@@ -1112,7 +1112,7 @@ np.trapz(tpr, fpr)              # 0.6116  ==  roc_auc_score(y_val, prob)
 # ---- five folds instead of one lucky split -------------------------------
 skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=0)
 #                                 ^^^^^^^^^^^^  leave it out and the sd
-#                                               drops to 0.0481 - LESS honest
+#                                               becomes 0.0481 - a different chop
 [int(y[te].sum()) for tr, te in skf.split(X, y)]   # [14, 14, 14, 15, 15]
 #                                                  # plain KFold: [11,17,14,17,13]
 scores = cross_val_score(pipe, X, y, cv=skf, scoring="roc_auc")
@@ -1144,7 +1144,7 @@ print("AUC = %.3f +/- %.3f (5-fold stratified CV)" % (scores.mean(), scores.std(
 | **AUC** | the area under the ROC curve, added up as trapezoid strips | **0.6116**, and `np.trapz(tpr, fpr)` gives the same |
 | **trapezoid strip** | a rectangle with a sloping top: average the heights, times the width | `(0.60 + 0.80) ÷ 2 × 0.25 = 0.1750` |
 | **error bar** | the `±` beside a mean; how much the number moves if you measure again differently | **0.628 ± 0.087**, so a band of 0.54 to 0.72 |
-| **calibrated** | a model whose probabilities can be read as real chances. Ours are **not** | the formula says 0.0196, the sweep says 0.032 |
+| **calibrated** | a model whose probabilities can be read as real chances. Ours look right on average (the scores add to 14.1, there were 14 frauds); 14 frauds cannot check more | the formula says 0.0196, the sweep says 0.032 |
 
 ---
 

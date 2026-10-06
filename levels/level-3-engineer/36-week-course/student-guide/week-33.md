@@ -307,7 +307,7 @@ bias: 0.0124
 
 **Traps 7, 8 and 9 came out "right" at a probability of `0.5188`, with the single word `and` as their only surviving evidence.**
 
-`not_cold` is not a column either — the training reviews never said `not cold` — **so gluing did not reverse the evidence. It deleted it.** The sentence arrived at the classifier as, effectively, the word `and`, the model fell back on its bias of `+0.0124` (which leans very slightly positive), and the four positive traps happened to want *positive*.
+`not_cold` is not a column either — the training reviews never said `not cold` — **so gluing did not reverse the evidence. It deleted it.** The sentence arrived at the classifier as, effectively, the word `and`, the model was left with the bias of `+0.0124` plus the near-zero weight of `and` (`+0.0629`), which together lean very slightly positive (`0.5188`), and the positive traps happened to want *positive*.
 
 **Six out of twelve, and five of the six are coin flips that landed the right way up.** Rows 1, 2, 3, 7, 8 and 9 all read `0.5188` — **the identical number, six times, because they all reduce to the identical surviving evidence.**
 
@@ -329,7 +329,7 @@ Three words for that idea, and then we stop until Level 4.
 >
 > **Word embedding** — a short list of numbers standing for a word, arranged so that words used in similar ways get similar lists.
 
-**An embedding fixes exactly today's problem**, by giving `delicious` and `tasty` lists of numbers that sit close together. **That is Level 4.**
+**An embedding fixes exactly that problem** (unrelated words), by giving `delicious` and `tasty` lists of numbers that sit close together. **It does not, on its own, fix negation; reading words in order does that too. Both are Level 4.**
 
 **And the boring answer that works today: more data.** Write forty reviews that use the word `not`, and the model will learn what `not_fresh` means, because it will have seen it. **Not a clever feature. Rows.**
 
@@ -889,7 +889,7 @@ mark_negation('hardly a delicious meal') -> 'hardly_delicious meal'
 
 **Notice `hardly a delicious meal` → `hardly_delicious meal`.** Week 31's regex throws away the one-letter word `a`, **which is lucky**: had it kept `a`, we would have glued `hardly` onto `a` and achieved nothing at all.
 
-**And notice the held-out score went *down*, from `1.0000` to `0.9500`, in rows 3, 4 and 5.** One held-out review out of twenty is now wrong. **Every repair cost something on the easy cases. That is a completely normal trade, and it is worth naming rather than hiding.**
+**And notice the held-out score went *down*, from `1.0000` to `0.9500`, in rows 3, 4 and 5.** One held-out review out of twenty is now wrong. **Look at which review it is:** `"i would not order from here again"`, the only held-out review that contains `not`. Row 1 got it right only because `order` (coefficient `-0.50`) survives, at `p(positive) = 0.415`; once `not order` is glued into one unseen token, `order` is deleted along with it and the review lands at about `0.5`. **A repair that deletes unseen tokens can cost you evidence you had. Name that trade rather than hiding it.**
 
 ### Step 8 — was that a fix, or an abstention?
 
@@ -936,7 +936,7 @@ is 'not_cold'   a column? False
 columns after marking: 97
 ```
 
-**`not_fresh` is not a column. `not_cold` is not a column.** Gluing produced tokens nothing in training had ever seen, so they were deleted — **exactly as `not` was.** Six traps came out right because six sentences arrived as the word `and` and the model returned its bias.
+**`not_fresh` is not a column. `not_cold` is not a column.** Gluing produced tokens nothing in training had ever seen, so they were deleted — **exactly as `not` was.** Six traps came out right, but only three of them (7, 8 and 9) because the sentence arrived as the single word `and` and the model returned `0.5188`; the other three (5, 10 and 12) were decided by a few weak words, at `0.4461`, `0.6112` and `0.5781`.
 
 **Six out of twelve, and one of them is arguably real.**
 
@@ -1132,7 +1132,7 @@ true label: 1  model says: 0
 **The four things a post-mortem needs, in order.**
 
 1. **The review and the truth.** `"not rude and not slow"`, true label **positive**.
-2. **What the model said and how sure it was.** **Negative, at `p(positive) = 0.0241`** — so it is 97.6% certain the customer is furious. **This is the most confidently wrong prediction of all twelve.**
+2. **What the model said and how sure it was.** **Negative, at `p(positive) = 0.0241`** — so it is 97.6% certain the customer is furious. **That is the second most confidently wrong of the twelve, after trap 1 at 98.2%.**
 3. **The arithmetic.** Three tokens have columns. `rude` contributes `−2.0268`, `slow` contributes `−1.7038`, `and` contributes `+0.0162`, the bias adds `+0.0124`, total `−3.7019`, squashed to `0.0241`. **Check the sum yourself: `0.0162 − 2.0268 − 1.7038 + 0.0124 = −3.7020`, and the last digit is rounding in the printed pieces.**
 4. **The mechanism.** `not` appears **twice** and has **no column at all** — `words with no column at all: ['not', 'not']`. So the two words that reverse the meaning of the sentence were deleted before the arithmetic began, and the model was handed the two strongest negative words in its entire vocabulary: `rude` at `−3.2033` (the second-biggest weight it has) and `slow` at `−2.3327`. **It did not misread the sentence. It never received the sentence.**
 
@@ -1329,7 +1329,7 @@ ValueError: Iterable over raw text documents expected, string object received.
 
 | What you see | What it means | What to do |
 |---|---|---|
-| **`traps=6/12` after gluing negators on** | **Nothing crashed, and this is the correct output.** But 6 is not a fix — traps 1, 2, 3, 7, 8 and 9 all come out at exactly `0.5188` with `['and']` as their only surviving evidence, which is the bias of `+0.0124` squashed. | **Print what survived.** `[w for w in marked[k].split() if w in vocab]`. **Six identical probabilities is the fingerprint of an abstention, not a fix.** |
+| **`traps=6/12` after gluing negators on** | **Nothing crashed, and this is the correct output.** But 6 is not a fix — traps 1, 2, 3, 7, 8 and 9 all come out at exactly `0.5188` with `['and']` as their only surviving evidence, which is the bias `+0.0124` plus the tiny weight of `and`, squashed. | **Print what survived.** `[w for w in marked[k].split() if w in vocab]`. **Six identical probabilities is the fingerprint of an abstention, not a fix.** |
 | **`held-out = 1.0000`** | Nothing crashed. **This is also the correct output, and it is not good news.** 20 reviews means the score cannot move in steps smaller than 5 points, and the test reviews were typed by the same person out of the same forty adjectives. | **Put a baseline next to it** (`0.5000`) **and then go and find twelve hard cases.** That is what the traps are. |
 | **A coefficient of `−0.9621` for `lumpy`** | Nothing crashed. It rests on **1 review of 60.** | **Print the document frequency next to every coefficient you quote.** A weight from one review is a coincidence with a decimal point. |
 
@@ -1415,13 +1415,13 @@ Then the three words on the vocabulary sheet: **distributional hypothesis**, **c
 
 *Hint:* both do, and that is the problem, so start by asking what each one is a statement **about**. `1.0000` is a true statement about twenty reviews written by one person out of forty adjectives in matched pairs. `0/12` is a true statement about twelve sentences deliberately built around a word the training data never used. **Neither is a statement about "reviews".** Then the practical question: if you were shipping this to a real pizza shop, which number would you put on the slide, and which would you put in the appendix — and **which one would you want to have been told, if you were the shop?** Then the sharp version: **you chose the twelve traps.** You went looking for the failure and you found it. **Is a test set you designed to break your model a fair test, or the only fair test?**
 
-**2. Negation marking got 6 of 12, and five of those six were the model returning its bias. Should the write-up say "6/12"?**
+**2. Negation marking got 6 of 12, and five of those six were decided by the bias and a few weak words. Should the write-up say "6/12"?**
 
 *Hint:* start with what a reader does with the number `6`. They compare it with `0` and conclude the method works. **So the number, on its own, is misleading — even though it is correct.** Then work out the smallest honest report: *"6 of 12, but five of the six had only the word `and` surviving and all landed on `0.5188`, which is the bias; the only trap with real surviving evidence was number 5."* **That is two sentences and it costs nothing.** Then the harder question: **almost nobody prints the surviving-words table.** It is nine lines of code. **If a check is that cheap and that decisive, why is it not standard — and whose job is it to make it standard?** And then the uncomfortable one: **how many published "improvements" are abstentions that landed right way up?**
 
 **3. `fluffy` has a coefficient of `+0.9114` based on one review. What would you actually have to do to find out whether `fluffy` is a positive word?**
 
-*Hint:* there is a correct answer and it involves typing. Work out how many reviews you would need before you believed it — and notice you cannot answer that from the number `+0.9114` alone; **you need the document frequency, which is why it is printed.** Then the alternatives: you could set `min_df=3` so no word with fewer than three documents gets a column at all — **what does that cost you?** (Every genuinely rare and genuinely informative word.) You could just not quote weights below a threshold. **Or you could write ten reviews containing `fluffy`, half of them negative, and watch what happens to the coefficient.** Then the general lesson worth arguing about: **every model in this course has weights that rest on tiny amounts of evidence, and only a linear model on text will actually show you which ones.** Is a model you can interrogate but which is worse, better than one which is stronger and silent?
+*Hint:* there is a correct answer and it involves typing. Work out how many reviews you would need before you believed it — and notice you cannot answer that from the number `+0.9114` alone; **you need the document frequency, which is why it is printed.** Then the alternatives: you could set `min_df=3` so no word with fewer than three documents gets a column at all — **what does that cost you?** (Every genuinely rare and genuinely informative word.) You could just not quote weights below a threshold. **Or you could write ten reviews containing `fluffy`, half of them negative, and watch what happens to the coefficient.** Then the general lesson worth arguing about: **every model in this course has weights that rest on tiny amounts of evidence, and a linear model on text is one of the few that lets you read off directly which ones.** Is a model you can interrogate but which is worse, better than one which is stronger and silent?
 
 ---
 
@@ -1434,7 +1434,7 @@ Then the three words on the vocabulary sheet: **distributional hypothesis**, **c
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "Single words: 0 of 12. Plus bigrams: 0 of 12. Glued negators: **6 of 12**, with no extra data and no extra columns. Negation marking works." | **A coin also scores 6 of 12.** Print what survived and the six become obvious: traps 1, 2, 3, 7, 8 and 9 all come out at **exactly `0.5188`** with `['and']` as their only evidence, because `not_cold` and `not_fresh` are not columns either — **gluing did not reverse the evidence, it deleted it.** `0.5188` is the bias `+0.0124` squashed. **Of six apparent fixes, one is arguably real.** |
+| "Single words: 0 of 12. Plus bigrams: 0 of 12. Glued negators: **6 of 12**, with no extra data and no extra columns. Negation marking works." | **A coin also scores 6 of 12.** Print what survived and it becomes obvious: traps 1, 2, 3, 7, 8 and 9 all come out at **exactly `0.5188`** (7, 8 and 9 are the three that count as right) with `['and']` as their only evidence, because `not_cold` and `not_fresh` are not columns either — **gluing did not reverse the evidence, it deleted it.** `0.5188` is the bias `+0.0124` plus `and`'s `+0.0629`, squashed. **Of six apparent fixes, at most one (trap 5) rests on more than a few weak words.** |
 
 **The distinction — a fix versus an abstention — is the most professional thing in this lab.** A number going up is not evidence that something got better. **You have to look at *how* it went up.**
 
@@ -1515,8 +1515,8 @@ The ↻ on stage three is black, as it has been since Week 12.*
 - **"No column" is not "a column with a zero in it", and both print `+0.0000`.** `is 'not' in the vocabulary? False`. And leak the test set in and `not`'s coefficient is exactly `0.0000`, because **0 of the 60 training reviews used it.**
 - **Bigrams buy 221 columns and fix nothing.** `97 → 318`, `0/12 → 0/12`, **`traps whose answer changed at all: 0`**, and **`pairs beginning with a negator: 0`** — an empty list. `'was cold'` is a column; `'not fresh'` is not.
 - **A feature can only help you if the training data contained it. Adding a feature *type* does not add features; adding *data* does.**
-- **Negation marking reaches `6/12` and it is an abstention, not a fix.** Six traps land on **exactly `0.5188`** with `['and']` as their only surviving evidence — the bias of `+0.0124`, squashed. **A number going up is not evidence that something got better.**
-- **Every repair cost something on the easy cases:** held-out `1.0000 → 0.9500` in rows 3, 4 and 5. **Name the trade rather than hiding it.**
+- **Negation marking reaches `6/12` and it is an abstention, not a fix.** Six traps (1, 2, 3, 7, 8, 9) land on **exactly `0.5188`** with `['and']` as their only surviving evidence — the bias of `+0.0124` plus `and`'s `+0.0629`, squashed. Only 7, 8 and 9 count as right. **A number going up is not evidence that something got better.**
+- **Every repair cost one held-out review:** `1.0000 → 0.9500` in rows 3, 4 and 5, and it is always `"i would not order from here again"`, the one held-out review containing `not`. **Name the trade rather than hiding it.**
 - **A 2-D PCA plot of 97-D text is a shadow.** `10.58% + 4.49% = 15.07%` kept, **`84.93%` thrown away**. Mixed shadows do not mean overlapping classes.
 - **A post-mortem needs four things: the review, what the model said and how sure, the arithmetic token by token, and the mechanism.** *"The model was wrong"* is not a mechanism. **The mechanism names the missing column or word order, and the smallest fix is forty reviews that use `not` — not a neural network.**
 

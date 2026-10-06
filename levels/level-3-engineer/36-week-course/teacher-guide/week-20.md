@@ -113,7 +113,7 @@ The slope of `x × x` at `x = 3` is `2 × 3 = 6`. **They measured exactly this n
 **What actually happened, in four steps, and this is the explanation to give:**
 
 1. `x = torch.tensor([3.0], requires_grad=True)` creates the knob and switches the recorder on.
-2. `y = x * x` does the multiplication **and** writes a line on the receipt: *"multiplied a tracked tensor by itself"*. You can see the receipt: printing `y` gives `tensor([9.], grad_fn=<PowBackward0>)`, and **`grad_fn` is the receipt entry** — the name of the operation that produced this value.
+2. `y = x * x` does the multiplication **and** writes a line on the receipt: *"multiplied a tracked tensor by itself"*. You can see the receipt: printing `y` gives `tensor([9.], grad_fn=<MulBackward0>)`, and **`grad_fn` is the receipt entry** — the name of the operation that produced this value.
 3. `y.backward()` reads the receipt from the bottom up, working out how much each ingredient contributed.
 4. The answer is deposited in `x.grad`.
 
@@ -391,7 +391,7 @@ mode item     before:  158.4 MB
 mode item     after :  172.7 MB   kept 300 items
 ```
 
-**100.3 MB against 14.3 MB.** Your machine's absolute numbers will differ; the ratio will not. Three hundred kept tensors dragged a hundred megabytes of intermediate values along with them, and the same three hundred numbers cost essentially nothing. In a long training run this is how people run out of memory at epoch 400 of 500, having watched the first 399 work perfectly.
+**100.3 MB against 14.3 MB.** Your machine's absolute numbers will differ, and the ratio will wobble a little from run to run (we have seen 6 and 7 times); it stays several times, not a few per cent. Three hundred kept tensors dragged a hundred megabytes of intermediate values along with them, and the same three hundred numbers cost essentially nothing. In a long training run this is how people run out of memory at epoch 400 of 500, having watched the first 399 work perfectly.
 
 ### 8. The three misconceptions you will actually meet
 
@@ -1090,7 +1090,7 @@ Three questions: **"what is 2 × 3?"** (6 — and that is the answer PyTorch gav
 
 1. **Predict then verify all ten of the homework slopes** without running them first — including `1/x` at `x = 2` (`−0.25`) and `torch.relu(x)` at `x = −2` (`0`). The relu one is the interesting argument: is the slope 0 or undefined at exactly 0? PyTorch says `0`. **Ask them whether that is a fact or a decision.** (A decision, and a documented one.)
 2. **The non-leaf warning.** `x = torch.tensor([3.0], requires_grad=True)`, `y = x * 2`, `z = (y * y).sum()`, `z.backward()`, then print `y.grad`. Real answer: `None` plus a long `UserWarning`, while `x.grad` is `24.0`. Then the arithmetic: `z = (2x)²= 4x²`, slope `8x`, `8 × 3 = 24`. **Verify it by nudging.**
-3. **Measure the memory cost** with `memcost.py` (Answer Key, page 20.6), two runs. Ours: **100.3 MB against 14.3 MB.** Their numbers will differ and the ratio will not.
+3. **Measure the memory cost** with `memcost.py` (Answer Key, page 20.6), two runs. Ours: **100.3 MB against 14.3 MB.** Their numbers will differ and the ratio will wobble a little, but it should stay several times.
 4. **Batch the match test.** Feed four rows of input instead of one, `x = torch.tensor([[1.0, 2.0], [0.5, 1.0], [2.0, 0.0], [1.5, 1.5]])` with four labels, and confirm the gradient shapes are still `(2, 2)`, `(1, 2)`, `(2, 1)`, `(1, 1)` — **unchanged, because a gradient always has the shape of its knob, no matter how many rows went in.** That is Week 19's rule, restated in torch.
 5. **Break `backward()` on a non-scalar:** `loss = (pred - y)` without `.mean()`. Real message: `RuntimeError: grad can be implicitly created only for scalar outputs`. Ask why a slope needs one number to start from. (Because "how much does the loss change" only makes sense if there is one loss.)
 
@@ -1116,7 +1116,7 @@ It is not doing symbolic algebra — it never writes down a formula for the deri
 
 **"Why does `.grad` add? That seems like a mistake."**
 
-It is deliberate, and there is one real use for it: **splitting a batch that will not fit in memory.** If you want the gradient over 1,000 rows but only 250 fit at a time, you run four forward-and-backward passes and let the four gradients pile up. The total is exactly the gradient over 1,000 rows.
+It is deliberate, and there is one real use for it: **splitting a batch that will not fit in memory.** If you want the gradient over 1,000 rows but only 250 fit at a time, you run four forward-and-backward passes and let the four gradients pile up. The total is exactly the gradient over 1,000 rows for a sum-loss; for a mean-loss, divide by four (or scale each piece's loss by 1/4) to get the 1,000-row mean.
 
 The cost of that convenience is that everybody, for ever, has to remember to wipe `.grad` before each step — and forgetting is the most common PyTorch bug in existence. There are people who think the default should have been the other way round. **PyTorch chose flexibility over safety here, and you will pay a small tax on it every week for the rest of your life.** That is a real engineering trade-off and it is fine to say you find it annoying.
 
@@ -1223,7 +1223,7 @@ None of these need syntax from a later week.
 3. **The memory measurement** (harder variation 3). Two runs, two numbers, one ratio.
 4. **`backward()` on a non-scalar** (harder variation 5) and the question of why a slope needs a single number to start from.
 5. **The relu-at-zero question:** what is the slope of `relu(x)` at exactly `x = 0`? PyTorch says `0`. Mathematically there is no single answer — the function has a corner. **This is a decision the library made, not a fact it discovered**, and finding that out unaided is a level-5 moment.
-6. **The honest challenge:** *"find something autograd cannot give you the slope of."* Anything with an `if` on a tensor value, anything with a round or a floor in it, anything that leaves torch and goes through numpy in the middle. **The receipt only records torch operations.**
+6. **The honest challenge:** *"find something autograd cannot give you the slope of."* Anything with a round or a floor in it (zero slope almost everywhere), anything that leaves torch and goes through numpy in the middle. (An `if` on a tensor value does not break autograd: it differentiates the branch that ran, though the slope can jump where the branch changes.) **The receipt only records torch operations.**
 
 ### If the student won't engage today
 

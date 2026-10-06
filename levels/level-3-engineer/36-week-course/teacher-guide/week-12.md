@@ -10,7 +10,7 @@
 |---|---|
 | **Duration** | 70 minutes |
 | **Type** | 🟦 Teach — **the most important lesson in Level 3.** Everything from Week 15 to Week 27 stands on it. |
-| **Big idea** | In Level 2, scikit-learn found the best slope for a line and never said how. It tried a value, asked *"which way is downhill"*, and stepped. **You can measure "downhill" with two subtractions.** |
+| **Big idea** | Many models — logistic regression, and every neural network — find their best numbers by trying a value, asking *"which way is downhill"*, and stepping, and `fit()` never showed how. **You can measure "downhill" with two subtractions.** |
 | **New vocabulary** | loss · loss surface · slope at a point · derivative · numerical gradient · learning rate · gradient descent |
 | **New maths** | **The slope of a curve at ONE point**, measured by nudging the input by a tiny step: `(f(w + h) − f(w − h)) ÷ 2h`. Computed by hand at `x = 1`, `3` and `5`, shown to equal `2 × x`, **and only then** named the derivative. |
 | **New syntax** | `np.linspace(a, b, n)` · `np.argmin(arr)` · `ax.annotate("...", xy=(x, y))` |
@@ -51,7 +51,7 @@ They have typed this, or something like it, about forty times:
 model.fit(X_train, y_train)
 ```
 
-And every single time, something inside that line did the following:
+For logistic regression and for every neural network, something inside that line does the following (a plain `LinearRegression` reaches its best line by algebra instead, and trees and nearest-neighbours work in other ways again, but this loop is the engine of everything from here on):
 
 1. Picked a value for a weight. Any value. Zero, usually.
 2. Worked out **how wrong** that value made the model.
@@ -142,7 +142,7 @@ so the best of the eight is w = 8.0
 
 **This is the week's one new idea and it is the most important thing in the course. Take it slowly.**
 
-Last week the class measured steepness **between two points** on the ROC curve: rise over run, both of them read off the paper. Today we want the steepness **at one point.** And here is the trick, which is so simple it feels like cheating:
+In Week 10 the class measured steepness **between two points** on the ROC curve: rise over run, both of them read off the paper. Today we want the steepness **at one point.** And here is the trick, which is so simple it feels like cheating:
 
 > **🔢 The maths, slowly:** you cannot measure a slope at a single point, because a slope needs two points. **So take two points that are almost the same one.** Nudge the input a tiny bit to the left, nudge it a tiny bit to the right, see how much the output changed, and divide by how far you nudged.
 
@@ -182,7 +182,7 @@ so the steepness is
 
 > **Slope at a point** — how steeply a curve is climbing or falling right where you are standing. Measured by nudging the input a tiny bit each way and dividing the change in output by the change in input.
 
-> **Numerical gradient** — the slope obtained by that nudge-and-divide method. It is slow, it needs no cleverness at all, **and it never lies.** You will use it in Week 19 to check something far harder.
+> **Numerical gradient** — the slope obtained by that nudge-and-divide method. It is slow, it needs no cleverness at all, **and it is honest, as long as the nudge is not absurdly small.** You will use it in Week 19 to check something far harder.
 
 **Why nudge BOTH ways?** You could do `(f(3.001) − f(3)) ÷ 0.001` and get 6.001 — close, but not exact. Nudging symmetrically, one step each way, cancels out the error and lands on 6.000 dead on. **It is the same amount of work and it is more accurate, so we always do it that way.** (For the parabolas in this lesson the symmetric version is not just more accurate, it is exactly right, whatever nudge you use. Figure 12.2 uses a nudge of half a unit and still gets 6.000.)
 
@@ -277,7 +277,7 @@ standing at w = 14, where the slope is +12:
 ![Which way is downhill? Read the sign.](../figures/fig-w12-5-board-which-way-is-downhill.svg)
 *Figure 12.4 — Which way is downhill? Read the sign. The same bowl twice, the same rule twice, and both arrows heading towards 8.*
 
-> **Gradient descent** — measure the slope, step the opposite way, repeat. That is the whole algorithm, and it is what has been inside `fit()` all year.
+> **Gradient descent** — measure the slope, step the opposite way, repeat. That is the whole algorithm, and it is what sits inside `fit()` for logistic regression and for every neural network.
 
 ### 6. Eight steps, by hand
 
@@ -342,7 +342,7 @@ Read it like a doctor reading a chart:
 - **`lr = 0.026`** — **overshooting.** Every step jumps past the bottom and lands slightly further out than it started. It is walking *away* from the answer, slowly.
 - **`lr = 0.03`** — **catastrophe.** `w = 5135` and a loss of a billion. Each step leaps clean over the valley and lands higher up the far wall, then leaps back even higher.
 
-> **⚠️ Watch out:** notice that `0.026` works and `0.03` explodes. **There is a hard edge, not a gentle degradation.** The rule of thumb for the rest of the course: *if your loss is going up instead of down, your learning rate is too big. Divide it by ten and try again.* No other diagnosis is needed first.
+> **⚠️ Watch out:** notice that `0.01` settles, `0.026` already does not (after 25 steps its loss, 1531, is *bigger* than the 1386 it started with) and `0.03` explodes. **There is a hard edge just below 0.026, not a gentle degradation.** The rule of thumb for the rest of the course: *if your loss is going up instead of down, first check that the update subtracts the slope; if it does, your learning rate is too big — divide it by ten and try again.*
 
 **And note something important about the two learning rates in this lesson.** For the **one-student** loss `(w − 8)²`, `lr = 0.3` works beautifully. For the **ten-student** loss, `0.3` explodes instantly — real output:
 
@@ -882,7 +882,7 @@ after six steps w = 3.983616, target 4
 
 > "That is the entire lesson. Everything else today is arithmetic.
 >
-> Since Week 3 you have typed `model.fit(X, y)` about forty times, and something inside that line has been standing on a foggy hillside with two feet, going *'is it lower this way? Yes. Step.'* — a few hundred times a second. **Nobody has ever shown you how it feels the ground.**
+> Since Week 3 you have typed `model.fit(X, y)` about forty times, and inside many of those models (logistic regression now, every neural network to come) something has been standing on a foggy hillside with two feet, going *'is it lower this way? Yes. Step.'* — a few hundred times over. **Nobody has ever shown you how it feels the ground.**
 >
 > Today you find out. And the answer is: **two subtractions and a division.** That is it. That is the whole secret."
 
@@ -998,7 +998,7 @@ w = 6
 
 > "Forget marks and revision for four minutes. Simplest curve there is. `x` times `x`.
 >
-> I want to know **how steep it is at x = 3.** Not between two points — last week we did between two points, and it was rise over run. I want the steepness **at** three. One place.
+> I want to know **how steep it is at x = 3.** Not between two points — in Week 10 we did between two points, and it was rise over run. I want the steepness **at** three. One place.
 >
 > And there is a problem: a slope needs two points. So here is the trick, and it is the whole of today.
 >
@@ -1029,7 +1029,7 @@ w = 6
    0.012000 ÷ 0.002  =  6.000
 ```
 
-> "**Six.** And notice what just happened: **that is rise over run again.** Exactly what you did last week on the ROC curve. The only difference is that the two points are a thousandth of a unit apart instead of a tenth."
+> "**Six.** And notice what just happened: **that is rise over run again.** Exactly what you did in Week 10 on the ROC curve. The only difference is that the two points are a thousandth of a unit apart instead of a tenth."
 
 **Do this:** Now the bit that makes it an idea. Split the room into three groups.
 
@@ -1069,7 +1069,7 @@ Blockquote each on the board.
 
 > **Loss surface** — the shape you get by plotting loss against the value of a weight.
 
-> **Numerical gradient** — a slope measured by nudging and dividing. Slow, and it never lies.
+> **Numerical gradient** — a slope measured by nudging and dividing. Slow, and honest while the nudge is sensible.
 
 > **Learning rate** — how big a step you take. Your stride length.
 
@@ -1331,7 +1331,7 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: three stu
 
 **Say this:**
 
-> "**That is `fit()`.** That is the whole of it. Every time you have typed `model.fit(X, y)` since Week 3, that loop has run, a few hundred times, and now you know what it was doing.
+> "**That is the engine inside `fit()`** for logistic regression and for every neural network. Every time you fitted one of those since Week 3, a loop like this ran, a few hundred times (a plain `LinearRegression` reaches its best line by algebra instead, and trees and nearest-neighbours work in other ways again, but you now know what the loop is).
 >
 > And you should feel slightly annoyed with me, because it took nine weeks."
 
@@ -1361,7 +1361,7 @@ Every message below came from running a broken version of this week's actual cod
 | `TypeError: Axes.annotate() missing 1 required positional argument: 'xy'` | "You told me what to write but not where." | `ax.annotate("best of the eight")` with no position. | `ax.annotate("best of the eight", xy=(8.0, 0.0))`. The position is in the chart's own units. |
 | `AttributeError: 'list' object has no attribute 'mean'` | "Plain Python lists cannot average themselves." | `losses` built by appending and then `losses.mean()`. | `np.array(losses).mean()`. |
 | `IndexError: index 8 is out of bounds for axis 0 with size 8` | "There is no eighth thing in a list of eight, because I count from zero." | `candidates[len(candidates)]` instead of `candidates[np.argmin(losses)]`. | Eight items are numbered 0 to 7. |
-| `ZeroDivisionError: division by zero` | "You divided by nothing." | `h = 0` — a nudge of zero. | A nudge has to be a real nudge. `h = 0.001`. **And this is the honest reason calculus exists: you cannot actually set the nudge to zero.** |
+| `ZeroDivisionError: float division by zero` | "You divided by nothing." | `h = 0` — a nudge of zero. | A nudge has to be a real nudge. `h = 0.001`. **And this is the honest reason calculus exists: you cannot actually set the nudge to zero.** |
 | `ValueError: x and y must have same first dimension, but have shapes (161,) and (8,)` | "Those two lists are different lengths." | Plotting the eight candidate losses against the 161-point fine grid. | Plot `candidates` against `losses`, and `fine` against the fine losses. Two separate calls. |
 | **No error. The slope comes out `0.000006` instead of `6.000000`.** | Nothing crashed. Your answer is a million times too small. | Brackets: `/ 2 * h` divides by 2 *then multiplies* by h. | `/ (2 * h)`. **Sanity check: the slope of `x × x` at 3 is about 6, so an answer near zero is wrong before you read another line.** |
 | **No error. The slope comes out `12.000000` instead of `6.000`.** | Nothing crashed. Exactly twice the right answer. | Dividing by `h` instead of by `2 * h`. You moved a nudge each way, so you moved **two** nudges in total. | `/ (2 * h)`. **Sanity check: if your answer is exactly double the shortcut rule's, you divided by half the distance you actually travelled.** |
@@ -1527,7 +1527,7 @@ The three groups' working:
 
 ### Variation — harder
 
-1. **Guess before you measure.** They have `x × x → 2 × x` and `x × x × x → 3 × x × x`. **Ask them to predict the rule for `x × x × x × x` and then check it by nudging at x = 2.** (Prediction: `4 × x × x × x`, which at x = 2 is 32. The nudge at x = 2 with h = 0.001 gives 32.000008.) **This is the actual method by which the rules were found, historically.**
+1. **Guess before you measure.** They have `x × x → 2 × x` and `x × x × x → 3 × x × x`. **Ask them to predict the rule for `x × x × x × x` and then check it by nudging at x = 2.** (Prediction: `4 × x × x × x`, which at x = 2 is 32. The nudge at x = 2 with h = 0.001 gives 32.000008.) **Predict, measure, check is a perfectly good way to discover a rule.**
 2. **Find the learning rate that just barely works** on the ten-student loss. They will find that 0.01 is fine, 0.026 slowly wanders off, and 0.03 explodes to a billion. **Then ask why the same 0.3 that worked perfectly on the one-student loss destroys the ten-student one.** (Because the ten-student valley is 38.5 times steeper — its slope at w = 2 is −462 instead of −12.) This is a genuinely deep question and a student who gets it has understood learning rates better than most tutorials explain them.
 3. **The wobbly data.** Run `noisy.py` (in the Answer Key) and find that the best `w` is **7.99** and the best loss is **8.9106**, not 0. **Ask what the 8.91 is.** (The part of the exam marks that revision hours cannot explain. It is the floor of the data, and no amount of descent gets below it.) **A student who understands that a loss which stops falling is not a bug has saved themselves three weeks of confusion in Term 3.**
 4. **The honest question:** *"our valley has one bottom. Does every valley?"* No. Squared error on a straight line always gives one bowl, which is why today worked so cleanly. A neural network's loss surface has many bottoms, and gradient descent finds *a* bottom rather than *the* bottom, and in practice that turns out to be mostly fine and nobody fully knows why. **Tell them that is genuinely an open question and that they have just asked a research-level one.**
@@ -1552,7 +1552,7 @@ Because a computer cannot. Look at the table: `h = 1e-12` gives **6.0005334035**
 A person picks it, by trying values. There is no formula. **And it depends on the shape of the hill, not on any principle** — 0.3 is perfect on the one-student loss and catastrophic on the ten-student one, because the second valley is 38.5 times steeper. The professional method is genuinely just: try 0.1; if the loss goes up, try 0.01; if it barely moves, try 1. **This is one of the places where machine learning is much less scientific than it looks, and it is fine to say so.**
 
 **"What if the valley has two bottoms?"**
-🤔 **Nobody fully agrees about this and it is one of the honest open questions in the field.** For today's problem — squared error, one straight line — the valley provably has exactly one bottom, so descent always finds it. For a neural network, the surface has an enormous number of bottoms, and gradient descent finds whichever one it happens to walk into. The classical worry was that this would be a disaster. **In practice it usually is not**, and the explanations offered are contested: some say most bottoms in very high dimensions are about equally good; some say the real obstacles are flat regions rather than wrong bottoms; some say the noise in mini-batch training shakes you out of bad ones. **All of those are partly true and none of them is a complete answer.** A student who asks this has asked a research question, and they should be told so.
+🤔 **Nobody fully agrees about this and it is one of the honest open questions in the field.** For today's problem — squared error, one straight line — the valley provably has exactly one bottom, so descent with a sensible learning rate finds it. For a neural network, the surface has an enormous number of bottoms, and gradient descent finds whichever one it happens to walk into. The classical worry was that this would be a disaster. **In practice it usually is not**, and the explanations offered are contested: some say most bottoms in very high dimensions are about equally good; some say the real obstacles are flat regions rather than wrong bottoms; some say the noise in mini-batch training shakes you out of bad ones. **All of those are partly true and none of them is a complete answer.** A student who asks this has asked a research question, and they should be told so.
 
 **"Why square the errors instead of just ignoring the minus signs?"**
 You could — that is a real loss function and it is called mean absolute error. Squaring has two advantages here: it punishes big misses much harder, which is usually what you want, and **its slope is much better behaved.** Absolute error has a corner at zero where the slope suddenly flips from −1 to +1 with nothing in between, which makes descent jumpy. Squared error's slope changes smoothly. **Choosing a loss is a real decision and Week 14 makes a different one, on purpose, for probabilities.**
@@ -1634,7 +1634,7 @@ Then the sign, with two sentences and no formula:
 
 ### If the student is flying
 
-1. **Predict, then measure.** They have `x × x → 2 × x` and `x × x × x → 3 × x × x`. **Predict the rule for `x⁴`, then check it by nudging at x = 2.** (Prediction `4 × x³` = 32; the nudge gives 32.000008.) Then `x⁵` at x = 2. (`5 × x⁴` = 80.) **This is exactly how the rules were discovered.**
+1. **Predict, then measure.** They have `x × x → 2 × x` and `x × x × x → 3 × x × x`. **Predict the rule for `x⁴`, then check it by nudging at x = 2.** (Prediction `4 × x³` = 32; the nudge gives 32.000008.) Then `x⁵` at x = 2. (`5 × x⁴` = 80.) **Predict, measure, check is a perfectly good way to discover a rule.**
 2. **Find the edge of stability.** On the ten-student loss, bisect between 0.026 (wanders off) and 0.03 (explodes) and find where the behaviour changes. Then ask **why** there is a hard edge rather than a gradual decline. (Each step multiplies the distance-to-the-answer by `1 − lr × 77`. When that multiplier is bigger than 1 in size, you diverge — which happens at `lr = 2 ÷ 77 = 0.02597`. **A student who derives that number has done something genuinely impressive.**)
 3. **The wobbly data.** Run `noisy.py` from the Answer Key. Best `w` is 7.99, best loss **8.9106**. Ask what 8.91 is, and whether more steps would ever reduce it. (No. It is the part of the marks that hours cannot explain.)
 4. **Two knobs.** Let `b` be unknown as well as `w`, so the model is `w × hours + b` and there are **two** slopes to measure. Ask them to nudge each knob separately, get two numbers, and step both. **They will have invented the gradient**, three weeks early, and Week 15 will be a victory lap. Do not push them to write the loop; the insight is the prize.
@@ -1923,11 +1923,11 @@ The last line of the file also prints `the exact answer, by algebra: 7.993247`.
 
 > **Derivative** — the slope at a point, written down as a rule that works at every point. For `x × x` it is `2 × x`, and we found that by measuring, not by being told.
 
-> **Numerical gradient** — a slope measured by nudging the input a tiny bit each way and dividing. Slow, needs no cleverness, and never lies. We will use it in Week 19 to check something we cannot check any other way.
+> **Numerical gradient** — a slope measured by nudging the input a tiny bit each way and dividing. Slow, needs no cleverness, and honest while the nudge is sensible. We will use it in Week 19 to check something we cannot check any other way.
 
 > **Learning rate** — how big a step you take downhill. Your stride length. 0.3 works on one valley and destroys another.
 
-> **Gradient descent** — measure the slope, step the opposite way, repeat. This is what has been inside `fit()` all year.
+> **Gradient descent** — measure the slope, step the opposite way, repeat. This is what sits inside `fit()` for logistic regression and for every neural network.
 
 **Bug Log — both entries are silent.**
 

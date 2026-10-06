@@ -40,7 +40,7 @@ Last week you fed both of them to a model. **Here is the only thing you need to 
 
 No. It has never been outside. It has never eaten a pizza. All it can see is that the bottom column's numbers run up to 59 and the top column's numbers stop at 14.40. **Four times bigger.**
 
-And that matters, because there is a whole family of methods that work by measuring **how far apart two rows are** — nearest neighbours, which you built two years ago, and the model you used last week. If one column's numbers are four times bigger than another's, that column does four times as much of the shouting.
+And that matters, because there is a whole family of methods that work by measuring **how far apart two rows are** — nearest neighbours, which you built two years ago — and models like the one you used last week, which are nudged to keep their weights small (Week 13 explains how). Either way, if one column's numbers are four times bigger than another's, that column tends to do most of the shouting.
 
 **Not because it matters more. Because somebody chose to write it down in months instead of years.**
 
@@ -194,7 +194,7 @@ There is one new piece of maths this week and you already have every operation i
 
 > **"On this list of numbers, how far from the average is a typical value?"**
 
-That is all it is. It is an average distance. And we are going to compute one, by hand, on five numbers.
+That is all it is. It is a typical distance. And we are going to compute one, by hand, on five numbers.
 
 **The five numbers, all week: 2, 4, 6, 8 and 100.** Four small ones and a monster.
 
@@ -255,6 +255,8 @@ You squared everything in step 3, so 1448 is in "squared" units — far too big 
 > **💡 Check this yourself with a calculator, right now.** Type `1448`, press the `√` button. You should see `38.05259518...`. **That is the number the machine is going to print in fifteen minutes, and you just got it first.**
 
 **38.0526 is the standard deviation.** It is the typical distance from 24. It looks far too big next to 2, 4, 6 and 8 — and it should, because the 100 really is out there.
+
+> **Why not just average the plain distances?** Ignoring the signs, 22, 20, 18, 16 and 76 average to 152 ÷ 5 = 30.4, not 38.05. Squaring makes big gaps count extra, so the monster pulls the standard deviation up more. Both are "typical"; the standard deviation is the one every library uses.
 
 > **🔢 The maths, slowly:** five operations, in this order, and no others. **Subtract** the mean from each value. **Square** each answer. **Add** them up. **Divide** by how many values there are. **Square-root** it. Write those five words down the side of your page and point at the one you are on.
 
@@ -337,7 +339,7 @@ scaler.scale_: [38.05259518]
 
 **24 and 38.05259518.** Your page says 24 and 38.0526. **You did, by hand, exactly what a machine-learning library does — and you got it right.**
 
-> **⚠️ Watch out:** `scale_` is a slightly annoying name for the standard deviation. It is called that because `MinMaxScaler` also has a `scale_` and it means something different there. Read it as *"the thing I divide by"*.
+> **⚠️ Watch out:** `scale_` is a slightly annoying name for the standard deviation. Every scaler in scikit-learn has a `scale_`, and the meaning differs: on `MinMaxScaler` it is `1 ÷ range`, a multiplier. For `StandardScaler`, read it as *"the thing I divide by"*.
 
 ### Step 2 — apply the recipe
 
@@ -993,7 +995,7 @@ Work out what happens to the two ranges first: 0–59 months becomes 0–4.9 yea
 
 Compare each range to the ruler it lives on, not to the other range.
 
-> **Hint:** min-max gave those four values **6% of its ruler** (0 to 1). The z-score gave them **about 5% of a ruler that runs from −0.58 to +2.00, a span of 2.58** — so about 6% again. It is not the size of the gap; it is that **min-max spent its whole 0-to-1 budget getting one value to 1.0**, and everybody else had to share what was left. Removing the 100 makes min-max the *nicer*-looking ruler: `2, 4, 6, 8` becomes `0, 0.3333, 0.6667, 1`. **Nothing about the recipes changed. Only the data did.**
+> **Hint:** min-max gave those four values **6% of its ruler** (0 to 1). The z-score gave them **their span of 0.16 on a ruler that runs from −0.58 to +2.00, a span of 2.58** — so about 6% again. It is not the size of the gap; it is that **min-max spent its whole 0-to-1 budget getting one value to 1.0**, and everybody else had to share what was left. Removing the 100 makes min-max the *nicer*-looking ruler: `2, 4, 6, 8` becomes `0, 0.3333, 0.6667, 1`. **Nothing about the recipes changed. Only the data did.**
 
 **3. Ordinal encoding of `weather` gets the order right and the spacing wrong. Is that ever an acceptable trade?**
 
@@ -1018,7 +1020,7 @@ Think about how many rows you have and how many columns each choice costs.
 ### Trick 2 — "scaling changes the data, so it changes the answer"
 
 **Wrong:** *"If I move all the numbers, the model will decide different things."*
-**Right:** *"Scaling does not change any ordering and it does not change which rows are alike. 2 is still smallest and 100 still biggest, on both rulers. What changes is the size of the numbers the weights get multiplied by."*
+**Right:** *"Scaling does not change the order of the values within a column. 2 is still smallest and 100 still biggest, on both rulers. What changes is the size of the numbers the weights get multiplied by — and, when several columns are compared at once, how much each column counts towards the distance between two rows. That second effect is the reason to scale."*
 
 Look at the three rows on the board. All three are in the same order, left to right. **Scaling is a change of units, not a change of facts.**
 
@@ -1040,7 +1042,7 @@ A rule is easier to remember than an idea, which is why this one is so tempting.
 
 ## 🌍 Where You've Seen This
 
-1. **Every exam mark you have ever been given as a grade boundary.** *"Two marks above the class average"* is a raw distance; *"in the top 5%"* is a z-score in a costume. Standardized test scores — the ones that let you compare a paper sat this year with one sat last year — are literally this arithmetic, and the "typical gap" is why a mark of 62 can be a good year or a bad one.
+1. **Every exam mark you have ever been given as a grade boundary.** *"Two marks above the class average"* is a raw distance; *"in the top 5%"* is a close cousin of a z-score (a rank instead of a distance). Standardized test scores — the ones that let you compare a paper sat this year with one sat last year — are literally this arithmetic, and the "typical gap" is why a mark of 62 can be a good year or a bad one.
 2. **A phone's screen brightness slider.** Genuinely 0 to 1 with hard limits at both ends: min-max is the right ruler and nothing can escape the box. **This is the honest use case**, and it is why min-max exists at all.
 3. **Photo editing.** Pixel brightness runs 0 to 255 by definition, so every image tool min-maxes into 0-to-1 without a second thought. When you drag "exposure" past the end and the sky goes flat white, you have just watched a value get clipped at the top of a min-max box.
 4. **Any "compare these two players" statistic in sport.** Goals per game and pass accuracy live on wildly different rulers, so every comparison chart you have seen standardizes first, whether or not it says so.
@@ -1078,7 +1080,7 @@ still grey — you open it in Week 12.*
 ## 🔑 Remember This
 
 - **A model multiplies each column by one weight and adds up, so the size of your numbers is not neutral.** A column measured in months shouts over a column measured in kilometres for no better reason than the unit somebody picked.
-- **A standard deviation is an average distance from the average.** Five operations in this order: **subtract, square, add, divide, square-root.** And you square because averaging the raw distances gives exactly zero, every time, for every list — that is what a mean is.
+- **A standard deviation is a typical distance from the average** (squaring makes big gaps count extra, so it comes out a little bigger than the plain average gap). Five operations in this order: **subtract, square, add, divide, square-root.** And you square because averaging the raw distances gives exactly zero, every time, for every list — that is what a mean is.
 - **A z-score is (value − mean) ÷ standard deviation**, and it turns any column into *"how many typical steps from average"*. After standardizing, every column has mean 0 and typical step 1, which is what "same ruler" means. `(8 − 24) ÷ 38.0526 = −0.4205`.
 - **Min-max squashes into 0 to 1 — and one freak value squashes everybody else with it.** `2, 4, 6, 8` became `0.0000, 0.0204, 0.0408, 0.0612`. And a new bigger value breaks straight out of the box: `150 → 1.5102`, with no error and no warning. **Default to the z-score; min-max needs a reason you can say out loud.**
 - **One-hot for categories, ordinal only for real ladders.** One-hot makes one yes-or-no column per value and invents no order. Ordinal makes one integer column and **does** invent an order — use it only when you can write the chain with less-than signs.

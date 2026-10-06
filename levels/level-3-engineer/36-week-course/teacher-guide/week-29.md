@@ -31,7 +31,7 @@ By the end of the lesson the student can:
 1. **Compute the variance of a small column by hand**, as the average squared distance from the mean: 4, 6, 8, 10, 12 → distances −4, −2, 0, 2, 4 → squares 16, 4, 0, 4, 16 → **40**, and 40 ÷ 4 = **10.0**.
 2. **Find a principal component for five points** by trying candidate axes at 30° steps, projecting by hand, and keeping the widest — and say how far off the grid's answer was from PCA's.
 3. **Read `explained_variance_ratio_`** and say how many components are needed to keep 80% of the spread. For the wine data the answer is **5**.
-4. **Reconstruct data from a few components and measure what was lost, in the original units** — two components miss a typical wine by **2.2550** when a typical wine sits only **3.5180** from the middle.
+4. **Reconstruct data from a few components and measure what was lost, in the table's own units** — two components miss a typical wine by **2.2550** when a typical wine sits only **3.5180** from the middle.
 
 Observable evidence: page 29.2 with the four steps of variance written out and `40 ÷ 4 = 10.0`; page 29.3 with one candidate angle's five projected scores and its spread, matching the class table; the thirteen-row explained-variance table with a running total column and **5** circled at `0.8016`; and a sentence of the form *"two components keep 55.4% of the spread and miss a typical wine by 2.2550, which is 64% of a typical distance from the middle."*
 
@@ -222,7 +222,7 @@ var(hours studied) + var(hours slept) = 10.0 + 8.5 = 18.5
 
 `explained_variance_ratio_` is the optimistic framing. Here is the honest one.
 
-> **Reconstruction error** — squash the data down to a few components, then push it back up to the original columns, and measure how far each rebuilt point is from the real one. **That distance is the information you threw away, expressed in the original units.**
+> **Reconstruction error** — squash the data down to a few components, then push it back up to the original columns, and measure how far each rebuilt point is from the real one. **That distance is the information you threw away, expressed in the table's own units.**
 
 Squash the five students to **one** number each and rebuild:
 
@@ -310,7 +310,7 @@ proanthocyanins                 0.313
 nonflavanoid_phenols           -0.299
 ```
 
-**Every one of the top four is a phenolic compound, and all four pull the same way.** So PC1 is fairly read as **"total phenolic richness"** — one end of the axis is chemically rich wine, the other end is thin wine. `nonflavanoid_phenols` is negative, meaning it goes the *other* way from the rest, which is a real chemical fact about wine and not a bug.
+**The top four all pull the same way, and they are all phenol measures or close relatives: flavanoids, total phenols and proanthocyanins are phenolic compounds, and od280/od315 is a light-absorbance ratio that tracks them.** So PC1 is fairly read as **"total phenolic richness"** — one end of the axis is chemically rich wine, the other end is thin wine. `nonflavanoid_phenols` is negative, meaning it goes the *other* way from the rest, which is a real chemical fact about wine and not a bug.
 
 ```text
 PC2: which original columns pull hardest
@@ -460,7 +460,7 @@ three is black, as it has been since Week 12.*
 
 **One thing to notice, so you can answer if asked.** `data` is lit beside `representation`, and the
 reason is the reconstruction error rather than the projection. Re-describing a row in two numbers is
-representation. **Measuring what the re-description destroyed, in the original units, is a fact about the
+representation. **Measuring what the re-description destroyed, in the table's own units, is a fact about the
 data** — and it is the half of PCA that nearly every tutorial leaves out.
 
 ---
@@ -1016,7 +1016,7 @@ for a in range(0, 180, 30):
 
 *The variances of the two original columns.*
 
-> "**Which means every single one of our six candidates beat 'hours slept' on its own, and two of them beat 'hours studied'.** There was a better axis available than either column we were handed, and nobody had to collect any new data."
+> "**Which means three of our six candidates (0, 30 and 60 degrees) beat 'hours slept' on its own, and two of them (30 and 60) beat 'hours studied'.** There was a better axis available than either column we were handed, and nobody had to collect any new data."
 
 **Step 3 — what PCA says (4 minutes).**
 
@@ -1151,7 +1151,7 @@ alcalinity_of_ash   -0.0047
 
 > "**It is proline. 0.9998 of proline and a rounding error.** Twelve chemical measurements handed in, twelve discarded, no error message, and a 99.81% that looks like a triumph.
 >
-> **And you saw this exact failure last week.** Unscaled k-means sorted the wine into proline bands. Unscaled PCA made proline its first axis. **Same cause — one column with a spread of 314.91 while the rest are around 1 — same fix.** Scale first. Always."
+> **And you saw this exact failure last week.** Unscaled k-means sorted the wine into proline bands. Unscaled PCA made proline its first axis. **Same cause — one column with a spread of 314.91 while the next biggest is 14.28 and most of the rest are under 3 — same fix.** Scale first. Always."
 
 ---
 
@@ -1239,8 +1239,8 @@ Every message below came from running a broken version of this week's actual cod
 | **No error. `explained_variance_ratio_[0]` is 0.9981 and you are thrilled.** | Nothing crashed. Your first axis is your biggest column. | No scaling, so the widest-ranging column became PC1 all by itself. | `StandardScaler` first. **The check that finds it: print `pca.components_[0]` with the column names. If one loading is 0.9998 and the rest are under 0.02, you have made an expensive copy of one column.** |
 | **No error. `explained_variance_` does not add up to 1 and you assume something is broken.** | Nothing crashed. You printed the wrong one of two very similar names. | `explained_variance_` holds actual spreads; `explained_variance_ratio_` holds shares. | Print both once and keep the difference: `[4.7324 2.5111]` against `[0.3620 0.1921]`. **The shares add to 1; the spreads add to roughly the number of columns.** |
 | **No error. Your whole plot is mirrored compared with a friend's.** | Nothing crashed. The sign of a component is arbitrary. | Different sklearn version, or a different random seed in a solver. | **Nothing to fix.** `(0.7359, 0.6771)` and `(−0.7359, −0.6771)` are the same axis read from opposite ends. **What *is* meaningful is the signs *within* one component relative to each other.** |
-| **No error. Your spread numbers are all four times too small.** | Nothing crashed. You divided by the wrong thing. | Dividing by `n` where sklearn divides by `n − 1`, or forgetting to divide at all. | With five points, divide the sum of squares by **4**. **And the diagnostic: if your number is exactly 5/4 of sklearn's, you divided by 5.** |
-| **No error. Your spread is much too small for every angle.** | Nothing crashed. You forgot to centre. | Projecting the raw points instead of the centred ones. | Subtract the column means first. **Skipping the centring is the single most common error of this week, and the fingerprint is that every angle gives a huge number dominated by where the cloud sits rather than how big it is.** |
+| **No error. Your spread numbers are all 20% too small.** | Nothing crashed. You divided by the wrong thing. | Dividing by `n` where sklearn divides by `n − 1`, or forgetting to divide at all. | With five points, divide the sum of squares by **4**. **And the diagnostic: if your number is exactly 4/5 (0.8 times) sklearn's, you divided by 5.** |
+| **No error. Your spread is much too big for every angle.** | Nothing crashed. You forgot to centre. | Projecting the raw points instead of the centred ones. | Subtract the column means first. **Skipping the centring is the single most common error of this week, and the fingerprint is that every angle gives a huge number dominated by where the cloud sits rather than how big it is.** |
 
 ### How to teach debugging without giving the answer
 
@@ -1416,7 +1416,7 @@ its spread: 18.2812
 
 1. **Find a better angle than 30° by hand.** Try 40°, 45°, 50° and report the spreads. The real numbers: **41° → 18.2668, 42° → 18.2791, 43° → 18.2804, 44° → 18.2707.** **The peak is at 43°, and going past it makes things worse again** — which is a hill, and they met hills in Week 12.
 2. **Compute PC2's spread and check the total.** PC2 is at right angles to PC1, so at `42.62 + 90 = 132.62°`, and its spread is **0.2188**. Then `18.2812 + 0.2188 = 18.5000 = 10.0 + 8.5`. **The total spread is conserved, and proving it yourself is much better than being told.**
-3. **Rebuild one point from PC1 alone, by hand.** The last student's score is `5.6520`. Multiply the direction by it: `5.6520 × 0.7359 = 4.1592` and `5.6520 × 0.6771 = 3.8269`. Add the means back: `(4.1592 + 8, 3.8269 + 7) = (12.1592, 10.8269)`. **The real point was (12, 11), so the miss is `√(0.1592² + 0.1731²) = 0.2351`** — and that matches `inverse_transform` exactly.
+3. **Rebuild one point from PC1 alone, by hand.** The last student's score is `5.6520`. Multiply the direction by it: `5.6520 × 0.7359 = 4.1593` and `5.6520 × 0.6771 = 3.8270`. Add the means back: `(4.1593 + 8, 3.8270 + 7) = (12.1593, 10.8270)`. **The real point was (12, 11), so the miss is `√(0.1593² + 0.1730²) = 0.2352`** — and that matches `inverse_transform`'s `0.2351` to within the rounding of the hand values.
 4. **Break the cloud.** Move one point so the cloud is round instead of long — say change `(12, 11)` to `(12, 3)` — and re-run. **The two explained-variance shares come out much closer together, because there is no longer a clearly widest direction.** Then the good question: *"when is PCA useless?"* **When your data is already round.**
 5. **The curse of dimensionality, measured.** The script is in the Answer Key under page 29.7. **Find the number of columns at which the contrast ratio first falls below 1.0** — it is between 20 and 100 — and say in plain words what that means for k-means.
 6. **PCA on the 8×8 digits from Term 3.** `load_digits()` has 64 columns. How many components for 80% of the spread? **Then look at `pca.components_[0]` reshaped to 8×8 as an image** — it is a recognisable blob of "where digits have ink". A genuinely beautiful two-line experiment and it needs nothing new.
@@ -1457,7 +1457,7 @@ Three honest reasons, and the third is the one that matters most.
 
 **Because distance stops working in high dimensions.** The contrast table: with 500 columns the furthest pair is 21% further apart than the closest. **Cutting to a handful of columns brings distance back to life, and everything k-means does is distance.**
 
-**And because of the shape of your problem.** With 178 rows and 13 columns, PCA is mostly a convenience. With **300 rows and 20,000 columns** — which is what genetic data looks like — you cannot fit any model at all without cutting the columns down first, and then PCA is not a nicety, it is the only way in. **The value of dimensionality reduction depends entirely on how many rows you have per column, and 178 rows for 13 columns is comfortable.**
+**And because of the shape of your problem.** With 178 rows and 13 columns, PCA is mostly a convenience. With **300 rows and 20,000 columns** — which is what genetic data looks like — an ordinary model has far more unknowns than rows and cannot be fitted sensibly without cutting the columns down first (or using a regularised model, which is a different answer), and then PCA is not a nicety, it is one of the main ways in. **The value of dimensionality reduction depends entirely on how many rows you have per column, and 178 rows for 13 columns is comfortable.**
 
 **"Could PCA throw away exactly the thing I needed?"**
 
@@ -1519,7 +1519,7 @@ What to tell a 14-year-old, out loud: **"there is no right number. But whatever 
 
 **Cut:** the thirteen wine components entirely. Do the five points and stop. **Objectives 1, 2 and 4 all live in the five points.**
 
-**Cut:** six angles to three — `0°`, `45°`, `90°`. **45° wins with a spread of 24.3333**, close enough to 42.62° that the punchline lands, and 45°'s direction is one number, 0.7071, used four times.
+**Cut:** six angles to three — `0°`, `45°`, `90°`. **45° wins with a spread of 18.2500** (against 10.0000 at 0° and 8.5000 at 90°), close enough to 42.62° that the punchline lands, and 45°'s direction is one number, 0.7071, used four times.
 
 **Cut:** the ruler method. Arithmetic only, from the direction numbers on the board.
 
@@ -1571,10 +1571,10 @@ None of these need syntax from a later week.
 
 1. **Hunt for the best angle by hand** (Variation-harder 1): 41° → 18.2668, 42° → 18.2791, **43° → 18.2804**, 44° → 18.2707. **They will find the peak and overshoot it, which makes it a hill — and they met hills in Week 12.**
 2. **Prove the total spread is conserved** (Variation-harder 2): `18.2812 + 0.2188 = 18.5000 = 10.0 + 8.5`. **Working that out yourself is much better than being shown it, and it is what turns PCA from magic into a rotation.**
-3. **Rebuild a point by hand** (Variation-harder 3) and match `inverse_transform` to four decimals: `(12.1592, 10.8269)`, miss `0.2351`.
+3. **Rebuild a point by hand** (Variation-harder 3) and match `inverse_transform` to four decimals: `(12.1592, 10.8270)`, miss `0.2351`.
 4. **Make the cloud round and watch PCA become useless** (Variation-harder 4). **The good question is "when is PCA worth nothing?" and the answer is "when there is no widest direction".**
 5. **The curse of dimensionality, measured** (page 29.7). The contrast ratio crosses below 1.0 between 20 and 100 columns. **Then: what does that mean for k-means?** Every assignment becomes a coin toss between near-identical distances.
-6. **PCA on the 64 pixels of `load_digits()`** (Variation-harder 6). How many components for 80%? And **`pca.components_[0].reshape(8, 8)` drawn as an image is a picture of "where digits put ink"**. Two lines, and it connects Term 4 straight back to Term 3.
+6. **PCA on the 64 pixels of `load_digits()`** (Variation-harder 6). How many components for 80%? And **`pca.components_[0].reshape(8, 8)` drawn as an image is a picture of which pixels rise together and which fall against them (positive and negative patches, not a plain "where the ink is" blob)**. Two lines, and it connects Term 4 straight back to Term 3.
 
 ### If the student won't engage today
 
@@ -1810,9 +1810,9 @@ print("saved wine_2d.png")
 saved wine_2d.png
 ```
 
-**What the plot shows, and what to expect them to describe.** A single elongated cloud running left-to-right, wider than it is tall, with **no obvious gaps in it.** PC1 runs from about −4.3 to +4.3 and PC2 from about −3.9 to +3.5. **There are hints of density — the cloud is a little lumpy — but nothing a person would confidently draw a line through.**
+**What the plot shows, and what to expect them to describe.** A single connected cloud, wider than it is tall and roughly V-shaped, with **no clean gaps in it** (a student may well notice three loose lobes, which is fair). PC1 runs from about −4.3 to +4.3 and PC2 from about −3.9 to +3.5. **There are hints of density — the cloud is a little lumpy — but nothing a person would confidently draw a line through.**
 
-**And that is exactly the honest finding, so do not treat it as a failure.** Next week the same plot gets coloured by cluster and the three groups appear cleanly, which is a much better demonstration *because* the uncoloured version looked like one blob. **A student who writes "I can't see three groups in this" has looked properly.**
+**And that is exactly the honest finding, so do not treat it as a failure.** Next week the same plot gets coloured by cluster and the three groups appear cleanly, which is a much better demonstration *because* the uncoloured version has no clean gaps. **A student who writes "I can't see three separate groups in this" has looked properly, and so has one who notices three loose lobes but says they can't be sure where the edges are.**
 
 **Marking notes.** **The percentages must be in the axis labels: `36.2%` and `19.2%`.** This is the entire point of the page and it is the habit that stops a PCA plot lying to its reader. **Second thing to check: does their description match what is on the screen?** A student who reports "three clear clusters" has written what they expected rather than what they saw.
 
@@ -1913,7 +1913,7 @@ Two responses, and the student should name both: **cut the columns down first** 
 
 *(A note on the `d = 2` row, in case a student asks: 533 is enormous because with 150 points crammed into a unit square, two of them land almost on top of each other, so `min` is nearly zero. That is a genuine property of low dimensions, not a glitch — and it is exactly the thing that stops happening as columns are added.)*
 
-**Marking notes.** **The two numbers are the easy half; the comparison is the page.** `2.2550` and `1.3258` earn a pass. **Full marks needs a yardstick** — 3.5180, or a per-column version, or anything defensible — and the division done. **A student who invents their own yardstick (say, comparing the miss against the spread of a single standardised column, which is 1.0) has done something better than the assignment asked, and should be told so.** On the stretch: the reading matters more than the table, and "everything is the same distance from everything, so 'nearest' stops meaning anything" is the sentence you are looking for.
+**Marking notes.** **The two numbers are the easy half; the comparison is the page.** `2.2550` and `1.3258` earn a pass. **Full marks needs a yardstick** — 3.5180, or a per-column version, or anything defensible — and the division done. **A student who invents their own yardstick (say, a per-column version: the miss divided by √13 ≈ 3.61, about 0.63 per column, compared against the spread of a single standardised column, which is 1.0 — comparing the raw 13-column miss straight against 1.0 would mix a 13-column distance with a one-column spread) has done something better than the assignment asked, and should be told so.** On the stretch: the reading matters more than the table, and "everything is the same distance from everything, so 'nearest' stops meaning anything" is the sentence you are looking for.
 
 ### Answers to every question posed in the lesson
 
@@ -1943,7 +1943,7 @@ Two responses, and the student should name both: **cut the columns down first** 
 
 **Live-code step 2 — "what are 120° and 150° doing?"** **Looking across the cloud rather than along it** — camera one, the blob. Spreads of 1.08 and 1.83 against 17.42, from the same five points, purely by standing somewhere else.
 
-**Live-code step 2 — "0° gave 10.0 and 90° gave 8.5. What are those two numbers?"** **The variances of the two original columns.** Every one of the six candidates beat "hours slept"; two beat "hours studied". **There was a better axis available than either column we were handed.**
+**Live-code step 2 — "0° gave 10.0 and 90° gave 8.5. What are those two numbers?"** **The variances of the two original columns.** Three of the six (0°, 30°, 60°) beat "hours slept"; two (30°, 60°) beat "hours studied". **There was a better axis available than either column we were handed.**
 
 **Live-code step 3 — "we said 30°, it says 42.62°. Were we wrong?"** **No — we were coarse.** Best of six, 12.62° short, and it cost `18.2812 − 17.4192 = 0.8620` of spread.
 
@@ -1971,7 +1971,7 @@ Two responses, and the student should name both: **cut the columns down first** 
 
 **Variation-harder 2 — PC2's spread and the total.** PC2 sits at `42.62 + 90 = 132.62°` with spread **0.2188**, and `18.2812 + 0.2188 = 18.5000 = 10.0 + 8.5`. ✅
 
-**Variation-harder 3 — rebuild (12, 11) by hand.** Score `5.6520`. `5.6520 × 0.7359 = 4.1592`, `5.6520 × 0.6771 = 3.8269`. Add the means: `(12.1592, 10.8269)`. Miss `√(0.1592² + 0.1731²) = √(0.02534 + 0.02996) = √0.05530 = 0.2352` — matching `inverse_transform`'s `0.2351` to three decimals, the difference being rounding in the hand values.
+**Variation-harder 3 — rebuild (12, 11) by hand.** Score `5.6520`. `5.6520 × 0.7359 = 4.1593`, `5.6520 × 0.6771 = 3.8270`. Add the means: `(12.1593, 10.8270)`. Miss `√(0.1593² + 0.1730²) = √(0.02538 + 0.02993) = √0.05531 = 0.2352` — matching `inverse_transform`'s `0.2351` to three decimals, the difference being rounding in the hand values.
 
 **Variation-harder 4 — make the cloud round.** The two explained-variance shares come out much closer together, because there is no clearly widest direction. **PCA is worth nothing on data that is already round**, and knowing when a tool has nothing to offer is a real skill.
 
@@ -1981,6 +1981,6 @@ Two responses, and the student should name both: **cut the columns down first** 
 
 ## 🔮 Next Week Preview
 
-Next week is the Term 4 lab, and it is where the last two weeks meet. The student has clusters from Week 28 and a map from Week 29, and the job is to turn them into something a human being could act on: **a set of named groups, each name defended out loud from a table of feature means in the original units, with two independent pieces of evidence for how many groups there are.** The second piece of evidence is new: the **silhouette score**, which for one point is two averages and a subtraction — how far you are from your own clustermates, against how far you are from the nearest other cluster — and for point C on last week's six points it works out to `(7.8943 − 1.7071) ÷ 7.8943 = 0.7838`. Unlike inertia it does *not* automatically improve as `k` grows, so it can actually choose. On the wine data it peaks at **0.2849 at k = 3**, and the elbow's drop ratio of `381.1 ÷ 97.2 = 3.9` points at 3 as well — **two independent methods agreeing, which is the evidence you cite.** Then the honest part: `0.2849` is a *modest* score, the weakest of the three clusters has a mean silhouette of only **0.1774** with seven bottles scoring below zero, and the whole pipeline run on pure noise still returns three clusters with a silhouette of **0.0776**. Finally the clusters and components go to work as columns in a supervised model, and the answer is properly interesting: with 124 labelled training rows they buy **nothing at all** (54 of 54 either way), and with only 30 labelled rows they take the model from **141 of 148 to 145 of 148**.
+Next week is the Term 4 lab, and it is where the last two weeks meet. The student has clusters from Week 28 and a map from Week 29, and the job is to turn them into something a human being could act on: **a set of named groups, each name defended out loud from a table of feature means in the table's own units, with two independent pieces of evidence for how many groups there are.** The second piece of evidence is new: the **silhouette score**, which for one point is two averages and a subtraction — how far you are from your own clustermates, against how far you are from the nearest other cluster — and for point C on last week's six points it works out to `(7.8943 − 1.7071) ÷ 7.8943 = 0.7838`. Unlike inertia it does *not* automatically improve as `k` grows, so it can actually choose. On the wine data it peaks at **0.2849 at k = 3**, and the elbow's drop ratio of `381.1 ÷ 97.2 = 3.9` points at 3 as well — **two independent methods agreeing, which is the evidence you cite.** Then the honest part: `0.2849` is a *modest* score, the weakest of the three clusters has a mean silhouette of only **0.1774** with seven bottles scoring below zero, and the whole pipeline run on pure noise still returns three clusters with a silhouette of **0.0776**. Finally the clusters and components go to work as columns in a supervised model, and the answer is properly interesting: with 124 labelled training rows they buy **nothing at all** (54 of 54 either way), and with only 30 labelled rows they take the model from **141 of 148 to 145 of 148**.
 
 **To prep early:** three things. **One — index cards and a thick marker pen, at least six of each.** The activity is a Naming Ceremony: each cluster's name goes on a card, gets defended out loud from the feature-means table, and **a name nobody can defend gets physically torn up and rewritten.** The tearing matters and it needs card, not paper. **Two — the SIX POINTS sheet from Week 28 comes down at the end of next week**, and its last job is the silhouette-by-hand calculation, so leave it up and leave the final centroids `(1.6667, 2.0)` and `(8, 8)` written on it. **Three — check `from sklearn.metrics import silhouette_score, silhouette_samples, adjusted_rand_score` imports tonight**, and that `silhouette_score` on the six points with labels `[0 0 0 1 1 1]` prints `0.8012`. All three ship inside scikit-learn, nothing downloads, but you want to have seen that number appear.

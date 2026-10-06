@@ -148,7 +148,7 @@ Biggest in each block: **9, 3, 3, 8**.
   3   8
 ```
 
-**Sixteen numbers became four, and the two loudest — the 9 and the 8 — both survived.** That is the deal. You throw away *exactly where* the strong response was and keep *that there was one*. It costs you position and buys you two things: the tensor gets four times smaller, so the next layer is four times cheaper, and the network stops caring whether an edge was at pixel 3 or pixel 4.
+**Sixteen numbers became four, and the two loudest — the 9 and the 8 — both survived.** That is the deal. You throw away *exactly where* the strong response was and keep *that there was one*. It costs you position and buys you two things: the tensor gets four times smaller, so the next layer is four times cheaper, and the network cares less about exactly where inside a block an edge was: pixel 4 or pixel 5 gives the same answer, as long as both sit in the same 2×2 block.
 
 **And the size check uses the same rule as a conv.** A 2-wide window jumping 2 on 4 squares: `(4 + 0 − 2) ÷ 2 + 1 = 1 + 1 = 2`. Say that out loud once — people expect pooling to have a rule of its own, and it does not.
 ### 5. Flatten, and the one number this whole week is for
@@ -544,7 +544,7 @@ the arithmetic, height and width, done separately:
 
 **The pool throws information away according to a rule *you* chose, before the network had any say: keep the biggest.** A stride-2 conv has weights, so it can **learn** what to keep.
 
-**Which is better?** Genuinely unsettled, and it has moved twice in the last fifteen years. Pooling has no weights, so it cannot overfit and costs nothing to store; it was in a famous network in 1998 and it is still in half the networks people build. Stride-2 convs let the network decide, and several influential papers around 2015 argued the pool was an unnecessary hand-designed step and got fine results without it. **Nobody can show you a decisive experiment.** When two designs give the same shapes and comparable results, the choice is an engineering preference, and the honest thing is to say so in your write-up rather than pretend it was forced.
+**Which is better?** Genuinely unsettled, and it has moved twice in the last fifteen years. Pooling has no weights, so it adds nothing to overfit with and costs nothing to store; it was in a famous network in 1998 and it is still in half the networks people build. Stride-2 convs let the network decide, and several influential papers around 2015 argued the pool was an unnecessary hand-designed step and got fine results without it. **Nobody can show you a decisive experiment.** When two designs give the same shapes and comparable results, the choice is an engineering preference, and the honest thing is to say so in your write-up rather than pretend it was forced.
 
 ### Worked Example 3 — Working backwards, and running out of picture
 
@@ -606,7 +606,7 @@ and then, on the next line:
 RuntimeError: Given input size: (16x1x1). Calculated output size: (16x0x0). Output size is too small
 ```
 
-**`8 → 6 → 3 → 1 → stop.`** So **an 8×8 picture supports exactly two pad-free conv-pool blocks, and the second one only just.** That is the arithmetical reason padding exists: without it, the picture evaporates and the network cannot be deep.
+**`8 → 6 → 3 → 1 → stop.`** So **an 8×8 picture supports only one complete pad-free conv-pool block: the second conv still fits (it leaves a 1×1), but the pool after it has nothing to work on.** That is the arithmetical reason padding exists: without it, the picture evaporates and the network cannot be deep.
 
 ---
 
@@ -740,7 +740,7 @@ Then the most interesting miss — somebody's **32** on the last line — got bu
 
 **2. Padding glues on zeros that nobody measured. Is that dishonest?**
 
-*Hint:* get both costs on the table before answering. **Padding costs you:** every border answer is partly computed from invented numbers, which is why you sometimes see a faint frame effect. **No padding costs you:** the corner pixel is in 1 window against a middle pixel's 9, and after two pad-free blocks an 8×8 is down to a single pixel. Which would you rather pay — and does the answer change if the interesting part of your picture is at the edge? Then the sharpest version: there *is* a third option (pad by repeating the edge pixel, or by mirroring), it is marginally better, and almost nobody uses it. Why?
+*Hint:* get both costs on the table before answering. **Padding costs you:** every border answer is partly computed from invented numbers, which is why you sometimes see a faint frame effect. **No padding costs you:** the corner pixel is in 1 window against a middle pixel's 9, and after one pad-free block and one more conv an 8×8 is down to a single pixel. Which would you rather pay — and does the answer change if the interesting part of your picture is at the edge? Then the sharpest version: there *is* a third option (pad by repeating the edge pixel, or by mirroring), it is marginally better, and almost nobody uses it. Why?
 
 **3. Every number in this week's code was a zero and every filter was random noise. So what was actually learned today?**
 
@@ -791,7 +791,7 @@ The same is true of every squash — sigmoid, tanh, ReLU. They are **element-by-
 
 1. **A photo app that says "this image is too small for this filter."** Somebody's stack needed a picture at least *n* pixels across, and *n* came out of exactly this division.
 2. **The "downsampling" line in a video call's settings.** Sending every other pixel is stride 2 on a picture — the picture is not smaller, you are looking at it half as often, which is why moving detail goes blocky first.
-3. **Pixelated thumbnails in a file browser.** Max pooling by another name: keep one number per block, throw the rest away. That is why you can still tell a beach from a face at 32 pixels.
+3. **Pixelated thumbnails in a file browser.** Pooling by another name (thumbnails usually average each block; max pooling keeps the biggest): one number per block, the rest thrown away. That is why you can still tell a beach from a face at 32 pixels.
 4. **A game console upscaling an old game.** Padding, in public: the edges of the frame have no neighbours, so something has to be invented there, and you can often *see* the frame effect on the outer few pixels.
 5. **"Input shape mismatch" in any machine-learning log at work.** Grown-up engineers get Figure 25.1 weekly, and they ask exactly your question: which of those two numbers did a person type?
 6. **The number of layers in a published network.** A 224×224 photo supports seven halvings; a 32×32 one supports five. A diagram with exactly five downsampling steps is not a taste decision — it is this division running out.

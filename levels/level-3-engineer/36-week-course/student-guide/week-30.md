@@ -1236,7 +1236,7 @@ has been since Week 12.*
 | **The one question it answers** | *"How do I know there are three clusters and not four?"* — you do not know from one number. The elbow said `381.1 ÷ 97.2 = 3.9` and the silhouette peaked at `0.2849` at `k = 3`: two votes, agreeing, and the modest score is the honest one — the clusters are real **and** they touch. |
 | **What it plugs into** | Weeks 28 and 29's k-means and PCA, both doing a job today instead of a demonstration. And Week 7's ablation discipline: adding the cluster ID as a feature is **one change, one measurement, one row** — which is how you found out it bought `54 of 54` (nothing) on 124 training rows and `141 → 145 of 148` on 30. |
 | **What carries forward** | Week 33 reuses the PCA scatter on reviews instead of wines. And Week 34's contract has to state, in writing, what a cluster label may and may not be used for — because by then somebody else is reading your names. |
-| **Spiral thread** | ⚖️ **Evaluation** and 🏷️ **Representation** — evaluation, because the negative control on pure noise (`0.1774`) is the only reason `0.2849` means anything at all. Representation, because a cluster ID and two components are **five new columns**, and this week you made them earn their place. |
+| **Spiral thread** | ⚖️ **Evaluation** and 🏷️ **Representation** — evaluation, because the negative control on pure noise (`0.0776`) is the only reason `0.2849` means anything at all. Representation, because a cluster ID and two components are **five new columns**, and this week you made them earn their place. |
 
 > **💡 Try this:** write your three cluster names in the margin beside stage five, and under each one the
 > three numbers from the feature-means table that justify it. Then cover the names and read only the

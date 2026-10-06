@@ -1192,12 +1192,12 @@ Notice that the formula moved the same way the sweep did — **make a miss cheap
 |---|---|---|
 | a | `InvalidParameterError: The 'scoring' parameter … Got 'auc' instead`, followed by a wall of sixty valid names — **and the right one is in the list** | `scoring="roc_auc"` |
 | b | **No error.** You get **accuracy**: `[0.986 0.986 0.986 0.985 0.985]`, five statements about the easy rows | `scoring="roc_auc"` |
-| c | **No error.** `shuffle=True` is missing, so the folds are cut in whatever order the rows happen to be stored in, and the sd comes out **0.0481** instead of 0.0867 | `StratifiedKFold(n_splits=5, shuffle=True, random_state=0)` |
+| c | **No error.** `shuffle=True` is missing, so the folds are cut in whatever order the rows happen to be stored in, and the sd comes out **0.0481** instead of 0.0867 (a different chop of the same data; the sd itself wanders from about 0.03 to 0.12 across shuffle seeds) | `StratifiedKFold(n_splits=5, shuffle=True, random_state=0)` |
 | d | **No error**, and **0.3000** — the area of the wrong side of the curve | `np.trapz(ys, xs)`; check that your two answers add to the square |
 | e | `AttributeError: 'list' object has no attribute 'mean'`. Plain Python lists cannot average themselves | `np.array(scores).mean()`, or collect with `cross_val_score` |
-| f | **No error**, and every fold's score is slightly too good, because the scaler's mean and standard deviation had already seen the held-out rows | put the scaler **inside** the `Pipeline` — Week 3 and Week 6's lesson in a new place |
+| f | **No error**, and every fold's score is slightly different, because the scaler's mean and standard deviation had already seen the held-out rows (in principle an optimistic leak; here the scores moved both ways and the mean fell by 0.0005) | put the scaler **inside** the `Pipeline` — Week 3 and Week 6's lesson in a new place |
 
-**A3(g).** **b, c and d** produce no error. **The hardest to find in somebody else's code is (f)** — leakage through a scaler applied before cross-validation. It is not on the list of three because it is *worse* than all of them: **nothing looks wrong, the numbers are only slightly too good, and there is no single line you can point at.** Of the three that are on the list, **(c) is the nastiest, because its symptom is a number that looks like an improvement.** A smaller error bar obtained by cutting the data more lazily is not a better measurement; it is a less honest one.
+**A3(g).** **b, c and d** produce no error. **The hardest to find in somebody else's code is (f)** — leakage through a scaler applied before cross-validation. It is not on the list of three because it is *worse* than all of them: **nothing looks wrong, the numbers are only slightly off, and there is no single line you can point at.** Of the three that are on the list, **(c) is the nastiest, because its symptom is a number that looks like an improvement.** A smaller error bar from one particular chop is not a better measurement, because the sd of five folds is itself noisy; fix the chop in advance.
 
 **A4.** i → **T** · ii → **P** · iii → **S** · iv → **R** · v → **Q**
 
@@ -1213,7 +1213,7 @@ Notice that the formula moved the same way the sweep did — **make a miss cheap
 
 **A6(a).** **Strip 4, at 0.2375.** All four are the same width, so the only thing that can make one bigger is **being taller** — strip 4 sits under the highest part of the curve, where the two heights are 0.90 and 1.00. **Width and height both matter, and here only height varies.**
 
-**A6(b).** **Strips 1 and 2 both change**, and **strip 1 changes most**: it goes from `(0.00 + 0.60) ÷ 2 × 0.25 = 0.0750` to `(0.00 + 0.90) ÷ 2 × 0.25 = **0.1125**`, and strip 2 from 0.1750 to `(0.90 + 0.80) ÷ 2 × 0.25 = **0.2125**`.
+**A6(b).** **Strips 1 and 2 both change, and by exactly the same amount, +0.0375 each** (strip 1 changes by the bigger fraction, +50% against +21%): strip 1 goes from `(0.00 + 0.60) ÷ 2 × 0.25 = 0.0750` to `(0.00 + 0.90) ÷ 2 × 0.25 = **0.1125**`, and strip 2 from 0.1750 to `(0.90 + 0.80) ÷ 2 × 0.25 = **0.2125**`.
 
 **New total:** `0.1125 + 0.2125 + 0.2125 + 0.2375 = **0.7750**`. **Moving one point up raised the area, which is exactly what a better-ranking model would do to an ROC curve.**
 
@@ -1346,7 +1346,7 @@ for COST_FN in [50, 500, 5000]:
 
 **The three winners are `0.12`, `0.10` and `0.01`.** Same model, same 1,000 probabilities, same nine thresholds, same 14 frauds, **three different answers** — because the only thing that changed was somebody's opinion about money. **Which of the three is *correct*? All of them, each under its own price list. None of them, without one.**
 
-Notice also that at `COST_FN = 50` **every single row of the £500 table has been divided by about ten**, and the *ordering* changed — which is the whole reason you cannot re-use last week's winner.
+Notice also that at `COST_FN = 50` **the miss part of every row is ten times smaller but the false-alarm part is unchanged**, so the rows with many false alarms barely shrank (7,210 became 4,510) and the *ordering* changed — which is the whole reason you cannot re-use last week's winner.
 
 **B4.** `folds.py`:
 
@@ -1457,7 +1457,7 @@ AUC = 0.628 +/- 0.087 (5-fold stratified CV)
 
 **Bug 3 — line `skf = StratifiedKFold(n_splits=5)`. A silent logic bug.** **`shuffle=True, random_state=0` is missing.** `shuffle=True` mixes the rows before chopping; `random_state=0` makes that mix reproducible.
 
-**Why a smaller `±` is worse news here:** without shuffling, the folds are cut in whatever order the rows happen to be stored in, so **neighbouring rows land in the same chunk and the five scores are less independent than they look.** The five measurements are therefore more alike than five genuinely independent measurements would be, and the `±` they produce **understates how much the number really moves.** A smaller error bar obtained by cutting the data in a lazier way is not a better measurement; it is a less honest one — and it would let you claim an improvement you cannot actually see.
+**Why a smaller `±` here is not good news:** nothing about the model improved. Without shuffling, the folds are cut in whatever order the rows happen to be stored in, which is a different chop of the same data (the mean also moved, 0.651 against 0.628). The sd of five folds resting on 14 frauds each is itself noisy: with shuffle seeds 1 to 7 it ranges from about 0.03 to 0.12. So a small `±` from one chop tells you nothing, and choosing the chop that gives the answer you like would be cheating. `shuffle=True` matters most when data is stored in some order (by date or by label), because then each chunk is a different kind of row.
 
 **The fix:** `StratifiedKFold(n_splits=5, shuffle=True, random_state=0)`.
 
@@ -1532,9 +1532,9 @@ at C = 2000: `0.02` costs `9 × 2000 + 2110 = **20110**`, `0.01` costs `6 × 200
 
 **T1.** A full-marks paragraph explains that the *disagreement itself* is the result.
 
-> *"The formula `t* = 10 ÷ (10 + 500) = 0.0196` assumes the probabilities are **honest** — that a row scored 0.02 really does turn out to be fraud about 2% of the time. A model whose probabilities can be read as real chances is called **calibrated**, and ours is not: they top out at 0.1774 and are squashed towards zero, because 99% of the training rows were legitimate. The sweep's answer, `t = 0.032`, is a measurement rather than an assumption, and it has its own problem: **the minimum rests on 14 frauds**, and one fraud crossing a line moves the cost by £500, which is more than the gap between several neighbouring rows. So neither is wrong, and both are shaky in different ways. In a report I would print both and say: 'the formula says 0.0196 and the 99-point sweep says 0.032; they disagree by about half again, which is evidence my probabilities cannot be read as literal chances.' **And if they had agreed, I would say that too — agreement between an assumption and a measurement is free evidence that the assumption holds.**"*
+> *"The formula `t* = 10 ÷ (10 + 500) = 0.0196` assumes the probabilities are **honest** — that a row scored 0.02 really does turn out to be fraud about 2% of the time. A model whose probabilities can be read as real chances is called **calibrated**, and I cannot tell whether ours is: the scores top out at 0.1774, which is what you would expect when fraud is 1.4% of rows, and they add up to 14.1 against 14 real frauds, so on average they are about right, but 14 frauds cannot check each score. The sweep's answer, `t = 0.032`, is a measurement rather than an assumption, and it has its own problem: **the minimum rests on 14 frauds**, and one fraud crossing a line moves the cost by £500, which is more than the gap between several neighbouring rows. So neither is wrong, and both are shaky in different ways. In a report I would print both and say: 'the formula says 0.0196 and the 99-point sweep says 0.032; they disagree by about half again, which is a prompt to check whether my probabilities can be read as literal chances, though with 14 frauds much of the gap may be noise.' **And if they had agreed, I would say that too — agreement between an assumption and a measurement is mild evidence that the assumption holds.**"*
 
-**What earns the marks:** naming **calibrated**, naming **14**, and the observation that **the disagreement is itself a diagnosis you got for free** out of two numbers you were computing anyway.
+**What earns the marks:** naming **calibrated**, naming **14**, and the observation that **the disagreement is itself a useful question you got for free** out of two numbers you were computing anyway.
 
 **T2.** A full-marks paragraph says *better*, and then does the hard half.
 
@@ -1601,7 +1601,7 @@ at C = 2000: `0.02` costs `9 × 2000 + 2110 = **20110**`, `0.01` costs `6 × 200
 
 > *"That band contains 'clearly worse than a coin' and 'genuinely good' at the same time, so I would conclude that my measurement cannot answer any question I actually care about. The instrument is too blunt for the job, and reporting the mean on its own would be dishonest."*
 
-**And the fix for a wide band is more data — or at least more positive examples per fold — not a different model.** The hospital example proves it: same code, same `Pipeline`, 42 positives per fold instead of 14, and the band shrinks to ±0.006.
+**And the fix for a wide band is more data — or at least more positive examples per fold — not a different model.** The fraud data shows it directly: 3 times as many rows (about 48 frauds per fold) narrows the band from about 0.09 to about 0.03. The hospital example narrows too (±0.006), but it mixes more positives with an easier problem; cut to 14 positives per fold it is still about ±0.005.
 
 **"The ± shows how accurate the model is" scores zero.** It shows how noisy the **measurement** is. The model has one true quality; we measured it five times, coarsely, on fourteen frauds at a time.
 
@@ -1614,7 +1614,7 @@ at C = 2000: `0.02` costs `9 × 2000 + 2110 = **20110**`, `0.01` costs `6 × 200
 
 ### Draw It
 
-**The `t = 0.01` end is higher: £7,210 against £7,000**, so it beats the default by **£210** — which is the most surprising number in the week. **Flagging 429 rows out of 1,000 and catching 8 of the 14 frauds is *more expensive* than flagging nothing at all.** A strong drawing has that fact labelled, because it is the whole answer to the hook.
+**The `t = 0.01` end is higher: £7,210 against £7,000**, so it is **£210 worse** than the default — which is the most surprising number in the week. **Flagging 429 rows out of 1,000 and catching 8 of the 14 frauds is *more expensive* than flagging nothing at all.** A strong drawing has that fact labelled, because it is the whole answer to the hook.
 
 **The `£50` bowl on the same axes is about ten times shallower and its lowest point has slid to the left**, to `t = 0.12`. The important observation is that **it is not the same shape scaled down** — the ordering of the rows changed, so it is a genuinely different curve. **A cost curve is not a property of the model; it is a property of the model and the price list together.**
 

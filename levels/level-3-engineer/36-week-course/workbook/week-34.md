@@ -88,11 +88,13 @@ ________________________________________________________________
 
 **M3 — the rule of thumb disagrees with the measurement.**
 
-Module 3 gives a rule of thumb: when a miss costs `C_miss` and a false alarm costs `C_fp`, put the threshold near
+Module 3 gives a rule of thumb: when calling a review **positive** wrongly costs `C_pos_wrong` (here, a nasty one let through: 10) and calling it **negative** wrongly costs `C_neg_wrong` (here, a nice one flagged: 1), put the threshold on the probability of positive near
 
 ```
-C_miss ÷ ( C_miss + C_fp )
+C_pos_wrong ÷ ( C_pos_wrong + C_neg_wrong )
 ```
+
+(In Module 3's letters this is `C_FP ÷ (C_FP + C_FN)`, with "positive" as the class being predicted.)
 
 **(a) Work it out for 10 and 1:** ______ ÷ ( ______ + ______ ) = ______ ÷ ______ = ________
 
@@ -1260,13 +1262,13 @@ expected = "positive" if prob >= THRESHOLD else "negative"
 **The proof.** Set `THRESHOLD = 0.99` and run it:
 
 ```text
-PASS hot delicious pizza      p=0.6857 -> negative
-PASS cold soggy awful bread   p=0.2750 -> negative
-PASS rude slow driver         p=0.2800 -> negative
+FAIL hot delicious pizza      p=0.6857 -> negative
+FAIL cold soggy awful bread   p=0.2750 -> negative
+FAIL rude slow driver         p=0.2800 -> negative
 3/3 passed  (threshold 0.99, test accuracy 0.5000)
 ```
 
-**Look at line one. `hot delicious pizza` is now called `negative`, and the program says PASS.** The test accuracy has halved to `0.5000`, sitting right there on the same line, and the tests still claim everything is fine. **A test whose expected answer is computed by the thing being tested is not a test. It is a mirror.**
+**Look at line one. `hot delicious pizza` is now called `negative`, and the tally still says `3/3 passed`** (the word `FAIL` on every line is the `label == failures` crime, and it prints at every threshold, including the working one — so it tells you nothing). The test accuracy has halved to `0.5000`, sitting right there on the last line, and the tests still claim everything is fine. **A test whose expected answer is computed by the thing being tested is not a test. It is a mirror.**
 
 **The fix — the expected answers are written down by a human, once:**
 
@@ -1328,7 +1330,7 @@ from line 5:  t >  0.6857
 and 0.6331 < 0.6857, so there is no number t that satisfies both
 ```
 
-**Part 4.** Two different thresholds were live that afternoon — almost certainly **two different model versions**, or somebody restarted the service with a `--threshold` flag on it. Either way the log is describing two different systems as though they were one. **The field that would have told you in one second is `model_version`** (and `threshold`, which is why both are on every line). This is exactly the "`by version` shows **two** versions" case: nothing is broken, your log spans a rollback, and **you must report both counts separately or every number you compute is a blend of two systems.**
+**Part 4.** Every line claims the same model version, so the version string cannot explain it. Two different thresholds were live that afternoon: somebody restarted the service with a `--threshold` flag, or hand-edited the metadata, or retrained and overwrote the artifact without bumping the version. Either way the log is describing two different systems as though they were one. **The field that would have told you in one second is `threshold`** — the very field the typo dropped (and `model_version` on every line is what lets you rule the other explanation in or out). **You must report the two stretches separately or every number you compute is a blend of two systems.**
 
 ---
 
@@ -1344,9 +1346,9 @@ Full marks needs: a number from their own results, a use that is genuinely tempt
 
 **T2 — model answer.**
 
-> "`C` is the dial that controls how strongly the model is allowed to hold an opinion. A smaller `C` presses all of its probabilities in towards `0.5` — it still ranks the reviews in the same order, it is just less **sure** about all of them. So the same review that was `0.7450` under v1 comes out `0.6134` under v2, and v2's single highest probability on the whole validation pile is `0.6453`, where v1's is `0.8186`. Nothing about the model's judgement got worse. Its **scale** changed.
+> "`C` is the dial that controls how strongly the model is allowed to hold an opinion. A smaller `C` presses all of its probabilities in towards `0.5` — it ranks the reviews in almost the same order, it is just less **sure** about all of them. So the same review that was `0.7450` under v1 comes out `0.6134` under v2, and v2's single highest probability on the whole validation pile is `0.6453`, where v1's is `0.8186`. Nothing about the model's judgement got worse. Its **scale** changed.
 >
-> And that is the problem: my threshold of `0.65` was chosen by measuring costs on v1's probabilities. It is not a fact about sentiment, it is **a fact about v1's number line.** Move the scale and the threshold now sits above everything v2 says, so it calls every review negative and accuracy drops to `0.5000` even though the ranking is unchanged.
+> And that is the problem: my threshold of `0.65` was chosen by measuring costs on v1's probabilities. It is not a fact about sentiment, it is **a fact about v1's number line.** Move the scale and the threshold now sits above everything v2 says, so it calls every review negative and accuracy drops to `0.5000` even though the ranking is almost unchanged.
 >
 > What else went silently out of date: **my three golden tests' margins** — test 1 goes from `0.1161` clear of the line under v1 to `0.0302` on the wrong side of it under v2, so it fails, and the other two lose about a third of their margin. My **monitoring baseline** too: if I watch how many predictions land between 0.45 and 0.65, squashing every probability toward 0.5 pushes that rate up on its own, and I would read a change of model as a change of traffic."
 

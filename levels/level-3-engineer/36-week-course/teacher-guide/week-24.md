@@ -1556,7 +1556,7 @@ window          kernel
 
 **Expected time:** 30 min on the four pictures, three kernels and the figure · 15 min on the counts and the verdict · 15 min on the six questions. **About 60 minutes.**
 
-> **🧑‍🏫 What to look for when you mark it:** three things, and the first is the real one. **One — do the twelve maps have labels, and does each sentence say what the kernel *found* rather than what it is called?** *"The vertical-edge kernel finds vertical edges"* scores nothing; *"it lit up in a bright stripe down the middle of the bar picture and went completely flat on the noisy one, so it is reporting where brightness steps sideways"* is full marks. **Two — is the verdict on page 24.5 a sentence with a reason in it?** *"1040 against 10, so conv is smaller"* is half; *"1,040 against 10, a hundred and four times fewer, and the small one is also the one that knows which pixels are neighbours"* is full. **Three — on the by-hand cell, are all nine products written?** The answer is worth nothing on its own — nine products, a row sum, and a total is the answer.
+> **🧑‍🏫 What to look for when you mark it:** three things, and the first is the real one. **One — do the twelve maps have labels, and does each sentence say what the kernel *found* rather than what it is called?** *"The vertical-edge kernel finds vertical edges"* scores nothing; *"it lit up in a bright stripe down the middle of the bar picture and stayed at exactly 0 on the flat left and right parts, so it is reporting where brightness steps sideways"* is full marks. **Two — is the verdict on page 24.5 a sentence with a reason in it?** *"1040 against 10, so conv is smaller"* is half; *"1,040 against 10, a hundred and four times fewer, and the small one is also the one that knows which pixels are neighbours"* is full. **Three — on the by-hand cell, are all nine products written?** The answer is worth nothing on its own — nine products, a row sum, and a total is the answer.
 
 ---
 
@@ -1665,7 +1665,7 @@ nn.Conv2d(1, 4, kernel_size=3)     40
 
 | Question | Answer |
 |---|---|
-| What shape does `nn.Conv2d` need its input in? | `(batch, channels, height, width)` — **four numbers, always** |
+| What shape does `nn.Conv2d` need its input in? | `(batch, channels, height, width)` — **four numbers** throughout this course (PyTorch also accepts three, `(channels, height, width)`, for one unbatched picture) |
 | One greyscale 6 × 6 picture, as a tensor for `nn.Conv2d`? | **(1, 1, 6, 6)** — one picture, one channel |
 | `torch.from_numpy(img).float()` on a 6 × 6 numpy grid gives what shape? | **(6, 6)** |
 | …and after two `.unsqueeze(0)` calls? | **(1, 1, 6, 6)** |
@@ -1840,7 +1840,7 @@ row 2:  (−1 × 0) + (−1 × 0) + (−1 × 0)   =   0 + 0 + 0   =    0
 
 **18.** And the nine products in full: 9, 9, 0, 0, 0, 0, 0, 0, 0.
 
-*(This is a real window from the cross picture, and 18 is a real cell of its horizontal-edge feature map.)*
+*(This window is a made-up corner shape, not one that occurs in the cross picture, where the arms run straight on through; 18 does also appear as a cell of the cross's horizontal-edge feature map.)*
 
 **5. Explain weight sharing to somebody who has not done this lesson, in two sentences — one about cost and one about learning.**
 

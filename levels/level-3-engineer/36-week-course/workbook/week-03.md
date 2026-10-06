@@ -781,7 +781,7 @@ The rules never change: **every number column gives 1 column out; every word col
 
 ________________________________________________________________
 
-**Part 1(c).** Now the one that is impossible. Somebody shows you `(1200, 8)` → `(1200, 4)`. **Prove it cannot happen**, in one sentence.
+**Part 1(c).** Now the one that is impossible. Somebody shows you `(1200, 8)` → `(1200, 4)` from a switchboard in which every one of the eight columns goes down a route. **Prove it cannot happen**, in one sentence.
 
 ________________________________________________________________
 
@@ -1133,7 +1133,7 @@ ruler centre: 3.5193 − 3.4591      = 0.0602
 
 **M4(a).** 0.754020 − 0.754111 = **−0.000092.**
 
-**M4(b).** Because a mistake that makes the score go **up** announces itself — you get suspicious of a number that is too good, and you go looking. A mistake that makes the score go slightly **down**, or moves it by nine hundredths of a thousandth, gives you **no signal in either direction**: it is not punished, it is not rewarded, it is simply not visible. And on the next dataset the same mistake might be worth 0.05, and there would be nothing to tell you which day that was.
+**M4(b).** Because a mistake that makes the score go **up** announces itself — you get suspicious of a number that is too good, and you go looking. A mistake that makes the score go slightly **down**, or moves it by nine hundredths of a thousandth, gives you **no signal in either direction**: it is not punished, it is not rewarded, it is simply not visible. And on the next dataset the same mistake might be worth 0.05 or more (nothing stops it, though we have not measured one), and there would be nothing to tell you which day that was.
 
 **M4(c).** 1.000 − 0.709 = **0.291** of pure damage, and **zero** error messages.
 
@@ -1243,7 +1243,7 @@ exp missing : 0.36
 
 **p_b.py** — **no.** All three counts betray it: `fit( 1`, `make_data 1`, `train_test 2`. **It is a training script with the word "predict" in its name.** Hand it to somebody and they cannot use it without your data — and if they had your data they would not need your model.
 
-**p_c.py** — **it is not a clean room, and the counting missed it.** Two loose objects were saved instead of one welded pipeline, and then **`prep` is loaded and never used** — the raw order with `"Napoli"` and `"clear"` in it goes straight into `model.predict_proba`. That is the bug from the first seven minutes of the chapter, the one that turned 0.709 into 1.000. It scores three zeros because it contains no training code; it is broken because it contains no *preparation*.
+**p_c.py** — **it is not a clean room, and the counting missed it.** Two loose objects were saved instead of one welded pipeline, and then **`prep` is loaded and never used** — the raw order with `"Napoli"` and `"clear"` in it goes straight into `model.predict_proba`. That is the same mistake as the first seven minutes of the chapter — the preparation skipped — but here the words go in too, so instead of a wrong number it stops: `ValueError: could not convert string to float: 'Napoli'`. (Had the order been only numbers, it would have answered without complaint, like the 0.709-to-1.000 demonstration.) It scores three zeros because it contains no training code; it is broken because it contains no *preparation*.
 
 **p_d.py** — it stops:
 
@@ -1388,7 +1388,7 @@ beat the baseline by: 0.5000
 1. **How many rows is that measured on?** Thirty-six. A perfect score on 36 rows is not the same kind of claim as a perfect score on 3,600 — and last week you watched a model that looked at nothing score 0.7565 on this exact pile.
 2. **What does 1.0000 mean mechanically?** That every class-1 wine got a higher score than every non-class-1 wine, with no overlap at all. So look at the actual probabilities: if they are all 0.999 and 0.001, ask what column is doing that, and whether it could be reading the answer.
 
-Here it survives the check — these are real chemical measurements of three genuinely different grape varieties, and `proline` alone separates them well. But **a perfect score is a thing you look into, not a thing you celebrate**, and what you found goes on the card.
+Here it survives the check — these are real chemical measurements of three genuinely different grape varieties, and for class 1 against the rest, `color_intensity` alone already separates them well (AUC about 0.96 on all 178 wines). But **a perfect score is a thing you look into, not a thing you celebrate**, and what you found goes on the card.
 
 **B4(c).** **The fifteen category names.** The delivery artifact has to remember every restaurant, every day and every weather it saw, in alphabetical order, so it can build the same twenty columns tomorrow. The wine artifact has five column names, five medians, five ruler centres and widths, and six learned coefficients — and nothing to remember about words.
 
@@ -1479,7 +1479,7 @@ df = make_deliveries(n=2000, seed=0).drop_duplicates().reset_index(drop=True)
 
 **0.7680 − 0.7541 = 0.0139.**
 
-**Why 0.7541 is the honest number.** About four of the twenty copies landed in the validation pile while their twins sat in the training pile, so the model was examined on rows whose answers it had already been shown — that is not skill, it is memory. The 0.0139 is a score the model did not earn, and a number you did not earn is worth less than a smaller number you did, because only the smaller one predicts what happens tomorrow.
+**Why 0.7541 is the honest number.** With `.drop_duplicates()` left off, about four of the twenty copies landed in the validation pile while their twins sat in the training pile (we counted 4 of the 404), so the model was examined on a few rows whose answers it had already been shown — that is memory, not skill, and it makes the whole method untrustworthy. Be careful about the size of it, though: four rows cannot explain 0.0139 by themselves. The two runs also use different rows (1212 versus 1200 training rows, so different splits), and on validation piles this small, changing the split alone moves the AUC by several hundredths in either direction. So 0.7541 is the honest number because the procedure that produced it is sound, not because it is lower — had the leaky run come out lower, it would still have been the wrong one to report.
 
 **What would have caught bug 3?** **Reading the first line of output against a number you had written down** — `piles: 1212 404 404` against `1200 / 400 / 400`. Not the column count, which was right all along; not the AUC, which went *up*; not any error message, because there was none. Only the pile sizes, and only because Week 2 made you write them on a card.
 
@@ -1502,7 +1502,7 @@ The point is that **a shape is not a diagnosis.** Two very different pipelines p
 
 **Part 1(b).** **Yes, perfectly possible.** It would have to be a word column with **15 different values** — a `postcode_district`, a `driver_name`, a `menu_item`. Which is worth pausing on: 15 different values in 1200 rows is 0.0125, nowhere near an ID, so Week 1's check would not flag it — and yet it is quietly adding fifteen columns to your model.
 
-**Part 1(c).** **Impossible.** Every number column gives at least 1 column out and every word column gives at least 1 (a column with only one value still produces one), so **the output can never be narrower than the number of columns you fed in** — unless the switchboard is dropping columns you meant to keep, which is a different bug and would show as 4 from a much smaller list. Widening or staying the same: yes. Shrinking: no.
+**Part 1(c).** **Impossible — if every column goes down a route.** Every number column gives at least 1 column out and every word column gives at least 1 (a column with only one value still produces one), so **the output can never be narrower than the number of columns you fed in** — unless the switchboard is dropping columns you meant to keep — `ColumnTransformer` drops any column you do not list, silently, so listing only four columns and leaving four out would print exactly `(1200, 4)`. That is a different bug, and it is why a shape is a check and not a diagnosis. With every column routed: widening or staying the same, yes; shrinking, no.
 
 **Part 2.**
 
@@ -1581,7 +1581,7 @@ difference                                = 0.017
 | 6 | Metrics | **Validation** ROC-AUC **0.7541**, against a baseline of **0.5000**, on 400 rows |
 | 7 | Known limitations | An unseen restaurant becomes five zeros and it answers anyway (0.291 → 0.308, no warning). A missing driver-experience value is replaced by the training median of 30.0 and is indistinguishable from a real 30 afterwards. A missing *value* raises nothing; only a missing *column* does |
 
-**Headings 1, 2 and 3** — or rather **3, 4 and part of 6** in terms of *content* — were written two weeks ago on index cards. The cleanest answer: **heading 3 is card 1, heading 4's feature list is card 3, and heading 6's metric is card 5.** The card is not a report; it is the contract, updated.
+**Headings 3, 4 (the feature list) and 6 (the metric)** were written two weeks ago on index cards; headings 1 and 2 are new this week. The cleanest answer: **heading 3 is card 1, heading 4's feature list is card 3, and heading 6's metric is card 5.** The card is not a report; it is the contract, updated.
 
 **Heading 6 in full:** *"Validation ROC-AUC 0.7541 on the 400-row validation pile, against a `most_frequent` baseline of 0.5000 on the same pile — 0.2541 above the zero. The test pile has not been opened."*
 

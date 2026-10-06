@@ -79,7 +79,7 @@ You have three options and only one of them is good.
 | Fill with **0** | *"this driver has zero months of experience"* | **That is a lie the model will believe.** Zero is not "unknown", it is "brand new", and it is the worst possible guess |
 | Fill with the **median** of the training rows | *"assume they are a typical driver until told otherwise"* | ✅ **This one.** It is still a guess, but it is the least wrong guess and it does not invent an extreme |
 
-**Why the median and not the mean?** Because the median cannot be dragged by one silly value. **You proved this to yourself last week** on the list `2, 4, 6, 8, 100`: the mean is 24, the median is 6, and 6 is the honest description of that list. Same reasoning here.
+**Why the median and not the mean?** Because the median cannot be dragged by one silly value. **You proved this to yourself in Week 4** on the list `2, 4, 6, 8, 100`: the mean is 24, the median is 6, and 6 is the honest description of that list. Same reasoning here.
 
 > **🔢 The maths, slowly:** the median is *the middle number when you line them all up.* In the 1,200 training rows, 60 are blank, so **1,140 have a value.** 1,140 is an even number, so there is no single middle one — the two middle ones are number **570** and number **571** in the sorted line. Number 570 is **29**. Number 571 is **30**. Halfway between them is **(29 + 30) ÷ 2 = 29.5**. That is where the 29.5 comes from, and you can say every step of that out loud without a calculator.
 
@@ -130,7 +130,7 @@ without it                       accuracy=0.7600  roc_auc=0.7752
 the jump one column bought       +0.2011
 ```
 
-**+0.2011 of AUC from one column.** Last week's four honest inventions bought **+0.0091** between them, all four together. **That ratio — twenty-two to one — is the alarm.** Real features arrive in units of 0.005. **A single column worth 0.2 is not a discovery.**
+**+0.2011 of AUC from one column.** Last week's two surviving features (`is_rush` and `min_per_km`) bought **+0.0091** between them. **That ratio — twenty-two to one — is the alarm.** Real features arrive in units of 0.005. **A single column worth 0.2 is not a discovery.**
 
 **Four audits catch it, each louder than the last** — and then a fifth thing which is not an audit at all.
 
@@ -163,7 +163,7 @@ customer_called_support
 
 **The table is nearly diagonal. The column is almost a photocopy of the answer.**
 
-**Audit 3 — how well does the column do all on its own?** Feed a model nothing but that one column:
+**Audit 3 — how well does the column do all on its own?** Rank the validation rows by that one column's raw values alone, with no model at all, and measure the AUC of that ranking:
 
 ```text
 customer_called_support    AUC 0.9556
@@ -331,7 +331,7 @@ Last week an ablation answered *"is this feature worth a column?"* — and the d
 **Three subtractions. Three lies, each about a fifth to a third of a whole score.** And here is the number to put beside them, from last week's honest work:
 
 ```text
-four honest features, built out of evidence, all four together:  +0.0091
+the two honest features that survived last week, together:      +0.0091
 one leaky column:                                                +0.2011
 ```
 
@@ -476,7 +476,7 @@ add_indicator=True  cols= 21  accuracy=0.7550  roc_auc=0.7723
 
 **Subtract.** `0.7723 − 0.7752 = −0.0029`. **Worse. So it goes.**
 
-Two columns in, three out — because the indicator column goes **on the end**, after all the original ones, not next to the column it describes. That surprises people and it matters when you are counting columns: **5 numeric + 15 one-hot = 20 without it, 21 with.**
+Five numeric columns in, six out — one indicator for the one column that had blanks, and it goes **on the end**, after all the original ones, not next to the column it describes. That surprises people and it matters when you are counting columns: **5 numeric + 15 one-hot = 20 without it, 21 with.**
 
 ```python
 names = pipe.named_steps["prep"].get_feature_names_out()
@@ -598,7 +598,7 @@ VERDICT: target leakage. Drop the column.
 
 **Read it one audit at a time, not all at once.**
 
-**The jump: +0.2011 from one column**, against +0.0091 for last week's four features together. **That ratio is the alarm.**
+**The jump: +0.2011 from one column**, against +0.0091 for last week's two surviving features together. **That ratio is the alarm.**
 
 **Audit 1: 0.942 against 0.345.** Two point seven times the best honest column.
 
@@ -840,7 +840,7 @@ without it  roc_auc=0.7752
             +0.2011
 ```
 
-**Step 5 — put that delta next to last week's.** Four honest features, +0.0091 between them. One column, +0.2011. **Twenty-two times as much.**
+**Step 5 — put that delta next to last week's.** Two surviving honest features, +0.0091 between them. One column, +0.2011. **Twenty-two times as much.**
 
 **Step 6 — the coefficients.** `3.482` for the suspect, `0.804` for the next biggest. `3.482 ÷ 0.804 = 4.33`.
 
@@ -1150,7 +1150,7 @@ pipe.named_steps["prep"].named_transformers_["num"].named_steps["impute"].statis
 
 ```python
 pipe.fit(df, df["late"])                              # fitted WITH the leaky column
-new_order = pd.DataFrame({"distance_km": [4.2]})      # a real order, as it actually arrives
+new_order = X_va.drop(columns=["customer_called_support"]).head(1)   # a real order, as it arrives: no support call yet
 pipe.predict_proba(new_order)
 ```
 
@@ -1304,7 +1304,7 @@ Two answers, and the second one is the interesting one.
 *Figure 6.6 — A score that shouts is a bad day. 0.9762 in the lab against 0.7752 honestly, and what the lab number was actually worth on the day it was switched on.*
 
 **Wrong:** *"0.9762! Nineteen points better than last week. Make a slide about it."*
-**Right:** *"0.9762 − 0.7752 = +0.2011 from one column, when four honest features bought +0.0091 between them. That ratio is an alarm, not an achievement."*
+**Right:** *"0.9762 − 0.7752 = +0.2011 from one column, when two honest features bought +0.0091 between them. That ratio is an alarm, not an achievement."*
 
 **Arguing about this in the abstract never works.** Run `deploy.py`. In the lab, recall 0.9217. In production, recall 0.0174 — **two late deliveries caught out of 115.** The score went up and the model got worse. Let the numbers do it.
 
@@ -1337,7 +1337,7 @@ This matters for the tone of the whole week, and it matters practically: **if yo
 2. **A weather app that is brilliant at telling you it rained.** Anything reporting "our model is 99% accurate at detecting X" is worth one question: **when does the input arrive relative to X?** Detecting a thunderstorm from a photo of a flooded street is not a forecast.
 3. **Medical AI headlines, and why so many of them quietly disappear.** A famous class of failure: models that "detected disease" from scans, having actually learned to read the **hospital's** identifying marks on the image — because sicker patients were scanned at the specialist hospital. Real column, true values, useless model. **Exactly the ward column.**
 4. **Any recommendation system evaluated on shuffled history.** Shuffle a year of viewing data and your model gets to know what you watched in December while being tested on July. **Temporal leakage**, and it is why every serious recommender is evaluated with a time-based split.
-5. **Credit scoring, and a rule written into law.** Regulators require lenders to state *when* each input was observed relative to the decision, precisely because "we used a column that only exists after the loan went bad" is such an easy accident. **Somebody made the timing question a legal requirement.**
+5. **Credit scoring, and why banks document every input.** Banks are expected to document the data behind a scoring model and to have it checked by someone independent, and "we used a column that only exists after the loan went bad" is exactly the kind of easy accident that process exists to catch. **Writing down when each input becomes known is the same habit as the timing question.**
 6. **Every "we retrained the model and it got worse in production" post-mortem you will ever read.** Very often the old numbers were leaky and the new ones are honest. **The model did not get worse. The measurement got better.**
 
 ---
@@ -1359,7 +1359,7 @@ The ↻ on stage three is the training loop, still grey — you open it in Week 
 | **The one question it answers** | *"Will I really have this column when I need to predict?"* — asked of every column, out loud, before you are pleased about anything. |
 | **What it plugs into** | Week 5's invented columns, which is exactly where leakage sneaks in, because a column you built yourself has no history to warn you. And Week 3's fit-on-train-only `Pipeline`, which prevents one of the three kinds by construction — that is the one you never have to remember. |
 | **What carries forward** | Week 7 hides a planted leak in an ablation table for you to find. Week 11's five folds each have to stay honest on their own. Week 27's validation set must never be augmented. Week 35 watches for leakage on a live system, where it arrives as a score that quietly decays. |
-| **Spiral thread** | 📊 **Data** and ⚖️ **Evaluation**, lit together. Data, because target, temporal and preprocessing leakage are all facts about **where a number came from**, not about the model. Evaluation, because `0.9762` against `0.7752` is the entire lesson: **+0.2011 from one column, when four honest features bought +0.0091 between them.** That ratio is an alarm. |
+| **Spiral thread** | 📊 **Data** and ⚖️ **Evaluation**, lit together. Data, because target, temporal and preprocessing leakage are all facts about **where a number came from**, not about the model. Evaluation, because `0.9762` against `0.7752` is the entire lesson: **+0.2011 from one column, when two honest features bought +0.0091 between them.** That ratio is an alarm. |
 
 > **💡 Try this:** rule a line under stage one in your notebook and write the six week titles above it.
 > Then write one sentence underneath: *"none of this was about models."* Everything from Week 7 onwards is
@@ -1373,7 +1373,7 @@ The ↻ on stage three is the training loop, still grey — you open it in Week 
 - **Blanks get filled with a statistic learned from the training rows only.** 29.5, not 29.0. `1,140` values, two middles at positions 570 and 571, which are 29 and 30, so `(29 + 30) ÷ 2 = 29.5`. **The median, not the mean, because one silly value cannot drag a median.**
 - **The missing indicator is a hypothesis, not a gift.** `0.7723 − 0.7752 = −0.0029`, so ours went. **A new tool does not get an exemption from last week's rule.**
 - **Three flavours, three tells.** **Target:** is the value filled in yet? **Temporal:** do the rows have a date? **Preprocessing:** was the statistic worked out before the cut? Target is a bug in a *column*; the other two are bugs in *how you cut*.
-- **Six numbers hold the whole week.** Target: 0.9762 fake, 0.7752 honest, gap **0.2011**. Temporal: 0.8139 fake, 0.5249 honest, gap **0.2890**. Preprocessing: 0.765 fake, 0.520 honest, gap **0.245**. **Compare all three with last week's +0.0091 for four honest features.**
+- **Six numbers hold the whole week.** Target: 0.9762 fake, 0.7752 honest, gap **0.2011**. Temporal: 0.8139 fake, 0.5249 honest, gap **0.2890**. Preprocessing: 0.765 fake, 0.520 honest, gap **0.245**. **Compare all three with last week's +0.0091 for two honest features.**
 - **Four audits, all cheap:** how strongly does the column move with the answer (0.942 against 0.345); the crosstab (540 of 552 calls were late, 0.9783); the column on its own (AUC 0.9556); and the size of its weight (3.482 against 0.804). **Run them on good news.**
 - **And then the question no computer can answer: "at the moment I need the prediction, does this value exist?"** It needs no data, no code and no maths, and it is worth more than all four audits together. **The support-call model scored 0.9762 in the lab and caught 2 late deliveries out of 115 in production. One sentence would have saved it.**
 - **The fix for two of the three flavours is structural, not moral.** Put everything that learns from data inside the `Pipeline` and **the bug becomes impossible to write.** That is what a `Pipeline` is actually for.
@@ -1399,7 +1399,7 @@ print(imp.statistics_)                     # [ 2.91  4.  14.  18.  29.5 ]
 
 # ---- keep the clue that the value WAS blank -------------------------------
 SimpleImputer(strategy="median", add_indicator=True)
-#                                ^^^^^^^^^^^^^^^^^^ 2 columns in -> 3 out.
+#                                ^^^^^^^^^^^^^^^^^^ one extra 0/1 column per column that had blanks (ours: 5 in -> 6 out).
 #   the new column goes ON THE END, not beside the one it describes.
 #   it is called num__missingindicator_driver_experience_months
 #   ABLATE IT LIKE ANY OTHER COLUMN: 0.7723 - 0.7752 = -0.0029  -> delete

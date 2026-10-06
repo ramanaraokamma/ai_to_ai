@@ -87,7 +87,7 @@ slope for weight j  =  the average of (prediction − truth) × (feature j)
 
 **That is it. Error times feature, averaged.** No exponentials. No logarithms. No sigmoid derivative. Nothing left over.
 
-> **🔢 The maths, slowly:** this is startling and you should let the class be startled by it. Last week's loss was full of logarithms; the week before, the model was full of exponentials. When you work out the slope of one composed with the other, **the messy parts cancel exactly.** What survives is `prediction − truth`, multiplied by whichever feature fed that weight, averaged over the rows. **This cancellation is the real reason sigmoid and log loss are always paired** — somebody noticed, a hundred years ago, that these two particular functions were built for each other. You do not need to show the cancellation and neither does the student. **You do need to say that it happened, and that it is why.**
+> **🔢 The maths, slowly:** this is startling and you should let the class be startled by it. Last week's loss was full of logarithms; the week before, the model was full of exponentials. When you work out the slope of one composed with the other, **the messy parts cancel exactly.** What survives is `prediction − truth`, multiplied by whichever feature fed that weight, averaged over the rows. **This cancellation is the real reason sigmoid and log loss are always paired** — statisticians noticed, decades ago, that these two particular functions were built for each other. You do not need to show the cancellation and neither does the student. **You do need to say that it happened, and that it is why.**
 
 **And the slope for the bias?** The bias is not multiplied by any feature — it is added to every row unchanged. So it is the same formula with the feature set to 1:
 
@@ -401,7 +401,7 @@ biggest gap vs tol=1e-8  : 0.000000
 
 **Read those three rows carefully, because there is a genuine subtlety and it is a gift.**
 
-Against scikit-learn's **default** settings we agree to about `0.0025` — three decimal places, which is what objective 4 asks for. But that is not the interesting line.
+Against scikit-learn's **default** settings we agree to about `0.0025` — only **two** decimal places, so objective 4's three places is not quite met at the defaults. The next line is the one that meets it, and it is the interesting one.
 
 Against scikit-learn with `tol=1e-8` we agree to **all six printed decimal places, exactly.**
 
@@ -1236,7 +1236,7 @@ Because they cancelled, exactly, and it is one of the most satisfying accidents 
 
 When you work out the slope of log loss applied to a sigmoid, an ugly term appears from the logarithm and an equally ugly term appears from the sigmoid, and **they are reciprocals of each other**, so they multiply to 1 and vanish. What survives is `prediction − truth`.
 
-That is not luck; it is why these two functions are always used together. Somebody in the 1940s noticed that sigmoid and log loss were built for each other, and every classifier since has used the pair. **If you paired sigmoid with squared error instead, nothing would cancel, and the mess you would be left with is exactly why that pairing trains so badly.**
+That is not luck; it is why these two functions are always used together. Statisticians noticed decades ago that sigmoid and log loss were built for each other, and logistic regression and neural-network classifiers have used the pair ever since. **If you paired sigmoid with squared error instead, nothing would cancel, and the mess you would be left with is exactly why that pairing trains so badly.**
 
 **"How do I choose the learning rate for a new problem?"**
 
@@ -1250,11 +1250,11 @@ What you should absolutely do is what you did today: **run three or four values 
 
 Not this exact one, and the difference is interesting.
 
-`LogisticRegression`'s default method is called **L-BFGS**, and it is cleverer: it builds up a picture of the *shape* of the bowl as it goes, and uses it to take much better steps than "downhill by a fixed stride". It gets there in dozens of steps rather than thousands.
+`LogisticRegression`'s default method is called **L-BFGS**, and it is cleverer: it builds up a picture of the *shape* of the bowl as it goes, and uses it to take much better steps than "downhill by a fixed stride". It gets there in about ten steps here (7 to 11) rather than thousands.
 
 **But it is solving the same problem and finding the same answer**, which is exactly what you proved today. That is why the match is meaningful: two completely different methods, one right answer, because the loss is convex.
 
-Neural networks do **not** use L-BFGS — they use variants of the loop you wrote today, because the clever methods need too much memory when there are millions of weights. **So the twenty-five lines you wrote are much closer to how a real neural network trains than scikit-learn's optimiser is.**
+Neural networks do **not** use L-BFGS — they use variants of the loop you wrote today, because the clever methods work best on exact full-batch gradients (networks train on noisy mini-batches) and keep extra copies of every weight, which hurts when there are millions or billions of them. **So the twenty-five lines you wrote are much closer to how a real neural network trains than scikit-learn's optimiser is.**
 
 **"Why start the weights at zero? Could I start somewhere else?"**
 
@@ -1610,7 +1610,7 @@ Because in round 0 every prediction was 0.5 and two rows were late while two wer
 
 **(c) Between rounds 0 and 1 the loss fell by 0.1118. Between 2 and 3 it fell by 0.0564. Why is the improvement shrinking?**
 
-Because the slopes are shrinking as the weights get closer to the bottom of the bowl — `slope w1` went from `−0.375` to `−0.103` to `−0.180` to `−0.131`. **Flatter ground means smaller steps means smaller improvements.** That is what approaching a minimum looks like, and it is why `lr = 0.5` was flat by epoch 100 rather than stopping dead at some particular epoch.
+Because the slopes, taken together, are shrinking as the weights get closer to the bottom of the bowl — the overall size of the three slopes goes `0.395`, `0.297`, `0.246`, `0.215`. (Any single slope can wobble: `slope w1` went `−0.375`, `−0.103`, `−0.180`, `−0.131`.) **Flatter ground means smaller steps means smaller improvements.** That is what approaching a minimum looks like, and it is why `lr = 0.5` was flat by epoch 100 rather than stopping dead at some particular epoch.
 
 The check, and its real output — the complete file is in the Prep Checklist, and its full output is printed there.
 
@@ -1804,7 +1804,7 @@ No. **Monotone means safe, not finished.** `lr = 0.005` never went up, and it al
 
 **(c) `lr = 800`'s worst loss is 12.1169. What does a loss of 12 mean?**
 
-It means the model is confidently, catastrophically wrong on many rows. `−ln(p) = 12` means `p = e^(−12) = 0.0000061` — a six-millionths chance given to something that happened. **A loss of 12 is not "a bit worse than 0.69"; it is a model that has become an anti-predictor**, and if you thresholded it at 0.5 you would do better by flipping every answer.
+It means the model is confidently, catastrophically wrong on many rows. `−ln(p) = 12` means `p = e^(−12) = 0.0000061` — a six-millionths chance given to something that happened. **A loss of 12 is not "a bit worse than 0.69"; it is a model that is extremely sure of itself on the rows it gets wrong.** (Its accuracy need not be bad — on this data the `lr = 800` run still gets about 80% of training rows right on average, and the loss is huge only because the few wrong rows cost `−ln(1e-12) = 27.6` each. Loss and accuracy answer different questions, which is Week 14's point.)
 
 **And the plot that goes with this page.** The complete `curves.py`:
 
@@ -1981,11 +1981,11 @@ No, and this is the honest answer. Both versions score **exactly 0.8200** on the
 
 **(d) We wrote 25 lines and matched a professional library. Does that mean our loop is as good as theirs?**
 
-**No, and this is worth being precise about.** We matched the *answer*, not the *method*. Ours took 20,000 steps; scikit-learn's L-BFGS took a few dozen, because it builds up a picture of the shape of the bowl as it goes and uses it to take much better steps.
+**No, and this is worth being precise about.** We matched the *answer*, not the *method*. Ours took 20,000 steps; scikit-learn's L-BFGS took about ten steps (7 to 11), because it builds up a picture of the shape of the bowl as it goes and uses it to take much better steps.
 
 We matched because **the loss is convex** — one bowl, one bottom — so there is exactly one right answer and any correct method must find it. **What we proved is that our method is correct, not that it is efficient.**
 
-And the interesting footnote: neural networks do not use L-BFGS, because it needs too much memory when there are millions of weights. **They use variants of the loop you just wrote.** So these 25 lines are closer to how a real network trains than scikit-learn's optimiser is.
+And the interesting footnote: neural networks mostly do not use L-BFGS, because it works best on exact full-batch gradients (networks train on noisy mini-batches) and keeps extra copies of every weight. **They use variants of the loop you just wrote.** So these 25 lines are closer to how a real network trains than scikit-learn's optimiser is.
 
 ### Page 15.7 — Diagnose four loss curves (homework)
 
@@ -2020,7 +2020,7 @@ Here are the four tables as the student sees them. **Note the two extra columns 
 
 **Curve D — diverged.** *(This was `lr = 800`.)*
 
-**Evidence:** it went **above its starting point immediately** — 0.6931 to 3.5719 in one epoch — never came back below 2, spiked to 8.8994 at epoch 102, and ended at 7.8482, which is **eleven times worse than a model that knows nothing.** The steps are so long that it leaps across the valley and up the far side every time.
+**Evidence:** it went **above its starting point immediately** — 0.6931 to 3.5719 in one epoch — never came back below 1.9, spiked to 8.8994 at epoch 102, and ended at 7.8482, which is **eleven times worse than a model that knows nothing.** The steps are so long that it leaps across the valley and up the far side every time.
 
 **Fix:** divide the learning rate by 10 repeatedly until the curve is monotone, then use the largest value that still is.
 

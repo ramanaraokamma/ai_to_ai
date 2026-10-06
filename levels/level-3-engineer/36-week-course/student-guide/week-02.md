@@ -128,7 +128,7 @@ Three rules, and the middle one is the interesting one.
 
 **Train — look as often as you like.** Fit on it, plot it, stare at it. It is yours. Its score means almost nothing (of course you do well on the questions you revised from), so nobody is even tempted to report it.
 
-**Validation — you may look many times, and it wears out.** This is the sentence to get right, because it is *not* "validation is safe". Every time you look at the validation score and change your mind because of what you saw, you spend a little of its honesty. After forty decisions the validation score is slightly too good — not because anyone cheated, but because you **kept the winner.** You have just watched exactly how much that costs: twenty looks bought 0.0853.
+**Validation — you may look many times, and it wears out.** This is the sentence to get right, because it is *not* "validation is safe". Every time you look at the validation score and change your mind because of what you saw, you spend a little of its honesty. After forty decisions the validation score is slightly too good — not because anyone cheated, but because you **kept the winner.** You have just watched what that can cost: twenty looks bought 0.0853 this time. (A different seed buys a different amount; for twenty looks at a 400-row pile it averages roughly 0.06.)
 
 **Test — once. At the very end. Then stop.** Not "once a week". Not "once, and then again after one more idea". Once. And the reason is mechanical, not moral: **the moment a test score changes a decision, it has become a validation pile**, and you no longer have a test pile at all.
 
@@ -694,7 +694,7 @@ how many tried   best validation AUC   above 0.5000
            100   0.7747                0.2747
 ```
 
-**Read the top block first.** One try buys you 0.0026 of fake score — nothing. Five tries buy 0.0257. Twenty buy 0.0853. Then 100 and 500 buy… still 0.0853, because none of the later 480 draws happened to beat the lucky sixteenth one. **The prize grows fast at first and then very slowly**, because each extra bit of fake score needs a rarer and rarer fluke. It never shrinks, though — the best of 500 can never be worse than the best of 20.
+**Read the top block first.** One try buys you 0.0026 of fake score — nothing. Five tries buy 0.0257. Twenty buy 0.0853. Then 100 and 500 buy… still 0.0853, because none of the later 480 draws happened to beat the lucky seventeenth one. **The prize grows fast at first and then very slowly**, because each extra bit of fake score needs a rarer and rarer fluke. It never shrinks, though — the best of 500 can never be worse than the best of 20.
 
 **Now the bottom block, which is the frightening one.** Same experiment, same dice, on a validation pile of **40 rows instead of 400**. The best of twenty coin flips scores **0.7198**, and the best of a hundred scores **0.7747**.
 
@@ -869,7 +869,7 @@ If you missed it, here is the whole lesson. You need a laptop, a pen, and twenty
 
 **1. Where did 60 / 20 / 20 come from? Is it a rule?**
 
-*Hint:* there are two pulls and they point opposite ways. **Bigger held-out piles:** 400 rows with 115 positives gives an AUC you can roughly trust to within a couple of hundredths; cut it to 40 rows and Worked Example 2 shows coin flips scoring 0.7747. **Smaller held-out piles:** every held-out row is a row your model never learns from, and with only 2000 rows, moving from 60% to 80% training is 400 extra examples. So 60/20/20 is a **convention that lands in a sensible place for a few thousand rows.** People with ten million rows use 98/1/1, because 1% of ten million is a hundred thousand and that is plenty. People with two hundred rows abandon the scheme entirely and use cross-validation, which is Week 11. **There isn't a right answer, so there has to be a written answer.**
+*Hint:* there are two pulls and they point opposite ways. **Bigger held-out piles:** 400 rows with 115 positives gives an AUC that wobbles by about 0.03 either way from luck alone (so a difference of 0.01 or 0.02 means little); cut it to 40 rows and Worked Example 2 shows coin flips scoring 0.7747. **Smaller held-out piles:** every held-out row is a row your model never learns from, and with only 2000 rows, moving from 60% to 80% training is 400 extra examples. So 60/20/20 is a **convention that lands in a sensible place for a few thousand rows.** People with ten million rows use 98/1/1, because 1% of ten million is a hundred thousand and that is plenty. People with two hundred rows abandon the scheme entirely and use cross-validation, which is Week 11. **There isn't a right answer, so there has to be a written answer.**
 
 **2. Can I look at the test set just once in the middle, to see how I am doing?**
 
@@ -877,7 +877,7 @@ If you missed it, here is the whole lesson. You need a laptop, a pen, and twenty
 
 **3. If none of the twenty random models learned anything, why did they get different scores?**
 
-*Hint:* start with the mechanism. Each one hands out 400 random numbers; purely by chance some of the higher numbers land on late orders, and AUC rewards that. Roll again and the pattern is somewhere else. So the twenty scores scatter around 0.5 — ours ran from **0.4549 to 0.5853** — and the width of that scatter is about **one thing only: how many rows are in the pile.** Then push it: what would the twenty scores look like on 4,000 validation rows? Much tighter. On 40? Look at Worked Example 2. Finally, the honest closer: this is why a validation score is the right tool for *comparing* and the wrong tool for *reporting*. Comparing and reporting are different jobs, and this is the week they got different piles.
+*Hint:* start with the mechanism. Each one hands out 400 random numbers; purely by chance some of the higher numbers land on late orders, and AUC rewards that. Roll again and the pattern is somewhere else. So the twenty scores scatter around 0.5 — ours ran from **0.4549 to 0.5853** — and the width of that scatter depends mostly on **how many rows are in the pile** (and how many of them are late). Then push it: what would the twenty scores look like on 4,000 validation rows? Much tighter. On 40? Look at Worked Example 2. Finally, the honest closer: this is why a validation score is the right tool for *comparing* and the wrong tool for *reporting*. Comparing and reporting are different jobs, and this is the week they got different piles.
 
 ---
 

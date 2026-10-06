@@ -107,11 +107,11 @@ ________________________________________________________________
 
 log₁₀( ______ ) = ________  so the wrong idf = ________
 
-**(d) Divide the right answer by the wrong one.**
+**(d) Divide the right logarithm (the `ln` value, before adding 1) by the wrong one (the `log₁₀` value).**
 
 ________ ÷ ________ = ________
 
-**(e) Every one of your eight idf values would be wrong by that same factor. Write the one-line rule that tells a log-base mistake apart from a miscount:**
+**(e) The logarithm part of every idf would be out by that same factor. Write the one-line rule that tells a log-base mistake apart from a miscount:**
 
 ________________________________________________________________
 
@@ -781,7 +781,7 @@ ________________________________________________________________
 | say what `tf` and `df` each count, and say "documents" out loud for `df` | | | |
 | write out `idf = ln((1 + n) ÷ (1 + df)) + 1` and say why each `+1` is there | | | |
 | compute an idf to six decimal places on a calculator | | | |
-| recognise a log-base mistake from every value being out by 2.302585 | | | |
+| recognise a log-base mistake from every logarithm being out by 2.302585 | | | |
 | do all four TF-IDF stages by hand and match sklearn to 4 dp | | | |
 | prove a finished row has length exactly 1 | | | |
 | spot a missing L2 step from a factor-of-the-row-length disagreement | | | |
@@ -880,7 +880,7 @@ Ama vs Dev  cosine 0.0000  angle 90.00 degrees
 
 **M2 (d).** `0.405465 ÷ 0.176091 = 2.302585`
 
-**M2 (e).** *"If **every** value is out by the same factor — and `2.302585` is the one to memorise — it is the log base. If **one** value is out, you miscounted that word's documents."* **A whole-table error and a single-cell error have different causes, and knowing which you are looking at saves an hour.**
+**M2 (e).** *"If **every** logarithm is out by the same factor — and `2.302585` is the one to memorise — it is the log base. If **one** value is out, you miscounted that word's documents."* **A whole-table error and a single-cell error have different causes, and knowing which you are looking at saves an hour.**
 
 **M3.** `great` in e3, all four stages:
 
@@ -993,7 +993,7 @@ sklearn's idf for chips: 1.405465
 ratio: 2.302585
 ```
 
-**`2.302585` is `ln(10)`** — the fixed conversion factor between the two logarithms, and the reason a log-base mistake makes **every** value wrong by exactly the same amount. **Nothing was raised. Nothing was warned about.** The only thing that catches this is comparing your number with `tv.idf_`, which is why every by-hand exercise in this week ends with the library's answer beside it.
+**`2.302585` is `ln(10)`** — the fixed conversion factor between the two logarithms, and the reason a log-base mistake makes **every** logarithm wrong by exactly the same factor (the finished idfs, with their `+ 1`, are out by different ratios). **Nothing was raised. Nothing was warned about.** The only thing that catches this is comparing your number with `tv.idf_`, which is why every by-hand exercise in this week ends with the library's answer beside it.
 
 **P4.**
 
@@ -1175,7 +1175,7 @@ for i in np.argsort(-cos, kind="stable")[:5]:
   0.3162  late again and a cold bag
 ```
 
-**This is a better failure than the constructed one, and here is why.** **Raw counts cannot separate the top three at all** — all three score exactly `2`, and **eleven more reviews are tied on `1`** — so which ones appear in positions 4 and 5 is decided by your sort, not by your data. **A tie means the measure has no opinion.** Cosine *can* separate them, and it promotes the two shorter reviews above the longer one: `0.5774` against `0.4264`, because in a seven-word review `cold pizza` is a bigger share of what was said than it is in a nine-word one.
+**This is a better failure than the constructed one, and here is why.** **Raw counts cannot separate the top three at all** — all three score exactly `2`, and **eleven more reviews are tied on `1`** — so which ones appear in positions 4 and 5 is decided by your sort, not by your data. **A tie means the measure has no opinion.** Cosine *can* separate them, and it promotes the two shorter reviews above the longer one: `0.5774` against `0.4264`, because in a six- or seven-word review `cold pizza` is a bigger share of what was said than it is in a nine-word one.
 
 **B5.**
 

@@ -480,7 +480,7 @@ A 2×2 pool with stride 2 halves a picture, **rounding down**. So from 8 you get
 | 32 | ____________________________________ | ______ |
 | 224 | ____________________________________ | ______ |
 
-**Part 2 — two of those rows have a step where the rounding-down actually does something.** Find them.
+**Part 2 — three of those rows have a step where the rounding-down actually does something.** Find the two shorter ones; the third is the long ladder.
 
 **start 12:** the step ______ → ______ , because ____________________
 
@@ -579,11 +579,11 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**Two rows on this table give you back the number you started with. Which two, and what do their `k` and `p` have in common?**
+**Three rows on this table give you back the number you started with. Which three, and what do their `k` and `p` have in common?**
 
 ________________________________________________________________
 
-**Two rows both turn an 8 into a 4 in completely different ways. Which two?** ______ and ______
+**Three rows turn an 8 into a 4. Which three?** ______ , ______ and ______ **Two of them halve it on purpose in completely different ways; which one shrinks it by accident?** ______
 
 ### Break it on purpose
 
@@ -685,7 +685,7 @@ The last legal start is 6, because a 4-wide window starting at 6 covers squares 
 
 **M2.** `p = 2`, so `8 + (2 × 2) − 5 = 8 + 4 − 5 = 7`; `7 ÷ 1 = 7`; `7 + 1 = ` **8**. Same size in, same size out.
 
-The other pair that does it is **M4's `k = 3, p = 1`** — and row (b) of the Build It table. **The pattern is `p = (k − 1) ÷ 2`:** `k = 3 → p = 1`, `k = 5 → p = 2`, `k = 7 → p = 3`. Every odd window has a ring count that keeps the size, and every even window does not have a clean one — which is one of the reasons odd kernels are almost universal.
+The other pair that does it is **`k = 3, p = 1`** (with stride 1) — the one from the chapter, and row (b) of the Build It table. (M4 uses `k = 3, p = 1` too, but with stride 2, so it does not keep the size.) **The pattern is `p = (k − 1) ÷ 2`:** `k = 3 → p = 1`, `k = 5 → p = 2`, `k = 7 → p = 3`. Every odd window has a ring count that keeps the size, and every even window does not have a clean one — which is one of the reasons odd kernels are almost universal.
 
 **M3.** `7 + 0 − 2 = 5`; `5 ÷ 2 = 2.5`; rounded **down** = `2`; `2 + 1 = ` **3**.
 
@@ -920,7 +920,7 @@ ladder(16)
   so nn.Linear must start at 256
 ```
 
-**Doubling the picture's width multiplies the flatten by four because the flatten counts an AREA.** The map went from 2 × 2 to 4 × 4, and `4 × 4` is four times `2 × 2`, not twice. **And this is exactly why the `Linear` layer is the expensive part of a small CNN, and why the conv layers are not:** the conv weight count did not change at all — it is still 80 and 1,168 — but the `Linear` after the flatten just got four times bigger.
+**Doubling the picture's width multiplies the flatten by four because the flatten counts an AREA.** The map went from 2 × 2 to 4 × 4, and `4 × 4` is four times `2 × 2`, not twice. **And this is exactly why the `Linear` layer's size is the part that grows with the picture while the conv layers' does not:** the conv weight count did not change at all — it is still 80 and 1,168 — but the `Linear` after the flatten just got four times bigger.
 
 **B4.**
 
@@ -999,7 +999,7 @@ count: 49 of 64
 
 **The count is 49 — the top-left 7 × 7.** That region is the **receptive field** of that one cell.
 
-**Why not all 64?** Because that cell is in the **corner**, so its window is clipped by the edge of the picture. Two convs and two pools reach about 10 squares, which is further than an 8×8 picture is wide — so a cell in the middle of a *bigger* picture would see 10 × 10, and this one only sees as much as there is. **And that is why the last layer of this stack can tell a 3 from an 8: by the end, one cell is looking at nearly the whole digit. A single conv layer, which can only ever see 3 × 3, never could.**
+**Why not all 64?** Because that cell is in the **corner**, so its window is clipped by the edge of the picture. Two convs and two pools reach about 10 squares, which is further than an 8×8 picture is wide — so a cell in the middle of a *bigger* picture would see 10 × 10, and this one only sees as much as there is. **And that is part of why stacking layers helps with digits: by the end, one cell is looking at nearly the whole digit, where one cell of a single conv layer sees only a 3 × 3 patch.**
 
 Two notes on the code. `bias=False` matters — with a bias, every cell is non-zero whatever you put in, and the whole measurement collapses. And `p.fill_(1.0)` inside `with torch.no_grad():` sets every weight to 1 so a pixel can only fail to reach the cell if it genuinely is not connected, rather than because two random weights happened to cancel.
 
@@ -1186,9 +1186,9 @@ for tag, n, k, s, p, kind in CASES:
 
 **Runtime: under one second.**
 
-**The two rows that give the size back are (b) and (e).** `k = 3, p = 1` and `k = 5, p = 2`. **What their `k` and `p` have in common is `p = (k − 1) ÷ 2`** — and if you spotted that, you have found "same padding" for yourself, which is what everybody else calls it.
+**The three rows that give the size back are (b), (e) and (l).** `k = 3, p = 1` (twice, on an 8 and on a 4) and `k = 5, p = 2`. **What their `k` and `p` have in common is `p = (k − 1) ÷ 2`** — and if you spotted that, you have found "same padding" for yourself, which is what everybody else calls it.
 
-**The two rows that turn an 8 into a 4 are (c) and (g).** (c) is a 2×2 pool jumping 2; (g) is a 3×3 padded conv jumping 2. **Two completely different ways to halve a picture, and the shapes are identical** — see Worked Example 2 in the chapter.
+**The three rows that turn an 8 into a 4 are (c), (d) and (g).** (c) is a 2×2 pool jumping 2; (g) is a 3×3 padded conv jumping 2. **Those two are completely different ways to halve a picture, and the shapes are identical** — see Worked Example 2 in the chapter. (d) also gives 4, but by accident: a 5-wide window with no padding loses 4 squares, which is shrinking, not halving.
 
 **And rows (f) and (i) are the two most people get wrong**, because both need `2.5` rounded **down** to 2.
 

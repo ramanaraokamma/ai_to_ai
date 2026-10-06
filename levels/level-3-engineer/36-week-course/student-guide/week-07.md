@@ -92,7 +92,7 @@ Thirty seconds of confusion, and then it will be fine.
 
 Two different meanings, same word, and unfortunately both are standard. You will hear both for the rest of your life.
 
-And here is the number that matters: **six of the eight rows you write today are regressions.** That is not failure. **That is what the table is for.** A table of eight successes would mean you were not trying anything risky.
+And here is the number that matters: **five of the seven changes you try today end up dropped, and four of those five are true regressions (they scored lower).** That is not failure. **That is what the table is for.** A table where every change succeeded would mean you were not trying anything risky.
 
 ### 3. The table, with the real numbers
 
@@ -113,15 +113,15 @@ This is what a real run produces. Read it slowly, because it teaches five separa
 ![Eight rows, two kept](../figures/fig-w07-2-ablation-table-six-rows.svg)
 *Figure 7.2 — Eight rows, two kept. Every row changes exactly one thing, so every delta is attributable.*
 
-**One — `is_rush` earned its place.** +0.0045 for one column of 0s and 1s. Why does a 0/1 flag beat `order_hour`, which was already in the model and contains strictly more information? Because `LogisticRegression` fits a **straight line** in each input. With the hour as a number it can only say "later is more late" or "later is less late". The truth is a **hump** over 18:00–20:00 — busy at dinner, quiet either side. A straight line cannot express a hump. A 0/1 flag can. **That is the entire craft of feature engineering in one example.**
+**One — `is_rush` earned its place.** +0.0045 for one column of 0s and 1s. Why does a 0/1 flag beat `order_hour`, which was already in the model and contains strictly more information? Because `LogisticRegression` fits a **straight line** in each input. With the hour as a number it can only say "later is more late" or "later is less late". The truth is a **hump** over 18:00–20:00 — busy at dinner, quiet either side. A straight line cannot express a hump. A 0/1 flag can. **That is the entire craft of feature engineering in one example.** (At +0.0045 it is just under the 0.005 line from point Four, so hold it as "the best lead we have, and it comes with a reason", not as proven.)
 
 **Two — `is_weekend` bought nothing.** −0.0001. That is not "slightly bad". That is **the same number**, arriving with a different amount of rounding noise. There was no weekend signal in the table to find. So delete the feature — because a feature that buys nothing still costs you maintenance, one more thing to explain, and one more thing to break.
 
-**Three — row 7 is the surprise, and it is the best moment of the week.** Dropping `order_hour` — a real column, out of the actual file — makes the model **better**. Because row 2 already took the useful part out of it. What was left was a straight-line story that is not true, and the model was spending a weight on it. **Once you have the good version of a column, the raw version can actively cost you.**
+**Three — row 7 is the surprise, and it is the best moment of the week.** Dropping `order_hour` — a real column, out of the actual file — makes the model **better**. A likely reason is that row 2 already took the useful part out of it, leaving a straight-line story that is not true, with the model spending a weight on it. That is a hypothesis: at +0.0013 the table alone cannot confirm it (see Four, below). **Once you have the good version of a column, the raw version *can* cost you.**
 
 **Four — row 5 is where you have to be honest.** `items_per_km` gained +0.0003. Is that real? **Almost certainly not.** The validation pile is 400 rows. Shuffle it differently and a difference that small could easily flip sign. You do not yet have the tool to say how big a difference has to be before it counts — that is **Week 11**. Until then, use a working rule and write it on your table: **on 400 validation rows, treat anything under about 0.005 as "no evidence".** Which, awkwardly, also puts a question mark over row 7's +0.0013. If you spotted that, you have understood more than the exercise asked for.
 
-**Five — the total honest gain is +0.0058.** Eight experiments, two kept, six thrown away, and the reward is half a percentage point.
+**Five — the total honest gain is +0.0058.** Seven changes tried, two kept, five thrown away, and the reward is half a percentage point.
 
 ![Baseline, best, and the lie](../figures/fig-w07-4-baseline-to-best-score-ladder.svg)
 *Figure 7.3 — Baseline, best, and the lie. The honest afternoon's work is the small step at the bottom.*
@@ -176,7 +176,7 @@ And here is the payoff, three real numbers:
 | Same feature set, that one column removed | **0.7535** ← the honest score |
 | Same idea, lookup rebuilt from the 1,200 **training** rows only | **0.6115** ← worse than nothing |
 
-**That third row is the one to sit with.** Your instinct will be "fine, so compute it properly and keep it". So we did — and it scores 0.6115, which is *worse than not having the feature at all*, because computed honestly the column is mostly the memorised label of a single unrelated training row. That is noise wearing a confident name. **The feature was never good. It was only ever the answer.**
+**That third row is the one to sit with.** Your instinct will be "fine, so compute it properly and keep it". So we rebuilt the lookup from the 1,200 training rows only, and it scores 0.6115, which is *worse than not having the feature at all*. Why? This rebuild is still naive: every training row is counted inside its own group, so for a group of one the training-time value is still that row's own answer. On the training rows the model scores about 0.96, learns to bet heavily on the column (weight about 2.7), and then meets validation orders whose groups contain *other* orders — over a quarter of them in groups it never saw at all. The bet does not carry over. (A genuinely careful version — each row's value computed only from *other* rows, and pulled towards the overall late rate — scores about 0.758 in a quick check, barely above the 0.7535 you get without it. That technique is beyond this course; the point is that the column was never worth much.) **The 0.9240 was not a measure of how good the feature was. It was the answer.**
 
 > **The flavour is target leakage**, because the poisoned quantity was computed from the `late` column — the answer itself. (Computing a *scaler's mean* over all the rows would be preprocessing leakage, which is a real bug and a much milder one. Week 6 covered both. Today's is squarely the first.)
 
@@ -202,7 +202,7 @@ without it                      : val AUC 0.7535
 jump                            : +0.1705
 ```
 
-**One column moved the score by 0.1705.** Every honest change all lesson moved it by less than 0.005. **That is a factor of thirty-four.** Write the rule down: *a sudden jump of more than about 0.1 AUC from one column is not a discovery, it is a bug.*
+**One column moved the score by 0.1705.** Every honest change all lesson moved it by less than 0.005. **That is a factor of thirty-four.** Write the rule down: *on this table, a sudden jump of 0.1 or more from one column is a reason to stop and audit, not to celebrate.* (It is not proof of a bug on its own — removing `distance_km` costs 0.10 too, honestly — which is exactly why Audit 4, "does this value exist yet?", decides.)
 
 **Audit 1 — how strongly does each number column line up with the answer?**
 
@@ -689,7 +689,7 @@ best val AUC : 0.9971
 
 **The baseline is already 0.9957.** There is almost nothing left to win — the ceiling is 0.0043 and you are never getting all of it. **A good ablation table tells you when to stop.** If the delivery table's ceiling had been this small you would not have spent thirty minutes on it.
 
-**Row 5 says dropping `mean radius` *gains* 0.0007.** Same shape as the delivery table's row 7: `worst radius` already carries most of what `mean radius` knows, so the raw one adds very little and costs a weight. But **+0.0007 on 114 validation rows is far inside the noise** — the pile is 114 rows, and one row changing its mind moves the AUC by more than that. Correct verdict: `drop`, with the honest note *"untested at this precision"*.
+**Row 5 says dropping `mean radius` *gains* 0.0007.** Same shape as the delivery table's row 7: `worst radius` probably carries most of what `mean radius` knows, so the raw one adds little. But **+0.0007 on 114 validation rows is far inside the noise** — the pile has 71 benign and 43 malignant scans, so each benign-malignant pair that swaps places in the ranking is worth 1/3053 (0.0003) of the AUC, and 0.0007 is about two such pairs. Correct verdict: `drop`, with the honest note *"untested at this precision"*.
 
 **Row 3 is not a feature change at all.** Swapping the ruler cost 0.0033 here, and cost 0.0007 on the delivery table. **The ruler is a choice too**, and it deserves a row.
 
@@ -799,9 +799,9 @@ A and B together        : 0.7604   delta +0.0018
 sum of the two deltas   : +0.0016
 ```
 
-**+0.0018 together, but +0.0016 if you add the two separate deltas.** They do not match, and they were never going to.
+**+0.0018 together, but +0.0016 if you add the two separate deltas.** They do not match exactly — but the gap is tiny.
 
-**Why?** Because features **overlap in what they explain.** `items_per_km` and `order_hour` both carry a little information about the same underlying thing (how busy the shop is). When you remove one, the other becomes slightly more valuable, so its measured contribution changes. That overlap has a name — **interaction** — and it means the numbers in your table are not building blocks you can stack.
+**Why?** Honestly: the gap is about 0.0002, which is far below the 0.005 line and partly just rounding (the unrounded deltas are 0.00034 and 0.00131), so **this example shows nothing either way.** What it does remind you is that, in general, when features overlap in what they explain, the effect of one change can depend on what else is in the model. That is called **interaction**, and it means the numbers in your table are not guaranteed building blocks you can stack.
 
 **So what is the table actually for?** It tells you what one change was worth **from a stated starting point.** That is genuinely useful and it is much less than "these deltas add up". Write the starting point on your table — *"all deltas measured from row 2, 0.7586"* — and your table is honest. Leave it off and it looks like arithmetic you can do, which it is not.
 
@@ -947,11 +947,11 @@ Five rounds, six minutes each, on a timer. One change per round. **Predicted sig
 | **4** | `scaler → MinMaxScaler` | 0.7579, Δ −0.0007, **drop** |
 | **5** | `drop day_of_week` | 0.7576, Δ −0.0010, **drop** |
 
-**All five rounds were regressions.** Round 3's +0.0003 caused the best argument of the lesson — is it real? — and the honest answer was *"you cannot tell yet, and that is Week 11's entire job."*
+**All five rounds ended in "drop", and four of them were true regressions.** Round 3's +0.0003 was a tiny gain under the keep line, and it caused the best argument of the lesson — is it real? — and the honest answer was *"you cannot tell yet, and that is Week 11's entire job."*
 
 ### The wrap
 
-The whole table read out loud, row by row, deltas included. Eight rows, two kept, six regressions, **best honest score 0.7599 on the 400 validation rows** — said with the pile named, out loud, deliberately. Then `leaky_features.py` was handed out on paper with the three scores read aloud: 0.9240, 0.7535, 0.6115.
+The whole table read out loud, row by row, deltas included. Eight rows (a baseline and seven changes), two changes kept, five dropped (four of them true regressions), **best honest score 0.7599 on the 400 validation rows** — said with the pile named, out loud, deliberately. Then `leaky_features.py` was handed out on paper with the three scores read aloud: 0.9240, 0.7535, 0.6115.
 
 ---
 
@@ -985,14 +985,14 @@ Argue both sides. **For:** the delta is positive, it is cheap row-wise arithmeti
 *Figure 7.5 — One row, two changes: the number cannot answer. Two rows, one change each, and every delta belongs to something.*
 
 **Wrong:** *"I'll add all five of my ideas and see what happens."*
-**Right:** *"Rows 3, 4, 5 and 6 all ADD something and three of them made it worse. The best model on my table has FEWER columns than the baseline."*
+**Right:** *"Rows 3, 4 and 5 all ADD a column and two of the three made it worse. The best model on my table has no more columns than the baseline — it swapped the raw hour for a better version of it."*
 
 Every extra column is another weight the model has to estimate from the same 1,200 training rows. Estimating more things from the same evidence means estimating each of them worse.
 
 ### Trick 2 — "a bigger number means a better model"
 
 **Wrong:** *"0.9240 beats 0.7599, so that model is better."*
-**Right:** *"0.9240 is bigger and belongs to a model that will be useless the moment it is switched on. A jump of more than about 0.1 AUC from one column is not a discovery, it is a bug. Real features arrive in units of 0.005."*
+**Right:** *"0.9240 is bigger and belongs to a model that will be useless the moment it is switched on. On this table a jump of 0.1 or more from one column means stop and audit, not celebrate. Honest changes here arrived in units of 0.005."*
 
 ### Trick 3 — "if a feature makes it worse, the model is just bad at ignoring it"
 
@@ -1051,11 +1051,11 @@ it in Week 12.*
 ## 🔑 Remember This
 
 - **One change, one measurement, one row.** If a row has two changes in it, throw the row away — it cannot tell you which change did what. There are four worlds and your one number cannot tell them apart.
-- **A good afternoon on the features is worth 0.0058.** From 0.7541 to 0.7599. Eight experiments, two kept, six regressions. **Say the number without flinching**, because you can explain every ten-thousandth of it.
-- **"Regression" today means "a change that made it worse."** Six of eight rows were regressions and that is healthy. A table of eight successes means you were not trying anything risky.
-- **Removing a real column can make the model better.** Row 7: drop `order_hour`, gain +0.0013, because `is_rush` already took the useful part and the raw hour was a straight-line story that is not true. **Once you have the good version of a column, the raw version can cost you.**
+- **A good afternoon on the features is worth 0.0058.** From 0.7541 to 0.7599. Seven changes, two kept, five dropped (four of them true regressions). **Say the number without flinching**, because you can explain every ten-thousandth of it.
+- **"Regression" today means "a change that made it worse."** Five of the seven changes were dropped, four of them true regressions, and that is healthy. A table where every change succeeded means you were not trying anything risky.
+- **Removing a real column can make the model better.** Row 7: drop `order_hour`, gain +0.0013, probably because `is_rush` already took the useful part and the raw hour was a straight-line story that is not true (a hypothesis — it is under the 0.005 line). **Once you have the good version of a column, the raw version can cost you.**
 - **On 400 validation rows, treat anything under about 0.005 as no evidence.** Write that rule on your table so future-you knows what past-you believed. The actual instrument is Week 11.
-- **On this table, honest lives between 0.74 and 0.77.** Above 0.80 is a bug until proven otherwise. Real features arrive in units of 0.005; a jump of 0.17 from one column is a leak.
+- **On this table, honest lives between 0.74 and 0.77.** Above 0.80 is a bug until proven otherwise. Honest changes here arrive in units of 0.005; a jump of 0.17 from one column means stop and audit (here it was a leak).
 - **The one question worth more than all four audits:** *at the moment I need the prediction, does this value exist?* If no, the feature is poison however good the score looks.
 - **A line with no number is not a defence.** "Distance obviously matters" is worth zero. "Correlation 0.345, weight 0.971" is a defence. And **"untested" is an honest and acceptable entry** — it is better than an invented reason.
 
@@ -1114,7 +1114,7 @@ measure(BASE_NUM, CAT, RUSH)       # built, not listed -> 0.7541, SILENTLY WRONG
 | **ablation table** | The log of your experiments: what you changed, what you got, the difference, keep or drop. One row per change | Eight rows, two kept, best 0.7599 on the 400 validation rows |
 | **regression** | A change that made things **worse**. Nothing to do with `LinearRegression` — it is the software word for "it used to be better than this" | Row 4, `+ min_per_km`, **−0.0051** — the worst change of the day |
 | **leak hunt** | The deliberate audit you run on a suspiciously good score, to find out whether the model is clever or the data is poisoned | Four audits found 0.1705, correlation 0.676, 0.8916 alone, weight 2.071 |
-| **target leakage** *(from Week 6, met again)* | A feature computed from the answer column, so it contains information nobody could have at prediction time | `similar_orders_late_rate`: fake **0.9240**, honest **0.7535**, honestly-computed **0.6115** |
+| **target leakage** *(from Week 6, met again)* | A feature computed from the answer column, so it contains information nobody could have at prediction time | `similar_orders_late_rate`: fake **0.9240**, honest **0.7535**, naively rebuilt from training rows **0.6115** |
 
 ---
 
@@ -1137,6 +1137,6 @@ Go to **[the Week 7 workbook](../workbook/week-07.md)**. About **60 minutes** in
 
 **Is your best score stated with the pile named?** *"My best validation AUC is 0.7599"* loses a mark. *"My best validation AUC is 0.7599, on the 400 validation rows"* is the answer. **Every week, all year.**
 
-**On the leak hunt: did you name the flavour, the fake score AND the honest score?** *"There's a leak in `similar_orders_late_rate`"* is a third of the answer. **Target leakage · fake 0.9240 · honest 0.7535 · and one sentence on why the honestly-computed version (0.6115) is still worse than nothing** is the whole answer.
+**On the leak hunt: did you name the flavour, the fake score AND the honest score?** *"There's a leak in `similar_orders_late_rate`"* is a third of the answer. **Target leakage · fake 0.9240 · honest 0.7535 · and one sentence on why rebuilding the lookup from the training rows only (0.6115) does not rescue it** is the whole answer.
 
 **And on the defence page, one specific thing:** a line with no number on it is not a defence. If you have not tested a column individually, **write "untested"** — that is honest and it earns marks. An invented reason does not.

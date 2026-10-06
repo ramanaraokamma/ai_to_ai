@@ -979,7 +979,7 @@ b ← 0 − 0.05 × (−80.0) = 0 + 4.0 = 4.0
 
 **M4(b).** *Because each of the four additions happens in `float32`, which keeps about seven digits, so a tiny rounding error accumulates and the fourth total lands on `1306.6667` instead.* **That is last week's dtype lesson, turning up somewhere you were not looking for it.**
 
-**M4(c).** **Four times as big as you meant.** The step is `lr × .grad`, and the `lr` is unchanged, so a gradient four times too large is a step four times too large. **That is why the run overshoots: not because the learning rate was wrong, but because the gradient was.**
+**M4(c).** **Four times as big as you meant.** The step is `lr × .grad`, and the `lr` is unchanged, so a gradient four times too large is a step four times too large. **In a real loop the pile is not four times the slope but the running total of every slope so far, which is why the run swings about instead of settling.**
 
 ### Predict the Output
 
@@ -1063,7 +1063,7 @@ False True
 | b | `RuntimeError: grad can be implicitly created only for scalar outputs` | `.mean()` on the loss line |
 | c | `RuntimeError: expected m1 and m2 to have the same dtype, but got: long long != float` | `[[1.0], [2.0], [3.0]]` |
 | d | Completes step 0, then `RuntimeError: Trying to backward through the graph a second time ...` | Put the forward line **inside** the loop |
-| e | **No error.** `pred - marks` broadcasts into a 6 × 6 grid and every number afterwards is about the wrong question | Make it a column: `[[20.0], [28.0], [36.0]]` |
+| e | **No error.** `pred - marks` broadcasts into a 3 × 3 grid (6 × 6 with the full data) and every number afterwards is about the wrong question | Make it a column: `[[20.0], [28.0], [36.0]]` |
 | f | **No error.** `step()` applies the freshly-wiped gradient, so nothing moves — 400 steps and `w` stays `0.0000` | Put `backward()` before `step()` |
 
 **A3(g).** **e and f.**
@@ -1076,7 +1076,7 @@ False True
 
 **A5.**
 
-**Log W — `optimizer.zero_grad()` is missing.** Giveaway: **the gradient column grows and flips sign** (−326.7, −129.9, +277.1) and **the final loss, 2907.9082, is higher than the starting 1786.6666.** Those are piles, not slopes.
+**Log W — `optimizer.zero_grad()` is missing.** Giveaway: **the gradient column never shrinks and flips sign** (−326.7, −129.9, +277.1, and still around ±250 at step 399) and **the final loss, 2907.9082, is higher than the starting 1786.6666.** Those are piles, not slopes.
 
 **Log X — `loss.backward()` is missing.** Giveaway: **`dL/dw` is `None` on every line.** No backward pass ever ran, so `step()` had nothing to apply.
 
@@ -1263,7 +1263,7 @@ no step                   1786.6666    0.0000    0.0000  -326.6667
 
 **Bug 3 — `optimizer.zero_grad()` is missing from the top of the loop. A silent logic bug.**
 
-**The `dL/dw` column is wrong in two ways: the magnitudes do not shrink, and the sign keeps flipping.** In a healthy run the gradient falls steadily towards zero. −192.0, +209.3, −122.3, +193.3 are not slopes at all; they are **sums of every slope so far**, so the effective step keeps growing.
+**The `dL/dw` column is wrong in two ways: the magnitudes do not shrink, and the sign keeps flipping.** In a healthy run the gradient falls steadily towards zero. −192.0, +209.3, −122.3, +193.3 are not slopes at all; they are **sums of every slope so far**, so `w` keeps being pushed by old slopes after it has passed the answer.
 
 **`w` is thrashing** — 9.6, then −0.1, then 14.8, then −4.2. It is leaping past the answer and back again, never settling. It ends at `−4.2352` when the answer is 6.
 
@@ -1311,7 +1311,7 @@ lr 0.10  w      nan  b      nan  loss nan
 
 **Part 1(a).** **Between `0.06` and `0.07`.** There is no single "right" number; there is a cliff, and it is very close to a value that works beautifully.
 
-**Part 1(b).** **A model answer.** *For the optimizer:* `SGD` takes a fixed step of `lr × slope`, with no memory and no adaptation, so how big a step is safe is entirely determined by that one number. *For the data:* the slopes themselves come from the data — our `dL/dw` starts at `−326.6667` because the marks run up to 60 and the hours up to 6. Scale the marks down by ten and the same `lr` would be perfectly safe. **It is both**, and the honest conclusion is that a learning rate is not a property of an algorithm — it is a property of an algorithm **and** the numbers you feed it. That is exactly why Week 15 made you hunt for one instead of giving you a rule, and why Week 4's scaling lesson matters even when the model does not care about scale.
+**Part 1(b).** **A model answer.** *For the optimizer:* `SGD` takes a fixed step of `lr × slope`, with no memory and no adaptation, so how big a step is safe is entirely determined by that one number. *For the data:* the slopes themselves come from the data — our `dL/dw` starts at `−326.6667` because the marks run up to 60 and the hours up to 6. The cliff comes from the inputs: a nudge to `w` changes each prediction by `hours × nudge`, so with hours up to 6 a step that is too big gets amplified up to 6 times. Squash the hours down (say to 0.1–0.6) and the same `lr` would be perfectly safe. (Scaling the *marks* down would shrink the first slopes but would **not** move the cliff: `lr = 0.1` still gives `nan` with marks divided by 10.) **It is both**, and the honest conclusion is that a learning rate is not a property of an algorithm — it is a property of an algorithm **and** the numbers you feed it. That is exactly why Week 15 made you hunt for one instead of giving you a rule, and why Week 4's scaling lesson matters even when the model does not care about scale.
 
 **Part 1(c).** **Run it for longer.** `lr = 0.01` is walking in the right direction and simply has not arrived; a few thousand more steps would get there. **The cost is time** — and on a real model that is hours or days of computing, which is why nobody just turns the learning rate down and waits.
 
@@ -1352,7 +1352,7 @@ Real output, all four of the non-canonical orders run for 400 steps:
 
 So every trip computes the right slope, one line too late, and discards it. **400 steps, `w = 0.0000`, `w.grad = −326.6667`, and no error whatsoever.** Note that this is indistinguishable from a missing `step()` by looking at the log — the tell is reading the code.
 
-**Part 2(c).** **Number 4**, the crash, without hesitation. It stops immediately and tells you what is wrong. **Numbers 3 is the one to fear**: it runs, it looks fine, and it wastes however long it takes you to notice that `w` has not moved.
+**Part 2(c).** **Number 4**, the crash, without hesitation. It stops immediately and tells you what is wrong. **Number 3 is the one to fear**: it runs, it looks fine, and it wastes however long it takes you to notice that `w` has not moved.
 
 ### Think Deeper
 
@@ -1394,7 +1394,7 @@ wanted: marks = 8 x hours + 12
 
 | line removed | Error? | What happened | The tell |
 |---|---|---|---|
-| `optimizer.zero_grad()` | **No error** | Loss 1786.6666 → **2907.9082**. `w = 5.3946`, `b = 18.9274`. Worse than it started | The gradient column **grows and flips sign**: −326.7, −129.9, +277.1, +244.9 |
+| `optimizer.zero_grad()` | **No error** | Loss 1786.6666 → **2907.9082**. `w = 5.3946`, `b = 18.9274`. Worse than it started | The gradient column **never shrinks and flips sign**: −326.7, −129.9, +277.1, +244.9 |
 | `pred = hours @ w + b` | **RuntimeError** | Completes step 0, crashes on step 1: *"Trying to backward through the graph a second time"* | It worked **once**. The graph was freed when it was read |
 | `loss = ((pred - marks) ** 2).mean()` | **RuntimeError** | Identical failure, identical message | The loss and the forward pass are one thing; both belong inside the loop |
 | `loss.backward()` | **No error** | 400 steps, `w` and `b` never leave `0.0000`, loss stuck at `1786.666626` | **`w.grad` is `None`** |
@@ -1402,7 +1402,7 @@ wanted: marks = 8 x hours + 12
 
 **Three rows say "no error".** A table with fewer than three has conflated something.
 
-**The `zero_grad` sentence:** *"The gradients added up instead of being wiped, so each step got bigger and bigger, so it overshot the bottom and ended up worse than it started — 1786.6666 at step 0 and 2907.9082 at step 399."* **Accept nothing that does not name accumulation and use both numbers.**
+**The `zero_grad` sentence:** *"The gradients added up instead of being wiped, so each step carried every old slope along with it, so it kept overshooting the bottom and ended up worse than it started — 1786.6666 at step 0 and 2907.9082 at step 399."* **Accept nothing that does not name accumulation and use both numbers.**
 
 **The separating question for the last two rows: what does `w.grad` say?** `None` in the no-`backward` run; `−326.6667` in the no-`step` run.
 

@@ -87,15 +87,15 @@ This week nothing about the model changes. The thousand numbers stay exactly whe
 
 ### 1. Why our model's numbers are all so small
 
-Only **1%** of the training rows were fraud. So the model saw about 3,000 transactions of which roughly 30 were theft, and it learned something completely correct: **fraud is rare.**
+Only **1%** of the training rows were fraud. So the model saw 3,000 transactions of which only 44 were theft, and it learned something completely correct: **fraud is rare.**
 
-That means even for a genuinely suspicious row, its honest answer is *"probably still not fraud — but this one is a hundred times more suspicious than average."* Which comes out as **0.1774**, not 0.9.
+That means even for a genuinely suspicious row, its honest answer is *"probably still not fraud — but this one is about twelve times more suspicious than average."* (The average score is about 0.014; 0.1774 is about twelve times that.) Which comes out as **0.1774**, not 0.9.
 
 Two different things are hiding in those thousand numbers, and separating them is the whole intellectual content of this week:
 
 | | What it means | Is ours good? |
 |---|---|---|
-| **the ranking** | which rows are more suspicious than which | **Yes.** Of the 8 most suspicious rows, 3 are real fraud |
+| **the ranking** | which rows are more suspicious than which | **At the very top, yes.** Of the 8 most suspicious rows, 3 are real fraud (over the whole list it is only mediocre — AUC 0.6116, below) |
 | **the absolute number** | "is this a 17.74% chance?" | **No.** They are all squashed towards zero |
 
 Think about what that ranking is worth. The bank handed you 1,000 rows that are **1.4% fraud**. You hand back a pile of 8 rows that is **37.5% fraud**. You have not caught anything yet, but you have concentrated the needles in the haystack by a factor of twenty-seven.
@@ -181,7 +181,7 @@ And the dashed diagonal across the middle **is what a coin gets.** If you flag r
 |---|---|
 | **above** the diagonal | your ranking carries real information |
 | **on** the diagonal | your ranking is worthless |
-| **below** the diagonal | your model is right and your **labels are swapped** — a real bug, and a funny one |
+| **below** the diagonal | your ranking is **backwards** — most often the **labels are swapped** (or the score is flipped), a real bug, and a funny one: turn it upside down and you beat the coin |
 
 **The gap between your curve and that diagonal is the only thing your model actually contributed.**
 
@@ -352,7 +352,7 @@ for t in [0.50, 0.15, 0.12, 0.10, 0.08, 0.06, 0.04, 0.02, 0.01]:
 
 Two other things in there:
 
-- `labels=[0, 1]` is **new, and it is not optional in a threshold sweep.** At `t = 0.50` nothing gets flagged, so the predictions contain only one class, and without this argument scikit-learn builds a 1×1 table and `.ravel()` cannot fill four names. You get a crash. `labels=[0, 1]` says *"there are two classes even if one of them is empty today."*
+- `labels=[0, 1]` is **new, and it is a safety belt worth wearing in every threshold sweep.** On our 1,000 validation rows it would not crash without it (the truth contains both classes, so scikit-learn still builds a 2×2 table even at `t = 0.50`). But on a small slice, a small fold or a quiet day where **both** the truth and the predictions hold only one class, scikit-learn builds a 1×1 table and `.ravel()` cannot fill four names. You get a crash. `labels=[0, 1]` says *"there are two classes even if one of them is empty today."*
 - `zero_division=0` says *"if you have to divide by zero, give me 0 and no warning."* At `t = 0.50` precision is `0 ÷ 0`, which has no answer.
 
 Real output:
@@ -444,7 +444,7 @@ average_precision_score 0.2078   (a coin gets 0.0140, the fraud rate)
 | **ROC AUC** | 0.6116 | 0.5000 | a bit better than a coin — **unimpressive** |
 | **Average precision** | 0.2078 | **0.0140** | about **fifteen times** better than a coin — **genuinely useful** |
 
-Both numbers describe the same nine rows. ROC AUC's baseline is **always 0.5**, whatever the data looks like. Average precision's baseline is **the positive class rate** — `14 ÷ 1000 = 0.0140` — because a coin flagging at random gets a precision equal to the fraud rate at every threshold.
+Both numbers describe the same model on the same 1,000 rows. ROC AUC's baseline is **always 0.5**, whatever the data looks like. Average precision's baseline is **the positive class rate** — `14 ÷ 1000 = 0.0140` — because a coin flagging at random gets a precision equal to the fraud rate at every threshold.
 
 So a bare AP of 0.21 *sounds* terrible and is in fact fifteen-fold better than nothing, and a bare AUC of 0.61 sounds mediocre and is. **The professional answer is to report both, with the class balance printed beside them.**
 
@@ -490,10 +490,10 @@ on the ROC:  the x-axis moved from 5 ÷ 986 = 0.0051  to  211 ÷ 986 = 0.2140
              — a fifth of the way across.  Looks survivable.
 
 on the PR :  precision went from  3 ÷ 8 = 0.3750    to    5 ÷ 216 = 0.0231
-             — it fell to about a fortieth of what it was.  Looks like a disaster.
+             — it fell to about a sixteenth of what it was.  Looks like a disaster.
 ```
 
-**It is a disaster, and the PR curve is the one telling the truth about the day's work.** 216 flagged transactions with 5 real frauds in them means an analyst looks at forty-three innocent people for every thief.
+**It is a disaster, and the PR curve is the one telling the truth about the day's work.** 216 flagged transactions with 5 real frauds in them means an analyst looks at about forty-two innocent people for every thief.
 
 > **🧑‍🏫 So which curve do you trust?** When positives are rare, **trust the curve whose denominator is the pile you actually have to review.** That is precision. AUC is still worth reporting, because its baseline never moves, so it is the only one of the two you can compare across different datasets.
 
@@ -823,7 +823,7 @@ ValueError: not enough values to unpack (expected 4, got 1)
 
 **What it means.** "Your predictions only contain one class, so I built a 1×1 table, and one number cannot fill four names."
 
-**Why it happens to you.** A high threshold flags nothing, so `pred` is all zeros.
+**Why it happens to you.** A high threshold flags nothing, so `pred` is all zeros — and if the rows you are scoring also contain no real positives (a small slice, a small fold), `truth` is all zeros too. On our full validation set, which has 14 frauds, this exact crash does not fire; that is what makes it a trap.
 
 **The fix is printed in the warning, one line above the traceback:** `confusion_matrix(y_val, pred, labels=[0, 1]).ravel()`.
 
@@ -908,7 +908,7 @@ precision_score(y, pred)     # at t = 0.50, where nothing is flagged
 
 | What you see | What it means | The fix |
 |---|---|---|
-| `ValueError: not enough values to unpack (expected 4, got 1)` | a threshold flagged nothing, so the matrix is 1×1 | `labels=[0, 1]` |
+| `ValueError: not enough values to unpack (expected 4, got 1)` | truth and predictions each hold only one class (e.g. a tiny slice, nothing flagged), so the matrix is 1×1 | `labels=[0, 1]` |
 | `ValueError: continuous format is not supported` | arguments swapped | truth first |
 | `ValueError: too many values to unpack (expected 2)` | `roc_curve` returns **three** things | `fpr, tpr, thr = ...` |
 | `ValueError: x and y must have same first dimension … (1000,) and (1001,)` | PR thresholds are one shorter | plot `rec` against `prec` |
@@ -1162,7 +1162,7 @@ Go to **[the Week 10 workbook](../workbook/week-10.md)**. About **60 minutes** i
 
 **Is there a sentence beside every rise-over-run division?** Not `14.0857`. ***"Between 0.12 and 0.10 I bought fourteen units of recall per unit of false-alarm rate, so I would take that trade."*** **The sentence is the answer; the decimal is just the arithmetic.** Three correct decimals with no sentences has done the sums and missed the week.
 
-**And the page that matters most: do your three thresholds have a *person* on them?** Not "0.10 because it's best". *"0.10, defended to the manager who signs off the review queue: eight cases a day, three of them real, so a third of the pile is worth opening — and it is the last threshold where lowering the bar still buys me frauds. Below it I pay in people and get nothing back."*
+**And the page that matters most: do your three thresholds have a *person* on them?** Not "0.10 because it's best". *"0.10, defended to the manager who signs off the review queue: eight cases a day, three of them real, so a third of the pile is worth opening — and the next two steps down (0.08 and 0.06) add seventeen more people and catch nothing."*
 
 Three numbers with no people scores **zero**, however sensible the numbers are. And pick three thresholds that are **different kinds of decision** — three numbers within 0.01 of each other is one decision written three times.
 

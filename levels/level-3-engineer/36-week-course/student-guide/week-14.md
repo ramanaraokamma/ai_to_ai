@@ -209,7 +209,7 @@ log loss            : 0.693147
 ![A loss parked at 0.6931](../figures/fig-w14-4-loss-parked-at-0-6931.svg)
 *Figure 14.4 — A loss parked at 0.6931. Five hundred steps and it has not moved, because the model answered 0.50 to every row and each row cost −ln(0.50) = 0.693147.*
 
-> **🤔 Think about it:** is `0.6931` a bad score? It is **exactly average**, in the most literal sense — it is the score of guessing. Anything below it means the model knows something. Anything **above** it means the model is actively worse than guessing, which is a real thing that happens, and you will see it next week with a loss of 7.8482.
+> **🤔 Think about it:** is `0.6931` a bad score? It is **exactly average**, in the most literal sense — it is the score of guessing. On balanced data, anything below it means the model knows something (on skewed data a model that merely answers the base rate already scores lower: a dataset that is 90% class 1 gives `0.325` for a constant `0.9`). Anything **above** it means the model is actively worse than guessing, which is a real thing that happens, and you will see it next week with a loss of 7.8482.
 
 ---
 
@@ -273,7 +273,7 @@ log10(0.02) = −1.698970
 
 **That is exactly what makes the mix-up dangerous.** Your program will run, your rankings will all be right, and every number on the screen will be wrong. Section 💻 Type This makes it happen on purpose.
 
-> **🔢 The maths, slowly:** why `ln` and not `log`? Because of what happens next week. To improve a model you need to know how much the loss changes when a weight is nudged — and because `ln` is the exact partner of `e^x`, and the sigmoid is built out of `e^x`, **the two cancel** and the answer turns out to be `prediction − truth`. Nothing else. With base 10 you would get the same thing multiplied by `2.302585` for ever. **`ln` is not a law of nature; it is the base that makes the sigmoid's mess cancel.**
+> **🔢 The maths, slowly:** why `ln` and not `log`? Because of what happens next week. To improve a model you need to know how much the loss changes when a weight is nudged — and because `ln` is the exact partner of `e^x`, and the sigmoid is built out of `e^x`, **the two cancel** and the answer turns out to be `prediction − truth`. Nothing else. With base 10 you would get the same thing divided by `2.302585` for ever (the whole loss is divided by it, so its slope is too). **`ln` is not a law of nature; it is the base that makes the sigmoid's mess cancel.**
 
 ### Step 5 — the three sums that make the whole week
 
@@ -922,7 +922,7 @@ TypeError: unsupported operand type(s) for -: 'int' and 'list'
 | `RuntimeWarning: invalid value encountered in multiply` then `nan` | "Zero times infinity has no answer" | The same clip. These two arrive as a pair |
 | `ValueError: y_prob contains values greater than 1: 1.2` | "That is not a probability" | Sigmoid the raw scores first |
 | `ValueError: y_true contains only one label (1).` | "Nothing to be right or wrong about" | Include both classes, or pass `labels=[0, 1]` |
-| `ValueError: Found input variables with inconsistent numbers of samples: [4, 3]` | "Four answers, three predictions" | `print(len(y), len(p))` — the cheapest check in the file |
+| `ValueError: Found input variables with inconsistent numbers of samples: [3, 4]` | "Four answers, three predictions" | `print(len(y), len(p))` — the cheapest check in the file |
 | `TypeError: unsupported operand type(s) for -: 'int' and 'list'` | "You subtracted a list from a number" | `np.array([...])` |
 | **No error.** Every loss is negative | Nothing crashed and every number is meaningless | **A loss is never negative.** The leading minus sign is missing |
 | **No error.** Ranking right, every value 2.3026 times too small | Nothing crashed, the ordering is perfect, all the values are wrong | `np.log10` instead of `np.log`. **Catch it with the all-0.5 test: it must be 0.693147** |
@@ -1047,7 +1047,7 @@ squared error             0.9604       <         1.1300
 
 **Then the `nan`**, live, and the one-line clip that fixed it — and the observation that **scikit-learn agrees with the clipped version**, because scikit-learn clips too.
 
-**The closing point, pointing at the vote counts from the hook:** *"you were all right, and you were disagreeing about the price list, not about the weather. Classification uses log loss. Universally. And now you know exactly what that choice is buying."*
+**The closing point, pointing at the vote counts from the hook:** *"you were all right, and you were disagreeing about the price list, not about the weather. Probability-producing classifiers (logistic regression, neural networks) are trained on log loss. And now you know exactly what that choice is buying."*
 
 **And the closing cliff.** We built a scoreboard. We can look at a model and say "your loss is 0.66" — **and then do absolutely nothing about it.** Nothing on the board makes a model better. Next week: measure the loss, ask each weight *"if I nudged you, would the loss go down?"* — which is Week 12's slope — nudge every weight the way that helps, repeat five hundred times. **That is what `.fit()` has been doing all along, and next week you write it.**
 
@@ -1113,7 +1113,7 @@ Print the weights, then the features, then `np.unique(y)`. **In that order.**
 
 ## 🌍 Where You've Seen This
 
-1. **Weather services, since the 1950s.** Forecasters have been scored on probability losses for seventy years. The squared-error version even has a name — the **Brier score**, after the meteorologist who proposed it in 1950 — and log loss is used alongside it. **The argument you just had in class is a real argument meteorologists have had**, because a rule that punishes confident wrongness makes forecasters hedge, and a rule that rewards being roughly close makes them commit.
+1. **Weather services, since the 1950s.** Forecasters have been scored on probability losses for seventy years. The squared-error version even has a name — the **Brier score**, after the meteorologist who proposed it in 1950 — and log loss is used alongside it. **The argument you just had in class is a real argument meteorologists have had**, because the two rules charge very differently for a confident miss, so they can rank the same pair of forecasters differently (both rules reward reporting your honest probability; they differ in how hard they punish being confidently wrong).
 2. **Every spam filter's training run.** The number it is trying to make small, five hundred times a minute, is log loss over a pile of labelled messages.
 3. **Medical risk models.** *"A 12% chance of a heart problem in ten years."* These are scored on log loss and on **calibration** — does the thing happen 12% of the time when the model says 12%? A model that says 0.99 and is wrong is not slightly bad; it is the reason somebody went home untreated.
 4. **The autocomplete on your phone.** Its loss is the many-class cousin of this one — `−ln(p)` of the word you actually typed. The "surprise" reading is literal there: it is being fined for not expecting your word, and that fine has a name in information theory (**nats**, and its base-2 cousin, **bits**). You meet the multi-class version in Week 26.
@@ -1135,7 +1135,7 @@ stage three is black, as it has been since Week 12.*
 
 | | |
 |---|---|
-| **The mental model you now own** | A **loss** turns being wrong into **one number you can take the slope of** — and that is the whole reason it exists. `−ln(p)` barely notices a near miss and **screams** at a confident disaster: 4.3 times louder than squared error does, and still climbing after that. Which is why every classifier in the world trains on log loss and not on squared error. |
+| **The mental model you now own** | A **loss** turns being wrong into **one number you can take the slope of** — and that is the whole reason it exists. `−ln(p)` barely notices a near miss and **screams** at a confident disaster: 4.3 times louder than squared error does, and still climbing after that. Which is why logistic regression and neural-network classifiers are trained on log loss and not on squared error. |
 | **The one question it answers** | *"How wrong is wrong?"* — not "was I wrong", which you already had in Week 8. How wrong, as a number. |
 | **What it plugs into** | Week 13's sigmoid output, which is literally the `p` in `−ln(p)`. And Week 9's rule that you choose the number you are judged by **on purpose**, before you see any scores — today you chose it again, and this time you can defend the choice with the ratio. |
 | **What carries forward** | Week 15 takes the **slope of this loss** and that slope is the gradient. Week 22 replaces your hand-written version with `nn.BCEWithLogitsLoss`. Week 26 introduces its many-class cousin, cross-entropy. And `0.6931` goes on the wall, because a loss stuck there is a model that has learned nothing. |

@@ -196,7 +196,7 @@ Look at row 4 one more time: 3.048587, **more than the other three added togethe
 0.6919 − 0.3139 = 0.3780       squashed twice
 ```
 
-**About sixteen times smaller.** The loss can no longer tell a disaster from a triumph, so there is almost nothing left to learn from, and training crawls.
+**About sixteen times smaller.** The loss can barely tell a disaster from a triumph, so the signal to learn from is much weaker and the loss number gets stuck high.
 
 ![Squashing twice flattens the loss](../figures/fig-w22-5-squashed-twice-flattens-the-loss.svg)
 *Figure 22.3 — Squashing twice flattens the loss. Six units of range become 0.378, so a disaster and a triumph score nearly the same.*
@@ -230,7 +230,7 @@ Here is a real run: 400 moons, 300 for training, 100 held back for validation, a
 at the end:   0.4347 − 0.0165  =  0.4182
 ```
 
-**That gap is the whole diagnosis. A small train loss and a big validation loss means memorising, every time.**
+**That gap is the whole diagnosis. A small train loss and a big validation loss is the signature of memorising.**
 
 ![Train and validation loss pulling apart](../figures/fig-w22-3-train-and-val-loss-diverging.svg)
 *Figure 22.4 — Train and validation loss pulling apart. Validation bottoms out at 0.1568 on epoch 39 and never gets that low again.*
@@ -320,7 +320,7 @@ row 4   answer 1    −ln(0.047426)              = 3.048587
 | 0.622459 | 0.474077 |
 | 0.047426 | **3.048587** |
 
-**As the chance falls, the surprise climbs — and it climbs much faster than the chance falls.** Row 4's chance is about thirteen times smaller than row 3's, but its surprise is about six and a half times bigger, and bigger than the other three added together.
+**As the chance falls, the surprise climbs — slowly at first, then steeply as the chance gets close to zero.** Row 4's chance is about thirteen times smaller than row 3's, and its surprise is about six and a half times bigger, and bigger than the other three added together.
 
 **Step 5 — the name and the check.** That average of surprises is what `nn.BCEWithLogitsLoss()` computes, and in 💻 Type This you will run it on those exact four scores and see:
 
@@ -767,7 +767,7 @@ wrote cancer_overfit.png
 
 **The best epoch is 155, not 39.** Different data, different answer — there is no magic epoch number, only a curve you have to look at.
 
-**The train loss ended at 0.0013.** That is 30 real measurements per patient and a model that has essentially memorised all 426 training patients. Its validation loss is 127 times bigger. **If somebody asked how good this model is, the honest answer is 0.1100 at epoch 155**, and saying which epoch it came from is part of the answer.
+**The train loss ended at 0.0013.** That is 30 real measurements per patient and a model that has essentially memorised all 426 training patients. Its validation loss is 127 times bigger. **If somebody asked how good this model is, the honest answer is about 0.11 at epoch 155**, and saying which epoch it came from is part of the answer. (It is a little optimistic, because we picked the epoch by looking at these same validation rows.)
 
 ### Worked Example 3 — Six weather forecasts, and three ways to score them
 
@@ -945,7 +945,7 @@ run("two squashes", True)
    two squashes epoch 599  train loss 0.5423
 ```
 
-**There is no error.** Six hundred epochs of perfectly happy training, no warning, nothing red — and the loss is stuck at 0.54, which is barely better than a model that answers "0.5" to everything.
+**There is no error.** Six hundred epochs of perfectly happy training, no warning, nothing red — and the loss is stuck at 0.54, while the same network with one squash reaches 0.15. (A model that answers "0.5" to everything scores 0.69.)
 
 **What to do when there is no message.** One question:
 
@@ -965,7 +965,7 @@ If it isn't, that is your bug. **The fix is one deleted part.**
 | `RuntimeError: result type Float can't be cast to the desired output type Long` | Your answers are whole numbers and this loss needs decimals | `.float()` on the answers too. Both sides are float32 |
 | `TypeError: list is not a Module subclass` | You handed `nn.Sequential` one list where it wanted several parts | Drop the square brackets: `nn.Sequential(nn.Linear(2,16), nn.ReLU())` |
 | `TypeError: cannot assign 'torch.FloatTensor' as parameter 'weight'` | You tried to replace the parameter instead of the numbers in it | `layer.weight.data = ...`, with `.data` |
-| **No error.** Loss stops falling at about 0.54 | Nothing crashed; the model will never train properly | `nn.Sigmoid()` is the last part **and** you used `BCEWithLogitsLoss`. Delete the sigmoid |
+| **No error.** Loss stops falling at about 0.54 | Nothing crashed; the loss is stuck high and its probabilities are squeezed into a narrow band | `nn.Sigmoid()` is the last part **and** you used `BCEWithLogitsLoss`. Delete the sigmoid |
 | **No error.** The total is 48 when you counted 65 | Nothing crashed; this is not the model you counted | Either `bias=False` somewhere, or you summed only the `weight` blocks. Print `named_parameters()` |
 | **No error.** The validation loss jumps around every epoch | Nothing crashed; the measurement is not repeatable | Dropout is still on while measuring. `model.eval()` before you measure. **Next week is all about this** |
 | A window opens and nothing else happens | `matplotlib.use("Agg")` is missing, or below the pyplot import | It must be **above** `import matplotlib.pyplot` |
@@ -1041,7 +1041,7 @@ The test that settles it: **count the numbers, not the order.** 16 × 2 and 2 ×
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "I'll add `nn.Sigmoid()` on the end so the model produces probabilities, and use `BCEWithLogitsLoss` as normal." | **`WithLogits` means the loss squashes for you.** Add a sigmoid and the numbers get squashed twice: no error, no warning, and the loss cannot fall below about **0.3139** however right the model is. Ours stuck at **0.5423** instead of 0.1538. |
+| "I'll add `nn.Sigmoid()` on the end so the model produces probabilities, and use `BCEWithLogitsLoss` as normal." | **`WithLogits` means the loss squashes for you.** Add a sigmoid and the numbers get squashed twice: no error, no warning, and the loss has a high floor: a correct answer of 1 can never cost less than about **0.3133**, and a correct answer of 0 can never cost less than **0.6931**, so on a two-class problem even a perfect model sits near 0.50. Ours stuck at **0.5423** instead of 0.1538. |
 
 If you genuinely want probabilities out of the model, call `torch.sigmoid(scores)` **after** training, when you are making predictions. **Never inside the model that the loss sees.**
 
@@ -1057,7 +1057,7 @@ The check: **every `nn.Linear` contributes two lines to `named_parameters()`**, 
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "The curves cross at about epoch 60, so that's where validation stopped improving." | **The line goes at the lowest point of the validation curve** — epoch 39 on our run. Where the curves cross is a different epoch and a different idea; it is just the moment the train loss became the smaller of the two, which tells you nothing about the future. |
+| "The curves cross at about epoch 43, so that's where validation stopped improving." | **The line goes at the lowest point of the validation curve** — epoch 39 on our run. Where the curves cross is a different epoch and a different idea; it is just the moment the train loss became the smaller of the two, which tells you nothing about the future. |
 
 The test: **cover the training curve with your hand.** Can you still find the epoch? You should be able to, because only the validation curve is involved in the answer.
 
@@ -1097,7 +1097,7 @@ to stop it.*
 
 > **💡 Try this:** cover up the training-loss line on `overfit.png` with a strip of paper and look only at the
 > validation line. That is the only curve that was ever about the future. Everything to the right of its
-> lowest point is the model memorising 320 rows it has already seen.
+> lowest point is the model memorising 300 rows it has already seen.
 
 ---
 
@@ -1107,7 +1107,7 @@ to stop it.*
 - **A weight's shape is (outputs, inputs).** `nn.Linear(2, 16)` prints `(16, 2)`. That is not a bug and it does not need fixing.
 - **Count the parameters before you train anything.** One layer costs `(inputs × outputs) + outputs`. For 2 → 16 → 1 that is 48 + 17 = **65**. The biases are what people forget.
 - **A logit is a raw score, before any squash.** `BCEWithLogitsLoss` wants logits, because it does the squash itself. **The last part of your model is a bare `nn.Linear`.**
-- **Squash twice and nothing goes red.** The loss's range collapses from 6.0000 to 0.3780 and training crawls. The only symptom is a loss that will not fall below about 0.54.
+- **Squash twice and nothing goes red.** The loss's range collapses from 6.0000 to 0.3780 and the loss gets stuck high. The only symptom is a loss that will not fall below about 0.54.
 - **Two curves, not one.** The training curve tells you what the model has memorised. **Only the validation curve tells you anything about the future**, and the epoch you want is its lowest point.
 - **Dropout is a brake, not a cure.** Best score barely moved, 0.1443 against 0.1568; the end of the run improved a lot, 0.2385 against 0.4347.
 
@@ -1171,7 +1171,7 @@ plt.axvline(best, linestyle="--", color="grey")  # at the MINIMUM, not the cross
 | **logit** | A raw score out of the last layer, before any squash. Any number at all | −9.2, 0 and +4,000 are all perfectly good logits |
 | **`BCEWithLogitsLoss`** | Week 14's log loss, which does the sigmoid squash itself, inside | On the scores 2.0, −1.0, 0.5, −3.0 it prints 0.9907134771347046 |
 | **dropout** | Switching off a random fraction of the hidden units on every training step | `nn.Dropout(0.3)` on a 64-unit layer switches off about 19, and a different 19 next step |
-| **early stopping** | Stopping at the epoch where validation stopped improving, and keeping *those* weights | Our run's best was epoch 39; we carried on for another 1,461 and made it worse |
+| **early stopping** | Stopping at the epoch where validation stopped improving, and keeping *those* weights | Our run's best was epoch 39; we carried on for another 1,460 and never beat it |
 | **patience** | How many epochs of no improvement you sit through before accepting it has stopped | `patience = 20` on our run would have stopped at epoch 59 |
 
 ---

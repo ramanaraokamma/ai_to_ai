@@ -515,7 +515,7 @@ And the second stopwatch, round the prediction only:
         }
 ```
 
-**Five fields out, exactly as box 3 promised.** The dictionary is not a convenience — **it is the contract, in code.**
+**Six keys out: the five fields box 3 promised, plus `input` echoed back so a log line can be matched to a complaint.** The dictionary is not a convenience — **it is the contract, in code.**
 
 ### Step 6 — the CLI, from a cold terminal
 

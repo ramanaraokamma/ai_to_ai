@@ -184,7 +184,7 @@ service = 1.510826 / 3.592917 = 0.420501
 
 > **⚠️ Watch out:** **carry all six decimal places and round only at the very end.** If you round `1.510826` to `1.51` at step 1, the error gets multiplied, squared, added and square-rooted, and you come out at `0.841200` instead of `0.841002` — wrong at the fourth decimal place, and you will not be able to tell whether you made an arithmetic slip or a rounding slip. **Rounding in the middle of a chain is where it costs.**
 
-**Why normalize at all?** Because otherwise a long review beats a short one at everything simply by being long. A 200-word review has bigger numbers in every column than a 10-word review on the same subject. **Dividing by the length asks "what is this review made of?" instead of "how much of it is there?"**
+**Why normalize at all?** Because otherwise a long review beats a short one at everything simply by being long. A 200-word review has bigger numbers in its columns than a 10-word review on the same subject. **Dividing by the length asks "what is this review made of?" instead of "how much of it is there?"**
 
 And it has a very convenient consequence that the next section uses:
 
@@ -300,10 +300,10 @@ cosine similarity       A: 1.0000   B: 0.4216
 length of A's row = 1.4142, length of B's row = 6.7082
 ```
 
-**And the right answer comes first.** Where does `6.7082` come from? B's counts are `the` 4, `pizza` 3, `was` 3, `and` 2, and six words once each. So:
+**And the right answer comes first.** Where does `6.7082` come from? B's counts are `the` 4, `pizza` 3, `was` 3, `and` 2, and seven words once each (`but`, `chips`, `cold`, `fresh`, `hot`, `lovely`, `were`). So:
 
 ```text
-16 + 9 + 9 + 4 + 1 + 1 + 1 + 1 + 1 + 1 = 45
+16 + 9 + 9 + 4 + 1 + 1 + 1 + 1 + 1 + 1 + 1 = 45
 sqrt(45) = 6.7082
 ```
 
@@ -964,7 +964,7 @@ ValueError: Incompatible dimension for X and Y matrices: X.shape[1] == 8 while Y
 
 **The fix.** **One vectorizer.** `fit_transform` on your training documents, `transform` on everything else — including queries. **This is Week 6's leakage discipline, and it is about to matter enormously in Week 33.**
 
-### Break 3 — no error, and every idf wrong by the same factor
+### Break 3 — no error, and every idf wrong in the same way
 
 ```python
 print("idf(great) with log10 = %.6f" % (np.log10(5 / 3) + 1))
@@ -983,7 +983,7 @@ ratio ln/log10 = 2.302585
 **How to catch it, and this is the most transferable debugging move of the week:** **ask whether *one* number is wrong or *every* number is wrong.**
 
 - **One wrong number** → you miscounted something. Go and recount the `df`.
-- **Every number wrong by the same factor** → the **formula** is wrong. Here that factor is `2.302585`, which is `ln(10)`. **The pattern of the wrongness tells you where to look.**
+- **Every number wrong in the same way** → the **formula** is wrong. Here the logarithm part of every idf (the idf minus its trailing `+ 1`) is out by the same factor, `2.302585`, which is `ln(10)`. (The finished idfs are out by different ratios, because the `+ 1` is not scaled: `1.510826 ÷ 1.221849` is only `1.2365`.) **The pattern of the wrongness tells you where to look.**
 
 **The fix.** `np.log`, and the `ln` button.
 
@@ -1112,7 +1112,7 @@ length of A's row = 1.4142, length of B's row = 6.7082
 1.4142 x 6.7082
 ```
 
-*Where does `6.7082` come from?* **B's counts squared and added.** `the` 4, `pizza` 3, `was` 3, `and` 2, and six words once each: `16 + 9 + 9 + 4 + 6 = 44`… plus one more single word makes **45**, and `sqrt(45) = 6.7082`.
+*Where does `6.7082` come from?* **B's counts squared and added.** `the` 4, `pizza` 3, `was` 3, `and` 2, and seven words once each: `16 + 9 + 9 + 4 + 7 = 45`, and `sqrt(45) = 6.7082`.
 
 **4. The sentence.** *Which property of raw counts caused the mistake?* **Length.** Not relevance, not topic, not vocabulary. **Length.** A longer document has bigger numbers in more columns, so it scores more on any query, whether or not it is a better answer.
 
@@ -1195,11 +1195,11 @@ And the sentence the whole of next week is built on:
 
 1. **Every search box you have ever typed into.** Your query becomes a short row, each document becomes a row, and the results are ranked by the angle between them. **The reason a 4,000-word article does not automatically beat a perfect two-line answer is the division at the end of TF-IDF.**
 2. **"Related articles" and "you might also like".** One cosine similarity call over a matrix of documents, `argmax` down each row, skip the diagonal. **You wrote that exact code in Step 8.**
-3. **Plagiarism checkers.** Two documents, one cosine. And the length-invariance matters enormously: **a copied paragraph inside a long essay still points the same way as the original.**
-4. **Search engine ranking, historically.** TF-IDF was the backbone of web search for over a decade, and "keyword stuffing" — repeating a word two hundred times to look relevant — was defeated by exactly the row-length division you did by hand. **`sqrt(45) = 6.7082` is a spam defence.**
+3. **Plagiarism checkers.** Two documents, one cosine. Length-invariance matters: **the same essay pasted twice, or a copy with every sentence repeated, still points the same way as the original.** (A copied paragraph buried inside a long essay is harder: the rest of the essay pulls the angle away, so real checkers compare pieces of text, not whole documents.)
+4. **Search engine ranking, historically.** TF-IDF-style weighting was a core ingredient of search ranking for a long time. The row-length division you did by hand stops a long page winning just because it is long and repeats a query word. **It is not a complete spam defence** — a short page made only of the query words still scores a perfect `1.0000`, which is why real search engines use many more signals.
 5. **The word cloud that is *not* dominated by `the`.** Somebody weighted by rarity instead of by raw count. **Same `and 55, the 34` problem, same fix.**
 6. **Support-ticket routing.** A new ticket arrives, gets vectorized, and the cosine against each team's past tickets decides where it goes. **And now you know its exact failure mode: it routes on topic, so an angry ticket and a delighted ticket about the same product go to the same place.**
-7. **Duplicate-question detection on a Q&A site.** "This question may already have an answer" is a cosine threshold. **And the false positives are always pairs that share topic words and mean opposite things** — which is Figure 32.5, in production.
+7. **Duplicate-question detection on a Q&A site.** "This question may already have an answer" is a cosine threshold. **And the false positives are often pairs that share topic words and mean opposite things** — which is Figure 32.5, in production.
 
 ---
 
@@ -1235,7 +1235,7 @@ documents by the **angle** between their rows instead of by how long they are.
 - **TF-IDF is one multiplication and one division: how often the word appears *here*, times how rare it is *everywhere*, then divided by the row's length.** `tf = 2`, `idf = 1.510826`, product `3.021651`, ÷ `3.592917` = **`0.841002`**, and `TfidfVectorizer` prints `0.841002`.
 - **`df` counts DOCUMENTS, not appearances.** `cold` appears 3 times in 2 documents, so `df = 2`. **Say "documents" out loud every time.**
 - **`idf(t) = ln((1 + n) ÷ (1 + df(t))) + 1`**, and the pieces all have reasons: the `+1`s stop a division by zero, the trailing `+1` stops any word's weight reaching zero, and **the logarithm exists to stop a word in 1 document of 20,000 getting a weight of 10,000** — `ln` turns that into about 9.2.
-- **It must be `ln`, not `log`.** `ln(5 ÷ 3) = 0.510826`; `log₁₀(5 ÷ 3) = 0.221849`. **If every idf is wrong by the same factor of `2.302585`, it is the log base. If one is wrong, you miscounted.**
+- **It must be `ln`, not `log`.** `ln(5 ÷ 3) = 0.510826`; `log₁₀(5 ÷ 3) = 0.221849`. **If the logarithm part of every idf is out by the same factor of `2.302585`, it is the log base. If one idf is wrong, you miscounted.**
 - **The L2 normalization is not optional and it is the step everybody forgets.** Skip it and your answer is `3.021651` instead of `0.841002`, with no error message. **Every finished TF-IDF row has length exactly 1** — check it: `0.841002² + 0.340432² + 0.420501² = 1`.
 - **Carry six decimal places and round only at the end.** Rounding `idf` to 2 dp gives `0.841200`; to 3 dp, `0.841025`; to 4 dp, `0.841004`. **Rounding in the middle of a chain is where it costs.**
 - **Cosine similarity is the dot product divided by both lengths, and it is an ANGLE.** `(2,1,0)` against `(1,2,0)`: dot 4, lengths `sqrt(5)` and `sqrt(5)`, so `4 ÷ 5 = 0.8` = **36.87 degrees**. **It is not 80 per cent of anything.**
@@ -1260,7 +1260,7 @@ df = (C > 0).sum(axis=0)             # documents containing each word. NOT count
 
 # ---- the exact formula sklearn uses. ln, never log10 --------------------
 idf = np.log((1 + n) / (1 + df)) + 1
-# np.log10 instead -> every value wrong by a factor of 2.302585, NO error
+# np.log10 instead -> every log term wrong by a factor of 2.302585, NO error
 
 # ---- the vectorizer, and the learned idf values ------------------------
 tv = TfidfVectorizer()

@@ -955,7 +955,7 @@ Worked slowly for the first one: 2020 × 0.99 = 1999.8, which is nearly 2000, so
 29.6512 − 28.0658 = 1.5854
 ```
 
-**M2(a).** **Neither is wrong.** That is the whole point and it is the answer most people get wrong. 29.6512 is *"the average of the experience we know about"*; 28.0658 is *"the average experience per order"*. Both are legitimate answers to different questions.
+**M2(a).** **Neither is a free choice — each one assumes something.** 29.6512 is *"the average of the experience we know about"*. 28.0658 is what you get if the 108 holes are counted as zero months, because the sum is unchanged and only the count grew. A hole is not a zero, so 28.0658 is not a neutral alternative. Accept "29.6512 is the sensible one here" with the reason, and the key point: nobody chose, and a library did.
 
 **M2(b).** *The bug was never the **top** of the fraction. It was the **bottom**, and nobody chose which bottom they meant.* Same 56693 both times; 1912 against 2020.
 
@@ -1077,7 +1077,7 @@ Five numbers, and the two answers are nearly double each other. This is exactly 
 
 **A4.** i → **R** · ii → **S** · iii → **P** · iv → **Q** · v → **T**
 
-**A4(a).** R and T are both `2000`, and **no**, the code is not interchangeable. `df["order_id"].nunique()` counts **different values in one column**; `len(df.drop_duplicates())` counts **rows that are not copies of another row**. They agree here for a reason worth knowing: the 20 duplicated rows were copied whole, `order_id` and all. Change `make_data.py` to renumber the copies and the first stays 2020 while the second stays 2000.
+**A4(a).** R and T are both `2000`, and **no**, the code is not interchangeable. `df["order_id"].nunique()` counts **different values in one column**; `len(df.drop_duplicates())` counts **rows that are not copies of another row**. They agree here for a reason worth knowing: the 20 duplicated rows were copied whole, `order_id` and all. Change `make_data.py` to give the copies fresh `order_id`s and both lines would print 2020, while `df.duplicated().sum()` would drop to 0 even though 20 orders were still copied.
 
 **A5.**
 
@@ -1347,7 +1347,7 @@ Your own numbers, but here is what the four guesses should be measured against, 
 
 **The two averages:** `.mean()` gives **29.651150627615063**; the sum is **56693.0**; **1912** values exist; 56693 ÷ 2020 = **28.065841584158417**; the difference is **1.5853** (or 1.5854 from the rounded pair — see B4(b)).
 
-**Which is right? Both.** They answer different questions. **The bug is that nobody chose**, and a library made the choice for you without saying so.
+**Which is right?** 29.6512 is the average of the known values; 28.0658 silently treats the 108 holes as zeros. **The bug is that nobody chose**, and a library made the choice for you without saying so.
 
 **A full-marks contract:**
 

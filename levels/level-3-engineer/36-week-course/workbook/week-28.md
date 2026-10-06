@@ -376,7 +376,7 @@ Print the table's shape, the labels, the centres, the inertia to four decimals, 
 
 **Done looks like:** the centres it prints are the same two pairs you got with a pen. If they are not, one of you made an arithmetic slip, and it is usually a squaring.
 
-> **⚠️ Watch out:** you need **both** `init=...` **and** `n_init=1`. Leave either out and sklearn restarts from its own smarter guesses, and your trace will not match your page.
+> **⚠️ Watch out:** you need `init=...`. Leave it out and sklearn starts from its own smarter guesses, and your trace will not match your page. (`n_init=1` says so out loud; with explicit centres sklearn runs once anyway but warns if you leave `n_init` at 10.)
 
 ### B3 — inertia, one term at a time
 
@@ -840,7 +840,7 @@ d(P,R)² = (−0.8429 − 1.4049)²  + (−0.7743 − −0.6377)² = 5.0526 + 0.
 
 > **🔢 The maths, slowly:** your calculator gives **4.8588** for the first one and Python prints **4.8590**. **Neither of you is wrong.** You typed the z-scores already rounded to four places, and those roundings carry through the squaring. `d(P,R)²` happens to land on 5.0713 both ways. **When a hand total is a whisker off a printed one, suspect the rounding you did on the way in before you suspect the arithmetic.**
 
-**M4 (d).** *"The minutes column was doing all the deciding. It runs from 20 to 100, so its gaps are up to 80, while the km column's gaps are at most 4 — and because distance squares the gaps, 80² = 6400 against 4² = 16 means the km column contributed about 0.25% of the raw answer. Once both columns are on the same ruler the two pairs are almost tied (4.8590 against 5.0713), and the order flips: P and Q are now the alike pair."*
+**M4 (d).** *"The minutes column was doing all the deciding. It runs from 20 to 100, so its gaps are up to 80, while the km column's gaps are at most 4 — and because distance squares the gaps, 80² = 6400 against 4² = 16, and for the pair P,Q the km gap of 0.5 adds just 0.25 to a total of 6400.25 (about 0.004% of the raw answer). Once both columns are on the same ruler the two pairs are almost tied (4.8590 against 5.0713), and the order flips: P and Q are now the alike pair."*
 
 **And the honest extra sentence, worth saying:** the flip is **narrow** — 4.86 against 5.07 is a 4% difference. **That is the finding, not a disappointment.** The raw ruler was shouting a 156-fold answer that was not there at all; the fair ruler says *"these three are all about equally different, and it is nearly a tie."* **Raw scaling did not just get the size wrong, it invented a certainty.**
 
@@ -1148,7 +1148,7 @@ SCALED   sizes [65 51 62]  inertia 1277.9
   cluster 2: n= 62  proline  465 to 1680   flavanoids 2.19 to 5.08
 ```
 
-**Read the two blocks against each other and the answer is on the page.** Unscaled: proline in three sealed bands, flavanoids all over the place in every cluster. Scaled: proline overlapping heavily in all three, and **flavanoids** now separating cleanly — 0.57–3.75, 0.34–1.59, 2.19–5.08. **The unscaled run sorted by proline. The scaled run used all thirteen columns.**
+**Read the two blocks against each other and the answer is on the page.** Unscaled: proline in three sealed bands, flavanoids all over the place in every cluster. Scaled: proline overlapping heavily in all three, and **flavanoids** now differing by cluster — 0.57–3.75, 0.34–1.59, 2.19–5.08 (cluster 1 low, cluster 2 high; the ranges still overlap, but not in the sealed-band way the proline ones did). **The unscaled run sorted by proline. The scaled run used all thirteen columns.**
 
 *(A note on `2530`: that is the real ratio computed from the full-precision spreads. Divide the **printed rounded** numbers, `314.91 ÷ 0.12`, and you get 2,624 — a reminder that a ratio built from two rounded numbers inherits both roundings.)*
 

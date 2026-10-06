@@ -144,7 +144,7 @@ Then:
 ![One epoch, three ways to count the steps](../figures/fig-w23-3-epoch-versus-step-arithmetic.svg)
 *Figure 23.3 — One epoch, three ways to count the steps. Divide, count, ask — all three say 40, and 15 × 40 = 600.*
 
-**And the reason it matters beyond today:** *"I trained for 15 epochs"* tells you almost nothing. Fifteen epochs at batch size 32 is 600 weight updates; fifteen epochs at batch size 512 is 60. **Sixteen times fewer.** Two people comparing "15 epochs" are comparing nothing at all unless they also say the batch size. Make the student say both, out loud, whenever they report a run.
+**And the reason it matters beyond today:** *"I trained for 15 epochs"* tells you almost nothing. Fifteen epochs at batch size 32 is 600 weight updates; fifteen epochs at batch size 512 is 45 (`ceil(1257 ÷ 512) = 3` batches, times 15). **More than thirteen times fewer.** Two people comparing "15 epochs" are comparing nothing at all unless they also say the batch size. Make the student say both, out loud, whenever they report a run.
 
 **What `shuffle=True` actually does.** It reshuffles before every lap. Here it is on ten rows, four at a time, so you can see the whole thing:
 
@@ -195,7 +195,7 @@ the digit 6  →  [0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
 
 `np.eye(10)[y]` does exactly that: `np.eye(10)` is a 10 × 10 grid with 1s down its diagonal, and indexing it by the answers picks out the right row for each.
 
-> **🧑‍🏫 If a student asks "isn't there a loss made for ten classes?"** — yes, and it is `nn.CrossEntropyLoss`, and it is **Week 26**. It takes one column of whole numbers instead of ten columns of 0s and 1s, which is tidier and a bit more accurate. Say the name, say the week, and do not sketch it. Today's ten-column trick works, reaches 96.67%, and uses only the loss they already understand.
+> **🧑‍🏫 If a student asks "isn't there a loss made for ten classes?"** — yes, and it is `nn.CrossEntropyLoss`, and it is **Week 26**. It takes one column of whole numbers instead of ten columns of 0s and 1s, which is tidier. Say the name, say the week, and do not sketch it. Today's ten-column trick works, reaches 96.67%, and uses only the loss they already understand.
 
 And to read the answer back out we take the biggest of the ten scores, using the same `argmax` idea they have had since Week 12:
 
@@ -320,7 +320,7 @@ with torch.no_grad():
 | Coding early stopping with `patience` | **Week 34.** Today the model just trains for 15 epochs. |
 | `drop_last=True`, `num_workers`, samplers | Not in this level. If the 9-row last batch causes trouble later, we will meet it then. |
 | GPUs, `.to(device)`, `cuda`, `mps` | Not in this level as a lesson. Everything here runs on a laptop CPU in under a second. If a student asks, say: *"a GPU would be slower on 1,257 rows — moving the data costs more than the arithmetic saves."* |
-| Pickling the whole model with `torch.save(model, ...)` | Mention it exists and that we do not do it: **it saves code as well as numbers, which means loading a file can run somebody else's program.** `state_dict` cannot. |
+| Pickling the whole model with `torch.save(model, ...)` | Mention it exists and that we do not do it: **it saves code as well as numbers, which means loading a file can run somebody else's program.** a `state_dict` does not, provided you load it with `weights_only=True`. |
 
 The sentence to keep in your head: **today the model becomes a file, and the file is the deliverable.**
 
@@ -814,7 +814,7 @@ train_digits.py   predict_digits.py
 
 **Say this:**
 
-> "And this is the one that matters when you tell somebody about a run. **An epoch is a lap. A step is one nudge of the weights.** Fifteen laps at 32 rows a batch is six hundred nudges. Fifteen laps at 512 rows a batch would be sixty. Sixteen times fewer.
+> "And this is the one that matters when you tell somebody about a run. **An epoch is a lap. A step is one nudge of the weights.** Fifteen laps at 32 rows a batch is six hundred nudges. Fifteen laps at 512 rows a batch would be forty-five. More than thirteen times fewer.
 >
 > So *'I trained for 15 epochs'* is not a fact about anything until you also say the batch size. Say both. Always."
 
@@ -1085,7 +1085,7 @@ FINAL: test accuracy 0.9667 on 540 held-out digits
 
 > "One last thing, and it is next week's door.
 >
-> You just got 96.67% on handwriting with a model that thinks a digit is a flat row of 64 numbers in no particular order. Shuffle those 64 columns — the same shuffle for every image — and it would train to *exactly* the same score. It would never notice.
+> You just got 96.67% on handwriting with a model that thinks a digit is a flat row of 64 numbers in no particular order. Shuffle those 64 columns — the same shuffle for every image — and it would train to just about the same score (tried: 96.5% to 96.7%). It would never notice.
 >
 > Which means it is not looking at a picture. **Next week we find out what that costs, and what to use instead.**"
 
@@ -1256,7 +1256,7 @@ And skip the three-ways arithmetic down to one way: `print(len(train_loader))`, 
 
 ### Variation — harder
 
-1. **Add a fourth way of counting the steps.** Sum the batch sizes as they go by and divide by nothing at all: `sum(sizes)` must be 1,257 and `len(sizes)` must be 40. Then answer: *"which of the four ways would catch `drop_last=True`?"* **The sum**, because it would come to 1,248, not 1,257. The other three would all happily say 39 and agree with each other.
+1. **Add a fourth way of counting the steps.** Sum the batch sizes as they go by and divide by nothing at all: `sum(sizes)` must be 1,257 and `len(sizes)` must be 40. Then answer: *"which of the four ways would catch `drop_last=True`?"* **The sum**, because it would come to 1,248, not 1,257. The loop and `len(loader)` would both say 39 and agree with each other (the division, rounded up, would still say 40 and flag a disagreement; a student who rounded down to 39 gets all three agreeing on the wrong answer).
 
 2. **Break the artifact on purpose, three different ways**, and predict each error message before running it: rename `fc1` to `layer1` in `digits_net.py` after training; change 64 to 32; delete the `.pt` file. Three predictions, three real messages, one Bug Log entry each. **This is the most useful twenty minutes available to a strong student today.**
 
@@ -1292,7 +1292,7 @@ But the reason to learn it *now* is the names. `nn.Sequential` calls its layers 
 
 You can do that — `torch.save(model, "whole.pt")` — and PyTorch will let you, and it is a bad idea for one specific reason.
 
-Saving the whole model saves *code*, and loading it therefore **runs** code. Which means a `.pt` file downloaded from the internet can do anything to your machine that a Python program can do. A `state_dict` is 4,810 numbers and four names; the worst it can do is fail to load.
+Saving the whole model saves *code*, and loading it therefore **runs** code. Which means a `.pt` file downloaded from the internet can do anything to your machine that a Python program can do. A `state_dict` is 4,810 numbers and four names; loaded with `torch.load(path, weights_only=True)` the worst it can do is fail to load. (A plain `torch.load` of an old-style `.pt` is still pickle underneath, so even a state_dict file should only come from someone you trust.)
 
 The secondary reasons are practical: a numbers-only file is smaller, it survives a PyTorch upgrade, and it moves between machines without caring what your folders are called.
 
@@ -1304,7 +1304,7 @@ Which means you can change the rule without retraining. You could say "only answ
 
 **"Why 30% for the test set? Week 2 said 20%."**
 
-Because 1,797 rows is not many, and 20% of it is 359 test digits, which is a shakier measurement than we would like. 30% gives us 540. The cost is 180 fewer training rows.
+Because 1,797 rows is not many, and 20% of it is 360 test digits, which is a shakier measurement than we would like. 30% gives us 540. The cost is 180 fewer training rows.
 
 **There is no correct number and anybody who tells you 20% is a rule is repeating a habit.** What matters is that you chose it before you looked, you said which pile the score came from, and you did not touch the test rows while tuning. Those three things are the discipline; the percentage is a judgement call about how much measurement you can afford.
 
@@ -1318,7 +1318,7 @@ So the answer is: it is random exactly when randomness helps and switched off ex
 
 Eighteen digits out of 540. Go and look at them — it takes six lines and it is the best thing you can do with a spare five minutes.
 
-Some of them are genuinely ambiguous: a 3 that could be an 8, a 9 written like a 4. Some are not, and those are the interesting ones, because the model is failing at something a person finds easy. **And a big part of why is next week's lesson:** this model sees a digit as 64 numbers in a row with no idea which ones are next to each other. It cannot use the fact that a 9 has a loop *above* a stroke, because "above" is not a thing it can represent.
+Some of them are genuinely ambiguous: a 3 that could be an 8, a 9 written like a 4. Some are not, and those are the interesting ones, because the model is failing at something a person finds easy. **And a big part of why is next week's lesson:** this model sees a digit as 64 numbers in a row with no idea which ones are next to each other. It has no built-in idea that a 9 has a loop *above* a stroke: it can only learn, pixel position by pixel position, what each spot tends to look like for a 9, and it gets no help from the fact that neighbouring pixels belong together.
 
 **"Should the architecture live in its own file, or should I just copy it into both scripts?"** *(Nobody fully agrees, and here is why.)*
 
@@ -1415,7 +1415,7 @@ Then three questions and nothing else: **"which line declares the parts? which l
 None of these need syntax from a later week.
 
 1. **Break the artifact three ways and predict each message** (harder variation 2). Rename a layer, change a width, delete the file. Three predictions, three real tracebacks. **The best use of this student's twenty minutes.**
-2. **The fourth way of counting** (harder variation 1), ending in *"which way catches `drop_last=True`?"* — the sum, because 1,248 ≠ 1,257 and the other three agree on the wrong answer. **A check that three methods agree is not the same as a check that they are right**, and noticing that unaided is a level-5 observation.
+2. **The fourth way of counting** (harder variation 1), ending in *"which way catches `drop_last=True`?"* — the sum, because 1,248 ≠ 1,257 and it says which rows are missing; the loop and `len(loader)` both ask the same loader and agree on the wrong answer. **A check that three methods agree is not the same as a check that they are right**, and noticing that unaided is a level-5 observation.
 3. **Prove the reload is exact** (harder variation 3): `0.000000`, and explain why exact rather than approximate.
 4. **Look at all eighteen wrong digits** (harder variation 4) and sort them into "I'd have got that wrong too" and "how did it miss that?". The second pile is next week's motivation, arrived at from evidence.
 5. **Batch size 512** (harder variation 5): 45 steps instead of 600, and the accuracy falls. Then the sentence: *"epochs are not the unit."*
@@ -1746,7 +1746,7 @@ way 3 - ask the DataLoader  : 40
 
 **The required sentence — "what would you do if they disagreed?"** Full marks:
 
-> "Each way tests something different, so the pattern of disagreement tells me where to look. If the division says 40 and the loop says 39, my loop is wrong — most likely something is breaking out of it early. If the loop and the division say 40 and the DataLoader says 39, the DataLoader is not the one I think I built — most likely `drop_last=True`, which throws away the last 9 rows. And if all three say 39, I should check the sum of the batch sizes, because three methods can agree with each other and still all be wrong: `sum(sizes)` would be 1,248, not 1,257, and that is the check that catches it."
+> "Each way tests something different, so the pattern of disagreement tells me where to look. If the division says 40 and the loop and `len(loader)` both say 39, the DataLoader is not the one I think I built — most likely `drop_last=True`, which throws away the last 9 rows (the loop only agrees with `len(loader)` because it is counting the same loader). If the loop says fewer than `len(loader)`, something is breaking out of it early. And if all three say 39, I should check the sum of the batch sizes, because three methods can agree with each other and still all be wrong: `sum(sizes)` would be 1,248, not 1,257, and that is the check that catches it."
 
 **Marking notes.** The three pasted numbers are the task; a sentence claiming agreement without them scores nothing. The last part of the sentence above — **three agreeing answers can be wrong together** — is a level-5 observation and should be praised loudly if it appears unprompted.
 
@@ -1806,13 +1806,13 @@ model.eval()   - dropout is OFF
 
 **Sentence one — what changed?** Full marks:
 
-> "With `model.train()` the dropout layer was still switching about 13 of the 64 hidden units off at random on every forward pass, and a different 13 each time — so the same picture got five different sets of ten scores and three different answers: 5, 9, 3, 9, 5. After `model.eval()` the dropout stops dropping, the forward pass is exactly the same arithmetic every time, and all five runs give 9 with a score of −1.6703 to four decimal places."
+> "With `model.train()` the dropout layer was still switching about 13 of the 64 hidden units off at random on every forward pass, and a different random set each time (about 13, not always exactly 13) — so the same picture got five different sets of ten scores and three different answers: 5, 9, 3, 9, 5. After `model.eval()` the dropout stops dropping, the forward pass is exactly the same arithmetic every time, and all five runs give 9 with a score of −1.6703 to four decimal places."
 
 *(0.2 × 64 = 12.8, so "about 13 of 64" is the honest phrasing.)*
 
 **Sentence two — why it matters if you were shipping this?** Full marks:
 
-> "Because nothing goes wrong on the screen. There is no error and no warning — the model just gives a different answer to the same question depending on when you asked, so two people checking the same digit would disagree and neither could reproduce the other's result. And it costs real accuracy: measured over all 540 test digits, these same weights score 0.9519, 0.9444, 0.9463, 0.9481 and 0.9500 on five passes with dropout still on, against exactly 0.9667 every single time after `model.eval()`. So forgetting one line loses about a point and a half — and, worse, loses the ability to quote a single number at all."
+> "Because nothing goes wrong on the screen. There is no error and no warning — the model just gives a different answer to the same question depending on when you asked, so two people checking the same digit would disagree and neither could reproduce the other's result. And it costs real accuracy: measured over all 540 test digits, these same weights score 0.9519, 0.9444, 0.9463, 0.9481 and 0.9500 on five passes with dropout still on, against exactly 0.9667 every single time after `model.eval()`. So forgetting one line loses about two points — and, worse, loses the ability to quote a single number at all."
 
 **Marking notes.** Three things. **All ten predictions must be pasted**, not summarised. **If all ten agree**, `model.eval()` was called too early or the class has no `nn.Dropout` — chase it, because the student has not seen the thing the page exists to show. And **the best answers notice that there is no error message**; that is the actual danger, and a student who says so has understood why this is a lab and not a lecture.
 
@@ -1858,6 +1858,6 @@ model.eval()   - dropout is OFF
 
 ## 🔮 Next Week Preview
 
-Next week the lesson turns on the sentence this one ended with. The digits model you just shipped treats each picture as 64 numbers in a row, and it has no idea which of them are neighbours — shuffle the 64 columns the same way for every image and it would train to exactly the same 96.67%. So we price that out: a dense layer on a flattened 8 × 8 picture costs `16 × 64 + 16 = 1040` learnable numbers, and a 3 × 3 convolution over the same picture costs `9 + 1 = 10`. Then the class draws a 6 × 6 image on graph paper, slides a 3 × 3 vertical-edge kernel across it by hand, fills in all sixteen output cells in pencil, and loads the identical nine numbers into `nn.Conv2d` to check every one. Any disagreement stops the lesson until it is found.
+Next week the lesson turns on the sentence this one ended with. The digits model you just shipped treats each picture as 64 numbers in a row, and it has no idea which of them are neighbours — shuffle the 64 columns the same way for every image and it would train to just about the same 96.67% (a shuffled run landed at 96.5%). So we price that out: a dense layer on a flattened 8 × 8 picture costs `16 × 64 + 16 = 1040` learnable numbers, and a 3 × 3 convolution over the same picture costs `9 + 1 = 10`. Then the class draws a 6 × 6 image on graph paper, slides a 3 × 3 vertical-edge kernel across it by hand, fills in all sixteen output cells in pencil, and loads the identical nine numbers into `nn.Conv2d` to check every one. Any disagreement stops the lesson until it is found.
 
 **To prep early:** three things. **One — squared paper.** Two sheets per student, because they will draw a 6 × 6 grid, a 3 × 3 kernel and a 4 × 4 feature map, and doing that freehand wastes four minutes and produces unreadable work. **Two — do the sixteen cells yourself tonight**, in pencil, on the 6 × 6 image whose left half is 10 and right half is 2. The answer is four rows of `0 24 24 0`, and if you have not done it by hand you cannot referee the disagreement when it happens. **Three — keep this week's `digits_mlp.pt` and all three files.** Week 25 reshapes the same digits into `(1797, 1, 8, 8)` and Week 26 trains a CNN on them, and the four-row comparison table in Week 26 needs today's 4,810 parameters and today's 0.9667 to compare against.

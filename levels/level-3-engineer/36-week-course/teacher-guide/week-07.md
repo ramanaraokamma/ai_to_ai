@@ -79,7 +79,7 @@ One change per measurement makes those four worlds distinguishable. That is the 
 
 > **ablation table** — the log of your experiments. One row per change: what you changed, the score you got, the difference from before, and whether you kept it. "Ablation" just means *taking something away*; the table grew out of the habit of removing one feature at a time to see what it was worth. We use it for adding as well as removing.
 
-> **regression** — a change that made things **worse**. Nothing to do with "linear regression"; it is the ordinary software-engineering word for "it used to work better than this". Six of our eight rows today are regressions, and that is normal and healthy.
+> **regression** — a change that made things **worse**. Nothing to do with "linear regression"; it is the ordinary software-engineering word for "it used to work better than this". Five of our seven changes today end up dropped, four of them true regressions, and that is normal and healthy.
 
 > **leak hunt** — the deliberate audit you run on a suspiciously good score, to find out whether the model is clever or the data is poisoned.
 
@@ -159,11 +159,11 @@ Here is what the run actually produces. **These are the real numbers from `bench
 
 2. **`is_weekend` bought nothing.** −0.0001. That is not "slightly bad", it is **the same number**, arriving with a different amount of rounding noise. There was no weekend signal in the table to find. **Delete the feature.** A feature that buys nothing costs you maintenance, one more thing to explain, and one more thing to break.
 
-3. **Row 7 is the surprise, and it is the best moment of the lesson.** Dropping `order_hour` — a real column, out of the actual file — makes the model **better** by 0.0013. Why? Because `is_rush` already carries the useful part of `order_hour`, and the raw hour column adds a straight-line story that is not true. **Once you have the good version of a column, the raw version can be actively harmful.** Nobody expects this. Let it land.
+3. **Row 7 is the surprise, and it is the best moment of the lesson.** Dropping `order_hour` — a real column, out of the actual file — makes the model **better** by 0.0013. Why? Probably because `is_rush` already carries the useful part of `order_hour`, and the raw hour column adds a straight-line story that is not true. That is a hypothesis: +0.0013 is under the 0.005 line (see point 4), so present it as the likely reason, not a proven one. **Once you have the good version of a column, the raw version can be harmful.** Nobody expects this. Let it land.
 
 4. **Row 5 is where you must be honest.** `items_per_km` gained +0.0003. Is that real? **Almost certainly not.** The validation pile has 400 rows. Shuffle it differently and a difference that small will flip sign. We do not yet have the tool to say how big a difference has to be before it counts — that is **Week 11**, where five folds give us a `±`. Until then use a working rule and say it out loud: **on 400 validation rows, treat anything under about 0.005 as "no evidence".** Which, honestly, also puts a question mark over row 7's +0.0013 — and a student who spots that has understood more than the exercise asked for. Praise it, agree with it, and promise Week 11.
 
-5. **The total honest gain is +0.0058.** From 0.7541 to 0.7599. Eight experiments, two kept, six thrown away, and the reward is half a percentage point. **Say that number out loud without flinching.** Feature engineering is not magic; it is a grind of small defensible gains. It is still usually a better use of an afternoon than fiddling with the model, and the reason is the point of the week: you can *explain* every one of those 0.0058.
+5. **The total honest gain is +0.0058.** From 0.7541 to 0.7599. Seven changes tried, two kept, five thrown away, and the reward is half a percentage point. **Say that number out loud without flinching.** Feature engineering is not magic; it is a grind of small defensible gains. It is still usually a better use of an afternoon than fiddling with the model, and the reason is the point of the week: you can *explain* every one of those 0.0058.
 
 ### 6. The planted leak, and why it is a different flavour from last week's
 
@@ -192,7 +192,7 @@ And here is the payoff, three real numbers:
 | Same feature set, that one column removed | **0.7535** ← the honest score |
 | Same idea, lookup rebuilt from the 1,200 **training** rows only | **0.6115** ← worse than nothing |
 
-**That third row is the one to dwell on.** A student's instinct will be "fine, so compute it properly and keep it". So do that — and it scores 0.6115, which is *worse than not having the feature at all.* The reason is the same 360-groups-of-one problem: computed honestly, the column is mostly the memorised label of a single unrelated training row, which is noise. **The feature was never good. It was only ever the answer.**
+**That third row is the one to dwell on.** A student's instinct will be "fine, so compute it properly and keep it". So rebuild the lookup from the 1,200 training rows — and it scores 0.6115, which is *worse than not having the feature at all.* Be precise about why, because the obvious story is wrong: this rebuild is still naive. Every training row sits inside its own group, so for a group of one the training-time value is still that row's own label. Measured: train AUC 0.957, the feature's weight about 2.7, then validation 0.6115, because 28.5% of validation orders fall in groups never seen in training (they get the fallback 0.2875) and the rest get a rate from one or two *other* orders. The model learned to trust a column that is only trustworthy on the rows it was computed from. Computed properly (each row's value from the *other* rows only, out-of-fold, smoothed towards the overall rate) it scores about 0.758 in a quick check — barely above 0.7535 — so the column is worth little on this table even when honest. **The 0.9240 was never a measure of the feature. It was the answer.**
 
 **The flavour is target leakage**, because the poisoned quantity was computed from the `late` column — the answer. (Preprocessing leakage would be computing a *scaler's mean* over all the rows, which is a real bug and a much milder one. Week 6 covered both; today's is squarely the first.)
 
@@ -204,10 +204,10 @@ And here is the payoff, three real numbers:
 ### 7. The three misconceptions you will actually meet
 
 **Misconception 1 — "more features is better."**
-It is the single most common belief in the room and the table refutes it four times over. Rows 3, 4, 5 and 6 all *add* something and three of them make it worse. The reason is worth saying plainly: every extra column is another weight the model has to estimate from the same 1,200 training rows. Estimating more things from the same evidence means estimating each of them worse. **The best model today has FEWER columns than the baseline**, which is row 7, and that is the most surprising line in the file.
+It is the single most common belief in the room and the table refutes it four times over. Rows 3, 4 and 5 all *add* a column and two of the three make it worse (row 6 swaps the ruler and does not help either). The reason is worth saying plainly: every extra column is another weight the model has to estimate from the same 1,200 training rows. Estimating more things from the same evidence means estimating each of them worse. **The best model today has no more columns than the baseline and fewer than row 2** — row 7 swaps the raw hour for its better version — and that is the most surprising line in the file.
 
 **Misconception 2 — "a bigger number means a better model."**
-This is the belief the leak hunt exists to kill. 0.9240 is a bigger number than 0.7599 and it belongs to a model that will be useless the moment it is switched on. Give them the rule as a reflex: **a sudden jump of more than about 0.1 AUC from one column is not a discovery, it is a bug.** Real features arrive in units of 0.005.
+This is the belief the leak hunt exists to kill. 0.9240 is a bigger number than 0.7599 and it belongs to a model that will be useless the moment it is switched on. Give them the rule as a reflex: **on this table, a sudden jump of 0.1 or more from one column means stop and audit.** It is not proof of a bug by itself (removing `distance_km` costs 0.10 honestly); Audit 4, "does it exist yet?", decides. Honest changes here arrived in units of 0.005.
 
 **Misconception 3 — "the validation score is the truth."**
 It is a measurement on 400 particular rows, taken with a particular shuffle. It has wobble in it. We do not yet have the machinery to say how much — Week 11 — but today's honest posture is: *a delta under 0.005 on 400 rows is not evidence, and I will say so in writing.* A student who writes "+0.0003, which is probably nothing" on their table has done better work than one who writes "+0.0003, kept".
@@ -225,7 +225,7 @@ It is a measurement on 400 particular rows, taken with a particular shuffle. It 
 | Moving the 0.5 threshold | **Week 10.** Not today, at all. |
 | `GridSearchCV`, tuning `C`, changing the model | **Not in Level 3 at all as a lesson**, and explicitly banned today. The whole point is that the model is frozen. If a student changes `LogisticRegression` to a decision tree, their table is void and they know why. |
 | `SelectKBest`, automatic feature selection | Mentioned in Week 6's noise experiment; not a tool this year. Choosing by hand with a written reason is the skill. |
-| Target encoding done properly (smoothing, out-of-fold) | Genuinely advanced. Today it is enough that the naive version is a leak and even the careful version scores 0.6115 here. |
+| Target encoding done properly (smoothing, out-of-fold) | Genuinely advanced. Today it is enough that the naive version is a leak and that the train-only rebuild (0.6115) is still naive. The careful version scores about 0.758 here, barely above no feature. |
 | Opening the test pile | **Week 36.** Somebody will suggest it "just to check". No. |
 
 The line to hold in your head all lesson: **today the student learns to write a row before they change the next thing.** That is it. If they leave with a six-row table in their own handwriting and no new Python at all, the lesson worked.
@@ -531,7 +531,7 @@ Let them answer. What you are hoping for is somebody suspicious, because Week 6 
 
 > "That last one is going to trip you up for thirty seconds, so let's get it over with. You know `LinearRegression`, the model. **This is a different meaning of the same word.** Programmers say 'that update had a regression in it' and they mean something used to be better. Nothing to do with lines.
 >
-> And I'll tell you now: **six of the eight rows we write today are regressions.** That is not failure. That is what the table is *for*. A table of eight successes would mean you weren't trying anything risky."
+> And I'll tell you now: **five of the seven changes we try today end up dropped, and four of those are true regressions.** That is not failure. That is what the table is *for*. A table where every change succeeded would mean you weren't trying anything risky."
 
 **Ask this:** "Here's a proposal. I add a column called `is_weekend`, and while I'm in there I also change the scaler from StandardScaler to MinMaxScaler, because why not. Is that one row or two?"
 
@@ -661,28 +661,35 @@ Run it. Real output:
 
 ```text
 baseline        : 0.7541
-+ is_rush       : 0.7541
+Traceback (most recent call last):
+  ...
+ValueError: A given column is not a column of the dataframe
 ```
 
-**Do this:** Stop. Let the silence sit for five seconds.
+**Do this:** Stop. Ask: "Read me the last line. Which column is it talking about, and did I ever make it?"
 
-**Ask this:** "Those two numbers are identical to four decimal places. Is that possible?"
+> **Say this:** "Look at the second call. I passed `CHAMP`, which *lists* `is_rush`… and I passed `{}` as the settings, which tells `add_features` to build nothing. So the column is in the list and not in the table, and `ColumnTransformer` went looking for a name that was never made. That was the loud direction."
+
+**Do this:** Now type the quiet direction, on purpose:
+
+```python
+oops = measure(BASE_NUM, CAT, RUSH)     # is_rush BUILT, but never listed
+print("+ is_rush (built, not shown): %.4f" % oops)
+```
+
+```text
++ is_rush (built, not shown): 0.7541
+```
+
+**Ask this:** "That is identical to the baseline to four decimal places. Is that possible?"
 
 *Hoped-for answer:* "No — you added a column, something should have changed."
 
-> **Say this:** "Something should have changed. So either `is_rush` is worth *exactly* nothing to four decimal places — which would be a remarkable coincidence — or **the column was never made.**
+> **Say this:** "Something should have changed. So either `is_rush` is worth *exactly* nothing to four decimal places — which would be a remarkable coincidence — or **the change I thought I made never happened.** This time the column *was* built, but it was never in the list of columns the model is shown.
 >
-> Look at the second call. I passed `CHAMP`, which *lists* `is_rush`… and I passed `{}` as the settings, which tells `add_features` to build nothing. So the column is in the list and not in the table."
+> **This is the most dangerous kind of bug in the whole of this term: the one that gives you a plausible number.** Write both directions in the Bug Log now, before we fix it."
 
-**Ask this:** "Then why didn't it crash? It's looking for a column that doesn't exist."
-
-Let them think. Then:
-
-> "It nearly did. If I'd got it the *other* way round it would have crashed loudly. This way, `ColumnTransformer` was given a name it couldn't find — and in some versions of scikit-learn you get `ValueError: A given column is not a column of the dataframe`, and in ours the identical score is your only clue.
->
-> **This is the most dangerous kind of bug in the whole of this term: the one that gives you a plausible number.** Write it in the Bug Log now, before we fix it."
-
-**Do this:** Bug Log entry. Ninety seconds. Message: *"two rows scored identically to 4 dp"*. Meaning: *"the change I thought I made never happened"*. Fix: *"pass the kw_args as well as the column name"*. Then fix it live:
+**Do this:** Bug Log entry. Ninety seconds. Message: *"A given column is not a column of the dataframe"* (loud) and *"two rows scored identically to 4 dp"* (silent). Meaning: *"the list of columns and the switches that build them disagree"*. Fix: *"make the two lists agree: pass the kw_args AND the column name"*. Then fix it live:
 
 ```python
 champ = measure(CHAMP, CAT, RUSH)
@@ -756,7 +763,7 @@ drop order_hour : 0.7599
 
 > **Say this:** "Sit with that for a second. I **removed a real column that came out of the actual file**, and the model got better. Not by much — 0.0013 — but the right direction.
 >
-> Because row 2 already took the useful part out of `order_hour`. What was left was a straight-line story that isn't true, and the model was spending a weight on it. **Once you've got the good version of a column, the raw version can actively cost you.**"
+> Probably because row 2 already took the useful part out of `order_hour`. What was left may be a straight-line story that isn't true, with the model spending a weight on it. Mind you, 0.0013 is under our own 0.005 line, so that's a hypothesis, not a finding. **Once you've got the good version of a column, the raw version *can* cost you.**"
 
 ---
 
@@ -774,7 +781,7 @@ Your job for thirty minutes is to sit on your hands, run the timer, and enforce 
 
 **Say this:**
 
-> "Eight rows. Two kept. Six regressions. Best honest score **0.7599 on the 400 validation rows** — and say it that way, with the pile named, always.
+> "Eight rows: a baseline and seven changes. Two changes kept, five dropped, four of them regressions. Best honest score **0.7599 on the 400 validation rows** — and say it that way, with the pile named, always.
 >
 > Total gain, 0.0058. And every single ten-thousandth of it is on that wall with a reason next to it. If somebody asks you in six months why `is_weekend` isn't in the model, you point at row 3 and say 'minus 0.0001'."
 
@@ -800,7 +807,7 @@ Every message below came from running a broken version of this week's actual cod
 | `ValueError: A given column is not a column of the dataframe` | "`ColumnTransformer` was told to use a column name that isn't there." | A derived feature is listed in `num` but never actually built — the `kw_args` that switch it on were not passed. | Pass the switches: `measure(CHAMP, CAT, RUSH)`, not `measure(CHAMP, CAT, {})`. **Check the two lists agree every time.** |
 | `ValueError: columns are missing: {'weather'}` | "At predict time the table has fewer columns than at fit time." | A column was dropped from the validation frame but not the training frame, or vice versa. | Drop it in **both** places, which is what the `drop=` argument to `measure` is for. It does `tr` and `va` in the same two lines so they cannot drift apart. |
 | `ValueError: y should be a 1d array, got an array of shape (400, 2) instead.` | "I wanted one number per row, you gave me two." | `roc_auc_score(y_val, pipe.predict_proba(va))` without `[:, 1]`. | `pipe.predict_proba(va)[:, 1]` — column 1 is the probability of the positive class. |
-| **No error. Two rows score identically to four decimal places.** | Nothing crashed. The change you thought you made did not happen. | Usually the `kw_args` switch, as in deliberate mistake one. Sometimes a typo in a column name that silently produced a column nobody uses. | Print the actual column list going into the model: `print(sorted(add_features(X_train.head(2), **kw).columns))`. If your new name is not in it, it was never made. |
+| **No error. Two rows score identically to four decimal places.** | Nothing crashed. The change you thought you made did not happen. | Usually a column that was built but never listed in `num` (the quiet half of deliberate mistake one; the other half, listed but not built, crashes). Sometimes a typo in a column name that silently produced a column nobody uses. | Print the actual column list going into the model: `print(sorted(add_features(X_train.head(2), **kw).columns))`. If your new name is not in it, it was never made. |
 | **No error. A score of 0.92 or higher on this table.** | Nothing crashed. Something is leaking. | A feature computed from `late`, or a statistic computed over all the rows before splitting. | Run the leak hunt. **On this dataset, honest scores live between 0.74 and 0.77. Anything above 0.80 is a bug until proven otherwise.** |
 | **No error. `to_string` printed nothing.** | You built the string and then threw it away. | `table.to_string(index=False)` with no `print()` round it. | `print(table.to_string(index=False))`. `to_string` *makes* text; `print` *shows* it. |
 | **No error, but every delta is 0.0000 in the table and non-zero on screen.** | Nothing is wrong. | `.round(4)` was applied to the whole table for display, and the deltas really are that small. | Print more digits for the delta column only, or accept it: a delta that vanishes at four decimals is a delta you should not be keeping. |
@@ -856,7 +863,7 @@ And the sentence for this week:
 ### What "finished" looks like
 
 - **Eight rows on the wall**, each with one change, a four-decimal AUC, a signed delta, and keep or drop.
-- **Six of them say "drop".** If all eight say keep, they were not trying anything risky, or they were rounding kindly.
+- **Five of them say "drop"** (and the baseline and two changes say "keep"). If every change says keep, they were not trying anything risky, or they were rounding kindly.
 - The student can put a finger on any row and say, in one sentence, what changed and what it cost.
 - The best honest score is stated **with the pile named**: *"0.7599 on the 400 validation rows."*
 - Workbook page 7.3 is a copy of the wall, in their handwriting.
@@ -869,10 +876,10 @@ And the sentence for this week:
 
 ### Variation — harder
 
-1. **Two changes on purpose, then untangle them.** Run A alone, B alone, and A+B. Then ask: does the A+B delta equal the sum of the two separate deltas? (It does not.) That is *interaction* between features, it is genuinely interesting, and it is the honest reason "one at a time" is a discipline and not a proof.
-2. **Find a change that helps by more than 0.005.** Give them ten minutes. **They will fail**, and the failure is the point: the table has already told them the ceiling is about half a point. A student who reports "I tried six things and none of them cleared 0.005" has produced a real result.
-3. **Beat 0.7599 with FEWER columns than the baseline.** Row 7 got there with one fewer. Can they get two fewer? This pushes hard on "more is not better".
-4. **Write the leak yourself.** Add a column `d["cheat"] = y_train` — and watch it fail loudly, because `add_features` never sees `y`. **That failure is the design working**, and understanding why a `FunctionTransformer` *cannot* see the labels is a genuinely deep insight.
+1. **Two changes on purpose, then untangle them.** Run A alone, B alone, and A+B. Then ask: does the A+B delta equal the sum of the two separate deltas? (Not exactly — 0.0018 vs 0.0016 here, a gap too small to interpret.) The general phenomenon is *interaction* between features, it is genuinely interesting, and it is the honest reason "one at a time" is a discipline and not a proof.
+2. **Find a change that helps by more than 0.005.** Give them ten minutes. **They will probably fail**, and the failure is the point (if someone succeeds, ask whether it would survive a different split — that is Week 11): the table has already told them the ceiling is about half a point. A student who reports "I tried six things and none of them cleared 0.005" has produced a real result.
+3. **Beat 0.7599 with FEWER columns than row 2.** Row 7 got there with one fewer. Can they get two fewer? This pushes hard on "more is not better".
+4. **Write the leak yourself.** Inside `add_features`, add `d["cheat"] = y_train` (and list `cheat` in `num`). It does **not** fail: `y_train` is a global, the index lines up at fit time, and the model is silently fitted on a column that is the label. On the validation rows the index does not match, `cheat` is NaN and gets imputed, so the validation score (0.7522 when we tried it) looks innocent while the fitted model is contaminated. `FunctionTransformer` does not *hand* your function `y`, but nothing stops a function reaching for a global. That is exactly how `leaky_features.py` works.
 5. **Argue with row 5.** Write the case, in one paragraph, that `items_per_km`'s +0.0003 should be kept. Then write the case against. Whichever one is better argued wins, and the answer key has both.
 
 ---
@@ -915,9 +922,9 @@ So the cost of a useless feature is not that the model is stupid; it is that **t
 
 This is the best question of the week and you should let the student sit in it for a moment before answering, because the answer is a *demonstration*, not an argument.
 
-It does not work. Try it. **At the moment a customer taps "order", the lookup cannot be built**, because it is built out of whether orders were late, and this one has not happened yet. So on the first real request the column has no value. Fill it with the average and the model's biggest weight is now pointing at a constant, and your 0.9240 model performs at about 0.75 — if you are lucky. That is not a small degradation; it is a completely different model.
+It does not work. Try it. **At the moment a customer taps "order", the lookup cannot be built**, because it is built out of whether orders were late, and this one has not happened yet. So on the first real request the column has no value. Fill it with the average and the model's biggest weight is now pointing at a constant, and your 0.9240 model performs at about 0.73 (we measured 0.7298) — worse than the 0.7535 of a model that never had the column. That is not a small degradation; it is a completely different model.
 
-And even if you could somehow build it honestly, we measured that: **0.6115.** Worse than not having it. **The feature was never good. It was only ever the answer.**
+And a naive train-only rebuild of it scores **0.6115** — worse than not having it — and even a careful one is barely better than nothing. **The 0.9240 was never a measure of the feature. It was only the answer.**
 
 **"Which features should I actually keep, then? Just the two that helped?"**
 
@@ -949,9 +956,9 @@ What to tell a 14-year-old, out loud: **"there's no right answer, but there is a
 | The table stays in the laptop and never reaches the wall | Typing is faster than walking across the room | The wall table is the objective, not a display of it. **No round ends until the row is written.** Enforce it as hard as you enforce one-change-at-a-time. |
 | Deltas get computed to two decimals and the whole lesson vanishes | 0.75 to 0.76 looks like nothing happened | Four decimal places, on the wall, from row one. Show them: our entire gain is 0.0058. At two decimals it does not exist. |
 | Nobody can say which pile a number came from | The number feels self-explanatory | Every score said out loud gets the pile: *"0.7599 on the 400 validation rows."* Ritual 3 from the orientation. Do not let a bare number past you. |
-| "More features must be better" survives the whole lesson | It is the intuition everybody arrives with | Point at rows 3, 4, 5 and 6 — four additions, three of them worse. Then point at row 7: **the best model has fewer columns than the baseline.** Make them read row 7 aloud. |
+| "More features must be better" survives the whole lesson | It is the intuition everybody arrives with | Point at rows 3, 4 and 5 — three added columns, two of them worse. Then point at row 7: **the best model has one fewer column than row 2 and no more than the baseline.** Make them read row 7 aloud. |
 | A tiny positive delta gets treated as a win | +0.0003 is positive, and positive feels like winning | Ask one question: *"if we reshuffled the validation rows, would that 0.0003 survive?"* Then be honest that you cannot answer it yet, and name Week 11. **Do not fake certainty.** |
-| A student is crushed by six regressions | Six failures out of eight feels like failing | Reframe before it sets in: *"you now know six things about pizza deliveries that nobody in this room knew an hour ago."* A regression is a result. Say it every time you write one. |
+| A student is crushed by five drops | Five drops out of seven changes feels like failing | Reframe before it sets in (four are true regressions, one is a tiny gain that did not clear the bar): *"you now know five things about pizza deliveries that nobody in this room knew an hour ago."* A regression is a result. Say it every time you write one. |
 | The `KeyError: 'order_hour'` derails ten minutes | It is a confusing error the first time | It is deliberate mistake two and it is on the schedule. Read the last line, name the file, name the function, fix it, Bug Log, move on. **Three minutes, not ten.** |
 | Somebody "fixes" `leaky_features.py` before measuring it | Fixing a bug feels like the responsible thing | Stop them warmly: *"if you fix it now you'll never know what it was worth."* The fake number is the evidence. Measure first, then fix. |
 | The leak hunt turns into a hunt for the syntax error | The file looks unfamiliar | The file **runs fine.** Say so up front: *"there is nothing wrong with this file as Python. It runs. The bug is in what it means."* That single sentence saves ten minutes. |
@@ -1007,10 +1014,10 @@ None of these need syntax from a later week.
 
 1. **Untangle two changes** (Variation-harder 1): A alone, B alone, A+B, and does the sum add up? It does not, and *interaction* is a real idea they can now name.
 2. **Beat 0.7599 with fewer columns still** (Variation-harder 3). Row 7 removed one. Can they remove two and hold the score?
-3. **Try to write the leak by hand** (Variation-harder 4) and discover that `FunctionTransformer` structurally *cannot* see `y`. Ask them to explain why that is a safety feature and not a limitation. **This is the deepest question available today.**
+3. **Try to write the leak by hand** (Variation-harder 4) and discover that it does *not* crash: `FunctionTransformer` does not pass `y` in, but a function can still reach a global `y_train`, and the result is a silently contaminated model. Ask them why that is more dangerous than an error. **This is the deepest question available today.**
 4. **Argue both sides of row 5** (Variation-harder 5). Two paragraphs. The answer key has both.
 5. **The honest question:** *"our best is 0.7599. What is the highest score this table could possibly support, with perfect features?"* Nobody knows — and the reason is that some lateness is genuinely random (a driver got a puncture) and no feature can predict it. That ceiling has a name, **irreducible error**, and it is Week 14's ground. A student who arrives at "some of it is just luck" on their own has had an excellent week.
-6. **Rebuild the leak honestly and explain 0.6115.** Why is a properly-computed version *worse than nothing*? (Because with 647 training groups over 1,200 rows, most groups hold one or two orders, so the "rate" is a memorised coin flip.) This is a genuinely advanced insight and it is available today.
+6. **Rebuild the leak honestly and explain 0.6115.** Why is a properly-computed version *worse than nothing*? (Because the rebuild is still naive: each training row is counted in its own group, so the model learns to trust the column on training rows and it does not transfer; with 647 groups over 1,200 rows most groups hold one or two orders.) This is a genuinely advanced insight and it is available today.
 
 ### If the student won't engage today
 
@@ -1477,7 +1484,7 @@ train-only lookup, with the feature : val AUC 0.6115
 train-only lookup, without it      : val AUC 0.7535
 ```
 
-**Why 0.6115 and not something respectable?** 647 groups over 1,200 training rows means most groups hold one or two orders, so most "rates" are a memorised 0.0 or 1.0 from a single unrelated order. That is noise with a confident-looking name on it. **The feature was never good.**
+**Why 0.6115 and not something respectable?** The rebuild is still naive: each training row is counted inside its own group (647 groups over 1,200 rows, so most hold one or two orders), so on training rows the column is partly the row's own label. Measured: train AUC 0.957, weight about 2.7, validation 0.6115, with 28.5% of validation orders in groups never seen in training. Out-of-fold and smoothed, the same idea scores about 0.758, barely above 0.7535. **The 0.9240 was never a measure of the feature.**
 
 ### Page 7.6 — Defend your final feature set
 
@@ -1506,7 +1513,7 @@ train-only lookup, without it      : val AUC 0.7535
 | `is_weekend` | never made it in | **Row 3: −0.0001.** No signal. |
 | `min_per_km` | a ratio that looked clever | **Row 4: −0.0051.** The worst change of the day. |
 | `items_per_km` | possible, but not proven | **Row 5: +0.0003**, which is inside the noise on 400 rows. |
-| `similar_orders_late_rate` | **target leakage** | Fake **0.9240**, honest **0.7535**, honestly-computed **0.6115**. |
+| `similar_orders_late_rate` | **target leakage** | Fake **0.9240**, honest **0.7535**, naively rebuilt from training rows **0.6115**. |
 | `order_id` | it is a row number, not a fact about the world | Never a candidate. Naming it anyway is a **level-4 answer**. |
 
 **Marking notes.** Three specific things:
@@ -1527,9 +1534,9 @@ train-only lookup, without it      : val AUC 0.7535
 
 **Live-code step 1 — "what three numbers will print?"** 1200, 400, 400. From 2,000 rows after `drop_duplicates()`: 20% test is 400, then 25% of the remaining 1,600 is 400 validation, leaving 1,200 train.
 
-**Live-code step 3 — "two identical scores: is that possible?"** No. Adding a column and getting the identical number to four decimal places means the column was never built. **A plausible number is more dangerous than a crash.**
+**Live-code step 3 — "two identical scores: is that possible?"** No. Adding a column and getting the identical number to four decimal places means the change never reached the model: here, the column was built but never listed in `num`. **A plausible number is more dangerous than a crash.**
 
-**Live-code step 3 — "then why didn't it crash?"** Because `ColumnTransformer` was handed a name it could not resolve at a point where the failure was silent. In other orderings you get `ValueError: A given column is not a column of the dataframe`. **This is the most dangerous bug class of the term precisely because it sometimes chooses not to shout.**
+**Live-code step 3 — "why did the first call crash and the second not?"** The first call listed `is_rush` in `num` but never built it, so `ColumnTransformer` was asked for a column that does not exist and raised `ValueError: A given column is not a column of the dataframe`. The second built `is_rush` but never listed it, so nothing asked for it and nothing complained. **This is the most dangerous bug class of the term precisely because one direction shouts and the other stays silent.**
 
 **Live-code step 3 — "why does a 0/1 flag beat a number containing more information?"** Because `LogisticRegression` fits a straight line in each input. With `order_hour` as a number it can only say "later is worse" or "later is better". The truth is a hump over 18:00–20:00. A 0/1 flag can express a hump; a straight line cannot. **The flag has less information and more of the right shape.**
 
@@ -1537,13 +1544,13 @@ train-only lookup, without it      : val AUC 0.7535
 
 **Wrap / Check 1 — "two columns and a scaler, +0.006: what have I learnt?"** Nothing usable. See the four worlds.
 
-**Wrap / Check 2 — "removed a real column, score went up: how?"** `is_rush` already extracted the useful part of `order_hour`. The leftover raw hour contributed a straight-line story that is not true, and the model spent a weight on it. Once you have the good version of a column, the raw version can cost you.
+**Wrap / Check 2 — "removed a real column, score went up: how?"** `is_rush` probably extracted the useful part of `order_hour`; the leftover raw hour may contribute a straight-line story that is not true. At +0.0013 that is a hypothesis under our own 0.005 line, not a finding. Once you have the good version of a column, the raw version can cost you.
 
 **Wrap / Check 3 — "somebody's model scores 0.94: what do you do?"** Do not celebrate. Ask of every feature: *does this value exist at the moment I need the prediction?* Then run the four audits: score with and without, correlation with the target, that column alone, and the weight sizes.
 
-**Variation-harder 1 — "does the A+B delta equal the sum of the two deltas?"** No. Take A = `+ items_per_km` (+0.0003) and B = `drop order_hour` (+0.0013). Run separately from the champion 0.7586 you get 0.7590 and 0.7599. Run together you get **0.7604**, a delta of +0.0018, not +0.0016. Features overlap in what they explain, so their effects do not simply add. That overlap is called **interaction**, and it is the honest reason "one at a time" is a *discipline* rather than a *proof*.
+**Variation-harder 1 — "does the A+B delta equal the sum of the two deltas?"** No. Take A = `+ items_per_km` (+0.0003) and B = `drop order_hour` (+0.0013). Run separately from the champion 0.7586 you get 0.7590 and 0.7599. Run together you get **0.7604**, a delta of +0.0018 against a sum of +0.0016. That 0.0002 gap is far under the 0.005 line (and partly rounding), so this example does not demonstrate anything; it shows you cannot *assume* the effects add. When features overlap in what they explain their effects can interact, which is the honest reason "one at a time" is a *discipline* rather than a *proof*.
 
-**Variation-harder 4 — "why can't `add_features` cheat by using `y`?"** Because `FunctionTransformer` only ever hands your function the feature table. The labels are not passed in and there is nowhere to reach them from. **The design makes the commonest fatal bug in this subject unwriteable at that point in the pipeline** — which is precisely why the leak in `leaky_features.py` had to be smuggled in at import time, outside the function, from a fresh copy of the whole table. **A student who traces that reasoning has understood something most working practitioners have not.**
+**Variation-harder 4 — "can `add_features` cheat by using `y`?"** It is not *given* `y`: `FunctionTransformer` only hands your function the feature table. But nothing stops it reading a global such as `y_train` (we tried `d["cheat"] = y_train`: it runs, fits a model that leans on the label, and scores 0.7522 on validation because the mismatched index turns `cheat` into NaN there). So the design makes the leak harder to write by accident, not impossible — and that is exactly how `leaky_features.py` smuggles it in at import time, outside the function, from a fresh copy of the whole table. **A student who finds that it does not crash has understood something most working practitioners have not.**
 
 **Variation-harder 5 — argue both sides of row 5.**
 *For keeping `items_per_km`:* the delta is positive, it is a cheap row-wise calculation with no leakage risk, it is easy to explain ("how many items per kilometre the driver is carrying"), and 0.7590 is genuinely the second-best honest score on the table.

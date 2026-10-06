@@ -1331,7 +1331,7 @@ X.shape after all of the above                (2000, 8)
 
 **A2(a).** `add_features(X, band=True)["hour_band"].shape` is `(2000,)` — **one number**, because a single column is a flat list of 2,000 values, not a grid. A grid needs two numbers.
 
-**A2(b).** `d = d.copy()`. That one line is why `X` is still `(2000, 8)` after eight calls that added thirteen columns between them.
+**A2(b).** `d = d.copy()`. That one line is why `X` is still `(2000, 8)` after five calls that added nine columns between them.
 
 **A3.**
 
@@ -1666,7 +1666,7 @@ If rush hour shifts to 17:00–19:00, `is_rush` starts labelling the wrong three
 
 **T2 — a model answer.**
 
-**Real** means the pattern exists in the world and you can show it: 0.4663 against 0.3269, a factor of 1.43, measured on 2,000 real orders. **Worth its place** means adding a column for it makes the model better than not adding it. Those are different tests because `distance_km` and the three one-hot weather columns were **already carrying most of that pattern between them**, and the new column is one more weight to estimate from the same 1,200 rows. A weight estimated from not-quite-enough data is noise, and noise costs score.
+**Looks real** means the pattern shows up in a table: 0.4663 against 0.3269, a factor of 1.43 — though the storm corner holds only 35 orders, so it may be partly luck. **Worth its place** means adding a column for it makes the model better than not adding it. Those are different tests because `distance_km` and the three one-hot weather columns were **already carrying most of that pattern between them**, and the new column is one more weight to estimate from the same 1,200 rows. A weight estimated from not-quite-enough data is noise, and noise costs score.
 
 So to *"the story is right so the column stays"* the reply is **never "your story is wrong."** It is: *"the story is right and the column still has to earn its place. This one didn't — −0.0014."* And then the question that ends every version of this argument: **"what number would change your mind?"** For me it is a positive delta that survives cross-validation in Week 11, because −0.0014 measured on 400 validation rows is genuinely inside the wobble of a 400-row measurement.
 
@@ -1722,7 +1722,7 @@ Z4 − Z3 = 0.7720 − 0.7714 = +0.0006   keep? barely
 5+      422 orders  0.5521
 ```
 
-**Check the rows: 588 + 588 + 402 + 422 = 2000** ✅ **And that climbs the whole way. It is a slope, not a hump.** And a slope is exactly what one weight on `distance_km` can already draw — which is why `distance_km` is the biggest weight in the model at 1.128. So `dist_band` spends **three columns** re-describing a pattern the model already had, **and throws away resolution while doing it**: every order between 2 and 5 km becomes the single word `medium`, so a 2.1 km trip and a 4.9 km trip become identical.
+**Check the rows: 588 + 588 + 402 + 422 = 2000** ✅ **And that climbs the whole way. It is a slope, not a hump.** And a slope is exactly what one weight on `distance_km` can already draw — which is why `distance_km` is the biggest weight in the model at 1.128. So `dist_band` spends **three columns** re-describing a pattern the model already had, and, because the raw `distance_km` column stays in the model, it loses no resolution — it just adds three redundant columns, each one more weight to estimate.
 
 **Compare `order_hour`:** 0.213, 0.231, 0.261, 0.249, 0.202, 0.218, 0.256, 0.280, **0.374, 0.375, 0.355**, 0.236, 0.196, 0.309. **Up in the middle and down again.** No straight line can draw that, so binning is pure gain there.
 
@@ -1734,7 +1734,7 @@ Z4 − Z3 = 0.7720 − 0.7714 = +0.0006   keep? barely
 > **What I thought it would do:** the band rates go 0.1480 / 0.2576 / 0.5521, a spread of 0.4041, which is the biggest gap I found anywhere.
 > **AUC without it (Z1):** 0.7756 · **AUC with it (Z2):** 0.7718
 > **The delta:** 0.7718 − 0.7756 = **−0.0038**
-> **Why I am deleting it:** the rates climb steadily, so `distance_km` is a **slope**, and the model already draws slopes with one weight (1.128, its biggest). The bin cost three columns, added nothing new, and destroyed the difference between a 2.1 km trip and a 4.9 km trip. **Bin a hump, not a slope.**
+> **Why I am deleting it:** the rates climb steadily, so `distance_km` is a **slope**, and the model already draws slopes with one weight (1.128, its biggest). The bin cost three columns, added nothing new, and was redundant with the raw `distance_km` that stays in the model. **Bin a hump, not a slope.**
 
 > **Feature:** `items_per_min` — `items / (prep_minutes + 0.5)`, pizzas per minute of prep.
 > **What I thought it would do:** a fast kitchen making many pizzas is under pressure, so more lateness.
@@ -1744,7 +1744,7 @@ Z4 − Z3 = 0.7720 − 0.7714 = +0.0006   keep? barely
 
 **The honest caveat, on the smallest deletion:**
 
-> *"−0.0004 for `items_per_min` was measured on 400 validation rows and is well inside the wobble of a 400-row measurement — retest with cross-validation in Week 11 before calling it settled. The −0.0038 for `dist_band` I am much more confident about, because it has a mechanism behind it and not just a number."*
+> *"−0.0004 for `items_per_min` was measured on 400 validation rows and is well inside the wobble of a 400-row measurement — retest with cross-validation in Week 11 before calling it settled. The −0.0038 for `dist_band` is bigger and has a plausible reason (three redundant columns), but it is also one split of 400 rows, so I would retest it too."*
 
 **The one that surprised me:** `dist_band` — biggest evidence spread of anything I looked at (0.4041) and the worst delta in the table (−0.0038), because the spread came from a column the model already had as a straight line.
 
@@ -1767,7 +1767,7 @@ S0  D (rush + min_per_km)    22    0.7675   0.7843 0.0000
 
 ### Draw It
 
-**Panel 1 — where the line sits.** Through the middle, and **almost flat.** The best straight line through a hump has to compromise: too high for the 0.196 at hour 22 and far too low for the 0.375 at hour 19. **The fitted weight for `order_hour` is −0.121**, which is a line sloping very slightly *downwards* — because there happen to be a few more low-rate hours at the top end than the bottom. Against `distance_km`'s **1.128**, that is nothing.
+**Panel 1 — where the line sits.** Through the middle, and **almost flat.** The best straight line through a hump has to compromise: too high for the 0.196 at hour 22 and far too low for the 0.375 at hour 19. **The fitted weight for `order_hour` in the raw-columns model is +0.092** (it reads −0.121 in the finished model D, where `is_rush` has already taken over the hump), against `distance_km`'s 0.925 (1.128 in D). Either way, that is nothing.
 
 **Panel 2 — `is_rush`'s weight is 0.436.** Read those two numbers together and you have understood binning completely: **the hour matters enormously; the hour *as a number* does not.**
 

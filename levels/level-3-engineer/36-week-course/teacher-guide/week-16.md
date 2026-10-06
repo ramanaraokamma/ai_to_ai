@@ -117,7 +117,7 @@ z              = −2.30
 
 A grid with three rows and two columns has shape `(3, 2)`. Say it out loud as **"three by two"**.
 
-That is the entire new idea. What makes it worth a section is this: **from today until the end of the year, the shape is the first thing you print when anything is confusing.** Not the values. The shape. Ninety per cent of the errors from here to Week 27 are shape errors, and every single one of them is diagnosed by printing two numbers.
+That is the entire new idea. What makes it worth a section is this: **from today until the end of the year, the shape is the first thing you print when anything is confusing.** Not the values. The shape. A large share of the errors from here to Week 27 are shape errors, and every single one of them is diagnosed by printing two numbers.
 
 **Count them off a real printout with your finger.** Here is a grid of six numbers:
 
@@ -226,7 +226,7 @@ one line:   out = 1.1(2.0) + 0.4(−1.0) + 0.3   = 2.20 − 0.40 + 0.30 = 2.10  
 with ReLU:  out = 1.0(0.30) − 2.0(0) + 0.3 = 0.30 + 0 + 0.30 = 0.60
 ```
 
-**`2.10` against `0.60`. A gap of exactly `1.50`, and no straight line can produce it.** The `−0.75` was thrown away, and throwing information away *on purpose, for some rows and not others* is what lets the network bend. Say that sentence in class.
+**`2.10` against `0.60`. A gap of exactly `1.50`, and the one-line version cannot produce it.** The `−0.75` was cut to zero, and a rule that cuts *some rows and not others* is not a straight line — that is the bend. (Sigmoid and tanh bend too, by curving instead of cutting.) Say that sentence in class.
 
 ![With no squash, two layers are one straight line](../figures/fig-w16-4-no-squash-two-layers-collapse-to-a-line.svg)
 *Figure 16.4 — With no squash, two layers are one straight line. With ReLU the `−0.75` becomes `0`, the answer drops from `2.1` to `0.6`, and the gap is `1.5`.*
@@ -253,7 +253,7 @@ In two weeks the class will learn that **slopes multiply along a chain**. Five l
 0.25 × 0.25 × 0.25 × 0.25 × 0.25 = 0.0009765625
 ```
 
-**One thousandth of the signal survives five layers.** With ReLU, every one of those numbers is exactly `1.00`, so `1 × 1 × 1 × 1 × 1 = 1` and the signal arrives at full strength. That is the whole reason. It is a multiplication you can do on a calculator, and it is why deep networks did not work before about 2012.
+**One thousandth of the signal survives five layers.** With ReLU, every one of those numbers is exactly `1.00`, so `1 × 1 × 1 × 1 × 1 = 1` and the signal arrives at full strength. That is the main reason (ReLU is also cheap to compute). It is a multiplication you can do on a calculator, and it is a big part of why very deep sigmoid networks were so hard to train before ReLU became standard around 2010–2012. (The full chain also multiplies in the weights; Week 18 adds that.)
 
 > **🧑‍🏫 If a student asks:** *"why does ReLU's steepness say `0.5` at zero?"* — because ReLU has a **corner** there, and a corner has no single steepness. Nudging up gives slope 1, nudging down gives slope 0, and averaging the two nudges gives `0.5`. **This is not a fact anybody discovered; it is a choice.** numpy's two-sided nudge splits the difference; PyTorch, when you get there in Week 20, will tell you `0`. Both are defensible. **Say plainly that maths has a genuine hole here and engineering filled it with a decision**, because a student who spots that on their own has spotted something real.
 
@@ -666,7 +666,7 @@ ReLU's steepness is 1, everywhere it fires
 
 > **Say this:** "In two weeks you will find out that when you stack layers, **their steepnesses multiply.** So five sigmoid layers hand the first layer about **one thousandth** of the signal. Five ReLU layers hand it **all of it.**
 >
-> That is not an opinion or a fashion. It is that multiplication, and it is why deep networks did not really work until people switched to ReLU around 2012. You have just done, on a calculator, the arithmetic that unlocked the field."
+> That is not an opinion or a fashion. It is that multiplication, and it is a big part of why very deep networks were so hard to train until people switched to ReLU around 2010–2012. You have just done, on a calculator, a piece of the arithmetic behind that change."
 
 ---
 
@@ -1001,7 +1001,7 @@ with ReLU:  h2 becomes 0, so out = 0.30 + 0 + 0.30 = 0.60
 
 *Hoped-for answer:* ReLU threw away the `−0.75`.
 
-> **Say this:** "ReLU threw the minus nought point seven five in the bin. And that is not damage — **that is the bend.** Throwing information away *for some rows and not others* is the only way a straight line becomes a curve.
+> **Say this:** "ReLU threw the minus nought point seven five in the bin. And that is not damage — **that is the bend.** ReLU cuts some rows and leaves others alone, and a rule that behaves differently in different places is not a straight line.
 >
 > Bring the Squasher back in. She is the reason the second layer is worth paying for."
 
@@ -1223,7 +1223,7 @@ Three checks, five minutes, exact wording.
 | **2 — Emerging** | Computes `z` correctly when the four terms are written out for them. Applies ReLU. Reads a shape off a printout when asked. Can say "you need a squash" without saying why. |
 | **3 — Secure** | Computes `z` and all three squashes for a new row, unaided, with a calculator. Predicts a shape before running and is usually right. Reproduces the three-line collapse and states that two layers become one. **This is the target.** |
 | **4 — Strong** | Gets eight shape predictions out of eight, including the `(3,)` trailing-comma case. Distinguishes `.T` from `.reshape` by their **contents**, not just their shape. Explains ReLU's advantage with the number `0.25` and the multiplication `0.25⁵`. Diagnoses `The truth value of an array is ambiguous` without help. |
-| **5 — Exceptional** | Explains that the collapse is *exact* — a no-squash network is not a worse network, it is identically a linear one. Notices that ReLU's slope at exactly zero is a library decision rather than a mathematical fact. Predicts that stacking sigmoids will multiply small slopes together **before** being told, and connects it to why depth failed before 2012. Designs a bias that silences the neuron on every row and can say how they found it. |
+| **5 — Exceptional** | Explains that the collapse is *exact* — a no-squash network is not a worse network, it is identically a linear one. Notices that ReLU's slope at exactly zero is a library decision rather than a mathematical fact. Predicts that stacking sigmoids will multiply small slopes together **before** being told, and connects it to why very deep sigmoid networks were hard to train. Designs a bias that silences the neuron on every row and can say how they found it. |
 
 ---
 
@@ -1683,7 +1683,7 @@ It was asked one yes-or-no question about four numbers at once. `max(0, z)` comp
 **One.** There is no `h` in the expression: it is a single weighted sum of the two inputs, plus one bias.
 
 **Activity — "Two point one against nought point six. Where did the difference go?"**
-ReLU set `h2` from `−0.75` to `0`, so the `−2.0 × (−0.75) = +1.50` contribution vanished. **`2.10 − 1.50 = 0.60`.** Throwing that information away for some rows and not others is exactly what lets the network bend.
+ReLU set `h2` from `−0.75` to `0`, so the `−2.0 × (−0.75) = +1.50` contribution vanished. **`2.10 − 1.50 = 0.60`.** Cutting that value for some rows and not others is exactly how ReLU bends the network.
 
 **Wrap — "Separate the two crescents with one straight line."**
 Impossible. That is the question the next four weeks answer, and the answer is built from the squash they met today.

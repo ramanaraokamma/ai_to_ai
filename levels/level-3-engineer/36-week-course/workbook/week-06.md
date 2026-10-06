@@ -118,7 +118,7 @@ temporal      : 0.8139 − 0.5249 = ____________
 preprocessing : 0.765  − 0.520  = ____________
 ```
 
-**M2(a).** Last week's four honest features bought **+0.0091** between them, all four together. **How many times bigger is the target leak?**
+**M2(a).** Last week's two surviving honest features bought **+0.0091** between them. **How many times bigger is the target leak?**
 
 ____________ ÷ ____________ = ____________
 
@@ -493,7 +493,7 @@ e: ____________ against ____________ · f: ____________ against ____________
 
 **Your answers:** i → ______  ii → ______  iii → ______  iv → ______  v → ______
 
-**A4(a).** Output **P** comes from feeding a model **nothing but one column**. **Why is 0.9556 a conviction rather than a discovery?**
+**A4(a).** Output **P** comes from ranking the rows by **nothing but one column's raw values** (no model at all). **Why is 0.9556 a conviction rather than a discovery?**
 
 ________________________________________________________________
 
@@ -533,7 +533,7 @@ ________________________________________________________________
 moves with the answer : 0.064
 two-group rates       : 18-20 is 0.3682 (717 orders) · everything else 0.2424 (1283)
 on its own            : AUC 0.5358
-its weight            : -0.121
+its weight            : 0.257
 ```
 
 **verdict** ____________________ · **`0.064` and `0.5358` both look like nothing, and yet the two-group rates differ by 0.1258. Explain.**
@@ -1156,7 +1156,7 @@ temporal      : 0.8139 − 0.5249 = 0.2890
 preprocessing : 0.765  − 0.520  = 0.245
 ```
 
-**M2(a).** `0.2011 ÷ 0.0091 = 22.1`. **Twenty-two times as much from one column, in four seconds, as four honest features bought in a whole lesson.** That ratio is the alarm.
+**M2(a).** `0.2011 ÷ 0.0091 = 22.1`. **Twenty-two times as much from one column, in four seconds, as two honest features bought in a whole lesson.** That ratio is the alarm.
 
 **M2(b).** **Round the printed result, never the inputs.** 0.976231884 − 0.775163997 = 0.2010678…, which rounds to **0.2011**. Subtracting two already-rounded numbers cost you one unit in the fourth place. **It changes no verdict here — but say so when it happens rather than quietly writing a different number from the machine's.**
 
@@ -1465,7 +1465,7 @@ columns   fake    honest   invented
 
 **B5(a).** **More columns means more chances for a column of noise to line up with the coin flip by luck**, so the best 20 of 2,000 look far more convincing than the best 20 of 50 — and none of it has anything to do with the data meaning anything.
 
-**B5(b).** **No, the bug is not gone at 50 columns** — the code is exactly as wrong as before. The honest score there is **0.615**, so the invented part is only **+0.020**. **The bug has not changed; its consequence has.** That is the most useful thing on the page: **a leak's danger depends on how many chances it had**, so the same line of code can be worth 0.245 in one project and 0.020 in another. You cannot judge a leak by how much it happened to be worth last time.
+**B5(b).** **No, the bug is not gone at 50 columns** — the code is exactly as wrong as before. The honest score there is **0.615**, so the invented part is only **+0.020**. **The bug has not changed; its consequence has.** That is the most useful thing on the page: **a leak's danger depends on how many chances it had**, so the same line of code can be worth 0.245 in one project and 0.020 in another. You cannot judge a leak by how much it happened to be worth last time. *(One honest caveat: this is a single seed, and the 0.615 is itself a lucky draw on a table of noise, whose true answer is 0.5. Averaged over 20 different seeds the 50-column leak is worth about +0.085, not +0.020, and the 2,000-column leak about +0.28. The slide from large to small is real; the exact size of the last row is not.)*
 
 ### Fix the Broken Program
 
@@ -1495,7 +1495,7 @@ pipe.named_steps["prep"].named_transformers_["num"].named_steps["impute"].statis
 **The three tells in that three-line output:**
 
 1. **`columns going into the model: 21`** — it should be 20. Five numeric plus fifteen one-hot. There is a sixth numeric column in there.
-2. **`roc_auc : 0.9762`** — nineteen points above last week's best honest score of 0.7843, when last week's four honest features bought +0.0091 between them. **When a single change moves your score by more than about 0.05, stop and audit before you celebrate.**
+2. **`roc_auc : 0.9762`** — nineteen points above last week's best honest score of 0.7843, when last week's two surviving honest features bought +0.0091 between them. **When a single change moves your score by more than about 0.05, stop and audit before you celebrate.**
 3. **`statistics_` has SIX numbers in it, and the sixth is `0.`** — one per numeric column, so six numbers means six numeric columns. And the sixth statistic being 0 says *"the median of this column is zero"*, i.e. most rows have no call, which is exactly what a column that only fills in after a failure looks like.
 
 **The question that settles it:** *"At the moment I need the prediction — the moment a customer clicks ORDER — has that customer already rung up to complain about a delivery that has not arrived yet?"* **No.**
@@ -1557,7 +1557,7 @@ preprocessing : 0.520  + 0.245  = 0.765
 
 **The −0.0000 one is more dangerous, and that is genuinely counter-intuitive.** The +0.245 bug announces itself: anybody who asks *"what should an honest method score on a table with nothing in it?"* finds it in one minute. The −0.0000 bug cannot be found by **any** measurement, because there is nothing to measure — the score with the bug and the score without it are the same to three decimal places. **You find it only by reading where the statistic was computed**, which means a person has to look at the right five lines of code for the right reason.
 
-And it will not stay worth −0.0000. **The same line of code was worth +0.245 on a table with 2,000 columns**, and my own `noise_shrink.py` run shows the consequence sliding from +0.245 to +0.020 purely on how many chances the leak had. So the bug is a loaded gun that happens to be pointing at the floor today.
+And it will not stay worth −0.0000. **The same line of code was worth +0.245 on a table with 2,000 columns**, and my own `noise_shrink.py` run shows the consequence sliding from +0.245 to +0.020 on that seed (about +0.28 to +0.09 averaged over 20 seeds) purely on how many chances the leak had. So the bug is a loaded gun that happens to be pointing at the floor today.
 
 **Which is why the fix is structural rather than moral.** "Be more careful" fails because carefulness does not survive a deadline, a new colleague, or a file that already has 200 lines in it. **Putting everything that learns from data inside the `Pipeline` means the bug cannot be expressed** — there is no place in that structure to write the whole-table median. That is what a `Pipeline` is actually for, and it took six weeks to find out.
 

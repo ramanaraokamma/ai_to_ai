@@ -126,7 +126,7 @@ ________ ÷ ________  =  ____________
 
 **M4(c).** Do the two routes agree? ______  **Range check:** smaller ________, twice it ________, in range? ______
 
-**M4(d).** Last week's tree caught **3** of 14 frauds and had F1 **0.2500**. Suppose it had caught **4** instead, with one fewer miss and one more flag: TP 4, FP 11, FN 10.
+**M4(d).** Last week's tree caught **3** of 14 frauds and had F1 **0.2500**. Suppose it had caught **4** instead, with one fewer miss and one more flag: TP 4, FP 7, FN 10.
 
 `precision = 4 ÷ ______ = ________`  `recall = 4 ÷ ______ = ________`  `F1 = 8 ÷ ______ = ________`
 
@@ -292,7 +292,7 @@ ________________________________________________________________
 | e | `f1 = 2 * p * r / p + r` | | |
 | f | `print("F1 %.4f beats last week's %.4f" % (0.4976, 0.2500))` | | |
 
-**A3(g).** Three of those six produce **no error at all**. Which three, and which is the hardest to catch?
+**A3(g).** Four of those six produce **no error at all**. Which three, and which is the hardest to catch?
 
 ________________________________________________________________
 
@@ -1072,7 +1072,7 @@ Note also `0.18000000000000002` — the harmonic mean of 0.9 and 0.1 is not stor
 
 **A5(c).** **B is on the `macro avg` row. C is on the `weighted avg` row. D is on the row called `1`.**
 
-**A5(d).** **The row called `1` — support 14.** Every interesting number in the whole report rests on those 14 rows: precision has 10 on the bottom, recall has 14, F1 has 24. **Shuffle the split differently and 14 could easily have been 8 or 22, and every one of those decimals would move.** Being uneasy about that is correct, and Week 11 is where the uneasiness gets an instrument.
+**A5(d).** **The row called `1` — support 14.** Every interesting number in the whole report rests on those 14 rows: precision has 10 on the bottom, recall has 14, F1 has 24. **Collect a different 1,000 transactions and 14 could easily have been 8 or 22, and every one of those decimals would move.** Being uneasy about that is correct, and Week 11 is where the uneasiness gets an instrument.
 
 **A6.** For (0.667, 0.070) the four boxes are: **0.0934** (the multiply), **0.737** (the add), **0.1267** (the divide) and **0.3685** (the plain mean). Range check: smaller **0.070**, twice it **0.140**, and 0.1267 is between them ✅.
 
@@ -1385,9 +1385,9 @@ ROC AUC     =  over all 400 predicted probabilities      =  0.7599   on the 400 
 
 **The reflection sheet — full-marks answers:**
 
-**1.** "**20 duplicate rows** and **108 missing** driver-experience values in 2,020 rows. A duplicate landing in both train and validation is a row the model has already seen, and the missing values would have crashed the scaler. Neither was mentioned anywhere; the audit found both."
+**1.** "**20 duplicate rows** and **108 missing** driver-experience values in 2,020 rows. A duplicate landing in both train and validation is a row the model has already seen, and the missing values would have crashed the logistic regression. Neither was mentioned anywhere; the audit found both."
 
-**2.** "Because I make choices with the validation pile — eight of them in Week 7 alone — and every choice uses it up a little. **The test pile is 400 rows I have never looked at, so it is the only honest estimate left**, and I open it once, in Week 36."
+**2.** "Because I make choices with the validation pile — seven of them in Week 7 alone — and every choice uses it up a little. **The test pile is 400 rows I have never looked at, so it is the only honest estimate left**, and I open it once, in Week 36."
 
 **3.** "`DummyClassifier(strategy='most_frequent')` scores **accuracy 0.7125 and AUC 0.5000**. So a model at 0.71 accuracy has added nothing, and **0.5000 is the number to beat**, not zero."
 
@@ -1397,7 +1397,7 @@ ROC AUC     =  over all 400 predicted probabilities      =  0.7599   on the 400 
 
 **6.** "`similar_orders_late_rate` — built from the `late` column of all 2,000 rows. Fake AUC **0.9240**, honest **0.7535**. I caught it with the question that needs no arithmetic: **at the moment an order is placed, does this value exist?** No."
 
-**7.** "Eight rows, **six of them dropped and four genuine regressions.** Two kept. Total honest gain **0.7541 → 0.7599 = +0.0058.** Six failures out of eight is not bad work — it is what the table is for."
+**7.** "Eight rows (a baseline and seven changes), **five dropped, four of them genuine regressions.** Two kept. Total honest gain **0.7541 → 0.7599 = +0.0058.** Five dropped out of seven is not bad work — it is what the table is for."
 
 **8.** "On the fraud data a model that never says yes scores **0.9860**, and a real tree scores **0.9820** and catches 3 frauds out of 14. **Accuracy went down and the model got better.** The four counts could tell them apart and accuracy could not."
 

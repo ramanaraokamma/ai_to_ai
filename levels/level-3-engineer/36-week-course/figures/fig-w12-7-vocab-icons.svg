@@ -24,7 +24,7 @@
   <text x="415" y="206" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">a rule, noticed after measuring &#8212; not looked up</text>
   <rect x="30" y="228" width="359" height="148" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
   <text x="44" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="start">numerical gradient</text>
-  <text x="44" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">nudge, subtract, divide. Slow, and it never lies.</text>
+  <text x="44" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">nudge, subtract, divide. Slow, honest if h is sane.</text>
   <rect x="44" y="284" width="331" height="30" rx="6" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
   <text x="209" y="299" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">w = 2  slope -462.0000  =  77 x (w-8)</text>
   <rect x="44" y="320" width="331" height="30" rx="6" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>

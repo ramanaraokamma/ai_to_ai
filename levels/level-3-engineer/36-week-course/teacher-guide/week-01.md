@@ -202,7 +202,7 @@ Those are not the same number. Pandas gave you 29.6512. Where did the difference
 ![Two averages, one column](../figures/fig-w01-5-two-averages-same-column.svg)
 *Figure 1.5 — Two averages, one column. Same sum on top, two different numbers underneath, and no warning either way.*
 
-Neither answer is wrong, exactly. They answer different questions — *"the average of the experience we know about"* versus *"the average experience per order"*. **The bug is that nobody chose.** 29.6512 − 28.0658 = 1.5854 months of driver experience, invented by a division you did not know you were making.
+Be precise about what each number assumes. 29.6512 is *"the average of the experience we know about"*. 56693 ÷ 2020 = 28.0658 is what you get if every one of the 108 holes counts as **zero months** — the same trap as "a hole is not a zero" above, so it is not a neutral alternative. (In this synthetic table experience is drawn uniformly from 0 to 59, so the true mean is about 29.5 and the skip-the-holes answer is the better one; in real data whether holes are missing at random is a separate question.) **The bug is that nobody chose.** The two divisions differ by 29.6512 − 28.0658 = 1.5854 months, and the library picked one without telling you.
 
 This is the whole reason Check 3 exists, and the sentence to say out loud is: **"count the holes before you average anything."**
 
@@ -1105,7 +1105,7 @@ values actually added  : 1912
 
 Let them argue. It is a genuinely open question for about ten seconds.
 
-> "**Both. And neither.** They answer different questions. 29.65 is 'the average of the experience we know about'. 28.07 is 'the average experience per order'. Both are legitimate.
+> "**Neither is a free choice.** 29.65 is 'the average of the experience we know about'. 28.07 is what you get if you count all 108 unknown drivers as zero months of experience — which we just said a hole is not. So skipping the holes is the sensible default here, but it is still an assumption.
 >
 > **The bug is that nobody chose.** You asked for an average, you got one, it looked fine, and a decision got made for you by a library. 29.6512 minus 28.0658 is **1.5854** months of driver experience that appeared out of a division you didn't know you were making.
 >
@@ -1732,7 +1732,7 @@ Model, two rows:
 - *"Why 0.9901 and not 1.00?"* → The twenty duplicates repeat twenty IDs. Checks 1 and 2 agree.
 - *"108 out of 2020 — do the division."* → 0.0535, about 5.3%.
 - *"Same column, same sum on top — what's different underneath?"* → Pandas divided by 1912 (the values that exist); by hand we divided by 2020 (the rows).
-- *"Which of the two averages is right?"* → Both, and neither. They answer different questions. The bug is that nobody chose.
+- *"Which of the two averages is right?"* → 29.6512 is the average of the known values; 28.0658 is the same as treating the 108 holes as zeros. Skipping the holes is the sensible default, but it is still an assumption, and the bug is that nobody chose.
 - *"What are the four audit numbers?"* → 20 · 0.9901 · 108 · 0.7119.
 - *"How many of your four guesses were right?"* → Usually one or two. Almost nobody predicts the duplicates or the holes.
 - *"Which single column must never be a feature, and why?"* → `order_id`: no information about the world, and nothing to go on for an order that has not happened yet.

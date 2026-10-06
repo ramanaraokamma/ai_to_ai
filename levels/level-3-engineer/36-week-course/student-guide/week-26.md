@@ -783,7 +783,7 @@ Train that for 20 epochs beside the right version, printing the **last batch's**
 
 **What to do when there is no message.** Two questions:
 
-> **"What should the loss be before it has learned anything?"** For ten classes, `−ln(0.1) = 2.30`. Ours starts at **2.3015** in both runs, so that check does not catch this one — but it catches three other bugs and it costs nothing.
+> **"What should the loss be before it has learned anything?"** For ten classes, `−ln(0.1) = 2.30`. Ours starts at **2.3015** (squashed twice) and **2.2768** (raw scores), both near 2.30, so that check does not catch this one — but it catches three other bugs and it costs nothing.
 >
 > **"Am I handing the loss raw scores?"** If there is a `softmax`, a `sigmoid` or a `Softmax()` layer anywhere between your last `Linear` and your loss, **that is your bug.**
 
@@ -801,7 +801,7 @@ Train that for 20 epochs beside the right version, printing the **last batch's**
 | `RuntimeError: Can't call numpy() on Tensor that requires grad` | You asked for the numbers of something still carrying gradient bookkeeping | `.detach().numpy()`, or wrap it in `with torch.no_grad():` |
 | **No error.** Loss starts near 2.30 and ends near 1.6; accuracy is a couple of points low | Every gradient came from a double-squashed number | **Hand the loss the raw logits.** The loss gets logits; humans get probabilities |
 | **No error.** `argmax` returns 10 numbers instead of 540 | Your accuracy is computed from nonsense | `dim=1`. **Then count the answers: one per picture** |
-| **No error.** Accuracy is exactly 0.10 and the loss never moves off 2.30 | Nothing learned at all | `opt.zero_grad()` or `opt.step()` is missing. Then `print(len(list(model.parameters())))` — this network has **6** blocks |
+| **No error.** Accuracy is about 0.10 (chance) and the loss never moves off 2.30 | Nothing learned at all | `opt.step()` (or `loss.backward()`) is missing. Then `print(len(list(model.parameters())))` — this network has **6** blocks |
 | **No error.** Train accuracy 0.988 and test accuracy 0.34 | The test tensor was built from the training rows, or the split ran twice with different seeds | One split, one seed, and print all four counts. **1257 + 540 = 1797** |
 | A window opens and nothing else happens | `matplotlib.use("Agg")` is missing, or below the pyplot import | It must be **above** `import matplotlib.pyplot` |
 
@@ -853,7 +853,7 @@ Both went in the Bug Log. In the column where the error message goes, both entri
 
 **The Filter Vote.** The eight filters were rendered at eight times magnification and put on the wall in eight numbered boxes, and then there were **four minutes of silence** while everybody wrote down what they thought each one was looking for — with *"no idea"* allowed and encouraged. Every guess went in the boxes, disagreements included, before anybody said a word. Then the two test patches, and the eight pairs of numbers from §5 of this chapter.
 
-**Filter 6: `+2.830` and `−1.219`. A vertical edge detector.** Whoever voted "light on the left" was right, and the number proves it. **Filter 4: `+3.760`. The same idea, rotated.** **Filter 1: negative to everything — it fires on blank paper.** And then the sentence that mattered most: *"three and five answer about half a unit to both patches, which is nearly nothing. **I cannot tell you a story about them, and if I did I would be making it up.**"*
+**Filter 6: `+2.830` and `−1.219`. A vertical edge detector.** Whoever voted "light on the left" was right, and the number proves it. **Filter 4: `+3.760`. The same idea, rotated.** **Filter 1: negative to everything — it fires on blank paper.** And then the sentence that mattered most: *"three and five answer less than one unit to either patch, with no clear preference, which is nearly nothing. **I cannot tell you a story about them, and if I did I would be making it up.**"*
 
 **The wrap: four rows on the board.**
 
@@ -877,7 +877,7 @@ And then the sentence the whole wrap was for: **529 against 525 is four digits o
 
 **1. `CrossEntropyLoss` hides the softmax inside itself, and that hiding is what causes the week's nastiest bug. So why is it built that way?**
 
-*Hint:* there are two reasons and only the second is a real defence. The weak one: if all you want is the answer, the argmax of the raw scores equals the argmax of the chances, so squashing is wasted work at prediction time. The strong one is arithmetic — look at the `−10.94` in our ten scores, and think about what happens on a bigger network where scores reach −40. `e^−40` rounds to exactly zero in a computer, and `ln(0)` is minus infinity, and your training run fills with `nan`. Doing the squash and the log **together**, inside, lets the library rearrange the arithmetic so that never happens. Now the real question: is a library allowed to hide something dangerous in order to be safer, and what should it have called itself instead? (`BCEWithLogitsLoss` says it in the name. `CrossEntropyLoss` does not. Is that a design mistake?)
+*Hint:* there are two reasons and only the second is a real defence. The weak one: if all you want is the answer, the argmax of the raw scores equals the argmax of the chances, so squashing is wasted work at prediction time. The strong one is arithmetic — look at the `−10.94` in our ten scores, and think about what happens on a bigger network where scores reach ±100. `e^100` is too big for the computer's number format and becomes `inf`, and a chance as tiny as `e^−110` rounds to exactly zero, so `ln(0)` is minus infinity, and your training run fills with `nan`. (`e^−40` is tiny but the computer still holds it; it is around ±90 to ±100 that things break.) Doing the squash and the log **together**, inside, lets the library rearrange the arithmetic so that never happens. Now the real question: is a library allowed to hide something dangerous in order to be safer, and what should it have called itself instead? (`BCEWithLogitsLoss` says it in the name. `CrossEntropyLoss` does not. Is that a design mistake?)
 
 **2. The CNN got 529 of 540 and the dense network got 525. Would you put "the CNN is more accurate" in a report?**
 

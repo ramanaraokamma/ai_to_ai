@@ -145,7 +145,7 @@ sum of squares = ________  ·  ÷ ______ = ________  ·  sd = √________ = ____
 
 mean = ________  ·  variance = ________  ·  sd = ________
 
-**(e) One word left the list and the spread halved. What does that tell you about `and`?**
+**(e) One word left the list and the spread fell by more than a third. What does that tell you about `and`?**
 
 ________________________________________________________________
 
@@ -177,7 +177,7 @@ print(counts.toarray())
 
 **shape:** ____________  **type:** ____________  **nnz:** ______ of ______
 
-**`zebra` starts with the last letter of the alphabet and it is not last. Why?** ______________
+**`Zebra` is the very first word of the first review, yet it is the last column. Why?** ______________
 
 ---
 
@@ -852,7 +852,7 @@ cells holding exactly 2: 22  cells holding 3 or more: 0  biggest cell: 2
 
 **M4 (d).** mean `= 81 ÷ 4 = 20.25` · squares `189.0625, 33.0625, 85.5625, 105.0625` sum **412.75** · `÷ 3 = 137.5833` · `sd = 11.7296`
 
-**M4 (e).** *"`and` is not a member of this group — it is an outlier. One word dropping out cut the standard deviation from 18.57 to 11.73, nearly in half, which is exactly what removing an outlier does."* **And that is next week's problem stated in the language of Week 29:** one word is dominating a measurement, and everything else is crowded into the bottom of the range. **Week 4 fixed that for numeric columns with a z-score. Week 32 fixes it for words with an `idf`.**
+**M4 (e).** *"`and` is not a member of this group — it is an outlier. One word dropping out cut the standard deviation from 18.57 to 11.73 (and the variance from 344.7 to 137.6, by 60%), which is what removing an outlier does."* **And that is next week's problem stated in the language of Week 29:** one word is dominating a measurement, and everything else is crowded into the bottom of the range. **Week 4 fixed that for numeric columns with a z-score. Week 32 fixes it for words with an `idf`.**
 
 ### Predict the Output
 
@@ -867,7 +867,7 @@ nnz  : 7 of 12
  [0 1 1 1 1 0]]
 ```
 
-**`zebra` is last because the order is alphabetical**, and `z` is last in the alphabet — the trap in the question is reading "starts with the last letter" as if the *first* letter of the word decided nothing. It decides everything: `chips, cold, pizza, the, was, zebra`. **`zebra`'s cell is 2** because `"Zebra pizza, zebra CHIPS!"` says it twice, and lowercasing made `Zebra` and `zebra` the same token. **7 stored of 12: 4 words in review 1 (one of them twice, so 3 cells) and 4 cells in review 2 — 3 + 4 = 7.**
+**`zebra` is last because the order is alphabetical, not the order the words were typed in** — `z` is last in the alphabet, so it sorts to the end however early it appeared: `chips, cold, pizza, the, was, zebra`. **`zebra`'s cell is 2** because `"Zebra pizza, zebra CHIPS!"` says it twice, and lowercasing made `Zebra` and `zebra` the same token. **7 stored of 12: 4 words in review 1 (one of them twice, so 3 cells) and 4 cells in review 2 — 3 + 4 = 7.**
 
 **P2.**
 
@@ -877,7 +877,7 @@ regex  : ['paid', '12', '50', 'for', '10', 'pizza']
 no r   : []
 ```
 
-**Seven tokens became six, and four separate things happened.** `I` and `a` were deleted for being one character. `$12.50` became `12` and `50` — **two tokens where there was one number, and the currency and the decimal point are gone.** `9/10` became just `10`, because `9` is a single character: **a rating of nine out of ten is now the number ten, which is the opposite end of the scale.**
+**Seven tokens became six, and four separate things happened.** `I` and `a` were deleted for being one character. `$12.50` became `12` and `50` — **two tokens where there was one number, and the currency and the decimal point are gone.** `9/10` became just `10`, because `9` is a single character: **a rating of nine out of ten is now the number ten, which now reads like a perfect score, or like no rating at all.**
 
 **Line 3 prints `[]` with no error** because without the `r`, Python reads `\b` as **the backspace character** — the thing the backspace key sends. The pattern went looking for a literal backspace inside the sentence, found none, and honestly reported none. **An empty list from a pattern is almost always a missing `r`.**
 
@@ -1201,7 +1201,7 @@ man bit the dog the     <- not English
 
 **T1.** A strong answer makes four moves.
 
-**The two losses are the same shape.** In Week 24, `t.view(1, 64)` took an 8×8 digit and put its rows end to end; pixel 7 and pixel 8 are neighbours on the page and forty rows apart in the picture, and the flattened row has no record of which pixels touched. This week, `CountVectorizer` took a sentence and recorded how many of each word; `dog` and `bit` are neighbours in the sentence and the row has no record of that either. **In both cases the data was not corrupted — a structure that existed in the input simply has no place in the output.** And in both cases nothing warns you: the digits model still trained to 96%, and `are the two rows identical? True` needs somebody to go looking.
+**The two losses are the same shape.** In Week 24, `t.view(1, 64)` took an 8×8 digit and put its rows end to end; pixel 7 and pixel 8 sit side by side in the flattened row but at opposite edges of the picture, while pixel 0 and pixel 8, which are directly above one another in the picture, end up eight places apart; the flattened row has no record of which pixels touched. This week, `CountVectorizer` took a sentence and recorded how many of each word; `dog` and `bit` are neighbours in the sentence and the row has no record of that either. **In both cases the data was not corrupted — a structure that existed in the input simply has no place in the output.** And in both cases nothing warns you: the digits model still trained to 96%, and `are the two rows identical? True` needs somebody to go looking.
 
 **The Week 24 repair** was the convolution: a small kernel slides over the grid and looks at each pixel *together with its neighbours*, so "next to" is built into the arithmetic instead of being thrown away.
 

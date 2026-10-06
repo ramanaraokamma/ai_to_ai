@@ -496,7 +496,7 @@ RuntimeError: Expected 3D (unbatched) or 4D (batched) input to conv2d, but got i
 
 **It wants three or four numbers in the shape and we gave it two.** What could the other two possibly be?
 
-**`nn.Conv2d` always wants four: how many pictures, how many channels each, how tall, how wide.** Every time, in that order. Our one greyscale 6 × 6 picture is one picture with one channel, so it should be `(1, 1, 6, 6)`.
+**`nn.Conv2d` always wants four: how many pictures, how many channels each, how tall, how wide.** Every time in this course, in that order. (PyTorch will also accept three numbers, `(channels, height, width)`, for one unbatched picture — the error message above says "3D or 4D" — but we always use four.) Our one greyscale 6 × 6 picture is one picture with one channel, so it should be `(1, 1, 6, 6)`.
 
 Fix it:
 
@@ -1010,7 +1010,7 @@ bar     -> feature maps (3, 6, 6)
 
 **1. The shuffled model scored 0.9704 and the normal one scored 0.9667. Have we just proved that shuffling pixels helps?**
 
-*Hint:* start with the arithmetic, not the opinion. 0.0037 of 540 rows is how many digits? (About two.) So the question is whether a 540-row measurement can tell those two models apart — and the honest answer is no. Then push on what *has* been proved, because something has: **this measurement cannot distinguish them**, which is a smaller and much more useful claim than either "shuffling helps" or "shuffling makes no difference". Then the finishing move: what would you *do* to find out for real? (Run it with several different seeds and look at the spread. Or use a much bigger test set. Or — best — find a test the two models must differ on, like shifting every digit two pixels left.) This is Week 11's lesson about small denominators, in a new costume.
+*Hint:* start with the arithmetic, not the opinion. 0.0037 of 540 rows is how many digits? (About two.) So the question is whether a 540-row measurement can tell those two models apart — and the honest answer is no. Then push on what *has* been proved, because something has: **this measurement cannot distinguish them**, which is a smaller and much more useful claim than either "shuffling helps" or "shuffling makes no difference". Then the finishing move: what would you *do* to find out for real? (Run it with several different seeds and look at the spread. Or use a much bigger test set. Or — better still — work out why a tie is what you should *expect*: a dense layer treats its 64 inputs as an unordered bag, so shuffling the columns just renames which weight sits where, and the two networks are the same kind of model. Any gap between them is luck of the starting weights. Shifting every digit two pixels left is a good test too, but of dense against convolutional — next week's job — because **both** of these models will fall over equally.) This is Week 11's lesson about small denominators, in a new costume.
 
 **2. If the nine numbers in a kernel are just chosen by a person, where does the intelligence live?**
 

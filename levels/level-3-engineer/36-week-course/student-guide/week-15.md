@@ -111,7 +111,7 @@ slope for the bias  =  average of  (prediction − truth)
 
 **They cancelled. All of them.** When you work out the slope of last week's loss applied to the week-before's sigmoid, an ugly term appears from the logarithm and an equally ugly term appears from the sigmoid, and **they are reciprocals of each other** — so they multiply to 1 and vanish. What survives is `prediction − truth`, times the feature, averaged over the rows.
 
-> **🔢 The maths, slowly:** that cancellation is not luck and it is not a coincidence. **It is the reason sigmoid and log loss are always used together.** Somebody noticed, about a hundred years ago, that these two particular functions were built for each other, and every classifier since has used the pair. You do not need to see the cancellation and neither does anybody else in this room — **but you do need to know that it happened, and that it is why.** If you paired the sigmoid with squared error instead, nothing would cancel, and the mess left over is exactly why that pairing trains so badly.
+> **🔢 The maths, slowly:** that cancellation is not luck and it is not a coincidence. **It is the reason sigmoid and log loss are always used together.** Statisticians noticed, decades ago, that these two particular functions were built for each other, and every classifier since has used the pair. You do not need to see the cancellation and neither does anybody else in this room — **but you do need to know that it happened, and that it is why.** If you paired the sigmoid with squared error instead, nothing would cancel, and the mess left over is exactly why that pairing trains so badly.
 
 **And the bias?** The bias is not multiplied by any feature — it is added to every row unchanged. So it is the same formula with the feature set to 1, which means there is nothing to multiply by.
 
@@ -339,7 +339,7 @@ b  ← −0.118950 − 1.0 × (+0.057390) = −0.176340
 
 **Two: the improvements are shrinking.** `0.1118`, then `0.0766`, then `0.0564`. Why?
 
-Because the slopes are shrinking as the weights get closer to the bottom of the bowl. **Flatter ground means smaller steps means smaller improvements.** That is what approaching a minimum looks like, and it is why a converged run goes *flat* rather than stopping dead at some particular epoch.
+Because the slopes, taken together, are shrinking as the weights get closer to the bottom of the bowl (their overall size goes `0.395`, `0.297`, `0.246`, `0.215`; any single slope, like `w1`'s, can wobble on the way). **Flatter ground means smaller steps means smaller improvements.** That is what approaching a minimum looks like, and it is why a converged run goes *flat* rather than stopping dead at some particular epoch.
 
 > **💡 Try this:** check any one of these numbers with Week 12's nudge instead of the formula. Compute the loss at `w1 = 0.375`, then at `0.3751` and `0.3749`, and divide the difference by `0.0002`. You should get `−0.102682` — **the round-1 slope, from a completely different method.** Worked Example 2 does exactly this and the two agree to nine decimal places.
 
@@ -838,7 +838,7 @@ biggest gap vs tol=1e-8  : 0.000000
 
 **Read those three rows carefully, because there is a genuine subtlety in them and it is a gift.**
 
-Against scikit-learn's **default** settings you agree to about `0.0025` — three decimal places, which is what objective 4 asked for. But that is not the interesting line.
+Against scikit-learn's **default** settings you agree to about `0.0025` — only **two** decimal places, so objective 4's three places is *not* quite met at the defaults. The next line is the one that meets it, and it is the interesting one.
 
 Against scikit-learn with `tol=1e-8` you agree to **all six printed decimal places, exactly.**
 
@@ -1076,7 +1076,7 @@ loan  days  late before  truth   p
 **Three things.**
 
 1. **It starts at `0.693147`.** Eight hand-typed rows about library books, and the first loss is last week's number to six decimal places. **It always is.**
-2. **`downhill every epoch? True`, and the loss reaches `0.020734`.** Eight rows and two features is an easy problem, so it gets very close to perfect — which is a warning as much as a triumph. With eight rows there is no held-out test set and **a loss of 0.02 on eight rows tells you nothing about the ninth.**
+2. **`downhill every epoch? True`, and the loss reaches `0.020734`.** Eight rows and two features is an easy problem, so it gets very close to perfect — which is a warning as much as a triumph. With eight rows there is no held-out test set and **a loss of 0.02 on eight rows tells you nothing about the ninth.** There is a second catch: these eight rows can be split perfectly by a straight line, and when that happens the loss has no bottom — the weights keep growing and the loss keeps creeping towards zero however long you run, so `0.020734` is just where epoch 399 happened to stop. (That is also why the "one bowl, one bottom" promise below needs the data to overlap a little, as the 400-row data does.)
 3. **Read the weights as English:** `w = [4.6416, 2.1722]`. Both positive, so **longer loans and a worse history both push towards "late"**, and the first one matters about twice as much as the second. That comparison is only legal because the two columns were scaled onto the same ruler first — **without that line, comparing the two weights would be meaningless.** Week 4, doing real work.
 
 And notice loan 3: seven days, one previous lateness, and the model says `0.0974` — under the 0.5 threshold, so "on time", and it was on time. **The one row that looks borderline in the table is the one the model is least sure about.**
@@ -1273,7 +1273,7 @@ The room got the `0.002492` first and was slightly disappointed. Then `tol=1e-8`
 
 **2. We matched scikit-learn exactly. Does that mean our 25 lines are as good as theirs?**
 
-*Hint:* be precise about what was matched. **We matched the *answer*, not the *method*.** Ours took 20,000 steps; scikit-learn's default optimiser is called L-BFGS and takes a few dozen, because it builds up a picture of the *shape* of the bowl as it goes and uses it to take much better steps. We matched because the loss is convex, so there is exactly one right answer and any correct method has to find it. **What we proved is that our method is correct, not that it is efficient.** Then the footnote that turns the whole thing round: **neural networks do not use L-BFGS**, because it needs too much memory when there are millions of weights. They use variants of the loop you wrote today. **So these 25 lines are closer to how a real network trains than scikit-learn's optimiser is.**
+*Hint:* be precise about what was matched. **We matched the *answer*, not the *method*.** Ours took 20,000 steps; scikit-learn's default optimiser is called L-BFGS and takes only about ten steps here (7 to 11), because it builds up a picture of the *shape* of the bowl as it goes and uses it to take much better steps. We matched because the loss is convex, so there is exactly one right answer and any correct method has to find it. **What we proved is that our method is correct, not that it is efficient.** Then the footnote that turns the whole thing round: **neural networks mostly do not use L-BFGS**, because it works best on exact full-batch gradients (networks train on noisy mini-batches) and it has to keep extra copies of every weight, which hurts when there are millions or billions of them. They use variants of the loop you wrote today. **So these 25 lines are closer to how a real network trains than scikit-learn's optimiser is.**
 
 **3. Could a computer just work out the right learning rate, instead of you guessing?**
 
@@ -1320,7 +1320,7 @@ The room got the `0.002492` first and was slightly disappointed. Then `tol=1e-8`
 
 ## 🌍 Where You've Seen This
 
-1. **Every `.fit()` you have ever called.** Not a metaphor for it — for logistic regression it is the same algorithm finding the same answer, which you proved to six decimal places.
+1. **Every `.fit()` on a logistic regression or a neural network.** Not a metaphor for it — for logistic regression it is the same algorithm finding the same answer, which you proved to six decimal places.
 2. **Every large language model ever trained.** They are trained by a descendant of the loop in this chapter: compute a loss, get one slope per weight, step every weight against its slope, repeat. The models have hundreds of billions of knobs instead of three, and the loop is the same five lines.
 3. **A phone's camera deciding what a face is.** The network was trained by this loop, on somebody's cluster, months before your phone was made. **The training happened once; your phone only does the forward pass.**
 4. **Recommendation systems that update overnight.** New clicks arrive, the loss changes, the weights take a few steps downhill, and tomorrow's suggestions are slightly different. **The "learning" in "machine learning" is this subtraction, repeated.**
@@ -1342,7 +1342,7 @@ The ↻ has been black since Week 12, and this week you finally run it yourself.
 
 | | |
 |---|---|
-| **The mental model you now own** | Training is **four lines in a loop**: predict, measure the loss, get one slope per knob, step every knob against its slope. Repeat. That is the whole algorithm, and **that loop is what `fit()` was doing all along** — for every model you have used since Level 2. |
+| **The mental model you now own** | Training is **four lines in a loop**: predict, measure the loss, get one slope per knob, step every knob against its slope. Repeat. That is the whole algorithm, and **that loop is what `fit()` was doing all along** for logistic regression and, from here on, for every neural network. (The kNN, the tree and the linear regression from Level 2 do not train this way.) |
 | **The one question it answers** | *"So this is what `fit()` was doing?"* — and the answer is yes, exactly this, just with more knobs and faster arithmetic. |
 | **What it plugs into** | Week 12's slope, Week 13's sigmoid and Week 14's log loss. Three weeks that each looked like a separate idea, and this is the week they turn out to be three parts of one machine. Take any one of them away and the loop does not run. |
 | **What carries forward** | Weeks 16, 17 and 18 put a **network** where the straight line was — the loop does not change, only the thing inside it. Week 19 runs this loop on a real brain built from scratch. And in Week 21, two of your four lines collapse into `optimizer.step()`, which you will not be impressed by, because you know what it does. |

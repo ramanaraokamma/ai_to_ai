@@ -176,7 +176,7 @@ X @ W1 (4, 3)                      b1, copied down (4, 3)
 
 **The rule, in the only form the class needs it:** numpy lines the two shapes up from the **right-hand end** and, at each position, they must either be equal or one of them must be `1`. So `(4,3)` with `(1,3)` works — 3 matches 3, and the 1 stretches to 4. `(4,3)` with `(3,1)` does **not** — the 3 and the 1 are fine, but then 4 against 3 is not.
 
-**The silent version, which is the one that will hurt somebody.** If the bias is accidentally shaped `(4, 1)` instead of `(1, 3)`, broadcasting **still works** and gives you a `(4, 3)` answer with no error at all — but it has added **one bias per row** instead of one per unit, and every number is wrong. There is a demonstration of exactly this in the Debugging Clinic, and it belongs in the lesson. **The dangerous shape bug is the one that does not crash.**
+**The silent version, which is the one that will hurt somebody.** If the bias is accidentally shaped `(4, 1)` instead of `(1, 3)`, broadcasting **still works** and gives you a `(4, 3)` answer with no error at all — but it has added **one bias per row** instead of one per unit, and most of the numbers are wrong. There is a demonstration of exactly this in the Debugging Clinic, and it belongs in the lesson. **The dangerous shape bug is the one that does not crash.**
 
 > **🧑‍🏫 If a student asks:** *"why don't we just store the bias as a flat `(3,)` list?"* — you can, and it works identically; numpy treats a flat `(3,)` as if it were `(1, 3)` for this purpose. **We use `(1, 3)` on purpose** because next week the backward pass produces a gradient for the bias, and keeping the bias 2-D means the gradient's shape matches the bias's shape exactly, with no surprises. It is a habit that pays off in Week 18.
 
@@ -216,7 +216,7 @@ X  (4, 2)              W1 (2, 3)                    b1 (1, 3)
 > A2 = sigmoid(2.20) = 1 ÷ (1 + e^(−2.20)) = 1 ÷ 1.110803 = 0.90024951
 > ```
 >
-> **The network says 90.02% for row 0.** Eleven multiplications and eight additions, and one exponential on the calculator.
+> **The network says 90.02% for row 0.** Nine multiplications and nine additions, and one exponential on the calculator.
 
 **All four rows, so you can mark anything at a glance:**
 
@@ -349,7 +349,7 @@ The second layer, in one line each. `(4,3) @ (3,1)` gives `(4, 1)` — one raw s
 print("Z1 agrees with my paper? ", np.allclose(Z1, by_hand_Z1))
 ```
 
-`np.allclose(a, b)` asks: *"are these two grids the same, allowing for tiny floating-point wobble?"* It hands back one `True` or `False`. **It exists because `a == b` on decimals is a trap** — `0.1 + 0.2` is not exactly `0.3` in binary, so an exact test can fail on two answers that are genuinely identical. `np.allclose` allows a difference of about one part in a hundred million and calls that equal.
+`np.allclose(a, b)` asks: *"are these two grids the same, allowing for tiny floating-point wobble?"* It hands back one `True` or `False`. **It exists because `a == b` on decimals is a trap** — `0.1 + 0.2` is not exactly `0.3` in binary, so an exact test can fail on two answers that are genuinely identical. `np.allclose` allows a difference of about one part in a hundred thousand (relative, plus `1e-8` near zero) and calls that equal.
 
 ### 8. The three misconceptions you will actually meet
 
@@ -604,7 +604,7 @@ A2 = sigmoid(Z2) (4, 1)
 |---|---|
 | `ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0 ... (size 3 is different from 2)` | The inner numbers disagree. **Read only the bracket at the end.** Print both shapes and look at A's second number against B's first. |
 | `ValueError: operands could not be broadcast together with shapes (4,3) (3,1)` | This is `+`, not `@`. Line the shapes up from the right: 3 against 1 is fine, then 4 against 3 is not. The bias should be `(1, 3)`. |
-| The answer runs but every number is wrong, and the shape is right | Almost certainly the bias is shaped `(4, 1)` — one bias per row instead of one per unit. **This is the silent bug and it is in the Clinic.** |
+| The answer runs but most numbers are wrong (nine of twelve here), and the shape is right | Almost certainly the bias is shaped `(4, 1)` — one bias per row instead of one per unit. **This is the silent bug and it is in the Clinic.** |
 | A student transposed things until it ran and now cannot explain the result | Make them say the sentence: *"four rows of two features, times two inputs by three units."* If the sentence is nonsense, so is the code. |
 | `TypeError: unsupported operand type(s) for @: 'list' and 'list'` | They forgot `np.array(...)`. Plain Python lists have no `@`. |
 | `ValueError: could not broadcast input array` on `b1` | `b1` was written with one set of brackets, making it `(3,)`, and then reshaped wrongly. Write `np.array([[0.1, 0.05, -0.8]])` — **two** sets of brackets. |
@@ -741,7 +741,7 @@ b1      is (1, 3)      three biases, one per unit
 >
 > The rule, if you want it: line the two shapes up **from the right-hand end**. At each position they must either be equal, or one of them must be a 1. `(4,3)` against `(1,3)`: three matches three, and the one stretches to four. Fine.
 >
-> Now here is the one to be frightened of. If I shape my biases `(4, 1)` by accident — four biases, one per **row** — that also broadcasts perfectly. **No error. No warning. Twelve numbers, all of them wrong.**"
+> Now here is the one to be frightened of. If I shape my biases `(4, 1)` by accident — four biases, one per **row** — that also broadcasts perfectly. **No error. No warning. Twelve numbers, and nine of them wrong.**"
 
 **Do this:** Show it, because saying it is not enough:
 
@@ -947,9 +947,9 @@ divide:          0.659001  0.242433  0.098566     total  1.000000
 
 > "One thing is missing, and it is next week's whole lesson.
 >
-> Today we pushed numbers **forwards** — inputs to answer. The network said ninety per cent for row one and it happened to be right. But suppose it had been badly wrong. **Which of the twelve weights would you change, and by how much?**
+> Today we pushed numbers **forwards** — inputs to answer. The network said ninety per cent for row one and it happened to be right. But suppose it had been badly wrong. **Which of the nine weights would you change, and by how much?**
 >
-> There are twelve weights in that little network, and four biases. Sixteen knobs. Next week you find out how to work out how much **each one of the sixteen** contributed to the error — and you do it in one sweep backwards along the same wires you just went forwards along.
+> There are nine weights in that little network, and four biases. Thirteen knobs. Next week you find out how to work out how much **each one of the thirteen** contributed to the error — and you do it in one sweep backwards along the same wires you just went forwards along.
 >
 > Keep the blue trace on the board. Next week I am going over it in red."
 
@@ -969,7 +969,7 @@ Every message below came from running a broken version of this week's actual cod
 | `ValueError: operands could not be broadcast together with shapes (4,3) (1,4)` | Same, but the bias has the wrong *count*. | Four biases for three hidden units. | One bias per unit. Count the columns of `W1`. |
 | `TypeError: unsupported operand type(s) for @: 'list' and 'list'` | "Plain Python lists do not know how to do `@`." | `np.array(...)` forgotten around one or both grids. | Wrap both: `np.array([[1, 2], [3, 4]])`. |
 | `ValueError: matmul: Input operand 0 does not have enough dimensions (has 1, gufunc core with signature (n?,k),(k,m?)->(n?,m?) requires 2)` | "One of these is flat, and `@` wants grids." | A row typed as `np.array([1.0, 2.0])` — shape `(2,)` — instead of `np.array([[1.0, 2.0]])`. | Add the outer brackets, or `.reshape(1, 2)`. |
-| **No error. Shape is right, every number is wrong.** | Nothing crashed. | The bias is `(4, 1)` — one per **row** — instead of `(1, 3)` — one per **unit**. Broadcasting happily obliges. | Print `b1.shape`. It must have the same second number as `W1`'s second number. **This is the dangerous one.** |
+| **No error. Shape is right, most numbers are wrong (nine of twelve).** | Nothing crashed. | The bias is `(4, 1)` — one per **row** — instead of `(1, 3)` — one per **unit**. Broadcasting happily obliges. | Print `b1.shape`. It must have the same second number as `W1`'s second number. **This is the dangerous one.** |
 | **No error. `A2` has the wrong number of rows.** | Nothing crashed. | `X` was transposed somewhere — `(2, 4)` instead of `(4, 2)`. | The batch size must be the **first** number of every grid in the ladder. Print the whole ladder and find where the 4 disappeared. |
 | `np.allclose(mine, theirs)` prints `False` and nothing looks wrong | The two grids genuinely differ somewhere. | One arithmetic slip on paper, usually a dropped bias or a sign. | `print(np.abs(mine - theirs).max())`. A gap of about `0.05` is a typo; a gap of about `1e-16` means you compared the wrong pair, because `allclose` would have said `True`. |
 | `AxisError: axis 1 is out of bounds for array of dimension 1` | "You asked me to add across the columns of something that has no columns." | `.sum(axis=1)` on a flat `(3,)` array. | Make it 2-D first, or use `axis=0`. This is why `keepdims=True` matters — it stops things silently going flat. |
@@ -1323,7 +1323,7 @@ Three checks, five minutes, exact wording.
 
 **Check 3 — the error, and the silent one (spoken, 90 seconds)**
 
-> "Two quick ones. **First:** my code says `size 3 is different from 2`. My `X` is `(4, 2)`. What is wrong with my weight grid? **Second:** my code runs with no error at all, the output shape is exactly what I expected, and every number is wrong. What is the first thing you would check?"
+> "Two quick ones. **First:** my code says `size 3 is different from 2`. My `X` is `(4, 2)`. What is wrong with my weight grid? **Second:** my code runs with no error at all, the output shape is exactly what I expected, and most of the numbers are wrong. What is the first thing you would check?"
 
 *Good answer:* "Your `W1` has three rows and it needs two, because `X` has two features. So it is the wrong way round — it should be `(2, something)`. And for the second one I'd check the bias shape: if it is `(4, 1)` instead of `(1, 3)`, broadcasting still works but it gives each row a bias instead of each unit, and nothing warns you."
 
@@ -1351,7 +1351,7 @@ Three checks, five minutes, exact wording.
 >
 > **Second, page 17.4 — break it five ways.** Five deliberate shape mismatches. For each one: **predict what will happen in one sentence, then run it, then paste the real error message**, and **circle the two numbers in it that failed to match.**
 >
-> And listen for this bit, because it is the one that matters: **one of the five does not produce an error at all.** It runs perfectly, the shape comes out exactly right, and every number is wrong. Your job on that one is to work out **which numbers are wrong and why**, and write two sentences about it."
+> And listen for this bit, because it is the one that matters: **one of the five does not produce an error at all.** It runs perfectly, the shape comes out exactly right, and most of the numbers are wrong. Your job on that one is to work out **which numbers are wrong and why**, and write two sentences about it."
 
 **Workbook pages:** 17.1, 17.2 and 17.5 in class · **17.3 and 17.4** at home · **17.6** stretch, for anybody who wants softmax on a batch of four rows.
 
@@ -1914,7 +1914,7 @@ No. It works one cell at a time. `(5, 3)` in, `(5, 3)` out.
 **Activity — "What do the two numbers in one row of `A2` add up to?"**
 `1`, because the output squash is softmax and softmax divides by the row total.
 
-**Wrap — "Which of the twelve weights would you change, and by how much?"**
+**Wrap — "Which of the nine weights would you change, and by how much?"**
 That is next week's entire lesson, and the answer is worked out in one sweep backwards along the same wires.
 
 ---

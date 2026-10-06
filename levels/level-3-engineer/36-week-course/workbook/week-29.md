@@ -314,7 +314,7 @@ ________________________________________________________________
 | **variance** | ______ | (i) Sliding a point onto a line at right angles and reading off how far along it landed |
 | **projection** | ______ | (ii) How hard one original column pulls on one component |
 | **principal component** | ______ | (iii) The average squared distance from the mean |
-| **explained variance ratio** | ______ | (iv) Squash, rebuild, and measure the gap — in the original units |
+| **explained variance ratio** | ______ | (iv) Squash, rebuild, and measure the gap — in the table's own units |
 | **loading** | ______ | (v) Add columns and everything drifts to the same distance from everything |
 | **reconstruction error** | ______ | (vi) One component's spread divided by the total spread |
 | **curse of dimensionality** | ______ | (vii) A direction chosen so the projected scores are as spread out as possible |
@@ -396,10 +396,10 @@ ________________________________________________________________
 
 **A6. Spot the bug — no error message, and the numbers are all slightly wrong.**
 
-A student's own spread for the five centred points at 30° comes out as **24.3354**. The class's answer is **19.4683**.
+A student's own spread for the five centred points at 30° comes out as **15.5747**. The class's answer is **19.4683**.
 
 ```
-24.3354 ÷ 19.4683 = 1.25
+15.5747 ÷ 19.4683 = 0.80
 ```
 
 **(a) What did they divide by?** ______  **What should they have divided by?** ______
@@ -657,7 +657,7 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**What I actually see in the picture** (and "one blob with no gaps" is an honest and correct answer):
+**What I actually see in the picture** (and "one connected cloud with no clean gaps, maybe three loose lobes" is an honest and correct answer):
 
 ________________________________________________________________
 
@@ -901,7 +901,7 @@ add them   : 0.3371                 square root: 0.5806
 
 **M4 (c).** `0.5806 ÷ 3.7495 = 0.1548`
 
-**M4 (d).** *"Small. The rebuilt student is out by about 15% of how far a typical student sits from the middle of the cloud — so throwing away one of two columns cost me about a sixth of the picture for this point. I only know that because I had a yardstick; `0.5806` on its own is a number in no units I can judge."*
+**M4 (d).** *"Small. The rebuilt student is out by about 15% of how far a typical student sits from the middle of the cloud — so throwing away one of the two directions (PC2) cost me about a sixth of a typical distance for this point. I only know that because I had a yardstick; `0.5806` on its own is a number in no units I can judge."*
 
 ### Predict the Output
 
@@ -995,7 +995,7 @@ so my grid was short by  : 12.96 degrees
 
 **The opposite-pulling row is `nonflavanoid_phenols` at −0.299.** **It is not a bug.** It means that as the other phenolic measures go up, this one tends to go **down** — a real chemical trade-off in wine, which PCA found without being told about it. **Spotting it and explaining it is the best available reading of that table.**
 
-**A6 (a).** They divided by **5**. They should have divided by **4** — one less than the count. **The diagnostic is the ratio itself:** `1.25` is exactly `5 ÷ 4`, so a spread that is exactly 1.25 times somebody else's on five points means one of you divided by 5.
+**A6 (a).** They divided by **5**. They should have divided by **4** — one less than the count. **The diagnostic is the ratio itself:** `0.80` is exactly `4 ÷ 5`, so a spread that is exactly 0.8 times somebody else's on five points means the smaller one divided by 5 where the other divided by 4.
 
 **(b).** **They forgot to centre.** The fingerprint is unmistakable: **every spread comes out enormous, and they barely differ from angle to angle**, because almost all of the number is *where the cloud sits* rather than *how big it is* — and where it sits looks about the same from every direction. On the five students, forgetting to centre turns a spread of 20.2183 into something in the hundreds.
 
@@ -1111,7 +1111,7 @@ yardstick: a typical point sits 3.7495 from the middle
 so the miss is 0.0942 of a typical distance
 ```
 
-**Nobody has a miss of `0.0000`**, which means **not one of the five students sits exactly on the new axis.** In the chapter's cloud the middle student did, because it *was* the mean; here the middle student is at `(5, 8)` while the mean is at `(5, 7)`, so it sits a full unit off the line — and has the **largest** miss of the five, `0.6815`. **The point nearest the middle is not automatically the best-rebuilt point.**
+**Nobody has a miss of `0.0000`**, which means **not one of the five students sits exactly on the new axis.** In the chapter's cloud the middle student did, because it *was* the mean; here the middle student is at `(5, 8)` while the mean is at `(5, 7)`, so it sits a unit above the middle and lands `0.6815` off the line — the **largest** miss of the five. **The point nearest the middle is not automatically the best-rebuilt point.**
 
 **B5.**
 
@@ -1311,7 +1311,7 @@ PC1 (36.2% of the spread)
 PC2 (19.2% of the spread)
 ```
 
-**What you see:** *"One elongated blob, wider than it is tall, running left to right, with no gaps in it. PC1 runs from about −4.3 to +4.3 and PC2 from about −3.9 to +3.5. It is a little lumpy but I could not confidently draw a line through it anywhere."* **That is the correct answer and it is not a failure.** There are three grape varieties in that picture and you cannot see any of them — hold on to that, because next week the same plot coloured by cluster shows three clean groups, **and it is a far better demonstration precisely because this version looked like one blob.**
+**What you see:** *"One connected cloud, wider than it is tall and roughly V-shaped, with no clean gaps in it. PC1 runs from about −4.3 to +4.3 and PC2 from about −3.9 to +3.5. It is a little lumpy but I could not confidently draw a line through it anywhere."* **That is the correct answer and it is not a failure.** There are three grape varieties in that picture and nothing on it says which is which — hold on to that, because next week the same plot coloured by cluster shows three clean groups, **and it is a far better demonstration precisely because this version looked like one blob.**
 
 **PC1's loadings and its name.**
 

@@ -385,7 +385,7 @@ print("rounds counted:", km.n_iter_)
 
 - `KMeans(n_clusters=2, ...)` **builds** a clusterer but does not run it. It is an empty machine with its dials set.
 - `n_clusters=2` is how many groups you are asking for.
-- `init=init` hands it **our** two starting centres instead of letting it choose. `n_init=1` says *"do not restart, I want this one run."* **Without both of those the trace will not match what you did by hand.**
+- `init=init` hands it **our** two starting centres instead of letting it choose. `n_init=1` says *"do not restart, I want this one run."* **Without `init=` the trace will not match what you did by hand** (with an explicit list of centres sklearn only runs once anyway, but it grumbles with a warning if `n_init` is left at 10).
 - `random_state=0` fixes the dice so your numbers and mine are identical.
 - `.fit(X)` **runs it** on the table `X`, stores the result inside `km`, and hands `km` back — which is why you can chain it on the end like that.
 - `km.labels_` is one whole number per row of `X`, in row order.
@@ -463,7 +463,7 @@ k-means++ with n_init=10        : labels [1 1 1 0 2 0]  inertia 3.6667
 
 > **`n_init=10`** — run the whole algorithm ten times from ten different starts, and keep whichever run finished with the lowest inertia.
 
-**scikit-learn does both of these by default.** Which is why you will rarely see a really bad clustering — but you should know it is being *handled for you* rather than believing the algorithm is start-proof.
+**scikit-learn uses k-means++ by default, and in older versions also ran `n_init=10` for you (newer ones default to `n_init="auto"`, which is a single run for k-means++, so ask for `n_init=10` yourself as this course does).** Which is why you will rarely see a really bad clustering — but you should know it is being *handled for you* rather than believing the algorithm is start-proof.
 
 ### Step 4 — the ruler problem, on three customers
 
@@ -616,7 +616,7 @@ SCALED
  [ 0 48  0]]
 ```
 
-**Read the SCALED grid.** Row 0 is 59 wines of variety 0, and **all 59** landed in our cluster 2. Row 1 is 68 wines of variety 1, and **65** of them landed in our cluster 0. Row 2 is 48 wines of variety 2, and **all 48** landed in our cluster 1.
+**Read the SCALED grid.** Row 0 is 59 wines of variety 0, and **all 59** landed in our cluster 2. Row 1 is 71 wines of variety 1, and **65** of them landed in our cluster 0. Row 2 is 48 wines of variety 2, and **all 48** landed in our cluster 1.
 
 **172 of 178 wines grouped with their own grape variety, by an algorithm that never saw a variety.** The UNSCALED grid is a mess: 46 and 13 in one row, 50 and 20 in another.
 

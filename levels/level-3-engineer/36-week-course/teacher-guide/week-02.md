@@ -112,7 +112,7 @@ Three rules, and the middle one is the interesting one.
 
 **Train — look as often as you like.** Fit on it, plot it, stare at it. It is yours. Its score means almost nothing (of course you do well on the questions you revised from), so nobody is tempted to report it.
 
-**Validation — you may look many times, and it wears out.** This is the sentence to get right, because it is *not* "validation is safe". Every time you look at the validation score and change your mind because of it, you spend a little of its honesty. After forty decisions, the validation score is slightly too good — not because anyone cheated, but because you kept the winner. Section 5 puts a number on exactly how much.
+**Validation — you may look many times, and it wears out.** This is the sentence to get right, because it is *not* "validation is safe". Every time you look at the validation score and change your mind because of it, you spend a little of its honesty. After forty decisions, the validation score is slightly too good — not because anyone cheated, but because you kept the winner. Section 5 shows one example of how much (0.0853 this run; averaged over many runs, best-of-twenty on a 400-row pile buys roughly 0.06).
 
 **Test — once. At the very end. Then stop.** Not "once per week". Not "once, and then again after one more idea". Once. And the reason is not moral, it is mechanical: **the moment a test score changes a decision, it has become a validation pile**, and you no longer have a test pile at all.
 
@@ -1299,7 +1299,7 @@ late rate,   rest: 0.28
 late rate,   test: 0.3175
 ```
 
-   **Storms come out 0.0612 against 0.0600 — 0.0012 apart, and only that far because 5.75% of 2000 rows does not divide into two piles exactly.** Lateness comes out 0.2800 against 0.3175, which is **0.0375 apart** and the largest gap we have seen all lesson. `stratify` did exactly what it was asked and absolutely nothing else.
+   **Storms come out 0.0612 against 0.0600 — 0.0012 apart, and only that far because 6.1% of 2000 rows (122 storms) does not divide into two piles exactly.** Lateness comes out 0.2800 against 0.3175, which is **0.0375 apart** - nearly as wide as the 0.0550 gap you get with no `stratify` at all. `stratify` did exactly what it was asked and absolutely nothing else.
 
 4. **What would the baseline score on the test pile?** They can work it out without opening it: the test pile is also 400 rows and also 115 late, so it is 285 ÷ 400 = 0.7125 and 0.5000, identically. **Then refuse to run it**, and say why: *"we can predict it exactly, which means running it would tell us nothing and cost us our one look."* This is the best discipline lesson available today.
 
@@ -1397,7 +1397,7 @@ The way to see it is to ask what a user would experience. This system tells the 
 
 **This is the question with no settled answer**, and it is worth being straight about, because the disagreement is real and it is about arithmetic rather than opinion.
 
-The pull in one direction: **your test pile has to be big enough that its score is not mostly noise.** 400 rows with 115 positives gives an AUC you can roughly trust to within a couple of hundredths. Cut it to 100 rows with 29 positives and the same model's score bounces around so much that you cannot tell a real improvement from a lucky one. So: bigger held-out piles.
+The pull in one direction: **your test pile has to be big enough that its score is not mostly noise.** 400 rows with 115 positives gives an AUC that wobbles by about 0.03 either way from luck alone, so a 0.01 or 0.02 difference means little. Cut it to 100 rows with 29 positives and the same model's score bounces around so much that you cannot tell a real improvement from a lucky one. So: bigger held-out piles.
 
 The pull in the other direction: **every held-out row is a row your model never sees.** With 2000 rows total, moving from 60% training to 80% training is 400 extra examples, and on a small dataset that is a real gain. So: smaller held-out piles.
 
@@ -1409,7 +1409,7 @@ What to tell a fourteen-year-old: **"there isn't a right answer, so there has to
 
 Because 400 rows is not very many, and luck is real at that size.
 
-Think about one of those random models. It hands out 400 random numbers. Purely by chance, some of the higher numbers land on late orders. AUC notices that and rewards it. Roll the dice again and the pattern is somewhere else. So the twenty scores scatter around 0.5 — ours ran from 0.4549 to 0.5853 — and the spread is entirely about **how many rows are in the pile**, nothing else.
+Think about one of those random models. It hands out 400 random numbers. Purely by chance, some of the higher numbers land on late orders. AUC notices that and rewards it. Roll the dice again and the pattern is somewhere else. So the twenty scores scatter around 0.5 — ours ran from 0.4549 to 0.5853 — and the spread depends mostly on **how many rows are in the pile** (and how many of them are late).
 
 Which leads to the thing worth saying out loud: **the smaller your validation pile, the more that best-of-twenty prize is worth, and the more it lies to you.** With 40 validation rows instead of 400, the best of twenty coin flips would look like a genuinely impressive model.
 
@@ -1560,7 +1560,7 @@ Three checks, five minutes, exact wording.
 
 *Good answer:* "You used the test pile to choose, so it isn't a fresh measurement any more — you fitted your decisions to it. It'll be too high, and you can't tell by how much."
 
-**Full marks needs the words *choosing* and *too high*** — the direction of the error matters. A student who says "it's inaccurate" has half of it; the error is not random, it is **optimistic**, always. Push: *"too high or too low?"*
+**Full marks needs the words *choosing* and *too high*** — the direction of the error matters. A student who says "it's inaccurate" has half of it; the error is not random, it is **optimistic**, on average. Push: *"too high or too low?"*
 
 **Check 3 — the baseline (spoken, 60 seconds)**
 
@@ -1578,7 +1578,7 @@ Three checks, five minutes, exact wording.
 | **2 — Emerging** | Names all three piles with card four in front of them. Runs the two-cut split when told to. Reads the three rates off the screen without noticing they are identical. |
 | **3 — Secure** | Names all three piles and what each may be used for, without the card. Explains that choosing on the test pile is a kind of fitting. **Proves the stratified split worked by pointing at three identical rates.** Says what the baseline scores and what a real model has to beat. **This is the target.** |
 | **4 — Strong** | Does 285 ÷ 400 unprompted to explain 0.7125. Notices that the second `test_size` must be 0.25 and can say why. Connects the 0.5853-versus-0.5125 gap to the phrase "validation wears out". Reads the `(400, 2)` error by comparing the two shapes in the message. |
-| **5 — Exceptional** | Predicts the baseline's test-pile score exactly and then declines to run it, giving the reason. Argues that `stratify` protects one column and nothing else, with the `weather` run as evidence. Says that a smaller validation pile makes the best-of-twenty prize bigger, and that this is about the number of rows and nothing else. |
+| **5 — Exceptional** | Predicts the baseline's test-pile score exactly and then declines to run it, giving the reason. Argues that `stratify` protects one column and nothing else, with the `weather` run as evidence. Says that a smaller validation pile makes the best-of-twenty prize bigger, and that this is mostly about the number of rows. |
 
 ---
 
@@ -1881,7 +1881,7 @@ Model answer:
 **None.** Not one of them looked at a single feature. There is no `fit` call anywhere in the script.
 
 **2.6(e) If your validation pile were 40 rows instead of 400, would the best-of-twenty prize be bigger or smaller?**
-**Bigger.** Fewer rows means more luck, so the twenty scores scatter further from 0.5 and the winner is further out. *(This is the deepest available answer today: the size of the fake improvement depends on the size of the pile and nothing else.)*
+**Bigger.** Fewer rows means more luck, so the twenty scores scatter further from 0.5 and the winner is further out. *(This is the deepest available answer today: the size of the fake improvement depends mostly on the size of the pile, and on how many things you tried.)*
 
 **2.6(f) Your two Bug Log entries for today.**
 

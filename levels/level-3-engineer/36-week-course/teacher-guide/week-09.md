@@ -97,7 +97,7 @@ Now watch what the harmonic mean says about 90 and 10:
 1800 ÷ 100   =  18.0
 ```
 
-**Eighteen. Exactly.** The harmonic mean is not a fudge somebody invented to be strict about F1. **It is what "average" actually means when the thing you are averaging is a rate, and the two rates apply to the same fixed amount of work.** Precision and recall are rates over the same fixed pile of transactions. That is why they get this average and not the other one.
+**Eighteen. Exactly.** The harmonic mean is not a fudge somebody invented to be strict about F1. **It is what "average" actually means when the thing you are averaging is a rate, and the two rates apply to the same fixed amount of work.** Precision and recall are both rates with the same top line, the true positives (TP ÷ everything flagged, TP ÷ everything really fraud), just as both speeds were the same 60 km over different times. That is why they get this average and not the other one.
 
 > **💡 Try this:** do the drive on the board with real clock times before you ever write the letters p and r. Ninety, ten, fifty, then the clock says eighteen. A room that has felt the 50-versus-18 gap will accept 0.5-versus-0.18 without a murmur.
 
@@ -770,7 +770,7 @@ second 60 km at 10 km/h  ->  60 ÷ 10  =  6.0000 hours
 1800 ÷ 100   =  18.0
 ```
 
-> "Same eighteen. **This kind of average already knew about the tractor.** It has a name — the **harmonic mean** — and it is the one you use when you are averaging rates over the same fixed amount of work. Precision and recall are rates over the same fixed pile of transactions. So they get this average."
+> "Same eighteen. **This kind of average already knew about the tractor.** It has a name — the **harmonic mean** — and it is the one you use when you are averaging rates over the same fixed amount of work. Precision and recall are both rates with the same top line, the true positives, just as both speeds were the same 60 km over different times. So they get this average."
 
 **Do this — the Arithmetic Race. This is the activity for this segment and it takes four minutes.** The board is already divided.
 
@@ -1029,7 +1029,7 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: five stat
 
 > "Nine weeks. Look at what is on the walls.
 >
-> A table of eight experiments where six of them made things worse, and you wrote every one down. A two-by-two with four counts in it that add to a thousand, and you checked. And five handovers from a relay where you rebuilt the whole term from memory in forty minutes, ending in **one file on disk** that contains everything: the imputer, the scaler, the encoder and the model, sealed together so it cannot be used wrong.
+> A table of eight rows, a baseline and seven experiments, where four of them made things worse, and you wrote every one down. A two-by-two with four counts in it that add to a thousand, and you checked. And five handovers from a relay where you rebuilt the whole term from memory in forty minutes, ending in **one file on disk** that contains everything: the imputer, the scaler, the encoder and the model, sealed together so it cannot be used wrong.
 >
 > And one new number. **0.2500** for the fraud model. Not 0.9860, not 0.9820, not 0.6204, not 0.9805. **0.2500**, because that is the honest one, and you can now say why in one sentence: it is the harmonic mean of precision and recall, so it lands near the smaller of the two, so **it cannot be faked by flagging almost nothing or by flagging almost everything.**"
 
@@ -1893,13 +1893,13 @@ saved: term1_model.joblib
 
 | # | Question | A full-marks answer |
 |---|---|---|
-| 1 | **What did the audit find that you would have missed?** | "**20 duplicate rows** and **108 missing** driver-experience values in 2,020 rows. A duplicate landing in both train and validation is a row the model has already seen, and the missing values would have crashed the scaler. Neither was mentioned anywhere; the audit found both." |
-| 2 | **Why three piles and not two?** | "Because I make choices with the validation pile — eight of them in Week 7 alone. Every choice uses it up a little. **The test pile is 400 rows I have never looked at, so it is the only honest estimate left**, and I open it once, in Week 36." |
+| 1 | **What did the audit find that you would have missed?** | "**20 duplicate rows** and **108 missing** driver-experience values in 2,020 rows. A duplicate landing in both train and validation is a row the model has already seen, and the missing values would have crashed the logistic regression. Neither was mentioned anywhere; the audit found both." |
+| 2 | **Why three piles and not two?** | "Because I make choices with the validation pile — seven of them in Week 7 alone. Every choice uses it up a little. **The test pile is 400 rows I have never looked at, so it is the only honest estimate left**, and I open it once, in Week 36." |
 | 3 | **What did the baseline tell you?** | "`DummyClassifier(strategy='most_frequent')` scores **accuracy 0.7125 and AUC 0.5000**. So a model at 0.71 accuracy has added nothing at all, and **0.5000 is the number to beat**, not zero." |
-| 4 | **Why does the scaler go inside the pipeline?** | "So it is fitted on the **1,200 training rows only**. Scale first and the mean and standard deviation have seen the validation rows, so my score is measured against numbers that already knew the answers. Inside the pipeline it cannot happen — `pipe.fit` only ever sees train." |
+| 4 | **Why does the scaler go inside the pipeline?** | "So it is fitted on the **1,200 training rows only**. Scale first and the mean and standard deviation have seen the validation rows, so my score is measured against numbers that had already seen the validation rows. Inside the pipeline it cannot happen — `pipe.fit` only ever sees train." |
 | 5 | **Name one feature you invented and what it earned.** | "**`is_rush`**, 1 when the order hour is 18, 19 or 20. **+0.0045**, the biggest single gain of Week 7. `order_hour` was already in the model as a number, but a straight line can only say 'later is worse'; the truth is a hump over the dinner rush, and a 0/1 flag can express a hump." |
 | 6 | **What was the leak and how did you catch it?** | "`similar_orders_late_rate` — built from the `late` column of all 2,000 rows. Fake AUC **0.9240**, honest **0.7535**. I caught it with the question that needs no arithmetic: **at the moment an order is placed, does this value exist?** No. Nobody knows yet whether it will be late." |
-| 7 | **How many rows did your ablation table have, and how many were regressions?** | "Eight rows, **six of them regressions.** Two kept. Total honest gain **0.7541 → 0.7599 = +0.0058.** Six failures out of eight is not bad work — it is what the table is for." |
+| 7 | **How many rows did your ablation table have, and how many were regressions?** | "Eight rows (a baseline and seven changes): **five dropped, four of them true regressions.** Two kept. Total honest gain **0.7541 → 0.7599 = +0.0058.** Five dropped out of seven is not bad work — it is what the table is for." |
 | 8 | **Why isn't accuracy enough?** | "On the fraud data a model that never says yes scores **0.9860**, and a real tree scores **0.9820** and catches 3 frauds out of 14. **Accuracy went down and the model got better.** The four counts could tell them apart and accuracy could not." |
 | 9 | **What one number would you put on the report, and why?** | "**F1.** For the delivery model, **0.4976 on the 400 validation rows.** Because it is the harmonic mean of precision and recall, so it lands near the smaller of the two, so it cannot be faked by flagging almost nothing or by flagging almost everything. **And I would print the four counts underneath it**, because from the counts anybody can recompute every other number, and from F1 alone nobody can get back." |
 

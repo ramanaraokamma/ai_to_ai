@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
   <title>Four words from Week 7, drawn</title>
-  <desc>Four labelled tiles. Feature set: four named column boxes, distance_km, items, prep_minutes, is_rush, with the note 5 kept on purpose. Ablation table: eight rows, two green marked keep and six red marked drop, with the note one change per row. Regression: a line of four dots stepping downwards with a red cross, labelled minus 0.0051 it got worse, and the note not linear regression. Leak hunt: a red box holding 0.9240 with an arrow down to a green box holding 0.7535, and the question does this value exist when I need it, answered no.</desc>
+  <desc>Four labelled tiles. Feature set: four named column boxes, distance_km, items, prep_minutes, is_rush, with the note 5 kept on purpose. Ablation table: seven rows, two green marked keep and five red marked drop, with the note one change per row. Regression: a line of four dots stepping downwards with a red cross, labelled minus 0.0051 it got worse, and the note not linear regression. Leak hunt: a red box holding 0.9240 with an arrow down to a green box holding 0.7535, and the question does this value exist when I need it, answered no.</desc>
   <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Four words from Week 7, drawn</text>
   <rect x="30" y="66" width="149" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
   <text x="44" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="start">feature set</text>
@@ -15,8 +15,6 @@
   <text x="44" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">5 kept, on purpose</text>
   <rect x="227" y="66" width="149" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
   <text x="241" y="92" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="start">ablation table</text>
-  <rect x="243" y="110" width="89" height="16" rx="4" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
-  <text x="338" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" text-anchor="start" dominant-baseline="central">drop</text>
   <rect x="243" y="130" width="89" height="16" rx="4" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
   <text x="338" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="start" dominant-baseline="central">keep</text>
   <rect x="243" y="150" width="89" height="16" rx="4" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
@@ -52,5 +50,5 @@
   <text x="635" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">does the value exist</text>
   <text x="635" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">when I need it? No.</text>
   <text x="400" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Every tile is a number from your own bench.py run.</text>
-  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Six of eight rows were regressions. That is normal.</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Five of seven changes were dropped, four were regressions. That is normal.</text>
 </svg>

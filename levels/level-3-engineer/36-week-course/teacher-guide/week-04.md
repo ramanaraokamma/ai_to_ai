@@ -69,7 +69,7 @@ Forget the word. Here is the question it answers:
 
 > **"On this list of numbers, how far from the average is a typical value?"**
 
-That is it. It is an average distance. And you are about to compute one, on five numbers, using nothing but subtraction, multiplication, addition, division and one square root.
+That is it. It is a typical distance. And you are about to compute one, on five numbers, using nothing but subtraction, multiplication, addition, division and one square root.
 
 **The five numbers are 2, 4, 6, 8 and 100.** Use these exact five all week. They are chosen so the arithmetic is easy and so the last one is a monster.
 
@@ -80,7 +80,7 @@ That is it. It is an average distance. And you are about to compute one, on five
 120 ÷ 5 = 24
 ```
 
-The mean is **24**. Notice immediately that this is a strange "average" — four of the five numbers are *below* 8, and the average is 24. One value dragged it. Say that out loud in the lesson; it is a free lesson about averages.
+The mean is **24**. Notice immediately that this is a strange "average" — four of the five numbers are 8 or less, and the average is 24. One value dragged it. Say that out loud in the lesson; it is a free lesson about averages.
 
 **Step 2 — how far is each number from 24?** Subtract.
 
@@ -115,7 +115,7 @@ The mean is **24**. Notice immediately that this is a strange "average" — four
 the square root of 1448 = 38.0526
 ```
 
-**That 38.0526 is the standard deviation.** It is the typical distance from 24. It looks large next to 2, 4, 6 and 8 — and it should, because the 100 really is out there.
+**That 38.0526 is the standard deviation.** It is the typical distance from 24. It looks large next to 2, 4, 6 and 8 — and it should, because the 100 really is out there. (If a student averages the plain distances 22, 20, 18, 16, 76 they get 30.4, not 38.05: squaring makes big gaps count extra. Both are "typical"; the standard deviation is the one every library uses.)
 
 > **🔢 The maths, slowly:** five operations, in this order, and no others. **Subtract** the mean from each value. **Square** each answer. **Add** them up. **Divide** by how many values there are. **Square-root** it. If you can do those five things you can compute a standard deviation, and you have just done one.
 
@@ -272,7 +272,7 @@ That is fine. **The reason the word exists** is what happens at cardinality 41,0
 
 ### 8. The three misconceptions you will actually meet
 
-**"Scaling changes the data, so it changes the answer."** It does not change any *ordering* and it does not change which rows are alike. 2 is still the smallest and 100 still the biggest, before and after, on both rulers. What changes is the *size of the numbers the weights get multiplied by*. Have them check it: the five z-scores are in exactly the same order as the five raw values.
+**"Scaling changes the data, so it changes the answer."** It does not change the *ordering* within a column. (It does change how far apart two rows look when several columns are compared, because it changes how much each column counts; that is the reason to scale.) 2 is still the smallest and 100 still the biggest, before and after, on both rulers. What changes is the *size of the numbers the weights get multiplied by*. Have them check it: the five z-scores are in exactly the same order as the five raw values.
 
 **"So min-max is better because 0 to 1 is tidy."** This is the commonest one and the figure kills it. Show them 0.0000, 0.0204, 0.0408, 0.0612 and 1.0000 and ask which four numbers are now nearly the same number. Tidy is not the goal; *usable* is.
 
@@ -488,7 +488,7 @@ Wait. Let them answer.
 
 > "No. It has no idea. It has never been outside. All it sees is that the bottom column's numbers go up to 59 and the top column's numbers stop at 14.4. Four times bigger.
 >
-> And that matters, because there are whole families of methods — nearest neighbours, which you built two years ago, and the model you used last week — that measure **how far apart two rows are**. If one column's numbers are four times bigger than another's, that column does four times as much of the shouting. Not because it matters more. Because somebody chose to measure it in months instead of years."
+> And that matters, because there are whole families of methods — nearest neighbours, which you built two years ago, measure **how far apart two rows are**, and models like the one you used last week are nudged to keep their weights small. Either way, if one column's numbers are four times bigger than another's, that column tends to do most of the shouting. Not because it matters more. Because somebody chose to measure it in months instead of years."
 
 **Do this:** Put Figure 4.1 on the screen. Point at the left-hand half only. Cover the right-hand half with your hand or a sheet of paper.
 
@@ -867,7 +867,7 @@ Full instructions are in the next section. In brief: 10 minutes scaling `2, 4, 6
 
 > **Say this:** "Four things, and then homework.
 >
-> **One.** A standard deviation is an average distance from the average. Subtract, square, add, divide, square-root. Five operations, no magic.
+> **One.** A standard deviation is a typical distance from the average (squaring makes big gaps count extra, so it is a little bigger than the plain average gap: 38.05 against 30.4 here). Subtract, square, add, divide, square-root. Five operations, no magic.
 >
 > **Two.** A z-score is (value minus mean) divided by that. It turns any column into 'how many typical steps from average', which is the same ruler for every column in the table.
 >
@@ -998,7 +998,7 @@ You scale anyway, for two reasons that are nothing to do with score. First, the 
 
 You are exactly right, and this is a genuinely good observation. There is even an option for it: `OneHotEncoder(drop="first")`.
 
-Here is the honest state of it: **for classical statistics it matters, and for the models in this course it does not.** In statistics, leaving all five in makes the maths ambiguous (there are infinitely many sets of weights that give identical predictions). For a model that has a penalty on large weights, as ours does, the ambiguity is resolved for you and leaving all five in is standard practice — and it has one clear practical advantage: with all five columns present, an unknown category is five zeros, and with the first one dropped, five zeros *means* the dropped category. Which is wrong and silent.
+Here is the honest state of it: **for classical statistics it matters, and for the models in this course it does not.** In statistics, leaving all five in makes the maths ambiguous (there are infinitely many sets of weights that give identical predictions). For a model that has a penalty on large weights, as ours does, the ambiguity is resolved for you and leaving all five in is standard practice — and it has one clear practical advantage: with all five columns present, an unknown category is five zeros, and with the first one dropped, four zeros *means* the dropped category. Which is wrong and silent.
 
 So: leave them in. Know that the question is sharp.
 
@@ -1100,7 +1100,7 @@ None of these needs syntax from a later week.
 2. **Variation-harder 1** — add a sixth value equal to the mean and predict both statistics before checking. Getting "mean unchanged, sd falls" right, *with the reason*, is a level-5 answer.
 3. **Prove the promise.** After standardizing, print `z.mean()` and `z.std()`. They come out `0.0` and `1.0` for every column, always. Then ask: is that a coincidence or is it forced by the recipe? (Forced. Follow the arithmetic.)
 4. **The uneven-rung question** from the Questions section, with the real weather numbers: 0.1056 against 0.1853. Have them write the two-camp argument in three sentences and pick a side. Then keep the page for Week 5.
-5. **Compute the two AUCs.** `LogisticRegression` on ordinal-coded `restaurant` gives 0.5280; on one-hot it gives 0.5596. Both terrible on their own, and the gap is entirely the encoding. A student who can run that comparison unaided is ready for next week.
+5. **Compute the two AUCs.** `LogisticRegression` on ordinal-coded `restaurant` gives about 0.536 on the Week 3 validation pile (the same split as `train_pipeline.py`); on one-hot it gives about 0.541. Both are barely better than guessing, and the 0.005 gap is well inside the noise of a 400-row pile, so it is a good moment to ask whether the difference is real (on the test pile the order flips). A student who can run that comparison unaided and say that out loud is ready for next week.
 6. **The honest question:** the mean and the standard deviation are two numbers that summarise 1,200 rows. What can they *not* tell you? (That the column has two humps. That it has a hole in it. That one value is 100. All three matter, and all three are invisible in a mean.)
 
 ### If the student won't engage today

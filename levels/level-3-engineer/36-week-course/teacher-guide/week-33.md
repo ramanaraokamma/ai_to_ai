@@ -279,7 +279,7 @@ bias: 0.0124
 12  0.5781    1    1   ['meal']
 ```
 
-**Traps 7, 8 and 9 came out "right" at a probability of `0.5188` with the single word `and` as their only surviving evidence.** `not_cold` is not a column either — the training reviews never said `not cold` — so gluing did not *reverse* the evidence. **It deleted it.** The sentence arrived at the classifier as, effectively, the word `and`, and the model fell back on its bias of `+0.0124`, which happens to lean very slightly positive, and the four positive traps happened to want *positive*.
+**Traps 7, 8 and 9 came out "right" at a probability of `0.5188` with the single word `and` as their only surviving evidence.** `not_cold` is not a column either — the training reviews never said `not cold` — so gluing did not *reverse* the evidence. **It deleted it.** The sentence arrived at the classifier as, effectively, the word `and`, and the model was left with its bias of `+0.0124` plus the near-zero weight of `and` (`+0.0629`), which together lean very slightly positive (`0.5188`), and the positive traps happened to want *positive*. (Of the six it got right, only 7, 8 and 9 arrived as the bare word `and`; 5, 10 and 12 were decided by a few weak words.)
 
 **Six out of twelve, and five of the six are coin flips that landed the right way up.** That is a completely different claim from "gluing negators fixes negation", and telling the difference is the skill.
 
@@ -1667,8 +1667,8 @@ p(happy) = 0.0241   not rude and not slow
 
 None of these need syntax from a later week.
 
-1. **Find the minimum number of extra training reviews that gets all twelve traps right.** They will find it takes roughly one review per negator-word pair, which is an honest and slightly depressing answer. **The real prize is the sentence: "the model did not learn that negation reverses meaning; it learned nine specific glued tokens."**
-2. **Work out what the six `0.5188` rows would have done if the training set had been 40 negative and 20 positive.** The bias would have leaned negative, all six would have flipped, and negation marking would have "fixed" three instead of six. **So the headline number depends on the class balance of the training set and not on the repair at all. That is a level-5 observation.**
+1. **Find the minimum number of extra training reviews that gets all twelve traps right.** They will find it takes roughly one review per negator-word pair, which is an honest and slightly depressing answer. **The real prize is the sentence: "the model did not learn that negation reverses meaning; it learned a handful of specific glued tokens, none of which the traps use."**
+2. **Work out what the six `0.5188` rows would have done if the training set had been 40 negative and 20 positive.** The bias would have leaned negative, all six would have flipped, and negation marking would still have scored six of twelve, but a different six (checked by running it: every trap flips to negative, so the six truly negative traps are the ones that come out right). **So the headline number depends on the class balance of the training set and not on the repair at all. That is a level-5 observation.**
 3. **Build the leaked model on purpose** and explain both effects: `not`'s coefficient is exactly `0.0000` (no training row puts a number in that column) **and** `fresh`'s tf-idf falls from `0.6716` to `0.2966` (the row is L2-normalized and now has two `not`s taking up length). **The second one needs all of Week 32 and it is a genuinely hard piece of reasoning.**
 4. **Extend `mark_negation` to span two words** — `not very fresh` → `not_very not_fresh` — and measure it. **It changes almost nothing on this corpus, and the honest write-up of a change that did nothing is a skill.**
 5. **Check whether the model's fifteen positive words agree with a thesaurus's notion of similarity.** `delicious`, `tasty` and `lovely` are near-synonyms and have coefficients `+2.2796`, `+2.1873`, `+2.0669` — close. `hot` and `fresh` are not synonyms at all and are `+2.9625` and `+2.8648` — also close. **So the coefficients encode sentiment, not meaning, and nothing in this model knows that `delicious` and `tasty` are related.** That is exactly the gap embeddings fill, discovered independently, and it is the best possible bridge into Level 4.
@@ -1731,7 +1731,7 @@ Three checks, five minutes, exact wording.
 
 > "Gluing negators on took the trap score from 0 to 6, and three of those six came out at a probability of exactly `0.5188`. **Was that a fix? Say what actually happened to trap seven, `"not cold and not soggy"`.**"
 
-*Good answer:* "No. `not_cold` isn't a column either, so gluing deleted the evidence instead of reversing it. All that was left of the sentence was the word `and`, so the model fell back on its bias of `+0.0124`, which leans very slightly positive, and trap seven happened to be positive. It abstained and got lucky. The only real fix was trap five, where three actual words survived."
+*Good answer:* "No. `not_cold` isn't a column either, so gluing deleted the evidence instead of reversing it. All that was left of the sentence was the word `and`, so the model was left with its bias of `+0.0124` plus `and`'s tiny `+0.0629`, which leans very slightly positive, and trap seven happened to be positive. It abstained and got lucky. The only real fix was trap five, where three actual words survived."
 
 **What to catch:** "yes, six is better than zero". **Push once:** *"what words did the model have in front of it?"* `['and']`. **A student who says "it guessed" is at level 4; a student who adds "and if the training set had been unbalanced it would have guessed the other way and scored three" is at level 5.**
 
@@ -2080,8 +2080,8 @@ mark_negation('hardly a delicious meal') -> 'hardly_delicious meal'
 **The three readings worth marks:**
 
 1. **Rows 2 and 3 added 221 and 240 columns and fixed nothing.** Row 4 added **zero** columns and fixed six. **Features are not the lever; tokens are.**
-2. **The held-out score went *down* in rows 3, 4 and 5, from `1.0000` to `0.9500`.** One held-out review out of twenty is now wrong. **So every repair cost something on the easy cases, which is a completely normal trade and worth naming.**
-3. **Row 5 is the best on the traps and it is still only 7 of 12.** Five traps survive every repair. **The model did not learn that negation reverses meaning; it learned some specific glued tokens.**
+2. **The held-out score went *down* in rows 3, 4 and 5, from `1.0000` to `0.9500`.** One held-out review out of twenty is now wrong, and it is always the same one: `"i would not order from here again"`, the only held-out review containing `not`. Config 1 gets it right only because `order` (coefficient `-0.50`) survives (`p(positive) = 0.415`); gluing turns `not order` into an unseen token, so `order` is deleted too and it lands at about `0.5`. **So the repair costs evidence it used to have, which is worth naming. It is not an "easy case" that got harder; it is the one negation review in the held-out twenty.**
+3. **Row 5 is the best on the traps and it is still only 7 of 12.** Five traps survive every repair. **The model did not learn that negation reverses meaning.** The seven new columns in row 5 (`not_late`, `not_quick`, `no_soggy`, `no_fresh`, `never_wrong`, `never_generous`, `hardly_any`) appear in no trap at all; row 5's extra right answer, trap 11 at `0.530` on `['portions', 'and', 'order']`, is another weak-evidence call, not a learned glued token.
 
 **And the required "fix or abstention" printout:**
 
@@ -2103,7 +2103,7 @@ bias: 0.0124
 12  0.5781    1    1   ['meal']
 ```
 
-**The correct verdict, and this is the page's whole purpose:** **abstention, not fix.** Six traps came out right; **traps 7, 8 and 9 had only the word `and` left** and all three landed on `0.5188`, which is the bias of `+0.0124` squashed. **Trap 12 had only `meal` left, at `0.5781`. Trap 10 had only topic words left, at `0.6112`.** The only one where real evidence survived is **trap 5** — `welcome`, `and`, `driver` — and even that is `0.4461`, a whisker under the line. **So of six apparent fixes, one is arguably real and five are the model shrugging.**
+**The correct verdict, and this is the page's whole purpose:** **abstention, not fix.** Six traps came out right; **traps 7, 8 and 9 had only the word `and` left** and all three landed on `0.5188`, which is the bias `+0.0124` plus `and`'s `+0.0629`, squashed (the bias alone would give `0.5031`). **Trap 12 had only `meal` left, at `0.5781`. Trap 10 had only topic words left, at `0.6112`.** The only one where real evidence survived is **trap 5** — `welcome`, `and`, `driver` — and even that is `0.4461`, a whisker under the line. **So of six apparent fixes, one is arguably real and five are the model shrugging.**
 
 **Full marks needs the word "abstain", "shrug", "bias", "guessed" or "deleted the evidence". A page reporting `6/12` as a success gets it back.**
 
@@ -2286,7 +2286,7 @@ tokens: ['not', 'tasty', 'and', 'not', 'generous']
 
 **Wrap — "why did the model get trap one wrong? Give me the mechanism."** **`not` has no column, because no training review contains it, so both occurrences were deleted before the arithmetic started. The model summed `fresh` at `+1.9241` and `hot` at `+2.0701` and said positive at `0.9824`.**
 
-**Wrap — "was six out of twelve a fix?"** **No. An abstention.** The evidence was deleted, not reversed, and the model fell back on a bias that happened to lean the right way for four of the traps.
+**Wrap — "was six out of twelve a fix?"** **No. An abstention.** The evidence was deleted, not reversed, and the model fell back on a bias that happened to lean the right way for the positive traps (7, 8, 9, 10 and 12).
 
 ---
 

@@ -335,7 +335,7 @@ ________________________________________________________________
 
 **Your answers:** i → ______  ii → ______  iii → ______  iv → ______  v → ______
 
-**A4(f).** Two of those five outputs are numbers you wrote on **M2** or **M3**. Name both and say which row.
+**A4(f).** Three of those five outputs are numbers you wrote on **M2** or **M3**. Name all three and say which row.
 
 ________________________________________________________________
 
@@ -868,7 +868,7 @@ ________________________________________________________________
 
 **W3.** `np.argmin` gives a **position** (`4` means "the fifth item in the list"); `np.min` gives the **value** (`0.0`). **You want neither on its own** — you want `candidates[np.argmin(losses)]`, which gave `8.0`, the weight that produced the smallest loss.
 
-**W4.** **Either the sign in the update is wrong, or the learning rate is too big.** Those are the only two options. **Check the sign first**, because that is one character and it is free to check; the learning rate needs a re-run. Here the numbers roughly quadruple each step, which is an explosion, so it is more likely to be the learning rate — but you still check the cheap thing first.
+**W4.** **Either the sign in the update is wrong, or the learning rate is too big.** Those are the only two options. **Check the sign first**, because that is one character and it is free to check; the learning rate needs a re-run. Here the numbers grow by about 2.6 times each step, which is an explosion, so it is more likely to be the learning rate — but you still check the cheap thing first.
 
 **W5.** **`6.000` is right**, and it is the two-sided one. The curve bends, so a one-sided nudge measures the slope of a line between where you are and slightly to the right of where you are, which is a bit too steep. The two-sided version takes one step each way and splits the difference, and it is **the same amount of work** — two evaluations of the function either way.
 
@@ -1043,7 +1043,7 @@ Longhand, so every division is visible:
 
 **A4.** i → **S** · ii → **Q** · iii → **T** · iv → **P** · v → **R**
 
-**A4(f).** `S = 2.0137527074704766` is **M2 row 3's `e^(−z)` column** (`z = −0.70`, so `e^(0.70) = 2.013753`). `P = 2.1972245773362196` is **M3 row 1's answer** — `ln(9) = 2.197225`, the log-odds of `p = 0.90`.
+**A4(f).** `S = 2.0137527074704766` is **M2 row 3's `e^(−z)` column** (`z = −0.70`, so `e^(0.70) = 2.013753`). `Q = [0.5622]` is **M2 row 5's `p` column** (`z = 0.25`). `P = 2.1972245773362196` is **M3 row 1's answer** — `ln(9) = 2.197225`, the log-odds of `p = 0.90`.
 
 **A5.** The eight boxes, top to bottom:
 
@@ -1313,11 +1313,11 @@ z = 1 :  2^(−1) = 0.5    1 ÷ 1.5     = 0.666667
 z = −1:  2^1 = 2         1 ÷ 3       = 0.333333
 ```
 
-**Everything still works.** It is an S, it is bounded by 0 and 1, `z = 0` still gives exactly a half, and `0.666667 + 0.333333 = 1`, so the mirror rule survives. The two curves are not even different shapes — base-2 is base-`e` with the horizontal axis stretched by `ln(2) = 0.6931`, which is why the base-2 curve rises more slowly. **So nothing is lost about the model; what is lost is arithmetic two weeks from now.** In Week 15 you need to know how steeply the sigmoid rises at a point, and with base `e` that steepness comes out as `p × (1 − p)` — a number you already have on the page, requiring no new work. With base 2 you get the same thing multiplied by `0.6931`, for ever, in every line. **My judgement: yes, that is a good enough reason**, and it is worth being clear about why. It is not that `e` is magic. It is that a constant you carry through ten thousand lines of arithmetic is ten thousand chances to drop it, and choosing the base that makes the constant equal to 1 removes all of them. Engineers choose conventions that delete whole categories of mistake, and this is one.
+**Everything still works.** It is an S, it is bounded by 0 and 1, `z = 0` still gives exactly a half, and `0.666667 + 0.333333 = 1`, so the mirror rule survives. The two curves are not even different shapes — base-2 is the base-`e` curve fed `z × ln(2)` (`ln(2) = 0.6931`) instead of `z`, so it is the same curve stretched sideways by about 1.44 times, which is why the base-2 curve rises more slowly. **So nothing is lost about the model; what is lost is arithmetic two weeks from now.** In Week 15 you need to know how steeply the sigmoid rises at a point, and with base `e` that steepness comes out as `p × (1 − p)` — a number you already have on the page, requiring no new work. With base 2 you get the same thing multiplied by `0.6931`, for ever, in every line. **My judgement: yes, that is a good enough reason**, and it is worth being clear about why. It is not that `e` is magic. It is that a constant you carry through ten thousand lines of arithmetic is ten thousand chances to drop it, and choosing the base that makes the constant equal to 1 removes all of them. Engineers choose conventions that delete whole categories of mistake, and this is one.
 
 ### Build It
 
-**Part A — real output of `overflow.py`.** The warning arrives **above** the table, because warnings go to a different output stream from `print`:
+**Part A — real output of `overflow.py`.** The warning arrives **above** the table in this captured output, because warnings go to a different output stream from `print` and `print` is buffered when output is piped (in a live terminal it may appear between the header and the first row; either is normal):
 
 ```text
 overflow.py:6: RuntimeWarning: overflow encountered in exp

@@ -921,7 +921,7 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: forty car
 >
 > Recall 0.2143 is bad. So somebody will say: fine, flag more transactions. And they are right — you can push recall up whenever you like.
 >
-> But look at the table. Every extra thing you flag comes out of the legit column. **Push recall up and precision falls.** They are on opposite ends of a see-saw, and next week we work out what to do when you need one number that respects both."
+> But look at the table. Most of the extra things you flag come out of the huge legit column. **Push recall up and precision falls.** They are on opposite ends of a see-saw, and next week we work out what to do when you need one number that respects both."
 
 **Do this:** Hand out the homework and read the third part out loud, slowly.
 
@@ -1075,7 +1075,7 @@ Because when the two classes are roughly balanced, accuracy is genuinely fine an
 
 **"Why is the fraud rate 1.44% when we asked for 1%?"**
 
-`weights=[0.99, 0.01]` sets the *probability* that each row is generated as fraud, not the exact count. The generator also nudges some rows across the boundary while it is arranging the classes, and the final tally lands nearby rather than exactly.
+`weights=[0.99, 0.01]` on its own would give exactly 50 fraud rows. But `make_classification` has a setting we did not touch, `flip_y=0.01`, which takes 1% of all rows (about 50 of the 5,000) and gives each a random new label. Roughly half of those land on "fraud", which is where the extra 22 come from (with `flip_y=0` the count is exactly 50). It means about a third of our 72 "frauds" are rows that look like ordinary transactions with a random label, which no model can learn, so part of the tree's poor score is label noise rather than only overfitting.
 
 **The habit that matters more than the explanation:** you asked for something and then you *checked what you got.* `print("fraud rate: %.4f" % y.mean())` is one line and it stopped you from writing "1%" in your report when the truth is 1.44%. Data very often is not what you ordered.
 
@@ -1083,7 +1083,7 @@ Because when the two classes are roughly balanced, accuracy is genuinely fine an
 
 Yes, and you are right about which way to turn the dial. **That is Week 10 and it is one of the best weeks of the year.**
 
-Here is what to hold on to until then: look at the table. Everything extra you flag has to come from somewhere, and the only place it can come from is the legit column — which means **more false alarms.** Precision will fall. You cannot buy recall without spending precision. There is no setting that gives you both, and next week you will draw the whole curve of that trade and pick a point on it on purpose.
+Here is what to hold on to until then: look at the table. Everything extra you flag has to come from somewhere: some of it from the fraud row (that is the recall you wanted) but, with 986 legitimate rows against 14 frauds, most of it from the legit column — which means **more false alarms.** Precision will usually fall. On a fixed model you generally cannot buy recall without spending precision; only a better model gives you both, and next week you will draw the whole curve of that trade and pick a point on it on purpose.
 
 **"Which is worse, a false positive or a false negative?"**
 
@@ -1343,7 +1343,7 @@ Every question restated, so you can mark from this page alone.
 | 13 | legit | legit | | 33 | legit | legit |
 | 14 | fraud | legit | | 34 | legit | fraud |
 | 15 | legit | legit | | 35 | legit | legit |
-| 16 | fraud | fraud | | 36 | fraud | fraud |
+| 16 | fraud | fraud | | 36 | legit | legit |
 | 17 | legit | legit | | 37 | legit | legit |
 | 18 | legit | fraud | | 38 | legit | legit |
 | 19 | legit | legit | | 39 | fraud | legit |
@@ -1516,7 +1516,7 @@ specificity 0.8095  (17/21)
 
 **Concept — specificity.** 979 ÷ (979 + 7) = 979 ÷ 986 = **0.9929**.
 
-**Live-code step 1 — "how many fraud rows out of 5,000 at 1%?"** Most will say 50. The real answer is **72**, a rate of **0.0144**. `weights` sets a probability, not a count. **The habit being taught is: ask for something, then check what you got.**
+**Live-code step 1 — "how many fraud rows out of 5,000 at 1%?"** Most will say 50. The real answer is **72**, a rate of **0.0144**. `weights` sets the target count (50), and the default `flip_y=0.01` label noise moves it to 72. **The habit being taught is: ask for something, then check what you got.**
 
 **Live-code step 2 — the three piles.** train 3000 (44 fraud), val 1000 (14 fraud), test 1000 (14 fraud). **44 + 14 + 14 = 72**, every fraud accounted for, and `stratify=y` is what kept the rates equal across the piles.
 
@@ -1526,15 +1526,15 @@ specificity 0.8095  (17/21)
 
 **Live-code step 6 — "which is better, and how do you know?"** The tree, because it caught 3 of 14 and the dummy caught 0. **And you answered it without using accuracy at all** — you used the four counts.
 
-**Wrap — "if we flag more things, what happens to precision?"** It falls. Everything extra you flag comes out of the legitimate column, so FP rises while TP rises more slowly. **Recall and precision sit on opposite ends of a see-saw**, which is Week 9's whole subject and Week 10's dial.
+**Wrap — "if we flag more things, what happens to precision?"** It usually falls. Most of what you newly flag comes out of the legitimate column, so FP rises faster than TP. **Recall and precision sit on opposite ends of a see-saw**, which is Week 9's whole subject and Week 10's dial.
 
-**Variation-harder 1 — "which model is better?"** The bold model: precision 9 ÷ 15 = **0.6000**, recall 9 ÷ 12 = **0.7500**. The cautious model: precision 5 ÷ 6 = **0.8333**, recall 5 ÷ 12 = **0.4167**. **Neither is better without knowing what the two errors cost.** The bold model catches nearly twice as many frauds and raises two and a half times as many false alarms. **A student who says "you can't tell yet" is completely right and should be told so.**
+**Variation-harder 1 — "which model is better?"** The bold model: precision 9 ÷ 15 = **0.6000**, recall 9 ÷ 12 = **0.7500**. The cautious model: precision 5 ÷ 6 = **0.8333**, recall 5 ÷ 12 = **0.4167**. **Neither is better without knowing what the two errors cost.** The bold model catches nearly twice as many frauds and raises six times as many false alarms (6 against 1). **A student who says "you can't tell yet" is completely right and should be told so.**
 
 **Variation-harder 2 — the piece of paper on the 40 cards.** Everything goes to `LEFT ALONE` and `MISS`: TN 28, FN 12, FP 0, TP 0. Accuracy = 28 ÷ 40 = **0.7000**, recall = 0 ÷ 12 = **0**. **On this data the useless model looks obviously useless.** It looked brilliant on the fraud data because 14 in 1,000 is far rarer than 12 in 40. **The paradox is caused by rarity, not by accuracy being a bad idea.**
 
 **Variation-harder 3 — working backwards.** Precision 0.5 and recall 0.5 with 12 real frauds: recall 0.5 of 12 gives TP = 6, so FN = 6. Precision 0.5 means TP = FP, so FP = 6. With 40 cards, TN = 40 − 6 − 6 − 6 = **22**. Check: 6 + 6 + 6 + 22 = 40. ✅
 
-**Variation-harder 5 — the smoke alarm.** It has TP = 0 and FP = 0, so precision is undefined and specificity is a perfect 1.0. **The number you need is the FN count: how many fires there were.** Zero fires and it is fine; one fire and it failed at the only job it had. **Two of the four cells are empty and the two that matter are the two you cannot see from the alarm itself.**
+**Variation-harder 5 — the smoke alarm.** It has TP = 0 and FP = 0, so precision is undefined and specificity is a perfect 1.0. **The number you need is the FN count: how many fires there were.** Zero fires and it has made no mistakes yet (though it has never been tested either, so recall is 0 ÷ 0); one fire and it failed at the only job it had. **Two of the four cells are empty and the two that matter are the two you cannot see from the alarm itself.**
 
 **Flying 5 — accuracy as a weighted average.** Recall is 0.2143 on 14 rows; specificity is 0.9929 on 986 rows.
 

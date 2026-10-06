@@ -830,7 +830,7 @@ counts swapped : [979  11   7   3]
 | **no error, accuracy 0.99 and you are pleased** | the positive class is rare | print `1 - y_val.mean()` beside it, every time |
 | **no error, precision 1.0000 and recall tiny** | the model flags 2 things and happens to be right about both | look at `tp + fp`. **A ratio with no counts next to it is a rumour** |
 | **no error, the report looks like rows of identical numbers** | default is `digits=2` | `classification_report(y, pred, digits=4)` |
-| **no error, but the fraud count is 50 not 72** | `random_state` missing or not `0` | `random_state=0`. **A printed number from an unseeded run is not a result** |
+| **no error, but the fraud count is not 72** | `random_state` missing or not `0` (an unseeded run gives a different count each time, somewhere around 70) | `random_state=0`. **A printed number from an unseeded run is not a result** |
 
 ---
 
@@ -880,7 +880,7 @@ Then one card from the `FALSE ALARM` pile and one from the `MISS` pile, and **on
 
 All four counts read out, then all three fractions. Then: *"one number I do not want you to report on its own again this year — accuracy 0.9820, from a model that missed eleven frauds out of fourteen."*
 
-And then the thing that opens Week 9: **recall 0.2143 is bad, so flag more transactions.** True — you can push recall up whenever you like. **But every extra thing you flag comes out of the legit column, so precision falls.** They sit on opposite ends of a see-saw.
+And then the thing that opens Week 9: **recall 0.2143 is bad, so flag more transactions.** True — you can push recall up whenever you like. **But most of the extra things you flag come out of the huge legit column, so precision usually falls.** They sit on opposite ends of a see-saw.
 
 ---
 
@@ -888,7 +888,7 @@ And then the thing that opens Week 9: **recall 0.2143 is bad, so flag more trans
 
 **1. A smoke alarm has never gone off in your house. What are its four counts, and which one can you not see?**
 
-TP = 0 and FP = 0 — the whole "alarm sounded" column is empty. TN is every quiet day. **And FN is the one you cannot see from the alarm itself: how many fires there were.** Zero fires and it is fine. One fire and it failed at the only job it had.
+TP = 0 and FP = 0 — the whole "alarm sounded" column is empty. TN is every quiet day. **And FN is the one you cannot see from the alarm itself: how many fires there were.** Zero fires and it has made no mistakes yet (though it has never been tested either, so recall is 0 ÷ 0). One fire and it failed at the only job it had.
 
 > **Hint:** notice that its **specificity is a perfect 1.0000** and its **precision is undefined**. Two of the four cells are empty and the two that matter are the two you cannot read off the device.
 
