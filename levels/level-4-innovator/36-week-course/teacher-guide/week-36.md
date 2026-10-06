@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table is for planning: how long each sitting takes, what the week builds, and what to have ready.
+
 | | |
 |---|---|
 | **Duration** | **Two sittings, because the plan asks for three things and they do not fit in one hour.** **Sitting 1 (70 minutes, with the computer):** the demo (M6) and the system card (M7). **Sitting 2 (75 minutes, no computer):** Assessment 4, the final paper. Put them on different days, the paper at least a day after the demo, so that nobody sits a paper straight after being questioned about their own system. If you truly have one slot, run Sitting 1 and set the card's last edits as homework, then give the paper as the next class. Never squeeze the paper into the end of Sitting 1. Homework after both: about 60 minutes (the marking and the card's final copy). |
@@ -162,6 +164,8 @@ The ground-truth ledger (`_ledger/`) found defects in the reference capstone and
 ---
 
 ## 🧰 Prep Checklist
+
+This section is for the night before: it rebuilds the card, the demo and the paper's key so that you can check them against the logs.
 
 ### 60 minutes the night before
 
@@ -760,6 +764,8 @@ stand-in, not a model: nothing above says anything about how a real model behave
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is for running the two sittings: a timed plan for the demo and card, then for the paper.
+
 ### Sitting 1 — Demo and card (70 minutes)
 
 | Time | Segment | What happens |
@@ -847,6 +853,8 @@ Then: *"Questions?"* Answer **only** about logistics. Turn the paper over. Start
 ---
 
 ## 🐞 The Debugging Clinic
+
+This section is for the eight mistakes that make a card look finished when it is not.
 
 ### How to teach debugging without giving the answer
 
@@ -1003,6 +1011,8 @@ The checker enforces ten headings. Ask: *"what question would a stranger ask tha
 ---
 
 ## 🎲 The Activity, In Full
+
+This section holds the pages the student fills in, with the worked example for each.
 
 ### Page 36.1 — The claim ledger (Sitting 1, Their Turn 1)
 
@@ -1453,6 +1463,8 @@ Give them the worked example **with their project's names in it** and let the ho
 
 ## ❓ Questions Students Ask This Week
 
+Use this section for the questions that come up most, with a short reply to each.
+
 - **"Why does the card say 17 of 25 and not 68%?"** Because `0.68` hides that there are 25 cases and that one case moves it by `0.04`. A count with an `n` can be checked by anyone with the logs.
 - **"Can I leave out the part where it fails? It makes the project look worse."** The rubric gives the honest section as many marks as the working code. A card with no failure in it is a card that has not been tested.
 - **"Why must the demo show a failure?"** Because a demo of the cases that work is a measurement of how well you chose them. The failure, with its mechanism in one sentence, is the one thing a viewer cannot get from the number.
@@ -1467,6 +1479,8 @@ Give them the worked example **with their project's names in it** and let the ho
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+This section lists the ways the week tends to fail, so that you can spot each early.
 
 1. **The card is written first and the numbers found afterwards.** Then the numbers are the ones the author hoped for. The ledger comes first (Page 36.1), and every line of it has a command.
 2. **The card is a polished README.** Marketing sentences, no `n`, no failure, no named person. Ask the Misconception 9 questions.
@@ -1483,6 +1497,8 @@ Give them the worked example **with their project's names in it** and let the ho
 ---
 
 ## 🧭 Differentiation
+
+This section adjusts the week for a student who is struggling and for one who is ahead.
 
 ### If the student is struggling
 
@@ -1503,6 +1519,8 @@ Give them the claim ledger with **one** line to fill: the overall, with its `n` 
 ---
 
 ## ✅ Assessing Understanding
+
+This section is for marking: the rules, the sheets and what each score tells you.
 
 ### The marking rules
 
@@ -1564,6 +1582,8 @@ Extension for the fast student: the `make_card.py` generator, or the write case 
 ---
 
 ## 🔑 Answer Key
+
+This section holds the answers and marking notes for the final paper. Keep it away from the student.
 
 ### Section A — letters, with the map of wrong answers
 

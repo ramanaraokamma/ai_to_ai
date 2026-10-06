@@ -22,7 +22,11 @@
 >
 > **Reading time:** about 20 minutes (the night before). **In class:** 75 minutes (70 for the paper). **Homework:** about 45 minutes of marking.
 
-> **📌 About the code blocks.** There are only four small files this week, and they are for **before** the paper. Each is a whole file with its name in the first line. Type them into **one folder** and run them from there. They do not need `l4lib/`. Every output shown was printed by a real run on a CPU; **none of them uses randomness**, so no seed is needed and your numbers should match. They use **practice numbers that are not the paper's numbers**, so they check your method without handing you the answers. **You run no code during the paper.** Nothing this week needs the internet. There is no language model, no scripted backend and no stand-in anywhere.
+> **📌 About the code blocks.** There are only four small files this week, and they are for **before** the paper. Each is a whole file with its name in the first line. Type them into **one folder** and run them from there; they do not need `l4lib/`.
+>
+> Every output shown was printed by a real run on a CPU. **None of them uses randomness**, so no seed is needed and your numbers should match. They use **practice numbers that are not the paper's numbers**, so they check your method without handing you the answers.
+>
+> **You run no code during the paper.** Nothing this week needs the internet. There is no language model, no scripted backend and no stand-in anywhere.
 
 ---
 
@@ -44,6 +48,8 @@ Why bother before Term 3? Because **Week 19 deletes the parts of your TinyGPT on
 
 ## 🗺️ What is on the paper
 
+This section sets out the format of the paper, so nothing about it surprises you on the day.
+
 The paper is **75 marks** and you get **70 minutes**.
 
 | Section | What it asks | Marks | About how long |
@@ -58,13 +64,23 @@ The paper is **75 marks** and you get **70 minutes**.
 
 **In Section C the programs are broken on purpose.** Your job is to say what the bug is, what the program does (an error, or a wrong answer), and to write the fix.
 
-**Section E is the biggest single question** (12 marks) and the last one. Start it when you have about thirteen minutes left, not later. It uses **two real tables** printed from this course's own runs: the name model of Week 12 and the TinyGPT of Week 17. The tables are on the paper as numbers, so you do not need to remember them.
+**Section E is the biggest single question** (12 marks) and the last one. Start it when you have about thirteen minutes left, not later.
 
-**Your teacher will say only five things during the paper** (the time-checks), and will answer questions with one of three sentences: *"Read it again."* / *"Write what you do know."* / *"I can't help with that one, move on."* That is not unkindness; it is what keeps the X-ray clean.
+It uses **two real tables** printed from this course's own runs: the name model of Week 12 and the TinyGPT of Week 17. The tables are on the paper as numbers, so you do not need to remember them.
+
+**Your teacher will say only five things during the paper** (the time-checks). Questions get one of three answers:
+
+- *"Read it again."*
+- *"Write what you do know."*
+- *"I can't help with that one, move on."*
+
+That is not unkindness; it is what keeps the X-ray clean.
 
 ---
 
 ## 🧰 The night before: what to be able to do
+
+This list shows what each week's questions will expect, so you can find the soft spots before the paper.
 
 Go down this list. For each line, ask: **could I do this right now with only a pen and a calculator?** Tick the ones you could. For any you could not, open the workbook page named and do it again, **for 20 minutes at most**. Do not try to learn everything the night before; just find out which lines are soft.
 
@@ -79,7 +95,7 @@ Go down this list. For each line, ask: **could I do this right now with only a p
 | 16 | Say why attention alone cannot tell `dog bit man` from `man bit dog`, and what fixes it. Count the knobs in one block. | 16.2, 16.4 |
 | 17 | Say what a model that knows nothing about 28 characters should score at step 0, and why. Say what the gap between train and validation loss does and does not tell you. | 17.3, 17.4, 17.6 |
 
-> **Do not** stay up late. A tired head does the arithmetic worse than a rested one, and one night cannot teach you what nine weeks did not.
+> **⚠️ Watch out:** do not stay up late. A tired head does the arithmetic worse than a rested one, and one night cannot teach you what nine weeks did not.
 
 ---
 
@@ -226,7 +242,7 @@ The pieces are kept in a plain dictionary here only to add them up; this file is
 
 ## 🎲 During the paper
 
-A few habits, in order of how many marks they save.
+These habits are for the time of the paper itself, listed in order of how many marks they save.
 
 1. **Do Section A first and fast.** It is 20 one-mark questions; do not spend five minutes on one of them. Circle your best guess and move on. A blank earns nothing.
 2. **In Section B, work it out, don't "see" it.** Run the program in your head one line at a time and write each intermediate value beside the code. Write the number exactly as the program would print it, including a trailing zero.
@@ -236,11 +252,13 @@ A few habits, in order of how many marks they save.
 6. **If you finish early,** go back and check each answer against your own working, **starting from the end**. Do not leave, and do not start next week.
 7. **If you get stuck,** write *"did not get it"* beside the question and go on. That is the most useful thing you can write.
 
-> **If you feel panicky:** put the pen down, breathe for a minute, and say so. A calm minute costs a mark or two and gives them back.
+> **💡 Why:** if you feel panicky, put the pen down, breathe for a minute, and say so. A calm minute costs a mark or two and gives them back.
 
 ---
 
 ## 📤 Homework: mark your own paper
+
+This homework turns the paper into a plan: you mark it, fill in the grid and pick at most two weeks to redo.
 
 You will be given the **marking sheet** (the short answers, with working) and a pen of a **different colour** from the one you used on the paper. Do this the same evening.
 
@@ -249,7 +267,7 @@ You will be given the **marking sheet** (the short answers, with working) and a 
 3. **Circle at most two weeks** in the remediation table below. Choose the **lowest percentages**. If there is a tie, go in this order: **Week 16, then Week 15, then Week 17** (those three are the ones Week 19 leans on directly). Write a day and a time for each redo next to the circle. *(About 5 minutes.)*
 4. **One sentence in your Bug Log:** *"The answer I was most surprised to get wrong was ___, because I thought ___."* *(About 5 minutes.)*
 
-**Why at most two?** Because a list of eight redos is a list nobody does. Two is a plan.
+> **💡 Why at most two?** A list of eight redos is a list nobody does. Two is a plan.
 
 **A week needs a redo when you scored 60% or less of its marks.** The marking sheet says the exact number of marks for each week.
 
@@ -282,11 +300,15 @@ Bring to the next class: **the marked paper, the filled grid, and the circled ta
 
 ## 📖 What carries into next week
 
+This section says which parts of the paper the next week depends on, so you know which redos come first.
+
 **Week 19 opens the GPT you built in Week 17.** You delete each component in turn (the mask, the positions, the residual, the layer norm) and watch what breaks, then give it small made-up tasks (copy, reverse, lookup) so that a head is easy to name. It leans directly on three things from this paper: the mask and the divide (Week 15), positions and the block's layout (Week 16), and the first-loss check and the train-against-validation reading (Week 17). **If your grid shows Week 16, 15 or 17 under 60%, those are the redos to do first.** Nothing else from Term 2 is on the critical path.
 
 ---
 
 ## 📖 Words from this week
+
+This section lists the new words for the week.
 
 There are none. No word is new today. If you met a word on the paper that you did not recognise, write it in your Bug Log with the question number: that is a finding for the grid.
 

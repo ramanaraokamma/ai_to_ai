@@ -39,11 +39,13 @@ Before you type anything, write three guesses on a card.
 2. After about 80 seconds of training, will the model score **better on the text it studied, or on text it never saw**? By how much?
 3. Will the writing it produces be **English**?
 
-Keep the card. We come back to it at the end.
+Keep the card. You come back to it in Wrap Up.
 
 ---
 
 ## 🧠 The Big Idea
+
+This section explains what one training step asks of the model, and introduces `torch.randint`, the tool that picks the windows.
 
 ### 1. One question, asked 2,048 times
 
@@ -93,6 +95,7 @@ for s in starts:
     y = text[s + 1:s + T + 1]
     print("start", int(s), " x", x.tolist(), " y", y.tolist())
 ```
+
 ```text
 starts: [2, 3, 5, 0]
 start 2  x [102, 103, 104, 105]  y [103, 104, 105, 106]
@@ -111,6 +114,8 @@ In the first half, `x` and `y` are both four long, and `y` is `x` moved one plac
 ---
 
 ## 🏗️ Build It
+
+This section builds `TinyGPT` from last week's block, then runs two checks (the first loss and the knob count) before any training.
 
 ### 3. The model: a module inside a module
 
@@ -279,6 +284,7 @@ actual = sum(p.numel() for p in model.parameters())
 print("predicted knobs:", predicted, " actual:", actual, " match:", predicted == actual)
 print(f"knobs per training character: {actual / len(train_data):.1f}")
 ```
+
 ```text
 characters: 6972  vocab: 28  train: 6274  val: 698
 ln(vocab) = ln(28) = 3.3322
@@ -326,6 +332,7 @@ print("children of one block  :", [name for name, _ in model.blocks[0].named_chi
 print("knobs in the 4 blocks  :", sum(p.numel() for p in model.blocks.parameters()))
 print("knobs in the whole tree:", sum(p.numel() for p in model.parameters()))
 ```
+
 ```text
 children of the model  : ['tok', 'pos', 'blocks', 'ln_f', 'head']
 first block's class    : Block
@@ -339,6 +346,8 @@ The four blocks hold 791,552 of the 807,196 knobs, almost all of them. The line 
 ---
 
 ## 🏃 Train It
+
+This section trains the model with `train.py` and shows how to read the run: samples, losses and the gap.
 
 ### 6. The run
 
@@ -437,6 +446,7 @@ print(f"passes over the training text: {STEPS * B * T / len(train_data):.0f}")
 print()
 print(sample("the ", 300))
 ```
+
 ```text
 knobs: 807196
 
@@ -506,6 +516,8 @@ Two more cautions about the numbers. Each validation loss is an average of 20 ra
 
 ## 🎲 Your Turn
 
+Three activities to do yourself: score your own guesses against the loss, put samples in order, and change one setting of `train.py`.
+
 ### Beat the Ladder
 
 You play the game the model plays, on real places in the text. Your teacher reads you a card with the last letter hidden, for example `the cat sat on the m_`. You:
@@ -538,6 +550,7 @@ for p in [0.9, 0.5, 0.25, 0.1, 0.01]:
     print(f"p = {p:<5}  -ln(p) = {-math.log(p):.3f}")
 print(f"p = 1/28   -ln(p) = {-math.log(1 / 28):.3f}   (knows nothing)")
 ```
+
 ```text
 left over 0.20 shared by 25 letters = 0.0080 each
 p on the true letter = 0.5   score = -ln(p) = 0.693
@@ -585,6 +598,7 @@ class BadGPT(nn.Module):
 
 model = BadGPT()
 ```
+
 ```text
 Traceback (most recent call last):
   File "bad_init.py", line 11, in <module>
@@ -601,12 +615,16 @@ Did the message tell you what to do? Write in your Bug Log which line the error 
 
 ## 🧭 What was shown, and what was not
 
+This section separates what this week's run supports from what it does not.
+
 **Shown:**
+
 - A GPT is Week 16's block stacked four times with a character table, a place table, a last norm and an output layer around it. It has 807,196 knobs, the number the formula predicted.
 - An untrained model must start near `ln(28) = 3.332`; the calm head starts 0.0159 away. That was a check we ran.
 - After 1,500 steps (490 passes, about 80 seconds) the samples go from random characters to the shape of sentences, the train loss ends near 0.9 and the validation loss near 1.4, and the gap opens as training goes on.
 
 **Not shown:**
+
 - That the model **understands** anything. It has learned which character tends to follow which prefix *in this text*. The words it invents (`menthy`, `witer`) say so.
 - That the gap is **caused** by memorising. We did not run the control.
 - Where to stop training. One seed, a noisy validation number, and differences of a few hundredths.
@@ -616,6 +634,8 @@ Did the message tell you what to do? Write in your Bug Log which line the error 
 ---
 
 ## 🔑 Wrap Up
+
+Use these questions to check the week, then copy the closing sentence into your Bug Log.
 
 1. One training step asks 2,048 questions. Where does the number come from, and what is `y` in terms of `x`?
 2. What should the first loss of a model that knows nothing be, with a vocabulary of 28? What was yours, and how far off? Why did we check that *before* training?

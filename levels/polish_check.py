@@ -53,6 +53,7 @@ def numbers(prose):
     for _, line in prose:
         line = re.sub(r"^\s*\d+[.)]\s", "", line)  # ordered-list markers do not count
         line = re.sub(r"\]\([^)]*\)", "]", line)   # link targets are checked separately
+        line = re.sub(r"[\w./-]*\d[\w./-]*\.(?:py|md|txt|csv|svg|json|jsonl|joblib|npy|pt)\b", "FILE", line)  # digits in file names
         c.update(re.findall(r"\d+(?:[.,]\d+)?", line))
     return c
 

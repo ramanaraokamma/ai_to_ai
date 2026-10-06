@@ -25,6 +25,8 @@
 
 ## ✅ Warm-Up (5 min, before anything else, from memory)
 
+This page checks what you remember from the chapter before you open any notes.
+
 1. A claim, in this course, has two things written beside it or it is "a mood". Which two? ______________ and ______________
 2. Name the ten parts of the card, or as many as you can: ____________________________________________________
 3. Which section is the one that "gets read", and what does it have to name? ____________________________________________________
@@ -34,6 +36,8 @@
 ---
 
 ## 🧮 Page 36.1 — The Claim Ledger (35 min · pen, then one check)
+
+This page practises judging claims, then filling a ledger for your own card.
 
 **The ledger rule.** One line per claim: **the sentence · the number · the `n` · the command that printed it.** A claim with no command does not go in the card. A rate with no count is not a claim.
 
@@ -69,6 +73,8 @@ Which claim would you least like a stranger to check? ______________ Check that 
 
 **C. A rate hides its `n`.** On 9 cases, `8 of 9` is `0.89`. On 900 cases, `800 of 900` is also `0.89`. By hand: (i) one more failure on the 9 cases moves the rate from ______ to ______ ; (ii) one more failure on the 900 cases moves it from `0.889` to about ______ ; (iii) `wobble = sqrt(n × p × (1 − p))` for `8 of 9`: ______ cases; for `800 of 900`: ______ cases. Which of the two rows says more, and what does the card write so that a reader can tell? ____________________________________________________
 
+Pen first. Then run this check:
+
 ```python
 # check361.py - Page 36.1: a rate hides its n; the wobble of 8 of 9 against 800 of 900; one more failure on 9 cases. (Plain Python; no files needed.)
 def wob(k, n):
@@ -98,6 +104,8 @@ The last line: how many cases did the system need to pass to keep a promise of `
 
 ## 🧮 Page 36.2 — The Run-Sheet (25 min · pen, then one check)
 
+This page builds the timed plan for your five-minute demo.
+
 The demo is **five minutes by the clock**: `30 + 60 + 60 + 60 + 60 + 30` seconds. Fill the clock column by adding, **before** you run the check. Then fill the last two columns **for your own project**.
 
 | segment | seconds | clock starts at | what I say (one sentence) | what I run |
@@ -115,6 +123,8 @@ Three boxes, in your own words:
 - **The question that works:** ____________________________________________________
 - **The question that fails on purpose, and its mechanism in one sentence:** ____________________________________________________
 - **The sentence I read from section 10:** ____________________________________________________
+
+Fill the clock column first. Then run this check:
 
 ```python
 # check362.py - Page 36.2: the run-sheet's clock column from the seconds, and a sheet that does not add to 300. (Plain Python; no files needed.)
@@ -148,7 +158,11 @@ Rehearsal, timed, on your own machine: run 1 took ______ : ______ ; did you say 
 These are **practice numbers**, not the paper's. Work each by hand. Show the steps.
 
 **A. The bill for a long task (Week 29).** An agent adds **200 tokens** to its history at every step and **re-sends the whole history** at every step. It runs **8 steps**.
-(i) Tokens sent in step 8: ______ (ii) Total over the 8 steps `= 200 × k(k+1)/2`: ______ (iii) At **$0.002 per 1,000 tokens** (stand-in dollars): $______ (iv) The task is doubled to **16 steps**. The total is ______ ; the bill is ______ times the first bill (to two decimals). Doubled? ______
+
+- (i) Tokens sent in step 8: ______
+- (ii) Total over the 8 steps `= 200 × k(k+1)/2`: ______
+- (iii) At **$0.002 per 1,000 tokens** (stand-in dollars): $______
+- (iv) The task is doubled to **16 steps**. The total is ______ ; the bill is ______ times the first bill (to two decimals). Doubled? ______
 
 **B. Two raters (Week 30).** A and B each mark the same 20 tickets *pass* or *fail*:
 
@@ -172,7 +186,14 @@ bucket        results   right   confidence it stated
 (i) Actual accuracy of each bucket: ______ , ______ , ______ (ii) Gap `|actual − said|` of each: ______ , ______ , ______ (iii) Size-weighted average of the gaps (weights 8, 6, 6 out of 20): ______ (iv) The bucket that is most over-confident, and by how much: ______________
 
 **D. The wobble (Week 33).** `14 of 20` and `11 of 20`.
-(i) wobble of 14: ______ (ii) wobble of 11: ______ (iii) combined `= sqrt(w₁² + w₂²)`: ______ (iv) bar (twice the combined): ______ (v) the gap is 3 cases: more than noise? ______
+
+- (i) wobble of 14: ______
+- (ii) wobble of 11: ______
+- (iii) combined `= sqrt(w₁² + w₂²)`: ______
+- (iv) bar (twice the combined): ______
+- (v) the gap is 3 cases: more than noise? ______
+
+Work A to D by hand first. Then run this check:
 
 ```python
 # check363.py - Page 36.3: four pieces of hand arithmetic from earlier weeks, then by code. (Plain Python; the numbers are invented practice numbers, different from the paper's.)
@@ -222,6 +243,8 @@ Which of your sums disagreed with the printout? ______ . Which **step** went wro
 
 ## 🧮 Page 36.4 — Reading Two Versions (30 min · pen, then one check)
 
+This page practises reading a two-version comparison and writing the reply a card would stand behind.
+
 An **invented** toy system with 20 cases and two versions, `v1` and `v3` (stand-in, not a model; the counts are typed in, the arithmetic is real). The team wrote a promise **before** measuring: *score at least 0.75*.
 
 ```text
@@ -240,9 +263,9 @@ A teammate says: *"v3 scored 16 against 13. That is three more. v3 kept the prom
 **B. The promise.** `0.75 × 20 =` ______ cases. `v1` passed ______ : short by ______ cases, so the verdict is ______________ . `v3` passed ______ : headroom of ______ case(s), so the verdict is ______________ and the margin is ______________ (thin / comfortable).
 
 **C. By category.** The table says `lookup` went **down** by ______ and `sums` and `refusals` went **up** by ______ and ______ . For each of the three, circle what the table alone **can** support and what it **cannot** (it cannot say *which cases flipped* or *why*):
- - `lookup 7 → 6 of 8`: a finding / a hint / noise? ______________
- - `sums 3 → 5 of 6`: a finding / a hint / noise? ______________
- - `refusals 2 → 4 of 4`: a finding / a hint / noise? ______________
+- `lookup 7 → 6 of 8`: a finding / a hint / noise? ______________
+- `sums 3 → 5 of 6`: a finding / a hint / noise? ______________
+- `refusals 2 → 4 of 4`: a finding / a hint / noise? ______________
 
 What would you need to be shown, in addition to this table, to turn a hint into a finding? ____________________________________________________
 
@@ -252,6 +275,8 @@ ____________________________________________________
 ____________________________________________________
 ____________________________________________________
 ____________________________________________________
+
+Fill in A to D first. Then run this check:
 
 ```python
 # check364.py - Page 36.4: two versions of an INVENTED toy system on 20 invented cases (stand-in, not a model). The arithmetic is real; the table is typed.
@@ -290,7 +315,11 @@ The last line: which of the two numbers, `0.771` or `0.8`, belongs in the card a
 
 ## 🐞 Page 36.5 — Break It on Purpose (four bugs · 35 min)
 
-Run each as written. Predict first. Then say what went wrong and how you would have known. Each is **deliberate**. Every system here is a toy or a stand-in, not a model.
+This page is for finding four bugs, each **deliberate**. Every system here is a toy or a stand-in, not a model.
+
+1. Run each block as written, after predicting its result.
+2. Say what went wrong.
+3. Say how you would have known.
 
 ### 36.5-A (loud) — the demo command with no question
 
@@ -382,6 +411,8 @@ The quote is evidence of a failure, and the author replaced the evidence with a 
 
 ## 📓 Page 36.6 — Stop and Think (15 min · pen only)
 
+These eight questions are for writing answers in your own words, pen only.
+
 1. A stranger asks "how accurate is it?" and your log says `17 of 25`. Write the one sentence you give them, with an `n`, a stand-in label and the wobble in words. ____________________________________________________
 2. Your section 10 says "May occasionally be inaccurate, so users should verify important information." Name **four** things it is missing. ____________________________________________________
 3. A friend says the demo should show your three best questions. What does `demo.py` do about that, and why does the demo have to contain a failure? ____________________________________________________
@@ -394,6 +425,8 @@ The quote is evidence of a failure, and the author replaced the evidence with a 
 ---
 
 ## 📓 Page 36.7 — The Bug Log
+
+This page records what went wrong this week and the rule you will keep for each bug.
 
 | # | What went wrong (your words) | Loud or silent? | The one line or check that caught it | The rule I will keep |
 |:-:|---|:-:|---|---|
@@ -414,6 +447,8 @@ Then write this in your own handwriting, with your own numbers, and keep the wor
 
 ## 🧠 Self-Check (from memory, no notes)
 
+Tick each line only if you can do it without notes.
+
 - [ ] I can fill a claim ledger and say why a claim with no command, or a rate with no `n`, stays out of the card.
 - [ ] I can say, from the printout, why `0.89` on 9 cases and `0.89` on 900 are different claims.
 - [ ] I can fill a five-minute run-sheet that adds to 300 seconds and keeps one failure in it.
@@ -425,9 +460,10 @@ Then write this in your own handwriting, with your own numbers, and keep the wor
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 ### Warm-Up
+
 1. A **number** and an **`n`** (the number of cases behind it); and, in the ledger, the command that printed it.
 2. Intended use · out of scope · measured numbers · failure modes · guardrails and red-team results · retention · staged release · incident response · contact · what it fails at, and who should not rely on it.
 3. Section 10, the honest section. It names a **person**, a **real input**, the **real wrong output** and a **number with an `n`**.
@@ -435,15 +471,18 @@ Then write this in your own handwriting, with your own numbers, and keep the wor
 5. `sqrt(n × p × (1 − p))`.
 
 ### Page 36.1
+
 - **A.** 1: has a rate, no `n`, no command, and "accurate" claims more than 25 stand-in cases can say. **FIX** → "17 of 25 on the frozen cases (`run_eval.py v1.1`), a stand-in's score". 2: number, `n` and command are there and the stand-in is named. **IN**. 3: a general claim about RAG from one copy rule on four cases: **OUT** (the claim is about *this copier*; sentence 2 is the repair). 4: no command that will print the same on another laptop, no *stand-in* label, and "fast" means nothing about a real model: **FIX** → "p95 in stand-in milliseconds, which changes on every run and says nothing about a real model" (or drop it and quote the stand-in dollars, which repeat). 5: number, `n`, command: **FIX/IN**; still missing is the **control**: the legitimate save `50 of 50` before and after, so that "0" cannot mean "the guard broke everything". 6: no number, no `n`, no command, and the word is banned: **OUT**. 7: a rate with no `n`: **FIX** → "8 of 9". 8: **FIX**: it quotes only the second number. Write both: `17 of 25` (promise `0.70`, **MISSED**, one case short) and `18 of 25` after a repaired rounding defect, *fixed after seeing the score*.
   Missing before the 0 is believable: the **control** (the legitimate save still works, 50 of 50 after).
 - **B.** Your own words and numbers. Marks: every line has all four columns; every `n` is a count of cases, not a rate; every command is one you can run again. The claim you would least like checked is usually the missed promise or the weakest category.
 - **C.** (i) `0.89` to **0.78**. (ii) `0.889` to about **0.888**. (iii) `8 of 9`: **0.94** cases; `800 of 900`: **9.43** cases (`0.105` against `0.010` of the rate). The 900-case row says far more: one failure barely moves it, and its rate is known to a hundredth. The card writes `8 of 9` and `800 of 900`, so the `n` travels with the number. The last line: `0.70 × 25 = 17.5`, so **18** cases were needed; `17` was **one** case short.
 
 ### Page 36.2
+
 Clock column: `0:00, 0:30, 1:30, 2:30, 3:30, 4:30`; total **300** (5:00). In the draft sheet segment 5 (*I attacked it*) was given 90 seconds and the total is **330** (5:30). Drop time from the *talking* (trim segment 5 back to 60 or shorten another), **never the failure**: a demo that cannot show a failure is not finished. The boxes and the rehearsal are your own. Marks: the failure has a mechanism in one sentence (*the copier took the wrong sentence*, *the near-miss scored above answerable questions*, *the note was not among the three fetched*); the worst row is read first; *stand-in, not a model* is said once aloud; the cold start was run once before being watched.
 
 ### Page 36.3
+
 - **A.** (i) `200 × 8 =` **1,600**. (ii) `200 × (8 × 9 / 2) = 200 × 36 =` **7,200**. (iii) `7,200 ÷ 1,000 × 0.002 =` **$0.0144**. (iv) `200 × (16 × 17 / 2) = 200 × 136 =` **27,200**; `27,200 ÷ 7,200 =` **3.78** times. **Not doubled**: history is re-sent every step, so doubling the steps costs about four times.
 - **B.** (i) `(10 + 5) / 20 =` **0.75**. (ii) A: `(10 + 2) / 20 =` **0.60**; B: `(10 + 3) / 20 =` **0.65**. (iii) `0.60 × 0.65 + 0.40 × 0.35 = 0.39 + 0.14 =` **0.53**. (iv) `(0.75 − 0.53) / (1 − 0.53) = 0.22 / 0.47 =` **0.468**. (v) A little under half-way from luck to perfect agreement: more than luck, well short of agreement. (Accept "moderate"; the point is that `0.75` agreement looks better than it is because `0.53` was expected by luck alone.)
 - **C.** (i) `6/8 =` **0.750**; `4/6 =` **0.667**; `3/6 =` **0.500**. (ii) **0.150**, **0.033**, **0.000**. (iii) `(8 × 0.15 + 6 × 0.0333 + 6 × 0) / 20 = 1.4 / 20 =` **0.07**. (iv) the **"said 0.9"** bucket, over-confident by **0.15** (it said `0.9` and delivered `0.75`).
@@ -452,6 +491,7 @@ Clock column: `0:00, 0:30, 1:30, 2:30, 3:30, 4:30`; total **300** (5:00). In the
 Which step went wrong (typical): in A the *total* (forgetting the `/ 2`, or using `k²`); in B the `p_e` (forgetting the *fail × fail* half); in C the weights (using `3` buckets instead of `20` results); in D the square root of the *sum* (adding wobbles instead of squares).
 
 ### Page 36.4
+
 - **A.** wobble of 13: `p = 0.65`, **2.13**; of 16: `p = 0.80`, **1.79**; combined **2.78**; bar **5.57**; gap **3**: **inside the noise**.
 - **B.** `0.75 × 20 = 15` cases. `v1` passed **13**: short by **2** cases: **MISSED**. `v3` passed **16**: headroom **1** case: **kept**, the margin **thin** (one case, and the wobble is about 2).
 - **C.** `lookup` went **down by 1** (7 to 6 of 8); `sums` **up by 2** (3 to 5 of 6) and `refusals` **up by 2** (2 to 4 of 4). Each is **a hint, not yet a finding**, by the table alone: one case of eight is inside the noise; two cases of six or of four are too few to rule out luck, and the table does not say *which* cases flipped or *why*. To turn a hint into a finding you need the **named cases** that flipped in each direction and a **mechanism** that explains them (for example, "v3 added a calculator path, so the sums that were failing now pass; its refusal rule is eager, which would also cost a lookup question"). The mechanism, checked against the named case, is what makes a category a finding even when the overall is inside the noise.
@@ -459,12 +499,14 @@ Which step went wrong (typical): in A the *total* (forgetting the `/ 2`, or usin
 - **Last line.** **`0.8`**: the overall is made by **adding counts** (`16 of 20`), never by averaging rates. `0.771` weights a 2-case category as heavily as an 8-case one and is not a score anything measured.
 
 ### Page 36.5
+
 - **A.** There is **no traceback**: `argparse` prints the usage line and `error: the following arguments are required: question`, and exits. You would first meet it **at the start of the demo, in front of someone**. The habit: a **cold start** in a new terminal, once, before you are watched (and the run-sheet's segment 2 contains the command, with its question).
 - **B.** Version B alone says `0.72 ... kept`. **Whoever reads the promise table** is misled: the promise looks kept. The card holds: *"17 of 25 = 0.68 against a promise of 0.70: MISSED, one case short. A rounding defect in c15 was repaired after seeing the score, giving 18 of 25 = 0.72: fixed after seeing the score."* Both numbers, the verdict on the **original** promise, and the three words *fixed after seeing the score*. A defect may be repaired; the first measurement is never deleted.
 - **C.** The 40-day-old file **is** still there; the card claims it is deleted. For the sentence to be true with no extra words, **something has to call `sweep`**, on a schedule. In this system nothing does (say so about your own). The true sentence: *"Traces older than 7 days are deleted by hand when somebody runs `sweep()`; nothing runs it on a schedule."* A rule in the card that no program runs is a wish.
 - **D.** `quote still true: False`: the card describes a system that does not exist. The habit: **re-ask every quoted question, and paste the answer; never retype a quote**. It costs one re-run each time the system changes (and that is the point: the card is regenerated from the system, not remembered). If the output is not the one you wish it were, that is the finding.
 
 ### Page 36.6
+
 1. *"On my 25 frozen cases, with these stand-ins, 17 passed; a different 25 questions would move that by about 2 or 3 cases; every cost and time is a stand-in."* Marks for the `n`, the word *stand-in* and the wobble in words.
 2. No **person** named; no **real input**; no **real wrong output**; no **number with an `n`**. (Also acceptable: nothing a stranger could act on.)
 3. `demo.py` carries an `assert` that **refuses to finish** unless at least one failing case is shown. A demo of three best cases is a sales pitch; the failure is what the audience can trust the rest by. The fix is to **choose the failure first** and write its mechanism in one sentence.
@@ -475,6 +517,7 @@ Which step went wrong (typical): in A the *total* (forgetting the `/ 2`, or usin
 8. **Retrieval**: the list of fetched notes (was the note with the fact among them?). **Generation**: the right note fetched and the copy rule took the wrong sentence (the sentence, quoted). **The prompt / the gate**: a score such as `0.357` against the threshold. **A person over-trusting it**: the card's section 10 and the sentence you said to your named user. **The tokenizer**: a token count or split that changed the text: **none in this capstone**, which is itself a fact.
 
 ### Page 36.7 and Self-Check
+
 Your words, your numbers. Bug Log rules for the four bugs above: A (loud): run the cold start before you are watched. B (SILENT): a real fix after seeing the score is quoted with both numbers and the words *fixed after seeing the score*; the promise is never edited. C (SILENT): a rule in the card is true only if something runs it; otherwise write *by hand*. D (SILENT): re-ask the quote and paste what the system says; never retype it. Marks for the closing sentence: the `n`, the baseline, the promise **and** the measurement with the word `MISSED` or `kept`, a named person, a real input and a real output, and the words *stand-in*.
 
 **After the paper.** The two weeks and the pages to redo are yours. Nothing on the grid is a grade; it is where to look if you ever build on this.

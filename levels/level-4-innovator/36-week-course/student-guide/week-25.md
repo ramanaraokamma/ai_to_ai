@@ -23,7 +23,15 @@
 >
 > **Reading time:** about 35 minutes. **In class:** about 70 minutes. **Homework (the workbook):** about 55 minutes (25 with a pen and calculator, 30 at the computer).
 
-> **📌 About the code blocks.** Twelve small files, each a whole file with its name in the first line. **Run them in order, in one Python session, from the folder that contains `l4lib/`** (`python3 -i`, or `exec(open("name.py").read())` one after another), because later files use names made by earlier ones. If you see `ModuleNotFoundError: No module named 'l4lib'`, you are in the wrong folder. `week25.py` imports `l4lib`'s `rag` module: **import it, never copy it.** Every output shown was printed by a real run on a CPU, with the seeds in the files, so your numbers should match (a different scikit-learn or PyTorch build can move the last digit of a score, and a recall figure by one question, `0.07`; `seconds` lines vary). `np.save` writes one small file, `notebook_index.npy`, into your folder. **Nothing needs the internet. There is no language model and no stand-in anywhere this week.** The two "dense" embedders are real but tiny: one is an SVD of a table (no training at all), one is a small PyTorch model trained for 150 steps on **15 notes**. They show a *mechanism*; **they say nothing about how a pretrained sentence encoder behaves**, and none is run here.
+> **📌 About the code blocks.** Twelve small files, each a whole file with its name in the first line. **Run them in order, in one Python session, from the folder that contains `l4lib/`** (`python3 -i`, or `exec(open("name.py").read())` one after another), because later files use names made by earlier ones.
+>
+> - If you see `ModuleNotFoundError: No module named 'l4lib'`, you are in the wrong folder.
+> - `week25.py` imports `l4lib`'s `rag` module: **import it, never copy it.**
+> - Every output shown was printed by a real run on a CPU, with the seeds in the files, so your numbers should match (a different scikit-learn or PyTorch build can move the last digit of a score, and a recall figure by one question, `0.07`; `seconds` lines vary).
+> - `np.save` writes one small file, `notebook_index.npy`, into your folder.
+> - **Nothing needs the internet. There is no language model and no stand-in anywhere this week.**
+>
+> The two "dense" embedders are real but tiny: one is an SVD of a table (no training at all), one is a small PyTorch model trained for 150 steps on **15 notes**. They show a *mechanism*; **they say nothing about how a pretrained sentence encoder behaves**, and none is run here.
 
 ![Level 4 map: Week 25 highlighted among 36 week tiles in four term lanes](../figures/fig-w25-0-where-this-fits.svg)
 *Figure 25.0 — Week 25 sits in the third lane, the term on how models are made and asked; it is the first of the retrieval weeks.*
@@ -107,7 +115,7 @@ query 'optimizer': [(0, 0.131), (1, 0.0), (2, 0.0)]
 query 'optimiser': [(0, 0.0), (1, 0.0), (2, 0.0)]
 ```
 
-Look at the last line. **`optimiser` scores `0.0` on the right note.** It also scores `0.0` on all 14 others. To the word table `optimiser` and `optimizer` are two different columns, exactly as different as `optimiser` and `banana`. There is no idea of *near*. Today you build one.
+Check the last line of the output. **`optimiser` scores `0.0` on the right note.** It also scores `0.0` on all 14 others. To the word table `optimiser` and `optimizer` are two different columns, exactly as different as `optimiser` and `banana`. There is no idea of *near*. Today you build one.
 
 > **near = similar.** That is the whole week.
 
@@ -185,6 +193,8 @@ The last three lines use `normalize` (from `sklearn.preprocessing`, Level 3 Week
 
 ## 🔤 Letter Pieces
 
+This section shows how to make near-spellings share columns.
+
 Here is the first new construct. You know `TfidfVectorizer()`: one column per whole word. `analyzer="char_wb"` changes what a column *is*: a run of letters inside a word, with a space added at each end of the word (`wb` is "word boundary"). So `opt` inside a word and ` opt` at the start of a word are different columns. `ngram_range=(3, 5)` means pieces of 3, 4 and 5 letters.
 
 **Predict first:** what cosine will the letter-piece table give `optimizer` and `optimiser`? Most people say `0.9`. Write your number, then run.
@@ -227,7 +237,7 @@ some pieces of 'optimiser': [' opt', ' opti', 'iser', 'iser ', 'opt', 'opti', 'o
 
 ## 🧱 The Index: Fit, Encode, Search
 
-Now the main file. Three small functions and a search. Read `fit_embedder` slowly: it is the whole idea.
+This section builds the search index: three small functions and a search. Read `fit_embedder` slowly: it is the whole idea.
 
 - `vec.fit_transform(docs)` learns the columns **and** gives the big table.
 - `TruncatedSVD(n_components=dim)` is the second new construct. Level 3 Week 29's PCA found the direction in which data is most spread out. `TruncatedSVD(n)` does the same job on a big mostly-empty table and **keeps the best `n` directions**. `random_state=0` is a seed, because the algorithm starts from random numbers.
@@ -377,6 +387,8 @@ The loss went from `1.755` to `0.004` by step 10 and barely moved after. **Did i
 
 ## 📏 Measuring: recall@k
 
+This section gives you the measurement used for every comparison below.
+
 **recall@k** is the share of questions whose right note is in the top `k`. You have 15 questions in `QA`, each with its one right note. Chance for recall@1 is `1/15 = 0.07`; for recall@3 it is `3/15 = 0.20`. **One question is worth `0.067`**, so a gap of one question is not a result.
 
 **`recall.py`**
@@ -505,6 +517,8 @@ After one step the embedder already reaches recall@3 `0.73`, which equals the wo
 
 ## 🎲 Your Turn
 
+This section is your practice: one task on paper, one at the computer.
+
 **The Cosine Cards (pen and calculator, no computer).** Workbook page 25.1 has `A`, `B`, `C` from above: the dot product, both lengths, the cosine, and one sentence on what a cosine ignores. Page 25.2 has four notes and a question `q = [1, 2, 2]`. Work out the **raw dot** of each note with `q`, then the **cosine**. Write the winner by raw dot, the winner by cosine, and which note points exactly the way the question points. Then one sentence: *why did the winner change?* Use three decimals, write your working, and if a number looks odd, say so in words.
 
 **At the computer.** Type four short notes of your own (three sentences each) and run `fit_embedder(notes, 3)` on them. Write two questions whose answers are in your notes, and report where the right note ranks. Then write one question that **cannot** be answered by shared letter pieces, and write down what you expect the index to do with it *before* you run it.
@@ -512,6 +526,8 @@ After one step the embedder already reaches recall@3 `0.73`, which equals the wo
 ---
 
 ## 🔬 Break It On Purpose
+
+This section is a deliberate error, to practise reading a traceback.
 
 **DELIBERATE.** `TruncatedSVD` keeps `n_components` directions. What if you ask for more than there are? Write down what you expect, and run this after `lsa.py` in the same session.
 

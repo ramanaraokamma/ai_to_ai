@@ -122,6 +122,8 @@ for d in [4, 16, 64]:
 print("(a row of 8 equal weights would have a biggest weight of", 1 / 8, ")")
 ```
 
+Output of a real run (seeded):
+
 ```text
 spread of a: 3.0  spread of b: 4.01  spread of a + b: 5.01
 variance of a: 9.0  of b: 16.1  of a + b: 25.1   (9 + 16 = 25)
@@ -200,6 +202,8 @@ cut = x.view(2, 5, 3, 4)                                # 3 heads of width 4
 print(tuple(cut.shape), "->", tuple(cut.transpose(1, 2).shape))
 print("3 heads x 4 =", 3 * 4, "= the width 12")
 ```
+
+Output of the snippet above:
 
 ```text
 tensor([[1., 0., 0.],
@@ -372,6 +376,8 @@ for i in range(len(words) - 1):
     print(f"  reads {words[:i + 1]}  ->  must predict '{words[i + 1]}'")
 ```
 
+Output of a real run:
+
 ```text
 mask =
 tensor([[1., 0., 0.],
@@ -448,6 +454,8 @@ What the printout shows:
 
 ## 🔬 Break the Mask
 
+This section shows the error you get when `masked_fill` receives the wrong kind of mask, so you can read it.
+
 **DELIBERATE:** this file is written to fail. It is a separate file.
 
 ```python
@@ -458,6 +466,8 @@ scores = torch.ones(3, 3)
 mask = torch.tril(torch.ones(3, 3))
 print(scores.masked_fill(mask, float("-inf")))
 ```
+
+Output of a real run:
 
 ```text
 Traceback (most recent call last):
@@ -537,6 +547,8 @@ print("  head 0:", [round(p, 3) for p in weights[0, 0, 4].tolist()])
 print("  head 1:", [round(p, 3) for p in weights[0, 1, 4].tolist()])
 ```
 
+Output of a real run:
+
 ```text
 x: (1, 3, 4)  dh = 2
 after view(B,T,H,dh): (1, 3, 2, 2)
@@ -574,6 +586,8 @@ Read it in order:
 
 ## 🔑 Wrap Up
 
+This section collects what you built today and what you did not.
+
 Three repairs you made today:
 
 1. **The divide.** A dot product of `d` independent terms has spread `sqrt(d)`, so we divide by `sqrt(d)` to give every width a spread of 1 and keep the softmax soft.
@@ -592,6 +606,8 @@ What you did **not** do, on purpose:
 ---
 
 ## 📤 Homework
+
+This section is the work to do before next week, with the computer check at the end.
 
 Complete workbook pages 15.1 to 15.5 (about 60 minutes):
 
@@ -626,6 +642,8 @@ print("\nH3 per-head tensor:", tuple(t.shape), " scores:", tuple((t @ t.transpos
 ---
 
 ## 📖 Words from this week
+
+The words and syntax introduced this week, for reference.
 
 | Word | Meaning |
 |---|---|

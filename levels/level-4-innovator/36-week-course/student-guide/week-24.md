@@ -57,6 +57,8 @@ Keep the card. We come back to it at the end.
 
 ## 🧠 The Big Idea
 
+This section defines the four ideas the labs use: in-context learning, the ceiling, the scratchpad, and the schema with its mask.
+
 ### In-context learning
 
 In Week 22 you changed a model's knobs: that is training. Today the knobs are **frozen** and all that changes is the text you put in front of the model. When a model uses what is on the page to answer, that is **in-context learning**. A prompt with no worked examples is **zero-shot**; with a few, **few-shot**. A "shot" is one worked example.
@@ -91,6 +93,8 @@ Suppose you need a reply as JSON. You can ask nicely, or you can make it *imposs
 ---
 
 ## 💻 The Code
+
+This section builds the week's experiments in order, one file at a time, with the output each one printed on our machine.
 
 ### 1. The three new constructs
 
@@ -836,6 +840,8 @@ We also ran the mask over three training seeds. Masked always parsed `100`. On n
 
 ## 🎲 Your Turn
 
+This section is for playing the card game by hand, so you have a feel for the ceiling before you compare it with the model.
+
 ### The Secret Code Game
 
 Play this **before** any code, with a partner, as the Keeper and the Player. You need 12 index cards: letters `a` to `f` and digits `0` to `5`.
@@ -859,6 +865,8 @@ Then turn to your prediction card and fill in a row for each file you ran:
 ---
 
 ## 🔬 Break It On Purpose
+
+This section is for meeting one error on purpose so you can read it when it happens by accident.
 
 **DELIBERATE.** The mask needs a `True`/`False` condition. What happens if you build it from `1` and `0`? Write down what you expect before you run it.
 
@@ -886,6 +894,8 @@ The error names the kind of thing `where` wanted: a **boolean** tensor. In `deco
 
 ## 🧭 What was shown, and what was not
 
+This section lists what this week's runs measured and what they did not, so you can state the limits of your own results.
+
 **Shown:**
 - A ceiling of `(n + 1) / 6`, computed by hand from the rules, and a small transformer that follows it from `0.176` (no examples) to `0.638` (three examples, ceiling `0.667`), with `1.000` whenever the asked key was shown at one to three examples.
 - The copying is **not reliable**: `0.788` at four examples on seed 0, and `0.686` to `0.998` at six examples across five seeds.
@@ -905,6 +915,8 @@ The error names the kind of thing `where` wanted: a **boolean** tensor. In `deco
 ---
 
 ## 🔑 Wrap Up
+
+This section is for checking yourself against the week's questions before you write the three sentences.
 
 1. Turn to your prediction card. What did you guess for the best possible score at 0, 1, 3 and 6 shown pairs? What is the formula?
 2. Why can a model never beat `(n + 1) / 6`? What are the two things a score above it could mean?
@@ -926,6 +938,8 @@ Then write these three sentences in your Bug Log in your own handwriting:
 
 ## 📤 Homework
 
+This section says what to do at home and points to the workbook.
+
 Complete workbook pages 24.1 to 24.6. Write your **predictions before you run anything**: a guess written after the run is not a guess. Every number you write must have come from your own calculator or your own run.
 
 **Optional (fast students).** The dip at `n = 4, 5` is unexplained. Week 19's attention pictures are the obvious tool. Can you find out whether the model is looking at the right place when it fails to copy a key that was shown? Write down what you expect first, and say in your log what the picture does and does not show.
@@ -934,11 +948,15 @@ Complete workbook pages 24.1 to 24.6. Write your **predictions before you run an
 
 ## 🐞 A mistake to know by name
 
+This section names one mistake so you can recognise it.
+
 A fingerprint is not a secret code. You cannot run it backwards and you do not need to: it is a short name for a text. Two different texts can in principle share one, but with 12 characters of `sha256` you will never meet it in this course. The mistake worth knowing is the one in **Break It On Purpose**: giving `torch.where` numbers where it wants `True`/`False`. It is loud, which is the kind you want.
 
 ---
 
 ## 📖 Words from this week
+
+This section is a reference for the words and syntax introduced this week.
 
 | Word | Meaning |
 |---|---|

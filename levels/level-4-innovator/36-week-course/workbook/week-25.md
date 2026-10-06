@@ -24,6 +24,8 @@
 
 ## ✅ Warm-Up (5 min, before anything else)
 
+Five quick questions on cosines, the word table and the index shape. Answer from memory.
+
 **W1.** Two vectors point exactly the same way, one twice as long. Their cosine is ____________ (three decimals).
 
 **W2.** A cosine ignores ____________ and keeps only ____________.
@@ -37,6 +39,8 @@
 ---
 
 ## 📐 Page 25.1 — Cosine Cards, Your Own Numbers (10 min · pen and calculator, no computer)
+
+This page is for computing cosines yourself, step by step, before the machine does it.
 
 Four vectors on three axes (**PRACTICE**): `P = [2, 1, 2]`  `Q = [4, 2, 4]`  `R = [1, 2, 2]`  `S = [0, 3, 4]`.
 
@@ -54,7 +58,7 @@ Four vectors on three axes (**PRACTICE**): `P = [2, 1, 2]`  `Q = [4, 2, 4]`  `R 
 
 **G.** Which of `R` and `S` points nearer to `P` by **cosine**? ________   Which has the bigger **raw dot** with `P`? ________   Did they agree? Yes / No. In one sentence, why not? ______________________________________________
 
-**H.** Now check on the machine, after the `cosine.py` from class has been run in your session (its `length` and `cosine` functions):
+**H.** Now check your answers on the machine. First run the `cosine.py` from class in your session (it defines `length` and `cosine`), then run this block:
 
 ```python
 # check251.py - needs length() and cosine() from cosine.py, and numpy as np
@@ -76,6 +80,8 @@ Did every one of your hand answers match? Yes / No. Where did you lose a digit? 
 ---
 
 ## 🧮 Page 25.2 — Four Notes and a Question (15 min · pen and calculator)
+
+This page is for ranking the same four notes by raw dot and by cosine, and for normalising once.
 
 Three axes: `(optimizers, text, money)`. The question is `q = [2, 1, 2]`, length `3`. Four notes (**PRACTICE**):
 
@@ -104,6 +110,8 @@ Three axes: `(optimizers, text, money)`. The question is `q = [2, 1, 2]`, length
 
 ## 🔤 Page 25.3 — Letter Pieces, Then Your Own Index (25 min · pen, then computer)
 
+This page is for counting letter pieces by hand, then building and querying a small index of your own.
+
 ### Part 1 — Pieces by hand (10 min)
 
 `analyzer="char_wb"` cuts each word into pieces of letters, with a space added at each end of the word. Today use **pieces of exactly 3 letters**. The word `cat` becomes ` ca`, `cat`, `at ` (three pieces; a space counts as a letter).
@@ -125,7 +133,7 @@ Shared: ____________________________  (____ )   `cos(colour, color)` = _________
 
 **E.** `banana` shares no piece with `color`. Its cosine with `color` is ____________.
 
-**F.** Check it (this is an experiment on three words, not the class run; `use_idf=False` switches off the "rare words count more" weighting so your by-hand method is exactly right):
+**F.** Check it with the block below. It is an experiment on three words, not the class run. `use_idf=False` switches off the "rare words count more" weighting, so your by-hand method is exactly right.
 
 ```python
 # pieces.py - needs numpy as np and TfidfVectorizer
@@ -143,7 +151,7 @@ Copy the matrix row for `colour`: ______________________   Does the `colour`/`co
 
 ### Part 2 — Your own four-note index (15 min)
 
-Type `lsa.py`'s three functions if they are not already in your session, then run this **PRACTICE** block (the notes are invented; yours come next).
+Type `lsa.py`'s three functions if they are not already in your session. Then run this **PRACTICE** block (the notes are invented; yours come next). The expected output follows it.
 
 ```python
 # mynotes.py - PRACTICE notes; needs fit_embedder, encode, search from lsa.py
@@ -190,6 +198,8 @@ Save it with `np.save`, load it back, and print `identical`: ____________
 ---
 
 ## 📏 Page 25.4 — Recall, the Control, and What the Table Does Not Show (20 min)
+
+This page is for counting recall, filling in your results table, and writing them up with a control and a seed range.
 
 ### Part 1 — Counting recall by hand (5 min)
 
@@ -239,6 +249,8 @@ Rule: a sentence that says one embedder "wins" earns nothing unless it quotes th
 
 ## 🧩 Page 25.5 — Homework Check: Two More Cosines (5 min)
 
+This page is for one more round of hand cosines, checked with the `cosine.py` functions.
+
 With `A = [1, 0, 3]`, `C = [4, 2, 0]` and a new `D = [3, 1, 0]`:
 
 `A . D` = ____  `|A|` = ____  `|D|` = ____  `cos(A, D)` = ____________
@@ -255,7 +267,14 @@ Check both with `cosine(A, D)` and `cosine(C, D)` from `cosine.py` (define `A`, 
 
 ## 🐞 Page 25.6 — Break It on Purpose (three bugs · 25 min)
 
-**Each block below is DELIBERATELY broken.** Run it after Page 25.3's `mynotes.py` in the same session. For each bug: **(i)** write what you expect to see, **(ii)** run, **(iii)** name the bug in one line, **(iv)** write the fix and a check that would catch it.
+This page is for finding three bugs by running code that is broken on purpose.
+
+**Each block below is DELIBERATELY broken.** Run it after Page 25.3's `mynotes.py`, in the same session. For each bug:
+
+1. Write what you expect to see.
+2. Run the block.
+3. Name the bug in one line.
+4. Write the fix and a check that would catch it.
 
 ### 25.6-A (SILENT) — the rows were never made length 1
 
@@ -312,6 +331,8 @@ print("mismatched encoder:", right_count(vec_e, svd_e, M), "of 4")
 
 ## 📓 Page 25.7 — The Bug Log
 
+This page is for recording what the broken blocks taught you.
+
 Add **at least two** entries to your running Bug Log (one must be a SILENT one). Use the usual columns.
 
 | # | File / page | What I saw | What it meant | The fix | How I would catch it next time |
@@ -326,6 +347,8 @@ Add **at least two** entries to your running Bug Log (one must be a SILENT one).
 
 ## 🧠 Self-Check (from memory, no notes)
 
+Six questions covering the week. Answer each in a sentence or two.
+
 1. Why does a raw dot product favour long vectors, and what one step stops it? ______________________________________________
 2. Why are `optimiser` and `optimizer` unrelated to the word table, and what cut makes them related? ______________________________________________
 3. What does `np.save` save, and what does it **not** save that you need to search? ______________________________________________
@@ -335,7 +358,9 @@ Add **at least two** entries to your running Bug Log (one must be a SILENT one).
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS — keep this page folded until you have finished
+
+Check your written answers against these only after every page is done.
 
 ### Warm-Up
 

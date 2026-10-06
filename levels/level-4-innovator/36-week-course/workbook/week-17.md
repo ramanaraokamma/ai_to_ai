@@ -39,7 +39,9 @@ Five quick questions about **Weeks 1 and 16**.
 
 ## 🪟 Page 17.1 — Windows and the Shift (by hand, then run)
 
-One step of training cuts **windows** out of the text. For a text of `N` characters and a window of `T`, a start `s` gives
+This page is for practising how one training step cuts **windows** out of the text, first by hand and then with code.
+
+For a text of `N` characters and a window of `T`, a start `s` gives
 
 > `x = text[s : s + T]` and `y = text[s + 1 : s + T + 1]`
 
@@ -139,7 +141,7 @@ Compare with your table. Then write: why is every `y` row just `x` moved one pla
 
 ## 🎯 Page 17.2 — Beat the Ladder, on Your Own Cards
 
-You scored six class cards. Now the same game on a page.
+This page is for playing the class scoring game again, on paper, with new cards. You scored six class cards in class.
 
 **The rule again.** Write up to three letters and how sure you are of each (the numbers add up to 1 or less). You **may not** give any letter a probability of 0. Everything you did not list shares the rest equally: `(1 - listed) / (28 - letters listed)`. Score = `-ln(p)` of the share on the true letter. Lower is better.
 
@@ -231,6 +233,8 @@ Where does your mean sit on the ladder? ________________________________
 
 ## 🔢 Page 17.3 — Count the Model
 
+This page is for counting the knobs of TinyGPT part by part, by hand, before any code counts them.
+
 **Part A — the class model, `d = 128`, 4 blocks, `V = 28`, `T = 64`. Fill in BEFORE you run anything.**
 
 | Part | Working | Count |
@@ -318,6 +322,8 @@ Which two parts change in each case? (1) ____________ (2) ____________ and _____
 
 ## 📐 Page 17.4 — The First-Loss Check
 
+This page is for working through the first-loss check, by hand and then by running it.
+
 A model that knows nothing gives every character `1/V`, so its loss is `-ln(1/V) = ln(V)`. **The check:** build the model, take one batch, and see if the first loss is within **0.05** of `ln(V)`.
 
 **Part A — by hand.** `ln 2 = 0.693`, `ln 10 = 2.303`. A model that knows nothing over 50 choices scores about ____________ . (Check your calculator: `ln 50`.)
@@ -329,7 +335,7 @@ A model that knows nothing gives every character `1/V`, so its loss is `-ln(1/V)
 | `calm_head=False` | ______ | ______ |
 | `calm_head=True` | ______ | ______ |
 
-**Part C — run.** The last block also tries the check on **unshifted** targets (`y` the same as `x`). Predict that one too: PASS or FAIL? ______
+**Part C — run.** The program below also tries the check on **unshifted** targets (`y` the same as `x`). Predict that one too: PASS or FAIL? ______
 
 ```python
 # check174.py - Week 17 workbook page 17.4: the first-loss check on a PRACTICE model (d = 64, 2 blocks), and what it cannot see.
@@ -391,7 +397,11 @@ a model that knows nothing over 50 choices:  ln(50) = 3.912
 
 ## 🏃 Page 17.5 — The Run (the lab deliverable)
 
-Run your `train.py` from class, unchanged, from the folder that contains `l4lib/`. It takes about 90 seconds; note what else is running on your laptop. **Write your seed here: ______** (the class file uses `torch.manual_seed(0)`).
+This page is for recording your own training run as the week's deliverable.
+
+1. Run your `train.py` from class, unchanged, from the folder that contains `l4lib/`.
+2. It takes about 90 seconds; note what else is running on your laptop.
+3. **Write your seed here: ______** (the class file uses `torch.manual_seed(0)`).
 
 **Predict first** (before you run):
 
@@ -441,6 +451,8 @@ Step 1499: ________________________________________________________________
 
 ## 🧐 Page 17.6 — What the Gap Means
 
+This page is for reading the train-validation gap in a run that is not yours, then describing your own.
+
 **Part A — read a run that is not yours.** This is a real run of the same model with `STEPS = 600` (seed 0, one thread, about 36 seconds). It is a *different* run from the one in class. Fill in the gaps (validation minus train, three decimals).
 
 | Step | Train | Validation | Gap |
@@ -477,9 +489,11 @@ Score: ____ / 5. Any answer that says *"so the model is bad"* or *"so the model 
 
 ## 🐞 Page 17.7 — Break It on Purpose
 
+This page is for practising on five programs that fail, two of them silently.
+
 Every program below is **deliberately broken**. Write the "Predict" line **before** you run. Each file is self-contained except for the `tinygpt.py` you made in class. **Two are silent**: they run, and the only sign is a number you must check.
 
-**Program A (deliberate).**
+**Program A (deliberate).** Predict first, then run this file.
 
 ```python
 import torch
@@ -494,7 +508,7 @@ print("loss:", loss.item())
 
 Predict: runs or error? ____________ Last line: ________________________________ Fix: ________________________
 
-**Program B (deliberate, SILENT).**
+**Program B (deliberate, SILENT).** Predict first, then run this file.
 
 ```python
 import torch
@@ -607,6 +621,8 @@ Predict: runs or error? ______ Last line: ________________________________ Fix: 
 
 ## 📓 Page 17.8 — The Bug Log
 
+This page is for keeping a record of the errors you meet, so you can find them again.
+
 Copy the **last line** of each error, not the whole traceback. Add a row for every real error you hit this week, not only the deliberate ones.
 
 | # | Date | What I typed (the line) | Last line of the error | What it means in plain words | Fix | Page I'll find this on again |
@@ -630,6 +646,8 @@ ________________________________________________________________
 ---
 
 ## 🧠 Self-Check (do this last, from memory)
+
+This section is for testing what you can say about the week without your notes.
 
 1. **What is one question in a training step? What is `y` compared with `x`? How many questions in a batch of 32 windows of 64?**
 
@@ -671,7 +689,7 @@ ________________________________________________________________
 ---
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 *Numbers come from real runs: CPU, PyTorch 2.2.1, one thread, `torch.manual_seed(0)` wherever anything is random. The by-hand numbers are plain arithmetic and should match to three decimals (within 0.001 of rounding). The knob counts, shapes and `True`/`False` lines will match on any build; losses may move a digit, and step times always differ.*
 

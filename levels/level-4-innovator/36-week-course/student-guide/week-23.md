@@ -89,7 +89,7 @@ p_correct = 0.55 + 0.15 x (the system prompt contains "rules:")
 
 Each box is independently wrong with the leftover chance. Same prompt and same `seed` give the same answer every time; a different `seed` is another roll of the same die (it is **not** a "temperature"). That is the entire skill of the stand-in. So the table you will build is a check that **your harness reports what the script does**, not evidence about any real model. Week 24 earns the question "do examples help?" again on a transformer you train yourself.
 
-You can see the label in the object itself. Run this from your folder (the one with `l4lib/`):
+You can see the label in the object itself. Run this one-line command from your folder (the one with `l4lib/`):
 
 ```bash
 python3 -c "from l4lib.fakellm import FakeClient; print(FakeClient(seed=0))"
@@ -197,7 +197,7 @@ Keep your sheet. In a few minutes you will compare it with the gold labels and c
 
 Now type `bench.py`. **No model is called in this file.** It holds the eight cases with their gold labels, written before any prompt, and everything that compares answers with gold.
 
-Read the parts as you type:
+Read the parts as you type.
 
 - `fingerprint(cases)` turns the whole set into ten characters. `FROZEN` is taken the moment the set is finished, and `check_frozen` raises an error if it has changed.
 - `score_record(pred, gold)` gives `1` for each box that equals gold. If the reply is not a dict at all, every box scores `0`.
@@ -355,7 +355,7 @@ constants tried: 30
   extract_json(broken): None
 ```
 
-Three things to notice.
+Three things to notice:
 
 - **The best rock is not unique.** Three constants are shown tied at `43.8%`, and others tie further down the list. The bottom one scores `31.2%`.
 - `extract_json(chatty)` found the record **inside** a reply that had chat and a fence around it. `extract_json(broken)` gave `None`.
@@ -621,6 +621,8 @@ Take the numbers one at a time, in this order.
 
 ## 🎲 Your Turn
 
+This section is for checking the week's numbers yourself, by hand first and then against the printed runs.
+
 ### The Floor Race
 
 Do the arithmetic before the code prints anything, so the numbers are *predictions confirmed*.
@@ -634,6 +636,8 @@ Do the arithmetic before the code prints anything, so the numbers are *predictio
 ---
 
 ## 🔬 Break It On Purpose
+
+This section is for seeing what the frozen-set check does when you try to edit a gold label.
 
 **DELIBERATE.** You have `check_frozen` in `run_suite`. Suppose every prompt gets t3's urgency "wrong" and you decide that the gold label must be the mistake. Change it to make them agree. Write down what you expect to happen before you run.
 
@@ -664,7 +668,10 @@ The run **refused to start**. That is `check_frozen` doing its one job. The gold
 
 ## 🧭 What was shown, and what was not
 
+This section lists what today's runs did and did not establish, so you do not carry away a claim they cannot support.
+
 **Shown:**
+
 - A frozen set of eight cases with a fingerprint (`0f25042fb4`) that the run checks before it starts.
 - The floor: 30 constant answers tried, the best scoring `43.8%` and the worst `31.2%`, with several constants tying.
 - A harness that parses a chatty reply, scores it per field, totals tokens and dollars, and lists regressions.
@@ -672,6 +679,7 @@ The run **refused to start**. That is `check_frozen` doing its one job. The gold
 - A guard that stopped at call 8 of a toy loop, and at call 19 of the real one, each time having spent more than its limit.
 
 **Not shown:**
+
 - **Any language model.** The "model" was a script that matches words and rolls seeded dice. It is labelled "stand-in, not a model" because it is one.
 - That examples or rules help a real model. The stand-in gives credit for them by its one line.
 - That `93.8%` means "94% accurate". It is the best this set can give against this script.
@@ -682,6 +690,8 @@ The run **refused to start**. That is `check_frozen` doing its one job. The gold
 ---
 
 ## 🔑 Wrap Up
+
+Use these questions to check that you can explain the week without the page in front of you.
 
 1. Turn to your card. What did you guess for the rock? What did it score? Is a prompt at `50%` good?
 2. Why do we write the eight cases and their gold labels **before** any prompt? What does the fingerprint stop?

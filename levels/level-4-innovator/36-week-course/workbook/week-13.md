@@ -23,6 +23,8 @@
 
 ## ✅ Warm-Up (5 min, before anything else)
 
+Five quick questions on softmax, temperature and the recurrent cell, answered before you start the pages.
+
 **W1.** A model gives five letters the scores `3, 1, 0, 0, 0`. The model's **output** is: (circle one) **one letter / one score per letter / one probability of being right**.
 
 **W2.** In `F.softmax(x, dim=-1)`, the `-1` means softmax runs along the ____________ axis.
@@ -36,6 +38,8 @@
 ---
 
 ## 🎲 Page 13.1 — Greedy, and the Sampler Table (15 min)
+
+This page compares the samplers you will meet this week, first by prediction and then by measurement.
 
 **Part A. Before you read anything else, write your guess.** A name model always picks the most likely next letter. You ask it for 200 names. Roughly how many **different** names do you get? ____________ . Why? ___________________________________________
 
@@ -68,6 +72,8 @@ Did your Part B directions match? Count the matches: ______ / 10. **A new string
 ---
 
 ## 🧮 Page 13.2 — Scores to Chances: by Hand, then Predict, then Measure (25 min)
+
+This page turns scores into chances by hand, predicts what temperature does, and then checks against a program.
 
 **A note on the method.** Softmax has three steps: (1) `exp` of each score, (2) add them up, (3) divide each by the total. Temperature is one step **before** those: divide every score by `T`. Use `exp(0) = 1.000`, `exp(1) = 2.718`, `exp(2) = 7.389`, `exp(-1) = 0.368`, `exp(0.5) = 1.649`, `exp(0.25) = 1.284`, `exp(-0.5) = 0.607`.
 
@@ -137,6 +143,8 @@ The biggest score is 2.5 and the smallest is -0.5: a gap of **3.0**. At each `T`
 ---
 
 ## ✂️ Page 13.3 — Top-k and Top-p, by Hand, and the Name Tasting (25 min)
+
+This page cuts a set of chances with top-k and top-p by hand, then has you judge real sampler output by reading.
 
 ### Part A. The two cutting rules in words
 
@@ -232,6 +240,8 @@ Which sampler got the most `R`s? ____________ . Which gave the most names that a
 
 ## 🧭 Page 13.4 — How Far Can the Memory Reach? and the Model Grading Itself (20 min)
 
+This page measures how far two recurrent cells can carry symbols, and how the model scores names it made itself.
+
 ### Part A. The copy-task delay sweep (the assigned task)
 
 The task: five symbols out of eight are shown, then **D** filler steps, then the model must write the same five symbols again. To get them right across the gap, the model has to **carry** them. **Chance** is guessing one symbol out of eight each time.
@@ -273,6 +283,8 @@ Was your prediction right? ☐ yes ☐ no. The `T = 1` gap (own minus real) is _
 
 ## 🪞 Page 13.5 — Exposure Bias in Two Sentences, and a Temperature of Zero (10 min)
 
+This page asks you to state exposure bias in two sentences, then run a deliberately broken temperature.
+
 ### Part A. Exposure bias
 
 Write it in **two sentences**. The first says **what the mechanism is** (what is the model fed in training, and what is it fed when it generates?). The second quotes **today's measurement with its numbers and one honest caution** (what else could make its own names score worse?).
@@ -294,7 +306,7 @@ A friend sets `T = 0.0` "to make it greedy". The scores are `2, 1, 0`.
 1. By hand: `2 / 0.0 =` ____________ , `1 / 0.0 =` ____________ , `0 / 0.0 =` ____________ (write **a number**, **infinity**, or **not a number**).
 2. Softmax of a row that holds those values will give: ___________________________________________
 
-Type and run `check135.py` (**deliberately broken**: it divides by zero on purpose, and only prints) and copy the two lines:
+Type and run `check135.py`. It is **deliberately broken**: it divides by zero on purpose, and only prints.
 
 ```python
 # check135.py - DELIBERATE: a temperature of zero.
@@ -306,6 +318,7 @@ print(scores / 0.0)
 print(F.softmax(scores / 0.0, dim=-1))
 ```
 
+Copy the two printed lines here:
 
 ```text
 line 1:
@@ -317,6 +330,8 @@ line 2:
 ---
 
 ## 🐞 Page 13.6 — Break It on Purpose (15 min)
+
+This page practises diagnosing bugs before running the code.
 
 Three programs, **each deliberately broken**. Do **not** run them first. For each: write **(i)** the bug, **(ii)** what you think will happen when it runs (loud error, or quietly wrong?), **(iii)** the fixed line. *Then* run it.
 
@@ -381,6 +396,8 @@ print(order[torch.multinomial(kept, 1)])
 
 ## 📓 Page 13.7 — The Bug Log
 
+This page records what this week taught you about your own habits.
+
 **Entry 1: the prediction I got most wrong this week.** *"I thought ______________, but ______________."* (Candidates: greedy's name count, the exposure gap, the LSTM's gap, top-p 0.5.)
 
 _______________________________________________________________________________
@@ -402,6 +419,8 @@ _______________________________________________________________________________
 
 ## 🧠 Self-Check (do this last, from memory)
 
+This checklist tests what you can do without the pages in front of you.
+
 Tick only if you could do it **now**, without scrolling up.
 
 - ☐ Say what the model outputs, and how a program turns it into one letter.
@@ -418,7 +437,7 @@ Tick only if you could do it **now**, without scrolling up.
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 > Real printed outputs below. By-hand numbers are exact to three decimals. Last digits may differ on another CPU or PyTorch build; a count of new names can move by a name or two. Only mark the *reasoning* as wrong if the number is far off.
 

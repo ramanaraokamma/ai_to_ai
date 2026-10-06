@@ -26,7 +26,7 @@
 
 ## ✅ Warm-Up (5 min)
 
-Five quick questions about **Weeks 15 to 17**.
+This warm-up revisits **Weeks 15 to 17** before you open the model. Write each answer without looking anything up.
 
 **W1.** A model that knows nothing about **8** symbols gives each `1/8`. Its loss on one answer should be `ln 8` = ____________ (three decimals).
 
@@ -42,7 +42,7 @@ Five quick questions about **Weeks 15 to 17**.
 
 ## 🔮 Page 19.1 — Predict Before You Delete (10 min, pen only)
 
-Your model has four parts you can delete, one at a time: the **mask**, the **place table** (positions), the **residual road**, and the **layer norms**. Everything else stays the same: the same text, the same seed, the same 800 steps.
+This page is for writing down your predictions before any run. Your model has four parts you can delete, one at a time: the **mask**, the **place table** (positions), the **residual road**, and the **layer norms**. Everything else stays the same: the same text, the same seed, the same 800 steps.
 
 **Step 1. Rank them.** Write 1 for "deleting this hurts the most" to 4 for "hurts the least or helps". Write a **reason** in a few words. No ranking is wrong today; a ranking with no reason is.
 
@@ -63,11 +63,19 @@ Your model has four parts you can delete, one at a time: the **mask**, the **pla
 
 ## 📊 Page 19.2 — Reading an Ablation Table (25 min)
 
-**An ablation is a fair deletion:** delete one thing, change nothing else (same seed, same steps, same data), and compare the models on text **none of them trained on**. Three columns matter: **train** loss, **validation** loss, and the **gap** (validation minus train).
+This page is for reading an ablation table, first on numbers I ran for you, then on your own.
+
+**An ablation is a fair deletion:** delete one thing, change nothing else (same seed, same steps, same data), and compare the models on text **none of them trained on**. Three columns matter:
+
+- **train** loss
+- **validation** loss
+- **gap** (validation minus train)
 
 ### Part A — PRACTICE (a small table that is *not* yours)
 
-I ran the same five-row table on a **much smaller** model (width 32, 2 blocks, 2 heads, 32 places), on the first 3,000 characters of the corpus, for only **150 steps** each. Type it as `check192.py` **only if you want to reproduce it** (your class `ablate_model.py` is the model; the file is 50 lines, so it is in the answers section). What it printed:
+I ran the same five-row table on a **much smaller** model (width 32, 2 blocks, 2 heads, 32 places), on the first 3,000 characters of the corpus, for only **150 steps** each.
+
+Type it as `check192.py` **only if you want to reproduce it**. Your class `ablate_model.py` is the model; the file is 50 lines, so it is in the answers section. The table it printed:
 
 ```text
                train    val    gap
@@ -98,7 +106,9 @@ no norm        1.746  2.055  0.309
 
 ### Part B — YOURS (`text_ablate.py`, about 3.6 minutes)
 
-**Predict first.** Before you run, write the *validation* loss you expect for **full**: ________ . Then run `text_ablate.py` with your own `SEED`. While it runs (3.6 minutes), do page 19.3 by hand.
+**Predict first.** Before you run, write the *validation* loss you expect for **full**: ________ .
+
+Then run `text_ablate.py` with your own `SEED`. While it runs (3.6 minutes), do page 19.3 by hand. Fill in the table from what it prints:
 
 **My seed:** ______ . **Steps:** ______ . **Date and time of the run:** ______________
 
@@ -132,7 +142,7 @@ no norm        1.746  2.055  0.309
 
 ## 🚰 Page 19.3 — The Leak (20 min, by hand first)
 
-The no-mask model has the lowest loss in the whole table, and its sample is a line of `t` and `a`. Both facts have the same cause.
+This page is for working out, by hand, why the no-mask model scores so low. The no-mask model has the lowest loss in the whole table, and its sample is a line of `t` and `a`. Both facts have the same cause.
 
 **3.1. The cause, in your own words.** Without the mask, the place that must predict character 6 can look at place ______ . What does place ______ hold? ________________________________ So the model is ________________________________ instead of predicting.
 
@@ -151,7 +161,7 @@ The no-mask model has the lowest loss in the whole table, and its sample is a li
 
 A loss that sits near this number and **will not go lower** is a correct result, not a bug, if the loss was taken over every place.
 
-**3.4. Check (Part A).** Type `check193.py` (answers section) or just read what it printed:
+**3.4. Check (Part A).** Type `check193.py` (answers section), or read what it printed:
 
 ```text
 ln(8) = 2.0794
@@ -181,7 +191,11 @@ ________________________________________________________________
 
 ## 🎯 Page 19.4 — The Three Tasks (20 min)
 
-Every token in these tasks is a **number**; nothing is text. **Copy:** `s s s s s s SEP` then the same six. **Reverse:** the six backwards. **Lookup:** `k v k v k v k v SEP k` then the value for that key `v`.
+This page is for comparing what guessers and trained models score on three made-up tasks. Every token in these tasks is a **number**; nothing is text.
+
+- **Copy:** `s s s s s s SEP` then the same six.
+- **Reverse:** the six backwards.
+- **Lookup:** `k v k v k v k v SEP k` then the value for that key `v`.
 
 ### Part A — PRACTICE: what do *guessers* score?
 
@@ -193,7 +207,7 @@ Every token in these tasks is a **number**; nothing is text. **Copy:** `s s s s 
 | lookup: guess any digit 0-9 | ____ | ______ |
 | lookup: guess **one of the four values on the page** (at random) | ____ | ______ |
 
-**4.2. Check.** `check194.py` (answers section) draws 20,000 sequences and lets each guesser answer. Nothing is trained. It printed:
+**4.2. Check.** `check194.py` (answers section) draws 20,000 sequences and lets each guesser answer. Nothing is trained. Here is what it printed:
 
 ```text
 copy: guess any of 8 symbols      0.124
@@ -238,7 +252,14 @@ one sequence: [11, 9, 15, 4, 14, 9, 13, 3, 16, 11, 9]
 
 ## 👁️ Page 19.5 — Name a Head (25 min)
 
-A **head card** has four things: **the name**, **the claim in a sentence**, **the table or picture it rests on**, and **the test that could prove it wrong**. A name with no such test is a story.
+This page is for naming an attention head and writing down how its name could be proved wrong. A **head card** has four things:
+
+- **the name**
+- **the claim in a sentence**
+- **the table or picture it rests on**
+- **the test that could prove it wrong**
+
+A name with no such test is a story.
 
 ### Part A — PRACTICE: a task that is not in the chapter
 
@@ -280,7 +301,7 @@ def train_pattern(steps=600, seed=0, first=PERIOD - 1):
     return model, loss.item()
 ```
 
-Then `check195.py` trains a two-layer, two-head model on it for 600 steps (about 4 seconds) and prints where each head looks, in this form: `2->0 (0.90)` means *"the place 2 looks most at place 0, with weight 0.90"*. This is the printout of the answer section's `check195.py`:
+Then `check195.py` trains a two-layer, two-head model on it for 600 steps (about 4 seconds) and prints where each head looks. The form `2->0 (0.90)` means *"place 2 looks most at place 0, with weight 0.90"*. This is the printout of the answer section's `check195.py`:
 
 ```text
 repeat-the-pattern model: final loss 0.0017   accuracy 1.00
@@ -347,7 +368,7 @@ looking place  6   [  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ]
 
 ## 🔌 Page 19.6 — Switch It Off (20 min)
 
-`silence` is the switch. Setting `model.blocks[0].silence = [1]` makes head 1 of layer 0 mix in nothing. It is for **testing a trained model** (chapter, section 10) and **never for training**.
+This page is for testing whether a model needs a head, by switching it off. `silence` is the switch. Setting `model.blocks[0].silence = [1]` makes head 1 of layer 0 mix in nothing. It is for **testing a trained model** (chapter, section 10) and **never for training**.
 
 ### Part A — PRACTICE: the repeat-the-pattern model
 
@@ -411,7 +432,7 @@ ________________________________________________________________
 
 ## 🐞 Page 19.7 — Break It on Purpose (25 min)
 
-Three bugs on the repeat-the-pattern model, using `pattern.py` from page 19.5. **Write what you expect before you run each.** Two of them **run and print a plausible number**: those are the ones that matter.
+This page is for finding three bugs in code that uses the repeat-the-pattern model and `pattern.py` from page 19.5. **Write what you expect before you run each.** Two of them **run and print a plausible number**: those are the ones that matter.
 
 ### Bug A (SILENT): a switch-off test that never switches anything back
 
@@ -443,7 +464,10 @@ only layer 1 head 0:  0.86
 only layer 1 head 1:  0.13
 ```
 
-**A1.** The page 19.6 practice run said that no single head matters here, but the last two lines are far from 1.00. The code says "only layer 1 head 1". How many heads are **really** off on that line? ____ Which? ________________ **A2.** Which line of the loop is the mistake, and what belongs there? ________________________________ **A3.** Why is this bug silent? ________________________________ **A4.** A check that catches it: print `model.blocks[0].silence` and `model.blocks[1].silence` ________________________________ .
+- **A1.** The page 19.6 practice run said that no single head matters here, but the last two lines are far from 1.00. The code says "only layer 1 head 1". How many heads are **really** off on that line? ____ Which? ________________
+- **A2.** Which line of the loop is the mistake, and what belongs there? ________________________________
+- **A3.** Why is this bug silent? ________________________________
+- **A4.** A check that catches it: print `model.blocks[0].silence` and `model.blocks[1].silence` ________________________________ .
 
 ### Bug B (SILENT): the loss over every place
 
@@ -466,7 +490,9 @@ final loss 0.3840   accuracy 1.00
 2 of the 11 places are unpredictable:  2 x ln(8) / 11 = 0.3781
 ```
 
-**B1.** The loss stops at 0.384, not near 0. Is the model broken? Yes / No. The accuracy printed is ______ . **B2.** Use the hand number printed in the last line to say **why** 0.384 is the right answer for this loss. `2 x ln 8 / 11`: of the three random symbols, the first is only an ____________ , so the number of unpredictable places is ____ . Why not 3? ________________________________ **B3.** On page 19.3 you did this sum for the copy task. What did the 5 count there? ________________________________
+- **B1.** The loss stops at 0.384, not near 0. Is the model broken? Yes / No. The accuracy printed is ______ .
+- **B2.** Use the hand number printed in the last line to say **why** 0.384 is the right answer for this loss. `2 x ln 8 / 11`: of the three random symbols, the first is only an ____________ , so the number of unpredictable places is ____ . Why not 3? ________________________________
+- **B3.** On page 19.3 you did this sum for the copy task. What did the 5 count there? ________________________________
 
 ### Bug C (loud): a head number that does not exist
 
@@ -489,13 +515,15 @@ Traceback (most recent call last):
 IndexError: index 2 is out of bounds for dimension 1 with size 2
 ```
 
-**C1.** The error says the index 2 is out of bounds for a dimension of size 2. The dimension is the number of ________ in the model. The valid numbers are ____ and ____ . **C2.** Would this error have appeared if you had typed `[1]` by mistake for `[0]`? Yes / No. Why is a wrong-but-valid number more dangerous? ________________________________ **C3.** One line you would add to `Block.forward` so the error says "this model has 2 heads"? ________________________________
+- **C1.** The error says the index 2 is out of bounds for a dimension of size 2. The dimension is the number of ________ in the model. The valid numbers are ____ and ____ .
+- **C2.** Would this error have appeared if you had typed `[1]` by mistake for `[0]`? Yes / No. Why is a wrong-but-valid number more dangerous? ________________________________
+- **C3.** One line you would add to `Block.forward` so the error says "this model has 2 heads"? ________________________________
 
 ---
 
 ## 📓 Page 19.8 — The Bug Log
 
-Copy the **last line** of each error, not the whole traceback. Add a row for every real error you hit this week, not only the deliberate ones.
+This page is a log of the errors you meet, kept so you can recognise them again. Copy the **last line** of each error, not the whole traceback. Add a row for every real error you hit this week, not only the deliberate ones.
 
 | # | Date | What I typed (the line) | Last line of the error | What it means in plain words | Fix | Page I'll find this on again |
 |:--:|---|---|---|---|---|:--:|
@@ -518,6 +546,8 @@ ________________________________________________________________
 ---
 
 ## 🧠 Self-Check (do this last, from memory)
+
+This section checks what you can do without the page in front of you. Answer from memory first, then look.
 
 1. **What makes an ablation fair? Name three things you must keep the same.**
 
@@ -547,13 +577,19 @@ Tick what you can do without looking: ☐ fill a table and write one sentence pe
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
+
+This section holds the answers for every page. Fold it back until you have finished the pages.
 
 > Numbers in this section marked "practice" come from the small models of this workbook. Numbers marked "class run" are from the chapter's runs (seed 0, one thread). **Your own run uses your own seed: for the YOURS parts only the structure of the answer is fixed.**
 
 ### Warm-Up
 
-**W1.** `ln 8` = **2.079**. **W2.** Look at places **later** than itself (the future). **W3.** Gap = 1.4 - 1.0 = **0.4**. It tells you the model does better on text it studied than on text it did not (consistent with memorising, not proof); it does not tell you whether the model is good. **W4.** `x = self.proj(mixed)` instead of `x = x + self.proj(mixed)`, and the same for the second line of the block. **W5.** Not necessarily: the gap of 0.02 is inside the seed-to-seed wobble (0.01-0.03); you would want a second seed.
+- **W1.** `ln 8` = **2.079**.
+- **W2.** Look at places **later** than itself (the future).
+- **W3.** Gap = 1.4 - 1.0 = **0.4**. It tells you the model does better on text it studied than on text it did not (consistent with memorising, not proof); it does not tell you whether the model is good.
+- **W4.** `x = self.proj(mixed)` instead of `x = x + self.proj(mixed)`, and the same for the second line of the block.
+- **W5.** Not necessarily: the gap of 0.02 is inside the seed-to-seed wobble (0.01-0.03); you would want a second seed.
 
 ### Page 19.1
 
@@ -570,7 +606,10 @@ No wrong ranking; marks for a reason. The class run's ranking by damage on valid
 | no residual | **+0.410** | worse |
 | no norm | **+0.014** | slightly worse / about the same |
 
-**A2.** `0.461 - 0.385` = **0.076**. The printed gap (0.075) was worked out from the unrounded losses, so the last digit can differ by one. **A3.** **No**: +0.014 is inside the 0.01-0.03 run-to-run wobble; you would need other seeds. **A4.** For example: *"At this tiny size and 150 steps, deleting the place table left the validation loss unchanged to three decimals, but it fits the training text better (1.681 against 1.782) and the gap is bigger (0.360 against 0.259); I cannot say positions are not needed."* **A5.** **No mask.** Its train loss (0.385) is far below every other row at the same step count; the model is reading the answer.
+- **A2.** `0.461 - 0.385` = **0.076**. The printed gap (0.075) was worked out from the unrounded losses, so the last digit can differ by one.
+- **A3.** **No**: +0.014 is inside the 0.01-0.03 run-to-run wobble; you would need other seeds.
+- **A4.** For example: *"At this tiny size and 150 steps, deleting the place table left the validation loss unchanged to three decimals, but it fits the training text better (1.681 against 1.782) and the gap is bigger (0.360 against 0.259); I cannot say positions are not needed."*
+- **A5.** **No mask.** Its train loss (0.385) is far below every other row at the same step count; the model is reading the answer.
 
 The small run is the file below (type it only to reproduce the table; it is `text_ablate.py` with four changes: width 32, 2 blocks, 32 places, 150 steps on the first 3,000 characters):
 
@@ -643,7 +682,14 @@ Model one-sentences (**B1**): *full: "the baseline."* *No mask: "the model can s
 
 ### Page 19.3
 
-**3.1.** Place **6** (or "the next place"). It holds the **character that place 5 must predict**, so the model is **reading the answer** instead of predicting. **3.2.** `1/8 =` **0.125**; `ln 8 =` **2.079**; lookup chance **0.1**. **3.3.** `3 x 2.0794 / 8 = 6.2382 / 8 =` **0.780** (0.7798 unrounded). **3.4 (a)** **0.000000**; **0.002955**; untrained; **zero against not zero**. **(b)** A change at place 12 is *supposed* to move the scores at 12 and later; the test only looks at places **before** the change. **(c)** 0.7791 against 0.7798: within 0.001. A loss stuck there is the floor, not a bug, **when the loss is taken over every place**. **3.5** "...*can see the answer*." **3.6** Model answer: *"With no mask, place 5 can look at place 6, and place 6 holds the character place 5 is supposed to predict. So the model reads the answer. The sample is `tatat...` and the loss is far below everything else. The test: change one later token and see whether earlier scores move; with the mask they don't (0.000000), without it they do. So the low number is not a finding about the mask."* Marks: 1 each for the four items.
+- **3.1.** Place **6** (or "the next place"). It holds the **character that place 5 must predict**, so the model is **reading the answer** instead of predicting.
+- **3.2.** `1/8 =` **0.125**; `ln 8 =` **2.079**; lookup chance **0.1**.
+- **3.3.** `3 x 2.0794 / 8 = 6.2382 / 8 =` **0.780** (0.7798 unrounded).
+- **3.4 (a)** **0.000000**; **0.002955**; untrained; **zero against not zero**.
+- **(b)** A change at place 12 is *supposed* to move the scores at 12 and later; the test only looks at places **before** the change.
+- **(c)** 0.7791 against 0.7798: within 0.001. A loss stuck there is the floor, not a bug, **when the loss is taken over every place**.
+- **3.5** "...*can see the answer*."
+- **3.6** Model answer: *"With no mask, place 5 can look at place 6, and place 6 holds the character place 5 is supposed to predict. So the model reads the answer. The sample is `tatat...` and the loss is far below everything else. The test: change one later token and see whether earlier scores move; with the mask they don't (0.000000), without it they do. So the low number is not a finding about the mask."* Marks: 1 each for the four items.
 
 ```python
 # check193.py - Week 19 workbook page 19.3: the leak test on a small model, and a loss floor for a copy task with FOUR symbols. PRACTICE numbers.
@@ -688,7 +734,9 @@ print(f"copy of 4 symbols, loss over all 8 places, after 600 steps: {loss.item()
 
 ### Page 19.4
 
-**4.1.** `1/8 = 0.125`; `1/10 = 0.1`; a careless guess is `1/4 = 0.25`. **4.2.** Printed in the page. **4.3.** `1/4 + 3/4 x 1/10 = 0.25 + 0.075 =` **0.325**, against 0.327 printed: the small difference (0.002) is the wobble of sampling 20,000 sequences. The `1/10` term is the repeated-digit effect: in the sequence shown, the digit 9 sits at places 1 and 5. **Lesson: "one in four" is only right if the four values are all different.** (This is for the guesser; it is not a claim about any trained model.)
+- **4.1.** `1/8 = 0.125`; `1/10 = 0.1`; a careless guess is `1/4 = 0.25`.
+- **4.2.** Printed in the page.
+- **4.3.** `1/4 + 3/4 x 1/10 = 0.25 + 0.075 =` **0.325**, against 0.327 printed: the small difference (0.002) is the wobble of sampling 20,000 sequences. The `1/10` term is the repeated-digit effect: in the sequence shown, the digit 9 sits at places 1 and 5. **Lesson: "one in four" is only right if the four values are all different.** (This is for the guesser; it is not a claim about any trained model.)
 
 ```python
 # check194.py - Week 19 workbook page 19.4: what do guessers score on the three tasks? No model, no training. PRACTICE numbers.
@@ -718,11 +766,18 @@ print("one sequence:", lookup_batch(1)[0].tolist())
 | reverse | 1.00 | 1.00 (L) | 0.92 | 1.00 | 1.00 | 0.125 |
 | lookup | 1.00 | 0.37 | 1.00 | 1.00 | 0.33 | 0.1 |
 
-**4.4.** Copy and reverse no-mask are leaks: the input contains the answer one place ahead. In lookup the window stops **before** the answer, so there is nothing to read; its 0.37 is a real failure and we did **not** find out why. **4.5.** Lookup no mask (0.37) and no norm (0.33) are *close to* 0.327; no other cell is. The no-norm 0.33 is **not stable**: it is 1.00 on other seeds, and a student's own seed may give 1.00; accept it. **4.6.** No positions: copy and reverse lose a few percent (0.95, 0.92); lookup is unchanged (1.00). A true sentence: *"Deleting positions cost a little on the two tasks that need an order and nothing on lookup, at this size and training length."*
+- **4.4.** Copy and reverse no-mask are leaks: the input contains the answer one place ahead. In lookup the window stops **before** the answer, so there is nothing to read; its 0.37 is a real failure and we did **not** find out why.
+- **4.5.** Lookup no mask (0.37) and no norm (0.33) are *close to* 0.327; no other cell is. The no-norm 0.33 is **not stable**: it is 1.00 on other seeds, and a student's own seed may give 1.00; accept it.
+- **4.6.** No positions: copy and reverse lose a few percent (0.95, 0.92); lookup is unchanged (1.00). A true sentence: *"Deleting positions cost a little on the two tasks that need an order and nothing on lookup, at this size and training length."*
 
 ### Page 19.5
 
-**Part A (practice).** **5.1.** Layer 1 head 1: places 2, 3, 4 look at 0, 1, 2, so **2, 2, 2 back**. Place 5 looks at place **0**, **5 back**; a "two back" head would have looked at place 3. It is **not** the same distance everywhere. What is the same: **every cell looks at a place that holds the symbol the current place must say next** (place 5 must say the token that sits at places 0 and 3). **5.2.** Sample names: "finds the next symbol" / "looks at the start" / "earlier copy". **Not** "looks two back" (the table says otherwise from place 5 on). **5.3.** Accepted: (a) switch it off and see whether accuracy falls; (b) try a pattern of period 4 (or random symbols), see whether it still looks at an earlier copy; (c) look at the other three heads: layer 1 head 0 shows the same cells. Not accepted: "look at the picture again". **5.4.** **No**: its weights fall to 0.51 and 0.62, and it picks places 4 and 2 where the others pick 0 and 1; a smaller table of evidence, so a less confident name.
+**Part A (practice).**
+
+- **5.1.** Layer 1 head 1: places 2, 3, 4 look at 0, 1, 2, so **2, 2, 2 back**. Place 5 looks at place **0**, **5 back**; a "two back" head would have looked at place 3. It is **not** the same distance everywhere. What is the same: **every cell looks at a place that holds the symbol the current place must say next** (place 5 must say the token that sits at places 0 and 3).
+- **5.2.** Sample names: "finds the next symbol" / "looks at the start" / "earlier copy". **Not** "looks two back" (the table says otherwise from place 5 on).
+- **5.3.** Accepted: (a) switch it off and see whether accuracy falls; (b) try a pattern of period 4 (or random symbols), see whether it still looks at an earlier copy; (c) look at the other three heads: layer 1 head 0 shows the same cells. Not accepted: "look at the picture again".
+- **5.4.** **No**: its weights fall to 0.51 and 0.62, and it picks places 4 and 2 where the others pick 0 and 1; a smaller table of evidence, so a less confident name.
 
 **Part B (yours).** Class run, copy model, seed 0, layer 0 head 0: `6->0, 7->1, 8->2, 9->3, 10->4, 11->5`, weights 0.95-0.99, all **6 back**. In the picture, rows 6-11 have **one bright square each**, in columns 0-5, a stripe parallel to the main diagonal; **nothing above the main diagonal**, because of the mask. Acceptable names: "looks 6 back" / "the copy-across head" / "6-back head" (anything that says *what it looks at*). The kill-test is one of (a), (b), (c) with a stated result that would count against the name. Accuracy above 0.95.
 
@@ -771,11 +826,21 @@ print(f"  all four heads off:   {accuracy(model):.2f}")
 
 ### Page 19.7
 
-**Bug A.** Printed: nothing 1.00, l0h0 1.00, l0h1 1.00, l1h0 **0.86**, l1h1 **0.13**. **A1.** By the last line **four**: `append` adds, nothing takes out, so layer 0 heads 0 **and** 1 and layer 1 heads 0 **and** 1 are off, which is the "all four off" case (chance). **A2.** The `append` lines: reset with `model.blocks[0].silence = []` after each test (or assign `= [head]` instead of appending). **A3.** It runs and prints numbers between 0 and 1; a falling accuracy looks like a discovery ("layer 1 head 1 matters!"). **A4.** Print the `silence` lists before each test.
+- **Bug A.** Printed: nothing 1.00, l0h0 1.00, l0h1 1.00, l1h0 **0.86**, l1h1 **0.13**.
+- **A1.** By the last line **four**: `append` adds, nothing takes out, so layer 0 heads 0 **and** 1 and layer 1 heads 0 **and** 1 are off, which is the "all four off" case (chance).
+- **A2.** The `append` lines: reset with `model.blocks[0].silence = []` after each test (or assign `= [head]` instead of appending).
+- **A3.** It runs and prints numbers between 0 and 1; a falling accuracy looks like a discovery ("layer 1 head 1 matters!").
+- **A4.** Print the `silence` lists before each test.
 
-**Bug B.** Printed: `final loss 0.3840   accuracy 1.00` and the hand number `0.3781`. **B1.** **No**, the model is not broken; accuracy 1.00. **B2.** The first symbol is an **input** (never predicted); **2** places are unpredictable. **Why not 3:** token 0 is an input, tokens 1 and 2 are random, and from token 3 on the pattern repeats. `2 x 2.0794 / 11 = 0.378`, and the run gives 0.384. **B3.** The 5 on page 19.3 counted the random symbols 2-6 of a 6-symbol copy window (the first is an input); the separator and answers are predictable.
+- **Bug B.** Printed: `final loss 0.3840   accuracy 1.00` and the hand number `0.3781`.
+- **B1.** **No**, the model is not broken; accuracy 1.00.
+- **B2.** The first symbol is an **input** (never predicted); **2** places are unpredictable. **Why not 3:** token 0 is an input, tokens 1 and 2 are random, and from token 3 on the pattern repeats. `2 x 2.0794 / 11 = 0.378`, and the run gives 0.384.
+- **B3.** The 5 on page 19.3 counted the random symbols 2-6 of a 6-symbol copy window (the first is an input); the separator and answers are predictable.
 
-**Bug C.** `IndexError: index 2 is out of bounds for dimension 1 with size 2`. **C1.** Heads; **0 and 1**. **C2.** **No**: `1` is a valid head, so the run goes on and silently switches off the wrong one. Only numbers outside 0 and 1 are caught. **C3.** Any sensible answer: an `if` that compares each number in `silence` with `self.H` and raises an error whose message says how many heads the model has.
+- **Bug C.** `IndexError: index 2 is out of bounds for dimension 1 with size 2`.
+- **C1.** Heads; **0 and 1**.
+- **C2.** **No**: `1` is a valid head, so the run goes on and silently switches off the wrong one. Only numbers outside 0 and 1 are caught.
+- **C3.** Any sensible answer: an `if` that compares each number in `silence` with `self.H` and raises an error whose message says how many heads the model has.
 
 ### Page 19.8 and Self-Check
 

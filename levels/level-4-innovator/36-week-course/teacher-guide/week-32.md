@@ -26,7 +26,12 @@
 | **Prep time** | 20 minutes the night before · 2 minutes on the day |
 | **Expected runtime of the code** | **Nothing in this guide takes more than a second.** Blocks P0-P6 together: about **0.9 s** (most of it importing matplotlib); the Clinic and the Answer Key, each under 0.2 s. **No block is over 10 s.** On a slow laptop expect up to 3x; **anything over 1 minute means something is wrong** (see Fallback). |
 
-> **⚠️ Watch out:** four things go wrong this week. **First, the data are invented, and the student will forget.** Say it at the start and again at the end. The real finding the student takes away is a *method* (the table, the threshold, the per-category check); the numbers belong to a sheet of paper. **Second, do not teach the module's story unchanged.** The reference module's data put the worst gap in the top bucket only. Ours are overconfident **in every bucket** (all five gaps negative, `-0.076` to `-0.253`; the largest is the `0.70-0.79` bucket, `-0.253`, not the top one at `-0.231`). Teach what the table says. **Third, a threshold does not make a system good: it makes it quiet.** At `t = 0.8` accuracy of the answered rises `0.575 → 0.722`, and the system has thrown away **10 right answers** to avoid 12 wrong ones (K5 prints the rows); and the rule "pick the threshold with the best accuracy" picks `0.97`, which answers **1 question of 40** (Clinic D5). That bug is the lesson's title. **Fourth, billing *falls* under abstention** (`0.500 → 0.333`): its confident answers are mostly wrong and its two right answers were the *unsure* ones, so abstaining discards its hits and keeps its misses. On eight rows that could be chance; say so, and say what the rows show (K5).
+> **⚠️ Watch out:** four things go wrong this week. Each is set out below.
+
+1. **The data are invented, and the student will forget.** Say it at the start and again at the end. The real finding the student takes away is a *method* (the table, the threshold, the per-category check); the numbers belong to a sheet of paper.
+2. **Do not teach the module's story unchanged.** The reference module's data put the worst gap in the top bucket only. Ours are overconfident **in every bucket** (all five gaps negative, `-0.076` to `-0.253`; the largest is the `0.70-0.79` bucket, `-0.253`, not the top one at `-0.231`). Teach what the table says.
+3. **A threshold does not make a system good: it makes it quiet.** At `t = 0.8` accuracy of the answered rises `0.575 → 0.722`, and the system has thrown away **10 right answers** to avoid 12 wrong ones (K5 prints the rows). The rule "pick the threshold with the best accuracy" picks `0.97`, which answers **1 question of 40** (Clinic D5). That bug is the lesson's title.
+4. **Billing *falls* under abstention** (`0.500 → 0.333`): its confident answers are mostly wrong and its two right answers were the *unsure* ones, so abstaining discards its hits and keeps its misses. On eight rows that could be chance; say so, and say what the rows show (K5).
 
 ---
 
@@ -48,11 +53,19 @@ Observable evidence: the printed lines `[9 7 6 8 10]`-style bucket counts, `ECE 
 
 ## 🧑‍🏫 What YOU Need to Know First
 
-> **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist**, in the **🐞 Debugging Clinic** and in the **🔑 Answer Key** was run, in that order, from one scratch folder, in **one Python session**, seeded where anything is random (**nothing here is random**: the 40 rows are typed, so every number repeats exactly on every machine; a second complete run repeated every number). numpy 1.26.4, scikit-learn 1.7.1, matplotlib 3.7.1. The outputs below are the real printed output. The Clinic blocks that are *deliberate mistakes* are marked, and their tracebacks are real (paths are shortened to `/home/you/l4/`; the source line under each frame is the line that ran; library frame paths are as printed and may differ by version). The Clinic and Key blocks continue the session of the Prep blocks, so they use names the Prep blocks defined (`conf`, `right`, `cat`, `edges`, `counts`, `stated`, `actual`, `brier`, `reliability`, `ece_of`). Nothing in this guide is **TEACHER-ONLY** in the sense of using an unlocked construct; Blocks K1-K7 are teacher-only because they hold answers.
+This section is the background you need before teaching: the maths, what is real and what is a stand-in, the new constructs, and the limits of the lesson.
+
+> **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist**, in the **🐞 Debugging Clinic** and in the **🔑 Answer Key** was run, in that order, from one scratch folder, in **one Python session**, seeded where anything is random (**nothing here is random**: the 40 rows are typed, so every number repeats exactly on every machine; a second complete run repeated every number). numpy 1.26.4, scikit-learn 1.7.1, matplotlib 3.7.1. The outputs below are the real printed output. The Clinic blocks that are *deliberate mistakes* are marked, and their tracebacks are real (paths are shortened to `/home/you/l4/`; the source line under each frame is the line that ran; library frame paths are as printed and may differ by version).
+
+The Clinic and Key blocks continue the session of the Prep blocks, so they use names the Prep blocks defined (`conf`, `right`, `cat`, `edges`, `counts`, `stated`, `actual`, `brier`, `reliability`, `ece_of`). Nothing in this guide is **TEACHER-ONLY** in the sense of using an unlocked construct; Blocks K1-K7 are teacher-only because they hold answers.
 
 ### 1. What the student is doing today, in one paragraph
 
-Week 31 ended with a table in which the average rose while one row fell. Today the student asks a different question of a different kind of log: *when the system says it is 90% sure, how often is it right?* They type a sheet of 40 results, and before any code they do the arithmetic on ten of them with a pencil: a Brier score and a two-bucket ECE. Then the machine does all 40: five buckets, and a table in which **every** bucket says more than it delivers. Then the question that makes the number useful: *what if the system simply declined to answer when it was unsure?* They add a threshold, print coverage against accuracy, draw the curve, and read the per-category table **at `0.8`** — where overall accuracy has risen from `0.575` to `0.722` and billing has quietly fallen from `0.500` to `0.333`. The honest finishing sentence: *"On these 40 invented results the system was more sure than right in every bucket (ECE 0.179); abstaining below 0.8 lifted accuracy of the answered from 0.575 to 0.722 but answered only 18 of 40; and billing went the other way, 4 of 8 to 2 of 6, because its confident answers were its wrong ones — which, on eight rows, is a reason to look, not a verdict."*
+Week 31 ended with a table in which the average rose while one row fell. Today the student asks a different question of a different kind of log: *when the system says it is 90% sure, how often is it right?* They type a sheet of 40 results, and before any code they do the arithmetic on ten of them with a pencil: a Brier score and a two-bucket ECE.
+
+Then the machine does all 40: five buckets, and a table in which **every** bucket says more than it delivers. Then the question that makes the number useful: *what if the system simply declined to answer when it was unsure?* They add a threshold, print coverage against accuracy, draw the curve, and read the per-category table **at `0.8`** — where overall accuracy has risen from `0.575` to `0.722` and billing has quietly fallen from `0.500` to `0.333`.
+
+The honest finishing sentence: *"On these 40 invented results the system was more sure than right in every bucket (ECE 0.179); abstaining below 0.8 lifted accuracy of the answered from 0.575 to 0.722 but answered only 18 of 40; and billing went the other way, 4 of 8 to 2 of 6, because its confident answers were its wrong ones — which, on eight rows, is a reason to look, not a verdict."*
 
 ### 2. 🔢 The maths you need — taught to you first
 
@@ -60,9 +73,17 @@ Week 31 ended with a table in which the average rose while one row fell. Today t
 
 **(a) Confidence and outcome.** A result is a pair: *how sure the system said it was* `p` (a number from 0 to 1) and *what happened* `y` (1 if it was right, 0 if wrong). "Calibrated" means: **of the results where it said about 0.8, about 8 in 10 were right.** Not every one, and not "it was right on average": *the stated number matches the hit rate, bucket by bucket.* A forecaster who says "80% chance of rain" on 100 days and sees rain on 55 of them is **overconfident**.
 
-**(b) Brier: the squared gap, per result, averaged.** For each result take `(p - y)^2`. A right answer said at `0.97` costs `(0.97 - 1)^2 = 0.0009`. A wrong answer said at `0.96` costs `(0.96 - 0)^2 = 0.9216`. **Being sure and wrong costs about a thousand times more than being sure and right.** The Brier score is the mean of these. Lower is better; `0.25` is what you get by saying `0.5` on everything (every result costs `0.25`, whatever happened). On ten results (K1): the ten squares add to `2.388`, so Brier `= 0.2388`. Do **not** say "proper scoring rule" or "quadratic". The student squares a gap and averages it.
+**(b) Brier: the squared gap, per result, averaged.** For each result take `(p - y)^2`. A right answer said at `0.97` costs `(0.97 - 1)^2 = 0.0009`. A wrong answer said at `0.96` costs `(0.96 - 0)^2 = 0.9216`. **Being sure and wrong costs about a thousand times more than being sure and right.**
 
-**(c) ECE: bucket first, then compare.** Sort the results into buckets by `p`. In each bucket write down *stated* (the mean `p`) and *actual* (the share with `y = 1`), take the size of the gap, and average the gaps **with each bucket weighted by how many results it holds**. On the same ten with two buckets (`p >= 0.8` and `p < 0.8`): sure: `7` results, stated `0.9086`, actual `0.8571`, gap `0.0514`; unsure: `3` results, stated `0.68`, actual `0.0`, gap `0.68`. ECE `= 0.7 x 0.0514 + 0.3 x 0.68 = 0.24`. **Three things to know before you are asked.** (i) *ECE depends on the buckets.* On the 40 results: `2` buckets give `0.1787`, `5` give `0.1788`, `10` give `0.2123` (K3). More buckets mean fewer results per bucket, and the gaps get noisier. (ii) *ECE depends on which results.* The four "every fourth row" sets of ten give ECE `0.240, 0.270, 0.316, 0.165` (K1, K6): ten results is for learning the arithmetic, not for believing the answer. (iii) *When every bucket's gap has the same sign, ECE is just "average stated minus accuracy"*: here `0.754 - 0.575 = 0.179`. That is the mean overconfidence, and it is the only reason the 2-, 5- and 1-bucket numbers nearly agree. With gaps of both signs the buckets would cancel in the average of *signed* gaps but not in ECE, which takes the size first.
+The Brier score is the mean of these. Lower is better; `0.25` is what you get by saying `0.5` on everything (every result costs `0.25`, whatever happened). On ten results (K1): the ten squares add to `2.388`, so Brier `= 0.2388`. Do **not** say "proper scoring rule" or "quadratic". The student squares a gap and averages it.
+
+**(c) ECE: bucket first, then compare.** Sort the results into buckets by `p`. In each bucket write down *stated* (the mean `p`) and *actual* (the share with `y = 1`), take the size of the gap, and average the gaps **with each bucket weighted by how many results it holds**. On the same ten with two buckets (`p >= 0.8` and `p < 0.8`): sure: `7` results, stated `0.9086`, actual `0.8571`, gap `0.0514`; unsure: `3` results, stated `0.68`, actual `0.0`, gap `0.68`. ECE `= 0.7 x 0.0514 + 0.3 x 0.68 = 0.24`.
+
+**Three things to know before you are asked:**
+
+- *ECE depends on the buckets.* On the 40 results: `2` buckets give `0.1787`, `5` give `0.1788`, `10` give `0.2123` (K3). More buckets mean fewer results per bucket, and the gaps get noisier.
+- *ECE depends on which results.* The four "every fourth row" sets of ten give ECE `0.240, 0.270, 0.316, 0.165` (K1, K6): ten results is for learning the arithmetic, not for believing the answer.
+- *When every bucket's gap has the same sign, ECE is just "average stated minus accuracy"*: here `0.754 - 0.575 = 0.179`. That is the mean overconfidence, and it is the only reason the 2-, 5- and 1-bucket numbers nearly agree. With gaps of both signs the buckets would cancel in the average of *signed* gaps but not in ECE, which takes the size first.
 
 **Abstention is not new maths**, it is a comparison you already know: Week 30's precision and recall. Answer only when `p >= t`. *Coverage* is the share answered; *accuracy of the answered* is the share of those right. Raise `t`: coverage falls, and (if confidence means anything) accuracy of the answered rises.
 
@@ -143,6 +164,8 @@ Week 30 built the frozen 30-ticket eval and the per-category table; Week 31 used
 ---
 
 ## 🧰 Prep Checklist
+
+This section is for the night before: it gets the typed sheet and the prep blocks running so you can check every number in the lesson.
 
 ### 20 minutes the night before
 
@@ -338,6 +361,8 @@ Open a terminal in the scratch folder. Run P0 only, to check the sheet has 40 ro
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the running order of the lesson, with what to say, ask and expect in each segment.
+
 | Time | Segment | What happens |
 |---|---|---|
 | 0:00-0:05 | 🪝 Hook | The forecaster: "80% chance of rain" and what you would check |
@@ -389,6 +414,8 @@ Each student says one sentence that contains a number of **results** and the wor
 ---
 
 ## 🐞 The Debugging Clinic
+
+This section holds deliberate bugs, some loud and some silent, to run with the student and talk through.
 
 ### How to teach debugging without giving the answer
 
@@ -492,6 +519,8 @@ In P5 at `t = 0.9`, `technical` has **no** answers at all (K7) and at `0.8` it h
 
 ## 🎲 The Activity, In Full
 
+This section gives the pen-and-paper card used in the Teach and on the first two workbook pages, plus variations.
+
 ### The Ten-Results Card (10 minutes, pen and paper, used in the Teach and again for Pages 32.1 and 32.2)
 
 Print the ten rows of Block K1's first printout (every fourth row of the sheet, starting at the first), one per line, with two blank columns: `(p - y)` and `(p - y)^2`.
@@ -516,6 +545,8 @@ Cap the confidence at `0.85` (K2) *before* running P4 and predict whether the ab
 
 ## ❓ Questions Students Ask This Week
 
+This section lists the questions students ask most this week, with a short answer for each.
+
 - **"Is the system real?"** No: the 40 rows are invented. The code is real; the sheet stands in for a log. Say it every time.
 - **"Why are the 40 rows so overconfident?"** Because I wrote them that way, so there was something to measure. A real classifier may be better or worse; you have to measure it.
 - **"Why square the gap for Brier?"** So a sure-and-wrong answer costs much more than an unsure-and-wrong one: `0.96` wrong costs `0.92`; `0.6` wrong costs `0.36`.
@@ -529,6 +560,8 @@ Cap the confidence at `0.85` (K2) *before* running P4 and predict whether the ab
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the failure points to watch for, with the fix for each.
+
 1. **The student forgets the data are invented.** Put the word on the board. Ask it at the wrap.
 2. **The student reads ECE as an error rate.** Ask for the error rate first (`1 - 0.575 = 0.425`).
 3. **The student chooses the threshold with the best accuracy.** D5. Ask for coverage.
@@ -541,6 +574,8 @@ Cap the confidence at `0.85` (K2) *before* running P4 and predict whether the ab
 ---
 
 ## 🧭 Differentiation
+
+This section adapts the lesson for a student who is struggling, flying or disengaged.
 
 ### If the student is struggling
 
@@ -560,6 +595,8 @@ Give them the P2 table on paper and ask one question: *"the system says 0.93. Wh
 ---
 
 ## ✅ Assessing Understanding
+
+This section gives the marking rules, a table for reading the pattern in a student's work, and a mastery scale.
 
 ### The marking rules
 
@@ -593,6 +630,8 @@ Mark against the four sentences on Page 32.3; each is worth one.
 
 ## 📤 Homework to Assign
 
+This section states the homework to hand out and its time estimate.
+
 ~55 minutes, in the workbook, pages 32.1-32.3. The three tasks:
 
 1. **Another ten by hand (pages 32.1-32.2).** Take every fourth row **starting at the second row** (`RESULTS[1::4]`), and do Brier and the two-bucket ECE with a pencil. Then check with code. (K6: Brier `0.1963`, sure `n=6` actual `0.667`, unsure `n=4` actual `1.000`, ECE `0.2700`.) Finish with one sentence on why this ECE is not the same as the class's.
@@ -604,6 +643,8 @@ Extension for the fast student: the 20-result log from their own Week 26 assista
 ---
 
 ## 🔑 Answer Key
+
+This section holds the teacher-only answers: checked code for each page, the model answer for the last workbook page, and answers to every question posed in the lesson.
 
 ### K0 — the data, in one line
 
@@ -813,5 +854,7 @@ Four model sentences: *(1) On these invented 40 results the system said 0.93 in 
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what next week adds, so you can set up the closing question.
 
 **Week 33 — Attack Your Own System** (🟩 lab). Red-teaming as a discipline: attack, evidence, mechanism, fix, re-test (including the happy path), residual risk — run against the course's **toy agent** and its scripted stand-in, never a real model. The new idea is the **binomial standard deviation** (`sqrt(n p (1-p))`, "how wobbly is a count"), the honest answer to this week's "no error bars"; the new syntax is `re.sub` with ordered patterns and `Path.stat().st_mtime`. **Week 33 is the overloaded week** (red-team, PII, retention, bias probe); its author times each toy on CPU and moves overflow to the workbook. Ask the student to bring one sentence for Monday: *"if I ran the same attack 20 times, how many times would I expect it to work — and would 7 out of 20 and 9 out of 20 really be different?"*

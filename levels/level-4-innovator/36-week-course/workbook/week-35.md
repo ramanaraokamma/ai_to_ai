@@ -23,6 +23,8 @@
 
 ## ✅ Warm-Up (5 min, before anything else, from memory)
 
+This page recalls last week's vocabulary and the wobble before the new work starts. Answer from memory.
+
 1. What is the first thing you do at the start of Week 35, before any score is shown? ______________________________
 2. The floor is `refuse everything`. What is a **baseline**, and why is it a bigger number? ____________________________________________________
 3. In the chapter's order, which comes first: the baseline or the spine? ______________ Why? ____________________________________________________
@@ -32,6 +34,8 @@
 ---
 
 ## 🧮 Page 35.1 — The Tally, by Hand (30 min · pen, then one check)
+
+This page is for tallying the frozen cases by category and finding the wobble of three scores, by hand first.
 
 Below are the chapter's 25 frozen cases and the baseline's verdict on each (given: `pass` or `FAIL`). The spine's eight failing ids are: **c02, c10, c11, c12, c13, c15, c19, c24**. Every other case passes. Fill the last column.
 
@@ -92,6 +96,8 @@ Largest gain: ______________ . A category with no change at all, and a case that
 
 The gap from 11 to 17 is six cases. Is "the spine is better than the baseline" a finding **on the overall** by this rule? ______ . So what do you point at instead? ____________________________________________________ (Rule of thumb only: both versions answer the *same* 25 questions, so the real bar is a little tighter. Do not shrink it by hand.)
 
+Run this file after your pen answers to compare them with the code.
+
 ```python
 # check351.py - Page 35.1: the tally by hand, then by code, and the wobble of the three scores. (Plain Python; no files needed.)
 from collections import Counter
@@ -145,6 +151,8 @@ Did your tallies match? Which row did you get wrong, if any? ______ . Your two b
 
 ## 🧮 Page 35.2 — Promise Against Measurement (35 min · pen, then computer)
 
+This page is for setting your earlier promises beside what `run_eval.py` measured, and for practising the percentile and a budget calculation.
+
 In Week 34 you wrote five promises (the table shows four; the p95 time promise is checked in the code block) **before** anything existed. Today `run_eval.py` measured them. The measured values below are the chapter's worked example (stand-in dollars; the sum of the 25 task costs is `$0.01129`, the most expensive single task was `$0.00148`).
 
 **A. The promise table.** For a **ceiling** ("under"), headroom = promised ÷ measured. For a **floor** ("at least"), headroom = measured ÷ promised. Write `kept` if headroom is above or equal to `1.0`, `MISSED` if below.
@@ -174,6 +182,8 @@ p95 index `int(0.95 × 25) =` ______ → p95 = ______ . p50 index `int(0.5 × 25
 | after | `8 × 0.00031 =` ______ | `9 × 0.00128 =` ______ | ______ | ______ | ______ |
 
 Which line of the table would you read first if the headroom dropped below `1.0`? ____________________________________________________
+
+Run this file after your pen answers to compare them with the code.
 
 ```python
 # check352.py - Page 35.2: promises against measurements, a p95 by sorting and an index, and a cost that moves with the router. STAND-IN dollars and STAND-IN milliseconds.
@@ -219,6 +229,8 @@ Your worst-task headroom was ______ ; the printout rounds it to `2.03x` and the 
 
 ## 🧮 Page 35.3 — The Red-Team Card (40 min · pen, then computer)
 
+This page is for building a Red-Team Card: classifying attack outcomes, judging fixes, and checking that a zero has a control.
+
 **A. Five rows, from measured outcomes.** These are the chapter's results against the **stand-in** spine (the planted-note follower is a scripted `GullibleModel`; its landing count is the dial we typed, not a finding about any real model). Fill the last three columns. Statuses: **FIXED** (it landed, you patched it, you re-tested), **ALREADY BLOCKED** (it never landed and a control shows the test can), **ACCEPTED** (it landed, you did not fix it, and you wrote down why). Severity is `1` (mild) to `5` (someone loses something).
 
 | | attack | what happened (seeded, stand-in) | status | severity | re-test |
@@ -250,6 +262,8 @@ The suite says `17 / 25` for all three. Why can it not tell them apart? ________
 | A2 (sandbox) | 15 of 50 landed | ______ |
 | A3 (personal data) | the answer and trace both leak | ______ |
 | A6 (invented) | 0 landed | ______ |
+
+Run this file after your pen answers to compare them with the code.
 
 ```python
 # check353.py - Page 35.3: fixed, already blocked or accepted; a zero needs a control; a patch is only a fix if the happy path survives. (Numbers typed from the chapter's run.)
@@ -314,9 +328,13 @@ Committed numbers (copy from `run_eval.py v1`): overall ______ / ______ · factu
 
 ## 🐞 Page 35.4 — Break It on Purpose (four bugs · 35 min)
 
+This page is for reading four deliberate bugs, predicting what each does, and naming how you would have caught it.
+
 Run each as written. Predict first. Then say what went wrong and how you would have known. Each is **deliberate**; each is a tiny stand-in of a mistake from the chapter.
 
 ### 35.4-A (loud) — the whole case goes in
+
+Run this deliberately broken file as written.
 
 ```python
 # DELIBERATE BUG 35.4-A (loud): the runner hands the system the whole CASE; the guard wants the question text.
@@ -351,6 +369,8 @@ What went wrong, and why is a crash better here than turning the case into text 
 
 A toy system with a dummy number. The defence is switched **off** for this run, on purpose, to see what the test says.
 
+Run this deliberately broken file as written.
+
 ```python
 # DELIBERATE BUG 35.4-B (SILENT): an attack test that looks only at the ANSWER. The leak is in the TRACE. (Dummy number; a toy system, not a model.)
 def system(question, redact):
@@ -375,6 +395,8 @@ With the defence **off**, the test still says "safe". What is it blind to? _____
 
 ### 35.4-C (SILENT) — moving the goalposts
 
+Run this deliberately broken file as written.
+
 ```python
 # DELIBERATE BUG 35.4-C (SILENT): the promise was 0.70, the run measured 17 of 25, and the promise is edited in memory so the line says kept.
 promises = {"score_at_least": 0.70}
@@ -396,6 +418,8 @@ Nothing is broken in the code and the result is wrong. What changed between the 
 ### 35.4-D (SILENT) — a digit is not arithmetic
 
 A router sends every question with a digit to the arithmetic path. The "plan" there multiplies the numbers it finds. Both pieces are scripted stand-ins, not a model.
+
+Run this deliberately broken file as written.
 
 ```python
 # DELIBERATE BUG 35.4-D (SILENT): a router that sends any digit to the arithmetic path, and a draft plan that assumes there are two numbers to combine.
@@ -425,6 +449,8 @@ The second answer has the look of a result and is not one. What did the plan ass
 
 ## 📓 Page 35.5 — Stop and Think (10 min · pen only)
 
+This page is for answering seven short questions on the week's ideas, in your own words.
+
 1. Your baseline scores more than you expected. Which Week 34 sentence says what to do if it passes almost everything? ____________________________________________________
 2. `multi_hop` is `0/4` and you want to write "RAG fails at multi-hop questions". Why can you not, and what do you write instead? ____________________________________________________
 3. The run prints `internal errors: 0`. What does that count, and what does it not count? ____________________________________________________
@@ -436,6 +462,8 @@ The second answer has the look of a result and is not one. What did the plan ass
 ---
 
 ## 📓 Page 35.6 — The Bug Log
+
+This page is for recording what went wrong this week and the rule you will keep for each bug.
 
 | # | What went wrong (your words) | Loud or silent? | The one line or check that caught it | The rule I will keep |
 |:-:|---|:-:|---|---|
@@ -454,6 +482,8 @@ Then write this sentence in your own handwriting, with your own numbers, and kee
 
 ## 🧠 Self-Check (from memory, no notes)
 
+Tick a box only when you could do it without looking.
+
 - [ ] I can say why the floor, the baseline and the spine are three different numbers, and tally them by category.
 - [ ] I can say what a 6-case gap on 25 cases can and cannot show, using the wobble.
 - [ ] I can work out headroom for a ceiling and for a floor, and say `MISSED` out loud.
@@ -465,7 +495,7 @@ Then write this sentence in your own handwriting, with your own numbers, and kee
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 ### Warm-Up
 1. Run `check_frozen` on the cases and compare the 12 characters to the paper (the fingerprint written in Week 34), before any score is shown.
@@ -500,7 +530,7 @@ defence OFF -> LANDED
 defence ON  -> did not land
 ```
 
- The control (defence OFF) says `LANDED`, so the test can fail; with it ON it says `did not land` and that now means something.
+The control (defence OFF) says `LANDED`, so the test can fail; with it ON it says `did not land` and that now means something.
 - **C.** The promise was edited in memory from `0.70` to `0.65`, so the same measured `0.68` now reads `kept`. The code has no bug; the **report** is wrong. It should say `MISSED` (17 of 25 against 0.70, one case short, inside the wobble) and leave `DESIGN.md` alone. (The chapter's version of this edits nothing on disk; your paper and your teacher's paper are what would have caught a disk edit.)
 - **D.** The second question is answered `11.0`: a clean number from a "tool" that multiplied one number by 1. The draft plan assumed there are at least two numbers to combine; `week-11` has one. Repair, keeping the router: the plan **refuses** when it has fewer than two numbers. Repaired output:
 
@@ -509,7 +539,7 @@ agent     'what is 0.00144 times 250'                   -> 0.36
 agent     'what does the note say about week-11'        -> NOT IN NOTES
 ```
 
- The router is a rule about digits and is written down as a known limit; the number that would show it is the **routing** line of `run_eval.py` (`23/25` in the worked example: c20 is sent to the agent by a year and is refused there, the right answer by the wrong road).
+The router is a rule about digits and is written down as a known limit; the number that would show it is the **routing** line of `run_eval.py` (`23/25` in the worked example: c20 is sent to the agent by a year and is refused there, the right answer by the wrong road).
 
 ### Page 35.5
 1. Week 34 §3: if the baseline passes most cases, a plain search already does the job, so the honest design is the script, not a bigger system (and say so in the design notes). Also worth asking whether the **cases** were too easy; if so, add harder ones in a separate file with its own fingerprint, never by editing the frozen set. Accept either answer if it does not propose building something bigger.

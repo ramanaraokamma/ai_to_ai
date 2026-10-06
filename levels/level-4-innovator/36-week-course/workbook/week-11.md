@@ -6,17 +6,23 @@
 
 ---
 
-> **Rules for this workbook.** Six pages and a Bug Log: **by hand first** (dials, then one LSTM unit), then **your own run** (the cell check, the dial grid, the seeds and the forget bias), then a short report. Pages 11.1 and 11.2 need a calculator with a **power key** (`x^y`) and an **`e^x` key**. Pages 11.3 to 11.5 copy numbers that **your own `week11.py` printed**.
->
-> **Pen first, then run.** Write every prediction before you run anything. Use **one colour of pen for predictions and another for measurements** on page 11.4.
->
-> **Where the numbers came from.** Every worked example and every answer was printed by a real CPU run (PyTorch, `torch.manual_seed(...)` with the seed named on the page). By-hand numbers are plain arithmetic and match exactly. On another computer or PyTorch build the **last digit** of a number such as `5.77e-02` can move, and the gaps on page 11.3 (about `1e-08`) can differ; the **exponent** and the shape of every table will not.
->
-> **Copy exponents in full.** `2.05e-09` means `0.00000000205`. If you drop the `e-09` you are wrong by a factor of a billion.
->
-> **There is no language model and no stand-in in this workbook.** Every layer is real PyTorch with **untrained, seeded random weights**, run on random numbers. **Nothing is trained today**, nothing is downloaded and nothing needs the internet.
->
-> Carry **four decimals** in every calculation. Run any check file from a folder of your own, and delete what it writes.
+**How this workbook works.** It has six pages and a Bug Log, in three stages:
+
+1. **By hand first:** dials, then one LSTM unit.
+2. **Your own run:** the cell check, the dial grid, the seeds and the forget bias.
+3. **A short report.**
+
+Pages 11.1 and 11.2 need a calculator with a **power key** (`x^y`) and an **`e^x` key**. Pages 11.3 to 11.5 copy numbers that **your own `week11.py` printed**.
+
+**Pen first, then run.** Write every prediction before you run anything. On page 11.4, use **one colour of pen for predictions and another for measurements**.
+
+**Where the numbers came from.** Every worked example and every answer was printed by a real CPU run (PyTorch, `torch.manual_seed(...)` with the seed named on the page). By-hand numbers are plain arithmetic and match exactly. On another computer or PyTorch build the **last digit** of a number such as `5.77e-02` can move, and the gaps on page 11.3 (about `1e-08`) can differ; the **exponent** and the shape of every table will not.
+
+**Copy exponents in full.** `2.05e-09` means `0.00000000205`. If you drop the `e-09` you are wrong by a factor of a billion.
+
+**No language model, no stand-in.** Every layer is real PyTorch with **untrained, seeded random weights**, run on random numbers. **Nothing is trained today**, nothing is downloaded and nothing needs the internet.
+
+**Housekeeping.** Carry **four decimals** in every calculation. Run any check file from a folder of your own, and delete what it writes.
 
 ---
 
@@ -24,6 +30,8 @@
 *Figure W11.0 — Week 11 gives the loop gates, so memory can be added to instead of rewritten.*
 
 ## ✅ Warm-Up (5 min, before anything else)
+
+These four questions recall what this week builds on. Answer them from memory before the pages.
 
 **W1.** Last week forty slopes of about one half were multiplied together. Without a calculator: is the answer **tiny / near 1 / large** (circle one)? ____________
 
@@ -36,6 +44,8 @@
 ---
 
 ## 🎛️ Page 11.1 — Dials by Hand (15 min)
+
+This page is for getting a feel for gates as numbers, by calculator.
 
 A **gate** is a dial between 0 and 1. The network makes the dial from a score: `dial = sigmoid(score) = 1 / (1 + e^(-score))`. Use your `e^x` key for `e^(-score)`, and your power key for `f ** 40`. Write a **prediction** first (**near 0**, **near one half**, **near 1**), then the answer to four decimals.
 
@@ -97,7 +107,9 @@ Which parts did my hand answer miss by more than `0.0005`? ____________ The slip
 
 ## 🧮 Page 11.2 — One Unit, by Hand (Week 8's spike · 25 min)
 
-One LSTM unit run for three steps on the spike `x = [1, 0, 0]`. These are **the same dials as the lesson's block 2, with one change: the forget dial is `sigmoid(2)`**, not `sigmoid(3)`.
+This page is for running one LSTM unit by hand, so each gate is a number you have computed yourself.
+
+The unit runs for three steps on the spike `x = [1, 0, 0]`. These are **the same dials as the lesson's block 2, with one change: the forget dial is `sigmoid(2)`**, not `sigmoid(3)`.
 
 > **The recipe, at every step `t`:**
 > input dial `i = sigmoid(5x - 2.5)` · candidate `g = tanh(2x)` · **memory `c = f x (old c) + i x g`** · note `h = o x tanh(c)`
@@ -165,6 +177,8 @@ Did the first table match mine? ____________ The first row I got wrong, and why:
 
 ## 🧩 Page 11.3 — The Cell From Scratch (block 3 · 20 min)
 
+This page is for counting what is inside an LSTM cell, then comparing your own step with PyTorch's.
+
 **Part 1: count before you look.** An `nn.LSTMCell(D, H)` takes `D` numbers in and keeps `H` numbers of memory. Its scores come in **four groups of `H`** (input dial, forget dial, candidate, output dial), so `weight_ih` has `4 x H` rows and `weight_hh` has `4 x H` rows. The total count is
 
 > **`4 x (H x D + H x H + H + H)`**
@@ -214,6 +228,8 @@ Did my counts match the first two lines? ____________ The last line is the cell 
 ---
 
 ## 🎲 Page 11.4 — The Dial Grid (blocks 6 and 7 · 30 min)
+
+This page is for recording a measured grid of four layers against four lengths, with a prediction for every cell first.
 
 The experiment: *how much the last output cares about the **first** word, as a fraction of how much it cares about the **last** word*, for four layers and four sequence lengths `T`. Seed 0. The four layers are an `nn.RNN`, an `nn.GRU`, an `nn.LSTM` (defaults), and an `nn.LSTM` with the **forget bias set to 2**.
 
@@ -272,6 +288,8 @@ Each sentence gives a **direction** (falls, rises, hovers) and **one number copi
 
 ## 🌱 Page 11.5 — Three Seeds, and the Forget Bias (block 7 · 20 min)
 
+This page is for copying the seed and forget-bias tables from your run.
+
 Block 7 first ran **three seeds** at `T = 40` for five rows, then swept **the forget bias** at four lengths for seed 0. Copy both tables from your run.
 
 **Worked example (done for you; seed 3, which block 7 did not use).** At `T = 40`: rnn `1.4e-09`, default lstm `6.0e-08`, lstm with forget bias 2 `2.8e-02`. At `T = 20`, seed 3, forget bias 0 gave `9.26e-05` and forget bias 3 gave `5.85e-01`: the same layer, one number different, about **6,300 times** apart (`0.585 / 0.0000926`). *Notice:* the default lstm beat the rnn here (`6.0e-08` against `1.4e-09`), and the gap of about 40 times is within what the seeds wander, as the table below will show.
@@ -314,7 +332,9 @@ ___________________________________________
 
 ## 📝 Page 11.6 — The Report (20 min)
 
-Write **four sentences**, in your own words, to someone who has not done this week.
+This page is for writing up what you measured, in your own words.
+
+**Write four sentences** to someone who has not done this week.
 
 **Rules.** Every number must have been printed by **your own run in the last 24 hours**; copy it **with its exponent**; state the **seed**.
 
@@ -335,6 +355,8 @@ Write **four sentences**, in your own words, to someone who has not done this we
 ---
 
 ## 📓 Page 11.6b — The Bug Log
+
+This page is for recording each error, and each silent bug, you met this week.
 
 The Bug Log is the most useful page of the course. Copy only the **last line** of a traceback, not all of it.
 
@@ -383,6 +405,8 @@ What it printed: wrong group ____________ , right group ____________ , no dial a
 
 ## 🧠 Self-Check (do this last, from memory)
 
+This checklist is for finding what has not stuck. Tick an item only if you can do it without looking.
+
 - ☐ Say what a gate is, in one sentence with the words *dial* and *sigmoid*.
 - ☐ Write the memory update `c = f x (old c) + i x g` from memory, and say what the slope back through it is.
 - ☐ Say why a dial of one half is Week 10's disease again (`0.5 ** 40`), and why a dial of `0.95` or more is not.
@@ -396,7 +420,7 @@ What it printed: wrong group ____________ , right group ____________ , no dial a
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+**✂️ ANSWERS - keep this page folded until you have finished**
 
 > Real printed outputs below. By-hand numbers are exact. Measured numbers may differ in the last digit on another CPU or PyTorch build; the exponents and the shape of each table will not. These answers are for the pages in **this workbook**.
 

@@ -43,6 +43,8 @@ Observable evidence: `check_init.py` printing `PASS` for the calm head and `matc
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+Read this section before class: it teaches you the arithmetic, the new code and the limits of what the run shows, so nothing in the lesson surprises you.
+
 > **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist** is a *whole file* and every one was run, from one folder next to `l4lib/`, on a CPU with `torch.set_num_threads(1)` and the seeds shown. Blocks in the **🐞 Debugging Clinic** are *deliberate mistakes* and each is marked; their tracebacks are real. Outputs are real. **`train.py` was run four times and the losses and samples were identical each time; only the `step time` line changed** (53 to 62 ms). The numbers labelled **ledger** come from the course author's reference run of Module 3 (seed 1337, dropout 0.1, 2,500 steps) and were **not** run for this lesson; they are different enough that they are a comparison in *direction*, not a target.
 
 ### 1. What the student is doing today, in one paragraph
@@ -218,6 +220,8 @@ Stop at: *"we built the whole thing from last week's parts; it starts at `ln 28`
 ---
 
 ## 🧰 Prep Checklist
+
+This section is for the night before and the day itself: it holds the four whole files you type and run, the setup checks, and what to do if the laptops fail.
 
 ### 30 minutes the night before
 
@@ -635,6 +639,8 @@ scores for one batch             : 57344 numbers, shape (32, 64, 28)
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the running order of the lesson: five segments, each with its own steps and the questions to ask.
+
 | Segment | Minutes | What happens |
 |---|:--:|---|
 | 🪝 Hook | 8 | What should a model that knows nothing score? `ln 28`. Guess the next letter of a real sentence. |
@@ -698,7 +704,11 @@ The student types. You narrate. **Nobody pastes, except the `Block`, which comes
 - `generate`: **show the `@torch.no_grad()` line and say it as a label**: *"no learning in here"*. Point out `idx[:, -self.T:]` (only the last 64 characters: the place table has 64 rows) and `logits[:, -1, :]` (only the last place's scores).
 - `calm_head`: say **"we will add this after the check tells us why; ignore it until then"** and type the two lines.
 
-**Step 2 (10 min) — `check_init.py`.** The student types the data lines (they know `stoi`), then `get_batch`, with the `torch.randint(len(src) - T, (B,))` line. **Predict before running:** *"what are the shapes of `x` and `y`? What is the first row of `y` compared with the first row of `x`?"* Run only up to the `y is x moved one place left` line (comment the rest out) and read the two strings aloud. Then type the check loop. **Predict:** *"how far from 3.332 will the first loss be?"* Run. `FAIL` for `calm_head=False` (3.5025), `PASS` for `True` (3.3481). Ask: *"Is the un-calmed model broken?"* (No, just over-confident at the start: its output layer's default weights give a bigger spread of scores. Multiplying them by 0.1 pulls the first loss onto `ln 28`.) Then the size lines: `match: True`. *"Last week's hand count was right."*
+**Step 2 (10 min) — `check_init.py`.** The student types the data lines (they know `stoi`), then `get_batch`, with the `torch.randint(len(src) - T, (B,))` line.
+
+**Predict before running:** *"what are the shapes of `x` and `y`? What is the first row of `y` compared with the first row of `x`?"* Run only up to the `y is x moved one place left` line (comment the rest out) and read the two strings aloud. Then type the check loop.
+
+**Predict:** *"how far from 3.332 will the first loss be?"* Run. `FAIL` for `calm_head=False` (3.5025), `PASS` for `True` (3.3481). Ask: *"Is the un-calmed model broken?"* (No, just over-confident at the start: its output layer's default weights give a bigger spread of scores. Multiplying them by 0.1 pulls the first loss onto `ln 28`.) Then the size lines: `match: True`. *"Last week's hand count was right."*
 
 **Step 3 (6 min) — start `train.py`.** (A **checkpoint** is a moment in the run where we stop and look: here steps 0, 300 and 1,499. Say the word when you reach `CHECKPOINTS`.) The student types `get_batch` again (copy from `check_init.py`; say it belongs in a shared file one day), `estimate` with its `@torch.no_grad()`, the `sample` helper and the loop. The loop is **their own Week 1-6 loop** in a new place (AdamW, warm-up and cosine, clipping): do not re-teach it. Point at `spent += time.perf_counter() - t0`: *"we time only the step itself, not the evaluation, so the number means one training step."* **Before pressing Enter:** *"Predict the time per step."* (Let them guess in milliseconds. Ours: 53.) Press Enter.
 
@@ -1089,6 +1099,8 @@ AttributeError: cannot assign module before Module.__init__() call
 
 ## 🎲 The Activity, In Full
 
+This section gives the complete rules, cards and scoring for the one activity, so you can run it without the rest of the guide.
+
 ### Beat the Ladder (and Order the Checkpoints)
 
 **What it is:** the student plays the game the model plays, on six real places in the text, and scores themselves with the same loss. Their average goes on the same ladder as the counting models and the TinyGPT. Then they read the trained model's three checkpoint samples and put them in order.
@@ -1145,6 +1157,8 @@ Give the student a **new line of the text they have not seen**, hide ten letters
 
 ## ❓ Questions Students Ask This Week
 
+Use this section to prepare short, honest answers to the questions this lesson tends to raise.
+
 **"Why does the first loss have to be 3.332?"** It does not have to be *exactly*; it should be close. If the model knows nothing it gives each of 28 characters a 1/28 share, and `-ln(1/28) = 3.332`. If the first loss is much higher, the model starts out confidently wrong (or has a bug);
 
 **"Why multiply the output layer by 0.1?"** Its default weights give scores with a wide spread, which makes the first loss 3.50. Scaling it down makes the scores start near zero, so all 28 characters start nearly equal. The reference module gets there with a different trick (a small normal initialisation everywhere). Both are conventions. We did not test which trains better over 1,500 steps.
@@ -1179,6 +1193,8 @@ Give the student a **new line of the text they have not seen**, hide ten letters
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the slips that cost the most time or teach the wrong lesson, so you can spot them early.
+
 1. **The student skips the checks and starts the run.** They lose the lesson. Do not press Enter on `train.py` until `match: True` and the first loss have been printed and discussed.
 2. **The student treats `FAIL` as "broken".** Clinic 1. The first loss of the un-calmed model is 0.17 above `ln(28)`, and the model trains fine.
 3. **The run looks "stuck" for the first second.** `train.py` prints the step 0 sample only after it has estimated two losses (40 forward passes). It is not stuck. The next line appears at step 250 (about 15 seconds).
@@ -1192,6 +1208,8 @@ Give the student a **new line of the text they have not seen**, hide ten letters
 ---
 
 ## 🧭 Differentiation
+
+This section adjusts the lesson for a student who needs more support, who needs more challenge, or who is not engaged today.
 
 ### If the student is struggling
 
@@ -1249,6 +1267,8 @@ The workbook has six pages (17.1-17.6). The student does them in order, and writ
 ---
 
 ## 🔑 Answer Key
+
+This section holds the model answers and marking guidance for the six workbook pages, plus likely causes of wrong numbers.
 
 > **The workbook pages 17.1-17.6 follow this order.** Where an answer is a number it comes from `check_init.py`, `train.py` or `key.py`, all run from the Prep Checklist. **A student's own run uses their own seed; only the structure of the answer is fixed.**
 
@@ -1354,5 +1374,7 @@ Use these as a prompt for conversation, not a certainty.
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what the next two weeks need from today, so you know what to keep and collect.
 
 **Week 18 — Review and Assessment 2.** A paper assessment of **Weeks 9-17**: gradient compounding (Week 10), gates (Week 11), sampling (Week 13), the attention arithmetic (Weeks 14-15), the block (Week 16), and today's build. *Nothing is new.* The student will redo the 3-token attention pass on a new set of numbers. **For the student:** finish the workbook, especially 17.5 and 17.6, and re-read page 16.4's count; the assessment will ask for one. **For you:** collect the student's three samples and their gap sentence; both are good diagnostic material for Week 18's remediation table. **Week 19** reuses today's model: the same `TinyGPT`, with one part removed at a time (the mask, the positions, the residuals, the norms), and a measurement for each. The `tinygpt.py` and the `train.py` from today are its starting point, so **keep both files**. The timing from today, about 53 ms per step, is the reason that Week 19 can afford a run of several models.

@@ -20,7 +20,14 @@
 >
 > **Reading time:** about 30 minutes. **In class:** about 70 minutes. **Homework (the workbook):** about 60-70 minutes.
 
-> **📌 About the code blocks.** Type the seven blocks below into **one file, `week10.py`**, one under the other with no gap, and run the file after adding each block. Later blocks use names defined by earlier ones. The output printed under each block is what **that block** prints. Every output shown was printed by a real run on a CPU, with the seeds shown. The by-hand numbers match to every digit. The tiny and huge numbers (like `2.06e-10`) can differ in their second digit on a different PyTorch version; their sizes, and the shape of every table, will not. Blocks marked **DELIBERATE** are written on purpose to behave in a way you must notice. Nothing this week needs the internet, and nothing imports `l4lib`. There is no language model and no stand-in anywhere. The cell is a **real** PyTorch loop with **untrained** weights (seeded random numbers), and the inputs are seeded random numbers too. The only "training" all week is **one** update of the knobs, in the last block.
+> **📌 About the code blocks.**
+>
+> - Type the seven blocks below into **one file, `week10.py`**, one under the other with no gap, and run the file after adding each block. Later blocks use names defined by earlier ones.
+> - The output printed under each block is what **that block** prints. Every output shown was printed by a real run on a CPU, with the seeds shown.
+> - The by-hand numbers match to every digit. The tiny and huge numbers (like `2.06e-10`) can differ in their second digit on a different PyTorch version; their sizes, and the shape of every table, will not.
+> - Blocks marked **DELIBERATE** are written on purpose to behave in a way you must notice.
+> - Nothing this week needs the internet, and nothing imports `l4lib`. There is no language model and no stand-in anywhere.
+> - The cell is a **real** PyTorch loop with **untrained** weights (seeded random numbers), and the inputs are seeded random numbers too. The only "training" all week is **one** update of the knobs, in the last block.
 
 ---
 
@@ -28,6 +35,8 @@
 *Figure 10.0 — Week 10 is the first lesson of Term 2 on memory: why a loop forgets.*
 
 ## 🪝 Start Here
+
+This section is a guessing game to play before any code: you commit to a number, then check it on a calculator.
 
 Forty people stand in a line. The first whispers a message to the second. Each person is a little forgetful: each passes on **95%** of what they heard and loses 5%.
 
@@ -47,6 +56,8 @@ Words to keep in mind:
 ---
 
 ## 🧠 The Big Idea
+
+This section builds the week in four steps: compounding on a calculator, where the multiplication hides in a loop, a cell designed so the arithmetic is clean, and then a real cell with a longer note. Type the blocks into your file as you reach them.
 
 ### 1. Compounding: the same multiplication, again and again
 
@@ -104,8 +115,7 @@ rate 1.05
 1.05: first above 2 after 15 multiplications (2.0789)
 ```
 
-
-The two `while` loops write `value = value * rate` out in full, on purpose, so you can **see** the multiplication that `**` hides.
+The first `for` loop prints a table of powers; the `while` loops count multiplications. The two `while` loops write `value = value * rate` out in full, on purpose, so you can **see** the multiplication that `**` hides.
 
 Read the **shape**, not the table:
 
@@ -163,7 +173,6 @@ note 1 -> note 4 is three multiplications: 0.1041
 by nudging: 0.4339   by the shortcut: 0.434
 ```
 
-
 Three steps back, about a tenth of the signal is left (`0.4340 x 0.4839 x 0.4960`). Forty steps back, at a typical slope of `0.5`? Press `0.5 ^ 40` on your calculator. (It is `9.1e-13`: a millionth of a millionth.)
 
 The nudge check at the bottom agrees with the shortcut to rounding (`0.4339` against `0.4340`). Two ways to the same number: that is why we trust the shortcut.
@@ -208,7 +217,6 @@ position 21: gradient 0.3809   0.9526 ** 20 = 0.3786
 position 11: gradient 0.2348   0.9526 ** 30 = 0.2330
 position  1: gradient 0.1447   0.9526 ** 40 = 0.1434
 ```
-
 
 The measured `0.1447` and the theory's `0.1434` agree to two places. The rest is the note drifting from `0.2177` to `0.217` by position 41, and the slope drifting with it. This cell is **designed**: it is not what a trained cell looks like. It teaches the arithmetic.
 
@@ -271,12 +279,19 @@ T = 40, scale 1: gradient at position 40 = 4.0 (16 ones, length 4)
    position  1: 2.06e-10
 ```
 
+Read the five lines.
 
-Read the five lines. Position 40 is `4.0`. Position 30 is five thousandths. Position 1 is `2e-10`. That is ten orders of magnitude lost across forty steps, with no cheating this time. **Vanishing or exploding?**
+- Position 40 is `4.0`.
+- Position 30 is five thousandths.
+- Position 1 is `2e-10`.
+
+That is ten orders of magnitude lost across forty steps, with no cheating this time. **Vanishing or exploding?**
 
 ---
 
 ## 🎲 Your Turn
+
+This section is where you predict first and measure second: a grid of predictions, a check across seeds, and one update of the knobs with and without clipping.
 
 ### The Forty-Multiplications Grid
 
@@ -310,7 +325,6 @@ scale |       T=10       T=20       T=40       T=80
   x8  |   3.49e+01   2.55e+02   4.38e+03   6.92e+07
 ```
 
-
 Colour in which predictions were right. The score is not the point; the **pattern of the misses** is. Some predictions will "miss" only because of our cut-offs, which are ours, not nature's. Read the **trend** down each row and write one sentence per row on page 10.4:
 
 - scale 1: the number falls by orders of magnitude, in every row;
@@ -341,14 +355,15 @@ scale 1: position-1 gradient over seeds 0-4: ['2.1e-10', '8.4e-11', '9.8e-10', '
 scale 8: position-1 gradient over seeds 0-4: ['4.4e+03', '8.8e+04', '9.7e+05', '5.5e-07', '1.1e+05']
 ```
 
-
 At scale 1, all five are tiny, spread over five orders of magnitude. At scale 8, four are huge and **one has vanished**. So "above scale 1 means exploding" is not a law. Which seed broke the rule? What would you print to find out why?
 
 ### Force an explosion
 
-Seeing a huge signal is one thing. What happens if we **act** on one? Block 7 does one update of the knobs (`lr = 0.1`) at scale 1 and at scale 8, with and without `clip_grad_norm_` (you met clipping in Week 6). **Read the column headings before you run it**, and predict: at scale 8, what happens to the size of the weight matrix after one update, with and without clipping?
+Seeing a huge signal is one thing. What happens if we **act** on one?
 
-Words for the columns:
+Block 7 does one update of the knobs (`lr = 0.1`) at scale 1 and at scale 8, with and without `clip_grad_norm_` (you met clipping in Week 6). **Read the column headings before you run it**, and predict: at scale 8, what happens to the size of the weight matrix after one update, with and without clipping?
+
+The columns mean:
 
 - *grad size* is the length of the recurrent knobs' gradient, before and after clipping;
 - *weight size* is the length of the recurrent weight matrix, before and after the update;
@@ -391,7 +406,6 @@ scale  run    | grad size -> after clip | weight size before -> after | notes pi
   x8  clipped |  8.55e+04 ->  8.78e-01      |  17.87 ->     17.87         | 0.484 -> 0.494
 ```
 
-
 Read the two scale-8 rows aloud. The weights went from `17.87` to **`8548.25`**: one update multiplied their size by almost 500. And the notes pinned at plus or minus 1 went from about half to nearly all. With clipping, the weights stayed at `17.87`.
 
 Now the half students miss. Look at the **clipped** row. The weights were not wrecked, but about half the notes were already pinned **before** the update, and still are. Clipping did not make that cell healthy. And at scale 1, the gradient was a healthy `7.22`, which clipping (at `max_norm = 1.0`) shrank to `0.514`: it also throttled a gradient that was fine.
@@ -404,7 +418,7 @@ Finally, the question that makes the activity. Our table says the signal from po
 
 ## 🔬 Break It On Purpose
 
-Two blocks, both **DELIBERATE**. Predict what each will do before you run it.
+This section has two blocks, both **DELIBERATE**. Predict what each will do before you run it.
 
 **1. `torch.stack` with two arguments.** Run this in a scratch file:
 
@@ -449,6 +463,8 @@ Nothing crashed. So was the gradient clipped? Compare the two printed numbers wi
 
 ## 🔑 Wrap Up
 
+Use this section to say the week back in your own words and to mark the limits of what you measured.
+
 1. Say from memory, in your own words: (1) what compounding is, (2) why a loop makes it matter, (3) what clipping does and does not do.
 2. "It's only 5% per step, so it only loses 5%." What is wrong with that, and what did you press to see it?
 3. The signal from position 1 was `2e-10` at scale 1. Does that mean a *trained* recurrent net cannot remember the first word? (Think about what you measured: an untrained cell, random inputs, one toy score. Write what you can claim and what you cannot.)
@@ -471,11 +487,15 @@ Complete workbook pages 10.1 to 10.7 in order, and **write predictions before ru
 
 ## 📖 What carries into next week
 
+This section says what to bring to the next lesson.
+
 Next week asks: can a note **add** instead of multiply? Bring the grid from page 10.4. You will measure it again.
 
 ---
 
 ## 📖 Words from this week
+
+These are the terms this week uses, for quick reference.
 
 | Word | Meaning |
 |---|---|

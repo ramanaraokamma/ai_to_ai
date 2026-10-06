@@ -69,7 +69,11 @@ Read down any column from step 1: the input is the **previous** column's target.
 | `kaia` | targets | | | | | | | | |
 | | inputs | | | | | | | | |
 
-**b. Two slips to look for in your own table.** Did every name get an EOS (`1`) right after its last letter? ☐ Is the **first** input of every name `0`? ☐ Does every inputs row stop one step before the targets row would (the final target column never appears as an input)? ☐
+**b. Check your own table.** Tick each one that holds:
+
+- ☐ Every name got an EOS (`1`) right after its last letter.
+- ☐ The **first** input of every name is `0`.
+- ☐ Every inputs row stops one step before the targets row would (the final target column never appears as an input).
 
 **c. Generating is different.** A trained model is asked to write a name. At step 0 it is given START. Suppose it picks `o`, then `r`, then `a`, then EOS. Fill in **the input the model was given** at each step:
 
@@ -372,7 +376,7 @@ Write **five sentences**, in your own words, to someone who has not done this we
 
 ## 📓 Page 12.6 (continued) — The Bug Log
 
-The Bug Log is the most useful page of the course. Copy only the **last line** of a traceback, not all of it.
+This page records what went wrong this week and how you found it. The Bug Log is the most useful page of the course. Copy only the **last line** of a traceback, not all of it.
 
 **Copy this sentence in your own handwriting:**
 
@@ -410,7 +414,7 @@ ___________________________________________________________________________
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 > Real printed outputs below. By-hand numbers are exact. Loss tables and counts may differ in the last digit, or by a name or two, on another CPU or PyTorch build. These answers are for the pages in **this workbook**.
 

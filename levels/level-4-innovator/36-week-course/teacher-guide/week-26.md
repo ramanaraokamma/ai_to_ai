@@ -10,6 +10,8 @@
 
 ## 📋 At a Glance
 
+This table is the one-screen summary of the lesson: what it is, what it needs, and what it does not claim.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes in class, then the workbook (~55 min: 25 of pen and paper, 30 at the computer) |
@@ -30,6 +32,8 @@
 
 ## 🎯 Lesson Objectives
 
+These are the observable things the student should be able to do by the end of the lesson.
+
 By the end of the lesson the student can:
 
 1. **Load their notes with `Path.glob`**, say why the file list must be `sorted` (and zero-padded) or every id shifts without any error, and show that they get the same 15 chunks the library gives (`True`).
@@ -46,11 +50,17 @@ Observable evidence: the printed lines `same 15 chunks as rag.notebook_chunks():
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section is your background reading: the maths, the stand-ins, the new syntax, the numbers you will see, and the limits of what today shows. Read it before class.
+
 > **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist**, in the **🐞 Debugging Clinic** and in the **🔑 Answer Key** was run, in order, from one folder, in one Python session, on a CPU with one thread and the seeds shown; the outputs below are the real printed output. The Clinic blocks that are *deliberate mistakes* are marked and their tracebacks are real (paths are shortened to `/home/you/l4/`; the source line under each frame is the line that ran). **Timing lines (`seconds …`) vary run to run; every other number repeated exactly on a second run.** A different scikit-learn build can move the last digit of a score. The prep blocks are the **live code** of the lesson: they are typed into one file, in this order. The Answer Key blocks marked **TEACHER-ONLY** use a few constructs that are not on the ladder (`setdefault`, `random.Random`); the student never types them.
 
 ### 1. What the student is doing today, in one paragraph
 
-The student has a 15-note index (Week 25) and the idea of recall@k. Today the index gets a job. They put the notes in a folder, list the files with `Path.glob`, build the index, and **write ten questions before they search** — and then watch a stranger's version of the same ten questions drop recall@1 from `1.00` to `0.20`. They cut the same text five ways and read a table that shows the perfect-looking row (`250` words) is the useless one. They number the sources, let a scripted writer answer, and write the check that the number it names was one of the numbers they served. They break the writer three ways on purpose and watch the check catch all three (the third only because it cites nothing) and then *miss* a valid citation on a wrong answer. They sweep a refusal threshold and see that the answerable and unanswerable score lists overlap. They diagnose wrong answers as retrieval or generation by reading the chunks. Finally they plant a note that gives orders, watch the pipeline hand it back with a verified citation, and see a filter catch one wording and miss three. The honest finishing sentence: *"the system retrieves well on questions I wrote, badly on a stranger's; the check proves a citation is real, not that the answer is right; and a refusal threshold is a measured compromise for one embedder."*
+The student has a 15-note index (Week 25) and the idea of recall@k. Today the index gets a job. They put the notes in a folder, list the files with `Path.glob`, build the index, and **write ten questions before they search** — and then watch a stranger's version of the same ten questions drop recall@1 from `1.00` to `0.20`.
+
+They cut the same text five ways and read a table that shows the perfect-looking row (`250` words) is the useless one. They number the sources, let a scripted writer answer, and write the check that the number it names was one of the numbers they served. They break the writer three ways on purpose and watch the check catch all three (the third only because it cites nothing) and then *miss* a valid citation on a wrong answer.
+
+They sweep a refusal threshold and see that the answerable and unanswerable score lists overlap. They diagnose wrong answers as retrieval or generation by reading the chunks. Finally they plant a note that gives orders, watch the pipeline hand it back with a verified citation, and see a filter catch one wording and miss three. The honest finishing sentence: *"the system retrieves well on questions I wrote, badly on a stranger's; the check proves a citation is real, not that the answer is right; and a refusal threshold is a measured compromise for one embedder."*
 
 ### 2. 🔢 The maths you need — taught to you first
 
@@ -154,6 +164,8 @@ Stop at: *"chunk by the author's boundaries, measure recall on questions written
 ---
 
 ## 🧰 Prep Checklist
+
+This section gets the code and the printed sheets ready. Every block is the live code of the lesson, run in one session, in order.
 
 ### 30 minutes the night before
 
@@ -651,6 +663,8 @@ The lesson is an argument, and Pages 26.1 and 26.2 carry it on paper. If the lap
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This is the plan for the lesson, with what to say and ask at each step.
+
 | Segment | Minutes | Clock | What happens |
 |---|:--:|:--:|---|
 | 🪝 Hook — The Notebook That Answers Anything | 6 | 0:00-0:06 | A question the notes cannot answer gets a confident, cited answer. |
@@ -924,6 +938,8 @@ IndexError: list index out of range
 
 ## 🎲 The Activity, In Full
 
+This section holds the full pen-and-paper activity: setup, the printable sheet, how to run it and what finished looks like.
+
 ### Citation Court and the Threshold Strip
 
 **Purpose.** To let the student *feel* the two things the code will later hide: that a check on the number can pass a wrong answer, and that a refusal line through a list of scores always makes one of two mistakes.
@@ -1026,6 +1042,8 @@ Ask the student to write a seventh answer that the program would accept, that th
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions you are likely to hear, each with a short, honest answer.
+
 **"Why not just give the writer all fifteen notes?"** With fifteen notes you can; the chunking table's last row does nearly that (`104%`). With a thousand notes you cannot, and even now the writer gets more text to be distracted by. The point of retrieval is to pick what to send.
 
 **"What is a chunk?"** One piece of text that gets its own row in the index and comes back whole. Ours are the notes (the author's own boundaries) or windows of a fixed number of words.
@@ -1056,6 +1074,8 @@ Ask the student to write a seventh answer that the program would accept, that th
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+Use this table to match a symptom in the room to its cause and your next move.
+
 | Symptom | What is happening | What to do |
 |---|---|---|
 | The student says "it works, recall is 1.00" | Questions in the notebook's own words | Reveal the stranger set; Mistake 2 |
@@ -1073,6 +1093,8 @@ Ask the student to write a seventh answer that the program would accept, that th
 
 ## 🧭 Differentiation
 
+This section gives you three routes through the lesson, depending on how the student is doing.
+
 ### If the student is struggling
 
 Stay with three ideas: *(1) questions you write are an upper bound; (2) a citation check tests the number, not the answer; (3) a refusal line always makes a mistake of one kind or the other.* Give the completed `check_citations` and `answer_question`; the student types only `make_prompt`, runs the faults, and does Pages 26.1 and 26.2. Skip chunking except for the last row. The minimum viable lesson: the student says *"a valid citation doesn't mean the answer is right"* and *"I can't make the refusal line perfect; I choose which mistake I'd rather make."*
@@ -1088,6 +1110,8 @@ Do the hook and the two pen pages only. It is a pen lesson at heart: *"you are t
 ---
 
 ## ✅ Assessing Understanding
+
+Use these questions near the end to see what the student understood, and the scale below to record it.
 
 Ask these out loud near the end; do not rescue.
 
@@ -1115,6 +1139,8 @@ Ask these out loud near the end; do not rescue.
 
 ## 📤 Homework to Assign
 
+This section lists the take-home work and how long it should take.
+
 ~55 minutes, in the workbook, pages 26.1-26.5. The three tasks:
 
 1. **Your own notes (page 26.3).** Put the four notes from Week 25's homework into a folder with zero-padded names. Load them with `sorted(Path(...).glob(...))`. Write **six** questions *before* searching, then ask a parent or a friend to write three more without reading your notes. Report recall@1 and recall@3 for the two sets. Add one question whose answer is not in the notes and say what score it gets.
@@ -1126,6 +1152,8 @@ Extension for the fast student: a contradicting 16th note (see "If the student i
 ---
 
 ## 🔑 Answer Key
+
+This section is TEACHER-ONLY. It holds the answers to the workbook pages, the code that produced every number, and every answer to a question posed in the lesson.
 
 Every number below comes from the blocks above or from `key.py` to `key6.py` (TEACHER-ONLY; below).
 
@@ -1357,5 +1385,7 @@ note 0 shares with the question (title line is skipped by the stand-in): []
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what the next week covers and which parts of today it draws on.
 
 **Week 27 — Review and Assessment 3.** A paper on Weeks 19 to 26: an ablation to reason about, a BPE merge by hand, a scaling line, an SFT masking question, a DPO question, the eval-harness floor, a cosine by hand and a recall table to re-run with a changed chunk size. The Week 26 parts that will be examined are: the recall@k count with its denominator, the difference between "the citation is valid" and "the answer is right", and sorting a wrong answer into retrieval or generation by looking at what was served. Nothing new is taught. **Weeks 28 and 29** then put a tool loop around today's index (`search_notes`) and measure injection honestly with a scripted gullible policy.

@@ -49,6 +49,8 @@ Words to keep in mind:
 
 ## 🧠 The Big Idea
 
+This section builds the pieces the model needs: names as numbers, a loss that skips padding, and the model itself.
+
 ### 1. A name is a list of numbers, and training needs a second list
 
 The model does not read letters. It reads **ids**. In this course `0` is **PAD** (filler, so every name is the same length), `1` is **EOS** (the name has ended), and `2` is `a`, `3` is `b`, and so on. Every name is padded to 8 steps, because the longest name has 7 letters plus the EOS. So `anika` becomes `[2, 15, 10, 12, 2, 1, 0, 0]`: five letters, EOS, two padding.
@@ -244,6 +246,8 @@ The model has **25,532** numbers. Of the `1,848` positions, `1,404` are real and
 
 ## 🎲 Your Turn
 
+This section trains the model, makes it write names, and counts how many of them it was given.
+
 ### The Name Audit
 
 Three steps, in this order: **predict, measure, judge.**
@@ -323,7 +327,9 @@ One more detail. The last number, `1.001`, is the loss of the final training ste
 
 ### Generate
 
-Now the model writes. Read `make_name` against `forward` and answer out loud: **where does the input come from in `forward`? And in `make_name`?** In `forward` it is `x[:, t]`, a column that was there before we started. In `make_name` it is `tok`, which is set from `i`, the last answer: **the model's own pick**. The next input does not exist until the last answer does, so each letter must wait for the one before it (this code makes one name at a time; a program could run many names side by side, but never the steps of one name out of order). That is the difference the whole week is about.
+Now the model writes. Read `make_name` against `forward` and answer out loud: **where does the input come from in `forward`? And in `make_name`?** In `forward` it is `x[:, t]`, a column that was there before we started. In `make_name` it is `tok`, which is set from `i`, the last answer: **the model's own pick**.
+
+The next input does not exist until the last answer does, so each letter must wait for the one before it (this code makes one name at a time; a program could run many names side by side, but never the steps of one name out of order). That is the difference the whole week is about.
 
 `draw` is **given to you**; type it in, but you are not asked to explain it. It is a dice-roll: `rng.random()` gives a number between 0 and 1, and the loop adds up the model's probabilities until the total passes the roll, so a letter is picked in proportion to its probability. Next week you open it. The line `scores[PAD] = -1e9` sets the score of padding so low that it is never picked.
 
@@ -514,6 +520,8 @@ ValueError: Expected input batch_size (2079) to match target batch_size (1848).
 ---
 
 ## 🔑 Wrap Up
+
+Use these questions to check the week from memory, then read what the week left out.
 
 1. Say from memory, in your own words: (1) what goes in at each step **during training** and **during generating**, (2) what `ignore_index` is for, (3) what the gap between `0.906` and `3.417` means, and what the count `159 of 200` shows.
 2. "Teacher forcing is cheating." What is wrong with that? (Hint: what is the model graded on when it generates?)

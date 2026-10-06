@@ -32,6 +32,8 @@
 
 ## 🪝 Start Here
 
+This section gives you the idea of a soft lookup with a tiny example, before any code.
+
 Imagine three people, each holding one secret number:
 
 | Person | Their number |
@@ -52,6 +54,8 @@ Before you read on, write your guess on workbook page 14.1: *will the soft answe
 ---
 
 ## 🧠 The Big Idea
+
+This section defines the weighted average, shows it in code, and lays out the four steps of one attention pass.
 
 ### 1. The new maths: the weighted average
 
@@ -119,7 +123,7 @@ Why bother with the soft version? Because every one of those numbers can be nudg
 
 ### 3. Where the question, the label and the answer come from
 
-In the cards example someone handed us the scores. In a sentence, the words themselves must produce them. A **token** is one piece of text the model reads; today a token is one word. Each word is a row of numbers, and it is turned into three things by multiplying by three tables:
+In the people example someone handed us the scores. In a sentence, the words themselves must produce them. A **token** is one piece of text the model reads; today a token is one word. Each word is a row of numbers, and it is turned into three things by multiplying by three tables:
 
 ```text
    a word, as 2 numbers:  x = [1, 0]
@@ -145,6 +149,8 @@ In the cards example someone handed us the scores. In a sentence, the words them
 
 ## 🎲 Your Turn: The Pen Pass
 
+This section is for doing one full attention pass by hand, so that every later number has a pen answer to be checked against.
+
 **No laptop for this part.** You need a pen and a calculator. The three words and the three tables are:
 
 ```text
@@ -164,7 +170,7 @@ Then turn the sheet over and write one sentence: **which word did `sat` give the
 
 Keep your sheet. In a moment the computer will check it.
 
-> **Tip.** If a row of your weights does not add to 1, stop and look at that row before you go on. One slip in an exponent spoils every number after it. If you rounded the weights to only three places, a row may add to `0.999`; your answer may then differ from the computer's in the third decimal. That is fine. Four places avoids it.
+> **⚠️ Watch out:** If a row of your weights does not add to 1, stop and look at that row before you go on. One slip in an exponent spoils every number after it. If you rounded the weights to only three places, a row may add to `0.999`; your answer may then differ from the computer's in the third decimal. That is fine. Four places avoids it.
 
 ---
 
@@ -254,9 +260,11 @@ Note that `Q` and `K` came out equal. That is only because `Wq` and `Wk` are bot
 
 ## 🔥 The Same Pass in Torch: `attention.py`, Part 2
 
-Type this at the **bottom** of `attention.py`. Three new pieces of syntax appear.
+This section repeats the same pass in torch. Type the block below at the **bottom** of `attention.py`. Three new pieces of syntax appear, explained first.
 
-**(a) `nn.Linear(d, d, bias=False)`.** You have built `nn.Linear` layers: a layer multiplies by a table and then adds a **bias**. `bias=False` leaves out the adding, so the layer is *a table and nothing else*, exactly like `X @ Wq` on paper. The table is kept in `lin.weight`. Watch out: `nn.Linear` stores its table **the other way round** (it computes `x @ W.T`), so to make a layer that does `x @ table` we hand it the table **turned on its side**. That is the `.transpose(0, 1)` in `linear_from`. Today's tables (identity and swap) happen to be their own flips, so forgetting this would not show up today. It will matter when the tables are not like that, so build the habit now.
+**(a) `nn.Linear(d, d, bias=False)`.** You have built `nn.Linear` layers: a layer multiplies by a table and then adds a **bias**. `bias=False` leaves out the adding, so the layer is *a table and nothing else*, exactly like `X @ Wq` on paper. The table is kept in `lin.weight`. Watch out: `nn.Linear` stores its table **the other way round** (it computes `x @ W.T`), so to make a layer that does `x @ table` we hand it the table **turned on its side**. That is the `.transpose(0, 1)` in `linear_from`.
+
+Today's tables (identity and swap) happen to be their own flips, so forgetting this would not show up today. It will matter when the tables are not like that, so build the habit now.
 
 **(b) `k.transpose(-2, -1)`: swap the last two axes.** The score table is `q @ k.transpose(-2, -1)`. `q` has shape `(3, 2)`: three questions, two numbers each. To dot every question with every key we need the keys as `(2, 3)`. The pair `-2, -1` names "the last two axes", so the same words work for one sentence `(3, 2)` and for a stack of sentences `(2, 3, 2)`, leaving the stack axis alone.
 
@@ -349,6 +357,8 @@ Before running, predict the shape after `xt.unsqueeze(0)`. The last block is ste
 
 ## ✅ Do the Three Agree? `attention.py`, Part 3
 
+This section compares the pen, numpy and torch answers in code.
+
 At the bottom of `attention.py`, type the `hand` table **from your own pen sheet** (three decimals). The numbers below are what a careful pen pass gives; replace them with yours.
 
 ```python
@@ -373,6 +383,8 @@ Three ways: a pen, numpy, torch. One answer. Agreement is **to rounding**, not e
 ---
 
 ## 🔬 Why a Question *and* a Label? `twotables.py`
+
+This section is for seeing what changes when questions and labels come from two different tables, and for one general check on the weights.
 
 In our example `Wq` and `Wk` are the same table. What do you expect about "`cat` asks about `sat`" compared with "`sat` asks about `cat`"? Write a guess, then type this at the bottom of `attention.py`.
 
@@ -444,6 +456,8 @@ Each row is a softmax, so it adds to 1 and is never negative, **whatever the tab
 ---
 
 ## 🛠️ Break It On Purpose
+
+This section is for reading one shape error and fixing it.
 
 What if you forget to turn the keys on their side? **DELIBERATE:** this file is written to fail. It is a separate file, not part of `attention.py`.
 

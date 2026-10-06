@@ -23,6 +23,8 @@
 
 ## ✅ Warm-Up (5 min, before anything else)
 
+Five quick questions to settle the ideas you need before the pages start.
+
 **W1.** A model that knows nothing about **12** tokens gives each one `1/12`. Its first loss should be `ln 12` = ____________ (three decimals).
 
 **W2.** A judge who has no idea which of two answers is better says `0.5` for each. The loss `-ln 0.5` is ____________ (four decimals).
@@ -36,6 +38,8 @@
 ---
 
 ## 🎭 Page 22.1 — The Mask (needs `sftmask.py` and `pairs.py` · 15 min)
+
+This page is for practising how a prompt mask changes which guesses are scored. Predict each answer, then run `sftmask.py` and `pairs.py` to check.
 
 **A. Count the guesses.** A sequence of 9 tokens gives ____ guesses (the last token has nothing after it). The guess at place `t` is for token `t + 1`.
 
@@ -120,6 +124,8 @@ Train-pair agreement: ____ / 10 . Circle the features that **raise** the reward:
 
 ## 🪢 Page 22.3 — Leash: KL on Paper, and DPO on One Pair (25 min)
 
+This page is for computing KL and a single DPO loss by hand, so the numbers on the next page are not a black box.
+
 **Rule for every KL:** the **policy** `p` is first and the **reference** `q` is second. Natural logs (`ln`), four decimals. Write the four log-ratios first, multiply each by the policy's **own** chance, then add.
 
 ```text
@@ -177,6 +183,8 @@ The loss at `beta = 0.5` should equal the loss of a **Bradley-Terry** pair from 
 
 ## 🎛️ Page 22.4 — Two Leashes (needs `dpo.py` · 20 min)
 
+This page is for running `dpo.py` at several `beta` values and filling in the table from your own runs.
+
 The reference policy (before any training) is `A=0.168 B=0.206 C=0.375 D=0.251`. Which answer does the *reference* like best? ____ . Which answer do the six preferences say is best? ____
 
 **A. Predict.** From page 22.3 part F, write `beta = 5.0` or `beta = 0.1`: the one whose loss is satisfied **sooner** is ______ . So after the same 300 steps, the one that moved **less** is ______ .
@@ -205,6 +213,8 @@ The reference policy (before any training) is `A=0.168 B=0.206 C=0.375 D=0.251`.
 ---
 
 ## 🕳️ Page 22.5 — Hack: What the Judge Cannot See (needs `reward.py`, then `hack.py` · 15 min)
+
+This page is for working out, by hand and then with `hack.py`, what the trained reward model does and does not score.
 
 **A. From `reward.py`.** `r9` is `[1, 0, 0, 0, 0]`: numbered steps and **nothing else**: it answers nothing. Its reward: ____________ . `r2` (short and direct) has ____________ . Does `r9` beat `r2`? Y / N . Which **weight** does the hacked answer use? ____________
 
@@ -333,6 +343,8 @@ print("the characters it is scored on:", "".join(kept).replace("\n", "\\n"))
 
 ## 📓 Page 22.8 — The Bug Log
 
+This page is for recording what went wrong today and the habit that would catch it next time.
+
 Every entry needs a line from a **real** run of yours this week.
 
 **Entry 1: a prediction I got wrong.** *"I predicted ______________, and the run printed ______________, because ____________________."*
@@ -365,6 +377,8 @@ _______________________________________________________________________________
 
 ## 🧠 Self-Check (from memory, no notes)
 
+Six questions to answer without looking back at the pages.
+
 1. The guess at place `t` is for token ____ . With a prompt of 5 tokens, the first ____ rows are set to ____ .
 2. The Bradley-Terry loss is `-F.logsigmoid(` ____ `)` . At the start it is ____ .
 3. `KL(p || q)` is ____ when `p = q`, and it is / is not (circle) the same as `KL(q || p)`.
@@ -374,7 +388,7 @@ _______________________________________________________________________________
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 > Real printed outputs below. By-hand numbers are exact to the digits shown; where you carried fewer decimals, anything within `0.002` is fine. These answers are for the pages in **this workbook**.
 
@@ -384,7 +398,7 @@ _______________________________________________________________________________
 
 ### Page 22.1
 
-**A.** **8**. **B.** 
+**A.** **8**. **B.**
 
 | `L` | Rows set to `-100` | Count |
 |:--:|:--:|:--:|

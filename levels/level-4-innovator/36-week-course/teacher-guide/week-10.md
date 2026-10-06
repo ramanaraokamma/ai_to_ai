@@ -43,6 +43,8 @@ Observable evidence: the filled grid on workbook page 10.4, the with/without tab
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section is your background reading: the maths, what is real and what is not, the new code, and the numbers you should expect to see. Read it before class.
+
 > **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist** (the seven student blocks, the teacher-only blocks `T1`, `T2` and `K1`) and in the **🐞 Debugging Clinic** was run, in order, in **one shared session** on a CPU with one thread and the seeds shown. The seven student blocks are the pieces of **one file, `week10.py`**, pasted one under the other with no gap: each later block uses names defined by an earlier one. The Clinic blocks are *deliberate mistakes*, each marked, each run in a copy of that session; their tracebacks are real. **Timing lines vary run to run; every other number repeated exactly on a second full run on the same machine.** A different CPU or PyTorch build can move the last digit, and for a quantity like `2.06e-10` the *second* digit; the orders of magnitude and the shape of every table do not move. Tracebacks show `/home/you/l4/...` for the path, and the long middle of a torch traceback is replaced by `... frames inside torch (elided) ...`; **the last line is always the real, complete last line.** The *line numbers* in a traceback depend on exactly how the blocks were pasted; the last line does not.
 
 ### 1. What the student is doing today, in one paragraph
@@ -104,7 +106,14 @@ h = torch.tanh(W_ih @ x[t] + W_hh @ h + b)
 h.retain_grad()                       # ask PyTorch to keep h's gradient after backward()
 ```
 
-Read as: *"`h` was made from other things, so it is an in-between value. PyTorch normally throws away the gradient of in-between values to save memory and keeps only the knobs'. This line says: keep this one."* After `backward()`, `h.grad` is the slope of the final number with respect to that `h`: **how much the end cares about this note**. Two rules, each with a Clinic entry: (i) it only works on a value PyTorch is *tracking*; if the weights were copied with `.data` (the Week 8 habit) there is nothing to track and it raises an error (Clinic 1); (ii) it must be called **before** `backward()`, and if it is left out `h.grad` is `None` with a warning that explains why (Clinic 2).
+Read as: *"`h` was made from other things, so it is an in-between value. PyTorch normally throws away the gradient of in-between values to save memory and keeps only the knobs'. This line says: keep this one."*
+
+After `backward()`, `h.grad` is the slope of the final number with respect to that `h`: **how much the end cares about this note**.
+
+Two rules, each with a Clinic entry:
+
+1. It only works on a value PyTorch is *tracking*. If the weights were copied with `.data` (the Week 8 habit) there is nothing to track and it raises an error (Clinic 1).
+2. It must be called **before** `backward()`. If it is left out, `h.grad` is `None` with a warning that explains why (Clinic 2).
 
 **(b) `torch.stack(list_of_tensors)` — join a list into one new tensor.**
 
@@ -191,6 +200,8 @@ Stop at: *"going back through a loop, the error is multiplied by one slope per s
 ---
 
 ## 🧰 Prep Checklist
+
+This section is for setting up: the environment check, the student's file with its seven blocks, and the teacher-only checks. Work through it the night before.
 
 ### 25 minutes the night before
 
@@ -605,6 +616,8 @@ extras used in the guide
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the running order of the lesson, with what to say, ask and watch for in each segment.
+
 | Segment | Minutes | What happens |
 |---|:--:|---|
 | 🪝 Hook | 8 | The Forty-Person Telephone: guess, then compound it on the calculator |
@@ -844,6 +857,8 @@ positions 2..5     : [0.0, 0.0, 0.0, 0.0]
 
 ## 🎲 The Activity, In Full
 
+This section gives the full setup, rules and expected results for the grid activity, so you can run and check it without the student guide.
+
 ### The Forty-Multiplications Grid
 
 **What it is:** a prediction grid and a measurement grid, filled one after the other on workbook page 10.4, plus the with-and-without table on page 10.5. It is the whole experiment in two printed tables.
@@ -893,6 +908,8 @@ Fill in the V/L/E letters for **scale 1 and scale 8 only** (the obvious rows); t
 
 ## ❓ Questions Students Ask This Week
 
+This section collects the questions you are likely to meet, each with an answer that stays within what today measured.
+
 **"Why `0.9526`? It looks random."** It is. We *chose* a cell that sits still at the note `0.2177`, where the slope is `1 - 0.2177 squared = 0.9526`. It is a designed example so that one slope repeats; the real cell has a different slope at every step.
 
 **"Why is the gradient at the last position `4.0`, not `1`?"** The "loss" is the sum of the 16 numbers of the last note. Each has slope 1 with respect to itself, so the gradient is a list of sixteen `1`s, whose length is `sqrt(16) = 4`. It is a check that the setup is right, not a result.
@@ -921,6 +938,8 @@ Fill in the V/L/E letters for **scale 1 and scale 8 only** (the obvious rows); t
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the usual failures in this lesson and the quickest way back from each.
+
 1. **The student writes "RNNs forget" or "RNNs cannot remember".** Today measured a random cell's gradient. Ask: *"What did we measure, a trained cell or a random one?"*
 2. **A predicted V/L/E is "wrong" only because of our cut-offs.** The `T = 10, x1` cell and the whole scale-4 row are the usual ones. Do not argue the cut-off; point at the trend.
 3. **The exponent is dropped.** `2.06e-10` copied as `2.06`. Say it in words: *"two point oh six times ten to the minus ten: how many zeros after the point?"*
@@ -934,6 +953,8 @@ Fill in the V/L/E letters for **scale 1 and scale 8 only** (the obvious rows); t
 ---
 
 ## 🧭 Differentiation
+
+This section adjusts the lesson for a struggling, a fast or a disengaged student.
 
 ### If the student is struggling
 
@@ -994,6 +1015,8 @@ Estimated time: 60-70 minutes.
 ---
 
 ## 🔑 Answer Key
+
+This section is for checking the workbook; it is teacher-only.
 
 > **The workbook pages 10.1-10.6 follow this order.** Where an answer is a number it comes from `key.py` (block `K1`), blocks 1-7 of `week10.py`, or the grid above. All were run in the Prep Checklist.
 
@@ -1112,6 +1135,8 @@ A write-up that says "RNNs can't remember long sequences" loses the last two mar
 ---
 
 ## 🔮 Next Week Preview
+
+This section shows how next week builds on today, so you know what to carry over.
 
 **Week 11 — Gates: Memory That Adds Instead of Multiplies** (🟦 teach). Today's cure for the *huge* side was a seatbelt; the *tiny* side needs a different design. An LSTM updates its memory by **adding**, so the slope back through it is the **forget gate**: a gate near 1 is Week 6's residual highway, written as a loop. The student codes an LSTM cell from scratch, checks it against `nn.LSTMCell`, compares RNN, GRU and LSTM over three seeds, and runs the forget-bias 0 against 2 probe. No new maths idea. Three new constructs: `nn.LSTMCell`, `nn.LSTM` / `nn.GRU`, and in-place `fill_()` on a bias slice.
 

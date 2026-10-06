@@ -98,6 +98,8 @@ Two raters, **H** (strict) and **J** (lenient), each say *pass* or *fail* to the
 
 ## 1. The three new pieces of syntax
 
+This section names the three new constructs before the code uses them.
+
 **`cohen_kappa_score(y1, y2)`.** From `sklearn.metrics`. It takes two lists of labels of the same length, one per rater, in the same item order, and returns kappa. Here the lists hold `1` (pass) and `0` (fail). It does the arithmetic above. You type it only **after** you have done the hand calculation, as a check.
 
 **Set intersection `A & B` and union `A | B`.** You met sets in Week 26 (checking that cited ids were a subset of served ids). A set holds each item once and forgets order: `set(["a", "b", "a"])` is `{"a", "b"}`. `A & B` is the items in **both**. `A | B` is the items in **either**. Then
@@ -106,7 +108,7 @@ Two raters, **H** (strict) and **J** (lenient), each say *pass* or *fail* to the
 Jaccard overlap  =  len(A & B) / len(A | B)
 ```
 
-is "words shared, divided by different words in either". Identical tickets score `1.0`; tickets with no word in common score `0.0`.
+is "words shared, divided by all the different words in either". Identical tickets score `1.0`; tickets with no word in common score `0.0`.
 
 **`rng.choice([...])`.** On a `random.Random(seed)` (Week 24): it picks one item of a list, reproducibly. You will see it inside the sealed file, breaking a tie. Its sibling on the same object, `rng.random()` (a float from 0 up to but not including 1), is "another method on the same generator"; you will see that too.
 
@@ -116,9 +118,18 @@ Everything else today is old: `hashlib.md5` and `.hexdigest()` (Week 21), `re.fi
 
 ## 2. Freeze the test first
 
+This section builds the test set and locks it with a fingerprint, before anything else exists.
+
 Type this file **before** anything else is built. Type the first eight tickets and the freeze lines at the bottom yourself; paste the other twenty-two. Typing them adds nothing.
 
-The freeze is the last part of the file. Here is how to fill it in. First leave `FROZEN = ""` and the last two lines out, run `print(fingerprint(EVAL))`, copy the 32 characters it prints, paste them into `FROZEN`, and then add the two `assert`s. After that, the file checks itself every time it is imported.
+The freeze is the last part of the file. To fill it in:
+
+1. Leave `FROZEN = ""` and the last two lines out.
+2. Run `print(fingerprint(EVAL))` and copy the 32 characters it prints.
+3. Paste them into `FROZEN`.
+4. Add the two `assert`s.
+
+After that, the file checks itself every time it is imported.
 
 ```python
 # evalset.py - the FROZEN eval set. Written 2026-09-01, before any training. Do not edit.
@@ -251,9 +262,7 @@ TRAIN_RAW = [
 ]
 ```
 
-Now the first run. It counts the data, checks the fingerprint, and runs a contamination scan that you have not read yet (it lives in `dedup.py`, section 5). Save `dedup.py` (below) first.
-
-Here is `dedup.py`. Type it, with the explanation of `&` and `|` from section 1 fresh in your mind.
+The first run counts the data, checks the fingerprint, and runs a contamination scan from `dedup.py` (section 5 looks at the scan itself). Save `dedup.py` first. Type it, using the explanation of `&` and `|` from section 1.
 
 ```python
 # dedup.py - run this BEFORE training, every single time.
@@ -288,7 +297,11 @@ def decontaminate(train, evalset, threshold=0.70, verbose=True):
     return clean, removed
 ```
 
-`words(s)` lower-cases the ticket, keeps letters and digits, and makes a **set**. One quirk: `"doesn't"` becomes two words, `doesn` and `t`, because the apostrophe is not a letter. `jaccard(a, b)` is the formula from section 1, with a guard: if both tickets have no words at all, `A | B` is empty and dividing by its length would crash, so it returns `0.0`. `decontaminate` compares every training ticket against every eval ticket, keeps the biggest overlap, and **removes** the training ticket if that overlap is at least `threshold`.
+The three functions:
+
+- `words(s)` lower-cases the ticket, keeps letters and digits, and makes a **set**. One quirk: `"doesn't"` becomes two words, `doesn` and `t`, because the apostrophe is not a letter.
+- `jaccard(a, b)` is the formula from section 1, with a guard: if both tickets have no words at all, `A | B` is empty and dividing by its length would crash, so it returns `0.0`.
+- `decontaminate` compares every training ticket against every eval ticket, keeps the biggest overlap, and **removes** the training ticket if that overlap is at least `threshold`.
 
 Before you run the next block, write on a card: *which category can we say the least about?* Then run it.
 
@@ -327,7 +340,9 @@ The fingerprint printed is the one in `FROZEN`, so `True`. The scan found two ti
 
 ## 3. Three rungs, scored on the same thirty
 
-Two files are handed over: `scorer.py` (exact match after tidying the answer, with a per-category breakdown) and `baselines.py` (three cheap systems). Read them. Notice three things:
+This section scores three cheap systems against the frozen test set, so a fancier system has something to beat.
+
+Two files are handed over: `scorer.py` (exact match after tidying the answer, with a per-category breakdown) and `baselines.py` (three cheap systems). Read them. Three things to note:
 
 - `score(preds, name)` returns a **dict** with `overall`, `correct`, `n`, `per_category` and `wrong`. Week 31 reads exactly these keys.
 - The floor, `majority_predict`, answers with the commonest training label.
@@ -457,9 +472,11 @@ best possible constant answer on this eval: 7/30 = 0.233
     x charts stopped rendering yesterday afternoon       gold=technical     pred=greeting
 ```
 
-Did your order survive? The trained one has to be compared with the *rules*, not with the floor. Read the rules' five misses aloud. `"hi"` is a greeting key, and `"hi"` sits inside `something`, `nothing` and `everything`, and `afternoon` is itself a greeting key, so the greeting rule grabs three technical and one refund ticket before their own rules get a turn. (A key matched inside a longer word is a classic bug of keyword rules.)
+Did your order survive? The trained one has to be compared with the *rules*, not with the floor.
 
-Now the table that tells the truth: the average, then **every category**. `compare.py` is handed over; read the table it prints.
+Read the rules' five misses aloud. `"hi"` is a greeting key, and `"hi"` sits inside `something`, `nothing` and `everything`. `afternoon` is itself a greeting key. So the greeting rule grabs three technical and one refund ticket before their own rules get a turn. (A key matched inside a longer word is a classic bug of keyword rules.)
+
+Next is the table that tells the truth: the average, then **every category**. `compare.py` is handed over; read the table it prints.
 
 ```python
 # compare.py - the table that tells the truth: an average, then every category.
@@ -540,7 +557,7 @@ Ask the table two questions. Where does the gap come from? (Look at `out_of_scop
 
 ## 4. Overlap, by hand
 
-Two tickets, as sets, with `&` and `|` doing the work.
+This section works the Jaccard formula by hand on one pair of tickets, with `&` and `|` doing the work. Run the block and compare each printed line with the formula.
 
 ```python
 # p3_jaccard.py - Week 30: Jaccard overlap, worked on the near-copy the scan found.
@@ -573,12 +590,13 @@ two tickets about the same thing, worded apart: 0.000
 
 ## 5. What the scan protected, and what it cannot see
 
-Here is the experiment. Train the same classifier three ways and score each on the same 30 tickets:
+This section tests the contamination scan against copies and paraphrases. Here is the experiment: train the same classifier three ways and score each on the same 30 tickets.
 
 1. the 64 tickets the scan kept
 2. all 66, with the two copies left in
 3. the 64 plus five **paraphrases** of eval tickets (same question, new words)
 
+Run this block.
 ```python
 # p4_leak.py - Week 30: score the same classifier with and without the scan, then with five paraphrases the scan misses.
 SNEAKY = [
@@ -611,15 +629,31 @@ paraphrases the scan caught: 0
   highest Jaccard against any eval ticket: 0.077   you debited my account two times earlier this 
 ```
 
-Read it slowly. Leaving the exact copy in was worth one ticket (`22` against `21`). Five paraphrases were worth two more (`23`). The scan caught **none** of the five, because their highest overlap with any eval ticket is tiny. So is `23` better than `21`? No. It measures memory of the paraphrases. **A scan with a threshold is a dial**: set it lower and it removes harmless tickets too; set it at `0.95` and it leaves the near-copy in.
+Read it slowly.
+
+- Leaving the exact copy in was worth one ticket (`22` against `21`).
+- Five paraphrases were worth two more (`23`).
+- The scan caught **none** of the five, because their highest overlap with any eval ticket is tiny.
+
+So is `23` better than `21`? No. It measures memory of the paraphrases. **A scan with a threshold is a dial**: set it lower and it removes harmless tickets too; set it at `0.95` and it leaves the near-copy in.
 
 ---
 
 ## 6. Replies, a rubric and two raters
 
-Before this section, do **Page 30.2 (Agreement on Paper)** from the "Your Turn" section below. Twenty ratings, tallied by hand into the grid. Then come back and check your arithmetic against the code.
+This section builds a rubric that scores replies, then computes kappa for two raters of those replies.
 
-Thirty tickets each have two candidate replies, from an old bot (`v1`) and a new bot (`v2`). **A script built the replies from fixed templates; no model wrote them.** A **rubric** gives each reply up to three points: it is short (25 words or fewer), it names the right route, and it makes no promise. The rubric is a short function, so it can act as an answer key.
+Before you start, do **Page 30.2 (Agreement on Paper)** from the "Your Turn" section below. Tally twenty ratings by hand into the grid, then come back and check your arithmetic against the code.
+
+Thirty tickets each have two candidate replies, from an old bot (`v1`) and a new bot (`v2`). **A script built the replies from fixed templates; no model wrote them.**
+
+A **rubric** gives each reply up to three points, one for each check:
+
+1. It is short (25 words or fewer).
+2. It names the right route.
+3. It makes no promise.
+
+The rubric is a short function, so it can act as an answer key.
 
 ```python
 # replies.py - canned replies for the 30 eval tickets, and a rubric a program can apply. NOT written by a model.
@@ -683,7 +717,9 @@ ticket: 'hiya' (gold greeting)
 rubric says: v1 better in 10 pairs, v2 better in 20 pairs, tied in 0
 ```
 
-Now the two raters. **H** passes a reply only with 3 of 3. **J** passes at 2 of 3. Both are programs, not models of language. First the table and the tally, then the arithmetic by hand, and only then the library.
+Now the two raters. **H** passes a reply only with 3 of 3. **J** passes at 2 of 3. Both are programs, not models of language.
+
+The block prints the table and the tally, then does the arithmetic by hand, and only then calls the library.
 
 ```python
 # p6_kappa.py - Week 30: Cohen's kappa, by hand first and then with the library.
@@ -742,7 +778,7 @@ kappa = (0.6500 - 0.4400) / (1 - 0.4400) = 0.3750
 library says: 0.375
 ```
 
-Compare with your Page 30.2. Then the lopsided case:
+Compare with your Page 30.2. The next block runs a lopsided case.
 
 ```python
 # p7_constant.py - Week 30: a judge that never looks, on a lopsided set.
@@ -766,6 +802,8 @@ Ninety percent agreement, kappa zero. Ask the direction question of the lenient 
 ---
 
 ## 7. The sealed judge: ask everything twice
+
+This section asks a pairwise judge every question twice, in both orders, and counts what changes.
 
 `mystery.py` holds a **pairwise judge** with a flaw planted in it. Do not open it. The judge is told the ticket's label and two replies, `A` and `B`, and answers `"A"` or `"B"`. We cannot see inside, but we can ask each question **twice**, once with `v1` shown first and once with `v2` shown first. An honest judge gives the same *winner* both times.
 
@@ -824,7 +862,9 @@ the rubric says v1 is better in 10 of 30 = 0.333
 estimate of the planted bias (the flip rate): 0.267
 ```
 
-Read it against the rubric's own count from section 6 (`v1` better in 10 of 30). The single-order run says `v1` wins `16` of `30`. That is wrong, and it is wrong in a particular direction. The consistent pairs, where swapping changed nothing, say `v1` wins `0.364`, close to the rubric's `0.333`. And the flip rate is an estimate of how strong the planted habit is.
+Read it against the rubric's own count from section 6 (`v1` better in 10 of 30). The single-order run says `v1` wins `16` of `30`. That is wrong, and it is wrong in a particular direction.
+
+The consistent pairs, where swapping changed nothing, say `v1` wins `0.364`, close to the rubric's `0.333`. The flip rate is an estimate of how strong the planted habit is.
 
 **One run is one draw.** Repeat the whole test with twenty different seeds, then open the sealed file.
 
@@ -1008,7 +1048,9 @@ Traceback (most recent call last):
 AssertionError: the frozen eval set was edited
 ```
 
-Adding one `!` changed the whole 32-character fingerprint. The assertion carries the message we wrote. The same assertion sits at the bottom of `evalset.py`, so **importing the file is enough to trip it**: nobody can score against an edited test without seeing the message. If the wording really was unfair, add a *new* ticket to a *new* file and leave the old one failing with a note. *A frozen set you can edit is a set you will edit.*
+Adding one `!` changed the whole 32-character fingerprint. The assertion carries the message we wrote. The same assertion sits at the bottom of `evalset.py`, so **importing the file is enough to trip it**: nobody can score against an edited test without seeing the message.
+
+If the wording really was unfair, add a *new* ticket to a *new* file and leave the old one failing with a note. *A frozen set you can edit is a set you will edit.*
 
 **Experiment 2: a test that cannot fail.** Now the bias test again, but with a brand-new `random.Random(0)` made inside the loop, for every single call.
 
@@ -1040,7 +1082,10 @@ Nothing crashes, and the result looks like a clean bill of health. Explain to yo
 
 ## 🧭 What was shown, and what was not
 
+This section is the recap: it lists what the week showed, and what it did not.
+
 **Shown:**
+
 - A test written first and fingerprinted catches a one-character edit.
 - The free rules beat a trained classifier on this test (`25/30` against `21/30`), and nearly all the gap was one category (`out_of_scope`, `1.000` to `0.200`). An average alone would not have said so.
 - The scan removed an exact copy and a near-copy (Jaccard `1.000` and `0.778`) and could not see five rewordings (highest overlap `0.200`), which were still worth two tickets to the score.
@@ -1048,6 +1093,7 @@ Nothing crashes, and the result looks like a clean bill of health. Explain to yo
 - Asking a pairwise judge every question in both orders found `8` flips in `30`, and the single-order run gave the wrong winner. Twenty seeds gave estimates from `0.27` to `0.70`.
 
 **Not shown:**
+
 - **Any language model, and any real judge.** The flip rate is a fact about the number `0.5` typed into `mystery.py`. The true sentence about real judges is: *people who test them report position effects, and the swap test is how; I have not measured one in this course.*
 - That the free rules are a *clean* baseline. The course author wrote them with the test tickets in view, so `0.833` is generous for "free rules on tickets nobody has seen". Homework 1 measures that.
 - That swapping finds every flaw. A judge that is **consistently wrong** (always prefers the longer reply, in both orders) never flips, and passes the swap test. The companion check is kappa against labels you trust.
@@ -1058,6 +1104,8 @@ Nothing crashes, and the result looks like a clean bill of health. Explain to yo
 ---
 
 ## 🔑 Wrap Up
+
+Use these questions to check the week against your own notes and your card from Start Here.
 
 1. Turn to your card. Answer the three questions about "90 percent" for the system you built today.
 2. Why does the fingerprint not *stop* an edit, and why is it still worth having?
@@ -1077,7 +1125,9 @@ Then write this sentence in your Bug Log in your own handwriting:
 
 ## 📤 Homework
 
-Complete workbook pages 30.1 to 30.3 (about 55 minutes: 25 of pen and paper, 30 at the computer). Write your **predictions before you run anything.** Every number you write must have come from your own run. Stay inside the stand-ins and your own folder.
+Complete workbook pages 30.1 to 30.3 (about 55 minutes: 25 of pen and paper, 30 at the computer). Write your **predictions before you run anything.** Every number you write must have come from your own run.
+
+Stay inside the stand-ins and your own folder.
 
 1. **A second set (page 30.1).** Write **ten** new support tickets, two per category, in your own words, *without* looking at `RULES` while you write. Save them in a new file `second_set.py` with its own fingerprint (do not touch `evalset.py`). Score the free rules on them, run the scan against the frozen eval, and compare with `25/30`. Write two sentences: what the gap says, and why ten tickets is a small set.
 2. **A lenient, a middle and a strict judge (page 30.2).** Rater `J` passes a reply at a score of 1, 2 or 3 (out of 3). For each, work out the agreement with `H` and the kappa (by hand for the 2 case; `cohen_kappa_score` for the others), and say which cases are degenerate and why.

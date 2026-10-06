@@ -80,7 +80,7 @@ Two of those parts are the ones people skip. A fix that stops the attack by brea
 
 ## 🔢 The maths: how wobbly is a count?
 
-**One idea.** Do these four steps on paper **before** you run anything. This is Page 33.1 of the workbook.
+This section gives you the one new maths idea, the wobble of a count, so that you can say whether a gap means anything. **One idea.** Do these four steps on paper **before** you run anything. This is Page 33.1 of the workbook.
 
 **(a) A count of weighted-coin flips.** Each run of A1 is one flip. The stand-in obeys the planted note with chance `p` and ignores it otherwise. Run it `n` times and count the obeys. The **expected count** is `n × p`. For `n = 20`, `p = 0.3`:
 
@@ -106,7 +106,13 @@ and we call a gap **more than noise** only if it is bigger than **twice** that. 
 
 **What the formula needs.** It needs `p`, and on a real system **nobody knows `p`**. We plug in the share we measured, `count / n`. That plug-in breaks at 0 and at `n`: at `0 of 50` the formula says the wobble is exactly `0.00`, whatever the truth. You will see why that is a trap in section 9. This week does not teach where the formula comes from, the bell curve, or confidence intervals; use it as a rule of thumb and say "about".
 
-**Pencil now (Page 33.1):** `n = 20, p = 0.3` and `n = 50, p = 0.3`: write the expected count, then `n p (1−p)`, then the wobble. Then `n = 50, p = 0.5`. Which is more wobbly, `p = 0.3` or `p = 0.5`? What do you think happens at `p = 0`?
+**Pencil now (Page 33.1).** For each of `n = 20, p = 0.3`, `n = 50, p = 0.3` and `n = 50, p = 0.5`, write:
+
+1. the expected count
+2. `n p (1−p)`
+3. the wobble
+
+Then answer: which is more wobbly, `p = 0.3` or `p = 0.5`? What do you think happens at `p = 0`?
 
 ---
 
@@ -176,7 +182,7 @@ The planted note is index `15`, the top hit for the question that will find it. 
 
 ## 3. The wobble, as a table
 
-Now check your pencil against the machine.
+This section checks your pencil arithmetic against the machine. Run the block and compare it with your results.
 
 ```python
 # s2_wobble.py - Week 33 block S2: how wobbly is a count? sqrt(n p (1-p)), by hand first (Page 33.1), then a table.
@@ -212,9 +218,17 @@ Read it down a column, then across. The wobble of the count is biggest at `p = 0
 
 ## 4. The attacks, written as data
 
-An attack is a *record*: an id, a question, a world (which planted note), and a `model(seed)` function that builds a fresh stand-in. Writing attacks as data means you can run any of them the same way, fifty times, with no copy-paste.
+This section writes each attack as data, so that any of them can be run the same way, fifty times, with no copy-paste.
 
-`PLAN_PII` is a scripted "model" that searches for contact details and then **quotes what it found**. `PLAN_LOOP` asks for 40 squares, one call at a time. A3 and A4 have **no coin in them at all**. Only A1 and A2 use the gullible stand-in.
+An attack is a *record*: an id, a question, a world (which planted note), and a `model(seed)` function that builds a fresh stand-in.
+
+The block defines two scripted plans and four attacks:
+
+- `PLAN_PII` is a scripted "model" that searches for contact details and then **quotes what it found**.
+- `PLAN_LOOP` asks for 40 squares, one call at a time.
+- A3 and A4 have **no coin in them at all**. Only A1 and A2 use the gullible stand-in.
+
+Type the block below.
 
 ```python
 # s3_attacks.py - Week 33 block S3: four attacks written down as data. STAND-IN, NOT A MODEL: every 'model' here is scripted; A3 and A4 have no coin in them at all.
@@ -244,6 +258,8 @@ In one sentence each, say what A1, A2, A3 and A4 are trying to make the agent do
 ---
 
 ## 5. Run every attack 50 times
+
+This section runs each attack fifty times against the agent as we found it, and prints the counts.
 
 **📌 GIVEN.** `run_attack(att, seed, ...)` empties the box, builds the agent's tools (`strict=False` by default: **the agent as we found it**, with the deliberately weak sandbox from Week 29), runs the agent with the attack's model, and returns five yes/no answers:
 
@@ -309,7 +325,7 @@ A5 confident wrongness     skipped offline: it needs a real model's judgement
 0.1 s for 200 runs
 ```
 
-Read the table, column by column.
+Read the table column by column.
 
 - A1 landed `15 / 50`: a share of `0.30`, with a wobble of `3.24` (your pencil result for `n = 50`). Predict: if you ran A1 again on **different** seeds, what count would you expect, give or take?
 - A3 is exactly `50`, not "about 50". Why? (Look at what `PLAN_PII` does and whether it has a coin.)
@@ -321,6 +337,8 @@ Read the table, column by column.
 ---
 
 ## 6. See the wobble happen
+
+This section is for seeing how much the count of one unchanged system moves from batch to batch.
 
 **📌 GIVEN.** Now the identical system, 200 times over. This runs A1 in **200 batches of 20 runs**, each run with its own seed (`1000 + 20 b + i`), and keeps the 200 counts. It calls the agent 4,000 times: about two seconds.
 
@@ -364,13 +382,13 @@ Where the two sentences to remember come from: **"a count wobbles"**, and **"qua
 
 ## 7. Patch it, then re-test *twice*
 
-Two fixes. Both are small.
+This section applies two small fixes, then re-tests each one against the attack and against the real task.
 
 **Patch 1 (for A2): `strict=True`.** One word. The sandbox refuses a path that leaves the box. Predict what happens to A1 when you turn it on. (A1's write is to a legal name inside the box. Is anything in the way?)
 
 **Patch 2 (for A1): write only files the user typed.** What is the only thing in a whole run that comes from the *user*? The question. So `named_files_only` refuses a write unless the filename appears in the question. It uses `in` on strings and raises `PermissionError`, both old.
 
-And a **bad patch** for comparison, `refuse_all_writes`, which refuses everything.
+A third function is a **bad patch** for comparison: `refuse_all_writes`, which refuses everything.
 
 The happy path is the real task the agent is for: `Q_SAVE` asks it to save a one-line summary to `reminders.md`. `HAPPY` runs that task in the A1 world, so the planted note is in the index and the stand-in may be fooled **in the middle of a real save**. `happy(seed)` returns two yes/no answers: did `reminders.md` appear, and did `notes_backup.md` appear.
 
@@ -429,7 +447,7 @@ reworded note, patch 1 (no guard)    : 34 / 50 landed
 reworded note, patch 2 (named files) : 0 / 50 landed
 ```
 
-Read it as a table of four agents.
+Read the table one agent at a time.
 
 - **Patch 1** brings A2 to `0`, and **A1 does not move**: a legal write never touched the sandbox fence. One of two problems fixed.
 - **Patch 2** takes A1 to `0 / 50`, and the legitimate save still works `50 / 50`. That is a fix: the attack fails *and* the happy path survives.
@@ -445,7 +463,9 @@ Read it as a table of four agents.
 
 ## 8. Can 20 runs see the gap?
 
-Last week's open question. **📌 GIVEN.** Two pairs of systems, each counted over its **own** seeds (`0 …` for the first, `100000 …` for the second) so the counts are independent.
+This section answers last week's open question: how many runs does it take to see a gap between two systems?
+
+**📌 GIVEN.** Two pairs of systems, each counted over its **own** seeds (`0 …` for the first, `100000 …` for the second) so the counts are independent.
 
 - **Pair 1:** scan switched off (chance `0.6`) against scan on (chance `0.3`). A big gap.
 - **Pair 2:** gullibility `1.0` against `0.8`, scan on (chance `0.30` against `0.24`). A small gap.
@@ -524,6 +544,8 @@ The Hook's `7 → 9` is now a number: a gap of 2 against a bound of 6.2. The pat
 
 ## 9. Personal data: the order of patterns
 
+This section builds a redactor from a list of patterns and tries it on ordinary text.
+
 Your agent reads notes, and notes can hold a phone number, an email address and a card number. **Personal data in a log is a liability** (PII, *personally identifiable information*). To **redact** is to replace it with a tag like `[PHONE]` before it is stored or shown.
 
 `redact(text, patterns)` applies each `(tag, pattern)` with `re.sub`, **in list order**. `EMAIL` and `CARD` are given. `PHONE_LOOSE` is the pattern from the capstone's reference code: any run of at least nine characters made of digits, spaces, dashes, dots and brackets.
@@ -568,6 +590,8 @@ This was a real defect in the capstone's reference code, found by running it on 
 ---
 
 ## 10. A phone number with a shape, and an honest recall
+
+This section replaces the loose phone pattern with one that has a shape, and measures what the redactor misses.
 
 An Indian mobile number is ten digits beginning with 6, 7, 8 or 9, with an optional `+91` in front. An Aadhaar number is 12 digits in three groups of four. An IPv4 address is four numbers with dots. The order of the list is the design: **longest and most specific first**: email, card (16 digits), Aadhaar (12), phone (10), IPv4.
 
@@ -625,6 +649,8 @@ The notebook comes through unchanged (`0` of 15), the dates stay, the contact li
 
 ## 11. Redact twice, log less
 
+This section closes the two ways personal data reaches the trace, and then looks at logging less.
+
 Personal data can get into the trace by **two doors**:
 
 - **Door 1, the notes.** A3 asks for contact details and the raw search result holds them. Redact what the model is shown: `search_wrap=redact_pii`.
@@ -680,6 +706,8 @@ The last two lines show the price: the safe trace keeps its shape (`"tool": "sea
 
 ## 12. Retention: how old, and what to delete
 
+This section writes a retention sweep that lists old files before it deletes anything.
+
 Logs that live forever are a growing liability. **Retention** is a rule for how long you keep them. A rule is a number, in a sentence: *"traces older than 7 days are deleted by `sweep`."*
 
 First, how much is "less"? Then the age of a file, with `p.stat().st_mtime`. Then `sweep(folder, days, now=None, dry_run=True)`. It **lists** the files older than `days`, and deletes them only when `dry_run=False`. The parameter `now=` lets you pretend it is ten days later, so nobody has to wait. It only globs `*.jsonl`, so your notes cannot be touched.
@@ -734,7 +762,9 @@ A trace drops from `1,582` to `710` bytes. The age in days is `(now − mtime) /
 
 ## 13. "0 of 50" is not "never"
 
-**Optional, and a little slow (about four seconds).** The formula said that at `0 of 50` the wobble is `0.00`. Does that mean the attack cannot work? Suppose the true rate were only `0.05`. The chance that 50 runs show **zero** landings is `0.95 ** 50` (the compounding idea from Week 10: fifty times "it didn't happen" in a row). Then we check it by building a stand-in whose true rate is exactly `0.05` (gullibility `1/6` × `0.6` × `0.5`) and running 200 batches of 50.
+**Optional, and a little slow (about four seconds).** This section tests what a zero count can and cannot support.
+
+The formula said that at `0 of 50` the wobble is `0.00`. Does that mean the attack cannot work? Suppose the true rate were only `0.05`. The chance that 50 runs show **zero** landings is `0.95 ** 50` (the compounding idea from Week 10: fifty times "it didn't happen" in a row). Then we check it by building a stand-in whose true rate is exactly `0.05` (gullibility `1/6` × `0.6` × `0.5`) and running 200 batches of 50.
 
 ```python
 # s13_zero.py - Week 33 block S13 (stand-in, not a model): 0 of 50 is not 'never'. A true rate of 0.05, 200 batches of 50 runs. (10,000 runs; about 4 seconds.)

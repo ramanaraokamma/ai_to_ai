@@ -44,11 +44,15 @@ Observable evidence: the printed lines `same ranking as l4lib's lsa tier: True`,
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section is the background you need before class: what the student does, the maths to rehearse, what is real and what is not, the new constructs, the numbers, and where to stop.
+
 > **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist**, in the **🐞 Debugging Clinic** and in the **🔑 Answer Key** was run, in order, from one folder, in one Python session, on a CPU with one thread and the seeds shown; the outputs below are the real printed output. The Clinic blocks that are *deliberate mistakes* are marked and their tracebacks are real (library paths are shortened to `/home/you/venv/lib/python3.x/site-packages`; line numbers inside libraries can differ on your version). **Timing lines (`seconds …`) vary run to run; every other number repeated exactly on a second run on the same machine.** A different CPU or scikit-learn / PyTorch build can move the last digit of a score, and a recall figure by one question (`0.07`). The prep blocks are the **live code** of the lesson: they are typed into one file, in this order.
 
 ### 1. What the student is doing today, in one paragraph
 
-The student has met TF-IDF (Level 3 Week 32) and the 15-note lab notebook that ships in `l4lib`. Today they ask the notebook for `optimiser` and watch it answer with fifteen zeros, because the note is spelled `Optimizer`. They compute a cosine by hand, discover with a pen that a longer vector wins a raw dot product it should not win, and fix it by making every row length 1 once. They cut words into letter pieces, squeeze the big table with `TruncatedSVD` into 14 numbers per note, build the normalise-once matrix-multiply index, save it with `np.save`, and search it. Then they meet a lookup table that averages (`nn.EmbeddingBag`), look at `l4lib`'s short training loop, run it, and measure three kinds of embedder against 15 questions with a control. The honest finishing sentence is small: *"the embedder puts notes with shared letter pieces near each other; training helps by a modest amount on 15 notes; and I can say how much because I ran a control."*
+The student has met TF-IDF (Level 3 Week 32) and the 15-note lab notebook that ships in `l4lib`. Today they ask the notebook for `optimiser` and watch it answer with fifteen zeros, because the note is spelled `Optimizer`.
+
+They compute a cosine by hand, discover with a pen that a longer vector wins a raw dot product it should not win, and fix it by making every row length 1 once. They cut words into letter pieces, squeeze the big table with `TruncatedSVD` into 14 numbers per note, build the normalise-once matrix-multiply index, save it with `np.save`, and search it. Then they meet a lookup table that averages (`nn.EmbeddingBag`), look at `l4lib`'s short training loop, run it, and measure three kinds of embedder against 15 questions with a control. The honest finishing sentence is small: *"the embedder puts notes with shared letter pieces near each other; training helps by a modest amount on 15 notes; and I can say how much because I ran a control."*
 
 ### 2. 🔢 The maths you need — taught to you first
 
@@ -62,9 +66,15 @@ The student has met TF-IDF (Level 3 Week 32) and the 15-note lab notebook that s
 
 **(b) Normalise once (Page 25.2).** Divide every row by its own length, **once**, when the index is built. Then a note's "cosine with the question" is just the dot product of two length-1 rows, and the whole search is `M @ q`. You do not need to normalise the *question* to get the right *order* (the question's length scales every score by the same amount — the key block proves it); you do need to if you later compare a score to a threshold such as `0.3`, which is Week 26's refusal rule.
 
-**(c) What `TruncatedSVD` keeps, in words.** Level 3 Week 29's PCA found the direction in which the data is most spread out and measured along it. `TruncatedSVD(n)` does the same job *on a big mostly-empty table* and keeps the **best `n` directions**. The 15 × 3,906 table of letter pieces becomes a 15 × 14 table; each number is "how much of this direction is in this note". `svd.explained_variance_ratio_.sum()` says what share of the spread 14 directions keep: `0.941`. **Teacher-only footnote:** PCA first subtracts each column's mean; `TruncatedSVD` does not (so it can work on a sparse table). You need not tell the student. **A trap you do know:** a 15-note table has at most 15 directions (checked: `n_components=15` runs and keeps `1.000` of the spread; `l4lib` caps at `N - 1 = 14` by its own choice), so "14 numbers" is *almost no compression* in the number of directions; it is only a change of axes plus the dropping of the last one. `dim 2` is the only setting that really squeezes, and it is the worst in the table (`0.13`).
+**(c) What `TruncatedSVD` keeps, in words.** Level 3 Week 29's PCA found the direction in which the data is most spread out and measured along it. `TruncatedSVD(n)` does the same job *on a big mostly-empty table* and keeps the **best `n` directions**. The 15 × 3,906 table of letter pieces becomes a 15 × 14 table; each number is "how much of this direction is in this note". `svd.explained_variance_ratio_.sum()` says what share of the spread 14 directions keep: `0.941`.
 
-**(d) The training loss, in words (TEACHER-ONLY, and only in words to the student).** Take each note, split its words into two random halves, and embed both. Lay all the first-halves against all the second-halves in a table of cosines. Divide by a *temperature* (`0.1`, which makes the biggest cosine stand out), turn each row into chances with a softmax (Week 13), and ask: *what chance did each first-half give to its own second-half?* The loss is the average `-ln` of that chance (`F.cross_entropy` with the diagonal as the right answer, Week 12), taken in both directions. If a model knew nothing it would give every note a `1/15` chance and the loss would be `ln 15 = 2.708`; **the measured first-step loss is `1.755` for seed 0 and `3.54` for seed 1**, because it depends on the random start; by step 50 it is `0.002`. The student is told: *"the loss is small when a half finds its own other half among all fifteen."* The by-hand version on three notes is in the key (`key2.py`), including the fact that two notes which point the same way (`A` and `B`) can never be told apart (`0.506` / `0.494`). The literature's name for it, "InfoNCE", is for you; the student does not need it.
+**Teacher-only footnote:** PCA first subtracts each column's mean; `TruncatedSVD` does not (so it can work on a sparse table). You need not tell the student.
+
+**A trap you do know:** a 15-note table has at most 15 directions (checked: `n_components=15` runs and keeps `1.000` of the spread; `l4lib` caps at `N - 1 = 14` by its own choice), so "14 numbers" is *almost no compression* in the number of directions; it is only a change of axes plus the dropping of the last one. `dim 2` is the only setting that really squeezes, and it is the worst in the table (`0.13`).
+
+**(d) The training loss, in words (TEACHER-ONLY, and only in words to the student).** Take each note, split its words into two random halves, and embed both. Lay all the first-halves against all the second-halves in a table of cosines. Divide by a *temperature* (`0.1`, which makes the biggest cosine stand out), turn each row into chances with a softmax (Week 13), and ask: *what chance did each first-half give to its own second-half?* The loss is the average `-ln` of that chance (`F.cross_entropy` with the diagonal as the right answer, Week 12), taken in both directions. If a model knew nothing it would give every note a `1/15` chance and the loss would be `ln 15 = 2.708`; **the measured first-step loss is `1.755` for seed 0 and `3.54` for seed 1**, because it depends on the random start; by step 50 it is `0.002`. The student is told: *"the loss is small when a half finds its own other half among all fifteen."*
+
+The by-hand version on three notes is in the key (`key2.py`), including the fact that two notes which point the same way (`A` and `B`) can never be told apart (`0.506` / `0.494`). The literature's name for it, "InfoNCE", is for you; the student does not need it.
 
 ### 3. 🧭 Real vs stand-in — and what you must NOT claim
 
@@ -82,13 +92,17 @@ The student has met TF-IDF (Level 3 Week 32) and the 15-note lab notebook that s
 
 ### 4. The four new constructs, for somebody who has never seen them
 
-**`TfidfVectorizer(analyzer="char_wb", ngram_range=(3, 5))`.** The student knows `TfidfVectorizer()` (Level 3 Week 32): one column per whole word. `analyzer="char_wb"` changes what a column *is*: a run of 3, 4 or 5 letters **inside a word**, with a space added at each end of the word (`wb` is "word boundary"), so `opt` in the middle of a word and ` opt` at the start are different columns. `optimiser` gives ` opt`, ` opti`, `opt`, `opti`, `optim`, … and `iser`, `iser `, `ser`, `ser `. Those pieces are the geometry: `optimizer` and `optimiser` both have ` opt`, ` opti`, `opt`, `opti`, `optim`, and differ only near the `z`/`s`. The printed table: `0.359` for `optimizer`/`optimiser`, `0.670` for `optimise`/`optimiser`, `0.000` for `banana`. **Say:** *"a column is a piece of a word now, so words that are spelled alike share columns."* The table gets wide: 15 notes × 3,906 pieces, 11% full.
+**`TfidfVectorizer(analyzer="char_wb", ngram_range=(3, 5))`.** The student knows `TfidfVectorizer()` (Level 3 Week 32): one column per whole word. `analyzer="char_wb"` changes what a column *is*: a run of 3, 4 or 5 letters **inside a word**, with a space added at each end of the word (`wb` is "word boundary"), so `opt` in the middle of a word and ` opt` at the start are different columns. `optimiser` gives ` opt`, ` opti`, `opt`, `opti`, `optim`, … and `iser`, `iser `, `ser`, `ser `. Those pieces are the geometry: `optimizer` and `optimiser` both have ` opt`, ` opti`, `opt`, `opti`, `optim`, and differ only near the `z`/`s`. The printed table: `0.359` for `optimizer`/`optimiser`, `0.670` for `optimise`/`optimiser`, `0.000` for `banana`.
+
+**Say:** *"a column is a piece of a word now, so words that are spelled alike share columns."* The table gets wide: 15 notes × 3,906 pieces, 11% full.
 
 **`TruncatedSVD(n_components=14, random_state=0)`.** Fit it on the big table with `svd.fit_transform(X)`; use it later on a new query with `svd.transform(...)`. `fit` learns the directions; `transform` only applies them. `random_state=0` because the algorithm starts from random numbers (the same reason as any seed). `n_components` must be **at most the number of columns** (Mistake 3) and, for a useful answer, below the number of notes.
 
 **`np.save("notebook_index.npy", M)` / `np.load(...)`.** One array to one file and back, exactly (`identical: True`). The file holds **only the numbers**. It does *not* hold the vectorizer or the SVD that made them, so a query must still go through the *same fitted* objects (Mistake 4) — the costliest misunderstanding of the week. And a dictionary of arrays cannot be loaded back by default (Mistake 5); the fix for the student is *save one array per file*. **Never** set `allow_pickle=True` on a file you did not write yourself: a pickle can run code when it loads. `np.savez` (several arrays in one file) is the honest next step; it is not on the ladder, so it is for you.
 
-**`nn.EmbeddingBag(V, d, mode="mean")`.** The student knows `nn.Embedding` (Week 8): id in, row of `d` numbers out. An `EmbeddingBag` takes a *bag* of ids and returns the **mean** of their rows, in one call. A batch of documents is handed over as one long list of ids plus a list of **starts** that says where each document begins: `[0, 1, 2, 3, 4]` and starts `[0, 3]` are the two documents `[0,1,2]` and `[3,4]`. The output has one row per document (shape `(2, 3)`). The block proves it equals "pick the rows and average them yourself". **Teacher-only:** `l4lib` uses `mode="sum"` with `per_sample_weights` set to the TF-IDF value of each piece, so the embedding is a *weighted sum*, not a mean; the idea the student needs (a bag in, one row out) is the same, and the weights are a detail you may show in the source but need not teach.
+**`nn.EmbeddingBag(V, d, mode="mean")`.** The student knows `nn.Embedding` (Week 8): id in, row of `d` numbers out. An `EmbeddingBag` takes a *bag* of ids and returns the **mean** of their rows, in one call. A batch of documents is handed over as one long list of ids plus a list of **starts** that says where each document begins: `[0, 1, 2, 3, 4]` and starts `[0, 3]` are the two documents `[0,1,2]` and `[3,4]`. The output has one row per document (shape `(2, 3)`). The block proves it equals "pick the rows and average them yourself".
+
+**Teacher-only:** `l4lib` uses `mode="sum"` with `per_sample_weights` set to the TF-IDF value of each piece, so the embedding is a *weighted sum*, not a mean; the idea the student needs (a bag in, one row out) is the same, and the weights are a detail you may show in the source but need not teach.
 
 ### 5. The other code the student types — nothing new, but note these
 
@@ -156,6 +170,8 @@ Stop at: *"letter pieces give near-spellings a shared geometry; SVD squeezes the
 ---
 
 ## 🧰 Prep Checklist
+
+This section is for the night before: the blocks you run, in order, so that every number in this guide is one you have seen yourself.
 
 ### 30 minutes the night before
 
@@ -560,6 +576,8 @@ six typed pairs: mean recall@1 0.59  recall@3 0.83
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the running order of the lesson, with what to say and do in each segment.
+
 | Segment | Minutes | Clock | What happens |
 |---|:--:|:--:|---|
 | 🪝 Hook — The Notebook That Cannot Spell | 6 | 0:00-0:06 | `optimizer` finds the note; `optimiser` scores zero on all fifteen. |
@@ -858,6 +876,8 @@ Ask the student to find a new note `D4` with whole numbers whose cosine with `q`
 
 ## ❓ Questions Students Ask This Week
 
+This section has short answers to the questions that come up most, so you can answer without improvising numbers.
+
 **"Why `optimiser` and `optimizer` and not just fix the spelling?"** We can, for those two words. We cannot list every misspelling, plural, tense and typo. Letter pieces handle all of them with one mechanism. Honest cost: a word table of `288` columns becomes a letter-piece table of `3,906`.
 
 **"What is an embedding?"** A list of numbers that stands for a piece of text, built so that similar texts get nearby lists. Ours: 14 or 32 numbers. **"Why is it called dense?"** Almost every entry is non-zero; the word and letter-piece tables are *sparse* (mostly zeros: the letter-piece table is 11% full).
@@ -888,6 +908,8 @@ Ask the student to find a new note `D4` with whole numbers whose cosine with `q`
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+Use this table when something in class looks off: find the symptom, see what is happening, and do what the last column says.
+
 | Symptom | What is happening | What to do |
 |---|---|---|
 | The student says "the trained embedder is best" | One seed, or the hook query only | `seeds.py` and the control; Mistake 8 |
@@ -905,6 +927,8 @@ Ask the student to find a new note `D4` with whole numbers whose cosine with `q`
 ---
 
 ## 🧭 Differentiation
+
+This section gives three paths through the lesson, depending on how the student is today.
 
 ### If the student is struggling
 

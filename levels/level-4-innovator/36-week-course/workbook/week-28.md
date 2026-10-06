@@ -23,6 +23,8 @@
 
 ## ✅ Warm-Up (5 min, before anything else, from memory)
 
+This warm-up is for recalling the chapter's main terms before you open any file. Answer without notes.
+
 1. Who runs a tool: the model or your program? ____________________
 2. Name the six fences, in any order. ____________________________________________________________
 3. Which of the six read the sentence "be careful" in the prompt? ______ Which need a model to be present? ______
@@ -38,7 +40,9 @@
 
 ## 🎲 Page 28.0 — Which Fence? (in class · 12 min · pen only, no computer)
 
-Six fences: `1` turns cap · `2` money cap · `3` sandbox (folder, suffix, size) · `4` timeout · `5` allowlist · `6` a human says yes. A request may also be stopped by the **tool's own check** (write `0`), or it may be fine (write `none`). Name **one** for each. The model has been told to be careful.
+This page is for matching each request to the check that handles it. Work on paper, with no computer.
+
+Six fences: `1` turns cap · `2` money cap · `3` sandbox (folder, suffix, size) · `4` timeout · `5` allowlist · `6` a human says yes. A request may also be stopped by the **tool's own check** (write `0`), or it may be fine (write `none`). Name **one** for each request below. The model has been told to be careful.
 
 | | Request | Your answer |
 |:--:|---|:--:|
@@ -63,11 +67,13 @@ Six fences: `1` turns cap · `2` money cap · `3` sandbox (folder, suffix, size)
 
 ## 🧰 Page 28.1 — A Fourth Tool (30 min · think first, then type)
 
+This page is for adding a fourth tool to the kit, one step at a time, predicting before each run.
+
 Your kit has three tools: `calculate`, `search_notes`, `write_file`. You will add a fourth, `count_words(text)`, which returns the number of words in a piece of text, as a string.
 
 **Predict first.** A tool needs some number of separate things before the loop will use it safely. The function itself is one. Write what you think the others are: ____________________________________________________________
 
-**Step 1.** Only the function and the registry entry. Before you run it, predict what `validate_args("count_words", {"text": "one two three"})` returns, when the contract has **not** been written yet: ____________________
+**Step 1.** Add only the function and the registry entry. Before you run the block below, predict what `validate_args("count_words", {"text": "one two three"})` returns, when the contract has **not** been written yet: ____________________
 
 ```python
 # count_words_a.py - Page 28.1, step 1: ONLY the function and the registry entry. No contract yet.
@@ -84,9 +90,9 @@ in the registry: True
 validate_args says: ["no tool named 'count_words'"]
 ```
 
-**Read it.** The registry has it, and `validate_args` still says `no tool named 'count_words'`. Why? Write it: ____________________________________________________________
+**Explain it.** The registry has it, and `validate_args` still says `no tool named 'count_words'`. Why? Write it: ____________________________________________________________
 
-**Step 2.** Write the contract. It has the same shape as the others: a name, a sentence saying when to use it, and typed arguments. Fill in what you expect **before** you run the block:
+**Step 2.** Write the contract. It has the same shape as the others: a name, a sentence saying when to use it, and typed arguments. Fill in the table **before** you run the block:
 
 | call | your prediction for `validate_args` |
 |---|---|
@@ -116,7 +122,7 @@ for args in tests:
 {'text': 'a', 'extra': 1}    -> ["unknown argument 'extra'"]
 ```
 
-**Step 3.** A scripted plan (a stand-in, not a model) calls the new tool once. Predict the `is_error` flag and the result text: ____________________
+**Step 3.** A scripted plan (a stand-in, not a model) calls the new tool once. Predict the `is_error` flag and the result text before you run the block below: ____________________
 
 ```python
 # count_words_c.py - Page 28.1, step 3: a scripted plan that calls the new tool. The plan is a STAND-IN, NOT A MODEL.
@@ -138,6 +144,8 @@ stop: end_turn | label: stand-in, not a model
 
 ## 🧱 Page 28.2 — Predict the Sandbox (30 min · pen first, then run)
 
+This page is for predicting what the sandbox check says about eight names, then comparing your answers with three wrong checks.
+
 `inside(ROOT, name)` resolves the name first and then asks whether the result is at or below `ROOT`. For each of the eight names below, write `True` or `False` for `inside` **before you run anything**. Row 8 is a story and has no code: reason it out.
 
 | # | name | your `inside` |
@@ -151,7 +159,7 @@ stop: end_turn | label: stand-in, not a model
 | 7 | `.` (the folder itself) | |
 | 8 | `link/x.md`, where `link` is a shortcut (a symbolic link) **inside** the sandbox that points to the folder above it | |
 
-Now run the block. It also shows three **DELIBERATELY wrong** checks, one per column, so you can see which one would have given each of your answers. The three are the "dots" test (`".." not in name`), the "compare-first" test (compare the joined path *before* `resolve`) and the "text" test (`startswith` on the text of the paths).
+Now run the block below. It prints the right check beside three **DELIBERATELY wrong** checks, one per column, so you can see which one would have given each of your answers. The three are the "dots" test (`".." not in name`), the "compare-first" test (compare the joined path *before* `resolve`) and the "text" test (`startswith` on the text of the paths).
 
 ```python
 # sandbox_eight.py - Page 28.2: seven names, the right check, and three WRONG checks (DELIBERATELY wrong, for comparison).
@@ -195,6 +203,8 @@ iii. Row 8 cannot be run without new syntax, so reason it out. What does `resolv
 ---
 
 ## 💰 Page 28.3 — Pay the Bill (30 min · pen first, then run)
+
+This page is for pricing a run by hand and then checking your arithmetic against the kit.
 
 The price is 1.00 per million tokens in and 5.00 per million out. Cost in **millionths of a dollar** = `tokens in × 1 + tokens out × 5`. The worked run from the chapter had five turns:
 
@@ -299,7 +309,7 @@ k=8 tool turns: first 223, last 483, growth part 1168, k(k+1)/2 = 36, per step 3
 
 ## 🐞 Page 28.4 — Break It on Purpose (three bugs · 25 min)
 
-Each block below is **DELIBERATELY wrong**. Predict, run, then write what it meant and the fix.
+This page is for practising on three bugs. Each block below is **DELIBERATELY wrong**. Predict, run, then write what it meant and the fix.
 
 ### 28.4-A (SILENT) — a "kind of int" check
 
@@ -352,11 +362,13 @@ print("the confirm function said no, but hello.md exists:", (ROOT / "hello.md").
 
 (iii) Why is `auto_approve=True` right for some runs and wrong for others? ____________________________________________________________
 
-(iv) A reminder: the block ends with `(ROOT / "hello.md").unlink()`, which removes the file it made. Nothing else is deleted.
+(iv) Note: the block ends with `(ROOT / "hello.md").unlink()`, which removes the file it made. Nothing else is deleted.
 
 ---
 
 ## 📓 Page 28.5 — The Bug Log
+
+This page is for recording what went wrong and how you would catch it next time.
 
 Add **at least two** entries, one of them SILENT. Then copy this sentence in your own handwriting on the last line of the page:
 
@@ -372,6 +384,8 @@ Add **at least two** entries, one of them SILENT. Then copy this sentence in you
 
 ## 🧠 Self-Check (from memory, no notes)
 
+This self-check is for finding what you can not yet explain without the chapter.
+
 1. What is the model's whole job in a tool call? ____________________________________________________________
 2. Why does `ast.parse` make a safer calculator than `eval`? ____________________________________________________________
 3. "Resolve first, compare second." What goes wrong if you compare first? ____________________________________________________________
@@ -383,7 +397,7 @@ Add **at least two** entries, one of them SILENT. Then copy this sentence in you
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 ### Warm-Up
 
@@ -404,7 +418,9 @@ Add **at least two** entries, one of them SILENT. Then copy this sentence in you
 | I | **0** (the tool's own check; an ordinary error, not a security one) | The message is a hint (`directory 'sub' does not exist in the sandbox`): the model can read it and retry flat. Accept "3" if you said *why* it is a hint and not a wall. |
 | J | **3** | The sandbox's size limit (`content too large: 25000 bytes > 20000`). |
 
-(b) **A.** (c) **I**: it is a tool check (0) that is not about security; the model gets a plain-English `ValueError` saying the folder does not exist. (B is also a tool check, but it guards against unsafe code.) (d) **None.** The prompt is a request to a model; the fences are code. (The money cap, fence 2, is not in A to J; the chapter's second row of the fence table shows it.)
+- (b) **A.**
+- (c) **I**: it is a tool check (0) that is not about security; the model gets a plain-English `ValueError` saying the folder does not exist. (B is also a tool check, but it guards against unsafe code.)
+- (d) **None.** The prompt is a request to a model; the fences are code. (The money cap, fence 2, is not in A to J; the chapter's second row of the fence table shows it.)
 
 ### Page 28.1
 
@@ -451,11 +467,17 @@ one/../../bad.md       False   False  True     False
 
 Reading it. The **dots** test is wrong on rows **2, 4 and 5**: it refuses the safe names 2 and 4 (they contain `..`), and it says `True` to the absolute path in row 5 (`/tmp/x.md` has no dots at all). It gets rows 3 and 6 right only because those names happen to contain `..`. The **compare-first** (lexical) test is wrong on rows **3 and 6**: before `resolve` cancels the `..`, the joined text still starts with `ROOT`. The **text** test (`startswith` after resolving) is wrong on **row 6** only: the letters of `sandbox-evil` begin with the letters `sandbox`. Rows 1 and 7 are right for all four.
 
-i. Row 4 is a safe name. The **dots** test gets it **wrong** (it sees `..` and refuses); the text test gets it right for the right reason (it resolves first), and the compare-first test gets it right only by luck; so does the right check. A test that refuses safe names is wrong in the harmless direction; row 5 shows the same test wrong in the harmful direction. ii. The **text** test (and the compare-first test too, on this row). `startswith` compares letters; `sandbox-evil` begins with the letters `sandbox`. `is_relative_to` compares whole parts (`sandbox-evil` is not `sandbox`). iii. `resolve()` follows the shortcut and reports the real place, which is outside. The dots test has no `..` to see and says `True` (wrong); the compare-first test joins the text and sees it still starts with `ROOT`, so it says `True` (wrong); the right check says `False`. A text comparison cannot see a shortcut; only the file system can.
+- i. Row 4 is a safe name. The **dots** test gets it **wrong** (it sees `..` and refuses); the text test gets it right for the right reason (it resolves first), and the compare-first test gets it right only by luck; so does the right check. A test that refuses safe names is wrong in the harmless direction; row 5 shows the same test wrong in the harmful direction.
+- ii. The **text** test (and the compare-first test too, on this row). `startswith` compares letters; `sandbox-evil` begins with the letters `sandbox`. `is_relative_to` compares whole parts (`sandbox-evil` is not `sandbox`).
+- iii. `resolve()` follows the shortcut and reports the real place, which is outside. The dots test has no `..` to see and says `True` (wrong); the compare-first test joins the text and sees it still starts with `ROOT`, so it says `True` (wrong); the right check says `False`. A text comparison cannot see a shortcut; only the file system can.
 
 ### Page 28.3
 
-Part 1. (a) `247 × 1 + 28 × 5 = 247 + 140 =` **387** → **$0.000387**. (b) Inputs **2195**, outputs **102**; `2195 × 1 + 102 × 5 = 2195 + 510 =` **2705** millionths → **$0.002705** (the printed `spend`). (c) `415 − 247 =` **168**; the search result (the two notes' text) arrived as a tool result and is now part of the conversation that is re-sent.
+Part 1:
+
+- (a) `247 × 1 + 28 × 5 = 247 + 140 =` **387** → **$0.000387**.
+- (b) Inputs **2195**, outputs **102**; `2195 × 1 + 102 × 5 = 2195 + 510 =` **2705** millionths → **$0.002705** (the printed `spend`).
+- (c) `415 − 247 =` **168**; the search result (the two notes' text) arrived as a tool result and is now part of the conversation that is re-sent.
 
 Printed by the run:
 
@@ -466,7 +488,11 @@ millionths of a dollar: 2705.0 -> dollars: 0.002705
 the trace's own spend : 0.002705
 ```
 
-Part 2. (d) `223 + 128 =` **351**. (e) **55**; `55 × 32 =` **1760**; eleven copies of 223 = **2453**; total input `2453 + 1760 =` **4213**. (f) **210**; `210 / 55 =` **3.8**: **about four times** for twice the steps (the guess "four" is closest).
+Part 2:
+
+- (d) `223 + 128 =` **351**.
+- (e) **55**; `55 × 32 =` **1760**; eleven copies of 223 = **2453**; total input `2453 + 1760 =` **4213**.
+- (f) **210**; `210 / 55 =` **3.8**: **about four times** for twice the steps (the guess "four" is closest).
 
 ```text
 10 steps: 11 turns, last input 543, growth part 1760, total input 4213, input-only cost $0.004213
@@ -476,7 +502,7 @@ growth ratio 20 steps / 10 steps: 3.8
 total ratio  20 steps / 10 steps: 2.71
 ```
 
-(g) The eleven or twenty-one copies of 223 grow only in step with the number of turns (twice the steps is about twice as many copies); only the staircase part grows like the square. The two added together are `2.71` times, which lies between 2 and 3.8. Longer tasks drift towards 4.
+- (g) The eleven or twenty-one copies of 223 grow only in step with the number of turns (twice the steps is about twice as many copies); only the staircase part grows like the square. The two added together are `2.71` times, which lies between 2 and 3.8. Longer tasks drift towards 4.
 
 Part 3.
 
@@ -485,17 +511,30 @@ k=4 tool turns: first 223, last 353, growth part 324, k(k+1)/2 = 10, per step 32
 k=8 tool turns: first 223, last 483, growth part 1168, k(k+1)/2 = 36, per step 32.4
 ```
 
-(h) About **32.4** tokens per step (your Part 2 figure of 32 was close enough). Pretending with a steady step is a *shape* only: the real steps in the trace were `168, 33, 71, 47`, and these numbers belong to a scripted plan and the kit's counter. You cannot conclude how large a real model's steps would be, how many it would take, or what a real price list would say. (i) Each turn re-sends the whole history, so the input grows every turn and the total grows roughly with the square of the number of steps.
+- (h) About **32.4** tokens per step (your Part 2 figure of 32 was close enough). Pretending with a steady step is a *shape* only: the real steps in the trace were `168, 33, 71, 47`, and these numbers belong to a scripted plan and the kit's counter. You cannot conclude how large a real model's steps would be, how many it would take, or what a real price list would say.
+- (i) Each turn re-sends the whole history, so the input grows every turn and the total grows roughly with the square of the number of steps.
 
 Three sentences, for example: *A fence proves that, for the requests I tried, the code stops the request whatever the prompt says. It does not prove that every request is covered, nor that the tools behind the fence are safe. A scripted plan says nothing about a real model: it only exercises my code.*
 
 ### Page 28.4
 
-**A.** (i) Expect `[True, False, False, False]`; the surprise is in the run. (ii) `[True, True, False, False]` and `True + True = 2`. The bug could slip into either `walk` (which would accept `True + True`) or `validate_args` (which would accept `k=True` as a count). (iii) `type(value) is int`, or `isinstance(value, int) and not isinstance(value, bool)`.
+**A.**
 
-**B.** (i) `Module list`. (ii) `ValueError: not allowed here: list` (the last line names the type refused). (iii) `mode="eval"`: without it `ast.parse` returns a `Module`, whose `.body` is a **list** of statements. Fix: `ast.parse("2 + 3", mode="eval")` and `walk(tree.body)`.
+- (i) Expect `[True, False, False, False]`; the surprise is in the run.
+- (ii) `[True, True, False, False]` and `True + True = 2`. The bug could slip into either `walk` (which would accept `True + True`) or `validate_args` (which would accept `k=True` as a count).
+- (iii) `type(value) is int`, or `isinstance(value, int) and not isinstance(value, bool)`.
 
-**C.** (i) The honest expectation is `False` (a "no" should stop the write). (ii) `True`: the file exists. `auto_approve=True` switched off fence **6**: the person's "no" was never asked. (iii) It is right when nobody is at the keyboard and you want the *sandbox* to be what answers (the chapter's fence drill); it is wrong for anything else, because fence 6 is then a door with no gate. The kit's default asks on the keyboard and end-of-input counts as "no".
+**B.**
+
+- (i) `Module list`.
+- (ii) `ValueError: not allowed here: list` (the last line names the type refused).
+- (iii) `mode="eval"`: without it `ast.parse` returns a `Module`, whose `.body` is a **list** of statements. Fix: `ast.parse("2 + 3", mode="eval")` and `walk(tree.body)`.
+
+**C.**
+
+- (i) The honest expectation is `False` (a "no" should stop the write).
+- (ii) `True`: the file exists. `auto_approve=True` switched off fence **6**: the person's "no" was never asked.
+- (iii) It is right when nobody is at the keyboard and you want the *sandbox* to be what answers (the chapter's fence drill); it is wrong for anything else, because fence 6 is then a door with no gate. The kit's default asks on the keyboard and end-of-input counts as "no".
 
 ### Page 28.5 and Self-Check
 

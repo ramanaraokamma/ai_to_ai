@@ -26,6 +26,8 @@
 
 ## ✅ Warm-Up (5 min, before anything else, from memory)
 
+This page is for recalling last week's and this chapter's ideas before you open anything. Answer from memory.
+
 1. In pretraining, what is hidden, and what are the labels? ____________________________________________________
 2. Which numbers move when you train the **base model**? ______________________  Which stay frozen? ______________________
 3. In `LoRALinear`, which of `A` and `B` starts at exactly zero? ______  Why does the patch add nothing at step 0? ____________________________________________________
@@ -34,6 +36,8 @@
 ---
 
 ## 🧮 Page 31.1 — Counting a Patch, Low-Rank by Hand (25 min · pen, then one check)
+
+This page is for building a low-rank grid by hand and counting the numbers a patch stores. Work A to D on paper, then run the check.
 
 **A. The grid.** A column `(2, 0, 1, -1)` and a row `(1, 3, -2, 0)`. Multiply every column number by every row number.
 
@@ -66,7 +70,7 @@ Cells in the grid: ______ · Numbers you had to store to build it: ______ · Its
 
 At what rank does the patch stop saving anything? `r =` ______ . Say why in one line (hint: `2rd` against `d²`). ____________________________________________________
 
-Now run the check. It uses only lists and loops.
+Now run the check below. It uses only lists and loops.
 
 ```python
 # check311.py - Page 31.1: every hand answer, computed. PRACTICE shapes (not your model's).
@@ -118,6 +122,8 @@ Mark your answers in the other colour. Every mistake goes in the Bug Log (Page 3
 
 ## 🧮 Page 31.2 — Your Model's Percentage, and Step 0 (20 min · pen, then computer)
 
+This page is for counting your own model's trainable numbers by hand, then checking the count and the patch's starting behaviour on the computer.
+
 Your encoder has **121,152** numbers. The head is `64 × 5 + 5 =` ______ numbers. `LoRALinear` patches `q` and `v` in each of the **two** Blocks: **four** patches.
 
 **A. By hand, at r = 8** (one patch is `1,024`, from Page 31.1):
@@ -132,7 +138,7 @@ Your encoder has **121,152** numbers. The head is `64 × 5 + 5 =` ______ numbers
 
 **C. Predict.** At step 0 the patched model is run on the 30 eval tickets and compared with the base model. The biggest difference between their outputs will be: ______ . (A number, not "small".) Would your answer change if `r` were 2 or 8? ______
 
-Now run it.
+Now run the check for this page.
 
 ```python
 # check312.py - Page 31.2: the trainable percentage at r = 2 and r = 8, and the step-0 check at r = 8.
@@ -155,7 +161,9 @@ Compare with Parts A to C. If your hand percentage is slightly off, which did yo
 
 ---
 
-## ��� Page 31.3 — Reading a Table Honestly (35 min · pen, then computer)
+## 🧮 Page 31.3 — Reading a Table Honestly (35 min · pen, then computer)
+
+This page is for reading a before-and-after table by category, first on an invented table, then on your own run.
 
 **A. By hand, on a PRACTICE table.** These counts are **invented** for this page. They are not a run of anything. Fill the blanks. "Tickets" is after-right minus before-right. "Contribution" is `delta × n / 30`.
 
@@ -170,6 +178,8 @@ Compare with Parts A to C. If your hand percentage is slightly off, which did yo
 
 - Which rows would Week 30's `compare` flag (drop of 0.10 or more on `n ≥ 5`)? ______________________
 - Overall moved by ______ . Is "nothing changed" a true sentence about this table? ______ Why? ____________________________________________________
+
+Run this block to check your hand work on the PRACTICE table.
 
 ```python
 # check313.py - Page 31.3 hand part: deltas, tickets and contributions for the PRACTICE table (invented numbers, not a run).
@@ -195,6 +205,8 @@ overall: 19 -> 19  0.633 -> 0.633
 **B. Your own run, seed 1 (not seed 0).** Seed 1 gives a different head and different batches, so a different table from the one in the chapter. The extra `torch.manual_seed(201)` fixes the patch's random start too, so your numbers should match ours.
 
 **Predict first:** overall for the base ______ / 30; overall for the LoRA model ______ / 30; will a category be flagged? ______ Which? ______
+
+Run this block to train the second-seed base and LoRA models and print the comparison.
 
 ```python
 # table31.py - Page 31.3: base -> LoRA on seed 1 (not 0). Needs make_base, fit, add_lora, score, predict, compare.
@@ -246,7 +258,7 @@ Fill in from your run:
 | out_of_scope | 5 | ______ | ______ | ______ | ______ |
 | **overall** | 30 | ______ | ______ | ______ | ______ |
 
-**C. Which tickets?** A net count hides movement inside a row. Run this and list what you see.
+**C. Which tickets?** A net count hides movement inside a row. Run this block, which prints every ticket whose prediction changed, and list what you see.
 
 ```python
 # flips31.py - Page 31.3: which tickets changed between the seed-1 base and the seed-1 LoRA model.
@@ -286,11 +298,15 @@ tickets whose prediction changed: 8
 
 ## 🐞 Page 31.4 — Break It on Purpose (three bugs · 30 min)
 
+This page is for three deliberately broken blocks. For each, write your expectation first, then run it.
+
 Each block is **DELIBERATE**. Before you run it, write what you expect, and what one printed line would catch it. Two are **silent**: nothing crashes and the numbers look fine. Run them after Page 31.3 (they use `b1`, `l1` and `rb1`).
 
 ### 31.4-A (SILENT) — the parameter list made too early
 
 **Expect:** the patch trains / the patch does not train. Circle one. What line will show it? ____________________
+
+Run this deliberately broken block.
 
 ```python
 # DELIBERATE BUG 31.4-A (SILENT): the parameter list is made before the patch exists, so the patch never trains.
@@ -325,6 +341,8 @@ What is the rule for the order of three things? First ______ , then ______ , the
 
 **Expect:** will the "before" and "after" scores be equal or different? ______ Will `compare` flag anything? ______
 
+Run this deliberately broken block.
+
 ```python
 # DELIBERATE BUG 31.4-B (SILENT): no deepcopy, so the "before" model and the "after" model are one object.
 b2 = make_base(1)
@@ -348,6 +366,8 @@ Two things are wrong, not one. (1) ____________________________________ (2) ____
 ### 31.4-C (loud) — the thin grid built the wrong way round
 
 **Expect:** an error or a quiet wrong answer? ______ Read the traceback **from the bottom**.
+
+Run this deliberately broken block.
 
 ```python
 # DELIBERATE BUG 31.4-C (loud): A is built the wrong way round, (in, r) instead of (r, in).
@@ -373,6 +393,8 @@ RuntimeError: mat1 and mat2 shapes cannot be multiplied (48x64 and 4x64)
 
 ## 📓 Page 31.5 — Stop and Think (10 min · pen only)
 
+This page is for questions that need a sentence, not a calculation. Answer on paper.
+
 1. The LoRA model has **123,525** numbers, more than the encoder's 121,152. So what exactly did LoRA make smaller? ____________________________________________________________________________
 2. If `A` and `B` both started at zero, neither could ever move. Why? (One clause: what multiplies what in the gradient.) ____________________________________________________
 3. Overall rises by one ticket and one category falls by one ticket. Write the sentence that is true. ____________________________________________________________________________
@@ -382,6 +404,8 @@ RuntimeError: mat1 and mat2 shapes cannot be multiplied (48x64 and 4x64)
 ---
 
 ## 📓 Page 31.6 — The Bug Log
+
+This page is for recording every mistake from this week, with the check that caught it and the rule you will keep.
 
 | # | What went wrong (your words) | Loud or silent? | The one line or check that caught it | The rule I will keep |
 |:-:|---|:-:|---|---|
@@ -400,6 +424,8 @@ Then write this sentence in your own handwriting, with your own numbers:
 
 ## 🧠 Self-Check (from memory, no notes)
 
+This section is for ticking only what you can do without notes.
+
 - [ ] I can build a rank-1 grid from a column and a row, and say what rank means.
 - [ ] I can count a patch with `r × in + out × r` and say where it stops saving.
 - [ ] I can state the trainable percentage of my model and name what is in the top and bottom of the fraction.
@@ -409,7 +435,9 @@ Then write this sentence in your own handwriting, with your own numbers:
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+**✂️ ANSWERS - keep this page folded until you have finished**
+
+This page is for checking your work after you have written every answer.
 
 ### Warm-Up
 1. Some words in the text are hidden (about 20%) and the model guesses them; there are **no labels** (the text itself is the answer).

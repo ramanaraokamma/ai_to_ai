@@ -12,6 +12,8 @@
 
 ## 📋 At a Glance
 
+This table is the one-page summary of the lesson: what it is, what it needs, and what it costs you in time.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes in class, then the workbook (~55 min: 25 of pen and paper, 30 at the computer) |
@@ -26,11 +28,17 @@
 | **Prep time** | 30 minutes the night before · 3 minutes on the day |
 | **Expected runtime of the code** | **Pretraining (Block P5) took 13.0-13.5 s: the only block over 10 s.** Every other lesson block is under 4 s (the six-seed table, P12, 3.5 s); Blocks P0-P12 together take about 18 s. The **answer key's rank sweep (K3) took 9.6-9.8 s** (just under the mark). Whole guide, every block top to bottom, one session, one thread: about **30 seconds**. On a slow laptop expect up to 3x. **Anything over 2 minutes means something is wrong** (see Fallback). |
 
-> **⚠️ Watch out:** three things go wrong this week. **First, the fine-tuned model does not beat Week 30's free rules.** The rules baseline scored `25/30 = 0.833`; the base model here scores `18/30 = 0.600`, full fine-tuning and LoRA both `19/30 = 0.633`. A tiny encoder, 64 tickets and 13 seconds of pretraining do not amount to a product. The honest table is **rules → LoRA**, and it shows **three** flagged regressions and an overall fall of `-0.200` (Answer Key K0). Do not let the student leave thinking "fine-tuning improved it"; it improved a *weaker starting point* by one ticket. **Second, a regression on `n = 5` is one ticket.** Billing fell `0.400 → 0.200` because *one* ticket flipped. Across six seeds, **five of the six** show some flagged category — and they are different categories (billing three times, greeting, refund, out_of_scope once each). The rule is a **tripwire, not a verdict**: it tells you where to look. A row that reads `+0.000` can also hide two flips (greeting: one ticket fixed, one broken — K2). **Third, do not claim the tiny result is the real one.** The README's story — "the average rises while one category collapses" — appears here at its true size: `+0.033` overall, `-0.200` on billing. Say *"same mechanism, small numbers"*, and say that a real encoder with real pretraining would behave differently in ways nobody here measured.
+> **⚠️ Watch out:** three things go wrong this week. They follow as a list.
+
+1. **First, the fine-tuned model does not beat Week 30's free rules.** The rules baseline scored `25/30 = 0.833`; the base model here scores `18/30 = 0.600`, full fine-tuning and LoRA both `19/30 = 0.633`. A tiny encoder, 64 tickets and 13 seconds of pretraining do not amount to a product. The honest table is **rules → LoRA**, and it shows **three** flagged regressions and an overall fall of `-0.200` (Answer Key K0). Do not let the student leave thinking "fine-tuning improved it"; it improved a *weaker starting point* by one ticket.
+2. **Second, a regression on `n = 5` is one ticket.** Billing fell `0.400 → 0.200` because *one* ticket flipped. Across six seeds, **five of the six** show some flagged category — and they are different categories (billing three times, greeting, refund, out_of_scope once each). The rule is a **tripwire, not a verdict**: it tells you where to look. A row that reads `+0.000` can also hide two flips (greeting: one ticket fixed, one broken — K2).
+3. **Third, do not claim the tiny result is the real one.** The README's story — "the average rises while one category collapses" — appears here at its true size: `+0.033` overall, `-0.200` on billing. Say *"same mechanism, small numbers"*, and say that a real encoder with real pretraining would behave differently in ways nobody here measured.
 
 ---
 
 ## 🎯 Lesson Objectives
+
+These are the things to check the student can do when the lesson ends.
 
 By the end of the lesson the student can:
 
@@ -48,7 +56,11 @@ Observable evidence: the printed lines `pretraining took ... s`, `step 0: bigges
 
 ## 🧑‍🏫 What YOU Need to Know First
 
-> **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist**, in the **🐞 Debugging Clinic** and in the **🔑 Answer Key** was run, in that order, from one folder, in **one Python session**, on a CPU with one thread and the seeds shown; the outputs below are the real printed output, and a second complete run repeated every number exactly. The Clinic blocks that are *deliberate mistakes* are marked, and their tracebacks are real (paths are shortened to `/home/you/l4/`; the source line under each frame is the line that ran). **Timing lines (`seconds ...`, `took ...`) vary run to run; every other number repeated exactly.** A different torch build can move the last digit of a loss, and a different one can flip a single ticket's prediction; if your table differs by one ticket, that is *this week's lesson*, not a bug. The prep blocks are the **live code** of the lesson, typed in this order. Blocks marked **TEACHER-ONLY** use constructs that are not on the ladder (Block P1's string slots and `random.Random`, Block K4's `np.linalg.matrix_rank`); the student never types them.
+This section is your background reading: the maths, what is real and what is a stand-in, the new constructs, the numbers to expect, and where to stop.
+
+> **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist**, in the **🐞 Debugging Clinic** and in the **🔑 Answer Key** was run, in that order, from one folder, in **one Python session**, on a CPU with one thread and the seeds shown; the outputs below are the real printed output, and a second complete run repeated every number exactly. The Clinic blocks that are *deliberate mistakes* are marked, and their tracebacks are real (paths are shortened to `/home/you/l4/`; the source line under each frame is the line that ran). **Timing lines (`seconds ...`, `took ...`) vary run to run; every other number repeated exactly.** A different torch build can move the last digit of a loss, and a different one can flip a single ticket's prediction; if your table differs by one ticket, that is *this week's lesson*, not a bug.
+
+The prep blocks are the **live code** of the lesson, typed in this order. Blocks marked **TEACHER-ONLY** use constructs that are not on the ladder (Block P1's string slots and `random.Random`, Block K4's `np.linalg.matrix_rank`); the student never types them.
 
 ### 1. What the student is doing today, in one paragraph
 
@@ -136,6 +148,8 @@ Week 30 built the measuring instrument (30 frozen tickets, a rules baseline, a d
 ---
 
 ## 🧰 Prep Checklist
+
+This section is what to do before class: set up the folder, type and run every lesson block, and check your output against the printed one.
 
 ### 30 minutes the night before
 
@@ -687,6 +701,8 @@ Open a terminal in the scratch folder. Run only Blocks P0 to P4 **(0.5 s)** and 
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the running order of the lesson, with what to say and ask in each segment.
+
 | Time | Segment | What happens |
 |---|---|---|
 | 0:00-0:05 | 🪝 Hook | Grid Cards: build a 4 × 4 from a column and a row |
@@ -743,6 +759,8 @@ Each student says one sentence that contains a number of **tickets**. For exampl
 ---
 
 ## 🐞 The Debugging Clinic
+
+This section holds the deliberate bugs for the week: what each does, how it shows up, and the check that catches it.
 
 ### How to teach debugging without giving the answer
 
@@ -925,6 +943,8 @@ Block K5 (Answer Key) shows the patch never moves if both start at zero. Run it 
 
 ## 🎲 The Activity, In Full
 
+This section gives the full materials and variations for the Grid Cards activity used in the Hook.
+
 ### Grid Cards (10 minutes, pen and paper, used in the Hook and again for Page 31.1)
 
 Print three 4 × 4 cards on one page, each with a column strip on the left and a row strip on the top. **Teacher-only answer sheet in the Answer Key (K4).**
@@ -953,6 +973,8 @@ Change `targets` to also patch `k`, then `proj`, and report the trainable count 
 
 ## ❓ Questions Students Ask This Week
 
+This list gives you a short, honest answer ready for each question you are likely to hear.
+
 - **"Is the base model real?"** It's real as code and real as a model; it is tiny, and it is trained on template sentences. Say: *"same steps a real one takes; much smaller numbers."*
 - **"Why doesn't the fine-tuned model beat the rules?"** 64 tickets and a toy encoder. Real teams compare against the rules first (Week 30) for this reason. The rules also had their 5 misses; the model has other ones.
 - **"Why do the seeds disagree?"** The new head starts from different numbers and the 16-ticket batches come in different orders. With 64 tickets that is a lot of difference. *"The seed is a small experiment; the spread is the result."*
@@ -964,6 +986,8 @@ Change `targets` to also patch `k`, then `proj`, and report the trainable count 
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+This list names the mistakes teachers and students make most often this week, each with its remedy.
 
 1. **The student reads `19 > 18` as a win.** The cure is the question *"how many tickets?"* asked at every table.
 2. **The student tunes until billing recovers.** Stop it. The eval is frozen (Week 30). If they want to try a different `lr`, it goes in the workbook stretch *with the result reported either way*, and any conclusion is on more than one seed.
@@ -977,6 +1001,8 @@ Change `targets` to also patch `k`, then `proj`, and report the trainable count 
 ---
 
 ## 🧭 Differentiation
+
+This section adjusts the lesson for three kinds of day: a student who is struggling, one who is flying, and one who will not engage.
 
 ### If the student is struggling
 
@@ -996,6 +1022,8 @@ Give them the P11 table on paper with the flag hidden, and ask them to find the 
 ---
 
 ## ✅ Assessing Understanding
+
+This section tells you how to mark the final workbook page and how to read what students write.
 
 ### The marking rules
 
@@ -1027,6 +1055,8 @@ Mark against the four sentences on Page 31.3; each is worth one.
 ---
 
 ## 📤 Homework to Assign
+
+This section lists the three workbook tasks, with the numbers to check them against.
 
 ~55 minutes, in the workbook, pages 31.1-31.3. The three tasks:
 

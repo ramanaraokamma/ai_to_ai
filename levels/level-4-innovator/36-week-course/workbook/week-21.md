@@ -26,7 +26,7 @@
 
 ## ✅ Warm-Up (5 min)
 
-Five quick questions about **Weeks 16 to 20**.
+These five questions revisit **Weeks 16 to 20** before today's new work.
 
 **W1.** A tokenizer starts from the 256 bytes and learns 300 merges. Its vocabulary has ____________ tokens. (Week 20)
 
@@ -101,7 +101,7 @@ Run it. Copy what it printed.
 
 ## 🔮 Page 21.2 — Your Sweep and Your Line (25 min)
 
-Four TinyGPTs that differ **only in width**: 16, 32, 64, 128. Same text, same 1,500 steps, same seed. The number of knobs is the number Week 16's hand formula gives.
+This page is for fitting a line to a sweep of models and predicting a fifth before it is trained. The sweep is four TinyGPTs that differ **only in width**: 16, 32, 64, 128. Same text, same 1,500 steps, same seed. The number of knobs is the number Week 16's hand formula gives.
 
 **Predict before you run `sweep.py`.** (Look back at the Start Here guess in the chapter.)
 
@@ -180,7 +180,7 @@ Prediction for width 256: ________ . Is it close to your ink number? By how much
 
 ## ⚖️ Page 21.3 — Predict, Then Check (25 min)
 
-Now train the fifth model. Your prediction is already in ink on page 21.2.
+This page is for comparing your written prediction with a trained model and reporting the difference as a signed miss. Now train the fifth model. Your prediction is already in ink on page 21.2.
 
 ### Part A — PRACTICE (misses, by hand and on the short sweep)
 
@@ -295,7 +295,7 @@ Best-case rate used below: ________ billion a second = ________ x 10^12 .
 
 ## 🧬 Page 21.5 — Fingerprints (20 min)
 
-`hashlib.md5` turns any bytes into 32 characters. The same bytes always give the same 32; a different byte gives a different 32. That makes it a cheap test for "**exactly the same line**".
+This page is for testing whether lines of text repeat. `hashlib.md5` turns any bytes into 32 characters. The same bytes always give the same 32; a different byte gives a different 32. That makes it a cheap test for "**exactly the same line**".
 
 **Predict before you run `dedup.py`.** Out of the training lines of 25 or more characters, I think ________ % are exact repeats of an earlier line. And out of the validation lines, I think ________ % also appear in the training text.
 
@@ -373,7 +373,7 @@ Tick, before you run anything:
 
 ## 🧾 Page 21.6 — What Was and Was Not Measured (15 min)
 
-Use **only** your own numbers from 21.2 to 21.5.
+This page is for sorting what you measured from what you did not, and for writing the report paragraph. Use **only** your own numbers from 21.2 to 21.5.
 
 **Measured** (list at least **four**, each with its number):
 
@@ -405,7 +405,9 @@ ________________________________________________________________
 
 ## 🐞 Page 21.7 — Break It on Purpose (25 min)
 
-Four files below are **deliberately** wrong, and three of the four do **not** print an error. For each: **read, predict what it prints, run, compare**, then fix. Run them from the folder with your class files (`sweep.csv`, `textpool.py`). Your numbers in bug C will differ in their digits because they depend on your seconds; the pattern will not.
+This page is for practising how to find mistakes that do not crash. Four files below are **deliberately** wrong, and three of the four do **not** print an error.
+
+For each file: **read, predict what it prints, run, compare**, then fix. Run them from the folder with your class files (`sweep.csv`, `textpool.py`). Your numbers in bug C will differ in their digits because they depend on your seconds; the pattern will not.
 
 ### Bug A (SILENT): the line is fitted to the raw numbers
 
@@ -518,6 +520,8 @@ ________________________________________________________________
 
 ## 🧠 Self-Check (do this last, from memory)
 
+These questions check the week from memory, with no notes.
+
 1. **In one sentence: what is pretraining, and which loss does it use?**
 
 ________________________________________________________________
@@ -550,7 +554,7 @@ Tick what you can do without looking: ☐ take `log10` of a power law and read t
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 > Numbers below came from real runs (`/tmp` scratch folder, Python 3.10, torch 2.2.1, numpy 1.26.4, one thread, seed 0). The check files are for checking your reading; the practice numbers are not your results. Where a number is a **time** (seconds, operations a second, or a ratio made from them) yours will differ by 10 to 15% or more from mine; losses, knob counts and duplicate counts should match to every digit.
 

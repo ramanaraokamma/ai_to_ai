@@ -44,6 +44,8 @@ Observable evidence: `text_ablate.py` printing five rows; `task_table.py` printi
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+Read this before class: it is the background, the arithmetic, the limits and the likely misconceptions for the week, in ten numbered parts.
+
 > **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist** is a *whole file* and every one was run, from one folder next to `l4lib/`, on a CPU with `torch.set_num_threads(1)` and the seeds shown. Blocks in the **🐞 Debugging Clinic** are *deliberate mistakes* and each is marked; their tracebacks are real. Outputs are real. Everything is seeded, and the losses, accuracies and samples printed here were identical on a second run of each file; **only the `(N s)` timings change**. The numbers labelled **ledger** come from the course author's reference run of Module 3 (1,500 steps, dropout 0.1, a different implementation) and were **not** run for this lesson; they are a comparison in *direction*, not a target.
 
 ### 1. What the student is doing today, in one paragraph
@@ -176,6 +178,8 @@ Stop at: *"each row is one deletion; compare on validation; a loss that is too g
 ---
 
 ## 🧰 Prep Checklist
+
+This section gets the stack checked and the files typed and run before class, so that every number you quote comes from your own machine.
 
 ### 30 minutes the night before
 
@@ -792,6 +796,8 @@ no norm   train 1.752  val 1.818  gap 0.066  (22 s)
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the running order of the lesson, one step at a time.
+
 | Segment | Minutes | What happens |
 |---|:--:|---|
 | 🪝 Hook | 8 | "Which part would you delete to break it the most?" Each writes a ranking on a card. |
@@ -874,6 +880,8 @@ Full rules in *The Activity, In Full*. The shape:
 ---
 
 ## 🐞 The Debugging Clinic
+
+This section is seven planted mistakes for you to use with the student, each with its real traceback or output.
 
 Every error below was produced by running the code. **Paths will differ on your machine**; here they appear as `/home/you/l4/`. Tracebacks from PyTorch and matplotlib run through several of their own files; the long middle is replaced by a line reading `... frames inside torch (elided) ...` (or `matplotlib`), and **the last line is the real, complete last line**. Each mistake is deliberate: you plant it, the student reads the traceback (or the odd number) aloud, and you refuse to fix it until they have said what it means. Each block imports the finished `ablate_model.py` or `tasks.py`. **Three of the seven are silent**, and the silent ones are the point.
 
@@ -1090,13 +1098,15 @@ IndexError: index out of range in self
 
 ## 🎲 The Activity, In Full
 
+This section gives the full rules, cards and answer sheet for the two games played in "Their Turn".
+
 ### Match the Samples, then Head Detective
 
 **What it is:** two short games. The first makes the student connect a line of numbers to a line of text. The second makes them name a head and say what would prove the name wrong.
 
 ### Setup (2 minutes, during the live-code segment)
 
-- **Part 1 cards.** Five samples, cut at 70 characters, shuffled, labelled A-E. On your sheet: 
+- **Part 1 cards.** Five samples, cut at 70 characters, shuffled, labelled A-E. Your answer sheet:
 
 | Model | Sample (first 70 characters, from `text_ablate.py`) |
 |---|---|
@@ -1154,6 +1164,8 @@ Ask the student to **predict** the switch-off result for L0 H1 on lookup before 
 
 ## ❓ Questions Students Ask This Week
 
+Use these answers when a student asks; each one says what was measured and what was not.
+
 **"Why is the no-mask model so good?"** It is not good; it is reading the answer. With no mask, place 5 can attend to place 6, and place 6 of `x` *is* the correct answer for place 5. The future-change test shows it: change one later token, and earlier scores move (0.001437 against exactly 0.000000, untrained; `key.py`).
 
 **"Why did removing the layer norm help?"** We do not know. It is better at 800 steps on both seeds, by about 0.19, and its gap is larger. We did not test longer training, other learning rates or other sizes. (Limit 6.)
@@ -1178,6 +1190,8 @@ Ask the student to **predict** the switch-off result for L0 H1 on lookup before 
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+These are the ten places where the lesson most often slips, with the fix for each.
+
 1. **The student writes "removing the mask improved it".** Return to the sample, then the future-change test.
 2. **Running five models takes the whole segment.** It is 3.6 minutes of waiting. Keep typing `tasks.py` while it runs. If the laptop is slow, use the 400-step fallback.
 3. **Two scripts at once on a one-core laptop.** `text_ablate.py` and `task_table.py` together slow each other. Wait for one.
@@ -1192,6 +1206,8 @@ Ask the student to **predict** the switch-off result for L0 H1 on lookup before 
 ---
 
 ## 🧭 Differentiation
+
+This section adjusts the lesson for a student who needs less, more, or a different way in.
 
 ### If the student is struggling
 
@@ -1214,7 +1230,7 @@ Play **Head Detective** with their own cards: run `heads.py`, give them the prin
 
 ## ✅ Assessing Understanding
 
-Five questions, orally, during the activity. Not graded; they inform the mastery scale.
+This section checks what the student took from the lesson. Ask five questions orally during the activity; they are not graded and they inform the mastery scale.
 
 1. **"What is an ablation, and what makes it fair?"** *Pass:* delete one thing; same everything else (seed, steps, data, scoring batches); compare on validation.
 2. **"The no-mask model's validation loss is 0.077. Is the mask useless?"** *Pass:* no; that is a leak; the model can see the answer; the sample is `tatat...`.
@@ -1235,6 +1251,8 @@ Five questions, orally, during the activity. Not graded; they inform the mastery
 
 ## 📤 Homework to Assign
 
+This section lists the homework and what the student must bring back.
+
 The workbook has six pages (19.1-19.6). The student does them in order, and writes **predictions before running anything**.
 
 1. **19.1 Predict before you delete** — rank the four deletions and guess which (if any) makes the model better; compare with the table.
@@ -1249,6 +1267,8 @@ The workbook has six pages (19.1-19.6). The student does them in order, and writ
 ---
 
 ## 🔑 Answer Key
+
+This section holds the answers for the workbook pages and for every question asked in the lesson. **Teacher only.**
 
 > **The workbook pages 19.1-19.6 follow this order.** Where an answer is a number it comes from `text_ablate.py`, `task_table.py`, `heads.py`, `heads_more.py` or `key.py`, all run from the Prep Checklist. **A student's own run uses their own seed; only the structure of the answer is fixed.** (If the workbook author has reordered the pages, match by title.)
 
@@ -1362,6 +1382,8 @@ Use these as a prompt for conversation, not a certainty.
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what next week is and what to carry into it.
 
 **Week 20 — Tokenizers: BPE From Scratch** (🟩 lab). Words are too many and letters too few. The student writes byte-pair encoding themselves (repeatedly merge the most common adjacent pair), passes round-trip tests (emoji, Devanagari, the empty string), then (**the only place in Level 4**) diffs it against a `tokenizers` BPE trained **locally** on local text. New syntax (teacher-only until taught): `collections.Counter`, `str.encode("utf-8")`, `re.compile(...).findall`, and the `tokenizers` `BpeTrainer`. The TinyGPT from Weeks 17 and 19 is not retrained next week.
 

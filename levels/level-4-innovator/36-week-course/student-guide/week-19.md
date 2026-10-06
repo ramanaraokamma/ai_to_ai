@@ -45,6 +45,8 @@ Keep the card. We come back to it when the table is full.
 
 ## 🧠 The Big Idea
 
+This section gives you the three ideas you need before typing: what a fair ablation is, why we use made-up tasks, and how to read one row of an attention picture.
+
 ### 1. Ablation: delete one thing, change nothing else
 
 A claim like *"every part of the GPT is needed"* can be tested. Take the part out, train again, and compare. The word for this is **ablation**: training a model with **one part deleted** and measuring what changes. A test is only worth reading if it is **fair**. Three rules:
@@ -80,6 +82,8 @@ Every place in the window, as it works out its answer, spreads a total of 1.0 of
 ---
 
 ## 🏗️ Build It
+
+In this section you add the four switches to your TinyGPT, run the five-model table, test for a leak, and train the three made-up tasks.
 
 ### 4. Four switches in your TinyGPT
 
@@ -443,6 +447,8 @@ Read the lookup column with care. This is one seed and one length of training. W
 
 ## 👁️ Open the Heads
 
+In this section you print and draw what each attention head looks at in the three task models, then run the switch-off test on them.
+
 ### 9. Where does each head look?
 
 `heads.py` trains the copy model and prints, for each of its four heads (2 layers, 2 heads each), the place each answer place looks at most, averaged over 500 fresh sequences. It also saves the picture `copy_heads.png`. The window has 12 places: six symbols (0-5), the separator (6), and the answers (positions 6 to 11 are the ones that must produce an answer).
@@ -645,6 +651,8 @@ for layer in range(2):
 
 ## 🎲 Your Turn
 
+Three short activities that use the tables and printouts above.
+
 ### Match the Samples
 
 Your teacher cuts the five samples from your table down to 70 characters, shuffles them and labels them A to E. Match each to its model (full, no mask, no positions, no residual, no norm) and write **one piece of evidence** per card. Use the train, validation and gap columns as well as the text. Two of them will be hard to tell apart. If you cannot tell two apart, say so: a sample is one draw, and the loss can rank close models when a sample cannot.
@@ -666,7 +674,13 @@ For each card write:
 2. **A name, three words or fewer.**
 3. **One test that would show your name wrong.**
 
-Three questions to ask yourself while you work. *Does this head's job depend on the input, or is it the same on every input?* *If I gave the copy model different symbols, where would card A look?* *If I took this head out, what do I expect?* **Write your prediction for the last one before you read the switch-off lines** in `copy_off.py` and `heads_more.py`. Then read them.
+Ask yourself three questions while you work.
+
+- *Does this head's job depend on the input, or is it the same on every input?*
+- *If I gave the copy model different symbols, where would card A look?*
+- *If I took this head out, what do I expect?*
+
+**Write your prediction for the last one before you read the switch-off lines** in `copy_off.py` and `heads_more.py`. Then read them.
 
 **The sentence to end on.** A stripe of light in a picture tells you where a head looked. In the copy and reverse models, four heads light the same stripe, and the switch-off numbers for one head alone are the same as with nothing switched off. In the lookup model, switching off a single head can change accuracy a lot. **What does that do to a head's name?**
 

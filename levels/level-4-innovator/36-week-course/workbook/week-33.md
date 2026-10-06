@@ -26,6 +26,8 @@
 
 ## ✅ Warm-Up (5 min, before anything else, from memory)
 
+This warm-up recalls the earlier weeks that this page builds on. Answer from memory.
+
 1. A system is said to obey a planted note "30% of the time". You run it 20 times. What count do you *expect*? ______ Will you *see* exactly that? ______
 2. Week 32: a model's average rose. What did you have to look at before saying it got better? ____________________________________________________
 3. A patch takes an attack from 15 landings in 50 to 0. Name the **two** things you must re-test before calling it a fix. (1) ______________________ (2) ______________________
@@ -36,7 +38,12 @@
 
 ## 🧮 Page 33.1 — The Wobble by Hand (30 min · pen, then one check)
 
-Four steps, in order: **expected count** `n × p` · **`n p (1 − p)`** · **wobble** = its square root · **window** = expected count minus and plus two wobbles.
+This page is for computing the wobble of a count by hand and using it to judge whether a gap between two counts is more than noise. Work the four steps below, in order.
+
+- **Expected count** `n × p`.
+- **`n p (1 − p)`**.
+- **Wobble** = its square root.
+- **Window** = expected count minus and plus two wobbles.
 
 **A. Eight (n, p) pairs.** The first two are worked for you as a model of the layout; do the rest.
 
@@ -79,7 +86,7 @@ In the second pair the true rates are `0.6` and `0.3`; in the last two they are 
 
 At what true rate would you be quite surprised (say, under 1 chance in 100) to see 0 of 50? ______ . Using your table, finish the honest sentence: *"0 of 50 landed; any rate above about ______ would usually have shown at least one, and ______ would often have shown none."*
 
-Now run the two checks, after `week33.py`.
+Now run the two checks below, after `week33.py`. The first block covers Parts A to D and the second covers Part E.
 
 ```python
 # check331.py - Page 33.1: the wobble table for the practice rows, the windows, and the noise bounds. Needs np.
@@ -146,6 +153,8 @@ Did your wobbles match to two decimals? If not, which step was it (the `p (1−p
 
 ## 🧮 Page 33.2 — Red-Team Log and Redaction (45 min · pen, then computer)
 
+This page is for predicting how ordered redaction patterns behave, measuring the redactor's recall, and filling in your red-team card from your own runs.
+
 **A. The order of patterns, by hand.** `redact(text, patterns)` runs `re.sub` once per pattern, **in list order**, each on the previous output. The loose phone pattern `PHONE_LOOSE` matches *any* run of 9 or more digits, spaces, dashes, dots and brackets. The shaped `PHONE` wants ten digits starting with 6, 7, 8 or 9, with an optional `+91`, in the shape `5 digits, optional space or dash, 5 digits`. The list `PATTERNS` is email, card, Aadhaar, phone, IPv4.
 
 Write what each line prints **before** you run it. Tags are written `[CARD]`, `[PHONE]`, `[IPV4]`.
@@ -164,6 +173,8 @@ Write what each line prints **before** you run it. Tags are written `[CARD]`, `[
 Rows 1 and 1b differ in only one thing. Say what, and say which order is right and why: ____________________________________________________
 
 Row 4 is a real phone-shaped number that is **not** redacted. Why? ____________________________________________________ Is that a bug in the regex or a limit of shape-matching? ______________________
+
+Run this block to print the eight practice strings through both pattern sets.
 
 ```python
 # check332a.py - Page 33.2 Part A: the practice strings through the loose pattern and the shaped patterns, in two orders. Needs redact, PHONE_LOOSE, PHONE, EMAIL, CARD, AADHAAR, IPV4, PATTERNS from week33.py.
@@ -216,6 +227,8 @@ Your recall guess: ______ / 8 = ______ . Now write **six inputs of your own**: t
 | 5 | | | |
 | 6 | | | |
 
+Run this block to check the eight typed cases, then your own six.
+
 ```python
 # check332b.py - Page 33.2 Part B: recall on the 8 typed cases, then on your own six. Needs redact_pii and CASES from week33.py.
 for raw, kind in CASES:
@@ -253,6 +266,8 @@ The `MINE` list above is **an example**, not an answer to copy: your own six wil
 | Happy path (real task, count / `n`) | | | |
 | Residual (what is still true) | | | |
 | Gap vs noise bound | | | |
+
+Run this block to print the three findings and the control.
 
 ```python
 # check332c.py - Page 33.2 Part C: the three findings on your card, as one line each, and the control. (stand-in, not a model) Needs rate, run_attack, attack, ATTACKS, line, count_landed, named_files_only, happy, Q_REM from week33.py.
@@ -301,6 +316,8 @@ Then look at the chapter's Section 11 table. How many of your twelve cells were 
 
 ## 🧮 Page 33.3 — Keep Less, Delete on Time, and the Four Sentences (40 min · pen, then computer)
 
+This page is for working out file ages for a retention rule, running the sweep as a dry run first, and writing your findings up in four sentences.
+
 **A. Ages by hand.** A file's age in days is `(now − mtime) ÷ 86400`. `sweep(folder, 7)` deletes a file only if its age is **greater than** 7 days (`>`, not `>=`). Fill in the days (five decimals) and say kept or deleted.
 
 | age in seconds | age in days | 7-day rule: kept or deleted? |
@@ -312,6 +329,8 @@ Then look at the chapter's Section 11 table. How many of your twelve cells were 
 | 3,000,000 | ________ | ________ |
 
 604,800 seconds is exactly ______ days. Why does the rule's `>` matter for a file that old? What would you write in the policy so nobody is surprised? ____________________________________________________
+
+Run this block to turn each age in seconds into days and apply the retention rule.
 
 ```python
 # ages333.py - Page 33.3 Part A: ages in days and the 7-day rule (older than, so '>'). Needs sweep's rule only.
@@ -335,6 +354,8 @@ ____________________________________________________________________________
 ____________________________________________________________________________
 
 Before you run: on a folder of three traces made just now, what does `sweep(folder, 7, now=time.time() + 3 * DAY)` list? ______ . With `6 * DAY`? ______ . With `8 * DAY`? ______ . Does a dry run delete anything? ______
+
+Run this block to try the retention policy as a dry run and then for real.
 
 ```python
 # check333.py - Page 33.3: a retention policy, run as a dry run and then for real on three traces. Needs run_attack, ATTACKS, redact_pii, save_safe, sweep, Path, time, DAY from week33.py.
@@ -384,9 +405,11 @@ ____________________________________________________________________________
 
 ## 🐞 Page 33.4 — Break It on Purpose (three bugs · 30 min)
 
-Run each as written. Predict first. Then say what went wrong and how you would have known. Each is **deliberate**.
+This page is for reading failures. Run each bug as written and predict first. Then say what went wrong and how you would have known. Each bug is **deliberate**.
 
 ### 33.4-A (loud) — `re.sub` without the text
+
+Run this block as written.
 
 ```python
 # DELIBERATE BUG 33.4-A (loud): re.sub with the text left out.
@@ -402,6 +425,8 @@ TypeError: sub() missing 1 required positional argument: 'string'
 The message counts the arguments. `re.sub` needs ______ things and I gave ______ . The fix: ____________________________________________________ Which line of `redact` shows the right shape? ______________________
 
 ### 33.4-B (loud) — `.stat` without brackets
+
+Run this block as written.
 
 ```python
 # DELIBERATE BUG 33.4-B (loud): .stat without its brackets.
@@ -421,6 +446,8 @@ AttributeError: 'function' object has no attribute 'st_mtime'
 
 The tempting fix for the loose phone pattern eating dates: "refuse to start on something that looks like `2026-09-02`". It is tested on the fifteen note headings.
 
+Run this block as written.
+
 ```python
 # DELIBERATE BUG 33.4-C (SILENT): a phone pattern that "refuses to start on a date". It passes the test on the headings.
 PHONE_DATE_SAFE = r"(?<![\d-])(?!\d{4}-\d{2}-\d{2}\b)(?:\+?\d[\d\s\-().]{7,}\d)(?!\d)"
@@ -437,6 +464,8 @@ headings changed: 0 of 15
 ```
 
 Nothing crashed, and `0 of 15` looks perfect. **What did the test leave out?** ____________________________________________________ What does the agent's real search output look like, and why does the pattern start at `0.326)`? ____________________________________________________
+
+Run this block to apply the repair.
 
 ```python
 # The repair for 33.4-C: test on the REAL output of the running system, and use the pattern with a shape.
@@ -456,6 +485,8 @@ The repair is not another exclusion. It is a pattern with a ______________ . The
 
 ## 📓 Page 33.5 — Stop and Think (10 min · pen only)
 
+These questions check your reasoning about the week's results. Answer in writing, with no code.
+
 1. After `0 of 50`, the wobble formula says `0.00`. Does that mean the attack cannot work? What is the honest sentence? ____________________________________________________
 2. `refuse_all_writes` also scores `0 / 50` on A1. Why is it not a fix? Give the second number that shows it. ____________________________________________________
 3. The scan from Week 29 missed the reworded note (`34 / 50` landed), and `named_files_only` did not (`0 / 50`). What is the difference between the two defences? ____________________________________________________
@@ -466,6 +497,8 @@ The repair is not another exclusion. It is a pattern with a ______________ . The
 ---
 
 ## 📓 Page 33.6 — The Bug Log
+
+This page is for recording what went wrong this week and the rule you will keep from each failure.
 
 | # | What went wrong (your words) | Loud or silent? | The one line or check that caught it | The rule I will keep |
 |:-:|---|:-:|---|---|
@@ -484,6 +517,8 @@ Then write this sentence in your own handwriting, with your own numbers, and kee
 
 ## 🧠 Self-Check (from memory, no notes)
 
+Tick a line only if you can do it without looking anything up.
+
 - [ ] I can work out `n p`, `n p (1−p)`, the wobble and the window by hand, and say what happens at `p = 0`.
 - [ ] I can say whether "7 of 20 then 9 of 20" is a difference, with a number.
 - [ ] I can say why quadrupling the runs only halves the wobble of the share.
@@ -495,7 +530,9 @@ Then write this sentence in your own handwriting, with your own numbers, and kee
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+**✂️ ANSWERS - keep this page folded until you have finished**
+
+Check your written work against these answers only after you have finished every page.
 
 ### Warm-Up
 1. Expect `20 × 0.3 =` **6**. No: you will almost never see exactly 6 (the wobble is about 2).
@@ -521,7 +558,7 @@ Then write this sentence in your own handwriting, with your own numbers, and kee
 - **A.** `1.04167` kept · `7.00000` kept · `7.00001` deleted · `11.57407` deleted · `34.72222` deleted. 604,800 s is exactly **7** days; the rule is "older than" (`>`), so a file exactly at the limit survives **one more second**. In the policy say "older than 7 days" (not "7 days or older") and say which clock the age is measured on (last changed).
 - **B.** Model policy: *"Traces older than 7 days are deleted by `sweep`, run every night at 03:00, because a trace is only useful for the week in which someone could still remember the question that produced it."* Any `N` with a use-based reason is fine; disk space alone is not a reason here. Predictions: `3 * DAY` lists **nothing**, `6 * DAY` lists **nothing**, `8 * DAY` lists **all three**. A dry run deletes **nothing** (`3` files still there). The real sweep removed all three. The slim trace no longer tells you **what was said**: the words of the model's reply, the preview of what a tool returned, and the answer the user saw. It still tells you which tool was called, with which arguments, in which order, and whether it errored (the shape of the run).
 - **C.** Model sentences. *(1) A finding has attack, evidence, mechanism, fix, two re-tests and a residual; for A1 the stand-in obeyed a planted note 15 times in 50 and the write was legal, so no fence fired; allowing only files the user typed took it to 0 of 50 while the legitimate save stayed 50 of 50. (2) A count of successes wobbles by about sqrt(n p (1-p)); with 20 runs at 0.3 that is about 2, so "7 then 9 of 20" is well inside the noise and not a difference. (3) "0 of 50" means I did not see it in 50 runs, because a true rate of 0.05 would show no landing about 8% of the time (1 in 13); and every rate here belongs to a stand-in whose obey chance I typed. (4) The redactor finds 6 of my 8 typed cases by shape, not by meaning; redacting what the model sees and what the log keeps close two different doors, and the scan loses to rewording where the code layer does not.* Any wording works if the numbers are your own, `n` is beside each count, and *stand-in* appears.
-- **D.** Model: *"A1 (a planted note orders a legal write of a file nobody asked for): 15 of 50 before, 0 of 50 after `named_files_only`, gap 15 against a noise bound of about 6.5, the legitimate save 50 of 50, on a stand-in with an obey chance of 0.3. Tested: the reworded twin (34 of 50 against the scan alone, 0 of 50 against the guard). Argued, not measured: an order to write the same file the user typed with other content would be allowed; and 0 of 50 only rules out rates above about 6%."* 
+- **D.** Model: *"A1 (a planted note orders a legal write of a file nobody asked for): 15 of 50 before, 0 of 50 after `named_files_only`, gap 15 against a noise bound of about 6.5, the legitimate save 50 of 50, on a stand-in with an obey chance of 0.3. Tested: the reworded twin (34 of 50 against the scan alone, 0 of 50 against the guard). Argued, not measured: an order to write the same file the user typed with other content would be allowed; and 0 of 50 only rules out rates above about 6%."*
 
 ### Page 33.4
 - **A.** `TypeError: sub() missing 1 required positional argument: 'string'`. `re.sub` needs **three** things (pattern, replacement, text) and I gave **two**. Fix: `re.sub(PHONE, "[PHONE]", text)`, with a string in the third place. `redact` has the right shape: `re.sub(pattern, f"[{tag}]", text)`. (Do not confuse it with `str.replace`, which gives a different message.)

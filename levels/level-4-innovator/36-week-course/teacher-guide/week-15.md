@@ -29,6 +29,8 @@
 
 ## 🎯 Lesson Objectives
 
+This section states what the student should be able to do at the end of the lesson, and the evidence you can collect.
+
 By the end of the lesson the student can:
 
 1. **Show that a softmax over wide scores freezes.** Scores `0.1, 2.0, 0.3` give weights `0.112, 0.751, 0.137`; the same scores ten times louder give `0.000, 1.000, 0.000`, and the "soft" lookup has become the hard lookup of Week 14.
@@ -44,6 +46,8 @@ Observable evidence: a filled **Pen Pass 2** sheet whose answers match the modul
 ---
 
 ## 🧑‍🏫 What YOU Need to Know First
+
+This section is your own preparation: the maths, the limits of what you may claim, the three new constructs and the numbers the files will print. Read it before the lesson; none of it is for the student's hands.
 
 > **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist**, the **🐞 Debugging Clinic** and the **🔑 Answer Key** was run on a CPU with one thread and the seeds shown, and the outputs below are the real printed output. The files `dials.py` and `hw.py` are typed one after the other **into the same file** (`dials.py`), because `hw.py` re-assigns a table and calls a function that `dials.py` defines; `scale.py`, `heads.py` and the Clinic files stand alone, and `key.py` is teacher-only. **Nothing printed below depends on timing, and every number repeated exactly on a second run.** The numbers that come from random draws (`scale.py`, `heads.py`, Mistakes 1, 2 and 9) are seeded and should match on the same numpy and PyTorch versions (numpy 2.x and torch 2.x were used); on another build the *pattern* is the same and the digits in the third decimal can move. The by-hand tables of Pen Pass 2 are arithmetic and do not depend on your laptop.
 
@@ -147,7 +151,11 @@ tensor([[1.0000, 0.0000, 0.0000],
 
 **(a) `torch.tril` — the lower triangle.** Read as: *"keep the numbers on and below the diagonal; set the rest to zero."* `torch.tril(torch.ones(3, 3))` is the lower-triangle table of 1s: **row `i` has a 1 for every word that word `i` is allowed to read** (itself and everything before it). Call it *the allowed table*. It works on any table, as the second print shows. The reason this shape is the right one is the next paragraph.
 
-**(b) `scores.masked_fill(mask, float("-inf"))` — write a value where a condition holds.** Read as: *"wherever `mask` is True, put `-inf` instead."* Three things to be exact about. **(i) The mask must be True/False.** `torch.tril(torch.ones(...))` is a table of `1.` and `0.` (floats), so you build the True/False table with a comparison: `allowed == 0` is **True where the future is** (print it; it is the upper triangle). Giving `masked_fill` the float table fails loudly (Mistake 5), and giving it `allowed == 1` is the wrong way round (Mistake 6). **(ii) `float("-inf")`** is minus infinity, a value smaller than every number; `float(...)` is Level 2, the string `"-inf"` is the only new thing, and it is enough to say *"the smallest number there is"*. **(iii) The order is: scores, divide, `masked_fill`, `F.softmax`.** The softmax then turns `exp(-inf) = 0` into a weight of exactly 0 and shares the rest.
+**(b) `scores.masked_fill(mask, float("-inf"))` — write a value where a condition holds.** Read as: *"wherever `mask` is True, put `-inf` instead."* Three things to be exact about:
+
+- **(i) The mask must be True/False.** `torch.tril(torch.ones(...))` is a table of `1.` and `0.` (floats), so you build the True/False table with a comparison: `allowed == 0` is **True where the future is** (print it; it is the upper triangle). Giving `masked_fill` the float table fails loudly (Mistake 5), and giving it `allowed == 1` is the wrong way round (Mistake 6).
+- **(ii) `float("-inf")`** is minus infinity, a value smaller than every number; `float(...)` is Level 2, the string `"-inf"` is the only new thing, and it is enough to say *"the smallest number there is"*.
+- **(iii) The order is: scores, divide, `masked_fill`, `F.softmax`.** The softmax then turns `exp(-inf) = 0` into a weight of exactly 0 and shares the rest.
 
 **Why the lower triangle.** Row `i` is word `i` asking; column `j` is the word being read. Word `i` may read word `j` only when `j <= i`. The row for word 1 has a single allowed entry, so after the softmax it is `[1, 0, 0]` *whatever the scores say*: the first word can only look at itself.
 
@@ -220,6 +228,8 @@ Stop at: *"wide dot products freeze the softmax, so we divide by the square root
 ---
 
 ## 🧰 Prep Checklist
+
+Use this section to get the files typed, run and checked before class, and to know what to do if the laptops fail.
 
 ### 25 minutes the night before
 
@@ -606,6 +616,8 @@ last word, sentence 0: how head 0 and head 1 share attention over the 5 words
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the running order of the lesson, one segment at a time.
+
 | Segment | Minutes | What happens |
 |---|:--:|---|
 | 🪝 Hook | 6 | Shout the river question: `42.77` becomes `50.0`. Soft has turned hard. Why would real scores shout? |
@@ -678,6 +690,8 @@ Plant Mistakes 3 and 4 (and 5 if time). For each: *"Does anything look wrong?"* 
 ---
 
 ## 🐞 The Debugging Clinic
+
+This section holds the nine planted mistakes, with the traceback or output of each and what to ask the student.
 
 Every error below was produced by running the code. **Paths will differ on your machine**; here they are shown as `/home/you/l4/`. Each mistake is deliberate: you plant it, the student reads the traceback (or the surprising output) aloud, and you refuse to fix it until they have said what it means. **Seven are silent or print `nan`**: the program runs and prints something wrong. Those are the dangerous ones, and they are marked. **Two are loud.**
 
@@ -914,6 +928,8 @@ gap between them: 0.033
 
 ## 🎲 The Activity, In Full
 
+This section gives the full set-up, rules and reveal for this week's pen-and-paper pass.
+
 ### Pen Pass 2
 
 **Purpose.** To make the student *be* the attention layer with both dials on, so that `attend_dials(True, True)` is something they have already done. It reuses Week 14's scores and values so that the only new work is the divide, the crossing-out, and the row by row re-sharing. Materials: the sheet (below), the Week 14 sheet, a pen, a calculator, your key.
@@ -989,6 +1005,8 @@ Swap the question table for `[[0, 0], [1, 0]]` (homework H2) and have the studen
 
 ## ❓ Questions Students Ask This Week
 
+Short answers to the questions this lesson tends to raise.
+
 **"Why `sqrt(d)` and not `d`?"** Variances add, so the sum's variance is `d` and its *spread* is `sqrt(d)`. Dividing by `d` is too much (Mistake 2).
 
 **"Why is the per-product variance 1?"** Because we chose random numbers with spread 1 and no link between them, and `key.py` measured it. The proof uses algebra we do not need; the measurement is all we claim.
@@ -1019,6 +1037,8 @@ Swap the question table for `[[0, 0], [1, 0]]` (homework H2) and have the studen
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+Use this table to match a symptom in the room to its cause and a response.
+
 | Symptom | What is happening | What to do |
 |---|---|---|
 | The student says "the divide makes things smaller" | They have the action, not the reason | Go back to the table: spread `2, 4, 8` before, `1, 1, 1` after |
@@ -1036,6 +1056,8 @@ Swap the question table for `[[0, 0], [1, 0]]` (homework H2) and have the studen
 
 ## 🧭 Differentiation
 
+Three versions of the lesson, depending on how the student is doing today.
+
 ### If the student is struggling
 
 Stay with the **loud river** and the **leak test**. The minimum viable lesson: they can show the softmax of `1, 20, 3` is the hard lookup (50.0); they can say that a long dot product gives a wide spread and that dividing by `sqrt(d)` fixes it (they may read the table rather than derive it); they have run `dials.py` and can point to which line is the divide and which is the mask; they say *"the mask goes on the scores, before the softmax, with `-inf`"*. Do Pen Pass 2 for the single row `cat` only (2 exps, one total). Skip `heads.py` beyond the first block (the reshape on numbers you can read), and skip the full multi-head pass; the shapes can be read from the printed lines.
@@ -1051,6 +1073,8 @@ Run the Hook with the cards and no screen. *"Scores 1, 20, 3: who wins?"* Then t
 ---
 
 ## ✅ Assessing Understanding
+
+Use these questions and the mastery scale to judge what has landed.
 
 Ask these out loud near the end; do not rescue.
 
@@ -1080,6 +1104,8 @@ Ask these out loud near the end; do not rescue.
 
 ## 📤 Homework to Assign
 
+This section lists the three homework tasks and how long they should take.
+
 ~60 minutes, in the workbook, pages 15.1-15.5. The three tasks:
 
 1. **A softmax by hand, before and after the divide (page 15.2).** Scores `4, -2, 2` come from a dot product of width 16. Compute the three weights **raw** (`0.8789, 0.0022, 0.1189`) and **divided by `sqrt(16) = 4`** (`0.5465, 0.1220, 0.3315`), and the ratio of the biggest weight to the smallest in each (`403 : 1` raw; `4.5 : 1` divided). Say in a sentence which one is still "soft". The key is `key.py`'s H1 block.
@@ -1089,6 +1115,8 @@ Ask these out loud near the end; do not rescue.
 ---
 
 ## 🔑 Answer Key
+
+This section is for you only: the worked answers for every page of the workbook. Never hand it to the student.
 
 Every number below comes from `key.py` (teacher-only) or from the files above.
 
@@ -1284,5 +1312,7 @@ exp(-inf) = 0.0 ; a whole row of -inf gives 0/0: [nan nan nan]
 ---
 
 ## 🔮 Next Week Preview
+
+What the next week picks up from today.
 
 **Week 16 — Where Am I? Positions and the Transformer Block.** Today's attention has two blind spots left. The first: it cannot tell the order of the words (the student will push "dog bit postman" and "postman bit dog" through it and see that the two `the`s and the two `dog`s get the same answer, and that shuffling the words only shuffles the answers). The fix is to **add a place vector** to every word, with `torch.arange` and a small table. The second: attention only *mixes* words. Each word also needs to be thought about alone, so attention and a 4x-wide MLP wrapped in residuals and layer norm (Week 6's ideas) make one **block**, and a GPT is a stack of them. New syntax: `nn.ModuleList`, `register_buffer` (the mask of today is what it will store) and `torch.arange`. The student will **glue the heads back** with `.transpose(1, 2).reshape(B, T, d)` and count the knobs of a block by hand. **Bring today's `dials.py` and `heads.py`.** Nobody trains anything until Week 17.

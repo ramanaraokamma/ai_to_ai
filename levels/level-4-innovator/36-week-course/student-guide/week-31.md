@@ -66,15 +66,17 @@ Keep the card. We come back to it at the end.
 
 ## 1. The four new pieces of syntax
 
-Each on a toy small enough to read. Type this first, in its own file, `toys31.py`.
+This section is for meeting the four pieces on toys small enough to read, before they appear inside the real model. The four pieces:
 
-**`nn.Parameter(tensor)`** marks a tensor as one PyTorch should train. Assign one to a module and it shows up in `model.parameters()`. A plain tensor assigned the same way does not.
+- **`nn.Parameter(tensor)`** marks a tensor as one PyTorch should train. Assign one to a module and it shows up in `model.parameters()`. A plain tensor assigned the same way does not.
 
-**`nn.init.normal_(t, std=0.02)` and `nn.init.zeros_(t)`** fill an existing tensor **in place**, with small random numbers (`std` is their typical size, from Week 3) or with zeros. The trailing underscore means "changes it where it stands".
+- **`nn.init.normal_(t, std=0.02)` and `nn.init.zeros_(t)`** fill an existing tensor **in place**, with small random numbers (`std` is their typical size, from Week 3) or with zeros. The trailing underscore means "changes it where it stands".
 
-**`module.requires_grad_(False)`** freezes **every** parameter inside a module, in place. It is the same switch as `requires_grad=True` on one tensor (Week 2), applied to a whole module at once. `requires_grad_(True)` unfreezes.
+- **`module.requires_grad_(False)`** freezes **every** parameter inside a module, in place. It is the same switch as `requires_grad=True` on one tensor (Week 2), applied to a whole module at once. `requires_grad_(True)` unfreezes.
 
-**`copy.deepcopy(model)`** makes a complete, independent copy of a whole model. In Week 5 you copied a dictionary of weights; today you copy the model. Without it, two names can point at *one* model.
+- **`copy.deepcopy(model)`** makes a complete, independent copy of a whole model. In Week 5 you copied a dictionary of weights; today you copy the model. Without it, two names can point at *one* model.
+
+Type this first, in its own file, `toys31.py`.
 
 ```python
 # toys31.py - the four new pieces on toys small enough to read
@@ -129,7 +131,7 @@ Read it. The `Holder` lists only `learned`, not `plain`: the plain tensor is inv
 
 ## 2. Check the files you stand on
 
-Everything today uses Week 30's work: the 30 frozen eval tickets, the 66 raw training tickets, the dedup scan, `score` and `compare`. Start `week31.py` with this.
+This section is for confirming that Week 30's work is in place, because everything today stands on it: the 30 frozen eval tickets, the 66 raw training tickets, the dedup scan, `score` and `compare`. Start `week31.py` with this block.
 
 ```python
 # p0_check.py - Week 31 block P0: the Week 30 files this week stands on, and one run of them.
@@ -163,7 +165,9 @@ If your counts differ (30, 66, 64, 2 and 14 14 14 14 8), stop and fix Week 30's 
 
 ## 3. The pretraining text, and a scan of it
 
-Your teacher gave you `pretrain_text.py`. It is a short generator that writes template sentences such as `what am i charged per month?`. **It is a stand-in for "lots of text", not a corpus.** Run it, and before you use it, point Week 30's contamination scan at it: contamination can arrive through the pretraining text too.
+This section is for making the pretraining text and scanning it for contamination before any model sees it.
+
+Your teacher gave you `pretrain_text.py`, a short generator that writes template sentences such as `what am i charged per month?`. **It is a stand-in for "lots of text", not a corpus.** Contamination can arrive through the pretraining text too, so point Week 30's scan at the output before you use it.
 
 ```python
 # p2_corpus.py - Week 31 block P2: make the pretraining text and run Week 30's contamination scan over it.
@@ -205,9 +209,11 @@ near-copies of an eval ticket (Jaccard >= 0.70): 38
 sentences left after dropping them: 5672  distinct: 1480
 ```
 
-Read the counts. 6,000 sentences were made but only 1,518 are different: templates repeat. **No eval ticket appears word for word.** But Week 30's Jaccard test finds **38** different near-copies, such as `'afternoon are you there'` against `'good afternoon, are you there?'`. They come out before pretraining. Nobody typed an eval ticket into the generator; a template simply landed a few words away from one.
+Read the counts. 6,000 sentences were made but only 1,518 are different: templates repeat. **No eval ticket appears word for word.**
 
-Now turn words into numbers. Every word that appears in the pretraining text or in the 64 training tickets gets an id. Ids 0, 1 and 2 are special: padding, unknown and the hidden-word marker.
+But Week 30's Jaccard test finds **38** different near-copies, such as `'afternoon are you there'` against `'good afternoon, are you there?'`. They come out before pretraining. Nobody typed an eval ticket into the generator; a template simply landed a few words away from one.
+
+Next, turn words into numbers. Every word that appears in the pretraining text or in the 64 training tickets gets an id. Ids 0, 1 and 2 are special: padding, unknown and the hidden-word marker.
 
 ```python
 # p3_vocab.py - Week 31 block P3: words to numbers. Words seen in the pretraining text or the 64 tickets get ids.
@@ -258,7 +264,7 @@ Look at the encoded line. `"clicking save does absolutely nothing"` became `[1, 
 
 ## 4. Your Week 16 Block becomes an encoder
 
-The same `Block` as Week 16, with one change: the causal mask is replaced by a **padding mask**, so no word looks at padding but every word looks at every other word. Two Blocks make the `Encoder`.
+This section is for building the encoder from your own earlier code. It is the same `Block` as Week 16, with one change: the causal mask is replaced by a **padding mask**, so no word looks at padding but every word looks at every other word. Two Blocks make the `Encoder`.
 
 ```python
 # p4_encoder.py - Week 31 block P4: YOUR Week 16 Block with the causal mask replaced by a padding mask, and an Encoder of two.
@@ -335,7 +341,7 @@ The encoder has **121,152** numbers. One Block has 49,792, of which `q` and `v` 
 
 ## 5. Pretrain once
 
-Hide 20% of the real words (replace them with `<mask>`, id 2) and ask the encoder to guess them. The slots that were not hidden get the target `-100`, which `cross_entropy` ignores (Week 12). There are **no labels anywhere**.
+This section is for running pretraining once, to get the encoder every later run starts from. Hide 20% of the real words (replace them with `<mask>`, id 2) and ask the encoder to guess them. The slots that were not hidden get the target `-100`, which `cross_entropy` ignores (Week 12). There are **no labels anywhere**.
 
 ```python
 # p5_pretrain.py - Week 31 block P5: PRETRAIN once. Hide 20% of the words; predict them. No labels anywhere.
@@ -390,7 +396,7 @@ The loss starts at 5.923. That is about what guessing among 319 words costs (`ln
 
 ## 6. A head, and the helpers
 
-A classifier is the encoder plus a five-way head. The helpers `make_base`, `predict` and `fit` are used all week. Look at `fit`: it hands the optimiser only the parameters that are *not* frozen.
+This section is for building the classifier and the three helpers used all week. A classifier is the encoder plus a five-way head. The helpers `make_base`, `predict` and `fit` are used all week. Look at `fit`: it hands the optimiser only the parameters that are *not* frozen.
 
 ```python
 # p6_classifier.py - Week 31 block P6: a classifier on top of the pretrained encoder, and the three helpers used all week.
@@ -449,7 +455,12 @@ The encoder plus a brand-new, untrained head gets 4 of 30 right. A coin over fiv
 
 ## 7. Low-rank, on paper first
 
-**Do this part on paper, before you run anything.** Take a column of four numbers `(1, 2, 0, -1)` and a row of four `(2, 1, 0, 3)`. Multiply every column number by every row number and write the results in a 4 × 4 grid. Row 1 of the grid is `1 ×` the row, row 2 is `2 ×` it. Fill in rows 3 and 4 yourself. Then run this.
+This section is for meeting the low-rank idea by hand before it appears in code. **Do this part on paper, before you run anything.**
+
+1. Take a column of four numbers `(1, 2, 0, -1)` and a row of four `(2, 1, 0, 3)`.
+2. Multiply every column number by every row number and write the results in a 4 × 4 grid. Row 1 of the grid is `1 ×` the row, row 2 is `2 ×` it.
+3. Fill in rows 3 and 4 yourself.
+4. Then run this block.
 
 ```python
 # p7_lowrank.py - Week 31 block P7: the new idea. A 4 x 4 grid built from a column of 4 and a row of 4.
@@ -491,7 +502,7 @@ For `r = 4`: `4 × 64 + 64 × 4 = 256 + 256 = 512`, which is `512 / 4096 = 0.125
 
 ## 8. `LoRALinear`
 
-Type this one piece at a time and ask of each line: *what is this number right now?*
+This section is for writing the LoRA layer itself. Type it one piece at a time and ask of each line: *what is this number right now?*
 
 ```python
 # p8_lora.py - Week 31 block P8: LoRA. Keep the old projection frozen; add a thin-times-thin patch beside it.
@@ -535,7 +546,7 @@ This block only defines things, so it prints nothing. Read it.
 
 ## 9. The base model, and step 0
 
-Train the head alone on the frozen encoder: that is your **base model**. Then build the LoRA model from a `deepcopy` of it and prove the patch starts as a no-op.
+This section is for building the base model and checking the start of the patch. Train the head alone on the frozen encoder: that is your **base model**. Then build the LoRA model from a `deepcopy` of it and check that the patch starts as a no-op.
 
 **Before you run this, work out on paper:** four patches of 512 numbers, plus the head (`64 × 5 + 5`), is how many trainable numbers? The whole model is the 121,152 of the encoder plus the head plus the four patches: how many? What percentage is trainable? Then run it and compare.
 
@@ -580,7 +591,12 @@ Then the first gradient. `biggest |A.grad| = 0.0` while `|B.grad|` is not zero. 
 
 ## 10. Two fine-tunes from one base
 
-Same base, two ways to continue. **Full:** unfreeze everything, learning rate `3e-4`. **LoRA:** the patched model, learning rate `3e-3`. Both 100 steps. The learning rates are the first values tried; they were not changed after seeing a score.
+This section is for continuing training from the same base in two ways, so they can be compared.
+
+- **Full:** unfreeze everything, learning rate `3e-4`.
+- **LoRA:** the patched model, learning rate `3e-3`.
+
+Both run 100 steps. The learning rates are the first values tried; they were not changed after seeing a score.
 
 **Before you run this, write a prediction:** how many of 30 will full fine-tuning get, compared with the base's 18? Keep your guess for Page 31.3.
 
@@ -619,7 +635,7 @@ Full fine-tuning trained **121,477** numbers; LoRA trained **2,373**. Both got 1
 
 ## 11. The table that is the point
 
-Week 30's `compare`, between the base model and the LoRA model.
+This section is for reading Week 30's per-category table on your own model. Run `compare` between the base model and the LoRA model.
 
 ```python
 # p11_regression.py - Week 31 block P11: Week 30's table, base -> LoRA. The average first, then the rows.
@@ -661,7 +677,7 @@ It is **one ticket**: 2 of 5 became 1 of 5. The flag is a **tripwire, not a verd
 
 ## 12. Six seeds, every row kept
 
-Run the same comparison for six seeds. Each seed changes the new head's starting numbers and the order of the 16-ticket batches. **Every row is printed; none is picked.** The function `drops` repeats the rule inside `compare` so that we can list the flagged categories for each seed in one line.
+This section is for asking whether one seed's table can be trusted. Run the same comparison for six seeds. Each seed changes the new head's starting numbers and the order of the 16-ticket batches. **Every row is printed; none is picked.** The function `drops` repeats the rule inside `compare` so that we can list the flagged categories for each seed in one line.
 
 ```python
 # p12_seeds.py - Week 31 block P12: the same comparison for six seeds. Every row is kept; none is picked.
@@ -717,7 +733,7 @@ And one more number to put next to them. Week 30's free rules scored **25 of 30 
 
 ### Grid Cards
 
-Do this on paper. **The row test:** *pick the first row that is not all zeros; is every other row a multiple of it?* If yes, the grid is rank 1.
+Do this on paper. This page practises spotting and counting low-rank grids. **The row test:** *pick the first row that is not all zeros; is every other row a multiple of it?* If yes, the grid is rank 1.
 
 - **Card A.** Column `(1, 2, 0, -1)`, row `(2, 1, 0, 3)`. Fill all sixteen cells. (You did this in Section 7.)
 - **Card B.** The same grid, but the cell in row 4, column 3 holds `5`. Can you still build it from one column and one row?

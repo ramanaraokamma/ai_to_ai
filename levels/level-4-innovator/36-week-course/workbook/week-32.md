@@ -26,6 +26,8 @@
 
 ## ✅ Warm-Up (5 min, before anything else, from memory)
 
+This page checks what you remember from the previous week and the chapter. Answer from memory, then check in the Answers.
+
 1. A system says "80% sure" on 100 questions and is right on 55. Is it calibrated, overconfident or underconfident? ______________________
 2. Which costs more in Brier: being sure and wrong, or being sure and right? ______________________  Roughly how many times more? ______________________
 3. Week 31: a model's average rises. What must you look at before saying it got better? ____________________________________________________
@@ -34,6 +36,8 @@
 ---
 
 ## 🧮 Page 32.1 — Brier by Hand: Square the Gap (25 min · pen, then one check)
+
+This page is for computing Brier by hand on ten results, so that you know what each number in the score is made of.
 
 Brier is the **mean of `(p - y)²`**, where `p` is how sure the system said it was (0 to 1) and `y` is `1` if it was right, `0` if it was wrong.
 
@@ -88,7 +92,7 @@ What cost does a system pay on *every* result if it says `0.5` whatever happens?
 
 Sum: ____________ · Brier: ____________ · The two sets of ten give different Briers. Which one would you believe about the whole sheet, and why? ____________________________________________________
 
-Now run the check. Run it after `week32.py`.
+Now run the check. The next block prints the squares for both sets and the practice costs; run it after `week32.py`.
 
 ```python
 # check321.py - Page 32.1: the ten squared gaps for both sets of ten, and the practice costs. Needs RESULTS from week32.py.
@@ -149,6 +153,8 @@ Did your hand sum match to two decimals? If not, which row did you add wrongly? 
 
 ## 🧮 Page 32.2 — ECE by Hand, and the Bucket Helpers (30 min · pen, then one check)
 
+This page is for building ECE by hand with two buckets, then practising the two numpy helpers that make buckets, `np.digitize` and `np.bincount`.
+
 ECE in two buckets: `ECE = (n_sure / 10) × gap_sure + (n_unsure / 10) × gap_unsure`. **Sure** means `p` at least 0.8. **Unsure** means below 0.8. A **gap** is the size of `stated - actual` (drop the sign).
 
 **A. Set A (`RESULTS[0::4]`, the table of Page 32.1).**
@@ -184,7 +190,7 @@ ECE = ____________ · One sentence: why is this ECE not the same as set A's, and
 
 Say what `weights=` does, in your words: ____________________________________________________
 
-Now run the check.
+Now run the check. The next block prints the two-bucket ECE for both sets and the `np.digitize` and `np.bincount` calls above.
 
 ```python
 # check322.py - Page 32.2: the two-bucket ECE for both sets of ten, and digitize / bincount on practice lists.
@@ -229,6 +235,8 @@ Compare with your hand work. Which of the seven buckets did you get wrong, if an
 ---
 
 ## 🧮 Page 32.3 — Thresholds, and Who Fell (40 min · pen, then computer)
+
+This page is for reading a per-category table at a threshold: first on an invented practice table, then on your own sheet.
 
 **A. Read a table by hand (PRACTICE numbers, invented for this page; not your sheet and not a run).** A system answers only when it is sure. Four categories of ten results each.
 
@@ -315,7 +323,7 @@ t = 0.9: overall 0.575 -> 0.700   answered 10 of 40
   out_of_scope  answered  1  0.375 -> 1.000  (n <= 2: do not read)
 ```
 
-Fill in what the run says:
+Use the run above to fill in this table:
 
 | t | overall before → after | answered | categories that fell | rows with n ≤ 2 |
 |:-:|:-:|:-:|---|---|
@@ -343,6 +351,8 @@ The accuracy at `t = 0.9` (`0.700`) is **lower** than at `t = 0.8` (`0.722`, fro
 ---
 
 ## 🐞 Page 32.4 — Break It on Purpose (three bugs · 30 min)
+
+This page is for running three broken blocks and finding the one line or check that catches each.
 
 Each block is **broken on purpose.** Run it in the session of `week32.py`, write what you expected and what you saw, then find the one line that would have caught it. Two of the three are **silent**: nothing fails, and the number looks like a result.
 
@@ -433,6 +443,8 @@ This is better, but it still has a small sin. The threshold `0.75` was chosen by
 
 ## 📓 Page 32.5 — Stop and Think (10 min · pen only)
 
+This page is for answering five questions in writing, pen only, about what the numbers do and do not say.
+
 1. ECE is `0.179` on the forty. Does that mean the system is wrong 17.9% of the time? If not, what does it mean, and how often *is* it wrong? ____________________________________________________
 2. A system that says "57.5%" on every question, its own accuracy, has an ECE of exactly `0`. Why is it still no use for deciding which answers to trust? ____________________________________________________
 3. Capping every stated confidence at `0.85` lowers ECE without changing one answer. In one sentence, say the difference between "the system stopped overclaiming" and "the system got better". ____________________________________________________
@@ -442,6 +454,8 @@ This is better, but it still has a small sin. The threshold `0.75` was chosen by
 ---
 
 ## 📓 Page 32.6 — The Bug Log
+
+This page is for recording each mistake from this week with the check that would have caught it.
 
 | # | What went wrong (your words) | Loud or silent? | The one line or check that caught it | The rule I will keep |
 |:-:|---|:-:|---|---|
@@ -460,6 +474,8 @@ Then write this sentence in your own handwriting, with your own numbers:
 
 ## 🧠 Self-Check (from memory, no notes)
 
+Tick each line only if you can do it without looking anything up.
+
 - [ ] I can compute a Brier score on ten results and say why a sure-and-wrong row costs so much.
 - [ ] I can build a two-bucket ECE by hand and say why the buckets are weighted by their size.
 - [ ] I can say which bucket number a value goes to in `np.digitize`, and what `minlength=` and `weights=` do in `np.bincount`.
@@ -469,7 +485,7 @@ Then write this sentence in your own handwriting, with your own numbers:
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+**✂️ ANSWERS - keep this page folded until you have finished**
 
 ### Warm-Up
 1. Overconfident: it said 80% and delivered 55%.

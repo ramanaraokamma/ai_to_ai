@@ -52,16 +52,24 @@ Hold on to those guesses. By the end of the next section, three of them will hav
 
 ## 🧠 The Big Idea
 
+This section shows what attention does and does not know about word order, how a place vector is added, and how attention and an MLP combine into one block. Each part has a file to run.
+
 ### 1. Attention sees who is in the room, not where they sit
 
-Picture five people in a room. Each holds a card (a word vector). Each person's answer is **a blend of everybody's cards**, weighted by how well their own card matches the others. Now read the recipe again. Your answer is built from *your card* and from *the set of cards in the room*. **Nothing in the recipe says who sits where.**
+Picture five people in a room. Each holds a card (a word vector). Each person's answer is **a blend of everybody's cards**, weighted by how well their own card matches the others.
+
+Now read the recipe again. Your answer is built from *your card* and from *the set of cards in the room*. **Nothing in the recipe says who sits where.**
 
 So two things must be true:
 
 - Two people holding the same card get the same answer.
 - If you swap the seats, nothing changes except *who is holding which answer*.
 
-In symbols, the second one is: **shuffle, then attend = attend, then shuffle.** Here it is as a file. The `attend` function is the Week 14 and 15 recipe (scores, divide by the square root of the width, softmax, blend) **with no mask**, so that the blindness is exact.
+In symbols, the second one is: **shuffle, then attend = attend, then shuffle.**
+
+Run this file to test both. The `attend` function is the Week 14 and 15 recipe (scores, divide by the square root of the width, softmax, blend) **with no mask**, so that the blindness is exact.
+
+Type and run `blind.py`.
 
 **`blind.py`**
 
@@ -106,6 +114,7 @@ shuffled_out = attend(emb(a))[perm]
 print("shuffle then attend == attend then shuffle:    ", torch.allclose(shuffled_in, shuffled_out, atol=1e-6))
 print("size of the difference:", round((shuffled_in - shuffled_out).abs().max().item(), 6))
 ```
+
 ```text
 output shape: (5, 4)
 first 'the' and second 'the' get the same row: True
@@ -143,6 +152,8 @@ places = torch.arange(2, 6)       # tensor([2, 3, 4, 5])   start, then stop (the
 For a sentence of `T` words, `torch.arange(T)` gives `T` whole numbers, one label per word. Say `T` out loud as *the length of the sentence*, not the number of sentences. Because the numbers are whole, the tensor is a tensor of whole numbers, which is exactly what `nn.Embedding` asks for (Week 8).
 
 Why **add** the place to the word, instead of sticking it on the end? Adding keeps the width at `d`, so every layer after it keeps the same shape. (We did not test joining them, so we do not claim either one is better.)
+
+Type and run `where.py`. It is `blind.py` with the place table added.
 
 **`where.py`**
 
@@ -197,6 +208,7 @@ x1 = emb(torch.tensor([0, 1])) + pos_table(torch.arange(0, 2))
 x2 = emb(torch.tensor([0, 1])) + pos_table(torch.arange(3, 5))
 print("same two words, places 0-1 vs places 3-4, equal inputs:", torch.allclose(x1, x2))
 ```
+
 ```text
 torch.arange(5): tensor([0, 1, 2, 3, 4])
 first 'the' and second 'the' get the same row: False
@@ -254,6 +266,8 @@ A stack of blocks and a mask bring two problems, and two new constructs.
 
 **New construct 3: `nn.ModuleList([...])`.** Read it as: *"a Python list, except the model knows that the things in it are its own layers."* A block holds several layers; a stack holds several blocks. PyTorch can only find knobs (to count them, to hand them to the optimizer) in things it has been told about, and a `ModuleList` is how you tell it about a list.
 
+Type and run `buffers.py`.
+
 **`buffers.py`**
 
 ```python
@@ -296,6 +310,7 @@ print("Tower(4) knobs:", sum(p.numel() for p in tower.parameters()), " = 4 x (3x
 print("Tower output shape:", tuple(tower(torch.ones(2, 3)).shape))
 print("saved entries:", list(tower.state_dict().keys())[:4], "...")
 ```
+
 ```text
 knobs (parameters): 12
 saved entries     : ['mask', 'lin.weight', 'lin.bias']
@@ -308,7 +323,9 @@ Tower output shape: (2, 3)
 saved entries: ['layers.0.weight', 'layers.0.bias', 'layers.1.weight', 'layers.1.bias'] ...
 ```
 
-Before you run, answer: how many knobs does `WithBuffer` have? The mask has 9 numbers, so is the answer 21? Then compare. The model has **12** knobs, the `Linear`'s `3 x 3 + 3`, and *none* of them is the mask, yet `state_dict()` lists `'mask'` first: it is saved with the model. The `Tower` of four layers has `4 x (3 x 3 + 3) = 48` knobs, and its saved entries are named `layers.0.weight`, `layers.0.bias`, and so on, which is proof that PyTorch can see inside the list.
+Before you run, answer: how many knobs does `WithBuffer` have? The mask has 9 numbers, so is the answer 21? Then compare.
+
+The model has **12** knobs, the `Linear`'s `3 x 3 + 3`, and *none* of them is the mask, yet `state_dict()` lists `'mask'` first: it is saved with the model. The `Tower` of four layers has `4 x (3 x 3 + 3) = 48` knobs, and its saved entries are named `layers.0.weight`, `layers.0.bias`, and so on, which is proof that PyTorch can see inside the list.
 
 (One honest limit: the main reason buffers matter is moving a model to a GPU. This course runs on a CPU only, so we did not test that. Read it as "the buffer is the tensor that follows the model".)
 
@@ -317,6 +334,8 @@ Before you run, answer: how many knobs does `WithBuffer` have? The mask has 9 nu
 Here is a whole block, written **flat**: it holds `nn.LayerNorm`, `nn.Linear` and `nn.GELU` as attributes and writes the attention inside `forward`. Read it top to bottom. The attention half is Weeks 14 and 15, and you know it. Two lines are new: `.transpose(1, 2).reshape(B, T, d)` glues the heads back side by side, and `x = x + ...` is the residual add, twice.
 
 Before you run it, do the count in the next section (or at least make a guess) and write it down. The file prints `knobs in one block:`.
+
+Type and run `block.py`.
 
 **`block.py`**
 
@@ -415,6 +434,7 @@ for b in nn.ModuleList([Block(d, H, 32), Block(d, H, 32)]):
     x = b(x)
 print("characters in the corpus:", len(chars), " text length:", ids.shape[1], " out:", tuple(x.shape))
 ```
+
 ```text
 in : (1, 6, 8)  out: (1, 6, 8)
 knobs in one block: 848
@@ -443,6 +463,8 @@ The nudge used one feature only, on purpose. If you nudge *all eight* numbers by
 
 ## 🔢 Count the Knobs
 
+This section gives you the counting rules for each layer type, so you can total one block by hand before PyTorch does it.
+
 For each layer, count *numbers*:
 
 | Layer | Count | Why |
@@ -452,7 +474,11 @@ For each layer, count *numbers*:
 | `nn.GELU()` | `0` | a fixed curve, nothing to learn |
 | `nn.Embedding(V, d)` | `V x d` | one row per entry |
 
-In our block the `q`, `k` and `v` layers have **no bias**; `proj` has one; there are two layer norms; `up` goes from `d` to `4d` and `down` from `4d` back to `d`, both with a bias. **Fill in the nine rows for `d = 8` on workbook page 16.4 before you run `count.py`.** Then run it.
+In our block the `q`, `k` and `v` layers have **no bias**; `proj` has one; there are two layer norms; `up` goes from `d` to `4d` and `down` from `4d` back to `d`, both with a bias.
+
+**Fill in the nine rows for `d = 8` on workbook page 16.4 before you run `count.py`.** Then run it.
+
+Type and run `count.py`.
 
 **`count.py`**
 
@@ -495,6 +521,7 @@ tok, pos = 28 * D, 64 * D
 final_norm, head = 2 * D, D * 28 + 28
 print("whole model:", tok + pos + 4 * (attention + mlp + norms) + final_norm + head)
 ```
+
 ```text
 ln1   LayerNorm(d)           2 x d                 16
 q     Linear(d, d), no bias  d x d                 64
@@ -524,6 +551,8 @@ The last line is the whole TinyGPT of Week 17, computed by arithmetic only: 28 c
 
 ## 🎲 Your Turn
 
+Three short tasks: play attention by hand, count a block by hand, and design your own shuffle test.
+
 ### The Seat Swap
 
 You play attention for three cards, with a calculator, so that you have *been* the blind reader and then the reader who is told where each card sits. Your teacher lays out three index cards and follows **the card `2`**. The rules:
@@ -537,6 +566,8 @@ You play attention for three cards, with a calculator, so that you have *been* t
 Rounds 1 and 2 use no stamps and two different seatings of the same three cards; rounds 3 and 4 add stamps. The numbers are on workbook page 16.2 and your teacher has them.
 
 Here is a **practice** version with only two cards, `1` and `0` (not the class cards), so you can see the method. Follow the card `1`:
+
+Type and run `seat_mini.py`.
 
 **`seat_mini.py`**
 
@@ -563,6 +594,7 @@ print("order 1,0  stamps 0,0.5: weights", [round(x, 4) for x in w], " answer", r
 w, a = answer_for([0.0 + 0.0, 1.0 + 0.5], 1)
 print("order 0,1  stamps 0,0.5: weights", [round(x, 4) for x in w], " answer", round(a, 4))
 ```
+
 ```text
 order 1,0  no stamps : weights [0.7311, 0.2689]  answer 0.7311
 order 0,1  no stamps : weights [0.2689, 0.7311]  answer 0.7311
@@ -586,7 +618,11 @@ In `where.py`, change the ids in `a` to another sentence of your choosing (ids `
 
 ## 🔬 Break It On Purpose
 
+This section makes one error happen so you can read it.
+
 **DELIBERATE.** The place table has eight rows, places `0` to `7`. Before you run this, write down what you expect when a sentence has **ten** words.
+
+Run `bad_long.py`.
 
 **`bad_long.py`**
 
@@ -600,6 +636,7 @@ pos_table = nn.Embedding(8, 4)             # eight places
 ids = torch.arange(10)                     # a sentence ten words long -> places 0..9
 vectors = pos_table(ids)
 ```
+
 ```text
 Traceback (most recent call last):
   File "bad_long.py", line 8, in <module>
@@ -615,6 +652,8 @@ Did it tell you which place was the problem? Count the rows and the places asked
 ## 🚀 Optional: Does Attention With Places Read the Order? `flyer.py`
 
 Week 8's task again: in every sentence the dog appears exactly once, as the biter or the bitten, and the label says which. This file **really trains** two small models for 300 steps each (under a second): attention with no places, and attention with places. Same data, same seed. Training is Week 17's story in full; here it is only a test of whether the machinery can read order.
+
+Type and run `flyer.py`.
 
 **`flyer.py`**
 
@@ -687,6 +726,7 @@ for use_positions in [False, True]:
     label = "attention + positions" if use_positions else "attention, no positions"
     print(f"{label:<24}: train {accuracy(model(X[train_i]), y[train_i]):.3f}  val {accuracy(model(X[val_i]), y[val_i]):.3f}")
 ```
+
 ```text
 val sentences whose mirror is in train: 18
 attention, no positions : train 0.650  val 0.125
@@ -701,6 +741,8 @@ Read these numbers carefully, and do not over-read them.
 ---
 
 ## 🧭 What was shown, and what was not
+
+This section separates what this week's runs established from what they did not.
 
 **Shown:**
 - Attention with no mask gives the same rows for the same words in any order (one seed; the reason is structural).
@@ -717,6 +759,8 @@ Read these numbers carefully, and do not over-read them.
 ### Extension for the fast: `masked.py`
 
 Does a mask alone break the blindness? Predict the four lines, then run.
+
+Type and run `masked.py`.
 
 **`masked.py`**
 
@@ -760,6 +804,7 @@ print("masked, no positions: shuffle-then-attend == attend-then-shuffle:",
 # Why: the first word can only look at itself, so the masked rows are NOT interchangeable.
 print("row 0 only sees itself, so its answer is Wv(x0):", torch.allclose(out_a[0], Wv(emb(a))[0], atol=1e-6))
 ```
+
 ```text
 masked, no positions: first 'the' == second 'the': False
 masked, no positions: 'dog' in a == 'dog' in b:    False
@@ -772,6 +817,8 @@ The first word can only look at itself, so its answer is exactly `Wv(x0)`, and t
 ---
 
 ## 🔑 Wrap Up
+
+Use these questions to check yourself before the homework.
 
 1. Three things we did. One: attention alone cannot tell where a word is, so shuffling the words only shuffles the answers. Two: we add a place vector to each word and then it can. Three: a block is attention plus a per-word MLP, each with a residual add, and a GPT is a stack of blocks. What did we **not** do?
 2. How many knobs in a block at width 8? Do the number of words or the number of heads change it?
@@ -789,6 +836,8 @@ Then write this sentence in your Bug Log in your own handwriting:
 
 ## 📤 Homework
 
+The workbook pages below are the homework; the time estimate is in the header.
+
 Complete workbook pages 16.1 to 16.6. Write your **predictions before you run anything**: a guess written after the run is not a guess. The Seat Swap on page 16.2 and the count on page 16.4 are the two to do carefully by hand. Every number you write must have come from your own calculator or your own run.
 
 **Optional.** In `where.py`, make `pos_table` smaller than the sentence on purpose, predict what will happen, and write what you saw in the Bug Log.
@@ -796,6 +845,8 @@ Complete workbook pages 16.1 to 16.6. Write your **predictions before you run an
 ---
 
 ## 📖 Words from this week
+
+The new words of the week, for reference.
 
 | Word | Meaning |
 |---|---|

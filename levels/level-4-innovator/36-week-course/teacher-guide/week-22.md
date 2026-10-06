@@ -9,6 +9,8 @@
 
 ## 📋 At a Glance
 
+This table is the one-screen summary of the week: what is taught, what it needs and how long it takes.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes in class, then the workbook (~60-75 min) |
@@ -29,6 +31,8 @@
 
 ## 🎯 Lesson Objectives
 
+These are the five things the student should be able to do at the end of the hour, each with the number that shows it.
+
 By the end of the lesson the student can:
 
 1. **Say why SFT masks the prompt, and do it**: the guess at place `t` is for place `t+1`, so with a 5-token prompt the first **4** guesses are set to `-100`; show `3.8008` (all 8 guesses) against `4.0407` (the last 4) on the same numbers, and say which one is SFT.
@@ -43,11 +47,19 @@ Observable evidence: `sftmask.py` printing `3.8008` and `4.0407`; the student's 
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section is your preparation reading: the maths, the limits and the likely confusions, so that nothing in class surprises you.
+
 > **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist** was run, **in order, in one Python session (one shared namespace)**, on a CPU with `torch.set_num_threads(1)` and the seeds shown; the outputs printed below are the real printed output, and **the whole set was run twice with every printed line identical** (apart from the `seconds:` line). Blocks in the **🐞 Debugging Clinic** are **deliberate mistakes**, each marked, each run on its own, and their tracebacks and odd numbers are real. Different CPU or PyTorch build: the last digit of a loss can move; nothing in the lesson depends on a last digit. **Numbers that come from the module or the ground-truth ledger rather than from a block run for this guide are labelled "ledger" or "module"**; the rest were printed by the blocks here. The author ran the whole set on PyTorch 2.2.1.
 
 ### 1. What the student is doing today, in one paragraph
 
-Last week the student fitted a straight line through four training runs and saw that pretraining is "the Week 17 loss, at a scale". Today the model is *finished pretraining* and the question is what to do next. A pretrained model, asked "q: what runs past the town?", carries on the text; it does not answer. Three toy versions of the three fixes. **One:** SFT. The student scores a model's guesses on an 8-position example twice, once over every guess and once over the last four only, and sees `3.8008` against `4.0407`; they build the mask by hand with `log_softmax` and `gather`, and check it against `F.cross_entropy(..., ignore_index=-100)` from Week 12. **Two:** a reward model. Ten typed judgements between six answers, five weights, the loss `-logsigmoid(winner - loser)`, and the uncomfortable finding that the biggest weight is for *formatting*. **Three:** DPO. A four-answer policy starts where the SFT model is, is told six preferences, and is trained for 300 steps at two values of `beta`. On paper, before any of it, they compute a KL divergence on two small tables of chances. Everything is real PyTorch, everything is a toy, and the lesson is honest about both.
+Last week the student fitted a straight line through four training runs and saw that pretraining is "the Week 17 loss, at a scale". Today the model is *finished pretraining* and the question is what to do next. A pretrained model, asked "q: what runs past the town?", carries on the text; it does not answer. Today has a toy version of each of three fixes.
+
+**One: SFT.** The student scores a model's guesses on an 8-position example twice, once over every guess and once over the last four only, and sees `3.8008` against `4.0407`; they build the mask by hand with `log_softmax` and `gather`, and check it against `F.cross_entropy(..., ignore_index=-100)` from Week 12.
+
+**Two: a reward model.** Ten typed judgements between six answers, five weights, the loss `-logsigmoid(winner - loser)`, and the uncomfortable finding that the biggest weight is for *formatting*.
+
+**Three: DPO.** A four-answer policy starts where the SFT model is, is told six preferences, and is trained for 300 steps at two values of `beta`. On paper, before any of it, they compute a KL divergence on two small tables of chances. Everything is real PyTorch, everything is a toy, and the lesson is honest about both.
 
 ### 2. 🔢 The maths you need — taught to you first
 
@@ -59,7 +71,9 @@ Last week the student fitted a straight line through four training runs and saw 
 
 `KL(p || q) = p1 x ln(p1/q1) + p2 x ln(p2/q2) + p3 x ln(p3/q3) + p4 x ln(p4/q4)`
 
-Read it aloud as: *"go through the outcomes; for each, how much more likely did it get, in logs; weight that by how often the new table actually picks it; add up."* **Worked, table 1.** `q = [0.25, 0.25, 0.25, 0.25]`, `p1 = [0.50, 0.25, 0.125, 0.125]`.
+Read it aloud as: *"go through the outcomes; for each, how much more likely did it get, in logs; weight that by how often the new table actually picks it; add up."*
+
+**Worked, table 1.** `q = [0.25, 0.25, 0.25, 0.25]`, `p1 = [0.50, 0.25, 0.125, 0.125]`.
 
 | Outcome | `q` | `p` | `p / q` | `ln(p/q)` | `p x ln(p/q)` |
 |:--:|:--:|:--:|:--:|:--:|:--:|
@@ -68,9 +82,12 @@ Read it aloud as: *"go through the outcomes; for each, how much more likely did 
 | 3 | 0.25 | 0.125 | 0.5 | `-0.6931` | `0.125 x -0.6931 = -0.0866` |
 | 4 | 0.25 | 0.125 | 0.5 | `-0.6931` | `-0.0866` |
 
-Sum: `0.3466 - 0.0866 - 0.0866 =` **`0.1733`** (as a shortcut, `0.5 ln 2 - 0.25 ln 2 = 0.25 ln 2 = 0.1733`). **Worked, table 2.** `p2 = [0.70, 0.10, 0.10, 0.10]` against the same `q`: `0.7 x ln(2.8) + 3 x 0.1 x ln(0.4) = 0.7 x 1.0296 + 0.3 x (-0.9163) = 0.7207 - 0.2749 =` **`0.4458`**. The more the table has moved, the bigger the number.
+Sum: `0.3466 - 0.0866 - 0.0866 =` **`0.1733`** (as a shortcut, `0.5 ln 2 - 0.25 ln 2 = 0.25 ln 2 = 0.1733`).
+
+**Worked, table 2.** `p2 = [0.70, 0.10, 0.10, 0.10]` against the same `q`: `0.7 x ln(2.8) + 3 x 0.1 x ln(0.4) = 0.7 x 1.0296 + 0.3 x (-0.9163) = 0.7207 - 0.2749 =` **`0.4458`**. The more the table has moved, the bigger the number.
 
 **(c) Four facts about it, all of which `kl.py` prints.**
+
 - **`KL = 0` exactly when `p = q`** (every log-ratio is `0`). It is never negative. That is the reason it works as "distance moved".
 - **It is weighted by `p`, not plain-averaged.** The plain average of `ln(p1/q)` over the four outcomes is `-0.1733`, a *negative* number: it is not KL. The weighting by `p` is what makes it not negative.
 - **It is not symmetric.** `KL(p2 || q) = 0.4458` but `KL(q || p2) = 0.4298`. So "distance" is a loose word; say "how far `p` has moved from `q`", and always say which is first. In every KL below, the **policy is first and the reference is second**.
@@ -198,6 +215,8 @@ Stop at: *"SFT is next-token training that only scores the answer. A reward mode
 ---
 
 ## 🧰 Prep Checklist
+
+This section lists what to set up and run before class, with the real printed output of every file the student will type.
 
 ### 35 minutes the night before
 
@@ -726,6 +745,8 @@ print('all nine ran; total seconds:', round(time.time() - t0, 1))
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the running order of the lesson, with what to say, ask and expect at each step.
+
 | Segment | Minutes | What happens |
 |---|:--:|---|
 | 🪝 Hook | 6 | Ask the base model a question; it carries on instead of answering. Three fixes, three predictions. |
@@ -802,6 +823,8 @@ The full rules are in *The Activity, In Full* below. The shape:
 ---
 
 ## 🐞 The Debugging Clinic
+
+This section gives nine planted mistakes for the student to diagnose from the traceback or the odd number, and how to run that without giving the answer away.
 
 Every error below was produced by running the code. **Paths will differ on your machine**; here they are shown as `/home/you/l4/`. Tracebacks from PyTorch run through several of its own files; the long middle of those is replaced by a line reading `... frames inside torch (elided) ...`, and **the last line is the real, complete last line**. Each mistake is deliberate: you plant it, the student reads the traceback (or the odd number) aloud, and you refuse to fix it until they have said what it means. Each block is **self-contained** so you can drop it in a scratch folder (none needs the Prep files). **Five of the nine are silent**, and the silent ones are the point.
 
@@ -1071,6 +1094,8 @@ the smaller loss belongs to the model that moved LESS.
 
 ## 🎲 The Activity, In Full
 
+This section gives the complete rules, rounds and questions for the main hands-on activity, The Leash.
+
 ### The Leash
 
 **What it is:** the student does, by hand, the one piece of new maths (KL on two tables), then the one piece of DPO arithmetic (a single pair at two `beta`s), and only then runs the toy, so that the two numbers that come out (`0.997` and `0.589`) are *predictions confirmed*, not surprises.
@@ -1135,6 +1160,8 @@ Round 6: the student constructs a table `p` whose KL from `q` is **as large as t
 
 ## ❓ Questions Students Ask This Week
 
+This section collects the questions you are likely to be asked, each with an answer that stays inside what was measured.
+
 **"Why mask the prompt? Doesn't the model learn from the questions too?"** It can, and in our toy nothing stops us; the reference module's reason is that we want it to learn to *produce the answer given the prompt*, not to imitate users, and that scoring the prompt would be wasted effort. We did not run a comparison of the two training regimes, so this is the module's reasoning, not our result.
 
 **"Why is the masked loss bigger?"** Different set of guesses. Here it is only because the last four random guesses happened to score worse. It would be the other way with other random numbers.
@@ -1167,6 +1194,8 @@ Round 6: the student constructs a table `p` whose KL from `q` is **as large as t
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the common failure points of the lesson and what to do about each.
+
 1. **The student thinks the mask changes the input.** Show `targets_sft` against `targets_all` and that `preds` is the same object in both calls.
 2. **Off by one in the mask** (Mistake 1). The clinic is the cure. Make them say "the guess at place `t` is for place `t+1`" aloud.
 3. **The student reads `0.6931` as "a bug".** It is `ln 2`: no idea which is better. The same number appears in Weeks 1 and 10; it is good to see it again. Bugs live in Mistakes 5 and 7, where it is *stuck* or has the wrong sign.
@@ -1181,6 +1210,8 @@ Round 6: the student constructs a table `p` whose KL from `q` is **as large as t
 ---
 
 ## 🧭 Differentiation
+
+This section adapts the hour for a student who is struggling, flying or not engaging.
 
 ### If the student is struggling
 
@@ -1203,6 +1234,8 @@ Make the hack personal: give them a one-line list of five features of their own 
 
 ## ✅ Assessing Understanding
 
+This section gives five oral check questions and a mastery scale for recording where the student is.
+
 Five questions, orally, during the activity. Not graded; they inform the mastery scale.
 
 1. **"Why do we mask the prompt in SFT, and what is masked?"** *Pass:* the model still reads the prompt; only the scoring of the prompt's own tokens is skipped, so that it is trained to produce answers, not questions. The guesses whose right answer lies in the prompt get `-100`.
@@ -1224,6 +1257,8 @@ Five questions, orally, during the activity. Not graded; they inform the mastery
 
 ## 📤 Homework to Assign
 
+This section tells you what to set after class and what the student has to show.
+
 The workbook has six pages (22.1-22.6). The student does them in order, and writes **predictions before running anything**.
 
 1. **22.1 Mask** — predict, then run, the two losses in `sftmask.py` with a *different* prompt length (their choice, 3 to 7); count the guesses that count by hand for the character example; say what changes if the mask starts one place late (the Mistake 1 number).
@@ -1240,6 +1275,8 @@ Estimated time: 60-75 minutes.
 ---
 
 ## 🔑 Answer Key
+
+This section is teacher-only: the answers to every workbook page and to every question posed in the lesson.
 
 > **The workbook pages 22.1-22.6 follow this order.** Where an answer is a number it comes from `sftmask.py`, `pairs.py`, `kl.py`, `reward.py`, `hack.py`, `dpo.py`, `sweep.py` or `key.py`, all run from the Prep Checklist.
 
@@ -1351,5 +1388,7 @@ Full marks need: (1) the student's own four numbers from today, each with a seed
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what next week asks of the student and of you, so today's work can feed into it.
 
 **Week 23 — Prompting as Engineering: The Harness.** The student stops training models and starts *testing* them. A prompt loop is a test suite: a frozen set of cases, a versioned prompt, a call, a parse, a score and a regression report. The rung gets steeper in syntax: `@dataclass`, a class with `__init__`, `try` / `except` with a custom exception, and `re.search(..., re.S)`. **No new maths.** The "model" in Week 23 is a **scripted stand-in from the shared kit (`l4lib.fakellm`)**, labelled "stand-in, not a model" wherever it appears; what the harness measures says nothing about a real model. (Week 24 then trains a real, small one.) The baseline is a constant answer (the Week 1 lesson that `0.693` is a coin, applied to a test set). **For the student:** finish the workbook, especially 22.4 (the `beta` table) and 22.6, and bring the one sentence from the Wrap: *"the loss cannot tell you which model is better."* **For you:** Week 23 opens with "freeze the eight cases **before** you write the prompt", and today's reward model is the cautionary tale for why.

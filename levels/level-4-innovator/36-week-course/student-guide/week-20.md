@@ -97,9 +97,11 @@ Two details you will meet in the code:
 
 ## 🏗️ Build It
 
+This section is for typing and testing the whole tokenizer, one piece at a time, and then training it on your corpus.
+
 ### 5. `samples.py` (given, you do not type it)
 
-It holds Devanagari and emoji, which are awkward on a keyboard. Create it by copying it exactly.
+This file supplies the test strings used from here on. It holds Devanagari and emoji, which are awkward on a keyboard. Create it by copying it exactly.
 
 ```python
 # samples.py - Week 20 (GIVEN to the student, not typed): strings from three scripts, and some tricky ones.
@@ -204,7 +206,7 @@ def decode(ids, merges):
     return raw.decode("utf-8")
 ```
 
-Four lines deserve a second look.
+Four lines in `bpe.py` deserve a second look.
 
 - **`pair_counts[pair] += f`.** A chunk that occurs 234 times counts 234 times. Each *distinct* chunk is stored once, with how often it occurs in `freqs`.
 - **`key=lambda p: (pair_counts[p], -p[0], -p[1])`** is the tie-break. It says "largest count; on a tie, the smaller numbers".
@@ -213,7 +215,7 @@ Four lines deserve a second look.
 
 One idea you may not have met: **a loop that changes the data it loops over.** In `train`, `words` is rebuilt at the end of every round. Picture a conveyor belt: counts come off the belt, the belt is rewritten, and the belt comes round again.
 
-Test piece 1 right away:
+Test piece 1 right away. Create `merge_check.py` and run it:
 
 ```python
 # merge_check.py - Week 20: try merge() on a tiny list before you trust it.
@@ -233,6 +235,8 @@ True
 `merge` replaced both `(1, 2)` pairs by the single number 9 and left the 3 alone. The two spaces in `baker  practised` stayed together as one chunk, and the chunks joined give back the text.
 
 ### 7. Check it on a text small enough to do by hand
+
+This step runs `train` with `verbose=True` on the tiny text from the rule above, so you can compare the printed merges with your pencil count. Create `trace.py` and run it:
 
 ```python
 # trace.py - Week 20: the whole algorithm on a text small enough to do by hand. Then: what is a byte?
@@ -270,7 +274,7 @@ Compare the eight merges with the pencil count you just did on `low low low ...`
 
 ### 8. The round-trip tests
 
-A **round trip** is `decode(encode(s))`. For any text `s` it must give back exactly `s`.
+This section is for testing `bpe.py` on awkward strings. A **round trip** is `decode(encode(s))`. For any text `s` it must give back exactly `s`. Create `test_bpe.py` and run it:
 
 ```python
 # test_bpe.py - Week 20: the round-trip tests. decode(encode(s)) must give back s, for ANY s.
@@ -314,6 +318,8 @@ Read it line by line before you move on. Why is the empty string zero tokens? Wh
 Now a question to hold on to: **if this printed `13 of 13` for a tokenizer that had learned nothing at all, would you know?**
 
 ### 9. What does it learn?
+
+This section trains `bpe.py` on your corpus and prints what the merges look like. Create `text_merges.py` and run it:
 
 ```python
 # text_merges.py - Week 20: what three kinds of "token" do to the Week 17 corpus, then what BPE learns from it.
@@ -385,6 +391,8 @@ Three more things in that output:
 
 ## 🔬 Break It On Purpose
 
+This section is for testing a tokenizer that has learned nothing, to see what a round-trip test can and cannot tell you.
+
 **Deliberate.** This tokenizer is trained with **zero merges**. It learns nothing.
 
 ```python
@@ -413,6 +421,8 @@ Every round trip is `True`. The tokenizer is perfectly correct and does absolute
 ---
 
 ## 🎲 Your Turn
+
+Three tasks: merge by hand on paper, diff against the library, and measure what a tokenizer costs in different scripts.
 
 ### Merge by Hand (about 8 minutes, pencil and paper)
 
@@ -585,7 +595,7 @@ The curve climbs fast and then flattens: 2.628 to 2.761 for a six-fold increase 
 
 ### Who pays?
 
-Before you run it, write down a guess: how many tokens will `नम���्ते दुनिया` (13 characters) take? And the three emoji `🍕🙂🍵`?
+Before you run it, write down a guess: how many tokens will `नमस्ते दुनिया` (13 characters) take? And the three emoji `🍕🙂🍵`?
 
 ```python
 # cost.py - Week 20: a tokenizer trained on English, asked to read other scripts. Tokens per character.
@@ -622,6 +632,8 @@ Hindi greeting: tokens before 37  after training on Hindi too 3
 
 ## 🧭 What was shown, and what was not
 
+This section separates what this week's runs measured from what they did not.
+
 **Shown:**
 - Byte-pair encoding is a counting rule and a glue rule; the list of merges, in order, is the tokenizer. It starts from the 256 bytes, so anything can be written.
 - On your 6,972-character corpus, 300 merges give **3,227 tokens (2.16 bytes per token)**, a vocabulary of 556. Training stopped by itself at 400 merges.
@@ -642,6 +654,8 @@ Hindi greeting: tokens before 37  after training on Hindi too 3
 ---
 
 ## 🔑 Wrap Up
+
+Use these questions to check the week, then copy the sentence into your Bug Log.
 
 1. Go back to your three guesses on the card. What did you get right? What surprised you?
 2. What is the vocabulary of a tokenizer with 300 merges, and why?

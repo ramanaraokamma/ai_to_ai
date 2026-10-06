@@ -10,6 +10,8 @@
 
 ## 📋 At a Glance
 
+This table gives the shape of the week in one place: timing, what is assessed, what is deliberately absent, and what you need to print.
+
 | | |
 |---|---|
 | **Duration** | 75 minutes in class (2 to settle, 70 for the paper, 3 to hand in), then the marking homework (~45 min) |
@@ -25,7 +27,12 @@
 | **Prep time** | 30 minutes the night before (printing, reading the key, one 2-second prep run) · 3 minutes on the day |
 | **Expected runtime of the code** | The **whole** prep (every block in the Prep Checklist, one session) runs in about **2 seconds** of wall time (measured 1.8 s, most of it importing torch). **No block takes over 10 seconds**, so nothing needs a recorded time; Week 19's 3.6-minute ablation table is deliberately **not** re-run (see section 3). Anything over **1 minute** means something is wrong (see Fallback). The *student* runs no code today. |
 
-> **⚠️ Watch out:** the thing that goes wrong this week is the same as in Weeks 9 and 18: **the teacher rescuing the student mid-paper.** A frown at question 7 changes a right answer. Your job for 70 minutes is to be a quiet adult in a chair. The second is **reading Term 3's toys as more than they are.** Section E invites the student to say that a recall of 1.00 means the system "works", or that a no-mask loss of 0.077 means the mask was a mistake. The key gives credit for the *opposite* reading, and the honest reading is narrower than either: the first is a number about questions written in the notebook's own words, the second is a model reading its own answer. The third is **marking by the final number only** (see the marking rules). The fourth is particular to this paper: **Weeks 20, 21 and 24 have the thinnest cover (4 to 8 marks each), so a low fraction there is one or two questions. Read it as a prompt to ask, not a verdict** (section 6, item 2).
+> **⚠️ Watch out:** four things go wrong this week.
+>
+> - **The teacher rescuing the student mid-paper** (as in Weeks 9 and 18). A frown at question 7 changes a right answer. Your job for 70 minutes is to be a quiet adult in a chair.
+> - **Reading Term 3's toys as more than they are.** Section E invites the student to say that a recall of 1.00 means the system "works", or that a no-mask loss of 0.077 means the mask was a mistake. The key gives credit for the *opposite* reading. The honest reading is narrower than either: the first is a number about questions written in the notebook's own words, the second is a model reading its own answer.
+> - **Marking by the final number only** (see the marking rules).
+> - **Thin cover on Weeks 20, 21 and 24** (4 to 8 marks each), so a low fraction there is one or two questions. Read it as a prompt to ask, not a verdict (section 6, item 2).
 
 ---
 
@@ -175,6 +182,8 @@ Three weeks are load-bearing for Term 4: **Week 23** (the floor, the frozen set,
 ---
 
 ## 🧰 Prep Checklist
+
+Work through this list the night before. It confirms the numbers the paper quotes and gets the printed pages ready.
 
 ### 30 minutes the night before
 
@@ -671,7 +680,7 @@ __main__.OverBudget: over the limit
 
 ✂ PAPER STARTS
 
-# Term 3 Checkpoint — Review and Assessment 3
+#### Term 3 Checkpoint — Review and Assessment 3
 
 **Name: ____________________   Date: ______________   Time allowed: 70 minutes   Total: 75 marks**
 
@@ -1049,6 +1058,8 @@ Add **one** optional question afterwards, *not* on the paper, and said aloud: *"
 
 ## ❓ Questions Students Ask This Week
 
+Use this table for questions during or after the paper. Each row gives an honest answer and a note on how to handle it.
+
 | They ask | Honest answer | Notes |
 |---|---|---|
 | "Why no computer?" | "Because the paper is asking what is in *your* head, not what the computer knows. Everything on it, you have done by hand at least once." | If they say "but nobody works without a computer" — *"True. And nobody can debug one who can't predict what it will print."* |
@@ -1066,6 +1077,8 @@ Add **one** optional question afterwards, *not* on the paper, and said aloud: *"
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+Read this before class. It lists the failures most likely to spoil the paper or its marking.
+
 1. **You help.** The commonest failure. A raised eyebrow changes an answer. Sit to the side.
 2. **You hand over the wrong page.** The student must get only Page 27.1, 27.2 and 27.3. The rest of this file contains every answer *and the mistakes the student is expected to make*.
 3. **The paper runs over.** Seventy minutes is *tight*; Section D is the slowest. The five time-checks exist so E is not left in the last four minutes. If E is not attempted at all, mark A-D and treat E as a take-home (see "Variation — shorter").
@@ -1081,6 +1094,8 @@ Add **one** optional question afterwards, *not* on the paper, and said aloud: *"
 ---
 
 ## 🧭 Differentiation
+
+This section covers adjusting the day for a student who is struggling, one who finishes early, and one who will not engage.
 
 ### If the student is struggling
 
@@ -1107,6 +1122,8 @@ Add **one** optional question afterwards, *not* on the paper, and said aloud: *"
 ---
 
 ## ✅ Assessing Understanding
+
+This section says how to mark the paper, how to read the pattern across weeks, and what to do with each result.
 
 ### The marking rules
 
@@ -1143,6 +1160,8 @@ Self-marking covers A, B and C well: those answers are *checkable*. D and E need
 ---
 
 ## 📤 Homework to Assign
+
+Five tasks for the week after the paper, with time estimates.
 
 1. **Mark your own paper** against the printed sheet (Page 27.1), in the *other colour*. For D and E, mark the **working**, not only the answer. *(Estimated 30 minutes.)*
 2. **Fill the per-week grid** (Page 27.2): the marks you got, out of the marks available, for each of the eight weeks, and the percentage. *(5 minutes.)*
@@ -1397,6 +1416,8 @@ Circle at most **two** weeks. Priority order if there is a tie: **Week 23, Week 
 ---
 
 ## 🔮 Next Week Preview
+
+This section shows what the next week builds on, so you can see which of today's results matter most.
 
 **Week 28 — Tools and the Loop** (🟦 teach). A tool is a function plus a contract; the model only asks and your code acts. The loop is perceive, decide, act, observe, stop, with six fences that fire with no model present. The new ideas are a safe calculator built on `ast.parse` and an `operator` whitelist, a sandbox test with `Path.resolve()` and `is_relative_to`, `isinstance` checks before a tool runs, and `ThreadPoolExecutor` so a timeout can be enforced. There is no new maths. The "model" in Week 28 is again a **stand-in, not a model** (a scripted agent); the student has met that honesty rule in Week 23 and Week 26.
 

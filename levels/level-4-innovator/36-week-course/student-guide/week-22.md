@@ -22,7 +22,11 @@
 >
 > **Reading time:** about 45 minutes. **In class:** about 70 minutes. **Homework (the workbook):** about 60-75 minutes.
 
-> **📌 About the code blocks.** Seven small files, each a whole file with its name in the first line. Type them into **one folder** and run them from there. **Run them in order, in one Python session, for the last three:** `hack.py` uses names made by `reward.py`, and `sweep.py` (homework) uses `run_dpo` from `dpo.py`. The easiest way is `python3 -i`, or `exec(open("name.py").read())` one after another. **Nothing this week imports `l4lib`, and nothing needs the internet.** Every output shown was printed by a real run on a CPU, with the seeds in the files, so your numbers should match (the last digit of a loss can move on a different PyTorch build). **There is no language model anywhere this week.** The "model output" is random numbers, the "reward model" is five weights, the "policy" is four numbers. Each toy shows a *mechanism*; **none of them says anything about what happens to a real assistant.**
+> **📌 About the code blocks.**
+> - Seven small files, each a whole file with its name in the first line. Type them into **one folder** and run them from there.
+> - **Run them in order, in one Python session, for the last three:** `hack.py` uses names made by `reward.py`, and `sweep.py` (homework) uses `run_dpo` from `dpo.py`. The easiest way is `python3 -i`, or `exec(open("name.py").read())` one after another.
+> - **Nothing this week imports `l4lib`, and nothing needs the internet.** Every output shown was printed by a real run on a CPU, with the seeds in the files, so your numbers should match (the last digit of a loss can move on a different PyTorch build).
+> - **There is no language model anywhere this week.** The "model output" is random numbers, the "reward model" is five weights, the "policy" is four numbers. Each toy shows a *mechanism*; **none of them says anything about what happens to a real assistant.**
 
 ---
 
@@ -30,6 +34,8 @@
 *Figure 22.0 — Week 22 is the fourth lesson of Term 3: what is done to a model after pretraining.*
 
 ## 🪝 Start Here
+
+This section sets up the question for the week and asks for three guesses before any code runs.
 
 Last week you fitted a straight line through four training runs and saw that pretraining is "the Week 17 loss, at a scale". Today the model is **finished pretraining**. What now?
 
@@ -47,6 +53,8 @@ Keep the card. We come back to it at the end.
 
 ## 🧠 The Big Idea
 
+This section names the three steps of the week and the parts you already own. Each step gets its own section below.
+
 Three cheap steps turn "carries on" into "answers the way people prefer".
 
 1. **SFT (supervised fine-tuning).** Keep training with the next-character loss you already know, but on **demonstrations**: a prompt and the answer a person would like. Score the model **only on the answer**. The prompt is still read; it is just not marked.
@@ -59,7 +67,9 @@ You already own most of the parts. **Cross-entropy, sigmoid, `ignore_index`, Ada
 
 ### 1. The four new pieces of syntax
 
-You meet them one at a time, each with a prediction first. Here they all are on numbers small enough to read. Predict before you run: what will `torch.log(torch.sigmoid(x))` give at `x = -200`?
+This section shows the four new pieces of syntax together, on numbers small enough to read. Predict before you run: what will `torch.log(torch.sigmoid(x))` give at `x = -200`?
+
+Type `constructs.py` and run it.
 
 **`constructs.py`**
 
@@ -118,9 +128,11 @@ Read them like this.
 
 ### 2. SFT: score only the answer
 
+This section is for building the SFT loss mask by hand and counting which guesses it keeps.
+
 The model's guess at place `t` is for the token at place `t + 1`. So if the prompt is 5 tokens long, the guesses at places 0 to 3 are all for tokens *still inside the prompt*, and only the guesses from place 4 on are for the answer. We mark the skipped guesses with **`-100`**, which is PyTorch's default `ignore_index`: the same mechanism as the padding mask of Week 12, under a different number.
 
-Below, the "model output" is **random numbers** (`torch.manual_seed(0)`), not a model. The point is only the scoring. Predict first: will the score over the last four guesses be higher or lower than over all eight? Then run.
+Below, the "model output" is **random numbers** (`torch.manual_seed(0)`), not a model. The point is only the scoring. Predict first: will the score over the last four guesses be higher or lower than over all eight? Then type `sftmask.py` and run it.
 
 **`sftmask.py`**
 
@@ -185,7 +197,7 @@ Three things to take from it.
 - The mask does **not** remove the prompt from the *input*. The model still reads it. Only the *scoring* of the prompt's own tokens is blanked. Look at `targets_sft`: only the right answers were replaced.
 - The by-hand route and `F.cross_entropy` agree (`True True`). `gather` has no "ignore" option, which is why the by-hand route takes the *unmasked* targets and drops the prompt rows by slicing.
 
-Now the same idea on characters. The prompt and answer below are **typed by us; no model reads them**. Predict: how many of the 41 guesses count?
+Now the same idea on characters. The prompt and answer below are **typed by us; no model reads them**. Predict: how many of the 41 guesses count? Then type `pairs.py` and run it.
 
 **`pairs.py`**
 
@@ -228,7 +240,7 @@ The last line is **DELIBERATE**, there for comparison. Why is it `12 of 41`, and
 
 ### 3. 🔢 The new maths: KL divergence
 
-Each of the next two pieces of code rests on the same idea, so meet it now, on paper, with a calculator.
+This section introduces KL divergence, the one new idea in maths this week. Both the reward code and the DPO code rest on it, so you meet it now, on paper, with a calculator.
 
 You already use `-ln(chance)` as a *surprise meter*. Now take **two tables** of chances for the same four outcomes: `q`, the **reference** (where we started), and `p`, the **policy** (where we are now). The **log-ratio** of one outcome is `ln(p / q)`. It is `0` if the outcome has the same chance in both tables, positive if it became more likely, negative if less. Nothing else.
 
@@ -236,7 +248,7 @@ You already use `-ln(chance)` as a *surprise meter*. Now take **two tables** of 
 
 `KL(p || q) = p1 x ln(p1/q1) + p2 x ln(p2/q2) + p3 x ln(p3/q3) + p4 x ln(p4/q4)`
 
-Read it aloud: *"go through the outcomes; for each, how much more likely did it get, in logs; weight that by how often the new table actually picks it; add up."* Here is one worked by hand. Use natural logs and keep 4 decimals.
+Read it aloud: *"go through the outcomes; for each, how much more likely did it get, in logs; weight that by how often the new table actually picks it; add up."* Here is one worked by hand, using natural logs and 4 decimals. The three tables are:
 
 ```text
           A      B      C      D
@@ -254,7 +266,7 @@ Read it aloud: *"go through the outcomes; for each, how much more likely did it 
 
 Add the last column: `0.3466 - 0.0866 - 0.0866 =` **`0.1733`**. **Now you do `p2` against the same `q`**, on paper, *before* the code below. Write your answer down. (Then it goes on workbook page 22.3.)
 
-Here are the four things to know about KL, and `kl.py` prints each.
+Here are the four things to know about KL. Then type `kl.py` and run it; it prints each.
 
 - **`KL = 0` exactly when `p = q`**, and it is never negative. That is why it can stand for "distance moved".
 - **It is weighted by `p`.** The plain average of the four log-ratios of `p1` is a *negative* number. That is not KL.
@@ -305,13 +317,15 @@ Did the code agree with your paper for `p1` and `p2`? If not, find which log-rat
 
 ### 4. A reward model from ten judgements
 
-Here is a scorer small enough to see inside. Each candidate answer is written as **five 0/1 features**: does it have numbered steps, does it give a direct answer, does it hedge a lot, is it over 400 characters, does it refuse. The scorer is **five weights**, one per feature; the reward of an answer is `features @ weights`. Ten judgements say which answer of a pair won.
+This section builds a reward model small enough to see inside, and trains it on ten judgements.
+
+Each candidate answer is written as **five 0/1 features**: does it have numbered steps, does it give a direct answer, does it hedge a lot, is it over 400 characters, does it refuse. The scorer is **five weights**, one per feature; the reward of an answer is `features @ weights`. Ten judgements say which answer of a pair won.
 
 The chance that answer `w` beats answer `l` is `sigmoid(reward(w) - reward(l))`, and the **Bradley-Terry loss** is `-ln` of that:
 
 `loss = -F.logsigmoid(reward_winner - reward_loser)`
 
-Only the **difference** matters: add 100 to every reward and no chance changes, so a reward has no zero and you should never read one answer's reward alone. With all weights `0` both rewards are equal, the chance is `0.5`, and the loss is `-ln 0.5 = 0.6931`. Predict: what will step 1 print?
+Only the **difference** matters: add 100 to every reward and no chance changes, so a reward has no zero and you should never read one answer's reward alone. With all weights `0` both rewards are equal, the chance is `0.5`, and the loss is `-ln 0.5 = 0.6931`. Predict: what will step 1 print? Then type `reward.py` and run it.
 
 > **Honesty box.** The five features, the six answers and the ten judgements were **invented by the course author**. **There are no raters and no real preference data in this course.** This reward model is five numbers, not a transformer.
 
@@ -399,9 +413,13 @@ r9 numbered steps, answers nothing: reward +5.047  vs r2 direct and short: +4.57
 r9 beats r2? True
 ```
 
-Read it with care. The loss starts at `0.6931` (`ln 2`: "no idea which is better") and falls to `0.0017`; the scorer gets all ten judgements right. The **biggest positive weight is for formatting** (the biggest in size is `refuses`, at `-6.091`), not for being helpful. The invented answer `r9`, which is *only* numbered steps and answers nothing, scores higher than the short direct answer `r2`. That is **reward hacking**: an optimizer that chases this reward is pushed toward exactly what the scorer over-rewards. The biggest weight is not "the most important feature"; it is the feature that best separates winners from losers in these ten judgements, and its size is partly an accident of how long we trained (the ten pairs can be separated perfectly, so the weights keep growing with more steps; we did not measure how much).
+Read it with care. The loss starts at `0.6931` (`ln 2`: "no idea which is better") and falls to `0.0017`; the scorer gets all ten judgements right.
 
-Here is a second blind spot. Add a sixth feature, `is_factually_correct`, that is `1` for every answer the judges rated. What will its weight be? Predict, then run. (This needs `POOL` and `PAIRS` from `reward.py`, so run it in the same session.)
+The **biggest positive weight is for formatting** (the biggest in size is `refuses`, at `-6.091`), not for being helpful. The invented answer `r9`, which is *only* numbered steps and answers nothing, scores higher than the short direct answer `r2`. That is **reward hacking**: an optimizer that chases this reward is pushed toward exactly what the scorer over-rewards.
+
+The biggest weight is not "the most important feature"; it is the feature that best separates winners from losers in these ten judgements. Its size is partly an accident of how long we trained (the ten pairs can be separated perfectly, so the weights keep growing with more steps; we did not measure how much).
+
+Here is a second blind spot. Type `hack.py` and run it. It adds a sixth feature, `is_factually_correct`, that is `1` for every answer the judges rated. What will its weight be? Predict, then run. (This needs `POOL` and `PAIRS` from `reward.py`, so run it in the same session.)
 
 **`hack.py`**
 
@@ -449,17 +467,24 @@ The weight is exactly `0`, and the correct answer and the wrong answer get the s
 
 ### 5. DPO: move the chances, on a leash
 
+This section is for the DPO loss, the reference model and the `beta` dial, worked by hand and then in code.
+
 DPO skips the separate scorer. The model's own chances for its answers are the thing that moves. Keep three ideas.
 
 - **The reference.** Before training, take a copy of the model's log-chances and `.detach()` it. That copy never changes. This is the **frozen reference model**.
 - **How far each answer moved:** `moved = logp_now - logp_reference`.
 - **The loss for a pair:** `margin = beta x (moved_chosen - moved_rejected)`, and `loss = -ln sigmoid(margin)`.
 
-Work one pair by hand first. The reference log-chances for (chosen, rejected) are `(-20.0, -18.0)`. The policy now has `(-19.0, -19.5)`. The chosen answer moved `+1.0` and the rejected one moved `-1.5`, a gap of `2.5`. At `beta = 0.1` the margin is `0.25`, `sigmoid(0.25) = 0.5622`, and the loss is `0.5759`. At `beta = 5` the **same movement** gives margin `12.5`, and the loss is `0.000004`. **Same movement; a loss more than 100,000 times smaller.** A big `beta` is satisfied by a small movement, so the gradient goes quiet early and the model stops early. That is how `beta` acts inside this loss (it is also the strength of the KL penalty that DPO stands in for, so a big `beta` is a tight leash). **`beta` is a dial inside the loss.** The KL is a *measurement we take afterwards*; the loss never contains it.
+Work one pair by hand first. The reference log-chances for (chosen, rejected) are `(-20.0, -18.0)`. The policy now has `(-19.0, -19.5)`. The chosen answer moved `+1.0` and the rejected one moved `-1.5`, a gap of `2.5`.
+
+- At `beta = 0.1` the margin is `0.25`, `sigmoid(0.25) = 0.5622`, and the loss is `0.5759`.
+- At `beta = 5` the **same movement** gives margin `12.5`, and the loss is `0.000004`.
+
+**Same movement; a loss more than 100,000 times smaller.** A big `beta` is satisfied by a small movement, so the gradient goes quiet early and the model stops early. That is how `beta` acts inside this loss (it is also the strength of the KL penalty that DPO stands in for, so a big `beta` is a tight leash). **`beta` is a dial inside the loss.** The KL is a *measurement we take afterwards*; the loss never contains it.
 
 In the toy, the "model" is **four numbers**: the scores of four possible answers. (This is a bare tensor of knobs: `nn.Parameter` comes in Week 31.) Six preferences say A beats everything and D loses to everything. The preferences are invented and perfectly consistent, unlike real raters. **It has no words and no prompt.**
 
-Predict before you run: after 300 steps at `beta = 0.1`, roughly what chance will answer A have? And will `beta = 5` be above or below it?
+Predict before you run: after 300 steps at `beta = 0.1`, roughly what chance will answer A have? And will `beta = 5` be above or below it? Then type `dpo.py` and run it.
 
 **`dpo.py`**
 
@@ -528,7 +553,7 @@ two leashes, 300 steps each:
   beta 5.00  A=0.589 B=0.236 C=0.144 D=0.032   KL(pi||ref)=0.566  loss=0.0020
 ```
 
-Read it in this order.
+Read the output in this order.
 
 1. The reference puts only `0.168` on A. Step 1 prints `0.6931`, as for the reward model: nothing has moved yet, so "no idea".
 2. With `beta = 0.2` the chance of A climbs to `0.997`, and every other answer except B is squeezed to about `0`.
@@ -539,9 +564,17 @@ Read it in this order.
 
 ## 🎲 Your Turn
 
+This section is for doing the KL and DPO arithmetic yourself before the code confirms it.
+
 ### The Leash
 
-You do the arithmetic first, so the two numbers the code prints are *predictions confirmed* rather than surprises. Use natural logs (`ln`, not `log10`) and 4 decimals, and a calculator for `ln` only. Write the four log-ratios first, then multiply each by the policy's own chance, then add. The reference `q` is always the **second** table.
+You do the arithmetic first, so the two numbers the code prints are *predictions confirmed* rather than surprises. Use natural logs (`ln`, not `log10`) and 4 decimals, and a calculator for `ln` only.
+
+1. Write the four log-ratios.
+2. Multiply each by the policy's own chance.
+3. Add.
+
+The reference `q` is always the **second** table.
 
 | Round | Policy | Reference | Your answer |
 |:--:|---|---|:--:|
@@ -574,6 +607,8 @@ Write the prediction first. In `dpo.py`, try `beta` values `0.02` and `0.5` (300
 
 ## 🔬 Break It On Purpose
 
+This section is for checking, by running, whether `gather` handles the mask the way `F.cross_entropy` does.
+
 **DELIBERATE.** You just saw that `F.cross_entropy` skips rows marked `-100`. Does `gather` do the same? Write down what you expect before you run.
 
 **`bad_gather.py`**
@@ -605,6 +640,8 @@ Did the message tell you what to do? Write in your Bug Log what `gather` wants t
 
 ## 🧭 What was shown, and what was not
 
+This section separates what this week's runs showed from what they did not, so you do not claim more than the toys support.
+
 **Shown:**
 - The masked loss is the loss over a *chosen subset* of guesses: `3.8008` over all eight, `4.0407` over the last four, on the same random numbers. The by-hand route with `log_softmax` and `gather` matches `F.cross_entropy`.
 - A reward model of five weights can get all ten invented judgements right (loss `0.6931` down to `0.0017`), and its biggest positive weight was for formatting. A feature that never differs inside a pair gets weight `0.000`.
@@ -623,6 +660,8 @@ Did the message tell you what to do? Write in your Bug Log what `gather` wants t
 
 ## 🔑 Wrap Up
 
+This section is for checking that you can answer the week's questions without the page open.
+
 1. Why does SFT set the first four guesses of a five-token prompt to `-100`? Why not three or five? What stays unchanged, the input or the scoring?
 2. Why is the masked loss `4.0407` higher than the unmasked `3.8008`, and does that mean the masked one is worse?
 3. In `reward.py`, which weight is biggest, and why is that a problem? What is a feature the judges never varied, and what weight does it get?
@@ -639,6 +678,8 @@ Then write this sentence in your Bug Log in your own handwriting:
 ---
 
 ## 📤 Homework
+
+This section lists the homework and one optional extra, with the time estimate at the top of the chapter.
 
 Complete workbook pages 22.1 to 22.6. Write your **predictions before you run anything**: a guess written after the run is not a guess. Every number you write must have come from your own calculator or your own run.
 
@@ -678,11 +719,15 @@ print(f"seconds: {time.time() - t0:.1f}")
 seconds: 0.8
 ```
 
-(The `seconds:` line varies.) Read the two blocks side by side. At 300 steps the KL is **not** in order of `beta`. At 3,000 steps it is close to it. The run mixes "how far the model *wants* to go" with "how *fast* it gets there". So "a smaller `beta` is a longer leash" is true only once the run is long enough. The top of the range is `-ln(0.16839) = 1.7815`, the most KL this toy can reach (all the chance on A).
+(The `seconds:` line varies.) Read the two blocks side by side.
+
+At 300 steps the KL is **not** in order of `beta`. At 3,000 steps it is close to it. The run mixes "how far the model *wants* to go" with "how *fast* it gets there". So "a smaller `beta` is a longer leash" is true only once the run is long enough. The top of the range is `-ln(0.16839) = 1.7815`, the most KL this toy can reach (all the chance on A).
 
 ---
 
 ## 📖 Words from this week
+
+Use this table to look up a term or construct from the chapter.
 
 | Word | Meaning |
 |---|---|

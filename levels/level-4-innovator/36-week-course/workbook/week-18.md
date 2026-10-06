@@ -39,7 +39,11 @@ Five questions, one per *kind* of thing the paper will ask. No notes.
 
 ## 🗺️ Page 18.1 — The Confidence Map (the night before; 10 minutes, do not study)
 
-For each line ask: **could I do this right now with only a pen and a calculator?** Tick **Yes**, **Maybe** or **No**. Be honest; nobody sees this page but you. Then, for each **No**, do the page in the last column for **20 minutes at most**, and then stop. Do not try to learn everything in one night.
+This page is for finding out which weeks you trust least, so your last evening goes where it is needed.
+
+For each line ask: **could I do this right now with only a pen and a calculator?** Tick **Yes**, **Maybe** or **No**. Be honest; nobody sees this page but you.
+
+Then, for each **No**, do the page in the last column for **20 minutes at most**, and stop. Do not try to learn everything in one night.
 
 | Week | I can... | Yes | Maybe | No | Page to redo |
 |:--:|---|:--:|:--:|:--:|---|
@@ -52,7 +56,9 @@ For each line ask: **could I do this right now with only a pen and a calculator?
 | 16 | Say why attention alone cannot tell `dog bit man` from `man bit dog`. Count the knobs in one block. | ☐ | ☐ | ☐ | 16.2, 16.4 · today's **18.6** |
 | 17 | Say what a model that knows nothing should score at step 0. Say what the gap between train and validation does and does not tell you. | ☐ | ☐ | ☐ | 17.3, 17.4, 17.6 · today's **18.7** |
 
-**Count your Noes:** ______ . **Rule:** if you have more than three, still do only the **two** you ticked No for that you think are worst, and **stop at 20 minutes each**. A tired head does arithmetic worse than a rested one.
+**Count your Noes:** ______ .
+
+**Rule:** if you have more than three, still do only the **two** you ticked No for that you think are worst, and **stop at 20 minutes each**. A tired head does arithmetic worse than a rested one.
 
 *After the paper*, come back to this page and write, beside each week, whether your **guess** about yourself was right. That comparison is worth more than the mark.
 
@@ -61,6 +67,8 @@ My guess about myself, before: Weeks I thought were soft: ____________ . After t
 ---
 
 ## 🔁 Page 18.2 — Compounding and the Forget Dial (Weeks 10 and 11 · 15 min)
+
+This page is for practising compounding, clipping and the forget dial by hand, then checking your numbers against a file.
 
 **Compounding** means multiplying the same number in again and again. `0.9` forty times is **not** `0.9 × 40`.
 
@@ -105,7 +113,7 @@ Fill in the rest of this slope of `0.85`, so you see the shape before you use th
 
 **18.2h.** A new LSTM has its forget bias at the default, `0`. Does it already have a good memory? ____________ Which bias from the table would you choose if you wanted the signal to survive? ____________
 
-**Check file** (run it only after your tables are written):
+Next, the check file. Run it only after your tables are written:
 
 ```python
 # check182.py - Week 18 workbook page 18.2: compounding, the forget dial, and clipping. PRACTICE numbers.
@@ -151,6 +159,8 @@ Write what it printed for `0.85 ** 20`: ____________ For the first step count be
 
 ## 🎲 Page 18.3 — Scores to Chances, and Who Gets Kept (Week 13 · 15 min)
 
+This page is for practising, with a pen, how scores become chances at a temperature and how top-k and top-p choose which letters stay.
+
 **Worked example (done for you): scores `[3, 0, 0]`, temperature 1.** `e^3 = 20.086`, `e^0 = 1`, `e^0 = 1`. Total `22.086`. Chances: `20.086 / 22.086 =` **`0.9094`**, `1 / 22.086 =` **`0.0453`**, **`0.0453`**. They add to 1.
 
 Now five scores: **`[2.0, 1.5, 0.5, 0.0, -1.0]`**. Call the letters 0 to 4, left to right.
@@ -181,7 +191,7 @@ How many letters does top-p keep for **p = 0.6**? ______ For **p = 0.8**? ______
 
 **18.3g.** In a sentence, say what exposure bias is, with the words *trained* and *own guesses*: ___________________________________________
 
-**Check file:**
+Next, the check file. Run it after your answers are written:
 
 ```python
 # check183.py - Week 18 workbook page 18.3: scores to chances, top-k and top-p. PRACTICE numbers.
@@ -210,7 +220,9 @@ Did your 18.3a chances match? ____________ Which of 18.3f's answers surprised yo
 
 ## 🔍 Page 18.4 — The Attention Pass, Then Both Dials (Weeks 14 and 15 · 25 min)
 
-This is the page to do again if the grid shows Week 14, 15 or 16 soft. **Same method as Weeks 14 and 15, different numbers from the paper and from the warm-ups in the chapter.** Three words with invented 2-number vectors:
+This page is for practising the attention pass by hand, first with no dials and then with both. Do it again if the grid shows Week 14, 15 or 16 soft.
+
+**Same method as Weeks 14 and 15, different numbers from the paper and from the warm-ups in the chapter.** Three words with invented 2-number vectors:
 
 ```text
    sun = [1, 1]      Wq = identity     Wk = identity     Wv = [[1, 0],
@@ -252,7 +264,7 @@ Because `Wq` and `Wk` are the identity, `Q = K = X`. A row of `X` times `Wv` is:
 
 **18.4j.** Which of `Wq`, `Wk`, `Wv` could you change without changing any of the weights? ____________ What would it change instead? ___________________________________________
 
-**Check file:**
+Next, the check file. Run it after your answers are written:
 
 ```python
 # check184.py - Week 18 workbook page 18.4: the attention pass, with and without the two dials. PRACTICE numbers.
@@ -296,6 +308,8 @@ Where did your hand numbers first disagree with the file (write the question num
 
 ## 📐 Page 18.5 — Heads and the Mask (Week 15 · 10 min, predict first)
 
+This page is for practising head shapes and the causal mask by hand before you run anything.
+
 **18.5a. Shapes.** A tensor `x` has shape `(3, 6, 12)`: 3 examples, 6 places, 12 numbers per place. We cut the 12 into **3 heads**.
 
 - Each head gets ______ numbers.
@@ -320,7 +334,7 @@ How many places are hidden? ______ How many can be seen? ______
 
 **18.5e.** In one sentence, why does `-inf` give the hidden places **exactly** zero? (Think of `e` to a hugely negative power.) ___________________________________________
 
-**Check file:**
+Next, the check file. Run it after your answers are written:
 
 ```python
 # check185.py - Week 18 workbook page 18.5: heads and the mask. PRACTICE numbers.
@@ -348,22 +362,27 @@ print("row 3, hidden before:", [round(x, 4) for x in right[2].tolist()])
 
 ## 🔢 Page 18.6 — Count the Block (Week 16 · 15 min)
 
+This page is for counting the knobs in one block piece by piece, so you can check the count against a formula.
+
 One block at width **`d = 14`**. Its pieces (as in class): two `LayerNorm(14)` (each has 14 scales and 14 shifts); `q`, `k`, `v`, each `Linear(14, 14, bias=False)`; `proj = Linear(14, 14)` **with** a bias; `up = Linear(14, 56)` and `down = Linear(56, 14)`, both with biases. The causal mask is a buffer and is **not** counted.
 
 **Worked example (done for you): one `Linear` with a bias.** `Linear(14, 14)` has `14 × 14 = 196` weights and `14` biases: **210**. That is `proj`.
 
-**18.6a.** The two layer norms: ____________
-**18.6b.** `q`, `k`, `v` (no biases): ____________
-**18.6c.** `proj`: **210** (worked). Attention total (`q, k, v` and `proj`): ____________
-**18.6d.** `up`: `14 × 56 + 56 =` ____________ . `down`: `56 × 14 + 14 =` ____________ . MLP total: ____________
-**18.6e.** The whole block: ____________ . Check with `12d² + 10d`: ____________
+- **18.6a.** The two layer norms: ____________
+- **18.6b.** `q`, `k`, `v` (no biases): ____________
+- **18.6c.** `proj`: **210** (worked). Attention total (`q, k, v` and `proj`): ____________
+- **18.6d.** `up`: `14 × 56 + 56 =` ____________ . `down`: `56 × 14 + 14 =` ____________ . MLP total: ____________
+- **18.6e.** The whole block: ____________ . Check with `12d² + 10d`: ____________
+
+Then the last three questions:
+
 **18.6f.** Three blocks are kept in an `nn.ModuleList`. Together they have ____________ knobs. If they were kept in a **plain list**, `model.parameters()` would count ____________ of them, and no error would be raised. Why? ___________________________________________
 
 **18.6g. Not just a formula.** The hidden width of the MLP is changed from `4d` to **`2d`** (so `up = Linear(14, 28)`, `down = Linear(28, 14)`). The MLP now has ____________ knobs, and the block ____________ . (Does `12d² + 10d` still apply? ____________ )
 
 **18.6h.** Attention on its own cannot tell `dog bit man` from `man bit dog`. Say why in one sentence, then say what is added to fix it. ___________________________________________
 
-**Check file:**
+Next, the check file. Run it after your answers are written:
 
 ```python
 # check186.py - Week 18 workbook page 18.6: count one block at d = 14, by piece.
@@ -394,6 +413,8 @@ print("formula at d = 24:", 12 * d * d + 10 * d)
 ---
 
 ## 📉 Page 18.7 — Read a Real Table, and Say What You Would Check Next (Weeks 12 and 17 · 20 min)
+
+This page is for practising how to read a printed table of losses and how to reply to claims about it, using the numbers in the table.
 
 **Real numbers.** `check187.py` trains a small letter model on the **same 6,972-character text** as your TinyGPT, with the **same split** (the last tenth held back). It is not a transformer: it sees only the **4 letters before** the one it must guess, and has 15,868 knobs. **Loss** is the average surprise (`-ln` of the chance given to the true next letter); a model that knows nothing about 28 characters scores `ln 28 = 3.332`.
 
@@ -438,7 +459,7 @@ ___________________________________________________________________________
 
 **18.7h.** This table has one seed and 694 validation letters. Name two things it **cannot** tell you: ___________________________________________
 
-**Check file** (it needs `l4lib/`, so run it from the folder that contains it; about five seconds):
+Next, the check file. It needs `l4lib/`, so run it from the folder that contains it (about five seconds):
 
 ```python
 # check187.py - Week 18 workbook page 18.7: a small letter model with a 4-letter memory, and three counters, on Week 17's text.
@@ -582,6 +603,8 @@ print(slope)
 
 ## 📝 Page 18.9 — Mark Your Own Paper (the same evening, a different colour of pen)
 
+This page is for marking your paper week by week and choosing which weeks to redo.
+
 **After the paper.** Your teacher gives you the **marking sheet** (short answers only). Use a pen of a **different colour** from the one you used on the paper. In A, B and C be strict. In D and E mark the **working**, not just the final number.
 
 **The per-week grid.** The "Questions" column tells you which questions belong to which week. Marks available and the "redo if" line are fixed; fill in the rest.
@@ -657,6 +680,8 @@ Mark lost: ____________________ Habit: _______________________________________
 
 ## 🧠 Self-Check (do this last, from memory)
 
+This list is for testing yourself from memory before the next week starts.
+
 Seven things, no scrolling up. Tick only if you could do it **now**.
 
 - ☐ Compound a slope with the power key, and say which disease clipping can and cannot cure.
@@ -677,7 +702,7 @@ Seven things, no scrolling up. Tick only if you could do it **now**.
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 > Real printed outputs below. By-hand numbers are exact to the digits shown; where you carried fewer decimals, anything within `0.002` is fine. These answers are for the pages in **this workbook**. They are not the paper's answers, and this page does **not** contain any of them.
 

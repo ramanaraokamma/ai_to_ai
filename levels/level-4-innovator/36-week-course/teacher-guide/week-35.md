@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table gives the week's logistics, scope and materials in one place, so you can plan the three sittings before Monday.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes in class, then the rest of the build at home (~150 minutes: 30 of pen and paper, 120 at the computer). This is the heaviest week of the capstone. Allow three sittings, and tell the student on Monday, not on Thursday. |
@@ -20,7 +22,15 @@
 | **Prep time** | 45 minutes the night before · 3 minutes on the day |
 | **Expected runtime of the code** | **No block is over 10 s; nothing needs a timing record.** On the teacher's laptop (an Apple-silicon Mac, CPU, numpy 1.26.4, Python 3.10.10) the whole guide, Prep to Key, runs in **about 7 s**; the slowest block is P6 (about 2.4 s, because three separate terminal commands each start Python and import the kit); P9 (300 attack and happy-path runs, each building its own tiny index) takes about 1 s. One eval run of 25 cases takes well under a second. **Anything over 1 minute means something is wrong** (see Fallback). |
 
-> **⚠️ Watch out:** seven things go wrong this week. **First, this is the longest take-home of the year, and the class hour only starts it.** The hour builds the baseline, runs the spine, and runs *one* attack. The student who tries to finish everything in the room writes a spine nobody has read. **Second, the spine is the student's own but the plumbing is handed over.** `run_eval.py`, `guards.py`, `redteam.py` are given, read together, and not typed; the student types `route_of`, the two paths of `answer()`, and the red-team log. Decide this on Monday and say it to the student. **Third, the agent's "model" is a scripted plan.** The arithmetic cases pass because a plan was written for them: the eval tests the *wiring* (router, tool, citation, scorer), not any model's arithmetic. Write that in the eval report. **Fourth, the budget from Week 34 may be missed, and the right answer is to say so.** In the worked example the score promise (`at least 0.70`) is missed by one case (`0.68`); the temptation to edit §6 is Clinic D4. **Fifth, a green eval can hide a broken agent.** The suite has no write cases, so a "fix" that forbids all writes still prints `MATCH` (Clinic D10). **Sixth, `except Exception` makes a bug look like a pass** (Clinic D2). **Seventh, a few reference numbers and scripts are wrong** (the ledger), and this week fixes them in advance (section 9).
+**Seven things go wrong this week:**
+
+1. **This is the longest take-home of the year, and the class hour only starts it.** The hour builds the baseline, runs the spine, and runs *one* attack. The student who tries to finish everything in the room writes a spine nobody has read.
+2. **The spine is the student's own but the plumbing is handed over.** `run_eval.py`, `guards.py`, `redteam.py` are given, read together, and not typed; the student types `route_of`, the two paths of `answer()`, and the red-team log. Decide this on Monday and say it to the student.
+3. **The agent's "model" is a scripted plan.** The arithmetic cases pass because a plan was written for them: the eval tests the *wiring* (router, tool, citation, scorer), not any model's arithmetic. Write that in the eval report.
+4. **The budget from Week 34 may be missed, and the right answer is to say so.** In the worked example the score promise (`at least 0.70`) is missed by one case (`0.68`); the temptation to edit §6 is Clinic D4.
+5. **A green eval can hide a broken agent.** The suite has no write cases, so a "fix" that forbids all writes still prints `MATCH` (Clinic D10).
+6. **`except Exception` makes a bug look like a pass** (Clinic D2).
+7. **A few reference numbers and scripts are wrong** (the ledger), and this week fixes them in advance (section 9).
 
 ---
 
@@ -28,6 +38,8 @@
 *Figure 35.0 — Week 35 is the second capstone week: the build, measure and attack step, in the last lane of the course.*
 
 ## 🎯 Lesson Objectives
+
+These are the eight things the student should be able to do by the end of the week, with the evidence you can check.
 
 By the end of the lesson (and the homework) the student can:
 
@@ -46,15 +58,31 @@ Observable evidence: the `check_frozen` line equal to the paper; `baseline 11/25
 
 ## 🧑‍🏫 What YOU Need to Know First
 
-> **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist**, in the **🐞 Debugging Clinic** and in the **🔑 Answer Key** was run, in that order, from one scratch folder, in **one Python session** (the blocks share names), on top of the finished state of Week 34 (its Blocks P1-P8: the 15 notes, `capstone34/eval/cases.py`, `freeze.py`, `FROZEN.txt`, and an empty `src/`). Everything random is seeded: the attack runs use seeds 0 to 49, and the Week 25 stand-in is `FakeClient(seed=0)`, a function of its prompt. **Every number repeats exactly on every machine, except the millisecond timings**, which change on every run (the guide says which). numpy 1.26.4, Python 3.10.10. The outputs below are the real printed output. The Clinic blocks that are *deliberate mistakes* are marked, and their tracebacks are real (paths are shortened to `/home/you/l4/`; the frames inside `l4lib/toyagent.py` are the kit's own loop and only the last lines matter). The Clinic and Key blocks continue the session of the Prep Checklist. **The spine, the plan and the red-team worlds are the teacher's worked example. The student builds their own for their own project.**
+This section is the background you need before teaching: what the week does, what is real and what is a stand-in, which numbers to expect, and where students go wrong.
+
+> **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist**, in the **🐞 Debugging Clinic** and in the **🔑 Answer Key** was run, in that order, from one scratch folder, in **one Python session** (the blocks share names), on top of the finished state of Week 34 (its Blocks P1-P8: the 15 notes, `capstone34/eval/cases.py`, `freeze.py`, `FROZEN.txt`, and an empty `src/`). Everything random is seeded: the attack runs use seeds 0 to 49, and the Week 25 stand-in is `FakeClient(seed=0)`, a function of its prompt. **Every number repeats exactly on every machine, except the millisecond timings**, which change on every run (the guide says which). numpy 1.26.4, Python 3.10.10.
+>
+> The outputs below are the real printed output. The Clinic blocks that are *deliberate mistakes* are marked, and their tracebacks are real (paths are shortened to `/home/you/l4/`; the frames inside `l4lib/toyagent.py` are the kit's own loop and only the last lines matter). The Clinic and Key blocks continue the session of the Prep Checklist. **The spine, the plan and the red-team worlds are the teacher's worked example. The student builds their own for their own project.**
 
 ### 1. What the student is doing today, in one paragraph
 
-Week 34 ended with twenty-five frozen questions, a design, a budget written before it could be met, and a fingerprint on your paper. Nothing answered anything. Today it does. The student scores a **baseline** that is as dumb as the design allows (one keyword-and-cosine search, copy a sentence), builds the **spine** that joins the two components they chose (RAG for questions with one short answer; the agent for a sum), runs the frozen cases through it with **one command**, and finds out what the week before only promised. Then they attack it, once per category, in the way they learned in Week 33, write down what landed and what did not, fix one thing and accept one thing, and change one knob to see the suite catch a regression. The lesson that runs through all of it is **honest reporting**: the promise missed by one case, the attack that failed and is logged anyway, the fix that is re-tested on the legitimate task, the overall that went down by two and hid a category that fell by three.
+Week 34 ended with twenty-five frozen questions, a design, a budget written before it could be met, and a fingerprint on your paper. Nothing answered anything. Today it does.
+
+The student scores a **baseline** that is as dumb as the design allows (one keyword-and-cosine search, copy a sentence), builds the **spine** that joins the two components they chose (RAG for questions with one short answer; the agent for a sum), runs the frozen cases through it with **one command**, and finds out what the week before only promised.
+
+Then they attack it, once per category, in the way they learned in Week 33, write down what landed and what did not, fix one thing and accept one thing, and change one knob to see the suite catch a regression.
+
+The lesson that runs through all of it is **honest reporting**: the promise missed by one case, the attack that failed and is logged anyway, the fix that is re-tested on the legitimate task, the overall that went down by two and hid a category that fell by three.
 
 ### 2. 🔢 The maths you need — there is none, and one reuse
 
-No new idea. **One reuse, flagged** (K5): Week 33's wobble. A count of `k` passes in `n = 25` cases moves by about `sqrt(n p (1-p))` if a different 25 questions had been written: `2.3` cases at `p = 0.68`. So `17` against `15` (v1 against v2) is **inside the wobble** and must not be reported as a finding on its own, while `factual 8 -> 5` with three named cases (`c01`, `c03`, `c09`) is a finding because it has a mechanism (Clinic D6). `11` against `17` (baseline against v1) is a gap of six, about `1.8` combined wobbles: borderline on the overall, which is why the write-up leans on the categories where it is concentrated (arithmetic `0 -> 3`, adversarial `0 -> 3`). The same formula gives the A1 landing count's wobble, `sqrt(50 x 0.3 x 0.7) = 3.2`: `15 of 50` could easily have been `12` or `18`. Caution, as in Week 34: this is a rule of thumb for a *sampled* set of questions, and the frozen set is one fixed set used for every version (a paired comparison is tighter). Do not teach pairing.
+No new idea. **One reuse, flagged** (K5): Week 33's wobble. A count of `k` passes in `n = 25` cases moves by about `sqrt(n p (1-p))` if a different 25 questions had been written: `2.3` cases at `p = 0.68`. So `17` against `15` (v1 against v2) is **inside the wobble** and must not be reported as a finding on its own.
+
+By contrast, `factual 8 -> 5` with three named cases (`c01`, `c03`, `c09`) is a finding because it has a mechanism (Clinic D6).
+
+`11` against `17` (baseline against v1) is a gap of six, about `1.8` combined wobbles: borderline on the overall, which is why the write-up leans on the categories where it is concentrated (arithmetic `0 -> 3`, adversarial `0 -> 3`).
+
+The same formula gives the A1 landing count's wobble, `sqrt(50 x 0.3 x 0.7) = 3.2`: `15 of 50` could easily have been `12` or `18`. Caution, as in Week 34: this is a rule of thumb for a *sampled* set of questions, and the frozen set is one fixed set used for every version (a paired comparison is tighter). Do not teach pairing.
 
 **p95** (defined in Week 34, computed today): `sorted(ms)[int(0.95 * len(ms))]`. With 25 tasks it is the 24th sorted value, the second slowest task. It is `sorted` and an index; nothing new.
 
@@ -156,6 +184,8 @@ The ground-truth ledger (`_ledger/`) found defects in the reference capstone and
 ---
 
 ## 🧰 Prep Checklist
+
+This section gets your own copy of the worked example running, so you have every number and output in front of you before class.
 
 ### 45 minutes the night before
 
@@ -356,7 +386,14 @@ the baseline fails: ['c02', 'c10', 'c11', 'c12', 'c13', 'c14', 'c15', 'c16', 'c1
 ```
 
 
-**☐ 5. M4, the guard and the spine (8 minutes).** Block P5 writes `src/guards.py` (Week 33's redactor and named-files patch, and a new `question_guard`) and `src/spine.py`. Read the spine top to bottom once; it is the part of the week a stranger must be able to read. `route_of` is the routing rule in one line. `answer()` guards, routes, and takes one of three paths; every path returns an `Answer` with all twelve fields; the outer `try` makes sure it never raises **and writes what it caught into the trace**; the agent path calls `toyagent.build_registry` (the function the reference capstone's `tools.py` lacked). Then a smoke test of the paths: a retrieve question, a sum, an out-of-scope question, an attack, an empty string, and odd text. Read the `route` column.
+**☐ 5. M4, the guard and the spine (8 minutes).** Block P5 writes `src/guards.py` (Week 33's redactor and named-files patch, and a new `question_guard`) and `src/spine.py`. Read the spine top to bottom once; it is the part of the week a stranger must be able to read.
+
+- `route_of` is the routing rule in one line.
+- `answer()` guards, routes, and takes one of three paths; every path returns an `Answer` with all twelve fields.
+- The outer `try` makes sure it never raises **and writes what it caught into the trace**.
+- The agent path calls `toyagent.build_registry` (the function the reference capstone's `tools.py` lacked).
+
+Then a smoke test of the paths: a retrieve question, a sum, an out-of-scope question, an attack, an empty string, and odd text. Read the `route` column.
 
 **Block P5 — `p5_spine.py`**
 
@@ -809,7 +846,15 @@ needle checks where a note holding the needle was fetched: 11/12
 ```
 
 
-**☐ 9. One attack per category A1-A5 (10 minutes).** Block P9 writes `eval/redteam.py` (Week 33's harness pointed at the **spine**, handed over) and runs the five categories with seeds 0 to 49 wherever a coin is involved. Read the printed lines against the rules of Week 33: **A1** (injection through a retrieved note) lands `15/50`; the fix is Week 33's *named files only* write guard; the re-test is the attack **and** the happy path (a legitimate save, with the planted note in the index). **A2** (sandbox escape) lands `0/50` because the spine's box is strict; the **control** with `strict=False` lands `15/50`, which is what makes the `0` mean something. **A3** (personal data) is tested in two places, the answer and the trace, each with a control that leaks. **A4** (budget): a 200,000-character question and a 40-step loop. **A5** (confidently wrong) has no fence to turn on: three questions are asked and the ones that come back answered, with a citation, are logged as landed. Note the digit in `Q_REM`: *the router is part of the attack surface*. Then the fix is applied as `v1.1` and the suite is re-run: `MATCH`.
+**☐ 9. One attack per category A1-A5 (10 minutes).** Block P9 writes `eval/redteam.py` (Week 33's harness pointed at the **spine**, handed over) and runs the five categories with seeds 0 to 49 wherever a coin is involved. Read the printed lines against the rules of Week 33:
+
+- **A1** (injection through a retrieved note) lands `15/50`. The fix is Week 33's *named files only* write guard; the re-test is the attack **and** the happy path (a legitimate save, with the planted note in the index).
+- **A2** (sandbox escape) lands `0/50` because the spine's box is strict. The **control** with `strict=False` lands `15/50`, which is what makes the `0` mean something.
+- **A3** (personal data) is tested in two places, the answer and the trace, each with a control that leaks.
+- **A4** (budget): a 200,000-character question and a 40-step loop.
+- **A5** (confidently wrong) has no fence to turn on: three questions are asked and the ones that come back answered, with a citation, are logged as landed.
+
+Note the digit in `Q_REM`: *the router is part of the attack surface*. Then the fix is applied as `v1.1` and the suite is re-run: `MATCH`.
 
 **Block P9 — `p9_redteam.py`**
 
@@ -1089,6 +1134,8 @@ Open a terminal in the scratch folder. Run P1 only: the `on the paper` line must
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the run-sheet for the class hour: what to say, ask and point at in each segment.
+
 | Time | Segment | What happens |
 |---|---|---|
 | 0:00-0:05 | 🪝 Hook | The paper, `check_frozen`, and the question "*which of our 25 do you think the dumbest possible system passes?*" The student writes a number. |
@@ -1100,7 +1147,11 @@ Open a terminal in the scratch folder. Run P1 only: the `on the paper` line must
 
 ### 🪝 Hook — The Dumbest System (5 minutes)
 
-Open with the paper: *"Week 34. The twelve characters."* The student runs `check_frozen(CASES)`; you read your paper; they match or they do not. Then: *"Before we build anything clever, which of the 25 do you think the dumbest sensible system passes? Not 'refuse everything'. The dumbest one that still tries: find the note that shares the most words with the question, copy a sentence."* They write a number on the board. Do not react. Keep the number; it is compared with the measurement in Their Turn 1. Say the plan for the week in one line: *baseline, spine, measure, attack, fix, re-test.*
+Open with the paper: *"Week 34. The twelve characters."* The student runs `check_frozen(CASES)`; you read your paper; they match or they do not.
+
+Then ask: *"Before we build anything clever, which of the 25 do you think the dumbest sensible system passes? Not 'refuse everything'. The dumbest one that still tries: find the note that shares the most words with the question, copy a sentence."* They write a number on the board. Do not react. Keep the number; it is compared with the measurement in Their Turn 1.
+
+Say the plan for the week in one line: *baseline, spine, measure, attack, fix, re-test.*
 
 ### 🧠 Teach — The order, the paths, the rule (10 minutes)
 
@@ -1110,7 +1161,13 @@ Three sentences for the whiteboard:
 - *"The router is one sentence, and the sentence can be wrong: write it, then measure it."*
 - *"A number is only a result if one command prints it and a second run prints the same."*
 
-Draw the three paths on the board: **guard** (turns away empty, long, override, path-escape and prompt-leak questions, at `$0.00`) -> **route** (a number in the question means a sum, so the agent; otherwise retrieve) -> **retrieve** (search, refuse under `tau`, generate, verify the citation) / **agent** (search, calculate, cite) / **refuse**. Read `spine.py` aloud in five minutes, with three stops: (i) the `try` at the edge and the `why` it writes to the trace; (ii) `rag.verify_citations` (an answer whose citation was never fetched is turned into a refusal, Week 26); (iii) `arithmetic_plan`, labelled *stand-in, not a model*: *"this is where a real model would write the sum; here a few phrases do, so this part of the eval tests the wiring, not arithmetic."* Point at the twelve fields in `_make`: every path fills every field.
+Draw the three paths on the board: **guard** (turns away empty, long, override, path-escape and prompt-leak questions, at `$0.00`) -> **route** (a number in the question means a sum, so the agent; otherwise retrieve) -> **retrieve** (search, refuse under `tau`, generate, verify the citation) / **agent** (search, calculate, cite) / **refuse**. Read `spine.py` aloud in five minutes, with three stops:
+
+- (i) the `try` at the edge and the `why` it writes to the trace;
+- (ii) `rag.verify_citations` (an answer whose citation was never fetched is turned into a refusal, Week 26);
+- (iii) `arithmetic_plan`, labelled *stand-in, not a model*: *"this is where a real model would write the sum; here a few phrases do, so this part of the eval tests the wiring, not arithmetic."*
+
+Point at the twelve fields in `_make`: every path fills every field.
 
 ### 🎲 Their Turn 1 — M3, the baseline (15 minutes)
 
@@ -1133,11 +1190,13 @@ Draw the three paths on the board: **guard** (turns away empty, long, override, 
 
 ### 🔑 Wrap & Assign (7 minutes)
 
-Each student says, from their own files, one sentence with a **count**, a **name** and a **number with a unit**, for example *"My baseline passes 11 of 25, my spine passes 17, I promised 0.70 and missed by one case, A1 landed 15 of 50 before the named-files guard and 0 after, with my legitimate save still working 50 of 50, and raising tau to fix c19 cost me three factual cases."* Collect `eval/COMMITTED.json` and `RED_TEAM.md` (even half-written). **Write the committed numbers on your paper under the 12 characters** (overall, the six category counts, the mean cost): they are the second thing the student can re-freeze. Say what is due and that Week 36 opens with `python capstone34/eval/run_eval.py v1` and your paper.
+Each student says, from their own files, one sentence with a **count**, a **name** and a **number with a unit**. For example: *"My baseline passes 11 of 25, my spine passes 17, I promised 0.70 and missed by one case, A1 landed 15 of 50 before the named-files guard and 0 after, with my legitimate save still working 50 of 50, and raising tau to fix c19 cost me three factual cases."* Collect `eval/COMMITTED.json` and `RED_TEAM.md` (even half-written). **Write the committed numbers on your paper under the 12 characters** (overall, the six category counts, the mean cost): they are the second thing the student can re-freeze. Say what is due and that Week 36 opens with `python capstone34/eval/run_eval.py v1` and your paper.
 
 ---
 
 ## 🐞 The Debugging Clinic
+
+This section holds ten deliberate mistakes, each run for real, so you can show the student what the failure looks like and how the suite or a control run catches it.
 
 ### How to teach debugging without giving the answer
 
@@ -1419,9 +1478,22 @@ The student logged five attacks and all five categories. Ask: *"name one attack 
 
 ## 🎲 The Activity, In Full
 
+This section describes the Red-Team Card and the workbook pages that use it, with variations for a shorter slot and for different students.
+
 ### The Red-Team Card (used in Their Turn 3, the Wrap, and Page 35.3)
 
-Print one card per student: a table with five rows (`A1 injection via a note`, `A2 sandbox escape`, `A3 personal data`, `A4 budget`, `A5 confidently wrong`) and these columns: **What I typed or planted (verbatim)**, **Can it land? (predict)**, **Landed / n (control run)**, **Severity (1-5)**, **Fixed / already blocked / accepted**, **Re-test (attack and happy path)**. Two rules are printed at the bottom: *"log the ones that failed too"* and *"a zero needs a control that is not zero."* The last line of the card is the committed numbers: overall count, the six category counts, the mean cost, a date, and the student's and teacher's initials.
+Print one card per student: a table with five rows (`A1 injection via a note`, `A2 sandbox escape`, `A3 personal data`, `A4 budget`, `A5 confidently wrong`) and these columns:
+
+- **What I typed or planted (verbatim)**
+- **Can it land? (predict)**
+- **Landed / n (control run)**
+- **Severity (1-5)**
+- **Fixed / already blocked / accepted**
+- **Re-test (attack and happy path)**
+
+Two rules are printed at the bottom: *"log the ones that failed too"* and *"a zero needs a control that is not zero."*
+
+The last line of the card is the committed numbers: overall count, the six category counts, the mean cost, a date, and the student's and teacher's initials.
 
 - **Page 35.1 (the tally, by hand):** the baseline column of the verdict list is given; the student fills the spine column from the `fail` list (eight ids), tallies both by category, and names the category with the largest gain and the one with none. The last line: *"the floor is 6/25; the baseline is __/25; the spine is __/25."* Answers in K1.
 - **Page 35.2 (promise against measurement, by hand):** the five promises of §6 and the measured mean cost; the student divides to get headroom, writes `kept` or `MISSED`, and finishes the sentence *"I promised ___ and measured ___, so ___"*. Answers in K2.
@@ -1446,6 +1518,8 @@ Give them the handed files and the worked spine with their project's name in it,
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions you are likely to hear, with short answers you can give as they are.
+
 - **"Why run the baseline first?"** Because "better than what?" needs an answer before you write anything clever. A system that scores `0.68` means little until you know a one-line search scores `0.44`.
 - **"Why is `multi_hop` zero?"** Look at `retrieved`: the right notes were fetched. The stand-in generator copies one sentence, and one sentence cannot hold two facts. A real generator would do differently; this says nothing about one.
 - **"Can I fix `c15` so it rounds?"** Yes, it is a real defect in the spine (not a change to the case). Then the write-up says *fixed after seeing the score* and quotes both numbers.
@@ -1460,6 +1534,8 @@ Give them the handed files and the worked spine with their project's name in it,
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+This section lists the failure patterns to watch for in the room, in roughly the order they appear.
 
 1. **The time goes on typing the plumbing.** `run_eval.py`, `guards.py` and `redteam.py` are handed over. If the student types them the hour is gone and the spine is unread.
 2. **The baseline is skipped "because the spine is better anyway".** Then "better than what" has no answer and the write-up has one number.
@@ -1476,6 +1552,8 @@ Give them the handed files and the worked spine with their project's name in it,
 ---
 
 ## 🧭 Differentiation
+
+This section adjusts the week for a student who is struggling, flying, or not engaging.
 
 ### If the student is struggling
 
@@ -1496,6 +1574,8 @@ Give them the baseline run and **one** failing case. Ask: *"where in the chain d
 ---
 
 ## ✅ Assessing Understanding
+
+This section says how to mark the week: four written sentences, a pattern-reading guide, and a mastery scale.
 
 ### The marking rules
 
@@ -1534,6 +1614,8 @@ Mark against four sentences the student writes at the end (Page 35.3's last box)
 
 ## 📤 Homework to Assign
 
+This section is the take-home list to hand over at the Wrap.
+
 ~150 minutes: the workbook (pages 35.1-35.3, about 30 minutes) and the project work (about 120 minutes). Allow three sittings. The six tasks:
 
 1. **Baseline (project).** `src/baseline.py` for your corpus; `python capstone34/eval/run_eval.py baseline` prints the table. Write down the overall, the floor, and the categories where the baseline is zero.
@@ -1548,6 +1630,8 @@ Extension for the fast student: the write case in `cases_extra.py`, or the multi
 ---
 
 ## 🔑 Answer Key
+
+This section holds the answers to the workbook pages and the questions in the lesson, with the scripts that produce the numbers. It is teacher-only.
 
 ### K0 — the data, in one line
 
@@ -1761,5 +1845,7 @@ logs/: ['eval_baseline.json', 'eval_v1.1.json', 'eval_v1.json', 'eval_v2.json', 
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what the final capstone week asks of the student, so you can brief them at the Wrap.
 
 **Week 36 — Capstone 3: Demo, System Card, Assessment** (🟨 project + Assessment 4). The student runs a five-minute demo on the real machine (the question that works, the one that fails and why, the attack that landed), writes **`SYSTEM_CARD.md`** (intended use, out of scope, measured numbers *with sample sizes*, failure modes, guardrails, retention, staged release, incident response, contact), and sits the final paper. There is no new maths and no new syntax. The lesson **opens** with `python capstone34/eval/run_eval.py v1` and your paper: the twelve characters, then the committed numbers under them. Ask them to bring **the one sentence every reader of the card needs**: *what it fails at and who should not rely on it*, and the `MISSED` line, worded so that a stranger could not read it as a success. The honest section is marked as heavily as the working code.

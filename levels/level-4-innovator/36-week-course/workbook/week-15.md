@@ -65,7 +65,7 @@ STEP D  BLEND.   output row = (w1) V(the) + (w2) V(cat) + (w3) V(sat)
         sat ->  [ ______ , ______ ]                 (four places)
 ```
 
-Every weight row adds to 1? ____ Every number above the diagonal in the weights is 0? ____ 
+Every weight row adds to 1? ____ Every number above the diagonal in the weights is 0? ____
 
 Why is the weight of `the` on itself **exactly** 1? ___________________________________________
 
@@ -400,6 +400,8 @@ Last line: ___________________________________________ . The habit that would ca
 
 ## 🐞 Page 15.6 — Break It on Purpose (25 min)
 
+This page is for practising how to find a bug by predicting before you run.
+
 **Each program below is deliberately broken.** Do **not** run it first. For each, write **(i)** what the bug is, **(ii)** what you think happens when it runs (an error, or quietly wrong numbers), **(iii)** the fixed line, and **(iv)** a *check* that would have caught it. *Then* run it. Bugs A to D and F use scores that are **already divided**.
 
 ```python
@@ -513,6 +515,8 @@ print("average biggest weight:", round(w.max(axis=1).mean(), 3))
 
 ## 📓 Page 15.7 — The Bug Log
 
+This page is for recording what went wrong this week and how you found it.
+
 **Entry 1: the one row that would not add to 1.** Which row, which page, and what was wrong with it? (If none, write the first number that was wrong on any page, and how you found it.) ___________________________________________
 
 **Entry 2: two right answers.** On page 15.1 the `sat` output can come out `0.7517` or `0.7518`, and on page 15.1 Part C the row `b` can come out `0.6604` or `0.6605`. In your own words, why are both correct? ___________________________________________
@@ -560,7 +564,7 @@ Seven things, no scrolling up. Tick only if you could do it **now**.
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 > Real printed outputs below. By-hand numbers are exact to the places stated. The last digit of a torch number can differ on another CPU or PyTorch build, and the digits of numbers measured from random draws can move in the third decimal. **Mark the method, the row sums and the zeros above the diagonal, not the last digit.**
 

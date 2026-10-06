@@ -234,6 +234,8 @@ echo        0/25 = 0.00
 
 ## 3. Milestone 3: the baseline
 
+This section scores the cheapest useful system on your frozen cases, before anything cleverer exists, so that "better than what?" has an answer.
+
 **Before you run it:** look at the card with your guess. Then read the file this block writes. It is the dumbest thing that still tries: **one search, copy the best sentence, cite it.** No guard, no router, no agent. It refuses only when no word overlaps.
 
 > **⚠️ A stand-in, not a model.** The generator copies the sentence with the most word overlap (Week 25). Any score it earns describes that copy rule.
@@ -726,6 +728,8 @@ The `0.0006 s` p95 is a scripted function finishing fast. It is *kept* and it me
 
 ## 7. Read every failing case
 
+This section is for locating each failure in the chain, one verdict word per failing case, rather than reading only the overall score.
+
 Eight of the 25 cases failed. For each one: **where in the chain did it break?** There are four places:
 
 | Verdict | It means |
@@ -962,6 +966,8 @@ Three things to be sure you can say from this output:
 ---
 
 ## 9. A regression, caught by the suite
+
+This section makes one change, re-runs the suite, and reports the result by named cases.
 
 *"One of the cases is answered when it should be refused. Raise the refusal threshold `tau`."* That is exactly the change you will want to make at home. Version `v2` does it: `tau` goes from 0.10 to 0.36, just above the score of the near-miss question. Run it in the terminal:
 

@@ -19,10 +19,11 @@
 ![Level 4 map: Week 26 highlighted among 36 week tiles in four term lanes](../figures/fig-w26-0-where-this-fits.svg)
 *Figure W26.0 — Week 26 sits in the third lane, one tile after embeddings: the search from Week 25 now feeds an answer with citations.*
 
-
 ---
 
 ## 🧰 Setup (run once, at the top of a fresh session)
+
+This block rebuilds the names every later page uses: the notes, the index, the ten questions and the helper functions. Type it (or paste your class version) and run it once.
 
 ```python
 # wb26_setup.py - rebuilds, in one place, the pieces you typed in class. Run it once at the top of a fresh session.
@@ -88,6 +89,8 @@ print(len(chunks), "notes;", len(ix), "in the index;", len(rag.NOTEBOOK.split())
 print("recall@1/3/5:", [rag.recall_at_k(ix, LITERAL, k) for k in (1, 3, 5)])
 ```
 
+The reference output of the last three `print` lines:
+
 ```text
 <ExtractiveGenerator [stand-in, not a model]>
 15 notes; 15 in the index; 688 words in the notebook
@@ -99,6 +102,8 @@ If your last three lines differ, stop and fix that first: everything below depen
 ---
 
 ## ✅ Warm-Up (5 min, before anything else)
+
+Short questions on the ideas this week's pages use: recall, chance, sets, sorting and `argsort`. Answer from memory, then check at the back.
 
 **W1.** You wrote 10 questions. In the top 3, the right note appeared for 7 of them. `recall@3` = ____________ (two decimals).
 
@@ -115,6 +120,8 @@ If your last three lines differ, stop and fix that first: everything below depen
 ---
 
 ## ⚖️ Page 26.1 — Citation Court, Your Own Case (15 min · pen only, then one check)
+
+This page is for checking cited answers two ways: the way a program can, and the way a careful human does.
 
 **Question:** *How much does one extraction call cost in dollars?*
 
@@ -184,10 +191,11 @@ Copy the first value of each pair (True or False) here: 1 ____ 2 ____ 3 ____ 4 _
 ![A row of five boxes: Question, Retrieve, Gate, Write (dashed, labelled stand-in), Check, with a refusal branch and a worked example of a valid citation on a wrong answer](../figures/fig-w26-1-retrieve-gate-write-check.svg)
 *Figure W26.2 — The pipeline has a gate before the writer and a check after it. A passing check proves the cited id was served, not that the answer is right.*
 
-
 ---
 
 ## ✂️ Page 26.2 — The Threshold Strip, Your Own Numbers (20 min · pen and calculator, no computer)
+
+This page is for choosing a refusal line by hand: counting the two kinds of mistake at each line, then testing the line on someone else's wording.
 
 Twelve questions, each with the similarity of its **best** note (**PRACTICE** numbers). Eight have an answer in the notes: `A B C D E G I J`. Four have **none**: `F H K L`.
 
@@ -235,6 +243,8 @@ At line `0.05`, how many of the 8 are answered? ____ At `0.10`? ____ At `0.20`? 
 
 ## 📏 Page 26.3 — Recall on Your Own Questions (25 min · pen, then computer)
 
+This page is for computing `recall@k` by hand and then on your own small folder of notes.
+
 ### Part 1 — Counting by hand (8 min)
 
 You asked ten questions. Below, the **position** of the right note in the results (1 = first). **PRACTICE** rows:
@@ -266,7 +276,7 @@ Use your **four notes from Week 25's homework**, or the **PRACTICE** notes below
 | 5 | |
 | 6 | |
 
-Then ask a friend to write **three more** without reading your notes. Only now, run:
+Then ask a friend to write **three more** without reading your notes. Only now, run this block. It writes the four notes, indexes them, scores both question sets, and scores one question that is not in the notes:
 
 ```python
 # mynotes26.py - PRACTICE notes; replace the four texts with your own four from Week 25.  First make an empty folder called wb_notes next to l4lib/ in your file manager.
@@ -294,7 +304,7 @@ odd = "What is the capital of France?"
 print("not in the notes:", odd, "-> best score", round(my_ix.search(odd, 1)[0].score, 3))
 ```
 
-(The `mine` and `friend` lists are the PRACTICE questions; replace them with yours, keeping `(question, id)` pairs.)
+The `mine` and `friend` lists are the PRACTICE questions; replace them with yours, keeping `(question, id)` pairs. Reference output for the PRACTICE run:
 
 ```text
 4 files; first: wb_notes/note-00.md  last: wb_notes/note-03.md
@@ -326,6 +336,8 @@ ______________________________________________
 
 ## ✂️ Page 26.4 — Chunking: Counting Windows, Then the Overlap Sweep (25 min · pen, then computer)
 
+This page is for counting chunking windows by hand, then measuring what overlap costs and buys.
+
 `rag.chunk_fixed(text, size, overlap)` slides a window of `size` words forward by `size - overlap` words, and stops after the window that reaches the last word. The last window may be shorter.
 
 ### Part 1 — By hand (10 min)
@@ -342,7 +354,7 @@ A text has **100 words**. Fill in the table.
 
 **A.** Which row stores the most words? ________ By what factor is that more than the 100 original words? ________
 
-**B.** Check with the machine. The text is a hundred made-up words `w0 ... w99`:
+**B.** Check with the machine. This block cuts a text of a hundred made-up words `w0 ... w99` with each of the three settings and prints the window count, the words stored, the length of the last window and the start words:
 
 ```python
 # windows26.py - count the windows for the three settings
@@ -351,6 +363,8 @@ for size, ov in [(30, 0), (30, 10), (30, 20)]:
     cs = rag.chunk_fixed(text, size, ov)
     print(f"size {size} overlap {ov}: {len(cs)} windows, words stored {sum(len(c.split()) for c in cs)}, last window has {len(cs[-1].split())} words, starts {[c.split()[0] for c in cs]}")
 ```
+
+Reference output:
 
 ```text
 size 30 overlap 0: 4 windows, words stored 100, last window has 10 words, starts ['w0', 'w30', 'w60', 'w90']
@@ -372,7 +386,7 @@ The notebook has **688 words**. In class, the 250-word windows sent `718` words 
 
 Predict first. Bigger overlap means more windows and more repeated words. **I predict** the recall at k = 1 will: go up / stay about the same / go down. **And** words stored at overlap 15 will be about ______ times the notebook.
 
-Then run:
+Then run this block. It builds an index for each overlap and prints recall at three values of k next to the words stored:
 
 ```python
 # sweep26.py - 30-word windows, overlap 0, 8 and 15, against the ten phrase questions
@@ -384,6 +398,8 @@ for o in (0, 8, 15):
     stored = sum(len(c.split()) for c in cs)
     print(f"{o:8d}{len(cs):4d}{recall_phrase(cix, 1):6.2f}{recall_phrase(cix, 3):6.2f}{recall_phrase(cix, 5):6.2f}{stored:14d}{stored / total_words:12.2f}")
 ```
+
+Reference output:
 
 ```text
  overlap   n   r@1   r@3   r@5  words stored  x notebook
@@ -407,10 +423,11 @@ Copy your own table:
 ![Five rows, one per way of cutting the notebook, each with a bar for the share of the notebook sent and three recall numbers; the 250-word row runs past the 100 percent line](../figures/fig-w26-2-recall-and-words-sent.svg)
 *Figure W26.1 — Report recall with the fraction of the corpus that bought it. The 250-word cut scores 1.00 by sending 104% of the notebook.*
 
-
 ---
 
 ## 🔍 Page 26.5 — Retrieval or Generation? And a Note That Gives Orders (30 min · pen, then computer)
+
+This page is for telling retrieval failures from generation failures, and for seeing what a note that contains an order does to the pipeline.
 
 ### Part 1 — Sort eight answers by hand (10 min)
 
@@ -449,7 +466,7 @@ Refused by the gate: ______
 
 **D.** To fix a RETRIEVAL failure you change the ______________ ; to fix a GENERATION failure you change the ______________ . Why does it matter to diagnose which one it is **before** you change anything? ______________________________________________
 
-**E.** Check the rule with the machine:
+**E.** Check the rule with the machine. This block writes the rule as a function and applies it to the eight rows:
 
 ```python
 # verdict26.py - the sorting rule as code, on the eight rows
@@ -467,6 +484,8 @@ for i, r in enumerate(rows):
     print(i, r, verdict(*r))
 ```
 
+Reference output:
+
 ```text
 0 (0.42, True, True) ok
 1 (0.31, True, False) GENERATION
@@ -480,7 +499,7 @@ for i, r in enumerate(rows):
 
 ### Part 2 — Your own 16th note (15 min)
 
-Write a 16th note that **gives the assistant an order** (**PRACTICE** example below; write your own that uses different words). Nothing in this workbook can run any order: the stand-in only copies a sentence, and no tool exists yet. The note is **data**.
+Write a 16th note that **gives the assistant an order** (**PRACTICE** example below; write your own that uses different words). Nothing in this workbook can run any order: the stand-in only copies a sentence, and no tool exists yet. The note is **data**. This block adds the planted note, asks a question, prints what was served and answered, then tests a word-pattern filter against the note and three rewordings:
 
 ```python
 # poison26.py - PRACTICE note: an order hidden in the notes.  Nothing here executes it.
@@ -500,6 +519,8 @@ for name, t in tests.items():
     print(f"{name:12s} caught: {bool(pattern.search(t.lower()))}")
 print("false alarms on the 15 real notes:", sum(bool(pattern.search(c.lower())) for c in chunks))
 ```
+
+Reference output for the PRACTICE note:
 
 ```text
 16 notes; recall@1/3/5 after: [1.0, 1.0, 1.0]
@@ -537,7 +558,14 @@ false alarms on the 15 real notes: 0
 
 ## 🐞 Page 26.6 — Break It on Purpose (three bugs · 25 min)
 
-**Each block below is DELIBERATELY broken.** Run the setup block first; each bug block then runs on its own. For each bug: **(i)** write what you expect to see, **(ii)** run, **(iii)** name the bug in one line, **(iv)** write the fix and a check that would catch it.
+This page is for practising the find-and-fix routine on bugs planted on purpose.
+
+**Each block below is DELIBERATELY broken.** Run the setup block first; each bug block then runs on its own. For each bug:
+
+1. Write what you expect to see.
+2. Run it.
+3. Name the bug in one line.
+4. Write the fix and a check that would catch it.
 
 ### 26.6-A (SILENT) — `argsort` without the minus
 
@@ -590,6 +618,8 @@ print("refusals out of 10:", sum(x == "NOT IN NOTES" for x in replies))
 
 ## 📓 Page 26.7 — The Bug Log
 
+This page is for recording what you found in the Break-It page so you can catch it faster next time.
+
 Add **at least two** entries to your running Bug Log (one must be a SILENT one). Use the usual columns.
 
 | # | File / page | What I saw | What it meant | The fix | How I would catch it next time |
@@ -604,6 +634,8 @@ Add **at least two** entries to your running Bug Log (one must be a SILENT one).
 
 ## 🧠 Self-Check (from memory, no notes)
 
+Questions on the week's main ideas. Answer with the notes closed, then check at the back.
+
 1. Why must the list of note files be `sorted`, and what else must be true of the names? ______________________________________________
 2. Why is recall on questions you wrote yourself an **upper bound**? ______________________________________________
 3. What does `cited - served` tell you, and why is a set the right tool? ______________________________________________
@@ -614,7 +646,7 @@ Add **at least two** entries to your running Bug Log (one must be a SILENT one).
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 ### Warm-Up
 

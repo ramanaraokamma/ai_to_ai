@@ -20,7 +20,12 @@
 >
 > **Reading time:** about 30 minutes. **In class:** about 70 minutes. **Homework (the workbook):** about 60-70 minutes.
 
-> **📌 About the code blocks.** Type the seven blocks below into **one file, `week11.py`**, one under the other with no gap, and run the file after adding each block. Later blocks use names defined by earlier ones. The output printed under each block is what **that block** prints. Every output shown was printed by a real run on a CPU, with the seeds shown. The calculator numbers (`0.1432`, `0.4838`, `0.8644`) match to every digit. The very small numbers (like `2.05e-09`) can differ in their second digit on a different PyTorch version or a different CPU; their sizes, and the shape of every table, will not. Blocks marked **DELIBERATE** are written on purpose to go wrong. Nothing this week needs the internet, and nothing imports `l4lib`. There is no language model and no stand-in anywhere. Every cell and layer is **real PyTorch with untrained weights** (seeded random numbers), and the inputs are seeded random numbers too. **Nothing is trained today.** Week 12 is where a gated cell meets real text.
+> **📌 About the code blocks.**
+> - Type the seven blocks below into **one file, `week11.py`**, one under the other with no gap, and run the file after adding each block. Later blocks use names defined by earlier ones.
+> - The output under each block is what **that block** prints, from a real run on a CPU with the seeds shown.
+> - The calculator numbers (`0.1432`, `0.4838`, `0.8644`) match to every digit. The very small numbers (like `2.05e-09`) can differ in their second digit on a different PyTorch version or CPU; their sizes, and the shape of every table, will not.
+> - Blocks marked **DELIBERATE** are written on purpose to go wrong.
+> - Nothing this week needs the internet, and nothing imports `l4lib`. There is no language model and no stand-in anywhere. Every cell and layer is **real PyTorch with untrained weights** (seeded random numbers), and the inputs are seeded random numbers too. **Nothing is trained today.** Week 12 is where a gated cell meets real text.
 
 ---
 
@@ -48,6 +53,8 @@ Words to keep in mind:
 ---
 
 ## 🧠 The Big Idea
+
+This section builds the LSTM one piece at a time: the dial, the add-not-rewrite rule, one unit by hand, the ready-made PyTorch cell, and the forget dial.
 
 ### 1. A dial is a squashed score
 
@@ -92,7 +99,7 @@ An LSTM keeps **two** things between steps, not one: the note `h`, and a second 
 c = f * c_old + i * g
 ```
 
-Four small pieces, each made from the same input:
+Four pieces, each made from the same input:
 
 - `f` is the **forget gate**: how much of the old memory to keep.
 - `i` is the **input gate**: how much of the new candidate to let in.
@@ -303,6 +310,8 @@ Same cell, same weights, **one number different** in the bias. At forget bias 0 
 
 ## 🎲 Your Turn
 
+This section is for measuring: you predict a grid, run a plain RNN, a GRU and an LSTM, and compare your predictions with the printed numbers.
+
 ### The Dial Grid
 
 Now the comparison the week is about: a plain RNN, a GRU and an LSTM, all run on the same kind of input.
@@ -320,7 +329,7 @@ Now the comparison the week is about: a plain RNN, a GRU and an LSTM, all run on
 - **S** (small): `1e-6` up to `1e-2`
 - **L** (level): above `1e-2`
 
-Use one pen colour for predictions and a different one for measurements. The score is not the point; the *pattern* of your misses is. (The cut-offs are ours, not nature's.)
+Use one pen colour for predictions and another for measurements. The score is not the point; the *pattern* of your misses is. (The cut-offs are ours, not nature's.)
 
 **Block 6**
 
@@ -438,6 +447,8 @@ If a bias of 2 is good, is 10 better? On a calculator `sigmoid(10)` is `0.99995`
 
 ## 🔬 Break It On Purpose
 
+This section is for reading two real error messages, so you can recognise them when they happen by accident.
+
 Two blocks, both **DELIBERATE**. Add each below block 7 in a scratch copy of `week11.py`. Predict what each will do before you run it.
 
 **1. The state is a pair.** `nn.LSTMCell` opens its state as `(h, c)`. What happens if it is handed only `h`?
@@ -479,6 +490,8 @@ Read the last line. Which word says what the slice is? Compare with blocks 4 and
 ---
 
 ## 🔑 Wrap Up
+
+This section is for checking, in your own words, what you can and cannot claim from today's measurements.
 
 1. Say from memory, in your own words: (1) what the LSTM adds that the plain RNN does not have, (2) what the forget dial does to the slope back, (3) why the LSTM at default settings is not better than the RNN.
 2. "The LSTM has four of everything, so it remembers more." What is wrong with that, and which two rows of block 7 answer it?

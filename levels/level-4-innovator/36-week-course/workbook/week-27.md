@@ -19,16 +19,17 @@
 ![Level 4 map: Week 27 highlighted among 36 week tiles in four term lanes](../figures/fig-w27-0-where-this-fits.svg)
 *Figure W27.0 — Week 27 is the assessment tile that closes the third lane: an X-ray of Weeks 19 to 26 before the agents of Term 4.*
 
-
 ---
 
 ## ✅ Warm-Up (5 min, before anything else)
 
-`a = [3, 0, 4]` and `b = [0, 4, 3]`. Write the dot product, the two lengths, and the cosine of the angle between them.
+This warm-up gets your hands moving on a dot product and a cosine before the bigger pages.
+
+**Task:** `a = [3, 0, 4]` and `b = [0, 4, 3]`. Write the dot product, the two lengths, and the cosine of the angle between them.
 
 dot = ______ · length of a = ______ · length of b = ______ · cosine = ______
 
-Then run:
+Then run this check:
 
 ```python
 # warm27.py - Warm-Up check. PRACTICE numbers.
@@ -48,12 +49,11 @@ dot: 12  lengths: 5.0 5.0  cosine: 0.48
 ![One bar split into five blocks A to E sized by marks, with minutes beneath each and Section E highlighted](../figures/fig-w27-1-the-paper-in-marks.svg)
 *Figure W27.1 — The paper is 75 marks in five sections (20 + 16 + 12 + 15 + 12), and the biggest single question is last.*
 
-
 ---
 
 ## 🧮 Page 27.1 — The By-Hand Ideas, Fresh Numbers (25 min · pen, calculator, then one check)
 
-These are the kinds of questions the paper asks, on numbers it does not use. **Do all of it before you run anything.**
+This page is practice on the kinds of questions the paper asks, using numbers the paper does not use. **Do all of it before you run anything.**
 
 **Part 1 — Cosine (6 min).** `q = [1, 2, 2]`. Three cards: `A = [2, 4, 4]`, `B = [2, 1, 0]`, `C = [-1, -2, -2]`.
 
@@ -86,7 +86,7 @@ The pair loss is `-ln(sigmoid(gap))`, where `gap` is the winner's score minus th
 
 **Part 4 — A floor and a top k (4 min).** A prompt gets 21 of 32 fields right; the constant answer gets 17 of 32. Prompt: ______% · constant: ______% · gap: ______ fields. Scores `[0.42, 0.05, 0.31, 0.77, 0.29]`: the ids of the best three, best first: ______ (ids start at 0).
 
-**Now run the check:**
+**Now run the check.** It prints every hand answer from this page:
 
 ```python
 # check271.py - Page 27.1: every hand answer, computed.  PRACTICE numbers.
@@ -144,7 +144,7 @@ top 3 ids: [3, 0, 2]
 
 ## 📊 Page 27.2 — Reading a Table Honestly (20 min · pen only, then a tiny check)
 
-Section E of the paper gives you real tables and asks what you would *not* say. Practise on a **PRACTICE** table (invented, not the paper's, not yours). A small model was trained with one part deleted, twice with different seeds.
+This page is for practising how to read a results table, because Section E of the paper gives you real tables and asks what you would *not* say. Use a **PRACTICE** table (invented, not the paper's, not yours). A small model was trained with one part deleted, twice with different seeds.
 
 | Model | Train loss | Validation loss | Validation, repeated with seed 1 |
 |---|:--:|:--:|:--:|
@@ -163,7 +163,9 @@ Section E of the paper gives you real tables and asks what you would *not* say. 
 
 **E.** Write the one question you would ask before trusting any recall number: ____________________________________________________________
 
-**F.** With ten questions, how big is one question? With eight? ______ ______ A difference of `0.10` is how many questions? ______ Run the check:
+**F.** With ten questions, how big is one question? With eight? ______ ______ A difference of `0.10` is how many questions? ______
+
+Then run this check:
 
 ```python
 # check272.py - Page 27.2: the gaps in the PRACTICE table, and what one question is worth.
@@ -187,6 +189,8 @@ one question of 10 is worth 0.1  of 8 is worth 0.125
 
 ## 📋 Page 27.3 — Mark Your Own Paper, Fill the Grid (after the paper · 30 min · pen in the *other colour*, then one check)
 
+This page is for marking your paper and turning your marks into a redo plan.
+
 Mark your paper against the printed marking sheet (the one your teacher gave you). For Sections D and E, mark the **working** and not only the answer. Then fill the grid with **your own** marks.
 
 | Week | What it covers | Marks available | Marks earned | % | Redo if marks ≤ | Circle? |
@@ -205,7 +209,7 @@ Mark your paper against the printed marking sheet (the one your teacher gave you
 
 **Circle at most two weeks.** Pick the lowest percentage; on a tie, the priority is **Week 23, then Week 26, then Week 22**, because Weeks 28 and 29 lean on them. For each circled week write the day and time of the redo: ______________________
 
-Here is a check for your grid. The marks in it are **PRACTICE**; **replace the `earned` list with your own eight numbers** (in the order of the table):
+Run this check for your grid. The marks in it are **PRACTICE**; **replace the `earned` list with your own eight numbers** (in the order of the table):
 
 ```python
 # check273.py - Page 27.3: percentages and redo flags from your marks.  PRACTICE marks (not yours).
@@ -240,10 +244,11 @@ week 26:  9/14 =  64%  line 8
 ![Eight boxes for Weeks 19 to 26 joined by lines to four boxes for Weeks 28, 29, 30 and later; Weeks 22, 23 and 26 are drawn heavier and tagged redo first](../figures/fig-w27-2-term-3-feeds-term-4.svg)
 *Figure W27.2 — Weeks 22, 23 and 26 are the ones Term 4 leans on hardest, so they are the first redos.*
 
-
 ---
 
 ## ✂️ Page 27.4 — Three New Cuts: Predict First (after the paper · 25 min · pen, then computer)
+
+This page is for the thinking around the chunk-size homework: counting windows by hand, committing to predictions, then recording your own run.
 
 Week 26 cut the 688-word notebook into chunks of 30, 60, 120 and 250 words. Your homework is three cuts it did not use: **20, 45 and 90 words**, with overlaps of **5, 10 and 20**. The computer job itself (`sweep.py`) is in the student guide; this page is for the thinking around it.
 
@@ -255,7 +260,7 @@ Week 26 cut the 688-word notebook into chunks of 30, 60, 120 and 250 words. Your
 | 45 | 10 | | | | |
 | 90 | 20 | | | | |
 
-Check the counts (the stored words are a little less than windows × size, because the last window is short):
+Run this check of the counts (the stored words are a little less than windows × size, because the last window is short):
 
 ```python
 # check274.py - Page 27.4: window counts for the three new cuts (needs l4lib/ next to this file).
@@ -298,6 +303,8 @@ size 90, overlap 20: step 70, windows 10, words stored 868, times the notebook 1
 ---
 
 ## 🐞 Page 27.5 — Break It on Purpose (three bugs · 25 min)
+
+This page is for practising how to read, diagnose and fix broken code, including bugs that print no error.
 
 Each block is **deliberately broken**. For each: (i) predict what it prints, (ii) run it, (iii) say what it means, (iv) write the fix and the check you would run next time. One is **loud** and two are **SILENT**.
 
@@ -375,6 +382,8 @@ prediction at 1e7 with the right slope: 0.283
 
 ## 📓 Page 27.6 — The Bug Log
 
+This page is where you keep a record of bugs and slips so you can catch them next time.
+
 Add **at least two** entries (one must be SILENT). One of them should be the answer you were most surprised to get wrong on the paper.
 
 | # | File / page | What I saw | What it meant | The fix | How I would catch it next time |
@@ -387,6 +396,8 @@ Add **at least two** entries (one must be SILENT). One of them should be the ans
 
 ## 🧠 Self-Check (from memory, no notes)
 
+This section is for answering eight short questions from memory, with no notes open.
+
 1. What does one BPE merge do, and what happens to bytes per token as merges are learned? ____________________________________________________________
 2. Losses `9, 3, 1` at steps of ×10 lie on a line. Is a prediction from it a measurement? ____________________________________________________________
 3. A masked loss is higher than an unmasked one. Is the model worse? ____________________________________________________________
@@ -398,7 +409,7 @@ Add **at least two** entries (one must be SILENT). One of them should be the ans
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 ### Warm-Up
 

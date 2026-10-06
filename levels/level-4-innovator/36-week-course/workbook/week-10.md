@@ -64,7 +64,7 @@ First below one half at k = ____________ .
 
 **j. Look at a and b together.** Did doubling the count from 10 to 20 halve the answer? ____________ What happened to it instead? ___________________________________________
 
-**Check file** (run it only after the table is written):
+**Check file** (run it only after the table is written). It prints each power and the first count below one half:
 
 ```python
 # check101.py - Week 10 workbook page 10.1: check the compounding answers.
@@ -85,6 +85,8 @@ Which parts did my hand answer miss by more than `0.0005`? ____________ The slip
 *Figure W10.1 — Multiplying by a number below 1 forty times leaves almost nothing, above 1 gives a big number; only exactly 1 stays put.*
 
 ## ⛓️ Page 10.2 — Slopes in a Chain (Week 8's cell · 20 min)
+
+This page is for multiplying the slopes along a short chain of notes by hand, for two recurrent weights.
 
 Week 8's cell: `new note = tanh( W_xh x + W_hh (old note) )`, no bias. The slope of `tanh` at a note `h` is `1 - h x h` (the note, **squared**). So **the slope from an old note to the new note** is
 
@@ -114,7 +116,7 @@ Week 8's cell: `new note = tanh( W_xh x + W_hh (old note) )`, no bias. The slope
 
 **e. Predict.** If the chain were **40** notes long and every slope were about `0.6`, would the product from note 1 to note 40 be closer to `0.5`, `0.01` or `0.000000001`? My guess: ____________ Test it with `0.6 ** 39` (leave the digits here): ____________
 
-**Check file:**
+**Check file.** It prints the four notes, the three slopes and their product:
 
 ```python
 # check102.py - Week 10 workbook page 10.2: the Week 8 cell with W_hh = 1.0, a spike at step 1.
@@ -130,11 +132,13 @@ print("slopes into notes 2, 3, 4:", [round(s, 4) for s in slopes])
 print("note 1 -> note 4:", round(slopes[0] * slopes[1] * slopes[2], 4))
 ```
 
-Write what it printed for the last line: ____________ Did it match part a? ____________
+Compare with your part a. Write what it printed for the last line: ____________ Did it match part a? ____________
 
 ---
 
 ## 🅿️ Page 10.3 — The Parked Cell (from block 3 · 15 min)
+
+This page is for comparing hand-computed powers of one slope with the gradients your own run printed.
 
 Block 3 of your `week10.py` built a cell with **one number** whose note is *parked* near `0.2177`, so **every slope is the same**: `1 - 0.2177 x 0.2177 = 0.9526`. It printed the gradient at several positions of a chain of **41** notes.
 
@@ -175,6 +179,8 @@ Block 3 of your `week10.py` built a cell with **one number** whose note is *park
 ---
 
 ## 🎲 Page 10.4 — The Forty-Multiplications Grid (block 5 · 30 min)
+
+This page is for recording a grid of measurements and comparing it with your predictions.
 
 The experiment: the **size of the gradient at position 1**, for four sequence lengths `T` and four settings of the recurrent weight (`x1` is the ordinary cell; `x2`, `x4`, `x8` multiply its recurrent weights by 2, 4 and 8). The gradient at the *last* position is always `4.0`, so compare everything to that.
 
@@ -238,6 +244,8 @@ Which seed broke the rule at scale 8 (a tiny number instead of a huge one)? Seed
 
 ## 💥 Page 10.5 — One Explosion, With and Without Clipping (block 7 · 15 min)
 
+This page is for recording one update with and without clipping, and comparing the before and after numbers.
+
 Block 7 did **one** update of the knobs (learning rate `0.1`, `T = 40`, seed 0) in four ways. *Weight size* is the length of the recurrent weight matrix; *notes pinned* is the share of the 40 x 16 notes above `0.99` in size (the flat ends of `tanh`).
 
 **Worked example (done for you; a shorter chain, `T = 20`, seed 0, so your numbers will be different).** At scale 1 the weight size went from `2.23` to `2.29` plain: a change of `0.06`, a small step. At scale 8 it went from `17.87` to `491.94` plain: roughly **28 times** bigger (`491.94 / 17.87`). Divide after over before to get a factor.
@@ -267,6 +275,8 @@ ___________________________________________
 
 ## 📝 Page 10.6 — The Report (20 min)
 
+This page is for reporting the week's measurements in four sentences.
+
 Write **four sentences**, in your own words, to someone who has not done this week.
 
 **Rules.** Every number must have been printed by **your own run in the last 24 hours**; copy it **with its exponent**; state the **seed**.
@@ -288,6 +298,8 @@ Write **four sentences**, in your own words, to someone who has not done this we
 ---
 
 ## 📓 Page 10.7 — The Bug Log
+
+This page is for recording what went wrong this week and how you found out.
 
 The Bug Log is the most useful page of the course. Copy only the **last line** of a traceback, not all of it.
 
@@ -312,6 +324,8 @@ ___________________________________________________________________________
 
 ## 🧠 Self-Check (do this last, from memory)
 
+This section is for testing, without notes, what you can still do and say.
+
 - ☐ Work out `0.95 ** 40` on a calculator and say, before pressing the key, whether it is tiny, near 1, or large.
 - ☐ Say why a loop makes compounding matter (the same slope is used at every step back).
 - ☐ Say how many slopes lie between the last note and the first in a chain of 41 notes.
@@ -325,7 +339,7 @@ ___________________________________________________________________________
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 > Real printed outputs below. By-hand numbers are exact. Measured gradients may differ in the last digit on another CPU or PyTorch build; the exponents and the shape of each table will not. These answers are for the pages in **this workbook**.
 

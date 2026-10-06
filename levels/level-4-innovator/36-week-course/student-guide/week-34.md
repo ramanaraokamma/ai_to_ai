@@ -22,7 +22,13 @@
 >
 > **Reading time:** about 30 minutes. **In class:** 70 minutes. **Homework:** about 90 minutes (workbook pages 34.1 to 34.3, and the rest of your project). Allow two sittings.
 
-> **📌 About the code blocks.** Put the blocks in **one file**, `week34.py`, in the order they appear, or paste them into one Python session. Later blocks use names made by earlier ones. Run it from the folder that contains `l4lib/` and your `notes/` folder (your 15 notes from Weeks 26 to 33). Blocks marked **📌 GIVEN** are handed to you: read them, do not type them. Nothing in this lesson is random, so your numbers should match the ones shown exactly; the lines that show **milliseconds** vary a little. Nothing needs the internet, and the whole file runs in about one second; **if a block takes more than a minute, something is wrong.** This week creates a folder `capstone34/` with three empty folders in it, plus a few small files.
+> **📌 About the code blocks.**
+> - Put the blocks in **one file**, `week34.py`, in the order they appear, or paste them into one Python session. Later blocks use names made by earlier ones.
+> - Run it from the folder that contains `l4lib/` and your `notes/` folder (your 15 notes from Weeks 26 to 33).
+> - Blocks marked **📌 GIVEN** are handed to you: read them, do not type them.
+> - Nothing in this lesson is random, so your numbers should match the ones shown exactly; the lines that show **milliseconds** vary a little.
+> - Nothing needs the internet, and the whole file runs in about one second; **if a block takes more than a minute, something is wrong.**
+> - This week creates a folder `capstone34/` with three empty folders in it, plus a few small files.
 
 > **⚠️ Nothing today is a model.** `refuse_all`, `oracle` and `echo` (Section 6) are three-line **stand-ins, not models**: they exist to test the scorer. The dollars and milliseconds in Section 8 are measured on the scripted **stand-ins** of Weeks 25 to 29, so they are **stand-in dollars** and **stand-in milliseconds**: they say nothing about any real model's bill or speed. What is real today is the design, the cases, the checks, the scorer and the fingerprint. The eight example cases are examples of the *shape* of a case, not your 25.
 
@@ -45,6 +51,8 @@ Keep both. By the end you will know what the friend forgot.
 ---
 
 ## 🧠 The Big Idea
+
+This section explains why the test comes before the system, and names the seven headings of the design you will write.
 
 **The test is written before the thing it tests.** A system built to pass a test you wrote afterwards is a mirror, not a measurement. Every number your capstone reports in Week 36 (a score, a dollar, a second) is only as honest as what you wrote down **before the system existed**: the cases, the budget and the list of things it must not do.
 
@@ -160,6 +168,8 @@ Count the Python files in `src/`: zero. Keep it that way until the fingerprint i
 
 ## 2. A case, and eight examples
 
+This section defines what one eval case contains and shows the shape of a case in eight examples.
+
 A **case** is one test. It has ten fields:
 
 | Field | Meaning |
@@ -175,7 +185,7 @@ A **case** is one test. It has ten fields:
 
 **The six categories, and how many to aim for in 25:** `factual` 8 to 10 (one note holds the answer), `multi_hop` 3 to 4 (two notes are needed), `arithmetic` 3 to 4 (a note gives the inputs and a calculation gives the answer), `out_of_scope` 3 (nothing in the notes answers it, so refuse), `adversarial` 2 to 3 (the question itself is an attack, so refuse), `ambiguous` 2 (two readings, so a good answer gives both).
 
-**Three rules, said once:**
+**Three rules for writing cases, said once:**
 
 1. **The question is what your user would type, not a sentence lifted from the note.** Start from *"what would Asha type at 11 pm?"*, not from "the note says AdamW, so: which optimizer does the note say?" A test built from the answer key is a mirror.
 2. **An arithmetic case is one where the number must be *computed*.** "What temperature was best?" has a number in it and no sum.
@@ -216,6 +226,8 @@ Look at `e2`. It uses the British spelling and the notes use the American one. T
 ---
 
 ## 3. Check the cases before you freeze them
+
+This section gives you a program that checks your cases before they are frozen.
 
 A case can be impossible **by construction**: its needle is in no note, or it is two words, or it has a missing field. Then the scorer gives `0` forever, and you will blame the system. A program can see this and you cannot.
 
@@ -318,6 +330,8 @@ The checker names each problem. `b2` is two problems at once: a needle that is t
 ---
 
 ## 4. Test the scorer, not just use it
+
+This section builds the scorer and checks it against answers you control, so a later low score cannot be blamed on the scorer.
 
 A scorer has bugs too, and the way to find them is to **hand it answers you wrote** and see whether it agrees with you. Write the verdict you expect **before** you run.
 
@@ -422,7 +436,11 @@ echo
   OVERALL       n= 8  passed  0  score 0.00
 ```
 
-Three things to notice. **8/8**: the scorer does what you wrote on every hand-made answer. **`refuse_all` is not zero**: it scores `2/8 = 0.25` here because two of the eight cases are refusals. On your 25 it will be `(number of refusal cases) / 25`. That is the **floor** a real system has to beat; it does **not** mean refusing is good. And `oracle` scoring everything shows the scorer can pass what it should.
+Three things to notice:
+
+- **8/8**: the scorer does what you wrote on every hand-made answer.
+- **`refuse_all` is not zero**: it scores `2/8 = 0.25` here because two of the eight cases are refusals. On your 25 it will be `(number of refusal cases) / 25`. That is the **floor** a real system has to beat; it does **not** mean refusing is good.
+- `oracle` scoring everything shows the scorer can pass what it should.
 
 **A limit of the scorer, stated now.** It matches whole tokens: "Pre-norm." counts and "pre norm" does not. A correct answer in other words can fail. The defence is `any_of` with the alternatives, and reading **every** failing case in Week 35 before you blame the system. It also checks that a cited note was fetched; it does **not** check that the note *says* the thing.
 
@@ -432,6 +450,8 @@ Three things to notice. **8/8**: the scorer does what you wrote on every hand-ma
 ---
 
 ## 5. The design doc
+
+This section gives you the template for the one-page design, a checker for what a machine can check, and a finished example to read beside your draft.
 
 **📌 GIVEN.** A template of the seven headings with blanks (`____`), and `check_design`. It can test what a machine *can* test: all seven headings, no blanks, at least three failure modes each with a *who is harmed* and a *severity*, severities that never go **up** the list (that is what "ranked by severity" means), three numbers in the budget, and at least two things it will not do. It **cannot** tell whether your three failure modes are the right ones. A person has to read that.
 
@@ -577,7 +597,13 @@ severities in section 5: ['5', '4', '4', '3', '2']
 words in the worked design: 512
 ```
 
-Read it for five things. A **name** in sections 1 and 2. The sentence *"I do not yet know how many of my 25 cases a plain search can pass"* in section 3: it is honest that a script might do. **The routing rule** in section 4 is one sentence. The **numbers in section 6 carry units and the word "stand-in"**. And each item in section 7 is something a stranger could *catch it doing*. What would make line 3 of section 7 vague? (If it said "anything risky".)
+Read it for five things:
+
+1. A **name** in sections 1 and 2.
+2. The sentence *"I do not yet know how many of my 25 cases a plain search can pass"* in section 3: it is honest that a script might do.
+3. **The routing rule** in section 4 is one sentence.
+4. The **numbers in section 6 carry units and the word "stand-in"**.
+5. Each item in section 7 is something a stranger could *catch it doing*. What would make line 3 of section 7 vague? (If it said "anything risky".)
 
 **Choosing your two components.** You need two of three. The course kit already gives you RAG and the tool-using agent, and Week 35 is **one week** to build both. A fine-tuned component is allowed, but it is the heavier choice, and this guide did not run that route. If you take it, two things change: a case becomes *(ticket text, expected label)* with the label as the needle, and your frozen cases must not overlap the training tickets (Week 30's Jaccard scan, run against the training set).
 
@@ -586,6 +612,8 @@ Read it for five things. A **name** in sections 1 and 2. The sentence *"I do not
 ---
 
 ## 6. The budget: committed before measured
+
+This section shows how to size the three budget numbers by measuring what one task costs on stand-ins.
 
 A budget is a **commitment made before you measure**. A budget written after you know the answer cannot be broken, so it is not a budget.
 
@@ -652,6 +680,8 @@ The dollars and tokens repeat exactly. The milliseconds will not; they are scrip
 
 ## 7. Freeze
 
+This section writes the fingerprint that makes any later edit to the cases visible.
+
 To **freeze** the cases is to write down a **fingerprint** of them (Week 30, `hashlib.sha256`, Week 24) *before* a system exists, so that any later edit shows. The fingerprint is taken over the **data** with `json.dumps(..., sort_keys=True)` (Week 29), so a changed comment does not trip it and a changed word does.
 
 `freeze` refuses to run if `src/` already holds a Python file. That is "the eval first", turned into an `assert`. This block freezes **the eight examples** into `logs/demo_FROZEN.txt`, as a demonstration. **Your real freeze is homework** and goes into `eval/FROZEN.txt`.
@@ -696,6 +726,8 @@ The line holds a 64-character hash, the number of cases, a date and `src_files=0
 ---
 
 ## 🔬 Break It On Purpose
+
+This section runs six deliberately wrong moves so you see what each one looks like when it fails, loudly or silently.
 
 Each block below is **deliberately wrong**. Predict what it will show, then run it.
 
@@ -809,7 +841,7 @@ The guard refused, which is correct. Then the block took the started file away a
 
 ## 🎲 Your Turn
 
-This is the project. There are three parts, and about 70 minutes of class time is enough for the first half of each.
+This is the project: you write your own design, cases, scorer tests and budget. There are three parts, and about 70 minutes of class time is enough for the first half of each.
 
 **Part 1. A person, two components, a page (about 13 minutes).**
 
@@ -820,7 +852,9 @@ This is the project. There are three parts, and about 70 minutes of class time i
 
 **Part 2. The cases, from the user's side (about 22 minutes in class, the rest at home).**
 
-On the **Case Card** your teacher hands out (or on paper: a table with six rows, one per category, and columns *How many / What would the user type? / Where does the answer live? / The needle / Route / Hard? / Tally*), write cases. In class aim for **two per category, ten in all**, starting with `out_of_scope` and `adversarial`. Type them as `case("c01", "factual", "...", ["needle"], "retrieve")` lines in `capstone34/eval/cases.py`. The file starts with the `case(...)` function from Section 2 (copy those five lines to the top), then `CASES = [ ... ]`. Then:
+On the **Case Card** your teacher hands out (or on paper: a table with six rows, one per category, and columns *How many / What would the user type? / Where does the answer live? / The needle / Route / Hard? / Tally*), write cases. In class aim for **two per category, ten in all**, starting with `out_of_scope` and `adversarial`.
+
+Type them as `case("c01", "factual", "...", ["needle"], "retrieve")` lines in `capstone34/eval/cases.py`. The file starts with the `case(...)` function from Section 2 (copy those five lines to the top), then `CASES = [ ... ]`. Then:
 
 1. Run `check_cases(CASES, chunks)` and fix what it says.
 2. Run `refuse_all` and `echo` on your ten. What should `refuse_all` score? Work it out, then run it.
@@ -839,6 +873,8 @@ Then **swap pages** with a neighbour and find one thing: a sentence in their sec
 ---
 
 ## 🧭 What was shown, and what was not
+
+This section lists what today's blocks measured and what they did not, so you do not claim more than the evidence.
 
 **Shown:**
 - Eight example cases pass the checker; three deliberately bad ones are each caught, by name.
@@ -859,6 +895,8 @@ Then **swap pages** with a neighbour and find one thing: a sentence in their sec
 
 ## 🔑 Wrap Up
 
+These questions check the week's key ideas, and the last paragraph looks ahead.
+
 1. Your Start Here card: 3 of 3, ship or not? What did you write, and what do you write now?
 2. Why is the order *design, test, freeze, system* and not *system, test*?
 3. Why rank by severity and not by likelihood, and why not multiply the two?
@@ -874,6 +912,8 @@ Then say **one sentence that contains a count, a name and a number with a unit**
 
 ## 📤 Homework
 
+This section lists what to finish next, in order.
+
 Workbook pages 34.1 to 34.3 (about 25 minutes, by hand), then the project (about 65 minutes). Allow two sittings.
 
 1. **Finish the cases to 25.** Fill the Case Card to the target ranges, run `check_cases` until it prints `[]`, make sure at least 3 are refusals and at least 2 are marked hard, and `check_shape` prints `[]`.
@@ -887,6 +927,8 @@ Workbook pages 34.1 to 34.3 (about 25 minutes, by hand), then the project (about
 ---
 
 ## 📖 Words from this week
+
+These are the terms defined this week, for reference.
 
 | Word | Meaning |
 |---|---|

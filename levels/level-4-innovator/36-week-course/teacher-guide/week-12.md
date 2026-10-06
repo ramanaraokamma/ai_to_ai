@@ -43,6 +43,8 @@ Observable evidence: the hand tables on workbook pages 12.1-12.3, the loss table
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section is your own preparation: what the student does today, the maths, what the numbers are and are not, and the limits. Read it before class.
+
 > **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist** (the seven student blocks, the teacher-only blocks `T1`, `T2`, `T3` and `K1`) and in the **🐞 Debugging Clinic** was run, in order, in **one shared session** on a CPU with one thread and the seeds shown. The seven student blocks are the pieces of **one file, `week12.py`**, pasted one under the other with no gap: each later block uses names defined by an earlier one. The Clinic blocks are *deliberate mistakes*, each marked, each run in a copy of the session as it stood after block 7; their tracebacks are real. **Timing is the only thing that varies run to run; every other number repeated exactly on a second full run on the same machine** (torch `2.2.1`, Python 3.10). A different CPU or PyTorch build can move the last digit of a loss, and a count of generated names can move by a name or two; the shape of every table does not move. Tracebacks show `/home/you/l4/...` for the path, and the long middle of a torch traceback is replaced by `... frames inside torch (elided) ...`; **the last line is always the real, complete last line.**
 
 ### 1. What the student is doing today, in one paragraph
@@ -124,7 +126,12 @@ Read as: *"put the column of start tokens on the left of the names with their la
 
 ### 5. The other code the student types — nothing new, but note these
 
-All old: `class` with `__init__` / `super().__init__()` / `forward` (Level 3 Week 23; Week 5 already used one), `nn.Embedding` (Week 8), `nn.LSTMCell` and the **pair** `(h, c)` (Week 11; the state as a pair is still the commonest error), `nn.Dropout` and `model.train()` / `model.eval()` (Week 5, Level 3), `torch.stack` (Week 10), `torch.randperm(n, generator=g)` (Week 5), `AdamW` with `weight_decay=` (Week 3), `clip_grad_norm_` (Week 6), `set_to_none=True` (Week 2), `with torch.no_grad():`, `.item()`, `.tolist()`, `sum(p.numel() for p in model.parameters())` (Level 3 Week 22), `zip`, f-strings with `:.3f` and `:.1%`, `in` on a `set`, list comprehensions, `range`, `math.log` and `math.exp` (Level 3), `np.random.default_rng(seed)` (Level 3), and the two imports from `l4lib.names`. **Two patterns to point at.** (i) `tensor != PAD` gives a grid of True/False and `.sum()` counts the Trues (block 3 uses it once to count real positions). (ii) `inputs[rows]` with `rows` a tensor or a list of row numbers picks those rows (a copy, in that order).
+All old: `class` with `__init__` / `super().__init__()` / `forward` (Level 3 Week 23; Week 5 already used one), `nn.Embedding` (Week 8), `nn.LSTMCell` and the **pair** `(h, c)` (Week 11; the state as a pair is still the commonest error), `nn.Dropout` and `model.train()` / `model.eval()` (Week 5, Level 3), `torch.stack` (Week 10), `torch.randperm(n, generator=g)` (Week 5), `AdamW` with `weight_decay=` (Week 3), `clip_grad_norm_` (Week 6), `set_to_none=True` (Week 2), `with torch.no_grad():`, `.item()`, `.tolist()`, `sum(p.numel() for p in model.parameters())` (Level 3 Week 22), `zip`, f-strings with `:.3f` and `:.1%`, `in` on a `set`, list comprehensions, `range`, `math.log` and `math.exp` (Level 3), `np.random.default_rng(seed)` (Level 3), and the two imports from `l4lib.names`.
+
+**Two patterns to point at.**
+
+1. `tensor != PAD` gives a grid of True/False and `.sum()` counts the Trues (block 3 uses it once to count real positions).
+2. `inputs[rows]` with `rows` a tensor or a list of row numbers picks those rows (a copy, in that order).
 
 **Not used today, on purpose**, because they are later rungs: `F.softmax` and `torch.multinomial` (Week 13), temperature, top-k, top-p (Week 13), attention (Week 14), `torch.arange` (Week 16), `nn.LSTM` as the main layer of a model (the student has it from Week 11 but today's model uses the cell so that *one step* exists for generation). **The teacher-only blocks use a few things the student never sees** (`torch.bincount`, `min(..., key=lambda ...)`, `time.perf_counter`, a hand-written optimizer loop with underscore names) and are marked. Do not paste them into the student's file.
 
@@ -210,6 +217,8 @@ Stop at: *"training hands the model the true previous letter, so all inputs are 
 ---
 
 ## 🧰 Prep Checklist
+
+This section is for setting up: the night-before and on-the-day checks, the seven student blocks with their printed output, the teacher-only blocks, and the fallback table.
 
 ### 30 minutes the night before
 
@@ -730,6 +739,8 @@ Use this to mark pages 12.1-12.3. Do **not** hand it over or paste it into the s
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the running order of the lesson. Each step gives the time, what to say, what to ask, and what to expect.
+
 | Segment | Minutes | What happens |
 |---|:--:|---|
 | 🪝 Hook | 8 | The name quiz: 12 names on a card, which are real? Then the count that says what "real" meant |
@@ -1004,6 +1015,8 @@ names in which the model asked for padding before it said EOS: 0 of 200
 
 ## 🎲 The Activity, In Full
 
+This section gives the full set-up, rules, measured tables and variations for the Name Audit, so you can run and check it.
+
 ### The Name Audit
 
 **What it is:** a prediction, a measurement and a judgement, done in that order, on workbook pages 12.4 and 12.5. The judgement is the student reading twenty strings and marking which could be a name.
@@ -1063,6 +1076,8 @@ Fill the loss table for **three** rows only (steps 0, 100, 800) and read the gap
 
 ## ❓ Questions Students Ask This Week
 
+This section lists the questions this lesson tends to raise, with short answers you can give.
+
 **"Why does the input start with 0?"** 0 is PAD, used here as the START token: at the first step the model has not yet seen a letter. Nothing real is 0, so a 0 input can only mean "nothing yet".
 
 **"Why not use the real previous letter when generating?"** There isn't one: the name does not exist yet. We only have what the model wrote.
@@ -1089,6 +1104,8 @@ Fill the loss table for **three** rows only (steps 0, 100, 800) and read the gap
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the common failure points, each with the question that brings the student back.
+
 1. **"The model invents names."** Ask: *"what did block 6 say at step 800?"* (159 of 200 in the list.) *"What did it say at step 100, and were those names?"*
 2. **The student reads a low validation loss as a success.** It is only a success if the honest recipe produced it (Clinic 5). Ask what was fed in.
 3. **Validation above `3.332` is "a bug".** It is memorising; Clinics 5 and 6 are the real bugs.
@@ -1102,6 +1119,8 @@ Fill the loss table for **three** rows only (steps 0, 100, 800) and read the gap
 ---
 
 ## 🧭 Differentiation
+
+This section adjusts the lesson for a student who is struggling, flying, or not engaging.
 
 ### If the student is struggling
 
@@ -1124,6 +1143,8 @@ Play the quiz again with their own name list: five names of people they know, an
 ---
 
 ## ✅ Assessing Understanding
+
+This section gives five oral questions and a mastery scale for judging where the student is.
 
 Five questions, orally, during the activity. Not graded; they inform the mastery scale.
 
@@ -1160,6 +1181,8 @@ The workbook has six pages (12.1-12.6). The student does them in order, and **wr
 ---
 
 ## 🔑 Answer Key
+
+This section is the marking reference for the workbook pages and for every question posed in the lesson. Teacher-only; never hand it over.
 
 ### Page 12.1 — Encode and shift by hand (from `K1`)
 
@@ -1265,6 +1288,8 @@ A write-up that says "the model invents names" loses the last three marks regard
 ---
 
 ## 🔮 Next Week Preview
+
+This section says how today's generator is reused next week.
 
 **Week 13 — Choosing the Next Letter: Sampling and Exposure Bias** (🟦 teach). Today's generator used the simplest dice-roll there is, at the model's own probabilities, and it mostly gave back the training list. Next week the student opens the roll: **greedy** (always the top score), **temperature**, **top-k** and **top-p**, predicted on a 5-letter distribution before each is run, then plugged into the generator they wrote today, and the novelty counts repeated. The new syntax is `F.softmax(dim=-1)`, `torch.multinomial`, `torch.topk`, and top-p via `torch.sort` + `torch.cumsum`. The last ten minutes measure something new: the model scores its *own* names worse than real ones, and a model trained on the truth drifts when it reads its own words.
 

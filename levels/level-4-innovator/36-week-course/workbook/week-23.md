@@ -23,6 +23,8 @@
 
 ## ✅ Warm-Up (5 min, before anything else)
 
+Five short questions that use ideas from earlier weeks and this week's setup. Answer from memory, before you open any file.
+
 **W1.** The best constant answer right on 14 of 32 fields scores `14 / 32` = ____________ (write it as a percentage with one decimal).
 
 **W2.** Circle one. A prompt scores `50.0%` and the floor is `43.8%`. The prompt is: **half right** / **two fields above a rock**.
@@ -36,6 +38,8 @@
 ---
 
 ## 🧊 Page 23.1 — Freeze (needs `bench.py` · 20 min)
+
+This page is for comparing your blind labels with the frozen gold, recording the fingerprint, and practising what a change to a frozen set looks like.
 
 **A. Your blind labels.** You labelled the eight messages before you looked at `bench.py`. Copy your labels here (from your paper sheet), then, **after** reading `TESTS` in `bench.py`, mark each box **✓** (you and the gold agree) or **✗**.
 
@@ -199,6 +203,8 @@ Did your hand counts match? Yes / No. If not, which field, and what did you misc
 
 > **STAND-IN, NOT A MODEL.** Every score on this page is a script's. The point of the page is to read a table, not to learn which prompt a real model likes.
 
+This page is for predicting, then reading, the table of three prompt versions, and for pricing each run by hand.
+
 **A. Predict first (from the stand-in's one documented line, in the student guide).** The stand-in gets a field right with chance `p`. It uses `p = 0.55` for v1, `0.75` for v2 and `0.99` for v3. Only `30` of the 32 fields can ever match it (you will see why in part D).
 
 - v1 should get about `0.55 x 30` = ____ fields right. In percent of 32: ____ %
@@ -345,6 +351,8 @@ The score **rose**. Name the two fields that were right before and wrong after: 
 
 ## 💸 Page 23.5 — Guard (needs `guard.py`, `versions.py` · 25 min)
 
+This page is for working through the budget guard by hand, then checking your work against a run.
+
 **A. By hand.** The guard adds each call's cost **after** the call, and raises `BudgetExceeded` the moment `spent` is **more than** the limit.
 
 1. Every call costs `$0.0014`, limit `$0.01`. Fill in `spent` after each call until it crosses:
@@ -366,6 +374,8 @@ The alarm goes off on call ____ . Spent at that moment: $________ . Over the lim
 | predicted spent | | | | | |
 
 I predict it stops at call ____ having spent $________ .
+
+Type this script and run it beside `guard.py`.
 
 ```python
 # p4.py - Workbook 23.5 (PRACTICE): a guard fed costs that are NOT all equal.
@@ -549,6 +559,8 @@ _______________________________________________________________________________
 
 ## 🧠 Self-Check (from memory, no notes)
 
+Six questions to answer last, without looking back at the pages.
+
 1. The floor is the score of ____________________ . For our set it is ____ of 32, which prints as ____ %.
 2. Freeze the set **before / after** (circle) you write the prompt, because ___________________________ .
 3. `re.search(r"\{.*\}", reply)` on a reply spread over three lines gives ____ ; with `re.S` it gives ____________ .
@@ -558,7 +570,7 @@ _______________________________________________________________________________
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 > Real printed outputs below. By-hand numbers are exact. Where you carried fewer decimals, anything within `0.1` of a percentage is fine. These answers are for the pages in **this workbook**. Everything measured against the stand-in is a script's, not a model's.
 

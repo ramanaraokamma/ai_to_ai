@@ -23,6 +23,8 @@
 
 ## ✅ Warm-Up (5 min, before anything else, from memory)
 
+This warm-up recalls last week's and this chapter's key ideas before you start. Answer from memory, with no notes.
+
 1. In which order are the design doc's failure modes written: most *likely* first, or *worst* first? ______________
 2. Week 30: what is a fingerprint, and what is it a fingerprint *of*? ____________________________________________________
 3. A system that says "I don't know" to every question scores how many of your 25 cases? Write the formula, not a number: ____________________________________________________
@@ -35,6 +37,8 @@
 ---
 
 ## 🧮 Page 34.1 — Severity, Likelihood, and the Wobble of a Score (30 min · pen, then one check)
+
+This page practises ranking failure modes two ways and measuring how much a score wobbles. Write every answer by hand before you run the check.
 
 **A. Five failure modes, two orders.** These are from the chapter's worked design for Asha. The likelihoods (1 = rare, 5 = common) are **invented guesses** for this exercise; the severities (1 = mild, 5 = someone loses something) are the design's.
 
@@ -74,7 +78,7 @@ What do you notice about the two rank columns? _________________________________
 
 Your v1 passed 17 of 25 and your v2 passed 19 of 25. Is the gap of 2 more than noise, using row 1's bound? ______ . A six-case category goes from `1/6` to `3/6` after a change. Is a gap of 2 cases bigger than the bound in row 3? ______ . The chapter's sentence, finished from memory: *one case is never a finding; a ______________ moving, with the ______________ named, is.*
 
-Now run the check.
+Now run the check: save the block below as `check341.py` and run it.
 
 ```python
 # check341.py - Page 34.1: the same failure modes ranked two ways, and the wobble of a score. (Needs numpy only.)
@@ -114,11 +118,15 @@ Part C: wobble of a count of passes = sqrt(n p (1-p)); gap bound = 2 x sqrt(2 x 
   n=100 p=0.70: expected  70.0, wobble 4.58 cases = 0.046 of the score, one case = 0.010, bound for a gap 13.0 cases = 0.13
 ```
 
+Compare the printout with your answers.
+
 Did your two ranks for Asha match? Which rank did you get wrong, if any? ______ . Your Part C row for `n = 6` gave a bound of ______ cases; the printout says a gap of 2 is ______ (below / above) it, so ____________________________________________________
 
 ---
 
 ## 🧮 Page 34.2 — The Case Card, the Floor, and an Honest Scorer (40 min · pen, then computer)
+
+This page practises checking a Case Card against its targets, comparing two scorers, and computing an overall score two ways. Predict first, then run the check.
 
 **A. Leo's card, and the floor.** Below is the tally from Leo's finished Case Card. Compare each count to the target and write **ok** or **OUT** in the last column. (Targets: `factual 8-10`, `multi_hop 3-4`, `arithmetic 3-4`, `out_of_scope 3`, `adversarial 2-3`, `ambiguous 2`.)
 
@@ -160,6 +168,8 @@ Which row is a *correct* answer in other words that the careful scorer marks wro
 | `ambiguous` | 0 | 2 | ______ |
 
 **Pooled** = total passed ÷ total cases = ______ / ______ = ______ . **Mean of the six rates** = (sum of the rates) ÷ 6 = ______ . Leo's report says "overall: 0.75", typed by hand. Is that either number? ______ . Which number is the overall, and why does the other one weight a 2-case category like an 11-case one? ____________________________________________________
+
+Run this check after you have filled in the tables above (save it as `check342.py`).
 
 ```python
 # check342.py - Page 34.2: Leo's card, the floor and the ceiling, whole-token against substring, and pooled against mean-of-rates.
@@ -217,6 +227,8 @@ Did your pooled and mean numbers match the printout? ______ . The card's rule fo
 
 ## 🧮 Page 34.3 — The Budget Before the Build (30 min · pen, then computer)
 
+This page practises writing a cost and speed budget before anything is built. Work it by hand, then run the check.
+
 Everything here is **stand-in dollars** and **stand-in milliseconds**. The chapter measured one retrieve task at `$0.00035` and one agent task at `$0.00135` (rounded), and planned a 25-case run as 21 retrieve tasks and 4 agent tasks (15 retrieve cases, 4 agent cases and 6 refusals, each refusal paying for a retrieve task).
 
 **A. By hand.** `21 × 0.00035 =` ______ . `4 × 0.00135 =` ______ . One run = ______ . Per task (divide by 25) = ______ . **Headroom** = committed line ÷ measured number. Fill in:
@@ -232,6 +244,8 @@ Why is a budget with `1.0x` headroom a bad promise? ____________________________
 **B. What if the mix changes?** Suppose your design sends 8 cases to the agent and 17 to retrieve. One run = `17 × 0.00035 + 8 × 0.00135 =` ______ + ______ = ______ . Per task = ______ . Headroom on the mean line (`$0.001`): ______ x . Headroom on the run line (`$0.03`): ______ x . Does the design still keep its promise? ______ . Which choice in the *design* (not the price) would you look at first? ____________________________________________________
 
 **C. p95 by hand.** Here are 25 task times in stand-in milliseconds (invented for the exercise): `0.4 0.5 0.5 0.6 0.4 0.5 0.7 0.5 0.6 0.4 0.5 0.5 0.6 0.5 0.4 0.5 0.6 0.5 0.7 0.5 0.4 0.5 0.6 0.5 2.9`. The rule: sort them, then take the one at index `int(0.95 * n)` (counting from 0). For `n = 25`: `0.95 × 25 =` ______ , so the index is ______ . The sorted list ends `... 0.6 0.6 0.6 0.6 0.7 0.7 2.9`. p95 = ______ ms . The slowest is ______ ms . Add **one more** 2.9 (now 26 times): the index is ______ and p95 is ______ ms . Remove the slow task (24 times): the index is ______ and p95 is ______ ms . In a sentence: what does p95 tell you that the mean does not? ____________________________________________________
+
+Run this check after you have worked Parts A to C by hand (save it as `check343.py`).
 
 ```python
 # check343.py - Page 34.3: the budget by hand, headroom, and p95. STAND-IN dollars and STAND-IN milliseconds (made up for the exercise).
@@ -281,6 +295,8 @@ If your scripted answerers finish in half a millisecond, a promise of "p95 under
 ---
 
 ## 🐞 Page 34.4 — Break It on Purpose (three bugs · 30 min)
+
+This page gives you three broken programs to run and diagnose.
 
 Run each as written. Predict first. Then say what went wrong and how you would have known. Each is **deliberate**.
 
@@ -382,6 +398,8 @@ The repair is not "a better freeze". It is: ____________________________________
 
 ## 📓 Page 34.5 — Stop and Think (10 min · pen only)
 
+These questions check your reasoning without the computer. Answer in a sentence or a short list.
+
 1. You wrote three cases, all three pass on your first run, and you say "ship it". What is the one thing you do not know? ____________________________________________________
 2. `refuse_all` scores `0.24` on the 25-case design (6 of 25). Is that an achievement? What is it? ____________________________________________________
 3. In Week 35 a case fails and you are sure it was unfair. List what you do, in order: ____________________________________________________
@@ -392,6 +410,8 @@ The repair is not "a better freeze". It is: ____________________________________
 ---
 
 ## 📓 Page 34.6 — The Bug Log
+
+Use this log to record each bug you meet this week, and the rule you will keep from it. Then write the closing sentence at the bottom.
 
 | # | What went wrong (your words) | Loud or silent? | The one line or check that caught it | The rule I will keep |
 |:-:|---|:-:|---|---|
@@ -410,6 +430,8 @@ Then write this sentence in your own handwriting, with your own numbers, and kee
 
 ## 🧠 Self-Check (from memory, no notes)
 
+Tick a box only if you can do the item without looking anything up.
+
 - [ ] I can rank failure modes by severity, not likelihood, and say why the two orders differ.
 - [ ] I can name the six categories and say what each one tests.
 - [ ] I can work out the floor of a refuse-everything system and the ceiling of a never-refuse one.
@@ -421,7 +443,9 @@ Then write this sentence in your own handwriting, with your own numbers, and kee
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
+
+This section is for checking your work after you have finished the pages above.
 
 ### Warm-Up
 1. **Worst first** (severity), not most likely first.

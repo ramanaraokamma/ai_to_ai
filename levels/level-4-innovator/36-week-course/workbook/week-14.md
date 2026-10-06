@@ -23,6 +23,8 @@
 
 ## ✅ Warm-Up (5 min, before anything else)
 
+These five questions bring back the words and steps the pages below rely on.
+
 **W1.** A **hard** lookup hears (circle one) **only the best match / every key equally / every key, in proportion**. A **soft** lookup hears (circle one) **only the best match / every key equally / every key, in proportion**.
 
 **W2.** Weights `[0.5, 0.25, 0.25]` on the values `4, 8, 12`. Do the weights add to 1? ____________ The weighted average is ____________ .
@@ -36,6 +38,8 @@
 ---
 
 ## 🎲 Page 14.1 — The Pen Pass, Again (25 min)
+
+This page is for doing one full attention pass by hand on the class sheet (Part A), then again on numbers of your own (Part B).
 
 **Part A. Your class sheet, once more.** Use a fresh copy. Three words, two numbers each: `the = [1, 0]`, `cat = [0, 1]`, `sat = [1, 1]`. The three tables are `Wq = [[1, 0], [0, 1]]`, `Wk = [[1, 0], [0, 1]]` and `Wv = [[0, 1], [1, 0]]`. Use `exp(0) = 1.0000`, `exp(1) = 2.7183`, `exp(2) = 7.3891`.
 
@@ -81,7 +85,7 @@ If you carried only **three** places in the weights, what is the row sum for the
 
 Before you calculate, **predict**: will the output for `a` lean towards `a`'s own value `[2, 0]` or towards `b`'s value `[0, 4]`? ____________ . Why? ___________________________________________
 
-**Run the check:** `check141.py`.
+**Run the check:** `check141.py`. It repeats Part B in numpy and prints each step.
 
 ```python
 # check141.py - Week 14 workbook page 14.1: a two-token pass on PRACTICE numbers. Numpy only.
@@ -124,6 +128,8 @@ Did your pen match? ____ If not, which step did the first wrong number appear in
 ---
 
 ## ⚖️ Page 14.2 — The Soft Lookup and the Weighted Average (10 min)
+
+This page is for practising the soft lookup as a weighted average, and for checking whether a set of weights qualifies.
 
 **Worked example (from `lookup.py`).** Three answers, with values `10, 50, 30`. Scores `0.1, 2.0, 0.3` gave weights `0.112, 0.751, 0.137`, and the soft lookup `42.77`. The hard lookup gave `50`. By hand, with three-place weights, you get `42.78`; the machine kept every digit. One hundredth of a difference is **rounding**, not a mistake.
 
@@ -191,6 +197,8 @@ fixed by dividing by the total: 20.909
 
 ## 🤝 Page 14.3 — Do the Three Agree? (10 min)
 
+This page is for comparing your pen output with numpy and torch on the same pass.
+
 Copy your **output table** from page 14.1 Part A into the first row (three places). Then run `check143.py` and copy the other two.
 
 | | `the` | `cat` | `sat` |
@@ -249,6 +257,8 @@ the three agree to 0.002: True
 ---
 
 ## 🔀 Page 14.4 — Two Tables, and a Second Pass by Hand (15 min)
+
+This page is for a second pen pass with only the question table changed.
 
 Same `X` (`the = [1, 0]`, `cat = [0, 1]`, `sat = [1, 1]`), same `Wk = [[1, 0], [0, 1]]`, same `Wv = [[0, 1], [1, 0]]`. **Only the question table changes:** `Wq = [[0, 0], [1, 0]]`. (Reading a row times this table: the first number of the result is the token's **second** number; the second number of the result is always 0.)
 
@@ -311,6 +321,8 @@ score table symmetric: False
 
 ## 🔥 Page 14.5 — The Same Second Pass in Torch, and an Extension (10 min)
 
+This page is for running the second pass in your own `attention.py`, then testing a change to `Wv`.
+
 Type this at the **bottom of your `attention.py`** (it needs `linear_from`, `weights_of`, `attend`, `show` and `xt` from the file). It re-assigns `lin_q`, so everything that comes after it in the file uses the new table.
 
 ```python
@@ -338,7 +350,7 @@ output =
 
 **Extension (for the curious; 5 min).** *Predict first.* If you change **only** `Wv`, which printed numbers change: the weights, the output, or both? ____________ Why? ___________________________________________
 
-Now test it. Put the class question table back and change `Wv` to the identity, then double the swap. Type this below the lines above.
+Now test it. Put the class question table back and change `Wv` to the identity, then double the swap. Type this below the lines above; it prints the weights once and the output twice.
 
 ```python
 # ext.py - Week 14 workbook page 14.5: hw.py, then the Wv extension. (Type at the bottom of attention.py.)
@@ -374,6 +386,8 @@ Wv doubled, output =
 ---
 
 ## 🐞 Page 14.6 — Break It on Purpose (25 min)
+
+This page is for practising how to find bugs, including ones that print numbers without any error.
 
 **Each program below is deliberately broken.** Do **not** run it first. For each: write **(i)** what the bug is, **(ii)** what you think happens when it runs (an error, or quietly wrong numbers), **(iii)** the fixed line, and **(iv)** a *check* that would have caught it. *Then* run it.
 
@@ -474,6 +488,8 @@ print("pen says (row times table):", (x @ torch.tensor(table)).tolist())
 
 ## 📓 Page 14.7 — The Bug Log
 
+This page is for recording what went wrong this week and the habit you will take forward.
+
 **Entry 1: the one row that would not add to 1.** Which row, which page, and what was wrong with it? (If none this week, write the first number that was wrong on any page, and how you found it.) ___________________________________________
 
 **Entry 2: the rounding trap.** Write in your own words why a hand pass that carries three places in the weights gives `0.577` where the machine gives `0.578`, and why that is **not** a mistake: ___________________________________________
@@ -504,6 +520,8 @@ print("pen says (row times table):", (x @ torch.tensor(table)).tolist())
 
 ## 🧠 Self-Check (do this last, from memory)
 
+This check is for finding out what you can do without the page in front of you.
+
 Seven things, no scrolling up. Tick only if you could do it **now**.
 
 - ☐ Say what a hard lookup hears and what a soft lookup hears.
@@ -520,7 +538,7 @@ Seven things, no scrolling up. Tick only if you could do it **now**.
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 > Real printed outputs below. By-hand numbers are exact to the places stated. The last digit of a torch number can differ on another CPU or PyTorch build; the tiny numpy-vs-torch gap can be a different tiny number (anything below `1e-05` is fine). **Mark the method and the row sums, not the last digit.**
 

@@ -23,7 +23,11 @@
 >
 > **Reading time:** about 30 minutes. **In class:** two sittings, **70 minutes with the computer** (demo and card) and **75 minutes without** (the final paper, on a different day). **Homework:** about 60 minutes after both sittings.
 
-> **📌 About the code blocks.** Keep **one Python session open** (type `python3` in the folder that contains `l4lib/`, `notes/` and `capstone34/`) and paste the blocks marked `python` in the order they appear: later blocks use names made by earlier ones. Keep a **second terminal open in the same folder** for the blocks marked `bash`; those are commands you type, and they print what you see. Blocks marked **📌 GIVEN** are handed to you: read them with care, do not retype them. Everything random is seeded, so **your numbers match the ones shown exactly, except the lines that show milliseconds**, which change on every run. Nothing needs the internet. The whole lesson runs in a few seconds; **if a block takes more than a minute, something is wrong.** The numbers in this guide come from the worked example, "Ask My Notes", with its 25 frozen cases, as Week 35 left it. **Your project's numbers will differ**, and that is correct: what has to match is the *shape* of what you do.
+> **📌 About the code blocks.** Keep **one Python session open** (type `python3` in the folder that contains `l4lib/`, `notes/` and `capstone34/`) and paste the blocks marked `python` in the order they appear: later blocks use names made by earlier ones.
+> Keep a **second terminal open in the same folder** for the blocks marked `bash`; those are commands you type, and they print what you see.
+> Blocks marked **📌 GIVEN** are handed to you: read them with care, do not retype them.
+> Everything random is seeded, so **your numbers match the ones shown exactly, except the lines that show milliseconds**, which change on every run. Nothing needs the internet. The whole lesson runs in a few seconds; **if a block takes more than a minute, something is wrong.**
+> The numbers in this guide come from the worked example, "Ask My Notes", with its 25 frozen cases, as Week 35 left it. **Your project's numbers will differ**, and that is correct: what has to match is the *shape* of what you do.
 
 > **⚠️ Nothing today is a model.** The generator that **copies one sentence** (Week 25), the agent's **written plan** (Week 28) and the **gullible** note-follower (Weeks 29 and 33) are all **stand-ins, not models**, and they are labelled again wherever they appear. Every dollar and millisecond is a **stand-in dollar** and a **stand-in millisecond**. A score or an attack rate measured against them describes *these cases, these notes and this code*; it says nothing about any real model. The attacks are **defensive and educational only**: they run against your own local stand-ins, with invented dummy values.
 
@@ -34,13 +38,16 @@
 
 ## 🪝 Start Here
 
-Open your paper from Week 34 (the 12 characters) and the numbers you wrote under them in Week 35. Keep it beside you. Then write down one sentence, and do not discuss it:
+This warm-up gets your own claim on paper before you see the worked example.
+
+1. Open your paper from Week 34 (the 12 characters) and the numbers you wrote under them in Week 35. Keep it beside you.
+2. Write down one sentence, and do not discuss it:
 
 > *If a stranger read only one sentence about my system, which sentence should it be?*
 
 Keep it. You compare it with the last section of your card later in the lesson.
 
-Two more, to answer at the end:
+Two more questions, to answer at the end:
 
 1. Which claim in my card would I least like a stranger to check?
 2. Where in my card does it say that a person might over-trust the system?
@@ -80,7 +87,9 @@ Five ways a card goes wrong without anybody noticing, each with a check you will
 
 ## 🔢 The maths: there is none, and one reuse
 
-Week 33's wobble. A count of `17` out of `25` moves by about `sqrt(25 × 0.68 × 0.32) = 2.3` cases if a different 25 questions had been written. The card says that in one sentence, because it is the honest answer to *"how much does one case matter?"*: on 25 cases, **a gain of one or two cases is smaller than the wobble**. It is a rule of thumb for questions sampled from a bigger pile. Your 25 are one fixed set, so say "about 2.3 cases", never "a confidence interval".
+This section explains the one piece of maths the card reuses, so you can write it in a sentence.
+
+Week 33's wobble: a count of `17` out of `25` moves by about `sqrt(25 × 0.68 × 0.32) = 2.3` cases if a different 25 questions had been written. The card says that in one sentence, because it is the honest answer to *"how much does one case matter?"*: on 25 cases, **a gain of one or two cases is smaller than the wobble**. It is a rule of thumb for questions sampled from a bigger pile. Your 25 are one fixed set, so say "about 2.3 cases", never "a confidence interval".
 
 ---
 
@@ -140,6 +149,8 @@ committed numbers (v1): MATCH
 ---
 
 ## 2. Every number the card will quote, read from the logs
+
+This section runs the two evaluations whose logs the card is built from, then reads every number into one place.
 
 The version you ship is **`v1.1`**: `v1` plus the named-files write guard from Week 33. Its numbers on the 25 cases are the same as `v1`'s (`17 of 25`), which is exactly what the A1 fix had to show. Type these two commands in the second terminal:
 
@@ -259,13 +270,27 @@ guard turned away 3 of 5 paraphrases | redaction caught 6 of 8 typed cases
 0.3 s
 ```
 
-(The last line is the time in seconds and varies a little.) Read it as a list of facts about *this code*: `A1` fell from `15` to `0` and the legitimate save still worked `50` times out of `50`; `A2` landed `0` times, and `15` times with the sandbox switched off, which shows the zero is not vacuous (the attack does land when the sandbox is off); the guard turned away `3` of `5` paraphrases because it matches shapes, not meanings; the redactor caught `6` of `8` typed cases and does not find names or addresses.
+(The last line is the time in seconds and varies a little.) Read the output as a list of facts about *this code*:
+
+- `A1` fell from `15` to `0` and the legitimate save still worked `50` times out of `50`.
+- `A2` landed `0` times, and `15` times with the sandbox switched off, which shows the zero is not vacuous (the attack does land when the sandbox is off).
+- The guard turned away `3` of `5` paraphrases because it matches shapes, not meanings.
+- The redactor caught `6` of `8` typed cases and does not find names or addresses.
 
 ---
 
 ## 4. Milestone 7: the card
 
-**📌 GIVEN, read together.** This block writes `capstone34/SYSTEM_CARD.md` for the worked example. Read the f-string with your own card in mind. Every number is a slot (`{F['passed']}`, `{cat['multi_hop']}`, `{RT['a1']}`); every table row carries its `n`; the first lines say that every dollar and millisecond is a stand-in; section 4 quotes four real wrong outputs in an `- Asked:` / `- It said:` pair; section 7's heading says *a plan; none of it has happened*; and section 10 names a person.
+This section is for writing the card from the logs. The block below is the worked example; your own card follows it.
+
+**📌 GIVEN, read together.** This block writes `capstone34/SYSTEM_CARD.md` for the worked example. Read the f-string with your own card in mind:
+
+- Every number is a slot (`{F['passed']}`, `{cat['multi_hop']}`, `{RT['a1']}`).
+- Every table row carries its `n`.
+- The first lines say that every dollar and millisecond is a stand-in.
+- Section 4 quotes four real wrong outputs in an `- Asked:` / `- It said:` pair.
+- Section 7's heading says *a plan; none of it has happened*.
+- Section 10 names a person.
 
 Two quantities are computed rather than copied: the best note's score for the near-miss question (`0.357`) and how many answerable questions on the retrieve road score *lower* than that. The second shows why no refusal threshold could have fixed the near-miss. **Do not copy its sentences into your card.** The headings are the pattern; the words, the numbers and the failures are yours.
 
@@ -435,6 +460,8 @@ The last section is marked as heavily as the working code. A card with no failur
 
 ## 5. The card's checker
 
+This section is for checking your card mechanically before anyone else reads it.
+
 **📌 GIVEN, read together.** `check_card(text, F, RT)` returns a list of problems, and `[]` for the worked example. It looks for the five ways a card goes wrong, plus three more: the ten headings in order with the honest section last, a missed promise not called `MISSED`, and an honest section that names nobody. Read how it uses `re.findall` and `re.sub` (Weeks 26 and 33), and notice what it allows: **counts, not rates**. `8 of 9` passes; `0.89` on its own is flagged.
 
 ```python
@@ -566,7 +593,19 @@ Today's seven-day rule finds nothing. Pretending it is ten days on, it finds eve
 
 ## 8. Milestone 6: the demo
 
-**📌 GIVEN, read together.** Two files. **`ask.py`** takes one question and prints the answer, the route, the citations, the stand-in cost and the stand-in label. **`demo.py`** is the five-minute run-sheet as a script. Its first lines check that the segments add to `300` seconds with an `assert`, it asks a question that works, one that goes to the agent, runs the whole suite and points at the worst row first, asks the near-miss on purpose, re-runs attack A1 live, and reads the card's last section. It counts the failures it showed and **refuses to finish if it showed none**. Read how `argparse` (Level 3, Week 34) and `assert` (Weeks 30 and 34) are used. In block S8 the two files are written; you run them in the terminal afterwards.
+This section is for preparing the five-minute demo as two small scripts, and for testing a cold start.
+
+**📌 GIVEN, read together.** Two files:
+
+- **`ask.py`** takes one question and prints the answer, the route, the citations, the stand-in cost and the stand-in label.
+- **`demo.py`** is the five-minute run-sheet as a script. Its first lines check with an `assert` that the segments add to `300` seconds. It then:
+  1. asks a question that works, and one that goes to the agent;
+  2. runs the whole suite and points at the worst row first;
+  3. asks the near-miss on purpose;
+  4. re-runs attack A1 live;
+  5. reads the card's last section.
+
+`demo.py` counts the failures it showed and **refuses to finish if it showed none**. Read how `argparse` (Level 3, Week 34) and `assert` (Weeks 30 and 34) are used. In block S8 the two files are written; you run them in the terminal afterwards.
 
 **STAND-IN, NOT A MODEL:** both call the spine, whose generator copies a sentence and whose agent follows a written plan. Both print that on the last line.
 
@@ -714,7 +753,9 @@ shown live: 2 passed and 1 failed; a demo that shows no failure is not allowed.
 stand-in, not a model: nothing above says anything about how a real model behaves.
 ```
 
-Notice what the demo does with its time. The machine runs for about two seconds; **the other 298 seconds are you talking**. Notice too the rule it enforces: `shown live: 2 passed and 1 failed`. **A demo of the cases that work measures how well you chose them.** The failure, with its mechanism in one sentence, is the only thing a viewer cannot get from the number. Here the mechanism is: *the question names something the notes never mention, but it shares words with a note about something else, and that note scores `0.357`, higher than the best note of seven answerable questions, so no threshold can turn it away without turning those away too.*
+The machine runs for about two seconds; **the other 298 seconds are you talking**.
+
+The demo also enforces a rule: `shown live: 2 passed and 1 failed`. **A demo of the cases that work measures how well you chose them.** The failure, with its mechanism in one sentence, is the only thing a viewer cannot get from the number. Here the mechanism is: *the question names something the notes never mention, but it shares words with a note about something else, and that note scores `0.357`, higher than the best note of seven answerable questions, so no threshold can turn it away without turning those away too.*
 
 ### Your demo
 
@@ -736,7 +777,7 @@ If the laptop dies mid-demo, your teacher plays the recording and you carry on. 
 
 ## 9. The claim ledger, for the worked example
 
-You wrote yours first, on paper. Here is what the worked example's ledger looks like, made from `F` and `RT` so that it cannot drift. Compare **shape**, not content.
+This section shows the worked example's ledger, so you can compare its shape with the one you wrote first, on paper. It is made from `F` and `RT` so that it cannot drift. Compare **shape**, not content.
 
 ```python
 # s9_ledger.py - Week 36 block S9: Page 36.1 for the worked example, made from F and RT. One line per claim: the sentence, the number, the n, and the command that printed it.
@@ -779,15 +820,19 @@ The last two lines are checks. Every line has all four columns, and every ledger
 
 ## 10. The one-line test
 
-After the demo your teacher gives you a wrong answer from your own log and asks:
+This section is for the question you answer aloud at the end of the demo. After it, your teacher gives you a wrong answer from your own log and asks:
 
 > *Was it retrieval, generation, the prompt, the tokenizer, or a person over-trusting it? Show me the evidence.*
 
-**Evidence** means a file, a number or a quoted line, not an opinion: a list of fetched notes, a score such as `0.357`, a row of `eval_v1.1.json`. For the worked example the three answers would be generation (the right note was fetched and the copy rule took the wrong sentence), the gate (a near-miss slipped past the threshold) and retrieval (the note held the fact and was not among the three fetched). The fourth option, *a person over-trusting it*, is your card's last section. None of the five is a tokenizer in this capstone, which is itself a fact.
+**Evidence** means a file, a number or a quoted line, not an opinion: a list of fetched notes, a score such as `0.357`, a row of `eval_v1.1.json`.
+
+For the worked example the three answers would be generation (the right note was fetched and the copy rule took the wrong sentence), the gate (a near-miss slipped past the threshold) and retrieval (the note held the fact and was not among the three fetched). The fourth option, *a person over-trusting it*, is your card's last section. None of the five is a tokenizer in this capstone, which is itself a fact.
 
 ---
 
 ## 11. Sitting 2: the final paper
+
+This section describes the final paper so you know what to bring and what it covers.
 
 **Assessment 4** is 75 marks in 75 minutes on paper, **with no computer and no notes**, on a different day from the demo. Bring a pen and a calculator with a square-root key (airplane mode on).
 
@@ -803,7 +848,7 @@ At the end you **mark it yourself**, in a pen of a different colour, against the
 
 ## 🔑 What to Hold at the End
 
-Each of these is a sentence with a **count**, a **name** and a **number with a unit**, from **your own files**. For the worked example:
+This is the takeaway for the week: one sentence you can say about your own system. It has a **count**, a **name** and a **number with a unit**, from **your own files**. For the worked example:
 
 > *"On my 25 frozen cases, with these stand-ins, 17 passed. The baseline passed 11 and the floor is 6. I promised 0.70 and measured 0.68, so I missed it by one case, and the wobble is about 2.3 cases. Multi-hop passed 0 of 4. Attack A1 landed 15 of 50 before the named-files guard and 0 after, with the legitimate save still working 50 of 50. Asha should not copy a number without opening the cited note. Every dollar and every millisecond is a stand-in."*
 

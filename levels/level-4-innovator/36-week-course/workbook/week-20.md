@@ -42,7 +42,7 @@ Five quick questions about **Weeks 17 to 19**.
 
 ## 🔮 Page 20.1 — Three Ways to Cut (15 min, pen first)
 
-Your TinyGPT cuts text into **characters**. Today there are two more ways: **words**, and **pieces** found by counting.
+This page is for comparing three ways of cutting the same text into units. Your TinyGPT cuts text into **characters**; the two other ways are **words**, and **pieces** found by counting.
 
 **Predict before you run `text_merges.py`.** Use the Week 17 corpus (6,972 characters).
 
@@ -54,6 +54,8 @@ Your TinyGPT cuts text into **characters**. Today there are two more ways: **wor
 | With 300 merges, will the corpus take **more** or **fewer** tokens than its 6,972 bytes? How many (a guess)? | ________ |
 
 ### Part A — PRACTICE (a sentence of 41 characters, by hand)
+
+The sentence to cut:
 
 ```text
 the old man and the old dog and the river
@@ -106,12 +108,15 @@ Why do 500 and 1000 give the **same** row? _____________________________________
 
 ## ✂️ Page 20.2 — Merge by Hand (25 min, pencil only, no code until the end)
 
-Rules, every time:
+This page is for running byte-pair merging with a pencil before any code. The rules, every time:
+
 - Count pairs of neighbouring letters **inside** each word, **weighted** by how often the word occurs. Never across a space.
 - Glue the commonest pair into one new piece. **Recount** with the new piece in place.
 - On a tie, the pair that comes first in the alphabet wins; **letters come before made-up pieces**.
 
 ### Part A — PRACTICE (a different card)
+
+Each word is followed by how often it occurs:
 
 ```text
 sat x 4      sit x 2      said x 3      it x 1
@@ -143,6 +148,8 @@ sat x 4      sit x 2      said x 3      it x 1
 **A4.** Encode **`sits`** using your merges, earliest first: ________________________________ Encode **`dais`**: ________________________________ Why is `dais` so many pieces if `said` is one? ________________________________
 
 ### Part B — YOURS (the class card, from the chapter)
+
+The class card, with the same layout:
 
 ```text
 the x 5      then x 2      than x 2      hat x 3
@@ -176,6 +183,8 @@ the x 5      then x 2      than x 2      hat x 3
 ---
 
 ## 💻 Page 20.3 — Your `bpe.py` (25 min)
+
+This page is for counting characters, bytes and tokens by hand, and then for typing and testing your own `bpe.py`.
 
 ### Part A — PRACTICE (bytes by hand, then tokens)
 
@@ -229,6 +238,8 @@ Add it to the file and run it. It printed: ________________________________ Your
 ---
 
 ## 🔬 Page 20.4 — Does the Library Agree? (20 min)
+
+This page is for comparing your tokenizer with the `tokenizers` library, run locally, on the same text.
 
 **Predict first.** `make_theirs` builds the production BPE trainer, run locally on your corpus. Before you run `compare.py`, write: *will it give exactly your token count?* Yes / No / Only if ____________________ . My guess for its count with equal settings: ________ .
 
@@ -284,6 +295,8 @@ ________________________________________________________________
 
 ## 📈 Page 20.5 — Bytes per Token as the Text Grows (25 min)
 
+This page is for measuring bytes per token on unseen text as the training text grows, first on a small practice run and then on `grow.py`.
+
 **Predict.** As the training text grows from 2,000 to about 320,000 characters, bytes per token on **unseen** text will go: ☐ up ☐ down ☐ stay flat . It will start near ________ and end near ________ . Draw your predicted curve here (x axis: training characters, log scale; y axis: bytes per token):
 
 ```text
@@ -313,6 +326,8 @@ train on  53214: merges 200  bytes per token 1.694
 ```
 
 **A1.** Plot the five points on the grid below (x is log scale, so the points are roughly evenly spaced). Join them.
+
+Grid for your plot:
 
 ```text
  1.70 |
@@ -368,6 +383,8 @@ Run `grow.py`. Copy the table:
 
 ## 💸 Page 20.6 — Who Pays? (20 min)
 
+This page is for counting tokens per character on different strings, and for writing a careful sentence about what was and was not measured.
+
 **Predict before you run `cost.py`.** How many tokens will the Hindi greeting `नमस्ते दुनिया` (13 characters) take? ________ The three emoji `🍕🙂🍵`? ________ Will the English sentence take more or fewer tokens **per character** than the Hindi? ________
 
 Two quantities, written out in full:
@@ -417,9 +434,13 @@ Run `cost.py` once as it is. Then add **three strings of your own** (a name, a s
 
 ## 🐞 Page 20.7 — Break It on Purpose (25 min)
 
+This page is for finding mistakes in three short programs.
+
 Each file below is **deliberately broken**. Type it (or copy it), run it from the folder with your finished `bpe.py`, read what it prints, and answer **before** you look at the answers. Two of the three print no error at all.
 
 ### Bug A (SILENT): bytes per token worked out with the wrong length
+
+Run this file and read both lines it prints.
 
 ```python
 # DELIBERATE BUG 20.7-A (SILENT): bytes per token worked out with len(s), which counts CHARACTERS, not bytes.
@@ -438,6 +459,8 @@ for name, s in [("English", ENGLISH), ("Hindi", HINDI)]:
 **A.2** The corrected Hindi figure is ________ . What do you write instead of `len(s)`? ________________________________
 
 ### Bug B (loud): one token of a character that is three bytes
+
+Run this file and read what it prints before the error.
 
 ```python
 # DELIBERATE BUG 20.7-B (loud): decoding ONE token of a three-byte Devanagari letter.
@@ -458,6 +481,8 @@ print("the first token alone:", decode(ids[:1], merges))
 ### Bug C (SILENT): the tie-break flipped
 
 `train_flip` is your `train` with one thing changed: the tie-break line says `(pair_counts[p], p[0], p[1])` where the right line says `(pair_counts[p], -p[0], -p[1])`.
+
+Run this file and compare the right and wrong tokenizers:
 
 ```python
 # DELIBERATE BUG 20.7-C (SILENT): the tie-break is flipped, so on a tie the pair with the BIGGER numbers wins. Every round trip still passes.
@@ -512,6 +537,8 @@ print("merges that differ in total:", sum([1 for a, b in zip(pg, pb) if a != b])
 
 ## 📓 Page 20.8 — The Bug Log
 
+This page is for recording every error you meet this week, so you can recognise it next time.
+
 Copy the **last line** of each error, not the whole traceback. Add a row for every real error you hit this week, not only the deliberate ones.
 
 | # | Date | What I typed (the line) | Last line of the error | What it means in plain words | Fix | Page I'll find this on again |
@@ -535,6 +562,8 @@ ________________________________________________________________
 ---
 
 ## 🧠 Self-Check (do this last, from memory)
+
+This section checks what you can say without the chapter open. Answer in your own words.
 
 1. **What is the vocabulary of a tokenizer with 300 merges, and why? What if you asked for 1,000 on the corpus?**
 
@@ -564,7 +593,9 @@ Tick what you can do without looking: ☐ run byte-pair merging by hand with a t
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
+
+Use this section only after you have finished the pages above, to check your reading of the practice parts and your own runs.
 
 > Numbers below came from real runs (`/tmp` scratch folder, Python 3, nothing random). The check files are for checking your reading; the practice numbers are not your results.
 
@@ -610,7 +641,17 @@ words the corpus never contains: ['cricket']
 
 A4 (model answers): *Word model: "`cricket` is not in my list, so I cannot write it at all (a hole)." BPE: "I write it from four pieces I already have; nothing is a hole, but it costs four tokens."*
 
-**Part B.** From the class run: characters **6,972** / distinct **28**; words **1,389** / distinct **362** / once **189**; commonest `the` **234**; merges **300**, vocabulary **556**; tokens **3,227**, bytes per token **2.16**; lone spaces **1,277**. B3 table: asked 0, 10, 100, 300, 500, 1000 gives learned 0, 10, 100, 300, **400**, **400**; bytes per token 1.00, 1.20, 1.69, 2.16, 2.30, 2.30. The last two rows agree because **training stops by itself at 400 merges**: no pair is left that occurs twice. B4: 256 + 400 = **656**; 256 + 100 = **356**. B5: each run of spaces is its own chunk (`\s+|\S+`), so nothing glues to a space. A change such as ` ?\S+|\s+` (a space sticks to the next word) is possible, but the student must **count the tokens** before saying it is better, and even a smaller count does not show a model trained on it would do better. B2: the first ten are `he the an er and in ed ro is or`; `the`, `an`, `and`, `in`, `is`, `or` are words, `ed` and `er` are endings, `ro` is not. BPE finds **common pairs**, not English.
+**Part B.** From the class run:
+
+Characters **6,972** / distinct **28**; words **1,389** / distinct **362** / once **189**; commonest `the` **234**; merges **300**, vocabulary **556**; tokens **3,227**, bytes per token **2.16**; lone spaces **1,277**.
+
+B3 table: asked 0, 10, 100, 300, 500, 1000 gives learned 0, 10, 100, 300, **400**, **400**; bytes per token 1.00, 1.20, 1.69, 2.16, 2.30, 2.30. The last two rows agree because **training stops by itself at 400 merges**: no pair is left that occurs twice.
+
+B4: 256 + 400 = **656**; 256 + 100 = **356**.
+
+B5: each run of spaces is its own chunk (`\s+|\S+`), so nothing glues to a space. A change such as ` ?\S+|\s+` (a space sticks to the next word) is possible, but the student must **count the tokens** before saying it is better, and even a smaller count does not show a model trained on it would do better.
+
+B2: the first ten are `he the an er and in ed ro is or`; `the`, `an`, `and`, `in`, `is`, `or` are words, `ed` and `er` are endings, `ro` is not. BPE finds **common pairs**, not English.
 
 | Marks | |
 |---|:--:|
@@ -631,7 +672,9 @@ A4 (model answers): *Word model: "`cricket` is not in my list, so I cannot write
 | 4 | `i`+`t` (ties at 3 with `sa`+`id`; letters before pieces) | 3 | `it` | sat · s it · sa id · it |
 | 5 | `sa`+`id` | 3 | `said` | sat · s it · said · it |
 
-(`a i` stopped existing at merge 1 because `sa` took the `a`. Merge 3: the tie at 3 is between `i d`, `i t` and `sa i`; the rule picks `i d`, because letters come before made-up pieces and `d` comes before `t`. Merge 4: `i t` and `sa id` tie at 3; the letter pair wins.) The code printed `sa`, `sat`, `id`, `it`, `said` with counts 7, 4, 3, 3, 3. A4: `sits` becomes **`s`, `it`, `s`**; `dais` becomes **`d`, `a`, `i`, `s`** (none of its neighbouring pairs `d a`, `a i`, `i s` was ever glued); `said` is one piece because *that exact word* was in the card. Check file:
+(`a i` stopped existing at merge 1 because `sa` took the `a`. Merge 3: the tie at 3 is between `i d`, `i t` and `sa i`; the rule picks `i d`, because letters come before made-up pieces and `d` comes before `t`. Merge 4: `i t` and `sa id` tie at 3; the letter pair wins.) The code printed `sa`, `sat`, `id`, `it`, `said` with counts 7, 4, 3, 3, 3.
+
+A4: `sits` becomes **`s`, `it`, `s`**; `dais` becomes **`d`, `a`, `i`, `s`** (none of its neighbouring pairs `d a`, `a i`, `i s` was ever glued); `said` is one piece because *that exact word* was in the card. The check file:
 
 ```python
 # check202.py - Week 20 workbook page 20.2: the practice card.
@@ -665,7 +708,11 @@ dais ['d', 'a', 'i', 's']
 | 3 | `a`+`t` (`h a` ties at 3; `a` comes before `h`) | 3 | `at` | the · the n · th a n · h at |
 | 4 | `h`+`at` | 3 | `hat` | the · the n · th a n · hat |
 
-B3: three pairs tie at 2: `a`+`n`, `th`+`a`, `the`+`n`. Whichever the student takes, `then` and `than` each end up as one piece by merge 7 (the code's merges: `th the at hat an than then`), so the choice changes the numbers, not the final pieces on this card. Accept any choice with a reason. B4: with four merges `thathen` is **`th`, `a`, `the`, `n`**; with all seven merges it is **`th`, `a`, `then`**. `hat` is not found: `th` is learned first and takes the `h` that `hat` needed, so `that` is never a piece. A student who writes `that`/`hen` applied merges by eye and not in learned order. B5: any honest answer (usually "I counted `hat` once, not three times", or "I forgot the `h` was gone after `th`").
+B3: three pairs tie at 2: `a`+`n`, `th`+`a`, `the`+`n`. Whichever the student takes, `then` and `than` each end up as one piece by merge 7 (the code's merges: `th the at hat an than then`), so the choice changes the numbers, not the final pieces on this card. Accept any choice with a reason.
+
+B4: with four merges `thathen` is **`th`, `a`, `the`, `n`**; with all seven merges it is **`th`, `a`, `then`**. `hat` is not found: `th` is learned first and takes the `h` that `hat` needed, so `that` is never a piece. A student who writes `that`/`hen` applied merges by eye and not in learned order.
+
+B5: any honest answer (usually "I counted `hat` once, not three times", or "I forgot the `h` was gone after `th`").
 
 | Marks | |
 |---|:--:|
@@ -676,7 +723,7 @@ B3: three pairs tie at 2: `a`+`n`, `th`+`a`, `the`+`n`. Whichever the student ta
 
 ### Page 20.3
 
-**Part A.** A1 bytes: `café` **5**, `naïve café` **12**, `日本語` **9**, `🙂🙂` **8**, `Tuesday` **7**. A2 bytes per token: `café` 5/5 = **1.00** (nothing merged), `naïve café` 12/12 = **1.00** (nothing merged), `日本語` 9/9 = **1.00** (nothing), `🙂🙂` 8/8 = **1.00** (nothing), `Tuesday` 7/4 = **1.75** (merged: its letters were in the corpus). A3: yes, `decode` joins the bytes each id stands for (`vocab`, built from the merges), then decodes the bytes to text; it needs the **merges**. A4: **356** and **656**; training stopped by itself at 400 merges because no pair was left that occurs twice. Check file:
+**Part A.** A1 bytes: `café` **5**, `naïve café` **12**, `日本語` **9**, `🙂🙂` **8**, `Tuesday` **7**. A2 bytes per token: `café` 5/5 = **1.00** (nothing merged), `naïve café` 12/12 = **1.00** (nothing merged), `日本語` 9/9 = **1.00** (nothing), `🙂🙂` 8/8 = **1.00** (nothing), `Tuesday` 7/4 = **1.75** (merged: its letters were in the corpus). A3: yes, `decode` joins the bytes each id stands for (`vocab`, built from the merges), then decodes the bytes to text; it needs the **merges**. A4: **356** and **656**; training stopped by itself at 400 merges because no pair was left that occurs twice. The check file:
 
 ```python
 # check203.py - Week 20 workbook page 20.3: characters, bytes and tokens for new strings. PRACTICE numbers.
@@ -733,7 +780,7 @@ prints `True`, `True`, `True` for a good tokenizer. *Not accepted:* "another rou
 
 ### Page 20.4
 
-**Part A.** A1: mine 3000/1736 = **1.73**; library same cut **1.73**; default 3000/1344 = **2.23**. A2: 1344/1736 = **0.77**, saves about **23%** (0.226). A3: row 2 (library, same chunk rule, with 0 pieces differing); row 3 is a different cutting rule. A4: 553/1736 = **31.9%**, which is **less** than 40% (a smaller text, fewer merges, a different mix). A5 model answer: *"With equal settings the library gives the same tokens as my code, so my code does what the library does; it does not show either is the best tokenizer, and nothing here says a model trained on these tokens would do better."* Check file:
+**Part A.** A1: mine 3000/1736 = **1.73**; library same cut **1.73**; default 3000/1344 = **2.23**. A2: 1344/1736 = **0.77**, saves about **23%** (0.226). A3: row 2 (library, same chunk rule, with 0 pieces differing); row 3 is a different cutting rule. A4: 553/1736 = **31.9%**, which is **less** than 40% (a smaller text, fewer merges, a different mix). A5 model answer: *"With equal settings the library gives the same tokens as my code, so my code does what the library does; it does not show either is the best tokenizer, and nothing here says a model trained on these tokens would do better."* The check file:
 
 ```python
 # check204.py - Week 20 workbook page 20.4: a SMALL diff (first 3,000 characters of the corpus, 100 merges). PRACTICE numbers.
@@ -784,7 +831,7 @@ B1: `[b'the', b' ', b'baker']` against `['the', 'Ġbaker']`; `Ġ` is how the lib
 
 ### Page 20.5
 
-**Part A.** A2 gains: **0.143**, **0.042**, **0.049**, **0.029**. A3: gains are **not** equal; the first step is biggest and then they get smaller (the 10,000 to 30,000 step at 0.049 is a little larger than the one before it: one of the gains is not smaller than its predecessor, so the curve is *up, then flatter*, not perfectly smooth). Accept "climbs fast at first, then flattens", and a note that the steps are uneven. A4: the text had only 1,000 characters, and after 130 merges no pair was left that occurs twice: `if pair_counts[best] < 2: break`. A5: only one test file; only one set of sizes; only 200 merges; no model trained on the tokens; does not say anything about other kinds of text. Check file:
+**Part A.** A2 gains: **0.143**, **0.042**, **0.049**, **0.029**. A3: gains are **not** equal; the first step is biggest and then they get smaller (the 10,000 to 30,000 step at 0.049 is a little larger than the one before it: one of the gains is not smaller than its predecessor, so the curve is *up, then flatter*, not perfectly smooth). Accept "climbs fast at first, then flattens", and a note that the steps are uneven. A4: the text had only 1,000 characters, and after 130 merges no pair was left that occurs twice: `if pair_counts[best] < 2: break`. A5: only one test file; only one set of sizes; only 200 merges; no model trained on the tokens; does not say anything about other kinds of text. The check file:
 
 ```python
 # check205.py - Week 20 workbook page 20.5: bytes per token as the training text grows. SMALL version, 200 merges. PRACTICE numbers.

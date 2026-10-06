@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table gives the week's size, vocabulary, syntax and run times, so you can check the load before you plan.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes in class, then the workbook (~60-75 min, of which about 40 seconds is the computer working on the copy-task sweep) |
@@ -20,7 +22,10 @@
 | **Prep time** | 30 minutes the night before · 3 minutes on the day |
 | **Expected runtime of the code** | Every file below finishes in **under 4 seconds**, except `copytask.py` (**about 33 seconds**, ten short training runs). The whole set takes about **55 seconds**. Anything over **2 minutes** means something is wrong (see Fallback). |
 
-> **⚠️ Watch out:** two things go wrong this week. **First, "more novel" gets heard as "better".** At temperature 1.5, 118 of the 200 generated names are not in the training list, and a good share of those are `inditrr` and `nnanvir`. A new string is not a new *name*. Novelty is a count the student can make with a loop; quality is a judgement they make by reading. The Tasting (Activity) is there so that they make the judgement before they see the count. **Second, the exposure-bias measurement is suggestive, not a proof.** The model finds its own samples more surprising than real names (1.122 against 0.954). That is what drift would look like; it is also partly what *sampling at temperature 1* looks like. Section 7 says exactly what the number does and does not show. Say "**is consistent with**", not "**proves**".
+> **⚠️ Watch out:** two things go wrong this week.
+>
+> - **"More novel" gets heard as "better".** At temperature 1.5, 118 of the 200 generated names are not in the training list, and a good share of those are `inditrr` and `nnanvir`. A new string is not a new *name*. Novelty is a count made with a loop; quality is a judgement made by reading, so the Tasting (Activity) has the student judge before seeing the count.
+> - **The exposure-bias measurement is suggestive, not a proof.** The model finds its own samples more surprising than real names (1.122 against 0.954). That is what drift would look like; it is also partly what *sampling at temperature 1* looks like. Section 7 says what the number does and does not show. Say "**is consistent with**", not "**proves**".
 
 ![Map of the 36 weeks in four term lanes with week 13, Choosing the Next Letter, highlighted in term 2 and weeks 1 to 12 solid behind it](../figures/fig-w13-0-where-this-fits.svg)
 *Figure 13.0 — Where this week fits: week 13 of 36, in term 2 (memory, then attention).*
@@ -28,6 +33,8 @@
 ---
 
 ## 🎯 Lesson Objectives
+
+These are the outcomes the lesson is built around, and the evidence you can collect for each.
 
 By the end of the lesson the student can:
 
@@ -44,11 +51,17 @@ Observable evidence: a filled **sampler table** (distinct / new out of 200 for e
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section is the teacher's preparation: the maths, the new constructs, the expected numbers and the limits of the week's claims. Read it before class; none of it is for the student.
+
 > **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist**, in the **🐞 Debugging Clinic** and in the **🔑 Answer Key** is a *whole file* that was run, from one folder next to `l4lib/`, on a CPU with one thread and the seeds shown; the outputs below are the real printed output. The Clinic blocks that are *deliberate mistakes* are marked and their tracebacks are real. **Timing is the only thing that varies run to run; every other number repeated exactly on a second full run on the same machine.** Different CPU or PyTorch build: the last digit of a probability can move, and a count of "new names" can move by a name or two. **Week 12 is not in this folder yet** when this guide was written, so `namelm.py` is the Week 12 name model *re-typed from the course plan and the reference module*. If your Week 12 files differ, use the student's: Week 13 needs only a trained model with `init_state(1)` and `step(tok, state)` (see section 4).
 
 ### 1. What the student is doing today, in one paragraph
 
-Last week they trained a character model on 231 typed names, and it produced names such as `dira` and `arjav`. They never asked *how* a letter gets picked from the model's answer. Today they open that box. They start with five invented scores and turn them into probabilities, then reshape the probabilities with a temperature and **predict each time what will happen before they run it**. They draw letters at random and check that 10,000 draws match the probabilities. They write the four pickers, plug each one into the Week 12 generator, and count what comes out: greedy gives the same name every time, high temperature gives many new strings and many bad ones, top-p sits between. Then comes a blind tasting: forty unlabelled names from four samplers, and the student marks which they believe are real names before you reveal which sampler made which. The last ten minutes are one measurement: the model scores its own names worse than real ones, and why a model trained on the truth can still drift when it reads its own words.
+Last week they trained a character model on 231 typed names, and it produced names such as `dira` and `arjav`. They never asked *how* a letter gets picked from the model's answer. Today they open that box.
+
+They start with five invented scores and turn them into probabilities, then reshape the probabilities with a temperature and **predict each time what will happen before they run it**. They draw letters at random and check that 10,000 draws match the probabilities. They write the four pickers, plug each one into the Week 12 generator, and count what comes out: greedy gives the same name every time, high temperature gives many new strings and many bad ones, top-p sits between.
+
+Then comes a blind tasting: forty unlabelled names from four samplers, and the student marks which they believe are real names before you reveal which sampler made which. The last ten minutes are one measurement: the model scores its own names worse than real ones, and why a model trained on the truth can still drift when it reads its own words.
 
 ### 2. 🔢 The maths you need — taught to you first
 
@@ -176,7 +189,11 @@ All printed by the files below. Read them before class so nothing surprises you.
 
 1. **The model is tiny and so is the data.** 231 names, one seed, one model. Everything about "greedy repeats itself" is about *this* model: with only 231 names the model has half-memorised the list, which is why `T = 0.5` recites. A large model trained on a large corpus will not behave identically.
 2. **Novelty is measured against 231 names, not against the world.** `lora` and `deria` count as "new" and are fine names. The new-name count is an upper bound on the number of *invented* names and a lower bound on nothing.
-3. **The exposure-bias gap is not a clean test of drift.** Four things sit inside the +0.167. (i) *Drift*, as taught: one unlikely letter makes a prefix the model has not practised on, so its next prediction is worse. (ii) *Plain sampling entropy*: at `T = 1` the model deliberately picks letters it gave low probability to, and then the same model, scoring the finished name, sees those letters as low probability. (iii) *Memorisation*: at `T = 0.5` the model recites training names it has seen, and a seen name scores low (0.920 is *below* the real mean 0.954 because the model has partly learned the list). (iv) *The comparison group is the training set*: the 231 "real" names are what the model trained on (final loss 1.026), so 0.954 is a training-set score, the 0% above 1.5 is a training-set fact, and 1.122 is roughly the model's own average entropy, because the letters were sampled from the model and then scored by it. The scoring also uses the sampled prefix as context, so it never measures how errors compound. Held-out real names would be the fairer comparison. So **the `T = 0.5` result shrinking to −0.035 is consistent with drift but does not prove it**: shrinking also follows from (ii) and (iii). The tail does show something real: 17.5% of own names score above 1.5 per letter and no real name does. The measurement we did *not* make is the clean one (feed the model its own prefix and the true prefix at the same position and compare the next-letter loss), and we did not run a repeat at other seeds. Do not claim more than: **"the model is more surprised by its own names than by real ones, and a long right tail is where it is most surprised."**
+3. **The exposure-bias gap is not a clean test of drift.** Four things sit inside the +0.167. (i) *Drift*, as taught: one unlikely letter makes a prefix the model has not practised on, so its next prediction is worse. (ii) *Plain sampling entropy*: at `T = 1` the model deliberately picks letters it gave low probability to, and then the same model, scoring the finished name, sees those letters as low probability. (iii) *Memorisation*: at `T = 0.5` the model recites training names it has seen, and a seen name scores low (0.920 is *below* the real mean 0.954 because the model has partly learned the list). (iv) *The comparison group is the training set*: the 231 "real" names are what the model trained on (final loss 1.026), so 0.954 is a training-set score, the 0% above 1.5 is a training-set fact, and 1.122 is roughly the model's own average entropy, because the letters were sampled from the model and then scored by it. The scoring also uses the sampled prefix as context, so it never measures how errors compound. Held-out real names would be the fairer comparison.
+
+   So **the `T = 0.5` result shrinking to −0.035 is consistent with drift but does not prove it**: shrinking also follows from (ii) and (iii). The tail does show something real: 17.5% of own names score above 1.5 per letter and no real name does.
+
+   The measurement we did *not* make is the clean one (feed the model its own prefix and the true prefix at the same position and compare the next-letter loss), and we did not run a repeat at other seeds. Do not claim more than: **"the model is more surprised by its own names than by real ones, and a long right tail is where it is most surprised."**
 4. **The median line uses the two ledgers differently.** The module's median for own names is 0.958; `exposure.py` prints 0.957. The module used numpy, whose median of an even count averages the two middle values; PyTorch's `median()` returns the *lower* of the two (the printed `tensor(2.)` for `[1, 2, 3, 4]` is the demonstration). It is a 0.001 difference and the reason is the library, not a different model.
 5. **The copy task is one seed at one training budget.** The cliff (RNN at chance by gap 10, LSTM by gap 20) is a statement about *1,500 steps and hidden size 64*. We did not test longer training, a tuned forget bias, or other seeds. The reference module's own run, which uses a loop of cells instead of the whole-sequence layers used here, gives RNN `1.000, 0.438, 0.129, 0.127, 0.127` and LSTM `0.998, 0.996, 0.984, 0.130, 0.130`: the same pattern, and a difference of up to 0.054 at one point between two implementations of the same idea. **Read a difference of 0.05 in a single cell of this table as noise.**
 6. **Sampling from a model is only half of "how do I get a good name".** Reranking, filtering and a human are the other half; today shows the first half and the mark of its limits.
@@ -207,6 +224,8 @@ Stop at: *"the model gives scores; a rule chooses; the rule changes what comes o
 ---
 
 ## 🧰 Prep Checklist
+
+This section lists what to set up and run before class, with every file in full and its real output.
 
 ### 30 minutes the night before
 
@@ -680,6 +699,8 @@ first letter, top five at T=1: [('a', 0.09), ('s', 0.06), ('d', 0.052), ('c', 0.
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the full-lesson plan: five segments, each with the words to say and the steps to take.
+
 | Segment | Minutes | What happens |
 |---|:--:|---|
 | 🪝 Hook | 6 | "Pick the best letter every time": greedy says `andrei`, 200 times out of 200. Why? |
@@ -959,6 +980,8 @@ RuntimeError: selected index k out of range
 
 ## 🎲 The Activity, In Full
 
+This section gives the Name Tasting in full: setup, rules, reveal and key.
+
 ### The Name Tasting
 
 **Purpose.** To make the student judge quality *before* seeing a count, and to find out that "new" and "good" are different columns. **Materials:** the student half of the sheet (below), a pen, your key.
@@ -1091,6 +1114,8 @@ The student writes `sheet.py` for themselves with a *different* seed and a fifth
 
 ## ❓ Questions Students Ask This Week
 
+This section gives short, checked answers to the questions this lesson usually raises.
+
 **"Why does greedy give the same name every time? Isn't there any randomness?"** There is none in greedy. The model's scores depend only on the letters so far, so the same start gives the same scores and the same top letter. The randomness is entirely in `multinomial`. (And when it appears anyway, check Clinic 5.)
 
 **"What does `dim=-1` mean?"** The last axis. For a list of scores, that is the only axis; for a batch of rows it is the row direction. Always writing `-1` means we never have to count axes.
@@ -1119,6 +1144,8 @@ The student writes `sheet.py` for themselves with a *different* seed and a fifth
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table maps the symptoms you are likely to see to their cause and a response.
+
 | Symptom | What is happening | What to do |
 |---|---|---|
 | The student reads the `new` column as a score | The count is for novelty, which the Tasting was designed to separate from quality | Go to the Tasting reveal; ask for *one* new name they marked X |
@@ -1132,6 +1159,8 @@ The student writes `sheet.py` for themselves with a *different* seed and a fifth
 ---
 
 ## 🧭 Differentiation
+
+This section adjusts the lesson for a student who is struggling, flying or disengaged.
 
 ### If the student is struggling
 
@@ -1149,7 +1178,7 @@ Run the Tasting first. Forty names and a pen need no typing. Then: *"the machine
 
 ## ✅ Assessing Understanding
 
-Ask these out loud near the end; do not rescue.
+This section gives questions to ask aloud near the end, with what a good and a shaky answer sounds like. Do not rescue the student.
 
 | Question | A good answer | A shaky answer |
 |---|---|---|
@@ -1175,6 +1204,8 @@ Ask these out loud near the end; do not rescue.
 
 ## 📤 Homework to Assign
 
+This section states what to set and how to mark the two assigned tasks.
+
 ~60-75 minutes, in the workbook, pages 13.1-13.5. The two assigned tasks:
 
 1. **Predict, then measure (page 13.2).** Five new scores for `s t a r e` (`1.5, 1.0, 0.0, -0.5, 2.5`). **Before** running anything, the student writes, for `T = 0.3, 1, 2`, which letter will be the most likely and whether its share goes up or down, and then fills the table with `F.softmax(scores / T, dim=-1)` and checks. The key is `key.py`'s first block: `T=0.3`: `e 0.959`; `T=1`: `e 0.580`; `T=2`: `e 0.386`.
@@ -1185,6 +1216,8 @@ Also on the page: the by-hand top-p on `[2, 1, 0.5, 0]` and the sampler table fr
 ---
 
 ## 🔑 Answer Key
+
+This section is the teacher-only key for the workbook pages and for every question posed in the lesson.
 
 ### Page 13.1 — The sampler table (from `namegen.py`, seed 0, 200 names each)
 
@@ -1245,5 +1278,7 @@ The RNN is at chance by D = 10; the LSTM holds to D = 10 and is at chance by D =
 ---
 
 ## 🔮 Next Week Preview
+
+This section says how next week builds on today.
 
 **Week 14 — Attention by Hand.** The recurrent cell carries one sticky note along the sentence, and Week 10 measured how fast the oldest part of that note fades. Attention takes the opposite approach: *look back at every earlier word and take a weighted average of what they said.* The weights are the same `F.softmax` you typed today, now deciding how much each earlier word counts. The only new maths is that weighted average: weights that add to 1, applied to values. The student does one three-word pass entirely with a pen, then in numpy, then in torch, and shows that all three agree. **Bring a pen and a calculator.**

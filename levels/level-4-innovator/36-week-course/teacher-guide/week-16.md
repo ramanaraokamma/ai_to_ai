@@ -9,6 +9,8 @@
 
 ## 📋 At a Glance
 
+This table is the week on one page: timing, vocabulary, what is new, and what you need to bring.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes in class, then the workbook (~60-75 min) |
@@ -42,6 +44,8 @@ Observable evidence: `where.py` printing `False` where `blind.py` printed `True`
 ---
 
 ## 🧑‍🏫 What YOU Need to Know First
+
+This section is your own preparation. Read it before class so the maths, the limits of the demonstrations and the likely misconceptions are not new to you in the room.
 
 > **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist** is a *whole file* and every one was run, from one folder next to `l4lib/`, on a CPU with `torch.set_num_threads(1)` and the seeds shown. Blocks in the **🐞 Debugging Clinic** are *deliberate mistakes* and each is marked; their tracebacks are real. Short snippets elsewhere carry on from the files. Outputs are real. **The whole set of eight files was run twice and every printed line was identical.** Comparisons between two routes to the same numbers are shown as `True`/`False` (`allclose`, `atol=1e-6`), because the last decimal place can differ on another PyTorch build. **Numbers quoted from the ground-truth ledger (the 1.278 / 1.632 ablation, the sinusoidal losses) were measured by the course author's reference scripts and were *not* run in this lesson;** each is labelled "ledger" where it appears.
 
@@ -230,6 +234,8 @@ Stop at: *"attention is blind to order, so we add a place vector to every word; 
 ---
 
 ## 🧰 Prep Checklist
+
+This section lists what to set up the night before and on the day. It holds the eight files you will run or type in class, each a whole file that was run as shown.
 
 ### 30 minutes the night before
 
@@ -867,6 +873,8 @@ The `0.125` for attention without positions is not a typo; see "Questions Studen
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the lesson plan, segment by segment.
+
 | Segment | Minutes | What happens |
 |---|:--:|---|
 | 🪝 Hook | 8 | Week 8's two sentences again. *Does attention do better than a bag?* Predict, then `blind.py`. |
@@ -962,6 +970,8 @@ The student is the **attention**; you are the **reader**. Full rules in *The Act
 ---
 
 ## 🐞 The Debugging Clinic
+
+This section lists the nine mistakes students are likely to make this week, with the real error text and the fix for each.
 
 Every error below was produced by running the code. **Paths will differ on your machine**; here they are shown as `/home/you/l4/`. Tracebacks from PyTorch run through several of its own files; the long middle of those is replaced by a line reading `... frames inside torch (elided) ...`, and **the last line is the real, complete last line**. Each mistake is deliberate: you plant it, the student reads the traceback (or the odd number) aloud, and you refuse to fix it until they have said what it means. Each block is **self-contained** so you can drop it in a scratch folder. **Four of the nine are silent**, and the silent ones are the point.
 
@@ -1258,6 +1268,8 @@ RuntimeError: shape '[1, 5, 3, 2]' is invalid for input of size 40
 
 ## 🎲 The Activity, In Full
 
+This section gives everything you need to run the Seat Swap: setup, rules, rounds and variations.
+
 ### The Seat Swap
 
 **What it is:** the student plays attention for three cards, with a calculator, twice with no seat numbers and twice with them, so that they have **been** the blind reader and then the reader who is told where each card sits.
@@ -1313,6 +1325,8 @@ Use the stamps `0, 5, 10` (large seat stamps) and redo round 4: the numbers are 
 
 ## ❓ Questions Students Ask This Week
 
+This section gives short answers to questions that tend to come up, so you can reply without stopping the lesson.
+
 **"Why add the position vector rather than stick it on the end?"** Adding keeps the width at `d`, so every later layer keeps the same shape. Joining the two (`torch.cat`) would make the vectors wider. The reference module adds, and we **did not test** joining, so we do not claim either is better.
 
 **"Why is the position table learned and not just 0, 1, 2?"** A bare number `3` is one number; the network would have to learn to read it. A row of `d` numbers can carry much more. It is a convention, and the reference module compares it with a fixed pattern of sines and cosines. **Ledger, not run today:** at length 32 a learned table reached a validation loss of 1.228 and the sinusoidal one 1.383; the learned table fails with an `IndexError` as soon as the text is longer than it was built for, and the sinusoidal pattern can be extended (1.866 at length 48, 2.220 at 64, one seed). Do not teach sinusoidal formulas this week.
@@ -1353,6 +1367,8 @@ Use the stamps `0, 5, 10` (large seat stamps) and redo round 4: the numbers are 
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the ways the lesson tends to drift, each with a way back.
+
 1. **The student leaves thinking "no positions, no order".** Return to `masked.py`: *"the mask also tells the first word it is first. Is that enough?"* (A little; the ablation says it is worse without positions.)
 2. **Hand numbers off in the fourth decimal.** The student rounded each `e^x` to 2 decimals in the middle. Carry four. The answer is usually rounding.
 3. **The student thinks the stamp is part of the card.** The stamp belongs to the *seat*. Move the card to another seat and the stamp stays behind.
@@ -1366,6 +1382,8 @@ Use the stamps `0, 5, 10` (large seat stamps) and redo round 4: the numbers are 
 ---
 
 ## 🧭 Differentiation
+
+This section adjusts the lesson for a student who is struggling, flying or disengaged.
 
 ### If the student is struggling
 
@@ -1424,6 +1442,8 @@ Estimated time: 60-75 minutes.
 ---
 
 ## 🔑 Answer Key
+
+This section is the teacher-only key for the workbook. Keep it away from the student.
 
 > **The workbook pages 16.1-16.6 follow this order.** Where an answer is a number it comes from `key.py`, `blind.py`, `where.py`, `block.py` or `count.py`, all run from the Prep Checklist.
 
@@ -1548,5 +1568,7 @@ Use these as a prompt for conversation, not a certainty: another number is proba
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what the next week builds from today's parts.
 
 **Week 17 — Build TinyGPT.** A lab. The student builds a decoder-only transformer, from `nn.Linear` up, out of exactly these parts: an embedding, **a position table, `torch.arange`**, a stack of **blocks in an `nn.ModuleList`**, a final layer norm and an output layer. Three new constructs: random window starts for training batches (`torch.randint`), the `@torch.no_grad()` decorator (used, not written), and **nested `nn.Module`** (a model that holds our own `Block`; this is the construct kept out of today). They train it on the shared kit's typed text (28 distinct characters) and check the first loss: **the initial loss should be within 0.05 of `ln(28) = 3.3322`**, a check, not a hope (the reference run started at 3.346 train / 3.339 validation). **For the student:** finish the workbook, especially 16.4 (the count). The count predicts the model's size: **807,196**, so they should expect `parameters: 807,196` next week. **For you:** make sure the student can say what each part of the block does, because Week 17 asks them to *write* it, not read it; and have them re-run `block.py`'s last part, since that shows the characters going in. Week 18 is Review and Assessment 2 on Weeks 9-17.

@@ -50,14 +50,18 @@ Observable evidence: `DESIGN.md` printing `check_design: []`, `eval/cases.py` pr
 
 ### 1. What the student is doing today, in one paragraph
 
-Week 30 ended with "freeze the eval before you build". Week 33 ended with "a count wobbles" and an assignment: *bring one sentence, the one thing my system must never do, and how I would find out in 50 runs if it does.* Today that sentence becomes failure mode number one. The student picks a project for a named person (the capstone brief lists six scenarios; they may bring their own) and chooses **two of three components** (RAG over notes, the tool-using agent, a fine-tuned small model). They write a one-page design doc, write and rank what could go wrong, and commit to a budget. Then comes the part that is new: they write **25 test cases for a system that does not exist**, run a checker over them that catches cases no system can pass, test the scorer against answers they typed by hand, and freeze the lot with a fingerprint while `src/` is empty. By the end, the only files in their project folder are a design, a frozen list of questions, and the tools to mark answers. **Nothing answers anything.** Week 35 builds the system and finds out how it does.
+Week 30 ended with "freeze the eval before you build". Week 33 ended with "a count wobbles" and an assignment: *bring one sentence, the one thing my system must never do, and how I would find out in 50 runs if it does.* Today that sentence becomes failure mode number one. The student picks a project for a named person (the capstone brief lists six scenarios; they may bring their own) and chooses **two of three components** (RAG over notes, the tool-using agent, a fine-tuned small model). They write a one-page design doc, write and rank what could go wrong, and commit to a budget.
+
+Then comes the part that is new: they write **25 test cases for a system that does not exist**, run a checker over them that catches cases no system can pass, test the scorer against answers they typed by hand, and freeze the lot with a fingerprint while `src/` is empty. By the end, the only files in their project folder are a design, a frozen list of questions, and the tools to mark answers. **Nothing answers anything.** Week 35 builds the system and finds out how it does.
 
 ![Four boxes in a row joined by arrows: Design, Test, Freeze, and a dashed System box, with the demo freeze line (cases=8, src_files=0) below](../figures/fig-w34-1-test-before-system.svg)
 *Figure 34.1 — The test is written and frozen while src/ is still empty; the system comes after.*
 
 ### 2. 🔢 The maths you need — there is none, and one reuse
 
-No new idea. The arithmetic today is counting and multiplying: `21 x 0.00035 + 4 x 0.00135` (Page 34.3), `6 / 25` (Page 34.2), and the headroom `0.03 / 0.0127`. **One reuse, flagged** (K5): Week 33 said a count of successes in `n` tries wobbles by `sqrt(n p (1-p))`. An eval score is a count of passes in `n = 25` cases. If the author had happened to write a different 25 questions, a system that passes about `0.70` of them would show `17.5 ± 2.3` passes, so one case is worth `0.04` of the score and **a one-case difference between two versions is noise**. Two versions must differ by about `6.5` cases (`0.26`) before you may say "more than noise", and that is the honest reason the capstone leans on *per-category tables* and *named failures*, not on the headline number. Two cautions: (i) this is a **rule of thumb for a sampled set of questions**, not a statement about a stand-in with a coin in it (most of today's answerers are deterministic); (ii) it ignores that the same 25 cases are used for both versions (a paired comparison is tighter). Do not teach pairing. Say: *"a single case is never a finding; a whole category moving, with the failing cases named, is."*
+No new idea. The arithmetic today is counting and multiplying: `21 x 0.00035 + 4 x 0.00135` (Page 34.3), `6 / 25` (Page 34.2), and the headroom `0.03 / 0.0127`. **One reuse, flagged** (K5): Week 33 said a count of successes in `n` tries wobbles by `sqrt(n p (1-p))`. An eval score is a count of passes in `n = 25` cases. If the author had happened to write a different 25 questions, a system that passes about `0.70` of them would show `17.5 ± 2.3` passes, so one case is worth `0.04` of the score and **a one-case difference between two versions is noise**. Two versions must differ by about `6.5` cases (`0.26`) before you may say "more than noise", and that is the honest reason the capstone leans on *per-category tables* and *named failures*, not on the headline number.
+
+Two cautions: (i) this is a **rule of thumb for a sampled set of questions**, not a statement about a stand-in with a coin in it (most of today's answerers are deterministic); (ii) it ignores that the same 25 cases are used for both versions (a paired comparison is tighter). Do not teach pairing. Say: *"a single case is never a finding; a whole category moving, with the failing cases named, is."*
 
 **p95 (vocabulary, not maths).** "p95 latency under 1 s" means *95 of every 100 tasks finished faster than this*. With 25 tasks it is nearly the slowest one (sorted, the 24th of 25). The student states one today; Week 35 computes it from their own log with `sorted(times)[int(0.95 * len(times))]`, which is only `sorted` and an index, nothing new.
 
@@ -149,6 +153,8 @@ The reference capstone's own first two cases also fail by construction on the st
 ---
 
 ## 🧰 Prep Checklist
+
+This section is for the night before: it builds the worked example, runs every check once, and tells you what to print and copy. Run the blocks in one Python session, in order.
 
 ### 30 minutes the night before
 
@@ -657,6 +663,8 @@ Open a terminal in the scratch folder. Run P1, P3 and P4 only: P4 must print `pr
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the minute-by-minute plan for the class: the timetable first, then what to say and ask in each segment.
+
 | Time | Segment | What happens |
 |---|---|---|
 | 0:00-0:05 | 🪝 Hook | "I asked my assistant three questions and it got all three. Ship it?" Then the student's Week 33 sentence goes on the board. |
@@ -709,6 +717,8 @@ Each student says, from their own files, one sentence that contains a **count**,
 ---
 
 ## 🐞 The Debugging Clinic
+
+This section is for the ten mistakes students make this week: what each looks like, whether it is loud or silent, and the check that catches it.
 
 ### How to teach debugging without giving the answer
 
@@ -927,6 +937,8 @@ The student writes "students" as the user. Ask: *"what is the first question the
 
 ## 🎲 The Activity, In Full
 
+This section describes the Case Card and the three workbook pages, with variations for a shorter slot and for different students.
+
 ### The Case Card (used in Their Turn 2, the Wrap, and Page 34.2)
 
 Print one card per student: a table with six rows (`factual`, `multi_hop`, `arithmetic`, `out_of_scope`, `adversarial`, `ambiguous`) and these columns: **How many** (target range in the margin: `8-10, 3-4, 3-4, 3, 2-3, 2`), **What would the user type?** (a question in their words), **Where does the answer live?** (a note or a file, blank for a refusal), **The needle** (one lowercase token), **Route** (`retrieve / agent / refuse`), **Hard?** (a tick where they expect failure), and **Tally** (boxes to tick 25). Two rules are printed at the bottom: *"at least 3 refusal cases"* and *"at least 2 I expect to fail."* The last line of the card is the fingerprint: 12 characters, a date, and the student's and teacher's initials.
@@ -953,6 +965,8 @@ Give them the DESIGN template with their person's name already in it and a §5 w
 
 ## ❓ Questions Students Ask This Week
 
+These are short answers to the questions you are most likely to hear.
+
 - **"Can I use my own topic?"** Yes, if it has a corpus you wrote (so there is a right answer) and a person who would use it.
 - **"Why 25 cases?"** It is the smallest set that can cover six categories with the balance the capstone asks for, and small enough to write in a sitting. It is not enough to see small gains (K5).
 - **"Why can't I just read the notes and write the questions from them?"** You may, but the question must be in the *user's* words. A case that copies the note's sentence is a mirror.
@@ -968,6 +982,8 @@ Give them the DESIGN template with their person's name already in it and a §5 w
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+Use this list to spot a lesson drifting off course while it is happening. Each item names the trap and the move that fixes it.
+
 1. **The cases copy the notes.** Every question begins "What did the note say about...". Ask of each: *"would Asha type that?"* and *"which note says it?"*.
 2. **All 25 are factual.** The categories are the point: `multi_hop` tests top-k, `arithmetic` tests the router, `out_of_scope` tests the gate, `adversarial` tests the fences.
 3. **No case is expected to fail.** Then the system has no ceiling and Week 35's "v2 is better" has no room. Insist on at least two.
@@ -982,6 +998,8 @@ Give them the DESIGN template with their person's name already in it and a §5 w
 ---
 
 ## 🧭 Differentiation
+
+This section adjusts the week for a student who is struggling, flying, or not engaging.
 
 ### If the student is struggling
 
@@ -1002,6 +1020,8 @@ Give them the Case Card with **only `adversarial` and `out_of_scope`** to fill: 
 ---
 
 ## ✅ Assessing Understanding
+
+This section is for marking the week: the four sentences, the patterns in a student's work and what each pattern points to, and a mastery scale.
 
 ### The marking rules
 
@@ -1052,6 +1072,8 @@ Extension for the fast student: the router prediction (section "If the student i
 ---
 
 ## 🔑 Answer Key
+
+This section is teacher-only. It holds the answers to the workbook pages, the router prediction, the wobble calculation and the answers to every question posed in the lesson.
 
 ### K0 — the data, in one line
 
@@ -1205,5 +1227,7 @@ total seconds for the whole guide: 0.8
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what the next week builds on from today.
 
 **Week 35 — Capstone 2: Build, Measure, Attack** (🟨 project). The student builds the baseline, the spine (one function that turns a question into an `Answer`), and the two components; runs `eval/run_eval.py` on demand and gets a per-category table; measures tokens and latency from their own log; runs **one attack per category A1-A5** with their Week 33 harness; and catches **one regression** with the suite. There is no new maths and no new syntax. The lesson **opens** with `check_frozen(CASES)` and the teacher's paper: if the 12 characters match, the eval is still what it was on Monday. Ask the student to bring the thing they are most worried the first run will show: *"the category I think my system will fail worst, and the number I predict for it."* Write it down before Week 35; it is the only prediction in the capstone that cannot be made afterwards.

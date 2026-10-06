@@ -9,6 +9,8 @@
 
 ## 📋 At a Glance
 
+This table is the whole week on one screen: timing, what is and is not new, the paper's shape and what you need to bring.
+
 | | |
 |---|---|
 | **Duration** | 75 minutes in class (2 to settle, 70 for the paper, 3 to hand in), then the marking homework (~45 min) |
@@ -175,6 +177,8 @@ Three weeks are load-bearing for Term 3: **Week 15** (the mask and the divide ar
 ---
 
 ## 🧰 Prep Checklist
+
+This section is for you, not the student. It runs the code that confirms every number on the paper and the key, so nothing surprises you on the day.
 
 ### 30 minutes the night before
 
@@ -739,13 +743,15 @@ print(sum(p.numel() for p in model.parameters()))
 
 ## 🎲 The Activity, In Full
 
+This section holds the paper exactly as the student sees it, plus the one optional extension question.
+
 ### The Paper, in Full
 
 > **How to use this section.** Everything between the two lines marked `✂ PAPER STARTS` and `✂ PAPER ENDS` is what the student sees. Print exactly that. Everything *outside* them is for you. The code on the paper is the same text that the key runs (Blocks P3 and the Clinic), and the Section E tables are the printed numbers of Blocks P5 and P6 (with the baselines of Block P4).
 
 ✂ PAPER STARTS
 
-# Term 2 Checkpoint — Review and Assessment 2
+#### Term 2 Checkpoint — Review and Assessment 2
 
 **Name: ____________________   Date: ______________   Time allowed: 70 minutes   Total: 75 marks**
 
@@ -1065,6 +1071,8 @@ Add **one** optional question afterwards, *not* on the paper, and said aloud: *"
 
 ## ❓ Questions Students Ask This Week
 
+Use this table to answer the questions you are likely to hear, in words that keep to the rules of the paper.
+
 | They ask | Honest answer | Notes |
 |---|---|---|
 | "Why no computer?" | "Because the paper is asking what is in *your* head, not what the computer knows. Everything on it, you have done by hand at least once." | If they say "but nobody works without a computer" — *"True. And nobody can debug one who can't predict what it will print."* |
@@ -1082,6 +1090,8 @@ Add **one** optional question afterwards, *not* on the paper, and said aloud: *"
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+These are the failures to avoid, most common first.
+
 1. **You help.** The commonest failure. A raised eyebrow changes an answer. Sit to the side.
 2. **You hand over the wrong page.** The student must get only Page 18.1, 18.2 and 18.3. The rest of this file contains every answer *and the mistakes the student is expected to make*.
 3. **The paper runs over.** Seventy minutes is *tight*; Section D is the slowest. The five time-checks exist so E is not left in the last four minutes. If E is not attempted at all, mark A-D and treat E as a take-home (see "Variation — shorter").
@@ -1096,6 +1106,8 @@ Add **one** optional question afterwards, *not* on the paper, and said aloud: *"
 ---
 
 ## 🧭 Differentiation
+
+This section adjusts the same paper for a student who is struggling, flying or not engaging; the paper itself does not change.
 
 ### If the student is struggling
 
@@ -1122,6 +1134,8 @@ Add **one** optional question afterwards, *not* on the paper, and said aloud: *"
 ---
 
 ## ✅ Assessing Understanding
+
+This section tells you how to mark the paper, how to read the pattern across weeks, and what to do with the result.
 
 ### The marking rules
 
@@ -1158,6 +1172,8 @@ Self-marking covers A, B and C well: those answers are *checkable*. D and E need
 ---
 
 ## 📤 Homework to Assign
+
+The homework is the marking itself. Say it once in the wrap, then hand over the sheet.
 
 1. **Mark your own paper** against the printed sheet (Page 18.1), in the *other colour*. For D and E, mark the **working**, not only the answer. *(Estimated 30 minutes.)*
 2. **Fill the per-week grid** (Page 18.2): the marks you got, out of the marks available, for each of the eight weeks, and the percentage. *(5 minutes.)*
@@ -1374,6 +1390,8 @@ print(np.round(ex_scaled / ex_scaled.sum(), 4))
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what the next week does with today's results.
 
 **Week 19 — Open the GPT: Heads, Ablations, Synthetic Tasks** (🟩 lab). The Week 17 model is taken apart: the student deletes each component in turn (the mask, the positions, the residual, the layer norm) and watches what breaks, then uses synthetic copy, reverse and lookup tasks to name what a head does. There is no new maths and no new syntax. Nothing about the first-loss check or the train-against-validation gap is re-taught; both are used.
 

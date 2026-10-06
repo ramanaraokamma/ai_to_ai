@@ -39,6 +39,8 @@
 
 ## 🃏 Page 24.1 — The Ceiling (pen first · 25 min)
 
+This page is for working out, by hand, the best score anyone can get in the Secret Code Game, and for checking that figure against runs.
+
 **The rule, in your own words.** Six keys `a` to `f`, six values `0` to `5`, each used once, a **new** secret code every prompt. `n` pairs are shown, then one key is asked.
 
 **24.1a. Fill in the table by hand before you run anything.** The first column is your **guess from the start of class** (copy it from your prediction card).
@@ -78,7 +80,7 @@ Expected total out of 16: ____________ . Were you bad, or unlucky? Say what you 
 |---|:--:|:--:|:--:|:--:|:--:|
 | Best possible | | | | | |
 
-Now type this file as `p1.py`. It plays the game 2,000 times at each `n` with a **perfect player** (copy when the key was shown, otherwise guess among the unused values), using `random.Random(11)`.
+Now type this file as `p1.py` and run it. It plays the game 2,000 times at each `n` with a **perfect player** (copy when the key was shown, otherwise guess among the unused values), using `random.Random(11)`.
 
 ```python
 # p1.py - Workbook 24.1 (PRACTICE game): FOUR keys a-d and FOUR values 0-3. The same argument, different numbers.
@@ -126,7 +128,7 @@ for n in range(K + 1):
 
 **24.1h.** Predict: five sets of **500** prompts at `n = 3` (best possible `0.667`) are scored by a perfect player. The lowest score will be about ________ and the highest about ________ .
 
-Type `p1b.py` (it needs your `icl.py`).
+Type and run `p1b.py` (it needs your `icl.py`).
 
 ```python
 # p1b.py - Workbook 24.1: how much does a PERFECT player's score wobble on 500 prompts? Needs your icl.py and tinygpt.py.
@@ -165,6 +167,8 @@ best possible: 0.667   lowest 0.636   highest 0.678
 
 ## 📈 Page 24.2 — The Curve (needs `icl.py` and your own `incontext_run.py` run · 40 min, mostly waiting)
 
+This page is for recording your own in-context results, reading a neighbour's run beside them, and comparing seeds.
+
 **24.2a. Predict first** (before you run `incontext_run.py` a second time, or look at your class table). Your model's `all` score at **`n = 0`**: ________ , at **`n = 3`**: ________ , at **`n = 6`**: ________ . Which of the three do you trust least, and why? ___________________________________________
 
 **24.2b. Your own table.** Copy it from your own run (seed 0, 8,000 steps; it takes about 100 seconds). The gap is `best possible − all` (a negative gap means you were above the line).
@@ -187,7 +191,7 @@ Frozen test set fingerprint (must be `47d6a3db7a1a` if your files match the clas
 
 ### A neighbour's run: seed 3, 8,000 steps
 
-Someone ran `train_model(seed=3, steps=8000)` on the same files and printed this (it took 111 s):
+Someone ran `train_model(seed=3, steps=8000)` on the same files and printed the table below (it took 111 s). The questions below use it.
 
 ```text
  n  all   ceiling  key-shown  key-unseen
@@ -214,7 +218,7 @@ Someone ran `train_model(seed=3, steps=8000)` on the same files and printed this
 
 ### Two more seeds (homework · about 110 s each)
 
-**24.2f. Predict, then run.** Type `p2.py`. It trains seeds 1 and 2 for 8,000 steps and prints three columns each.
+**24.2f. Predict, then run.** Type and run `p2.py`. It trains seeds 1 and 2 for 8,000 steps and prints three columns each.
 
 ```python
 # p2.py - Workbook 24.2: two more training seeds, about 110 seconds each. Needs your icl.py and tinygpt.py.
@@ -247,6 +251,8 @@ My prediction for `n = 3` on seeds 1 and 2: ________ and ________ . Printed:
 
 ## ➕ Page 24.3 — The Scratchpad (hand calculation first · 40 min)
 
+This page is for writing the step-by-step working for two sums by hand, then reading what three neighbour-trained models printed.
+
 **How the working is written.** For each of the five columns, **right to left**, write four characters: the two digits you are looking at, the digit you write down, and the carry you pass on. After a `#` comes the answer: first the **final carry**, then the digits you wrote, **read from the last column back to the first**.
 
 **Worked example (done for you): `04211 + 00009`.**
@@ -275,7 +281,7 @@ Answer: the final carry ____ , then the digits written (last column first): ____
 
 **24.3b. A second sum: `70805 + 29596`.** Write the five blocks directly, without a table: ____ ____ ____ ____ ____ . Answer: ____________ . (Watch the zeros and the carry that travels three columns.)
 
-Now type `p3.py` and compare. (It needs your `addlib.py`.)
+Now type and run `p3.py` (it needs your `addlib.py`), then compare it with your blocks.
 
 ```python
 # p3.py - Workbook 24.3: the scratchpad for two sums, one column per line. Needs your addlib.py.
@@ -361,6 +367,8 @@ A check script printed the **true** compact working for this sum in pairs, `01 6
 
 ## 🎭 Page 24.4 — The Mask (hand softmax first · 40 min)
 
+This page is for applying a mask to softmax by hand, reading what the grammar allows, and recording mask results on the JSON job.
+
 **24.4a. The hand mask.** A model gives five scores to five possible characters. The grammar allows only the **1st, 3rd and 5th**.
 
 | Place | 1 | 2 | 3 | 4 | 5 |
@@ -381,7 +389,7 @@ Sum of the allowed `e^` values: ____________ . Chances after the mask:
 
 `masked = ________________________________________________________________`
 
-Type `p4.py` and compare with your table.
+Type and run `p4.py`, then compare it with your table.
 
 ```python
 # p4.py - Workbook 24.4 (PRACTICE numbers): a mask by hand, then by torch.where.
@@ -480,6 +488,8 @@ ___________________________________________
 ---
 
 ## 🐞 Page 24.5 — Break It on Purpose (six bugs · 40 min)
+
+This page is for practising how to find faults, including ones that raise no error.
 
 Each file is **deliberately broken**. For each: (i) say what is wrong, (ii) **predict** what it prints, (iii) run it, (iv) write the fix. **Four of the six print no error at all.** Bugs E and F train a small model first (about 20 s and 10 s).
 
@@ -718,7 +728,7 @@ Copy these three sentences in your own handwriting (they are also in the chapter
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 > Real printed outputs below. By-hand numbers are exact. For anything that trains, your last digits may differ from these (this machine, `torch 2.2.1`, one thread, seed shown); on the in-context curve at `n = 4, 5, 6` a different machine can differ by more, and that is the point of page 24.2. Everything here is about three small models on three made-up jobs, **not** about a large language model.
 

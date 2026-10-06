@@ -9,6 +9,8 @@
 
 ## 📋 At a Glance
 
+This table is the week on one page: timing, the big idea, the new vocabulary and syntax, and what the lesson uses and does not use.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes in class, then the workbook (~60-70 min) |
@@ -29,6 +31,8 @@
 
 ## 🎯 Lesson Objectives
 
+These are the five things to check the student can do by the end, and the evidence you collect for each.
+
 By the end of the lesson the student can:
 
 1. **Say what a gate is**: "a dial between 0 and 1, made by a sigmoid, that multiplies something to decide how much of it gets through".
@@ -43,11 +47,15 @@ Observable evidence: the hand table on workbook page 11.2, the `nn.LSTMCell` che
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section is for you, before class. It gives the lesson in one paragraph, the maths, what is real and what is not, the new constructs, what the numbers will say, and where to stop.
+
 > **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist** (the seven student blocks, the teacher-only blocks `T1`, `T2`, `T3` and `K1`) and in the **🐞 Debugging Clinic** was run, in order, in **one shared session** on a CPU with one thread and the seeds shown. The seven student blocks are the pieces of **one file, `week11.py`**, pasted one under the other with no gap: each later block uses names defined by an earlier one. The Clinic blocks are *deliberate mistakes*, each marked, each run in a copy of the session as it stood after block 7; their tracebacks are real. **Timing never appears in the outputs; every number repeated exactly on a second full run on the same machine** (torch `2.2.1`, Python 3.10). A different CPU or PyTorch build can move the last digit, and for a quantity like `2.05e-09` the *second* digit; the orders of magnitude and the shape of every table do not move. Tracebacks show `/home/you/l4/...` for the path, and the long middle of a torch traceback is replaced by `... frames inside torch (elided) ...`; **the last line is always the real, complete last line.** The *line numbers* in a traceback depend on exactly how the blocks were pasted; the last line does not.
 
 ### 1. What the student is doing today, in one paragraph
 
-Last week's lesson ended on a seatbelt and a promise: the *tiny* side needs a different design. Today is the design. They first meet the **dial** on a calculator (the sigmoid turns any score into a number between 0 and 1; a dial of `0.9526` applied forty times leaves `0.143`, a dial of `0.5` leaves `9e-13`). They run **one LSTM unit by hand-code** on Week 8's spike and watch the memory keep 86% of itself over three steps where Week 8's note kept 12%. Then they write **one LSTM step in PyTorch** out of `@` and slices and check it against `nn.LSTMCell`. They show, with the recurrent weights set to zero (`fill_`), that the slope back through the memory track **is** the forget dial. Then the honest part: the dial starts near one half, so at default settings the memory track vanishes too. They turn the dial up by writing `fill_` on the forget slice of the bias, and compare RNN, GRU and LSTM, at four lengths and over three seeds. **Nothing is trained.** Week 12 is where a gated cell meets real text.
+Last week's lesson ended on a seatbelt and a promise: the *tiny* side needs a different design. Today is the design. They first meet the **dial** on a calculator (the sigmoid turns any score into a number between 0 and 1; a dial of `0.9526` applied forty times leaves `0.143`, a dial of `0.5` leaves `9e-13`). They run **one LSTM unit by hand-code** on Week 8's spike and watch the memory keep 86% of itself over three steps where Week 8's note kept 12%. Then they write **one LSTM step in PyTorch** out of `@` and slices and check it against `nn.LSTMCell`. They show, with the recurrent weights set to zero (`fill_`), that the slope back through the memory track **is** the forget dial.
+
+Then the honest part: the dial starts near one half, so at default settings the memory track vanishes too. They turn the dial up by writing `fill_` on the forget slice of the bias, and compare RNN, GRU and LSTM, at four lengths and over three seeds. **Nothing is trained.** Week 12 is where a gated cell meets real text.
 
 ### 2. 🔢 The maths you need — taught to you first
 
@@ -214,6 +222,8 @@ Stop at: *"an LSTM keeps a second track and updates it by adding; the slope back
 ---
 
 ## 🧰 Prep Checklist
+
+Everything to do the night before and on the day, with the student's seven blocks, the teacher-only blocks and the fallbacks for when a laptop fails.
 
 ### 25 minutes the night before
 
@@ -716,6 +726,8 @@ half-way dial, exactly (teacher only): 0.5 ** (1 / 40) = 0.9828
 
 ## ⏱️ The Lesson, Minute by Minute
 
+The lesson plan, segment by segment, with what to say, ask and expect at each step.
+
 | Segment | Minutes | What happens |
 |---|:--:|---|
 | 🪝 Hook | 8 | The Forty-Person Telephone, again - but each person has a KEEP dial; find the dial that keeps half |
@@ -938,6 +950,8 @@ for kind in ["rnn", "gru", "lstm"]:
 
 ## 🎲 The Activity, In Full
 
+This section gives the full set-up, rules and answer grid for the Dial Grid, so you can run and check it.
+
 ### The Dial Grid
 
 **What it is:** a prediction grid and a measurement grid, filled one after the other on workbook page 11.4, plus the seed and dial table on page 11.5. It is the whole experiment in three printed tables.
@@ -988,6 +1002,8 @@ Fill in the letters for **the rnn row and the bias-2 row only** (the obvious one
 
 ## ❓ Questions Students Ask This Week
 
+Short answers to the questions this lesson usually raises, including the ones where the right answer is "we did not test that".
+
 **"Why four dials? Why not one?"** The GRU uses two; a simpler cell with one is possible. The LSTM's four were found to work well in the 1990s and 2000s, and the reasons are a design story, not something we tested today. Say that.
 
 **"Why 64 in `(64, 4)`?"** Four groups of 16: the input, forget, candidate and output scores, 16 of each because the memory has 16 numbers.
@@ -1016,6 +1032,8 @@ Fill in the letters for **the rnn row and the bias-2 row only** (the obvious one
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+The mistakes to expect, each with the question that gets the student to correct it.
+
 1. **The student writes "LSTMs fix vanishing gradients".** Ask: *"What did the `lstm` row of block 6 say at T = 40?"* (`2.05e-09`, tiny.) *"What did we change in block 7 to get `5.77e-02`?"*
 2. **The forget bias is "the trick that makes the LSTM learn".** Nothing was trained. The sentence is "the trick that opens the highway at the start".
 3. **The student calls `fill_` without `no_grad`.** Clinic 3. Expect it in the first ten minutes.
@@ -1029,6 +1047,8 @@ Fill in the letters for **the rnn row and the bias-2 row only** (the obvious one
 ---
 
 ## 🧭 Differentiation
+
+Adjustments for a student who is struggling, one who is flying, and one who will not engage today.
 
 ### If the student is struggling
 
@@ -1051,6 +1071,8 @@ Play the Telephone with a number they care about (a rumour, a video, a meme shar
 ---
 
 ## ✅ Assessing Understanding
+
+Oral checks for use during the activity, and a four-level scale for recording the result.
 
 Five questions, orally, during the activity. Not graded; they inform the mastery scale.
 
@@ -1089,6 +1111,8 @@ Estimated time: 60-70 minutes.
 ---
 
 ## 🔑 Answer Key
+
+The answers to the workbook pages, for checking the student's work. Keep this section away from the student.
 
 > **The workbook pages 11.1-11.6 follow this order.** Where an answer is a number it comes from `key.py` (block `K1`), blocks 1-7 of `week11.py`, or the grid above. All were run in the Prep Checklist.
 

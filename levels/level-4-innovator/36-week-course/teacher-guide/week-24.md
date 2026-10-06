@@ -29,6 +29,8 @@
 
 ## 🎯 Lesson Objectives
 
+This section lists what the student should be able to do by the end, and the evidence you can observe for each.
+
 By the end of the lesson the student can:
 
 1. **Compute the best possible score before training anything**: `(n + 1) / 6` for `n` = 0 to 6 examples (`0.167, 0.333, 0.500, 0.667, 0.833, 1.000, 1.000`), by the two-case argument, and say what a score **above** it means (noise at 500 prompts: a simulated perfect player scored `0.640` to `0.688` at `n = 3` against `0.667`; or a leak).
@@ -43,11 +45,17 @@ Observable evidence: `incontext_run.py` printing the ten-row table; the student'
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section is your background reading: what is real and what is a stand-in, the new constructs, the numbers to expect, and the limits. Read it before class.
+
 > **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist** was run, **as the file named at its top, from one working folder** (`python3 constructs.py`, then `cachekey.py`, and so on; `incontext_run.py` imports `icl.py`, `scratchpad_run.py` imports `addlib.py`, `jsonmask_run.py` imports `jsonlib.py` and `grammar.py`), on a CPU, one thread, with the seeds shown. The outputs printed below are the real printed outputs. The whole set was then **run a second time with every printed line identical** (training is deterministic on one machine: same seed, same numbers). Blocks in the **🐞 Debugging Clinic** are **deliberate mistakes**, each marked and each run on its own from the same folder; their tracebacks and odd numbers are real. **On another machine** the loss values and accuracies can differ in the last digit or two, and in a borderline seed the *story* can change (section 7, point 3 is exactly about that): every "this seed gave X" below is this machine, torch 2.2.1, Python 3.10.10. Numbers that come from a teacher-only file are labelled with the file. **Nothing in this guide is copied from a module or from the ledger**: Module 5's 59.4 to 90.6 % few-shot story needed a hosted model, is not reproducible offline, and is replaced by today's measurements.
 
 ### 1. What the student is doing today, in one paragraph
 
-Last week the student built a harness around a script and learned to distrust its own table. The script had been *written* to reward examples, so the table could never answer the question *"do examples help a model?"* Today the student answers it on a model they trained. They first play a card game that makes the best possible score obvious (a secret code, `n` pairs shown, one key asked), then **train a small transformer on thousands of random codes**, so that at test time it meets a prompt it has never seen (a fresh code, fresh shown pairs, a fresh key) and must read the answer off the prompt. They plot its accuracy against the hand-computed ceiling. Then they ask a second question with the same tool: can the model add two five-digit numbers if it answers at once, and if it writes its working first? Last, they take a third tiny model that turns `mia 14>` into `{"name":"mia","age":14,"adult":false}.`, let it sample freely, then force it through a **mask** written with `torch.where`, and compare what the mask fixes (every reply parses) with what it cannot (which name, which age). Nothing is scripted and nothing is downloaded. The week is a **lab**: every claim ends in a number the student's own file printed.
+Last week the student built a harness around a script and learned to distrust its own table. The script had been *written* to reward examples, so the table could never answer the question *"do examples help a model?"* Today the student answers it on a model they trained. They first play a card game that makes the best possible score obvious (a secret code, `n` pairs shown, one key asked), then **train a small transformer on thousands of random codes**, so that at test time it meets a prompt it has never seen (a fresh code, fresh shown pairs, a fresh key) and must read the answer off the prompt. They plot its accuracy against the hand-computed ceiling.
+
+Then they ask a second question with the same tool: can the model add two five-digit numbers if it answers at once, and if it writes its working first? Last, they take a third tiny model that turns `mia 14>` into `{"name":"mia","age":14,"adult":false}.`, let it sample freely, then force it through a **mask** written with `torch.where`, and compare what the mask fixes (every reply parses) with what it cannot (which name, which age).
+
+Nothing is scripted and nothing is downloaded. The week is a **lab**: every claim ends in a number the student's own file printed.
 
 ### 2. 🔢 The maths you need — none, but one habit of arithmetic
 
@@ -273,6 +281,8 @@ Stop at: *"A model can learn to use examples in its prompt, and the best it can 
 ---
 
 ## 🧰 Prep Checklist
+
+This section gets the working folder, the files and the materials ready, and lists what to do if the laptops misbehave. Every file below was run; the outputs are the real ones.
 
 ### 40 minutes the night before
 
@@ -1124,6 +1134,8 @@ so a rule on the reply alone catches 3 of 74 wrong replies; the other 71 look pe
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the plan for the whole lesson: a summary table, then each segment with what to say, ask and expect.
+
 | Segment | Minutes | What happens |
 |---|:--:|---|
 | 🪝 Hook | 5 | Last week's examples helped because we wrote them to. What would you need to find out if they *really* help? Predict the best possible score at 0, 1, 3, 6 shown pairs. |
@@ -1523,6 +1535,8 @@ The code ran correctly. The **conclusion** is the mistake: the same recipe, two 
 ---
 
 ## 🎲 The Activity, In Full
+
+This section gives the complete rules and expected scores for the card game played in the Concept segment.
 
 ### The Secret Code Game
 

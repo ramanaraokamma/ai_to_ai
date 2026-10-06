@@ -9,6 +9,8 @@
 
 ## 📋 At a Glance
 
+This table is the one-page summary of the week: what is taught, what is built, what to have ready and how long it takes.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes in class, then the workbook (~55 min: 25 of pen and paper, 30 at the computer) |
@@ -23,7 +25,14 @@
 | **Prep time** | 30 minutes the night before · 3 minutes on the day |
 | **Expected runtime of the code** | The **whole** guide (every Prep block, every Clinic block and every Key block, top to bottom, one session) ran in **about 1 second of wall time** (0.9 s measured), most of it importing scikit-learn and fitting the small classifier in Block P2 (**under 1 second**). **No block takes more than about a second, so nothing is over the 10-second mark and nothing needs a recorded time.** Anything over 1 minute means something is wrong (see Fallback). |
 
-> **⚠️ Watch out:** six things go wrong this week. **First, the student (and you) will read a number about the stand-in judge as a number about judges.** The judge's habit is `BIAS = 0.5`, typed into a file. The lesson is *how to find out*, not *how biased judges are*. Say "stand-in, not a model" every time the flip rate is on the board. **Second, one run of the bias test is one draw.** Thirty pairs give an estimate of `0.27` on seed 0 for a true `0.5`; over twenty seeds the estimates run from `0.27` to `0.70` (Block P9) and over two hundred the spread (SD) is `0.087` (Key K2). The student should leave knowing that a small test gives a wobbly answer, and that ten times the pairs cuts the wobble to about a third (SD `0.031`). **Third, the free rules baseline is not a clean baseline.** Eight of its 32 keys (`hiya`, `afternoon`, `send them back`, `postage`, `blank`, `closes`, `rendering`, `inbox`) occur in eval tickets and in **no** training ticket (Key K7), so the course author wrote the rules with the eval in view. `0.833` is therefore a generous score for "free rules", and on ten brand-new tickets the same rules score `5/10` (Key K5). Tell the student when it comes up (Page 30.1 d); do not hide it, and do not change the rules, because Week 31's numbers (`25/30`) stand on them. **Fourth, "flagged" is not "removed"; a scan with a threshold is a dial.** At `0.70` it finds two tickets; at `0.30` it removes seven, including a harmless one; at `0.95` it leaves the near-copy in. And it cannot see a paraphrase at all (Block P4: five paraphrases, highest Jaccard `0.200`, scan caught `0`, score `+2` tickets). **Fifth, kappa needs both cells.** A high raw agreement with `κ = 0` (Block P7) and a middling `κ` with all the disagreement in one direction (Mistake 7) are the two ways to misread it. **Sixth, the consistent-pairs verdict is only safe for THIS flaw.** It gives the rubric's answer exactly here because the only flaw is "sometimes says A"; a real judge may be consistently wrong (prefers the longer answer in both orders), and then no amount of swapping shows it. Say so.
+> **⚠️ Watch out:** six things go wrong this week.
+
+1. **First, the student (and you) will read a number about the stand-in judge as a number about judges.** The judge's habit is `BIAS = 0.5`, typed into a file. The lesson is *how to find out*, not *how biased judges are*. Say "stand-in, not a model" every time the flip rate is on the board.
+2. **Second, one run of the bias test is one draw.** Thirty pairs give an estimate of `0.27` on seed 0 for a true `0.5`; over twenty seeds the estimates run from `0.27` to `0.70` (Block P9) and over two hundred the spread (SD) is `0.087` (Key K2). The student should leave knowing that a small test gives a wobbly answer, and that ten times the pairs cuts the wobble to about a third (SD `0.031`).
+3. **Third, the free rules baseline is not a clean baseline.** Eight of its 32 keys (`hiya`, `afternoon`, `send them back`, `postage`, `blank`, `closes`, `rendering`, `inbox`) occur in eval tickets and in **no** training ticket (Key K7), so the course author wrote the rules with the eval in view. `0.833` is therefore a generous score for "free rules", and on ten brand-new tickets the same rules score `5/10` (Key K5). Tell the student when it comes up (Page 30.1 d); do not hide it, and do not change the rules, because Week 31's numbers (`25/30`) stand on them.
+4. **Fourth, "flagged" is not "removed"; a scan with a threshold is a dial.** At `0.70` it finds two tickets; at `0.30` it removes seven, including a harmless one; at `0.95` it leaves the near-copy in. And it cannot see a paraphrase at all (Block P4: five paraphrases, highest Jaccard `0.200`, scan caught `0`, score `+2` tickets).
+5. **Fifth, kappa needs both cells.** A high raw agreement with `κ = 0` (Block P7) and a middling `κ` with all the disagreement in one direction (Mistake 7) are the two ways to misread it.
+6. **Sixth, the consistent-pairs verdict is only safe for THIS flaw.** It gives the rubric's answer exactly here because the only flaw is "sometimes says A"; a real judge may be consistently wrong (prefers the longer answer in both orders), and then no amount of swapping shows it. Say so.
 
 ---
 
@@ -44,6 +53,8 @@ Observable evidence: the printed fingerprint and `True`, the three-line baseline
 ---
 
 ## 🧑‍🏫 What YOU Need to Know First
+
+This section is your own preparation: the maths, what is real and what is a stand-in, the new constructs, the numbers you will see and the misconceptions you will meet.
 
 > **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist**, in the **🐞 Debugging Clinic** and in the **🔑 Answer Key** was run, in document order, from one folder, in one Python session on a CPU; the outputs below are the real printed output. The eight **file blocks** (`evalset.py`, `traindata.py`, `dedup.py`, `scorer.py`, `compare.py`, `baselines.py`, `replies.py`, `mystery.py`) are saved as files first and imported by the blocks after them. The Clinic blocks that are *deliberate mistakes* are marked and their tracebacks are real (paths are shortened to `/home/you/l4/`, and Python's and scikit-learn's own files to `/usr/lib/python3.10/...`; the source line under each frame is the line that ran). **Nothing here depends on the clock or the network: every count repeated exactly on a second run**, because the stand-in judge draws from a seeded `random.Random`, the classifier has `random_state=0`, and the replies are built from fixed templates. Blocks marked **TEACHER-ONLY** use something the student does not type. **Clinic and Key blocks use names from the Prep blocks** (`EVAL`, `TRAIN`, `TRAIN_RAW`, `texts`, `score`, `r_rules`, `r_tfidf`, `r_raw`, `pairs`, `items`, `H`, `J`, `bias_test`, `judge_pair`, `v1_better`, …); **run the Prep blocks first, in one session, in order.**
 
@@ -170,6 +181,8 @@ Stop at: *"write the eval first and fingerprint it; beat the cheap baseline befo
 ---
 
 ## 🧰 Prep Checklist
+
+This section lists what to build and check before class, with the code blocks (the numbered P blocks and the eight files) you will run.
 
 ### 30 minutes the night before
 
@@ -888,6 +901,8 @@ The lesson is an argument, and the pages carry it on paper: the Jaccard of three
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This is the lesson plan: five segments, each with what to say, ask and show.
+
 | Segment | Minutes | Clock | What happens |
 |---|:--:|:--:|---|
 | 🪝 Hook — A Score With No Context | 6 | 0:00-0:06 | "The bot scores 90 percent." Three questions. The report card nobody can check. |
@@ -935,6 +950,8 @@ The student types; you narrate. Blocks go in **one file**, `eval_suite.py`, in t
 ---
 
 ## 🐞 The Debugging Clinic
+
+This section holds the deliberate mistakes you can plant, each with its real traceback or output, and how to run the conversation about it.
 
 ### How to teach debugging without giving the answer
 
@@ -1332,6 +1349,8 @@ Homework 3's bias sweep, then: *"Write a second mystery judge whose flaw is "pre
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions you are likely to hear, with an answer for each.
+
 **"Why is the trained model worse than the rules? I thought the trained one was supposed to be smart."** It has 64 tickets, and some of its eval tickets contain words it never saw (`hiya` is in no training ticket). The rules were written by someone looking at the eval. Both facts are in the table. The right move is to say so and not to tune it until it wins.
 
 **"Why is the rules' out_of_scope perfect?"** It is the default: whatever no key matches is called `out_of_scope`. A system that defaults to one label scores 100 percent on that label and pays for it elsewhere (the rules misread `nothing` as a greeting).
@@ -1360,6 +1379,8 @@ Homework 3's bias sweep, then: *"Write a second mystery judge whose flaw is "pre
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+Use this table when something stalls during class: find the symptom, then the cause and the response.
+
 | Symptom | What is happening | What to do |
 |---|---|---|
 | `AssertionError: the frozen eval set was edited` on `import evalset` | A ticket or label was mistyped, or the student pasted `FROZEN` before finishing the file | Compare with the guide; the fingerprint is over the text and the label; fix the ticket, not `FROZEN` |
@@ -1378,6 +1399,8 @@ Homework 3's bias sweep, then: *"Write a second mystery judge whose flaw is "pre
 ---
 
 ## 🧭 Differentiation
+
+This section says what to keep and what to cut for a student who is struggling and for one who is ahead.
 
 ### If the student is struggling
 
@@ -1422,6 +1445,8 @@ Ask these out loud near the end; do not rescue.
 ---
 
 ## 📤 Homework to Assign
+
+This section lists the homework and its time estimate.
 
 ~55 minutes, in the workbook, pages 30.1-30.3. The three tasks:
 
@@ -1675,7 +1700,6 @@ for label, k in seen_in_eval_only:
 **Read it:** eight of the 32 keys appear in an eval ticket and in **no** training ticket. Each of these eight is a word the eval contains and the training tickets do not: that is what you see when the rules were written looking at the eval. Nobody did this to cheat (the rules are a plain keyword list, and this is the course's first teaching of baselines), but it means `0.833` is optimistic for an unseen queue; K5 shows `0.500` on ten fresh tickets. **What to do with it:** say it once, plainly, when the student asks why the rules are so good; do not change `RULES`, because Week 31 compares against `25/30`; and use it as the live example of Mistake 12.
 
 
-
 ### Answers to every question posed in the lesson
 
 | Where | Question | Answer |
@@ -1707,5 +1731,7 @@ Two ledger defects named in the plan do not touch this week (`build_registry` an
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what the next week builds and how it reuses this week.
 
 **Week 31 — Fine-Tuning, LoRA, and the Regression** (🟩 lab). The student pretrains a tiny encoder once on a handed-out pile of template sentences, puts a five-label head on it, fine-tunes it on the **64 clean training tickets** two ways (every weight, or a **low-rank patch** beside frozen weights), and reads **this week's `score` and `compare`** on the **frozen eval**. The new maths is **low-rank** (a big grid as the product of two thin ones); the new syntax is `nn.Parameter`, `requires_grad_(False)`, `nn.init.zeros_` / `normal_` and `copy.deepcopy(model)`. **What from today carries over:** the five files (`evalset.py`, `traindata.py`, `dedup.py`, `scorer.py`, `compare.py`), the fingerprint, the scan (which will find no exact copy and 38 near-copies in the pretraining text), the rules baseline at `25/30`, and the habit of reading **a category that fell while the average rose**. **Prep for you:** before the lesson check that the student's folder still passes `python -c "import evalset"`; Week 31's first block prints the counts `30`, `66`, `64`, `2` and `14 14 14 14 8`, and nothing else in that week will make sense if they differ.

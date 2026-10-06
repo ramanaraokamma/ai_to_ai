@@ -23,7 +23,7 @@
 
 ## ✅ Warm-Up (5 min)
 
-Five quick questions about **last week** (scale, mask, heads).
+This warm-up revisits **last week** (scale, mask, heads) before new material. Answer all five from memory.
 
 **W1.** Why do we divide the attention scores by `sqrt(d_k)` before the softmax? Finish the sentence: *big dot products make the softmax ...* ________________________________
 
@@ -39,7 +39,7 @@ Five quick questions about **last week** (scale, mask, heads).
 
 ## 🙈 Page 16.1 — The Blind Reader (predict, then run)
 
-Attention builds each answer from *that word's own vector* and from *the set of all the vectors*. It never looks at the seating. Today you test that claim on a **new sentence pair** that is not in the chapter.
+This page tests, on a **new sentence pair** that is not in the chapter, whether attention is blind to order. Attention builds each answer from *that word's own vector* and from *the set of all the vectors*. It never looks at the seating.
 
 The words have these ids: `the` = 0, `cat` = 1, `chased` = 2, `mouse` = 3, `big` = 4.
 
@@ -59,7 +59,7 @@ perm = [3, 0, 4, 2, 1]         (a way to shuffle five words)
 
 One sentence: *why* do you expect line 1 to behave that way in the "words only" column? ________________________________________________
 
-Now type and run `check161.py`. It defines everything it uses, so nothing has to be imported from an earlier file.
+Type and run `check161.py`. It defines everything it uses, so nothing has to be imported from an earlier file.
 
 ```python
 # check161.py - Week 16 workbook page 16.1: is attention blind to order? A NEW sentence pair, with and without places.
@@ -117,7 +117,7 @@ identity shuffle, with places, True ? True
 
 The last two lines are **controls**. Say in a few words why each is `True` and why that is *not* a contradiction of the line above it: ________________________________________________
 
-**Careful what you claim.** Write which of these is fully supported by this page. Circle it.
+**Careful what you claim.** Circle the one of these that this page fully supports.
 
 - (a) *"A transformer cannot tell order without positions."*
 - (b) *"Attention with no mask and no positions cannot tell order, and here is the line that shows it."*
@@ -131,7 +131,9 @@ Why is the other one too big? (Hint: Week 15 added a mask.) ____________________
 
 ## 🃏 Page 16.2 — The Seat Swap (by hand; you are the attention)
 
-**Rules, as in class.** Three cards. Each card is its own query, key and value (`q = k = v = the number on the card`). The width is 1, so there is nothing to divide by.
+This page has you compute attention by hand on three cards, so you are the attention.
+
+**Rules, as in class.** Three cards. Each card is its own query, key and value (`q = k = v = the number on the card`). The width is 1, so there is nothing to divide by. For each seat:
 
 - score = (my card) x (their card)
 - weight = `e^score` / (the sum of the three `e^score` values)
@@ -141,7 +143,7 @@ Follow **only the card `2`**. In rounds 3 and 4 add the seat **stamp** (**0, 0.5
 
 **Worked example (done for you): the scores of round 1.** Cards `2, 1, 0`, card `2` at seat 1. Scores: `2 x 2 = 4`, `2 x 1 = 2`, `2 x 0 = 0`. So the scores are **4, 2, 0**.
 
-Fill in the rest. **Four decimals.**
+**Fill in the rest of the table, to four decimals.**
 
 | Round | Seating | Cards after stamping | Scores (card `2` times each) | `e^score` | Weights (add to 1) | Answer |
 |:--:|---|---|---|---|---|:--:|
@@ -175,7 +177,7 @@ New cards: **`1, 2, 0`** and **`0, 2, 1`**. This time follow **the card `1`**. S
 | P3 | `1, 2, 0` + stamps | ____ | ______________ | ______________ | ________ |
 | P4 | `0, 2, 1` + stamps | ____ | ______________ | ______________ | ________ |
 
-Check with the file below **after** you have written your answers.
+After you have written your answers, type and run the file below to check them.
 
 ```python
 # check162.py - Week 16 workbook page 16.2: the Seat Swap, on PRACTICE cards (1, 2, 0 - not the class cards).
@@ -229,7 +231,7 @@ A match is **within 0.001**. Any line that differs is a calculator slip: find wh
 
 ### Stretch: the mask leaks a little order (optional)
 
-The last two lines above follow the card `2` with **the mask on** (a seat may look only at itself and the seats to its left) and **no stamps**.
+The last two lines of the output above follow the card `2` with **the mask on** (a seat may look only at itself and the seats to its left) and **no stamps**.
 
 Compare them with your round 1 and round 2 answers. In the mask version, do the two seatings give the same answer? ____________ Why not? (Think about what seat 1 is allowed to see.) ________________________________________________
 
@@ -238,6 +240,8 @@ Write one careful sentence that uses the word **"a little"**: __________________
 ---
 
 ## 📍 Page 16.3 — Places and `torch.arange`
+
+This page is for the `torch.arange` call and the size of a position table.
 
 A position table has **one row per place**. `torch.arange(T)` makes the place numbers `0, 1, ..., T-1`, and the table turns each number into a row of `d` numbers, which is **added** to the word's row.
 
@@ -255,7 +259,7 @@ A position table has **one row per place**. `torch.arange(T)` makes the place nu
 | In `emb(ids) + pos_table(torch.arange(4))`, if `ids = [0, 1, 2, 0]`, are rows 0 and 3 equal? | ____________ |
 | the same, but **without** the position table | ____________ |
 
-Now type and run `check163.py`.
+Type and run `check163.py`.
 
 ```python
 # check163.py - Week 16 workbook page 16.3: places, torch.arange, and the size of a position table.
@@ -309,6 +313,8 @@ width of the big model table: 64 places x 128 = 8192
 
 ## 🔢 Page 16.4 — Count the Knobs of One Block
 
+This page counts the learnable numbers (knobs) in one block, first at the class width and then at a new one.
+
 A block has **six** parts, in this order: layer norm, attention, residual add, layer norm, MLP, residual add. The knobs are in the layers with weights. The `GELU` has none. The **mask is not a knob** (it is a buffer).
 
 ### Part A — the class width, `d = 8` (fill in before you run anything)
@@ -358,7 +364,7 @@ Do the two totals agree? ____________
 
 **A width that cannot have 3 heads.** At `d = 10`, `d // 3 = ____`, and `3 x (d // 3) = ____` , which is not ____ . So the heads would not fill the width. (You will see this as an error on page 16.7.)
 
-Now type and run `check164.py`.
+Type and run `check164.py`.
 
 ```python
 # check164.py - Week 16 workbook page 16.4: count the knobs of one block, on a PRACTICE width (d = 10).
@@ -447,6 +453,8 @@ Four classmates each made one slip at `d = 8`. For each wrong total, say what th
 
 ## 🧱 Page 16.5 — The Block, the Stack, and Where the Knobs Live
 
+This page is for the order of the parts in a block, how blocks stack, and where the knobs sit.
+
 ### The six parts in order
 
 Number them 1 to 6 in the order a word's vector meets them. Then write, in a few words, what each one is **for**.
@@ -495,7 +503,7 @@ Next week's model has **28 characters**, room for **64 places**, width `d = 128`
 | output `Linear(128, 28)` | 128 x 28 + 28 | ______ |
 | **whole model** | add the pieces that are there | ______ |
 
-Now type and run `check165.py` and compare.
+Type and run `check165.py`, then compare its output with your table.
 
 ```python
 # check165.py - Week 16 workbook page 16.5: the whole TinyGPT of Week 17, by arithmetic only, then one real block to check.
@@ -549,21 +557,23 @@ whole model     : 407324
 
 ## 🏗️ Page 16.6 — The Build: `my_shuffle.py`
 
+This page has you write `my_shuffle.py`, which runs the shuffle test on your own sentence.
+
 Write a file that runs the shuffle test on **your own sentence**, without places and with places. You may start from `check161.py`, but the sentence, the vocabulary and the shuffle must be yours.
 
 **Plan (fill in before you type).**
 
-Vocabulary (one id per different word; ids must start at 0): ________________________________________________
+- Vocabulary (one id per different word; ids must start at 0): ________________________________________________
 
-My sentence (six or more words, at least one word twice): ________________________________________________
+- My sentence (six or more words, at least one word twice): ________________________________________________
 
-Its ids: [ ______________________ ]  Largest id: ______  So the word table needs at least ______ rows.
+- Its ids: [ ______________________ ]  Largest id: ______  So the word table needs at least ______ rows.
 
-Number of words: ______ . The places I need are `0` to ______ , so the position table needs at least ______ rows. I will make it ______ rows.
+- Number of words: ______ . The places I need are `0` to ______ , so the position table needs at least ______ rows. I will make it ______ rows.
 
-My `perm` (the same length as the sentence; each place number once): [ ______________________ ]
+- My `perm` (the same length as the sentence; each place number once): [ ______________________ ]
 
-**Your file must print, with `torch.manual_seed(0)` at the top:**
+**Your file must print the following, with `torch.manual_seed(0)` at the top:**
 
 1. the number of words, the largest id, and the number of rows in each table,
 2. shuffle-then-attend equals attend-then-shuffle, **words only**,
@@ -593,7 +603,14 @@ Total: ______ / 6.
 
 ## 🐞 Page 16.7 — Break It on Purpose
 
-Every program below is **deliberately broken**. Do not fix it until you have done the "Predict" line. Then copy it, run it, read the **last line** (or the odd number), and fix it. Each program is self-contained. **Four of the nine are silent**: they run, and the only sign is a number you must check.
+This page is for practising how a broken program looks and how to fix it. Every program below is **deliberately broken**. **Four of the nine are silent**: they run, and the only sign is a number you must check. Each program is self-contained.
+
+For each program:
+
+1. Fill in the "Predict" line before you fix anything.
+2. Copy the program and run it.
+3. Read the **last line** (or the odd number).
+4. Fix it.
 
 **Program 1 (deliberate).**
 
@@ -792,6 +809,8 @@ Predict the second line: ________________________________ Is the mask in it? ___
 
 ## 📓 Page 16.8 — The Bug Log
 
+This page is your record of this week's errors, so that you can recognise them next time.
+
 Copy the **last line** of each error, not the whole traceback. Add a row for every real error you hit this week, not only the deliberate ones.
 
 | # | Date | What I typed (the line) | Last line of the error | What it means in plain words | Fix | Page I'll find this on again |
@@ -815,6 +834,8 @@ ________________________________________________________________
 ---
 
 ## 🧠 Self-Check (do this last, from memory)
+
+This section checks what you can say without the chapter or your notes. Answer in your own words.
 
 1. **Why can attention not tell "the cat chased the mouse" from "the mouse chased the cat"?**
 
@@ -856,7 +877,7 @@ ________________________________________________________________
 ---
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 *Numbers come from real runs: CPU, PyTorch 2.2.1, `torch.manual_seed(0)` wherever anything is random. The by-hand numbers are plain arithmetic and should match to four decimals (within 0.0001 of rounding). Random tables may differ on another build; the `True`/`False` lines, the shapes and the counts should not.*
 

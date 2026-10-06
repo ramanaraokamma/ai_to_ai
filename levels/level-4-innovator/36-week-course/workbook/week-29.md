@@ -23,6 +23,8 @@
 
 ## ✅ Warm-Up (5 min, before anything else, from memory)
 
+These four questions recall last chapter's ideas. Answer from memory, without notes.
+
 1. A note that arrives inside a search result: is it data or an order? Who wrote it? ____________________
 2. Name the three layers of defence, in order, and say which one does **not** depend on the model being persuaded. ______________________________________________
 3. A stop reason of `end_turn`. Does it tell you whether the attack worked? What do you check instead? ____________________________________________________________
@@ -37,6 +39,8 @@
 ---
 
 ## 🎲 Page 29.1 — Three Layers on Paper, Then Measured (homework · 20 min · pen first)
+
+This page has you work out the three layers of defence by hand, then run the same table on the computer.
 
 A planted note orders the stand-in to write a file outside its folder. It obeys with probability
 
@@ -132,6 +136,8 @@ MY_B: markers found ['note to assistant'] | obeyed 27 | landed 0
 
 ## 🔎 Page 29.2 — Read the Trace (homework · 15 min)
 
+This page has you read two saved traces line by line, then count events from a file.
+
 A trace is one JSON object per line, one line per event. Below are two real runs of the stand-in, gullibility 1.0, layers 1 and 2 ON, the human saying yes. **They differ only in the seed and in the sandbox.** (`seq` is the event's number; event 1, the `start`, is left off.)
 
 ```python
@@ -211,6 +217,8 @@ obeyed: ['write_file'] | file landed: True
 
 ## 💰 Page 29.3 — Pay the Bill (homework · 25 min · pen first, then run)
 
+This page has you price a task by hand with the triangular sum, then compare your sums with the kit.
+
 Price: 1.00 per million tokens in, 5.00 per million out. A task calls the calculator `k` times, then answers (that is `k + 1` model turns). The first turn is **223** tokens in. Each step adds about **32** tokens to what is re-sent. Each tool turn says **10** tokens out; the closing answer says **2**.
 
 **(a) The triangular sum.** Pair the ends of `1 + 2 + 3 + 4 + 5 + 6`: `1 + 6 = ___`, `2 + 5 = ___`, `3 + 4 = ___`, so ___ pairs of ___ = ______. Check with `k(k+1)/2` for `k = 6`: ______. Now `1 + 2 + ... + 15` = ______ (use the formula).
@@ -229,7 +237,7 @@ Price: 1.00 per million tokens in, 5.00 per million out. A task calls the calcul
 
 **(h) In one sentence:** why do three 5-step tasks cost less than one 15-step task? ____________________________________________________________
 
-**Computer, part 1: check your hand sums.** The hand sums use growth `32`; the kit's growth is `32.5` (the steps alternate `32` and `33`), so expect a difference of a few tokens.
+**Computer, part 1: check your hand sums.** Run the block below and compare its `hand` columns with your (b) and (c). The hand sums use growth `32`; the kit's growth is `32.5` (the steps alternate `32` and `33`), so expect a difference of a few tokens.
 
 ```python
 # bill_two_more.py - Page 29.3 Part 2: check your hand sums. The hand sums use 223 and 32; the kit's growth is 32.5 (steps alternate 32 and 33).
@@ -295,6 +303,8 @@ largest k predicted to fit $0.02: 13 | run with budget_usd=0.02: stop=budget_exh
 
 ## 🐞 Page 29.4 — Break It on Purpose (three bugs · 15 min, in class or at home)
 
+This page gives you three blocks that are wrong on purpose, for you to predict, run and repair.
+
 Each block below is **DELIBERATELY wrong**. Predict, run, then write what it meant and the fix.
 
 ### 29.4-A (SILENT) — one seed for every run
@@ -351,6 +361,8 @@ rows = [json.loads(line) for line in open("pretty.jsonl")]
 
 ## 📓 Page 29.5 — The Bug Log
 
+This page is where you record what went wrong this week and how you would catch it next time.
+
 Add **at least two** entries, one of them SILENT. Then copy this sentence in your own handwriting on the last line of the page:
 
 > **"A prompt can lower how often it happens; only a limit in code says it cannot happen. I check for the file, not for the stop reason, and a long task is dearer than it looks because the history is re-sent every turn."**
@@ -365,6 +377,8 @@ Add **at least two** entries, one of them SILENT. Then copy this sentence in you
 
 ## 🧠 Self-Check (from memory, no notes)
 
+These nine questions test the week from memory.
+
 1. What makes a tool result "data, not an order"? ____________________________________________________________
 2. Framing lowers a rate by a factor; the scan lowers it by another. Who chose those factors? ____________________________________________________________
 3. "The scan flagged it, so it was stopped." What is wrong with this sentence? ____________________________________________________________
@@ -377,7 +391,9 @@ Add **at least two** entries, one of them SILENT. Then copy this sentence in you
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
+
+Check your work here only after every page above is finished. Each page's answers follow in the same order.
 
 ### Warm-Up
 

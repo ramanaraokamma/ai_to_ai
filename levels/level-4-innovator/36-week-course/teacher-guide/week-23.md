@@ -43,6 +43,8 @@ Observable evidence: `bench.py` printing `constants tried: 30` and `43.8%`; the 
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section is your background reading before class: what the student does today, what is real and what is a stand-in, and what the numbers will say.
+
 > **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist** was run, **as the files named at its top, one after another from one working folder** (`python3 constructs.py`, then `bench.py`, and so on; `versions.py`, `key.py` and `preflight.py` import the files before them), on a CPU, with the seeds shown. The outputs printed below are the real printed outputs, and **the whole set was run twice with every printed line identical**. Blocks in the **🐞 Debugging Clinic** are **deliberate mistakes**, each marked, each run on its own from the same folder, and their tracebacks and odd numbers are real. Different CPU, Python or PyTorch: nothing here depends on torch, and every number comes from plain Python and a seeded hash (`hashlib.sha256`), so **every number should reproduce exactly on any machine**; only the *paths* in a traceback and the wording of a Python error can differ between Python versions (the author used Python 3.10.10). **Numbers that come from the module or the ground-truth ledger rather than from a block run for this guide are labelled "ledger" or "module"**; the rest were printed by the blocks here.
 
 ### 1. What the student is doing today, in one paragraph
@@ -180,6 +182,8 @@ Stop at: *"A prompt loop is a test suite. Freeze the cases first, compute the fl
 ---
 
 ## 🧰 Prep Checklist
+
+This section is for preparing the folder and the files the lesson uses, and for checking each printed output against your own run.
 
 ### 35 minutes the night before
 
@@ -806,6 +810,8 @@ preflight ok
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the running order of the lesson, segment by segment.
+
 | Segment | Minutes | What happens |
 |---|:--:|---|
 | 🪝 Hook | 6 | Last week's judge loved formatting and nobody looked. How would you have known? Predict the score of a rock. |
@@ -1138,6 +1144,8 @@ The code ran correctly. The **conclusion** is the mistake: the same prompt, the 
 
 ## 🎲 The Activity, In Full
 
+This section gives the full script for the Floor Race, so you can run it without the rest of the guide open.
+
 ### The Floor Race
 
 **Purpose.** Three facts leave the room in the student's own hand: *my labels disagree with the gold on urgency*; *a rock scores 43.8%*; *a guard stops one call late.*
@@ -1187,6 +1195,8 @@ Round 1 as a **pair**: two students label blind; count where **they** disagree w
 
 ## ❓ Questions Students Ask This Week
 
+This section gives short answers to the questions this week tends to prompt.
+
 **"Is the stand-in a real AI?"** No. It is a short script. `fakellm.py` is about 360 lines, most of them comments, and you can read every rule. It is called a stand-in because it stands in for a model so that we can test the harness. Nothing it scores tells you how a real model behaves.
 
 **"Why does the stand-in reply with 'Sure! Here is the extracted record'?"** Because its script does that when the prompt has no rules and no schema word. It is there so we have something messy to parse. Whether real models do it: not measured here.
@@ -1227,6 +1237,8 @@ Round 1 as a **pair**: two students label blind; count where **they** disagree w
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the usual failure points and what to do about each.
+
 1. **The student thinks the stand-in is smart.** The remedy is the one line of `p_correct` on the projector, and asking them to predict the table from it.
 2. **The student treats `93.8%` as "almost perfect".** It is the ceiling. Ask what the two misses are.
 3. **The student skips the floor.** They go straight to the table. Put the floor on the board **before** the table and refer to it in every row.
@@ -1241,6 +1253,8 @@ Round 1 as a **pair**: two students label blind; count where **they** disagree w
 ---
 
 ## 🧭 Differentiation
+
+This section covers how to adjust the lesson for a student who is struggling and for one who is moving fast.
 
 ### If the student is struggling
 

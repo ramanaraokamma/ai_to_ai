@@ -12,6 +12,8 @@
 
 ## 📋 At a Glance
 
+This table is the one-page summary of the lesson: what is taught, what is stand-in, and how long everything takes.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes in class, then the workbook (~60 min: 25 of pen and paper, 35 at the computer) |
@@ -49,6 +51,8 @@ Observable evidence: the printed `landed / 50` table, the `within 1 wobble` line
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+Read this before you prepare anything. It gives you the maths, the stand-in boundaries, the numbers and the misconceptions you will meet.
+
 > **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist**, in the **🐞 Debugging Clinic** and in the **🔑 Answer Key** was run, in that order, from one scratch folder, in **one Python session**. Everything random is **seeded** (the stand-in's coin is `random.Random(seed)`, seeds are written in the code), so every number repeats exactly on every machine; a second complete run repeated every number except the printed seconds. numpy 1.26.4, Python 3.10.10. The outputs below are the real printed output. The Clinic blocks that are *deliberate mistakes* are marked, and their tracebacks are real (paths are shortened to `/home/you/l4/`; the source line under each frame is the line that ran; wording of library errors can differ by Python version — on 3.11 and later `D5` says `'method'` where 3.10 says `'function'`). The Clinic and Key blocks continue the session of the Prep blocks, so they use names the Prep blocks defined (`run_attack`, `rate`, `ATTACKS`, `redact`, `redact_pii`, `sweep`, `line`, `happy`, `count_landed`, `gull`, `attack`, `world`, `heads`, `chunks`, `LAB`, `BOX`, `DAY`). **Blocks marked TEACHER-ONLY** use something the student has not met (`os.utime`, `shutil.rmtree`, `str.replace`) or are timed for you, and say so in their first comment. The code is Level 4's `l4lib` kit imported, never copied.
 
 ### 1. What the student is doing today, in one paragraph
@@ -61,7 +65,11 @@ Week 29 ended with "the strict sandbox held, however many times the stand-in was
 
 **(a) A count of weighted coin flips.** Each run of A1 is a flip: the stand-in obeys the planted note with chance `p` and ignores it otherwise. Run it `n` times and count the obeys. The **expected count** is `n p`. For `n = 20`, `p = 0.3`: `6`. *You will almost never see exactly 6.*
 
-**(b) The wobble.** How far from `n p` is a typical count? About `sqrt(n p (1 - p))`. For `n = 20`, `p = 0.3`: `n p (1-p) = 20 x 0.3 x 0.7 = 4.2`, root `2.05`. So "between 4 and 8" is ordinary. Measured on 200 batches of 20 (P5): counts ran from `1` to `13`; measured wobble `2.03`; `82%` of batches were within one wobble of 6 and `97%` within two. **Do not say "68-95-99.7", do not say "normal distribution", do not say "standard error" or "confidence interval."** Say: *"about four in five land within one wobble, nearly all within two."* Three facts to know before you are asked. (i) *It is biggest at `p = 0.5` and zero at `p = 0` and `p = 1`* (P2's last row): a deterministic attack (A3 `50/50`, A4 `0/50`) has nothing to wobble. (ii) *The wobble of the **count** grows like `sqrt(n)`, but the wobble of the **share** `count / n` shrinks like `1 / sqrt(n)`*: `0.102` at `n = 20`, `0.065` at `50`, `0.032` at `200`. To halve your uncertainty you need **four times** the runs. (iii) *We can only compute it from `p`, and we do not know `p`*: for a real result, plug in the measured share `p-hat = count / n`. That plug-in **fails at 0 and 1** (Clinic D3).
+**(b) The wobble.** How far from `n p` is a typical count? About `sqrt(n p (1 - p))`. For `n = 20`, `p = 0.3`: `n p (1-p) = 20 x 0.3 x 0.7 = 4.2`, root `2.05`. So "between 4 and 8" is ordinary. Measured on 200 batches of 20 (P5): counts ran from `1` to `13`; measured wobble `2.03`; `82%` of batches were within one wobble of 6 and `97%` within two. **Do not say "68-95-99.7", do not say "normal distribution", do not say "standard error" or "confidence interval."** Say: *"about four in five land within one wobble, nearly all within two."* Know three facts before you are asked.
+
+- *It is biggest at `p = 0.5` and zero at `p = 0` and `p = 1`* (P2's last row): a deterministic attack (A3 `50/50`, A4 `0/50`) has nothing to wobble.
+- *The wobble of the **count** grows like `sqrt(n)`, but the wobble of the **share** `count / n` shrinks like `1 / sqrt(n)`*: `0.102` at `n = 20`, `0.065` at `50`, `0.032` at `200`. To halve your uncertainty you need **four times** the runs.
+- *We can only compute it from `p`, and we do not know `p`*: for a real result, plug in the measured share `p-hat = count / n`. That plug-in **fails at 0 and 1** (Clinic D3).
 
 **(c) Comparing two counts.** Two systems, counts `a` and `b`, each with its own wobble `s_a` and `s_b`. Week 15's rule: independent spreads add **in squares**. So the gap `|a - b|` wobbles by about `sqrt(s_a^2 + s_b^2)`, and a gap bigger than **twice** that is "more than noise" (P7, P13). For `15 → 0` of 50 the bound is `6.5`: the gap `15` clears it. For `7` vs `9` of 20 the bound is `6.2`: the gap `2` does not (Clinic D1). *Two conditions:* the two systems must be run on **different seeds** (P7 uses seeds `0 …` and `100000 …`); with the same seeds the two counts move together and the bound is the wrong size (not taught; see section 6). And "more than noise" is **not** "important" or "fixed."
 
@@ -122,6 +130,8 @@ Week 29 ended with "the strict sandbox held, however many times the stand-in was
 
 ### 6. The honest limits of today
 
+These are the boundaries of what the lesson can claim. Know them so you do not overstate a result.
+
 - **Known coin, stand-in agent.** We can check the maths against the truth because we typed the truth. That is a lesson tool and a trap; see the Watch out.
 - **The bias probe is not in this week.** Module 9's name-swap probe needs a *model* to be biased; the only honest offline version would be a small classifier, which this week has no time to build or explain. It moves to the **optional workbook extension of Week 36** (the system card has a "known failure modes" heading it fits). The README's risk table allows moving PII and retention instead; we kept those because they carry this week's two new constructs. **If a student asks about bias:** *"Changing a name in a question and seeing whether the answer changes is a test you can run on any system; I have not built one here."*
 - **A5 is skipped.** It is in the table as skipped so that nobody reads five attacks and thinks five were run.
@@ -135,6 +145,8 @@ Week 29 ended with "the strict sandbox held, however many times the stand-in was
 - **Nothing today measures a real injection,** a real jailbreak, or a real user. The one word "jailbreak" is said once, for the difference: a jailbreak argues with the model; an injection hides an order in data; the lesson is about the second.
 
 ### 7. The misconceptions you will actually see, and where
+
+Use this table to spot a misconception when it appears and to pick the response.
 
 | Misconception | Where it appears | What to do |
 |---|---|---|
@@ -161,7 +173,10 @@ Stop at: *"attack, evidence, mechanism, fix, re-test twice, residual; a count wo
 Week 28 built the agent and its six fences. Week 29 planted one note and measured which layer stopped it, 100 seeded runs each. Week 32 ended with "ten results is noisy, no error bars". Today the agent gets **five attacks instead of one**, every result gets a **noise bound**, and the two halves of Module 9 that are about *keeping data* (PII, logs, retention) are added. Week 34 freezes 25 eval cases and writes a design doc; Week 35 runs **one attack per category A1-A5 against the capstone system** and logs *one fixed and one accepted risk*: this week's red-team log line (attack, evidence, mechanism, fix, before, after, happy path, residual) is the exact format Week 35 asks for, and this week's noise bound is why Week 36's system card may say "n = 25" next to every number.
 
 ---
+
 ## 🧰 Prep Checklist
+
+This section gets you ready: the blocks to run the night before, then a short check on the day and a fallback if the laptops fail.
 
 ### 30 minutes the night before
 
@@ -675,6 +690,8 @@ Open a terminal in the scratch folder. Run P1 and P4 only: the table must read `
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This is the running order of the lesson, then each segment in detail.
+
 | Time | Segment | What happens |
 |---|---|---|
 | 0:00-0:04 | 🪝 Hook | "7 of 20 before, 9 of 20 after: did my change make it worse?" A vote. |
@@ -691,13 +708,17 @@ Say: *"I attack my agent 20 times and it works 7 times. I change one line and at
 
 ### 🧠 Teach — A finding, and a wobble (12 minutes)
 
-Three sentences for the whiteboard, written as a list with six headings under them:
+Write these three sentences on the whiteboard, with the six parts of a finding listed under them:
 
 - *"A red-team finding has six parts: **attack**, **evidence**, **mechanism**, **fix**, **re-test** — twice, the attack and the happy path — and **residual risk**."*
 - *"A result is a count, and a count wobbles. The wobble is `sqrt(n p (1-p))`."*
 - *"The agent we attack is a stand-in, not a model: the obey rate is a number I typed. The mechanism is real; the rate is not evidence."*
 
-Then **Page 33.1 with a pencil (6 minutes):** `n = 20`, `p = 0.3`: expected count `20 x 0.3 = 6`; `n p (1-p) = 20 x 0.3 x 0.7 = 4.2`; root `2.05`. Ask: *"Is 9 ordinary?"* (Yes: 6 + 1.5 wobbles.) *"Is 3?"* (Yes.) *"So is the Hook's 7 to 9 a difference?"* (No.) Run P2 (table) and then hand out **P5 (📌)** and run it: *the same system, 200 times, 20 runs each.* Read `first ten batches` aloud: the counts the student would have reported if they had happened to run that batch. Ask them to read the measured wobble against the formula's: `2.03` vs `2.05`. The two sentences to leave on the board: **"a count wobbles"** and **"quadruple the runs, halve the wobble of the share."** Do not derive the formula.
+Then run the segment in three steps.
+
+1. **Page 33.1 with a pencil (6 minutes):** `n = 20`, `p = 0.3`: expected count `20 x 0.3 = 6`; `n p (1-p) = 20 x 0.3 x 0.7 = 4.2`; root `2.05`. Ask: *"Is 9 ordinary?"* (Yes: 6 + 1.5 wobbles.) *"Is 3?"* (Yes.) *"So is the Hook's 7 to 9 a difference?"* (No.)
+2. **Run P2 (table), then hand out P5 (📌) and run it:** *the same system, 200 times, 20 runs each.* Read `first ten batches` aloud: the counts the student would have reported if they had happened to run that batch.
+3. **Compare the measured wobble with the formula's:** `2.03` vs `2.05`. Leave two sentences on the board: **"a count wobbles"** and **"quadruple the runs, halve the wobble of the share."** Do not derive the formula.
 
 ### 🎲 Their Turn 1 — The attacks, as data (10 minutes)
 
@@ -730,6 +751,8 @@ Each student fills one **red-team log entry** (attack, evidence, mechanism, fix,
 ---
 
 ## 🐞 The Debugging Clinic
+
+These deliberate mistakes are the ones students make this week. Each block is marked as deliberate, and each is either loud (an error) or silent (a plausible-looking number).
 
 ### How to teach debugging without giving the answer
 
@@ -881,6 +904,8 @@ In A3b the phone number was typed by the user. Tool-output redaction cannot help
 
 ## 🎲 The Activity, In Full
 
+This section gives the paper activity for the Wrap and the workbook, with variations for a short slot, a slower student and a faster one.
+
 ### The Red-Team Card (12 minutes, pen and paper, used in the Wrap and again for Pages 33.2 and 33.3)
 
 Print one card per student, a table with eight rows and two columns: **Attack** (what the note orders), **Evidence** (what the trace shows), **Mechanism** (why no fence fired), **Fix** (the one line), **Before** (count / n), **After** (count / n), **Happy path** (the real task, count / n), **Residual** (what is still true). The student fills **A1** from the runs, then **A2** and **A3**. Then one more column in pen: **Gap vs noise bound** (`line(...)` output).
@@ -906,6 +931,8 @@ Add a **sixth** attack: a note that orders a write to the *same* file the user t
 
 ## ❓ Questions Students Ask This Week
 
+Short answers to the questions you are most likely to be asked.
+
 - **"Is the agent real?"** The loop and the fences are real engineering. The "model" is a scripted stand-in; its obey rate is a number I typed.
 - **"Why is the obey rate exactly 0.30?"** `gullibility 1.0` times `0.6` (the result is framed) times `0.5` (the scan flagged it). Three numbers the author chose. A real system would have a rate nobody could write down.
 - **"Why not just run it 10,000 times?"** You can, when a run costs a fraction of a millisecond. A real model run costs money and seconds; the bound tells you how many you can afford to need.
@@ -921,6 +948,8 @@ Add a **sixth** attack: a note that orders a write to the *same* file the user t
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+The failures to watch for while teaching, each with its remedy.
+
 1. **The student reports a fraction without `n`.** "It worked 30%." Ask: of how many? Make them say `15 of 50`.
 2. **Two attacks are counted as two findings** when they share a coin (D2).
 3. **The patch passes the attack and fails the happy path** (the BAD row), or passes the attack and fails its twin (D8). The hand-over of row 4 is the defence; do it.
@@ -934,6 +963,8 @@ Add a **sixth** attack: a note that orders a write to the *same* file the user t
 ---
 
 ## 🧭 Differentiation
+
+How to adjust the lesson for a student who is struggling, flying or disengaged.
 
 ### If the student is struggling
 
@@ -954,6 +985,8 @@ Give them the P6 table on paper and one question: *"which row would you ship, an
 ---
 
 ## ✅ Assessing Understanding
+
+How to mark the four sentences and read what a wrong answer tells you.
 
 ### The marking rules
 
@@ -989,6 +1022,8 @@ Mark against the four sentences on Page 33.3; each is worth one.
 
 ## 📤 Homework to Assign
 
+The homework tasks, with their answers, for the workbook pages.
+
 ~60 minutes, in the workbook, pages 33.1-33.3. The four tasks:
 
 1. **Another window (page 33.1).** For `n = 50`, `p = 0.1` and `n = 200`, `p = 0.5`, compute the expected count, the wobble, and the window (expected ± 2 wobbles) by hand. Then check with `K1`. (Answers: `5.0, 2.12`, window `0.8 … 9.2`; and `100.0, 7.07`, window `85.9 … 114.1`.) Finish with one sentence: *why the share is less wobbly when `n` is bigger.*
@@ -1001,6 +1036,8 @@ Extension for the fast student: the sixth attack (same file, other content), 50 
 ---
 
 ## 🔑 Answer Key
+
+The answers to every page and question in the lesson, with the code that produced each one.
 
 ### K0 — the data, in one line
 

@@ -38,6 +38,8 @@
 
 ## 🎲 Page 30.1 — Overlap, and a Second Set (homework · 20 min · pen first)
 
+This page practises word-set overlap by hand, then applies the free rules to a second set of tickets.
+
 A ticket becomes a **set** of words: lower case, letters and digits only, each word once (`"don't"` becomes `don` and `t`). `Jaccard = (words in both) / (words in either)`.
 
 **Part 1 (pen, no computer).** Fill in the counts and the fraction for each pair.
@@ -148,6 +150,8 @@ highest Jaccard of any second-set ticket against the frozen eval: 0.25
 ---
 
 ## 📏 Page 30.2 — Kappa by Hand on a Fresh Twenty (homework · 25 min · pen first)
+
+This page works kappa by hand on a fresh set of twenty ratings, then checks it with the library.
 
 Two programs rate the **old bot's** replies to tickets **11 to 30** (this week's class sheet used tickets 1 to 20). Rater **H** passes a reply only if its rubric score is **3**. Rater **J** passes it if the score is **2 or 3**. Here are the real rubric scores:
 
@@ -260,6 +264,8 @@ library kappa: 0.0
 
 ## 🔁 Page 30.3 — Flips and a Weak Habit (homework · 25 min · pen first)
 
+This page reads the sealed judge's two letters per pair and turns them into winners and a flip count.
+
 **Part 1 (pen, no computer).** The sealed judge is asked each question **twice**. Column A: v1 shown first. Column B: v2 shown first. The judge answers `A` (the reply shown first) or `B` (the reply shown second). This is the real output of the stand-in judge, seed 0, pairs **21 to 30** (this week's class sheet used pairs 11 to 20).
 
 | Pair | Ticket | A: said | B: said | Winner in A | Winner in B | Same? |
@@ -280,7 +286,7 @@ library kappa: 0.0
 (c) How many of the 20 answers are `A`? ______ A judge with no habit says `A` about ______ times in 20.
 (d) If you had run only column A, how many of the ten would say v1 wins? ______ If only column B, how many would say v1 wins? ______
 
-Check your table with this (it prints the letters first, then the winners and the rubric):
+Run this block to check your table (it prints the letters first, then the winners and the rubric):
 
 ```python
 # sheet_21_30.py - Page 30.3 Part 1: the sealed judge, seed 0, pairs 21-30. It prints the two letters, then the winners behind them.
@@ -481,6 +487,8 @@ print(len(A & B) / len(A | B))
 
 ## 📓 Page 30.5 — The Bug Log
 
+This page records what went wrong this week so you can catch it sooner next time.
+
 Add **at least two** entries, one of them SILENT. Then copy this sentence in your own handwriting on the last line of the page:
 
 > **"The eval was written first and fingerprinted, the free rules beat my model, my scan cannot see a paraphrase, kappa takes luck out of agreement, and the pairwise judge changes its mind when I swap the order, so I do not trust a single-order verdict. The judge is a stand-in, so its habit says nothing about a real model."**
@@ -495,6 +503,8 @@ Add **at least two** entries, one of them SILENT. Then copy this sentence in you
 
 ## 🧠 Self-Check (from memory, no notes)
 
+These nine questions check the week's ideas without the chapter open.
+
 1. What does a fingerprint of the eval set do when a ticket is edited? What does it not do? ____________________________________________________________
 2. Why is a trained model compared with the free rules and not only with the floor? ____________________________________________________________
 3. The scan removed two tickets and missed five paraphrases. Why can word overlap not see a paraphrase? ____________________________________________________________
@@ -507,7 +517,7 @@ Add **at least two** entries, one of them SILENT. Then copy this sentence in you
 
 ---
 
-# ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 ### Warm-Up
 

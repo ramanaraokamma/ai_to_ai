@@ -30,6 +30,8 @@
 
 ## 🎯 Lesson Objectives
 
+This section lists what the student should be able to do at the end, and the evidence you can collect.
+
 By the end of the lesson the student can:
 
 1. **Say what pretraining is**: the Week 17 loss (`-ln` of the probability of the true next character, averaged), at a scale where the data and the budget are the hard parts. One sentence, no new formula.
@@ -46,11 +48,17 @@ Observable evidence: `sweep.csv` written; `fit.py` printing a slope near -0.126 
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+Read this before class. It covers the maths, what is real and what is not, the new code constructs, and the measured facts behind the lesson.
+
 > **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist** is a *whole file* and every one was run, from one folder next to `l4lib/`, on a CPU with one thread, with Python 3.10.10, torch 2.2.1, numpy 1.26.4 and matplotlib 3.7.1. Blocks in the **🐞 Debugging Clinic** are *deliberate mistakes* and each is marked; their tracebacks and odd numbers are real. **Everything is seeded** (`torch.manual_seed(seed)` inside `train_one`; the validation windows are fixed, not random), and the losses were identical on a repeat run (the sweep was run three times and `check.py` three times; the five losses matched to all printed digits each time). **Only the `(N s)` timings and the `flops.py` rates change from run to run and machine to machine.** The ledger (the course author's reference run of Module 4) did not run a scaling experiment, so **there is no ledger number for today to compare with**; every figure below was measured for this guide. The module's one scaling-related passage (the `6ND` budget for a 7-billion-knob model) is arithmetic, not a measurement, and is checked in section 6.
 
 ### 1. What the student is doing today, in one paragraph
 
-The student opens with a guess: *if I give a model 10 times as many knobs, how much lower is its loss?* Then they run the experiment the honest way. Four TinyGPTs, the Week 17 one with only its width changed (16, 32, 64, 128; two blocks, two heads, nothing else different), are trained for exactly the same 1,500 steps on the same 3,072,000 characters of Python's own source, and each is scored on the same validation windows. The four losses go on a card and the student draws a line through them with a ruler, on log-log axes, then does the same with `np.polyfit`. The line is the week's model: `loss = 7.74 x knobs^-0.126`. **Before anything else runs, the student writes down what the line says for a width-256 model, 1.7 million knobs.** Then `check.py` trains it: 1.466, where the line said 1.265. The rest of the hour is about what that means and the two engineering halves of pretraining: the **budget** (`C = 6ND`, timed on their own laptop) and the **data** (fingerprint the lines; how many are exact repeats; how many validation lines also sit in the training text). **Nothing is scripted, nothing is pretrained, and nothing comes from the internet.**
+The student opens with a guess: *if I give a model 10 times as many knobs, how much lower is its loss?* Then they run the experiment the honest way. Four TinyGPTs, the Week 17 one with only its width changed (16, 32, 64, 128; two blocks, two heads, nothing else different), are trained for exactly the same 1,500 steps on the same 3,072,000 characters of Python's own source, and each is scored on the same validation windows. The four losses go on a card and the student draws a line through them with a ruler, on log-log axes, then does the same with `np.polyfit`. The line is the week's model: `loss = 7.74 x knobs^-0.126`. **Before anything else runs, the student writes down what the line says for a width-256 model, 1.7 million knobs.**
+
+Then `check.py` trains it: 1.466, where the line said 1.265.
+
+The rest of the hour is about what that means and the two engineering halves of pretraining: the **budget** (`C = 6ND`, timed on their own laptop) and the **data** (fingerprint the lines; how many are exact repeats; how many validation lines also sit in the training text). **Nothing is scripted, nothing is pretrained, and nothing comes from the internet.**
 
 ### 2. 🔢 The maths you need — taught to you first
 
@@ -1012,6 +1020,8 @@ width 256  knobs 1704149  3000 steps  validation loss 1.3387  (174 s)
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the running order for the lesson, with what to say and ask at each step.
+
 | Segment | Minutes | What happens |
 |---|:--:|---|
 | 🪝 Hook | 8 | A guess: ten times the knobs, what happens to the loss? The pool is 14 times bigger; type `sweep.py` and **start it** |
@@ -1262,6 +1272,8 @@ width 128: predicted 0.00258 s   measured 36.6 s   ratio 14,181
 
 ## 🎲 The Activity, In Full
 
+This section gives the two cards, how to run each part, and what finished work looks like.
+
 ### Draw the Line, then Fingerprint
 
 **What it is:** two short tasks. The first makes a log-log line something the student draws with a ruler and commits to in ink. The second makes "exact duplicate" something they do by eye and then test.
@@ -1332,6 +1344,8 @@ Ask the student to **predict** the miss before `check.py`, as a sentence: *"high
 
 ## ❓ Questions Students Ask This Week
 
+Use these short answers when a student asks; each stays within what the week measured.
+
 **"Why `log10`, and not just plot it?"** Because a power law bends on ordinary axes and is straight on log axes, and a ruler can only extend a straight line.
 
 **"Is the slope the percentage the loss drops?"** No. It is an exponent: 10 times the knobs multiplies the loss by `10 ** slope = 0.748`. Per doubling that is 0.916, about 8.4% off.
@@ -1362,6 +1376,8 @@ Ask the student to **predict** the miss before `check.py`, as a sentence: *"high
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the common slips and how to respond to each.
+
 1. **The student changes the prediction after seeing the result.** Point at the ink. The miss *is* the result.
 2. **"The line was wrong, so scaling laws are wrong."** Repeat the limits: four points, tiny models, one text, one rate.
 3. **The slope is read as a percentage.** Make them compute `10 ** slope`.
@@ -1378,6 +1394,8 @@ Ask the student to **predict** the miss before `check.py`, as a sentence: *"high
 ---
 
 ## 🧭 Differentiation
+
+This section adjusts the lesson for a student who is struggling, flying, or disengaged.
 
 ### If the student is struggling
 
@@ -1400,7 +1418,9 @@ Start from the guess. Write the three letters on the board and ask for one. Then
 
 ## ✅ Assessing Understanding
 
-Five questions, orally, during the activity. Not graded; they inform the mastery scale.
+This section gives five oral checks and a mastery scale.
+
+Ask the five questions orally during the activity. They are not graded; they inform the mastery scale.
 
 1. **"What does a straight line on log-log paper tell you about the thing you plotted?"** *Pass:* that it follows a power law: multiplying the horizontal quantity by a fixed number multiplies the vertical one by a fixed number; the slope is the exponent.
 2. **"Your slope is -0.126. What happens to the loss if the knobs are multiplied by 10?"** *Pass:* multiplied by `10 ** -0.126`, about 0.75. (Not "it drops 12.6%".)
@@ -1421,6 +1441,8 @@ Five questions, orally, during the activity. Not graded; they inform the mastery
 
 ## 📤 Homework to Assign
 
+This section lists the workbook pages to set and the rule for the numbers in the write-up.
+
 The workbook has six pages (21.1-21.6). The student does them in order, and writes **predictions before running anything**.
 
 1. **21.1 The straight-line trick** — `y = 100 / x` and `y = 1 / x^2` at three values of `x` each, their logs, the slope of each line, and one sentence on what the slope means.
@@ -1435,6 +1457,8 @@ The workbook has six pages (21.1-21.6). The student does them in order, and writ
 ---
 
 ## 🔑 Answer Key
+
+This section holds the answers for the workbook pages, with the script that produced each number.
 
 > **The workbook pages 21.1-21.6 follow this order.** Where an answer is a number it comes from `fit.py`, `check.py`, `flops.py`, `dedup.py`, `card.py`, `key.py`, `key_seeds.py`, `key_lr.py` or `key_steps.py`, all run from the Prep Checklist. **A student's own run gives the same losses, knob counts and duplicate counts** (same Python version); only the seconds and the FLOP/s differ. (If the workbook author has reordered the pages, match by title.)
 
@@ -1578,6 +1602,8 @@ Use these as a prompt for conversation, not a certainty.
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what next week covers and what from today it relies on.
 
 **Week 22 — After Pretraining: SFT, Reward Model, DPO** (🟦 teach). A pretrained model is a good continuer of text and a poor assistant. The student fine-tunes on prompt-and-answer pairs but masks the prompt from the loss, teaches a 5-feature reward model from preferences and finds a hacked feature, and runs DPO at two values of `beta`. New syntax (teacher-only until taught): `F.logsigmoid`, `F.log_softmax`, `torch.gather`, `.detach()`. New maths: **KL divergence**, "how far did the leash let you move". It is the same loss family as today, applied after pretraining.
 

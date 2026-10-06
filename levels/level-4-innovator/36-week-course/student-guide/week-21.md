@@ -114,6 +114,8 @@ Everything else in today's files you have already met: `zip`, list comprehension
 
 ### 5. A fingerprint, in one look
 
+Run this to see the fingerprints of three lines of text.
+
 ```python
 # hash_demo.py - Week 21: the first look at a fingerprint. Same text, same 32 characters. One letter changed, all different.
 import hashlib
@@ -133,6 +135,8 @@ The first two lines are identical, so their fingerprints are identical. The thir
 ---
 
 ## 🏗️ Build It
+
+This section is for running the experiment in order: read the given files, train the four models, draw your line by hand, fit it by computer, and train the fifth model to compare.
 
 ### 6. `textpool.py` and `trainer.py` (given, you do not type them)
 
@@ -213,6 +217,8 @@ def knob_count(d, blocks=2):
 ```
 
 ### 7. How much text does one run read?
+
+Type and run `pool_facts.py` to count the pool and the characters one run reads.
 
 ```python
 # pool_facts.py - Week 21: how big is the pool, and how much of it will one training run actually read?
@@ -434,17 +440,27 @@ Fill box 7 of your card. The model scored **1.4656** and the line said **1.2654*
 
 ## 🔬 What the miss does and does not show
 
+This section is for separating what the author tested about the miss from what nobody tested.
+
 The course author ran three extra checks that you do **not** run, each against the same five widths. They are reported here so you know which explanations have been ruled out. (The author's runs are real; they simply take 8 to 11 minutes each.)
 
 - **Is it luck?** Three seeds. The miss was **+15.8%, +15.5% and +17.4%**. It is not luck. But the width-32 model moved by 0.051 in loss between seeds, which is about 2.5% of its value, so your "+3.1%" at width 32 is **the size of seed noise**: the line fits the four points *to within the noise*, and no better.
 - **Is it only the learning rate?** Four rates (1e-3, 2e-3, 3e-3, 5e-3) for widths 128 and 256. The best width-256 loss was **1.4564**, still far above the prediction of 1.2654. So it is **not only the learning rate**. A footnote on tuning: the best rate was *not* the same for both widths, so using one rate for every width, as you did, is a limitation.
 - **Is it that the biggest model is starved of text?** Twice the characters (3,000 steps) lowered every model's loss (by 0.12 to 0.23, the two biggest models gaining least), and the width-256 miss was **+17.3%**, the same as before. Twice the text did not close the gap. The test that would settle it needs about 34 million characters per run, and the pool has 4.2 million for training. **So that explanation is not supported by a doubling, and it was not tested properly.**
 
-**The honest sentence is:** *"The line was true of these four models and not of the fifth. It is not luck, not only the learning rate, and not fixed by twice the text. I have not shown the cause."* Two things this does **not** let you say: *"scaling laws are wrong"* (we did not test any published law, which are fitted on runs millions of times larger with settings that were tuned) and *"bigger is not better"* (we trained five small models, one depth, one text, one learning rate, one seed per point, 1,500 steps). What it **does** show is how a line through few points behaves when you push it, and that **the budget has two numbers, knobs and data, not one**.
+**The honest sentence is:**
+
+> *"The line was true of these four models and not of the fifth. It is not luck, not only the learning rate, and not fixed by twice the text. I have not shown the cause."*
+
+Two things this does **not** let you say: *"scaling laws are wrong"* (we did not test any published law, which are fitted on runs millions of times larger with settings that were tuned) and *"bigger is not better"* (we trained five small models, one depth, one text, one learning rate, one seed per point, 1,500 steps).
+
+What it **does** show is how a line through few points behaves when you push it, and that **the budget has two numbers, knobs and data, not one**.
 
 ---
 
 ## 🎲 Your Turn
+
+Three tasks that use the tools from this week: a pencil-and-paper card on fingerprints, a timing of your own computer against the operations rule, and a duplicate detector run over the whole text pool.
 
 ### The Fingerprint card (about 4 minutes, pencil and paper, no computer)
 
@@ -465,7 +481,7 @@ Eight lines of text. Line 1 is:   the baker opened her door
    C. Which lines would a human call "the same thing" but md5 never will?            ______
 ```
 
-Fill A, B and C **before** you run anything. Then type `card.py` and check yourself.
+Fill A, B and C **before** you run anything. Then type and run `card.py` to check yourself.
 
 ```python
 # card.py - Week 21: the Fingerprint card. Which of these eight lines does md5 call 'the same as line 1'?

@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table is the one-page summary of the week: timing, new ideas, materials and what is and is not real.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes in class, then the workbook (~60 min, almost all of it pen and calculator; the computer is used for about 10 minutes of checking) |
@@ -44,11 +46,17 @@ Observable evidence: a filled **Pen Pass** sheet whose weight rows each add to 1
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section gives you the background to teach the week without surprises: the maths, the three new constructs, what the numbers will print, and what not to claim.
+
 > **📌 About the code blocks in this guide.** Every block in the **🧰 Prep Checklist**, in the **🐞 Debugging Clinic** and in the **🔑 Answer Key** was run on a CPU with one thread and the seeds shown; the outputs below are the real printed output. The Prep files `attention.py`, `twotables.py`, `anyweights.py` and `hw.py` are typed one after another **into the same file** (`attention.py`), so that later parts can use the names made by earlier parts, and they were run that way, top to bottom, in one namespace. `lookup.py` and `key.py` stand alone. The Clinic blocks that are *deliberate mistakes* are marked and their tracebacks are real. **Nothing printed below depends on timing. Every number repeated exactly on a second run.** The one line that can differ on another CPU or PyTorch build is `numpy vs torch, biggest gap` (about `4e-08`; anything below `1e-05` is fine). The tables of three decimals do not depend on your laptop.
 
-### 1. What the student is doing today, in one paragraph
+### 1. What the student is doing today, in brief
 
-Last week the model gave a *score for every letter* and the student used `F.softmax` to turn the scores into chances. Today the same softmax has a different job: deciding **how much each word should count**. They start with no code: three "experts" (bread, river, rope) hold three numbers; the question matches them with scores `0.1, 2.0, 0.3`; the student turns the scores into weights and takes the weighted average of what the experts know (`42.77`), and sees that a *hard* lookup would have returned only `50`. Then they take one pass of attention through three words with a pen: make a question, a key and a value for each word, score every question against every key (nine dot products), softmax each row, and blend the values. Only then do they type it: the same pass in numpy, line for line, then in torch with `nn.Linear(2, 2, bias=False)`, and they check that the three answers (pen, numpy, torch) agree. The last ten minutes ask one question — *why does every word get a question **and** a key?* — and answer it by changing one table and watching the scores stop being symmetric.
+Last week the model gave a *score for every letter* and the student used `F.softmax` to turn the scores into chances. Today the same softmax has a different job: deciding **how much each word should count**. They start with no code: three "experts" (bread, river, rope) hold three numbers; the question matches them with scores `0.1, 2.0, 0.3`; the student turns the scores into weights and takes the weighted average of what the experts know (`42.77`), and sees that a *hard* lookup would have returned only `50`.
+
+Then they take one pass of attention through three words with a pen: make a question, a key and a value for each word, score every question against every key (nine dot products), softmax each row, and blend the values.
+
+Only then do they type it: the same pass in numpy, line for line, then in torch with `nn.Linear(2, 2, bias=False)`, and they check that the three answers (pen, numpy, torch) agree. The last ten minutes ask one question — *why does every word get a question **and** a key?* — and answer it by changing one table and watching the scores stop being symmetric.
 
 ### 2. 🔢 The maths you need — taught to you first
 
@@ -144,7 +152,13 @@ print(lin.weight.shape, lin.bias)        # the table has shape (2, 2); there is 
 torch.Size([2, 2]) None
 ```
 
-Read as: *"a layer that multiplies by a `d`-by-`d` table, and adds nothing."* The student has built `nn.Linear` layers before (Level 3 and this term) and knows a layer multiplies and then adds a **bias**. `bias=False` leaves out the adding, which is exactly what `X @ Wq` on paper does. Three things to know. **(i)** It keeps the table in `lin.weight`. **(ii)** It stores it the other way round (it computes `x @ W.T`), so to make a layer that does `x @ table` on paper you give it the **transpose** of `table`; `linear_from` in `attention.py` does this with `.transpose(0, 1)`, and Mistake 4 is what happens if you do not. The class example's tables are their own transposes (identity and swap), which is why that mistake is invisible there; Mistake 4 uses a table that is not. **(iii)** Leaving `bias=False` out means a hidden random bias is added to every output (Mistake 9). The assignment `lin.weight.data = torch.tensor(...)` is Week 8's `rnn.weight_ih_l0.data = ...`.
+Read as: *"a layer that multiplies by a `d`-by-`d` table, and adds nothing."* The student has built `nn.Linear` layers before (Level 3 and this term) and knows a layer multiplies and then adds a **bias**. `bias=False` leaves out the adding, which is exactly what `X @ Wq` on paper does. Three things to know:
+
+1. It keeps the table in `lin.weight`.
+2. It stores the table the other way round (it computes `x @ W.T`), so to make a layer that does `x @ table` on paper you give it the **transpose** of `table`. `linear_from` in `attention.py` does this with `.transpose(0, 1)`, and Mistake 4 is what happens if you do not. The class example's tables are their own transposes (identity and swap), which is why that mistake is invisible there; Mistake 4 uses a table that is not.
+3. Leaving `bias=False` out means a hidden random bias is added to every output (Mistake 9).
+
+The assignment `lin.weight.data = torch.tensor(...)` is Week 8's `rnn.weight_ih_l0.data = ...`.
 
 **(c) `tensor.unsqueeze(dim)` — add a length-1 axis.**
 
@@ -227,6 +241,8 @@ Stop at: *"every word asks a question of every word; the answers are shared out 
 ---
 
 ## 🧰 Prep Checklist
+
+This checklist gets you from an empty folder to tested files, a printed sheet and a plan for what to do if the laptops fail.
 
 ### 25 minutes the night before
 
@@ -557,6 +573,8 @@ output =
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the running order of the lesson, with the words to say at each step.
+
 | Segment | Minutes | What happens |
 |---|:--:|---|
 | 🪝 Hook | 6 | "Who knows about the river?" Three experts, one hard answer, one soft answer: 50 against 42.77 |
@@ -636,6 +654,8 @@ Type `twotables.py` at the bottom of `attention.py`. Before running: *"In our ex
 ---
 
 ## 🐞 The Debugging Clinic
+
+This section lists nine mistakes to plant on purpose, each with its real output and the question that gets the student to read it.
 
 Every error below was produced by running the code. **Paths will differ on your machine**; here they are shown as `/home/you/l4/`. Each mistake is deliberate: you plant it, the student reads the traceback (or the surprising output) aloud, and you refuse to fix it until they have said what it means. **Six are silent**: the program runs and prints something wrong. Those are the dangerous ones, and they are marked.
 
@@ -878,6 +898,8 @@ the bias it added: [-0.272  0.19 ]
 
 ## 🎲 The Activity, In Full
 
+This section holds everything for the Pen Pass: the printable sheet, the rules, the reveal and two variations.
+
 ### The Pen Pass
 
 **Purpose.** To make the student *be* the attention layer for one pass, so that the numpy and torch lines they type later are something they have already done. Materials: the sheet (below), a pen, a calculator, your key.
@@ -953,6 +975,8 @@ Swap the question table for `[[0, 0], [1, 0]]` on a second sheet (the homework H
 
 ## ❓ Questions Students Ask This Week
 
+This section gives short answers to the questions you are likely to be asked.
+
 **"Why three tables?"** The question says what a word is looking for, the key says what it offers, and the value says what it contributes. A word can look for one thing and offer another. Two tables make the scores able to be different in the two directions (the Two Tables step); the third decides what actually gets averaged, and the weights never depend on it.
 
 **"Where do the tables come from?"** Today we chose them. In a real model they are learned by the same gradient-and-nudge loop as everything since Week 1; that is Week 17.
@@ -983,6 +1007,8 @@ Swap the question table for `[[0, 0], [1, 0]]` on a second sheet (the homework H
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+Use this table to match a symptom to its cause and a next move.
+
 | Symptom | What is happening | What to do |
 |---|---|---|
 | The pen answer is off by `0.001` | Weights rounded to three places before blending; row sum 0.999 | Ask the student to add their weights; carry four places |
@@ -999,6 +1025,8 @@ Swap the question table for `[[0, 0], [1, 0]]` on a second sheet (the homework H
 
 ## 🧭 Differentiation
 
+This section says how to adjust the lesson for a student who is struggling, moving fast or not engaging.
+
 ### If the student is struggling
 
 Stay with the river: hard lookup, soft lookup, weights, blend. Skip the matrix form. The minimum viable lesson: they can compute `[0.7, 0.2, 0.1]` on `[10, 50, 30]` (20), they can get from scores `0.1, 2.0, 0.3` to the weights and the blend (42.77), they have run `attention.py` Part 1 and can point to which line is "score", "share", "blend", and they say *"every word asks every word, and the answers are averaged by weights that add to 1."* Do the Pen Pass with the completed Steps 1 and 2 and only the row `sat`. Skip `unsqueeze` (show the shapes printed) and skip Two Tables.
@@ -1014,6 +1042,8 @@ Run the Hook with the cards and no screen. Three index cards and a calculator ne
 ---
 
 ## ✅ Assessing Understanding
+
+This section gives the questions to ask near the end and how to read the answers.
 
 Ask these out loud near the end; do not rescue.
 
@@ -1042,6 +1072,8 @@ Ask these out loud near the end; do not rescue.
 
 ## 📤 Homework to Assign
 
+This section lists the three workbook tasks and the time they take.
+
 ~60 minutes, in the workbook, pages 14.1-14.5. The three tasks:
 
 1. **Weighted averages (page 14.2).** For values `10, 50, 30`, compute the weighted average for weights `[0.5, 0.25, 0.25]` (25.0), `[0, 1, 0]` (50.0) and `[0.7, 0.2, 0.2]`; say which is **not** a weighted average and why (the weights add to 1.1), and fix it (divide each weight by 1.1, or by the total: `20.909`). The key is `key.py`'s H1 block.
@@ -1051,6 +1083,8 @@ Ask these out loud near the end; do not rescue.
 ---
 
 ## 🔑 Answer Key
+
+This section is teacher-only: every answer for the workbook, the full `key.py`, and the answers to the questions posed in the lesson.
 
 Every number below comes from `key.py` (teacher-only) or from the files above.
 
@@ -1234,5 +1268,7 @@ Wv doubled, output: [[1.155, 1.689], [1.689, 1.155], [1.576, 1.576]]
 ---
 
 ## 🔮 Next Week Preview
+
+This section tells you what the next week builds on, so you can set it up in the wrap-up.
 
 **Week 15 — Scale, Mask, and Many Heads.** Today's scores were small whole numbers. Next week they get big, and the student will *see* the softmax collapse onto one word, measure how fast the raw dot product grows with the width `d` (a sum of `d` independent terms has a spread that grows like `√d`, the one new maths idea, measured, not proved), and fix it with one division: the `÷ √2` that the reference module quietly used. Then the mask: the student will hide the future with `masked_fill(..., float("-inf"))` and `torch.tril`, and show by experiment why the mask is applied **before** the softmax, and what happens if it is `0` instead. Then many heads, with `.view(B, T, H, dh).transpose(1, 2)`. **Bring Week 14's `attention.py` and the Pen Pass sheet.** By the end of Week 15 the student should be able to redo today's pass with the divide and the mask and land on the reference module's numbers (`0.6698, 0.3302` for `cat`).

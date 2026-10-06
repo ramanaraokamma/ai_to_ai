@@ -24,7 +24,11 @@
 | **Prep time** | 25 minutes the night before · 3 minutes on the day |
 | **Expected runtime of the code** | `bpe.py` 0.02 s · `trace.py` 0.03 s · `test_bpe.py` 0.1 s · `text_merges.py` 0.5 s · `compare.py` 0.2 s · `cost.py` 0.2 s · teacher-only `key.py` 0.9 s · **`grow.py` about 22-25 s in all** (the last of its seven trainings, 323,880 characters, takes **11-15 s in `bpe.py` and 0.2 s in `tokenizers`**; this is the only thing in the week over 10 s). If anything else takes over 5 s, something is wrong. |
 
-> **⚠️ Watch out:** three things go wrong this week. **First, a round trip proves almost nothing about compression.** Three of the six clinic bugs below keep every round-trip test green (counting each word once, applying merges in the wrong order, splitting the text into one-character chunks); the tokenizer still writes the text back exactly, and is simply worse, or does nothing at all. The round trip tests *correctness*; the token count and the diff against `tokenizers` test *quality*. A student who says "it passes all 13 tests, so it is right" has checked half. **Second, "bytes per token" is a property of a tokenizer and a text together, not of either alone.** 2.16 is for a tokenizer trained on and measured on the same 6,972 characters; the same 300 merges give 1.00 on Devanagari; a tokenizer trained on Python source gives 1.47 on the stories and the one trained on the stories gives 1.27 on Python. **Third, the match with the library is by construction.** `tokenizers` gives identical tokens only after we tell it to cut the text into the same chunks as our regular expression; with its own default cutting it gives 2,111 tokens where ours gives 3,227. Neither is wrong. They are two tokenizers, and only the diff on *equal settings* tells you that your code does what the library does.
+> **⚠️ Watch out:** three things go wrong this week.
+
+1. **A round trip proves almost nothing about compression.** Three of the six clinic bugs below keep every round-trip test green (counting each word once, applying merges in the wrong order, splitting the text into one-character chunks). The tokenizer still writes the text back exactly, and is simply worse, or does nothing at all. The round trip tests *correctness*; the token count and the diff against `tokenizers` test *quality*. A student who says "it passes all 13 tests, so it is right" has checked half.
+2. **"Bytes per token" is a property of a tokenizer and a text together, not of either alone.** 2.16 is for a tokenizer trained on and measured on the same 6,972 characters; the same 300 merges give 1.00 on Devanagari. A tokenizer trained on Python source gives 1.47 on the stories, and the one trained on the stories gives 1.27 on Python.
+3. **The match with the library is by construction.** `tokenizers` gives identical tokens only after we tell it to cut the text into the same chunks as our regular expression. With its own default cutting it gives 2,111 tokens where ours gives 3,227. Neither is wrong: they are two tokenizers, and only the diff on *equal settings* tells you that your code does what the library does.
 
 ---
 
@@ -192,9 +196,11 @@ Stop at: *"start from bytes; glue the commonest pair; repeat; the list of merges
 
 ## 🧰 Prep Checklist
 
+This section gets the folder, the files and the fallbacks ready before class.
+
 ### 25 minutes the night before
 
-- [ ] **Confirm the stack.** Run from the folder that contains `l4lib/`:
+- [ ] **Confirm the stack.** Run these two commands from the folder that contains `l4lib/`:
 
 ```bash
 python3 -c "import tokenizers, matplotlib; print(tokenizers.__version__, matplotlib.__version__)"
@@ -702,6 +708,8 @@ vocab 556 x width 128 = 71168  against 28 x 128 = 3584
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the lesson plan, segment by segment, with the words to say and the answers to expect.
+
 | Segment | Minutes | What happens |
 |---|:--:|---|
 | 🪝 Hook | 8 | Three ways to cut one sentence; why each fails; the word *byte* |
@@ -1010,6 +1018,8 @@ Ask the student to **predict** the token count when the chunk rule becomes ` ?\S
 
 ## ❓ Questions Students Ask This Week
 
+This section gives short, measured answers to the questions this lesson tends to raise.
+
 **"Why bytes and not letters?"** Because a letter is not one size. `h` is one byte, a pizza is four, a Devanagari letter is three. If we start from bytes, every text in every script can be written; there is no "unknown". The 256 bytes are the whole starting alphabet.
 
 **"Why 256 + merges?"** The first 256 numbers are the bytes. Each merge adds one piece, numbered from 256. 300 merges: numbers 256 to 555; vocabulary 556.
@@ -1036,6 +1046,8 @@ Ask the student to **predict** the token count when the chunk rule becomes ` ?\S
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the traps to watch for during class, each with the quick response.
+
 1. **The student writes "it passes all the tests, so it works".** Ask for the token count.
 2. **The tie-break is left out.** The output is then correct for round trips and may differ from the library, and from a neighbour, by one merge. Have them write the rule down before they code it.
 3. **The student counts pairs across a space.** With no chunks (`CHUNK` missing), merges like `e t` appear. Ask what `the ` + `cat` could become.
@@ -1050,6 +1062,8 @@ Ask the student to **predict** the token count when the chunk rule becomes ` ?\S
 ---
 
 ## 🧭 Differentiation
+
+This section adjusts the lesson for a student who is struggling, flying or disengaged.
 
 ### If the student is struggling
 
@@ -1238,6 +1252,8 @@ Use these as a prompt for conversation, not a certainty.
 ---
 
 ## 🔮 Next Week Preview
+
+This section says where next week picks up from today.
 
 **Week 21 — Pretraining and the Scaling Arithmetic** (🟦 teach). Pretraining is the same next-token loss as Week 17, at a scale where the data pipeline and the compute budget matter. The student trains four model widths, fits loss against parameters on a log-log plot, extrapolates one point and checks it, and estimates `C = 6ND` for their own model. New syntax (teacher-only until taught): `np.polyfit`, `np.log10`, `hashlib.md5`. New maths: the **log-log straight line**. The tokens of this week are the `D` of next week: *how many tokens did the model see?*
 

@@ -80,7 +80,7 @@ A tool that fails is not a crash. It is a message the model gets to read, and to
 
 ## 1. The four new pieces of syntax
 
-Each on a toy small enough to read. Type this first.
+This section introduces the four pieces of syntax the rest of the chapter uses, each on a toy small enough to read. Read the four definitions, then type the block that follows them.
 
 **`isinstance(value, type)`** asks "is this value of this type?". `isinstance(3, int)` is `True` and `isinstance("3", int)` is `False`. **One trap:** in Python a `bool` *is* a kind of `int`, so `isinstance(True, int)` is `True` too. You will meet this again in the argument check.
 
@@ -118,7 +118,7 @@ Read it line by line. Line 1: the trap, `True` counts as an `int`. Line 2: the t
 
 ## 2. Load the notes and the tool contracts
 
-Your first lines are Week 26's load (three lines), then the contracts the kit ships. `toyagent.tool_specs()` returns the list the model would be shown.
+This section sets up the notes and prints the tool contracts the kit ships, so later blocks have something to check against. The first lines are Week 26's load (three lines); `toyagent.tool_specs()` then returns the list the model would be shown.
 
 ```python
 # tools_and_loop.py - Week 28. Part 1: the load, then the tool contracts the kit ships.
@@ -150,7 +150,7 @@ If `ModuleNotFoundError: No module named 'l4lib'` appears, you are in the wrong 
 
 ## 3. See the tree
 
-Before writing a calculator, look at what `ast.parse` makes of three pieces of text. **Predict the third before you run it.** It is an attack, so what kind of thing must it contain?
+This section shows what `ast.parse` makes of three pieces of text, before you write a calculator on top of it. Type the block below and **predict the third line before you run it.** It is an attack, so what kind of thing must it contain?
 
 ```python
 # tree.py - what ast.parse makes of text. Nothing is run; the text is only turned into a tree.
@@ -319,7 +319,9 @@ Look at the fifth line. Python says a `bool` is an `int`. Our contract says "int
 
 ## 7. The timeout: stop waiting, not stop working
 
-A tool that never returns would freeze the whole loop. So the tool runs in another thread, and the loop waits for it for a limited time. On Python 3.10 the exception for "too slow" is `concurrent.futures.TimeoutError` and *not* the built-in `TimeoutError`, so the block imports it with a new name, `TooSlow`.
+This section limits how long the loop waits for a tool. A tool that never returns would freeze the whole loop, so the tool runs in another thread and the loop waits for it for a limited time.
+
+On Python 3.10 the exception for "too slow" is `concurrent.futures.TimeoutError` and *not* the built-in `TimeoutError`, so the block imports it with a new name, `TooSlow`.
 
 The slow tool is `toyagent.FlakyBackend(fn, latency=1.0)`: a wrapper that **sleeps** one second before calling `fn`. **That is a simulated delay**, not a real slow service.
 
@@ -353,7 +355,7 @@ With patience the answer arrives after a second. Without it the call gives up af
 
 ## 8. The six fences, with no model
 
-This is the centre of the week. You build a **registry** (the table of tools your code will run) with three entries, then send **eight scripted requests** through the kit's loop, `toyagent.run_agent`. Each request meets one fence. The "model" is a script that never reads a word, so a fence that stops a request is a fence that works **with the model unplugged**.
+This section is the centre of the week: it fires every fence from plain Python. You build a **registry** (the table of tools your code will run) with three entries, then send **eight scripted requests** through the kit's loop, `toyagent.run_agent`. Each request meets one fence. The "model" is a script that never reads a word, so a fence that stops a request is a fence that works **with the model unplugged**.
 
 - `once(name, args)` is a two-step plan: make that one call, then say `ok`.
 - `forever` is a plan that calls the calculator 50 times.
@@ -417,7 +419,7 @@ How to read it:
 
 ## 9. The worked run: five turns and a bill
 
-Now one real task through the same loop: *look up what one extraction call costs in the notes, work out 250 calls, and save a one-line summary.* The scripted plan is `toyagent.worked_plan()`: **search, calculate, write (to a folder that does not exist), write (flat), answer.** The failed write at turn 3 is in the plan **on purpose**, so that the trace shows an error being read and recovered from. **The recovery is the plan's, not a model's.** A real model might fix the path, or might repeat the mistake until a fence stops it. We cannot measure that here, and that is exactly why the fences exist.
+This section runs one full task through the same loop and reads its trace and its bill. The task:  *look up what one extraction call costs in the notes, work out 250 calls, and save a one-line summary.* The scripted plan is `toyagent.worked_plan()`: **search, calculate, write (to a folder that does not exist), write (flat), answer.** The failed write at turn 3 is in the plan **on purpose**, so that the trace shows an error being read and recovered from. **The recovery is the plan's, not a model's.** A real model might fix the path, or might repeat the mistake until a fence stops it. We cannot measure that here, and that is exactly why the fences exist.
 
 `toyagent.build_registry(box2, index, titles)` is the kit's three-tool registry (with `write_file` flagged for confirmation). `approve` is a function that prints the request and says yes, so the run needs no typing. In your own experiments you can leave `confirm` out: the kit's default asks you to type `y` or `n`, and end-of-input counts as "no".
 
@@ -492,7 +494,11 @@ The big first step, `168`, is mostly turn 1's search result arriving (two notes 
 
 **The bill, by hand.** The price is 1.00 per million tokens in and 5.00 per million out. Turn 1: `247 × 1.00 + 28 × 5.00 = 247 + 140 = 387` millionths of a dollar, which is `$0.000387`, the number in the trace. For the whole run, add the five "in" numbers and the five "out" numbers and price them; you should land on the printed `spend`. You do that sum yourself on workbook page 28.3.
 
-If every step added about the same number of tokens `g`, the inputs would be `b, b + g, b + 2g, …`, and the growth part of the total would be `g × (1 + 2 + … + (n − 1))`. That grows like `n²/2`: **doubling the number of steps roughly quadruples the bill for the history** (the workbook measures 3.8 times for 10 steps against 20). Real steps are not all the same size (`168, 33, 71, 47` here), so this is a *shape*, not a prediction. Tokens here are the kit's own count and the dollars are illustrative; the shape survives a real tokenizer, the values do not. (Real APIs with prompt caching bill the re-sent history at a lower rate, so the dollar curve is flatter than n², though the token count still grows this way.)
+If every step added about the same number of tokens `g`, the inputs would be `b, b + g, b + 2g, …`, and the growth part of the total would be `g × (1 + 2 + … + (n − 1))`. That grows like `n²/2`: **doubling the number of steps roughly quadruples the bill for the history** (the workbook measures 3.8 times for 10 steps against 20).
+
+Real steps are not all the same size (`168, 33, 71, 47` here), so this is a *shape*, not a prediction. Tokens here are the kit's own count and the dollars are illustrative; the shape survives a real tokenizer, the values do not.
+
+(Real APIs with prompt caching bill the re-sent history at a lower rate, so the dollar curve is flatter than n², though the token count still grows this way.)
 
 ![Five bars of input tokens per turn, 247 rising to 566, beside the measured total of 2195 against 1235 if turn 1 were re-used](../figures/fig-w28-2-input-grows-every-turn.svg)
 *Figure 28.2 — The history is sent again every turn, so a long task costs more than it looks (a scripted plan, not a model).*

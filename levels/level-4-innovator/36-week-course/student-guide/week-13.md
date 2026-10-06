@@ -46,6 +46,8 @@ A few words to keep in mind:
 
 ## 🧠 The Big Idea
 
+This section is for the three steps between the model and a letter: scores, chances, and the rule that chooses.
+
 ### 1. The model gives scores. Something else has to choose.
 
 ```text
@@ -164,13 +166,15 @@ Try top-p by hand with `p = 0.9` on the sorted chances `0.563, 0.207, 0.126, 0.0
 
 > **📌 The one place to be careful: which total do you test?** A letter is kept if the total of the letters **ranked above it** is still below `p`. It is *not* "the total including this letter is below `p`". That is why `five.py` computes `before = running - sorted_p`. With the wrong test, a top letter that alone holds 0.8 would be dropped when `p = 0.5`, and **nothing is left to choose from**.
 
-Also: `kept = sorted_p * (before < p)`. The test `before < p` gives yes/no for every letter. Multiplying a number by a `True` keeps it (`True` counts as 1); by a `False` zeroes it (`False` counts as 0). Yes keeps the number, no zeroes it.
+One more line to read: `kept = sorted_p * (before < p)`. The test `before < p` gives yes/no for every letter. Multiplying a number by `True` keeps it (`True` counts as 1); multiplying by `False` zeroes it (`False` counts as 0).
 
 ---
 
 ## 💻 The Four Pickers: `samplers.py`
 
-Each picker takes the scores and returns a plain whole number: the id of the chosen letter. Type it one function at a time. (`int(...)` turns a one-number tensor into a plain number; without it a tensor would not work as a letter id.)
+This section is for turning the ideas above into four reusable functions, then plugging them into the name model.
+
+Each picker takes the scores and returns a plain whole number: the id of the chosen letter. Type `samplers.py` one function at a time. (`int(...)` turns a one-number tensor into a plain number; without it a tensor would not work as a letter id.)
 
 ```python
 # samplers.py - the four ways to turn scores into one choice. Each takes scores, returns an int id.
@@ -201,7 +205,7 @@ def top_p(scores, p=0.9, T=1.0):
     return int(order[torch.multinomial(kept, 1)])          # multinomial does not need them to add to 1
 ```
 
-It prints nothing; other files import it. Three things to notice:
+This file prints nothing; other files import it. Three things to notice:
 
 - `greedy` uses `argmax`, which has no randomness at all. The same start gives the same scores and the same top letter, every time.
 - `multinomial` **does not need its chances to add to 1**, only to be non-negative and not all zero. That is why `top_p` can hand it the `kept` list with zeroes in it and nothing is re-divided.
@@ -270,6 +274,8 @@ What the columns mean: **distinct** is how many different names there are out of
 
 ## 🎲 Your Turn
 
+This section is for two tests of your own: judging names by eye, and asking the model to score its own output.
+
 ### The Name Tasting
 
 The 200-name table counts names. It cannot say which are *good*. So you judge first and see the counts after.
@@ -287,7 +293,9 @@ Below are **forty names**. Ten came from each of four samplers, shuffled, with n
 | 31. bela | 32. anders | 33. oorja | 34. felix | 35. jaden |
 | 36. kavya | 37. klara | 38. dara | 39. rodea | 40. bianca |
 
-Mark them on workbook page 13.3. After the reveal you will count your own **R**s per sampler and compare them with the **new** column above. The lesson is in the comparison: **new and good are different questions.** Ten names a sampler is a sample, not a finding.
+Mark them on workbook page 13.3.
+
+After the reveal you will count your own **R**s per sampler and compare them with the **new** column above. The lesson is in the comparison: **new and good are different questions.** Ten names a sampler is a sample, not a finding.
 
 ### The model grades itself: `exposure.py`
 
@@ -367,7 +375,9 @@ Look at the `T=0.5` row: the gap closes to -0.035. That fits the drift story. It
 
 ## 🔬 Break It On Purpose
 
-Temperature is a division, so what happens if someone wants to make the model greedy by setting `T = 0`? **DELIBERATE:** this file is written to fail.
+This section is for reading one error message. Temperature is a division, so what happens if someone sets `T = 0` to make the model greedy?
+
+Type and run this file. **DELIBERATE:** it is written to fail.
 
 ```python
 # DELIBERATE: a temperature of exactly zero, "to make it greedy".
@@ -396,9 +406,11 @@ The first line, with `T=0.5`, works. The second does not. Read the last line of 
 
 ## 🚀 Optional: Does the Memory Bridge a Gap? `copytask.py`
 
-This is your homework file, and it closes the loop with Weeks 8 to 11. The task: the model sees 5 random symbols (out of 8), then a **gap** of `D` filler symbols, then must write the same 5 symbols again. To do it, the memory has to carry the 5 symbols across the gap. A model guessing has a chance of `1/8 = 0.125` per symbol. We score only the five copied symbols.
+This section is for `copytask.py`, your homework file, which closes the loop with Weeks 8 to 11.
 
-It trains ten small models (an `nn.RNN` and an `nn.LSTM`, each at five gaps), 1,500 steps each. **It takes about 30 seconds.** Nothing is wrong unless it takes more than 2 minutes. `out, _ = rnn(x)` keeps the first half of the pair; the underscore is a name meaning "I do not need this".
+The task: the model sees 5 random symbols (out of 8), then a **gap** of `D` filler symbols, then must write the same 5 symbols again. To do it, the memory has to carry the 5 symbols across the gap. A model guessing has a chance of `1/8 = 0.125` per symbol. We score only the five copied symbols.
+
+Type and run `copytask.py`. It trains ten small models (an `nn.RNN` and an `nn.LSTM`, each at five gaps), 1,500 steps each. **It takes about 30 seconds.** Nothing is wrong unless it takes more than 2 minutes. `out, _ = rnn(x)` keeps the first half of the pair; the underscore is a name meaning "I do not need this".
 
 ```python
 # copytask.py - Week 13 homework + prep: how long a gap can the memory bridge? (5 symbols, a gap, the same 5 again)
@@ -458,6 +470,8 @@ Read the table, not the clock. Each number is the share of copied symbols that c
 
 ## 🔑 Wrap Up
 
+This section is for keeping the week's main results in one place.
+
 Three things you built today:
 
 1. **Scores to chances to a choice:** `F.softmax(..., dim=-1)`, then `torch.multinomial`.
@@ -472,6 +486,8 @@ What you did **not** do: change the model, fix exposure bias, or prove it. There
 
 ## 📤 Homework
 
+This section lists what to hand in and how long it should take.
+
 Complete workbook pages 13.1 to 13.5 (about 60-75 minutes):
 
 1. **Predict, then measure (page 13.2).** Five new scores for the letters `s t a r e` are on the page. **Before** you run anything, write for `T = 0.3, 1, 2` which letter will be most likely and whether its share goes up or down. Then fill the table with `F.softmax(scores / T, dim=-1)` and check yourself.
@@ -483,6 +499,8 @@ Complete workbook pages 13.1 to 13.5 (about 60-75 minutes):
 ---
 
 ## 📖 Words from this week
+
+These are the new words, with the meaning each one has in this chapter.
 
 | Word | Meaning |
 |---|---|

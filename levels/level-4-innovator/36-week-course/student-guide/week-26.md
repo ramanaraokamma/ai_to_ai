@@ -31,7 +31,6 @@
 ![Level 4 map: Week 26 highlighted among 36 week tiles in four term lanes](../figures/fig-w26-0-where-this-fits.svg)
 *Figure 26.0 — Week 26 sits in the third lane, one tile after embeddings: the search from Week 25 now feeds an answer with citations.*
 
-
 ---
 
 ## 🪝 Start Here
@@ -64,19 +63,22 @@ notes -> chunks -> retrieve top k -> number the sources -> writer -> check the i
 
 A wrong answer has exactly two possible homes: the right note was never served (a **retrieval failure**), or it was served and the writer used it badly (a **generation failure**). You find out by reading the served notes.
 
-One more idea, sadly, is about the notes themselves: retrieved text is **text somebody wrote**. It can contain orders. Treat it as data.
+One more idea concerns the notes themselves: retrieved text is **text somebody wrote**. It can contain orders. Treat it as data.
 
 ---
 
 ## 1. The four new pieces of syntax
 
-Each on a toy small enough to read. Type these first.
+This section is for meeting the new syntax on toys small enough to read. Type these first.
 
-**`Path.glob`** lists the files in a folder whose names match a pattern (`*` means "anything"). It returns them in no promised order, so you always wrap it in `sorted`. And `sorted` sorts the **text** of the names, which is why the names are zero-padded.
+- **`Path.glob`** lists the files in a folder whose names match a pattern (`*` means "anything"). It returns them in no promised order, so you always wrap it in `sorted`. And `sorted` sorts the **text** of the names, which is why the names are zero-padded.
+- **`np.argsort(-s)[:k]`**: `s` is one score per note. `np.argsort` gives the *positions* from the smallest score to the biggest; the minus flips the order so the biggest comes first; `[:k]` keeps the first `k`.
+- **`re.findall(r"\[(\d+)\]", text)`** finds every piece of `text` that looks like `[`, digits, `]` and returns only the digits. It returns a **list of strings**.
+  - `r"..."` is a raw string (backslashes mean backslashes).
+  - `\[` is a literal bracket.
+  - `(\d+)` means "one or more digits, give me these".
 
-**`np.argsort(-s)[:k]`**: `s` is one score per note. `np.argsort` gives the *positions* from the smallest score to the biggest; the minus flips the order so the biggest comes first; `[:k]` keeps the first `k`.
-
-**`re.findall(r"\[(\d+)\]", text)`** finds every piece of `text` that looks like `[`, digits, `]` and returns only the digits. `r"..."` is a raw string (backslashes mean backslashes), `\[` is a literal bracket and `(\d+)` means "one or more digits, give me these". It returns a **list of strings**.
+Run this file to see all three on toy input, plus `sorted` on unpadded and padded names.
 
 ```python
 # globdemo.py - why we sort: the names are text, and text sorts "10" before "2"
@@ -97,7 +99,12 @@ print(np.argsort(-np.array([0.1, 0.9, 0.0, 0.5]))[:2])
 
 Read the first two lines together: the unpadded names put `note-10` before `note-2`. The third shows the ids come back as the strings `'2'` and `'8'`, not the numbers. The fourth shows the ids of the two biggest scores: positions `1` and `3`.
 
-**Set operations.** A set is a bag of values with no order and no repeats, made with braces or `set(...)`. `a - b` means "in `a`, take away everything in `b`". `a <= b` asks "is every member of `a` also in `b`?". Order and repeats do not matter for ids, so a set is exactly right.
+**Set operations.** A set is a bag of values with no order and no repeats, made with braces or `set(...)`.
+
+- `a - b` means "in `a`, take away everything in `b`".
+- `a <= b` asks "is every member of `a` also in `b`?".
+
+Order and repeats do not matter for ids, so a set is exactly right. Run this file on made-up ids.
 
 ```python
 # sets.py - the set operations on their own, with made-up ids
@@ -124,6 +131,8 @@ False
 
 ## 2. Load the notes and build the index
 
+This section is for turning the notes folder into the list of chunks the rest of the week uses.
+
 If your teacher did not hand you a `notes/` folder, run this once. It is set-up, not part of the lesson, and it uses `mkdir`, which you do not need to understand.
 
 ```python
@@ -141,7 +150,7 @@ print("wrote", len(list(Path("notes").glob("note-*.md"))), "files")
 wrote 15 files
 ```
 
-Now the first lines of your own program.
+Now the first lines of your own program. Run this file to list the files with `Path.glob` and read them into `chunks`.
 
 ```python
 # load.py - Week 26: put the notes in files, list them with Path.glob, build the chunks
@@ -261,6 +270,8 @@ Neither number is "the real one". The second is nearer to what a stranger would 
 
 ## 4. The notebook that answers anything
 
+This section runs the whole pipeline once, as a single call, on questions the notes cannot answer.
+
 The library has a one-call pipeline, `rag.rag_answer`. Ask it two things that are not in the notes. (The writer is a stand-in, not a model.)
 
 ```python
@@ -289,7 +300,7 @@ Hold on to this: **a citation is not the same as being right.** The rest of the 
 
 ## 5. Cutting the same text five ways
 
-Chunk size changes what you serve. `rag.chunk_fixed(text, size, overlap)` cuts the notebook into windows of `size` words that overlap by `overlap` words. Here recall is scored by "does the right **phrase** appear in the text of the top `k` chunks", because the windows do not have the notes' ids.
+This section is for comparing ways of cutting the notebook into chunks. Chunk size changes what you serve. `rag.chunk_fixed(text, size, overlap)` cuts the notebook into windows of `size` words that overlap by `overlap` words. Here recall is scored by "does the right **phrase** appear in the text of the top `k` chunks", because the windows do not have the notes' ids.
 
 ```python
 # chunking.py - the same ten questions against five ways of cutting the same text
@@ -338,12 +349,19 @@ Read the last column before the recall columns.
 ![Five rows, one per way of cutting the notebook, each with a bar for the share of the notebook sent and three recall numbers; the 250-word row runs past the 100 percent line](../figures/fig-w26-2-recall-and-words-sent.svg)
 *Figure 26.1 — Report recall with the fraction of the corpus that bought it. The 250-word cut scores 1.00 by sending 104% of the notebook.*
 
-
 ---
 
 ## 6. Number the sources, demand the id, check it
 
-Two functions. `make_prompt` wraps each chunk in a labelled block. `check_citations` is the check in code: `cited` is the set of ids the answer names, as **integers**; `served` is the set we handed over; `bad = cited - served`. The answer passes only if something was cited and `bad` is empty.
+This section is for writing the two functions that number the sources and check the id that comes back.
+
+- `make_prompt` wraps each chunk in a labelled block.
+- `check_citations` is the check in code:
+  - `cited` is the set of ids the answer names, as **integers**.
+  - `served` is the set we handed over.
+  - `bad = cited - served`.
+
+The answer passes only if something was cited and `bad` is empty. Run this file on one question.
 
 ```python
 # cite.py - number the sources, demand the id back, check it in code.   The writer is a STAND-IN, NOT A MODEL.
@@ -381,7 +399,7 @@ Your prompt is the library's prompt (`True`), and the answer `[2]` passes with `
 
 ### Break the writer three ways
 
-The stand-in has three fault switches. Then look hard at the last four lines.
+The stand-in has three fault switches. Run this file; it ends with a second question whose last four lines need a close read.
 
 ```python
 # faults.py - the three ways a writer fails, plus the one your check cannot see
@@ -413,13 +431,15 @@ right note (1) is in what we served: True
 
 The first three faults all fail the check, so the check does its job: a made-up id (`99`), no id at all, and an answer that ignores the sources (caught only because it cites nothing: the same answer with a served id on it would pass). Now the last block. The question was about `NaN`. The right note (1) **was** served. The answer is about batch sizes and cites note 8, a note that was handed over. The check says `True`.
 
-> **A valid citation on a wrong answer.** The check tests that the id was served. It cannot read the note and it cannot tell whether the sentence answers the question. Write `<- a VALID citation on a WRONG answer` in your own words in your Bug Log.
+> **⚠️ Watch out: a valid citation on a wrong answer.** The check tests that the id was served. It cannot read the note and it cannot tell whether the sentence answers the question. Write `<- a VALID citation on a WRONG answer` in your own words in your Bug Log.
 
 ---
 
 ## 7. Refuse
 
-`answer_question` is the whole pipeline with a gate: search, and if even the best score is below `tau`, do not call the writer. Otherwise write, then check. Below it, the best score for each question in your set, the stranger set and the unanswerable set, and a sweep over `tau`.
+This section is for adding the gate and choosing `tau` by measuring.
+
+`answer_question` is the whole pipeline with a gate: search, and if even the best score is below `tau`, do not call the writer. Otherwise write, then check. Run this file: it prints the best score for each question in your set, the stranger set and the unanswerable set, then a sweep over `tau`.
 
 ```python
 # refuse.py - the gate: if even the best note is weak, do not call the writer at all
@@ -474,7 +494,7 @@ The `errors` column adds two kinds of mistake: an answerable question **refused*
 
 ### A threshold belongs to one embedder
 
-The same sweep on Week 25's LSA index:
+Run the same sweep on Week 25's LSA index:
 
 ```python
 # threshold_is_per_embedder.py - the same sweep on Week 25's LSA tier: a threshold belongs to ONE embedder
@@ -508,10 +528,11 @@ Every number is different. The best line is near `0.85` here, not `0.12`. A thre
 ![A row of five boxes: Question, Retrieve, Gate, Write (dashed, labelled stand-in), Check, with a refusal branch and a worked example of a valid citation on a wrong answer](../figures/fig-w26-1-retrieve-gate-write-check.svg)
 *Figure 26.2 — The pipeline has a gate before the writer and a check after it. A passing check proves the cited id was served, not that the answer is right.*
 
-
 ---
 
 ## 8. Diagnose: retrieval or generation?
+
+This section is for telling a retrieval failure from a generation failure.
 
 `diagnose` returns one of four verdicts. It uses `flat`, from the chunking file: it collapses line breaks so a phrase that wrapped still matches. The tally is a 2 × 2 of counts (`Counter` is from Week 20).
 
@@ -570,6 +591,8 @@ Now question 0. The right note (0) is served first and contains `40 epochs`, yet
 
 ## 9. A note that gives orders
 
+This section is for seeing how a note that gives orders moves through the pipeline.
+
 Add a 16th note. Read it before you run anything. Nothing in this week can execute it: **`write_file` does not exist yet.** Tools arrive in Week 28.
 
 ```python
@@ -612,7 +635,7 @@ Recall did not change at all (the planted note is not in the way of the real que
 
 **This shows the pipeline hands text through. It does not show what a real model would do.** The stand-in cannot obey anything. A real model might or might not; one cannot be measured here. Week 29 builds a scripted model that does obey, so a defence can be tested honestly.
 
-A pattern filter on the retrieved text, lower-cased first:
+Now run a pattern filter on the retrieved text, lower-cased first, against the planted note and some rewordings:
 
 ```python
 # filter.py - a pattern filter on retrieved text (lower-cased first): it catches the attack you imagined
@@ -639,6 +662,8 @@ The filter catches the sentence it was written for and misses three rewordings. 
 ---
 
 ## 10. The same writer behind a chat-shaped client
+
+This section is for putting the writer behind a chat-shaped client.
 
 Week 23's `FakeClient` can wrap the writer, so the code around it would not change if the writer were swapped for a real client. The `repr` says what it is.
 

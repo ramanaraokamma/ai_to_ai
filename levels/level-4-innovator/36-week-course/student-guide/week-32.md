@@ -51,11 +51,15 @@ Keep the card. We come back to it at the end.
 
 ## 🧠 The Big Idea
 
+This section defines the words the rest of the week uses: proxy, result, calibrated, abstaining, coverage.
+
 **A proxy.** You cannot measure "I can trust this when it sounds sure" directly. You measure what you can: *how often the answer was right*. That number is a **proxy**: a stand-in for the thing you want. A proxy is useful until you start chasing it.
 
 **A result** is a pair: how sure the system said it was, `p` (a number from 0 to 1, called its **confidence**), and what happened, `y` (1 if it was right, 0 if wrong).
 
-**Calibrated** means: of the results where it said about 0.8, about 8 in 10 were right. The stated number matches the hit rate. A system that says 0.8 and is right 5 times in 10 is **overconfident**. Note that "calibrated" does not mean "right": a system that says 0.6 and is right 6 times in 10 is calibrated, and wrong 4 times in 10.
+**Calibrated** means: of the results where it said about 0.8, about 8 in 10 were right. The stated number matches the hit rate.
+
+A system that says 0.8 and is right 5 times in 10 is **overconfident**. "Calibrated" does not mean "right": a system that says 0.6 and is right 6 times in 10 is calibrated, and wrong 4 times in 10.
 
 **Abstaining** means answering only when `p` is at or above a **threshold** `t`, and otherwise saying "I don't know". Two words measure it:
 
@@ -68,7 +72,7 @@ Raise `t` and coverage falls. If the confidence means anything, accuracy of the 
 
 ## 🔢 The maths: the calibration gap
 
-**One idea, three steps.** You will do steps (b) and (c) with a pencil on ten results before the computer touches them.
+This section gives you the week's one new maths idea, in three steps. You will do steps (b) and (c) with a pencil on ten results before the computer touches them.
 
 **(a) The gap.** For one result the gap is `p - y`. A right answer said at 0.97 has gap `0.97 - 1 = -0.03`. A wrong answer said at 0.96 has gap `0.96 - 0 = 0.96`.
 
@@ -97,6 +101,8 @@ A bucket of 10 counts more than a bucket of 6. Two buckets is enough for the pen
 
 ## 1. The three new pieces of syntax
 
+This section names the three new tools before you use them: two numpy functions and one sklearn function.
+
 **`np.digitize(values, edges)`** says which bucket each value falls in, numbered from **0**. With four edges there are **five** buckets: bucket 0 is "below the first edge", bucket 4 is "at or above the last edge". A value exactly on an edge goes to the **upper** bucket. The edges must be in increasing order.
 
 **`np.bincount(bucket_numbers, minlength=5)`** counts how many times each whole number 0, 1, 2, ... appears. `minlength=5` makes the answer five long even if the top buckets are empty. You can use it a second way, with `weights=`: `np.bincount(bucket, weights=conf, minlength=5)` **adds up** the weights per bucket instead of counting. Counting is adding ones; `weights` lets you add something else. Divide those sums by the counts and you have the mean per bucket.
@@ -109,7 +115,7 @@ Everything else today is old: boolean masks, `.mean()`, `zip`, f-strings with wi
 
 ## 2. The sheet: type the 40 results
 
-Type this by hand. It is the only long typing of the week. Each row is `(category, how sure it said it was, was it right: 1 or 0)`, eight rows for each of Week 30's five categories.
+This section builds the data every later block uses. Type the block below by hand; it is the only long typing of the week. Each row is `(category, how sure it said it was, was it right: 1 or 0)`, eight rows for each of Week 30's five categories.
 
 ```python
 # p0_results.py - Week 32 block P0: the 40 typed results. A HANDED-OUT SHEET, typed by the student.
@@ -153,7 +159,9 @@ Read the last line. The system is right 57.5% of the time and claims 75.4% on av
 
 ## 3. Ten results, by hand
 
-Before more code, take every fourth row of the sheet, starting at the first: `RESULTS[0::4]`. That is ten rows. Print them so you can copy them onto paper:
+This section sets up your pencil work on a small sample. Take every fourth row of the sheet, starting at the first: `RESULTS[0::4]`. That is ten rows.
+
+Run this block to print them so you can copy them onto paper:
 
 ```python
 # p0b_card.py - Week 32 block P0b: the ten rows for your pencil work (every 4th row, starting at the first).
@@ -174,7 +182,7 @@ for i, (name, p, y) in enumerate(RESULTS[0::4]):
 10  out_of_scope  said 0.69   right 0
 ```
 
-**Pages 32.1 and 32.2 of the workbook** (do them now, with a pencil, before you read on):
+Now do **pages 32.1 and 32.2 of the workbook** with a pencil, before you read on:
 
 - **Brier:** for each of the ten rows write `(p - y)` and `(p - y)²`. Two decimals is enough. Add the ten squares and divide by ten. Circle the most expensive row and write one sentence about why it costs so much.
 - **ECE, two buckets:** split the ten into *sure* (`p` at least 0.8) and *unsure* (below 0.8). For each group write the count, the mean `p` and the share right. Then `ECE = (n_sure/10) x gap_sure + (n_unsure/10) x gap_unsure`.
@@ -185,7 +193,9 @@ When you have both numbers on paper, the code in Sections 5 and 6 will compute t
 
 ## 4. `digitize` and `bincount` on toys
 
-Try the two new helpers on numbers small enough to check by eye, before they touch the 40 results. **Predict the output before you run it.** In particular: which bucket does exactly `0.60` go to?
+This section tries the two new helpers on numbers small enough to check by eye, before they touch the 40 results.
+
+**Predict the output before you run it.** In particular: which bucket does exactly `0.60` go to?
 
 ```python
 # p1_digitize.py - Week 32 block P1: the two new helpers on tiny inputs, before they touch the 40 results.
@@ -205,7 +215,9 @@ Read it. `0.55` is below the first edge, so bucket 0. `0.60` sits exactly on an 
 
 ## 5. The reliability table and ECE
 
-The **reliability table** has one row per bucket: how many results landed in it, how sure the system *said* it was (stated), and how often it was *right* (actual). You write two functions. Read them line by line and ask of each line, "what is this array right now, and how long is it?"
+This section builds the week's main instrument. The **reliability table** has one row per bucket: how many results landed in it, how sure the system *said* it was (stated), and how often it was *right* (actual).
+
+You write two functions, then print the table. Read the functions line by line and ask of each line, "what is this array right now, and how long is it?"
 
 ```python
 # p2_reliability.py - Week 32 block P2: the reliability table (stated vs actual, per bucket) and ECE.
@@ -243,7 +255,7 @@ ECE = 0.1788
 
 Read the table **row by row before you read the ECE.** Which bucket is worst? Which way does every gap point? Every gap is negative: in every bucket the system *said* more than it *delivered*. Say the top row as a sentence: *"When it said about 0.93, it was right 70% of the time."*
 
-Two cautions about the ECE number.
+Two cautions about the ECE number:
 
 - **ECE 0.18 does not mean "wrong 18% of the time".** It is the average size of the gap between said and delivered. This system is wrong 42.5% of the time.
 - **The buckets are a choice.** With fewer than ten results in a bucket, the gaps are noisy. ECE is one way to score calibration, not the only one.
@@ -255,7 +267,7 @@ Two cautions about the ECE number.
 
 ## 6. Brier, and a baseline to beat
 
-Now Brier for all forty, two ways: your own numpy line, and sklearn's. Then two **baselines**: systems that ignore the question and say the same number every time.
+This section scores all forty results with Brier, two ways: your own numpy line, and sklearn's. It then adds two **baselines**: systems that ignore the question and say the same number every time.
 
 ```python
 # p3_brier.py - Week 32 block P3: the Brier score, by hand-in-numpy and by sklearn, and two baselines to beat.
@@ -285,7 +297,7 @@ So is the confidence worthless? Not quite, and the next section shows why. The f
 
 ## 7. "I don't know"
 
-Add a threshold. Answer only when `conf >= t`. For each `t`, print how many were answered, the coverage, the accuracy of the answered, and how many were wrong but answered anyway.
+This section lets the system decline to answer. Add a threshold: answer only when `conf >= t`. For each `t`, the block prints how many were answered, the coverage, the accuracy of the answered, and how many were wrong but answered anyway.
 
 ```python
 # p4_abstain.py - Week 32 block P4: abstention. Answer only when conf >= t; otherwise say "I don't know".
@@ -322,7 +334,9 @@ The threshold `0.8` was chosen because it is round and it shows the effect. We l
 
 ## 8. Did every category get better?
 
-**Predict first.** At `0.8` overall accuracy rose from `0.575` to `0.722`. Will every category rise? Write your guess, then run it.
+This section repeats the abstaining experiment one category at a time.
+
+**Predict first.** At `0.8` overall accuracy rose from `0.575` to `0.722`. Will every category rise? Write your guess, then run the block.
 
 ```python
 # p5_category.py - Week 32 block P5: the per-category table before and after abstaining at 0.8. Find what fell.
@@ -360,7 +374,7 @@ And one caution the other way. **Eight rows is a reason to look, not a verdict.*
 
 ## 9. The curve
 
-One point per threshold: coverage across, accuracy of the answered up.
+This section plots every threshold at once, so you see the whole trade instead of a few rows: one point per threshold, coverage across, accuracy of the answered up.
 
 ```python
 # p6_curve.py - Week 32 block P6: the coverage-vs-accuracy curve. One point per threshold.
@@ -396,7 +410,9 @@ Open `curve.png`. Put a finger on `t = 0.8`: the point `(0.450, 0.722)`. Now the
 
 ## 🎲 Your Turn
 
-**Check your pencil work.** Run this on the ten rows you did by hand in Section 3. Your Brier and your two-bucket ECE should agree with it to two or three decimals. If they do not, find which row you added wrongly.
+This section is for checking your own arithmetic and trying one repair.
+
+**Check your pencil work.** Run this block on the ten rows you did by hand in Section 3. Your Brier and your two-bucket ECE should agree with it to two or three decimals. If they do not, find which row you added wrongly.
 
 ```python
 # y1_ten.py - Week 32 block Y1: your Pages 32.1 and 32.2, checked by machine, on the ten rows RESULTS[0::4].
@@ -415,7 +431,7 @@ Then answer, in writing:
 3. Change the `edges` to `[0.8]` (two buckets) and then to ten edges of your own choosing, and run the Section 5 table again. Does ECE change? What does that say about the number?
 4. A system that says its own accuracy (`0.575`) every time has a perfect ECE. Why is it still no use for deciding which answers to trust?
 
-**Cap what it says.** Here is a repair where "make the model better" is not allowed. Cap the stated confidence at 0.85, so the system can no longer claim more than it has earned, and recompute:
+**Cap what it says.** This repair does not allow "make the model better". Run the block below to cap the stated confidence at 0.85, so the system can no longer claim more than it has earned, and recompute:
 
 ```python
 # y2_cap.py - Week 32 block Y2: cap what the system may SAY at 0.85. No answer changes; only the stated number.
@@ -431,6 +447,8 @@ Run it and compare. ECE and Brier both improve while **not one answer has change
 ---
 
 ## 🔬 Break It On Purpose
+
+This section runs one deliberately flawed rule that fails without any error message.
 
 **DELIBERATE, and silent.** A tempting rule: "pick the threshold with the best accuracy". The run does not crash and prints a lovely number. Add this to the end of `week32.py`, predict what it will pick, then run it.
 
@@ -460,7 +478,10 @@ The check is to always print the **number answered** next to the accuracy. The r
 
 ## 🧭 What was shown, and what was not
 
+This section separates what the week's numbers support from what they do not.
+
 **Shown:**
+
 - Accuracy `0.575` against an average stated confidence of `0.754`: the proxy and the claim come apart.
 - A reliability table in which the system said more than it delivered in **every** bucket (ECE `0.1788`).
 - Brier `0.2499`, checked against sklearn, and a flat system that beats it (`0.2444`) while being useless for choosing.
@@ -469,6 +490,7 @@ The check is to always print the **number answered** next to the accuracy. The r
 - A fix that changes what the system *says* and not what it *gets right*: capping.
 
 **Not shown:**
+
 - **Any real model.** No model exists in this lesson. The 40 rows are invented.
 - **That the system is "overconfident" in general.** That is a property of this sheet, not of classifiers.
 - **That billing is a weak category.** It is eight rows.
@@ -479,6 +501,8 @@ The check is to always print the **number answered** next to the accuracy. The r
 ---
 
 ## 🔑 Wrap Up
+
+Use these questions to check the week against the card you wrote at the start.
 
 1. Turn to your card. When the system said about 0.93, how often was it right?
 2. Brier 0.2499 against a flat 0.2444: is our confidence worthless? Say what is true in both directions.
@@ -507,6 +531,8 @@ Complete workbook pages 32.1 to 32.3 (about 55 minutes: 30 of pen and paper, 25 
 ---
 
 ## 📖 Words from this week
+
+The new vocabulary, in the order it appeared.
 
 | Word | Meaning |
 |---|---|

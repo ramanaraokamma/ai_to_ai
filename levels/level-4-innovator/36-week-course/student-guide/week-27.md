@@ -48,6 +48,8 @@ Why bother before Term 4? Because **Weeks 28 and 29 build an agent out of parts 
 
 ## 🗺️ What is on the paper
 
+This section is for knowing the shape of the paper before you sit it: its sections, marks and timing.
+
 The paper is **75 marks** and you get **70 minutes**.
 
 | Section | What it asks | Marks | About how long |
@@ -213,7 +215,7 @@ A few habits, in order of how many marks they save.
 6. **If you finish early,** go back and check each answer against your own working, **starting from the end**. Do not leave, and do not start next week.
 7. **If you get stuck,** write *"did not get it"* beside the question and go on. That is the most useful thing you can write.
 
-> **If you feel panicky:** put the pen down, breathe for a minute, and say so. A calm minute costs a mark or two and gives them back.
+> **💡 Why:** if you feel panicky, put the pen down, breathe for a minute, and say so. A calm minute costs a mark or two and gives them back.
 
 ---
 
@@ -232,6 +234,8 @@ You will be given the **marking sheet** (the answers, with working) and a pen of
 **A week needs a redo when you scored 60% or less of its marks.** The marking sheet says the exact number for each week. Weeks with few marks are thin: a flag on one of them means "ask yourself the spoken check first".
 
 ### The remediation table
+
+Use this table to turn your circled weeks into a concrete redo plan.
 
 Each redo is **20 minutes**, followed by your teacher asking you one question out loud (no paper) to check it landed. The question is in the third column; the answer is for you to say, not to read.
 
@@ -287,7 +291,7 @@ cut                            n   r@1   r@3   r@5  % of notebook @k=3
 
 Then write **two sentences**: one on what your table shows, and one on what ten questions **cannot** tell you. (Hint: how big is one question?)
 
-Bring to the next class: **the marked paper, the filled grid, the circled table, and the new chunk table with your two sentences.** If you have already redone a page, lovely; nobody requires it.
+Bring to the next class: **the marked paper, the filled grid, the circled table, and the new chunk table with your two sentences.** A redo done early is welcome but not required.
 
 > **A word on a low mark.** If the total is lower than you hoped, look at the *pattern*, not the number. One week with 30% and seven with 90% is a very different X-ray from eight weeks at 65%, and it is a much easier fix.
 >
@@ -296,6 +300,8 @@ Bring to the next class: **the marked paper, the filled grid, the circled table,
 ---
 
 ## 📖 What carries into next week
+
+This section is for seeing which parts of this paper next week builds on.
 
 **Week 28 gives the model tools.** An agent loop calls functions, and every call passes through fences that you build: what arguments are allowed, how many calls, how much money. It leans directly on three things from this paper: the harness and the budget guard (Week 23), the rule that a mask or a check guarantees shape and not sense (Weeks 24 and 26), and "retrieved text is data" (Week 26). **If your grid shows Week 23, 26 or 22 under 60%, those are the redos to do first.** Nothing else from Term 3 is on the critical path.
 
