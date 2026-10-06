@@ -455,7 +455,7 @@ No right answers. The reveal: of 24 rows, **20 inside noise** (4 are the baselin
 
 - **H1.** `norm batch`: |gap| 0.015 is just under 0.016, short of the line by 0.001.
 - **H2.** No. Its gap (0.015) is below twice the spread (0.016), so the rule calls it inside noise; the lowest of 24 noisy numbers is not a winner.
-- **H3.** The spread (0.001) is the smallest in the table, against 0.008. You may say: on the spirals, with 3 seeds, a decaying schedule looked *steadier*, not lower. You may not say it is better, or that it will hold on another dataset.
+- **H3.** The spread (0.001) is the smallest in the table, against 0.008. You may say: on the spirals, with 3 seeds, a decaying schedule looked *steadier*, not lower (three-seed spreads are very noisy, and a learning rate near zero at the end of the run may be part of the reason). You may not say it is better, or that it will hold on another dataset.
 - **H4.** Mean = **0.0389**. 0.0499 / 0.0301 = **1.66**, a **66%** swing with nothing changed.
 - **H5.** Mean = **0.096**. gap = 0.096 - 0.039 = 0.057; 2 x spread = 2 x 0.033 = 0.066; **inside noise**. The mean is about **2.5** times the baseline's. Honest playbook line: "add more seeds before concluding".
 - **H6.** These hand sums use rounded figures; the code uses unrounded ones. The verdicts agree.
@@ -472,7 +472,7 @@ No right answers. The reveal: of 24 rows, **20 inside noise** (4 are the baselin
 
 (D is not used by any of these five runs.)
 
-- **R2.** `lr = 1e-5` (0.683) and `lr = 0.1` (0.693). The epoch-0 loss: 0.694 against 12.786.
+- **R2.** `lr = 1e-5` (0.683) and `lr = 0.1` (0.693). The epoch-0 loss: 0.694 against 12.786 (0.694 at epoch 0 only rules out a blow-up; the flat curve to epoch 59 is what says tiny step).
 - **R3.** No. It is one mini-batch's reading, and it is simply still falling: 512 gives 1 step per epoch, 60 steps in all, against 780 for batch 64. The honest check is to count steps.
 - **R4.** Any honest guess earns credit if it is labelled as a guess. Our guess (**untested**): the logged training loss is an average taken in train mode while the model was changing, and validation is scored in `eval()` mode. Check: recompute the training loss in `eval()` mode. Do not "fix" anything first.
 - **R5.** Your digits should match to about 0.005.
@@ -485,7 +485,7 @@ No right answers. The reveal: of 24 rows, **20 inside noise** (4 are the baselin
 - **S4.** WORSE **4**, better **0**, inside noise **20**. The four WORSE rows: `lr 1e-5`, `lr 1e-4`, `lr 0.1`, `dropout 0.5`.
 - **S5.** **Zero** of eight beat the baseline. Sample sentence: "On the spirals, with 3 seeds and 60 epochs, I found no detectable gain from dropout or weight decay; I cannot say they do nothing, and I cannot say anything about other data."
 - **S6.** `norm batch` (0.024). No: 0.015 is under 0.016.
-- **S7.** Accept any answer that cites a spread. The best-supported is `schedule`: all three non-baseline values are inside noise, with smaller spreads (0.003, 0.007, 0.001) than the baseline (0.008).
+- **S7.** Accept any answer that cites a spread. The best-supported is `schedule`: all three non-baseline values are inside noise, with smaller spreads (0.003, 0.007, 0.001) than the baseline (0.008); weakly, since three-seed spreads are noisy.
 - **S8.** For example: "layer norm is better than no norm" (0.057 +/- 0.031 against 0.039 +/- 0.008: the mean is *higher* and the spread huge). Or "dropout 0.3 helps" (inside noise).
 - **S9.** Because a run that is still learning when the budget runs out can look worse (or better) than it would at another budget; the conclusion changes with the epoch count.
 

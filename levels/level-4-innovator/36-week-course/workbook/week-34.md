@@ -383,7 +383,7 @@ The repair is not "a better freeze". It is: ____________________________________
 ## 📓 Page 34.5 — Stop and Think (10 min · pen only)
 
 1. You wrote three cases, all three pass on your first run, and you say "ship it". What is the one thing you do not know? ____________________________________________________
-2. `refuse_all` scores `0.24` on the chapter's cases. Is that an achievement? What is it? ____________________________________________________
+2. `refuse_all` scores `0.24` on the 25-case design (6 of 25). Is that an achievement? What is it? ____________________________________________________
 3. In Week 35 a case fails and you are sure it was unfair. List what you do, in order: ____________________________________________________
 4. Version 1 passes 17 of 25 and version 2 passes 19 of 25. Write the two numbers you need before saying "v2 is better", and the one honest thing you can say instead. ____________________________________________________
 5. Why is the budget written **before** you build, when you have no idea yet whether you can keep it? ____________________________________________________

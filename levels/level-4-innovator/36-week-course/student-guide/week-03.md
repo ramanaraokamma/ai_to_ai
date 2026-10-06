@@ -166,7 +166,7 @@ s = 0.999 x old s + 0.001 x g*g      the average of the gradient SQUARED  (size)
 step = lr x m / (sqrt(s) + eps)
 ```
 
-`sqrt(s)` is the third step of RMS. So **Adam's step is `lr` times the average gradient, divided by the running RMS of the gradient.** A knob whose gradients are huge has a huge `sqrt(s)`, which cancels its huge `m`. A knob whose gradients are tiny has a tiny `sqrt(s)`, which also cancels. Either way the ratio is about 1 and the step is about `lr`.
+`sqrt(s)` is the third step of RMS. So **Adam's step is `lr` times the average gradient, divided by the running RMS of the gradient.** A knob whose gradients are huge has a huge `sqrt(s)`, which cancels its huge `m`. A knob whose gradients are tiny has a tiny `sqrt(s)`, which also cancels. Either way, when the gradient is steady, the ratio is about 1 and the step is about `lr` (smaller when the gradient is noisy and the average washes out).
 
 **The snag you already met.** Last week the average of ten, ten, ten, ten, ten started at 1.0 instead of 10, because it started at zero. Adam has the same snag twice. The fix is to divide by **how much has arrived**: after `t` steps that share is `1 - 0.9^t`. Try it on last week's numbers:
 

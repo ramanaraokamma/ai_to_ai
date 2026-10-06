@@ -110,7 +110,7 @@ All printed by the blocks in the Prep Checklist. Read them before class.
 - **Contrastive.** about 1 second (0.8 to 1.0 on repeat runs) for 150 steps; the loss goes `1.755 → 0.004 → 0.002 → 0.002` at steps 0, 10, 50, 149.
 - **The recall table** (15 questions): word tf-idf `0.67 / 0.73`; LSA dim 2 `0.13 / 0.27`, dim 4 `0.53 / 0.73`, dim 8 `0.67 / 0.87`, dim 14 `0.73 / 1.00`; contrastive seed 0 `0.67 / 0.87`.
 - **Five seeds** of the contrastive tier: recall@1 `0.67, 0.73, 0.60, 0.67, 0.47` (mean `0.63`); recall@3 `0.87, 0.87, 0.93, 0.93, 0.87` (mean `0.89`); first-step loss from `1.57` to `3.54`.
-- **The control** (one training step, five seeds): recall@1 mean `0.48`, recall@3 mean `0.73`. Training therefore adds about `+0.15` on recall@1 and `+0.16` on recall@3 over "almost random numbers for the letter pieces". **Chance** is `0.07` and `0.20`.
+- **The control** (one training step, five seeds): recall@1 mean `0.48`, recall@3 mean `0.73`. Training therefore adds about `+0.15` on recall@1 and `+0.16` on recall@3 over "almost random numbers for the letter pieces" (the one-step model is really a random projection of the letter-piece tf-idf vectors, which is why it matches the word table). That is about two of 15 questions on five seeds, and the per-seed ranges overlap (one step `0.33` to `0.60`, 150 steps `0.47` to `0.73`): call it modest, not a precise `0.15`, and it measures this 150-step recipe only. **Chance** is `0.07` and `0.20`.
 - **The headline query.** `optimiser`: word table `0.000` on the right note (and on all 14 others — the "rank 1" is only list order, not a result); LSA `0.799`, rank 1; contrastive `0.429`, rank 1. `which optimiser was best`: word table `0.000`, rank 2 (another note matches "best"); LSA `0.525`, rank 2; contrastive `0.377`, rank 1.
 - **Six typed pairs** (extension): mean recall@1 `0.63 → 0.59` and recall@3 `0.89 → 0.83`. Typed pairs did **not** help here. (Reason, which is a guess: six pairs for six topics pull those topics' notes toward their phrases and also make the other nine relatively less well placed; we did not test it.)
 
@@ -598,7 +598,7 @@ The student types; you narrate. All of it goes in **one file**, `embed.py`, in t
 
 **Part 3 (10 min) — P7 and P8, the trained tier.** Type `bag.py` and predict the shape before running. Then open `l4lib/rag.py` at `_train_contrastive` and read it aloud *in three sentences*: *"Make two halves of every note. Embed all the first halves and all the second halves. Push each first half's cosine with its own second half up, and with every other note's second half down. That's the whole loss."* Run `contrastive.py`: the loss goes `1.755 → 0.002` in under a second. Ask: *"Did it learn English?"* Let them answer, then: *"Look at step 10 and step 149: it was already finished at step 10. It learned to tell fifteen notes from their halves."*
 
-**Part 4 (6 min) — P9 to P12, the table and the control.** Run `recall.py`: the student reads the recall table aloud. Run `headline.py`. Then `seeds.py` (ask them to predict the range of recall@1 first). Then the **control** `untrained.py`: *"How much of this is the training, and how much is just the letter pieces?"* The sentence to leave on the board: **"The trained tier adds about 0.15 over almost-random numbers for the same letter pieces."**
+**Part 4 (6 min) — P9 to P12, the table and the control.** Run `recall.py`: the student reads the recall table aloud. Run `headline.py`. Then `seeds.py` (ask them to predict the range of recall@1 first). Then the **control** `untrained.py`: *"How much of this is the training, and how much is just the letter pieces?"* The sentence to leave on the board: **"On these 15 questions the trained tier scored about 0.15 higher on average than a one-step model with the same letter pieces."** Add the caveat aloud: about two questions, five seeds, overlapping ranges.
 
 ### 🔑 Wrap & Assign (6 minutes)
 
@@ -1103,7 +1103,7 @@ cos(A, D) = 0.300   cos(C, D) = 0.990
 - *"What did `np.save` not save?"* The vectorizer and the SVD.
 - *"Shape of the bag's output?"* `(2, 3)`.
 - *"Did it learn English?"* It learned to tell 15 notes from their own halves (loss `0.002` by step 50); recall is the measurement.
-- *"How much is the training and how much the letter pieces?"* After one step: `0.48`/`0.73`. After 150 steps: `0.63`/`0.89`. Training adds about `0.15`/`0.16`.
+- *"How much is the training and how much the letter pieces?"* After one step: `0.48`/`0.73`. After 150 steps: `0.63`/`0.89`. Training added about `0.15`/`0.16` on average (two questions' worth; seed ranges overlap).
 - *"What dim for 15 notes?"* 14 in this course (`l4lib`'s cap, so something is squeezed); 15 is the true maximum and squeezes nothing.
 
 ### Reconciliation with the reference module (`module-06-...`)

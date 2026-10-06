@@ -544,7 +544,7 @@ own, T=0.5     n=200  mean 0.920  median 0.908  gap -0.035  worst 2.44  share ab
 real above 1.5: 0.000
 ```
 
-The `T = 1` gap is **+0.167** (1.122 against 0.954); the `T = 0.5` gap is **-0.035**. Real names: 0.000 above 1.5; own, `T = 1`: 0.175; own, `T = 0.5`: 0.010. Note the **median** moves very little (0.957 against 0.936): the extra surprise is concentrated in a minority of bad names.
+The `T = 1` gap is **+0.167** (1.122 against 0.954); the `T = 0.5` gap is **-0.035**. Real names: 0.000 above 1.5; own, `T = 1`: 0.175; own, `T = 0.5`: 0.010. Note the **median** moves very little (0.957 against 0.936): the extra surprise is concentrated in a minority of bad names. Remember the real names are the model's own training names, so this compares a training-set score with the model's score on its own samples.
 
 ### Page 13.5
 

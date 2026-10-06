@@ -1557,7 +1557,7 @@ Give them the claim ledger with **one** line to fill: the overall, with its `n` 
 1. **Mark your paper (30 minutes).** At home, in the other colour, against Page 36.3. Give marks for working. Fill in the per-week grid (Page 36.4). **Circle at most two weeks** you would go back to first.
 2. **Final copy of the card (20 minutes).** Apply the teacher's comments. Re-run `check_card` and `quotes_hold`. The last line of the folder's `README.md` (or the card's first line) has the date and the fingerprint.
 3. **One sentence (5 minutes).** On the card's last page, in your own words: *the single most important thing a stranger should know before relying on this system.* One sentence; it must contain a number and an `n`.
-4. **Tidy up (5 minutes).** Delete your scratch traces (`logs/*_trace.jsonl` that you made for the demo); keep `eval/`, `src/`, `DESIGN.md`, `RED_TEAM.md`, `SYSTEM_CARD.md`, `ask.py`, `demo.py`, and the committed numbers.
+4. **Tidy up (5 minutes).** Delete your scratch traces (`logs/*_trace.jsonl` that you made for the demo, and `logs/trace_live.jsonl` if it exists); keep `eval/`, `src/`, `DESIGN.md`, `RED_TEAM.md`, `SYSTEM_CARD.md`, `ask.py`, `demo.py`, and the committed numbers.
 
 Extension for the fast student: the `make_card.py` generator, or the write case in `cases_extra.py`.
 

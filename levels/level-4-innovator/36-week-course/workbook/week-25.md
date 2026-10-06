@@ -399,7 +399,7 @@ G. `0.0`: `colour` and `color` are two different whole words, two different colu
 | chance | `0.07` | `0.20` |
 
 Seed range of recall@1: `0.47` to `0.73`. Hook query `optimiser`: the word table gave the right note `0.000` and **15** notes shared exactly that score (so "rank 1" is only the list order).
-**Part 4.** Full marks if: (1) says the word table scores `0.000` on the hook query (or has no geometry); (2) uses *control* correctly, for example "the one-step control already gets recall@3 of `0.73`, so most of the gain is the letter pieces; training adds about `0.15`"; (3) says the table is for 15 notes and 15 questions, or one seed is not a result, or no pretrained encoder was run. Any claim that one embedder wins needs the seed range.
+**Part 4.** Full marks if: (1) says the word table scores `0.000` on the hook query (or has no geometry); (2) uses *control* correctly, for example "the one-step control already gets recall@3 of `0.73`, so most of the gain is the letter pieces; training adds about `0.15` on average, roughly two questions, with overlapping seed ranges"; (3) says the table is for 15 notes and 15 questions, or one seed is not a result, or no pretrained encoder was run. Any claim that one embedder wins needs the seed range.
 
 ### Page 25.5
 

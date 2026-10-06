@@ -140,7 +140,7 @@ s = 0.999 x old s + 0.001 x g*g      the average of the gradient SQUARED (size; 
 step = lr x m / (sqrt(s) + eps)
 ```
 
-`sqrt(s)` is the third step of RMS. So **Adam's step is `lr` times the average gradient divided by the running RMS of the gradient.** A knob whose gradients are huge has a huge `sqrt(s)`, which cancels the huge `m`. A knob whose gradients are tiny has a tiny `sqrt(s)`, which also cancels. Either way the ratio is about 1, and the step is about `lr`.
+`sqrt(s)` is the third step of RMS. So **Adam's step is `lr` times the average gradient divided by the running RMS of the gradient.** A knob whose gradients are huge has a huge `sqrt(s)`, which cancels the huge `m`. A knob whose gradients are tiny has a tiny `sqrt(s)`, which also cancels. Either way, when the gradient is steady, the ratio is about 1, and the step is about `lr` (smaller when the gradient is noisy and the average washes out).
 
 **The "arrived" fix (the thing Week 2 said not to say).** Week 2 Concept A ended with: *"the average of ten, ten, ten, ten, ten is 1.0, 1.9, 2.71 ... why isn't it ten yet?" — because it started at 0.* Adam has the same problem twice, and it is worse for `s` (the 0.999 one). Block **P4** fixes it on the student's own Week 2 numbers:
 
@@ -219,7 +219,7 @@ Adam  weight_decay=0.1  after 10 steps: [0.0762, 99.0003]
 AdamW weight_decay=0.1  after 10 steps: [0.9044, 90.4382]
 ```
 
-Read the two rows. Under **Adam** the small weight is nearly destroyed (1.0 to **0.0762**) and the big weight barely moves (100 to **99.0003**): every weight is pushed by about `lr` per step (ten steps of 0.1 is 1.0 in total, so the 1.0 is wiped out and the 100 loses 1.0 of 100). The RMS division has turned "decay in proportion to the weight" into "decay by a fixed amount". Under **AdamW** the two weights lose the same *share* (0.9044 and 90.4382, exactly the SGD numbers): the decay is applied to the weight **directly**, after and outside the division. That is the whole fix. The reference module's claim is that noisy-gradient weights get decayed less than clean-gradient ones under Adam; the block above is the cleanest version of the same mechanism (a weight's decay is divided by its own gradient scale), measured on two weights with no loss at all. **It is not a measurement of a real network's weights.** Do not claim one.
+Read the two rows. Under **Adam** the small weight is nearly destroyed (1.0 to **0.0762**) and the big weight barely moves (100 to **99.0003**): every weight is pushed by about `lr` per step (ten steps of 0.1 is 1.0 in total, so the 1.0 is wiped out and the 100 loses 1.0 of 100). The RMS division has turned "decay in proportion to the weight" into "decay by a fixed amount". Under **AdamW** the two weights lose the same *share* (0.9044 and 90.4382, exactly the SGD numbers): the decay is applied to the weight **directly**, outside the division. That is the whole fix. The reference module's claim is that noisy-gradient weights get decayed less than clean-gradient ones under Adam; the block above is the cleanest version of the same mechanism (a weight's decay is divided by its own gradient scale), measured on two weights with no loss at all. **It is not a measurement of a real network's weights.** Do not claim one.
 
 **On the spirals** (block **P16**, `lr = 0.003`):
 
@@ -1071,7 +1071,7 @@ adam lr=0.3  (borrowed)      train 0.701  val 0.723  acc  46.9%
 adam lr=0.003 (its own)      train 0.007  val 0.037  acc  98.9%
 ```
 
-**Silent.** The run finishes, prints a line, and the line is a coin (0.701, a little above the 0.693 'guessing' line). Nothing crashed, so nothing tells the student the *rate* is wrong. Each rule has its own rate scale (P18: 0.3, 0.03, 0.003). Compare with the third line. **Fix:** sweep Adam's rate (P15); start near `0.001` to `0.003`. Teach the habit: *"a loss near 0.693 is a question about the learning rate before it is a question about the optimizer."*
+**Silent.** The run finishes, prints a line, and the line is a coin (0.701, a little above the 0.693 'guessing' line). Nothing crashed, so nothing tells the student the *rate* is wrong. Each rule has its own rate scale (P18: 0.3, 0.03, 0.003). Compare with the third line. **Fix:** sweep Adam's rate (P15); start near `0.001` to `0.003`. Teach the habit: *"a loss near 0.693 is a reason to check the learning rate first (and the weight decay too)."*
 
 ### Error 8 — `weight_decay` on Adam, expecting AdamW
 
@@ -1152,7 +1152,7 @@ Adam creates its two averages on the **first** `opt.step()`. Before that, the re
 
 **"Why is Adam slower than SGD in the table?"** — On a one-knob toy with a gentle gradient, nothing needs rescaling. The gain is on networks with many knobs of different scales: the spirals' sweep (P15).
 
-**"Why did Adam fail at 0.03?"** — The step is about `0.03` per knob per step, for all knobs at once, and the network bounced (loss 0.658 at the end). Not plotted this week; a curve would show it, and Week 1's harness already records one. Do not claim more.
+**"Why did Adam fail at 0.03?"** — The step is about `0.03` per knob per step, for all knobs at once, and the network probably overshot (loss 0.658 at the end). Not plotted this week; a curve would show it, and Week 1's harness already records one. Do not claim more.
 
 **"What's the difference between `Adam` and `AdamW` if I don't use weight decay?"** — None. The two rows of P16 with `wd=0` are identical.
 

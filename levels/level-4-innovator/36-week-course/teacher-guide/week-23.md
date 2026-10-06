@@ -1113,7 +1113,7 @@ v2, max_tokens=10 field   0.0%  exact 0/8  parse-fail 8  tok  1566/ 80  $0.0020
 stop_reason: max_tokens | output_tokens: 10
 ```
 
-**No error, `0.0%`, and `parse-fail 8`.** The reply is cut off mid-record (`"refund_requested":` and no value or brace), so there is no `}` for the parser to find. The only signal that the call was cut short is **`stop_reason == "max_tokens"`**, which `make_caller` throws away. Ask: *"what would a better `make_caller` do when it sees that?"* (Raise an error of its own, another exception class like `BudgetExceeded`; retries and fault injection are not taught in this course; Week 29 simulates timeouts.) Say: **truncation is the one failure that returns normally.**
+**No error, `0.0%`, and `parse-fail 8`.** The reply is cut off mid-record (`"refund_requested":` and no value or brace), so there is no `}` for the parser to find. The only signal that the call was cut short is **`stop_reason == "max_tokens"`**, which `make_caller` throws away. Ask: *"what would a better `make_caller` do when it sees that?"* (Raise an error of its own, another exception class like `BudgetExceeded`; retries and fault injection are not taught in this course; Week 29 simulates timeouts.) Say: **truncation is the one API failure that returns normally.**
 
 ### Mistake 9 — one run, two conclusions (SILENT, the code is right)
 

@@ -405,7 +405,7 @@ scale 1: position-1 gradient over seeds 0-4: ['2.1e-10', '8.4e-11', '9.8e-10', '
 scale 8: position-1 gradient over seeds 0-4: ['4.4e+03', '8.8e+04', '9.7e+05', '5.5e-07', '1.1e+05']
 ```
 
-**Seed 3** broke the rule at scale 8 (`5.5e-07`). Four of five seeds exploded; one unlucky random cell is still **one** run, and the rule is about what usually happens with these weights, not every single cell.
+**Seed 3** broke the rule at scale 8 (`5.5e-07`). Four of five seeds exploded; `5.5e-07` is a vanished gradient, which is another failure, not a working cell; and one random cell is still **one** run, so the rule is about what usually happens with these weights.
 
 ### Page 10.5
 

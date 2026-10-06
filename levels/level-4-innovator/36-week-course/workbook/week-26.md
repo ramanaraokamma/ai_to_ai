@@ -110,7 +110,7 @@ If your last three lines differ, stop and fix that first: everything below depen
 
 **W5.** Note files are called `note-2.md` and `note-10.md` (no zero padding). After `sorted(...)`, which comes first? ____________
 
-**W6.** `s = [0.1, 0.5, 0.0, 0.3]`. `np.argsort(-s)[:2]` gives ____________ .
+**W6.** `s = np.array([0.1, 0.5, 0.0, 0.3])`. `np.argsort(-s)[:2]` gives ____________ .
 
 ---
 

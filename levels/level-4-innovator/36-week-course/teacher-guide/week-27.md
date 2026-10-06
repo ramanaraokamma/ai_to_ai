@@ -1379,7 +1379,7 @@ Circle at most **two** weeks. Priority order if there is a tie: **Week 23, Week 
 
 **E(a), a full-mark answer.** *"Least to most harmful: no norm (1.478, actually better than full), no positions (1.739, a bit worse), no residual (2.679, much worse). I haven't ranked no mask because 0.077 is a leak: with no mask it can look at the next letter, which is the answer it has to predict, and its sample is tatatattt."* Credit the ranking even if 'no norm' is placed last as 'least harmful' in a different wording.
 
-**E(b), a full-mark answer.** *"It's one small model and only two seeds (1.478 and 1.453 against 1.673 and 1.643, so it is consistent but small). And the gap between train and validation is much bigger without the norm (0.327 against 0.076), so it is fitting the training text harder; it might get worse with more steps."*
+**E(b), a full-mark answer.** *"It's one small model and only two seeds (1.478 and 1.453 against 1.673 and 1.643, so it is consistent but small). And the gap between train and validation is much bigger without the norm (0.327 against 0.076), so it may be fitting the training text harder; it might get worse with more steps (a guess to test, not something the table shows)."*
 
 **E(c), a full-mark answer.** *"Table 2 shows 1.00 only for questions written in the notebook's own words; for a stranger's it is 0.20 at k = 1 and 0.60 at k = 5. I would quote the stranger's row because it is nearer to real users. Before trusting any recall number I'd ask who wrote the questions, and how many there were, since one question is 0.10."* **A 2/3 answer.** *"It doesn't work for strangers, 0.20."* (One fact, no quote-choice reason or question.) **A 1/3 answer.** *"1.00 is good."*
 

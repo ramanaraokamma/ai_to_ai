@@ -57,7 +57,7 @@ The student has an index of 15 notes (Weeks 25-26) and a habit (Week 26): *a val
 
 **(a) Pricing one turn.** The kit charges `tokens_in × 1.00 + tokens_out × 5.00`, both **per million** (an *illustrative* table, not any vendor's bill). Turn 1 of the worked run: `247 in + 28 out` → `247 × 1.00 + 28 × 5.00 = 247 + 140 = 387` millionths of a dollar = **`$0.000387`**. The whole run: inputs `247 + 415 + 448 + 519 + 566 = 2195`, outputs `28 + 10 + 25 + 19 + 20 = 102`, so `2195 × 1.00 + 102 × 5.00 = 2195 + 510 = 2705` millionths = **`$0.002705`**, which is the printed `spend`. Block K3 recomputes every turn by hand-formula and matches the trace to the last digit.
 
-**(b) Why the input grows.** Each turn the model is sent *everything so far*: the system prompt, the tool contracts, the question, every earlier model message and every tool result. So the input of turn `n` is the input of turn `n-1` plus whatever happened in between. In the worked run the growth is `168, 33, 71, 47` tokens (the big first step is turn 1's search result arriving: two notes of text). If every step added about the same `g` tokens, the inputs would be `b, b+g, b+2g, …` and their sum would be `b·n + g·(1 + 2 + … + (n-1))`: the second part grows like `n²/2`. Block K3 measures it with a constant-size step (a calculator call repeated): `g` is about **32.4 tokens per step** and the growth sum over `k` steps is `32.4 × k(k+1)/2` to within a token (`324`, `1168`, `4416` for `k = 4, 8, 16`; `k(k+1)/2 = 10, 36, 136`). **Say it in words:** *"doubling the number of steps roughly quadruples the bill for the history"* (`36/10 = 3.6`; `136/36 = 3.8`; the ratio tends to 4 as the task gets longer). **Caveat:** real steps are not constant-size (the worked run's are `168, 33, 71, 47`), so the k² is a shape, not a prediction.
+**(b) Why the input grows.** Each turn the model is sent *everything so far*: the system prompt, the tool contracts, the question, every earlier model message and every tool result. So the input of turn `n` is the input of turn `n-1` plus whatever happened in between. In the worked run the growth is `168, 33, 71, 47` tokens (the big first step is mostly turn 1's search result arriving, two notes of text, plus the model's own turn-1 words and tool request). If every step added about the same `g` tokens, the inputs would be `b, b+g, b+2g, …` and their sum would be `b·n + g·(1 + 2 + … + (n-1))`: the second part grows like `n²/2`. Block K3 measures it with a constant-size step (a calculator call repeated): `g` is about **32.4 tokens per step** and the growth sum over `k` steps is `32.4 × k(k+1)/2` to within a token (`324`, `1168`, `4416` for `k = 4, 8, 16`; `k(k+1)/2 = 10, 36, 136`). **Say it in words:** *"doubling the number of steps roughly quadruples the bill for the history"* (`36/10 = 3.6`; `136/36 = 3.8`; the ratio tends to 4 as the task gets longer). **Caveat:** real steps are not constant-size (the worked run's are `168, 33, 71, 47`), so the k² is a shape, not a prediction.
 
 ### 3. 🧭 Real vs stand-in — and what you must NOT claim
 
@@ -77,7 +77,7 @@ The student has an index of 15 notes (Weeks 25-26) and a habit (Week 26): *a val
 
 **`ast.parse(text, mode="eval")` and the whitelist.** `ast` is Python's own parser exposed as a library. `ast.parse("2 + 3 * 4", mode="eval")` turns the *text* into a tree of objects **without running anything**; `.body` is the top of the tree. `ast.dump(...)` prints it: `BinOp(left=Constant(value=2), op=Add(), right=BinOp(left=Constant(value=3), op=Mult(), right=Constant(value=4)))`. Read it as "a sum of 2 and (a product of 3 and 4)". **A whitelist** is a list of what *is* allowed, and everything else is refused: a `Constant` that is an `int` or `float`, a `UnaryOp` or `BinOp` whose operator is a key of `OPS`. `OPS` is a dict from operator *classes* (`ast.Add`) to the plain functions in the `operator` module (`operator.add` is `+` as a function). `type(node.op) in OPS` asks "is this operator one I listed?". **Why not `eval`?** `eval` *runs* the text; an attacker's text can be a program (Mistake 1 runs a harmless one). The tree approach never runs anything that is not on the list, so the set of things the text can do is exactly the set you wrote.
 **The walker calls itself (flag this).** Evaluating `2 + 3 * 4` means evaluating `3 * 4` first, and that is the *same job on a smaller tree*. So `walk` hands each child to `walk`. The course has never taught a function that calls itself (Level 2 Week 9 deliberately parked it as "a question to write down"). **Give the student `walk` as a finished, copy-it function (as the block does) and have them write `OPS`, the `type(...) in OPS` tests, and `calc`.** If they ask, use the Week 9 answer plus one sentence: *"it's a function that calls itself on a smaller piece; it stops because a number has no children."* Do not teach recursion; do not type a second recursive function.
-**Three traps in the walker.** (1) `type(node.value) in (int, float)` and **not** `isinstance(..., (int, float))`, because `True` is an `int` (Mistake 2). (2) The `**` guard (`abs(right) > 64 or abs(left) > 1e6`): `2 ** 2 ** 24` builds a 16-million-bit number in 0.07 s; `2 ** 2 ** 34` would ask for about 2 GB for one number (Mistake 3). (3) `mode="eval"`: without it `ast.parse` returns a `Module` whose `.body` is a *list* (Mistake 9).
+**Three traps in the walker.** (1) `type(node.value) in (int, float)` and **not** `isinstance(..., (int, float))`, because `True` is an `int` (Mistake 2). (2) The `**` guard (`abs(right) > 64 or abs(left) > 1e6`): `2 ** 2 ** 24` builds a 16-million-bit number in well under 0.1 s; `2 ** 2 ** 34` would ask for about 2 GB for one number (Mistake 3). (3) `mode="eval"`: without it `ast.parse` returns a `Module` whose `.body` is a *list* (Mistake 9).
 
 **`Path.resolve()` and `is_relative_to`.** `root / "../escape.md"` is a path *made of text*. `.resolve()` asks the file system what it really points to: it cancels every `..`, makes relative paths absolute and **follows symbolic links**. `.is_relative_to(root)` asks "is this path at or below `root`?". The two together are the whole sandbox: **resolve first, compare second**. `root` must itself be resolved (`Path("sandbox").resolve()`), or the comparison is between an absolute and a relative path and is always `False`. Needs Python 3.9 or later (yours is 3.10.10). Mistakes 4, 5 and 6 are the three wrong orders; Key K2 shows a symlink that a text comparison would call "inside" and `resolve()` does not.
 
@@ -578,7 +578,7 @@ The student types; you narrate. All of it goes in **one file**, `tools_and_loop.
 
 ## 🐞 The Debugging Clinic
 
-Every error below was produced by running the code. **Paths will differ on your machine**; here they are shown as `/home/you/l4/`. Each mistake is deliberate: you plant it, the student reads the traceback (or the surprising output) aloud, and you refuse to fix it until they have said what it means. **Eight are silent** (1, 2, 3, 4, 5, 6, 7, 10): the program runs and prints something plausible. Those are the dangerous ones. Three are loud (8, 9, 11). Each block assumes the Prep blocks above were run in the same session, in order. **Mistake 1 runs the attack text through `eval`; the payload only asks for the current folder. Never try anything else, and do not let the student try.** Mistake 3 runs a 2 MB number (0.07 s) and does **not** run the 2 GB one.
+Every error below was produced by running the code. **Paths will differ on your machine**; here they are shown as `/home/you/l4/`. Each mistake is deliberate: you plant it, the student reads the traceback (or the surprising output) aloud, and you refuse to fix it until they have said what it means. **Eight are silent** (1, 2, 3, 4, 5, 6, 7, 10): the program runs and prints something plausible. Those are the dangerous ones. Three are loud (8, 9, 11). Each block assumes the Prep blocks above were run in the same session, in order. **Mistake 1 runs the attack text through `eval`; the payload only asks for the current folder. Never try anything else, and do not let the student try.** Mistake 3 runs a 2 MB number (well under 0.1 s) and does **not** run the 2 GB one.
 
 ### How to teach debugging without giving the answer
 
@@ -645,7 +645,7 @@ bits in the answer: 16777217 | seconds: 0.042
 the same line with 34 instead of 24 asks for about 2.1 GB of memory for one number
 ```
 
-**Read it:** the 24 version is fast (0.07 s, a 2 MB number). The 34 version is 1,024 times bigger in the exponent and would ask for about 2 GB for **one number**; `2 ** 10 ** 10` (the text in Block P3) is far worse. The attack is not clever code; it is a short line. **Fix:** refuse exponents above 64 and bases above a million (the two-line `if` in `walk`). **Check to teach:** time `calc("2 ** 10 ** 10")`: it must come back immediately with the `ValueError`.
+**Read it:** the 24 version is fast (0.042 s in the output above, a 2 MB number; timings vary). The 34 version is 1,024 times bigger in the exponent and would ask for about 2 GB for **one number**; `2 ** 10 ** 10` (the text in Block P3) is far worse. The attack is not clever code; it is a short line. **Fix:** refuse exponents above 64 and bases above a million (the two-line `if` in `walk`). **Check to teach:** time `calc("2 ** 10 ** 10")`: it must come back immediately with the `ValueError`.
 
 ### Mistake 4 — "no two dots" as a sandbox test (SILENT)
 
@@ -778,7 +778,7 @@ ValueError: not allowed here: list
 ### Mistake 10 — `auto_approve=True` left on (SILENT)
 
 ```python
-# DELIBERATE MISTAKE 10 (SILENT): auto_approve=True left on "just for testing". The human-confirmation fence is now a wall with no door.
+# DELIBERATE MISTAKE 10 (SILENT): auto_approve=True left on "just for testing". The human-confirmation fence is now a door with no gate.
 r_bad = toyagent.run_agent("q", reg, specs, once("write_file", {"filename": "hello.md", "content": "hi"}),
                            auto_approve=True, confirm=lambda name, args: False)
 print("the confirm function said no, but hello.md exists:", (ROOT / "hello.md").exists())
@@ -916,7 +916,7 @@ The flying challenge below, and Homework 1's fourth tool.
 
 **"Does the real agent in the news use this?"** The same loop and the same kinds of fences, with more tools and better bookkeeping. We have not measured any of them here.
 
-**"Can the model talk the loop out of a fence?"** Not through the words. Week 29 shows exactly that, with a scripted model that obeys what it reads.
+**"Can the model talk the loop out of a fence?"** Not through the words alone, for the fences that are code. The human-confirmation fence (6) depends on what the person reads, and an allowlisted tool can still be misused within its permitted scope. Week 29 shows exactly that, with a scripted model that obeys what it reads.
 
 **"Why do I have to write the validator if the loop catches bad arguments anyway?"** The loop's catch is Python's own `TypeError` text. Yours names every problem, in words the model can act on, before the tool starts.
 
@@ -1039,17 +1039,17 @@ F: a plan that never stops -> max_iterations
 | Req | Answer | Why |
 |:--:|---|---|
 | A | **none** (0 is not needed) | A good request. The result is `4`. Not everything should be stopped. |
-| B | **0** — the calculator's own whitelist | `unsupported expression element: Call`. It is the *tool's contract*, not one of the six. Accept "5" only if the student says the tool itself refused. |
+| B | **0** — the calculator's own whitelist | `unsupported expression element: Call`. It is the *tool's own check* (0), a security one but not one of the six. Accept "5" only if the student says the tool itself refused. |
 | C | **3** sandbox | `PermissionError: refused: '../notes.md' resolves to …`. The human said yes; the fence did not care. |
 | D | **3** sandbox (the suffix list) | `refused: suffix '.sh' not allowed. Use one of ['.json', '.md', '.txt']`. |
 | E | **5** allowlist | `no tool named 'delete_everything'`. |
 | F | **1** turns cap | `max_iterations` after 3 turns in the drill. |
 | G | **6** a human | `the human declined this action`. Nothing is written. |
 | H | **4** timeout | `'slow' timed out.` |
-| I | **none of the six** | An ordinary tool error with a helpful message (`directory 'sub' does not exist in the sandbox`); the model can read it and retry flat (this is turn 3 of the worked run). Accept "3, the sandbox" for half if they say *why* it is not a security refusal; the point is that the message is a hint, not a wall. |
+| I | **0** (the tool's own check, not a security one) | An ordinary tool error with a helpful message (`directory 'sub' does not exist in the sandbox`); the model can read it and retry flat (this is turn 3 of the worked run). Accept "3, the sandbox" for half if they say *why* it is not a security refusal; the point is that the message is a hint, not a wall. |
 | J | **3** sandbox (the size limit) | `content too large: 25000 bytes > 20000`. |
 
-(b) **A** (the sum). (c) **I**: the model gets a `ValueError` with a message telling it to use a flat filename. (d) **None.** The prompt is a request to the model; the fences are code. **The money cap (fence 2)** is not in A-J (it is the drill's second row in Block P7: `budget_exhausted`); if the student asks, show it.
+(b) **A** (the sum). (c) **I**: a tool check (0) that is not a security fence (B is also 0, but it is a security check); the model gets a `ValueError` with a message telling it to use a flat filename. (d) **None.** The prompt is a request to the model; the fences are code. **The money cap (fence 2)** is not in A-J (it is the drill's second row in Block P7: `budget_exhausted`); if the student asks, show it.
 
 ### Page 28.2 — Read the Trace
 

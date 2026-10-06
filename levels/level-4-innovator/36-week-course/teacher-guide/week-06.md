@@ -38,7 +38,7 @@ By the end of the lesson the student can:
 5. **Use `clip_grad_norm_` correctly** — after `backward()` and before `step()` — and say what it returns (the length *before* clipping).
 6. **Say what was NOT shown**: that the residual stack grows without a norm, that layer norm alone did not rescue depth, and why *no single table settles "which device is best"*.
 
-Observable evidence: the filled depth table (workbook page 6.4); the sentence *"batch norm needs more than one example and gets very noisy with two; layer norm looks at one example only"*; and the sentence *"x + f(x) has slope 1 plus the slope of f, so the road never closes"*.
+Observable evidence: the filled depth table (workbook page 6.4); the sentence *"batch norm needs more than one example and gets very noisy with two; layer norm looks at one example only"*; and the sentence *"x + f(x) has slope 1 plus the slope of f, so the road stays open while the slope of f stays above -1"*.
 
 ---
 
@@ -52,7 +52,7 @@ Weeks 1–5 changed *how* the same small network (four blocks, 16,962 parameters
 
 The problem, in one picture. A network is a chain of layers. To learn, the *last* layer's error has to be passed backwards, layer by layer, to the *first*. At each layer it is multiplied by that layer's slope. If each slope is smaller than 1, the product shrinks at every step and the first layer hears nothing. That is a **vanishing gradient**, and it is why a 32-block plain network is stuck at the coin-flip loss (0.693, `ln 2`, Week 1) for the whole run.
 
-> **🧑‍🏫 If you remember one sentence from this section:** *a residual connection turns "multiply the slopes" into "multiply (1 + each slope)", and (1 + a small number) is never near zero; a norm layer makes sure nobody downstream gets handed numbers in a strange range; and the only reason there are two kinds of norm is that one of them needs more than one example.*
+> **🧑‍🏫 If you remember one sentence from this section:** *a residual connection turns "multiply the slopes" into "multiply (1 + each slope)", and (1 + a small non-negative number) does not shrink to nothing; a norm layer makes sure nobody downstream gets handed numbers in a strange range; and the only reason there are two kinds of norm is that one of them needs more than one example.*
 
 ### 2. 🧭 REAL vs STAND-IN — what everything this week is
 
@@ -69,8 +69,8 @@ The problem, in one picture. A network is a chain of layers. To learn, the *last
 1. **"Residual connections keep the gradient near 1."** The reference module says `(1 + f₁')(1 + f₂')… stays near 1`. That is true only if every `f'` is small. Measured: without a norm, the first-block gradient at 32 blocks is **3.00e+02, 2.02e+01, 6.23e+01, 7.47e+01, 2.63e+01** over five seeds. It does not vanish and it does not stay near 1: it *explodes*. The claim that survives: *a residual road keeps the gradient from vanishing; a norm layer keeps it from growing too much.*
 2. **"A plain deep network stalls because its gradient vanishes — at depth 12."** The ledger (re-run of the module's own answer key) found a 12-block plain network trains to 98.9%. Here: plain trains fine at 2 and 8 blocks and is stuck at 46.9% at 16 and 32. The collapse is real; **the cliff is between 8 and 16**, not at 12.
 3. **"Layer norm fixes deep networks."** Layer norm alone gives a healthy first-block gradient at 16 and 32 blocks (2.01e+00 and 7.90e+00) and **the network still scores 46.9% — the coin**. We measured that. We did not find out why. Say so (see Question 6). The pair, layer norm *with* a residual road, scored 97.6% and 98.8%.
-4. **"Layer norm makes a model robust to a shift in the inputs."** The ledger tested exactly this (workbook-style 2 × 2: matched vs shifted validation data, +1.5 on every feature). Layer norm on shifted data: **48.3%**, no better than batch norm's **46.7%**. The shift enters before any norm layer; normalising afterwards cannot undo information already destroyed. This is *not* run in class; quote it from the ledger (`_ledger/out/m01_02_answerkey.txt`, Practice 6B) only if asked.
-5. **"Gradient clipping makes training better."** It is **insurance**. With plain SGD on 16 residual blocks at a high learning rate it is the difference between `nan` and 98.9% (three seeds each, below). With AdamW at 32 blocks it did **not** help — it made things worse at lr 0.03 (94.7%, 81.9%, 96.7% against 97.8%, 99.2%, 98.9%). Adam already rescales gradients (Week 3).
+4. **"Layer norm makes a model robust to a shift in the inputs."** The ledger tested exactly this (workbook-style 2 × 2: matched vs shifted validation data, +1.5 on every feature). Layer norm on shifted data: **48.3%**, no better than batch norm's **46.7%**. The shift enters before any norm layer; normalising afterwards cannot undo it: the shift reaches the hidden features unevenly, so the data fall outside the region the network learned. This is *not* run in class; quote it from the ledger (`_ledger/out/m01_02_answerkey.txt`, Practice 6B) only if asked.
+5. **"Gradient clipping makes training better."** It is **insurance**. With plain SGD on 16 residual blocks at a high learning rate it is the difference between `nan` and 98.9% (three seeds each, below). With AdamW at 32 blocks it did **not** help — it made things worse at lr 0.03 (94.7%, 81.9%, 96.7% against 97.8%, 99.2%, 98.9%). One possible reason, which this run did not test, is that Adam already rescales gradients (Week 3).
 6. **Anything about a language model.** A spiral classifier tells you nothing about what a 96-block transformer needs. Say: *"a toy result shows a mechanism, not a rate."*
 
 > **Honest framing to say aloud, in your own words:** *"Here is a small network that gets deeper. Without help it stops learning; with a residual road it keeps learning; with norm layers the numbers stay sensible. I'm showing you the mechanism with three seeds, not a recipe."*
@@ -555,7 +555,7 @@ average spread ACROSS the 840 examples of the last block's 64 outputs
   layer norm + residual  depth 2: 0.6330   depth 16: 1.1201
 ```
 
-At 16 blocks the plain stack's last block outputs are **identical for every input** (spread `0.0000` across 840 examples): the network has stopped telling inputs apart, so no weights can fix the loss. That is the plain stack's problem. Layer norm alone does *not* have it (`0.2666`), so something else is wrong there, and **we did not find out what**. Do not guess aloud; say "not measured".
+At 16 blocks the plain stack's last block outputs are **almost identical for every input** (spread `0.0000`, below 5e-5 across 840 examples): the network has stopped telling inputs apart, so the gradient has nothing to work with at the start. That is the plain stack's problem. Layer norm alone does *not* have it (`0.2666`), so something else is wrong there, and **we did not find out what**. Do not guess aloud; say "not measured".
 
 **13. (3 min) Run the clipping demo.** About 9 seconds.
 
@@ -836,13 +836,13 @@ The full activity is under **🎲 The Activity, In Full** below. The shape: the 
 
 ### 🔑 Wrap & Assign (7 minutes)
 
-**Do this (1 minute): clipping.** Run the first half of `clip_demo.py` (the 3-4-5 triangle) or just do it on the board: *"gradient `[3, 4]`; longest I'll allow is 1; the arrow shrinks to `[0.6, 0.8]`. The call tells you how long it was: 5."* Say: *"Clipping is a safety net for the day a run produces a huge gradient. It goes **after** `backward()` and **before** `step()`."* Show the SGD result from Prep step 13: **no clip: 46.9% on all three seeds (the loss became `nan`); clip at 1: 98.9%, 98.9%, 98.3%.** *"And with Adam it did not help, because Adam already rescales gradients. Insurance, not a speed-up."*
+**Do this (1 minute): clipping.** Run the first half of `clip_demo.py` (the 3-4-5 triangle) or just do it on the board: *"gradient `[3, 4]`; longest I'll allow is 1; the arrow shrinks to `[0.6, 0.8]`. The call tells you how long it was: 5."* Say: *"Clipping is a safety net for the day a run produces a huge gradient. It goes **after** `backward()` and **before** `step()`."* Show the SGD result from Prep step 13: **no clip: 46.9% on all three seeds (the loss became `nan`); clip at 1: 98.9%, 98.9%, 98.3%.** *"And with Adam, in this one setting (lr 0.03, 32 blocks, three seeds), it did not help; a possible reason is that Adam already rescales gradients, but we did not test that. Insurance, not a speed-up."*
 
 **Do this (3 minutes): five sentences.** Ask the student to say, in their own words, each of these (and write them in the Bug Log):
 
 1. Batch norm tidies each *column* using the batch; layer norm tidies each *row* using the example alone.
 2. With two examples batch norm turns every feature into `−1` and `+1`, so it learns nothing.
-3. `x + f(x)` has slope `1 +` the slope of `f`: the error has a road that never closes.
+3. `x + f(x)` has slope `1 +` the slope of `f`: the error has a road that stays open while the slope of `f` stays above -1.
 4. In a plain stack the first block's gradient fell to `1e-18` at 32 blocks and the network never left 46.9%.
 5. We did not find out why layer norm alone failed at 16 blocks.
 
@@ -1133,7 +1133,7 @@ saved w06_gradient_vs_depth.png
 
 (The picture is saved as `w06_gradient_vs_depth.png`; the plain line falls from `7e-02` to `3e-18` and the residual line climbs from `0.3` to `62`.) Written, three sentences: **(1)** what the plain line does and by roughly how many powers of ten across the whole range; **(2)** what the residual line does and one reason not to say it "stays near 1"; **(3)** one thing the plot does not show (it does not show *training*: the untrained gradient is a prediction, `depth_train.py` is the test).
 
-**Optional extension.** Use `run(..., depth=32, residual=True, clip=1.0)` against `clip=None` at the default AdamW lr 0.003, three seeds, and report whether clipping helped. *(An exploratory run while writing this guide, not saved as a script, saw no difference at lr 0.003. Treat that as unverified and let the student's own three seeds speak.)*
+**Optional extension.** Use `run(..., depth=32, residual=True, clip=1.0)` against `clip=None` at the default AdamW lr 0.003, three seeds, and report whether clipping helped. *(Nothing has been recorded for this at lr 0.003; let the student's own three seeds speak.)*
 
 ---
 

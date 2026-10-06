@@ -650,7 +650,7 @@ Open a terminal in the scratch folder. Run P1, P3 and P4 only: P4 must print `pr
 - **`ModuleNotFoundError: No module named 'l4lib'`**: wrong folder; it is the one that contains `l4lib/`.
 - **`ModuleNotFoundError: No module named 'eval'`**: `sys.path.insert(0, "capstone34")` (last line of P1) was not run in this session, or you are in a different folder.
 - **A number does not match the guide**: the cases differ by a character (the fingerprint differs), or you edited `notes/`. Print `fingerprint(CASES)[:12]`; expect `082634635247` for the teacher's copy.
-- **`src/` already holds a file when you try to freeze**: that is the guard working (D8). Move the file out, freeze, move it back.
+- **`src/` already holds a file when you try to freeze**: that is the guard working (D8). Do not move the file out to freeze: `FROZEN.txt` would then say `src_files=0` although code came first, which is false. Either freeze anyway and write on the paper that it was late, or accept that this freeze is not "eval first".
 - **No computers at all**: the whole lesson runs on paper. The Case Card is a table; the fingerprint step becomes "sign and date the page in front of a witness"; the checker becomes the teacher reading each needle and asking *"which note says this?"*; the budget is Page 34.3. The DESIGN doc is written by hand.
 
 ---

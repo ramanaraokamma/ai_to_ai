@@ -54,7 +54,7 @@ x =  " to school with a book u"
 y =  "to school with a book un"
 ```
 
-Read down the two rows: at every place, `y` is *the character that came next*. Because of the mask you met in Week 15, each place in `x` sees only what came before it, so **one pass through the model answers all 64 questions in a window at once**: *given the characters so far, what comes next?* A **batch** is 32 windows. So one step asks `32 x 64 = 2,048` questions.
+Read down the two rows: at every place, `y` is *the character that came next*. Because of the mask you met in Week 15, each place in `x` sees only itself and what came before it, so **one pass through the model answers all 64 questions in a window at once**: *given the characters so far, what comes next?* A **batch** is 32 windows. So one step asks `32 x 64 = 2,048` questions.
 
 How do we pick 32 windows? We choose the places where they start **at random**. That is the first new piece of syntax.
 

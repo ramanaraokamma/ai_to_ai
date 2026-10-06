@@ -5,7 +5,7 @@
 ---
 
 > ### This week in one sentence
-> **A network can get a perfect score on the points it practised on and get worse on every point it has not seen, so the number to trust is the validation loss, and four cheap cures (stop early, drop units, shrink weights, jiggle the inputs) all pull it back down.**
+> **A network can get a perfect score on the points it practised on and get worse on points it has not seen, so the number to trust is the validation loss, and four cheap cures (stop early, drop units, shrink weights, jiggle the inputs) all pull it back down.**
 >
 > **By the end of this chapter you will be able to:**
 > - **Recognise overfitting from two numbers:** training loss near zero, validation loss far above it and rising

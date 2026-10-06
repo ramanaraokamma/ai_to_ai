@@ -145,7 +145,7 @@ Did your tallies match? Which row did you get wrong, if any? ______ . Your two b
 
 ## 🧮 Page 35.2 — Promise Against Measurement (35 min · pen, then computer)
 
-In Week 34 you wrote five promises **before** anything existed. Today `run_eval.py` measured them. The measured values below are the chapter's worked example (stand-in dollars; the sum of the 25 task costs is `$0.01129`, the most expensive single task was `$0.00148`).
+In Week 34 you wrote five promises (the table shows four; the p95 time promise is checked in the code block) **before** anything existed. Today `run_eval.py` measured them. The measured values below are the chapter's worked example (stand-in dollars; the sum of the 25 task costs is `$0.01129`, the most expensive single task was `$0.00148`).
 
 **A. The promise table.** For a **ceiling** ("under"), headroom = promised ÷ measured. For a **floor** ("at least"), headroom = measured ÷ promised. Write `kept` if headroom is above or equal to `1.0`, `MISSED` if below.
 
@@ -517,7 +517,7 @@ agent     'what does the note say about week-11'        -> NOT IN NOTES
 3. It counts errors the catch-all caught and wrote down (it would say `1` on a draft that crashed inside `answer()`). It does **not** count wrong answers, and it says nothing about a path that returns a clean wrong number (35.4-D).
 4. The `factual 8 → 5` with three named cases and a mechanism (the higher threshold refuses answerable questions) is the finding. The overall `17 → 15` is inside the wobble (about 2.3 per score; the bar was 6.8).
 5. It is **re-freezing**: it changes what green means. Your teacher would notice on Monday, because your paper holds the committed numbers too.
-6. It is a speed bump: it matches shapes (`../`, `/etc/`, "the instructions you were given") and not meanings, so paraphrased overrides get through. The wall is the **capability limit** (sandbox, named files only, iteration cap, confirmation), which is why A1's fix is a write guard and not a longer list of bad words.
+6. It is a speed bump: it matches shapes (`../`, `/etc/`, "the instructions you were given") and not meanings, so paraphrased overrides get through. The wall is the **capability limit** (sandbox, named files only, iteration cap; the spine auto-approves confirmation, so it is not a wall here), which is why A1's fix is a write guard and not a longer list of bad words.
 7. Any real attack you did not run: a paraphrased override, another language, an instruction in a hidden comment. Honest sentence: *"I attempted N attacks in 5 categories; k landed; here is the log, including the ones that failed."*
 
 ### Page 35.6 and Self-Check

@@ -1112,7 +1112,7 @@ Give the first two rows of round 1 filled in; the student starts at `bit`. Or us
 
 ### Variation — harder
 
-Change `W_hh` from 0.5 to 0 and redo round 1 by hand. The note then depends only on the current word: the final note is `tanh(-1.0) = -0.7616` for sentence 1 and `tanh(1.0) = 0.7616` for sentence 2, because the cell no longer uses the old note at all. (Check in `sticky.py` by setting `W_hh = 0.0`. With no memory the cell is a bag-of-one-word model.) Then `W_hh = 1.0`: the final notes are `-0.4788` and `0.4194` (run with `W_hh = 1.0` in `sticky.py`), so the two sentences are still told apart. (We did not test what else changes.)
+Change `W_hh` from 0.5 to 0 and redo round 1 by hand. The note then depends only on the current word: the final note is `tanh(-1.0) = -0.7616` for sentence 1 and `tanh(1.0) = 0.7616` for sentence 2, because the cell no longer uses the old note at all. (Check in `sticky.py` by setting `W_hh = 0.0`. With no memory the cell is a last-word-only model.) Then `W_hh = 1.0`: the final notes are `-0.4788` and `0.4194` (run with `W_hh = 1.0` in `sticky.py`), so the two sentences are still told apart. (We did not test what else changes.)
 
 ---
 

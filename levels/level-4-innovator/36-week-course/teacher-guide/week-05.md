@@ -47,7 +47,7 @@ Read this section once, slowly. It is about ten minutes. There is no calculus an
 
 ### 1. Why this week exists
 
-Weeks 1–4 turned the loop `w -= lr * grad` into a set of knobs for *how fast and in what direction the training loss falls*. Every one of them was judged on how low a number went. Nobody asked **which number**. Week 4's batch table left a loose thread: at equal steps, the big-batch rows had a *training* loss of 0.000 and a *validation* loss of 0.073 — a model that had seen the same 840 points 260 times and learned them by heart. Week 5 gives that a name and tests four cures.
+Weeks 1–4 turned the loop `w -= lr * grad` into a set of knobs for *how fast and in what direction the training loss falls*. Every one of them was judged on how low a number went. Nobody asked **which number**. Week 4's batch table left a loose thread: at equal steps, the big-batch rows had a *training* loss of 0.000 and a *validation* loss of 0.073 — a model that had seen the same 840 points 260 times and began to memorise them. Week 5 gives that a name and tests four cures.
 
 A model that has **learned** has found something true about *all* spiral points. A model that has **memorised** has found something true about *these* 120 points, including their accidents (a point that landed on the wrong arm because the noise pushed it there). You cannot tell the two apart from training loss. You can tell them apart from **two numbers side by side**: loss on the points it trained on, and loss on points it has never seen. The second number is the validation loss.
 
@@ -549,7 +549,7 @@ for s in [0.0, 0.05, 0.1, 0.2, 0.3, 0.5]:
       0.5    0.337 (0.309 .. 0.361)      0.416 (0.337 .. 0.443)
 ```
 
-The shape to notice: a **U**. No jitter: final 0.803. Jitter 0.2: best mean 0.139 and final 0.192. Jitter 0.5: both 0.337 and 0.416 — worse than nothing on best val, because the noise is now larger than the typical gap to the other class (0.57 median; noise of 0.5 moves a point about 0.71). *More of a good thing stopped being good.* The 0.2 row has the smallest spread of any row in the week (0.127 to 0.147 for best val).
+The shape to notice: a **U**. No jitter: final 0.803. Jitter 0.2: best mean 0.139 and final 0.192. Jitter 0.5: both 0.337 and 0.416 — worse than nothing on best val. This is consistent with the noise being larger than the typical gap to the other class (0.57 median; noise of 0.5 moves a point about 0.71), though the sweep did not test that cause. *More of a good thing stopped being good.* The 0.2 row has the smallest spread of any row in the week (0.127 to 0.147 for best val).
 
 **8. (2 min) Run the two measurements that go with the misconceptions.**
 
@@ -974,7 +974,7 @@ jitter 0.1            0.149 (0.113 .. 0.180)      0.366 (0.197 .. 0.524)
       0.5    0.337 (0.309 .. 0.361)      0.416 (0.337 .. 0.443)
 ```
 
-Ask them to find where it becomes worse than nothing. Target: **0.5** (best val 0.337, final 0.416) is worse than 0.0 on best val (0.204). **0.2** is the bottom of the U. Then: "so is 'jitter' good or bad?" → *a dose*. Add the measured gap from `gap_check.py`: the typical distance to the other class is 0.57, and noise of 0.5 moves a point about 0.71. The arithmetic, not the plot, explains the U.
+Ask them to find where it becomes worse than nothing. Target: **0.5** (best val 0.337, final 0.416) is worse than 0.0 on best val (0.204). **0.2** is the bottom of the U. Then: "so is 'jitter' good or bad?" → *a dose*. Add the measured gap from `gap_check.py`: the typical distance to the other class is 0.57, and noise of 0.5 moves a point about 0.71. The arithmetic is a plausible reading of the U (the sweep did not test the cause).
 
 **Part 4 — the report (3 minutes).** Use the template:
 
@@ -1257,7 +1257,7 @@ Ask for **combinations**. Run `combos.py` (Prep step 7), which crosses jitter 0.
 
 **"Why does my table differ from the guide's by a little?"** Seed, torch version, thread count. See the checklist. Never copy the guide's number.
 
-**"Does this work for language models?"** Big ones see each training sentence about once and are usually under-trained rather than over-trained, so the picture differs; small ones trained on tiny text can overfit the same way. Say: "we will see train against validation again in Week 12, with 231 names."
+**"Does this work for language models?"** Big ones often see each training sentence only a few times, though memorisation still happens, so the picture differs; small ones trained on tiny text can overfit the same way. Say: "we will see train against validation again in Week 12, with 231 names."
 
 ---
 

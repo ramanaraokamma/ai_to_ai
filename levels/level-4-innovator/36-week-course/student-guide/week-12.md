@@ -5,7 +5,7 @@
 ---
 
 > ### This week in one sentence
-> **While training, the model is handed the true previous letter at every step, so a whole batch of names goes through together; while generating, it is handed its own last guess, so it writes one letter at a time, and when you count, most of what it "invents" turns out to be a name it was trained on.**
+> **While training, the model is handed the true previous letter at every step, so every input is known before the model runs; while generating, it is handed its own last guess, so each letter must wait for the one before it, and when you count, most of what it "invents" turns out to be a name it was trained on.**
 >
 > **By the end of this chapter you will be able to:**
 > - **Turn names into numbers** and build the shifted input that **teacher forcing** needs, with `torch.full` and `torch.cat`
@@ -177,7 +177,7 @@ The by-hand average and `padding ignored` agree to four places: that is your che
 
 Block 3 defines the model as a sentence: an **embedding** that turns an id into 24 numbers (Week 8), an **LSTM cell** of 64 (Week 11), a **dropout** (Week 5), and a **linear layer** that gives 28 scores, one per id. Read the class from top to bottom and find each part.
 
-Look hard at `forward`. The line `self.step(x[:, t], state)` takes its input from `x[:, t]`, **a column that already exists** before the model runs. That is **teacher forcing**: training feeds the *true* previous letter, so every input is known in advance, and a whole batch of names goes through at once. Keep that line in your head for block 5.
+Look hard at `forward`. The line `self.step(x[:, t], state)` takes its input from `x[:, t]`, **a column that already exists** before the model runs. That is **teacher forcing**: training feeds the *true* previous letter, so every input is known in advance and nothing has to be sampled inside the loop. Keep that line in your head for block 5.
 
 `scores.reshape(-1, VOCAB_SIZE)` flattens the scores from `(231, 8, 28)` to one row per (name, step). The `-1` means "work out this number for me": 1,848. Then `F.cross_entropy` sees `1,848` rows of `28` scores and `1,848` labels.
 
@@ -317,13 +317,13 @@ training on 200 names, 800 full-batch steps:
 final   train 0.906 | validation 3.417 | last training step (dropout on) 1.001
 ```
 
-Compare with your predictions. Then compare the last row with `ln 28 = 3.3322`. On names it has **not** seen, the model at step 800 scores *worse than a model that knows nothing*, because it is confident and wrong. Is that a bug? No. It is Week 5's memorising, this time on letters. Notice the shape: train kept falling, and validation fell and then turned round (look at the rows between step 100 and step 200).
+Compare with your predictions. Then compare the last row with `ln 28 = 3.3322`. On names it has **not** seen, the model at step 800 scores *worse than a model that knows nothing*, because it is confident and wrong. Is that a bug? No. It is Week 5's memorising, this time on letters. Notice the shape: train kept falling, and validation fell and then turned round (look at the rows around steps 100 to 200, where it is already rising).
 
 One more detail. The last number, `1.001`, is the loss of the final training step with dropout **on**; `0.906` is the same model measured with dropout **off**. Two modes, two numbers.
 
 ### Generate
 
-Now the model writes. Read `make_name` against `forward` and answer out loud: **where does the input come from in `forward`? And in `make_name`?** In `forward` it is `x[:, t]`, a column that was there before we started. In `make_name` it is `tok`, which is set from `i`, the last answer: **the model's own pick**. The next input does not exist until the last answer does, so this is one letter at a time. That is the difference the whole week is about.
+Now the model writes. Read `make_name` against `forward` and answer out loud: **where does the input come from in `forward`? And in `make_name`?** In `forward` it is `x[:, t]`, a column that was there before we started. In `make_name` it is `tok`, which is set from `i`, the last answer: **the model's own pick**. The next input does not exist until the last answer does, so each letter must wait for the one before it (this code makes one name at a time; a program could run many names side by side, but never the steps of one name out of order). That is the difference the whole week is about.
 
 `draw` is **given to you**; type it in, but you are not asked to explain it. It is a dice-roll: `rng.random()` gives a number between 0 and 1, and the loop adds up the model's probabilities until the total passes the roll, so a letter is picked in proportion to its probability. Next week you open it. The line `scores[PAD] = -1e9` sets the score of padding so low that it is never picked.
 
@@ -544,7 +544,7 @@ Week 13 keeps the model from block 7 and changes only **how the next letter is c
 
 | Word | Meaning |
 |---|---|
-| **teacher forcing** | training with the *true* previous letter as the input at every step, so all inputs are known in advance and a whole batch goes through together |
+| **teacher forcing** | training with the *true* previous letter as the input at every step, so all inputs are known in advance and nothing has to be sampled inside the loop |
 | **shift right** | moving the names one place to the right, with a start token in front, to make the inputs |
 | **start token** | the id put in front of the input; here it is `0`, the same id as PAD |
 | **padding** (PAD) | filler id `0`, used to make every name the same length |

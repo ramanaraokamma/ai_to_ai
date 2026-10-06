@@ -5,7 +5,7 @@
 ---
 
 > ### This week in one sentence
-> **Learning a recurrent cell sends an error backwards through the loop, and at every step back it is multiplied by that step's slope; forty slopes below 1 multiply to almost nothing, forty above 1 to an enormous number, and clipping can only cure the second.**
+> **Learning a recurrent cell sends an error backwards through the loop, and at every step back it is multiplied by that step's slope; forty slopes below 1 multiply to almost nothing, forty above 1 to an enormous number, and clipping can only tame the second (it limits the size of one update; it does not fix the cause).**
 >
 > **By the end of this chapter you will be able to:**
 > - **Compound by hand**: work out `r ** k` on a calculator for `r` below and above 1, and say *before* you press the key whether the answer will be tiny, near 1, or large
@@ -318,7 +318,7 @@ Colour in which predictions were right. The score is not the point; the **patter
 - scale 4: roughly level up to `T = 40`, then it climbs;
 - scale 8: it climbs every time, to `7e+07`.
 
-**No row stays near `4`**, the value at the last position. There is no comfortable middle: that is the point of the week.
+**No row stays near `4`**, the value at the last position. None of the four settings we tried stays level, and the one closest to 1 is a knife-edge that would shift with a different `T` or seed. There is no *reliable* comfortable middle: that is the point of the week.
 
 ![A four by four grid of measured gradients at position 1, from 9.15e-03 down to 4.69e-21 in the top row and up to 6.92e+07 in the bottom row, each cell labelled vanishing, level or exploding](../figures/fig-w10-2-gradient-grid-lengths-scales.svg)
 *Figure 10.2 — No setting of the grid keeps the gradient near the 4.0 of the last position: it vanishes or explodes by orders of magnitude.*

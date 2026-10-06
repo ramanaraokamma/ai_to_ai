@@ -13,7 +13,7 @@
 |---|---|
 | **Duration** | 70 minutes in class, then the workbook (~60-75 min, of which about 25 seconds is the computer training) |
 | **Type** | 🟩 Lab — the student turns 231 typed names into numbers, builds the shifted input that **teacher forcing** needs, trains a character model with a loss that **skips the padding**, holds 31 names back to see train against validation, generates names one letter at a time, and **counts how many already exist** |
-| **Big idea** | **Training** hands the model the *true* previous letter at every step, so every input is known before the model runs and the whole batch of names goes through at once. **Generating** hands the model *its own* previous guess, so the next input does not exist until the last answer does: one letter at a time, no shortcut. The same weights do both jobs, and the two jobs are not the same test. A model that scores well on the first can be a copying machine on the second: here, 80% of what it "invents" is a name it was trained on. |
+| **Big idea** | **Training** hands the model the *true* previous letter at every step, so every input is known before the model runs and nothing is sampled inside the loop. **Generating** hands the model *its own* previous guess, so the next input does not exist until the last answer does: the steps of one name must run in order, no shortcut. The same weights do both jobs, and the two jobs are not the same test. A model that scores well on the first can be a copying machine on the second: here, 80% of what it "invents" is a name it was trained on. |
 | **New vocabulary** | **teacher forcing** · **shift right** / start token · **padding** and **padding mask** (`ignore_index`) · **train loss** / **validation loss** (met in Week 5, used now on text) · **generate** / **autoregressive** · **novelty rate** (the share of generated names that are not in the list). (**Overfitting**, **dropout**, **embedding**, **LSTM cell**, **cross-entropy** and **softmax** are *already theirs*: Weeks 5, 8, 11, Level 3 Weeks 14 and 26. Say so, and use them.) |
 | **New maths** | *(none)*. One old idea gets a new job: **average surprise** (`-ln p`, Level 3 Week 14) is the loss, and the question of the day is *which positions get averaged*. See the 🔢 section. |
 | **New syntax** | `F.cross_entropy(..., ignore_index=)` · `torch.cat` (already met in Level 3 Week 27; used here to shift the input) · `torch.full` · `import torch.nn.functional as F`. That is the ladder's list: three constructs and the import. **One off-ladder helper** (`rng.random()` inside the received function `draw`) is declared in section 4. |
@@ -89,7 +89,7 @@ Average `= 4.6051 / 4 =` **`1.1513`**. (Block 2 prints each line.) `F.cross_entr
 > 1. **"The model invents names."** At 800 steps **79.5%** of 200 draws (159) are names from the training list, and the 200 contain only **147 distinct** strings. The honest sentence is: *"it mostly reproduces its training list, and a fifth of the time it makes a string that is not in it."* Three training seeds, 200 draws each (`T2`): `80.5%`, `86.0%`, `86.5%` in the list.
 > 2. **"Stopping at step 100 is better."** It is *more novel* (`0.5%` in the list, `199` distinct) and the lowest validation loss is near there (`2.301` at step 80), but its names are mostly not names, and the validation loss `2.308` is still only a little below the letter-frequency baseline (`2.735`). We did not rate the names; the student reads twenty and judges, and that judgement is theirs, not a number.
 > 3. **"Validation loss above `ln 28` means something is broken."** It means the model is confident and wrong on names it has not seen. The bug version is mistake 5 in the Clinic, where validation is near **zero**.
-> 4. **"Teacher forcing makes training parallel in time."** It makes every input *known in advance*, so a whole batch of names goes through together (`T3`: the step-by-step scores and the whole-batch scores agree exactly, gap `0.0e+00`). **The 8 time steps are still a loop inside the LSTM**, in training as in generation. What generation lacks is not the loop; it is the *batch*: the next input is not known until the last answer is in. (Week 14's attention is what removes the loop in time.) `T3` times it: scoring 200 known names takes about 1.3 ms, generating 200 new ones about 29 ms, roughly **20 times** longer; the ratio moves with the machine.
+> 4. **"Teacher forcing makes training parallel in time."** It makes every input *known in advance*, so the loss needs no sampling inside the loop (`T3`: the step-by-step scores and the whole-batch scores agree exactly, gap `0.0e+00`). **The 8 time steps are still a loop inside the LSTM**, in training as in generation. What generation lacks is not the loop or the batch (generation can also run many names side by side); it is that step t+1's input is step t's sample, so the steps of one name cannot be known ahead of time. (Week 14's attention is what removes the loop in time.) `T3` times it: scoring 200 known names takes about 1.3 ms, generating 200 new ones about 29 ms, roughly **20 times** longer; this compares one batch of 200 with 200 batches of 1, so it is mostly a batching effect, and the ratio moves with the machine.
 > 5. **Setting the reference module's numbers beside ours.** The module trains on all 231 names and samples with `torch.multinomial` at temperature 1.0 and finds 12 of 60 new; our generator and seeds are different and we count 33 of 200 new for the 231-name model (`16.5%`). The *shape* agrees (most of what it writes is in its list); the numbers are not a reproduction. The module's "`dira`" and "`arjav`" are its samples, not ours.
 > 6. **Anything about a real language model.** A real model trains on billions of characters and does not memorise one list of 231. Today is the same two loops (train with the truth, generate on your own output) at a size where you can read every output.
 
@@ -186,12 +186,12 @@ Read these before class so nothing surprises you. **Every number is printed by t
 ### 8. The three misconceptions you will actually meet
 
 1. **"The model made those names up."** It has 25,532 numbers and has seen 200 names 800 times. Fix: block 6, the count. Then: *"What would a model that really understood how names work do with `amara`, which it never saw?"* (Give `amara` a good score. It does not: validation is `3.417`.)
-2. **"Teacher forcing is cheating."** It is how every language model is trained, and it is not cheating because at test time the answers are not available; what the model *is* graded on in generation is its own pick. Fix: the driving-lesson analogy in the Concept, and then block 5's loop against block 3's forward.
+2. **"Teacher forcing is cheating."** It is the standard way to train autoregressive language models like this one, and it is not cheating because at test time the answers are not available; what the model *is* graded on in generation is its own pick. Fix: the driving-lesson analogy in the Concept, and then block 5's loop against block 3's forward.
 3. **"Padding is harmless because it's just blanks."** It is 24% of the positions, and the model gets credit for every one it predicts easily. Fix: block 2's `0.5857` against `1.1513`, done by hand.
 
 ### 9. How deep to go, and where to stop
 
-Stop at: *"training hands the model the true previous letter, so all inputs are known and a batch goes through together; generating hands it its own pick, so it runs one letter at a time; the padding is skipped so it cannot flatter the loss; train loss and validation loss are two numbers and the second is the honest one; and the count of names already in the list shows how much of 'inventing' is remembering."* Do **not** go into: scheduled sampling, beam search, perplexity, embeddings as meaning, why letter 12 is `n`, bidirectional models, or what the hidden state "stores". If the student asks *"so how do I make it invent more?"*: *"Two things change the answer: stop earlier, and choose the next letter differently. Next week is the second."*
+Stop at: *"training hands the model the true previous letter, so all inputs are known and nothing is sampled inside the loop; generating hands it its own pick, so each letter waits for the one before; the padding is skipped so it cannot flatter the loss; train loss and validation loss are two numbers and the second is the honest one; and the count of names already in the list shows how much of 'inventing' is remembering."* Do **not** go into: scheduled sampling, beam search, perplexity, embeddings as meaning, why letter 12 is `n`, bidirectional models, or what the hidden state "stores". If the student asks *"so how do I make it invent more?"*: *"Two things change the answer: stop earlier, and choose the next letter differently. Next week is the second."*
 
 ### 10. 🧭 Where Week 12 sits
 
@@ -654,7 +654,7 @@ whole batch vs step by step, biggest gap: 0.0e+00
 teacher-forced pass over 200 names: 1.3 ms | generating 200 names, one letter at a time: 28.9 ms | ratio 21x
 ```
 
-The gap `0.0e+00` says: feeding the true letters one step at a time gives **exactly** the scores the whole-batch pass gives, so teacher forcing is a scheduling fact (all the inputs exist) and not a different computation. The two timings vary from run to run and machine to machine; the ratio was `18x` to `21x` in our three runs on this machine. The 200 generated names cost many more cell calls than one batch of 200 (one call per name per letter, with a batch of 1).
+The gap `0.0e+00` says: feeding the true letters one step at a time gives **exactly** the scores the whole-batch pass gives, so teacher forcing is a scheduling fact (all the inputs exist) and not a different computation. The 20x ratio below is therefore mostly batch size 1 against batch 200, not forcing against no forcing; The two timings vary from run to run and machine to machine; the ratio was `18x` to `21x` in our three runs on this machine. the 200 generated names cost many more cell calls than one batch of 200 (one call per name per letter, with a batch of 1).
 
 **Teacher-only block K1 — `key.py`: every hand answer in the workbook, computed** (under 1 second)
 
@@ -772,7 +772,7 @@ Say: *"At every step the program sees the column above and must say the column b
 
 **(3 min) Two numbers for one model.** Say: *"We will hold back 31 names. The program never trains on them. After each stretch of training we ask it for its score on the names it trained on, and on the 31."* Ask them to predict the shape (Week 5): *"the first keeps falling; the second..."* (Falls, then turns round. If they do not remember, say "Week 5's second curve".) *"If the second gets bad, what has the program done to the first 200?"* (Memorised them. Say the word.) Write **train loss / validation loss** on the board.
 
-> **Check for understanding (do not skip).** *"What goes in at each step during training? During writing? Which one can be done for all names at once? Why is the blank left out of the score?"* (The true previous letter; its own pick; training, because every input is known; so blanks cannot flatter it.) If they say "writing is slower because it's harder", go back: it is slower because the next input *does not exist* until the last answer does.
+> **Check for understanding (do not skip).** *"What goes in at each step during training? During writing? Which one has all its inputs known up front? Why is the blank left out of the score?"* (The true previous letter; its own pick; training, because every input is known up front; so blanks cannot flatter it.) If they say "writing is slower because it's harder", go back: it is slower because the next input *does not exist* until the last answer does.
 
 ### 💻 Live-Code Together — blocks 1-3 (20 minutes)
 
@@ -1128,7 +1128,7 @@ Play the quiz again with their own name list: five names of people they know, an
 Five questions, orally, during the activity. Not graded; they inform the mastery scale.
 
 1. **"What goes into the model at each step during training, and what during generation?"** *Pass:* training, the true previous letter (shifted right, with a start token); generation, the model's own last pick.
-2. **"Why can training run the whole batch together but generation can't?"** *Pass:* in training all inputs exist up front; in generation the next input is the last answer.
+2. **"Why does training need no sampling inside the loop but generation does?"** *Pass:* in training all inputs exist up front; in generation the next input is the last answer.
 3. **"What does `ignore_index=PAD` do, and what would happen without it?"** *Pass:* it leaves padding positions out of the average; without it the number is flattered by easy blanks (`0.5857` against `1.1513` on the toy).
 4. **"Train loss `0.906`, validation loss `3.417`: what has happened?"** *Pass:* the model has memorised its 200 names and is confident and wrong on the 31 it has not seen (Week 5's gap).
 5. **"159 of 200 generated names are in the training list. What does that show, and what doesn't it show?"** *Pass:* it shows most of the output is remembered; it doesn't say the rest are good names, and it is one recipe on 231 names. (Bonus: the 100-step model has almost none in the list and almost none are names.)
@@ -1137,7 +1137,7 @@ Five questions, orally, during the activity. Not graded; they inform the mastery
 
 | Level | What you see |
 |---|---|
-| **4 — Fluent** | Predicts validation turning round before running; explains "known inputs" as the reason training batches and generation doesn't; reports both the 159 and the 1 and says the second set of names were mostly not names; spots that `0.001` validation in Clinic 5 is a leak. |
+| **4 — Fluent** | Predicts validation turning round before running; explains "known inputs" as the reason training needs no sampling in the loop and generation does; reports both the 159 and the 1 and says the second set of names were mostly not names; spots that `0.001` validation in Clinic 5 is a leak. |
 | **3 — Secure** | Builds the shift with `torch.full` and `torch.cat`; explains `ignore_index`; reads the train/validation gap; counts novelty and says what it means. |
 | **2 — Developing** | Gets the shift and the loss; thinks "new" means "invented" or "good"; needs help flattening the scores. |
 | **1 — Not yet** | Cannot say what goes into the model at each step. Repeat the Hook at the start of Week 13, before sampling. |
@@ -1250,7 +1250,7 @@ A write-up that says "the model invents names" loses the last three marks regard
 | What is the input at step 6 for `anika`? | `1`, EOS, the last thing said. |
 | Could you work out the input at step 5 before step 2 has run? | Yes: it is a letter of the name. That is teacher forcing. |
 | What goes in at each step when generating? | The model's own last pick. |
-| Which of training and generating can run a whole batch together? | Training. |
+| Which of training and generating has every input known before the model runs? | Training. |
 | How surprised is a model by a blank it is 98% sure of? | `-ln 0.98 = 0.0202`. |
 | What happens to the toy loss if you count the blanks? | `1.1513` falls to `0.5857`. |
 | What should an untrained model score? | About `ln 28 = 3.3322`; ours gives `3.3455`. |

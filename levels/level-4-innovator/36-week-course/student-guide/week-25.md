@@ -408,7 +408,7 @@ lsa, dim 8                 0.67     0.87
 lsa, dim 14                0.73     1.00
 ```
 
-Read the table aloud, row by row. Dimension 2 is the only row that really squeezes, and it is the worst.
+Read the table aloud, row by row. Dimension 2 squeezes hardest, and it is the worst.
 
 ### The query the word table cannot hear
 
@@ -495,7 +495,7 @@ print(f"pure chance: recall@1 {1/15:.2f}  recall@3 {3/15:.2f}")
 pure chance: recall@1 0.07  recall@3 0.20
 ```
 
-After one step the embedder already reaches recall@3 `0.73`, which equals the word table. Training adds about `0.15` on both recall@1 and recall@3 over almost-random numbers for the same pieces. **That is the sentence to keep: the trained tier adds about 0.15 over almost-random numbers for the same letter pieces.**
+After one step the embedder already reaches recall@3 `0.73`, which equals the word table. Training adds about `0.15` on both recall@1 and recall@3 over almost-random numbers for the same pieces. That is about two of the 15 questions, over five seeds, and the seed ranges overlap (recall@1 after one step `0.33` to `0.60`; after 150 steps `0.47` to `0.73`), so read it as "modest", not as a precise `0.15`; it also measures this 150-step recipe, not training in general. **The sentence to keep: on these 15 questions, the trained tier scored about 0.15 higher on average than a one-step model built from the same letter pieces.**
 
 ![Paired bars of recall at 1 and at 3 for chance, word table, one-step control, trained embedder and LSA, with the seed range marked](../figures/fig-w25-2-recall-beside-its-control.svg)
 *Figure 25.2 — A recall number needs its control. One training step already reaches recall@3 0.73; 150 steps reach 0.89, so training added 0.63 − 0.48 = 0.15 at recall@1.*
@@ -545,7 +545,7 @@ Did the message tell you what to do? It names both numbers. Write in your Bug Lo
 - The word table scores `optimiser` at `0.000` against every one of the 15 notes. Letter pieces give `optimizer` and `optimiser` a cosine of `0.359`, `optimise` and `optimiser` `0.670`, and `banana` `0.000`.
 - The hand-built index (letter pieces, SVD to 14 numbers, normalise once, matrix multiply) gives exactly `l4lib`'s matrix and ranking, and `np.save` / `np.load` keeps it identical.
 - On these 15 questions: word table recall@1 `0.67`, recall@3 `0.73`; SVD tier `0.73` and `1.00` (14 numbers); the contrastive tier averages `0.63` and `0.89` over five seeds (recall@1 from `0.47` to `0.73`).
-- The control: one training step already gives recall@3 `0.73`. Training adds about `0.15`.
+- The control: one training step already gives recall@3 `0.73`. Training added about `0.15` on average (about two questions; the seed ranges overlap).
 
 **Not shown:**
 - **That "dense beats sparse".** At recall@1 the word table is level with the trained tier. At recall@3 the dense tiers are ahead, by small margins.

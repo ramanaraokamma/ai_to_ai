@@ -739,7 +739,7 @@ Your own guesses are yours (typical guesses in class were `0, 50, 90, 100` perce
 
 **24.1b.** Case 1: **2** times in 6 (right every time). Case 2: **4** times in 6, a 1-in-**4** guess (four values left). `2/6 × 1 + 4/6 × 1/4 = 0.333 + 0.167 =` **0.500**.
 
-**24.1c.** `6 × 5 × 4 × 3 × 2 × 1 =` **720**. (So the model cannot have memorised the codes: the answer is decided by the examples, not by the question.)
+**24.1c.** `6 × 5 × 4 × 3 × 2 × 1 =` **720**. (There are only 720 codes, so the model has very likely met every one in training. Knowing all the codes still does not answer the question: which code is in play is decided by the examples on the page, not by the question.)
 
 **24.1d.** Expected: `0.67, 1.33, 2.67, 4`, total `0.67 + 1.33 + 2.67 + 4 =` **8.67** of 16 (exactly `8 2/3`). What you scored is yours. **Bad or unlucky?** Sixteen rounds cannot tell: even a perfect player wobbles. To tell you need **many more rounds** and to know **how much a perfect player's score wobbles** over that many (page 24.1h-j does exactly that for the model's 500 prompts).
 
@@ -791,7 +791,7 @@ Table (seed 0 is the class table; seed 3 is the neighbour's):
 
 **24.2h.** For example: *"If I had only run seed 0 I would have said that at six examples the model copies with accuracy 0.998; if I had only run seed 3 I would have said 0.686."* Any two seeds from the table that disagree are fine, with the right numbers.
 
-**24.2i.** A memoriser has nothing to recall at `n = 0`, so it scores about **chance**, `0.167`; ours scored about `0.17` (`0.176` on seed 0). There are 720 codes and a new one every prompt; the model must read the page.
+**24.2i.** A memoriser has nothing to recall at `n = 0`, so it scores about **chance**, `0.167`; ours scored about `0.17` (`0.176` on seed 0). There are only 720 codes, so the model has probably met each one in training; but which code is in play changes every prompt and is fixed only by the examples, so at `n = 0` nothing can beat chance and otherwise the model must read the page.
 
 ### Page 24.3
 
@@ -821,7 +821,7 @@ Final carry **1**, digits written last column first: **2 4 6 4 5**. Answer **124
 
 **24.3h.** True: *"Direct five-digit addition did not get learned in 3,000 steps (exact match `0.000` on seed 0); at 12,000 steps it scored `0.994`."* False: *"Transformers cannot add"* or *"the direct model cannot add"*.
 
-**24.3i.** At 3,000 steps the scratchpad reached `1.000` in `79 s`; the direct model needed **four times the steps** (12,000) and about `140 s` to reach `0.994`. It bought **speed and reliability, not a capability**: the direct model got there too, eventually. **No.**
+**24.3i.** At 3,000 steps the scratchpad reached `1.000` in `79 s`; the direct model needed **four times the steps** (12,000) and about `140 s` to reach `0.994`. On this task, with this model, it bought **speed and reliability**: the direct model got there too, with four times the steps (one seed). **No**, not a capability it could never have, here; we did not test harder tasks.
 
 **24.3j.** (i) Pair **3**. `4 + 8 = 12`, digit **2**, carry **1**, so the pair should be **`21`**; the model wrote **`90`**. (ii) The model's pairs: `01 60 90 01 71`. Final carry `1`, then digits last column first `7, 0, 9, 6, 0`: **170960**. It wrote `170960`: **yes, faithfully**. (iii) **No**, the true answer is `171260`. **Matching the working proves nothing about the working.** (The pair after, `01` against the true `11`, is also wrong: the carry was lost.)
 

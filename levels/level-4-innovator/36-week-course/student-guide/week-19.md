@@ -430,7 +430,7 @@ The chance levels are **0.125** on copy and reverse and **0.1** on lookup. Read 
 
 1. **Full model:** 1.00 on all three. Not guessing.
 2. **No mask on copy and reverse: 1.00, for the wrong reason.** The input contains the answer one place ahead. It is the leak again.
-3. **No positions costs a few points on copy and reverse (0.95 and 0.92) and nothing on lookup (1.00).** A masked model still has a weak sense of place: place 1 sees one character, place 6 sees six (Week 16, `masked.py`). It does *not* say "positions do nothing".
+3. **No positions costs a few points on copy and reverse (0.95 and 0.92) and nothing on lookup (1.00).** A masked model still has a weak sense of place: place 1 sees two characters, place 6 sees seven (Week 16, `masked.py`). It does *not* say "positions do nothing".
 4. **The lookup column is where things show up.** No mask: **0.37**. This is *not* a leak: the window stops before the answer. No norm: **0.33**.
 
 Read the lookup column with care. This is one seed and one length of training. Whether no-norm's 0.33 is *broken* or just *slow or unlucky* is something this one table cannot say, and you have not tested why no-mask breaks lookup either. Write both down as **open questions**, not findings.
@@ -753,7 +753,7 @@ The shape `[64, 2, 12, 12]` is a batch of 64, 2 heads, and 12 by 12 attention we
 - In this small model, on this text, at 800 steps, with one seed: deleting the **residual road** wrecked it (validation 2.679 against 1.673); deleting the **positions** cost a little (1.739); deleting the **layer norms** made it *better* on validation (1.478); deleting the **mask** gave the best number of all (0.077) and it is a **leak**.
 - A loss is not a score when the model can see the answer; the future-change test catches it (0.000000 with the mask, not zero without).
 - On three made-up tasks the full tiny GPT scores 1.00, and chance is 0.125, 0.125 and 0.1.
-- In the copy model all four heads look exactly six places back at the answer places, and switching off any one of them changes nothing; in the lookup model two heads do matter, and the printout says so.
+- In the copy model all four heads look mostly six places back at the answer places (almost entirely so in layer 0, somewhat less in layer 1), and switching off any one of them changes nothing; in the lookup model two heads do matter, and the printout says so.
 
 **Not shown:**
 - **That the layer norm is useless.** We saw that it was *better without it*, at 800 steps, in this small model. We did **not** find out why. The larger gap (0.327) is a reason not to prefer it.

@@ -253,7 +253,7 @@ stranger (same facts, other words)     recall@1/3/5 = 0.20 / 0.50 / 0.60
 `top_k` is `np.argsort(-scores)[:k]`, and it agrees with the library's `ix.search`. Then the two recall rows. **Stop and look.**
 
 - On wording like yours (the notebook's own words), the right note is first for all ten: `1.00`.
-- On the same facts in a stranger's words it is first for `0.20` and in the top five for `0.60`. **Chance** for 15 notes is `1/15 = 0.07` at `k = 1` and `5/15 = 0.33` at `k = 5`, so `0.60` is beating chance by less than it looks.
+- On the same facts in a stranger's words it is first for `0.20` and in the top five for `0.60`. **Chance** for 15 notes is `1/15 = 0.07` at `k = 1` and `5/15 = 0.33` at `k = 5`, so `0.60` is beating chance by less than it looks. One of those six hits is a tie: stranger question 3 scores `0.000` against every note, the stable sort lists notes `0, 1, 2, 3, 4`, and its right note (3) counts only because of its id number. Without that tie, recall@5 would be `0.50`.
 
 Neither number is "the real one". The second is nearer to what a stranger would see. Both describe ten questions, and **one question is worth `0.10`**. The gap between `1.00` and `0.20` is far too big to be bad luck.
 

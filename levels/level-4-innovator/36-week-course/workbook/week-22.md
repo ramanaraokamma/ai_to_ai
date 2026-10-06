@@ -368,7 +368,7 @@ _______________________________________________________________________________
 1. The guess at place `t` is for token ____ . With a prompt of 5 tokens, the first ____ rows are set to ____ .
 2. The Bradley-Terry loss is `-F.logsigmoid(` ____ `)` . At the start it is ____ .
 3. `KL(p || q)` is ____ when `p = q`, and it is / is not (circle) the same as `KL(q || p)`.
-4. `beta` is the ____ on the margin, not the KL. A bigger `beta` is satisfied ____ (sooner / later).
+4. `beta` is the ____ on the margin (the strength of the implicit KL leash), not a KL we compute. A bigger `beta` is satisfied ____ (sooner / later).
 5. `ref_logp` ends in `.detach()` because ___________________________________ .
 6. One sentence: a toy showed me ________________ but not ________________ .
 

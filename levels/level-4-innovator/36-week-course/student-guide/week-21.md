@@ -107,7 +107,7 @@ Three new constructs, and one small mirror.
 |---|---|---|
 | `np.log10(x)` | the base-10 logarithm of a number, or of every number in an array. Undo it with `10 ** y`. | `np.log10(1000)` is `3.0` |
 | `np.polyfit(x, y, 1)` | the best straight line through the points `(x, y)`; the `1` means "a line". It **returns two numbers, the slope first and the intercept second.** "Best" means the smallest total squared miss (you met squared errors in Level 2): think of a ruler that uses all the points at once. | `slope, intercept = np.polyfit(x, y, 1)` |
-| `hashlib.md5(b)` | a **fingerprint**: any bytes go in, 32 letters-and-digits come out. The same text always gives the same 32; different texts give different ones. You must `import hashlib`, and you must hand it **bytes**, which is why you meet `.encode("utf-8")` from Week 20 again. | `hashlib.md5("hi".encode("utf-8"))` |
+| `hashlib.md5(b)` | a **fingerprint**: any bytes go in, 32 letters-and-digits come out. The same text always gives the same 32; different texts give different ones in practice. You must `import hashlib`, and you must hand it **bytes**, which is why you meet `.encode("utf-8")` from Week 20 again. | `hashlib.md5("hi".encode("utf-8"))` |
 | `.hexdigest()` *(mirror)* | what you call on the thing `md5` returns, to get the 32 characters as a string. Say it as one phrase: "md5 of the bytes, as hex digits". | `hashlib.md5(b).hexdigest()` |
 
 Everything else in today's files you have already met: `zip`, list comprehensions, `set`, `Counter` (Week 20), `open(...).read()`, f-strings with format specs, `lambda` and `LambdaLR` (Week 4), `clip_grad_norm_` (Week 6), `time.perf_counter` (Week 17), `torch.manual_seed`, `a @ b`, `.strip()` and `.split("\n")` (Level 2), and `10 ** x`.
@@ -128,7 +128,7 @@ for text in ("the river ran past the town", "the river ran past the town", "the 
 d9d1ed4bcca4b4b8494ca96a2e355f88 <- the river ran past the towN
 ```
 
-The first two lines are identical, so their fingerprints are identical. The third line differs in **one letter** (a capital `N`), and its fingerprint is completely different. That is the whole mechanism: **two lines are the same, exactly as written, if and only if their fingerprints are the same**, and comparing 32 characters is quicker than comparing whole lines. `md5` is used here only to find exact copies. It is **not** a security tool, and nothing today relies on it being hard to forge.
+The first two lines are identical, so their fingerprints are identical. The third line differs in **one letter** (a capital `N`), and its fingerprint is completely different. That is the whole mechanism: **two lines are the same, exactly as written, in practice if and only if their fingerprints are the same**, and comparing 32 characters is quicker than comparing whole lines. `md5` is used here only to find exact copies. It is **not** a security tool, and nothing today relies on it being hard to forge.
 
 ---
 

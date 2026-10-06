@@ -155,7 +155,7 @@ The two lines are **identical at every point** (so the chart shows one line unde
 4. **The Hindi cost is for one small English-only tokenizer.** We did not measure any production tokenizer, and the course has none to measure. The "3 tokens after training on Hindi" number is a repeated phrase and shows the mechanism only.
 5. **Our chunk rule is not the best one.** 40% of the corpus's tokens are lone spaces. The space-sticks-to-the-word rule gives 2,103 tokens instead of 3,227. Section 6 measured that one alternative; we tried no other rule (digits, punctuation, case).
 6. **The vocabulary size was never tuned.** 300 and 1,000 merges are round numbers. We did not look for the best one, and the embedding-table cost (section 2c) was computed but no model was built with it.
-7. **Pure Python is slow and `tokenizers` is fast.** 11-15 s against 0.2 s at 324,000 characters. Our trainer recounts every pair every round; the library does not. That is an engineering gap and not something we tested further.
+7. **Pure Python is slow and `tokenizers` is fast.** 11-15 s against 0.2 s at 324,000 characters. Our trainer recounts every pair every round; the library probably does not (we did not read it). That is an engineering gap and not something we tested further.
 8. **Speed on another machine will differ**, and the Python stdlib on a different version holds different text: the pool is 323,880 characters here (Python 3.10.10). On another version the chart's numbers move; the shape should not.
 9. **"Derived from English" means from this English.** The corpus is the author's typed stories about bakers and rivers; the merges are its vocabulary, not English's.
 

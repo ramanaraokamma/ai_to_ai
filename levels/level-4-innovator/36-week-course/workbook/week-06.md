@@ -322,7 +322,7 @@ Copy the **last line** of every error or surprise you meet this week, not the wh
 | 4 | | | | |
 | 5 | | | | |
 
-**Your sentence for this week:** *"A deep network that sits at 0.693 is not ______ , it is ______ ."* Complete it from memory: ______________________________
+**Your sentence for this week:** *"A deep plain stack that sits at 0.693 is not necessarily ______ , it may be ______ ."* Complete it from memory: ______________________________
 
 **Which bug was silent (no error, wrong answer)?** What is the one number you could have printed to find it? ______________________________________________
 
@@ -422,7 +422,7 @@ Three fixes for the first: batch of at least 2 / `model.eval()` / layer norm. A 
 **S3.** Order: `zero_grad` (1), `backward` (2), `clip_grad_norm_` (3), `opt.step()` (4). Clip after the step: the update already used the big gradient (in the lesson, loss on the next batch was **3741** instead of **10.5**).
 
 ### Page 6.6 and Self-Check
-Bug Log: any real entries are fine if the **last line** (not the whole traceback) was copied and the fix works. Sentence: *"A deep network that sits at 0.693 is not **broken** (a bug), it is **a vanishing gradient** (a design problem)."* Accept any answer that says the code is fine and the depth has no road. Silent bug: S1 (the number `0.0`), S2 (the loss in `eval()` mode), S3 (the loss on the next batch).
+Bug Log: any real entries are fine if the **last line** (not the whole traceback) was copied and the fix works. Sentence: *"A deep plain stack that sits at 0.693 is not necessarily **broken** (a bug), it may be **a vanishing gradient** (a design problem); check the gradient length and the loss first."* Accept any answer that says the code may be fine and the depth has no road. (Not every 0.693 or 46.9% is a vanishing gradient: layer norm alone sat at 46.9% with a healthy gradient, and SGD without clipping sat there because the loss became nan.) Silent bug: S1 (the number `0.0`), S2 (the loss in `eval()` mode), S3 (the loss on the next batch).
 Report marking: plain column collapses and sticks at 46.9% from 16 blocks; residual grows and trains at every depth; layer norm alone is healthy yet does not train at 16 or 32 blocks, unexplained.
 
 1. **row** (one example); **column** (one feature).

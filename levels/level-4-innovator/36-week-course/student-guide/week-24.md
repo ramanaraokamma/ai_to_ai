@@ -61,7 +61,7 @@ Keep the card. We come back to it at the end.
 
 In Week 22 you changed a model's knobs: that is training. Today the knobs are **frozen** and all that changes is the text you put in front of the model. When a model uses what is on the page to answer, that is **in-context learning**. A prompt with no worked examples is **zero-shot**; with a few, **few-shot**. A "shot" is one worked example.
 
-There is small print, and it is the honest frame of the whole week: **a model can only do this if its training taught it to.** Ours will train on thousands of different random codes and then be tested on codes it has never seen. Last week's lookup task (Week 19) was easier: the key was always on the page. Today it may or may not be.
+There is small print, and it is the honest frame of the whole week: **a model can only do this if its training taught it to.** Ours will train on thousands of different random codes and then be tested on prompts it has never seen: a fresh code, a fresh choice of shown pairs and a fresh key each time. (There are only 720 possible codes, so it has very likely met every code during training; what it cannot have met is this exact prompt.) Last week's lookup task (Week 19) was easier: the key was always on the page. Today it may or may not be.
 
 ### The ceiling
 
@@ -76,7 +76,7 @@ Add them: `3/6 x 1 + 3/6 x 1/3 = 0.500 + 0.167 = 0.667`. For `n` pairs shown the
 best possible  =  n/6 x 1  +  (6 - n)/6 x 1/(6 - n)  =  (n + 1) / 6
 ```
 
-That is `0.167, 0.333, 0.500, 0.667, 0.833, 1.000, 1.000` for `n = 0` to `6`. **Nothing a model does can beat this line**, however big it is. A score above it means noise or a leak. How much noise? With 500 test prompts, a score wobbles by about two and a half points either way, so `0.686` at `n = 3` is not "above the ceiling".
+That is `0.167, 0.333, 0.500, 0.667, 0.833, 1.000, 1.000` for `n = 0` to `6`. **Nothing a model does can beat this line**, however big it is. A score above it means noise or a leak. How much noise? With 500 test prompts, a score wobbles by about two to four points either way, so `0.686` at `n = 3` is not "above the ceiling".
 
 Call this line the **ceiling** (or the **best possible score**). You met the idea in Week 23 as a number for one dataset; today you compute it from the rules of the task, before training anything.
 
@@ -329,7 +329,7 @@ It also writes `in_context.png`: the dashed line is the ceiling, the dots are yo
 Read the table in four moves.
 
 1. **`n = 0`: `0.176` against `0.167`.** The code is new and nothing is on the page, so there is nothing to know. A prompt with no examples is a coin toss here, however good the model.
-2. **`n = 1, 2, 3`: within `0.03` of the ceiling, and `1.000` when the key was shown.** Every remaining error is on a key that was never shown, where the model is guessing among the `6 - n` unused digits.
+2. **`n = 1, 2, 3`: within `0.03` of the ceiling, and `1.000` when the key was shown.** Every remaining error is on a key that was never shown. There the model scores `0.181`, `0.240` and `0.252` against guess-the-unused-digit ceilings of `0.200`, `0.250` and `0.333`: at or below a pure guess, so it has only partly learned to rule out the digits already on the page.
 3. **`n = 4, 5`: below the ceiling.** The `key-shown` column says why: it is only `0.788` and `0.854`. On this run the model copies unreliably when more pairs crowd the page. **We did not investigate why.** Do not invent a story.
 4. **`n = 6`: `0.998`.**
 
@@ -554,7 +554,7 @@ pad   : exact 1.000   per answer character [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]   (60 
         61615 + 23816 = 85431;  the model wrote: 61615+23816=56111130684113506280#085431.
 ```
 
-Read the `direct` row. The first three answer characters are right, and the last three are at `0.11`, `0.11`, `0.13`. A pure guess at one digit is `0.10`, so **the last three characters are at chance**. The `pad` row is `1.000` everywhere. Notice the model's working for the held-out sum: it wrote `56111130684113506280#085431`, a working of its own, and then the right answer.
+Read the `direct` row. The first two answer characters are near-perfect, the third is mostly right (`0.82`), and the last three are at `0.11`, `0.11`, `0.13`. A pure guess at one digit is `0.10`, so **the last three characters are at chance**. The `pad` row is `1.000` everywhere. Notice the model's working for the held-out sum: it wrote `56111130684113506280#085431`, a working of its own, and then the right answer.
 
 Now the warning, before you believe anything. That was seed 0. We also ran five seeds of each:
 
@@ -566,7 +566,7 @@ Now the warning, before you believe anything. That was seed 0. We also ran five 
 
 Two small prints, both measured:
 
-- **Direct is "not learned yet", not "impossible".** Trained for four times the steps (12,000), the direct model scored exact match `0.994`. The working bought **speed and reliability**, not a capability.
+- **Direct is "not learned yet", not "impossible".** Trained for four times the steps (12,000), the direct model scored exact match `0.994`. On this task, with this model, the working bought **speed and reliability**: direct also got there with four times the steps (one seed, one task). We did not test whether that holds for harder tasks.
 - **The design of the working matters.** A leaner working that skips the "copy the two digits" step worked on only three seeds of five. On the failing seeds it writes a wrong working and then copies it faithfully into the answer. A faithful answer to a wrong working is still wrong.
 
 ### 6. The grammar: `grammar.py` (read it, do not type it)
@@ -825,7 +825,7 @@ Read it as a 2 x 2.
 - **Parses.** Free sampling gives `90` and `85` of 100. The mask gives `100` and `100`. The mask wins, as it was built to.
 - **Fully right, names seen in training.** `79` free, `95` masked. The mask lifted it by 16; we did not look at which replies account for the other 6.
 - **Fully right, names never seen.** `25` free, `26` masked. **The mask does almost nothing for content.**
-- **The four wrong replies** are all well-formed JSON with the right shape: `zora` became `ukor`. The model has memorised 200 names and does not copy an unfamiliar one letter by letter. That is a generalisation failure (Week 5), not a formatting failure, and the mask cannot see it.
+- **The four wrong replies** are all well-formed JSON with the right shape: `zora` became `ukor`. One possible reason, which this run did not test, is that the model has memorised 200 names and does not copy an unfamiliar one letter by letter. That would be a generalisation failure (Week 5), not a formatting failure, and the mask cannot see it.
 
 We also ran the mask over three training seeds. Masked always parsed `100`. On new names "fully right" was `26`, `44`, `45` masked against `25`, `36`, `46` free: the same picture.
 
@@ -845,7 +845,7 @@ Play this **before** any code, with a partner, as the Keeper and the Player. You
 3. The Keeper draws one letter at random. The Player says a digit. The Keeper flips the card. Write right or wrong on the sheet.
 4. Play **sixteen rounds**: four each at `n` = 0, 1, 3, 6.
 
-Before the rounds, write beside each block what you expect out of 4 (`4 x (n + 1)/6`): `0.67`, `1.33`, `2.67`, `4`. After sixteen rounds you got, say, 6 and the formula says about 8.7. Were you bad, or unlucky? **Sixteen rounds cannot tell.** That is the model's test set in miniature: the model gets 500 prompts at each `n`, and even a perfect player's score wobbles by about two and a half points. What do you need to tell the difference?
+Before the rounds, write beside each block what you expect out of 4 (`4 x (n + 1)/6`): `0.67`, `1.33`, `2.67`, `4`. After sixteen rounds you got, say, 6 and the formula says about 8.7. Were you bad, or unlucky? **Sixteen rounds cannot tell.** That is the model's test set in miniature: the model gets 500 prompts at each `n`, and even a perfect player's score wobbles by about two to four points. What do you need to tell the difference?
 
 Then turn to your prediction card and fill in a row for each file you ran:
 
@@ -908,7 +908,7 @@ The error names the kind of thing `where` wanted: a **boolean** tensor. In `deco
 
 1. Turn to your prediction card. What did you guess for the best possible score at 0, 1, 3 and 6 shown pairs? What is the formula?
 2. Why can a model never beat `(n + 1) / 6`? What are the two things a score above it could mean?
-3. Five numbers: `0.167`, `0.638`, `0.000`, `1.000`, `100` and `26`. What was each?
+3. Six numbers: `0.167`, `0.638`, `0.000`, `1.000`, `100` and `26`. What was each?
 4. Direct addition scored `0.000`. Why is "the model cannot add" the wrong conclusion?
 5. The mask made every reply valid. Is the model better? Where exactly are the `74` wrong replies hiding?
 6. Which of today's results would change if you used a different seed? Which would not?

@@ -186,7 +186,7 @@ Mark every row where you were wrong with a cross: #____, #____, #____. For each 
 
 **Three questions.**
 
-i. Row 4 is `True` for the right check. Which of the three wrong checks gets row 4 wrong, and which gets it right by luck? ____________________________________________________________
+i. Row 4 is `True` for the right check. Which of the three wrong checks gets row 4 wrong, and which one gets it right only by luck? ____________________________________________________________
 
 ii. Row 6 is a sibling folder. Which wrong check is fooled by it, and why does `is_relative_to` (which compares *parts* of a path, not letters) not fall for it? ____________________________________________________________
 
@@ -212,7 +212,7 @@ The price is 1.00 per million tokens in and 5.00 per million out. Cost in **mill
 
 (b) The five "in" numbers add to ______; the five "out" numbers add to ______. Cost in millionths = ______ × 1 + ______ × 5 = ______ → dollars: $______
 
-(c) How much did the input grow from turn 1 to turn 2? ______ What arrived in between that explains most of it? ____________________________________________________________
+(c) How much did the input grow from turn 1 to turn 2? ______ What arrived in between that explains most of it (two things arrived; name the bigger one)? ____________________________________________________________
 
 ```python
 # bill_trace.py - Page 28.3, Part 1: the five turns of the worked run, priced two ways.
@@ -394,17 +394,17 @@ Add **at least two** entries, one of them SILENT. Then copy this sentence in you
 | | Answer | Why |
 |:--:|:--:|---|
 | A | **none** | A good request; it gives `4`. Not everything should be stopped. |
-| B | **0** | The calculator's own whitelist refuses it (`unsupported expression element: Call`). It is the tool's contract, not one of the six. |
+| B | **0** | The calculator's own whitelist refuses it (`unsupported expression element: Call`). It is the tool's own check, and a security one, but it is not one of the six fences. |
 | C | **3** | The sandbox. The human said yes; the fence did not care. |
 | D | **3** | The sandbox's suffix list (`.sh` is not allowed). |
 | E | **5** | The allowlist: `no tool named 'delete_everything'`. |
 | F | **1** | The turns cap (`max_iterations`). |
 | G | **6** | A human declined; nothing is written. |
 | H | **4** | The timeout. |
-| I | **none of the six** (an ordinary tool error) | The message is a hint (`directory 'sub' does not exist in the sandbox`): the model can read it and retry flat. Accept "3" if you said *why* it is a hint and not a wall. |
+| I | **0** (the tool's own check; an ordinary error, not a security one) | The message is a hint (`directory 'sub' does not exist in the sandbox`): the model can read it and retry flat. Accept "3" if you said *why* it is a hint and not a wall. |
 | J | **3** | The sandbox's size limit (`content too large: 25000 bytes > 20000`). |
 
-(b) **A.** (c) **I**: the model gets a plain-English `ValueError` saying the folder does not exist. (d) **None.** The prompt is a request to a model; the fences are code. (The money cap, fence 2, is not in A to J; the chapter's second row of the fence table shows it.)
+(b) **A.** (c) **I**: it is a tool check (0) that is not about security; the model gets a plain-English `ValueError` saying the folder does not exist. (B is also a tool check, but it guards against unsafe code.) (d) **None.** The prompt is a request to a model; the fences are code. (The money cap, fence 2, is not in A to J; the chapter's second row of the fence table shows it.)
 
 ### Page 28.1
 
@@ -451,7 +451,7 @@ one/../../bad.md       False   False  True     False
 
 Reading it. The **dots** test is wrong on rows **2, 4 and 5**: it refuses the safe names 2 and 4 (they contain `..`), and it says `True` to the absolute path in row 5 (`/tmp/x.md` has no dots at all). It gets rows 3 and 6 right only because those names happen to contain `..`. The **compare-first** (lexical) test is wrong on rows **3 and 6**: before `resolve` cancels the `..`, the joined text still starts with `ROOT`. The **text** test (`startswith` after resolving) is wrong on **row 6** only: the letters of `sandbox-evil` begin with the letters `sandbox`. Rows 1 and 7 are right for all four.
 
-i. Row 4 is a safe name. The **dots** test gets it **wrong** (it sees `..` and refuses); the compare-first and text tests get it right, and so does the right check. A test that refuses safe names is wrong in the harmless direction; row 5 shows the same test wrong in the harmful direction. ii. The **text** test (and the compare-first test too, on this row). `startswith` compares letters; `sandbox-evil` begins with the letters `sandbox`. `is_relative_to` compares whole parts (`sandbox-evil` is not `sandbox`). iii. `resolve()` follows the shortcut and reports the real place, which is outside. The dots test has no `..` to see and says `True` (wrong); the compare-first test joins the text and sees it still starts with `ROOT`, so it says `True` (wrong); the right check says `False`. A text comparison cannot see a shortcut; only the file system can.
+i. Row 4 is a safe name. The **dots** test gets it **wrong** (it sees `..` and refuses); the text test gets it right for the right reason (it resolves first), and the compare-first test gets it right only by luck; so does the right check. A test that refuses safe names is wrong in the harmless direction; row 5 shows the same test wrong in the harmful direction. ii. The **text** test (and the compare-first test too, on this row). `startswith` compares letters; `sandbox-evil` begins with the letters `sandbox`. `is_relative_to` compares whole parts (`sandbox-evil` is not `sandbox`). iii. `resolve()` follows the shortcut and reports the real place, which is outside. The dots test has no `..` to see and says `True` (wrong); the compare-first test joins the text and sees it still starts with `ROOT`, so it says `True` (wrong); the right check says `False`. A text comparison cannot see a shortcut; only the file system can.
 
 ### Page 28.3
 
@@ -495,7 +495,7 @@ Three sentences, for example: *A fence proves that, for the requests I tried, th
 
 **B.** (i) `Module list`. (ii) `ValueError: not allowed here: list` (the last line names the type refused). (iii) `mode="eval"`: without it `ast.parse` returns a `Module`, whose `.body` is a **list** of statements. Fix: `ast.parse("2 + 3", mode="eval")` and `walk(tree.body)`.
 
-**C.** (i) The honest expectation is `False` (a "no" should stop the write). (ii) `True`: the file exists. `auto_approve=True` switched off fence **6**: the person's "no" was never asked. (iii) It is right when nobody is at the keyboard and you want the *sandbox* to be what answers (the chapter's fence drill); it is wrong for anything else, because fence 6 is then a wall with no door. The kit's default asks on the keyboard and end-of-input counts as "no".
+**C.** (i) The honest expectation is `False` (a "no" should stop the write). (ii) `True`: the file exists. `auto_approve=True` switched off fence **6**: the person's "no" was never asked. (iii) It is right when nobody is at the keyboard and you want the *sandbox* to be what answers (the chapter's fence drill); it is wrong for anything else, because fence 6 is then a door with no gate. The kit's default asks on the keyboard and end-of-input counts as "no".
 
 ### Page 28.5 and Self-Check
 

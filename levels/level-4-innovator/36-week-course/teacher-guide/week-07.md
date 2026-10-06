@@ -141,7 +141,7 @@ Do not show this to the student before they have predicted. It is here so that *
 - **Four of the 24 rows are the baseline wearing a different hat** (`dropout 0.0`, `weight_decay 0.0`, `norm none`, `schedule none`). They are *the same experiment* and match **to every printed digit** for every seed. That is a free proof that the harness is deterministic, and it is the best answer to "is the noise real or is your code random?": **the noise is the seed, not the code.**
 - **20 of the 24 rows are inside noise; 4 are WORSE; none is better.** The four WORSE rows: `lr 1e-5`, `lr 1e-4`, `lr 0.1`, `dropout 0.5`.
 - **The "best" row is not a winner.** `norm batch` has the lowest mean validation loss (0.024) but its gap from the baseline (0.015) is *below* twice the spread (0.016), so the rule calls it inside noise. It is borderline, and you should say so rather than pick a side.
-- **Spread is itself a finding.** `schedule cosine` and `schedule step` have a much smaller seed spread (0.003 and 0.001) than the baseline (0.008), at about the same mean. Our reading, from three seeds only: a decaying learning rate buys *steadiness* more than a lower average.
+- **Spread is itself a finding.** `schedule cosine` and `schedule step` have a much smaller seed spread (0.003 and 0.001) than the baseline (0.008), at about the same mean. Our reading, from three seeds only: a decaying learning rate buys *steadiness* more than a lower average. The spread of three values is itself very noisy, and the cosine+warmup spread (0.007) is about the baseline's. A second possible reason, not tested, is that the learning rate is near zero at the end, so the last-epoch loss is less jittery; that would be about where the run stops, not overall stability.
 - **One row has a big mean and cannot be declared worse.** `lr 0.01` has mean val loss 0.096 (about 2.5× the baseline's 0.039) but its three seeds are 0.059, 0.090, 0.139, so its spread (0.033) is huge and the rule says "inside noise". The honest playbook entry is *"add more seeds before concluding"*, not a verdict. This is the best example in the table of why the spread column exists.
 
 ### 7. The epoch budget is itself a knob — the surprise to hold in reserve
@@ -597,7 +597,7 @@ The student works; you are the **judge**. Full rules in *The Activity, In Full* 
 3. **(6 min) `snap.py`.** Run it. Put the five rows in front of them and ask for a letter and a check for each:
    - healthy defaults: **A**.
    - `lr = 1e-5`: **C**, loss near `ln 2` from epoch 0, barely moving (0.694 to 0.683 in 60 epochs).
-   - `lr = 0.1`: begins as **B** (epoch-0 loss **12.786**, a huge spike) and **ends as C** (0.693). *The two bad learning rates end at the same final number and are different diseases.* The cheap check that separates them is **the epoch-0 loss**: 0.694 against 12.786.
+   - `lr = 0.1`: begins as **B** (epoch-0 loss **12.786**, a huge spike) and **ends as C** (0.693). *The two bad learning rates end at the same final number and are different diseases.* The cheap check that separates them is **the epoch-0 loss**: 0.694 against 12.786. (A 0.694 at epoch 0 only separates 'not a blow-up'. `batch_size = 512` also starts at 0.694, because it takes one step per epoch, but it goes on to learn. A curve that stays flat at 0.69 **and** starts at 0.694 points to a tiny step; confirm with the `lr` or the epoch-59 loss.)
    - `batch_size = 512`: **E**, still falling when the budget ends (0.629, 0.239, 0.027 at epochs 10, 30, 59).
    - `norm = batch`: **F**, validation (0.019) *below* training (0.117).
 4. **(12 min) Draft three rules.** Using the format from *Wrap & Assign*, they write **three** playbook rules in their notebook, each citing a row. You read each aloud and ask the three court questions. A rule that fails a question is *not* thrown out: it is sent back with the missing piece named.
@@ -804,7 +804,7 @@ TypeError: run() got an unexpected keyword argument 'learning_rate'
 | Round | Case | What a passing answer looks like |
 |---|---|---|
 | 1 | The easiest: **flat at 0.69 from epoch 0** | SYMPTOM: train loss about 0.69 at epoch 0 and still 0.683 at epoch 59. CHECK: print `lr` and the gradient length. ACTION: multiply `lr` by 10 until the loss moves. EVIDENCE: `lr 1e-5` val 0.680 ± 0.003, acc 58.7%; `lr 1e-4` val 0.079; `lr 1e-3` val 0.033. |
-| 2 | **Two diseases, one final number** | SYMPTOM: loss ends at 0.69-0.70. CHECK: **look at epoch 0**: 0.694 means too small a step, 12.786 means a blow-up. ACTION: too small, multiply; blow-up, divide `lr` by 10. EVIDENCE: `lr 1e-5` against `lr 0.1` (val 0.696 ± 0.004, acc 49.0%). |
+| 2 | **Two diseases, one final number** | SYMPTOM: loss ends at 0.69-0.70. CHECK: **look at epoch 0**: 12.786 means a blow-up; 0.694 means no blow-up, and together with a curve that stays flat it points to too small a step (confirm with `lr` or the last-epoch loss). ACTION: too small, multiply; blow-up, divide `lr` by 10. EVIDENCE: `lr 1e-5` against `lr 0.1` (val 0.696 ± 0.004, acc 49.0%). |
 | 3 | **Still falling when the budget ends** | SYMPTOM: train loss still dropping at the last epoch (batch 512: 0.629, 0.239, 0.027). CHECK: steps taken = `840 // batch_size` × epochs (batch 512: 60 steps; batch 64: 780). ACTION: more epochs or a smaller batch, not a bigger network. EVIDENCE: the 30-epoch sweep (batch 512 val 0.295 ± 0.056, WORSE). |
 | 4 | **Validation below training** | SYMPTOM: val 0.024 below train 0.085 (`norm batch`). CHECK: recompute the training loss in `eval()` mode before worrying. ACTION: do not "fix" it. Our guess, **untested here**, is that the logged training loss is an average taken while weights move, in train mode. |
 | 5 | **The row the data contradicted** | The student states one thing they expected that the table did not show (dropout or weight decay helping; bigger batch being fine). |
@@ -890,7 +890,7 @@ Five questions, orally, during the court. Not graded; they inform the mastery sc
 2. **"Row X's mean is lower than the baseline's. Is it better?"** *Pass:* "only if the gap is bigger than the spread".
 3. **"What does `how_many_knobs_changed` protect you from?"** *Pass:* a run that changed two things (or a typo that changed none).
 4. **"What is a spread of exactly zero a sign of?"** *Pass:* identical runs: a bug, probably the seed.
-5. **"What does a flat 0.69 curve tell you, and what is the one extra number that separates the two causes?"** *Pass:* nothing has been learned; the epoch-0 loss (0.694 tiny step; 12.786 blow-up).
+5. **"What does a flat 0.69 curve tell you, and what is the one extra number that separates the two causes?"** *Pass:* nothing has been learned; the epoch-0 loss (12.786 blow-up; 0.694 with a curve that stays flat, a tiny step).
 
 ### Mastery scale for this week
 
@@ -974,7 +974,7 @@ Question: *Which two runs end with nearly the same loss, and what separates them
 1. **Three baseline validation losses:** 0.0367, 0.0499, 0.0301. The seed alone moves them by about 66% (0.0499 ÷ 0.0301 = 1.66).
 2. **Which four rows equal the baseline?** `dropout 0.0`, `weight_decay 0.0`, `norm none`, `schedule none`. `seeds.py` prints `1` for each seed: one distinct value among the four. **What this proves:** the harness is deterministic, so the spread is the seed and not randomness in the code.
 3. **How many rows are WORSE, better, inside noise?** 4, 0, 20.
-4. **Which knob has the smallest effect?** Any of dropout (apart from 0.5), weight decay, batch size (apart from 512 at 30 epochs), norm, schedule are all inside noise; accept any answer that cites a spread. **The best-supported answer is `schedule`**: all three non-baseline values are inside noise *and* have smaller spreads (0.003, 0.007, 0.001) than the baseline (0.008).
+4. **Which knob has the smallest effect?** Any of dropout (apart from 0.5), weight decay, batch size (apart from 512 at 30 epochs), norm, schedule are all inside noise; accept any answer that cites a spread. **The best-supported answer is `schedule`**: all three non-baseline values are inside noise *and* have smaller spreads (0.003, 0.007, 0.001) than the baseline (0.008). (Weakly: three-seed spreads are noisy; see the note under 'Spread is itself a finding'.)
 5. **`lr 0.01`'s three seeds** (0.059, 0.090, 0.139) → spread 0.033 → "inside noise", *not* "same as baseline".
 6. **A claim the table does not support:** "layer norm is better than no norm" (0.057 ± 0.031 against 0.039 ± 0.008; the mean is *higher*, the spread huge).
 
@@ -990,7 +990,7 @@ Question: *Which two runs end with nearly the same loss, and what separates them
 | 4 | Validation loss **below** training loss | Recompute the training loss in `eval()` mode (our guess: the logged training loss is a moving average in train mode; **untested**) | Do not "fix" it; compare after the eval-mode recompute | `norm batch` train 0.085 ± 0.023, val 0.024 ± 0.005 |
 | 5 | Seeds disagree a lot (spread about as big as the gap) | Print the three seeds | Run more seeds before any verdict | `lr 0.01` val 0.059, 0.090, 0.139 → 0.096 ± 0.033: inside noise despite a mean 2.5× the baseline's |
 | 6 | You want to regularise, but the val-train gap is small | Compare the gap to the spread; baseline gap is 0.039 − 0.007 = 0.032 | Do not add dropout or weight decay yet; it showed no detectable gain here | `dropout 0.3` 0.043 ± 0.013, `weight_decay 0.1` 0.051 ± 0.018, both inside noise; `dropout 0.5` WORSE 0.062 ± 0.008 |
-| 7 | You want a steadier run, not a lower mean | Compare the spread across seeds | A decaying schedule (cosine, step) lowered the seed spread at about the same mean (our reading, 3 seeds) | `schedule step` 0.033 ± 0.001, `cosine` 0.034 ± 0.003, against baseline 0.039 ± 0.008 |
+| 7 | You want a steadier run, not a lower mean | Compare the spread across seeds | A decaying schedule (cosine, step) lowered the seed spread at about the same mean (our reading, 3 seeds; the run ends at a near-zero learning rate, which may also explain it) | `schedule step` 0.033 ± 0.001, `cosine` 0.034 ± 0.003, against baseline 0.039 ± 0.008 |
 | 8 | **A claim with no epoch count** | Ask "at how many epochs?" | Re-run at a second budget before trusting a claim | Baseline spread 0.008 at 60 epochs, 0.055 at 30 epochs; `batch 512` flips from inside noise to WORSE |
 
 **The "contradicted my expectation" rule** (required): rule 6 (regularisation had no detectable effect) or rule 3 (bigger batch was fine at 60 epochs and not at 30). Any honest statement of a prediction the table did not support passes.

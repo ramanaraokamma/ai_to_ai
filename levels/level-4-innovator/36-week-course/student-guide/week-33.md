@@ -114,7 +114,7 @@ and we call a gap **more than noise** only if it is bigger than **twice** that. 
 
 **`re.sub(pattern, replacement, text)`** replaces every match of `pattern` in `text` with `replacement`, and **returns the new string**. The old string is not changed. You met `re` in Week 26 (`re.findall`); `sub` is the new function. It takes **three** things, in that order.
 
-The new *idea* is a **list of patterns applied in order**: the output of pattern 1 is the input to pattern 2. A card number has 16 digits, and a loose phone pattern will happily take ten of them. So the longest, most specific pattern must run **first**. You will see this happen in section 7.
+The new *idea* is a **list of patterns applied in order**: the output of pattern 1 is the input to pattern 2. A card number usually has 16 digits (real ones run 13 to 19, and this toy rule has no checksum), and a loose phone pattern will happily take ten of them. So the longest, most specific pattern must run **first**. You will see this happen in section 7.
 
 **`Path.stat().st_mtime`**. `.stat()` asks the file system about a file. `.st_mtime` is one field of the answer: the time the file **last changed**, in seconds since 1 January 1970. `time.time()` is the same clock, now. Their difference, divided by `86400` (seconds in a day), is the file's age in days. **`stat` is a method and needs its brackets**: `p.stat()` is the answer, `p.stat.st_mtime` asks a function for a field.
 

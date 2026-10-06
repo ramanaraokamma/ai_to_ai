@@ -259,7 +259,7 @@ guard turned away 3 of 5 paraphrases | redaction caught 6 of 8 typed cases
 0.3 s
 ```
 
-(The last line is the time in seconds and varies a little.) Read it as a list of facts about *this code*: `A1` fell from `15` to `0` and the legitimate save still worked `50` times out of `50`; `A2` landed `0` times, and `15` times with the sandbox switched off, which proves the zero could have been something else; the guard turned away `3` of `5` paraphrases because it matches shapes, not meanings; the redactor caught `6` of `8` typed cases and does not find names or addresses.
+(The last line is the time in seconds and varies a little.) Read it as a list of facts about *this code*: `A1` fell from `15` to `0` and the legitimate save still worked `50` times out of `50`; `A2` landed `0` times, and `15` times with the sandbox switched off, which shows the zero is not vacuous (the attack does land when the sandbox is off); the guard turned away `3` of `5` paraphrases because it matches shapes, not meanings; the redactor caught `6` of `8` typed cases and does not find names or addresses.
 
 ---
 
@@ -818,7 +818,7 @@ About 60 minutes after both sittings.
 1. **Mark your paper (30 minutes).** At home, in the other colour, against Page 36.3. Give marks for working. Fill in the per-week grid (Page 36.4). **Circle at most two weeks** you would go back to first.
 2. **Final copy of the card (20 minutes).** Apply your teacher's comments. Run `check_card` and `quotes_hold` again. Put the date and the fingerprint in the card's first line.
 3. **One sentence (5 minutes).** On the card's last page, in your own words: *the single most important thing a stranger should know before relying on this system.* One sentence. It must contain a number and an `n`.
-4. **Tidy up (5 minutes).** Delete the scratch traces you made for the demo (`logs/*_trace.jsonl`). Keep `eval/`, `src/`, `DESIGN.md`, `RED_TEAM.md`, `SYSTEM_CARD.md`, `ask.py`, `demo.py` and the committed numbers.
+4. **Tidy up (5 minutes).** Delete the scratch traces you made for the demo (`logs/*_trace.jsonl`, and `logs/trace_live.jsonl` if it exists). Keep `eval/`, `src/`, `DESIGN.md`, `RED_TEAM.md`, `SYSTEM_CARD.md`, `ask.py`, `demo.py` and the committed numbers.
 
 **Rules for the week.** You may not change a frozen case, a needle or a promise. You may not use `--commit` to turn `DIFFER` green. Do not tune `tau`, `k` or the generator to reach `0.70`: the card quotes what was measured. Anything you fixed **after seeing the score** is quoted with **both** numbers and the words *fixed after seeing the score*. A good idea that arrives now goes in section 8 of the card as *what I would add to the eval next*; it is not a version 2.
 

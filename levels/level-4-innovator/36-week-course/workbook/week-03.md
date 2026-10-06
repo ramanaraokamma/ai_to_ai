@@ -31,7 +31,7 @@ Last week's habits, used again today.
 
 **W3.** A loss that stays at about **0.693** after 60 epochs on two balanced classes means the model is doing what? ____________________________
 
-**W4.** True or false: *a loss of 0.693 is a question about the learning rate before it is a question about the optimizer.* Circle: **true / false**. (You will meet this again on page 3.4.)
+**W4.** True or false: *a loss of 0.693 is a reason to check the learning rate first (and the weight decay too).* Circle: **true / false**. (You will meet this again on page 3.4.)
 
 **W5.** `nan` means ________________________________________. When you see one, which two operations do you look for just before it? ____________ and ____________
 
@@ -649,7 +649,7 @@ My run (seed 0):
 - **C1.** No wrong answers; the check is that they predicted. The expected surprise: Adam at 0.3 is a coin and Adam at 0.003 is good.
 - **C2.** Adam good from **0.0001 to 0.01** (four rates in a row, 98.1% or better; a factor of 100). SGD's one good rate is **0.3** (neighbours 0.1 at 80.0% and, from Week 2, 1.0 at 66.4%). Adam has the **wider** range.
 - **C3.** SGD 0.3, Adam 0.003. SGD's is bigger, by a factor of 100 (two zeros). Week 2's momentum sat between them at 0.03: the three rules sit at 0.3, 0.03 and 0.003. Accept any wording that names the numbers.
-- **C4.** Full marks: *0.701 is about the coin-flip loss (0.693), and nothing crashed, so nothing says the rate is wrong. The code is fine; 0.3 is a rate that suits SGD, not Adam (Adam's own good rate is near 0.003).* Habit: a loss near 0.693 is a question about the learning rate before it is a question about the optimizer.
+- **C4.** Full marks: *0.701 is about the coin-flip loss (0.693), and nothing crashed, so nothing says the rate is wrong. The code is fine; 0.3 is a rate that suits SGD, not Adam (Adam's own good rate is near 0.003).* Habit: a loss near 0.693 is a reason to check the learning rate first (and the weight decay too).
 - **C5.** Week **7** (three seeds). No: one seed, and the validation numbers of the three rules (SGD 0.041, momentum 0.034, Adam 0.037, each at its own rate) are not distinguishable. All three reach about the same place.
 - **Cards:** adam 0.003 is a good run; adam 0.03 is a coin (0.658). No letter forced.
 

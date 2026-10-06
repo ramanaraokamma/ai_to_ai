@@ -56,7 +56,7 @@ The student has a 15-note index (Week 25) and the idea of recall@k. Today the in
 
 **There is no new idea.** You need three bits of counting, each of which you should do once before class.
 
-**(a) Recall@k with ten questions.** `recall@k = (questions whose right note is in the top k) / 10`. One question is `0.10`. The literal set scores `10/10` at every k; the stranger set scores `2/10`, `5/10`, `6/10` at k = 1, 3, 5. **Chance** for a 15-note index is `1/15 = 0.07` at k = 1, `3/15 = 0.20` at k = 3, `5/15 = 0.33` at k = 5. The stranger set at k = 5 (`0.60`) is beating chance by less than it looks.
+**(a) Recall@k with ten questions.** `recall@k = (questions whose right note is in the top k) / 10`. One question is `0.10`. The literal set scores `10/10` at every k; the stranger set scores `2/10`, `5/10`, `6/10` at k = 1, 3, 5. **Chance** for a 15-note index is `1/15 = 0.07` at k = 1, `3/15 = 0.20` at k = 3, `5/15 = 0.33` at k = 5. The stranger set at k = 5 (`0.60`) is beating chance by less than it looks. One of those six hits is a tie: stranger question 3 scores `0.000` against every note, the stable sort lists notes `0, 1, 2, 3, 4`, and its right note (3) counts only because of its id number. Without that tie, recall@5 would be `0.50`.
 
 **(b) "Words served" and "% of the notebook" (Block P4).** `words @k=3` is the average number of words in the three chunks handed to the writer per question; `% of notebook` is that number over the words in the whole notebook (`688`). A chunking that scores `1.00` by serving `104%` of the notebook has not retrieved anything; it has pasted the document. **Always report a recall number with the fraction of the corpus that bought it.**
 
@@ -1162,7 +1162,7 @@ No fixed answer for the student's own notes. For the class example (`QUESTIONS` 
 | question set | recall@1 | recall@3 | recall@5 |
 |---|:--:|:--:|:--:|
 | yours (the notebook's words) | `1.00` | `1.00` | `1.00` |
-| stranger (same facts, other words) | `0.20` | `0.50` | `0.60` |
+| stranger (same facts, other words) | `0.20` | `0.50` | `0.60` (`0.50` without the zero-score tie on question 3) |
 | chance (15 notes) | `0.07` | `0.20` | `0.33` |
 
 Full marks for the sentence if it (1) says the first row is an upper bound because the questions came from the notes, and (2) says ten questions is a small sample (one question is `0.10`). For the homework: check that the three sets of questions are reported separately, that the unanswerable question's score is reported, and that `sorted` and zero-padded names were used (or that `titles[k]` was checked after loading).

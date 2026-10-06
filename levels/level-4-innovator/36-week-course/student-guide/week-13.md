@@ -351,11 +351,12 @@ Most people guess the model's own names score better, "because they are its own"
 
 In training, someone always hands the model the right letters. In generating, nobody does. One unlikely letter and it is reading a prefix it has hardly seen. That is **exposure bias**: it was only ever *exposed* to the truth.
 
-**Is it proved by 1.122 against 0.954?** No. Three things could all sit inside that gap:
+**Is it proved by 1.122 against 0.954?** No. Four things could all sit inside that gap:
 
 1. **Drift,** as described above.
 2. **Plain sampling.** At `T=1` the model picks letters it gave *low* chance on purpose. The same model then scores the finished name and sees those letters as unlikely.
 3. **Memorising.** At `T=0.5` it recites names it has seen, and a name it has seen scores low.
+4. **The real names are the training names.** The 231 "real" names are the ones the model trained on, so 0.954 is a training-set score, and the 0%-above-1.5 is a training-set fact too. A fair test would also score real names the model never saw.
 
 Look at the `T=0.5` row: the gap closes to -0.035. That fits the drift story. It also fits "it is just reciting". **Two stories, one number.** Say what you measured: *the model is more surprised by its own names than by real ones, and a long right tail is where it is most surprised. This is consistent with exposure bias; it does not prove it.* We also did not feed the model its own prefix and the true prefix at the same spot to compare directly, and we did not repeat at other seeds.
 

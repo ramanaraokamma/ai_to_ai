@@ -488,11 +488,11 @@ output tokens per turn: [28, 10, 25, 19, 20] total 102
 tool calls made: [('search_notes', 'ok'), ('calculate', 'ok'), ('write_file', 'ERR'), ('write_file', 'ok')]
 ```
 
-The big first step, `168`, is turn 1's search result arriving: two notes of text. Turn 5 costs more than turn 2 even though the "model" says about the same number of words, because turn 5 is sent the whole conversation again.
+The big first step, `168`, is mostly turn 1's search result arriving (two notes of text), plus the model's own turn-1 words and tool request. Turn 5 costs more than turn 2 even though the "model" says about the same number of words, because turn 5 is sent the whole conversation again.
 
 **The bill, by hand.** The price is 1.00 per million tokens in and 5.00 per million out. Turn 1: `247 × 1.00 + 28 × 5.00 = 247 + 140 = 387` millionths of a dollar, which is `$0.000387`, the number in the trace. For the whole run, add the five "in" numbers and the five "out" numbers and price them; you should land on the printed `spend`. You do that sum yourself on workbook page 28.3.
 
-If every step added about the same number of tokens `g`, the inputs would be `b, b + g, b + 2g, …`, and the growth part of the total would be `g × (1 + 2 + … + (n − 1))`. That grows like `n²/2`: **doubling the number of steps roughly quadruples the bill for the history** (the workbook measures 3.8 times for 10 steps against 20). Real steps are not all the same size (`168, 33, 71, 47` here), so this is a *shape*, not a prediction. Tokens here are the kit's own count and the dollars are illustrative; the shape survives a real tokenizer, the values do not.
+If every step added about the same number of tokens `g`, the inputs would be `b, b + g, b + 2g, …`, and the growth part of the total would be `g × (1 + 2 + … + (n − 1))`. That grows like `n²/2`: **doubling the number of steps roughly quadruples the bill for the history** (the workbook measures 3.8 times for 10 steps against 20). Real steps are not all the same size (`168, 33, 71, 47` here), so this is a *shape*, not a prediction. Tokens here are the kit's own count and the dollars are illustrative; the shape survives a real tokenizer, the values do not. (Real APIs with prompt caching bill the re-sent history at a lower rate, so the dollar curve is flatter than n², though the token count still grows this way.)
 
 ![Five bars of input tokens per turn, 247 rising to 566, beside the measured total of 2195 against 1235 if turn 1 were re-used](../figures/fig-w28-2-input-grows-every-turn.svg)
 *Figure 28.2 — The history is sent again every turn, so a long task costs more than it looks (a scripted plan, not a model).*

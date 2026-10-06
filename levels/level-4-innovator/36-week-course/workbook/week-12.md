@@ -78,7 +78,7 @@ Read down any column from step 1: the input is the **previous** column's target.
 | input given | | | | |
 | what it picked | `o` | `r` | `a` | EOS |
 
-**d. Could you have written row (c) before the model ran?** Could you have written the **inputs** row for `uma` in part (a) before any model ran? ____________ Could you have written the input at step 2 of part (c) before the model had picked `r`? ____________ In one sentence, what is the difference, and which of the two can go through the computer as a whole batch at once? ___________________________________________
+**d. Could you have written row (c) before the model ran?** Could you have written the **inputs** row for `uma` in part (a) before any model ran? ____________ Could you have written the input at step 2 of part (c) before the model had picked `r`? ____________ In one sentence, what is the difference, and which of the two has every input known before the model runs? ___________________________________________
 
 **e. Which word is which?** Match with a line: *the true previous letter goes in* · *the model's own last pick goes in* .   ◯ **training** ◯ **generating**
 
@@ -431,7 +431,7 @@ ___________________________________________________________________________
 
 *Common slips:* forgetting the EOS; putting the START token in the targets; copying the targets as the inputs (no shift).
 
-**c.** Inputs given: **0, 16, 19, 2** (START, then `o`, `r`, `a`: each is the model's own previous pick). **d.** Yes, the `uma` inputs were known before any model ran. No, the input at step 2 was the pick `r`, which did not exist until the model had run step 1. That is the difference: training inputs are all known, so **training** can go through as a whole batch; generating cannot (its next input is the last answer). **e.** True previous letter: **training**. The model's own last pick: **generating**.
+**c.** Inputs given: **0, 16, 19, 2** (START, then `o`, `r`, `a`: each is the model's own previous pick). **d.** Yes, the `uma` inputs were known before any model ran. No, the input at step 2 was the pick `r`, which did not exist until the model had run step 1. That is the difference: training inputs are all known, so **training** has every input up front; generating does not (its next input is the last answer). **e.** True previous letter: **training**. The model's own last pick: **generating**.
 
 ### Page 12.2
 
