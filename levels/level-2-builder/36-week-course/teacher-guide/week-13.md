@@ -13,7 +13,7 @@
 | **Big idea** | A dictionary looks things up **by name** instead of by position, which is what you want the moment a thing has fields. |
 | **New vocabulary** | dictionary · key · value · key-value pair · `KeyError` |
 | **New syntax** | `{"key": value}` · `player["key"]` · `player["new"] = v` · `player.get("k", 0)` |
-| **Materials** | 5 blank index cards (or A4 cut into six) · a pen · printed workbook pages 13.1–13.6 · the student's Bug Log notebook · a pencil |
+| **Materials** | 5 blank index cards (or A4 cut into six) · a pen · the printed workbook · the student's Bug Log notebook · a pencil |
 | **Tech needed** | Laptop with Python 3 and the editor from Week 0. Nothing installed this week — no numpy, no pandas. A complete paper version is in the Prep Checklist if the laptop dies. |
 | **Prep time** | 15 minutes the night before · 5 minutes on the day |
 
@@ -361,7 +361,7 @@ moved down to `dicts · rows · files`, weeks 13 to 18. One thread lit: represen
 
 ### 15 minutes the night before
 
-- [ ] **Print workbook pages 13.1–13.6.**
+- [ ] **Print the whole workbook** (Warm-Up through Self-Check).
 - [ ] **Cut five index cards** (or A4 into six). Write nothing on them yet — the student writes them.
 - [ ] **Type and run the code yourself.** Not read — typed. Make a file called `cards.py` in the course folder and put exactly this in it:
 
@@ -395,7 +395,7 @@ Asha
 - [ ] Editor open on the course folder, with the `.venv` interpreter selected. A terminal open in the same folder.
 - [ ] Five blank cards and a pen on the table, to your left.
 - [ ] `cards.py` **deleted or renamed** — the student types it from scratch. If you leave your copy there they will read it instead of typing it, and typing it is the lesson.
-- [ ] Workbook pages 13.1–13.3 out, 13.4–13.6 kept back for homework.
+- [ ] Workbook open at the Warm-Up, Predict the Output and Practice Set A for class; Build It (Parts 1–5) kept back for homework.
 
 ### Fallback if the laptop or the install fails
 
@@ -734,7 +734,7 @@ Full instructions in the next section. In the lesson flow:
 
 ### Setup
 
-**On the table:** five blank index cards, a pen, the laptop, workbook page 13.2, the Bug Log open.
+**On the table:** five blank index cards, a pen, the laptop, the workbook open at Practice Set A, the Bug Log open.
 
 **On screen:** an empty file called `scorecard.py`.
 
@@ -1046,116 +1046,326 @@ print(pizza["price"])
 
 **Say this:**
 
-> "Two pages, about an hour, and there's a crash in the middle that I want you to cause on purpose.
+> "Tonight is the **Build It** section of the workbook, about an hour, and there's a crash in the middle that I want you to cause on purpose.
 >
-> **First, five cards in code.** Page 13.4. Five player dictionaries, all five with exactly the same five keys — same spelling, same capitals, same order. Not four keys on one and five on the rest. Identical. That rule is going to matter enormously next week and I'm not telling you why yet.
+> **First, Build It Part 1 — five cards in code.** Save it as `hw13.py`. Five player dictionaries, or songs, or bus journeys if you'd rather — all five with exactly the same five keys — same spelling, same capitals, same order. Not four keys on one and five on the rest. Identical. That rule is going to matter enormously next week and I'm not telling you why yet.
 >
-> **Then, break it deliberately.** Page 13.5. Ask one of your players for a field that isn't there. Run it. **Copy the whole traceback into your Bug Log by hand** — all of it, not just the last line — and underneath write, in your own words, what Python was telling you and which of the three usual causes you used.
+> **Then Part 2, break it deliberately.** Ask one of your cards for a field that isn't there. Run it. **Copy the whole traceback into the workbook and your Bug Log by hand** — all of it, not just the last line — and underneath write, in your own words, what Python was telling you and which of the three usual causes you used.
 >
-> **Then fix it two different ways.** Same page. Once with `.get()` and a fallback. Once by asking first, with `in`, which is a tool you have not met yet — it is on the page, copy it exactly and it will work; I will explain it properly on Monday. Then write me **one sentence** on which of the two you would actually use, and why. There is no correct answer to that. There is a correct *reason*.
+> **Then Part 3, fix it two different ways.** Once with `.get()` and a fallback. Once by asking first, with `in`, which is a tool you have not met yet — it is on the page, copy it exactly and it will work; I will explain it properly on Monday. Then write me **one sentence** on which of the two you would actually use, and why. There is no correct answer to that. There is a correct *reason*.
 >
-> **Last, page 13.6, the honesty page.** Four missing fields, and for each one you say whether filling it with zero is a fact or a guess. One of them is genuinely arguable and I want to hear the argument."
+> **Part 4, the honesty page.** Four missing fields, and for each one you say whether filling it with zero is a fact or a guess. One of them is genuinely arguable and I want to hear the argument. Then the one sentence you would put next to an average worked out from a table with holes in it.
+>
+> **Part 5 is the Bug Log,** two entries. And if you have time left this week, the rest of the workbook is yours: Practice Set B, Fix the Broken Program, the Card Detective puzzle, the two Think Deeper questions, Draw It and the Self-Check."
 
-**Workbook pages:** 13.1, 13.2, 13.3 in class · **13.4, 13.5, 13.6** at home.
+**Workbook sections:** Warm-Up, Predict the Output and Practice Set A (A1–A6) in class, with the student's pen on the page · **Build It, Parts 1–5** at home · **Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Draw It and Self-Check** are the extension, to be done across the week or at the next sitting. Mark them from the key below.
 
-**Expected time:** 20 min typing the five cards · 15 min on the crash and the two fixes · 15 min on the honesty page · 10 min on the Bug Log entry. **About 60 minutes.**
+**Expected time:** 20 min typing the five cards · 15 min on the crash and the two fixes · 15 min on the honesty page · 10 min on the Bug Log entries. **About 60 minutes** for Build It alone; the extension sections add roughly 10 to 25 minutes each.
 
-> **🧑‍🏫 A note on `in`:** `"runs" in player` is formally Week 14's syntax and you have not taught it. It appears once tonight, printed on the page for the student to copy, because the homework needs two genuinely different fixes and `.get()` is the only other one they have. Say plainly that it is next week's tool arriving early. Next week it gets its full explanation, and the student will already have typed it once — which makes that lesson easier, not harder.
+> **🧑‍🏫 A note on `in`:** `"runs" in player` is formally Week 14's syntax and you have not taught it. It appears printed on the workbook page for the student to copy (Practice Set B4 and Build It Part 3), because the homework needs two genuinely different fixes and `.get()` is the only other one they have. Say plainly that it is next week's tool arriving early. Next week it gets its full explanation, and the student will already have typed it once — which makes that lesson easier, not harder.
 
 ---
 
 ## 🔑 Answer Key
 
-Every question is restated, so you can mark from this page alone.
+This key follows the workbook's own sections and item labels (W1, P1, A1, B1, Fix, Puzzle, T1, Build It Parts 1–5, Draw It, Self-Check), in the order they appear on the page. Every question is restated, so you can mark from this page alone. Where the student's cards are their own (B5, Build It), mark the structure.
 
-### Page 13.1 — What is the key, what is the value?
+### Warm-Up — five questions about last week
 
-*For each pair, name the key and the value, and say whether the value is text, a number or a True/False.*
+**W1. `scores = [45, 0, 112, 67, 8]`: what does `scores[1:4]` give, and how many items?**
+`[0, 112, 67]` — **three** items. A slice stops **before** the number after the colon, so `1:4` takes slots 1, 2 and 3.
 
-| # | Pair | Key | Value | Kind |
-|---|---|---|---|---|
-| (a) | `"name": "Asha"` | `name` | `Asha` | text |
-| (b) | `"runs": 48` | `runs` | `48` | number |
-| (c) | `"out": True` | `out` | `True` | True/False |
-| (d) | `"team": "Falcons"` | `team` | `Falcons` | text |
-| (e) | `"strike_rate": 150.0` | `strike_rate` | `150.0` | number (a decimal) |
+**W2. What do `scores.sort()` and `sorted(scores)` do?**
+`scores.sort()` rearranges **the original list** and hands back **nothing** (`None`). `sorted(scores)` builds a **new** sorted list and leaves the original exactly as it was: `[0, 8, 45, 67, 112]`, with `scores` still `[45, 0, 112, 67, 8]`.
 
-**13.1(f) Why do all five keys have quotes, but only two of the five values do?**
-Because the keys are all text — they are words used as labels. A value only needs quotes when the value itself is text. `48` and `150.0` are numbers and `True` is Python's own word for yes, so quotes on any of those would change what they are. `"48"` is the *text* four-eight, and you cannot add it up.
+**W3. In `for score in scores:`, what is in `score` on the first trip?**
+`45` — the **value** in the first slot, not the number 0. The loop hands you the things, not their positions.
 
-**13.1(g) How many key-value pairs are in `{"a": 1, "b": 2, "c": 3}`, and what does `len()` say?**
-Three pairs, and `len()` says `3`. Not 6 — a pair counts once. `len` counts labels, not items of information.
+**W4. Median of `[3, 9, 4, 1]`, and why sort first?**
+**3.5.** Sorted it is `[1, 3, 4, 9]`; four values, so the median is the average of the middle two, `(3 + 4) / 2`. Sorting first is needed because "the middle one" only means something once they are in order.
 
-### Page 13.2 — Build it and read it
+**W5. The one line that lets `report.py` use `mean` from `stats.py`.**
+`from stats import mean` — or `import stats` (then `stats.mean(...)`). Either is full marks.
 
-**13.2(a) Write a dictionary called `asha` with the five fields from your card, then print the whole thing, then print just the runs.**
+### Predict the Output
 
-```python
-asha = {"name": "Asha", "runs": 48, "balls": 32, "team": "Falcons", "out": True}
-print(asha)
-print(asha["runs"])
-```
+*Two of the four produce no error. "Predict" means "what will it print".*
+
+**P1.** `card = {"runs": 48, "balls": 32, "runs": 51}`, then `print(card)` and `print(len(card))`.
 
 ```text
-{'name': 'Asha', 'runs': 48, 'balls': 32, 'team': 'Falcons', 'out': True}
+{'runs': 51, 'balls': 32}
+2
+```
+
+Three pairs typed, two stored: the later `"runs": 51` replaced the earlier one, with no error. `runs` also keeps its **original position** (first).
+
+**P2.** `card = {"name": "Dev", "runs": 0}`; `card.get("runs", 5)`, `card.get("catches", 5)`, `card.get("catches")`.
+
+```text
+0
+5
+None
+```
+
+The trap is the first line: `0`, not `5`. The key `runs` **is** there and its value happens to be zero; the fallback is used only when the **key** is missing. Students who answer `5` think "zero means empty".
+
+**P3.** `card = {"runs": 48}`, then `card["Runs"] = 51`, then print `card["runs"]`, `len(card)`, `card`.
+
+```text
 48
+2
+{'runs': 48, 'Runs': 51}
 ```
 
-**Mark:** curly braces; a colon in every pair; a comma between pairs and **not** after the last one (a trailing comma is legal, so do not mark it wrong); quotes on all five keys.
+`Runs` and `runs` are different labels, so a **new** pair was made. No error, no warning; the count is the only clue.
 
-**13.2(b) `scores[2]` and `asha["runs"]` use the same brackets. Write one sentence on what is different.**
-Model answer: *"The brackets both mean 'look inside this thing', but a number inside means count along to that slot, and a word in quotes means read the label — so `scores[2]` counts and `asha["runs"]` reads a label."*
-
-**13.2(c) Predict, then run: what does `print(len(asha))` say?**
-`5`.
-
-**13.2(d) Predict, then run: what does `print(asha[0])` say?**
+**P4.** `card = {"name": "Meera", "runs": 30}`, print name and runs, then `print(card[0])`.
 
 ```text
+Meera scored 30
 Traceback (most recent call last):
-  File "cards.py", line 4, in <module>
-    print(asha[0])
+  File "p4.py", line 3, in <module>
+    print(card[0])
           ~~~~^^^
 KeyError: 0
 ```
 
-Because there is no key called `0`. A dictionary has labels, not positions. **Mark generously on wording, strictly on the idea.**
+The first line prints fine; a crash does not undo what already ran. Then `KeyError: 0` because a dictionary has labels, not positions. (Python 3.10 or older: no `~~~^^^` line; do not mark that as a mistake.)
 
-### Page 13.3 — Add it and change it
+**Score line, "how many of the nine answers":** the student's own count out of 9 (P1 has two answers, P2 three, P3 is one entry, P4 one). Do not mark it; ask which one surprised them. P2's first line is the usual answer.
 
-**13.3(a) Starting from Asha's five-key card, change her runs to 51 and add a `ground` of `"Pune"`. Print the dictionary and its length after each step.**
+### Practice Set A — Read It
+
+**A1. Trace the card** (`card = {"title": "Late Bus", "artist": "Ravi", "minutes": 2.9, "plays": 180}` and the eight lines).
+
+| Line | Prints | Did the card change? |
+|---|---|---|
+| `print(card["artist"])` | `Ravi` | no |
+| `print(len(card))` | `4` | no |
+| `print(card.get("album", "unknown"))` | `unknown` | **no** — `.get` never adds a key |
+| `print(card.get("plays", 0))` | `180` | no |
+| `card["plays"] = 181` | *(nothing)* | **yes — changed** |
+| `card["album"] = "Corner Shop"` | *(nothing)* | **yes — added** |
+| `print(len(card))` | `5` | no |
+
+The final `print(card)` gives `{'title': 'Late Bus', 'artist': 'Ravi', 'minutes': 2.9, 'plays': 181, 'album': 'Corner Shop'}`.
+
+*Which two lines changed the card, and which one added?* The two with an `=`: `plays` **changed** (it already existed, count stays 4), `album` **added** (new, count goes to 5). **Watch for:** the student who thinks `.get("album", "unknown")` put an `album` on the card. It only reads; it never writes.
+
+**A2. Spot the bug:** `pizza = {"size" : "large", "price" = 8.5}`.
+An **equals sign** where a **colon** belongs. Inside braces a pair is always `key: value`; `=` is for naming the box outside. Real message: `SyntaxError: ':' expected after dictionary key`. Fix:
 
 ```python
-asha = {"name": "Asha", "runs": 48, "balls": 32, "team": "Falcons", "out": True}
+pizza = {"size": "large", "price": 8.5}
+```
 
-asha["runs"] = 51            # the key ALREADY exists -> this CHANGES the value
-print(asha["runs"])          # 51, the old 48 is gone
+**A3. Match the code to the output** (`card = {"a": 1, "b": 2, "c": 3}`).
+a → **2** · b → **1** · c → **3** · d → **4** (the numbers are the output column: `3`, `2`, `0`, `None`).
 
-asha["ground"] = "Pune"      # the key is NEW -> this ADDS a sixth field
-print(asha)                  # the new pair went on the end
-print(len(asha))             # six labelled fields now
+*Why does neither missing-key line crash?* `.get` is the polite version: it hands back your fallback, or `None` if you gave none. `card["d"]` **would** crash with `KeyError: 'd'`. Same missing key, two behaviours, and the choice is the programmer's.
+
+**A4. Label the diagram** (Figure W13.1).
+A **dictionary** (the whole card) · B **key** (a label box) · C **value** (the box holding the fact) · D **key-value pair** (one whole row). There are **4** pairs, so `len()` says **4**.
+**Mark D strictly:** a pair is label *and* fact. "A row" is right in spirit; the course word is *key-value pair*, because `len` counts those.
+
+**A5. Which bracket job?** (`scores = [45, 12, 88]`, `asha = {"name": "Asha", "runs": 48}`)
+
+| Expression | count or label? | What happens |
+|---|---|---|
+| `scores[2]` | **count** | `88` |
+| `asha["runs"]` | **label** | `48` |
+| `asha[0]` | **label** (that is the problem) | `KeyError: 0` |
+| `scores["two"]` | **count** (that is the problem) | `TypeError: list indices must be integers or slices, not str` |
+| `asha["Runs"]` | **label** | `KeyError: 'Runs'` — capital R is a different label |
+| `asha.get("Runs", 0)` | **label** | `0` — no crash, and no warning that it was misspelled |
+
+The last row is the dangerous one: `.get` turned a spelling mistake into a confident zero.
+
+**A6. Fact or guess?**
+
+| The missing field | Fact or guess? | Reason |
+|---|---|---|
+| `catches` — nobody watched the fielders | **Arguable, leaning fact** | A catch is visible and memorable, so if nobody recorded one, probably none happened. Still an inference; write it down as one. |
+| `runs` — the scorer's pen died | **Guess** | They batted, so they scored something. `0` is invented and drags every average down. |
+| `balls` — the counter was on somebody's phone | **Guess**, and an impossible one | `0` balls faced is impossible for someone who batted, and it makes the strike rate divide by zero. |
+| `stars` — the song has never been rated | **Fact-ish, but say which** | "Zero stars" and "not yet rated" are different things; treated the same, an unrated song looks like a hated one. |
+
+### Practice Set B — Write It
+
+**B1. Build `pizza` with `size`, `toppings`, `price`; print the price.**
+
+```python
+pizza = {"size": "large", "toppings": 3, "price": 8.5}
+print(pizza["price"])
 ```
 
 ```text
-51
-{'name': 'Asha', 'runs': 51, 'balls': 32, 'team': 'Falcons', 'out': True, 'ground': 'Pune'}
+8.5
+```
+
+**Mark:** curly braces (square brackets would make a list); a colon in every pair; quotes on all three keys. A trailing comma after the last pair is legal, so do not mark it wrong. The values are the student's own.
+
+**B2. One f-string: "Zara of the Tigers made 41 off 39".**
+
+```python
+player = {"name": "Zara", "runs": 41, "balls": 39, "team": "Tigers", "out": True}
+print(f"{player['name']} of the {player['team']} made {player['runs']} off {player['balls']}")
+```
+
+```text
+Zara of the Tigers made 41 off 39
+```
+
+**Mark:** double quotes outside, **single** quotes for the keys inside the braces (the wrong way round is the commonest typo). No `+` anywhere; `+` would raise `TypeError: can only concatenate str (not "int") to str` at the 41.
+
+**B3. Add and change.**
+
+```python
+player = {"name": "Zara", "runs": 41, "balls": 39, "team": "Tigers", "out": True}
+print("before:", len(player))
+player["runs"] = 44                # the key EXISTS -> changes it
+player["ground"] = "Nagpur"        # the key is NEW -> adds a sixth pair
+print("after :", len(player))
+print(player)
+```
+
+```text
+before: 5
+after : 6
+{'name': 'Zara', 'runs': 44, 'balls': 39, 'team': 'Tigers', 'out': True, 'ground': 'Nagpur'}
+```
+
+Blanks: before **5**, after **6**. The `ground` line made the count go up; the `runs` line changed a value. Two identically written lines, two different effects, decided by whether the key was already there.
+
+**B4. Same hole, two fixes** (`bus` card with no `fare`).
+
+```python
+print(bus.get("fare", 0))
+
+if "fare" in bus:
+    print("Fare:", bus["fare"])
+else:
+    print("Fare: not recorded")
+```
+
+```text
+0
+Fare: not recorded
+```
+
+Fix one printed `0`; fix two printed `Fare: not recorded`. **"Which would you use" has no correct answer, only correct reasoning.** Both of these are full marks:
+
+> *"I'd use `.get()` because it is one short line and it keeps the program going, and if I am only adding fares up then a missing one contributing nothing is fine."*
+
+> *"I'd use the `in` version, because it can print **not recorded**, which is the truth. `.get()` has to make something up, and `0` looks like a real fare of nought rupees, so anybody reading my output would think this bus was free."*
+
+**Zero marks** for "the second one, because it's longer" or any answer that does not mention what the **reader** would conclude. Push in the margin: "what does somebody reading your output think happened?"
+
+**B5. Five cards of your own.** Model answer (the student's theme, names and numbers will differ):
+
+```python
+# five_cards.py - five songs, five identical keys each
+
+blue   = {"title": "Blue Lights",  "artist": "Nova",  "genre": "pop",  "minutes": 3.5, "plays": 120}
+rain   = {"title": "Rain Check",   "artist": "Kabir", "genre": "rock", "minutes": 4.2, "plays": 45}
+ghost  = {"title": "Ghost Town",   "artist": "Nova",  "genre": "pop",  "minutes": 2.8, "plays": 300}
+train  = {"title": "Slow Train",   "artist": "Meera", "genre": "folk", "minutes": 5.1, "plays": 60}
+static = {"title": "Static",       "artist": "Kabir", "genre": "rock", "minutes": 3.1, "plays": 130}
+
+print(blue["title"], "by", blue["artist"])
+print(ghost["title"], "has", ghost["plays"], "plays")
+print(train["title"], "is", train["minutes"], "minutes long")
+print("Fields on every card:", len(static))
+print("Star rating for Static:", static.get("stars", 0))
+```
+
+```text
+Blue Lights by Nova
+Ghost Town has 300 plays
+Slow Train is 5.1 minutes long
+Fields on every card: 5
+Star rating for Static: 0
+```
+
+**Mark hard on one thing only: are the five keys spelled identically on all five cards?** Same words, same capitals. A `Genre` on card three is the defect to catch, and it will cost them dearly next week if it survives. Also check: at least two keys hold numbers, three facts printed, one `len()`, one `.get()` with a fallback the student can defend. The honest note on the last line: `0` reads as "rated zero stars" when the song was never rated; `"not rated"` would be the truth. A student who notices this unprompted has got the week.
+
+### Fix the Broken Program — `snack.py`
+
+**Bug 1 — an `=` where a `:` belongs.** The pair `"count" = 3`. Inside braces every pair is `key: value`; `=` belongs outside, on the line that names the box. Python names the exact character: `':' expected after dictionary key`. The fixed line:
+
+```python
+order = {"item": "samosa", "count": 3, "price_each": 12, "paid": False}
+```
+
+**Bug 2 — a capital letter.** (a) `Paid`. (b) A capital letter; the card says `paid`. (c)
+
+```python
+print("Paid yet? :", order["paid"])
+```
+
+**Bug 3 — the silent one.**
+
+(a) The total should be **60** (5 × 12). It said **36** (3 × 12).
+(b) `Count` says **3**; it should say **5**.
+(c) With the two extra lines:
+
+```text
+Item      : samosa
+Count     : 3
+Total     : 36 rupees
+Paid yet? : False
+Fields    : 5
+{'item': 'samosa', 'count': 3, 'price_each': 12, 'paid': False, 'Count': 5}
+```
+
+(d) `order["Count"] = 5`, with a **capital C**, did not change `count`; it quietly **added a fifth field** called `Count`. The total was worked out from `count`, so it used the old 3.
+(e) Nothing is wrong as far as Python is concerned: `Count` is a legal key, and assigning to a key that does not exist is supposed to create it. That is how fields get added.
+(f) One character: `order["count"] = 5` (small c; the key exists, so this **changes** it). Fixed output: `Count : 5`, `Total : 60 rupees`, `Fields : 4`. **Four fields, not five**, which was the tell.
+(g) Accept any well-argued answer, but the expected one is **Bug 3**: bugs 1 and 2 stopped the program and named the exact character or key; bug 3 produced a tidy, confident receipt with the wrong number. *The error message is not the enemy; the silent wrong answer is.* A good answer also notes the order they had to be fixed in: `SyntaxError` first, then `KeyError`, then the silent one, which could only be found by knowing what five samosas at twelve rupees should cost.
+
+### Puzzle of the Week — Card Detective
+
+**Part A.** 1 one **train departure** (one journey). 2 one **library book on loan**. 3 one **pizza order**. 4 one **cricketer's innings**. 5 one **day** of a fitness tracker. Accept anything specific and singular. **Reject plurals** ("trains", "books"): one card is one thing, and next week is built on that habit.
+
+**Part B.** (`train = {"depart": "07:42", "platform": 3, "minutes": 55, "to": "Nagpur", "late": False}`)
+
+| Line | prints / crashes | What exactly |
+|---|---|---|
+| `print(train["to"])` | prints | `Nagpur` |
+| `print(train["Platform"])` | **crashes** | `KeyError: 'Platform'` — a capital letter |
+| `print(train[0])` | **crashes** | `KeyError: 0` — no positions |
+| `print(len(train))` | prints | `5` |
+| `print(train["arrive"])` | **crashes** | `KeyError: 'arrive'` — no such field |
+| `print(train.get("arrive", "unknown"))` | prints | `unknown` |
+
+**Three of the six crash.** The last two rows ask for the same missing key and behave completely differently, which is the whole of `.get()` in two lines.
+
+**Part C** (`train["Minutes"] = 31`). (a) `train["minutes"]` still says **55**. (b) `len(train)` says **6**. (c) The two lines:
+
+```python
+print(train)
+print(len(train))
+```
+
+```text
+{'depart': '07:42', 'platform': 3, 'minutes': 55, 'to': 'Nagpur', 'late': False, 'Minutes': 31}
 6
 ```
 
-**13.3(b) Both lines are written the same way. How does Python decide whether to change or to add?**
-It looks to see whether the key is already there. If it is, the old value is replaced and lost. If it is not, a new pair is created on the end. There is no separate "add" command and no separate "change" command — which is why a typo in a key adds a field instead of changing one.
+Printing the card shows every label actually there (`minutes` and `Minutes` side by side); printing the length shows the count went from 5 to 6 when it should have stayed put. Those two lines find nearly every silent dictionary bug.
 
-**13.3(c) What does `asha["Runs"] = 60` do? Does anything go wrong?**
-It creates a **new sixth key** called `Runs` with the value 60, and leaves `runs` exactly as it was. Nothing goes wrong as far as Python is concerned: no error, no warning. `len(asha)` goes up by one, and the dictionary now has two nearly identical labels. This is worse than a crash, because a crash tells you where to look.
+**Part D. No. You cannot tell, ever, from the cards alone.** Both say `late: False`; one is a measurement, the other a filled-in default, and once the fallback is written the difference is gone. *What they should have done instead* (any of these): leave the field missing and count how many are missing ("3 of the 12 trains had no punctuality record"); use a third value meaning unknown, such as `train.get("late", "unknown")`; or keep a second field such as `late_source`. The rule to carry: **when you fill a hole, write down that you filled it, and how many.**
 
-**13.3(d) What happens if you type the same key twice: `{"runs": 48, "runs": 51}`?**
-The later one wins. You get `{'runs': 51}` — one pair — and `len()` says `1`. No error. A dictionary cannot hold the same label twice, which is exactly what you want from a card.
+### Think Deeper
 
-### Page 13.4 — Five cards in code
+**T1. Should Python warn about `Runs` next to `runs`?** There is no single right answer. Full marks needs: a **side taken** · either the "it is a checkable fact about the dictionary" argument or the "capitals can be deliberate (`id` and `ID`), and a warning that is often wrong gets clicked past" argument · and an **honest cost of the writer's own position**, ideally the point that a warning would have cost them the habit of checking `len()`.
 
-*Type five player dictionaries with the same five keys, then print three specific facts.*
+**T2. What to fill a missing `runs` with.** Full marks needs: all three options (fill with `0`, leave it as nothing, refuse to run) with a **cost** for each · the observation that the right choice **depends on what the number is and what happens if it is wrong** (missing catches filled with 0 is probably harmless; missing rainfall filled with 0 says "it did not rain"; a missing test score filled with 0 says a child failed) · and the rule **whatever you fill in, write down that you filled it in, and how many**. Check the numbers if the student quotes them: the Falcons' average falls from **45.67** to **34.25**, a gap of **11.42** runs.
 
-Model answer (the student's names and numbers will differ; mark the structure):
+### Build It (the homework)
+
+**Part 1 — Five cards in code.** Model answer (names and numbers will differ; mark the structure):
 
 ```python
 # hw13.py - Week 13 homework: five cards, one KeyError, two fixes
@@ -1176,11 +1386,9 @@ Asha scored 48
 Kabir plays for Tigers
 ```
 
-**Mark hard on one thing only: are the five keys spelled identically on all five cards?** Same words, same capitals. A `Team` on card three is the defect to catch, and it will cost them dearly next week if it survives. Everything else — names, numbers, spacing, order of the five dictionaries — is theirs.
+Checklist: file saved as `hw13.py` · five dictionaries, five keys each · at least two numeric keys · three facts printed as lookups by label · `len()` printed for one card. **All five `len()` values must be the same number.** The commonest defects, in order: (1) **a capital letter on one label** (`Team`, `Genre`), where `len` is still 5, so the count check will **not** catch it and the student has to read the labels; (2) a plural (`minute` for `minutes`); (3) a missing pair, usually on the last card, which `len` **does** catch. **Mark hard on one thing only: are the five keys spelled identically on all five cards?** Everything else is theirs.
 
-### Page 13.5 — Break it, read it, fix it twice
-
-**13.5(a) Ask one of your players for a field that is not on their card. Paste the whole traceback.**
+**Part 2 — Break it on purpose.**
 
 ```python
 meera = {"name": "Meera", "runs": 30, "balls": 28, "team": "Tigers", "out": False}
@@ -1197,12 +1405,9 @@ KeyError: 'catches'
 
 *(On Python 3.10 or older the `~~~^^^` line is absent. Everything else is identical. Do not mark that as a mistake.)*
 
-**13.5(b) In your own words: what is Python telling you, and which of the three usual causes was it?**
-Model answer: *"It's telling me I asked the dictionary for a label called `catches`, and there is no label called `catches` on Meera's card, so it had nothing to hand back and it stopped. It wasn't a typo or a capital letter — I asked for a field that genuinely doesn't exist."*
+*In your own words:* model answer, *"It's telling me I asked the dictionary for a label called `catches`, and there is no label called `catches` on Meera's card, so it had nothing to hand back and it stopped. It wasn't a typo or a capital letter: I asked for a field that genuinely doesn't exist."* Accept any wording that contains **the name of the key** and the idea that **it is not there**. Reject "it broke" and "the dictionary is wrong". For the cause, the student circles one of typo / plural / capital letter; for a field that truly does not exist, they should say none of the three fits exactly, and that is a good answer.
 
-Accept any wording that contains **the name of the key** and **the idea that it is not there**. Reject "it broke" and "the dictionary is wrong".
-
-**13.5(c) Fix it with `.get()`. 13.5(d) Fix it with `in`. 13.5(e) Which would you use, and why?**
+**Part 3 — Fix it two different ways.**
 
 ```python
 # --- FIX ONE - .get() with a fallback ---------------------------------------
@@ -1220,34 +1425,50 @@ Meera's catches (fallback): 0
 Meera's catches (checked): not recorded
 ```
 
-**13.5(e) — there is no correct answer, only correct reasoning.** Both of these are full marks:
+The blanks in the workbook template are `"catches"`, `meera`, `"Meera's catches (checked):", meera["catches"]` and `"Meera's catches (checked): not recorded"`. The closing sentence has **no correct answer, only correct reasoning**; mark it exactly as B4 above (zero marks unless it says what the **reader** of the output would think).
 
-> *"I'd use `.get()` because it's one short line and zero catches is a sensible thing to say about a player nobody watched in the field."*
-
-> *"I'd use the `in` version because it can print 'not recorded', which is the truth. `.get()` has to make something up, and 0 looks like a real measurement."*
-
-**Zero marks** for "the second one, because it's longer" or any answer that does not mention what happens to the *reader* of the output. Push in the margin: "what does somebody reading your output think happened?"
-
-### Page 13.6 — Fact or guess?
-
-*For each missing field, is filling it with `0` a fact or a guess?*
+**Part 4 — The honesty page.**
 
 | # | The missing field | Verdict | Why |
 |---|---|---|---|
-| (a) | `catches` — nobody was watching the fielders | **Arguable, leaning fact** | If a catch had happened, somebody would almost certainly have noticed. So 0 is a reasonable inference. It is still an inference, and it should be noted. |
-| (b) | `runs` — the scorer's pen died mid-innings | **Guess** | They batted. They scored something. 0 is a number you invented, and it drags every average down. |
-| (c) | `balls` — the ball counter was on somebody's phone | **Guess** | They faced deliveries. 0 balls faced is impossible for someone who batted, and it will make the strike rate divide by zero. |
-| (d) | `out` — the match is still going | **Neither — the question is wrong** | `out` is not a number. Filling it with `0` says "not out", which is *true right now* and may be false in four minutes. The honest value is "we do not know yet". |
+| a | `catches` — nobody watched the fielders | **Arguable, leaning fact** | If a catch had happened, somebody would almost certainly have noticed, so 0 is a reasonable inference. Still an inference; note it. |
+| b | `runs` — the scorer's pen died | **Guess** | They batted, so they scored something. 0 is invented and drags every average down. |
+| c | `balls` — the counter was on somebody's phone | **Guess** | 0 balls faced is impossible for someone who batted, and it makes the strike rate divide by zero. |
+| d | `out` — the match is still going | **Neither — the question is wrong** | `out` is not a number. `0` says "not out", true *right now* and possibly false in four minutes. The honest value is "we do not know yet". |
 
-**13.6(e) One of these four is genuinely arguable. Which, and what is the argument on each side?**
-**(a), `catches`.** *For zero:* a catch is a visible, memorable event; if nobody recorded one, almost certainly none happened, so 0 is very likely the true value. *Against zero:* nobody was watching, so we have no evidence either way, and writing 0 turns "no evidence" into "evidence of none". If ten players' catches are all filled with 0 and one of them actually took three, the fielding statistics are now quietly wrong and nothing will ever flag it.
+*Which is arguable?* **(a), `catches`.** *For zero:* a catch is visible and memorable; if nobody wrote one down, almost certainly none happened. *Against zero:* nobody was watching, so there is no evidence either way, and `0` turns "no evidence" into "evidence of none". If ten players' catches are all filled with 0 and one took three, the fielding statistics are quietly wrong and nothing will flag it. **Full marks needs both sides.** A student who argues only one side has answered half the question: say so, and ask for the other half out loud.
 
-**Full marks needs both sides.** A student who argues only one side has answered half the question — say so, and ask for the other half out loud.
+*The sentence:* model answer, *"Falcons average 45.67 runs, from 3 of the 4 players — Sam's card had no runs on it, so he is not in this number."* The three things that must be there: **the number**, **how many rows it came from**, and **what was left out**. This sentence is the habit the whole rest of the year is built on; mark it seriously.
 
-**13.6(f) Write the one sentence you would put next to an average computed from a table with holes in it.**
-Model answer: *"Falcons average 45.67 runs, from 3 of the 4 players — Sam's card had no runs on it, so he is not in this number."*
+**Part 5 — The Bug Log.** Two entries, at least one a real traceback the student produced. Model entries:
 
-The three things that must be there: **the number**, **how many rows it came from**, and **what was left out**. This sentence is the habit the whole rest of the year is built on; mark it seriously.
+| # | What I saw | What it meant | What I changed |
+|---|---|---|---|
+| 1 | `KeyError: 'catches'` | I asked Meera's card for a label that isn't on it. | Used `.get("catches", 0)` and noted that the 0 is mine, not a measurement |
+| 2 | **No error message.** The total came out 36, should have been 60. | I typed `order["Count"] = 5` with a capital C, which made a **new** field; `len` going from 4 to 5 was the only clue. | Changed the C to a c |
+
+Also excellent: `NameError: name 'runs' is not defined. Did you mean: 'round'?` (quotes taken off a key, so Python looked for a **variable**; its `round` suggestion was nonsense). *Did either bug have no error message?* A student who has done the Fix the Broken Program section will say yes, and that they found it by printing `len`.
+
+### Draw It
+
+There is no single right drawing. The student draws a card for something that is not a cricketer, five labels down the left and five facts down the right, with one field marked as one they would not email to a stranger. A strong answer: (1) labels and facts in **two visually different kinds of box**; (2) arrows one way only, **from label to fact**; (3) **no index numbers** anywhere (0, 1, 2, 3, 4 under the boxes means they have drawn a list, which is last week's picture); (4) one field marked as a hole, with what a fallback would claim about it (*"`.get("fare", 0)` would say the journey was free, and it wasn't"*). The test: cover the labels. If you can still tell which fact is which, it is a list. If you cannot, it is a dictionary.
+
+### Self-Check
+
+The six "I can…" rows are the student's own ticks; do not mark them, but look for 😕 on the `scores[2]` versus `asha["runs"]` row, which is the week's confusion. True or false:
+
+| Statement | Answer |
+|---|---|
+| A dictionary keeps its pairs in alphabetical order | **FALSE.** The order you typed them. |
+| `len()` on a five-pair dictionary says 10 | **FALSE.** It says 5; `len` counts pairs. |
+| `asha[0]` gives you the first pair | **FALSE.** `KeyError: 0`; there are no positions. |
+| In this course, keys always need quotes | **TRUE.** |
+| `asha["Runs"] = 51` changes Asha's runs | **FALSE.** It adds a **new** field called `Runs`, silently. |
+| `.get()` fixes a missing key | **FALSE.** It decides what to say about one; a decision, not a repair. |
+| `{"runs": 48, "runs": 51}` holds two pairs | **FALSE.** One pair, `runs: 51`; the later one wins. |
+| `KeyError` tells you the exact key it could not find | **TRUE.** It is on the last line, in quotes. |
+| Taking the quotes off a key gives you a `KeyError` | **FALSE.** It gives a `NameError`; Python looks for a **variable**, not a label. |
+| An invented zero can move an average without any warning | **TRUE.** 45.67 became 34.25. |
 
 ### Answers to every question posed in the lesson
 

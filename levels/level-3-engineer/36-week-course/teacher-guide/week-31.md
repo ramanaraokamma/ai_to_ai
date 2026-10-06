@@ -15,7 +15,7 @@
 | **New maths** | **None.** This week is counting and checking. It practises Weeks 1, 3 and 4 — a table of numbers, a fitted transformer, and a decision you have to justify. |
 | **New syntax** | `re.findall(r"\b\w\w+\b", text)` · `text.lower()` · `CountVectorizer()` · `vec.get_feature_names_out()` |
 | **Dataset** | **Four reviews written on the whiteboard**, then a **60-review corpus the student typed themselves.** Nothing downloads. No internet needed. Every character of data in this week was typed by a human. |
-| **Materials** | Printed workbook pages 31.1–31.7 · **a big wall sheet headed THE VOCABULARY, with 8 blank columns ruled on it** · squared paper (the 4×8 grid gets drawn by hand) · two colours of pen · the Bug Log · a printed copy of Figure 31.2 for the activity |
+| **Materials** | The printed workbook (all of it; the numbered pages 31.4–31.7 are the marked homework) · **a big wall sheet headed THE VOCABULARY, with 8 blank columns ruled on it** · squared paper (the 4×8 grid gets drawn by hand) · two colours of pen · the Bug Log · a printed copy of Figure 31.2 for the activity |
 | **Tech needed** | Laptop with Python 3, numpy, pandas, scikit-learn. **No new installs. No torch this week.** |
 | **Prep time** | 25 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | `bag.py` runs in **about 1 second**. There is no training in this lesson at all. **The slow part of this week is the human being, counting 32 cells by hand, and that is deliberate.** |
@@ -33,7 +33,7 @@ By the end of the lesson the student can:
 3. **Demonstrate that `"the dog bit the man"` and `"the man bit the dog"` produce identical rows**, and say in one sentence what that costs.
 4. **Justify one normalization choice against a concrete case where it would be wrong** — starting with dropping the word `not`, and using a sentence pair they wrote themselves as the proof.
 
-Observable evidence: page 31.2 with all 32 cells filled in in pen and ticked against the printout; the printed line `are the two rows identical? True`; a written sentence pair where a normalization choice destroys the difference between them; and the corpus numbers `92` words, `5,520` cells, `363` stored.
+Observable evidence: the notebook page with all 32 cells filled in in pen and ticked against the printout; the printed line `are the two rows identical? True`; a written sentence pair where a normalization choice destroys the difference between them; and the corpus numbers `92` words, `5,520` cells, `363` stored.
 
 ---
 
@@ -337,7 +337,7 @@ three is black, as it has been since Week 12.*
 1. **Ask "which box did we do today?" and then "which word on it?"** Same gold tile — but point at the
    word **words**, which has been sitting unused on that map since Week 1. *"Weeks 28 to 30 were the no
    labels half. From today it is the words half, and Weeks 32 and 33 finish it."*
-2. **Anchor it on the thirty-two cells and on `True`.** Hold up a completed page 31.2. *"This box turned
+2. **Anchor it on the thirty-two cells and on `True`.** Hold up the completed 32-cell notebook page. *"This box turned
    four sentences into thirty-two numbers, and every one of them was checked against the library by
    hand."* Then the printed line `are the two rows identical? True` for `"the dog bit the man"` and
    `"the man bit the dog"`. **The cost is the lesson, not the method** — ask them to say in one sentence
@@ -608,7 +608,7 @@ lower + regex ( 0): []
 **No error. No warning. An empty list.** Sit with that for ten seconds, because it is the exact feeling your students will have in the homework. This is deliberate mistake two.
 
 - [ ] **Count the 32 cells yourself, on paper, before class.** Genuinely do it. It takes four minutes and it tells you which cell your class will argue about. (It is d3's `great`, and the argument will be whether a repeated word counts twice. It does.)
-- [ ] **Print workbook pages 31.1–31.7.**
+- [ ] **Print the whole workbook** (Warm-Up through Self-Check; the numbered Build It pages are 31.4–31.7).
 - [ ] **Rule up the wall sheet headed THE VOCABULARY** — eight blank columns, four blank rows, with `d1 d2 d3 d4` down the side. It gets filled in live in the activity and it stays up for Weeks 32 and 33.
 - [ ] **Have the student's own 60 reviews on disk and check they run.** They typed them for homework. **If they have not, the last five minutes of the lesson has nothing to bite on** — so check tonight, not at minute 60.
 
@@ -616,7 +616,7 @@ lower + regex ( 0): []
 
 - [ ] Editor open, terminal ready, `reviews.py` and `bag.py` in the same folder.
 - [ ] THE VOCABULARY wall sheet up, blank.
-- [ ] Workbook 31.1 out on the desk. **The by-hand tokenizing done in pen before any code runs.**
+- [ ] Squared paper or a notebook page out for the by-hand tokenizing (workbook P2 and A5 revisit it afterwards). **The by-hand tokenizing done in pen before any code runs.**
 - [ ] Two colours of pen per student — one for their hand-built grid, one for ticking it against the printout. **The ticks are the evidence for objective 2 and they must be visibly a second pass.**
 - [ ] Bug Log out.
 - [ ] Squared paper for the 4×8 grid.
@@ -1138,7 +1138,7 @@ This section gives the full set-up and steps for the two hands-on parts of the l
 
 - Squared paper, one sheet each. **Landscape.**
 - Two pens of different colours.
-- Workbook page 31.2, which has the blank grid on it if you prefer that to squared paper.
+- Workbook A4 ("Label the count matrix") shows this same 4×8 grid with four cells left blank — use it afterwards to check, not instead of the squared paper.
 - The four reviews on the board, and THE VOCABULARY wall sheet with the eight words on it.
 - **The screen showing the printout, but covered or scrolled away** until step 3.
 
@@ -1227,7 +1227,7 @@ the dog bit the man
 the man bit the dog
 ```
 
-> **Say this:** "Page 31.3. **In pen.** Vocabulary first — how many different words are in those two sentences altogether? Then write out both rows."
+> **Say this:** "Next page of the notebook. **In pen.** Vocabulary first — how many different words are in those two sentences altogether? Then write out both rows."
 
 *The vocabulary is four: `bit`, `dog`, `man`, `the`.*
 
@@ -1277,7 +1277,7 @@ are the two rows identical? True
 >
 > **There is no general answer.** There is only: *what is this for?*"
 
-**What "finished" looks like:** page 31.3 with a prediction in pen, the two identical rows, and one sentence in the student's own words saying what was lost and one situation where it would matter.
+**What "finished" looks like:** the order-demo notebook page (workbook B4 and the Puzzle continue it at home) with a prediction in pen, the two identical rows, and one sentence in the student's own words saying what was lost and one situation where it would matter.
 
 ---
 
@@ -1517,7 +1517,7 @@ Use this section to set the homework: what to say, and what the student receives
 >
 > Page 31.7 is a stretch: it asks what happens to a review made entirely of words your vocabulary has never seen. **The answer is quietly alarming and I want to know whether it alarms you.**"
 
-**Workbook pages:** 31.1, 31.2, 31.3 in class · **31.4, 31.5, 31.6** at home · 31.7 optional.
+**Workbook pages:** the 32 cells and the order demo are done in class on squared paper (notebook, not workbook) · **Build It pages 31.4, 31.5, 31.6** at home · 31.7 optional. The remaining workbook sections (Warm-Up, Maths by Hand, Predict the Output, Practice Sets A and B, Fix the Broken Program, Puzzle, Think Deeper, Draw It, Self-Check) are not numbered pages; set them as the week's extra practice as time allows. The Answer Key has a section for every one.
 
 **Expected time:** 20 min on the six sentences · 25 min on the fifty cells · 15 min on the normalization case · **about 60 minutes**, plus 15 more for the stretch.
 
@@ -1527,9 +1527,23 @@ Use this section to set the homework: what to say, and what the student receives
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Every workbook section and item is restated below in the **workbook's own order**, so you can mark from this page alone. The workbook has no pages 31.1–31.3 — its only numbered pages are the four Build It pages, **31.4–31.7**. The three in-class exercises that used to be called 31.1–31.3 are **notebook pages** (squared paper, in pen), and they come first.
 
-### Page 31.1 — Tokenize by hand, in pen, before running (in class)
+| Where the student writes | Answered under |
+|---|---|
+| Notebook, in class: tokenize by hand · the 32 cells · the order demo | **In-class notebook pages 1–3** (first three sections below) |
+| Workbook **✅ Warm-Up** W1–W5 | Workbook sections, Warm-Up |
+| Workbook **🔢 Do the Maths by Hand** M1–M4 | Workbook sections, Maths |
+| Workbook **🔎 Predict the Output** P1–P4 | Workbook sections, Predict |
+| Workbook **✍️ Practice Set A** A1–A6 (A4 is the labelled figure) | Workbook sections, Set A |
+| Workbook **✍️ Practice Set B** B1–B5 | Workbook sections, Set B |
+| Workbook **🐞 Fix the Broken Program** Bugs 1–3 | Workbook sections, Fix |
+| Workbook **🧩 Puzzle of the Week** (a)–(f) | Workbook sections, Puzzle |
+| Workbook **🤔 Think Deeper** T1, T2 | Workbook sections, Think Deeper |
+| Workbook **🛠️ Build It** pages **31.4, 31.5, 31.6, 31.7** (the marked homework) | **Pages 31.4–31.7** below |
+| Workbook **🎨 Draw It** and **📊 Self-Check** | After page 31.7 |
+
+### In-class notebook page 1 — Tokenize by hand, in pen, before running (in class)
 
 *The sentence:* `The pizza was GREAT!!  But the service wasn't.`
 
@@ -1561,7 +1575,7 @@ Every question restated, so you can mark from this page alone.
 
 **Marking notes.** **Present or absent, not right or wrong** — this page is a prediction made in pen. **What earns credit is spotting `wasn`.** A student who predicts `wasn't` for (d) has made a completely sensible prediction and gets full credit for having made it; the lesson happens when the real output appears.
 
-### Page 31.2 — The thirty-two cells (in class)
+### In-class notebook page 2 — The thirty-two cells (in class)
 
 | | and | cold | food | great | pizza | service | the | was | row total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1583,7 +1597,7 @@ Every question restated, so you can mark from this page alone.
 
 **Marking notes.** **Thirty-two digits and thirty-two ticks in a second colour.** No blanks. The two 2s must be there. **A student whose row totals are written down and match has checked their own work, which is the habit being taught** — say so.
 
-### Page 31.3 — The order demo (in class)
+### In-class notebook page 3 — The order demo (in class)
 
 *(a) Vocabulary of the two sentences.* **Four words:** `bit`, `dog`, `man`, `the`.
 
@@ -1603,6 +1617,140 @@ Every question restated, so you can mark from this page alone.
 > *"The rows record which words are in the sentence and how many times each one appears. They do not record the order, so there is nowhere in either row that says which animal did the biting — subtract the rows and you get zero in all four columns. For sorting these into 'about animals' it does not matter at all, because both are about animals. For working out who to prosecute it matters completely, because the two sentences accuse different parties."*
 
 **Marking notes.** **Prediction in pen is the point of the page.** Most students predict "different" and that is the correct thing to have predicted from a human reading. **What earns credit is part (d) naming a task where it matters and a task where it does not** — the answer "it always matters" is wrong, and so is "it never matters".
+
+## Workbook sections, in workbook order
+
+*Values below are the ones in the workbook's own Answers section, re-run for this guide: the corpus is `CORPUS_60` from the Prep Checklist, and every count, shape, percentage and variance was recomputed and agrees.*
+
+### ✅ Warm-Up (last week's material)
+
+- **W1.** `s = (6.0 − 2.0) ÷ 6.0 = 4.0 ÷ 6.0 = 0.6667`. The bigger of the two is `b`, so divide by 6, not 2. **Yes, in the right cluster** — three times further from the other cluster than from its own.
+- **W2.** `381.1 ÷ 97.2 = 3.9`, **so k = 3.**
+- **W3.** It licenses **averaging the per-point scores inside one cluster** to find the weakest cluster; a per-cluster mean is comparable with the whole-set number only because the two are the same average.
+- **W4.** `0.2849 ÷ 0.0776 = 3.7` times the floor, so the clustering is finding real structure, not what any random cloud would give.
+- **W5.** (a) the raw one, `0.5711`. (b) the standardised one, ARI `0.8975`. (c) The silhouette measures how cleanly separated the clusters are in whatever space you clustered in; it does not measure whether they correspond to anything real.
+
+> **Marking tip:** W2 and W4 want an actual division written out. An arrow on a chart is not a vote; a division is.
+
+### 🔢 Do the Maths by Hand
+
+**M1.** Vocabulary (seven): `and, chips, cold, hot, pizza, the, was` — eight means a repeat was counted.
+
+| | and | chips | cold | hot | pizza | the | was | **row total** |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| **t1** | 1 | 1 | **2** | 0 | 1 | 0 | 0 | **5** |
+| **t2** | 1 | 1 | 0 | **2** | 1 | 0 | 0 | **5** |
+| **t3** | 0 | 0 | 1 | 0 | 1 | 1 | 1 | **4** |
+| **column total** | 2 | 2 | 3 | 2 | 3 | 1 | 1 | **14** |
+
+(c) Row totals 5, 5, 4 (each the token count); `5 + 5 + 4 = 14`; column totals also 14. (d) shape `(3, 7)` · cells `3 × 7 = 21` · non-zero 12 · empty 9 · `9 ÷ 21 = 42.86%`. (e) **Two** columns, `cold` and `hot`.
+
+**M2.** (a) `60 × 92 = 5,520`; `5,520 − 363 = 5,157`; `5157 ÷ 5520 = 0.9342` → **93.42%**. (b) `20,000 × 50,000 = 1,000,000,000`; non-zero ≈ `20,000 × 120 = 2,400,000`; empty `= 99.76%`. (c) `1,000,000,000 ÷ 2,400,000 = 416.67` → about **417 times**. (d) No — that is what text looks like, and it gets emptier as data is added, because each new word adds a whole column of zeros for every earlier review.
+
+**M3.** (a) `17 − 15 = 2`. (b) **The number of repeats** — the extra counts in cells holding more than 1 (d3's `great`, d4's `cold`). (c) `22 − 19 = 3`: e2's `cold`, e3's `great`, e5's `again`. (d) `385 − 363 = 22` cells hold more than 1, and the biggest number anywhere is **2** (the run prints 22 cells equal to 2, none of 3 or more).
+
+**M4.** (a) `(55 + 34 + 26 + 11 + 10) ÷ 5 = 136 ÷ 5 = 27.2`. (b) distances `+27.8, +6.8, −1.2, −16.2, −17.2`; squares `772.84, 46.24, 1.44, 262.44, 295.84`. (c) sum of squares **1,378.80** · `÷ 4 = 344.70` · `sd = √344.70 = 18.5661`. (d) mean `81 ÷ 4 = 20.25` · variance `412.75 ÷ 3 = 137.5833` · sd `11.7296`. (e) `and` is an outlier: dropping it cut the sd from 18.57 to 11.73. That is next week's problem in Week 29's language.
+
+### 🔎 Predict the Output
+
+**P1.**
+
+```text
+vocab: ['chips' 'cold' 'pizza' 'the' 'was' 'zebra']
+shape: (2, 6)
+type : csr_matrix
+nnz  : 7 of 12
+[[1 0 1 0 0 2]
+ [0 1 1 1 1 0]]
+```
+
+`Zebra` is last because the column order is **alphabetical**, not the order typed. Its cell is 2 (said twice, and lowercasing made `Zebra` and `zebra` one token). `7 = 3 + 4` stored cells.
+
+**P2.**
+
+```text
+split  : ['I', 'paid', '$12.50', 'for', 'a', '9/10', 'pizza']
+regex  : ['paid', '12', '50', 'for', '10', 'pizza']
+no r   : []
+```
+
+Without the `r`, Python reads `\b` as the **backspace character**, the pattern matches nothing, and `[]` comes back with no error. An empty list from a pattern is almost always a missing `r`. (`$12.50` became `12` and `50`; `9/10` became `10`.)
+
+**P3.**
+
+```text
+vocabulary: ['cold' 'great' 'pizza']
+[[1 0 0]
+ [0 0 0]]
+getnnz: [1 0]
+```
+
+`chips` is not in the vocabulary, so `transform` silently drops it. **No error was raised for the second review**, and a model given that row will still predict confidently from nothing.
+
+**P4.**
+
+```text
+X.shape             : (60, 92)
+type(total).__name__: matrix
+total.shape         : (1, 92)
+after ravel         : (92,)
+first five          : [ 2  2 55  2  4]
+```
+
+The missing `1` is a **row**: `X.sum(axis=0)` returns a one-row grid, not a flat list. `.ravel()` flattens it to `(92,)` before `np.argsort` or `total[i]`. The first five are `again 2, an 2, and 55, arrived 2, awful 4`.
+
+### ✍️ Practice Set A
+
+**A1.** token **(iii)** · tokenization **(iv)** · normalization **(vii)** · stopword **(v)** · bag-of-words **(vi)** · document-term matrix **(i)** · sparse matrix **(ii)**.
+
+**A2.** (a) **s2's `summer`** — `"Summer nights, summer days"`. (b) Three cells hold 1, 1 and 2, which add to 4. (c) s1 gives 5 (`dancing, in, the, summer, rain`), s2 adds 2 (`nights, days`), s3 adds 3 (`on, empty, street`): `5 + 2 + 3 = 10`. (d) Today `summer` (3); with a thousand more titles, **`the`**. (e) `(30 − 13) ÷ 30 = 17 ÷ 30 = 56.67%` empty.
+
+**A3.** (1) Missing `r`: `\b` is a backspace, so it prints `[]` with no error. (2) `counts` is sparse, so pandas sees four rows and one column; fix `counts.toarray()`. (3) The vocabulary was fitted on all sixty, including the held-out fifteen: Week 3's leak. **Crashes: (2). Still wrong in six months: (3).**
+
+**A4 (labelled figure).** Missing cells: **d1 `great` = 1 · d2 `cold` = 1 · d3 `great` = 2 · d4 `cold` = 2**. Row totals **4, 4, 4, 5**. shape `(4, 8)` · cells 32 · stored (`nnz`) 15 · empty `17 ÷ 32 = 53%`. The two 2s are d3's `great` and d4's `cold`, each because the word appears twice in that review.
+
+**A5.** `raw.split()` **(ii)** · `raw.lower().split()` **(iv)** · the regex **(i)** · the stopword filter **(iii)**. The non-word token is **`wasn`**, in lists **(i)** and **(iii)** (the two regex ones).
+
+**A6.** (a) After: documents **61** · vocabulary **97** · cells **5917** · non-zero **368** · empty **93.78**. (b) Each new word adds a whole column (61 cells) with only one number in it, so the grid grew by 397 cells and only 5 got a number. (c) `rude` — and the grid does nothing about that preference; `and` simply has 5.5 times as much of it.
+
+### ✍️ Practice Set B
+
+Expected results; students' code will differ. Full reference programs are in the workbook's Answers section.
+
+- **B1.** `vocabulary size: 92`.
+- **B2.** Four lines of lengths **9, 9, 9, 5**; the nonsense token is **`weren`** (lines 3 and 4). The last line, `['delivery', 'late', 'chips', 'weren', 'hot']`, sounds like a good review of a complaint.
+- **B3.** Corner cell **22** (twice over: rows and columns agree), then `cells: 50  stored: 19  empty: 62%`. TOTAL column `4 5 4 4 5`; TOTAL row `2 2 3 4 2 2 3 2 1 1`. Watch out for `pd.DataFrame(counts, ...)` without `.toarray()`.
+- **B4.** Any pair with the same words in a different order and a different meaning. Difference all zeros, last line `True`. (Reference: `"the driver was rude and the food was cold"` versus `"the food was rude and the driver was cold"`.)
+- **B5.** Two report lines:
+
+```text
+first 50: 50 documents, 87 words, 4350 cells, 305 stored, 93.0% empty
+all 60: 60 documents, 92 words, 5520 cells, 363 stored, 93.4% empty
+```
+
+Top five both times: `and 47/55, the 31/34, was 23/26, cold 8/11, rude 7/10`. Then **a refusal for `"nobody answered my telephone"`** and `4 of its words have a column` for `"the chips were cold"`. Vocabulary growing from 87 to 92 is the evidence for M2(b).
+
+### 🐞 Fix the Broken Program
+
+- **Bug 1 (`NotFittedError`).** The vectorizer has not learned a vocabulary yet. **Fix:** move the `print` after `fit_transform` and print `len(terms)`.
+- **Bug 2 (`(4, 1)` versus `(4, 92)`).** `(4, 1)` is what pandas sees in a sparse matrix (four opaque row objects); `(4, 92)` is what the index and the 92 column names promise. **Fix:** `counts[:4].toarray()`.
+- **Bug 3 (the silent one).** (a) `counts = cv.fit_transform(CORPUS_60)` (vocabulary saw all sixty) and the "10 held-out reviews never seen: 0" line cannot both be honest — the zero is a definition, not a measurement; `train` is declared and never used. (b) `CORPUS_60` → `train` in the `fit_transform` line. (c) vocabulary size **87**, unknown words **6** (`would, not, here, again` from `"i would not order from here again"`; `again` from `"late again and a cold bag"`; `unfair`). (d) **`not`** — two weeks on, a sentiment model will answer `"not fresh and not hot"` as positive because `not` has no column.
+
+> **Marking tip:** a student who says "the fix is to print the number" has missed Bug 3. The point is which rows the vocabulary was fitted on.
+
+### 🧩 Puzzle of the Week
+
+(a) **Five** tokens (`the dog bit the man`). (b) `120 ÷ 2 = 60` orderings. (c) Readable ones: `the dog bit the man`, `the man bit the dog`, `the dog the man bit` (borderline grammatical), `the man the dog bit` (as in "the man the dog bit is in hospital"); only a handful of the sixty are English at all. (d) `the dog bit the man` and `the man bit the dog`. (e) `720 ÷ (2 × 2) = 180` orderings. (f) The model has been given one row standing for all N sentences equally; what distinguishes them is information it does not have — **absent, not damaged.**
+
+### 🤔 Think Deeper
+
+**T1 (same loss as flattening in Week 24).** A strong answer has four moves. **Same shape of loss:** flattening 8×8 to 64 numbers lost "next to"; counting words lost "neighbouring words", and nothing warns you in either case. **Week 24's repair:** a convolution, which looks at each pixel with its neighbours. **Text equivalent:** n-grams (`not fresh` as a token), Week 33's first experiment. **Why harder:** a 3×3 kernel has the same nine neighbours everywhere, whereas 92 words have `92² = 8,464` possible pairs (50,000 words give two and a half billion), and a pair needs to have occurred in training to have a column. A convolution generalises across positions; an n-gram does not generalise across words.
+
+**T2 (who owns `CountVectorizer`'s silent defaults).** Full credit for resisting both easy positions ("the default is wrong"; "read the documentation") and for landing on a design with its cost named. The answer worth arguing for is **visibility** (a one-line note of what was lowercased and dropped), with the counter-argument that warnings which fire on every correct use get silenced. Whatever the library does, printing your own vocabulary and reading it is what actually protects you.
+
+### 🛠️ Build It — pages 31.4 to 31.7
+
+These are the four numbered workbook pages and the marked homework. Their answers follow, and they match the workbook's own Answers section.
 
 ### Page 31.4 — Six sentences, by hand and by regex
 
@@ -1644,7 +1792,7 @@ s6 ( 6): ['service', 'stars', '100', 'would', 'order', 'again']
 | # | The disagreement | Verdict |
 |---|---|---|
 | s1 | `wasn't` → `wasn`, twice, and both `t`s dropped | **The regex is wrong for sentiment.** `wasn't` is a negation and `wasn` is a nonsense token. It is fine for topic classification, where the negation is irrelevant. |
-| s1 | `:-(` — here a `:-)` — disappears completely | **Wrong for sentiment, badly.** That emoticon is the clearest signal in the sentence and it is now not in the data at all. |
+| s1 | `:-)` disappears completely | **Wrong for sentiment, badly.** That emoticon is the clearest signal in the sentence and it is now not in the data at all. |
 | s1 | `GREAT,` → `great`, so the shouting is gone | **Wrong for abuse detection**, where capitals are evidence. Fine for topic. |
 | s2 | `555-0134` → `555` and `0134` | **Wrong for anything that cares about the number.** A phone number has become two meaningless integers. |
 | s2 | `me@example.com` → `me`, `example`, `com`, and now `me` appears **twice** | **Wrong, and sneakily so.** The token `me` has been double-counted, so the count for `me` is 2 when the person said it once. |
@@ -1767,6 +1915,24 @@ if X.getnnz(axis=1)[0] == 0:
 ```
 
 **Marking notes.** Full marks is the row of zeros **plus** the sentence *"and it will still predict something, with a confidence, and the confidence is a lie."* **A student who proposes the `getnnz` check, or any check, before being shown it is at level 5** — this is a real production failure mode and refusing to predict is a genuinely mature engineering instinct.
+
+### 🎨 Draw It
+
+A full-marks drawing has **two arrows meeting at one row**: two opposite sentences (`the pizza was not cold` and `the pizza was cold`, or the student's own) pointing into a single `pizza 1, cold 1`. Around it: the bill of three lost things, each with an example (word order with `dog bit man = man bit dog`; negation with `good` and `not good`; what-modifies-what with `cheap phone, great camera = great phone, cheap camera`); the sparsity as a rectangle with a small shaded corner labelled `363 stored of 5,520 cells = 93.4% empty`; and **a column with a `0` beside a word with no column at all**, labelled as two different situations. A drawing that shows only the conversion diagrams a function; one that shows what fell out diagrams an idea.
+
+### 📊 Self-Check
+
+Self-assessed, no marks. For any 😕, send the student back as follows.
+
+| Row | Go to |
+|---|---|
+| tokenizing, the regex, the missing `r` | the chapter's Step 1 and Break 3, then P2 |
+| building the matrix, checking cells | the chapter's Part A, then M1 and page 31.5 |
+| shapes, `nnz`, `.toarray()` | the chapter's Steps 2–4, then P4 and Bug 2 |
+| sparsity and why it grows | the chapter's Trick 4, then M2 and A6 |
+| word order, and what it costs | the chapter's Part B, then the Puzzle and B4 |
+| a zero versus no column | the chapter's Trick 1, then P3 and page 31.7 |
+| a vocabulary fitted on the test rows | Bug 3, then Week 3's pipeline |
 
 ### Answers to every question posed in the lesson
 

@@ -13,7 +13,7 @@
 | **Big idea** | A `for` loop repeats a block once per item, and an accumulator variable carries a running total across the repeats. |
 | **New vocabulary** | loop · iteration · range · accumulator · off-by-one |
 | **New syntax** | `for i in range(n):` · `range(start, stop, step)` · `total += x` · `"=" * 20` · `print(x, end=" ")` |
-| **Materials** | Printed workbook pages 7.1–7.6 · pencil · notebook open at the **Bug Log** · **one index card with these twelve scores written large: 88 92 70 65 100 54 78 81 47 90 62 73** · a printed copy of the times-table grid (the paper fallback) |
+| **Materials** | The printed Week 7 workbook (all sections; Build It prints best in landscape) · pencil · notebook open at the **Bug Log** · **one index card with these twelve scores written large: 88 92 70 65 100 54 78 81 47 90 62 73** · a printed copy of the times-table grid (the paper fallback) |
 | **Tech needed** | One laptop, Python 3, terminal in `~/ai-academy/level2`, editor with 4-space indent. Standard library only — **nothing to install**. |
 | **Prep time** | 15 minutes the night before, 5 minutes on the day |
 
@@ -433,7 +433,7 @@ tinted again — and the gold badge has moved down to `choices · loops`, where 
 
 ### 15 minutes the night before
 
-- [ ] **Print workbook pages 7.1–7.6.** Page 7.4 (the grid and the accumulator table) prints better in landscape.
+- [ ] **Print the whole Week 7 workbook.** The Build It section (the grid and the accumulator table) prints better in landscape.
 - [ ] **Write the twelve-score index card**, big enough to read across a table:
 
   ```text
@@ -497,7 +497,7 @@ tinted again — and the gold badge has moved down to `choices · loops`, where 
 - [ ] Editor open, **4-space indent confirmed.** This week is the first week where a wrong indent silently changes the answer instead of just looking untidy.
 - [ ] An **empty** editor window ready. The Hook needs them typing into nothing.
 - [ ] The twelve-score index card face down on the table.
-- [ ] Notebook open at the Bug Log. Workbook pages on the table.
+- [ ] Notebook open at the Bug Log. Workbook on the table.
 - [ ] A stopwatch or a phone timer. The Hook is timed, and the timing is the point.
 
 ### Fallback if the laptop or the install fails
@@ -893,7 +893,7 @@ Full instructions in the next section. In the lesson flow:
 
 ### 🔑 Wrap & Assign (9 minutes)
 
-**Do this:** laptops shut. Notebook open at the Bug Log. Workbook pages on the table.
+**Do this:** laptops shut. Notebook open at the Bug Log. Workbook on the table.
 
 **Say this:**
 
@@ -901,9 +901,9 @@ Full instructions in the next section. In the lesson flow:
 
 Give them the two minutes and do not fill the silence. Then the three checks from **✅ Assessing Understanding** below, word for word — they take five minutes between them and they are the only measurement this lesson needs.
 
-Then the homework, using the script in **📤 Homework to Assign**. Two sentences of framing before you hand the pages over:
+Then the homework, using the script in **📤 Homework to Assign**. Two sentences of framing before you hand the workbook over:
 
-> "The first page is with the laptop shut — seven ranges, and you write down every value each one hands out *and* how many there are. Then the grid and the twelve scores, and the part I'm marking hardest is the hand-check: I want to see the division worked out on paper, not the answer.
+> "Start with Predict the Output, laptop shut — write down what each short program prints, exactly, *before* you run it, and in Practice Set A write every value each `range` hands out *and* how many there are. Then the Build It section, the grid and the twelve scores, and the part I'm marking hardest is the hand-check: I want to see the division worked out on paper, not the answer.
 >
 > And one habit to take away, which costs two seconds and will save you an hour. **Every single time you write a `range`, say out loud how many values it hands out before you run it.** `range(1, 13)` — 'twelve values, one to twelve'. That's it. That's the whole habit."
 
@@ -921,7 +921,7 @@ Then the homework, using the script in **📤 Homework to Assign**. Two sentence
 
 ### Setup
 
-**On the table:** the laptop · workbook page 7.4 (landscape) · page 7.5 (Bug Log) · **the twelve-score index card, face down** · a pencil · a blank sheet for the long division.
+**On the table:** the laptop · the workbook's Build It section (landscape), Parts 1–4 · its Part 5 (the Bug Log) · **the twelve-score index card, face down** · a pencil · a blank sheet for the long division.
 
 **On the screen:** `seven_times.py` from the live-code, saved and working. It is the thing they are about to extend.
 
@@ -1467,293 +1467,237 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "About an hour, and the first page is with the laptop shut.
+> "About an hour, and the first thing is with the laptop shut.
 >
-> **Page 7.1 — the range predictions, laptop closed.** Seven ranges. For each one, write down every value it hands out and how many there are. **Then** open the laptop and check yourself by running the file on the page. Write your score at the top. If you get one wrong, it will be a stop-value, and you are in normal company.
+> **Warm-Up — five questions about last week.** Short answers, from memory. Question 4 is a chain with the wrong order, and it has no error message. You will meet that shape again today.
 >
-> **Pages 7.2 and 7.3 — the practice.** Page 7.3 has five broken loops. Same rule as always: **write down what you expect to happen before you run it** — and this week, three of the five produce no error at all, so 'what do you expect' means 'what will it print, exactly'.
+> **Predict the Output — four short programs, laptop closed.** Write your prediction *before* you run anything. Two of the four have no error at all, so 'what do you expect' means 'what will it print, exactly, including the spaces'. Then run them, and write your score out of eight at the bottom.
 >
-> **Page 7.4 — the big one, and it has two halves.**
-> **The grid:** print the even times tables — 2, 4, 6, 8 and 10 — times 1 to 12, using a `range` with a **step** for the rows. Columns must line up.
-> **The twelve scores:** total and average the twelve numbers off your card, with the running total printed on every pass. Then **hand-check the average on paper and show the division.** Not the answer — the working. I want to see 12 × 70, and the sixty left over, and where the five comes from.
+> **Practice Set A — Read It, and Practice Set B — Write It.** Set A is six questions: ranges, a trace table, matching code to output, three broken programs, a diagram to label, and four sentences in your own words. Set B is five programs, from a one-line row of dashes up to the pocket-money week. Same rule as always: **write what you expect to happen before you run it.**
 >
-> **Page 7.5 — the Bug Log.** Two entries, and **at least one must be a bug with no error message.** You have seen two of those today.
+> **Fix the Broken Program.** `steps.py` has three bugs, one in each family — it never starts, it starts then stops, and it finishes and lies. Fix them in that order. The third one has no error message, so you will have to count. Then hand-check the new average on paper and **show the division, not the answer.**
 >
-> **Page 7.6 — Think Deeper.** Four questions. The last one asks you whether a computer could have caught today's bug for you, and the answer is more interesting than yes or no.
+> **Puzzle of the Week — The Range Detective.** Eight ranges, seven targets to write, a nesting table, and one request that cannot be done. The last one is a trick that is not a trick.
 >
-> Every line commented, saying *why*."
+> **Think Deeper — two questions.** The second asks whether a computer could have caught today's bug for you, and the answer is more interesting than yes or no.
+>
+> **Build It — the big one, in five parts.** The stepped grid: the even times tables 2, 4, 6, 8 and 10, times 1 to 12, using a `range` with a **step** for the rows, with the columns lined up. Then the twelve scores off your card, with the running total on every pass. Then the hand-check — I want to see 12 × 70, and the sixty left over, and where the five comes from. Then break it on purpose, and then the **Bug Log**: two entries, at least one with no error message.
+>
+> **Draw It** and the **Self-Check** last. Every line of code commented, saying *why*."
 
-**Workbook pages:** 7.1 in class if there is time; **7.2, 7.3, 7.4, 7.5 and 7.6** at home.
+**Workbook sections:** Warm-Up and Predict the Output can be started in class if there is time; **Practice Set A, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It (Parts 1–5), Draw It and the Self-Check** at home. The Build It grid prints best in landscape.
 
-**Expected time:** 10 min predictions · 15 min practice · 20 min the grid and the accumulator · 5 min the hand-check · 10 min Bug Log and Think Deeper. About 60 minutes.
+**Expected time:** 10 min Warm-Up and Predict · 15 min Practice Set A · 15 min Practice Set B · 10 min Fix the Broken Program · 10 min Puzzle · 20 min Build It (grid and accumulator) · 5 min hand-check · 10 min Bug Log, Think Deeper, Draw It and Self-Check. This is a full workbook; if the hour runs out, protect **Predict the Output, Fix the Broken Program and Build It Parts 1–5** and let the Puzzle slip to next week's warm-up. About 60–90 minutes in all.
 
 ---
 
 ## 🔑 Answer Key
 
-### Page 7.1 — Warm-Up: predict what `range` hands out
+The key follows the workbook's own order and item labels (W1–W5, P1–P4, A1–A6, B1–B5, Bug 1–3, Puzzle P1–P6, T1–T2, Build It Parts 1–5, Draw It, Self-Check). Printed numbers and outputs match the workbook's Answers section.
 
-Laptop closed for the predictions, then this file checks them. **The real output is below the code.**
+### Warm-Up — last week's review
 
-```python
-# wb_7_1.py - predict each line on paper FIRST, then run this.
+**W1.** `elif` is short for "else, if". It adds another condition to a chain and goes **between** the `if` and the `else`. You can have as many as you like; nothing comes after the `else`.
 
-print("A:", end=" ")
-for n in range(4):
-    print(n, end=" ")
-print()
+**W2.** That branch runs and **the whole rest of the chain is skipped.** The **first** match wins, not the best match.
 
-print("B:", end=" ")
-for n in range(1, 5):
-    print(n, end=" ")
-print()
+**W3.** `and` is `True` in **one** row out of four. `or` is `True` in **three** rows out of four. `not True` is **`False`**.
 
-print("C:", end=" ")
-for n in range(0, 20, 5):
-    print(n, end=" ")
-print()
+**W4.** It prints **`C`**. `95 >= 60` is `True`, so the C branch runs and the `>= 90` test is never looked at. The answer is confidently wrong with **no error message**. Fix: put the highest threshold first.
 
-print("D:", end=" ")
-for n in range(5, 0, -1):
-    print(n, end=" ")
-print()
+**W5.** A **silent bug** is a mistake that gives a wrong answer with no error message. Accept any honest example (a 95 graded `C`; a mark of exactly 90 getting a B because `>` was written for `>=`; an `or` that hands back text). **Marking tip:** if the Bug Log entry they name is from Week 6, that is the right habit, so give the mark.
 
-print("E:", end=" ")
-for n in range(3, 3):
-    print(n, end=" ")
-print("(nothing at all)")
+### Predict the Output
 
-print("F:", end=" ")
-for n in range(10, 1):
-    print(n, end=" ")
-print("(nothing at all)")
+**P1.** Two lines: `0 1 2 ` then `1 2 `. `range(3)` hands out **three** values; `range(1, 3)` hands out 3 − 1 = **two**. Trailing space on each line, because `end=" "` follows every number, including the last. *Wrong-answer map:* `1 2 3` for the first means they think `range` starts at 1; `1 2 3` for the second means they included the stop.
 
-print("G:", end=" ")
-for n in range(2, 11, 3):
-    print(n, end=" ")
-print()
-```
+**P2.** `6` then `3`. The first is the accumulator, 1 + 2 + 3. The second is the surprising one: **after the loop, `n` still holds the last value handed out**, 3. The box was never emptied; the loop simply stopped refilling it. *Wrong-answer map:* a `NameError` guess means they think the loop variable dies with the loop; `4` means they included the stop.
 
-```text
-A: 0 1 2 3 
-B: 1 2 3 4 
-C: 0 5 10 15 
-D: 5 4 3 2 1 
-E: (nothing at all)
-F: (nothing at all)
-G: 2 5 8 
-```
+**P3.** **One line:** `1 2 3 2 4 6 `. The bare `print()` is at the margin, so it belongs to neither loop and runs once, after everything. If it were indented to line up with the inner `for`, it would run once per outer pass, giving two lines: `1 2 3 ` and `2 4 6 `. *Wrong-answer map:* two lines means they read the bare `print()` as inside the outer loop; six lines means they put it inside the inner loop too.
 
-| | Values | How many | Why |
+**P4.** `4`. The line says `total = n`, not `total += n`, so each pass **replaces** the total and the box ends up holding the last value. One missing character, the `+`, and no error. The correct line gives 1 + 2 + 3 + 4 = 10. *Wrong-answer map:* `10` means they read what the line was meant to say, not what it says. Tell them that is the most common mistake in programming.
+
+**Score out of eight:** the workbook asks the student to count their own correct answers out of 8. Accept their count if it agrees with the answers above; the useful question is which one surprised them (usually P2's `n`, or P3's indentation).
+
+### Practice Set A — Read It
+
+**A1.**
+
+| `range(...)` | Values | How many | Last one | Working |
+|---|---|---|---|---|
+| `range(10)` | 0 1 2 … 9 | 10 | 9 | 10 − 0 |
+| `range(1, 5)` | 1 2 3 4 | 4 | 4 | 5 − 1 |
+| `range(3, 20)` | 3 4 5 … 19 | 17 | 19 | 20 − 3 |
+| `range(1, 13)` | 1 2 3 … 12 | 12 | 12 | 13 − 1 |
+| `range(0, 101, 10)` | 0 10 20 … 100 | **11** | 100 | ten steps of 10, **plus the starting 0** |
+| `range(5, 5)` | nothing | 0 | — | 5 − 5 |
+| `range(10, 1)` | nothing | 0 | — | 1 − 10 is negative |
+
+The two that hand out nothing are `range(5, 5)` and `range(10, 1)`: `stop - start` is zero or negative, and a positive step has nowhere to go. A loop with zero passes runs its body zero times, which is not an error, just silence. The `range(0, 101, 10)` row is the trap: eleven numbers, not ten. With a step, count the numbers rather than trusting the subtraction.
+
+**A2.** `range(2, 11, 2)` hands out 2, 4, 6, 8, 10.
+
+| Pass | `n` is | `total` before | `total` after |
 |---|---|---|---|
-| **A** `range(4)` | 0 1 2 3 | 4 | Starts at 0, stops before 4. 4 − 0 = 4. |
-| **B** `range(1, 5)` | 1 2 3 4 | 4 | 5 − 1 = 4. |
-| **C** `range(0, 20, 5)` | 0 5 10 15 | 4 | Steps of 5. **20 is the stop, so it is not handed out.** |
-| **D** `range(5, 0, -1)` | 5 4 3 2 1 | 5 | Counting down. Stops before 0, so 0 is not in it. |
-| **E** `range(3, 3)` | nothing | 0 | 3 − 3 = 0 values. No error — just no passes. |
-| **F** `range(10, 1)` | nothing | 0 | The stop is below the start and the step is +1, so there is nowhere to go. |
-| **G** `range(2, 11, 3)` | 2 5 8 | 3 | 2, then 5, then 8; the next would be 11, which is the stop, so it stops. |
+| 1 | 2 | 0 | 2 |
+| 2 | 4 | 2 | 6 |
+| 3 | 6 | 6 | 12 |
+| 4 | 8 | 12 | 20 |
+| 5 | 10 | 20 | 30 |
 
-**7.1(h) Which two printed nothing, and how could you have known without running them?**
-E and F. E because start and stop are the same, so `stop - start` is zero. F because the stop is *below* the start with a positive step. In both cases the count is zero or negative, and a loop with zero passes runs its body zero times — which is not an error, just silence.
+The program prints `2`, `6`, `12`, `20`, `30`, one per line. Hand-check: 2 + 4 + 6 + 8 + 10 = 30. **Boxes called `total`: one.** It changes five times. *Wrong-answer map:* "five" is Misconception 3 again; use the cup and coins.
 
-### Page 7.2 — Practice Set A: understand it
+**A3.** a → **2** · b → **1** · c → **4** · d → **3**. The four outputs are `0 1 2 `, `1 2 `, `3 2 1 `, `0 2 `. `range(0, 4, 2)` gives 0 and 2 (the next would be 4, the stop): **two values, not three.**
 
-**7.2(a) What is a loop, and what is one pass through it called?**
-A loop is a block of code Python runs more than once. One single run through the block is a **pass**, or, using the proper word, an **iteration**.
+**A4.**
 
-**7.2(b) Who puts a value in the loop's counter?**
-Python does, through the `for` line, taking one value per pass from whatever `range` hands out. You never assign to it yourself.
+- **(i) No error message.** Prints `5`. `total = 0` is *inside* the loop, so every pass wipes the total. Fix: move it above the `for`, at the margin. Breaks accumulator **rule 1**.
+- **(ii) An error message:** `NameError: name 'total' is not defined`, reported on the `total += n` line. `+=` means "add to what is already there" and the box was never made. Fix: `total = 0` above the loop.
+- **(iii) No error message.** Prints five averages: `0.2`, `0.6`, `1.2`, `2.0`, `3.0`. Only the last means anything; the others divided before the adding had finished. Fix: move the division and print below the loop, at the margin. Breaks accumulator **rule 3**.
 
-**7.2(c) `range(4)` hands out four values and the last one is 3. Explain how both can be true.**
-Because it starts at 0 rather than 1. Counting 0, 1, 2, 3 gives you four numbers whose last one is one less than four. The count and the last value are two different questions with two different answers, which is exactly why this is confusing.
+Two of the three have no error message. Make them say it: that is what loop bugs are like.
 
-**7.2(d) Why does `range` stop *before* the number you give it?**
-So the count is a plain subtraction. `range(a, b)` hands out exactly `b - a` values (when `b` is above `a`, with no step), with no plus-one to remember. If the stop were included, every count in every program would be "the difference plus one".
+**A5.** Values: **1, 2, 3, 4, 5**. Hub on pass 3: **3**; it is **pass 3 of 5**. Running totals after passes 1, 2, 3: **1 · 3 · 6**. Average at the end: **15 ÷ 5 = 3.0**. Rule boxes: **rule 1, `total = 0` above the `for`, at the margin · rule 2, the adding inside the loop, in the indent · rule 3, the dividing after the loop, at the margin.** *Marking tip:* `range(1, 6)` handing out six values, or a hub showing `0`, is the fence-post slip again.
 
-**7.2(e) How many values does each of these hand out?**
+**A6.**
 
-| | Count | Working |
+- **(a)** Python does, through the `for` line, one value per pass from whatever `range` hands out. You never assign to it yourself.
+- **(b)** So the count is a plain subtraction. `range(a, b)` hands out exactly `b - a` values (when `b` is above `a`, no step), with no plus-one to remember. Include the stop and every count in every program would be "the difference plus one", and *that* would be what everybody got wrong instead. **The argument, not the rule, is what earns the mark;** "because it does" gets half.
+- **(c)** **Twelve.** The inner loop runs all the way through (3 passes) for each of the outer loop's 4 passes: 4 × 3 = 12.
+- **(d)** Every individual line is correct Python. `for i in range(1, 12):` is a perfectly ordinary line and thousands of programs mean exactly that. **Counting** finds it: how many went in, how many lines came out. If they differ you have the bug's fingerprint before you have the bug.
+
+### Practice Set B — Write It
+
+**B1.** `print("-" * 20)` prints `--------------------` (twenty dashes, typed once). *Marking tip:* twenty typed dashes is not a wrong answer for the output but misses "Done looks like"; send it back.
+
+**B2.**
+
+```python
+for n in range(1, 13):             # 1, 2, 3 ... 12  (13 - 1 = twelve values)
+    print(f"12 x {n} = {12 * n}")  # one row per pass
+```
+
+Twelve rows, from `12 x 1 = 12` to `12 x 12 = 144`. `range(1, 12)` gives eleven and loses the `12 x 12` row, the off-by-one arriving exactly where it was warned.
+
+**B3.**
+
+```python
+total = 0                          # the accumulator, BEFORE the loop
+for n in range(1, 21):             # 1, 2, 3 ... 20  (21 - 1 = twenty values)
+    total += n                     # add this n, INSIDE the loop
+print(f"1 to 20 adds up to {total}")   # use it AFTER the loop, at the margin
+```
+
+Prints `1 to 20 adds up to 210`. Hand-check: 20 × 21 ÷ 2 = 210. Two different methods, same answer.
+
+**B4.**
+
+```python
+for n in range(5, 51, 5):          # 5, 10, 15 ... 50  (stops before 51)
+    print(n, end=" ")              # end=" " keeps it on one line
+print()                            # a bare print() ends the line
+```
+
+Prints `5 10 15 20 25 30 35 40 45 50 ` (ten numbers). Why 51: `range` stops before its stop, so `range(5, 50, 5)` would quietly lose the 50. *Wrong-answer map:* last number 45 means stop value one step too small.
+
+**B5.** `pocket.py`, a correct version:
+
+```python
+# pocket.py - five days of pocket money spent, totalled and averaged.
+
+DAYS = 5                                        # five school days
+
+print("=" * 28)
+print("  POCKET MONEY WEEK")
+print("=" * 28)
+
+spent = 0                                       # the accumulator, BEFORE the loop
+
+for day in range(1, DAYS + 1):                  # 1, 2, 3, 4, 5
+    amount = int(input(f"Day {day} of {DAYS}: rupees spent? "))
+    spent += amount                             # add today to the running total
+    print(f"   running total: {spent} rupees")
+
+average = spent / DAYS                          # divide AFTER the loop
+
+print("-" * 28)
+print(f"  Total   : {spent} rupees")
+print(f"  Average : {average:.2f} rupees a day")
+print("-" * 28)
+```
+
+With 40, 25, 60, 15, 30 the running totals are 40, 65, 125, 140, 170 and the report is `Total   : 170 rupees` and `Average : 34.00 rupees a day`, matching the workbook's expected output. Hand-check: 5 × 34 = 170. Mark: five prompts, a running total on every pass, **one** average after the loop, and the paper check of 170 ÷ 5 = 34. Why `DAYS + 1`: five passes labelled 1 to 5 needs `range(1, 6)`.
+
+### Fix the Broken Program
+
+**Bug 1 (family 1, it never started).** Nothing ran. The colon is missing from the end of the `for` line and the `^` points at where Python wanted it. The fix line is `for day in range(1, DAYS):` for the moment; bug 3 changes it again.
+
+**Bug 2 (family 2, it started then stopped).** The error is reported on line 11, `total += steps`, **but the mistake is not on line 11**: nothing above it made the box. The missing line is `total = 0`, above the `for`, at the margin. It broke accumulator **rule 1**. The answer to "is that where the mistake is?" is **No.**
+
+**Bug 3 (family 3, it finished and lied).**
+
+- **(a)** **Seven** days on the list; **six** prompts appeared.
+- **(b)** **11500**, the last one, never asked for.
+- **(c)** `range(1, DAYS)` is an ordinary, correct line. It hands out 1 to 6, which is what it should. The number seven exists only in the programmer's head, so Python has nothing to complain about.
+- **(d)** `for day in range(1, DAYS + 1):`
+- **(e)** Total **63000**, average **9000.00**. Real running totals: 8200, 17300, 24700, 35200, 42000, 51500, 63000. (With the bug, the report shows 51500 and 7357.14, as the workbook prints.)
+- **(f)** Hand-check: 63000 ÷ 7, and 7 × 9000 = 63000 exactly, so 9000. Also accept adding the seven days in order to reach 63000. **Full credit needs the working.**
+- **(g)** **Counting the prompts against the list** is the only test that catches it: six prompts for seven numbers. The total and the average are plausible and nothing crashes. A test that only checks "did it produce a number" misses it completely.
+
+### Puzzle of the Week — The Range Detective
+
+**P1.**
+
+| `range(...)` | Values | Count |
 |---|---|---|
-| `range(10)` | 10 | 10 − 0 |
-| `range(3, 20)` | 17 | 20 − 3 |
-| `range(1, 13)` | 12 | 13 − 1 |
-| `range(0, 101, 10)` | 11 | 100 ÷ 10 = 10 steps, **plus the starting 0** |
-| `range(5, 5)` | 0 | 5 − 5 |
+| `range(1, 6)` | 1 2 3 4 5 | 5 |
+| `range(0, 10, 2)` | 0 2 4 6 8 | 5 |
+| `range(10, 0, -2)` | 10 8 6 4 2 | 5 |
+| `range(5, 51, 5)` | 5 10 15 20 25 30 35 40 45 50 | 10 |
+| `range(7, 8)` | 7 | 1 |
+| `range(4, 4)` | nothing | 0 |
+| `range(9, 2)` | nothing | 0 |
+| `range(2, 3, 5)` | 2 | 1 |
 
-The `range(0, 101, 10)` row is the interesting one: 0, 10, 20 … 100 is eleven numbers, not ten. When there is a step, count the numbers rather than trusting the subtraction.
+**P2.** `range(4, 4)` and `range(9, 2)`. In common: `stop - start` is zero or negative with a positive step, so no passes and no error.
 
-**7.2(f) What is an accumulator? Give the three rules.**
-A variable made **before** a loop and updated **inside** it, so that after the loop it holds a result built from every pass. Rules: (1) set it up before the loop, at the margin; (2) update it inside the loop, in the indent; (3) use it after the loop, at the margin.
+**P3.** `range(2, 3, 5)` hands out just `2`. After 2 the next would be 7, past the stop of 3. The step sets the size of the jumps, not whether the first value appears: the start is always handed out if it is below the stop.
 
-**7.2(g) What does `total += score` mean, exactly?**
-Take what is in `total`, add `score` to it, and put the answer back in `total`. It is identical to `total = total + score`.
+**P4.**
 
-**7.2(h) What does `"-" * 15` produce, and what does `"-" + 15` produce?**
-`"-" * 15` produces fifteen dashes: `---------------`. `"-" + 15` produces a `TypeError: can only concatenate str (not "int") to str`, because `+` joins text to text and 15 is a number.
+| I want | The range |
+|---|---|
+| 1 … 10 | `range(1, 11)` |
+| 0 … 99 | `range(100)` or `range(0, 100)` |
+| 12, 14, 16, 18, 20 | `range(12, 21, 2)` |
+| 100, 90, 80 … 10 | `range(100, 0, -10)` |
+| the twelve numbers 1 to 12 | `range(1, 13)` |
+| exactly one value: 50 | `range(50, 51)` |
+| nothing, using two 6s | `range(6, 6)` |
 
-**7.2(i) In a loop inside a loop, `range(1, 5)` outside and `range(1, 4)` inside — how many times does the innermost line run?**
-Twelve. The inner loop runs all the way through (3 passes) for each of the outer loop's 4 passes. 4 × 3 = 12.
+Every stop is one past the last value wanted.
 
-**7.2(j) What is an off-by-one bug, and why is it hard to spot by reading?**
-A loop that runs one time too many or one too few, nearly always because of a `range` boundary. It is hard to spot by reading because every individual line is correct Python — `range(1, 12)` is a perfectly good thing to write. What finds it is counting: how many things went in versus how many came out.
+**P5.** 12 (4 × 3) · 81 (9 × 9, the times-table grid) · 60 (5 × 12, the homework grid) · 0 (0 × 99). The last row: the outer loop runs zero passes, so the inner loop never starts, and zero times ninety-nine is zero.
 
-### Page 7.3 — Practice Set B: use it
+**P6.** **It cannot be done.** `range` makes evenly spaced numbers (a start, a stop, one fixed step), and the gaps between 3, 7, 8 and 100 are 4, 1 and 92. This is a real limitation, not a trick: it is what a **list** is for, arriving in Week 11 (`for score in [3, 7, 8, 100]:`). Give full credit for "it can't, because the gaps are not equal"; a student who writes a clever expression that is not a single `range` has not answered the question.
 
-**7.3(a)** What happens, and why?
+### Think Deeper
 
-```python
-for i in range(4)
-    print(i)
-```
+**T1.** A full-credit answer names something other than speed, at least two things, and one moment from this week. Model answer:
 
-*Expected:* a `SyntaxError` — nothing runs at all.
-*The real message:*
+> Ten `print` lines and a loop that prints ten lines take about the same time to run, so speed is not the point. What the loop gives me is **one place to change things.** When I turned the seven times table into the thirteen times table I edited one character; by hand I would have had to edit ten lines, and if I had missed one the program would have printed a wrong row and not complained.
+>
+> The other thing it gives me is a program whose length does not depend on how much work it does. My loop is three lines whether it prints ten rows or ten thousand. That means I can *think* about ten thousand rows, which I could not do if I had to type them.
+>
+> So loops save mistakes, not milliseconds, and they let me write down a pattern instead of a list.
 
-```text
-  File "a.py", line 1
-    for i in range(4)
-                     ^
-SyntaxError: expected ':'
-```
+**T2.** Model answer. *Whose fault:* the programmer's, not Python's. That line prints `HOW_MANY`, a number *I* typed, so it reports what I intended, not what happened. *How to stop it:* a second accumulator, a counter that goes up by one every pass, and a report that prints the counter. With the bug left in and the twelve card scores typed, the counter version ends with `asked for : 12`, `read      : 11`, `average   : 75.18` (827 ÷ 11 = 75.18), two numbers that disagree, side by side. **The principle: make the program report what it actually did, not what it was told to do.**
 
-*The fix:* add the colon at the end of the `for` line. Then it prints 0 1 2 3.
+*Could a computer have caught it?* Accept either side if it names its cost. The strong "no" answer: `range(1, 12)` is a completely ordinary line that thousands of programs mean, and the number twelve existed only in my head and on the card; for Python to warn me it would need my intention, and my intention is not in the file. It is the same shape as last week's ordering bug. What *can* be automated is the check I did by hand (compare "how many I read" with "how many were in the file"), **but somebody has to decide to write that check, and that somebody is me.** A strong "yes" answer must say how the computer learns the intended count, and that is a check somebody wrote.
 
-**7.3(b)**
+### Build It
 
-```python
-for i in range(4):
-print(i)
-```
-
-*Expected:* an `IndentationError`.
-*The real message:*
-
-```text
-  File "b.py", line 2
-    print(i)
-    ^
-IndentationError: expected an indented block after 'for' statement on line 1
-```
-
-*The fix:* indent `print(i)` by four spaces. A `for` with no indented block under it is not a loop; it is an unfinished sentence.
-
-**7.3(c)**
-
-```python
-for n in range(1, 6):
-    total += n
-print(total)
-```
-
-*Expected:* a `NameError`, because `total` was never created.
-*The real message:*
-
-```text
-Traceback (most recent call last):
-  File "c.py", line 2, in <module>
-    total += n
-NameError: name 'total' is not defined
-```
-
-*The fix:* add `total = 0` **above** the loop. `+=` means "add to what is already there", and on the first pass there was nothing there.
-
-**7.3(d)** No error. What does it print, and what is wrong?
-
-```python
-total = 0
-for n in range(1, 6):
-    total = 0
-    total += n
-print(total)
-```
-
-*Real output:*
-
-```text
-5
-```
-
-*What is wrong:* `total = 0` is inside the loop, so every pass wipes the running total before adding. The box ends up holding only the last value. **No error message at all.** The fix is to move that line above the `for`.
-
-**7.3(e)** No error. What does it print, and what was wanted?
-
-```python
-# Goal: print the numbers 1 to 10.
-for n in range(1, 10):
-    print(n, end=" ")
-print()
-```
-
-*Real output:*
-
-```text
-1 2 3 4 5 6 7 8 9 
-```
-
-*What is wrong:* nine numbers instead of ten — a classic off-by-one. `range(1, 10)` stops before 10. The fix is `range(1, 11)`. Notice that the goal was written in a comment, which is the only reason you can tell it is wrong at all.
-
-**7.3(f)** No error. What is wrong with the layout?
-
-```python
-for i in range(1, 4):
-    print(f"item {i}")
-    print("-----")
-```
-
-*Real output:*
-
-```text
-item 1
------
-item 2
------
-item 3
------
-```
-
-*What is wrong:* three items but three dividers, and the last one dangles with nothing after it. Three items have only two gaps between them. This is the **fence-post problem**, and the honest fix with this week's tools is to print the divider before every item except the first — which needs a test on `i`.
-
-**7.3(g)**
-
-```python
-count = "5"
-for i in range(count):
-    print(i)
-```
-
-*Expected:* a `TypeError`, because `range` needs a number.
-*The real message:*
-
-```text
-Traceback (most recent call last):
-  File "g.py", line 2, in <module>
-    for i in range(count):
-TypeError: 'str' object cannot be interpreted as an integer
-```
-
-*The fix:* `count = 5`, or if it came from `input()`, `count = int(input(...))`. Convert at the door.
-
-**7.3(h)**
-
-```python
-print("=" * "20")
-```
-
-*The real message:*
-
-```text
-Traceback (most recent call last):
-  File "h.py", line 1, in <module>
-    print("=" * "20")
-TypeError: can't multiply sequence by non-int of type 'str'
-```
-
-*The fix:* take the quotes off the 20. You repeat text a *number* of times, not a *text* of times.
-
-### Page 7.4 — Build It: the stepped grid and the twelve scores
-
-**Part 1 — the even times tables, using a step.**
+**Part 1 — the stepped grid.** First the question: `range(2, 11, 2)` gives **5** rows (2, 4, 6, 8, 10); `range(2, 10, 2)` gives **4** (2, 4, 6, 8) and loses the ten times table. They want the first, because `range` stops before its stop number.
 
 ```python
 # grid_step.py - the even times tables, 2 to 10, times 1 to 12.
@@ -1787,7 +1731,18 @@ The real output:
 
 **Marking notes.** Five rows, not six — `range(2, 11, 2)` gives 2, 4, 6, 8, 10 and stops before 11. Sixty numbers printed by one `print`. If a student wrote `range(2, 10, 2)` they get four rows and lose the ten times table; that is the off-by-one again, and it is worth pointing at rather than correcting silently.
 
-**Part 2 — the twelve-score accumulator.** The complete file is in the Activity section above (`scores.py`). The real transcript with the card's twelve scores, and the report:
+The workbook's "Fill in what you actually got" table:
+
+| Check | Wanted | Got |
+|---|---|---|
+| Number of table rows | 5 | **5** |
+| First row's label | 2 | **2** |
+| Last row's label | 10 | **10** |
+| Rightmost number on the last row | 120 | **120** |
+| Total numbers printed | 60 | **60** (5 × 12) |
+| Number of `print` statements doing the numbers | 1 | **1** |
+
+**Part 2 — the twelve scores.** The complete file is in the Activity section above (`scores.py`). The real report with the card's twelve scores:
 
 ```text
 ----------------------------------
@@ -1797,7 +1752,7 @@ The real output:
 ----------------------------------
 ```
 
-The running total, pass by pass — this column is what the student should have on the page:
+The running-total column the student should have on the page:
 
 | Pass | Score in | Running total |
 |---|---|---|
@@ -1814,6 +1769,8 @@ The running total, pass by pass — this column is what the student should have 
 | 11 | 62 | 827 |
 | 12 | 73 | **900** |
 
+Total **900**, average **75.00**.
+
 **Part 3 — the hand-check.** Full credit requires the working, not the answer:
 
 ```text
@@ -1827,19 +1784,30 @@ The running total, pass by pass — this column is what the student should have 
   Check backwards:  12 × 75 = 840 + 60 = 900  ✔
 ```
 
-And the program says `75.00`. They agree.
+The program says `75.00`. They agree.
 
-**7.4(d) What does agreement between the paper and the program prove?**
-That the program is right *on these twelve numbers*. It does not prove the program is right in general — the eleven-prompt version would also have agreed with a hand-check of *eleven* numbers. What the hand-check gives you is an **independent source of truth**, which is the only reason you can ever catch a program that is confidently wrong.
+**(a)** It proves the program is right **on these twelve numbers**. That is real and worth having.
+**(b)** It does **not** prove the program is right in general. The eleven-prompt version would also agree with a hand-check of *eleven* numbers. The hand-check gives an **independent source of truth**, the only reason you can ever catch a program that is confidently wrong.
 
-**7.4(e) Change `range(1, HOW_MANY + 1)` to `range(1, HOW_MANY)`. What happens, and how do you know?**
-Eleven prompts appear instead of twelve, the total comes to 827, and the average is reported as 68.92 — and there is **no error message**. You know because you count: twelve numbers on the card, eleven prompts on the screen, one number still un-ticked in your hand. The `Scores added : 12` line still says twelve, because that line prints `HOW_MANY`, which nobody changed.
+**Part 4 — break it on purpose.**
 
-827 ÷ 12 = 68.9166…, shown as `68.92` by `:.2f` ✔
+| | Before | After |
+|---|---|---|
+| Prompts that appeared | **12** | **11** |
+| Numbers left un-ticked on the card | **0** | **1 (73)** |
+| Total reported | **900** | **827** |
+| Average reported | **75.00** | **68.92** |
+| `Scores added` line said | **12** | **12** |
+| Error message | **none** | **none** |
 
-### Page 7.5 — Build It: the Bug Log
+827 ÷ 12 = 68.9166…, shown as `68.92` by `:.2f`.
 
-Two entries, and at least one with no error message.
+**(c)** That line prints `HOW_MANY`, which is still 12 because nobody changed it. The program does not know how many scores it read; it reports a number *you* typed, not something it measured. It is not lying on purpose; it has never been asked to count.
+**(d)** `Total : 827` is honest, since it really is the sum of the eleven scores seen. `Scores added : 12` is not: it is a plan printed as if it were a measurement. The average is dishonest by consequence (an honest total divided by a dishonest count).
+
+**Marking notes.** Five grid rows, not six. If a student wrote `range(2, 10, 2)` they get four rows and lose the ten times table; that is the off-by-one again, and it is worth pointing at rather than correcting silently.
+
+**Part 5 — the Bug Log.** Two entries, at least one with no error message:
 
 | # | What I saw (real text) | What it meant, in my words | What I changed |
 |---|---|---|---|
@@ -1850,40 +1818,20 @@ Also acceptable, and arguably better:
 
 | # | What I saw | What it meant | What I changed |
 |---|---|---|---|
-| 3 | **No error message.** My total came out as 73 — the last score — instead of 900. | I had `total = 0` inside the loop, so every pass wiped the running total before adding to it. There is only one box called `total`, and I was emptying it twelve times. | Moved `total = 0` above the `for` |
+| 3 | **No error message.** My total came out as 73, the last score, instead of 900. | I had `total = 0` inside the loop, so every pass wiped the running total before adding to it. There is only one box called `total`, and I was emptying it twelve times. | Moved `total = 0` above the `for` |
 | 4 | `NameError: name 'total' is not defined` on the line `total += score` | `+=` means "add to what is already in there", and there was nothing in there because I never made the box. | Added `total = 0` before the loop |
 
-**7.5(a) Which of your bugs this week had no error message?**
-Probably one or both. Name the pattern: **loop bugs are usually silent**, because a loop that runs the wrong number of times is still a perfectly legal loop.
+**(e)** Probably one or both. Name the pattern: **loop bugs are usually silent**, because a loop that runs the wrong number of times is still a perfectly legal loop.
+**(f)** **Counting.** Two numbers: how many things went in, and how many lines came out. If they differ, you have the bug's fingerprint before you have the bug, and *then* you look at the `range`.
+**(g)** It turned "how many did it ask for?" into a physical fact. Without the ticks the eleventh prompt looks exactly like the twelfth, and you would have typed eleven numbers and stopped without noticing. **The tick is the count.**
 
-**7.5(b) If reading the code does not find an off-by-one, what does?**
-**Counting.** Two numbers: how many things went in, and how many lines came out. If they differ, you have the bug's fingerprint before you have the bug — and then you look at the `range`.
+### Draw It
 
-**7.5(c) Why did ticking the numbers off the card matter?**
-Because it turned "how many did it ask for?" into a physical fact. Without the ticks, the eleventh prompt looks exactly like the twelfth, and you would have typed eleven numbers and stopped without noticing. The tick is the count.
+There is no single right drawing. A strong answer has **exactly one box labelled `total`** in each snapshot, redrawn as it changes, and a hub holding **one** value at a time. The workbook's sample uses five days of screen time (45, 60, 30, 90, 25): totals 0, 45, 105, 135, 225, 250, then 250 ÷ 5 = 50. If the picture shows five `total` boxes side by side, or a counter holding two numbers at once, the mental model has slipped; redrawing it as one box changing is the whole exercise. Also check that **an arrow leaves the ring**: a drawing that shows the values running out understands why a `for` loop cannot run forever.
 
-### Page 7.6 — Think Deeper and Self-Check
+### Self-Check
 
-**7.6(a) A loop is not faster to run than typing the lines out. So what is it actually for?**
-
-A full-credit answer names something other than speed. Model answer:
-
-> Ten `print` lines and a loop that prints ten lines take about the same time to run, so speed is not the point. What the loop gives me is **one place to change things.** When I turned the seven times table into the thirteen times table I edited one character; by hand I would have had to edit ten lines, and if I had missed one the program would have printed a wrong row and not complained.
->
-> The other thing it gives me is a program whose length does not depend on how much work it does. My loop is three lines whether it prints ten rows or ten thousand. That means I can *think* about ten thousand rows, which I could not do if I had to type them.
->
-> So loops save mistakes, not milliseconds — and they let me write down a pattern instead of a list.
-
-**7.6(b) Why does `range` start at 0 and stop early? Give the argument, not just the rule.**
-Because it makes the count a subtraction: `range(a, b)` always hands out exactly `b - a` values (when `b` is above `a`, with no step). Include both ends and every count becomes "the difference plus one", so the plus-one becomes the thing everybody gets wrong instead. There is a second reason arriving in Week 11: list slots are numbered from 0, so `range` and slot numbers line up with no arithmetic at all. The rule is a wart today and a plan later.
-
-**7.6(c) Your program printed `Scores added : 12` while reading eleven. Whose fault is that, and how would you stop it happening again?**
-It is the programmer's fault, not Python's — that line prints `HOW_MANY`, which is a number *I* typed, so it reports what I *intended*, not what happened. The fix is a second accumulator: a counter that goes up by one every pass, and a report that prints the counter. Then a mismatch between "asked for" and "read" shows up on the screen instead of hiding. **The general principle is: make the program report what it actually did, not what it was told to do.**
-
-**7.6(d) Could a computer have caught today's off-by-one for you?**
-No, and this is not something a better tool will fix. `range(1, 12)` is a completely ordinary, correct thing to write — thousands of programs mean exactly that. The number twelve existed only in my head and on the index card. For Python to warn me, it would have to know my intention, and my intention is not in the file. This is the same shape as last week's ordering bug: a perfectly good program that is not the program I meant. What *can* be automated is the check I did by hand — a program that reads a file of twelve numbers could compare "how many I read" with "how many were in the file" and complain. **But somebody has to decide to write that check, and that somebody is me.**
-
-**Self-check.**
+The "I can…" rows are self-rated: no answers. If a row is marked 😕, point at the matching Build It part. The true-or-false rows:
 
 | Statement | Answer |
 |---|---|

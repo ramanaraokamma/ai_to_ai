@@ -15,7 +15,7 @@
 | **New maths** | **None.** Every number said aloud today was computed in Weeks 1–35. |
 | **New syntax** | **None.** The year is the syntax. |
 | **Dataset** | **The student's own shipped artifact and its prediction log**, from Weeks 34 and 35. The four debug problems in the paper use `make_classification(random_state=0)`, four hand-typed numbers, `load_digits()` and a 40-review typed corpus. **Nothing downloads.** |
-| **Materials** | **The eight questions, printed big, on the wall** · **the banned-words list, printed big, on the wall** · the printed paper, one per student, **double-sided with Part C on its own sheet** · workbook pages 36.1–36.7 · the FINDINGS sheet from Week 35, still up · the THE SIX BOXES sheet from Week 34, still up · the Bug Log, all 36 weeks of it · **the running order on the board** |
+| **Materials** | **The eight questions, printed big, on the wall** · **the banned-words list, printed big, on the wall** · the printed paper, one per student, **double-sided with Part C on its own sheet** · workbook pages 36.1, 36.2, 36.6 and 36.7 (the Build It steps; **36.3–36.5 are the printed paper, which is not in the workbook**) · the FINDINGS sheet from Week 35, still up · the THE SIX BOXES sheet from Week 34, still up · the Bug Log, all 36 weeks of it · **the running order on the board** |
 | **Tech needed** | For the demos: the student's own laptop, a terminal they open **in front of the room**, and `curl`. **For the paper: no computer at all, no notes, paper and a calculator.** |
 | **Prep time** | 45 minutes across the week before · 15 minutes on the day |
 | **Expected runtime of the code** | The four debug programs together run in **under 12 seconds**: `d1` 0.85 s each way, `d2` 0.07 s each way, `d3` about 2.5 s each way, `d4` 0.85 s each way. **You run them; the students do not. The paper is written on paper.** |
@@ -257,7 +257,7 @@ This is the one week where cramming the prep does not work, because two of the j
 - [ ] **On Monday: work out the running order and put it on the board.** Ten minutes of demo plus five of cross-examination is **fifteen minutes per student**. With four students that is one session; **with more than six you need two sessions and you must say so this week.** Write the order on the board and let them see it.
 - [ ] **On Monday: print the eight questions and the banned-words list, big, and put them on the wall.** They rehearse against them all week. This is the highest-value ten minutes in the whole file.
 - [ ] **Midweek: print the paper**, one per student, **double-sided, with Part C on its own separate sheet** — students want to spread the four programs out and annotate them.
-- [ ] **Midweek: print workbook pages 36.1–36.7.**
+- [ ] **Midweek: print workbook pages 36.1, 36.2, 36.6 and 36.7** (the four Build It steps; **36.3–36.5 are the paper, which you print separately** and which is not in the workbook). The rest of the workbook is the rehearsal: Warm-Up, Do the Maths by Hand, Predict the Output, Practice Sets A and B, Fix the Broken Program, Puzzle, Think Deeper, Draw It and Self-Check. **Its answers are in the key below under "The workbook rehearsal".**
 - [ ] **On the day before: run the four debug programs yourself, broken and then fixed.** Twenty minutes including reading. **Do not skip this.** You are about to mark twenty-six marks of answers about four programs, and the only way to mark them confidently is to have watched `0.9975` become `0.5894` with your own eyes.
 
 **Create eight files in a scratch folder.** All eight are printed in full in the **🔑 Answer Key**; the commands and the real output are here.
@@ -831,7 +831,7 @@ Three checks, five minutes, exact wording. **Ask these of the whole room in the 
 >
 > Then put the letter in an envelope, write the date on it, and keep it. **You will open it in about a year and it will be the most interesting thing you read that week.**"
 
-**Workbook pages:** 36.1, 36.2 in class (36.1 filled in the day before) · 36.3, 36.4, 36.5 are the paper, sat in the second session · **36.6, 36.7** at home.
+**Workbook pages:** 36.1, 36.2 in class (36.1 filled in the day before) · 36.3, 36.4, 36.5 are the paper, sat in the second session (**not in the workbook**) · **36.6, 36.7** at home · the rest of the workbook is optional rehearsal, keyed under "The workbook rehearsal" in the Answer Key.
 
 **Expected time:** 15 min on the gate self-check · 25 min on the letter · **about 40 minutes.**
 
@@ -841,7 +841,7 @@ Three checks, five minutes, exact wording. **Ask these of the whole room in the 
 
 ## 🔑 Answer Key
 
-Every item restated so you can mark from this page alone. **The paper is pages 36.3 (Part A), 36.4 (Part B) and 36.5 (Part C).**
+Every item restated so you can mark from this page alone. **The paper is pages 36.3 (Part A), 36.4 (Part B) and 36.5 (Part C) — it is printed separately and is not in the workbook. Pages 36.1, 36.2, 36.6 and 36.7 are the workbook's Build It steps, and every other workbook section is keyed under "The workbook rehearsal" after Part C.** Careful with labels: the paper's A1–A20, B1–B8 and D1–D4 are *not* the workbook's Practice Set A1–A6 and B1–B5.
 
 ### Page 36.1 — The demo run sheet
 
@@ -1655,6 +1655,59 @@ vocabulary size      : 188
 **Page 36.7 — the letter to yourself.** One side. Three things: what they want to build next, specifically · one thing from this year they would now do differently, with a reason · one number they are proud of, with the arithmetic beside it.
 
 **Marking notes.** **Do not mark this for quality.** Check three boxes and write one sentence back by hand. **Is the "build next" a specific thing** rather than "AI stuff"? **Is the "do differently" specific?** The best answers are always structural — *"I would write the contract in Week 33 instead of Week 34, because I built the model before I knew what one prediction was about"* — and "I would work harder" is a blank. **Does the number have its arithmetic beside it?** If it does, the habit has stuck, and that habit is the whole deliverable of Level 3.
+
+### The workbook rehearsal — Warm-Up to Self-Check
+
+*The workbook's own sections, in workbook order. These are not the paper: the paper's A/B/D labels are a different set. Values below are the workbook's Answers section, re-checked (p95 1.6525, F1 0.1270, 1898 and 3706 parameters, 0.5833, 19x and 20x all recomputed).*
+
+**Warm-Up.** **W1** the four malformed requests never produced a prediction, so nothing was logged: the log counts predictions, not requests (115 would be a lie). **W2** zero lines and no error; `level=logging.INFO`, because the default level is `WARNING`. **W3** one request in 111 sits above the 99th percentile and a p95 cannot see above itself, so print the max too. **W4** is there a body · is it JSON · has it the field · is the field a non-empty string. **W5** the `0.643` overall (`18 ÷ 28`), or the card's `0.8125`; every subgroup row must carry its **`n`**.
+
+**Do the Maths by Hand.**
+
+| | answer |
+|---|---|
+| **M1** | sorted `0.22 0.24 0.26 0.28 0.31 2.10`; p95 position `0.95 × 5 = 4.75`, so `0.31 + 0.75 × 1.79 =` **1.6525**; p50 = `(0.26 + 0.28) ÷ 2 =` **0.27**; mean `3.41 ÷ 6 =` **0.5683**; max **2.10**. On a slide: the p95 with the max beside it, and say "six requests" aloud. |
+| **M2** | (a) 6000 · (b) 57 fraud rows, rate **0.0095** · (c) accuracy **0.9908** · (d) precision **0.6667** · (e) recall **0.0702** · (f) F1 **0.1270** · (g) plain average **0.3685** · (h) F1 sits near the recall; the harmonic mean drags a lopsided pair toward the smaller number · (i) `500 × 53 + 10 × 2 =` **26,520**. Four of fifty-seven. |
+| **M3** | (a) **`(4, 3)`** · (b) **`4 × 4`** · (c) `80 + 1168 + 650 =` **1898** · (d) `16 × 2 × 2 =` **64** · (e) conv **2336**, and the `Linear` becomes `Linear(128, 10) = 1290`, new total **3706**. The commonest miss is changing only the conv (two layers change). |
+| **M4** | (a) slope **4** (`0.008 ÷ 0.002`) · (b) `2(5 − 3) = 4`, exact agreement · (c) **4.6** · (d) towards 3, the bottom; `w += lr × slope` would give 5.4, the sign error · (e) **42** · (f) measured both ways and the two agreed exactly. |
+
+**Predict the Output.**
+
+- **P1** real run: slopes `-6, -4, 0, 4`; next `w` values `0.6, 1.4, 3.0, 4.6`. (a) at `w = 3` the slope is exactly 0 and `w` does not move: that is the bottom, i.e. converged. (b) the `h` terms cancel for `(w − c)² + k`; it shows a central difference is better than a one-sided one, not that `h = 0.001` is always exact.
+- **P2** `A (3, 2)`, `B (2, 4)`, `C (3, 4)`; `C[0,0] = 110`; `C[2,3] = 680`; `B @ A` raises a matmul core-dimension mismatch (size 3 against 4); `(B.T @ A.T).shape = (4, 3)` and `allclose` to `C.T` is `True`. The error text is the rule in numpy's notation.
+- **P3** shapes `(32,1,8,8)` → `(32,8,4,4)` → `(32,16,2,2)` → `(32,64)` → `(32,10)` → `(32,)`. (a) only the first number changes, to 64. (b) `-1` means work it out: `2048 ÷ 32 = 64`, the same 64 welded into `Linear(64, 10)`.
+- **P4** a `UserWarning` (not an error); `pred (4,1)`, `y (4,)`, `(pred − y).shape = (4,4)`; loss **0.375** against **0.025**. (a) 16 numbers averaged against 4, fifteen times bigger. (b) a warning scrolls past and prints once. (c) **both**: it trains happily on the wrong grid; defence is printing both shapes before the first loss.
+
+**Practice Set A** (workbook, not the paper).
+
+- **A1** baseline (v) · target leakage (iv) · recall (vi) · threshold (vii) · gradient (ii) · weights (i) · log loss (iii) · inertia (viii) · explained variance ratio (ix) · idf (x).
+- **A2** (a) `DummyClassifier(strategy="most_frequent")`, no model at all · (b) `0.9844 × 1800 = 1771.9` and `1800 − 28 = 1772`, they agree · (c) "What is the baseline?" (0.9844) and "What is the class balance?" (28 of 1800 = 0.0156) · (d) every row has the same probability, so no ranking, so ROC-AUC is exactly 0.5.
+- **A3** (1) two `Linear` with no activation = one linear layer · (2) `Softmax` plus `CrossEntropyLoss`, squash twice · (3) no `zero_grad`, gradients accumulate · (4) `fit_transform` before the split, preprocessing leakage · (5) picking the lowest inertia always picks the largest `k`. Found first: **(3)**, by the accuracy being far worse than it should be; the general answer is to predict the number before you run.
+- **A4** (a) "it never predicts above **0.0907**", so every threshold of 0.10 or more gives zero positives · (b) not worthless: ROC-AUC **0.6485** against 0.5000, AP **0.2125**; caveat, only 11 positives · (c) baseline `11 ÷ 1000 = 0.0110`, so about **19x** · (d) change the threshold, chosen by a cost sweep on validation; at `t = 0.05` recall **0.2727** at precision **0.2308** · (e) at 0.05 about one call in four is a real problem; at 0.02 more than half the frauds are caught but 131 false alarms against 6 real ones (22 of every 23 calls wasted); the choice is a cost decision someone must write down.
+- **A5** `(16,1,8,8)` · a `(16,8,8,8)` · c `(16,8,4,4)` · d `(16,16,4,4)` · f `(16,16,2,2)` · g `(16,64)` · **h raises**: `mat1 and mat2 shapes cannot be multiplied (16x64 and 32x10)`; fix `nn.Linear(64, 10)`, and `64 = 16 × 2 × 2`.
+- **A6** Q1 something weird · Q2 how fast · Q3 still working next month · Q4 somebody says it got theirs wrong · Q5 why 127.0.0.1 · Q6 is it any good · Q7 who should not use this · Q8 could you retrain it on its own log. (a) and (b) are both question 3; (c) it is the only answer that cannot be read off a metrics table.
+
+**Practice Set B.** Marking is by running it.
+
+- **B1** one line: `p95 1.6970 ms, max 3.2700 ms over 12 requests`; the count must be in the string and the p95 must sit between the p50 and the max.
+- **B2** gate 3, the five-line loop from a blank file, under three minutes, and it runs (reference `gate3.py` ends `final loss 0.1298   accuracy 0.990`, epoch 0 loss 0.8374). Marked details: `.unsqueeze(1)` on `y`, `zero_grad` first, accuracy inside `torch.no_grad()` with the cut at 0 because the outputs are logits. Anything looked up is gate 3 unticked.
+- **B3** class balance `11 of 1000 = 0.0110`; baseline acc 0.9890, recall 0.0000, AUC 0.5000, AP 0.0110; model acc 0.9890, recall 0.0000, AUC **0.6485**, AP **0.2125**. AUC and AP tell them apart; accuracy and recall cannot.
+- **B4** `answers8.py`: eight lines, every one containing a digit. Reference values: threshold 0.55, 659 ms once at start-up, p95 1.6970, max 3.2700, 12 requests, band rate `4 of 12 = 33.3%` with alarm at 40%, `1.000 on 10 held-out rows, baseline 0.500`, recall `0 of 6`.
+- **B5** `gatecheck.py`: on the twelve-line demo log, **4 of 5 automatic gates pass** (the 100+ lines gate reads `12 lines`, "not yet") and the exit code is 1. It must print the evidence beside every row.
+
+**Fix the Broken Program.** **Bug 1** relative `Path("model/artifacts")`; fix with `ROOT = Path(__file__).resolve().parent`. **Bug 2** `--threshold` has no `type=float`, so it arrives as text; the `%s` format hid it; fix `type=float`. **Bug 3** adds the cold start (`load_ms`) to the mean per-request latency, giving 659.14 ms, about 2,500 times the truth; the fix prints load (659 ms once), p95 (1.6970) and max (3.2700) over 12 requests, never added. After the fix the program prints `threshold 0.55`, and `0.60` with the flag.
+
+**Puzzle of the Week.** Claims **1, 2, 3, 4 and 6 are impossible; 5 and 7 are true.** 1: on 16 rows accuracy is a multiple of 0.0625, nothing at 0.90. 2: a p95 of 0.22 below a p50 of 0.31. 3: F1 is fixed at `0.5833` and can never exceed the plain average 0.60. 4: 118 log lines from 115 requests (lines ≤ requests). 6: the answer is **3706**, not 1,914. 5 is the dummy classifier (0.9844 and 0.0000); 7 is AP at `0.19 ÷ 0.0095 = 20`x baseline. Follow-up questions: for 5 "what is the baseline and the class balance?", for 7 "how many positive rows?", and for the impossible ones "which pile, and can I see the counts?"
+
+**Think Deeper.** **T1** a shown failure proves the presenter knows where the edges are; a known failure is usable, an unknown one is a trap; predicting it in advance is what makes it count. **T2** the five decisions in Week 1's one line: which rows · which column is the label · the train/test split and anything fitted before it · what "good" means and the baseline · what a mistake costs (the threshold). The one most often hiding in others' code is number 3: `grep -n "fit_transform" *.py` and see whether `train_test_split` is above or below it.
+
+**Draw It.** Full marks need **sums, not topics**: `0 − 1.0 × (−0.5) = +0.5` earns credit, "Term 2: gradient descent" earns none. Seven gate rungs with honest marks, and an arrow from a week to an earlier week with a specific sentence on it.
+
+**Self-Check.** No right answers. The last row ("be handed an unfamiliar model and a confident number, and say whether to believe it") is the one that matters; if it is a middling mark, the student should write on the inside cover whichever of the three questions they forget: baseline, class balance, or was anything fitted before the split.
+
+**Build It steps 36.1, 36.2, 36.6, 36.7** are keyed above (Pages 36.1, 36.2, 36.6 and 36.7). One addition from the workbook for 36.2: the three replacement phrases are "robust" becomes "it survived **four** malformed requests and answered a fifth time"; "real-time" becomes "the **p95 is 0.28 ms** over 111 logged requests"; "99% accurate" becomes nothing, a real number with its `n` and its baseline.
+
+---
 
 ### Answers to every question posed in the lesson
 

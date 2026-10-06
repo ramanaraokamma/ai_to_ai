@@ -13,7 +13,7 @@
 | **Big idea** | The most valuable page in any data project is the one titled "what I got wrong". |
 | **New vocabulary** | narrative order · results table · held-out score · limitation · write-up |
 | **New syntax** | **None.** Everything this week uses syntax from Weeks 21–33. That is deliberate. |
-| **Materials** | Printed workbook pages 35.1–35.6 · a **red pen** (this is not optional — the Score Audit needs it) · the student's `data/clean.csv` from last week · their collection diary |
+| **Materials** | The printed Week 35 workbook (Warm-Up, Predict the Output, Practice Sets A and B, Fix the Broken Program, Puzzle, Think Deeper, Build It, Draw It, Self-Check) · a **red pen** (this is not optional — the Score Audit needs it) · the student's `data/clean.csv` from last week · their collection diary |
 | **Tech needed** | Laptop with pandas, matplotlib and scikit-learn. Their own `clean.csv`, or the demo one. |
 | **Prep time** | 25 minutes the night before, 5 minutes on the day |
 
@@ -278,7 +278,7 @@ learning signal.*
 
 **25 minutes the night before**
 
-- [ ] Print workbook pages 35.1–35.6. Page 35.4 (the Score Audit sheet) needs to be printed on its own — it gets written on in red.
+- [ ] Print the whole Week 35 workbook. The Score Audit (Practice Set A6, and the **My Score Audit** table under Build It) needs to be printed on its own sheet — it gets written on in red.
 - [ ] **Find a red pen.** Genuinely. The audit does not work in pencil.
 - [ ] **Run the four demo files yourself, in this order.** All four are in the Answer Key, complete. Make a folder, put `data/` and `figures/` inside it, and run:
 
@@ -298,7 +298,7 @@ python3 audit_after.py       ->  MAE: 2.35 minutes on 26 held-out rows
 **5 minutes on the day**
 
 - [ ] Their `clean.csv` on their laptop, and the demo `clean.csv` on a memory stick or in a shared folder as a fallback.
-- [ ] Page 35.4 and the red pen on the table.
+- [ ] The Score Audit sheet (A6 / **My Score Audit**) and the red pen on the table.
 - [ ] Timer visible. Their Turn is 20 minutes and the audit is the part that must not be cut.
 
 **Fallback if something fails**
@@ -306,7 +306,7 @@ python3 audit_after.py       ->  MAE: 2.35 minutes on 26 held-out rows
 | If this fails | Do this instead |
 |---|---|
 | The student has no `clean.csv` | Give them the demo file. They do the entire lesson on it, and the homework on their own data afterwards. Do not debug their collection in the lesson. |
-| scikit-learn will not import | Do the Score Audit **on paper**, on page 35.4, using the printed demo table. Tracing a number back to the line that made it needs no computer, and it is the objective that matters most. |
+| scikit-learn will not import | Do the Score Audit **on paper**, on the Score Audit sheet (A6 / **My Score Audit**), using the printed demo table. Tracing a number back to the line that made it needs no computer, and it is the objective that matters most. |
 | matplotlib will not draw | Skip the charts entirely in class; they are homework. Do the five-caption test on the *captions only*, written on paper. That is the part that carries the marks anyway. |
 | Their model scores suspiciously well (R² above 0.98) | Stop everything and hunt the leak. Ask, of every feature: "could you know this before the target happened?" Nine times out of ten one column is the answer in disguise. This is a better lesson than any chart. |
 | Their table has fewer than 100 rows | Let it run. Then make them compute what one test row is worth — with 60 rows it is 8.3% — and write that sentence into their limitations. The small table becomes the finding. |
@@ -596,7 +596,7 @@ baseline (always guess the mean)       7.98        9.53     0.000   -0.375      
 Full instructions in **🎲 The Activity, In Full**. In the lesson flow:
 
 - **Minutes 0–8:** assemble the notebook in the seven-section order and **read it out loud** to you, top to bottom. You mark every place you got confused. Each chart has to earn its place; if the student cannot say what question it answers, it goes.
-- **Minutes 8–20:** the **Score Audit**, on page 35.4, in red. Every number in the results table gets traced to the line that produced it, and the split it came from gets written next to it. Anything from `_train` gets crossed out and recomputed.
+- **Minutes 8–20:** the **Score Audit**, on the workbook's **My Score Audit** table, in red. Every number in the results table gets traced to the line that produced it, and the split it came from gets written next to it. Anything from `_train` gets crossed out and recomputed.
 
 **Your only job:** after every number, ask *"and which split did that come from?"* Nothing else.
 
@@ -660,11 +660,11 @@ The four sentences, in order — and this week there is a fifth for the silent b
 
 ### Part B — The Score Audit (12 minutes)
 
-This is the most important part of the whole capstone. Page 35.4, in red pen.
+This is the most important part of the whole capstone. The workbook's **My Score Audit** table, in red pen.
 
-**Setup:** the printed results table on the left, the code file open on the right, page 35.4 between them.
+**Setup:** the printed results table on the left, the code file open on the right, the Score Audit sheet between them.
 
-Page 35.4 is a five-column grid:
+The workbook's Score Audit (A6 for practice, **My Score Audit** under Build It) is a five-column grid. It prints eight rows; the full audit is twenty, so give them the back of the page or a second copy:
 
 ```text
 | the number | the line that made it | which split? | honest? | corrected |
@@ -860,11 +860,11 @@ Three checks, five minutes, exact wording.
 >
 > **Job two, about an hour.** One split, `random_state` set, four models — baseline, kNN, tree, line — through one `report` function, into one results table. Units in every header. A train score and a test score for every model. The test row count as a column.
 >
-> **Job three, about forty minutes, and this is the one I will read first.** Complete the Score Audit on page 35.4 for **every** number in your table. Then write 'What I got wrong': three admissions, each with a number in it, plus your five worst predictions with a guess at *why* the model missed those particular rows. Look for a prediction that is physically impossible — a negative time, a bus ride that takes two minutes. If you find one, that is your best paragraph.
+> **Job three, about forty minutes, and this is the one I will read first.** Complete the Score Audit (**My Score Audit** in Build It) for **every** number in your table. Then write 'What I got wrong': three admissions, each with a number in it, plus your five worst predictions with a guess at *why* the model missed those particular rows. Look for a prediction that is physically impossible — a negative time, a bus ride that takes two minutes. If you find one, that is your best paragraph.
 >
 > **And last, twenty minutes:** restart everything and run the whole thing from top to bottom, in order, on a fresh start. Fix whatever breaks. Then write one line at the end: 'Ran clean, top to bottom, on [today's date].' That line is a claim, so make it true."
 
-**Workbook pages:** 35.1, 35.2 and 35.4 in class; **35.3, 35.5 and 35.6** at home.
+**Workbook sections:** in class, the Warm-Up, Predict the Output, Practice Set A (A1 to A6, including the audit sheet) and the Puzzle. At home, Practice Set B, Fix the Broken Program, Think Deeper, **Build It (Milestones 4, 5 and 6)**, Draw It and the Self-Check. Build It holds the step checklist, My five charts, My split, My results table, My Score Audit, My five worst predictions, My three admissions and Whose data, and what it costs.
 
 **Expected time:** 60 min charts · 60 min models · 40 min audit and admissions · 20 min the clean run-through. About 3 hours across the week.
 
@@ -872,7 +872,26 @@ Three checks, five minutes, exact wording.
 
 ## 🔑 Answer Key
 
-### Page 35.1 — Put these five captions in order
+This key follows the **workbook's own sections and item labels** (W1, P1, A1, B1, Puzzle Part 1, and so on). Every value below matches the Answers section at the end of the student workbook, and each code answer was re-run to check it. Marking tips, wrong-answer maps and the demo project's files are teacher-only additions.
+
+### Warm-Up (last week's work)
+
+- **W1.** *You could turn out to be wrong about it.* A topic cannot be wrong, so no data can ever settle it. **Wrong-answer map:** "it has a question mark" is punctuation, not the test.
+- **W2.** `df.info()` (or `df.dtypes`). Looking for a column that says `object` where it should say `float64` or `int64`: pandas thinks it is text, so it cannot be averaged, plotted or predicted.
+- **W3.** So the computer, not willpower, enforces "every repair happens in Python with a log line". When the rule works: `PermissionError: [Errno 13] Permission denied: 'data/raw.csv'`. That error is the feature, not a fault.
+- **W4.** Anything with a checkable reason, e.g. *"4. Dropped 4 rows with no minutes value — you cannot learn from a row whose answer is unknown, and inventing one would be making data up."* The test: could somebody disagree with the reason?
+- **W5.** *"Half the journeys took **less than** 19 minutes."* Not "it takes 19 minutes half the time".
+
+### Predict the Output
+
+- **P1.** Prints `16.5`, then `[16.5 16.5 16.5 16.5 16.5]`, then `(5,)`, then `5.2`. The idea is **broadcasting** (Week 18). Sentence: *"Always guessing 16.5 minutes is off by 5.2 minutes on average, on these 5 rows."* That is the entire baseline.
+- **P2.** Prints `26 26 26`, then `[73, 19, 116, 67]` twice, then `[111, 101, 76, 79]`. Same size (126 × 0.2 = 25.2, rounded up to 26), lines 3 and 4 identical, line 5 different. `random_state` fixes **which rows** land in each pile and makes the split repeatable; it does not make the model better or the score higher. Three splits is a bug because each model would sit a different exam, so the scores cannot share a table and nothing crashes to say so. (Checked by running the stand-in `clean.csv` from the demo files below.)
+- **P3.** Prints `A MAE 1.0  RMSE 1.0` and `B MAE 1.0  RMSE 2.0`. A is wrong by 1 four times; B is right three times and 4 out once. MAE averages sizes and cannot tell them apart; RMSE squares first, so it punishes the one big miss. Most students should pick **A** (a steady error can be planned around); accept B with a reason. RMSE can **never** be smaller than MAE, and they are equal only when every error is the same size, so the gap measures how uneven the mistakes are.
+- **P4.** Prints `0.0` then `-0.6`. R² = 0 means "exactly as good as always guessing the mean of these rows", the score of the laziest model, not "no relationship". Negative means worse than that. The baseline row uses the **train** mean, so it will show the slightly negative one, which is normal. A negative R² on a real model means stop and look.
+
+## Practice Set A — Read It
+
+### A2 — Put these five captions in order
 
 Given, shuffled:
 
@@ -890,12 +909,12 @@ Read aloud: *"Half the journeys are under 17 minutes, but the tail reaches 58.6.
 
 **Why that order and no other:** C establishes the thing being explained. D tries the obvious explanation and it half works — that "fan out" is the question the rest of the paragraph answers. A offers a better explanation. E shows that A is not the whole story either, because walking varies enormously. B resolves it: there are two different slopes, which is why one straight line could never work. Every sentence is answering the previous one.
 
-**35.1(f) Which caption could not be first, and why?** **B.** It is a conclusion — "two slopes" only means something once the reader knows there was a fan-out to explain.
+**A2(a) Which caption could not be first, and why?** **B.** It is a conclusion — "two slopes" only means something once the reader knows there was a fan-out to explain.
 
-**35.1(g) Rewrite caption A as a topic caption, and say what is lost.**
+**A2(b) Rewrite caption A as a topic caption, and say what is lost.**
 Topic version: *"Journey times by mode."* What is lost: the finding, the numbers, and the setup for E. A reader now has to work out the conclusion themselves, and they will reach a different one.
 
-### Page 35.2 — Which split did it come from?
+### A1 — Which split did it come from?
 
 | # | The line | Split | Is it a result? |
 |---|---|---|---|
@@ -908,10 +927,62 @@ Topic version: *"Journey times by mode."* What is lost: the finding, the numbers
 | (g) | `df["minutes"].median()` used to fill missing values, before the split | **both** | No — the median was computed using the test rows. Leakage, subtle version. |
 | (h) | `mean_absolute_error(y_test, model.predict(X_train))` | mismatched | Neither — it crashes: `ValueError: Found input variables with inconsistent numbers of samples: [26, 100]`. |
 
-**35.2(i) What do (d) and (g) have in common?**
+**A1(i) What do (d) and (g) have in common?**
 Both compute a *statistic* from all the rows — a mean, a standard deviation, a median — before the split, so the test rows helped shape how the training data was prepared. The test set is no longer unseen, and the reported score can come out too high (or just different) without any warning.
 
-### Page 35.3 — The four demo files, complete and actually run
+**A1(j) Which one does not run?** **(h)**. It raises `ValueError: Found input variables with inconsistent numbers of samples: [26, 100]`.
+
+### A3 — Trace the table
+
+(a) **3.8%** (1 ÷ 26 = 0.0385). (b) **5.63 minutes** (7.98 − 2.35). (c) The **linear regression**: 0.884 − 0.487 = **0.397** (tree 0.095, kNN 0.169). The biggest gap belongs to the *worst* model: the line is the wrong shape for this data and is bad on both halves. (d) **No.** The 0.35-minute gap on 26 rows is exactly what one journey 9 minutes out would cause (0.35 × 26 = 9.1); say "indistinguishable, and I would pick the tree because I can read its rules aloud". (e) The **baseline row** (7.98). (f) The kNN's RMSE is 1.21 above its MAE against the tree's 0.47, so the kNN's mistakes are **more uneven**: fine most of the time, occasionally badly wrong.
+
+### A4 — Spot the bug
+
+| # | What is wrong | The fix |
+|---|---|---|
+| (a) | The scaler learned each column's mean and standard deviation using the test rows too: leakage, no error. | `StandardScaler().fit(X_train)` below the split, then `transform` both halves. |
+| (b) | The **label lies**: a train score in a column that says `test R2`. The arithmetic is fine. | `round(r2_score(y_test, test_guess), 3)` |
+| (c) | `y.mean()` includes the 26 rows about to be tested, so the baseline peeks. | `guess = y_train.mean()` |
+
+### A5 — Match the code to the output
+
+**1 → B, 2 → C, 3 → A.** **A5(a):** a bar of means shows one number per group and hides how many rows made it; 31.9 over 42 journeys and 31.9 over 2 look identical. Here all three groups have 42, and you only know because you printed it.
+
+### A6 — Label the audit sheet
+
+Headings: **the number | the line that made it | which split? | honest? | corrected.** Questions: (1) How many times does `train_test_split` appear in my file? (must be 1) (2) Is any scaler fitted before the split? (must be no) (3) Could I know every feature before the target happened? (must be yes for every one). First row: `MAE 1.71 min | mean_absolute_error(y_train, tree.predict(X_train)) | train | NO | 2.35 min`. The fuller model answer is under **My Score Audit** below.
+
+## Practice Set B — Write It
+
+- **B1.** `n_test = 18`, then the f-string prints `one test row is worth 5.6% of an accuracy score`.
+- **B2.** `guess = y_train.mean()` (never `y_test.mean()`), `baseline_test = np.zeros(len(y_test)) + guess`. Prints `the baseline always guesses 26.9 minutes` and `baseline MAE: 5.25 minutes on 4 held-out rows`. A baseline built from `y_test.mean()` has seen the exam paper.
+- **B3.** A `report(name, train_guess, test_guess)` function returning a dict with `model`, `MAE (min)`, `RMSE (min)`, `train R2`, `test R2`, `test rows`. Output: `{'model': 'my only model', 'MAE (min)': 2.0, 'RMSE (min)': 2.12, 'train R2': 0.972, 'test R2': 0.874, 'test rows': 4}`. Hand-check: test errors 2, 3, 2, 1, average 2.0.
+- **B4.** A `groupby("queue")["wait_min"].mean()` bar chart with `set_ylim(0, 14)`, units on the axes and the title built by an f-string. Prints means `hot 10.2, packed 1.5, sandwich 4.4` and counts `hot 5, sandwich 4, packed 3`; title: *"The hot queue averages 10.2 min against packed lunch's 1.5"*. The caveat belongs in the caption: packed has only 3 of the 12 rows.
+- **B5.** One `train_test_split(..., test_size=0.2, random_state=42)` on the 30-row reading table, one `report`, a baseline and a depth-3 tree. Output: `train rows: 24   test rows: 6`, `one test row is worth 16.7% of an accuracy score`, `the baseline always guesses 40.7 minutes`, tree **MAE 2.52**, train R² 0.982, test R² 0.968; baseline **MAE 17.07**, train R² 0.000, test R² -0.008. The honest limitation, unprompted: six test rows, one row is 16.7%, so the table shows the tree beats guessing but could never show it beats some other tree. The full listing is in the workbook's Answers section.
+
+## Fix the Broken Program
+
+- **Bug 1 (syntax, line 28):** `train_test_split(` is missing its closing bracket: `SyntaxError: '(' was never closed`, with the caret on the **opening** bracket.
+- **Bug 2 (runtime):** `mean_absolute_error(y_test, tree.predict(X_train))` gives `ValueError: Found input variables with inconsistent numbers of samples: [6, 24]`. 6 is `y_test`, 24 comes from `X_train`. Fix: `tree.predict(X_test)`.
+- **Bug 3 (logic, silent):** the kNN's `test R2` was `r2_score(y_train, knn.predict(X_train))`, a train score under a test label. Fixed, the number changes from `0.969` to **`0.974`**.
+- **Bonus (leakage):** `scaler = StandardScaler().fit(X)` sits above the split. Fitting it on `X_train` barely moves the kNN's test R² here (0.974 before and after); fix it anyway, because you cannot know in advance which way a leak pushes.
+- **Fixed program output:** `train rows: 24   test rows: 6`; baseline guesses **3274 steps**; kNN k=3 **MAE 167.2**, train R² 0.967, test R² 0.974; tree depth=3 **MAE 241.4**, 0.987, 0.962; baseline **MAE 1371.9**, 0.000, -0.174.
+- **Best observation:** the kNN's test R² (0.974) is **higher** than its train R² (0.967). Not a bug: six test rows are too few to read closely. Full fixed listing is in the workbook's Answers.
+
+## Puzzle of the Week — The Split Detective
+
+Part 1: **26** test rows (126 × 0.2 = 25.2, rounded up). Part 2 ladder: 21 → 0.8077, 22 → 0.8462, 23 → 0.8846, 24 → 0.9231, 25 → 0.9615, 26 → 1.0000. Part 3: **0.885 = 23/26** (the tree, 23 right); **0.923 = 24/26** (the kNN, 24 right). Part 4: **0.900** is impossible, because 0.900 × 26 = 23.4 and nobody gets 0.4 of a row right; the neighbours are 0.8846 and 0.9231. Part 5: **20 test rows** (18 ÷ 20 = 0.900), so the person ran a second split or changed `test_size`, and that model sat a different exam (10 or 30 rows also work). Part 6: the two possible scores are **one row** apart (3.85 points, one row is 3.8), so you may not say the kNN is better.
+
+## Think Deeper
+
+Both are paragraph answers; mark against these points, not the wording.
+
+1. **Silent bugs versus crashes.** A crash names the line and the error and refuses to go on; a silent bug prints a plausible number (`MAE: 1.71 minutes`) that looks like correct output, so nothing gets investigated and the damage grows with how much it is trusted. It even feels better than the honest number. The habit: for every reported number, say which split it came from and trace it to the line that made it.
+2. **Tree versus kNN, reason not the score.** Best answer: the **tree**, because its if-then rules can be read aloud and argued with, where a kNN can only say "the five nearest journeys took about this long". Why it survives one row moving: interpretability is a property of the model's shape, not of the sample tested. The score cannot be the reason, since 0.35 minutes on 26 rows is about one journey's worth of error. Accept another model if the reason is not the score and survives that test.
+
+### Teacher reference — the four demo files, complete and actually run
+
+These are the teacher's own working files for the lesson (not a workbook page). Workbook items that quote their numbers (A1 to A3, A6 and Draw It) come from them.
 
 **File 1 — `make_stand_in.py`.** A stand-in table so the lesson runs on any laptop. The student deletes this and reads their own `clean.csv` instead.
 
@@ -1211,11 +1282,17 @@ print("MAE:", round(mean_absolute_error(y_test, guess), 2), "minutes on",
 MAE: 2.35 minutes on 26 held-out rows
 ```
 
-**35.3(a) Why is the honest number bigger?** Because the model had never seen those 26 rows. The 1.71 measured memory; the 2.35 measures prediction.
+**Why is the honest number bigger?** Because the model had never seen those 26 rows. The 1.71 measured memory; the 2.35 measures prediction.
 
-**35.3(b) An unlimited tree — worth showing a strong student.** Replacing `max_depth=4` with no limit gives, on this data: **train R² 0.999, test R² 0.913, MAE 1.70 minutes.** Point out both things honestly. The train score of 0.999 is the model memorising 100 rows almost exactly — that is the Week 33 picture. And yet its test score is *better* than the depth-4 tree's, because this stand-in table was built from a formula with very little noise in it. On real collected data, expect the deep tree's test score to fall. The gap between the two scores is what you report either way, and the honest sentence is: *"the deep tree memorised the training rows — 0.999 — and on this dataset it still generalised, which I did not expect."*
+**Extension: an unlimited tree — worth showing a strong student.** Replacing `max_depth=4` with no limit gives, on this data: **train R² 0.999, test R² 0.913, MAE 1.70 minutes.** Point out both things honestly. The train score of 0.999 is the model memorising 100 rows almost exactly — that is the Week 33 picture. And yet its test score is *better* than the depth-4 tree's, because this stand-in table was built from a formula with very little noise in it. On real collected data, expect the deep tree's test score to fall. The gap between the two scores is what you report either way, and the honest sentence is: *"the deep tree memorised the training rows — 0.999 — and on this dataset it still generalised, which I did not expect."*
 
-### Page 35.4 — The Score Audit (completed model answer)
+## Build It — Milestones 4, 5 and 6
+
+The numbers below are for the demo project; the student's own will differ. **My five charts** and **My split** are marked against the checklist in the workbook (five captions that read as a paragraph, exactly one `train_test_split`, no scaler before it, one test row worth 100 ÷ test rows percent). For the demo: 126 rows, 100 train, 26 test, one test row 3.8%, `random_state` 42, split appears once.
+
+**My results table (demo):** baseline MAE 7.98, train R² 0.000, test R² -0.375; tree 2.35, 0.974, 0.879; kNN 2.70, 0.938, 0.769; linear 5.00, 0.884, 0.487; 26 test rows each. Baseline always guesses the training mean and is off by 7.98 minutes; the best model is off by 2.35, buying 5.63 minutes; the biggest train-to-test gap is 0.397, on the linear model.
+
+### My Score Audit (completed model answer)
 
 Twenty numbers, but here are the five that carry the marks, filled in for the demo project:
 
@@ -1237,7 +1314,7 @@ Twenty numbers, but here are the five that carry the marks, filled in for the de
 - *Is any scaler fitted before the split?* **No.** `StandardScaler().fit(X_train)` sits below the split and takes `X_train`, not `X`.
 - *Could I know every feature before the target happened?* **Yes.** Distance, mode, rain and departure hour are all known at the front door; `minutes` is measured at the school gate.
 
-### Page 35.5 — "What I got wrong" (model answer, demo project)
+### My three admissions (model answer, demo project)
 
 Full marks needs **three admissions, each with a number.** Model answer:
 
@@ -1249,9 +1326,9 @@ Full marks needs **three admissions, each with a number.** Model answer:
 >
 > **And the honesty line:** I tried `max_depth` of 3, 4 and 6 and kept the one with the best test score. That means my reported test MAE of 2.35 minutes is optimistic, because I chose the depth by looking at the number I am now reporting. An honest estimate would need a third split I do not have.
 
-**35.5 marking notes.** Admission 1 must contain the test-set size and the worth of one row. Admission 2 must name a *mechanism*, not just an error. Admission 3 must name a group and predict the **direction** of the error for them. The honesty line is required only if they tuned anything — and almost everybody does.
+**Admissions marking notes.** Admission 1 must contain the test-set size and the worth of one row. Admission 2 must name a *mechanism*, not just an error. Admission 3 must name a group and predict the **direction** of the error for them. The honesty line is required only if they tuned anything — and almost everybody does.
 
-### Page 35.6 — Whose data, and what it costs
+### Whose data, and what it costs
 
 Four questions, all four answered:
 
@@ -1262,6 +1339,31 @@ Four questions, all four answered:
 > **Who pays for that mistake?** The person who leaves the house at 8:05 believing they have eleven minutes, and arrives at 8:23. On the long walks the model under-predicts, and long walks are exactly the journeys that make people late — which is the thing the decision is about.
 >
 > **Would I let someone else decide something with this?** No, not yet. To change my answer I would need journeys from at least three people outside my family, and a second batch collected in a different month, because right now I cannot tell whether I have built a model of journeys or a model of us in May.
+
+### Draw It
+
+Marking: one pile of 126 rows cut **once** into 100 train and 26 test; four arrows from train into baseline, kNN, tree and line, each `.fit(X_train, y_train)`; **one** arrow from test, bypassing the models, to the results table ("scored once, at the very end"); the extras that show understanding are a padlock on the test pile, a crossed-out arrow to the scaler marked leakage, and 3.8% on the test pile. **Fail:** four separate cuts, or arrows from the test pile into the model boxes. The workbook's "good answer" text is the reference.
+
+### Self-Check
+
+The confidence grid is self-rated, not marked. True or false answers:
+
+| Statement | Answer |
+|---|:--:|
+| A caption should describe what the chart shows | **FALSE** (a caption states the finding) |
+| `random_state=42` makes the model more accurate | **FALSE** (it makes the split repeatable) |
+| `train_test_split` should appear once per model | **FALSE** (once per project) |
+| The honest score is usually worse than the dishonest one | **TRUE** |
+| R² can be negative | **TRUE** |
+| RMSE can be smaller than MAE | **FALSE** |
+| A baseline is optional if your model is good | **FALSE** |
+| A train score in a column labelled `train R2` is dishonest | **FALSE** |
+| Fitting a scaler before the split raises an error | **FALSE** (it runs, which is the danger) |
+| A test R² of 0.99 on data you collected is good news | **FALSE** (hunt the leak) |
+| "More data would help" is a limitation | **FALSE** (true of every project) |
+| The model with the lowest MAE is the one you should ship | **FALSE** (not if one journey could cause the gap) |
+| A bar chart of group means should always print the group counts | **TRUE** |
+| Two histograms can be compared by eye on different x ranges | **FALSE** |
 
 ### Lesson questions posed in the Say-this scripts
 

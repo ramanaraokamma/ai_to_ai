@@ -13,7 +13,7 @@
 | **Big idea** | Once your functions live in their own file you can `import` them into any program you write, forever. |
 | **New vocabulary** | slice · `sorted` · module · `import` · median |
 | **New syntax** | `scores[1:4]` · `sorted(scores)` · `for score in scores:` · `import stats` / `from stats import mean` |
-| **Materials** | **A small tin, pencil case or toolbox with three or four real tools in it** (ruler, sharpener, rubber) for the Hook · **the four index cards and the pink number strip from Week 11**, plus **a pencil to lay between two cards** · printed workbook pages 12.1–12.6 · the notebook, open at both the Bug Log and the hand-arithmetic section |
+| **Materials** | **A small tin, pencil case or toolbox with three or four real tools in it** (ruler, sharpener, rubber) for the Hook · **the four index cards and the pink number strip from Week 11**, plus **a pencil to lay between two cards** · the printed workbook (Build It, Parts 1 to 5, is the hand-in work; the median proof in Part 3 needs room for handwritten arithmetic) · the notebook, open at both the Bug Log and the hand-arithmetic section |
 | **Tech needed** | Python 3, an editor, one terminal. **No libraries.** Both files must sit in the *same folder*. |
 | **Prep time** | 20 minutes the night before, 5 minutes on the day |
 
@@ -388,7 +388,7 @@ every week with one more piece filled in, and it is the only place either book s
 
 ### 20 minutes the night before
 
-- [ ] **Print workbook pages 12.1–12.6.** Page 12.5 (the median proof) needs room for handwritten arithmetic — print it single-sided.
+- [ ] **Print the whole workbook** (Warm-Up through Self-Check). Build It Part 3 (the median proof) needs room for handwritten arithmetic — print it single-sided.
 - [ ] **Find the tin.** Any small box or pencil case with three or four real tools in it: a ruler, a sharpener, a rubber, a pair of scissors. It is the Hook and it takes ten seconds to use.
 - [ ] **Find Week 11's four index cards and the pink number strip**, and put a pencil with them. You will lay the pencil *between* two cards to show what a slice's stop number is.
 - [ ] **Make the folder and check where you are.** In a terminal:
@@ -581,7 +581,7 @@ AttributeError: module 'stats' has no attribute 'median'. Did you mean: 'mean'?
 | `ModuleNotFoundError: No module named 'stats'` | Almost always the folder. In the terminal, `ls` and check both `.py` files are listed. If they are not, you are in the wrong directory: `cd ~/ai-academy/level2`. Check for `stats.py.txt` too — some editors add an extension. |
 | The editor saved `stats.py` somewhere odd (Documents, Desktop, a project folder) | Use *File → Save As* and navigate to the folder deliberately. Then `ls` in the terminal to confirm both files are side by side. Do this before writing a single line of `main.py`. |
 | Some earlier file in the folder is called `statistics.py` or `random.py` | Rename it now, and delete the `__pycache__` folder beside it. Then explain why in one sentence: Python found their file instead of the library. |
-| Running short at minute 55 with median not written | **Stop and hand median over as homework** — the workbook page is designed to be doable alone, and the hand arithmetic is the part that matters anyway. Do not skip the delete experiment to buy time; skip a couple of the slice lines in `main.py` instead. |
+| Running short at minute 55 with median not written | **Stop and hand median over as homework** — the workbook's Build It Part 3 is designed to be doable alone, and the hand arithmetic is the part that matters anyway. Do not skip the delete experiment to buy time; skip a couple of the slice lines in `main.py` instead. |
 | The student already knows imports | Give them the harder variation: a third file, `test_stats.py`, that imports `stats` and checks fifteen cases including empty lists, one-item lists and negative numbers. |
 
 ---
@@ -913,7 +913,7 @@ Bug Log entry: **"`AttributeError: module 'stats' has no attribute 'median'` →
 
 Full instructions in the next section. In the lesson flow:
 
-- **Minutes 0–5:** workbook page 12.5, **on paper, before any code.** Five scores: sort them by hand, ring the middle, write it down. Then six scores: sort them, discover there are *two* in the middle, average them by hand.
+- **Minutes 0–5:** workbook Build It Part 3 (the median proof), **on paper, before any code.** Five scores: sort them by hand, ring the middle, write it down. Then six scores: sort them, discover there are *two* in the middle, average them by hand.
 - **Minutes 5–13:** write `median` into `stats.py`. Then run `main.py` — which starts working with no changes at all.
 - **Minutes 13–20:** finish `main.py`: the slices, the two halves, and the two counting loops.
 
@@ -971,7 +971,7 @@ This week the errors cluster into two families, and the diagnostic question is d
 ![Two files, one import, same folder](../figures/fig-w12-3-two-files-one-import.svg)
 *Figure 12.6 — What you are building: a toolbox that does the working out, and a job file that does the printing.*
 
-**On the table:** workbook page 12.5 (the median proof, with room for handwritten arithmetic), page 12.6, the notebook open at the hand-arithmetic section, a pencil, a calculator.
+**On the table:** workbook Build It Part 3 (the median proof, with room for handwritten arithmetic), Part 4 (the delete experiment), the notebook open at the hand-arithmetic section, a pencil, a calculator.
 
 **On the screen:** `stats.py` with four functions in it, and `main.py` with the import working — both from the live-code segment.
 
@@ -1315,9 +1315,11 @@ Three checks, five minutes, exact wording.
 
 > "Two things, about an hour, and one of them is on paper.
 >
-> **First, finish the toolkit.** Pages 12.3 and 12.4. `stats.py` with all five functions — mean, median, lowest, highest, range — every one of them returning, none of them printing, and every one with the empty-list guard. Then `main.py` finished: the slices, the two half-season means, and the two counting loops. When you run `main.py` you should get the whole report, and when you run `stats.py` you should get **absolutely nothing** — and if you get nothing, that's a pass, not a failure.
+> **First, the practice sections.** Everything in Practice Set A and Practice Set B that we didn't finish in class, plus Predict the Output, the Fix the Broken Program page, and the Puzzle of the Week. Predict first, *then* run. On Fix the Broken Program there are three bugs, one from each family, and I want the real message written down for each.
 >
-> **Second — and this is the one I'll read first — page 12.5, the median proof.** Two lists. The twenty scores you've got, which is an even count. And the same list with the last innings dropped, which is nineteen and therefore odd.
+> **Second, finish the toolkit — Build It, Parts 1 and 2.** `stats.py` with all five functions — mean, median, lowest, highest, range — every one of them returning, none of them printing, and every one with the empty-list guard. Then `main.py` finished: the slices, the two half-season means, and the two counting loops. When you run `main.py` you should get the whole report, and when you run `stats.py` you should get **absolutely nothing** — and if you get nothing, that's a pass, not a failure.
+>
+> **Third — and this is the one I'll read first — Build It, Part 3, the median proof.** Two lists. The twenty scores you've got, which is an even count. And the same list with the last innings dropped, which is nineteen and therefore odd.
 >
 > For **each** of them I want, in this order, **on paper, in pencil, before you run anything:**
 >
@@ -1330,19 +1332,109 @@ Three checks, five minutes, exact wording.
 >
 > If they disagree, do not assume the code is right. Find out which one is wrong. That is the actual skill and it is why the paper comes first.
 >
-> **Then page 12.6:** the write-up of the delete experiment. What you deleted, the real error message copied character for character, and one sentence on what that error proves about the two files.
+> **Then Part 4 and Part 5:** the write-up of the delete experiment. What you deleted, the real error message copied character for character, one sentence on what that error proves about the two files, and the Bug Log entry.
+>
+> **Last, Think Deeper, Draw It and the Self-Check.** Think Deeper is two short written answers. Draw It is your own toolbox and the program that opens it. The Self-Check is the faces and the true-or-false.
 >
 > And keep both files. In week thirty-three you are going to import this `stats.py` to check whether pandas is telling you the truth."
 
-**Workbook pages:** 12.1 and 12.2 in class; **12.3, 12.4, 12.5, 12.6** at home.
+**Workbook sections:** slice drills (A1) and `sorted()` versus the original (A6) in class; **everything else at home** — the rest of the Warm-Up and Practice Set A, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, **Build It (Parts 1 to 5)**, Draw It and Self-Check. If time is short, protect **Build It Part 3** first, then Parts 1 and 2, then Part 4; everything else can shrink.
 
-**Expected time:** 20 min to finish `stats.py` and `main.py` · 25 min for the median proof, both cases, on paper and then in code · 10 min for the delete write-up · 5 min vocabulary. **About 60 minutes.**
+**Expected time:** 20 min for the practice sections, Fix the Broken Program and the Puzzle · 20 min to finish `stats.py` and `main.py` · 25 min for the median proof, both cases, on paper and then in code · 10 min for the delete write-up and Bug Log · 10 min for Think Deeper, Draw It and Self-Check. **About 85 minutes in total**, so tell the student they may spread it over two evenings.
 
 ---
 
 ## 🔑 Answer Key
 
-### Page 12.1 — Slice drills
+*How this key is organised.* The key follows the workbook's own sections, in the workbook's order, and every item the workbook asks has its answer here. Earlier drafts of this guide called the workbook "pages 12.1 to 12.6"; the workbook has no such pages. If you meet an old label, this is where it lives:
+
+| Old label | Where it is in the workbook | Where it is below |
+|---|---|---|
+| Page 12.1 | Practice Set A, A1 (slice drills) | Practice Set A, A1 |
+| Page 12.2 | Practice Set A, A6 (`sorted()` versus the original) | Practice Set A, A6 |
+| Page 12.3 | Build It, Part 1 (`stats.py`) | Build It, Part 1 |
+| Page 12.4 | Build It, Part 2 (`main.py`) | Build It, Part 2 |
+| Page 12.5 | Build It, Part 3 (the median proof) | Build It, Part 3 |
+| Page 12.6 | Build It, Part 4 (the delete experiment) and Part 5 (the Bug Log) | Build It, Part 4 and Part 5 |
+
+Item labels (P1, A3, B2, bugs 1 to 3, T1, parts A to D and so on) are the workbook's own. The values are taken from the workbook's Answers section, which has been checked by running the code; the teacher-only notes (marking points, wrong-answer watch-fors) are added on top.
+
+### Warm-Up (W1 to W5)
+
+**W1.** `len` is **10**. The biggest valid index is **9**.
+
+**W2.** Because `len` is a **count** and the last index is one **less** than the count. So `len(scores)` is *always* exactly one past the end — for a list of five, of five hundred, or of zero.
+
+**W3.** **Nothing.** `append` puts the new item in a brand-new slot on the end and moves nothing. `scores[3]` holds exactly what it held before.
+
+**W4.** `.append` changes the list **in place** and hands back `None`, so the assignment throws the list away and puts `None` in `scores`. The message is `TypeError: object of type 'NoneType' has no len()`.
+
+**W5.** **None at all** — zero valid indexes. **Including 0**: `scores[0]` on an empty list is an `IndexError` too.
+
+### Predict the Output (P1 to P4)
+
+**P1.**
+
+```text
+[70, 88]
+[]
+3
+[55, 70, 88, 91, 64]
+```
+
+- `marks[1:3]` → slots 1 and 2, because 3 − 1 = 2 items ✔
+- `marks[3:3]` → **`[]`**, and **not an error**, because 3 − 3 = 0. Start and stop in the same place means zero items. **A slice asks for a range, and an empty range is a perfectly good answer.**
+- `len(marks[1:4])` → 3, because 4 − 1 = 3
+- `marks` → completely unchanged. **A slice never alters the original; it builds a new list.**
+
+**P2.**
+
+```text
+None
+[55, 64, 70, 88, 91]
+Traceback (most recent call last):
+  File "/Users/you/ai-academy/level2/p2.py", line 5, in <module>
+    print(ordered[0])
+TypeError: 'NoneType' object is not subscriptable
+```
+
+**Did the sorting happen? Yes — look at line 2 of the output.** `marks` really is in order now. `.sort()` did its job perfectly. What it did **not** do is hand anything back, so `ordered` holds `None`.
+
+**The clue word is `NoneType`, and you have met it twice before** — Week 10's function that printed instead of returning, and Week 11's `scores = scores.append(89)`. **Third time: it should be a reflex. Something handed back nothing.**
+
+*("Not subscriptable" means "you put square brackets after something that has no slots.")*
+
+**P3.**
+
+```text
+55
+70
+88
+0
+1
+2
+```
+
+**Both loops go round three times.** The first hands you **the value** — 55, then 70, then 88. The second hands you **the slot number** — 0, 1, 2 — and if you want the value you have to go and fetch it with `marks[i]`.
+
+**One step instead of two, and one fewer place to write an off-by-one.**
+
+**P4.**
+
+```text
+[91, 64]
+[55, 70]
+[88, 91, 64]
+2 + 3 = 5
+```
+
+**Why is `marks[3:99]` not an `IndexError`?** Because a **slice** is a request for a **range**, and Python hands you whatever part of that range exists. A single **index** is a request for one **specific** thing, and if it is not there the honest answer is an error. **Two different kinds of question.**
+
+**Lines 2 and 3: nothing is missing and nothing is in both.** `marks[:2]` gives slots 0 and 1; `marks[2:]` gives slots 2, 3, 4. **The number 2 appears in both and means the same fence** — it is the stop of the first (so *excluded*) and the start of the second (so *included*). **That only works because the stop is excluded, and it is the best single argument for the rule.**
+
+### Practice Set A
+
+#### A1 — Slice drills
 
 Given `scores = [45, 0, 112, 67, 8]` — slots 0, 1, 2, 3, 4. All values verified by running:
 
@@ -1386,16 +1478,113 @@ print(scores)
 | h | `scores[2:99]` | `[112, 67, 8]` | 3 — and it does **not** crash, even though there is no slot 99. |
 | i | `scores` at the end | `[45, 0, 112, 67, 8]` | Unchanged. A slice never alters the original. |
 
-**12.1(j) Why does `scores[2:99]` not crash, when `scores[99]` would?**
+**A1 (j) Why does `scores[2:99]` not crash, when `scores[99]` would?**
 Because a slice is a request for a *range*, and Python gives you whatever part of that range exists. A single index is a request for one *specific* slot, and if it is not there the honest answer is an error. The two are different kinds of question and get different treatment.
 
-**12.1(k) `scores[:3]` and `scores[3:]`. Is anything missing? Is anything in both?**
+**A1 (k) `scores[:3]` and `scores[3:]`. Is anything missing? Is anything in both?**
 Nothing missing, nothing in both. `[:3]` gives slots 0, 1, 2 and `[3:]` gives slots 3, 4, so together they are the whole list exactly once. **The number 3 appears in both slices and refers to the same fence.** This only works because the stop is excluded, and it is the best single argument for the rule.
 
-**12.1(l) Write the general rule for how many items `scores[a:b]` gives.**
+**A1 (l) Write the general rule for how many items `scores[a:b]` gives.**
 `b - a` items, as long as both are inside the list. If `b` is bigger than the length you get however many exist; if `b` is less than or equal to `a` you get none at all.
 
-### Page 12.2 — `sorted()` versus the original
+**A2 (i).**
+
+```text
+[29, 36, 30]
+[31, 34]
+[28, 33]
+[33]
+[]
+```
+
+**`temps[-1:]` gives a list; `temps[-1]` gives a number.** A **slice** always hands back a **list**, even a list of one thing. An **index** hands back the thing itself. Two different kinds of request, two different kinds of answer.
+
+**A2 (ii).**
+
+```text
+one
+two
+three
+four
+4
+```
+
+**Four times**, and you know because `len(words)` is 4 — a for-each loop goes round exactly once per element, **without you having to say so.**
+
+**A2 (iii).**
+
+```text
+[2, 7, 9]
+[9, 2, 7]
+9 7
+```
+
+`best[-1]` is the last item of the **sorted** list, which is the biggest, **9**. `nums[-1]` is the last item of the **original** list, which is just whatever happened to be typed last, **7**. **Same slice, two different lists — because `sorted()` made a second one and left the first alone.**
+
+**A2 (iv).**
+
+```text
+Traceback (most recent call last):
+  File "/Users/you/ai-academy/level2/week12_loop_trap.py", line 3, in <module>
+    print(scores[score])
+IndexError: list index out of range
+```
+
+On the first trip, `score` holds **45**, so it asked for **slot 45**. There is no slot 45.
+
+**The two characters to delete: the square brackets** — `print(score)`. **You already have the value. Stop looking it up.**
+
+**A3.**
+
+It printed **8** and **67**. It should have printed **6.0** and **56.0**.
+
+**The missing case is the even one.** With `n = 2`, `n // 2` is 1, so it returned `ordered[1]` — the **upper** middle — and ignored the lower one entirely. With `n = 6` it returned slot 3, which is 67, instead of averaging slots 2 and 3.
+
+**How you could tell from the code alone:** there is no `if` and no `%` anywhere in it. **A function with two cases must have a branch, and this one has none** — so it can only be handling one case.
+
+The missing part:
+
+```python
+    if n % 2 == 1:
+        return ordered[middle]
+    else:
+        return (ordered[middle - 1] + ordered[middle]) / 2
+```
+
+**Is there an error message?** No. **Which family?** **Family 3 — finished and lied.** It hands back a real number from the list, and only somebody who checked would notice it is the wrong one.
+
+Verified with the correct version:
+
+```text
+6.0
+56.0
+```
+
+**A4.**
+
+| Line | Answer |
+|---|---|
+| `print(row[1:3])` | **C** `[20, 30]` |
+| `print(row[:2])` | **A** `[10, 20]` |
+| `print(row[3:])` | **D** `[40, 50]` |
+| `print(row[-3:])` | **E** `[30, 40, 50]` |
+| `print(row[2:2])` | **B** `[]` |
+
+**The three with the same number of items:** `row[1:3]`, `row[:2]` and `row[3:]` — **two items each.** (3 − 1 = 2, 2 − 0 = 2 and 5 − 3 = 2.) The other two give 3 items (`row[-3:]`) and 0 items (`row[2:2]`).
+
+**A5.**
+
+The figure shows **`scores[1:4]`** over five slots holding 45, 0, 112, 67 and 8.
+
+**It takes slots 1, 2 and 3** — the values `0`, `112` and `67`.
+
+**Three items, because 4 − 1 = 3.**
+
+**The dashed line is a fence, not a card.** It marks where the taking stops.
+
+**Just past the dashed line is slot 4, holding `8`, and the slice does not include it.** That is the whole point of the figure: the stop number names the fence you stop at, not the last card you take.
+
+#### A6 — `sorted()` versus the original
 
 ```python
 scores = [45, 0, 112, 67, 8]
@@ -1415,10 +1604,10 @@ biggest first: [112, 67, 45, 8, 0]
 original again: [45, 0, 112, 67, 8]
 ```
 
-**12.2(a) After `ordered = sorted(scores)`, what is in `scores`?**
+**A6 (a) After `ordered = sorted(scores)`, what is in `scores`?**
 Exactly what was there before: `[45, 0, 112, 67, 8]`. `sorted()` built a second list and left the first alone.
 
-**12.2(b) What does `ordered = scores.sort()` put in `ordered`, and why?**
+**A6 (b) What does `ordered = scores.sort()` put in `ordered`, and why?**
 
 ```text
 None
@@ -1430,13 +1619,272 @@ TypeError: 'NoneType' object is not subscriptable
 
 `None`. `.sort()` rearranges the list you already have and hands back nothing at all — exactly like `.append` did last week. Anything with a dot that *changes* a list returns `None`.
 
-**12.2(c) Why must `median()` use `sorted()` and not `.sort()`?**
+**A6 (c) Why must `median()` use `sorted()` and not `.sort()`?**
 Because `.sort()` would silently rearrange **the caller's** list. Somebody asks for one number and gets their season reordered as well, without being told. That is a *side effect*, and a function whose job is "just tell me a number" must not have one. `sorted()` costs one extra list and buys a function nobody has to be careful around.
 
-**12.2(d) When would `.sort()` be the right choice?**
+**A6 (d) When would `.sort()` be the right choice?**
 When the list is genuinely large enough that a second copy costs real memory, **and** you are certain nobody needs the original order. Both halves have to be true. Below that, `sorted()`, always.
 
-### Page 12.3 — `stats.py`
+**A6 (e)** A **keyword argument** — an argument that names the box it goes into. Week 10's syntax, turning up inside somebody else's function.
+
+### Practice Set B
+
+**B1.**
+
+```python
+temps = [31, 34, 29, 36, 30, 28, 33]
+print(temps[0:3], temps[-2:])
+```
+
+```text
+[31, 34, 29] [28, 33]
+```
+
+Arithmetic: first three → **3 − 0 = 3** · last two → **`[-2:]`, and the count is 2 because it starts two back from the end.**
+
+*(`temps[:3]` is equally correct and one character shorter.)*
+
+**B2.**
+
+```python
+ordered = sorted(temps)
+print("ordered :", ordered)
+print("original:", temps)
+```
+
+```text
+ordered : [28, 29, 30, 31, 33, 34, 36]
+original: [31, 34, 29, 36, 30, 28, 33]
+```
+
+**The second line is in the order it was typed.** That is `sorted()` doing its job.
+
+**B3.**
+
+```python
+hot = 0
+for temp in temps:
+    if temp >= 32:
+        hot += 1
+print("hot days:", hot)
+```
+
+```text
+hot days: 3
+```
+
+Check by eye: 34, 36 and 33 are the three that are 32 or more. ✔
+
+**Why can a slice not answer this?** Because a slice picks by **position**, and "32 degrees or hotter" is a question about **value**. The hot days are at slots 1, 3 and 6 — scattered — and no single `[start:stop]` can pick those three and nothing else. **Filtering by value needs a loop** (and gets a proper tool in Week 15).
+
+**B4 — the sixth tool.** *Add to the bottom of `stats.py`:*
+
+```python
+def above(scores, limit=50):
+    # Give back how many scores are at least as big as the limit.
+    count = 0                          # start the counter at zero
+    for score in scores:               # walk the values themselves
+        if score >= limit:
+            count += 1                 # one more
+    return count
+```
+
+*And `above_report.py`, in the same folder:*
+
+```python
+# above_report.py - a sixth tool, borrowed from my own toolbox.
+
+import stats
+
+SCORES = [45, 0, 112, 67, 8, 89, 34, 101, 23, 56]
+
+print("scores      :", SCORES)
+print("50 or more  :", stats.above(SCORES))          # no limit given -> uses 50
+print("100 or more :", stats.above(SCORES, 100))
+print("0 or more   :", stats.above(SCORES, 0))       # awkward: everything counts
+print("mean        :", stats.mean(SCORES))
+print("median      :", stats.median(SCORES))
+```
+
+```text
+scores      : [45, 0, 112, 67, 8, 89, 34, 101, 23, 56]
+50 or more  : 5
+100 or more : 2
+0 or more   : 10
+mean        : 53.5
+median      : 50.5
+```
+
+**Hand-check.** 50 or more: 112, 67, 89, 101, 56 → **5** ✔ 100 or more: 112, 101 → **2** ✔ 0 or more: everything, including the 0, because the test is `>= 0` → **10** ✔ Total = 535, ÷ 10 = **53.5** ✔ Sorted = `[0, 8, 23, 34, 45, 56, 67, 89, 101, 112]`; ten items so average slots 4 and 5 = 45 and 56 → (45 + 56) ÷ 2 = **50.5** ✔
+
+**Why is the "0 or more" test worth doing?** Two reasons. It proves the default is being **replaced** rather than ignored — if it printed 5 you would know `limit` was still 50. And it proves the boundary is `>=` and not `>`, because the score of **0** is counted.
+
+**B5 — the delete experiment.** Deleting the whole `median` function from `stats.py` and running `main.py` unchanged:
+
+```text
+Traceback (most recent call last):
+  File "/Users/you/ai-academy/level2/main.py", line 19, in <module>
+    print("  Median    :", stats.median(SCORES))
+AttributeError: module 'stats' has no attribute 'median'. Did you mean: 'mean'?
+```
+
+Any function counts, as long as the traceback is real and copied exactly.
+
+**Putting it back and running again:** the report works, **and you did not touch `main.py` once.**
+
+**What it proves:** *"`main.py` broke without being edited at all, which proves it doesn't contain those functions — it borrows them from `stats.py` every time it runs."*
+
+### Fix the Broken Program
+
+**Bug 1.** **Family 1 — never started.** **None of it ran.**
+
+**Why did lines 7 to 12 not print?** Because a `SyntaxError` means Python could not even finish **reading** the file. It reads the whole thing before running any of it, and it never got to the running stage. **A file with a syntax error anywhere in it runs nowhere.** This is worth knowing: the bug being at the bottom does not mean the top gets a turn.
+
+The fix:
+
+```python
+for score in SCORES:                           # bug 1 lives on this line
+```
+
+**Bug 2.**
+
+(a) **Something inside the file.** `AttributeError: module 'stats' has no attribute ...` means Python **found and loaded `stats.py` perfectly well** — it just could not find that name inside it. If the file had been missing you would have got `ModuleNotFoundError` instead, on the `import` line.
+
+(b) **No, the suggestion is wrong** — Python compared `medain` against the names it found and `mean` was the closest, but the function you actually wanted is **`median`**. **The suggestion is usually right and it is not always right.** The real fix is a spelling correction: `medain` → `median`.
+
+(c) `ModuleNotFoundError: No module named 'stats'`.
+
+The fix:
+
+```python
+print("median    :", stats.median(SCORES))     # bug 2 lives on this line
+```
+
+**Bug 3.**
+
+(d) `first 3` printed **four** items: `[45, 0, 112, 67]`. It should print **three**.
+
+(e) **4 − 0 = 4.** The arithmetic gives it away instantly, which is exactly why you write it down beside every slice.
+
+(f) The fix:
+
+```python
+print("first 3   :", SCORES[0:3])              # bug 3 lives on this line
+```
+
+(g) **Because nothing impossible happened.** `SCORES[0:4]` is a perfectly legal slice of a six-item list, and it produced a perfectly good list. **Python has no idea the label says "3".** Family 3 — finished and lied.
+
+(h) **Hand-check:**
+
+```text
+Sorted   :   0   8   45   67   89  112
+Slots    :   0   1    2    3    4    5
+
+Total    = 0 + 8 + 45 + 67 + 89 + 112 = 321
+Mean     = 321 / 6 = 53.5   -> printed as 53.50
+6 // 2   = 3        6 % 2 = 0  -> EVEN, so two middles
+slot 2 = 45   and   slot 3 = 67
+(45 + 67) / 2 = 112 / 2 = 56.0    ✔
+```
+
+Full output after all three fixes:
+
+```text
+scores    : [45, 0, 112, 67, 8, 89]
+how many  : 6
+first 3   : [45, 0, 112]
+last 3    : [67, 8, 89]
+mean      : 53.50
+median    : 56.0
+fifties   : 3
+```
+
+*(`fifties` is 3: 112, 67 and 89 are the three scores of 50 or more.)*
+
+(i) **Bug 3 was hardest.** Bug 1 stopped the file dead before anything ran. Bug 2 crashed and Python even guessed at the fix. **Bug 3 printed a real slice of real scores under a label that was almost right**, and only counting the items gives it away.
+
+### Puzzle of the Week
+
+**Part A — the shortest slice.** All verified:
+
+```python
+row = [10, 20, 30, 40, 50]
+print(row[1:3], row[:2], row[3:], row[-3:], row[2:2])
+```
+
+```text
+[20, 30] [10, 20] [40, 50] [30, 40, 50] []
+```
+
+| # | Target | Shortest slice |
+|---|---|---|
+| 1 | `[20, 30]` | `row[1:3]` |
+| 2 | `[10, 20]` | `row[:2]` |
+| 3 | `[40, 50]` | `row[3:]` — or `row[-2:]`, same length |
+| 4 | `[30, 40, 50]` | `row[2:]` — or `row[-3:]`, same length |
+| 5 | `[]` | `row[2:2]` — or any `[n:n]`, or `row[3:1]` |
+| 6 | a copy of the whole row | `row[:]` |
+| 7 | `[50]`, surviving an append | **`row[-1:]`** |
+
+**(a)** Every slice with a **positive** number in it that was chosen to reach the end: `row[3:]` and `row[2:]` still give you "everything from slot 3 / slot 2 onwards", which now includes the 60 — so **they change**. `row[-2:]` and `row[-3:]` also change, but they keep *meaning* "the last two / the last three". `row[1:3]` and `row[:2]` are untouched. **And `row[:]` still copies everything, which is now six items.**
+
+**The precise version: nothing "stops being a slice", but three of them stop giving the answer you wanted.**
+
+**(b)** Row 7's two obvious answers are `row[4:5]` and `row[-1:]`. **`row[4:5]` means "slot 4", which after the append is still the 50 — but it is no longer the last item, so it has stopped doing the job.** `row[-1:]` means "the last one", which is now the 60, and that is exactly what row 7 asked for. **So which survives depends on what you meant**: for "that particular number" the positive one survives; for "the last one", the negative one does. Row 7 asked for the last one. **Say what you mean and the right index picks itself.**
+
+**(c) Three tiling pairs:**
+
+| Pair | First slice | Second slice | Lengths |
+|---|---|---|---|
+| 1 | `row[:2]` | `row[2:]` | 2 + 3 = 5 |
+| 2 | `row[:3]` | `row[3:]` | 3 + 2 = 5 |
+| 3 | `row[:1]` | `row[1:]` | 1 + 4 = 5 |
+
+*(`row[:0]` and `row[0:]` also works: 0 + 5 = 5.)*
+
+**(d)** The same number is the **fence**. In the first slice it is the **stop**, so it is **excluded**; in the second it is the **start**, so it is **included**. **Each item lands in exactly one of the two slices, and the number appearing twice is what guarantees it.** That is the whole argument for excluding the stop.
+
+**Part B — the copy trap.**
+
+```text
+a = [1, 2, 3, 999]
+b = [1, 2, 3, 999]
+c = [1, 2, 3]
+```
+
+**(a)** **`b = a` never made a second list.** It put a second *name* on the list that was already there. So `b.append(999)` changed the one and only list, and `a` — which is another name for the very same list — shows the change too.
+
+**(b)** **There are two lists** (the original, and the copy `c` points at) **and three names.** `a` and `b` are two names for one list.
+
+**(c)** Because `a[:]` is a **slice**, and **a slice always builds a new list** — you proved that in A1(i), where the original was unchanged after every slice. `a[:]` is the slice that happens to take everything, so it is the cheapest possible copy. `b = a` is not a slice at all; it is just a name.
+
+**(d)** **`sorted()` versus `.sort()`** — the same idea wearing a different hat. `sorted()` builds a new list, like `a[:]`. `.sort()` changes the one you have, and if two names point at it, **both** names see the change. **That is exactly why `median` must use `sorted()`.**
+
+### Think Deeper
+
+**T1 — model answer.**
+
+Picture `median()` inside a program that emails a class average to parents. If the list is empty because a data-loading bug ate the file, returning `None` means the email says "class median: None" — or, worse, some later line turns it into 0 and the email says "class median: 0", **which is a real-looking number that is completely false.** Almost everybody wants a **crash** here, and the argument is that `None` lets a broken value travel a long way from the place it broke before anybody notices.
+
+Now the same function in a script I am running myself, over thirty class lists, one of which happens to be empty. **Stopping dead on list seventeen is useless** — I would rather see `None` on one row and get the other twenty-nine.
+
+**Notice the answer flipped and nothing about the function changed.** What changed is **who reads the result and what happens next.** Real teams argue about this constantly, and there is a third camp who say the function should hand back a *reason* so the caller can decide.
+
+**What nobody argues about:** `mean([])` must not silently return **0**, because **0 is a real average** — it means "everybody scored nothing" — and "there wasn't any data" is a completely different statement. Returning 0 turns "I don't know" into a confident lie, and there is no way for anybody downstream to tell them apart.
+
+We chose `None` for this course because it is honest and it never stops a lesson dead. **That is a choice, and you are allowed to make a different one — as long as you write down which one you made.**
+
+**T2 — model answer.**
+
+A built-in does exist, and I will meet it in Week 14 on purpose.
+
+**What I know now that I would not know otherwise:** exactly what `mean` does, line by line — that it starts a total at zero, walks the values, adds each one, and divides by how many. And, more usefully, **exactly what it does with an empty list**, because I had to decide that myself. Somebody who has only used the built-in has no idea what it does with an empty list until it happens to them, and then they have to go and look it up.
+
+**And the real reason:** in about eight weeks I will want a number Python has no built-in word for. At that moment the only thing that helps is having built one before. Students who meet the built-in first tend to treat every summary as magic — **and then stall completely the first time the magic does not cover what they need.** Writing `mean` by hand once buys the ability to write the twentieth one, which nobody has written for me.
+
+### Build It
+
+#### Part 1 — `stats.py`
 
 The complete file, actually run. It is reproduced in full in the Prep Checklist above; the marking points are what matters here.
 
@@ -1455,7 +1903,7 @@ The complete file, actually run. It is reproduced in full in the Prep Checklist 
 | `value_range` | Must **call `maximum` and `minimum`**, not recompute them. This is the first function in the course that uses the student's own other functions, and it is the marking point. |
 | `median` | Guard. `sorted()` and **not** `.sort()`. `n // 2` with a double slash. `n % 2 == 1` to detect odd. Even branch averages `ordered[middle - 1]` and `ordered[middle]`. |
 
-**12.3(a) Why does every function start with the same three lines?**
+**Part 1 (a) Why does every function start with the same three lines?**
 Because every one of them fails on an empty list, and each fails differently: `mean` divides by zero, `minimum` and `maximum` ask for slot 0 of nothing, `median` sorts nothing and then indexes it. Verified:
 
 ```text
@@ -1476,22 +1924,23 @@ Traceback (most recent call last):
 IndexError: list index out of range
 ```
 
-With the guards in place:
+With the guards in place, all five functions hand back `None`:
 
 ```text
 None
 None
 None
 None
+None
 ```
 
-**12.3(b) Why is `smallest = scores[0]` a better start than `smallest = 0`?**
-Because a list can be entirely made of numbers bigger than 0, in which case starting at 0 means nothing is ever smaller and the function returns 0 — a number that was never in the list. Starting from an actual member of the list is the only safe assumption. (The same argument, mirrored, applies to `maximum` and negative numbers.)
+**Part 1 (b) Why is `smallest = scores[0]` a better start than `smallest = 0`?**
+Because a list can be entirely made of numbers bigger than 0, in which case starting at 0 means nothing is ever smaller and the function returns 0 — a number that was never in the list. For example `minimum([5, 9, 12])` would return **0**. Starting from an actual member of the list is the only safe assumption. (The same argument, mirrored, applies to `maximum` and negative numbers.)
 
-**12.3(c) `value_range` calls two other functions. What did that buy you, and what did it cost?**
+**Part 1 (c) `value_range` calls two other functions. What did that buy you, and what did it cost?**
 It bought correctness for free — fix a bug in `minimum` and `value_range` is fixed too. It cost a little speed: the list gets walked twice instead of once. For twenty scores that is invisible, and clarity is worth far more than the saving.
 
-### Page 12.4 — `main.py`
+#### Part 2 — `main.py`
 
 Complete file in the Prep Checklist; real output:
 
@@ -1541,19 +1990,19 @@ Complete file in the Prep Checklist; real output:
 - **Fifty-plus** — 112, 67, 89, 101, 56, 77, 90, 63, 72, 50 = **10** ✔ (50 counts, because the test is `>= 50`)
 - **Ducks** — one score of 0 = **1** ✔
 
-**12.4(a) `First 3` gives `[45, 0, 112]` but `Worst 3` gives `[0, 4, 8]`. Why are they different?**
+**Part 2 (a) `First 3` gives `[45, 0, 112]` but `Worst 3` gives `[0, 4, 8]`. Why are they different?**
 `SCORES[0:3]` takes the first three innings **in the order they were played**. `sorted(SCORES)[0:3]` sorts first, so it takes the three lowest scores of the season. Same slice, two different lists. This is a good place to point out that a slice always means "these positions", and the positions only mean something once you know what order the list is in.
 
-**12.4(b) Why is `Last 3` written `SCORES[-3:]` and not `SCORES[17:20]`?**
+**Part 2 (b) Why is `Last 3` written `SCORES[-3:]` and not `SCORES[17:20]`?**
 Both work today. `[-3:]` still means "the last three" if a twenty-first innings gets appended; `[17:20]` quietly starts meaning something else. Same argument as `scores[-1]` from last week.
 
-**12.4(c) First half 53.50, second half 45.40. Did the season get worse?**
+**Part 2 (c) First half 53.50, second half 45.40. Did the season get worse?**
 The numbers say the second ten innings averaged about eight runs lower. Whether that is a real decline or just what ten innings look like is a genuinely open question and the honest answer at Week 12 is **"this is a hint, not a finding."** Ten innings is very few, one score of 112 in the first half holds the average up by more than 11 compared with a score of 0 in its place, and nothing here rules out coincidence. Mark generously any answer that notices the sample is small. A student who says "yes, it got worse" with no hedge should be asked what a single lucky century would have done to the first number.
 
-**12.4(d) `Fifty-plus` is 10 out of 20. Which loop found that, and could you have used a slice?**
+**Part 2 (d) `Fifty-plus` is 10 out of 20. Which loop found that, and could you have used a slice?**
 The `for score in SCORES:` loop with a counter. A slice could not do it: a slice picks by *position*, and "at least fifty" is a question about *value*. Filtering by value is Week 15.
 
-### Page 12.5 — The median proof
+#### Part 3 — the median proof
 
 **Part 1 — the even case: all 20 scores.**
 
@@ -1648,19 +2097,19 @@ ODD CASE - 19 scores
   nine scores above it: [56, 63, 67, 72, 77, 89, 90, 101, 112]
 ```
 
-**12.5(a) For the odd case, prove slot 9 really is the middle.**
+**Part 3 (a) For the odd case, prove slot 9 really is the middle.**
 Nine scores below it and nine above it — the last two printed lines are the proof, and both slices have length 9. That is what "middle" means, and the code says the same thing the paper said.
 
-**12.5(b) Why does the even case give a decimal when the odd case gives a whole number?**
+**Part 3 (b) Why does the even case give a decimal when the odd case gives a whole number?**
 Because the even case divides by 2, and `/` always produces a decimal in Python. `(45 + 50) / 2` is `47.5`, which genuinely is not a whole number. The odd case returns a value straight out of the list, untouched, so it stays whatever it was.
 
-**12.5(c) Is 47.5 a score anybody actually got?**
+**Part 3 (c) Is 47.5 a score anybody actually got?**
 No — nobody scored 47.5. This is worth a sentence in the write-up: for an even-length list the median is a *constructed* number, halfway between the two central values, and it may not appear in the data at all. That is normal and it is honest, and it is the same reason a mean of 49.45 is not an innings anybody played.
 
-**12.5(d) Dropping one score changed the median from 47.5 to 50. Did the season get better?**
+**Part 3 (d) Dropping one score changed the median from 47.5 to 50. Did the season get better?**
 No. Nothing about the season changed — one innings was removed from the *calculation*. Removing the 26 took a below-median score out of the list, so the middle shifted upward. This is worth noticing hard: **a summary number can move because of what you left out, not because of what happened.** That idea comes straight back in Term 3.
 
-**12.5(e) Check the three edge cases and say why each answer is right.**
+**Part 3 (e) Check the three edge cases and say why each answer is right.**
 
 ```text
   one score  [7]        -> 7
@@ -1672,7 +2121,7 @@ No. Nothing about the season changed — one innings was removed from the *calcu
 - `[4, 8]` — n = 2, `2 // 2` is 1, even, so average slots 0 and 1: (4 + 8) ÷ 2 = **6.0**.
 - `[5, 5, 5, 5]` — n = 4, even, average slots 1 and 2, both 5: (5 + 5) ÷ 2 = **5.0**. The `.0` is the division, not a mistake.
 
-**12.5(f) Prove `median()` did not reorder your list.**
+**Part 3 (f) Prove `median()` did not reorder your list.**
 
 ```text
   the caller's list is untouched: [45, 0, 112, 67, 8]
@@ -1680,9 +2129,9 @@ No. Nothing about the season changed — one innings was removed from the *calcu
 
 Still in the order it was typed. That is `sorted()` doing its job. Had `median` used `.sort()`, this line would read `[0, 8, 45, 67, 112]` and the season order would be gone for good.
 
-### Page 12.6 — The delete experiment, and vocabulary
+#### Part 4 — the delete experiment
 
-**12.6(a) What did you delete, and what was the exact error?**
+**Part 4 (a) What did you delete, and what was the exact error?**
 
 Deleting the whole `median` function from `stats.py` and running `main.py` unchanged:
 
@@ -1695,13 +2144,13 @@ AttributeError: module 'stats' has no attribute 'median'. Did you mean: 'mean'?
 
 Accept any function deleted, as long as the traceback is real and copied exactly.
 
-**12.6(b) One sentence: what does that error prove about the two files?**
+**Part 4 (b) One sentence: what does that error prove about the two files?**
 
 Model answer: *"`main.py` broke without being edited at all, which proves it doesn't contain those functions — it borrows them from `stats.py` every time it runs."*
 
 Accept any sentence containing both halves: **`main.py` was not changed**, and **it depends on what is in the other file.**
 
-**12.6(c) You deleted `median` and got an `AttributeError`. What error would you get if you deleted the whole `stats.py` file instead?**
+**Part 4 (c) You deleted `median` and got an `AttributeError`. What error would you get if you deleted the whole `stats.py` file instead?**
 
 ```text
 ModuleNotFoundError: No module named 'stats'
@@ -1709,7 +2158,7 @@ ModuleNotFoundError: No module named 'stats'
 
 And the distinction is the point: `ModuleNotFoundError` means **the file** is missing; `AttributeError` means the file was found but **the thing inside it** is missing. Being able to tell those two apart saves a great deal of time.
 
-**12.6(d) With `from stats import mean, median`, what error do you get when `median` is missing?**
+**Part 4 (d) With `from stats import mean, median`, what error do you get when `median` is missing?**
 
 ```text
 Traceback (most recent call last):
@@ -1720,7 +2169,9 @@ ImportError: cannot import name 'median' from 'stats' (/Users/you/ai-academy/lev
 
 An `ImportError`, and it happens on **line 1**, before any of your program runs. That is arguably better than the `AttributeError`, which waits until the moment you use it — a real argument in favour of the `from ... import` style.
 
-**12.6(e) Vocabulary and syntax, in your own words.**
+#### Teacher extra — vocabulary check (not a workbook item)
+
+Use this if you want a two-minute oral check at the end. The workbook does not ask for it.
 
 | Term | A good answer contains | A wrong answer to watch for |
 |---|---|---|
@@ -1736,6 +2187,53 @@ An `ImportError`, and it happens on **line 1**, before any of your program runs.
 | `sorted(scores)` | A new list, in order. `scores` is untouched. You must catch the result. |
 | `for score in scores:` | Hands you each value in turn, with no slot numbers involved. |
 | `import stats` / `from stats import mean` | Use functions from a file you wrote. Same folder, no `.py`. |
+
+#### Part 5 — the Bug Log entry
+
+| | |
+|---|---|
+| **The real message** | `AttributeError: module 'stats' has no attribute 'median'. Did you mean: 'mean'?` on line 19 of `main.py` |
+| **What it proves about the two files** | `main.py` broke without being edited, so it does not contain those functions — it borrows them from `stats.py` every time it runs |
+| **The fix** | Write `median` in `stats.py`. **`main.py` does not change** |
+
+### Draw It
+
+There is no single right drawing. A strong one has all five of these:
+
+1. **A dashed boundary labelled "one folder"** round both files — the requirement everybody forgets.
+2. **The tin with named tools inside it**, each drawn as a hopper-and-chute machine, and a badge saying **"prints nothing"**.
+3. **A terminal panel under the tin showing an empty result** and the caption *"correct — you opened a toolbox"*.
+4. **The `import` line as an arrow going INTO the tin**, with no arithmetic anywhere on the job sheet.
+5. **The delete experiment in red**: one tool crossed out and the `AttributeError` written beside it.
+
+**The commonest weak drawing** shows the code being **copied** from the tin into the report. **Nothing is copied.** The report borrows the tools every time it runs — which is exactly why deleting one breaks a file you never edited.
+
+### Self-Check answers
+
+**True or false:**
+
+| Statement | Answer |
+|---|---|
+| `scores[1:4]` gives four items | **FALSE** — three. 4 − 1 = 3 |
+| `scores[a:b]` gives `b - a` items (when both numbers are inside the list) | **TRUE** |
+| A slice changes the original list | **FALSE** — it builds a new one |
+| `scores[3:3]` is an error | **FALSE** — it is `[]`, because 3 − 3 = 0 |
+| `scores[2:99]` is an error | **FALSE** — a slice gives you whatever part of the range exists |
+| `scores[99]` is an error | **TRUE** — a single index asks for one specific slot |
+| `scores[:3]` and `scores[3:]` together give the whole list | **TRUE** — nothing missing, nothing twice |
+| `range(4)` and `scores[0:4]` follow the same stop rule | **TRUE** — both stop before 4 |
+| `sorted(scores)` rearranges `scores` | **FALSE** — it builds a new list and leaves yours alone |
+| `sorted(scores)` on its own line does nothing useful | **TRUE** — it hands something back and nobody catches it |
+| `.sort()` hands back the sorted list | **FALSE** — it hands back `None` |
+| `median` should use `.sort()` because it is faster | **FALSE** — it would silently reorder the caller's list. That is a side effect |
+| `for score in scores:` hands you the value | **TRUE** |
+| `import stats.py` is the right way to import `stats.py` | **FALSE** — `import stats`. The word after `import` is a module name |
+| `stats.py` and `main.py` may be in different folders | **FALSE** — not this year, and it is nine out of ten problems |
+| `python3 stats.py` printing nothing means it is broken | **FALSE** — it is a toolbox. That is correct |
+| `ModuleNotFoundError` means the file is missing | **TRUE** |
+| `AttributeError` means the file was found but the function was not | **TRUE** |
+| Naming your file `statistics.py` is fine | **FALSE** — Python would find yours instead of the real library |
+| The median of an even-length list may not be in the list at all | **TRUE** — it is halfway between the two middles |
 
 ### Answers to the questions posed in the lesson scripts
 

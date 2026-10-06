@@ -13,7 +13,7 @@
 | **Big idea** | kNN guesses by letting the `k` closest examples vote — and the score only means anything on rows the model never saw. |
 | **New vocabulary** | k-nearest neighbours · majority vote · fit · predict · train/test split |
 | **New syntax** | `KNeighborsClassifier(n_neighbors=k)` · `model.fit(X_train, y_train)` · `model.predict(X_test)` · `train_test_split(X, y, test_size=0.2, random_state=42)` |
-| **Materials** | Printed workbook pages 29.1–29.6 · **a real deck of playing cards** · **one envelope the student can sign across the flap** · a pen (not pencil) for the signature · last week's `x_and_y.py` and `iris_shapes.py` · the SHAPES sheet from Week 28 · a calculator |
+| **Materials** | The printed workbook (Predict the Output, Practice Sets A and B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It) · **a real deck of playing cards** · **one envelope the student can sign across the flap** · a pen (not pencil) for the signature · last week's `x_and_y.py` and `iris_shapes.py` · the SHAPES sheet from Week 28 · a calculator |
 | **Tech needed** | The Week 28 setup: Python 3 with numpy, pandas, matplotlib and scikit-learn. Nothing new to install. |
 | **Prep time** | 15 minutes the night before, 5 minutes on the day |
 
@@ -390,7 +390,7 @@ inside it, and this is the one that earns the middle word. Two threads lit: mode
 
   **Read that carefully now, before class.** The gap is *negative* — the held-back score came out higher. That is real, it is fine, and section 6 above tells you how to explain it. The lesson then switches to two columns instead of four, where the gap is a genuine 21 points.
 
-- [ ] Print workbook pages 29.1–29.6.
+- [ ] Print the whole Week 29 workbook (it has named sections, not numbered pages).
 - [ ] Read section 4 (why a training score is not a score) twice. It is the whole week.
 - [ ] Put the SHAPES sheet from Week 28 back on the wall.
 
@@ -405,7 +405,7 @@ inside it, and this is the one that earns the middle word. Two threads lit: mode
 
 | If this fails | Do this instead |
 |---|---|
-| **No laptop today** | The deck, the envelope and workbook page 29.3 give you a complete lesson. Page 29.3 has twelve iris rows and one mystery flower printed; the student computes all twelve distances with a calculator, sorts them, and does the vote for `k = 1, 3, 5` by hand. That delivers objectives 1, 4 and 5 in full. Type the code next lesson — the concept is the hard part and it is entirely doable on paper. |
+| **No laptop today** | The deck, the envelope and the workbook's Puzzle of the Week (Part 1) give you a complete lesson. Puzzle Part 1 has twelve iris rows and one mystery flower printed; the student computes all twelve distances with a calculator, sorts them, and does the vote for `k = 1, 3, 5` by hand. That delivers objectives 1, 4 and 5 in full. Type the code next lesson — the concept is the hard part and it is entirely doable on paper. |
 | **scikit-learn broke since last week** | Same as above. Do not spend class time on pip. |
 | **No deck of cards** | Any pile of 20-ish identical objects: cut playing-card-sized rectangles from paper, use dominoes, use Lego bricks, use coins. **The envelope is the part you must not skip.** |
 | **The student wants to skip the paper part and just type** | Do not let them. The whole point of this week is a discipline, and the discipline is physical before it is code. Say so, honestly: "The code takes four minutes. The habit takes twenty. We're here for the habit." |
@@ -478,7 +478,7 @@ Wait for it. **It's itself.**
 
 ### 🧠 Concept — The Vote, and the Three Verbs (16 minutes)
 
-**Do this:** Workbook page 29.2 between you. It has last week's six flowers and their six distances already computed.
+**Do this:** The six-flower vote between you (the same six flowers as Practice Set B, B2; the six distances, already computed, are listed in the Answer Key under B2 — copy them onto a card).
 
 **Say this — part 1, the vote, by hand:**
 
@@ -805,7 +805,7 @@ Three parts, in this order, and the order is the point. Physical first, then cod
 
 ### Setup
 
-**On the table:** the deck of cards, the envelope, a pen, workbook pages 29.3 and 29.4, the laptop.
+**On the table:** the deck of cards, the envelope, a pen, the workbook open at Build It Part 1 and Practice Set A (A2), the laptop.
 
 **On the board:** a blank space headed **THE GAP**.
 
@@ -934,7 +934,7 @@ that is 20.83 percentage points
 
 ### Variation — easier
 
-- **Do the whole thing on paper.** Workbook page 29.3 prints twelve iris rows and one mystery flower. The student computes twelve distances with a calculator, sorts them, and votes for `k = 1, 3, 5`. That is objectives 1, 4 and 5 completely, with no laptop.
+- **Do the whole thing on paper.** The workbook's Puzzle of the Week, Part 1, prints twelve iris rows and one mystery flower. The student computes twelve distances with a calculator, sorts them, and votes for `k = 1, 3, 5`. That is objectives 1, 4 and 5 completely, with no laptop.
 - **Skip Part 3.** The envelope plus one working `full_cycle.py` is a complete and satisfying lesson. Put the gap from `full_cycle.py` on the board and be honest that it is small.
 - **Give them `full_cycle.py` already typed** and have them change only `n_neighbors` and `random_state`, predicting each result before they run it. Reading and editing working code is a real skill and a legitimate substitute for typing it from scratch.
 - **Drop the six-flower hand vote** and go straight to the code if the arithmetic is the blocker. The concept survives.
@@ -1091,7 +1091,7 @@ Only the test score is a *score*. The training score is not really a measure of 
 
 **Cut:** Part 3 of the activity. The envelope and one working `full_cycle.py` is a complete lesson and hits four of the five objectives.
 
-**Cut:** the six-flower hand vote if the arithmetic is the blocker. Give them the sorted distance list already computed on page 29.2 and have them do only the counting. **The counting is the concept; the subtracting is last week's homework.**
+**Cut:** the six-flower hand vote if the arithmetic is the blocker. Give them the sorted distance list already computed (Answer Key, under B2) and have them do only the counting. **The counting is the concept; the subtracting is last week's homework.**
 
 **Reteach the split physically, twice.** Do the deck-and-envelope with cards, and then do it again with the twelve paper strips from Week 28. Put ten strips in one pile, two in an envelope. Then ask, pointing at the envelope: *"To mark this model, what do I need out of here?"* — the answers. *"And does the model get to see them?"* — no. Repeat that exchange, out loud, three times over the lesson. It is the single hardest idea of the week and it is a two-sentence exchange.
 
@@ -1186,46 +1186,231 @@ Three checks, five minutes, exact wording.
 
 > "One program and one paragraph, about an hour.
 >
-> **The program — pages 29.5 and 29.6.** Run the full cycle on iris, start to finish, from a blank file: load it, split it 80/20 with `random_state=42`, make a kNN with k equal to 5, fit it, and then print **two** scores. The score on the training rows, and the score on the held-back rows. And next to the second one, print `len(X_test)`, so the number of rows is right there beside the accuracy. I want to see that on screen, not implied.
+> **The program — Build It, Parts 2 and 3 in your workbook.** Run the full cycle on iris, start to finish, from a blank file: load it, split it 80/20 with `random_state=42`, make a kNN with k equal to 5, fit it, and then print **two** scores. The score on the training rows, and the score on the held-back rows. And next to the second one, print `len(X_test)`, so the number of rows is right there beside the accuracy. I want to see that on screen, not implied.
 >
 > **The paragraph — two sentences, and this is the bit I'm actually marking.** Look at your two scores. Write down the gap. Then two sentences: what the gap means, and which of the two numbers you would tell somebody if they asked how good your model is. Two sentences. Not four. Making it short is part of the work.
 >
 > And one thing extra for anyone who wants it: run the same file again with `random_state=7` instead of 42, and write down what happened. Don't change anything else. One line about what that tells you."
 
-**Workbook pages:** 29.1, 29.2, 29.3 and 29.4 in class; **29.5 and 29.6** at home.
+**Workbook sections:** the workbook has no numbered pages, only named sections. In class: **Warm-Up, Predict the Output (P1–P4), Practice Set A (A1–A6), Build It Part 1** (the deck and the envelope). At home: **Build It Parts 2–6** (the full cycle, the two sentences, the `random_state=7` extra, the short questions, the Bug Log). If there is time or the student wants more: **Practice Set B (B1–B5), Fix the Broken Program, Puzzle of the Week, Think Deeper (T1, T2), Draw It** and the **Self-Check**.
 
-**Expected time:** 20 min for the program · 15 min for the two sentences (they will rewrite them, and should) · 10 min for the `random_state` extra · 15 min for page 29.6's short questions. About 60 minutes.
+**Expected time:** 20 min for the program (Build It Part 2) · 15 min for the two sentences (Part 3 — they will rewrite them, and should) · 10 min for the `random_state` extra (Part 4) · 15 min for the short questions and the Bug Log (Parts 5 and 6). About 60 minutes. The other sections are extra; each of them runs 10–25 minutes.
 
 ---
 
 ## 🔑 Answer Key
 
-Every code block was run before it was pasted, and every output is real.
+Every code block was run before it was pasted, and every output is real. This key follows the workbook's own section order and item labels, so you can mark straight down the page. The values are those in the workbook's Answers section; the teacher-only notes (wrong-answer maps, marking tips) are added underneath.
 
-### Page 29.1 — The vote, on paper
+| Workbook section | Items | Where in this key |
+|---|---|---|
+| ✅ Warm-Up | W1–W5 | Warm-Up |
+| 🔎 Predict the Output | P1–P4 | Predict the Output |
+| ✍️ Practice Set A — Read It | A1–A6 | Practice Set A |
+| ✍️ Practice Set B — Write It | B1–B5 | Practice Set B |
+| 🐞 Fix the Broken Program | Bugs 1–3 | Fix the Broken Program |
+| 🧩 Puzzle of the Week | Parts 1–2, (a)–(k) | Puzzle of the Week |
+| 🤔 Think Deeper | T1, T2 | Think Deeper |
+| 🛠️ Build It | Parts 1–6 | Build It (the homework) |
+| 🎨 Draw It | — | Draw It |
+| 📊 Self-Check | 8 can-dos, 14 true/false | Self-Check |
 
-For each list of nearest neighbours (nearest first), give the prediction for `k = 1`, `k = 3` and `k = 5`.
+### Warm-Up
+
+**W1.** Because `X` has to come back as a **table** and `y` as a single **column**. The inner brackets are a *list of names*, and asking a table for a list of names gets a table back. One name gets one column.
+
+**W2.** `X.shape` = `(40, 3)` and `y.shape` = `(40,)`. Rows first, columns second; the lonely comma means "there is no second number".
+
+**W3.** Subtract, square, add up, square root.
+
+**W4.** The **function itself**, not the data. `iris.data` on it gives `AttributeError: 'function' object has no attribute 'data'`. The round brackets are what run it.
+
+**W5.** **`bpm`.** It is written in the hundreds while `minutes` is under six, and squaring turns that gap into an enormous one. Nothing about the songs made bpm important; the units did.
+
+*Teacher note:* W5 is Week 28's homework coming back. A student who says "because bpm is more important" has not yet absorbed the lesson of Week 28; it is worth one more sentence before Week 30, which is entirely about this.
+
+### Predict the Output
+
+**P1** (three committee sizes on six songs; mystery song at bpm 112, 4.0 minutes):
+
+```text
+k = 1  -> ['chill']
+k = 3  -> ['hype']
+k = 5  -> ['chill']
+```
+
+Two of the three agree, and the middle one disagrees with both of its neighbours. The six distances:
+
+| song | bpm | minutes | mood | distance |
+|---|---|---|---|---|
+| 0 | 68 | 4.2 | chill | 44.00 |
+| 1 | 72 | 5.1 | chill | 40.02 |
+| 2 | 76 | 4.6 | chill | 36.00 |
+| 3 | 148 | 3.1 | hype | 36.01 |
+| 4 | 152 | 3.4 | hype | 40.00 |
+| 5 | 160 | 2.8 | hype | 48.01 |
+
+Sorted nearest first: chill (36.00), hype (36.01), hype (40.00), chill (40.02), chill (44.00), hype (48.01). `k = 1`: chill, 1–0. `k = 3`: chill, hype, hype, so hype 2–1. `k = 5`: chill, hype, hype, chill, chill, so chill 3–2.
+
+**The pattern:** the mystery song sits almost exactly between the two groups, so every vote is a hundredth of a beat from flipping. The honest answer is "this song is between the two and the model cannot tell."
+
+**P2** (what `train_test_split` hands back):
+
+```text
+4
+(120, 4)
+(30, 4)
+(120,)
+(30,)
+```
+
+Line 1: it hands back **four** things, always in one fixed order (catch them with two names and you get `ValueError: too many values to unpack (expected 2)`). The two lonely commas belong to `parts[2]` and `parts[3]`, the two `y` piles. Order: `parts[0]` is `X_train`, `parts[1]` is `X_test`, `parts[2]` is `y_train`, `parts[3]` is `y_test`. Both X's first, then both y's.
+
+**P3** (two scores, one model; `k = 1`, two sepal columns):
+
+```text
+0.9416666666666667
+0.7333
+30
+```
+
+Report **0.7333, on 30 rows**, because it is the only one measured on flowers the model had never seen; the other is a memory test. The gap is 0.9417 − 0.7333 = **0.2083**, about 21 percentage points.
+
+*Why line 1 is not exactly 1.0:* two columns were thrown away, and sepal measurements alone cannot always tell the species apart. There are **15 pairs** of flowers in the whole table with identical sepals but different species (`(6.3, 2.5)` is both a versicolor and a virginica). A training flower whose zero-distance neighbour is its look-alike of the other species is marked wrong; on the full four columns `k = 1` scores exactly 1.0. Full credit is any answer that says "some flowers look identical on these two columns but have different species"; the counts (15 pairs, 16 training flowers involved, 7 wrong) are for your interest only. The workbook includes the confirming `clashing_sepals.py`, which prints `pairs of flowers with identical sepals but different species: 15`.
+
+**P4** (names in the wrong order):
+
+```text
+X_train (120, 4)
+y_train (30, 4)
+X_test  (120,)
+y_test  (30,)
+```
+
+It does **not** crash. The impossible shapes are `y_train` (`(30, 4)`, a table where `y` should be a single line) and `X_test` (`(120,)`, a line where `X` should be a table); the "train" pile now has 120 measurements and 30 answers. Python did not complain because four names is the right *number*; Python hands over its four things in its own fixed order and lets you call them anything. The line to add every time:
+
+```python
+print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
+```
+
+*Scoring the "/ 4" line:* the student's own count. The usual miss is predicting a crash. Treat that as the useful mistake it is and ask why it would crash.
+
+### Practice Set A
+
+**A1 — the vote on paper.**
 
 | # | Neighbours, nearest first | k = 1 | k = 3 | k = 5 |
 |---|---|---|---|---|
-| (a) | chess, chess, art, chess, art | chess | **chess** (2–1) | **chess** (3–2) |
-| (b) | art, chess, chess, chess, art | art | **chess** (2–1) | **chess** (3–2) |
-| (c) | hype, chill, chill, chill, hype | hype | **chill** (2–1) | **chill** (3–2) |
-| (d) | setosa, versicolor, versicolor, setosa, setosa | setosa | **versicolor** (2–1) | **setosa** (3–2) |
-| (e) | chill, chill, hype, hype, hype | chill | **chill** (2–1) | **hype** (3–2) |
+| a | chess, chess, art, chess, art | chess | **chess** (2–1) | **chess** (3–2) |
+| b | art, chess, chess, chess, art | art | **chess** (2–1) | **chess** (3–2) |
+| c | hype, chill, chill, chill, hype | hype | **chill** (2–1) | **chill** (3–2) |
+| d | setosa, versicolor, versicolor, setosa, setosa | setosa | **versicolor** (2–1) | **setosa** (3–2) |
+| e | chill, chill, hype, hype, hype | chill | **chill** (2–1) | **hype** (3–2) |
 
-**29.1(f) Which rows change their answer as `k` grows, and what do those rows have in common?**
-Rows (b), (c), (d) and (e); only (a) stays the same. In (b), (c) and (d) the closest neighbour is the odd one out — a single example of one class sitting nearest, with the other class in the majority just behind it. **That is exactly the situation a bigger `k` exists to protect you from:** one strange near neighbour should not be allowed to decide the answer on its own. Row (e) is the reverse: the two nearest agree, and going from `k = 3` to `k = 5` lets three farther neighbours outvote them — a reminder that a bigger `k` is not automatically wiser.
+**A1(f).** Rows (b), (c), (d) and (e) change; only (a) stays the same. In (b), (c) and (d) the closest neighbour is the odd one out, a single example of one class sitting nearest with the other class in the majority just behind it. **That is exactly the situation a bigger `k` exists to protect you from:** one strange near neighbour should not decide the answer alone. Row (e) is the reverse: the two nearest agree and going from `k = 3` to `k = 5` lets three farther neighbours outvote them, so a bigger `k` is not automatically wiser.
 
-**29.1(g) In (d), which answer would you trust, and why?**
-Honest answer: **setosa**, the `k = 5` answer, because three of the five nearest are setosa (including the very closest). But the fuller answer is worth writing: the 2nd and 3rd nearest are both versicolor, which is why `k = 3` says versicolor, so 3–2 is a genuinely close call and the right conclusion is *"this one is uncertain"* rather than *"this one is setosa"*. A model that reports a confident answer here is overstating what it knows.
+**A1(g).** **Setosa**, the `k = 5` answer, because three of the five nearest are setosa including the very closest. The fuller answer: the 2nd and 3rd nearest are both versicolor (which is why `k = 3` says versicolor), so 3–2 is a close call and the right conclusion is "this one is uncertain". A model that reports a confident answer here is overstating what it knows.
 
-**29.1(h) What happens with `k = 4` and neighbours chess, chess, art, art?**
-A **2–2 tie.** Scikit-learn breaks it by picking whichever class name comes first in sorted order — `art` before `chess`, so it says art. **Nothing about the data chose that.** Use an odd `k` with two classes.
+**A1(h).** A **2–2 tie.** Scikit-learn breaks it by taking whichever class name comes first in sorted order, `art` before `chess`, so it says art. Nothing about the data chose that. Use an odd `k` with two classes.
 
-### Page 29.2 — Six flowers, one mystery
+**A2 — four shapes that must add up.**
 
-The pre-computed distances from the mystery flower `(3.0, 1.0)`:
+| # | `X_train.shape` | `X_test.shape` | `y_train.shape` | `y_test.shape` |
+|---|---|---|---|---|
+| a | `(120, 4)` | `(30, 4)` | `(120,)` | `(30,)` |
+| b | `(142, 13)` | `(36, 13)` | `(142,)` | `(36,)` |
+| c | `(8, 2)` | `(2, 2)` | `(8,)` | `(2,)` |
+| d | `(455, 30)` | `(114, 30)` | `(455,)` | `(114,)` |
+| e | `(30, 3)` | `(10, 3)` | `(30,)` | `(10,)` |
+
+**A2(f).** `X_train` and `y_train` (both 120 in row a), and `X_test` and `y_test` (both 30), because every row of measurements needs exactly one answer. If those differ, `fit` refuses with `ValueError: Found input variables with inconsistent numbers of samples`.
+
+**A2(g).** The number of columns. `y` has no columns; it is a single line of answers, which is what the lonely comma in `(120,)` says.
+
+**A2(h).** Never trust your arithmetic; check with `len()`. 20% of 178 is 35.6 and sklearn rounds the test set **up** to 36; 20% of 569 is 113.8, rounded up to 114. A student who computed 35 or 113 is not bad at arithmetic; they assumed.
+
+**A3 — which calls see `y`?**
+
+| The call | Answer | The reason |
+|---|---|---|
+| `model.fit(X_train, y_train)` | sees `y` | That is how it learns; for kNN it copies both down |
+| `model.predict(X_test)` | does not | If it saw the answers there would be nothing to predict |
+| `model.score(X_test, y_test)` | sees `y` | It has to, to mark the guesses |
+| `train_test_split(X, y, ...)` | sees `y` | It cuts `y` into the same two piles as `X`, in the same order |
+
+**A3(e).** `predict`: the only one whose whole job disappears if it can see the answer. **A3(f).** Marking. `y_test` is the answer sheet inside the sealed envelope, used once at the end; the model never sees it.
+
+**A4 — find the bug.**
+
+| # | The fix |
+|---|---|
+| a | `n_neighbors=5`: American spelling, no `u` |
+| b | `model.predict([[3.0, 1.0]])`: double brackets, one row is still a table |
+| c | Catch all four: `X_train, X_test, y_train, y_test = ...` |
+| d | `model.fit(X_train, y_train)`: the matching `y`, not the other one |
+| e | `from sklearn.neighbors import KNeighborsClassifier`: models live in rooms |
+| f | `from sklearn.model_selection import train_test_split`: right function, wrong room |
+| g | Add `random_state=42` (any fixed whole number) |
+| h | Split first, then `fit(X_train, y_train)` and `score(X_test, y_test)` |
+
+**A4(i).** **(g) and (h)**, the two that run without an error. **A4(j).** (g): the accuracy changes every run, so you cannot tell whether your change or the shuffle moved it. (h): the score comes back suspiciously high (with `k = 1`, exactly 1.0, because every flower's nearest neighbour is itself at distance zero). The symptom of this bug is a perfect result, which is why it is the dangerous one.
+
+**A5 — the three boxes.**
+
+| Slot | Answer |
+|---|---|
+| Box 1 | `fit`: given `X` and `y`, gives nothing back |
+| Box 2 | `predict`: given `X` only, gives one guess per row |
+| Box 3 | `score`: given `X` and `y`, gives back one number |
+| Sees the answers? | 1: yes · 2: no · 3: yes, to mark |
+
+**A5(a).** make, then fit, then use. Call `predict` before `fit` and you get `sklearn.exceptions.NotFittedError: This KNeighborsClassifier instance is not fitted yet.` **A5(b).** `fit`: for kNN it writes the training table down and stops. All the work happens in `predict`, which is why `fit` is instant and `predict` is the slow part.
+
+**A6 — reading the traceback** (`ValueError: Expected 2D array, got 1D array instead`).
+
+- One sentence of error: **three** lines, from `ValueError: Expected 2D array` to the end of the `reshape` advice; sklearn's messages wrap.
+- "2D" means a table (rows and columns); "1D" means a single line of numbers.
+- Your own line is the one with your own filename, `File "/Users/you/project/first_model.py", line 18`: one line out of nine.
+- Why insist on a table: `predict` is built to answer thousands of questions in one call, so one question is a table with a single row. Outer brackets say "here is a table", inner ones say "here is the one row".
+- Why two `reshape` options: sklearn genuinely cannot know whether `[3.0, 1.0]` is one row of two measurements or two rows of one. A library that refuses to guess is doing you a favour.
+- The fix: `guess = model.predict([[3.0, 1.0]])`
+
+### Practice Set B
+
+**B1.** `model = KNeighborsClassifier(n_neighbors=7)`. At this point it knows **nothing**: an empty machine with a dial set to 7.
+
+**B2.** The three-line program (the class's six flowers and the mystery flower at `(3.0, 1.0)`, `k = 3`):
+
+```python
+# six_flowers.py
+# Three lines of scikit-learn, and one mystery flower.
+
+import numpy as np
+from sklearn.neighbors import KNeighborsClassifier
+
+six = np.array([[1.4, 0.2],
+                [1.4, 0.2],
+                [1.3, 0.2],
+                [4.7, 1.4],
+                [4.5, 1.5],
+                [4.9, 1.5]])
+names = np.array(["setosa", "setosa", "setosa",
+                  "versicolor", "versicolor", "versicolor"])
+
+model = KNeighborsClassifier(n_neighbors=3)   # 1. make it
+model.fit(six, names)                         # 2. fit it
+guess = model.predict([[3.0, 1.0]])           # 3. predict it
+
+print("the model guesses:", guess)
+```
+
+```text
+the model guesses: ['versicolor']
+```
+
+The answer comes back in square brackets because `predict` gives one answer per row asked about; `guess[0]` gets the string out alone.
+
+*Teacher-only, the lesson's hand vote on the same six flowers.* The distances from `(3.0, 1.0)`, nearest first, which is the list to hand over if the arithmetic is the blocker (see Differentiation):
 
 ```
 1.58  versicolor
@@ -1236,12 +1421,7 @@ The pre-computed distances from the mystery flower `(3.0, 1.0)`:
 1.96  versicolor
 ```
 
-**29.2(a) k = 1, 3, 5.** versicolor · versicolor · **setosa**.
-
-**29.2(b) How many distances did the model measure to answer one question?**
-Six — one to every training flower. It measures the distance to **every** stored row, every single time, and then sorts. That is why `fit` is instant and `predict` is the slow part.
-
-**29.2(c) Confirm it in code.**
+`k = 1, 3, 5` gives versicolor, versicolor, **setosa**. The model measures all **six** distances to answer one question; that is why `fit` is instant and `predict` is the slow part. The two 1.79s are two different flowers (rows 0 and 1 of iris have identical petal measurements `(1.4, 0.2)`): two rows can be the same point without being the same thing. Confirm it in code:
 
 ```python
 # check_page_292.py
@@ -1265,44 +1445,45 @@ k = 3  -> ['versicolor']
 k = 5  -> ['setosa']
 ```
 
-Matches the hand vote on all three. ✅
+**B3.** Cut the deck and check the arithmetic:
 
-**29.2(d) Two of the six distances are identical (1.79 and 1.79). Are they the same flower?**
-No. They are two different flowers that happen to sit the same distance away — rows 0 and 1 of iris have identical petal measurements `(1.4, 0.2)` but they are two separate plants. **Two rows can be the same point without being the same thing.** It matters here because with `k = 3` the third place is shared by these two equidistant flowers, so the model has to pick one of them (harmless here, since both are setosa) — two flowers it genuinely cannot tell apart.
+```python
+# split_it.py
+# Cut the deck, and prove the row counts add back up.
 
-### Page 29.3 — The deck and the envelope
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
 
-**29.3(a) 50 cards, 20% held back. How many in the envelope? How many to train on?**
-10 in the envelope, 40 to train on. 40 + 10 = 50.
+iris = load_iris()
+X = iris.data
+y = iris.target
 
-**29.3(b) Why shuffle before cutting?**
-Because the data may be sorted. The iris file has all fifty setosa first, then all fifty versicolor, then all fifty virginica. Cut the last 20% off *that* without shuffling and your test set is thirty virginica and nothing else — so your score tells you how the model handles virginica and nothing whatsoever about the other two species. Shuffling is not tidiness; it is what makes the test pile representative.
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
 
-**29.3(c) What is written on the envelope, and why the signature?**
-The row count and the date. The signature is across the flap so that opening it leaves evidence. **The person the signature is protecting you from is yourself** — nobody else wants to peek.
+print("whole table :", X.shape)
+print("train pile  :", X_train.shape, " answers:", y_train.shape)
+print("test pile   :", X_test.shape, " answers:", y_test.shape)
+print()
+print("len(X_train) =", len(X_train))
+print("len(X_test)  =", len(X_test))
+print("120 + 30 =", len(X_train) + len(X_test))
+```
 
-**29.3(d) Somebody opens the envelope, looks, changes the model, and reseals it. What have they lost?**
-The only honest number they had. Those ten cards are no longer data the process has never seen — they influenced a decision, so they have taught the model something. Whatever score they now produce is optimistic, and by an unknown amount. **The damage is not that the score is wrong. It is that you no longer know how wrong.**
+```text
+whole table : (150, 4)
+train pile  : (120, 4)  answers: (120,)
+test pile   : (30, 4)  answers: (30,)
 
-### Page 29.4 — Four shapes that must add up
+len(X_train) = 120
+len(X_test)  = 30
+120 + 30 = 150
+```
 
-| # | Whole table | `X_train.shape` | `X_test.shape` | `y_train.shape` | `y_test.shape` |
-|---|---|---|---|---|---|
-| (a) | 150 rows, 4 columns, 20% test | `(120, 4)` | `(30, 4)` | `(120,)` | `(30,)` |
-| (b) | 178 rows, 13 columns, 20% test | `(142, 13)` | `(36, 13)` | `(142,)` | `(36,)` |
-| (c) | 10 rows, 2 columns, 20% test | `(8, 2)` | `(2, 2)` | `(8,)` | `(2,)` |
-| (d) | 569 rows, 30 columns, 20% test | `(455, 30)` | `(114, 30)` | `(455,)` | `(114,)` |
-| (e) | 40 rows, 3 columns, 25% test | `(30, 3)` | `(10, 3)` | `(30,)` | `(10,)` |
+Why compute the last line instead of typing 150? A typed 150 would still say 150 if the split had gone wrong. A check that cannot fail is not a check.
 
-*(Note on (b): 20% of 178 is 35.6, and sklearn rounds the test set **up** to 36. And on (d): 20% of 569 is 113.8, rounded up to 114. If a student computes 35 or 113 and is puzzled, that is the reason — always check with `len()` rather than trusting your arithmetic.)*
-
-**29.4(f) Which two shapes must have the same first number, and why?**
-`X_train` and `y_train` (both 120), and `X_test` and `y_test` (both 30). Because every row of measurements needs exactly one answer. If those numbers ever differ, `fit` will refuse with `Found input variables with inconsistent numbers of samples`.
-
-**29.4(g) Which number never appears in `y`'s shapes at all?**
-The number of columns. `y` has no columns — it is a single line of answers. That is what the lonely comma in `(120,)` is telling you.
-
-### Page 29.5 — The full cycle on iris
+**B4.** The full cycle, both scores (also the model answer to Build It Part 2):
 
 ```python
 # iris_full_cycle.py
@@ -1339,21 +1520,169 @@ len(X_test) = 30
 the gap    : -0.0333
 ```
 
-**Mark for:** both scores printed, `len(X_test)` printed, `random_state=42` present, `fit` called on the training pile only. A student whose numbers differ has almost certainly forgotten `random_state` — that is the first thing to check.
+The gap is negative: the held-back score came out higher. With thirty test flowers each is worth 3.3 percentage points, so that is one flower's worth of luck. **Mark for:** both scores printed, `len(X_test)` printed, `random_state=42` present, `fit` called on the training pile only. A student whose numbers differ has almost certainly forgotten `random_state`; check that first.
 
-### Page 29.6 — Explain the gap
+**B5.** Every odd `k` from 1 to 25 on the two sepal columns (`choose_k.py`: the same split as B4 but `X = iris.data[:, 0:2]`, looping `for k in range(1, 26, 2)` and keeping the best test score). Real output:
 
-**29.6(a) Two sentences on the gap.** Full-credit model answer:
+```text
+k =  1   train = 0.9417   test = 0.7333   gap = +0.2083
+k =  3   train = 0.8667   test = 0.7667   gap = +0.1000
+k =  5   train = 0.8250   test = 0.8000   gap = +0.0250
+k =  7   train = 0.8000   test = 0.7667   gap = +0.0333
+k =  9   train = 0.8083   test = 0.8000   gap = +0.0083
+k = 11   train = 0.8083   test = 0.7667   gap = +0.0417
+k = 13   train = 0.7750   test = 0.7667   gap = +0.0083
+k = 15   train = 0.7583   test = 0.8333   gap = -0.0750
+k = 17   train = 0.7833   test = 0.8333   gap = -0.0500
+k = 19   train = 0.7917   test = 0.8667   gap = -0.0750
+k = 21   train = 0.7917   test = 0.8667   gap = -0.0750
+k = 23   train = 0.7917   test = 0.8333   gap = -0.0417
+k = 25   train = 0.8083   test = 0.8667   gap = -0.0583
+
+best k on the held-back rows: 19 at 0.8667
+test rows: 30
+```
+
+The gap shrinks as `k` grows and then goes negative. At `k = 1` it is +0.2083 (twenty-one points of memory); by `k = 9` it is +0.0083 (one flower). Bigger committees cannot memorise: at `k = 1` the model copies its single closest neighbour, which on training rows is itself, whereas at `k = 19` nineteen flowers vote and no one flower can be memorised. The negative gaps at the end are still noise (30 test rows, 3.3 points per flower). *Marking note:* "best k = 19" is this split's answer only; `19` and `21` tie at 0.8667 and the loop keeps the first. Do not accept "19 is the best `k` for iris" as the conclusion.
+
+### Fix the Broken Program
+
+**Bug 1, the syntax error.** Did any of it run? **No.** There is no `Traceback` and nothing was printed; Python never started because it could not finish reading the file. The fix is to close the bracket after `random_state=42`:
+
+```python
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+```
+
+**Bug 2, the runtime error.** "Unexpected keyword argument" means "there is no setting by that name": the class refuses a named option it has never heard of rather than silently ignoring it. The spelling is not wrong in English; `neighbours` is correct English, but scikit-learn uses American English and wants `neighbors`. It is not the student's fault and it is permanent. Fix: `model = KNeighborsClassifier(n_neighbors=1)`.
+
+**Bug 3, the silent one.** The numbers (train 0.925, test 0.9, gap 0.025) look good because they came from a model that had already seen the test flowers. The line is `model.fit(X, y)`, which fits on all 150 rows, including the 30 in the envelope. The number that moved most is the **test** score: 0.9 (buggy) against 0.7333 (correct), which is 16.7 percentage points or five flowers. The train score barely moved (0.925 against 0.9417). One sentence for what the buggy version measured:
+
+> It was measuring how well the model could look up flowers it had already been given the answers to. Because `fit` saw all 150 rows, the 30 "held-back" flowers were in the model's notes, so scoring on them was a memory test dressed up as an exam.
+
+The fix: `model.fit(X_train, y_train)`. The general lesson: **`fit` gets the training pile and nothing else**, and a bug that raises your score gets shipped, while one that lowers it gets found.
+
+### Puzzle of the Week
+
+**Part 1, twelve flowers and one mystery** (petal length and width; mystery at 5.2, 1.7).
+
+**(a)** The four setosa rows have petal lengths of 1.3 to 1.5 and widths of 0.2, nearly four units away in the length column alone, so none can get into a top seven of anything. Skipping them is noticing, not laziness.
+
+**(b)** The eight that matter:
+
+| row | species | gaps | squares | total | distance |
+|---|---|---|---|---|---|
+| 50 | versicolor | −0.5, −0.3 | 0.25, 0.09 | 0.34 | **0.58** |
+| 51 | versicolor | −0.7, −0.2 | 0.49, 0.04 | 0.53 | **0.73** |
+| 52 | versicolor | −0.3, −0.2 | 0.09, 0.04 | 0.13 | **0.36** |
+| 65 | versicolor | −0.8, −0.3 | 0.64, 0.09 | 0.73 | **0.85** |
+| 100 | virginica | +0.8, +0.8 | 0.64, 0.64 | 1.28 | **1.13** |
+| 101 | virginica | −0.1, +0.2 | 0.01, 0.04 | 0.05 | **0.22** |
+| 102 | virginica | +0.7, +0.4 | 0.49, 0.16 | 0.65 | **0.81** |
+| 103 | virginica | +0.4, +0.1 | 0.16, 0.01 | 0.17 | **0.41** |
+
+**(c)** Sorted: 0.22 virginica · 0.36 versicolor · 0.41 virginica · 0.58 versicolor · 0.73 versicolor · 0.81 virginica · 0.85 versicolor · 1.13 virginica.
+
+**(d)** The votes:
+
+| `k` | Who votes | Tally | Answer |
+|---|---|---|---|
+| 1 | virginica | 1–0 | **virginica** |
+| 3 | virginica, versicolor, virginica | 2–1 | **virginica** |
+| 5 | virginica, versicolor, virginica, versicolor, versicolor | 2–3 | **versicolor** |
+| 7 | + virginica, versicolor | 3–4 | **versicolor** |
+
+**(e)** At `k = 5`. **(f)** Something like: "Not confident. The nearest neighbour is virginica, the second is versicolor, and they are 0.22 and 0.36 away. The answer flips as soon as the committee grows past three and even at `k = 7` the vote is only 4–3. The honest output is 'versicolor, but only just'."
+
+**(g)** Confirmed by code; all four match the hand vote:
+
+```python
+# puzzle_29.py
+import numpy as np
+from sklearn.neighbors import KNeighborsClassifier
+
+petals = np.array([[1.4, 0.2], [1.4, 0.2], [1.3, 0.2], [1.5, 0.2],
+                   [4.7, 1.4], [4.5, 1.5], [4.9, 1.5], [4.4, 1.4],
+                   [6.0, 2.5], [5.1, 1.9], [5.9, 2.1], [5.6, 1.8]])
+species = np.array(["setosa"] * 4 + ["versicolor"] * 4 + ["virginica"] * 4)
+
+for k in [1, 3, 5, 7]:
+    model = KNeighborsClassifier(n_neighbors=k)
+    model.fit(petals, species)
+    print(f"k = {k}  ->", model.predict([[5.2, 1.7]]))
+```
+
+```text
+k = 1  -> ['virginica']
+k = 3  -> ['virginica']
+k = 5  -> ['versicolor']
+k = 7  -> ['versicolor']
+```
+
+**Part 2, build a tie on purpose.**
+
+**(h)** Two chess and two art at `k = 4` is a 2–2 tie, broken by taking whichever class name comes first in sorted order (`art` before `chess`). That is a rule, not a reason; a tied prediction is a coin flip that Python is pretending was a decision. **(i)** Yes: with three classes `k = 3` can come out 1–1–1.
+
+**(j)**
+
+| Number of possible answers | Smallest `k > 1` that cannot tie |
+|---|---|
+| 2 | **3**: any odd `k` works, because two whole numbers adding to an odd number cannot be equal |
+| 3 | **There is no such `k`.** `k = 3` gives 1–1–1, `k = 6` gives 2–2–2, `k = 9` gives 3–3–3; odd `k` rules out only two-way ties (5 could be 2–2–1) |
+
+**(k)** Partial. Odd `k` fully solves it for two classes and only reduces it for three or more; the honest fixes then are to report how close the vote was, or have the model say "uncertain" when the top two are level.
+
+### Think Deeper
+
+**T1.** Model answer:
+
+> *If I train a kNN model on 5,000 patients and email it to a hospital, I have emailed them **the 5,000 records**. Not a summary, not a set of rules: the actual rows. `fit` copies `X_train` and `y_train` into the object and does nothing else, so opening the trained model is opening the table.*
+>
+> *And it is worse than that, because you do not need to open it. Somebody who can only **ask** the model questions can still work backwards: feed it a row, nudge one measurement and see when the answer flips. Every flip tells you roughly where a training row must be sitting, because the answer only changes when you cross the halfway point between two stored patients. Do that a few thousand times, systematically, and you can reconstruct an approximate map of where the real patients are, and an unusual patient is out on their own and very easy to locate.*
+>
+> *So deleting the row is **not enough.** The row is baked into every copy I have already sent, and I cannot recall fifty hospitals' files. To honour the deletion I would have to retrain from the reduced table and get all fifty hospitals to replace what they have, and I cannot force that. This is a real gap between what the law asks for and what the technology can do, and nobody has a clean answer to it.*
+>
+> *A decision tree throws the data away and keeps only a short list of yes/no questions, so sending a tree is sending rules, not records. **That is safer, but not safe**: the questions were chosen by looking at the patients, so an unusual patient can still leave a fingerprint in a very specific threshold. Less exposure, not zero.*
+
+**Marking note:** full marks needs (1) the literal answer stated plainly, (2) a concrete method for the query-only attack, (3) an explicit "no, deleting the row is not enough" with the reason, and (4) the tree comparison with the honest caveat.
+
+**T2.** Model answer:
+
+> *The score can move 27 points because `train_test_split` shuffles before it cuts, and with only 30 flowers in the test pile each flower is worth 3.3 percentage points. A different shuffle puts different flowers in the envelope, and 27 points is only about eight flowers being easier or harder. Nothing about the model changed. **The number was never that precise in the first place.***
+>
+> *What they did wrong is not lying. Every number is real. **What they did is choose their test after seeing the result**, picking the friendliest of ten splits, which turns "how it behaves on rows nobody has seen" into "the best case out of ten". The dishonesty is in the **selection**, invisible in the number itself.*
+>
+> *Two honest alternatives. **One: fix the seed before you look, and report that one number.** It costs you the chance to flatter yourself. **Two: run all ten and report the range (0.6333 to 0.9000) or the average.** It costs you a nice headline, because "somewhere between 63% and 90%" is a weaker claim than "90%", but it is the true one.*
+>
+> *What catches it in real life: ask them to run it on a fresh split, or better, on data collected after they finished. They cannot have shopped for a seed on data that did not exist yet.*
+
+**Marking note:** full marks needs (1) the arithmetic of why 30 rows is a short ruler, (2) explicit rejection of "they lied" with selection named as the fault, (3) two alternatives each with its cost stated, and (4) the fresh-split test. Spot checks on the three printed seeds (0 gives 0.6667, 4 gives 0.9000, 7 gives 0.6333) were re-run and match.
+
+### Build It (the homework)
+
+**Part 1, the physical split.** For a 52-card deck 20% is 10.4, so expect the student to round (10 in the envelope, 42 in the big pile, 10 + 42 = 52); for a 50-card set it is 10 and 40. Accept any pair that adds back to the counted deck. *Why shuffle (iris-specific):* the iris file is sorted by species, the first fifty rows all setosa, the next fifty versicolor, the last fifty virginica. Cut the last 20% off *that* without shuffling and the test pile is thirty virginica and nothing else, so the score says nothing about the other two species. Shuffling is what makes the test pile representative. *What you may do with the envelope:* open it **once**, at the very end. Open, look, change the model and check again, and it stops being data your process has never seen. The signature across the flap is a promise to yourself; the person it protects you from is you. If someone opens it, changes the model and reseals it, they have lost the only honest number they had, and not just a correct one: they no longer know *how wrong* it is.
+
+**Part 2, the full cycle.** Model answer is B4 above. The table filled in:
+
+| | Value | Row count |
+|---|---|---|
+| Score on the rows it studied | 0.9667 | 120 |
+| Score on the rows it had never seen | 1.0 | 30 |
+| **THE GAP** | −0.0333 | — |
+| One test flower is worth… | **3.3** percentage points | — |
+
+**Part 3, the two sentences.** Full-credit model answer:
 
 > The gap is −0.0333: the model actually scored *higher* on the thirty flowers it had never seen than on the hundred and twenty it studied, which sounds impossible but only means the thirty it was given happened to be easy ones. With only thirty test flowers each one is worth 3.3 percentage points, so a gap this size is one flower's worth of luck rather than evidence of anything.
 
-**29.6(b) Which number would you tell somebody?**
+And for "which number would you tell somebody":
 
-> The test score — 1.0000 on 30 rows — and I would always say "on 30 rows" out loud, because 100% on thirty flowers is a much smaller claim than 100% on thirty thousand.
+> The test score, 1.0000 on 30 rows, and I would always say "on 30 rows" out loud, because 100% on thirty flowers is a much smaller claim than 100% on thirty thousand.
 
-Mark this one hard on the row count. A student who writes "100%" with no denominator has missed the point of the whole week.
+**Mark the row count hard.** A student who writes "100%" with no denominator has missed the point of the week. The three self-checks in the workbook should read: names a number (yes), says the row count (yes), avoids "accurate" with no denominator (yes).
 
-**29.6(c) The `random_state=7` extra.**
+**Part 4, the `random_state=7` extra.**
 
 ```python
 # seed_change.py
@@ -1382,15 +1711,20 @@ random_state=42:  train 0.9667   test 1.0000   on 30 rows
 random_state=7:  train 0.9833   test 0.9000   on 30 rows
 ```
 
-Expected one-liner:
+| `random_state` | train score | test score | test rows |
+|---|---|---|---|
+| 42 | 0.9667 | 1.0000 | 30 |
+| 7 | 0.9833 | 0.9000 | 30 |
 
-> Changing nothing except where the deck was cut moved the test score from 1.0000 to 0.9000 — ten percentage points, which is three flowers — so a single accuracy from a single split is a much shakier number than it looks.
+Points moved: **10.0** percentage points; flowers: **three**. Expected one-liner:
 
-**29.6(d) Short questions.**
+> Changing nothing except where the deck was cut moved the test score from 1.0000 to 0.9000, ten percentage points or three flowers, so a single accuracy from a single split is a much shakier number than it looks.
+
+**Part 5, short questions.**
 
 | # | Question | Answer |
 |---|---|---|
-| i | What does `fit` do for a kNN model? | Writes the training table down. That is genuinely all — there is nothing else inside a fitted kNN. |
+| i | What does `fit` do for a kNN model? | Writes the training table down. That is genuinely all; there is nothing else inside a fitted kNN. |
 | ii | What does `predict` get given? | An `X` only. No answers. |
 | iii | What is `y_test` used for? | Marking the guesses. The model never sees it. |
 | iv | What does `random_state` do? | Fixes the shuffle, so the same cut happens every run and your result is reproducible. |
@@ -1398,6 +1732,33 @@ Expected one-liner:
 | vi | What happens if `k` equals the number of training rows? | Every row votes on every prediction, so the model always says the commonest class and has stopped looking at its input. On iris that scores about 0.30. |
 | vii | Why print `len(X_test)` next to the accuracy? | Because 100% on 30 rows and 100% on 30,000 rows are different claims wearing the same clothes. |
 | viii | The four names, in order. | `X_train, X_test, y_train, y_test`. Both X's, then both y's. |
+
+**Part 6, the Bug Log.** No fixed answer; mark for honesty and specificity. A good entry names the error message (or "none", for the silent bugs), the fix, and a concrete thing to check next time, such as "print all four shapes after the split".
+
+### Draw It
+
+There is no single right drawing. A good one has numbers on both piles that add back up to the whole (120 + 30 = 150) and three labelled arrows saying which pile each verb may touch. The tell that it is right: the `predict` arrow points at the test pile's **X** with something crossing out its **y**, and `score` touches both halves of the envelope. If all three arrows point at the same place, it has drawn the split without drawing the point of it. The tell that it is *good*: a note that each of the thirty rows is worth 3.3 percentage points.
+
+### Self-Check
+
+The eight can-do rows are self-rated, with nothing to mark. True or false:
+
+| Statement | Answer | Why |
+|---|---|---|
+| kNN works out rules while it is fitting | **FALSE** | `fit` writes the table down and stops; there are no rules inside it |
+| For kNN, `fit` is fast and `predict` is slow | **TRUE** | The opposite of most models; `predict` measures the distance to every stored row |
+| Bigger `k` is always better | **FALSE** | At `k` = the number of training rows it always says the commonest class and scores about 0.30 |
+| `model.predict([3.0, 1.0])` works for one flower | **FALSE** | `ValueError: Expected 2D array, got 1D array instead`; one row is still a table |
+| `train_test_split` hands back four things | **TRUE** | Always four, always in the same order |
+| The order is `X_train, y_train, X_test, y_test` | **FALSE** | Both X's first: `X_train, X_test, y_train, y_test` |
+| Running the file again makes the model better | **FALSE** | Same arithmetic, same model; if the score changes, `random_state` is missing |
+| A training score of 1.0 means the model is excellent | **FALSE** | With `k = 1` every row is its own nearest neighbour |
+| `predict` is allowed to see `y` | **FALSE** | If it could, there would be nothing to predict |
+| Without `random_state` you get a different score every run | **TRUE** | Different shuffle, different cut, different score |
+| A test score higher than the train score means something is broken | **FALSE** | On 30 test rows it is one flower's worth of luck |
+| `n_neighbours` is the correct spelling for scikit-learn | **FALSE** | It wants `n_neighbors` |
+| The test set is a second thing to train on | **FALSE** | `X_train` and `y_train` go into `fit`, `X_test` into `predict`, and `y_test` only ever marks |
+| Hiding 20% of your rows is wasteful | **FALSE** | 120 rows and 150 rows make nearly identical models, and a model whose accuracy you cannot honestly measure is worth nothing |
 
 ### Lesson questions posed in the Say-this scripts
 

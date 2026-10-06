@@ -12,6 +12,7 @@ invariants in levels/PRESENTATION-SPEC.md:
      no trailing spaces, no 3+ blank lines.
 
 Usage:   python3 levels/polish_check.py FILE [FILE ...]        (baseline: git HEAD)
+         python3 levels/polish_check.py --hygiene-only FILE ...  (hygiene rules only, no baseline)
          python3 levels/polish_check.py --base REF FILE ...    (baseline: any git ref)
 Prints 'OK' per clean file; exit status 1 if any file has a FAIL.
 """
@@ -112,7 +113,9 @@ def check(path, ref):
             fails.append(f"line {n}: three or more consecutive blank lines")
             break
     # ---- against baseline
-    old = base_text(rel_to_repo(path), ref)
+    old = base_text(rel_to_repo(path), ref) if ref else None
+    if old is None and ref is None:
+        return fails, warns
     if old is None:
         warns.append("no committed baseline; invariants not compared")
         return fails, warns
@@ -147,7 +150,9 @@ def check(path, ref):
 
 def main(argv):
     ref = "HEAD"
-    if argv and argv[0] == "--base":
+    if argv and argv[0] == "--hygiene-only":
+        ref, argv = None, argv[1:]
+    elif argv and argv[0] == "--base":
         ref, argv = argv[1], argv[2:]
     if not argv:
         print(__doc__)

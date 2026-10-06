@@ -15,7 +15,7 @@
 | **New maths** | **None new.** Today practises the mean, the subtraction and the division from Week 4, plus one honest reading of a fourth decimal place. |
 | **New syntax** | `FunctionTransformer(add_features)` · `pd.cut(s, bins=[...], labels=[...])` · `df.assign(new=...)` · `pipe.get_feature_names_out()` |
 | **Dataset** | The numpy-generated pizza-delivery table from Week 1 (`make_data.py`, seed 0) |
-| **Materials** | Graph paper or plain paper for the Invention Round · a whiteboard with room for a **six-row table** · printed workbook pages 5.1–5.6 · the Bug Log · **a timer** |
+| **Materials** | Graph paper or plain paper for the Invention Round · a whiteboard with room for a **six-row table** · the printed workbook (all sections, Warm-Up to Self-Check) · the Bug Log · **a timer** |
 | **Tech needed** | Laptop with Python 3, numpy, pandas, scikit-learn. `make_data.py` from Week 1 in the same folder. Nothing new to install. |
 | **Prep time** | 20 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | `look.py` about **1 second**. `ablation.py` fits six pipelines and finishes in about **1 second** — say so before you run it, because six models sounds slow and is not. |
@@ -465,13 +465,13 @@ True           294    93     35
 
 **Runtime: about 1 second.**
 
-**3. (8 min) Run the ablation.** Create `ablation.py` — the complete file is in the **🔑 Answer Key** under Page 5.5, and you should run it tonight and keep the output open in a second window during the lesson. It fits six pipelines in about **one second**.
+**3. (8 min) Run the ablation.** Create `ablation.py` — the complete file is in the **🔑 Answer Key** under **Class material → The class ablation table**, and you should run it tonight and keep the output open in a second window during the lesson. It fits six pipelines in about **one second**.
 
 The one number you must check: **row A is accuracy 0.7600, AUC 0.7752.** Those are Week 1's numbers exactly. If row A does not reproduce them, your split has drifted and every delta in the table is meaningless. Fix that before anything else.
 
 **4. (4 min) Print and set up.**
 
-- Workbook pages **5.1–5.6**.
+- The whole workbook, Warm-Up through Self-Check. The 🛠️ **Build It** section is the one that is marked.
 - **A six-row table drawn on the whiteboard, empty**, with the column headings already written: `variant · cols · accuracy · AUC · ΔAUC · verdict`. Leaving it visibly empty at the start of the lesson does real work.
 - Enough paper for the Invention Round — one sheet each, plus spares.
 - A timer. The Invention Round is **eight silent minutes** and it needs to actually be eight.
@@ -1206,17 +1206,17 @@ This section gives the wording for assigning the homework.
 
 **Say this:**
 
-> "About an hour. Three pages, and page 5.6 is the one I'm marking.
+> "About an hour. The workbook has a lot on it, and the section I'm marking is **Build It** — specifically the deletion notes in it.
 >
-> **Page 5.4 — build four derived features.** One ratio, one bin, one interaction, one flag. **They may not be the four we built in class.** Use the tables from `look.py` to find your evidence first — I want a sentence for each one saying which numbers made you think of it. And two rules: put every one of them inside `add_features`, and after any `pd.cut`, print `isna().sum()` and write down the answer. If it isn't zero, fix your first bin edge.
+> **Build It, first part — four derived features and their evidence.** One ratio, one bin, one interaction, one flag. **They may not be the four we built in class.** Use the tables from `look.py` to find your evidence first — I want a sentence for each one saying which numbers made you think of it. And two rules: put every one of them inside `add_features`, and after any `pd.cut`, print `isna().sum()` and write down the answer. If it isn't zero, fix your first bin edge.
 >
-> **Page 5.5 — the ablation table.** One row per feature. **One change per row, no exceptions** — if you add two features in one row you have learned nothing about either. Every row gets: the variant letter, the number of columns, the accuracy, the AUC, and the ΔAUC **to four decimal places**. Row A must reproduce 0.7600 and 0.7752 exactly. If it doesn't, stop and fix that before you do anything else, because every other number on the page is measured from it.
+> **Build It, second part — the ablation table.** One row per feature. **One change per row, no exceptions** — if you add two features in one row you have learned nothing about either. Every row gets: the variant letter, the number of columns, the accuracy, the AUC, and the ΔAUC **to four decimal places**. Row A must reproduce 0.7600 and 0.7752 exactly. If it doesn't, stop and fix that before you do anything else, because every other number on the page is measured from it.
 >
-> **Page 5.6 — and this is the marked one. Delete the ones that bought nothing, in writing.** For each deletion: the feature's name, what you thought it would do, the two AUC numbers, **the subtraction written out**, and one sentence saying why you are deleting it.
+> **Build It, third part — and this is the marked one. Delete the ones that bought nothing, in writing.** For each deletion: the feature's name, what you thought it would do, the two AUC numbers, **the subtraction written out**, and one sentence saying why you are deleting it.
 >
 > And I want at least one deletion. If all four of your features paid off, either you got lucky or something is wrong with your table — so in that case, delete the *weakest* one anyway and write down what it bought. A feature that buys +0.0002 is a column somebody has to maintain for ever in exchange for nothing."
 
-**Workbook pages:** 5.1, 5.2, 5.3 in class · **5.4, 5.5, 5.6** at home.
+**Workbook sections:** ✅ Warm-Up, 🔢 Do the Maths by Hand, 🔎 Predict the Output and ✍️ Practice Set A in class (or as a warm start) · **✍️ Practice Set B** and **🛠️ Build It** at home, with 🐞 Fix the Broken Program, 🧩 Puzzle of the Week, 🤔 Think Deeper, 🎨 Draw It and 📊 Self-Check as the extension for a student who has time. Every one of them is answered in the **🔑 Answer Key**, in the workbook's own order.
 
 **Expected time:** 20 min building the four features and checking the blanks · 15 min getting row A to match and running the table · 15 min writing the deletion notes · 10 min on the evidence sentences. **About 60 minutes.**
 
@@ -1226,9 +1226,429 @@ This section gives the wording for assigning the homework.
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone. **All code below was run; all output is real.**
+Every workbook section and every item in it is answered here, **in the order the workbook prints them**, so you can mark from this page alone. The workbook has no page numbers; it has **named sections**, and this key uses the same names and the same item labels (`W1`, `M2(b)`, `P3`, `A4(c)`, `B2`, `T1` ...). The values are the workbook's own Answers section, and every number was re-run or recomputed for this guide. **All code below was run; all output is real.**
 
-### Page 5.1 — Match the word to the thing
+| Workbook section | Where in this key | Homework? |
+|---|---|---|
+| ✅ Warm-Up (W1–W5) | Warm-Up | in class |
+| 🔢 Do the Maths by Hand (M1–M4) | Do the Maths by Hand | in class |
+| 🔎 Predict the Output (P1–P4) | Predict the Output | in class |
+| ✍️ Practice Set A — Read It (A1–A6) | Practice Set A | in class |
+| ✍️ Practice Set B — Write It (B1–B5) | Practice Set B | at home |
+| 🐞 Fix the Broken Program | Fix the Broken Program | at home |
+| 🧩 Puzzle of the Week | Puzzle of the Week | at home |
+| 🤔 Think Deeper (T1, T2) | Think Deeper | at home |
+| 🛠️ Build It — **the marked section** | Build It | at home |
+| 🎨 Draw It · 📊 Self-Check | Draw It · Self-Check | at home |
+| *(class-only material: vocabulary, the Invention Round sheet, the lesson's own four features and `ablation.py`)* | **Class material** at the end of this key | — |
+
+**One thing to keep straight.** The lesson builds `is_rush`, `hour_band`, `min_per_km`, `dist_x_weather` and `is_weekend`, and the workbook's maths, Set A and Puzzle all use those numbers. The **Build It** section asks for **four different features** (the model answer uses `is_big_order`, `dist_band`, `items_per_min`, `items_x_dist`), so a student's Build It table will *not* match the class table except for row A.
+
+### Warm-Up
+
+**W1.** The trailing underscore means **"I learnt this from data."** It does not exist before `.fit`, so printing it first gives `AttributeError: 'StandardScaler' object has no attribute 'mean_'` — the library saying *"I have not looked at any data yet."*
+
+**W2.** Min-max promised **every value lands between 0 and 1.** 120 is bigger than the largest value it was fitted on (92), so it comes out at 1.3077 — outside the box, with no warning.
+
+**W3.**
+
+```text
+restaurant  5 values -> 5 columns
+day_of_week 7 values -> 7 columns
+weather     3 values -> 3 columns
+                       --------
+                        15 new columns replacing 3 old ones
+```
+
+**W4.** The **order** → **right** (clear is safer than rain, which is safer than storm). The **spacing** → **wrong**: the clear→rain step and the rain→storm step are claimed equal, but they are 0.1056 and 0.1853, about 1.75 times apart.
+
+**W5.** `0  0  0  0  0`. `handle_unknown="ignore"` turns a crash into a row that says *"none of the restaurants I know about."*
+
+### Do the Maths by Hand
+
+**M1 — the subtractions** (the workbook prints five lines, under the heading "six").
+
+```text
+B − A :  0.7825 − 0.7752 = +0.0073
+C − A :  0.7815 − 0.7752 = +0.0063
+D − B :  0.7843 − 0.7825 = +0.0018
+E − D :  0.7829 − 0.7843 = −0.0014
+F − E :  0.7828 − 0.7829 = −0.0001
+```
+
+**Verdicts (Step 2):** B KEEP · C drop (gains less than B and costs three more columns) · D KEEP · E DELETE · F DELETE. Rounded to two places (Step 3): `0.01  0.01  0.00  0.00  0.00`.
+
+**M1(a).** **Two** different numbers on that line; **five** different decisions on the line above.
+**M1(b).** **Rounding a delta to two decimal places erases the answer.** The sign matters more than the size, and the sign lives in the fourth place.
+**M1(c).** Your `B − A` is +0.0073; the table's `d_auc` for B is 0.0074. **They do not match** — and that is intended.
+**M1(d).** **Round the printed result, never the inputs.** The full-precision AUCs are 0.7751639969 and 0.7825476735; their difference 0.0073836… rounds to 0.0074. By hand `D − B` gives +0.0018 and the machine's own delta is +0.0017. No verdict changes; a 0.0001 disagreement between pen and machine is not an error.
+
+> **🧑‍🏫 Marking tip.** A student who "fixes" their +0.0073 to +0.0074 to match the table has missed M1(d). Accept either value *if* the margin note says which numbers it came from.
+
+**M2 — the ratio.**
+
+| order | the arithmetic | min_per_km |
+|---|---|---|
+| 1 | 15.0 ÷ 3.28 | **4.5732** |
+| 2 | 12.9 ÷ 3.59 | **3.5933** |
+| 3 | 14.2 ÷ 3.15 | **4.5079** |
+| 4 | 4.9 ÷ 10.10 | **0.4851** |
+| 5 | 19.6 ÷ 2.83 | **6.9258** |
+
+**M2(a).** **Order 4** (0.4851): the road was long and the kitchen was quick — almost all of the time is travel, none of it is waiting. Neither column says that alone.
+**M2(b).** With the guard: 11.0 ÷ 0.5 = **22.0**. Without: 11.0 ÷ 0.00 = **inf** (a calculator says error or ∞), and `LogisticRegression` stops with `ValueError: Input X contains infinity or a value too large for dtype('float64')`. Any small constant works — **pick one and write down that you picked it.**
+**M2(c).** 12 ÷ 2.5 = **4.80**; 12 ÷ 9.5 = **1.2632**. The question: **"is the kitchen the bottleneck, or is the road?"**
+
+**M3 — the standard deviation of the six scores.**
+
+```text
+sum  = 4.6892          mean = 4.6892 ÷ 6 = 0.78153333...
+subtract (units of 0.0001): −63.3   +9.7   −0.3   +27.7   +13.7   +12.7
+square:                     4006.9  94.1    0.1   767.3   187.7   161.3
+add:        5217.4         divide by 6: 869.6        root: 29.49
+```
+
+**Standard deviation = 29.49 × 0.0001 = 0.002949** (numpy: 0.0029488227…).
+
+```text
+z of row A = (0.7752 − 0.781533) ÷ 0.0029488 = −2.1477
+z of row D = (0.7843 − 0.781533) ÷ 0.0029488 = +0.9382
+```
+
+**M3(a).** Row A sits **about 2.15 typical steps below the average** of the six runs — the furthest from the middle of the pack, which is what a baseline should be.
+**M3(b).** 0.2011 ÷ 0.0029 ≈ **69**. Next week's one leaky column is worth about seventy standard deviations of this week's whole honest table.
+
+**M4 — the group rates.**
+
+```text
+0.3682 − 0.2424 = 0.1258          1283 + 717 = 2000 ✅
+684 + 286 + 717 + 313 = 2000 ✅
+```
+
+**M4(a).** 0.2552 − 0.2383 = **0.0169**.
+**M4(b).** **One** real distinction (rush against everything else). **The flag wins**: +0.0074 for one column against +0.0063 for four.
+**M4(c).**
+
+```text
+0.5034 − 0.1765 = 0.3269        0.8571 − 0.3908 = 0.4663        0.4663 ÷ 0.3269 = 1.4264 ≈ 1.43
+```
+
+*"Distance is **1.43** times as costly in a storm as in the clear, which means adding two weights does not express it directly, because adding can only say **'both of these matter, by a fixed amount each'** — not 'this one matters more when that one is true.'"*
+
+### Predict the Output
+
+**P1.** Real output:
+
+```text
+edge at 9 : ['morning', 'morning', 'afternoon', 'rush', 'night']
+edge at 10: [nan, 'morning', 'afternoon', 'rush', 'night']
+blanks with edge 9 : 0
+blanks with edge 10: 1
+```
+
+`(9, 14]` = "bigger than 9, up to and including 14". **14 lands in `morning`**: a bin edge belongs to the band below it. With the first edge at 10, hour 10 is not bigger than 10, so it becomes `nan` — on the full table **47 rows of 2000, silently.**
+
+**P2.** Real output:
+
+```text
+bool
+[False, True, True, True, False]
+[0, 1, 1, 1, 0]
+how many rush hours: 3
+mean of the flag   : 0.6
+```
+
+`.between(18, 20)` is inclusive at both ends. `True` counts as 1 and `False` as 0 in arithmetic, so summing yes/no answers **counts the yeses**. The mean of a 0/1 column is **the fraction of rows that are 1** (3 of 5 = 0.6), which is why `groupby(flag)["late"].mean()` gives a *rate*.
+
+**P3.** Real output:
+
+```text
+df at the start        : (2, 2)
+after careful(df), df  : (2, 2)  out: (2, 3)
+after careless(df), df : (2, 3)  out: (2, 3)
+after df.assign(...), df: (2, 3)  d3: (2, 4)
+```
+
+**`careless` changed `df` itself** (no `d = d.copy()`, so `d` is the very same table). In an ablation, row A stops being raw after one call; by the sixth, every delta is measured from a moving number. No error, no warning.
+
+**P4.** Real output:
+
+```text
+X shape : (2000, 8)
+d shape : (2000, 10)
+block shape: (2000, 25)
+names shape: (25,)
+```
+
+```text
+numeric columns in NUM : 6   restaurant : 5   day_of_week : 7   weather : 3   hour_band : 4   -> total 25
+```
+
+`names shape` has one number because it is a flat list of 25 names, not a grid. **The column people forget is `is_rush`** (they predict 24, remembering row C of the class table, which had `hour_band` but no `is_rush`).
+
+### Practice Set A
+
+**A1.** feature engineering → **iv** · binning → **v** · ratio feature → **vi** · interaction feature → **iii** · ablation → **ii** · delta → **i**
+
+**A2.**
+
+```text
+df.shape                                      (2000, 10)
+X.shape                                       (2000, 8)
+add_features(X).shape                         (2000, 8)
+add_features(X, rush=True).shape              (2000, 9)
+add_features(X, rush=True, ratio=True).shape  (2000, 10)
+add_features(X, band=True)["hour_band"].shape (2000,)
+all five switches on                          (2000, 13)
+X.shape after all of the above                (2000, 8)
+```
+
+**A2(a).** `(2000,)` has **one** number: a single column is a flat list of 2,000 values, not a grid. **A2(b).** `d = d.copy()`.
+
+**A3.**
+
+| # | What happens | The fix |
+|---|---|---|
+| a | `ValueError: Bin labels must be one fewer than the number of bin edges` (five edges, three labels) | add a fourth label; count edges, subtract one |
+| b | **No error.** 47 rows silently become `NaN` | first edge **below** the minimum (`bins=[9, ...]`); then `print(int(s.isna().sum()))` |
+| c | Fine until a `distance_km` of 0, then `inf`, then `ValueError: Input X contains infinity ...` | `/ (d["distance_km"] + 0.5)`, and write down the constant |
+| d | `InvalidParameterError: The 'func' parameter of FunctionTransformer must be a callable or None. Got ...` — the brackets *called* the function | `FunctionTransformer(add_features, kw_args={"rush": True})` |
+| e | `KeyError: 'pre'` | use the exact stage name; `print(pipe.named_steps.keys())` |
+| f | `NotFittedError: This ColumnTransformer instance is not fitted yet.` | fit first; the names depend on the data |
+
+**A3(g).** **Line b.** 47 rows of an invented column quietly missing, which an imputer will fill with something plausible next week. **A3(h).** The habit is **printing something and counting it**: `print(int(s.isna().sum()))` after every `pd.cut` (line b), and `print(pipe.named_steps["prep"].get_feature_names_out())` (line f, and any delta of exactly 0.0000).
+
+**A4.** i → **R** · ii → **S** · iii → **Q** · iv → **T** · v → **P**
+**A4(a).** **S is `min_per_km`**, **P is `items_per_km`**; the shared denominator is `distance_km + 0.5`, the same guard on the same column.
+**A4(b).** All three zeros come from **`weather == "clear"` → 0.0**, so distance × 0 = 0: **rows 1, 4 and 5** (row 4 is the 9.60 km trip).
+**A4(c).** **R is the flag** (one column), **Q is the bin** (four). **The flag won in class:** +0.0074 for one column against +0.0063 for four.
+
+**A5.**
+
+| Report | Subtraction | Verdict | Note |
+|---|---|---|---|
+| 1 | 0.7747 − 0.7752 = **−0.0005** | DELETE | cost **three** columns (20 → 23) |
+| 2 | 0.7750 − 0.7752 = **−0.0002** | DELETE | identical accuracies settle **nothing**; AUC was chosen in Week 1 — read AUC |
+| 3 | 0.7861 − 0.7843 = **+0.0018** | KEEP | AUC decides (decided in Week 1); write down that accuracy disagreed |
+| 4 | 0.7756 − 0.7752 = **+0.0004** | DELETE (or "keep, retest in Week 11") | either is fine if the number is written down |
+
+**A5(a).** What changed is **what else was in the table**: raw columns in report 4, `is_rush` and `min_per_km` already present in report 3. "Is this feature good?" is a question about the feature *and the company it keeps* — hence one change per row and saying which row you measured against.
+
+**A6.** The figure's blanks, left to right:
+
+```text
+is_rush        : 12 is not between 18 and 20  ->  0
+hour_band      : 12 is in (9, 14]             ->  morning
+min_per_km     : 15.0 / (2.78 + 0.5) = 15.0 / 3.28 -> 4.5732
+dist_x_weather : clear -> 0, so 2.78 x 0      ->  0.00
+columns: 7 numeric + 15 one-hot = 22
+deltas : 0.7843 − 0.7825 = +0.0018 -> keep        0.7829 − 0.7843 = −0.0014 -> delete
+blank check with bins=[10, ...]: 47 out of 2000
+```
+
+**A6(b).** The **counts of columns** are the `7`, the `15` and the `22`; the **subtractions** are `+0.0018` and `−0.0014`. The `47` is neither — it is rows lost.
+
+### Practice Set B
+
+**B1.** Blanks: `.between`, `int`, `rush` (both groupbys), `"size"`, `"mean"`, and `iloc[1] − iloc[0]`.
+
+```text
+            size    mean
+order_hour              
+0           1283  0.2424
+1            717  0.3682
+the gap: 0.1258
+```
+
+**1283 + 717 = 2000.** The index is labelled `order_hour` because that is the name of the Series grouped by — confusing and harmless.
+
+**B2.** Full solution:
+
+```python
+def my_features(d, big=False, dband=False):
+    d = d.copy()
+    if big:
+        d["is_big_order"] = (d["items"] >= 5).astype(int)
+    if dband:
+        d["dist_band"] = pd.cut(d["distance_km"], bins=[0, 2, 5, 20],
+                                labels=["short", "medium", "long"])
+    return d
+```
+
+Expected output is the one printed in the workbook: `columns before: 10  after: 12`, the five-row preview, `blank dist_band values: 0 out of 2000`, `short 588 · medium 990 · long 422`, `counts add to: 2000`. **Three checks:** ten columns in and twelve out; zero blanks (first edge 0 is below the smallest distance, 0.33); 588 + 990 + 422 = 2000.
+
+**B3 / B5.** One program (`evidence.py`) does both; its output was re-run for this guide and matches:
+
+| candidate | group sizes | rates | spread | guess |
+|---|---|---|---|---|
+| `is_big_order` (items ≥ 5) | 1305 / 695 | 0.2582 / 0.3424 | 0.0842 | probably nothing |
+| `dist_band` (cut 2, 5) | 588 / 990 / 422 | 0.1480 / 0.2576 / 0.5521 | 0.4041 | worth a try |
+| `items_per_min` (cut 0.2, 0.4) | 770 / 868 / 362 | 0.2481 / 0.3180 / 0.2983 | 0.0699 | probably nothing |
+| `items_x_dist` (cut 6, 15) | 672 / 727 / 601 | 0.1577 / 0.2696 / 0.4542 | 0.2965 | worth a try |
+
+Every block prints `rows accounted for: 2000  blanks: 0`; the last two lines print `0.3682 - 0.2424 = 0.1258`. The core of the program is one list `CANDIDATES` of `(name, grouping)` pairs and one `for` loop using `df.groupby(grouping, observed=True)["late"].agg(["size", "mean"])`; the spread is `rates["mean"].max() - rates["mean"].min()`, and the guess is "worth a try" when the spread is 0.10 or more. Bin edges: `[0, 2, 5, 20]`, `[0, 0.2, 0.4, 3]`, `[0, 6, 15, 80]`.
+**B3(a).** Guesses as in the table above (they should be written **before** Build It is run).
+**B5(a).** **`is_big_order`** — with `pd.cut` you choose the edges and can roughly predict group sizes; with `items >= 5` the sizes are whatever the data gives (695 of 2000). The third block is also out of order (mid 0.3180 above high 0.2983): mostly noise, and it predicts the delete.
+
+**B4.** Real output:
+
+```text
+Z0  raw columns only   cols= 20  roc_auc=0.7752
+Z1  + is_big_order     cols= 21  roc_auc=0.7756
+0.7756 - 0.7752 = +0.0004
+```
+
+**B4(a).** `is_big_order` is a 0/1 **number**: it goes down the numeric branch and stays **one** column. `dist_band` is a category with three values and becomes **three**. A flag costs one column; a three-band bin costs three.
+
+> **🧑‍🏫 Marking tip.** B4's first line must say `0.7752`. If it does not, stop and fix the split before marking anything else on the set.
+
+### Fix the Broken Program
+
+**Bug 1 — runtime, line 29.** Four edges `(0, 10, 18, 45)` make **three** fields but only two labels were given. Fix: `labels=["fast", "normal", "slow"]`. Row A printing `0.7752` is the baseline check — do it first, always.
+
+**Bug 2 — dtype, line 54.** `prep_band` was put in the **numeric** list, so `SimpleImputer(strategy="median")` tried to take the median of words. The tell is the string `'normal'` in the error, which came from the student's own `labels=`. Fix: `b = score("B + prep_band", NUM, CAT + ["prep_band"], band=True)`. Rule: **a binned column is a category, however numeric its source.**
+
+**Bug 3 — silent logic, line 55.** `items_per_km` is created in `add_features`, but the `ColumnTransformer` is never told about it, so it is dropped. Tell: `cols= 23` on both row B and row C, and a delta of exactly `0.0`. Check: `print(pipe.named_steps["prep"].get_feature_names_out())` — `num__items_per_km` is absent. Fix: `c = score("C + items_per_km", NUM + ["items_per_km"], CAT + ["prep_band"], band=True, ratio=True)`.
+
+```text
+A raw                cols= 20  roc_auc=0.7752
+B + prep_band        cols= 23  roc_auc=0.7747
+C + items_per_km     cols= 24  roc_auc=0.7751
+delta B - A: -0.0005
+delta C - B: 0.0004
+```
+
+**Ranking, easiest to hardest: bug 1, bug 2, bug 3.** Bug 1 stopped the program on the guilty line and named the rule; bug 2 stopped the program but named a *value* rather than a column; bug 3 printed a normal-looking table and only the `cols` column and the suspiciously round `0.0` gave it away.
+
+**Was it a waste?** **No.** Both features bought essentially nothing (−0.0005, +0.0004) and that is a result: nobody maintains those two columns for three years. The waste would have been keeping both because they sounded sensible.
+
+### Puzzle of the Week
+
+| | shape | columns used | the formula |
+|---|---|---|---|
+| M1 | **FLAG** | `order_hour` | `order_hour.between(18, 20).astype(int)` — only row 5 (hour 20) is 1 |
+| M2 | **RATIO** | `prep_minutes`, `distance_km` | `prep_minutes / (distance_km + 0.5)` |
+| M3 | **BIN** | `order_hour` | `pd.cut(order_hour, bins=[9, 14, 17, 20, 23], labels=["morning", "afternoon", "rush", "night"])` |
+| M4 | **INTERACTION** | `distance_km`, `weather` | `distance_km × {clear: 0, rain: 1, storm: 2}` |
+| M5 | **INTERACTION** | `distance_km`, `driver_exp` | `distance_km × driver_exp` (13.9, 0.0, 87.45, 259.2, 81.55) |
+
+**Part 1(a).** M4's zeros (rows 1, 4, 5) come from the **weather** (clear = 0). M5's zero (row 2) comes from the **driver** (0 months of experience). Same printed value, two stories — check derived columns against the rows that made them.
+**Part 1(b).** Both describe **`order_hour`**: M1 is 1 exactly where M3 says `'rush'` (row 5) and 0 everywhere else. M1 is M3 with three of its four bands glued together.
+**Part 1(c).** Any row; e.g. row 5: 19.6 ÷ (2.33 + 0.5) = 19.6 ÷ 2.83 = **6.9258**.
+
+**Part 2.**
+
+```text
+B's AUC : 0.7752 + 0.0074 = 0.7826    (the table printed 0.7825)
+D − B   : 0.7843 − 0.7825 = +0.0018
+E's AUC : 0.7843 + (−0.0014) = 0.7829
+```
+
+The 0.7826 against 0.7825 is the M1(d) lesson again: working backwards from rounded numbers recovers the answer to about ±0.0001 and no better. Accept 0.7825 or 0.7826 if the student says so.
+**Part 2(a).** The bin cost **3** extra columns (21 → 24). It bought three separate band rates (0.2383, 0.2552, 0.2396) instead of one lumped 0.2424 — and those are within 0.017 of each other, so almost nothing real.
+**Part 2(b).** A delta of exactly 0.0000 means (1) **the column never arrived** (created but not listed in the `ColumnTransformer`), or (2) **it is an exact copy** of information already there (e.g. `distance_m = distance_km * 1000`). The line: `print(pipe.named_steps["prep"].get_feature_names_out())` — name missing → cause 1; name present → cause 2 (then `print(df[["new", "old"]].corr())`).
+
+### Think Deeper
+
+Both are model answers; mark on the ideas listed, not the wording.
+
+**T1.** A retrain updates weights but **cannot update the typed numbers 18 and 20**, so if rush hour moves to 17–19 the model quietly degrades and nobody knows why. Write the fact down in the **model card** under hard-coded assumptions (e.g. *"rush hour is 18:00–20:00 inclusive, from hourly lateness rates 0.3682 against 0.2424; recheck annually"*). Features or model? The useful test is **what updates automatically on retrain and what needs a human to notice** — the better question is "which parts of my system can a retrain fix?"
+
+**T2.** **Looks real** = the pattern shows in a table (0.4663 against 0.3269, a factor of 1.43, though the storm corner holds only 35 orders). **Worth its place** = the column improves the model. They differ because `distance_km` and the three one-hot weather columns were already carrying most of the pattern, and one more weight is estimated from the same 1,200 rows. Reply to "the story is right so it stays": *"the story is right and the column still has to earn its place; this one didn't, −0.0014"* — then ask **what number would change your mind** (a positive delta that survives cross-validation in Week 11). Keeping the deleted row is not clutter: it is the map that stops someone spending an afternoon reinventing it.
+
+### Build It
+
+**This is the marked section. A deletion note without a subtraction scores zero.** Every student's four features will differ, so mark on shape (see "What earns full marks" below). The model answer, re-run for this guide:
+
+**The evidence, first** (`evidence.py`):
+
+| # | feature | shape | rates | subtraction | guess |
+|---|---|---|---|---|---|
+| 1 | `is_big_order` = items ≥ 5 | FLAG | 0.2582 (1305) vs 0.3424 (695) | 0.3424 − 0.2582 = **0.0842** | probably nothing |
+| 2 | `dist_band` cut at 2 and 5 | BIN | 0.1480 / 0.2576 / 0.5521 | 0.5521 − 0.1480 = **0.4041** | worth a try |
+| 3 | `items_per_min` | RATIO | 0.2481 / 0.3180 / 0.2983 | 0.3180 − 0.2481 = **0.0699** | probably nothing |
+| 4 | `items_x_dist` | INTERACTION | 0.1577 / 0.2696 / 0.4542 | 0.4542 − 0.1577 = **0.2965** | worth a try |
+
+**Blank check after `pd.cut`: 0 blanks out of 2000.**
+
+**The ablation table** (about 1 second for all five fits):
+
+```text
+             variant  cols  accuracy  roc_auc   d_auc
+Z0  raw columns only    20    0.7600   0.7752  0.0000
+  Z1  + is_big_order    21    0.7550   0.7756  0.0004
+     Z2  + dist_band    24    0.7450   0.7718 -0.0034
+ Z3  + items_per_min    25    0.7475   0.7714 -0.0037
+  Z4  + items_x_dist    26    0.7500   0.7720 -0.0032
+```
+
+**The five subtractions, against the row above** (the workbook's heading says five; there are four new rows plus row A):
+
+```text
+Z1 − Z0 = 0.7756 − 0.7752 = +0.0004   keep? barely
+Z2 − Z1 = 0.7718 − 0.7756 = −0.0038   DELETE
+Z3 − Z2 = 0.7714 − 0.7718 = −0.0004   DELETE
+Z4 − Z3 = 0.7720 − 0.7714 = +0.0006   keep? barely
+```
+
+The table's `d_auc` column is measured against **row A**; the subtractions above are against the **row above**. Both are acceptable if the student ticks which (the "I measured my deltas against" box).
+
+**The finding:** `dist_band` had the **biggest** rate spread (0.4041, over three times the rush gap of 0.1258) and was the **worst** feature (−0.0038). Cutting distance into `bins=[0, 2, 3.5, 5, 20]` gives 0.1480, 0.2483, 0.2711, 0.5521 (588 + 588 + 402 + 422 = 2000): a **slope**, which one weight on `distance_km` (1.128 in D, the biggest) already draws. `order_hour` is a **hump** (…0.236, 0.196, 0.309 with 0.374, 0.375, 0.355 in the middle), which no straight line can draw. **Bin a hump, never a slope.**
+
+**Model deletion notes:**
+
+> **Feature:** `dist_band` — `distance_km` cut into short (≤2 km), medium (2–5 km), long (>5 km).
+> **What I thought it would do:** rates 0.1480 / 0.2576 / 0.5521, a spread of 0.4041, the biggest gap I found.
+> **AUC without it (Z1):** 0.7756 · **AUC with it (Z2):** 0.7718
+> **The delta:** 0.7718 − 0.7756 = **−0.0038**
+> **Why I am deleting it:** the rates climb steadily, so distance is a slope the model already draws with one weight; the bin cost three redundant columns.
+
+> **Feature:** `items_per_min` — `items / (prep_minutes + 0.5)`.
+> **What I thought it would do:** a fast kitchen making many pizzas is under pressure.
+> **AUC without it (Z2):** 0.7718 · **AUC with it (Z3):** 0.7714
+> **The delta:** 0.7714 − 0.7718 = **−0.0004**
+> **Why I am deleting it:** the evidence was already against it — spread 0.0699, and the middle group (0.3180) is later than the top (0.2983).
+
+**Honest caveat (smallest deletion):** −0.0004 on 400 validation rows is well inside the wobble of a 400-row measurement; retest with cross-validation in Week 11. −0.0038 is bigger and has a plausible reason, but is also one split.
+
+**The one that surprised me:** `dist_band` — biggest evidence spread, worst delta, because the spread came from a column the model already had as a straight line.
+
+**Bonus row** (a feature's worth depends on its company): on top of D, `is_big_order` gives **+0.0018** (`S0 D 22 cols 0.7843`, `S1 D + is_big_order 23 cols 0.7861`), against +0.0004 on top of raw columns.
+
+**The Bug Log — model entries:**
+
+| What I saw | What it means | Cause | Fix |
+|---|---|---|---|
+| `ValueError: Bin labels must be one fewer than the number of bin edges` | fence posts and fields don't match | 4 edges, 2 labels | count edges, subtract one |
+| A delta of exactly `0.0` and `cols` unchanged at 23, no error | the model never received my column | not added to the `ColumnTransformer`'s list | `print(pipe.named_steps["prep"].get_feature_names_out())` and count |
+
+**Checklist items to tick (10):** `order_id` 100955 first; one feature of each shape, **not the class four**; evidence sentence with two rates and a subtraction *before* any fit; all four inside one `add_features`; blank count printed and written down (even 0); **row A = 0.7600 / 0.7752**; one change per row; four decimal places with the baseline named; at least one deletion; two Bug Log entries (one loud, one silent).
+
+**What earns full marks:** the subtraction written out, both AUC numbers present, and a reason that refers to a number. **What does not:** "it didn't help", "the delta was tiny", or any note with no arithmetic line.
+
+> **🧑‍🏫 Marking note on the caveat.** A student who adds the Week 11 caveat unprompted has produced a level-5 answer. It is not required; point it out to the class, because "this number is too small to be sure about" is a professional habit almost nobody arrives with.
+
+### Draw It
+
+**Panel 1.** The line sits **through the middle, almost flat** — too high for the 0.196 at hour 22, far too low for the 0.375 at hour 19. The fitted `order_hour` weight is **+0.092** in the raw-columns model (−0.121 in model D), against `distance_km`'s 0.925 (1.128 in D).
+**Panel 2.** `is_rush`'s weight is **0.436**. The hour matters enormously; the hour *as a number* does not.
+**The 0.1258** should be written as `0.3682 − 0.2424 = 0.1258`: the subtraction is the evidence, the answer only the conclusion, and a reader can check it in four seconds.
+**If the rate climbed steadily** from hour 10 to 23, **panel 1 stops making sense** — the straight line would fit, nothing for a bin to rescue, and `is_rush` would throw information away. That is the `dist_band` result in advance.
+
+### Self-Check
+
+Every row should reach 😀 by the end of Build It. Four are worth being honest about:
+
+- *"say why the guard is there"* — "because a distance of zero gives `inf`, and `inf` stops `LogisticRegression` with `ValueError: Input X contains infinity`". "To avoid dividing by zero" is only half.
+- *"explain why `bins=[10, ...]` loses 47 rows silently"* — "`(10, 14]` means bigger than 10, and hour 10 is not bigger than 10".
+- *"read a delta of −0.0014 and delete my own idea because of it"* — the one row about character rather than knowledge. If they kept `dist_x_weather` anyway, 😕 honestly.
+- *"use `get_feature_names_out()` to find out why a delta was exactly 0.0000"* — "an exactly-zero delta means the column never arrived, not that it does nothing".
+
+### Class material
+
+The items below belong to the lesson itself, not to the workbook. They are kept because the live-code and wrap-up sections refer to them.
+
+#### Vocabulary — the six words
 
 | Word | Description |
 |---|---|
@@ -1239,7 +1659,7 @@ Every question restated, so you can mark from this page alone. **All code below 
 | **ablation** | Build the model with the feature, build it without, change nothing else, compare on the validation pile. |
 | **delta** | The difference between two scores. Written to four decimal places, because that is where the difference lives. |
 
-### Page 5.2 — Predict the output (answered in pen, in class)
+#### In-class predict-the-output (board questions a–f, not printed in the workbook)
 
 **(a)** `pd.cut(pd.Series([10, 14, 17, 18, 20, 23]), bins=[9,14,17,20,23], labels=["morning","afternoon","rush","night"])`. What comes out?
 
@@ -1280,7 +1700,7 @@ Hour 10 becomes blank, because it is not *bigger than* 10. On the full 2,000-row
 
 `is_rush` is **1** (20 is between 18 and 20 inclusive). `hour_band` is **rush** (20 is in `(17, 20]`).
 
-### Page 5.3 — The Invention Round sheet (in class)
+#### The Invention Round sheet (handed out in class, not in the workbook)
 
 There is no single right answer. **Marked on shape, not on cleverness.** A full sheet has five entries, each with a **name you could type** and a **one-line recipe from columns that exist**. Examples that earn full marks:
 
@@ -1294,7 +1714,9 @@ There is no single right answer. **Marked on shape, not on cleverness.** A full 
 
 **Not acceptable, and worth naming out loud:** anything using a column that does not exist (`driver_name`), anything that needs to see other rows (`this_restaurant's_average_lateness` — that is a cross-row statistic and it belongs nowhere near a `FunctionTransformer`), and anything using the answer (`was_late_last_time`). **That last one is next week's whole lesson** and a student who proposes it should get credit, not correction.
 
-### Page 5.4 — Build four derived features
+#### The lesson's four features — `add_features`, evidence sentences and the blank check
+
+These are the class features. The homework (**Build It**) asks for four *different* ones; this is the reference for the live-code section.
 
 The four from the lesson, in the complete function:
 
@@ -1342,7 +1764,7 @@ With `bins=[10, ...]` instead:
 blank hour_band values: 47 out of 2000
 ```
 
-### Page 5.5 — The ablation table
+#### The class ablation table — `ablation.py`
 
 **The complete, runnable file.** Save as `ablation.py` beside `make_data.py`.
 
@@ -1472,9 +1894,9 @@ num__distance_km, num__items, num__prep_minutes, num__order_hour, num__driver_ex
 | E − D | 0.7829 − 0.7843 = **−0.0014** | delete `dist_x_weather` |
 | F − E | 0.7828 − 0.7829 = **−0.0001** | delete `is_weekend` |
 
-### Page 5.6 — The deletion notes
+#### The class deletion notes
 
-**Deletion 1.**
+**Deletion 1 (class).**
 
 > **Feature:** `dist_x_weather` — `distance_km × weather severity`, with clear 0, rain 1, storm 2.
 >
@@ -1504,7 +1926,7 @@ num__distance_km, num__items, num__prep_minutes, num__order_hour, num__driver_ex
 
 > **🧑‍🏫 Marking note on the caveat.** A student who adds the Week 11 caveat to deletion 1 unprompted has produced a level-5 answer. It is not required, and you should point it out to the class if anyone does it, because "this number is too small to be sure about" is a professional habit and almost nobody arrives with it.
 
-### Every question posed in the lesson
+#### Every question posed in the lesson
 
 - *"Where did `is_rush` come from?"* → Somebody grouped by the hour and looked at fourteen lateness rates.
 - *"Read me the biggest three hours."* → 18, 19, 20 — 0.3738, 0.3745, 0.3553.

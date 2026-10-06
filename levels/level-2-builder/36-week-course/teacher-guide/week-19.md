@@ -13,7 +13,7 @@
 | **Big idea** | `axis=0` walks **down** a column and `axis=1` walks **across** a row — and picking the wrong one gives you a confident wrong answer. |
 | **New vocabulary** | axis · row · column · 2-D indexing · hand-check |
 | **New syntax** | `arr[1, 2]` · `arr[:, 0]` · `arr.mean(axis=0)` · `arr.sum(axis=1)` |
-| **Materials** | **Graph paper** (or a printed grid) · a pencil · **a calculator** — this is not optional today · printed workbook pages 19.1–19.6 · the Bug Log · a highlighter if you have one |
+| **Materials** | **Graph paper** (or a printed grid) · a pencil · **a calculator** — this is not optional today · the printed Week 19 workbook · the Bug Log · a highlighter if you have one |
 | **Tech needed** | Laptop with Python 3 and numpy working. Nothing new to install. `rainfall.py` is typed from scratch, so no earlier file is needed. |
 | **Prep time** | 20 minutes the night before · 5 minutes on the day |
 
@@ -356,7 +356,7 @@ python3 -c "import numpy; print(numpy.__version__)"
 
 If that fails, go back to Week 17's Prep Checklist and fix the install tonight. **This lesson has a good paper version, but the paper version is a fallback, not the plan.**
 
-- [ ] **Print workbook pages 19.1–19.6.**
+- [ ] **Print the Week 19 workbook** (Warm-Up through Self-Check).
 - [ ] **Find graph paper**, or print Figure 19.5's grid twice — once for you, once for them.
 - [ ] **Find a calculator and put it on the table.** A phone calculator is fine. The hand-check is not optional this week and "I'll do it in my head" is how a hand-check becomes a guess.
 - [ ] **Type and run the code yourself.** One file, `rainfall.py`. Type it; do not paste it — you want to have made a small mistake tonight rather than in front of them.
@@ -455,7 +455,7 @@ Kochi      1002 167.0
 
 - [ ] Editor open, terminal in the same folder. `rainfall.py` **deleted or renamed** — they type it.
 - [ ] Graph paper, pencil, **calculator** on the table before they sit down.
-- [ ] Workbook 19.1–19.3 out. **19.2's "how many answers?" column must be filled in before any code runs**, in pen.
+- [ ] Workbook out, open at Practice Set A. **A1's "how many numbers come out?" column must be filled in before any code runs**, in pen.
 - [ ] Bug Log out, with the *errors with no error message* section findable — there is a new entry today and it is a good one.
 - [ ] The Week 18 revisit list beside you. If it names something, spend the first five minutes of the Hook on it; this lesson has room.
 
@@ -644,7 +644,7 @@ Let them trace the January column.
 
 **Say this — part 5, and this is the design of the lesson:**
 
-> "Right. **Workbook page 19.2, in pen, before we touch the keyboard.**
+> "Right. **Workbook A1, in pen, before we touch the keyboard.**
 >
 > There are eight lines of code on that page. Next to each one, write **how many numbers you think will come out.** Not what the numbers are — just *how many.* One? Four? Six? Twenty-four?
 >
@@ -931,7 +931,7 @@ Full instructions in the next section. In the lesson flow:
 - **Minutes 2–8:** **row 1 and column 1, by hand, with the calculator.** Written in pen. Nobody touches a keyboard.
 - **Minutes 8–15:** the code confirms both. Every axis line gets a count printed under it.
 - **Minutes 15–18:** the corner check, three ways.
-- **Minutes 18–20:** the sentence for 19.6 gets started out loud, so nobody goes home with a blank page.
+- **Minutes 18–20:** the Build It sentence gets started out loud, so nobody goes home with a blank page.
 
 ---
 
@@ -939,7 +939,7 @@ Full instructions in the next section. In the lesson flow:
 
 ### Setup
 
-**On the table:** graph paper with the four-by-six grid drawn and filled in; a pencil; **a calculator**; workbook page 19.3 (the hand-check) and page 19.2 (the counts, already written in pen); the Bug Log.
+**On the table:** graph paper with the four-by-six grid drawn and filled in; a pencil; **a calculator**; the workbook's Build It pen-work section (the hand-check) and A1 (the counts, already written in pen); the Bug Log.
 
 **On the screen:** `rainfall.py` from the live-code, with room at the bottom.
 
@@ -988,7 +988,7 @@ If they can answer those two, they have already understood today's lesson and th
 
 *Four cities.*
 
-**Both written in pen, on page 19.3, before any code runs.** Then, and only then:
+**Both written in pen, in Build It's pen-work section, before any code runs.** Then, and only then:
 
 > "Now go and see whether the computer agrees with you."
 
@@ -1058,7 +1058,7 @@ On paper: add the four side-margin totals. Add the six bottom-margin totals. Bot
 
 None of these need syntax from a later week.
 
-1. **The second grid.** Workbook 19.5's step data — three friends down, five days across — with both directions, both counts, and one hand-check. Different shape, so the counts are 3 and 5 instead of 4 and 6, which is the point.
+1. **The second grid.** Workbook B5's step data — three friends down, five days across — with both directions, both counts, and one hand-check. Different shape, so the counts are 3 and 5 instead of 4 and 6, which is the point.
 2. **Make the two hand-checks disagree on purpose.** Have them change one number in the grid *on paper only* and not in the code, then run the check and watch it fail. Then ask the good question: *"which one is wrong — the paper or the code?"* (The paper, this time. Next time it might not be.)
 3. **Predict the whole output before running.** Not just the counts — the actual numbers, all ten of them, for `.mean(axis=0)` and `.mean(axis=1)`. Then run. This takes real work and it is enormously good for them.
 4. **Which single cell would you change to make Pune the wettest city?** Pune's total is 162 and Kochi's is 1002, so no single cell change can do it while cells stay realistic — the honest answer is *"you can't, and finding that out is the answer."* Then: *"which single cell would make Pune wetter than Chennai?"* (Chennai is 150 and Pune is 162, so Pune already is. Which is itself worth noticing — a student who assumed the top row was the biggest has learned something.)
@@ -1164,7 +1164,7 @@ What you should tell a 12-year-old, out loud: **"one hand-check, always, before 
 | What happens | Why | What to do right now |
 |---|---|---|
 | **"axis=0 means rows, so it gives me the rows"** — said confidently, all lesson | The name of the axis and the shape of the answer point in opposite directions, and the name is the thing they hear | Never let "axis 0 means rows" stand as a whole sentence. Insist on the full one, out loud, from them: *"axis 0 names the rows, so the rows get eaten, so I get one answer per column."* Then make them draw the six arrows. Words are losing this fight; arrows win it. |
-| The hand-check is done **after** the code and quietly matches it | A number on a screen is enormously persuasive, and the arithmetic bends to fit | Pen, not pencil, for the hand-check column. Collect page 19.3 before anybody runs anything if you have to. And say why out loud: *"a check you do afterwards isn't a check, it's agreeing."* |
+| The hand-check is done **after** the code and quietly matches it | A number on a screen is enormously persuasive, and the arithmetic bends to fit | Pen, not pencil, for the hand-check column. Collect the Build It pen work before anybody runs anything if you have to. And say why out loud: *"a check you do afterwards isn't a check, it's agreeing."* |
 | The wrong-axis bug is spotted by you, not by them | You could not bear the silence | Let the silence run. Count to five. Their job is to notice that four is not six; if you say it, the habit belongs to you and not to them. The Hook exists to make this noticing possible — go back to the board and point at "six numbers -> one per MONTH". |
 | `rain[1, 2]` is read as "second row, third column" and pointed at Chennai/February | English rows start at 1 | Do not give the rule again. Finger on the paper, count out loud from zero, both directions. Every single time an index gets written, for the whole lesson. It is tedious and it works. |
 | The grid takes fifteen minutes to draw and there is no lesson left | Twenty-four numbers with headers is real writing for a 12-year-old | Pre-draw it. Print Figure 19.5 and hand it over. **The drawing is not the lesson; the two margins are.** |
@@ -1294,33 +1294,42 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "About an hour, and the marking is mostly in two places.
+> "About an hour of core work, and the marking is mostly in three places.
 >
-> **First, page 19.4 — the rainfall grid, properly.** Type the grid, print the shape, and then print **both** directions: one mean per city and one mean per month. **Under every axis line, print the count.** If you print six numbers and label them 'per city', I'm going to circle it, because there aren't six cities.
+> **First, the Build It section — the rainfall grid, properly.** Type the grid, print the shape, and then print **both** directions: one mean per month and one mean per city. **Under every axis line, print the count, and say what it should be.** If you print six numbers and label them 'per city', I'm going to circle it, because there aren't six cities.
 >
-> **Second — and this is the part I'm actually marking — page 19.3's hand-check, in pen, before you run anything.** Row 1 by hand. Six numbers added up, divided by six. Write the answer down. Then, and only then, run the code and see if it agrees. If you do it the other way round you have learned nothing and I will be able to tell, because your handwriting will be too tidy.
+> **Second — and this is the part I'm actually marking — the pen work at the top of Build It, before you run anything.** Row 1 by hand. Six numbers added up, divided by six. Column 1 by hand. Four numbers added up, divided by four. Write both answers down. Then, and only then, run the code and see if it agrees. If you do it the other way round you have learned nothing and I will be able to tell, because your handwriting will be too tidy.
 >
-> **Third, page 19.5 — a grid that isn't mine.** Three friends, five days, step counts. Same two directions. **But the counts are different now** — three and five, not four and six — so you can't copy yesterday's numbers. Hand-check one row of it too.
+> **Third, Practice Set B — B1 to B5.** B5 is a grid that isn't mine: three friends, five days, step counts. Same two directions. **But the counts are different now** — three and five, not four and six — so you can't copy yesterday's numbers. Hand-check Cleo's row in B5(a).
 >
-> **Fourth, page 19.6 — one sentence.** How does the number of answers tell you which axis you used? One sentence, your own words, no code in it.
+> **Fourth, Fix the Broken Program.** Three bugs: one that stops the program before it starts, one that crashes halfway, and one that prints a tidy wrong answer. Tell me which is which.
 >
-> **And one last line at the bottom of 19.6.** Run the per-month line with the wrong axis on purpose. Write down what came out and what didn't happen."
+> **Fifth — one sentence.** At the end of Build It: how does the number of answers tell you which axis you used? Your own words, no code in it. And in your Bug Log, put the wrong-axis entry: what you saw, and what *didn't* happen."
 
-**Workbook pages:** 19.1, 19.2, 19.3 in class · **19.4, 19.5, 19.6** at home.
+**Workbook sections:** Warm-Up, Predict the Output and A1 in class (the counts are written in pen before any code) · **Build It, Practice Set B and Fix the Broken Program** at home. The rest — A2 to A6, the Puzzle of the Week, Think Deeper, Draw It and the Self-Check — is for the student who has time, or for the next sitting; mark it from the key below if it comes back.
 
-**Expected time:** 15 min on 19.4 · 10 min on the hand-checks in pen · 20 min on 19.5's new grid · 10 min on 19.6's sentence and the wrong-axis experiment. **About 55 minutes.**
+**Expected time:** 20 min on Build It's program and results tables · 10 min on the pen work · 15 min on B1–B5 · 10 min on Fix the Broken Program. **About 55 minutes for the core**, and the extras are on top of that.
 
-> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — is the count printed under every axis line?** Not once at the bottom: under each. **Two — is the hand-check in pen, and does it show the working?** `162 / 6 = 27.0` with the six numbers added out, not just `27`. **Three — does 19.6's sentence mention the labels?** The good sentence is something like *"I know how many answers to expect because I know how many cities I typed, so if the count is different I used the wrong axis."* A sentence that only says "axis 0 is rows" has not understood the week. The count is the check, and the count comes from the labels.
+> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — is the count printed under every axis line?** Not once at the bottom: under each. **Two — is the hand-check in pen, and does it show the working?** `162 / 6 = 27.0` with the six numbers added out, not just `27`. **Three — does the Build It sentence mention the labels?** The good sentence is something like *"I know how many answers to expect because I know how many cities I typed, so if the count is different I used the wrong axis."* A sentence that only says "axis 0 is rows" has not understood the week. The count is the check, and the count comes from the labels.
 
 ---
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Every question restated, so you can mark from this page alone. The answers follow the workbook's own section order and item labels (W1, P1, A1, B1, Bug 1, Part 1 …). Values are the ones in the workbook's Answers section; I re-ran every program and recomputed every number.
 
-### Page 19.1 — Point at the cell (paper, no computer)
+**Finding your way:** older copies of this guide cited "pages 19.1–19.6". The workbook has sections, not numbered pages, so:
 
-*The grid, for reference. Row and column numbers are Python's, so they start at 0.*
+| Old reference | Where it is in the workbook |
+|---|---|
+| "19.1 — point at the cell" | Practice Set A, A2 (and P2) |
+| "19.2 — how many answers?" | Practice Set A, A1 |
+| "19.3 — the hand-check" | Build It, *The pen work* and *The hand-check comparison* |
+| "19.4 — the rainfall grid" | Build It (the program and results tables) and Practice Set B, B1–B4 |
+| "19.5 — a second grid" | Practice Set B, B5 (three friends, five days) |
+| "19.6 — the count sentence and the wrong-axis experiment" | Build It, *The sentence being marked* and *The Bug Log*; P1 and A3(e) |
+
+The rainfall grid used throughout, for reference. Row and column numbers are Python's, so they start at 0.
 
 ```text
              col 0  col 1  col 2  col 3  col 4  col 5
@@ -1331,341 +1340,343 @@ row 2 Shimla    65     70     60     45     51    105
 row 3 Kochi     22     26     54    120    300    480
 ```
 
-**(a) What is `rain[0, 0]`?** `25` — Chennai, January. The top-left cell.
+### Warm-Up
 
-**(b) What is `rain[1, 2]`?** `10` — Pune, March. **Not** Chennai/February.
+**W1.** `[3, 8, 3, 8]` and `[ 6 16]`. `*` on a list repeats it (four items); `*` on an array multiplies every number (two items, twice as big). The count of items is the giveaway.
 
-**(c) What is `rain[2, 4]`?** `51` — Shimla, May.
+**W2.** `[0 1 2 3 4 5]` — **six** numbers, and the last is **5**, not 6. `arange(6)` stops *before* 6.
 
-**(d) What is `rain[3, 5]`?** `480` — Kochi, June. The bottom-right cell, and the wettest number on the page.
+**W3.** The dot means the values are **decimals** (`float64`); `0.` is zero stored as a decimal. `np.zeros` gives decimals unless asked otherwise.
 
-**(e) Write the index pair for Kochi in April.** `rain[3, 3]` → `120`. Kochi is the fourth city, so row 3; April is the fourth month, so column 3.
+**W4.** It **crashes**: `ValueError: operands could not be broadcast together with shapes (6,) (4,)`. That is good news: numpy refused instead of guessing. *(A student who says it "quietly adds the first four" has described the exact silent bug of this week — a good moment to point at it.)*
 
-**(f) Write the index pair for Chennai in June.** `rain[0, 5]` → `55`.
+**W5.** Any loop that cannot be done to everything at once: a loop that keeps asking for input until the answer is right; a loop that prints one formatted line per record; a loop that counts players per team (a dictionary job). The rule: **arrays do the maths, loops do the printing.**
 
-**(g) What is `rain[1, :]`?** Pune's whole row: `[ 2  4 10 20 36 90]`. Six numbers.
+### Predict the Output
 
-**(h) What is `rain[:, 0]`?** January for every city: `[25  2 65 22]`. Four numbers. **And it prints as a row**, even though it is a column, because four numbers with one direction have shape `(4,)`.
+**P1.** `axis=1` on the rainfall grid prints `[ 25.  27.  66. 167.]` and `(4,)`. The student should write: six months, **four** numbers came out, **nothing crashed**, and the answer is **not right** for a question about months. The first number, `25.0`, is **Chennai's average across all six months** — a correct answer to a question nobody asked. The fix is `axis=0`, giving `[ 28.5 27.5 32.25 50. 106.75 182.5 ]`, and January is **28.5**.
 
-**(i) Somebody writes `rain[1, 6]` to get June for Pune. What happens, and why?**
-`IndexError: index 6 is out of bounds for axis 1 with size 6`. There are six columns and they are numbered 0 to 5, so June is column **5**. The message also says *which* direction was overrun — `axis 1`, the columns.
+*Teacher's note:* this is the week's headline bug. A wrong answer of 25.0 is more dangerous than a wrong answer of 25000, because 25 mm is a believable amount of rain. Plausible wrong answers are the dangerous ones, which is why we count instead of eyeballing.
 
-**(j) In one sentence: why is "row 1" a dangerous phrase?**
-Because in English row 1 is the first row and in Python `rain[1]` is the **second** row — rows are numbered from 0. Say "row index 1" or point at the cell.
+**P2.**
 
-### Page 19.2 — How many answers? (predict in pen, before running)
+```text
+[4 5 6]
+[4 5 6]
+[2 5]
+5
+```
 
-*For each line, how many numbers come out?*
+Lines 1 and 2 are the same: `grid[1]` leaves the second position off and numpy assumes "all of them". Prefer `grid[1, :]` while learning, because the colon is *visible*. Line 3 is a column that prints sideways — correct, shape `(2,)`.
 
-| # | The line | How many | Why |
+**P3.**
+
+```text
+(3, 2)
+[ 90 120]
+[ 30  70 110]
+110
+210
+```
+
+Line 2 gives **2** numbers, line 3 gives **3**. In `arr.sum(axis=1)[2]`: **the `axis=1`** says *eat the columns*, so one total per row (three of them); **the `[2]`** says *hand me the third of those answers*: `110` (that is `50 + 60`). Change `[2]` to `[0]` and it is `30`.
+
+**P4.**
+
+```text
+[ 37.  74. 111.]
+[  2.  20. 200.]
+(3,) (3,)
+```
+
+**Three** numbers from each. **No — counting would not have caught a wrong axis**, because the grid is square and both directions give three. What would catch it is a **hand-check**: row 0 is `1 + 2 + 3 = 6`, `6 / 3 = 2.0`, so a `2.0` means the per-row version (`axis=1`); column 0 is `1 + 10 + 100 = 111`, `111 / 3 = 37.0`, so a `37.0` means the per-column version.
+
+Model sentence: *"Counting only works when the two counts are different. On a square grid they are the same, so the only check left is to work one answer out by hand and see which of the two it matches."*
+
+The "___ / 14" tally is the student's own count of answers predicted correctly across P1–P4; it is not marked.
+
+### Practice Set A
+
+**A1.** The grid is `(4, 5)`.
+
+| # | The line | How many | What it is about |
 |---|---|---|---|
-| (a) | `rain.shape` | **2** | A pair: rows then columns. `(4, 6)`. |
-| (b) | `rain[1, 2]` | **1** | One cell. `10`. |
-| (c) | `rain[1, :]` | **6** | One row, and a row is six months long. |
-| (d) | `rain[:, 0]` | **4** | One column, and a column is four cities tall. |
-| (e) | `rain.mean()` | **1** | No axis named, so nothing is left standing: one number for the whole grid. `71.25`. |
-| (f) | `rain.mean(axis=0)` | **6** | Names the rows, so the four rows are eaten; six columns survive. **One per month.** |
-| (g) | `rain.mean(axis=1)` | **4** | Names the columns, so the six columns are eaten; four rows survive. **One per city.** |
-| (h) | `rain.sum(axis=0)` | **6** | Same direction as (f). `.sum` and `.mean` behave identically. |
+| a | `runs.shape` | **2** | the size of the grid: `(4, 5)` |
+| b | `runs[2, 1]` | **1** | one cell — row 2, column 1: `45` |
+| c | `runs[2, :]` | **5** | one whole row — every match for player 2 |
+| d | `runs[:, 1]` | **4** | one whole column — match 1, every player |
+| e | `runs.mean(axis=0)` | **5** | one answer per **match** (the 4 rows got eaten) |
+| f | `runs.mean(axis=1)` | **4** | one answer per **player** (the 5 columns got eaten) |
+| g | `runs.mean()` | **1** | the average of all twenty numbers |
+| h | `runs.sum(axis=1).sum()` | **1** | the grand total via the four player totals |
 
-Real output, so you can mark against it:
+Real values: shape `(4, 5)`; `runs[2, 1]` is `45`; `runs[2, :]` is `[77 45 60 33 55]`; `runs[:, 1]` is `[12 22 45  5]`; `axis=0` gives `[35. 21. 45. 29. 25.]`; `axis=1` gives `[34. 16. 54. 20.]`; `runs.mean()` is `31.0`; the grand total is `620`.
+
+**A1(i).** **(c) and (e)** both give five, and mean completely different things: (c) is one player's five actual scores, (e) is five averages, one per match. *(Also acceptable: (d) and (f), both four.)* Same count, nothing else in common — counting is a check, not a proof.
+
+**A1(j).** **(e), `runs.mean(axis=0)`.** A match is a column, and columns survive when you eat the rows. It gives `[35. 21. 45. 29. 25.]`, so match 1 was the low-scoring one at 21.
+
+**A2.**
+
+| Expression | Value | Which cell |
+|---|---|---|
+| `rain[2, 3]` | **45** | Shimla in April |
+| `rain[3, 0]` | **22** | Kochi in January |
+| `rain[0, 5]` | **55** | Chennai in June |
+| `rain[3, 4]` | **300** | Kochi in May |
+| `rain[1, :][2]` | **10** | Pune in March |
+| `rain[:, 5][3]` | **480** | Kochi in June |
+
+**A2(g).** `rain[1, 2]` is easier to read and is what to write; `rain[1, :][2]` takes the whole row and then a third thing out of it, which is an extra step to hold in the head. One pair of brackets, one comma.
+
+*Watch for:* "row 1" said aloud. In English row 1 is the first row; in Python `rain[1]` is the **second**. Say "row index 1" or point at the cell.
+
+**A3.**
+
+| # | What is wrong | The fix |
+|---|---|---|
+| a | `.shape` is a fact, not an action; round brackets try to call it. `TypeError: 'tuple' object is not callable` | `rain.shape` |
+| b | June is column **5**; six columns are numbered 0 to 5. `IndexError: index 6 is out of bounds for axis 1 with size 6` (and "axis 1" says which direction was overrun) | `rain[1, 5]` |
+| c | The row position cannot be empty. `SyntaxError: invalid syntax` | `rain[:, 0]` |
+| d | A table has two directions, 0 and 1. `AxisError: axis 2 is out of bounds for array of dimension 2` | `axis=0` or `axis=1` |
+| e | **No error at all.** `axis=1` eats the columns, so answers are one per **city**: four numbers where six belong | `rain.mean(axis=0)` |
+| f | An array does not know its columns' names. `IndexError: only integers, slices ... are valid indices` | `rain[:, 0]`; named columns arrive in Week 21 |
+
+**A3(g).** **(e).** Both axes are legal averages, so numpy has nothing to complain about. You have to find it on purpose: **count the answers** against the count of labels you typed, and **hand-check one** on paper.
+
+**A4.** i → **R**, ii → **T**, iii → **Q**, iv → **S**, v → **P**.
+
+```text
+(2, 3)
+11200
+[4300 6600]
+[18600 27600]
+[17400 17900 10900]
+```
+
+**A4(f).** `P` has **3** numbers, `Q` has **2**. There are three columns, so a per-column answer has three numbers — that is `P`, from `axis=0`. `Q` is one whole column pulled out, `steps[:, 2]`. *(The workbook's "both have three... no, count them again" is a deliberate stumble; the point is to count.)* `Q` and `S` both have two numbers and mean different things — counting narrows it down and does not finish the job.
+
+**A5.** (Figure W19.1.)
+
+- **A** = **axis 0**, the direction running down the rows; naming it eats the rows.
+- **B** = **axis 1**, the direction running across the columns; naming it eats the columns.
+- **C** = one **cell**, `rain[1, 2]` — Pune in March, `10`.
+- **D** = the **side margin**: one answer per **row**, filled by `axis=1`.
+- **E** = the **bottom margin**: one answer per **column**, filled by `axis=0`.
+
+**A5(f).** **D has 4** boxes (one per city), **E has 6** (one per month). **A5(g).** **D is axis 1; E is axis 0.** That feels backwards, and it is the point: the margin running down the side is filled by naming axis 1, because naming an axis is how you get rid of it.
+
+**A6.**
+
+- **a)** `axis=0` names the **rows**, so the **rows** get eaten, so I get one answer per **column**.
+- **b)** `axis=1` names the **columns**, so the **columns** get eaten, so I get one answer per **row**.
+- **c)** A colon means **"every one of these, in this direction"**.
+- **d)** …I say **how many answers I expect** out loud.
+- **e)** …**it is the count of labels, and I typed the labels myself.**
+
+### Practice Set B
+
+**B1.** `print(rain[:, 0])` → `[25  2 65 22]`. The colon is first because you want every row and only column 0.
+
+**B2.**
+
+```python
+month_mean = rain.mean(axis=0)
+print("per month :", month_mean)
+print("how many? :", month_mean.shape, "- should be 6, one per month")
+city_mean = rain.mean(axis=1)
+print("per city  :", city_mean)
+print("how many? :", city_mean.shape, "- should be 4, one per city")
+```
+
+```text
+per month : [ 28.5   27.5   32.25  50.   106.75 182.5 ]
+how many? : (6,) - should be 6, one per month
+per city  : [ 25.  27.  66. 167.]
+how many? : (4,) - should be 4, one per city
+```
+
+**Mark:** the count line sits directly under *each* axis line, not once at the bottom, and it says what it *should* be.
+
+**B3.** `print(rain.sum(axis=0).sum(), rain.sum(axis=1).sum(), rain.sum())` → `1710 1710 1710`. All three add the same twenty-four numbers in different orders, so in numpy they always agree. That is why this line cannot catch a wrong axis or a mistyped number; it checks understanding of the two directions and, on paper, slips in the adding-up.
+
+**B4.**
+
+```python
+print("row 1 by hand : 162 / 6 = 27.0")
+print("row 1 by code :", rain[1, :].sum(), "/ 6 =", rain.mean(axis=1)[1])
+```
+
+```text
+row 1 by hand : 162 / 6 = 27.0
+row 1 by code : 162 / 6 = 27.0
+```
+
+The first line is text typed from the student's paper; the second is computed. The point: in three weeks they will not remember whether they checked.
+
+**B5.** Three friends by five days. Counts are **5 and 3**, not 6 and 4.
+
+```text
+shape  : (3, 5)
+friends: 3  days: 5
+steps[1, 2] = 6600
+steps[2, :] = [3100 4200 2800 5000 4400]
+steps[:, 0] = [ 6200 11200  3100]
+per day    : [6833.33333333 7366.66666667 4566.66666667 6700.         4466.66666667]
+how many?  : (5,) - should be 5, one per day
+per friend : [6040. 8020. 3900.]
+how many?  : (3,) - should be 3, one per friend
+corner check: 89800 89800 89800
+```
+
+The model program is in the workbook's Answers; the key lines are `steps.mean(axis=0)` (eat the 3 friends, 5 answers) and `steps.mean(axis=1)` (eat the 5 days, 3 answers). **A student whose count lines say "should be 6" and "should be 4" copied B2 instead of reading the shape** — that is the mistake this item is looking for.
+
+**B5(a).** Cleo is row 2, five days, so divide by five: `3100 + 4200 + 2800 + 5000 + 4400 = 19500`, then `19500 / 5 = 3900.0`, which matches the third number in `per friend`. ✔
+
+**B5(b).** **The count line under `per friend`.** `axis=0` there would print five numbers against a label saying "should be 3". *(The count line under `per day` catches the opposite slip: `axis=1` there prints three numbers labelled "should be 5".)*
+
+*Teacher's extra:* for the day means, the hand-check for column 1 (Tuesday) is `8100 + 9800 + 4200 = 22100`, `22100 / 3 = 7366.67`, dividing by **three** friends.
+
+### Fix the Broken Program
+
+**Bug 1 — line 17, syntax.** `print("October everywhere:", temps[, 3])`. Nothing else printed, not even `cities:`, because a `SyntaxError` is found before the program runs at all: Python reads the whole file first. The `^` sits at the comma because nothing is in front of it. **Fix:** `temps[:, 3]`.
+
+**Bug 2 — line 19, runtime.** `temps[0, 4]` → `IndexError: index 4 is out of bounds for axis 1 with size 4`. "axis 1" tells you which direction was overrun: the **columns**, not the rows. Four columns are numbered 0 to 3; July is the third month, column **2**. **Fix:** `temps[0, 2]`, which gives `35`.
+
+**Bug 3 — line 21, logic, no error.** `temps.mean(axis=1)` printed `[28.5  26.5  17.75]` and `(3,)` under the label "mean per month", but there are **four** months. `28.5` is Delhi's average across all four months. `axis=1` eats the columns, so answers are one per city. **Fix:** `temps.mean(axis=0)`.
+
+**Fully fixed output:**
+
+```text
+cities: 3  months: 4
+shape : (3, 4)
+October everywhere: [28 27 17]
+July in Delhi     : 35
+mean per month    : [18. 26. 29. 24.]
+how many?         : (4,)
+```
+
+**The last question — what to add to the `how many?` line.** The expectation, in words: `print("how many?         :", month_mean.shape, "- should be 4, one per month")`. The broken version then prints `(3,) - should be 4, one per month` and the mistake is impossible to miss. The old line printed `(3,)` and said nothing about whether 3 was right. **A check needs two things: what happened, and what should have happened.**
+
+*Hand-check for the fixed answer:* January is column 0, `21 + 24 + 9 = 54`, `54 / 3 = 18.0`. ✔
+
+### Puzzle of the Week
+
+**Part 1 — the reconstructed grid:**
+
+```text
+        col 0    col 1    col 2       row mean
+row 0   [ 4  ]  [ 10 ]  [ 16 ]          10.0
+row 1   [ 8  ]  [ 14 ]  [ 20 ]          14.0
+
+col     6.0     12.0     18.0
+mean
+```
+
+Working: column 0 has mean 6.0 over **two** rows, so its sum is 12 and `cell[1,0] = 12 - 4 = 8`. Column 1: sum `12 × 2 = 24`, so `cell[1,1] = 24 - 10 = 14`. Row 0: mean 10.0 over **three** columns, sum 30, so `cell[0,2] = 30 - 14 = 16`. Row 1: sum `14 × 3 = 42`, so `cell[1,2] = 42 - 22 = 20`. Check: column 2's mean is `(16 + 20) / 2 = 18.0`. ✔ Proof in code: `g.mean(axis=1)` → `[10. 14.]`, `g.mean(axis=0)` → `[ 6. 12. 18.]`, `g.mean()` → `12.0`.
+
+**Part 1(a).** *"A column mean is the column's total divided by the number of **rows**, and there are two rows — so multiplying the mean by 2 gave me the total, and taking the known cell away left the other one."* The trap: dividing by 3. A column mean divides by the number of rows; getting that backwards is the axis mistake in arithmetic clothes.
+
+**Part 1(b).** The grand mean is **12.0**, two ways: from the row means `(10 + 14) / 2 = 12.0`, from the column means `(6 + 12 + 18) / 3 = 12.0`. Both agree — the corner check on the margins. *(Averaging the row means works only because every row is the same length.)*
+
+**Part 2 — the impossible margins:**
+
+```text
+row sums:     10 x 3 = 30   and   20 x 3 = 60        their total: 90
+column sums:   5 x 2 = 10  ,  10 x 2 = 20  ,  20 x 2 = 40    their total: 70
+```
+
+A row mean covers three cells (multiply by 3); a column mean covers two (multiply by 2). **90 ≠ 70, so no grid can produce those margins** — both routes add the same six numbers.
+
+**Part 2(a).** **The corner check**, done on margins somebody else gave you. In a real file `grid.sum(axis=0).sum()` against `grid.sum(axis=1).sum()` always matches, because both come from one array; the check only has teeth when the two sets of margins come from different places.
+
+**Part 2(b).** **No.** Row means alone are just numbers, and any numbers are possible row means. A check needs two independent routes to the same answer.
+
+### Think Deeper
+
+The workbook gives no model answer; these are open paragraphs. Mark against what each should contain.
+
+**T1.** Full marks: says that "my code ran" proves only that Python understood the line, **not** that the answer is the one wanted; names the new habits (say the expected count before pressing run, print the count under each axis line, hand-check one row or column); recognises that this week's mistake prints a tidy answer and no traceback. A paragraph that only says "be more careful" has not answered "what do you do differently".
+
+**T2.** Full marks: says the person who built the table owns recording what it means (that is you, and in March it will be you again); names a failure (not knowing which axis is cities, mixing mm and inches, assuming a year); and lists something concrete to write down — a comment naming each row and column, units, the source and the date, and the shape. Comments and a `cities` / `months` label array are exactly what the week models.
+
+### Build It
+
+**The pen work:** side margin **4** answers (one per city), bottom margin **6** (one per month). **Row 1 is PUNE** (row 0 is Chennai): `2 + 4 + 10 + 20 + 36 + 90 = 162`, `162 / 6 = 27.0` — six months in the row. **Column 1 is FEBRUARY** (column 0 is January): `10 + 4 + 70 + 26 = 110`, `110 / 4 = 27.5` — four cities in the column. The two divisors (6 and 4) are different and neither is a guess: a row mean divides by the number of columns, a column mean by the number of rows. **Mark the working, not the answer** — `27.0` with no addition shown is not a hand-check.
+
+*Why it matters that 27.0 and 27.5 are close:* a wildly wrong answer is easy to catch, a nearly right one is not — which is why the count matters more than how the number looks.
+
+**The program** is the workbook's `rainfall.py` (the complete listing is in the workbook's Answers). Real output:
 
 ```text
 shape : (4, 6)
+cities: 4  months: 6
 rain[1, 2] = 10
 rain[1, :] = [ 2  4 10 20 36 90]
 rain[:, 0] = [25  2 65 22]
 per month : [ 28.5   27.5   32.25  50.   106.75 182.5 ]
+how many? : (6,) - should be 6, one per month
 per city  : [ 25.  27.  66. 167.]
-month totals: [114 110 129 200 427 730]
-whole thing mean: 71.25
-```
-
-**19.2(i) Which two of these eight give the same count as each other, but answer different questions?**
-**(c) and (f)** both give six numbers. (c) is *Pune's six months* — real rainfall, one city. (f) is *six monthly averages* — one number per month, across all four cities. **Same count, completely different meaning**, which is exactly why counting is a *first* check and not the only one.
-
-*(Also acceptable: (d) and (g) both give four. One is January's four real values; the other is four city averages.)*
-
-**19.2(j) You wanted one answer per month and got four numbers. What went wrong?**
-The axis. `axis=1` was used instead of `axis=0`, so the columns were eaten and the answers came out one per **city**. Nothing crashed, because averaging per city is a perfectly legal thing to ask for.
-
-### Page 19.3 — The hand-check (in pen, before any code)
-
-**(a) Row 1. Which city is it?**
-**Pune.** Row 0 is Chennai, so row 1 is the second city.
-
-**(b) Add row 1 up, showing the working.**
-
-```text
-2 + 4 = 6
-6 + 10 = 16
-16 + 20 = 36
-36 + 36 = 72
-72 + 90 = 162
-```
-
-Total: **162**.
-
-**(c) What do you divide by, and why?**
-**Six**, because there are six months in the row.
-
-**(d) The mean of row 1.**
-`162 / 6 = ` **27.0**
-
-**(e) Column 1. Which month is it?**
-**February.** Column 0 is January.
-
-**(f) Add column 1 up, showing the working.**
-
-```text
-10 + 4 = 14
-14 + 70 = 84
-84 + 26 = 110
-```
-
-Total: **110**.
-
-**(g) What do you divide by, and why?**
-**Four**, because there are four cities in the column.
-
-**(h) The mean of column 1.**
-`110 / 4 = ` **27.5**
-
-**(i) Now run the code. Do both match?**
-
-```text
+how many? : (4,) - should be 4, one per city
+corner check: 1710 1710 1710
 row 1 by hand : 162 / 6 = 27.0
 row 1 by code : 162 / 6 = 27.0
 col 1 by hand : 110 / 4 = 27.5
 col 1 by code : 110 / 4 = 27.5
 ```
 
-Yes. **Mark the working, not the answer** — a student who wrote `27.0` with no addition shown has not hand-checked anything.
+**Mark:** `(4, 6)` shape line present; the `(6,)` sits under the per-month line and the `(4,)` under the per-city line; the two hand-check pairs agree; the corner check reads 1710 three times. Any `for` loops are for printing only.
 
-**(j) 27.0 and 27.5 are nearly the same number. Why is that worth noticing?**
-Because if you had mixed the two up, the answer would still have *looked* fine. A wrong answer that is wildly wrong is easy to catch. A wrong answer that is nearly right is the dangerous kind — and it is why the **count** matters more than the look of the number. Four answers can never be six answers, however plausible they are.
+**The results table:**
 
-**(k) What will you do if the pencil and the code disagree?**
-Find out which one is wrong. Neither is automatically right. Check the addition, then check that the grid you typed matches the grid on the paper, then check the axis and the count. *(Any answer that refuses to assume the computer is right gets full marks.)*
+| What you asked for | The line | How many came out | Should be | ✔ |
+|---|---|---|---|---|
+| the shape | `rain.shape` | 2 numbers | 2 | ✔ |
+| one cell | `rain[1, 2]` | 1 | 1 | ✔ |
+| one whole row | `rain[1, :]` | 6 | 6 (one per month) | ✔ |
+| one whole column | `rain[:, 0]` | 4 | 4 (one per city) | ✔ |
+| mean per **month** | `rain.mean(axis=0)` | 6 | 6 | ✔ |
+| mean per **city** | `rain.mean(axis=1)` | 4 | 4 | ✔ |
+| the whole-grid mean | `rain.mean()` | 1 | 1 | ✔ |
 
-### Page 19.4 — The rainfall grid, both directions
+**The hand-check comparison:** row 1 mean — pen 27.0, code 27.0, agree ✔; column 1 mean — pen 27.5, code 27.5, agree ✔.
 
-Complete working code, actually run:
+**If they disagreed:** do not trust the code, and do not assume the pen is right either. Add the numbers again slowly, check that the row added on paper is the row the code took (row 1 is Pune; if Chennai's row was added, the pen is wrong), then check the grid typed matches the paper, then the axis and the count. *(Any answer that refuses to assume the computer is right gets full marks.)*
 
-```python
-"""hw19.py - the rainfall grid, both directions, with the count printed every time."""
+**The corner check:** `rain.sum(axis=1).sum()` = 1710; `rain.sum(axis=0).sum()` = 1710; `rain.sum()` = 1710. All three the same: yes. All three add the same twenty-four numbers, so they cannot disagree.
 
-import numpy as np
+**Useful extras from the code:** city totals `[150 162 396 1002]`, month totals `[114 110 129 200 427 730]`. Wettest city Kochi (mean 167.0, total 1002); wettest month June (mean 182.5, total 730). June's mean (182.5) exceeds Kochi's (167.0) and that is not a contradiction: June is averaged over four cities, with Kochi's 480 pulling it up; Kochi is averaged over six months, with a 22 mm January pulling it down. Different groups, different answers.
 
-rain = np.array([
-    [ 25,  10,   5,  15,  40,  55],         # row 0 - Chennai
-    [  2,   4,  10,  20,  36,  90],         # row 1 - Pune
-    [ 65,  70,  60,  45,  51, 105],         # row 2 - Shimla
-    [ 22,  26,  54, 120, 300, 480],         # row 3 - Kochi
-])
-cities = np.array(["Chennai", "Pune", "Shimla", "Kochi"])
-months = np.array(["Jan", "Feb", "Mar", "Apr", "May", "Jun"])
+**The sentence being marked.** Model: *"I know how many cities and how many months I typed, so I know how many answers each direction should give — six for months, four for cities. If the count of answers is different from the count of labels, I named the wrong axis, and I can see that without knowing anything about rainfall."* Another full-mark version: *"The axis I name gets eaten, so the number of answers is the size of the direction that's left."* **What loses the marks:** "axis 0 is rows" — a true fact that answers nothing. The sentence has to connect the count to something the student already knows: the labels they typed.
 
-# --- 1. the two facts, before anything else --------------------------------
-print("shape:", rain.shape, " dtype:", rain.dtype)
-print("cities:", len(cities), " months:", len(months))
-
-# --- 2. per city: one answer per ROW, so eat the columns: axis=1 -----------
-city_mean = rain.mean(axis=1)
-print()
-print("PER CITY  (axis=1) ->", city_mean.shape, "answers")
-print("City      Total   Mean")
-print("-" * 23)
-for i in range(len(cities)):
-    print(f"{cities[i]:<9} {rain.sum(axis=1)[i]:>5}  {city_mean[i]:>6.2f}")
-
-# --- 3. per month: one answer per COLUMN, so eat the rows: axis=0 ---------
-month_mean = rain.mean(axis=0)
-print()
-print("PER MONTH (axis=0) ->", month_mean.shape, "answers")
-print("Month  Total   Mean")
-print("-" * 20)
-for i in range(len(months)):
-    print(f"{months[i]:<6} {rain.sum(axis=0)[i]:>5}  {month_mean[i]:>6.2f}")
-
-# --- 4. the hand-check ----------------------------------------------------
-# Row 1 is PUNE (row 0 is Chennai). By pencil:
-#   2 + 4 + 10 + 20 + 36 + 90 = 162, and 162 / 6 = 27.0
-print()
-print("row 1 by hand : 162 / 6 = 27.0")
-print("row 1 by code :", rain[1, :].sum(), "/ 6 =", rain.mean(axis=1)[1])
-
-# Column 1 is FEBRUARY (column 0 is January). By pencil:
-#   10 + 4 + 70 + 26 = 110, and 110 / 4 = 27.5
-print("col 1 by hand : 110 / 4 = 27.5")
-print("col 1 by code :", rain[:, 1].sum(), "/ 4 =", rain.mean(axis=0)[1])
-
-# --- 5. the cross-check ---------------------------------------------------
-print()
-print("city totals add to :", rain.sum(axis=1).sum())
-print("month totals add to:", rain.sum(axis=0).sum())
-print("whole grid adds to :", rain.sum())
-```
-
-Real output:
-
-```text
-shape: (4, 6)  dtype: int64
-cities: 4  months: 6
-
-PER CITY  (axis=1) -> (4,) answers
-City      Total   Mean
------------------------
-Chennai     150   25.00
-Pune        162   27.00
-Shimla      396   66.00
-Kochi      1002  167.00
-
-PER MONTH (axis=0) -> (6,) answers
-Month  Total   Mean
---------------------
-Jan      114   28.50
-Feb      110   27.50
-Mar      129   32.25
-Apr      200   50.00
-May      427  106.75
-Jun      730  182.50
-
-row 1 by hand : 162 / 6 = 27.0
-row 1 by code : 162 / 6 = 27.0
-col 1 by hand : 110 / 4 = 27.5
-col 1 by code : 110 / 4 = 27.5
-
-city totals add to : 1710
-month totals add to: 1710
-whole grid adds to : 1710
-```
-
-**Mark:** the shape line is present; **`(4,)` appears next to the per-city block and `(6,)` next to the per-month block**; the two hand-check lines agree; the three totals all read 1710. The `for` loops are for printing only — no arithmetic happens inside them.
-
-**19.4(a) Which is the wettest city, and which is the wettest month?**
-Wettest city: **Kochi**, mean 167.0 mm, total 1002. Wettest month: **June**, mean 182.5 mm, total 730.
-
-**19.4(b) The wettest month's mean (182.5) is bigger than the wettest city's mean (167.0). Is that a contradiction?**
-No, and it is worth thinking about. They are averages of different-sized groups. 182.5 is June averaged over **four** cities — and Kochi's 480 mm of June rain pulls it right up. 167.0 is Kochi averaged over **six** months, including a 22 mm January that pulls it down. Different groups, different sizes, different answers. Neither one is "the average rainfall".
-
-**19.4(c) Why does the corner check work?**
-Because all three routes add up the **same twenty-four numbers**, just in different orders. Adding along the rows first, or down the columns first, or all at once, cannot change the total — so in numpy they always agree. That is why the check cannot catch a wrong axis or a mistyped number; it confirms the arithmetic and the idea, and on paper it catches slips in your own adding-up.
-
-### Page 19.5 — A different grid: three friends, five days
-
-*Three friends down, five days across. Step counts.*
-
-Complete working code, actually run:
-
-```python
-"""steps.py - a second grid: 3 friends DOWN, 5 days ACROSS."""
-
-import numpy as np
-
-steps = np.array([
-    [ 8000,  6000,  9000,  7500,  4000],    # row 0 - Ali
-    [12000, 11000,  9000, 13500,  9500],    # row 1 - Bea
-    [ 4000,  4000,  6000,  3000,  4500],    # row 2 - Cy
-])
-friends = np.array(["Ali", "Bea", "Cy"])
-days = np.array(["Mon", "Tue", "Wed", "Thu", "Fri"])
-
-print("shape:", steps.shape)
-print("steps[2, 3] =", steps[2, 3])
-print("steps[:, 4] =", steps[:, 4])
-print("steps[0, :] =", steps[0, :])
-print("per day  (axis=0):", steps.mean(axis=0), "->", steps.mean(axis=0).shape)
-print("per friend (axis=1):", steps.mean(axis=1), "->", steps.mean(axis=1).shape)
-print("day totals   :", steps.sum(axis=0))
-print("friend totals:", steps.sum(axis=1))
-print("cross-check  :", steps.sum(axis=0).sum(), steps.sum(axis=1).sum(), steps.sum())
-```
-
-Real output:
-
-```text
-shape: (3, 5)
-steps[2, 3] = 3000
-steps[:, 4] = [4000 9500 4500]
-steps[0, :] = [8000 6000 9000 7500 4000]
-per day  (axis=0): [8000. 7000. 8000. 8000. 6000.] -> (5,)
-per friend (axis=1): [ 6900. 11000.  4300.] -> (3,)
-day totals   : [24000 21000 24000 24000 18000]
-friend totals: [34500 55000 21500]
-cross-check  : 111000 111000 111000
-```
-
-**19.5(a) Before running: how many numbers from `axis=0`, and how many from `axis=1`?**
-`axis=0` eats the three rows, so **five** answers — one per day. `axis=1` eats the five columns, so **three** answers — one per friend. **Note that both counts changed from the rainfall grid.** A student who wrote 6 and 4 has copied yesterday's answer instead of thinking.
-
-**19.5(b) Hand-check row 1. Show the working.**
-Row 1 is **Bea** (row 0 is Ali).
-
-```text
-12000 + 11000 = 23000
-23000 + 9000  = 32000
-32000 + 13500 = 45500
-45500 + 9500  = 55000
-```
-
-`55000 / 5 = ` **11000.0**. And the code says `11000.` in the second slot. ✔
-
-**19.5(c) Hand-check column 1.**
-Column 1 is **Tuesday** (column 0 is Monday). `6000 + 11000 + 4000 = 21000`, and `21000 / 3 = ` **7000.0**. ✔ Divide by **three**, because there are three friends.
-
-**19.5(d) What is `steps[2, 3]`, in words?**
-**Cy on Thursday: 3000 steps.** Row 2 is the third friend; column 3 is the fourth day.
-
-**19.5(e) Which friend walked most, and which day was quietest?**
-Bea walked most: 55000 steps, mean 11000. Friday was quietest: 18000 steps total, mean 6000.
-
-**19.5(f) The corner check.**
-`24000 + 21000 + 24000 + 24000 + 18000 = 111000` and `34500 + 55000 + 21500 = 111000`. Both agree with `steps.sum()`. ✔
-
-**19.5(g) Why are all five day-averages whole numbers here, when the rainfall ones weren't?**
-Because every column of this grid happens to add up to a multiple of three, and there are three friends. It is a property of these particular numbers, not of `axis=0`. **A tidy answer is not evidence of a correct answer.**
-
-### Page 19.6 — The count sentence, and the wrong-axis experiment
-
-**(a) One sentence: how does the number of answers tell you which axis you used?**
-
-Model answers, any of which gets full marks:
-
-> *"The axis I name gets eaten, so the number of answers is the size of the direction that's left — six months means axis 0, four cities means axis 1."*
-
-> *"I know how many cities and months I typed, so I know how many answers to expect. If the count is different, I used the wrong axis."*
-
-**What to mark:** the sentence must connect the count to something the student **already knows** — the number of labels they typed. A sentence that only says "axis 0 is rows" has restated a fact and answered nothing.
-
-**(b) The experiment. Run the per-month line with the wrong axis on purpose. What came out?**
-
-```python
-print("per month, wrong axis:", rain.mean(axis=1))
-print("per month, right axis:", rain.mean(axis=0))
-```
-
-```text
-per month, wrong axis: [ 25.  27.  66. 167.]
-per month, right axis: [ 28.5   27.5   32.25  50.   106.75 182.5 ]
-```
-
-**(c) What didn't happen?**
-**No error. No warning. No traceback.** Python printed four tidy numbers and stopped. There was nothing on the screen to suggest anything was wrong.
-
-**(d) What is 25.0 actually the average of?**
-**Chennai, across all six months.** It is a correct answer to a question nobody asked.
-
-**(e) Why is a wrong answer of 25.0 more dangerous than a wrong answer of 25000?**
-Because 25 millimetres is a **believable** amount of rain, so nothing about it makes you look twice. 25000 mm would be obviously absurd and you would catch it instantly. **Plausible wrong answers are the dangerous ones** — which is why you count the answers instead of eyeballing them.
-
-**(f) Write your Bug Log entry for this one.**
-
-Model:
+**A Bug Log entry, done properly:**
 
 | What I saw | What it means | Cause | Fix |
 |---|---|---|---|
-| Four numbers instead of six. No error at all. | numpy averaged the direction I named away, which was the wrong one. | `axis=1` when the question was about columns. | `axis=0`. And print the count under every axis line, so it cannot happen quietly. |
+| `per month : [ 25. 27. 66. 167.]` — four numbers, no error | Nothing is wrong as far as numpy is concerned; both are legal averages | `axis=1` where I meant `axis=0`. I named the columns, so the answers came out one per row | `axis=0`, and print the count with "should be 6" beside it |
+
+*The wrong-axis experiment, if the student did it:* `rain.mean(axis=1)` printed where the month line should be gives `[ 25.  27.  66. 167.]`, against the right `[ 28.5   27.5   32.25  50.   106.75 182.5 ]`. What did not happen: no error, no warning, no traceback.
+
+### Draw It
+
+Each student draws their own grid, so there is no single answer. The workbook's worked example (four players, three matches) is:
+
+```text
+                M1    M2    M3     | per player (axis=1)
+Ana             12     8    20     |      13.33
+Bilal            4    16     7     |       9.0
+Cleo            22    18    26     |      22.0
+Dara             6     2    11     |       6.33
+--------------------------------------------
+per match       11.0   11.0  16.0  |     12.67
+(axis=0)
+```
+
+Look for four things: (1) the side margin has one box per **row** and is labelled `axis=1`; (2) the bottom margin has one box per **column** and is labelled `axis=0`; (3) a corner box with the grand mean, reachable from either margin (here `(11.0 + 11.0 + 16.0) / 3 = 12.67`, and 152 / 12 = 12.67 too); (4) one margin box filled in **in pen** with the working (Cleo: `22 + 18 + 26 = 66`, `66 / 3 = 22.0`). The label that earns the marks is *"axis=0 eats the rows, so these answers are one per **column**."* **Which axis gives one answer per column?** Axis 0, because naming it eats the rows. The row and column counts must match the student's own drawing.
+
+### Self-Check
+
+No right answers; it is a record of where the student is. Two lines deserve extra attention. **"say how many answers I expect before I run it"** — if 😕, redo the table of counts (A1) out loud, twice. **"hand-check one row on paper before I look at what the code said"** — if 😕, the fix is a calculator and one row, with the screen turned away. A check done after seeing the answer is not a check.
 
 ### Answers to every question posed in the lesson
 

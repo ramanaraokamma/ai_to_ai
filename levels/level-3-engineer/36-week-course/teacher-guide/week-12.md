@@ -15,7 +15,7 @@
 | **New maths** | **The slope of a curve at ONE point**, measured by nudging the input by a tiny step: `(f(w + h) − f(w − h)) ÷ 2h`. Computed by hand at `x = 1`, `3` and `5`, shown to equal `2 × x`, **and only then** named the derivative. |
 | **New syntax** | `np.linspace(a, b, n)` · `np.argmin(arr)` · `ax.annotate("...", xy=(x, y))` |
 | **Dataset** | **10 hand-typed points**: hours of revision against exam marks. `(1, 20) (2, 28) (3, 36) (4, 44) (5, 52) (6, 60) (7, 68) (8, 76) (9, 84) (10, 92)`. Then the same table generated with numpy, seed 0, plus a wobbly version. **Nothing loads, nothing downloads, and the answer is hidden in the data on purpose.** |
-| **Materials** | **Three sheets of squared graph paper per student**, plus one big sheet for the wall · **a real staircase, ramp or sloping corridor** you can walk on · a calculator each (phones fine) · printed workbook pages 12.1–12.6 · **last week's `BY HAND \| np.trapz` board still up** · the Bug Log |
+| **Materials** | **Three sheets of squared graph paper per student**, plus one big sheet for the wall · **a real staircase, ramp or sloping corridor** you can walk on · a calculator each (phones fine) · the printed Week 12 workbook (every section; **🛠️ Build It — The Foggy Hillside** is the part handed in) · **last week's `BY HAND \| np.trapz` board still up** · the Bug Log |
 | **Tech needed** | Laptop with Python 3, numpy, matplotlib. **No scikit-learn needed at all this week.** No new installs. |
 | **Prep time** | 30 minutes the night before — **and this is the week to spend all thirty.** 5 minutes on the day. |
 | **Expected runtime of the code** | `valley.py`, `slope.py` and `walk.py` are **all under half a second each.** Nothing this week takes any time at all; the whole point is that the arithmetic is small enough to check on paper. |
@@ -800,7 +800,7 @@ after six steps w = 3.983616, target 4
   1. `s = (f(x + h) - f(x - h)) / 2 * h` — brackets missing round `2 * h`. **No error.** You get `0.000006` instead of `6.000000`, which is a factor of a million out. This is deliberate mistake one.
   2. `w = w + lr * s` — plus instead of minus. **No error.** The loss goes 92, 236, 604, 1546, 3958 — **up, and fast.** This is deliberate mistake two and it is the one that teaches the sign.
 
-- [ ] **Print workbook pages 12.1–12.6.**
+- [ ] **Print the Week 12 workbook, every section.** Build It is the part handed in; the rest is practice.
 - [ ] **Three sheets of squared graph paper per student**, plus one big sheet for the wall with axes already drawn: `w` from 0 to 16 across, `loss` from 0 to 2500 up.
 - [ ] **A calculator each.** There are about sixty divisions in this lesson.
 - [ ] **Do not wipe last week's `BY HAND | np.trapz` board.** You will point at that tick when you compare the measured slope with the shortcut rule, and it saves you a paragraph.
@@ -812,7 +812,7 @@ after six steps w = 3.983616, target 4
 - [ ] Graph paper handed out, three sheets each.
 - [ ] Calculators out.
 - [ ] The staircase or ramp identified, and you know how you are getting the class to it and back inside four minutes.
-- [ ] Workbook 12.1 out. Nothing filled in.
+- [ ] Workbook out, open at **🛠️ Build It — Nine slopes, by hand**. Nothing filled in.
 - [ ] Bug Log open at a fresh page.
 - [ ] **The word "derivative" written on a folded piece of paper in your pocket**, to be unfolded at minute 22 and not before. This sounds like theatre. It is theatre, and it works.
 
@@ -1703,20 +1703,30 @@ Three checks, five minutes, exact wording.
 
 **Say this, word for word:**
 
-> "Two pages, about an hour, and **all of it is by hand.** There is code at the end but the code is only there to mark you.
+> "The **Build It** section of the workbook, about an hour, and **all of it is by hand.** There is code at the end but the code is only there to mark you.
 >
-> **Page 12.1 — nine slopes.** Three functions, three points each. `x × x`, then `x × x × x`, then `5 × x`, at `x = 1`, `x = 3` and `x = 5`. **Nine nudges, all by hand, six decimal places on every multiplication.** And beside each one, write the shortcut rule's answer and put a **tick or a cross.**
+> **'Nine slopes, by hand'.** Three functions, three points each. `x × x`, then `x × x × x`, then `5 × x`, at `x = 1`, `x = 3` and `x = 5`. **Nine nudges, all by hand, six decimal places on every multiplication.** And beside each one, write the shortcut rule's answer and put a **tick or a cross.**
 >
 > I want to see crosses. A page of nine ticks with no working is a page I do not believe.
 >
-> **Page 12.2 — six steps downhill on a new valley.** The loss is `(w − 4) × (w − 4)`. Start at `w = 0`. Learning rate `0.3`. Six rows, tabulated: `w`, the loss, the slope, `0.3 × slope`, and the new `w`. **Then compare your final `w` with 4** and write one sentence saying how close you got and why you did not land exactly on it.
+> **'Six steps downhill' on a new valley.** The loss is `(w − 4) × (w − 4)`. Start at `w = 0`. Learning rate `0.3`. Six rows, tabulated: `w`, the loss, the slope, `0.3 × slope`, and the new `w`. **Then compare your final `w` with 4** and write one sentence saying how close you got and why you did not land exactly on it.
 >
-> **Page 12.3 — check yourself with code.** Type the three files, run them, and tick off every number that matches your handwriting. If one does not match, **find out which of the two of you is wrong before you write anything else.**
+> **'Three numbers' and 'The eight losses' — check yourself with code.** Type the three files, run them, and tick off every number that matches your handwriting. If one does not match, **find out which of the two of you is wrong before you write anything else.**
 >
 > **And the last thing, which is one sentence.** In your own words, with no symbols at all: **what is a derivative?** If your sentence contains the word 'derivative', start again."
 
-| Page | What it is | Time |
+| Workbook Build It section (old label) | What it is | Time |
 |---|---|---|
+| Nine slopes, by hand, plus the `x⁴` prediction (was 12.1) | Nine numeric slopes by hand, each with the shortcut rule and a tick or cross; predict `x⁴` at `x = 2`, then test it | 25 min |
+| Six steps downhill on `(w − 4)²` (was 12.2) | Six steps of `w ← w − 0.3 × slope`, tabulated with the gap column, compared with 4 | 15 min |
+| Three numbers from `slope.py` and `walk.py`, and `valley.png` (was 12.3) | Type and run `valley.py`, `slope.py`, `walk.py`; tick every matching number; look at `valley.png` | 15 min |
+| The eight losses, checked against the code (was 12.4) | The eight losses on the ten-student data, three worked by hand, the loss and slope formulas | 5 min |
+| One sentence: what is a derivative? (was 12.5) | No symbols, and not using the word | 5 min |
+| The Bug Log (was 12.6) | Two silent-bug entries | 5 min |
+
+**The other workbook sections are not in the script above.** ✅ Warm-Up, 🔎 Predict the Output, ✍️ Practice Sets A and B, 🐞 Fix the Broken Program, 🧩 Puzzle of the Week, 🤔 Think Deeper, 🎨 Draw It and 📊 Self-Check are practice for you to set or skip as time allows; 🔢 Do the Maths by Hand is the written-out version of the lesson's nudge, six-step and ten-student arithmetic. All of them are marked in the **🔑 Answer Key** below.
+
+---|---|---|
 | 12.1 | Nine numeric slopes by hand, each with the shortcut rule and a tick or cross | 25 min |
 | 12.2 | Six steps of `w ← w − 0.3 × slope` on `(w − 4)²`, tabulated, compared with 4 | 15 min |
 | 12.3 | Type and run `valley.py`, `slope.py`, `walk.py`; tick every matching number | 15 min |
@@ -1728,9 +1738,110 @@ Three checks, five minutes, exact wording.
 
 ## 🔑 Answer Key
 
-This section holds the worked answers for every page and question in this week's materials.
+This section holds the worked answers for every section and item of the Week 12 workbook, in workbook order: the practice sections first, then **🛠️ Build It** (which is the part handed in), then Draw It and Self-Check. The Build It answers keep the old "Page 12.N" numbering in brackets in case your printed copies use it.
 
-### Page 12.1 — Nine slopes by hand
+### Workbook map — where everything is
+
+The workbook has eleven sections, in this order. Only **🛠️ Build It** is handed in; the others are practice that you can set, skip or mark as you see fit. Every one of them has an answer below.
+
+| Workbook section | Items | Where the key is |
+|---|---|---|
+| ✅ Warm-Up | W1–W5 | **Warm-Up (last week's material)** |
+| 🔢 Do the Maths by Hand | M1(a)–(e), M2, M2(a)–(c), M3, M3(a)–(d), M4(a)–(f) | **Do the Maths by Hand** |
+| 🔎 Predict the Output | P1–P4 | **Predict the Output** |
+| ✍️ Practice Set A — Read It | A1–A6 | **Practice Set A** |
+| ✍️ Practice Set B — Write It | B1–B5 | **Practice Set B** |
+| 🐞 Fix the Broken Program | Bugs 1–3 | **Fix the Broken Program** |
+| 🧩 Puzzle of the Week | Part 1(a)–(i) | **Puzzle of the Week** |
+| 🤔 Think Deeper | T1, T2 | **Think Deeper** |
+| 🛠️ Build It — The Foggy Hillside | 10-item checklist | **Build It** (the six subsections below) |
+| 🎨 Draw It | three questions | **Draw It** |
+| 📊 Self-Check | ten lines | **Self-Check** |
+
+### Warm-Up (last week's material)
+
+- **W1.** `500 ÷ 10 = 50` false alarms per miss. Total cost at `t = 0.10`: `500 × 11 + 10 × 5 = 5500 + 50 = 5550`.
+- **W2.** `(left height + right height) ÷ 2 × width` — exactly right, not an approximation, because the top of each strip is a straight line.
+- **W3.** Add the two answers: `0.7 + 0.3 = 1`, the whole 1-by-1 square. If the pair makes something you recognise, you measured the wrong side.
+- **W4.** One plain-`KFold` chunk had 11 frauds and another 17, so if the five scores differ you cannot tell "unstable model" from "an easier chunk". Stratifying removes one of the two explanations.
+- **W5.** **No.** 0.65 is inside the band 0.542 to 0.715, so it may be your own model on a luckier split. You would need about 0.85 before claiming anything.
+
+### Do the Maths by Hand
+
+**M1 — `x × x`.** (a) `f(3.001) = 9.006001`, `f(2.999) = 8.994001`, rise `0.012000`, run `0.002`, slope **6.000**. (b) `1.002001`, `0.998001`, `0.004000`, **2.000**. (c) `25.010001`, `24.990001`, `0.020000`, **10.000**. (d) The slopes at 1, 3, 5 are 2, 6, 10 — `2 × x` — and only now is the word allowed. (e) 3.001 and 2.999 are **0.002** apart, not 0.001; dividing by one nudge doubles the answer. **The symptom is exact: precisely twice the rule's answer.**
+
+**M2 — `x × x × x` and `5 × x`.** The two tables are the same as the Build It tables below (3.000001, 27.000001, 75.000001; 5.000000 three times); the intermediate values are in the first two tables of **Build It — Nine slopes by hand**.
+- **M2(a)** 3.000001 (or 27.000001, 75.000001) is **correct, not a mistake.** Writing 3.000000 means they rounded or copied the rule instead of measuring, and that is the one thing that breaks this page.
+- **M2(b)** `5 × x` is a straight line, which has only one steepness; the first hint that some slopes depend on where you stand and some do not.
+- **M2(c)** Prediction `4 × x³`, so **32** at `x = 2`. `(2.001)⁴ = 16.032024008001`, `(1.999)⁴ = 15.968023992001`, difference `0.064000016000`, `÷ 0.002 = ` **32.000008**. Yes, out by eight millionths for the same reason as `x³`.
+
+**M3 — six steps on `(w − 4)²`.** The table is the one in **Build It — Six steps downhill** below (final `w` = 3.983616).
+- **M3(a)** Slope at `w = 0`: `2 × (0 − 4) = −8`; by nudging `(15.992001 − 16.008001) ÷ 0.002 = −8.000000`; step `0.3 × (−8) = −2.4`; new `w = 0 − (−2.4) = 2.4`. The nudge and the shortcut agree exactly.
+- **M3(b)** `w = 3.983616`, which is 0.016384 short of 4. Full marks is the "proportional to the slope" sentence under Build It. **"I made a rounding error" loses the mark.**
+- **M3(c)** Gap column: `−4.000000 → −1.600000 → −0.640000 → −0.256000 → −0.102400 → −0.040960 → −0.016384`; each is 0.4 times the one before.
+- **M3(d)** `−0.016384 × 0.4 = −0.0065536`, so `w = 4 − 0.0065536 = ` **3.9934464**.
+
+**M4 — the ten-student losses.**
+- **M4(a)** predicted `22, 32, …, 112`; actual `20, 28, …, 92`; errors `2, 4, …, 20`; squares `4, 16, 36, 64, 100, 144, 196, 256, 324, 400`; sum **1540**; `÷ 10 = ` **154.0** — the same as `w = 6`, because 10 is two too high and 6 is two too low.
+- **M4(b)** At `w = 4` each error is `−4 × hours`, each square `16 × hours²`, loss `16 × 385 ÷ 10 = ` **616**.
+- **M4(c)** `385 ÷ 10 = 38.5`, so `loss(w) = ` **38.5** `× (w − 8)²`.
+- **M4(d)** `38.5 × 64 = 2464`, `38.5 × 4 = 154`, `38.5 × 36 = 1386` — all three match the printed table.
+- **M4(e)** The 77 is `2 × 38.5`: the slope of `something²` is `2 × something`, with a constant along for the ride. The slope is `77 × (w − 8)`.
+- **M4(f)** At `w = 2`: `77 × (−6) = ` **−462**; at `w = 12`: `77 × 4 = ` **308**. From 2 step RIGHT; from 12 step LEFT; `w = w − lr × slope` does both with no `if`.
+
+### Predict the Output
+
+**P1.** Prints `(8,)`, then `[ 0.  2.  4.  6.  8. 10. 12. 14.]`, then `4 0.0 8.0`, then `(50,)`. `np.argmin` is the **position** of the smallest (4, counting from 0), `np.min` is the smallest **loss** (0.0), `c[np.argmin(losses)]` is the **`w`** that produced it (8.0). Line 4: **50** numbers, no warning — `np.linspace` defaults to 50. *Wrong answer to watch for: "best w = 4" — plausible-looking, no error.*
+
+**P2.** Prints `6.000000`, `0.000006`, `12.000000`, `6.001000`. Line 2 in order: `0.012000`, `÷ 2 = 0.006`, `× 0.001 = 0.000006` (Python works left to right). Line 3 is exactly double because 3.001 down to 2.999 is 0.002, not 0.001. Use **line 1**; line 4 is one-sided (6.001), and symmetric nudging is the same work for a better answer.
+
+**P3.** Prints `[ 4 16 36]`, `[-4 -2 -8]`, `18.666666666666668`, `-4.666666666666667`. `^` is a bit operation, not a power; if every squared error is negative, they typed `^ 2` for `** 2`. **A loss can never be negative**, so −4.67 would have said something upstream was broken.
+
+**P4.** Prints `step 0  slope -12.0000  w -1.6000  loss 92.1600`, `step 1  slope -19.2000  w -7.3600  loss 235.9296`, `step 2  slope -30.7200  w -16.5760  loss 603.9798`. The wrong character is the **`+`** in `w = w + 0.3 * s`. The loss is **going up**, and faster: the slope points uphill, you climb the wall, the wall is steeper, the next step is bigger. Chant: **"loss up, check the sign"** (sign first, learning rate second).
+
+### Practice Set A
+
+- **A1.** loss → (iii) · loss surface → (iv) · derivative → (v) · numerical gradient → (ii) · learning rate → (i). **A1(a)** derivative and numerical gradient: the same slope, one measured by nudging and one written down as a rule.
+- **A2(a)** **Squaring** throws the sign away: 2 too low and 2 too high cost the same. **(b)** `np.argmin` gives a position, `candidates[...]` the value; writing "best w = 4" is the silent version. **(c)** **No** — 8.3 is not among `0, 2, …, 14`; it worked only because the answer was planted on the grid. **(d)** 8, **64**, **512**; the sentence is "eight to the power of a hundred thousand — guessing does not scale".
+- **A3.** (a) `TypeError: can only concatenate list (not "int") to list` — `w * hours` repeats the list; fix `np.array([...])`. (b) no error, `0.000006`; fix `/ (2 * h)`. (c) no error, exactly double (12 not 6); fix `/ (2 * h)`. (d) no error, loss goes up (92, 236, 604, 1546, 3958); fix `w = w - lr * s`. (e) no error, 50 numbers; fix `np.linspace(0, 14, 8)`. (f) no error, prints 4 (a position); fix `candidates[np.argmin(losses)]`. **A3(g)** (a) is the only crash. Hardest to notice is **(c)**: `12.000000` looks exactly like a slope and the descent still roughly works. *Most students say (b); accept it only with a reason — but (c) is the better answer.*
+- **A4.** i → **T** · ii → **S** · iii → **Q** · iv → **R** · v → **P**.
+- **A5(a)** `0.001` slow · `0.01` arrived · `0.026` overshooting · `0.03` catastrophe/diverging. **(b)** **Sudden**, a hard edge; start small and divide by ten if the loss rises. **(c)** `462 ÷ 12 = ` **38.5**: the ten-student valley is 38.5 times steeper, so the same stride that is gentle on one launches you off the other; a learning rate belongs to the hillside. **(d)** 1. the sign; 2. the learning rate (divide by ten); in that order.
+- **A6.** The five boxes: **25.010001**, **24.990001**, **0.020000**, **0.002**, **10.000000**; rule panel `2 × 5 = 10`, they agree, tick. **(a)** Boxes 1 and 2 (the multiplications); at three decimals the difference reads 0.020, and at `x = 5` you need all six to be sure. **(b)** They get **20.000000**, exactly double; they spot it because the rule says 10.
+
+### Practice Set B
+
+Each is a short program; the full listings and real outputs are in the workbook's own Answers section (Practice Set B). What to check:
+
+- **B1.** Prints **14.000000** (rule `2 × 7 = 14`). Marks go for predicting 14 *before* running.
+- **B2.** `slope_at(f, x, h)` taking a function as an argument. For `square` at 3.0 it ends `divided by 0.002  = 6.000000`; for `cube` at 2.0, `12.000001` (rule `3 × 2² = 12`). Watch for a function called as `f` with brackets in the call, which breaks it.
+- **B3.** `nine.py` prints nine rows, every one `tick` — slopes 2, 6, 10 / 3.000001, 27.000001, 75.000001 / 5, 5, 5. The test must be `abs(measured - expected) < 0.001`; with `==` the three `x³` rows come back `CROSS`.
+- **B4.** `descend.py` prints the six-row table with the gap column (−1.600000 … −0.016384), `after six steps w = 3.983616    the target was 4`, then the seven gaps `−4.000000 … −0.016384`. **Most instructive wrong answer: six identical steps of 2.4** (slope measured once outside the loop).
+- **B5.** `hill.py` (practice sessions, `made = 4 × sessions + 5`): losses at `w = 0…7` are 408, 229.5, 102, 25.5, **0**, 25.5, 102, 229.5; `np.argmin(losses) = 4   best of the eight w = 4.0`; slopes at `w = 1, 4, 7` are **−153, 0, +153**; eight steps at `lr = 0.01` from 0 end at **3.986707** (hidden answer 4). Why `lr = 0.01`: the starting slope is −204, so 0.3 would throw `w` to 61.2; the slope is `51 × (w − 4)`, the gap factor `1 − 51 × lr` = 0.49 at 0.01 and −14.3 at 0.3.
+
+### Fix the Broken Program
+
+- **Bug 1 — `hours = [1, 2, …, 10]`.** A list, not an array. `w * hours` with `w = 6` **repeats** the list to 60 items, and `+ 12` on a list is what crashes. The error names the addition; the damage was one operation earlier. Fix `hours = np.array([...])`.
+- **Bug 2 — `h = 0.0`.** The difference is 0.0 and `2 × 0.0 = 0.0`, so the division is `0.0 ÷ 0.0`, which gives `nan` (not infinity). `loss at w = 6 : 154.0` printed correctly, so the loss function was fine. Fix `h = 0.001`. One-line reason calculus exists: it gets the answer for a nudge of literally zero by reasoning, which a computer cannot do.
+- **Bug 3 — `w = w + lr * s`.** The loss column rises and accelerates: 4342, 13604, 42619, 133521, 418308, 1310516 (the workbook's own answer prints the same numbers with the fractions dropped rather than rounded, so expect 13603 or 13604). Slope column −462, −818, −1447, −2562, −4535, −8026. `w − 0.01 × (−462) = 6.62` (towards 8) against `w + … = −2.62`, so the minus is right. Fix `w = w - lr * s`. In run 4 the slope goes −462, −106, −24.4, −5.6, −1.3, −0.30: a flattening slope means you are arriving; a slope that will not shrink is the signal to stop and think.
+- **Ranking, easiest to hardest: 1, 2, 3.** Bug 1 crashes, Bug 2 prints a warning and `nan`, Bug 3 prints tidy, wrong numbers. Every run showed `loss at w = 6 : 154.0`, which tells you the loss function is fine: narrow before you hunt.
+
+### Puzzle of the Week
+
+- **Part 1(a)/(b).** Factor = new gap ÷ −4 for `lr` = 0.1, 0.25, 0.3, 0.5, 0.6, 1.0, 1.1 is **0.8, 0.5, 0.4, 0.0, −0.2, −1.0, −1.2**. New `w`: 0.8, 2.0, 2.4, 4.0, 4.8, 8.0, 8.8; new gap: −3.2, −2.0, −1.6, 0.0, +0.8, +4.0, +4.8. **Rule: factor = `1 − 2 × lr`**, seven for seven.
+- **(c)** `lr = 0.5`: factor exactly 0, lands on 4 in one step with loss exactly 0.
+- **(d)** `lr = 0.6`: gaps `−4 → +0.8 → −0.16 → +0.032 → −0.0064 → +0.0013 → −0.0003`. Overshoots each time but by less; **it still arrives**, because −0.2 is between −1 and 1.
+- **(e)** `lr = 1.0`: `−4 → +4 → −4 → …` for ever; the loss sits at exactly 16. The dangerous one: the loss is not rising, so "loss up, check the sign" never fires. Look at the weight, not the loss.
+- **(f)** `lr = 1.1`: `−4 → +4.8 → −5.76 → +6.912 → −8.2944 → +9.9533 → −11.9439`; each jump bigger and on the other side.
+- **(g)** Factor between 0 and 1 → `lr` 0 to 0.5 → creeps in from one side. Exactly 0 → 0.5 → lands in one step. Between −1 and 0 → 0.5 to 1.0 → overshoots but still arrives. −1 or beyond → 1.0 or more → bounces for ever or explodes.
+- **(h)** Real output (after six steps, from `w = 0`): `lr` 0.1 → `w` 2.951424, loss 1.099512; 0.25 → 3.937500, 0.003906; 0.3 → 3.983616, 0.000268; 0.5 → 4.000000, 0; 0.6 → 3.999744, 0; 1.0 → −0.000000, 16.000000; 1.1 → −7.943936, 142.657607. `lr = 0.6` beats 0.3: gaps 0.000256 against 0.016384, sixty-four times closer (`0.2⁶` against `0.4⁶`).
+- **(i)** The failure arrives all at once because a factor bigger than 1 in size grows however often you multiply. On the ten-student loss the factor is `1 − 77 × lr`, which hits −1 at `lr = 2 ÷ 77 = 0.025974…`; 0.026 gives −1.002 (slow drift), 0.03 gives −1.31 (explodes to `w = 5135`).
+
+### Think Deeper
+
+- **T1 (why plant the answer?).** Full marks: without a known answer, a working method cannot be told from one with a wrong sign, a `/ h` for `/ 2h`, or a too-big rate — all print six decimals; a planted answer turns "it printed something" into "it worked". Must name **a specific bug it catches**, **two later weeks** (Week 19, numpy gradients checked against a nudge; Week 23, PyTorch checked against numpy), and the rule **"test a new method on a problem whose answer you know first"**. "So we could check it" alone is half marks.
+- **T2 (what is the 8.9106?).** Full marks: it is the wobble — the part of the marks that revision hours cannot explain; irreducible, not a bug; stop when the loss flattens, not when it hits zero. A zero loss on noisy data means **overfitting**, so trust the 8.9106 model, and check both on rows neither has seen. **"Keep training until it's zero" is the wrong answer.**
+
+### Build It — Nine slopes, by hand (was Page 12.1)
 
 **`h = 0.001`, so every division is by `0.002`.**
 
@@ -1772,7 +1883,7 @@ This section holds the worked answers for every page and question in this week's
 - **Rounding to three decimals.** `3.001 × 3.001 ≈ 9.006` and `2.999 × 2.999 ≈ 8.994` gives a difference of 0.012, which is right by luck at x = 3 and **wrong at x = 5**, where you need the fourth, fifth and sixth decimals to see 0.020000 rather than 0.020. **Six decimals, every time.**
 - **Forwards-only nudges.** `(f(3.001) − f(3)) ÷ 0.001 = 6.001`. Not wrong, just less accurate — **worth full marks if they say so.**
 
-### Page 12.2 — Six steps downhill on `(w − 4)²`
+### Build It — Six steps downhill on `(w − 4)²` (was Page 12.2)
 
 Loss `(w − 4) × (w − 4)`, slope `2 × (w − 4)`, learning rate `0.3`, starting at `w = 0`.
 
@@ -1814,7 +1925,7 @@ after six steps w = 3.983616, target 4
 - **The gap not shrinking by a constant factor.** One arithmetic slip early. **Check: is `w − 4` being multiplied by 0.4 each row?** −4, −1.6, −0.64, −0.256, −0.10240, −0.040960, −0.016384. If one row breaks the pattern, that is the row.
 - **Six identical steps of 2.4.** They used the slope from step 0 for all six rows. **The slope has to be re-measured at the new `w` every single time.** This is the most instructive mistake on the page.
 
-### Page 12.3 — The three files, checked
+### Build It — The three files, and three numbers (was Page 12.3)
 
 All three complete files and their real outputs are printed in full in the **🧰 Prep Checklist** above. Check the student's output on these five numbers:
 
@@ -1826,7 +1937,9 @@ All three complete files and their real outputs are printed in full in the **�
 | `after eight steps w = 7.996068` | Either the sign is wrong (`w` runs away negative) or a slope was reused instead of re-measured. |
 | `after six steps w = 3.983616` | Same two suspects. |
 
-### Page 12.4 — The eight losses on the ten-student data
+The workbook's "Three numbers" table also asks for these, all from `slope.py` and `walk.py`: slope of `x × x` at 3 is **6.0000**; slope of `x³` at 3 is **27.000001**; `w` after eight steps on the one-student loss is **7.996068**; `w` after 25 steps on the ten students (starting at `w = 2`) is **8.000000** at `lr = 0.01` and **5135.8303** at `lr = 0.03`. **`valley.png` has eight red dots on the blue curve; the one at the bottom is `w = 8`, loss 0.00.**
+
+### Build It — The eight losses on the ten-student data (was Page 12.4)
 
 Every error is `(w − 8) × hours`, because the predicted mark is `w × hours + 12` and the real mark is `8 × hours + 12`, so the 12s cancel and what is left is the gap in `w`, multiplied by the hours.
 
@@ -1840,6 +1953,8 @@ Every error is `(w − 8) × hours`, because the predicted mark is `w × hours +
 | 10 | +2, +4, +6, … +20 | 1540 | **154.00** |
 | 12 | +4, +8, +12, … +40 | 6160 | **616.00** |
 | 14 | +6, +12, +18, … +60 | 13860 | **1386.00** |
+
+**The workbook also asks:** `np.argmin(losses)` printed **4** and the best `w` is **8.0**, because one is a position in a list and the other is the value living there. The formulas: `loss(w) = ` **38.5** `× (w − 8)²` and slope **77** `× (w − 8)`. Deriving 38.5 as `385 ÷ 10` and 77 as `2 × 38.5` is the top-mark answer.
 
 **A shortcut worth pointing out if a student finds the eighty squarings tedious.** The squares of 1 to 10 add up to **385**, and every row's errors are just `(w − 8)` times those ten hour values — so the sum of squares is `(w − 8)² × 385` every single time. At `w = 6`: `4 × 385 = 1540`, and `1540 ÷ 10 = 154`. **One multiplication instead of ten squarings**, and it also explains why the slope in `slope.py` came out as exactly `77 × (w − 8)`.
 
@@ -1907,7 +2022,7 @@ The last line of the file also prints `the exact answer, by algebra: 7.993247`.
 
 **The point of this block, and it is worth ten minutes if you have them:** the best achievable loss is **8.9106, not 0.** No amount of descent gets below it. **That 8.91 is the part of these ten students' marks that revision hours cannot explain** — mood, sleep, luck, whether they had breakfast. **A loss that stops falling above zero is not a bug; it is the floor of your data.**
 
-### Page 12.5 — One sentence: what is a derivative?
+### Build It — One sentence: what is a derivative? (was Page 12.5)
 
 **Full marks looks like any of these.** The test is that it describes a *measurement*, contains no symbols, and does not use the word.
 
@@ -1925,7 +2040,7 @@ The last line of the file also prints `the exact answer, by algebra: 7.993247`.
 - **"The rate of change."** Technically true and it is a phrase they have memorised, not a sentence they mean. Ask: *"the rate of change of what, with respect to what, and how would you measure it with a calculator?"*
 - **"2x."** That is the answer for one particular curve, not what the thing is.
 
-### Page 12.6 — Vocabulary and Bug Log
+### Build It — The Bug Log, and vocabulary (was Page 12.6)
 
 > **Loss** — one number saying how wrong the model is right now. Big is bad, zero is perfect. Ours is the average of the ten squared errors.
 
@@ -1954,6 +2069,14 @@ Message: *none.* Symptom: the loss went 92, 236, 604, 1546, 3958 — **up**, and
 Meaning: I wrote `w = w + lr * s`. The slope points uphill, so adding it walks uphill.
 Fix: `w = w - lr * s`.
 The rule I am keeping: **if the loss is going up, check the sign first and the learning rate second.**
+
+### Draw It
+
+The touching line at `w = 0` falls 8 for every 1 across: as a fraction, **−8** (`−8 ÷ 1`). The touching line at `w = 6` tilts **upwards to the right**, because the slope there is `2 × (6 − 4) = +4`, so the walker goes **LEFT**; a good drawing has both lines and the two arrows pointing at each other. Why the arrows shorten: *"each step is **proportional** to the slope, and the ground flattens as I approach the bottom, so the slope shrinks and the step shrinks with it: 2.4, 0.96, 0.384."* A strong drawing writes the slope beside each of the six dots. **No "proportional" means no mark for that line.**
+
+### Self-Check
+
+There are no right answers. Look at three lines: **"get exactly 6.000 at `x = 3`, and say why the division is by 0.002"** (if not a 😀, redo it on a calculator; every week to Week 27 stands on it), **"use the sign of the slope to decide which way to step"** (they must be able to say why subtracting a negative moves you right), and **"say what a derivative is in one sentence"** (procedure without idea if they cannot).
 
 ### Answers to every question posed in the lesson
 

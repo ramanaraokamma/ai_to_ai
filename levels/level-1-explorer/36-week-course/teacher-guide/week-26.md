@@ -927,11 +927,12 @@ background was in the same place in every photo while the object moved and rotat
 
 ## 📤 Homework to Assign
 
-**Workbook pages: Week 26, pages 1–5.** Expect **50–60 minutes**.
+**Workbook: Week 26, whole workbook** (`workbook/week-26.md`). Expect **50–60 minutes**. The workbook has
+no numbered pages; it has named sections, and the four pieces below are its **Build It** section.
 
 **Say this, word for word:**
 
-> "Finish Pixel Lab and prove the lamp thing. Four pieces.
+> "Finish Pixel Lab and prove the lamp thing. Four pieces. They are the Build It section of your workbook.
 >
 > One: **two shaded 12 by 12 grids** — the original letter and the edge map — side by side. A
 > screenshot is fine, or photograph the screen, or copy them onto graph paper by hand if the
@@ -948,20 +949,24 @@ background was in the same place in every photo while the object moved and rotat
 > Four: **one paragraph** connecting the lamp result to your model. Why does a vision system look at
 > edges first?
 >
-> The one thing I'll be looking hardest at is number two. Anybody can screenshot a picture. Writing out
-> one cell's arithmetic proves you know where the picture came from."
+> The rest of the workbook, the warm-up, Practice Sets A and B, the puzzle, Think Deeper and Draw It, is
+> there for you to work through as well. The one thing I'll be looking hardest at is number two. Anybody
+> can screenshot a picture. Writing out one cell's arithmetic proves you know where the picture came from."
 
-**Which pages:**
+**Which workbook section is which** (the answers for every one of them are in the Answer Key below):
 
-| Page | What is on it |
-|---|---|
-| 1 | Two blank 12 × 12 grids to shade (or space to tape in screenshots) |
-| 2 | The one-cell arithmetic sheet — six labelled boxes to fill in |
-| 3 | The two-lamp data table, plus the two "average change" boxes |
-| 4 | The written paragraph, and the **edge map** vocabulary box |
-| 5 | Optional extension: the split V-map / H-map comparison |
+| Workbook section | What is in it | Key |
+|---|---|---|
+| ✅ Warm-Up (W1–W5) | Last week's filters: vertical filter in words, absolute value, output size, a zero, the two repairs | Part F |
+| ✍️ Practice Set A (A1–A6) | Relative addresses, `MIN`, "no error means right?", matching, labelling the spreadsheet figure, output-block size | Part F |
+| ✍️ Practice Set B (B1–B5) | One cell by hand, two "what would go wrong" grid/stroke cases, real comb data, the rug trap | Part F |
+| 🧩 Puzzle of the Week (P1–P5) | The lamp detective: find the spot whose paper got darker | Part F |
+| 🤔 Think Deeper (T1–T2) | Uneven light; halved light | Part F |
+| 🛠️ Build It, Parts 1–4 + vocabulary box | **The four homework pieces**: two grids, one cell in full, lamp proof, paragraph; the word *edge map* | Parts B–E |
+| 🎨 Draw It | The background trap in two panels | Part F |
+| 📊 Self-Check | Five "I can…" rows, no right answers | none; read it for honesty |
 
-**If they are short of time:** pages 2 and 3 are the essential ones. Page 1 can be a photo of the
+**If they are short of time:** Build It Parts 2 and 3 are the essential ones. Part 1 can be a photo of the
 screen.
 
 ---
@@ -1114,7 +1119,7 @@ room light, once with a desk lamp 30 cm away. Brightness values on the 0–255 s
 
 ---
 
-### Part E — model answers for the homework written work
+### Part E — model answers for the homework written work (workbook Build It, Parts 2 to 4)
 
 **Homework 2 — one cell's arithmetic, model answer** (using the reference T and output cell `C21`,
 which is image pixel `C5`, i.e. cell (5,2)):
@@ -1161,6 +1166,70 @@ which is image pixel `C5`, i.e. cell (5,2)):
 > the machine can only learn what is in the numbers. That is also why my model failed when I changed
 > the background — the edges it had been relying on belonged to the table, not to the object, so as
 > soon as the table went away, so did its evidence.
+
+---
+
+### Part F — answers for the rest of the workbook
+
+Values below are taken from the workbook's own Answers section. Build It (Parts 1 to 4 and the
+vocabulary box) is answered in Parts B to E above; the reference T uses `C21`, and the student's own
+grid and lamp numbers will differ.
+
+**Warm-Up**
+
+| Item | Answer | Watch for |
+|---|---|---|
+| W1 | "**right** column minus **left** column" | Numbers (`−1 0 +1`) instead of words. They look the same across or down; the words cannot rotate. |
+| W2 | **660** | |
+| W3 | **18 × 18**, because the filter needs a full ring of neighbours; output = input − 2 (324 cells) | 20 × 20 (forgot the border). |
+| W4 | (i) all bright there (blank sky, middle of a white shape); (ii) all dark there (empty background, middle of a thick stroke). Either way flat. | "Nothing is there." Zero never means that. |
+| W5 | 1. Absolute value → **900**; 2. Clip at 255 → **255**. In that order. | Clip first: a negative number is untouched by clipping. |
+
+**Practice Set A**
+
+| Item | Answer |
+|---|---|
+| A1 | It remembers **directions** (neighbours relative to itself). Right: `=E2+E3+E4`. Down: `=D3+D4+D5`. Write the sum **one** time, get **a hundred** answers. |
+| A2 | **(b)**, whichever is smaller. |
+| A3 | **FALSE.** A wrong-but-valid formula gives no error, just a wrong picture computed confidently; only a by-hand check catches it. |
+| A4 | 1 → (b) vertical filter · 2 → (d) horizontal filter · 3 → (c) absolute value · 4 → (a) clipping |
+| A5 | A = formula bar · B = input grid (the picture) · C = output block (the edge map) · D = drag handle · E = column letters and row numbers |
+| A6 | (i) `=A4*10`. (ii) 8 − 2 = **6 × 6** (36 cells), last cell **`H23`**. |
+
+**Practice Set B**
+
+| Item | Answer |
+|---|---|
+| B1 | V = (0+0+0) − (0+255+255) = −510, \|V\| = 510. H = (255+255+0) − (0+0+0) = +510, \|H\| = 510. Sum 1020, `MIN(255, 1020)` = **255**. A **corner** (top-right: paper above and to the right, ink below and to the left), because both filters fired. |
+| B2 | (i) The window is shifted one row up and one column left, so it reads a window partly off Priya's picture (empty cells in row 1 and column A) and misses her last row and column. (ii) A wrong but plausible-looking outline shifted by one cell, with a false bright line where real pixels meet empty cells. **No error message**, since empty counts as 0. |
+| B3 | (i) **Not hollow: a solid block.** (ii) With a one-pixel stroke no window ever has all nine pixels equal, so there is never a zero. A hollow interior needs a stroke about 4 pixels thick. (Extra oddity: directly on top of a one-pixel line the filter ignores the middle column and gives 0, so the line comes out as two lines with a gap.) |
+| B4 | Edges: Spot 1 140 → 141 (+1); Spot 2 130 → 129 (−1); Spot 3 144 → 143 (−1). Six brightness changes +38, +39, +39, +38, +39, +38, average **38.5**. Edge changes 1, 1, 1, average **1.0**. Finding: brightness moved about 38.5, edges only 1, so about **38 times more**. The edges did not stay identical; the finding is the comparison. |
+| B5 | (i) Brilliant on the rug, falls apart on the desk (about 50% for two classes). (ii) The rug gave strong, repeated edges in the same places in every photo while the objects moved; the model learned the rug, not the objects: a rug detector with two labels on it. |
+
+The lamp data in B4 is a comb; Part D's eraser sheet is the separate fallback for Build It Part 3.
+
+**Puzzle of the Week**
+
+| Item | Answer |
+|---|---|
+| P1 | A 140 → 140 (190−50, 235−95); B 140 → 140 (185−45, 230−90); C 140 → 140 (200−60, 245−105); D 140 → **50** (195−55, 150−100) |
+| P2 | **Spot D** |
+| P3 | In A, B, C both numbers rose by 45. In D the object rose 55 → 100 but the **paper fell** 195 → 150: it got darker while everything else got brighter. |
+| P4 | Something came between lamp and paper at that spot, most likely a **shadow** (of the object, a hand or the lamp arm). Also acceptable: something moved onto the paper, or D was measured in a slightly different place. |
+| P5 | **No, but it narrows the claim.** Edges survive light that changes *evenly*; D was not even (one side brighter, the other darker). Honest version: an edge survives light that changes by the same amount everywhere, not light that creates new shadows. |
+
+**Think Deeper**
+
+| Item | Answer |
+|---|---|
+| T1 | Any uneven light, for example a lamp to one side: it brightens the facing side more and casts a **shadow whose boundary is a brand-new fake edge**. Edges along the lamp's direction survive fairly well, edges across it change. The proof is **narrower, not worthless**: an even change cancels because both sides get the same bonus. |
+| T2 | before: object 40, wall 200, edge 160; after: object **20**, wall **100**, edge **80**. The edge **halves**. Honest rewrite: edges survive light being *added* perfectly, and do not survive light being *multiplied*. (Reason: weights sum to zero, so adding k changes the answer by k × 0; multiplying by m multiplies the whole answer.) |
+
+**Draw It**
+
+A good drawing has all three: (1) background edges drawn **longer and stronger** than the object's; (2) background edges in the **same place in both panels** while the object moves; (3) an arrow to the **background**, with a reason that means *reliable* (a model learns whatever is most reliably next to the label). Common half-answer: only the object's outline in the right panel. Send them back to add the grain, since the filter reports all edges.
+
+**Self-Check** has no right answers. A row of all 😀 next to a missing Part 2 is the thing to question.
 
 ---
 

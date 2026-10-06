@@ -15,7 +15,7 @@
 | **New maths** | **None.** This week practises what they already have. Every number on the page is a subtraction of two AUCs, and they have been subtracting since Week 5. |
 | **New syntax** | `pipe.set_params(prep__num__scaler=MinMaxScaler())` · `X.drop(columns=[c])` · `df.to_string(index=False)` |
 | **Dataset** | The same numpy-generated pizza-delivery table from Weeks 1–6: `make_data.py`, `seed=0`, 2,020 rows. Plus one supplied file, `leaky_features.py`, which has a bug planted in it on purpose. **Nothing downloads. No internet needed.** |
-| **Materials** | Printed workbook pages 7.1–7.6 · **a big sheet of paper or a whiteboard for the ablation table** (this is the lesson's centrepiece) · a red pen for striking out illegal rounds · a timer that can do six minutes · the Bug Log |
+| **Materials** | The printed workbook (Warm-Up, Do the Maths by Hand, Practice Set A, and the Build It page, which carries the predict-the-sign table, the ablation table, the leak hunt and the defence) · **a big sheet of paper or a whiteboard for the ablation table** (this is the lesson's centrepiece) · a red pen for striking out illegal rounds · a timer that can do six minutes · the Bug Log |
 | **Tech needed** | Laptop with Python 3, numpy, pandas, scikit-learn. **No new installs this week.** `make_data.py` from Week 1 must still exist in the folder. You must place `leaky_features.py` in the folder before class — the full text is in the Prep Checklist. |
 | **Prep time** | 25 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | `bench.py` **under 2 seconds**. `leak_hunt.py` **under 2 seconds**. Nothing this week takes longer than a breath. If something runs for a minute, something is wrong. |
@@ -334,7 +334,7 @@ def add_features(d):
     return d
 ```
 
-- [ ] **Run `bench.py` yourself, all the way through.** The complete file is in the Answer Key under page 7.4. Create it, run it, and check you get **exactly** this:
+- [ ] **Run `bench.py` yourself, all the way through.** The complete file is in the Answer Key under Build It — Finish the ablation table (`bench.py`). Create it, run it, and check you get **exactly** this:
 
 ```text
 train 1200   val 400   test 400
@@ -355,7 +355,7 @@ total honest gain   : 0.0058
 
 **Expected runtime: under 2 seconds.** If your numbers differ, the cause is almost always one of three things: `make_data.py` has been edited, a `random_state` is not `0`, or `drop_duplicates()` is missing.
 
-- [ ] **Run `leak_hunt.py` yourself.** Complete file in the Answer Key under page 7.5. Expected output:
+- [ ] **Run `leak_hunt.py` yourself.** Complete file in the Answer Key under Build It — The leak hunt (`leak_hunt.py`). Expected output:
 
 ```text
 --- audit 0: the two scores ---
@@ -393,7 +393,7 @@ VERDICT: target leakage. The feature is the answer, dressed as a statistic.
 - [ ] **Break it on purpose, twice, so you have seen both live.**
   1. Change `prep__num__scaler` to `prep__scaler`. You get a `ValueError` whose final sentence lists the valid names. **Read that list.** It is scikit-learn handing you the answer.
   2. In `bench.py`, delete `"order_hour"` from the incoming frame with `X_train.drop(columns=["order_hour"])` instead of removing it from the `num` list. You get `KeyError: 'order_hour'` from **inside the feature function**, because `is_rush` is built *from* `order_hour`. This is the good mistake and Step 4 of the live-code stages it deliberately.
-- [ ] **Print workbook pages 7.1–7.6.**
+- [ ] **Print the whole workbook for Week 7** (sections: Warm-Up · Do the Maths by Hand · Predict the Output · Practice Set A · Practice Set B · Fix the Broken Program · Puzzle of the Week · Think Deeper · Build It · Draw It · Self-Check). The lesson itself uses only Practice Set A (A2) and the Build It page.
 - [ ] **Put a big blank table on the wall.** Four columns: `what I changed`, `val AUC`, `Δ`, `keep or drop`. Ten blank rows. **This is the single most important physical object in the room today.**
 - [ ] **Find the red pen.** You are going to strike out at least one round.
 
@@ -410,7 +410,7 @@ VERDICT: target leakage. The feature is the answer, dressed as a statistic.
 
 **This week survives a total laptop failure better than any other week in the level**, because the discipline is the lesson and the discipline is done in pen.
 
-1. **Hand out the printed table** from §5 above, with the `val_auc` column filled in and the `delta` and `verdict` columns **blank**. Their job: compute all seven deltas by subtraction, and write keep or drop next to each. Seven subtractions of four-decimal numbers. **That is objective 2, complete, on paper.** (Answers in the Answer Key, page 7.4.)
+1. **Hand out the printed table** from §5 above, with the `val_auc` column filled in and the `delta` and `verdict` columns **blank**. Their job: compute all seven deltas by subtraction, and write keep or drop next to each. Seven subtractions of four-decimal numbers. **That is objective 2, complete, on paper.** (Answers in the Answer Key under Workbook answers — Do the Maths by Hand, M1, and Build It — Finish the ablation table.)
 2. **Then the harder question, which needs no computer at all:** *"row 7 removes a real column from the file and the score goes UP. How is that possible?"* Give them three minutes and a hint — *"look at row 2"*. **That is the deepest idea of the week and paper delivers it better than a screen**, because both rows are visible at once.
 3. **The leak hunt, on paper.** Hand them the printed `leaky_features.py` and the three scores 0.9240 / 0.7535 / 0.6115. Four questions: *"which of the three features is poisoned? What was it computed from? Why does 360 groups of one matter? And at the moment an order is placed, does this value exist?"* **Objective 3, complete.**
 4. **The defence.** Write out the final feature set as a list, and beside every column a number from the table that justifies it. **Objective 4, and it is a writing task, not a typing task.**
@@ -547,9 +547,9 @@ Let them answer. What you are hoping for is somebody suspicious, because Week 6 
 
 > "Two rows. And here's the enforcement, so you know it's real: **if a round has two changes in it, I strike the row out in red and you re-run it.** Not as a punishment — because the row is genuinely worthless and leaving it there is worse than having no row."
 
-**Do this:** Hand out workbook page 7.1 and give them four minutes on it, in pen. Six described experiments; they mark each as one change or more, and rewrite the bad ones as separate rows. Walk round. **Do not help beyond re-reading the description out loud.**
+**Do this:** Hand out workbook Practice Set A, item A2 ("One change or more?") and give them four minutes on it, in pen. Six described experiments; they mark each as one change or more, and rewrite the bad ones as separate rows. Walk round. **Do not help beyond re-reading the description out loud.**
 
-**Then:** page 7.2, two minutes, also in pen. Four candidate changes; they predict the *sign* of each delta before any code runs.
+**Then:** the "Predict the sign" table on the Build It page, two minutes, also in pen. Four candidate changes; they predict the *sign* of each delta before any code runs.
 
 > "Pen, not pencil. You are going to be wrong about at least two of these and I want the evidence."
 
@@ -848,7 +848,7 @@ This section gives the complete setup, rules and rounds for the tournament.
 - A pen for the student. **They write on the wall, not you.** This matters more than it sounds.
 - Your red pen, visible.
 - Timer at six minutes.
-- Workbook page 7.3 open in front of them — the paper copy of the same table, which goes home.
+- The ablation table on the workbook Build It page open in front of them — the paper copy of the same table, which goes home.
 
 ### The rules, read out loud before round one
 
@@ -876,7 +876,7 @@ This section gives the complete setup, rules and rounds for the tournament.
 - **Five of them say "drop"** (and the baseline and two changes say "keep"). If every change says keep, they were not trying anything risky, or they were rounding kindly.
 - The student can put a finger on any row and say, in one sentence, what changed and what it cost.
 - The best honest score is stated **with the pile named**: *"0.7599 on the 400 validation rows."*
-- Workbook page 7.3 is a copy of the wall, in their handwriting.
+- The workbook Build It ablation table is a copy of the wall, in their handwriting.
 
 ### Variation — easier
 
@@ -1101,19 +1101,21 @@ This section gives the wording for setting the homework.
 
 **Say this:**
 
-> "About an hour, three pages, and most of the marking is on the last one.
+> "About an hour, and most of the marking is on the Build It page.
 >
-> **First, page 7.4 — finish the ablation table. Six rows minimum**, and every row is one change with its delta to four decimal places and a keep-or-drop. Copy across the rows we did together, then add your own. **At the top of the page write your best validation AUC and the pile it came from.** Not '0.7599'. '**0.7599 on the 400 validation rows.**'
+> **First, the Build It page — the ablation table. Six rows minimum**, and every row is one change with its delta to four decimal places and a keep-or-drop. Copy across the rows we did together, then add your own. **At the top of the table write your best validation AUC and the pile it came from.** Not '0.7599'. '**0.7599 on the 400 validation rows.**' And fill in the *Predict the sign* table in pen before you run anything.
 >
-> **Second, page 7.5 — the leak hunt.** Run `leak_hunt.py`. Then answer four things: **which of the three features is poisoned**, **which flavour of leak it is**, **the fake score**, and **the honest score**. And one sentence I want in your own words: *at the moment a customer places an order, does that value exist?*
+> **Second, still on Build It — the leak hunt.** Run `leak_hunt.py` and fill in all five audits. Then answer four things: **which of the three features is poisoned**, **which flavour of leak it is**, **the fake score**, and **the honest score**. And one sentence I want in your own words: *at the moment a customer places an order, does that value exist?*
 >
-> **Third, page 7.6 — and this is the page I'm actually marking. Defend your final feature set.** Write out every column you kept, and next to each one **a number from your own table**. Then every column you dropped, with its number. If you cannot put a number next to a decision, you have not finished the experiment — go and run it."
+> **Third, the defence table on the same page — and this is the part I'm actually marking. Defend your final feature set.** Write out every column you kept, and next to each one **a number from your own table**. Then every column you dropped, with its number. If you cannot put a number next to a decision, you have not finished the experiment — go and run it.
+>
+> **Also, before next week:** the Warm-Up, *Do the Maths by Hand* (M1 to M4, calculator only), and *Fix the Broken Program*. The other sections — Predict the Output, Practice Sets A and B, the Puzzle, Think Deeper and Draw It — are there if you want more; tell me which ones you did."
 
-**Workbook pages:** 7.1, 7.2, 7.3 in class · **7.4, 7.5, 7.6** at home.
+**Workbook sections:** Practice Set A (A2) and the Build It predict-the-sign table in class · **Build It (ablation table, leak hunt, defence), Warm-Up, Do the Maths by Hand and Fix the Broken Program** at home · everything else optional.
 
-**Expected time:** 20 min finishing the table and its deltas · 20 min on the leak hunt and its four answers · 20 min writing the defence. **About 60 minutes.**
+**Expected time:** 20 min finishing the table and its deltas · 20 min on the leak hunt and its four answers · 20 min writing the defence. **About 60 minutes for the Build It page**, plus roughly 30 for the Warm-Up, M1–M4 and Fix the Broken Program if you set them.
 
-> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — does every row contain exactly one change?** Any row naming two things is a zero for that row, and say why on the page. **Two — is there a number beside every keep and every drop on page 7.6?** A defence that says "I kept `distance_km` because distance obviously matters" has not done the work, however true it is. **Three — does the leak answer name the flavour AND say why the fake number could never be real?** The good answer is something like *"target leakage — the column was worked out from the `late` column, and 360 groups hold one order, so for those rows the 'rate' is just that order's answer. At the moment the order is placed nobody knows if it'll be late, so the column would be empty in real life."* An answer that says "it's leakage because the score was too high" has spotted the smell and not the cause.
+> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — does every row contain exactly one change?** Any row naming two things is a zero for that row, and say why on the page. **Two — is there a number beside every keep and every drop in the Build It defence table?** A defence that says "I kept `distance_km` because distance obviously matters" has not done the work, however true it is. **Three — does the leak answer name the flavour AND say why the fake number could never be real?** The good answer is something like *"target leakage — the column was worked out from the `late` column, and 360 groups hold one order, so for those rows the 'rate' is just that order's answer. At the moment the order is placed nobody knows if it'll be late, so the column would be empty in real life."* An answer that says "it's leakage because the score was too high" has spotted the smell and not the cause.
 
 ---
 
@@ -1121,7 +1123,464 @@ This section gives the wording for setting the homework.
 
 Every question restated, so you can mark from this page alone.
 
-### Page 7.1 — One change or more?
+**Where things are in the workbook.** The key is organised by the workbook's own sections and item labels. The older lesson-handout names ("Page 7.1" to "Page 7.6") survive only in brackets in the headings of the Build It sections and the A2 notes further down; this table maps them.
+
+| Workbook section (item labels) | Answered in this key under |
+|---|---|
+| Warm-Up (W1–W5) | Workbook answers — Warm-Up |
+| Do the Maths by Hand (M1–M4) | Workbook answers — Do the Maths by Hand |
+| Predict the Output (P1–P4) | Workbook answers — Predict the Output |
+| Practice Set A (A1–A6) | Workbook answers — Practice Set A; A2 also has the older "Page 7.1" notes below |
+| Practice Set B (B1–B5) | Workbook answers — Practice Set B |
+| Fix the Broken Program (Bugs 1–3) | Workbook answers — Fix the Broken Program |
+| Puzzle of the Week (Parts 1–2) | Workbook answers — Puzzle of the Week |
+| Think Deeper (T1–T2) | Workbook answers — Think Deeper |
+| Build It: predict the sign | Build It — Predict the sign (formerly "Page 7.2") section, below |
+| Build It: ablation table | Build It — class wall table and Finish the ablation table (formerly "Page 7.3", "Page 7.4") sections, below (`bench.py`) |
+| Build It: leak hunt | Build It — The leak hunt (formerly "Page 7.5") section, below (`leak_hunt.py`) |
+| Build It: defence table | Build It — Defend your final feature set (formerly "Page 7.6") section, below |
+| Draw It · Self-Check | Workbook answers — Draw It, Self-Check |
+
+> **🧑‍🏫 One rounding trap when marking by hand.** `bench.py` prints **−0.0051** (row 4) and **+0.0003** (row 5). A student subtracting the already-rounded table values (M1, A6, B2) gets **−0.0050** and **+0.0004**. Both are correct arithmetic on the numbers given; accept either, and do not change the keep/drop verdicts, which are the same either way. The workbook answers below use the hand-subtraction values; the Build It sections use the `bench.py` values.
+
+
+### Workbook answers — Warm-Up
+
+**W1.** **Target leakage** — a column that only exists, or only gets filled in, **because the outcome already happened** (`customer_called_support`, fake 0.9762 against honest 0.7752). **Temporal leakage** — rows shuffled across a **time** boundary, so the model trains on the future and is tested on the past (0.8139 against 0.5249). **Preprocessing leakage** — a statistic worked out over **all** the data before the split: a mean, a median, or a choice of which columns to keep (0.765 against 0.520).
+
+**W2.** **29.5, the median of the training rows.** The fill-in number is a thing the model *learns*, so it may only be learned from the rows the model is allowed to see. 29.0 was worked out partly from the 800 rows you were about to be marked on, so a score measured against them is measured against numbers that already knew something about the answers.
+
+**W3.** **0.7723 − 0.7752 = −0.0029.** It made the model worse, so **the column goes.** A new column earns its place or it leaves — that is the Week 5 habit surviving contact with a new tool.
+
+**W4.** **Preprocessing leakage.** No individual column was poisoned and no time boundary was crossed. The bug was *choosing* the 20 columns while looking at every label — a decision made over all the data, before the split. With 2,000 pure-noise columns you get 2,000 chances to get lucky, and 20 of them look wonderful by accident.
+
+**W5.** ***"At the moment I need the prediction, does this value exist?"*** If the answer is no, the feature is poison no matter how good the score looks — and no arithmetic is required to find that out.
+
+### Workbook answers — Do the Maths by Hand
+
+**M1.**
+
+| row | val AUC | measured against | Δ | keep / drop |
+|---|---|---|---|---|
+| 2 | 0.7586 | 0.7541 | **+0.0045** | **keep** |
+| 3 | 0.7585 | 0.7586 | **−0.0001** | **drop** |
+| 4 | 0.7536 | 0.7586 | **−0.0050** | **drop** |
+| 5 | 0.7590 | 0.7586 | **+0.0004** | **drop** |
+| 6 | 0.7579 | 0.7586 | **−0.0007** | **drop** |
+| 7 | 0.7599 | 0.7586 | **+0.0013** | **keep** |
+| 8 | 0.7576 | 0.7586 | **−0.0010** | **drop** |
+
+> **🔢 The maths, slowly — and this is worth two minutes of your life.** `bench.py` prints **−0.0051** for row 4 and **+0.0003** for row 5, and you just wrote **−0.0050** and **+0.0004**. **You are not wrong and neither is the computer.** Row 4's real score is `0.75356217`, and `0.75356217 − 0.75862700 = −0.00506484`, which rounds to **−0.0051**. You subtracted the numbers *after* they had been rounded to `0.7536`, so you got **−0.0050**. Same for row 5: the real delta is `+0.00033562`, but `0.7590 − 0.7586` is `+0.0004`.
+>
+> **The rule this teaches: round at the end, never in the middle.** A tenth of a ten-thousandth does not matter today. It matters enormously in Week 15, when thousands of tiny numbers get added up.
+
+**M1(a).** `0.7599 − 0.7541 = **0.0058**`.
+
+**M1(b).** **Four** of the seven deltas are negative: rows 3 (−0.0001), 4 (−0.0050), 6 (−0.0007) and 8 (−0.0010). Row 5 (+0.0004) is *positive* and still gets dropped, because it is below the keep line.
+
+**So the honest count is: seven changes, four regressions, five drops (the four regressions plus row 5), two keeps.** An earlier wording of the chapter called the dropped rows "regressions" — and the distinction is worth having in your own words: **a regression made it worse; a drop merely failed to earn its place.** Both belong on the table.
+
+**M2.**
+
+| World | change A did | change B did | total |
+|---|---|---|---|
+| 1 | +0.004 | **0.000** | +0.004 |
+| 2 | **0.000** | +0.004 | +0.004 |
+| 3 | +0.010 | **−0.006** | +0.004 |
+| 4 | **−0.006** | +0.010 | +0.004 |
+
+**M2(a).** **World 3** (and world 4, which is the same story with the letters swapped). Change B costs you 0.006 and you have just shipped it, because A was carrying it.
+
+**M2(b).** One number is one equation and you have two unknowns. Four different pairs of contributions produce the identical total, so the measurement cannot choose between them — **the information was never collected.**
+
+**M3(a).** `0.7586 + 0.0003 + 0.0013 = **0.7602**`.
+
+**M3(b).** `0.7604 − 0.7586 = **+0.0018**`.
+
+**M3(c).** **Not exactly — the prediction is 0.0002 low.** But 0.0002 is far below the 0.005 line (and partly rounding: the unrounded deltas are 0.00034 and 0.00131), so this example does not prove the deltas fail to add. It shows you cannot *assume* they add: when features overlap in what they explain, their effects can **interact**, which is the honest reason "one change at a time" is a *discipline* rather than a *proof*. It gives you attributable rows; it does not give you a formula for combining them.
+
+**M4.**
+
+| delta *d* | *d* − mean | (*d* − mean)² |
+|---|---|---|
+| −0.0001 | +0.00078 | 0.00000061 |
+| −0.0051 | −0.00422 | 0.00001778 |
+| +0.0003 | +0.00118 | 0.00000140 |
+| −0.0007 | +0.00018 | 0.00000003 |
+| +0.0013 | +0.00218 | 0.00000477 |
+| −0.0010 | −0.00012 | 0.00000001 |
+
+**sum of the six deltas** = `−0.0001 − 0.0051 + 0.0003 − 0.0007 + 0.0013 − 0.0010 = **−0.0053**`
+
+**mean** = `−0.0053 ÷ 6 = **−0.00088**` (to five places, −0.000883)
+
+**sum of the squares** = **0.00002461**  **÷ 6** = **0.00000410**
+
+**standard deviation** = `√0.00000410 = **0.00203**` (Python gives 0.002025)
+
+**M4(a).** `(0.1705 − (−0.00088)) ÷ 0.00203 = 0.17138 ÷ 0.00203 = **84.4**` standard deviations. (Python, keeping every decimal place instead of the rounded ones: **84.63**.)
+
+**M4(b).** *"An honest change on this table moves the score by about **0.002**, so a jump of 0.1705 is about **84** times bigger than anything honest, and that is why I stopped and audited it."* Any answer in the same neighbourhood is right; the point is that **the leak is not slightly unusual, it is off the end of the ruler.**
+
+### Workbook answers — Predict the Output
+
+**P1.**
+
+```text
+(2000, 8)
+(2000, 7)
+True
+```
+
+**Why not 2,020?** Because of `.drop_duplicates()`. `make_data.py` deliberately duplicates 20 rows — 1% of 2,000 — and a duplicated row that lands in two different piles is a row the model has already seen. Dropping them takes 2,020 back to **2,000**.
+
+And **8 columns, not 10**, because `order_id` and `late` were both dropped: `order_id` is a row number, not a fact about the world, and `late` is the answer.
+
+**Line 3 is `True` and it is the whole point of the snippet:** `.drop` hands you a **copy**. `X` is untouched, which is exactly what lets you drop a column, measure, and still have the full table ready for the next experiment.
+
+**P2.**
+
+```text
+0.7585
+0.7587
+0.00039999999999995595
+0.0004
+```
+
+**Two surprises, both worth having.**
+
+**One: `0.75855` printed `0.7585` and `0.75865` printed `0.7587`.** Both end in 5, and they went opposite ways. The reason is that neither number exists exactly in binary — `0.75855` is stored as very slightly *less* than 0.75855, so it rounds down, and `0.75865` is stored as slightly *more*, so it rounds up. **You cannot predict which way a `...5` will go, so never let a decision hang on the fourth decimal place.**
+
+**Two: `0.7590 - 0.7586` is not `0.0004`.** It is `0.00039999999999995595`. Same cause: neither number is exact, so their difference carries the error. `round(..., 4)` tidies it to `0.0004` for printing.
+
+**What it means for a table whose gain is 0.0058:** the arithmetic is fine to about twelve decimal places, which is eight more than you are using — so it does not threaten your table. **But it does mean you round for display and never compare two numbers by `==`.**
+
+**P3.**
+
+```text
+KeyError: "['order_hour'] not found in axis"
+```
+
+**`.drop` means rows unless you say otherwise.** With no `columns=`, pandas went looking for a **row** whose index label was `"order_hour"` and there is no such row. Note the message says *"not found in axis"* — that is pandas telling you it searched the wrong axis, which is the clue.
+
+The fix is `X.drop(columns=["order_hour"])` — `columns=` **and** square brackets, even for a single name.
+
+**P4.**
+
+```text
+[0, 1, 1, 1, 0]
+3
+[1, 0, 1]
+```
+
+**`between(18, 20)` includes both ends.** 18, 19 **and 20** are all `True`, so there are **three** rush hours, not two. That is `is_rush` in one line, and if you thought the 20 was excluded, you had just invented a different feature.
+
+`.isin(["Sat", "Sun"])` is the same idea for words: `Sat` → 1, `Mon` → 0, `Sun` → 1. That is `is_weekend`.
+
+**Both lines end in `.astype(int)`** because a column of `True`/`False` is not something you can scale and multiply by a weight — but `1` and `0` are.
+
+### Workbook answers — Practice Set A
+
+**A1.** feature set → **(iii)** · ablation table → **(i)** · regression → **(v)** · leak hunt → **(ii)** · target leakage → **(iv)**
+
+**A2.**
+
+| # | Verdict | If more than one, the rows it should be |
+|---|---|---|
+| 1 | **One change.** | — |
+| 2 | **Two changes.** | Row A: + `is_rush`. Row B: + `is_weekend`, on top of A. |
+| 3 | **One change.** | — |
+| 4 | **Two changes.** | Row A: + `min_per_km`. Row B: − `prep_minutes`, on top of A. The reasoning is good; it is still two rows. |
+| 5 | **Two changes — and one of them is illegal today.** | Row A: + `dist_x_weather`. The `max_iter` change touches the **model**, which is frozen this week. Revert it. |
+| 6 | **Zero changes — and not comparable anyway.** | Nothing to record. |
+
+**A2(a).** **Number 5.** `max_iter` is a setting on `LogisticRegression`, and this week's whole discipline is *the model is frozen, only the features move.* If you change the model, every earlier row in your table is now about a machine that no longer exists.
+
+**A2(b).** **Number 6.** A different laptop is not a feature change. If the score differs, the cause is a different `random_state`, a different `make_data.py`, or a different library version — all of which are **bugs to investigate**, not experiments to record.
+
+**A3.**
+
+| # | What happens | The fix |
+|---|---|---|
+| a | `ValueError: Invalid parameter 'scaler' for estimator ColumnTransformer(...)`, ending in a list of valid names. The address is missing a level: `prep` holds *transformers*, and the scaler lives inside the one called `num`. | `pipe.set_params(prep__num__scaler=MinMaxScaler())` |
+| b | `KeyError: "['day_of_week'] not found in axis"`. Without `columns=`, `.drop` looks for a **row**. | `X.drop(columns=["day_of_week"])` |
+| c | **No error. A plausible, wrong number: 0.7541 — identical to the baseline.** `is_rush` was built and never shown to the model, because it is not in the number list. | `measure(CHAMP, CAT, RUSH)` — both lists must agree |
+| d | `ValueError: A given column is not a column of the dataframe`. `CHAMP` **lists** `is_rush` and `{}` tells `add_features` to build **nothing**. | `measure(CHAMP, CAT, RUSH)` |
+| e | `KeyError: 'order_hour'`, raised **inside `add_features`** in your own file: you threw away the ingredient and then asked for the cake. | Take the name out of the **number list**, not out of the table: `measure([c for c in CHAMP if c != "order_hour"], CAT, RUSH)` |
+| f | **No error and nothing appears.** `to_string` *makes* text; only `print` *shows* it. | `print(table.round(4).to_string(index=False))` |
+| g | **No error, and a slow disaster.** You have overwritten `X`, so the column is gone for every later experiment and every later row of your table is secretly about a smaller table. | `X_lean = X.drop(columns=["order_hour"])` — never assign back over the original |
+
+**A3(h).** **c, f and g** produce no error at all — three of the seven, which is the real lesson of the page. The clues: **c** prints a score *identical to the baseline to four decimal places*, which is a coincidence too large to believe; **f** prints *nothing*, and a program that prints nothing has not succeeded; **g** shows up as a later row failing with `KeyError` on a column you know is in the file, or — worse — as every later score quietly shifting.
+
+**A4.** i → **T** · ii → **S** · iii → **Q** · iv → **P** · v → **R**
+
+`%+.4f` on `0.7536 - 0.7586` gives `-0.0050`: the `+` in the format means *always show the sign*, and the sign here is a minus.
+
+**A5.**
+
+**Log A — the built-but-not-listed bug.** `is_rush` was created by the derive step and never put in the `num` list, so the model never saw it. **The giveaway is the identical score:** 0.7541 twice, to four decimal places. A new column is worth *exactly* nothing only if it never arrived.
+
+**Log B — the listed-but-not-built bug.** The same mistake from the other direction: the column is named in `num` and `add_features` was told to build nothing. **The giveaway is that the baseline printed first** — so the file is fine and it is the *second* call that is wrong.
+
+**Log C — target leakage.** A single column moved the score by 0.1705 when every honest change all afternoon moved it by less than 0.005. **The giveaway is the size of the jump**, and audit 4 confirms it with no arithmetic: the value does not exist when the order is placed.
+
+**Log D — measured on the wrong pile.** These are training scores, not validation scores. **The giveaway is the level, 0.786** — far above the 0.74 to 0.77 band where honest scores live on this table — **and the sign**, because on validation this change is a small loss, not a small gain.
+
+**A5(a).** Easiest → hardest: **B, C, D, A.**
+
+**B** is easiest: it crashes, and the message names the problem. **C** is next: nothing crashes, but the number is so far outside the honest band that it announces itself — *if* you know what the honest band is. **D** is harder: the numbers look like plausible AUCs and only the level gives it away. **A** is hardest of all, because the number is not merely plausible, it is *the number you already believed*.
+
+What would have caught them: B — reading the last line. C — knowing the honest range, plus audit 0. D — printing which pile every score came from, on every line. A — printing both lists side by side before trusting the row.
+
+**A6.** The deltas and verdicts are exactly M1's table: **+0.0045 keep · −0.0001 drop · −0.0050 drop · +0.0004 drop · −0.0007 drop · +0.0013 keep · −0.0010 drop** (`bench.py` prints −0.0051 and +0.0003 on rows 4 and 5, because it subtracts before rounding — see the note under M1).
+
+**A6(a).** *"Rows 3 to 8 are each one change from row 2, so every delta on those rows is measured against **0.7586**. Only row 2 is measured against row 1's 0.7541."*
+
+**A6(b).** **Rows 2 and 7.** Between them: `+0.0045 + 0.0013 = +0.0058` — which is exactly the total honest gain, `0.7599 − 0.7541`. **The two keeps account for the whole afternoon.**
+
+### Workbook answers — Practice Set B
+
+**B1.**
+
+```python
+X_lean = X_train.drop(columns=["order_hour"])
+
+print("full %s   lean %s   original still has order_hour: %s"
+      % (X_train.shape, X_lean.shape, "order_hour" in X_train.columns))
+```
+
+```text
+full (1200, 8)   lean (1200, 7)   original still has order_hour: True
+```
+
+**B2.**
+
+```python
+rows = [("3  + is_weekend", 0.7585), ("4  + min_per_km", 0.7536),
+        ("5  + items_per_km", 0.7590), ("6  scaler -> MinMaxScaler", 0.7579),
+        ("7  drop order_hour", 0.7599), ("8  drop day_of_week", 0.7576)]
+
+
+def show_deltas(rows, reference):
+    print("reference: %.4f" % reference)
+    for label, auc in rows:
+        delta = auc - reference
+        verdict = "keep" if delta > 0.0010 else "drop"
+        print("%-26s %.4f  %+.4f  %s" % (label, auc, delta, verdict))
+
+
+show_deltas(rows, 0.7586)
+```
+
+```text
+reference: 0.7586
+3  + is_weekend            0.7585  -0.0001  drop
+4  + min_per_km            0.7536  -0.0050  drop
+5  + items_per_km          0.7590  +0.0004  drop
+6  scaler -> MinMaxScaler  0.7579  -0.0007  drop
+7  drop order_hour         0.7599  +0.0013  keep
+8  drop day_of_week        0.7576  -0.0010  drop
+```
+
+**The two rows that differ from `bench.py` are 4 and 5** — `−0.0050` here against `−0.0051` there, and `+0.0004` here against `+0.0003` there. **Cause: you handed the function numbers that had already been rounded to four places.** `bench.py` subtracts `0.75356217 − 0.75862700` and only rounds at the end. Both are correct arithmetic on the numbers they were given; only one of them is *the delta*. **Round at the end, never in the middle.**
+
+**B3.**
+
+```python
+auc = measure(CHAMP + ["dist_x_weather"], CAT, {**RUSH, "inter": True})
+```
+
+Full program and its real output:
+
+```python
+from bench import CAT, CHAMP, RUSH, measure
+
+champ = measure(CHAMP, CAT, RUSH)
+auc = measure(CHAMP + ["dist_x_weather"], CAT, {**RUSH, "inter": True})
+print("reference (+ is_rush)   : %.4f" % champ)
+print("9  + dist_x_weather     : %.4f" % auc)
+print("delta                   : %+.4f" % (auc - champ))
+print("verdict                 : %s" % ("keep" if auc - champ > 0.0010 else "drop"))
+```
+
+```text
+reference (+ is_rush)   : 0.7586
+9  + dist_x_weather     : 0.7568
+delta                   : -0.0018
+verdict                 : drop
+```
+
+**Note the two lists agreeing.** `dist_x_weather` is in the number list **and** `inter=True` is in the settings. Leave either one out and you get the pair of bugs from A3 (c) and (d).
+
+**And note the result: an "obviously clever" interaction feature lost 0.0018.** Distance times weather severity *sounds* like exactly the sort of thing that should help. It is a regression, it goes on the table as a regression, and the table is better for having it.
+
+**B4.**
+
+```python
+print("--- audit 0: the two scores ---")
+leaky_pipe, leaky_auc = fit_and_score(NUM + [SUSPECT])
+_, honest_auc = fit_and_score(NUM)
+print("with %s : val AUC %.4f" % (SUSPECT, leaky_auc))
+print("without it                      : val AUC %.4f" % honest_auc)
+print("jump                            : %+.4f" % (leaky_auc - honest_auc))
+```
+
+```text
+--- audit 0: the two scores ---
+with similar_orders_late_rate : val AUC 0.9240
+without it                      : val AUC 0.7535
+jump                            : +0.1705
+```
+
+**Two model fits and three prints, and it is the most valuable two seconds in the week.** Audit 0 does not tell you *what* is wrong — it tells you *whether to worry*, which is the only question you have at the start.
+
+**B5.** `my_bench.py`:
+
+```python
+"""my_bench.py - two rows of my own, on top of the Week 7 champion."""
+import pandas as pd
+
+from bench import CAT, CHAMP, RUSH, measure
+
+champ = measure(CHAMP, CAT, RUSH)
+rows = [["2  + is_rush (reference)", champ, 0.0, "keep"]]
+
+for label, num, cat, kw, drop in [
+    ("9  + dist_x_weather", CHAMP + ["dist_x_weather"], CAT, {**RUSH, "inter": True}, ()),
+    ("10 drop restaurant", CHAMP, [c for c in CAT if c != "restaurant"], RUSH, ("restaurant",)),
+    ("11 drop weather", CHAMP, [c for c in CAT if c != "weather"], RUSH, ("weather",)),
+]:
+    auc = measure(num, cat, kw, drop)
+    delta = auc - champ
+    rows.append([label, auc, delta, "keep" if delta > 0.0010 else "drop"])
+
+table = pd.DataFrame(rows, columns=["what I changed", "val_auc", "delta", "verdict"])
+print()
+print(table.round(4).to_string(index=False))
+print()
+print("reference : 0.7586 on the 400 validation rows")
+print("best      : %.4f on the 400 validation rows" % table["val_auc"].max())
+```
+
+**Real output — and read the first thing that happens:**
+
+```text
+          what I changed  val_auc   delta verdict
+2  + is_rush (reference)   0.7586  0.0000    keep
+     9  + dist_x_weather   0.7568 -0.0018    drop
+      10 drop restaurant   0.7465 -0.0121    drop
+         11 drop weather   0.7310 -0.0276    drop
+
+reference : 0.7586 on the 400 validation rows
+best      : 0.7586 on the 400 validation rows
+```
+
+> **⚠️ Watch out:** `from bench import ...` **runs the whole of `bench.py`**, so before your own table appears you will see Week 7's eight-row table print itself again. Nothing is broken — importing a script executes it. It is also why `bench.py` is worth keeping short.
+
+**And now read rows 10 and 11, because they are the most useful thing on this page.** Dropping `restaurant` costs **0.0121**; dropping `weather` costs **0.0276**. Those are the two biggest numbers in this little table, and they are *negative* — which means those two columns are **carrying the model**. You now have a number to write next to `weather` on your defence page instead of "untested", and it is twenty times the size of anything you invented.
+
+
+### Workbook answers — Fix the Broken Program
+
+**Bug 1 — line `row1 = measure(NUM, {})`. A wrong-columns bug.** `NUM` lists `is_rush`, and `{}` tells `add_features` to build nothing, so `ColumnTransformer` went looking for a column that was never made. It is looking for **`is_rush`**.
+
+**The fix:** `row1 = measure(NUM, {"rush": True})` — the list and the settings must agree.
+
+**Bug 2 — the `set_params` line. A runtime bug.** `prep__scaler` is an address with a level missing. Read the last sentence of the error: the valid parameters of a `ColumnTransformer` include **`transformers`**, which is the hint — the scaler is not a part of `prep` itself, it is inside the transformer called `num`.
+
+**The fix:** `pipe.set_params(prep__num__scaler=MinMaxScaler())`.
+
+**Bug 3 — the last line of `measure`. A silent logic bug.** It scores on `y_train` and `X_train`: **the model is being marked on the rows it revised from.**
+
+Why that is always wrong: the model has already seen every one of those 1,200 rows and adjusted its weights to fit them. A score on training rows measures **memory**, not skill, and it always looks better — 0.7861 against the honest 0.7586. Worse, it moves in unpredictable directions when you add features, because a more complicated model can memorise more.
+
+**The fix:**
+
+```python
+    return roc_auc_score(y_val, pipe.predict_proba(X_val)[:, 1])
+```
+
+**What happened to the sign:** the broken version says `MinMaxScaler` **gained** 0.0002; the truth is that it **lost** 0.0007. On the broken table you would have written **keep** in the verdict column (well, not quite — +0.0002 is below the +0.0010 line, so you would have written *drop* for the wrong reason, which is worse: a right answer with a broken instrument). Either way **the sign of the delta flipped, and the sign is the entire content of the row.**
+
+**Ranking, easiest → hardest: 2, 1, 3.**
+
+**Bug 2** is easiest — it crashes and the message prints the list of names it would have accepted. **Bug 1** also crashes, but the message does not say *which* column, so you have to compare two lists yourself. **Bug 3** is by far the hardest: it produces four plausible decimal numbers and a plausible delta, and nothing on the screen says which pile they came from. What would have caught it: **printing the pile beside every score.** `"val AUC 0.7586"` and `"train AUC 0.7861"` are impossible to confuse; `0.7861` on its own is not.
+
+### Workbook answers — Puzzle of the Week
+
+**Part 1(a).** `+40 − 20 + 100 = **+120**`.
+
+**Part 1(b).** Every letter appears exactly twice in that sum — A in experiments 1 and 3, B in 1 and 2, C in 2 and 3 — so the total is `2 × (A + B + C)`. Therefore `A + B + C = 120 ÷ 2 = **+60**`, that is **+0.0060**.
+
+**Part 1(c).**
+
+```text
+C = (A + B + C) − (A + B) = 60 − 40   = +20   -> +0.0020
+A = (A + B + C) − (B + C) = 60 − (−20) = +80  -> +0.0080
+B = (A + B + C) − (A + C) = 60 − 100  = −40   -> −0.0040
+```
+
+**Part 1(d).** `A + B = 80 − 40 = +40` ✅ · `B + C = −40 + 20 = −20` ✅ · `A + C = 80 + 20 = +100` ✅
+
+**Part 1(e).** **B is the regression, at −0.0040.** And the notebook's owner shipped it — twice. Experiment 1 looked like a success (+40) and experiment 2 looked like a modest failure (−20), and in both of them **B was quietly costing 40 while A or C paid for it.** That is world 3 from M2, happening to a real person.
+
+**Part 1(f).** **Three** experiments, one per change — the same number they ran. **The same amount of work — but under the stated assumption they had to solve three equations to untangle it, and every number in the notebook was muddled until they did.** One-change rows hand you A, B and C directly, with no assumption about how changes combine. That is the argument for the discipline, and notice that it cost them nothing in effort to get it wrong.
+
+**Part 2.**
+
+| # | strike out? | why |
+|---|---|---|
+| 1 | no | the baseline: zero changes, and it is the anchor for row 2 |
+| 2 | no | one change |
+| 3 | **STRIKE** | **two changes in one row.** +0.0002 could be `+0.0004` and `−0.0002`, or anything else |
+| 4 | no | one change, and a regression — perfectly legal |
+| 5 | **STRIKE** | changes the **model**, which is frozen. Not a feature experiment at all |
+| 6 | no | one change |
+| 7 | **STRIKE** | different machine. Not comparable, and it belongs in the Bug Log |
+
+**Part 2(a).** **Four** usable rows: 1, 2, 4 and 6.
+
+**Part 2(b).** `row 3a: + is_weekend` and `row 3b: + items_per_km (on top of 3a)`. Both must be measured with the same `measure` function, from the same reference, and the second one has to say what it is sitting on top of.
+
+### Workbook answers — Think Deeper
+
+**T1.** A good answer contains four things.
+
+**One — what 0.0058 is actually worth.** On 400 validation rows, an AUC of 0.7599 against 0.7541 is a small, real, *defensible* improvement, and — this is the part that matters — **you can explain every ten-thousandth of it.** One row bought +0.0045 and one bought +0.0013, and both have a reason: a 0/1 flag can express a hump that a straight line cannot, and once you have the good version of a column the raw version costs you.
+
+**Two — what you learned that the model did not.** Lateness humps over the dinner rush. Day of week barely matters. Distance, weather and restaurant are carrying most of the signal (dropping them costs 0.1038, 0.0276 and 0.0121). **That knowledge outlives this model**, and it will still be true when somebody replaces the logistic regression with something else next year.
+
+**Three — the honest defence of the afternoon.** Yes, worth it — not because of the 0.0058 but because of the *table*. The table is what makes the next 0.0058 findable, and it is what would have caught the 0.9240.
+
+**Four — the harder half.** Yes, there is a gain too small to report *as a gain*: on 400 rows, anything under about 0.005 has no evidence behind it. But **"no evidence" is itself worth reporting**, as a row with a number and the word "drop". A table that only records successes is a table that has thrown away most of what it learned. The dishonest move is not reporting a small number — it is reporting it *without* saying how big the wobble might be.
+
+**T2.** A good answer says: **no, keeping row 7 is not dishonest — reporting it as certain would be.**
+
+Row 7 gained +0.0013, which is inside the noise band you have declared, so the correct entry is something like: *"drop `order_hour`: +0.0013 on the 400 validation rows. Kept, because it also removes a column and simpler is better when the evidence is a tie. This is inside my noise band and I have not proven it."* **That sentence is worth more than the decision either way**, because it tells future-you exactly what past-you believed and how much they believed it.
+
+What would settle it: **measure the wobble.** Score the same change on many different splits of the same data and look at the spread of the answers — if reshuffling flips the sign, there is nothing there. That is **cross-validation**, and it is Week 11. Until then the honest move is a written rule at the top of the table (*"under 0.005 = no evidence, on 400 rows"*) and a note in the "why" column on any row that leans on it.
+
+**A full-marks extra:** notice that row 7 has a *second* reason to be kept that has nothing to do with the score — it makes the feature set **smaller**. One fewer column to explain, maintain and break. When two options tie on evidence, prefer the one with less machinery.
+
+
+### Workbook answers — Draw It
+
+A good drawing has **five** things on it, and they are on the panel in the figure: the 2,000-row table with the `late` column marked; an arrow into a box labelled with one group (`CrustyBros, Fri, clear, 16`); that box holding **exactly one order**, whose `late` is 1; the rate written out as `1 ÷ 1 = 1.0` and annotated *"its own answer"*; and the arrow coming back out into the feature column under its innocent name.
+
+**How many boxes between `late` and the feature?** **Two** — the group, and the lookup table. And that is precisely why it is hard to spot: nobody looks two boxes upstream of a column called `similar_orders_late_rate`.
+
+**Where is the `1.0`?** Inside the group of one, and it is "the late rate of similar orders" for a group whose only member is **this order**. So it is not a rate at all. **It is a label with a statistic's name on it.**
+
+**The one arrow to point at:** the one going **from the `late` column into the lookup**. Everything downstream of that arrow is contaminated, and everything upstream is fine.
+
+### Workbook answers — Self-Check
+
+There are no right answers to a self-check, but two of those ten lines are the ones to be honest about. **"State my best score with the pile named"** — if that is not a 😀 by now, put a sticky note on your screen, because it is a mark in every week for the rest of the year. And **"defend every column I kept with a number"** — if that is a 😕, the cure is not more reading, it is running six more rows of `my_bench.py` and filling in the "why" column.
+
+
+---
+
+### Practice Set A, A2 — One change or more? (lesson handout, formerly "Page 7.1"): teacher notes
 
 *For each experiment, say whether it is one change or more than one. If it is more, rewrite it as separate rows.*
 
@@ -1136,7 +1595,7 @@ Every question restated, so you can mark from this page alone.
 
 **The sentence to look for on this page:** any version of *"if two things move, the number can't tell you which one did it."*
 
-### Page 7.2 — Predict the sign (in pen, before running)
+### Build It — Predict the sign (formerly "Page 7.2")
 
 *For each proposed change, predict whether the delta will be positive or negative. Then fill in the truth.*
 
@@ -1151,7 +1610,7 @@ Every question restated, so you can mark from this page alone.
 
 **The two worth discussing:** `min_per_km` feels clever and loses 0.0051. `drop order_hour` feels destructive and gains 0.0013. Both intuitions were backwards, and that is exactly why we measure.
 
-### Page 7.3 — The wall table, copied
+### Build It — The class wall table, copied (formerly "Page 7.3"; the same table as M1)
 
 *A copy of the class table, in the student's handwriting. Marked for completeness, not for matching.*
 
@@ -1168,7 +1627,7 @@ Every question restated, so you can mark from this page alone.
 
 **Rows 3–8 are each one change from row 2**, so every delta on those rows is measured against 0.7586. Row 2's delta is measured against row 1. **A student who writes that note on their page unprompted is at level 4.**
 
-### Page 7.4 — Finish the ablation table
+### Build It — Finish the ablation table (formerly "Page 7.4")
 
 **The complete runnable file. Run with `python3 bench.py`. Runtime: under 2 seconds.**
 
@@ -1299,9 +1758,11 @@ total honest gain   : 0.0058
 
 And row 2: 0.7586 − 0.7541 = **+0.0045**. Total honest gain: 0.7599 − 0.7541 = **+0.0058**.
 
+**Rows of the student's own that the workbook also lists** (from `my_bench.py`; all against 0.7586, all **drop**, so a student's own rows should land near these): 9 `+ dist_x_weather` 0.7568, **−0.0018** · 10 drop `restaurant` 0.7465, **−0.0121** · 11 drop `weather` 0.7310, **−0.0276** · 12 drop `distance_km` 0.6548, **−0.1038** · 13 drop `items` 0.7561, **−0.0025** · 14 drop `prep_minutes` 0.7562, **−0.0024**. Rows 10 to 14 are the numbers to put beside those columns on the defence table instead of "untested".
+
 **The required headline sentence:** *"My best validation AUC is 0.7599, on the 400 validation rows."* **A page without the pile named loses a mark, every week, all year.**
 
-### Page 7.5 — The leak hunt
+### Build It — The leak hunt (formerly "Page 7.5")
 
 **The complete runnable file. Run with `python3 leak_hunt.py`. Runtime: under 2 seconds.**
 
@@ -1504,7 +1965,7 @@ train-only lookup, without it      : val AUC 0.7535
 
 **Why 0.6115 and not something respectable?** The rebuild is still naive: each training row is counted inside its own group (647 groups over 1,200 rows, so most hold one or two orders), so on training rows the column is partly the row's own label. Measured: train AUC 0.957, weight about 2.7, validation 0.6115, with 28.5% of validation orders in groups never seen in training. Out-of-fold and smoothed, the same idea scores about 0.758, barely above 0.7535. **The 0.9240 was never a measure of the feature.**
 
-### Page 7.6 — Defend your final feature set
+### Build It — Defend your final feature set (formerly "Page 7.6")
 
 *Every kept column with the number that justifies it; every dropped column with the number that condemns it.*
 
@@ -1514,13 +1975,13 @@ train-only lookup, without it      : val AUC 0.7535
 
 | Column | Where it came from | The number that justifies it |
 |---|---|---|
-| `distance_km` | the raw file | Highest honest correlation with `late`, **0.345**, and the largest honest weight in the model, **0.971**. |
-| `items` | the raw file | In the baseline that scored 0.7541. Removing it was not tested — **an honest answer says "untested" rather than inventing a reason.** |
-| `prep_minutes` | the raw file | Same: in the baseline. Untested individually. |
+| `distance_km` | the raw file | Highest honest correlation with `late`, **0.345**, the largest honest weight, **0.971**, and dropping it costs **0.1038** (row 12). |
+| `items` | the raw file | In the baseline that scored 0.7541. Dropping it costs **0.0025** (row 13, if the student ran it). **If they did not run it, an honest answer says "untested" rather than inventing a reason.** |
+| `prep_minutes` | the raw file | Dropping it costs **0.0024** (row 14). Untested individually if the student did not run it. |
 | `driver_experience_months` | the raw file, with a median imputer | Correlation **−0.123**, and the third-largest weight, **−0.411**. |
 | `is_rush` | invented, from `order_hour` | **Row 2: +0.0045.** The largest single gain of the day. |
-| `restaurant` | the raw file, one-hot | In the baseline. Untested individually. |
-| `weather` | the raw file, one-hot | In the baseline. Untested individually. |
+| `restaurant` | the raw file, one-hot | Dropping it costs **0.0121** (row 10). |
+| `weather` | the raw file, one-hot | Dropping it costs **0.0276** (row 11), the biggest honest number after `distance_km`. |
 
 **Dropped, with the number:**
 
@@ -1531,6 +1992,7 @@ train-only lookup, without it      : val AUC 0.7535
 | `is_weekend` | never made it in | **Row 3: −0.0001.** No signal. |
 | `min_per_km` | a ratio that looked clever | **Row 4: −0.0051.** The worst change of the day. |
 | `items_per_km` | possible, but not proven | **Row 5: +0.0003**, which is inside the noise on 400 rows. |
+| `dist_x_weather` | an interaction that sounded clever | **Row 9: −0.0018.** |
 | `similar_orders_late_rate` | **target leakage** | Fake **0.9240**, honest **0.7535**, naively rebuilt from training rows **0.6115**. |
 | `order_id` | it is a row number, not a fact about the world | Never a candidate. Naming it anyway is a **level-4 answer**. |
 

@@ -15,7 +15,7 @@
 | **New maths** | **slopes multiply along a chain** — nudging `w` moves `z` 3× as much, nudging `z` moves `L` 14× as much, so nudging `w` moves `L` 42× as much — measured stage by stage **and** straight through, and shown to agree exactly |
 | **New syntax** | `A.T @ dZ` · `(z > 0).astype(float)` |
 | **Dataset** | A hand-typed **2 → 2 → 1** network with **four rows** of input. Every number small enough to check on paper. No files, no downloads. |
-| **Materials** | **Week 17's blue forward trace still on the board — this is essential** · a **red pen** · printed workbook pages 18.1–18.6 (18.1 is the Term 2 reflection sheet) · five station cards for the review circuit · a calculator per student · the Bug Log |
+| **Materials** | **Week 17's blue forward trace still on the board — this is essential** · a **red pen** · the printed workbook (its **Build It** section, Part A, is the Term 2 reflection sheet) · five station cards for the review circuit · a calculator per student · the Bug Log |
 | **Tech needed** | Laptop with Python 3 and numpy. **No PyTorch this week** — that is Week 20, and the whole point of today is doing it by hand first. |
 | **Prep time** | 25 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | Every file today runs in **under a second**. The gradient check on nine knobs is instant. Nothing trains. |
@@ -604,9 +604,9 @@ difference between the two answers: 0.0000000000
 
 **Runtime: well under a second.**
 
-- [ ] **Run `backprop.py`** (full file in the Answer Key, page 18.3) and **check the loss reads `0.577449`.** If it does not, something has been mistyped. **Under a second.**
-- [ ] **Run `gradcheck.py`** (Answer Key, page 18.4) and confirm the last line reads **`all nine below 1e-6?  True`**. **Under a second.**
-- [ ] **Run `symmetry.py`** (Answer Key, page 18.5) and **look at the grid of zeros.** You will show it in the last five minutes. **Under a second.**
+- [ ] **Run `backprop.py`** (full file in the Answer Key, under “`backprop.py`”) and **check the loss reads `0.577449`.** If it does not, something has been mistyped. **Under a second.**
+- [ ] **Run `gradcheck.py`** (Answer Key, under “`gradcheck.py`”) and confirm the last line reads **`all nine below 1e-6?  True`**. **Under a second.**
+- [ ] **Run `symmetry.py`** (Answer Key, under “`symmetry.py`”) and **look at the grid of zeros.** You will show it in the last five minutes. **Under a second.**
 - [ ] **Write the one-row nine numbers on the board or a large sheet and leave them up for two weeks.** Week 20 is a comparison against exactly these:
 
 ```text
@@ -620,7 +620,7 @@ dW2 = [ −0.21945108, −0.01496257 ]       db2 = −0.09975049
 - [ ] **Break it on purpose, twice**, so both deliberate mistakes are muscle memory:
   1. Write `A1 @ dZ2` instead of `A1.T @ dZ2`. Real message ends `size 4 is different from 2`.
   2. Leave out the ReLU mask entirely — `dZ1 = dA1`. **No error.** The gradient check fails with relative errors around `0.2` to `1.0`.
-- [ ] **Print workbook pages 18.1–18.6. Page 18.1 is the Term 2 reflection sheet** — check it is the right one; it is the only page today that is not arithmetic.
+- [ ] **Print the workbook. Its Build It section, Part A, is the Term 2 reflection sheet** — check it printed; it is the only part today that is not arithmetic.
 - [ ] **Find a red pen.**
 
 ### 5 minutes on the day
@@ -1059,7 +1059,7 @@ all zeros never learns     symmetry has to be broken
 
 **Do this:** Three quick checks — exact wording in **✅ Assessing Understanding**.
 
-**Do this:** Hand out the homework. **Read the reflection sheet instruction out loud** — it is the only non-arithmetic page of the term and it gets skipped if you do not name it.
+**Do this:** Hand out the homework. **Read the Build It Part A (reflection sheet) instruction out loud** — it is the only non-arithmetic part of the term and it gets skipped if you do not name it.
 
 ---
 
@@ -1106,7 +1106,7 @@ And the sentence for this week:
 - A board split down the middle: **STAGE BY STAGE** on the left, **STRAIGHT THROUGH** on the right.
 - Calculators — one per student, and they must have an `e^x` key for station 2.
 - **Five station cards**, laid out around the room, spaced so groups cannot overhear each other. The five are in the Prep Checklist.
-- Workbook pages 18.2 (the chain) and 18.6 (the review circuit answers, face down).
+- The workbook’s **Do the Maths by Hand** M1 and M2 (a two-stage and a three-stage chain, measured both ways — different numbers from the board’s chain, same skill) and the five station answers (Answer Key, “The Term 2 circuit”), face down.
 
 ![The finished board: Blame Relay and Term 2 circuit](../figures/fig-w18-5-board-blame-relay.svg)
 *Figure 18.6 — The finished board: Blame Relay and Term 2 circuit. Three stage slopes multiply to `6.000000`, and measuring straight through gives `6.000000`.*
@@ -1210,7 +1210,7 @@ loss after  = 2.4 × 2.4 = 5.76
 ### What "finished" looks like
 
 - Two numbers on opposite sides of the board that both read **`6`** for the three-stage relay (and `42` from the concept segment still visible).
-- Every student's workbook page 18.2 showing three stage slopes and one direct measurement, with the multiplication written out.
+- Every student's workbook M1 and M2 showing the stage slopes (`4` and `10`; `2`, `6` and `0.2`) and the direct measurements (`40` and `2.4`), with the multiplication written out.
 - Five station answers, all checked on a calculator, all correct: `−6`, `0.8022`, `0.2204` / `1.6204`, `2.4` and `9.00 → 5.76`, `(4,3)` / `(4,1)` / `(1,3)`.
 - Two Bug Log entries minimum, one of which is the **silent** missing-mask bug.
 - Every student can say, unprompted: **"slopes multiply along a chain."**
@@ -1468,62 +1468,833 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "About an hour, three pages, and the first one is not arithmetic — so listen for it.
+> "About an hour, and the first part is not arithmetic — so listen for it.
 >
-> **Page 18.1 is the Term 2 reflection sheet.** One page, looking back over nine weeks: the slope, the sigmoid, log loss, gradient descent, the neuron, the grid multiply, and today. Four questions, and I want honest answers, not tidy ones. **The question I actually care about is the third: which week did you not really understand at the time, and do you understand it now?** Nobody has ever lost a mark on this page for admitting something.
+> **Build It, Part A, is the Term 2 reflection sheet.** Five numbers from the term — say what each one is and which week it came from — and then three short questions looking back over nine weeks. **The question I actually care about is the third: which week did you not really understand at the time, and do you understand it now?** Nobody has ever lost a mark on this page for admitting something.
 >
-> **Page 18.3 — all four gradient arrays, by hand.** The 2 → 2 → 1 network, four rows. `dW1`, `db1`, `dW2`, `db2`. **Every intermediate grid written out** — `dZ2`, then the mask, then `dZ1` — and **a shape beside every single grid.**
+> **Part B — all four gradient arrays, by hand.** The 2 → 2 → 1 network on the sheet, four rows. `dW1`, `db1`, `dW2`, `db2`. **Every intermediate grid written out** — `dZ2`, then the mask, then `dZ1` — and **a shape beside every single grid.**
 >
-> **Page 18.4 — gradient-check every one of them.** Nine knobs, nine relative errors, pasted from the real run. **All nine must be below `1e-6`.**
+> **Part C — gradient-check every one of them.** Nine knobs, nine relative errors, pasted from the real run. **All nine must be below `1e-6`.**
+>
+> The rest of the workbook — the warm-up, the hand maths, the predictions, the two practice sets, the broken program, the puzzle, the two Think Deeper paragraphs, the drawing and the self-check — is there for you to pick from. I will tell you which.
 >
 > And here is the instruction that matters most. **If one of them is not below `1e-6`, do not come and tell me it is broken. Find your own arithmetic slip and write down where it was.** That sentence — *"I had the mask the wrong way round on row four"* — is worth more to me than nine passing numbers, because the whole point of the check is that it tells you where to look."
 
-**Workbook pages:** 18.2, 18.5 and 18.6 in class · **18.1, 18.3 and 18.4** at home.
+**Workbook, section by section** (every section has its answers in the Answer Key below, in this order):
 
-**Expected time:** 15 min on the reflection sheet · 25 min on the four gradient arrays by hand · 20 min on the gradient check and the write-up. **About 60 minutes.**
+| Workbook section | Items | Where | Time |
+|---|---|---|---|
+| ✅ Warm-Up | W1–W5 | Opener, or first thing at home | 5 min |
+| 🔢 Do the Maths by Hand | M1, M2 | In class, beside the Blame Relay | 15 min |
+| 🔢 Do the Maths by Hand | M3, M4 | At home (optional) | 25 min |
+| 🔎 Predict the Output | P1–P4 | Optional | 15 min |
+| ✍️ Practice Set A — Read It | A1–A6 | Optional (A2 and A5 are the ones to pick) | 25 min |
+| ✍️ Practice Set B — Write It | B1–B5 | Optional (B2 and B3 are the ones to pick; B5 is the stretch) | 30 min |
+| 🐞 Fix the Broken Program | three bugs | Optional; good for a student who finished early | 20 min |
+| 🧩 Puzzle of the Week | Parts 1 and 2 | Optional | 20 min |
+| 🤔 Think Deeper | T1, T2 | Optional; two paragraphs | 20 min |
+| 🛠️ Build It | **Part A** (reflection sheet), **Part B** (four arrays), **Part C** (nine checks); Stretch and Bug Log | **The core homework** | **15 + 25 + 20 min** |
+| 🎨 Draw It | four questions | Optional, or in class if there is time | 10 min |
+| 📊 Self-Check | eleven ticks | Last five minutes | 5 min |
 
-> **🧑‍🏫 What to look for when you mark it:** four things, and the last is the real one. **One — is there a shape beside every intermediate grid on 18.3?** A correct `dZ1` with no `(4, 2)` beside it is half a mark; the shapes are how the student will debug for the next ten weeks. **Two — is the ReLU mask actually written out as a grid of 1s and 0s?** If the mask is missing from the page, the two zeros in it are missing from the thinking, and `dW1` will be wrong. **Three — are the nine relative errors pasted verbatim, in scientific notation?** *"They all passed"* is not a result; `2.97e-08` is. **Four — if something failed, is there a sentence naming the slip?** The answer that earns full marks is some version of *"my `dZ1` row 2 second entry should have been 0 because that unit's `z` was `−0.75`; once I zeroed it the relative error went from `0.27` to `5e-11`."* A student who writes *"I fixed it"* has done the work and missed the lesson, and that is worth one line of feedback: **"the check told you which knob. What did it tell you about the arithmetic?"**
+**Expected time for the core homework (Build It, Parts A–C):** 15 min on the reflection sheet · 25 min on the four gradient arrays by hand · 20 min on the gradient check and the write-up. **About 60 minutes.** The workbook is far more than one evening; do not assign all of it.
+
+> **🧑‍🏫 What to look for when you mark it:** four things, and the last is the real one. **One — is there a shape beside every intermediate grid in Part B?** A correct `dZ1` with no `(4, 2)` beside it is half a mark (the workbook says so too); the shapes are how the student will debug for the next ten weeks. **Two — is the ReLU mask actually written out as a grid of 1s and 0s?** If the mask is missing from the page, the three zeros in it are missing from the thinking, and `dW1` will be wrong. **Three — are the nine relative errors pasted verbatim, in scientific notation?** *"They all passed"* is not a result; `6.26e-09` is. **Four — if something failed, is there a sentence naming the slip?** The answer that earns full marks is some version of *"my `dZ1` row 2 second entry should have been 0 because that unit's `z` was `−0.9`; once I zeroed it the relative error went from `0.24` to `3e-10`."* A student who writes *"I fixed it"* has done the work and missed the lesson, and that is worth one line of feedback: **"the check told you which knob. What did it tell you about the arithmetic?"**
 
 ---
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+**Read this first.** The answers below are in the **same order as the workbook**, section by section and item by item (W1 … Self-Check), so you can mark from this page alone. The values are the workbook's own Answers section; the Build It forward and backward passes and all nine gradient-check errors were recomputed from the network printed on the sheet and agree.
 
-### Page 18.1 — Term 2 reflection sheet
+**Two different networks this week — do not mark homework against the wrong one.** The **workbook** (Build It, Practice Sets, Puzzle) uses `W1 = [[0.6, −0.4], [0.5, 0.9]]`, loss `0.297113`, worst check error `6.26e-09`. The **lesson** (live-code, `backprop.py`) uses `W1 = [[0.5, −0.3], [0.8, 0.2]]`, loss `0.577449`, worst check error `2.97e-08`. Those scripts, with their real output, are after the workbook answers under **“In-class scripts and their real output”**.
 
-*There is no single right answer to any of these. What follows is what a good answer looks like, so you can recognise one.*
+### Workbook answers, in workbook order
 
-**Q1 — "Name the one idea from Weeks 10–18 that changed how you think about what a model is doing."**
+#### Warm-Up (W1–W5) — last week’s shapes
 
-Strong answers name **one** thing and say what it replaced. Examples that earn full marks:
+**W1.** **Inner two must match, outer two survive.**
 
-- *"That `fit()` was a loop. Before Week 15 I thought sklearn solved something; now I know it guessed, measured the slope, stepped, and repeated a few hundred times."*
-- *"That 0.5 is not a law. Week 10's threshold dial made me realise the model gives a number and a human picks the cut."*
-- *"That slopes multiply. I thought backpropagation was going to be the hard part of this course and it was one multiplication."*
+**W2.** `(3,1) @ (1,3)` holds **nine**; `(1,3) @ (3,1)` holds **one**. Same two grids, opposite order, and not even the same size answer.
 
-**What is weak:** a list of everything covered. This question asks for one thing and a *change*.
+**W3.** It must be **`(1, 4)`**. Shaped `(n, 1)` instead, **nothing goes wrong visibly**: it broadcasts legally, there is no error, and the shape of the answer is exactly right. **What goes wrong is the meaning** — every row gets its own bias instead of every unit getting its own.
 
-**Q2 — "Which of these four numbers can you now explain from scratch, and which would you have to look up?** `0.25` · `0.6931` · `(4, 3)` · `42`"
+**W4.** **The last line, then the bracket at the end of it, then the two numbers inside the bracket.** You are looking for the two shapes' **inner** numbers, and which grid each belongs to. Everything in the middle of the message is numpy naming its own internal machinery and you may ignore it.
 
-The four, with what a complete explanation contains:
+**W5.** Next line: **`np.abs(mine - theirs).max()`**. A gap of `1e-16` means **floating-point rounding — the same number**. A gap of `0.05` means **a genuinely wrong number: a typo, a dropped bias or a sign.**
 
-| Number | Where from | A complete explanation says |
+#### Do the Maths by Hand (M1–M4) — two chains measured both ways, one network row, scoring four checks
+
+**M1.** At `w = 2`: `z = 4(2) − 3 = **5**` and `L = 5 × 5 = **25**`.
+
+**Step 1 — stage 1:**
+
+```text
+w = 2.001  →  z = 4(2.001) − 3 = 8.004 − 3 = 5.004000
+w = 1.999  →  z = 4(1.999) − 3 = 7.996 − 3 = 4.996000
+
+z moved:  5.004000 − 4.996000 = 0.008
+w moved:  0.002
+
+0.008 ÷ 0.002 = 4.000000
+```
+
+**Step 2 — stage 2, standing at `z = 5`:**
+
+```text
+z = 5.001  →  L = 5.001 × 5.001 = 25.010001
+z = 4.999  →  L = 4.999 × 4.999 = 24.990001
+
+L moved:  0.020000        z moved: 0.002
+
+0.020000 ÷ 0.002 = 10.000000
+```
+
+**M1(a).** `z` moves **4** times as much; `L` moves **10** times as much; so `L` moves **40** times as much. *(If you wrote 14, read M1(c) and then Trick 1 in the chapter. It is not a silly answer — it is what you get if you think of the stages as adding effort rather than scaling a signal.)*
+
+**Step 3 — straight through:**
+
+```text
+w = 2.001  →  z = 5.004000  →  L = 25.040016
+w = 1.999  →  z = 4.996000  →  L = 24.960016
+
+L moved:  25.040016 − 24.960016 = 0.080000
+w moved:  0.002
+
+0.080000 ÷ 0.002 = 40.000000
+```
+
+**M1(b).** **They agree.** `4 × 10 = 40`. Real output from `chain18.py`-style code prints the difference as `0.0000000000`.
+
+**M1(c).** *"A photocopier that enlarges 4× followed by one that enlarges 10× turns 1 cm into 40 cm, not 14 cm — each stage **scales** what arrives at it, and scalings compose by multiplying."*
+
+**M2.** At `w = 1`: `z = 3`, `u = 9`, `L = 9 ÷ 5 = **1.8**`.
+
+| stage | the two answers | slope |
 |---|---|---|
-| `0.25` | Week 16 | the steepest sigmoid ever gets, at `z = 0`; and `0.25⁵ = 0.00098`, which is why deep sigmoid networks failed |
-| `0.6931` | Week 14 | `−ln(0.5)`: the log loss of a model that answers 0.5 to everything. **The guessing number.** |
-| `(4, 3)` | Week 17 | four rows, three columns; the shape of `(4,2) @ (2,3)`; inner two match, outer two survive |
-| `42` | Week 18 | `3 × 14`; slopes multiply along a chain; and it equals `0.084 ÷ 0.002` measured straight through |
+| 1 | `z(1.001) = 3.002000`, `z(0.999) = 2.998000` | `0.004 ÷ 0.002 = ` **2.000000** |
+| 2 | `u(3.001) = 9.006001`, `u(2.999) = 8.994001` | `0.012 ÷ 0.002 = ` **6.000000** |
+| 3 | `L(9.001) = 1.800200`, `L(8.999) = 1.799800` | `0.0004 ÷ 0.002 = ` **0.200000** |
 
-**Q3 — "Which week did you not really understand at the time? Do you understand it now?"**
+**M2(a).** `2 × 6 × 0.2 = **2.400000**`
 
-**This is the question that matters and it should be marked generously.** Common honest answers: Week 12 (the nudge felt pointless until Week 15 used it), Week 14 (log loss looked arbitrary until the surprise-meter idea landed), Week 17 (the transposes felt like memorisation until this week's shape sentence). **A student who names a week and says "still not really" has given you the single most useful piece of information on the page.** Reply to it.
+**M2(b).**
 
-**Q4 — "What is one thing you can now do that you could not do in September?"**
+```text
+L(w = 1.001) = 1.802401     L(w = 0.999) = 1.797601
 
-Anything concrete. The strongest answers are the least grand: *"I can read a shape error and know which two numbers to look at"*, *"I can measure how steep something is without knowing any calculus"*, *"I can work out what a neuron says on paper"*. **Watch for and gently push back on "I understand neural networks now"** — too big, and it is not what this term did. **It taught four measurable skills and they are all more interesting than the slogan.**
+(1.802401 − 1.797601) ÷ 0.002 = 0.004800 ÷ 0.002 = 2.400000
+```
 
-### Page 18.2 — The chain, measured two ways
+**Both `2.400000`**, and the real run prints the difference as `0.0000000000`. **Three stages, three separate measurements, and multiplying them answers a question none of the three measured.**
+
+**M2(c).** **Not a problem at all.** A slope below 1 is a stage that **quietens things down**: whatever wobble arrives, a smaller wobble leaves. Stack five of them and you get `0.2⁵ = 0.00032` — three ten-thousandths of the signal survives. **That is exactly Week 16's `0.25⁵` argument, and it is the reason sigmoid is not used in hidden layers.**
+
+**M2(d).** Because **dividing by 5 *is* multiplying by 0.2**, and a straight-line stage has the same slope everywhere. `L = u ÷ 5` is a straight line of gradient `1/5`, so nudging `u` by anything at all moves `L` by a fifth of it. **The nudge just confirmed what the formula already said** — which is the whole point of checking.
+
+**M3.** Forward:
+
+```text
+z1 = 1.0(0.6) + 1.0(0.5) + 0.2  = 0.6 + 0.5 + 0.2  = 1.30
+z2 = 1.0(−0.4) + 1.0(0.9) − 0.1 = −0.4 + 0.9 − 0.1 = 0.40
+
+both positive, so A1 = [1.30, 0.40]
+
+Z2 = 1.30(1.5) + 0.40(−1.0) − 0.2 = 1.95 − 0.40 − 0.20 = 1.35
+
+A2 = sigmoid(1.35) = 1 ÷ (1 + e^(−1.35)) = 1 ÷ 1.259240 = 0.79412963
+
+loss = −ln(0.79412963) = 0.23050857
+```
+
+Backward, real output:
+
+```text
+step 1:  dZ2 = 0.79412963 − 1 = −0.20587037
+
+step 2:  dW2[0] = 1.30 × (−0.20587037) = −0.26763148
+         dW2[1] = 0.40 × (−0.20587037) = −0.08234815
+         db2    = −0.20587037
+
+step 3:  dA1[0] = (−0.20587037) × 1.5    = −0.30880556
+         dA1[1] = (−0.20587037) × (−1.0) = +0.20587037
+
+step 4:  mask = [1, 1],  so  dZ1 = [−0.30880556, +0.20587037]
+
+step 5:  dW1[0][0] = 1.0 × (−0.30880556) = −0.30880556
+         dW1[0][1] = 1.0 × (+0.20587037) = +0.20587037
+         dW1[1][0] = 1.0 × (−0.30880556) = −0.30880556
+         dW1[1][1] = 1.0 × (+0.20587037) = +0.20587037
+```
+
+**M3(a).** Because **both inputs are `1.0`**, and a weight's blame is *its input × the blame coming out of it*. Two identical inputs earn two identical corrections. **For `x = [2.0, 0.0]` it would not be true at all**: row 0 of `dW1` would be twice the blame and row 1 would be **exactly zero**, because an input of `0.0` cannot be blamed for anything.
+
+**M3(b).** **Unit 2's weight into the output is negative (`−1.0`)**, so turning unit 2 **up** pushes the score **down**. We want the score up, so unit 2's slope points the opposite way to unit 1's. **A negative weight flips the direction of the blame, and the arithmetic did that reasoning for us.**
+
+**M3(c).** **Unit 1**, because it was **louder** — `1.30` against `0.40` — and blame is `input × blame out`. `−0.268` against `−0.082`, about three times as much. **Loud units get blamed most. Nobody imposed that rule; it falls out of the multiplication.**
+
+**M3(d).**
+
+| knob | shape | gradient | shape |
+|---|---|---|---|
+| `W1` | **(2, 2)** | `dW1` | **(2, 2)** ✅ |
+| `b1` | **(1, 2)** | `db1` | **(1, 2)** ✅ |
+| `W2` | **(2, 1)** | `dW2` | **(2, 1)** ✅ |
+| `b2` | **(1, 1)** | `db2` | **(1, 1)** ✅ |
+
+**Four for four.** That check costs nothing and you should do it every single time.
+
+**M4.**
+
+| # | `|num − ana|` | `|num| + |ana|` | relative error | pass? |
+|:--:|---|---|---|:--:|
+| a | 0.75000000 | 1.25000000 | **6.000e-01** | ❌ |
+| b | 0.60000000 | 0.60000000 | **1.000e+00** | ❌ |
+| c | 0.00000004 | 0.09488096 | **4.216e-07** | ✅ |
+| d | 0.00000001 | 0.00402715 | **2.483e-06** | ❌ |
+
+**M4(a).** They must have **opposite signs and (here) equal size.** In general, a relative error of `1.00` happens when `|num − ana| = |num| + |ana|`, and that is only possible when one is positive and the other negative (or one of them is exactly zero). **A gradient with a relative error of 1 does not merely have the wrong size; it points the wrong way.**
+
+**M4(b).** Because the score divides by the **size** of the numbers. Row c's gradients are about `0.047`; row d's are about `0.002` — **twenty-three times smaller.** The same absolute wobble is a much bigger *fraction* of a tiny number. **Tiny gradients are where floating-point noise shows up most**, which is why the worst relative error in a healthy check is almost always on the smallest gradient. *(And row d's `2.5e-6` is only just over the line, which in a real run would make you shrink `eps` rather than hunt for a bug.)*
+
+**M4(c).** `1.00 ÷ 0.25 = **4**`, so the hand answer was **4** times too big. And in general, if `ana = 4 × num`, then
+
+```text
+|num − 4num| ÷ (|num| + |4num|)  =  3num ÷ 5num  =  3 ÷ 5 = 0.6
+```
+
+**The `num` cancels**, which is why the fingerprint is *exactly* `6.00e-01` on every knob regardless of size. That is what makes it recognisable on sight.
+
+**M4(d).** Because **a difference of `0.001` is catastrophic if the gradient is `0.002` and irrelevant if the gradient is `50,000`.** Dividing by the size makes one threshold mean the same thing for every knob in the network.
+
+#### Predict the Output (P1–P4) — mask, shapes, negative zero, floating point
+
+**P1.**
+
+```text
+[[ True  True]
+ [ True False]
+ [False False]
+ [ True  True]]
+[[1. 1.]
+ [1. 0.]
+ [0. 0.]
+ [1. 1.]]
+5.0
+```
+
+**Three of the eight cells are zero** — and note that the last line prints `5.0`, the number of cells that are **one**. The zeros are **row 2 unit 2** (`z = −0.9`) and **both units of row 3** (`z = −0.3` and `z = −1.0`). Going forwards, those units **did not fire at all** — ReLU silenced them — so no blame comes back through them.
+
+**P2.**
+
+```text
+(2, 1)
+(4, 2)
+(1, 1)
+(1,)
+```
+
+Line 1 is **`dW2`**'s shape — and `W2` is `(2, 1)`, so ✅. Line 2 is **`dA1`**'s shape — and `A1` is `(4, 2)`, so ✅.
+
+**Lines 3 and 4 add up exactly the same four numbers.** `(1, 1)` is `db2`'s correct shape, because `b2` is `(1, 1)`. `(1,)` is flat, and **`b2` is not flat** — so the two shapes no longer match. Nothing breaks *today*, because the numbers are identical; the plain update `b2 -= lr * db2` would even work, because `(1, 1) -= (1,)` broadcasts harmlessly, but a flat gradient behaves differently in other lines (indexing it with two numbers raises an `IndexError`, and mixing it with a bigger grid can stretch it the wrong way), so it is a trap rather than a crash. **A gradient has the shape of its knob.**
+
+**P3.**
+
+```text
+[[-0.    0.25]]
+True
+```
+
+**The odd thing is `-0.` — negative zero, with a minus sign.** It happens when a **negative** number is multiplied by `0.0`: `−0.5 × 0.0` keeps the sign and loses everything else. It appears constantly in `dZ1` printouts because the mask multiplies negative blames by zero.
+
+**Does it matter?** **No.** Line 2 says `True`: negative zero is exactly equal to zero for every purpose. **It looks like a bug and is not one, and somebody always notices it.**
+
+**P4.**
+
+```text
+4.0 10.0
+40.0
+40.0
+False
+```
+
+**Line 4 is the surprise, and the chain rule is in no trouble whatsoever.** The three printed numbers are **rounded** to six places. Underneath, the actual values are
+
+```text
+one       = 3.9999999999995595
+two       = 10.00000000000334
+one * two = 40.00000000000895
+both      = 39.999999999995595
+```
+
+so the difference is about `1.3e-11`. **That is floating-point rounding, not a flaw in the chain rule.** These two chains are straight lines and a square, for which the thousandth-sized nudge is mathematically exact, so the leftover is rounding: each route subtracts nearly equal numbers and divides by `0.002`, and the two routes round slightly differently — so `==` on decimals says `False` for two numbers that agree to eleven decimal places. **This is exactly why `np.allclose` exists, and exactly why the gradient check scores a *relative error* instead of demanding equality.**
+
+#### Practice Set A — Read It (A1–A6)
+
+**A1.** backpropagation → **(iii)** · chain rule → **(v)** · gradient check → **(i)** · relative error → **(vi)** · He initialization → **(ii)** · symmetry breaking → **(iv)**
+
+**A2.**
+
+| Question | Answer |
+|---|---|
+| a | **Rows 1 and 2** (`−0.051468`, `−0.032527`). Their labels were `1` and the network said `0.794` and `0.870` — **less than the truth, so the score needs to go up.** A negative blame means "raise this" |
+| b | **Nine.** Four in `W1`, two in `b1`, two in `W2`, one in `b2` — and the printout shows their gradients: `dW1` (4 numbers), `db1` (2), `dW2` (2), `db2` (1) |
+| c | **Nothing but `b2`.** `A1` row 3 is `[0, 0]`, so `Z2 = 0(1.5) + 0(−1.0) + (−0.2) = −0.2`, and `sigmoid(−0.2) = 0.450166`. **The hidden layer had no opinion at all about that row** |
+| d | **Three** |
+| e | **By `n = 4`, the batch size.** You can tell because `A2 − y` for row 4 is `0.197816 − 0 = 0.197816`, and `dZ2` row 4 is `0.049454` — exactly a quarter of it |
+| f | **Yes, four for four.** `dW1 (2,2)` = `W1 (2,2)`; `db1 (1,2)` = `b1 (1,2)`; `dW2 (2,1)` = `W2 (2,1)`; `db2 (1,1)` = `b2 (1,1)` |
+
+**A2(g).** `−ln(1 − **0.450166**) = −ln(0.549834) = **0.598139**`. It is the worst because the label was `0` and the network said **45%** — it very nearly called it the wrong way, and it did so on a row where the hidden layer contributed nothing at all. *(Compare row 4: also label `0`, but it said `0.198`, and its loss is only `0.220417`.)*
+
+**A2(h).**
+
+```text
+−0.051468 + (−0.032527) + 0.112542 + 0.049454 = 0.078001
+```
+
+The rule: **"the bias is added to every row, so it collects blame from every row"** — `db2 = dZ2.sum(axis=0, keepdims=True)`.
+
+**A3.**
+
+| # | What happens | The fix |
+|---|---|---|
+| a | `ValueError: matmul: ... (size 4 is different from 2)`. Inner numbers 2 and 4 | `A1.T @ dZ2` — and find that by writing down that `dW2` must be `(2, 1)`, not by guessing |
+| b | `ValueError: operands could not be broadcast together with shapes (4,2) (2,4)`. `*` is cell by cell, so both must be the same shape | drop the `.T`. **The mask must be exactly `Z1`'s shape** |
+| c | `ValueError: matmul: ... (size 2 is different from 4)`. `@` would try to pair rows against columns | `*`, not `@`. **The mask is applied cell by cell** |
+| d | **No error**, and the numbers are identical — but `db1` is now `(2,)` while `b1` is `(1, 2)` | `keepdims=True` |
+| e | **No error.** Every gradient comes out four times too big; a learning rate of `0.1` behaves like `0.4` | `dZ2 = (A2 - y) / n` |
+| f | **No error.** `dW1` and `db1` are wrong, `dW2` and `db2` are right, and nothing tells you | `dZ1 = dA1 * (Z1 > 0).astype(float)` |
+
+**A3(g).** **d, e and f** run without error. The two that produce **wrong gradients** are **e and f**. A gradient check catches **both of them** — e at exactly `6.00e-01` everywhere, f at between `0.24` and `1.00` **on the hidden layer only.** *(And d is the one a gradient check would **not** catch, because the numbers are right; it is a shape-convention bug that can bite in later lines, though the plain update would survive it.)*
+
+**A4.** i → **R** · ii → **P** · iii → **T** · iv → **S** · v → **Q**
+
+**A4(f).** **`R` is `(2, 1)` — the shape of `dW2`, which belongs to the knob `W2`.** **`P` is `(4, 2)` — the shape of `dA1`**, which belongs to `A1`, and `A1` is **not** a knob: it is an activation. **Every gradient has the shape of its thing, whether that thing is a knob you will turn or a value you were just passing through.**
+
+**A5.** The six boxes, in order:
+
+| # | line | result shape |
+|---|---|---|
+| 1 | `dZ2 = (A2 − y) / n` | **(4, 1)** |
+| 2 | `dW2 = A1.T @ dZ2` | **(2, 1)** |
+| 3 | `db2 = dZ2.sum(axis=0, keepdims=True)` | **(1, 1)** |
+| 4 | `dA1 = dZ2 @ W2.T` | **(4, 2)** |
+| 5 | `mask = (Z1 > 0).astype(float)` | **(4, 2)** |
+| 6 | `dW1 = X.T @ dZ1` | **(2, 2)** |
+
+And the panel: **three** of the eight mask cells are zero — **row 2 unit 2, and both units of row 3.**
+
+**A5(a).** Shapes of **knobs'** gradients: **`dW2 (2,1)`, `db2 (1,1)`, `dW1 (2,2)`** *(and `db1 (1,2)`, which is not on the figure)*. Shapes of **activations'** gradients: **`dZ2 (4,1)`, `dA1 (4,2)`** *(and `dZ1`, the same shape as the mask)*. **The tell is the batch size**: anything with a `4` in it is per-row and belongs to the data; anything without a `4` belongs to the model.
+
+**A5(b).** **Line 5's mask is used with `*`**, in `dZ1 = dA1 * mask`. If you typed `@` you would get `ValueError: matmul: ... (size 2 is different from 4)`, because `@` would try to pair `dA1`'s rows against the mask's columns instead of asking one question per cell. **The mask is a yes-or-no answer per cell, so it multiplies per cell.**
+
+**A6.**
+
+**a)** Slopes **multiply**, not **add**. `3 × 14 = **42**` and `0.084 ÷ 0.002 = **42**`.
+
+**b)** **a gradient always has exactly the same shape as the thing it is the gradient of.**
+
+**c)** **`A2 − y`** — how wrong the answer was — shared over **the batch** (divided by `n`).
+
+**d)** A weight's blame is **its input** times **the blame that came out of it**.
+
+**e)** If the valve was **shut** going forwards, **no blame at all** comes back through it.
+
+**f)** A gradient check proves your **backward pass** agrees with your **forward pass**. It says nothing about **whether the forward pass computes the right thing** — the architecture, the features, the labels.
+
+**g)** `(0 > 0)` is **`False`**, so the mask is **zero everywhere**, so every hidden gradient is **exactly `0`**, and the loss parks on **`−ln(0.5) = 0.693147`** for ever. **It is not slow learning. It is no learning.**
+
+#### Practice Set B — Write It (B1–B5)
+
+**B1.**
+
+```python
+import numpy as np
+
+Z1 = np.array([[1.3, 0.4], [1.4, -0.9], [-0.3, -1.0], [0.6, 2.1]])
+print((Z1 > 0).astype(float))
+```
+
+```text
+[[1. 1.]
+ [1. 0.]
+ [0. 0.]
+ [1. 1.]]
+```
+
+The three zeros come from `−0.9`, `−0.3` and `−1.0`.
+
+**B2.**
+
+```python
+import numpy as np
+np.set_printoptions(precision=6, suppress=True)
+
+A2 = np.array([[0.79412963], [0.86989153], [0.45016600], [0.19781611]])
+y  = np.array([[1.0], [1.0], [0.0], [0.0]])
+n  = 4.0
+
+dZ2 = (A2 - y) / n
+print("dZ2", dZ2.shape); print(dZ2)
+```
+
+```text
+dZ2 (4, 1)
+[[-0.051468]
+ [-0.032527]
+ [ 0.112542]
+ [ 0.049454]]
+```
+
+**B2(a).** **Which way you were wrong.** If the truth was `1` and the model said less than 1, `A2 − y` is negative — *raise the score*. If the truth was `0` and the model said more than 0, it is positive — *lower the score*. **The sign of the blame is just the direction of the mistake**, and the size is how big the mistake was.
+
+**B3.**
+
+```python
+import numpy as np
+
+X = np.zeros((4, 2)); A1 = np.zeros((4, 2))
+dZ2 = np.zeros((4, 1)); W2 = np.zeros((2, 1))
+
+dW2 = A1.T @ dZ2
+db2 = dZ2.sum(axis=0, keepdims=True)
+dA1 = dZ2 @ W2.T
+dZ1 = dA1 * np.ones((4, 2))
+dW1 = X.T @ dZ1
+db1 = dZ1.sum(axis=0, keepdims=True)
+
+for name, arr in [("dZ2", dZ2), ("dW2", dW2), ("db2", db2), ("dA1", dA1),
+                  ("dZ1", dZ1), ("dW1", dW1), ("db1", db1)]:
+    print("%-5s %s" % (name, arr.shape))
+```
+
+```text
+dZ2   (4, 1)
+dW2   (2, 1)
+db2   (1, 1)
+dA1   (4, 2)
+dZ1   (4, 2)
+dW1   (2, 2)
+db1   (1, 2)
+```
+
+**Every shape came out right and not one real number was involved.** That is worth sitting with: **you can debug the whole wiring of a backward pass with grids of zeros**, before you have a single correct value. It is the cheapest test in the subject.
+
+**B4.**
+
+```python
+import numpy as np
+
+h = 0.001
+f = lambda w: 6 * w + 2
+g = lambda z: z * z
+
+print("z =", f(1.0), " L =", g(f(1.0)))
+s1 = (f(1 + h) - f(1 - h)) / (2 * h)
+s2 = (g(8 + h) - g(8 - h)) / (2 * h)
+st = (g(f(1 + h)) - g(f(1 - h))) / (2 * h)
+print("stage 1 = %.6f" % s1)
+print("stage 2 = %.6f" % s2)
+print("product = %.6f" % (s1 * s2))
+print("straight through = %.6f" % st)
+print("difference = %.10f" % abs(s1 * s2 - st))
+```
+
+```text
+z = 8.0  L = 64.0
+stage 1 = 6.000000
+stage 2 = 16.000000
+product = 96.000000
+straight through = 96.000000
+difference = 0.0000000000
+```
+
+**Where the `16` comes from:** the slope of `z × z` is `2z`, and you are standing at `z = 8`, so `2 × 8 = 16`. You have measured that shortcut by nudging four times this term now, and every time it has agreed.
+
+**B5.**
+
+```python
+"""b5w18.py - gradient-check the four entries of dW1, from scratch."""
+import numpy as np
+
+np.random.seed(0)
+np.set_printoptions(precision=6, suppress=True)
+
+W1 = np.array([[0.6, -0.4],
+               [0.5, 0.9]])
+b1 = np.array([[0.2, -0.1]])
+W2 = np.array([[1.5],
+               [-1.0]])
+b2 = np.array([[-0.2]])
+X = np.array([[1.0, 1.0],
+              [2.0, 0.0],
+              [0.0, -1.0],
+              [-1.0, 2.0]])
+y = np.array([[1.0], [1.0], [0.0], [0.0]])
+n = X.shape[0]
+
+
+def batch_loss(W1):
+    Z1 = X @ W1 + b1
+    A1 = np.maximum(0, Z1)
+    A2 = 1.0 / (1.0 + np.exp(-(A1 @ W2 + b2)))
+    return float(-(y * np.log(A2) + (1 - y) * np.log(1 - A2)).mean())
+
+
+Z1 = X @ W1 + b1
+A1 = np.maximum(0, Z1)
+A2 = 1.0 / (1.0 + np.exp(-(A1 @ W2 + b2)))
+dZ2 = (A2 - y) / n
+dZ1 = (dZ2 @ W2.T) * (Z1 > 0).astype(float)
+dW1 = X.T @ dZ1
+
+eps = 1e-6
+print("%-10s %13s %14s %14s" % ("knob", "by hand", "by nudging", "relative error"))
+worst = 0.0
+for i in range(2):
+    for j in range(2):
+        up = W1.copy(); up[i, j] += eps
+        dn = W1.copy(); dn[i, j] -= eps
+        num = (batch_loss(up) - batch_loss(dn)) / (2 * eps)
+        ana = dW1[i, j]
+        rel = abs(num - ana) / (abs(num) + abs(ana))
+        worst = max(worst, rel)
+        print("dW1[%d,%d]   %13.8f %14.8f %14.2e" % (i, j, ana, num, rel))
+print()
+print("worst relative error: %.2e" % worst)
+print("all four below 1e-6?", worst < 1e-6)
+```
+
+```text
+knob             by hand     by nudging relative error
+dW1[0,0]     -0.24896379    -0.24896379       2.96e-11
+dW1[0,1]      0.10092162     0.10092162       2.76e-10
+dW1[1,0]      0.07116069     0.07116069       2.99e-10
+dW1[1,1]     -0.04744046    -0.04744046       1.04e-10
+
+worst relative error: 2.99e-10
+all four below 1e-6? True
+```
+
+**Why `.copy()` matters:** `up = W1` would make `up` a **second name for the same grid**, so `up[i,j] += eps` would change `W1` itself. Then `dn = W1` would start from the already-nudged version and `dn[i,j] -= eps` would put it back — and both losses would be identical, giving a "slope" of exactly `0.0` for every knob. **A whole column of zeros in a gradient check is almost always a missing `.copy()`.**
+
+#### Fix the Broken Program (three bugs)
+
+**Bug 1 — line 32, `dW2 = A1 @ dZ2`. A shape bug: a missing `.T`.**
+
+`dW2` must be **`(2, 1)`**, because **`W2` is `(2, 1)` and a gradient has the shape of its knob.** You have `A1` at `(4, 2)` and `dZ2` at `(4, 1)`.
+
+```text
+A1   @ dZ2   →  inner 2 and 4   ✗
+A1.T @ dZ2   →  inner 4 and 4   ✓   giving (2, 4) @ (4, 1) = (2, 1)
+```
+
+**There is exactly one legal arrangement, and the shapes found it for you.** You never memorise transposes.
+
+**The fix:** `dW2 = A1.T @ dZ2`.
+
+**Bug 2 — line 35, `mask = (Z1 > 0).astype(float).T`. A runtime bug.**
+
+**The failing operator is `*`**, not `@`, which is why the message is a **broadcasting** error and looks nothing like run 1's. `*` asks one question per cell, so both grids must be the same shape, and `(4,2)` against `(2,4)` is neither equal nor broadcastable.
+
+**The mask must be exactly `Z1`'s shape — `(4, 2)` — because it is answering a question about every single cell of `Z1`:** *did this unit fire on this row?* Eight cells in, eight answers out.
+
+**The fix:** drop the `.T`.
+
+**Bug 3 — line 30, `dZ2 = A2 - y`. A silent logic bug: the `÷ n` is missing.**
+
+**The fingerprint:** every relative error is `6.00e-01`, **identically, across all nine knobs and all three layers.** An error that is the same on every knob cannot be a wiring mistake — wiring mistakes hit some parts of the chain and not others. **An identical error everywhere means a single scale factor applied to the whole gradient.**
+
+`−0.99585515 ÷ −0.24896379 = **4**`, so every gradient is **4** times too big — and `4` is the batch size. *(And the `0.6` is forced: if `ana = 4 × num` then the relative error is `3num ÷ 5num = 0.6`, whatever `num` is. That is why it is the same to two decimal places on a gradient of `0.99` and on a gradient of `0.008`.)*
+
+**Why it still "works":** with a batch of four, every gradient being 4× too big is **identical to using a learning rate four times bigger than you thought.** The network trains, the loss falls, and you might never notice. **What makes it catastrophic is a bigger batch:** with a thousand rows your gradients are a thousand times too big and the very first step launches the weights into nonsense. **The `÷ n` is what makes a learning rate mean the same thing whatever your batch size is.**
+
+**The fix:** `dZ2 = (A2 - y) / n`.
+
+**Why the loss was never affected.** All three bugs live in the **backward** half of the program, and `loss` is computed on line 27 — **before any of them.** The forward pass was correct throughout, so `0.297113` was right in every run. **This is the single most important thing to understand about a gradient bug: the loss cannot see it.** A wrong gradient does not make today's loss wrong; it makes tomorrow's step wrong. So "the loss looks sensible" is not evidence of anything at all.
+
+**Ranking: bug 3 ≫ bug 2 ≈ bug 1.** Bugs 1 and 2 crash on the spot and name both shapes. Bug 3 produces four correctly-shaped grids, a correct loss, and a program that trains. **The only thing that catches it is the gradient check** — and it catches it instantly, with a fingerprint you can now read at a glance.
+
+#### Puzzle of the Week (Part 1 photocopier chain, Part 2 fingerprint the bug)
+
+**Part 1 — the photocopier chain.**
+
+**(a)** `2 × 5 × 3 = **30**`
+
+**(b)** `0.5 × 0.5 × 0.5 × 0.5 = **0.0625**`. **Weaker** — one sixteenth of what went in.
+
+**(c)** `42 ÷ (3 × 2) = 42 ÷ 6 = **7**`
+
+**(d)** `3 × 7 × ? × 2 × 9 = 0`, so stage 3 is **`0`**. **A stage with slope zero is a wall.** Nothing gets through it, so nothing before it can learn anything at all — whatever the other four stages do. **That is exactly a dead ReLU**, and it is why no learning rate revives one.
+
+**(e)** `0.25⁵ = **0.0009765625**` — about one thousandth. `1⁵ = **1**` — all of it.
+
+**(f)** `0.9²⁰ = **0.122**` and `1.1²⁰ = **6.727**`.
+
+**The moral:** *"A long chain is exponentially sensitive to whether its typical stage slope is below or above 1 — a tenth either side of 1 turns into `0.12` on one side and `6.7` on the other over twenty stages — a factor of about fifty between them — so gradients either **vanish** or **explode**, and neither is a bug in your code."* *(Those two words are the real names, and they are the reason ReLU, careful initialization and a dozen later tricks all exist.)*
+
+**Part 2 — fingerprint the bug.**
+
+**Printout A:** **the `÷ n` is missing.** The tell: **every relative error is exactly `6.00e-01`, on every knob in every layer.** One scale factor applied to the whole gradient. *(Check: `1.19156212 ÷ 0.29789053 = 4`.)*
+
+**Printout B:** **the ReLU mask has been forgotten.** The tell: **the hidden layer fails at between `0.24` and `1.00` while `dW2`, `dW2[1,0]` and `db2` all pass at about `1e-10`.** The mask sits between `dA1` and `dZ1`, which is *after* the output layer's gradients have already been computed — so the output layer is untouched. **A check that fails on some layers and passes on others tells you where in the chain the bug is.**
+
+**Printout B(i).** **Those four pairs have opposite signs.** `−0.0977` against `+0.0712`; `+0.0651` against `−0.0474`; `+0.117` against `−0.0518`; `−0.078` against `+0.00201`. **A relative error of 1 means the gradient points the wrong way** — a network trained with it would move those four knobs in precisely the wrong direction.
+
+**Printout B(ii).** Because of a coincidence in the data, and it is a beautiful one. `dW1[0,0]` is `X` column 0 dotted with `dZ1` column 0. `X` column 0 is `[1, 2, 0, −1]`, and the mask cells that are zero in **column 0** are only **row 3** — whose `X` value is `**0.0**`. So the term the mask was supposed to kill was `0.0 × (something)`, which is **zero either way.** **The bug was real, and that one entry could not see it.** Which is the whole argument for checking *every* knob rather than one: a single passing number proves nothing.
+
+**Printout C:** **`eps` is the wrong size — far too *small*.** This one came from a real run with `eps = 1e-11`. The tell: **nothing is dramatically wrong, but everything is off by about `1e-5` or `1e-6` instead of `1e-10`, right across all three layers.** No sign flips, no factor of four — just a uniform loss of precision. **When every knob is mildly wrong, suspect the check rather than the chain.**
+
+For comparison, the same nine knobs at `eps = 0.1` — too *big* — look like this:
+
+```text
+dW1[0,0]     -0.24896379    -0.25017403       2.42e-03
+dW1[0,1]      0.10092162     0.10100162       3.96e-04
+dW1[1,0]      0.07116069     0.07210013       6.56e-03
+dW1[1,1]     -0.04744046    -0.04771951       2.93e-03
+db1[0,0]     -0.05181103    -0.05192909       1.14e-03
+db1[0,1]      0.00201357     0.00201368       2.75e-05
+dW2[0,0]     -0.08277342    -0.08294845       1.06e-03
+dW2[1,0]      0.08326642     0.08363319       2.20e-03
+db2[0,0]      0.07800082     0.07797609       1.59e-04
+```
+
+**Two walls, and `1e-6` sits between them.** Too big and the nudge measures the average steepness across a stretch of curve instead of the steepness at a point. Too small and the two losses round to almost the same number, so the subtraction is mostly noise.
+
+**Printout C(i).** The worst is **`db1[0,1]` at `1.01e-03` — the *smallest* gradient, `0.00201357`.** And that is the clue to the direction of the mistake: **when `eps` is too small, the tiniest gradients break first**, because they are the ones whose two losses were closest together to begin with, so they have the least signal to lose to rounding. *(Compare the `eps = 0.1` table above, where `db1[0,1]` is the **best** row at `2.75e-05` — with a large nudge, the tiny gradient is the one least affected by curvature. **The two walls have opposite signatures**, and that is how you tell which one you have hit.)*
+
+**Printout D:** **no bug.** Both numbers are below `1e-6` — one at `3e-11`, the other at `6e-09`. **This is what a healthy check looks like.**
+
+**Part 2(a).** **D.**
+
+**Part 2(b).** Because `db1[0,1]` is **the smallest gradient in the set — `0.00201357`** — and relative error divides by the size of the numbers. The same absolute floating-point wobble is a much larger fraction of a small number. **The worst relative error in a healthy check is almost always on the smallest gradient**, and that is a fact about arithmetic, not about your code. It is still about **160 times** better than the threshold.
+
+**Part 2(c).** *A check that fails on some layers and passes on others tells you **where in the chain the bug is** ; a check that fails on everything by the same amount tells you **that one single scale factor is wrong — usually the `÷ n`**.*
+
+#### Think Deeper (T1, T2)
+
+**T1 — a model answer.** A gradient four times too big is a **speed** problem. Every knob still moves in the correct direction; they all move too far. So with a small enough learning rate the network still trains, just as if you had picked a learning rate four times bigger — and if the steps become too large you see it immediately, because the loss curve wobbles upwards or explodes to `nan`. **It is loud, and the cure is a number you were going to tune anyway.**
+
+A gradient with the wrong **sign** is a **direction** problem, and it is much worse. Those knobs climb the hill instead of descending it, and no learning rate fixes a wrong direction — **making the steps smaller just means you go the wrong way more slowly.** Neither bug crashes, so that is not the difference. The real difference is what the loss curve does. With the mask forgotten, *four* of the nine knobs are still correct — both entries of `dW2`, `db2` and one entry of `dW1` — so the network still finds *some* downhill and **the loss still falls.** It ends up somewhere mediocre, the curve looks entirely ordinary, and there is nothing to notice. **A bug that makes training fail is a nuisance; a bug that makes training merely worse is a catastrophe, because you will ship it.**
+
+**T2 — a model answer.** What professionals actually do is check a **tiny version of the same code**: two features, two hidden units, four rows, nine knobs, `float64`, once, on the day the backward pass is written — and then never again. That is `torch.autograd.gradcheck`, and every serious library ships one. The point is that the *code* being checked is the same code; only the *sizes* are small. A transpose in the wrong place, a missing mask, a forgotten `÷ n` — none of those care whether the layer has 2 units or 2,000, so a tiny example exercises the same logic.
+
+**What "verified" can honestly mean at that scale is narrower than it sounds**, and it is worth being precise about three separate gaps. First, the check proves the **backward pass matches the forward pass** — nothing about whether the forward pass computes what you intended. Second, it proves it **for the sizes and values you tried**; a bug that only appears when a dimension is 1, or when every unit in a layer dies, or in `float32` rather than `float64`, will sail straight through. Third, it proves it **for that shape of network**; adding a layer adds wiring the check never saw.
+
+So a passing check on a small version is **strong evidence, not a proof.** It is the same kind of confidence as a good test suite: it rules out the whole family of mistakes people actually make, which is worth enormous amounts, while proving nothing in the mathematical sense. **And that is exactly why the honest phrasing on a model card is "gradients verified against numerical differentiation on a 9-parameter instance, worst relative error 6.26e-09" rather than "the gradients are correct."** One of those you can defend; the other you cannot.
+
+#### Build It (Part A reflection sheet, Part B four arrays, Part C nine checks, Stretch)
+
+**Part A — the reflection sheet.** The five numbers:
+
+| number | what it is | week |
+|---|---|---|
+| `−6` | the slope of `(w − 4)²` at `w = 1`, measured by nudging | **Week 12** |
+| `0.8022` | `sigmoid(1.4)` — a score turned into a chance | **Week 13** |
+| `0.2204` and `1.6204` | the log loss of `p = 0.8022` if `y = 1` and if `y = 0` | **Week 14** |
+| `9.00 → 5.76` | one gradient step: `3 − 0.1 × 6 = 2.4`, and the loss falling | **Week 15** |
+| `(4, 3)` | the output shape of `(4,2) @ (2,3)` | **Weeks 16–17** |
+
+Questions 2, 3 and 4 have no right answers, and question 3 is the one that gets read. **The only wrong answer to question 3 is "everything was fine."**
+
+*Teacher notes on Part A, questions 2–4.*
+
+**Question 2 — the thing that clicked.** Strong answers name **one** idea and say what made the difference. Examples that earn full marks: *"That `fit()` was a loop — it guessed, measured the slope, stepped, repeated."* · *"That 0.5 is not a law — the model gives a number and a human picks the cut."* · *"That slopes multiply. I thought backpropagation would be the hard part and it was one multiplication."* **Weak:** a list of everything covered.
+
+**Question 3 — the thing that has not clicked.** **This is the question that matters and it should be marked generously.** Common honest answers: Week 12 (the nudge felt pointless until Week 15 used it), Week 14 (log loss looked arbitrary until the surprise-meter idea landed), Week 17 (the transposes felt like memorisation until this week’s shape sentence). **A student who names a week and says “still not really” has given you the single most useful piece of information on the sheet.** Reply to it.
+
+**Question 4 — your own bug.** Anything concrete, with a real “what I saw” (an error message, a loss that would not move, a number that was wrong). Watch for “it was a typo” with no cause and no time; push for the second column (“what it actually was”) and the follow-up (“what would have caught it in one minute?” — usually a shape printed, a `.copy()`, or a gradient check). Gently push back on “I understand neural networks now” — too big, and it is not what this term did.
+
+**Part B — the four gradient arrays.** Real output.
+
+**Forward:**
+
+| row | `Z1` | `A1` | `Z2` | `A2` | loss |
+|---|---|---|---|---|---|
+| `[1.0, 1.0]` | `1.30, 0.40` | `1.30, 0.40` | `1.35` | `0.794130` | `−ln(0.794130) = 0.230509` |
+| `[2.0, 0.0]` | `1.40, −0.90` | `1.40, 0` | `1.90` | `0.869892` | `−ln(0.869892) = 0.139387` |
+| `[0.0, −1.0]` | `−0.30, −1.00` | `0, 0` | `−0.20` | `0.450166` | `−ln(1 − 0.450166) = 0.598139` |
+| `[−1.0, 2.0]` | `0.60, 2.10` | `0.60, 2.10` | `−1.40` | `0.197816` | `−ln(1 − 0.197816) = 0.220417` |
+
+shapes: `Z1 (4,2)` · `A1 (4,2)` · `Z2 (4,1)` · `A2 (4,1)`
+
+**Batch loss:** `(0.230509 + 0.139387 + 0.598139 + 0.220417) ÷ 4 = 1.188452 ÷ 4 = **0.297113**`
+
+**The mask**, shape `(4, 2)`:
+
+```text
+[[1. 1.]
+ [1. 0.]
+ [0. 0.]
+ [1. 1.]]
+```
+
+**Three zeros.** **Row 3's whole row is zero** — both hidden units had a negative `z` (`−0.30` and `−1.00`) so **neither fired.** That row's answer of `0.450166` came entirely from the output bias `−0.2`; the hidden layer said nothing at all about it. And going backwards, **no blame from that row reaches any hidden weight.**
+
+**Backward:**
+
+```text
+dZ2  (4, 1) = [ −0.051468, −0.032527, 0.112542, 0.049454 ]
+
+dW2  (2, 1) = [ −0.082773 ]        db2  (1, 1) = [ 0.078001 ]
+              [  0.083266 ]
+
+dA1  (4, 2) = [ −0.077201   0.051468 ]
+              [ −0.048791   0.032527 ]
+              [  0.168812  −0.112542 ]
+              [  0.074181  −0.049454 ]
+
+dZ1  (4, 2) = [ −0.077201   0.051468 ]
+              [ −0.048791   0.       ]
+              [  0.        −0.       ]
+              [  0.074181  −0.049454 ]
+
+dW1  (2, 2) = [ −0.248964   0.100922 ]    db1 (1, 2) = [ −0.051811   0.002014 ]
+              [  0.071161  −0.047440 ]
+```
+
+To eight places, if you want to mark yourself properly:
+
+```text
+dW1 = [[-0.24896379, 0.10092162], [0.07116069, -0.04744046]]
+db1 = [-0.05181103, 0.00201357]
+dW2 = [-0.08277342, 0.08326642]
+db2 = 0.07800082
+```
+
+**The shape check:** `W1 (2,2)` / `dW1 (2,2)` ✅ · `b1 (1,2)` / `db1 (1,2)` ✅ · `W2 (2,1)` / `dW2 (2,1)` ✅ · `b2 (1,1)` / `db2 (1,1)` ✅ — **four for four.**
+
+**`dW2[0]` in full:**
+
+```text
+     1.30 x  -0.051468 =  -0.066908
+     1.40 x  -0.032527 =  -0.045538
+     0.00 x   0.112542 =   0.000000
+     0.60 x   0.049454 =   0.029672
+   total                =  -0.082773
+```
+
+**The third line is zero.** Row 3's hidden unit 1 was silent (`A1 = 0`), so that row had **no opinion at all** about that weight. (Going further, row 3's whole mask row is zero, so it contributes nothing to any hidden-layer gradient.) **The arithmetic shows you the silence.**
+
+*(A nice second one to notice: in `dW1[0,0]`, the four products are `1.0 × −0.0772`, `2.0 × −0.0488`, `0.0 × 0.0`, and `−1.0 × 0.0742` — where the third term is zero **twice over**, once because the mask shut it and once because `X` was `0.0` there.)*
+
+**Part C — the gradient check.** Real output, all nine knobs:
+
+```text
+knob             by hand     by nudging relative error
+dW1[0,0]     -0.24896379    -0.24896379       2.96e-11
+dW1[0,1]      0.10092162     0.10092162       2.76e-10
+dW1[1,0]      0.07116069     0.07116069       2.99e-10
+dW1[1,1]     -0.04744046    -0.04744046       1.04e-10
+db1[0,0]     -0.05181103    -0.05181103       2.25e-10
+db1[0,1]      0.00201357     0.00201357       6.26e-09
+dW2[0,0]     -0.08277342    -0.08277342       1.66e-10
+dW2[1,0]      0.08326642     0.08326642       8.78e-11
+db2[0,0]      0.07800082     0.07800082       2.33e-10
+
+worst relative error anywhere: 6.26e-09
+all nine below 1e-6?  True
+```
+
+**The worst is `db1[0,1]` at `6.26e-09`, and its gradient is `0.00201357` — the smallest of the nine.** That is not a coincidence: relative error divides by the size, so **tiny gradients are where floating-point noise shows up most.** It is still about 160 times better than the threshold.
+
+**And two of the nine, worked by hand so you can see the nudge doing it:**
+
+```text
+W1[0,0] = 0.600001  →  loss = 0.297112653273
+W1[0,0] = 0.599999  →  loss = 0.297113151201
+
+the loss moved:  0.297112653273 − 0.297113151201 = −0.000000497928
+the knob moved:  0.000002
+
+−0.000000497928 ÷ 0.000002 = −0.24896400
+```
+
+```text
+b2 = −0.199999  →  loss = 0.297112980238
+b2 = −0.200001  →  loss = 0.297112824236
+
+(0.297112980238 − 0.297112824236) ÷ 0.000002 = 0.000000156002 ÷ 0.000002 = 0.07800100
+```
+
+**Six figures of agreement from a calculation that has never heard of backpropagation.** The last digits drift only because those losses were rounded to twelve places before subtracting; Python with all its digits gets `−0.24896379` and `0.07800082` exactly.
+
+**Stretch — the two fingerprints.**
+
+**Mask deleted:**
+
+```text
+knob           my answer     by nudging relative error
+dW1[0,0]     -0.24896379    -0.24896379       2.96e-11
+dW1[0,1]      0.16597586     0.10092162       2.44e-01
+dW1[1,0]     -0.09765156     0.07116069       1.00e+00
+dW1[1,1]      0.06510104    -0.04744046       1.00e+00
+db1[0,0]      0.11700123    -0.05181103       1.00e+00
+db1[0,1]     -0.07800082     0.00201357       1.00e+00
+dW2[0,0]     -0.08277342    -0.08277342       1.66e-10
+dW2[1,0]      0.08326642     0.08326642       8.78e-11
+db2[0,0]      0.07800082     0.07800082       2.33e-10
+```
+
+**`÷ n` deleted:**
+
+```text
+knob           my answer     by nudging relative error
+dW1[0,0]     -0.99585515    -0.24896379       6.00e-01
+dW1[0,1]      0.40368648     0.10092162       6.00e-01
+dW1[1,0]      0.28464278     0.07116069       6.00e-01
+dW1[1,1]     -0.18976185    -0.04744046       6.00e-01
+db1[0,0]     -0.20724410    -0.05181103       6.00e-01
+db1[0,1]      0.00805426     0.00201357       6.00e-01
+dW2[0,0]     -0.33109368    -0.08277342       6.00e-01
+dW2[1,0]      0.33306569     0.08326642       6.00e-01
+db2[0,0]      0.31200327     0.07800082       6.00e-01
+```
+
+**The two fingerprints, one line each:**
+
+> *"Mask forgotten: the hidden layer fails between `0.2` and `1.0` while the output layer still passes at `1e-10`, and four of them have the **wrong sign**."*
+
+> *"`÷ n` forgotten: **every** knob fails at exactly `6.00e-01`, because every gradient is 4× too big and `3 ÷ 5 = 0.6`."*
+
+**And notice `dW1[0,0]` passing in the first table.** The mask bug was real and that one knob could not see it, because the only masked cell in `X`'s first column sat on a row whose input was `0.0`. **That is why you check all nine.**
+
+#### Draw It
+
+**A good drawing has:** four blocks — `Z1 (4,2)`, `A1 (4,2)`, `Z2 (4,1)`, `A2 (4,1)` — each with its shape written on it, plus the loss as a single number at the far right; forward arrows along the top in one colour; **backward arrows dashed and reversed** along the bottom; **a rule on each backward arrow, not a name** — `A2 − y over n`, `A1.T @ dZ2`, `dZ2 @ W2.T`, `× mask`, `X.T @ dZ1`; **the ReLU valve drawn shut** on row 2's second unit and both of row 3's units; at least one real number on the backward path — `−0.05146759` is the natural one; the nine knobs marked with where their blame lands; and `3 × 14 = 42` in a corner.
+
+**The four questions.** **Four blocks plus the loss is the natural count, and every one needs a shape** — a diagram of unlabelled boxes with arrows is a diagram of the word "network", not of this network. **Your backward arrows should carry rules**: writing "chain rule" on an arrow tells a reader nothing, while writing `dA1 = dZ2 @ W2.T` tells them everything, including where the transpose goes. **The real number on the backward path is the blame** — `−0.051468` for row 1 — and if there is no number anywhere on the backward half, the drawing has not done the job this week asks for.
+
+**And the valve.** At a shut valve you should have drawn **blame arriving from the right and stopping** — an arrow that hits the valve and goes no further, with `0` written beyond it. That is the thing the figure exists to say: **no signal went forward, so no blame comes back.**
+
+#### Self-Check
+
+No right answers here, but the honest bar: 😀 means you could do it now on a blank sheet with nothing open. 🙂 means you could do it with your chapter beside you. 😕 is the one to ask about first.
+
+**Two of these matter more than the rest, and here is why.** Make sure **"place every `.T` by writing down the shape I need first"** is not a 😕 — next week you build a whole network from scratch and there are six transposes in it, and the sentence is the only thing that places them. And make sure **"explain why a wrong gradient usually does not crash"** is not a 😕 either, because from Week 20 a library does the backward pass for you and **you will never see it again.** The gradient check is the last week in which you get to look.
+
+#### Wrong answers you will actually see
+
+| Where | Wrong answer | What it tells you |
+|---|---|---|
+| M1(a) | “`14`” (adding `4 + 10`) | Thinks stages add effort instead of scaling a signal. Send them to the photocopier sentence in M1(c). |
+| M2(c) | “a slope of `0.2` means something is broken” | Has not met a stage that quietens a signal; connect to the `0.25⁵` argument from Week 16. |
+| M4 | relative error computed as `|num − ana|` only | Has used absolute error; the score divides by `|num| + |ana|`. Rows c and d are the ones that go wrong. |
+| P2 | “`(1,)` is wrong, it will crash” | It does not crash here; it is a trap, not an error. Credit the shape, correct the “crash”. |
+| P4 | “`True`” on the last line | Has forgotten that `==` on decimals compares every digit; this is the reason for `np.allclose` and for relative error. |
+| A3(g) | listing `e` and `f` only | Has missed `d` (the shape-convention bug that runs silently) — the three silent ones are `d`, `e`, `f`. |
+| Fix the Broken Program | fixing bug 3 by lowering the learning rate | Treats a `÷ n` bug as a tuning problem; the check’s identical `6.00e-01` on every knob is the clue. |
+| Build It B | correct grids with no shapes, or no written-out mask | Half marks (the workbook says so). The missing mask is the reason `dW1` goes wrong. |
+| Build It B | `dW2[0]` third product written as non-zero | Has used the wrong `A1` column; row 3’s hidden unit 1 was silent, so that product is exactly `0`. |
+| Build It C | “they all passed” | Not a result. Ask for `6.26e-09` and which knob it belongs to (`db1[0,1]`, the smallest gradient). |
+| Build It C / B5 | a whole column of `0.0` slopes | Missing `.copy()` — see B5. |
+| Think Deeper T1 | “wrong-sign gradients crash the program” | Neither bug crashes; the difference is the loss curve (still falls, ends mediocre). |
+
+### In-class scripts and their real output
+
+*These belong to the lesson, not the workbook. They use the lesson’s own network (`W1 = [[0.5, −0.3], [0.8, 0.2]]`, `X` rows `[1, 2]`, `[2, −1]`, `[0, 0.5]`, `[−1, −1]`), which is **not** the workbook’s. Use them for the Prep Checklist, the live-code segment, the Blame Relay and the circuit stations; mark homework from the workbook answers above.*
+
+#### The board’s chain, measured two ways (`chain.py`)
 
 ```text
 w  ──[ z = 3w + 1 ]──▶  z  ──[ L = z × z ]──▶  L        starting at w = 2
@@ -1639,7 +2410,7 @@ difference: 0.0000000000
 
 **Stage 3's slope is `0.142857`, which is one seventh** — that stage divides by 7, so it *shrinks* whatever comes through. `42 ÷ 7 = 6`. **A slope below 1 is not a problem; it is a stage that quietens things down**, and five of those in a row is exactly Week 16's `0.25⁵` argument.
 
-### Page 18.3 — All four gradient arrays, by hand
+#### `backprop.py` — the lesson’s four gradient arrays
 
 ```text
 W1 = [ 0.5  -0.3 ]   (2,2)     b1 = [ 0.1  0.05 ]   (1,2)
@@ -1919,7 +2690,7 @@ db2 =
 [[-0.09975049]]
 ```
 
-### Page 18.4 — Gradient-check all nine
+#### `gradcheck.py` — the lesson’s nine checks
 
 *Nudge each knob by `ε = 1e-6` in both directions, recompute the whole batch loss both times, divide by `2ε`, and compare against the chain's answer.*
 
@@ -2006,7 +2777,7 @@ all nine below 1e-6?  True
 
 **Runtime: well under a second** for eighteen forward passes.
 
-**Two things worth pointing out when you mark this.** The worst error, `2.97e-08`, is on `dW2[1,0]` — and that is **the smallest gradient in the set**, `0.00085158`. That is not a coincidence: relative error divides by the size of the numbers, so tiny gradients are where floating-point noise shows up most. **It is still thirty times better than the threshold.** And `dW2[0,0]` has the *best* error, `2.41e-12`, which is the cleanest agreement on the page.
+**Two things worth pointing out when you show this.** The worst error, `2.97e-08`, is on `dW2[1,0]` — and that is **the smallest gradient in the set**, `0.00085158`. That is not a coincidence: relative error divides by the size of the numbers, so tiny gradients are where floating-point noise shows up most. **It is still thirty times better than the threshold.** And `dW2[0,0]` has the *best* error, `2.41e-12`, which is the cleanest agreement on the page.
 
 **The by-hand version of the first row**, which is the harder variation and worth full credit:
 
@@ -2020,7 +2791,7 @@ the knob moved:  0.000002
 0.000000595781 ÷ 0.000002 = 0.29789050      and the chain said 0.29789053
 ```
 
-### Page 18.5 — Symmetry breaking
+#### `symmetry.py` — all zeros against He initialization
 
 *Start every weight at zero. Run one forward pass and one backward pass. What happens, and why?*
 
@@ -2129,7 +2900,7 @@ Two reasons stacked. Every weight is zero, so every `Z1` is zero. The ReLU mask 
 **Q4 — "Look at the He printout. What is different?"**
 Every column of `W1` holds different numbers, so every column of `A1` is different. Read the first row of `A1`: `0`, `0.591085`, `3.248423`, `1.999062`. **Four units, four different opinions about the same input row** — and the first one is silent on that row, which is exactly the patchiness that lets a network bend. And `sqrt(2 ÷ 2) = 1.000000` for this two-input layer, so the spread asked for is 1.
 
-### Page 18.6 — The Term 2 circuit (in class)
+#### The Term 2 circuit — the five station answers (`circuit.py`)
 
 ```python
 """circuit.py - answers to the five Term 2 review stations."""
@@ -2180,7 +2951,7 @@ station 5  (4,2) @ (2,3) -> (4, 3)
 
 **And one thing worth pointing out to whoever finishes station 3 first:** the two losses differ by `1.620417 − 0.220417 = 1.400000`, which is exactly `z`. That is not a coincidence — it falls out of the algebra of log loss and the sigmoid — and noticing it unprompted is a level-5 observation.
 
-### Page 18.6b — The broken gradient (stretch)
+#### `broken_grad.py` — the forgotten mask (stretch)
 
 *Forget the ReLU mask on purpose. Which checks fail, and by how much?*
 

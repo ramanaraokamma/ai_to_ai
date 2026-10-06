@@ -13,7 +13,7 @@
 | **Big idea** | A comparison is a question whose answer is `True` or `False`; `if` runs a block only when the answer is `True`. |
 | **New vocabulary** | boolean · condition · comparison operator · block · indentation |
 | **New syntax** | `==` and `!=` · `<` `>` `<=` `>=` · `if condition:` · `else:` |
-| **Materials** | Printed workbook pages 5.1–5.6 · pencil · notebook open at the **Bug Log** · **masking tape, or two sheets of A4 and a marker**, for the fork on the floor · a printed copy of `ticket_price.py` (the paper fallback) |
+| **Materials** | The printed workbook (all sections, start to finish; the **Build It** test table prints best in landscape) · pencil · notebook open at the **Bug Log** · **masking tape, or two sheets of A4 and a marker**, for the fork on the floor · a printed copy of `ticket_price.py` (the paper fallback) |
 | **Tech needed** | One laptop, Python 3, terminal open in `~/ai-academy/level2`, editor. Standard library only — **nothing to install**. |
 | **Prep time** | 20 minutes the night before, 5 minutes on the day (plus 2 minutes taping the floor) |
 
@@ -362,7 +362,7 @@ finished, dotted for not yet.*
 
 ### 20 minutes the night before
 
-- [ ] **Print workbook pages 5.1–5.6.** Page 5.4 (the five-row test table) prints better in landscape.
+- [ ] **Print the whole workbook.** Its sections run Warm-Up, Predict the Output, Practice Set A, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It, Draw It, Self-Check. The Build It test table (Part 1) prints better in landscape.
 - [ ] **Check the editor's indent setting.** VS Code: look at the bottom-right of the window for `Spaces: 4`. If it says anything about tabs, click it and choose *Indent Using Spaces*, then *4*. This is the single highest-value two minutes of prep this week.
 - [ ] **Type and run `compare_drills.py` yourself** (section 1) and check you get `True False True True False False True False`. Predict each one on paper first — you should get at least seven, and the one you are most likely to miss is `12 > 12`.
 - [ ] **Trigger this week's planted bug yourself.** Make a scratch file containing exactly this and run it:
@@ -411,7 +411,7 @@ finished, dotted for not yet.*
 - [ ] Editor open, indent set to 4 spaces.
 - [ ] Notebook open at the Bug Log.
 - [ ] Fork taped on the floor, or the two sheets laid out. **Stand on it once yourself** to check there is room to walk.
-- [ ] Workbook pages on the table. **Laptop closed** — the Hook is off-screen and on foot.
+- [ ] Workbook on the table, open at **Build It**. **Laptop closed** — the Hook is off-screen and on foot.
 
 ### Fallback if the laptop or the install fails
 
@@ -792,9 +792,9 @@ Fix it. Run `14` again — it works. Bug Log entry #2, and the entry says **"no 
 
 Full instructions below. In the lesson flow:
 
-- **Minutes 0–8:** run all five test ages and fill in the five-row table on page 5.4.
+- **Minutes 0–8:** run all five test ages and fill in the five-row table (workbook **Build It**, Part 1).
 - **Minutes 8–14:** the boundary experiment — change `>=` to `>` and find out which of the five tests catches it.
-- **Minutes 14–20:** their own two-way decision, from the list on page 5.4.
+- **Minutes 14–20:** their own two-way decision, from the list in workbook **Build It**, Part 3.
 
 ---
 
@@ -802,7 +802,7 @@ Full instructions below. In the lesson flow:
 
 ### Setup
 
-**On the table:** the laptop with `ticket_price.py` open · workbook page 5.4 (the five-row test table, landscape) · page 5.5 (Bug Log) · a pencil.
+**On the table:** the laptop with `ticket_price.py` open · workbook **Build It** (Part 1, the five-row test table, landscape; Part 4, the Bug Log) · a pencil.
 
 **On the floor:** leave the fork taped down. You will send them back to it.
 
@@ -858,7 +858,7 @@ Show Figure 5.5. Then put `>=` back and re-run age 13 to confirm.
 
 > "Now yours. One question, two outcomes, and it has to be something you'd actually care about the answer to."
 
-Options on page 5.4, if they need one:
+Options in workbook **Build It**, Part 3, if they need one:
 
 | Program | The condition | The two outcomes |
 |---|---|---|
@@ -1196,311 +1196,251 @@ print("C")
 
 **Say this:**
 
-> "About an hour, three pages, and the first one is the one I care most about.
+> "About an hour. The workbook has a fixed order this week, and the first part is the one I care most about.
 >
-> **Page 5.1 — eight booleans, and you predict every single one on paper before you run anything.** Pencil first, keyboard second. Then run them and mark yourself. And I want the score written at the top of the page. **If you get eight out of eight, tell me, because it means I made the page too easy** — I'd rather you got six and learnt two things.
+> **Warm-Up, five questions about last week** — quick, and they keep Week 4 alive.
 >
-> **Pages 5.2 and 5.3 — the practice.** Page 5.3 has four broken programs on it. Same rule as last week: **write down which error you expect before you run it.** Predicting the error is half the skill.
+> **Predict the Output — four little programs, P1 to P4. You write what each one prints on paper before you run anything.** Pencil first, keyboard second. Then run them and write down what really happened. And I want your score written at the bottom. **If you get every one right, tell me, because it means I made the page too easy** — I'd rather you got six and learnt two things. P4 has a trap in it.
 >
-> **Page 5.4 — `ticket_price.py`, properly finished, plus the test table.** Five rows: the age you typed, the price you *expected*, the price it printed, and whether they matched. The expected column gets filled in **before** you press Enter. Then the important row at the bottom: change `>=` to `>`, run all five again, and write down **which single row changed.**
+> **Practice Set A — Read It, and Practice Set B — Write It.** A1 to A6 are reading and spotting. B1 to B5 are writing: a one-line condition, even-or-odd, a weather verdict, a bus fare and a library fine. For every one of B2 to B5, **test the two values either side of the boundary**, not just two comfortable ones.
 >
-> **Page 5.5 — the Bug Log.** Two entries this week. One of them has to be a bug that gave **no error message at all** — and you already know how to make one of those: indent a line that shouldn't be indented.
+> **Fix the Broken Program — `sleep_check.py`, which has three bugs.** One stops Python reading the file, one stops it partway, and one gives **no error at all.** Same rule as last week: find them one at a time, and write down what you expect before you run it.
 >
-> Every line commented, saying *why*, not what."
+> **Puzzle of the Week — `mystery.py`.** Four possible outputs and one of them is impossible. Find out which, and why. This one is allowed to take longer than you think.
+>
+> **Think Deeper, two questions, a paragraph each. Then Build It** — `ticket_price.py` with the five-row test table, the `>=` to `>` experiment, your own two-way program, and the Bug Log with two entries. One of them has to be a bug that gave **no error message at all**; you already know how to make one — indent a line that shouldn't be indented.
+>
+> **Draw It** is the fork with the join, and **Self-Check** is the tick-boxes and the true-or-false table at the end.
+>
+> Every line of your own code commented, saying *why*, not what."
 
-**Workbook pages:** 5.1 in class if there is time; **5.2, 5.3, 5.4, 5.5 and 5.6** at home.
+**Workbook sections:** the **Warm-Up** and **Predict the Output** in class if there is time; everything else — **Practice Set A, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It, Draw It and Self-Check** — at home. The 🔑 Answer Key below follows the workbook's own order.
 
-**Expected time:** 10 min for the eight booleans · 15 min for the practice · 20 min for `ticket_price.py` and the table · 10 min Bug Log · 5 min self-check. About 60 minutes.
+**Expected time:** 5 min Warm-Up · 10 min Predict the Output · 15 min Practice Set A · 25 min Practice Set B · 10 min Fix the Broken Program · 10 min Puzzle · 10 min Think Deeper · 20 min Build It · 5 min Draw It and Self-Check. The whole workbook is more than an hour; **the Puzzle, Think Deeper and B4/B5 are the ones to let slide to next week if time is short.**
 
 ---
 
 ## 🔑 Answer Key
 
-### Page 5.1 — Warm-Up: predict the boolean
+Everything here follows the workbook, section by section, in the workbook's order and with its labels (W1, P1, A1, B1 …). The workbook's own Answers section at the end is the student-facing version of the same values.
 
-The student writes a prediction on paper, then runs:
+### Warm-Up — five questions about Week 4
 
-```python
-# wb_5_1.py - predict each answer on paper FIRST, then run this.
-print(7 == 7)            # a
-print(7 == 7.0)          # b
-print(7 != "7")          # c
-print(3 < 3)             # d
-print(3 <= 3)            # e
-print(100 > 99.9)        # f
-print("Zebra" < "apple") # g
-print("yes" == "Yes")    # h
-```
+| # | Answer | What to listen for |
+|---|---|---|
+| W1 | The **text** `"12"` — two characters, not the number twelve. | Needs the word "text" or "string". "A number" is the Week 4 misconception, back again. |
+| W2 | `"120" * 2` prints `120120`; `120 * 2` prints `240`. | The type on the left decides what `*` does. |
+| W3 | `height_m = float(input("Height in metres? "))` | `float`, because of the decimal point. `int()` would stop with a `ValueError` on 1.52. |
+| W4 | `int(4.99)` is `4`; `round(4.99)` is `5`. `int()` chops at the dot; `round()` goes to the nearest whole number. | Anyone who says `int(4.99)` is 5 has rounded in their head. |
+| W5 | The **last** line, because it names the error type and the message; the lines above are the route taken. | "The top line" is the usual wrong answer. |
 
-The real output:
+### Predict the Output — P1 to P4
 
-```text
-True
-True
-True
-False
-True
-True
-True
-False
-```
+Run all four yourself if you have not; these are the real outputs.
 
-| # | Expression | Answer | Why |
-|---|---|---|---|
-| a | `7 == 7` | `True` | Identical. |
-| b | `7 == 7.0` | `True` | A whole number and a decimal that mean the same amount are equal. Python compares the *value*, not the type. |
-| c | `7 != "7"` | `True` | The number seven and the text `"7"` are **not** equal, so "not equal" is True. This one catches people because they look the same on screen. |
-| d | `3 < 3` | `False` | "Less than" does not include equal. |
-| e | `3 <= 3` | `True` | "Less than **or equal to**" does. This pair is the whole reason both symbols exist. |
-| f | `100 > 99.9` | `True` | Straightforward — and worth noticing that a whole number and a decimal can be compared happily. |
-| g | `"Zebra" < "apple"` | `True` | **The surprising one.** Text is compared character by character, and all capital letters come before all small letters. So `"Z"` beats `"a"`. |
-| h | `"yes" == "Yes"` | `False` | Case matters, always. |
+| | Prints | Why |
+|---|---|---|
+| P1 | `False` / `True` / `False` | `35 > 35` is `False` (greater than excludes equal). `35 >= 35` is `True`. `35 != 35` is `False` because they are equal. |
+| P2 | `C` | `20 >= 35` is `False`, so the whole block, both `A` and `B`, is skipped. `C` is at the margin and runs regardless. |
+| P3 | `Not hot` / `Done` | **The trap is the `>`.** `30 > 30` is `False`, so exactly 30 is "not hot". `Done` is at the margin, so it prints on both paths. |
+| P4 | `True` / `False` / `False` / `True` | `7 == 7.0` is `True` (value, not type). `"7" == 7` is `False` (text and number are never equal). **`"10" > "9"` is `False`**: as text, the first characters `1` and `9` are compared and `1` comes first. `10 > 9` is `True`. |
 
-**5.1(i) Which two answers surprised you, and why?**
-Almost always (g) and (c). (g), because "Zebra" is obviously after "apple" in a dictionary and Python disagrees — Python is not using a dictionary, it is using a table of character codes where capitals come first. (c), because `7` and `"7"` look identical printed. Full credit for naming either and explaining it.
+**Marking the score line.** The workbook asks "how many of the thirteen did you get right?" but the four programs contain only ten things to predict (3 + 1 + 2 + 4). **Do not mark anyone down for a total other than 13.** Have them count their own predictions and write the real total. Flag it to the student kindly; the slip is in the printed page, not in them.
 
-**5.1(j) Write a comparison that is `True` for a 13-year-old and `False` for a 12-year-old.**
-`age >= 13`, or `age > 12`. Both are correct and they are the same test written two ways. **Ask which they prefer:** `age >= 13` says the boundary out loud, which makes it easier to check against the rule "thirteen and over".
+**Wrong-answer map.** `True` for `"10" > "9"` means the student compared by size, the Week 4 text-versus-number confusion. `A B C` for P2 means they ignored the condition. `Hot` for P3 means they read `>` as "at least".
 
-**5.1(k) Write one that is `False` for both.**
-`age >= 18`, `age == 40`, `age < 5` — anything true of neither.
+### Practice Set A — Read It
 
-### Page 5.2 — Practice Set A: understand it
+**A1. Trace the values.**
 
-**5.2(a) What is a boolean?**
-A value that is either `True` or `False` — those two and nothing else. Capital letters.
+| Age typed | `age >= 13` | branch taken | `band` | `price` |
+|---|---|---|---|---|
+| 8 | `False` | the `else` | `"child"` | `120` |
+| 12 | `False` | the `else` | `"child"` | `120` |
+| 13 | `True` | the `if` | `"adult"` | `250` |
+| 40 | `True` | the `if` | `"adult"` | `250` |
 
-**5.2(b) What is a condition?**
-The `True`-or-`False` question an `if` asks. It sits between the word `if` and the colon.
+**A2. Spot the bug, no error message.** The two `print` lines have been indented into the `else` block. **Works for:** anyone under 13. **Fails for:** everyone 13 and over, who get the question and then **nothing at all**. For an age of 14 the complete output is just `How old are you? 14`. **The fix:** move both prints back to the left margin, level with the `if` and the `else`. This is this week's silent bug; the student should recognise it from the lesson.
 
-**5.2(c) Explain the difference between `=` and `==` in one sentence each.**
-`=` puts a value into a name — it changes something and answers nothing. `==` compares two values and hands back `True` or `False` — it answers something and changes nothing.
+**A3. Match code to output.** a → **2**, b → **3**, c → **1**, d → **2**, e → **1**. The real output is only four lines, `True False True False`, because (b) never runs. `print(5 = 5)` gives `SyntaxError: expression cannot contain assignment, perhaps you meant "=="?`, which is worded differently from the `if age = 12:` message in the lesson but gives the same suggestion. **Common error:** matching (c) to 2. `"5" == 5` is `False` because text is never equal to a number.
 
-**5.2(d) What does the colon at the end of an `if` line mean?**
-"The block starts on the next line." Leave it out and Python stops with `SyntaxError: expected ':'`.
+**A4. Label the diagram (Figure W5.1).** A = the keyword `if`; B = the condition `age >= 13`, the part that produces `True` or `False`; C = the colon, meaning "a block starts on the next line"; D = the `else`, which takes no condition and sits at the same indentation as its `if`; E = the line at the margin. **The line to ring is E**, because it belongs to no block and runs whichever branch was taken.
 
-**5.2(e) What is a block, and how does Python know where one ends?**
-A block is a group of lines that belong together. Python knows because they are all indented by the same amount, and the block ends at the first line that goes back out to the left.
-
-**5.2(f) Fill in the table.**
+**A5. Words into Python.**
 
 | Words | Python |
 |---|---|
 | is the mark at least 35? | `mark >= 35` |
 | is the age under 13? | `age < 13` |
-| is the answer exactly "yes"? | `answer == "yes"` |
-| is the name anything other than "Ramana"? | `name != "Ramana"` |
+| is the answer exactly `"yes"`? | `answer == "yes"` |
+| is the name anything other than `"Ramana"`? | `name != "Ramana"` |
 | is the total no more than 500? | `total <= 500` |
 | is the number even? | `number % 2 == 0` |
 
-**5.2(g) Which lines print, and why?**
+Expect `=` instead of `==` in row three; that is the week's main slip. Accept `mark > 34` for row one as correct but ask which they would rather read.
+
+**A6. Which single test value catches each bug?**
+
+| The mistake | The one value that catches it | Why 8 and 40 don't |
+|---|---|---|
+| `age > 13` instead of `age >= 13` | **13** | 8 is a child either way and 40 an adult either way; the two versions only disagree about 13 itself. |
+| `mark > 35` instead of `mark >= 35` | **35** | Same shape: every mark except exactly 35 gets the same verdict from both versions. |
+| `age >= 3` where 13 was meant | **any age from 3 to 12**, say **8** | Here 8 *does* catch it (8 would wrongly become an adult) but 40 does not. A different bug needs a different test. |
+
+The third row is the one that teaches: test values come from the numbers **in the code**, not the numbers in your head. Full marks on a row needs the value and the reason.
+
+### Practice Set B — Write It
+
+Marked on structure and on whether the boundary pair was tested. Any correct variable names are fine.
+
+**B1. One line.** `age >= 13`, and a different one: `age > 12` (or `not age < 13`, correct but unusual). **Preference:** `age >= 13` says the boundary out loud, so the code can be held next to the rule "13 and over"; `age > 12` needs a small piece of mental arithmetic every read. Either preference is acceptable if a reason is given.
+
+**B2. Even or odd.**
 
 ```python
-mark = 20
+number = int(input("A whole number? "))     # a whole number -> int()
 
-if mark >= 35:
-    print("A")
-    print("B")
-print("C")
+if number % 2 == 0:            # remainder 0 when divided by 2 means even
+    print(f"{number} is even")
+else:                          # anything else
+    print(f"{number} is odd")
 ```
 
-Only `C`. `20 >= 35` is `False`, so the whole block belonging to the `if` — both `A` and `B` — is skipped. `C` is at the margin, so it belongs to nobody and runs regardless.
+Real runs: `10` gives `10 is even`; `7` gives `7 is odd`; `0` gives `0 is even`; `-3` gives `-3 is odd`. **The two worth testing are `0` and `-3`.** Zero is even, which surprises people, and `-3 % 2` is `1` in Python, so negative odd numbers work too. Marks: `int()`, `% 2 == 0` (not `= 0`), an `else`, all four values tried.
 
-**5.2(h) Now the same program with `print("C")` indented four spaces. Which lines print?**
-**None at all.** All three prints are now inside the `if`, and the `if` was `False`. And crucially: **no error appears.** Python is entirely happy. This is a silent bug caused only by whitespace.
-
-### Page 5.3 — Practice Set B: use it
-
-**5.3(a)** Predict the error, then fix it.
+**B3. Weather verdict.**
 
 ```python
-age = 12
+temperature = float(input("Temperature in Celsius? "))   # can be 25.5, so float()
 
-if age = 12:
-    print("child")
-else:
-    print("adult")
+if temperature > 25:                 # the question
+    advice = "T-shirt weather."       # runs only when True
+else:                                 # everything else
+    advice = "Take a jumper."         # runs only when False
+
+print(f"It is {temperature:.1f} degrees.")
+print(advice)
 ```
 
-*Predicted:* `SyntaxError`.
-*The real message:*
+Real runs: `25` gives `It is 25.0 degrees.` / `Take a jumper.`; `25.1` gives `It is 25.1 degrees.` / `T-shirt weather.`; `31` gives T-shirt weather; `12` gives a jumper. **Watch for** `int()` instead of `float()`: it crashes on `25.1`, which the "done looks like" line tells them to test. With a `float`, "the value just below" does not exist, so test the boundary and a value just above, and decide whether 25 exactly should count.
 
-```text
-  File "a.py", line 3
-    if age = 12:
-       ^^^^^^^^
-SyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?
-```
-
-*The fix:* `if age == 12:`. Output: `child`.
-*Why:* one `=` is a delivery, not a question. Python names the fix in its own message. **Note that nothing printed at all** — a `SyntaxError` means the file was never read, so no line ran.
-
-**5.3(b)**
+**B4. Bus fare.** Model answer:
 
 ```python
-age = 12
+# bus_fare.py - one distance in, one fare out.
 
-if age >= 13
-    print("adult")
-else:
-    print("child")
+short_fare = 15          # rupees, for a short trip
+long_fare = 25           # rupees, for 5 km or more
+long_from_km = 5         # the boundary, named once
+
+distance_km = float(input("How far, in km? "))   # can be 4.5, so float()
+
+if distance_km >= long_from_km:      # the question: is it 5 km or more?
+    fare = long_fare                 # runs only when True
+    band = "long"
+else:                                # everything else
+    fare = short_fare                # runs only when False
+    band = "short"
+
+print(f"Distance : {distance_km:.1f} km")   # at the margin, so it always runs
+print(f"Band     : {band}")
+print(f"Fare     : {fare} rupees")
 ```
 
-*Predicted:* `SyntaxError`.
-*The real message:*
+Real runs: `4.9` gives short, 15; `5` gives `Distance : 5.0 km`, long, 25; `12` gives long, 25; `0.5` gives short, 15. The point of `long_from_km = 5` is that the comment, the condition and the number live in one place, so moving the boundary to 3 km is a one-line edit. **Check** that `5` and `25` do not appear a second time inside the `if`.
 
-```text
-  File "b.py", line 3
-    if age >= 13
-                ^
-SyntaxError: expected ':'
-```
-
-*The fix:* add `:` at the end of line 3. Output: `child`.
-*Why:* the colon is what says "a block follows". The caret points at exactly the character position where Python wanted it.
-
-**5.3(c)**
+**B5. Library fine.** Model answer:
 
 ```python
-age = 12
+# library_fine.py - how late is the book, and what does it cost?
 
-if age >= 13:
-print("adult")
-else:
-    print("child")
+fine_per_day = 5                                  # rupees for each day late
+grace_days = 0                                    # no free days at this library
+
+reader = input("Your name?          ")            # text, no conversion needed
+days_late = int(input("How many days late? "))    # whole days -> int()
+
+if days_late > grace_days:               # the question: is it late at all?
+    fine = days_late * fine_per_day      # derived: nobody typed this
+    verdict = "Late"
+else:                                    # on time, or early
+    fine = 0                             # nothing to pay
+    verdict = "On time"
+
+print("==============================")
+print(f"  Reader    : {reader}")
+print(f"  Days late : {days_late}")
+print(f"  Verdict   : {verdict}")
+print("------------------------------")
+print(f"  Fine      : {fine} rupees")
+print("==============================")
 ```
 
-*Predicted:* an indentation error.
-*The real message:*
+Boundary pair: `0` days gives `On time` and a fine of 0; `1` day gives `Late` and 5 rupees. Also `6` gives 30 and `20` gives 100. **The fine must be computed** (`days_late * fine_per_day`), not typed. The `if` branch does arithmetic, which is allowed. Someone who writes `>= 1` instead of `> 0` is correct for whole days.
 
-```text
-  File "c.py", line 4
-    print("adult")
-    ^
-IndentationError: expected an indented block after 'if' statement on line 3
-```
+### Fix the Broken Program — `sleep_check.py`
 
-*The fix:* indent line 4 by four spaces. Output: `child`.
-*Why:* the colon on line 3 promised a block, and line 4 did not deliver one. Notice the message names **line 3** as the cause while pointing at line 4 — that is the traceback telling you where to look.
-
-**5.3(d)**
+**Bug 1, the missing colon.** The carets sit under the comment because Python read `if hours >= target_hours`, expected a `:`, and the first thing that was *not* a colon was the `#`. The caret marks where Python got confused, not where to type. The colon goes **immediately after the condition, before the comment.** Fixed line:
 
 ```python
-age = input("How old are you? ")     # BUG: no int()
-
-if age >= 13:
-    print("adult")
-else:
-    print("child")
+if hours >= target_hours:                           # the question
 ```
 
-*Predicted:* `TypeError`.
-*The real traceback, typing `14`:*
+**Bug 2, the missing conversion.** The mistake is on **line 5**, the line that filled `hours`, even though the traceback names line 7. Fix: `hours = float(input("How many hours did you sleep? "))`. `float` is better than `int` because 7.5 hours is a real answer. **Why Python refuses:** it cannot know what you meant and guessing would be silent. `"10" > "9"` is `False` as text while `10 > 9` is `True`, so text and numbers sort differently; a crash is better than being quietly wrong for some inputs.
 
-```text
-How old are you? 14
-Traceback (most recent call last):
-  File "d.py", line 3, in <module>
-    if age >= 13:
-TypeError: '>=' not supported between instances of 'str' and 'int'
-```
+**Bug 3, the silent one.** `print(f"Hours   : {hours}")` was indented inside the `else`, so the 9-hour run prints one line and the 6-hour run prints two. No error, because an indented line inside a block is legal and Python cannot know you meant the margin. **Fix:** move that `print` to the left margin, below the whole `if`/`else`. After the fix, both runs show `Hours   : 9.0` or `Hours   : 6.0` followed by the verdict.
 
-*The fix:* `age = int(input("How old are you? "))`. Output: `adult`.
-*Why:* `age` was text and 13 is a number, and Python will not put those two in an order. **Notice this is Week 4's bug appearing in a Week 5 line** — the mistake is on line 1 and the complaint is about line 3.
+**The closing question.** If they ran it once, they would have run whichever value they thought of first; if that was `9` the output looks complete and the bug is invisible. **The bug is invisible from the branch that works**, which is why one run is never a test.
 
-**5.3(e)**
+### Puzzle of the Week — `mystery.py`
 
-```python
-age = int(input("How old are you? "))
+Real runs: `40` prints `big` / `not seven`; `7` prints `small` / `seven`; `3` prints `small` / `not seven`.
 
-if age >= 13:
-    price = 250
+**P1.**
 
-print(f"Price : {price} rupees")
-```
+| | First line | Second line | Answer |
+|---|---|---|---|
+| a | `big` | `not seven` | **40** (or any number over 10 other than 7, which is any number over 10) |
+| b | `big` | `seven` | **impossible** |
+| c | `small` | `not seven` | **3** (or any number 10 or under that is not 7) |
+| d | `small` | `seven` | **7**, and only 7 |
 
-*Predicted:* works for some ages, fails for others.
-*Typing `14`:*
+**P2.** Row **(b)** is impossible: to print `seven` the number must be seven, and seven is not bigger than ten, so it can never also print `big`. The two decisions look independent but both ask about the same number. Accept any plain-language version of that.
 
-```text
-How old are you? 14
-Price : 250 rupees
-```
+**P3.** Change the `10` to something **below 7**, for example `if number > 5:`. Then 7 is both big and seven, so (b) is possible, but (d) becomes impossible: 7 is the only number that prints `seven` and it is now never small. So the impossible row moves rather than disappears. (Changing the `7` to a number above 10 works from the other side; see P5.)
 
-*Typing `8`:*
+**P4.** **Four** branches (two `if`/`else` pairs, two branches each). Four pairs of lines could come out in principle, but only **three** can. The gap between "outputs the code could produce" and "outputs reachable" is what makes testing hard.
 
-```text
-How old are you? 8
-Traceback (most recent call last):
-  File "e.py", line 6, in <module>
-    print(f"Price : {price} rupees")
-NameError: name 'price' is not defined. Did you mean: 'print'?
-```
+**P5.** With `if number != 70:`:
 
-*The fix:* add an `else: price = 120`. Or set `price = 120` before the `if`.
-*Why:* the only line that creates `price` is inside a block that did not run. **The error is on line 6 and the mistake is the missing `else`.**
+| | First line | Second line | possible now? |
+|---|---|---|---|
+| a | `big` | `not seven` | **yes**, e.g. 40 |
+| b | `big` | `seven` | **yes**, 70 and only 70 |
+| c | `small` | `not seven` | **yes**, e.g. 3 |
+| d | `small` | `seven` | **impossible**, 70 is never small |
 
-**5.3(f) Write the `if/else` for each.**
+The impossible row swaps places. Same shape, same branches, different reachable set, all from one number.
 
-| Job | Answer |
-|---|---|
-| Print "Pass" if the mark is 35 or more, else "Fail" | `if mark >= 35:` / `print("Pass")` / `else:` / `print("Fail")` |
-| Print "Free" if the age is under 3, else "Pay" | `if age < 3:` / `print("Free")` / `else:` / `print("Pay")` |
-| Print "Even" if the number divides by 2, else "Odd" | `if number % 2 == 0:` / `print("Even")` / `else:` / `print("Odd")` |
-| Print "Same" if two names match exactly, else "Different" | `if name_a == name_b:` / `print("Same")` / `else:` / `print("Different")` |
+**P6.** You cannot test two decisions by testing each separately. Two decisions give four combinations; the interesting values sit on a boundary for **both** or prove a combination cannot happen. Three decisions give eight combinations, some unreachable. Testing means asking which combinations are *possible*, not only whether each branch works. Full marks for naming combinations, not just "test more values".
 
-### Page 5.4 — Build It: `ticket_price.py` and the test table
+### Think Deeper
 
-The reference implementation, exactly as run:
+**T1. Is indentation a good idea?** A full-credit answer (4+ sentences) takes a side, names the cost of that side honestly, and uses the student's own silent bug as evidence. Model answer:
 
-```python
-# ticket_price.py - version 1. One question in, one price out.
+> I think it is a good idea, and the reason is that it makes the code unable to lie. In a language with brackets, you can lay the code out so that it *looks* like three lines are inside the `if` while the brackets say only one of them is, and then the shape on the page is telling you something false. In Python the shape on the page **is** the program, so a badly laid-out Python program cannot pretend to be a well laid-out one.
+>
+> The cost is real, though, and I hit it this week. The thing that decided my program's behaviour was a set of spaces I could not see. My bug produced no error and no output at all, and I only found it by covering the code with a sheet of paper and looking at the left edge. In a bracket language the brackets would at least have been visible on the screen.
+>
+> So it trades one invisible problem for another: brackets can disagree with the layout, and spaces can be invisible. I would rather have the version where the layout is always honest, but I understand why somebody who has been bitten by a pasted-in indent from a web page disagrees.
 
-child_price = 120        # rupees, for anyone under 13
-adult_price = 250        # rupees, for 13 and over
+Either side scores if the cost is named. "It's easier" with no cost caps at half marks.
 
-age = int(input("How old are you? "))   # text arrives, int() turns it into a number
+**T2. Who does `ticket_price.py` treat badly?** Full marks needs a **specific** person, the recognition that the rule is not thereby "wrong", and the insight that moving the boundary only changes who stands on it. Good examples: someone whose 13th birthday is today (child yesterday, adult today, nothing else changed); a 12-year-old taller than the ticket seller; a 30-year-old with no money beside a 12-year-old with plenty. A cinema has to draw a line somewhere, so no version with two prices avoids this. What a program can do is make the rule clear so a human can see the choice and argue with it. This echoes Level 1's work on fair-looking rules meeting people they were not designed for, and returns in Week 30. "Some people" with no specifics gets no more than half marks.
 
-if age >= 13:                 # the condition - a question with a True/False answer
-    price = adult_price       # these two lines only run when the answer is True
-    band = "adult"
-else:                         # everything the condition missed lands here
-    price = child_price       # these two lines only run when the answer is False
-    band = "child"
+### Build It
 
-print(f"Band  : {band}")      # runs every time - it is not indented
-print(f"Price : {price} rupees")
-```
-
-Five real runs, complete:
-
-```text
-How old are you? 8
-Band  : child
-Price : 120 rupees
-```
-```text
-How old are you? 12
-Band  : child
-Price : 120 rupees
-```
-```text
-How old are you? 13
-Band  : adult
-Price : 250 rupees
-```
-```text
-How old are you? 14
-Band  : adult
-Price : 250 rupees
-```
-```text
-How old are you? 40
-Band  : adult
-Price : 250 rupees
-```
-
-**The completed test table:**
+**Part 1, the completed test table.**
 
 | Age I typed | Price I predicted | Price it printed | Same? |
 |---|---|---|---|
@@ -1510,11 +1450,11 @@ Price : 250 rupees
 | 14 | 250 | 250 | ✔ |
 | 40 | 250 | 250 | ✔ |
 
-**5.4(a) Change `>=` to `>`. Run all five again. Which single row changed?**
+The "predicted" column must have been filled **before** Enter; ask. A predicted column identical to the printed one in a different pen is a giveaway. The reference program is the one in section 5 of this guide (`ticket_price.py` v1).
 
-Only **age 13**. It goes from 250 to 120.
+**Part 2, the boundary experiment.** Only **age 13** changes, from 250 to 120. **One row** of five.
 
-| Age | `>= 13` | `> 13` | changed? |
+| Age | With `>= 13` | With `> 13` | Changed? |
 |---|---|---|---|
 | 8 | 120 | 120 | no |
 | 12 | 120 | 120 | no |
@@ -1522,13 +1462,9 @@ Only **age 13**. It goes from 250 to 120.
 | 14 | 250 | 250 | no |
 | 40 | 250 | 250 | no |
 
-**5.4(b) What does that tell you about testing?**
-That four of five tests passed on a broken program. A test only tells you about the value you tested, and the values worth testing are not scattered evenly — they cluster at the **boundary**. Every number you write in a condition creates an edge, and the two values either side of that edge are worth more than a hundred values in the middle. Written as a rule: **test the number in the condition, and the one below it.**
+**(a)** No. 8 is a child and 40 an adult either way, so they would have shipped the bug. **(b) The rule:** whenever you write a number in a condition, test that number and the one just below it; a test that gives the same answer on the broken and the correct version tells you nothing. **(c)** The price appears exactly once, so a price rise is a one-line change with no chance of fixing one of two copies; it also gives the number a name, so the block reads `price = child_price` rather than an unexplained 120. Accept "changing it in one place" plus one of the other two benefits.
 
-**5.4(c) Why is `child_price = 120` at the top instead of writing `120` in the `if`?**
-Because the price now appears exactly once in the file. When the cinema puts prices up, you change one line, and there is no chance of changing one of two places and leaving the other. It also gives the number a name, so the `if` block reads as `price = child_price` rather than as an unexplained 120.
-
-**5.4(d) Your own two-way program.** Marked on structure, not on subject. Model answer (`pass_fail.py`):
+**Part 3, their own two-way decision.** Marked on structure, not subject, using the workbook's checklist, one mark each: runs with no traceback; exactly one `if` and one `else`, each with a colon; every line in each block indented the same amount; `int()` or `float()` on numeric input; at least one line at the margin that runs either way; tested on the boundary value **and** the one below it; every line commented with *why*. Check that "My boundary value is ___, so the two values I must test are ___ and ___" names a pair that really straddles the condition (for `>= 35`, that is 35 and 34). Model answer:
 
 ```python
 # pass_fail.py - one mark in, one verdict out.
@@ -1546,81 +1482,30 @@ print(f"Mark    : {mark}")                  # not indented, so it always runs
 print(f"Verdict : {verdict}")
 ```
 
-Real runs at the boundary and either side:
+Real runs: `34` gives Fail, `35` gives Pass, `100` gives Pass, `0` gives Fail. **34 and 35 are the test; 100 and 0 are reassurance.**
 
-```text
-Mark out of 100? 34
-Mark    : 34
-Verdict : Fail
-```
-```text
-Mark out of 100? 35
-Mark    : 35
-Verdict : Pass
-```
-```text
-Mark out of 100? 100
-Mark    : 100
-Verdict : Pass
-```
-```text
-Mark out of 100? 0
-Mark    : 0
-Verdict : Fail
-```
-
-Marking checklist — one mark each:
-
-| | Criterion |
-|---|---|
-| ☐ | Runs with `python3 <file>.py`, no traceback |
-| ☐ | Exactly one `if` and one `else`, each with a colon |
-| ☐ | The block under each is indented consistently |
-| ☐ | `int()` or `float()` on any numeric input |
-| ☐ | At least one line at the margin that runs either way |
-| ☐ | Tested on the boundary value **and** the one below it |
-| ☐ | Every line commented, saying *why* |
-
-### Page 5.5 — Build It: the Bug Log
-
-Two entries. Marked on structure: the real text (or "no error"), the line number, what Python meant **in their own words**, and the one thing changed.
+**Part 4, the Bug Log.** Two entries, marked on structure: the real text (or "no error"), what it meant in their own words, and the one thing changed. One entry must be the no-error kind. Model entries:
 
 | # | What I saw (real text) | What it meant, in my words | What I changed |
 |---|---|---|---|
 | 1 | `SyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?` — line 8, carets under `age = 13` | I wrote the one that puts a value in a box where I needed the one that asks a question. Nothing ran at all — it didn't even ask me my age. | One `=` became two |
 | 2 | **No error message.** The program asked my age and then printed nothing. | Both print lines had ended up indented inside the `else`, so when the condition was True nothing at all ran. Python had no complaint because I hadn't broken any rule. | Moved the two print lines back to the left margin |
 
-**5.5(a) Which of your two was harder to find?**
-The one with no message, essentially always. A traceback gives you the file, the line, a category and a sentence. Silence gives you nothing, and to even notice you have to already know what the program should have printed.
+**(d)** The one with **no message**, essentially always: a traceback gives file, line, category and a sentence, while silence gives nothing and you must already know what the program should have printed. **(e)** The **left edge** of the file, not the words. Cover the code so only the first four characters of each line show. **(f)** Ask whether **anything at all** printed. A `SyntaxError` means Python could not read the file, so not even the first `print` ran; every other error happens partway through a running program.
 
-**5.5(b) When nothing prints and there is no error, what do you look at first?**
-The **left edge** of the file, not the words. Cover the code so only the first four characters of each line show. An over-indented `print` is invisible when you read the code as English and obvious when you look at the margin.
+### Draw It
 
-**5.5(c) How can you tell a `SyntaxError` from every other error, in three seconds?**
-Ask whether **anything at all** printed. A `SyntaxError` means Python could not read the file, so not one line ran — not even the first `print`. Every other error happens partway through a program that was running.
+No single right drawing. The workbook's example is the "can I go to the park?" fork. A strong answer does three things:
 
-### Page 5.6 — Think Deeper and Self-Check
+1. **The condition is on the fork, not inside a branch.** The question is asked once, at the split.
+2. **The two branches rejoin**, and the box below the join is labelled as running either way. Most people leave this out, and it is exactly what this week's silent bug attacks.
+3. **Both branches set the same names.** If the True side sets `message` and the False side sets `reply`, whatever comes after the join cannot print reliably (the `NameError` from the lesson, drawn).
 
-**5.6(a) Python uses indentation where most languages use brackets. Is that a good idea?**
+Test with one question: **cover one branch. Does the box below the join still have everything it needs?** A weak answer has two paths that never meet, each ending in its own `print`.
 
-A full-credit answer (4+ sentences) takes a side and names the cost. Model answer:
+### Self-Check
 
-> I think it is a good idea, and the reason is that it makes the code unable to lie. In a language with brackets, you can lay the code out so it *looks* like three lines are inside the `if` while the brackets say only one of them is, and then the shape on the page is telling you something false. In Python the shape on the page *is* the program, so what you see is what runs.
->
-> The cost is real though, and I hit it today. The thing that decides my program's behaviour is a set of spaces I cannot see. My bug produced no error and no output, and I only found it by covering the code with paper and looking at the left edge. In a bracket language the brackets would at least have been visible.
->
-> So it trades one invisible problem for another: brackets can disagree with the layout, and spaces can be invisible. I would rather have the version where the layout is always honest, but I understand why people who have been bitten by a copied-and-pasted indent disagree.
-
-**5.6(b) `ticket_price.py` decides what a person pays from one number. Name someone the rule treats badly.**
-Several good answers, and the best ones are specific. Somebody whose 13th birthday is today, and who was a child yesterday for reasons nothing to do with them. A 12-year-old who is taller than the adult next to them. A 30-year-old with no money and a 12-year-old with plenty. The point is not that the rule is wrong — a cinema has to draw a line *somewhere* — but that **any single number creates a boundary, and there are always real people standing on it.** This is the same idea as Level 1's work on how a rule that looks fair on paper meets a person it was not designed for, and it returns in Week 30 when a model's mistakes turn out not to be spread evenly.
-
-**5.6(c) Should the program say "under 13" or "12 or under"?**
-They describe the same set of ages, so it makes no difference to the code. It makes a real difference to whether a human reading the sentence can check it. "Under 13" matches `age < 13` word for word, which is the argument for it. But the *condition we actually wrote* is `age >= 13`, so `13 and over` matches the code and `under 13` matches its opposite. **Say the boundary the same way in the comment and the code**, and a whole class of bug disappears.
-
-**5.6(d) Is it worse for a program to crash or to print nothing?**
-See the honest answer in the Questions section — this is a genuine disagreement. A crash is loud, located and categorised; silence is indistinguishable from "there was nothing to say". A crash is better while you are the one using the program. Silence may be better for a stranger who would lose their work. What is *not* defensible is the third option — printing something confidently wrong — which is what both of the last two weeks' worst bugs did.
-
-**Self-check.**
+The tick-box table is the student's own judgement, so there is no key; glance at the "not yet" column and start next week there. **The "one thing I'd like explained again" box is the most useful line on the page, so read it.** True or false:
 
 | Statement | Answer |
 |---|---|
@@ -1657,7 +1542,7 @@ See the honest answer in the Questions section — this is a genuine disagreemen
 
 Week 6 takes the fork you built this week and turns it into a **whole column of forks**. Two prices is not how anything real works: a cinema has infants, children, teenagers, adults and seniors, and a school report has A, B, C, D and F. The tool for that is **`elif`** — short for "else, if" — which lets one program check a whole list of conditions in order and stop at the first one that says yes. That "stop at the first one" is the good news and it is also the trap, because a chain that looks perfectly reasonable can hand out the wrong answer to everybody without producing a single error message. Next week's lesson is built around exactly that bug: a grade program that gives a mark of 95 a grade of C, runs perfectly, and takes about ten minutes to disbelieve. Alongside it come three small words — `and`, `or` and `not` — which let one condition ask about two things at once.
 
-**Prep early:** three things. First, if a student invented the nested `if` this week for a third price, **keep it** — next week opens by comparing it with `elif` and the comparison is much better when they wrote the ugly version themselves. Second, **run the broken grade chain on your own machine before the lesson** — put `if mark >= 60:` first and give it 95 — because your job next week is to look completely unbothered while the student refuses to believe the screen, and that is much easier if you have already seen it. Third, keep the five-row test table format from page 5.4: next week's proof of the fix is exactly the same table with marks instead of ages, and the habit is now three weeks old and starting to stick.
+**Prep early:** three things. First, if a student invented the nested `if` this week for a third price, **keep it** — next week opens by comparing it with `elif` and the comparison is much better when they wrote the ugly version themselves. Second, **run the broken grade chain on your own machine before the lesson** — put `if mark >= 60:` first and give it 95 — because your job next week is to look completely unbothered while the student refuses to believe the screen, and that is much easier if you have already seen it. Third, keep the five-row test table format from the workbook's **Build It**, Part 1: next week's proof of the fix is exactly the same table with marks instead of ages, and the habit is now three weeks old and starting to stick.
 
 ---
 

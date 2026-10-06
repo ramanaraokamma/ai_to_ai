@@ -13,7 +13,7 @@
 | **Big idea** | `loc` picks by **name**, `iloc` picks by **position**, and a boolean filter picks by **asking a question**. On a plain table two of them look identical. On a real table they are not. |
 | **New vocabulary** | loc · iloc · label · position · boolean filter |
 | **New syntax** | `df.loc[1, "age"]` · `df.iloc[1, 2]` · `df[df["age"] > 12]` · `df.sort_values("col")` |
-| **Materials** | Printed workbook pages 22.1–22.10 · **the register card** (one index card, see Prep) · the Bug Log · a pen the student can write a full sentence with |
+| **Materials** | The printed workbook (Warm-Up through Self-Check) · **the register card** (one index card, see Prep) · the Bug Log · a pen the student can write a full sentence with |
 | **Tech needed** | Laptop with Python 3 and **pandas working** (it was working last week). One file, `steps.py`, in the same folder as last week's work. A paper fallback exists — see Prep. |
 | **Prep time** | 15 minutes the night before · 5 minutes on the day |
 
@@ -527,7 +527,7 @@ steps     8200
 Name: 5, dtype: object
 ```
 
-**4. Print (2 minutes).** Workbook pages 22.1–22.10. Have the Bug Log to hand.
+**4. Print (2 minutes).** The whole Week 22 workbook, Warm-Up through Self-Check. Have the Bug Log to hand.
 
 ### 5 minutes on the day
 
@@ -986,7 +986,7 @@ Names survive sorting and filtering. Positions do not.
 
 > "And one more line under it: **sorting gives you a copy.** Print the original straight afterwards, every time, and you'll never be fooled by it."
 
-**Do this:** Run the three quick checks from "Assessing Understanding". Assign the homework. Hand over workbook pages 22.1–22.10.
+**Do this:** Run the three quick checks from "Assessing Understanding". Assign the homework. Hand over the Week 22 workbook.
 
 ---
 
@@ -1030,7 +1030,7 @@ And the sentence for this week:
 
 ### Part A — Ten Drills, Tool First (12 minutes)
 
-**Setup.** Student at the keyboard with `steps.py` open. Workbook page 22.4 in front of them with the ten questions printed and a blank box beside each for the tool name. You read the questions aloud, in order.
+**Setup.** Student at the keyboard with `steps.py` open. The ten questions below in front of them, printed with a blank box beside each for the tool name (the workbook's Practice Set A, question A1, is the same exercise on the playlist table). You read the questions aloud, in order.
 
 **The rule that makes this activity work:** before typing anything, the student must **say or write which of the three tools** — loc, iloc, or filter — and *why*. If they type first, stop them, undo it, and ask again. The typing is not the skill being practised here.
 
@@ -1076,7 +1076,7 @@ print(register)
 3   Zoya   13    Red  12300
 ```
 
-**Step 1 — the prediction, in writing, before anything runs.** On workbook page 22.6, two boxes:
+**Step 1 — the prediction, in writing, before anything runs.** In class, two boxes on paper (the workbook's Build It, Part 1, has the same two boxes for the playlist):
 
 - *"`register.loc[2]` will print the row for __________."*
 - *"`register.iloc[2]` will print the row for __________."*
@@ -1115,7 +1115,7 @@ Name: 5, dtype: object
 2. *"Which child did each one give you?"* → Kabir; Meera.
 3. *"Read the bottom line of each printout."* → `Name: 2` and `Name: 5`.
 
-**Step 4 — the written explanation. This is the graded item of the week.** Workbook page 22.6, four ruled lines:
+**Step 4 — the written explanation. This is the graded item of the week.** Four ruled lines on paper (the workbook's Build It, Part 4, is the homework version):
 
 > *In your own words: why did `loc[2]` and `iloc[2]` give two different children?*
 
@@ -1287,40 +1287,40 @@ Run all three in the last five minutes. Say them exactly as written.
 
 **Say this:**
 
-> "Two things, about an hour altogether.
+> "Two things, spread over a couple of evenings.
 >
-> First, ten more questions like today's — but on a **playlist** table, not the step counts. Same rules as in class: **write the tool in the box before you write any code.** If the box is empty I'll know you typed first, and typing first is the habit that gets you the wrong child's step count.
+> First, the practice pages — questions like today's, but on a **playlist** table, not the step counts. Same rules as in class: **in the tool box on Practice Set A, write the tool before you write any code.** If the box is empty I'll know you typed first, and typing first is the habit that gets you the wrong child's step count.
 >
 > Second, and this is the one I'll actually read: **do the trap yourself.** You re-number the table with track numbers, you run both commands, you write down the two different songs you got, and then you explain in your own words why. Not 'because they're different' — *why*. Both halves: what did `loc` go looking for, and what did `iloc` do instead?
 >
 > One more thing. Every time you use `sort_values` this week, print the original table straight afterwards. Every time. I want that to become a reflex before Week 24, when you'll be sorting tables of forty rows and won't be able to see the whole thing at once."
 
-**Workbook pages: 22.1 to 22.10.**
+**Workbook sections, in printed order:** Warm-Up (W1–W5) · Predict the Output (P1–P4) · Practice Set A — Read It (A1–A6) · Practice Set B — Write It (B1–B5) · Fix the Broken Program · Puzzle of the Week · Think Deeper (T1–T3) · Build It (Parts 1–6) · Draw It · Self-Check. The workbook pages carry **section names and item labels, not page numbers**, so this guide refers to them the same way.
 
-| Page | What it is | Time |
+| Workbook section | What it is | Time (estimate) |
 |---|---|---|
-| 22.1 | Warm-Up — name the tool for six English questions | 5 min |
-| 22.2 | Predict the Output — six printouts to predict before running | 8 min |
-| 22.3 | Practice Set A — Read It — six reading questions on a printed table | 8 min |
-| 22.4 | Practice Set B — Write It — the ten selection drills on the playlist table | 15 min |
-| 22.5 | Fix the Broken Program — four bugs in `playlist_report.py` | 8 min |
-| 22.6 | Build It — the loc/iloc trap, with the written explanation | 10 min |
-| 22.7 | Puzzle of the Week — the index that makes them agree | 5 min |
-| 22.8 | Think Deeper — three written questions | 5 min |
-| 22.9 | Draw It — label the two edges of a table | 3 min |
-| 22.10 | Self-Check — five statements, tick or cross | 3 min |
+| Warm-Up | W1–W5 — five short questions about last week's DataFrame | 5 min |
+| Predict the Output | P1–P4 — four snippets to predict before running (filter labels, a boolean column, a dropped sort, a shuffled index) | 8 min |
+| Practice Set A — Read It | A1 name the tool (eight questions) · A2 trace the labels · A3 same or different · A4 spot the bug · A5 label the diagram · A6 read the traceback | 12 min |
+| Practice Set B — Write It | B1–B5 — write one line, two columns, a question then a filter, filter-sort-name, and a 15-line report | 12 min |
+| Fix the Broken Program | four bugs in `playlist_report.py`, three loud and one silent | 8 min |
+| Puzzle of the Week | Part 1 make `loc[2]` and `iloc[2]` agree; Part 2 make `loc[3]` and `iloc[3]` differ | 5 min |
+| Think Deeper | T1 keeping labels · T2 why no `loc[-1]` · T3 a real job | 8 min |
+| Build It | Parts 1–6 — the loc/iloc trap on the mixtape index, the written explanation, which command to type, the Bug Log | 15 min |
+| Draw It | draw your own five-row table and mark what `loc` and `iloc` point at | 5 min |
+| Self-Check | eight can-do rows and twelve true-or-false statements | 3 min |
 
-**Total: about 60 minutes.** If it is running long, cut 22.7 and 22.9. **Never cut 22.6.**
+**Total: roughly 80 minutes, best spread over two evenings.** The times are estimates; the workbook itself prints only the Warm-Up's 5 minutes. If it is running long, cut Puzzle Part 2 and Draw It. **Never cut Build It.**
 
 ---
 
 ## 🔑 Answer Key
 
-Every line of code below was run on Python 3.10 with pandas 1.5.3, and every output block is copied from the real run.
+Every line of code below was run on Python 3.10 with pandas 1.5.3, and every output block is copied from the real run. The answers follow the workbook's own Answers section item for item; the extra marking notes are the teacher-only part.
 
 ### The homework table
 
-Every page from 22.2 onwards uses this table. It is printed at the top of the workbook.
+Every section from Predict the Output onwards uses this table. It is printed at the top of the workbook.
 
 ```python
 import pandas as pd
@@ -1346,91 +1346,218 @@ print(songs)
 
 Column positions, for every `iloc` answer below: `title` 0, `artist` 1, `minutes` 2, `plays` 3.
 
-### Page 22.1 — Warm-Up: name the tool
+### Warm-Up (W1–W5): last week's DataFrame
 
-| # | Question | Answer | Why |
+| # | Question (short) | Answer |
+|---|---|---|
+| W1 | What did each `"key": [list]` pair become? | **One column.** The key is the column name along the top edge; the list is the values going down. Four pairs, four columns, and every list the same length. |
+| W2 | What are the six things in `RangeIndex: 6 entries, 0 to 5`? Are they a column? | They are the **row labels**, the index. **Not a column of the table**: nobody's play count is 3. Pandas invented them because we never named the rows, and that is the whole of Week 22. |
+| W3 | `df["plays"]` versus `df`: name the two shapes. | `df["plays"]` is a **Series**, one column, a tall list with the labels down the side and a `Name:`/`dtype:` line. `df` is a **DataFrame**, the whole grid with a header row. |
+| W4 | Only whole numbers typed, yet `info()` says `float64`. Why? | There is a **hole** (a missing value, printed `NaN`) in the column. Pandas has no whole number meaning "missing", so the whole column becomes `float64`. This returns hard in Week 23. |
+| W5 | What is `head()` for, and what gives the shape of the whole thing? | `head()` shows the **first five rows** so you can eyeball a table without printing hundreds of lines. `df.shape` gives `(rows, columns)`; `df.info()` gives the row count and what each column holds. |
+
+Marking tip: the Warm-Up is last week's material. A blank on W4 is worth a two-minute reminder, not a re-teach; it is the one most likely to be forgotten before Week 23.
+
+### Predict the Output (P1–P4)
+
+| # | The code (short) | Real output | The point |
 |---|---|---|---|
-| 1 | "How many plays did *Neon* get?" | **loc** | You know the row by name (label 3). |
-| 2 | "What is in the fourth row?" | **iloc** | "Fourth" is a position. Position 3, counting from 0. |
-| 3 | "Which songs got more than 200 plays?" | **filter** | A question, not a name or a place. |
-| 4 | "What is the very last row?" | **iloc** | `iloc[-1]`. You do not know its name. |
-| 5 | "Give me everything Mira made." | **filter** | `songs[songs["artist"] == "Mira"]`. Two rows, and you did not name them. |
-| 6 | "Give me the whole `plays` column." | **no tool needed** | `songs["plays"]`. This is last week's syntax. |
+| P1 | `loud = songs[songs["plays"] > 200]`, then `loud.loc[1, "title"]` and `loud.iloc[1, 0]` | `loud` has labels **1, 3, 4**; then `loc[1] : Monsoon` and `iloc[1]: Neon` | They **do not agree, and there is no error.** Labels survive filtering; positions are rebuilt. The trap arrives with no custom index at all. |
+| P2 | `print(songs["minutes"] > 4)` then `print(len(songs[songs["minutes"] > 4]))` | Seven lines (six answers plus `Name: minutes, dtype: bool`), then `3` | **Six True/False answers, not rows.** `bool` means a column of True/False. The rows only appear inside `songs[ ... ]`. Most students predict "three rows" for the first line. |
+| P3 | `songs.sort_values("plays")`, `print(songs.iloc[0, 0])`, `best = songs.sort_values("plays", ascending=False)`, `print(best.iloc[0, 0])` | `Kite` then `Neon` | Line 1 sorted a copy and threw it away: no error, `songs` unchanged. The only difference between line 1 and line 3 is the `best = `. |
+| P4 | `mix` with index `[2, 0, 1]`: `mix.loc[0, "title"]`, `mix.iloc[0, 0]` | `Monsoon` then `Kite` | `iloc[0, 0]` is "the first row by counting" (Kite). `loc[0, "title"]` is "the row named 0", the second row down (Monsoon). Three rows are enough for the trap. |
 
-Question 6 is the trick and it is deliberate. Accept "loc" as a near-miss (`songs.loc[:, "plays"]` does work) but show them the plain version.
-
-### Page 22.2 — Predict the Output
-
-| # | The code | The real output | The point |
-|---|---|---|---|
-| 1 | `print(songs.loc[2, "plays"])` | `95` | Row labelled 2, column named plays. |
-| 2 | `print(songs.iloc[0, 0])` | `Kite` | Top-left. Both counts are zero. |
-| 3 | `print(songs.loc[4])` | see below | One row, printed sideways, ending `Name: 4`. |
-| 4 | `print(songs["plays"] > 200)` | see below | **Six True/False answers, not rows.** This is the one most students get wrong. |
-| 5 | `print(songs[songs["artist"] == "Ravi"])` | see below | Two rows, keeping labels 0 and 2. |
-| 6 | `print(songs.iloc[6])` | `IndexError` | Six rows means the last position is 5. |
-
-Item 3:
+P1 real output:
 
 ```text
-title      Paper Boat
-artist           Mira
-minutes           3.0
-plays             210
-Name: 4, dtype: object
+        title artist  minutes  plays
+1     Monsoon   Mira      4.2    340
+3        Neon   Suki      5.1    480
+4  Paper Boat   Mira      3.0    210
+loc[1] : Monsoon
+iloc[1]: Neon
 ```
 
-Item 4 — accept "six Trues and Falses" as correct even without the exact layout:
+P2 real output (accept "six Trues and Falses, then 3" even without the exact layout):
 
 ```text
 0    False
 1     True
 2    False
 3     True
-4     True
-5    False
-Name: plays, dtype: bool
+4    False
+5     True
+Name: minutes, dtype: bool
+3
 ```
 
-Item 5:
+P3 real output:
 
 ```text
-     title artist  minutes  plays
-0     Kite   Ravi      3.5    120
-2  Bicycle   Ravi      2.8     95
+Kite
+Neon
 ```
 
-Item 6 — the exact message:
+P4 real output:
 
 ```text
-IndexError: single positional indexer is out-of-bounds
+Monsoon
+Kite
 ```
 
-### Page 22.3 — Practice Set A: Read It
+The sheet's own tally line ("how many of the four predictions did you get right") has no right answer. A score of 0 to 1 out of 4 is normal and is the lesson.
 
-1. **"What are the row labels of this table?"** — `0, 1, 2, 3, 4, 5`. They are labels, not a column of data, and pandas invented them because we did not supply any.
-2. **"What is the position number of the `minutes` column?"** — 2. Counting across from zero: title 0, artist 1, minutes 2, plays 3.
-3. **"`songs.loc[1, "artist"]` — what comes back?"** — `Mira`. One value, not a row and not a table.
-4. **"`songs.iloc[1, 1]` — same answer or different?"** — The same, `Mira`. On this table every label equals its position, so the two tools agree everywhere. **That is exactly what makes them dangerous.**
-5. **"After `songs[songs["plays"] > 200]`, what are the row labels of the result?"** — `1, 3, 4`. The surviving rows kept their original labels, so you can trace each one back.
-6. **"`songs.sort_values("minutes")` — which song is at the top, and is `songs` now sorted?"** — *Bicycle* (2.8 minutes) is at the top of the printed result. **`songs` is not sorted.** Sorting returned a copy; nothing caught it.
+### Practice Set A — Read It (A1–A6)
 
-```text
-        title artist  minutes  plays
-2     Bicycle   Ravi      2.8     95
-4  Paper Boat   Mira      3.0    210
-0        Kite   Ravi      3.5    120
-1     Monsoon   Mira      4.2    340
-5    Late Bus    Dee      4.7     60
-3        Neon   Suki      5.1    480
-```
+**A1. Name the tool.**
 
-### Page 22.4 — Practice Set B: the ten drills
+| # | Question | Answer | Why |
+|---|---|---|---|
+| a | "How many plays did *Neon* get?" | **loc** | You know the row by name (label 3) and the column by name. |
+| b | "What is in the fourth row?" | **iloc** | "Fourth" is a position: 3, counting from 0. |
+| c | "Which songs got more than 200 plays?" | **filter** | A question, not a name or a place. |
+| d | "What is the very last row?" | **iloc** | `songs.iloc[-1]`. You do not know its name. |
+| e | "Give me everything Mira made." | **filter** | `songs[songs["artist"] == "Mira"]`. Two rows, neither named. |
+| f | "Give me the whole `plays` column." | **none needed** | `songs["plays"]`. Last week's syntax. |
+| g | "Put the table in order of length." | **sort** | `songs.sort_values("minutes")`, and catch the copy. |
+| h | "Give me just the titles and the plays." | **none needed** | `songs[["title", "plays"]]`. Two brackets, no tool. |
 
-Complete working file, run end to end:
+**A1(i).** **(f) and (h).** Selecting whole columns needs no `loc` or `iloc`; square brackets straight on the table do it. Accept `songs.loc[:, "plays"]` as a near-miss worth half a mark, but show the plain version. Knowing which jobs need no tool is part of choosing the tool.
+
+**A2. Trace the labels.**
+
+| Name | How many rows? | The row labels, in order |
+|---|---|---|
+| `step1` | 6 | 0, 1, 2, 3, 4, 5 |
+| `step2` | **3** | **1, 3, 4** |
+| `step3` | **6** | **5, 2, 0, 4, 1, 3** |
+| `step4` | **3** | **4, 1, 3** |
+
+Proof, run for real:
 
 ```python
-# playlist_drills.py - Week 22 homework, ten drills.
+print(list(songs[songs["plays"] > 200].index))
+print(list(songs.sort_values("plays").index))
+print(list(songs[songs["plays"] > 200].sort_values("plays").index))
+```
+
+```text
+[1, 3, 4]
+[5, 2, 0, 4, 1, 3]
+[4, 1, 3]
+```
+
+**A2(j).** Label **4** (Paper Boat, 210 plays, the smallest of the three). `step4.loc[4]` and `step4.iloc[0]` are the same row here, and `step4.loc[0]` is a `KeyError`: no row labelled 0 is left.
+
+**A2(k).** **No.** Line 3 built a sorted copy into `step3`; `songs` was never touched. Even the copy's labels are shuffled, not renumbered.
+
+**A3. Same or different?**
+
+| # | The pair | Answer |
+|---|---|---|
+| a | `loc[1, "artist"]` / `iloc[1, 1]` | **Same**, both `Mira` |
+| b | `loc[0]` / `iloc[0]` | **Same**, both Kite's row |
+| c | `iloc[-1]` / `loc[5]` | **Same**, both Late Bus |
+| d | `loc[2, "plays"]` / `iloc[2, 3]` | **Same**, both `95` |
+
+**A3(e).** **No, it proves nothing.** They agree because pandas invented the labels 0 to 5 in order, so every label equals its own position. Give the table a custom `index`, filter it, or sort it into a named copy, and any of those pulls them apart with no error.
+
+**A4. Spot the bug.**
+
+| # | The line | The fix |
+|---|---|---|
+| a | `songs.loc[3, "play"]` | `songs.loc[3, "plays"]`. The column has an `s`. `KeyError: 'play'` |
+| b | `songs["title", "plays"]` | `songs[["title", "plays"]]`. Two brackets. `KeyError: ('title', 'plays')` |
+| c | `songs.loc(1, "artist")` | `songs.loc[1, "artist"]`. **Square** brackets; `loc` points, it is not called. |
+| d | `songs[songs["plays"] > "200"]` | `songs[songs["plays"] > 200]`. No quotes. `TypeError: Invalid comparison between dtype=int64 and str` |
+| e | `songs.iloc[1, "plays"]` | Pick one tool: `songs.loc[1, "plays"]` **or** `songs.iloc[1, 3]`. Never one of each. |
+| f | `songs.sort_values()` | `songs.sort_values("plays")`. Sort by *what*? |
+| g | `songs.loc["Neon"]` | `songs[songs["title"] == "Neon"]`. Titles are **data**, not labels on the edge. |
+| h | `songs.iloc[6]` | Six rows means positions 0 to 5. `songs.iloc[5]`, or `songs.iloc[-1]` for "the last one". |
+
+Marking tip: (h) is `IndexError: single positional indexer is out-of-bounds`. If the student wrote `songs.loc[6]` instead, that is a `KeyError: 6`, a different error for a different reason; ask which tool they meant.
+
+**A5. Label the diagram.**
+
+| Box | Phrase |
+|---|---|
+| **A** | the column labels |
+| **B** | the row labels (NOT row numbers) |
+| **C** | the arrow `loc` takes, reading the labels off the edge |
+| **D** | the counting tabs `iloc` uses, starting at 0 |
+| **E** | one cell of actual data |
+
+**A5(f).** **E.** Everything else on the diagram is an **address**: a name printed on an edge, or a way of reaching a cell. Only the highlighted cell holds something measured (`4.2`, the length of *Monsoon*). The test: could sorting or filtering change what this thing refers to? Addresses can drift; the 4.2 belongs to Monsoon wherever Monsoon ends up.
+
+**A6. Read the traceback.**
+
+- **Which line first?** The **last** one. It names the kind of error and what went wrong; everything above is the route pandas took.
+- **`KeyError`** means "you gave me a name, and I have nothing by that name."
+- **Where is the missing name?** In quotes at the very end: `'play'`.
+- **Where do you look to fix it?** The column names. `print(songs)` and read the header, letter by letter. The column is `plays`.
+- **In their own words:** "I asked for a column called `play`. There isn't one, it's `plays` with an s. Pandas didn't guess; it stopped and told me the exact name it couldn't find."
+
+### Practice Set B — Write It (B1–B5)
+
+**B1.** `print(songs.loc[3, "plays"])` → `480`. *Neon* is the row labelled 3 and `plays` is a column name, so both halves are names, so `loc`. Row first, column second.
+
+**B2.** `print(songs[["title", "artist"]])`:
+
+```text
+        title artist
+0        Kite   Ravi
+1     Monsoon   Mira
+2     Bicycle   Ravi
+3        Neon   Suki
+4  Paper Boat   Mira
+5    Late Bus    Dee
+```
+
+The outer brackets select; the inner brackets make a list of names. One pair gives `KeyError: ('title', 'artist')`.
+
+**B3.**
+
+```python
+print(songs["minutes"] > 4)
+print(songs[songs["minutes"] > 4])
+```
+
+```text
+0    False
+1     True
+2    False
+3     True
+4    False
+5     True
+Name: minutes, dtype: bool
+      title artist  minutes  plays
+1   Monsoon   Mira      4.2    340
+3      Neon   Suki      5.1    480
+5  Late Bus    Dee      4.7     60
+```
+
+Line 1 is the question (six answers, `dtype: bool`). Line 2 hands the answers back to the table, which keeps the three True rows, still labelled 1, 3 and 5.
+
+**B4.**
+
+```python
+long_ones = songs[songs["minutes"] > 4]                       # filter first
+print(long_ones.sort_values("plays", ascending=False))        # then sort the result
+```
+
+```text
+      title artist  minutes  plays
+3      Neon   Suki      5.1    480
+1   Monsoon   Mira      4.2    340
+5  Late Bus    Dee      4.7     60
+```
+
+The labels `3, 1, 5` are the **original** labels, carried through two operations. That is why a survivor can always be traced back, and why `loc[0]` here is a `KeyError` (no row labelled 0 is left). Accept `by_plays = long_ones.sort_values(...)` and a separate print; the brief says "catch each step in a name".
+
+**B5.** Complete working file, run end to end. Accept any version that prints the same report with a comment naming the tool on every line.
+
+```python
+# b5.py - a small playlist report, one tool per line.
 import pandas as pd
 
 songs = pd.DataFrame({
@@ -1440,87 +1567,37 @@ songs = pd.DataFrame({
     "plays":   [120, 340, 95, 480, 210, 60],
 })
 
-print("1 -", songs.loc[2, "plays"])          # loc: Bicycle is labelled 2
-print("2 -")
-print(songs.loc[4])                          # loc: Paper Boat's whole row
-print("3 -", songs.iloc[0, 0])               # iloc: top-left corner
-print("4 -")
-print(songs.iloc[3])                         # iloc: the fourth row down
-print("5 -")
-print(songs["minutes"])                      # no tool needed: one column
-print("6 -")
-print(songs[["title", "plays"]])             # two columns, two brackets
-print("7 -")
-print(songs[songs["plays"] > 200])           # filter: a question
-print("8 -")
-print(songs[songs["artist"] == "Ravi"])      # filter: text needs ==
-print("9 -")
-print(songs.sort_values("plays", ascending=False))   # sort: a copy!
-print("10 -")
-print(songs.iloc[-1])                        # iloc: the last row
-```
+print("songs in the playlist:", len(songs))               # how many rows
+print("total plays          :", songs["plays"].sum())     # one whole column
 
-Real output:
+by_plays = songs.sort_values("plays", ascending=False)     # sort -> catch the copy
+top = by_plays.iloc[0]                                     # iloc: THE FIRST ROW
+print("most played          :", top["title"], "-", top["plays"], "plays")
+
+popular = songs[songs["plays"] > 200]                      # filter: a question
+print("over 200 plays       :", len(popular), "songs")
+print(popular[["title", "plays"]])                         # two columns, two brackets
+
+print("Neon's length        :", songs.loc[3, "minutes"], "minutes")   # loc: by name
+print("original still first :", songs.iloc[0, 0])          # sorting made a COPY
+```
 
 ```text
-1 - 95
-2 -
-title      Paper Boat
-artist           Mira
-minutes           3.0
-plays             210
-Name: 4, dtype: object
-3 - Kite
-4 -
-title      Neon
-artist     Suki
-minutes     5.1
-plays       480
-Name: 3, dtype: object
-5 -
-0    3.5
-1    4.2
-2    2.8
-3    5.1
-4    3.0
-5    4.7
-Name: minutes, dtype: float64
-6 -
+songs in the playlist: 6
+total plays          : 1305
+most played          : Neon - 480 plays
+over 200 plays       : 3 songs
         title  plays
-0        Kite    120
 1     Monsoon    340
-2     Bicycle     95
 3        Neon    480
 4  Paper Boat    210
-5    Late Bus     60
-7 -
-        title artist  minutes  plays
-1     Monsoon   Mira      4.2    340
-3        Neon   Suki      5.1    480
-4  Paper Boat   Mira      3.0    210
-8 -
-     title artist  minutes  plays
-0     Kite   Ravi      3.5    120
-2  Bicycle   Ravi      2.8     95
-9 -
-        title artist  minutes  plays
-3        Neon   Suki      5.1    480
-1     Monsoon   Mira      4.2    340
-4  Paper Boat   Mira      3.0    210
-0        Kite   Ravi      3.5    120
-2     Bicycle   Ravi      2.8     95
-5    Late Bus    Dee      4.7     60
-10 -
-title      Late Bus
-artist          Dee
-minutes         4.7
-plays            60
-Name: 5, dtype: object
+Neon's length        : 5.1 minutes
+original still first : Kite
 ```
 
-**The tool boxes, marked:** 1 loc · 2 loc · 3 iloc · 4 iloc · 5 none needed · 6 none needed · 7 filter · 8 filter · 9 sort · 10 iloc.
+Two things to point at. `by_plays.iloc[0]` is an honest `iloc`: "the top row of the sorted copy, whoever that is"; `loc` could not be used because the answer's name was not known before asking. And the last line is the proof: `songs.iloc[0, 0]` is still `Kite`, so the original never moved.
 
-### Page 22.5 — Fix the Broken Program
+### Fix the Broken Program
 
 The broken file as printed in the workbook:
 
@@ -1592,9 +1669,9 @@ print(by_plays)
 3        Neon   Suki      5.1    480
 ```
 
-### Page 22.6 — Build It: the loc/iloc trap
+### Build It — the loc/iloc trap (Parts 1–6)
 
-The homework version re-labels the playlist with **track numbers** from a mixtape, which are not in playlist order.
+The homework version re-labels the playlist with **track numbers** from a mixtape, which are not in playlist order: `index=[6, 3, 1, 5, 2, 4]`. **Part 1** is the prediction (almost everybody writes the same song twice; leave it on the page). **Part 2** is the code below. **Part 3** is the record table. **Part 4** is the marked explanation. **Part 5** is "which one do you type". **Part 6** is the Bug Log, which has no key: check only that it is filled in honestly.
 
 ```python
 # trap.py - Week 22 homework, the loc/iloc trap.
@@ -1638,7 +1715,14 @@ plays       480
 Name: 5, dtype: object
 ```
 
-**The two songs to record:** `loc[3]` → **Monsoon**. `iloc[3]` → **Neon**.
+**Part 3, filled in** (zero error messages):
+
+| | The song | Its `Name:` line | Its `plays` |
+|---|---|---|---|
+| `loc[3]` gave me | **Monsoon** | `Name: 3` | 340 |
+| `iloc[3]` gave me | **Neon** | `Name: 5` | 480 |
+
+**How did you know which row each printout was?** The `Name:` line at the bottom. One says `Name: 3` and the other `Name: 5`, so they are visibly two different rows without looking anything up. Reading it is a four-second habit that catches this bug for life.
 
 **Model written explanation (full marks):**
 
@@ -1652,6 +1736,17 @@ Name: 5, dtype: object
 | *"Because iloc starts at 0."* | Half. True, and not the reason on its own — `loc` also has a row labelled 0 on a normal table and they still agree there. | "Good, that's half. Now: what would `loc[3]` do if the labels were in order 0 to 5?" (They'd agree.) "So what's the *other* thing that changed?" |
 | *"Because the index is shuffled."* | Half, from the other side. Names the cause, not the mechanism. | "Right. So spell out what each command actually **did** with that shuffled index. One of them read it. What did the other one do?" |
 
+**Part 5 — which one do you type?**
+
+| You want... | Which command? | Why |
+|---|---|---|
+| track number 3 off the mixtape | `playlist.loc[3]` | 3 is a **name** printed on the mixtape |
+| whatever is fourth in your table | `playlist.iloc[3]` | "Fourth" is a **position**, and counting starts at 0 |
+| the very last track in the table | `playlist.iloc[-1]` | "Last" is a fact about order. There is no `loc[-1]` |
+| every song over 200 plays | `playlist[playlist["plays"] > 200]` | A **question**, not a name and not a place |
+
+Both of the first two are correct code. The bug was never in the typing.
+
 **The bonus question:** *"What would `playlist.loc[0]` do?"*
 
 ```text
@@ -1660,60 +1755,133 @@ KeyError: 0
 
 There is no track numbered 0. This is the good outcome, and it is worth saying so: when there is genuinely no such label, `loc` **crashes rather than guessing**. The dangerous case is not the crash — it is when the label exists and belongs to somebody else.
 
-### Page 22.7 — Puzzle of the Week
+### Puzzle of the Week
 
-> *"Find an index for the six songs where `loc[2]` and `iloc[2]` give the SAME song — without putting the numbers in order 0 to 5."*
+**Part 1 — make them agree, on purpose**
 
-Any index whose **third entry** (position 2) is the number `2`. For example `index=[6, 3, 2, 5, 1, 4]`:
+> *"Find an index for the six songs where `loc[2]` and `iloc[2]` give the SAME song, without putting the numbers in order 0 to 5."*
+
+**(a)** Any index whose **third entry** (position 2) is the number `2`. For example `index=[6, 3, 2, 5, 1, 4]`:
 
 ```python
 puzzle = pd.DataFrame({
     "title": ["Kite", "Monsoon", "Bicycle", "Neon", "Paper Boat", "Late Bus"],
     "plays": [120, 340, 95, 480, 210, 60],
 }, index=[6, 3, 2, 5, 1, 4])
+print(puzzle)
 print(puzzle.loc[2, "title"], "|", puzzle.iloc[2, 0])
 ```
 
 ```text
+        title  plays
+6        Kite    120
+3     Monsoon    340
+2     Bicycle     95
+5        Neon    480
+1  Paper Boat    210
+4    Late Bus     60
 Bicycle | Bicycle
 ```
 
-**The follow-up, and it is the real question:** *"So does the fact that they agree prove you used the right one?"* **No.** They agree here by coincidence, exactly as they agreed all through Part A. Agreement is never evidence.
+**(b)** **Bicycle**, from both commands.
 
-### Page 22.8 — Think Deeper
+**(c)** The rule: **the label sitting at position 2 has to be the number 2.** The other five entries can be in any order.
 
-**1. "Why do you think pandas keeps the old row labels after filtering, instead of renumbering 0, 1, 2?"**
+**(d)** The follow-up, and it is the real question: *"So does the fact that they agree prove you used the right one?"* **No.** They agree by coincidence, exactly as they agreed all through Set A. `loc[2]` still hunts for a name and `iloc[2]` still counts; two different questions that happen to land on one row. Agreement is never evidence.
 
-So you can trace a row back to where it came from. If your filtered table has label 3 in it, you can go to the raw table, look at row 3, and check it. Renumbering would throw that away — you would know you had three songs, but not *which* three in the original. A full answer might also notice the cost: after filtering, `loc[0]` may not exist at all, and `iloc[0]` is a different row from `loc[0]`, which is confusing. **Both halves are worth marks.** Reasonable people disagree about this, and a student who says "it's confusing and they should renumber" has an argument, not a mistake.
+**Part 2 — break them apart, on purpose**
 
-**2. "You used `iloc[-1]` to get the last row. Why is there no `loc[-1]`?"**
+**(e)** The entry at position 1 must be `1`, and the entry at position 3 must be anything **except** `3`. For example `index=[6, 1, 2, 5, 3, 4]`.
 
-Because `-1` means "one from the end", and that is a *counting* idea. `loc` does not count — it reads labels. If a table happened to have a row **labelled** `-1`, then `loc[-1]` would fetch that row, and it would have nothing to do with the end of the table. There is no way to say "the last one" by name, because "last" is a fact about order, not a name.
+**(f)** Run for real:
 
-**3. "Name a job where using `iloc` instead of `loc` would matter in real life."**
+```python
+mix = pd.DataFrame({
+    "title": ["Kite", "Monsoon", "Bicycle", "Neon", "Paper Boat", "Late Bus"],
+    "plays": [120, 340, 95, 480, 210, 60],
+}, index=[6, 1, 2, 5, 3, 4])
+print("loc[3] :", mix.loc[3, "title"])
+print("iloc[3]:", mix.iloc[3, 0])
+print("loc[1] :", mix.loc[1, "title"])
+print("iloc[1]:", mix.iloc[1, 0])
+```
 
-Any answer where a row means a person or a record and the table can be reordered. Good ones students actually write: *reporting one pupil's exam mark* — sort the class by name and `iloc[7]` is now a different child; *a hospital reading off patient 4's dose*; *a shop looking up order number 1002*. The strongest answers add the sting: **it would not produce an error, so nobody would find out.**
+```text
+loc[3] : Paper Boat
+iloc[3]: Neon
+loc[1] : Monsoon
+iloc[1]: Monsoon
+```
 
-### Page 22.9 — Draw It
+| | It really gave |
+|---|---|
+| `loc[3]` | **Paper Boat**, the row labelled 3, sitting at position 4 |
+| `iloc[3]` | **Neon**, three rows down from the top |
+| `loc[1]` | **Monsoon**, the row labelled 1 |
+| `iloc[1]` | **Monsoon**, one row down. Agrees, by luck |
 
-The student is given a blank six-row grid and asked to label four things. Correct labelling:
+(The "I predicted" column has no right answer; it is evidence of what they expected.)
 
-1. **Along the top:** the four column labels — `title`, `artist`, `minutes`, `plays`. Marked as *labels*, i.e. names.
-2. **Down the left:** the row labels. Marked *labels*, **not** "row numbers".
-3. **An arrow from outside the left edge, pointing in, labelled `loc` — "reads the edge".**
-4. **A set of counting tabs starting at 0 outside the same edge, labelled `iloc` — "ignores the edge, counts".**
+**(g)** `loc[n]` and `iloc[n]` agree **only when the label `n` happens to be sitting at position `n`.** On a table pandas numbered itself that is true of every row, which is why they seem like the same command. On a labelled, filtered or sorted table it is true of some rows, none, or all by accident, and nothing on screen says which.
 
-Full marks require the row labels being called labels rather than numbers, and the `iloc` tabs starting at **0**. Compare with Figures 22.1 and 22.2 in this chapter.
+### Think Deeper (T1–T3)
 
-### Page 22.10 — Self-Check
+**T1. Why keep the old labels after filtering?** Full marks needs (1) a specific thing you could check because the labels survived, (2) the `loc[0]` crash on a filtered table, not just "it's confusing", and (3) a position taken, with a reason. A student who argues the opposite side well gets full marks too; experienced people disagree on this. Model answer:
 
-| # | Statement | Tick or cross | Why |
+> *Keeping the old labels buys you **traceability**. My filtered table has the labels 1, 3 and 4, so if a number in it looks wrong I can go back to the six-row original, look at row 3, and check it against the raw data. If pandas had renumbered them 0, 1, 2 I would know I had three loud songs but not **which** three, and there would be no way back.*
+>
+> *What it costs is confusion. In my filtered table `iloc[0]` is Monsoon and `loc[0]` is not a different row, it is an outright `KeyError`, because there is **no** row labelled 0 left. So one of the two tools stops working, and a beginner reasonably reads that as the table being broken.*
+>
+> *I think it depends on what I am about to do next. If I am reporting particular songs and might need to check them, I keep the labels. If I am about to do something positional, like take the top three, I run `reset_index(drop=True)` right after the filter, on purpose, and write down that I did it. What I would never do is renumber **halfway** through, because then some labels are original and some are not.*
+
+**T2. Why is there no `loc[-1]`?** Half marks for "because `loc` uses names". The key move is realising `loc[-1]` is not an error in principle: it is a perfectly good label lookup for a row that is probably not there. Model answer:
+
+> *`-1` means "one from the end". That is a **counting** idea: you can only work out what it points at by knowing how long the table is and counting backwards. `iloc` counts, so it can do it. `loc` does not count at all; it reads the names printed on the edge.*
+>
+> *If somebody built a table with a row genuinely **labelled** `-1`, `loc[-1]` would hand back **that row**, wherever it sat, possibly the very first row. It would have nothing to do with the end. With no row labelled `-1`, it is a plain `KeyError`.*
+>
+> *So "the last one" can only be asked for by counting. "Last" is a fact about **order**, and order is exactly what labels are designed not to care about. It is the same reason labels survive a sort and positions do not.*
+
+**T3. A real job where `iloc` for `loc` matters.** Any answer where a row means a **person or record** and the table can be reordered. Three that students actually write:
+
+- **One pupil's exam mark.** The class list is sorted by mark for the report, and `iloc[7]` is now a different child from this morning. The wrong mark is read out to everybody.
+- **A pharmacy reading patient 4's dose.** `loc[4]` means patient number 4; `iloc[4]` means the fifth row of whatever order today's list is in.
+- **A shop looking up order 1002.** Orders are inserted, so every position shifts; the order number never does.
+
+**And the answer to the question that makes it serious: nobody would find out.** No error, no warning, no red text; a properly formatted row about the wrong person. The only defence is the `Name:` line and knowing which question you asked. The strongest answers say exactly that.
+
+### Draw It
+
+The workbook asks for the student's **own five-row table, drawn by hand**, with what each of the three tools points at. There is no single right drawing. A good one has:
+
+- **Row labels that are NOT 0, 1, 2, 3, 4**, called *labels* and not "row numbers" (the workbook's model uses the canteen's item numbers `3, 1, 5, 2, 4`).
+- Column labels along the top edge, marked as names.
+- A `loc` arrow coming in from *outside* the left edge ("reads the edge").
+- `iloc` tabs outside the edge starting at **0** ("ignores the edge, counts").
+- The three bottom boxes filled in: a `loc` answer, an `iloc` answer, and a filter question.
+
+The tell that it is right: somewhere the student has written a `loc` answer and an `iloc` answer that are **different**, or has spotted a pair that agree **by luck** and said so. A drawing where every `loc` and `iloc` answer matches, with labels 0 to 4, has drawn Week 21, not Week 22. It is not wrong, but ask them to shuffle the labels.
+
+### Self-Check
+
+Two parts. The first is eight can-do rows (😀 / 🙂 / 😕) for the student to rate themselves; there is no key. Read the ratings against the mastery scale, and treat any 😕 on *Explain in writing why `loc` and `iloc` differ on a custom index* as the thing to re-teach. The second is twelve true-or-false statements:
+
+| # | Statement | Answer | Why |
 |---|---|---|---|
-| 1 | "`loc` and `iloc` always give the same answer." | ✗ | Only when the labels happen to match the positions. Any sort, filter or custom index breaks that. |
-| 2 | "Inside `loc` and `iloc`, the row comes first." | ✓ | `df.loc[row, "column"]`. Always. |
-| 3 | "`df["plays"] > 200` gives you the rows with over 200 plays." | ✗ | It gives you a column of True/False answers, one per row. The rows come from `df[ ... ]` round the outside. |
-| 4 | "`sort_values` puts your table in order." | ✗ | It hands you a sorted **copy**. Your table is unchanged unless you catch the copy in a name. |
-| 5 | "After you filter a table, the surviving rows keep their original labels." | ✓ | That is how you trace a survivor back — and it is why labels and positions come apart. |
+| 1 | `loc` and `iloc` always give the same answer | **FALSE** | Only when every label happens to equal its position. A custom index, a filter or a sort breaks it. |
+| 2 | Inside `loc` and `iloc`, the row comes first | **TRUE** | `df.loc[row, "column"]`. Always, in both. |
+| 3 | The numbers down the left of a table are a column of data | **FALSE** | They are **labels**. Nobody's play count is 3. |
+| 4 | `df["plays"] > 200` gives you the rows with over 200 plays | **FALSE** | It gives six True/False answers. The rows come from `df[ ... ]` around the outside. |
+| 5 | `sort_values` puts your table in order | **FALSE** | It hands you a sorted **copy**, and there is no error if you drop it. |
+| 6 | After filtering, the surviving rows keep their original labels | **TRUE** | That is how you trace one back, and why labels and positions come apart. |
+| 7 | `iloc[-1]` gives the last row | **TRUE** | `iloc` counts, and can count backwards. |
+| 8 | `loc[-1]` gives the last row | **FALSE** | It looks for a row **labelled** `-1`. Usually a `KeyError`; never "the last one". |
+| 9 | `df["a", "b"]` selects two columns | **FALSE** | It looks for one column called `a, b`: `KeyError: ('a', 'b')`. Use `df[["a", "b"]]`. |
+| 10 | The `i` in `iloc` stands for *index* | **FALSE** | **Integer**, whole-number counting. "Index" is a common near-miss, and worth correcting because `loc` is the one that reads the index. |
+| 11 | If two commands agree, you used the right one | **FALSE** | The whole puzzle this week. Agreement is a coincidence, not evidence. |
+| 12 | `loc` uses round brackets, like every other command | **FALSE** | **Square** brackets. `loc(1, "x")` gives `TypeError: __call__() takes from 1 to 2 positional arguments but 3 were given`. |
+
+Marking: 11 or 12 is Level 4; 9 or 10 is secure; fewer than 8 means re-run the Hook. Statements 1, 4, 5 and 11 are the four that carry the week.
 
 ### Answers to every question posed in the lesson
 
@@ -1725,7 +1893,7 @@ Full marks require the row labels being called labels rather than numbers, and t
 
 **Activity Part A.** All ten answers are in the table in "The Activity, In Full". The two that need care: #4 and #5 need no `loc` or `iloc` at all, and #7 is `iloc[-1]` because "last" is a position.
 
-**Activity Part B.** `register.loc[2]` → Kabir, `Name: 2`. `register.iloc[2]` → Meera, `Name: 5`. Zero errors. Model explanation and the three partial answers are under Page 22.6.
+**Activity Part B.** `register.loc[2]` → Kabir, `Name: 2`. `register.iloc[2]` → Meera, `Name: 5`. Zero errors. Model explanation and the three partial answers are under Build It (Part 4), in the Answer Key.
 
 **Harder variation.** An index whose third entry is 2 makes `loc[2]` and `iloc[2]` agree — `[4, 1, 2, 5, 3]` works. `week[(week["age"] == 13) & (week["steps"] > 11000)]` gives Kabir and Zoya:
 
@@ -1753,4 +1921,4 @@ Name: 3, dtype: object
 
 Next week the data stops being polite. Everything so far has been a table you typed yourself, so every age was a number, every house was spelled the same way, and every cell had something in it. **Week 23 opens a real file** — a twelve-row club register saved as a CSV — and finds it broken in four predictable ways: holes where nobody filled the form in, a column of ages that pandas insists is *writing* because three rows say `unknown`, the same pupil entered twice, and one house spelled four different ways. The student learns to count the holes, name what is blocking a column from being numbers, and repair both. And then the real lesson: the repair is a **decision**, not a fix, so it goes in a written **cleaning log** with a reason beside it — because "fill the three unknown ages with 13" and "drop those three rows" are both defensible, and they give answers five whole marks apart.
 
-**Prep early, this is worth ten minutes now:** run the Week 23 prep script before the weekend so `club_raw.csv` exists on the machine and you have seen `df.info()` say `object` where you expected a number. Also, if the student's written trap explanation from page 22.6 was thin, do **not** let it slide — Week 23's argument about filling versus dropping needs a student who can already write two sentences about why two commands disagreed.
+**Prep early, this is worth ten minutes now:** run the Week 23 prep script before the weekend so `club_raw.csv` exists on the machine and you have seen `df.info()` say `object` where you expected a number. Also, if the student's written trap explanation from Build It, Part 4 was thin, do **not** let it slide — Week 23's argument about filling versus dropping needs a student who can already write two sentences about why two commands disagreed.

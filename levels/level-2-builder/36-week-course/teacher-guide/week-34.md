@@ -13,7 +13,7 @@
 | **Big idea** | A data project starts with a question you could be wrong about, and 100 rows you collected yourself. |
 | **New vocabulary** | research question · raw data · describe · provenance · sample |
 | **New syntax** | `df.describe()` — and that is genuinely all |
-| **Materials** | Printed workbook pages 34.1–34.6 · the student's course notebook · a pen they are willing to sign with · a printed copy of the syntax ladder from Week 18 (optional) |
+| **Materials** | The printed workbook (all sections; the **Build It** fill-in tables will be written on, signed and kept) · the student's course notebook · a pen they are willing to sign with · a printed copy of the syntax ladder from Week 18 (optional) |
 | **Tech needed** | Laptop with Python 3, pandas installed. A terminal. A folder they can create files in. |
 | **Prep time** | 20 minutes the night before, 5 minutes on the day |
 
@@ -265,7 +265,7 @@ sits in the last tile but re-walks every earlier stage. Two threads lit: data an
 
 **20 minutes the night before**
 
-- [ ] Print workbook pages 34.1–34.6. Page 34.2 (the plan template) will be written on, signed, and kept — print it on the nicest paper you have. That matters more than it sounds.
+- [ ] Print the whole week 34 workbook. The **Build It** page (the "Fill this in as you go" table, which is the plan) will be written on, signed, and kept — print it on the nicest paper you have. That matters more than it sounds.
 - [ ] **Run the three demo files yourself.** This is the non-negotiable prep. Make a scratch folder, create a `data` folder inside it, and type all three files below. Confirm you get the exact outputs shown. It takes twelve minutes and it is what lets you teach with your hands in your pockets.
 
 ```bash
@@ -315,14 +315,14 @@ That is the computer enforcing the rule. Undo it afterwards with `chmod 644 data
 **5 minutes on the day**
 
 - [ ] Terminal open, in a folder the student can write to.
-- [ ] Page 34.2 on the table, with a pen next to it. Not a pencil. **A pen.** You are going to ask them to sign something.
+- [ ] The Build It "Fill this in as you go" table on the table, with a pen next to it. Not a pencil. **A pen.** You are going to ask them to sign something.
 - [ ] A clock or timer visible. The Their Turn segment is 20 minutes and it will overrun if nobody is watching it.
 
 **Fallback if the laptop or the install fails**
 
 | If this fails | Do this instead |
 |---|---|
-| Python or pandas will not run | The whole lesson works on paper. Page 34.2 (the plan) and page 34.3 (the log) need no computer at all. For `describe()`, hand-compute the five posts from the twenty-one printed values on page 34.4 — sort them, take the middle one, then the middle of each half. That gets you close to what pandas prints (pandas interpolates between neighbouring values, so it can differ slightly). |
+| Python or pandas will not run | The whole lesson works on paper. The Build It plan table and the "My cleaning log, copied out" box need no computer at all. For `describe()`, hand-compute the five posts from the twenty-one demo journey times (the clean demo table in the Answer Key under Build It, Milestone 3) — sort them, take the middle one, then the middle of each half. That gets you close to what pandas prints (pandas interpolates between neighbouring values, so it can differ slightly). |
 | No terminal, or `chmod` is unavailable | Right-click the file → Get Info / Properties → tick "read only". Same effect. Or put `raw.csv` in a folder called `DO_NOT_EDIT` and say so out loud. |
 | The student has no data idea at all | Give them the journeys project. It is the demo and it collects itself, but it is slow: three people making two school-day trips is only about 30 rows a week, so 100 rows takes 3 to 4 weeks (as the model plan's 12 May to 9 June does). Start it at once, and pair it with the coarsen/widen/add-people fallbacks below. Do not spend twenty minutes brainstorming; a working question beats a beautiful one. |
 | The student has already collected data and wants to skip ahead | Excellent. Have them run the four tests on the question they *actually* answered, in writing. Half the time they discover their target column is a leak, and that discovery is worth the whole lesson. |
@@ -381,7 +381,7 @@ Let them work. They usually get to "they changed the question" within a minute. 
 
 ### 🧠 Concept — Four Tests, One Signature (16 minutes)
 
-**Do this:** Put workbook page 34.2 between you, and the pen on top of it. Do not open the laptop yet.
+**Do this:** Put the workbook's Build It "Fill this in as you go" table between you, and the pen on top of it. Do not open the laptop yet.
 
 **Say this — part 1, the question:**
 
@@ -680,7 +680,7 @@ shape before: (26, 5)   after: (24, 5)
 
 This is the segment that matters, and your job in it is almost silence. Full instructions are in **🎲 The Activity, In Full** below. In the lesson flow:
 
-- **Minutes 0–10:** they fill in page 34.2 — the question, the four tests, the columns table with units and *how I will measure it*, the target, the prediction, the data card, and one thing the data cannot show. Then they sign it.
+- **Minutes 0–10:** they fill in the Build It "Fill this in as you go" table and Milestone 1 checklist — the question, the four tests, the columns table with units and *how I will measure it*, the target, the prediction, the data card, and one thing the data cannot show. Then they sign it.
 - **Minutes 10–15:** they set up the folders on their own laptop and create an empty `data` folder, plus a `notes/collection-diary.md`.
 - **Minutes 15–20:** they write their **first three cleaning-log lines in advance** — the problems they already know they will hit. ("I know I will have some days missing." "I know I wrote two Tuesdays as 'Tues'.") Predicting your own mess is a real skill and it makes the homework enormously faster.
 
@@ -725,7 +725,7 @@ The student produces the three things the capstone cannot start without: a **sig
 
 ### Setup
 
-**On the table:** workbook page 34.2 (the plan template), page 34.3 (the log sheet), a **pen**, their course notebook.
+**On the table:** the workbook's Build It page (the "Fill this in as you go" table is the plan; "My cleaning log, copied out" is the log sheet), a **pen**, their course notebook.
 **On the laptop:** a terminal, in a folder they own.
 
 They are building the structure in **Figure 34.2** — two data files, one of them locked. Exactly this:
@@ -734,7 +734,7 @@ They are building the structure in **Figure 34.2** — two data files, one of th
 data-detective/
 ├── data/                  <- empty for now. raw.csv lands here tonight.
 ├── notes/
-│   ├── plan.md            <- page 34.2, typed up or photographed
+│   ├── plan.md            <- the Build It plan, typed up or photographed
 │   └── collection-diary.md
 ├── make_raw.py
 ├── look.py
@@ -743,7 +743,7 @@ data-detective/
 
 ### Step 1 — the plan (10 minutes)
 
-Page 34.2 has eight boxes. They fill in all eight. In pen.
+The Build It table and the Milestone 1 checklist together cover the eight boxes below (the workbook table has the question, row, target, prediction, error guess, cannot-show line and signature; the checklist adds the four tests, columns and data card). They fill in all eight. In pen.
 
 ```text
 1. THE QUESTION      ______________________________________________ ?
@@ -785,9 +785,9 @@ date     what happened                            what I did about it
 
 ### Step 3 — three log lines, written in advance (5 minutes)
 
-On page 34.3, they predict their own mess. Three lines, each with a reason, each about a problem they have not hit yet.
+In the "My cleaning log, copied out" box of Build It, they predict their own mess. Three lines, each with a reason, each about a problem they have not hit yet.
 
-Model answers are in the Answer Key, page 34.3.
+Model answers are in the Answer Key, under Build It, Milestone 1 (in class).
 
 ### What "finished" looks like
 
@@ -961,7 +961,7 @@ Three checks, five minutes, exact wording.
 
 > "This is the biggest homework of the year and it is also the most fun, so do not leave it to the last night. Three jobs, just under three hours in total, and it does **not** all happen in one sitting.
 >
-> **Job one, tonight, fifteen minutes.** Finish page 34.2 if it is not finished, and type it up as `notes/plan.md`. Signed and dated. If your question changed while you were writing the columns, that is fine — but sign the final one and date it *today*, before you have any data.
+> **Job one, tonight, fifteen minutes.** Finish the Build It plan (Milestone 1) if it is not finished, and type it up as `notes/plan.md`. Signed and dated. If your question changed while you were writing the columns, that is fine — but sign the final one and date it *today*, before you have any data.
 >
 > **Job two, across the week, about two hours. Collect at least 100 rows — aim for 120.** Collect them **as they happen**, not from memory on Sunday night. Every time something goes wrong, write one line in `notes/collection-diary.md`. Aim for variety: every category value at least ten times, and your number columns genuinely spread out. And no invented rows, ever — **missing is better than made up.**
 >
@@ -971,7 +971,7 @@ Three checks, five minutes, exact wording.
 >
 > Bring next week: `raw.csv`, `clean.csv`, the log printed out, and the diary. Without a clean table you cannot do next week's lesson, so this one is not optional."
 
-**Workbook pages:** 34.1, 34.2 and 34.3 in class; **34.4, 34.5 and 34.6** at home.
+**Workbook sections:** in class, the Build It **Milestone 1** plan and the first three lines of "My cleaning log, copied out". At home, **Milestones 2 and 3** of Build It (collection tally, variety check, cleaning results table, full log) over the week. Set the rest of the workbook as ordinary practice: **Predict the Output** (P1–P4) before any coding, **Practice Set A** (A1–A6) and **Practice Set B** (B1–B5), **Fix the Broken Program**, **Puzzle of the Week**, **Think Deeper** (two paragraphs), **Draw It** and the **Self-Check**. The Warm-Up (W1–W5) can be done at the start of next lesson. Answers to all of it are in the Answer Key below, in workbook order.
 
 **Expected time:** 15 min for the plan · 120 min for the collection, spread over the week · 40 min for the cleaning and the log. About 2 h 55 min in total, which is why it is spread across seven days.
 
@@ -979,7 +979,34 @@ Three checks, five minutes, exact wording.
 
 ## 🔑 Answer Key
 
-### Page 34.1 — Question or topic?
+The key follows the **workbook in its own order**: Warm-Up, Predict the Output (P1–P4), Practice Set A (A1–A6), Practice Set B (B1–B5), Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It, Draw It, Self-Check. Every value below matches the Answers section at the end of the workbook, so you can mark from either. The teacher-only extras (wrong-answer maps, marking tables, the model plan, the demo cleaning run) are kept and marked as such.
+
+### Warm-Up (W1–W5) — last week's recap
+
+| # | Answer |
+|---|---|
+| W1 | **Rises** — it never falls. A deeper tree carves the training rows into finer boxes until a leaf holds about one row, so it scores perfectly on the rows it memorised. |
+| W2 | The model with **RMSE 9.5**. RMSE squares the errors first, so a few enormous misses inflate it. (`1,1,1,1` gives MAE 1.0 and RMSE 1.00; `0,0,0,4` gives MAE 1.0 and RMSE 2.00.) |
+| W3 | A **vertical dashed line** at x = 6, marking the depth where the test score peaked. |
+| W4 | **Overfitting**; the gap is 1.000 − 0.71 = **0.29**. |
+| W5 | So the comparison is fair: two models on two different splits sat two different exams. |
+
+**Wrong answers to expect:** W1 "it stays the same" (confusing train with test); W2 "the one with the bigger MAE" (the MAEs are equal).
+
+### Predict the Output (P1–P4)
+
+| # | Prints | Key point | Expect this wrong answer |
+|---|---|---|---|
+| P1 | `describe()` table with **one** column (`score`), then `1`. `count 4, mean 8.5, std 1.290994, min 7, 25% 7.75, 50% 8.5, 75% 9.25, max 10` | `describe()` summarises only number columns. `pupil` and `note` are genuinely text, so leaving them out is correct. | "3 columns". They expect every column. |
+| P2 | `1`, `2`, `(2, 3)` | Rows 2 and 3 are identical, so the first count is 1. After `.str.lower()`, `walk`/`Walk` match and the count becomes **2**: nobody added a row, lower-casing revealed a duplicate. The order of cleaning steps changes the answers, which is why the log is numbered. | "1, 1, (3, 3)". They forget the lower-casing changes what counts as equal. |
+| P3 | `object`, `float64`, `2`, `13.5` | `"about 9"` and `""` become empty, so `isna().sum()` is 2 and the mean is (12 + 15) ÷ 2 = 13.5. Not dishonest, provided a log line says it happened. | "9" counted in the mean, or a crash from `coerce`. |
+| P4 | `15.285714285714286`, `5.0`, `5.0`, `7.0` | Lines 2 and 3 match: `50%` **is** the median. Sorted: `2, 3, 4, 5, 6, 7, 80`, the 4th is **5**. The mean is pulled up by the 80. Print the **median**: "a typical innings is about 5" is true of six of seven; 15.3 is true of none. | Reading the second value as "the average". |
+
+For P2 the model log line is: *"1. Lower-cased 'mode'  -  'walk' and 'Walk' are one mode, and leaving them apart would have hidden a duplicate journey from step 2."*
+
+### Practice Set A — Read It (A1–A6)
+
+**A1 — Question or topic?**
 
 | # | Given | Verdict | Why |
 |---|---|---|---|
@@ -990,13 +1017,114 @@ Three checks, five minutes, exact wording.
 | (e) | "Which of my two walking routes is faster?" | ✅ question | Target `minutes`; two clear outcomes, one of which would surprise you. |
 | (f) | "Who in my class is best at maths?" | ❌ not allowed | Not a topic — a *rule break*. It is about other people, the label is an opinion, and a wrong answer costs a real person something. |
 
-**34.1(g) One of the six is neither a topic nor a question. Which one, and which rule does it break?**
+**A1(g) One of the six is neither a topic nor a question. Which one, and which rule does it break?**
 (f) — it is a rule break. It is about other people, the label is an opinion, and a wrong answer costs a real person something. (The two topics, (a) and (c), share a different flaw: neither names a target column or could turn out wrong, so the question would silently become whatever the data happened to say.)
 
-**34.1(h) Rewrite (a) as a question.**
+**Extra (not in the workbook) — rewrite (a) as a question.**
 Model answer: *"Does the subject of my homework change how many minutes it takes more than the number of questions does?"* Target: `minutes`. Features: subject, number of questions, day, time started.
 
-### Page 34.2 — The plan (model answer, journeys project)
+**A2 — Trace the log numbers.** Prints `2`, then `1. Dropped 2 rows  -  no answer`, `2. Lower-cased 'mode'  -  three spellings, one thing`, `3. Filled 1 distance  -  median, one row only`.
+**A2(a)** The `3.` comes from `len(CLEANING_LOG) + 1`: two lines already exist, so 2 + 1 = 3. The function counts for you.
+**A2(b)** Line **1** is a receipt (it says "Dropped 2 rows, because no answer", the action twice). Rewrite: *"1. Dropped 2 rows with no minutes value  -  You cannot learn from a row whose answer is unknown, and inventing one would be making data up."*
+
+**A3 — Spot the bug.**
+
+| # | What goes wrong | Fix |
+|---|---|---|
+| (a) | `AttributeError: 'Series' object has no attribute 'strip'` | `df["mode"].str.strip().str.lower()` |
+| (b) | `TypeError` (one value at a time, `int()` gives `ValueError: invalid literal for int() with base 10: 'about 20'`) | `pd.to_numeric(df["minutes"], errors="coerce")`, then log it |
+| (c) | **No error**; `dupes` is **0** because the count ran after the drop | Count first (`df.duplicated().sum()`), then `drop_duplicates()` |
+
+**A4 — Match.** 1 → **B** · 2 → **C** · 3 → **A**.
+**A4(a)** **Three** modes (walk, cycle, bus). The two lines that look identical are the second (`walk`, 6) and the last (`walk `, 1): a trailing space. That is why you count a text column rather than looking at it.
+
+**A5 — Label the diagram.** Posts left to right: `min` **8.5** · `25%` **16.0** · `50%` (the median) **19.0** · `75%` **20.5** · `max` **26.0**.
+**A5(a)** About half, **roughly 10 or 11**.
+**A5(b)** Model: *"Twenty-one journeys. The quickest took 8.5 minutes and the slowest 26. Half of them were under 19 minutes."* (Four numbers at most.)
+
+Teacher extra for A5: these oral follow-up questions are **not** in the workbook. Use them if there is time.
+
+Given this real output from the twenty-one clean demo journeys:
+
+```text
+count    21.000000
+mean     17.428571
+std       5.160634
+min       8.500000
+25%      16.000000
+50%      19.000000
+75%      20.500000
+max      26.000000
+Name: minutes, dtype: float64
+```
+
+| # | Question | Answer |
+|---|---|---|
+| (a) | How many journeys have a minutes value? | **21.** |
+| (b) | What was the quickest journey? | **8.5 minutes.** |
+| (c) | What was the slowest? | **26.0 minutes.** |
+| (d) | Half the journeys took less than how long? | **19.0 minutes** — that is the median, the middle row. |
+| (e) | A quarter of the journeys took less than how long? | **16.0 minutes.** |
+| (f) | How many journeys fell between 16.0 and 20.5 minutes? | **About half of them** — roughly 10 or 11. That gap runs from the 25% post to the 75% post, which is half the rows by definition. |
+| (g) | The mean is 17.43 and the median is 19.0. Which is bigger, and what does that tell you? | The **median** is bigger. That means the low end is stretched further from the middle than the high end is: there is a bunch of quick cycle journeys down at 8.5–11.5 pulling the average down. When the mean and median disagree, the difference is telling you the shape is lopsided. |
+| (h) | Write one sentence about these mornings that does not contain a number. | Model answer: *"Most journeys were fairly similar, with a handful of much quicker ones dragging the average down."* |
+
+**Extra (i) Why does `describe()` on the raw file not show `minutes` at all?**
+Because one row said `about 20` instead of a number, so pandas typed the whole column as `object` — text. `describe()` only summarises number columns. The fix is `pd.to_numeric(df["minutes"], errors="coerce")`, plus a log line saying so.
+
+**Extra (j) What is the one check you must run after every `describe()`?**
+That the **target column is in the output.** If it is not, stop and run `df.info()` to find out which type it got.
+
+
+**A6 — The silent one.**
+**A6(a)** `minutes`, the target.
+**A6(b)** `print(reading.dtypes)` (or `reading.info()`); `minutes` is `object` because one value says `"about 40"`.
+**A6(c)** **No error at all.** The only thing that catches it is the habit: run `describe()`, then check the target column is in the output.
+
+### Practice Set B — Write It (B1–B5)
+
+| # | Expected output (key values) | Marking |
+|---|---|---|
+| B1 | `count 7, mean 7371.428571, std 2330.746866, min 4500, 25% 5650, 50% 7300, 75% 8750, max 11000`. Read aloud: "Seven days. My quietest was 4,500 steps and my busiest 11,000. Half the days were under 7,300." | One line: `steps.describe()`. Give the sentence a mark of its own. |
+| B2 | Two numbered lines, `1. Dropped 3 rows with no wait time  -  ...`, `2. Lower-cased 'shop'  -  ...`. The number is computed with `len(CLEANING_LOG) + 1`. | Full marks: a function, not two typed strings, and a reason on both lines. |
+| B3 | Prints `STOP - 'minutes' is missing from describe(). Here is why:` followed by `pages int64 / book object / minutes object`. | Needs `TARGET in summary.columns` (the Week 14 membership test). The check is the most important habit this week. |
+| B4 | `shape before: (8, 3)   after: (6, 3)`; log line 2 says `Dropped 2 row(s)`; `minutes` describe: `count 6, mean 9.833333, std 5.231316, min 4, 25% 5.75, 50% 10, 75% 12, max 18`. | Two log lines, each with a reason. It deliberately does **not** touch `Dishes` or the duplicate pair; that is B5. |
+| B5 | `shape before: (10, 3)   after: (6, 3)`; five log lines (duplicates `Dropped 2`, zero-rupee row `Marked 1`, missing `Dropped 2`); `corner 3 / market 3`; `rupees` describe: `count 6, mean 145.833333, std 68.732574, min 60, 25% 101.25, 50% 135, 75% 195, max 240`. | Account for every lost row: two duplicates (step 2), `about 300` (steps 3 and 5), the zero-rupee row (steps 4 and 5). Swap steps 1 and 2 and `dupes` is **1**, not 2. |
+
+### Fix the Broken Program
+
+| Bug | Kind | Where | What happens | Fix |
+|---|---|---|---|---|
+| 1 | Syntax | line 12 | `def log(action, reason)` has no colon: `SyntaxError: expected ':'` | Add the colon. |
+| 2 | Runtime | line 23 | `homework["Minutes"]` with a capital M: `KeyError: 'Minutes'`. Check with `print(homework.columns)`. | Use `"minutes"`. |
+| 3 | Logic | lines 20–21 | Runs, but the log says `Dropped 0 duplicate row(s)` while the shape is `(3, 3)`: the drop ran before the count. | Count first, then drop. |
+
+**The question that matters:** which bug would you never have found from an error message? **Bug 3.** It produced a tidy, confident, wrong log. The fixed program prints `(3, 3)`, three log lines (line 2 reads `Dropped 1 duplicate row(s)`), and `minutes` describe with `count 2, mean 30, std 11.313708, min 22, 25% 26, 50% 30, 75% 34, max 38`. Point out that `count` is only 2: an anecdote with a decimal point, which is why the capstone floor is 100 rows. **Bonus:** on the left of an `=`, `homework["Minutes"] = ...` would not crash but would silently create a new column.
+
+### Puzzle of the Week — The Quartile Detective
+
+| Part | Answer |
+|---|---|
+| 1 | 1st = 4, 3rd = 7, 5th = 12, 7th = 15, 9th = 31. |
+| 2 | The nine add up to 13.111111 × 9 = **118**. The known five sum to 69, so the four `??` sum to **49**, in sorted order. One solution: `4, 6, 7, 9, 12, 14, 15, 20, 31` (6 + 9 + 14 + 20 = 49). Any sorted set of four summing to 49 works, e.g. `5, 8, 13, 23`. Checking it with `describe()` gives mean 13.111111, std 8.373238, with the five posts matching. |
+| 3 | The other set, e.g. `4, 5, 7, 8, 12, 13, 15, 16, 31`, has mean 12.333333, std 8.215838 and the same five posts. **`describe()` does not pin down the data**: it is where you start looking, never where you stop, and that is why next week has charts. |
+| 4 | The **31**. Without it the other eight run 4 to 20 with a mean of about 10.9; with it the mean is 13.1, above the median of 12. Decide, with a reason, whether it is real or a typo. |
+
+### Think Deeper
+
+Mark for structure, not for wording. Full marks needs each of the points below.
+
+- **1 — the basketball project.** Nothing was faked; the dishonesty was the **order**: the planned test failed, then they searched the same data for something that worked and reported it as the plan. "What looks interesting?" always gets a yes in sixty rows of anything. The student's own safeguard should be the signed, dated question and prediction, written before collecting a row. Weak answer: "they lied about a number" (no number was false).
+- **2 — missing is better than made up.** Leave it empty. Three points: an 18 is a memory, biased towards what I expect; in the CSV a guessed 18 looks exactly like a measured 18 and the fact that it was a guess is lost; and inventing the **target** partly trains the model on my own beliefs. Pandas handles empty honestly (`dropna(subset=["minutes"])`, `isna().sum()`, one log line). One lost row in 120 costs almost nothing. Full marks needs the specific later consequence, not just "it is cheating".
+
+### Build It — Milestones 1, 2 and 3
+
+The workbook's Build It section is a step checklist plus fill-in tables ("Fill this in as you go", the collection tally, the variety check, the cleaning results table, "My cleaning log, copied out"). There is no single right answer; mark the structure and the honesty. The model answers below are the teacher-only reference.
+
+#### Milestone 1 — the plan (model answer, journeys project)
+
+Use this against the Milestone 1 checklist and the "Fill this in as you go" table.
+
 
 ```text
 1. THE QUESTION
@@ -1043,7 +1171,11 @@ Signed  R. Kamma        Date  12 May
 
 **Marking:** boxes 1, 5, 6 and 8 are the ones that carry the marks. A plan with a beautiful column table and no prediction is a 2. A plan with a scruffy table, a real prediction with a number in it, and a specific "cannot show" line is a 3.
 
-### Page 34.3 — Three log lines written in advance
+
+#### Milestone 1 (in class) — three log lines written in advance
+
+These go in "My cleaning log, copied out" (lines 1–3) during the Activity.
+
 
 Full marks requires three lines, each with an **action** and a **reason that could be disagreed with**. Model answers:
 
@@ -1060,40 +1192,11 @@ Full marks requires three lines, each with an **action** and a **reason that cou
 
 **Common wrong answer:** "1. I will clean the data — because it will be messy." Action and reason are the same sentence twice. Ask: *"Clean what? And what will you do to it?"*
 
-### Page 34.4 — Reading `describe()`
 
-Given this real output from the twenty-one clean demo journeys:
+#### Milestone 2 — their own collection (marking guidance)
 
-```text
-count    21.000000
-mean     17.428571
-std       5.160634
-min       8.500000
-25%      16.000000
-50%      19.000000
-75%      20.500000
-max      26.000000
-Name: minutes, dtype: float64
-```
+Mark it from the collection tally and the variety check tables.
 
-| # | Question | Answer |
-|---|---|---|
-| (a) | How many journeys have a minutes value? | **21.** |
-| (b) | What was the quickest journey? | **8.5 minutes.** |
-| (c) | What was the slowest? | **26.0 minutes.** |
-| (d) | Half the journeys took less than how long? | **19.0 minutes** — that is the median, the middle row. |
-| (e) | A quarter of the journeys took less than how long? | **16.0 minutes.** |
-| (f) | How many journeys fell between 16.0 and 20.5 minutes? | **About half of them** — roughly 10 or 11. That gap runs from the 25% post to the 75% post, which is half the rows by definition. |
-| (g) | The mean is 17.43 and the median is 19.0. Which is bigger, and what does that tell you? | The **median** is bigger. That means the low end is stretched further from the middle than the high end is: there is a bunch of quick cycle journeys down at 8.5–11.5 pulling the average down. When the mean and median disagree, the difference is telling you the shape is lopsided. |
-| (h) | Write one sentence about these mornings that does not contain a number. | Model answer: *"Most journeys were fairly similar, with a handful of much quicker ones dragging the average down."* |
-
-**34.4(i) Why does `describe()` on the raw file not show `minutes` at all?**
-Because one row said `about 20` instead of a number, so pandas typed the whole column as `object` — text. `describe()` only summarises number columns. The fix is `pd.to_numeric(df["minutes"], errors="coerce")`, plus a log line saying so.
-
-**34.4(j) What is the one check you must run after every `describe()`?**
-That the **target column is in the output.** If it is not, stop and run `df.info()` to find out which type it got.
-
-### Page 34.5 — Their own collection (marking guidance)
 
 There is no single right answer; mark the structure and the honesty.
 
@@ -1106,7 +1209,11 @@ There is no single right answer; mark the structure and the honesty.
 
 > **Teacher note, important.** If a student proudly reports that nothing went wrong while collecting, the diary is empty and *that is the finding*. Say this out loud: **"Nothing going wrong means either you got lucky or you were not looking. Which do you think it was?"** Then go through their table with them and find the two rows they rounded. There always are two.
 
-### Page 34.6 — The cleaning log (model answer, demo data)
+
+#### Milestone 3 — the cleaning log (model answer, demo data)
+
+Check against the Milestone 3 checklist and the cleaning results table. Note that the demo is 26 rows in, 21 out, 5 lost, 6 log lines.
+
 
 This is the complete, actually-run demo. Their version has their own reasons.
 
@@ -1207,6 +1314,32 @@ Second: 26 rows went in and 21 came out. Five rows were lost, every one of them 
 **Supporting output worth showing them — `df["mode"].value_counts()` before step 2 reads `bus 13 / walk 6 / cycle 5 / Walk 1 / walk 1`.** Point at the second line and the last line: `walk` and `walk ` look identical on screen, because the difference is a trailing space. **That is why you cannot eyeball a column; you have to count it.** After step 2 there are three groups — `bus 12 / walk 7 / cycle 5` — not five.
 
 > **🧑‍🏫 If a student does the arithmetic and objects:** they are right to. Merging the five raw groups by hand gives 13 bus and 8 walk, totalling 26. The printed numbers are 12 and 7, totalling 24. Nothing is wrong — **step 1 ran before step 2.** Dropping the two duplicate rows removed one bus journey and one walk journey, so both counts arrive at step 2 already one lower. This is worth thirty seconds out loud, because it is the first time they see that **the order of the cleaning steps changes the numbers**, which is exactly why the log is numbered.
+
+
+### Draw It
+
+Marking guide: five boxes joined by arrows that all point right (paper sheet → `data/raw.csv` → padlock labelled `chmod 444` → `clean.py` → `data/clean.csv`), with a crossed-out backwards arrow from `clean.py` to `raw.csv` labelled *"PermissionError, and that is the point"*, sticky notes each carrying a number **and a reason**, and the student's own row counts (the workbook's example is 126 in, 121 out, 5 lost). **Weak answer:** only one file box, so nothing could point backwards; or notes that say what happened but not why.
+
+### Self-Check
+
+Ask them to tick the nine "I can" rows honestly; a 😕 on "Check that my target column appears in `describe()`" is the one to act on. The true/false answers:
+
+| Statement | Answer |
+|---|:--:|
+| A topic can turn out to be wrong | **FALSE** (that is what makes it a topic) |
+| `describe()` summarises every column in the table | **FALSE** (only number columns) |
+| `50%` means "half the time it takes this long" | **FALSE** (half the rows are below it) |
+| `chmod 444` makes a file read-only | **TRUE** |
+| A `PermissionError` on `raw.csv` means something has gone wrong | **FALSE** (the rule is working) |
+| Fixing a typo in the spreadsheet is faster and therefore fine | **FALSE** (destroys reproducibility) |
+| The order of your cleaning steps can change your numbers | **TRUE** (P2, B5) |
+| "Dropped 3 rows because they were empty" contains a reason | **FALSE** (the action twice) |
+| 100 identical rows are as useful as 100 varied ones | **FALSE** |
+| A guessed target value is better than an empty one | **FALSE** |
+| `df["mode"].strip()` cleans a whole column | **FALSE** (`AttributeError`; use `.str.strip()`) |
+| A prediction written after you looked is still a prediction | **FALSE** (a memory of one) |
+| `pd.to_numeric(..., errors="coerce")` crashes on bad values | **FALSE** (they become empty) |
+| Mean and median disagreeing tells you the shape is lopsided | **TRUE** |
 
 ### Lesson questions posed in the Say-this scripts
 
