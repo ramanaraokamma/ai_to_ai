@@ -265,7 +265,7 @@ ________________________________________________________________
 |---|---|:--:|---|
 | (a) | "No, that's loads actually." | | |
 | (b) | "Yes, a bit. More data would help." | | |
-| (c) | "Yes. 26 in the test set, so one row is 3.8%, which is why I'm not ranking my top two." | | |
+| (c) | "Yes. 26 in the test set, so one row is 3.8% of the test set and one bad journey could make the whole gap, which is why I'm not ranking my top two." | | |
 | (d) | "I don't know." | | |
 | (e) | "I don't know whether it generalises. I know it was off by 2.35 minutes on 26 rows it had never seen, against 7.98 for guessing." | | |
 
@@ -373,7 +373,7 @@ sleep = pd.DataFrame({
 tree depth=2
    train MAE: 0.14 hours on 16 rows it learned from  <- NOT a result
    test  MAE: 0.16 hours on 4 unseen rows            <- this one
-   one test row is worth 25.0% of any score
+   one test row is worth 25.0% of an accuracy score
 ```
 
 **Done looks like:** the function makes the silent bug structurally impossible, because it always prints both numbers with their row counts. And you can say, out loud, why **nothing** in this output supports ranking the two models.
@@ -409,7 +409,7 @@ row_worth = 100 // test_rows
 print("My best model is", best["model"])
 print("Off by {best['test_mae']} minutes, against a baseline of {baseline_mae} minutes,")
 print(f"on {test_rows} unseen rows. The model buys me {bought:.2f} minutes of accuracy.")
-print(f"One test row is worth {row_worth}% of any score.")
+print(f"One test row is worth {row_worth}% of an accuracy score.")
 ```
 
 **Bug 1 — what you actually see:**
@@ -444,7 +444,7 @@ ________________________________________________________________
 My best model is tree d=4
 Off by {best['test_mae']} minutes, against a baseline of {baseline_mae} minutes,
 on 26 unseen rows. The model buys me 5.63 minutes of accuracy.
-One test row is worth 3% of any score.
+One test row is worth 3% of an accuracy score.
 ```
 
 **Look at line 2 of the output. What is missing from the code that produced it?**
@@ -1146,7 +1146,7 @@ ________________________________________________________________
 
 **W4.** **`_train`.** If it is on the right-hand side of a scoring line and you are calling the result a result, cross the number out.
 
-**W5.** Something like: *"126 rows, 26 held out. One test row is worth 3.8%, so the 0.35-minute gap between my tree and my kNN is noise — I am not ranking them."* Two numbers minimum, and a consequence.
+**W5.** Something like: *"126 rows, 26 held out. One journey 9 minutes out would move my MAE by 0.35, so the 0.35-minute gap between my tree and my kNN is too small to trust — I am not ranking them."* Two numbers minimum, and a consequence.
 
 ---
 
@@ -1418,7 +1418,7 @@ def audit(name, model, X_train, y_train, X_test, y_test, units):
     print(f"{name}")
     print(f"   train MAE: {train_mae:.2f} {units} on {len(y_train)} rows it learned from  <- NOT a result")
     print(f"   test  MAE: {test_mae:.2f} {units} on {len(y_test)} unseen rows            <- this one")
-    print(f"   one test row is worth {100 / len(y_test):.1f}% of any score")
+    print(f"   one test row is worth {100 / len(y_test):.1f}% of an accuracy score")
 
 sleep = pd.DataFrame({
     "screen_off_hour": [21, 22, 23, 21, 22, 20, 23, 22, 21, 23,
@@ -1448,11 +1448,11 @@ Real output:
 tree depth=2
    train MAE: 0.14 hours on 16 rows it learned from  <- NOT a result
    test  MAE: 0.16 hours on 4 unseen rows            <- this one
-   one test row is worth 25.0% of any score
+   one test row is worth 25.0% of an accuracy score
 linear regression
    train MAE: 0.17 hours on 16 rows it learned from  <- NOT a result
    test  MAE: 0.19 hours on 4 unseen rows            <- this one
-   one test row is worth 25.0% of any score
+   one test row is worth 25.0% of an accuracy score
 ```
 
 **Why the function makes the bug structurally impossible.** There is nowhere in it to accidentally report a train score as a result, because it always prints **both**, always labels them, and always says how many rows each came from. You cannot forget, because forgetting would mean deleting a line.
@@ -1524,14 +1524,14 @@ row_worth = 100 / test_rows                # BONUS FIX: / not //
 print("My best model is", best["model"])
 print(f"Off by {best['test_mae']} minutes, against a baseline of {baseline_mae} minutes,")   # FIX 3: the f
 print(f"on {test_rows} unseen rows. The model buys me {bought:.2f} minutes of accuracy.")
-print(f"One test row is worth {row_worth:.1f}% of any score.")
+print(f"One test row is worth {row_worth:.1f}% of an accuracy score.")
 ```
 
 ```text
 My best model is tree d=4
 Off by 2.35 minutes, against a baseline of 7.98 minutes,
 on 26 unseen rows. The model buys me 5.63 minutes of accuracy.
-One test row is worth 3.8% of any score.
+One test row is worth 3.8% of an accuracy score.
 ```
 
 Hand-check: 7.98 − 2.35 = 5.63. ✅ And 100 ÷ 26 = 3.846, so 3.8%. ✅

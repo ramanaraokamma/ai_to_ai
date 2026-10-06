@@ -112,7 +112,7 @@ Read line 4 out loud the way a person would: *"Asha's card. Under `name` is Asha
 3. **`asha["name"]` is a lookup.** Say it as English — *"in Asha, the name"* — not "Asha bracket name".
 4. **`len(asha)` is 5, not 10.** `len` counts **pairs**, and a pair counts once, not twice.
 
-**The quotes rule, which catches everybody once.** The **keys always have quotes**, because keys are words being used as labels. A **value** only has quotes when the value is itself text. `48` and `32` are numbers, so no quotes. `Falcons` is a word, so quotes. `True` is Python's own word for yes, so no quotes and a capital T.
+**The quotes rule, which catches everybody once.** In this course the **keys always have quotes**, because keys are words being used as labels. A **value** only has quotes when the value is itself text. `48` and `32` are numbers, so no quotes. `Falcons` is a word, so quotes. `True` is Python's own word for yes, so no quotes and a capital T.
 
 ![The same brackets, two different questions](../figures/fig-w13-6-brackets-two-jobs.svg)
 *Figure 13.2 — Same square brackets. A number inside means count. A word in quotes means read the label.*
@@ -130,7 +130,7 @@ asha["runs"]     # give me the value under the label "runs" in this DICTIONARY
 
 Two consequences you should try for yourself:
 
-- `scores["two"]` is meaningless. A list has no labels, so you get `TypeError: list indices must be integers`.
+- `scores["two"]` is meaningless. A list has no labels, so you get `TypeError: list indices must be integers or slices, not str`.
 - `asha[0]` is meaningless *for this dictionary*. There is no label called `0`, so you get `KeyError: 0`.
 
 And if you ask "how do I know which kind of container I've got?" — **look at how it was built.** Square brackets when it was made → list. Curly braces with colons → dictionary. That is the only tell, and it is enough.

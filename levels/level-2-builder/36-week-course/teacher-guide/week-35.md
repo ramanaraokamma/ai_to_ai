@@ -108,7 +108,7 @@ Four things a good results table has, and each one is a mark:
 1. **The metric name and its units in the header.** `MAE (min)`, not `score`.
 2. **Both a train score and a test score for every model.** The gap between them is the Week 33 story, on their own data.
 3. **A baseline row.** Without it, "MAE 2.35" is a number floating in space. With it, you can say *"guessing the average is off by 7.98 minutes; my model gets that down to 2.35, so the model buys me about five and a half minutes of accuracy."*
-4. **The test row count**, so a reader can work out what one row is worth. With 26 test rows, one row is worth 3.8% of any percentage score. That single fact stops the student ranking two models that differ by less than one row.
+4. **The test row count**, so a reader can work out what one row is worth. With 26 test rows, one row is worth 3.8% of an accuracy score, and for an MAE in minutes it moves the average by that journey's error ÷ 26. That single fact stops the student ranking two models that differ by less than a row's worth.
 
 **The baseline can be written by hand, and it is better if it is.** scikit-learn has a `DummyRegressor`, but the student does not need it and has not met it. "Always guess the mean of the training answers" is two lines they can read:
 
@@ -161,7 +161,7 @@ The red pen matters. A number crossed out in red and rewritten is a thing the st
 
 | ❌ Weak | ✅ Strong |
 |---|---|
-| "My dataset was quite small." | "126 rows, 26 held out. One test row is worth 3.8%, so the 0.35-minute gap between my tree and my kNN is noise. I am not ranking them." |
+| "My dataset was quite small." | "126 rows, 26 held out. One journey 9 minutes out would move my MAE by 0.35, so the 0.35-minute gap between my tree and my kNN is too small to trust. I am not ranking them." |
 | "There might be some bias." | "Every row is one of three people in one family. The model has learned *our* walking speed. My youngest brother walks about a third slower, so I would expect it to under-predict him by roughly 4 minutes per km." |
 | "The model wasn't perfect." | "Linear regression predicted **1.7 minutes** for a 0.6 km bus journey that actually took 11.3. It has one minutes-per-km number for every mode, and a bus has a six-minute wait before it moves at all." |
 | "I chose the best model." | "I picked depth 4 by looking at the test scores, which means my reported test MAE is optimistic. An honest number needs a third split I do not have." |
@@ -184,7 +184,7 @@ baseline (always guess the mean)       7.98        9.53     0.000   -0.375      
 
 **Finding 2 — R² can go negative, and the baseline shows why.** The baseline's test R² is **−0.375**. Negative R² means "worse than guessing the mean of the *test* rows" — and the baseline is guessing the mean of the *train* rows, which is slightly different. If a real model of theirs goes negative, something is badly wrong.
 
-**Finding 3 — every model beats the baseline, and the gaps between them are not all real.** Tree 2.35 versus kNN 2.70 is a gap of 0.35 minutes on 26 rows. That is inside the noise. Tree 2.35 versus linear regression 5.00 is not.
+**Finding 3 — every model beats the baseline, and the gaps between them are not all real.** Tree 2.35 versus kNN 2.70 is a gap of 0.35 minutes on 26 rows. That is what one journey 9 minutes out would cause (and on 20 different splits the tree beat the kNN on only 11), so it is not a real gap. Tree 2.35 versus linear regression 5.00 is not.
 
 **Finding 4 — and this is the best paragraph in the whole notebook — look at *why* the line loses.** Its coefficients:
 
@@ -216,7 +216,7 @@ Row 11 is the one to point at. **The line predicts 1.7 minutes for a bus journey
 
 **Misconception 1 — "the model with the best score is the one I should use."**
 
-Not automatically. On the demo data the tree wins by 0.35 minutes on 26 test rows, where one row is worth 3.8%. That gap is noise. So the choice gets made on other grounds: the tree prints as a handful of if-then rules you can read out loud to your mum, and kNN can only say "the five most similar journeys took about this long". Saying *"I would use the tree, and here is a reason that is not the score"* is worth more than the score itself.
+Not automatically. On the demo data the tree wins by 0.35 minutes on 26 test rows, where one journey 9 minutes out would cause the whole gap (0.35 × 26 = 9.1), and on 20 different splits the tree beat the kNN on only 11. That gap is too small to call. So the choice gets made on other grounds: the tree prints as a handful of if-then rules you can read out loud to your mum, and kNN can only say "the five most similar journeys took about this long". Saying *"I would use the tree, and here is a reason that is not the score"* is worth more than the score itself.
 
 **Misconception 2 — "a perfect score means I did well."**
 
@@ -419,7 +419,7 @@ Show Figure 35.3, or the real demo table.
 >
 > **A baseline row.** The bottom one. It does not look at any feature at all — it just guesses the average, 21.3 minutes, every single time. And it is off by 7.98 minutes. That row is what makes 2.35 mean something. Without it, is 2.35 good? You cannot possibly know.
 >
-> **The number of test rows.** Twenty-six. So one row is worth 3.8% of any percentage figure. Which means — and this is the sentence I most want out of you today — the gap between the tree at 2.35 and the kNN at 2.70 is **0.35 minutes on twenty-six rows**, and that is inside the noise. You are not allowed to say the tree is better. You are allowed to say they are indistinguishable and you would pick the tree because you can read its rules out loud."
+> **The number of test rows.** Twenty-six. So one row is worth 3.8% of an accuracy figure, and for an MAE in minutes it is that journey's error divided by 26. Which means — and this is the sentence I most want out of you today — the gap between the tree at 2.35 and the kNN at 2.70 is **0.35 minutes on twenty-six rows**, which a single journey 9 minutes out would cause all by itself. You are not allowed to say the tree is better. You are allowed to say they are indistinguishable and you would pick the tree because you can read its rules out loud."
 
 **Ask this:**
 
@@ -428,7 +428,7 @@ Show Figure 35.3, or the real demo table.
 | "Why does chart 4 exist at all, if chart 3 already showed the modes?" | Because a bar of means hides the spread. Walk runs 6.3 to 58.6; cycle only 4.0 to 22.6. | If they say "it looks nicer" — reply: "Give me one number chart 4 tells me that chart 3 cannot." Then supply it if they can't. |
 | "How many times should `train_test_split` appear in your file?" | Once. | If they say "once per model" — show them: two splits means two different exams, so the two scores cannot be compared at all. |
 | "Is a test R² of 2.35 good?" | It is a trap — 2.35 is the MAE in minutes, and R² has no units. | Catching the deliberate mix-up is the point. If they miss it, say the sentence again slowly and watch them wince. |
-| "The tree gets 2.35 and the kNN gets 2.70. Which is better?" | Neither, provably: 0.35 minutes on 26 rows is noise. | If they say "the tree" — ask "by how much, and how much is one row worth?" Make them do the arithmetic out loud. |
+| "The tree gets 2.35 and the kNN gets 2.70. Which is better?" | Indistinguishable on this evidence: 0.35 minutes on 26 rows is one journey 9 minutes out (the tree won only 11 of 20 other splits). | If they say "the tree" — ask "by how much, and how much is one row worth?" Make them do the arithmetic out loud. |
 | "What is the baseline row for?" | To make every other number mean something. | If they say "to fill the table" — remove it and ask again whether 2.35 is good. |
 
 ---
@@ -503,12 +503,12 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42)
 
 print("train rows:", len(y_train), "  test rows:", len(y_test))
-print(f"one test row is worth {100 / len(y_test):.1f}% of any score")
+print(f"one test row is worth {100 / len(y_test):.1f}% of an accuracy score")
 ```
 
 ```text
 train rows: 100   test rows: 26
-one test row is worth 3.8% of any score
+one test row is worth 3.8% of an accuracy score
 ```
 
 > "Print that second line in your own notebook. Every time you are tempted to say one model beat another, that number is sitting there telling you how big a difference has to be before you are allowed to say it."
@@ -738,7 +738,7 @@ It gets the most marks of any section, and here is the honest reason: anyone can
 
 **There is no agreed answer, and pretending otherwise would be lying to you.** Here is what is genuinely true and what is genuinely argued about.
 
-True: with 26 test rows, one row moves any percentage score by 3.8 points, so two models within about one row of each other are indistinguishable — you can compute that yourself and nobody disputes it.
+True: with 26 test rows, one row moves an accuracy score by 3.8 points (and an MAE by that journey's error ÷ 26), so two models within about one row of each other are indistinguishable — you can compute that yourself and nobody disputes it.
 
 Argued about: everything past that. Some people would say you need a proper statistical test before claiming any difference at all. Some would say you need cross-validation, so that every row gets to be a test row in turn — that is the right answer and it is the first thing Level 3 teaches. Some would say that for a decision with real money attached you need a fresh dataset collected after you finished choosing. All three are defensible; they answer slightly different questions, and which one you need depends on what the answer will be used for.
 
@@ -822,7 +822,7 @@ Three checks, five minutes, exact wording.
 
 > "Your table says one model gets 2.35 minutes and another gets 2.70. How many test rows have you got, and are you allowed to say the first one is better?"
 
-*Good answer:* "26 rows, so one row is worth 3.8%, and 0.35 minutes is inside that — so no, they are indistinguishable." Full marks needs the row count, the worth of one row, and the refusal. **What to catch:** "yes, 2.35 is lower." Reply: "By how much? And how much is one row worth?"
+*Good answer:* "26 rows, so one journey 9 minutes out would move the MAE by 0.35 on its own — so no, they are indistinguishable." Full marks needs the row count, the worth of one row, and the refusal. **What to catch:** "yes, 2.35 is lower." Reply: "By how much? And how much is one row worth?"
 
 **Check 2 — the audit (spoken, pointing at one number)**
 
@@ -1099,7 +1099,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42)
 
 print("train rows:", len(y_train), "  test rows:", len(y_test))
-print(f"one test row is worth {100 / len(y_test):.1f}% of any score")
+print(f"one test row is worth {100 / len(y_test):.1f}% of an accuracy score")
 
 # --- 3. one scoring function, used by every model ----------------------------
 def report(name, train_guess, test_guess):
@@ -1164,7 +1164,7 @@ Real output:
 ```text
 X shape: (126, 5)   y shape: (126,)
 train rows: 100   test rows: 26
-one test row is worth 3.8% of any score
+one test row is worth 3.8% of an accuracy score
 the baseline always guesses 21.3 minutes
 
                            model  MAE (min)  RMSE (min)  train R2  test R2  test rows
@@ -1241,7 +1241,7 @@ Twenty numbers, but here are the five that carry the marks, filled in for the de
 
 Full marks needs **three admissions, each with a number.** Model answer:
 
-> **1.** 126 rows, 26 of them held out. One test row is worth 3.8% of any percentage score, so the 0.35-minute gap between my tree (2.35) and my kNN (2.70) is inside the noise. I am not claiming the tree is better; I am claiming they are indistinguishable and the tree is easier to read out loud.
+> **1.** 126 rows, 26 of them held out. One journey 9 minutes out would move my MAE by 0.35, so the 0.35-minute gap between my tree (2.35) and my kNN (2.70) is too small to trust. I am not claiming the tree is better; I am claiming they are indistinguishable and the tree is easier to read out loud.
 >
 > **2.** Linear regression predicted **1.7 minutes** for a 0.6 km bus journey that actually took 11.3. That is not just wrong, it is impossible — you cannot board a bus in 1.7 minutes. The reason is in its coefficients: it has one "minutes per kilometre" number, +7.06, that it applies to walking, cycling and the bus alike. A walked kilometre really costs 11.8 minutes and a wheeled one 3.9. A straight line cannot hold two slopes, so it splits the difference and gets both ends wrong. My tree can, because it asks about `is_walk` first.
 >
@@ -1271,7 +1271,7 @@ Four questions, all four answered:
 - *"Why does chart 4 exist if chart 3 showed the modes?"* → A bar of means hides the spread. Walk runs 6.3–58.6; cycle only 4.0–22.6.
 - *"How many times should `train_test_split` appear?"* → Exactly once.
 - *"Is a test R² of 2.35 good?"* → Trap. 2.35 is the MAE in minutes; R² has no units.
-- *"Tree 2.35 versus kNN 2.70 — which is better?"* → Neither, provably. 0.35 minutes on 26 rows is inside the 3.8% one row is worth.
+- *"Tree 2.35 versus kNN 2.70 — which is better?"* → Indistinguishable. 0.35 minutes on 26 rows is what one journey 9 minutes out would cause.
 - *"What is the baseline row for?"* → To make every other number mean something.
 - *"Why no `is_bus` column?"* → Both switches off already means bus.
 - *"Can R² be negative?"* → Yes: worse than guessing the mean of the test rows.

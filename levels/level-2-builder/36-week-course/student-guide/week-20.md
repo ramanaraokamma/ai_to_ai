@@ -1117,7 +1117,7 @@ IndexError: too many indices for array: array is 1-dimensional, but 2 were index
 
 > **🐞 If you see this error:** count the shapes out loud before you read anything else. `print(names.shape, passed.shape)` gives you `(10,) (10, 5)` and the whole problem is right there in two tuples.
 
-### Break 2 — `and` never works on arrays
+### Break 2 — `and` does not work on arrays with more than one element
 
 ```python
 print(scores[scores > 50 and scores < 90])
@@ -1196,7 +1196,7 @@ anything above 100? [950]
 |---|---|---|
 | `IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed` | "You used a two-directional mask on a one-directional list." | Collapse the mask along an axis first: `names[passed.sum(axis=1) == 5]` |
 | `IndexError: boolean index did not match indexed array along dimension 0; dimension is 10 but corresponding boolean dimension is 5` | "Right number of directions, wrong length." | The wrong axis. `axis=1` gives ten; `axis=0` gives five. **The labels caught it** |
-| `ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()` | "You asked for one yes-or-no and I have fifty." | `and` never works on arrays. One condition, or two named masks used separately |
+| `ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()` | "You asked for one yes-or-no and I have fifty." | `and` does not work on arrays with more than one element. One condition, or two named masks used separately |
 | `numpy.core._exceptions._UFuncNoLoopError: ufunc 'greater' did not contain a loop with signature matching types ...` | "You compared numbers with writing." | `scores > 50`, not `scores > "50"`. No quotes; it is a number |
 | ``IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices`` | "That is not a position and it is not a mask." | `tests[test_mean == test_mean.min()]`, not `tests[test_mean.min()]`. `60.1` is a value, not a slot |
 | `numpy.exceptions.AxisError: axis 1 is out of bounds for array of dimension 1` | "There is no second direction left." | `scores[mask]` is already one long row — the grid went when you used the mask. `scores[mask].mean()`, no axis |

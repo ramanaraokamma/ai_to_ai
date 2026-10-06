@@ -874,7 +874,7 @@ The inner brackets in `playlist[["bpm"]]` are a **list**, and asking a table for
 
 **Line 1 skipped step 2, the squaring.** `-3.0 + -1.2 = -4.2`. And notice it came out **negative**, which no distance ever can — that is the clearest possible sign a step is missing. Squaring exists partly to make the minus signs go away.
 
-**Which would you write in a report?** **3.23.** Seventeen digits of precision on a flower somebody measured with a ruler in 1936 is not honesty, it is noise. **Round when you report; never round in the middle of the arithmetic.**
+**Which would you write in a report?** **3.23.** Seventeen digits of precision on a flower somebody measured with a ruler in the 1930s is not honesty, it is noise. **Round when you report; never round in the middle of the arithmetic.**
 
 **P3** — real output:
 

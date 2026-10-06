@@ -182,7 +182,7 @@ ________________________________________________________________
 | (a) | "Stuff about how long homework takes." | ☐ | ☐ | |
 | (b) | "Do longer videos get fewer views than shorter ones?" | ☐ | ☐ | |
 | (c) | "An investigation into my sleep." | ☐ | ☐ | |
-| (d) | "How many runs will an innings score, given the overs faced?" | ☐ | ☐ | |
+| (d) | "How many runs will an innings score, given the batting position?" | ☐ | ☐ | |
 | (e) | "Which of my two walking routes is faster?" | ☐ | ☐ | |
 | (f) | "Who in my class is best at maths?" | ☐ | ☐ | |
 

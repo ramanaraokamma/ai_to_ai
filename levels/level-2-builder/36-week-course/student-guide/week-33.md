@@ -443,7 +443,7 @@ Now look at the **two trees together.**
 
 On MAE they are a dead heat: two hundredths apart, on a scale running to 346. On RMSE, the line wins. Why? Because **kNN has nine misses over 100 and the line has only five.** RMSE squares the misses, so the extra big ones weigh heavily. Typical performance: identical. Big-miss behaviour: the line is better. **MAE could not see that. RMSE could.** That is why you print both.
 
-**Three — the tree lost, and that is honest.** Test R² 0.260 against the line's 0.453. **Trees are not the best tool for everything.** This dataset is smooth medical measurements with no sudden thresholds in it, which is exactly the shape a straight line handles well and a staircase handles badly.
+**Three — the tree lost, and that is honest.** Test R² 0.260 against the line's 0.453. **Trees are not the best tool for everything.** A likely reason (we did not test it) is that this dataset is smooth medical measurements with no obvious sudden thresholds in it, which is exactly the shape a straight line handles well and a staircase handles badly.
 
 The tree still wins on one thing: **you can read it.** And this is the week you find out what that costs.
 
@@ -1156,8 +1156,8 @@ The only sentence you should say is: **"RMSE goes up faster than MAE when there 
 
 Two things to do rather than despair:
 
-- **Look at the trend across all fifteen steps**, and at the `gap` column, which climbs from 0.174 to 0.955 and never once recovers.
-- **Test it properly.** Re-run the whole loop with `random_state=1` on the split instead of 42 and see whether the bump survives. It generally does not. **That is how you tell a real effect from noise**, and it is a real technique rather than a classroom exercise.
+- **Look at the trend across all fifteen steps**, and at the `gap` column, which climbs from 0.174 to 0.955 with only small dips on the way.
+- **Test it properly.** Re-run the whole loop with `random_state=1` on the split instead of 42 and see whether the bump survives. With `random_state=1` the bump goes away, but so does more: the whole curve moves, the test peak lands at depth 2 (0.232) instead of depth 4, and test R² goes negative from depth 5. So the bump is noise, and the best depth itself belongs to this split, not to the dataset. **That is how you tell a real effect from noise**, and it is a real technique rather than a classroom exercise.
 
 ---
 

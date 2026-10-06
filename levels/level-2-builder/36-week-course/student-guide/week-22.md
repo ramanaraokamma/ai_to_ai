@@ -1133,7 +1133,7 @@ print(week.loc[1])                       # the whole row, printed sideways
 
 # ---- iloc: BY POSITION, counting from 0 ------------------------------------
 print(week.iloc[1, 1])                   # 11050 - row 1 down, column 1 across
-print(week.iloc[-1])                     # the LAST row. There is no loc[-1].
+print(week.iloc[-1])                     # the LAST row. (loc[-1] looks up a label called -1, so it fails.)
 # week.iloc[5]           ->  IndexError: single positional indexer is out-of-bounds
 # week.iloc[1, "steps"]  ->  ValueError: Location based indexing can only have ...
 

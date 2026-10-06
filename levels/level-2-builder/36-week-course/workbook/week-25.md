@@ -870,7 +870,7 @@ Notice that (a), (c) and (e) would fit the data perfectly whichever way the numb
 | **D** | the marker on one real point | `ax.plot(..., marker="o")` |
 | **E** | the axes (the drawing frame) | `plt.subplots(...)` |
 
-**A5(f).** All five have a call. The one that is different is **E** — you do not *add* the frame with a `set_` call; you **get** it, already made, from `plt.subplots(...)`. Accept "E, because it comes for free" as full marks.
+**A5(f).** Four of the five are put there by a call. The one with no call of its own is **E** — you do not *add* the frame with a `set_` call; you **get** it, already made, from `plt.subplots(...)`. Accept "E, because it comes for free" as full marks.
 
 And the point of the diagram: **four of the five are words you type.** The line is the bit everybody thinks is the chart, and it is one fifth of it.
 

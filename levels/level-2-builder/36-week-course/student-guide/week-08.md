@@ -33,15 +33,15 @@ Say you guessed 50 and I said *higher*. **How many numbers are still possible?**
 **Every good guess halves what is left.** Watch:
 
 ```text
-   100 numbers → 50 → 25 → 13 → 7 → 4 → 2 → 1
+   100 numbers → 50 → 25 → 12 → 6 → 3 → 1
      guess 1     2    3    4    5   6   7
 ```
 
-**Seven.** Seven halvings takes a hundred down to one, so a hundred numbers can *always* be caught in seven guesses. Never eight. Which is why the game you are about to write gives the player exactly seven — **enough if you are clever, not enough if you are careless.** That is what makes a game fair.
+**Seven.** Six halvings take a hundred down to one possible number, and guess 7 names it, so a hundred numbers can *always* be caught in seven guesses. Never eight. Which is why the game you are about to write gives the player exactly seven — **enough if you are clever, not enough if you are careless.** That is what makes a game fair.
 
 Now here is the bit that stops you just using last week's loop.
 
-Last week every loop was `for something in range(...)`, and **every one of those knew how many times it would go round before it started.** Twelve scores: twelve passes. Nine rows: nine passes. That is why a `for` loop can never run forever by accident — the number of passes is decided before the first one happens.
+Last week every loop was `for something in range(...)`, and **every one of those knew how many times it would go round before it started.** Twelve scores: twelve passes. Nine rows: nine passes. That is why a `for` over a `range` can never run forever by accident — the number of passes is decided before the first one happens.
 
 **So how many passes does this guessing game need?**
 
@@ -256,7 +256,7 @@ Two things to know before they trip you:
 - **`import random` must be at the top of the file.** Forget it and you get `NameError: name 'random' is not defined` — the same message you get for a misspelled variable, because as far as Python is concerned that is exactly what `random` is until you import it.
 - **`random.randint(100, 1)` is an error.** You asked for a number between 100 and 1, and there aren't any, because 100 is bigger. Small number first.
 
-**And why seven tries?** Because each good guess halves what is left, and seven halvings takes 100 down to 1. It is not a random choice of limit — it is **exactly enough for a player who plays well, and not enough for a player who guesses randomly.** That makes the game fair *and* teachable.
+**And why seven tries?** Because each good guess halves what is left, and six halvings take 100 down to 1 possible number and a seventh guess names it. It is not a random choice of limit — it is **exactly enough for a player who plays well, and not enough for a player who guesses randomly.** That makes the game fair *and* teachable.
 
 ![Every hint halves what is left](../figures/fig-w08-4-guess-game-transcript.svg)
 *Figure 8.4 — Each hint does not just say higher or lower; it deletes half the remaining numbers. The window closes in.*
@@ -583,7 +583,7 @@ import random                                  # the toolbox with the dice in it
 
 LOW = 1                                        # the smallest number I might pick
 HIGH = 100                                     # the largest number I might pick
-MAX_TRIES = 7                                  # seven halvings always cover 1 to 100
+MAX_TRIES = 7                                  # six halvings plus a final guess always cover 1 to 100
 
 wins = 0                                       # accumulator: games won
 games = 0                                      # accumulator: games played
@@ -1169,7 +1169,7 @@ A folded piece of paper with a number on it. Guesses called out, hints given, gu
 The halving chain, written up:
 
 ```text
-   100 numbers → 50 → 25 → 13 → 7 → 4 → 2 → 1
+   100 numbers → 50 → 25 → 12 → 6 → 3 → 1
      guess 1     2    3    4    5   6   7
 ```
 

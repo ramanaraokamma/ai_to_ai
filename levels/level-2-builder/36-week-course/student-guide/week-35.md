@@ -210,9 +210,9 @@ Now the sentence this table lets you say, and the sentence it forbids you from s
 
 **Allowed:** *"Guessing the average is off by 7.98 minutes. My best model gets that down to 2.35. So the model buys me about five and a half minutes of accuracy."*
 
-**Forbidden:** *"The tree is better than the kNN."* Look at the row count. Twenty-six test rows means **one row is worth 3.8%** of any percentage score. The gap between 2.35 and 2.70 is **0.35 minutes on 26 rows** — that is inside the noise. What you are allowed to say is: *"they are indistinguishable, and I would pick the tree because I can read its rules out loud."*
+**Forbidden:** *"The tree is better than the kNN."* Look at the row count. Twenty-six test rows means **one row is worth 3.8%** of an accuracy-style percentage score. Our score is MAE in minutes, where one row moves the average by that journey's error ÷ 26, so the gap between 2.35 and 2.70, **0.35 minutes on 26 rows**, is just what a single journey 9 minutes out would cause. That is too small to trust. What you are allowed to say is: *"they are indistinguishable, and I would pick the tree because I can read its rules out loud."*
 
-> **💡 Try this:** print this line in your own notebook, right under the split, and leave it there: `print(f"one test row is worth {100 / len(y_test):.1f}% of any score")`. Every time you are tempted to rank two models, that number is sitting there telling you how big a difference has to be before you are allowed to.
+> **💡 Try this:** print this line in your own notebook, right under the split, and leave it there: `print(f"one test row is worth {100 / len(y_test):.1f}% of an accuracy score")`. Every time you are tempted to rank two models, that number is sitting there telling you how big a difference has to be before you are allowed to.
 
 **One more thing in that table worth staring at:** the baseline's `test R2` is **−0.375**. R² can go negative. It means "worse than guessing the mean of the *test* rows" — and the baseline is guessing the mean of the *train* rows, which is slightly different. If one of your **real** models goes negative, something is badly wrong.
 
@@ -261,7 +261,7 @@ Note the "and you are calling the result a result". A number from `_train` is pe
 
 | ❌ Weak | ✅ Strong |
 |---|---|
-| "My dataset was quite small." | "126 rows, 26 held out. One test row is worth 3.8%, so the 0.35-minute gap between my tree and my kNN is noise. I am not ranking them." |
+| "My dataset was quite small." | "126 rows, 26 held out. One journey 9 minutes out would move my MAE by 0.35, so the 0.35-minute gap between my tree and my kNN is too small to trust. I am not ranking them." |
 | "There might be some bias." | "Every row is one of three people in one family. The model has learned *our* walking speed. My youngest brother walks about a third slower, so I would expect it to under-predict him by roughly 4 minutes per km." |
 | "The model wasn't perfect." | "Linear regression predicted **1.7 minutes** for a 0.6 km bus journey that actually took 11.3. It has one minutes-per-km number for every mode, and a bus has a six-minute wait before it moves at all." |
 | "I chose the best model." | "I picked depth 4 by looking at the test scores, which means my reported test MAE is optimistic. An honest number needs a third split I do not have." |
@@ -515,12 +515,12 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42)
 
 print("train rows:", len(y_train), "  test rows:", len(y_test))
-print(f"one test row is worth {100 / len(y_test):.1f}% of any score")
+print(f"one test row is worth {100 / len(y_test):.1f}% of an accuracy score")
 ```
 
 ```text
 train rows: 100   test rows: 26
-one test row is worth 3.8% of any score
+one test row is worth 3.8% of an accuracy score
 ```
 
 That second line is the most useful print statement in the whole project. Leave it in.
@@ -674,7 +674,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42)
 
 print("train rows:", len(y_train), "  test rows:", len(y_test))
-print(f"one test row is worth {100 / len(y_test):.1f}% of any score")
+print(f"one test row is worth {100 / len(y_test):.1f}% of an accuracy score")
 
 # --- 3. one scoring function, used by every model ----------------------------
 def report(name, train_guess, test_guess):
@@ -739,7 +739,7 @@ Real output, top to bottom:
 ```text
 X shape: (126, 5)   y shape: (126,)
 train rows: 100   test rows: 26
-one test row is worth 3.8% of any score
+one test row is worth 3.8% of an accuracy score
 the baseline always guesses 21.3 minutes
 
                            model  MAE (min)  RMSE (min)  train R2  test R2  test rows
@@ -818,7 +818,7 @@ y = pizza["wait_min"]
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42)
 print("train rows:", len(y_train), "  test rows:", len(y_test))
-print(f"one test row is worth {100 / len(y_test):.1f}% of any score")
+print(f"one test row is worth {100 / len(y_test):.1f}% of an accuracy score")
 
 def report(name, train_guess, test_guess):
     return {
@@ -858,7 +858,7 @@ Real output:
 ```text
 shape: (60, 6)
 train rows: 48   test rows: 12
-one test row is worth 8.3% of any score
+one test row is worth 8.3% of an accuracy score
 the baseline always guesses 26.9 minutes
 
                            model  MAE (min)  train R2  test R2  test rows
@@ -1035,7 +1035,7 @@ base_guess = y_train.mean()
 baseline   = mean_absolute_error(y_test, np.zeros(len(y_test)) + base_guess)
 
 print(f"rows: {len(hw)}   train: {len(y_train)}   test: {len(y_test)}")
-print(f"one test row is worth {100 / len(y_test):.1f}% of any score")
+print(f"one test row is worth {100 / len(y_test):.1f}% of an accuracy score")
 print()
 print(f"MAE on X_train (a memory test): {dishonest:.2f} minutes   <- NOT a result")
 print(f"MAE on X_test  (a prediction) : {honest:.2f} minutes   <- this one")
@@ -1048,7 +1048,7 @@ Real output:
 
 ```text
 rows: 90   train: 72   test: 18
-one test row is worth 5.6% of any score
+one test row is worth 5.6% of an accuracy score
 
 MAE on X_train (a memory test): 2.52 minutes   <- NOT a result
 MAE on X_test  (a prediction) : 4.23 minutes   <- this one
@@ -1249,7 +1249,7 @@ That is the whole week.
 
 **3. "How many rows do I need before I'm allowed to say one model is better?"** *(Nobody agrees on a number, and that is the honest answer.)*
 
-*Hint:* here is what is genuinely settled and what is genuinely argued about. **Settled:** with 26 test rows, one row moves any percentage score by 3.8 points, so two models within about one row of each other are indistinguishable. You can compute that yourself and nobody disputes it. **Argued about:** everything past that. Some people say you need a proper statistical test before claiming any difference at all. Some say you need **cross-validation**, where every row gets a turn at being a test row — that is the right answer and it is the first thing Level 3 teaches you. Some say that for a decision with real money attached you need a fresh dataset collected *after* you finished choosing. All three are defensible; they answer slightly different questions. What everybody agrees on is the bit you must do: **state your test-set size, state what one row is worth, and do not rank models whose gap is smaller than that.**
+*Hint:* here is what is genuinely settled and what is genuinely argued about. **Settled:** with 26 test rows, one row moves an accuracy (percentage) score by 3.8 points, so two models within about one row of each other are indistinguishable. You can compute that yourself and nobody disputes it. **Argued about:** everything past that. Some people say you need a proper statistical test before claiming any difference at all. Some say you need **cross-validation**, where every row gets a turn at being a test row — that is the right answer and it is the first thing Level 3 teaches you. Some say that for a decision with real money attached you need a fresh dataset collected *after* you finished choosing. All three are defensible; they answer slightly different questions. What everybody agrees on is the bit you must do: **state your test-set size, state what one row is worth (for an MAE, that journey's error ÷ 26), and do not rank models whose gap is smaller than that.**
 
 ---
 
@@ -1270,7 +1270,7 @@ The axis labels already describe the chart. That is their job. **A caption's job
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "The tree got 2.35 and the kNN got 2.70, so the tree is better." | "They differ by 0.35 minutes on 26 test rows where one row is worth 3.8%. That is noise. I would use the tree because I can read its rules out loud to my mum, and she can tell me if one of them is silly." |
+| "The tree got 2.35 and the kNN got 2.70, so the tree is better." | "They differ by 0.35 minutes on 26 test rows where one journey 9 minutes out would cause the whole gap. That is too small to trust. I would use the tree because I can read its rules out loud to my mum, and she can tell me if one of them is silly." |
 
 Do the arithmetic before you rank anything. And when the gap **is** inside the noise, you still have to choose a model — you have to choose it on grounds that are not the score. Saying that out loud is worth more than the score itself.
 
@@ -1286,7 +1286,7 @@ On self-collected data, a near-perfect score almost always means **one of your f
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "I'll say 'more data would help' and move on." | "126 rows, 26 held out, one row worth 3.8%, so I am not ranking my top two. And my line predicted 1.7 minutes for a bus journey, which is impossible, because it has one minutes-per-km number for three modes." |
+| "I'll say 'more data would help' and move on." | "126 rows, 26 held out, one journey 9 minutes out could make a 0.35 gap, so I am not ranking my top two. And my line predicted 1.7 minutes for a bus journey, which is impossible, because it has one minutes-per-km number for three modes." |
 
 The second one is longer, more uncomfortable, and worth about ten times as much. *"More data would help"* is true of every project that has ever existed, which is exactly why it says nothing.
 
@@ -1336,7 +1336,7 @@ collected yourself.*
 - **A caption states a finding, not a topic.** The axis labels already describe the chart.
 - **One split, made once, `random_state` set.** Search your file for `train_test_split(` with its bracket — the call must appear exactly once. Every model reads the same four variables.
 - **A metric with no units, no baseline and no row count is a rumour.** "MAE 2.35 minutes, against a baseline of 7.98, on 26 held-out rows" is a fact.
-- **Work out what one test row is worth, and never rank two models inside that margin.** With 26 rows it is 3.8%, so a 0.35-minute gap is not a ranking.
+- **Work out what one test row is worth, and never rank two models inside that margin.** With 26 rows a percentage score moves 3.8 points per row, and an MAE moves by one journey's error ÷ 26 (a 0.35-minute gap is one journey 9 minutes out), so a gap that small is not a ranking.
 - **The Score Audit: trace every number to the line that made it, and say which split.** If `_train` is on the right-hand side and you are calling it a result, cross it out in red.
 - **The honest number is usually worse. That is how you know it is honest.**
 - **"What I got wrong" earns the most marks of any section.** Three admissions, each with a number in it.
@@ -1352,7 +1352,7 @@ df["is_walk"] = (df["mode"] == "walk").astype(int)
 # ---- ONE split, ONCE, random_state set ---------------------------------
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42)
-print(f"one test row is worth {100 / len(y_test):.1f}% of any score")
+print(f"one test row is worth {100 / len(y_test):.1f}% of an accuracy score")
 
 # ---- the baseline: two lines, no library needed ------------------------
 guess = y_train.mean()

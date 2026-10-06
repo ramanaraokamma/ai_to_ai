@@ -223,7 +223,7 @@ final total = 15
 
 Check it by hand: 1 + 2 + 3 + 4 + 5 = 15 ✔
 
-**`total += n` is new syntax and it needs its own sentence.** It means, exactly: *take what is in `total`, add `n` to it, and put the answer back in `total`.* It is a shortcut for `total = total + n`, and the two are identical in every way — the shortcut is just shorter and harder to typo. There are three more in the same family that you will see: `-=`, `*=`, and `/=`.
+**`total += n` is new syntax and it needs its own sentence.** It means, exactly: *take what is in `total`, add `n` to it, and put the answer back in `total`.* It is a shortcut for `total = total + n`, and for numbers the two are identical — the shortcut is just shorter and harder to typo. There are three more in the same family that you will see: `-=`, `*=`, and `/=`.
 
 **Three rules for an accumulator, and every accumulator bug is one of these three:**
 
@@ -250,7 +250,7 @@ print(total)
 5
 ```
 
-**Break 2 — the division goes inside.** No error message. It divides before it has finished adding, so you get five wrong averages and the last one happens to be right.
+**Break 2 — the division goes inside.** No error message. It divides before it has finished adding, so you get four wrong averages and the last one happens to be right.
 
 ```python
 total = 0
@@ -1267,7 +1267,7 @@ And the habit to name explicitly, because it will save them for the rest of the 
 
 **"Why does `range` start at zero? Nobody counts from zero."**
 
-You will, in about four weeks, and then it will feel obvious — but the honest answer today is about the *count*. `range(a, b)` hands out exactly `b - a` values (when `b` is above `a` and there is no step), and `range(n)` hands out exactly `n`. That works because the stop is excluded and the start is included. If both ends were included, every count would be "the difference, plus one", and you would spend your life adding and subtracting ones. There is a second reason that lands in Week 11: when you meet lists, the first slot is numbered 0, so `range(len(scores))` gives you exactly the right slot numbers with no arithmetic at all. Today, zero looks like a wart. In Week 12 it looks like a plan.
+You will, in about five weeks, and then it will feel obvious — but the honest answer today is about the *count*. `range(a, b)` hands out exactly `b - a` values (when `b` is above `a` and there is no step), and `range(n)` hands out exactly `n`. That works because the stop is excluded and the start is included. If both ends were included, every count would be "the difference, plus one", and you would spend your life adding and subtracting ones. There is a second reason that lands in Week 11: when you meet lists, the first slot is numbered 0, so `range(len(scores))` gives you exactly the right slot numbers with no arithmetic at all. Today, zero looks like a wart. In Week 12 it looks like a plan.
 
 **"Can I call the counter something other than `i`?"**
 

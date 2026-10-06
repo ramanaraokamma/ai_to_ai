@@ -552,7 +552,7 @@ middle = df["distance_km"].median()
 n_filled = df["distance_km"].isna().sum()
 df["distance_km"] = df["distance_km"].fillna(middle)
 log(f"Filled {n_filled} missing distance value(s) with the median ({middle} km)",
-    "Only one row, and the median is the middle distance so it does not drag the average about.")
+    "Only one row, so a quick median fill. It is rough: this row is a bus journey and every other bus row is 3.4 km, so 3.4 would be a truer fill.")
 
 after = df.shape
 print(f"shape before: {before}   after: {after}")
@@ -576,7 +576,7 @@ shape before: (26, 5)   after: (21, 5)
 3. Converted 'minutes' to numbers, bad values became empty  -  One row said 'about 20'. I cannot use a guess as a measurement, so it became empty.
 4. Marked 1 row(s) with minutes outside 0-90 as empty  -  A 0-minute journey to a school 3.4 km away is a typo, not a journey.
 5. Dropped 3 row(s) with no minutes value  -  You cannot learn from a row whose answer is unknown, and inventing one would be making data up.
-6. Filled 1 missing distance value(s) with the median (2.1 km)  -  Only one row, and the median is the middle distance so it does not drag the average about.
+6. Filled 1 missing distance value(s) with the median (2.1 km)  -  Only one row, so a quick median fill. It is rough: this row is a bus journey and every other bus row is 3.4 km, so 3.4 would be a truer fill.
 
        distance_km       rain    minutes
 count    21.000000  21.000000  21.000000
@@ -596,6 +596,8 @@ saved data/clean.csv
 **First: `minutes` is now IN the `describe()` output.** That is the check from section 6, passing.
 
 **Second: 26 rows went in and 21 came out.** Five rows were lost, and every single one of them was counted and justified. If your own before-and-after shapes come out identical, either your data was immaculate or you did not look.
+
+**A caution about step 6:** the median (2.1 km) is a cycle distance, but the row we filled is a bus journey, and every other bus journey is 3.4 km. So the fill is plausible-looking but probably wrong for that row. A better repair is to fill from the same `mode` (3.4 for a bus), or drop the row. Write the caveat in your log; and note the median was worked out on all the rows, before any train/test split.
 
 **And one supporting output worth running yourself**, because you cannot eyeball a text column:
 

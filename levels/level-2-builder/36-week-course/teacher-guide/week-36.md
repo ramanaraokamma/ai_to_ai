@@ -79,9 +79,9 @@ basically perfect  ·  the data speaks for itself  ·  obviously  ·  just
 | They are asked | The shape of a good answer |
 |---|---|
 | *"How do you know the model actually works?"* | "I don't, fully. I know it was off by 2.35 minutes on 26 journeys it had never seen. Guessing the average is off by 7.98. That is the comparison." |
-| *"Why did you pick that model?"* | Name the metric, then give a reason that is **not** the score. "The tree is 0.35 minutes better, which is noise on 26 rows — but I can read its rules out loud." |
+| *"Why did you pick that model?"* | Name the metric, then give a reason that is **not** the score. "The tree is 0.35 minutes better, which one journey 9 minutes out could cause on 26 rows — but I can read its rules out loud." |
 | *"Couldn't you just use the average?"* | "That is my baseline row, and it is off by 7.98 minutes. The model gets that to 2.35." Point at the row. Always have a baseline row. |
-| **"Isn't 126 rows really quite small?"** ← hard | "Yes. Here is exactly how small: 26 in the test set, so one row is worth 3.8%. I cannot distinguish two models less than about 4 points apart, which is why I am not claiming a winner among the top two." |
+| **"Isn't 126 rows really quite small?"** ← hard | "Yes. Here is exactly how small: 26 in the test set, so one row is 3.8% of the test set, and one journey 9 minutes out would move my MAE by 0.35. I cannot separate two models that close, which is why I am not claiming a winner among the top two." |
 | *"Did you delete data that didn't fit?"* | Point at the cleaning log. Every dropped row, counted, with a reason. Say the before and after shape out loud. |
 | **"Should anyone actually decide anything with this?"** ← hard | A yes or a no, with a number attached, plus what would have to change. "Not yet. It under-predicts long walks by up to 8 minutes, and long walks are exactly the kids who arrive late." |
 
@@ -351,7 +351,7 @@ Show Figure 36.2.
 >
 > Now — the answer that fails is 'no, that's loads actually.' Do you see why? You have just told the person asking that you have not thought about it.
 >
-> The answer that works starts with the word **yes**. 'Yes. And here is exactly how small: twenty-six in the test set, so one row is worth three point eight percent, so I cannot tell apart two models less than about four points apart, which is why I am not claiming a winner among my top two.'
+> The answer that works starts with the word **yes**. 'Yes. And here is exactly how small: twenty-six in the test set, so one row is three point eight percent of the test set, and one journey nine minutes out would move my MAE by 0.35. I cannot separate two models that close, which is why I am not claiming a winner among my top two.'
 >
 > Look at what happened there. You agreed with the criticism and then you were **more precise about it than they were.** That is the single most useful move in this entire subject, and you can practise it right now.
 >
@@ -897,7 +897,7 @@ Three checks, five minutes, exact wording.
 
 > "Isn't a hundred and twenty-six rows really quite small?"
 
-*Good answer:* starts with **yes**, then gets more precise than you did — 26 test rows, 3.8% each, so gaps smaller than that are not rankings. **What to catch:** "no, it's fine." Give them the word "yes" and ask again.
+*Good answer:* starts with **yes**, then gets more precise than you did — 26 test rows, 3.8% of the test set each, so a 0.35-minute gap (one journey 9 minutes out) is not a ranking. **What to catch:** "no, it's fine." Give them the word "yes" and ask again.
 
 **Check 3 — the limitation (spoken, unprompted)**
 
@@ -1404,7 +1404,7 @@ If a student is stuck on the third part, three prompts that work: *what is annoy
 - *"Is 'I don't know' allowed?"* → Yes, and it is strong — when followed by what you *do* know.
 - *"Why do the charts get two minutes?"* → Because the five captions are the argument, not decoration.
 - *"What is not on the rubric?"* → Whether the model scored well.
-- *"Isn't 126 rows really quite small?"* → "Yes — 26 test rows, 3.8% each, so gaps under about 4 points are not rankings."
+- *"Isn't 126 rows really quite small?"* → "Yes — 26 test rows, 3.8% each, and one journey 9 minutes out moves the MAE by 0.35, so gaps that small are not rankings."
 - *"Should anyone decide with your project?"* → A yes or a no, with a number, plus what would change it.
 - *"Why start with the bit you got wrong?"* → It buys trust, and costs nothing, because you were going to be wrong about something.
 - *"C1: what kind of problem is it?"* → Silent. It prints a number and the number is wrong.

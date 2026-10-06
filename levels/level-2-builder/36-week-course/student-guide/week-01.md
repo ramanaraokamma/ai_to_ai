@@ -715,7 +715,7 @@ Editing and saving are two different actions, and only one of them the computer 
 
 1. **Every app you have ever used** is a file of instructions run top to bottom by something. Yours is four lines long; the ones on your phone are millions. The idea does not change.
 2. **A microwave's "add 30 seconds" button** is a tiny literal program. It adds thirty seconds. It does not check whether your food is hot. It cannot.
-3. **The autocomplete that annoys you** — when your phone changes a name to a word — is a computer being literal about a rule somebody wrote. It isn't guessing what you meant. It's applying a rule to what you typed.
+3. **The autocomplete that annoys you** — when your phone changes a name to a word — is a computer being literal about a rule somebody wrote. It isn't understanding what you meant. It's matching what you typed against its rules and word lists.
 4. **A vending machine that takes your money and gives nothing** followed its instructions exactly. Somebody left out a step, the way you left out "open the bag".
 5. **Error messages you have already been ignoring for years.** "File not found." "Connection refused." Those are tracebacks' well-dressed cousins, and they follow the same rule: the last line is the useful one.
 6. **A recipe that says "season to taste"** is a program with a step no computer could ever run. Notice how much of a recipe assumes a human is reading it.

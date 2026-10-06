@@ -1060,7 +1060,7 @@ ________________________________________________________________
 | c | 0.55 | 0.52 | 0.03 | **Just right** | Both reasonable, gap small |
 | d | 1.000 | −0.003 | 1.003 | **Overfitting** | Perfect on studied rows, no better than the average-guesser on new ones |
 | e | 0.48 | 0.61 | −0.13 | **Something's broken** | Better on rows it never saw than on rows it studied |
-| f | 0.304 | 0.131 | 0.173 | **Underfitting** | Depth 1 — both low |
+| f | 0.304 | 0.131 | 0.174 | **Underfitting** | Depth 1 — both low |
 | g | 0.585 | 0.352 | 0.233 | **Just right** *(the best available on this data)* | Highest test score; the gap is real but not runaway |
 
 **A1(h).** Row **(b)**, and people call it **overfitting**. The question that fixes it: **"which number is high?"** Neither. Underfitting is the only row where *nothing* is high.

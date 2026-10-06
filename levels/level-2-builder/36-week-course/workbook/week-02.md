@@ -60,7 +60,7 @@ My prediction: `score` is ________ and `bonus` is ________
 
 What really happened: ____________________________________________
 
-If you got this wrong, write out what line 3 actually **copied**:
+If you got this wrong, write out what line 3 actually **handed over**:
 
 ________________________________________________________________
 
@@ -213,8 +213,8 @@ ________________________________________________________________
 
 **A5. Label the diagram.**
 
-![A tag reading pizza_price sitting on a large box holding 8.50, with four leader lines marked A, B, C and D pointing at the tag, the inside of the box, the box itself, and the equals sign in the line of code underneath](../figures/fig-w02-8-blank-variable-box.svg)
-*Figure W2.1 — Four parts, four different things.*
+![A tag reading pizza_price sitting on a large box holding 8.50, with four leader lines marked A, B, C and D pointing at the tag, the inside of the box, the box itself, and the name pizza_price at the start of the line of code underneath](../figures/fig-w02-8-blank-variable-box.svg)
+*Figure W2.1 — Four labels, three different things.*
 
 **A** = ________________________  **B** = ________________________
 
@@ -772,7 +772,7 @@ ________________________________________________________________
 - Line 3: "score gets bonus." → `score` = **3**, because it was handed *whatever was in `bonus` at that moment*. And where is the 12? **Gone.**
 - Line 4: "bonus gets 10." → `bonus` = 10, and **`score` does not follow.**
 
-**What line 3 copied was the value 3, not a permanent link to the box.** Nothing is tied together. Once the value has been copied, the two boxes have nothing more to do with each other.
+**What line 3 gave `score` was the value 3, not a permanent link to `bonus`.** Once `score` holds 3, re-pointing `bonus` later does not move `score`. (Lists, in Week 11, behave differently.)
 
 **Snippet 2** — real output:
 
@@ -927,11 +927,11 @@ Python's yes-or-no values are `True` and `False`, **with capitals**. Fix: capita
 
 **C** = the **box** — a place in the computer's memory where one value sits.
 
-**D** = the **assignment**, the `=` sign — the instruction *"take the thing on the right and put it in the name on the left."*
+**D** = the **name again** — `pizza_price` written at the start of the line of code. (The line of code is the picture written down: the `=` after it is the instruction *"take the thing on the right and put it in the name on the left."*)
 
-**The two that are the same thing wearing different clothes: A and D's left-hand side.** In the picture, `pizza_price` appears twice — once as the tag on the box and once written at the start of the line of code. **They are the same name.** The line of code *is* the picture, written down.
+**The two that are the same thing wearing different clothes: A and D.** In the picture, `pizza_price` appears twice — once as the tag on the box and once written at the start of the line of code. **They are the same name.** The line of code *is* the picture, written down.
 
-**Reading D out loud:** "pizza_price **gets** 8.50." Never "equals".
+**Reading the line of code out loud:** "pizza_price **gets** 8.50." Never "equals".
 
 **A6.** Real output of all eight checking lines:
 

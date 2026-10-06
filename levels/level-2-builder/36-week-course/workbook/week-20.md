@@ -1062,7 +1062,7 @@ print(np.round(scores.mean(axis=1), 2))
 |---|---|---|
 | a | Missing brackets. It prints the *method* rather than calling it: `<built-in method min of numpy.ndarray object at 0x...>`. **No error.** | `scores.min()`. **A verb takes brackets; a fact does not** |
 | b | `passed` is `(10, 5)` and `names` is `(10,)` — fifty answers, ten names. `IndexError: too many indices for array` | Collapse it first: `names[passed.sum(axis=1) == 5]` |
-| c | `and` wants **one** yes-or-no and you gave it fifty. `ValueError: The truth value of an array... is ambiguous` | Not this term. One condition, or two named masks used one at a time. **`and` never works on arrays** |
+| c | `and` wants **one** yes-or-no and you gave it fifty. `ValueError: The truth value of an array... is ambiguous` | Not this term. One condition, or two named masks used one at a time. **`and` does not work on arrays with more than one element** |
 | d | `test_mean.min()` is a **value** (`60.1`), not a position. `IndexError: only integers, slices ... are valid indices` | Make a mask: `tests[test_mean == test_mean.min()]` |
 | e | The `2` is missing, so everything rounds to whole numbers and a 0-to-1 grid becomes nothing but 0s and 1s. **No error.** | `np.round(scaled, 2)` |
 | f | The comment says "60 or more" and the code says "more than 60". **Everyone on exactly 60 fails.** No error. | `scores >= 60` |

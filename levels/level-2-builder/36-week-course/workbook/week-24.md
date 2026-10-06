@@ -1114,7 +1114,7 @@ music  12  71.83    93
 
 **Read the pattern out loud as a sentence:** `n=("score", "size")` means *"make me a column called `n`, from the `score` column, by counting how many rows are in the pile."* The name you want goes on the left of the `=`; the pair in brackets is *which column* and *what to do with it*.
 
-**And notice how much sturdier this table is than the house one.** All three clubs have twelve or more members. **Chess winning by five marks over fourteen rows is a far stronger claim than Gold's twenty-mark lead over two.**
+**And notice how much sturdier this table is than the house one.** All three clubs have twelve or more members. **Chess winning by about four to five marks over fourteen rows is a far stronger claim than Gold's twenty-mark lead over two.**
 
 **B5.** The full program:
 

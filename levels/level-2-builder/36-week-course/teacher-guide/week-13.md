@@ -125,7 +125,7 @@ Same brackets. Completely different question. Here is the way to say it that wor
 
 Two consequences worth having ready:
 
-- `scores["two"]` is meaningless — a list has no labels. Python raises `TypeError: list indices must be integers`.
+- `scores["two"]` is meaningless — a list has no labels. Python raises `TypeError: list indices must be integers or slices, not str`.
 - `asha[0]` is meaningless *for this dictionary* — there is no key called `0`. Python raises `KeyError: 0`. (Strictly, a dictionary is *allowed* to have a number as a key. We never do it in this course, and you should not raise it unless a student does.)
 
 If the student says "so how do I know which one it is?", the answer is: **look at how the container was made.** Square brackets when it was built → list. Curly braces with colons → dictionary. That is the only tell, and it is enough.

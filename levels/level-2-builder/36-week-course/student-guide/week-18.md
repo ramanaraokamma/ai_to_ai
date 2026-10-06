@@ -40,7 +40,7 @@ Here are five:
 
 1. **Forget `doubled = []`** → `NameError: name 'doubled' is not defined`.
 2. **Put `doubled = []` inside the loop** → it gets emptied every time round, and you end up with one number.
-3. **Write `scores.append(...)` instead of `doubled.append(...)`** → you add to the list you are looping over, which is a genuine nightmare.
+3. **Write `scores.append(...)` instead of `doubled.append(...)`** → you add to the list you are looping over, so it keeps growing and the loop never finishes (no error, no answer, a frozen program).
 4. **Get the indentation wrong** → the append happens once, after the loop.
 5. **Print `scores` at the end instead of `doubled`** → the original numbers, looking entirely plausible.
 
@@ -48,7 +48,7 @@ Now the part that matters. **Which of those five would Python actually complain 
 
 Work through them. Only the first one reliably crashes.
 
-**One out of five gives you an error message.** The other four hand you an answer, and the answer is wrong, and nothing tells you.
+**One out of five gives you an error message.** The other four give you no error message, and nothing tells you anything is wrong.
 
 And now look at what those three lines are actually *for*. What is the interesting part — the part that is the job?
 
@@ -335,7 +335,7 @@ identical? True
 | Total a column | **yes** | `sum(arr)` — Python's own `sum` from Week 12 works fine on an array |
 | Make a blank grid | **yes** | `np.zeros((r, c))` |
 | Keep only the scores above 50 | **not yet** | needs a **boolean mask** — that is Week 20, and it is one line too |
-| Count how many players per team | **never** | needs the team **names**, and an array has none. This belongs to a dictionary, forever |
+| Count how many players per team | **never** | needs the team **names**, and array arithmetic (`*` `+` `/`) has none. This belongs to a dictionary for now; later tools can count text too |
 | Ask for a guess until the user gets it right | **never** | a `while` loop waiting on a human. Arrays have nothing to say about people |
 | Print a formatted table, row by row | **never** | that is output, not arithmetic |
 
@@ -1184,7 +1184,7 @@ Everybody has an answer to that, including the teacher.
 
 **1. Is broadcasting a good feature or a bad one?**
 
-*Hint:* this one is genuinely argued about by people who write numerical software for a living, so you are not settling it — you are joining it. The case **for** is overwhelming and you felt it today: without broadcasting, `scores * 2` would be an error, you would have to build an array of six 2s first, and `celsius * 9 / 5 + 32` would need three of them. Almost every formula you will ever write would triple in length. And it costs nothing. The case **against** is the last five minutes of the lesson: broadcasting makes some mistakes **impossible to detect.** Nobody deliberately adds a row of three to a column of three, and numpy cheerfully produced nine numbers and said nothing. Experienced people lose real hours to this, and it has put wrong numbers into real published work. So the question is not *is it good* — it is **what does a careful person do about it?** And notice that the answer is not "avoid it".
+*Hint:* this one is genuinely argued about by people who write numerical software for a living, so you are not settling it — you are joining it. The case **for** is overwhelming and you felt it today: without broadcasting, `scores * 2` would be an error, you would have to build an array of six 2s first, and `celsius * 9 / 5 + 32` would need three of them. Almost every formula you will ever write would triple in length. And it costs nothing. The case **against** is the last five minutes of the lesson: broadcasting makes some mistakes **impossible to detect.** Nobody deliberately adds a row of three to a column of three, and numpy cheerfully produced nine numbers and said nothing. Experienced people lose real hours to this, and it can put wrong numbers into real work. So the question is not *is it good* — it is **what does a careful person do about it?** And notice that the answer is not "avoid it".
 
 **2. `scores * 2` on a list gave twelve numbers and nothing complained. `scores + 5` on a list crashed. Which behaviour do you prefer, and why?**
 
@@ -1334,7 +1334,7 @@ the first time since Week 13.*
 - **`np.arange(6)` is six numbers, 0 to 5.** Same off-by-one as Week 7's `range`.
 - **`np.zeros((r, c))` needs double brackets**, because the shape is one thing — and it gives you `float64`.
 - **`list(arr) == loop_result`**, not your eyes, and not `arr == loop_result` — that one answers a different question.
-- **Loops are for people and words; arrays are for numbers.** Some loops never retire, and that is not a failing of numpy.
+- **Loops are for people and words; arrays are for numbers.** Some loops never retire *to array arithmetic*, and that is not a failing of numpy.
 
 ### Syntax reminder card
 

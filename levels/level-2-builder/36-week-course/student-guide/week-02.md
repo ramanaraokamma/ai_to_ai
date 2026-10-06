@@ -701,7 +701,7 @@ Then the game, **"What's In The Box?"** — a sequence of moves narrated as line
 | "a gets b" | `a` = **3**, `b` = 3 — *and where's the 5?* Gone. |
 | "b gets 10" | `a` = **3**, `b` = 10 — *did `a` change? Why not?* |
 
-**That last row is the subtle one and it catches adults.** `a gets b` copied the **value** that was in `b` at that moment. It did **not** tie the two boxes together, so changing `b` afterwards leaves `a` alone. (There is a runnable proof of this in Trick 4 below.)
+**That last row is the subtle one and it catches adults.** `a gets b` means `a` now holds the same number `b` held at that moment. It did **not** tie the two names together, so re-pointing `b` afterwards leaves `a` alone. (Lists, in Week 11, behave differently.) (There is a runnable proof of this in Trick 4 below.)
 
 ### At the keyboard
 
@@ -761,7 +761,7 @@ Type of weeks_saved: <class 'int'>
 
 **2. "What's the difference between `8.5` and `"8.5"` if they look the same on screen?"**
 
-*Hint:* everything, and the screen is lying to you. Try halving each of them. One works and one gives a `TypeError`. Then ask: is there **anything** you can put on a screen that would let a person tell them apart? (There isn't. That's why `type()` exists.)
+*Hint:* everything, and the screen is lying to you. Try halving each of them. One works and one gives a `TypeError`. Then ask: is there **anything** you can put on a screen that would let `print` show a person which is which? (There isn't: `print` shows them identically. That's why `type()` exists.)
 
 **3. "Which is the right kind for money — `int` or `float`?"** *(Nobody fully agrees, and that's the point.)*
 
@@ -803,7 +803,7 @@ The cure is not an explanation, it's a habit: **read every `=` out loud as "gets
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| After `b = a`, changing `a` changes `b` too, because they're linked. | `b = a` copied the **value that was in `a` at that instant**. Nothing is linked. Change `a` afterwards and `b` doesn't move. |
+| After `b = a`, changing `a` changes `b` too, because they're linked. | `b` now holds the same number `a` held at that instant. For numbers like these, re-pointing `a` later does not move `b`. (Lists, in Week 11, behave differently.) |
 
 ```python
 a = 5
@@ -821,8 +821,8 @@ print(a, b)
 ## 🌍 Where You've Seen This
 
 1. **Every form you have ever filled in on a website.** Your age goes into a box, typed as characters. Somewhere behind the page, a programmer had to turn `"12"` into `12` before anything could be added to it. That conversion is exactly `int(input(...))` — which is Week 4.
-2. **A spreadsheet cell showing `#VALUE!`.** That is a `TypeError` in a suit. You put text where a formula wanted a number, and the spreadsheet refused rather than guessing.
-3. **Phone numbers stored as text on purpose.** A phone number looks like a number and must never be treated as one — the leading zero matters, and you'd never add two together. `"0771..."` keeps the zero; `0771...` as a number would lose it.
+2. **A spreadsheet cell showing `#VALUE!`.** That is a `TypeError` in a suit. You put text where a formula wanted a number, and the spreadsheet could not make a number out of the text. (Spreadsheets do sometimes guess when the text looks like a number; Python never does.)
+3. **Phone numbers stored as text on purpose.** A phone number looks like a number and must never be treated as one — the leading zero matters, and you'd never add two together. `"0771..."` keeps the zero; `0771...` as a number would not even be allowed in Python, and other programs would drop the zero.
 4. **A shopping site showing `£8.5`.** Somebody stored a float and printed it raw. Next week you'll know how to fix that in three characters.
 5. **Autocorrect changing a name.** A box got the wrong value put in it and the old one is gone with no undo. Same box, new slip.
 6. **The settings screen on any app.** Every switch is a `bool`, every text field a `str`, every "how many minutes?" an `int` — and somebody had to name all those boxes.

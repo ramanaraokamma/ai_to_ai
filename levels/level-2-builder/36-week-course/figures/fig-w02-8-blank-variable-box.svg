@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
   <title>Label the four parts of this variable</title>
-  <desc>A tag reading pizza_price sits on top of a large box holding eight point five zero. Four leader lines marked A, B, C and D point at the tag, the inside of the box, the box itself and the equals sign in the line of code underneath. Blank write-in lines wait for each label.</desc>
+  <desc>A tag reading pizza_price sits on top of a large box holding eight point five zero. Four leader lines marked A, B, C and D point at the tag, the inside of the box, the box itself and the name pizza_price written at the start of the line of code underneath. Blank write-in lines wait for each label.</desc>
   <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Label the four parts of this variable</text>
   <rect x="300" y="92" width="180" height="36" rx="8" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
   <text x="390" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">pizza_price</text>

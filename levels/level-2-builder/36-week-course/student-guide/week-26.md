@@ -994,7 +994,7 @@ For each chart: what it shows, and **what it hides — specifically.**
 
 **2. A histogram deliberately throws away every column except one. Is that a bug or the point?**
 
-*Hint:* start by listing exactly what the score histogram threw away — name, age, house, club, hours. Five of six columns, gone. That is why it is readable in half a second, and it is also why it cannot tell you *who* the five students in the 90s bin are. Now compare it with the scatter, which keeps two columns and is already harder to read. Then extend the pattern: what would a chart that kept all six columns look like, and would anybody be able to read it? There is a rough limit worth arguing about — a chart can hold about three things at once before nobody can hold it in their head. **Is "hides five columns" a criticism, or a specification?**
+*Hint:* start by listing exactly what the score histogram threw away — name, age, house, club, hours. Five of six columns, gone. That is why it is readable in half a second, and it is also why it cannot tell you *who* the five students in the top bin (90.1 to 97) are. Now compare it with the scatter, which keeps two columns and is already harder to read. Then extend the pattern: what would a chart that kept all six columns look like, and would anybody be able to read it? There is a rough limit worth arguing about — a chart can hold about three things at once before nobody can hold it in their head. **Is "hides five columns" a criticism, or a specification?**
 
 **3. Mean 72.1, median 72.5, one broad hump — that mean is fine. Mean 62.0, median 62.5, two clumps — that mean is misleading. In both cases the two numbers were almost identical. So what actually decided it?**
 

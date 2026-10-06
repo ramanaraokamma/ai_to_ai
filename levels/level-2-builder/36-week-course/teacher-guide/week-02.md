@@ -1233,7 +1233,7 @@ bonus = 10
 
 At the end: **`score` holds 3** and **`bonus` holds 10**.
 
-This is the one that catches people, so here is the reasoning line by line. After line 3, `score` holds 3, because it was given *whatever was in `bonus` at that moment*, which was 3. Line 4 then changes `bonus` to 10 — and `score` **does not follow**, because line 3 copied the *value*, not a permanent link to the box. Verified:
+This is the one that catches people, so here is the reasoning line by line. After line 3, `score` holds 3, because it was given *whatever was in `bonus` at that moment*, which was 3. Line 4 then changes `bonus` to 10 — and `score` **does not follow**, because line 3 gave `score` the *value* 3, not a permanent link to `bonus`: re-pointing `bonus` later does not move `score`. (For numbers. Lists in Week 11 behave differently: two names can share one list.) Verified:
 
 ```python
 score = 12

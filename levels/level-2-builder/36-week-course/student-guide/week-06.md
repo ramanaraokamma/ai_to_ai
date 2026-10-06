@@ -1059,7 +1059,7 @@ A test that passes on both the broken and the correct version has told you nothi
 
 1. **Every report card you have ever been given.** A number turned into a letter by a chain of thresholds — and the boundary problem is right there in the paper: somebody got 89.
 2. **Your phone's battery icon.** Full, fine, charge soon, charge **now** — four bands off one number, and somebody had to choose the boundaries and put them in the right order.
-3. **Delivery-fee tiers on a shopping site.** Spend 300 and get 15% off, spend 199 and get 5%. Worked Example 1 is a real screen you have seen, including the one-rupee cliff.
+3. **Discount tiers on a shopping site.** Spend 300 and get 15% off, spend 199 and get 5%. Worked Example 1 is a real screen you have seen, including the one-rupee cliff.
 4. **A game's difficulty rating, or a star rating out of five.** Same shape: a number in, a band out.
 5. **An air-quality or UV index — "good, moderate, unhealthy".** A chain of thresholds published by a government, argued about by scientists, because **where the boundaries go is a decision, not a discovery.**
 6. **A cinema's ticket page with infant / child / adult / senior prices.** Notice those use `<` rather than `>=`, so the **lowest** threshold has to go first. The rule isn't "highest number at the top" — it is **"most restrictive first"**, and which number that is depends on which way the comparison points.

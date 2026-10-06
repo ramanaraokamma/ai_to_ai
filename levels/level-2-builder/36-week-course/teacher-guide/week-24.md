@@ -1440,7 +1440,7 @@ chess  14  76.07
 music  12  71.83
 ```
 
-**Hand-check:** 12 + 14 + 12 = 38 ✔. And notice: **all three groups are big.** Chess winning by five marks over twelve-plus rows is a much sturdier claim than Gold's twenty-mark lead over two. Ask them which of the two results they would be willing to say out loud in assembly.
+**Hand-check:** 12 + 14 + 12 = 38 ✔. And notice: **all three groups are big.** Chess winning by about four to five marks over twelve-plus rows is a much sturdier claim than Gold's twenty-mark lead over two. Ask them which of the two results they would be willing to say out loud in assembly.
 
 ---
 

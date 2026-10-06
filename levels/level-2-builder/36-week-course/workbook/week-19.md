@@ -39,7 +39,7 @@ ________________________________________________________________
 
 ## 🔎 Predict the Output
 
-**Write your prediction in pen before you run anything.** Every snippet starts with `import numpy as np`. **Two of these four run cleanly and give a wrong answer to the question in the comment.**
+**Write your prediction in pen before you run anything.** Every snippet starts with `import numpy as np`. **P1 runs cleanly and gives a wrong answer to the question in its comment, and P4 shows a check that cannot catch a wrong axis.**
 
 ### P1 — the question in the comment
 

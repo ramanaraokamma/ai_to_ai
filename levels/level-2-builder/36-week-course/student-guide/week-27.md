@@ -805,7 +805,7 @@ that is strong, and it is NOT proof that wides cause runs
 
 **And notice the title.** *"The overs with the most wides were also the biggest overs"* — a description of the picture. Not "wides caused the runs".
 
-Also notice `ax.set_ylim(0, 20)` on a **line** chart here. Runs and wides both have a real, meaningful zero — an over with no runs in it is a normal thing — so starting at zero is the honest choice, and matplotlib would have truncated it if left alone.
+Also notice `ax.set_ylim(0, 20)` on a **line** chart here. Runs and wides both have a real, meaningful zero — an over with no runs in it is a normal thing — so starting at zero is the honest choice, and without `set_ylim` matplotlib would have picked its own limits.
 
 ### Worked Example 3 — Three correlations, and the third one ruins the first (school)
 

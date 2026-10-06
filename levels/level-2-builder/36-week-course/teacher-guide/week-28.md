@@ -682,7 +682,7 @@ Have them read `(10, 2)` and `(10,)` out loud. Have them write both on the SHAPE
 
 **Say this:**
 
-> "Hundred and fifty flowers. Four measurements each. Somebody actually went out and measured a hundred and fifty irises with a ruler, in 1936, and it is still the first dataset everybody learns on. You did not download anything — it came inside the library.
+> "Hundred and fifty flowers. Four measurements each. Somebody actually went out and measured a hundred and fifty irises with a ruler, back in the 1930s, and it is still the first dataset everybody learns on. You did not download anything — it came inside the library.
 >
 > `X shape: (150, 4)`. A hundred and fifty rows, four columns. `y shape: (150,)`. A hundred and fifty answers, ten comma nothing style. Same two shapes as our playlist, just bigger.
 >
@@ -935,7 +935,7 @@ Yes, and that is a genuinely different kind of problem. If `y` is chill-or-hype,
 
 **"Why is the iris dataset flowers? Nobody cares about flowers."**
 
-Fair. It is flowers because a statistician called Ronald Fisher used it in 1936, and it stuck — the way "hello, world" stuck. What makes it useful is not the flowers: it is that it is small enough to print, it has three classes rather than two, and two of the three classes genuinely overlap, so a model *cannot* get 100% and you get to see honest mistakes. A dataset where everything works is a bad teaching dataset. There is also a real problem with its history worth knowing: Fisher was a prominent eugenicist, and some people now avoid the dataset for that reason and use others instead. Both positions are held by serious people.
+Fair. It is flowers because a statistician called Ronald Fisher published an analysis of it in 1936 (the flowers were measured by Edgar Anderson), and it stuck — the way "hello, world" stuck. What makes it useful is not the flowers: it is that it is small enough to print, it has three classes rather than two, and two of the three classes genuinely overlap, so a model *cannot* get 100% and you get to see honest mistakes. A dataset where everything works is a bad teaching dataset. There is also a real problem with its history worth knowing: Fisher was a prominent eugenicist, and some people now avoid the dataset for that reason and use others instead. Both positions are held by serious people.
 
 **"Does the order of the columns in `X` matter?"**
 

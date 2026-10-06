@@ -238,7 +238,7 @@ A perfect score and a worthless model, in the same row, on the same data. That i
 
 On MAE they are a dead heat — 42.77 against 42.79, a difference of two hundredths on a scale running to 346. On RMSE, linear wins. Why? Because kNN has **nine** misses over 100 and linear has only **five**. RMSE squares the misses, so those extra big ones weigh heavily. Typical performance: identical. Big-miss behaviour: linear is better. **That is a real difference that MAE cannot see, and it is why we compute both.**
 
-**Point 4 — the depth-5 tree is worse than both, and that is honest.** Test R² 0.260 against 0.453 for the line. Trees are not the best tool for everything, and this dataset — smooth medical measurements, no sharp thresholds — is exactly the shape a straight line handles well and a staircase handles badly. Do not hide that. The tree's advantage was always *readability*, and this week is the week it costs you.
+**Point 4 — the depth-5 tree is worse than both, and that is honest.** Test R² 0.260 against 0.453 for the line. Trees are not the best tool for everything, and this dataset — probably, though we did not test it: smooth medical measurements, no sharp thresholds — is exactly the shape a straight line handles well and a staircase handles badly. Do not hide that. The tree's advantage was always *readability*, and this week is the week it costs you.
 
 ### 7. The depth curve — the most useful picture in the subject
 
@@ -807,7 +807,7 @@ Then one more pass, and this one is quieter but it matters:
 >
 > Because kNN has nine misses bigger than 100 and the line has only five. Typical performance, identical. Big-miss behaviour, the line's better. **MAE couldn't see that. RMSE could.** That's why you print both.
 >
-> And the last thing, which is a bit of a blow after the last two weeks: **the tree lost.** 0.260 against the line's 0.453. Trees aren't the best tool for everything. These are smooth medical measurements with no sudden cut-offs in them, and that's exactly the shape a line handles well and a staircase handles badly. The tree still wins on one thing — you can read it — and this week is the week you find out what that costs."
+> And the last thing, which is a bit of a blow after the last two weeks: **the tree lost.** 0.260 against the line's 0.453. Trees aren't the best tool for everything. My best guess, and we haven't tested it, is that these are smooth medical measurements with no sudden cut-offs in them, which is exactly the shape a line handles well and a staircase handles badly. The tree still wins on one thing — you can read it — and this week is the week you find out what that costs."
 
 ---
 
@@ -1025,7 +1025,7 @@ This is not a decoration. It is the single sentence this whole term has been bui
 
 1. **Find the depth where train first hits 1.000.** On this data the tree with no limit reaches a real depth of 19 with 346 leaves. Run `DecisionTreeRegressor(random_state=0)` and print `get_depth()` and `get_n_leaves()`. Then the question: *"You set `max_depth=25`. Why does `get_depth()` say 19?"* (Because `max_depth` is a **ceiling, not a target** — the tree stops when there is nothing impure left to split.)
 2. **Turn the kNN dial instead.** Loop `n_neighbors` from 1 to 25, recording train and test R². The curve runs **backwards**, because `k = 1` is the complex end. At `k = 1` the train score is a perfect 1.000 — every point is its own nearest neighbour. *"You've just found Sam again, in a different model."*
-3. **Explain the depth-9 bump.** Test R² jumps from 0.186 to 0.283 and then falls to 0.117. *"Is depth 9 genuinely better than depth 6? How would you find out?"* (One test patient is worth about 0.01 of R², so 0.1 is about ten patients. Re-run with a different `random_state` on the split and watch the bump move or vanish. That is the honest answer, and it is a real technique.)
+3. **Explain the depth-9 bump.** Test R² jumps from 0.186 to 0.283 and then falls to 0.117. *"Is depth 9 genuinely better than depth 6? How would you find out?"* (One test patient is worth about 0.01 of R², so 0.1 is about ten patients. Re-run with a different `random_state` on the split and watch the bump move or vanish (and notice the peak depth moves too: with `random_state=1` it is depth 2, so "depth 4" belongs to this split). That is the honest answer, and it is a real technique.)
 4. **Argue the shipping decision properly.** The line wins on test R² (0.453) and RMSE (53.85). The depth-4 tree scores 0.352 — but it can be printed as rules a doctor could read. *"Which do you ship, and to whom?"* Insist on numbers *and* a named audience in the answer. There is no single right answer and the reasoning is the marks.
 5. **Break the fairness on purpose.** Move `train_test_split` inside the loop and remove `random_state` from it. Run it. The curve becomes a jagged mess with no shape at all. *"Nothing errored. What exactly is this chart measuring?"* (Shuffle luck.) A student who has seen a silent bug produce a confident wrong picture will check for it forever.
 
@@ -1051,7 +1051,7 @@ No, and there is no such number. It depends on how many rows you have, how noisy
 
 **"Our tree's test score jumped back up at depth 9. Doesn't that break the story?"**
 
-It is a genuinely sharp observation and the honest answer is: the curve is bumpy because 89 test patients is not very many. One patient is worth about 0.01 of R², so a jump of 0.1 is about ten patients changing sides. Look at the trend across all fifteen steps rather than step to step — and look at the `gap` column, which grows almost monotonically from 0.17 to 0.96 and never recovers. If you want to test it properly, re-run with a different `random_state` on the split and watch whether the bump survives. It mostly does not.
+It is a genuinely sharp observation and the honest answer is: the curve is bumpy because 89 test patients is not very many. One patient is worth about 0.01 of R², so a jump of 0.1 is about ten patients changing sides. Look at the trend across all fifteen steps rather than step to step — and look at the `gap` column, which grows almost monotonically from 0.17 to 0.96 and never recovers. If you want to test it properly, re-run with a different `random_state` on the split and watch whether the bump survives. With `random_state=1` it does not, and the whole curve shifts too: the test peak moves to depth 2 (0.232) and R² goes negative from depth 5, so the peak depth is split-dependent.
 
 **"If the training score is useless, why compute it at all?"**
 
@@ -1139,7 +1139,7 @@ None of these need syntax they do not already have.
 
 1. **`max_depth` is a ceiling, not a target** (Variation — harder, item 1). `DecisionTreeRegressor(random_state=0)` reaches a real depth of **19** with **346** leaves. Set `max_depth=25` and it still says 19. Why? Because it ran out of impure leaves to split.
 2. **The kNN dial, backwards** (item 2). Loop `n_neighbors` 1 to 25. At `k = 1` the train R² is a perfect 1.000, because every training point is its own nearest neighbour. *"You have found Sam in a completely different model. What's the dial, and which end is complex?"*
-3. **Test the depth-9 bump** (item 3). Re-run the whole depth loop with `random_state=1` on the split instead of 42 and see whether the bump survives. It generally does not. That is how you tell a real effect from noise, and it is a real technique rather than an exercise.
+3. **Test the depth-9 bump** (item 3). Re-run the whole depth loop with `random_state=1` on the split instead of 42 and see whether the bump survives. With `random_state=1` the bump goes away, but so does more: the whole curve moves, the test peak lands at depth 2 (0.232) instead of depth 4, and test R² goes negative from depth 5. So the bump is noise, and the best depth itself belongs to this split, not to the dataset. That is how you tell a real effect from noise, and it is a real technique rather than an exercise.
 4. **The shipping argument** (item 4). Write 100 words naming a model, citing at least two numbers, *and* naming who the prediction is for. Then argue the opposite case with equal seriousness.
 5. **Break the fairness on purpose** (item 5). Move the split inside the loop, drop `random_state`, and look at the resulting mess. Nothing errors. *"What is this chart measuring?"*
 6. **Add the worst single miss to the report function.** One line — `np.abs(y_test - guesses).max()` — and it turns the MAE/RMSE conversation from a rule into an observation. Real values: kNN 138.80, tree depth 5 201.00, linear 154.49. Then the puzzle: *"The line has the worse single miss and the better RMSE. How?"* (Nine kNN misses over 100 against the line's five.)

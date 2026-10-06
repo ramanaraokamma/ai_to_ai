@@ -102,9 +102,9 @@ That sentence takes six seconds. It is the difference between being **believed**
 | They ask | The shape of a good answer |
 |---|---|
 | *"How do you know the model actually works?"* | "I don't, fully. I know it was off by 2.35 minutes on 26 journeys it had never seen. Guessing the average is off by 7.98. That is the comparison." |
-| *"Why did you pick that model?"* | Name the metric, then give a reason that is **not** the score. "The tree is 0.35 minutes better, which is noise on 26 rows — but I can read its rules out loud." |
+| *"Why did you pick that model?"* | Name the metric, then give a reason that is **not** the score. "The tree is 0.35 minutes better, which one journey 9 minutes out could cause on 26 rows — but I can read its rules out loud." |
 | *"Couldn't you just use the average?"* | "That is my baseline row, and it is off by 7.98 minutes. The model gets that to 2.35." Point at the row. |
-| **"Isn't 126 rows really quite small?"** ← hard | "Yes. Here is exactly how small: 26 in the test set, so one row is worth 3.8%. I cannot distinguish two models less than about 4 points apart, which is why I am not claiming a winner among my top two." |
+| **"Isn't 126 rows really quite small?"** ← hard | "Yes. Here is exactly how small: 26 in the test set, so one row is 3.8% of the test set, and one journey 9 minutes out would move my MAE by 0.35. I cannot separate two models that close, which is why I am not claiming a winner among my top two." |
 | *"Did you delete data that didn't fit?"* | Point at the cleaning log. Every dropped row, counted, with a reason. Say the before and after shape out loud. |
 | **"Should anyone actually decide anything with this?"** ← hard | A yes or a no, with a number attached, plus what would have to change. "Not yet. It under-predicts long walks by up to 8 minutes, and long walks are exactly the kids who arrive late." |
 
@@ -960,7 +960,7 @@ Ask your audience this, afterwards:
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "No, 126 rows is loads actually." | "Yes. 26 in the test set, so one row is worth 3.8%. I cannot distinguish two models less than about 4 points apart, which is why I am not claiming a winner among my top two." |
+| "No, 126 rows is loads actually." | "Yes. 26 in the test set, so one row is 3.8% of the test set, and one journey 9 minutes out would move my MAE by 0.35. I cannot separate two models that close, which is why I am not claiming a winner among my top two." |
 
 The wrong answer tells the person asking that you have not thought about it. **Agree, then out-precise them.** It is the single most useful move in this whole subject.
 

@@ -268,7 +268,7 @@ Do not let the lesson become "loops are bad". They are not, and three of the loo
 | Build the numbers 0 to n | **yes** | `np.arange(n)` |
 | Total a column | **yes** | `sum(arr)` — Python's own `sum`, from Week 12, works fine on an array |
 | Keep only the scores above 50 | **not yet** | needs a boolean mask — **Week 20** |
-| Count how many players per team | **no** | needs the team *names*, which an array does not have. This one belongs to a dictionary, forever. |
+| Count how many players per team | **no** | needs the team *names*, which array arithmetic (`* + /`) does not have. This one belongs to a dictionary for now (later tools such as `np.unique` and pandas `groupby` can count text, but not by `* + /`). |
 | Ask the user for a guess until they get it right | **no** | a `while` loop waiting on a human. Arrays have nothing to say about it. |
 | Print a formatted table row by row | **no** | that is output, not arithmetic. |
 
@@ -609,7 +609,7 @@ we put in 3 and 3. How many came out?
 
 1. **Do the reflection half properly, and give it the whole hour.** Page 18.1, the Term 2 reflection sheet, plus the Bug Log review. Read every entry from Weeks 10 to 17 out loud. Ask for their three most valuable. That is genuinely worth an hour and it is the half of this week that matters most for Term 3.
 2. **Do the eight cards as a *paper* exercise:** for each card, write the one-liner *next to it* without running it. Do not mark them right or wrong — collect them, check them yourself, and hand them back next week with the party. A prediction written down is worth a great deal even unrun.
-3. **Sort the cards into three piles by hand:** *retires with `arr * 2`-style maths*, *needs something we haven't learned yet* (cards about keeping only the big ones — that is Week 20), and *will never retire* (anything about names, text or waiting for a person). That is §7 of this file, done with hands, and it is a real idea.
+3. **Sort the cards into three piles by hand:** *retires with `arr * 2`-style maths*, *needs something we haven't learned yet* (cards about keeping only the big ones — that is Week 20), and *will never retire to array arithmetic* (anything about names, text or waiting for a person). That is §7 of this file, done with hands, and it is a real idea.
 4. **Fix the install before Week 19**, which is `axis=0` versus `axis=1` and is even less doable on paper.
 
 | If this fails | Do this instead |
@@ -656,7 +656,7 @@ They should get to something like:
 
 1. Forget `doubled = []` → `NameError: name 'doubled' is not defined`.
 2. Put `doubled = []` **inside** the loop → it gets emptied every time, and you end up with one number.
-3. `scores.append(...)` instead of `doubled.append(...)` → you add to the list you are looping over, which is a genuine nightmare.
+3. `scores.append(...)` instead of `doubled.append(...)` → you add to the list you are looping over, so it keeps growing and the loop never finishes (no error, no answer, a frozen program).
 4. Indentation wrong → the append happens once, after the loop.
 5. Print `scores` at the end instead of `doubled`.
 
@@ -664,7 +664,7 @@ They should get to something like:
 
 Let them work through it. Only the first reliably crashes.
 
-> "One. **One out of five gives you an error message.** The other four give you an answer, and it's the wrong one, and nothing tells you.
+> "One. **One out of five gives you an error message.** The other four give you no error message, and nothing tells you anything is wrong.
 >
 > And now look at what those three lines are actually *for*. What's the interesting part — the part that is the job?"
 
@@ -1210,7 +1210,7 @@ Use this to translate:
 None of these need syntax from a later week.
 
 1. **The loop that will not retire.** Give them a ninth card: `big = []` / `for s in scores:` / `if s > 50:` / `big.append(s)`. Ask them to retire it. They cannot — and the interesting part is working out *why*: array maths does the same thing to every number, and this loop does different things to different numbers. **That is exactly what Week 20's boolean masks are for.** A student who can say that sentence has understood the boundary of this week's tool.
-2. **A loop that will never retire.** Card ten: `counts = {}` / `for r in squad:` / `counts[r["team"]] = counts.get(r["team"], 0) + 1`. Why not? Because it needs the **team names**, and an array does not have any. Some loops are about words, and words are what dictionaries are for. Ask: *"is that a limitation of numpy, or is numpy the wrong tool?"*
+2. **A loop that array arithmetic will never retire.** Card ten: `counts = {}` / `for r in squad:` / `counts[r["team"]] = counts.get(r["team"], 0) + 1`. Why not? Because it needs the **team names**, and an array does not have any. Some loops are about words, and words are what dictionaries are for. Ask: *"is that a limitation of numpy, or is numpy the wrong tool?"*
 3. **Time it themselves.** Both halves, on a million numbers, three times each, and report the *range* rather than one number. A measurement taken once is not a measurement.
 4. **Predict five broadcasts.** For each pair of shapes, will it work, and what shape comes out? `(6,)` and `(6,)`; `(6,)` and one number; `(6,)` and `(4,)`; `(3,)` and `(3, 1)`; `(2, 3)` and `(3,)`. Write predictions first. *(Works `(6,)`; works `(6,)`; refuses; works and gives `(3, 3)` — the trap; works and gives `(2, 3)`.)*
 5. **How wrong is wrong?** Take the `(3, 3)` answer and total it with `sum()`. It gives `[150 42 237]` instead of `143`. Then the question: *"if you'd printed only the total and never the array, would you have noticed?"* (No. And that is why you print the shape, not just the answer.)
@@ -1301,7 +1301,7 @@ Same six numbers. Two different containers, two different ways of showing themse
 
 The case for it is overwhelming and you have felt it already today. Without broadcasting, `scores * 2` would be an error — you would have to build an array of six 2s first, every time, and `celsius * 9 / 5 + 32` would need three of them. Almost every formula you will ever write would triple in length and become much harder to read. And it costs nothing: numpy does not really copy the 2 six times, it just reads the same value repeatedly. **The feature that makes numpy pleasant to write is broadcasting.**
 
-The case against is the thing you saw at the end of the lesson. Broadcasting makes some **mistakes impossible to detect**. A `(3,)` and a `(3, 1)` are almost certainly a typo — nobody deliberately adds a row of three to a column of three — and numpy cheerfully produces nine numbers and says nothing. Experienced people lose real hours to this, and it has put wrong numbers into real published work. A stricter rule — *shapes must match exactly, say what you mean* — would catch every one of those, at the cost of making every formula longer.
+The case against is the thing you saw at the end of the lesson. Broadcasting makes some **mistakes impossible to detect**. A `(3,)` and a `(3, 1)` are almost certainly a typo — nobody deliberately adds a row of three to a column of three — and numpy cheerfully produces nine numbers and says nothing. Experienced people lose real hours to this, and it can put wrong numbers into real work. A stricter rule — *shapes must match exactly, say what you mean* — would catch every one of those, at the cost of making every formula longer.
 
 Where does that leave you? With the position the whole numerical-computing world has actually settled on, which is not "broadcasting is good" or "broadcasting is bad" but a **habit**: *broadcasting is powerful enough to be worth the danger, so you check the shape of your answers.* Newer array libraries have tightened some of the edges precisely because of bugs like today's, and none of them have removed it, because nobody wants to write the long version.
 
@@ -1522,7 +1522,7 @@ Two good answers, and both are right. **Tools** — `records.py`, `filter_by`, `
 | (e) | makes a blank 5 by 3 grid | **retires** | `np.zeros((5, 3))` |
 | (f) | squares every score | **retires** | `arr ** 2` |
 | (g) | keeps only the scores above 50 | **not yet** | needs a boolean mask — **Week 20** |
-| (h) | counts how many players per team | **never** | needs the team *names*, and an array has none. This belongs to a dictionary. |
+| (h) | counts how many players per team | **never** | needs the team *names*, and array arithmetic has none. This belongs to a dictionary for now. |
 | (i) | asks for a guess until the user gets it right | **never** | a `while` loop waiting on a person. Arrays have nothing to say about people. |
 | (j) | prints one formatted table row per record | **never** | that is output, not arithmetic. |
 
@@ -1718,7 +1718,7 @@ That last line is a free cross-check worth pointing out: **the eight percentages
 Usually card 4 or 6 — anything with `range(len(...))` and indexes in it, because all the index-juggling disappears. Model answer: *"the plays-per-minute one, because the loop version had `plays[i]` and `minutes[i]` in it and I always have to check I've got the `i`s in the right places. The one line just says plays divided by minutes."*
 
 **18.4(b) Did any refuse to retire? Which, and why?**
-Any honest answer is good. The two expected ones: a loop with an `if` in it (needs Week 20's mask) and a loop building a counting dictionary (needs names, so it never retires). **A student who correctly identifies the `if` loop as "not yet, and I think there's a tool coming" has done something genuinely impressive.**
+Any honest answer is good. The two expected ones: a loop with an `if` in it (needs Week 20's mask) and a loop building a counting dictionary (needs names, so array arithmetic cannot retire it). **A student who correctly identifies the `if` loop as "not yet, and I think there's a tool coming" has done something genuinely impressive.**
 
 ### Page 18.5 — The identical-output proof
 
@@ -1787,7 +1787,7 @@ Model answer:
 ### Answers to every question posed in the lesson
 
 - *"How many ways could you get those three lines wrong?"* → Four or five: no empty list; the empty list inside the loop; appending to the wrong list; wrong indentation; printing the wrong variable.
-- *"How many of those would Python complain about?"* → One. The other four give you a wrong answer quietly.
+- *"How many of those would Python complain about?"* → One. The other four give no error message: three hand back a wrong answer quietly, and the `scores.append` one never finishes.
 - *"Which bit of the loop is the actual job?"* → `* 2`. Everything else is machinery for visiting things.
 - *"What goes in the revisit pile?"* → Any card whose two versions disagree. It is a list, not a verdict.
 - *"48 plus 32?"* → 80. *"12 plus 20?"* → 32. Elementwise is just arithmetic, done six times, by somebody else.

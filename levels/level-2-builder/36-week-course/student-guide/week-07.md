@@ -244,7 +244,7 @@ final total = 15
 
 Check it by hand: 1 + 2 + 3 + 4 + 5 = 15 ✔
 
-**`total += n` is new and it needs its own sentence.** It means, exactly: *take what is in `total`, add `n` to it, and put the answer back in `total`.* It is a shortcut for `total = total + n`, and the two are **identical in every way**. The shortcut is just shorter, and the variable's name appears once instead of twice, so you cannot write `total = totl + n` and lose ten minutes to it.
+**`total += n` is new and it needs its own sentence.** It means, exactly: *take what is in `total`, add `n` to it, and put the answer back in `total`.* It is a shortcut for `total = total + n`, and for numbers the two are **identical**. The shortcut is just shorter, and the variable's name appears once instead of twice, so you cannot write `total = totl + n` and lose ten minutes to it.
 
 **Look at the middle column of that output. One, three, six, ten, fifteen.** That is **not five totals. That is one box, five times.** Same box. The number in it changes.
 

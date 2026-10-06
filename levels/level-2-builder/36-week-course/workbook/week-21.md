@@ -1194,7 +1194,7 @@ Model sentence:
 
 | # | What happens | The fix |
 |---|---|---|
-| a | `AttributeError: module 'pandas' has no attribute 'dataframe'. Did you mean: 'DataFrame'?` | `pd.DataFrame(...)` — capital D **and** capital F. **Read the suggestion; pandas gave you the answer** |
+| a | `AttributeError: module 'pandas' has no attribute 'dataframe'` | `pd.DataFrame(...)` — capital D **and** capital F. **Read the name in quotes and compare it with the spelling you meant** (some versions add a `Did you mean` suggestion; read it if you see it) |
 | b | A nineteen-line traceback ending `KeyError: 'Runs'` | `squad_df["runs"]`. Column names are text, and text is case-sensitive |
 | c | A nineteen-line traceback ending `KeyError: 0`. Square brackets mean **columns** | Ask for a column by name. Rows come next week |
 | d | **No error.** It prints the whole report, and then the word `None` underneath | `squad_df.info()` on its own. `info()` prints for itself and hands nothing back |
@@ -1204,7 +1204,7 @@ Model sentence:
 Real messages:
 
 ```text
-AttributeError: module 'pandas' has no attribute 'dataframe'. Did you mean: 'DataFrame'?
+AttributeError: module 'pandas' has no attribute 'dataframe'
 ValueError: All arrays must be of the same length
 TypeError: 'method' object is not subscriptable
 ```
@@ -1582,7 +1582,7 @@ KeyError: 'Price'
 
 **The column:** `price`. **It says:** `object`. **It should say:** `int64`.
 
-**Its count is 6 out of 6, so nothing is missing.** What is wrong is that **one value is the wrong kind of thing.** `"40"` has quote marks round it — it is the *text* four-zero, not the *number* forty. A column holds one kind, and the only kind that can hold both `15` and `"40"` is text.
+**Its count is 6 out of 6, so nothing is missing.** What is wrong is that **one value is the wrong kind of thing.** `"40"` has quote marks round it — it is the *text* four-zero, not the *number* forty. A column holds one kind, and the only kind that can hold both `15` and `"40"` is `object` (general stuff): the `15` stays a number and the `"40"` stays text, so nothing is converted and `+ 10` breaks only on the text one.
 
 **The character:** the **quote mark** round the `40`. Two characters, strictly, and either one of them would do it.
 

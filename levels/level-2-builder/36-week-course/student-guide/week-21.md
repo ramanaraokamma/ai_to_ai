@@ -995,9 +995,9 @@ memory usage: 384.0+ bytes
 Name: goals, dtype: int64
 ```
 
-**`minutes  8 non-null  object`.** Nothing is missing — eight out of eight — and yet the column is text.
+**`minutes  8 non-null  object`.** Nothing is missing — eight out of eight — and yet the column is `object`, which means it is holding something that is not a number.
 
-**Why?** Look at Hira's record: `"minutes": "1100"`, with quote marks round it. **One quote mark, and the whole column is now writing.** Week 17's rule for the fourth time: a container picks the one kind that can hold everything, and the only kind that can hold both `1520` and `"1100"` is text.
+**Why?** Look at Hira's record: `"minutes": "1100"`, with quote marks round it. **One quote mark, and the whole column is now `object`.** Week 17's rule for the fourth time: a container picks the one kind that can hold everything, and the only kind that can hold both `1520` and `"1100"` is "general stuff". Notice that pandas did not turn the other numbers into text: each value keeps its own kind (`1520` is still a number, `"1100"` is still text), which is why `+ 10` fails only when it reaches the text one. The `NaN` case was different, because there the values really were changed into decimals.
 
 **And here is what makes it nasty.** `head()` prints five rows — Hira is row **7**, so she does not even appear. The printed values look like perfectly ordinary numbers. **The only clue in the whole output is the word `object` on line 3 of the little table.** Not the count, which says 8. Not the values, which look fine. One word.
 
@@ -1011,7 +1011,7 @@ print(squad["minutes"] + 10)
 TypeError: can only concatenate str (not "int") to str
 ```
 
-> **🤔 Think about it:** which is worse — a **hole**, which turns a whole-number column into decimals, or a **quote mark**, which turns it into text? The quote mark, and it is not close. The hole *announces itself*: `45` becomes `45.0` and the count drops. The quote mark leaves the count at 8 and the printed numbers looking exactly right. **`object` on a number column is the loudest alarm in pandas, and it never raises an error.**
+> **🤔 Think about it:** which is worse — a **hole**, which turns a whole-number column into decimals, or a **quote mark**, which makes it `object`? The quote mark, and it is not close. The hole *announces itself*: `45` becomes `45.0` and the count drops. The quote mark leaves the count at 8 and the printed numbers looking exactly right. **`object` on a number column is the loudest alarm in pandas, and it never raises an error.**
 
 ### Worked Example 3 — Five library books, and nothing wrong at all (school)
 
@@ -1172,12 +1172,12 @@ Traceback (most recent call last):
     squad_df = pd.dataframe(squad)
   File "/Library/.../pandas/__init__.py", line 264, in __getattr__
     raise AttributeError(f"module 'pandas' has no attribute '{name}'")
-AttributeError: module 'pandas' has no attribute 'dataframe'. Did you mean: 'DataFrame'?
+AttributeError: module 'pandas' has no attribute 'dataframe'
 ```
 
-**What Python is telling you.** *"There is no `dataframe`. But there is a `DataFrame` — is that what you wanted?"*
+**What Python is telling you.** *"There is no `dataframe` inside pandas."*
 
-**Read the last six words.** `Did you mean: 'DataFrame'?` **The computer told you the answer.** That happens more often than you would think, and reading it is a skill.
+**Read the name in quotes.** `'dataframe'` is exactly what you typed, and the computer is telling you that is the name it cannot find. Compare it letter by letter with the name you meant. (Some versions of Python and pandas add `Did you mean: 'DataFrame'?` on the end. If yours does, read that too, and it is a gift. If not, the quoted name is still your clue.)
 
 **The fix.** `pd.DataFrame(...)` — capital D **and** capital F.
 
@@ -1225,7 +1225,7 @@ my_week.info()
 | `ModuleNotFoundError: No module named 'pandas'` | "There is no pandas on the Python I am using." | `python3 -m pip install pandas` — the `-m` makes it the *same* Python. Prove it with `python3 -c "import pandas; print(pandas.__version__)"` |
 | `KeyError: 'Runs'` at the end of nineteen lines | "There is no column with that name." | A capital letter, a typo, or a stray space. `squad_df["runs"]` |
 | `KeyError: 0` | "There is no column called 0." | Square brackets on a DataFrame mean **columns**. Rows are next week |
-| `AttributeError: module 'pandas' has no attribute 'dataframe'. Did you mean: 'DataFrame'?` | "Wrong capital letters." | `pd.DataFrame(...)`. And **read the suggestion** — it is the answer |
+| `AttributeError: module 'pandas' has no attribute 'dataframe'` | "Wrong capital letters." | `pd.DataFrame(...)`. **Read the name in quotes** and compare it with the spelling you meant (some versions add a `Did you mean` suggestion; read it if you see it) |
 | `ValueError: All arrays must be of the same length` | "Your columns are not the same height, so this is not a table." | One list in the dictionary has too many or too few items. Count them. **Good news** — pandas refused rather than guessing |
 | `TypeError: 'method' object is not subscriptable` | "You used square brackets on something that needs round ones." | `df.head(3)`, not `df.head[3]`. `head` is a verb |
 | `TypeError: unsupported operand type(s) for +: 'int' and 'str'` | "You tried to add a number to a word." | Check `info()` first. You are adding an `int64` column to an `object` one |

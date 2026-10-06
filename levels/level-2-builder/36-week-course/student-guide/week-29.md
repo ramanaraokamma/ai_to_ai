@@ -810,7 +810,7 @@ new player vs Ravi:
 
 **Two honest things to notice, and the second one is the bigger.**
 
-**One — the vote is much closer than "bowler" makes it sound.** Ravi is 119.15 away and Meera is 128.25. Nine runs of daylight between the two answers. A model that says "bowler" with no hesitation is overstating what it knows, and the sensible human sentence here is *"this one is uncertain"*.
+**One — the vote is much closer than "bowler" makes it sound.** Ravi is 119.15 away and Meera is 128.25. Only about nine distance units of daylight between the two answers. A model that says "bowler" with no hesitation is overstating what it knows, and the sensible human sentence here is *"this one is uncertain"*.
 
 **Two — the model never really looked at the wickets.** Look at the last two lines. Runs contributed **99.75%** of the distance to Ravi; wickets contributed **0.25%**. Not because wickets do not matter to cricket — obviously they do — but because runs happen to be written in hundreds and wickets in single digits, and squaring makes that gap enormous.
 

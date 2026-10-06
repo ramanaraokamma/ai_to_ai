@@ -43,7 +43,7 @@ Observable evidence: a working `guess.py` with higher/lower hints, a seven-try l
 
 ### 1. Last week's loop counted. This week's loop waits.
 
-A `for` loop knows how many passes it will do **before it starts the first one**. `for n in range(12)` is twelve passes, decided in advance, no matter what happens inside. That is why a `for` loop can never run forever by accident.
+A `for` loop knows how many passes it will do **before it starts the first one**. `for n in range(12)` is twelve passes, decided in advance, no matter what happens inside. That is why a `for` over a `range` can never run forever by accident.
 
 This week's loop knows nothing of the kind.
 
@@ -241,11 +241,11 @@ Two things to know before a student trips you:
 **Why seven tries?** Because if you always guess the middle of what is left, seven guesses always cover 1–100:
 
 ```text
-   100 numbers → 50 → 25 → 13 → 7 → 4 → 2 → 1
+   100 numbers → 50 → 25 → 12 → 6 → 3 → 1
      guess 1     2    3    4    5   6   7
 ```
 
-Each guess halves the possibilities. Seven halvings takes 100 down to 1. **Seven is not a random choice of limit; it is exactly enough for a player who plays well, and not enough for a player who guesses randomly.** That makes the game fair and it makes the limit teachable.
+Each guess halves the possibilities. Six halvings take 100 down to 1 possible number, and a seventh guess names it. **Seven is not a random choice of limit; it is exactly enough for a player who plays well, and not enough for a player who guesses randomly.** That makes the game fair and it makes the limit teachable.
 
 ![Every hint halves what is left](../figures/fig-w08-4-guess-game-transcript.svg)
 *Figure 8.4 — Each hint does not just say higher or lower; it deletes half the remaining numbers. The window closes in.*
@@ -486,11 +486,11 @@ Let them think. Push a little:
 Write this up:
 
 ```text
-   100 numbers → 50 → 25 → 13 → 7 → 4 → 2 → 1
+   100 numbers → 50 → 25 → 12 → 6 → 3 → 1
      guess 1     2    3    4    5   6   7
 ```
 
-> "Seven. Seven halvings takes a hundred down to one, so a hundred numbers can *always* be caught in seven guesses. Never eight. Which is why the game you are about to write gives the player exactly seven — **enough if you're clever, not enough if you're careless.** That's what makes a game fair.
+> "Seven. Six halvings take a hundred down to one possible number, and guess 7 names it, so a hundred numbers can *always* be caught in seven guesses. Never eight. Which is why the game you are about to write gives the player exactly seven — **enough if you're clever, not enough if you're careless.** That's what makes a game fair.
 >
 > Now here's the thing that stops us just using last week's loop. Last week every loop was `for something in range(...)`, and every one of those knew how many times it would go round *before it started*. Twelve scores: twelve passes. Nine rows: nine passes.
 >
@@ -974,7 +974,7 @@ import random                                  # the toolbox with the dice in it
 
 LOW = 1                                        # the smallest number I might pick
 HIGH = 100                                     # the largest number I might pick
-MAX_TRIES = 7                                  # seven halvings always cover 1 to 100
+MAX_TRIES = 7                                  # six halvings plus a final guess always cover 1 to 100
 
 wins = 0                                       # accumulator: games won
 games = 0                                      # accumulator: games played
@@ -1134,7 +1134,7 @@ The one structural thing to say out loud, because it is the interesting bit:
 ### Variation — harder
 
 1. **A cap on rejected inputs.** Add a `bad_inputs` accumulator. After ten rejections, print `Too many bad inputs. Ending the game.` and `break`. This answers Part 2's open question and it is genuinely professional.
-2. **A difficulty menu**, chosen with a validated `while` loop before each game: Easy (1–50, 8 tries), Normal (1–100, 7 tries), Hard (1–1000, 10 tries). Then the real question: **is ten tries enough for 1–1000?** Halve it: 1000 → 500 → 250 → 125 → 63 → 32 → 16 → 8 → 4 → 2 → 1. That is ten halvings, so ten tries is exactly enough — and working that out is better maths than the program.
+2. **A difficulty menu**, chosen with a validated `while` loop before each game: Easy (1–50, 8 tries), Normal (1–100, 7 tries), Hard (1–1000, 10 tries). Then the real question: **is ten tries enough for 1–1000?** Halve it: 1000 → 500 → 250 → 125 → 62 → 31 → 15 → 7 → 3 → 1. That is nine halvings plus one final guess to name the survivor, so ten tries is exactly enough — and working that out is better maths than the program.
 3. **Warmer/colder.** Remember the previous guess, compare distances, and print `warmer` or `colder`. The first guess has no previous one, so it needs a flag or a sentinel — and finding that out is the lesson.
 4. **A guess history that cannot repeat.** Reject a number the player has already guessed. With only this week's tools the honest answer is "you cannot do this properly yet" — you would need a list, which is Week 11. **Saying so is better than a bad workaround**, and it is a real reason to want lists.
 5. **The histogram in `grade.py`.** After the report, one row per score with a bar of `#` characters, scaled so 100 marks is 40 characters: `bar = int(score / 100 * 40)` then `print(f"{score:>5} | {'#' * bar}")`. This is Week 7's `"=" * 20` doing real work, and it is the first chart in the course.
@@ -1295,7 +1295,7 @@ None of these need syntax they have not met.
 3. **Warmer/colder** (item 3). The first-guess problem is the real lesson.
 4. **The histogram** (item 5). The first chart in the course, made of `#` characters and Week 7's text multiplication.
 5. **Collatz** (item 6), with the safety valve, and a conversation about why professionals put safety valves in loops they believe will terminate.
-6. **The fairness question, with numbers.** `guess.py` gives seven tries because seven halvings cover 1–100. Ask: *"a player who has never heard of halving guesses more or less at random. How likely are they to win in seven?"* Seven random guesses out of a hundred numbers is roughly a 7% chance — against a well-played 100%. **The same game is trivial for one player and nearly impossible for another, and nothing in the code changed.** That is a real conversation about what "fair" means, it is the same shape as Level 1's work on rules meeting people they were not designed for, and it returns in Week 30 when a model's accuracy turns out to depend enormously on who is being measured.
+6. **The fairness question, with numbers.** `guess.py` gives seven tries because six halvings plus a final guess cover 1–100. Ask: *"a player who has never heard of halving guesses more or less at random. How likely are they to win in seven?"* Seven random guesses out of a hundred numbers is roughly a 7% chance — against a well-played 100%. **The same game is trivial for one player and nearly impossible for another, and nothing in the code changed.** That is a real conversation about what "fair" means, it is the same shape as Level 1's work on rules meeting people they were not designed for, and it returns in Week 30 when a model's accuracy turns out to depend enormously on who is being measured.
 
 ### If the student won't engage today
 
@@ -1471,7 +1471,7 @@ It removes spaces from both ends of the text. It matters because `"  42  ".isdig
 Because the minus sign is not a digit from 0 to 9, and `.isdigit()` requires *every* character to be one. It is a **known limitation**, not a mystery: the program still refuses the input politely and does not crash, but the message "whole numbers only" is not quite honest, because −5 is a whole number. Record it rather than hide it.
 
 **8.2(j) Why exactly seven tries for 1 to 100?**
-Because a guess in the middle halves what is left: 100 → 50 → 25 → 13 → 7 → 4 → 2 → 1. That is seven halvings, so seven guesses always suffice for a player who halves. With fewer, even a perfect player would sometimes lose; more would make it easy to win without being clever.
+Because a guess in the middle halves what is left: 100 → 50 → 25 → 12 → 6 → 3 → 1. That is six halvings plus one final guess to name the survivor, so seven guesses always suffice for a player who halves. With fewer, even a perfect player would sometimes lose; more would make it easy to win without being clever.
 
 **8.2(k) What is a flag?**
 A variable whose only job is to hold `True` or `False` and steer a loop. In `guess.py`, `won` ends one game and `playing` ends the whole session. Flipping a flag is a change step made out of a decision instead of arithmetic.
@@ -1892,7 +1892,7 @@ It is not a crash, and it follows exactly from the rule I chose: bad input is fr
 
 - *"Why did you start at 50?"* → Because it halves the range whatever the answer is.
 - *"How many numbers are left after 'higher than 50'?"* → Fifty: 51 to 100.
-- *"What's the most guesses this game can need?"* → Seven, playing well. 100 → 50 → 25 → 13 → 7 → 4 → 2 → 1.
+- *"What's the most guesses this game can need?"* → Seven, playing well. 100 → 50 → 25 → 12 → 6 → 3 → 1, then the seventh guess names it.
 - *"How many passes does the loop need?"* → Unknowable in advance; it depends on the human. That is why it cannot be a `for`.
 - *"What ends this game?"* → Two things: a correct guess, or running out of tries.
 - *"How many times did it print / how many times did it check?"* → Three prints, four checks.

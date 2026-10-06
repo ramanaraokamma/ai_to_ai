@@ -1429,7 +1429,7 @@ Fourteen minutes, and the rule was: **an answer without its row count does not c
 
 **Question 4 is the second trap, and everybody was armed for it.** *"Why has age 13 got eighteen pupils when 12 and 14 have ten each?"* **Because we filled six missing ages with 13.** Before the fill, the twelve pupils with a *known* age of 13 averaged **71.92**; after it, eighteen average **73.11**.
 
-**Question 3 is worth comparing with question 2 on purpose.** All three clubs are big. **Chess winning by five marks over fourteen rows is a much sturdier claim than Gold's twenty-mark lead over two.**
+**Question 3 is worth comparing with question 2 on purpose.** All three clubs are big. **Chess winning by about four to five marks over fourteen rows is a much sturdier claim than Gold's twenty-mark lead over two.**
 
 **And question 6 produced the best argument of the lesson.** *"Is Sami Aden the best pupil in the school?"* He scored 48. *"Is `points_per_hour` a good measure of anything?"* Of "who gets most from their time", maybe. Of "who is doing well", no — because **dividing by half an hour doubles your number.**
 

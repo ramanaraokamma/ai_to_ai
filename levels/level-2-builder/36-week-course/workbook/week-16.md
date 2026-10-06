@@ -1273,7 +1273,7 @@ rows accounted for: 30 of 30
 
 1. **`round trip identical? True`.** Binary. If it says `False`, the project is not finished, and the mismatch finder tells you exactly which row and field.
 2. **31 lines.** Thirty records plus the header. A 30-line file means `writeheader()` is missing.
-3. **`highest plays (raw): 95`.** Ninety-five, on a playlist whose top song has **300** plays. Same bug as the class's `90`, on your own data. Why 95? Because `9` is the highest first character anywhere in that column, so nothing starting with `1`, `2` or `3` can beat it however many digits it has.
+3. **`highest plays (raw): 95`.** Ninety-five, on a playlist whose top song has **300** plays. Same bug as the class's `90`, on your own data. Why 95? Because `9` is the highest first character anywhere in that column, so nothing starting with `1`, `2`, `3` or `4` can beat it however many digits it has.
 
 **Part 5 — the sentence.** Model answer:
 

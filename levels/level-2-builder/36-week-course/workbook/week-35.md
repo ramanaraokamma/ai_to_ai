@@ -318,7 +318,7 @@ Your test set has 18 rows. Print what one row is worth, to one decimal place.
 **Expected output:**
 
 ```text
-one test row is worth 5.6% of any score
+one test row is worth 5.6% of an accuracy score
 ```
 
 **Done looks like:** an f-string with `:.1f` in it, and no calculator involved.
@@ -405,7 +405,7 @@ reading = pd.DataFrame({
 
 ```text
 train rows: 24   test rows: 6
-one test row is worth 16.7% of any score
+one test row is worth 16.7% of an accuracy score
 ```
 
 **Done looks like:** exactly one `train_test_split` in the file, the baseline row present, and you can say out loud why a 6-row test set means you would not rank two close models — even though this table only has two rows in it.
@@ -618,7 +618,7 @@ About three hours, across the week. Do not do it in one sitting.
 - [ ] Text columns turned into 0/1 columns by hand
 - [ ] `FEATURES` defined **once** and used everywhere
 - [ ] Exactly **one** `train_test_split`, with `random_state` set
-- [ ] `print(f"one test row is worth {100 / len(y_test):.1f}% of any score")`
+- [ ] `print(f"one test row is worth {100 / len(y_test):.1f}% of an accuracy score")`
 - [ ] Any scaler fitted on `X_train` **only**, then `transform` on both
 - [ ] **One** `report()` function, used by all four models
 - [ ] Baseline · kNN · tree · linear regression
@@ -925,7 +925,7 @@ Read aloud: *"Half the journeys are under 17 minutes, but the tail reaches 58.6.
 
 (c) The **linear regression**: 0.884 − 0.487 = **0.397**. (The tree's is 0.095 and the kNN's 0.169.) Worth noticing: the biggest gap here belongs to the *worst* model, which is not what you would guess. The line is not memorising — it is the wrong shape for this data, and it is bad on both halves.
 
-(d) **No.** The gap is 0.35 minutes on 26 rows, where one row is worth 3.8%. Move one test journey and the ranking could flip. What you may say is *"indistinguishable, and I would pick the tree because I can read its rules out loud."*
+(d) **No.** The gap is 0.35 minutes on 26 rows, where one journey 9 minutes out would cause the whole gap (0.35 × 26 = 9.1). Move one test journey and the ranking could flip. What you may say is *"indistinguishable, and I would pick the tree because I can read its rules out loud."*
 
 (e) The **baseline row**. "Is 2.35 good?" is a question about *compared to what*, and the answer is 7.98.
 
@@ -969,11 +969,11 @@ The first row, filled in:
 
 ```python
 n_test = 18
-print(f"one test row is worth {100 / n_test:.1f}% of any score")
+print(f"one test row is worth {100 / n_test:.1f}% of an accuracy score")
 ```
 
 ```text
-one test row is worth 5.6% of any score
+one test row is worth 5.6% of an accuracy score
 ```
 
 **B2.**
@@ -1112,7 +1112,7 @@ y = reading["minutes"]
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42)
 print("train rows:", len(y_train), "  test rows:", len(y_test))
-print(f"one test row is worth {100 / len(y_test):.1f}% of any score")
+print(f"one test row is worth {100 / len(y_test):.1f}% of an accuracy score")
 
 def report(name, train_guess, test_guess):
     return {
@@ -1141,7 +1141,7 @@ Real output:
 
 ```text
 train rows: 24   test rows: 6
-one test row is worth 16.7% of any score
+one test row is worth 16.7% of an accuracy score
 the baseline always guesses 40.7 minutes
 
                            model  MAE (min)  train R2  test R2  test rows
@@ -1231,7 +1231,7 @@ X_train_scaled = scaler.transform(X_train)
 X_test_scaled  = scaler.transform(X_test)
 
 print("train rows:", len(y_train), "  test rows:", len(y_test))
-print(f"one test row is worth {100 / len(y_test):.1f}% of any score")
+print(f"one test row is worth {100 / len(y_test):.1f}% of an accuracy score")
 
 def report(name, train_guess, test_guess):
     return {
@@ -1266,7 +1266,7 @@ Real output:
 
 ```text
 train rows: 24   test rows: 6
-one test row is worth 16.7% of any score
+one test row is worth 16.7% of an accuracy score
 the baseline always guesses 3274 steps
 
                            model  MAE (steps)  train R2  test R2  test rows
@@ -1336,7 +1336,7 @@ I would hand over the **tree**, and my reason is that I can read it out loud.
 
 The depth-4 tree prints as a short list of if-then questions: *is it a walk? if so, is it further than 2.5 km? then expect more than half an hour.* I can read those rules to my mum, and she can tell me if one of them is silly — and she would, because she knows things about our journeys that are not in my table. The kNN cannot say anything except *"the five most similar journeys took about this long"*, which is true and completely unarguable-with. **A model somebody can disagree with gets corrected. A model nobody can inspect gets believed or ignored, and neither of those is a check.**
 
-The score does not come into it, and it must not, because it cannot. The tree is 0.35 minutes ahead on a 26-row test set where one row moves any percentage by 3.8 points. That gap is smaller than one journey. If a single test row swapped sides the ordering might reverse, so a decision built on "2.35 is less than 2.70" is a decision built on which rows `random_state=42` happened to deal me — which is not a fact about the models at all.
+The score does not come into it, and it must not, because it cannot. The tree is 0.35 minutes ahead on a 26-row test set where one journey 9 minutes out moves the MAE by 0.35 by itself. That gap is about one journey's worth of error. If a single test row swapped sides the ordering might reverse, so a decision built on "2.35 is less than 2.70" is a decision built on which rows `random_state=42` happened to deal me — which is not a fact about the models at all.
 
 **And that is exactly why my reason survives.** Interpretability does not move when one row moves. It is a property of the model's shape, not of the sample I tested it on. If I collect thirty more journeys next month and the kNN comes out ahead by half a minute, I will still hand over the tree, and I will still be able to say why.
 
@@ -1359,7 +1359,7 @@ The score does not come into it, and it must not, because it cannot. The tree is
 | Fitting a scaler before the split raises an error | **FALSE** | It runs perfectly. That is what makes leakage dangerous. |
 | A test R² of 0.99 on data you collected is good news | **FALSE** | It is a warning light. Hunt for the leaky feature. |
 | "More data would help" is a limitation | **FALSE** | It is true of every project ever, so it says nothing. |
-| The model with the lowest MAE is the one you should ship | **FALSE** | Not if the gap is inside the noise. Choose on other grounds and say so. |
+| The model with the lowest MAE is the one you should ship | **FALSE** | Not if the gap is small enough that one unlucky journey could cause it. Choose on other grounds and say so. |
 | A bar chart of group means should always print the group counts too | **TRUE** | A mean over 2 rows and a mean over 42 look identical. |
 | Two histograms can be compared by eye on different x ranges | **FALSE** | And your reader will not notice, which is worse. |
 

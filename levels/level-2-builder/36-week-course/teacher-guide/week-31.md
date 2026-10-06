@@ -210,7 +210,7 @@ Read it as four sentences, using `0 = setosa`, `1 = versicolor`, `2 = virginica`
 
 **Gold 1 — the split that does nothing.** Look at the last question, `petal length (cm) <= 4.85`. Both of its branches say `class: 2`. Whichever way you go, the answer is virginica. That question is **pure decoration.** The tree asked it because it made the piles very slightly tidier on the training flowers, not because it changes any answer. This is a tiny, visible piece of a model fussing over detail instead of pattern — and you can only see it *because a tree explains itself*. Week 33 gives that behaviour a name.
 
-**Gold 2 — two of the four measurements were never used.** `sepal length` and `sepal width` both score **0.000**. The tree looked at them, found them useless for this job, and never asked about them once. Out of four measurements, two carry everything. That is a genuine discovery about irises, handed to you free by a model you can read.
+**Gold 2 — two of the four measurements were never used.** `sepal length` and `sepal width` both score **0.000**. The tree looked at them, did not need them for this job, and never asked about them once. Out of four measurements, two carry everything. That is a genuine discovery about irises, handed to you free by a model you can read.
 
 ### 7. Depth: the dial, and what it does
 

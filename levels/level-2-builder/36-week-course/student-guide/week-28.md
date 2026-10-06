@@ -354,7 +354,7 @@ Read the two shapes out loud: *"ten, two"* and *"ten comma nothing"*.
 
 Scikit-learn is the new library this term. It is the one you install as **scikit-learn** and import as **sklearn** — two names for one thing, which is genuinely annoying and nobody's fault. Expect to get it wrong twice.
 
-Inside it there is a room called `sklearn.datasets` that holds a handful of small, famous datasets. One of them is **iris**: 150 flowers, measured with a ruler by hand, in 1936.
+Inside it there is a room called `sklearn.datasets` that holds a handful of small, famous datasets. One of them is **iris**: 150 flowers, measured with a ruler by hand in the 1930s (the statistician Ronald Fisher published the famous analysis of them in 1936).
 
 New file, `iris_shapes.py`:
 

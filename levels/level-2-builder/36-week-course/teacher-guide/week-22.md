@@ -1188,7 +1188,7 @@ There is a command that renumbers them, `reset_index(drop=True)`, and experience
 | The sideways single-row printout derails everything for five minutes. | It genuinely looks like four rows of two columns, and `dtype: object` looks like an error. | Deal with it the first time it appears, in the Concept segment, not later. Point at `Name: 0`, name it "the receipt", name `object` as "mixed". Thirty seconds spent there saves ten minutes. |
 | `week.sort_values(...)` runs and the student believes the table is sorted for the rest of the lesson. | Nothing errors, and the printed copy looks exactly like a sorted table. | This is Deliberate Mistake Two and it must not be skipped for time. Print `week` immediately after. If you are running short, cut two drills from Part A instead. |
 | The filter returns an empty table and the student thinks the code is broken. | Almost always a capital letter: `"blue"` typed where the data says `"Blue"`. | `print(week["house"])` and read the real spellings. Then say: "hold that thought, it is most of Week 24." |
-| They write `week.loc(1, "steps")` with round brackets and get a baffling `__call__` error. | Everything else in Python so far has used round brackets. | Board note: **`loc` and `iloc` are the only two things this year that use square brackets after a dot.** Point at it rather than re-explaining. |
+| They write `week.loc(1, "steps")` with round brackets and get a baffling `__call__` error. | Everything else in Python so far has used round brackets. | Board note: **`loc` and `iloc` are the only two things so far that use square brackets after a dot.** Point at it rather than re-explaining. |
 
 ---
 

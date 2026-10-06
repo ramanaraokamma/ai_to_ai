@@ -694,7 +694,7 @@ Draw **a card for something that is not a cricketer**. Five labels down the left
 | A dictionary keeps its pairs in alphabetical order | TRUE | FALSE |
 | `len()` on a five-pair dictionary says 10 | TRUE | FALSE |
 | `asha[0]` gives you the first pair | TRUE | FALSE |
-| Keys always need quotes | TRUE | FALSE |
+| In this course, keys always need quotes | TRUE | FALSE |
 | `asha["Runs"] = 51` changes Asha's runs | TRUE | FALSE |
 | `.get()` fixes a missing key | TRUE | FALSE |
 | `{"runs": 48, "runs": 51}` holds two pairs | TRUE | FALSE |
@@ -1261,7 +1261,7 @@ Test your own drawing with one question: **cover the labels. Can you still tell 
 | A dictionary keeps its pairs in alphabetical order | **FALSE.** It keeps them in the order you typed them |
 | `len()` on a five-pair dictionary says 10 | **FALSE.** It says 5. `len` counts pairs |
 | `asha[0]` gives you the first pair | **FALSE.** `KeyError: 0`. There are no positions |
-| Keys always need quotes | **TRUE.** In this course, always |
+| In this course, keys always need quotes | **TRUE.** In this course, always |
 | `asha["Runs"] = 51` changes Asha's runs | **FALSE.** It adds a **new** field called `Runs`, silently |
 | `.get()` fixes a missing key | **FALSE.** It decides what to say about one. It is a decision, not a repair |
 | `{"runs": 48, "runs": 51}` holds two pairs | **FALSE.** One pair, `runs: 51`. The later one wins and the earlier one vanishes |

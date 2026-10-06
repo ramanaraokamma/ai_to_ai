@@ -138,7 +138,7 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
-**A1. Loop or one-liner?** For each loop, say whether it **retires today**, **needs something you have not learned yet**, or **will never retire** — and give the one line, or the reason.
+**A1. Loop or one-liner?** For each loop, say whether it **retires today**, **needs something you have not learned yet**, or **will never retire to array arithmetic** (`*` `+` `/`) — and give the one line, or the reason.
 
 | # | The loop does this | Verdict | The one line, or why not |
 |---|---|---|---|
@@ -923,7 +923,7 @@ And look at the third line. `sum` of the wrong answer gives **three numbers**, `
 | e | **retires** | `np.zeros((5, 3))` |
 | f | **retires** | `arr ** 2` |
 | g | **not yet** | needs a **boolean mask** — Week 20 |
-| h | **never** | needs the team **names**, and an array has none. This belongs to a dictionary |
+| h | **never** | needs the team **names**, and array arithmetic has none. This belongs to a dictionary for now |
 | i | **never** | a `while` loop waiting on a person. Arrays have nothing to say about people |
 | j | **never** | that is output, not arithmetic |
 
@@ -1470,7 +1470,7 @@ card 6:  120 / 1230 x 100 = 9.756... = 9.76  ✔   and all eight shares add to 1
 
 > *"The plays-per-minute one, because the loop version had `plays[i]` and `minutes[i]` in it and I always have to check I have got the `i`s in the right places. The one line just says plays divided by minutes."*
 
-**Any that refused?** The two expected ones: a loop with an `if` in it (needs Week 20's mask) and a loop building a counting dictionary (needs names, so it never retires). **If you correctly identified the `if` loop as "not yet, and I think there's a tool coming", that is genuinely impressive.**
+**Any that refused?** The two expected ones: a loop with an `if` in it (needs Week 20's mask) and a loop building a counting dictionary (needs names, so array arithmetic cannot retire it). **If you correctly identified the `if` loop as "not yet, and I think there's a tool coming", that is genuinely impressive.**
 
 ---
 
@@ -1544,7 +1544,7 @@ And if you honestly retired all eight loops and nothing wobbles, ring the week y
 | `np.zeros(2, 3)` makes a 2 by 3 grid | **FALSE** | `TypeError: Cannot interpret '3' as a data type`. The shape needs its own brackets |
 | `np.zeros((2, 3))` gives whole numbers | **FALSE** | `float64`. Every zero has a dot after it |
 | `sum(arr)` works on a numpy array | **TRUE** | Python's own `sum` from Week 12, and it hands back one number |
-| Array maths can retire a loop that counts players per team | **FALSE** | That needs the team **names**, and an array has none. It belongs to a dictionary |
+| Array maths can retire a loop that counts players per team | **FALSE** | That needs the team **names**, and array arithmetic has none. It belongs to a dictionary for now |
 | If code runs with no error, the shapes must have been right | **FALSE** | The whole point of this week. Print the shape of the answer |
 
 </details>

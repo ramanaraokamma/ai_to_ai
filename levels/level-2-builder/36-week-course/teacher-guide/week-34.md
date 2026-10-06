@@ -324,7 +324,7 @@ That is the computer enforcing the rule. Undo it afterwards with `chmod 644 data
 |---|---|
 | Python or pandas will not run | The whole lesson works on paper. Page 34.2 (the plan) and page 34.3 (the log) need no computer at all. For `describe()`, hand-compute the five posts from the twenty-one printed values on page 34.4 — sort them, take the middle one, then the middle of each half. That gets you close to what pandas prints (pandas interpolates between neighbouring values, so it can differ slightly). |
 | No terminal, or `chmod` is unavailable | Right-click the file → Get Info / Properties → tick "read only". Same effect. Or put `raw.csv` in a folder called `DO_NOT_EDIT` and say so out loud. |
-| The student has no data idea at all | Give them the journeys project. It is the demo, it collects itself in a week, and 100 rows is one week of a whole family logging trips. Do not spend twenty minutes brainstorming; a working question beats a beautiful one. |
+| The student has no data idea at all | Give them the journeys project. It is the demo and it collects itself, but it is slow: three people making two school-day trips is only about 30 rows a week, so 100 rows takes 3 to 4 weeks (as the model plan's 12 May to 9 June does). Start it at once, and pair it with the coarsen/widen/add-people fallbacks below. Do not spend twenty minutes brainstorming; a working question beats a beautiful one. |
 | The student has already collected data and wants to skip ahead | Excellent. Have them run the four tests on the question they *actually* answered, in writing. Half the time they discover their target column is a leak, and that discovery is worth the whole lesson. |
 | They cannot get to 100 rows | Coarsen the row. One row per **day** instead of per journey. Or widen the window. Or add people. Do not let them submit 60 rows: with a 20% test set that is 12 test rows, and one row would be worth 8 percentage points. |
 
@@ -986,12 +986,12 @@ Three checks, five minutes, exact wording.
 | (a) | "Stuff about how long homework takes." | ❌ topic | No question mark, no target, and no result could prove it wrong. |
 | (b) | "Do longer videos get fewer views than shorter ones?" | ✅ question | Target `views`, and "no difference" would prove it wrong. |
 | (c) | "An investigation into my sleep." | ❌ topic | Becomes whatever the data says. Fix: "Does screen-off time change how many hours I sleep?" |
-| (d) | "How many runs will an innings score, given the overs faced?" | ✅ question | Target `runs`, a number, and the features are known before the innings ends. |
+| (d) | "How many runs will an innings score, given the batting position?" | ✅ question | Target `runs`, a number, and the feature (batting position) is known before the innings starts, so it passes the honest-features gate. (Overs faced by a batter would fail it: that is only known once the innings ends, and it depends on how well they bat.) |
 | (e) | "Which of my two walking routes is faster?" | ✅ question | Target `minutes`; two clear outcomes, one of which would surprise you. |
 | (f) | "Who in my class is best at maths?" | ❌ not allowed | Not a topic — a *rule break*. It is about other people, the label is an opinion, and a wrong answer costs a real person something. |
 
-**34.1(g) What do all three topics have in common?**
-None of them names a target column, and none of them can turn out wrong — so the data cannot settle them, and the question will silently become whatever the data happened to say.
+**34.1(g) One of the six is neither a topic nor a question. Which one, and which rule does it break?**
+(f) — it is a rule break. It is about other people, the label is an opinion, and a wrong answer costs a real person something. (The two topics, (a) and (c), share a different flaw: neither names a target column or could turn out wrong, so the question would silently become whatever the data happened to say.)
 
 **34.1(h) Rewrite (a) as a question.**
 Model answer: *"Does the subject of my homework change how many minutes it takes more than the number of questions does?"* Target: `minutes`. Features: subject, number of questions, day, time started.
@@ -1157,7 +1157,7 @@ middle = df["distance_km"].median()
 n_filled = df["distance_km"].isna().sum()
 df["distance_km"] = df["distance_km"].fillna(middle)
 log(f"Filled {n_filled} missing distance value(s) with the median ({middle} km)",
-    "Only one row, and the median is the middle distance so it does not drag the average about.")
+    "Only one row, so a quick median fill. It is rough: this row is a bus journey and every other bus row is 3.4 km, so 3.4 would be a truer fill.")
 
 after = df.shape
 print(f"shape before: {before}   after: {after}")
@@ -1181,7 +1181,7 @@ shape before: (26, 5)   after: (21, 5)
 3. Converted 'minutes' to numbers, bad values became empty  -  One row said 'about 20'. I cannot use a guess as a measurement, so it became empty.
 4. Marked 1 row(s) with minutes outside 0-90 as empty  -  A 0-minute journey to a school 3.4 km away is a typo, not a journey.
 5. Dropped 3 row(s) with no minutes value  -  You cannot learn from a row whose answer is unknown, and inventing one would be making data up.
-6. Filled 1 missing distance value(s) with the median (2.1 km)  -  Only one row, and the median is the middle distance so it does not drag the average about.
+6. Filled 1 missing distance value(s) with the median (2.1 km)  -  Only one row, so a quick median fill. It is rough: this row is a bus journey and every other bus row is 3.4 km, so 3.4 would be a truer fill.
 
        distance_km       rain    minutes
 count    21.000000  21.000000  21.000000
@@ -1195,6 +1195,8 @@ max       3.400000   1.000000  26.000000
 
 saved data/clean.csv
 ```
+
+**Step 6 caveat (say it aloud).** The median 2.1 km is a cycle distance but the filled row is a bus journey; every other bus row is 3.4 km, so the fill is plausible-looking but wrong for that row. Better: fill within the same `mode`, or drop the row. The median is also computed on all rows before any train/test split. The printed describe() below uses the 2.1 fill, so its numbers stay as shown.
 
 **Two things to point out when marking this.**
 

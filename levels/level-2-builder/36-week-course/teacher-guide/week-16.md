@@ -1554,7 +1554,7 @@ rows accounted for: 30 of 30
 
 1. **`round trip identical? True`.** Binary. If it is `False`, the project is not finished, and the mismatch finder tells them exactly why.
 2. **`store.csv has 31 lines`.** Thirty records plus the header. A 30-line file means `writeheader()` is missing.
-3. **`highest plays (raw): 95`.** Ninety-five, on a playlist whose top song has 300 plays. This is the same bug as the class's `90`, on their own data, and a student who prints it and can explain it has understood the week. *(Why 95? Because text is compared character by character, and `9` is the highest first character in the whole column — no value starting with `1`, `2`, `3`, `4`, `6`, `7` or `8` can beat it, however many digits it has.)*
+3. **`highest plays (raw): 95`.** Ninety-five, on a playlist whose top song has 300 plays. This is the same bug as the class's `90`, on their own data, and a student who prints it and can explain it has understood the week. *(Why 95? Because text is compared character by character, and `9` is the highest first character in the whole column — no value starting with `1`, `2`, `3`, `4`, `6`, `7` or `8` can beat it, and a `5` followed by anything is at most `59`, however many digits it has.)*
 
 **16.5(a) Why does `sum(counts.values())` come to 30?**
 Because grouping puts every row in exactly one bucket and throws nothing away. 9 + 7 + 7 + 7 = 30 = `len(loaded)`. If it came to 29, one row went into a bucket you did not notice — most likely a genre with a stray space or a different capital letter.

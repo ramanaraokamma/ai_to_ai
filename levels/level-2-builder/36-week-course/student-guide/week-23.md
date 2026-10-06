@@ -1340,7 +1340,7 @@ Look at the numbers again: filling gave 70.0 from seven pupils, three of whom ar
 ## 🌍 Where You've Seen This
 
 1. **Any online form you have ever half-filled-in.** Every blank box you skipped becomes a `NaN` in somebody's table, and somebody has to decide what to do about it. If the form let you type in a free-text box, you have personally created "text pretending to be numbers".
-2. **A school register with a pupil marked absent.** The mark for that test is not zero — the pupil did not sit it. Every school system in the world has to make exactly the fill-or-drop decision, and it changes reported class averages.
+2. **A school register with a pupil marked absent.** The mark for that test is not zero — the pupil did not sit it. Any school system has to make exactly the fill-or-drop decision, and it changes reported class averages.
 3. **Weather station data.** Instruments break. A station that recorded nothing for three days is not a station that recorded 0 mm of rain, and getting that wrong turns a working sensor into a drought.
 4. **Census and survey results.** Statisticians have a whole vocabulary for this — *imputation* is the proper word for filling — and the technical appendix of any serious survey report is essentially a very long cleaning log.
 5. **A shop's stock spreadsheet.** A blank in the quantity column might mean "we have none" or "nobody counted". If your ordering system treats those the same, you either run out of samosas or order five hundred.
