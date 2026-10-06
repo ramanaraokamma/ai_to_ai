@@ -235,7 +235,7 @@ Each level costs roughly **$900–1,200** (three to four days at the cap).
   worked example), the `l4` entry in `ALL_LEVELS` (site builds 133 pages, 0 broken links), and figures
   (36 "where this fits" Growing Maps + 72 concept figures, 2/week, embedded 312 times across the three
   books; `figures/_generator/_gen_build.py` regenerates all of them byte-identically and the audit prints
-  0 findings). **Not done:** the final audit as its own workflow on a fresh day, and nobody has eyeballed
+  0 findings). **Final audit run (2026-10-05, 13 agents, 97 findings; fixed/handled all highs and mediums; 64 low/info remain, listed in `_ledger/final-audit-2026-10-05.md`).** **Not done:** a one-line gloss at first use for seven constructs used ahead of their ladder week (README "Ladder amendments" lists them), and nobody has eyeballed
   the SVGs (headless Chrome was blocked by the sandbox) — open `figures/_preview.html`; the audit can't
   see text overflowing a box. Figures are ~108 vs L3's ~365: a lean first pass. Weekly files have no prev/next nav links,
   only "Next Week Preview" prose — unlike L3. **Open items:** the plan's "Decisions the owner must make"

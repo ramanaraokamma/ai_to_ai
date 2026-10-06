@@ -455,9 +455,9 @@ Full runnable code below — see **🔍 Worked Solution: Milestone 4**. This is 
 |---|---|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | baseline | keyword search only | 0.37 | 0.60 | 0.00 | 0.00 | 1.00 | 0.33 | 0.00 |
 | **v1** | dense k=3, τ=0.25, agent for arithmetic | **0.78** | 0.90 | 0.50 | 0.75 | 1.00 | 1.00 | 0.33 |
-| v2 | dense k=6, τ=0.20 | 0.81 | 1.00 | 0.75 | 0.75 | **0.33** ⚠️ | 1.00 | 0.33 |
+| v2 | dense k=6, τ=0.20 | 0.78 | 1.00 | 0.75 | 0.75 | **0.33** ⚠️ | 1.00 | 0.33 |
 
-> 🔍 **Read that like an engineer.** v2's overall score went **up** (0.78 → 0.81) and it is the **worse system**. Lowering τ from 0.25 to 0.20 let two out-of-scope questions through, so the refusal category collapsed from 1.00 to 0.33. On this eval set that is two cases; in production it is the system confidently inventing answers about things it has never read, which is the *only* failure mode in the whole project that could actually hurt somebody.
+> 🔍 **Read that like an engineer.** v2's overall score did **not move at all** (21 of 27 = 0.78 for both v1 and v2) and it is the **worse system**: the average hid a gain in one category and a collapse in another. Lowering τ from 0.25 to 0.20 let two out-of-scope questions through, so the refusal category collapsed from 1.00 to 0.33. On this eval set that is two cases; in production it is the system confidently inventing answers about things it has never read, which is the *only* failure mode in the whole project that could actually hurt somebody.
 >
 > **This is Module 8's regression lesson arriving in your own project.** The correct write-up is: *"v2 improves retrieval quality (+0.10 on factual, +0.25 on multi_hop) but breaks abstention (−0.67 on out_of_scope). I am shipping v1. If I wanted v2's retrieval I would take k=6 and keep τ=0.25, which is v3 and untested."* Writing that paragraph scores higher than shipping either version.
 
@@ -1290,7 +1290,7 @@ Five minutes is short. That is the point — a product that needs twenty minutes
 | *"Isn't your test set just the questions you knew it could answer?"* | "It was written and committed before `spine.py` existed — `git log` shows the timestamps. Two cases were written expecting failure and both still fail. I never edited a case after seeing a score; I added new ones." |
 | *"What happens if I put instructions inside one of your documents?"* | Demo it. Then: "retrieved text is wrapped in `<untrusted_data>` tags and the system prompt says those tags contain data, never orders. The scanner also appends an operator warning. It held on 4 of 4 attempts after the fix, and it failed on 2 of 2 before." |
 | *"Why didn't you fine-tune a model?"* | "Because nothing that needed changing was the model's behaviour — it was which facts it had. Module 8's decision table: fine-tune for style and format, retrieve for facts. My eval set is 100% facts, so retrieval was the right tool and it cost me nothing to run." |
-| *"Your v2 scored higher. Why ship v1?"* | "Because the average went up and abstention broke. v2 gained 0.10 on factual and lost 0.67 on out-of-scope. Two extra confident-wrong answers is a worse product than two extra correct ones, for this user, on this task." |
+| *"Your v2 scored the same. Why ship v1?"* | "Because the average did not move and abstention broke. v2 gained 0.10 on factual and lost 0.67 on out-of-scope. Two extra confident-wrong answers is a worse product than two extra correct ones, for this user, on this task." |
 | *"How would you know it stopped working?"* | "Mean top-1 similarity per query, logged on every request, no labels needed. It's 0.54 now. If it drops below 0.35 over a week, people are asking about things the corpus doesn't cover — and my answer quality is falling in a way accuracy on a frozen eval set will never show me." |
 | *"Could a user get it to write a file anywhere?"* | "No, and here's the line: `resolve()` then `is_relative_to(SANDBOX)`. Resolving first is what makes `sandbox/../../x` fail. I tried four escape paths; all four blocked." |
 | *"Who shouldn't use this?"* | Read the list. Include the named user and the exact sentence you said to them. |
@@ -1437,3 +1437,11 @@ Go and build something.
 [⬅ Module 9](module-09-responsible-and-safe-ai.md) · [Level 4 Home](README.md) · [Assessment](assessment.md) · [Glossary](glossary.md) · [Curriculum map](../../CURRICULUM_MAP.md)
 
 *You froze the eval set before you had an opinion, verified every citation, priced every call, attacked your own work, and wrote down who should not rely on it. That is engineering. Well done.*
+
+---
+
+## 🧾 Patch log (offline redesign, 2026-10)
+
+- Results table and the "Read that like an engineer" box: **v2 overall 0.81 → 0.78.** The v2 columns add to 10 + 3 + 3 + 1 + 3 + 1 = 21 of 27 = 0.778, exactly v1's score, so the overall did not go up. The lesson is sharper, not weaker: an average that does not move can hide a +0.10 and a −0.67. Weeks 34-36 of the taught course already teach 0.78.
+- The viva row "Your v2 scored higher" → "Your v2 scored the same", with its answer corrected to match.
+- Not re-run: the capstone's other tables come from a separate reference build and were not re-derived here (see the taught course's `projects/capstone.md` and Weeks 34-36 for the measured version).

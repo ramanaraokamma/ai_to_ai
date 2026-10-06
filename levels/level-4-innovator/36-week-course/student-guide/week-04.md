@@ -488,7 +488,31 @@ A **confound** is two things that changed at once, so you cannot say which one c
 
 ### Part 4 — the gentle rate
 
-Add this to the end of `hook.py` and run it:
+First make the file that produced the table in Start Here. Save this as `hook.py` and run it (under 15 seconds). It must print those same four rows; if a number differs, stop and find out why before you go on:
+
+```python
+import torch
+torch.set_num_threads(1)
+import numpy as np
+from l4lib.spirals import run
+
+variants = [
+    ("constant",      dict()),
+    ("warmup only",   dict(warmup_frac=0.05)),
+    ("cosine only",   dict(schedule="cosine")),
+    ("warmup+cosine", dict(schedule="cosine", warmup_frac=0.05)),
+]
+print("AdamW, lr=0.03 (ten times the Week 1 default), final validation accuracy %, seeds 0-4")
+for name, kw in variants:
+    accs = []
+    for seed in range(5):
+        h = run("x", lr=0.03, seed=seed, verbose=False, **kw)
+        accs.append(h["acc"][-1] * 100)
+    row = " ".join(f"{a:5.1f}" for a in accs)
+    print(f"{name:<14} {row}   mean {np.mean(accs):5.1f}")
+```
+
+Now add this to the end of `hook.py` and run it:
 
 ```python
 print()

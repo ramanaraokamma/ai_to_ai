@@ -88,7 +88,7 @@ output layer      128 x 28 + 28                       =   3,612
 | The knob count (807,196), the parts, `match: True` | **Real**, counted by `.numel()`; also plain arithmetic. |
 | The counting models in `key.py` (uniform, letter frequency, previous letter) | **Real and simple** (numpy counts, add-one smoothing). They are *baselines for scale*, not competitors. |
 | The six Beat the Ladder cards | **Real places in the training text.** The counts-based probabilities beside them are real. |
-| The ledger figures (2,500 steps, train 0.150 / val 1.669; val 1.328 at step 1,000; 133 s) | **Real runs by the course author** of a slightly different setup (dropout 0.1, seed 1337, two CPU threads). **Not run today.** |
+| The ledger figures (2,500 steps, train 0.150 / val 1.669; val 1.328 at step 1,000; 133 s) | **Real runs by the course author** of a different setup (dropout 0.1, seed 1337, two CPU threads; other differences were not isolated). **Not run today.** |
 | Any language model you could talk to | **Not present.** The model continues a few characters; it does not answer. No stand-in anywhere this week. |
 
 > **Say to the student, out loud:** *"Everything today is real: a real model, really trained, on 6,972 characters. It is small enough to train in a minute and a half, so it is small enough to understand all the way down. Whatever it does with this text, it does because of what is in these files."*
@@ -175,7 +175,7 @@ These are all printed by the files below. Read them before class so nothing surp
 
 The step 0 numbers are within 0.02 of `ln(28)`. The gap is about zero while the model is still bad at everything, and then opens. **Step time 53 ms (another run on the same machine: 62 ms), 80 seconds of training, 490 passes.**
 - **The samples.** Step 0: random characters (`thsneqol.hupmxzcgos ...`). Step 300: the letters `the`, `and`, `an` appear but there are no sentences (`the man adid ing sa theand and the fowit ...`). Step 1499: lines that start with `the`, end with a full stop, and are made of real words joined with near-words (`the old man mem menthy witer.`). The final 300-character sample from the prompt `the ` follows the same pattern.
-- **The ledger comparison (not run today).** 2,500 steps, dropout 0.1, seed 1337: train **0.150**, validation **1.669**, with the validation loss lowest (1.328) around step 1,000 and rising afterwards. Our 1,500-step run finishes with a smaller gap (0.54) because it is stopped sooner and its cosine schedule ends at step 1,500. *Direction matches; do not compare the digits.*
+- **The ledger comparison (not run today).** 2,500 steps, dropout 0.1, seed 1337: train **0.150**, validation **1.669**, with the validation loss lowest (1.328) around step 1,000 and rising afterwards. Our 1,500-step run finishes with a smaller gap (0.54). **Do not explain that gap by the shorter run:** the ledger also ran a 1,500-step model with the same AdamW, warm-up and cosine schedule (`_ledger/out/m03_05_ablate_baseline.txt`) and it finished at train 0.411, validation 1.336, a gap of 0.925, so step count and schedule do not account for the difference, and our training loss (0.894) is more than double the ledger's. We did not isolate the cause (batch size, model width, data pipeline and seed are all candidates). *The direction matches (training falls much faster than validation); do not compare the digits, and do not offer a cause.*
 
 ### 7. The honest limits of today
 

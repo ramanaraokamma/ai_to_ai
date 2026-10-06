@@ -418,7 +418,7 @@ forget bias |     T=10      T=20      T=40      T=80
   4.0 (0.982) |  7.23e-01  8.46e-01  3.52e-01  1.61e-01
 ```
 
-Read the first five lines. The last two rows (`lstm, forget bias 0` against `lstm, forget bias 2`) are the same layer and the same seeds, with **one number different in the bias**, and they are **seven orders of magnitude apart**. Inside any one row, the seeds differ by a factor of 10 to 100. Three seeds are enough to see that the dial matters far more than the seed; they are **not** enough to say which of RNN, GRU and LSTM is best at default settings.
+Read the first five lines. The last two rows (`lstm, forget bias 0` against `lstm, forget bias 2`) are the same layer and the same seeds, with **one number different in the bias**, and they are **about eight orders of magnitude apart** (bias 2 is roughly sixty million times bias 0). Inside any one row, the seeds differ by a factor of only 4 to 35. Three seeds are enough to see that the dial matters far more than the seed; they are **not** enough to say which of RNN, GRU and LSTM is best at default settings.
 
 Now the second table. Bias 0 falls at the same rate as the RNN. Bias 1 falls, more slowly. Bias 2 and 4 stay within a factor of about 30 (bias 2) or 6 (bias 4) of the last word's pull all the way to `T = 80`. **The dial does not stop the fall; it slows it from "a factor of 10,000 or more every twenty steps" to "a factor of a few".**
 

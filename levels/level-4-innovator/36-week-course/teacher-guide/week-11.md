@@ -12,7 +12,7 @@
 | | |
 |---|---|
 | **Duration** | 70 minutes in class, then the workbook (~60-70 min) |
-| **Type** | 🟦 Teach — the student builds one LSTM step out of `@`, slices and `torch.sigmoid`, checks it against PyTorch's own, *measures* why its memory track behaves like Week 6's residual highway, and then turns one dial (the forget bias) and watches a table change by seven orders of magnitude |
+| **Type** | 🟦 Teach — the student builds one LSTM step out of `@`, slices and `torch.sigmoid`, checks it against PyTorch's own, *measures* why its memory track behaves like Week 6's residual highway, and then turns one dial (the forget bias) and watches a table change by about eight orders of magnitude |
 | **Big idea** | Last week the error going back through a loop was multiplied by one slope per step, and forty slopes below 1 left nothing. An LSTM keeps a second track, the **memory** `c`, and updates it by **adding**: `c = f * c_old + i * g`. The slope back through that track is **`f`**, the forget gate, a dial between 0 and 1. **A dial near 1 is Week 6's `x + f(x)` highway, written as a loop. A dial near one half is Week 10's disease all over again** — and at the start of training the dial *is* near one half. |
 | **New vocabulary** | **gate** (a dial between 0 and 1 that multiplies something) · **cell state** / memory track (`c`) · **forget gate** · **input gate** · **output gate** · **candidate** · **GRU** · **forget bias** (the number that sets the forget dial before any training). (**Sigmoid**, **running average**, **residual** and **vanishing gradient** are *already theirs*: Level 3 Week 13, Week 2, Week 6, Week 10. Say so, and use them.) |
 | **New maths** | *(none)*. Three old ideas return and are **used, not re-taught**: the sigmoid squasher, compounding (`f ** 40`, Week 10) and the slope of a sum (Week 6). See the 🔢 section. |
@@ -88,7 +88,7 @@ Read the **shape**: a score of 0 (which is roughly what an untrained gate's scor
 | Any language model, scripted client or `FakeClient` | **Not present.** |
 
 > **🚫 What you must NOT claim about today's numbers.**
-> 1. **"LSTMs fix vanishing gradients."** At default settings, `T = 40`, seeds 0-2: RNN `2.0e-10, 6.3e-11, 3.1e-10`; GRU `1.4e-08, 1.5e-09, 8.9e-10`; LSTM `2.0e-09, 7.1e-08, 6.8e-09`. All three are *tiny*; the gates buy one to two orders of magnitude, not the seven the dial buys. What fixes it is the dial **near 1**: forget bias 2 gives `5.8e-02, 1.3e-01, 2.2e-01`. The honest sentence: **"an LSTM has a highway; whether the highway is open at the start depends on where the dial is set."**
+> 1. **"LSTMs fix vanishing gradients."** At default settings, `T = 40`, seeds 0-2: RNN `2.0e-10, 6.3e-11, 3.1e-10`; GRU `1.4e-08, 1.5e-09, 8.9e-10`; LSTM `2.0e-09, 7.1e-08, 6.8e-09`. All three are *tiny*; the gates buy one to two orders of magnitude, not the eight the dial buys. What fixes it is the dial **near 1**: forget bias 2 gives `5.8e-02, 1.3e-01, 2.2e-01`. The honest sentence: **"an LSTM has a highway; whether the highway is open at the start depends on where the dial is set."**
 > 2. **"The dial setting is what made it learn."** Nothing is trained in the lesson. `T2` trains layers to report the sign of their first input: at `T = 40` the forget-bias-2 LSTM gets it on **5 of 5 seeds** (`0.993`-`0.999`), the default LSTM and GRU on **0 of 5** (all near `0.5`, chance), **and the plain RNN on 4 of 5** (`T2` reproduces Week 10's `T2` numbers exactly). So the dial helped against the default LSTM; it did **not** beat the RNN, and we did not explain why the default LSTM and GRU do worse than the RNN at this task.
 > 3. **"A healthy ratio means it can learn."** At `T = 80` the forget-bias-2 LSTM's ratio is `3.4e-02` in block 7 (healthy) and `T2` gets **0 of 5** seeds (chance), and with 1000 steps instead of 300 still **0 of 5**. Forget bias 4 got one seed of five. **A healthy probe at the start is not a guarantee.** We did not find out why; say "I do not know yet".
 > 4. **"The GRU has a forget gate."** It has an *update* gate `z`, and in PyTorch it points the **keep** way (`T1`). The reference module writes the GRU with `z` pointing the **replace** way (its `h = (1 - z) * old + z * new`). Do not let the student copy the module's equation into code; it is the opposite convention to the one they will run.
@@ -510,7 +510,7 @@ forget bias |     T=10      T=20      T=40      T=80
   4.0 (0.982) |  7.23e-01  8.46e-01  3.52e-01  1.61e-01
 ```
 
-Read the first five lines: the last two rows (`lstm, forget bias 0` against `lstm, forget bias 2`) are the same layer, same seeds, one number different in the bias, and they are **seven orders of magnitude apart**. Then the second table: a dial at `0.881` or `0.982` turns a fall of a factor of about `10` to the `16` (bias 0, `T = 80`) into a fall of a factor of 30 or 6.
+Read the first five lines: the last two rows (`lstm, forget bias 0` against `lstm, forget bias 2`) are the same layer, same seeds, one number different in the bias, and they are **about eight orders of magnitude apart**. Then the second table: a dial at `0.881` or `0.982` turns a fall of a factor of about `10` to the `16` (bias 0, `T = 80`) into a fall of a factor of 30 or 6.
 
 - [ ] **Run the teacher-only blocks** (paste them *below* the seven, in a copy named `teacher11.py`). `T1` checks the GRU's convention and prints the typical slope per step; `T2` trains 55 small layers (about 55 seconds); `T3` is the honest limit at `T = 400`; `K1` is the workbook key.
 
@@ -763,7 +763,7 @@ The student types; you narrate **after** they have predicted. Keep `week11.py` o
 
 **(6 min) Block 6.** They run it and compare with their predictions. By the cut-offs: rnn: S, S, T, T; gru: L, S, T, T; lstm: S, S, T, T. *"Did the gates help?"* The honest answer: *a bit, in the GRU at short lengths; not at long ones. At default settings all three vanish.* Colour in the misses: **expect most predictions for the GRU and LSTM rows to have been too hopeful.** Read the parameter counts too: `352, 1056, 1408`.
 
-**(4 min) Block 7, seeds and dial.** Three seeds for five rows at `T = 40`, then the dial grid. Ask: *"Which difference is bigger: between seeds inside a row, or between the bias-0 row and the bias-2 row?"* (Inside a row, a factor of 10 to 100; between rows, ten million.) *"Can you tell the GRU from the LSTM with three seeds?"* (No.) Then fill the fourth row of page 11.4 from block 7's bias-2 line: `3.54e-01, 3.10e-01, 5.77e-02, 3.37e-02` (all L).
+**(4 min) Block 7, seeds and dial.** Three seeds for five rows at `T = 40`, then the dial grid. Ask: *"Which difference is bigger: between seeds inside a row, or between the bias-0 row and the bias-2 row?"* (Inside a row, a factor of 4 to 35; between the bias-0 and bias-2 rows, about sixty million.) *"Can you tell the GRU from the LSTM with three seeds?"* (No.) Then fill the fourth row of page 11.4 from block 7's bias-2 line: `3.54e-01, 3.10e-01, 5.77e-02, 3.37e-02` (all L).
 
 **(3 min) The question that makes the activity.** Say: *"We set the forget bias by hand. Did anything learn?"* They should say **no**, and why: *"nothing was trained; we only looked at the starting point."* If they say "yes, it remembers", ask *"what did we train?"* Then: *"If I made the dial 0.99995 (bias 10), would you trust it more?"* (Discuss, section 8 #3.)
 
@@ -1213,7 +1213,7 @@ A write-up that says "the LSTM solves vanishing gradients" loses the last two ma
 | Block 5: which bias made the ratio `0.22`? | Forget bias 2. |
 | Block 6: did the gates help at default settings? | A little in the GRU at short lengths; at `T = 40` all three are tiny. |
 | Block 6: why `352, 1056, 1408`? | One, three and four groups of scores. |
-| Block 7: which difference is bigger, seeds or dial? | The dial (seven orders against one to two). |
+| Block 7: which difference is bigger, seeds or dial? | The dial (about eight orders against under two). |
 | Did anything learn today? | No. Nothing was trained. |
 | Does a bias of 2 make the LSTM learn at `T = 80`? | We do not know; the teacher check `T2` says no, `0 of 5`, and we did not explain why. |
 | What did we **not** do today? | Train anything, or show a gated cell remembers in a real sentence. |

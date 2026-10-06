@@ -120,7 +120,7 @@ Six things are true of every week in this folder (five are Level 3's, one is new
 | | |
 |---|---|
 | **The learner** | One student, around 15-16, **who has finished Level 3** - including Weeks 34-36 (shipped artifact). Writes PyTorch's five-line loop from memory, has derived backprop by hand for a 2-layer net and watched PyTorch agree to 8 decimals, trained a digits CNN, built a bag-of-words sentiment engine and seen it fail on word order. **Has never seen an optimizer other than SGD and Adam-as-a-name, an RNN, attention, a tokenizer, or an LLM API.** |
-| **The teacher** | You. **You are not expected to know AI.** Read [`teacher-guide/00-orientation.md`](teacher-guide/00-orientation.md) once (to be written: the Level 3 maths course extended by the thirteen Level 4 ideas, a "real vs stand-in" glossary, the 16 errors this level actually produces) and you are ready for 36 weeks. |
+| **The teacher** | You. **You are not expected to know AI.** Read [`teacher-guide/00-orientation.md`](teacher-guide/00-orientation.md) once (it covers the thirteen Level 4 maths ideas, a "real vs stand-in" glossary and the 16 errors this level actually produces) and you are ready for 36 weeks. |
 | **The setting** | One laptop with about 2.5 GB free (Level 3's install is enough; **Level 4 installs nothing new**). No GPU. No internet during lessons. |
 | **Group size** | Written for one learner. Every activity has a "if you have 2-6 students" note. |
 | **Honest caveat** | The reference [`README.md`](../README.md) says ages 16-18 and lists a credit card and an API key as prerequisites. **Both statements are superseded by this file** for the taught course (see Risks, item 1). |
@@ -213,7 +213,7 @@ Identical in role to Level 3. Using the wrong one is the most common way a cours
 | Folder | What is in it | When you open it |
 |---|---|---|
 | 📝 `assessments/` | Four papers, 75 minutes, 75 marks, no computer: 20 multiple choice, 8 "what does this print / what number", 4 "find the bug", 3 "do the arithmetic", 1 extended | Weeks 9, 18, 27, 36 |
-| 🛠️ `projects/` | 30 offline project ideas, one worked capstone taken end to end, the capstone scaffold | Any time from Week 12; Weeks 34-36 for the capstone |
+| 🛠️ `projects/` | 50 offline project ideas, one worked capstone taken end to end, the capstone scaffold | Any time from Week 12; Weeks 34-36 for the capstone |
 | 🧰 `l4lib/` | The [Shared Kit](#-the-shared-kit-l4lib): one tested Python package used by weeks 1-19 (`spirals`, `names`, `corpus`) and 20-36 (the rest) | Built once, before any week is authored |
 
 ---
@@ -548,6 +548,8 @@ they appear below: `lambda` (W4), `nn.LSTM` / `nn.GRU` (W11), classes with `__in
 
 **Ladder amendments (cross-block consistency check).** The authored weeks use four constructs earlier than the table above lists them; each is a copied line or a Level 3 construct, flagged where it appears:
 `.detach()` first appears in Week 6 as a copied line (Week 19 copies it again; Week 22 teaches it) · `torch.randint` first appears in Week 13's copy task as a copied line (Week 17 teaches it) · `nn.Parameter` is a Level 3 Week 24 construct, used as a bare tensor of knobs in Weeks 4, 5 and 9; Week 31 teaches the *new* part, assigning one to a module so `model.parameters()` sees it · `torch.cat` is a Level 3 Week 27 construct (Week 6 reuses it; Week 12 re-meets it). `nn.Module` subclasses with `__init__` are Level 3 (from Week 12 here); the Week 23 row covers plain classes that are *not* modules. Week 1's `run()` harness exposes `weight_decay`, `norm`, `dropout` and `optimizer="adamw"` as named knobs ahead of their weeks: it only passes them through; each is taught in the week named in the table.
+
+**Further early uses found by the final audit (2026-10-05).** These appear in student code before their ladder week and are **not** all glossed in the text; they are recorded here so the cap is honest, and a one-line gloss at first use is the open fix: `torch.randn` (Week 6; ladder Week 10) · `nn.init.normal_` (Week 6; ladder Week 31) · `nn.Linear(..., bias=False)` (Week 5; ladder Week 14) · `time.perf_counter()` (Weeks 7-8; Level 3 Week 34) · `F.binary_cross_entropy_with_logits` (Week 16; the functional spelling of Level 3's `nn.BCEWithLogitsLoss`) · `np.minimum(conf, 0.85)` (Week 32; a one-sided cousin of Level 3's clipping) · the percentile `p95` with its index rule `sorted(x)[int(0.95 * n)]` (Week 34, which has no maths-ladder row; it is worked by hand in place). Two maths ideas ride along with their week's idea: the cosine curve as a smooth ramp (Week 4, with a three-checkpoint table) and bias correction `1 - beta^t` (Week 3, alongside root-mean-square).
 
 Not in Level 4 at all: decorators you write yourself, metaclasses, `asyncio`, type hints as a
 required practice, `pytest`, `transformers` (optionally `GPT2Config` with random weights to count

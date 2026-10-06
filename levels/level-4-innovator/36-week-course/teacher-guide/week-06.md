@@ -1244,6 +1244,12 @@ The **depth table** is the one printed in 🎲 The Activity, In Full. Accept: an
 
 ---
 
+## 🔮 Next Week Preview
+
+**Week 7 — Project: The Symptom-Check-Action Playbook.** No new idea; one new tool (`itertools.product`, every combination of several lists) and a table the student must be able to defend. The student runs a sweep of 75 runs on the spirals (about 30 seconds at the default 60 epochs), prints the mean and the spread over three seeds for each knob, and turns what Weeks 1-6 taught into a playbook: each **symptom** in a loss curve gets **one cheap check** and **one action**, and every line is backed by a number they printed themselves. Nothing this week is a stand-in; it is real PyTorch on the CPU. The thing to carry in from today: a difference between two runs only counts if it is bigger than the spread between seeds.
+
+---
+
 ## 📝 Notes for the next author
 
 - **Numbers that came from the ledger, not from this guide's own scripts:** the 30-epoch batch-2 row (train 0.688, val 0.677, 56.4%) and the layer-norm shift result (48.3% vs batch norm 46.7%). Both are in `_ledger/out/m01_02_answerkey.txt`, Practice 6.
