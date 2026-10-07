@@ -47,6 +47,6 @@
     <g transform="translate(598,288) scale(0.36)"><circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/><g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round"><line x1="38" y1="38" x2="62" y2="62"/><line x1="62" y1="38" x2="38" y2="62"/></g></g>
 
     <text x="400" y="352" font-size="14" fill="#55636F" text-anchor="middle">Clock, sun and tree: everybody draws those the same way, so it has seen thousands like yours.</text>
-    <text x="400" y="374" font-size="14" fill="#55636F" text-anchor="middle">Kangaroo: nobody agrees how to draw one, so it has never seen anything like yours.</text>
+    <text x="400" y="374" font-size="14" fill="#55636F" text-anchor="middle">Kangaroo: nobody agrees how to draw one, so it may have seen little like yours (a guess to test).</text>
   </g>
 </svg>

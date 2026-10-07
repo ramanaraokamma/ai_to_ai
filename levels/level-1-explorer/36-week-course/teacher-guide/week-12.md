@@ -157,7 +157,7 @@ The line to use, and to keep using all year: **"A perfect score is not a triumph
 
 **Misconception 2 — "More features must be better, so keep them all."**
 
-No. Extra columns actively hurt in two ways. They **hide** the good features, because a model spreads its attention across everything you give it. And every extra column is another thing that can go missing, be measured inconsistently, or turn out to be a leak nobody spotted.
+No. Extra columns actively hurt in two ways. They **hide** the good features, because with few rows a model can latch onto chance patterns in weak columns, and it is harder to see which column matters. And every extra column is another thing that can go missing, be measured inconsistently, or turn out to be a leak nobody spotted.
 
 The proof from this very table: after deleting the useless column and the leaky column, **two features (length and skin, or length and colour) do a better and far more trustworthy job than all seven together.** The model got better by knowing less. Say that sentence; it lands.
 
@@ -274,7 +274,7 @@ Let them work at it. They usually get there in under a minute, and it is much be
 >
 > Now here's the part I want you to hold on to, because it's the thing this whole lesson is about, and it feels upside-down.
 >
-> **The hundred percent wasn't a warning sign that something *might* be wrong. It was the actual symptom.** Something that scores a hundred percent has usually got the answer hidden inside it. If it were really doing the hard job, it would get things wrong sometimes, because the job is hard.
+> **The hundred percent wasn't a warning sign that something *might* be wrong. It was the actual symptom.** Something that scores a hundred percent has often got the answer hidden inside it. If it were really doing the hard job, it would get things wrong sometimes, because the job is hard.
 >
 > A feature like my wet umbrella has a name. It's a **leaky feature** — it leaks the answer backwards into the thing that's supposed to be a clue."
 
@@ -512,7 +512,7 @@ ELSE                      orange
 | 11 | 110 | banana | banana | ✓ |
 | 12 | 128 | banana | banana | ✓ |
 
-**10 out of 12 = 83.3%.** Point at rows 4 and 6: one heavy apple, one light orange, each sitting in the other's territory. No threshold can fix that, and moving the threshold just swaps which one you get wrong.
+**10 out of 12 = 83.3%.** Point at rows 4 and 6: one heavy apple, one light orange, each sitting in the other's territory. No threshold can fix that, and moving the threshold can never fix both.
 
 ### Step 3 — `sticker_says` (3 minutes)
 
@@ -575,7 +575,7 @@ The realisation usually arrives here without further help. If it doesn't:
    RULE 2: ELSE IF colour = orange THEN orange
    RULE 3: OTHERWISE                 apple
    ```
-   Score it on all twelve rows. It gets **12 out of 12** — with two honest features and no leak. Then the question: "You got the same score as the sticker. Why is this one fine and that one wasn't?"
+   Score it on all twelve rows. It gets **12 out of 12** — with two honest features and no leak. (Caveat to say aloud: the rule was designed by looking at the same twelve rows it is scored on, so this 100% shows it fits this table, not that it will work on new fruit; testing on unseen fruit comes later.) Then the question: "You got the same score as the sticker. Why is this one fine and that one wasn't?"
 2. **Make the useless feature useful.** "Change one thing about the fruit bowl so that `quadrant` stops being useless." (Put all four bananas in one quadrant. Then quadrant carries real information — and notice that nothing about the *measuring* changed, only the world.)
 3. **The honest sticker.** "Name a real situation where `sticker_says` is not a leak." (A supermarket's own self-checkout, where every item genuinely carries a sticker at the moment of scanning. The same column can be honest in one deployment and fatal in another.)
 4. **Find the leak in a job you know.** "Predict which team wins a football match. Give me four features, and make one of them leaky on purpose. Then defend the other three."
@@ -598,7 +598,7 @@ Yes, and this is worth getting straight. `quadrant` is useless for "which fruit 
 
 **"Why not just measure everything and let the machine sort it out?"**
 
-Two reasons, and both are real. First, extra columns hide the good ones — the machine spreads its attention over everything you hand it, so five weak features can bury one strong one. Second, every extra column is another thing that can be measured inconsistently, go missing, or quietly be a leak. The fruit table got *more* trustworthy when we deleted two columns.
+Two reasons, and both are real. First, extra columns hide the good ones — with few rows a model can latch onto chance patterns in weak columns, and it is harder to see which column matters. Second, every extra column is another thing that can be measured inconsistently, go missing, or quietly be a leak. The fruit table got *more* trustworthy when we deleted two columns.
 
 **"How much above the baseline is 'good enough'?"** *(Answer this one honestly: nobody knows.)*
 
@@ -622,7 +622,7 @@ No, and this is a good trap to fall into. Scores don't work like that, because t
 | A verdict arrives before the count — "that one's obviously rubbish" | Intuition is fast and counting is slow | Always the same reply: "Might be. Count it." Then, when `quadrant` lands exactly on the line and they were right: "You were right this time. Were you right because you knew, or because you guessed?" |
 | The 100% is celebrated and the lesson doesn't land | It genuinely looks like success, and the hook was twenty minutes ago | Do not explain. Ask the three-second question and wait, in silence, as long as it takes. "You're holding a fruit. Do you have the sticker?" The realisation has to be theirs or it won't stick. |
 | A score comes out below the baseline and they think they've broken the maths | They wrote the rule the wrong way round | Do not tell them the answer. Say: "Look at the group where you predicted 'banana'. How many bananas are actually in it?" See section 3 above for the full worked case. |
-| `mass_g` gets scored as 12/12 by nudging the thresholds | Rows 4 and 6 are annoying and the fix looks obvious | Try their threshold on all twelve rows in front of them. Moving the boundary always swaps which row breaks, never fixes both. That is a genuinely important thing to have felt. |
+| `mass_g` gets scored as 12/12 by nudging the thresholds | Rows 4 and 6 are annoying and the fix looks obvious | Try their threshold on all twelve rows in front of them. Moving the boundary can shift which row breaks, but never fixes both. That is a genuinely important thing to have felt. |
 | Percentages come out wrong — 11/12 written as 91% or 92% | Rounding, or the calculator | Agree a convention out loud once: one decimal place. 11 ÷ 12 = 0.9166… = **91.7%**. Write it on the board. |
 | "But you already know the answers for these twelve fruits" | Because it is completely true, and it is the best question in the week | Do not brush past it and do not try to answer it now. Say: "That is the single best question anyone has asked me this term, and it is Week 19's entire lesson. Write your name and today's date next to it." Then move on. |
 | The `sticker` argument turns into "so stickers are bad" | Overgeneralising is what brains do | Correct it immediately with the honest version: at a supermarket self-checkout, the sticker is *there* at the moment of prediction, so it's a perfectly good feature. **The same column is honest in one place and fatal in another.** It depends on where you'll use it. |
@@ -817,7 +817,7 @@ Step 3: 4 + 4 = 8 → 8/10 = **80%**. Step 4: **30 percentage points** above the
 
 **6/8 = 75%.**
 (e) Push the threshold below 5,200 (for example `< 5100`): only the 5,500 g cat is wrong, **7/8 = 87.5%.** Or push it above 5,500 (`< 5600`): only the 5,200 g dog is wrong, also **7/8 = 87.5%.**
-(f) **No, 8 out of 8 is impossible.** Moving the threshold only swaps which of the two overlapping rows is wrong; it never fixes both. That is a fact about a world where some cats are heavier than some dogs, not an arithmetic slip.
+(f) **No, 8 out of 8 is impossible.** Moving the threshold can never fix both overlapping rows (it may fix one and break another). That is a fact about a world where some cats are heavier than some dogs, not an arithmetic slip.
 
 **B3.**
 (a) **The feature is blank.** The patient has just walked in and nobody has prescribed anything, so the 100% is worth nothing.
@@ -957,7 +957,7 @@ Total 3 + 4 + 3 + 1 = **11/12 = 91.7%.** Verdict: ✅ very useful. The only fail
 Ranges: bananas 110–135 · apples 140–190 · oranges 185–210. Bananas separate cleanly; apples and oranges overlap between 185 and 190.
 Rule: `IF mass < 138 THEN banana; ELSE IF mass <= 187 THEN apple; ELSE orange`.
 Wrong on id 4 (190 g apple → predicted orange) and id 6 (185 g orange → predicted apple).
-**10/12 = 83.3%.** Verdict: ✅ useful but imperfect. No threshold fixes both; moving it swaps which row breaks.
+**10/12 = 83.3%.** Verdict: ✅ useful but imperfect. No threshold fixes both; moving it can never fix both.
 
 **`length_cm` — 8/12 = 66.7%**
 

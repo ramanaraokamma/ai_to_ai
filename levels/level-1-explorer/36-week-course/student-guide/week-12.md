@@ -48,7 +48,7 @@ Now here is the bit I want you to carry for the rest of the year, and it feels u
 
 > **The 100% was not a warning that something *might* be wrong. It was the actual symptom.**
 
-Something that scores a hundred percent has usually got the answer hidden inside it. Because if it were really doing the hard job, it would get things wrong *sometimes* — that's what "hard" means.
+Something that scores a hundred percent has often got the answer hidden inside it. Because if it were really doing the hard job, it would get things wrong *sometimes* — that's what "hard" means.
 
 A feature like my wet umbrella has a name:
 
@@ -180,7 +180,7 @@ ELSE                      orange
 
 **10 out of 12 = 83.3%.**
 
-Look at rows 4 and 6: one heavy apple and one light orange, each sitting in the other's territory. **No threshold can fix both.** Move the boundary up and you fix row 4 but break another one. Moving it just swaps which row you get wrong. That is not a mistake in your maths — real measurements overlap constantly.
+Look at rows 4 and 6: one heavy apple and one light orange, each sitting in the other's territory. **No threshold can fix both.** Move the boundary up and you fix row 4 but break another one. Moving it can shuffle which row you get wrong, but it can never fix both. That is not a mistake in your maths — real measurements overlap constantly.
 
 > **💡 Try this:** try to get `mass_g` to 12 out of 12 by nudging the threshold. Genuinely try. You'll find it isn't stubbornness on your part — it is impossible, and finding that out with your own pencil is worth more than being told.
 
@@ -386,7 +386,7 @@ Baseline = 13/20 = 65%
 
 **The final feature list: `homework_average`, `past_papers_attempted`, `attendance_percent`.** Three columns instead of five — and the shorter list is the more trustworthy one.
 
-> **🧑‍🏫 If someone asks:** "why not keep all five and let the machine sort it out?" Two real reasons. First, **extra columns hide the good ones** — a model spreads its attention across everything you hand it, so three weak features can bury one strong one. Second, every extra column is another thing that can go missing, be measured inconsistently, or turn out to be a leak nobody spotted. **The table got more trustworthy by containing less.**
+> **🧑‍🏫 If someone asks:** "why not keep all five and let the machine sort it out?" Two real reasons. First, **extra columns hide the good ones** — with only a few rows, a model can latch onto chance patterns in weak columns, and it gets harder for you to see which column really matters. Second, every extra column is another thing that can go missing, be measured inconsistently, or turn out to be a leak nobody spotted. **The table got more trustworthy by containing less.**
 
 ---
 
@@ -456,7 +456,7 @@ Score it on all twelve rows:
 | 5, 6, 7, 8 | 2 | orange | 4 of 4 ✓ |
 | 1, 2, 3, 4 | 3 | apple | 4 of 4 ✓ |
 
-**12 out of 12 = 100%** — with two honest features and no leak anywhere.
+**12 out of 12 = 100%** — with two honest features and no leak anywhere. (One caution: we designed this rule by looking at the same twelve fruit it is scored on, so the 100% shows the rule fits *this table*, not that it will be right on new fruit. Testing on fruit the rule has never seen comes later.)
 
 **So why is this 100% fine and the sticker's 100% a disaster?** Because when you're holding an unknown fruit you **have** its length and you **have** its colour. You do not have a sticker. The number is the same; what it's made of is completely different.
 
@@ -496,7 +496,7 @@ The line to keep saying to yourself all year: **a perfect score is not a triumph
 |---|---|
 | "58% is over half, so it's fine." | "The baseline is 60%, so 58% is *worse than guessing*. Bin it." |
 
-You are not comparing scores to 50%. You are comparing them to **the baseline**, and the baseline can be anything from 20% to 95% depending on how lopsided your labels are. This is the single most common mistake in the whole week.
+You are not comparing scores to 50%. You are comparing them to **the baseline**, and the baseline can be anything from 1 divided by the number of classes (33% for three classes) up to 95% or more, depending on how lopsided your labels are. This is the single most common mistake in the whole week.
 
 ### Trick 3 — "A feature that scores 90% is nine times better than one scoring 10%"
 
@@ -512,7 +512,7 @@ The baseline is the **floor**, not zero. A properly-scored feature can never lan
 |---|---|
 | "Measure everything and let the machine sort it out." | "Deleting the useless column and the leaky column made this table *better*." |
 
-Two real costs to keeping junk columns. They **hide** the good features, because attention gets spread over everything. And every extra column is another thing that can go missing, be measured inconsistently, or turn out to be a leak. In our fruit bowl, **two features do a better and far more trustworthy job than all five together.** The table got better by knowing less.
+Two real costs to keeping junk columns. They **hide** the good features, because with few rows a model can latch onto chance patterns in weak columns and it gets harder to see which column matters. And every extra column is another thing that can go missing, be measured inconsistently, or turn out to be a leak. In our fruit bowl, **two features do a better and far more trustworthy job than all five together.** The table got better by knowing less.
 
 ---
 

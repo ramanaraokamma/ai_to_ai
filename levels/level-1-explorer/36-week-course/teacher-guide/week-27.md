@@ -192,9 +192,10 @@ This is the line the whole term has been building toward, and it deserves to be 
 *Figure 27.4 — Left: 25 pixels, each a number. Right: 4 tokens, each a number. The machine does not know which one is a picture.*
 
 Once a thing is numbers in a table, everything your student learned in Terms 1 and 2 applies again
-without modification: you can count it, tally it, hide a test set from it, measure accuracy on it,
-and get fooled by a background in it. Nothing new is needed. That is why the course is arranged this
-way.
+almost unchanged: you can count it, tally it, hide a test set from it, measure accuracy on it,
+and get fooled by a background in it. Almost nothing about the tools is new, which is why the course is
+arranged this way; the genuinely new thing is that word order matters in text, and next week's bigram
+idea is the first way of using it.
 
 ### The two misconceptions you will hit today
 
@@ -342,8 +343,8 @@ decision. Do not quiz them on the threads; the map is orientation, never assessm
 > week number on this sheet here, and that sheet is the whole point of the lesson.
 >
 > Then, in the second half, the term turns a corner. You have spent six weeks turning pictures into
-> numbers. Today you are going to do the same thing to a sentence — and find out that a machine
-> cannot tell the difference."
+> numbers. Today you are going to do the same thing to a sentence — and find out that, once both are
+> numbers, a machine handles them in much the same way."
 
 **Do this:**
 
@@ -751,7 +752,7 @@ real reason the technique was adopted, alongside handling rare words and names.
 **"Does the machine know what the words mean?"**
 
 Not this term, and honestly not in the way you mean. Right now the words are just pieces you can
-count, like pixels. Next week you will see a machine produce a completely sensible-sounding sentence
+count, like pixels. Next week you will see a machine produce a fluent-sounding (if often nonsensical) sentence
 using nothing but tally marks and no understanding whatsoever. Whether something that big and that
 good at prediction ends up with something you would fairly call *understanding* — that is argued about
 seriously by serious people, and we will come back to it.
@@ -1218,7 +1219,7 @@ like. It is exactly 60 words.
    is right at the top. Good evidence for why R2 was worth having.
 3. **`open` and `opened` are two different tokens**, with a count of 1 each. Obviously the same idea to
    you. Not to the machine, because different letters means a different token. Real systems have
-   tricks for this and none of them fully work.
+   tricks for this (stemming, sub-words) that work well but not perfectly.
 
 **The two written questions in workbook Build It, Part 3 (Q1 and Q2):**
 
@@ -1245,7 +1246,7 @@ section at the end — do not let them open it before you have marked.
 |---|---|---|
 | **W1** | An edge map shows how strong the edge is at every place in the picture — an outline made of numbers. The middles come out as 0 because they never change. | "An outline / where the edges are" is enough. |
 | **W2** | It remembers **directions** — which cells are its neighbours, relative to where the formula sits. | This is why one formula dragged over a hundred cells does a hundred different sums. "Relative" is the word to listen for. |
-| **W3** | Brightness numbers all go **up by 50**. Edge numbers stay the **same**. | Both halves. "Edges change much less" is acceptable. Same item as quiz Q16 — if they missed one, they missed both; write W26. |
+| **W3** | Brightness numbers all go **up by 50**. Edge numbers stay the **same** (as long as nothing hits 255). | Both halves. "Edges change much less" is acceptable. Same item as quiz Q16 — if they missed one, they missed both; write W26. |
 | **W4** | **255**; the step is **clipping**. | Both. Same idea as quiz Q15. |
 | **W5** | A wrong formula is still valid arithmetic: no error message, just a wrong picture computed a hundred times. Checking one cell by hand is the only way to catch it. | Any wording of "it would not tell you it was wrong". |
 

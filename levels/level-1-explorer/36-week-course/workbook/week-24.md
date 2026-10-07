@@ -869,7 +869,7 @@ Both give 160. So **no**, you cannot get the original back: the number does not 
 **Going from 6 × 6 to 3 × 3 — any two:**
 
 1. **The crossbar is gone entirely.** The top row reads 168, 88, 168 — which says only "slightly darker in the middle at the top". There is no bar.
-2. **You can no longer tell a T from an I, a plus sign, or a lollipop.** All four would produce a very similar 3 × 3. The letter's identity has stopped existing.
+2. **Very different letters can collapse into similar-looking grids.** After shrinking, the T's grid (a darker middle top, a stem down the middle) could be mistaken for other thin vertical shapes such as an I, so the letter's identity gets harder to recover. (Some shapes, such as a plus sign or a lollipop, would still look somewhat different; the point is that the 3 × 3 no longer separates every pair of letters.)
 3. **The stem is one column wide**, so its real width — and whether it was even straight — is unrecoverable.
 4. **The difference between ink and boundary grey has vanished.** Every dark square is now a blend of real pencil and edge grey, and nothing in the numbers separates them.
 

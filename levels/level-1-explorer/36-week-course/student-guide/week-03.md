@@ -50,8 +50,9 @@ Now remember AlphaGo from two weeks ago. Beat the best human in the world at Go.
 checkers. Couldn't tell you what a Go board is made of. Ask it "are you tired?" and it replies with a
 Go move, because a Go move is the only thing it can produce.
 
-**Every single AI system that exists today is that chef.** Superb at one thing. Blank at everything
-else. Not one exception, anywhere in the world, right now.
+**Almost every AI system you will meet this year is that chef.** Superb at one thing. Blank a small
+step outside it. No system anywhere does everything a person can. (Chatbots are the hard case, and we
+come back to them in Week 28.)
 
 ![Narrow AI versus general AI](../figures/fig-w03-2-narrow-vs-general.svg)
 
@@ -142,7 +143,7 @@ So when you sort a system, ask two questions **in this order**:
 | Face unlock | 1 (is this the owner's face?) |
 | Spam filter | 1 (spam or not) |
 | Google Translate | 1 (turn text in language A into language B) |
-| A modern chatbot | **looks like many — but it is 1:** guess the next chunk of text |
+| A modern chatbot | **looks like many — but arguably it is 1:** guess the next chunk of text (the hard case; see Talk About It 1) |
 | **You** | effectively unlimited |
 
 That last row is the whole reason the word *narrow* exists. You are reading this, and you could stop
@@ -167,14 +168,15 @@ fails at all of them.*
 to 6 seconds each. That's good. Then we asked it to draw the same prompt **upside down** — a drawing a
 human would recognise instantly — and it got **0 out of 1**. Same drawing. Rotated. Blank.
 
-That's a step sideways, and it's worth more than all six successes.
+That's a step sideways, and it is a strong clue about where the edge is. One try is only a hint,
+though: to be sure, you would repeat it with several drawings.
 
 ---
 
 ### 3. Confidence is a preference, not a promise
 
 When a model gives an answer, it doesn't just say "dog". It gives a number to **every** option on its
-menu, and the numbers always add up to 100.
+menu, and in a model like this the numbers add up to 100.
 
 > **Confidence score** — how strongly the model prefers one answer over the others. A number, not a
 > promise.
@@ -188,7 +190,7 @@ Read that figure again slowly, because here is the trap:
 > **⚠️ Watch out:** "94%" does **not** mean *"right 94 times out of 100"*. It means *"dog is the one
 > I'm leaning towards hardest"*. Leaning hard and being right are two completely separate things.
 
-A model can be 99% confident and completely wrong. And it happens **most** often on things unlike
+A model can be 99% confident and completely wrong. And it happens **often**, especially on things unlike
 anything it trained on — which is exactly when you would most want it to hesitate, and exactly when
 it doesn't.
 
@@ -266,29 +268,35 @@ Here is a real six-round session, written down properly. Notice that the importa
 **top** answer. It was not being cautious. Then more strokes appeared and the ranking changed. It was
 confidently wrong twice before it was confidently right.
 
-**Step 2 — why round 6 failed.** Not because kangaroos are hard to draw. Because **nobody agrees how
-to draw a kangaroo**, so the examples it learned from are all over the place. Round 1 worked because
-almost every person on Earth draws a clock as a circle with two hands.
+**Step 2 — why round 6 might have failed.** Here is a hypothesis: not because kangaroos are hard to
+draw, but because **nobody agrees how to draw a kangaroo**, so the examples it learned from would be
+all over the place. (Another possibility is that it is simply weaker on kangaroos. You could test it
+with several more kangaroos.) Round 1 probably worked because almost every person on Earth draws a
+clock as a circle with two hands.
 
 **Step 3 — now find the edge.** Six successes tell you what it's good at. That is not what we want. We
 want the *edge*. So design a task one small step sideways and run it:
 
 | The sideways task | What actually happens | What it proves |
 |---|---|---|
-| Draw **two things at once** (a cat *and* a hat) | It only scores against the one prompt it gave. It ignores the other object completely. | It isn't looking at your picture. It's matching against one target word. |
-| Draw the prompt **upside down** | Fails, on an otherwise good drawing | It learned what people's *strokes* look like, not what the object is |
-| It asks for "dog" — draw a **cat** | Guesses "dog" wrongly for a while, then goes silent. **It never says "cat".** | It cannot volunteer what it actually sees |
-| It asks for "house" — **write the word** H-O-U-S-E | "zigzag", "squiggle" | Meaning is completely outside its world |
+| Draw **two things at once** (a cat *and* a hat) | Write down every guess it calls out. It was built for one doodle at a time, so two objects usually muddle it. | It was not built to describe a picture with two things in it |
+| Draw the prompt **upside down** | Often fails on an otherwise good drawing (try several) | A hypothesis: it learned what people's *strokes* usually look like, not what the object is |
+| It asks for "dog" — draw a **cat** | Write down every guess. It may well call out "cat" at some point, because it guesses across a whole menu of words. | Whatever happens, it can only pick from a fixed menu (about 345 words) |
+| It asks for "house" — **write the word** H-O-U-S-E | "zigzag", "squiggle" (what we saw in one session) | Letters and meaning are outside its world |
 
 **Step 4 — write the conclusion from your evidence, not from the website.** The site describes itself
-as *a neural network learning to recognise doodles*. Your third test disproves the word *recognise*: a
-system that recognised objects would say **"that's a cat"**. This one says nothing at all.
+as *a neural network learning to recognise doodles*. That is fair as far as it goes, but your tests
+show how narrow the job is: it chooses from a fixed menu of about 345 words. It cannot say **"I don't
+know"**, and it cannot name anything that is not on the menu. A cat when it wanted a dog may get
+called "cat" (it is on the menu), but a drawing of something off the menu can only ever be called
+the nearest thing that is.
 
-> **The honest description:** *"Quick, Draw! does one job: given a set of pen strokes and one target
-> word, it scores how closely those strokes match the strokes other people drew for that same word. It
-> is not recognising objects."*
+> **The honest description:** *"Quick, Draw! does one job: given a set of pen strokes, it ranks the
+> words on a fixed menu of about 345 by how closely the strokes match what other people drew for each
+> word, and the round is won when its guess matches the prompt. It can't name anything off the
+> menu."*
 
-You just got a truer description than the marketing, by pushing three inches past the edge of the
+You just got a fuller description than the marketing, by pushing three inches past the edge of the
 demo. That is the method of this entire course.
 
 ---
@@ -332,11 +340,13 @@ record of this".
 Was that film real? Answer with just yes or no.
 ```
 
-Most of the time it now says **no**.
+Often it now says **no** (this varies by chatbot and by day).
 
-**Step 4 — work out what that tells you.** It just changed its story. So it **never knew in the first
-place**. It produced text that looked like the right kind of text; when challenged, it produced
-different text that also looked right. Neither answer came from knowing anything.
+**Step 4 — work out what that tells you.** It just changed its story. So its first answer was **not
+reliable evidence that it knew**. It produced text that looked like the right kind of text; when
+challenged, it produced different text that also looked right. (It may have had a little partial
+knowledge, and chatbots are also easily pushed around by a challenge, so a flip does not prove it knew
+nothing. What it proves is that you cannot trust the first answer.)
 
 *(And if it sticks to "yes, it was real" — that's even better. Now it's confidently wrong twice. Which
 of the two answers should you believe? **Neither.**)*
@@ -474,15 +484,16 @@ marks, and then you can decide properly.)
 
 **2. "A weather app says 70% chance of rain. Is that a confidence score?"**
 
-*Hint:* surprisingly, no — and this catches most adults. Weather forecasts are *checked*: over many
+*Hint:* no, not quite — and this catches most adults. Weather forecasts are *checked*: over many
 days, it really does rain on about 70% of the days that were called 70%. Model confidence scores are
-usually never checked like that at all. Same-looking number, completely different promise.
+often not checked like that. Same-looking number, completely different promise.
 
 **3. "When will AGI exist?"**
 
 *Hint:* **nobody knows**, and that's an honest answer rather than a dodge. Well-informed people give
 answers from five years to never, all looking at the same evidence. What we *can* say about today:
-there is not one system anywhere that can do a second job it wasn't built for. Anyone who tells you
+no system anywhere does everything a person can, and chatbots, which do many text jobs, are the
+hard case (Week 28). Anyone who tells you
 the date is guessing — especially the confident ones.
 
 ---
@@ -504,7 +515,7 @@ you touched today didn't say a word to you.
 |---|---|
 | "96% means it's nearly certainly correct." | "96% means *wolf is the answer I'm leaning towards hardest*. It's the biggest number in a list that adds up to 100. It says nothing at all about whether it's correct." |
 
-The place this bites hardest: models are **most confidently wrong** on things unlike anything they
+The place this bites hardest: models are often **confidently wrong**, especially on things unlike anything they
 trained on.
 
 ### Trick 3 — "It lied to me"
@@ -524,7 +535,7 @@ confident" is worth **zero** as evidence.
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "There's probably a secret one already, or one next year." | "There is not one system anywhere that can do a second job it wasn't built for. Whether there ever will be is genuinely argued about by people who know far more than I do." |
+| "There's probably a secret one already, or one next year." | "No system anywhere does everything a person can do. Whether there ever will be is genuinely argued about by people who know far more than I do." |
 
 Could someone build one in secret? Extremely unlikely, and here's the reasoning rather than just the
 answer: these systems need enormous electricity, thousands of specialised chips and hundreds of
@@ -542,9 +553,9 @@ biggest systems have every reason to *announce* progress, not hide it.
    not generating.
 3. **A video doorbell.** Motion detection is a rule. "That's a person, not a cat" is learned. One
    product, two families — tear the sticky note in half.
-4. **Voice assistants.** Waking up on its name might be a fixed pattern. Turning your speech into
-   words is learned. Answering in whole sentences it composed is generating. **Three** families in one
-   device.
+4. **Voice assistants.** Waking up on its name is a small learned yes/no picker. Turning your speech into
+   words is learned. Answering in whole sentences it composed is generating, and a plain "set a timer"
+   may be simple rules. **Several** families in one device.
 5. **Photo apps suggesting "is this the same person?"** with a percentage next to it. That percentage
    is a confidence score. Now you know what it does and doesn't promise.
 6. **Homework help of any kind.** Every fluent, confident paragraph is a paragraph you can check. Get
@@ -586,7 +597,7 @@ tile with the tick is yours. Every dashed tile is a "not yet", and it says which
 - **Every real AI is narrow:** one job, and blank one small step sideways from it.
 - **A good narrowness test is close to the job**, not miles away. Close failures are the proof; silly
   failures prove nothing.
-- **General AI (AGI) does not exist.** Not a prototype, not a secret one, not nearly.
+- **General AI (AGI) does not exist.** Not a prototype, not a secret one: no system today can do everything a person can.
 - **A confidence score is a preference, not a promise.** 94% means "this is what I'm leaning towards
   hardest", never "right 94 times out of 100".
 - **Today's AI cannot reliably know when it doesn't know.** Shown something outside its menu, it
@@ -611,7 +622,7 @@ tile with the tick is yours. Every dashed tile is a "not yet", and it says which
 
 > **🧑‍🏫 If someone asks "so is it actually intelligent?"** — it depends entirely on what you mean, and
 > that isn't a dodge, it's the real answer. Can it do a job that used to need a person's judgement?
-> Yes, often brilliantly. Does it understand what it's doing? There's nothing in there having a time.
+> Yes, often brilliantly. Does it understand what it's doing? As far as anyone can tell, there's nothing in there having a time.
 > Does it know when it's out of its depth? **No — and that's the dangerous bit.** Pick your definition
 > and the answer follows.
 

@@ -30,12 +30,12 @@ Your face. The house number on the gate behind you. Your school uniform, so now 
 
 And then, attached to the file — not visible in the picture, *attached to the file* — the exact latitude and longitude to about five metres, the exact date and time to the minute, the make and model of your phone, and sometimes the owner's name.
 
-**You shared one thing. You gave away nine.**
+**You shared one thing. You gave away eleven.**
 
 ![What a photo file carries besides the picture](../figures/fig-w32-3-photo-metadata.svg)
-*Figure 32.1 — You shared one thing. You gave away six of the nine before anybody even looked at the picture.*
+*Figure 32.1 — You shared one thing. The file also carried hidden notes of its own: six of them are listed here, all attached before anybody even looked at the picture.*
 
-Which of those nine did you actually agree to share? One. The face.
+Which of those eleven did you actually agree to share? One. The face.
 
 Now — and this matters more than the list — **we are not going to be frightened of this.** Being scared of your own camera is a useless outcome. Being able to open the file, look at what is in there, and then *decide for yourself* what to send is a genuinely useful skill that most adults do not have.
 
@@ -119,7 +119,7 @@ You have already met the idea in the hook. Here is the part worth pinning down: 
 | Device | The make and model of the phone |
 | Camera settings | Exposure, whether the flash fired, which lens |
 | Location | Latitude and longitude, often to about five metres |
-| Edit history | Whether it was cropped, filtered or rotated |
+| Edit history | Often just that it was edited, and with which app |
 
 > **💡 Try this:** Do it for real, tonight, on one of your own photos. **On a Mac:** open it in Preview → Tools → Show Inspector → click the **i** tab, then the **GPS** tab. **On Windows:** right-click the file → Properties → Details. If there is a latitude and longitude, paste it into a map and look at where you were standing.
 >
@@ -267,7 +267,7 @@ Let us do it more carefully: of the 40 students in postcode area 5, about a fift
    3 students left
 ```
 
-**Step 5 — apply "9 days late this term".** Nine is a lot. In a group of three, almost certainly exactly one of them.
+**Step 5 — apply "9 days late this term".** Nine is a lot. In a group of three, quite possibly only one of them. (The numbers in these steps are made up to show the idea, not measured from real data.)
 
 ```
    1 student.
@@ -371,7 +371,7 @@ Look at what statement B got *right*. Leap years really are roughly every four y
 
 **You would not.** Say that out loud, because it is the whole lesson. There is no tell. There is no wobble in the voice. There is no *"hmm, I'm not sure about this one"* — because the machinery that produces a true sentence and the machinery that produced that sentence are **the same machinery**.
 
-> **⚠️ Watch out:** You are not allowed to fact-check by asking another AI. It will confirm itself in the same confident voice, using the same machinery that produced the error. You need a source that does not come from the thing you are checking. **Two independent sources that do not copy each other, or it does not count.**
+> **⚠️ Watch out:** You are not allowed to fact-check by asking another AI. It may well confirm itself in the same confident voice, using the same machinery that produced the error. You need a source that does not come from the thing you are checking. **Two independent sources that do not copy each other, or it does not count.**
 
 ---
 
@@ -466,7 +466,7 @@ Everybody believes they could tell. That belief is exactly the thing that gets p
 |---|---|
 | "I deleted the photo, so it doesn't exist any more." | "I deleted **my copy**. I have no idea how many other copies exist." |
 
-**Posting is not like saying something. It is like printing something.** If you posted it, somebody may have saved it; a service may keep backups for months; and if it was ever used to train a model, the model has already learned from it and cannot un-learn it on request.
+**Posting is not like saying something. It is like printing something.** If you posted it, somebody may have saved it; a service may keep backups for months; and if it was ever used to train a model, the model has already learned from it and usually cannot un-learn it on request.
 
 ### 4. "I'll just ask the AI if it's sure"
 
@@ -474,15 +474,15 @@ Everybody believes they could tell. That belief is exactly the thing that gets p
 |---|---|
 | "I asked it 'are you certain?' and it said yes, so it's probably right." | "I checked it in the atlas, and then in a second source that doesn't copy the first." |
 
-It will confirm itself in the same confident voice, using the same machinery that produced the mistake. Asking a machine to check its own answer is like asking somebody to proofread their own handwriting for legibility. **You need a source that does not come from the thing you are checking.**
+It may well confirm itself in the same confident voice, using the same machinery that produced the mistake. Asking a machine to check its own answer is like asking somebody to proofread their own handwriting for legibility. **You need a source that does not come from the thing you are checking.**
 
 ---
 
 ## 🌍 Where You've Seen This
 
 1. **A photo you sent a friend that showed more than you meant.** A shirt in the background, a letter on the table, a house number across the road. Nobody edits those out, because nobody is looking at them.
-2. **"Sign in with…" buttons.** One tap and you have introduced two companies to each other. Which is convenient, and is also the single fastest way to combine two piles of facts about you.
-3. **A recommendation that knew something you never typed.** It suggested something oddly specific, and you have no idea which combination of facts produced it. That feeling is re-identification looked at from the other side.
+2. **"Sign in with…" buttons.** One tap and you have introduced two companies to each other. Which is convenient, and is also one of the fastest ways to combine two piles of facts about you.
+3. **A recommendation that knew something you never typed.** It suggested something oddly specific, and you have no idea which combination of facts produced it. That feeling is a close cousin of re-identification: someone working out more about you than you told them.
 4. **A video in a group chat with no source.** Forwarded four times, no original account visible, no news story anywhere. That is checks 1 and 3 failing simultaneously, and it happens weekly.
 5. **A voice on the phone that sounded exactly like someone you know.** A few seconds of recorded audio is now enough. The defence is not your ears — it is a question only the real person could answer.
 6. **Autocorrect changing a name to something wrong, confidently.** Small stakes, same machinery, same lesson: the confident thing is not the correct thing, and it will not warn you.

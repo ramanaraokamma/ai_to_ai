@@ -22,20 +22,20 @@
 
 In 2016, three researchers built a picture classifier on purpose to be bad — and then they didn't tell anybody.
 
-Their model told **huskies** apart from **wolves**. And it worked. On new photos it was right most of the time. They showed it to a room full of people who study machine learning for a living and asked: *do you trust this model?* Most of them said **yes**.
+Their model told **huskies** apart from **wolves**. And it mostly worked: it got most of its test photos right. They showed it to some people who study machine learning and asked: *do you trust this model?* Some of them said **yes**. (This is from a 2016 research paper; I am telling it from memory, so the exact numbers are not something to quote.)
 
-Then they revealed the trick.
+Then an explanation tool, which shows what a model is looking at, revealed the trick.
 
-> **Every single wolf photo in their training set had snow in the background. Not one husky photo did.**
+> **The wolf photos in their training set had snow in the background. The husky photos did not.**
 
-The model had never learned anything at all about wolves. It had learned: *white fuzzy stuff at the bottom of the picture → say wolf.* Photograph a husky standing in snow and it says **wolf**. Every time. With total confidence.
+The model had learned very little about wolves. It had mostly learned: *white fuzzy stuff at the bottom of the picture → say wolf.* Photograph a husky standing in snow and it is likely to say **wolf**, and sound sure about it.
 
 ![The wolves that were made of snow](../figures/fig-w18-6-husky-in-snow.svg)
 *Figure 18.6 — Nobody wrote that rule. Nobody wanted it. It came out of the photos.*
 
-Now sit with the part that should genuinely worry you: **it worked.** It passed. It fooled experts in a room. And nobody found the snow by looking inside the model, because **you cannot look inside a model.** Not you, not me, not Google, not the people who built it.
+Now sit with the part that should genuinely worry you: **it worked.** It passed. A good score hid the problem. And a good score did not show the snow. Researchers did find it with a special explanation tool, but **you cannot just read the answer off the numbers inside a model.** Not you, not me, not Google, not the people who built it.
 
-So today you are going to find out what *your* model is really looking at. And the only way to do that is to break it.
+So today you are going to find out what *your* model is really looking at. And one reliable way to do that is to break it.
 
 ```
    THE QUESTION FOR THE WHOLE LESSON
@@ -51,7 +51,7 @@ So today you are going to find out what *your* model is really looking at. And t
 
 ### 1. A controlled experiment: one knob turned, everything else taped down
 
-> **Controlled experiment** — you change exactly one thing and keep everything else the same, so that anything that changes must have been caused by the one thing you changed.
+> **Controlled experiment** — you change exactly one thing and keep everything else the same, so that anything that changes was most likely caused by the one thing you changed (training wobbles a point or two by chance, so be careful with tiny tests).
 
 That last clause is the whole idea, and it is worth being fussy about, because it is the most useful thing in this entire course — and not just for AI.
 
@@ -90,7 +90,7 @@ This feels backwards, and you're allowed to resent it. You spent last week build
 
 So here's the honest reason:
 
-> You cannot look inside a model. Nobody can. So the only way to find out what it was using is to **take something away and see what falls over.** If you remove the variety and it collapses, it *was* using the variety.
+> You cannot just read the answer off the numbers inside a model. So one reliable way to find out what it was using is to **take something away and see what falls over.** If you remove the variety and it collapses, it *was* using the variety.
 
 That's not vandalism. It's a diagnosis. It's what a mechanic does when they unplug one sensor at a time to find the fault.
 
@@ -108,13 +108,13 @@ Step 7 — **reload `baseline-v1.tm`** — has no button of its own and nothing 
 
 ---
 
-### 3. The four sabotages, and what each one proves
+### 3. The four sabotages, and what each one suggests
 
-| # | Sabotage | What to expect | What it proves |
+| # | Sabotage | What to expect | What it suggests |
 |:--:|---|---|---|
 | **1** | **5 photos per class** instead of 40 | Still mostly right — but every margin collapses | Too few examples produces **unstable** answers *before* it produces wrong ones |
-| **2** | **One background only** | Brilliant on that background, broken two metres away | The background became part of what the model thinks the object *is* |
-| **3** | **Blurry photos** | Still right, margins way down | Blur destroys **edges**, and edges are the most useful signal in a photo of a small object |
+| **2** | **One background only** | Brilliant on that background, broken two metres away | The model never saw the background change, so a new background throws it off |
+| **3** | **Blurry photos** | Still right, margins way down | Blur may be hiding **edges**, a useful signal in a photo of a small object (a likely but untested explanation) |
 | **4** | **40 / 40 / 5 imbalance** | The small class almost never gets predicted at all | Training reduces *total* mistakes, so it abandons the cheap class |
 
 ![Five runs with an accuracy bar beside each](../figures/fig-w18-2-five-row-results.svg)
@@ -144,7 +144,7 @@ Then you carry the same spoon two metres to the sink and hold it up.
 
 **Same spoon. Same model. Two metres.** The margin went from 92 to 5 — a coin toss that landed wrong.
 
-**The mechanism, said properly:** the wooden table appeared in **every single training photo**, so "warm brown texture in the background" became part of what the model believes a spoon looks like. Move to the sink and a big chunk of the evidence vanishes with the table. **That is the husky in the snow, reproduced in your own kitchen, in about ten minutes.**
+**The mechanism, said properly:** the wooden table appeared in **every single training photo**, so the model was never shown that backgrounds can change, and it probably leaned on "warm brown texture in the background" as well as on the spoon. (This one test does not isolate the cause; that is the likely explanation.) Move to the sink and a big chunk of the evidence may vanish with the table. **It is a cousin of the husky in the snow: there the snow went with one label, here the table goes with every label, but either way the model was never shown that backgrounds vary. You can see the damage in your own kitchen, in about ten minutes.**
 
 And now the trap — the reason this entire course exists:
 
@@ -228,6 +228,8 @@ Then you test each version **twice** — once on grass, once on the carpet indoo
 | **A** (mixed backgrounds) | 88% average top score, margins 71 / 66 / 58 | **85%** average, margins 66 / 61 / 54 |
 | **B** (grass only) | **96%** average top score, margins 93 / 90 / 87 | **41%** average, margins 8 / 5 / 11 |
 
+*The margins listed are for three of the five test items, picked to keep the table short; the average top score covers all five.*
+
 **Question 1 — which version has the highest single number anywhere in that table?** Version B, at **96%**.
 
 **Question 2 — which version would you actually put in a phone app?** **Version A.** Easily. Obviously.
@@ -238,7 +240,7 @@ Then you test each version **twice** — once on grass, once on the carpet indoo
 
 > **That version B was better.** 96% versus 88%, honestly measured, no cheating anywhere. And you would have shipped the broken one.
 
-**Question 5 — how much variety does it take to fix version B?** You don't have to double the photo set. Swap just 10 of B's 40 grass photos per class for 10 taken on carpet, retrain, and typically the carpet score jumps from around 41% to around 75% while the grass score barely moves. **A small amount of variety fixes a surprising amount of damage** — which is genuinely useful to know, because it means the fix is usually affordable.
+**Question 5 — how much variety does it take to fix version B?** You don't have to double the photo set. Swap just 10 of B's 40 grass photos per class for 10 taken on carpet, retrain, and you could try it and see whether the carpet score climbs while the grass score barely moves (we have not measured it, so write your prediction down first). **A small amount of variety may fix a surprising amount of damage** — if it does, the fix is affordable.
 
 > **🔑 What Example 2 teaches:** **a score means nothing until you know where it was measured.** Always report where, and always test somewhere the model has never been.
 
@@ -309,6 +311,8 @@ Everything below can be redone at home. You need the laptop, `baseline-v1.tm`, y
 
 ### The five rows we filled in
 
+*These are illustrative numbers from one example run, not results anyone should expect to match. Your run will differ. If a sabotage does not break your model, that is a finding too, and worth writing down.*
+
 | # | what I changed | score | spoon margin | tbrush margin | comb margin | verdict |
 |:--:|---|:--:|:--:|:--:|:--:|---|
 | 0 | baseline: 40 each, full variety | 3/3 real | 86 | 82 | 66 | works |
@@ -322,7 +326,7 @@ Everything below can be redone at home. You need the laptop, `baseline-v1.tm`, y
 
 **Experiment 2 — one background only. ⭐ The moment of the term.** This one gets tested **twice**: once on the surface the photos were taken on, and once somewhere completely different. Test A scores *higher than the baseline* and Test B falls apart. If you only do one experiment ever again, do this one.
 
-**Experiment 3 — blurry photos.** Trained on photos shot while waving the object; tested with everything held perfectly still and sharp. Still correct, margins down hard. And notice the odd bit: **it was trained blurry and tested sharp and it still struggled**, which means the mismatch cuts both ways. A model trained only on perfect studio photos will also fail on the wobbly ones real people take. **Your training photos should look like the photos your model will actually meet.**
+**Experiment 3 — blurry photos.** Trained on photos shot while waving the object; tested with everything held perfectly still and sharp. Still correct, margins down hard. And notice the odd bit: **it was trained blurry and tested sharp and it still struggled**, which hints that a mismatch between training and testing photos can hurt. We did not test the reverse direction, but a model trained only on perfect studio photos may well struggle with the wobbly ones real people take. **Your training photos should look like the photos your model will actually meet.**
 
 **Experiment 4 — imbalance 40 / 40 / 5.** Done by deleting comb photos; no new photos needed. Check the counts read 40 / 40 / 5 *before* training.
 
@@ -412,8 +416,8 @@ Training has a bit of randomness, so the numbers wobble a point or two and it is
 
 1. **Medicine trials.** Two groups, one gets the real pill, one gets a fake one, and **everything else is held identical** — same instructions, same schedule, same doctors. It's the same method as your taped-down knobs, with much higher stakes.
 2. **A phone camera that works beautifully outdoors and badly in a restaurant.** Somebody's training photos had a background, or a light, that yours don't. Same shape as experiment 2.
-3. **Voice assistants and accents.** They work on the accents that were in the training recordings and struggle with the ones that weren't. Nobody wrote a rule against your accent. It just wasn't in the photos, so to speak.
-4. **Your own revision.** Practising forty questions that are all `? × 7` makes you brilliant at sevens and useless at `6 × 8`. That's experiment 2, in your maths book: **you practised the background, not the skill.**
+3. **Voice assistants and accents.** They often work best on the accents that were well covered in the training recordings and can struggle with the ones that weren't. Nobody wrote a rule against your accent. It just wasn't in the photos, so to speak.
+4. **Your own revision.** Practising forty questions that are all `? × 7` makes you brilliant at sevens and much shakier at `6 × 8`. That's experiment 2, in your maths book: **you practised the background, not the skill.**
 5. **Testing whether the wifi is the problem.** You unplug the router. Then you try a different device. Then a different room. **One thing at a time** — and you already do this without being taught.
 6. **Sports coaching.** Change one thing in your bowling action, bowl six balls, see what happened. Change four things and you've learned nothing except that today was different.
 
@@ -437,7 +441,7 @@ visible. That slip is now the most honest page in your notebook.
 
 > **🔑 And remember why the researchers' husky model was so dangerous.** It was not dangerous because
 > it was bad. It was dangerous because it was **good** — right most of the time, on new photos, in
-> front of experts. The snow only showed up when somebody deliberately went looking for it. Nobody
+> front of people checking its score. The snow only showed up when somebody deliberately went looking for it. Nobody
 > finds their model's snow by accident, and nobody finds it by trusting the accuracy number.
 
 ---
@@ -454,7 +458,7 @@ are **data** and **evaluation**: you changed the ingredients, and you judged wha
 
 | | |
 |---|---|
-| **The mental model you now own** | You cannot look inside a model. So you find out what it was leaning on by **taking one thing away at a time**, with your prediction written down *first*, and watching what moves. And you cannot fix a model at all — you can only fix its **ingredients** and bake a new one. |
+| **The mental model you now own** | You cannot just read the answer off the numbers inside a model. So one reliable way to find out what it was leaning on is **taking one thing away at a time**, with your prediction written down *first*, and watching what moves. And you cannot fix a model at all — you can only fix its **ingredients** and bake a new one. |
 | **The one question it answers** | *"If I change exactly one thing, what moves?"* |
 | **What it plugs into** | Week 17's model, which is the thing you are breaking, and Week 12's trick of scoring something by taking it away and seeing what you lose. |
 | **What carries forward** | Change-one-thing is now your method for the rest of the course. It is how Week 26 proves that edges beat brightness, and how Week 31 lets you *predict*, before you test, which group your model is about to let down. |
@@ -470,7 +474,7 @@ are **data** and **evaluation**: you changed the ingredients, and you judged wha
 ## 🔑 Remember This
 
 - A **controlled experiment** changes exactly one thing and tapes everything else down, so anything that changes *must* have been caused by that one thing.
-- A **sabotage test** damages the data on purpose, because you cannot look inside a model — **you find out what was holding it up by taking things away.**
+- A **sabotage test** damages the data on purpose, because you cannot just read the answer off the numbers inside a model — **you can find out what was holding it up by taking things away.**
 - **Predict in writing first.** Memory rewrites itself, and a wrong prediction you've thought about is worth more than a right one you got lucky on.
 - **The margin moves before the verdict does.** Score is blunt; margin keeps reporting.
 - **A higher score can mean a worse model.** 95% on the table it trained on lost to 91% measured everywhere.
@@ -486,7 +490,7 @@ are **data** and **evaluation**: you changed the ingredients, and you judged wha
 
 | Word | What it means | Example |
 |---|---|---|
-| **controlled experiment** | You change exactly one thing and keep everything else the same, so any difference must have been caused by the thing you changed. | Cut the photos from 40 to 5 per class. Same room, same light, same five test items, same order, same person. |
+| **controlled experiment** | You change exactly one thing and keep everything else the same, so any difference was most likely caused by the thing you changed. | Cut the photos from 40 to 5 per class. Same room, same light, same five test items, same order, same person. |
 | **sabotage test** | Deliberately damaging your training data to find out what the model had been depending on. | Retrain using only photos taken on the wooden table, then test at the sink. If it collapses, it was using the table. |
 
 > **⚠️ Watch out:** "controlled experiment" does **not** mean "an experiment I was in control of." It means the **variables** are controlled — held still — so the one you moved is the only possible explanation.

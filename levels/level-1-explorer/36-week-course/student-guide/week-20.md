@@ -12,7 +12,7 @@
 > - Compute accuracy as a **fraction**, a **decimal** and a **percentage**, showing the division every single time, with no calculator
 > - Explain why the fraction carries information that the percentage throws away
 > - Compute **per-class accuracy** and find the class the overall average was hiding
-> - Use the words **percentage point** correctly when you subtract two percentages — which most adults get wrong
+> - Use the words **percentage point** correctly when you subtract two percentages — which many adults get wrong
 >
 > **Reading time:** about 25 minutes. **No computer needed, and no calculator** until you have written the division down. This is the most important chapter in the book.
 
@@ -133,7 +133,7 @@ You cannot tell. And those are wildly different claims. Three out of four is one
    one photo  =  1 ÷ 15  =  0.0667  =  6.7 percentage points
 ```
 
-**One photo is worth 6.7 points of your final score.** So if one comb had gone the other way, your headline would read 80% instead of 73.3%. Which means: *if my model gets 73% and yours gets 78% on fifteen photos, is yours better?* **You cannot tell.** A five-point difference measured on fifteen photos means nothing at all.
+**One photo is worth 6.7 points of your final score.** So if one comb had gone the other way, your headline would read 80% instead of 73.3%. Which means: *if my model gets 73% and yours gets 80% on fifteen photos, is yours better?* **You cannot tell.** A one-photo difference (6.7 points) measured on fifteen photos is well within noise: it tells you almost nothing.
 
 ---
 
@@ -184,7 +184,7 @@ That makes 73.3% a real result. But now flip it round, the way the spam filter d
 
 A model reported as "90% accurate" on *that* test set has achieved precisely nothing. **So always write the baseline next to the accuracy.** A number with no baseline beside it is not a result, it is a boast.
 
-> **⚠️ Watch out:** 40% for the comb class sounds terrible, and it is bad — but it is still *above* the 33.3% baseline. So the model has learned **something** about combs, just not enough. Being able to say that sentence is the difference between "it's broken" and knowing exactly where to spend your next ten photos.
+> **⚠️ Watch out:** 40% for the comb class sounds terrible, and it is bad — but it is only just *above* the 33.3% baseline, and with five comb photos we cannot tell from this whether it has learned anything about combs at all (one photo is worth 20 points here). Being able to say that careful sentence is the difference between "it's broken" and knowing exactly where to spend your next ten photos.
 
 ---
 
@@ -220,7 +220,7 @@ Why does it matter? Because "40 percent more" and "40 percentage points more" ar
 
 **Both sentences are true. They use different numbers. They are about the same change.** Without the word "points", nobody knows which one you meant — and that is exactly why the word exists.
 
-> **💡 Try this at dinner:** listen out for it on the news. "Unemployment rose by 2 percent" and "unemployment rose by 2 percentage points" get mixed up constantly, and they can be ten times apart. You will start hearing it everywhere, and you will be right and they will be wrong, which is a pleasant feeling.
+> **💡 Try this at dinner:** listen out for it on the news. "Unemployment rose by 2 percent" and "unemployment rose by 2 percentage points" get mixed up often, and they can be very far apart. You will start hearing it everywhere, and you will be right and they will be wrong, which is a pleasant feeling.
 
 ---
 
@@ -232,7 +232,7 @@ Three of this week's new words belong to a bigger idea that **next week** unpack
 >
 > **Memorizing** — the model works on the exact examples it studied, and falls apart on anything else.
 >
-> **The gap** — training accuracy minus test accuracy. How much memorizing happened.
+> **The gap** — training accuracy minus test accuracy. A big gap is a sign of memorizing.
 
 The person who built the sheet you scored also wrote down how their model did on the 60 photos it trained on: **sixty out of sixty.**
 
@@ -548,7 +548,7 @@ Five subtractions, each read out loud with the unit attached:
 |---|---|
 | "It gets about 73 out of every 100 right." | "It got **11 out of 15** right. 73.3% is what that *would* be if it kept the same rate up over a hundred." |
 
-**Why it matters:** there were fifteen photos, not a hundred. **One photo is 6.7 percentage points.** If one comb had gone the other way, the headline reads 80%. A five-point gap between two models on fifteen photos is noise, not evidence.
+**Why it matters:** there were fifteen photos, not a hundred. **One photo is 6.7 percentage points.** If one comb had gone the other way, the headline reads 80%. A one-photo gap (6.7 points) between two models on fifteen photos is noise, not evidence.
 
 ### Trick 3 — saying "percent" when you mean "percentage points"
 
@@ -571,12 +571,12 @@ Five subtractions, each read out loud with the unit attached:
 ## 🌍 Where You've Seen This
 
 - **School reports.** "78%" on a report card. Out of how many marks? Compared to what? Which topics dragged it down? Your report is an overall accuracy with the per-class breakdown removed.
-- **Cricket batting averages.** A batter averaging 45 might have scored 450 in ten innings or 4,500 in a hundred. Same average, wildly different amounts of evidence. **The fraction matters.**
+- **Cricket batting averages.** A batter averaging 45 might have been out ten times for 450 runs, or a hundred times for 4,500. Same average, wildly different amounts of evidence. **The fraction matters.**
 - **App store ratings.** "4.8 stars" from 12 ratings versus 4.6 stars from 40,000. The second one is far more trustworthy, and the bigger number is the less believable one.
 - **"97% positive reviews" on a game.** Out of how many? And positive from *whom* — people who bought it because they already liked that kind of game?
 - **Weather forecasts.** "70% chance of rain" is fine. But if it said "90% accurate", you should immediately ask: in a place where it rains 90% of days, "always say rain" is 90% accurate.
 - **Medical test results.** A test for a rare disease can be "99% accurate" by simply saying *no* to everybody, if only 1 person in 100 has it. Doctors know this. It is exactly the spam filter, with much higher stakes.
-- **The news.** "Support rose by 5 percent." Five percentage points, or five percent of what it was? Those can be ten times apart, and newsreaders mix them up constantly.
+- **The news.** "Support rose by 5 percent." Five percentage points, or five percent of what it was? Those can be very far apart, and newsreaders mix them up often.
 
 ---
 
@@ -611,7 +611,7 @@ evaluation. One idea, done thoroughly, is what this week is.*
 - **Write the fraction first.** It is the only form that says how much evidence there was. 75% could be 3/4 or 300/400.
 - **Always write the baseline next to the accuracy.** A number with no baseline beside it is a boast, not a result.
 - **Never report one accuracy number on its own.** Break it open per class. The average describes nobody.
-- On 15 photos, **one photo is 6.7 percentage points.** So a 5-point difference between two models means nothing.
+- On 15 photos, **one photo is 6.7 percentage points.** So a one-photo (6.7-point) difference between two models tells you almost nothing.
 - Subtract two percentages and the unit is **percentage points**. Say the word out loud, every time.
 - **100% on training photos is the most ordinary result in the world.** Only the gap carries information.
 - A high accuracy can be **completely honest and completely misleading** at the same time. That is the whole week.
@@ -627,7 +627,7 @@ evaluation. One idea, done thoroughly, is what this week is.*
 |---|---|---|
 | **generalizing** | The model works on examples it has never seen. The only thing you actually want. | "It got 95% on brand-new photos, so it's generalizing well." |
 | **memorizing** | The model works on the exact examples it studied, and falls apart on anything else. | "100% on its own photos and 40% on new ones — that's memorizing." |
-| **the gap** | Training accuracy minus test accuracy. How much memorizing happened. | "The gap is 26.7 percentage points." |
+| **the gap** | Training accuracy minus test accuracy. A big gap is a sign of memorizing. | "The gap is 26.7 percentage points." |
 | **per-class accuracy** | Of the test examples that truly belong to one class, what fraction the model got right. Worked out one class at a time. | "Per-class accuracy: spoon 100%, toothbrush 80%, comb 40%." |
 | **percentage point** | The unit you get when you subtract one percentage from another. | "It went from 33.3% to 73.3% — up 40 **percentage points**, not 40 percent." |
 

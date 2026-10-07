@@ -748,7 +748,7 @@ Your rulebook was Student A. You had the ten messages in front of you **with the
 
 (c) Training score **100%.** **The gap: 33 percentage points.**
 
-(d) Three sold out, three didn't. Always saying the same thing scores **3 ÷ 6 = 50%.** The rule got 67%, so it beats the bar by **17 percentage points.** Not nothing. Not impressive. And you only know it because you worked the 50% out too.
+(d) Three sold out, three didn't. Always saying the same thing scores **3 ÷ 6 = 50%.** The rule got 67%, so it beats the bar by **17 percentage points.** Not nothing (though on six days it could be luck). Not impressive. And you only know it because you worked the 50% out too.
 
 (e) **Both mistakes sit one or two degrees from the threshold** — F1 at 27 and F4 at 29, with the line at 28. Days far from the line (23, 35) are easy; days near it are a coin toss with consequences. **That is Week 8's edge-case idea arriving inside a Week 9 calculation**, and no threshold you pick will change it. What it tells you: to improve, you need a **different measurement** (was it raining? was it a school day?), not a better number.
 
@@ -835,7 +835,7 @@ D and B are the only two that measured anything at all, and D has forty times th
 2 out of 5 = 40%      3 out of 5 = 60%      4 out of 5 = 80%
 ```
 
-So team B's real answer sits somewhere in a band roughly **40% to 80%** — forty percentage points wide. One message either way moves it by 20 points.
+So after one message either way, team B's score could be anywhere in a band roughly **40% to 80%** — forty percentage points wide. One message either way moves it by 20 points.
 
 Team D:
 

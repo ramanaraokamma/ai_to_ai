@@ -165,11 +165,12 @@ Sit with that, because it quietly explains an enormous amount. If the thing that
 
 Ask yourself one question about that figure: **at which of the three could you still tell whose face it is?** That is the whole argument about resolution, and it takes twenty seconds.
 
-**So why would anyone throw away 99.6% of a photo on purpose?** Three honest reasons:
+**So why would anyone throw away 99.6% of a photo on purpose?** Four honest reasons:
 
 1. Twelve million numbers per photo × 60 photos is far too much for a web browser to hold.
 2. Small pictures train in seconds instead of hours.
 3. Most fine detail genuinely does not help tell a sock from a glove.
+4. The main one: Teachable Machine does not start from nothing. It builds on a ready-made network (called MobileNet) that was built to take pictures of exactly 224 × 224, so every photo has to be made that size to fit it. (Reasons 1 and 2 are why such a small size is a sensible choice.)
 
 And one bit of arithmetic for scale. Deciding and writing 144 numbers took you about ten minutes, but let us be generous and say the writing alone could be done at one number per second.
 
@@ -292,7 +293,7 @@ Less than one pixel. **The seam does not survive at all.** It cannot: there is n
 
 ### Example 3 — School: turning a shaded letter into numbers, and catching the classic mistake
 
-Somebody shades a fat capital **T** into a 6 × 6 box on graph paper. They deliberately let the line fall wherever it falls, so a couple of squares end up awkward. Then they number every square using the five-step key.
+Somebody shades a capital **T** into a 6 × 6 box on graph paper. (Its bar is only one square thick, thinner than the two-square rule for your own drawing, to keep the arithmetic short.) They deliberately let the line fall wherever it falls, so a couple of squares end up awkward. Then they number every square using the five-step key.
 
 Here is what they hand over:
 
@@ -419,7 +420,7 @@ One missing number wrecked everything after it. That lesson is worth more than a
 > *Hint:* this is a much better question than it looks. A pixel has **no size** — it is a *number*. It only gets a size when it is shown on something: on a phone screen a pixel is about a tenth of a millimetre, on a stadium screen a pixel is the size of your fist, and printed in a book it is whatever size the printer chose. Same numbers, wildly different sizes. Ask the other person how a photo can be "small" and "huge" at the same time.
 
 **2. "Do our eyes have pixels?"**
-> *Hint:* sort of, and the differences are the interesting part. Your eye has about 100 million light detectors, so in a rough sense yes. But they are **not in a tidy grid** — they are packed densely in the middle of your vision and thinly at the edges — they do not all report at the same instant, and a lot of processing happens in your eye before anything reaches your brain. A camera records everywhere evenly. Your eye records the middle extremely well and mostly guesses the rest.
+> *Hint:* sort of, and the differences are the interesting part. Your eye has about 100 million light detectors, so in a rough sense yes. But they are **not in a tidy grid** — they are spread unevenly, with the ones that see sharp detail crowded into the middle of your vision — they do not all report at the same instant, and a lot of processing happens in your eye before anything reaches your brain. A camera records everywhere evenly. Your eye records the middle extremely well and mostly guesses the rest.
 
 **3. "How many different greys can a person actually see?"**
 > *Hint:* **nobody knows for sure**, and it is worth saying that out loud. Estimates run from about 30 shades if you see the greys one at a time, up to several hundred if they are side by side where you can compare them. It depends on how bright the room is, whether the patches touch, how big they are, how long you look, and which person is looking. That uncertainty is partly *why* 256 levels got chosen — it is enough that in most photos you cannot see the steps (though in a very smooth sky or shadow you sometimes can).

@@ -388,7 +388,7 @@ Remember Dataset A from the hook — the one collected at a sleep clinic? It is 
 1. Open a blank spreadsheet — [sheets.google.com](https://sheets.google.com), or Excel, or LibreOffice Calc. All three behave identically for everything we do.
 2. **Type your column headers into row 1.** Your data then starts in row 2.
 3. Type your rows. However many you have. **The typing is not the objective**, so stop when time is up.
-4. Click an **empty cell three rows below the data** and type `=AVERAGE(D2:D31)`, then Enter.
+4. Click an **empty cell two rows below the data** and type `=AVERAGE(D2:D31)`, then Enter.
 5. Do the same for your second number column.
 6. Type `=COUNT(D2:D31)` in the next cell down and read the number. **That is how many boxes actually held a value.**
 7. **Turn away from the screen** and write, on paper:
@@ -503,7 +503,7 @@ There genuinely are well-documented sources: a national census, your school's ow
 ## 🌍 Where You've Seen This
 
 1. **"9 out of 10 dentists recommend it."** Ask the five questions of a toothpaste box. How many dentists? Chosen how? Asked what, exactly? Paid by whom? Packaging statistics are magnificently unprovenanced, and they are the easiest place in your house to practise.
-2. **A shop's "4.7 stars from 12 reviews".** That is a sample of people who chose to write a review — self-selection. The furious and the delighted write reviews. The 4,000 people who thought it was fine did not.
+2. **A shop's "4.7 stars from 12 reviews".** That is a sample of people who chose to write a review — self-selection. The furious and the delighted write reviews. Imagine (this number is made up) another 4,000 people who thought it was fine and never wrote anything. They did not.
 3. **An online poll about school food.** Anyone who felt like it answered, which is why the result never matches what a paper slip handed to every student gets.
 4. **A photo of one busy street used to say "the whole city is crowded".** One spoonful, taken from the least stirred part of the pot, at the busiest hour.
 5. **A museum label.** *"Bowl, Gujarat, about 1750, gift of the Mehta family, 1962."* That is provenance, written on a card next to the thing, exactly like your data card. Museums have been doing this for two hundred years.

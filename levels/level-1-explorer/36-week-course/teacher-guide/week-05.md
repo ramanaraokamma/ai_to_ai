@@ -109,7 +109,7 @@ What to do with one: **blank it, and write the note `was 88, impossible, origina
 
 > **Controlled vocabulary** — the written-down list of allowed values for a category column.
 
-`Monday`, `monday`, `MON`, `Mon.` — to you, obviously one day. To a machine, four unrelated categories, as different from each other as `dog` and `Tuesday`. This is, genuinely, the most common data error in the world.
+`Monday`, `monday`, `MON`, `Mon.` — to you, obviously one day. To a machine, four unrelated categories, as different from each other as `dog` and `Tuesday`. This is, genuinely, one of the most common data errors there is.
 
 The fix is not to be more careful. Being more careful does not work; people are not careful over three weeks at 9pm. The fix is a **controlled vocabulary**: decide the allowed values in advance, write them at the top of the sheet, and never type anything else. In a spreadsheet you can enforce it with a dropdown (Week 6). On paper you enforce it by having the list where you can see it.
 
@@ -124,7 +124,7 @@ This is the most important paragraph in the file.
 ![Impossible value versus outlier](../figures/fig-w05-5-outlier-vs-impossible.svg)
 *Figure 5.3 — Impossible sits outside the legal range. An outlier sits inside it, just far from the crowd. Completely different diagnoses.*
 
-**Never delete an outlier because it is inconvenient.** It is very often the most informative row in the entire table. In the Crime Scene Table, the 480-minute row is also the row with the lowest sleep — that pair of facts is the only interesting thing in the whole dataset, and a student who deletes it has thrown away the finding.
+**Never delete an outlier because it is inconvenient.** It is very often the most informative row in the entire table. In the Crime Scene Table, the 480-minute row is also the row with the lowest sleep — that pair of facts is a lead worth checking (one row of twelve is a coincidence to look into, not a finding), and a student who deletes it has thrown the lead away.
 
 The professional move: **investigate and annotate.** Add a note: `home sick, watched films all day`. Keep the value.
 
@@ -356,7 +356,7 @@ average bag weight = 3.42 kg
 >
 > **Number four: inconsistent.** The same thing written four different ways. Monday, monday, MON, Mon-full-stop.
 >
-> You see one day. A computer sees four completely different categories — as different from each other as 'dog' and 'Thursday'. This is the most common data error in the world, and I mean that literally.
+> You see one day. A computer sees four completely different categories — as different from each other as 'dog' and 'Thursday'. This is one of the most common data errors there is.
 >
 > The fix isn't 'be more careful'. Being careful doesn't work at nine o'clock at night in week three. The fix is a **controlled vocabulary** — you write down the allowed answers before you start and you never type anything else."
 
@@ -438,7 +438,7 @@ The full diagnosis, in the order most students find them:
 | "How much did the average move?" | "4.6 kg" / "about 30%" | If they struggle with the percentage, just take the difference. The size is the point, not the arithmetic. |
 | "Which single fault moved it most?" | "The minus five." | Check it together: without only the −5 it would be (22+8+22+30)/4 = 20.5. Yes — the negative did most of the damage. |
 | "How many different breeds does a computer see in the dirty table?" | "Five." | Count them: `labrador`, `Beagle`, `beagle`, `german shepherd`, `Labrador` = **5**. After cleaning: **3**. |
-| "So what did cleaning actually do to the breed column?" | "Made three real groups instead of five fake ones" | Land it: with 5 groups of one or two dogs each, there is nothing to learn. With 3 groups there is. **Cleaning didn't tidy the table; it created the information.** |
+| "So what did cleaning actually do to the breed column?" | "Made three real groups instead of five fake ones" | Land it: with 5 groups of one or two dogs each, there is nothing to learn. With 3 groups there is more to work with (still small, but a start). **Cleaning didn't tidy the table; it created the information.** |
 
 ---
 
@@ -575,9 +575,9 @@ If they hesitate or refuse — praise it immediately and hard. That hesitation i
 
 **Then say this:**
 
-> "480 minutes is eight hours. It's inside what's possible. It's not a fault — it's an **outlier**, and it's the most interesting row on the page. Look across that row: that's also the night with the *lowest* sleep in the whole table, six and a half hours. The one weird value and the one low value are on the same line.
+> "480 minutes is eight hours. It's inside what's possible. It's not a fault — it's an **outlier**, and it's one of the most interesting rows on the page. Look across that row: that's also the night with the *lowest* sleep in the whole table, six and a half hours. The one weird value and the one low value are on the same line.
 >
-> If you'd crossed it out, you'd have deleted the only interesting thing in this dataset, and the table would have looked *tidier*, and you'd never have known.
+> If you'd crossed it out, you'd have deleted a lead worth checking, and the table would have looked *tidier*, and you'd never have known.
 >
 > So the rule is: an impossible value gets blanked. An outlier gets **kept and annotated**. Write in the margin: 'outlier, not a fault — investigate'."
 
@@ -731,7 +731,7 @@ Read these four aloud, one at a time. For each: **what kind of fault, and what d
 | **2 — Emerging** | Finds the loud faults (blanks, 88) with prompting. Names them if given the list of four. Still treats "weird" as "wrong". |
 | **3 — Secure** | Finds 7+ of the 9 unprompted, names each kind, gives the right fix. Leaves the 480 alone after discussion. **Target for Week 5.** |
 | **4 — Strong** | Finds all 9 including the duplicate. Leaves the 480 alone *without* discussion, and can justify it with the legal range. Writes a usable controlled vocabulary unprompted. |
-| **5 — Exceptional** | Argues which fault is most dangerous and why, using the idea that silent faults beat loud ones. Notices that the outlier row is also the lowest-sleep row. Proposes a collection sheet that prevents the faults at source. |
+| **5 — Exceptional** | Argues which fault is most dangerous and why, using the idea that silent faults beat loud ones. Notices that the outlier row is also the lowest-sleep row, and calls it a lead to check rather than a finding. Proposes a collection sheet that prevents the faults at source. |
 
 ---
 
@@ -835,7 +835,7 @@ Numbered in reading order, matching the pins in Figure 5.6.
 | **8** | Aug 24 | `day` | Inconsistent | `Mon.` | Standardise to `Mon` |
 | **9** | Aug 26 (second) | whole row | Duplicate | Identical to the row above, same date | Delete one. Only one 26 August existed. |
 
-**Pin 10 — the trap.** Aug 7, `screen_min` = **480**. **Not a fault.** It is inside the legal range 0–1440, so it is legal. It is an **outlier**: 8 hours, far from the 95–150 cluster. Keep it, and write a note (`why was this day different?`). Bonus observation for strong students: this row also has the lowest sleep in the table, 6.5 h — the two facts sit on the same line, which is the only genuinely interesting thing in the whole dataset.
+**Pin 10 — the trap.** Aug 7, `screen_min` = **480**. **Not a fault.** It is inside the legal range 0–1440, so it is legal. It is an **outlier**: 8 hours, far from the 95–150 cluster. Keep it, and write a note (`why was this day different?`). Bonus observation for strong students: this row also has the lowest sleep in the table, 6.5 h — the two facts sit on the same line, which is a lead worth checking, not a finding: one row out of twelve could be coincidence.
 
 **Fault counting.** Nine faults, but only **four kinds**, and the four Monday spellings are one *problem* in four *places*. Students who report "six faults" because they counted the Mondays as one are reasoning correctly; mark it right and ask them to circle all four cells anyway.
 

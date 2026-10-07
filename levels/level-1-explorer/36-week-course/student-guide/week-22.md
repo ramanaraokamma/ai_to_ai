@@ -39,7 +39,7 @@ Before anything else, here are the three rules. They are strict, they are strict
 >
 > **3. Nothing gets crossed out afterwards.** That is why you are using a **pen**. When row 4 is written, row 4 is finished — even after you have seen row 12.
 
-That signature across the flap is doing a real job. It is not decoration. It is proof that nobody — not you, not your teacher — has quietly slipped a photo in or out since Week 19. Real laboratories do exactly this: they seal and date their results *before* anybody is allowed to look at them, because human beings, including completely honest ones, are extremely good at talking themselves into small adjustments.
+That signature across the flap is doing a real job. It is not decoration. It is proof that nobody — not you, not your teacher — has quietly slipped a photo in or out since Week 19. Real scientists guard against this in a similar way: they fix their test data and their plan *before* anybody looks at the results, because human beings, including completely honest ones, are extremely good at talking themselves into small adjustments.
 
 > **💡 Try this now, before you read on:** write down the score you think you are about to get, out of 15, and circle it. Fifteen seconds. Comparing that circled number to what actually happens is the cheapest and most memorable thing in this whole chapter, and it works whether you guessed high or low.
 
@@ -171,7 +171,7 @@ If either fails, a tally mark went in the wrong box. Do not recount everything �
 
 ### 4. The gap, and why 100% on your training photos is the most boring number in the room
 
-Teachable Machine will happily tell you your model got **100%** on the photos it trained on. Every model does. It means nothing at all.
+A model scored on the photos it trained on will usually get **100%**, or very close to it (yours did in Week 17). Almost every model does. It means nothing at all.
 
 🍕 **The analogy — revising from the exam paper.** If somebody hands you the actual exam paper the night before, with the answers on it, and you get 100% the next morning, nobody learns anything about you. That is what a training score is. Your model was allowed to study those exact photos, fifty times over.
 
@@ -278,7 +278,7 @@ Check: 4 + 3 + 2 = 9 ✓ and 4 + 4 + 4 = 12 ✓.
 
 Diagonal 4 + 3 + 2 = **9** ✓. All cells add to **12** ✓.
 
-**Step 5 — read it.** The biggest off-diagonal cell is the **2** in *true muffin → said samosa*. And notice the asymmetry: *true samosa → said muffin* is **0**. Not one samosa was ever mistaken for a muffin. If the two genuinely looked alike to this model, the confusion would run **both ways**. It runs one way only, which points at the **muffin class itself** — too few muffin photos, or all of them too similar.
+**Step 5 — read it.** The biggest off-diagonal cell is the **2** in *true muffin → said samosa*. And notice the asymmetry: *true samosa → said muffin* is **0**. Not one samosa was ever mistaken for a muffin. If the two genuinely looked alike to this model, you might expect confusion **both ways**. It runs one way only, which is a hint to check the **muffin class itself** — maybe too few muffin photos, or all of them too similar. That is a guess to check, not a proof: the grid cannot show the cause, and a 0 versus a 2 is only a couple of photos.
 
 **Step 6 — the confidence split**, because there is a spare column and it is free information.
 
@@ -394,7 +394,7 @@ Results: all 8 pens correct · 2 of 4 pencils correct · 0 of 3 rubbers correct.
 
 ```
    BASELINE:    8 pens out of 15  ->  8/15 = 53.3%   (NOT 33.3%)
-   BEATS IT BY: 66.7 − 53.3  =  13.4 percentage points
+   BEATS IT BY: 66.7 − 53.3  =  13.3 percentage points
 ```
 
 66.7% sounded fine. Against the real baseline it is worth **13 points**, not 33.
@@ -423,7 +423,7 @@ Look at the **said rubber** column. It totals **zero**. In fifteen attempts, thi
 
 **Verdict.**
 
-> *"On 15 held-out photos my model scored 10/15 = 66.7%, but my baseline was 53.3% because 8 of my 15 test photos were pens, so it only beat not-thinking by 13.4 points; it was worst at **rubber** (0/3 = 0.0%) and it never said the word rubber at all. My test set was badly built and next time I will hide five of each."*
+> *"On 15 held-out photos my model scored 10/15 = 66.7%, but my baseline was 53.3% because 8 of my 15 test photos were pens, so it only beat not-thinking by 13.3 points; it was worst at **rubber** (0/3 = 0.0%) and it never said the word rubber at all. My test set was badly built and next time I will hide five of each."*
 
 > **🔑 What Example 3 teaches:** the baseline is not always 33.3%. Count your test photos per class **first**. An unbalanced test set can make a bad model look decent, and it is your fault, not the model's.
 
@@ -433,7 +433,7 @@ Look at the **said rubber** column. It totals **zero**. In fifteen attempts, thi
 
 ### Part 1 — somebody else's fifteen minutes of shame
 
-Before touching your own envelope you scored a stranger's results. That is deliberate: you practise every move with nothing at stake, so when your own numbers land you already know what to do with them.
+Before touching your own envelope you scored a stranger's results (made up for the course, but realistic). That is deliberate: you practise every move with nothing at stake, so when your own numbers land you already know what to do with them.
 
 This was a **cat / dog / rabbit** classifier, twelve test photos, four of each.
 
@@ -466,7 +466,7 @@ This was a **cat / dog / rabbit** classifier, twelve test photos, four of each.
 | dog | 3/4 | 75.0% |
 | rabbit | 1/4 | **25.0%** |
 
-**Rabbit scored 25%, which is below the 33.3% baseline.** On rabbits, this model is worse than a dice. You could replace the rabbit part of it with a coin spinner and improve it — and the headline 58.3% mentioned none of that.
+**Rabbit scored 25%, which is a little below the 33.3% baseline.** That is one photo out of four, so we cannot say it is really worse than guessing — but it is certainly no better, and the headline 58.3% mentioned none of that.
 
 | | said cat | said dog | said rabbit | row total |
 |---|---|---|---|---|
@@ -475,7 +475,7 @@ This was a **cat / dog / rabbit** classifier, twelve test photos, four of each.
 | **true rabbit** | 2 | 1 | **1** | 4 |
 | **column total** | 6 | 5 | 1 | **12** |
 
-Read down **said rabbit**: the model used the word "rabbit" exactly **once** in twelve tries, with four rabbits in front of it. And *true cat → said rabbit* is **0** — the confusion runs one way only. So the diagnosis is not "cats and rabbits look alike"; it is "the rabbit class is broken", probably too few or too samey.
+Read down **said rabbit**: the model used the word "rabbit" exactly **once** in twelve tries, with four rabbits in front of it. And *true cat → said rabbit* is **0** — the confusion runs one way only. So a first guess is not "cats and rabbits look alike" but "something is wrong with the rabbit class", perhaps too few or too samey photos. It is a guess to check, since with four photos per class one photo of difference is noise.
 
 ### Part 2 — opening your own envelope
 
@@ -500,7 +500,7 @@ Here is the whole procedure, so you can redo it at home if you missed it. **You 
 5. Photo face down onto the finished pile. Next.
 
 ![A completed scoring sheet, all fifteen rows](../figures/fig-w22-3-scoring-sheet-filled.svg)
-*Figure 22.4 — What a finished sheet looks like. Eleven ticks, four crosses — and the four crosses clustered in one class. That clustering is the thing to notice.*
+*Figure 22.4 — What a finished sheet looks like. Eleven ticks, four crosses — and three of the four crosses clustered in one class. That clustering is the thing to notice.*
 
 **The arithmetic — 4 minutes.** At the bottom of the sheet:
 
@@ -596,7 +596,7 @@ Four numbers, always together. A single accuracy figure is an average, and an av
 
 1. **Exam results at school.** A mock paper you have already seen the answers to is a training score. The real exam is the held-out test set — and everybody knows which one counts.
 2. **"9 out of 10 dentists recommend..."** Nine out of ten *of how many asked?* Ten dentists, or ten thousand? The fraction carries the sample size and that is exactly why adverts prefer the percentage.
-3. **A weather app that says "70% chance of rain".** Confidence again. When it says 70% and stays dry, the app is not broken — but you cannot check it on one day. You would need a hundred 70%-days and a tally sheet.
+3. **A weather app that says "70% chance of rain".** A cousin of confidence, but not the same thing. A forecast probability is meant to be checked by tallying: on a hundred 70%-days it should rain on about seventy. A classifier's confidence is not guaranteed to work like that (Trick 2). When it says 70% and stays dry, the app is not broken — but you cannot check it on one day.
 4. **Driving tests and swimming badges.** You are assessed on a route or a stroke you have not been coached through five minutes earlier. The whole design of a real test is that it is held out.
 5. **A phone's face unlock in a dark room.** It worked perfectly every time you set it up — in the room, in the light, at the angle you set it up in. That was the demonstration. The dark corridor at 6 a.m. is the test.
 6. **League tables and "best school" lists.** One average number per school, hiding every individual class and subject. Every argument you will ever read about them is really an argument about per-class accuracy.
@@ -658,7 +658,7 @@ and caring who the answer is true for.*
 | **baseline** *(Week 12)* | The score you would get by ignoring the input entirely — usually by always naming the commonest class. | 33.3% for three even classes; 53.3% in Example 3. |
 | **per-class accuracy** *(Week 20)* | The same accuracy sum, done separately for each class. | Three fractions under your headline number. |
 | **confusion matrix** *(Week 21)* | A grid where rows are the truth and columns are what the model said. | The grid you ruled by hand, with both checks. |
-| **the gap** *(Week 21)* | Training accuracy minus test accuracy, in percentage points. | 100% − your score. It tells you how much was memory. |
+| **the gap** *(Week 21)* | Training accuracy minus test accuracy, in percentage points. | 100% − your score. It hints at how much was memory (a gap can also come from a different batch of photos, or from luck on a small test). |
 
 ---
 

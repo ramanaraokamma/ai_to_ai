@@ -53,7 +53,7 @@ THE EDGE CASE: 138 cm         ->  refused, and she was fine
 
 You are not a mistake. You are not a bug. **You are a person standing exactly on the boundary of a rule, at the point where the rule stops working and starts just hurting somebody.**
 
-And now find a second edge case for the *same* rule — this time somebody it lets **on** who shouldn't be. A **141 cm six-year-old** who is tall for her age and weighs very little. The harness will not hold her. The rule waves her through.
+And now find a second edge case for the *same* rule — this time somebody it lets **on** who shouldn't be. A **141 cm eight-year-old** who is tall for her age and weighs very little. The harness will not hold her. The rule waves her through.
 
 **Two edge cases, opposite directions, one rule, thirty seconds of thinking.** That is this week. And by the end of it you will have broken your own rulebook on purpose.
 
@@ -70,9 +70,9 @@ Here is the answer. It is a **convention** — a thing we agree in advance and a
 > **First match wins** — you check the rules from the top down, and the first rule that matches decides the answer. Every rule below it is skipped, even if it would have disagreed.
 
 ![First match wins: a rainy Monday never reaches rule 3](../figures/fig-w08-4-first-match-wins-ladder.svg)
-*Figure 8.2 — Monday, 8 mm of rain. Rule 1 fires, and three quarters of this rulebook never runs at all.*
+*Figure 8.2 — Monday, 8 mm of rain, left home early. Rule 1 fires, and three quarters of this rulebook never runs at all.*
 
-Look hard at Rule 3 in that picture. **It says "on time". It disagrees with the answer we gave. And it never got a turn.** Not outvoted. Not overruled after careful consideration. Simply **never read.** The machine stopped two rungs above it.
+Look hard at Rule 3 in that picture. (This rainy Monday is also a day the student left home early, so Rule 3 would match it.) **It says "on time". It disagrees with the answer we gave. And it never got a turn.** Not outvoted. Not overruled after careful consideration. Simply **never read.** The machine stopped two rungs above it.
 
 Three consequences fall out of that, and they are all slightly unsettling.
 
@@ -204,7 +204,7 @@ Take `IF the message has 30 or more characters THEN spam` and start moving the n
 
 > **Every threshold in the world is a position on that slider, and somebody chose it** — by deciding which error they could live with. Usually without writing down anywhere that they had decided anything at all.
 
-And this trade-off does not go away. Not with better rules. Not with machine learning. Not with more data. It is a property of using a **stand-in** to guess at something you cannot see, and it will still be true in Week 35 when you are standing at your own AI fair booth explaining your own threshold to a stranger.
+And for any one stand-in, this trade-off does not go away: moving the threshold only swaps one kind of mistake for the other. What *can* shrink both kinds is a **better measurement** (as with the apple and the parcel earlier), and better models and more data sometimes help too. But the trade-off itself is a property of using a **stand-in** to guess at something you cannot see, and it will still be true in Week 35 when you are standing at your own AI fair booth explaining your own threshold to a stranger.
 
 ---
 
@@ -241,7 +241,7 @@ Then, after the day ended, a safety engineer measured everybody properly — sho
 And now split those three properly, because "three wrong" tells you nothing about what happened to anybody:
 
 - **Two false alarms — B and H.** Two people who were perfectly safe, sent away after forty minutes of queuing. B is the 138. H is 136.
-- **One miss — C.** 141 centimetres, allowed on, harness would not have held her. C is the six-year-old who is tall for her age.
+- **One miss — C.** 141 centimetres, allowed on, harness would not have held her. C is the eight-year-old who is tall for her age.
 
 B and H had a horrible afternoon. **C could have been hurt.** Those are not the same size of thing.
 
@@ -281,7 +281,7 @@ B and H had a horrible afternoon. **C could have been hurt.** Those are not the 
 
 > A park that picked 130 because it scored best on eight riders would be deciding a policy about injured children on the basis of two rows of data.
 
-The defensible answer is 150 or higher, and the reason is not the score: **three disappointed riders is recoverable, and an injured six-year-old is not.** Any answer that argues about *who is harmed* is a good answer. A bare number with no reason is not an answer at all.
+The defensible answer is 150 or higher, and the reason is not the score: **three disappointed riders is recoverable, and an injured eight-year-old is not.** Any answer that argues about *who is harmed* is a good answer. A bare number with no reason is not an answer at all.
 
 ### Worked Example 2 — Is this apple too bruised to sell? (food)
 
@@ -421,7 +421,7 @@ The score went **up**, and the misses went to **zero**. So is lowering it to 2 s
 
 > **The same threshold move can be right or wrong depending on what the alarm actually does to the person it goes off about.** That is why "which error is worse" can never be answered by looking at the numbers alone.
 
-**Step 5 — one last thing to notice about the window.** The rule says *in the last 20 school days*. Delete those five words and the rule becomes "3 or more lates, ever", which by March flags every child in the school and is therefore completely useless. **A counting rule almost always needs a time window, and leaving it out is the most common way to write a rule that quietly stops working.**
+**Step 5 — one last thing to notice about the window.** The rule says *in the last 20 school days*. Delete those five words and the rule becomes "3 or more lates, ever", which by March would flag most children in the school and be close to useless. **A counting rule almost always needs a time window, and leaving it out is the most common way to write a rule that quietly stops working.**
 
 ---
 
@@ -510,7 +510,7 @@ Five new messages, read out one at a time. **One rule for this round, and it was
 ### Why each breaker worked — this is the design
 
 - **B1 is a real message that shouts.** The `!!` rule quietly assumed only spam gets excited. Eleven-year-olds get excited constantly.
-- **B2 is a scam that whispers.** No capitals, no exclamation marks, no trigger words, 23 characters. **This is what real scams look like precisely because rulebooks like ours exist.** There is no word in it that isn't also in ordinary messages.
+- **B2 is a scam that whispers.** No capitals, no exclamation marks, no trigger words, 23 characters. **This is what real scams often look like, partly because rulebooks like ours exist.** There is no word in it that isn't also in ordinary messages.
 - **B3 is `free` in the school-timetable sense.** One word, two completely different meanings, and the rule only knows one of them.
 - **B4 and B5 are the pair.** 30 characters and 29. Same person, same charger, one word different, opposite verdicts — **built in ten seconds by stepping either side of the threshold.**
 
@@ -551,7 +551,7 @@ Give a three-rule spam book to an adult, and ask them to write five messages des
 *Hint:* there is no right answer, and the point is to notice that. Push the other person past "I'd rather it was accurate" (which is not a choice) to an actual preference. Then the harder half: name a **specific person** other than yourself who is affected. A grandparent using the same app. A younger sibling. A small business whose invoice went to somebody's junk folder.
 
 **2. "Why don't they just make the ride sign say '140 cm OR over 12 years old'?"**
-*Hint:* real parks do exactly that sometimes, and it genuinely helps. But look at what you just built: you now need to know everybody's age, which means asking, which means being told the truth, which means somebody checking. The rule got better *and* the system got bigger and slower — and it still has edge cases; they have just moved. Now it is the eleven-year-old who is 139 cm. **Every fix trades one edge case for a different edge case, plus more complexity.** Sometimes worth it. Never free.
+*Hint:* some rules add a route like that (an age, or "with an adult"), and it can help. But look at what you just built: you now need to know everybody's age, which means asking, which means being told the truth, which means somebody checking. The rule got better *and* the system got bigger and slower — and it still has edge cases; they have just moved. Now it is the eleven-year-old who is 139 cm. **Every fix trades one edge case for a different edge case, plus more complexity.** Sometimes worth it. Never free.
 
 **3. "Can't we just write a rule for every edge case we find?"**
 *Hint:* try it. Four minutes, out loud. Fix the piano-exam false alarm without losing messages 1 and 2. The natural patch is `IF contains "!!" AND has an ALL-CAPS word THEN spam` — which fails, because `I PASSED MY PIANO EXAM!!` is *full* of capitals. The next patch after that starts needing information the message does not contain at all (who sent it; whether they are in your contacts). See if the other person can spot the moment the patching stops working. **That moment is next week's entire lesson.**
@@ -604,7 +604,7 @@ So whenever you score a rulebook, always write down **which rule fired**, not ju
 3. **A shop's security tag beeping as you walk out with nothing.** False alarm. You get looked at by everybody in the queue. Who paid? You did, and you had done nothing.
 4. **Your phone's face unlock refusing you in the dark.** A miss, on the flag "this is the owner". Mildly annoying. Now imagine it unlocking for your sibling: a false alarm, and much worse. **Same maths as the spam filter, opposite preference.**
 5. **A parent's "you're on your phone too much" rule.** `IF screen_min > 120 THEN confiscate.` Find the edge case: 119 minutes of homework research versus 121 minutes of the same. Then find the other one: 90 minutes of something genuinely awful, waved through.
-6. **Automatic essay-plagiarism checkers.** A false alarm accuses an honest student of cheating, and they may not be believed. A miss lets one cheat through. Almost every school in the world has quietly decided which of those two it prefers, usually without telling the students.
+6. **Automatic essay-plagiarism checkers.** A false alarm accuses an honest student of cheating, and they may not be believed. A miss lets one cheat through. Many schools have quietly decided which of those two it prefers, usually without telling the students.
 7. **Airport security.** Your bag gets searched for a bottle of water: false alarm, costs four minutes. The alternative error costs something you cannot recover. **This is a job where everybody, without being asked, agrees which error is worse.**
 
 ---

@@ -108,11 +108,11 @@ Ten doesn't go into 5, so write 0 and a decimal point. Ten goes into 50 exactly 
 - `50/100 = 50%`
 - `500/1000 = 50%`
 
-All three are 50%, and they are wildly different amounts of evidence. **The fraction tells you there were only ten tries. The percentage hides it.** This is why every scientific paper in the world reports the denominator, and why a headline that says "50% of people prefer…" without saying how many people were asked is doing something dishonest.
+All three are 50%, and they are wildly different amounts of evidence. **The fraction tells you there were only ten tries. The percentage hides it.** This is why good scientific papers report the denominator, and why a headline that says "50% of people prefer…" without saying how many people were asked is doing something dishonest.
 
 Insist on this and it will pay off all year: **never write 50% on its own. Write "5 out of 10 = 50%".**
 
-**And one more thing to know for today: on a two-way choice, 50% is the score of a coin.** Spam or ham is a two-way choice. So a rulebook at 50% has no value at all — you could throw it away, flip a coin, and do exactly as well. That is not a rhetorical flourish; it is arithmetic, and the student should hear it plainly.
+**And one more thing to know for today: on a two-way choice, 50% is the score of a coin.** Spam or ham is a two-way choice. So a rulebook at 50% is no better than a coin — you could throw it away, flip a coin, and do about as well. Add one line: a coin is the right baseline only when the two answers are about equally common. In the sealed ten, 6 are ham and 4 are spam, so always saying "ham" would score 6 out of 10 = 60%, and the rulebook's 50% is a little worse than that. That is not a rhetorical flourish; it is arithmetic, and the student should hear it plainly.
 
 ### Part 4 — Reading the gap, and refusing to explain it away
 
@@ -157,7 +157,7 @@ The quiz is twelve questions, closed-book, and marked together out loud immediat
 
 ### The three misconceptions you will meet today
 
-**Misconception 1: "The low score means I'm bad at this."** Almost guaranteed, and the whole lesson can be lost to it in about ninety seconds. Get in first, before the scoring starts, with the framing from Part 4. And say this, which is true: **every professional machine learning engineer in the world watches this exact drop happen on every project they have ever worked on.** It is not a student thing.
+**Misconception 1: "The low score means I'm bad at this."** Almost guaranteed, and the whole lesson can be lost to it in about ninety seconds. Get in first, before the scoring starts, with the framing from Part 4. And say this, which is true: **almost every professional machine learning engineer has watched this exact drop happen, on project after project.** It is not a student thing.
 
 **Misconception 2: "If I fix the rules now, using these ten, then my new score will be honest."** This is the deep one and it is worth spending real time on. Once you have used a set of examples to *decide* something, that set can no longer test you. It has been contaminated. This is why the homework demands five *further* fresh messages — and why the score on those five will be different again, and lower than the fixed rulebook's score on the ten. Expect that, and expect it to be confusing. It is genuinely subtle, and Week 19 gives it a proper machinery.
 
@@ -393,7 +393,7 @@ Let them answer. They will say B, immediately and confidently. Then:
 >
 > Five out of ten is fifty percent. Fifty out of a hundred is fifty percent. Five hundred out of a thousand is fifty percent. **Same percentage. Wildly different amounts of evidence.**
 >
-> The fraction tells you there were only ten tries. The percentage hides it completely. That's why every scientist in the world writes the bottom number down, and why a headline saying 'fifty percent of people prefer this' without saying how many people were asked is doing something a bit dishonest.
+> The fraction tells you there were only ten tries. The percentage hides it completely. That's why careful scientists write the bottom number down, and why a headline saying 'fifty percent of people prefer this' without saying how many people were asked is doing something a bit dishonest.
 >
 > So the rule, for the rest of this course: **never write fifty percent on its own. Write five out of ten equals fifty percent.**
 >
@@ -468,7 +468,7 @@ The gap                                            50 percentage points
 >
 > The left bar is the exam your rulebook wrote for itself after reading the answers. The right bar is the only news in the room.
 >
-> And remember what fifty means on a two-way choice. It means a coin. **Your rulebook, right now, is worth exactly as much as flipping a coin ten times** — which is the most useful thing you've found out all term, and you could not possibly have found it out any other way."
+> And remember what fifty means on a two-way choice. It means a coin. **Your rulebook, right now, is worth about as much as flipping a coin ten times** — which is the most useful thing you've found out all term, and you could not possibly have found it out any other way."
 
 **Do this:** count the two error types separately, using last week's grid.
 
@@ -485,7 +485,7 @@ The gap                                            50 percentage points
 | "Message 12 was right. Was it right for a good reason?" | "It was just long" | **This is the best question in the segment.** `WINTER SALE! 70% off everything` is 31 characters, so Rule 3 fired. Nothing about the *message* was detected. One word shorter and it's a miss. **A right answer built on a coincidence will betray you the moment the coincidence stops.** |
 | "You predicted 8 or 9. You got 5. What does the difference tell you?" | Anything honest | The useful framing: your prediction was a measure of how much you trusted a number that couldn't be trusted. Everybody does this. Professionals do this. |
 
-> **🧑‍🏫 If the student gets upset:** stop scoring and say this. "Every single person who builds these systems for a living watches this exact drop, on every project, forever. There's a whole job title for the people who measure it. You are not bad at this — you have just done the honest version, which most people avoid because it feels like this."
+> **🧑‍🏫 If the student gets upset:** stop scoring and say this. "Almost everyone who builds these systems for a living has watched this exact drop, on project after project. There's a whole job title for the people who measure it. You are not bad at this — you have just done the honest version, which most people avoid because it feels like this."
 
 ---
 
@@ -634,7 +634,7 @@ Yes, and it is the best objection anyone raises today, so I want to answer it pr
 You can, and you should — that's your homework. But here's the sting, and it's the subtle bit: **once you've used those ten to decide what to fix, they can't test you any more.** Your new score on them will be higher, and it'll be dishonest in exactly the way the 100% was dishonest. That's why the homework makes you score the fixed rulebook on five *further* messages you haven't used for anything. And it's why professional teams keep a set of examples locked away that nobody is allowed to look at for months.
 
 **"Why is 50% bad? That's half."**
-Because there were only two possible answers. Spam or ham. A coin gets half. So your rulebook is doing exactly as well as no rulebook at all, which means all the counting and rule-writing bought you nothing measurable — on these ten. If there were ten possible answers instead of two, 50% would be quite impressive, because a coin-equivalent would get 10%. **What "good" means depends entirely on how many choices there were**, and that's an idea we come back to properly in Week 20.
+Because there were only two possible answers. Spam or ham. A coin gets half. So your rulebook is doing about as well as a coin (and slightly worse than always saying "ham", which would score 6 out of 10 here), which means all the counting and rule-writing bought you nothing measurable — on these ten. If there were ten possible answers instead of two, 50% would be quite impressive, because a coin-equivalent would get 10%. **What "good" means depends entirely on how many choices there were**, and that's an idea we come back to properly in Week 20.
 
 **"Would a real spam filter do better?"**
 Enormously. Real ones catch well over 99% of spam. And the reason isn't cleverer rules — it's that they learned from millions of labelled messages instead of your ten, and they look at every word in the message at once instead of three clues. That's the trade we look at next week: stop writing rules, start collecting examples. Today's 50% is the reason that trade is worth making, so hold on to it.
@@ -643,7 +643,7 @@ Enormously. Real ones catch well over 99% of spam. And the reason isn't cleverer
 **Nobody can tell you, and here's why that isn't me dodging.** "Good" only means something compared to something else. Compared to a coin, 50% is worthless. Compared to a rulebook you wrote in twenty minutes with three clues on ten examples, 50% is roughly what should have happened. Compared to a real filter, it's dreadful. There is no absolute scale of good scores anywhere in this subject — every score is a comparison, and if somebody quotes you an accuracy without saying what they're comparing it to, you should ask. Week 20 is entirely about people quoting numbers that sound good and mean nothing.
 
 **"Do professional researchers actually get this wrong?"**
-Yes, regularly, and it ruins real work. It has a name — contaminating your test set — and it usually happens by accident: somebody peeks at the locked-away examples "just to check something", or tunes their system twenty times against the same test until it fits that test specifically. Papers get retracted for it. Medical AI systems have been announced with brilliant scores and then failed completely in hospitals for exactly this reason. **The envelope on our table today is a small version of the most important procedural rule in the whole field**, and you've now done it properly once, which is more than some published papers can say.
+Yes, regularly, and it ruins real work. It has a name — contaminating your test set — and it usually happens by accident: somebody peeks at the locked-away examples "just to check something", or tunes their system twenty times against the same test until it fits that test specifically. Some published results have been doubted for it. Medical AI systems have been announced with brilliant scores and then done much worse in hospitals, partly for reasons like this and partly because real patients, scanners and hospitals differ from the test set (the more common cause). **The envelope on our table today is a small version of the most important procedural rule in the whole field**, and you've now done it properly once, which is more than some published studies manage.
 
 ---
 
@@ -651,7 +651,7 @@ Yes, regularly, and it ruins real work. It has a name — contaminating your tes
 
 | What happens | Why | What to do right now |
 |---|---|---|
-| The 50% lands as a personal failure and the student shuts down | It looks exactly like a bad test result, because it looks exactly like a bad test result | Get in first — say the "this number is worth more than the hundred was" line *before* opening the envelope, not after. If it happens anyway, stop and say the true thing: every professional watches this drop on every project. Then hand them the count of false alarms to do, which is a task, and tasks re-engage. |
+| The 50% lands as a personal failure and the student shuts down | It looks exactly like a bad test result, because it looks exactly like a bad test result | Get in first — say the "this number is worth more than the hundred was" line *before* opening the envelope, not after. If it happens anyway, stop and say the true thing: almost every professional has watched this drop on project after project. Then hand them the count of false alarms to do, which is a task, and tasks re-engage. |
 | They start fixing the rules mid-trial | The fixes are obvious and it feels stupid not to | "Margin. Write it in the margin." Enforce it every single time, warmly. Then make a point of using their margin notes in the homework brief, so the impulse gets rewarded in the right place. |
 | They argue the messages were unfair | Some of them do feel like traps | Take each one and ask: "Could that arrive on a real phone?" All ten can. Then the honest concession: yes, I chose ten *interesting* messages rather than ten boring ones. Ten boring ones would have scored higher and taught nothing. |
 | The percentage becomes the whole lesson and the fraction is dropped | Percentages feel more grown-up | Refuse to accept a bare percentage all lesson. Every time they say "fifty percent", say "out of?" until they add it automatically. It takes about four repetitions. |
@@ -1026,7 +1026,7 @@ Messages 1, 2 still fire Rule 1 (both have ALL-CAPS words). Message 3 (`Free ent
 
 - (a/b) Fresh score **4 out of 6 = 4 ÷ 6 = 0.666… = 67%**, rounded and said to be.
 - (c) Training score 100%; the gap is **33 percentage points**.
-- (d) Three sold out, three didn't, so always saying the same thing scores 3 ÷ 6 = **50%**. The rule's 67% beats that by **17 percentage points**: not nothing, not impressive.
+- (d) Three sold out, three didn't, so always saying the same thing scores 3 ÷ 6 = **50%**. The rule's 67% beats that by **17 percentage points**: not nothing (though on six days it could be luck), not impressive.
 - (e) Both mistakes sit one or two degrees from the threshold (F1 at 27, F4 at 29, line at 28). Days far from the line (23, 35) are easy. This is Week 8's edge-case idea inside a Week 9 calculation; to improve they need a different measurement (rain? school day?), not a better number.
 
 **B2 — Kavya's poster.**
@@ -1035,7 +1035,7 @@ Messages 1, 2 still fire Rule 1 (both have ALL-CAPS words). Message 3 (`Free ent
 - (b) The 90% was measured on the same ten messages she used to decide what to fix, the original problem one layer down: a true number answering a useless question. The poster tells readers something untrue, that the filter will get 9 in 10 on unseen messages.
 - (c) **Contaminating her test set**; the sealed ten are used up.
 - (d) She needs more messages she has never touched (five, ten, ideally a hundred), collected without reference to her rules and scored once.
-- (e) **Below 90%**: the fixes were chosen to suit those exact ten, so part of the gain from 50% to 90% is fitting those rows. Worked Example 3 in the chapter shows a "fixed" 75% on the contaminated batch becoming **60%** on fresh data.
+- (e) **Very likely below 90%**: the fixes were chosen to suit those exact ten, so part of the gain from 50% to 90% is fitting those rows. Worked Example 3 in the chapter shows a "fixed" 75% on the contaminated batch becoming **60%** on fresh data.
 
 **B3 — the disease machine.**
 
@@ -1070,7 +1070,7 @@ A fourth fault, if spotted, is excellent: "better than a coin" is asserted, not 
 - **P2.** **1st D · 2nd B · 3rd C · 4th A.** D and B are the only ones that measured anything, and D has forty times the evidence. C is marginally ahead of A because C did produce one honest number (its first score on the fresh ten) and then threw it away by fixing against it; A never had one. Either order for 3rd and 4th is acceptable **if argued**; A first because 100% is biggest is not.
 - **P3.** **Team D**: 52% against a coin's 50%, two percentage points on 200 tries, very close to nothing.
 - **P4.** The trap is that the answer is not simply "D". D's 52% is honest and almost exactly a coin, so D's filter is nearly worthless and we know it. B's 60% might beat a coin or might be luck on five messages. A's and C's filters could be brilliant or dreadful and their teams cannot say. Honest answer: **B, tentatively**, the highest honest score, though on five tries that is not even evidence of beating a coin (a coin gets 3 or more right out of 5 half the time). A and C cannot be chosen at all, not because they are bad but because they have told us nothing. **Not the same as P2:** P2 ranks measurements, P4 asks about filters; a trustworthy measurement of something poor (D) and an untrustworthy claim about something unknown (A) are different problems, and the second is worse.
-- **P5.** Team B: 2 out of 5 = **40%**, 3 out of 5 = **60%**, 4 out of 5 = **80%**, so the real answer sits in a band of roughly 40% to 80%, and one message moves it 20 points. Team D: 103 out of 200 = **51.5%**, 105 out of 200 = **52.5%**, so one message moves it half a point. The denominator decides how much a score is allowed to wobble; 60% from five tries and 52% from two hundred are not comparable claims, which is why a percentage never travels without its fraction.
+- **P5.** Team B: 2 out of 5 = **40%**, 3 out of 5 = **60%**, 4 out of 5 = **80%**, so one message either way puts it anywhere in a band of roughly 40% to 80%, and one message moves it 20 points. Team D: 103 out of 200 = **51.5%**, 105 out of 200 = **52.5%**, so one message moves it half a point. The denominator decides how much a score is allowed to wobble; 60% from five tries and 52% from two hundred are not comparable claims, which is why a percentage never travels without its fraction.
 - **P6.** Team C chose their fixes by looking at those ten, so the ten stopped being able to test anything the moment they were used to decide something; the 90% is a true answer to the same useless question as A's 100%, one layer further down.
 
 ### Think Deeper — T1 and T2

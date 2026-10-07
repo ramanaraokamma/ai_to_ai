@@ -455,7 +455,7 @@ Draw the number that lies. One honest-looking **overall** bar on top, and undern
 
 **W4.** **No, it is not a fair test** — this is cheat 4. What it **does** measure is *"can it recognise **this particular** blue bottle?"*, which is a real question but a much smaller one than "can it recognise bottles". A bottle the model has never met appears nowhere in the whole experiment. The fix is not better photos; it is **a different bottle.**
 
-**W5.** All four came out **too high.** That is not a coincidence, because every one of them let the model see — or effectively see — something it should not have, and **extra information can only ever help a score.** Cheating on a test never accidentally lowers your mark. Which is why a surprisingly *high* score is always worth investigating.
+**W5.** All four came out **too high.** That is not a coincidence, because every one of them let the model see — or effectively see — something it should not have, and **extra information almost always inflates a score.** Cheating on a test very rarely lowers your mark. Which is why a surprisingly *high* score is always worth investigating.
 
 ### Practice Set A
 
@@ -467,7 +467,7 @@ Draw the number that lies. One honest-looking **overall** bar on top, and undern
 
 **A3.** **FALSE** — or at best "nearly, and misleadingly".
 
-It got **11 out of 15** right. 73.3% is what that *would* be if it kept the same rate up over a hundred tries, which it might not. And here is the number that matters: **one photo is worth `1 ÷ 15 = 6.7 percentage points`.** If one comb had gone the other way, the headline would read 80%. So a five-point difference between two models measured on fifteen photos means nothing at all.
+It got **11 out of 15** right. 73.3% is what that *would* be if it kept the same rate up over a hundred tries, which it might not. And here is the number that matters: **one photo is worth `1 ÷ 15 = 6.7 percentage points`.** If one comb had gone the other way, the headline would read 80%. So a one-photo difference (6.7 points) between two models measured on fifteen photos is well within noise: it tells you almost nothing.
 
 **A4.** **1 → (b)** · **2 → (d)** · **3 → (a)** · **4 → (c)**
 
@@ -601,14 +601,14 @@ Any split with 12 spoons works; 12/2/1 and 12/3/0 both give 80%. *(12/3/0 is wor
 >
 > **The notebook entry:** *"On 15 held-out photos taken on a different day in a different room, the model scored 11/15 = 73.3%, against a 33.3% baseline for three roughly equal classes. Per-class: spoon 5/5 = 100%, toothbrush 4/5 = 80%, comb 2/5 = 40%. Training accuracy 60/60 = 100%, so the gap is 26.7 percentage points. Note that one test photo is worth 6.7 percentage points."*
 
-**What the advert left out:** the sample size (fifteen), the broken class (comb, at 40%, barely above the baseline), the gap (26.7 points of memorising), and the fact that one photo moves the headline by 6.7 points.
+**What the advert left out:** the sample size (fifteen), the broken class (comb, at 40%, barely above the baseline), the gap (26.7 points, a sign of memorising), and the fact that one photo moves the headline by 6.7 points.
 
 **Was leaving it out lying?** **No — and that is the uncomfortable and important answer.** Every word of the advert is true. "More than double" is even arithmetically generous to itself in a defensible way (73.3 ÷ 33.3 = 2.2). Nothing there could be called a lie. It is **selecting** which true things to say — which is how almost every real advert about AI works, and why you have spent a week learning to ask for the other three numbers.
 
 **T2.** They are different because **what a mistake costs is different.**
 
 - A bad film recommendation costs you about two minutes and mild annoyance. 70% is plenty — the other 30% you just scroll past.
-- A missed brake light costs somebody their life. 99.9% means one failure in a thousand, and a car sees thousands of brake lights a week.
+- A missed brake light can cost somebody their life. 99.9% means one failure in a thousand, and a car sees thousands of brake lights a week.
 
 **The question you must answer first: what does a mistake cost, and who pays it?** That is a question about **the world**, not about the data — which is why no threshold can be handed to you. "Is 90% good enough?" has no answer until somebody says what happens when the 10% goes wrong.
 
@@ -669,7 +669,7 @@ They are the **same percentage from wildly different amounts of evidence.** 12 p
    on 60 photos:  one photo is worth  1 ÷ 60 = 1.7 percentage points
 ```
 
-Same headline. One of them is nearly five times more trustworthy than the other. **And once you convert them both to "75%", that difference is invisible.** That is why you write the fraction.
+Same headline. One of them is far more trustworthy than the other. **And once you convert them both to "75%", that difference is invisible.** That is why you write the fraction.
 
 ### Build It — Page 20.2
 
@@ -696,7 +696,7 @@ Same headline. One of them is nearly five times more trustworthy than the other.
 
 > **"Skateboard scored 2 out of 8, which is 25%."**
 
-The overall 66.7% describes **no class in this model**: one is perfect, one is decent, and one is a disaster.
+The overall 66.7% describes **no class in this model**: one is perfect, one is decent, and one is a real problem.
 
 **(d) Compared to blind guessing.**
 ```
@@ -705,11 +705,11 @@ The overall 66.7% describes **no class in this model**: one is perfect, one is d
    25.0 - 33.3 = -8.3
 ```
 
-> **On skateboards this model is 8.3 percentage points WORSE than guessing at random.**
+> **On skateboards this model is 8.3 percentage points BELOW the guessing baseline — no better than guessing, and with only 8 photos we cannot tell the difference.**
 
-That is the sentence to look for, and it is a genuinely striking thing to be able to say. A coin — well, a three-sided coin — would do better on skateboards than this model does.
+That is the sentence to look for. One photo here is worth 12.5 points, so 2/8 against the 2.7 out of 8 that guessing would give is well within chance. A three-sided coin could easily have scored the same on skateboards.
 
-**Overall** the model beats the baseline by `66.7 − 33.3 = 33.4 percentage points`, which is exactly why the headline looks respectable while a third of the job is not merely broken but **worse than nothing.**
+**Overall** the model beats the baseline by `66.7 − 33.3 = 33.3 percentage points` (66.67 − 33.33 exactly), which is exactly why the headline looks respectable while a third of the job is **no better than guessing.**
 
 **(e) What to investigate first.** Full credit needs something **specific and checkable.** Any of these:
 

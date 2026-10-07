@@ -85,7 +85,7 @@ That second exam measured nothing. And here is the part that should make you sli
 ![The honest path and the cheat path](../figures/fig-w19-1-honest-path-vs-cheat-path.svg)
 *Figure 19.1 — The same 30 photos, two different orders of doing things. Only the top row gives you a number you can believe.*
 
-Testing a model on its own training photos is exam number two. It **always** produces a nice number, and it **always** tells you nothing.
+Testing a model on its own training photos is exam number two. It **always** produces a nice number, and it tells you nothing about new photos.
 
 > **⚠️ Watch out:** the trap is not that a training-set score is *wrong*. 30 out of 30 really is 30 out of 30. The trap is that it is **not an answer to the question you asked.** You asked "will this work on something new?" and you measured something else entirely.
 
@@ -163,6 +163,8 @@ Same total, much better spread. Five spoons, five toothbrushes, five combs hidde
 | **80 / 20** | **60** | **15** | **a sensible middle. The usual default** | **nothing much — a good starting choice** |
 | 70 / 30 | 52 | 23 | a much more trustworthy score | the model has fewer photos to learn from, so it is genuinely worse |
 | 50 / 50 | 37 | 38 | a very reliable score... | ...of a badly trained model. You measured the wrong thing very precisely |
+
+*(These are whole-pile totals. Splitting each class separately, as above, moves them by a photo or so per class — for example 66 / 9 rather than 67 / 8 at 90 / 10.)*
 
 The rule of thumb: **80 / 20 unless you have a reason.** And the honest heart of it, which nobody can get round:
 
@@ -573,6 +575,8 @@ Go to **[Workbook — Week 19](../workbook/week-19.md)**.
 > - The 15 photos from session 2 go **in the envelope**. You **sign across the flap**, you **write the date** on it, and **it does not get opened until Week 22.**
 >
 > **Session 2 does not touch the laptop.** Not to look at, not to check, not "just to see if they came out okay". If you want to check a photo came out okay, do it during session 2 while you are still holding the camera.
+
+**One honest limit.** The session 2 photos are new *photos*, but they are of the *same three objects* as session 1 — and Cheat 4 says the same object on both sides flatters the score. You cannot fix that with these objects, so when you report the Week 22 score, write "same three objects" next to it. Labelling the weakness is the skill.
 
 **Two different days matters.** Not two hours apart — two days. If the only option is morning and evening of the same day, that is an acceptable fallback, but **write "same day, 8 hours apart" in your log.** Labelling the weakness is the skill; hiding it is the mistake.
 

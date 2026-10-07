@@ -418,7 +418,7 @@ Draw **one object from your own home** with six measurable features called out o
 ![Draw It frame for Week 11](../figures/fig-w11-11-draw-frame.svg)
 *Figure W11.3 — Your page.*
 
-> **What a good answer might look like:** a drawing of a bicycle, with six lines pointing out: `wheel_diameter_cm` (66.0) · `mass_kg` (11.4) · `gears_count` (7) · `frame_colour` (blue, from a list) · `has_bell` (yes) · `saddle_height_cm` (82.0). Underneath, for the hardest one — `mass_kg` — the three boxes read: *bathroom scale* · *kilograms* · *nearest 0.1 kg, with the bike lifted clear of the floor by the handlebars and saddle.*
+> **What a good answer might look like:** a drawing of a bicycle, with six lines pointing out: `wheel_diameter_cm` (66.0) · `mass_kg` (11.4) · `gears_count` (7) · `frame_colour` (blue, from a list) · `has_bell` (yes) · `saddle_height_cm` (82.0). Underneath, for the hardest one — `mass_kg` — the three boxes read: *bathroom scale* · *kilograms* · *nearest 0.1 kg, with the bike lifted clear of the floor (stand on the scale holding it, then subtract your own mass).*
 >
 > **What a weak answer looks like:** six lines pointing at *fast*, *cool*, *comfy*, *nearly new*, *good brakes*, *big*. None of those are features yet. If you catch yourself writing those, ask each one: with what tool, in what unit, rounded how?
 

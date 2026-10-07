@@ -177,7 +177,7 @@ The model said `bat` ______ times, though only ______ bats existed → it is ___
 
 The model said `ball` ______ times, though ______ balls existed → it is ____________________ about ball.
 
-What does being *reluctant* about a class usually tell you about that class's training photos?
+What might being *reluctant* about a class be a hint about, in that class's training photos?
 
 ________________________________________________________________
 
@@ -195,7 +195,7 @@ If two objects simply *looked alike*, roughly what would you expect the two dire
 
 ________________________________________________________________
 
-So what does lopsided confusion point at instead?
+So what might lopsided confusion be a hint about instead?
 
 ________________________________________________________________
 
@@ -529,7 +529,7 @@ Other correct versions people write: *"it memorised the pictures instead of the 
 
 > **"Two bowls were called plate, and two plates were called bowl."**
 
-And that tie is itself informative: **the confusion is symmetric.** These two really do just look alike to the model (both wide, both flat-ish, both round) rather than one class being starved of photos.
+And that tie is itself informative: **the confusion is symmetric.** That is a hint that these two look alike to the model (both wide, both flat-ish, both round) rather than one class being starved of photos — a hint only, since two photos each way is a small count.
 
 **B2.** Both checks pass because **the diagonal is exactly the same either way round.** If you flip a grid along its diagonal, the diagonal cells don't move — so `5 + 4 + 2 = 11` still works. And flipping doesn't add or lose any marks, so all nine cells still total 15. The grid is a **mirror image** of the truth and both safety nets sail straight past it.
 
@@ -550,7 +550,7 @@ And that tie is itself informative: **the confusion is symmetric.** These two re
    said ball: 2 times, though 5 balls existed       →  RELUCTANT about ball
 ```
 
-**What "reluctant" usually tells you about that class's training photos:** that there were **too few of them, or they were all too similar to each other.** The model has partly stopped believing the class exists — it barely uses the word. That is a *different* diagnosis from "it's bad at balls": if it were merely bad at balls, its ball guesses would be scattered around, not almost absent.
+**What "reluctant" might be a hint about in that class's training photos:** one hypothesis is that there were **too few of them, or they were all too similar to each other**; other causes are possible, and the way to find out is to go and check. The model barely uses the word "ball". That is a *different* question from "it's bad at balls": the column counts how often the model *chose* ball, not how often it was right.
 
 **B5.**
 
@@ -561,9 +561,9 @@ And that tie is itself informative: **the confusion is symmetric.** These two re
 
 **The lopsided pair is ball / bat** — three one way, zero the other. *(bat / stumps is perfectly symmetric at 1 and 1.)*
 
-**If two objects simply looked alike**, you would expect **roughly equal** confusion in both directions — a couple each way, like the bat/stumps pair.
+**If two objects simply looked alike**, you might expect **similar** confusion in both directions — a couple each way, like the bat/stumps pair (though this is only a rule of thumb).
 
-**So lopsided confusion points at the class itself**, not at the resemblance: probably too few ball photos, or ball photos that were all too similar, so `bat` has become the model's comfortable default whenever it isn't sure.
+**So lopsided confusion is a hint to investigate**, not a diagnosis: one hypothesis is too few ball photos, or ball photos that were all too similar, so `bat` has become the model's habit whenever it isn't sure. Other causes are possible, and with so few photos the lopsidedness could be partly luck.
 
 ### Puzzle of the Week
 
@@ -601,7 +601,7 @@ And the diagonal check confirms it: `7 + 6 + 4 = 17` ✓ — exactly the number 
    percentage: 56.7%
 
    baseline (3 equal classes) = 33.3%
-   beats the baseline by 23.4 percentage points
+   beats the baseline by 23.3 percentage points
 ```
 
 **(b) Per class.**

@@ -221,7 +221,7 @@ Sum: 11 + 82 + 7 = **100** ✓. Winner: **banana**. Margin: 82 − 11 = **71**. 
 
 Sum: 31 + 12 + 57 = **100** ✓. Winner: **orange** — correct. Margin: 57 − 31 = **26**.
 
-Band: 15–29, **shaky**. So: right answer, weak margin. **This is the interesting row.** The answer is correct, so a table that recorded only right-or-wrong would show nothing at all. But the margin has dropped from the 70s and 80s to 26, and that tells you something real: **an apple and an orange are the two most similar classes in this set, and distance makes it worse.**
+Band: 15–29, **shaky**. So: right answer, weak margin. **This is the interesting row.** The answer is correct, so a table that recorded only right-or-wrong would show nothing at all. But the margin has dropped from the 70s and 80s to 26, and that tells you something real: **an apple and an orange may be the two most similar classes in this set, and distance may be making it worse** (one reading is a hint, not proof).
 
 That is the model's weak spot, and you found it *before* anything actually went wrong. That is the entire reason the margin column exists.
 

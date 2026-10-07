@@ -169,7 +169,7 @@ third of the nine tiles, with **representation** and **learning signal** lit bel
    lit any more."*
 2. **Then the better question:** *"why did we move to this side?"* They answered this last week, so make
    them say it again: because eight checks is 258 rules. A learner who can connect the tile they are
-   standing on to the wall they hit ten days ago is doing exactly what this figure exists for.
+   standing on to the wall they hit last week is doing exactly what this figure exists for.
 3. **Have them add it to their own copy** and shade FEATURES, copying the wk 11-14 range underneath it.
    Four weeks on one tile means nothing needs redrawing until Week 15, and telling them that now stops
    the "nothing changed" complaint in Weeks 12, 13 and 14.

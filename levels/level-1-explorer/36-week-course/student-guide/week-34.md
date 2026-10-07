@@ -239,7 +239,7 @@ That sentence tells a visitor what to hold up to break it, what photos would fix
 
 ### Worked Example 1 — The spice jar booth (food)
 
-Priya's mum keeps grabbing the wrong jar. Three yellow-ish powders in identical jars: turmeric, chilli powder, coriander. Priya builds a booth.
+Priya's mum keeps grabbing the wrong jar. Three powders in identical jars: turmeric, chilli powder, coriander. Priya builds a booth.
 
 **Milestone 1 — the brief.**
 
@@ -347,10 +347,10 @@ Now compare the two numbers:
 ```
    fake score      95%
    real score      65%
-   difference      30 PERCENTAGE POINTS of pure illusion
+   difference      30 PERCENTAGE POINTS, mostly illusion
 ```
 
-Thirty points he never had. If he'd taken that 95% to the fair, an adult would have asked "were those photos in the training pile?", and the whole booth would have collapsed in one sentence.
+Most of those thirty points he never had (some of the gap is just that the new photos are a harder test). If he'd taken that 95% to the fair, an adult would have asked "were those photos in the training pile?", and the whole booth would have collapsed in one sentence.
 
 **What Ravi says at the fair now**, and it's better than 95% ever was:
 

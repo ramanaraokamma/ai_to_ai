@@ -579,7 +579,7 @@ The sheet looks like this and it gets filled in *as you go*, never afterwards:
 > "That is somebody else's finished audit — Rohan, last year. Four bars, worst one circled, and the
 > training count written under every bar. Notice the row along the bottom: 84, 22, 14, 0. Now look at
 > the bars above them. They go down in the same order. Your grid will have different numbers. It will
-> almost certainly have the same *shape*."
+> probably have the same general *shape*."
 
 ---
 
@@ -762,7 +762,9 @@ yourself at eleven: **you cannot audit from memory, you have to count.**
 **The trace.** On **W33.5**, they physically draw an arrow from their worst percentage back to the
 count on W33.1 that explains it, and write one sentence in this exact shape:
 
-> *"Lamplight scored 33.3% because only 0 of my 120 training photos were taken in lamplight."*
+> *"Lamplight scored 33.3% probably because only 0 of my 120 training photos were taken in lamplight."*
+
+Say why it is "probably": one model, twelve photos per group, and lamplight is hard in other ways too (noise, colour cast). The retest is what tests the explanation.
 
 **The price.** Then the algebra, which you do line by line together, out loud:
 
@@ -1157,7 +1159,7 @@ backgrounds. *Watch for:* "nearly right" (reject), or putting the gap as "66.7%"
 
 The shares sum to 100.1% through rounding; say so. The accuracy follows the count down the table.
 
-- **(a)** *"Odd background scored 25.0% because 0 of my 140 training photos had a patterned background."*
+- **(a)** *"Odd background scored 25.0% probably because 0 of my 140 training photos had a patterned background."*
 - **(b)** `x / (140 + x) = 0.20` → `x = 28 + 0.20x` → `0.80x = 28` → `x = 28 ÷ 0.80 = 35 photos`.
   Check: 35 out of 175 = 0.20 = 20%.
 - **(c)** 35 does not divide by 3: **12 hair clip, 12 pencil, 11 rubber** (any split within one of each
@@ -1400,7 +1402,7 @@ is the one to read carefully — a good one names a count.
 **The trace sentence.** Required shape: *worst condition + its percentage + "because" + a count out
 of the training total.*
 
-> **Rohan:** "Lamplight scored 33.3% because 0 of my 120 training photos were taken in lamplight."
+> **Rohan:** "Lamplight scored 33.3% probably because 0 of my 120 training photos were taken in lamplight."
 
 Accept any wording that contains all four elements. Reject anything with no number in it, and reject
 anything blaming the model, the camera or the software rather than the count.

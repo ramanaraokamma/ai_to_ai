@@ -200,7 +200,7 @@ ________________________________________________________________
 
 **B3. Here is a situation — what goes wrong, and why?**
 
-> Ananya opens her envelope. Photo 7 comes out and the model gets it wrong. She looks at the photo and says "that one's really dark, my lamp was off" — so she puts it back in the envelope, doesn't write it down, and carries on. She ends up with **13 photos scored, 10 correct**, and reports 10/13 = 76.9%.
+> Ananya opens her envelope, which holds 14 photos. Photo 7 comes out and the model gets it wrong. She looks at the photo and says "that one's really dark, my lamp was off" — so she puts it back in the envelope, doesn't write it down, and carries on. She ends up with **13 photos scored, 10 correct**, and reports 10/13 = 76.9%.
 
 (a) What is her score if the dropped photo is counted as wrong? ______ / ______ = ______ %
 
@@ -713,9 +713,9 @@ Reading the columns: the model said **"stumps" 5 times** when only **4** stumps 
 | Fault | Why it's a fault | The fix |
 |---|---|---|
 | "87% accurate" | No fraction, so no sample size and no baseline. 87% could be 13 out of 15 or 87 out of 100, and those are very different claims | Write the fraction first: *"13/15 = 86.7%, against a 33.3% baseline"* |
-| "54% better than guessing" | Percent instead of **points**, and no baseline stated | *"It beat the 33.3% baseline by 53.4 percentage points"* |
+| "54% better than guessing" | Percent instead of **points**, and no baseline stated | *"It beat the 33.3% baseline by 53.3 percentage points"* |
 | "Everything right except a few" | Not a measurement. Which class, how many, confused with what? | *"Worst class was salad at 2/5 = 40%, most often called pasta"* |
-| "Training accuracy was 100% so it works" | Training accuracy shows nothing — every model gets ~100% on photos it studied. It is the **gap** that carries information | *"100% on training, 86.7% held out, so the gap is 13.3 points"* |
+| "Training accuracy was 100% so it works" | Training accuracy shows nothing — most models get close to 100% on photos they studied. It is the **gap** that carries information | *"100% on training, 86.7% held out, so the gap is 13.3 points"* |
 
 **The most misleading line is the last one**, "training accuracy was 100% so it works". The others are vague or badly worded; that one is actively wrong reasoning, and it is the exact mistake that lets people ship broken models believing they are perfect.
 
@@ -749,7 +749,7 @@ The finished grid:
 
 What to photograph tomorrow: not "more salad". Attack that specific confusion. Something like — *five photos of a salad with the leaves clearly separated and the bowl visible, so it cannot read as a heap of strands; and five photos of a salad and a plate of pasta side by side at the same distance and under the same lamp, so the only difference between them is the food.*
 
-And look at the reverse cell: *"true pasta → said salad"* is **0**. Not one pasta was ever called salad. **The confusion runs one way only**, which is the signature of a problem with the salad class itself — too few salad photos, or all of them too similar — rather than the two foods genuinely looking alike.
+And look at the reverse cell: *"true pasta → said salad"* is **0**. Not one pasta was ever called salad. **The confusion runs one way only**, which is a hint to check the salad class itself — maybe too few salad photos, or all of them too similar — rather than the two foods looking alike. It is a guess to check, not a proof: with five photos per class the matrix cannot show the cause.
 
 ---
 
@@ -791,7 +791,7 @@ These depend on your own model, so check yourself against this list rather than 
 
 **Model answer for the two gap sentences, to show the standard:**
 
-> *"My training accuracy was 100% and my held-out accuracy was 73.3%, so the gap is 26.7 percentage points. That tells me the model learned something genuinely useful — 73.3% is forty points above the 33.3% baseline, which is not luck — but it also memorised a fair amount that was specific to my kitchen table, because the only things I changed for the test photos were the room, the light and which hand I held things in, and that alone cost me a quarter of my score."*
+> *"My training accuracy was 100% and my held-out accuracy was 73.3%, so the gap is 26.7 percentage points. That tells me the model learned something genuinely useful — 73.3% is forty points above the 33.3% baseline, which is not luck — but I suspect it also memorised some things specific to my kitchen table, because the room, the light and which hand I held things in all changed for the test photos and the score dropped by a quarter. I have not tested which of those mattered, so that is a guess I would go and check."*
 
 ---
 
@@ -809,7 +809,7 @@ These depend on your own model, so check yourself against this list rather than 
    PERCENTAGE  66.7 %
 
    BASELINE    3 equal classes -> 33.3%
-   BEATS IT BY 66.7 − 33.3 = 33.4 percentage points
+   BEATS IT BY 66.7 − 33.3 = 33.3 percentage points
 ```
 
 **(b)**
@@ -837,7 +837,7 @@ Diagonal 3 + 2 + 3 = **8** ✓ · all cells = **12** ✓
 
 **(e)** The model is over-eager about **sock**: it said "sock" 5 times when only 4 socks existed.
 
-**Sock and hat are never confused in either direction** — both *"true hat → said sock"* and *"true sock → said hat"* are **0**. Which makes sense: they look nothing alike. All the trouble sits between sock and glove.
+**Sock and hat are never confused in either direction** — both *"true hat → said sock"* and *"true sock → said hat"* are **0**. Perhaps they look quite different to the model (the matrix cannot tell us why). All the trouble sits between sock and glove.
 
 **(f)**
 
@@ -857,9 +857,9 @@ So confidence carries real information here. **But look at the overlap:** the lo
 
 **(g)** *"On 12 held-out photos this model scored 8/12 = 66.7% against a 33.3% baseline; it was worst at **glove** (2/4 = 50.0%), and its most common mistake was calling a glove a sock."*
 
-**(h)** Attack the *glove → sock* cell specifically: **five photos of a glove with the fingers clearly spread**, so the finger shape is unmistakable and it cannot read as a tube of fabric; and **five photos of a glove and a sock side by side at the same distance**, so shape is the only thing that differs. Simply adding ten more ordinary glove photos would probably not help — the existing glove photos apparently already look sock-like.
+**(h)** Attack the *glove → sock* cell specifically: **five photos of a glove with the fingers clearly spread**, so the finger shape is unmistakable and it cannot read as a tube of fabric; and **five photos of a glove and a sock side by side at the same distance**, so shape is the only thing that differs. Simply adding ten more ordinary glove photos might not help — the existing glove photos may already look sock-like (a guess the matrix cannot confirm).
 
-**(i)** 100.0 − 66.7 = **33.3 percentage points.** That is **large**. Real learning happened (66.7% is 33.4 points above baseline) but a substantial amount of what this model "knows" is memory of its own training photos rather than knowledge of socks, gloves and hats.
+**(i)** 100.0 − 66.7 = **33.3 percentage points.** That is **large**. Real learning happened (66.7% is 33.3 points above baseline) but a substantial amount of what this model "knows" is memory of its own training photos rather than knowledge of socks, gloves and hats.
 
 ---
 

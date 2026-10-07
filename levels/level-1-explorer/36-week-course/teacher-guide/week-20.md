@@ -174,7 +174,7 @@ you introduce them and compute one number. Do not go further.
 >
 > **Memorizing** — the model works on the exact examples it studied, and falls apart on anything else.
 >
-> **The gap** — training accuracy minus test accuracy. How much memorizing happened.
+> **The gap** — training accuracy minus test accuracy. A big gap is a sign of memorizing.
 
 ```
    training accuracy:  60/60 = 100.0%
@@ -197,8 +197,8 @@ generalizing, overfitting, and the confusion matrix.
 Nearly true and worth pinning down, because the *sample size* is the thing being lost. It got 11 out of
 15 right. 73.3% is what that would be *if* it kept up the same rate over a hundred — which it might not.
 With 15 photos, **one photo is worth 6.7 percentage points.** If one comb had gone the other way the
-headline would read 80%. So a 5-point difference between two models measured on 15 photos means
-nothing at all.
+headline would read 80%. So a one-photo difference (6.7 points) between two models measured on 15 photos is
+well within noise and tells you almost nothing.
 
 **Misconception 2 — "the model went up by 40 percent."**
 It went up by 40 **percentage points**. Correct this every time, gently, all lesson, until the student
@@ -527,7 +527,7 @@ Then say the sentence that this whole segment exists to produce:
 
 > **2. "One photo went the other way. What happens to the headline?"**
 > - *Hoping for:* 12/15 = 80%. So one photo is worth 6.7 percentage points.
-> - Then the killer follow-up: *"So if my model gets 73% and yours gets 78% on fifteen photos, is yours
+> - Then the killer follow-up: *"So if my model gets 73% and yours gets 80% on fifteen photos, is yours
 >   better?"* **You can't tell.** That is a genuinely sophisticated answer and it is available to an
 >   11-year-old today.
 
@@ -780,8 +780,9 @@ and the *gap* between the two.
 
 **5. "The 40% class — is the model broken?"**
 It's badly weak on that one class, which is a much more useful thing to know than "broken". 40% is
-still slightly above the 33.3% you'd get from guessing, so it has learned *something* about combs —
-just not enough. And it tells you exactly where to spend your next ten photos, which "the model is 73%
+only slightly above the 33.3% you'd get from guessing, and with five comb photos (20 points each) we
+cannot tell from this whether it has learned anything about combs — the same data could easily come from
+guessing. And it tells you exactly where to spend your next ten photos, which "the model is 73%
 accurate" never would have.
 
 **6. "Can accuracy be over 100%?"**
@@ -916,7 +917,7 @@ the week.
 | **2** | Computes overall accuracy with help. Writes the percentage but not the fraction. Says "percent" when they mean points. |
 | **3** | Accuracy in all three forms, division written out, baseline written next to it. Computes per-class accuracy and names the worst class. Uses "percentage points" when reminded. |
 | **4** | All of the above unprompted, including both checks. Explains why the fraction matters using the 3-out-of-4-versus-300-out-of-400 example. Computes the gap and says 100% on training is unremarkable. Uses "percentage points" without reminding. |
-| **5** | Works out unaided that one photo is worth 6.7 points, and therefore that a 5-point difference on 15 photos means nothing. Designs a lopsided test set where a useless model scores 80%. Explains that the 73.3% was honest arithmetic and still misleading. |
+| **5** | Works out unaided that one photo is worth 6.7 points, and therefore that a one-photo (6.7-point) difference on 15 photos tells you almost nothing. Designs a lopsided test set where a useless model scores 80%. Explains that the 73.3% was honest arithmetic and still misleading. |
 
 **Aim for 3.** Level 4 is a genuinely strong outcome and worth saying so out loud.
 
@@ -1150,7 +1151,7 @@ Checks: 8 + 6 + 2 = 16 ✓ · 8 + 8 + 8 = 24 ✓
 **(c) Which class was the average hiding?**
 
 > **Skateboard, at 2 out of 8 = 25%.** The overall 66.7% describes no class in this model: one class is
-> perfect, one is decent, and one is a disaster.
+> perfect, one is decent, and one is a real problem.
 
 **(d) How does it compare to blind guessing?**
 
@@ -1160,10 +1161,12 @@ Checks: 8 + 6 + 2 = 16 ✓ · 8 + 8 + 8 = 24 ✓
    25.0 − 33.3 = −8.3
 ```
 
-> **On skateboards this model is 8.3 percentage points WORSE than guessing at random.** That is the
-> sentence to look for. A student who writes it has understood both the baseline and the unit.
+> **On skateboards this model is 8.3 percentage points BELOW the guessing baseline: no better than
+> guessing, and with only 8 photos we cannot tell the difference.** That is the sentence to look for.
+> A student who writes it has understood the baseline, the unit and the small sample (one photo is
+> 12.5 points here; 2/8 against 2.7/8 expected from guessing is well within chance).
 
-Overall the model beats the baseline by 66.7 − 33.3 = **33.4 percentage points**, which is why the
+Overall the model beats the baseline by 66.7 − 33.3 = **33.3 percentage points**, which is why the
 headline looks respectable while one third of the job is broken.
 
 **(e) What would you investigate first? (One sentence, and "more photos" is not enough.)**
@@ -1200,7 +1203,7 @@ question: *"look at where, exactly?"*
 | Activity | Which class was the average hiding? | Comb, at 2/5 = 40%. |
 | Activity | Which class scored 73.3%? | None of them. The average described nobody. |
 | Activity | Ten more photos — of what? | Combs, and specifically combs in situations the training photos missed. |
-| Activity | Is 40% good or bad? | Bad — but still above the 33.3% baseline, so it learned something, just not enough. |
+| Activity | Is 40% good or bad? | Bad — only just above the 33.3% baseline, and with 5 photos we cannot tell whether it learned anything about combs. |
 | Activity | Is 100% on training impressive? | No. It is the most ordinary result there is. The gap is the informative part. |
 | Drill | Up 25 points or up 50 percent — which sounds better? | The 50 percent. Both are true; only one tells you where you started. |
 | Wrap | What do you think your own comb number will be? | A written, dated guess. Week 22 opens by comparing against it. |
@@ -1255,7 +1258,7 @@ particular blue bottle?", a much smaller question than "can it recognise bottles
 different bottle, not better photos.
 
 **W5.** All four came out **too high**. Not a coincidence: each let the model see, or effectively see,
-something it should not have, and extra information can only help a score. A surprisingly high score is
+something it should not have, and extra information almost always inflates a score. A surprisingly high score is
 always worth investigating.
 
 ### K8 — Workbook Practice Set A (A1–A6)

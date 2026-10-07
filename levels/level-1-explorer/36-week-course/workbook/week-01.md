@@ -25,7 +25,7 @@ ________________________________________________________________
 
 Because: _________________________________________________________
 
-**W4.** Which is doing something more interesting — a program that beat the world's best Go player,
+**W4.** Which is doing something more interesting — a program that beat one of the world's best Go players,
 or the **thermostat** on the wall? Circle one and give a reason.
 
 **GO PROGRAM** / **THERMOSTAT**
@@ -457,8 +457,8 @@ The chapter's answer: *a machine doing a job that used to need a person's judgem
 impressive and most of what it does — timers, alarms, arithmetic — needs no judgement at all.
 
 **W3.** **No.** A calculator is not AI. It is fast and you can't do it in your head, but speed isn't
-judgement: nobody sensible disagrees about 47 + 88. If you circled YES, you made the most common
-mistake in the world, and you now have the test that fixes it.
+judgement: nobody sensible disagrees about 47 + 88. If you circled YES, you made a very common
+mistake, and you now have the test that fixes it.
 
 **W4.** No right answer — you were making a bet. The strongest version: *"the Go program, because
 nobody could write down every Go move, but you could write everything the thermostat does on one
@@ -467,7 +467,7 @@ thoughtful answer, and the reply is that a person **is** there. They came earlie
 if-then boxes behind.
 
 **W5.** **No** — and that fact is so strange it gets a whole lesson next week. Nobody wrote those
-rules. Not a secret team. Nobody.
+rules by hand. Not a secret team. Nobody.
 
 ---
 

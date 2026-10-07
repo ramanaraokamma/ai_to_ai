@@ -645,7 +645,7 @@ Work one through slowly, line A, so you can check the others. At 4.0 kg, everyth
 
 **P5.** A defensible answer must argue about **harm**, not about the score. The strongest case is for **line A**:
 
-> The flag means "warn the driver this needs two people". A false alarm costs the driver about ten seconds of mild annoyance — they check, decide it's fine, and lift it alone. A miss means somebody lifts 4.8 kg awkwardly on their own with no warning, and hurts their back. Two seconds of annoyance versus a back injury is not a close comparison, so I would take line A and accept the two false alarms.
+> The flag means "warn the driver this needs two people". A false alarm costs the driver about ten seconds of mild annoyance — they check, decide it's fine, and lift it alone. A miss means somebody lifts an awkward parcel on their own with no warning, and (in this made-up story) hurts their back. Two seconds of annoyance versus a back injury is not a close comparison, so I would take line A and accept the two false alarms.
 
 A good answer for line C also exists, if it names its cost honestly: *"drivers who get warned about parcels that don't need it will stop reading the warnings, and then the warnings are worthless"* — which is exactly the smoke-alarm-battery problem. **Annoying errors cause dangerous ones**, and noticing that is excellent work.
 
@@ -679,7 +679,7 @@ Look at P4 (4.8, YES) and P5 (5.2, no). To catch P4 you need the line at **4.8 o
 
 > The breakers were an **attack**, not a test, and those really are different things. A test is a set of examples chosen before anybody saw the rules. An attack is examples chosen *after*, specifically to walk around them. My 1 out of 5 measures how easy my rulebook is to defeat by somebody who has read it — which is a real and useful thing to know, but it is not "how well does my rulebook work".
 >
-> And the reason the attack is fair anyway is that **somebody does this for a living.** Real scammers test filters, find the boundary, and write the next message just outside it — which is exactly why `Your parcel is delayed.` looks so ordinary. It looks ordinary *because* rulebooks like mine exist. So a rulebook that only survives examples nobody chose adversarially is not much use in a world where the other side is trying.
+> And the reason the attack is fair anyway is that **somebody does this for a living.** Real scammers test filters, find the boundary, and write the next message just outside it — which is partly why `Your parcel is delayed.` looks so ordinary. It looks ordinary partly *because* rulebooks like mine exist. So a rulebook that only survives examples nobody chose adversarially is not much use in a world where the other side is trying.
 >
 > A fair set of five would have been five ordinary messages picked at random from a real phone before anybody wrote a rule — and honestly, it probably would have scored 4 out of 5 and taught me nothing, because most messages are nowhere near the boundary. **The interesting messages are all near the line, and choosing interesting ones is what made it feel unfair.**
 
@@ -710,7 +710,7 @@ An answer that claims to have solved it completely has missed the lesson.
 | The sign says | Who pays |
 |---|---|
 | **140 cm** | The 138 cm fourteen-year-old — a ruined afternoon, in public, in front of eighty people. Paid **immediately and visibly.** |
-| **130 cm** | The 141 cm six-year-old who gets on and is hurt. Paid **rarely, terribly, and invisibly until it happens.** |
+| **130 cm** | The 141 cm eight-year-old who gets on and is hurt. Paid **rarely, terribly, and invisibly until it happens.** |
 
 **The marking point:** a *specific person* both times. "People who are too short" earns half credit.
 
@@ -739,7 +739,7 @@ An answer that claims to have solved it completely has missed the lesson.
 **(d) the heavy parcel**
 
 > **Sharpened:** `IF weight_kg >= 5 THEN charge extra`
-> **Where the number came from:** the courier's own van-loading guidance says one person shouldn't repeatedly lift more than 5 kg. **Not invented — looked up.** Say so when that's true; it is rarer than you'd think and it's worth more.
+> **Where the number came from:** the courier's own van-loading guidance says one person shouldn't repeatedly lift more than 5 kg. (In this lesson the 5 kg is an invented teaching number; real manual-handling guidance allows much heavier single-person lifts. If a number really is looked up, say so; it is rarer than you'd think and it's worth more.)
 > **Edge case:** a 4.9 kg parcel goes free and a 5.0 kg parcel costs more. The two are identical to anybody carrying them. → **FALSE ALARM** for the 5.0 kg one (charged when it didn't need to be), and a **pure boundary case** found by stepping either side.
 
 **(e) the too-long video**

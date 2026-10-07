@@ -46,7 +46,7 @@ Last week ended with a question left deliberately unanswered: what happens on a 
 > **First match wins** — the convention that you check rules from the top down, and the first rule that matches decides the answer. Every rule below it is skipped, even if it would have disagreed.
 
 ![First match wins: a rainy Monday never reaches rule 3](../figures/fig-w08-4-first-match-wins-ladder.svg)
-*Figure 8.1 — Monday, 8 mm of rain. Rule 1 fires and everything below it never runs at all.*
+*Figure 8.1 — Monday, 8 mm of rain, left home early. Rule 1 fires and everything below it never runs at all.*
 
 Here is the thing to notice, and it is bigger than it looks. In that figure, **Rule 3 says "on time" and never gets a turn.** It is not outvoted. It is not overruled after consideration. It is simply never read.
 
@@ -82,7 +82,7 @@ IF height_cm >= 140  THEN allow on the ride
 It is testable, unambiguous, uses data you actually have, and looks completely fair. Now meet the edge cases:
 
 - A 138 cm fourteen-year-old — turned away, though she is stronger than half the queue.
-- A 141 cm six-year-old — allowed on, though the harness will not hold her, because she weighs very little.
+- A 141 cm eight-year-old — allowed on, though the harness will not hold her, because she weighs very little.
 - Someone measured in thick-soled trainers — 139 cm barefoot, 142 cm in shoes. Same child, two answers.
 
 ![A 138 cm child at a 140 cm ride](../figures/fig-w08-2-height-sign-138.svg)
@@ -151,7 +151,7 @@ Take the spam rule `IF the message has 30 or more characters THEN spam` and star
 
 **Every threshold in the world is a position on that slider, and somebody chose it.** They chose it by deciding which error they could live with — usually without writing down that they had decided anything at all.
 
-This trade-off does not go away with better rules. It does not go away with machine learning. It does not go away with more data. It is a property of using a stand-in to guess something you cannot see, and it will still be true in Week 35 when the student is demonstrating a trained model at the AI fair. Say so today. It is one of the two or three ideas from this whole year that they will still be using at university.
+For any one stand-in measurement, this trade-off does not go away by moving the threshold: that only swaps one error for the other. What can shrink both errors is a better measurement (the apple and parcel examples), and better models and more data can help too; some mistakes remain. It is a property of using a stand-in to guess something you cannot see, and it will still be true in Week 35 when the student is demonstrating a trained model at the AI fair. Say so today. It is one of the two or three ideas from this whole year that they will still be using at university.
 
 ### The three misconceptions you will meet today
 
@@ -306,9 +306,9 @@ THE EDGE CASE: 138 cm         ->  refused, and she was fine
 
 | Ask | Hoping for | If they say something else |
 |---|---|---|
-| "Why does the sign measure height at all? What does the ride actually care about?" | "Whether the harness holds you" / "safety" | If they say "how old you are", push: "Would a very tall six-year-old be safe? Would a tiny adult?" You want them to arrive at *the harness*, i.e. something the sign can't measure. |
+| "Why does the sign measure height at all? What does the ride actually care about?" | "Whether the harness holds you" / "safety" | If they say "how old you are", push: "Would a very tall eight-year-old be safe? Would a tiny adult?" You want them to arrive at *the harness*, i.e. something the sign can't measure. |
 | "So can they measure 'will the harness hold you' in a queue?" | "No" | If they suggest a way (test the harness on everybody), take it seriously and cost it: forty minutes per rider. Land it: **you measure what you can, not what you want.** |
-| "Give me a second edge case for the same rule. Somebody it lets on who shouldn't be." | "A really tall little kid" | If they're stuck, offer 141 cm and six years old. Then let them realise the rule is failing in *both* directions at once. |
+| "Give me a second edge case for the same rule. Somebody it lets on who shouldn't be." | "A really tall little kid" | If they're stuck, offer 141 cm and eight years old. Then let them realise the rule is failing in *both* directions at once. |
 
 **Say this:**
 
@@ -337,7 +337,7 @@ THE EDGE CASE: 138 cm         ->  refused, and she was fine
 
 **Say this:**
 
-> "Look at rule 3. It says 'on time'. It *disagrees* with the answer we gave. And it never got a turn. Not outvoted — **never read.** The machine stopped two rungs above it.
+> "Look at rule 3. (This rainy Monday is also a day the student left early, so rule 3 matches.) It says 'on time'. It *disagrees* with the answer we gave. And it never got a turn. Not outvoted — **never read.** The machine stopped two rungs above it.
 >
 > So three consequences, and they're all a bit unsettling.
 >
@@ -421,7 +421,7 @@ THE EDGE CASE: 138 cm         ->  refused, and she was fine
 
 > "Look at the last column. It changes every row. **There is no answer to 'which mistake is worse' that works everywhere** — it depends entirely on who gets hurt and how badly, and that's a question about people, not maths.
 >
-> And here's the trap. You cannot get both errors to zero. Watch: I'll make my spam rule stricter to stop the scams getting through — and now half your friends are in the junk bin. So I loosen it to get your friends back — and the scams return. **You don't get to choose how many mistakes. You only get to choose which kind.**"
+> And here's the trap. With this one measurement you cannot get both errors to zero. Watch: I'll make my spam rule stricter to stop the scams getting through — and now half your friends are in the junk bin. So I loosen it to get your friends back — and the scams return. **With this measurement, you don't get to choose how many mistakes — only which kind.** (A better measurement is what shrinks both.)"
 
 ![Tighten the rule and the errors move, they never vanish](../figures/fig-w08-5-tighten-loosen-tradeoff.svg)
 *Figure 8.8 — One rule, three settings. Ten mistakes, eight mistakes, ten mistakes. Only the mix moved.*
@@ -470,7 +470,7 @@ THE EDGE CASE: 138 cm         ->  refused, and she was fine
 >
 > **Two false alarms — B and H.** Two people who were perfectly safe, sent away after forty minutes of queuing. B is your 138. H is 136.
 >
-> **One miss — C.** 141 centimetres, allowed on, and the harness wouldn't have held her. C is a six-year-old who is tall for her age and weighs very little.
+> **One miss — C.** 141 centimetres, allowed on, and the harness wouldn't have held her. C is an eight-year-old who is tall for her age and weighs very little.
 >
 > Which of those three would you rather the sign got wrong? Because B and H had a horrible afternoon, and C could have been hurt."
 
@@ -732,7 +732,7 @@ Any answer is acceptable **if it names who is hurt**. Push once for the second h
 ## ❓ Questions Students Ask This Week
 
 **"Why don't they just make the ride sign say 'must be 140cm OR over 12 years old'?"**
-Real parks do exactly that sometimes, and it genuinely helps. But look at what you've done: you now need to know everyone's age, which means asking, which means being told the truth, which means someone checking. The rule got better *and* the system got bigger and slower — and it still has edge cases, they've just moved. Now it's the eleven-year-old who's 139 cm. **Every fix trades an edge case for a different edge case plus more complexity.** That trade is sometimes worth it. It is never free.
+Some real rules add a route like that (an age, or "with an adult"), and it can help. But look at what you've done: you now need to know everyone's age, which means asking, which means being told the truth, which means someone checking. The rule got better *and* the system got bigger and slower — and it still has edge cases, they've just moved. Now it's the eleven-year-old who's 139 cm. **Every fix trades an edge case for a different edge case plus more complexity.** That trade is sometimes worth it. It is never free.
 
 **"Can't we just write a rule for every edge case we find?"**
 You can, and it works — for about five of them. Then two things happen. Your patches start contradicting each other, so you need rules about which rule wins. And the world moves: the scammer reads your rules by testing them, and writes the next message just outside them. Try the "harder" variation today and you'll feel it in four minutes. Week 10 does the arithmetic on exactly this, and the number is uncomfortable.
@@ -763,7 +763,7 @@ The oldest ones did, almost exactly — lists of banned words and length checks,
 | The 2×2 grid is filled in transposed, or the two error cells are swapped | Four cells, two axes, and both axes use the same two words | Write the flag word on the grid first, then read each cell as a full sentence: "truly ham, and the rulebook said spam — that's the friend in the bin." Never let them fill a cell without saying the sentence. |
 | They insist their rulebook is fine and the breakers are "unfair" | The breakers *are* unfair — that's the design | Agree completely and then turn it: "You're right, I cheated. I looked at your rules and worked around them. **Now: who else does that for a living?**" Land on spammers. The unfairness is the lesson. |
 | They can't count the characters in a 30-character message reliably | It's genuinely fiddly, especially with spaces | Give them a rule for it: tap each character with a pencil tip and count in threes. Or just tell them the counts — the threshold idea matters, the counting doesn't. Both breaker messages' counts are in the key. |
-| The lesson drifts into "spam filters are rubbish" | It's an easy and slightly satisfying conclusion | Correct it explicitly: real filters catch well over 99% of spam. **Our rulebook is bad; the idea isn't.** What makes real ones work is millions of labelled examples instead of ten, which is precisely the trade we make in Week 10. |
+| The lesson drifts into "spam filters are rubbish" | It's an easy and slightly satisfying conclusion | Correct it explicitly: real filters, by their makers' own reports, catch the great majority of spam. **Our rulebook is bad; the idea isn't.** What makes real ones work is millions of labelled examples instead of ten, which is precisely the trade we make in Week 10. |
 | The envelope gets forgotten | It's the last thing, and the wrap always runs late | Put it physically on top of your notes at minute 55 so you cannot miss it. If the lesson is dead and it's minute 69, seal and sign it at the door in twenty seconds. Week 9 does not work without it. |
 | They ask, brilliantly, "isn't the height rule unfair to short people?" | Because it is, and they've spotted it | Praise it hard and hold the line: "That's Week 31, and you got there twenty-three weeks early." Write it on the parking lot where they can see you write it. Do not start that lesson today; you will not finish it. |
 
@@ -887,7 +887,7 @@ The workbook is sectioned, not paged, and the in-class activity is not in it. Su
 Whether the harness will hold this person safely. Height is a stand-in for it, because you cannot test a harness on every rider in a queue.
 
 **Hook — "Give me a second edge case."**
-A 141 cm six-year-old who weighs very little: allowed on by the rule, and unsafe. The rule fails in both directions at once — that is normal, not a special disaster.
+A 141 cm eight-year-old who weighs very little: allowed on by the rule, and unsafe. The rule fails in both directions at once — that is normal, not a special disaster.
 
 **Concept A — "If I swap rules 1 and 2, does anything change for a rainy Monday?"**
 The answer stays "late", because both rules say late. The *reason* changes — rule 2 decides instead of rule 1. Order only changes the answer when the rules disagree; it always changes the explanation.
@@ -946,7 +946,7 @@ Correct: A, G allowed and safe (2) + C, D, F refused and unsafe (3) = **5 of 8.*
 
 And note the trap in that table, because a sharp student will find it: the *loose* rule scores best, 6 out of 8. On eight riders, with two of them near the boundary, the score is not stable enough to choose a safety threshold with. **A park that picked 130 because it scored best on eight riders would be choosing a policy about injured children on the basis of two rows of data.** That is a genuinely important thing to say out loud.
 
-**Which threshold should the park use?** A defensible answer must argue about harm, not accuracy. The strongest case is for 150 or higher: three disappointed riders is recoverable, an injured six-year-old is not. Accept any answer with a named victim and a reason. Reject a bare number.
+**Which threshold should the park use?** A defensible answer must argue about harm, not accuracy. The strongest case is for 150 or higher: three disappointed riders is recoverable, an injured eight-year-old is not. Accept any answer with a named victim and a reason. Reject a bare number.
 
 ### Activity — the tally table
 
@@ -1011,7 +1011,7 @@ DEFAULT: OTHERWISE                          THEN ham
 **Why each breaker breaks it — the design behind them:**
 
 - **B1** is a real message that shouts. The `!!` rule assumed only spam gets excited. Eleven-year-olds get excited constantly.
-- **B2** is a scam that whispers. No capitals, no exclamation marks, no trigger words, 23 characters. **This is what real scams look like, precisely because rulebooks like ours exist.** There is no word in it that isn't also in ordinary messages.
+- **B2** is a scam that whispers. No capitals, no exclamation marks, no trigger words, 23 characters. **This is what real scams often look like, partly because rulebooks like ours exist.** There is no word in it that isn't also in ordinary messages.
 - **B3** is `free` in the school-timetable sense. The word carries two completely different meanings and the rule only knows one.
 - **B4 and B5** are the pair. 30 characters and 29 characters. Same person, same charger, one word different, opposite verdicts. **Built in ten seconds by stepping either side of the threshold.**
 
@@ -1092,7 +1092,7 @@ The finding to lead a strong student to: **you cannot change an answer by reorde
 | **C — 6.0 kg** | P7, P8 | **0** | **2** (P4, P6) | **6 of 8** |
 
 **P2.** **Line A** (zero misses). **P3.** **Line C** (zero false alarms). **P4.** **All three tie at 6 of 8**: the score cannot choose for you.
-**P5.** Must argue about **harm**, not score. Strongest case is line A: a false alarm costs the driver ten seconds, a miss means somebody lifts 4.8 kg unwarned and hurts their back. A good answer for line C also exists if it names its cost (drivers stop reading warnings that are usually wrong). A bare "A" or "C" earns nothing.
+**P5.** Must argue about **harm**, not score. Strongest case is line A: a false alarm costs the driver ten seconds, a miss means somebody lifts an awkward parcel unwarned and (in this made-up story) hurts their back. A good answer for line C also exists if it names its cost (drivers stop reading warnings that are usually wrong). A bare "A" or "C" earns nothing.
 **P6.** **No line works.** To catch P4 (4.8, YES) the line must be at 4.8 or lower, but that also flags P5 (5.2, no), so the two are the wrong way round for any single cut. There is no right number; weight is a stand-in, and separating them needs a different measurement.
 
 ### Workbook — Think Deeper (T1, T2; optional, marked by the points below)
@@ -1118,7 +1118,7 @@ The finding to lead a strong student to: **you cannot change an answer by reorde
 | The sign says | Who pays |
 |---|---|
 | 140 cm | The 138 cm fourteen-year-old — a ruined afternoon, in public, in front of a queue. Paid immediately and visibly. |
-| 130 cm | The 141 cm six-year-old who gets on and is hurt. Paid rarely, terribly, and invisibly until it happens. |
+| 130 cm | The 141 cm eight-year-old who gets on and is hurt. Paid rarely, terribly, and invisibly until it happens. |
 
 **The marking point:** naming a *specific person* both times. "People who are too short" earns half credit. And the strongest answers notice the asymmetry — one cost is small, frequent and visible; the other is rare, severe and hidden. **That asymmetry is exactly why safety rules are set tight.**
 
@@ -1147,7 +1147,7 @@ Each answer needs three parts: the sharpened rule, where the number came from, a
 **(d) `IF the parcel is heavy THEN charge extra`**
 
 > **Sharpened:** `IF weight_kg >= 5 THEN charge extra`
-> **Where the numbers came from:** the courier's own van-loading guidance says one person shouldn't repeatedly lift more than 5 kg. Not invented — looked up. Say so.
+> **Where the numbers came from:** in this lesson the 5 kg is an invented teaching number (real manual-handling limits are much higher). If a number really is looked up, say so.
 > **Edge case:** a 4.9 kg parcel goes free and a 5.0 kg parcel costs more. The two parcels are identical to anybody carrying them. **A pure boundary edge case, found by stepping either side.** (Strictly, the 5.0 kg parcel is the false alarm: charged when it did not need to be.)
 
 **(e) `IF the video is too long THEN don't watch it`**

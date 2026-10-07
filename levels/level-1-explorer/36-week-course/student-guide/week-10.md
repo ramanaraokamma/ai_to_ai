@@ -94,7 +94,7 @@ Add a fourth check. Every one of those eight rows splits in two, because the new
 
 There is a real name for this shape, and you should use it:
 
-> **Exponential growth** — when a quantity doubles at every step. It starts slow, looks harmless, then defeats you.
+> **Exponential growth** — when a quantity multiplies by the same amount at every step, for example doubling. It starts slow, looks harmless, then defeats you.
 
 Written short: **n checks give you 2ⁿ situations.** Say it out loud as "two to the power n". It is exactly the paper fold, wearing different clothes.
 
@@ -146,7 +146,7 @@ plus one line saying which rule wins first   + 1
 
 **256 is the maths. 258 is the maths plus the two boring lines every rulebook needs.**
 
-Now sit with how small eight is. You can hold eight questions in your head while walking to school. Eight is nothing. And eight has already produced a document longer than this chapter.
+Now sit with how small eight is. You can hold eight questions in your head while walking to school. Eight is nothing. And eight has already produced a rulebook of 258 lines.
 
 ![The Week 10 board at the end of the concept segment](../figures/fig-w10-6-board-doubling-table.svg)
 *Figure 10.3 — The two-column table that runs this whole week: checks on the left, situations on the right, doubling all the way down.*
@@ -221,7 +221,7 @@ The row that decides the whole argument is **"effort grows by adding"**. Collect
 ![Doubling versus adding](../figures/fig-w10-5-effort-curves.svg)
 *Figure 10.6 — Both lines go up. Only one of them explodes.*
 
-> **🧑‍🏫 If someone asks you:** "So machine learning means nobody has to work?" — no. **You swapped thinking for collecting.** Labelling 5,000 messages correctly is hours of dull, careful human work, and every mistake you make in it gets learned by the machine with perfect loyalty. Rule systems fail because humans can't think of everything. Learned systems fail because humans can't collect everything. Neither one is magic.
+> **🧑‍🏫 If someone asks you:** "So machine learning means nobody has to work?" — no. **You swapped thinking for collecting.** Labelling 5,000 messages correctly is hours of dull, careful human work, and mistakes you make in it can get learned by the machine, systematic ones especially. Rule systems fail because humans can't think of everything. Learned systems fail because humans can't collect everything. Neither one is magic.
 
 ---
 
@@ -303,7 +303,7 @@ Five more questions created **992** new situations — thirty-one times more tha
 
 Check 11 by itself adds **1,024** — more than checks 1 to 10 created between them (1,023). Every single time.
 
-**What Aarav should actually do.** Not write check 12. He should keep a notebook: for every match he has ever played, write down the conditions *and whether batting first turned out well*. That is a **labelled example**. Forty matches is forty examples. It took him no extra work at all — he was at the matches anyway.
+**What Aarav should actually do.** Not write check 12. He should keep a notebook: for every match he has ever played, write down the conditions *and whether batting first turned out well*. That is a **labelled example**. Forty matches is forty examples. Forty is only a start (ten yes/no conditions have 1,024 possible situations, so he would want many more over time), but collecting them took him almost no extra work — he was at the matches anyway.
 
 ### Worked Example 3 — Is this our school uniform? (school)
 
@@ -330,7 +330,7 @@ x 2 minutes each  = 8,192 minutes
 / 8 hours a day   = 17.1 working days
 ```
 
-**Over three weeks of full-time work** — for a school app. And it would still break on the first thing she didn't think of, which this term is a sari-style uniform variant she has never photographed.
+**Over three weeks of full-time work** — for a school app. And it would still break on the first thing she didn't think of, which this term is a new style of uniform she has never photographed.
 
 **Attempt 2 — the trade.** She stops writing rules. Instead:
 
@@ -345,9 +345,9 @@ x 10 seconds to label each one
 
 **Now name the cost, because there always is one.** After the trade:
 
-1. She cannot explain any single decision. When it says "not uniform" about a photo of her own brother, nobody on Earth can point at the reason.
+1. She cannot explain any single decision. When it says "not uniform" about a photo of her own brother, it is very hard for anyone to point at the reason.
 2. She needed 300 photos. That is 300 real people, or 300 permissions, or both.
-3. Every labelling mistake she made is now baked in permanently. If she was tired and mislabelled 20 photos, the machine learned those 20 as gospel.
+3. Labelling mistakes can be learned by the machine, and systematic ones especially. If she was tired and mislabelled 20 photos, the machine may have learned those 20 as if they were true.
 
 **The final answer to "which is better?"** Neither, always. For this job, the trade is clearly worth it. For working out how much tax someone owes, it would be ridiculous — somebody already wrote those rules down in a law, so just implement the law.
 
@@ -380,7 +380,7 @@ x 0.1 mm  = 107,374,182.4 mm
           = about 107 kilometres
 ```
 
-**One hundred and seven kilometres.** Higher than the edge of space, which is usually put at 100 km. From one sheet of paper, folded thirty times. Nothing was added.
+**One hundred and seven kilometres.** Higher than the edge of space, which is usually put at 100 km. From one sheet of paper, if you could fold it thirty times (you cannot, in real life; this is a thought experiment). Nothing was added.
 
 ### Part 2 — Count the Explosion (14 minutes)
 
@@ -449,7 +449,7 @@ Misses            = 1   (message 27 — spam that got through)
 
 > **💡 Try this:** before you score, write down what you *think* your fresh score will be. Most people guess much too high. Being wrong here is the most useful thing that can happen to you all term.
 
-**What almost always happens, and it is not bad luck:** the fresh score comes in 10 to 30 points below the training score, and **the rule that breaks first is your strongest rule.** It was strongest because it fitted your twenty training messages hardest — so it was the most tightly tuned to messages that no longer matter.
+**What often happens:** the fresh score comes in below the training score, commonly by 10 to 30 points, and **the rule that breaks first is often your strongest rule.** A likely reason is that it fitted your twenty training messages hardest — so it was the most tightly tuned to messages that no longer matter (and a strong rule also fires most often, so it has the most chances to misfire). One caution: with only 10 fresh messages, one message moves the score by 10 points, so treat the gap as a hint, not proof.
 
 ---
 
@@ -488,7 +488,7 @@ This is not a silly mistake. It is the most natural mistake a human brain makes,
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "You don't need 2ⁿ rules, so the problem goes away." | "You don't need 2ⁿ rules, so the wall moves from about 5 checks to about 10. It does not go away." |
+| "You don't need 2ⁿ rules, so the problem goes away." | "You don't need 2ⁿ rules, so the wall moves from roughly 5 checks to roughly 10. It does not go away." |
 
 This objection is **partly right**, and that's why it's dangerous. One rule really can cover a whole block of situations at once: `IF contains "free" THEN spam` settles four of the eight three-check situations in a single line, no matter what the other checks say. So a real rulebook *is* much smaller than 2ⁿ.
 
@@ -554,7 +554,7 @@ reason the nine tiles on the right-hand branch exist, and next week the year cro
 - **A check is a yes/no question. n checks give 2ⁿ situations.** That is the whole arithmetic of the week.
 - **Check number n always adds more work than checks 1 to n−1 combined** — by exactly one. You are always only halfway.
 - **8 checks = 256 situations = 258 rulebook lines**, and eight checks is nothing at all.
-- **Rules die three ways:** you can't write them all, they contradict each other, and the world changes underneath them.
+- **Rules die three ways** (and they also stop paying): you can't write them all, they contradict each other, and the world changes underneath them.
 - **The machine learning trade:** stop writing rules, start collecting labelled examples. You gain reach; you lose the explanation and you owe a lot of data.
 - **Rules still win** whenever the correct answer was already written down by a person.
 
@@ -568,7 +568,7 @@ reason the nine tiles on the right-hand branch exist, and next week the year cro
 | Word | What it means | Example |
 |---|---|---|
 | **check** | One question with a yes/no answer | "Does this message contain the word 'free'?" |
-| **exponential growth** | When a quantity doubles at every step | Paper layers: 1, 2, 4, 8, 16, 32, 64, 128 |
+| **exponential growth** | When a quantity multiplies by the same amount at every step (for example, doubling) | Paper layers: 1, 2, 4, 8, 16, 32, 64, 128 |
 | **rule explosion** | The rules you need grow far faster than the cases you were handling, until no human can keep the rulebook | 8 checks needs 258 lines; 20 checks is 17.5 years of writing |
 | **the machine learning trade** | You give up writing rules, and supply labelled examples instead | 50 minutes labelling 300 uniform photos, instead of 3 weeks writing 4,096 rules |
 

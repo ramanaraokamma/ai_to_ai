@@ -45,7 +45,7 @@
     </g>
   </g>
   <text x="524" y="256" font-size="16" fill="#14202B">Worth betting on?</text>
-  <text x="524" y="278" font-size="16" fill="#CC2B1D">NO. That is noise.</text>
+  <text x="524" y="278" font-size="16" fill="#CC2B1D">NO. Too little to bet on.</text>
 
   <text x="400" y="356" font-size="14" fill="#55636F" text-anchor="middle">A pattern has to beat guessing. One out of four does not beat anything.</text>
 </svg>

@@ -70,7 +70,7 @@ because you are a bad person — because it was sunny, and that is when you were
 
 ### The four links, and where the fix lives
 
-Every case of bias you will ever meet has the same four-link shape.
+Most of the cases of bias you will meet in this course have the same four-link shape. (Bias can also come from how things are labelled, what is chosen to measure, or how a result is used.)
 
 ![Where bias comes from, in four links](../figures/fig-w31-1-bias-chain.svg)
 *Figure 31.1 — The chain runs left to right, but the repair happens at link 1.*
@@ -82,8 +82,8 @@ Read the chain out loud once:
 3. **The model learns what it saw.** It is now excellent in daylight and lost by lamplight.
 4. **Somebody gets bad answers.** Specifically: the person using it after dark.
 
-The part that surprises adults is the dashed arrow: **the fix is at link 1.** Not at link 3. You do
-not repair a biased model by making the model cleverer. You repair it by going back and taking the
+The part that surprises adults is the dashed arrow: **the main fix is at link 1.** Not at link 3. You do
+not repair missing data by making the model cleverer. The first repair is going back and taking the
 photos you did not take. That is why this whole lesson is about counting photos rather than about
 computers.
 
@@ -291,7 +291,7 @@ Two other things can go wrong:
 
 **Say this:**
 
-> "In 2017 a researcher called Joy Buolamwini was building an art project. It needed a computer to
+> "A few years ago a researcher called Joy Buolamwini was building an art project. It needed a computer to
 > notice that there was a human face in front of the camera. Simple job. The software worked fine
 > for everyone else in her lab.
 >
@@ -307,7 +307,9 @@ Pause here. Let that sit for a second. Then:
 > not shrug. She did not tweet about it. **She built a test set.** She collected 1,270 photographs
 > of members of parliament from three African countries and three European countries, and she
 > sorted them by skin tone and by whether the person was a man or a woman. Then she ran three
-> face-analysis products that companies were already selling to real customers.
+> face-analysis products that companies were already selling to real customers. (Slightly different
+> job from the mask: this test asked whether each face was a man's or a woman's, not whether a face
+> was there at all.)
 >
 > On lighter-skinned men, none of those three products got more than **0.8%** wrong. One
 > mistake in every hundred and twenty-five, at worst.
@@ -364,7 +366,7 @@ Close the hook with:
 ```
    WHAT IT SAW A LOT OF   →   it gets good at
    WHAT IT SAW A LITTLE   →   it stays shaky
-   WHAT IT NEVER SAW      →   it has no idea
+   WHAT IT NEVER SAW      →   it is guessing, nothing to go on
 ```
 
 **Say this (part 2, the chain):**
@@ -395,7 +397,7 @@ Show Figure 31.1 (or draw the four boxes — they are just four boxes and three 
   slowly."*
 - **If the student says "delete the daylight photos so it's even":** that is genuinely clever and
   half right — it does balance the set — but it throws away real information and makes the model
-  worse at everything. Say so, and note that the professional name for that idea is *downsampling*,
+  worse at some things. Say so, and note that the professional name for that idea is *downsampling*,
   and it is a real technique people really use when they cannot collect more data.
 
 **Say this (part 3, why the average lies):**
@@ -734,14 +736,14 @@ impact.
 
 No, and it is worth understanding why not. The model has no place to put an instruction. It is a
 big pile of numbers that were adjusted by looking at examples. There is no "be fair" dial inside
-it, in the same way there is no "be fair" dial inside a photograph. The only lever you have is
-what you show it.
+it, in the same way there is no "be fair" dial inside a photograph. The main lever you have is
+what you show it (experts also reweight examples and add fairness checks, but that is beyond this week).
 
 **3. "Twelve photos isn't very many. Can you really trust this?"**
 
 Excellent question, and no — not completely. Twelve is a small sample. If one photo out of twelve
 had gone the other way, that group would move by more than eight points. What twelve photos *can*
-do is tell the difference between 91.7% and 41.7%, because that gap is far too big to be luck. Rule
+do is tell the difference between 91.7% and 41.7%, because that gap is unlikely to be luck alone, and it matches the training counts, though it is still only twelve photos. Rule
 of thumb for this course: **small samples can spot big gaps but not small ones.** If two groups come
 out three points apart, do not claim a gap; go and take more photos.
 
@@ -965,7 +967,7 @@ separate signal.
 ```text
    WHAT IT SAW A LOT OF   →   it gets good at
    WHAT IT SAW A LITTLE   →   it stays shaky
-   WHAT IT NEVER SAW      →   it has no idea
+   WHAT IT NEVER SAW      →   it is guessing, nothing to go on
 ```
 
 ### A2 — Multiple choice
@@ -995,9 +997,9 @@ there is no answer. You subtracted two percentages, and that difference is measu
 1. **Who got photographed**: someone decided what to collect, usually by convenience.
 2. **The training data is lopsided**: 183 daylight, 17 lamplight, 0 and 0. Nobody noticed, because nobody counted.
 3. **The model learns what it saw**: brilliant in daylight, lost by lamplight. Not a malfunction.
-4. **Somebody gets bad answers**: a real person, always the one who was missing from link 1.
+4. **Somebody gets bad answers**: a real person, usually the one who was missing from link 1.
 
-**Pink box: the fix happens at link 1.** You do not repair a biased model by making it cleverer; you
+**Pink box: the main fix happens at link 1.** You do not repair missing data by making the model cleverer; you
 go back and take the photographs nobody took. **Wrong-answer map:** "link 3" means the student has
 drawn "make the model cleverer", the misconception this week exists to remove.
 
@@ -1061,7 +1063,7 @@ not be.
 2. **The record follows the student** into reports and references, and in some places attendance
    figures have legal consequences for families.
 3. **The burden of proof flips.** The child now has to prove they were present, to a busy adult,
-   against a machine that has been right many times. Most children lose that argument, and a child
+   against a machine that has been right many times. Many children would lose that argument, and a child
    who loses it every week stops trying.
 4. **It lands on one identifiable group**, so the same students carry it again and again, which
    from the inside looks a lot like being singled out.
@@ -1204,8 +1206,8 @@ separate, then a commitment.
 ### Think Deeper 2 — How much can twelve photos prove?
 
 One photo changing side moves a group by 1/12, which is 8.3 points, so a gap under about eight or
-nine points could be pure luck. A 50-point gap is not luck (six photos would all have fallen the
-wrong way in one batch). **Rule: small samples can spot big gaps but not small ones.** A 50-point gap
+nine points could be pure luck. A 50-point gap is unlikely to be luck alone (six photos would all have fallen the
+wrong way in one batch, which happens only now and then) and it matches the training counts, but it is still only twelve photos. **Rule: small samples can spot big gaps but not small ones.** A 50-point gap
 on twelve photos each: believe it and say "twelve photos" out loud. A 3-point gap: claim nothing, take
 more photos.
 
@@ -1290,8 +1292,8 @@ Marks are for **specificity and a number**, not for style. "Be careful using thi
 |---|---:|---:|---:|---|
 | Bright daylight | 183 | 91.5% | 91.7% | Well covered → works |
 | Lamplight | 17 | 8.5% | 58.3% | Barely covered → shaky |
-| Held in a hand | **0** | 0.0% | 41.7% | Never seen → fails |
-| Patterned background | **0** | 0.0% | 50.0% | Never seen → fails |
+| Held in a hand | **0** | 0.0% | 41.7% | Never seen → much less reliable |
+| Patterned background | **0** | 0.0% | 50.0% | Never seen → much less reliable |
 
 **One sentence per row** — accept anything with the right causal direction:
 

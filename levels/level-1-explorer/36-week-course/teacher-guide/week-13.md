@@ -576,7 +576,7 @@ Work through all ten. Model the first one yourself so the shape is clear:
 
 > "Card 1. 'Is this text message spam?' That's yes/no — binary classification. To flip it, I need a number that measures the same thing. How about: 'How spammy is this message, from 0 to 100?' New label column: `spam_score`, any number 0 to 100. Done. Your turn with card 2."
 
-### Phase 3 — Argue (4 minutes)
+### Phase 3 — Argue (3 minutes)
 
 Pick three cards. For each one, ask:
 

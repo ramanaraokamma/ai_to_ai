@@ -391,7 +391,7 @@ ________________________________________________
 
 **(a)** Draw an arrow on page W33.3, from your worst percentage back to the count on W33.1 that explains it. Then write the sentence:
 
-> *"______________ scored ______% **because** only ______ of my ______ training photos were ______________."*
+> *"______________ scored ______% **probably because** only ______ of my ______ training photos were ______________."*
 
 **(b)** Price the fix. Target: your worst condition is **1 in 5** of the training set, which is 20%.
 
@@ -602,7 +602,7 @@ The shares: 96 ÷ 140 = 0.6857 → **68.6%** · 12 ÷ 140 = 0.0857 → **8.6%** 
 
 Read the two number columns together: **96 → 91.7% · 32 → 66.7% · 12 → 50.0% · 0 → 25.0%.** The accuracy follows the count straight down.
 
-**(a)** *"Odd background scored 25.0% because 0 of my 140 training photos had a patterned background."*
+**(a)** *"Odd background scored 25.0% probably because 0 of my 140 training photos had a patterned background."*
 
 **(b)**
 

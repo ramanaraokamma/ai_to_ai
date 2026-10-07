@@ -20,7 +20,7 @@
 
 ## 🪝 Start Here
 
-In 2017 a researcher named Joy Buolamwini was building an art project. It needed one simple thing: a computer that could notice there was a human face in front of the camera. Face-detection software has been around for years. This was meant to be the boring part.
+A few years ago a researcher named Joy Buolamwini was building an art project. It needed one simple thing: a computer that could notice there was a human face in front of the camera. Face-detection software has been around for years. This was meant to be the boring part.
 
 It would not see her.
 
@@ -37,7 +37,7 @@ Mask down: nothing. Mask up: face. Down: nothing. Up: face.
 
 Now here is the part that actually matters, and it is not the mask.
 
-**She did not shrug, and she did not just complain about it. She built a test set.** She collected 1,270 photographs of members of parliament — three African countries, three European countries — and she sorted them into groups by skin tone and by whether the person was a man or a woman. Then she ran three face-analysis products that real companies were already selling to real customers.
+**She did not shrug, and she did not just complain about it. She built a test set.** She collected 1,270 photographs of members of parliament — three African countries, three European countries — and she sorted them into groups by skin tone and by whether the person was a man or a woman. Then she ran three face-analysis products that real companies were already selling to real customers. This test asked a slightly different question from the mask story: for each face, was it a man's or a woman's? (The mask problem was about *finding* a face at all. The test measured *guessing a person's gender from a face*.)
 
 On **lighter-skinned men**, none of the three got more than **0.8%** wrong. One mistake in every hundred and twenty-five, at worst.
 
@@ -52,11 +52,11 @@ So: what was broken inside that computer?
 
 Here is the strange answer. **Nothing was broken.** No bug. No crash. Nobody sabotaged anything. Every one of those products had been tested before it was sold, and every one of them had a headline accuracy number that looked great.
 
-Somebody, years earlier, gathered a big pile of training faces. That pile had far more of some kinds of people in it than others — not out of malice, but because that is what was easy to collect. The model learned exactly what it was shown. And then the testing was done as **one big average**, so the hole never showed up on anybody's report.
+Most likely, somebody years earlier gathered a big pile of training faces. (The companies did not publish theirs, so this is the researchers' best explanation, supported by the public face collections of the time, which had far more lighter-skinned faces.) The pile probably had far more of some kinds of people in it than others — not out of malice, but because that is what was easy to collect. The model learned exactly what it was shown. And then the testing was done as **one big average**, so the hole never showed up on anybody's report.
 
 That is all it takes. That is the whole disaster, start to finish.
 
-> **💡 Try this:** Your Week 17 model has this problem right now. Not maybe — *right now*. You just have not measured it yet. In two weeks you will. Today we practise on somebody else's model, so that when it is your turn you already know the moves.
+> **💡 Try this:** Your Week 17 model very probably has this problem right now. You just have not measured it yet. In two weeks you will. Today we practise on somebody else's model, so that when it is your turn you already know the moves.
 
 ---
 
@@ -77,14 +77,14 @@ A model does not hold opinions. A model does not think anything about anybody. W
 ```
    WHAT IT SAW A LOT OF   →   it gets good at
    WHAT IT SAW A LITTLE   →   it stays shaky
-   WHAT IT NEVER SAW      →   it has no idea
+   WHAT IT NEVER SAW      →   it is guessing, nothing to go on
 ```
 
 **The analogy: revising for a test.** Imagine you revise fractions for eleven hours and decimals for twenty minutes. Then you sit a test with half fractions and half decimals. You will do brilliantly on one half and badly on the other. Nobody has to have been unkind to you. Nobody sabotaged your revision. **You are simply good at the thing you practised and shaky at the thing you barely touched.** A model is exactly that, with no feelings attached at all.
 
 And here is the bit that surprises adults: **bias is the normal outcome, not the unlucky one.** You have to do extra work to *avoid* it. If you photograph 200 things in your kitchen on sunny afternoons, you have just built a biased model — not because you are a bad person, but because it was sunny, and afternoons are when you are free.
 
-Every case of bias you will ever meet has the same four-link shape.
+Most of the cases of bias you will meet in this course have the same four-link shape. (Bias can also come from how things are labelled, what is chosen to measure, or how a result is used.)
 
 ![Where bias comes from, in four links](../figures/fig-w31-1-bias-chain.svg)
 *Figure 31.2 — The chain runs left to right. The repair happens back at link 1.*
@@ -94,9 +94,9 @@ Every case of bias you will ever meet has the same four-link shape.
 3. **The model learns what it saw.** It becomes excellent in daylight and lost by lamplight. That is not a malfunction. Learning from examples means *copying whatever the examples were like*.
 4. **Somebody gets bad answers.** A real person. Specifically the person using it after dark.
 
-Now look at the dashed arrow, because it is the whole lesson: **the fix is at link 1, not link 3.**
+Now look at the dashed arrow, because it is the whole lesson: **the main fix is at link 1, not link 3.**
 
-You do not repair a biased model by making the model cleverer. You repair it by going back and taking the photographs you did not take.
+Making the model cleverer is not the answer to missing data. The first repair is going back and taking the photographs you did not take.
 
 > **⚠️ Watch out:** "Just train it for longer" and "get a faster computer" both sound sensible and both fail. If a model has seen **zero** photos of something, thinking harder about zero still gives you zero. It is like revising for a decimals test by re-reading your fractions notes very slowly.
 
@@ -297,7 +297,7 @@ A takeaway shop wants an app that looks at the hot tray and counts how many slic
 
 **Why zero?** Because the photos were all taken at 11 a.m., before the shop opened, when every slice in the tray was perfect. Nobody was careless. Nobody was unkind. It was just a convenient time to take 400 photographs.
 
-**And the punchline.** The shop's headline is 63.0%. But think about *when a customer actually looks at the screen* — evening, tray half wrecked, four kinds of slices jumbled together. **The number the customer experiences is much closer to 36.0% than to 63.0%.**
+**And the punchline.** The shop's headline is 63.0%. But think about *when a customer actually looks at the screen* — evening, tray half wrecked, four kinds of slices jumbled together. **The number the customer experiences could be much closer to 36.0% than to 63.0%, if most evenings look like the hard slices.**
 
 ---
 
@@ -352,7 +352,7 @@ A cricket ground installs a camera system that decides whether the ball crossed 
 
 **Now the uncomfortable question.** Which of those four situations do you think actually decides matches? Not the easy sunny ones. It is the floodlit evening game where the ball is in the air over the rope and forty thousand people are shouting.
 
-**The system is worst exactly where it matters most.** That is not a coincidence, and it is not bad luck either: hard, rare, decisive moments are *by definition* the ones there are fewest recordings of.
+**The system is worst exactly where it matters most.** That is not a coincidence, and it is not bad luck either: hard, rare, decisive moments are *typically* the ones there are fewest recordings of.
 
 ---
 
@@ -583,16 +583,16 @@ Fifty percent **of what?** There is no answer, so it cannot be a percent. Ten se
 |---|---|
 | "It's 60.4% accurate. The group numbers are extra detail for people who care." | "The per-group table is the real result. 60.4% is a fact about *my test*, not about the model." |
 
-This one is exactly backwards, and you have already seen the proof: the overall number moved from 60.4% to 76.0% without the model changing at all. **The per-group table is a property of the model. The overall number is a property of your test.**
+This one is exactly backwards, and you have already seen the proof: the overall number moved from 60.4% to 76.0% without the model changing at all. **The per-group table shows how the model behaves on each group (with only 12 photos per group it is a rough picture, not an exact one). The overall number depends on your test.**
 
 ---
 
 ## 🌍 Where You've Seen This
 
-1. **Voice assistants and children.** Ask one to play a song and watch how often it mishears a younger sibling compared to an adult. There were far fewer children's voices in the training recordings, and you can hear it.
-2. **Face unlock in a dark room.** It works instantly at your desk in daylight and gives up at 11 p.m. under a lamp. That is a training-data gap you can feel with your thumb.
+1. **Voice assistants and children.** Ask one to play a song and watch how often it mishears a younger sibling compared to an adult. There were far fewer children's voices in the training recordings, and that may be why.
+2. **Face unlock in a dark room.** It works instantly at your desk in daylight and gives up at 11 p.m. under a lamp. That could be a training-data gap, or it could be the camera hardware (some phones use infrared and work in the dark). Worth wondering about.
 3. **Automatic subtitles.** Watch the captions on a video where somebody has an accent the platform has heard less often, or where two people talk at once. The errors are not spread evenly — they land on particular voices.
-4. **Handwriting apps and left-handed writers.** Left-handed people often slant letters differently, and there are fewer left-handed writing samples. Same chain, four links, all over again.
+4. **Handwriting apps and left-handed writers.** Left-handed people often slant letters differently, and there may be fewer left-handed writing samples. Same chain, four links, all over again.
 5. **Photo apps that "recognise your pet".** It knows your dog perfectly and confidently insists that next door's cat is your dog. Guess whose photos are in the album 400 times.
 6. **Spellcheck and names.** Common names sail through; less common ones get a red squiggle and a suggestion to change them. That squiggle is a count, showing up as a judgement.
 
@@ -606,7 +606,7 @@ Face found, instantly.
 
 Now look at what you did this week and notice that **you did the same thing she did.**
 
-| Joy Buolamwini, 2017 | You, this week |
+| Joy Buolamwini, a few years ago | You, this week |
 |---|---|
 | Noticed the software failed on *her* and not on her lab-mates | Noticed your model was worse on one group than another |
 | Did not shrug, and did not just complain | Did not shrug either |
@@ -615,7 +615,7 @@ Now look at what you did this week and notice that **you did the same thing she 
 | Found 0.8% wrong for lighter-skinned men, **34.7%** for darker-skinned women | Found your own gap, in percentage points |
 
 That is the whole method, and it is not complicated. **Count who is in your data. Split your results
-by group. Report the gap.** You now know how to do the thing that made three companies change their
+by group. Report the gap.** You now know how to do the kind of thing that pushed companies to improve their
 products.
 
 > **🔑 And here is the sentence to keep.** When she found that gap, nothing inside those products was
@@ -643,7 +643,7 @@ IT FAILS is the newly shaded box. Only one dashed box is left on the whole map. 
 
 | | |
 |---|---|
-| **The mental model you now own** | **Bias is a count, not an attitude.** There are four links in the chain: who got photographed → the data comes out lopsided → the model copies the lopsidedness → **a real person gets bad answers**. The fix is at link one, and nowhere else. |
+| **The mental model you now own** | **Bias is a count, not an attitude.** There are four links in the chain: who got photographed → the data comes out lopsided → the model copies the lopsidedness → **a real person gets bad answers**. The main fix is at link one, not at a cleverer model. |
 | **The one question it answers** | *"Accurate for whom — and how many training examples did that group actually get?"* |
 | **What it plugs into** | Week 6's *"who is missing from this table?"*, and Week 20's rule that one number on its own describes nobody. Neither of those was really about tables or averages. They were both about this. |
 | **What carries forward** | Next week's trust questions, and Week 33's audit of **your own** model — where this stops being somebody else's story and becomes your own gap, written in percentage points, about a machine you made. |
@@ -658,12 +658,12 @@ IT FAILS is the newly shaded box. Only one dashed box is left on the whole map. 
 ## 🔑 Remember This
 
 - **Bias is a count, not an attitude.** A model has no opinions. It gets good at what it saw a lot of and stays bad at what it barely saw.
-- **The chain has four links**: who got photographed → the data is lopsided → the model copies it → a real person gets bad answers. **The fix is at link 1.**
+- **The chain has four links**: who got photographed → the data is lopsided → the model copies it → a real person gets bad answers. **The main fix is at link 1.**
 - **A single accuracy number hides somebody.** Always split it up, and always ask *for whom?*
 - **Subtract two percentages and you get percentage points**, never percent. If someone can ask "of what?" and there is no answer, it is points.
 - **Every gap has a count behind it.** The finished sentence is always *"[group] scored [x]% because only [n] of the [total] training examples were [that group]."*
-- **Choose the groups before you look at the results, and write your guess down first.** A guess made afterwards is worth nothing. A wrong guess made beforehand is worth a lot.
-- **Twelve photos per group can spot a big gap, not a small one.** Fifty points is real. Three points is probably luck — go and take more photos before you claim it.
+- **Choose the groups before you look at the results, and write your guess down first.** A guess made afterwards is worth almost nothing. A wrong guess made beforehand is worth a lot.
+- **Twelve photos per group can spot a big gap, not a small one.** Fifty points is unlikely to be luck alone (and it matches the training counts), but say "only twelve photos". Three points is probably luck — go and take more photos before you claim it.
 - **The measurement is what forces the fix.** Joy Buolamwini did not win that argument by arguing. She counted 1,270 photos, split the result by group, and published the gap — 0.8% against 34.7%. That is the move, and you now know how to make it.
 
 ---

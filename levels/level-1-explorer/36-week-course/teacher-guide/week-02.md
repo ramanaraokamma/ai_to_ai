@@ -108,11 +108,12 @@ message.*
 
 The reason the label has to go on **first** is the thing students trip over. If you show a machine a
 thousand emails and no answers, there is nothing for it to be right or wrong about. It has no way to
-score itself, so it has no way to improve. The label is what makes learning possible at all — it is
-the answer sheet, and somebody human has to write it.
+score itself, so it has no way to improve. In the kind of learning we study in this course, the label is what makes learning possible — it is
+the answer sheet (other kinds, which find patterns without human labels, are for later), and somebody human has to write it.
 
-That has a consequence you will come back to in about thirty weeks: **everything the model knows, and
-every mistake it makes, was inherited from the person who wrote the labels.**
+That has a consequence you will come back to in about thirty weeks: **almost everything the model knows,
+and many of its mistakes, were inherited from the person who wrote the labels** (the choice of examples
+and clues matters too).
 
 ### What a model actually is (and the thing adults get wrong)
 
@@ -121,8 +122,10 @@ After training, what exists?
 A **model** — a rule the program found. That's it. And here are three properties, all of which
 11-year-olds accept easily and adults resist:
 
-1. **The examples are not inside it.** After training, the photos are gone. The model is not a
-   filing cabinet you can search. It is a rule that happens to work.
+1. **The examples are not inside it.** In most models, after training, the photos are gone. The model
+   is not usually a filing cabinet you can search. It is a rule that happens to work. (Honest scope:
+   a few simple methods, such as nearest-neighbour, do keep their examples, and some image tools
+   build on that idea. Say "most models" if a student has met one.)
 2. **It usually cannot explain itself.** You can't point at line 47 and say "that's why". Last week
    you *could* — that was a real advantage of rules that we have now given up.
 3. **It only knows what was in the examples.** All its skill and all its blind spots come from the
@@ -147,7 +150,7 @@ Put it as an honest trade, because it is one:
 | Can you fix a mistake? | Edit one line | Change the examples and retrain |
 | Handles messy jobs? | Badly | That's the whole point of it |
 | Where do its mistakes come from? | The person who wrote it | The examples it was given |
-| Surprises its creators? | Never | Regularly |
+| Surprises its creators? | Rarely | Regularly |
 
 Neither column is better. This course spends thirty-four more weeks on the right-hand column because
 that column is where all the interesting problems live, not because the left column is wrong.
@@ -160,13 +163,14 @@ Very common, very natural, and it will show up as the student saying *"it looks 
 it's seen before"*. The activity is designed to kill this: you physically remove the eight cards
 before the test cards appear. When they sort a test card correctly with the cards gone, ask
 **"where did you get that answer from? The cards are in my pocket."** Let them notice that what
-survived was a *rule*, not a memory of eight cards.
+survived was a *rule*, not a memory of eight cards. (The mango game shows a person generalising;
+it does not prove what every model stores, so say "most models".)
 
 **Misconception 2: "Learning means it keeps getting better while you use it."**
 
 Also very natural. Most deployed models do **not** learn while you use them. Training happens once,
 it stops, and then the finished model is copied out and runs unchanged, possibly for years. Your
-phone's face unlock is not learning about faces in general every time you look at it. Sometimes a
+phone's face unlock model is not learning about faces in general every time you look at it (some phones do refresh the stored data about *your* face; that is a different thing from retraining the model). Sometimes a
 company retrains and ships an update — that is a new model, not the old one growing.
 
 The one-line version to say out loud: **"Training is a thing that happens, finishes, and stops. What
@@ -299,11 +303,13 @@ invent.
 > "Last week you asked me a question and I refused to answer it. Here it is, in your handwriting:
 > *who wrote the rules for the spam filter?*
 >
-> Here is the answer. **Nobody did.**
+> Here is the answer. **For the part of the filter that does the hard judging, nobody did.**
 >
 > Not 'somebody wrote them and it's secret'. Not 'a huge team wrote a million rules'. Nobody wrote
-> them. There is no list. If you went to the company that makes it and asked to see the rules, they
-> could not show you, because they don't have them either.
+> that part. There is no list. If you went to the company that makes it and asked to see the rules
+> for that part, they could not show you, because they don't have them either. (Real filters also
+> have a few hand-written rules and blocklists bolted on; the learned part is the one that catches
+> wording nobody predicted.)
 >
 > That should sound impossible. Hold onto that feeling for eight minutes."
 
@@ -420,7 +426,7 @@ completely. Do the circles last, in a different colour if you have one.
 
 - **Hoping for:** hesitation, then *"…are they still in there?"* Most students say yes, and that's the
   right thing to say — it's the natural guess.
-- **The answer to give:** *"They're gone. The model isn't a box of emails. It's a rule that came out of
+- **The answer to give:** *"In most models, they're gone. The model isn't a box of emails. It's a rule that came out of
   looking at them. Like the mango — you don't carry a photo album of every mango you've ever seen.
   You carry one rule. And you'll feel this yourself in twenty minutes, because I'm going to take
   your cards away."*
@@ -438,7 +444,7 @@ you speak.
 > one and rules are the bad one. It's a trade, and you give something up.
 >
 > Last week, when the vending machine did something odd, you could point at the exact line. Rule
-> seven, that's why. That's brilliant. You've just given that up. When a machine-learning model does
+> two, that's why. That's brilliant. You've just given that up. When a machine-learning model does
 > something odd, usually nobody can point at anything.
 >
 > Last week, if a rule was wrong, you edited one line and you were done. Now, if the model is wrong,
@@ -529,8 +535,8 @@ Write on the board:
 > **"Is 'you' a useful clue?"**
 
 - **Hoping for:** *"No — it's in both."* Or *"a bit, but it's the wrong way round."*
-- **The point to land:** *"Right. One in spam, two in not-spam. It's nearly the same on both sides,
-  so it tells you almost nothing. FREE splits them perfectly. 'You' doesn't split them at all. The
+- **The point to land:** *"Right. One in spam, two in not-spam. It shows up on both sides,
+  so it isn't a clean split and tells you very little. FREE splits them perfectly. 'You' doesn't split them at all. The
   machine keeps FREE and throws 'you' away — and it worked that out from **counting**, not from
   anyone's opinion."*
 - **If they say "it means it's not spam":** genuinely arguable and worth praising, then sharpen:
@@ -543,8 +549,9 @@ Write on the board:
 > exclamation marks are probably spam.* That rule came out of counting six examples. That's the
 > model. That's the whole engine.
 >
-> Real spam filters do exactly this on about a billion messages instead of six, and they count
-> thousands of things instead of three. But it's counting. It has always been counting."
+> Real spam filters work on the same shape of idea with vastly more messages than six, and they
+> weigh thousands of things instead of three. Modern ones are fancier than a simple tally, but the
+> heart of it is the same: study labelled examples and see which clues go with which label."
 
 > **🧑‍🏫 If a student asks "what if a real message says FREE?":** brilliant, tell them so. *"Then the
 > model gets it wrong, and that's normal — every model is wrong sometimes. The interesting question
@@ -804,7 +811,7 @@ different."
 
 **2. "Is the model just remembering all the examples?"**
 
-No, and today's activity is the proof. When you answered the test cards, the eight cards were in my
+No, not in the kind we are building, and today's activity shows why. When you answered the test cards, the eight cards were in my
 pocket. You weren't looking anything up — you had a rule. A real model is the same: after training,
 the photos are gone. It's not a filing cabinet, it's a rule that came out of a filing cabinet that
 has since been thrown away.
@@ -814,20 +821,23 @@ has since been thrown away.
 Usually not, and this surprises everybody. Training happens once, finishes, and stops. What comes out
 is frozen and gets copied onto phones and servers, where it runs unchanged, sometimes for years. When
 a company wants it better they collect new examples and train a *new* model, then ship it as an
-update. Your face unlock is not learning about faces every time you look at it.
+update. Your face unlock model is not learning about faces every time you look at it. (Some phones do update the stored data about your own face after successful unlocks; separate that saved data from the shipped model.)
 
 **4. "What if the person writing the labels gets one wrong?"**
 
-Then the model learns the mistake, cheerfully and permanently. This is one of the most important
-sentences in the whole course, so here it is again: **everything the model knows, and every mistake
-it makes, came from the examples it was given.** If half the labels are wrong, you get a model that's
-confidently wrong in exactly that pattern. It is Week 31's entire lesson.
+Then the model may well learn the mistake, and it has no way to notice it. This is one of the most
+important sentences in the whole course, so here it is again: **almost everything the model knows, and
+many of its mistakes, came from the examples it was given** (also from which examples were chosen and
+which clues were recorded). A few random slips tend to get blurred out, but wrong labels that follow a
+steady pattern get copied: you get a model that's confidently wrong in that same pattern. It is Week 31's entire lesson.
 
 **5. "How many examples do you need?"**
 
-Genuinely depends, and "it depends" is the honest answer rather than a dodge. Eight was enough for
-mangoes because there were only three clues and they lined up perfectly. A photo classifier usually
-needs a few hundred at minimum. A chatbot was trained on something like a trillion words. You'll
+Genuinely depends, and "it depends" is the honest answer rather than a dodge. Eight cards were enough to
+find a rule for mangoes because there were only three clues and they lined up perfectly (though the
+ninth card shows eight was not enough to be sure which rule was right). A photo classifier built from
+scratch can need thousands of photos; tools like Teachable Machine start from a model trained earlier
+and can work with tens. A chatbot was trained on something like a trillion words. You'll
 measure this yourself in Week 15 — you'll train the same model on 10 photos and 40 photos and see
 the difference with your own eyes.
 
@@ -1089,7 +1099,7 @@ Nobody. A person collected the examples and wrote the labels; a program found th
 typed it, and often no human can read it back afterwards.
 
 **Concept — "After training, where did the thousand emails go?"**
-Gone. The model is a rule, not a store of examples. (Verified in the activity by the cards being in
+Gone, for most models. The model is a rule, not a store of examples. (Illustrated in the activity by the cards being in
 your pocket.)
 
 **Concept — "One job you could easily write rules for, and one you couldn't."**
@@ -1126,7 +1136,7 @@ notes (wrong-answer maps, marking tips) are added in *italic* or under **Watch f
 - **W3.** **Rule 2** — SOLD OUT. Rules are checked **in order** and you stop at the first one that
   fires. Rule 2 sits above Rule 3, so the machine never looks at the money. The *sensible* answer is
   ADD MORE; the *rulebook* answer is SOLD OUT; and the rulebook wins for ever.
-- **W4.** **FALSE.** It does not crash and it does not warn you. Either no rule fires and it does
+- **W4.** **FALSE.** It often does not crash and does not warn you. Either no rule fires and it does
   nothing, or the wrong rule fires first and it gives a confident, useless answer. **Rulebooks fail
   quietly.**
 - **W5.** Any of: a light switch, a kettle, a bicycle bell, a stapler, a microwave timer. What makes
@@ -1144,10 +1154,10 @@ TRUE* means the Week 1 point about quiet failure has not landed; spend two minut
 - **A2.** Circle **(b), (d) and (f)**. What is missing from the others: **(a)** a photo with no answer
   attached is just a photo; **(c)** 1,000 unlabelled emails are a pile, not 1,000 examples; **(e)** that
   is a **rule**, the *output* of learning, not an input to it.
-- **A3.** **(a) FALSE.** The examples are gone; what is left is a rule. The eight mango cards were in
+- **A3.** **(a) FALSE** (for most models, and for the one built in class). The examples are gone; what is left is a rule. The eight mango cards were in
   your pocket when the student answered the test cards, so the answer cannot have come from the cards.
   **(b) FALSE.** A **person** writes every label, by hand, **before** training. With no answers attached
-  the machine cannot score itself, so it cannot improve.
+  (in the kind of learning this course covers) the machine cannot score itself, so it cannot improve.
 - **A4.** 1 → **C** · 2 → **D** · 3 → **A** · 4 → **E** · 5 → **B**.
 - **A5.** **Row 1:** `a person` → `writes the IF-THEN rule` → `computer follows it` → `answer`.
   **Row 2:** `a person collects labelled examples` → `training` → `model` → `answer`.
@@ -1178,10 +1188,11 @@ workbook says to count *your* with *you*; message 4 contains neither.
   colour scored only 4 out of 8, so eight cards with these three clues cannot build a photo app; they
   need different examples. *(Half marks for "the smell rule, because it is more reliable": good
   reasoning, wrong conclusion.)* **(c)** …**available** (accept *measurable*, *possible to collect*).
-- **B2.** **(a) No** — training counts labels, it does not check them. **(b)** It learns the mistake
-  and treats it as truth. **(c)** **She is wrong**; the model reproduced her mistake faithfully.
-  **(d)** *"Everything the model knows, and every mistake it makes, came from the examples it was
-  given."*
+- **B2.** **(a) No** — training counts labels, it does not check them. **(b)** It may learn the mistake
+  and treat it as truth (with only 10 trays, two flipped labels can easily distort the rule; accept
+  "it might copy them or get muddled"). **(c)** **She is wrong**, most likely; the model matched the
+  examples it was given. **(d)** *"Almost everything the model knows, and many of its mistakes, came
+  from the examples it was given."*
 - **B3.**
 
 | Job | Answer | The reason that matters |
@@ -1198,7 +1209,7 @@ workbook says to count *your* with *you*; message 4 contains neither.
   example separated them. More examples sometimes change which rule was right all along.
 - **B5.** Model answer: make yourself harder to recognise (hood, glasses, low light), count successes
   out of ten, then use the phone normally for two weeks and repeat the identical test. *Look for* the
-  score changing with no software update installed. *Proves me wrong:* a clear improvement. Full marks
+  score changing with no software update installed. *Suggests I am wrong:* a clear improvement — but not proof, because the phone may refresh the stored face data (the shipped model stays the same) and the user may simply have adapted how they hold it. Full marks
   for any test with a **before number**, an **after number**, and awareness that an update would spoil
   the experiment (an update is a replacement model, not the old one growing).
 
@@ -1221,8 +1232,7 @@ of the "it's easy / it's hard" kind* — send back for a number and a comparison
 - **P3.** *"Rainy means off"* is killed by **card 4**; *"sunny means on"* is killed by **card 5**.
 - **P4.** **X** (rainy, dry, no) → **ON**. **Y** (sunny, wet, yes) → **OFF**. **Z** (cloudy, frozen
   solid, yes) → **the eight cards do not tell you.**
-- **P5.** **Test Z.** Missing: an **example** — no card was ever frozen. By the rule "dry" it would say
-  ON, but frozen ground is arguably worse than wet. A real model would answer Z confidently anyway.
+- **P5.** **Test Z.** Missing: an **example** — no card was ever frozen. The cards only say dry or wet, so the rule has no answer ("not wet" might say ON), but frozen ground is arguably worse than wet. A real model would answer Z confidently anyway.
 - **P6.** The sky is the loudest, most visible clue, and there is a true story attached (rain makes
   grounds wet), yet the ground decides, and it can be dry in the rain (card 4) or wet in the sun
   (card 5). The most visible clue is very often not the deciding one.
@@ -1252,8 +1262,8 @@ Both are paragraph answers (4+ sentences); mark against the workbook's checklist
 
 > **Magic version:** "YouTube magically knows what I want to watch."
 >
-> **Honest version:** "YouTube was shown billions of examples of what people watched next, and it
-> guesses which video I am most likely to click and watch for more than thirty seconds."
+> **Honest version:** "YouTube was shown huge numbers of examples of what people watched next, and it
+> guesses which video I am most likely to click and keep watching."
 >
 > **Why it's better:** it says *where the ability came from* (examples), *what the machine actually
 > produces* (a guess), and *what it's guessing about* (a click, which is a thing you can measure).
@@ -1265,7 +1275,7 @@ The five to rewrite (items 2–6), with model answers:
 | 2 | "The spam folder just knows which emails are junk." | "The spam folder was trained on millions of emails that people marked as spam, and it guesses whether a new email looks more like the spam ones or the ordinary ones." |
 | 3 | "Google Translate understands Spanish." | "Google Translate was shown millions of documents that already existed in both languages, and it produces the English words most likely to go with the Spanish ones. It doesn't understand either language." |
 | 4 | "My camera is smart enough to find faces." | "My camera compares patches of the picture against a pattern it learned from lots of labelled face photos, and it marks the patches that score highly." |
-| 5 | "The music app reads my mind and plays the right song." | "The music app was shown what millions of people played after each song, and it guesses which song I am least likely to skip in the first twenty seconds." |
+| 5 | "The music app reads my mind and plays the right song." | "The music app was shown what millions of people played after each song, and it guesses which song I am least likely to skip." |
 | 6 | "Alexa figured out what I said." | "Alexa was trained on huge numbers of recordings with the matching written words attached, and it produces its best guess at which words the sound matches." |
 
 **The three tests for a passing rewrite** (the workbook's checkboxes) — apply all three:

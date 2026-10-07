@@ -26,11 +26,13 @@ Last week you left with a question stuck in your teeth. Here it is again:
 
 > **Who wrote the rules for the spam filter?**
 
-Here is the answer. **Nobody did.**
+Here is the answer. **For the part of the filter that does the hard judging, nobody did.**
 
 Not "somebody wrote them and it's a company secret". Not "a huge team wrote a million rules". Nobody
-wrote them. There is no list. If you went to the company that makes it and asked to see the rules,
-they could not show you — because they don't have them either.
+wrote that part. There is no list. If you went to the company that makes it and asked to see the
+rules for that part, they could not show you — because they don't have them either. (Real filters
+also have a few hand-written rules and blocklists bolted on, but the learned part is the one that
+catches wording nobody predicted.)
 
 That should sound impossible. Hold onto that feeling for about two minutes, because now I'm going
 somewhere completely different.
@@ -122,21 +124,22 @@ one's spam"** is an example.
 
 **Why does the label have to go on first?** Think about it properly. If you show a machine a thousand
 emails and never tell it which ones are spam, what could it possibly learn? It has nothing to be
-right or wrong about. It cannot score itself, so it cannot improve. It's like marking a test with no
+right or wrong about. In the kind of learning we study here, it cannot score itself, so it cannot improve. It's like marking a test with no
 answer sheet.
 
 **The label is the answer sheet, and a human has to write it.**
 
 **The real numbers:** in class we used six messages, three labelled *spam* and three labelled *not
-spam*. A real spam filter is trained on something closer to a **billion** messages. Every single one
-of those labels started as somebody clicking a button that said "this is junk". Millions of people,
-one click at a time.
+spam*. A real spam filter is trained on vastly more — millions of messages or more. Many of those labels
+started as somebody clicking a button that said "this is junk" (others come from automatic signals).
+Millions of people, one click at a time.
 
 And that has a consequence you should write down now, because it comes back in about thirty weeks:
 
-> **⚠️ Watch out:** everything the model knows, and every mistake it makes, was inherited from the
-> people who wrote the labels. If half the labels are wrong, you get a machine that is confidently
-> wrong in exactly that pattern.
+> **⚠️ Watch out:** almost everything the model knows, and many of the mistakes it makes, were
+> inherited from the people who wrote the labels. (Mistakes also come from which examples were
+> collected and which clues were recorded.) If the labels are wrong in a steady pattern, you can get
+> a machine that is confidently wrong in that same pattern.
 
 ---
 
@@ -159,10 +162,11 @@ You proved this yourself in class. Your teacher put the eight mango cards **in t
 then asked you about a mango you had never seen — and you answered. Where did that answer come from?
 Not from the cards. They were in a pocket. It came from a *rule* that had ended up in your head.
 
-Three things are true of every model, and 11-year-olds accept all three faster than adults do:
+Three things are true of most of the models you will meet, and 11-year-olds accept all three faster than adults do:
 
-1. **The examples are not inside it.** After training, the photos are gone. A model is not a filing
-   cabinet you can search. It is a rule that happens to work.
+1. **The examples are not inside it.** In most models, after training, the photos are gone. A model is
+   not usually a filing cabinet you can search. It is a rule that happens to work. (A few simple
+   methods do keep their examples and look up the closest one; you may meet one later.)
 2. **It usually cannot explain itself.** You can't point at line 47 and say "that's why". Last week
    you *could* — and we have just given that up.
 3. **It only knows what was in the examples.** All its skill and all its blind spots come from there.
@@ -170,7 +174,9 @@ Three things are true of every model, and 11-year-olds accept all three faster t
 
 **And one more, which surprises everyone:** most models do **not** keep learning while you use them.
 Training happens once, stops, and the finished model gets copied out and runs unchanged — sometimes
-for years. Your phone's face unlock is not learning about faces every time you glance at it. When a
+for years. The recognition model on your phone's face unlock is not learning about faces every time you glance
+at it. (Some phones do quietly update the stored data about *your* face, so it keeps up when you
+grow a beard or get glasses. The shipped model stays the same; the saved face data is separate.) When a
 company wants it better, they collect new examples and train a **new** model, then send it to you as
 an update. That's a replacement, not growth.
 
@@ -190,7 +196,7 @@ Machine learning is not the good one and rules are not the bad one. Here is the 
 | Can you fix a mistake? | Edit one line | Change the examples and train all over again |
 | Handles messy jobs? | Badly | That's the entire point of it |
 | Where do its mistakes come from? | The person who wrote it | The examples it was given |
-| Does it surprise the people who built it? | Never | Regularly |
+| Does it surprise the people who built it? | Rarely | Regularly |
 
 Look at row 2 and row 3 and feel what you've lost. Last week, when the vending machine did something
 odd, you could point at Rule 2. That was brilliant, and it's gone. Last week, if a rule was wrong,
@@ -257,8 +263,7 @@ Another perfect split. Just as good.
 
 *Figure 2.6 — Three clues, counted. Two of them split the messages perfectly. One is useless.*
 
-**Is "you" a useful clue?** No — and here's the exact reason. It shows up on **both** sides at almost
-the same rate. Knowing a message contains "you" barely moves your guess at all. FREE moves it all
+**Is "you" a useful clue?** No — and here's the exact reason. It shows up on **both** sides, so it isn't a clean split (and three messages is a tiny sample anyway). Knowing a message contains "you" barely moves your guess at all. FREE moves it all
 the way.
 
 So without anybody writing a single rule, we have one:
@@ -266,8 +271,9 @@ So without anybody writing a single rule, we have one:
 > *Messages containing FREE and lots of exclamation marks are probably spam.*
 
 That rule came out of **counting six examples**. That's the model. That's the whole engine. Real spam
-filters do exactly this on about a billion messages instead of six, and they count thousands of
-things instead of three — but it is counting, and it has always been counting.
+filters work on the same shape of idea with vastly more messages than six, and they weigh thousands
+of things instead of three. Modern ones are more elaborate than a simple tally, but the heart of it
+is still: study labelled examples and see which clues go with which label.
 
 > **🧑‍🏫 If someone asks "what if a real message says FREE?"** — then the model gets it wrong, and
 > that's normal. Every model is wrong sometimes. The interesting question is never *is it wrong* but
@@ -443,8 +449,9 @@ is what training produced.
 **1. "Does face unlock get better at recognising you every time you use it?"**
 
 *Hint:* almost everyone says yes. The honest answer is that training happened once, at the company,
-before the phone was sold — and what's on your phone is frozen. Some phones *do* add a little extra
-about your specific face when you set it up, which is why this is a genuinely good argument to have.
+before the phone was sold — and the model on your phone is frozen. But some phones *do* add and
+refresh a little data about your specific face, which is why this is a genuinely good argument to
+have. Keep the shipped model and the saved face data apart in your head.
 Push for the difference between *changing a setting* and *changing the rule*.
 
 **2. "If a model makes an unfair decision, whose fault is it?"**
@@ -470,8 +477,9 @@ rule and you need to be able to point at the line, write the rule.
 |---|---|
 | "When I show it a new mango, it looks through all the mangoes it has seen and finds the closest one." | "The examples are gone. Training left behind a rule, and the rule is all there is. That's why the cards were in a pocket when I answered." |
 
-Very natural, very common, and the pocket settles it. A model is not a filing cabinet. It is a rule
-that came out of a filing cabinet that has since been thrown away.
+Very natural, very common, and the pocket settles it for the kind of model we are building. Most
+models are not filing cabinets: they are a rule that came out of a filing cabinet that has since
+been thrown away.
 
 ### Trick 2 — "It keeps learning while you use it"
 
@@ -507,7 +515,7 @@ in about four seconds.
 1. **Your spam folder.** Trained on messages that millions of people marked as junk. It catches
    wording nobody could have listed in advance — which is how you know nobody listed it.
 2. **The suggestion bar above your keyboard.** Nobody made a list of every three words you might type
-   next. It learned from enormous amounts of real writing — and then from you.
+   next. It learned from enormous amounts of real writing. (Your phone may also keep a list of your own words, stored separately from the model.)
 3. **Searching your photos for "dog".** Trained on millions of photos that people had already tagged.
    Somebody, somewhere, typed the word "dog" next to each one.
 4. **Music autoplay.** It learned which song people *don't skip* after which song. Notice that's a
@@ -551,8 +559,9 @@ Week 36 hangs off that right-hand branch.
 - **Machine learning:** nobody writes the rule. The machine finds it by studying examples that
   already have the right answers attached.
 - **An example is two halves** — the thing, and the label. Missing the label, it isn't an example.
-- **A person writes the label, before training.** The label is the answer sheet, and learning is
-  impossible without it.
+- **A person writes the label, before training.** The label is the answer sheet, and the kind of
+  learning we study in this course is impossible without it. (Other kinds exist that find patterns
+  without labels; you may meet them later.)
 - **Finding a rule from examples is mostly counting.** Count the clue in each group and look at the
   split. A perfect split is a great clue; the same on both sides is a useless one.
 - **A model is what's left after training** — a rule, not a pile of examples. The examples are gone,
@@ -577,8 +586,10 @@ Week 36 hangs off that right-hand branch.
 | **model** | The guessing machine that comes out of training. New thing in, guess out | The finished spam filter — and you, in the mango game |
 
 > **🧑‍🏫 If someone asks "how many examples do you need?"** — honestly, it depends, and that's a real
-> answer rather than a dodge. Eight was enough for mangoes because there were only three clues and
-> two of them lined up perfectly. A photo classifier usually needs a few hundred at the very least. A
+> answer rather than a dodge. Eight cards were enough to find a rule for mangoes because there were only three clues and
+> two of them lined up perfectly — though card nine showed eight was not enough to be sure which rule
+> was right. A photo classifier built from scratch can need thousands of photos, while tools that start
+> from a model trained earlier, like Teachable Machine, can work with tens. A
 > chatbot was trained on something like a trillion words. You'll measure this with your own hands in
 > Week 15.
 

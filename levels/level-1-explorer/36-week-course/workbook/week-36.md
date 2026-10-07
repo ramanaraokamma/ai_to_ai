@@ -159,7 +159,7 @@ ____________________________________________________________________
 
 **B3. What would go wrong, and why?** A student trains on all **420** photos (200 shirts, 200 shorts, 20 caps), then tests on 15 photos picked at random **from those same 420**, and gets 14 right. The test set was 7 shirts, 7 shorts, 1 cap. They write: *"93% accurate. Ready for the school shop."*
 
-(a) The one flaw that **cannot** be repaired afterwards:
+(a) The one flaw that forces you to throw the score away and **retrain from scratch**:
 
 ____________________________________________________________________
 

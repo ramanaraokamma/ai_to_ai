@@ -475,11 +475,9 @@ To get a hollow interior you need the stroke to be at least **3 pixels** thick (
 
 **B5.**
 
-(i) It scores brilliantly on the rug and **falls apart** on the desk — quite possibly down to guessing level, so about 50% for two classes.
+(i) It probably scores clearly **worse** on the desk than on the rug. How much worse is something to test — guessing level (about 50% for two classes) is the worst case, not a certainty.
 
-(ii) In edge language: **the rug's pattern produced strong, repeated edges in every single photo, in roughly the same places, while the objects moved and turned between shots.** So the most reliable edge pattern sitting next to each label was the rug, not the object. The model learned the rug and Aisha gave it the objects' names. Move it to a plain desk and all of that evidence disappears at once — and unfamiliar new edges (the desk's grain, its straight sides) turn up in its place.
-
-She has not trained an object detector. She has trained a **rug detector** with two labels stuck on it.
+(ii) In edge language: **the rug's pattern produced strong, repeated edges in every single photo, in roughly the same places, while the objects moved and turned between shots.** So a likely reason is that the strong rug edges swamp the objects' own edges. This is a hypothesis to check, not a proven cause. Because the rug is behind *both* objects, it cannot tell the two classes apart by itself — the trap bites hardest when each class has its own background (for example, object A always on the rug and object B always on the desk), and then the model really can become a rug detector with a label stuck on it. Here, moving to a plain desk takes away familiar edges and brings unfamiliar new ones (the desk's grain, its straight sides), so the model is likely to be shakier.
 
 ### Puzzle of the Week
 
@@ -578,9 +576,9 @@ If your edge numbers moved nearly as much as the brightness numbers, do not hide
 
 > A vision system looks at edges first because an edge is a **difference between two places**, and when the light changes it usually changes both places by roughly the same amount — so the difference stays put. In my test the object went from 40 to 78 and the paper went from 180 to 219. Both jumped by about 38, so the gap between them stayed at about 140.
 >
-> Raw brightness is really a fact about **the room**: it tells you how bright the lamp is. An edge is a fact about **the object**: it tells you where the object stops and the paper starts. Only one of those is worth learning, and a machine can only learn what is in the numbers.
+> Raw brightness is mostly a fact about **the room**: it tells you how bright the lamp is. An edge is much more a fact about **the object** (though light that multiplies still scales it): it tells you where the object stops and the paper starts. Only one of those is worth learning, and a machine can only learn what is in the numbers.
 >
-> That is also why my model failed when I changed the background. The edges it had been relying on belonged to the table, not to the object — so the moment the table went away, so did its evidence.
+> That is probably also why my model failed when I changed the background. A likely reason is that the edges it had been relying on belonged to the table, not to the object — so the moment the table went away, so did its evidence.
 
 **The vocabulary box:**
 

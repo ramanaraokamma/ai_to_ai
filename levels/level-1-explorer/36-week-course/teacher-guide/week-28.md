@@ -49,14 +49,14 @@ countable pieces and write down the rules you used.
 This week we take that numbered list of tokens and do exactly one thing to it: **count**.
 
 Nothing else. No cleverness is added. That is the honest, slightly astonishing point of the whole
-lesson: everything your phone's keyboard does, and a very large part of what a chatbot does, is
+lesson: the core idea of your phone's keyboard, and the simplest version of what a chatbot does, is
 counting, followed by looking the count up.
 
 ### Idea 2 — word frequency: the count that is not enough
 
 > **Word frequency** — how many times each word appears in the text.
 
-If you count words in almost any piece of English, the winners are always the same:
+If you count words in almost any piece of English, the winners are almost always the same:
 `the`, `and`, `a`, `to`, `of`, `i`. These are the words that carry almost no meaning on their own.
 
 Word frequency is genuinely useful — it tells you what a text is about, it powers search engines, it
@@ -127,8 +127,9 @@ In plain English: *"In this text, the word `the` was followed by something six t
 times the next word was `bus`. Once it was `market`. Once it was `shop`."*
 
 That is it. That is the whole data structure. A chatbot's version of this table is unimaginably bigger
-and is stored as numbers rather than tally marks, but it answers the same question and it was built
-the same way: by counting what followed what, in a very large amount of text.
+and cleverer. It is not a count table: it is a neural network that learns from a very large amount
+of text, looks at many words at once, and can handle word sequences it never saw. But it answers
+the same question: what word comes next?
 
 **The second check.** There is a subtler check than tokens − 1, and it is the one that catches errors
 the first check misses. For any word, its **OUT OF** number must equal **how many times that word
@@ -142,7 +143,7 @@ Run both checks and your table is almost certainly right. Run neither and it is 
 
 > **Next-word prediction** — given the words so far, guess which word comes next.
 > **Language model** — any system that predicts likely next words. Your tally sheet is one. So is a
-> chatbot; it is just enormously bigger.
+> chatbot; it uses far bigger and cleverer machinery for the same job.
 
 Now look at the table again and notice that you can *use* it. You are at the word `the`. You look up
 the `the` group. Four out of six times, `bus` came next. So the best single guess for the next word is
@@ -174,9 +175,9 @@ When your student types `I am going to the` and three suggestions appear, here i
 4. It sorted that group by count, biggest first.
 5. It printed the top three onto three keys.
 
-**No understanding. No meaning. No sentence plan.** A tally, sorted, top three shown. The reason
+**No understanding. No meaning. No sentence plan.** A tally, sorted, top three shown. (Real keyboards add extras: many look at more than one word back and some use neural models. The bigram table is the right picture of the idea, not an exact copy of any phone.) The reason
 `shop` and `bus` and `park` come up after `the` is not that your phone knows anything about shops. It
-is that in the text it counted, `the shop` happened 812 times and `the aardvark` happened never.
+is that in the text it counted, `the shop` happened 812 times and `the aardvark` happened almost never.
 
 Two extra details worth having, because your student will ask:
 
@@ -197,14 +198,14 @@ This is the big one, and it is very hard to shake because the output is so convi
 argument, it is the tally sheet. Have your student point at the row that produced a word. There is
 nothing else there. No meaning is stored anywhere on the page. If they say "but a real chatbot has more
 than a table" — the honest answer is: it has a much better way of storing and blending the counts, and
-it looks back at thousands of words instead of one, and it still has no step anywhere in it that checks
-what is true. Concede the scale gap loudly. Do not concede the mechanism.
+it looks back at thousands of words instead of one, and it still has no step anywhere in it that reliably checks
+what is true. Concede the scale and machinery gap loudly. Do not concede understanding.
 
 **Misconception 2: "a bigger count means a better word."**
 
 Students slide from "`bus` has 4 marks" to "`bus` is the right answer" to "`bus` is a better word than
 `market`". It is not. Four marks means *more common in this particular text*, and nothing else. `the`
-is the most common word in English and it is the least informative. Say this out loud: **frequency
+is the most common word in English and it is one of the least informative. Say this out loud: **frequency
 measures how often, never how good.**
 
 ### How deep to go, and where to stop
@@ -245,8 +246,9 @@ the bottom.*
    changed?"* Point at the strip. **Model** is new. Then the payoff question: *"so where is the model
    in what we made today?"* The answer is *the table is the model*, and it is worth waiting for.
 2. **Then the better question:** *"why is TRAINING already finished and plain, when we just made
-   something that predicts?"* Because nobody trained this one — you **counted** it. Tallying and
-   training are two different ways to end up with a model, and they have now met both.
+   something that predicts?"* Because this one needed no loop of guessing and adjusting — one pass of
+   **counting** built the whole model. Counting examples is the simplest way to learn from data; models
+   you meet later are trained by many rounds of adjusting, and they have now met the simple end of it.
 3. **Have them shade WORDS again** and write one bigram from their own tally, with its count, in the
    margin of their map. A pair plus a number is the entire week in six characters.
 
@@ -328,11 +330,11 @@ this week. Do not quiz them on the threads; the map is orientation, never assess
 Let them flounder for a moment. Then:
 
 > "Here's my guess about what you used. You have heard 'once upon a time' about four hundred times in
-> your life, and 'once upon a banana' zero times. You weren't thinking. You were **counting**, without
-> noticing, using a tally you have been building since you were two years old.
+> your life, and 'once upon a banana' zero times. You weren't working it out. Something in your head was behaving
+> like a **tally**, without you noticing, one you have been building since you were two years old.
 >
-> Today we build that tally on paper. And by the end of the hour you are going to know exactly what
-> your phone is doing when it offers you three words above the keyboard — not roughly, exactly."
+> Today we build that tally on paper. And by the end of the hour you are going to know the idea behind
+> what your phone is doing when it offers you three words above the keyboard — not roughly, exactly."
 
 **Do this:**
 
@@ -575,7 +577,7 @@ possible place to practise it.
 >
 > And a **language model** is any system that predicts likely next words. Here is the thing I want you
 > to say out loud: *the sheet of paper in front of you is a language model.* It's tiny, it's made of
-> pencil marks, and it works. A chatbot is the same idea with more counting.
+> pencil marks, and it works. A chatbot does the same job with far bigger and cleverer machinery.
 >
 > One last thing. Look at the row that made your phone say a word. Look at it hard. Is there anything
 > on that row about what the word **means**?"
@@ -741,9 +743,9 @@ check is tokens − 1 and not tokens.
 
 Yes, by an amount that is hard to make feel real. Your sheet has 20 different words. A phone keyboard
 knows tens of thousands. A large chatbot was built from text containing hundreds of billions of tokens.
-But — and this is the part worth saying slowly — **it is the same kind of object**. Rows, followers,
-counts. If you understand your sheet you understand the shape of the big one. The gap is size, not
-mystery.
+But — and this is the part worth saying slowly — **it does the same job**: given the words so far,
+guess the next one. If you understand your sheet you understand the task the big one is solving. The
+big one's machinery is different and cleverer, but it is not magic.
 
 **5. "Could I make a tally of a whole book?"**
 
@@ -788,7 +790,7 @@ distantly like it. The same table? No evidence at all. When somebody tells you c
 | What happens | Why | What to do right now |
 |---|---|---|
 | The student skips the pairs that cross a full stop and lands on 34 marks instead of 39 | The full stop looks like a wall, not a token. Every human reader has been trained since infancy to stop there | Do not just tell them. Have them walk the five joins with a finger — 8→9, 16→17, 22→23, 28→29, 36→37 — and count how many marks they add. Five. Then write "pairs cross full stops" on the board and make them copy it |
-| Total comes to 39 but the table is wrong, because a pair was written backwards | The total check is blind to direction — one mark either way | Introduce check 2 immediately: each group's size must equal that word's frequency. Then have them fix the group that is one too big and the one that is one too small. This pair of errors always comes together |
+| Total comes to 39 but the table is wrong, because a pair was written backwards | The total check is blind to direction — one mark either way | Introduce check 2 immediately: each group's size must equal that word's frequency. Then have them fix the group that is one too big and the one that is one too small. This pair of errors nearly always comes together |
 | The student starts a second row for `the → bus` instead of adding a mark to the existing one | The rows aren't sorted, so the existing row is halfway up the page and easy to miss | Stop and reorganise: leave four blank lines under each CURRENT word so its followers cluster. Ten seconds of layout saves five errors. Better still, hand them the pre-ruled sheet from the "easier" variation |
 | They batch — reading five pairs and then making five marks | It feels faster and grown-up | It is the single most reliable way to lose a pair. Say the rule out loud as a chant: "one pair, one mark." Then have them redo the last sentence at the slow pace so they can feel the difference in accuracy |
 | The phone shows no suggestion strip and the segment dies | Predictive text is off by default on some devices, and some keyboard apps hide it in a submenu | This is why it is on the prep list. If it happens anyway, use Figure 28.3 as the phone and demonstrate on your own device. Do not spend lesson minutes in Settings |
@@ -837,7 +839,7 @@ Do not hand them more tallying. Hand them these, in order:
 4. **"How many rows would a table need to cover every pair in English?"** Rough numbers: perhaps 50,000
    common words, so 50,000 × 50,000 = **2.5 billion** possible pairs. Then the interesting part: almost
    all of those pairs never occur, so the real table is far smaller than the theoretical one — but the
-   ones that do occur are still in the hundreds of millions. This connects straight back to Week 10's
+   ones that do occur are still a very large table (the exact size depends on the text and on pruning). This connects straight back to Week 10's
    rule explosion and it is worth naming that connection out loud.
 
 ### If they won't engage today
@@ -1138,8 +1140,8 @@ makes one mark.
 | **B1** | They are **wrong**: 100 tokens must give **99** pairs, so 105 is six too many (pairs counted twice, invented, or a place lost and doubled back over). Bonus: even 99 would not prove the tally right — that is check 2. |
 | **B2** | (a) **48 − 8 = 40 pairs** (one pair lost at each of the 8 line ends; our rule would give 47). (b) They have thrown away the **line-break group**, and with it every clue about which words **start a line**. Their rule is a defensible choice if written down and applied every time; it is not defensible to switch rules between verses. |
 | **B3** | (a) Almost every group has exactly **one follower with count 1**; the `.` group has a long list of different followers, one mark each. (b) **Nothing to predict**: every guess is a pick among equals, and the tally is miserable (a new row for nearly every one of the 59 pairs). (c) Something **repetitive**: song lyrics with a chorus, a recipe, the rules of a game, ordinary prose with lots of `the`, `and`, `to`. |
-| **B4** | (a) Any two legal-sounding words: `hereinafter`, `party`, `agreement`, `whereas`, `shall`, `clause`. (b) Any two of: slang, friends' names, emoji, the name of a game, "lol", anything newer than the contracts. A pair that never occurred has no count and can never be suggested. (c) …**the corpus it counted** (any wording of "the text it was built from"). |
-| **B5** | **One pair was written into the wrong group** — a `to → something` pair recorded as `bus → something`. That makes `bus` one too big (6) and `to` one too small (3). **Check 1 cannot see it**, because the total is 39 whichever group the mark lands in. One group one too big plus another one too small always means one misfiled pair. |
+| **B4** | (a) Any two legal-sounding words: `hereinafter`, `party`, `agreement`, `whereas`, `shall`, `clause`. (b) Any two of: slang, friends' names, emoji, the name of a game, "lol", anything newer than the contracts. A pair that never occurred has no count and can never be suggested from this table. (c) …**the corpus it counted** (any wording of "the text it was built from"). |
+| **B5** | **One pair was written into the wrong group** — a `to → something` pair recorded as `bus → something`. That makes `bus` one too big (6) and `to` one too small (3). **Check 1 cannot see it**, because the total is 39 whichever group the mark lands in. One group one too big plus another one too small almost always means one misfiled pair. |
 
 #### 🧩 Puzzle of the Week — The Mystery Corpus
 
@@ -1337,7 +1339,7 @@ through, because that is the week's main idea.
 | Harder 2 | "Which words only ever come before a full stop?" | `market`, `shop`, `town`, `late`, `it`. They are the last words of sentences. The table learned which words end sentences without ever being told what a sentence is. |
 | Harder 3 | "New pair count if pairs may not cross a full stop?" | 40 tokens − 6 sentences = 34 pairs. You also lose the entire `.` group, and with it every clue about which words start sentences. |
 | Flying 1 | "Which word is the most unpredictable?" | `i`. It has three followers, each with 1 mark out of 3, so no follower is better than a one-in-three guess. `the` has three followers too, but `bus` is 4 out of 6 — so `the` is much more predictable than `i`. Many students expect the commonest word to be the least predictable; the opposite is true here. |
-| Flying 4 | "How many rows to cover all of English?" | Around 50,000 common words gives 50,000 × 50,000 = 2.5 billion possible pairs. Most never occur, so a real table is far smaller — but still hundreds of millions of rows. Same shape as the Week 10 rule explosion. |
+| Flying 4 | "How many rows to cover all of English?" | Around 50,000 common words gives 50,000 × 50,000 = 2.5 billion possible pairs. Most never occur, so a real table is far smaller — but still a very large table (the exact size depends on the text and on pruning). Same shape as the Week 10 rule explosion. |
 
 ---
 

@@ -127,7 +127,7 @@ Here is the reading guide this course uses all year. It is not an official law o
 
 > **⚠️ Watch out:** the margin is **top minus second**, never top minus bottom. In 68 / 30 / 2 the margin is 38, not 66. It's a race for first place, so only second place can threaten the winner. The last-place bar is irrelevant.
 
-**Why professionals care about the margin more than the top score:** the margin moves *before* the right-or-wrong column does. A model that is quietly falling apart will keep getting answers right for a while, but its margins shrink first. **The margin is an early warning. Right-or-wrong is a late one.**
+**Why professionals care about the margin more than the top score:** the margin moves *before* the right-or-wrong column does. A model that is quietly falling apart can keep getting answers right for a while while its margins shrink first. **The margin is an early warning. Right-or-wrong is a late one.**
 
 ---
 
@@ -137,7 +137,7 @@ This is the sentence to tattoo on your brain:
 
 > **A confidence score is not the chance of being right.**
 
-99% confident does **not** mean "right 99 times out of 100." It means "of the boxes I was given, this one fits far better than the others." Those two things fall apart completely the moment you show the model something that isn't in **any** of its boxes.
+99% confident does **not** mean "right 99 times out of 100." It means "of the boxes I was given, this one fits far better than the others." On things like the ones it was trained on, a confidence score is usually a rough guide, but it is never a guarantee. And the two things fall apart completely the moment you show the model something that isn't in **any** of its boxes.
 
 **The demonstration, with real numbers.** Take a model that knows exactly three things: spoon, toothbrush, comb. Now hold up a **fork**. There is no fork class. There never was. It reports:
 
@@ -450,10 +450,10 @@ Now write a policy. Here's one:
 Take these to a parent, a brother or sister, or a friend. Argue about them; don't just answer them.
 
 **1. "If a weather app says 90% chance of rain, is that the same kind of number as a model being 90% confident?"**
-> *Hint:* ask what each number was made from. The weather number comes from looking at thousands of past days that looked like today and **counting** how many of them rained. The model's confidence was never counted against anything — it's a preference among the boxes it was given. One is a tally. The other is a shrug with a number on it.
+> *Hint:* ask what each number was made from. The weather number comes from looking at thousands of past days that looked like today and **counting** how many of them rained. The model's confidence was never checked by counting how often it was right (in a demo like ours) — it's a preference among the boxes it was given, and for things outside its boxes it means nothing. One is a tally. The other is a shrug with a number on it.
 
 **2. "A doctor and a model both say they're 95% sure. Should you treat those the same way?"**
-> *Hint:* what can the doctor do that the model cannot? Three things: say "I don't know", ask you a follow-up question, and go and run a test. The model can do none of those. It cannot even notice that the thing in front of it is something it has never seen.
+> *Hint:* what can the doctor do that the model cannot? Three things: say "I don't know", ask you a follow-up question, and go and run a test. A plain classifier like this one can do none of those. It cannot even notice that the thing in front of it is something it has never seen.
 
 **3. "Should apps show you the confidence number, or hide it?"**
 > *Hint:* think about who benefits either way. An app that says "not sure" a lot *feels* broken, gets bad reviews, and loses to a competitor that always answers — even if the competitor is wrong more often. Now find a situation where hiding the shrug is clearly unacceptable: a medical scan, or a car deciding whether that shape is a child. What's actually different — how bad it is to be wrong, or how fast anyone notices?
@@ -485,7 +485,7 @@ Your eye goes to the big bar. That is a design problem, not a laziness problem �
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "45%? This model is rubbish, something's gone wrong." | "45 / 44 / 11 is the model being unusually **honest**. It's telling me it genuinely cannot separate those two things. That's useful information — most products throw it away." |
+| "45%? This model is rubbish, something's gone wrong." | "45 / 44 / 11 is the model being unusually **informative**. It's telling me it genuinely cannot separate those two things. That's useful information — most products throw it away." |
 
 The broken model is the one that says 99% about everything. **The shrug is the useful part.**
 
@@ -501,10 +501,10 @@ It's a race for first. Only second place can threaten the winner. The bar in las
 
 ## 🌍 Where You've Seen This
 
-1. **Your phone's photo app "People" album.** It has already grouped faces into people, and every so often it puts your cousin in your own album. That's a small margin you never got shown — two faces the model genuinely couldn't separate, and the app hid the shrug and picked one.
+1. **Your phone's photo app "People" album.** It has already grouped faces into people, and every so often it puts your cousin in your own album. That's a small margin you never got shown — two faces the model genuinely couldn't separate, and the app probably hid the shrug and picked one.
 2. **Voice assistants mishearing you.** "Play *Cheap Thrills*" becomes "play cheap drills." There was a close race between two guesses, the assistant only ever shows you the winner, and it committed.
 3. **Autocorrect and predictive text.** Those three suggested words above your keyboard *are* a confidence readout — the top three classes, ranked. When the three suggestions are all wildly different, that's a small margin, and that's when autocorrect ruins your message.
-4. **Spam folders.** A real email from your teacher lands in spam. Somewhere a model was 51 / 49 between "spam" and "not spam" and nobody showed you the 51 / 49.
+4. **Spam folders.** A real email from your teacher lands in spam. Imagine a model was 51 / 49 between "spam" and "not spam" and nobody showed you the 51 / 49.
 5. **Supermarket self-checkout produce scanners.** You put an unusual vegetable on the scale and it offers you courgette, cucumber, marrow. It has no box for what you're actually holding, and it is confidently offering you the nearest thing it knows.
 6. **Quiz shows and your own head.** The moment where you're *sure* it's Sydney. Your brain gave you a confident feeling and no margin, exactly like a model with no `other` class.
 

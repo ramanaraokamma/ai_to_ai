@@ -86,17 +86,18 @@ That definition is doing real work. It draws a line that nothing else draws clea
 | Add 47 + 88 | ❌ No | One exact answer, one exact method. Nobody argues. |
 | Ring a bell at 3:30 pm | ❌ No | A clock does it. There is no case-by-case decision. |
 | Sort 200 numbers smallest to largest | ❌ No | One right answer, and everyone gets the same one. |
-| Decide if a photo shows a dog or a wolf | ✅ Yes | Depends on the specific photo. People genuinely disagree. |
+| Decide if a photo is a good one to keep | ✅ Yes | Depends on who is looking. People genuinely disagree. |
 | Decide which video to show you next | ✅ Yes | Depends on you, right now. There is no correct answer. |
 | Decide if this text message is spam | ✅ Yes | Two people would sort a marketing text differently. |
 
 Say the test out loud a few times so it becomes automatic: **"Could two sensible people disagree?"**
-If yes, judgement. If no, not judgement, and therefore not a candidate for AI no matter how modern
-the box looks.
+If yes, judgement. If no, not judgement, and so (as a rule of thumb) probably not a candidate for AI no
+matter how modern the box looks. It is a heuristic, not an exact boundary: reading a number plate has
+one right answer yet is a real AI job; say so if a student raises it.
 
 ![The judgement spectrum](../figures/fig-w01-2-judgement-spectrum.svg)
 
-*Figure 1.2 — Judgement is a slider, not a switch. Only the right-hand end is AI territory.*
+*Figure 1.2 — Judgement is a slider, not a switch. The right-hand end is where most AI jobs live.*
 
 There is a lovely, very concrete version of this that you can use with an 11-year-old: **the
 pizza-cutter test.** A pizza cutter does a job (slicing) that a person used to do with a knife. Is a
@@ -191,7 +192,7 @@ Both of these have short honest answers, and you do **not** need to go further t
 
 | They ask | Say |
 |---|---|
-| *"What's the third way then?"* | *"Some machines try thousands of options very fast and pick the best one — that's how chess computers work. It's a bit of both: a person wrote the rule for what 'best' means, and the machine does the searching. We'll meet it properly later."* |
+| *"What's the third way then?"* | *"Some machines try thousands of options very fast and pick the best one — that's how chess computers work. It's a bit of both: in the classic version a person wrote the rule for what 'best' means (newer engines learn that part), and the machine does the searching. We'll meet it properly later."* |
 | *"So which is a chess computer?"* | *"Honestly, a blend — and that's a great answer, not a cop-out. Put it in the not-sure bin and say why. That's exactly the skill we're practising."* |
 
 > **💡 Try this:** if you don't know, say *"I don't know — let's write it on the Questions We Owe page
@@ -241,8 +242,9 @@ are decoration.
 
 The answer, in the order to give it: the thermostat's job needs **no judgement** (is 19 lower than
 20 — nobody ever disagreed), and a person wrote all four of its boxes. AlphaGo's job needs judgement
-(the best players in the world argued about its moves), and **nobody could write those rules** — which
-is why it had to work them out from examples. Then the honest correction to the headline: *narrow, not
+(strong players can disagree about the best move), and **nobody could write those rules** — which
+is why it had to learn them, from human games and from playing itself. (The rules of Go and the search
+procedure were written by people; what was learned was how to judge moves and positions.) Then the honest correction to the headline: *narrow, not
 thinking.* One machine, extraordinarily good at one job, blank one step outside it.
 
 > **🧑‍🏫 If a student wrote THERMOSTAT:** say so warmly and specifically — *"that is the single most
@@ -337,7 +339,7 @@ see it. Do not explain it. Sit down. Then tell the story.
 
 **Say this:**
 
-> "In 2016 a computer program called AlphaGo beat the best human player in the world at a board game
+> "In 2016 a computer program called AlphaGo beat one of the best human players in the world at a board game
 > called Go. Go is so complicated that there are more possible games of Go than there are atoms in
 > the universe. Not more than atoms on Earth. More than atoms in *the universe*.
 >
@@ -702,7 +704,7 @@ minutes, not twenty seconds.**
 >
 > Now try to write the if-then rules for *the best move on a Go board*. Go on — start. You can't.
 > Nobody can. **And that's the answer.** The thermostat is following orders. AlphaGo is doing the
-> interesting thing, because nobody wrote its rules — it worked them out from examples. That's next
+> interesting thing, because nobody wrote its move-judging rules — it learned them from human games and from playing itself. That's next
 > week."
 
 - **If they wrote THERMOSTAT:** say — *"that's the most reasonable wrong answer in this whole
@@ -870,7 +872,7 @@ spam filter has no body at all and is doing AI. Most of the AI in the world is i
 
 No, and it is a really good question because a calculator does something you can't do as fast. But
 speed isn't judgement. Ask yourself: could two sensible people disagree about what 47 plus 88 is?
-No. One answer, no argument. Not judgement, so not AI — no matter how fast it is.
+No. One answer, no argument. Not judgement, so not an AI job — no matter how fast it is.
 
 **3. "Who wrote the rules for the spam filter, then?"**
 
@@ -898,9 +900,9 @@ argue about it as long as you give a reason.
 
 **6. "Does AI know it's doing a job?"**
 
-**Nobody knows for sure — and here is why that's an honest answer rather than a cop-out.** We can
-say confidently that nothing in today's systems has an inside: there's no view from in there, nothing
-happening between your questions, no wanting anything. But *how would you check?* You can't look
+**Nobody knows for sure — and here is why that's an honest answer rather than a cop-out.** There is
+no evidence that today's systems have an inside, and nobody has a settled test for it. Nothing we can see points to a view from in there, anything
+happening between your questions, or any wanting. But *how would you check?* You can't look
 inside a person either — you believe I'm having an experience because I'm similar to you. With a
 machine that similarity argument doesn't work, and philosophers have argued about this for seventy
 years without settling it. What I can tell you is that everything we'll build this year is very
@@ -908,7 +910,7 @@ obviously just following patterns, and nobody serious thinks those are having a 
 
 **7. "Was AI invented recently?"**
 
-No — the words "artificial intelligence" were first used in 1956, before your grandparents were your
+No — the words "artificial intelligence" were first used in 1956, before most grandparents were your
 age. Banks have been using machine learning to catch fraud since the 1990s. What changed in the last
 few years is scale and how loud it got, not whether it existed.
 
@@ -966,8 +968,8 @@ the one that matters.
   when the dog gets fed, or when a sibling is allowed the TV. Then find the case that breaks it.
 - **A hard one:** *"A traffic light on a timer is rule-based. A traffic light that watches the queue
   with a camera and holds the green longer — which bin?"* (Both. The timer part is rules. The
-  "how long is the queue" part must be learned, because nobody can write if-then rules over camera
-  pixels. This is exactly the adaptive-cruise-control case from Module 1 and it is a genuinely
+  "how long is the queue" part is usually learned, because it is very hard to write if-then rules over camera
+  pixels (older systems did use hand-made counting tricks). This is exactly the adaptive-cruise-control case from Module 1 and it is a genuinely
   professional distinction for a Grade 6 student to draw.)
 
 ### If they won't engage today

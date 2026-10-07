@@ -86,7 +86,7 @@ Because: ________________________________________________________
 | Term | | | Example |
 |---|---|---|---|
 | 1. word frequency | ☐ | **A** | `the → bus` |
-| 2. bigram | ☐ | **B** | Your phone keyboard, your tally sheet, a chatbot |
+| 2. bigram | ☐ | **B** | Your tally sheet (your phone keyboard and a chatbot do the same job with bigger, cleverer machinery) |
 | 3. next-word prediction | ☐ | **C** | `the` appears 6 times in our corpus |
 | 4. language model | ☐ | **D** | You are at `the`, so the best guess is `bus` |
 | 5. corpus | ☐ | **E** | Six sentences about a bus |
@@ -177,7 +177,7 @@ ________________________________________________________________
 
 ________________________  and  ________________________
 
-(b) Give two things it will never suggest, no matter how much you type.
+(b) Give two things this contracts-only table will never suggest, no matter how much you type.
 
 ________________________  and  ________________________
 
@@ -488,12 +488,12 @@ It is worth saying clearly: their rule is not *wrong*. It is a different, defens
 
 (a) Any two legal-sounding words: **`hereinafter`**, **`party`**, **`agreement`**, **`whereas`**, **`shall`**, **`clause`**. Words that are common in contracts and nowhere else.
 
-(b) Any two of: **slang**, **your friends' names**, **emoji**, **the name of a game**, **"lol"**, **anything invented after the contracts were written**. If a pair never occurred in the corpus, it has no count, so it can never be suggested.
+(b) Any two of: **slang**, **your friends' names**, **emoji**, **the name of a game**, **"lol"**, **anything invented after the contracts were written**. If a pair never occurred in the corpus, it has no count, so this table can never suggest it.
 
 (c) …**the corpus it counted**. (Any wording of that idea is right: *"the text it was built from"*, *"the pile of words somebody chose"*.) The table cannot know anything that was not in the text, and it cannot help preferring whatever the text preferred.
 
 **B5.** **One pair was written into the wrong group.** A pair that should have been `to → something` got recorded as a `bus → something` row instead. That single error does two things at once: it adds a mark to `bus` (now 6, one too many) and removes one from `to` (now 3, one too few).
-**Check 1 could not spot it** because one mark went down on the sheet either way. The total is 39 whether you put the mark in the right group or the wrong one. **This pair of symptoms — one group one too big, another one too small — always comes together, and it always means one misfiled pair.** That is the fastest bug to find in the whole activity once you know the signature.
+**Check 1 could not spot it** because one mark went down on the sheet either way. The total is 39 whether you put the mark in the right group or the wrong one. **This pair of symptoms — one group one too big, another one too small — nearly always comes together, and it almost always means one misfiled pair.** That is the fastest bug to find in the whole activity once you know the signature.
 
 ---
 

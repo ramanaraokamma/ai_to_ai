@@ -5,7 +5,7 @@
 ---
 
 > ### This week in one sentence
-> **Edges survive a change of lighting and raw brightness does not — which is the whole reason a real vision system goes looking for edges first.**
+> **Edges survive an even change of lighting much better than raw brightness does — which is the whole reason a real vision system goes looking for edges first.**
 >
 > **By the end of this chapter you will be able to:**
 > - Build a working **edge filter** in a spreadsheet using one formula dragged across a grid
@@ -145,11 +145,12 @@ And a difference is precisely what an edge filter computes. Look at the vertical
 ![Turn the lamp up: brightness moves, edges do not](../figures/fig-w26-3-two-lamps.svg)
 *Figure 26.5 — The measurement you will reproduce with your own lamp. Six brightness numbers all shift by about 44. The three edge numbers move by 1, 0 and 3.*
 
-**Now the honest part, which matters just as much.** Edges are **more** stable than brightness. They are not **perfectly** stable. Your own numbers will wobble by one or two, and that is not you being careless. Here are the three real reasons:
+**Now the honest part, which matters just as much.** Edges are **more** stable than brightness. They are not **perfectly** stable. Your own numbers will wobble by one or two, and that is not you being careless. Here are four real reasons:
 
 1. **Real lamps are not even.** A desk lamp on the left brightens the left more than the right. That is not "add 50 to everything" — it actually *creates brand-new edges* that were never on the object, like the hard boundary of a shadow.
 2. **Pixels cannot go below 0 or above 255.** In a very dark or a blown-out photo, thousands of pixels get squashed onto the same value, and a real difference genuinely does disappear.
 3. **Dark photos are grainy**, and grain is random pixel-to-pixel change — which is exactly the thing an edge detector is built to notice.
+4. **Real light mostly multiplies, it does not just add.** A surface reflects a *share* of the light that lands on it, so doubling the light roughly doubles every brightness, and doubles the *difference* between two places too. Our "add 50" lamp is a simplified model; in real rooms an edge value scales with the light (the Think Deeper question about halving the light explores this).
 
 So do **not** expect your numbers to be identical. Expect them to move **far less** than the brightness numbers, and then check whether they did. The comparison is the finding. Neither number on its own tells you anything.
 
@@ -157,11 +158,11 @@ So do **not** expect your numbers to be identical. Expect them to move **far les
 
 Cast your mind back to Week 17. You trained a Teachable Machine model, and in Week 18 you broke it. The classic break: you photographed everything on the same wooden table, the model scored beautifully on that table, and it collapsed the moment you tried it at the sink.
 
-Now you can say **why**, in pixel language.
+Now you can offer a likely **why**, in pixel language. (It is an explanation to test, not a proven fact: nobody has looked inside Teachable Machine to see which edges it used.)
 
 Wood grain produces long, straight, strong, repeated edges in every single photo. The object produces a smaller, shorter, wobblier set of edges — and the object *moves and rotates* between shots, while the table never does.
 
-So the most reliable edge pattern sitting next to that label was **the table**.
+So one likely reason is that the most reliable edge pattern sitting next to that label was **the table**. This bites hardest when the background goes with one label (say class A always on the table and class B always at the sink), because then the background alone can tell the classes apart. If every class is on the same table, the table cannot tell them apart, but it can still swamp the object and make the model fragile when the scene changes.
 
 ![The background trap, in edge language](../figures/fig-w26-4-background-trap.svg)
 *Figure 26.6 — Eight long grain lines beat one small object outline. The filter reports every edge it finds, including all the ones you did not want.*
@@ -403,7 +404,7 @@ Read it as a picture: a hollow rectangle at the top (that is the bar), two verti
 
 **How to read a brightness number with nothing to install:** go to **scratch.mit.edu**, start a new project, and upload your photo as a **costume**. In the paint editor, click the **Fill** colour swatch, then the **eyedropper** icon, then click the spot in your photo. The **Brightness** slider now shows a number from 0 to 100. Multiply by 2.55 to get a 0–255 value, or just leave everything on the 0–100 scale — the comparison works either way, as long as you are consistent.
 
-**And if you cannot read pixel values at all, use these.** They are real measurements of a dark blue eraser on white paper, and analysing somebody else's honest data is real science, not a consolation prize:
+**And if you cannot read pixel values at all, use these.** They are example measurements of a dark blue eraser on white paper, and analysing somebody else's data is real science, not a consolation prize:
 
 | Spot | Room light: object | Room light: paper | Desk lamp: object | Desk lamp: paper |
 |---|---:|---:|---:|---:|
@@ -434,9 +435,9 @@ Edge value at each spot (`paper − object`):
 2. Test **5** photos on the **same background you trained on**. Write down how many were right.
 3. Now hold a sheet of coloured paper or a tea towel behind the object and test **5 more**. Write down how many were right.
 
-The second number is usually much worse. Then write one sentence explaining it **in edge language**. Here is the sentence-starter:
+The second number is usually much worse. Then write one sentence giving a likely explanation **in edge language**. Here is the sentence-starter:
 
-> *"Accuracy dropped because the edges belonging to ______ disappeared and were replaced by edges belonging to ______."*
+> *"Accuracy probably dropped because the edges belonging to ______ disappeared and were replaced by edges belonging to ______."*
 
 ### What "finished" looks like
 
@@ -461,7 +462,7 @@ The second number is usually much worse. Then write one sentence explaining it *
 
 **3. "My model got worse when the background changed. The object was identical. What actually happened?"**
 
-*Hint for you:* the strong, reliable edges it had learned belonged to the background; when the background changed, those edges vanished and unfamiliar new ones appeared. The harder follow-up, worth pushing on: *why* did it learn the background rather than the object? Because the background sat in the same place in every photo, while the object moved and rotated. It was the **more reliable** pattern.
+*Hint for you:* one likely reason is that the strong, reliable edges it had learned belonged to the background; when the background changed, those edges vanished and unfamiliar new ones appeared. The harder follow-up, worth pushing on: *why* did it learn the background rather than the object? Because the background sat in the same place in every photo, while the object moved and rotated. It was the **more reliable** pattern.
 
 ---
 
@@ -510,9 +511,9 @@ This is the most useful trick in the chapter, because it is really about you and
 
 1. **A spreadsheet at home or at work.** Any adult who keeps a budget has typed one formula and dragged it down a column. It is the same mechanism you used today, and now you know why it works.
 2. **A phone camera in the dark.** Grainy photos look terrible partly because grain is random pixel-to-pixel change, and an edge filter reports every bit of it as a tiny false edge. Dark photos make exactly the problem in this chapter.
-3. **A car reading lane markings at dusk.** The brightness of the road changes enormously between noon and dusk. The edge at the white paint barely moves — which is why the system keeps working.
+3. **A car reading lane markings at dusk.** The brightness of the road changes enormously between noon and dusk. The edge at the white paint moves much less in the simple model of an evenly added light change (real light also scales edges, so it is not perfectly steady) — which is a big part of why the system can keep working.
 4. **A self-checkout scanner under any lighting.** It reads the black-to-white jumps of the barcode, not how bright the shop is.
-5. **A face-unlock that fails on a new background.** If a system was tuned mostly on one kind of scene, changing the scene changes the strongest edges in the frame. Same trap as your Week 17 model, in a much more expensive product.
+5. **A photo-based recognition system that fails on a new background.** (Many phone face-unlocks also use depth sensing, so this is not how they work.) If a system was tuned mostly on one kind of scene, changing the scene changes the strongest edges in the frame. Same trap as your Week 17 model, in a much more expensive product.
 6. **Conditional formatting in a school report or a sports table.** Green for high, red for low. The numbers did not change; only the paint did. Exactly what you did to your edge map — and exactly why you should always ask what the colours were set to.
 
 ---
@@ -530,7 +531,7 @@ representation and evaluation, because today you tested a claim instead of being
 
 | | |
 |---|---|
-| **The mental model you now own** | **Brightness is a fact about the room; an edge is a fact about the object.** That is the reason vision models hunt for edges before anything else — and your own two-lamp numbers are the proof, not somebody's opinion. |
+| **The mental model you now own** | **Brightness is mostly a fact about the room; an edge is much more a fact about the object (though not perfectly).** That is the reason vision models hunt for edges before anything else — and your own two-lamp numbers are the proof, not somebody's opinion. |
 | **The one question it answers** | *"Would this number survive somebody turning a different lamp on?"* |
 | **What it plugs into** | Week 25's filter, Week 24's three channels, and the change-one-thing experiment you learned to run in Week 18. |
 | **What carries forward** | It explains the lamplight failure you actually measured in Week 22, and it predicts the lighting gap you will measure again in Weeks 31 and 33. |
@@ -549,7 +550,7 @@ representation and evaluation, because today you tested a claim instead of being
 - **Output = input − 2**, still. A 12 × 12 picture gives a 10 × 10 edge map — `C18:L27`, one hundred cells.
 - **Always check one cell by hand.** A wrong formula gives no error message, just a confident wrong picture. One check earns you the other ninety-nine.
 - **An edge map is an outline drawing made of numbers.** The middles vanish because the middles never change.
-- **Brightness is a fact about the room. An edge is a fact about the object.** Only one of those is worth learning — and your own two-lamp numbers are the proof.
+- **Brightness is mostly a fact about the room. An edge is much more a fact about the object.** Only one of those is worth learning — and your own two-lamp numbers are the proof.
 - **The filter reports every edge, including the wood grain.** If your background is more reliable than your object, the background is what your model learns.
 
 ---

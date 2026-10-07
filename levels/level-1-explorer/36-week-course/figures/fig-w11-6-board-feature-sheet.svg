@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
   <title>The Week 11 board: a finished feature sheet</title>
-  <desc>A board showing a feature sheet. At the top the label question reads teaspoon, tablespoon or serving spoon. Below it five numbered features each with a written measuring instruction: length, bowl width, mass, material and handle shape. A panel on the right states the test: hand the sheet to someone else, and if their number differs the instruction is broken.</desc>
+  <desc>A board showing a feature sheet. At the top the label question reads teaspoon, tablespoon or serving spoon. Below it four numbered features each with a written measuring instruction: mass, longest length, parts count and colour. A panel on the right states the test: hand the sheet to someone else, and if their number differs the instruction is broken.</desc>
   <text x="400" y="32" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The board at the end of the concept segment</text>
 
   <rect x="40" y="60" width="470" height="272" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
@@ -8,22 +8,20 @@
   <line x1="40" y1="94" x2="510" y2="94" stroke="#845F00" stroke-width="3"/>
   <rect x="40" y="60" width="470" height="272" rx="10" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
   <text x="275" y="83" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle">FEATURE SHEET</text>
-  <text x="60" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">label question: teaspoon / tablespoon / serving spoon?</text>
+  <text x="60" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">label question: teaspoon / dessert spoon / serving spoon?</text>
   <line x1="60" y1="132" x2="490" y2="132" stroke="#C7CDD4" stroke-width="1.5"/>
 
   <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">
-    <text x="60" y="158">f1  length_cm</text>
-    <text x="60" y="196">f2  bowl_width_cm</text>
-    <text x="60" y="234">f3  mass_g</text>
-    <text x="60" y="272">f4  material</text>
-    <text x="60" y="310">f5  handle_shape</text>
+    <text x="60" y="164">f1  mass_g</text>
+    <text x="60" y="212">f2  longest_cm</text>
+    <text x="60" y="260">f3  parts_count</text>
+    <text x="60" y="308">f4  colour</text>
   </g>
   <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">
-    <text x="76" y="176">ruler, tip of handle to tip of bowl, nearest 0.5 cm</text>
-    <text x="76" y="214">ruler, widest point of the scooping part, nearest 0.5 cm</text>
-    <text x="76" y="252">kitchen scale, dry and empty, nearest gram</text>
-    <text x="76" y="290">ONE of steel / plastic / wood</text>
-    <text x="76" y="328">ONE of straight / curved</text>
+    <text x="76" y="184">kitchen scale, dry and empty, nearest gram</text>
+    <text x="76" y="232">ruler, tip of handle to tip of bowl, nearest 0.5 cm</text>
+    <text x="76" y="280">count the pieces that come apart without breaking it</text>
+    <text x="76" y="328">ONE colour from the agreed list (red, silver, ...)</text>
   </g>
 
   <rect x="530" y="60" width="240" height="272" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>

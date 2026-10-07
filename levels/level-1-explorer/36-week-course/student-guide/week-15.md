@@ -93,7 +93,7 @@ The model is **smaller than the data that made it** — about a thirteenth of th
 
 What it stored instead was a *pattern*: which arrangements of brightness and edge and curve tended to come with which of your three names.
 
-> **🧑‍🏫 If someone asks you:** "maybe it just squashed them?" — that's a good guess, and the honest answer is: it squashed them so hard that the individual pictures are gone for ever and cannot be got back. What survived is the thing they had in **common**, not the pictures.
+> **🧑‍🏫 If someone asks you:** "maybe it just squashed them?" — that's a good guess, and the honest answer is: it squashed them so hard that the individual pictures are gone for good — in a model like Teachable Machine's, you cannot get the photos back out. What survived is the thing they had in **common**, not the pictures.
 
 And the practical consequence: **delete all 120 photos tonight and the model works exactly the same tomorrow.**
 
@@ -106,7 +106,7 @@ And the practical consequence: **delete all 120 photos tonight and the model wor
 
 **The analogy: tuning an old radio.** You turn the dial a little, listen, hear more static, turn it back the other way, listen again. Nudge, check, nudge, check. Nobody calculated the right dial position. You found it by nudging and listening.
 
-The machine has **thousands** of tiny dials. One epoch is: look at all 120 photos, count how many it got wrong, then nudge every dial a tiny bit in whichever direction reduced the mistakes. Then do it again. After 50 rounds of nudging, the dials sit roughly where the mistakes are fewest.
+The machine has **thousands** of tiny dials. One epoch is: look at all 120 photos, count how many it got wrong, then nudge every dial a tiny bit in whichever direction reduced the mistakes (real programs often nudge a little during the pass too, but this is the idea). Then do it again. After 50 rounds of nudging, the dials sit roughly where the mistakes are fewest.
 
 **So why look again on pass 37?** Not because pass 37 shows it anything new. It's the same photos. It looks again because **the dials have moved since pass 36**, so the same photo now produces a different amount of wrongness — which tells you which way to nudge next.
 
@@ -136,9 +136,9 @@ A photo of a spoon is never just a spoon. It also contains a background, a light
 
 So if all forty spoon photos sit on a wooden table with a window on the left, then *"warm brown texture, light from the left"* is a far easier pattern to spot than *"spoon"*. Training takes the easy one. Every time.
 
-**The true story.** In 2016, researchers built a classifier to tell huskies from wolves. It worked. They showed it to a room full of machine learning professionals and asked "do you trust this?" Most said yes.
+**The true story.** In a 2016 research paper, researchers built a classifier to tell huskies from wolves, partly to show how an AI can be right for the wrong reason. It got most of its test photos right. Some of the people they showed it to said they would trust it.
 
-Then they revealed the trick: **every wolf photo had snow in the background** and no husky photo did. The model had learned nothing about wolves. It had learned *white stuff at the bottom of the picture → say wolf.* Photograph a husky standing in snow and it says wolf, confidently, every time.
+Then a tool that shows what the model is looking at revealed the trick: **the wolf photos had snow in the background** and the husky photos did not. The model had learned little about wolves. It had mostly learned *white stuff at the bottom of the picture → say wolf.* Photograph a husky standing in snow and it is likely to say wolf, and sound confident about it.
 
 Nobody wrote that rule. Nobody wanted it. **It came out of the photographs.**
 
@@ -295,14 +295,14 @@ So the easiest pattern available is *"green messy texture underneath → say app
 
 | Test photo | Prediction | Why |
 |---|---|---|
-| A green apple on the **kitchen counter** | `lemon` or `lime` | The grass is gone, and grass was the whole reason it ever said apple |
-| A **lemon** lying on the **grass** | `green_apple`, confidently | Grass present → apple, and colour was never needed |
+| A green apple on the **kitchen counter** | maybe `lemon` or `lime` (a guess to test) | The grass is gone, and grass may have been the whole reason it ever said apple |
+| A **lemon** lying on the **grass** | maybe `green_apple` (a guess to test; a yellow lemon has a strong colour cue, so the model could still say lemon) | Grass present → apple, and colour may not have been needed |
 
-**Step 4 — and a second, quieter problem.** Lemons and limes were shot in *identical* conditions — same counter, same window. So for that pair, background can't help at all, and the model has to fall back on shape and colour. That's actually **good** for lemon-versus-lime. So this model will probably be reasonable at lemon versus lime and catastrophic at apple versus everything.
+**Step 4 — and a second, quieter problem.** Lemons and limes were shot in *identical* conditions — same counter, same window. So for that pair, background can't help at all, and the model has to fall back on shape and colour. That's actually **good** for lemon-versus-lime. Test it, but this model will probably be reasonable at lemon versus lime and catastrophic at apple versus everything.
 
 That's a subtle finding and it's the kind of sentence that separates guessing from measuring:
 
-> *"Same 120 photos, and the model is honest about one pair and cheating on the other."*
+> *"Same 120 photos, and the model may be honest about one pair and cheating on the other."*
 
 **Step 5 — the fix, in numbers.** Do not take 400 more photos. Take the **missing** ones:
 
@@ -356,9 +356,9 @@ So think like the machine. What if it simply **never said `whiteboard_eraser` at
    80 ÷ 88 = 0.909 = 90.9% accuracy
 ```
 
-**Ninety-one percent** — which looks like a good model — from a machine that has quietly decided the eraser does not exist. Its accuracy on erasers is **0%**.
+**Ninety-one percent** — which looks like a good model — from a machine that could end up behaving as if the eraser does not exist. Its accuracy on erasers is **0%**.
 
-Abandoning the small pile costs 8 mistakes out of 88. That is a cheap deal, and the machine will take it, because nobody told it that erasers matter as much as markers.
+Abandoning the small pile costs 8 mistakes out of 88. That is a cheap deal, and training has every reason to be tempted by it (a real model usually still fits the 8 erasers it was shown, but it has little pressure to), because nobody told it that erasers matter as much as markers.
 
 **Step 3 — the fix and the rule.** Take 32 more eraser photos, so the counts are 40 / 40 / 40. The working rule for this course:
 
@@ -482,7 +482,7 @@ Ask an adult before you tell them. Most say yes.
 
 **2. "Does a machine learn the way I do? Does anyone actually know?"**
 This is a good one to take to a grown-up, because the honest answer surprises people.
-*Hint for you:* nobody knows for sure, and that's a real answer rather than a dodge. The similarities are genuine: nobody gave you a rule for recognising your friend either, and you learned from thousands of labelled examples. But the differences are genuine too — you learned "dog" from about five dogs, where a from-scratch model needs tens of thousands, and you can learn from one bad experience in one second, which no model can. **And the deepest reason nobody can settle it is that we can't read either one.** We can't read the thousands of dials inside a trained model, and we can't read the connections inside your head. Two things we can't inspect, being compared.
+*Hint for you:* nobody knows for sure, and that's a real answer rather than a dodge. The similarities are genuine: nobody gave you a rule for recognising your friend either, and you learned from thousands of labelled examples. But the differences are genuine too — you learned "dog" from far fewer dogs than a from-scratch model needs (many thousands of pictures), and you can learn from one bad experience in one second, which no model can. **And the deepest reason nobody can settle it is that we can't read either one.** We can't read the thousands of dials inside a trained model, and we can't read the connections inside your head. Two things we can't inspect, being compared.
 
 **3. "Which takes longer — collecting the photos, or the training?"**
 Almost everybody guesses wrong, including adults who work with computers.
@@ -546,7 +546,7 @@ The wolves were snow. Your Blorbs were size. And when your own model fails next 
 ## 🌍 Where You've Seen This
 
 1. **Your phone's photo app, grouping faces.** It was trained once, on labelled examples. When it gets your cousin wrong you cannot explain your cousin to it — you can only re-label some photos and let it rebuild. That's the cake.
-2. **Voice assistants mishearing one particular word.** The training examples didn't contain enough voices like yours. Nothing you say now teaches it; somebody has to retrain it with different examples.
+2. **Voice assistants mishearing one particular word.** The training examples didn't contain enough voices like yours. Usually nothing you say in the moment teaches it (some assistants adjust a little to your voice); somebody has to retrain it with different examples.
 3. **Learning a friend's face.** Thousands of labelled looks, examples unavailable afterwards, a skill you can use but not read. Genuinely the same shape as training, which is why the hook works.
 4. **Learning to catch a ball.** Nobody gave you the equations. You threw, missed, adjusted, threw again — nudge, check, nudge, check. That's fifty epochs of a dial you can't see.
 5. **A dog that only sits in the kitchen.** Every time you practised "sit", you were in the kitchen with a treat in your hand. The dog learned "kitchen plus treat plus that word", not "that word". Same trap as the wolves and the snow, on four legs.
@@ -583,7 +583,7 @@ with the tick is TRAINING, and it is the first box on the middle row of nine.*
 
 - **Training is a one-off process, and the model is what it leaves behind.** Examples in, model out, examples put away.
 - **You cannot talk to a model, read it, or fix it by explaining.** You change the examples and bake again.
-- **The arithmetic proves it:** 40 MB of photos make a 3 MB model. The pictures are not in there.
+- **The arithmetic points the same way:** 40 MB of photos make a 3 MB model (rough sizes). The pictures are not in there.
 - **An epoch is a re-read, not new material.** 120 photos × 50 epochs = 6,000 looks and zero new information after pass one.
 - **Count distinct situations, not photos.** backgrounds × lighting × angles × distances. Forty photos across five backgrounds beat four hundred on one table.
 - **Whatever you vary for one object, vary for all of them** — or you've built a background detector with a perfect score and no value.

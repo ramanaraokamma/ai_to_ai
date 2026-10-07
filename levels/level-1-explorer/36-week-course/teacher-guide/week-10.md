@@ -151,18 +151,18 @@ But — and this is the reply to give — **the shortcut buys you a bigger n, no
 
 **Misconception 2 — "So machine learning means nobody has to do any work."**
 
-No. **You swapped thinking for collecting.** Collecting 5,000 correctly-labelled messages is many hours of dull, careful human work, and every mistake in it is learned by the machine with perfect loyalty. Rule-based systems fail because humans cannot think of everything. Learned systems fail because humans cannot collect everything. Neither is magic; they fail in different places.
+No. **You swapped thinking for collecting.** Collecting 5,000 correctly-labelled messages is many hours of dull, careful human work, and mistakes in it can be learned by the machine, systematic ones especially. Rule-based systems fail because humans cannot think of everything. Learned systems fail because humans cannot collect everything. Neither is magic; they fail in different places.
 
 ### 6. How deep to go, and where to stop
 
 **Go this far:**
 - 2ⁿ, computed by hand and by doubling.
-- The word *exponential* meaning "doubles each step" — nothing more.
+- The word *exponential* meaning "multiplies by the same amount each step, for example doubles" — nothing more.
 - The trade, stated in the student's own words.
 
 **Stop before:**
 - Logarithms. Do not mention log scales even if the student uses a spreadsheet chart. Say "the curve becomes a straight line, which is what doubling always looks like on this kind of chart" and move on.
-- *How* a machine finds the rule. That is Week 15. If asked, say "we'll build one in seven weeks and you'll see it happen." Do not improvise an explanation of training now — it will be wrong and you will have to unteach it.
+- *How* a machine finds the rule. That is Week 15. If asked, say "we'll build one in five weeks and you'll see it happen." Do not improvise an explanation of training now — it will be wrong and you will have to unteach it.
 - Neural networks, ChatGPT, anything with a brand name. Not this week.
 
 If you genuinely understood the sentence *"each new check doubles the situations, and doubling always beats a human"*, you understand this lesson well enough to teach it confidently.
@@ -289,11 +289,11 @@ Count it out loud together on fingers: 1, 2, 4, 8, 16, 32, 64. Then:
 >
 > Now add a second check. Every one of my two situations splits in two, because the new question can be answered either way. Two becomes four. Add a third: four becomes eight. Each new check **doubles** the number of situations, exactly like your paper.
 >
-> There's a name for this shape, and you should use it because it's the real word: **exponential growth**. It just means the thing doubles every step. It's the same word whether you're folding paper, splitting cells, or adding checks to a rulebook."
+> There's a name for this shape, and you should use it because it's the real word: **exponential growth**. It just means the thing multiplies by the same amount every step; here, it doubles. It's the same word whether you're folding paper, splitting cells, or adding checks to a rulebook."
 
 Write the definition where it stays visible:
 
-> **Exponential growth** — when a quantity doubles at every step. It starts slow, looks harmless, and then defeats you.
+> **Exponential growth** — when a quantity multiplies by the same amount at every step, for example doubling. It starts slow, looks harmless, and then defeats you.
 
 > "Let's fill in a few rows. Three checks: two times two times two, which is eight. Five checks: thirty-two. Ten checks: one thousand and twenty-four. Twenty checks: over a million. Thirty checks: over a *billion*.
 >
@@ -326,7 +326,7 @@ Pause here. This lands.
 | "Four checks — how many situations?" | 16 | If they say 8, they doubled once instead of twice. Walk the split: "8 situations, each splits in two." |
 | "Why does adding one check double it, instead of adding one?" | "Because every situation I already had can now go two ways." | If stuck, draw two boxes, then split each into two, then split those four into two. Physically drawing the split is what makes it click. |
 | "Which of the three killers is worst, and why?" | Number three — because you can hire more people to write rules, but you cannot stop the world changing. | Any reasoned answer is fine. Push for the *reason*, not the choice. If they pick number one, ask "what if you had a hundred people writing rules?" |
-| "Is 'exponential' just a fancy word for 'fast'?" | No — it means *doubling*. Something can be fast without doubling. | This is worth correcting properly. "A car going 200 km/h is fast. It isn't exponential. Exponential means the next step is as big as everything so far." |
+| "Is 'exponential' just a fancy word for 'fast'?" | No — it means *multiplying by the same amount each step* (doubling is the example we use). Something can be fast without doing that. | This is worth correcting properly. "A car going 200 km/h is fast. It isn't exponential. With doubling, the next step is as big as everything so far." |
 
 ---
 
@@ -483,7 +483,7 @@ Misses            = ____
 - False alarms and misses counted **separately**.
 - The student can point at one specific row and say "this is where it broke first."
 
-**Expected result — tell the student this afterwards, not before:** the fresh score is almost always 10 to 30 percentage points below the training score, and the rule that breaks first is almost always their *strongest* rule. That is not bad luck. Their strongest rule is strongest because it fit the training messages hardest.
+**Expected result — tell the student this afterwards, not before:** the fresh score is often 10 to 30 percentage points below the training score, and the rule that breaks first is often their *strongest* rule. A likely reason is that their strongest rule is strongest because it fit the training messages hardest; it also fires most often, so it has the most chances to misfire. Add: "With only 10 fresh messages, one message moves the score by 10 points. This is a hint, not proof."
 
 ### Variation — easier
 
@@ -539,7 +539,7 @@ They do try. It doesn't work well, because a scammer doesn't need to *read* your
 
 **"Is 258 a real number that someone had to write?"**
 
-258 is our example. But yes, real rule-based systems got genuinely enormous before people gave up on them. Some medical and tax systems from the 1980s ran to tens of thousands of hand-written rules and needed full-time teams just to keep them from contradicting each other. That period is roughly why machine learning took over.
+258 is our example. But yes, real rule-based systems got genuinely enormous before people gave up on them. In the 1980s, expert systems such as DEC's XCON, which helped configure computer orders, grew to roughly ten thousand hand-written rules and needed a team just to keep them from contradicting each other. Big rulebooks were hard to maintain, but machine learning took over mostly because of more data and faster computers, so do not tell the student the rules alone caused it.
 
 ---
 
@@ -550,7 +550,7 @@ They do try. It doesn't work well, because a scammer doesn't need to *read* your
 | The student edits a rule halfway through scoring the fresh messages | It feels obviously wrong to write down an answer you know is wrong | Stop them mid-sentence. "Write it in the margin, don't change the rule." Then say why: "If you fix it now, you'll end up with a rulebook that scores brilliantly on these ten and we'll have learned nothing." |
 | The envelope was opened before today | Curiosity, or it got shuffled into other papers | Do not paper over it. Use the fallback in the Prep Checklist, and name what was lost: "You can't un-see them, so this score won't mean what it should. That's exactly why professionals seal their test data." Week 19 comes back to it. |
 | They guess 2 × 30 = 60 for thirty checks | Doubling genuinely feels like adding — this is a universal human bug, not a weakness of this student | Never say "no". Go back to the paper: "How many layers after 6 folds? 64. So is 7 folds 66, or 128?" Let them correct themselves. |
-| The score on the fresh messages is high (9 or 10 out of 10) | Their 10 fresh messages were too similar to the training 20 — usually all from the same source | Do not deflate them. Say: "Good. Now let's find out if that's real." Write three brand-new messages yourself, on the spot, deliberately unlike theirs: a delivery scam, a message from a sibling with no punctuation, a school notice. Score those. The gap will appear. |
+| The score on the fresh messages is high (9 or 10 out of 10) | Possibly their 10 fresh messages were too similar to the training 20 (for example, all from the same source) — or a decent rulebook simply scored well on only 10 messages, which happens fairly often | Do not deflate them. Say: "Good. Now let's find out if that's real." Write three brand-new messages yourself, on the spot, deliberately unlike theirs: a delivery scam, a message from a sibling with no punctuation, a school notice. Score those. The gap will appear. |
 | "This is just maths, not AI" | It genuinely looks like a maths lesson | Agree, then land it: "It is maths. It's the *specific* piece of maths that made people stop writing rules and start collecting examples. Without this number, machine learning never gets invented." |
 | They finish the doubling table in 90 seconds using a formula and learn nothing | A quick student will spot 2ⁿ immediately | Excellent — do not slow them down. Instead give the harder question straight away: "Prove to me that check 30 adds more than checks 1 to 29 put together." That is a genuinely satisfying problem. |
 | The write-up becomes "rules are bad, machine learning is good" | It's the obvious summary and it is wrong | Push back once, hard: "Name three jobs where I'd be an idiot to use machine learning." Do not accept the page until they can. |
@@ -583,7 +583,7 @@ Project weeks are long and this one has a lot of arithmetic. If they are done, d
 
 Do **only** the fold and the argument. Fold the paper. Count the layers to 128. Ask one question: *"How thick after 30 folds?"* Work it out together: 107 kilometres. Then ask them to defend the rule-writer for two minutes — "Convince me that writing rules is fine and I'm being dramatic." Argue back. That conversation hits the objective, and you can move the table and the scoring to a 20-minute session tomorrow.
 
-If they are frustrated specifically because their rulebook did badly on the fresh messages, name it out loud: *"Your rulebook scoring badly is the successful outcome of this project. If it had scored ten out of ten I'd be worried you'd peeked."*
+If they are frustrated specifically because their rulebook did badly on the fresh messages, name it out loud: *"Your rulebook scoring badly is the successful outcome of this project. If it had scored ten out of ten I'd want to check the fresh messages were really different from the first twenty."*
 
 ---
 
@@ -665,7 +665,7 @@ Three checks, five minutes, in the last segment. Use the exact wording.
 - **B1.** (a) 2⁸ = **256** ice creams. (b) 256 × 2 = **512 minutes** = about **8.5 hours** (512 ÷ 60 = 8.53). (c) **256 extra**: the ninth topping doubles 256 to 512. That is more than toppings 1 to 8 created together (255).
 - **B2.** (a) 2¹⁵ = **32,768**. (b) 32,768 ÷ 100 = 327.68, so **328 days**. (c) One more setting gives 65,536, so **656 days** (655.36 rounded up). One checkbox doubles the testing job.
 - **B3.** Two problems, both needed. (1) Every rule mentioning the white shirt or the tie is now wrong and all 400 must be checked by hand; only a person who understands each rule can decide which. (2) The rules now contradict each other (some pass a pale blue shirt, others fail it), so the result depends on which rule fires first and you need rules about which rule wins. One-sentence version: a rulebook is frozen the moment you finish it, and the world is not.
-- **B4.** (a) 300 ÷ 5,000 = **0.06 = 6%**. (b) The machine learns the 300 wrong labels **perfectly and loyally**; it cannot know they were rushed. (c) In a rulebook you can read the rules and spot the bad one; in a learned system the mistake is spread through the whole thing, found only by testing on fresh examples, and nobody can point at which labels were bad.
+- **B4.** (a) 300 ÷ 5,000 = **0.06 = 6%**. (b) The 300 wrong labels **can be learned, systematic mistakes especially** (a few random errors may barely matter); the machine cannot know they were rushed. (c) In a rulebook you can read the rules and spot the bad one; in a learned system the mistake is spread through the whole thing, found only by testing on fresh examples, and nobody can point at which labels were bad.
 - **B5.** Income tax: **rules** (the bands are already written down; identical incomes must give identical bills). A friend's voice: **learning** (instant, but you cannot explain how). Chess move legal: **rules** (complete, finite, published). Photo of a cat: **learning** (nothing your rules can name is actually in the photo). Drug dose below maximum: **rules** (the limit is a published number; a comparison is right by construction). **In common:** for every rules answer, the correct answer already exists in written form. Any wording of "someone already wrote the answer down" earns the mark.
 
 ### Puzzle of the Week
@@ -746,13 +746,13 @@ A full-credit write-up contains all three required points. Model answer:
 
 > **Which rule broke first, and where.** Rule 1 — `IF contains "free" THEN spam` — broke on message 23, "Are you free after school?". The word "free" was doing two completely different jobs and my rule could only see the letters.
 >
-> **Was it one of my strongest?** Yes, it was my strongest. On my 20 training messages, "free" appeared in 7 of the 10 spam and 0 of the 10 ham — a gap of 7, the biggest gap in my whole tally table. That is exactly why I put it first. Being the rule that fit my training messages best is *why* it broke first: it was tuned hardest to the messages I happened to have.
+> **Was it one of my strongest?** Yes, it was my strongest. On my 20 training messages, "free" appeared in 7 of the 10 spam and 0 of the 10 ham — a gap of 7, the biggest gap in my whole tally table. That is exactly why I put it first. Being the rule that fit my training messages best is a likely reason it broke first: it was tuned hardest to the messages I happened to have.
 >
-> **Which error type I had more of, and why it matters.** I had one of each, so they tied, but the false alarm worries me more. A miss means one scam message reaches me and I can just ignore it. A false alarm means a real message from a friend is hidden in a junk folder I never open. On a real phone, filtering out a message from your mum is a much worse failure than letting a scam through.
+> **Which error type I had more of, and why it matters.** I had one of each, so they tied, but the false alarm worries me more. A miss means one scam message reaches me, and I must not click or reply and should show an adult. A false alarm means a real message from a friend is hidden in a junk folder I never open. For a phone's everyday inbox I would argue filtering out a message from your mum is the worse failure, though for a bank's fraud checker it could be the other way round.
 >
-> **One message no rule of mine could catch.** Message 27, "You have been selected for a cash reward. Reply YES to claim." There is no unusual word in it. No link. No exclamation marks. One capitalised word. Every single thing that makes it a scam lives in the *meaning* — that strangers do not give people money — and no rule that counts words can reach meaning.
+> **One message no rule of mine could catch.** Message 27, "You have been selected for a cash reward. Reply YES to claim." There is no unusual word in it. No link. No exclamation marks. One capitalised word. Every single thing that makes it a scam lives in the *meaning* — that strangers do not give people money — and my rulebook has no word for it yet. A rule on "reward" or "claim" could catch this one, but it would also hit real messages ("Reply YES to claim your school photo").
 >
-> **What the gap tells me.** Fifteen points of gap tells me my rules were fitted to the exact 20 messages I had, not to spam in general. I did not discover how spam works. I discovered how *my twenty messages* work.
+> **What the gap tells me.** Fifteen points of gap hints that my rules were fitted to the exact 20 messages I had, not to spam in general (with only 10 fresh messages, one message is 10 points, so it is a hint, not proof). I did not discover how spam works. I discovered how *my twenty messages* work.
 >
 > **What I would do next.** Not add more rules. I would collect a few thousand labelled messages from lots of different phones, not just mine, and let a machine find the rule — accepting that I would then not be able to explain any single decision it made.
 
@@ -832,7 +832,7 @@ One rule can cover a whole block of situations at once — `IF contains "free" T
 | 7 | 128 | 12.8 mm |
 
 **In-class (a) Why couldn't you fold it eight times?**
-Because 8 folds is 256 layers, about 25.6 mm of paper — you are trying to bend a block thicker than your thumb, and the outer layers have to travel further round the fold than the inner ones, so the paper has to stretch. It cannot.
+Because 8 folds is 256 layers, about 25.6 mm of paper — you are trying to bend a block thicker than your thumb, and the outer layers have to travel further round the fold than the inner ones, so the paper has to stretch — and every fold also uses up some length. It cannot.
 
 **In-class (b) How thick after 30 folds?**
 2³⁰ = 1,073,741,824 layers × 0.1 mm = 107,374,182.4 mm = 107,374.18 metres = **about 107 kilometres**. Higher than the edge of space (usually put at 100 km).

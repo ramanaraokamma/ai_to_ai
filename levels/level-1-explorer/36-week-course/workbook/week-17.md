@@ -495,11 +495,11 @@ Why (c) is still a bad idea: **8 photos is far too few for any class.** It is pe
 
 (b) The smallest margin is **bowl, far away — margin 4.**
 (c) The worst pair is **plate and bowl.** How you know: in every row where the margin is small, the *runner-up* is the other one of those two. "Plate far away" has bowl second on 36. "Bowl far away" has plate second on 41. Mug is never the runner-up in a close row. That makes sense — a plate and a bowl are both round and flat-ish from a distance, and a mug has a handle.
-(d) It is worrying because **the score column tells you nothing at all.** Nine out of nine correct. But two rows have margins of 16 and 4, which are in the "do not act on it" band — those answers are right **by a hair**, and a centimetre of movement would flip them. **The margin found the weak spot before anything actually went wrong.** That is the whole reason the margin column exists.
+(d) It is worrying because **the score column tells you nothing at all.** Nine out of nine correct. But two rows have margins of 16 (shaky) and 4 (a coin toss) — those answers are right **by a hair**, and a centimetre of movement would flip them. **The margin found the weak spot before anything actually went wrong.** That is the whole reason the margin column exists.
 
 **B4.**
 (a) **No, the software is not broken.**
-(b) Almost certainly, **the three classes look identical to the model** — the same background, the same light, the same distance in every photo of all three classes. There is nothing in the photos that separates the classes except the object itself, and if the object is small and the background is dominant, the model has nothing to key on. *(Second most likely cause: one class has almost no samples, or all three classes were accidentally loaded with the same photos.)*
+(b) Most likely, **the three classes look identical to the model** — the same background, the same light, the same distance in every photo of all three classes. There is nothing in the photos that separates the classes except the object itself, and if the object is small and the background is dominant, the model has nothing to key on. *(Second most likely cause: one class has almost no samples, or all three classes were accidentally loaded with the same photos.)*
 (c) The fix is a data fix, not a software fix: **retake about 10 photos per class in three genuinely different places** — a different surface, a different light, a different distance — reload, and retrain. Do not press Train again on the same photos.
 (d) Blind guessing with three classes gives **33.3%**. So a model sitting at 33% has learned **nothing usable at all** — it is performing exactly as well as a coin (well, a three-sided one). That's not "a weak model", it's "no model."
 
@@ -524,7 +524,7 @@ Why (c) is still a bad idea: **8 photos is far too few for any class.** It is pe
 
 **Should you believe row 3?** **No — and this is the whole point of the puzzle.**
 
-A margin of 59 is in the "reasonably clear, nearly not-even-close" range, which *looks* trustworthy. But look at what the row actually says: *"held up: something else."* We do not know what the object was, and there is a very good chance it was **not one of the three classes at all** — in which case 74% is a confidently wrong answer with a healthy-looking margin, exactly like the fork and the stapler.
+A margin of 59 is in the 30–59 "fine" band, which *looks* trustworthy. But look at what the row actually says: *"held up: something else."* We do not know what the object was, and there is a very good chance it was **not one of the three classes at all** — in which case 74% is a confidently wrong answer with a healthy-looking margin, exactly like the fork and the stapler.
 
 **The rule this puzzle is really teaching:** you cannot judge a readout from the numbers alone. **You must also know what was put in front of the camera.** Rows 1 and 2 are trustworthy because we were told the object was a real class. Row 3 is unjudgeable, and "unjudgeable" is not the same as "fine."
 
@@ -574,7 +574,7 @@ Your five objects will differ. Here is a model answer so you can see the shape a
 - **Key → spoon, margin 41.** Small, metal, shiny, with a rounded head on a narrow shaft — spoon-shaped enough. Note the lower margin: the model was *less* sure here, correctly.
 - **Empty hand → comb, margin 12.** The most interesting row. A margin of 12 is a shrug, and a shrug is the **right** response to an object with no class. If your model does this, praise it — it is behaving better here than in the other four rows.
 - **Sock → spoon, margin 18.** Soft, no straight edges, nothing shiny, nothing to key on. Low margin again, and again that is the model being honest.
-- **Fork → spoon, margin 69.** The **worst** row, precisely because it is the most confident. A fork is genuinely spoon-shaped, so the model commits hard.
+- **Fork → spoon, margin 69.** The **worst** row, precisely because it is the most confident. A fork is probably spoon-shaped enough, to this model, that it commits hard.
 
 **Marking:** full credit needs all three numbers per row, every sum checked, every margin computed, the prediction written *before*, and the observation that **all five were wrong**. A row with only the winner written down is a third of the work.
 

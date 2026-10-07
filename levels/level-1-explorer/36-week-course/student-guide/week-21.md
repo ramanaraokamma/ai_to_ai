@@ -33,7 +33,7 @@ Both of them are given the same practice sheet: sixty questions, answers on the 
 
 Sit with that for a second, because you genuinely cannot tell. They are identical on the page in front of you.
 
-Right. **Exam day.** The paper has fifteen questions on it that neither of them has ever seen.
+Right. **Exam day.** The paper has twenty questions on it that neither of them has ever seen.
 
 ```
    Aisha:  practice 100%   exam 95%    gap   5 points
@@ -72,11 +72,11 @@ And your model is exactly the same problem. It will happily report 100% on the p
 
 ### 1. Two words, and one subtraction that tells them apart
 
-> **Generalizing** — the model works on examples it has never seen. This is the only thing you actually want, always.
+> **Generalizing** — the model works on examples it has never seen. This is almost always what you actually want.
 >
 > **Memorizing** — the model works on the exact examples it studied, and falls apart on anything else.
 
-You **cannot** tell these apart by looking at the model. Nobody can — not you, not me, not Google, not the people who built it.
+You **cannot** tell these apart by looking at the model. Nobody can, just by looking — not you, not me, not even the people who built it. It takes a fresh test.
 
 But you can tell in ten seconds by comparing two numbers: **the score on the photos it trained on, and the score on the photos it had never seen.**
 
@@ -226,12 +226,12 @@ That is the model's weakness **on combs.** And notice the spoon row: five marks 
 **B) Down a column — what the model was *willing to say*.**
 
 ```
-   said spoon:      6 times, but only 5 spoons existed   →  slightly over-eager
-   said toothbrush: 6 times, but only 5 toothbrushes     →  slightly over-eager
+   said spoon:      6 times, but only 5 spoons existed   →  one extra; too small a difference to read anything into
+   said toothbrush: 6 times, but only 5 toothbrushes     →  one extra; too small a difference to read anything into
    said comb:       3 times, though 5 combs existed      →  RELUCTANT about comb
 ```
 
-This is a **different diagnosis** from "it's bad at combs", and it is worth understanding why. If the model were merely bad at combs, its comb guesses would be scattered about randomly. This model has partly stopped **believing in** combs — it only used the word three times in fifteen tries. That usually means the comb training photos were **too few, or all too similar to each other.**
+This is a **different question** from "it's bad at combs", and it is worth understanding why. The row tells you how often a real comb was recognised; the column tells you how often the model *chose* the word "comb" at all. This model only chose it three times in fifteen tries. One **hypothesis** to check: the comb training photos were **too few, or all too similar to each other.** Others are possible too (the other classes had more variety, or comb photos were taken differently). With only fifteen photos, three versus five could also be luck.
 
 **C) The single most useful number in the grid: the biggest one that is NOT on the diagonal.**
 
@@ -248,7 +248,7 @@ And once you say it out loud it stops being surprising: *a comb and a toothbrush
    true toothbrush → said comb:      1
 ```
 
-Two one way, one the other. If the two objects simply *looked alike*, you would expect roughly equal confusion in both directions. Lopsided confusion points at **the class itself** — too few comb photos, or comb photos that were all too similar — rather than at the resemblance.
+Two one way, one the other. On fifteen photos that is a difference of a single photo, so it could easily be noise. But treat it as **a hint to investigate**: lopsided confusion *can* mean a problem with the class itself (too few comb photos, or comb photos that were all too similar), and it can also have other causes. The grid cannot tell you which; you would have to go and check.
 
 ![Week 21 finished board](../figures/fig-w21-3-board-plan.svg)
 *Figure 21.3 — What the board looked like by the middle of the lesson. Copy it if you missed class.*
@@ -293,7 +293,7 @@ A **samosa / pakora / vada** classifier, tested on 12 held-out photos, 4 of each
    0.6667 x 100 = 66.67...  ≈  66.7%
 
    baseline (3 equal classes) = 33.3%
-   66.7 - 33.3 = 33.4 percentage points better than guessing
+   66.7 - 33.3 = 33.3 percentage points better than guessing
 ```
 
 **Step 2 — build the grid. Labels first: truth down the side, said across the top.**
@@ -356,7 +356,7 @@ A **cricket ball / tennis ball / hockey ball** classifier, tested on 18 held-out
 
    0.7778 x 100 = 77.78...  ≈  77.8%
 
-   baseline = 33.3%    →   44.5 percentage points better than guessing
+   baseline = 33.3%    →   44.4 percentage points better than guessing
 ```
 
 **Step 2 — per-class accuracy.**
@@ -538,8 +538,8 @@ Then read the zeros, because zeros are information:
 **Step 5 — read down the columns (2 min).**
 
 ```
-   said spoon:      6 times, but only 5 spoons existed   →  slightly over-eager
-   said toothbrush: 6 times, but only 5 toothbrushes     →  slightly over-eager
+   said spoon:      6 times, but only 5 spoons existed   →  one extra; too small a difference to read anything into
+   said toothbrush: 6 times, but only 5 toothbrushes     →  one extra; too small a difference to read anything into
    said comb:       3 times, though 5 combs existed      →  RELUCTANT about comb
 ```
 
@@ -613,7 +613,7 @@ Written down, dated, initialled: **which cell of *your* grid will be worst next 
 |---|---|
 | "It got confused between combs and toothbrushes." | "**Two** combs were called toothbrush, and **one** toothbrush was called comb." |
 
-**Why it matters:** the first version has no number and no direction, so you cannot act on it. The second version tells you which class is suffering *and* that the confusion is lopsided — which points at the comb photos rather than at the resemblance. Use the frame: **"___ of the ___s were called ___."**
+**Why it matters:** the first version has no number and no direction, so you cannot act on it. The second version tells you which class is suffering *and* that the confusion is lopsided — which gives you a hint about where to look (the comb photos) rather than a verdict. Use the frame: **"___ of the ___s were called ___."**
 
 ### Trick 4 — thinking 100% on training is good news
 
@@ -632,7 +632,7 @@ Written down, dated, initialled: **which cell of *your* grid will be worst next 
 - **Learning a song's words without knowing the language.** You can sing it perfectly. Ask what one line means and there is nothing there.
 - **Video game bosses.** You memorise the boss's attack pattern and beat it every time. Then the sequel changes the pattern slightly and you die instantly. You learned *that* boss, not *fighting*.
 - **Recipes.** Somebody who follows one recipe exactly makes one good dish. Somebody who understands why you fry the onions first can cook anything. On the day you have the recipe, they look identical.
-- **Spellcheck and autocorrect.** They generalise well on ordinary words and fall over completely on your friends' names — which are exactly the examples they never got to study.
+- **Spellcheck and autocorrect.** They generalise well on ordinary words and often fall over on words they have never met, like your friends' names. That is a cousin of this problem rather than the same one, but the lesson is the same: what counts is how it copes with the new.
 - **Sports coaching.** A batter who has grooved one shot against one bowling machine looks superb in practice. The test is a bowler they have never faced.
 
 ---
@@ -672,7 +672,7 @@ and **evaluation** lit: what the model turned into, and how you judge it.*
 - **The diagonal is what went right.** Both checks — diagonal = correct count, all cells = number of photos — get *written down*, every time.
 - Every **off-diagonal cell** is a sentence: *"N of the Xs were called Y."* If you can't say it as a sentence, you haven't read the grid.
 - The **biggest off-diagonal cell is a shopping list.** It tells you exactly which photos to take tomorrow.
-- **Lopsided confusion** points at the class — too few photos, or photos that were all too similar — not at the resemblance.
+- **Lopsided confusion** is a hint to investigate — maybe the class has too few photos, or photos that were all too similar — not a diagnosis. On a small test, one photo can make it lopsided.
 
 ---
 

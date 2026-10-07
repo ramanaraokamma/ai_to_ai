@@ -82,7 +82,7 @@ ________________________________________________________________
 | check | ______ | | **A** | You give up writing rules and supply labelled examples instead |
 | exponential growth | ______ | | **B** | One thing with the correct answer written next to it |
 | rule explosion | ______ | | **C** | One question with a yes/no answer |
-| the machine learning trade | ______ | | **D** | A quantity that doubles at every step |
+| the machine learning trade | ______ | | **D** | A quantity that multiplies by the same amount each step (for example, doubling) |
 | labelled example | ______ | | **E** | The rules you need grow far faster than the cases you were handling |
 
 ---
@@ -454,7 +454,7 @@ ________________________________________________________________
 
 **W3.** Because once you have read them, you cannot un-read them. Even without meaning to, you would write rules that happen to work on those ten, and the score would then be measuring your memory instead of your rulebook. Sealing it is how you protect yourself from fooling yourself.
 
-**W4.** A false alarm · a miss. *(Worth remembering which is worse: a miss means one scam message reaches you and you ignore it. A false alarm means a real message from a friend is hidden in a junk folder you never open.)*
+**W4.** A false alarm · a miss. *(Worth remembering which is worse: a miss means one scam message reaches you, so you must not click or reply, and you should show an adult; whether a miss or a false alarm is worse depends on the job. A false alarm means a real message from a friend is hidden in a junk folder you never open.)*
 
 **W5.** **Rule 2** — because the convention is **first match wins, checked top to bottom.** The order you write your rules in is itself part of the rulebook, which is why every rulebook needs a line saying which rule wins.
 
@@ -467,7 +467,7 @@ ________________________________________________________________
 **A2.** **(d) 4,096.**
 
 Working by doubling: 2, 4, 8, 16, 32, 64, 128, 256, 512, 1,024, 2,048, 4,096 — that's twelve doublings.
-*Why (c) 2,048 is the tempting wrong answer:* it's 2¹¹, which is what you get if you start counting at 2 for zero checks. Count the doublings, not the numbers.
+*Why (c) 2,048 is the tempting wrong answer:* it's 2¹¹, which is what you get if you stop one doubling short (11 doublings instead of 12). Count the doublings, not the numbers.
 
 **A3.** **TRUE.**
 
@@ -522,7 +522,7 @@ So check 10 created:  1,024 - 512 = 512
 
 **B4.**
 (a) `300 / 5,000 = 0.06 = **6%**` of the examples teach the wrong thing.
-(b) It learns them **perfectly and loyally.** The machine has no way to know that Tuesday afternoon's labels were rushed. Those 300 messages are, as far as it is concerned, exactly as true as the other 4,700.
+(b) They **can be learned, and systematic mistakes especially are.** A few random errors may barely matter, but the machine has no way to know that Tuesday afternoon's labels were rushed. Those 300 messages are, as far as it is concerned, exactly as true as the other 4,700.
 (c) In a rulebook you can *read* the rules and spot the wrong one. In a learned system there is no rule to read — the mistake is spread invisibly through the whole thing. You can only find it by testing on fresh examples and noticing the score is worse than it should be, and even then nobody can point at *which* labels were the bad ones.
 
 **B5.**
@@ -638,13 +638,13 @@ Misses            = 1   (message 27)
 
 > **Which rule broke first, and where.** Rule 1 — `IF contains "free" THEN spam` — broke on message 23, "Are you free after school?". The word "free" was doing two completely different jobs and my rule could only see the letters.
 >
-> **Was it one of my strongest?** Yes, my strongest. On my 20 training messages "free" appeared in 7 of the 10 spam and 0 of the 10 ham — the biggest gap in my whole tally table, which is exactly why I put it first. Being the rule that fitted my training messages best is *why* it broke first: it was tuned hardest to the twenty messages I happened to have.
+> **Was it one of my strongest?** Yes, my strongest. On my 20 training messages "free" appeared in 7 of the 10 spam and 0 of the 10 ham — the biggest gap in my whole tally table, which is exactly why I put it first. Being the rule that fitted my training messages best is a likely reason it broke first: it was tuned hardest to the twenty messages I happened to have.
 >
-> **Which error type worries me more.** I had one of each, but the false alarm is worse. A miss means one scam reaches me and I ignore it. A false alarm means a real message from a friend is sitting in a junk folder I never open.
+> **Which error type worries me more.** I had one of each, but the false alarm is worse. A miss means one scam reaches me, and I must not click or reply and should show an adult. A false alarm means a real message from a friend is sitting in a junk folder I never open.
 >
-> **One message no rule of mine could catch.** Message 27: "You have been selected for a cash reward. Reply YES to claim." No unusual word, no link, no exclamation marks. Everything that makes it a scam lives in the *meaning* — that strangers do not give people money — and no rule that counts words can reach meaning.
+> **One message no rule of mine could catch.** Message 27: "You have been selected for a cash reward. Reply YES to claim." No unusual word, no link, no exclamation marks. Everything that makes it a scam lives in the *meaning* — that strangers do not give people money — and my rulebook has no word for it yet. A rule on "reward" or "claim" could catch this one, but it would also hit real messages ("Reply YES to claim your school photo").
 >
-> **What the gap tells me.** Fifteen points of gap says my rules fitted my exact 20 messages, not spam in general. I didn't discover how spam works. I discovered how *my twenty messages* work.
+> **What the gap tells me.** Fifteen points of gap hints that my rules fitted my exact 20 messages, not spam in general (with only 10 fresh messages, one message is 10 points, so it is a hint, not proof). I didn't discover how spam works. I discovered how *my twenty messages* work.
 >
 > **What I'd do next.** Not add rules. Collect a few thousand labelled messages from lots of different phones, not just mine, and let a machine find the rule — accepting that I then couldn't explain any single decision it made.
 

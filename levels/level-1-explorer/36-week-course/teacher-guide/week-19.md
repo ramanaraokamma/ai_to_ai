@@ -67,7 +67,7 @@ anybody learned any maths.** That exam measured nothing, and — this is the par
 *felt exactly like a successful exam.*
 
 Testing a model on its training photos is that second exam. It always produces a good number, and it
-always tells you nothing.
+tells you nothing about new photos.
 
 ![The honest path and the cheat path](../figures/fig-w19-1-honest-path-vs-cheat-path.svg)
 *Figure 19.1 — The same 30 photos, two orders of operations. Only the top row produces a number you
@@ -120,6 +120,8 @@ measures how good the model is at combs and barely mentions spoons. So:
 | **80 / 20** | **60** | **15** | **sensible middle; the usual default** | **nothing much. A good starting choice** |
 | 70 / 30 | 52 | 23 | a much more trustworthy score | the model has fewer photos to learn from, so it is genuinely worse |
 | 50 / 50 | 37 | 38 | a very reliable score | ...of a badly trained model. You measured the wrong thing very precisely |
+
+*(These are whole-pile totals. Splitting each class separately, as above, moves them by a photo or so per class — for example 66 / 9 rather than 67 / 8 at 90 / 10.)*
 
 The rule of thumb to teach: **80 / 20 unless you have a reason.** And the trade-off to say out loud,
 because it is the honest heart of it: **every test photo is a training photo you gave up.** There is
@@ -537,6 +539,8 @@ Full instructions in the next section.
    SESSION 2  —  ____________    5 photos per class   →  the ENVELOPE
 ```
 
+**Note for you:** the homework test photos are new photos of the *same three objects*, which is cheat 4 in a mild form. Do not redesign it; have the student write "same three objects" beside the Week 22 score so the limit is labelled.
+
 **Say this:**
 
 > "Two different days. Not two hours apart — two days. Different light, different room if you can,
@@ -934,7 +938,7 @@ is taped.
 
 > **🧑‍🏫 If a student asks** whether they can put the Session 1 photos into Teachable Machine and
 > retrain their Week 17 model: yes, that is allowed and it is a good instinct. Two conditions. They
-> must write down the new training accuracy from **Advanced → Under the hood**, because Week 22 needs
+> must write down the new training accuracy from **Advanced → Under the hood** (not verified: it may show accuracy on photos Teachable Machine held out itself; see Week 22), because Week 22 needs
 > it. And Session 2 must not go anywhere near the training panel. If they would rather leave the Week
 > 17 model exactly as it is, that is equally fine — Week 22 works either way.
 
@@ -959,8 +963,8 @@ Puzzle, Think Deeper, then Build It (K1–K3), then Draw It and Self-Check, then
   thing" is the idea. Half marks without it.
 - **W2.** So the result can surprise you. If you decide afterwards what you "expected", you always
   expected whatever happened. Being wrong on the record beats being vaguely right afterwards.
-- **W3.** It learned "white fuzzy stuff at the bottom of the picture means wolf". Every wolf photo had
-  snow, no husky photo did. It learned nothing about wolves.
+- **W3.** It learned "white fuzzy stuff at the bottom of the picture means wolf". In that demonstration every wolf photo had
+  snow, no husky photo did, so snow was an easy shortcut; it cannot be trusted to have learned wolves.
 - **W4.** **You cannot say.** Three things changed at once, so the information was never collected.
   *Wrong answers to expect:* "the room" or "the fewer photos" — any single pick is a guess. Push for
   "I can't tell", and then "so what should you have done?" (one knob at a time).
@@ -1022,8 +1026,9 @@ Puzzle, Think Deeper, then Build It (K1–K3), then Draw It and Self-Check, then
 | Opened envelope, changed things, retested, reported the second score | too high | the decision |
 
   **Why the same direction:** each one lets the model see, or effectively see, something it should not,
-  and extra information can only help a score. Cheating never accidentally lowers your mark, so a
-  surprisingly high score is always worth investigating and a disappointing one almost never is.
+  and extra information can only push a score up, never down. Cheating never accidentally lowers your
+  mark, so a surprisingly high score is always worth investigating. A disappointing score is not a sign
+  of cheating, but it is worth a look too (mislabelled photos, a slip in the setup).
 
 ### Puzzle of the Week — the five envelopes
 

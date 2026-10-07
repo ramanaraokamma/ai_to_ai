@@ -347,7 +347,7 @@ A weaker answer draws a nice photo and a nice sentence but **no numbers**. The n
 
 **W2.** **Directions** — which cells are its neighbours, relative to where the formula is sitting. That is why one formula dragged over a hundred cells does a hundred *different* sums.
 
-**W3.** The **brightness** numbers all go **up by 50**. The **edge** numbers stay the **same** — because both sides of the edge got the same +50 bonus, and the bonus cancels out of a difference. ("Edges change much less" is also fine and slightly more honest.)
+**W3.** The **brightness** numbers all go **up by 50**. The **edge** numbers stay the **same** (as long as no square hits the 255 ceiling) — because both sides of the edge got the same +50 bonus, and the bonus cancels out of a difference. ("Edges change much less" is also fine and slightly more honest.)
 
 **W4.** **255.** That step is called **clipping**.
 
@@ -508,7 +508,7 @@ In such a short sentence with no repeated words, tokens and unique tokens are **
 >
 > So a sentence might be 9 tokens and 7 unique, while a whole book is more like **80,000 tokens and 6,000 unique**.
 >
-> What it means for a machine: the number of **rows** in its table stops growing quite quickly, but the amount of **evidence** in each row keeps piling up. That is good news — it means collecting more text does not make the table unmanageably wider, it makes the counts inside it more trustworthy. It also means the most common words get enormous counts while most words are seen only once or twice, so a machine has plenty of evidence about `the` and almost none about anything interesting.
+> What it means for a machine: the number of **rows** in its table slows down quite quickly, but the amount of **evidence** in each row keeps piling up. That is good news — it means collecting more text does not make the table unmanageably wider, it makes the counts inside it more trustworthy. It also means the most common words get enormous counts while most words are seen only once or twice, so a machine has plenty of evidence about `the` and almost none about anything interesting.
 
 **Accept:** "the token count" with any correct version of *"new words run out and `the` never does"*. Level 5 answers get to the consequence — more text means better counts rather than a bigger table.
 
@@ -570,7 +570,7 @@ The full frequency table, most common first:
 
 1. **`the` is nine times more common than almost everything else** — and on its own it means nothing at all. That is true of nearly every English text, and it is why the most common words are the least interesting ones.
 2. **The full stop is the second most common token.** Punctuation is not a footnote at the bottom of the table; it is right at the top. Good evidence that R2 was worth having.
-3. **`open` and `opened` are two different tokens**, with a count of 1 each. Obviously the same idea to you. Not to the machine — different letters means a different token. Real systems have tricks for this and none of them fully work.
+3. **`open` and `opened` are two different tokens**, with a count of 1 each. Obviously the same idea to you. Not to the machine — different letters means a different token. Real systems have tricks for this that work well but not perfectly.
 
 **Part 3 — the two written questions.**
 

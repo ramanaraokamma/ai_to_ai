@@ -52,7 +52,7 @@ Suppose you watch the 9:05 bus for four weeks. All four Mondays it was late. One
 ![Pattern or coincidence?](../figures/fig-w07-1-pattern-vs-coincidence.svg)
 *Figure 7.1 — The same word "pattern" is doing two completely different jobs on these two sides. Only one is worth betting on.*
 
-Four out of four is worth a bet. One out of four is not — betting "late" every Friday would make you wrong three times out of four. It isn't a pattern; it's just something that happened once.
+Four out of four is worth a bet. One out of four is not — betting "late" every Friday would make you wrong three times out of four. It isn't enough to call a pattern; it's just something that happened once.
 
 **Here is the part that adults skip, and it is the mathematical heart of the lesson.** "Beats guessing" only means something if you first work out how well guessing does. That number has a name in the later weeks of this course (Week 12 introduces it as the *baseline*), and this week we just do it by hand and call it "the best you could do by guessing".
 
@@ -141,7 +141,7 @@ DEFAULT: OTHERWISE              THEN predict "on time"
 
 **Why the default matters more than it looks.** Count how many of the fourteen days match neither rule: **seven** of them — rows 3, 4, 5, 7, 9, 12 and 13. Rule 1 handles 3 rows, rule 2 handles 4 rows, the default handles 7. Without the default, the rulebook is *silent* on half the table. A machine with no answer does not shrug politely; it stops, or it returns nothing and the next piece of software receives nothing and misbehaves in a way nobody can trace.
 
-So: **the default is the most-used rule in almost every rulebook ever written.** It is not the leftovers.
+So: **the default is often the most-used rule in a rulebook.** It is not the leftovers.
 
 > **💡 Try this:** pick the default by asking "what should I say when I know nothing?" Here that is "on time", because on time is what happens most often. That is a genuinely good reason and it is worth naming: **the default should be the commonest answer.**
 
@@ -327,7 +327,7 @@ A PATTERN:  ?
 >
 > Look at the left column. Four Mondays, four late. If I bet 'late' every Monday I'd be right four times out of four. That's worth doing.
 >
-> Now the right column. Four Fridays, one late. If I bet 'late' every Friday I'd be right once and wrong three times. **That's not a pattern. That's just a thing that happened.**
+> Now the right column. Four Fridays, one late. If I bet 'late' every Friday I'd be right once and wrong three times. **That's not enough to call a pattern. That's just a thing that happened.**
 >
 > So there's a bar every pattern has to clear, and it's this: does betting on it do better than *not bothering*? And to know that, you have to work out how well not-bothering does — which people almost never do, and it's the reason so many confident claims are rubbish."
 
@@ -743,7 +743,7 @@ Park that one. Genuinely — I want you to write it on your page and bring it ba
 1. **"Try every threshold."** Score the rulebook with `rain_mm >= 1`, `>= 2`, `>= 3`, `>= 4`, `>= 5`. Answers in the key: 11, 13, 13, 13, 14. Then the real question — *"Three thresholds tie at 13, and the winner scores 14 by excluding exactly one row. Which one do you ship?"* There is no data-based answer. Any reasoning that admits it's a judgement call is a strong answer.
 2. **"Find a rule that predicts 'on time'."** `IF weather = "sunny" THEN on time` fires on 7 rows and is right on 5 of them. Then: where in the ladder do you put it? Above Rule 1 it wrecks the sunny Mondays (rows 1 and 11). Below both rules it barely changes anything. **Position is part of the rule.**
 3. **"Which single row is the most valuable in the table?"** Best answer: row 14 (Thursday, 4 mm, on time) — the only row where a rule fires and is wrong, so it's the only row carrying information about where the rule's edge is. Row 6 (Monday, 2 mm, late) is also defensible: it is a late Monday sitting just under the rain threshold, so the rain rule alone would have missed it. (Rows 1 and 11 are dry late Mondays too, which is further evidence that Monday is doing work on its own rather than just being wet.)
-4. **"Invent a fifteenth row that turns the strongest pattern into the weakest."** A sunny Monday that's on time takes Monday from 3/3 to 3/4 (75%), level-pegging with rain. One row, and the whole conclusion moves. That fragility is the honest state of a three-row group.
+4. **"Invent a fifteenth row that turns the strongest pattern into a much weaker one."** A sunny Monday that's on time takes Monday from 3/3 to 3/4 (75%), level-pegging with rain. One row, and the whole conclusion moves. That fragility is the honest state of a three-row group.
 5. **The two-condition rule.** `IF day = "Monday" AND rain_mm >= 3` fires on zero rows in this table. Ask what a rule that never fires is worth, and how you'd find such a rule in a rulebook of fifty.
 
 ### If they won't engage today

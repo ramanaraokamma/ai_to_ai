@@ -37,7 +37,7 @@ Have a guess at why, before you read on. Most people guess one of these three:
 
 Every one of those is a reasonable guess and every one is wrong. The real answer is much more boring and far more useful, and by the end of this chapter you will have done it yourself with a **die**.
 
-One more promise. Before you finish, you are going to build a sentence that reads beautifully — proper grammar, sounds exactly like the original story — and is **completely untrue**. And you will be able to point at the two rows on your own tally sheet that did it. Not guess at them. Point at them.
+One more promise. Before you finish, you are going to build a sentence that reads beautifully — proper grammar, sounds exactly like the original story — and is **untrue to the story**. And you will be able to point at the two rows on your own tally sheet that did it. Not guess at them. Point at them.
 
 ![Same question, two different answers](../figures/fig-w29-12-same-question-two-answers.svg)
 *Figure 29.1 — Nothing changed between the two tries. Not the table, not the mood. Only the roll.*
@@ -55,7 +55,7 @@ Pick a starting word. Look up its group. Choose one of the followers. Say it. No
 ![The whole engine, four steps round a circle](../figures/fig-w29-13-generation-loop.svg)
 *Figure 29.2 — Four steps, round and round. That is generation.*
 
-That loop is called **generation**, and it is the entire engine behind every piece of text an AI has ever produced. Not a simplified version. The thing itself.
+That loop is called **generation**, and it is the same loop chatbots use to produce text, one word at a time. Real chatbots work out the chances with a much bigger and cleverer method than a counted table, but the loop itself is the real thing, not a toy.
 
 **🍕 The analogy: a board game with no board.** In Snakes and Ladders, where you go next depends only on where you are now and what you roll. Nobody plans the route. You have no memory of how you got to square 41 and it makes no difference to where you go from there. Generation works exactly like that, with words instead of squares.
 
@@ -89,13 +89,13 @@ For ever. **And nothing is broken.** Greedy makes the same decision on the same 
 
 Two consequences worth having in your head:
 
-**The loop is short.** In our 20-word table it is three words long. Your phone's loop is usually five to twelve words long. Same thing, bigger table.
+**The loop is short.** In our 20-word table it is three words long. Your phone's loop is longer, because its table is bigger. Same thing, bigger table.
 
 **Greedy throws most of the table away.** Starting from `the`, greedy can only ever reach `the`, `bus` and `to`. That is **3 words out of 20**. Seventeen words — `amma`, `market`, `late`, `like`, all of them — can never appear at all, no matter how long you run it. Not "unlikely". **Impossible.**
 
 > **⚠️ Watch out:** greedy can never even *end*. Look at the `bus` group: `to` has 2 marks and the full stop has 1. Greedy always takes `to`, so it never chooses a full stop, so it never stops. That is worth noticing on its own.
 
-**And puzzle one is now solved.** Tapping the middle suggestion on your phone fifteen times **is** greedy generation, done with your thumb. Same decision, same row, every time. That is why it went round in a circle.
+**And puzzle one is now solved.** Tapping the middle suggestion on your phone fifteen times **works like** greedy generation, done with your thumb. Same kind of decision, same kind of row, every time. That is why it went round in a circle. (A real keyboard is more than a fixed table: it can look back further and learns from your typing. But always taking the top suggestion produces the same circling.)
 
 ### 3. Sampling: draw a slip out of a bag
 
@@ -120,7 +120,7 @@ Paper slips are a nuisance to make, so we use a die instead. Number the slips 1,
 > 1. Number the slips in the bag: 1, 2, 3, and so on.
 > 2. Roll the die. If that number is on a slip, **take it**.
 > 3. If you roll a number **bigger than the number of slips**, that roll **does not count**. Cross it out and roll again.
-> 4. If a word has **only one follower**, there is nothing to choose. We call that **forced** — no roll happens at all.
+> 4. If a word has **only one follower**, there is nothing to choose. We call that **forced** — no roll happens at all. A bag whose slips all name the same word (like `i`: eat, eat) has nothing to choose either. Example 2 skips the roll for those; Examples 1 and 3 roll anyway so you can see the bag. The word you get is identical either way; only which die numbers get used up differs, so follow the example's own way when it gives you a list of rolls.
 
 Here are the six bags from last week's table. Every other word is forced.
 
@@ -147,7 +147,7 @@ Real systems have a dial that slides between greedy and sampling. Turn it toward
 
 In today's activity the prompt is **one word**: the word you begin at. That is genuinely all a prompt is.
 
-When you type "write me a poem about rain" into a chatbot, you have not given it an *instruction* the way you would instruct a person. You have given it the **beginning of a text** and asked it to carry on. Everything a chatbot does, it does by continuing.
+When you type "write me a poem about rain" into a chatbot, you have not given it an *instruction* the way you would instruct a person. You have given it the **beginning of a text** and asked it to carry on. Underneath, a chatbot produces its answer by continuing the text, one word at a time. (Chatbots are also trained to follow instructions, so a clear request works far better than a random beginning, but the machinery is still continuing.)
 
 > **Context** — how many previous words the model is allowed to look at when it makes its guess.
 
@@ -160,7 +160,7 @@ Our table has a context of **one word**. When it is standing at `the` and choosi
 
 That gigantic window does real work. It is why a chatbot remembers your name from twenty minutes ago, keeps track of who is doing what in a story, and does not produce the crude circles your table produces.
 
-**And it changes nothing at all about truth, because the world is not in the window.** A big context can keep an answer consistent with the *text so far*. It cannot check *reality*. There is no step anywhere in the procedure where reality gets consulted. That is not a small missing feature. It is a missing category.
+**And it changes nothing at all about truth, because the world is not in the window.** A big context can keep an answer consistent with the *text so far*. It cannot check *reality*. There is no step anywhere in our procedure where reality gets consulted. Real chatbots can be tuned to be right more often, and some look things up, but fluent text still needs checking. That is not a small missing feature. It is a different question from fluency.
 
 ### 5. Hallucination — and where the falseness actually lives
 
@@ -191,7 +191,7 @@ Now read the sentence as a claim about the world. Go back to the original six se
    Amma takes the bus to the shop.      <- Amma
 ```
 
-So the sentence says Amma goes to the market. The story says Amma goes to the **shop**, and it is **I** who go to the market. **The sentence is beautifully written and it is false.**
+So the sentence says Amma goes to the market. The story says Amma goes to the **shop**, and it is **I** who go to the market. **The sentence is beautifully written and it is false, according to the story.**
 
 ![Fluent, and false](../figures/fig-w29-3-false-stamp.svg)
 *Figure 29.6 — Two learned pairs glued together produce a claim the corpus never made. Nothing here is broken.*
@@ -215,7 +215,7 @@ Three things to be precise about, because this word gets thrown around loosely.
 
 And the generator had no way to notice, because at the moment it chose `market`, its entire visible world was the single word `the`. The word `amma` was six tokens back — completely outside the window.
 
-**Why fluency and truth come apart.** The machine is optimising for exactly one thing: *does this word plausibly follow that word?* Truth is a different question — *does this match the world?* — and no step anywhere checks it. **A well-formed false sentence and a well-formed true sentence look identical to a next-word predictor, because they are both well formed.**
+**Why fluency and truth come apart.** The machine is optimising for exactly one thing: *does this word plausibly follow that word?* Truth is a different question — *does this match the world?* — and no step in this procedure checks it. **A well-formed false sentence and a well-formed true sentence look identical to a next-word predictor, because they are both well formed.**
 
 **🍕 The analogy to keep: the confident tour guide.** Imagine a guide who has read thousands of tour scripts and never visited the city. Ask about any building and out comes a fluent, well-paced, confident answer in perfect tour-guide rhythm. Most of it is right, because most tour scripts are right. But when they don't know, they don't stop — they produce more tour-guide-shaped sentences, at exactly the same confidence, in exactly the same voice.
 
@@ -400,7 +400,7 @@ Check: 2 + 2 + 3 + 2 + 1 + 1 + 1 + 1 + 1 = **14** = 15 − 1 ✓
 
 Round and round. And now the part that should stop you:
 
-**Greedy can never say the word `absent`.** Not "rarely". Never. The `is` group always hands back `here`, so `absent` is unreachable from every starting point that goes through `is`. And every starting point goes through `is`.
+**Greedy can never say the word `absent`.** Not "rarely". Never. The `is` group always hands back `here`, so `absent` is unreachable from any starting point that goes through `is`. And every start in this table (`maya`, `rohan` or the full stop) goes through `is`.
 
 Reachable set from `maya`: `{maya, is, here, ., rohan}` — five words out of seven. `dev` and `absent` are **impossible**.
 
@@ -554,7 +554,7 @@ In ordinary life a fluent sentence usually *is* true, so your brain has learned 
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "It got it wrong, so something is broken. Let's fix it." | "Every step obeyed every rule. Nothing is broken. What's missing is a step that never existed." |
+| "It got it wrong, so something is broken. Let's fix it." | "Every step obeyed every rule. Nothing is broken. What's missing is a step our procedure never had." |
 
 Go through all seven steps of sentence 2 and find the one that broke a rule. There isn't one. So what would you repair? There is no broken line. What is missing is a step that asks *"is this true?"* — and adding that step is a genuinely unsolved problem, not an oversight somebody forgot about.
 
@@ -562,7 +562,7 @@ Go through all seven steps of sentence 2 and find the one that broke a rule. The
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "It only did that because our table is tiny. A real one with billions of counts wouldn't." | "A bigger table makes text more *likely-sounding*. Nothing in counting checks reality, so more counting multiplies the fluency and leaves the missing step exactly as missing." |
+| "It only did that because our table is tiny. A real one with billions of counts wouldn't." | "A bigger table makes text more *likely-sounding*. Nothing in counting checks reality, so more counting mainly adds fluency. Bigger models do get facts wrong less often, but they still can, and checking is still needed." |
 
 More context does help with a **different** problem — forgetting. A big model would not lose track of the fact that we were talking about Amma, and would not make silly loops. Concede that clearly. Then restate the limit: **the world is not in the window.**
 
@@ -579,9 +579,9 @@ That is a real and general idea, and it is not only about words. Always taking t
 ## 🌍 Where You've Seen This
 
 1. **A chatbot giving you a different answer when you press "regenerate".** Same bag, different draw. You have just watched sampling happen.
-2. **Your phone keyboard looping when you tap the middle word over and over.** That is greedy, run by your thumb, hitting the same rows and making the same choices.
+2. **Your phone keyboard looping when you tap the middle word over and over.** That is like greedy, run by your thumb, hitting much the same rows and making the same choices.
 3. **A confidently wrong answer about a real person, a date or a page number.** That is a join between two real-looking patterns. The specific, checkable claims are exactly where hallucination bites.
-4. **An AI image with six fingers on one hand.** Same failure, different medium: every local patch looked plausible, and nothing anywhere counted the fingers.
+4. **An AI image with six fingers on one hand.** Same failure, different medium: roughly, every local patch looked plausible, and nothing anywhere counted the fingers. (That is an analogy; image models do not work exactly like the word loop.)
 5. **A "creativity" or "randomness" slider in an AI writing tool.** That slider is the dial between greedy and sampling. Now you know what it is physically doing.
 6. **A friend who tells stories in a very confident voice.** You cannot hear the difference between the parts they remember and the parts they are smoothing over — because their voice does not change either. It is the same problem, and it is why we check things.
 
@@ -615,10 +615,10 @@ wrong to a real person.*
 
 ## 🔑 Remember This
 
-- **Generation is a four-step loop:** where am I, look up the group, pick one, say it. Repeat. That is the entire engine.
+- **Generation is a four-step loop:** where am I, look up the group, pick one, say it. Repeat. That is the loop chatbots use.
 - **Greedy always takes the biggest count**, so it makes the same choice every time, so it walks into a circle and cannot climb out. It also makes most of the table permanently unreachable — 17 of our 20 words.
 - **Sampling makes one slip per tally mark and draws one.** The counts *become* the chances, with no arithmetic. That is why the same question gives two different answers.
-- **A prompt is just the beginning of the text.** Not an instruction. Everything a chatbot does, it does by continuing.
+- **A prompt is the beginning of the text.** Chatbots are trained to treat it as an instruction, but underneath they produce the answer by continuing it.
 - **Our context is one word.** A big chatbot's is about a hundred thousand. More memory fixes forgetting; it does not fix truth, because the world is not in the window.
 - **Score every output twice: reads well, and is it true.** Separately, in that order, one whole column at a time.
 - **A hallucination is not a lie and not a bug.** It happens at a **join** between two real pairs learned in two different situations.

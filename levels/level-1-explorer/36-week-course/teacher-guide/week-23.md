@@ -192,10 +192,13 @@ deleted before the model was born.
 Show this figure and ask one question: *"at which of the three could you still tell whose face it
 is?"* That is the whole argument about resolution, in one image, and it takes twenty seconds.
 
-**Why would anyone throw away 99.6% of a photo on purpose?** Three practical reasons, and it is
+**Why would anyone throw away 99.6% of a photo on purpose?** Four practical reasons, and it is
 worth being able to say them: 12 million numbers per photo × 60 photos is far too much for a web
-browser to hold; small pictures train in seconds instead of hours; and most fine detail genuinely
-does not help tell a sock from a glove.
+browser to hold; small pictures train in seconds instead of hours; most fine detail genuinely
+does not help tell a sock from a glove; and, the main one, Teachable Machine builds on a ready-made
+network (MobileNet) that takes fixed 224 × 224 input, so every photo must be made that size. (Training
+is quick mostly because only the last part of that network is trained, so reasons 1 and 2 explain why
+the size is sensible rather than why it is exactly 224.)
 
 *You do not teach the shrinking arithmetic today.* Next week is entirely about that. Today you only
 need the pixel **counts**, which is straight multiplication.
@@ -689,8 +692,8 @@ it back into a full grid of numbers. The grid is always what gets looked at.
 
 **"Do our eyes have pixels?"**
 Sort of, and this is where it gets genuinely interesting. Your eye has about 100 million light
-detectors, so in a rough sense yes. But they are not in a tidy grid — they are packed densely in the
-middle of your vision and thinly at the edges — and they do not all report at the same time, and a
+detectors, so in a rough sense yes. But they are not in a tidy grid — they are spread unevenly, with the ones
+that see sharp detail crowded into the middle of your vision — and they do not all report at the same time, and a
 lot of processing happens in your eye before anything reaches your brain. So: same basic idea, a
 completely different arrangement. A camera records everywhere evenly. Your eye records the middle
 extremely well and mostly guesses the rest.
@@ -961,7 +964,7 @@ is 1 pixel in 243. *How many numbers in a colour photo of the same size?* Three 
 
 **B4.** (a) **0** greys. (b) He lost the interesting part of the exercise: he never sees the boundary squares or what a camera does at an edge, and the picture is unlike any real photo. (c) **No, it is not wrong**; it is valid but unrealistic, since real shapes essentially never line up with the pixel grid. (d) Add a diagonal or a curve, or shift the letter half a square sideways.
 
-**B5.** Three faults (any three, in any order):
+**B5.** (The workbook question now tells the student the drawing is dark pencil eyes on blank paper with a blank top row; without that, the inversion fault cannot be known from the grid alone.) Three faults (any three, in any order):
 
 | Fault | Why it's a fault | The fix |
 |---|---|---|

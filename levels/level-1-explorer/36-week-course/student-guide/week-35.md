@@ -37,7 +37,7 @@ Remember what those four numbers do: they add up to a hundred, every single time
 ![Two sets of four numbers, one voice](../figures/fig-w35-12-ambiguous-item.svg)
 *Figure 35.1 — Same answer, completely different situation. Your app cannot currently tell them apart.*
 
-On the left, the numbers are `96, 2, 1, 1`. The model genuinely knows. On the right they're `26, 25, 25, 24`. The model has no idea at all.
+On the left, the numbers are `96, 2, 1, 1`. The model strongly prefers one class. On the right they're `26, 25, 25, 24`. The model has no strong preference.
 
 And your app says **RECYCLING** both times, in exactly the same voice, with exactly the same certainty in its tone.
 
@@ -132,7 +132,7 @@ That is the entire idea. No new AI. Just an `if`.
 ![The finished board: the threshold decision](../figures/fig-w35-6-board-threshold.svg)
 *Figure 35.4 — One diamond. That diamond is the difference between a machine that always answers and a machine you can trust.*
 
-**Why 70?** No reason. You picked it. And that's an honest answer. If you move it to **85**, the app says "not sure" more often, and it's wrong less often when it *does* answer. If you move it to **50**, it answers almost everything and more of those answers are rubbish.
+**Why 70?** No reason. You picked it. And that's an honest answer. If you move it to **85**, the app says "not sure" more often, and it's usually wrong less often when it *does* answer. (Strictly, you should check a threshold on fresh photos, not the same 40 you used to pick it.) If you move it to **50**, it answers almost everything and more of those answers are rubbish.
 
 That's a trade, and it's yours to make. What matters is that you **write down that you made it.**
 
@@ -317,7 +317,7 @@ Not "50%". When you subtract two percentages you get points.
    anyone using this in the garage or in the evening gets bad answers
 ```
 
-And the sentence that earns the most credit: **nothing broke.** No bug, no crash. The model learned exactly what it was shown.
+And the sentence that earns the most credit: **nothing broke.** No bug, no crash. The model learned exactly what it was shown. Ten photos per batch is small, so call daylight skew the likely cause; the retrain-and-rerun is how you find out.
 
 **Step 5 — the priced fix, with the algebra shown.** Aisha decides she wants lamplight to be **at least a quarter** of her training photos, and she's keeping all 132 daylight ones.
 
@@ -409,7 +409,7 @@ Twenty minutes, three stations, visible clock.
 
 ### Station 1 — the app, Route B (every block is plain Scratch)
 
-Build it in **this order**. The threshold goes in **first**, before the four behaviours, so it can never become an afterthought.
+Build it in **this order**. The threshold goes in **first**, before the four behaviours, so it can never become an afterthought. (Pick any sounds you like from the Sounds tab; the sound names and extension block names here may differ slightly from your version of Scratch or Stretch3.)
 
 ```
 when green flag clicked
@@ -582,7 +582,7 @@ Why it actually matters: "50%" of *what*? Of 90? Of 40? Of 100? The sentence has
 | "I'll leave the lamplight number off the poster for now." | "40% under a lamp — I measured it — and here's what fixing it costs." |
 | Assumes the gap makes you look bad. | The gap makes you look like the only person in the hall who checked. |
 
-Think about which booth you'd believe. And remember the chain: **nothing broke**. Your model learned exactly what it was shown. Bias is the *normal* result of learning from examples, not bad luck and not anybody being unkind.
+Think about which booth you'd believe. And remember the chain: **nothing broke**. Your model learned exactly what it was shown. Skewed examples produce skewed results, and the skew usually starts with how the data was collected: not bad luck and not anybody being unkind.
 
 ---
 
@@ -592,7 +592,7 @@ Think about which booth you'd believe. And remember the chain: **nothing broke**
 2. **Spam folders.** A borderline email doesn't get deleted — it gets moved to a folder where you can check. That's the same design: when unsure, don't commit.
 3. **Autocorrect suggesting instead of replacing.** Some corrections happen silently; some show you a little popup. Confidence is deciding which.
 4. **A weather forecast saying "40% chance".** Notice they *report the uncertainty* rather than hiding it. Then notice how many people still say "the forecast was wrong."
-5. **Face unlock refusing in the dark.** That is a measured bias gap, in a product, in your pocket. Somebody at that company shot the equivalent of your `new-lighting` batch.
+5. **Face unlock refusing in the dark.** That can be a bias gap, in a product, in your pocket (some phones use infrared, so the cause varies by product). If it is, nobody at the company covered the equivalent of your `new-lighting` batch.
 6. **Any product with a "not recommended for..." line on the box.** That's a DO NOT USE sign written by lawyers instead of marker pen. Yours is more useful, because yours has a number in it.
 
 ---
@@ -629,7 +629,7 @@ to 36 and this is the middle of it. No dashed boxes anywhere. The lit threads ar
 - **Check the units before you debug anything else.** `61` or `0.61` — look at the raw number once with a `say` block.
 - **`other` is a class the model predicts. "Not sure" is your app refusing.** Five states, not four, and every one changes something visible.
 - **A bias report is a gap in points, a named group, a chain to a countable number, and a priced fix.** Four numbers is not a report.
-- **Nothing broke.** The model learned exactly what it was shown. That's why bias is the default outcome, not the unlucky one.
+- **Nothing broke.** The model learned exactly what it was shown. That's why skewed examples give skewed results, and the skew usually starts with how the data was collected.
 - **Show your model failing on purpose.** Anyone can show it working. The failure is what makes people believe the rest.
 - **The two segments people cut when they run over — *how it learned* and *where it fails* — are the two worth the most.** Cut the others.
 

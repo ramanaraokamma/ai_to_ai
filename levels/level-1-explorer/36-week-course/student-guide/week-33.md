@@ -173,7 +173,7 @@ His results, on 48 photos the model had never seen:
 ![My audit results, with the worst group circled](../figures/fig-w33-3-audit-results-bars.svg)
 *Figure 33.5 — Read the row of training counts along the bottom: 84, 22, 14, 0. Now look at the bars above them.*
 
-**The bars go down in the same order as the counts.** 84 → 91.7%. 22 → 66.7%. 14 → 58.3%. 0 → 33.3%. Your grid will have different numbers and it will almost certainly have the same *shape*.
+**The bars go down in the same order as the counts.** 84 → 91.7%. 22 → 66.7%. 14 → 58.3%. 0 → 33.3%. Your grid will have different numbers and it will probably have the same general *shape*.
 
 **Which of those five numbers would a company put on its website?** The 91.7%, or maybe the 62.5%. Both are completely true sentences.
 
@@ -183,7 +183,9 @@ His results, on 48 photos the model had never seen:
 
 **Then the trace.** One sentence, four parts, in this exact shape:
 
-> *"Lamplight scored 33.3% **because** only **0** of my **120** training photos were taken in lamplight."*
+> *"Lamplight scored 33.3% **probably because** only **0** of my **120** training photos were taken in lamplight."*
+
+Say "probably", because this is your best explanation, not yet proof: it is one model, twelve test photos per group, and lamplight can be hard in other ways too (grainy photos, orange colour). The retest in the next step is what checks it.
 
 **Then the price.** This is the only algebra in the whole of Level 1, and it is five lines.
 
@@ -232,7 +234,7 @@ Every dataset is made of somebody's work, somebody's face, or somebody's life. Y
 | **Somebody gave permission** | 12 photos where your brother held the object | Name him, use it only for what you agreed, delete it if he asks |
 | **You just took it** | 300 images pulled off a search engine | The hard case. *"It was on the internet"* is not an answer. |
 
-Why the third is genuinely hard: a human artist who studies 500 paintings and develops a style owes nobody anything — that is how art has always worked. A system trained on 500 paintings can produce work "in the style of" that artist thousands of times an hour, competing with them, without ever naming them. **Is that the same activity at a bigger scale, or a different activity?** Reasonable people disagree, real court cases are running right now, and nobody expects you to settle it at eleven.
+Why the third is genuinely hard: a human artist who studies 500 paintings and develops a style is generally thought to owe nobody anything — that is how art has always worked. A system trained on 500 paintings can produce work "in the style of" that artist thousands of times an hour, competing with them, without ever naming them. **Is that the same activity at a bigger scale, or a different activity?** Reasonable people disagree, real court cases are running right now, and nobody expects you to settle it at eleven.
 
 You *are* expected to notice that somebody is there. **The trap is not getting the answer wrong. The trap is not seeing anyone.**
 
@@ -320,7 +322,7 @@ A model with three classes: **unripe · ripe · overripe**. Trained on **150 pho
 
 **Step 4 — TRACE.**
 
-> *"Inside the fridge scored 30.0% because 0 of my 150 training photos were taken inside the fridge."*
+> *"Inside the fridge scored 30.0% probably because 0 of my 150 training photos were taken inside the fridge."*
 
 **Step 5 — PRICE the fix.** Target: fridge photos are 1 in 5 of the training set, which is 20%.
 
@@ -386,7 +388,7 @@ A model with three classes: **drive · pull · sweep**. Trained on **200 photos*
 
 **Step 4 — TRACE.**
 
-> *"Left-handed batters scored 25.0% because 0 of my 200 training photos showed a left-handed batter."*
+> *"Left-handed batters scored 25.0% probably because 0 of my 200 training photos showed a left-handed batter."*
 
 **Step 5 — PRICE.** This time the target is stricter: left-handed photos should be **1 in 4**, which is 25%.
 
@@ -446,7 +448,7 @@ A model with three classes: **paper · plastic · food waste**, for the bins at 
 
 **Step 4 — TRACE.**
 
-> *"Inside a bag scored 16.7% because 0 of my 120 training photos showed something inside a bag."*
+> *"Inside a bag scored 16.7% probably because 0 of my 120 training photos showed something inside a bag."*
 
 **And a second finding from the confidence column.** The highest confidence on a *wrong* answer was **96%** — a wet food container that the model called `paper`, with 96% confidence.
 
@@ -664,7 +666,7 @@ plain with its full range, weeks 31 to 33. One dashed box is left: YOUR OWN AI. 
 - **One attempt per photo, in pen.** Re-dropping photos until you like the answer measures your patience, not your model.
 - **Report the gap in percentage points**, with the subtraction visible, and put the per-group table above the overall number. The overall number is a property of your *test*.
 - **Open the envelope and report the comparison either way.** A person who publishes only their correct predictions has a record worth nothing.
-- **Every gap traces to a count.** *"[Group] scored [x]% because only [n] of my [total] training photos were [that]."*
+- **Every gap traces to a count.** *"[Group] scored [x]% probably because only [n] of my [total] training photos were [that]."*
 - **The fix is a number of photographs, with algebra and a named retest.** A fix you did not measure is a hope.
 - **You can create misinformation out of nothing but true sentences**, by choosing which true sentence to say loudest. That is why the warning sign is the boldest thing on the poster.
 

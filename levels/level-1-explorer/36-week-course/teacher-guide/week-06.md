@@ -435,7 +435,7 @@ Set the target out loud: **as many rows as exist, and stop at minute 36 no matte
 > the paper table and they type. Twice as fast, and it forces them to say every value, which catches
 > faults last week's homework missed.
 
-**Do this:** at minute 36, stop the typing. Click an empty cell three rows below the data. Say the cell's name aloud as you click it: "I am in D34."
+**Do this:** at minute 36, stop the typing. Click an empty cell two rows below the data. Say the cell's name aloud as you click it: "I am in D33."
 
 **Say this:**
 
@@ -626,7 +626,7 @@ Cut the spreadsheet entirely and do the averages on paper — 30 additions is no
 
 Three extensions, in increasing order of difficulty:
 
-1. **Two pages, one number.** Find the same statistic on two different pages. Do they cite the same source? Usually they cite each other, in a circle, and the original never appears. Ask them to draw the circle.
+1. **Two pages, one number.** Find the same statistic on two different pages. Do they cite the same source? Often they cite each other, in a circle, and the original never appears. Ask them to draw the circle.
 2. **Design the stirred sample.** "You want the real favourite sport of all 800 students, and you get one hour and no help. Write the plan." Then the sting: *"Name one thing that is still wrong with your plan."* Every plan has something. A student who finds their own plan's flaw has arrived somewhere real.
 3. **Write the card for the data you did not collect.** What would a card look like for the *missing* thirty rows — the weekend meals, the days they forgot? Naming the shape of an absence is genuinely hard and genuinely useful.
 
@@ -693,7 +693,7 @@ Extension questions, in order of difficulty:
 
 1. "Your card says thirty rows. Write the card for the thirty rows you *did not* collect — the weekends, the days you forgot. What would be in it?"
 2. "Design a stirred sample of our school in one hour with no help. Then name one thing still wrong with your plan." *(Every plan has one. Finding your own is the skill.)*
-3. "Find the same statistic on two web pages. Do they cite the same original source, or each other?" *(Usually each other, in a circle, with the original nowhere.)*
+3. "Find the same statistic on two web pages. Do they cite the same original source, or each other?" *(Often each other, in a circle, with the original nowhere.)*
 4. "Dataset A was collected at a sleep clinic. Invent a question for which Dataset A is the **better** dataset." *(A good answer: 'how well do treatments at this clinic work?' Biased for one question is perfect for another — that is a genuinely sophisticated idea and it is available to a strong 11-year-old.)*
 5. "Your average is 16.4 minutes. If I deleted your single longest meal, what happens to it — and what does that tell you about how solid the 16.4 is?" *(It moves noticeably, because thirty rows is small. That felt fragility is the beginning of statistics.)*
 

@@ -85,12 +85,12 @@ as private.
 > device, and often exactly where.
 
 ![What a photo file carries besides the picture](../figures/fig-w32-3-photo-metadata.svg)
-*Figure 32.1 — You shared one thing. You gave away six.*
+*Figure 32.1 — You shared one thing. The file also carried six hidden notes of its own.*
 
 The analogy that works with an eleven-year-old: you post a photo of yourself in your garden. You are
 thinking about your face. The photo also contains your house number on the gate, your school
 uniform, a neighbour's number plate, a reflection in the window, and — attached invisibly to the
-file — the exact GPS coordinates and the time. **You shared one thing and gave away nine.**
+file — the exact GPS coordinates and the time. **You shared one thing and gave away eleven** (seven things visible in a typical garden photo, four attached to the file).
 
 **What about models — do they remember?** Two honest answers, and the student will ask, so have both:
 
@@ -269,7 +269,7 @@ best question of the wrap. Do not quiz them on the threads; the map is orientati
 
 | Minutes | Segment | What happens |
 |---|---|---|
-| 0–8 | 🪝 **Hook** — The garden photo | One posted photo, nine things given away |
+| 0–8 | 🪝 **Hook** — The garden photo | One posted photo, eleven things given away |
 | 8–26 | 🧠 **Concept** — Three ways a surface fools you | Personal data and metadata · fakes and provenance · over-trust |
 | 26–40 | 🔍 **Worked Example** — The athlete video | Run all four provenance checks out loud on one scenario |
 | 40–60 | 🎲 **Activity** — Three rounds | Re-identification · metadata · fact-check three answers |
@@ -294,13 +294,13 @@ best question of the wrap. Do not quiz them on the threads; the map is orientati
 > and longitude to about five metres, the exact date and time, the make and model of the phone, and
 > sometimes the owner's name.
 >
-> You shared one thing. You gave away nine."
+> You shared one thing. You gave away eleven."
 
-**Do this:** write the number **9** on the board and circle it. Nothing else.
+**Do this:** write the number **11** on the board and circle it. Nothing else.
 
-**Ask this:** *"Which of those nine did you agree to share?"*
+**Ask this:** *"Which of those eleven did you agree to share?"*
 
-- **Hoped-for answer:** only the face. Say: "Right. One out of nine. And the other eight are the
+- **Hoped-for answer:** only the face. Say: "Right. One out of eleven. And the other ten are the
   interesting ones."
 - **If they say "well, everyone knows photos have that stuff":** press gently. "Do they? Show me how
   to look at it." Almost nobody can. That is the gap between knowing something abstractly and being
@@ -652,7 +652,7 @@ habit you are actually installing.
 
 From your phone, yes. From everywhere, almost never. If you posted it, somebody may have saved it,
 a service may keep backups for months, and if it was ever used to train a model, the model has
-already learned from it and cannot un-learn it on request. The useful mental model: **posting is
+already learned from it and usually cannot un-learn it on request. The useful mental model: **posting is
 not like saying something, it is like printing something.** Deleting takes back your copy, not
 theirs.
 
@@ -717,7 +717,7 @@ checkpoint, and the last checkpoint is not allowed to be asleep.**
 | Round 1 uses a real student's details | It seems more vivid | Use the supplied fictional person. Real details in this exercise land as an accusation and the lesson is lost |
 | The photo has no metadata | A chat app stripped it in transit, or location was off | Say what happened — it is a genuine finding. "This app removed it, which is good for me and bad for my demo." Then fall back to Figure 32.1 |
 | It turns into "AI is bad" | The whole week is failure modes | Spend a full minute on good use: drafting, brainstorming, explaining, rewriting. The rule is *drafting yes, deciding no*, not *never* |
-| The student fact-checks by asking an AI | It is right there and it sounds authoritative | Name the trap: it will confirm itself in the same confident voice. Two independent sources that do not copy each other, or it does not count |
+| The student fact-checks by asking an AI | It is right there and it sounds authoritative | Name the trap: it may well confirm itself in the same confident voice. Two independent sources that do not copy each other, or it does not count |
 
 ---
 
@@ -843,7 +843,7 @@ times below are my own estimates, so adjust them to your student.
 | 🧩 **Puzzle of the Week** | Eight students, four harmless columns: who is identified by which pair (Figure W32.2) | Stretch | 10 min |
 | 🤔 **Think Deeper** | Two paragraph questions: genuinely anonymous data; which harm is worse | Stretch | 10 min |
 | 🛠️ **Build It** | Metadata investigation of three real photos, then the provenance card | Stretch, but the card is expected | 15 min |
-| 🎨 **Draw It** | One photo you might post, nine things given away (Figure W32.3) | Stretch | 10 min |
+| 🎨 **Draw It** | One photo you might post, everything it gives away (Figure W32.3) | Stretch | 10 min |
 | 📊 **Self-Check** | Tick seven "I can…" rows | Core | 2 min |
 
 B1 and B2 are the two heaviest pieces, so if time is short, protect those and the card.
@@ -891,7 +891,7 @@ word for working out who an "anonymous" record belongs to is **re-identification
 
 - **(a)** fails because generators fix their visible flaws every few months and your eyes do not get an
   upgrade. "I can tell" is exactly how people get fooled.
-- **(b)** fails because it will answer in the same confident voice using the same machinery. You need a
+- **(b)** fails because it may answer in the same confident voice using the same machinery. You need a
   source that does not come from the thing you are checking.
 - **(d)** fails because sharing it *is* spreading it. Adding "is this real?" does not undo the reach —
   plenty of people will only read the video.
@@ -927,8 +927,8 @@ gets ignored.
 
 Five different kinds of hidden thing: **(1)** the date and time, to the minute · **(2)** the device —
 make and model of the phone · **(3)** the camera settings — exposure, flash, which lens · **(4)** the
-location, latitude and longitude, often to about five metres · **(5)** the edit history — whether it was
-cropped, filtered or rotated.
+location, latitude and longitude, often to about five metres · **(5)** the edit history — often just that it was
+edited, and with which app.
 
 Also acceptable in place of one of those: the owner's name (if the phone fills it in), or the file's
 original filename.
@@ -996,7 +996,7 @@ right next door to the correct one. **Specific facts are exactly where invention
 freely, because a specific fact is rare in the training text and its *shape* is trivially easy to
 fake.**
 
-**"Why couldn't you just ask the AI if it was sure?"** — because it will confirm itself in the same
+**"Why couldn't you just ask the AI if it was sure?"** — because it may well confirm itself in the same
 confident voice, using the same machinery that produced the error. You need a source that does not
 come from the thing you are checking.
 
@@ -1087,7 +1087,7 @@ and past arrival times are enough.
 **No — strong evidence, not proof, and the distinction is the hardest idea in the week.**
 
 What it *does* tell you: for an event this big about a famous person, silence everywhere else after
-eleven minutes is very hard to explain if the video is real. Real news propagates fast and from
+eleven minutes is hard to explain if the video is real. Real news propagates fast and from
 several directions at once.
 
 What it does *not* tell you: absence of evidence is not evidence of absence. It is possible, rarely,
@@ -1219,7 +1219,7 @@ email attachment. "None" written in a cell is a result, not a blank, and should 
 
 **"One thing you now know about yourself that you did not put in the picture on purpose"** — full marks
 for anything specific: *"it says I was in the park at 16:42 on 14 March"*, *"it names my phone model"*,
-*"it shows I cropped it"*.
+*"it shows I edited it"*.
 
 **The card.** Full marks for four checks in your own words, plus the fifth question:
 
@@ -1246,7 +1246,7 @@ Marked on three things:
   passer-by, a window
 
 If everything is inside the picture, the student has drawn the hook and missed the twist: the most
-revealing part of that photo is the part you cannot see. Aim for nine labels in all.
+revealing part of that photo is the part you cannot see. Aim for at least ten labels in all.
 
 ---
 
@@ -1262,7 +1262,7 @@ fact-checking to B2, "when it is fine to trust" to B5(a) and the Concept 3 row b
 
 | Where | Question | Answer to steer toward |
 |---|---|---|
-| Hook | "Which of those nine did you agree to share?" | One — the face. The other eight went with it. |
+| Hook | "Which of those eleven did you agree to share?" | One — the face. The other ten went with it. |
 | Concept 1 | "Give me something about you that isn't personal at all." | Anything true of nearly everybody. Which is also why it is useless in a dataset. |
 | Concept 2 | "How would you tell a fake photo from a real one?" | You cannot, reliably, by looking. Check where it came from instead. |
 | Concept 3 | "One question it's fine to trust an AI on, one it isn't." | Fine: a limerick, a brainstorm, a summary of text you also have. Not fine: a dose, a page number, last Tuesday's local score. |

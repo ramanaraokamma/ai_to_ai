@@ -51,7 +51,7 @@ difference decides how much you should trust each one.
 *Figure 30.1 — The comparison this whole lesson is building towards. Read it row by row.*
 
 The row that matters most is the fourth one. **When a rule-based bot doesn't know, it says so. When a
-learned generator doesn't know, it invents.** That single asymmetry is worth an hour of anybody's time,
+learned generator doesn't know, it tends to invent.** That single asymmetry is worth an hour of anybody's time,
 and the only way an 11-year-old will believe it is if they build both machines themselves and watch each
 one fail in front of them.
 
@@ -140,7 +140,7 @@ Under **trigrams**, follow it through:
   three-way tie**, broken by whichever appeared first in the corpus: `market`.
 - Context `(the, market)` occurs once, followed by `.`. Forced.
 
-Output: **`the bus to the market .`** — and it *ends*. One extra word of memory broke the loop.
+Output: **`the bus to the market .`** — and it *ends* (because our rule is to stop at the first full stop). One extra word of memory broke the loop on the way there. If you let it run past the full stop it carries on from `market .` to `amma` and circles the same route again.
 
 So more context genuinely fixes forgetting and loops. Now the sting, which is the honest part:
 
@@ -578,7 +578,7 @@ spent.
 > "Now ask it five different questions in a row without stopping the program. Go.
 >
 > If it gives you the same answer to all five, or falls back on everything after the first one, you have
-> the repeat bug. There are exactly three things that cause it. Find yours."
+> the repeat bug. There are three common things that cause it. Find yours."
 
 The three causes, which the student diagnoses rather than being told:
 
@@ -812,7 +812,7 @@ never fully goes away.
 
 Both, usually in the same product, and knowing that is genuinely useful. A bank's chat window very often
 has a rule-based layer in front that handles the twenty most common questions with hand-written,
-lawyer-approved answers — because for "what's my balance?" you want the *exact* right words every time,
+carefully checked answers — because for "what's my balance?" you want the *exact* right words every time,
 not a fluent guess. Behind that sits something learned, for the questions the rules don't cover. And
 usually there is a third path: a button that gets you a human. That layered design exists precisely
 because the two kinds of system fail differently, which is what you proved today.
@@ -1278,9 +1278,11 @@ The reference set, for the five-trigger PizzaBot above:
 **Score: 7 sensible out of 10.** Three failures: two gaps (rows 1 and 3) and one false match (row 8).
 
 **The observation that matters, and it must be drawn out explicitly:** in **all three** failures the
-student could tell instantly that something had gone wrong. Rows 1 and 3 announce the failure in words.
-Row 8 gives opening hours to a question about a box, which is visibly off-topic. **Every failure was
-visible.** Set that against Week 29's score sheet row 2, where the failure was completely invisible.
+student could tell at once that something had gone wrong. Rows 1 and 3 announce the failure in words.
+Row 8 gives opening hours to a question about a box, which is visibly off-topic. **Every failure in this
+log was visible.** Be honest about the limit: three failures from one hand-picked log is not a law, and a
+plausible on-topic wrong answer (or a wrong price the builder typed) could slip past a newcomer. Say
+"usually easier to spot", not "always". Set that against Week 29's score sheet row 2, where the failure was completely invisible.
 
 **Fixes for the three failures, if there is time:**
 - Row 1: add a trigger `hello` with reply "Hello! Ask me about toppings, price, delivery or opening time."
@@ -1341,11 +1343,11 @@ The four groups needed:
    (to, the)      -> market  (a 1-1-1 tie, broken by first appearance in the corpus)
    (the, market)  -> .       (forced)
 
-   OUTPUT:  the bus to the market .      -- and it ENDS.
+   OUTPUT:  the bus to the market .      -- and it stops (our rule: stop at the first full stop).
 ```
 
 Compare with bigram greedy, which produced `the bus to the bus to the bus to …` forever. **One extra
-word of memory broke the loop.** That is a genuine, checkable win for more context.
+word of memory broke the loop** before the full stop. That is a genuine, checkable win for more context, with a caveat: it ends only because we stop at the first full stop. Run it on and it goes `market . amma takes the bus to the market .` round again, because greedy over a finite table still cycles.
 
 **Does it fix the hallucination? No.** Trace `amma takes the bus to the market .` under trigrams:
 
@@ -1394,12 +1396,12 @@ wearing a different hat, and it is the honest reason nobody builds language mode
 | Worked ex. | "Type 'what is the moon made of' — what happens?" | Nothing at all. It walks the whole list, finds nothing, and has nothing to say. That silence is why stage 3 exists. |
 | Worked ex. | "Why is `change i by 1` outside the if?" | So `i` advances even when a row doesn't match. Inside the if, a non-matching row leaves `i` unchanged and the same row is checked forever — Scratch looks frozen. |
 | Activity | "How many of your ten did it get sensibly right?" | 7 of 10 on the reference set. The number is not the point; the three failures are the data. |
-| Activity | "For every failure, could you tell instantly?" | Yes, all three. Two announced themselves in words; the third gave opening hours to a question about a box. |
+| Activity | "For every failure, could you tell instantly?" | Yes, all three (in this log; in general, "usually"). Two announced themselves in words; the third gave opening hours to a question about a box. |
 | Activity | "Could you tell instantly with last week's row 2?" | No. It read perfectly and only checking the corpus revealed it. That contrast is the entire week. |
 | Wrap | "Which machine is more dangerous?" | The generator. Not because it is wrong more often, but because its failures are invisible and its voice does not change. |
 | Harder 1 | "Which of `open` / `opening time` can never fire?" | `opening time`, if `open` sits above it — any question containing "opening time" also contains "open", so row `open` always wins. |
 | Harder 3 | "Can a visitor tell which part of the hybrid bot spoke?" | No. And that is exactly the problem with hand-written scaffolding around a generated core, which is how a great many real products are actually built. |
-| Harder 4 | "Trigram greedy on our table?" | `the bus to the market .` — it terminates. See Part F for the full trace, and for why it still does not prevent the hallucination. |
+| Harder 4 | "Trigram greedy on our table?" | `the bus to the market .` — it reaches a full stop and we stop there; run on, it circles again. See Part F for the full trace, and for why it still does not prevent the hallucination. |
 
 ---
 

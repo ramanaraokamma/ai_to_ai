@@ -154,7 +154,7 @@ tally this by hand with no magic at all. Today you only need to say the sentence
 > promise.
 
 When a model classifies something, it doesn't produce one answer. It produces a number for every
-option and they add up to 100%.
+option and (in a classifier like this) they add up to 100%.
 
 ![A confidence score is a preference, not a promise](../figures/fig-w03-5-confidence-not-correctness.svg)
 
@@ -166,8 +166,8 @@ different weeks this year:
 > **A confidence score is how strongly the model prefers a class. It is not the probability that the
 > model is right.**
 
-A model can be 99% confident and completely wrong. It happens most often on inputs unlike anything it
-trained on — which is exactly when you most need it to hesitate, and exactly when it doesn't.
+A model can be 99% confident and completely wrong. It happens often, and especially on inputs unlike anything
+it trained on — which is exactly when you most need it to hesitate, and exactly when it doesn't.
 
 **The concrete version for today:** Quick, Draw! doesn't show you numbers, but it does something
 better — it calls out its guesses **in order**. *"Is it a circle? … is it a wheel? … it's a clock!"*
@@ -203,8 +203,8 @@ None of those generate anything.
 **Misconception 2: "AGI is nearly here / it's already here."**
 
 Not a silly belief — some serious people expect it eventually — but it is not true today. The honest
-line: *"There is not one system anywhere that can do a second job it wasn't built for. Not one. And
-whether there ever will be is genuinely argued about by people who know far more than I do."*
+line: *"No system anywhere does everything a person can do, and chatbots are the hard case we look at in
+Week 28. And whether there ever will be is genuinely argued about by people who know far more than I do."*
 
 ### How deep to go — and where to stop
 
@@ -331,8 +331,9 @@ experiment with a written conclusion.
 > at Go? It couldn't play checkers. Couldn't tell you what a Go board is made of. Ask it 'are you
 > tired?' and it would reply with a Go move, because a Go move is the only thing it can produce.
 >
-> **Every single AI system that exists today is that chef.** Superb at one thing. Blank at everything
-> else. Not one exception, anywhere in the world, right now.
+> **Almost every AI system you will meet this year is that chef.** Superb at one thing. Blank a small
+> step outside it. No system anywhere does everything a person can. (Chatbots are the hard case, and
+> we come back to them in Week 28.)
 >
 > And today you're not going to take my word for it. You're going to prove it, on a real system, with
 > your own hands, in about twenty minutes."
@@ -407,7 +408,7 @@ Wait for it. The answer is **two**.
 > switching between them the way you do. Making toast, then comforting a friend, then learning to
 > juggle, then arguing about cricket.
 >
-> **It does not exist.** Not a prototype, not a secret one, not nearly. Zero."
+> **It does not exist.** Not a prototype, not a secret one. No system today can do everything a person can."
 
 **Do this:** Show Figure 3.2. Point at the dashed knife.
 
@@ -525,10 +526,10 @@ Give them thirty seconds. If they're stuck, offer these as a menu but make them 
 
 | Sideways task | What actually happens | What it proves |
 |---|---|---|
-| Draw **two things at once** (a cat *and* a hat) | It only ever scores against the one prompt it gave. It ignores the other thing entirely. | It isn't looking at your picture. It's matching against one target word. |
-| Draw the prompt **upside down** | Usually fails completely, even on a good drawing | It learned what people's *strokes* look like, not what the object is |
-| Asked for "dog", draw a **cat** | It guesses "dog" wrongly for a while, then goes silent. **It never says "cat".** | It cannot volunteer what it actually sees. It only checks against the one prompt. |
-| Asked for "house", **write the word** H-O-U-S-E | "zigzag", "squiggle" | Meaning is completely outside its world |
+| Draw **two things at once** (a cat *and* a hat) | Record every guess. It was built for one doodle at a time, so two objects usually muddle it. | It was not built to describe a picture with two things in it |
+| Draw the prompt **upside down** | Often fails, even on a good drawing (repeat with several drawings; one try is a hint) | A hypothesis: it learned what people's *strokes* usually look like, not what the object is |
+| Asked for "dog", draw a **cat** | Record every guess. It may well call out "cat" at some point: it guesses across a menu of about 345 words, and the round ends when a guess matches the prompt. | Whatever happens, it can only choose from a fixed menu. Observation in one session: it did not say "cat"; do not promise this result |
+| Asked for "house", **write the word** H-O-U-S-E | "zigzag", "squiggle" (as seen in one session) | Letters and meaning are outside its world |
 | Asked for "sun", draw a **perfect circle** | "circle", "clock", "donut" — no sun until you add rays | It knows what people's sun *drawings* look like, not what a sun is |
 
 **Ask this after the failure:**
@@ -539,14 +540,14 @@ Give them thirty seconds. If they're stuck, offer these as a menu but make them 
   lines for one particular word."*
 - **The model answer to build towards, and it is worth writing down:**
 
-> **"Quick, Draw! does one job: given some pen strokes and one target word, it scores how closely
-> those strokes match the strokes other people drew for that same word. It is not recognising
-> objects."**
+> **"Quick, Draw! does one job: given some pen strokes, it ranks the words on a fixed menu of about
+> 345 by how closely the strokes match what other people drew for each word, and the round is won
+> when its guess matches the prompt. It can't name anything off the menu."**
 
 - **If they say "it's just bad at kangaroos":** the best wrong answer available, and worth taking
   seriously. *"Maybe. How would we tell the difference between 'bad at kangaroos' and 'only matching
-  strokes'?"* → the cat test settles it: a system that recognises objects would say *"that's a cat"*.
-  This one says nothing at all, because *cat* isn't the word it was checking.
+  strokes'?"* → you cannot settle it from one round; draw a few things off its menu and a few on it, and compare.
+  The firm lesson is the fixed menu: it can never say "I don't know" or name something off the list.
 
 ---
 
@@ -591,9 +592,10 @@ Was that film real? Answer with just yes or no.
 
 > **"It just changed its story. What does that tell you?"**
 
-- **The answer:** it never knew in the first place. It produced text that *looked like* the right kind
-  of text. When challenged, it produced different text that also looked right. Neither answer came
-  from knowing anything.
+- **The answer:** its first answer was not reliable evidence that it knew. It produced text that
+  *looked like* the right kind of text. When challenged, it produced different text that also looked
+  right. (Honest caveat: a flip does not prove it knew nothing; models can have partial knowledge and
+  are easily steered by a challenge. The safe conclusion is "do not trust the first answer".)
 
 **Say this:**
 
@@ -821,7 +823,7 @@ moved into DEFEND THESE.
   rain", a photo app's face-match suggestions, a spam folder's "probably spam" banner. Then ask:
   **"70% chance of rain — is that a confidence score or a probability? How could you tell?"**
   (Genuinely subtle. Weather forecasts are actually *calibrated* — over many days, it really does rain
-  on about 70% of the 70% days. Model confidence scores usually are not calibrated at all. That is a
+  on about 70% of the 70% days. Model confidence scores are often not checked or calibrated. That is a
   distinction most adults have never drawn.)
 
 ### If you have 2–6 learners
@@ -860,7 +862,7 @@ designed on a question where the plausible answer and the true answer are differ
 
 Depends entirely on what you mean, and that's not a dodge — it's the real answer. Can it do a job
 that used to need a person's judgement? Yes, often brilliantly. Does it understand what it's doing?
-There is nothing in there having a time. Does it know when it's out of its depth? No, and that's the
+As far as anyone can tell, there is nothing in there having a time. Does it know when it's out of its depth? No, and that's the
 dangerous bit. Pick your definition and the answer follows.
 
 **5. "When will AGI exist?"**
@@ -868,15 +870,16 @@ dangerous bit. Pick your definition and the answer follows.
 **Nobody knows for sure, and here's why that's an honest answer rather than me dodging.** Serious,
 well-informed people give answers ranging from five years to never, and they are all looking at the
 same evidence. We can't predict it because we don't actually know what's missing — if we knew what
-was missing, someone would build it. What I can tell you for certain is what's true *today*: there is
-not one system anywhere that can do a second job it wasn't built for. Anyone who tells you they know
+was missing, someone would build it. What I can tell you for certain is what's true *today*: no
+system anywhere does everything a person can do, and chatbots, which do many text jobs, are the hard
+case (Week 28). Anyone who tells you they know
 the date is guessing, including the confident ones. Especially the confident ones.
 
 **6. "If it says 99%, is it right 99 times out of 100?"**
 
 No, and this is one of the most useful things in the whole year. That number is how strongly the
 model *prefers* that answer — it's the biggest number in a list that adds up to 100. It is not a
-prediction about how often it's correct. Models are most confidently wrong on things unlike anything
+prediction about how often it's correct. Models are often confidently wrong, especially on things unlike anything
 they trained on, which is exactly when you'd most want them to hesitate.
 
 **7. "Could someone build a general AI in secret?"**
@@ -889,11 +892,11 @@ the evidence points the other way.
 
 **8. "Is Quick, Draw! cheating by knowing the word already?"**
 
-That is a *superb* question and the answer is essentially yes — and noticing it is the whole point of
-the round. It isn't looking at your drawing and working out what it is. It's checking how well your
-strokes match other people's strokes **for one word it already picked**. That's a much smaller job
-than "recognise this drawing", and the cat test proves it: draw a cat when it asked for a dog and it
-never once says "cat". It can't. Cat isn't the question it's answering.
+That is a *superb* question, and the honest answer is "partly". It does guess across a fixed menu of
+about 345 words (that is why it calls out "circle … wheel … clock"), but the round only ends when one of
+its guesses matches the word it gave you, so the prompt tells it what you are drawing. That is a much
+narrower job than "name anything in this drawing": it can only pick from the menu, and it cannot say
+"I don't know". Test it: draw a cat when it asked for a dog and record every guess it calls out.
 
 ---
 
@@ -1082,22 +1085,22 @@ moment it sounds certain.
 
 | Task | What happens | What it proves |
 |---|---|---|
-| Draw two things at once | It scores only against its one prompt and ignores the other object entirely | It is not looking at your picture; it is matching against one target word |
-| Draw the prompt upside down | Usually fails on an otherwise good drawing | It learned stroke patterns, not objects |
-| Draw a cat when it asked for a dog | Guesses "dog" wrongly, then goes quiet. **Never says "cat".** | It cannot volunteer what it sees. Strongest single piece of evidence in the round. |
-| Write the word instead of drawing it | "zigzag", "squiggle" | Meaning is entirely outside its world |
+| Draw two things at once | Usually muddles it; record every guess | It was built for one doodle at a time |
+| Draw the prompt upside down | Often fails on an otherwise good drawing (try several) | A hypothesis: it learned stroke patterns, not objects |
+| Draw a cat when it asked for a dog | Record every guess; "cat" may well appear (in one session it did not) | It chooses only from a fixed menu of about 345 words, so it cannot say "I don't know" |
+| Write the word instead of drawing it | "zigzag", "squiggle" (as seen in one session) | Letters and meaning are outside its world |
 | Perfect circle for "sun" | circle, clock, donut — no sun until rays | It knows drawings of suns, not suns |
 
 **"What is this thing's actual job, based on your evidence?"**
 
-> **Model answer:** *"Quick, Draw! does one job: given a set of pen strokes and one target word, it
-> outputs how closely those strokes match the strokes other people drew for that same word. It is not
-> recognising objects — it is matching stroke patterns against one stored prompt."*
+> **Model answer:** *"Quick, Draw! does one job: given a set of pen strokes, it ranks the words on a
+> fixed menu of about 345 by how closely the strokes match what other people drew for each word, and
+> the round is won when its guess matches the prompt. It can't name anything off the menu."*
 
-Why that matters: the marketing calls it *"a neural network learning to recognise doodles"*. Test 3
-disproves *recognising*. A system that recognised objects would say "that's a cat". This one says
-nothing, because *cat* is not the question it is answering. The student got a truer description than
-the marketing by pushing three inches past the edge of the demo — and that is the whole method of
+Why that matters: the site calls itself *"a neural network learning to recognise doodles"*, which is
+fair; the evidence adds how narrow the job is: a fixed menu, no "I don't know". Accept any model answer
+that is based on the student's own recorded guesses. The student got a fuller description than the
+marketing by pushing three inches past the edge of the demo — and that is the whole method of
 this course.
 
 ### Round 2 — the chatbot
@@ -1111,9 +1114,9 @@ festival · award · quoted review. All invented. Count them out loud and point 
 is what makes it concrete.
 
 **"It just changed its story. What does that tell you?"**
-That it never knew in the first place. It produced text that looked like the right kind of text; when
-challenged it produced different text that also looked right. Neither answer came from knowing
-anything. *(If it does **not** change its story and sticks to "it was real" — even better. Then say:
+That its first answer was not reliable evidence that it knew. It produced text that looked like the
+right kind of text; when challenged it produced different text that also looked right. (A flip does not
+prove it knew nothing; it shows the first answer cannot be trusted.) *(If it does **not** change its story and sticks to "it was real" — even better. Then say:
 "So now it's confidently wrong twice. Which of the two answers should we believe?" Neither.)*
 
 **The four rows — model answers**
@@ -1184,21 +1187,22 @@ The student must include all four required points. Here is the standard, on the 
 > thinking it's genuinely both, which felt like cheating until I wrote it out.
 >
 > **(2) Evidence for *generating*.** It produces words. Words are content. And there's no fixed menu
-> — over a week it has suggested hundreds of different words to me, including names and slang I'm
-> fairly sure aren't in any standard list. If I count the possible outputs the way we did in class,
-> I can't. That's the blank-page test and it passes it.
+> — over a week it has suggested hundreds of different words to me, including names and slang that
+> aren't in a standard word list (though it may simply keep a personal list of what I type). If I
+> count the possible outputs the way we did in class, I can't, but a very big vocabulary is still a
+> vocabulary, so this evidence is weaker than it looks.
 >
 > **(3) Evidence against — the honest case for *learned*.** It only ever shows me **three** options at
 > a time. Three is a menu. And it definitely learned: it started suggesting my friend's name after I
 > typed it about five times, so it's picking up patterns from examples, which is exactly what
-> *learned* means. Also, everything in the *generating* column is also in the *learned* column, since
+> *learned* means (though that could also be a simple personal-dictionary lookup). Also, everything in the *generating* column is also in the *learned* column, since
 > generative AI is a kind of machine learning — so "learned" isn't even wrong.
 >
 > **(4) The one fact I'd need.** I'd need to know whether the three words come from a fixed list the
 > phone keeps, or whether it builds each word up letter by letter as it goes. If it's a list, it's
-> picking. If it builds them, it's generating. I could test this myself: type a made-up word ten
-> times and see if the bar ever suggests it. If it can suggest a word that didn't exist before I
-> invented it, it isn't reading off a list.
+> picking. If it builds them, it's generating. A made-up-word test would not settle
+> it: phones keep a personal dictionary of what you type, so the bar offering my invented word back is
+> exactly what a learned list would do. I would have to look up how my keyboard works.
 >
 > **My call: generating** — but I've written it in the *learned* column too, with an arrow, because
 > generative AI lives inside machine learning and both are true.
@@ -1208,13 +1212,13 @@ The student must include all four required points. Here is the standard, on the 
 | Note | The call | Reasoning |
 |---|---|---|
 | **4 — Automatic shop doors** | **Rules** — and arguably **not AI at all** | `IF motion detected THEN open` is a rule someone wrote. But the deciding question is whether the job needs judgement, and "did something move?" doesn't — the sensor fires for a stray cat, a blown crisp packet, anything warm and moving. No case-by-case decision, so no judgement, so probably not AI. **The fact that would settle it:** does the door ever *decline* to open for something that moved? If it never declines, there's no decision in there. |
-| **9 — Maps arrival time** | **Learned** | A rule-based version is easy to imagine: distance ÷ speed limit. But the estimate changes minute by minute and gets rush hour right, which means it's using how long real cars actually took on that road just now. Nobody hand-wrote a rule for "Tuesday, 8:40am, raining, roadworks". **Evidence against:** part of it genuinely is arithmetic — the distance is just measured. **The fact that would settle it:** does the estimate change if I ask twice, ten minutes apart, on the same route? If yes, it's using live data, and turning live data into a time estimate is learned. |
+| **9 — Maps arrival time** | **Learned** | A rule-based version is easy to imagine: distance ÷ speed limit. But the estimate changes minute by minute and gets rush hour right, which means it's using how long real cars actually took on that road just now. Nobody hand-wrote a rule for "Tuesday, 8:40am, raining, roadworks". **Evidence against:** part of it genuinely is arithmetic — the distance is just measured. **A fact that would help (not settle it):** does the estimate change if I ask twice, ten minutes apart, on the same route? If yes, it's using live data. A rule using live speeds could do that too, but turning live data into a time estimate for Tuesday-8:40-raining is learned. |
 
 ### In-lesson questions
 
 **Hook — "Name one thing YouTube's recommender cannot do."**
 Anything that isn't ranking videos: tell you what a video is about, answer a question, make a video,
-know whether you enjoyed it (it only knows whether you kept watching), tell you 7 × 8.
+know whether you enjoyed it (mostly it knows whether you kept watching, plus likes and similar feedback), tell you 7 × 8.
 
 **Concept — "How many things could come out of a spam filter?"** Two. **"Out of a chatbot?"**
 Effectively unlimited — no menu, a blank page.
@@ -1225,13 +1229,13 @@ translation are all text. Week 28 builds one by hand.
 
 **Concept — "If a model says 'dog, 99%', how sure should you be?"**
 Not sure at all, on that number alone. It tells you how strongly the model prefers *dog* over its
-other options. It says nothing about whether *dog* is correct. Models are most confidently wrong on
+other options. It says nothing about whether *dog* is correct. Models are often confidently wrong, especially on
 inputs unlike anything they trained on.
 
 **Round 1 — "So what's this thing's actual job?"** See the model answer above.
 
 **Round 2 — "How many things could we check?"** Four or five, all invented. **"It changed its story —
-what does that tell you?"** It never knew; it was producing plausible-shaped text both times.
+what does that tell you?"** Its first answer was not reliable evidence of knowing; it was producing plausible-shaped text both times.
 
 **Wrap — "Today's big idea in one sentence."**
 Model answers: *"Every AI does exactly one job and is blank one step sideways, and some of them make
@@ -1268,7 +1272,7 @@ the "one you did not circle" line, the counts are: **(a)** spam folder = **2** �
 nothing).
 
 **A3. (a) FALSE.** 96% means *"wolf is the answer I'm leaning towards hardest"* — the biggest number
-in a list that adds to 100, not a hit rate. Models are most confidently wrong on inputs unlike
+in a list that adds to 100, not a hit rate. Models are often confidently wrong, especially on inputs unlike
 anything they trained on. **(b) FALSE.** Generative AI is **inside** machine learning, not beside it:
 a chatbot learned from examples exactly as a spam filter did, and only the output shape differs.
 
@@ -1289,7 +1293,7 @@ more strokes changed its top answer. Confidence moves, and at every moment sound
 menu, so the numbers always total 100. **(d)** *"94% means the model **prefers dog more strongly than
 anything else on its list**."* Reject *"nearly certainly right"* and *"right 94 times in 100"*.
 **(e)** **No, it was not broken.** It gave every option a number and handed back the biggest; *fox*
-was on the list and scored 4. Nothing in the machine compares its answer to reality.
+was on the list and scored 4. At the moment it answers, nothing in the machine compares its answer to reality.
 
 **Marking Set A:** A3 and A6(d) are the two items that show whether objective 3 landed. Hand back any
 answer that reads a confidence score as a probability of being right — it is the misconception the

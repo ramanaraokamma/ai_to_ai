@@ -221,7 +221,7 @@ photo 1: ______________________________  breaks: ______________________
 
 photo 2: ______________________________  breaks: ______________________
 
-**Part 5.** The researchers who really did this showed their model to a room full of professionals and asked "do you trust this?" Most said **yes**. Why couldn't they tell?
+**Part 5.** The researchers who really did this showed their model to some people and asked "do you trust this?" Some said **yes**. Why couldn't they tell just from its answers?
 
 ________________________________________________________________
 
@@ -481,11 +481,11 @@ Rows A and C: taking ten times as many photos bought **nothing at all.** Still t
 
 **Why 100% is worthless:** the student tested on photos taken in the same places as the training photos, so the shortcut worked perfectly. They have measured a **floor-covering classifier** and called it an object classifier. The score is real; the thing it measured isn't what they think.
 
-Notice too that combs and toothbrushes were *both* on the bathroom floor — so for that pair the shortcut isn't available and the model has to do real work. **This model is honest about one pair and cheating on the other**, and a single accuracy number cannot tell you that.
+Notice too that combs and toothbrushes were *both* on the bathroom floor — so for that pair the shortcut isn't available and the model has to do real work. **This model may be honest about one pair and cheating on the other**, and a single accuracy number cannot tell you that.
 
 **The fix, in as few photos as possible:** take the **missing** photos, not more of the same — 8 spoons on the bathroom floor, 8 combs on the kitchen table, 8 toothbrushes on the kitchen table. **24 photos.** Those 24 are the only ones that break the surface pattern, and twenty-four well-chosen shots beat four hundred more of the same.
 
-**B3.** If the model never says `whiteboard_eraser` at all: 40 glue sticks right, 40 markers right, 0 erasers right.
+**B3.** If the model never says `whiteboard_eraser` at all (the worst case, which training is tempted towards): 40 glue sticks right, 40 markers right, 0 erasers right.
 
 ```
 correct = 80 out of 88   =   80 ÷ 88 = 0.909 = 90.9%      erasers alone: 0%
@@ -506,7 +506,7 @@ Meera: 4 rooms      × 3 lightings × 5 angles       =       60 situations
 
 **Meera's model is better** — the same 60 shutter clicks, about **thirty times** the coverage.
 
-**But if they only ever test on the sofa in the evening, Ravi's will score higher.** His model has essentially memorised that exact scene, and the test *is* that exact scene. Meera's spread its attention across four rooms and three lights, so it is slightly less perfect on the sofa and enormously better everywhere else. That is the genuinely nasty part: **the worse model can produce the better number if you choose the test badly.** Which is exactly what Week 19 is about.
+**But if they only ever test on the sofa in the evening, Ravi's may well score higher.** His model may well have fitted that exact scene very closely, and the test *is* that exact scene. Meera's model saw four rooms and three lights, so it may be slightly less perfect on the sofa and is likely to be much better everywhere else. That is the genuinely nasty part: **the worse model can produce the better number if you choose the test badly.** Which is exactly what Week 19 is about.
 
 **B5.** 6 + 6 + 7 + 7 + 5 = **31**, against a target of 40, so it is **9 short**. Backgrounds: **4** (desk, carpet, tiles, wood table) · lighting kinds: **3** · distances: **2**.
 
@@ -542,7 +542,7 @@ The one that is **right for the wrong reason** is the third. That is the most da
 
 **Part 4. Two photos that break the trick:** (1) **a husky standing in snow, labelled HUSKY** — this breaks "snow → wolf", because snow now appears in both piles and stops being a separator; (2) **a wolf standing on grass, labelled WOLF** — same thing from the other side. With those two added, the ground can no longer separate the piles at all, so the only thing left to learn is the animal. (Two photos won't be *enough* to learn a wolf properly, but they are enough to destroy the shortcut, which is what was asked.)
 
-**Part 5. Why the professionals couldn't tell:** because **the model got the right answers.** They were shown its predictions, not its reasoning, and its predictions were correct on every photo they tried — all of which came from the same collection, with the same snow and the same grass. You cannot see a shortcut by looking at a score. You can only see it by testing the model on the one case the shortcut gets wrong — a husky in snow — and nobody thought to take that photo.
+**Part 5. Why people could be fooled:** because **the model got mostly right answers.** They were shown its predictions, not its reasoning, and its predictions were right on the photos they tried — which came from the same collection, with the same snow and the same grass. You cannot see a shortcut by looking at a score. You can only see it by testing the model on the one case the shortcut gets wrong — a husky in snow — and nobody had tested that photo yet.
 
 **That is the whole lesson:** you cannot read a model, so the only window you get is testing it, and a test that looks like the training data will lie to you.
 
@@ -560,7 +560,7 @@ Marking: full credit needs (1) rejecting the blame, (2) naming **size** specific
 
 **T2. One genuine similarity:** nobody gave you a rule for recognising your best friend, and nobody gave the machine a rule for recognising a spoon. Both of you learned from **thousands of examples with names attached**, and neither of you can read out what you ended up with.
 
-**Two genuine differences:** (1) **how many examples you need** — you learned "dog" from about five dogs, where a from-scratch model needs tens of thousands; (2) **how fast you can learn from one event** — you can touch something hot once and never do it again, in one second, from one example, and no model can do that. (Also acceptable: you can explain *some* of your reasoning and the machine can explain none; or you keep learning while you're being used and a trained model is frozen.)
+**Two genuine differences:** (1) **how many examples you need** — you learned "dog" from far fewer dogs than a from-scratch model needs (many thousands of pictures); (2) **how fast you can learn from one event** — you can touch something hot once and never do it again, in one second, from one example, and no model can do that. (Also acceptable: you can explain *some* of your reasoning and the machine can explain none; or you keep learning while you're being used and a trained model is frozen.)
 
 **Why nobody can settle it:** because **we cannot read either one.** We can't read the thousands of dials inside a trained model — the person who wrote the training program can't either — and we can't read the connections inside your head. Two things nobody can inspect, being compared. Scientists in two different fields argue about it and they haven't finished.
 

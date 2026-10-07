@@ -238,7 +238,7 @@ ________________________________________________________________
 
 ---
 
-**B5. Mark somebody else's work.** Here is the number grid another student handed in. Find **three** faults and write the fix.
+**B5. Mark somebody else's work.** Here is the number grid another student handed in. They were copying a drawing of two dark pencil eyes on blank white paper, with the top row of the drawing blank. Find **three** faults and write the fix.
 
 ```
 NUMBER GRID
@@ -652,7 +652,7 @@ Grayscale means **one number per pixel instead of three**. It is missing **colou
 | Fault | Why it's a fault | The fix |
 |---|---|---|
 | **No key written at the top** | The numbers are meaningless without it. 64 could mean anything | Write the five-step key on the page: 0 solid · 64 nearly · 128 half · 192 light · 255 untouched |
-| **The grid is inverted** — row 1 is all 0s while the top of the drawing is blank paper | 255 was written where the pencil was. It is a *meaning* mistake: the number counts **light**, and pencil blocks light | Swap the direction: pencil → small numbers, blank paper → 255. Row 1 should be twelve 255s |
+| **The grid is inverted** — row 1 is all 0s while the top of the drawing (as the question tells you) is blank paper | 255 was written where the pencil was. It is a *meaning* mistake: the number counts **light**, and pencil blocks light | Swap the direction: pencil → small numbers, blank paper → 255. Row 1 should be twelve 255s |
 | **"(same as above)" instead of writing the row out** | The person rebuilding it has a list of numbers, not a list of instructions. A missing row means a missing 12 numbers, and the whole picture below it collapses | Write all twelve numbers for every row. You may *note* "rows 4–7 are identical" as an observation, but the numbers still have to be there |
 | *(also acceptable)* rows and columns not numbered | Nothing stops you losing your place, which is how squares get skipped | Number rows 1–12 down the left and columns 1–12 across the top |
 

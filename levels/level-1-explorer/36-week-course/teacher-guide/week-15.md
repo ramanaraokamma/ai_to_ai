@@ -94,7 +94,7 @@ Here is the mechanism, and you can explain it correctly without any maths.
 
 Picture an old radio with a tuning dial. You turn it a little, listen, hear more static, turn it back the other way, listen again. Nudge, check, nudge, check. Nobody calculated the right dial position; you found it by nudging.
 
-The machine has **thousands** of tiny dials. One epoch is: look at all 120 photos, count how many it got wrong, then nudge every dial a tiny bit in whichever direction reduced the mistakes. Then do it again. After 50 rounds of nudging, the dials sit roughly where the mistakes are fewest.
+The machine has **thousands** of tiny dials. One epoch is: look at all 120 photos, count how many it got wrong, then nudge every dial a tiny bit in whichever direction reduced the mistakes (real programs often nudge a little during the pass too, but this is the idea). Then do it again. After 50 rounds of nudging, the dials sit roughly where the mistakes are fewest.
 
 So why look again on pass 37? **Not** because pass 37 shows it anything new. It's the same photos. It looks again because the dials have moved since pass 36, so the same photo now produces a different amount of wrongness, which tells you which way to nudge next. The photos are the measuring stick, and you need the measuring stick every time you adjust something.
 
@@ -123,7 +123,7 @@ A photo of a spoon is never just a spoon. It also contains a background, a light
 
 So if all forty spoon photos sit on a wooden table with a window on the left, then "warm brown texture, light from the left" is a far easier pattern to spot than "spoon". Training takes the easy one. Every time.
 
-**The true story to tell in class.** In 2016, researchers built a classifier to tell huskies from wolves. It worked. They showed it to a room of machine learning professionals and asked "do you trust this?" Most said yes. Then they revealed the trick: every wolf photo had **snow** in the background and no husky photo did. The model had learned nothing about wolves. It had learned *white stuff at the bottom of the picture → say wolf*. Photograph a husky in snow and it says wolf, confidently, every time.
+**The true story to tell in class.** In a 2016 research paper (Ribeiro, Singh and Guestrin, the "Why Should I Trust You?" paper), researchers built a husky-versus-wolf classifier on a deliberately biased, hand-picked set of photos, to show how a model can be right for the wrong reason. They showed it to a small group (as I recall, mostly graduate students; I have not re-checked the details) and asked whether they trusted it; some did. Then an explanation tool revealed the trick: the wolf photos had **snow** in the background and the husky photos did not. The model had learned little about wolves. It had mostly learned *white stuff at the bottom of the picture → say wolf*. Photograph a husky in snow and it is likely to say wolf, and sound confident. Do not quote exact numbers of people or percentages in class.
 
 Nobody wrote that rule. Nobody wanted it. It came out of the photographs.
 
@@ -422,9 +422,9 @@ Let them try. Then:
 
 > "Last idea, and it's the one that decides whether your project works next month.
 >
-> In 2016 some researchers built a machine to tell huskies from wolves. It worked. They showed it to a room full of people who do this for a living and asked 'do you trust this?' Most of them said yes.
+> In 2016 some researchers wrote a paper about a machine that told huskies from wolves. It got most photos right. They showed it to some people and asked 'do you trust this?' Some of them said yes.
 >
-> Then they explained the trick. Every wolf photo had **snow** in the background. Not one husky photo did. The machine had never learned anything about wolves. It had learned: *white stuff at the bottom of the picture, say wolf.* Photograph a husky standing in snow and it says wolf, every time, completely confidently.
+> Then a tool that shows what the machine is looking at revealed the trick. The wolf photos had **snow** in the background. The husky photos did not. The machine had learned very little about wolves. It had mostly learned: *white stuff at the bottom of the picture, say wolf.* Photograph a husky standing in snow and it is likely to say wolf, and sound confident.
 >
 > Nobody wrote that rule. Nobody wanted it. It came out of the photographs, because **the machine learns the easiest pattern that separates your piles** — not the pattern you meant."
 
@@ -979,7 +979,7 @@ Note the desk appears twice (rows 1 and 2) and so carries 12 photos against 7 fo
    varied:     4 rooms × 3 lightings × 5 angles           = 60 situations
 ```
 
-The second model is better. Same 60 shutter clicks, about thirty times the coverage. The first will work beautifully on that sofa in the evening and may well fail in the kitchen at breakfast — and, worse, it will score *higher* than the good model if you only ever test it on the sofa. (That trap is Week 19.)
+The second model is better. Same 60 shutter clicks, about thirty times the coverage. The first will work beautifully on that sofa in the evening and may well fail in the kitchen at breakfast — and, worse, it may well score *higher* than the good model if you only ever test it on the sofa. (That trap is Week 19.)
 
 ### Workbook — Warm-Up (from Week 14)
 
@@ -1011,7 +1011,7 @@ The second model is better. Same 60 shutter clicks, about thirty times the cover
 | **B1** | **YES**, it still works, unchanged. Evidence 1 (arithmetic): 500 photos are far bigger than the model they made, so they are not in there. Evidence 2 (class): the twelve cards were sealed in the envelope and the student still classified six new cards, about four right |
 | **B2** | Easiest pattern: the **floor or surface** (kitchen table against bathroom floor). Spoon on the bathroom floor → says **comb** or **toothbrush**. Comb on the kitchen table → says **spoon**. The 100% is worthless because the test photos came from the same places as the training photos, so the shortcut worked; they measured a floor classifier. Fix: **8 spoons on the bathroom floor, 8 combs on the kitchen table, 8 toothbrushes on the kitchen table = 24 photos**. Note that comb and toothbrush share a floor, so the model is honest about that pair and cheating on the other |
 | **B3** | glue sticks right **40**, markers right **40**, erasers right **0**; correct = **80 out of 88**, 80 ÷ 88 = **90.9%**; erasers alone **0%**. A good deal because training minimises *total* mistakes and abandoning the eraser costs only **8 of 88**. Fix: **32 more eraser photos**, so 40 / 40 / 40 (keep classes within about 20% of each other) |
-| **B4** | Ravi: 1 × 1 × about 2 = **about 2** situations. Meera: 4 × 3 × 5 = **60** situations. Meera's is better, about **thirty times** the variety. If both are tested only on the sofa in the evening, **Ravi's scores higher**, because the test is the exact scene he trained on. The worse model can produce the better number if the test is chosen badly (Week 19) |
+| **B4** | Ravi: 1 × 1 × about 2 = **about 2** situations. Meera: 4 × 3 × 5 = **60** situations. Meera's is better, about **thirty times** the variety. If both are tested only on the sofa in the evening, **Ravi's may well score higher**, because the test is the exact scene he trained on. The worse model can produce the better number if the test is chosen badly (Week 19) |
 | **B5** | Total column: 6 + 6 + 7 + 7 + 5 = **31**, so **9 short**. Backgrounds **4** (desk, carpet, tiles, wood table) · lighting kinds **3** · distances **2**. The broken rule is **five backgrounds**. Row 6: **bed sheet | low lamp | far | 9** (any fifth, genuinely different, named background with 9 shots works; two rows of 4 and 5 with different lights is even better) |
 
 **Watch for:** in B3 a student who divides by 80 or by 48 instead of 88, or who writes 0% as the overall score. In B5 a student who says lighting is broken (it has three kinds, which is correct) or who adds a row that repeats an existing background (that fixes the total but not the rule). In B2 a student who proposes "take 400 more photos": ask which of the 400 would break the surface pattern.
@@ -1024,7 +1024,7 @@ The second model is better. Same 60 shutter clicks, about thirty times the cover
 | **2** | "If **there is white stuff at the bottom of the picture** then say **wolf**." Any wording that names snow or the ground and not the animal is right |
 | **3** | A husky in snow → **wolf** (snow present). A wolf on grass → **husky** (no snow). A wolf in snow → **wolf**. The one that is **right for the wrong reason** is the third, the wolf in snow |
 | **4** | Photo 1: **a husky standing in snow, labelled HUSKY**, breaks "snow → wolf". Photo 2: **a wolf standing on grass, labelled WOLF**, breaks "grass → husky". With both, the ground no longer separates the piles. Two photos do not teach a wolf, but they destroy the shortcut, which is what was asked |
-| **5** | Because **the model got the right answers.** The professionals saw predictions, not reasoning, and every photo they tried came from the same collection. A shortcut shows only on the one case it gets wrong (a husky in snow), and nobody took that photo |
+| **5** | Because **the model got the right answers.** The people shown it saw predictions, not reasoning, and the photos they tried came from the same collection. A shortcut shows only on the one case it gets wrong (a husky in snow), and nobody had tested that photo |
 
 **Watch for:** Part 3's "why" column. "Because it is a wolf" for the wolf-in-snow row is the exact misunderstanding the puzzle exists to catch.
 
@@ -1032,7 +1032,7 @@ The second model is better. Same 60 shutter clicks, about thirty times the cover
 
 **T1.** Full credit needs four things: (1) rejecting the blame, since they did what training does; (2) naming **size** specifically as a perfect separator in the twelve training cards; (3) the fix being the **cards**, not the learner (Blorbs and Zunks at mixed sizes); (4) connecting to the wolves and using the phrase **easiest pattern** (Blorbs were size, wolves were snow). Bonus for noticing card 3: Fip was drawn at mixed sizes and was fine, which shows the trap was about size and not general confusion.
 
-**T2.** One genuine similarity: neither you nor the machine was given a rule for recognising things, both learned from thousands of examples with names attached, and neither can read out what it ended up with. Two genuine differences from: you need far fewer examples (about five dogs against tens of thousands); you can learn from one event (a hot stove once) and a model cannot; you can explain some of your reasoning and the machine none; you keep learning while in use and a trained model is frozen. Why it cannot be settled: **we cannot read either one**. "Nobody knows" is a real answer, not a dodge. Do not accept "the machine is just maths" as a difference without a reason, and do not accept "it learns exactly like us" without one.
+**T2.** One genuine similarity: neither you nor the machine was given a rule for recognising things, both learned from thousands of examples with names attached, and neither can read out what it ended up with. Two genuine differences from: you need far fewer examples (far fewer dogs than the many thousands of pictures a from-scratch model needs); you can learn from one event (a hot stove once) and a model cannot; you can explain some of your reasoning and the machine none; you keep learning while in use and a trained model is frozen. Why it cannot be settled: **we cannot read either one**. "Nobody knows" is a real answer, not a dodge. Do not accept "the machine is just maths" as a difference without a reason, and do not accept "it learns exactly like us" without one.
 
 ### Workbook — Build It (Steps 1–7)
 
@@ -1105,7 +1105,7 @@ No right answer; it is the learner's own rating of six "I can…" rows and one c
 
 **The coverage arithmetic.** 240 situations × 1 photo × 10 seconds = 2,400 seconds = **40 minutes per object**, so **two hours** for three objects — and that's before sorting them. Sampling 40 of the 240 gets most of the benefit for a sixth of the work, because the point of variety isn't to visit every combination; it's to stop any one condition appearing in *all* your photos of a class. Forty well-spread photos already break every such pattern.
 
-**The imbalance question (40 / 40 / 8).** Training reduces the *total* number of mistakes across all examples, and it doesn't care which pile they come from. With 8 examples in the third pile, ignoring that pile entirely costs only 8 mistakes out of 88 — a cheap deal. So the model quietly stops believing in the third object. Do the arithmetic: a model that never says the third name gets 80 out of 88 = **90.9% accuracy** and is **0%** correct on object three. Keep the three counts within about 20% of each other and this doesn't happen. (Week 20 is built on this number.)
+**The imbalance question (40 / 40 / 8).** Training reduces the *total* number of mistakes across all examples, and it doesn't care which pile they come from. With 8 examples in the third pile, ignoring that pile entirely costs only 8 mistakes out of 88 — a cheap deal. So the model can drift toward ignoring the third object (it has an incentive to, even if real models usually still fit the few photos they were shown). Do the arithmetic: a model that never says the third name gets 80 out of 88 = **90.9% accuracy** and is **0%** correct on object three. Keep the three counts within about 20% of each other and this doesn't happen. (Week 20 is built on this number.)
 
 ---
 

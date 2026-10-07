@@ -659,7 +659,7 @@ The two things to check on your drawing: `quadrant` must sit **exactly** on the 
 
 Or **push it above 5,500** — `IF mass_g < 5600 THEN cat ELSE dog`. Now the 5,500 g cat is right and the 5,200 g dog is wrong: also **7 / 8 = 87.5%.**
 
-(f) **No, 8 out of 8 is impossible.** Whichever side of the overlap you put the boundary, one of those two rows lands on the wrong side. **Moving the threshold just swaps which row you get wrong** — it never fixes both. That isn't a failure of your arithmetic; it's a fact about a world in which some cats really are heavier than some dogs.
+(f) **No, 8 out of 8 is impossible.** Whichever side of the overlap you put the boundary, one of those two rows lands on the wrong side. **Moving the threshold can change which row you get wrong, but it can never fix both.** That isn't a failure of your arithmetic; it's a fact about a world in which some cats really are heavier than some dogs.
 
 **B3.**
 (a) **The feature is blank.** The patient has just walked in; nobody has prescribed anything. The system has no value to read, and its 100% accuracy is worth precisely nothing.

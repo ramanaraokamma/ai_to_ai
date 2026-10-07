@@ -259,7 +259,7 @@ MEAN ERROR = 7.5 grams
 
 And notice what you **cannot** say. You cannot say "our model is 83% accurate", because there is no such thing here. Nothing was right and nothing was wrong. Everything was off by an amount.
 
-**Is 7.5 g good?** It depends entirely on what you're doing with it. For sorting fruit into crates: excellent. For selling by weight to the exact gram: unacceptable. If somebody asks "is this good?" and you answer without asking "good for what?", you have not finished the question.
+**Is 7.5 g good?** It depends entirely on what you're doing with it. For sorting fruit into crates: probably excellent (though three test fruits is a very small test, so treat 7.5 g as a first estimate, not a proven figure). For selling by weight to the exact gram: unacceptable. If somebody asks "is this good?" and you answer without asking "good for what?", you have not finished the question.
 
 **How could we make it smaller?** Use `length_cm` as well as the fruit type. Right now the 21 cm banana and the 18 cm banana get exactly the same guess of 123.25 g, and the long one is almost certainly heavier.
 
@@ -545,7 +545,7 @@ week apart from last week.*
 | **The mental model you now own** | Look at the **shape of the answer**. One word out of a short list — cat, dog, rabbit — and you are building a **classifier**. A number on a scale — 24 degrees, 6 minutes, 310 grams — and you are building a **regressor**. The genuinely strange part is that the *same table* does either one. It depends entirely on which column you covered up. |
 | **The one question it answers** | *"Is the answer one of a short list, or a number on a scale?"* |
 | **What it plugs into** | Week 11's label column. Cover a different column and you have changed which kind of machine you are building, without collecting a single new row. |
-| **What carries forward** | The model you train in Week 17 is a three-class classifier, and the confidence scores you read in Week 16 only exist *because* the answer comes from a short list. A number on a scale has no percentages to show you. |
+| **What carries forward** | The model you train in Week 17 is a three-class classifier, and the confidence scores you read in Week 16 only exist *because* the answer comes from a short list. A plain number on a scale has no short list of percentages to show you. |
 | **Spiral thread** | 📦 **Model** — which kind of guessing machine you end up with — and 🎯 **Learning signal** — because "nearly right" means something for a number and nothing at all for a word. |
 
 > **💡 Try this:** on your own map, draw two tiny sketches beside the FEATURES box — a short list of

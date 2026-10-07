@@ -32,7 +32,7 @@ Today has two halves, and they are not related in the way you'd expect.
 
 **First half: a checkpoint.** Sixteen questions. It is **not for marks.** It does not go anywhere and nobody sees it. Its one job is to produce a short list of **week numbers to go back to** — so that next week ten minutes gets spent on the thing you missed instead of an hour on things you already know.
 
-**Second half: the term turns a corner.** You have spent six weeks turning pictures into numbers. Today you do the same thing to a **sentence** — and find out that a machine cannot tell the difference between the two.
+**Second half: the term turns a corner.** You have spent six weeks turning pictures into numbers. Today you do the same thing to a **sentence** — and find out that, once both are numbers, a machine handles them in much the same way.
 
 ---
 
@@ -167,7 +167,7 @@ This is the line the whole term has been building towards, and it deserves to be
 ![Same idea, different shape](../figures/fig-w27-4-pixels-and-tokens.svg)
 *Figure 27.6 — Left: 25 pixels, each a number. Right: 4 tokens, each a number. The machine does not know which one of these is a picture.*
 
-And once a thing is numbers in a table, **everything** you learned in Terms 1 and 2 applies again with no modification at all:
+And once a thing is numbers in a table, **everything** you learned in Terms 1 and 2 applies again, almost unchanged:
 
 | What you already know how to do | Does it work on text? |
 |---|---|
@@ -177,7 +177,7 @@ And once a thing is numbers in a table, **everything** you learned in Terms 1 an
 | Build a confusion matrix for it | Yes |
 | Get fooled by a background in it | Yes — and next term you will see exactly how |
 
-Nothing new is needed. That is why this course is arranged the way it is.
+Almost nothing about the *tools* is new, which is why this course is arranged the way it is. One thing is genuinely new: in a sentence the *order* of the words matters, and next week you will meet a first way of using it.
 
 ---
 

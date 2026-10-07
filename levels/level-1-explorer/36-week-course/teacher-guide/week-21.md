@@ -56,8 +56,8 @@ else's data.
 
 ### 2. Memorizing versus generalizing, and how to tell in ten seconds
 
-> **Generalizing** — the model works on examples it has never seen. This is the only thing you actually
-> want.
+> **Generalizing** — the model works on examples it has never seen. This is almost always what you
+> actually want.
 >
 > **Memorizing** — the model works on the exact examples it studied, and falls apart on anything else.
 
@@ -185,8 +185,9 @@ That is the model's weakness **on combs**.
 
 **Down a column** — what the model was willing to say.
 *"It said the word 'comb' only three times in fifteen tries, though five combs existed."* That is the
-model being **reluctant** about comb — which is a different diagnosis from simply being bad at combs,
-and it usually points at that class having too few or too samey training photos.
+model being **reluctant** about comb — which is a different question from simply being bad at combs,
+and one hypothesis to check is that the class had too few or too samey training photos (it is a
+hypothesis, not a diagnosis; three versus five on fifteen photos could be luck).
 
 **And the single most useful number in the grid is the biggest one that is not on the diagonal.** Here
 it is the **2** in "true comb, said toothbrush". That cell is a shopping list: it tells you exactly
@@ -327,7 +328,7 @@ lit this week. Do not quiz them on the threads; the map is orientation, never as
 >
 > *(Let them answer. Whatever they say — including "the same" — keep going.)*
 >
-> "Right. Exam day. The paper has fifteen questions on it that neither of them has ever seen."
+> "Right. Exam day. The paper has twenty questions on it that neither of them has ever seen."
 >
 > "Aisha gets 95%."
 >
@@ -683,17 +684,17 @@ most useful single number in the grid.
 different answer.
 
 ```
-   said spoon:      6 times, but only 5 spoons existed   →  slightly over-eager
-   said toothbrush: 6 times, but only 5 toothbrushes     →  slightly over-eager
+   said spoon:      6 times, but only 5 spoons existed   →  one extra; too small a difference to read anything into
+   said toothbrush: 6 times, but only 5 toothbrushes     →  one extra; too small a difference to read anything into
    said comb:       3 times, though 5 combs existed      →  RELUCTANT about comb
 ```
 
 **Say this:**
 
-> "That's a different diagnosis from 'it's bad at combs'. If it were just bad at combs, its comb guesses
-> would be scattered about randomly. This model has partly stopped **believing in** combs — it only
-> used the word three times in fifteen tries. That usually means the comb photos were too few, or all
-> too similar to each other."
+> "That's a different question from 'it's bad at combs'. The row says how often real combs were
+> recognised; the column says how often the model *chose* the word 'comb'. It only chose it three
+> times in fifteen tries. One guess to check: the comb photos were too few, or all too similar to each
+> other. It is a guess, not a verdict, and with fifteen photos it could also be luck."
 
 ### Step 4 — Trace the biggest cell back to the photos (4 min)
 
@@ -711,9 +712,9 @@ plan.
 > **2. "The confusion runs one way more than the other. Check it."**
 > - Two combs were called toothbrush; **one** toothbrush was called comb. So it is not quite symmetric —
 >   combs suffer more.
-> - The reasoning to draw out: if the two objects simply looked alike, you would expect roughly equal
->   confusion in both directions. Lopsided confusion points at the *class* — too few comb photos, or
->   comb photos that were all too similar — rather than at the resemblance.
+> - The reasoning to draw out: lopsided confusion is a hint to investigate, not a diagnosis. It *may*
+>   point at the *class* — too few comb photos, or comb photos that were all too similar — but it can
+>   have other causes too, and 2 versus 1 on fifteen photos is a one-photo difference, so it may be noise.
 
 > **3. "Name the ten photos you'd take tomorrow. Not 'more combs'."**
 > - *Hoping for:* something specific. A full-credit answer looks like: *"five photos of the comb
@@ -1026,11 +1027,11 @@ photos ✓
 - Combs: scattered — 2 right, 2 called toothbrush, 1 called spoon.
 
 **Reading down the columns:**
-- Said `spoon` 6 times, but only 5 spoons existed → slightly over-eager.
-- Said `toothbrush` 6 times, but only 5 existed → slightly over-eager.
+- Said `spoon` 6 times, but only 5 spoons existed → one extra; too small a difference to read anything into.
+- Said `toothbrush` 6 times, but only 5 existed → one extra; too small a difference to read anything into.
 - Said `comb` only **3** times, though 5 combs existed → **under-predicting comb.** The model is
-  reluctant to use that word at all, which points at the comb class having too few or too samey
-  training photos rather than at combs and toothbrushes merely resembling each other.
+  reluctant to use that word at all, which is a hint to check whether the comb class had too few or too
+  samey training photos (one hypothesis among several; fifteen photos is a small test).
 
 **The three non-zero off-diagonal cells, as sentences (plus the zeros):**
 1. "One toothbrush was called a comb." *(1)*
@@ -1064,7 +1065,7 @@ both are thin plastic handles with bristly bits, at roughly the same size.
 | Worked ex. | Say row 10 as a sentence. | "A toothbrush was called a comb." |
 | Worked ex. | How many marks so far? | Ten after ten rows. If not, find the error now. |
 | Activity | Why would a comb and a toothbrush look alike to a machine? | Both thin, plastic, handle plus bristly bits, similar size. |
-| Activity | Is the confusion symmetric? | No — 2 one way, 1 the other. Lopsided confusion points at the comb class itself, not at the resemblance. |
+| Activity | Is the confusion symmetric? | No — 2 one way, 1 the other. Lopsided confusion is a hint to check the comb class (and other causes); on 15 photos it may be noise. |
 | Activity | Name the ten photos you'd take tomorrow. | Specific: comb upright in a mug ×5, comb beside a toothbrush at equal distance ×5. |
 | Wrap | Which cell will be worst on your model, and why? | A written, dated prediction with a reason. |
 | Wrap | If the diagonal doesn't match, what's happened? | A mark went in the wrong box, or a sheet row was doubled or missed. |
@@ -1168,7 +1169,7 @@ closed; learned a boss's pattern and died in the sequel).
 ```
 
 The biggest off-diagonal cell is a **tie at 2**: "Two bowls were called plate, and two plates were
-called bowl." The tie means the confusion is symmetric — the two just look alike to the model.
+called bowl." The tie means the confusion is symmetric here — a hint (not proof, on so few photos) that the two look alike to the model.
 
 **B2.** Both checks pass because **the diagonal is identical whichever way round the grid is drawn**, and
 transposing adds or loses no marks, so the total is still 15. Catch it by **reading a cell aloud as a
@@ -1185,18 +1186,20 @@ a test score on unseen photos, then the gap.
    said bat:  8 times, though only 5 bats existed   →  OVER-EAGER about bat
    said ball: 2 times, though 5 balls existed       →  RELUCTANT about ball
 ```
-Reluctant usually means that class had **too few training photos, or they were all too similar** — the
-model has partly stopped believing the class exists. That differs from "bad at balls", where its ball
-guesses would be scattered rather than almost absent.
+Reluctant is a hint worth checking: one hypothesis is that the class had **too few training photos, or
+they were all too similar**; others are possible. It is a different question from "bad at balls" (the
+column counts how often the model chose "ball", not how often it was right), and 2 versus 5 on a small
+test could be partly luck.
 
 **B5.**
 ```text
    true ball → said bat:   3        true bat → said ball:   0
    true bat → said stumps: 1        true stumps → said bat: 1
 ```
-The lopsided pair is **ball / bat** (bat / stumps is symmetric at 1 and 1). Objects that merely look alike
-give **roughly equal** confusion both ways. Lopsided confusion points at the **class itself** — too few
-or too samey ball photos, so `bat` became the comfortable default when unsure.
+The lopsided pair is **ball / bat** (bat / stumps is symmetric at 1 and 1). Objects that look alike
+often (not always) give similar confusion both ways. Lopsided confusion is a hint to investigate, not a
+diagnosis: one hypothesis is too few or too samey ball photos, so `bat` became the model's habit when
+unsure; the matrix cannot tell you which cause it is, and 3 versus 0 is a small count.
 
 ### K8 — Workbook 🧩 Puzzle of the Week
 
@@ -1217,7 +1220,7 @@ given number).
    fraction:   17 / 30
    decimal:    30 × 0.5 = 15;   17 − 15 = 2;   2 ÷ 30 = 0.0667;   0.5 + 0.0667 = 0.5667
    percentage: 56.7%
-   baseline = 33.3%  →  beats the baseline by 23.4 percentage points
+   baseline = 33.3%  →  beats the baseline by 23.3 percentage points
 ```
 
 **(b)**
@@ -1375,7 +1378,7 @@ Everything today was a rehearsal for that, and it should feel like one.
   checklist and it starts with telling the student.
 - **Get their model loading.** Open Teachable Machine, load their Week 17 model, test it once with any
   object, and check the webcam permission still works. Do this the night before, not in the lesson.
-- **Find their training accuracy** — from their Week 17 notes or from **Advanced → Under the hood**. You
+- **Find their training accuracy** — from their Week 17 notes or from **Advanced → Under the hood** (not verified: that screen may show accuracy on photos Teachable Machine held out itself, not on the training photos; see Week 22). You
   need it for the gap.
 - **A pen, not a pencil.** Week 22 is explicit about this: a pencil invites going back and "fixing" row
   4 after seeing row 12.

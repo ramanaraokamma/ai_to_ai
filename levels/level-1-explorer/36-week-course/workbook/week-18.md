@@ -79,12 +79,12 @@ ________________________________________________________________
 
 **A4. Match the pairs.** Write the correct letter beside each sabotage.
 
-| Sabotage | | | What it proves |
+| Sabotage | | | What it suggests |
 |---|---|---|---|
-| 5 photos per class instead of 40 | ______ | **P** | the background became part of what the model thinks the object is |
+| 5 photos per class instead of 40 | ______ | **P** | the model never saw the background change, so a new background throws it off |
 | one background only | ______ | **Q** | training reduces *total* mistakes, so it abandons the cheap class |
 | blurry training photos | ______ | **R** | too few examples produces *unstable* answers before wrong ones |
-| imbalance 40 / 40 / 5 | ______ | **S** | blur destroys edges, and edges are the most useful signal in a small-object photo |
+| imbalance 40 / 40 / 5 | ______ | **S** | blur may be hiding edges, a useful signal in a small-object photo (a likely but untested explanation) |
 
 ---
 
@@ -143,7 +143,7 @@ ________________________________________________________________
 
 ---
 
-**B2. What would go wrong?** You run experiment 1 (five photos per class), and then go straight into experiment 2 (one background) **without reloading the baseline first.**
+**B2. What would go wrong?** You run experiment 1 (five photos per class), and then go straight into experiment 2 (one background) **without reloading the baseline first.** Suppose, as a shortcut, you carry on from the classes as experiment 1 left them (5 photos each) and swap in only the one-background photos, 5 per class, instead of loading the full set.
 
 (a) How many photos per class does experiment 2 actually end up with? ________________
 
@@ -247,7 +247,7 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
-**T1.** You cannot look inside a model. Nobody can — not you, not the people who built Teachable Machine.
+**T1.** You cannot just read the answer off the numbers inside a model — not you, not the people who built Teachable Machine.
 
 Write a paragraph explaining how you can still end up **trusting** one. What would you need to have done first? Use the phrase *tested in enough different situations*, and finish by saying what kind of trust that is — and whether it is weaker or stronger than a model that could explain itself.
 
@@ -265,7 +265,7 @@ ________________________________________________________________
 
 ---
 
-**T2.** The husky-and-wolf model **worked**. It passed its tests and it fooled a room full of experts. Its snow was only found because the researchers already knew it was there.
+**T2.** The husky-and-wolf model **worked**. It passed its tests, and a good score hid its problem. Its snow was only found because the researchers already knew it was there.
 
 Write a paragraph: whose **job** is it to go looking for the snow in a real product, and how would you make sure it actually gets done? Say what you would insist on before letting a model be used on real people.
 
@@ -483,11 +483,11 @@ Explanation: a score means nothing until you know **where** it was measured. Our
 
 **A4.**
 
-| Sabotage | Answer | What it proves |
+| Sabotage | Answer | What it suggests |
 |---|:--:|---|
 | 5 photos per class | **R** | too few examples produces *unstable* answers before wrong ones |
-| one background only | **P** | the background became part of what the model thinks the object is |
-| blurry training photos | **S** | blur destroys edges, the most useful signal in a small-object photo |
+| one background only | **P** | the model never saw the background change, so a new background throws it off |
+| blurry training photos | **S** | blur may be hiding edges, a useful signal in a small-object photo (a likely but untested explanation) |
 | imbalance 40 / 40 / 5 | **Q** | training reduces *total* mistakes, so it abandons the cheap class |
 
 **A5.** The four knobs are the four things about your **photos** you can change:
@@ -532,7 +532,7 @@ The six things taped down:
 (c) **Yes** — a scientist changes two things on purpose to find out whether the two **together** do something neither does alone. (For example: maybe blur alone is survivable and few photos alone is survivable, but both together collapse completely.) That's a real and more advanced design — but **it only means anything once you already have the one-at-a-time results to compare it with.**
 
 **B2.**
-(a) **Five.** Experiment 1 deleted the samples down to 5 per class, and nothing put them back. Loading the one-background set on top may not restore the count either, depending on what you replaced.
+(a) **Five.** Experiment 1 deleted the samples down to 5 per class, and nothing put them back; in this shortcut you only swapped in 5 one-background photos per class, so the count stays 5. (If you loaded the full set instead, the count would be different — which is why the method must be stated and the baseline reloaded.)
 (b) You have changed **two** things: the number of photos (still 5 from the last run) **and** the number of backgrounds. Possibly a third, if the one-background set has a different count again.
 (c) **Cross them out. That experiment is void.** Reload `baseline-v1.tm` and run it again properly. Do not quietly keep the number — a number from a broken experiment is worse than no number, because you'll believe it.
 (d) It's easy to make because **step 7 has no button of its own and nothing warns you.** The tab looks completely fine; the model is loaded; everything works. Every other step in the loop has something on screen that tells you it happened. This one only exists in your head, which is exactly why you say it out loud every time.
@@ -557,7 +557,7 @@ Why reporting only the 95% is dishonest even though it's true: **a number withou
 > (b) **The one thing I am changing:** the lighting of a single class.
 > (c) **Held fixed:** same three objects, same 40 photos per class, same five test items in the same order, same test spot in daylight, same distance, same person holding, same reading method.
 > (d) **Prediction: 2 out of 3.** I think the comb will be wrong in daylight, because if every comb photo is dim and orange, then "dim and orange" becomes part of what the model thinks a comb is — and in daylight that evidence has gone. I also predict the *spoon and toothbrush* margins will barely move, because I haven't touched their photos.
-> (e) **What it would prove:** that a model can key on the **lighting** of a class just as readily as on the background — the same mechanism as experiment 2, with a different variable. It would also prove something sharper: the damage is confined to the class I damaged, which you cannot say about the imbalance experiment.
+> (e) **What it would suggest:** that a model can key on the **lighting** of a class just as readily as on the background — the same mechanism as experiment 2, with a different variable. It would also suggest something sharper: the damage is confined to the class I damaged, which you cannot say about the imbalance experiment.
 
 *Other good fifth sabotages: mislabel five photos on purpose · put your own hand in every photo of one class · photograph one class through a window · photograph everything upside down · use only close-ups for one class.*
 
@@ -623,17 +623,17 @@ Your numbers will differ. **The shape is what matters.** This is what a typical 
 
 **Row 2 — one background, tested on that background.**
 
-> The margin went **up**, from 86 to 92 — better than the baseline. That's the surprising bit. Because every training photo had the wooden table in it, the table itself became evidence for all three classes, and when I test on the table that evidence is right there, so the model is more sure than ever. **My prediction was "about the same" and I was right for the wrong reason** — I thought it would be fine because the objects hadn't changed, and actually it was fine because the *table* hadn't changed.
+> The margin went **up**, from 86 to 92 — better than the baseline. That's the surprising bit. Because every training photo had the wooden table in it, the table was in every class, so it may have helped the model feel sure, and when I test on the table everything looks familiar, so the model is more sure than ever. **My prediction was "about the same" and I was right for the wrong reason** — I thought it would be fine because the objects hadn't changed, and actually it was fine because the *table* hadn't changed.
 
 **Row 2 — one background, tested somewhere else.**
 
-> Same spoon, same model, two metres away, and the margin fell from 92 to 5 — a coin toss that landed wrong. The wooden table appeared in every single training photo, so "warm brown texture in the background" became part of what the model believes a spoon looks like. At the sink the table is gone and a big chunk of the evidence goes with it. This is the husky-in-the-snow story, in my kitchen, in ten minutes.
+> Same spoon, same model, two metres away, and the margin fell from 92 to 5 — a coin toss that landed wrong. The wooden table appeared in every single training photo, so the model was never shown that backgrounds change, and it probably leaned on "warm brown texture in the background". At the sink the table is gone and a big chunk of the evidence may go with it (my one test does not prove that). This is a cousin of the husky-in-the-snow story, in my kitchen, in ten minutes.
 >
 > **And if I had only tested on the table, I would have concluded this was my best model** — 92 beats 86, honestly measured. That is the sentence I need to remember.
 
 **Row 3 — blurry photos.**
 
-> Still got all three right, but the margins fell from 86, 82 and 66 to 34, 29 and 12. Blur destroys **edges**, and edges are the most useful thing in a photo of a small thin object. The odd part is that I trained it on blurry photos and tested with everything held perfectly still and sharp, and it *still* struggled — which means the mismatch cuts both ways. **Training photos need to look like the photos the model will actually meet.** A model trained only on perfect studio pictures will also fail on the wobbly ones real people take.
+> Still got all three right, but the margins fell from 86, 82 and 66 to 34, 29 and 12. Blur may be hiding **edges**, a useful signal in a photo of a small thin object (a likely explanation, not tested). The odd part is that I trained it on blurry photos and tested with everything held perfectly still and sharp, and it *still* struggled — which hints that a mismatch can hurt (I did not test the reverse direction). **Training photos need to look like the photos the model will actually meet.** A model trained only on perfect studio pictures may well struggle with the wobbly ones real people take.
 
 **Row 4 — imbalance 40 / 40 / 5.**
 

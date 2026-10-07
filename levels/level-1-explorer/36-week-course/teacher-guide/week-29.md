@@ -49,8 +49,9 @@ This week we run it in the other direction. Pick a starting word. Look up its gr
 followers. Say it. Now that follower is your current word — look *it* up, choose again. Repeat until you
 hit a full stop.
 
-That loop is called **generation**, and it is the entire engine behind every text an AI has ever
-produced. Not a simplified version of it. The thing itself.
+That loop is called **generation**, and it is the same loop chatbots use to produce text, one word at
+a time. Real chatbots work out the chances with a much bigger and cleverer method than a counted table,
+but the loop itself is the real thing, not a toy.
 
 The only interesting question in the whole loop is the word **choose**. There are exactly two honest
 ways to do it, and they behave so differently that they are worth treating as two separate machines.
@@ -83,14 +84,14 @@ circle it cannot leave.
 Two consequences worth having ready, because they are the ones students find striking:
 
 - **The loop is short.** In our 20-word table it is 3 words long. Your phone's keyboard loop is
-  typically 5 to 12 words long. It is the same phenomenon at a different scale.
+  longer, because its table is bigger. It is the same phenomenon at a different scale.
 - **Greedy throws away most of the table.** Starting from `the`, greedy can only ever reach `the`, `bus`
   and `to`. That is three words out of twenty. **Seventeen of the twenty words can never appear at all,
   no matter how long you run it.** `amma`, `market`, `late` — all permanently unreachable. Greedy is not
   a cautious version of the model. It is a version of the model with 85% of it amputated.
 
 That is also, incidentally, the answer to the puzzle your student walked out with last week: their phone
-looped because tapping the middle suggestion fifteen times *is* greedy generation, done by hand.
+looped because tapping the middle suggestion fifteen times *works like* greedy generation, done by hand.
 
 ### Idea 3 — sampling: draw a slip from a bag
 
@@ -116,7 +117,7 @@ Since a die is easier to manage than actual paper slips, we number the slips ins
 
 So for `the` (6 slips) every roll counts. For `bus` (5 slips) a 6 means roll again. For `i` (3 slips)
 anything from 4 to 6 means roll again. For a word with only one follower, there is nothing to choose —
-we call that **forced** and no roll happens at all.
+we call that **forced** and no roll happens at all. A bag whose slips all name the same word (like `i`: eat, eat) has nothing to choose either. Example 2 skips the roll for those; Examples 1 and 3 roll anyway so you can see the bag. The word you get is identical either way; only which die numbers get used up differs, so follow the example's own way when it gives you a list of rolls.
 
 **Why this matters far beyond the classroom:** sampling is the answer to a question every single person
 asks about chatbots. *"Why did it give me a different answer when I asked the same thing twice?"*
@@ -134,7 +135,9 @@ start talking nonsense.
 In today's activity the prompt is **one word**: the word you begin at. That is genuinely all a prompt
 is. When you type "write me a poem about rain" into a chatbot, you have not given it an instruction in
 the way you would instruct a person. You have given it the *beginning of a text* and asked it to carry
-on. Everything a chatbot does, it does by continuing.
+on. Underneath, a chatbot produces its answer by continuing the text. (Chatbots are also trained to follow
+instructions, so a clear request works far better than a random beginning, but the machinery is still
+continuing.)
 
 > **Context** — how many previous words the model is allowed to look at when it makes its guess.
 
@@ -151,8 +154,10 @@ remembers your name from twenty minutes ago, keeps track of who is doing what in
 produce the crude loops your table produces.
 
 And it changes nothing at all about truth, because **the world is not in the window.** A big context can
-enforce consistency with the text so far. It cannot check reality. There is no step in the procedure
-where reality gets consulted. That is not a small missing feature; it is a missing category.
+enforce consistency with the text so far. It cannot check reality. There is no step in our procedure
+where reality gets consulted. Real chatbots can be tuned to be right more often, and some look things up,
+but fluent text still needs checking. That is not a small missing feature; it is a different question
+from fluency.
 
 ### Idea 5 — hallucination, arrived at rather than announced
 
@@ -207,14 +212,15 @@ That missing wobble is the whole danger.
 
 Students want the wrong sentence to be an error, because errors can be fixed. Push back gently and
 specifically: which step was against the rules? None. Every pair was real. So what would you fix? There
-is no broken line to repair. What is missing is a step that never existed — a step that asks "is this
+is no broken line to repair. What is missing is a step our procedure never had — a step that asks "is this
 true?" — and adding that step is a genuinely unsolved problem, not an oversight.
 
 **Misconception 2: "a bigger table would stop this."**
 
 This one is seductive because more data feels like more truth. It is not. A bigger table makes text more
 *likely-sounding*. Nothing in the counting procedure checks reality, so multiplying the counts by a
-million multiplies the fluency and leaves the missing step exactly as missing as it was. Bigger context
+million mainly adds fluency. Bigger models do get facts wrong less often, but they still can, so
+checking is still needed. Bigger context
 does help with a different problem — forgetting — and it is worth conceding that clearly, using
 Figure 29.3, before restating the limit.
 
@@ -412,7 +418,7 @@ Let them read: `bus` 4, `market` 1, `shop` 1.
 - Write the loop on the board as an actual circle: `the → bus → to →` and an arrow curving back to
   `the`. A circle is far more persuasive than a line of words.
 - Then write in zone 3: **"greedy = repeatable + boring + stuck"**.
-- Then say the punchline: *"Tapping the middle suggestion on your phone fifteen times is greedy
+- Then say the punchline: *"Tapping the middle suggestion on your phone fifteen times works like greedy
   generation, done with your thumb. That's why it went round in a circle. Puzzle two: solved."* Tick it
   off on the board.
 
@@ -546,7 +552,7 @@ They will get: **`amma takes the bus to the market .`**
 Let them find it. `I take the bus to the market.` And Amma? `Amma takes the bus to the shop.`
 
 > "So this sentence says Amma goes to the market. Our story says Amma goes to the shop, and it's *me*
-> who goes to the market. The sentence is beautifully written and it is **false**.
+> who goes to the market. The sentence is beautifully written and it is **false** (according to the story).
 >
 > Take the red pencil. Write FALSE across it. Big."
 
@@ -615,7 +621,7 @@ Score it: reads well ✗ · true, not applicable.
 
 > "Two puzzles were on the board when we started. Let's close them.
 >
-> *Why did my phone go round in a circle?* Because tapping the middle suggestion is **greedy** — always
+> *Why did my phone go round in a circle?* Because tapping the middle suggestion works like **greedy** — always
 > the biggest count. Greedy is deterministic: same row, same choice, every time. So it walks into a
 > circle and cannot climb out. Your table's circle was `the bus to`. Your phone's was longer. Same
 > thing.
@@ -647,7 +653,7 @@ Then the honest scale conversation, using Figure 29.3:
 > loops. The crude errors we made today mostly don't survive at that scale.
 >
 > But look at the right-hand box on that picture. What it does **not** fix is whether the sentence is
-> true. Because the world is not in the window. There is no step, anywhere in the whole procedure, where
+> true. Because the world is not in the window. There is no step, anywhere in our procedure, where
 > anybody checks reality. More memory is a bigger window onto the *text*. It is not a window onto the
 > world."
 
@@ -814,11 +820,11 @@ working, which today is the point.
 **6. "How big is a real chatbot's table?"**
 
 Nobody can give you an honest single number, and here is the interesting part: it isn't stored as a table
-of pairs at all. If it were, English would need something like 2.5 billion rows just for pairs, and
+of pairs at all. If it were, English would need something like 2.5 billion rows just for pairs (assuming a vocabulary of about 50,000 words, 50,000 × 50,000), and
 you'd need far more for longer contexts than that — the numbers explode exactly the way the rulebook
 exploded in Week 10. So real systems store something cleverer that behaves *like* a gigantic table
 without ever writing one out. That "something cleverer" is Level 2's territory. What survives from
-today: however it is stored, there is still no step in it that checks whether the answer is true.
+today: however it is stored, there is still no built-in step in it that guarantees the answer is true.
 
 **7. "Does the machine know it's making things up?"**
 
@@ -1309,7 +1315,7 @@ above. Items marked "own table" have no single right answer; mark them against t
 | W2 | **Order is part of what a bigram is.** `hot dog` records A followed by B; `dog hot` records the opposite. | Direction is what word frequency threw away. |
 | W3 | A pair written **backwards**, or filed in the **wrong group**: one mark goes down either way, so the total is unchanged. | A misfiled pair makes one group too big and another too small, which is why check 2 exists. |
 | W4 | `the` was followed by something **six times**, so the group has six marks. It also equals how many times `the` appears. | |
-| W5 | (1) Somebody counted word pairs in a huge amount of text; (2) the phone **looks up** the word you typed; (3) it shows the **three followers with the biggest counts**. | No understanding anywhere in it. |
+| W5 | (1) Somebody counted word pairs in a huge amount of text; (2) the phone **looks up** the word you typed; (3) it shows the **three followers with the biggest counts**. | In simple terms, and real keyboards add extras. No understanding anywhere in it. |
 
 **✍️ Practice Set A — Understand It**
 
@@ -1333,7 +1339,7 @@ method wrong even if the output is right.
 | B1 | Needs **sampling** (or the bag idea) **and** the point that nothing changed between the two tries. Half credit for "it's random" — it misses the *weighting*. |
 | B2 | (a) **Right:** a bigger table and a bigger **context** fix **forgetting**; a large model would not lose track that we were talking about Amma. (b) **Wrong:** it does not fix **truth**. Nothing in the counting checks reality, so a million times the counts is a million times the fluency. The world is not in the window. |
 | B3 | (a) **"is here"** for every pupil, for ever — the biggest count in the `is` group never changes. (b) Never **`absent`**: greedy is deterministic and `absent` has a smaller count in the only group that could produce it, so its chance is zero, not small. (c) **No**, nothing is broken: every step obeyed every rule. What is missing is a step that checks whether the claim is true. |
-| B4 | (a) **One story**: grammatical, dull, repeating for ever. (b) **Exactly the same story**, word for word. (c) Any job where the same input must give the same output: a form turned into a standard sentence, a keyboard strip built for thumb-memory. Greedy is the right tool for a different job. |
+| B4 | (a) **One story**: readable at first, dull, repeating for ever. (b) **Exactly the same story**, word for word. (c) Any job where the same input must give the same output: a form turned into a standard sentence, a keyboard strip built for thumb-memory. Greedy is the right tool for a different job. |
 | B5 | From `the`, greedy goes `bus`, then `to`, then `the` — already visited. Reachable set **`{the, bus, to}`**, 3 words. It can never grow because greedy's choice depends only on the current word and the table never changes, so the set is closed. **`amma` is impossible, not merely unlikely.** So are 16 others: **17 of the 20 words.** |
 
 **🧩 Puzzle of the Week**

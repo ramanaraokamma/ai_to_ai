@@ -5,13 +5,13 @@
 ---
 
 > ### This week in one sentence
-> **A language model is a giant tally of which word tends to follow which — and that is the whole engine, not a simplified version of it.**
+> **A language model guesses the next word, and a tally of which word tends to follow which is the simplest honest version of one — a real model, with much simpler machinery than a chatbot's.**
 >
 > **By the end of this chapter you will be able to:**
 > - Tally every **bigram** in a short text without missing one or counting one twice
 > - Build a **next-word table** showing, for each word, what followed it and how often
 > - Read that table to answer questions about what the machine will probably say
-> - Explain exactly what your phone is doing when it offers you three words above the keyboard
+> - Explain the idea behind what your phone is doing when it offers you three words above the keyboard
 >
 > **Reading time:** about 20 minutes. **Homework:** about 50–60 minutes.
 
@@ -32,15 +32,15 @@ Now the awkward question, and I want you to be honest about it: **how did you kn
 You did not understand my sentence, because I had not finished it. You did not know what I meant, because I had not said it yet. There was nothing to understand. And yet the word arrived in your head instantly, without effort, before you had decided to look for it.
 
 ![How did you know?](../figures/fig-w28-12-once-upon-a.svg)
-*Figure 28.1 — You have heard "once upon a time" maybe four hundred times in your life. You have heard "once upon a banana" exactly never.*
+*Figure 28.1 — You have heard "once upon a time" maybe four hundred times in your life. You have heard "once upon a banana" almost never.*
 
 Here is my best guess at what happened.
 
 You have heard **once upon a time** hundreds of times. You have heard **once upon a banana** zero times. So when I stopped, your head did not reason about fairy tales. It reached for the thing that has always come next.
 
-You were not thinking. You were **counting** — using a tally you have been building since you were about two years old, without ever deciding to.
+You were not working it out. Something in your head was behaving like a **tally** — one you have been building since you were about two years old, without ever deciding to.
 
-This week we build that tally on paper. Pencil, a ruled sheet, forty words. And by the end of it you will know exactly what your phone is doing when it puts three words above the keyboard. Not roughly. Exactly.
+This week we build that tally on paper. Pencil, a ruled sheet, forty words. And by the end of it you will know the idea behind what your phone is doing when it puts three words above the keyboard. Not roughly. Exactly the idea, in its simplest form.
 
 ---
 
@@ -249,7 +249,7 @@ Back in Week 2 we agreed on what a model is: something that was built by looking
 | Was it built by looking at examples? | Yes. You counted 39 real pairs. Nobody wrote its rules. |
 | Does it make guesses about things it has not seen? | Yes. Give it any word and it will tell you what probably comes next. |
 
-It is tiny, it is made of pencil marks, and it works. A chatbot is the same idea with more counting.
+It is tiny, it is made of pencil marks, and it works. A chatbot does the same job, guessing the next word, with far bigger and cleverer machinery. Your sheet is the simplest honest version.
 
 ### 6. Your phone keyboard, explained for good
 
@@ -258,7 +258,7 @@ This is the bit that lands.
 ![What your phone is really doing](../figures/fig-w28-4-keyboard-to-table.svg)
 *Figure 28.6 — The three keys above the keyboard are the top three rows of a next-word table, sorted by count.*
 
-Type `I am going to the` on any phone and three suggestions appear. Here is the whole of what happened, in five steps:
+Type `I am going to the` on any phone and three suggestions appear. Here is the idea of what happens, in five steps:
 
 1. Somebody counted word pairs in an **enormous** amount of English text.
 2. Your phone holds the resulting next-word table.
@@ -266,9 +266,9 @@ Type `I am going to the` on any phone and three suggestions appear. Here is the 
 4. It sorted that group by count, biggest first.
 5. It printed the **top three** onto three keys.
 
-**No understanding. No meaning. No plan for the sentence.** A tally, sorted, top three shown.
+**No understanding. No meaning. No plan for the sentence.** A tally, sorted, top three shown. (Real keyboards add extras: many look at more than the last word, and some use a more advanced kind of model. This table is the right picture of the idea, not a copy of every phone.)
 
-The reason `shop` and `bus` and `park` come up after `the` is not that your phone knows anything about shops. It is that in the text somebody counted, `the shop` happened 812 times and `the aardvark` happened never.
+The reason `shop` and `bus` and `park` come up after `the` is not that your phone knows anything about shops. It is that in the text somebody counted, `the shop` happened 812 times and `the aardvark` happened almost never.
 
 Two extra details, because you will notice both within about ten seconds of trying it:
 
@@ -558,7 +558,7 @@ Take these to a parent, a sibling or a friend. Each one is a real question, not 
 |---|---|
 | "`bus` has 4 marks and `market` has 1, so `bus` is the better word." | "In this one text, `bus` followed `the` more often than `market` did. That is all a count means." |
 
-The killer example is right in front of you: `the` is the most common word in English and it is the least informative word in English. **Frequency measures how often, never how good.**
+The killer example is right in front of you: `the` is the most common word in English and it is one of the least informative words in English. **Frequency measures how often, never how good.**
 
 ### Trick 2 — "The table understands the sentence"
 
@@ -588,7 +588,7 @@ Write a pair backwards and the total is still 39 — one mark went down either w
 
 ## 🌍 Where You've Seen This
 
-1. **The three suggestions above your phone keyboard.** Now you know: a next-word table, looked up on the word you just typed, top three by count. That is the entire feature.
+1. **The three suggestions above your phone keyboard.** Now you know: a next-word table, looked up on the word you just typed, top three by count. That is the core of the feature.
 2. **Google's search box finishing your question.** Same idea, bigger tally — except what was counted was *what millions of people typed into the search box*, not books (and it suggests whole searches, not just one next word). That is why it sometimes suggests something odd: lots of people really did type that.
 3. **The autocomplete in a chat app that guesses your friend's name.** That one comes from the small personal tally of *your* typing, sitting on top of the big general one. It is why your phone eventually learns a nickname no dictionary contains.
 4. **Song lyrics you can finish without trying.** Hum the first half of a chorus and the rest arrives by itself. You have heard the pairs hundreds of times. It feels like your head is running a lookup, though nobody knows exactly how the brain does it.
@@ -643,7 +643,7 @@ big enough to be an actual language model.
 | **word frequency** | How many times each word appears in the text | In our corpus, `the` appears 6 times and `market` appears once |
 | **bigram** | Two tokens that appeared next to each other, in that order | `the bus` is a bigram. `bus the` is a *different* bigram, and it never occurs in our text |
 | **next-word prediction** | Given the words so far, working out which word probably comes next | You are at `the`; the table says `bus` 4 out of 6, so the best guess is `bus` |
-| **language model** | Any system that predicts likely next words | Your tally sheet. Also your phone keyboard. Also a chatbot — same idea, vastly more counting |
+| **language model** | Any system that predicts likely next words | Your tally sheet. Also your phone keyboard. Also a chatbot — same job, far bigger and cleverer machinery |
 
 ---
 

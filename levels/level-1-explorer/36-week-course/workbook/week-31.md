@@ -499,7 +499,7 @@ Tick one box per row. Be honest — this page is for you, not for marking.
 ```
    WHAT IT SAW A LOT OF   →   it gets good at
    WHAT IT SAW A LITTLE   →   it stays shaky
-   WHAT IT NEVER SAW      →   it has no idea
+   WHAT IT NEVER SAW      →   it is guessing, nothing to go on
 ```
 
 ### A2
@@ -525,9 +525,9 @@ What is wrong with (a) "25%": somebody can ask *"25% of what?"* and there is no 
 1. **Who got photographed** — somebody decided what to collect, usually by convenience.
 2. **The training data is lopsided** — 183 daylight, 17 lamplight, 0 and 0. Nobody notices, because nobody counted.
 3. **The model learns what it saw** — brilliant in daylight, lost by lamplight. Not a malfunction; learning from examples *is* copying the examples.
-4. **Somebody gets bad answers** — a real person, and always the one who was missing from step 1.
+4. **Somebody gets bad answers** — a real person, and usually the one who was missing from step 1.
 
-**Pink box: the fix happens at link 1.** You do not repair a biased model by making the model cleverer. You go back and take the photographs nobody took.
+**Pink box: the main fix happens at link 1.** You do not repair missing data by making the model cleverer. You go back and take the photographs nobody took.
 
 ### A6 — Vocabulary
 
@@ -671,7 +671,7 @@ There is no single right answer. A full-marks paragraph does three things: gives
 
 **The measurement.** With twelve photos, one photo changing side moves that group by 1/12, which is 8.3 points. So any gap smaller than about eight or nine points could be produced by pure luck.
 
-**But a 50-point gap is not luck.** For 91.7% and 41.7% to really be the same underlying accuracy, six photos would have to have fallen the wrong way by chance in one specific batch. That is far too much of a coincidence to build a story on.
+**But a 50-point gap is unlikely to be luck alone.** For 91.7% and 41.7% to really be the same underlying accuracy, six photos would have to have fallen the wrong way by chance in one specific batch. That would be a big coincidence, and the training counts point the same way, so the story is reasonable. It is still only twelve photos, so say so.
 
 **The rule to actually use:** **small samples can spot big gaps but not small ones.**
 
@@ -730,8 +730,8 @@ Marks are for **a specific situation and a number**, not for style. "Be careful 
 |---|---:|---:|---:|---|
 | Bright daylight | 183 | 91.5% | 91.7% | Well covered → works |
 | Lamplight | 17 | 8.5% | 58.3% | Barely covered → shaky |
-| Held in a hand | **0** | 0.0% | 41.7% | Never seen → fails |
-| Patterned background | **0** | 0.0% | 50.0% | Never seen → fails |
+| Held in a hand | **0** | 0.0% | 41.7% | Never seen → much less reliable |
+| Patterned background | **0** | 0.0% | 50.0% | Never seen → much less reliable |
 
 The shares: 183 ÷ 200 = 0.915 → 91.5% · 17 ÷ 200 = 0.085 → 8.5% · 0 ÷ 200 = 0% (twice).
 
@@ -765,7 +765,7 @@ There is no single right answer — this is your model. Mark the **shape** again
 
 **No marks for:** "I predict it will be worst at the hard one" *(which one?)* or "I predict it will be about 80%" *(that is not a group)*.
 
-**And one warning about Week 33.** In the reference audit we will work through, this exact prediction turns out to be **wrong** — lamplight is worse than held-in-a-hand, because the person had actually taken 22 held-in-a-hand photos without remembering. **That is not a problem with the prediction. It is the best thing that can happen**, and Week 33 is built around reporting it.
+**A wrong prediction is not a problem. It is the best thing that can happen**, and Week 33 is built around reporting it.
 
 ### Draw It
 

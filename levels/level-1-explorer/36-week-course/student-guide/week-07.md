@@ -49,7 +49,7 @@ Look at the two sides of that figure and say what you would actually **do** abou
 
 On the left: four Mondays, four late. If you bet "late" every Monday, you would have been right **four times out of four.** Worth doing.
 
-On the right: four Fridays, one late. If you bet "late" every Friday, you would have been right once and **wrong three times.** That is not a pattern. That is a thing that happened.
+On the right: four Fridays, one late. If you bet "late" every Friday, you would have been right once and **wrong three times.** That is not enough to call a pattern. That is a thing that happened.
 
 This week you turn the top line into the bottom line — and then you do something harder. You turn the bottom line into an instruction so exact that a computer could follow it without ever having met a bus.
 
@@ -222,7 +222,7 @@ DEFAULT handles 7 rows   (3, 4, 5, 7, 9, 12, 13)
 check:  3 + 4 + 7 = 14  ✅
 ```
 
-**Seven of fourteen. Half the table is answered by the line at the bottom.** The default is the single busiest line in almost every rulebook ever written.
+**Seven of fourteen. Half the table is answered by the line at the bottom.** The default is often the busiest line in a rulebook.
 
 **And what happens if you leave it blank?** Not "no". Not "on time". **Nothing.** The rulebook has no answer at all. And a machine with no answer does not shrug politely and move on — it stops, or it hands the next program an empty answer, and something breaks three steps later in a place nobody can trace.
 
@@ -433,7 +433,7 @@ home 83%     vs  away 17%        ->  a gap of 66 points   <- strongest
 won toss 67% vs  lost toss 33%   ->  a gap of 34 points   <- real, but weaker
 ```
 
-**Both of these are genuine patterns.** Both beat guessing. Home ground is roughly twice as strong.
+**Both of these are patterns in these twelve matches.** Both beat guessing. Home ground is roughly twice as strong. (On only twelve matches, who knows if either would hold next season?)
 
 **Step 3 — the rule. And notice something.**
 
@@ -485,7 +485,7 @@ Rule 1 still takes all six home matches and is still right on five of them. Noth
 
 Two right became one right. **The score drops from 10 out of 12 to 9 out of 12 — from 83% to 75%.**
 
-> **A real pattern can still make your rulebook worse.** The toss pattern genuinely exists, and it is genuinely too weak to override the home-ground pattern. Adding it fixed one wrong answer (row 6) and broke two right ones (rows 4 and 12). **Adding a rule is not automatically an improvement, and the only way to find out is to score it both ways.**
+> **A real pattern can still make your rulebook worse.** The toss pattern shows up in these matches, and it is too weak to override the home-ground pattern. Adding it fixed one wrong answer (row 6) and broke two right ones (rows 4 and 12). **Adding a rule is not automatically an improvement, and the only way to find out is to score it both ways.**
 
 That is the honest, slightly annoying state of rule-writing, and it is the reason the very next thing we do is count how many rules it takes before the whole thing falls over.
 

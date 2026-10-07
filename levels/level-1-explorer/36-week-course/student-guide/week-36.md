@@ -35,7 +35,7 @@ At the start of this course you could not:
 ![September and now](../figures/fig-w36-12-september-and-now.svg)
 *Figure 36.1 — Same list, thirty-six weeks apart.*
 
-**Most adults who talk about AI for a living cannot do the fourth one or the sixth one.** That's not flattery. It's just rare, because both of them are slow and neither of them is fun to post about.
+**Many people who talk about AI have never done the fourth one or the sixth one themselves.** That's not flattery. Those are the steps that often get skipped, because both of them are slow and neither of them is fun to post about.
 
 So today is not about finding out whether you learned anything. That question is already settled — the booth is sitting right there on the table.
 
@@ -314,8 +314,8 @@ Writing "49%" **loses the mark.** Subtracting two percentages gives points. This
       indoor light does to the same object.
 
    4. WHO GETS BAD PREDICTIONS
-      Anyone using it in the evening, or in winter — which for a
-      kitchen bin sensor is most of the time it actually matters.
+      Anyone using it under lamplight, for example in the
+      evening.
 ```
 
 And the sentence that earns the credit at the end: **nothing broke.** No bug, no crash. **Bias is the default outcome of learning from examples.**
@@ -361,7 +361,7 @@ Notice this is your own booth's arithmetic with different numbers. Yours was 138
 
 **(a) Four problems, each with a number where a number exists.**
 
-**Problem 1 — tested on training data.** The 20 came from the same 611. There is **no held-out set at all**. This is the one that cannot be repaired.
+**Problem 1 — tested on training data.** The 20 came from the same 611. There is **no held-out set at all**. This is the one that forces a restart: the model and its score cannot be rescued.
 
 **Problem 2 — severe class imbalance.**
 
@@ -388,7 +388,7 @@ And the hamster class — the class with 11 photos, the one everything will fail
 
 **Problem 4 — a deployment claim with nothing behind it.** "A vet's office" is a real place with real consequences. There is no per-class accuracy, no confusion matrix, no `other` class for the animals a vet actually sees (rabbits, budgies, snakes), and no stated limits.
 
-*(A fifth, also correct: there's no data card — and 11 hamster photos are almost certainly 11 shots of the same hamster.)*
+*(A fifth, also correct: there's no data card — and 11 hamster photos are possibly 11 shots of the same hamster.)*
 
 **(b) Why the 95% can't be trusted — two moves.**
 
@@ -431,7 +431,7 @@ And the hamster class — the class with 11 photos, the one everything will fail
 
 Two things make that line good and both are marks: it names an **absent category** (every other animal), and it names a **measured number** (11) that a stranger could go and check.
 
-**And if you're only allowed to change one thing?** Hold photos out **before** training. Every other flaw here can be repaired afterwards. That one cannot — there is no way to make a model un-see a photo.
+**And if you're only allowed to change one thing?** Hold photos out **before** training. Other flaws here can be fixed by adding photos or tests. This one means throwing away the score and retraining on a fresh split or new unseen photos, because there is no way to make a model un-see a photo.
 
 ---
 

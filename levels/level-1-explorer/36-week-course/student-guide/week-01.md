@@ -20,7 +20,7 @@
 
 ## 🪝 Start Here
 
-In 2016, a computer program called **AlphaGo** played the best human Go player in the world.
+In 2016, a computer program called **AlphaGo** played one of the best human Go players in the world.
 
 Go is an ancient board game. It looks simple — black stones, white stones, a grid. It is not simple.
 There are more possible games of Go than there are atoms in the universe. Not more than the atoms
@@ -28,7 +28,7 @@ on Earth. More than the atoms in *everything*.
 
 AlphaGo won.
 
-Newspapers all over the world printed the same headline the next morning: **machines are thinking now.**
+Many newspapers printed much the same headline the next morning: **machines are thinking now.**
 
 Here is the part they did not print.
 
@@ -121,7 +121,9 @@ Everything now depends on that one word in the definition. So what is judgement?
 And that gives you the test. It is the only test you need this week:
 
 > **💡 Try this:** ask yourself — **"could two sensible people disagree about the answer?"**
-> If yes, it needs judgement. If no, it doesn't.
+> If yes, it needs judgement. If no, it doesn't. This is a good **rule of thumb**, not an exact
+> boundary: a few real AI jobs (like reading a number plate) have one right answer but are still too
+> hard to write rules for. We start with the rule of thumb because it sorts most jobs correctly.
 
 Let's run it.
 
@@ -157,11 +159,11 @@ Judgement is not an on/off switch. It is a slider. Some jobs sit right in the mi
 | Add 47 + 88 | No — one answer, 135 | ❌ |
 | Ring a bell at 3:30 pm | No — a clock does it | ❌ |
 | Sort 200 numbers smallest to largest | No — one right order | ❌ |
-| Decide if a photo shows a dog or a wolf | Yes — depends on the photo | ✅ |
+| Decide if a photo is a good one to keep | Yes — depends on who is looking | ✅ |
 | Decide which video to show you next | Yes — depends on you, right now | ✅ |
 | Decide if this text message is spam | Yes — a marketing text splits people | ✅ |
 
-Three of those six could be AI jobs. The other three never will be, no matter how modern the box looks.
+Three of those six are the kind of job AI is usually used for. The other three are not, no matter how modern the box looks.
 
 > **✅ Stop. Cover this page with your hand.**
 >
@@ -293,7 +295,7 @@ properly, using nothing but the test you just learned.
 | The job | Could two sensible people disagree? | Judgement? |
 |---|---|---|
 | Thermostat: *is 19 lower than 20?* | No. Never. Not once in ten years. | ❌ |
-| AlphaGo: *what is the best move here?* | Yes — the best players in the world argued about its moves for weeks | ✅ |
+| AlphaGo: *what is the best move here?* | Yes — strong players could disagree about the best move, and neither is plainly wrong | ✅ |
 
 So the thermostat's job is not even the *kind* of job AI is for. That settles half of it.
 
@@ -309,7 +311,7 @@ You can't. Nobody can. **And that is the actual answer to the question in the ho
 
 > **🔑 So here it is:** the thermostat is **just following orders** — a person's orders, written in
 > advance, and you can read every one of them. AlphaGo is doing the genuinely interesting thing,
-> **because nobody wrote its rules.** It worked them out from examples. That is the second way, and it
+> **because nobody wrote its move-judging rules.** It learned them from human games and from playing itself. That is the second way, and it
 > is next week.
 
 **Now check your word.** If you wrote ALPHAGO — good instinct, and now you can say *why*, which is
@@ -379,18 +381,18 @@ skill.
 |:--:|---|---|:--:|
 | 1 | How many runs did she score in that over? | No. Count them: 4 + 1 + 0 + 6 + 0 + 2 = 13. Everyone gets 13. | ❌ |
 | 2 | Did the ball cross the boundary line? | No — there is one right answer, even if it's hard to see | ❌ |
-| 3 | Was that a no-ball? | **Yes.** Two umpires genuinely give different calls on a tight one | ✅ |
+| 3 | Was that a good shot? | **Yes.** Two sensible fans could rate it differently | ✅ |
 | 4 | What is the score right now? | No. Look at the scoreboard. | ❌ |
 | 5 | Who should be captain next season? | **Yes.** Two coaches would pick differently, and neither is wrong | ✅ |
 | 6 | Was that catch worth putting on the highlights reel? | **Yes.** Completely a matter of taste | ✅ |
 
-**Score: three of the six need judgement — 3, 5 and 6.** Those three are the only ones that could
-ever be AI jobs.
+**Score: three of the six need judgement — 3, 5 and 6.** Those three are the ones that
+look like the jobs AI is usually used for.
 
-Look carefully at rows 2 and 3, because they are the interesting pair. Both are hard to see in real
-time. But "did the ball cross the line" has **one true answer** that a slow-motion camera settles.
-"Was that a no-ball" depends on where you think the line was and how you read the bowler's foot,
-and two trained umpires disagree about tight ones all the time.
+Look carefully at rows 2 and 3, because they are the interesting pair. Row 2 is hard to see in real
+time, but "did the ball cross the line" has **one true answer** that a slow-motion camera settles.
+Row 3 is the other way round: "was that a good shot" is easy to watch, but it depends on what you
+value, and two sensible fans can rate the same shot differently.
 
 **Hard is not the same as judgement.** Row 2 is hard. Row 3 needs judgement.
 
@@ -542,7 +544,7 @@ real arguments that grown adults are paid to have.
 
 **3. "Was AI invented recently?"**
 
-*Hint:* the words "artificial intelligence" were first used in **1956** — before your grandparents
+*Hint:* the words "artificial intelligence" were first used in **1956** — before most grandparents
 were your age. Banks were using machines to catch card fraud in the 1990s. What changed recently is
 the *scale*, and how loud everyone got about it. Not whether it existed.
 
@@ -567,7 +569,7 @@ you will never see.
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "The calculator app is AI — it's on my phone, it's fast, and I couldn't do that in my head." | "Run the judgement test first. Could two sensible people disagree about 47 + 88? No. Not judgement, so not AI — however fast it is." |
+| "The calculator app is AI — it's on my phone, it's fast, and I couldn't do that in my head." | "Run the judgement test first. Could two sensible people disagree about 47 + 88? No. Not judgement, so not an AI job — however fast it is." |
 
 The reverse mistake happens too: deciding something is *not* AI because it's old or boring. A 1990s
 bank fraud detector that learned from millions of card transactions **is** AI. It is beige and it
@@ -602,9 +604,9 @@ Six places this week's idea is already sitting in your life:
    considered whether the lesson was finished.
 3. **Automatic shop doors.** `IF something moves THEN open`. You know they aren't judging anything,
    because they open for a stray cat and for a crisp packet blowing past.
-4. **The red squiggle under a typo.** That's a word list — rules. Which is exactly why it stays
+4. **The red squiggle under a typo.** In the old-style version, that's a word list — rules. Which is exactly why it stays
    silent when you write "I have a pet dot".
-5. **Your spam folder.** Nobody typed a rule saying *"FREE plus three exclamation marks is
+5. **Your spam folder.** Mostly, nobody typed a rule saying *"FREE plus three exclamation marks is
    suspicious"* — and yet it catches wording that didn't exist last year. **Hold that thought. It's
    next week's entire lesson.**
 6. **Face unlock.** Nobody could write if-then rules for what your face looks like in every light
@@ -652,14 +654,14 @@ along the bottom is the six threads every week of this course adds to.*
 - **Artificial intelligence** is a machine doing a job that used to need a person's **judgement**.
   No *smart*, no *brain*, no *magic*.
 - **The test is one question:** could two sensible people disagree about the answer? Yes → judgement.
-  No → not judgement, and therefore not AI.
+  No → not judgement, and so (as a rule of thumb) probably not an AI job.
 - **Hard is not the same as judgement.** Hard jobs can still have exactly one right answer.
 - **A robot is a body. AI is a decision.** Almost all real AI has no body at all.
 - **A rule-based system** is one where a human wrote the if-then steps in advance. It is
   predictable, explainable, and only knows what somebody put in it.
 - **Rulebooks fail quietly.** When a case arrives that nobody imagined, no rule fires — or the wrong
   rule fires first — and the machine reports a confident, useless answer.
-- **Narrow, not thinking.** AlphaGo beat the best Go player alive and could not play checkers. When a
+- **Narrow, not thinking.** AlphaGo beat one of the world's best Go players and could not play checkers. When a
   headline says a machine "thinks", ask what the *one* job is, and what happens one step outside it.
 - **"Not sure, and here's what I'd need to look up"** is a real answer and a good one. Use it.
 

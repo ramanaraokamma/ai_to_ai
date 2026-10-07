@@ -137,7 +137,7 @@ four seconds, so make the student do it every time.
 
 ### The gap, and why 100% on training is boring
 
-Teachable Machine will happily tell you the model got 100% on the photos it trained on. This is the
+A model scored on the photos it trained on will usually get 100%, or very close. This is the
 most ordinary result in the world and it means nothing. A student who was given the exam paper to
 revise from will also get 100%.
 
@@ -262,7 +262,10 @@ are lit this week. Do not quiz them on the threads; the map is orientation, neve
       else. If the model has been lost, see the fallback below.
 - [ ] **Find the training accuracy from Week 17.** It should be written in their workbook (it is
       usually 100%, or very close). You need it for the gap. If it is not written down anywhere,
-      open the model, click **Advanced → Under the hood**, and read it off.
+      open the model and look under **Advanced → Under the hood**. Caution: I have not verified what that
+      screen shows. It may report accuracy on photos Teachable Machine holds out itself rather than on
+      the training photos, so it may not be 100%. If so, use "about 100%" and say where any other
+      number came from.
 - [ ] **Read the Answer Key section at the end of this file**, specifically the cat / dog / rabbit
       worked example. You will be doing that live, on a board, in front of the student. It goes far
       better if you have done it once yourself with a pencil.
@@ -288,7 +291,7 @@ are lit this week. Do not quiz them on the threads; the map is orientation, neve
 **If Teachable Machine will not load, or the model has vanished:** you can still run 100% of today's
 lesson. Today is a *scoring and arithmetic* lesson, not a training lesson. Use the printed
 demonstration data in the Answer Key: the 15-row spoon / toothbrush / comb sheet (Figure 22.3) is a
-complete, real result. Hand the student the *predictions* one row at a time — read them out, do not
+complete, made-up but realistic result. Hand the student the *predictions* one row at a time — read them out, do not
 let them see the sheet — and have them fill in their own copy, compute all four numbers, draw the
 matrix and write the verdict. They practise every skill; the only thing they lose is that the
 numbers are somebody else's. Then reschedule the envelope opening for the first ten minutes of
@@ -347,9 +350,8 @@ sit there for a beat longer than is comfortable.
 **Say this:**
 
 > *"That signature is doing a real job. It's not decoration. It's proof that nobody — not you, not
-> me — has quietly slipped a photo in or out since Week 19. Scientists do exactly this. There are
-> laboratories where the results are sealed and time-stamped before anybody is allowed to look at
-> them, for precisely this reason: because human beings, including honest ones, are very good at
+> me — has quietly slipped a photo in or out since Week 19. Scientists guard against this in a similar way. They fix their
+> test data and their plan in advance, before anybody looks at the results, for precisely this reason: because human beings, including honest ones, are very good at
 > talking themselves into small adjustments."*
 
 ![Opening the envelope](../figures/fig-w22-2-opening-the-envelope.svg)
@@ -486,8 +488,8 @@ toothbrush' — what would you go and do about it tomorrow?"*
 
 **Say this, to close the segment:**
 
-> *"And one last thing before we open it. Your model scored 100% on its training photos. I know it
-> did, because they all do. That is the least impressive number in this room. It's a student marking
+> *"And one last thing before we open it. Your model scored 100% on its training photos. I'd bet
+> it did, because they nearly always do. That is the least impressive number in this room. It's a student marking
 > their own homework with the answer sheet open. The interesting number is the **difference** between
 > that 100% and whatever we're about to get. That difference has a name: **the gap**. A small gap
 > means it learned the object. A big gap means it learned your kitchen table."*
@@ -520,7 +522,7 @@ is a cat / dog / rabbit classifier somebody else built, with 4 test photos per c
 
 **Say this:**
 
-> *"This is a real result from somebody else's model. Twelve photos, four of each animal. Your job
+> *"This is a made-up but realistic result, as if from somebody else's model. Twelve photos, four of each animal. Your job
 > is to tell me, in about ten minutes, exactly what's wrong with this model — and I don't mean
 > 'it's not very good'. I mean the specific broken thing, named."*
 
@@ -564,9 +566,9 @@ Check with them: 3 + 3 + 1 = 7 ✓ and 4 + 4 + 4 = 12 ✓.
 
 **Say this:**
 
-> *"Look at rabbit. Twenty-five percent. Now look back at the baseline — 33.3%. **This model is worse
-> at rabbits than a coin spinner would be.** You could replace the rabbit part of this model with a
-> dice and improve it. And the headline number, 58.3%, said nothing about that at all."*
+> *"Look at rabbit. Twenty-five percent. Now look back at the baseline — 33.3%. **This model is no
+> better at rabbits than a coin spinner would be** — a bit below it, though that is only one photo out of
+> four, so we can't be sure. And the headline number, 58.3%, said nothing about that at all."*
 
 **Do this — step 4, build the matrix together.** Go down the twelve rows and put a tally in each
 cell. Do it slowly; the student should call out the cell for each row.
@@ -590,16 +592,15 @@ Diagonal check: 3 + 3 + 1 = **7** ✓ matches the correct count. Grand total 6 +
 
 **Say this:**
 
-> *"That's a different diagnosis from 'it's bad at rabbits'. If it were just bad at rabbits, its
-> rabbit guesses would be scattered about randomly. This one has nearly stopped believing rabbits
-> exist. It said 'cat' six times when there were only four cats. It is over-eager about cat and
-> reluctant about rabbit.*
+> *"That's a different question from 'it's bad at rabbits'. The row says how the rabbits did; the
+> column says how often the model chose the word. This one used 'rabbit' once. It said 'cat' six times
+> when there were only four cats. It is over-eager about cat and reluctant about rabbit.*
 >
 > *And here's the clincher. Look at the 'true cat, said rabbit' box. It's zero. Not one single cat
 > was ever mistaken for a rabbit. If cats and rabbits genuinely looked alike to this model, the
-> confusion would run **both ways**. It only runs one way. So the problem isn't 'cats and rabbits
-> look similar' — the problem is the rabbit class itself. Probably too few rabbit photos, or all the
-> rabbit photos were too samey."*
+> confusion would run **both ways**. It only runs one way. So one guess to check is that the problem isn't 'cats and rabbits
+> look similar' but the rabbit class itself — perhaps too few rabbit photos, or all the rabbit photos too
+> samey. It's a guess, not a proof: we have four photos per class, so a 0 versus a 1 or 2 is noise-level."*
 
 **Do this — step 5, the verdict sentence.** Write it on the board, slowly, naming each part as you
 write it.
@@ -731,8 +732,8 @@ For each photo, in this order:
 
 ![A completed scoring sheet, all fifteen rows](../figures/fig-w22-3-scoring-sheet-filled.svg)
 
-*Figure 22.4 — What a finished sheet looks like. Eleven ticks, four crosses, and four crosses that
-are all clustered in one class. That clustering is the thing to notice.*
+*Figure 22.4 — What a finished sheet looks like. Eleven ticks, four crosses, and three of the four
+are clustered in one class. That clustering is the thing to notice.*
 
 Your job during these twelve minutes is almost entirely to **not help**. Specifically:
 
@@ -819,11 +820,11 @@ If they finish with time to spare:
 
 - **The confidence split.** Average the confidence of the correct answers, and separately of the
   wrong ones. Are wrong answers less confident? By how much? Then find the *highest-confidence
-  mistake* on the sheet and go look at that photo — the mistakes a model was sure about are always
+  mistake* on the sheet and go look at that photo — the mistakes a model was sure about are often
   the most informative.
 - **The 70% rule.** Split the fifteen rows into "confidence 70% or more" and "under 70%". Compute
   accuracy in each pile. If the confident pile is much more accurate, you have just discovered the
-  design of every real product that says *"send it to a human when unsure."* Then say the honest
+  design of many real products that says *"send it to a human when unsure."* Then say the honest
   caveat out loud: that 70% was chosen *after* seeing these results, so it will not work quite so
   cleanly on fresh photos.
 - **Predict the lazy score.** Ask: *"If I'd let you test on fifteen photos from the same batch as
@@ -849,7 +850,7 @@ If they finish with time to spare:
 > them right is like getting full marks on a test made entirely of questions you were given the
 > answers to the night before. It's not cheating exactly — it's just not measuring anything. The
 > useful number is the difference between that 100% and today's score. That difference is called the
-> gap, and it tells you how much of the model's cleverness was actually just memory.
+> gap, and it hints at how much of the model's cleverness was just memory (the gap can also include the photos being a different batch, or luck on a small test).
 
 **"My score is worse than my friend's. Is my model worse?"**
 
@@ -944,9 +945,9 @@ so they only fill in numerators and denominators.
 
 **Say this if they are demoralised by the score:**
 
-> *"Every single person who has ever done this got a lower number than they expected the first time.
+> *"Most people who do this get a lower number than they expected the first time.
 > That is not a sign you did it badly — it's a sign you did it honestly. Somebody who got a higher
-> number than you probably tested on their own training photos and doesn't know it yet."*
+> number than they expected may have tested on their own training photos and doesn't know it yet."*
 
 ### If they are flying
 
@@ -1106,7 +1107,7 @@ Each key entry below carries the workbook's own item labels, so you can mark str
 | **overall** | | **7/12** | 0.5833 | **58.3%** |
 
 Checks: 3 + 3 + 1 = 7 ✓ · 4 + 4 + 4 = 12 ✓
-Rabbit at 25.0% is **below** the 33.3% baseline — on rabbits this model is worse than a dice.
+Rabbit at 25.0% is **below** the 33.3% baseline — on rabbits this model is no better than a dice (one photo below it, which is within noise).
 
 **Confusion matrix:**
 
@@ -1122,10 +1123,10 @@ Diagonal 3 + 3 + 1 = 7 ✓ · all cells sum to 12 ✓
 **Reading down the columns:** the model said `cat` 6 times when only 4 cats existed (over-eager) and
 said `rabbit` exactly **1** time when 4 rabbits existed (deeply reluctant).
 
-**Why the diagnosis is "the rabbit class", not "cats and rabbits look alike":** the
-`true cat → said rabbit` cell is **0**. If the two genuinely resembled each other, the confusion
-would run in both directions. It runs one way only, which is the signature of a class that is
-under-represented or under-varied in training.
+**Why a first guess is "the rabbit class" rather than "cats and rabbits look alike":** the
+`true cat → said rabbit` cell is **0**. If the two genuinely resembled each other, you might expect
+confusion in both directions. It runs one way only, which is a hint (not proof, with four photos per
+class) of a class that is under-represented or under-varied in training. Treat it as a guess to check.
 
 **Verdict sentence:**
 
@@ -1302,9 +1303,9 @@ Reading the columns: the model said **"stumps" 5 times** when only **4** stumps 
 | Fault | Why it's a fault | The fix |
 |---|---|---|
 | "87% accurate" | No fraction, so no sample size and no baseline. 87% could be 13 out of 15 or 87 out of 100, and those are very different claims | Write the fraction first: *"13/15 = 86.7%, against a 33.3% baseline"* |
-| "54% better than guessing" | Percent instead of **points**, and no baseline stated | *"It beat the 33.3% baseline by 53.4 percentage points"* |
+| "54% better than guessing" | Percent instead of **points**, and no baseline stated | *"It beat the 33.3% baseline by 53.3 percentage points"* |
 | "Everything right except a few" | Not a measurement. Which class, how many, confused with what? | *"Worst class was salad at 2/5 = 40%, most often called pasta"* |
-| "Training accuracy was 100% so it works" | Training accuracy shows nothing — every model gets ~100% on photos it studied. It is the **gap** that carries information | *"100% on training, 86.7% held out, so the gap is 13.3 points"* |
+| "Training accuracy was 100% so it works" | Training accuracy shows nothing — most models get close to 100% on photos they studied. It is the **gap** that carries information | *"100% on training, 86.7% held out, so the gap is 13.3 points"* |
 
 **The most misleading line is the last one**, "training accuracy was 100% so it works". The others are vague or badly worded; that one is actively wrong reasoning, and it is the exact mistake that lets people ship broken models believing they are perfect.
 
@@ -1338,7 +1339,7 @@ The finished grid:
 
 What to photograph tomorrow: not "more salad". Attack that specific confusion. Something like — *five photos of a salad with the leaves clearly separated and the bowl visible, so it cannot read as a heap of strands; and five photos of a salad and a plate of pasta side by side at the same distance and under the same lamp, so the only difference between them is the food.*
 
-And look at the reverse cell: *"true pasta → said salad"* is **0**. Not one pasta was ever called salad. **The confusion runs one way only**, which is the signature of a problem with the salad class itself — too few salad photos, or all of them too similar — rather than the two foods genuinely looking alike.
+And look at the reverse cell: *"true pasta → said salad"* is **0**. Not one pasta was ever called salad. **The confusion runs one way only**, which is a hint to check the salad class itself — maybe too few salad photos, or all of them too similar — rather than the two foods looking alike. It is a guess to check, not a proof: with five photos per class the matrix cannot show the cause.
 
 ---
 
@@ -1397,9 +1398,10 @@ These depend on the student's own results, so mark against the **checklist**, no
 
 > *"My training accuracy was 100% and my held-out accuracy was 73.3%, so the gap is 26.7 percentage
 > points. That tells me the model learned something genuinely useful — 73.3% is forty points above
-> the 33.3% baseline, which is not luck — but it also memorised a fair amount that was specific to
-> my kitchen table, because the only things I changed for the test photos were the room, the light
-> and which hand I used, and that alone cost me a quarter of my score."*
+> the 33.3% baseline, which is not luck — but I suspect it also memorised some things specific to
+> my kitchen table, because the room, the light and which hand I used all changed for the test photos
+> and the score dropped by a quarter. I have not tested which of those mattered, so that is a guess I
+> would go and check."*
 
 ---
 
@@ -1435,7 +1437,7 @@ class:
    PERCENTAGE:  0.6667 x 100 = 66.67...  =  66.7%
 
    BASELINE:    3 equal classes -> 33.3%
-   BEATS IT BY: 66.7 - 33.3 = 33.4 percentage points
+   BEATS IT BY: 66.7 - 33.3 = 33.3 percentage points
 ```
 
 **(b) Per-class accuracy.**
@@ -1466,7 +1468,7 @@ off-diagonal cell is `true glove → said sock`, with **2**. Two of the four glo
 **(e) Reading down the columns.** The model said `sock` 5 times when only 4 socks existed
 (over-eager about sock) and said `hat` 3 times for 4 real hats. Note that `true hat → said sock` is
 **0** and `true sock → said hat` is **0** — socks and hats are never confused in either direction,
-which makes sense: they look nothing alike. All the trouble sits between sock and glove.
+perhaps because they look quite different to the model (the matrix cannot tell us why). All the trouble sits between sock and glove.
 
 **(f) Confidence split.**
 
@@ -1494,8 +1496,8 @@ twelve rows you should not build a threshold rule and believe it.
 **(h) The ten-photo fix.** Attack the `glove → sock` cell specifically: five photos of a glove with
 the fingers clearly spread (so the finger shape is unmistakable and it cannot be read as a tube of
 fabric), and five photos of a glove and a sock lying side by side at the same distance, so shape is
-the only thing that differs between them. Simply adding ten more ordinary glove photos would
-probably not help, because the existing glove photos apparently already look sock-like.
+the only thing that differs between them. Simply adding ten more ordinary glove photos might
+not help, if the existing glove photos already look sock-like (a guess the matrix cannot confirm).
 
 **(i) The gap.** The workbook states this model's training accuracy as 100%.
 
@@ -1505,7 +1507,7 @@ probably not help, because the existing glove photos apparently already look soc
    gap:                33.3 percentage points
 ```
 
-A 33.3-point gap is large. Real learning happened (66.7% is 33.4 points above baseline) but a
+A 33.3-point gap is large. Real learning happened (66.7% is 33.3 points above baseline) but a
 substantial amount of what the model "knows" is memory of its own training photos rather than
 knowledge of socks, gloves and hats.
 

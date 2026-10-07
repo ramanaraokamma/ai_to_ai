@@ -167,7 +167,7 @@ Here is why all three forms are compulsory, and it is not to be annoying.
 
 **The fraction tells you there were only ten tries. The percentage hides it completely.**
 
-This is why every scientific paper in the world writes down the bottom number, and why a headline saying *"50% of people prefer this"* without saying how many people were asked is doing something a bit dishonest.
+This is why good scientific papers write down the bottom number, and why a headline saying *"50% of people prefer this"* without saying how many people were asked is doing something a bit dishonest.
 
 > **The rule, for the rest of this course: never write 50% on its own. Write "5 out of 10 = 50%".**
 
@@ -175,7 +175,7 @@ This is why every scientific paper in the world writes down the bottom number, a
 
 Spam or ham is a **two-way** choice. So what does a coin score on a two-way choice? **Half. Fifty percent.**
 
-Which means a rulebook that scores 50% on spam has **no value at all.** You could throw it in the bin, flip a coin ten times, and do exactly as well.
+Which means a rulebook that scores 50% on spam is **no better than a coin.** You could throw it in the bin, flip a coin ten times, and do about as well. (A coin is only the right comparison when the two answers are about equally common. In our sealed ten, 6 are ham and 4 are spam, so a lazy "always ham" would score 6 out of 10 = 60%. The 50% is even a little worse than that.)
 
 > **⚠️ Watch out:** "50% is bad" is only true because there were two choices. If there were **ten** possible answers, a coin-equivalent would get about 10%, and 50% would be genuinely impressive. **What counts as a good score depends entirely on how many choices there were** — which is why a number quoted without its comparison is not information. We come back to this properly in Week 20.
 
@@ -203,7 +203,7 @@ Which means: **do not soften it.** There are four ready-made excuses, and every 
 
 And the last thing to know, because it will make you feel better and it is also simply true:
 
-> **Every professional machine learning engineer in the world watches this exact drop happen, on every project they have ever worked on.** There is a whole job title for the people who measure it. This is not a student thing. It is what the work is like.
+> **Almost every professional machine learning engineer has watched this exact drop happen, on project after project.** There is a whole job title for the people who measure it. This is not a student thing. It is what the work is like.
 
 ---
 
@@ -285,7 +285,7 @@ The gap                   33 percentage points
 
 **Step 6 — the two questions that make this worth doing.**
 
-**(a) Does 67% actually beat guessing?** On the six fresh days, three sold out and three didn't. So always saying the same thing scores 3 ÷ 6 = **50%**. The rulebook got 67%, so it beats guessing by **17 percentage points**. Not nothing. Not impressive. And crucially: **you only know that because you worked out the 50% too.**
+**(a) Does 67% actually beat guessing?** On the six fresh days, three sold out and three didn't. So always saying the same thing scores 3 ÷ 6 = **50%**. The rulebook got 67%, so it beats guessing by **17 percentage points**. Not nothing (though on six days it could be luck). Not impressive. And crucially: **you only know that because you worked out the 50% too.**
 
 **(b) Look at where both errors sit.** F1 was 27 degrees. F4 was 29 degrees. The threshold is 28.
 
@@ -317,7 +317,7 @@ A team wants to know whether scoring the first goal predicts winning. Twelve mat
 | scored first | 6 (rows 1, 3, 5, 7, 9, 11) | 5 | 5 ÷ 6 = **83%** |
 | did not score first | 6 (rows 2, 4, 6, 8, 10, 12) | 1 (row 6) | 1 ÷ 6 = **17%** |
 
-A 66-point gap. That is a real pattern.
+A 66-point gap. That is a pattern in these twelve matches.
 
 ```
 RULE 1:  IF scored_first = "yes"   THEN predict "win"
@@ -358,7 +358,7 @@ THE PERCENTAGE   0.5 x 100 = 50%
 
 Win or lose is a **two-way** choice. On the eight fresh matches, four were wins and four were losses. So a coin gets 4 out of 8. **So does the rulebook.**
 
-> All that counting. A real pattern with a 66-point gap. A training score of 83%. And on matches it had never seen, **the rulebook performed exactly as well as flipping a coin.**
+> All that counting. A pattern with a 66-point gap. A training score of 83%. And on matches it had never seen, **the rulebook performed exactly as well as flipping a coin.**
 
 That is the most useful thing the team found out all season, and there was no other way to find it out.
 
@@ -447,7 +447,7 @@ Look at the three errors and what each one demands of the threshold:
 | G4 — 10 minutes, didn't forget, false alarm | the threshold must be **under 10** |
 | G7 — 12 minutes, didn't forget, false alarm | the threshold must be **under 12** |
 
-**Those demands contradict each other.** No single number satisfies all three. G1 rushed and remembered nothing; G4 rushed and remembered everything. **The feature has failed, not the threshold** — and no amount of moving the line will fix a contradiction. You would need a different measurement entirely (what day it is; whether the bag was packed the night before).
+**Those demands contradict each other.** No single number satisfies all three. G1 took 14 minutes and still forgot something; G4 took just 10 and forgot nothing. **With these three errors, the feature looks like the problem, not the threshold** — and no amount of moving the line will fix a contradiction. You would need a different measurement entirely (what day it is; whether the bag was packed the night before).
 
 **Step 4 — so fix what you can. Raise the threshold to 14.**
 
@@ -635,7 +635,7 @@ Write ten new messages of your own — five spam, five ham, truths written next 
 *Hint:* yes, and this is the best objection anybody makes. Ten is few, so the true value sits somewhere in a fuzzy band — roughly 25% to 75%. Then the key move: **the objection cannot get you back to 100%.** The gap between the two bars is far bigger than the wobble in either bar, which is why the finding survives. Then the practical question: how would you narrow the band? (More fresh examples. A hundred. Which is an hour of writing.)
 
 **3. "Do professional researchers actually get this wrong?"**
-*Hint:* yes, regularly, and it ruins real work. It has a name — contaminating your test set — and it usually happens by accident: somebody peeks at the locked-away examples "just to check something", or tunes their system twenty times against the same test until it fits *that test* specifically. Papers get retracted for it. Medical AI systems have been announced with brilliant scores and then failed completely in real hospitals for exactly this reason. **The envelope on the table was a small version of the most important procedural rule in the whole field.**
+*Hint:* yes, regularly, and it ruins real work. It has a name — contaminating your test set — and it usually happens by accident: somebody peeks at the locked-away examples "just to check something", or tunes their system twenty times against the same test until it fits *that test* specifically. Some published results have been doubted for it. Medical AI systems have been announced with brilliant scores and then done much worse in real hospitals, partly for reasons like this and partly because real patients, scanners and hospitals differ from the test set. **The envelope on the table was a small version of the most important procedural rule in the whole field.**
 
 ---
 
@@ -653,7 +653,7 @@ Say the two-students story back to yourself. **The lower mark is the one that is
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "Half right isn't bad." | "Spam or ham is a **two-way** choice, so a coin gets half. 50% means the rulebook is worth exactly as much as no rulebook." |
+| "Half right isn't bad." | "Spam or ham is a **two-way** choice, so a coin gets half. 50% means the rulebook is no better than a coin (and here, a little worse than always saying ham)." |
 
 And the honest other half: **50% would be impressive if there were ten possible answers**, because a coin-equivalent would score 10%. There is no absolute scale of good scores anywhere in this subject. Every score is a comparison.
 
@@ -705,12 +705,12 @@ only **one** thread lit along the bottom — because this week had one job.*
 |---|---|
 | **The mental model you now own** | A score on the very examples you built your rules from is not a score at all. **Accuracy = correct ÷ total**, written three ways every time — the fraction, the division, the percentage — and the honest one is measured on examples the rulebook has **never seen**. |
 | **The one question it answers** | *"Out of how many — and had it seen them before?"* |
-| **What it plugs into** | Weeks 7 and 8: your own rulebook, put on trial on five fresh messages nobody let it look at first. |
+| **What it plugs into** | Weeks 7 and 8: your own rulebook, put on trial on fresh messages nobody let it look at first. |
 | **What carries forward** | This week is the whole of Term 3 in miniature. Week 19 hides photos *before* training; Week 20 writes accuracy three ways; Week 22 does all of it to a model you built yourself. |
 | **Spiral thread** | ⚖️ **Evaluation**, on its own this week — one thread, because a checkpoint has exactly one job: find out what is true. |
 
 > **💡 Try this:** write two numbers on your notebook map, right beside the tinted tile — your score
-> on the ten you practised with, and your score on the five you had never seen. The gap between them
+> on the ten you practised with, and your score on the fresh ones you had never seen. The gap between them
 > is the most useful number you have written down all year.
 
 ---

@@ -107,8 +107,8 @@ guide, and the course uses it consistently:
 *Figure 16.2 — Identical winner. Completely different situation. Only the margin shows it.*
 
 **Why the margin matters more than the top score:** the margin moves *before* the right/wrong column
-does. A model that is quietly falling apart will still get the answer right for a while, but its
-margins will collapse first. The margin is an early warning system. Right-or-wrong is a late one.
+does. A model that is quietly falling apart can still get the answer right for a while while its
+margins often shrink first. The margin is an early warning system. Right-or-wrong is a late one.
 
 ### 3. The sentence you must be fussy about all year
 
@@ -117,7 +117,7 @@ margins will collapse first. The margin is an early warning system. Right-or-wro
 Say it out loud now. You will need it in about eight different weeks.
 
 Ninety-nine per cent confident does not mean "right ninety-nine times out of a hundred." It means
-"of the boxes I was given, this one is by far the best fit." Those two statements come apart
+"of the boxes I was given, this one is by far the best fit." On things like the ones it was trained on, the score is usually a rough guide, but it is never a guarantee. The two statements come apart
 completely when the thing in front of the camera is **not in any of the boxes**.
 
 The classic demonstration, and the one used in this course: a three-class model that knows
@@ -203,7 +203,7 @@ the three, and that the percentage has nothing to hold on to. That conversation 
 your correction.
 
 **Misconception 2 — "if the model is only 45% sure, it must be broken."**
-It is not broken; it is being unusually honest. A 45 / 44 / 11 readout is a model *telling you* it
+It is not broken; it is being unusually informative. A 45 / 44 / 11 readout is a model *telling you* it
 cannot separate these two things. Most real products throw that information away and show you only
 the winning word. The shrug is the useful part. Teach the student to value it.
 
@@ -719,7 +719,7 @@ reading is no proof of anything: a model can be that sure about an object it has
 and if it is a photo the model was trained on, the test isn't testing anything.
 
 **3. "If it's only 45% sure, is it broken?"**
-No — that's the model being unusually honest. It's telling you it genuinely can't separate those two
+No — that's the model being unusually informative. It's telling you it genuinely can't separate those two
 things. The broken thing would be a model that said 99% on everything. The shrug is useful
 information and most products throw it away.
 
@@ -736,8 +736,8 @@ need to know *what was held up* before a percentage means anything at all.
 
 **6. "Do humans have confidence scores?"**
 Sort of, and this is genuinely interesting. You do have a feeling of how sure you are, and it's
-famously unreliable — people are most confident about things they've only just learned. The
-difference is that you can say "I don't know", and you can go and check. The model can do neither.
+famously unreliable — people are often more confident than they should be about things they know only a little. The
+difference is that you can say "I don't know", and you can go and check. A plain classifier like this one cannot do either.
 
 **7. "How does the model decide how to split the 100 points?"**
 **Nobody knows for sure, and here's why.** The split comes out of thousands of internal numbers that
@@ -939,14 +939,14 @@ first one.
 
 **Card 3 — a comb, in dim light. 40 / 33 / 27.**
 Sum 40 + 33 + 27 = 100. ✅ Winner: **spoon**. Margin: 40 − 33 = **7**.
-**Call: don't trust it — and it's wrong.** A comb was held up and comb came *last*. The dim light has
-destroyed the edges the model relies on, and the belief has spread almost evenly. The margin of 7
+**Call: don't trust it — and it's wrong.** A comb was held up and comb came *last*. The dim light may have
+hidden the edges the model relies on, and the belief has spread almost evenly. The margin of 7
 warned you before you even knew the true answer.
 
 **Card 4 — a spoon at arm's length. 68 / 30 / 2.**
 Sum 68 + 30 + 2 = 100. ✅ Winner: **spoon**. Margin: 68 − 30 = **38**.
 **Call: trust it, but log it.** Right answer, reasonable margin. Note that toothbrush is at 30 — the
-distance has made the spoon thinner in the frame and more toothbrush-like. Distance is a real
+distance may have made the spoon look thinner in the frame and more toothbrush-like. Distance is a real
 weakness here and it's worth writing down.
 
 **Card 5 — a toothbrush. 45 / 44 / 11.  ⚠️ TRAP 1**
@@ -1317,7 +1317,7 @@ rate: the model has learned nothing usable about this input. It is the purest sh
 
 Both are paragraph answers. Mark against the required words and ideas, not the wording.
 
-**T1.** Must use *margin* and *shrug*. The strong argument: 45 / 44 / 11 is the model being honest.
+**T1.** Must use *margin* and *shrug*. The strong argument: 45 / 44 / 11 is the model being informative.
 A margin of 1 tells you it genuinely cannot separate spoon from toothbrush on this photo, which is
 real information you can act on (second photo, more light, hand it to a person). A model that says 99%
 on everything, including a stapler, gives you nothing to work with. The broken model is not the one

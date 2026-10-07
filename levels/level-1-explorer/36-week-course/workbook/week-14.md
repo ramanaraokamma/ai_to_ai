@@ -535,7 +535,7 @@ The best a tester can do on that pair is a coin flip, and getting one of them ri
 1. **The row is all there is.** Your tester never sees the object, never holds it, never smells it. Five values arrive and a decision goes out. That's the machine's situation exactly, and it's the entire reason we did this with a human.
 2. **Whoever chose the features decided what was knowable.** If you didn't measure it, it does not exist as far as the tester is concerned — and if two rows come out identical, no amount of cleverness recovers the difference. That constraint is identical for a machine with five features and one with five thousand.
 
-A third, if you want it: **you can only find out what was used by testing, not by asking.** For a machine you literally cannot ask, and grown-ups solve it the same way you did — remove a feature, retrain, see how much worse it gets. That has a name: an **ablation study**.
+A third, if you want it: **you can only find out what was used by testing, not by asking.** For a machine you literally cannot ask, and grown-ups often solve it the same way you did (one of several methods) — remove a feature, retrain, see how much worse it gets. That has a name: an **ablation study**.
 
 **One thing that is genuinely different:**
 

@@ -142,13 +142,13 @@ to every pixel in the patch and the filter's answer changes by *k* × 0 = nothin
 > **A filter whose weights sum to zero is mathematically blind to how bright the room is.**
 
 That is why a vision system looks for edges before it looks for anything else. Brightness is a
-feature that moves whenever a cloud passes. An edge is a feature that holds still.
+feature that moves whenever a cloud passes. An edge is a feature that holds much more still.
 
 ![Turn the lamp up: brightness moves, edges do not](../figures/fig-w26-3-two-lamps.svg)
 *Figure 26.3 — The measurement your student will reproduce today. Six brightness numbers all shift by about 44. The three edge numbers move by 1, 0 and 3.*
 
 **Be honest about the limits.** Edges are *more* stable than brightness, not *perfectly* stable.
-Three real reasons an edge value still wobbles:
+Four real reasons an edge value still wobbles:
 
 1. **Real lamps are not even.** A desk lamp on the left brightens the left more than the right. That
    is not "add 50 to everything" — it creates brand-new edges that were never on the object.
@@ -156,6 +156,10 @@ Three real reasons an edge value still wobbles:
    get squashed onto the same value, and a real difference genuinely disappears.
 3. **Dark photos are grainy**, and grain is random pixel-to-pixel change — which is exactly what an
    edge detector is built to notice.
+4. **Real light mostly multiplies, it does not just add.** Brightness is roughly reflectance × light, so
+   doubling the light roughly doubles an edge value too. The "add 50" proof is a toy model that holds
+   for an even added change; do not let the student leave believing edges are lighting-invariant.
+   (The workbook's Think Deeper T2 covers halving.)
 
 Your student's numbers today will move by one or two. Do not tell them the numbers should be
 identical; tell them the numbers should move *far less* than the brightness numbers, and then show
@@ -171,8 +175,11 @@ Now you can explain **why**, in pixel language:
 
 Wood grain produces long, straight, strong, repeated edges in every single photo. The object
 produces a smaller, shorter, wobblier set of edges — and it moves and rotates between shots, while
-the table never does. So the most reliable edge pattern associated with the label is **the table**.
-The model learned the table and you gave it the object's name.
+the table never does. So one likely reason is that the most reliable edge pattern associated with the label was **the table**,
+and the model learned the table and you gave it the object's name. This is a hypothesis: nobody has
+looked inside Teachable Machine to see what it used. If *every* class is photographed on the same
+table, the table cannot separate the classes; the trap bites hardest when the background goes with one
+label. With a shared background it still swamps the object and makes the model fragile when the scene changes.
 
 ![The background trap, in edge language](../figures/fig-w26-4-background-trap.svg)
 *Figure 26.4 — Eight long grain lines beat one small object outline. The filter reports every edge, including the ones you did not want.*
@@ -283,7 +290,7 @@ assessment.
 | **No internet** | Use LibreOffice Calc or Excel offline — the formula is identical. If you have no spreadsheet at all: do the lab on graph paper, computing 12 cells instead of 100, and use the printed Lamp Data Sheet for the lighting proof. The lesson survives; only the "one drag, a hundred answers" moment is lost, and you can describe it. |
 | **Conditional formatting cannot be found / is greyed out** | Shade by hand. Select the cells that contain 255 and set the fill colour to dark grey with the paint-bucket button. Slower, identical result. Or print the numbers and shade with a pencil. |
 | **The formula returns an error** (`#NAME?`, `#VALUE!`) | 99% of the time it is a comma-versus-semicolon locale problem, or a stray space. Retype it by hand rather than pasting. Check for a missing closing bracket — there are seven in that formula and it is easy to lose one. |
-| **You cannot read pixel brightness from a photo** | Use the printed **Lamp Data Sheet** in the answer key. It contains real measured numbers. The student analyses given data instead of collecting it — which is a completely legitimate scientific activity, so do not apologise for it. |
+| **You cannot read pixel brightness from a photo** | Use the printed **Lamp Data Sheet** in the answer key. It contains example measurements (the lamp-lit values are unusually steady, so say so if a student notices). The student analyses given data instead of collecting it — which is a completely legitimate scientific activity, so do not apologise for it. |
 | **The Week 17 model is gone** | Skip Segment 5's model demo and instead do it as a thought experiment using Figure 26.4. Ask: "what would happen, and why?" Then set retraining a quick two-class model as an optional extra. |
 
 ---
@@ -541,9 +548,9 @@ lighting proof, then the model demo.
 > number from **0 to 100**. Multiply by 2.55 to get a 0–255 value, or just leave everything in 0–100
 > — the comparison works either way as long as you are consistent.
 >
-> **Route B — the printed Lamp Data Sheet.** In the answer key below there are real measured numbers
+> **Route B — the printed Lamp Data Sheet.** In the answer key below there are example measurements
 > from exactly this experiment. Hand them over and have the student do the analysis. Analysing
-> someone else's honest data is real science; do not treat it as second best.
+> someone else's data is real science; do not treat it as second best.
 
 **Do this — breaking the model:**
 
@@ -590,7 +597,7 @@ lighting proof, then the model demo.
 > edge numbers moved by one, and zero, and three.
 >
 > That's why a vision system looks for edges first. Not because edges are beautiful. Because
-> **brightness is a fact about the room, and an edge is a fact about the object.** One of those is
+> **brightness is mostly a fact about the room, and an edge is much more a fact about the object.** One of those is
 > worth learning and one of them isn't.
 >
 > And one warning, from your own model: the filter reports **every** edge. Including the wood grain.
@@ -753,7 +760,7 @@ is magic.
 The first step of it, yes, genuinely. Systems like that begin by running lots of small filters over
 the image, and many of the very first ones turn out to be edge detectors — some for vertical edges,
 some for horizontal, some for diagonals, some for colour boundaries. The difference is that yours
-uses two filters you were handed, and theirs uses dozens it worked out for itself, stacked in layers
+uses two filters you were handed, and theirs uses dozens, learned in advance on millions of photos (Teachable Machine borrows them rather than learning them from your photos), stacked in layers
 so the later ones look at the output of the earlier ones. Same first rung, much taller ladder.
 
 **3. "Why did my edge values change a little bit? You said they wouldn't change."**
@@ -776,11 +783,11 @@ detecting nightfall, it is brightness.
 **5. "My model still failed when I only changed the light, not the background. Why? Edges are supposed
 to survive lighting."**
 
-An excellent catch and worth taking seriously. Almost always the answer is that changing the light
+An excellent catch and worth taking seriously. Often the answer is that changing the light
 did not just brighten things — it **created new edges**. A lamp from the side casts a hard shadow,
 and the boundary of that shadow is a strong, sharp edge that was never in the training photos. The
 model sees a big new edge that means nothing and gets pulled off course. The proof from today only
-covers light that changes *evenly*; real light almost never does.
+covers light that changes *evenly*; real light almost never does. (Uneven brightening, or light that scales values rather than adding to them, can also shift edge numbers.)
 
 **6. "Could I just take training photos in every possible lighting so it never gets confused?"**
 
@@ -906,7 +913,7 @@ two numbers.
 > **Say exactly:** *"Your model got worse when I changed the background. The object was identical. In
 > edge language, what happened?"*
 
-**A good answer:** the strong, reliable edges it had learned belonged to the background; when the
+**A good answer:** a likely reason is that the strong, reliable edges it had learned belonged to the background; when the
 background changed, those edges disappeared and unfamiliar new ones appeared.
 
 **A very good answer** adds *why* the model learned the background rather than the object: because the
@@ -1075,7 +1082,7 @@ in Week 25. If a strong student asks why the corners do not look stronger — th
 
 ---
 
-### Part D — the Lamp Data Sheet (real measured values, use as fallback)
+### Part D — the Lamp Data Sheet (example measurements, use as fallback)
 
 *A dark blue eraser on a sheet of white paper, photographed twice from the same position: once under
 room light, once with a desk lamp 30 cm away. Brightness values on the 0–255 scale.*
@@ -1160,11 +1167,11 @@ which is image pixel `C5`, i.e. cell (5,2)):
 > A vision system looks at edges first because an edge is a **difference between two places**, and when
 > the light changes it usually changes both places by roughly the same amount — so the difference
 > stays put. In my test, the object went from 52 to 96 and the paper went from 188 to 231. Both of
-> them jumped by about 44, so the gap between them stayed at about 136. Raw brightness is really a
-> fact about **the room**: it tells you how bright the lamp is. An edge is a fact about **the object**:
+> them jumped by about 44, so the gap between them stayed at about 136. Raw brightness is mostly a
+> fact about **the room**: it tells you how bright the lamp is. An edge is much more a fact about **the object**:
 > it tells you where the object stops and the paper starts. Only one of those is worth learning, and
-> the machine can only learn what is in the numbers. That is also why my model failed when I changed
-> the background — the edges it had been relying on belonged to the table, not to the object, so as
+> the machine can only learn what is in the numbers. That is probably also why my model failed when I changed
+> the background — a likely reason is that the edges it had been relying on belonged to the table, not to the object, so as
 > soon as the table went away, so did its evidence.
 
 ---
@@ -1204,7 +1211,7 @@ grid and lamp numbers will differ.
 | B2 | (i) The window is shifted one row up and one column left, so it reads a window partly off Priya's picture (empty cells in row 1 and column A) and misses her last row and column. (ii) A wrong but plausible-looking outline shifted by one cell, with a false bright line where real pixels meet empty cells. **No error message**, since empty counts as 0. |
 | B3 | (i) **Not hollow: a thick, almost solid shape.** (ii) With a one-pixel stroke no window touching the stroke has all nine pixels equal, so there is no flat patch of ink to give a zero. A hollow interior needs a stroke at least 3 pixels thick (about 4 to look clearly hollow). (Extra oddity: directly on top of a one-pixel line the filter ignores the middle column and gives 0, so the line comes out as two lines with a gap.) |
 | B4 | Edges: Spot 1 140 → 141 (+1); Spot 2 130 → 129 (−1); Spot 3 144 → 143 (−1). Six brightness changes +38, +39, +39, +38, +39, +38, average **38.5**. Edge changes 1, 1, 1, average **1.0**. Finding: brightness moved about 38.5, edges only 1, so about **38 times more**. The edges did not stay identical; the finding is the comparison. |
-| B5 | (i) Brilliant on the rug, falls apart on the desk (about 50% for two classes). (ii) The rug gave strong, repeated edges in the same places in every photo while the objects moved; the model learned the rug, not the objects: a rug detector with two labels on it. |
+| B5 | (i) Probably clearly worse on the desk than on the rug; how much worse is something to test (about 50% for two classes is the worst case, not a certainty). (ii) A likely reason: the rug gave strong, repeated edges in the same places in every photo while the objects moved, so the model leaned on the rug. Because the rug is in *both* classes it cannot tell them apart by itself; it swamps the object and makes the model fragile when the scene changes. It is a hypothesis to check, not a proven cause. |
 
 The lamp data in B4 is a comb; Part D's eraser sheet is the separate fallback for Build It Part 3.
 

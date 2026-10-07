@@ -411,7 +411,7 @@ Is that good? **It depends what the number is for.** For deciding roughly how ma
 
 **B2. Two things wrong:**
 
-1. **A house number is a category, not a measurement.** House 14 and house 15 are next-door neighbours, but house 14 and house 15.5 don't exist as "nearly the same house" — 15.5 isn't a house at all. The model is allowed to produce answers that cannot exist.
+1. **A house number is a category, not a measurement.** House 14 and house 15 are close numbers (and often not even on the same side of the street), and house 14 and house 15.5 don't exist as "nearly the same house" — 15.5 isn't a house at all. The model is allowed to produce answers that cannot exist.
 2. **The error is meaningless as a score.** "Off by 1.5" sounds tiny, but a parcel delivered to the wrong house is 100% wrong, exactly as wrong as delivering it to house 90. There is no partial credit for nearly finding somebody's front door.
 
 **What they should have done:** treat it as **classification** — the answer is one of the house numbers that actually exist on that street — and score it with ticks and crosses. Full marks if you also noticed that the list of boxes changes street by street, which is a real practical difficulty and worth saying.

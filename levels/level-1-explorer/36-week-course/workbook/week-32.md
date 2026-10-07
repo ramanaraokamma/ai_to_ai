@@ -333,10 +333,10 @@ Write the four provenance checks **in your own words** on a small card. Not on t
 
 ## 🎨 Draw It
 
-Draw **one photo you might really post**, and label everything in it — and attached to it — that you did not mean to share. Aim for nine labels. Put the invisible ones (the metadata) in a box off to the side with an arrow, because they are not *in* the picture.
+Draw **one photo you might really post**, and label everything in it — and attached to it — that you did not mean to share. Aim for at least ten labels. Put the invisible ones (the metadata) in a box off to the side with an arrow, because they are not *in* the picture.
 
-![Draw it: one photo, nine things given away](../figures/fig-w32-11-draw-frame.svg)
-*Figure W32.3 — Nine labels. The invisible ones go in a box to the side.*
+![Draw it: one photo, everything it gives away](../figures/fig-w32-11-draw-frame.svg)
+*Figure W32.3 — Ten or more labels. The invisible ones go in a box to the side.*
 
 > **What a good answer looks like:** a rough sketch of you in front of a house, with arrows to: your face · the house number on the gate · your school badge · a neighbour's number plate · a reflection in the window · the plants (country and season) · the shadow (time of day). Then a separate box joined by a dashed arrow, labelled **"inside the file, invisible"**, containing: GPS 19.0760 N 72.8777 E · 14 March, 16:42 · phone make and model.
 >
@@ -401,7 +401,7 @@ Draw **one photo you might really post**, and label everything in it — and att
 
 ### A5 — the labelled file
 
-Five different kinds: **(1)** the date and time, to the minute · **(2)** the device — make and model of the phone · **(3)** the camera settings — exposure, flash, which lens · **(4)** the location, latitude and longitude, often to about five metres · **(5)** the edit history — whether it was cropped, filtered or rotated.
+Five different kinds: **(1)** the date and time, to the minute · **(2)** the device — make and model of the phone · **(3)** the camera settings — exposure, flash, which lens · **(4)** the location, latitude and longitude, often to about five metres · **(5)** the edit history — often just that it was edited, and with which app.
 
 Also acceptable in place of one of those: the owner's name (if the phone fills it in), or the file's original filename.
 
@@ -441,7 +441,7 @@ Marked on **structure and honesty**, not on being right. A full-marks answer for
 
 **(a)** Everything except the truth. Statement 3 is the same length and the same confident tone as the other two; it contains a **genuinely correct claim** (Kilimanjaro *is* Africa's highest), a specific-looking number, and a country right next door to the correct one. **Specific facts are exactly where invention happens most freely**, because a specific fact is rare in the training text and its *shape* is trivially easy to fake.
 
-**(b)** Because it will confirm itself in the same confident voice, using the same machinery that produced the error. You need a source that does not come from the thing you are checking — and ideally two that do not copy each other.
+**(b)** Because it may well confirm itself in the same confident voice, using the same machinery that produced the error. You need a source that does not come from the thing you are checking — and ideally two that do not copy each other.
 
 ### B3 — Sort the data, break the claim
 
@@ -493,7 +493,7 @@ The principle worth memorising: **use the smallest number of columns that does t
 
 *(A third, if you want it: nobody else is reporting it.)*
 
-**(c)** **No — strong evidence, not proof**, and this is the hardest idea in the week. Silence everywhere else after eleven minutes is very hard to explain if the video is real, because real news propagates fast and from several directions at once. But **absence of evidence is not evidence of absence**; it is possible, rarely, to be genuinely first.
+**(c)** **No — strong evidence, not proof**, and this is the hardest idea in the week. Silence everywhere else after eleven minutes is hard to explain if the video is real, because real news propagates fast and from several directions at once. But **absence of evidence is not evidence of absence**; it is possible, rarely, to be genuinely first.
 
 So the correct action is not "declare it fake". It is **do not share it, and wait.** Waiting an hour costs nothing. Sharing a fake costs your credibility and helps it reach the next 90,000 people.
 
@@ -571,7 +571,7 @@ There is no fixed answer, but a correct investigation looks like this:
 
 **Which carried the least, and why:** the one that came through the chat app. Most messaging apps strip metadata as the photo passes through. **Say the honest double-edged thing about that:** it is genuinely good for your privacy, and it is also why the photo for this lesson had to be moved by cable or as an email attachment.
 
-**"One thing you now know that you did not put in the picture on purpose"** — full marks for anything specific: *"it says I was in the park at 16:42 on 14 March"*, *"it names my phone model"*, *"it shows I cropped it"*.
+**"One thing you now know that you did not put in the picture on purpose"** — full marks for anything specific: *"it says I was in the park at 16:42 on 14 March"*, *"it names my phone model"*, *"it shows I edited it"*.
 
 **The card.** Full marks for four checks in your own words, plus the fifth question:
 

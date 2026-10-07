@@ -159,7 +159,7 @@ Four accuracies come out of that. A **bias report** is not those four numbers. I
 3. **The chain back to the data.** Four links, and it always ends in a countable number:
    *I only shot in the afternoon → 138 of my 160 training photos are daylight → the model learned
    daylight patterns → anyone using this in the evening gets bad answers.* Nothing broke. The model
-   learned exactly what it was shown. **Bias is the default outcome of learning from examples**, not
+   learned exactly what it was shown. **Skewed examples produce skewed results, and the skew usually starts with how the data was collected**, not
    bad luck and not anybody being unkind.
 4. **A priced fix.** "Collect more data" is not a plan. "I need 47 more lamplight photos, and here
    is the arithmetic" is a plan. The arithmetic is in the Worked Example below and again in the
@@ -170,7 +170,7 @@ Four accuracies come out of that. A **bias report** is not those four numbers. I
 **Misconception 1: "Saying *not sure* means my model is broken / weak / worse."**
 
 It is the exact opposite, and this is worth two minutes of your time. A model that says "not sure"
-at 61% has not lost any accuracy — it still knew what it knew. It has gained the ability to tell you
+at 61% has not lost any accuracy — it is just as accurate as before. It has gained the ability to tell you
 *when to stop trusting it*. Ask the student: "Would you rather have a friend who answers every
 question, or a friend who says 'I don't actually know' sometimes? Which one's answers do you
 believe?" That lands every time.
@@ -193,7 +193,7 @@ named group · a fix is priced in photos.
 confidence can be "calibrated" (a genuinely hard idea, and Level 3's); why 70 rather than 65 (the
 honest answer is *you choose it, and you say you chose it*); or anything about probability theory.
 If the student asks why 70, the correct answer is: *"Nothing special. I picked it. If I move it to
-85 the app says 'not sure' more often and is wrong less often when it does answer. That trade is
+85 the app says 'not sure' more often and is usually wrong less often when it does answer. That trade is
 mine to make, and I should write down that I made it."* That sentence is a Level 3 idea delivered at
 Level 1 depth, and it is enough.
 
@@ -315,8 +315,8 @@ Wait. They will usually say "it'll say something."
 
 > "It will say something. It has to. Remember what those four numbers do — they add up to a hundred,
 > every single time, so *something* always comes first. If the numbers are ninety-six, two, one, one,
-> the model is genuinely sure. If the numbers are twenty-six, twenty-five, twenty-five, twenty-four,
-> it hasn't got a clue — and it says `recycling` in exactly the same voice. Same words. Same
+> the model strongly prefers one class. If the numbers are twenty-six, twenty-five, twenty-five, twenty-four,
+> it has no strong preference — and it says `recycling` in exactly the same voice. Same words. Same
 > confidence in its tone. That is the problem.
 >
 > Today you are going to build the thing that fixes it. One line of arithmetic in Scratch, and your
@@ -381,7 +381,7 @@ sentence on the board if it is Route B: **"The guess is the machine's. The typin
 > counter. If no — say 'not sure, only sixty-one percent', name no bin, count nothing.
 >
 > Why seventy? No reason. I picked it. And that's an honest answer — if we moved it to eighty-five,
-> the app would say 'not sure' more often, and it would be wrong less often when it *did* answer.
+> the app would say 'not sure' more often, and it would usually be wrong less often when it *did* answer.
 > That's a trade, and it's ours to make. What matters is that we write down that we made it."
 
 **Do this:** draw the flowchart from Figure 35.2 on the board, live, in this order — the confidence
@@ -603,7 +603,7 @@ line on the table.
 #### Route B — the no-upload build (recommended; every block is plain Scratch)
 
 Build it in this order. The threshold goes in **first**, before the four behaviours, so it can never
-become an afterthought.
+become an afterthought. (Sound names and Stretch3 block wording are from memory and may differ slightly in the live library: any sound will do.)
 
 ```
 when green flag clicked
@@ -794,7 +794,7 @@ says "I need to send you for a scan" is better than one who always has an instan
 
 **3. "Can I just not do the bias report? My model works fine."**
 
-Every model fails on somebody. If you haven't found who yet, that means you haven't measured yet — it
+Almost every model fails on somebody. If you haven't found who yet, that means you haven't measured yet — it
 does not mean there's nobody. And the report is the reason your booth beats the other nineteen. You
 already have the four sheets; the report is arithmetic you can do in five minutes.
 
@@ -1011,7 +1011,7 @@ of. Everything else in the table has an answer in the key below.
 | **Hook** — isn't `other` the same as "not sure"? | No. `other` is a class the model predicts confidently (none of my three bins). "Not sure" is the app refusing to pass on a weak winner. Different causes, different sentences, different states. |
 | **Concept** — which route is more honest? | Neither, inherently. Route A is honest if you say the model sits on a public link; Route B is honest if you say a human types the prediction. Dishonesty is hiding whichever one you did. |
 | **Concept** — 90% and 40%, what's the gap? | **50 percentage points.** Not "50%". Subtracting two percentages yields percentage points. |
-| **Concept** — whose fault is the gap? | Nobody's, in the sense the student means. The data was skewed (138 daylight vs 22 lamplight) and the model learned exactly what it was shown. Bias is the default outcome of learning from examples. |
+| **Concept** — whose fault is the gap? | Nobody's, in the sense the student means. The data was skewed (138 daylight vs 22 lamplight) and the model learned exactly what it was shown. Skewed examples produce skewed results, and the skew usually starts with how the data was collected (here, the student's own shooting habit). |
 | **Worked example** — why no counter change for `other` / "not sure"? | Because nothing was sorted. If the counter counts loop events rather than items, the number on the poster means nothing — the Week 30 bug in another costume. |
 | **Worked example** — why different sentences for `other` and "not sure"? | So a visitor can tell which of two different situations happened without asking. Five states, five visibly different screens. |
 | **Worked example** — why rerun the *identical* batch after the fix? | Otherwise you cannot separate "the fix worked" from "the new photos were easier". Same test before and after is the only comparison that means anything. |
@@ -1189,7 +1189,7 @@ Reproducible by a stranger. "It's worse sometimes" earns nothing.
 ```
 
 The sentence that earns the last mark: **nothing broke.** No bug, no crash. The model learned exactly
-what it was shown.
+what it was shown. (Ten photos per batch is small: call daylight skew the likely cause; the rerun tests it.)
 
 **4. The priced fix.** Lamplight to be at least one third of training, keeping all 138 daylight:
 

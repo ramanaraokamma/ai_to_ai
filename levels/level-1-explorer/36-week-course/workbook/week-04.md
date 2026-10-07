@@ -402,7 +402,7 @@ One thing I still want to ask about:
 **W2. FALSE.** A confidence score is how strongly the system **prefers** one answer over the others. It is not a promise about how often it will be right. A system can be 94% confident and wrong, and it can be 94% confident about a picture that contains nothing it has ever seen. *Confidence is not correctness.*
 
 **W3.**
-- **Narrow AI** — a system that does **one** job. It is not "a bit of an AI"; it is a complete system with one task, and it fails the moment you step sideways out of that task.
+- **Narrow AI** — a system that does **one** job. It is not "a bit of an AI"; it is a complete system with one task, and it usually fails, or gets much worse, as soon as you step sideways out of that task.
 - **General AI (AGI)** — a system that could turn its hand to any job a person can, the way you can. **Nobody has built one.** It does not exist today.
 
 **W4.** Any task one small step sideways from "draw the thing, roughly centred, in one continuous style". Full-credit examples: draw the object *upside down*; draw only *half* of it; draw it *very small in one corner*; draw two of them; draw it with the lines deliberately wobbly. Marking point: the task must still be obviously the right object **to a human**. "Draw something random" is not a sideways step — that is just a different task.
@@ -513,7 +513,7 @@ The sentence to remember: **record the smallest thing you care about.**
 
 **T1. Why you can add up but not split.**
 Full-credit answer, in the student's own words, containing this idea: **adding is a calculation, splitting is a guess.**
-When you add rows together, everything you need is already written down — the answer is determined. When you try to split one row back into several, the information about *how* it was divided was never recorded, so you would have to invent it. `1230` across three objects has infinitely many possible splits and the table contains no clue about which one really happened.
+When you add rows together, everything you need is already written down — the answer is determined. When you try to split one row back into several, the information about *how* it was divided was never recorded, so you would have to invent it. `1230` across three objects has a huge number of possible splits and the table contains no clue about which one really happened.
 Model answer with a fresh example:
 > *"My mum's shopping receipt shows one line: `vegetables ₹240`. I can add that to the fruit line and get the total for food. But I can't work out how much the onions cost, because the till never wrote it down. If the receipt had one line per item, I could get both — the onions AND the vegetable total."*
 Other good examples: a school report showing one grade per subject (you cannot recover individual test marks); a monthly electricity bill (you cannot recover Tuesday); a team's total score (you cannot recover one player's runs).

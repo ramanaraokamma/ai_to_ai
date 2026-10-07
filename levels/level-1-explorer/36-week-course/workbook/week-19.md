@@ -429,7 +429,7 @@ Tick one box per row. Be honest — this page is for you, not for marking.
 
 **W2.** Because if you decide afterwards what you "expected", you will always find that you expected whatever happened. Writing it in ink first means the result can surprise you — and **being wrong on the record is worth more than being vaguely right afterwards.**
 
-**W3.** It learned **"white fuzzy stuff at the bottom of the picture → say wolf."** Every wolf photo had snow in the background and no husky photo did. It had learned nothing whatsoever about wolves.
+**W3.** It learned **"white fuzzy stuff at the bottom of the picture → say wolf."** In that demonstration, every wolf photo had snow in the background and no husky photo did, so snow was an easy shortcut. A model like that cannot be trusted to have learned what makes a wolf a wolf.
 
 **W4.** **You cannot say.** Not "you're not quite sure" — you *literally cannot say*, and no amount of staring at the numbers will help, because the information was never collected. The whole run is worthless. That is why you turn one knob at a time.
 
@@ -519,7 +519,7 @@ If you got 8 and 32 but did not write the check line without being asked — wri
 | Held out 6 photos, all from its best class | **too high** | the choice of which to hide |
 | Opened envelope, changed things, tested again, reported the second score | **too high** | the decision |
 
-**Why they're all in the same direction:** because every one of them lets the model see, or effectively see, something it should not have. **Extra information can only ever help a model's score.** Cheating on a test never accidentally *lowers* your mark — that is why "the score came out surprisingly high" is always worth investigating, and "the score came out disappointingly low" almost never is.
+**Why they're all in the same direction:** because every one of them lets the model see, or effectively see, something it should not have. **Extra information can only ever push a model's score up, never down.** Cheating on a test never accidentally *lowers* your mark — that is why "the score came out surprisingly high" is always worth investigating. A disappointingly low score is *not* a sign of cheating, but it is worth a look too: mislabelled photos or a slip in the setup can pull a score down.
 
 ### Puzzle of the Week
 
@@ -675,6 +675,8 @@ Any answer that gets **"it has already seen them"** in there is correct. *"Becau
 **Sentence 2 — somebody asks to open the envelope early.**
 
 > No, because once we've seen them we can't un-see them, and then any change we made afterwards would be a change we chose using the answers. If it does get opened, I have to write that on my results so whoever reads them knows how much to trust the number.
+
+**Honest limit to write beside the score:** session 2 uses the *same three objects* as session 1, so it is new photos but not new objects (cheat 4). A good log says so, e.g. "same three objects" next to the Week 22 score.
 
 **Marking note on the tick-list:** an honest ☐ **beats** a dishonest ☑. If you forgot to change the distance, leave it unticked and say so. Labelling the weakness *is* the skill.
 

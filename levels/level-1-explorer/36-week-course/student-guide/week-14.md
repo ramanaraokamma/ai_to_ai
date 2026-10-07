@@ -34,7 +34,7 @@ That's it. That's the whole thing. What is it?
 
 You probably said "a pen", and you were right, or very close. Think about what just happened. **You never saw it. You never held it.** You couldn't shake it, smell it, or check whether it had a lid.
 
-That is exactly the position a machine is in, every single time, for ever. It has never met the object. It has a row of numbers somebody chose, and the numbers are all it will ever have.
+That is exactly the position a machine is in, every single time, for the kind of machine in this course. It has never met the object. It has a row of numbers somebody chose, and the numbers are all it will ever have.
 
 All year you have been told that. It is easy to say and hard to feel. This week you feel it — because this week **you** are the person who chooses the numbers, and then you hand your numbers to a real human being who has never seen your objects and find out whether you chose well.
 
@@ -250,9 +250,9 @@ Now eliminate, one feature at a time:
 
 **Step 5 — write the conclusion with card numbers in it.**
 
-> *"The tester used `material` to pick the category and `longest_side_cm` to pick the object inside it. Cards 08, 09, 10 and 12 prove it: those are the only four cards where two objects in the same category are within 1 cm of each other, and they are the only four cards the tester got wrong."*
+> *"The tester used `material` to pick the category and `longest_side_cm` to pick the object inside it. Cards 08, 09, 10 and 12 are strong evidence for it (on this small deck): those are the only four cards where two objects in the same category are within 1 cm of each other, and they are the only four cards the tester got wrong."*
 
-**And the annoying punchline.** The **weight was written on every single card.** It would have got both of those pairs right. The tester ignored it — because a number with a unit is work, and a word like "red" or a length you can picture is not.
+**And the annoying punchline.** The **weight was written on every single card.** It would have got both of those pairs right. The tester ignored it — probably because a number with a unit is work, and a word like "red" or a length you can picture is not.
 
 People reach for the easy feature. So do machines, for the same reason. You'll see exactly this again next week.
 
@@ -367,7 +367,7 @@ On all three, colour is the line the two objects **share** that is not just a co
 
 The lab is called **The Deck Trial**. Here is the whole thing, so you can redo it at home or run it for the first time if you missed the lesson.
 
-**You need:** 20 index cards (or A4 cut into eight rectangles each — three sheets does it), a ruler, a scale, a pen, a box of 20 objects, a scoring sheet, and **one human tester who has never seen the objects.**
+**You need:** 20 index cards (or A4 cut into eight rectangles each — three sheets does it), a ruler, a scale, a pen, a box of 20 objects (you will use 10 of them for the card trial), a scoring sheet, and **one human tester who has never seen the objects.**
 
 > **⚠️ Watch out:** the cards must be **opaque**. Hold one up to the light. If you can read the back through the front, double it up.
 

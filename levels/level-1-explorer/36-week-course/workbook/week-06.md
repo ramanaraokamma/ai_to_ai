@@ -210,7 +210,7 @@ A school of **800** students. One question: *what is the favourite school lunch?
 
 `______ → ______ → ______ → ______`
 
-**2.** One survey asked 400 people and is still nearly the worst. Which, and why?
+**2.** One survey asked 400 people and is still the worst. Which, and why?
 
 `_____________________________________________________________________`
 
@@ -496,7 +496,7 @@ Writing "16.5, average of 30" would record something that did not happen.
 | 3rd | **C** | 120 people, but **self-selected** — only those who felt like answering. Off by 24 points |
 | 4th | **A** | 400 people, but every one of them was **in the pizza queue**. Off by 43 points |
 
-**2. Survey A**, with 400 people. It is nearly the worst because the sample came from the **one place in the school where pizza-lovers had collected**. Being in the pizza queue was the entry ticket — exactly like walking into the sleep clinic. **More rows from the wrong place is not more truth; it is a wrong answer that looks scientific.**
+**2. Survey A**, with 400 people. It is the worst because the sample came from the **one place in the school where pizza-lovers had collected**. Being in the pizza queue was the entry ticket — exactly like walking into the sleep clinic. **More rows from the wrong place is not more truth; it is a wrong answer that looks scientific.**
 
 **3.** Because **B was stirred and A and C were not.** B took 5 students from each of the 6 year groups, chosen by lottery, so no single group could take over. That is the whole idea: **a well-stirred teaspoon beats an unstirred ladle.** B used 13 times less data than A and landed 39 points closer to the truth. *(Honest limit: with only 30 people even a well-stirred sample can miss by ten points or more, so B was also a little lucky. Stirring removes the lean; it does not remove the luck, and one close result is an illustration, not proof.)*
 

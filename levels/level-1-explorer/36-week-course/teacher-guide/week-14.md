@@ -133,7 +133,7 @@ The logic is elimination, and it is simple enough for an 11-year-old to run:
 ![Elimination: which feature did the tester really use](../figures/fig-w14-4-elimination-hunt.svg)
 *Figure 14.4 — Four wrong cards, all pointing the same way.*
 
-That figure is the worked example you'll run in class. The tester swapped two pairs of objects. On all four cards, colour and weight would have given the right answer, and length gave exactly the wrong answer they produced. Conclusion: they were reading length and ignoring the rest. They never had to say a word.
+That figure is the worked example you'll run in class. The tester swapped two pairs of objects. On all four cards, colour and weight would have given the right answer, and length gave the wrong answer they produced. Conclusion, on these four cards: they were probably reading length and ignoring the rest. They never had to say a word.
 
 ### Misconception 1 — "a high score means my features are good"
 
@@ -263,7 +263,7 @@ Let them guess. Let them be wrong. Give them three goes. Then reveal.
 
 > "You got there — or you nearly did — from five numbers. You never saw it. You never held it. You couldn't smell it or shake it or check whether it had a lid.
 >
-> That's exactly the position a machine is in, every single time, for ever. It has never met the object. It has a row of numbers somebody chose, and the numbers are all it will ever have.
+> That's exactly the position a machine is in, every single time, for the kind of machine in this course. It has never met the object. It has a row of numbers somebody chose, and the numbers are all it will ever have.
 >
 > Today you're going to be the person who chooses. And then — this is the good bit — you're going to hand your numbers to a real human being who has never seen your objects, and find out whether you chose well."
 
@@ -605,7 +605,7 @@ The feature with the most "no"s is the one the tester was using. Write the concl
 
 ### Variation — harder
 
-**The blindfold round.** After the first trial, cover the tester's best feature with a sticky note on every card, and run the whole deck again with a **second** tester.
+**The blindfold round.** After the first trial, cover the tester's best feature with a sticky note on every card, and run the whole deck again with a **second** tester. (Treat the result as rough: a new tester changes the score too. For a fairer comparison, use the same tester on a re-shuffled deck.)
 
 The score drop tells you what that feature was really worth — not what you assumed, but what it cost to lose it. Two outcomes, both interesting:
 
@@ -637,7 +637,7 @@ Ten out of ten — but be suspicious of it. A perfect score means either your fe
 Yes, and it has a proper name: an **ablation study**. You remove one feature, retrain the model, and see how much worse it gets. Big companies run these constantly, on models with thousands of features, and the results are often surprising — the feature everyone assumed was carrying the model turns out not to be. You are doing a close cousin of that with index cards and one human: they remove the feature and re-test, you read which cards went wrong.
 
 **"How many objects do you need before the score means anything?"**
-Nobody can give you a clean number, and this is one of those questions where the honest answer is *it depends and there's no formula*. What's certain is that with three cards the score means almost nothing — get all three right and that could easily be luck. With twenty, luck can't explain a score of fifteen. Somewhere between those it starts to count, and where exactly depends on how many categories you have and how different they are. Statisticians have tools for this and they still argue about the answers.
+Nobody can give you a clean number, and this is one of those questions where the honest answer is *it depends and there's no formula*. What's certain is that with three cards the score means almost nothing — get all three right and that is weak evidence (pure guessing gets 3 of 3 about 1 time in 27 if names can be reused, 1 in 6 if not). With twenty, luck can't explain a score of fifteen. Somewhere between those it starts to count, and where exactly depends on how many categories you have and how different they are. Statisticians have tools for this and they still argue about the answers.
 
 **"What if my tester takes ages on one card?"**
 Let them. Time isn't being measured. But do write down which card it was — a card that takes thirty seconds is telling you something about your features that a wrong answer wouldn't. Slow cards and wrong cards are both evidence.

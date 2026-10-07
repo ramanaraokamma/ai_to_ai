@@ -320,8 +320,8 @@ ________________________________________________________________
 
 > **Magic version:** *"YouTube magically knows what I want to watch."*
 >
-> **Honest version:** *"YouTube was shown billions of examples of what people watched next, and it
-> guesses which video I am most likely to click and watch for more than thirty seconds."*
+> **Honest version:** *"YouTube was shown huge numbers of examples of what people watched next, and it
+> guesses which video I am most likely to click and keep watching."*
 >
 > **Why it's better:** it says **where the ability came from** (examples), **what the machine actually
 > produces** (a guess), and **what it's guessing about** (a click, which is a thing you can measure).
@@ -456,7 +456,7 @@ it doesn't.
 one that fires. Rule 2 sits above Rule 3, so the machine never even looks at the money. The *sensible*
 answer is ADD MORE; the *rulebook* answer is SOLD OUT; and the rulebook wins for ever.
 
-**W4.** **FALSE.** It does not crash and it does not warn you. Either no rule fires and it does
+**W4.** **FALSE.** It often does not crash and does not warn you. Either no rule fires and it does
 nothing at all, or the wrong rule fires first and it gives a confident, technically-correct, useless
 answer. **Rulebooks fail quietly** — that's the whole danger.
 
@@ -477,13 +477,13 @@ What's missing from the others: **(a)** a photo with no answer attached is just 
 nothing to be right or wrong about. **(c)** a folder of 1,000 unlabelled emails is a pile of emails,
 not 1,000 examples. **(e)** that's a **rule**, which is the *output* of learning, not an input to it.
 
-**A3. (a) FALSE.** The examples are gone. What's left is a rule. You proved it yourself: the eight
+**A3. (a) FALSE** (for the kind of model in this course; a few simple methods do keep their examples). The examples are gone. What's left is a rule. You showed it yourself: the eight
 mango cards were in a pocket when you answered the test cards, so your answer cannot have come from
-the cards. A model is not a filing cabinet — it's a rule that came out of a filing cabinet that has
+the cards. The model we built is not a filing cabinet — it's a rule that came out of a filing cabinet that has
 since been thrown away.
 
 **(b) FALSE.** A **person** writes every label, by hand, **before** training. And that's not a small
-detail — it's the reason learning is possible at all. With no answers attached, the machine has
+detail — it's the reason this kind of learning works at all. With no answers attached, the machine has
 nothing to be right or wrong about, so it cannot score itself, so it cannot improve.
 
 **A4.** 1 → **C** · 2 → **D** · 3 → **A** · 4 → **E** · 5 → **B**.
@@ -512,8 +512,8 @@ of the spam and *all* of the not-spam separates the two piles just as cleanly as
 opposite. What matters is the **split**, not the direction.
 
 **(b)** **you / your** is the weakest. It's in every spam *and* in half the not-spam, so knowing a
-message contains it barely moves your guess. A clue that shows up on both sides at a similar rate
-tells you almost nothing, no matter how common it is.
+message contains it barely moves your guess. A clue that shows up on both sides, without a clean split,
+tells you very little, no matter how common it is.
 
 ---
 
@@ -539,13 +539,13 @@ Week 12.
 **B2. (a) No.** Nothing crashes, nothing complains, and nothing warns her. Training counts labels; it
 does not check them.
 
-**(b)** It learns the mistake, cheerfully and permanently. Whatever pattern those two wrong labels
-created, the model treats as truth.
+**(b)** It may learn the mistake, and it cannot notice it. With only 10 trays, two flipped labels can
+easily bend the rule, and whatever pattern those wrong labels created, the model treats as truth.
 
-**(c)** **She is.** The model did exactly what the examples told it to do. It reproduced her mistake
-faithfully, which is the only thing it knows how to do.
+**(c)** **She is,** most likely. The model did what the examples told it to do. Copying the examples,
+mistakes included, is what it is built to do.
 
-**(d)** **"Everything the model knows, and every mistake it makes, came from the examples it was
+**(d)** **"Almost everything the model knows, and many of its mistakes, came from the examples it was
 given."** Learn that sentence — it comes back in Week 31 and it never stops being true.
 
 **B3.**
@@ -577,7 +577,9 @@ they change which rule was correct all along.** That is exactly what Week 15 is 
 > awkward way, and repeat the exact same test.
 >
 > **I would look for:** the score changing. If it goes from 4 out of 10 to 9 out of 10 with no update
-> installed, something is learning.
+> installed, something has changed. It might be the phone refreshing the saved data about my face,
+> or it might be me learning how to hold the phone — so I would also need to hold it the same way
+> each time.
 >
 > **What would prove me wrong:** exactly that improvement. And what would prove **them** wrong is the
 > score staying flat — plus checking whether a software update was installed in between, because a new
@@ -616,8 +618,7 @@ and practice was cancelled).
 | **Z** — cloudy, **frozen solid**, yes | **The eight cards do not tell you.** | Every card said *dry* or *wet*. Not one said *frozen*. Nothing you learned covers it. |
 
 **P5.** **Test Z.** What's missing is an **example**: no card in the training set was ever frozen, so
-the rule has no idea which side of the line "frozen" falls on. It is dry — no water — so the rule
-would say ON. It is also solid ice, which any real coach would say is far more dangerous than a wet
+the rule has no idea which side of the line "frozen" falls on. The cards only said dry or wet, so a rule built on them has no answer for frozen ("not wet" might make it say ON). It is also solid ice, which any real coach would say is far more dangerous than a wet
 outfield. A real model would answer Z **confidently anyway**, and it would be guessing.
 
 **P6.** Because the sky is the loudest, most obvious thing on the card, and because there is a real
@@ -669,7 +670,7 @@ person could complain to?
 | 2 | "The spam folder was trained on millions of emails that people marked as spam, and it guesses whether a new email looks more like the spam ones or the ordinary ones." |
 | 3 | "Google Translate was shown millions of documents that already existed in both languages, and it produces the English words most likely to go with the Spanish ones. It doesn't understand either language." |
 | 4 | "My camera compares patches of the picture against a pattern it learned from lots of labelled face photos, and it marks the patches that score highly." |
-| 5 | "The music app was shown what millions of people played after each song, and it guesses which song I am least likely to skip in the first twenty seconds." |
+| 5 | "The music app was shown what millions of people played after each song, and it guesses which song I am least likely to skip." |
 | 6 | "Alexa was trained on huge numbers of recordings with the matching written words attached, and it produces its best guess at which words the sound matches." |
 
 **Reject in your own writing:** *magic, smart, clever, knows, understands, thinks, figures out,

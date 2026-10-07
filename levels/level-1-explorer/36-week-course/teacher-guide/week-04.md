@@ -114,7 +114,7 @@ Break either rule and the table becomes quietly worthless. Not loudly — quietl
 
 Here is the connection to make, and it is the payoff of the lesson.
 
-A machine learning system is a thing that reads a table and finds a pattern in it. That is genuinely, literally what it does — Week 15 will have the student train one. Photo recognition? A table where one row is one photo. Spam filtering? A table where one row is one email. A model that predicts house prices? A table where one row is one house sale.
+A machine learning system is a thing that reads a table and finds a pattern in it. That is genuinely, literally what it does — Weeks 15 to 17 have the student train one. Photo recognition? A table where one row is one photo. Spam filtering? A table where one row is one email. A model that predicts house prices? A table where one row is one house sale.
 
 So:
 
@@ -197,7 +197,7 @@ written down *in*). Do not name them for the learner today.
 
   `pencil 6 g` · `book 340 g` · `bottle 500 g` · `ball 45 g` · `pencil 18 cm` · `book 26 cm` · `bottle 22 cm` · `ball 22 cm` · `pencil yellow` · `book blue` · `bottle blue` · `ball pink`
 
-- [ ] **Draw the same twelve facts as a table** on a separate sheet of paper, and turn it face down. (4 rows: pencil, book, bottle, ball. 3 columns: grams, cm, colour.) You will reveal it at minute 5.
+- [ ] **Draw the same twelve facts as a table** on a separate sheet of paper, and turn it face down. (4 rows: pencil, book, bottle, ball. 4 columns: object, grams, cm, colour.) You will reveal it at minute 5.
 - [ ] **Check the objects.** Find a backpack, a kitchen drawer, or a pencil case with **at least 8 separate objects** in it. Eight is the minimum; ten is more comfortable. Nothing valuable, nothing sharp, nothing wet.
 - [ ] **Test the kitchen scale.** Switch it on. Check it reads grams (not just kilograms — a 6 g pencil must not read `0.0`). If your scale only shows whole grams, fine. If it only shows kilograms to one decimal place, swap the "grams" column for "how many of these fit in one hand" or use a different scale.
 - [ ] **Print** the Week 4 workbook (all of it: Warm-Up, Practice Sets A and B, Puzzle, Think Deeper, Build It, Draw It, Self-Check). It goes home. **The workbook has no blank record sheet**, so also **rule one by hand** on plain paper for class: columns `object`, `grams`, `length_cm`, `pocket`, eight rows, with a line at the top for `ONE ROW = ONE ______`. Leave the back blank for the pocket table.
@@ -275,7 +275,7 @@ Time it again. It will take four to eight seconds.
 >
 > Here is the thing I want you to sit with for a second. You are a human being. You are clever, you can read handwriting, you can guess what a scribble means. You still needed fifty-two seconds.
 >
-> A computer cannot do the pile at all. Not slowly — *at all*. It cannot look at a heap of notes and work out which fact goes with which object. The only shape a computer can read is the second one. So every single AI system in the world — the one that recommends your videos, the one that spots spam, the one in a hospital — starts with somebody turning a pile into that shape.
+> A computer cannot sensibly do the pile. It cannot look at a heap of notes and work out which fact goes with which object. The classic kind of machine learning, the kind you will build, needs the second shape: rows and columns. Even the big systems that learn from photos and raw text first turn them into numbers, and somebody chose how. So whether it is the one that recommends your videos, the one that spots spam, or the one in a hospital, someone decided how the world gets written down. For what we build, that means turning a pile into that shape.
 >
 > That shape is called a **table**, and today you are going to make one out of the contents of a bag."
 
@@ -598,7 +598,7 @@ Because it has no eyes, and even the ones that seem to have eyes don't work the 
 No. Truly, no. To the machine, the header `grams` is a meaningless label, and the column is just numbers. It would behave identically if you named the column `banana`. The header exists so *you* remember what the numbers are. This is why the person who chooses the columns has so much power — and so much responsibility.
 
 **"How many rows does an AI need?"**
-**Nobody knows for sure, and here is why.** There is no formula. It depends on how complicated the pattern is, how varied your examples are, and how much error you can live with. A team building a real system finds out by trying: train on some, test, add more, test again, and watch where the improvement flattens out. Researchers have been trying to predict this in advance for decades and are still not very good at it. What we can say: for the models you'll build in Week 17, about 30 examples per category is where it starts working, and it keeps improving well past 100. Rough guidance from experience — not a law.
+**Nobody knows for sure, and here is why.** There is no simple universal formula (researchers do find trends for very large models, but nothing a beginner can use). It depends on how complicated the pattern is, how varied your examples are, and how much error you can live with. A team building a real system finds out by trying: train on some, test, add more, test again, and watch where the improvement flattens out. Researchers have been trying to predict this in advance for decades and are still not very good at it. What we can say: in Weeks 15 and 17 you will use around 40 photos per category, and that is enough there because Teachable Machine starts from a model already trained on a huge number of images, so it only has to learn your categories. A few dozen per category is a reasonable starting point for that kind of tool, and it often keeps improving with more. Rough guidance from experience — not a law.
 
 **"What if two rows are exactly the same?"**
 Excellent, and that is literally next week's lesson. Short version for today: sometimes it's a mistake and sometimes it's a real coincidence — two different pencils that both weigh 6 grams are not a mistake — and telling them apart is why professionals give every row a unique ID number. Park it; we hunt those next Wednesday.
@@ -828,7 +828,7 @@ The corrected table:
 **W2. FALSE.** A confidence score is how strongly the system **prefers** one answer over the others, not a promise about how often it is right. It can be 94% confident and wrong. *Confidence is not correctness.*
 
 **W3.**
-- **Narrow AI** — a system that does **one** job, and fails the moment you step sideways out of it.
+- **Narrow AI** — a system that does **one** job, and usually fails (or gets much worse) as soon as you step sideways out of it.
 - **General AI (AGI)** — a system that could turn its hand to any job a person can. **Nobody has built one.**
 
 **W4. Sideways step.** Any task one small step from "draw the thing, roughly centred, in one continuous style": draw it *upside down*, *half* of it, *very small in a corner*, two of them, or with deliberately wobbly lines. Marking point: it must still be obviously the right object **to a human**. "Draw something random" is a different task, not a sideways step.

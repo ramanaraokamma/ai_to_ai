@@ -128,8 +128,8 @@ Two of the 31 items cannot be faked, and they are the two that actually matter:
 > - *"I have personally made a model that scored well on its own photos and failed on new ones."*
 > - *"I have said out loud, to a real person, something my own model is bad at."*
 
-If those two are ticked truthfully, this student understands machine learning better than most adults
-who talk about it for a living. That is not flattery; it is just rare.
+If those two are ticked truthfully, this student has done two things that many people who talk about
+machine learning have never done themselves. That is not flattery; those are the steps that often get skipped.
 
 ### The two misconceptions you will meet today
 
@@ -264,7 +264,7 @@ either. Then read this list slowly, pausing after each line.
 > that your own machine treats badly and then written the number on a sign in the biggest letters on
 > the table.
 >
-> Most adults who talk about AI for a living cannot do the fourth and the sixth of those.
+> Many people who talk about AI have never done the fourth and the sixth of those themselves.
 >
 > So today isn't about finding out whether you learned anything. That question is already settled —
 > the booth is sitting right there. Today is about *proving* it, three ways."
@@ -336,7 +336,7 @@ the list, slowly, and stop:
 > - *"I have said out loud, to a real person, something my own model is bad at."*
 
 > "Those two are the ones you can't fake and can't revise for. You either did them or you didn't. And
-> you did — Week 18 and Week 33. Hold on to that."
+> you did — Week 18 and today. Hold on to that."
 
 **Say this — part four, "not yet" (3 minutes):**
 
@@ -447,8 +447,8 @@ Build the answer with them in two moves, and make them say the first one:
 **Ask this:**
 
 - *"What's the very first thing you'd change about this project?"*
-  → **Hoping for:** hold out photos **before** training. Everything else is fixable afterwards; that
-    one is not.
+  → **Hoping for:** hold out photos **before** training. Other flaws can be fixed by adding photos or tests; this
+    one forces a retrain from scratch.
 - *"Write the DO NOT USE line for this model."*
   → **Hoping for:** something naming the untested part and the 11 photos, e.g. *"Do not use this for
     identifying any animal in a real vet's office, or any animal that isn't a cat, dog or hamster. It
@@ -662,7 +662,7 @@ Try that with most certificates.
 
 You're good at the part almost everyone skips. You can build a small model, measure it honestly, find
 who it fails, and explain it — and the measuring and the explaining are the rare bits. What you have
-not done yet is write a line of code, and Level 2 is where that starts. Both things are true at once
+not done yet is type a line of code in a text language, and Level 2 is where that starts. Both things are true at once
 and neither cancels the other.
 
 **7. "What will AI be able to do by the time I'm grown up?"**
@@ -670,7 +670,7 @@ and neither cancels the other.
 **Nobody knows for sure, and here's why.** People have been predicting this for seventy years and
 they have been wrong in *both* directions — some things arrived decades late (machines holding a
 conversation), and some arrived far earlier than expected (machines beating the world's best Go
-player, which serious experts had put decades away right up until it happened). The honest position
+player, which many experts had expected to be at least a decade away right up until it happened). The honest position
 is that experts today disagree with each other loudly, and anybody who tells you a confident
 timetable is selling something. What is *not* a guess is the thing you already own: whatever gets
 built, the questions "what was it trained on?", "out of how many?", "what's the baseline?" and "who
@@ -855,7 +855,7 @@ are the two that matter; the rest is recording.
 | **Concept** — what goes beside a guessed answer? | "Not sure". Those items matter **even when the guess is right**, because an unmarked lucky answer stays a hole. |
 | **Specimen 1** — where does 1.33 come from? | 36 ÷ 27 — the division upside down. Catchable with no calculator: accuracy can never exceed 1.00 or 100%. |
 | **Specimen 2** — why round 91.5 **up**? | The requirement is "at least one third". 91 photos gives 91 ÷ 274 = 33.2%, just under. 92 gives 33.5%, just over. Round up whenever the requirement says "at least". |
-| **Specimen 3** — first thing to change about the vet report? | Hold photos out **before** training. Every other flaw can be repaired afterwards; that one cannot — there is no way to make a model un-see a photo. |
+| **Specimen 3** — first thing to change about the vet report? | Hold photos out **before** training. Other flaws can be fixed by adding photos or tests; this one means throwing away the score and retraining on a fresh split or new unseen photos, because there is no way to make a model un-see a photo. |
 | **Specimen 3** — the DO NOT USE line | "Do not use this for identifying any animal in a real vet's office, or any animal that is not a cat, a dog or a hamster. It has seen 11 hamster photos and has never been tested on a photo it did not train on." |
 | **Wrap** — the six gate points | Answered by the student, honestly, with a week number beside every "not yet". There is no model answer; there is only a true one. |
 
@@ -865,7 +865,7 @@ are the two that matter; the rest is recording.
 |:--:|---|:--:|---|
 | A1 | M1 → W1 | **b** | AI = a machine doing a job that used to need a person's **judgement**. "Smart" and "brain" are the two banned words; speed is not judgement. |
 | A2 | M1 → W1–2 | **c** | A human wrote the approved list and the if-then, so it is **rule-based** — even though the plate *reader* inside it is almost certainly learned. Real products are stacks; saying so is a top answer. |
-| A3 | M1 → W1 | **a** | Every AI today is **narrow** — one job, blank outside it. AlphaGo cannot play checkers. |
+| A3 | M1 → W1 | **a** | Every AI today is **narrow** — no human-like general ability (a chatbot does many language tasks, but that is not the same as a person's general ability; narrow does not mean literally one task). AlphaGo cannot play checkers. |
 | A4 | M2 → W4 | **b** | With a `date` column, one row = one student on one day. 30 × 7 = 210 rows. |
 | A5 | M2 → W5 | **b** | `(blank)` is **missing**; `88` hours of sleep is **impossible** (a day has 24). An outlier is a *legal* extreme value; this isn't one. |
 | A6 | M3 → W10 | **b** | **Rule explosion.** 30 yes/no checks = 2³⁰ ≈ 1.07 **billion** situations. This is why ML exists. |
@@ -875,7 +875,7 @@ are the two that matter; the rest is recording.
 | A10 | M4 → W13 | **b** | Minutes of homework is a number on a sliding scale → **regression**. Bucket it and it becomes classification. |
 | A11 | M5 → W16 | **c** | Confidence = guess **strength**, and the four scores must sum to 100%. It says nothing about correctness. |
 | A12 | M5 → W15 | **b** | **Class imbalance**: (200 − 8) ÷ 200 = **96%**, target under 20%. The model barely saw combs and learns not to bet on them. |
-| A13 | M6 → W19 | **c** | A memorising model scores 100% on its training photos, and so does a learning one — the score cannot tell them apart, so it isn't a measurement. |
+| A13 | M6 → W19 | **c** | A memorising model scores 100% on its training photos, and a learning one can score high too — the score cannot tell them apart, so it isn't a measurement. |
 | A14 | M6 → W20 | **a** | 27 ÷ 36 = 0.75 = 75%. Check: 27/36 ÷ 9 = 3/4. |
 | A15 | M6 → W21 | **b** | Model Q: 100% train, 41% test = a **59-point gap** = overfitting. R's 3-point gap at 55% is *underfitting*, a different disease. |
 | A16 | M7 → W23–24 | **b** | `0` = black (no light). RGB needs **3** numbers per pixel — three stacked channel grids. |
@@ -959,7 +959,7 @@ the ___" is often followed by a place name and "Sahara" fits the shape perfectly
 are separate, and Module 8 calls this a **hallucination**. The vision model never sees "a wolf"; it
 sees a grid of brightness numbers, and wolf patterns sit extremely close to the thousands of huskies
 it saw labelled `dog`, so out comes `dog` at 94% — guess strength, not a promise. The shared lesson:
-**confidence is produced by the same machinery as the answer**, so it can never act as a check on it.
+**confidence is produced by the same machinery as the answer**, so it cannot be a guarantee: a confident answer can still be wrong. (Low confidence is still a useful warning, which is why the Scratch app in C2 uses a threshold.)
 *(Marks: 1 "confident but not truth-checking" · 1 naming **hallucination** · 1 confidence = guess strength.)*
 
 **B8 — the lamplight gap.**
@@ -969,8 +969,7 @@ it saw labelled `dog`, so out comes `dog` at 94% — guess strength, not a promi
 **(b)** The four links: *who/what got collected* — nearly all photos taken in the afternoon, because
 that's when there was time → *the training data is skewed* — 183 daylight vs 17 lamplight, 91.5% vs
 8.5% → *the model learns the skew* — good at daylight patterns, never learned warm indoor light →
-*who gets bad predictions* — anyone using it in the evening or in winter, which for a kitchen bin
-sensor is most of the time it matters. And the honest line: **nothing broke.** Bias is the default
+*who gets bad predictions* — anyone using it under lamplight, for example in the evening. And the honest line: **nothing broke.** Bias is the default
 outcome of learning from examples.
 
 **(c)**
@@ -1054,7 +1053,7 @@ means "always guess cat" scores 50%, and the hamster class is measured by a sing
 accuracy is either 0% or 100%. **4. A deployment claim with nothing behind it** — "a vet's office" is
 a real setting with real consequences, and there is no per-class accuracy, no confusion matrix, no
 `other` class for the animals a vet actually sees, and no limits. *(Fifth, also accepted: no data
-card — and the 11 hamster photos are almost certainly 11 shots of the same hamster.)*
+card — and the 11 hamster photos are possibly 11 shots of the same hamster.)*
 
 **(b)** See Specimen 3 above: a purely memorising model would score at least 95% (probably 100%) on those photos, so the
 number cannot distinguish learning from memorising — and 19 of the 20 came from the two easy

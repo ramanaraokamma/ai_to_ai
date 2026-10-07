@@ -107,12 +107,12 @@ Student IDs, shirt numbers, phone numbers, house numbers, bus routes, postcodes,
 
 > **⚠️ Watch out:** there is an honest grey area, and you should know it. A mood rating of 1–5 is a category — but 5 really *is* happier than 4, so it has an order. You can sort it and find the middle value. Whether you can *average* it is genuinely argued about by scientists, because the gap from 1 to 2 might not feel the same size as the gap from 4 to 5. In practice everybody averages it and adds a footnote. **We do it, it is slightly fake, and knowing it is slightly fake is the professional part.**
 
-### 2. There are exactly four kinds of mess
+### 2. There are four common kinds of mess
 
 ![The four kinds of mess](../figures/fig-w05-1-four-kinds-of-mess.svg)
 *Figure 5.3 — Four different problems. Four different fixes. Naming which one you found is half the job.*
 
-This is the list you will use for the rest of your life. Each one gets its **name** and its **fix**, and they are not interchangeable.
+This is the list you will use again and again. Each one gets its **name** and its **fix**, and they are not interchangeable.
 
 | # | Kind of mess | What it looks like | The fix |
 |---|---|---|---|
@@ -155,7 +155,7 @@ Then anything outside the range puts its own hand up.
 
 `Monday`, `monday`, `MON`, `Mon.` To you, obviously one day. **To a machine, four unrelated categories** — as different from each other as `dog` and `Tuesday`.
 
-This is, genuinely, the most common data error in the world.
+This is, genuinely, one of the most common data errors there is.
 
 > **Controlled vocabulary** — the written-down list of allowed values for a category column.
 
@@ -235,7 +235,7 @@ Most people say yes, immediately and confidently, and cross it out within about 
 
 Once you can name one real cause, the urge to delete it dies — and it should, because **an outlier is very often the most informative row in the whole table.**
 
-In the Crime Scene Table you worked on in class, look at what else is on the 480 row: it is also the night with the **lowest sleep in the entire table**, 6.5 hours. The one weird value and the one low value sit on the same line. That pair of facts is the only genuinely interesting thing in the whole dataset — and a student who crosses out the 480 has deleted the finding, made the table look *tidier*, and will never know.
+In the Crime Scene Table you worked on in class, look at what else is on the 480 row: it is also the night with the **lowest sleep in the entire table**, 6.5 hours. The one weird value and the one low value sit on the same line. That pair of facts is a lead worth checking (one row out of twelve is a coincidence to look into, not a finding) — and a student who crosses out the 480 has deleted the lead, made the table look *tidier*, and will never know.
 
 **The professional move: investigate and annotate.** Add a note — `home sick, watched films all day` — and keep the value.
 
@@ -309,7 +309,7 @@ Which single fault did the most damage? Take out only the −5 and leave everyth
 
 After cleaning: `labrador`, `beagle`, `german_shepherd` = **three.**
 
-With five groups of one or two dogs each, there is nothing to learn from the breed column — every group is too small to say anything about. With three groups there is something to work with.
+With five groups of one or two dogs each, there is nothing to learn from the breed column — every group is too small to say anything about. With three groups there is more to work with (still small, but a start).
 
 > **💡 Try this:** read that last bit again. Cleaning did not tidy the breed column. **Cleaning created the information.** That is a genuinely different claim and it is the best thing in this example.
 
@@ -362,7 +362,7 @@ time           11:00 to 15:00
 |---|---|---|---|
 | Row 5, `price_rupees` | **Missing** | Empty box | Leave blank, note `till receipt lost`. Not 0. |
 | Row 4, `price_rupees` | **Impossible** | −60 rupees | Blank it, note `was -60, impossible` |
-| Rows 7 and 8 | **Duplicate** | Identical in every column, same minute | Delete one |
+| Rows 7 and 8 | **Duplicate** | Identical in every column, same minute (probably one order entered twice; check first) | Delete one |
 | `day` column | **Inconsistent** | `Mon` and `mon` | Standardise to `Mon` |
 | `item` column | **Inconsistent** | `samosa`, `Samosa`, `SAMOSA` | Standardise to `samosa` |
 
@@ -661,7 +661,7 @@ week — what changed is the thread strip at the bottom and the line underneath 
 
 | | |
 |---|---|
-| **The mental model you now own** | Every column has a **type**, and the test is arithmetic: if adding two values means nothing, it is a **category**. And mess comes in exactly **four kinds** — missing, duplicate, impossible, inconsistent — each with its own fix. |
+| **The mental model you now own** | Every column has a **type**, and the test is arithmetic: if adding two values means nothing, it is a **category**. And mess comes in four common **kinds** — missing, duplicate, impossible, inconsistent — each with its own fix. |
 | **The one question it answers** | *"Is this column a number or a name, and which of the four kinds of mess is hiding in it?"* |
 | **What it plugs into** | Week 4's table. The same table — now inspected column by column instead of read left to right. |
 | **What carries forward** | **Blank-plus-a-note** is the habit that keeps your Week 6 data card honest, and **category-in-disguise** is the very same trap waiting for you again in Week 13. |

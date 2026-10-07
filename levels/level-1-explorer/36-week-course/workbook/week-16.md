@@ -567,7 +567,7 @@ What that tells you about Row 3: **this readout IS the blind-guessing rate.** Th
 
 **T1 — model answer.**
 
-> 45 / 44 / 11 is not a broken model. It is a model being unusually honest. The **margin** here is 1 point, and the model is using that to tell me something specific and true: it genuinely cannot separate spoon from toothbrush on this particular photo. That is real information about the world, and I can act on it — I can take a second photo from another angle, or turn a light on, or hand the item to a person.
+> 45 / 44 / 11 is not a broken model. It is a model being unusually informative. The **margin** here is 1 point, and the model is using that to tell me something specific and true: it genuinely cannot separate spoon from toothbrush on this particular photo. That is real information about the world, and I can act on it — I can take a second photo from another angle, or turn a light on, or hand the item to a person.
 >
 > Compare that with a model that reports 99% on everything, including a stapler it has never seen. That model is confidently wrong and gives me nothing to work with. The **shrug** is the useful part, and almost every real product throws it away and shows you only the winning word — which means it hides its 45 / 44 from you and looks more reliable than it is.
 >

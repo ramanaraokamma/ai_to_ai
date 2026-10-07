@@ -53,9 +53,9 @@ And here is the part that matters for this whole course.
 
 You are a human being. You can read messy handwriting, you can guess what a scribble means, you can hold four things in your head at once. You still needed a minute.
 
-**A computer cannot do the pile at all.** Not slowly — *at all*. It cannot look at a heap of notes and work out which fact belongs to which object. The only shape a computer can read is the one on the right.
+**A computer cannot sensibly do the pile.** It cannot look at a heap of notes and work out which fact belongs to which object. The classic kind of machine learning, the kind you will build in this course, needs the shape on the right: rows and columns.
 
-So every single AI system that exists — the one choosing your next video, the one flagging spam texts, the one helping a doctor read a scan — starts with a person turning a pile into that shape.
+Even the big systems that learn from photos and raw text first turn them into numbers, and a person chose how. So whether it is the one choosing your next video, the one flagging spam texts, or the one helping a doctor read a scan, someone decided how the world gets written down. For what you build here, that means turning a pile into that shape.
 
 That shape is called a **table**. This week you are going to make one out of the contents of a bag.
 
@@ -162,7 +162,7 @@ Lets you ask: *which pocket is fullest?* → front, with two objects.
 
 Lets you ask: *who is carrying more?* → Ravi, by 199 grams.
 
-**All three are correct tables.** Not one of them is "the real one". But — and this is the bit that hurts — **you cannot get from one to the others afterwards without going back to the drawer.**
+**All three are correct tables.** Not one of them is "the real one". But — and this is the bit that hurts — **you cannot get from the coarser tables back to the finer ones afterwards without going back to the drawer.**
 
 Try it. Look at Table B and tell me the weight of the pencil. You can't. It got swallowed into the `51` on the front-pocket row and it is gone forever.
 
@@ -222,7 +222,7 @@ Four rows, four different meanings, no way to compare any two of them.
 
 Here is the payoff, and it is worth reading slowly.
 
-A machine learning system is a thing that **reads a table and finds a pattern in it.** That is genuinely, literally what it does — in Week 15 you will train one yourself.
+A machine learning system is a thing that **reads a table and finds a pattern in it.** That is genuinely, literally what it does — in Weeks 15 to 17 you will train one yourself.
 
 - Photo recognition? A table where one row is one photo.
 - Spam filtering? A table where one row is one message.

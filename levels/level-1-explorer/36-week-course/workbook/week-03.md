@@ -357,21 +357,22 @@ Every defence needs **all four** of these, or it isn't finished:
 > thinking it's genuinely both, which felt like cheating until I wrote it out.
 >
 > **(2) Evidence for *generating*.** It produces words, and words are content. There's no fixed menu —
-> over a week it has suggested hundreds of different words to me, including names and slang I'm fairly
-> sure aren't in any standard list. When I try to count the possible outputs the way we did in class, I
-> can't. That's the blank-page test, and it passes it.
+> over a week it has suggested hundreds of different words to me, including names and slang that
+> aren't in a standard word list (though it may simply keep a personal list of what I type). When I try
+> to count the possible outputs the way we did in class, I can't, but a very big vocabulary is still a
+> vocabulary, so this evidence is weaker than it looks.
 >
 > **(3) Evidence against — the honest case for *learned*.** It only ever shows me **three** options at
 > a time, and three is a menu. It also definitely learned: it started suggesting my friend's name after
-> I'd typed it about five times, which is picking up a pattern from examples. And everything in the
+> I'd typed it about five times, which is picking up a pattern from examples (though that could also be a simple personal-dictionary lookup). And everything in the
 > generating column is *also* in the learned column, since generative AI lives inside machine learning
 > — so "learned" isn't even wrong.
 >
 > **(4) The one fact I'd need.** Whether those three words come off a fixed list the phone keeps, or
 > whether it builds each word up letter by letter. If it's a list, it's picking. If it builds them,
-> it's generating. **I could test this myself:** invent a nonsense word, type it ten times, and see if
-> the bar ever offers it back. If it can suggest a word that didn't exist before I made it up, it isn't
-> reading off a list.
+> it's generating. **A made-up-word test would not settle it:**
+> phones keep a personal dictionary of what you type, so the bar offering my invented word back is
+> exactly what a learned list would do. I would have to look up how my keyboard works.
 >
 > **My call: generating** — but I've written it in the *learned* column too, with an arrow, because
 > both are true.
@@ -512,7 +513,7 @@ picks from an enormous but **fixed list of songs that already exist** — it com
 
 **A3. (a) FALSE.** 96% means *"wolf is the answer I'm leaning towards hardest"* — it's the biggest
 number in a list that adds up to 100. It is not a prediction about how often the model is correct.
-Models are **most confidently wrong** on things unlike anything they trained on.
+Models are often **confidently wrong**, especially on things unlike anything they trained on.
 
 **(b) FALSE.** Generative AI is **inside** machine learning. A chatbot learned from examples in
 exactly the same way a spam filter did — it just produces a blank page instead of a two-item menu.
@@ -549,7 +550,7 @@ and at every single moment it sounds certain.**
 your own answer if it says *nearly certainly right* or *right 94 times in 100*.
 
 **(e)** **No, it wasn't broken.** It did exactly what it was built to do: give a number to every option
-and hand you the biggest one. `fox` was on its list and scored 4. Nothing anywhere in the machine
+and hand you the biggest one. `fox` was on its list and scored 4. At the moment it answers, nothing in the machine
 compares its answer to reality. **A model can be confident and wrong at the same time, and it feels
 identical from the outside.**
 
@@ -724,7 +725,7 @@ Two more worked calls, for the standard:
 | Note | The call | The reasoning |
 |---|---|---|
 | **Automatic shop doors** | **Rules** — and arguably **not AI at all** | `IF motion detected THEN open` is a line somebody wrote. The deciding question is whether the job needs judgement, and "did something move?" doesn't — the sensor fires for a stray cat or a blown crisp packet. **The fact that would settle it:** does the door ever *decline* to open for something that moved? If it never declines, there is no decision in there. |
-| **Maps arrival time** | **Learned** | A rules version is easy to imagine — distance ÷ speed limit — but the estimate changes minute by minute and gets rush hour right, so it must be using how long real cars actually took just now. Nobody hand-wrote a rule for "Tuesday, 8:40am, raining, roadworks". **Evidence against:** part of it genuinely is arithmetic, since the distance is just measured. **The fact that would settle it:** does the estimate change if I ask twice, ten minutes apart, for the same route? |
+| **Maps arrival time** | **Learned** | A rules version is easy to imagine — distance ÷ speed limit — but the estimate changes minute by minute and gets rush hour right, so it must be using how long real cars actually took just now. Nobody hand-wrote a rule for "Tuesday, 8:40am, raining, roadworks". **Evidence against:** part of it genuinely is arithmetic, since the distance is just measured. **A fact that would help (not settle it, since a rule using live speeds would also change):** does the estimate change if I ask twice, ten minutes apart, for the same route? |
 
 **The best defences use the system's failures as evidence.** *"It opens for a cat, so it isn't
 judging"* is worth more than any amount of confident assertion.

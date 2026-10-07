@@ -440,7 +440,7 @@ Draw where a hallucination comes from. Two real pairs, one join, one false claim
 
 **W1. 50 bigrams.** Every token starts exactly one pair except the very last one, which has nothing after it. So it is always tokens − 1, and you never need to read the text.
 
-**W2.** Because **order is part of what a bigram is**. A bigram records that word A was followed by word B, and `dog hot` records the opposite claim. `hot dog` turns up in a menu; `dog hot` turns up nowhere. That direction is exactly the information word frequency threw away.
+**W2.** Because **order is part of what a bigram is**. A bigram records that word A was followed by word B, and `dog hot` records the opposite claim. `hot dog` turns up in a menu; `dog hot` turns up almost nowhere. That direction is exactly the information word frequency threw away.
 
 **W3.** A pair written **backwards**, or filed into the **wrong group**. One mark goes down either way, so the total is identical. That is why check 2 exists — a misfiled pair makes one group one too big and another one too small.
 
@@ -461,7 +461,7 @@ Draw where a hallucination comes from. Two real pairs, one join, one false claim
 
 (a) **False.** Greedy works perfectly — it does exactly what it was told, every time. The loop is a *consequence* of working correctly, not a malfunction. The real finding is more general: **best-at-each-step is not the same as best-overall**, which is also true in chess and in mazes.
 
-(b) **False**, and this is the whole week. Reading well and being true are two completely different questions. The machine is optimising for exactly one of them — *does this word plausibly follow that word?* — and nothing anywhere in the procedure checks reality. A well-formed false sentence and a well-formed true sentence look identical to a next-word predictor, because they are both well-formed.
+(b) **False**, and this is the whole week. Reading well and being true are two completely different questions. The machine is optimising for exactly one of them — *does this word plausibly follow that word?* — and nothing in the counting procedure checks reality. A well-formed false sentence and a well-formed true sentence look identical to a next-word predictor, because they are both well-formed.
 
 (c) **True**, and it catches people out. Sampling does not *avoid* the original text — `the bus goes to town .` is sentence 3 of our corpus, word for word, produced on rolls 2-3-4. It can copy, it can invent, and **it has no idea which of the two it just did.**
 
@@ -513,7 +513,7 @@ Full credit needs the word **sampling** (or the bag idea) **and** the point that
 
 (a) **Right:** a bigger table, and especially a bigger **context**, genuinely fixes a real problem — **forgetting**. A large model would not lose track of the fact that we were talking about Amma, and would not produce our crude three-word loops. Say that clearly; pretending otherwise is dishonest.
 
-(b) **Wrong:** it will not fix **truth**. Nothing in the counting procedure checks reality, so multiplying the counts by a million multiplies the *fluency* and leaves the missing step exactly as missing as it was. **The world is not in the window.** A big context can keep an answer consistent with the text so far; there is no step anywhere where anybody consults reality. That is not a small missing feature — it is a missing category.
+(b) **Wrong:** it will not fix **truth**. Nothing in the counting procedure checks reality, so multiplying the counts by a million mainly adds *fluency*. Bigger models get facts wrong less often, but they still can, so checking is still needed. **The world is not in the window.** A big context can keep an answer consistent with the text so far; nothing in the counting procedure consults reality. (Chatbots that search or cite sources add a checking step from outside.)
 
 **B3.**
 
@@ -521,11 +521,11 @@ Full credit needs the word **sampling** (or the bag idea) **and** the point that
 
 (b) Never **`absent`** — and "never" is right rather than "rarely" because greedy is **deterministic**. `absent` has a smaller count than `here` in the only group that could produce it, so its chance is not small, it is **zero**.
 
-(c) **No, nothing is broken.** Every step obeyed every rule. The register is wrong *and* the machine is working exactly as designed — which is why "fix the bug" is the wrong response. There is no broken line. What is missing is a step that never existed: one that checks whether the claim is true.
+(c) **No, nothing is broken.** Every step obeyed every rule. The register is wrong *and* the machine is working exactly as designed — which is why "fix the bug" is the wrong response. There is no broken line. What is missing is a step our procedure never had: one that checks whether the claim is true.
 
 **B4.**
 
-(a) **One story**: grammatical, dull, and repeating itself for ever — greedy walks into a circle and cannot climb out.
+(a) **One story**: readable at first, dull, and repeating itself for ever — greedy walks into a circle and cannot climb out.
 
 (b) **Exactly the same story**, word for word. Same table, same prompt, same choices. For a story app that is fatal: the whole point of "try again" is to get something different.
 

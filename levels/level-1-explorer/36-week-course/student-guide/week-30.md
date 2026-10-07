@@ -10,7 +10,7 @@
 > **By the end of this chapter you will be able to:**
 > - Build a working **Scratch chatbot** from two lists, an ask-and-wait loop and a contains-check
 > - Add a **fallback** reply, in the bot's own honest voice, for input that matches nothing
-> - Diagnose and fix the **repeat bug** — there are exactly three causes, and you will know all three
+> - Diagnose and fix the **repeat bug** — there are three common causes, and you will know all three
 > - Compare how a rule-based bot fails with how a next-word model fails, with a real example of each
 >
 > **Reading time:** about 20 minutes. **Lab + homework:** about 60 minutes.
@@ -57,12 +57,12 @@ Inside, they could not be more different — and the difference decides how much
 |---|---|---|
 | Where its knowledge came from | A person typed it | Counting examples |
 | Can it say something nobody wrote? | No. Never. | Yes — that is how `amma takes the bus to the market` happened |
-| What happens when it doesn't know | It says so | It invents |
-| Can you tell when it has failed? | **Instantly** | **Often not at all** |
+| What happens when it doesn't know | It says so | It tends to invent |
+| Can you tell when it has failed? | **Usually easily** | **Often not at all** |
 | Which Week 1 family is it? | Rule-based | Machine learning |
 | How much can it cover? | Only what you typed | Almost anything |
 
-**The fourth row is the one that matters.** When a rule-based bot doesn't know, it says so. When a learned generator doesn't know, it invents. That single asymmetry is worth an hour of anybody's time.
+**The fourth row is the one that matters.** When a rule-based bot doesn't know, it says so. When a learned generator doesn't know, it tends to invent (the toy you built does; some modern systems also learn to hedge). That single asymmetry is worth an hour of anybody's time.
 
 **🍕 The analogy: the vending machine and the improviser.** A vending machine has five buttons. Press a button it has, you get exactly what the label says, every time. Press a button it does not have — nothing happens, and you know immediately to go somewhere else. An improviser on stage will produce something for *any* prompt you shout, fluently, in character, at full confidence. Sometimes it is brilliant. It is never checked. **Both are useful. You need to know which one you are standing in front of.**
 
@@ -238,10 +238,10 @@ Greedy under trigrams, starting from `the bus`:
    (to, the)      -> market  (a 1-1-1 tie, broken by first appearance in the corpus)
    (the, market)  -> .       (forced)
 
-   OUTPUT:  the bus to the market .        -- and it ENDS.
+   OUTPUT:  the bus to the market .        -- and it stops (our rule: stop at the first full stop).
 ```
 
-Compare that with bigram greedy: `the bus to the bus to the bus to …` for ever. **One extra word of memory broke the loop.** That is a real, checkable win.
+Compare that with bigram greedy: `the bus to the bus to the bus to …` for ever. **One extra word of memory broke the loop** — at least until the full stop. It stops there only because our rule says to stop at the first full stop. Let it keep going and it carries on from `market .` to `amma` and circles round the same route again. Still a real, checkable win: it reached a full stop, which bigram greedy never did.
 
 **And now the sting.** Is `amma takes the bus to the market .` still legal under trigrams? Check it:
 
@@ -363,7 +363,7 @@ Re-test both: `where is the practice ground` → row 1 matches → the ground re
 
 A bot for a school office, four pairs: 1 `uniform` · 2 `term dates` · 3 `school bus` · 4 `lunch`.
 
-It works once and then goes strange. There are **exactly three** causes. Here is how you tell them apart.
+It works once and then goes strange. There are **three common** causes. Here is how you tell them apart.
 
 **Cause 1 — the two `set` blocks are ABOVE the `forever` loop.**
 
@@ -510,9 +510,9 @@ Here is the reference log for the five-trigger PizzaBot:
 
 **Score: 7 sensible out of 10.** Three failures: two **gaps** and one **false match**.
 
-**And here is the observation that the whole week has been building towards.** Look at all three failures. In **every single one**, you could tell instantly that something had gone wrong. Rows 1 and 3 announce the failure in words. Row 8 gives opening hours to a question about a box, which is visibly off-topic.
+**And here is the observation that the whole week has been building towards.** Look at all three failures. In **all three**, you could tell at once that something had gone wrong. Rows 1 and 3 announce the failure in words. Row 8 gives opening hours to a question about a box, which is visibly off-topic.
 
-**Every failure was visible.**
+**Every failure in this log was visible.** (Three failures in one small log is not a law. A false match that gives a plausible, on-topic wrong answer, or a price you typed wrongly yourself, could slip past you. So rule-based failures are *usually* easier to spot, not always.)
 
 Now put that next to last week's score sheet, row 2:
 
@@ -601,9 +601,9 @@ The rule bot can say five things. The generator can answer questions nobody ever
 
 ## 🌍 Where You've Seen This
 
-1. **A bank or shop chat window that answers "what are your opening hours?" perfectly and then falls apart.** That is a rule-based layer, with hand-written and often lawyer-approved answers, sitting in front of something else.
+1. **A bank or shop chat window that answers "what are your opening hours?" perfectly and then falls apart.** That is a rule-based layer, with hand-written and often carefully checked answers, sitting in front of something else.
 2. **A menu of buttons instead of a text box.** That is a rule bot being honest about being a rule bot — it shows you its trigger list up front so you cannot ask anything it does not have.
-3. **The "did you mean…?" suggestions under a help search.** Trigger matching, with the top few candidates shown rather than the single first match.
+3. **The "did you mean…?" suggestions under a help search.** Often spelling correction or fuzzy search rather than strict trigger matching, but the same idea of showing the top few candidates rather than the single first match.
 4. **A game's help chat that answers one question and ignores the next.** Almost certainly a keyword list, and almost certainly your phrasing missed the trigger. Try using the exact words on the buttons.
 5. **A voice assistant saying "I'm not sure I understand".** That is a fallback, and it is the assistant doing its job properly.
 6. **A chatbot inventing a plausible-sounding phone number.** Same failure as last week, out in the wild. The number is specific, checkable and expensive to get wrong — which is exactly the kind of claim you must check.
@@ -641,7 +641,7 @@ lit threads are **model** and **evaluation** — you build a machine, and then y
 - **The order of your list is a rule.** If one trigger sits inside another (`practice` inside `practice ground`), the shorter one above the longer makes the longer permanently unreachable. It is not deleted. It is demoted.
 - **`contains` knows nothing about meaning.** `open` matches "how do I open the box". No trigger shorter than four letters.
 - **A good fallback admits, doesn't pretend, and steers.** "Interesting question!" is the worst option, not the nicest.
-- **The repeat bug has exactly three causes:** the two `set` blocks above the `forever`; a missing `set matched to 1`; a too-short trigger sitting too high.
+- **The repeat bug has three common causes:** the two `set` blocks above the `forever`; a missing `set matched to 1`; a too-short trigger sitting too high.
 - **N-gram means n tokens in a row.** A bigram remembers one word, a trigram two, an n-gram n − 1. More memory fixes forgetting and loops. **It does not fix truth.**
 - **You have built one machine from each family.** Your tally sheet **learned** — nobody wrote its rules. Your Scratch bot was **told** — you typed every word it can say.
 - **A bot that admits it is stuck is annoying. A bot that invents is dangerous.** Knowing which one you are talking to is a real skill, and most adults do not have it.

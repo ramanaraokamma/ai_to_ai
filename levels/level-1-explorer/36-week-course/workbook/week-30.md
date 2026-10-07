@@ -603,7 +603,7 @@ Your bot and your topic are your own, so here is a full-credit reference on the 
 
 **Score: 7 sensible out of 10.** Three failures: two **gaps** (rows 1 and 3) and one **false match** (row 8).
 
-**The observation that carries the week:** in **all three** failures you could tell instantly that something had gone wrong. Rows 1 and 3 announce it in words; row 8 gives opening hours to a question about a box, which is visibly off-topic. **Every failure was visible.** Set that against last week's row 2, which read perfectly and was false.
+**The observation that carries the week:** in **all three** failures you could tell at once that something had gone wrong. Rows 1 and 3 announce it in words; row 8 gives opening hours to a question about a box, which is visibly off-topic. **Every failure in this log was visible** (usually, not always: a plausible on-topic wrong answer could slip past). Set that against last week's row 2, which read perfectly and was false.
 
 **The fixes, if you have time:** row 1 — add a trigger `hello`. Row 3 — add a trigger `how much` pointing at the *same* reply as `price` (two triggers, one reply, is perfectly normal). Row 8 — change `open` to `what time do you open`, and then notice the cost: *"when are you open?"* no longer matches. **There is no setting that gets both.**
 

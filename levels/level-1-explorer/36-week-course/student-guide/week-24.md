@@ -238,7 +238,7 @@ Anti-aliasing is **not** a mistake and not a compromise. It is the *correct* ans
 
 Two things worth knowing about it:
 
-- **Downsampling manufactures more of it.** Every time you average a block that straddles an edge, you create a new in-between value. Sharp edges become soft edges. **That is why a shrunk photo always looks slightly soft even when nothing has gone wrong.**
+- **Downsampling manufactures more of it.** Every time you average a block that straddles an edge, you create a new in-between value. Sharp edges become soft edges. **That is why a shrunk photo often looks slightly soft even when nothing has gone wrong.**
 - **It is why last week's disagreements were nobody's fault.** There was no right answer for those squares. There still isn't.
 
 ---
@@ -551,7 +551,7 @@ This is the deep one and it survives most explanations, because the shrunk photo
 
 1. **Uploading a photo and it comes back looking soft.** Every site shrinks your photos to save space. The softness is anti-aliasing being manufactured at every edge as blocks get averaged.
 2. **A thumbnail you cannot read.** Small text is the very first thing to die when a picture is downsampled — thin strokes average away into the background in a single step.
-3. **A striped shirt on television that shimmers and crawls.** The stripes are finer than the pixels, so every frame averages them slightly differently. Weather presenters are told not to wear them.
+3. **A striped shirt on television that shimmers and crawls.** The stripes are finer than the pixels, so every frame averages them slightly differently. TV presenters are often told not to wear them.
 4. **The colour picker in any drawing or paint app.** Those three sliders, each running 0 to 255, are R, G and B. Slide all three to the same place and watch it go grey.
 5. **`#FF0000` in a web page or a game mod.** That is just (255, 0, 0) written in a shorthand programmers use. FF means 255.
 6. **A printer that never matches the screen.** Lamps adding light versus ink removing it. They cannot reach the same set of colours, and no amount of fiddling changes that.
